@@ -16,7 +16,7 @@
         ],
         [
           "cívisváros",
-          "Civis market town (Debrecen)"
+          "civis town (Debrecen)"
         ],
         [
           "pannon",
@@ -24,7 +24,7 @@
         ],
         [
           "vízfejűség",
-          "capital monocentricity"
+          "'water-head': oversized capital"
         ],
         [
           "nyelvjárás",
@@ -44,7 +44,7 @@
       "teaches": [
         "b2-spatial-postpositions"
       ],
-      "question": "Melyik térbeli névutó fejezi ki a szétszórt, mindenütt jelen lévő eloszlást (pl. 'egész Dunántúlon')?",
+      "question": "Melyik szó fejezi ki, hogy valami egy egész területen mindenütt jelen van (pl. 'egész Dunántúlon')?",
       "options": [
         "szerte",
         "mentén",
@@ -78,9 +78,9 @@
       "teaches": [
         "b2-regional-identities-vocab"
       ],
-      "sentence": "A Duna folyamatos kulturális _____ a dombos Dunántúl és a síkvidéki Alföld között.",
+      "sentence": "A Duna kulturális _____ a dombos Dunántúl és a síkvidéki Alföld között.",
       "answer": "vízválasztó",
-      "english": "The Danube is a continuous cultural dividing line between rolling Dunántúl and lowland Alföld."
+      "english": "The Danube is a cultural dividing line between hilly Dunántúl and the lowland Alföld."
     },
     {
       "id": "b2-tajegysegek-consolidation.ex05",
@@ -90,9 +90,9 @@
       "teaches": [
         "b2-spatial-postpositions"
       ],
-      "sentence": "A Dunán _____ az antikvitás és a római Pannonia kövei határozzák meg a táj történelmi emlékezetét.",
+      "sentence": "Az Alföld felől nézve a Dunán _____ a római Pannonia kövei határozzák meg a táj történelmi emlékezetét.",
       "answer": "túl",
-      "english": "Beyond the Danube, the stones of antiquity and Roman Pannonia define the historical memory of the landscape."
+      "english": "Seen from the Alföld, beyond the Danube the stones of Roman Pannonia define the landscape's historical memory."
     },
     {
       "id": "b2-tajegysegek-consolidation.ex06",
@@ -102,9 +102,9 @@
       "teaches": [
         "b2-spatial-postpositions"
       ],
-      "sentence": "A fontos folyami útvonalak _____ a középkor óta virágzó kereskedelmi központok alakultak ki.",
+      "sentence": "A fontos útvonalak _____ régóta virágzó mezővárosok alakultak ki.",
       "answer": "mentén",
-      "english": "Along the important river routes, thriving commercial centers have developed since the Middle Ages."
+      "english": "Along the important routes, market towns that have long flourished developed."
     },
     {
       "id": "b2-tajegysegek-consolidation.ex07",
@@ -117,7 +117,7 @@
       "prompt": [
         {
           "speaker": "Földrajzi szakértő",
-          "text": "Hogyan jellemezné Magyarország belső területi megoszlását?"
+          "text": "Mit mondana röviden a magyar tájegységekről?"
         },
         {
           "speaker": "Kutató",
@@ -125,11 +125,15 @@
         }
       ],
       "options": [
-        "A főváros tájékán koncentrálódik a népesség jelentős része, míg a határokon innen és túl gazdag regionális tájegységek őrzik hagyományaikat.",
-        "A főváros tájékán koncentrálódik a népesség jelentős része, míg a határokat innen és túl gazdag regionális tájegységek őrzik hagyományaikat.",
-        "A főváros tájékán koncentrálódik a népesség jelentős része, míg a határoknak innen és túl gazdag regionális tájegységek őrzik hagyományaikat."
+        "A főváros tájékán él a legtöbb ember, míg a határokon innen és túl gazdag tájegységek őrzik hagyományaikat.",
+        "A főváros tájékán él a legtöbb ember, míg a határokat innen és túl gazdag tájegységek őrzik hagyományaikat.",
+        "A főváros tájékán él a legtöbb ember, míg a határoknak innen és túl gazdag tájegységek őrzik hagyományaikat."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "verb-government-nak-nek"
+      }
     },
     {
       "id": "b2-tajegysegek-consolidation.ex08",
@@ -139,14 +143,19 @@
       "teaches": [
         "b2-spatial-postpositions"
       ],
-      "question": "Which sentence demonstrates proper B2 spatial postposition usage?",
+      "question": "Melyik mondatban áll helyesen a 'túl' és a 'mentén'?",
       "options": [
-        "A folyó mentén haladva, szerte a Balaton-felvidéken szőlőhegyeket találunk a hegyek táján.",
-        "A folyónál mentén szerteben a hegyen tájékán szőlők vannak.",
-        "A folyóról mentén a hegyek túl szerte állnak.",
-        "A hegyen mentén a folyó túl szerte van."
+        "A hegyeken túl a folyó mentén szőlők vannak.",
+        "A hegyekre túl a folyó mentén szőlők vannak.",
+        "A hegyeken túl a folyón mentén szőlők vannak.",
+        "A hegyeken túl a folyóhoz mentén szőlők vannak."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "on-en-on",
+        "3": "hoz-suffix"
+      }
     },
     {
       "id": "b2-tajegysegek-consolidation.ex09",
@@ -159,7 +168,7 @@
       "prompt": [
         {
           "speaker": "Néprajzkutató",
-          "text": "Mit tanulhatunk a szatmári és beregi kálvinista fatemplomokból?"
+          "text": "Mit tanulhatunk a Tisza menti kálvinista templomokból?"
         },
         {
           "speaker": "Művészettörténész",
@@ -167,11 +176,15 @@
         }
       ],
       "options": [
-        "Azt, hogy a folyók mentén szerte az egyszerű falusi közösségek is képesek voltak magas színvonalú egyedi építészetet teremteni.",
-        "Azt, hogy a folyók mentébe szerte az egyszerű falusi közösségek is képesek voltak magas színvonalú egyedi építészetet teremteni.",
-        "Azt, hogy a folyók mentéből szerte az egyszerű falusi közösségek is képesek voltak magas színvonalú egyedi építészetet teremteni."
+        "Azt, hogy a folyók mentén szerte az egyszerű falusi közösségek is képesek voltak szép és sajátos építészetet teremteni.",
+        "Azt, hogy a folyók mentébe szerte az egyszerű falusi közösségek is képesek voltak szép és sajátos építészetet teremteni.",
+        "Azt, hogy a folyók mentéből szerte az egyszerű falusi közösségek is képesek voltak szép és sajátos építészetet teremteni."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "elative-bol-bel"
+      }
     },
     {
       "id": "b2-tajegysegek-consolidation.ex10",
@@ -189,7 +202,9 @@
         "túl",
         "élő",
         "közösségek",
-        "összetartanak."
+        "őrzik",
+        "a",
+        "hagyományaikat."
       ],
       "solution": [
         "A",
@@ -199,9 +214,11 @@
         "túl",
         "élő",
         "közösségek",
-        "összetartanak."
+        "őrzik",
+        "a",
+        "hagyományaikat."
       ],
-      "english": "Communities living on this side and beyond the border stick together."
+      "english": "Communities living on both sides of the border preserve their traditions."
     },
     {
       "id": "b2-tajegysegek-consolidation.ex11",
@@ -215,21 +232,21 @@
         "Dunántúl-szerte",
         "történelmi",
         "szőlőhegyek",
-        "övezik",
+        "vannak",
         "a",
         "lankás",
-        "tájat."
+        "tájon."
       ],
       "solution": [
         "Dunántúl-szerte",
         "történelmi",
         "szőlőhegyek",
-        "övezik",
+        "vannak",
         "a",
         "lankás",
-        "tájat."
+        "tájon."
       ],
-      "english": "Throughout Dunántúl, historical vineyards surround the undulating landscape."
+      "english": "Throughout Dunántúl there are historical vineyards in the undulating landscape."
     },
     {
       "id": "b2-tajegysegek-consolidation.ex12",
@@ -242,11 +259,11 @@
       "template": [
         {
           "prompt": "Write a sentence contrasting Dunántúl and Alföld using 'Dunán túl' and 'lankás'.",
-          "answer": "A Dunán túl lankás dombvidék húzódik, míg a folyam másik partján az Alföld végtelen síksága kezdődik."
+          "answer": "A Dunán túl lankás dombvidék húzódik, míg a folyó másik partján az Alföld síksága kezdődik."
         },
         {
           "prompt": "Write a sentence describing regional diversity across the country using 'mentén' and 'szerte'.",
-          "answer": "A folyók mentén és szerte az országban gazdag népi építészeti emlékek őrzik a magyar tájegységek sajátos szellemét."
+          "answer": "A folyók mentén és szerte az országban a népi építészet gazdag emlékei őrzik a magyar tájegységek szellemét."
         }
       ]
     }

@@ -73,14 +73,17 @@
       "teaches": [
         "b2-relational-compounds"
       ],
-      "question": "Melyik összetett névutó fejezi ki, hogy valami valakinek az előnyére, hasznára történik ('valaki érdekében/javára')?",
+      "question": "Melyik szó jelenti azt, hogy valami valakinek az előnyére történik?",
       "options": [
         "javára",
         "rovására",
         "híján",
         "tájékán"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "3": "b2-spatial-postpositions"
+      }
     },
     {
       "id": "b2-falutortenet-02.ex05",
@@ -145,7 +148,10 @@
         "Mert a nemrég kapott saját földjüket és állataikat kényszerrel vették el tőlük a téeszek rovására.",
         "Mert a nemrég kapott saját földjüket és állataikat kényszerrel vették el tőlük a téeszeknek javára."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "2": "verb-government-nak-nek"
+      }
     },
     {
       "id": "b2-falutortenet-02.ex08",
@@ -154,9 +160,9 @@
       "stage": "reading",
       "question": "Mikor fejeződött be a magyar mezőgazdaság teljes kollektivizálása a szöveg szerint?",
       "options": [
-        "1959 és 1961 között, a Kádár-korszak erőszakos kampánya során.",
-        "1848 tavaszán a jobbágyfelszabadítással.",
-        "Csak az 1990-es rendszerváltás után."
+        "1959 és 1961 között, a Kádár-korszakban.",
+        "1950 és 1953 között, a beszolgáltatások idején.",
+        "1956 őszén, a forradalom idején."
       ],
       "correct": 0
     }

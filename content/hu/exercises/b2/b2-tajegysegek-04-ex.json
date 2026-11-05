@@ -12,7 +12,7 @@
       "pairs": [
         [
           "vízfejűség",
-          "macrocephaly / disproportionate dominance"
+          "'water-head': oversized capital"
         ],
         [
           "vonzáskörzet",
@@ -47,8 +47,8 @@
       "question": "Hogyan nevezi a szociológia azt a jelenséget, amikor a főváros aránytalanul uralja az ország gazdasági és demográfiai életét?",
       "options": [
         "vízfejűség",
-        "lankásság",
-        "önellátás",
+        "hátország",
+        "decentralizáció",
         "mezővárosiasodás"
       ],
       "correct": 0
@@ -61,9 +61,9 @@
       "teaches": [
         "b2-regional-identities-vocab"
       ],
-      "sentence": "A vidéki egyetemi városok fejlesztése hatékony lépés a túlzott főváros-központúság és a területi _____ csökkentésére.",
+      "sentence": "A vidékfejlesztés egyik célja a főváros-központúság és a területi _____ csökkentése.",
       "answer": "egyensúlytalanság",
-      "english": "Developing regional university cities is an effective step toward reducing excessive capital-centrism and territorial imbalance."
+      "english": "One aim of regional development is to reduce capital-centrism and territorial imbalance."
     },
     {
       "id": "b2-tajegysegek-04.ex04",
@@ -73,7 +73,7 @@
       "teaches": [
         "b2-spatial-postpositions"
       ],
-      "question": "Melyik névutó fejezi ki a hozzávetőleges területi elhelyezkedést ('valaminek a körzetében, vidékén')?",
+      "question": "Melyik szó jelenti azt, hogy 'valaminek a körzetében, vidékén'?",
       "options": [
         "tájékán",
         "szerte",
@@ -91,8 +91,11 @@
         "b2-spatial-postpositions"
       ],
       "sentence": "A Duna-kanyar _____ a hegyek és a víz találkozása páratlan panorámát nyújt a kirándulóknak.",
-      "answer": "táján",
-      "english": "Around the Danube Bend, the encounter of hills and water provides an incomparable panorama for excursionists."
+      "english": "Around the Danube Bend, the encounter of hills and water provides an incomparable panorama for excursionists.",
+      "answers": [
+        "táján",
+        "tájékán"
+      ]
     },
     {
       "id": "b2-tajegysegek-04.ex06",
@@ -135,7 +138,7 @@
       "prompt": [
         {
           "speaker": "Várostervező",
-          "text": "Miért vált Budapest ekkora óriássá a történelmi Magyarország felbomlása után?"
+          "text": "Miért vált Budapest a trianoni békeszerződés után a többi városnál sokkal nagyobbá?"
         },
         {
           "speaker": "Szociológus",
@@ -143,22 +146,26 @@
         }
       ],
       "options": [
-        "Mert a korábbi természetes alközpontok a határon túlra kerültek, így a főváros és tájéka maradt az egyetlen igazi metropolisz.",
-        "Mert a korábbi természetes alközpontok a határra túlra kerültek, így a főváros és tájékra maradt az egyetlen igazi metropolisz.",
-        "Mert a korábbi természetes alközpontok a határról túlra kerültek, így a főváros és tájékból maradt az egyetlen igazi metropolisz."
+        "Mert a korábbi regionális központok közül több a határon túl maradt, így a főváros és tájéka lett a legfontosabb központ.",
+        "Mert a korábbi regionális központok közül több a határra túl maradt, így a főváros és tájéka lett a legfontosabb központ.",
+        "Mert a korábbi regionális központok közül több a határról túl maradt, így a főváros és tájéka lett a legfontosabb központ."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "delative-rol-rel"
+      }
     },
     {
       "id": "b2-tajegysegek-04.ex08",
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen pozitív szerepet tulajdonítanak a fővárosnak a modern gazdaságkutatók?",
+      "question": "Milyen pozitív szerepet tulajdonítanak a fővárosnak a modern közgazdászok?",
       "options": [
-        "Globális innovációs kapuként vonzza a külföldi tőkét és technológiát az egész ország számára.",
-        "Minden állampolgár számára ingyenes lakhatást biztosít a belvárosban.",
-        "Megakadályozza, hogy az országnak külföldi kereskedelmi kapcsolatai legyenek."
+        "Kapuként működik, amelyen át a külföldi tőke érkezik.",
+        "Megállítja a fiatalok elköltözését a vidékről.",
+        "Gyorsabb vonatokat indít a vidéki nagyvárosok között."
       ],
       "correct": 0
     }

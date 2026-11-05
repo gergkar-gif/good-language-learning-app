@@ -16,7 +16,7 @@
         ],
         [
           "elszívó hatás",
-          "suction effect / urban pull"
+          "drain effect / urban pull"
         ],
         [
           "korfa",
@@ -47,9 +47,9 @@
       "question": "Ki az a személy, aki az aprófalvakban mikrobusszal segíti az idős lakosokat gyógyszerszállítással és orvoshoz járással?",
       "options": [
         "falugondnok",
-        "cseléd",
-        "zsellér",
-        "kulák"
+        "falusi orvos",
+        "uradalmi cseléd",
+        "gazdag kulák"
       ],
       "correct": 0
     },
@@ -73,14 +73,17 @@
       "teaches": [
         "b2-relational-compounds"
       ],
-      "question": "Melyik névutó fejezi ki, hogy valami egy szükséges dolog hiánya miatt nem valósulhat meg ('valaminek a hiányában')?",
+      "question": "Melyik szó fejezi ki, hogy valami egy szükséges dolog hiánya miatt nem valósulhat meg?",
       "options": [
         "híján",
         "javára",
         "rovására",
         "mentén"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "3": "b2-spatial-postpositions"
+      }
     },
     {
       "id": "b2-falutortenet-04.ex05",
@@ -91,8 +94,11 @@
         "b2-relational-compounds"
       ],
       "sentence": "Helyi munkahelyek _____ a falu fiataljai kénytelenek voltak a megyeszékhelyre költözni.",
-      "answer": "híján",
-      "english": "For lack of local jobs, the village youth were forced to move to the county capital."
+      "english": "For lack of local jobs, the village youth were forced to move to the county capital.",
+      "answers": [
+        "híján",
+        "hiányában"
+      ]
     },
     {
       "id": "b2-falutortenet-04.ex06",
@@ -109,7 +115,9 @@
         "a",
         "gazdák",
         "nem",
-        "fejleszthettek."
+        "vehettek",
+        "új",
+        "gépeket."
       ],
       "solution": [
         "Megfelelő",
@@ -118,9 +126,11 @@
         "a",
         "gazdák",
         "nem",
-        "fejleszthettek."
+        "vehettek",
+        "új",
+        "gépeket."
       ],
-      "english": "For lack of adequate capital, the farmers could not develop."
+      "english": "For lack of adequate capital, the farmers could not buy new machines."
     },
     {
       "id": "b2-falutortenet-04.ex07",
@@ -145,7 +155,10 @@
         "Mert munkahelyek és korszerű szolgáltatások híjában a fiatalok a városokba kényszerültek vándorolni.",
         "Mert munkahelyek és korszerű szolgáltatásokat híján a fiatalok a városokba kényszerültek vándorolni."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-falutortenet-04.ex08",
@@ -154,9 +167,9 @@
       "stage": "reading",
       "question": "Milyen feladatot lát el a falugondnoki szolgálat az aprófalvakban a szöveg szerint?",
       "options": [
-        "Napi kapcsolatot teremt a külvilággal: ebédet és gyógyszert szállít, és orvoshoz viszi az idős lakosokat.",
-        "Minden lakostól beszedi a kötelező termény leadásokat.",
-        "Kizárólag régészeti feltárásokat vezet a falu határában."
+        "Ebédet és gyógyszert szállít, és orvoshoz viszi az időseket.",
+        "Az iskolák bezárása után ő tanítja a gyerekeket a faluban.",
+        "Megszervezi a falu földjeinek eladását a városi cégeknek."
       ],
       "correct": 0
     }

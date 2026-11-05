@@ -1,0 +1,548 @@
+[
+ {
+  "file": "content/hu/lessons/b2/b2-falutortenet-01.json",
+  "old": "Nyelvtanilag a társadalmi-gazdasági elemzések elengedhetetlen összetett névutóit (rovására, javára, függvényében, híján, ellenében) sajátítjuk el.",
+  "new": "Nyelvtanilag a 39. egységből ismert, társadalmi-gazdasági elemzésekben használt összetett névutókat (rovására, javára, függvényében, híján, ellenében) ismételjük át.",
+  "why": "The intro presents the Unit 39 postpositions (b2-20-01, b2-20-02) as new ('sajátítjuk el'); recap.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-falutortenet-02-a-gr.json",
+  "old": "A döntés a termelőszövetkezetek javára kedvezett.",
+  "new": "A döntés a termelőszövetkezetek javára dőlt el.",
+  "why": "'javára kedvezett' is redundant and unnatural (kedvez takes the dative); dől el fits.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-01-ex.json",
+  "id": "b2-falutortenet-01.ex02",
+  "set": {
+   "options": [
+    "külterület",
+    "vízválasztó",
+    "dűlőút",
+    "apátság"
+   ]
+  },
+  "why": "'cívisség' is a non-word distractor.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-01-ex.json",
+  "id": "b2-falutortenet-01.ex03",
+  "set": {
+   "sentence": "A tanyák életformájának alapja nagyrészt az _____ volt: a család maga termelt meg sok mindent.",
+   "answer": "önellátás",
+   "english": "The basis of life on the tanyas was largely self-sufficiency: the family produced much of what it needed itself."
+  },
+  "why": "The old blank 'önellátásra' tests the -ra government (a form), not the word, yet is tagged vocabulary; 'szinte teljes' also overstates the story's softened claim; unmet homokhátsági, rendezkedtek, állítva.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-01-ex.json",
+  "id": "b2-falutortenet-01.ex04",
+  "set": {
+   "question": "Melyik szó jelenti azt, hogy 'valaminek a kárára, veszteségére'?",
+   "distractor_skills": {
+    "2": "b2-spatial-postpositions",
+    "3": "b2-spatial-postpositions"
+   }
+  },
+  "why": "Stem used the grammar term névutó; mentén and szerte are real postpositions of Unit 37's skill.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-01-ex.json",
+  "id": "b2-falutortenet-01.ex08",
+  "set": {
+   "options": [
+    "Összefogással: kalákában, disznótorban és közös aratásban.",
+    "Rendszeres hivatali rendezvényeken a városi hatóságokkal.",
+    "Hetente a városi piacon töltötték a szabadidejüket."
+   ]
+  },
+  "why": "check-content length-giveaway (86 vs 45); wrong options (Vienna coffeehouses by train) were absurd; the old right option named 'építkezés', which the story does not mention.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-02-ex.json",
+  "id": "b2-falutortenet-02.ex04",
+  "set": {
+   "question": "Melyik szó jelenti azt, hogy valami valakinek az előnyére történik?",
+   "distractor_skills": {
+    "3": "b2-spatial-postpositions"
+   }
+  },
+  "why": "check-content answer-in-prompt (javára in the stem); stem used the term összetett névutó; tájékán is Unit 37's skill.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-02-ex.json",
+  "id": "b2-falutortenet-02.ex08",
+  "set": {
+   "options": [
+    "1959 és 1961 között, a Kádár-korszakban.",
+    "1950 és 1953 között, a beszolgáltatások idején.",
+    "1956 őszén, a forradalom idején."
+   ]
+  },
+  "why": "check-content length-giveaway (62 vs 40); wrong options (1848, after 1990) were absurd; 'erőszakos kampánya' unmet.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-03-ex.json",
+  "id": "b2-falutortenet-03.ex04",
+  "set": {
+   "question": "Melyik szó jelenti azt, hogy valami egy másik tényező változásától függve alakul?",
+   "options": [
+    "függvényében",
+    "szempontjából",
+    "ellenében",
+    "rovására"
+   ],
+   "correct": 0
+  },
+  "why": "check-content length-giveaway (12 vs 8); stem used the term névutó and the near-answer 'függvényeként'; wrong options are Unit 39 postpositions.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-03-ex.json",
+  "id": "b2-falutortenet-03.ex08",
+  "set": {
+   "options": [
+    "A pihenés nélküli kettős műszak felőrölte az egészségüket.",
+    "Minden megtakarításukat elvették a téeszek, és szegények maradtak.",
+    "Nem építettek új házat, mert nem volt rá pénzük."
+   ]
+  },
+  "why": "check-content length-giveaway (93 vs 49); wrong options now plausible but contradicted by the story.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-04-ex.json",
+  "id": "b2-falutortenet-04.ex02",
+  "set": {
+   "options": [
+    "falugondnok",
+    "falusi orvos",
+    "uradalmi cseléd",
+    "gazdag kulák"
+   ]
+  },
+  "why": "check-content length-giveaway (11 vs 7).",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-04-ex.json",
+  "id": "b2-falutortenet-04.ex04",
+  "set": {
+   "question": "Melyik szó fejezi ki, hogy valami egy szükséges dolog hiánya miatt nem valósulhat meg?",
+   "distractor_skills": {
+    "3": "b2-spatial-postpositions"
+   }
+  },
+  "why": "Stem used the term névutó; mentén is Unit 37's skill.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-04-ex.json",
+  "id": "b2-falutortenet-04.ex05",
+  "set": {
+   "answers": [
+    "híján",
+    "hiányában"
+   ],
+   "answer": null
+  },
+  "why": "hiányában is an equal form of híján here (Helyi munkahelyek hiányában): two right answers (unsure).",
+  "sure": false,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-04-ex.json",
+  "id": "b2-falutortenet-04.ex06",
+  "set": {
+   "tiles": [
+    "Megfelelő",
+    "tőke",
+    "híján",
+    "a",
+    "gazdák",
+    "nem",
+    "vehettek",
+    "új",
+    "gépeket."
+   ],
+   "solution": [
+    "Megfelelő",
+    "tőke",
+    "híján",
+    "a",
+    "gazdák",
+    "nem",
+    "vehettek",
+    "új",
+    "gépeket."
+   ],
+   "english": "For lack of adequate capital, the farmers could not buy new machines."
+  },
+  "why": "'nem fejleszthettek' (fejleszt without an object) is not natural; story 04 has the machines.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-04-ex.json",
+  "id": "b2-falutortenet-04.ex08",
+  "set": {
+   "options": [
+    "Ebédet és gyógyszert szállít, és orvoshoz viszi az időseket.",
+    "Az iskolák bezárása után ő tanítja a gyerekeket a faluban.",
+    "Megszervezi a falu földjeinek eladását a városi cégeknek."
+   ]
+  },
+  "why": "check-content length-giveaway (105 vs 56) and tell-absolute (Kizárólag); wrong options were absurd (archaeological digs).",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-05-ex.json",
+  "id": "b2-falutortenet-05.ex03",
+  "set": {
+   "sentence": "A modern technológia és a _____ lehetővé teszi, hogy diplomás fiatalok falun élve is nemzetközi munkát végezzenek.",
+   "english": "Modern technology and remote work make it possible for graduates to do international work while living in a village."
+  },
+  "why": "'otthoni _____' also takes 'munka' (home work): two right answers; blank is now only távmunka.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-05-ex.json",
+  "id": "b2-falutortenet-05.ex04",
+  "set": {
+   "question": "Melyik szó fejezi ki, hogy valamit valamiért cserébe vállalunk?",
+   "distractor_skills": {
+    "3": "b2-spatial-postpositions"
+   }
+  },
+  "why": "check-content answer-in-prompt (ellenében in the stem); stem used the term összetett névutó.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-05-ex.json",
+  "id": "b2-falutortenet-05.ex08",
+  "set": {
+   "options": [
+    "Nem a mennyiségre, hanem az egyedi tájjellegre és a minőségre törekednek.",
+    "Nagy gyárakat építenek a falvakban, hogy növeljék a tömegtermelést.",
+    "A régi paraszti létformához szeretnének pontosan visszatérni."
+   ]
+  },
+  "why": "check-content length-giveaway (99 vs 57) and tell-absolute (Kizárólag); wrong options were absurd (car parks, luxury imports); now they contradict the text (it says they do not copy the old life).",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-consolidation-ex.json",
+  "id": "b2-falutortenet-consolidation.ex02",
+  "set": {
+   "question": "Melyik szó fejezi ki, hogy egy folyamat valaki más kárára, veszteségére megy végbe?"
+  },
+  "why": "Stem used the term összetett névutó (and unmet 'entitás').",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-consolidation-ex.json",
+  "id": "b2-falutortenet-consolidation.ex03",
+  "set": {
+   "options": [
+    "háztáji gazdaság",
+    "termelőszövetkezet",
+    "uradalmi cselédség",
+    "kulákbirtok"
+   ]
+  },
+  "why": "check-content length-giveaway (16 vs 11); uradalom and főapátság (the latter from Unit 38) are unmet.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-consolidation-ex.json",
+  "id": "b2-falutortenet-consolidation.ex04",
+  "set": {
+   "sentence": "Az 1945-ös történelmi _____ során a földesurak földjét a nincstelen parasztok kapták meg.",
+   "english": "During the historic land reform of 1945, the landlords' land went to the landless peasants."
+  },
+  "why": "Unmet nagybirtokot, osztottak, szét; 'millions of acres' is wrong (the unit is the kataszteri hold).",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-consolidation-ex.json",
+  "id": "b2-falutortenet-consolidation.ex05",
+  "set": {
+   "sentence": "A gyors haszon a természet és az emberek egészsége _____ ment.",
+   "english": "Quick profit came at the expense of nature and people's health."
+  },
+  "why": "Unmet túlhajszolása, természeti.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-consolidation-ex.json",
+  "id": "b2-falutortenet-consolidation.ex06",
+  "set": {
+   "sentence": "A családok bevételei a háztáji gazdaságba fektetett munka _____ emelkedtek.",
+   "english": "Family incomes rose as a function of the labour invested in the household plot."
+  },
+  "why": "Unmet 'gyarapodtak'.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-consolidation-ex.json",
+  "id": "b2-falutortenet-consolidation.ex07",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Szociológus",
+     "text": "Hogyan hatott a rendszerváltás a távoli aprófalvakra?"
+    },
+    {
+     "speaker": "Demográfus",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Munkahelyek és szolgáltatások híján a fiatalok a városokba költöztek, a faluban sokan idősek maradtak.",
+    "Munkahelyek és szolgáltatások híjában a fiatalok a városokba költöztek, a faluban sokan idősek maradtak.",
+    "Munkahelyek és szolgáltatásokat híján a fiatalok a városokba költöztek, a faluban sokan idősek maradtak."
+   ],
+   "distractor_skills": {
+    "2": "how-the-accusative-t-works"
+   }
+  },
+  "why": "Unmet elvándoroltak, szűkült, periférikus (consolidation has no vocabulary list); 'javarészt idős emberekre szűkült' overstated.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-consolidation-ex.json",
+  "id": "b2-falutortenet-consolidation.ex08",
+  "set": {
+   "question": "Melyik mondatban áll helyesen a 'javára' és a 'rovására'?",
+   "options": [
+    "A földosztás a zsellérek javára történt, de a kollektivizálás a parasztok rovására ment.",
+    "A földosztás a zsellérekre javára történt, de a kollektivizálás a parasztok rovására ment.",
+    "A földosztás a zsellérekhez javára történt, de a kollektivizálás a parasztok rovására ment.",
+    "A földosztás a zsellérek javára történt, de a kollektivizálás a parasztoktól rovására ment."
+   ],
+   "distractor_skills": {
+    "1": "ra-re",
+    "2": "hoz-suffix",
+    "3": "tol-tol"
+   }
+  },
+  "why": "check-content length-giveaway (113 vs 62); the three wrong options were word salad with many faults; English stem replaced; one fault per option now.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-consolidation-ex.json",
+  "id": "b2-falutortenet-consolidation.ex09",
+  "set": {
+   "options": [
+    "A nyugalom és a tiszta környezet ellenében szívesen vállaljuk a vidéki élet kihívásait a közösség javára.",
+    "A nyugalom és a tiszta környezet ellenében szívesen vállaljuk a vidéki élet kihívásait a közösség rovására.",
+    "A nyugalom és a tiszta környezet ellenében szívesen vállaljuk a vidéki élet kihívásait a közösség javában."
+   ],
+   "distractor_skills": {
+    "2": "ban-ben-in"
+   }
+  },
+  "why": "Unmet természeti, levegő; option 3 had two differences (vállalnánk and javában). Also \"a minőségi gazdálkodás javára\" was an odd phrase.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-falutortenet-consolidation-ex.json",
+  "old": "A döntéshozók nem fejleszthetik a nehézipart a mezőgazdaság rovására, a fenntartható gazdálkodás javára kell cselekedniük.",
+  "new": "A kollektivizálás a parasztok rovására és a termelőszövetkezetek javára történt.",
+  "why": "Stored answer: unmet döntéshozók, fejleszthetik, fenntartható, cselekedniük, and the clause 'javára kell cselekedniük' is garbled; the new answer uses the unit's own facts.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-01-tanyavilag.json",
+  "old": "A tanya világa a szinte teljes önellátásra épült: a család maga sütötte kenyerét, hizlalta sertéseit, nevelte zöldségeit és szőtte ruháit.",
+  "new": "A tanya világa nagyrészt az önellátásra épült: a család maga sütötte kenyerét, hizlalta sertéseit, nevelte zöldségeit, a felesleget pedig gyakran a város piacán értékesítette.",
+  "why": "Tanyas also produced for the market (wine, animals, vegetables); 'nearly complete self-sufficiency' and home-woven clothes overstate (check).",
+  "sure": false,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-01-tanyavilag.json",
+  "old": "A pusztai emberek bizalmatlanok voltak a városi hatóságokkal szemben",
+  "new": "A pusztai emberek gyakran bizalmatlanok voltak a városi hatóságokkal szemben",
+  "why": "Generalisation softened.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-02-foldosztaskollektivizalas.json",
+  "old": "A hatalmat megszerző kommunista diktatúra a szovjet kolhozrendszer mechanikus másolását tűzte ki célul.",
+  "new": "A hatalmat megszerző kommunista diktatúra a szovjet kolhozrendszer mintáját követte.",
+  "why": "'mechanikus másolás' is a judgement; the Soviet kolkhoz model is the historians' standard comparison.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-02-foldosztaskollektivizalas.json",
+  "old": "A gazdák megtörésére bevezették a könyörtelen kötelező beszolgáltatást: a padlássöprések során még a vetőmagot is elkobozták a parasztoktól.",
+  "new": "Szigorú kötelező beszolgáltatást vezettek be: a padlássöprések során sok helyen még a vetőmagot is elkobozták a parasztoktól.",
+  "why": "'A gazdák megtörésére' puts an intention in the regime's mind; 'könyörtelen' is used twice in the segment.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-02-foldosztaskollektivizalas.json",
+  "old": "A legtehetősebb és legszorgalmasabb gazdákat megbélyegezték, 'kuláknak' bélyegezve börtönbe vetették vagy kitelepítették őket a téeszszervezés javára.",
+  "new": "A módosabb gazdákat 'kuláknak' bélyegezték, sokukat börtönbe vetették vagy kitelepítették, vagyonukat pedig gyakran a téeszszervezés javára vették el.",
+  "why": "'megbélyegezték, ... bélyegezve' is a clumsy repetition; 'legszorgalmasabb' is a value judgement; 'sokukat' hedges (check).",
+  "sure": false,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-02-foldosztaskollektivizalas.json",
+  "old": "a Kádár-rezsim 1959 és 1961 között könyörtelen agitációval végleg befejezte a kollektivizálást. A parasztság évszázados magántulajdonát a kollektív szocialista gazdaság javára számolták fel.",
+  "new": "a Kádár-rezsim 1959 és 1961 között kemény agitációval és nyomással befejezte a kollektivizálást. A parasztok magántulajdonát a kollektív szocialista gazdaság javára számolták fel.",
+  "why": "'évszázados magántulajdon' contradicts paragraph 1 (the land was given in 1945); 'végleg' dropped.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-02-foldosztaskollektivizalas.json",
+  "old": "amely örökre megváltoztatta a falu és a föld viszonyát",
+  "new": "amely tartósan megváltoztatta a falu és a föld viszonyát",
+  "why": "'örökre' overclaims.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-03-haztajigazdasag.json",
+  "old": "Az 1960-as évek közepére a Kádár-rendszer kénytelen volt felismerni, hogy a szovjet típusú merev tervgazdálkodás élelmiszerhiányhoz vezet.",
+  "new": "A történészek szerint az 1960-as évek közepére a Kádár-rendszer engedményekre kényszerült, mert a szovjet típusú merev tervgazdálkodás élelmiszerhiányhoz vezetett.",
+  "why": "'kénytelen volt felismerni' reads the regime's mind; attributed to historians (check).",
+  "sure": false,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-03-haztajigazdasag.json",
+  "old": "az összes termőföld alig tíz százalékát tették ki, a zöldség-, gyümölcs- és hústermelés több mint egyharmadát ezek a családi minigazdaságok biztosították",
+  "new": "az összes termőföldnek csak mintegy tizedét tették ki, a mezőgazdasági termelés mintegy egyharmadát ezek a családi minigazdaságok adták",
+  "why": "Shares per product (more than a third of vegetables, fruit and meat) unverified; the commonly quoted figure is about a third of agricultural output (check).",
+  "sure": false,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-03-haztajigazdasag.json",
+  "old": "négyszobás téglaépületekre",
+  "new": "többszobás téglaépületekre",
+  "why": "'négyszobás' is too specific.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-03-haztajigazdasag.json",
+  "old": "felőrölte az emberek egészségét",
+  "new": "sokak egészségét felőrölte",
+  "why": "Generalisation softened.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-04-falvakatalakulasa.json",
+  "old": "a kistelepülések elveszítették legfőbb munkaadójukat, miközben a kárpótlási jegyekkel visszaszerzett apró földparcellák többségén",
+  "new": "sok kistelepülés elveszítette legfőbb munkaadóját, miközben a kárpótlási jegyekkel visszaszerzett apró földparcellák nagy részén",
+  "why": "Generalisations softened (check).",
+  "sure": false,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-04-falvakatalakulasa.json",
+  "old": "zártak be egymás után a posták, a kocsmák és az általános iskolák",
+  "new": "sok helyen bezártak a posták, a kocsmák és az általános iskolák",
+  "why": "'one after another' overstated; present-day claim (check).",
+  "sure": false,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-04-falvakatalakulasa.json",
+  "old": "Sok ötszáz fő alatti kistelepülésen szinte kizárólag idős, magányos nyugdíjasok maradtak, akik az autóbuszjáratok ritkulása és a helyi orvosi ellátás híján teljesen kiszolgáltatottá váltak.",
+  "new": "Sok ötszáz fő alatti kistelepülésen aránytalanul sok idős, magányos nyugdíjas maradt, akik az autóbuszjáratok ritkulása és a helyi orvosi ellátás híján kiszolgáltatottá váltak.",
+  "why": "'szinte kizárólag ... teljesen' overstated.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-04-falvakatalakulasa.json",
+  "old": "Erre a súlyos társadalmi válságra adott választ a falugondnoki szolgálat rendszere.",
+  "new": "Erre a helyzetre kívánt választ adni az 1990-ben induló falugondnoki szolgálat rendszere.",
+  "why": "reviewer: the service began as a trial in the Cserehát in August 1990 (the reader's 'before 1990' is wrong); 'súlyos társadalmi válság' softened",
+  "sure": false,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-04-falvakatalakulasa.json",
+  "old": "míg a főváros és a nagyvárosok körüli agglomerációs falvak virágzanak, addig a távoli perifériák aprófalvai a puszta fennmaradásukért küzdenek a tőke és a munkaerő híján.",
+  "new": "míg a főváros és a nagyvárosok körüli agglomerációs falvak általában gyarapodnak, addig a távoli perifériák sok aprófalva a puszta fennmaradásért küzd a tőke és a munkaerő híján.",
+  "why": "Present-day generalisation softened (check).",
+  "sure": false,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-05-ujvidekielet.json",
+  "old": "A nagyvárosi hajszából kiábrándult értelmiségiek, fiatal családok és vállalkozók fedezik fel újra",
+  "new": "A nagyvárosi hajszából kiábrándult értelmiségiek, fiatal családok és vállalkozók közül sokan fedezik fel újra",
+  "why": "Present-day trend: 'many of them' instead of all (check).",
+  "sure": false,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-05-ujvidekielet.json",
+  "old": "csupán átlényegült",
+  "new": "csupán átalakult",
+  "why": "'átlényegült' (transubstantiated) is the wrong register.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-05-ujvidekielet.json",
+  "old": "modern élettérré vált, amely képes választ adni",
+  "new": "modern élettérré vált, amely sokak szerint képes választ adni",
+  "why": "Optimistic prediction attributed.",
+  "sure": true,
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-falutortenet-05-ujvidekielet.json",
+  "old": "Balaton-felvidék, Őrség és a Zempléni-hegység",
+  "new": "Balaton-felvidék, Őrség és a Dunakanyar",
+  "why": "Location line names the Zempléni mountains; the text names the Danube Bend.",
+  "sure": true,
+  "kind": "hungarian"
+ }
+]

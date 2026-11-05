@@ -49,7 +49,7 @@
         "nyelvjárás",
         "vízválasztó",
         "hátország",
-        "önellátás"
+        "tájjelleg"
       ],
       "correct": 0
     },
@@ -61,9 +61,9 @@
       "teaches": [
         "b2-regional-identities-vocab"
       ],
-      "sentence": "Az Őrség boronafalas házai a magyar népi _____ felbecsülhetetlen értékű emlékei.",
+      "sentence": "Az Őrség boronafalas házai a magyar népi _____ fontos emlékei.",
       "answer": "építészet",
-      "english": "The log-walled houses of Őrség are invaluable monuments of Hungarian vernacular folk architecture."
+      "english": "The log-walled houses of Őrség are important monuments of Hungarian vernacular folk architecture."
     },
     {
       "id": "b2-tajegysegek-05.ex04",
@@ -73,14 +73,19 @@
       "teaches": [
         "b2-spatial-postpositions"
       ],
-      "question": "Melyik mondat alkalmazza helyesen a 'mentén' és 'szerte' térbeli névutókat?",
+      "question": "Melyik mondatban áll helyesen a 'mentén' és a 'szerte'?",
       "options": [
         "A folyó mentén haladva szerte a vidéken festett templomokat találunk.",
-        "A folyón mentén haladva szerte a vidékben festett templomokat találunk.",
-        "A folyóhoz mentén haladva vidékszerte festett templomokat találunk.",
-        "A folyóról mentén haladva a vidéken szerte festett templomokat találunk."
+        "A folyón mentén haladva szerte a vidéken festett templomokat találunk.",
+        "A folyóhoz mentén haladva szerte a vidéken festett templomokat találunk.",
+        "A folyóról mentén haladva szerte a vidéken festett templomokat találunk."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "on-en-on",
+        "2": "hoz-suffix",
+        "3": "delative-rol-rel"
+      }
     },
     {
       "id": "b2-tajegysegek-05.ex05",
@@ -107,22 +112,24 @@
         "Tisza",
         "mentén",
         "szerte",
-        "híresek",
         "a",
+        "falvakban",
         "fa",
-        "haranglábak."
+        "haranglábak",
+        "állnak."
       ],
       "solution": [
         "A",
         "Tisza",
         "mentén",
         "szerte",
-        "híresek",
         "a",
+        "falvakban",
         "fa",
-        "haranglábak."
+        "haranglábak",
+        "állnak."
       ],
-      "english": "Along the Tisza, wooden belfries are famous far and wide."
+      "english": "Along the Tisza, wooden belfries stand all across the villages."
     },
     {
       "id": "b2-tajegysegek-05.ex07",
@@ -156,9 +163,9 @@
       "stage": "reading",
       "question": "Miben rejlik a magyar kultúra legnagyobb ereje a szöveg záró gondolata szerint?",
       "options": [
-        "Abban a gazdag sokszínűségben, amely a pannon domboktól a keleti hegyekig harmonikus egységet alkot.",
-        "Abban, hogy minden tájegység pontosan ugyanolyan építészeti stílust alkalmazott.",
-        "Abban, hogy a főváros teljesen felváltotta a vidéki hagyományokat."
+        "Abban a sokszínűségben, amely a pannon domboktól a keleti hegyekig tart.",
+        "Abban, hogy minden tájegység építészete és nyelve egyforma volt.",
+        "Abban, hogy a főváros már felváltotta a vidéki hagyományokat."
       ],
       "correct": 0
     }

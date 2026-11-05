@@ -24,7 +24,7 @@
         ],
         [
           "kockaház",
-          "cube house (socialist rural home)"
+          "cube house (hip-roofed family house)"
         ],
         [
           "falugondnok",
@@ -44,7 +44,7 @@
       "teaches": [
         "b2-relational-compounds"
       ],
-      "question": "Melyik összetett névutó fejezi ki, hogy egy folyamat egy másik entitás kárára, veszteségére megy végbe?",
+      "question": "Melyik szó fejezi ki, hogy egy folyamat valaki más kárára, veszteségére megy végbe?",
       "options": [
         "rovására",
         "javára",
@@ -64,9 +64,9 @@
       "question": "Hogyan nevezték a Kádár-korszakban a kollektív munka mellett működő családi másodgazdaságot?",
       "options": [
         "háztáji gazdaság",
-        "kulákbirtok",
-        "uradalom",
-        "főapátság"
+        "termelőszövetkezet",
+        "uradalmi cselédség",
+        "kulákbirtok"
       ],
       "correct": 0
     },
@@ -78,9 +78,9 @@
       "teaches": [
         "b2-village-change-vocab"
       ],
-      "sentence": "Az 1945-ös történelmi _____ során több millió hold nagybirtokot osztottak szét a zsellérek között.",
+      "sentence": "Az 1945-ös történelmi _____ során a földesurak földjét a nincstelen parasztok kapták meg.",
       "answer": "földosztás",
-      "english": "During the historic land reform of 1945, millions of acres of large estates were distributed among landless cottagers."
+      "english": "During the historic land reform of 1945, the landlords' land went to the landless peasants."
     },
     {
       "id": "b2-falutortenet-consolidation.ex05",
@@ -90,9 +90,9 @@
       "teaches": [
         "b2-relational-compounds"
       ],
-      "sentence": "A termelés túlhajszolása a természeti környezet és az emberi egészség _____ ment.",
+      "sentence": "A gyors haszon a természet és az emberek egészsége _____ ment.",
       "answer": "rovására",
-      "english": "Overstraining production came at the expense of the natural environment and human health."
+      "english": "Quick profit came at the expense of nature and people's health."
     },
     {
       "id": "b2-falutortenet-consolidation.ex06",
@@ -102,9 +102,9 @@
       "teaches": [
         "b2-relational-compounds"
       ],
-      "sentence": "A családok bevételei a háztáji gazdaságba fektetett munka _____ gyarapodtak.",
+      "sentence": "A családok bevételei a háztáji gazdaságba fektetett munka _____ emelkedtek.",
       "answer": "függvényében",
-      "english": "Family incomes grew as a function of the labor invested in the household plot."
+      "english": "Family incomes rose as a function of the labour invested in the household plot."
     },
     {
       "id": "b2-falutortenet-consolidation.ex07",
@@ -117,7 +117,7 @@
       "prompt": [
         {
           "speaker": "Szociológus",
-          "text": "Hogyan hatott a rendszerváltás a periférikus aprófalvakra?"
+          "text": "Hogyan hatott a rendszerváltás a távoli aprófalvakra?"
         },
         {
           "speaker": "Demográfus",
@@ -125,11 +125,14 @@
         }
       ],
       "options": [
-        "Munkahelyek és szolgáltatások híján a fiatalok elvándoroltak, így a lakosság javarészt idős emberekre szűkült.",
-        "Munkahelyek és szolgáltatások híjában a fiatalok elvándoroltak, így a lakosság javarészt idős emberekre szűkült.",
-        "Munkahelyek és szolgáltatásokat híján a fiatalok elvándoroltak, így a lakosság javarészt idős emberekre szűkült."
+        "Munkahelyek és szolgáltatások híján a fiatalok a városokba költöztek, a faluban sokan idősek maradtak.",
+        "Munkahelyek és szolgáltatások híjában a fiatalok a városokba költöztek, a faluban sokan idősek maradtak.",
+        "Munkahelyek és szolgáltatásokat híján a fiatalok a városokba költöztek, a faluban sokan idősek maradtak."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-falutortenet-consolidation.ex08",
@@ -139,14 +142,19 @@
       "teaches": [
         "b2-relational-compounds"
       ],
-      "question": "Which sentence demonstrates idiomatic B2 usage of relational compound postpositions?",
+      "question": "Melyik mondatban áll helyesen a 'javára' és a 'rovására'?",
       "options": [
-        "A gazdaság átalakítása a zsellérek javára indult, de a kollektivizálás az egyéni szabadság rovására valósult meg.",
-        "A gazdaság javára rovására zsellérek kollektivizálás valósult.",
-        "A zsellérek híján mentén a javára földet osztottak.",
-        "A földosztás függvényében rovására javára mentén volt."
+        "A földosztás a zsellérek javára történt, de a kollektivizálás a parasztok rovására ment.",
+        "A földosztás a zsellérekre javára történt, de a kollektivizálás a parasztok rovására ment.",
+        "A földosztás a zsellérekhez javára történt, de a kollektivizálás a parasztok rovására ment.",
+        "A földosztás a zsellérek javára történt, de a kollektivizálás a parasztoktól rovására ment."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "hoz-suffix",
+        "3": "tol-tol"
+      }
     },
     {
       "id": "b2-falutortenet-consolidation.ex09",
@@ -167,11 +175,14 @@
         }
       ],
       "options": [
-        "A természeti nyugalom és a tiszta levegő ellenében szívesen vállaljuk a vidéki élet kihívásait a minőségi gazdálkodás javára.",
-        "A természeti nyugalom és a tiszta levegő ellenében szívesen vállaljuk a vidéki élet kihívásait a minőségi gazdálkodás rovására.",
-        "A természeti nyugalom és a tiszta levegő ellenében szívesen vállalnánk a vidéki élet kihívásait a minőségi gazdálkodás javában."
+        "A nyugalom és a tiszta környezet ellenében szívesen vállaljuk a vidéki élet kihívásait a közösség javára.",
+        "A nyugalom és a tiszta környezet ellenében szívesen vállaljuk a vidéki élet kihívásait a közösség rovására.",
+        "A nyugalom és a tiszta környezet ellenében szívesen vállaljuk a vidéki élet kihívásait a közösség javában."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b2-falutortenet-consolidation.ex10",
@@ -246,7 +257,7 @@
         },
         {
           "prompt": "Write a sentence contrasting economic sacrifice and advantage using 'rovására' and 'javára'.",
-          "answer": "A döntéshozók nem fejleszthetik a nehézipart a mezőgazdaság rovására, a fenntartható gazdálkodás javára kell cselekedniük."
+          "answer": "A kollektivizálás a parasztok rovására és a termelőszövetkezetek javára történt."
         }
       ]
     }

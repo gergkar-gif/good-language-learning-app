@@ -24,7 +24,7 @@
         ],
         [
           "pusztai",
-          "plains-dwelling"
+          "of the puszta"
         ],
         [
           "dűlőút",
@@ -48,7 +48,7 @@
       "options": [
         "külterület",
         "vízválasztó",
-        "cívisség",
+        "dűlőút",
         "apátság"
       ],
       "correct": 0
@@ -61,9 +61,9 @@
       "teaches": [
         "b2-village-change-vocab"
       ],
-      "sentence": "A homokhátsági tanyák lakói szinte teljes _____ rendezkedtek be, maguk állítva elő minden élelmiszert.",
-      "answer": "önellátásra",
-      "english": "The residents of the Sand Ridge homesteads set up almost complete self-sufficiency, producing all food themselves."
+      "sentence": "A tanyák életformájának alapja nagyrészt az _____ volt: a család maga termelt meg sok mindent.",
+      "answer": "önellátás",
+      "english": "The basis of life on the tanyas was largely self-sufficiency: the family produced much of what it needed itself."
     },
     {
       "id": "b2-falutortenet-01.ex04",
@@ -73,14 +73,18 @@
       "teaches": [
         "b2-relational-compounds"
       ],
-      "question": "Melyik névutó jelenti azt, hogy 'valaminek a kárára, veszteségére'?",
+      "question": "Melyik szó jelenti azt, hogy 'valaminek a kárára, veszteségére'?",
       "options": [
         "rovására",
         "javára",
         "mentén",
         "szerte"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "2": "b2-spatial-postpositions",
+        "3": "b2-spatial-postpositions"
+      }
     },
     {
       "id": "b2-falutortenet-01.ex05",
@@ -145,7 +149,10 @@
         "Az önellátás és a magány gyakran az iskoláztatás és a kulturális kapcsolatok javára valósult meg.",
         "Az önellátás és a magány gyakran az iskoláztatás és a kulturális kapcsolatoknak rovására valósult meg."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "2": "verb-government-nak-nek"
+      }
     },
     {
       "id": "b2-falutortenet-01.ex08",
@@ -154,9 +161,9 @@
       "stage": "reading",
       "question": "Hogyan küzdöttek meg a tanyasi emberek a magánnyal a szöveg szerint?",
       "options": [
-        "Közösségi összefogással: kalákában segítették egymást az építkezésnél és az aratásnál.",
-        "Naponta vonattal utaztak a bécsi kávéházakba.",
-        "Minden hónapban elköltöztek egy másik faluba."
+        "Összefogással: kalákában, disznótorban és közös aratásban.",
+        "Rendszeres hivatali rendezvényeken a városi hatóságokkal.",
+        "Hetente a városi piacon töltötték a szabadidejüket."
       ],
       "correct": 0
     }
