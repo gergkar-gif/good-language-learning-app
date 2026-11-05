@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik szerkezet fejezi ki legtermészetesebben a hivatalos intézményi cselekvést a magyarban?",
+      "question": "Melyik mondat természetes magyarul, és nem nevezi meg a cselekvőt?",
       "options": [
-        "A 3. személyű többes számú igealak rejtett alannyal (pl. 'a tiltott kategóriába sorolják').",
-        "A -tat/-tet műveltető képző használata.",
-        "A segédigés passzív szerkezet (pl. 'be van tiltva')."
+        "A kéziratokat a tiltott kategóriába sorolják.",
+        "A kéziratok a tiltott kategóriába vannak sorolva.",
+        "A kéziratokat a tiltott kategóriába soroltuk."
       ],
       "correct": 0,
       "teaches": [
@@ -38,16 +38,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik ige fejez ki spontán, cselekvő nélküli folyamatot '-ódik/-ődik' képzővel?",
+      "question": "Melyik szó illik a mondatba? A szamizdat irodalom titokban ___ a konyhákban.",
       "options": [
-        "sokszorosítódik",
+        "sokszorosodik",
         "sokszorosíttat",
         "sokszorosítana"
       ],
       "correct": 0,
       "teaches": [
-        "agentless-constructions"
-      ]
+        "mediopassive-verbs-odik"
+      ],
+      "distractor_skills": {
+        "1": "causative-verbal-derivations",
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b2-szamizdat-consolidation.ex04",
@@ -69,10 +73,13 @@
       "stage": "recall",
       "sentence": "A szerzők a cenzúrát elkerülendő gyakran éltek a rejtett politikai _____ eszközével a színházban.",
       "hint": "allusion / double entendre",
-      "answer": "áthallások",
       "english": "To avoid censorship, authors often resorted to the tool of hidden political allusions in the theatre.",
       "teaches": [
         "b2-three-ts-censorship-vocab"
+      ],
+      "answers": [
+        "áthallások",
+        "áthallás"
       ]
     },
     {
@@ -80,12 +87,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A szamizdat folyóiratot a pártvezetésben súlyos államellenes veszélynek _____ a tisztviselők.",
+      "sentence": "A szamizdat kiadványokat a hivatalos körökben súlyos veszélynek _____.",
       "hint": "consider / 3rd plural",
-      "answer": "tekintették",
-      "english": "In the party leadership, officials regarded the samizdat periodical as a grave anti-state danger.",
+      "english": "In official circles, samizdat publications were regarded as a serious danger.",
       "teaches": [
         "agentless-constructions"
+      ],
+      "answers": [
+        "tekintették",
+        "tartották"
       ]
     },
     {
@@ -99,7 +109,7 @@
         "irodalom",
         "lapjai",
         "titokban",
-        "sokszorosítódtak",
+        "sokszorosodtak",
         "a",
         "konyhákban."
       ],
@@ -109,7 +119,7 @@
         "irodalom",
         "lapjai",
         "titokban",
-        "sokszorosítódtak",
+        "sokszorosodtak",
         "a",
         "konyhákban."
       ],
@@ -128,7 +138,7 @@
         "demokratikus",
         "ellenzék",
         "fellépése",
-        "megtörte",
+        "megkérdőjelezte",
         "az",
         "állami",
         "információs",
@@ -139,13 +149,13 @@
         "demokratikus",
         "ellenzék",
         "fellépése",
-        "megtörte",
+        "megkérdőjelezte",
         "az",
         "állami",
         "információs",
         "monopóliumot."
       ],
-      "english": "The emergence of the democratic opposition broke the state information monopoly.",
+      "english": "The emergence of the democratic opposition challenged the state information monopoly.",
       "teaches": [
         "b2-three-ts-censorship-vocab"
       ]
@@ -155,7 +165,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Melyik mondat alkalmazza helyesen az értékelő személytelen szerkezetet?",
+      "question": "Melyik mondat helyes?",
       "options": [
         "A virágnyelv használatát alapvető fontosságúnak tartották a színházi előadásokon.",
         "A virágnyelv használatát alapvető fontosságúan tartották a színházi előadásokon.",
@@ -176,26 +186,24 @@
         "követelések",
         "nyilvánosságra",
         "hozatala",
-        "alapozta",
-        "meg",
+        "hozzájárult",
         "a",
         "békés",
-        "átmenetet."
+        "átmenethez."
       ],
       "solution": [
         "A",
         "követelések",
         "nyilvánosságra",
         "hozatala",
-        "alapozta",
-        "meg",
+        "hozzájárult",
         "a",
         "békés",
-        "átmenetet."
+        "átmenethez."
       ],
-      "english": "The public disclosure of the demands laid the groundwork for the peaceful transition.",
+      "english": "The making public of the demands contributed to the peaceful transition.",
       "teaches": [
-        "agentless-constructions"
+        "nominalization"
       ]
     },
     {
@@ -205,8 +213,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Synthesize the mechanism of censorship and samizdat resistance using 'sorolják' and 'sokszorosítódtak'.",
-          "answer": "Bár a bátor műveket a tiltott kategóriába sorolják a hatóságok, a lapok mégis titokban sokszorosítódtak a lakásokban."
+          "prompt": "Synthesize the mechanism of censorship and samizdat resistance using 'sorolták' and 'sokszorosodtak'.",
+          "answer": "Bár a bátor műveket a tiltott kategóriába sorolták, a lapok mégis titokban sokszorosodtak a lakásokban."
         }
       ],
       "teaches": [

@@ -39,14 +39,11 @@
     {
       "id": "b2-urbanusnepi-04.ex02",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "reading",
       "stage": "controlled",
-      "teaches": [
-        "b2-urbanists-populists-vocab"
-      ],
       "question": "Miért volt történelmi jelentőségű az 1985. júniusi monori találkozó?",
       "options": [
-        "Mert évtizedes elszigeteltség után először ült közös asztalhoz a népi ellenzék és a városi demokratikus ellenzék negyvenöt vezető személyisége.",
+        "Mert a népi írók és a városi demokratikus ellenzék tagjai nyíltan tárgyaltak egymással.",
         "Mert a pártvezetés ott hirdette meg a gazdasági reformok új programját és az állami cenzúra intézményének fokozatos eltörlését.",
         "Mert az ellenzéki csoportok ott alapították meg az első hivatalosan bejegyzett független parlamenti pártot a diktatúra idején."
       ],
@@ -60,9 +57,9 @@
       "teaches": [
         "b2-urbanists-populists-vocab"
       ],
-      "sentence": "Aczél György kultúrpolitikája évtizedeken át próbálta _____ egymás ellen a népi és az urbánus értelmiséget.",
+      "sentence": "Egyes történészek szerint Aczél György kultúrpolitikája évtizedeken át próbálta _____ egymás ellen a népi és az urbánus értelmiséget.",
       "answer": "kijátszani",
-      "english": "For decades, György Aczél's cultural policy tried to play the populist and urbanist intelligentsia off against one another."
+      "english": "According to some historians, György Aczél's cultural policy tried for decades to play the populist and urbanist intelligentsia off against one another."
     },
     {
       "id": "b2-urbanusnepi-04.ex04",
@@ -72,12 +69,12 @@
       "teaches": [
         "contrastive-discourse-markers"
       ],
-      "question": "Where is 'ellenben' most idiomatically placed when contrasting a second subject ('Kis János') with a first subject ('Csoóri Sándor')?",
+      "question": "Melyik szó illik a mondatba? Csoóri Sándor a népi oldalt képviselte, Kis János ___ a demokratikus ellenzéket.",
       "options": [
-        "Immediately after the contrasted second subject.",
-        "At the very end of the sentence after the period.",
-        "Between the definite article 'a' and its noun.",
-        "Inside the verb prefix."
+        "ellenben",
+        "holott",
+        "jóllehet",
+        "tehát"
       ],
       "correct": 0
     },
@@ -89,9 +86,12 @@
       "teaches": [
         "contrastive-discourse-markers"
       ],
-      "sentence": "Az állambiztonság a két tábor szakadására számított; _____ Monoron a résztvevők közös jegyzőkönyvben rögzítették az előadásokat.",
-      "answer": "ezzel szemben",
-      "english": "State security counted on a split between the two camps; in contrast to this, at Monor the participants recorded the lectures in shared minutes."
+      "sentence": "A hatalom a két tábor szakadására számított; _____ Monoron a résztvevők nyíltan vitatkoztak egymással.",
+      "english": "The authorities counted on a split between the two camps; in contrast to this, the participants debated openly with each other at Monor.",
+      "answers": [
+        "ezzel szemben",
+        "ellenben"
+      ]
     },
     {
       "id": "b2-urbanusnepi-04.ex06",
@@ -104,26 +104,26 @@
       "tiles": [
         "A",
         "hatalom",
-        "megosztást",
-        "akart,",
+        "megosztásra",
+        "számított,",
         "Donáth",
         "Ferenc",
         "ellenben",
         "párbeszédet",
-        "teremtett."
+        "kezdeményezett."
       ],
       "solution": [
         "A",
         "hatalom",
-        "megosztást",
-        "akart,",
+        "megosztásra",
+        "számított,",
         "Donáth",
         "Ferenc",
         "ellenben",
         "párbeszédet",
-        "teremtett."
+        "kezdeményezett."
       ],
-      "english": "The regime wanted division; Ferenc Donáth, by contrast, created dialogue."
+      "english": "The authorities counted on division; Ferenc Donáth, by contrast, initiated dialogue."
     },
     {
       "id": "b2-urbanusnepi-04.ex07",
@@ -136,7 +136,7 @@
       "prompt": [
         {
           "speaker": "Történész",
-          "text": "Hogyan közeledett egymáshoz a két tábor álláspontja a kisebbségek és a demokrácia kérdésében Monoron?"
+          "text": "Miről beszéltek hangsúlyosan a két tábor képviselői Monoron?"
         },
         {
           "speaker": "Résztvevő",
@@ -144,9 +144,9 @@
         }
       ],
       "options": [
-        "Az urbánusok elismerték a kisebbségvédelmet, a népiek ezzel szemben kimondták: többpártrendszer nélkül nincs megújulás.",
-        "Az urbánusok elismerték a kisebbségvédelmet, a népiek mindazonáltal kimondták: többpártrendszer nélkül nincs megújulás.",
-        "Az urbánusok elismerték a kisebbségvédelmet, a népiek holott kimondták: többpártrendszer nélkül nincs megújulás."
+        "A népiek a nemzeti sorskérdésekről beszéltek, az urbánusok ezzel szemben az emberi jogokat hangsúlyozták.",
+        "A népiek a nemzeti sorskérdésekről beszéltek, az urbánusok mindazonáltal az emberi jogokat hangsúlyozták.",
+        "A népiek a nemzeti sorskérdésekről beszéltek, az urbánusok holott az emberi jogokat hangsúlyozták."
       ],
       "correct": 0
     },
@@ -155,11 +155,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Ki volt az az 1956-os politikus, akinek a tekintélye lehetővé tette a monori találkozó megszervezését?",
+      "question": "Ki hívta össze a monori találkozót?",
       "options": [
-        "Donáth Ferenc, akit mind a népi írók, mind a demokratikus ellenzék tagjai tiszteltek.",
-        "Aczél György kulturális miniszterhelyettes.",
-        "Rákosi Mátyás."
+        "Donáth Ferenc, akit mindkét tábor tisztelt.",
+        "Aczél György, a kultúrpolitika irányítója.",
+        "Kádár János, a párt első titkára."
       ],
       "correct": 0
     }
