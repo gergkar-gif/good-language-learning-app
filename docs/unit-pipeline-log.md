@@ -459,6 +459,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-04 | HU B2 culture 2, 4, 6, 8 (first culture batch) | paired read, 2 culture units/reader, text first with facts files; both stopped by the 5-hour limit after one unit, resumed | | A 369,157, B 380,867 on resume (~187k a unit if cumulative) | 362 proposed (88 / 59 / 94 / 121), 1 rejected and rewritten; ~95 facts flagged "check", 2 of the readers' own corrections wrong (emblem, museum) | culture units: whole-unit retagging again (every item on the unit skill); walk 24/24 |
 | 11-04 | HU B2 culture 10, 12, 14, 16 | paired read, 2 culture units/reader, text first, no limit | | A 319,217, B 435,986 (~189k a unit) | 342 proposed (53 / 60 / 127 / 102), 2 rejected and rewritten; ~150 facts listed; 1 reader grammar error at scale (14 counterfactuals) | 1 later-skill lesson rewritten on the user's decision (Unit 14, `annyira-hogy`); walk 24/24 |
 | 11-05 | HU B2 culture 18, 20, 22, 24 | paired read, 2 culture units/reader, text first, no limit | | A 327,909, B 351,376 (~170k a unit) | 316 proposed (104 / 74 / 76 / 62), 10 rejected and repaired; 1 wrong rule from a reader (*-at/-tat*), 1 reader note left in a story | 1 later-skill lesson rewritten by the reader (Unit 24, relative + postposition); walk 24/24 |
+| 11-05 | HU B2 culture 26, 28, 30, 32 | paired read, 2 culture units/reader, text first, no limit | | A 388,908, B 430,492 (~205k a unit) | 443 proposed (85 / 116 / 107 / 135), 0 rejected; 2 facts missed by both readers (Bonbonnière address, Szegénylegények period) | every unit replays the preceding core unit's grammar; walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1677,3 +1678,17 @@ The user took the four recommended options:
   can't stand there (*-val*).
 - **check_fixes.py rejects a goal fix that builds on an earlier fix to the same line** (the old
   text no longer matches): rebase the later fix's old/new on the earlier fix's new text.
+
+### 2026-11-05: HU B2 culture Units 26–32
+
+- **Every culture unit replays the core unit just before it** (Units 26/25, 28/27, 30/29,
+  32/31): the generator built each culture unit's grammar from the preceding core unit. Recaps
+  fix the wording, but these lessons teach no new grammar; raised with the user as a design
+  question rather than rewritten unit by unit.
+- **The reviewer's own read before the fixes keeps catching what readers miss:** both readers
+  left a wrong address (Bonbonnière) and a wrong period (*Szegénylegények*) because neither
+  sounded doubtful. Dates and places in the first sentence of a segment get a search.
+- **Politically loaded units went well with the focus notes' rule** (attribute, name the
+  dispute, no present-day judgement): no judgement of a present-day party survived.
+- **A rare form a reader flags but keeps** (*sokszorosítódik*) is worth replacing in the same
+  batch: it was the right answer of a grammar item and in two challenge targets.
