@@ -8,8 +8,8 @@
       "question": "Mit takar a 'stúdiórendszer' fogalma a klasszikus hollywoodi korszakban?",
       "options": [
         "A filmgyártást, a forgalmazást és a mozikat egyetlen nagyvállalat kezében egyesítő ipari modellt.",
-        "A forgatási helyszínek közötti buszjáratok menetrendjét.",
-        "A filmvetítő gépek alkatrészeit gyártó manufaktúrákat."
+        "A mozik és a nézők közötti jegyárakat államilag rögzítő, a forgalmazást korlátozó szabályrendszert.",
+        "A filmek külföldi forgalmazását és a nemzeti filmgyártás támogatását felügyelő állami hivatalt."
       ],
       "correct": 0,
       "teaches": [
@@ -34,17 +34,20 @@
       "category": "grammar",
       "sentence": "Kertész a Casablancát rendezte, _____ Európában milliók menekültek a háborús pusztítás elől.",
       "hint": "while / at the same time",
-      "answer": "miközben",
       "english": "Curtiz was directing Casablanca while in Europe millions were fleeing war devastation.",
       "teaches": [
         "mig-egyidejuseg"
+      ],
+      "answers": [
+        "miközben",
+        "mialatt"
       ]
     },
     {
       "id": "b2-magyarfilm-01.ex04",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat fejezi ki helyesen két cselekvés egyidejűségét és ellentétét a 'miközben' kötőszóval?",
+      "question": "Melyik mondat fejezi ki, hogy két dolog egy időben történik, és szembeállítja őket?",
       "options": [
         "A producerek hatalmas profitot könyveltek el, miközben az írók gyakran háttérbe szorultak.",
         "A producerek hatalmas profitot könyveltek el, holott az írók csakugyan háttérbe szorultak.",
@@ -62,26 +65,30 @@
       "tiles": [
         "A",
         "magyar",
+        "származású",
         "alkotók",
-        "Hollywoodot",
-        "építették,",
+        "is",
+        "építették",
+        "Hollywoodot,",
         "miközben",
-        "megőrizték",
+        "őrizték",
         "közép-európai",
-        "identitásukat."
+        "gyökereiket."
       ],
       "solution": [
         "A",
         "magyar",
+        "származású",
         "alkotók",
-        "Hollywoodot",
-        "építették,",
+        "is",
+        "építették",
+        "Hollywoodot,",
         "miközben",
-        "megőrizték",
+        "őrizték",
         "közép-európai",
-        "identitásukat."
+        "gyökereiket."
       ],
-      "english": "Hungarian creators built Hollywood while preserving their Central European identity.",
+      "english": "Hungarian-born creators also built Hollywood while preserving their Central European roots.",
       "teaches": [
         "mig-egyidejuseg"
       ]
@@ -90,11 +97,11 @@
       "id": "b2-magyarfilm-01.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Milyen jelentős stúdiót alapított a magyar származású Zukor Adolf?",
+      "question": "Melyik cég alapítása fűződik Zukor Adolf nevéhez?",
       "options": [
-        "A Paramount Pictures stúdiót.",
-        "A Walt Disney animációs stúdiót.",
-        "A Cinecittà római filmvárost."
+        "A Famous Players cég, amelyből a Paramount Pictures nőtt ki.",
+        "A Warner Bros. stúdió, amelyet testvérek alapítottak.",
+        "A Metro-Goldwyn-Mayer stúdió, amely egyesülésből jött létre."
       ],
       "correct": 0
     },
@@ -137,11 +144,11 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence describing Adolph Zukor's dual achievements using 'miközben'.",
-          "answer": "Zukor Adolf meghódította a globális filmpiacot, miközben folyamatosan támogatta szülőföldjének rászorulóit."
+          "prompt": "Write a sentence saying what Adolph Zukor founded while American film production was moving to California, using 'miközben'. ",
+          "answer": "Zukor Adolf megalapította a Famous Players céget, miközben az amerikai filmgyártás Kaliforniába költözött."
         },
         {
-          "prompt": "Contrast the success of Hollywood directors with European turbulence using 'miközben'.",
+          "prompt": "Contrast the success of Hollywood directors with European turbulence using 'miközben'. ",
           "answer": "Kertész Mihály az amerikai film aranykorát építette, miközben Európa lángokban állt."
         }
       ],

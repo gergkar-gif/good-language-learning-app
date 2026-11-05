@@ -1,0 +1,47 @@
+# Facts: hu b2 urbanists-populists (Unit 32)
+
+Format: claim | where | sure / check. "fixed" = my fix hedges or removes it.
+
+- 1930s sociography (falukutatás) of the népi writers described rural poverty | S1 | sure
+- Official propaganda/postcards showed idyllic villages | S1 p1, L1 grammar ex. 1, cons ex05 | check (interpretation; hedged "egyes értelmezések szerint"; "revizionista propaganda" removed)
+- About three million poor peasants without land | S1 p1, L1 ex05 (old), cons ex05 (old) | check (the period slogan/estimate "három millió koldus"; hedged as "korabeli becslések szerint" in the story, exercises say "sok")
+- Illyés Gyula, *Puszták népe*, 1936 | S1 p2 | sure
+- Illyés wrote through the fate of his Transdanubian forebears (estate servants) | S1 p2 | sure
+- Series *Magyarország felfedezése* (Cserépfalvi) | S1 p3 | sure
+- Féja Géza, *Viharsarok* | S1 p3 | sure (1937)
+- Kovács Imre, *A néma forradalom* (the one-child "egyke" villages) | S1 p3 | sure (1937)
+- Erdei Ferenc on market towns of the Alföld | S1 p3 | check (*Futóhomok* is about the Kecskemét sands; "mezővárosok" is broader)
+- Press trials for incitement (izgatás) against some authors, including Féja Géza | S1 p3, L1 ex04, ex07 | check (Féja was tried after *Viharsarok*; other authors unverified: fixed to "egyes szerzők")
+- Németh László and others held that renewal must not come only from Western-imitating big-city salons | S1 p4 | sure (as their view)
+- Népfőiskola and land reform as their proposals | S1 p4 | check
+- Szép Szó founded 1936, edited by József Attila, Ignotus Pál, Fejtő Ferenc | S2 p1, L2 ex02 | sure
+- Urbánus = city-oriented thinkers; the name came from opponents | S2 p1 | sure (the label was often used polemically)
+- The Szép Szó circle brought in psychoanalysis, enlightenment rationalism | S2 p3 | check (hedged; "kritikai társadalomelmélet" removed)
+- József Attila's "híres programcikk" against fascism and race theories | S2 p3 | check: removed, replaced by a general statement
+- Opponents accused the urbanists of being alien to the Hungarian soil | S2 p4 | sure
+- Hatvany Lajos, Zsolt Béla, Csécsy Imre as authors warning against a "third-way utopia" | S2 p5 | check: removed (Fejtő Ferenc kept as example)
+- Válasz, Kelet Népe and Szép Szó as journals of the debate | S3 p1 | sure (Kelet Népe started in 1939)
+- Many on both sides found the large estates intolerable | S3 p1 | sure (as a generalisation: fixed to "sok képviselője")
+- Populists wanted renewal through the peasantry, urbanists through the political emancipation of the citizens and workers | S3 p1 | sure
+- Some populists accused the Pest liberal press of "cosmopolitan rootlessness"; historians say this echoed exclusionary discourse | S3 p2 | check (historians\' judgement; attributed)
+- József Attila: editor of Szép Szó, poet of the poor, *A Dunánál* (1936) | S3 p3 | sure
+- *Hazám* as a sonnet cycle | S3 p3 (old) | wrong (a single poem): removed
+- Bibó István: one of the most important Hungarian political thinkers; analysed the populist movement and Hungarian democracy after 1945 | S3 p4 | check (essays after 1945: *A magyar demokrácia válsága* etc.; "külön tanulmányokban a népi írók válságát" unverified)
+- Bibó\'s view: peasant emancipation and constitutional freedoms must go together | S3 p4, L3 ex02, ex08 | check (paraphrase; no quotation given)
+- Donáth Ferenc convicted after 1956 (Nagy Imre trial), respected on both sides | S4 p2 | sure (12 years, released 1960); "respected by both" check
+- Monor meeting 14–16 June 1985 in a forest campsite near Monor | S4 title/location/p2 | sure (date and place); fixed "14-én és 16-án"
+- About 45 participants | S4 title, L4 ex02 (old), cons ex03 | check (title and the question keep "negyvenöt"; the story says "mintegy")
+- Participants included Csoóri Sándor and Csurka István (populist side), Kis János and Haraszti Miklós | S4 p3 | check
+- Konrád György among the participants | S4 p3 (old) | check: removed
+- "Official announcement: friendly weekend" | S4 p2, L4 grammar (old) | check: removed
+- "the first free, uncensored opposition parliament since the war" | S4 p2 (old) | check: removed
+- The two camps "mutually recognised each other\'s moral core" and made specific statements on minorities and multi-party democracy | S4 p4, L4 ex07 (old) | check: removed; only "spoke openly" kept
+- State security observed the meeting | S4 summary | check (sources say it was monitored)
+- MDF founded in Lakitelek in 1987; SZDSZ later | S5 p1, S4 p5 | sure (MDF: Lakitelek, Sept 1987; SZDSZ: 1988)
+- *lakiteki* | S5 p1 (old) | wrong spelling: lakiteleki
+- MDF built on the populist-national tradition, SZDSZ on the urbanist-liberal one | S5 p1, challenge L5 | sure as a common description; attributed to "megfigyelők"
+- Debate returned in the party landscape of the 1990s | S5 p1, p2 | check (interpretation; hedged)
+- The mass of estate servants and cottagers disappeared by the end of the 20th century | S5 p2 | sure
+- "nemzeti szuverenitás / európai föderalizmus" as the 21st-century form of the debate | S5 p3 (old) | check (contested present-day political framing): removed
+- Contemporary sociologists: village ageing, access to education, affordable housing as practical issues | S5 p4 | check (present-day claim; hedged "egyes", "sokak szerint")
+- Present-day claims overall: S5 p3–p5 and the L5 items; none about a current party, government or politician.

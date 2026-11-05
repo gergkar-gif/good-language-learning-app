@@ -1,0 +1,50 @@
+# Facts: hu b2 three-ts-censorship (Unit 30)
+
+Format: claim | where | sure / check. "fixed" = my fix paraphrases or hedges it.
+
+- After 1956 the Kádár regime moved from open terror to a softer cultural policy | S1 p1 | sure (as historians' interpretation; fixed to "a történészek szerint")
+- The "három T" (támogatott, tűrt, tiltott) are associated with Aczél György | S1 p1, L1 intro | sure (a shorthand formula, often attributed to the Aczél era; not a codified system; fixed to "gyakran … formulával jellemeznek")
+- Aczél György led Kádár-era cultural policy | S1, S2, L2 goal | sure (party secretary for culture / Politburo member; I give no exact titles)
+- Aczél held a ministry ("a minisztériumból", location "Kulturális Minisztérium", "miniszteri dolgozószoba") | S1 location, S2 p1, story 2 location | check (he was a Central Committee secretary, not a minister; "minisztérium" in the examples is generic; fixed in S2 text, the location fields are left)
+- "kultúrpápa" nickname / "teljhatalmú" | S1 p1 | check (nickname real, "teljhatalmú" overstated; removed)
+- Supported works got state subsidy, paper quota, prizes | S1 p2 | sure (paper was allocated by the state)
+- Socialist realism was the supported style | S1 p2, L1 ex02 | check (wrong for the 1960s–80s; fixed)
+- Prohibited: openly anti-communist works, those calling 1956 a revolution, those criticising the Soviet troop presence; authors silenced, watched, some forced to emigrate | S1 p2 | sure (generalisation softened to "gyakran … egyesek")
+- The official label of 1956 was "ellenforradalom" (so calling it a revolution was prohibited) | S1 p2 | sure
+- Tolerated works appeared in limited print runs | S1 p3 | sure
+- Authors self-censored | S1 p4 | sure
+- The categories were not codified in law | S1 p4 | sure (formal press rules and censorship offices did exist; fixed to "ezeket a határokat … nem rögzítették nyíltan")
+- Hungary was called the "legvidámabb barakk" of the Eastern bloc | S1 p5 | sure (label for Hungary, not for the intelligentsia; fixed)
+- Aczél phoned and received writers, poets, directors personally | S2 p1 | check (memoir tradition; hedged "A visszaemlékezések szerint")
+- Illyés Gyula, Déry Tibor, Jancsó Miklós met Aczél repeatedly and argued for hours over coffee | S2 p1, L2 goal (old) | check (each is attested in memoirs for some years; "órákon át" is anecdotal; hedged "Elbeszélések szerint")
+- Aczél cited the displeasure of the "friendly countries" | S2 p2 | check (plausible, anecdote)
+- Authors who cut passages got published and sometimes a Western passport | S2 p2 | check (memoir lore; hedged)
+- Those who refused: manuscripts stayed in the drawer, plays banned, passport applications refused for years; usually no prison | S2 p3 | check (some were prosecuted or held; "általában" added)
+- The carrot-and-stick method pushed the decision onto the artists | S2 p3 | sure (historians' interpretation; "zsarolás" dropped)
+- Some saw compromise as saving the essentials, others as a loss of integrity | S2 p4 | sure
+- Flower language (virágnyelv) via Ottoman-era or medieval plots was used under censorship | S3 p1–2 | sure
+- The Soviet troop presence and 1956 were the biggest taboo topics | S3 p2 | sure (wording "szovjet csapatok jelenléte"; "megszállás" is a loaded label here)
+- "A szovjet szót ki sem lehetett ejteni" | S3 p2 (old) | wrong: removed
+- Plays about the 16th-century Habsburg/Ottoman rule were read as comments on the present | S3 p2 | sure (widely reported); no play named
+- Audience applause storms at allusions, the censor in the box | S3 p3 | check (anecdotes; hedged)
+- Present-day audiences still look for hidden political messages | S3 p5 | check (opinion; hedged "Egyes szerzők szerint")
+- Late 1970s: the democratic opposition turned to samizdat | S4 p1 | sure
+- State permission was needed for photocopiers | S4 p2 | check (restricted in practice)
+- Silk-screen frames (ramka) and stencils on the Polish model | S4 p2 | check (Polish influence on the technique is well reported; "lengyel mintára" kept)
+- Samizdat produced in flats, bathrooms, kitchens at night | S4 p2 | sure
+- Demszky Gábor founded AB Független Kiadó; Nagy Jenő co-founder | S4 p3 | check (hedged "egyes források szerint")
+- AB published Orwell's 1984 and Koestler's Sötétség délben | S4 p3 | check
+- AB published secret documents of the 1956 reprisals | S4 p3 (old) | check: removed
+- Police house searches, confiscation of publications and machines, interrogations, fines | S4 p4 | sure
+- Samizdat readers: students, teachers, doctors | S4 p4 | check (illustrative)
+- "totalitárius hatalom" | S4 p5 | check (disputed label for Kádár-era Hungary): removed
+- Beszélő: first issue in late 1981, typed pages | S5 p1 | check (month: "decemberében" and the link to the Polish martial law of 13 December 1981 removed; fixed to "1981 végén")
+- Editors named: Kis János (philosopher), Haraszti Miklós (writer), Kőszeg Ferenc, Solt Ottilia (sociologist) | S5 p1, L5 goal (old) | check (exact editorial board and roles; hedged "között volt")
+- Beszélő reported on poverty, Hungarians abroad, independent peace movements; prisons | S5 p2 | check (prisons removed)
+- Monor meeting 1985 of the democratic opposition and populist intellectuals | S5 p3 | check (venue "kemping faházai", the word "először" and organiser claim removed; month not stated)
+- Demands: human rights, press freedom, multi-party system | S5 p3 | check (changed to "politikai pluralizmus")
+- "Társadalmi szerződés" published in a Beszélő special issue in 1987 | S5 p4, L5 ex06 | sure (year); wording of the title: lower-case "szerződés"
+- The quotation "Kádárnak mennie kell!" in the document | S5 p4 (old) | check: removed, paraphrased
+- The Republic proclaimed 23 October 1989 | S5 p5 | sure (month given: október)
+- Several former Beszélő editors became MPs after the 1990 elections | S5 p5 | check (Haraszti, Solt, Kőszeg, Kis János were MPs; exact terms not verified)
+- Unit-wide: all present-day claims are in S3 p5 only.
