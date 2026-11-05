@@ -88,8 +88,8 @@
  {
   "file": "content/hu/stories/world/b2/b2-gimnaziumok-03-eotvoscollegium.json",
   "old": "Bartoniek Géza igazgató és a Collegium professzorai az egyetemi előadásokon túl saját szemináriumokat tartottak, amelyeken eredeti forrásokat fordíttattak le a diákokkal, és mindenkitől legalább két-három idegen nyelv folyékony ismeretét követelték meg. A műhelymunkában olyan későbbi óriások nőttek fel, mint Kodály Zoltán zeneszerző, Szekfű Gyula történész vagy Kosztolányi Dezső és Babits Mihály kortársai.",
-  "new": "Bartoniek Géza igazgató és a Collegium tanárai az egyetemi előadásokon túl saját szemináriumokat tartottak, amelyeken eredeti forrásokat fordíttattak le a diákokkal, és idegen nyelvek ismeretét is elvárták. A Collegium tagjai közül olyan későbbi jelentős alkotók és tudósok kerültek ki, mint Kodály Zoltán zeneszerző, Babits Mihály költő vagy Szekfű Gyula történész.",
-  "why": "Bartoniek as director, the seminar translation work and the language requirement are unverified (check); Kosztolányi was not a Collegium member (Kodály, Babits, Szekfű were); 'kortársai' was meaningless",
+  "new": "Bartoniek Géza igazgató és a Collegium tanárai az egyetemi előadásokon túl saját szemináriumokat tartottak, amelyeken eredeti forrásokat fordíttattak le a diákokkal, és idegen nyelvek ismeretét is elvárták. A Collegium tagjai közül olyan későbbi jelentős alkotók és tudósok kerültek ki, mint Kodály Zoltán zeneszerző vagy Szekfű Gyula történész.",
+  "why": "Bartoniek as director, the seminar translation work and the language requirement are unverified (check); Kosztolányi was not a Collegium member (Kodály, Babits, Szekfű were); 'kortársai' was meaningless (reviewer: Babits's membership not confirmed either: cut)",
   "kind": "hungarian",
   "sure": false
  },
@@ -187,8 +187,8 @@
  {
   "file": "content/hu/grammar/b2/b2-gimnaziumok-01-a-gr.json",
   "old": "Short, monosyllabic verb stems (unless ending in consonant + t) generally take -at/-et (ír → írat, mos → mosat, kér → kéret), whereas polysyllabic stems and monosyllables ending in consonant + t take -tat/-tet (olvas → olvastat, tanít → taníttat, megold → megoldat / levezet → levezettet).",
-  "new": "Monosyllabic stems that end in a consonant other than a single -t generally take -at/-et (ír → írat, mos → mosat, kér → kéret, old → oldat), whereas polysyllabic stems and stems ending in -t take -tat/-tet (olvas → olvastat, tanít → taníttat, vezet → vezettet).",
-  "why": "the rule list was wrong: *megold → megoldat* is an -at/-et form listed under -tat/-tet, and 'consonant + t' monosyllables like *fest* take -et (check)",
+  "new": "Most monosyllabic stems take -at/-et (ír → írat, mos → mosat, kér → kéret, old → oldat), and so do stems ending in a consonant + t (fest → festet, tart → tartat). Polysyllabic stems and monosyllables ending in a vowel + t take -tat/-tet (olvas → olvastat, tanít → taníttat, vezet → vezettet, süt → süttet).",
+  "why": "the rule list was wrong: *megold → megoldat* is an -at/-et form listed under -tat/-tet, and 'consonant + t' monosyllables like *fest* take -et (check) (reviewer: the reader's version sent fest/tart to -tat/-tet; rewritten)",
   "kind": "hungarian",
   "sure": false
  },
@@ -481,7 +481,7 @@
   "id": "b2-gimnaziumok-05.ex02",
   "set": {
    "options": [
-    "A korai szelekció a tehetősebb családoknak kedvezhet, mert magántanárokkal készíttethetik fel a gyereket.",
+    "Hogy a korai szelekció a tehetősebb családoknak kedvezhet, mert magántanárokkal készíttethetik fel a gyereket.",
     "Hogy a diákok túl kevés matematikát tanulnak a diákolimpiákra való felkészülés közben.",
     "Hogy a vidéki iskolák túl sok diákot küldenek a fővárosi gimnáziumokba."
    ]

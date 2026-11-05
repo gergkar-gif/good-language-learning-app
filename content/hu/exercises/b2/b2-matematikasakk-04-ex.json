@@ -7,9 +7,9 @@
       "category": "vocabulary",
       "question": "Mi volt Polgár László pedagógiai kísérletének alapvető tételmondata?",
       "options": [
-        "A zseninek nem születni kell, hanem korai, örömteli és céltudatos neveléssel a zseni kinevelhető.",
-        "A sakkot csak húszéves kor felett szabad elkezdeni tanulni.",
-        "A matematikai és sakktehetség kizárólag genetikai öröklődés útján adható át."
+        "A zseninek nem születni kell, hanem a zsenit nevelni lehet.",
+        "A sakkot csak felnőtt korban érdemes elkezdeni tanulni.",
+        "A tehetség születéstől fogva adott, a zsenit nem lehet nevelni."
       ],
       "correct": 0,
       "teaches": [
@@ -21,7 +21,7 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "sentence": "Polgár Judit tizenöt évesen szerezte meg a nemzetközi _____ címet, megdöntve Bobby Fischer rekordját.",
-      "hint": "grandmaster — adjectival form nagymesteri",
+      "hint": "grandmaster (adjective)",
       "answer": "nagymesteri",
       "english": "Judit Polgár earned the international grandmaster title at age fifteen, breaking Bobby Fischer's record.",
       "teaches": [
@@ -34,21 +34,24 @@
       "category": "grammar",
       "sentence": "_____ ült is vele szemben a sakktáblánál, Polgár Judit mindig győzelemre játszott.",
       "hint": "Whoever / No matter who",
-      "answer": "Bárki",
       "english": "Whoever sat across from her at the chessboard, Judit Polgár always played for victory.",
       "teaches": [
         "concessive-indefinites"
+      ],
+      "answers": [
+        "Bárki",
+        "Akárki"
       ]
     },
     {
       "id": "b2-matematikasakk-04.ex04",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondatban helyes az igekötő és az 'is' szócska sorrendje?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Bármelyik világbajnokkal mérkőzött is meg, képes volt legyőzni őt.",
-        "Bármelyik világbajnokkal megmérkőzött is, képes volt legyőzni őt.",
-        "Is bármelyik világbajnokkal megmérkőzött, képes volt legyőzni őt."
+        "Bármelyik világbajnokkal játszott is, képes volt legyőzni őt.",
+        "Is bármelyik világbajnokkal játszott, képes volt legyőzni őt.",
+        "Bármelyik világbajnokkal játszott is, vagy képes volt legyőzni őt."
       ],
       "correct": 0,
       "teaches": [
@@ -92,11 +95,11 @@
       "id": "b2-matematikasakk-04.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Miért indult Polgár Judit pályafutása során következetesen a nyílt (férfiak által uralt) versenyeken?",
+      "question": "A szöveg szerint miért indult Polgár Judit a nyílt versenyeken?",
       "options": [
-        "Hogy bebizonyítsa: a szellemi sportokban és a sakktábla mellett nincs különbség férfi és női teljesítmény között.",
-        "Hogy megfeleljen a nemzetközi szövetség azon elvárásának, amely kötelezővé tette a vegyes bajnokságokon való részvételt.",
-        "Hogy a nővéreivel közösen alapított budapesti sakklubot népszerűsítse a hazai és a külföldi amatőr játékosok körében."
+        "Be akarta bizonyítani, hogy a sakkban nincs különbség férfi és női gondolkodás között.",
+        "A nemzetközi szövetség előírta a vegyes versenyeken való részvételt.",
+        "A női bajnokságokra csak külföldi játékosokat hívtak meg."
       ],
       "correct": 0
     },
@@ -108,25 +111,25 @@
         "Polgár",
         "Judit",
         "sikerei",
-        "végleg",
-        "lebontották",
+        "sokat",
+        "tettek",
         "a",
         "régi",
-        "társadalmi",
-        "előítéleteket."
+        "előítéletek",
+        "lebontásáért."
       ],
       "solution": [
         "Polgár",
         "Judit",
         "sikerei",
-        "végleg",
-        "lebontották",
+        "sokat",
+        "tettek",
         "a",
         "régi",
-        "társadalmi",
-        "előítéleteket."
+        "előítéletek",
+        "lebontásáért."
       ],
-      "english": "Judit Polgár's successes permanently dismantled the old social prejudices.",
+      "english": "Judit Polgár's successes did a lot to break down the old prejudices.",
       "teaches": [
         "b2-mathematics-chess-vocab"
       ]
@@ -137,12 +140,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe Judit Polgár's courage against world champions using 'Bárki ült is vele szemben...'.",
+          "prompt": "Describe Judit Polgár's courage against strong opponents using 'Bárki ült is vele szemben...'.",
           "answer": "Bárki ült is vele szemben a sakktábla túloldalán, Polgár Judit félelem nélkül, támadó szellemben sakkozott."
         },
         {
-          "prompt": "State that however strong the prejudices were, her results overcame them using 'Bármilyen erősek voltak is...'.",
-          "answer": "Bármilyen erősek voltak is az előítéletek a női sakkozókkal szemben, Polgár Judit győzelmei minden kétkedőt meggyőztek."
+          "prompt": "State that however strong the prejudices were, her results won over many doubters, using 'Bármilyen erősek voltak is...'.",
+          "answer": "Bármilyen erősek voltak is az előítéletek a női sakkozókkal szemben, Polgár Judit győzelmei sok kétkedőt meggyőztek."
         }
       ],
       "teaches": [

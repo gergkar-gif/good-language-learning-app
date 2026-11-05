@@ -7,9 +7,9 @@
       "category": "vocabulary",
       "question": "Mit fejez ki a nemzetközi tudományos életben az 'Erdős-szám'?",
       "options": [
-        "Azt, hogy egy kutató hány lépésnyi közös publikációs (társszerzői) távolságra van Erdős Páltól.",
-        "Azt, hogy hány prímszámot tud valaki egy perc alatt felsorolni.",
-        "Azt, hogy hány bőrönddel utazott Erdős Pál."
+        "Azt, hogy valaki hány társszerzői lépésre van Erdős Páltól.",
+        "Azt, hogy valaki hány évet töltött Erdős Pál tanítványaként.",
+        "Azt, hogy valaki hány országban dolgozott Erdős Pállal."
       ],
       "correct": 0,
       "teaches": [
@@ -20,10 +20,10 @@
       "id": "b2-matematikasakk-03.ex02",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Erdős Pál több mint ötszáz _____ dolgozott együtt, így a matematika történetének legtermékenyebb kutatója lett.",
-      "hint": "with co-authors — instrumental -val/-vel",
+      "sentence": "Erdős Pál több mint ötszáz _____ dolgozott együtt.",
+      "hint": "co-author, with",
       "answer": "társszerzővel",
-      "english": "Pál Erdős worked together with more than five hundred co-authors, thus becoming the most prolific researcher in the history of mathematics.",
+      "english": "Pál Erdős worked together with more than five hundred co-authors.",
       "teaches": [
         "b2-mathematics-chess-vocab"
       ]
@@ -32,10 +32,10 @@
       "id": "b2-matematikasakk-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "_____ Európában, akár a tengerentúlon járt, Erdős mindenhol új matematikai problémákat vetett fel.",
+      "sentence": "_____ Európában, akár Amerikában járt, Erdős mindenhol új matematikai problémákat vetett fel.",
       "hint": "Whether ... [or]",
       "answer": "Akár",
-      "english": "Whether he was in Europe or overseas, Erdős posed new mathematical problems everywhere.",
+      "english": "Whether he was in Europe or in America, Erdős posed new mathematical problems everywhere.",
       "teaches": [
         "concessive-indefinites"
       ]
@@ -92,10 +92,10 @@
       "id": "b2-matematikasakk-03.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mit értett Erdős Pál azon, amikor egy matematikai levezetésről azt mondta, hogy 'A Könyvből való'?",
+      "question": "Mit jelent, ha Erdős Pál egy bizonyításról azt mondta, hogy a Könyvből való?",
       "options": [
-        "Azt, hogy a bizonyítás annyira tökéletes, tiszta és elegáns, mintha egy képzeletbeli égi gyűjteményből származna.",
-        "Azt, hogy a megoldást egy középiskolai tankönyvből másolták ki.",
+        "Azt, hogy a bizonyítás különösen tökéletes és elegáns.",
+        "Azt, hogy a bizonyítást egy tankönyvből másolták ki.",
         "Azt, hogy a bizonyítás túl hosszú és unalmas."
       ],
       "correct": 0
@@ -105,30 +105,28 @@
       "type": "sentence-builder",
       "category": "vocabulary",
       "tiles": [
-        "A",
-        "kombinatorika",
-        "és",
+        "Erdős",
+        "Pál",
+        "vándorló",
+        "tudósként",
+        "egy",
+        "bőrönddel",
+        "járta",
         "a",
-        "gráfelmélet",
-        "a",
-        "modern",
-        "számítástechnika",
-        "alapjává",
-        "vált."
+        "világot."
       ],
       "solution": [
-        "A",
-        "kombinatorika",
-        "és",
+        "Erdős",
+        "Pál",
+        "vándorló",
+        "tudósként",
+        "egy",
+        "bőrönddel",
+        "járta",
         "a",
-        "gráfelmélet",
-        "a",
-        "modern",
-        "számítástechnika",
-        "alapjává",
-        "vált."
+        "világot."
       ],
-      "english": "Combinatorics and graph theory became the foundation of modern computer science.",
+      "english": "Pál Erdős travelled the world as a wandering scholar with a single suitcase.",
       "teaches": [
         "b2-mathematics-chess-vocab"
       ]
@@ -139,8 +137,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe Erdős's global way of working using 'Akár ..., akár ...'.",
-          "answer": "Akár egyetemi szemináriumon, akár egy barátja nappalijában ült, Erdős Pál mindig új bizonyításokon dolgozott."
+          "prompt": "Describe Erdős's way of working using 'Akár ..., akár ...'.",
+          "answer": "Akár egy kollégája házában, akár egy egyetemen járt, Erdős Pál mindig közösen gondolkodott a házigazdájával."
         },
         {
           "prompt": "Summarize the breadth of Erdős's work using 'Legyen szó ...-ról vagy ...-ról'.",

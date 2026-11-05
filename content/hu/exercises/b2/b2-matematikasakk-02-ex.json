@@ -5,11 +5,11 @@
       "id": "b2-matematikasakk-02.ex01",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mi volt az 1894-ben alapított KöMaL folyóirat legfontosabb pedagógiai újítása?",
+      "question": "Mi tette különlegessé az 1894-ben alapított KöMaL folyóiratot?",
       "options": [
-        "Hónapról hónapra nyílt pontversenyben tűzött ki gondolkodtató feladatokat, amelyekre bárki beküldhette a bizonyítását.",
-        "Csak az egyetemi professzorok publikálhattak benne latin nyelven.",
-        "Betiltotta a geometriai ábrák használatát a középiskolákban."
+        "Az ország bármelyik középiskolájából bárki beküldhette a megoldását.",
+        "Csak a fővárosi elit gimnáziumok diákjai küldhettek be megoldást.",
+        "A szerkesztők a családi háttér szerint pontozták a megoldásokat."
       ],
       "correct": 0,
       "teaches": [
@@ -34,10 +34,13 @@
       "category": "grammar",
       "sentence": "Az ország _____ középiskolájából bárki beküldhette a megoldását a szerkesztőségnek.",
       "hint": "from any [one] of them",
-      "answer": "bármelyik",
       "english": "Anyone from any secondary school in the country could submit their solution to the editorial office.",
       "teaches": [
         "concessive-indefinites"
+      ],
+      "answers": [
+        "bármelyik",
+        "akármelyik"
       ]
     },
     {
@@ -46,9 +49,9 @@
       "category": "grammar",
       "question": "Mit jelent a magyar nyelvben a 'Nem akárki tudta megoldani ezt a feladatot' mondat?",
       "options": [
-        "Csak rendkívül felkészült, kivételes képességű ember tudta megoldani a feladatot.",
-        "Senki a világon nem tudta megoldani a feladatot.",
-        "Mindenki könnyedén megoldotta a feladatot."
+        "Csak egy nagyon tehetséges ember tudta megoldani.",
+        "Egy átlagos diák is könnyen megoldotta a feladatot.",
+        "A feladatot csak a szerkesztők tudták megoldani."
       ],
       "correct": 0,
       "teaches": [
@@ -69,7 +72,7 @@
         "szerkesztők",
         "minden",
         "megoldást",
-        "elolvastak."
+        "elolvasták."
       ],
       "solution": [
         "Bárhonnan",
@@ -81,7 +84,7 @@
         "szerkesztők",
         "minden",
         "megoldást",
-        "elolvastak."
+        "elolvasták."
       ],
       "english": "No matter where the letter arrived from, the editors read every solution.",
       "teaches": [
@@ -94,9 +97,9 @@
       "category": "reading",
       "question": "Kiknek a nevével találkozhatunk a KöMaL huszadik század eleji sikeres feladatmegoldói között?",
       "options": [
-        "Olyan későbbi világhírű tudósokéval, mint Kármán Tódor, Wigner Jenő, Teller Ede és Erdős Pál.",
-        "Olyan neves politikusokéval, mint Tisza István, Károlyi Mihály, Bethlen István és Teleki Pál.",
-        "Olyan ismert írókéval és költőkéval, mint Babits Mihály, Kosztolányi Dezső és Karinthy Frigyes."
+        "Olyan későbbi világhírű tudósokéval, mint Erdős Pál.",
+        "Olyan neves politikusokéval, mint Tisza István.",
+        "Olyan ismert írókéval, mint Kosztolányi Dezső."
       ],
       "correct": 0
     },
@@ -137,12 +140,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain the democratic openness of KöMaL using 'bárki' and 'bármelyik iskolából'.",
+          "prompt": "Explain the open door of KöMaL using 'bárki' and 'bármelyik iskolából'.",
           "answer": "A KöMaL pontversenyébe bárki bekapcsolódhatott az ország bármelyik iskolájából."
         },
         {
           "prompt": "Use 'Bárhonnan érkezett is...' to describe how the editors evaluated students' proofs.",
-          "answer": "Bárhonnan érkezett is a beküldött dolgozat, a bírálók kizárólag a bizonyítás eleganciáját értékelték."
+          "answer": "Bárhonnan érkezett is a beküldött dolgozat, a szerkesztők a bizonyítás pontosságát és eleganciáját értékelték."
         }
       ],
       "teaches": [
