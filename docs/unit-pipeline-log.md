@@ -460,6 +460,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-04 | HU B2 culture 10, 12, 14, 16 | paired read, 2 culture units/reader, text first, no limit | | A 319,217, B 435,986 (~189k a unit) | 342 proposed (53 / 60 / 127 / 102), 2 rejected and rewritten; ~150 facts listed; 1 reader grammar error at scale (14 counterfactuals) | 1 later-skill lesson rewritten on the user's decision (Unit 14, `annyira-hogy`); walk 24/24 |
 | 11-05 | HU B2 culture 18, 20, 22, 24 | paired read, 2 culture units/reader, text first, no limit | | A 327,909, B 351,376 (~170k a unit) | 316 proposed (104 / 74 / 76 / 62), 10 rejected and repaired; 1 wrong rule from a reader (*-at/-tat*), 1 reader note left in a story | 1 later-skill lesson rewritten by the reader (Unit 24, relative + postposition); walk 24/24 |
 | 11-05 | HU B2 culture 26, 28, 30, 32 | paired read, 2 culture units/reader, text first, no limit | | A 388,908, B 430,492 (~205k a unit) | 443 proposed (85 / 116 / 107 / 135), 0 rejected; 2 facts missed by both readers (Bonbonnière address, Szegénylegények period) | every unit replays the preceding core unit's grammar; walk 24/24 |
+| 11-05 | HU B2 culture 34, 36, 38, 40 | paired read, 2 culture units/reader, text first, no limit | | A 387,806, B 378,933 (~192k a unit) | 335 proposed (90 / 90 / 84 / 71), 1 rejected and repaired; 1 reader replacement fact wrong (falugondnok date) | 1 C1 lesson rewritten by the reader (Unit 34 hedging); walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1692,3 +1693,13 @@ The user took the four recommended options:
   dispute, no present-day judgement): no judgement of a present-day party survived.
 - **A rare form a reader flags but keeps** (*sokszorosítódik*) is worth replacing in the same
   batch: it was the right answer of a grammar item and in two challenge targets.
+
+### 2026-11-05: HU B2 culture Units 34–40
+
+- **The reviewer's read before the readers finish caught nothing this time that both missed**
+  (both readers fixed Landerer, the Újépület, Pannonhalma, Budapest's size): the focus note on
+  first-sentence dates and places worked.
+- **A reader's replacement fact was wrong again** (the village-caretaker service "before
+  1990"; it began in August 1990). Replacement facts stay on the reviewer's check list.
+- **A reader can add an unsourced "critics say" to balance a disputed matter** (the Memento
+  Park): naming the dispute in one line is enough; an invented opposing view is still invented.

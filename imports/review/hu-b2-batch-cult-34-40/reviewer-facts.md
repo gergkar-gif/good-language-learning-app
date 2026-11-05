@@ -1,6 +1,7 @@
-# Reviewer facts, HU B2 culture batch 34-40 (draft, read while the readers run, 2026-11-05)
+# Reviewer facts, HU B2 culture batch 34-40 (2026-11-05)
 
-To compare with the readers' fixes when they arrive.
+Read while the readers ran, then compared with their fixes. Outcome per row in **Result**
+below the table.
 
 | claim | where | verdict so far | source |
 |---|---|---|---|
@@ -22,3 +23,13 @@ To compare with the readers' fixes when they arrive.
 | 1945 land reform: "több mint hárommillió katasztrális hold … kisajátítottak" | b2-falutortenet-02 p1 | ~5.6 million hold confiscated, ~3.2 million distributed to ~640,000 claimants | standard |
 | háztáji "alig tíz százaléka … több mint egyharmadát"; kockaház "négyszobás" | b2-falutortenet-03 | figures to hedge (the usual estimate is about a third of output on ~13% of the land); kockaház typically 2-3 rooms | — |
 | Present-day politics on Szabadság tér (German-occupation memorial, Reagan statue) | b2-politikairetorika-05 p1 | facts true (2014, 2011); "vitatott" named; no judgement may remain | standard |
+
+## Result
+
+- Caught by the readers as well: Landerer Lajos, the Újépület (1780s), Pannonhalma (996, Géza), Budapest ~1.7 million, Zágráb (now Nagyvárad), four Andrássy út renamings, Maria Theresa a queen, Illyés's poem written 1950 / published 1956, the "kálvinista Róma" age, the land-reform and háztáji figures hedged. Kossuth's sentence now "1837-ben letartóztatták, és börtönbüntetésre ítélték" (no length).
+- Caught by reader A only: Árpád plus the "seven" chieftains made eight; Puskás Tivadar died a month after the launch (16 March 1893), his brother Albert ran the service; the Paris Théâtrophone (1881) carried opera by telephone first.
+- **Corrected by Claude:**
+  - Reader B rewrote the village-caretaker service as begun "before 1990": **it began as a trial in the Cserehát in August 1990** (state-funded from 1991): "az 1990-ben induló falugondnoki szolgálat". [Szociális és Gyermekvédelmi Főigazgatóság](https://szocialisportal.hu/wp-content/uploads/2021/04/EFOP-382_Falu-es_tanyagondnoki_alapkepzes_ppt_vegleges.pdf)
+  - Oktogon "1945 után November 7. tér": sources give 1945 or 1953, so the year is left out ("a szocialista korszakban").
+  - Memento Park critics' view ("turisztikai látványossággá szelídíti"), added by reader A without a source: cut; the dispute is named in one line.
+  - "Hősök terén" capitalised; UK spelling (labour, centre, favour, criticised).
