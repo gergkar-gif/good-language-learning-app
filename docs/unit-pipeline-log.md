@@ -458,6 +458,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-04 | HU B2 core 65, 67, 69, 71 (last core batch) | paired read, 2 core units/reader, no limit | | A 385,337, B 441,755 (~207k a unit at two per reader) | 423 proposed (94 / 101 / 125 / 103), 6 rejected and rewritten (3 tells, 2 length, an answer in the prompt); Claude changed ~15 items (7 second right answers), listed 27 words | **core track done: 36/36 frozen**; reader B rewrote whole screens, so 224 of 228 went to review; walk 24/24 |
 | 11-04 | HU B2 culture 2, 4, 6, 8 (first culture batch) | paired read, 2 culture units/reader, text first with facts files; both stopped by the 5-hour limit after one unit, resumed | | A 369,157, B 380,867 on resume (~187k a unit if cumulative) | 362 proposed (88 / 59 / 94 / 121), 1 rejected and rewritten; ~95 facts flagged "check", 2 of the readers' own corrections wrong (emblem, museum) | culture units: whole-unit retagging again (every item on the unit skill); walk 24/24 |
 | 11-04 | HU B2 culture 10, 12, 14, 16 | paired read, 2 culture units/reader, text first, no limit | | A 319,217, B 435,986 (~189k a unit) | 342 proposed (53 / 60 / 127 / 102), 2 rejected and rewritten; ~150 facts listed; 1 reader grammar error at scale (14 counterfactuals) | 1 later-skill lesson rewritten on the user's decision (Unit 14, `annyira-hogy`); walk 24/24 |
+| 11-05 | HU B2 culture 18, 20, 22, 24 | paired read, 2 culture units/reader, text first, no limit | | A 327,909, B 351,376 (~170k a unit) | 316 proposed (104 / 74 / 76 / 62), 10 rejected and repaired; 1 wrong rule from a reader (*-at/-tat*), 1 reader note left in a story | 1 later-skill lesson rewritten by the reader (Unit 24, relative + postposition); walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1661,3 +1662,18 @@ The user took the four recommended options:
 - **The readers' corrected facts held this time** (dates, Nobel committee, patents), and my own
   read caught what both readers missed (El Greco, the English summaries): the reviewer's own
   facts read stays necessary.
+
+### 2026-11-05: HU B2 culture Units 18–24
+
+- **The readers missed a fact I had flagged in advance** (Csáth 1909, actually 1912) though it
+  sat in the focus notes' topic list; the reviewer's own facts list made before the readers
+  finish is what caught it. Keep writing it while they run.
+- **A reader's replacement rule can be wrong:** reader A rewrote the *-at/-tat* rule so that
+  *fest*, *tart* would take *-tat/-tet*. Rules a reader rewrites get the same read as facts.
+- **A reader left a "check" note inside story text** ("(a jelenlegi helyzet ellenőrizendő)").
+  Once so far; a check-content pattern if it recurs.
+- **Postpositions with *-nak/-nek*** (*valaminek a révén / segítségével*) are real Hungarian:
+  a wrong option built as "noun + -nak + révén" can be a second right answer. Use a case that
+  can't stand there (*-val*).
+- **check_fixes.py rejects a goal fix that builds on an earlier fix to the same line** (the old
+  text no longer matches): rebase the later fix's old/new on the earlier fix's new text.
