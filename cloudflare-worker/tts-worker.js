@@ -228,7 +228,24 @@ export default {
         const voiceName = resolveVoiceName(payload, languageCode);
         const defaultRate = isDialogue ? 1.05 : 1.0;
         const speakingRate = Number(payload.speakingRate) || defaultRate;
-        const pitch = Number(payload.pitch) || 0.0;
+        let pitch = Number(payload.pitch) || 0.0;
+
+        // Forced resynthesis for specific isolated words reported as mispronounced
+        // on first listen (bug reports #215 "vicces" sounds like "viccses", #216
+        // "szoba" sounds like "szobá"). The R2 cache below is keyed on exactly
+        // {languageCode, voiceName, speakingRate, pitch, text}, so if either
+        // report is actually a one-off bad clip stuck in that cache rather than a
+        // genuine model mispronunciation, nothing short of changing one of those
+        // inputs ever gets a fresh clip. A pitch nudge this small (in semitones)
+        // is inaudible, so it only forces a new cache key and a real Google TTS
+        // call — it doesn't deliberately change how the word sounds. If the new
+        // clip still has the same defect after this deploys, the cause is the
+        // model/text, not the cache, and this entry should be replaced with a
+        // real phonetic fix (the Károly/mind pattern above) instead of removed.
+        const RESYNTH_BUST_PITCH = { 'Vicces.': 0.01, 'Szoba.': 0.02 };
+        if (!payload.pitch && languageCode === 'hu-HU' && RESYNTH_BUST_PITCH[text] !== undefined) {
+            pitch = RESYNTH_BUST_PITCH[text];
+        }
 
         const r2 = env && env.TTS_CACHE;
         const key = r2 ? await cacheKey(languageCode, voiceName, speakingRate, pitch, text) : null;
