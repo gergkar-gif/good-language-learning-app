@@ -798,12 +798,42 @@
    "accepted": []
   },
   "a1/possession": {
-   "frozen": "2026-11-03",
-   "reason": "bug report #217: a1-42-a grammar screen reworded (split possessive table by owner, shortened explanations)",
+   "frozen": "2026-11-06",
+   "reason": "bug report #218: a1-43-voc.json 'tiéd' translation now 'yours (singular)', matching a1-44's 'tiétek' -> 'yours (plural)' so the review deck no longer shows two colliding bare 'yours' cards",
    "accepted": [
     {
      "check": "consolidation-copy",
      "id": "a1-45-consolidation-1",
+     "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a1-45-consolidation-2",
+     "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a1-45-consolidation-3",
+     "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a1-45-consolidation-6",
+     "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a1-45-consolidation-7",
+     "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a1-45-consolidation-8",
+     "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a1-45-consolidation-9",
      "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
     },
     {
@@ -844,36 +874,6 @@
     {
      "check": "consolidation-copy",
      "id": "a1-45-consolidation-19",
-     "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
-    },
-    {
-     "check": "consolidation-copy",
-     "id": "a1-45-consolidation-2",
-     "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
-    },
-    {
-     "check": "consolidation-copy",
-     "id": "a1-45-consolidation-3",
-     "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
-    },
-    {
-     "check": "consolidation-copy",
-     "id": "a1-45-consolidation-6",
-     "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
-    },
-    {
-     "check": "consolidation-copy",
-     "id": "a1-45-consolidation-7",
-     "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
-    },
-    {
-     "check": "consolidation-copy",
-     "id": "a1-45-consolidation-8",
-     "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
-    },
-    {
-     "check": "consolidation-copy",
-     "id": "a1-45-consolidation-9",
      "why": "replay kept by the user's decision 2026-10-14 (units 2-9 consolidations replay lesson items)"
     }
    ]
@@ -4535,6 +4535,11 @@
    "unit": "a1/possession",
    "date": "2026-11-03",
    "reason": "bug report #217: a1-42-a grammar screen reworded (split possessive table by owner, shortened explanations)"
+  },
+  {
+   "unit": "a1/possession",
+   "date": "2026-11-06",
+   "reason": "bug report #218: a1-43-voc.json 'tiéd' translation missing the (singular) qualifier, colliding with a1-44's 'tiétek' -> 'yours (plural)' in the review deck"
   }
  ]
 }
