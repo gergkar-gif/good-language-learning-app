@@ -155,19 +155,42 @@ const Lexicon = (function () {
     // keeps the full gloss — see showWord()/​_renderWordReadings() in
     // reader.js — since a learner who just tapped a word has room for the
     // detail; a review card testing recall doesn't.
-    function stripBalanced(text, openCh, closeCh) {
-        let out = '', depth = 0;
+    // A handful of parenthetical tags are grammatical disambiguators we
+    // wrote ourselves, not Wiktionary-style explanatory asides — "yours
+    // (singular)" and "yours (plural)" (tiéd vs. tiétek) are two different
+    // correct answers, and stripping the tag made both read as the bare
+    // word "yours" on a review card, so a learner asked to produce the
+    // Hungarian from the English translation had no way to tell which one
+    // was wanted. Keep these verbatim; still strip everything else.
+    const KEEP_PAREN_TAGS = /^(singular|plural|informal|formal|familiar|polite|masculine|feminine)$/i;
+
+    function stripBalanced(text, openCh, closeCh, keep) {
+        let out = '', depth = 0, buf = '';
         for (const ch of text) {
-            if (ch === openCh) depth++;
-            else if (ch === closeCh) { if (depth > 0) depth--; }
-            else if (depth === 0) out += ch;
+            if (ch === openCh) {
+                if (depth === 0) { depth = 1; buf = ''; }
+                else { depth++; buf += ch; }
+                continue;
+            }
+            if (ch === closeCh) {
+                if (depth === 0) continue;
+                depth--;
+                if (depth === 0) {
+                    if (keep && keep.test(buf.trim())) out += openCh + buf + closeCh;
+                    continue;
+                }
+                buf += ch;
+                continue;
+            }
+            if (depth === 0) out += ch;
+            else buf += ch;
         }
         return out;
     }
 
     function shortGloss(text) {
         let first = String(text || '').split(';')[0];
-        first = stripBalanced(first, '(', ')');
+        first = stripBalanced(first, '(', ')', KEEP_PAREN_TAGS);
         first = stripBalanced(first, '[', ']');
         first = first.replace(/^(comparative|superlative|diminutive|augmentative|inflection)\s+of\s+[^:]*:\s*/i, '');
         first = first.replace(/\s+/g, ' ').replace(/^[\s,]+|[\s,]+$/g, '');
@@ -198,7 +221,7 @@ const Lexicon = (function () {
     // about preserving encyclopedic restatement that adds nothing a
     // synonym list didn't already say.
     function stripExplanatoryClauses(text) {
-        let out = stripBalanced(String(text || ''), '(', ')');
+        let out = stripBalanced(String(text || ''), '(', ')', KEEP_PAREN_TAGS);
         out = stripBalanced(out, '[', ']');
         return out.replace(/\s+/g, ' ').replace(/^[\s,]+|[\s,]+$/g, '');
     }

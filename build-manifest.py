@@ -603,9 +603,18 @@ JUNK_GLOSS = re.compile(
     r"|alternative form|apocopic|misspelling|eye dialect|initialism|acronym|iso 3166)", re.I)
 
 
-def _strip_balanced(text, open_ch, close_ch):
+# Grammatical disambiguation tags, not Wiktionary-style explanatory asides —
+# "yours (singular)" and "yours (plural)" (tiéd vs. tiétek) are two different
+# correct answers, so stripping the tag made both collapse to the bare word
+# "yours" on a review card. Kept in sync with KEEP_PAREN_TAGS in lexicon.js.
+KEEP_PAREN_TAGS = re.compile(
+    r"^(singular|plural|informal|formal|familiar|polite|masculine|feminine)$", re.I)
+
+
+def _strip_balanced(text, open_ch, close_ch, keep=None):
     r"""Remove every top-level open_ch...close_ch span, including anything
-    nested inside it.
+    nested inside it — except a span whose content matches `keep`, which is
+    kept verbatim (parens included).
 
     A naive `re.sub(r"\([^)]*\)", ...)` only eats up to the *first* close_ch
     it finds — on a gloss with real nesting ("dog (# ... (sometimes ...),
@@ -616,14 +625,30 @@ def _strip_balanced(text, open_ch, close_ch):
     rather than throwing, since a stray close_ch at depth 0 is just dropped."""
     out = []
     depth = 0
+    buf = []
     for ch in text:
         if ch == open_ch:
-            depth += 1
-        elif ch == close_ch:
-            if depth > 0:
-                depth -= 1
-        elif depth == 0:
+            if depth == 0:
+                depth = 1
+                buf = []
+            else:
+                depth += 1
+                buf.append(ch)
+            continue
+        if ch == close_ch:
+            if depth == 0:
+                continue
+            depth -= 1
+            if depth == 0:
+                if keep and keep.match("".join(buf).strip()):
+                    out.append(open_ch + "".join(buf) + close_ch)
+                continue
+            buf.append(ch)
+            continue
+        if depth == 0:
             out.append(ch)
+        else:
+            buf.append(ch)
     return "".join(out)
 
 
@@ -634,7 +659,7 @@ def short_gloss(text):
     subjectively and after prepositions)", "comparative of malo: worse" — and
     a card carrying that is harder to read than the Spanish it glosses."""
     first = str(text or "").split(";")[0]
-    first = _strip_balanced(first, "(", ")")               # asides, not meaning
+    first = _strip_balanced(first, "(", ")", KEEP_PAREN_TAGS)  # asides, not meaning
     first = _strip_balanced(first, "[", "]")               # stray wiki-link/template leakage
     first = re.sub(r"^(comparative|superlative|diminutive|augmentative|inflection)"
                    r"\s+of\s+[^:]*:\s*", "", first, flags=re.I)
