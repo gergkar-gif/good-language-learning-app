@@ -240,17 +240,18 @@ export default {
 
         // Forced resynthesis for specific isolated words reported as mispronounced
         // on first listen (bug reports #215 "vicces" sounds like "viccses", #216
-        // "szoba" sounds like "szobá"). The R2 cache below is keyed on exactly
-        // {languageCode, voiceName, speakingRate, pitch, text}, so if either
-        // report is actually a one-off bad clip stuck in that cache rather than a
-        // genuine model mispronunciation, nothing short of changing one of those
-        // inputs ever gets a fresh clip. A pitch nudge this small (in semitones)
-        // is inaudible, so it only forces a new cache key and a real Google TTS
-        // call — it doesn't deliberately change how the word sounds. If the new
-        // clip still has the same defect after this deploys, the cause is the
-        // model/text, not the cache, and this entry should be replaced with a
+        // "szoba" sounds like "szobá", #219 "kié" reported wrong with no further
+        // detail). The R2 cache below is keyed on exactly
+        // {languageCode, voiceName, speakingRate, pitch, text}, so if any of
+        // these reports is actually a one-off bad clip stuck in that cache rather
+        // than a genuine model mispronunciation, nothing short of changing one of
+        // those inputs ever gets a fresh clip. A pitch nudge this small (in
+        // semitones) is inaudible, so it only forces a new cache key and a real
+        // Google TTS call — it doesn't deliberately change how the word sounds.
+        // If a clip still has the same defect after this deploys, the cause is
+        // the model/text, not the cache, and that entry should be replaced with a
         // real phonetic fix (the Károly/mind pattern above) instead of removed.
-        const RESYNTH_BUST_PITCH = { 'Vicces.': 0.01, 'Szoba.': 0.02 };
+        const RESYNTH_BUST_PITCH = { 'Vicces.': 0.01, 'Szoba.': 0.02, 'Kié.': 0.01 };
         if (!payload.pitch && languageCode === 'hu-HU' && RESYNTH_BUST_PITCH[text] !== undefined) {
             pitch = RESYNTH_BUST_PITCH[text];
         }
