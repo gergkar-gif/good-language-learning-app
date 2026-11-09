@@ -203,7 +203,15 @@ export default {
         // inflected case forms like 'kivel', 'mivel') and allow conversational openers (és, de, hát, te...).
         const HU_WH_WORDS = /^(?:(?:és|de|hát|akkor|nos|meg|te|ti|ön|önök|maga|maguk)\s+)*(ki|kik|kit|kiket|kinek|kiknek|kivel|kikkel|kiről|kitől|kihez|kiben|kinél|mi|mik|mit|miket|minek|mivel|mikkel|miről|mitől|mihez|miben|minél|mire|hol|hova|hová|honnan|honnét|merre|merrefelé|mikor|mikorra|meddig|mettől|mióta|miért|hogy|hogyan|mennyi|mennyit|mennyibe|mennyiért|mennyivel|hány|hányat|hányan|hányas|hányszor|hányadik|milyen|milyet|milyenre|milyenben|milyennel|melyik|melyiket|melyikre|melyikkel|melyikben|melyiknél|miféle)\b/i;
         if (languageCode === 'hu-HU' && text.endsWith('?') && HU_WH_WORDS.test(text)) {
-            text = text.charAt(0).toUpperCase() + text.slice(1, -1) + '.';
+            // A single clause only has a '?' at the very end, so stripping the
+            // terminal one used to be enough. But a compound cell can hold more
+            // than one question in one utterance ("Ki vagy? / Ki ő?", "Ki vagy?
+            // Hol laksz?"), and leaving an *internal* '?' in place still cues the
+            // model's rising uptalk mid-utterance, right where the next clause
+            // starts — reported as "ki" getting an inserted sound before "ő" in
+            // #222. Every clause of a Hungarian Wh-question wants the same
+            // falling cadence, so flatten every '?' to '.', not just the last.
+            text = text.charAt(0).toUpperCase() + text.slice(1).replace(/\?/g, '.');
         }
 
         // Hungarian story comma cadence: in narrative readings, commas mark rhythmic clause

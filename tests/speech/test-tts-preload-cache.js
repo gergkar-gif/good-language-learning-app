@@ -51,7 +51,7 @@ function normalizeStoryText(text, type, languageCode, character) {
     if (!/[.!?…]$/.test(text)) text = text + '.';
     const HU_WH_WORDS = /^(?:(?:és|de|hát|akkor|nos|meg|te|ti|ön|önök|maga|maguk)\s+)*(ki|kik|kit|kiket|kinek|kiknek|kivel|kikkel|kiről|kitől|kihez|kiben|kinél|mi|mik|mit|miket|minek|mivel|mikkel|miről|mitől|mihez|miben|minél|mire|hol|hova|hová|honnan|honnét|merre|merrefelé|mikor|mikorra|meddig|mettől|mióta|miért|hogy|hogyan|mennyi|mennyit|mennyibe|mennyiért|mennyivel|hány|hányat|hányan|hányas|hányszor|hányadik|milyen|milyet|milyenre|milyenben|milyennel|melyik|melyiket|melyikre|melyikkel|melyikben|melyiknél|miféle)\b/i;
     if (languageCode === 'hu-HU' && text.endsWith('?') && HU_WH_WORDS.test(text)) {
-        text = text.charAt(0).toUpperCase() + text.slice(1, -1) + '.';
+        text = text.charAt(0).toUpperCase() + text.slice(1).replace(/\?/g, '.');
     }
     const isDialogue = type === 'dialogue' || Boolean(character);
     if (languageCode === 'hu-HU' && !isDialogue && (type === 'story' || type === 'reading' || type === 'narrator')) {
@@ -90,6 +90,12 @@ assert.strictEqual(normalizeStoryText('És te hol laksz?', 'dialogue', 'hu-HU'),
 assert.strictEqual(normalizeStoryText('Hány óra van?', 'dialogue', 'hu-HU'), 'Hány óra van.');
 // Yes/No questions retain their question mark
 assert.strictEqual(normalizeStoryText('Kérsz teát?', 'dialogue', 'hu-HU'), 'Kérsz teát?');
+// A compound cell can hold more than one question ("Ki vagy? / Ki ő?", bug
+// #222): every internal '?' must flatten too, not just the terminal one —
+// an internal '?' left in place still cues the model's rising uptalk
+// mid-utterance, right where the next clause starts.
+assert.strictEqual(normalizeStoryText('Ki vagy? / Ki ő?', 'dialogue', 'hu-HU'), 'Ki vagy. / Ki ő.');
+assert.strictEqual(normalizeStoryText('Ki vagy? Hol laksz?', 'dialogue', 'hu-HU'), 'Ki vagy. Hol laksz.');
 console.log('[PASS] Hungarian narrative comma cadence and Wh-cadence verified.');
 
 // Test 2: ParlourTTS preload and cache API in engine/tts.js
