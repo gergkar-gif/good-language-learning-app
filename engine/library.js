@@ -43,6 +43,18 @@ const Library = (function () {
     let activeBookId = null;    // id of the multi-chapter book whose TOC is open in #lib-mytexts
     let activeReading = null;   // { id, chapterIndex } while #reader-content is displaying a My Text chapter
 
+    const FEATURED_STARTER_BOOKS = [
+        {
+            id: 'starter-pazos-de-ulloa',
+            title: 'Los pazos de Ulloa',
+            author: 'Emilia Pardo Bazán',
+            year: 1886,
+            languages: ['es-es', 'es-latam', 'es'],
+            epubUrl: 'assets/books/es/los-pazos-de-ulloa.epub',
+            blurb: 'The masterpiece of Spanish naturalism: Father Julián arrives at the decadent Galician estate of the Marquis of Ulloa.'
+        }
+    ];
+
     function esc(value) {
         return (typeof UI !== 'undefined' && UI.escape)
             ? UI.escape(value) : String(value == null ? '' : value)
@@ -1723,15 +1735,33 @@ const Library = (function () {
 
     function myTextsIndexHtml() {
         const texts = listMyTexts();
+        const currentLang = (typeof Lang !== 'undefined' && Lang.code) ? Lang.code() : 'es';
+        const featured = FEATURED_STARTER_BOOKS.filter(b => !b.languages || b.languages.includes(currentLang));
+        const uninstalledFeatured = featured.filter(b => !texts.some(t => t.title === b.title));
+
         return `
             <div class="lt-index-head">
                 <p class="dk-group-blurb">Bring in any ${Lang.name()} book (.epub, .docx, .txt) or paste text to read it chapter by chapter with full tap-to-translate.</p>
                 <button class="btn-primary" data-text-add="1">+ Add text or book</button>
             </div>
+            ${uninstalledFeatured.length ? `
+                <div class="lt-featured-shelf" style="margin-bottom: 24px; padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface);">
+                    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 600; margin-bottom: 6px;">Featured Starter Classic</div>
+                    ${uninstalledFeatured.map(b => `
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
+                            <div>
+                                <h4 style="margin: 0 0 4px 0; font-family: var(--font-display); font-size: 1.15rem; color: var(--text);">${esc(b.title)} <span style="font-weight: normal; font-size: 0.9em; color: var(--muted);">by ${esc(b.author)} (${b.year})</span></h4>
+                                <p style="margin: 0; font-size: 13px; color: var(--muted); line-height: 1.4;">${esc(b.blurb)}</p>
+                            </div>
+                            <button type="button" class="btn-primary" data-load-starter="${esc(b.id)}" style="flex: 0 0 auto;">Add to My Texts</button>
+                        </div>
+                    `).join('')}
+                </div>
+            ` : ''}
             ${buildMyTextsContinueHtml(texts)}
             ${texts.length
                 ? `<div class="lt-list">${texts.map(myTextCardHtml).join('')}</div>`
-                : '<p class="dk-empty">No texts yet. Import an EPUB/DOCX or paste text to get started.</p>'}
+                : '<p class="dk-empty">No texts yet. Import an EPUB/DOCX, select a starter classic above, or paste text to get started.</p>'}
         `;
     }
 
@@ -1834,8 +1864,78 @@ const Library = (function () {
         wireMyTextsPane(host);
     }
 
+    async function installStarterBook(starterId, btnEl) {
+        const book = FEATURED_STARTER_BOOKS.find(b => b.id === starterId);
+        if (!book) return;
+        if (btnEl) {
+            btnEl.disabled = true;
+            btnEl.textContent = 'Installing…';
+        }
+        try {
+            const resp = await fetch(book.epubUrl);
+            if (!resp.ok) throw new Error('Could not fetch book EPUB asset');
+            const buf = await resp.arrayBuffer();
+            const parsed = await parseEpub(buf, book.title);
+            
+            const totalWords = parsed.chapters.reduce((sum, c) => sum + (c.wordCount || 0), 0);
+            const estMin = Math.max(1, Math.round(totalWords / READING_WPM));
+            const chaptersMeta = compactChaptersMeta(parsed.chapters);
+            
+            const id = genTextId();
+            const now = new Date().toISOString();
+            
+            await saveBookPayload(id, {
+                chapters: parsed.chapters,
+                lemmas: null
+            });
+            
+            const entry = {
+                id: id,
+                title: book.title,
+                author: book.author || '',
+                sourceType: 'epub',
+                chapters: chaptersMeta,
+                created: now,
+                modified: now,
+                analysis: {
+                    totalWords: totalWords,
+                    uniqueLemmas: 0,
+                    familiar: 0,
+                    notYetLearned: 0,
+                    familiarPercent: 0,
+                    estimatedMinutes: estMin,
+                    level: 'C1'
+                },
+                progress: { chapterIndex: 0, pct: 0, paraIndex: 0, readChapters: [], at: 0 }
+            };
+            
+            myTexts.unshift(entry);
+            saveMyTexts();
+            activeBookId = id;
+            renderMyTextsPane();
+            if (typeof UI !== 'undefined' && UI.toast) {
+                UI.toast(`Added "${book.title}" to My Texts!`, 'success');
+            }
+        } catch (err) {
+            console.error('Failed to install starter book:', err);
+            if (btnEl) {
+                btnEl.disabled = false;
+                btnEl.textContent = 'Add to My Texts';
+            }
+            const msg = (err && err.message) ? err.message : 'Could not load book.';
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast(msg, 'error');
+            else alert(msg);
+        }
+    }
+
     function wireMyTextsPane(host) {
         host.querySelectorAll('[data-text-add]').forEach(el => { el.onclick = openAddText; });
+        host.querySelectorAll('[data-load-starter]').forEach(el => {
+            el.onclick = function () {
+                const id = el.getAttribute('data-load-starter');
+                installStarterBook(id, el);
+            };
+        });
         host.querySelectorAll('[data-text-open]').forEach(el => {
             el.onclick = function () { openMyTextOrChapters(el.getAttribute('data-text-open')); };
         });
