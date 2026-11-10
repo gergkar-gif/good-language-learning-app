@@ -44,7 +44,7 @@
       "teaches": [
         "b2-hungarians-carpathian-basin-vocab"
       ],
-      "question": "Melyik szlovákiai városban alapították meg 2004-ben a Selye János Egyetemet mint önálló magyar felsőoktatási intézményt?",
+      "question": "Melyik szlovákiai városban működik a Selye János Egyetem?",
       "options": [
         "Komáromban",
         "Pozsonyban",
@@ -61,9 +61,9 @@
       "teaches": [
         "b2-hungarians-carpathian-basin-vocab"
       ],
-      "sentence": "Az egyetemek és színházak kinevelik a helyi magyar _____, amely a jövő vezetőit adja.",
+      "sentence": "Az anyanyelvű egyetemek kinevelik a helyi magyar _____, amely képes megszervezni a közösségi életet.",
       "answer": "értelmiségi réteget",
-      "english": "Universities and theatres nurture the local Hungarian intelligentsia, which produces the leaders of the future."
+      "english": "Mother-tongue universities educate the local Hungarian intelligentsia, which is able to organise community life."
     },
     {
       "id": "b2-hatarontul-03.ex04",
@@ -71,16 +71,21 @@
       "category": "grammar",
       "stage": "controlled",
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
       ],
-      "question": "Melyik rag szükséges az 'attól' névmásra a függetlenítő kötőszói kifejezésben? 'Az intézmények működnek, függetlenül _____ hogy milyen nehezek a körülmények.'",
+      "question": "Melyik szó illik a mondatba? 'Az intézmények működnek, függetlenül _____, hogy milyen nehezek a körülmények.'",
       "options": [
         "attól",
         "arról",
         "ahhoz",
         "abban"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "delative-rol-rel",
+        "2": "hoz-suffix",
+        "3": "ban-ben-in"
+      }
     },
     {
       "id": "b2-hatarontul-03.ex05",
@@ -88,7 +93,7 @@
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
       ],
       "sentence": "A színház teltházzal játszik, függetlenül attól, _____ mekkora a gazdasági válság a térségben.",
       "answer": "hogy",
@@ -100,7 +105,7 @@
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
       ],
       "tiles": [
         "A",
@@ -136,7 +141,7 @@
       "category": "dialogue",
       "stage": "dialogue",
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
       ],
       "prompt": [
         {
@@ -149,11 +154,14 @@
         }
       ],
       "options": [
-        "Mert így a fiatalok anyanyelvükön szerezhetnek diplomát, és helyben maradó értelmiségként szolgálhatják közösségüket.",
-        "Mert így a fiatalok anyanyelvükben szerezhetnek diplomát, és helyben maradó értelmiségként szolgálhatják közösségüket.",
-        "Mert így a fiatalok anyanyelvükön szerezhetnének diplomát, és helyben maradó értelmiségre szolgálhatnák a közösségükben."
+        "Mert így a fiatalok anyanyelvükön szerezhetnek diplomát, függetlenül attól, hogy melyik országban élnek.",
+        "Mert így a fiatalok anyanyelvükön szerezhetnek diplomát, függetlenül arról, hogy melyik országban élnek.",
+        "Mert így a fiatalok anyanyelvükön szerezhetnek diplomát, függetlenül attól, melyik országban élnek."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "delative-rol-rel"
+      }
     },
     {
       "id": "b2-hatarontul-03.ex08",

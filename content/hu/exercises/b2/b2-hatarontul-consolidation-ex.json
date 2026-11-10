@@ -44,12 +44,11 @@
       "teaches": [
         "even-if-ha-is"
       ],
-      "question": "Melyik mondat fejezi ki helyesen a múltbeli ellenkező feltételes megengedést?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Még ha nehézségek adódtak volna is, a kétnyelvű feliratokat kihelyezték volna.",
-        "Még ha nehézségek adódnának, a kétnyelvű feliratokat kihelyezik volna.",
-        "Még ha nehézségek adódtak volna, a kétnyelvű feliratokat kihelyezték volna is nem.",
-        "Még ha nehézségek adódnak is, a kétnyelvű feliratokat kihelyezték."
+        "Még ha nehézségek merültek volna is fel, a kétnyelvű feliratokat elkészítették volna.",
+        "Még ha nehézségek merültek volna is fel, a kétnyelvű feliratokat elkészítették.",
+        "Még ha nehézségek merültek volna is fel, a kétnyelvű feliratokat nem elkészítették volna."
       ],
       "correct": 0
     },
@@ -61,7 +60,7 @@
       "teaches": [
         "b2-hungarians-carpathian-basin-vocab"
       ],
-      "question": "Melyik székelyföldi fafaragási emlék vált a hagyományőrzés és a nemzeti identitás legfontosabb néprajzi szimbólumává?",
+      "question": "Melyik szó jelöli a faragott székelyföldi kaput?",
       "options": [
         "székelykapu",
         "szecessziós palota",
@@ -88,11 +87,11 @@
       "category": "grammar",
       "stage": "recall",
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
       ],
-      "sentence": "A beregszászi és komáromi egyetemek biztosítják az anyanyelvi diplomát, _____ attól, hogy melyik országban működnek.",
+      "sentence": "A beregszászi főiskola és a komáromi egyetem magyar nyelvű képzést nyújt, _____ attól, hogy melyik országban működik.",
       "answer": "függetlenül",
-      "english": "The universities in Beregszász and Komárom provide mother-tongue degrees, regardless of which country they operate in."
+      "english": "The college in Beregszász and the university in Komárom offer teaching in Hungarian, regardless of which country they operate in."
     },
     {
       "id": "b2-hatarontul-consolidation.ex06",
@@ -137,14 +136,14 @@
       "category": "grammar",
       "stage": "in-context",
       "teaches": [
-        "even-if-ha-is"
+        "concessive-postpositions"
       ],
-      "question": "Melyik mondat illusztrálja helyesen az emelkedett megengedő kontrasztot a 'dacára' névutóval?",
+      "question": "Melyik mondat helyes?",
       "options": [
         "A történelmi nehézségek dacára a határon túli közösségek megőrizték kulturális önazonosságukat.",
         "A történelmi nehézségek dacára miatt a határon túli közösségek megőrizték nyelvüket.",
-        "A történelmi nehézségek dacára hogy a határon túli közösségek feladták nyelvüket.",
-        "A történelmi nehézségek dacára ellenében a közösségek fejlődtek."
+        "A történelmi nehézségek dacára hogy a határon túli közösségek megőrizték nyelvüket.",
+        "A történelmi nehézségek dacára ellenében a közösségek megőrizték nyelvüket."
       ],
       "correct": 0
     },
@@ -154,12 +153,12 @@
       "category": "dialogue",
       "stage": "in-context",
       "teaches": [
-        "even-if-ha-is"
+        "concessive-indefinites"
       ],
       "prompt": [
         {
           "speaker": "Egyetemista",
-          "text": "Milyen előnyökkel jár a Mária Valéria híd újjáépítése az esztergomi és párkányi lakosok számára?"
+          "text": "Mit jelent a Mária Valéria híd újjáépítése Esztergom és Párkány lakóinak?"
         },
         {
           "speaker": "Közgazdász",
@@ -167,9 +166,9 @@
         }
       ],
       "options": [
-        "Bármilyen lassú volt is a döntéshozatal, az új híd szerves gazdasági és kulturális egységgé forrasztotta össze a két Duna-parti várost.",
-        "Bármilyen lassú lett volna is a döntéshozatal, az új híd szerves gazdasági és kulturális egységre forrasztotta össze a két Duna-parti várost.",
-        "Bármilyen lassú volt is a döntéshozatal, az új híd szerves gazdasági és kulturális egységgé összeforrasztotta a két Duna-parti várost volna."
+        "Bármilyen nehéz volt is az újjáépítés, a híd összeköti a két Duna-parti várost, és az ingázók naponta átmennek rajta.",
+        "Bármilyen nehéz lett volna is az újjáépítés, a híd összeköti a két Duna-parti várost, és az ingázók naponta átmennek rajta.",
+        "Bármilyen nehéz volt is az újjáépítés, a híd összeköt a két Duna-parti várost, és az ingázók naponta átmennek rajta."
       ],
       "correct": 0
     },
@@ -179,7 +178,7 @@
       "category": "grammar",
       "stage": "produce",
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
       ],
       "tiles": [
         "Az",
@@ -217,7 +216,7 @@
       "category": "grammar",
       "stage": "produce",
       "teaches": [
-        "even-if-ha-is"
+        "concessive-indefinites"
       ],
       "tiles": [
         "Bármilyen",
@@ -257,12 +256,12 @@
       ],
       "template": [
         {
-          "prompt": "Write a sentence describing mother-tongue education across borders (use 'még akkor is, ha' and 'függetlenül attól, hogy').",
+          "prompt": "Write one sentence: students stay with their mother-tongue studies even if knowing the majority language is essential, regardless of which university they attend (use 'még akkor is, ha' and 'függetlenül attól, hogy').",
           "answer": "A diákok kitartanak az anyanyelvű tanulmányok mellett, még akkor is, ha a többségi nyelv ismerete elengedhetetlen, függetlenül attól, hogy melyik egyetemre járnak."
         },
         {
-          "prompt": "Write a sentence articulating cross-border regional partnership (use 'annak dacára, hogy' and 'bármilyen ... is legyen').",
-          "answer": "Annak dacára, hogy a határátkelés korábban nehézkes volt, a városok szorosan együttműködnek, bármilyen kihívásokkal szembesüljenek is a jövőben."
+          "prompt": "Write one sentence: in spite of the earlier difficult border crossing the towns cooperate closely, whatever difficulties may arise in the future (use 'annak dacára, hogy' and 'bármilyen ... is').",
+          "answer": "Annak dacára, hogy a határátkelés korábban nehézkes volt, a városok szorosan együttműködnek, bármilyen nehézségek merüljenek is fel a jövőben."
         }
       ]
     }

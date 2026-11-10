@@ -16,7 +16,7 @@
         ],
         [
           "disszidens",
-          "1956 political refugee"
+          "person who left illegally (communist-era label)"
         ],
         [
           "agyelszívás",
@@ -47,9 +47,9 @@
       "question": "Melyik fogalom jelöli a külföldön született magyar gyermekek anyanyelvének és kultúrájának tervszerű továbbadását?",
       "options": [
         "anyanyelvmegőrzés",
-        "agyelszívás",
-        "disszidálás",
-        "ingázás"
+        "tudástranszfer",
+        "munkaerő-mobilitás",
+        "hazatelepülés"
       ],
       "correct": 0
     },
@@ -73,7 +73,7 @@
       "teaches": [
         "b2-figurative-preverbs"
       ],
-      "question": "Melyik mondatban fejezi ki a preverb a külföldi környezetbe való fokozatos, sikeres integrációt?",
+      "question": "Melyik mondat helyes?",
       "options": [
         "A magyar diákok hamar beilleszkedtek az egyetemi közösségbe.",
         "A magyar diákok hamar elilleszkedtek az egyetemi közösségbe.",
@@ -90,9 +90,9 @@
       "teaches": [
         "b2-figurative-preverbs"
       ],
-      "sentence": "A háború és a megtorlások elől a család Nyugatra menekült, és ott sikerült teljesen _____ az életét.",
+      "sentence": "A forradalom leverése és a megtorlások elől a család Nyugatra menekült, és ott sikerült teljesen _____ az életét.",
       "answer": "újrakezdenie",
-      "english": "Fleeing the war and reprisals, the family escaped to the West and managed to restart their life entirely there."
+      "english": "Fleeing the suppression of the revolution and the reprisals, the family escaped to the West and managed to restart their life entirely there."
     },
     {
       "id": "b2-diaszpora-consolidation.ex06",
@@ -114,7 +114,7 @@
       ],
       "options": [
         "Kulturális intézményeik révén sikeresen átörökítették a hagyományokat a következő nemzedékre.",
-        "Kulturális intézményeik révén sikeresen örökítették át a hagyományokat a következő nemzedékre.",
+        "Kulturális intézményeik révén sikeresen kiörökítették a hagyományokat a következő nemzedékre.",
         "Kulturális intézményeik révén sikeresen átörökítették a hagyományokat a következő nemzedékben."
       ],
       "correct": 0
@@ -139,8 +139,8 @@
       ],
       "options": [
         "Úgy éreztük, hogy a megszerzett nemzetközi tudást haza szeretnénk hozni és itthon kívánunk vállalkozást indítani.",
-        "Úgy éreztük, hogy a megszerzett nemzetközi tudást szeretnénk hazahozni és itthon kívánunk vállalkozást indítani.",
-        "Úgy éreztük, hogy a megszerzett nemzetközi tudást haza szeretnénk hozni és itthon kívánnánk vállalkozást indítani volna."
+        "Úgy éreztük, hogy a megszerzett nemzetközi tudást haza szeretnénk hozni és itthon kívánunk vállalkozást indítanunk.",
+        "Úgy éreztük, hogy a megszerzett nemzetközi tudást haza szeretnénk hozni és itthon kívánunk vállalkozást indítani volna."
       ],
       "correct": 0
     },
@@ -152,12 +152,12 @@
       "teaches": [
         "b2-figurative-preverbs"
       ],
-      "question": "Melyik igekötős kifejezés írja le legpontosabban a hazai munkahelyi légkörhöz való újbóli alkalmazkodást?",
+      "question": "Hazatért, és újra hozzá kellett szoknia a munkahelyi hierarchiához. Melyik mondat mondja ezt?",
       "options": [
-        "Nehéz volt visszaszokni a hazai irodai hierarchiához.",
-        "Nehéz volt kiszokni a hazai irodai hierarchiához.",
-        "Nehéz volt felszokni a hazai irodai hierarchiához.",
-        "Nehéz volt átszokni a hazai irodai hierarchiához."
+        "Nehéz volt visszaszokni a hazai munkahelyi hierarchiához.",
+        "Nehéz volt kiszokni a hazai munkahelyi hierarchiához.",
+        "Nehéz volt felszokni a hazai munkahelyi hierarchiához.",
+        "Nehéz volt leszokni a hazai munkahelyi hierarchiához."
       ],
       "correct": 0
     },
@@ -172,7 +172,7 @@
       "prompt": [
         {
           "speaker": "Szociológus",
-          "text": "Hogyan értékeli a 2004 utáni mobilitási hullámot a korábbi emigrációkhoz képest?"
+          "text": "Hogyan értékeli a 2004 utáni vándorlási hullámot a korábbi emigrációkhoz képest?"
         },
         {
           "speaker": "Demográfus",
@@ -180,9 +180,9 @@
         }
       ],
       "options": [
-        "A mai vándorlás már nem jelent végleges elszakadást, hiszen a kapcsolattartás és a hazatérés lehetősége folyamatosan nyitott.",
-        "A mai vándorlás már nem jelent végleges elszakadást, hiszen a kapcsolattartás és a térés haza lehetősége folyamatosan nyitott.",
-        "A mai vándorlás már nem jelent végleges elszakadást, hiszen a kapcsolattartás és a hazatérés lehetősége folyamatosan nyitott volna."
+        "A mai vándorlás már nem jelent teljes elszakadást, hiszen a kapcsolattartás és a hazatérés lehetősége folyamatosan nyitott.",
+        "A mai vándorlás már nem jelent teljes elszakadást, hiszen a kapcsolattartás és a hazatérés lehetősége folyamatosan nyitottak.",
+        "A mai vándorlás már nem jelent teljes elszakadást, hiszen a kapcsolattartás és a hazatérés lehetősége folyamatosan nyitott volna."
       ],
       "correct": 0
     },
@@ -254,12 +254,12 @@
       ],
       "template": [
         {
-          "prompt": "Write a sentence describing the integration of Hungarian refugees in Western countries (use 'beilleszkedett' or 'újrakezdte').",
-          "answer": "A nyugati világba érkező menekültek többsége a nehézségek ellenére sikeresen beilleszkedett a befogadó társadalomba, és teljesen újrakezdte szakmai életét."
+          "prompt": "Write one sentence: many refugees, despite the difficulties, integrated into the host society and started their professional lives anew (use 'beilleszkedtek' and 'újrakezdték').",
+          "answer": "A nyugati világba érkező menekültek közül sokan a nehézségek ellenére beilleszkedtek a nyugati társadalomba, és újrakezdték szakmai életüket."
         },
         {
-          "prompt": "Write a sentence describing the return of experienced professionals to Hungary (use 'hazatelepült' or 'hazahozta').",
-          "answer": "Több évnyi külföldi tapasztalatszerzés után a szakember hazatelepült Magyarországra, és hazahozta értékes nemzetközi kapcsolatait a hazai iparba."
+          "prompt": "Write one sentence: after several years abroad a specialist moved back to Hungary and brought home valuable international contacts (use 'hazatelepült' and 'hazahozta').",
+          "answer": "Több év külföldi tapasztalatszerzés után a szakember hazatelepült Magyarországra, és hazahozta értékes nemzetközi kapcsolatait a hazai iparba."
         }
       ]
     }
