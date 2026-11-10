@@ -41,13 +41,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "controlled",
-      "question": "Hogyan illeszti be a magyar nyelv a modern digitális anglicizmusokat a saját szerkezetébe?",
+      "question": "Hogyan igazodnak az angol eredetű szavak a magyar nyelvhez?",
       "options": [
-        "Magyar igeképzőkkel (-ol/-el) és igekötőkkel látja el őket, igazodva a hangrendhez.",
-        "Kizárólag angol mondatrészként hagyja őket minden ragozás és képző nélkül.",
-        "Törvényben tiltja meg az idegen szavak kiejtését a rádióban és az interneten."
+        "Megtartják az angol alakjukat, és nem kapnak magyar ragokat.",
+        "A nyelvművelők új magyar szóval helyettesítik őket.",
+        "Magyar ragokat és képzőket kapnak, mint a magyar szavak."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "b2-youth-culture-vocab"
       ]
@@ -57,9 +57,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A magabiztos B2 szintű beszélő pontosan tudja, melyik szituációban milyen _____ kell megszólalnia.",
+      "sentence": "Egy jó beszélő tudja, melyik helyzetben milyen _____ kell megszólalnia.",
       "answer": "stílusrétegben",
-      "english": "A confident B2-level speaker knows precisely in which stylistic register to speak in any given situation.",
+      "english": "A good speaker knows in which situation to speak in which stylistic register.",
       "teaches": [
         "b2-youth-culture-vocab"
       ]
@@ -69,14 +69,14 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Melyik mondat fejezi ki a leginkább emelkedett, választékos stílust az alábbiak közül?",
+      "question": "Melyik mondat illik egy hivatalos közleménybe?",
       "options": [
+        "A kutatócsoport gyorsan elposztolta a sztoriját a bulijukról.",
+        "A kutatócsoport marha jó fotókat posztolt az új laborról.",
         "A kutatócsoport hivatalos közleményben számolt be az új eredményekről.",
-        "A kutatócsoport gyorsan elposztolta a sztoriját a legújabb buliról.",
-        "A kutatócsoport marha jó fotókat lőtt a laborban a mikroszkópról.",
-        "A kutatócsoport tök lazán flexelt az új támogatási összeggel."
+        "A kutatócsoport tök lazán flexelt az új támogatással."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "twin-words-colloquial"
       ]
@@ -86,11 +86,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A hallgató azonnal megosztotta a tudományos hírt, miután a professzor _____ a publikációját az egyetemi honlapon.",
-      "answer": "közzétette",
-      "english": "The student immediately shared the scientific news after the professor published his paper on the university website.",
+      "sentence": "A professzor hivatalosan _____ az eredményeket az egyetemi honlapon.",
+      "english": "The professor officially published the results on the university website.",
       "teaches": [
         "twin-words-colloquial"
+      ],
+      "answers": [
+        "közzétette",
+        "közölte",
+        "megjelentette",
+        "publikálta"
       ]
     },
     {
@@ -99,26 +104,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
+        "Sok",
+        "nyelvész",
+        "szerint",
+        "a",
         "szleng",
         "a",
         "nyelv",
         "eleven",
         "alkalmazkodóképességének",
-        "fontos",
         "bizonyítéka."
       ],
       "solution": [
-        "A",
+        "Sok",
+        "nyelvész",
+        "szerint",
+        "a",
         "szleng",
         "a",
         "nyelv",
         "eleven",
         "alkalmazkodóképességének",
-        "fontos",
         "bizonyítéka."
       ],
-      "english": "Slang is an important proof of the living adaptability of the language.",
+      "english": "According to many linguists, slang is proof of the language's living adaptability.",
       "teaches": [
         "twin-words-colloquial"
       ]
@@ -131,7 +140,7 @@
       "prompt": [
         {
           "speaker": "Nyelvész",
-          "text": "Veszélyezteti-e az anyanyelv tisztaságát a rengeteg angol szlengszó elterjedése?"
+          "text": "Mit mondanak a nyelvészek az angol szlengszavak elterjedéséről?"
         },
         {
           "speaker": "Professzor",
@@ -139,9 +148,9 @@
         }
       ],
       "options": [
-        "Nem veszélyezteti, hiszen a magyar nyelvtan szabályai könnyedén megszelídítik és beépítik az új kifejezéseket.",
-        "Nem veszélyezteti, hiszen a magyar nyelvtan szabályai könnyedén megszelídítik és beépítik az új kifejezésekbe.",
-        "Nem veszélyezteti, hiszen a magyar nyelvtan szabályai könnyedén szelídítik meg és építik be az új kifejezéseket volna."
+        "A vélemények megoszlanak: egyesek szerint a magyar nyelvtan beépíti az új szavakat, mások aggódnak a helyesírás miatt.",
+        "A vélemények megoszlanak: egyesek szerint a magyar nyelvtan beépíti az új szavakba, mások aggódnak a helyesírás miatt.",
+        "A vélemények megoszlanak: egyesek szerint a magyar nyelvtan beépíti az új szavakat, mások aggódnak a helyesírást miatt."
       ],
       "correct": 0,
       "teaches": [
@@ -153,13 +162,13 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mi a legfontosabb elvárás egy B2 szintű nyelvhasználóval szemben a stílusrétegek tekintetében?",
+      "question": "Mit hangsúlyoz a szöveg a stílusrétegekről?",
       "options": [
-        "Képes legyen megkülönböztetni az informális szlenget a formális diskurzustól, és tudatosan váltani közöttük.",
-        "Kizárólag a legfrissebb internetes szlengszavakat használja minden hivatalos vizsgán.",
-        "Kerüljön minden beszélt nyelvi kifejezést és csak tizenkilencedik századi költeményeket idézzen."
+        "A fiataloknak hivatalos helyzetben is a szlenget kell használniuk.",
+        "A nyelvtanulónak nem kell megértenie a fiatalok szlengjét.",
+        "A stílusrétegek közötti tudatos váltás a nyelvtudás fontos része."
       ],
-      "correct": 0
+      "correct": 2
     }
   ]
 }

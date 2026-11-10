@@ -44,13 +44,13 @@
       "teaches": [
         "b2-political-thought-vocab"
       ],
-      "question": "Mit jelent Polányi Mihály híres tézise a 'hallgatólagos tudásról' (tacit knowledge)?",
+      "question": "Mit jelent a hallgatólagos tudás Polányi Mihály szerint?",
       "options": [
-        "Azt a felismerést, hogy az emberi tapasztalat és a mesterségbeli intuíció több annál, mint amit pusztán formális szabályokkal el lehet mondani.",
-        "Azt a szabályt, hogy a kutatóknak tilos nyilvánosan beszélniük a laboratóriumi kísérletekről.",
-        "Azt a tanítást, hogy a tudomány kizárólag szótárak és tankönyvek bemagolásával sajátítható el."
+        "Olyan tudást, amelyet a kutatók titokban tartanak egymás előtt.",
+        "Olyan tudást, amelyet nem lehet szabályokkal pontosan elmondani.",
+        "Olyan tudást, amelyet csak tankönyvekből lehet megszerezni."
       ],
-      "correct": 0
+      "correct": 1
     },
     {
       "id": "b2-eszmetortenet-03.ex03",
@@ -60,9 +60,9 @@
       "teaches": [
         "b2-political-thought-vocab"
       ],
-      "sentence": "Polányi Károly szerint a gazdaság hagyományosan szervesen beletartozott a társadalom szövetébe, vagyis megvolt a társadalmi _____.",
-      "answer": "beágyazottsága",
-      "english": "According to Karl Polanyi, the economy traditionally belonged organically to the fabric of society, meaning it possessed social embeddedness."
+      "sentence": "Polányi Károly szerint a gazdaság korábban be volt ágyazva a társadalomba, vagyis jellemző volt rá a társadalmi _____.",
+      "answer": "beágyazottság",
+      "english": "According to Karl Polanyi, the economy used to be embedded in society, that is, social embeddedness was typical of it."
     },
     {
       "id": "b2-eszmetortenet-03.ex04",
@@ -70,16 +70,16 @@
       "category": "grammar",
       "stage": "controlled",
       "teaches": [
-        "b2-cleft-identification"
+        "b2-cataphoric-clauses"
       ],
-      "question": "Melyik eszközhatározói szerkezet fejezi ki helyesen a cél elérésének módját? 'A közösségi bizalom _____ erősödik meg, hogy az intézmények átláthatóan működnek.'",
+      "question": "Melyik illik a mondatba? 'A közösségi bizalom _____ erősödik meg, hogy az intézmények átláthatóan működnek.'",
       "options": [
+        "arra",
+        "azoknak",
         "azáltal",
-        "annak",
-        "abból",
-        "azzal"
+        "azokban"
       ],
-      "correct": 0
+      "correct": 2
     },
     {
       "id": "b2-eszmetortenet-03.ex05",
@@ -89,9 +89,13 @@
       "teaches": [
         "b2-cleft-identification"
       ],
-      "sentence": "A társadalmi feszültségek jelentős része abból _____ , hogy a piacgazdaság felborította a hagyományos közösségi kötelékeket.",
-      "answer": "adódott",
-      "english": "A significant portion of social tensions arose from the fact that the market economy overturned traditional community bonds."
+      "sentence": "A társadalmi feszültségek jelentős része abból _____, hogy a piacgazdaság felborította a hagyományos közösségi kötelékeket.",
+      "english": "A significant portion of social tensions arose from the fact that the market economy overturned traditional community bonds.",
+      "answers": [
+        "adódott",
+        "fakadt",
+        "származott"
+      ]
     },
     {
       "id": "b2-eszmetortenet-03.ex06",
@@ -109,8 +113,10 @@
         "valósul",
         "meg,",
         "hogy",
+        "a",
+        "kutatók",
         "szabadon",
-        "kutatnak."
+        "vitatkoznak."
       ],
       "solution": [
         "A",
@@ -120,10 +126,12 @@
         "valósul",
         "meg,",
         "hogy",
+        "a",
+        "kutatók",
         "szabadon",
-        "kutatnak."
+        "vitatkoznak."
       ],
-      "english": "Scientific progress is realized by means of their researching freely."
+      "english": "Scientific progress comes about because researchers debate freely."
     },
     {
       "id": "b2-eszmetortenet-03.ex07",
@@ -131,12 +139,12 @@
       "category": "dialogue",
       "stage": "dialogue",
       "teaches": [
-        "b2-cleft-identification"
+        "b2-cataphoric-clauses"
       ],
       "prompt": [
         {
           "speaker": "Közgazdász",
-          "text": "Hogyan magyarázza Polányi Károly az önszabályozó piac összeomlását?"
+          "text": "Hogyan magyarázza Polányi Károly a piacgazdaság válságát?"
         },
         {
           "speaker": "Szociológus",
@@ -144,24 +152,24 @@
         }
       ],
       "options": [
-        "Elemzése szerint a válság abból adódott, hogy a föld és a munka áruvá silányítása szétroncsolta a társadalom természetes védekező hálóját.",
-        "Elemzése szerint a válság arra adódott, hogy a föld és a munka áruvá silányítása szétroncsolta a társadalom természetes védekező hálóját.",
-        "Elemzése szerint a válság abból adódott, mert a föld és a munka áruvá silányítása szétroncsolta a társadalom természetes védekező hálóját."
+        "Elemzése szerint a válság arra adódott, hogy a föld, a munka és a pénz áruvá vált, és ez szétszakította a társadalmi kohéziót.",
+        "Elemzése szerint a válság abból adódott, hogy a föld, a munka és a pénz áruvá vált, és ez szétszakította a társadalmi kohéziót.",
+        "Elemzése szerint a válság abból adódott, mert a föld, a munka és a pénz áruvá vált, és ez szétszakította a társadalmi kohéziót."
       ],
-      "correct": 0
+      "correct": 1
     },
     {
       "id": "b2-eszmetortenet-03.ex08",
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Melyik szellemi műhelyhez kötődött a Polányi család a századfordulós Budapesten?",
+      "question": "Melyik könyvében bírálta Polányi Károly az önszabályozó piacot?",
       "options": [
-        "A Vasárnapi Körhöz és a reformgondolkodású Galilei Körhöz.",
-        "A királyi udvar arisztokratikus báljaihoz Visegrádon.",
-        "Kizárólag az osztrák császári hadbíróság hivatalához Bécsben."
+        "A Hitel című könyvében.",
+        "Az Uralkodó eszmék című könyvében.",
+        "A nagy átalakulás című könyvében."
       ],
-      "correct": 0
+      "correct": 2
     }
   ]
 }
