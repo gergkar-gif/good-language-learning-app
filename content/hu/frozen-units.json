@@ -3832,8 +3832,8 @@
    "accepted": []
   },
   "b2/information-overload-rumor-verification": {
-   "frozen": "2026-11-04",
-   "reason": "HU B2 core batch 29-39: read by Sonnet, filtered and applied (2026-11-04)",
+   "frozen": "2026-11-10",
+   "reason": "read by a Sonnet reader, fix list reviewed and applied (imports/review/hu-b2-batch-core-29-39/review.md); refrozen 2026-11-10 after C1 valószínűsíthető was replaced by valószínű",
    "accepted": []
   },
   "b2/ingenuity-design": {
@@ -4030,8 +4030,8 @@
    ]
   },
   "b2/national-theatre": {
-   "frozen": "2026-11-04",
-   "reason": "read by a Sonnet reader (culture track), fix list reviewed and applied, facts verified (imports/review/hu-b2-batch-cult-02-08/review.md, reviewer-facts.md)",
+   "frozen": "2026-11-10",
+   "reason": "read by a Sonnet reader (culture track), fix list reviewed and applied, facts verified (imports/review/hu-b2-batch-cult-02-08/review.md, reviewer-facts.md); refrozen 2026-11-10 after two screen titles naming C1 hadd were corrected",
    "accepted": [
     {
      "check": "vocab-unused",
@@ -4234,8 +4234,8 @@
    "accepted": []
   },
   "b2/technology-futurism-human-agency": {
-   "frozen": "2026-11-04",
-   "reason": "read by a Sonnet reader, fix list reviewed and applied, facts checked (imports/review/hu-b2-batch-core-65-71/review.md)",
+   "frozen": "2026-11-10",
+   "reason": "read by a Sonnet reader, fix list reviewed and applied, facts checked (imports/review/hu-b2-batch-core-65-71/review.md); refrozen 2026-11-10 after the lesson 05 grammar label (C1 formulas) was corrected",
    "accepted": []
   },
   "b2/the-martians": {
@@ -4614,6 +4614,21 @@
    "unit": "a1/possession",
    "date": "2026-11-07",
    "reason": "bug report #220: a1-45-practice-7 substitution now has 2 options (added lakás/lakásuk) instead of 1"
+  },
+  {
+   "unit": "b2/technology-futurism-human-agency",
+   "date": "2026-11-10",
+   "reason": "stale lesson grammar label named C1 formulas the lesson does not teach (2026-11-10)"
+  },
+  {
+   "unit": "b2/national-theatre",
+   "date": "2026-11-10",
+   "reason": "C1 formula left in a screen title / table, found by the new check_c1_forms.py (2026-11-10)"
+  },
+  {
+   "unit": "b2/information-overload-rumor-verification",
+   "date": "2026-11-10",
+   "reason": "C1 formula left in a screen title / table, found by the new check_c1_forms.py (2026-11-10)"
   }
  ]
 }

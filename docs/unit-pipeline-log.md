@@ -1713,6 +1713,9 @@ The user took the four recommended options:
 - **The worker restarted twice mid-review**; applied fixes on disk survived, but a reader's
   report kept only in a reply would not have: readers now write report files where the
   harness allows, and the reviewer saves a reply the moment it arrives.
-- **A C1 formula slipped past the reader in an item stem** (*összességében*): the reviewer's
-  grep for the C1 list over the applied files catches it; worth a check-content pattern if it
-  recurs.
+- **A C1 formula slipped past the reader in an item stem** (*összességében*), the second time
+  after Unit 34's hedging lesson: scripted as `python scripts/check_c1_forms.py hu b2 [stems]`
+  (the C1 list of rulebook § 6b over exercises, grammar, lessons and challenges; stories are
+  not searched). Its first run found three leftovers in frozen units, fixed and refrozen: a C1
+  label in core b2-35-05, two *hadd* screen titles in culture Unit 8, *valószínűsíthető* in
+  core Unit 33. Run it on every batch before freezing.
