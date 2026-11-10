@@ -24,6 +24,7 @@ const DiagnosticTest = (function () {
 
     let _testData = null;
     let _loadedLang = null;
+    let _skillTitles = {}; // skill slug -> learner-facing title (grammar-titles.json)
     let _phase = PHASE.PREFACE;
     let _currentTierIdx = 0;
     let _currentQuestionIdx = 0;
@@ -62,11 +63,18 @@ const DiagnosticTest = (function () {
     }
 
     function _saveResult(placedLevel, tierResults, jumpedAhead) {
+        const now = new Date().toISOString();
         const payload = {
             level: placedLevel,
-            completedAt: new Date().toISOString(),
+            completedAt: now,
             tierResults: tierResults || [],
-            jumpedAhead: !!jumpedAhead
+            jumpedAhead: !!jumpedAhead,
+            // The "nearly there" tier's missed skills. LearnerModel counts
+            // them as recent trouble (like a level test's topics to
+            // revisit), so practice suggestions pick them up.
+            reviewSkills: _reviewSkills(tierResults),
+            takenAt: now,
+            takenAtOpen: (typeof AppOpens !== 'undefined') ? AppOpens.current() : null
         };
         try {
             localStorage.setItem(_storageKey(), JSON.stringify(payload));
@@ -89,6 +97,16 @@ const DiagnosticTest = (function () {
             const res = await fetch(url);
             _testData = res.ok ? await res.json() : null;
             _loadedLang = lang;
+            _skillTitles = {};
+            try {
+                const titlesUrl = (typeof Lang !== 'undefined')
+                    ? Lang.content('indexes/grammar-titles.json')
+                    : `content/${lang}/indexes/grammar-titles.json`;
+                const tRes = await fetch(titlesUrl);
+                if (tRes.ok) _skillTitles = await tRes.json();
+            } catch (e) {
+                _skillTitles = {};
+            }
         } catch (e) {
             console.warn('DiagnosticTest: failed to load diagnostic-test.json', e);
             _testData = null;
@@ -145,13 +163,41 @@ const DiagnosticTest = (function () {
         return (_testData && typeof _testData.borderlineRatio === 'number') ? _testData.borderlineRatio : 0.7;
     }
 
+    // Correct answers needed out of `total` to reach a ratio: the learner
+    // is told "11 of 12", not a percentage the item count can't hit.
+    function _needed(ratio, total) {
+        return Math.min(total, Math.ceil(ratio * total - 1e-9));
+    }
+
+    // Up to three skills missed on the "nearly there" tier, in question
+    // order: the short review list that goes with a placement one level up.
+    const REVIEW_SKILLS_MAX = 3;
+    function _reviewSkills(results) {
+        const nearly = (results || []).find(r => r.borderline);
+        return nearly ? (nearly.missedSkills || []).slice(0, REVIEW_SKILLS_MAX) : [];
+    }
+
+    function _skillTitle(slug) {
+        const t = _skillTitles && _skillTitles[slug];
+        return (typeof t === 'string' && t) ? t : String(slug).replace(/-/g, ' ');
+    }
+
+    // False only when the course's curriculum is loaded and the level has
+    // no units (es-es B2, for one). Unknown counts as "has content".
+    function _levelHasContent(level) {
+        const data = (typeof window !== 'undefined') ? window._curriculumData : null;
+        if (!data || !data.levels) return true;
+        const lvl = data.levels[level] || data.levels[String(level).toUpperCase()] || data.levels[String(level).toLowerCase()];
+        return !!(lvl && Array.isArray(lvl.units) && lvl.units.length > 0);
+    }
+
     function _renderPreface(host) {
         const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
         const firstTier = (_testData && _testData.tiers && _testData.tiers[0]) || {};
         const perTier = (firstTier.questions || []).length +
             ((firstTier.readingSection && firstTier.readingSection.questions) || []).length;
-        const passPct = Math.round(_passRatio() * 100);
-        const nearPct = Math.round(_borderlineRatio() * 100);
+        const passNeed = _needed(_passRatio(), perTier);
+        const nearNeed = _needed(_borderlineRatio(), perTier);
 
         host.innerHTML = `
             <div class="diag-wrap">
@@ -173,15 +219,15 @@ const DiagnosticTest = (function () {
                         </div>
                         <div class="diag-meta-item">
                             <span class="diag-meta-label">Time</span>
-                            <span class="diag-meta-val">5 to 7 minutes</span>
+                            <span class="diag-meta-val">About 5 minutes per level</span>
                         </div>
                         <div class="diag-meta-item">
                             <span class="diag-meta-label">To move up a level</span>
-                            <span class="diag-meta-val">${passPct}% correct</span>
+                            <span class="diag-meta-val">${passNeed} of ${perTier} correct</span>
                         </div>
                         <div class="diag-meta-item">
                             <span class="diag-meta-label">Close call</span>
-                            <span class="diag-meta-val">${nearPct}% or more lets you choose to start one level higher</span>
+                            <span class="diag-meta-val">${nearNeed} or more: you start one level higher, with a short list of topics to review</span>
                         </div>
                     </div>
 
@@ -314,7 +360,7 @@ const DiagnosticTest = (function () {
                     <div class="diag-header-bar">
                         <button type="button" class="dk-back" data-action="close-diag">← Quit</button>
                         <div class="diag-tier-status">
-                            <span class="diag-tier-pill">Tier ${_currentTierIdx + 1} of ${tiers.length}: ${_esc(tier.level)} · ${Math.round(_passRatio() * 100)}% to Pass</span>
+                            <span class="diag-tier-pill">Tier ${_currentTierIdx + 1} of ${tiers.length}: ${_esc(tier.level)}</span>
                             <span class="diag-q-counter">Question ${_currentQuestionIdx + 1} of ${questions.length}</span>
                         </div>
                     </div>
@@ -386,19 +432,30 @@ const DiagnosticTest = (function () {
                     });
                 });
 
-                if (_answers[q.id] !== undefined) {
-                    const onEnterNext = (e) => {
-                        if (e.key === 'Enter') {
-                            const nextBtn = host.querySelector('[data-action="next-q"]');
-                            if (nextBtn && !nextBtn.disabled) {
-                                e.preventDefault();
-                                nextBtn.click();
-                            }
-                        }
-                    };
-                    host.addEventListener('keydown', onEnterNext, { once: true });
+                // The card is rebuilt on every choice, which drops focus:
+                // put it back on the chosen option so the keyboard keeps
+                // working after a click.
+                const chosenBtn = host.querySelector('.diag-opt-btn.selected');
+                if (chosenBtn) {
+                    try { chosenBtn.focus({ preventScroll: true }); } catch (e) {}
                 }
             }
+
+            // Enter moves on only from the option already chosen (or from
+            // outside the options). On any other option it selects that
+            // option, as a button should. One handler per card, replaced
+            // on each render, so handlers never pile up.
+            host.onkeydown = isTextInput ? null : (e) => {
+                if (e.key !== 'Enter') return;
+                const onOption = e.target && e.target.closest ? e.target.closest('[data-option-idx]') : null;
+                if (onOption && !onOption.classList.contains('selected')) return;
+                if (e.target && e.target.closest && e.target.closest('[data-action]')) return;
+                const nextBtn = host.querySelector('[data-action="next-q"]');
+                if (nextBtn && !nextBtn.disabled) {
+                    e.preventDefault();
+                    nextBtn.click();
+                }
+            };
 
             const prevBtn = host.querySelector('[data-action="prev-q"]');
             if (prevBtn) {
@@ -432,6 +489,7 @@ const DiagnosticTest = (function () {
     }
 
     function _renderTierReading(host, tier) {
+        host.onkeydown = null;
         const tiers = (_testData && _testData.tiers) ? _testData.tiers : [];
         const rs = tier.readingSection;
         if (!rs || !rs.questions || !rs.questions.length) {
@@ -590,6 +648,7 @@ const DiagnosticTest = (function () {
         let readingCorrect = 0;
         let readingTotal = 0;
         const evidence = [];
+        const missedSkills = [];
 
         questions.forEach(q => {
             const userAns = _answers[q.id];
@@ -609,6 +668,11 @@ const DiagnosticTest = (function () {
             }
             if (userAns !== undefined) {
                 evidence.push({ id: 'diag:' + q.id, rating: coreCorrect > before ? 'good' : 'again' });
+            }
+            if (coreCorrect === before) {
+                (q.teaches || []).slice(0, 1).forEach(slug => {
+                    if (missedSkills.indexOf(slug) === -1) missedSkills.push(slug);
+                });
             }
         });
 
@@ -668,7 +732,8 @@ const DiagnosticTest = (function () {
             readingCorrect,
             readingTotal,
             passed,
-            borderline
+            borderline,
+            missedSkills
         });
 
         if (passed && _currentTierIdx + 1 < tiers.length) {
@@ -682,6 +747,7 @@ const DiagnosticTest = (function () {
     }
 
     function _renderTierTransition(host) {
+        host.onkeydown = null;
         const tiers = (_testData && _testData.tiers) ? _testData.tiers : [];
         const prevTier = tiers[_currentTierIdx - 1];
         const nextTier = tiers[_currentTierIdx];
@@ -695,12 +761,12 @@ const DiagnosticTest = (function () {
             <div class="diag-wrap">
                 <div class="diag-transition-card">
                     <span class="sp-level-pill">${_esc(prevTier.level)} Tier Cleared</span>
-                    <h2 class="diag-title">${_esc(prevTier.level)} Foundations Mastered!</h2>
+                    <h2 class="diag-title">${_esc(prevTier.level)} cleared</h2>
                     <p class="diag-transition-score">
                         ${scoreDetail}
                     </p>
                     <p class="diag-lead" style="margin-bottom: 24px;">
-                        Advancing to <strong>${_esc(nextTier.name || nextTier.level)}</strong> to evaluate higher CEFR competencies.
+                        Next: <strong>${_esc(nextTier.name || nextTier.level)}</strong>.
                     </p>
                     <button type="button" class="wk-primary-btn diag-btn-start" data-action="continue-next-tier">
                         Continue to Tier ${_currentTierIdx + 1} (${_esc(nextTier.level)}) →
@@ -754,11 +820,13 @@ const DiagnosticTest = (function () {
         const normPassed = passedLevel.toUpperCase();
         const orderIdx = levelsOrder.indexOf(normPassed);
 
-        if (orderIdx !== -1 && orderIdx + 1 < levelsOrder.length) {
+        // Never place into a level the course has no units for (es-es B2):
+        // the learner stays on the highest level cleared.
+        if (orderIdx !== -1 && orderIdx + 1 < levelsOrder.length && _levelHasContent(levelsOrder[orderIdx + 1])) {
             return levelsOrder[orderIdx + 1];
         }
 
-        return passedLevel;
+        return normPassed;
     }
 
     function _renderReviewBreakdown() {
@@ -972,6 +1040,7 @@ const DiagnosticTest = (function () {
     }
 
     function _renderDebrief(host) {
+        host.onkeydown = null;
         const placedLevel = _determinePlacement();
         const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
 
@@ -987,9 +1056,34 @@ const DiagnosticTest = (function () {
         }
 
         const nearly = _tierResults.find(r => r.borderline);
+        const reviewSkills = _reviewSkills(_tierResults);
+        // The highest tier cleared (passed, or nearly) when the course has
+        // nothing above it: the learner stays on that level.
+        const cleared = _tierResults.filter(r => r.passed || r.borderline).pop();
+        const toppedOut = !!cleared && cleared.level.toUpperCase() === placedLevel.toUpperCase();
+
         if (nearly) {
-            coachSentence = `You scored ${nearly.correct} of ${nearly.total} on ${nearly.level}, just under the ${Math.round(_passRatio() * 100)}% mark. You're mostly there: start at ${placedLevel}, or review ${nearly.level} first if parts of it felt shaky.`;
+            const need = _needed(_passRatio(), nearly.total);
+            const where = toppedOut
+                ? `This course has no level above ${nearly.level} yet, so stay in ${nearly.level}`
+                : `Start at ${placedLevel}`;
+            coachSentence = `You scored ${nearly.correct} of ${nearly.total} on ${nearly.level}; the pass mark is ${need}. That is close enough to move on. ${where} and go over the topics below. They will also come up in your practice suggestions.`;
+        } else if (toppedOut) {
+            coachSentence = `You cleared ${placedLevel}, the highest level this test covers, and this course has no level above it yet. ${placedLevel} stays open for review, and its Level Test can confirm the result.`;
         }
+
+        const reviewListHtml = !nearly ? '' : `
+                    <div class="diag-breakdown-section diag-review-topics" style="margin-bottom: 20px;">
+                        <h4 style="margin: 0 0 10px; font-size: 0.9rem; color: var(--muted); text-transform: uppercase;">Topics to review from ${_esc(nearly.level)}</h4>
+                        ${reviewSkills.length ? `
+                            <ul class="diag-review-topic-list" style="margin: 0; padding-left: 20px; line-height: 1.7;">
+                                ${reviewSkills.map(slug => `<li data-review-skill="${_esc(slug)}">${_esc(_skillTitle(slug))}</li>`).join('')}
+                            </ul>
+                        ` : `
+                            <p style="margin: 0;">Your misses were in the reading section, not in a grammar topic.</p>
+                        `}
+                    </div>
+        `;
 
         const levelsOrder = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : ['A1', 'A2', 'B1', 'B2', 'C1'];
         const placedIdx = levelsOrder.indexOf(placedLevel.toUpperCase());
@@ -1019,6 +1113,8 @@ const DiagnosticTest = (function () {
                         </div>
                         <p class="sp-coach-note-body">${_esc(coachSentence)}</p>
                     </div>
+
+                    ${reviewListHtml}
 
                     <div class="diag-breakdown-section">
                         <h4 style="margin: 0 0 10px; font-size: 0.9rem; color: var(--muted); text-transform: uppercase;">Tier Performance Breakdown</h4>
@@ -1052,7 +1148,7 @@ const DiagnosticTest = (function () {
 
                     <div class="diag-pedagogical-reminder" style="margin-top: 20px; padding: 14px; background: var(--wash, #f8f9fa); border-radius: var(--radius-sm, 4px); font-size: 0.85rem; color: var(--muted); line-height: 1.55;">
                         <p style="margin: 0 0 8px;"><strong>Placement Recommendation:</strong> Accepting placement unlocks your recommended starting level (${_esc(placedLevel)}), but all previous curriculum lessons remain open for practice and review at any time.</p>
-                        <p style="margin: 0;"><strong>Comprehensive Multi-Modal Verification:</strong> This test is an initial rapid screener. Full CEFR certifications (including spoken recording and extended writing evaluation) are verified via the official <strong>Level Tests</strong> at the end of each curriculum level.</p>
+                        <p style="margin: 0;"><strong>A screener, not a certificate:</strong> this test is short. Each level ends with a longer <strong>Level Test</strong>, with writing and speaking, that checks the level properly.</p>
                     </div>
 
                     <div class="diag-debrief-actions" style="margin-top: 24px; display: flex; flex-direction: column; gap: 10px;">
@@ -1070,9 +1166,9 @@ const DiagnosticTest = (function () {
                             <button type="button" class="wk-secondary-btn" data-action="review-answers-bottom" style="flex: 1;">
                                 Review Questions &amp; Options
                             </button>
-                            ${nearly ? `
+                            ${nearly && !toppedOut ? `
                                 <button type="button" class="wk-secondary-btn" data-action="review-nearly" style="flex: 1;">
-                                    Review ${_esc(nearly.level)} First
+                                    Start at ${_esc(nearly.level)} Instead
                                 </button>
                             ` : ''}
                             ${!nearly || nearly.level.toUpperCase() !== 'A1' ? `
@@ -1215,6 +1311,13 @@ const DiagnosticTest = (function () {
         } catch (e) {}
 
         await _load();
+        if (typeof window !== 'undefined' && !window._curriculumData && typeof loadCurriculumData === 'function') {
+            try {
+                window._curriculumData = await loadCurriculumData();
+            } catch (e) {
+                console.warn('DiagnosticTest: could not preload curriculum data:', e);
+            }
+        }
         if (!_testData) {
             if (typeof UI !== 'undefined' && UI.toast) {
                 UI.toast('Diagnostic test content not available for this course yet.', 'warning');
@@ -1274,7 +1377,9 @@ const DiagnosticTest = (function () {
         isOnboardingDismissed,
         dismissOnboarding,
         _determinePlacement,
-        _evaluateCurrentTier
+        _evaluateCurrentTier,
+        _reviewSkills,
+        _needed
     };
 })();
 

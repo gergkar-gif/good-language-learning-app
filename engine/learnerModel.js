@@ -355,6 +355,21 @@ const LearnerModel = (function () {
         return flags;
     }
 
+    // The placement diagnostic's "nearly there" review list (the skills
+    // missed on a tier the learner was moved past) counts the same way,
+    // labelled 'placement' so the suggestion reads "Your placement test…".
+    function _recentPlacementFlags(flags) {
+        if (typeof DiagnosticTest === 'undefined' || typeof DiagnosticTest.result !== 'function') return flags;
+        const result = DiagnosticTest.result();
+        const at = result && result.takenAt ? Date.parse(result.takenAt) : NaN;
+        if (!isFinite(at) || Date.now() - at > TROUBLE_TEST_DAYS * 86400000) return flags;
+        (result.reviewSkills || []).slice(0, TROUBLE_TEST_TOPICS).forEach(rawId => {
+            const skillId = _canonicalSkill(rawId);
+            if (!flags.has(skillId)) flags.set(skillId, { level: 'placement', open: result.takenAtOpen });
+        });
+        return flags;
+    }
+
     async function troubleSkills(limit) {
         const bySkill = await _skillRefs();
         if (!bySkill) return [];
@@ -366,7 +381,7 @@ const LearnerModel = (function () {
         const stillMissed = card => !!card && card.lapses > 0 && card.reviews === 0
             && !card.recoveredAtOpen && currentOpen - (card.lastOpen || 0) <= TROUBLE_RECENT_OPENS;
 
-        const testFlags = _recentTestFlags();
+        const testFlags = _recentPlacementFlags(_recentTestFlags());
         const rightSince = (card, open) => !!card && typeof open === 'number'
             && ((card.reviews > 0 && card.lastOpen >= open) || card.recoveredAtOpen >= open);
 
