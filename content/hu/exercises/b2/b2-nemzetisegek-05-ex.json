@@ -47,9 +47,9 @@
       "question": "Hogyan nevezi a magyar parlament azokat a nemzetiségi képviselőket, akik felszólalási joggal képviselik közösségüket?",
       "options": [
         "nemzetiségi szószóló",
-        "ombudsman",
-        "alispán",
-        "jegyző"
+        "országgyűlési biztos",
+        "köztársasági elnök",
+        "helyi polgármester"
       ],
       "correct": 0
     },
@@ -61,9 +61,9 @@
       "teaches": [
         "b2-nationalities-vocab"
       ],
-      "sentence": "A nemzetiségi intézmények fenntartásának legfőbb célja a nyelvi _____ megelőzése és a hagyományőrzés.",
+      "sentence": "A nemzetiségi intézmények fenntartásának egyik célja a nyelvi _____ lassítása és a hagyományőrzés.",
       "answer": "asszimiláció",
-      "english": "The paramount goal of maintaining nationality institutions is preventing linguistic assimilation and preserving traditions."
+      "english": "One aim of maintaining nationality institutions is slowing linguistic assimilation and preserving traditions."
     },
     {
       "id": "b2-nemzetisegek-05.ex04",
@@ -73,14 +73,17 @@
       "teaches": [
         "egymas"
       ],
-      "question": "Melyik mondat szintetizálja helyesen a disztributív és a kölcsönös szerkezetet?",
+      "question": "Melyik mondat helyes? (Region by region, the municipalities organise education together with one another.)",
       "options": [
         "A települések régiónként egymással együttműködve szervezik meg az oktatást.",
-        "A települések régiókban egymás nélkül szervezik meg az oktatást.",
-        "A települések régiónak egymástól függetlenül szüntetik meg az oktatást.",
-        "A települések régiónként egymást nem ismerve működnek."
+        "A települések régiónként egymás együttműködve szervezik meg az oktatást.",
+        "A települések régióként egymással együttműködve szervezik meg az oktatást.",
+        "A települések régiónként egymással együttműködni szervezik meg az oktatást."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "2": "essive-formal-kent"
+      }
     },
     {
       "id": "b2-nemzetisegek-05.ex05",
@@ -91,8 +94,11 @@
         "egymas"
       ],
       "sentence": "Az önkormányzatok közösségenként _____ egyeztetve hozzák meg a kulturális döntéseket.",
-      "answer": "egymással",
-      "english": "Community by community, the self-governments make cultural decisions in consultation with one another."
+      "english": "Community by community, the self-governments make cultural decisions in consultation with one another.",
+      "answers": [
+        "egymással",
+        "egymás között"
+      ]
     },
     {
       "id": "b2-nemzetisegek-05.ex06",
@@ -105,26 +111,30 @@
       "tiles": [
         "A",
         "szószólók",
-        "frakciónként",
+        "nemzetiségenként",
         "egymással",
-        "tárgyalva",
+        "egyeztetve",
         "képviselik",
         "a",
-        "kisebbségi",
-        "érdekeket."
+        "közösségeik",
+        "érdekeit",
+        "az",
+        "Országgyűlésben."
       ],
       "solution": [
         "A",
         "szószólók",
-        "frakciónként",
+        "nemzetiségenként",
         "egymással",
-        "tárgyalva",
+        "egyeztetve",
         "képviselik",
         "a",
-        "kisebbségi",
-        "érdekeket."
+        "közösségeik",
+        "érdekeit",
+        "az",
+        "Országgyűlésben."
       ],
-      "english": "Negotiating with one another across factions, the advocates represent minority interests."
+      "english": "Nationality by nationality, consulting one another, the advocates represent the interests of their communities in the National Assembly."
     },
     {
       "id": "b2-nemzetisegek-05.ex07",
@@ -145,9 +155,9 @@
         }
       ],
       "options": [
-        "Mert saját fenntartásban közvetlenül garantálhatják az anyanyelvi oktatás óraszámát és a hagyományőrző tantervet.",
-        "Mert saját fenntartásba közvetlenül garantálhatják az anyanyelvi oktatás óraszámát és a hagyományőrző tantervet.",
-        "Mert saját fenntartásban közvetlenül garantálhatnák az anyanyelvi oktatás óraszámát és a hagyományőrző tantervre."
+        "Mert saját fenntartásban maguk szervezhetik meg az anyanyelvi oktatást.",
+        "Mert saját fenntartásba maguk szervezhetik meg az anyanyelvi oktatást.",
+        "Mert saját fenntartásban maguk szervezhetik meg az anyanyelvi oktatásra."
       ],
       "correct": 0
     },
@@ -156,11 +166,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Hány szintből áll a nemzetiségi önkormányzati rendszer Magyarországon?",
+      "question": "Mit szerveznek a települési nemzetiségi önkormányzatok a szöveg szerint?",
       "options": [
-        "Két szintből: települési és országos önkormányzatokból.",
-        "Kizárólag egyetlen budapesti minisztériumból.",
-        "Négy különböző katonai tanácsból."
+        "A helyi közösségek kulturális életét.",
+        "Az országos nemzetiségi érdekképviseletet.",
+        "Az országgyűlési választások lebonyolítását."
       ],
       "correct": 0
     }
