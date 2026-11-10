@@ -28,7 +28,7 @@
         ],
         [
           "zöldövezet",
-          "green belt"
+          "green zone"
         ],
         [
           "közösségkovácsoló",
@@ -47,8 +47,8 @@
       "question": "Milyen építészeti stílust képviselnek a Wekerletelep Fő terének ikonikus épületei és kapui?",
       "options": [
         "Kós Károly és a Fiatalok által megteremtett erdélyi gyökerű magyar népi szecessziót.",
-        "A szovjet típusú szocialista realista panelesített brutalizmust.",
-        "A francia mintájú neobarokk versailles-i palotastílust."
+        "Az eklektikus bérházak díszes, stukkós homlokzatait, amelyek a Nagykörút mentén sorakoznak.",
+        "Az angol kertváros-mozgalom egyforma, egyszerű házait, erdélyi motívumok nélkül."
       ],
       "correct": 0
     },
@@ -72,12 +72,12 @@
       "teaches": [
         "b2-relative-postpositions"
       ],
-      "question": "Melyik birtokos vonatkozó kifejezés fejezi be helyesen a mondatot? 'A Fő tér, _____ Kós Károly faragott kapui állnak, a település központja.'",
+      "question": "Melyik birtokos vonatkozó kifejezés fejezi be helyesen a mondatot? 'A telep, _____ sok fát ültettek, zöld volt.'",
       "options": [
-        "amelynek mentén",
-        "amelyen",
-        "amellyel",
-        "amelyből"
+        "amelynek területén",
+        "amelyet területén",
+        "amellyel területén",
+        "amelyre területén"
       ],
       "correct": 0
     },
@@ -90,8 +90,11 @@
         "b2-relative-postpositions"
       ],
       "sentence": "A kertes lakóház, _____ gyümölcsfák virágoztak, nyugalmat nyújtott a lakóknak.",
-      "answer": "amelynek udvarán",
-      "english": "The residential house in the yard of which fruit trees bloomed offered tranquility to the residents."
+      "english": "The residential house in the yard of which fruit trees bloomed offered tranquility to the residents.",
+      "answers": [
+        "amelynek udvarán",
+        "amelynek az udvarán"
+      ]
     },
     {
       "id": "b2-lakhatas-02.ex06",
@@ -107,8 +110,10 @@
         "amelynek",
         "területén",
         "iskola",
+        "és",
+        "piac",
         "működött,",
-        "önellátó",
+        "kertváros",
         "volt."
       ],
       "solution": [
@@ -117,11 +122,13 @@
         "amelynek",
         "területén",
         "iskola",
+        "és",
+        "piac",
         "működött,",
-        "önellátó",
+        "kertváros",
         "volt."
       ],
-      "english": "The settlement on the territory of which a school operated was self-sufficient."
+      "english": "The estate on the territory of which a school and a market operated was a garden city."
     },
     {
       "id": "b2-lakhatas-02.ex07",
@@ -134,7 +141,7 @@
       "prompt": [
         {
           "speaker": "Várostervező",
-          "text": "Miért számított különlegesnek Wekerletelep a korabeli Európában?"
+          "text": "Miért számított különlegesnek Wekerletelep a korabeli Budapesten?"
         },
         {
           "speaker": "Építészettörténész",
@@ -142,9 +149,9 @@
         }
       ],
       "options": [
-        "Mert egy olyan átgondolt kertváros valósult meg, amelynek zöldövezetében a szociális jólét és a magas szintű népi szecessziós építészet harmonikusan egyesült.",
-        "Mert egy olyan átgondolt kertváros valósult meg, amely zöldövezetében a szociális jólét és a magas szintű népi szecessziós építészet harmonikusan egyesült.",
-        "Mert egy olyan átgondolt kertváros valósult meg, amelyet zöldövezetében a szociális jólét és a magas szintű népi szecessziós építészet harmonikusan egyesült."
+        "Mert olyan átgondolt kertváros épült, amelynek zöldövezetében kertes házak és népi szecessziós épületek álltak.",
+        "Mert olyan átgondolt kertváros épült, amely zöldövezetében kertes házak és népi szecessziós épületek álltak.",
+        "Mert olyan átgondolt kertváros épült, amelyet zöldövezetében kertes házak és népi szecessziós épületek álltak."
       ],
       "correct": 0
     },
@@ -153,11 +160,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Hogyan befolyásolta a telepi lakók egészségét a kertes környezet a szöveg szerint?",
+      "question": "Mi tartozott a szöveg szerint minden wekerletelepi lakóházhoz?",
       "options": [
-        "A saját kerti zöldségtermesztés és a tiszta levegő miatt a halandóság lényegesen alacsonyabb volt a belvárosi átlagnál.",
-        "A kertes környezet miatt a lakók ritkábban mozogtak a szabadban, így az átlagos életkor nem tért el a pesti adatoktól.",
-        "A vidéki életmód miatt a fertőző betegségek jóval gyorsabban terjedtek, mint a modern csatornázott bérházak lakásaiban."
+        "Saját kertrész, ahol a bérlők gyümölcsfákat gondoztak és zöldséget termesztettek.",
+        "Közös konyha és közös fürdőszoba, ahol a szomszédok együtt főztek és mosakodtak.",
+        "Saját műhely a ház alatt, ahol a bérlők kisipari munkát végeztek és árut árultak."
       ],
       "correct": 0
     }

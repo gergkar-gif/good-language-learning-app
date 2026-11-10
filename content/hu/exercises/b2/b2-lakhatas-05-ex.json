@@ -44,11 +44,11 @@
       "teaches": [
         "b2-housing-estates-renewal-vocab"
       ],
-      "question": "Milyen kihívásokkal szembesülnek azok a családok, akik a szuburbanizáció révén az agglomerációba költöznek?",
+      "question": "Milyen gondokat okozott a szöveg szerint a Budapestről kiköltözők nagy száma?",
       "options": [
-        "Mindennapos közlekedési dugókkal a bevezető utakon és férőhelyhiánnyal az intézményekben.",
-        "Az elektromos áram és a vezetékes víz teljes hiányával.",
-        "A belvárosba való belépés hatósági megtiltásával."
+        "Mindennapos dugókat a bevezető utakon, és férőhelyhiányt az óvodákban és az iskolákban.",
+        "Üresen maradt óvodákat és iskolákat a kistelepüléseken, mert kevesen költöztek oda.",
+        "Kevesebb dugót a bevezető utakon, és több szabad helyet az óvodákban és az iskolákban."
       ],
       "correct": 0
     },
@@ -60,9 +60,9 @@
       "teaches": [
         "b2-housing-estates-renewal-vocab"
       ],
-      "sentence": "A használaton kívüli vasúti és ipari telephelyek, vagyis a volt _____, kiváló terepet nyújtanak új, zöld lakónegyedek építésére.",
+      "sentence": "A használaton kívüli vasúti és ipari telephelyek, vagyis a _____, helyet adhatnak új, zöld lakónegyedeknek.",
       "answer": "rozsdaövezetek",
-      "english": "Disused railway and industrial premises, that is, former brownfields, provide excellent grounds for building new green residential districts."
+      "english": "Disused railway and industrial sites, that is, brownfield zones, can provide space for new green residential districts."
     },
     {
       "id": "b2-lakhatas-05.ex04",
@@ -75,9 +75,9 @@
       "question": "Melyik szerkezet illeszkedik a mondatba? 'A felújítási program, _____ korszerűsítik az épületeket, támogatást kapott.'",
       "options": [
         "amelynek keretében",
-        "amellyel szemben",
-        "amely felé",
-        "amely alól"
+        "amelyet keretében",
+        "amellyel keretében",
+        "amelyhez keretében"
       ],
       "correct": 0
     },
@@ -90,8 +90,11 @@
         "b2-relative-postpositions"
       ],
       "sentence": "A történelmi bérház, _____ modern hőszigetelést építettek be, lényegesen kevesebb energiát fogyaszt.",
-      "answer": "amelynek falai közé",
-      "english": "The historic tenement between whose walls modern insulation was installed consumes significantly less energy."
+      "english": "The historic tenement between whose walls modern insulation was installed consumes significantly less energy.",
+      "answers": [
+        "amelynek falai közé",
+        "amelynek a falai közé"
+      ]
     },
     {
       "id": "b2-lakhatas-05.ex06",
@@ -132,17 +135,17 @@
       "prompt": [
         {
           "speaker": "Urbanista",
-          "text": "Hogyan oldható meg a budapesti lakhatási válság hosszú távon?"
+          "text": "Mit javasolnak egyes szakemberek a budapesti lakhatási válság hosszú távú kezelésére?"
         },
         {
-          "speaker": "Polgármester",
+          "speaker": "Szakértő",
           "text": "_____"
         }
       ],
       "options": [
-        "Olyan bérlakásprogrammal, amelynek révén megfizethető otthonok létesülnek a volt rozsdaövezetekben, és amelyhez képest a piaci albérletárak mérséklődhetnek.",
-        "Olyan bérlakásprogrammal, amely révén megfizethető otthonok létesülnek a volt rozsdaövezetekben, és amelyen képest a piaci albérletárak mérséklődhetnek.",
-        "Olyan bérlakásprogrammal, amelyet révén megfizethető otthonok létesülnek a volt rozsdaövezetekben, és amelyet képest a piaci albérletárak mérséklődhetnek."
+        "Olyan bérlakásprogramot, amelynek révén megfizethető otthonok létesülnek a volt rozsdaövezetekben, és amelyhez képest a piaci albérletárak drágának tűnnek.",
+        "Olyan bérlakásprogramot, amelyet révén megfizethető otthonok létesülnek a volt rozsdaövezetekben, és amelyhez képest a piaci albérletárak drágának tűnnek.",
+        "Olyan bérlakásprogramot, amelynek révén megfizethető otthonok létesülnek a volt rozsdaövezetekben, és amelyet képest a piaci albérletárak drágának tűnnek."
       ],
       "correct": 0
     },

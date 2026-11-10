@@ -44,12 +44,12 @@
       "teaches": [
         "b2-temporal-framing"
       ],
-      "question": "Which temporal marker specifically indicates continuous duration over calendar spans ('over the course of decades') rather than internal procedural steps?",
+      "question": "Melyik szó illik a mondatba? 'Az évtizedek _____ a magyar korfa átalakult.'",
       "options": [
         "folyamán",
-        "során",
         "helyett",
-        "végett"
+        "végett",
+        "ellenére"
       ],
       "correct": 0
     },
@@ -61,7 +61,7 @@
       "teaches": [
         "b2-family-policy-vocab"
       ],
-      "question": "Melyik fogalom jelöli a női életkor alatt átlagosan született gyermekek számát egy adott országban?",
+      "question": "Melyik fogalom jelöli az egy nőre jutó átlagos gyermekszámot?",
       "options": [
         "Termékenységi arányszám.",
         "Eltartottsági ráta.",
@@ -78,9 +78,9 @@
       "teaches": [
         "b2-family-policy-vocab"
       ],
-      "sentence": "Az 1950-es évek elején érvényben lévő abortusztilalom miatt kibontakozó időszakot a történelemírás _____ néven említi.",
+      "sentence": "Az 1950-es évek eleji szigorú népesedéspolitika idejét a történelemírás _____ néven említi.",
       "answer": "Ratkó-korszak",
-      "english": "Historiography refers to the period unfolding due to the abortion ban in the early 1950s as the Ratkó era."
+      "english": "Historiography calls the time of the strict population policy of the early 1950s the Ratkó era."
     },
     {
       "id": "b2-demografia-consolidation.ex05",
@@ -90,9 +90,12 @@
       "teaches": [
         "b2-temporal-framing"
       ],
-      "sentence": "A szülési szabadság három évének _____ a munkavállaló visszatérhet korábbi állásába.",
-      "answer": "múltával",
-      "english": "With the passage of the three years of maternity leave, the employee may return to their former job."
+      "sentence": "Három év _____ az anya visszatérhetett a korábbi munkahelyére.",
+      "english": "With the passage of three years, the mother could return to her former workplace.",
+      "answers": [
+        "múltával",
+        "elteltével"
+      ]
     },
     {
       "id": "b2-demografia-consolidation.ex06",
@@ -102,9 +105,9 @@
       "teaches": [
         "b2-temporal-framing"
       ],
-      "sentence": "_____ a családpolitikai támogatások megérkeztek, az ingatlanárak már jelentősen megemelkedtek.",
+      "sentence": "_____ a család összegyűjtötte az önerőt, az ingatlanárak már jelentősen megemelkedtek.",
       "answer": "Mire",
-      "english": "By the time the family policy subsidies arrived, property prices had already risen significantly."
+      "english": "By the time the family had saved up the down payment, property prices had already risen considerably."
     },
     {
       "id": "b2-demografia-consolidation.ex07",
@@ -139,12 +142,11 @@
       "teaches": [
         "b2-temporal-framing"
       ],
-      "question": "Which sentence demonstrates the idiomatic use of 'idejére' to express a projected temporal milestone?",
+      "question": "Melyik mondat helyes?",
       "options": [
         "A népes nemzedék nyugdíjba vonulásának idejére a társadalomnak fel kell készítenie az ellátórendszert.",
-        "Az ellátórendszer felkészült a nyugdíj idején idejére.",
-        "A nyugdíjba vonulás idején idejére a dolgozók pihennek.",
-        "A társadalom idejére vonult vissza a nemzedék idején."
+        "A népes nemzedék nyugdíjba vonulásának idejéről a társadalomnak fel kell készítenie az ellátórendszert.",
+        "A népes nemzedék nyugdíjba vonulásának idejét a társadalomnak fel kell készítenie az ellátórendszert."
       ],
       "correct": 0
     },
@@ -168,8 +170,8 @@
       ],
       "options": [
         "Az évtizedek folyamán megnőtt az inaktívak aránya, így mire a Ratkó-nemzedék nyugdíjba vonult, kevesebb aktív dolgozó járulékából kellett kigazdálkodni a kifizetéseket.",
-        "Az évtizedek folyamában megnőtt az inaktívak aránya, így amíg a Ratkó-nemzedék nyugdíjba vonult, kevesebb aktív dolgozó járulékából kellett kigazdálkodni a kifizetéseket.",
-        "Az évtizedeket folyamán megnőtt az inaktívak aránya, így mire a Ratkó-nemzedék nyugdíjba vonult volna, kevesebb aktív dolgozó járulékából kell kigazdálkodni a kifizetést."
+        "Az évtizedek folyamán megnőtt az inaktívak aránya, így mire a Ratkó-nemzedék nyugdíjba vonul, kevesebb aktív dolgozó járulékából kellett kigazdálkodni a kifizetéseket.",
+        "Az évtizedeket folyamán megnőtt az inaktívak aránya, így mire a Ratkó-nemzedék nyugdíjba vonult, kevesebb aktív dolgozó járulékából kellett kigazdálkodni a kifizetéseket."
       ],
       "correct": 0
     },
@@ -241,16 +243,16 @@
       "category": "writing",
       "stage": "produce",
       "teaches": [
-        "b2-temporal-framing"
+        "b2-family-policy-vocab"
       ],
       "template": [
         {
           "prompt": "Write a sentence explaining the demographic ripple effect of the 1950s baby boom (use 'az évtizedek folyamán' and 'során').",
-          "answer": "Az évtizedek folyamán a Ratkó-nemzedék belépése a munkaerőpiacra komoly lakáshiányt okozott, amelynek kezelése során hatalmas lakótelepek épültek fel."
+          "answer": "Az évtizedek folyamán a Ratkó-nemzedék a munkaerőpiacon és a lakáspiacon is érezhető terhelést jelentett, amelynek kezelése során lakótelepek is épültek."
         },
         {
-          "prompt": "Write a sentence describing the timing of housing purchases for young families (use 'mire' with a perfective verb prefix).",
-          "answer": "Mire a fiatal párok a harmincas éveik közepére értek, a családtámogatási kedvezmények segítségével felépítették saját otthonukat."
+          "prompt": "Write a sentence about young couples saving for a home (use 'mire' with a perfective verb prefix).",
+          "answer": "Mire a fiatal párok összegyűjtötték az önerőt, a lakások ára már megemelkedett."
         }
       ]
     }
