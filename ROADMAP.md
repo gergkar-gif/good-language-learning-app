@@ -69,10 +69,10 @@ Completed work is archived out to `ACHIEVED.md`.
     - **Backfill sentences** (1531 es-latam, 1208 hu; no source lesson, so never offered by an engine launch): decide whether to tie them to a unit or leave them to manual Workshop use. `Writing` and `listening-studio` use their own pools and were not checked.
     - Later, once the above holds: score candidates instead of fixed precedence, use `outcomeStats()` to down-rank card types the learner keeps skipping, an optional learner goal, and a "why this" line from the evidence. *(sign-off)*
 
-155. **Placement diagnostic: what is left (added 2026-11-10).** The audit, the corrected items in es-es, es-latam and hu, the review list, the pass mark (10 of 12) and accent-sensitive typed answers are done (ACHIEVED.md 155); rules in AGENTS.md § "Placement diagnostic"; audit report in [imports/review/es-placement-diagnostic-audit-2026-11-10.md](imports/review/es-placement-diagnostic-audit-2026-11-10.md). State: all three diagnostics pass `tests/test-diagnostic-engine.js` with an empty `KNOWN_OPEN` list. Next: the native-speaker read.
-    - **Native-speaker read** of the items and passages Claude rewrote on 2026-11-10, in Spanish (both courses) and Hungarian; and a check that every word in them has been taught by the tier's level.
-    - **Engine leftovers**: the diagnostic and the level tests share `readingScores[level]` (a 2/2 here blocks a later 7/8; nothing reads the key yet); "Quit" discards answers without asking; a retake sends the `diag:` evidence again; `tests/drills/test-diagnostic-test.js` still tests a copy of the placement logic; `validate-content.py` skips `diagnostic-test.json`; the diagnostic tests are not run in CI.
-    - **Prado passage (es-es A1)**: hours and free slot taken from search summaries, not from museodelprado.es.
+155. **Placement diagnostic: small leftovers (added 2026-11-10).** The diagnostic in es-es, es-latam and hu was **accepted as ready by the user on 2026-11-10** (ACHIEVED.md 155; rules in AGENTS.md § "Placement diagnostic"). None of the points below blocks it. State: shipped. Next: nothing scheduled.
+    - **No native speaker has read the items Claude rewrote** (Spanish and Hungarian); the user accepted them without that read. Worth doing if a learner reports an odd item. Also unchecked: that every word in the items has been taught by the tier's level, and the Prado hours (es-es A1 passage) against museodelprado.es.
+    - **Engine**: the diagnostic and the level tests share `readingScores[level]` (a 2/2 here blocks a later 7/8; nothing reads the key yet); "Quit" discards answers without asking; a retake sends the `diag:` evidence again.
+    - **Checks**: `tests/drills/test-diagnostic-test.js` still tests a copy of the placement logic; `validate-content.py` skips `diagnostic-test.json`; the diagnostic tests are not run in CI.
 
 ---
 
