@@ -1,6 +1,6 @@
-# Reviewer facts, HU B2 culture batch 42-48 (draft, read while the readers run, 2026-11-05)
+# Reviewer facts, HU B2 culture batch 42-48 (2026-11-05, finished 2026-11-10)
 
-To compare with the readers' fixes when they arrive.
+Read while the readers ran, then compared with their fixes; outcome in **Result** below.
 
 | claim | where | verdict so far | source |
 |---|---|---|---|
@@ -20,3 +20,13 @@ To compare with the readers' fixes when they arrive.
 | 1977 treaty; Duna Kör 1984 (Vargha János); Right Livelihood Award 1985; Nagymaros suspended by the Németh government in May 1989 | b2-kornyezetpolitika-02, -03 | true | standard |
 | 12 September 1988: "a legnagyobb tömegtüntetés Magyarországon az 1956-os forradalom óta" | b2-kornyezetpolitika-03 p3 | disputed: the 27 June 1988 rally on Hősök tere (Romanian village demolitions) is usually given as larger; hedge | — |
 | Baia Mare, 30 January 2000, ~100,000 m³ of cyanide sludge, over 1,000 t of dead fish | b2-kornyezetpolitika-04 | true; "a közép-európai folyók legsúlyosabb" overclaim | standard |
+
+## Result
+
+- Fixed by the readers as well: the banknote (now *százmillió bilpengős*, the largest issued), the 15-hour doubling (a July 1946 peak, not an average), the unsupported export figures, Szimpla's year, the 1988 "largest since 1956" (hedged), the Baia Mare "legsúlyosabb" (now *egyik*), the Tisza "több millió hektár", the Kis-Balaton credit.
+- Found by the readers only: Dunaújváros and Kazincbarcika were not built for the Ratkó generation (1950s); the family allowance stayed universal; the Wekerle houses are semi-detached and terraced; the Baia Mare task force examined causes, it did not establish liability.
+- **Corrected by Claude:**
+  - GYES: "a gyermek két és fél, később hároméves koráig" (sources differ on the 1967 limit).
+  - Mothers' income-tax exemption: "2020-tól a négy vagy több gyermeket nevelő anyák, 2025 októberétől pedig a háromgyermekes anyák is"; the two-child rule left out (sources disagree after the 19 October 2026 announcement).
+  - C1 *összességében* in b2-demografia-04.ex03 → *jelentősen*.
+  - Three rejected fixes repaired (a *senki* tell, two length give-aways), one more (*teljesen*).

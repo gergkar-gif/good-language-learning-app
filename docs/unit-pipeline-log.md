@@ -461,6 +461,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-05 | HU B2 culture 18, 20, 22, 24 | paired read, 2 culture units/reader, text first, no limit | | A 327,909, B 351,376 (~170k a unit) | 316 proposed (104 / 74 / 76 / 62), 10 rejected and repaired; 1 wrong rule from a reader (*-at/-tat*), 1 reader note left in a story | 1 later-skill lesson rewritten by the reader (Unit 24, relative + postposition); walk 24/24 |
 | 11-05 | HU B2 culture 26, 28, 30, 32 | paired read, 2 culture units/reader, text first, no limit | | A 388,908, B 430,492 (~205k a unit) | 443 proposed (85 / 116 / 107 / 135), 0 rejected; 2 facts missed by both readers (Bonbonnière address, Szegénylegények period) | every unit replays the preceding core unit's grammar; walk 24/24 |
 | 11-05 | HU B2 culture 34, 36, 38, 40 | paired read, 2 culture units/reader, text first, no limit | | A 387,806, B 378,933 (~192k a unit) | 335 proposed (90 / 90 / 84 / 71), 1 rejected and repaired; 1 reader replacement fact wrong (falugondnok date) | 1 C1 lesson rewritten by the reader (Unit 34 hedging); walk 24/24 |
+| 11-10 | HU B2 culture 42, 44, 46, 48 | paired read, 2 culture units/reader, text first, no limit | | A 410,765, B 410,678 (~205k a unit) | 395 proposed (86 / 106 / 101 / 102), 4 rejected and repaired | present-day family benefits dated by the reviewer; walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1703,3 +1704,15 @@ The user took the four recommended options:
   1990"; it began in August 1990). Replacement facts stay on the reviewer's check list.
 - **A reader can add an unsourced "critics say" to balance a disputed matter** (the Memento
   Park): naming the dispute in one line is enough; an invented opposing view is still invented.
+
+### 2026-11-10: HU B2 culture Units 42–48
+
+- **Present-day benefit rules moved during the batch** (an announcement on 19 October 2026
+  changed the two-child exemption's steps; sources disagree): a dated rule that is certain
+  stays (four children 2020, three 2025), an unsettled one is left out rather than guessed.
+- **The worker restarted twice mid-review**; applied fixes on disk survived, but a reader's
+  report kept only in a reply would not have: readers now write report files where the
+  harness allows, and the reviewer saves a reply the moment it arrives.
+- **A C1 formula slipped past the reader in an item stem** (*összességében*): the reviewer's
+  grep for the C1 list over the applied files catches it; worth a check-content pattern if it
+  recurs.
