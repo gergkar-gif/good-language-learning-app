@@ -42,11 +42,27 @@ def strings(node, where=""):
             yield from strings(v, f"{where}[{i}]")
 
 
+def resolve(course, level, name):
+    """A unit id (e.g. ombudsman-civic-rights) becomes its file stem (b2-jogvedelem);
+    a stem is kept. Readers passed unit ids and got a silent 0 (batch 58-64)."""
+    if any(list((ROOT / "content" / course / f / level).glob(f"{name}*.json")) for f in FOLDERS):
+        return name
+    units = json.loads((ROOT / "content" / course / "curriculum" / "units" / f"{level}.json").read_text(encoding="utf-8"))
+    units = units["units"] if isinstance(units, dict) else units
+    for u in units:
+        if u.get("id") == name:
+            stems = u.get("stems") or []
+            if stems:
+                return stems[0].rsplit("-", 1)[0]
+    sys.exit(f"no files for '{name}': give a file stem (e.g. {level}-jogvedelem) or a unit id")
+
+
 def main(argv):
     if len(argv) < 2:
         print(__doc__)
         return 2
     course, level, stems = argv[0], argv[1], argv[2:]
+    stems = [resolve(course, level, s) for s in stems]
     hits = 0
     files = []
     for folder in FOLDERS:
