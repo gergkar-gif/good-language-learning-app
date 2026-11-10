@@ -1,6 +1,6 @@
-# Reviewer facts, HU B2 culture batch 50-56 (draft, read while the readers run, 2026-11-10)
+# Reviewer facts, HU B2 culture batch 50-56 (2026-11-10)
 
-To compare with the readers' fixes when they arrive.
+Read while the readers ran, then compared with their fixes; outcome in **Result** below.
 
 | claim | where | verdict so far | source |
 |---|---|---|---|
@@ -19,3 +19,9 @@ To compare with the readers' fixes when they arrive.
 | József Attila quoted: "másfél millió emberünk kitántorgott Amerikába" | b2-diaszpora-01 p1 | **a poem quoted from memory**: paraphrase (rule) | — |
 | ~200,000 emigrants in 1956; the Andau bridge; the Sopron forestry faculty at UBC "önálló kart alapítottak" | b2-diaszpora-02 | true; at UBC it was the *Sopron Division* within the forestry faculty: hedge | standard |
 | London "a második legnagyobb magyar lakosságú város" | b2-diaszpora-04 p2 | unverified: remove or hedge | — |
+
+## Result
+
+- Fixed by the readers as well: the 1989 quotation (paraphrased), the 13 nationalities (from the 2011 Act), Gróf → gróf, Székelyföld and part of Maros, the language-use overclaim, the EGTC dates (bridge 2001, Euroregion 1999, EGTC 2008), the József Attila line (removed, paraphrase), the Sopron division at UBC, London "second largest" (named as disputed), the citizenship figure (now "egymillió", attributed).
+- Found by the readers only: Czinka Panna (d. 1772) could not inspire Liszt or Brahms; the actio popularis was open to anyone; *alaptörvény* → *alkotmány* for 1989-90; Szűrös proclaimed the republic as Speaker; the German expulsions 1946-48 (170-200 thousand); nationality self-governments on three levels; free Jewish settlement in Pest only from 1840; the 2004 referendum invalid for low turnout; Kárpátalja went to Czechoslovakia in 1920, not the Soviet Union; a counterfactual without *volna* in the main clause (Unit 54 screen 02, caught by the focus note).
+- **Corrected by Claude:** the Kárpátalja institution's present name (*II. Rákóczi Ferenc Kárpátaljai Magyar Egyetem*, "beregszászi egyetem") in the story, a grammar example, an item and a challenge; two rejected fixes repaired (double quotes that broke a JSON file, a length give-away), one more (length).

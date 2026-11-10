@@ -462,6 +462,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-05 | HU B2 culture 26, 28, 30, 32 | paired read, 2 culture units/reader, text first, no limit | | A 388,908, B 430,492 (~205k a unit) | 443 proposed (85 / 116 / 107 / 135), 0 rejected; 2 facts missed by both readers (Bonbonnière address, Szegénylegények period) | every unit replays the preceding core unit's grammar; walk 24/24 |
 | 11-05 | HU B2 culture 34, 36, 38, 40 | paired read, 2 culture units/reader, text first, no limit | | A 387,806, B 378,933 (~192k a unit) | 335 proposed (90 / 90 / 84 / 71), 1 rejected and repaired; 1 reader replacement fact wrong (falugondnok date) | 1 C1 lesson rewritten by the reader (Unit 34 hedging); walk 24/24 |
 | 11-10 | HU B2 culture 42, 44, 46, 48 | paired read, 2 culture units/reader, text first, no limit | | A 410,765, B 410,678 (~205k a unit) | 395 proposed (86 / 106 / 101 / 102), 4 rejected and repaired | present-day family benefits dated by the reviewer; walk 24/24 |
+| 11-10 | HU B2 culture 50, 52, 54, 56 | paired read, 2 culture units/reader, text first, no limit, readers run check_c1_forms | | A 365,963, B 401,259 (~192k a unit) | 366 proposed (71 / 81 / 118 / 96), 3 rejected and repaired (1 broken JSON from double quotes) | walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1719,3 +1720,13 @@ The user took the four recommended options:
   not searched). Its first run found three leftovers in frozen units, fixed and refrozen: a C1
   label in core b2-35-05, two *hadd* screen titles in culture Unit 8, *valószínűsíthető* in
   core Unit 33. Run it on every batch before freezing.
+
+### 2026-11-10: HU B2 culture Units 50–56
+
+- **The focus note on counterfactuals worked**: reader B found and fixed a *volna*-less main
+  clause in a screen, its table, example, tip and speaking step.
+- **A fix with double quotes inside an English tip broke the JSON** (check_fixes.py caught it:
+  "leaves invalid JSON"). Rebuilt with single quotes. Readers should use single quotes or
+  *italics* for examples in English text.
+- **Present-day names of institutions** (the Rákóczi főiskola became an egyetem) are a fact
+  class the readers keep missing; the reviewer's own read caught it.
