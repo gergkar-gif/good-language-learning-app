@@ -1,6 +1,6 @@
 // Placement diagnostic: tests that load engine/diagnostic.js itself (the
-// older test-diagnostic.js checks a copy of the scoring), and that hold the
-// Spanish items to the level of their tier.
+// older test-diagnostic.js checks a copy of the scoring), and that hold
+// every course's items to the placement rules.
 const fs = require('fs');
 const path = require('path');
 const assert = require('assert');
@@ -41,24 +41,54 @@ assert.deepStrictEqual(Diag._reviewSkills([tier('A1', 12), tier('A2', 8, { misse
 assert.deepStrictEqual(Diag._reviewSkills([tier('A1', 12, { missedSkills: [] })]), []);
 console.log('[PASS] review list comes from the nearly-there tier only');
 
-// 5. Spanish items: one skill each, a grammar skill of the tier's own
-//    level, known to the registry; no vosotros answers in es-latam; typed
-//    items never list an alternative that only repeats the answer.
-const skills = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'skills', 'es.json'), 'utf8')).skills;
-['es-es', 'es-latam'].forEach(course => {
-    const data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'content', course, 'tests', 'diagnostic-test.json'), 'utf8'));
+// 5. Every course that has a diagnostic (found on disk, so a new language
+//    is held to this from its first commit): what the review list needs
+//    (one registered skill per core item, with a learner-facing title,
+//    unique ids) and the item rules in AGENTS.md § "Placement diagnostic".
+//
+//    KNOWN_OPEN lists, by exact id, the items written before the rules that
+//    still break them (ROADMAP 155). They are reported, not failed; any
+//    item NOT listed fails, and a listed item that has been fixed fails
+//    too, so the list can only shrink.
+const KNOWN_OPEN = {
+    hu: {
+        offLevel: ['hu-diag-a2-01', 'hu-diag-a2-04', 'hu-diag-a2-06', 'hu-diag-a2-07', 'hu-diag-a2-08',
+            'hu-diag-b1-01', 'hu-diag-b1-03', 'hu-diag-b1-05', 'hu-diag-b1-06', 'hu-diag-b1-08', 'hu-diag-b1-09'],
+        noNotStated: true
+    }
+};
+const contentDir = path.join(__dirname, '..', 'content');
+const courses = fs.readdirSync(contentDir).filter(c => fs.existsSync(path.join(contentDir, c, 'tests', 'diagnostic-test.json'))).sort();
+assert(courses.includes('es-es') && courses.includes('es-latam') && courses.includes('hu'), 'the three shipped diagnostics are found');
+const norm = v => v.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+courses.forEach(course => {
+    const lang = course.split('-')[0];
+    const skills = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'skills', lang + '.json'), 'utf8')).skills;
+    const titles = JSON.parse(fs.readFileSync(path.join(contentDir, course, 'indexes', 'grammar-titles.json'), 'utf8'));
+    const data = JSON.parse(fs.readFileSync(path.join(contentDir, course, 'tests', 'diagnostic-test.json'), 'utf8'));
+    const open = KNOWN_OPEN[course] || {};
+    const allowedOffLevel = new Set(open.offLevel || []);
     const ids = new Set();
+    const offLevel = [];
     let notStated = 0;
     data.tiers.forEach(t => {
         t.questions.forEach(q => {
             assert(!ids.has(q.id), `${course} ${q.id}: duplicate id`);
             ids.add(q.id);
             assert(Array.isArray(q.teaches) && q.teaches.length === 1, `${course} ${q.id}: exactly one skill`);
-            const skill = skills[q.teaches[0]];
-            assert(skill, `${course} ${q.id}: unknown skill ${q.teaches[0]}`);
-            assert.strictEqual(skill.level, t.level, `${course} ${q.id}: ${q.teaches[0]} is a ${skill.level} skill in the ${t.level} tier`);
+            const slug = q.teaches[0];
+            const skill = skills[slug];
+            assert(skill, `${course} ${q.id}: unknown skill ${slug}`);
+            assert.strictEqual(skill.kind, 'grammar', `${course} ${q.id}: ${slug} is not a grammar skill`);
+            assert(typeof titles[slug] === 'string' && titles[slug], `${course} ${q.id}: ${slug} has no title for the review list`);
+            if (skill.level !== t.level) {
+                assert(allowedOffLevel.has(q.id), `${course} ${q.id}: ${slug} is a ${skill.level} skill in the ${t.level} tier`);
+                offLevel.push(q.id);
+            } else {
+                assert(!allowedOffLevel.has(q.id), `${course} ${q.id}: now on level, remove it from KNOWN_OPEN`);
+            }
             if (q.type === 'text-input') {
-                const norm = v => v.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
                 (q.altAnswers || []).forEach(a => assert.notStrictEqual(norm(a), norm(q.answer), `${course} ${q.id}: altAnswer repeats the answer`));
                 if (course === 'es-latam') {
                     [q.answer].concat(q.altAnswers || []).forEach(a => assert(!/[áée]is$/.test(a.trim()), `${course} ${q.id}: vosotros form "${a}"`));
@@ -71,8 +101,13 @@ const skills = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'skills', '
             if (rq.type === 'true-false-not-stated' && rq.correct === 2) notStated++;
         });
     });
-    assert(notStated >= 1, `${course}: "not stated" must be the right answer at least once`);
-    console.log(`[PASS] ${course}: every item tests one skill of its own tier`);
+    if (open.noNotStated) assert.strictEqual(notStated, 0, `${course}: has a "not stated" answer now, remove noNotStated from KNOWN_OPEN`);
+    else assert(notStated >= 1, `${course}: "not stated" must be the right answer at least once`);
+    if (offLevel.length || open.noNotStated) {
+        console.log(`[PASS] ${course}: review list has what it needs. KNOWN OPEN: ${offLevel.length} items below their tier's level${open.noNotStated ? ', no "not stated" answer' : ''}`);
+    } else {
+        console.log(`[PASS] ${course}: review list has what it needs; every item tests one skill of its own tier`);
+    }
 });
 
 console.log('\n[ALL PASS] Diagnostic engine tests.');
