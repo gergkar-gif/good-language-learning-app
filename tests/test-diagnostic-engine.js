@@ -10,20 +10,21 @@ const Diag = require('../engine/diagnostic.js');
 
 const tier = (level, correct, extra) => {
     const ratio = correct / 12;
-    return Object.assign({ level, correct, total: 12, passed: ratio >= 0.85, borderline: ratio < 0.85 && ratio >= 0.7 }, extra || {});
+    return Object.assign({ level, correct, total: 12, passed: ratio >= 0.83, borderline: ratio < 0.83 && ratio >= 0.7 }, extra || {});
 };
 
 // 1. The pass mark shown to the learner is a count the tier can reach.
-assert.strictEqual(Diag._needed(0.85, 12), 11, '85% of 12 items is 11');
+assert.strictEqual(Diag._needed(0.83, 12), 10, 'the pass mark is 10 of 12');
 assert.strictEqual(Diag._needed(0.7, 12), 9, '70% of 12 items is 9');
-assert.strictEqual(Diag._needed(0.85, 10), 9);
-console.log('[PASS] pass mark: 11 of 12, nearly there from 9 of 12');
+assert.strictEqual(Diag._needed(0.83, 10), 9);
+console.log('[PASS] pass mark: 10 of 12, nearly there at 9 of 12');
 
 // 2. Placement ladder, including the middle band.
 assert.strictEqual(Diag._determinePlacement([tier('A1', 8)]), 'A1', 'a failed A1 stays in A1');
 assert.strictEqual(Diag._determinePlacement([tier('A1', 9)]), 'A2', 'nearly there on A1 moves up');
 assert.strictEqual(Diag._determinePlacement([tier('A1', 12), tier('A2', 8)]), 'A2');
-assert.strictEqual(Diag._determinePlacement([tier('A1', 12), tier('A2', 10)]), 'B1');
+assert.strictEqual(Diag._determinePlacement([tier('A1', 12), tier('A2', 9)]), 'B1');
+assert.strictEqual(Diag._determinePlacement([tier('A1', 10), tier('A2', 10), tier('B1', 8)]), 'B1', '10 of 12 clears a tier');
 assert.strictEqual(Diag._determinePlacement([tier('A1', 12), tier('A2', 12), tier('B1', 12)]), 'B2');
 console.log('[PASS] placement ladder with the nearly-there band');
 
@@ -31,7 +32,7 @@ console.log('[PASS] placement ladder with the nearly-there band');
 window._curriculumData = { levels: { A1: { units: [{}] }, A2: { units: [{}] }, B1: { units: [{}] }, B2: { units: [] }, C1: { units: [] } } };
 assert.strictEqual(Diag._determinePlacement([tier('A1', 12), tier('A2', 12), tier('B1', 12)]), 'B1', 'cleared B1 stays in B1 when B2 is empty');
 assert.strictEqual(Diag._determinePlacement([tier('A1', 12), tier('A2', 12), tier('B1', 9)]), 'B1', 'nearly there on B1 stays in B1 when B2 is empty');
-assert.strictEqual(Diag._determinePlacement([tier('A1', 12), tier('A2', 10)]), 'B1', 'levels with units are unaffected');
+assert.strictEqual(Diag._determinePlacement([tier('A1', 12), tier('A2', 9)]), 'B1', 'levels with units are unaffected');
 window._curriculumData = null;
 console.log('[PASS] no placement into an empty level');
 

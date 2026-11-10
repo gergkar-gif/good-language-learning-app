@@ -12,7 +12,7 @@ langs.forEach(lang => {
     assert(fs.existsSync(filePath), `File exists: ${filePath}`);
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
-    assert.strictEqual(data.passRatio, 0.85, `${lang}: passRatio must be 0.85`);
+    assert.strictEqual(data.passRatio, 0.83, `${lang}: passRatio must be 0.83 (10 of 12)`);
     assert(Array.isArray(data.tiers), `${lang}: tiers array exists`);
     assert.strictEqual(data.tiers.length, 3, `${lang}: must have 3 tiers (A1, A2, B1)`);
 
@@ -63,7 +63,7 @@ langs.forEach(lang => {
         });
     });
 
-    console.log(`[PASS] ${lang} diagnostic-test.json structure validated (3 tiers, 10 core questions + readingSection each, 85% pass mark).`);
+    console.log(`[PASS] ${lang} diagnostic-test.json structure validated (3 tiers, 10 core questions + readingSection each, pass mark 10 of 12).`);
 });
 
 // 2. Test evaluation logic

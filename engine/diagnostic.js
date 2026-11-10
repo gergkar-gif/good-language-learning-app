@@ -152,8 +152,10 @@ const DiagnosticTest = (function () {
         }
     }
 
+    // 0.83 is 10 of a tier's 12 items (user, 2026-11-10): one slip on one
+    // item should not stop the test.
     function _passRatio() {
-        return (_testData && typeof _testData.passRatio === 'number') ? _testData.passRatio : 0.85;
+        return (_testData && typeof _testData.passRatio === 'number') ? _testData.passRatio : 0.83;
     }
 
     // A tier scored at or above this, but under the pass mark, is "nearly
@@ -227,7 +229,7 @@ const DiagnosticTest = (function () {
                         </div>
                         <div class="diag-meta-item">
                             <span class="diag-meta-label">Close call</span>
-                            <span class="diag-meta-val">${nearNeed} or more: you start one level higher, with a short list of topics to review</span>
+                            <span class="diag-meta-val">${nearNeed === passNeed - 1 ? nearNeed + ' of ' + perTier : nearNeed + ' or more'}: you start one level higher, with a short list of topics to review</span>
                         </div>
                     </div>
 
