@@ -42,6 +42,18 @@ assert.deepStrictEqual(Diag._reviewSkills([tier('A1', 12), tier('A2', 8, { misse
 assert.deepStrictEqual(Diag._reviewSkills([tier('A1', 12, { missedSkills: [] })]), []);
 console.log('[PASS] review list comes from the nearly-there tier only');
 
+// 4b. Typed answers: accents count (as in lessons); case and spacing do not.
+const typed = { answer: 'almát', altAnswers: [] };
+assert.strictEqual(Diag._isTypedCorrect(typed, '  Almát '), true);
+assert.strictEqual(Diag._isTypedCorrect(typed, 'alma\u0301t'), true, 'a decomposed accent is the same letter');
+assert.strictEqual(Diag._isTypedCorrect(typed, 'almat'), false, 'a missing accent is a miss');
+assert.strictEqual(Diag._isAccentOnlyMiss(typed, 'almat'), true);
+assert.strictEqual(Diag._isAccentOnlyMiss(typed, 'körte'), false);
+assert.strictEqual(Diag._isTypedCorrect({ answer: 'viajaríamos' }, 'viajariamos'), false);
+assert.strictEqual(Diag._isTypedCorrect({ answer: 'csináltam meg' }, 'csináltam   meg'), true);
+assert.strictEqual(Diag._isTypedCorrect({ answer: 'lakom', altAnswers: [] }, ''), false);
+console.log('[PASS] typed answers are accent-sensitive');
+
 // 5. Every course that has a diagnostic (found on disk, so a new language
 //    is held to this from its first commit): what the review list needs
 //    (one registered skill per core item, with a learner-facing title,
@@ -51,13 +63,7 @@ console.log('[PASS] review list comes from the nearly-there tier only');
 //    still break them (ROADMAP 155). They are reported, not failed; any
 //    item NOT listed fails, and a listed item that has been fixed fails
 //    too, so the list can only shrink.
-const KNOWN_OPEN = {
-    hu: {
-        offLevel: ['hu-diag-a2-01', 'hu-diag-a2-04', 'hu-diag-a2-06', 'hu-diag-a2-07', 'hu-diag-a2-08',
-            'hu-diag-b1-01', 'hu-diag-b1-03', 'hu-diag-b1-05', 'hu-diag-b1-06', 'hu-diag-b1-08', 'hu-diag-b1-09'],
-        noNotStated: true
-    }
-};
+const KNOWN_OPEN = {};
 const contentDir = path.join(__dirname, '..', 'content');
 const courses = fs.readdirSync(contentDir).filter(c => fs.existsSync(path.join(contentDir, c, 'tests', 'diagnostic-test.json'))).sort();
 assert(courses.includes('es-es') && courses.includes('es-latam') && courses.includes('hu'), 'the three shipped diagnostics are found');

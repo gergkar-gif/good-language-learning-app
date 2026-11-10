@@ -193,6 +193,35 @@ const DiagnosticTest = (function () {
         return !!(lvl && Array.isArray(lvl.units) && lvl.units.length > 0);
     }
 
+    // Typed answers: case, outer spaces and runs of spaces are ignored;
+    // accents are not (user, 2026-11-10), the same as in lessons. An accent
+    // is part of the form in every course (almát / *almat, estén / *esten).
+    // NFC only makes a composed and a decomposed letter compare equal.
+    function _normTyped(v) {
+        return String(v == null ? '' : v).normalize('NFC').trim().replace(/\s+/g, ' ').toLowerCase();
+    }
+
+    function _stripAccents(v) {
+        return v.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function _typedAccepted(q) {
+        return [q.answer].concat(q.altAnswers || []).filter(Boolean).map(_normTyped);
+    }
+
+    function _isTypedCorrect(q, userAns) {
+        const typed = (typeof userAns === 'string') ? _normTyped(userAns) : '';
+        return typed.length > 0 && _typedAccepted(q).indexOf(typed) !== -1;
+    }
+
+    // Right letters, wrong or missing accents: marked wrong, but the
+    // review says so.
+    function _isAccentOnlyMiss(q, userAns) {
+        if (typeof userAns !== 'string' || _isTypedCorrect(q, userAns)) return false;
+        const typed = _stripAccents(_normTyped(userAns));
+        return typed.length > 0 && _typedAccepted(q).some(a => _stripAccents(a) === typed);
+    }
+
     function _renderPreface(host) {
         const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
         const firstTier = (_testData && _testData.tiers && _testData.tiers[0]) || {};
@@ -316,7 +345,7 @@ const DiagnosticTest = (function () {
                         </div>
                         ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.diag-text-input') : ''}
                         <div class="diag-production-hint">
-                            Type the exact missing word or phrase. Accented letters (like ñ) will pop up as you type them. Press Enter to proceed.
+                            Type the missing word or phrase. Accents count; use the letter keys above if your keyboard lacks them. Press Enter to go on.
                         </div>
                     </div>
                 `;
@@ -656,15 +685,7 @@ const DiagnosticTest = (function () {
             const userAns = _answers[q.id];
             const before = coreCorrect;
             if (q.type === 'text-input') {
-                if (typeof userAns === 'string' && userAns.trim()) {
-                    const cleanUser = userAns.trim().toLowerCase();
-                    const normUser = cleanUser.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-                    const accepted = [q.answer, ...(q.altAnswers || [])].filter(Boolean).map(a => a.trim().toLowerCase());
-                    const normAccepted = accepted.map(a => a.normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
-                    if (accepted.includes(cleanUser) || normAccepted.includes(normUser)) {
-                        coreCorrect++;
-                    }
-                }
+                if (_isTypedCorrect(q, userAns)) coreCorrect++;
             } else {
                 if (userAns === q.correct) coreCorrect++;
             }
@@ -857,11 +878,8 @@ const DiagnosticTest = (function () {
                 let isRight = false;
 
                 if (isTextInput) {
-                    const cleanUser = (typeof userAns === 'string' ? userAns.trim() : '').toLowerCase();
-                    const normUser = cleanUser.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-                    const accepted = [q.answer, ...(q.altAnswers || [])].filter(Boolean).map(a => a.trim().toLowerCase());
-                    const normAccepted = accepted.map(a => a.normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
-                    isRight = cleanUser.length > 0 && (accepted.includes(cleanUser) || normAccepted.includes(normUser));
+                    isRight = _isTypedCorrect(q, userAns);
+                    const accentMiss = _isAccentOnlyMiss(q, userAns);
 
                     return `
                         <div class="diag-review-q-card">
@@ -876,7 +894,7 @@ const DiagnosticTest = (function () {
                                 ${isRight ? `
                                     <span>Your answer: <strong>${_esc(userAns)}</strong></span>
                                 ` : `
-                                    <span>Your answer: <span class="diag-review-wrong-val">${_esc(userAns || '—')}</span> · Correct answer: <strong>${_esc(q.answer)}</strong></span>
+                                    <span>Your answer: <span class="diag-review-wrong-val">${_esc(userAns || '—')}</span> · Correct answer: <strong>${_esc(q.answer)}</strong>${accentMiss ? ' · Right letters; the accents count.' : ''}</span>
                                 `}
                             </div>
                         </div>
@@ -1381,7 +1399,9 @@ const DiagnosticTest = (function () {
         _determinePlacement,
         _evaluateCurrentTier,
         _reviewSkills,
-        _needed
+        _needed,
+        _isTypedCorrect,
+        _isAccentOnlyMiss
     };
 })();
 

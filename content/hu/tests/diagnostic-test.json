@@ -11,7 +11,7 @@
       "questions": [
         {
           "id": "hu-diag-a1-01",
-          "sentence": "Péter Budapesten született, és most is a fővárosban _____.",
+          "sentence": "Péter Budapesten, a főváros központjában _____.",
           "options": [
             "él",
             "élnek",
@@ -53,12 +53,12 @@
         },
         {
           "id": "hu-diag-a1-04",
-          "sentence": "A boltban vettem három szép piros _____.",
+          "sentence": "Kérek egy _____ és egy pohár vizet.",
           "options": [
-            "almát",
-            "almák",
-            "almátok",
-            "almán"
+            "kávét",
+            "kávé",
+            "kávék",
+            "kávéban"
           ],
           "correct": 0,
           "teaches": [
@@ -67,12 +67,12 @@
         },
         {
           "id": "hu-diag-a1-05",
-          "sentence": "_____ lakik a barátod, a belvárosban vagy a hegyekben?",
+          "sentence": "A hűtőben van tej, de sajt sajnos _____.",
           "options": [
-            "Hol",
-            "Mikor",
-            "Ki",
-            "Miért"
+            "nincs",
+            "nem van",
+            "nincsenek",
+            "nem vannak"
           ],
           "correct": 0,
           "teaches": [
@@ -85,24 +85,24 @@
           "sentence": "Két kávét és egy ásványvizet _____, legyen szíves!",
           "options": [
             "kérek",
+            "kérem",
             "kérsz",
-            "kérünk",
-            "kér"
+            "kérni"
           ],
           "correct": 0,
           "teaches": [
-            "how-the-accusative-t-works"
+            "definite-vs-indefinite-conjugation"
           ]
         },
         {
           "id": "hu-diag-a1-07",
           "prompt": "Helyzet: Az utcán sétálsz, és megkérdezel valakit a legközelebbi gyógyszertárról.",
-          "sentence": "Elnézést, _____ van a legközelebbi gyógyszertár a téren?",
+          "sentence": "Elnézést, _____ van a legközelebbi gyógyszertár?",
           "options": [
             "hol",
-            "mikor",
-            "ki",
-            "miért"
+            "hova",
+            "honnan",
+            "mikor"
           ],
           "correct": 0,
           "teaches": [
@@ -124,9 +124,7 @@
           "type": "text-input",
           "sentence": "Én már két éve egy szép budapesti lakásban (lakni - jelen idő, én) _____.",
           "answer": "lakom",
-          "altAnswers": [
-            "lakok"
-          ],
+          "altAnswers": [],
           "teaches": [
             "ik-verbs-dolgozom-not-dolgozok"
           ]
@@ -134,7 +132,7 @@
         {
           "id": "hu-diag-a1-10",
           "type": "text-input",
-          "sentence": "A piacon tegnap vettem egy finom édes (alma) _____.",
+          "sentence": "A piacon minden héten veszek egy kiló (alma) _____.",
           "answer": "almát",
           "altAnswers": [],
           "teaches": [
@@ -145,55 +143,55 @@
       "readingSection": {
         "id": "diag-rs-a1-hu",
         "title": "Olvasásértés",
-        "passage": "A Szépművészeti Múzeum Budapesten, a Hősök terén található. A múzeum keddtől vasárnapig tíz órától tizennyolc óráig tart nyitva. Hétfőn a múzeum zárva van. A belépőjegy felnőtteknek négyezer forintba kerül, de a diákok és a nyugdíjasok féláron vásárolhatnak jegyet. A múzeumban van egy kávézó és egy ajándékbolt is.",
+        "passage": "A Szépművészeti Múzeum Budapesten, a Hősök terén található. A múzeum egy nagy, régi épületben van, a Városliget mellett. A múzeumban sok híres festmény és szobor látható. Az épületben van egy kávézó és egy ajándékbolt is. Hétvégén sok család és turista látogatja a múzeumot.",
         "questions": [
           {
             "id": "hu-diag-a1-r01",
             "type": "reading-mc",
-            "question": "Mikor van zárva a múzeum?",
+            "question": "Mit lehet látni a múzeumban?",
             "options": [
-              "Hétfőn",
-              "Kedden",
-              "Vasárnap"
+              "Festményeket és szobrokat",
+              "Régi autókat és vonatokat",
+              "Állatokat és növényeket"
             ],
             "correct": 0
           },
           {
             "id": "hu-diag-a1-r02",
             "type": "true-false-not-stated",
-            "statement": "A múzeumban van egy kávézó.",
-            "correct": 0
+            "statement": "A múzeumban ingyenes a ruhatár.",
+            "correct": 2
           }
         ]
       }
     },
     {
       "level": "A2",
-      "name": "A2: Tárgyas Ragozás, Múlt Idő és Igekötők",
-      "description": "Tárgyas ragozás, múlt idő használata, igekötős igék szórendje és irányhármasság.",
+      "name": "A2: Múlt Idő, Igekötők és Felszólító Mód",
+      "description": "Múlt idő alanyi és tárgyas ragozásban, az igekötők szórendje, felszólító mód, középfok, jövő idő és ragozott névmások.",
       "questions": [
         {
-          "id": "hu-diag-a2-01",
-          "sentence": "Nem találom a szemüvegemet. Te _____ valahol?",
+          "id": "hu-diag-a2-11",
+          "sentence": "Ez a lakás sokkal _____, mint a régi.",
           "options": [
-            "látod",
-            "látsz",
-            "látom",
-            "lát"
+            "nagyobb",
+            "nagy",
+            "legnagyobb",
+            "nagyon"
           ],
           "correct": 0,
           "teaches": [
-            "definite-vs-indefinite-conjugation"
+            "comparative-bb"
           ]
         },
         {
           "id": "hu-diag-a2-02",
-          "sentence": "Tegnap este a barátaimmal moziba _____.",
+          "sentence": "Tegnap este a feleségem és én sokat _____ a kertben.",
           "options": [
-            "mentünk",
-            "mentek",
-            "mentem",
-            "mennék"
+            "dolgoztunk",
+            "dolgozunk",
+            "dolgoztak",
+            "dolgozni"
           ],
           "correct": 0,
           "teaches": [
@@ -202,12 +200,12 @@
         },
         {
           "id": "hu-diag-a2-03",
-          "sentence": "Holnap délután Péter _____ a barátnőjét a repülőtérre.",
+          "sentence": "Sajnos holnap nem _____ a barátnőmet a repülőtérre.",
           "options": [
-            "kikíséri",
-            "kíséri ki",
-            "kikísér",
-            "kísér"
+            "kísérem ki",
+            "kikísérem",
+            "ki kísérem",
+            "kikísérni"
           ],
           "correct": 0,
           "teaches": [
@@ -215,17 +213,17 @@
           ]
         },
         {
-          "id": "hu-diag-a2-04",
-          "sentence": "Nyáron két hétre a Balatonhoz _____ nyaralni.",
+          "id": "hu-diag-a2-12",
+          "sentence": "Holnap egész nap esni _____ az eső.",
           "options": [
-            "utaztunk",
-            "utazunk",
-            "utaznánk",
-            "utaztatok"
+            "fog",
+            "fognak",
+            "fogok",
+            "lesz"
           ],
           "correct": 0,
           "teaches": [
-            "elative-bol-bel"
+            "fog-infinitive"
           ]
         },
         {
@@ -243,50 +241,50 @@
           ]
         },
         {
-          "id": "hu-diag-a2-06",
-          "prompt": "Helyzet: A pályaudvaron megkérdezed az információs pultnál, honnan indul a vonatod.",
-          "sentence": "Elnézést, melyik _____ indul a balatoni gyorsvonat?",
+          "id": "hu-diag-a2-13",
+          "prompt": "Helyzet: Vendég érkezik az irodába. Önözöd, és udvariasan hellyel kínálod.",
+          "sentence": "Kérem, _____ le!",
           "options": [
-            "vágányról",
-            "vágányon",
-            "vágányra",
-            "vágányból"
+            "üljön",
+            "ül",
+            "ülni",
+            "ült"
           ],
           "correct": 0,
           "teaches": [
-            "delative-rol-rel"
+            "imperative-indefinite"
           ]
         },
         {
-          "id": "hu-diag-a2-07",
-          "prompt": "Helyzet: Sietsz a munkahelyi megbeszélésre, és elköszönsz a kollégádtól.",
-          "sentence": "Nem akarok késni, ezért most gyorsan el _____ indulnom.",
+          "id": "hu-diag-a2-14",
+          "prompt": "Helyzet: Meghívod a barátodat a születésnapodra, amelyet otthon tartasz.",
+          "sentence": "Szombaton buli lesz _____, gyere el te is!",
           "options": [
-            "kell",
-            "lehet",
-            "szabad",
-            "tud"
+            "nálam",
+            "hozzám",
+            "tőlem",
+            "velem"
           ],
           "correct": 0,
           "teaches": [
-            "kell-infinitive"
+            "case-inflected-pronouns"
           ]
         },
         {
-          "id": "hu-diag-a2-08",
+          "id": "hu-diag-a2-15",
           "type": "text-input",
-          "sentence": "Tegnap este a családommal egy hangulatos étterembe (menni - múlt idő, mi) _____ vacsorázni.",
-          "answer": "mentünk",
+          "sentence": "Tegnap este a családommal egy hangulatos étteremben (enni - múlt idő, mi) _____.",
+          "answer": "ettünk",
           "altAnswers": [],
           "teaches": [
-            "elative-bol-bel"
+            "irregular-past"
           ]
         },
         {
           "id": "hu-diag-a2-09",
           "type": "text-input",
-          "sentence": "Tegnap este a színházban (látni - múlt idő, határozott, én) _____ a nagyszerű új darabot.",
-          "answer": "láttam",
+          "sentence": "Te (látni - múlt idő) _____ már az új magyar filmet?",
+          "answer": "láttad",
           "altAnswers": [],
           "teaches": [
             "definite-past"
@@ -295,8 +293,8 @@
         {
           "id": "hu-diag-a2-10",
           "type": "text-input",
-          "sentence": "A könyvtárból tegnap este hat órakor (hazamenni - múlt idő, én) _____ mentem.",
-          "answer": "haza",
+          "sentence": "Tegnap nem (megcsinálni - múlt idő, én) _____ a házi feladatot.",
+          "answer": "csináltam meg",
           "altAnswers": [],
           "teaches": [
             "prefix-word-order"
@@ -306,23 +304,23 @@
       "readingSection": {
         "id": "diag-rs-a2-hu",
         "title": "Olvasásértés",
-        "passage": "A múlt héten a debreceni önkormányzat új közösségi kerékpárrendszert indított a belvárosban. Az állomások a vasútállomásnál, az egyetemi campusoknál és a nagyobb bevásárlóközpontoknál találhatók. A lakosok egy mobilalkalmazás segítségével bérelhetnek kerékpárokat. Az első fél óra minden regisztrált felhasználónak ingyenes, utána pedig óránként kétszáz forintot kell fizetni. A program célja a környezetbarát közlekedés népszerűsítése a városban.",
+        "passage": "A múlt héten a város önkormányzata új közösségi kerékpárrendszert indított a belvárosban. Az állomások a vasútállomásnál, az egyetemnél és a nagyobb bevásárlóközpontoknál találhatók. A lakosok egy mobilalkalmazás segítségével bérelhetnek kerékpárokat. Az első fél óra minden regisztrált felhasználónak ingyenes, utána pedig óránként kétszáz forintot kell fizetni. A program célja a környezetbarát közlekedés népszerűsítése a városban.",
         "questions": [
           {
             "id": "hu-diag-a2-r01",
             "type": "reading-mc",
-            "question": "Hol találhatók az új kerékpárállomások?",
+            "question": "Hogyan lehet kerékpárt bérelni?",
             "options": [
-              "A vasútállomásnál, egyetemeknél és bevásárlóközpontoknál",
-              "Kizárólag a repülőtéren",
-              "Csak az erdőben"
+              "Egy alkalmazással, telefonon",
+              "Bankkártyával, az állomáson",
+              "Személyesen, az önkormányzatnál"
             ],
             "correct": 0
           },
           {
             "id": "hu-diag-a2-r02",
             "type": "true-false-not-stated",
-            "statement": "Az első fél óra ingyenes a regisztrált felhasználóknak.",
+            "statement": "A regisztrált felhasználóknak az első harminc percért nem kell fizetniük.",
             "correct": 0
           }
         ]
@@ -330,21 +328,21 @@
     },
     {
       "level": "B1",
-      "name": "B1: Feltételes Mód, Felszólítás és Bonyolult Szerkezetek",
-      "description": "Feltételes mód jelen és múlt időben, kötőszók (bár, annak ellenére), felszólító mód mellékmondatokban és ragozott névutók.",
+      "name": "B1: Feltételes Mód, Kötőmód és Összetett Mondatok",
+      "description": "Múlt idejű feltételes mód, kötőmód mellékmondatokban, megengedő szerkezetek, vonatkozó névmások és igenevek.",
       "questions": [
         {
-          "id": "hu-diag-b1-01",
-          "sentence": "Ha több szabadidőm lenne, sokkal többet _____ spanyolul.",
+          "id": "hu-diag-b1-11",
+          "sentence": "Ha tegnap korábban indultunk volna, nem _____ volna le a vonatot.",
           "options": [
-            "tanulnék",
-            "tanulok",
-            "tanultam",
-            "tanuljak"
+            "késtük",
+            "késnénk",
+            "késünk",
+            "késsük"
           ],
           "correct": 0,
           "teaches": [
-            "hypothetical-ha-conditional"
+            "past-conditional-volna"
           ]
         },
         {
@@ -358,21 +356,21 @@
           ],
           "correct": 0,
           "teaches": [
-            "azert-hogy-purpose"
+            "reported-commands"
           ]
         },
         {
-          "id": "hu-diag-b1-03",
-          "sentence": "Kati mindig szívesen segít nekem, nagyon jóban vagyok _____.",
+          "id": "hu-diag-b1-12",
+          "sentence": "A sarkon _____ férfi a szomszédom.",
           "options": [
-            "vele",
-            "hozzá",
-            "tőle",
-            "nála"
+            "álló",
+            "állt",
+            "állva",
+            "állni"
           ],
           "correct": 0,
           "teaches": [
-            "personal-pronouns"
+            "present-participle"
           ]
         },
         {
@@ -380,9 +378,9 @@
           "sentence": "_____ szakadt az eső, a kirándulók folytatták az utat a hegycsúcs felé.",
           "options": [
             "Bár",
-            "Ezért",
-            "Mert",
-            "Mivel"
+            "Mégis",
+            "Azonban",
+            "Ellenére"
           ],
           "correct": 0,
           "teaches": [
@@ -390,32 +388,32 @@
           ]
         },
         {
-          "id": "hu-diag-b1-05",
-          "sentence": "Nagyon örülök, hogy megismertelek, és remélem, hamarosan újra _____!",
+          "id": "hu-diag-b1-13",
+          "sentence": "Ez az a kolléga, _____ tegnap a megbeszélésen beszéltem.",
           "options": [
-            "látlak",
-            "látom",
-            "látsz",
-            "látnak"
+            "akivel",
+            "akit",
+            "aki",
+            "akiben"
           ],
           "correct": 0,
           "teaches": [
-            "definite-vs-indefinite-conjugation"
+            "vonatkozoi-nevmas-esetei"
           ]
         },
         {
-          "id": "hu-diag-b1-06",
-          "prompt": "Helyzet: Egy hivatalos levélben udvariasan segítséget kérsz az ügyfélszolgálati vezetőtől.",
-          "sentence": "Nagyon hálás lennék, ha a jövő hét elejéig válaszolni _____ a levelemre.",
+          "id": "hu-diag-b1-14",
+          "prompt": "Helyzet: Egy hivatalos levélben udvariasan kérsz valamit az ügyfélszolgálat vezetőjétől.",
+          "sentence": "Szeretném, ha a jövő hét elejéig _____ a levelemre.",
           "options": [
-            "tudna",
-            "tud",
-            "tudott",
-            "tudjon"
+            "válaszolna",
+            "válaszol",
+            "válaszolt",
+            "válaszoljon"
           ],
           "correct": 0,
           "teaches": [
-            "nek-conditional"
+            "barcsak-wish"
           ]
         },
         {
@@ -434,33 +432,33 @@
           ]
         },
         {
-          "id": "hu-diag-b1-08",
+          "id": "hu-diag-b1-15",
           "type": "text-input",
-          "sentence": "Ha több pénzem és időm lenne, sokkal gyakrabban (utazni - feltételes jelen, én) _____ külföldre.",
-          "answer": "utaznék",
+          "sentence": "Elkéstem a vizsgáról. Korábban (kelleni - múlt idejű feltételes mód) _____ elindulnom.",
+          "answer": "kellett volna",
           "altAnswers": [],
           "teaches": [
-            "nek-conditional"
+            "kellett-volna"
           ]
         },
         {
-          "id": "hu-diag-b1-09",
+          "id": "hu-diag-b1-16",
           "type": "text-input",
-          "sentence": "Péter megbízható barát; bármilyen nehéz helyzetben bátran számíthatok (ő + -ra/-re) _____.",
-          "answer": "rá",
+          "sentence": "A gyerekek (nevetni - határozói igenév) _____ szaladtak ki a kertbe.",
+          "answer": "nevetve",
           "altAnswers": [],
           "teaches": [
-            "case-inflected-pronouns"
+            "participle-actions"
           ]
         },
         {
-          "id": "hu-diag-b1-10",
+          "id": "hu-diag-b1-17",
           "type": "text-input",
-          "sentence": "Megkértem a tanáromat, hogy minél előbb (írni - felszólító/kötőmód, ő) _____ meg az ajánlólevelet.",
-          "answer": "írja",
+          "sentence": "Azért hívtalak fel, hogy (elmondani - kötőmód, én) _____ a jó hírt.",
+          "answer": "elmondjam",
           "altAnswers": [],
           "teaches": [
-            "reported-speech-statements"
+            "azert-hogy-purpose"
           ]
         }
       ],
@@ -472,11 +470,11 @@
           {
             "id": "hu-diag-b1-r01",
             "type": "reading-mc",
-            "question": "Melyik megújuló energiaforrás növekedett különösen látványosan?",
+            "question": "Mi járul hozzá a szakértők szerint az ország energiafüggetlenségéhez?",
             "options": [
-              "A napenergia",
-              "A szélenergia",
-              "A geotermikus energia"
+              "A háztartások napelemes rendszerei",
+              "Az új szélerőművek építése",
+              "Az olcsóbb energiaimport"
             ],
             "correct": 0
           },

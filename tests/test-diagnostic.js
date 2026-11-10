@@ -72,12 +72,11 @@ function evaluateTier(questions, answers, passRatio = 0.85) {
     questions.forEach(q => {
         const userAns = answers[q.id];
         if (q.type === 'text-input') {
+            // Accents count (user, 2026-11-10); see engine/diagnostic.js _isTypedCorrect.
             if (typeof userAns === 'string' && userAns.trim()) {
-                const cleanUser = userAns.trim().toLowerCase();
-                const normUser = cleanUser.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-                const accepted = [q.answer, ...(q.altAnswers || [])].filter(Boolean).map(a => a.trim().toLowerCase());
-                const normAccepted = accepted.map(a => a.normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
-                if (accepted.includes(cleanUser) || normAccepted.includes(normUser)) {
+                const clean = v => v.normalize('NFC').trim().replace(/\s+/g, ' ').toLowerCase();
+                const accepted = [q.answer, ...(q.altAnswers || [])].filter(Boolean).map(clean);
+                if (accepted.includes(clean(userAns))) {
                     correct++;
                 }
             }
@@ -103,8 +102,8 @@ const testTierQuestions = [
     { id: 'q6', prompt: 'Context', correct: 0 },
     { id: 'q7', prompt: 'Context', correct: 0 },
     { id: 'q8', type: 'text-input', answer: 'fuimos', altAnswers: ['fuimos'] },
-    { id: 'q9', type: 'text-input', answer: 'estén', altAnswers: ['esten', 'estéis'] },
-    { id: 'q10', type: 'text-input', answer: 'viajaríamos', altAnswers: ['viajariamos'] }
+    { id: 'q9', type: 'text-input', answer: 'estén', altAnswers: [] },
+    { id: 'q10', type: 'text-input', answer: 'viajaríamos', altAnswers: [] }
 ];
 
 // 8 correct = 80% -> FAIL
@@ -125,20 +124,22 @@ const ans9 = {
     q1: 0, q2: 0, q3: 0, q4: 0, q5: 0,
     q6: 0, q7: 0,
     q8: 'fuimos',
-    q9: 'esten', // tests accent tolerance
+    q9: 'estén',
     q10: 'wrong'
 };
 const res9 = evaluateTier(testTierQuestions, ans9, 0.85);
 assert.strictEqual(res9.correct, 9);
 assert.strictEqual(res9.passed, true, '9/10 (90%) must pass with 85% requirement');
-console.log('[PASS] 9/10 score with accent tolerance ("esten" for "estén") correctly passes');
+console.log('[PASS] 9/10 score correctly passes');
+assert.strictEqual(evaluateTier(testTierQuestions, Object.assign({}, ans9, { q9: 'esten' }), 0.85).correct, 8, 'a missing accent is a miss');
+console.log('[PASS] a missing accent ("esten" for "estén") is marked wrong');
 
 // 10 correct with casing and whitespace -> PASS
 const ans10 = {
     q1: 0, q2: 0, q3: 0, q4: 0, q5: 0,
     q6: 0, q7: 0,
     q8: '  FUIMOS  ',
-    q9: 'estéis',
+    q9: 'Estén',
     q10: 'viajaríamos'
 };
 const res10 = evaluateTier(testTierQuestions, ans10, 0.85);
