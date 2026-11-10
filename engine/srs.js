@@ -501,6 +501,7 @@ function trimZero(value) {
 // ============================================
 // ADD TO SRS
 // ============================================
+let _srsClosePopupTimer = null;
 function addToSRS() {
     if (!currentWord) return;
     // currentWord is already the lemma resolved by showWord(), so an
@@ -537,19 +538,24 @@ function addToSRS() {
         added: new Date().toISOString()
     }, newCardSchedule()));
     
-    recordNewWord();
-    
+    // Save and confirm first: a failure in the bookkeeping below must never
+    // leave the learner with a word that was neither saved nor acknowledged.
+    saveDeck();
     const btn = document.getElementById('popup-add-btn');
     if (btn) {
         btn.textContent = '✓ Added to deck!';
         btn.disabled = true;
         btn.style.background = 'var(--primary)';
     }
-    
-    updateSRSCounter();
-    saveDeck();
-    updateReaderWordColors();
-    setTimeout(closePopup, 600);
+    if (_srsClosePopupTimer) clearTimeout(_srsClosePopupTimer);
+    _srsClosePopupTimer = setTimeout(closePopup, 600);
+
+    try {
+        recordNewWord();
+        updateReaderWordColors();
+    } catch (error) {
+        console.error('addToSRS bookkeeping failed:', error);
+    }
 }
 
 function updateSRSCounter() {

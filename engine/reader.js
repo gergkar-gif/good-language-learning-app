@@ -445,6 +445,9 @@ async function showWord(spanish, contextTokens, tokenIndex, looksLikeName, conte
     const atCap = !canAddNewWord();
 
     btn.classList.remove('is-saved', 'is-disabled');
+    // addToSRS() disables and recolours the button; undo that for the next word.
+    btn.disabled = false;
+    btn.style.background = '';
     // a name has no translation to learn, so there is nothing to add to a deck
     btn.style.display = (!readings.length && looksLikeName && !phrase) ? 'none' : '';
     capWarning.style.display = 'none';
@@ -509,8 +512,18 @@ async function _showLessonLink(lemma, tapId) {
 }
 
 function closePopup() {
+    if (typeof _srsClosePopupTimer !== 'undefined' && _srsClosePopupTimer) {
+        clearTimeout(_srsClosePopupTimer);
+        _srsClosePopupTimer = null;
+    }
     const popup = document.getElementById('word-popup');
     if (popup) popup.style.display = 'none';
+    const btn = document.getElementById('popup-add-btn');
+    if (btn) {
+        btn.disabled = false;
+        btn.classList.remove('is-saved', 'is-disabled');
+        btn.style.background = '';
+    }
 }
 
 // Membership, not SRS activation — see engine/decks.js. currentWord is the
