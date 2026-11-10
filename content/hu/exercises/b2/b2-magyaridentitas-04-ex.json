@@ -43,9 +43,9 @@
       "stage": "controlled",
       "question": "Mit jelent a magyar beszédben a kulturális kódok és szállóigék természetes használata?",
       "options": [
-        "Azt, hogy a beszélő a felszíni szavak mögött érti az irodalmi, történelmi és filmes utalásokat is.",
-        "Azt, hogy a beszélő titkos kódolt üzeneteket küld a katonai hírszerzésnek.",
-        "Azt, hogy a beszélő képtelen befejezni a mondatait idegen szavak nélkül."
+        "Azt, hogy a beszélő a felszíni szavak mögött érti az utalásokat is.",
+        "Azt, hogy a beszélő csak hivatalos nyelvet használ, idézetek nélkül.",
+        "Azt, hogy a beszélő minden szót úgy ejt, ahogy a szótárban áll."
       ],
       "correct": 0,
       "teaches": [
@@ -69,12 +69,12 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "controlled",
-      "question": "Melyik kötőszó fejezi ki legválasztékosabban a két szerep egyidejű jelenlétét? 'A művész kiváló szobrász volt, _____ elismert egyetemi tanárként is tevékenykedett.'",
+      "question": "Melyik szó illik a mondatba? 'A művész kiváló szobrász volt, _____ elismert egyetemi tanárként is tevékenykedett.'",
       "options": [
         "egyszersmind",
-        "hacsak",
-        "noha",
-        "feltéve"
+        "ennélfogva",
+        "minthogy",
+        "holott"
       ],
       "correct": 0,
       "teaches": [
@@ -87,10 +87,13 @@
       "category": "vocabulary",
       "stage": "practice",
       "sentence": "A helyzet rendkívül bonyolult volt; _____ sikerült minden részletben békés megállapodásra jutni.",
-      "answer": "mindamellett",
       "english": "The situation was exceptionally complicated; nevertheless, they succeeded in reaching a peaceful agreement on every detail.",
       "teaches": [
         "b2-speaking-hungarian-today-vocab"
+      ],
+      "answers": [
+        "mindamellett",
+        "mindazonáltal"
       ]
     },
     {
@@ -141,14 +144,15 @@
       "options": [
         "Olvass klasszikus novellákat, nézz kultikus magyar filmeket, és figyelj arra, mit mondanak a sorok között a barátaid.",
         "Olvass klasszikus novellákat, nézz kultikus magyar filmeket, és figyelj abban, mit mondanak a sorok között a barátaid.",
-        "Olvass klasszikus novellákat, nézz kultikus magyar filmeket, és figyelj arra, mit mondanának a sorok között a barátaid volna."
+        "Olvass klasszikus novellákat, nézz kultikus magyar filmeket, és figyelj arról, mit mondanak a sorok között a barátaid."
       ],
       "correct": 0,
       "teaches": [
         "verb-government-ra-re"
       ],
       "distractor_skills": {
-        "1": "verb-government-ban-ben"
+        "1": "verb-government-ban-ben",
+        "2": "verb-government-rol-rel"
       }
     },
     {
@@ -156,11 +160,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mit jelképez a „Belső Pista” fogalma a magyar szellemi önreflexióban?",
+      "question": "Mit tartalmaz a szöveg szerint a belső kulturális iránytű?",
       "options": [
-        "A józan szkepticizmus, a leleményes túlélés és a mély emberség belső iránytűjét.",
-        "Egy szigorú hivatalnokot a budapesti polgármesteri hivatalban.",
-        "Egy kitalált mesehőst, akit a gyermekek ijesztgetésére használnak."
+        "A józan szkepticizmust, a túlélés leleményességét és a mély emberséget.",
+        "A hivatalos nyelvhelyességi szabályok teljes és pontos listáját.",
+        "A külföldi szavak és az idegen hatások tiltását."
       ],
       "correct": 0
     }

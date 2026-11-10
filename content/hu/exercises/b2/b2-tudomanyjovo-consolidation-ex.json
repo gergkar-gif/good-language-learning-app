@@ -41,12 +41,12 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "recognize",
-      "question": "Melyik kutatóintézet képviseli Magyarországon a legmagasabb szintű ultrarövid lézeres kutatási infrastruktúrát?",
+      "question": "Melyik intézmény kutatja Szegeden az ultrarövid fényimpulzusokat?",
       "options": [
-        "ELI-ALPS Szeged",
-        "Nemzeti Színház",
-        "Országos Széchényi Könyvtár",
-        "Fekete Lyuk Klub"
+        "ELI-ALPS",
+        "Paksi Atomerőmű",
+        "Magyar Nemzeti Múzeum",
+        "Szegedi Nemzeti Színház"
       ],
       "correct": 0,
       "teaches": [
@@ -58,9 +58,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recognize",
-      "sentence": "A magyar nyelv számítógépes feldolgozásához elengedhetetlen a szabályalapú _____ alkalmazása a szavak felbontásához.",
-      "answer": "morfológiai elemzők",
-      "english": "For computational processing of the Hungarian language, applying morphological analyzers is indispensable for decomposing words.",
+      "sentence": "A ragozott szóalakok feldolgozásához morfológiai _____ van szükség.",
+      "answer": "elemzőkre",
+      "english": "Morphological analysers are needed to process inflected word forms.",
       "teaches": [
         "b2-knowledge-economy-vocab"
       ]
@@ -68,30 +68,30 @@
     {
       "id": "b2-tudomanyjovo-consolidation.ex04",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recall",
-      "question": "Melyik mondat fejezi ki helyesen a 'feltéve, ha' szerkezetet tudományos összefüggésben?",
+      "question": "Melyik mondat fejez ki feltételt?",
       "options": [
-        "A daganatos sejtek korán kimutathatók, feltéve, ha a lézeres vizsgálat kellően érzékeny.",
-        "A daganatos sejtek korán kimutathatók, jóllehet a lézeres vizsgálat kellően érzékeny.",
-        "A daganatos sejtek korán kimutathatók, noha a lézeres vizsgálat kellően érzékeny.",
-        "A daganatos sejtek korán kimutathatók, minthogy a lézeres vizsgálat kellően érzékeny."
+        "A betegség korán felismerhető, amennyiben a lézeres vizsgálat elég pontos.",
+        "A betegség korán felismerhető, jóllehet a lézeres vizsgálat elég pontos.",
+        "A betegség korán felismerhető, noha a lézeres vizsgálat elég pontos.",
+        "A betegség korán felismerhető, minthogy a lézeres vizsgálat elég pontos."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "b2-knowledge-economy-vocab"
       ]
     },
     {
       "id": "b2-tudomanyjovo-consolidation.ex05",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recall",
       "sentence": "Amennyiben a nemzetközi konzorcium támogatja a projektet, a kísérleti méréseket jövő hónapban megkezdik a szegedi _____ .",
       "answer": "laboratóriumokban",
       "english": "In the event that the international consortium supports the project, experimental measurements will begin next month in the Szeged laboratories.",
       "teaches": [
-        "past-conditional-volna"
+        "b2-knowledge-economy-vocab"
       ]
     },
     {
@@ -102,7 +102,7 @@
       "prompt": [
         {
           "speaker": "Fizikus",
-          "text": "Hogyan értékeled Krausz Ferenc Nobel-díjának jelentőségét a hazai kutatókra nézve?"
+          "text": "Mit jelent Krausz Ferenc Nobel-díja a magyar kutatók számára?"
         },
         {
           "speaker": "Kutató",
@@ -110,13 +110,13 @@
         }
       ],
       "options": [
-        "Hatalmas inspirációt jelent, hiszen bebizonyította: amennyiben adott a kitartás, a csúcsok elérhetők.",
-        "Hatalmas inspirációt jelent, hiszen bebizonyította: amennyiben adódna a kitartás, a csúcsok elérhetők lesznek.",
-        "Hatalmas inspirációt jelent, hiszen bebizonyította: amennyiben adva a kitartás, a csúcsok elérve lennének."
+        "Sokaknak példát jelent, mert az ő pályája azt mutatja: amennyiben van kitartás, a magas célok is elérhetők.",
+        "Sokaknak példát jelent, mert az ő pályája azt mutatja: amennyiben van kitartás, a magas célok is elérnek.",
+        "Sokaknak példát jelent, mert az ő pályája azt mutatja: amennyiben van kitartás, a magas célok is elérhetők lesz."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "b2-knowledge-economy-vocab"
       ]
     },
     {
@@ -127,7 +127,7 @@
       "prompt": [
         {
           "speaker": "Környezetvédő",
-          "text": "Hogyan védhetők meg a természeti erőforrások az akkumulátorgyárak építése során?"
+          "text": "Hogyan lehet csökkenteni a környezeti terhelést az új gyárak építése során?"
         },
         {
           "speaker": "Szakértő",
@@ -135,30 +135,33 @@
         }
       ],
       "options": [
-        "Abban az esetben, ha a hatóságok szigorú monitoringot írnak elő, a kockázatok minimalizálhatók.",
-        "Abban az esetben, ha a hatóságok szigorú monitoringot írnának elő, a kockázatok minimalizálni fognak.",
-        "Abban az esetben, ha a hatóságok szigorú monitoringot írva elő, a kockázatok minimalizálhatnának."
+        "Abban az esetben, ha a hatóságok szigorú ellenőrzést írnak elő, a kockázatok csökkenthetők.",
+        "Abban az esetben, ha a hatóságok szigorú ellenőrzést írva elő, a kockázatok csökkenthetők.",
+        "Abban az esetben, ha a hatóságok szigorú ellenőrzést írnak elő, a kockázatok csökkenthető."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
-      ]
+        "b2-knowledge-economy-vocab"
+      ],
+      "distractor_skills": {
+        "1": "participle-actions"
+      }
     },
     {
       "id": "b2-tudomanyjovo-consolidation.ex08",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "in-context",
-      "question": "Melyik kötőszó fejezi ki a legpontosabban a kivételt vagy korlátozást az alábbi mondatban? 'A villamosenergia-hálózat stabil marad, _____ nem következik be hirtelen üzemzavar az egyik erőműben.'",
+      "question": "Melyik szó illik a mondatba? 'A villamosenergia-hálózat stabil marad, _____ nem következik be hirtelen üzemzavar az egyik erőműben.'",
       "options": [
-        "hacsak",
+        "amennyiben",
         "bár",
         "minthogy",
         "jóllehet"
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "b2-knowledge-economy-vocab"
       ]
     },
     {
@@ -169,7 +172,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Miért van szükség saját magyar nagy nyelvi modellre a mesterséges intelligencia korában?"
+          "text": "Miért érdemes magyar nagy nyelvi modellt fejleszteni?"
         },
         {
           "speaker": "Informatikus",
@@ -177,47 +180,45 @@
         }
       ],
       "options": [
-        "Mert a magyar nyelv digitális szuverenitása garantálja, hogy kulturális értékeink és anyanyelvünk a jövő technológiáiban is megmaradjanak.",
-        "Mert a magyar nyelv digitális szuverenitása garantálja, hogy kulturális értékeink és anyanyelvünk a jövő technológiáiba is megmaradjanak.",
-        "Mert a magyar nyelv digitális szuverenitását garantálja, hogy kulturális értékeink és anyanyelvünk a jövő technológiáiban is megmaradjanak."
+        "Mert a saját modell segíthet abban, hogy a magyar nyelv a jövő technológiáiban is jelen legyen.",
+        "Mert a saját modell segíthet abban, hogy a magyar nyelv a jövő technológiáiba is jelen legyen.",
+        "Mert a saját modell segíthet abban, hogy a magyar nyelv a jövő technológiáiban is jelen van."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "b2-knowledge-economy-vocab"
       ]
     },
     {
       "id": "b2-tudomanyjovo-consolidation.ex10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
         "kutatás",
         "sikeres",
         "lesz,",
-        "feltéve,",
-        "ha",
+        "amennyiben",
         "biztosítják",
         "a",
-        "megfelelő",
-        "finanszírozást."
+        "szükséges",
+        "forrást."
       ],
       "solution": [
         "A",
         "kutatás",
         "sikeres",
         "lesz,",
-        "feltéve,",
-        "ha",
+        "amennyiben",
         "biztosítják",
         "a",
-        "megfelelő",
-        "finanszírozást."
+        "szükséges",
+        "forrást."
       ],
-      "english": "The research will be successful, provided that they ensure appropriate financing.",
+      "english": "The research will be successful if they provide the necessary funding.",
       "teaches": [
-        "past-conditional-volna"
+        "b2-knowledge-economy-vocab"
       ]
     },
     {
@@ -263,16 +264,16 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a sentence using 'feltéve, ha...' or 'azzal a feltétellel, hogy...' discussing a scientific hypothesis or research project.",
-          "answer": "A kísérlet eredményei megbízhatónak tekinthetők, feltéve, ha a laboratóriumi méréseket független kutatócsoportok is meg tudják ismételni."
+          "prompt": "Write a sentence using 'amennyiben...' or 'azzal a feltétellel, hogy...' about a scientific hypothesis or research project.",
+          "answer": "A kísérlet eredményei megbízhatónak tekinthetők, amennyiben a laboratóriumi méréseket független kutatócsoportok is meg tudják ismételni."
         },
         {
-          "prompt": "Write a sentence formulating a counterfactual condition in the past (using 'ha... volna, akkor... lett volna') regarding linguistic or technological development.",
-          "answer": "Ha a magyar kutatók nem fektettek volna ekkora energiát a digitális korpuszok építésébe, a hazai nyelvtechnológia mára menthetetlenül lemaradt volna a nemzetközi élmezőnytől."
+          "prompt": "Write a sentence that says what would have happened in the past if a condition had been different (use 'ha... volna, ... volna') about language or technology.",
+          "answer": "Ha a magyar kutatók nem fektettek volna ennyi energiát a digitális korpuszok építésébe, a hazai nyelvtechnológia mára jelentősen lemaradt volna."
         }
       ],
       "teaches": [
-        "past-conditional-volna"
+        "b2-knowledge-economy-vocab"
       ]
     }
   ]

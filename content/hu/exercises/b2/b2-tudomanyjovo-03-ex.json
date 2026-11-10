@@ -43,9 +43,9 @@
       "stage": "controlled",
       "question": "Miért jelent különleges számítástechnikai kihívást a magyar nyelv feldolgozása a nagy nyelvi modellek számára?",
       "options": [
-        "A gazdag ragozási rendszer (agglutináció) és a fókusz által vezérelt rugalmas szórend miatt.",
-        "Mert a magyar nyelvben nincsenek magánhangzók és tilos írásjeleket használni.",
-        "Mert a számítógépek csak latin betűs szavakat képesek bináris kódra fordítani."
+        "A gazdag ragozás és a fókuszhoz kötött szórend miatt.",
+        "Az angolhoz hasonlóan merev szórend és kevés ragozott szóalak miatt.",
+        "A latin ábécé hiánya és a kevés rendelkezésre álló szó miatt."
       ],
       "correct": 0,
       "teaches": [
@@ -57,9 +57,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A saját nemzeti mesterséges intelligencia fejlesztése elengedhetetlen Magyarország _____ megőrzéséhez a digitális korban.",
+      "sentence": "A fejlesztők szerint a saját nemzeti mesterséges intelligencia fontos Magyarország _____ megőrzéséhez a digitális korban.",
       "answer": "digitális szuverenitásának",
-      "english": "Developing proprietary national artificial intelligence is essential for preserving Hungary's digital sovereignty in the digital age.",
+      "english": "According to the developers, a national artificial intelligence of its own is important for preserving Hungary's digital sovereignty in the digital age.",
       "teaches": [
         "b2-knowledge-economy-vocab"
       ]
@@ -69,12 +69,12 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Melyik mondat fejezi ki helyesen a múltbeli meg nem valósult (ellenfaktuális) feltételt?",
+      "question": "Melyik mondat fejez ki egy múltbeli feltételt, amely nem teljesült?",
       "options": [
         "Ha a mérnökök nem hoztak volna létre magyar korpuszt, a modell nem lett volna képes tanulni.",
         "Ha a mérnökök nem hoznak létre magyar korpuszt, a modell nem lenne képes tanulni.",
         "Ha a mérnökök nem hoznának létre magyar korpuszt, a modell nem fog tanulni.",
-        "Ha a mérnökök nem hoztak létre volna magyar korpuszt, a modell nem volna lett képes."
+        "Ha a mérnökök nem hoztak volna létre magyar korpuszt, a modell nem volt képes tanulni."
       ],
       "correct": 0,
       "teaches": [
@@ -86,12 +86,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A számítógépes nyelvészek hamarabb befejezték _____ a projektet, ha nagyobb szerverkapacitással rendelkeztek volna.",
-      "answer": "volna",
+      "sentence": "A számítógépes nyelvészek hamarabb _____ volna a projektet, ha nagyobb szerverkapacitással rendelkeztek volna.",
+      "answer": "befejezték",
       "english": "The computational linguists would have finished the project sooner if they had had larger server capacity.",
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "hint": "befejez (finish), 3rd person plural past"
     },
     {
       "id": "b2-tudomanyjovo-03.ex06",
@@ -133,7 +134,7 @@
       "prompt": [
         {
           "speaker": "Informatikus",
-          "text": "Miért fontos, hogy Magyarország saját nagy nyelvi modellel rendelkezzen?"
+          "text": "Miért fejlesztenek a magyar kutatók saját nagy nyelvi modellt?"
         },
         {
           "speaker": "Kutató",
@@ -141,13 +142,13 @@
         }
       ],
       "options": [
-        "Mert ha nem fejlesztenénk saját modellt, teljesen kiszolgáltatottá válnánk a külföldi algoritmusoknak.",
-        "Mert ha nem fejlesztünk saját modellt, teljesen kiszolgáltatottá válnánk a külföldi algoritmusoknak.",
-        "Mert ha nem fejlesztenénk saját modellt, teljesen kiszolgáltatottá válunk a külföldi algoritmusoknak."
+        "Mert ha nem fejlesztenénk saját modellt, a külföldi cégek modelljeitől függenénk.",
+        "Mert ha nem fejlesztünk saját modellt, a külföldi cégek modelljeitől függenénk.",
+        "Mert ha nem fejlesztenénk saját modellt, a külföldi cégek modelljeitől függünk."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "hypothetical-ha-conditional"
       ]
     },
     {
@@ -155,11 +156,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Hogyan járulnak hozzá a szabályalapú morfológiai elemzők a magyar nyelvi modellek sikeréhez?",
+      "question": "Mire van szükség a szöveg szerint a magyar szavak gazdag ragozásának elemzéséhez?",
       "options": [
-        "Segítenek a gazdag ragozott szóalakok felbontásában és a nyelvtani viszonyok pontos feltárásában.",
-        "Kitörlik az összes nehéz szót a szótárakból, hogy egyszerűbb legyen a programozás.",
-        "Átírják az összes magyar szöveget angol nyelvtanra a feldolgozás előtt."
+        "Tokenizálókra és morfológiai elemzőkre.",
+        "Csak egy nagy angol–magyar szótárra.",
+        "Csak egy gyorsabb számítógépes processzorra."
       ],
       "correct": 0
     }

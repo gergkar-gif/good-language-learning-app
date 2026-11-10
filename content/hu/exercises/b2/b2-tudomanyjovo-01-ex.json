@@ -41,11 +41,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "controlled",
-      "question": "Milyen korszakalkotó eredményért ítélték oda Krausz Ferencnek a 2023-as fizikai Nobel-díjat?",
+      "question": "Milyen kutatásért ítélték oda Krausz Ferencnek a 2023-as fizikai Nobel-díjat?",
       "options": [
-        "Az elektronok mozgásának vizsgálatára szolgáló attoszekundumos fényimpulzusok előállításáért.",
-        "A Mars bolygón talált folyékony víz és kőzetek geológiai feltárásáért.",
-        "Az első magyar gyártmányú gőzgép és vasúti sínrendszer megtervezéséért."
+        "Az elektronok mozgásának vizsgálatához használt attoszekundumos fényimpulzusokért.",
+        "A fény sebességének első pontos méréséért a Föld és a Hold között.",
+        "A fekete lyukak sugárzásának első közvetlen megfigyeléséért kísérletben."
       ],
       "correct": 0,
       "teaches": [
@@ -57,9 +57,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A magyar kutatócsoport infravörös lézerrel vizsgálja a vérplazmát, hogy megalkossa a betegségek korai felismerésére szolgáló _____ .",
+      "sentence": "A kutatócsoport infravörös lézerrel vizsgálja a vérplazmát, és így készít _____ a betegségek korai felismeréséhez.",
       "answer": "molekuláris ujjlenyomatot",
-      "english": "The Hungarian research group examines blood plasma with infrared lasers to create a molecular fingerprint for early disease detection.",
+      "english": "The research group examines blood plasma with an infrared laser and so makes a molecular fingerprint for early disease detection.",
       "teaches": [
         "b2-knowledge-economy-vocab"
       ]
@@ -67,18 +67,18 @@
     {
       "id": "b2-tudomanyjovo-01.ex04",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "question": "Melyik kötőszó fejezi ki legszabatosabban a tudományos feltételt az alábbi mondatban? 'Az új elmélet igazolható, _____ a kísérleti mérések megismételhetők azonos körülmények között.'",
+      "question": "Melyik szó illik a mondatba? 'Az új elmélet igazolható, _____ a kísérleti mérések megismételhetők azonos körülmények között.'",
       "options": [
-        "feltéve, ha",
+        "amennyiben",
         "noha",
         "minthogy",
         "jóllehet"
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "b2-knowledge-economy-vocab"
       ]
     },
     {
@@ -90,21 +90,20 @@
       "answer": "azzal",
       "english": "The university received research funding from the ministry, on condition that they file an international patent.",
       "teaches": [
-        "past-conditional-volna"
+        "case-inflected-pronouns"
       ]
     },
     {
       "id": "b2-tudomanyjovo-01.ex06",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
         "diagnózis",
         "megbízható",
         "lesz,",
-        "feltéve,",
-        "ha",
+        "amennyiben",
         "elegendő",
         "vérmintát",
         "elemeznek."
@@ -114,15 +113,14 @@
         "diagnózis",
         "megbízható",
         "lesz,",
-        "feltéve,",
-        "ha",
+        "amennyiben",
         "elegendő",
         "vérmintát",
         "elemeznek."
       ],
-      "english": "The diagnosis will be reliable, provided that they analyze sufficient blood samples.",
+      "english": "The diagnosis will be reliable if they analyse enough blood samples.",
       "teaches": [
-        "past-conditional-volna"
+        "b2-knowledge-economy-vocab"
       ]
     },
     {
@@ -141,25 +139,28 @@
         }
       ],
       "options": [
-        "Igen, feltéve, ha sikerül kompakt és megfizethető lézerforrásokat fejleszteni a kórházak számára.",
-        "Igen, feltéve, ha sikerülne kompakt és megfizethető lézerforrásokat fejlesztve a kórházak számára.",
-        "Igen, feltéve, ha sikerülni fog kompakt és megfizethető lézerforrások lennének a kórházak számára."
+        "Igen, amennyiben sikerül kompakt és megfizethető lézerforrásokat fejleszteni a kórházak számára.",
+        "Igen, amennyiben sikerül kompakt és megfizethető lézerforrásokat fejlesztve a kórházak számára.",
+        "Igen, amennyiben sikerül kompakt és megfizethető lézerforrásokat fejlesztenek a kórházak számára."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
-      ]
+        "b2-knowledge-economy-vocab"
+      ],
+      "distractor_skills": {
+        "1": "participle-actions"
+      }
     },
     {
       "id": "b2-tudomanyjovo-01.ex08",
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Miért forradalmi jelentőségű az elektronok mozgásának megfigyelése az anyagtudományban?",
+      "question": "Mivel hasonlítja össze a szöveg az attoszekundumos fényimpulzusokat?",
       "options": [
-        "Mert az elektronmozgás irányítja az összes kémiai kötés kialakulását és a biológiai folyamatokat.",
-        "Mert segítségével meg lehet állítani a Föld forgását és szabályozni a napsütést.",
-        "Mert feleslegessé teszi az összes kórházi laboratóriumot és orvosi képzést."
+        "Egy ultragyors vakuval, amely kimerevíti a száguldó kolibri szárnycsapását.",
+        "Egy lassú fényképezőgéppel, amely elmossa a kolibri szárnycsapását.",
+        "Egy mikroszkóppal, amely egy kolibri tollait nagyítja ki."
       ],
       "correct": 0
     }

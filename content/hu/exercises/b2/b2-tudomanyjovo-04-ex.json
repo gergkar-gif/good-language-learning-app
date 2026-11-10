@@ -43,9 +43,9 @@
       "stage": "controlled",
       "question": "Milyen környezeti aggályok merültek fel a nagyszabású magyarországi akkumulátorgyárak építése kapcsán?",
       "options": [
-        "A hatalmas ipari vízigény és a talajvízkészletek esetleges elszennyeződésének kockázata.",
-        "A gyárak miatt hirtelen beköszöntő sarki fagyok és hóviharok veszélye.",
-        "A napelemek által kibocsátott láthatatlan rádióhullámok elterjedése."
+        "A hatalmas ipari vízigény és a talajvíz védelmével kapcsolatos kérdések.",
+        "A munkahelyek hiánya és a mérnökök elvándorlása a régióból.",
+        "A napelemek gyártásához szükséges ritka fémek kitermelése."
       ],
       "correct": 0,
       "teaches": [
@@ -57,9 +57,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A megújuló napenergia terjedése miatt modernizálni kell az országos villamos _____, hogy kezelni lehessen a csúcsokat.",
+      "sentence": "A napenergia gyors elterjedése miatt fejleszteni kell az országos villamos _____, hogy a hálózat kezelni tudja a csúcsfogyasztást.",
       "answer": "energiahálózatot",
-      "english": "Due to the expansion of renewable solar energy, the national electricity grid must be modernized to manage peaks.",
+      "english": "Because solar energy is spreading fast, the national electricity grid has to be developed so that it can cope with peak consumption.",
       "teaches": [
         "b2-knowledge-economy-vocab"
       ]
@@ -69,7 +69,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Melyik kötőszó fejezi ki legpontosabban a szigorú hatósági előírást? 'A hatóság jóváhagyta a beruházást, _____ a kikötéssel, hogy zárt víztisztító rendszert építenek ki.'",
+      "question": "Melyik szó illik a mondatba? 'A hatóság jóváhagyta a beruházást, _____ a kikötéssel, hogy zárt víztisztító rendszert építenek ki.'",
       "options": [
         "azzal",
         "annak",
@@ -78,7 +78,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "case-inflected-pronouns"
       ]
     },
     {
@@ -86,17 +86,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "_____ az esetben, ha a gyár túllépi a kibocsátási határértéket, a termelést azonnal fel kell függeszteni.",
+      "sentence": "_____ az esetben, ha a gyár túllépi a határértéket, a termelést le kell állítani.",
       "answer": "Abban",
-      "english": "In the event that the factory exceeds the emission threshold, production must be suspended immediately.",
+      "english": "In the event that the factory exceeds the limit, production has to be stopped.",
       "teaches": [
-        "past-conditional-volna"
+        "case-inflected-pronouns"
       ]
     },
     {
       "id": "b2-tudomanyjovo-04.ex06",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -124,7 +124,7 @@
       ],
       "english": "The investment was approved, with the stipulation that they protect the waters.",
       "teaches": [
-        "past-conditional-volna"
+        "b2-knowledge-economy-vocab"
       ]
     },
     {
@@ -144,24 +144,27 @@
       ],
       "options": [
         "Csak úgy, ha a gyárak zárt technológiát alkalmaznak, azzal a feltétellel, hogy a lakosság folyamatosan ellenőrzi az adatokat.",
-        "Csak úgy, ha a gyárak zárt technológiát alkalmaznának, azzal a feltétellel, hogy a lakosság folyamatosan ellenőrizni fog az adatokat.",
-        "Csak úgy, ha a gyárak zárt technológiát alkalmaznak, azzal a feltétellel, hogy a lakosság folyamatosan ellenőrizve az adatokat."
+        "Csak úgy, ha a gyárak zárt technológiát alkalmaznak, azzal a feltétellel, hogy a lakosság folyamatosan ellenőrizve az adatokat.",
+        "Csak úgy, ha a gyárak zárt technológiát alkalmaznak, azzal a feltétellel, hogy a lakosság folyamatosan ellenőrzi az adatoknak."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
-      ]
+        "b2-knowledge-economy-vocab"
+      ],
+      "distractor_skills": {
+        "1": "participle-actions"
+      }
     },
     {
       "id": "b2-tudomanyjovo-04.ex08",
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Miért jelent komoly mérnöki feladatot a napenergia hálózati integrációja Magyarországon?",
+      "question": "Miért kihívás az energiahálózat számára a napenergia gyors elterjedése?",
       "options": [
-        "Mert a napsütéses időszakban megtermelt áramfelesleget hatékonyan kell tárolni és elosztani a fogyasztók között.",
-        "Mert a napelemek meggátolják a felhők képződését és elállítják az esőt a mezőgazdaság elől.",
-        "Mert a napenergiát tilos villanyvezetékeken szállítani az európai szabványok szerint."
+        "Mert a megtermelt áramot tárolni és kiegyenlíteni kell.",
+        "Mert a napelemek csak télen termelnek áramot, nyáron nem.",
+        "Mert az áramot csak a gyár saját területén lehet felhasználni."
       ],
       "correct": 0
     }
