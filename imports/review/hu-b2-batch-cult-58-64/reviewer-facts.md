@@ -1,6 +1,6 @@
-# Reviewer facts, HU B2 culture batch 58-64 (draft, read while the readers run, 2026-11-10)
+# Reviewer facts, HU B2 culture batch 58-64 (2026-11-10)
 
-To compare with the readers' fixes when they arrive.
+Read while the readers ran, then compared with their fixes; outcome in **Result** below.
 
 | claim | where | verdict so far | source |
 |---|---|---|---|
@@ -18,3 +18,9 @@ To compare with the readers' fixes when they arrive.
 | "Bármely állampolgár, függetlenül állampolgárságától" may petition the ombudsman | b2-jogvedelem-01 p2 | self-contradiction: **bárki** | — |
 | 1% law 1996; the second 1% to a church or a budget appropriation | b2-jogvedelem-04 | true; present-day rules: check | standard |
 | *szíveskedjék* taught in b2-jogvedelem-05 | grammar, items, story p4 | C1 (user's rule): rewrite the screen and items; the story may keep it | check_c1_forms.py |
+
+## Result
+
+- Fixed by the readers as well: Chianti 1716 (the priority now named as disputed), Louis XIV's motto (anecdote paraphrase), Puskás's goal (now "egyik gólja"), the Melbourne red water (hedged), "A vízben, felség" (anecdote), "bárki" for the ombudsman, *szíveskedjék* rewritten in screens and items (the story keeps it).
+- Found by the readers only: BMW Debrecen is from the 2020s; Poland voted for the 2015 relocation decision; the Warsaw Pact's military structures ended in April 1991; the Via Carpatia is not finished; the appeal deadline is 15 days (30 for a court action); Galeotto Marzio is not a source for court spices; small family wineries were not nationalised; Michelin stars go to restaurants; aszú is sold only as 5 and 6 puttonyos since 2013 (check).
+- **Corrected by Claude:** the story-03 summary's "90 years of English home invincibility"; a recap that put *olyan mértékben ..., hogy* in Unit 63; two goal-array lines left by a cascade; three length give-aways in rejected fixes.

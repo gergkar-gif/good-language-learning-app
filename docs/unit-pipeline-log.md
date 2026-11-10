@@ -463,6 +463,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-05 | HU B2 culture 34, 36, 38, 40 | paired read, 2 culture units/reader, text first, no limit | | A 387,806, B 378,933 (~192k a unit) | 335 proposed (90 / 90 / 84 / 71), 1 rejected and repaired; 1 reader replacement fact wrong (falugondnok date) | 1 C1 lesson rewritten by the reader (Unit 34 hedging); walk 24/24 |
 | 11-10 | HU B2 culture 42, 44, 46, 48 | paired read, 2 culture units/reader, text first, no limit | | A 410,765, B 410,678 (~205k a unit) | 395 proposed (86 / 106 / 101 / 102), 4 rejected and repaired | present-day family benefits dated by the reviewer; walk 24/24 |
 | 11-10 | HU B2 culture 50, 52, 54, 56 | paired read, 2 culture units/reader, text first, no limit, readers run check_c1_forms | | A 365,963, B 401,259 (~192k a unit) | 366 proposed (71 / 81 / 118 / 96), 3 rejected and repaired (1 broken JSON from double quotes) | walk 24/24 |
+| 11-10 | HU B2 culture 58, 60, 62, 64 | paired read, 2 culture units/reader; both stopped by the 5-hour limit, resumed | | A 336,663, B 349,608 (resumed notices) | 365 proposed (98 / 90 / 81 / 96), 19 rejected: 14 cascades rebased by script | walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1730,3 +1731,13 @@ The user took the four recommended options:
   *italics* for examples in English text.
 - **Present-day names of institutions** (the Rákóczi főiskola became an egyetem) are a fact
   class the readers keep missing; the reviewer's own read caught it.
+
+### 2026-11-10: HU B2 culture Units 58–64
+
+- **Cascading goal-line fixes are now scripted**: `python scripts/rebase_fixes.py <fixes.json>
+  --write` before check_fixes.py. Run it on every reader list.
+- **A check a reader runs must fail loudly on a bad argument**: check_c1_forms.py printed
+  "0 found" for a unit id that matched no files, so a C1 form passed the reader. It now
+  resolves unit ids and exits on a name with no files.
+- **Both readers hit the 5-hour limit at the same time** (they start together); resumed with
+  SendMessage after the reset, as the rules say.
