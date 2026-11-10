@@ -112,11 +112,9 @@
         {
           "id": "es-diag-a1-08",
           "type": "text-input",
-          "sentence": "Mis padres tienen una casa grande, pero yo solo _____ un apartamento pequeño.",
+          "sentence": "Mis padres tienen una casa grande, pero yo solo (tener) _____ un apartamento pequeño.",
           "answer": "tengo",
-          "altAnswers": [
-            "yo tengo"
-          ],
+          "altAnswers": [],
           "teaches": [
             "tener"
           ]
@@ -126,9 +124,7 @@
           "type": "text-input",
           "sentence": "Mi hermano y yo (vivir) _____ juntos en el centro de la ciudad.",
           "answer": "vivimos",
-          "altAnswers": [
-            "vivimos"
-          ],
+          "altAnswers": [],
           "teaches": [
             "er-ir-verbs"
           ]
@@ -136,11 +132,9 @@
         {
           "id": "es-diag-a1-10",
           "type": "text-input",
-          "sentence": "Esta mañana hace frío, pero _____ tarde va a hacer sol.",
-          "answer": "esta",
-          "altAnswers": [
-            "esta"
-          ],
+          "sentence": "Este libro es muy interesante, pero (este) _____ revistas son aburridas.",
+          "answer": "estas",
+          "altAnswers": [],
           "teaches": [
             "demonstratives"
           ]
@@ -149,7 +143,7 @@
       "readingSection": {
         "id": "diag-rs-a1-es-es",
         "title": "Comprensión de lectura",
-        "passage": "El Museo del Prado abre de lunes a sábado de diez de la mañana a ocho de la tarde. Los domingos y festivos abre de diez a siete de la tarde. La entrada general cuesta quince euros, pero el acceso es gratuito de lunes a sábado de seis a ocho de la tarde. Hay una cafetería en la planta baja y una tienda de libros cerca de la salida.",
+        "passage": "El Museo del Prado abre de lunes a sábado de diez de la mañana a ocho de la tarde. Los domingos y festivos abre de diez a siete de la tarde. Normalmente hay que pagar la entrada, pero el acceso es gratuito de lunes a sábado de seis a ocho de la tarde. Hay una cafetería en la planta baja y una tienda de libros cerca de la salida.",
         "questions": [
           {
             "id": "es-diag-a1-r01",
@@ -158,15 +152,15 @@
             "options": [
               "A las siete de la tarde",
               "A las ocho de la tarde",
-              "A las diez de la mañana"
+              "A las seis de la tarde"
             ],
             "correct": 0
           },
           {
             "id": "es-diag-a1-r02",
             "type": "true-false-not-stated",
-            "statement": "La entrada al museo es siempre gratuita para todos los visitantes.",
-            "correct": 1
+            "statement": "Los estudiantes pagan menos por la entrada.",
+            "correct": 2
           }
         ]
       }
@@ -174,16 +168,16 @@
     {
       "level": "A2",
       "name": "A2: Comunicación Elemental y Pasados",
-      "description": "Narración en pasado (indefinido vs. imperfecto), pronombres de objeto, imperativo y perífrasis verbales.",
+      "description": "Pasados (indefinido, imperfecto y perfecto), pronombres de objeto, imperativo, comparativos y futuro.",
       "questions": [
         {
           "id": "es-diag-a2-01",
-          "sentence": "Ayer Carlos no fue al trabajo porque _____ un fuerte dolor de cabeza.",
+          "sentence": "Cuando era pequeña, mi familia y yo _____ a la playa todos los veranos.",
           "options": [
-            "tenía",
-            "tuvo",
-            "ha tenido",
-            "tenga"
+            "íbamos",
+            "fuimos",
+            "hemos ido",
+            "vayamos"
           ],
           "correct": 0,
           "teaches": [
@@ -206,7 +200,7 @@
         },
         {
           "id": "es-diag-a2-03",
-          "sentence": "¿Has llamado a tu madre? — Sí, _____ llamé esta mañana temprano.",
+          "sentence": "¿Has visto a Marta hoy? — Sí, _____ he visto esta mañana en la biblioteca.",
           "options": [
             "la",
             "le",
@@ -223,9 +217,9 @@
           "sentence": "Si no entiendes esta palabra, _____ en el diccionario.",
           "options": [
             "búscala",
+            "búscalo",
             "la busca",
-            "no buscas",
-            "buscando"
+            "buscarla"
           ],
           "correct": 0,
           "teaches": [
@@ -233,32 +227,32 @@
           ]
         },
         {
-          "id": "es-diag-a2-05",
-          "sentence": "A mi hermana y a mí nos _____ muchísimo las novelas de misterio.",
+          "id": "es-diag-a2-11",
+          "sentence": "Mi hermana nunca _____ comida japonesa, pero quiere probarla.",
           "options": [
-            "gustan",
-            "gusta",
-            "gustamos",
-            "gusten"
+            "ha comido",
+            "ha comer",
+            "ha comiendo",
+            "es comido"
           ],
           "correct": 0,
           "teaches": [
-            "gustar"
+            "preterito-perfecto"
           ]
         },
         {
-          "id": "es-diag-a2-06",
-          "prompt": "Situación: Un amigo te invita al cine hoy, pero tienes que estudiar para un examen de mañana.",
-          "sentence": "Me encantaría ir, pero hoy no puedo porque _____ que estudiar mucho.",
+          "id": "es-diag-a2-12",
+          "prompt": "Situación: Tu amigo quiere salir sin paraguas, pero el cielo está muy gris y le avisas.",
+          "sentence": "Lleva el paraguas: según el pronóstico, esta tarde _____ mucho.",
           "options": [
-            "tengo",
-            "debo de",
-            "hago",
-            "voy"
+            "lloverá",
+            "llovió",
+            "llovía",
+            "llueva"
           ],
           "correct": 0,
           "teaches": [
-            "tener-que"
+            "futuro-simple"
           ]
         },
         {
@@ -281,9 +275,7 @@
           "type": "text-input",
           "sentence": "El sábado pasado nosotros (ir) _____ al cine a ver una película nueva.",
           "answer": "fuimos",
-          "altAnswers": [
-            "fuimos"
-          ],
+          "altAnswers": [],
           "teaches": [
             "preterite-irregular-stems"
           ]
@@ -293,9 +285,7 @@
           "type": "text-input",
           "sentence": "Ayer mi hermano no (hacer) _____ los deberes del colegio.",
           "answer": "hizo",
-          "altAnswers": [
-            "hizo"
-          ],
+          "altAnswers": [],
           "teaches": [
             "preterite-irregular-stems"
           ]
@@ -305,9 +295,7 @@
           "type": "text-input",
           "sentence": "Ayer vi a mi abuela y _____ di un regalo muy especial.",
           "answer": "le",
-          "altAnswers": [
-            "le"
-          ],
+          "altAnswers": [],
           "teaches": [
             "objeto-indirecto"
           ]
@@ -316,23 +304,23 @@
       "readingSection": {
         "id": "diag-rs-a2-es-es",
         "title": "Comprensión de lectura",
-        "passage": "Ayer se inauguró en Valencia la nueva línea de tranvía que conecta el centro histórico con la playa de la Malvarrosa. El trayecto dura apenas veinte minutos y los trenes pasan cada diez minutos en horas punta. Durante el fin de semana de inauguración, todos los viajes son gratuitos para promocionar el uso del transporte público. Muchos vecinos acudieron a probar el servicio y destacaron la comodidad y la puntualidad de los vehículos.",
+        "passage": "Ayer se inauguró en la ciudad la nueva línea de tranvía que conecta el centro histórico con la playa. El trayecto dura apenas veinte minutos y los tranvías pasan cada diez minutos en horas punta. Durante el fin de semana de inauguración, todos los viajes son gratuitos para promocionar el uso del transporte público. Muchos vecinos acudieron a probar el servicio y destacaron la comodidad y la puntualidad de los vehículos.",
         "questions": [
           {
             "id": "es-diag-a2-r01",
             "type": "reading-mc",
-            "question": "¿Cuánto tiempo dura el trayecto entre el centro y la playa?",
+            "question": "¿Cada cuánto tiempo pasan los tranvías en horas punta?",
             "options": [
-              "Diez minutos",
-              "Apenas veinte minutos",
-              "Una hora"
+              "Cada diez minutos",
+              "Cada veinte minutos",
+              "Cada hora"
             ],
-            "correct": 1
+            "correct": 0
           },
           {
             "id": "es-diag-a2-r02",
             "type": "true-false-not-stated",
-            "statement": "Los billetes de tranvía son gratuitos durante el fin de semana de inauguración.",
+            "statement": "Este fin de semana se puede viajar en el tranvía sin pagar.",
             "correct": 0
           }
         ]
@@ -340,49 +328,49 @@
     },
     {
       "level": "B1",
-      "name": "B1: Uso Independiente y Subjuntivo",
-      "description": "Presente de subjuntivo con deseos, dudas y oraciones temporales, condicional simple y conectores de discurso.",
+      "name": "B1: Uso Independiente",
+      "description": "Subjuntivo con opiniones, dudas, consejos y finalidad, pluscuamperfecto, estilo indirecto, relativos, pasiva y condicionales.",
       "questions": [
         {
-          "id": "es-diag-b1-01",
-          "sentence": "Espero que mañana no _____ mal tiempo durante la excursión a la montaña.",
+          "id": "es-diag-b1-11",
+          "sentence": "No pude entrar en casa porque _____ las llaves en la oficina.",
           "options": [
-            "haga",
-            "hace",
-            "hizo",
-            "haría"
+            "había dejado",
+            "he dejado",
+            "dejaré",
+            "dejaría"
           ],
           "correct": 0,
           "teaches": [
-            "subjuntivo-deseos"
+            "pluscuamperfecto"
           ]
         },
         {
-          "id": "es-diag-b1-02",
-          "sentence": "Te llamaré por teléfono en cuanto _____ al hotel.",
+          "id": "es-diag-b1-12",
+          "sentence": "Esa es la compañera _____ te hablé ayer.",
           "options": [
-            "llegue",
-            "llego",
-            "llegué",
-            "llegaría"
+            "de la que",
+            "que",
+            "la que",
+            "cuya"
           ],
           "correct": 0,
           "teaches": [
-            "cuando-subjuntivo"
+            "relativas-preposicion-el-que"
           ]
         },
         {
-          "id": "es-diag-b1-03",
-          "sentence": "¿_____ tan amable de cerrar la ventana? Entra mucho ruido de la calle.",
+          "id": "es-diag-b1-13",
+          "sentence": "Ana me dijo ayer que _____ muy cansada y que no quería salir.",
           "options": [
-            "Sería",
-            "Sea",
-            "Fue",
-            "Es"
+            "estaba",
+            "está",
+            "esté",
+            "estará"
           ],
           "correct": 0,
           "teaches": [
-            "polite-softening"
+            "estilo-indirecto"
           ]
         },
         {
@@ -390,23 +378,23 @@
           "sentence": "Estudió mucho durante semanas; _____, no logró superar la prueba final.",
           "options": [
             "sin embargo",
-            "porque",
-            "para que",
-            "a condición de"
+            "por lo tanto",
+            "además",
+            "es decir"
           ],
           "correct": 0,
           "teaches": [
-            "ordering-markers"
+            "contrast-concession-connectors"
           ]
         },
         {
           "id": "es-diag-b1-05",
-          "sentence": "Este informe debe estar listo y entregado a la dirección _____ el viernes por la tarde.",
+          "sentence": "Te envío el informe hoy _____ puedas revisarlo antes de la reunión.",
           "options": [
+            "para que",
             "para",
-            "por",
-            "en",
-            "desde"
+            "porque",
+            "por lo que"
           ],
           "correct": 0,
           "teaches": [
@@ -415,7 +403,7 @@
         },
         {
           "id": "es-diag-b1-06",
-          "prompt": "Situación: Un compañero cree que la reunión se cancelará, pero tú dudas que eso suceda.",
+          "prompt": "Situación: Un compañero cree que la reunión se cancelará, pero a ti te parece muy poco probable.",
           "sentence": "No estoy tan seguro; dudo mucho que el director _____ la reunión tan tarde.",
           "options": [
             "cancele",
@@ -446,27 +434,21 @@
         {
           "id": "es-diag-b1-08",
           "type": "text-input",
-          "sentence": "No creo que Juan (decir) _____ la verdad sobre lo que ocurrió ayer.",
+          "sentence": "No creo que Juan nos (decir) _____ toda la verdad en la reunión de mañana.",
           "answer": "diga",
-          "altAnswers": [
-            "diga"
-          ],
+          "altAnswers": [],
           "teaches": [
             "opinion-verbs-mood"
           ]
         },
         {
-          "id": "es-diag-b1-09",
+          "id": "es-diag-b1-14",
           "type": "text-input",
-          "sentence": "Es necesario que todos los participantes (estar) _____ aquí a las nueve en punto.",
-          "answer": "estén",
-          "altAnswers": [
-            "esten",
-            "estéis",
-            "esteis"
-          ],
+          "sentence": "Esta novela fue (escribir) _____ por una autora muy joven.",
+          "answer": "escrita",
+          "altAnswers": [],
           "teaches": [
-            "subjunctive-value-judgments"
+            "ser-passive"
           ]
         },
         {
@@ -474,9 +456,7 @@
           "type": "text-input",
           "sentence": "Si tuviéramos más tiempo libre, nosotros (viajar) _____ mucho más a menudo.",
           "answer": "viajaríamos",
-          "altAnswers": [
-            "viajariamos"
-          ],
+          "altAnswers": [],
           "teaches": [
             "hypothetical-structures"
           ]
@@ -485,16 +465,16 @@
       "readingSection": {
         "id": "diag-rs-b1-es-es",
         "title": "Comprensión de lectura",
-        "passage": "El auge de las plataformas de alquiler turístico ha reabierto el debate sobre el acceso a la vivienda en las grandes ciudades españolas. Diversas asociaciones vecinales reclaman que los ayuntamientos limiten el número de licencias turísticas en los cascos antiguos, donde los precios del alquiler residencial han subido de forma continuada en los últimos cinco años. Por su parte, el sector turístico sostiene que estas viviendas generan empleo y revitalizan el comercio de proximidad, aunque reconocen que es necesaria una regulación más clara para evitar la competencia desleal.",
+        "passage": "El auge de las plataformas de alquiler turístico ha reabierto el debate sobre el acceso a la vivienda en las grandes ciudades españolas. Diversas asociaciones vecinales reclaman que los ayuntamientos limiten el número de licencias turísticas en los cascos antiguos, donde los precios del alquiler residencial han subido de forma continuada en los últimos cinco años. Por su parte, el sector turístico sostiene que estas viviendas generan empleo y revitalizan el comercio de proximidad, aunque reconoce que es necesaria una regulación más clara para evitar la competencia desleal.",
         "questions": [
           {
             "id": "es-diag-b1-r01",
             "type": "reading-mc",
-            "question": "¿Qué reclaman las asociaciones vecinales a los ayuntamientos?",
+            "question": "¿Qué piden las asociaciones de vecinos?",
             "options": [
-              "Que limiten las licencias turísticas en los cascos antiguos",
-              "Que prohíban la apertura de nuevos comercios de proximidad",
-              "Que cierren todos los hoteles de las grandes ciudades"
+              "Que haya menos viviendas turísticas en el centro",
+              "Que bajen los precios de los alojamientos turísticos",
+              "Que se abran más comercios en los barrios antiguos"
             ],
             "correct": 0
           },

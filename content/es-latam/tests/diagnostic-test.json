@@ -25,7 +25,7 @@
         },
         {
           "id": "es-diag-a1-02",
-          "sentence": "¿Dónde _____ las llaves del auto? No las encuentro.",
+          "sentence": "¿Dónde _____ las llaves del carro? No las encuentro.",
           "options": [
             "están",
             "son",
@@ -81,8 +81,8 @@
         },
         {
           "id": "es-diag-a1-06",
-          "prompt": "Situación: Estás en una cafetería y quieres pedir agua al camarero de manera educada.",
-          "sentence": "Por favor, camarero, ¿me _____ un vaso de agua mineral?",
+          "prompt": "Situación: Estás en una cafetería y quieres pedir agua al mesero de manera educada.",
+          "sentence": "Por favor, mesero, ¿me _____ un vaso de agua mineral?",
           "options": [
             "trae",
             "traen",
@@ -112,11 +112,9 @@
         {
           "id": "es-diag-a1-08",
           "type": "text-input",
-          "sentence": "Mis padres tienen una casa grande, pero yo solo _____ un apartamento pequeño.",
+          "sentence": "Mis padres tienen una casa grande, pero yo solo (tener) _____ un apartamento pequeño.",
           "answer": "tengo",
-          "altAnswers": [
-            "yo tengo"
-          ],
+          "altAnswers": [],
           "teaches": [
             "tener"
           ]
@@ -126,9 +124,7 @@
           "type": "text-input",
           "sentence": "Mi hermano y yo (vivir) _____ juntos en el centro de la ciudad.",
           "answer": "vivimos",
-          "altAnswers": [
-            "vivimos"
-          ],
+          "altAnswers": [],
           "teaches": [
             "er-ir-verbs"
           ]
@@ -136,11 +132,9 @@
         {
           "id": "es-diag-a1-10",
           "type": "text-input",
-          "sentence": "Esta mañana hace frío, pero _____ tarde va a hacer sol.",
-          "answer": "esta",
-          "altAnswers": [
-            "esta"
-          ],
+          "sentence": "Este libro es muy interesante, pero (este) _____ revistas son aburridas.",
+          "answer": "estas",
+          "altAnswers": [],
           "teaches": [
             "demonstratives"
           ]
@@ -149,16 +143,16 @@
       "readingSection": {
         "id": "diag-rs-a1-es-latam",
         "title": "Comprensión de lectura",
-        "passage": "El Parque Metropolitano de Santiago abre todos los días de ocho de la mañana a siete de la tarde. La entrada al parque es gratuita para todo el público. Dentro del parque hay senderos para caminar, zonas de picnic y un teleférico que sube a la cumbre del cerro. Muchas familias y deportistas visitan el parque los fines de semana para disfrutar de la naturaleza.",
+        "passage": "El Parque Metropolitano de Santiago está en el cerro San Cristóbal. La entrada al parque es gratuita para todo el público. Dentro del parque hay senderos para caminar, zonas de picnic, un zoológico y un teleférico que sube a la cumbre del cerro. Muchas familias y deportistas visitan el parque los fines de semana para disfrutar de la naturaleza.",
         "questions": [
           {
             "id": "latam-diag-a1-r01",
             "type": "reading-mc",
-            "question": "¿A qué hora abre el parque por la mañana?",
+            "question": "¿Cuándo visitan el parque muchas familias?",
             "options": [
-              "A las ocho",
-              "A las diez",
-              "A las siete"
+              "Los fines de semana",
+              "Los lunes por la mañana",
+              "Todas las noches"
             ],
             "correct": 0
           },
@@ -174,16 +168,16 @@
     {
       "level": "A2",
       "name": "A2: Comunicación Elemental y Pasados",
-      "description": "Narración en pasado (indefinido vs. imperfecto), pronombres de objeto, imperativo y perífrasis verbales.",
+      "description": "Pasados (indefinido, imperfecto y perfecto), pronombres de objeto, imperativo, comparativos y futuro.",
       "questions": [
         {
           "id": "es-diag-a2-01",
-          "sentence": "Ayer Carlos no fue al trabajo porque _____ un fuerte dolor de cabeza.",
+          "sentence": "Cuando era pequeña, mi familia y yo _____ a la playa todos los veranos.",
           "options": [
-            "tenía",
-            "tuvo",
-            "ha tenido",
-            "tenga"
+            "íbamos",
+            "fuimos",
+            "hemos ido",
+            "vayamos"
           ],
           "correct": 0,
           "teaches": [
@@ -206,7 +200,7 @@
         },
         {
           "id": "es-diag-a2-03",
-          "sentence": "¿Has llamado a tu madre? — Sí, _____ llamé esta mañana temprano.",
+          "sentence": "¿Viste a Marta hoy? — Sí, _____ vi esta mañana en la biblioteca.",
           "options": [
             "la",
             "le",
@@ -223,9 +217,9 @@
           "sentence": "Si no entiendes esta palabra, _____ en el diccionario.",
           "options": [
             "búscala",
+            "búscalo",
             "la busca",
-            "no buscas",
-            "buscando"
+            "buscarla"
           ],
           "correct": 0,
           "teaches": [
@@ -233,32 +227,32 @@
           ]
         },
         {
-          "id": "es-diag-a2-05",
-          "sentence": "A mi hermana y a mí nos _____ muchísimo las novelas de misterio.",
+          "id": "es-diag-a2-11",
+          "sentence": "Mi hermana nunca _____ comida japonesa, pero quiere probarla.",
           "options": [
-            "gustan",
-            "gusta",
-            "gustamos",
-            "gusten"
+            "ha comido",
+            "ha comer",
+            "ha comiendo",
+            "es comido"
           ],
           "correct": 0,
           "teaches": [
-            "gustar"
+            "preterito-perfecto"
           ]
         },
         {
-          "id": "es-diag-a2-06",
-          "prompt": "Situación: Un amigo te invita al cine hoy, pero tienes que estudiar para un examen de mañana.",
-          "sentence": "Me encantaría ir, pero hoy no puedo porque _____ que estudiar mucho.",
+          "id": "es-diag-a2-12",
+          "prompt": "Situación: Tu amigo quiere salir sin paraguas, pero el cielo está muy gris y le avisas.",
+          "sentence": "Lleva el paraguas: según el pronóstico, esta tarde _____ mucho.",
           "options": [
-            "tengo",
-            "debo de",
-            "hago",
-            "voy"
+            "lloverá",
+            "llovió",
+            "llovía",
+            "llueva"
           ],
           "correct": 0,
           "teaches": [
-            "tener-que"
+            "futuro-simple"
           ]
         },
         {
@@ -281,9 +275,7 @@
           "type": "text-input",
           "sentence": "El sábado pasado nosotros (ir) _____ al cine a ver una película nueva.",
           "answer": "fuimos",
-          "altAnswers": [
-            "fuimos"
-          ],
+          "altAnswers": [],
           "teaches": [
             "preterite-irregular-stems"
           ]
@@ -291,11 +283,9 @@
         {
           "id": "es-diag-a2-09",
           "type": "text-input",
-          "sentence": "Ayer mi hermano no (hacer) _____ los deberes de la escuela.",
+          "sentence": "Ayer mi hermano no (hacer) _____ la tarea de la escuela.",
           "answer": "hizo",
-          "altAnswers": [
-            "hizo"
-          ],
+          "altAnswers": [],
           "teaches": [
             "preterite-irregular-stems"
           ]
@@ -305,9 +295,7 @@
           "type": "text-input",
           "sentence": "Ayer vi a mi abuela y _____ di un regalo muy especial.",
           "answer": "le",
-          "altAnswers": [
-            "le"
-          ],
+          "altAnswers": [],
           "teaches": [
             "objeto-indirecto"
           ]
@@ -316,73 +304,73 @@
       "readingSection": {
         "id": "diag-rs-a2-es-latam",
         "title": "Comprensión de lectura",
-        "passage": "La semana pasada, la municipalidad de Medellín presentó un nuevo sistema de bicicletas públicas compartidas. Las estaciones están ubicadas cerca de las paradas de metro y de las principales universidades. Para usar una bicicleta, los usuarios deben registrarse en una aplicación móvil con su documento de identidad. El servicio es gratuito durante los primeros treinta minutos de cada viaje, lo que busca incentivar el transporte ecológico en la ciudad.",
+        "passage": "La semana pasada, la alcaldía presentó un nuevo sistema de bicicletas públicas compartidas. Las estaciones están ubicadas cerca del metro y de las principales universidades. Para usar una bicicleta, los usuarios deben registrarse en una aplicación móvil con su documento de identidad. El servicio es gratuito durante los primeros treinta minutos de cada viaje, lo que busca incentivar el transporte ecológico en la ciudad.",
         "questions": [
           {
             "id": "latam-diag-a2-r01",
             "type": "reading-mc",
-            "question": "¿Dónde están ubicadas las estaciones de bicicletas?",
+            "question": "¿Qué necesitan los usuarios para usar una bicicleta?",
             "options": [
-              "Cerca de las paradas de metro y de universidades",
-              "Únicamente en el aeropuerto internacional",
-              "En las afueras de la ciudad"
+              "Registrarse en una aplicación con su documento",
+              "Pagar una tarifa cada mes",
+              "Tener una tarjeta del metro"
             ],
             "correct": 0
           },
           {
             "id": "latam-diag-a2-r02",
             "type": "true-false-not-stated",
-            "statement": "Los primeros treinta minutos de cada viaje en bicicleta son gratuitos.",
-            "correct": 0
+            "statement": "El sistema de bicicletas funciona las veinticuatro horas del día.",
+            "correct": 2
           }
         ]
       }
     },
     {
       "level": "B1",
-      "name": "B1: Uso Independiente y Subjuntivo",
-      "description": "Presente de subjuntivo con deseos, dudas y oraciones temporales, condicional simple y conectores de discurso.",
+      "name": "B1: Uso Independiente",
+      "description": "Subjuntivo con opiniones, dudas, consejos y finalidad, pluscuamperfecto, estilo indirecto, relativos, pasiva y condicionales.",
       "questions": [
         {
-          "id": "es-diag-b1-01",
-          "sentence": "Espero que mañana no _____ mal tiempo durante la excursión a la montaña.",
+          "id": "es-diag-b1-11",
+          "sentence": "No pude entrar en casa porque _____ las llaves en la oficina.",
           "options": [
-            "haga",
-            "hace",
-            "hizo",
-            "haría"
+            "había dejado",
+            "he dejado",
+            "dejaré",
+            "dejaría"
           ],
           "correct": 0,
           "teaches": [
-            "subjuntivo-deseos"
+            "pluscuamperfecto"
           ]
         },
         {
-          "id": "es-diag-b1-02",
-          "sentence": "Te llamaré por teléfono en cuanto _____ al hotel.",
+          "id": "es-diag-b1-12",
+          "sentence": "Esa es la compañera _____ te hablé ayer.",
           "options": [
-            "llegue",
-            "llego",
-            "llegué",
-            "llegaría"
+            "de la que",
+            "que",
+            "la que",
+            "cuya"
           ],
           "correct": 0,
           "teaches": [
-            "cuando-subjuntivo"
+            "relativas-preposicion-el-que"
           ]
         },
         {
-          "id": "es-diag-b1-03",
-          "sentence": "¿_____ tan amable de cerrar la ventana? Entra mucho ruido de la calle.",
+          "id": "es-diag-b1-13",
+          "sentence": "Ana me dijo ayer que _____ muy cansada y que no quería salir.",
           "options": [
-            "Sería",
-            "Sea",
-            "Fue",
-            "Es"
+            "estaba",
+            "está",
+            "esté",
+            "estará"
           ],
           "correct": 0,
           "teaches": [
-            "polite-softening"
+            "estilo-indirecto"
           ]
         },
         {
@@ -390,23 +378,23 @@
           "sentence": "Estudió mucho durante semanas; _____, no logró superar la prueba final.",
           "options": [
             "sin embargo",
-            "porque",
-            "para que",
-            "a condición de"
+            "por lo tanto",
+            "además",
+            "es decir"
           ],
           "correct": 0,
           "teaches": [
-            "ordering-markers"
+            "contrast-concession-connectors"
           ]
         },
         {
           "id": "es-diag-b1-05",
-          "sentence": "Este informe debe estar listo y entregado a la dirección _____ el viernes por la tarde.",
+          "sentence": "Te envío el informe hoy _____ puedas revisarlo antes de la reunión.",
           "options": [
+            "para que",
             "para",
-            "por",
-            "en",
-            "desde"
+            "porque",
+            "por lo que"
           ],
           "correct": 0,
           "teaches": [
@@ -415,7 +403,7 @@
         },
         {
           "id": "es-diag-b1-06",
-          "prompt": "Situación: Un compañero cree que la reunión se cancelará, pero tú dudas que eso suceda.",
+          "prompt": "Situación: Un compañero cree que la reunión se cancelará, pero a ti te parece muy poco probable.",
           "sentence": "No estoy tan seguro; dudo mucho que el director _____ la reunión tan tarde.",
           "options": [
             "cancele",
@@ -446,27 +434,21 @@
         {
           "id": "es-diag-b1-08",
           "type": "text-input",
-          "sentence": "No creo que Juan (decir) _____ la verdad sobre lo que ocurrió ayer.",
+          "sentence": "No creo que Juan nos (decir) _____ toda la verdad en la reunión de mañana.",
           "answer": "diga",
-          "altAnswers": [
-            "diga"
-          ],
+          "altAnswers": [],
           "teaches": [
             "opinion-verbs-mood"
           ]
         },
         {
-          "id": "es-diag-b1-09",
+          "id": "es-diag-b1-14",
           "type": "text-input",
-          "sentence": "Es necesario que todos los participantes (estar) _____ aquí a las nueve en punto.",
-          "answer": "estén",
-          "altAnswers": [
-            "esten",
-            "estéis",
-            "esteis"
-          ],
+          "sentence": "Esta novela fue (escribir) _____ por una autora muy joven.",
+          "answer": "escrita",
+          "altAnswers": [],
           "teaches": [
-            "subjunctive-value-judgments"
+            "ser-passive"
           ]
         },
         {
@@ -474,9 +456,7 @@
           "type": "text-input",
           "sentence": "Si tuviéramos más tiempo libre, nosotros (viajar) _____ mucho más a menudo.",
           "answer": "viajaríamos",
-          "altAnswers": [
-            "viajariamos"
-          ],
+          "altAnswers": [],
           "teaches": [
             "hypothetical-structures"
           ]
@@ -485,23 +465,23 @@
       "readingSection": {
         "id": "diag-rs-b1-es-latam",
         "title": "Comprensión de lectura",
-        "passage": "La protección de los glaciares andinos se ha convertido en una prioridad ambiental urgente en Sudamérica. Científicos de varios países alertan de que el retroceso acelerado de las masas de hielo amenaza el suministro de agua potable para millones de habitantes de zonas urbanas y rurales. Varios gobiernos han propuesto leyes estrictas para prohibir actividades industriales y mineras cerca de los glaciares. Aunque las empresas mineras argumentan que cumplen normas ambientales rigurosas, las comunidades locales exigen que se preserve este recurso vital sin excepciones.",
+        "passage": "La protección de los glaciares andinos se ha convertido en una prioridad ambiental urgente en Sudamérica. Científicos de varios países alertan de que el retroceso acelerado de las masas de hielo amenaza el suministro de agua potable para millones de habitantes de zonas urbanas y rurales. En algunos países se debaten leyes para limitar las actividades industriales y mineras cerca de los glaciares. Aunque las empresas mineras argumentan que cumplen normas ambientales rigurosas, las comunidades locales exigen que se preserve este recurso vital sin excepciones.",
         "questions": [
           {
             "id": "latam-diag-b1-r01",
             "type": "reading-mc",
-            "question": "¿Qué amenaza el retroceso de los glaciares andinos según los científicos?",
+            "question": "Según los científicos, ¿qué está en riesgo?",
             "options": [
-              "El suministro de agua potable para millones de habitantes",
-              "La navegación comercial en los ríos del sur",
-              "La producción de energía solar en las montañas"
+              "El agua que consumen millones de personas",
+              "El turismo de montaña en la región",
+              "El empleo en el sector minero"
             ],
             "correct": 0
           },
           {
             "id": "latam-diag-b1-r02",
             "type": "true-false-not-stated",
-            "statement": "Las comunidades locales apoyan la expansión minera sobre los glaciares.",
+            "statement": "Las empresas mineras reconocen que no cumplen las normas ambientales.",
             "correct": 1
           }
         ]
