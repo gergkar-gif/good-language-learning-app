@@ -72,7 +72,7 @@
       "teaches": [
         "annyira-hogy"
       ],
-      "question": "Melyik kötőszó vezeti be a következményes mellékmondatot az 'olyannyira' utószó után?",
+      "question": "Melyik szó hiányzik a mondatból? A víz olyannyira hideg volt, ___ alig bírták a tempót.",
       "options": [
         "hogy",
         "mint",
@@ -90,8 +90,12 @@
         "annyira-hogy"
       ],
       "sentence": "A verseny körülményei _____ mostohák voltak, hogy sok úszó feladta a küzdelmet.",
-      "answer": "olyannyira",
-      "english": "The conditions of the race were so harsh that many swimmers gave up the struggle."
+      "english": "The conditions of the race were so harsh that many swimmers gave up the struggle.",
+      "answers": [
+        "olyannyira",
+        "annyira",
+        "olyan"
+      ]
     },
     {
       "id": "b2-sporttortenet-01.ex06",
@@ -138,7 +142,7 @@
       "prompt": [
         {
           "speaker": "Kutató",
-          "text": "Hogyan bírták az úszók az 1896-os athéni verseny rendkívüli hidegét?"
+          "text": "Hogyan védekezett Hajós az 1896-os athéni verseny hidege ellen?"
         },
         {
           "speaker": "Sporttörténész",
@@ -146,9 +150,9 @@
         }
       ],
       "options": [
-        "A víz olyannyira jeges volt, hogy a bajnokot a célban szinte eszméletlenül húzták ki a partra.",
-        "A víz olyankor jeges volt, hogy a bajnokot a célban szinte eszméletlenül húzták ki a partra.",
-        "A víz olyannak jeges volt, mint a bajnokot a célban szinte eszméletlenül húzták ki a partra."
+        "A víz olyannyira hideg volt, hogy Hajós a testét zsírral kente be.",
+        "A víz olyannyira hideg volt, mert Hajós a testét zsírral kente be.",
+        "A víz olyannyira hideg volt, mint Hajós a testét zsírral kente be."
       ],
       "correct": 0
     },

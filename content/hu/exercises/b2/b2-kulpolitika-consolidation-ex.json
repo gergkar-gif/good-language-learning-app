@@ -77,7 +77,7 @@
       "options": [
         "A magyar delegáció komoly fenntartásait fejezné ki a javaslattal kapcsolatban.",
         "A magyar delegáció azonnal és dühösen leszavazza a javaslatot.",
-        "A magyar delegáció soha nem áll szóba a bizottsággal.",
+        "A magyar delegáció nem áll szóba a bizottsággal.",
         "A magyar delegáció megparancsolja a javaslat visszavonását."
       ],
       "correct": 0
@@ -91,8 +91,12 @@
         "diplomatic-softening"
       ],
       "sentence": "A közös nyilatkozat elfogadása előtt rendkívül _____ volna a szakértői egyeztetés folytatása.",
-      "answer": "indokolt",
-      "english": "Prior to adopting the joint declaration, continuing expert consultation would be highly justified."
+      "english": "Prior to adopting the joint declaration, continuing expert consultation would be highly justified.",
+      "answers": [
+        "indokolt",
+        "célszerű",
+        "kívánatos"
+      ]
     },
     {
       "id": "b2-kulpolitika-consolidation.ex06",
@@ -114,8 +118,8 @@
       ],
       "options": [
         "Kívánatosnak tartanánk a szubszidiaritás tiszteletben tartását, és tartózkodnánk a nemzeti szuverenitás indokolatlan csorbításától.",
-        "Kívánatosnak tartottunk volna a szubszidiaritás tiszteletben tartását, és tartózkodnánk a nemzeti szuverenitás indokolatlan csorbításától.",
-        "Kívánatosra tartanánk a szubszidiaritás tiszteletben tartását, és tartózkodnánk a nemzeti szuverenitás indokolatlan csorbítására."
+        "Kívánatosnak tartanánk a szubszidiaritás tiszteletben tartását, és tartózkodnánk a nemzeti szuverenitás indokolatlan csorbítását.",
+        "Kívánatosra tartanánk a szubszidiaritás tiszteletben tartását, és tartózkodnánk a nemzeti szuverenitás indokolatlan csorbításától."
       ],
       "correct": 0
     },
@@ -150,7 +154,7 @@
       "category": "grammar",
       "stage": "in-context",
       "teaches": [
-        "diplomatic-softening"
+        "verb-government-ra-re"
       ],
       "question": "Melyik vonzat helyes a mondatban? 'A kormány felelősen törekszik a térségi stabilitás megőrzés_____.'",
       "options": [
@@ -181,8 +185,8 @@
       ],
       "options": [
         "Méltányos volna elismerni a jelentős gazdasági növekedést, miközben körültekintően mérlegelni kell a környezeti hatásokat.",
-        "Méltányos lenne elismernünk volna a jelentős gazdasági növekedést, miközben körültekintően mérlegelni kell a környezeti hatásokat.",
-        "Méltányosra volna elismerni a jelentős gazdasági növekedést, miközben körültekintően mérlegelni kell a környezeti hatásokban."
+        "Méltányos lett volna elismerni a jelentős gazdasági növekedést, miközben körültekintően mérlegelni kell a környezeti hatásokat.",
+        "Méltányosra volna elismerni a jelentős gazdasági növekedést, miközben körültekintően mérlegelni kell a környezeti hatásokat."
       ],
       "correct": 0
     },
@@ -261,7 +265,7 @@
         },
         {
           "prompt": "Write a sentence expressing polite diplomatic reservation in an international debate (use 'fenntartásait fejezné ki' or 'aggályosnak találná').",
-          "answer": "A delegáció határozott fenntartásait fejezné ki az egyhangú döntéshozatal megszüntetésével szemben, mivel azt a tagállami szuverenitásra nézve aggályosnak találná."
+          "answer": "A delegáció határozott fenntartásait fejezné ki az egyhangú döntéshozatal megszüntetésével szemben, mivel azt a tagállami szuverenitás miatt aggályosnak találná."
         }
       ]
     }

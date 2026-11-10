@@ -47,8 +47,8 @@
       "question": "Milyen taktikai szerepet játszott Hidegkuti Nándor a 6:3-as londoni győzelem alkalmával?",
       "options": [
         "Visszavont középcsatárként a mélységből indult, szétzilálva az angol emberfogásos védelmet.",
-        "Kapusként védte a kaput és minden tizenegyest kivédett a meccsen.",
-        "Kizárólag a jobb szélen futott labda nélkül a pálya szélén."
+        "Hátvédként a saját tizenhatosa előtt maradt, és az angol csatárokat fogta.",
+        "Balszélsőként a vonal mentén futott, és a labdát a középpályára adta vissza."
       ],
       "correct": 0
     },
@@ -61,8 +61,11 @@
         "b2-sport-national-identity-vocab"
       ],
       "sentence": "A magyar labdarúgó-válogatott gyors és pontos _____ teljesen összezavarta a merev angol védőket.",
-      "answer": "összjátéka",
-      "english": "The fast and accurate teamplay of the Hungarian football national team completely confused the rigid English defenders."
+      "english": "The fast and accurate teamplay of the Hungarian football national team completely confused the rigid English defenders.",
+      "answers": [
+        "összjátéka",
+        "játéka"
+      ]
     },
     {
       "id": "b2-sporttortenet-03.ex04",
@@ -72,14 +75,18 @@
       "teaches": [
         "annyira-hogy"
       ],
-      "question": "Melyik kifejezés illik leginkább a formális következményes szerkezetbe? 'A magyar csapat _____ felülmúlta riválisát, hogy a siker nem volt kérdéses.'",
+      "question": "Melyik hiányzik a mondatból? A magyar csapat ___ felülmúlta riválisát, hogy a siker nem volt kérdéses.",
       "options": [
         "olyan mértékben",
-        "olykor",
-        "olyannal",
-        "olyasmi"
+        "olyan mérték",
+        "olyan mértékre",
+        "olyan mértékből"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "2": "ra-re",
+        "3": "elative-bol-bel"
+      }
     },
     {
       "id": "b2-sporttortenet-03.ex05",
@@ -90,8 +97,12 @@
         "annyira-hogy"
       ],
       "sentence": "Puskás Ferenc csele _____ gyors volt a tizenhatoson belül, hogy az angol védő tehetetlenül csúszott a fűben.",
-      "answer": "olyannyira",
-      "english": "Ferenc Puskás's feint inside the penalty area was so fast that the English defender slipped helplessly on the grass."
+      "english": "Ferenc Puskás's feint inside the penalty area was so fast that the English defender slipped helplessly on the grass.",
+      "answers": [
+        "olyannyira",
+        "annyira",
+        "olyan"
+      ]
     },
     {
       "id": "b2-sporttortenet-03.ex06",
@@ -139,8 +150,8 @@
       ],
       "prompt": [
         {
-          "speaker": "Angol újságíró",
-          "text": "Hogyan fogadta a londoni közönség az Aranycsapat lenyűgöző győzelmét?"
+          "speaker": "Újságíró",
+          "text": "Mi történt az angol védelemmel a mérkőzésen?"
         },
         {
           "speaker": "Tudósító",
@@ -148,9 +159,9 @@
         }
       ],
       "options": [
-        "A vereség olyan mértékben megdöbbentette a nézőket, hogy percekig néma csendben álltak a lelátón.",
-        "A vereség olyasmi mértékben megdöbbentette a nézőket, hogy percekig néma csendben álltak a lelátón.",
-        "A vereség olyankor megdöbbentette a nézőket, minthogy percekig néma csendben álltak a lelátón."
+        "A magyar csapat olyan mértékben szétzilálta az angol védelmet, hogy a védők nem tudták, kit kövessenek.",
+        "A magyar csapat olyan mérték szétzilálta az angol védelmet, hogy a védők nem tudták, kit kövessenek.",
+        "A magyar csapat olyan mértékben szétzilálta az angol védelmet, mert a védők nem tudták, kit kövessenek."
       ],
       "correct": 0
     },
@@ -161,7 +172,7 @@
       "stage": "reading",
       "question": "Miért számított történelmi szenzációnak az Aranycsapat 1953-as londoni győzelme?",
       "options": [
-        "Mert kilencven éven át egyetlen kontinensről érkező csapat sem tudta legyőzni Angliát hazai pályán.",
+        "Mert az angol válogatott addig soha nem kapott ki hazai pályán a kontinensről érkező csapattól.",
         "Mert ez volt az első futballmérkőzés, amelyet televízióban közvetítettek a világon.",
         "Mert a magyar csapat tíz emberrel játszotta végig a mérkőzést sérülések miatt."
       ],

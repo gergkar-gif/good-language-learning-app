@@ -44,7 +44,7 @@
       "teaches": [
         "b2-paprika-tokaj-vocab"
       ],
-      "question": "Melyik kifejezés jelöli a borászatban az adott termőhely, talaj és mikroklíma egyedi ízvilágának kifejezését?",
+      "question": "Melyik kifejezés jelöli a borászatban az adott termőhely, talaj és éghajlat egyedi ízvilágának kifejezését?",
       "options": [
         "terroir-szemlélet",
         "rántáskészítés",
@@ -61,9 +61,9 @@
       "teaches": [
         "b2-paprika-tokaj-vocab"
       ],
-      "sentence": "Tokaj-Hegyalja 1737-es királyi rendelettel a világ legelső zárt és osztályozott _____ vált.",
-      "answer": "borvidékévé",
-      "english": "Tokaj-Hegyalja became the world's very first demarcated and classified wine region by royal decree in 1737."
+      "sentence": "Tokaj-Hegyalját 1737-ben királyi rendelettel külön védett _____ nyilvánították.",
+      "answer": "borvidékké",
+      "english": "In 1737 Tokaj-Hegyalja was declared a separate protected wine region by royal decree."
     },
     {
       "id": "b2-borkultura-consolidation.ex04",
@@ -71,16 +71,21 @@
       "category": "grammar",
       "stage": "recall",
       "teaches": [
-        "mintha"
+        "ra-re"
       ],
-      "question": "Melyik mondatban fejezi ki a sublativus (-ra/-re) a sütemény karamellrétegének megkeményedését mint végeredményt?",
+      "question": "Melyik mondat mondja helyesen, hogy a karamell kemény és ropogós lett?",
       "options": [
         "A cukrász keményre és ropogósra karamellizálta a torta tetejét.",
         "A cukrász keményen és ropogósan karamellizálta a torta tetejét.",
         "A cukrász keményként és ropogósként karamellizálta a torta tetejét.",
         "A cukrász keményből és ropogósból karamellizálta a torta tetejét."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "an-en-adverb",
+        "2": "essive-formal-kent",
+        "3": "elative-bol-bel"
+      }
     },
     {
       "id": "b2-borkultura-consolidation.ex05",
@@ -88,7 +93,7 @@
       "category": "grammar",
       "stage": "recall",
       "teaches": [
-        "mintha"
+        "ra-re"
       ],
       "sentence": "A szakács a mártást kíméletes lángon selymesre és _____ forralta.",
       "answer": "sűrűre",
@@ -100,12 +105,12 @@
       "category": "dialogue",
       "stage": "recall",
       "teaches": [
-        "mintha"
+        "ra-re"
       ],
       "prompt": [
         {
           "speaker": "Gasztronómus",
-          "text": "Milyen volt a lakomán feltálalt vadhús íze és állaga?"
+          "text": "Milyen volt a lakomán a vadhús íze?"
         },
         {
           "speaker": "Kutató",
@@ -113,9 +118,9 @@
         }
       ],
       "options": [
-        "Olyan omlósra párolták a borban, hogy szinte elolvadt a szánkban, mintha vaj lett volna.",
-        "Olyan omlósan párolták a borban, hogy szinte elolvadt a szánkban, mintha vaj lett.",
-        "Olyan omlóssá párolták a borban, hogy szinte elolvadt a szánkban, minthogy vaj lett volna."
+        "Puhára párolták a borban, és szinte elolvadt a szánkban, mintha vaj lett volna.",
+        "Puhára párolták a borban, és szinte elolvadt a szánkban, mintha vaj lett.",
+        "Puhára párolták a borban, és szinte elolvadt a szánkban, minthogy vaj lett volna."
       ],
       "correct": 0
     },
@@ -130,7 +135,7 @@
       "prompt": [
         {
           "speaker": "Vendég",
-          "text": "Hogyan jellemezné a tokaji aszúborkülönlegesség aromavilágát?"
+          "text": "Hogyan jellemezné a tokaji aszú aromavilágát?"
         },
         {
           "speaker": "Sommelier",
@@ -155,9 +160,9 @@
       "question": "Melyik mondat szemlélteti legpontosabban a modern ételkritika stílusát, ötvözve a végeredményt és a hasonlítást?",
       "options": [
         "A séf aranybarnára sütötte a galambot, amely olyan porhanyós volt, mintha elolvadna az ízlelőbimbókon.",
-        "A séf aranybarna sütötte a galambot, amely olyan porhanyós volt, mintha elolvad az ízlelőbimbókon.",
-        "A séf aranybarnával sütötte a galambot, amely olyan porhanyós volt, mintha elolvadt volna.",
-        "A séf aranybarnaként sütötte a galambot, amely olyan porhanyós volt, mintha elolvadni akar."
+        "A séf aranybarnára sütötte a galambot, amely olyan porhanyós volt, mintha elolvad az ízlelőbimbókon.",
+        "A séf aranybarnára sütötte a galambot, amely olyan porhanyós volt, mintha elolvadjon az ízlelőbimbókon.",
+        "A séf aranybarnára sütötte a galambot, amely olyan porhanyós volt, mintha elolvadni akar."
       ],
       "correct": 0
     },
@@ -265,11 +270,11 @@
       "template": [
         {
           "prompt": "Write a sentence describing the roasting of meat until crisp and tender (use a resultative sublative like 'ropogósra' or 'omlósra').",
-          "answer": "A mesterszakács a fűszeres húst kívül szép pirosra és ropogósra sütötte, miközben a belseje tökéletesen omlósra és szaftosra párolódott."
+          "answer": "A szakács a húst kívül ropogósra, belül omlósra sütötte."
         },
         {
           "prompt": "Write a sentence evaluating the flavor of a wine with a sensory simile (use 'olyan ..., mintha + feltételes mód').",
-          "answer": "A pohárban megforgatott aszúborkülönlegesség zamata olyan mély és selymes, mintha a nyár legérettebb barackjait és hársmézét kóstolnánk."
+          "answer": "Az aszú olyan mély és selymes, mintha aszalt gyümölcsöt kóstolnánk."
         }
       ]
     }

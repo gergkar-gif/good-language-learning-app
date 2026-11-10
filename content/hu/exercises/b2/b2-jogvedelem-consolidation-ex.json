@@ -46,10 +46,10 @@
       ],
       "question": "Melyik állami szervhez fordulhat az állampolgár, ha egy hatóság elutasítja a közérdekű adatok kiadását?",
       "options": [
-        "Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH)",
-        "Nemzeti Színház",
-        "Központi Statisztikai Hivatal",
-        "Magyar Nemzeti Bank"
+        "Az adatvédelmi hatósághoz, a NAIH-hoz",
+        "A Központi Statisztikai Hivatalhoz",
+        "A Magyar Nemzeti Bankhoz",
+        "A Nemzeti Színházhoz"
       ],
       "correct": 0
     },
@@ -62,8 +62,11 @@
         "b2-ombudsman-civic-rights-vocab"
       ],
       "sentence": "Az állampolgár a hatósági eljárásban felmerült visszásságok miatt _____ nyújthat be az ombudsmanhoz.",
-      "answer": "panaszbeadványt",
-      "english": "Due to misconduct that arose in the administrative procedure, the citizen can submit a complaint petition to the ombudsman."
+      "english": "Due to misconduct that arose in the administrative procedure, the citizen can submit a complaint petition to the ombudsman.",
+      "answers": [
+        "panaszbeadványt",
+        "panaszt"
+      ]
     },
     {
       "id": "b2-jogvedelem-consolidation.ex04",
@@ -90,9 +93,13 @@
       "teaches": [
         "verb-government-nak-nek"
       ],
-      "sentence": "A minisztérium köteles eleget tenni a bíróság adatszolgáltatási _____ .",
-      "answer": "végzésének",
-      "english": "The ministry is obliged to comply with the court's data disclosure order."
+      "sentence": "A minisztérium köteles eleget tenni a bíróság adatszolgáltatási _____.",
+      "english": "The ministry is obliged to comply with the court's order on the disclosure of data.",
+      "answers": [
+        "végzésének",
+        "ítéletének",
+        "határozatának"
+      ]
     },
     {
       "id": "b2-jogvedelem-consolidation.ex06",
@@ -133,11 +140,11 @@
       ],
       "prompt": [
         {
-          "speaker": "Bíró",
+          "speaker": "Újságíró",
           "text": "Hogyan döntött a bíróság a jogsértő építési engedély ügyében?"
         },
         {
-          "speaker": "Bírósági titkár",
+          "speaker": "Bírósági szóvivő",
           "text": "_____"
         }
       ],
@@ -184,9 +191,9 @@
         }
       ],
       "options": [
-        "Az alapítvány a nyilvános közhasznúsági jelentésben fillérre pontosan elszámolt minden felhasznált forrással.",
-        "Az alapítvány a nyilvános közhasznúsági jelentésben fillérre pontosan elszámolt minden felhasznált forrásra.",
-        "Az alapítvány a nyilvános közhasznúsági jelentésben fillérre pontosan elszámolt minden felhasznált forrásból."
+        "Az alapítvány a nyilvános beszámolóban pontosan elszámolt minden felhasznált forrással.",
+        "Az alapítvány a nyilvános beszámolóban pontosan elszámolt minden felhasznált forrásra.",
+        "Az alapítvány a nyilvános beszámolóban pontosan elszámolt minden felhasznált forrásból."
       ],
       "correct": 0,
       "distractor_skills": {
@@ -268,12 +275,12 @@
       ],
       "template": [
         {
-          "prompt": "Write a formal sentence citing a statute and requesting a review (use 'hivatkozással' and 'szíveskedjék').",
-          "answer": "Hivatkozással az Alaptörvény vonatkozó rendelkezéseire, tisztelettel kérem a Hatóságot, szíveskedjék felülvizsgálni a vitatott döntést."
+          "prompt": "Write a formal sentence citing a statute and requesting a review (use 'hivatkozással' and 'kérem, hogy').",
+          "answer": "Hivatkozással az Alaptörvény vonatkozó rendelkezéseire, tisztelettel kérem a Hatóságot, hogy vizsgálja felül a vitatott döntést."
         },
         {
           "prompt": "Write a sentence describing an NGO accounting for donations (use 'elszámolt' with the instrumental case).",
-          "answer": "A civil szervezet a nyilvános közhasznúsági beszámolóban hiánytalanul elszámolt az adófizetők egy százalékából beérkezett támogatásokkal."
+          "answer": "A civil szervezet a nyilvános beszámolóban pontosan elszámolt az adófizetők egy százalékából beérkezett támogatásokkal."
         }
       ]
     }

@@ -46,9 +46,9 @@
       ],
       "question": "Miben állt Gundel Károly legfőbb gasztronómiai újítása a századfordulós Budapesten?",
       "options": [
-        "A francia haute cuisine modern konyhatechnikáját ötvözte a minőségi magyar alapanyagokkal.",
-        "Teljesen száműzte a magyar ételeket az étlapról és kizárólag angol fogásokat tálalt.",
-        "Megtiltotta a borok felszolgálását és kizárólag sört engedélyezett a vendéglőjében."
+        "A francia konyha fegyelmezett technológiáját ötvözte a hagyományos magyar alapanyagokkal.",
+        "Az étlapról elhagyta a magyar ételeket, és francia fogásokat kínált.",
+        "Visszatért a nehéz, lisztes rántásokhoz, és ezekre építette a konyháját."
       ],
       "correct": 0
     },
@@ -60,9 +60,9 @@
       "teaches": [
         "b2-paprika-tokaj-vocab"
       ],
-      "sentence": "Gundel Károly a nehéz lisztes habarások helyett a friss és szezonális _____ tiszteletére építette receptjeit.",
-      "answer": "alapanyagok",
-      "english": "Instead of heavy flour thickenings, Károly Gundel built his recipes around respect for fresh and seasonal ingredients."
+      "sentence": "Gundel Károly a francia konyha fegyelmezett technológiáját a hagyományos magyar _____ ötvözte.",
+      "answer": "alapanyagokkal",
+      "english": "Károly Gundel combined the disciplined technique of French cooking with traditional Hungarian ingredients."
     },
     {
       "id": "b2-borkultura-03.ex04",
@@ -70,16 +70,21 @@
       "category": "grammar",
       "stage": "controlled",
       "teaches": [
-        "mintha"
+        "ra-re"
       ],
-      "question": "Melyik kifejezés írja le helyesen a mártás redukciójának és besűrítésének végeredményét?",
+      "question": "Melyik mondat mondja helyesen, hogy a pecsenyelé sűrű lett?",
       "options": [
         "A szakács a pecsenyelevet lassú tűzön sűrűre beforralta.",
         "A szakács a pecsenyelevet lassú tűzön sűrűn beforralta.",
         "A szakács a pecsenyelevet lassú tűzön sűrűként beforralta.",
         "A szakács a pecsenyelevet lassú tűzön sűrűvel beforralta."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "an-en-adverb",
+        "2": "essive-formal-kent",
+        "3": "val-vel"
+      }
     },
     {
       "id": "b2-borkultura-03.ex05",
@@ -87,7 +92,7 @@
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "mintha"
+        "ra-re"
       ],
       "sentence": "A híres Dobos-torta tetejét a cukrászmester keményre és _____ karamellizálta.",
       "answer": "ropogósra",
@@ -99,7 +104,7 @@
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "mintha"
+        "ra-re"
       ],
       "tiles": [
         "A",
@@ -129,7 +134,7 @@
       "category": "dialogue",
       "stage": "dialogue",
       "teaches": [
-        "mintha"
+        "ra-re"
       ],
       "prompt": [
         {
@@ -146,18 +151,22 @@
         "A kacsamell bőrét ropogósan sütötte, miközben a hús belsejét omlósan és szaftosan párolta.",
         "A kacsamell bőrét ropogóssá sütötte, miközben a hús belsejét omlóssá és szaftossá párolta."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "an-en-adverb",
+        "2": "translative-morphology"
+      }
     },
     {
       "id": "b2-borkultura-03.ex08",
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mi tette lehetővé, hogy Dobos C. József tortája a korszakban szokatlanul jól szállítható legyen Európa nagyvárosaiba?",
+      "question": "Mi védte meg a Dobos-tortát a kiszáradástól a szöveg szerint?",
       "options": [
-        "A tetején lévő kemény, karamellizált cukorlap megóvta a tortát a kiszáradástól és a romlástól.",
-        "A tortát fém dobozba zárva folyékony nitrogénben fagyasztották le a postázás előtt.",
-        "A sütemény kizárólag száraz kétszersültből és mesterséges tartósítószerekből készült."
+        "A kemény, karamellizált cukorlap a torta tetején.",
+        "A vékony fémlap, amelybe a tortát csomagolták.",
+        "A sűrű, forralt mártás a torta tetején."
       ],
       "correct": 0
     }

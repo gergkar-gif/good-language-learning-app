@@ -60,26 +60,30 @@
       "teaches": [
         "b2-ombudsman-civic-rights-vocab"
       ],
-      "sentence": "A hivatalos levél fejlécében szerepelnie kell az ügyet azonosító iktatószámnak és a _____ elérhetőségeinek.",
+      "sentence": "A hivatalos levél fejlécében általában szerepel az ügyet azonosító iktatószám és a _____ elérhetősége.",
       "answer": "kérelmező",
-      "english": "In the heading of the formal letter, the file reference number identifying the case and the applicant's contact details must be present."
+      "english": "The heading of the formal letter usually contains the file reference number that identifies the case and the contact details of the applicant.",
+      "hint": "the person who submits the letter"
     },
     {
       "id": "b2-jogvedelem-05.ex04",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "controlled",
       "teaches": [
-        "b2-ombudsman-civic-rights-vocab"
+        "hogy-jon-jen"
       ],
-      "question": "Melyik hivatalos udvarias fordulat helyes a kérelem lezárásakor? 'Tisztelettel kérem a Hatóságot, _____ felülbírálni az elsőfokú döntést.'",
+      "question": "Melyik alak helyes? 'Tisztelettel kérem a Hatóságot, hogy az elsőfokú döntést _____.'",
       "options": [
-        "szíveskedjék",
-        "akarjon",
-        "parancsoljon",
-        "köteleződjék"
+        "vizsgálja felül",
+        "vizsgálta felül",
+        "vizsgálni felül",
+        "vizsgálják felül"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "definite-past"
+      }
     },
     {
       "id": "b2-jogvedelem-05.ex05",
@@ -129,11 +133,11 @@
       "category": "dialogue",
       "stage": "dialogue",
       "teaches": [
-        "b2-ombudsman-civic-rights-vocab"
+        "verb-government-ra-re"
       ],
       "prompt": [
         {
-          "speaker": "Ügyintéző",
+          "speaker": "Ügyfél",
           "text": "Hogyan nyújthatom be a fellebbezésemet a legszakszerűbb formában?"
         },
         {
@@ -142,9 +146,9 @@
         }
       ],
       "options": [
-        "Írásbeli beadványban, a határozat számára hivatkozva, pontos jogi indoklással és aláírással ellátva nyújtsa be.",
-        "Írásbeli beadványban, a határozat számára hivatkozván, pontos jogi indoklással és aláírásban ellátva nyújtsa be.",
-        "Írásbeli beadványban, a határozat számára hivatkozva, pontos jogi indoklásra és aláírással ellátva nyújtsa be."
+        "Írásban, a határozat iktatószámára hivatkozva, pontos jogi indoklással és aláírással nyújtsa be.",
+        "Írásban, a határozat iktatószámán hivatkozva, pontos jogi indoklással és aláírással nyújtsa be.",
+        "Írásban, a határozat iktatószámával hivatkozva, pontos jogi indoklással és aláírással nyújtsa be."
       ],
       "correct": 0
     },
@@ -153,11 +157,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Miért nélkülözhetetlen a beadványhoz csatolt mellékletek pontos felsorolása?",
+      "question": "Miért fontos a beadványhoz csatolt iratok felsorolása a szöveg szerint?",
       "options": [
-        "Mert így igazolható, hogy a kérelmező milyen okiratokkal és bizonyítékokkal támasztotta alá a tényállást.",
-        "Mert a hivatal minden mellékletért azonnali díjat fizet az ügyfélnek.",
-        "Mert a bíróság kizárólag a mellékleteket olvassa el a beadvány helyett."
+        "Mert az iratok és a számlák alátámasztják a tényállást.",
+        "Mert a hivatal minden mellékletért fizet az ügyfélnek.",
+        "Mert a bíróság a mellékleteket olvassa el a beadvány helyett."
       ],
       "correct": 0
     }

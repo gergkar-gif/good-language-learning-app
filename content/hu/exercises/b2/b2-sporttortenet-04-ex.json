@@ -46,9 +46,9 @@
       ],
       "question": "Miért vált szimbólummá a magyar-szovjet vízilabda mérkőzés Melbourne-ben 1956-ban?",
       "options": [
-        "Mert alig néhány héttel a budapesti forradalom vérbefojtása után a medence a szabadságharc szimbolikus színterévé vált.",
-        "Mert a szovjet csapat visszalépett és barátságos mérkőzésen osztotta szét az aranyérmeket.",
-        "Mert a mérkőzést jótékonysági céllal rendezték meg a melbourne-i árvaház javára."
+        "Mert a forradalom leverése után néhány héttel a medence a szabadságharc szimbolikus színterévé vált.",
+        "Mert a szovjet csapat a mérkőzés után nyilvánosan bocsánatot kért a magyaroktól.",
+        "Mert a mérkőzést az olimpia megnyitóünnepségén rendezték meg a nézők előtt."
       ],
       "correct": 0
     },
@@ -70,16 +70,21 @@
       "category": "grammar",
       "stage": "controlled",
       "teaches": [
-        "annyira-hogy"
+        "on-en-on"
       ],
-      "question": "Melyik vonzatot követeli meg a 'felülkerekedik' ige a küzdelem leírásakor?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "szuperesszívusz (-on/-en/-ön)",
-        "datívusz (-nak/-nek)",
-        "ablatívusz (-tól/-től)",
-        "akkuzatívusz (-t)"
+        "A magyarok felülkerekedtek az ellenfélen.",
+        "A magyarok felülkerekedtek az ellenfélnek.",
+        "A magyarok felülkerekedtek az ellenféltől.",
+        "A magyarok felülkerekedtek az ellenfelet."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "verb-government-nak-nek",
+        "2": "tol-tol",
+        "3": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-sporttortenet-04.ex05",
@@ -87,7 +92,7 @@
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "annyira-hogy"
+        "b2-figurative-preverbs"
       ],
       "sentence": "A magyar pólósok a fájdalom ellenére elszántan _____ a meccs utolsó perceit.",
       "answer": "végigküzdötték",
@@ -99,7 +104,7 @@
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "annyira-hogy"
+        "on-en-on"
       ],
       "tiles": [
         "A",
@@ -134,7 +139,7 @@
       "prompt": [
         {
           "speaker": "Ausztrál riporter",
-          "text": "Hogyan élték meg a magyar játékosok a mérkőzés végén kitört incidenst?"
+          "text": "Hogyan élték meg a magyar játékosok a mérkőzés végén történteket?"
         },
         {
           "speaker": "Csapatkapitány",
@@ -142,9 +147,9 @@
         }
       ],
       "options": [
-        "A sérelmek ellenére olyannyira sportszerűek maradtunk, hogy a medencében kerekedtünk felül a nehézségeken.",
-        "A sérelmek ellenére olyankor sportszerűek maradtunk, hogy a medencében kerekedtünk felül a nehézségeken.",
-        "A sérelmek ellenére olyan módon sportszerűek maradtunk, mintha a medencében kerekedtünk felül a nehézségeken."
+        "A sérelmek ellenére olyannyira fegyelmezettek maradtunk, hogy a döntőben is felülkerekedtünk az ellenfeleinken.",
+        "A sérelmek ellenére olyannyira fegyelmezettek maradtunk, mert a döntőben is felülkerekedtünk az ellenfeleinken.",
+        "A sérelmek ellenére olyannyira fegyelmezettek maradtunk, mint a döntőben is felülkerekedtünk az ellenfeleinken."
       ],
       "correct": 0
     },
@@ -155,9 +160,9 @@
       "stage": "reading",
       "question": "Hogyan ért véget a híres „vér a medencében” mérkőzés 1956. december 6-án Melbourne-ben?",
       "options": [
-        "A magyarok 4:0-s vezetésénél, a Zádor Ervint ért ütés után a bírók a lincshangulat elkerülése végett lefújták a meccset.",
+        "A magyarok 4:0-s vezetésénél a bírók az ütés után lefújták a mérkőzést.",
         "A szovjet csapat a rendes játékidőben 5:4-re megfordította az eredményt.",
-        "A mérkőzést döntetlenre adták és mindkét csapatot kizárták az olimpiáról."
+        "A mérkőzést döntetlenre adták, és mindkét csapatot kizárták az olimpiáról."
       ],
       "correct": 0
     }
