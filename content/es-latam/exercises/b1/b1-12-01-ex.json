@@ -31,7 +31,7 @@
       "id": "b1-12-01.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which expression shows a regular eating habit? [¿Qué expresión indica un hábito alimentario regular?]",
+      "question": "Which expression shows a regular eating habit?",
       "options": [
         "Normalmente [normally]",
         "De repente [suddenly]",
@@ -111,11 +111,11 @@
       "id": "b1-12-01.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence expresses an occasional habit? [¿Cuál expresa un hábito ocasional?]",
+      "question": "Which sentence expresses an occasional habit?",
       "options": [
         "De vez en cuando salgo a cenar. [From time to time I go out for dinner.]",
-        "Siempre salgo a cenar. [I always go out for dinner.]",
-        "Nunca salgo a cenar. [I never go out for dinner.]"
+        "Cada día salgo a cenar fuera. [I go out for dinner every day.]",
+        "Todas las noches salgo a cenar. [I go out for dinner every night.]"
       ],
       "correct": 0,
       "teaches": [
@@ -176,8 +176,8 @@
       "sentence": "A menudo preparo comida casera porque quiero saber qué ingredientes contiene.",
       "options": [
         "I often prepare homemade food because I want to know what ingredients it contains.",
-        "I never cook because I do not know the ingredients.",
-        "I usually eat out because I dislike cooking."
+        "I never cook at home because I do not care what the ingredients are.",
+        "I usually eat out because I dislike cooking and prefer restaurants."
       ],
       "correct": 0,
       "teaches": [
@@ -191,8 +191,8 @@
       "sentence": "De vez en cuando salgo a cenar, sobre todo cuando tengo poco tiempo.",
       "options": [
         "From time to time I go out for dinner, especially when I have little time.",
-        "I always eat at home when I have lots of time.",
-        "I used to eat out every evening."
+        "I always eat at home, especially on the days when I have a lot of time.",
+        "I used to eat out every evening, especially when I had a lot of work."
       ],
       "correct": 0,
       "teaches": [
@@ -225,7 +225,7 @@
       ],
       "options": [
         "Normalmente cocino entre semana, aunque algunos días como fuera. [I normally cook during the week, although on some days I eat out.]",
-        "Normalmente he cocinado entre semana, aunque algunos días comeré fuera. [I have normally cooked during the week, although some days I will eat out.]",
+        "Normalmente he cocinado entre semana, aunque algunos días he comido fuera. [I have normally cooked during the week, although some days I have eaten out.]",
         "Normalmente cociné entre semana, aunque algunos días comí fuera. [I normally cooked during the week, although some days I ate out.]"
       ],
       "correct": 0,
@@ -253,7 +253,7 @@
       ],
       "options": [
         "A veces nos quedamos de sobremesa porque nos gusta hablar tranquilamente. [Sometimes we stay talking after the meal because we like to talk calmly.]",
-        "A veces nos quedábamos de sobremesa porque nos gustará hablar tranquilamente. [Sometimes we used to stay after the meal because we will like to talk calmly.]",
+        "A veces nos quedábamos de sobremesa porque nos gustaba hablar tranquilamente. [Sometimes we used to stay talking after the meal because we liked to talk calmly.]",
         "A veces nos quedamos de sobremesa para que nos gusta hablar tranquilamente. [Sometimes we stay after the meal so that we like to talk calmly.]"
       ],
       "correct": 0,
@@ -280,15 +280,16 @@
       ],
       "options": [
         "No siempre; cambio los ingredientes cuando quiero probar algo diferente. [Not always; I change the ingredients when I want to try something different.]",
-        "No siempre; cambiaba los ingredientes cuando querré probar algo diferente. [Not always; I used to change the ingredients when I will want to try something different.]",
-        "No siempre; cambio los ingredientes sin que quiero probar algo diferente. [Not always; I change the ingredients without wanting to try something different.]"
+        "No siempre; cambiaba los ingredientes cuando quería probar algo diferente. [Not always; I used to change the ingredients when I wanted to try something different.]",
+        "No siempre; cambié los ingredientes cuando quise probar algo diferente. [Not always; I changed the ingredients when I wanted to try something different.]"
       ],
       "correct": 0,
       "teaches": [
         "present-tense"
       ],
       "distractor_skills": {
-        "1": "imperfect"
+        "1": "imperfect",
+        "2": "preterito-indefinido"
       }
     },
     {
@@ -297,7 +298,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe one eating habit and say when or why you do it.",
+          "prompt": "Say that you normally have breakfast early, although at weekends you eat later because you have more time.",
           "answer": "Normalmente desayuno temprano, aunque los fines de semana como más tarde porque tengo más tiempo."
         }
       ],
@@ -311,7 +312,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe what you usually do after a meal.",
+          "prompt": "Say that after a meal you usually stay at the table talking about what has happened during the day.",
           "answer": "Después de comer, solemos quedarnos de sobremesa mientras hablamos de lo que ha pasado durante el día."
         }
       ],

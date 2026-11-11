@@ -31,7 +31,7 @@
       "id": "b1-13-01.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which expression identifies the source of reported information? [¿Qué expresión identifica la fuente de la información?]",
+      "question": "Which expression identifies the source of reported information?",
       "options": [
         "Según la fuente oficial [According to the official source]",
         "Desde mi punto de vista [From my point of view]",
@@ -113,11 +113,11 @@
       "id": "b1-13-01.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence reports information rather than giving a personal opinion? [¿Cuál informa en lugar de expresar una opinión personal?]",
+      "question": "Which sentence reports information rather than giving a personal opinion?",
       "options": [
         "La televisión informó de que varias personas habían visto una luz. [Television reported that several people had seen a light.]",
-        "Me parece increíble que ocurra algo así. [It seems incredible to me that something like that happens.]",
-        "Creo que es demasiado extraño. [I think it is too strange.]"
+        "Me parece increíble que ocurra algo así en una ciudad tan pequeña. [It seems incredible to me that something like that happens in such a small city.]",
+        "Creo que es demasiado extraño para ser una noticia verdadera. [I think it is too strange to be a true news story.]"
       ],
       "correct": 0,
       "teaches": [
@@ -134,10 +134,7 @@
         "b1-media-information-vocab"
       ],
       "english": "The news report explains that the investigators still do not have an answer.",
-      "answers": [
-        "explica",
-        "explicó"
-      ]
+      "answer": "explica"
     },
     {
       "id": "b1-13-01.ex08",
@@ -183,8 +180,8 @@
       "sentence": "Según la fuente oficial, el suceso ocurrió durante la noche.",
       "options": [
         "According to the official source, the incident happened during the night.",
-        "According to my opinion, the source disappeared.",
-        "The incident will happen tomorrow."
+        "According to my opinion, the official source disappeared last night.",
+        "The incident will happen tomorrow during the afternoon at the station."
       ],
       "correct": 0,
       "teaches": [
@@ -233,12 +230,16 @@
       "options": [
         "Dice que el suceso ocurrió durante la noche. [It says that the incident happened during the night.]",
         "Dice que el suceso ocurra durante la noche. [It says that the incident happens (subjunctive) during the night.]",
-        "Dice que el suceso ocurriera durante la noche. [It says that the incident happened (subjunctive) during the night.]"
+        "Dice que el suceso ocurrirá durante la noche. [It says that the incident will happen during the night.]"
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto-informacion"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-13-01.ex13",
@@ -257,12 +258,16 @@
       "options": [
         "Informó de que varias personas habían visto una luz extraña. [It reported that several people had seen a strange light.]",
         "Informó de que varias personas vean una luz extraña. [It reported that several people see (subjunctive) a strange light.]",
-        "Informó de que varias personas hayan visto una luz extraña. [It reported that several people have seen (subjunctive) a strange light.]"
+        "Informó de que varias personas verán una luz extraña. [It reported that several people will see a strange light.]"
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto-informacion"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-13-01.ex14",
@@ -281,12 +286,16 @@
       "options": [
         "Según ellos, el objeto apareció durante unos minutos. [According to them, the object appeared for a few minutes.]",
         "Según ellos, el objeto aparezca durante unos minutos. [According to them, the object appears (subjunctive) for a few minutes.]",
-        "Según ellos, el objeto apareciera durante unos minutos. [According to them, the object appeared (subjunctive) for a few minutes.]"
+        "Según ellos, el objeto aparecerá durante unos minutos. [According to them, the object will appear for a few minutes.]"
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto-informacion"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-13-01.ex15",
@@ -294,8 +303,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Report one piece of information and identify its source.",
-          "answer": "Según la fuente oficial, el suceso ocurrió durante la noche y los investigadores siguen buscando una explicación."
+          "prompt": "Say that, according to the official source, the incident happened during the night, and that the investigators are still looking for an answer.",
+          "answer": "Según la fuente oficial, el suceso ocurrió durante la noche y los investigadores siguen buscando una respuesta."
         }
       ],
       "teaches": [
@@ -308,7 +317,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write two sentences reporting information from different sources.",
+          "prompt": "Write two sentences: one reporting what witnesses said (according to them) and one reporting what television reported.",
           "answer": "Según los testigos, el objeto apareció durante unos minutos. La televisión informó de que varias personas habían visto una luz extraña."
         }
       ],

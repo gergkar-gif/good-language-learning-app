@@ -27,7 +27,7 @@
       "id": "b1-14-02.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence uses the present perfect? [¿Cuál usa el pretérito perfecto?]",
+      "question": "Which sentence uses the present perfect?",
       "options": [
         "La tecnología ha cambiado nuestra forma de comunicarnos. [Technology has changed the way we communicate.]",
         "La tecnología cambia nuestra forma de comunicarnos. [Technology changes the way we communicate.]",
@@ -105,7 +105,7 @@
       "id": "b1-14-02.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which auxiliary is used in the present perfect? [¿Qué auxiliar se usa?]",
+      "question": "Which auxiliary is used in the present perfect?",
       "options": [
         "haber [to have]",
         "ser [to be]",
@@ -228,13 +228,17 @@
       ],
       "options": [
         "Sí, ha cambiado nuestra forma de comunicarnos. [Yes, it has changed the way we communicate.]",
-        "Sí, haya cambiado nuestra forma de comunicarnos. [Yes, it has changed (subjunctive) our way of communicating.]",
-        "Sí, hubiera cambiado nuestra forma de comunicarnos. [Yes, it had changed (subjunctive) our way of communicating.]"
+        "Sí, cambiaba nuestra forma de comunicarnos. [Yes, it was changing the way we communicate.]",
+        "Sí, cambiará nuestra forma de comunicarnos. [Yes, it will change the way we communicate.]"
       ],
       "correct": 0,
       "teaches": [
         "preterito-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-14-02.ex14",
@@ -252,13 +256,17 @@
       ],
       "options": [
         "Lo he actualizado recientemente. [I have updated it recently.]",
-        "Lo haya actualizado recientemente. [I have updated (subjunctive) it recently.]",
-        "Lo hubiera actualizado recientemente. [I had updated (subjunctive) it recently.]"
+        "Lo había actualizado recientemente. [I had updated it recently.]",
+        "Lo actualizaré recientemente. [I will update it recently.]"
       ],
       "correct": 0,
       "teaches": [
         "preterito-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "pluscuamperfecto",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-14-02.ex15",
@@ -276,13 +284,17 @@
       ],
       "options": [
         "Sí, he cambiado algunos hábitos de comunicación. [Yes, I have changed some communication habits.]",
-        "Sí, haya cambiado algunos hábitos de comunicación. [Yes, I have changed (subjunctive) some communication habits.]",
-        "Sí, hubiera cambiado algunos hábitos de comunicación. [Yes, I had changed (subjunctive) some communication habits.]"
+        "Sí, había cambiado algunos hábitos de comunicación. [Yes, I had changed some communication habits.]",
+        "Sí, cambiaré algunos hábitos de comunicación. [Yes, I will change some communication habits.]"
       ],
       "correct": 0,
       "teaches": [
         "preterito-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "pluscuamperfecto",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-14-02.ex16",
@@ -290,7 +302,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe one change technology has made to communication.",
+          "prompt": "Say that technology has changed the way we communicate and that many people have changed their habits.",
           "answer": "La tecnología ha cambiado nuestra forma de comunicarnos y muchas personas han cambiado sus hábitos."
         }
       ],
@@ -304,7 +316,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe two recent changes involving technology.",
+          "prompt": "Say that you have recently updated your device and that you have changed some communication habits.",
           "answer": "He actualizado mi dispositivo recientemente y he cambiado algunos hábitos de comunicación."
         }
       ],

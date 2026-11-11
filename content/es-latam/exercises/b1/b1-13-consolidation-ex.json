@@ -31,7 +31,7 @@
       "id": "b1-13-consolidation.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence clearly reports information from a source? [¿Cuál informa claramente de una fuente?]",
+      "question": "Which sentence clearly reports information from a source?",
       "options": [
         "Según la fuente oficial, el suceso ocurrió durante la noche. [According to the official source, the incident happened during the night.]",
         "A mí me parece muy extraño todo lo que explicaron los vecinos sobre el caso. [To me everything the neighbours explained about the case seems very strange.]",
@@ -46,13 +46,13 @@
       "id": "b1-13-consolidation.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "El periodista dijo que el objeto había __ sobre la ciudad.",
-      "hint": "aparecer",
-      "answer": "aparecido",
+      "sentence": "La periodista dijo que había __ con la fuente.",
+      "hint": "hablar",
+      "answer": "hablado",
       "teaches": [
         "past-participles"
       ],
-      "english": "The journalist said that the object had appeared over the city."
+      "english": "The journalist said that she had spoken with the source."
     },
     {
       "id": "b1-13-consolidation.ex04",
@@ -107,7 +107,7 @@
       "id": "b1-13-consolidation.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which expression normally takes the subjunctive? [¿Qué expresión normalmente lleva subjuntivo?]",
+      "question": "Which expression normally takes the subjunctive?",
       "options": [
         "Es posible que [It is possible that]",
         "Es evidente que [It is clear that]",
@@ -122,16 +122,13 @@
       "id": "b1-13-consolidation.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Es evidente que la noticia __ una reacción inmediata.",
-      "hint": "provocar",
+      "sentence": "Es evidente que la fuente __ más información.",
+      "hint": "tener",
       "teaches": [
         "opinion-verbs-mood"
       ],
-      "english": "It is clear that the news has caused an immediate reaction.",
-      "answers": [
-        "ha provocado",
-        "provocó"
-      ]
+      "english": "It is clear that the source has more information.",
+      "answer": "tiene"
     },
     {
       "id": "b1-13-consolidation.ex08",
@@ -147,7 +144,7 @@
         "un",
         "fenómeno",
         "sin",
-        "explicación",
+        "respuesta",
         "definitiva."
       ],
       "solution": [
@@ -160,10 +157,10 @@
         "un",
         "fenómeno",
         "sin",
-        "explicación",
+        "respuesta",
         "definitiva."
       ],
-      "english": "In summary, the news report is about a phenomenon without a definitive explanation.",
+      "english": "In summary, the news report is about a phenomenon without a definitive answer.",
       "teaches": [
         "argument-markers"
       ]
@@ -172,7 +169,7 @@
       "id": "b1-13-consolidation.ex09",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which verb introduces another person's words? [¿Qué verbo introduce las palabras de otra persona?]",
+      "question": "Which verb introduces another person's words?",
       "options": [
         "afirmar [to state]",
         "suceder [to happen]",
@@ -187,11 +184,11 @@
       "id": "b1-13-consolidation.ex10",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "La testigo afirmó que había visto una luz desde su ventana.",
+      "sentence": "El alcalde afirmó que la fuente era fiable.",
       "options": [
-        "The witness stated that she had seen a light from her window.",
-        "The witness said she would see a light tomorrow.",
-        "The witness denied seeing any light."
+        "The mayor stated that the source was reliable.",
+        "The mayor said that the source would be reliable tomorrow.",
+        "The mayor denied that there was any source at all."
       ],
       "correct": 0,
       "teaches": [
@@ -217,11 +214,11 @@
       "id": "b1-13-consolidation.ex12",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Lo más importante es que todavía faltan pruebas independientes.",
+      "sentence": "Lo más importante es que los vecinos no tienen más información.",
       "teaches": [
         "argument-markers"
       ],
-      "english": "The most important thing is that independent evidence is still lacking."
+      "english": "The most important thing is that the neighbours have no more information."
     },
     {
       "id": "b1-13-consolidation.ex13",
@@ -240,12 +237,16 @@
       "options": [
         "Dijo que los datos principales estaban confirmados. [It said that the main data were confirmed.]",
         "Dijo que los datos principales estén confirmados. [It said that the main data are (subjunctive) confirmed.]",
-        "Dijo que los datos principales estuvieran confirmados. [It said that the main data were (subjunctive) confirmed.]"
+        "Dijo que los datos principales estarán confirmados. [It said that the main data will be confirmed.]"
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-13-consolidation.ex14",
@@ -299,7 +300,7 @@
       "id": "b1-13-consolidation.ex16",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence combines summary with evaluation? [¿Cuál combina resumen y evaluación?]",
+      "question": "Which sentence combines summary with evaluation?",
       "options": [
         "En resumen, hay testimonios, pero no creo que la información sea completamente fiable. [In summary, there are testimonies, but I do not think the information is completely reliable.]",
         "En resumen, los periodistas publicaron los primeros datos a primera hora del día. [In summary, the journalists published the initial details early in the day.]",
@@ -316,7 +317,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Report information, sequence two developments and give a cautious evaluation.",
+          "prompt": "Report information from the witnesses (a light appeared; later a video came out) and give a cautious evaluation: you do not think the information is completely reliable yet.",
           "answer": "Según los testigos, apareció una luz; posteriormente surgió un vídeo. No creo que la información sea completamente fiable todavía."
         }
       ],
@@ -330,8 +331,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write a short summary of a news story and respond to it.",
-          "answer": "En resumen, varias personas informaron de un fenómeno extraño y posteriormente aparecieron nuevas pruebas. Mi reacción es de cautela porque todavía faltan datos independientes."
+          "prompt": "Write a short summary (several people reported a strange phenomenon and later new evidence appeared) and respond with caution because independent evidence is still lacking.",
+          "answer": "En resumen, varias personas informaron de un fenómeno extraño y posteriormente aparecieron nuevas pruebas. Mi reacción es de cautela porque todavía faltan pruebas independientes."
         }
       ],
       "teaches": [

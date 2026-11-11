@@ -27,7 +27,7 @@
       "id": "b1-12-02.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence gives background description in the past? [¿Cuál da una descripción de fondo en el pasado?]",
+      "question": "Which sentence gives background description in the past?",
       "options": [
         "La cocina olía a pan recién hecho. [The kitchen smelled of freshly baked bread.]",
         "Un domingo cambiamos la receta. [One Sunday we changed the recipe.]",
@@ -117,7 +117,7 @@
       "id": "b1-12-02.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which form is needed for a repeated past action? [¿Qué forma se necesita para una acción habitual en el pasado?]",
+      "question": "Which form is needed for a repeated past action?",
       "options": [
         "preparaba [used to prepare]",
         "preparó [prepared once]",
@@ -186,8 +186,8 @@
       "sentence": "Cuando era niño, mi abuela preparaba una receta tradicional cada domingo.",
       "options": [
         "When I was a child, my grandmother used to prepare a traditional recipe every Sunday.",
-        "When I was a child, my grandmother prepared the recipe once.",
-        "My grandmother will prepare a recipe every Sunday."
+        "When I was a child, my grandmother prepared the recipe only once at home.",
+        "My grandmother will prepare a different recipe every Sunday next year."
       ],
       "correct": 0,
       "teaches": [
@@ -201,8 +201,8 @@
       "sentence": "La cocina olía a pan recién hecho y toda la familia esperaba la comida.",
       "options": [
         "The kitchen smelled of freshly baked bread and the whole family waited for the meal.",
-        "The kitchen smelled of burnt food and everyone left.",
-        "The family bought bread after the kitchen closed."
+        "The kitchen smelled of burnt food and everyone left the house at once.",
+        "The family bought bread at the shop after the kitchen had closed."
       ],
       "correct": 0,
       "teaches": [
@@ -250,8 +250,8 @@
       ],
       "options": [
         "Mi abuela preparaba una receta tradicional que había heredado de su madre. [My grandmother used to prepare a traditional recipe that she had inherited from her mother.]",
-        "Mi abuela prepararía una receta tradicional que heredaba de su madre. [My grandmother would prepare a traditional recipe that she used to inherit from her mother.]",
-        "Mi abuela preparó cada domingo mientras era niño. [My grandmother prepared once every Sunday while I was a child.]"
+        "Mi abuela prepararía una receta tradicional que había heredado de su madre. [My grandmother would prepare a traditional recipe that she had inherited from her mother.]",
+        "Mi abuela preparó una receta tradicional que había heredado de su madre. [My grandmother prepared (once) a traditional recipe that she had inherited from her mother.]"
       ],
       "correct": 0,
       "teaches": [
@@ -278,7 +278,7 @@
       ],
       "options": [
         "Cambiamos la receta porque no teníamos todos los ingredientes. [We changed the recipe because we did not have all the ingredients.]",
-        "Cambiábamos la receta porque no tengamos todos los ingredientes. [We were changing the recipe because we do not have (subjunctive) all the ingredients.]",
+        "Cambiábamos la receta porque no teníamos todos los ingredientes. [We used to change the recipe because we did not have all the ingredients.]",
         "Cambiaremos la receta porque no teníamos todos los ingredientes. [We will change the recipe because we did not have all the ingredients.]"
       ],
       "correct": 0,
@@ -286,6 +286,7 @@
         "preterite-vs-imperfect"
       ],
       "distractor_skills": {
+        "1": "imperfect",
         "2": "futuro-simple"
       }
     },
@@ -306,14 +307,15 @@
       "options": [
         "Porque era tradicional y mi abuela la había heredado de su madre. [Because it was traditional and my grandmother had inherited it from her mother.]",
         "Porque será tradicional y mi abuela la heredará de su madre. [Because it will be traditional and my grandmother will inherit it from her mother.]",
-        "Porque sea tradicional y mi abuela la haya heredado de su madre. [Because it is (subjunctive) traditional and my grandmother has inherited it from her mother.]"
+        "Porque es tradicional y mi abuela la hereda de su madre. [Because it is traditional and my grandmother inherits it from her mother.]"
       ],
       "correct": 0,
       "teaches": [
         "imperfect"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "present-tense"
       }
     },
     {
@@ -322,7 +324,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a food tradition from your childhood or family.",
+          "prompt": "Say that when you were little your family prepared a traditional recipe every Sunday, although sometimes you changed an ingredient.",
           "answer": "Cuando era pequeño, mi familia preparaba una receta tradicional cada domingo, aunque a veces cambiábamos algún ingrediente."
         }
       ],
@@ -336,7 +338,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a past food tradition and one change that happened.",
+          "prompt": "Say that you used to eat together on Sundays, but one year you changed the routine because everyone started to work more.",
           "answer": "Antes comíamos juntos los domingos, pero un año cambiamos la rutina porque todos empezamos a trabajar más."
         }
       ],

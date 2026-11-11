@@ -27,7 +27,7 @@
       "id": "b1-13-05.ex02",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "What is the main purpose of a summary? [¿Cuál es el objetivo principal de un resumen?]",
+      "question": "What is the main purpose of a summary?",
       "options": [
         "Present the main points briefly [Presentar los puntos principales brevemente]",
         "Add every detail from the source [Añadir todos los detalles de la fuente]",
@@ -101,7 +101,7 @@
       "id": "b1-13-05.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which expression clearly introduces a summary? [¿Qué expresión introduce claramente un resumen?]",
+      "question": "Which expression clearly introduces a summary?",
       "options": [
         "En resumen [In summary]",
         "Sin embargo [However]",
@@ -122,10 +122,7 @@
         "b1-media-information-vocab"
       ],
       "english": "The journalist highlights that independent evidence is still lacking.",
-      "answers": [
-        "destaca",
-        "destacó"
-      ]
+      "answer": "destaca"
     },
     {
       "id": "b1-13-05.ex08",
@@ -175,8 +172,8 @@
       "sentence": "En resumen, la noticia trata de un fenómeno que todavía no tiene una explicación clara.",
       "options": [
         "In summary, the news report is about a phenomenon that still has no clear explanation.",
-        "In summary, the source has confirmed every explanation.",
-        "The news report gives a personal reaction only."
+        "In summary, the source has confirmed every possible explanation of the phenomenon.",
+        "The news report gives only a personal reaction, with no facts at all."
       ],
       "correct": 0,
       "teaches": [
@@ -190,8 +187,8 @@
       "sentence": "Lo más importante es que la fuente ha confirmado los datos principales.",
       "options": [
         "The most important thing is that the source has confirmed the main facts.",
-        "The source has denied all the facts.",
-        "The main point is that the journalist stopped reporting."
+        "The source has denied all the facts and refused to talk to journalists.",
+        "The main point is that the journalist stopped reporting after the first day."
       ],
       "correct": 0,
       "teaches": [
@@ -239,8 +236,8 @@
       ],
       "options": [
         "En resumen, se trata de un fenómeno extraño que todavía no tiene una explicación clara. [In summary, it is a strange phenomenon that still has no clear explanation.]",
-        "En resumen, voy a explicar todos los detalles durante una hora. [In summary, I am going to explain every detail for an hour.]",
-        "En resumen, creo que todos los rumores son hechos. [In summary, I think all rumours are facts.]"
+        "En resumen, voy a explicar todos los detalles de la noticia durante una hora. [In summary, I am going to explain every detail of the news story for an hour.]",
+        "En resumen, creo que todos los rumores de la ciudad son hechos seguros. [In summary, I think all the rumours in the city are certain facts.]"
       ],
       "correct": 0,
       "teaches": [
@@ -263,7 +260,7 @@
       ],
       "options": [
         "Mi reacción es de cautela porque faltan pruebas independientes. [My reaction is one of caution because independent evidence is lacking.]",
-        "Mi reacción es de cautela a pesar de que faltan pruebas independientes. [My reaction is one of caution even though independent evidence is lacking.]",
+        "Mi reacción es de cautela aunque faltan pruebas independientes. [My reaction is one of caution although independent evidence is lacking.]",
         "Mi reacción es un resumen que destaca todos los hechos futuros. [My reaction is a summary that highlights all future facts.]"
       ],
       "correct": 0,
@@ -291,12 +288,16 @@
       "options": [
         "Destaca que todavía faltan pruebas independientes. [He highlights that independent evidence is still lacking.]",
         "Destaca que todavía falten pruebas independientes. [He highlights that independent evidence is (subjunctive) still lacking.]",
-        "Destaca que todavía faltaran pruebas independientes. [He highlights that independent evidence lacked (subjunctive) still.]"
+        "Destaca que todavía faltarán pruebas independientes. [He highlights that independent evidence will still be lacking.]"
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto-informacion"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-13-05.ex16",
@@ -304,7 +305,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Summarise a short news story in two sentences.",
+          "prompt": "Summarise a news story in two sentences: it is about a strange phenomenon, and the most important thing is that independent evidence is still lacking.",
           "answer": "En resumen, la noticia trata de un fenómeno extraño. Lo más importante es que todavía faltan pruebas independientes."
         }
       ],
@@ -318,7 +319,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give a summary and a measured personal reaction.",
+          "prompt": "Give a summary (several witnesses reported a strange light, but there is no definitive explanation) and a measured personal reaction (caution).",
           "answer": "En resumen, varios testigos informaron de una luz extraña, pero todavía no hay una explicación definitiva. Mi reacción es de cautela."
         }
       ],
@@ -332,7 +333,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Summarise the main information and distinguish it from your opinion.",
+          "prompt": "Report the main information (several people observed a phenomenon), then say you think more information is needed before deciding whether the explanation is reliable.",
           "answer": "La noticia informa de un fenómeno observado por varias personas. Creo que necesitamos más información antes de decidir si la explicación es fiable."
         }
       ],
@@ -346,7 +347,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write a short response to a developing news story.",
+          "prompt": "Say in summary that the story is still open and the investigators keep working, and that your reaction is prudent because independent evidence is still lacking.",
           "answer": "En resumen, la historia sigue abierta y los investigadores continúan trabajando. Mi reacción es prudente porque todavía faltan pruebas independientes."
         }
       ],
@@ -358,11 +359,11 @@
       "id": "b1-13-05.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
+      "question": "¿Qué hacen miles de personas en la bahía de Nueva York?",
       "options": [
-        "Una noticia sobre una luz misteriosa se difunde sin confirmación total.",
-        "Las autoridades confirman inmediatamente qué ocurrió.",
-        "Nadie presta atención a la noticia."
+        "Se reúnen para asistir a la inauguración de una estatua enorme.",
+        "Esperan en los barcos la llegada del presidente de Francia.",
+        "Protestan contra los periódicos de la ciudad en el puerto."
       ],
       "correct": 0
     },
@@ -370,11 +371,11 @@
       "id": "b1-13-05.ex21",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
+      "question": "¿Qué cuentan los organizadores sobre el escultor Bartholdi?",
       "options": [
-        "Varios testigos vieron un objeto enorme sobre la ciudad.",
-        "El fenómeno duró toda la noche.",
-        "Las autoridades confirmaron un accidente."
+        "Que quería una mujer con una antorcha en la mano.",
+        "Que hizo toda la estatua él solo en un mes de trabajo.",
+        "Que vivía en Nueva York desde que era un niño pequeño."
       ],
       "correct": 0
     },
@@ -382,11 +383,11 @@
       "id": "b1-13-05.ex22",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
+      "question": "¿Qué hacen los inmigrantes recién llegados cuando ven la estatua?",
       "options": [
-        "La diferencia entre afirmaciones y pruebas.",
-        "Una lista de fechas históricas.",
-        "Una descripción del clima."
+        "Lloran, porque para ellos representa un comienzo nuevo.",
+        "Se van a los barcos para trabajar un poco más.",
+        "Vuelven a Europa esa misma noche con sus familias."
       ],
       "correct": 0
     },
@@ -394,11 +395,11 @@
       "id": "b1-13-05.ex23",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
+      "question": "¿Qué hacen los diarios al final del día?",
       "options": [
-        "La información debe comprobarse antes de aceptarse como cierta.",
-        "Todos los rumores son siempre falsos.",
-        "El suceso quedó completamente explicado."
+        "Cuentan lo que pasó con palabras distintas.",
+        "Dicen que la fiesta fue muy triste para todos.",
+        "Publican solo noticias de otros países del mundo."
       ],
       "correct": 0
     }

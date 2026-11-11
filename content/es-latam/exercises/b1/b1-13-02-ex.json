@@ -27,7 +27,7 @@
       "id": "b1-13-02.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence uses basic reported speech? [¿Cuál usa estilo indirecto básico?]",
+      "question": "Which sentence uses basic reported speech?",
       "options": [
         "El periodista dijo que el objeto había aparecido sobre la ciudad. [The journalist said that the object had appeared over the city.]",
         "El periodista vio el objeto. [The journalist saw the object.]",
@@ -48,10 +48,7 @@
         "b1-media-information-vocab"
       ],
       "english": "The witness stated that she had seen a light from her window.",
-      "answers": [
-        "afirmó",
-        "afirmaba"
-      ]
+      "answer": "afirmó"
     },
     {
       "id": "b1-13-02.ex04",
@@ -110,7 +107,7 @@
       "id": "b1-13-02.ex06",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which verb means «to declare / state»? [¿Qué verbo significa «declarar»?]",
+      "question": "Which verb means «to declare / state»?",
       "options": [
         "declarar [to declare]",
         "suceder [to happen]",
@@ -131,10 +128,7 @@
         "b1-media-information-vocab"
       ],
       "english": "The mayor stated that he did not know all the details.",
-      "answers": [
-        "declaró",
-        "declaraba"
-      ]
+      "answer": "declaró"
     },
     {
       "id": "b1-13-02.ex08",
@@ -240,13 +234,17 @@
       ],
       "options": [
         "Dijo que el objeto había aparecido sobre la ciudad. [He said that the object had appeared over the city.]",
-        "Dijo que el objeto haya aparecido sobre la ciudad. [He said that the object has appeared (subjunctive) over the city.]",
-        "Dijo que el objeto hubiera aparecido sobre la ciudad. [He said that the object had appeared (subjunctive) over the city.]"
+        "Dijo que el objeto aparezca sobre la ciudad. [He said that the object appears (subjunctive) over the city.]",
+        "Dijo que el objeto aparecerá sobre la ciudad. [He said that the object will appear over the city.]"
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-13-02.ex14",
@@ -264,13 +262,17 @@
       ],
       "options": [
         "Afirmó que había visto una luz desde su ventana. [She stated that she had seen a light from her window.]",
-        "Afirmó que haya visto una luz desde su ventana. [She stated that she has seen (subjunctive) a light from her window.]",
-        "Afirmó que hubiera visto una luz desde su ventana. [She stated that she had seen (subjunctive) a light from her window.]"
+        "Afirmó que vea una luz desde su ventana. [She stated that she sees (subjunctive) a light from her window.]",
+        "Afirmó que verá una luz desde su ventana. [She stated that she will see a light from her window.]"
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-13-02.ex15",
@@ -289,12 +291,16 @@
       "options": [
         "Decía que el fenómeno podía repetirse. [It said that the phenomenon could happen again.]",
         "Decía que el fenómeno pueda repetirse. [It said that the phenomenon can (subjunctive) happen again.]",
-        "Decía que el fenómeno pudiera repetirse. [It said that the phenomenon could (subjunctive) happen again.]"
+        "Decía que el fenómeno podrá repetirse. [It said that the phenomenon will be able to happen again.]"
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-13-02.ex16",
@@ -302,7 +308,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Report what a witness said using a reporting verb.",
+          "prompt": "Report what the witness stated: that she had seen a light from her window.",
           "answer": "La testigo afirmó que había visto una luz desde su ventana."
         }
       ],
@@ -316,7 +322,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Report what an official said and keep the time reference clear.",
+          "prompt": "Report what the mayor declared: that he did not know all the details and that the investigators needed more information.",
           "answer": "El alcalde declaró que no conocía todos los detalles y que los investigadores necesitaban más información."
         }
       ],

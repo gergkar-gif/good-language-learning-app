@@ -27,11 +27,11 @@
       "id": "b1-14-03.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence makes a comparison? [¿Cuál hace una comparación?]",
+      "question": "Which sentence makes a comparison?",
       "options": [
         "La videollamada es más inmediata que el correo electrónico. [Video calls are more immediate than email.]",
-        "La videollamada es inmediata. [Video calls are immediate.]",
-        "Utilizo la videollamada. [I use video calls.]"
+        "La videollamada es inmediata y muy útil para el trabajo. [Video calls are immediate and very useful for work.]",
+        "Utilizo la videollamada para hablar con mi familia. [I use video calls to talk with my family.]"
       ],
       "correct": 0,
       "teaches": [
@@ -107,7 +107,7 @@
       "id": "b1-14-03.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which expression means «as effective as»? [¿Qué expresión significa «tan eficaz como»?]",
+      "question": "Which expression means «as effective as»?",
       "options": [
         "tan eficaz como [as effective as]",
         "más eficaz que [more effective than]",
@@ -210,8 +210,8 @@
       "sentence": "Mientras que algunos prefieren mensajes, otros prefieren hablar por teléfono.",
       "options": [
         "While some prefer messages, others prefer to talk by phone.",
-        "Everyone prefers messages.",
-        "Nobody prefers talking by phone."
+        "Most of the people prefer messages to any other way of talking.",
+        "A few people prefer talking by phone, but only at work."
       ],
       "correct": 0,
       "teaches": [
@@ -249,7 +249,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Es siempre más personal la tecnología?"
+          "text": "¿Es la tecnología más personal que hablar en persona?"
         },
         {
           "speaker": "B",
@@ -257,13 +257,13 @@
         }
       ],
       "options": [
-        "No; sin embargo, es rápida y eficaz. [No; however, it is fast and effective.]",
-        "Sí; aunque nunca es personal. [Yes; although it is never personal.]",
-        "No; porque es más personal que todo siempre. [No; because it is always more personal than everything.]"
+        "No es más personal; sin embargo, es rápida y eficaz. [It is not more personal; however, it is fast and effective.]",
+        "No es más personal; por eso es rápida y eficaz. [It is not more personal; that is why it is fast and effective.]",
+        "No es más personal; porque es rápida y eficaz. [It is not more personal; because it is fast and effective.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-technology-communication-vocab"
+        "contrast-concession-connectors"
       ]
     },
     {
@@ -283,12 +283,15 @@
       "options": [
         "Algunas prefieren mensajes, mientras que otras prefieren hablar por teléfono. [Some prefer messages, while others prefer to talk by phone.]",
         "Algunas prefieran mensajes, mientras que otras prefieran hablar por teléfono. [Some prefer (subjunctive) messages, while others prefer (subjunctive) to talk by phone.]",
-        "Algunas prefieren mensajes como otras nunca. [Some prefer messages as others never.]"
+        "Algunas prefieren mensajes, por eso otras prefieren hablar por teléfono. [Some prefer messages, that is why others prefer to talk by phone.]"
       ],
       "correct": 0,
       "teaches": [
         "contrast-concession-connectors"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-14-03.ex16",
@@ -296,8 +299,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give one advantage and one disadvantage of digital communication.",
-          "answer": "Una ventaja es que la comunicación digital es rápida; sin embargo, una desventaja es que no siempre es personal."
+          "prompt": "Give one advantage (messages are fast) and, with a contrast, one disadvantage (they are not always personal).",
+          "answer": "Una ventaja es que los mensajes son rápidos; sin embargo, una desventaja es que no siempre son personales."
         }
       ],
       "teaches": [
@@ -310,7 +313,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Compare two communication methods.",
+          "prompt": "Compare two communication methods: video calls are more immediate than email, although an in-person conversation can be as effective as a video call.",
           "answer": "La videollamada es más inmediata que el correo electrónico, aunque una conversación presencial puede ser tan eficaz como una videollamada."
         }
       ],
