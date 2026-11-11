@@ -112,13 +112,14 @@ const Speech = (function () {
     }
 
     // What is on screen is not always what should be said. Tables write
-    // paradigms as 'cortar → corta' and pairs as 'el amigo · la amiga'; the
-    // arrows and dots are typography, not speech. Bracketed hints are the
-    // exercise talking to the learner in English, so they go too.
+    // paradigms as 'cortar → corta' and pairs as 'el amigo · la amiga' or
+    // 'ez / az'; the arrows, dots and slashes are typography, not speech.
+    // Bracketed hints are the exercise talking to the learner in English,
+    // so they go too.
     function sayable(text) {
         let s = String(text || '')
             .replace(/\([^)]*\)/g, ' ')
-            .replace(/[→·|]/g, ', ')
+            .replace(/[→·|/]/g, ', ')
             .replace(/_{2,}/g, ' ')
             .replace(/\s*,\s*,\s*/g, ', ')
             .replace(/\s+([,.;:!?])/g, '$1')
