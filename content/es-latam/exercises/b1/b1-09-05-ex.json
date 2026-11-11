@@ -27,16 +27,19 @@
       "id": "b1-09-05.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "What is the best advice for someone who often feels tired? [¿Cuál es el mejor consejo para alguien que se siente cansado con frecuencia?]",
+      "question": "What is the best advice for someone who often feels tired?",
       "options": [
         "Conviene que revise sus hábitos de sueño. [It is advisable that they review their sleep habits.]",
         "Conviene que revisa sus hábitos de sueño. [It is advisable that they review their sleep habits.]",
-        "Conviene revisarás sus hábitos de sueño. [It is advisable that you will review their sleep habits.]"
+        "Conviene que revisará sus hábitos de sueño. [It is advisable that they review their sleep habits.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-influence"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-09-05.ex03",
@@ -125,11 +128,11 @@
       "id": "b1-09-05.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence combines a recommendation with a reason? [¿Cuál combina una recomendación con una razón?]",
+      "question": "Which sentence gives a piece of advice and a reason for it?",
       "options": [
         "Se recomienda descansar bien, ya que la falta de sueño puede afectar al bienestar. [It is recommended to rest well, since lack of sleep can affect wellbeing.]",
         "Se recomienda descansar bien en una habitación tranquila. [It is recommended to rest well in a quiet room.]",
-        "Se recomienda que descansamos bien, ya que la falta de sueño puede afectar al bienestar. [It is recommended that we rest (indicative) well, since lack of sleep can affect wellbeing.]"
+        "Se recomienda descansar bien, pero la falta de sueño puede afectar al bienestar. [It is recommended to rest well, but lack of sleep can affect wellbeing.]"
       ],
       "correct": 0,
       "teaches": [
@@ -152,11 +155,11 @@
       "id": "b1-09-05.ex08",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "Why did Gregor have problems before the transformation? [¿Por qué tenía problemas Gregor antes de la transformación?]",
+      "question": "What does Gregor find out when he wakes up one morning?",
       "options": [
-        "Solía trabajar muchas horas y casi nunca descansaba lo suficiente. [He used to work many hours and almost never rested enough.]",
-        "Solía descansar todo el día. [He used to rest all day.]",
-        "Nunca trabajaba y siempre dormía. [He never worked and always slept.]"
+        "Que había cambiado y era un insecto enorme. [That he had changed and was a huge insect.]",
+        "Que había perdido su trabajo en la oficina. [That he had lost his job at the office.]",
+        "Que su familia se había ido de la casa. [That his family had left the house.]"
       ],
       "correct": 0
     },
@@ -164,11 +167,11 @@
       "id": "b1-09-05.ex09",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "What does the text suggest about health? [¿Qué sugiere el texto sobre la salud?]",
+      "question": "Why are the people at the door afraid?",
       "options": [
-        "It depends on physical and living conditions. [Depende de las condiciones físicas y de vida.]",
-        "It depends only on medical treatment. [Depende solamente del tratamiento médico.]",
-        "It is unrelated to daily habits. [No está relacionada con los hábitos diarios.]"
+        "Porque oyen un ruido raro, no la voz de una persona. [Because they hear a strange noise, not a person's voice.]",
+        "Porque Gregor abre la puerta y sale corriendo. [Because Gregor opens the door and runs out.]",
+        "Porque Gregor llama a la policía desde su cama. [Because Gregor calls the police from his bed.]"
       ],
       "correct": 0
     },
@@ -176,11 +179,11 @@
       "id": "b1-09-05.ex10",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "What change does the family need to make? [¿Qué cambio necesita hacer la familia?]",
+      "question": "What had Gregor done for years?",
       "options": [
-        "It needs to find a more balanced way of living together. [Necesita encontrar una forma más equilibrada de vivir juntos.]",
-        "It needs to stop caring about Gregor. [Necesita dejar de preocuparse por Gregor.]",
-        "It needs to work longer hours. [Necesita trabajar más horas.]"
+        "Había trabajado mucho como vendedor para ayudar a su familia. [He had worked hard as a salesman to help his family.]",
+        "Había viajado de vacaciones con sus padres y su hermana. [He had travelled on holiday with his parents and sister.]",
+        "Había descansado casi todos los días en su cama. [He had rested in his bed almost every day.]"
       ],
       "correct": 0
     },
@@ -206,8 +209,8 @@
       "sentence": "Suelo caminar todos los días porque así me siento con más energía.",
       "options": [
         "I usually walk every day because that way I feel more energetic.",
-        "I walked once because I felt tired.",
-        "I will walk tomorrow because I am ill."
+        "Yesterday I walked for a long time because I felt very tired.",
+        "Tomorrow I will walk to the clinic because I feel a little ill."
       ],
       "correct": 0,
       "teaches": [
@@ -222,7 +225,7 @@
       "teaches": [
         "b1-health-wellbeing-vocab"
       ],
-      "english": "It is recommended that you get enough rest, since lack of sleep can affect your well-being."
+      "english": "It is recommended to rest well, since lack of sleep can affect wellbeing."
     },
     {
       "id": "b1-09-05.ex14",
@@ -270,7 +273,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué haces para mantenerte en forma?"
+          "text": "¿Qué haces para estar bien?"
         },
         {
           "speaker": "B",
@@ -278,9 +281,9 @@
         }
       ],
       "options": [
-        "Suelo caminar todos los días y evito hábitos que pueden resultar perjudiciales. [I usually walk every day and avoid habits that can be harmful.]",
-        "Suelo camino todos los días y evito hábitos que pueden resultar perjudiciales. [I usually walk every day and avoid habits that can be harmful.]",
-        "Suele caminar todos los días y evito hábitos que pueden resultar perjudiciales. [I usually walk every day and avoid habits that can be harmful.]"
+        "Suelo caminar todos los días y evito hábitos que son perjudiciales. [I usually walk every day and avoid habits that are harmful.]",
+        "Suelo camino todos los días y evito hábitos que son perjudiciales. [I usually walk every day and avoid habits that are harmful.]",
+        "Suelo caminando todos los días y evito hábitos que son perjudiciales. [I usually walk every day and avoid habits that are harmful.]"
       ],
       "correct": 0,
       "teaches": [
@@ -302,9 +305,9 @@
         }
       ],
       "options": [
-        "Se recomienda descansar bien y mantener una rutina equilibrada. [It is recommended to rest well and maintain a balanced routine.]",
-        "Se recomiendan descansar bien y mantener una rutina equilibrada. [It is recommended to rest well and maintain a balanced routine.]",
-        "Se recomienda descansando bien y mantener una rutina equilibrada. [It is recommended to rest well and maintain a balanced routine.]"
+        "Se recomienda descansar bien y tener una rutina equilibrada. [It is recommended to rest well and have a balanced routine.]",
+        "Se recomiendan descansar bien y tener una rutina equilibrada. [It is recommended to rest well and have a balanced routine.]",
+        "Se recomienda descansando bien y tener una rutina equilibrada. [It is recommended to rest well and have a balanced routine.]"
       ],
       "correct": 0,
       "teaches": [
@@ -317,8 +320,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give health advice, explain why it matters, and include one habitual structure.",
-          "answer": "Te recomiendo que duermas bien porque la falta de sueño afecta al bienestar. Suelo descansar ocho horas."
+          "prompt": "Advise someone to sleep well because lack of sleep can affect wellbeing, then say that you usually rest eight hours.",
+          "answer": "Te recomiendo que duermas bien porque la falta de sueño puede afectar al bienestar. Suelo descansar ocho horas."
         }
       ],
       "teaches": [
@@ -331,8 +334,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Explain how a person could improve their quality of life using advice and an impersonal construction.",
-          "answer": "Se recomienda mantener una rutina equilibrada y hacer ejercicio con regularidad para mejorar la calidad de vida."
+          "prompt": "Say that it is recommended to have a balanced routine and exercise every day to improve quality of life.",
+          "answer": "Se recomienda tener una rutina equilibrada y hacer ejercicio todos los días para mejorar la calidad de vida."
         }
       ],
       "teaches": [

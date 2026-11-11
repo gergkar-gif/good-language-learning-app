@@ -17,6 +17,10 @@
         [
           "consulta",
           "medical consultation / appointment"
+        ],
+        [
+          "agotado",
+          "exhausted"
         ]
       ],
       "teaches": [
@@ -27,7 +31,7 @@
       "id": "b1-09-02.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence contains advice followed by the present subjunctive? [¿Cuál contiene un consejo seguido del presente de subjuntivo?]",
+      "question": "Which sentence gives advice followed by the present subjunctive?",
       "options": [
         "Te recomiendo que descanses unos días. [I recommend that you rest for a few days.]",
         "Te recomiendo descansar unos días. [I recommend resting for a few days.]",
@@ -99,7 +103,7 @@
       "id": "b1-09-02.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which form is correct after «el médico aconseja que»? [¿Qué forma es correcta después de «el médico aconseja que»?]",
+      "question": "Which form is correct after «el médico aconseja que»?",
       "options": [
         "bebas más agua [you drink more water]",
         "bebes más agua [you drink more water]",
@@ -126,11 +130,11 @@
       "id": "b1-09-02.ex08",
       "category": "grammar",
       "type": "sentence-builder",
-      "english": "It is advisable for you to rest before returning to work.",
+      "english": "It is advisable that you rest before going back to work.",
       "tiles": [
-        "Te",
-        "conviene",
-        "descansar",
+        "Conviene",
+        "que",
+        "descanses",
         "antes",
         "de",
         "volver",
@@ -138,9 +142,9 @@
         "trabajo."
       ],
       "solution": [
-        "Te",
-        "conviene",
-        "descansar",
+        "Conviene",
+        "que",
+        "descanses",
         "antes",
         "de",
         "volver",
@@ -213,7 +217,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "Me siento agotado desde hace varios días."
+          "text": "Me siento agotado desde hace tres días."
         },
         {
           "speaker": "B",
@@ -223,12 +227,15 @@
       "options": [
         "Te recomiendo que descanses y que pidas una consulta. [I recommend that you rest and make an appointment.]",
         "Te recomiendo que descansas y que pides una consulta. [I recommend that you rest and make an appointment.]",
-        "Te recomiendo descansarás y pedirás una consulta. [I recommend that you will rest and make an appointment.]"
+        "Te recomiendo que descansarás y que pedirás una consulta. [I recommend that you rest and make an appointment.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-influence"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-09-02.ex14",
@@ -245,14 +252,17 @@
         }
       ],
       "options": [
-        "Es importante que duermas bien y que bebas suficiente agua. [It is important that you sleep well and drink enough water.]",
-        "Es importante que duermes bien y bebes suficiente agua. [It is important that you sleep well and drink enough water.]",
-        "Es importante dormirás bien y beberás suficiente agua. [It is important that you will sleep well and drink enough water.]"
+        "Es importante que duermas bien y que bebas agua. [It is important that you sleep well and drink water.]",
+        "Es importante que duermes bien y que bebes agua. [It is important that you sleep well and drink water.]",
+        "Es importante que dormirás bien y que beberás agua. [It is important that you sleep well and drink water.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-value-judgments"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-09-02.ex15",
@@ -271,12 +281,15 @@
       "options": [
         "Si los síntomas continúan, te recomiendo que pidas una consulta. [If the symptoms continue, I recommend that you make an appointment.]",
         "Si los síntomas continúan, te recomiendo que pides una consulta. [If the symptoms continue, I recommend that you make an appointment.]",
-        "Si los síntomas continuarán, te recomiendo que pedirás una consulta. [If the symptoms continue, I recommend that you will make an appointment.]"
+        "Si los síntomas continúan, te recomiendo que pedirás una consulta. [If the symptoms continue, I recommend that you make an appointment.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-influence"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-09-02.ex16",

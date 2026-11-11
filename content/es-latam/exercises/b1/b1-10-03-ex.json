@@ -27,7 +27,7 @@
       "id": "b1-10-03.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which tense gives the background in this sentence? [¿Qué tiempo da el contexto?] «Mientras dormíamos, una tubería se rompió.»",
+      "question": "In «Mientras dormíamos, una tubería se rompió», which tense gives the background?",
       "options": [
         "imperfecto [we were sleeping]",
         "indefinido [broke]",
@@ -43,7 +43,7 @@
       "category": "grammar",
       "type": "fill-blank",
       "sentence": "Mientras __, una tubería se rompió.",
-      "hint": "dormir",
+      "hint": "dormir, we",
       "answer": "dormíamos",
       "teaches": [
         "imperfect"
@@ -101,7 +101,7 @@
       "id": "b1-10-03.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which connector introduces a consequence? [¿Qué conector introduce una consecuencia?]",
+      "question": "Which connector introduces a consequence?",
       "options": [
         "por eso [therefore]",
         "mientras [while]",
@@ -245,13 +245,16 @@
       ],
       "options": [
         "Mientras dormíamos, una tubería se rompió y la cocina se inundó. [While we were sleeping, a pipe broke and the kitchen flooded.]",
-        "Mientras dormiremos, una tubería se rompió y la cocina se inundó. [While we will sleep, a pipe broke and the kitchen flooded.]",
-        "Mientras durmamos, una tubería se romperá y la cocina se inundará. [While we sleep (subjunctive), a pipe will break and the kitchen will flood.]"
+        "Mientras dormiremos, una tubería se rompió y la cocina se inundó. [While we were sleeping, a pipe broke and the kitchen flooded.]",
+        "Mientras habíamos dormido, una tubería se rompió y la cocina se inundó. [While we were sleeping, a pipe broke and the kitchen flooded.]"
       ],
       "correct": 0,
       "teaches": [
         "imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "b1-10-03.ex14",
@@ -277,7 +280,8 @@
         "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "subjuntivo-morfologia"
       }
     },
     {
@@ -287,7 +291,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué habían hecho antes de que llegara el técnico?"
+          "text": "¿Qué habían hecho cuando llegó el técnico?"
         },
         {
           "speaker": "B",
@@ -296,15 +300,16 @@
       ],
       "options": [
         "Ya habíamos cerrado la llave del agua porque había una fuga. [We had already turned off the water because there was a leak.]",
-        "Ya cerraremos la llave del agua porque habrá una fuga. [We will already turn off the water because there will be a leak.]",
-        "Ya hayamos cerrado la llave del agua porque haya una fuga. [We have (subjunctive) already turned off the water because there be (subjunctive) a leak.]"
+        "Ya cerraremos la llave del agua porque habrá una fuga. [We had already turned off the water because there was a leak.]",
+        "Ya hemos cerrado la llave del agua porque hay una fuga. [We had already turned off the water because there was a leak.]"
       ],
       "correct": 0,
       "teaches": [
         "pluscuamperfecto"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "preterito-perfecto"
       }
     },
     {
@@ -313,7 +318,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a problem at home using the imperfecto and indefinido.",
+          "prompt": "Say that while you were sleeping a pipe broke and the water flooded the kitchen, so you had to look for a solution.",
           "answer": "Mientras dormíamos, una tubería se rompió y el agua inundó la cocina, así que tuvimos que buscar una solución."
         }
       ],
@@ -327,7 +332,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Explain the consequence of a household problem.",
+          "prompt": "Say that there was a leak, so you called the landlord immediately.",
           "answer": "Había una fuga, así que llamamos al propietario inmediatamente."
         }
       ],

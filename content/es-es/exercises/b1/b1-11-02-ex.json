@@ -17,6 +17,10 @@
         [
           "tráfico",
           "traffic"
+        ],
+        [
+          "construir",
+          "to build"
         ]
       ],
       "teaches": [
@@ -27,7 +31,7 @@
       "id": "b1-11-02.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence describes a past situation rather than a completed change? [¿Cuál describe una situación pasada?]",
+      "question": "Which sentence describes a past situation rather than a completed change?",
       "options": [
         "Antes había menos tráfico. [There used to be less traffic.]",
         "La ciudad creció mucho. [The city grew a lot.]",
@@ -126,7 +130,7 @@
       "id": "b1-11-02.ex06",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which expression means «over time»? [¿Qué expresión significa «con el tiempo»?]",
+      "question": "Which expression means «over time»?",
       "options": [
         "con el tiempo [over time]",
         "de repente [suddenly]",
@@ -247,15 +251,16 @@
       ],
       "options": [
         "Ha crecido mucho y, desde entonces, hay más tráfico. [It has grown a lot and, since then, there is more traffic.]",
-        "Crecerá mucho y, desde entonces, habrá más tráfico. [It will grow a lot and, since then, there will be more traffic.]",
-        "Haya crecido mucho y, desde entonces, haya más tráfico. [It has (subjunctive) grown a lot and, since then, there be (subjunctive) more traffic.]"
+        "Crecerá mucho y, desde entonces, habrá más tráfico. [It has grown a lot and, since then, there is more traffic.]",
+        "Crecía mucho y, desde entonces, había más tráfico. [It has grown a lot and, since then, there is more traffic.]"
       ],
       "correct": 0,
       "teaches": [
         "preterito-perfecto"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "imperfect"
       }
     },
     {
@@ -274,13 +279,16 @@
       ],
       "options": [
         "Sí, antes era más tranquilo, aunque ahora hay más servicios. [Yes, it used to be quieter, although now there are more services.]",
-        "Sí, antes es más tranquilo, aunque ahora había más servicios. [Yes, before it is quieter, although now there were more services.]",
-        "Sí, antes ha sido más tranquilo, aunque ahora será servicios. [Yes, it has been quieter before, although now it will be services.]"
+        "Sí, antes es más tranquilo, aunque ahora hay más servicios. [Yes, it used to be quieter, although now there are more services.]",
+        "Sí, antes ha sido más tranquilo, aunque ahora hay más servicios. [Yes, it used to be quieter, although now there are more services.]"
       ],
       "correct": 0,
       "teaches": [
         "imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "b1-11-02.ex15",
@@ -306,7 +314,8 @@
         "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "subjuntivo-morfologia"
       }
     },
     {
@@ -315,8 +324,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe one important change in your city.",
-          "answer": "Mi ciudad ha crecido mucho y, con el tiempo, han aparecido nuevos comercios porque creo que es importante para la comunidad."
+          "prompt": "Say that your city has grown a lot and that, over time, new shops have appeared.",
+          "answer": "Mi ciudad ha crecido mucho y, con el tiempo, han aparecido nuevos comercios."
         }
       ],
       "teaches": [
@@ -329,7 +338,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Compare your neighbourhood now with how it was before.",
+          "prompt": "Say that before it was quieter, although now there are more services and better transport.",
           "answer": "Antes era más tranquilo, aunque ahora hay más servicios y mejor transporte."
         }
       ],

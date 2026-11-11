@@ -1,0 +1,732 @@
+[
+ {
+  "file": "content/es-es/grammar/b1/b1-11-01-relative-clauses-location-gr.json",
+  "old": "Hay una plaza en la que los vecinos se reúnen los domingos.",
+  "new": "Hay una plaza donde los vecinos se reúnen los domingos.",
+  "kind": "target",
+  "sure": true,
+  "why": "en la que = relativas-preposicion-el-que (b1-20-01, later): use donde"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-11-01-relative-clauses-location-gr.json",
+  "old": "Use *donde* for location, while en el *que* / en la que can make the relationship between a place and its description more explicit.",
+  "new": "Use *donde* for a place and *que* for a person or thing: *la plaza donde los vecinos se reúnen*, *el edificio que está al final de la calle*.",
+  "kind": "target",
+  "sure": true,
+  "why": "tip used en el que / en la que (later)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-01-ex.json",
+  "id": "b1-11-01.ex02",
+  "set": {
+   "question": "Which sentence locates a place with a relative clause?",
+   "options": [
+    "La calle donde vivo está cerca de una estación. [The street where I live is near a station.]",
+    "La calle está cerca de la estación vieja. [The street is near the old station.]",
+    "Vivo en una calle cerca de una estación. [I live on a street near a station.]"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "length give-away; Spanish bracket gloss (oración, relativo)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-01-ex.json",
+  "id": "b1-11-01.ex04",
+  "set": {
+   "tiles": [
+    "Hay",
+    "una",
+    "plaza",
+    "donde",
+    "los",
+    "vecinos",
+    "se",
+    "reúnen."
+   ],
+   "solution": [
+    "Hay",
+    "una",
+    "plaza",
+    "donde",
+    "los",
+    "vecinos",
+    "se",
+    "reúnen."
+   ],
+   "solutions": null,
+   "english": "There is a square where the neighbours meet."
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "en la que is a later pattern (b1-20-01): use donde"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-01-ex.json",
+  "id": "b1-11-01.ex06",
+  "set": {
+   "question": "Which form completes «Hay una plaza donde los vecinos ___ los domingos»?"
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "en la que (later) removed; Spanish bracket gloss"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-01-ex.json",
+  "id": "b1-11-01.ex12",
+  "set": {
+   "options": [
+    "Es un barrio que tiene una plaza donde los vecinos se reúnen. [It is a neighbourhood that has a square where the neighbours meet.]",
+    "Es un barrio que tienen una plaza donde los vecinos se reúnen. [It is a neighbourhood that has a square where the neighbours meet.]",
+    "Es un barrio que tiene una plaza que los vecinos se reúnen. [It is a neighbourhood that has a square where the neighbours meet.]"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "options had two faults or were a garbled non-phrase; one fault each (agreement; que for donde)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-01-ex.json",
+  "id": "b1-11-01.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "¿Dónde se reúnen los vecinos?"
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "En una plaza donde hay un parque pequeño. [In a square where there is a small park.]",
+    "En una plaza que hay un parque pequeño. [In a square where there is a small park.]",
+    "En una plaza quien hay un parque pequeño. [In a square where there is a small park.]"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "the question used a relative clause with the subjunctive (B2) and the answer en la que (later); practises donde"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-01-ex.json",
+  "id": "b1-11-01.ex16",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that there is a square where the neighbours meet, although it is quite near the station.",
+     "answer": "Hay una plaza donde los vecinos se reúnen, aunque está bastante cerca de la estación."
+    }
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "prompt did not pin the answer; tráfico is a word of the next lesson"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-01-ex.json",
+  "id": "b1-11-01.ex10",
+  "set": {
+   "sentence": "Hay una plaza donde los vecinos se reúnen los domingos."
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "en la que is later (b1-20-01)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-02-ex.json",
+  "id": "b1-11-02.ex01",
+  "set": {
+   "pairs": [
+    [
+     "crecer",
+     "to grow"
+    ],
+    [
+     "transformar",
+     "to transform"
+    ],
+    [
+     "tráfico",
+     "traffic"
+    ],
+    [
+     "construir",
+     "to build"
+    ]
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "construir listed but never practised in matching"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-02-ex.json",
+  "id": "b1-11-02.ex02",
+  "set": {
+   "question": "Which sentence describes a past situation rather than a completed change?"
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Spanish bracket gloss"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-02-ex.json",
+  "id": "b1-11-02.ex06",
+  "set": {
+   "question": "Which expression means «over time»?"
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Spanish bracket gloss (expresión, significa)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-02-ex.json",
+  "id": "b1-11-02.ex13",
+  "set": {
+   "options": [
+    "Ha crecido mucho y, desde entonces, hay más tráfico. [It has grown a lot and, since then, there is more traffic.]",
+    "Crecerá mucho y, desde entonces, habrá más tráfico. [It has grown a lot and, since then, there is more traffic.]",
+    "Crecía mucho y, desde entonces, había más tráfico. [It has grown a lot and, since then, there is more traffic.]"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "futuro-simple",
+    "2": "imperfect"
+   }
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "option 3 used the present perfect subjunctive (haya crecido, later)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-02-ex.json",
+  "id": "b1-11-02.ex14",
+  "set": {
+   "options": [
+    "Sí, antes era más tranquilo, aunque ahora hay más servicios. [Yes, it used to be quieter, although now there are more services.]",
+    "Sí, antes es más tranquilo, aunque ahora hay más servicios. [Yes, it used to be quieter, although now there are more services.]",
+    "Sí, antes ha sido más tranquilo, aunque ahora hay más servicios. [Yes, it used to be quieter, although now there are more services.]"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "2": "preterito-perfecto"
+   }
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "options 2-3 had two faults and option 3 was a non-phrase (ahora será servicios)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-02-ex.json",
+  "id": "b1-11-02.ex16",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that your city has grown a lot and that, over time, new shops have appeared.",
+     "answer": "Mi ciudad ha crecido mucho y, con el tiempo, han aparecido nuevos comercios."
+    }
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "prompt did not pin the answer; the answer ended in a stray clause ('porque creo que es importante para la comunidad')"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-11-03-cause-and-consequence-gr.json",
+  "old": "Hay mucho ruido en la zona, de modo que algunos vecinos quieren mudarse.",
+  "new": "Hay mucho ruido en la zona, así que algunos vecinos quieren mudarse.",
+  "kind": "target",
+  "sure": true,
+  "why": "de modo que is B2"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-11-03-cause-and-consequence-gr.json",
+  "old": "El transporte público es limitado, así que muchas personas utilizan el coche.",
+  "new": "El transporte público es limitado, y por eso muchas personas utilizan el coche.",
+  "kind": "target",
+  "sure": true,
+  "why": "avoid repeating así que; keeps the meaning"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-03-ex.json",
+  "id": "b1-11-03.ex01",
+  "set": {
+   "pairs": [
+    [
+     "contaminación",
+     "pollution"
+    ],
+    [
+     "atasco",
+     "traffic jam"
+    ],
+    [
+     "ruido",
+     "noise"
+    ],
+    [
+     "exceso",
+     "excess"
+    ]
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "exceso listed but never practised in matching"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-03-ex.json",
+  "id": "b1-11-03.ex02",
+  "set": {
+   "question": "Which connector introduces a consequence?"
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Spanish bracket gloss (conector)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-03-ex.json",
+  "id": "b1-11-03.ex03",
+  "set": {
+   "answer": "por eso",
+   "answers": null,
+   "hint": "that is why"
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "por lo tanto and de modo que are B2; answers-alternatives"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-03-ex.json",
+  "id": "b1-11-03.ex06",
+  "set": {
+   "question": "Which expression introduces a cause?",
+   "options": [
+    "debido a [because of]",
+    "por eso [therefore]",
+    "así que [so]"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "de modo que is B2; Spanish bracket gloss"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-03-ex.json",
+  "id": "b1-11-03.ex07",
+  "set": {
+   "sentence": "Hay mucho __ en la zona, así que algunos vecinos quieren mudarse."
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "de modo que is B2"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-03-ex.json",
+  "id": "b1-11-03.ex12",
+  "set": {
+   "sentence": "Hay mucho ruido en la zona, así que algunos vecinos quieren mudarse."
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "de modo que is B2"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-03-ex.json",
+  "id": "b1-11-03.ex13",
+  "set": {
+   "options": [
+    "Debido al tráfico, llegan tarde con frecuencia. [Because of the traffic, they frequently arrive late.]",
+    "Debido el tráfico, llegan tarde con frecuencia. [Because of the traffic, they frequently arrive late.]",
+    "Porque al tráfico, llegan tarde con frecuencia. [Because of the traffic, they frequently arrive late.]"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "options 2-3 were garbled with two faults; one fault each"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-03-ex.json",
+  "id": "b1-11-03.ex14",
+  "set": {
+   "options": [
+    "Aumenta la contaminación, por eso necesitamos reducir el tráfico. [It increases pollution, so we need to reduce traffic.]",
+    "Aumenta la contaminación, porque necesitamos reducir el tráfico. [It increases pollution, so we need to reduce traffic.]",
+    "Aumenta la contaminación, aunque necesitamos reducir el tráfico. [It increases pollution, so we need to reduce traffic.]"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "option 3 was a garbled non-phrase with three faults"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-03-ex.json",
+  "id": "b1-11-03.ex15",
+  "set": {
+   "options": [
+    "Hay demasiado ruido, así que quieren buscar una zona más tranquila. [There is too much noise, so they want to look for a quieter area.]",
+    "Hay demasiado ruido, porque quieren buscar una zona más tranquila. [There is too much noise, so they want to look for a quieter area.]",
+    "Hay demasiado ruido, aunque quieren buscar una zona más tranquila. [There is too much noise, so they want to look for a quieter area.]"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "option 3 (así como) was a non-phrase in this context"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-03-ex.json",
+  "id": "b1-11-03.ex16",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that there is too much traffic, so pollution increases.",
+     "answer": "Hay demasiado tráfico, por eso aumenta la contaminación."
+    }
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "unpinned prompt; stray clause 'porque creo que es importante para la comunidad' removed"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-03-ex.json",
+  "id": "b1-11-03.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that because of the noise, some neighbours want to move to a quieter area.",
+     "answer": "Debido al ruido, algunos vecinos quieren mudarse a una zona más tranquila."
+    }
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "unpinned prompt; stray clause removed"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-04-ex.json",
+  "id": "b1-11-04.ex02",
+  "set": {
+   "question": "Which sentence gives a recommendation with the subjunctive?"
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Spanish bracket gloss"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-04-ex.json",
+  "id": "b1-11-04.ex06",
+  "set": {
+   "question": "Which form completes «Es importante que ___ más espacios públicos»?"
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Spanish bracket gloss (forma); the question did not give the sentence"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-05-ex.json",
+  "id": "b1-11-05.ex01",
+  "set": {
+   "pairs": [
+    [
+     "propuesta",
+     "proposal"
+    ],
+    [
+     "acordar",
+     "to agree / reach an agreement"
+    ],
+    [
+     "participar",
+     "to participate"
+    ],
+    [
+     "prioritario",
+     "priority"
+    ],
+    [
+     "aportar",
+     "to contribute"
+    ]
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "prioritario and aportar listed but never practised in matching"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-05-ex.json",
+  "id": "b1-11-05.ex02",
+  "set": {
+   "question": "Which sentence introduces a proposal?",
+   "options": [
+    "Propongo que reduzcamos el tráfico en el centro. [I propose that we reduce traffic in the centre.]",
+    "El tráfico es muy alto en el centro de la ciudad. [Traffic is very high in the city centre.]",
+    "El centro tenía mucho tráfico en esa calle. [The centre had a lot of traffic on that street.]"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "length give-away; Spanish bracket gloss"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-05-ex.json",
+  "id": "b1-11-05.ex06",
+  "set": {
+   "question": "Which phrase means «I agree with»?",
+   "options": [
+    "Estoy de acuerdo con",
+    "Estoy en contra de",
+    "Me preocupa"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "the bracket glosses of the options gave the answer away (the English gloss repeated the question); Spanish bracket gloss"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-05-ex.json",
+  "id": "b1-11-05.ex13",
+  "set": {
+   "question": "Which response moves a discussion forward?",
+   "options": [
+    "Estoy de acuerdo con la propuesta, aunque creo que necesitamos más información. [I agree with the proposal, although I think we need more information.]",
+    "Sí, me parece bien todo lo que han propuesto y no tengo nada más que añadir ahora. [Yes, everything they proposed seems fine to me and I have nothing more to add now.]",
+    "No sé qué decir sobre el asunto porque todavía no he pensado en una solución. [I don't know what to say about the matter because I haven't thought of a solution yet.]"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "tell-absolute 'ninguna'; Spanish bracket gloss"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-05-ex.json",
+  "id": "b1-11-05.ex09",
+  "set": {
+   "sentence": "Las calles eran todas muy parecidas.",
+   "options": [
+    "The streets were all very similar.",
+    "The streets were all very wide and new.",
+    "The streets are all different from each other."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "the Reading group did not read the story: sentence from the retold story"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-05-ex.json",
+  "id": "b1-11-05.ex10",
+  "set": {
+   "sentence": "Hoy era igual que ayer, y mañana sería igual que hoy.",
+   "options": [
+    "Today was the same as yesterday, and tomorrow would be the same as today.",
+    "Today was better than yesterday, and tomorrow would be better too.",
+    "Yesterday was the same as today, but tomorrow would be different."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "sentence from the retold story"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-05-ex.json",
+  "id": "b1-11-05.ex11",
+  "set": {
+   "sentence": "Es importante que haya menos humo y que se construyan parques.",
+   "english": "It is important that there is less smoke and that parks are built."
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "sentence from the retold story (Reading group)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-consolidation-ex.json",
+  "id": "b1-11-consolidation.ex02",
+  "set": {
+   "question": "Which sentence uses a relative clause for location?",
+   "options": [
+    "La plaza donde se reúnen los vecinos está cerca del parque. [The square where the neighbours meet is near the park.]",
+    "La plaza está cerca del parque y de la estación. [The square is near the park and the station.]",
+    "Los vecinos se reúnen en la plaza más grande del barrio. [The neighbours meet in the biggest square in the neighbourhood.]"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "length give-away; Spanish bracket gloss"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-consolidation-ex.json",
+  "id": "b1-11-consolidation.ex06",
+  "set": {
+   "question": "Which connector introduces a consequence?"
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Spanish bracket gloss"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-consolidation-ex.json",
+  "id": "b1-11-consolidation.ex09",
+  "set": {
+   "question": "Which recommendation is correct?"
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Spanish bracket gloss (correcta)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-consolidation-ex.json",
+  "id": "b1-11-consolidation.ex11",
+  "set": {
+   "sentence": "Hay demasiados coches, así que las calles están llenas.",
+   "options": [
+    "There are too many cars, so the streets are full.",
+    "There are few cars, so the streets are empty.",
+    "There are too many cars because the streets are empty."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "copy of the b1-11-03 listening sentence"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-consolidation-ex.json",
+  "id": "b1-11-consolidation.ex12",
+  "set": {
+   "sentence": "Es necesario que construyan más parques para los vecinos.",
+   "english": "It is necessary that they build more parks for the neighbours."
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "copy of the b1-11-05 sentence"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-consolidation-ex.json",
+  "id": "b1-11-consolidation.ex14",
+  "set": {
+   "options": [
+    "Hay demasiados coches, así que las calles están cada vez más llenas. [There are too many cars, so the streets are increasingly crowded.]",
+    "Hay demasiados coches, porque las calles están cada vez más llenas. [There are too many cars, so the streets are increasingly crowded.]",
+    "Hay demasiados coches, aunque las calles están cada vez más llenas. [There are too many cars, so the streets are increasingly crowded.]"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "option 3 (así como) was a non-phrase here"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-consolidation-ex.json",
+  "id": "b1-11-consolidation.ex15",
+  "set": {
+   "options": [
+    "Propongo que construyamos un parque para que los vecinos puedan reunirse. [I propose that we build a park so that neighbours can meet.]",
+    "Propongo que construiremos un parque para que los vecinos podrán reunirse. [I propose that we build a park so that neighbours can meet.]",
+    "Propongo que construimos un parque para que los vecinos pueden reunirse. [I propose that we build a park so that neighbours can meet.]"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "futuro-simple"
+   }
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "donde puedan (relative clause with subjunctive, B2) replaced by para que"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-consolidation-ex.json",
+  "id": "b1-11-consolidation.ex16",
+  "set": {
+   "question": "Which sentence combines a cause and a consequence?",
+   "options": [
+    "Hay mucho ruido, por eso algunos vecinos quieren mudarse. [There is a lot of noise, so some neighbours want to move.]",
+    "Hay mucho ruido en la zona cerca de la plaza. [There is a lot of noise in the area near the square.]",
+    "Algunos vecinos quieren mudarse a otro barrio. [Some neighbours want to move to another neighbourhood.]"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "length give-away; Spanish bracket gloss"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-11-consolidation-ex.json",
+  "id": "b1-11-consolidation.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that the city has grown a lot, so there is more traffic and pollution.",
+     "answer": "La ciudad ha crecido mucho, por eso hay más tráfico y contaminación."
+    }
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "unpinned prompt; stray clause removed"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-11.json",
+  "old": "Cuando llegué a la ciudad, descubrí un barrio que parecía construido para trabajar más que para vivir. Las calles estaban llenas de edificios altos y las fábricas, que ocupaban gran parte de la zona, producían humo desde primera hora de la mañana. El edificio principal estaba ubicado junto a una avenida que había empezado a crecer rápidamente.",
+  "new": "Coketown es una ciudad industrial imaginaria de la novela «Tiempos difíciles», de Charles Dickens. Sus casas eran de ladrillo rojo, pero el humo de las fábricas las había oscurecido, y las chimeneas altas echaban humo todo el día.",
+  "kind": "target",
+  "sure": true,
+  "why": "story retold as an outline of Dickens's Coketown (the old text had cars, traffic jams and pedestrians, and imperfect subjunctives after past verbs: propuso que ... redujera)"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-11.json",
+  "old": "En el centro había una plaza donde antes se reunían los vecinos, pero con el tiempo la ciudad había crecido y el espacio se había convertido en una zona de paso. Había cada vez más tráfico, mientras que las aceras eran estrechas y apenas quedaba sitio para descansar. La ciudad empezó a crecer y cada nuevo atasco hacía más evidente el coste del tráfico.",
+  "new": "Junto a la ciudad había un canal negro y un río sucio, porque las fábricas lo ensuciaban todo. Dentro de los grandes edificios, las máquinas hacían ruido de la mañana a la noche. Se oía ese ruido por todas partes, y el aire siempre olía a humo.",
+  "kind": "target",
+  "sure": true,
+  "why": "story retold as an outline of Dickens's Coketown (the old text had cars, traffic jams and pedestrians, and imperfect subjunctives after past verbs: propuso que ... redujera)"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-11.json",
+  "old": "La contaminación aumentaba debido a las fábricas y al tráfico. Algunos vecinos se quejaban del ruido, así que las conversaciones sobre el futuro del barrio se hicieron más frecuentes. Muchos pensaban que la ciudad necesitaba espacios donde las personas pudieran encontrarse. Cada peatón tenía que compartir las estrechas aceras con los coches.",
+  "new": "Las calles eran todas muy parecidas, y las personas que vivían allí también se parecían mucho. Todos los días salían de casa a la misma hora, caminaban por las mismas aceras y hacían el mismo trabajo. Para ellos, hoy era igual que ayer, y mañana sería igual que hoy.",
+  "kind": "target",
+  "sure": true,
+  "why": "story retold as an outline of Dickens's Coketown (the old text had cars, traffic jams and pedestrians, and imperfect subjunctives after past verbs: propuso que ... redujera)"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-11.json",
+  "old": "En una reunión, una mujer propuso que el ayuntamiento redujera el tráfico del centro y mejorara las aceras. Otro vecino sugirió que se construyera un parque en un terreno abandonado. No todos estaban de acuerdo, pero finalmente comprendieron que necesitaban encontrar soluciones que beneficiaran a la comunidad. Una de las primeras medidas fue reducir el tráfico en las calles más concurridas.",
+  "new": "Con esta ciudad, Dickens muestra una vida donde el trabajo y las máquinas parecen más importantes que las personas. En Coketown casi no había sitio para descansar o para jugar.",
+  "kind": "target",
+  "sure": true,
+  "why": "story retold as an outline of Dickens's Coketown (the old text had cars, traffic jams and pedestrians, and imperfect subjunctives after past verbs: propuso que ... redujera)"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-11.json",
+  "old": "La ciudad no cambió de un día para otro. Sin embargo, algunas decisiones transformaron la zona poco a poco. Cuando los vecinos empezaron a participar en las reuniones, descubrieron que una comunidad podía influir en el lugar donde vivía si era capaz de discutir sus problemas y acordar prioridades. La propuesta recibió apoyo porque podía mejorar la vida diaria de los vecinos.",
+  "new": "Hoy diríamos que una ciudad así necesita cambios. Es importante que haya menos humo y que se construyan parques. Si los vecinos hablan y proponen ideas, la ciudad puede mejorar. Una ciudad no debe ser solo un lugar para trabajar.",
+  "kind": "target",
+  "sure": true,
+  "why": "story retold as an outline of Dickens's Coketown (the old text had cars, traffic jams and pedestrians, and imperfect subjunctives after past verbs: propuso que ... redujera)"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-11.json",
+  "old": "[\n        {\n          \"question\": \"¿Qué atmósfera urbana deshumanizada retrata el texto en esta ciudad industrial?\",\n          \"options\": [\n            \"Un trazado señorial de amplios paseos ajardinados y monumentos renacentistas consagrados al arte.\",\n            \"Un espacio mercantil dominado por chimeneas fabriles, contaminación y aceras angostas desprovistas de calidez humana.\",\n            \"Un puerto pesquero tradicional donde la vida comunitaria gira en torno a la pesca artesanal y las mareas.\",\n            \"Un enclave rural en rápida despoblación donde los habitantes emigran hacia comarcas agrícolas vecinas.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"Se describe una urbe concebida prioritariamente para la producción mercantil y el tráfico, con chimeneas humeantes y calles estrechas e inhóspitas.\"\n        },\n        {\n          \"question\": \"¿Qué iniciativa ciudadana constructiva surge durante la asamblea de vecinos?\",\n          \"options\": [\n            \"La clausura inmediata de todas las vías ferroviarias para edificar naves industriales suplementarias.\",\n            \"La venta privada de los espacios públicos a consorcios bancarios para rebajar los impuestos locales.\",\n            \"La propuesta de atenuar el tránsito motorizado céntrico y erigir un parque comunitario en un solar en desuso.\",\n            \"La huelga indefinida del comercio minorista para protestar contra la llegada de nuevos residentes.\"\n          ],\n          \"correctIndex\": 2,\n          \"explanation\": \"En la asamblea se plantea pacificar el centro reduciendo el tráfico vehicular y transformar un terreno baldío en una zona verde de esparcimiento.\"\n        },\n        {\n          \"question\": \"¿Qué valiosa convicción cívica despierta entre los residentes a raíz de sus encuentros?\",\n          \"options\": [\n            \"Que la participación comunitaria activa y el consenso deliberado otorgan a los vecinos poder para mejorar su entorno.\",\n            \"Que las metrópolis modernas son incapaces de regenerarse y están condenadas al abandono irremediable.\",\n            \"Que la administración municipal jamás atiende las reclamaciones vecinales sin el uso de la fuerza.\",\n            \"Que el crecimiento industrial siempre debe prevalecer sobre la salud y el bienestar de los ciudadanos.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"El relato muestra que los vecinos descubren el valor de la implicación cívica, comprobando que la cooperación ciudadana puede transformar positivamente la ciudad.\"\n        }\n      ]",
+  "new": "[\n     {\n       \"question\": \"¿Cómo eran las casas de Coketown?\",\n       \"options\": [\n         \"Blancas y muy limpias.\",\n         \"De ladrillo rojo, pero oscurecidas por el humo.\",\n         \"De madera y con jardín.\",\n         \"Altas y de cristal.\"\n       ],\n       \"correctIndex\": 1,\n       \"explanation\": \"Las casas eran de ladrillo rojo, pero el humo de las fábricas las había oscurecido.\"\n     },\n     {\n       \"question\": \"¿Qué hacían las personas todos los días?\",\n       \"options\": [\n         \"Hacían un trabajo distinto cada día.\",\n         \"Pasaban el día en los parques.\",\n         \"Salían a la misma hora y hacían el mismo trabajo.\",\n         \"Viajaban a otras ciudades.\"\n       ],\n       \"correctIndex\": 2,\n       \"explanation\": \"Todos salían de casa a la misma hora y hacían el mismo trabajo.\"\n     },\n     {\n       \"question\": \"¿Qué cambios es importante hacer, según el final del texto?\",\n       \"options\": [\n         \"Que haya menos humo y que se construyan parques.\",\n         \"Que haya más fábricas.\",\n         \"Que las calles sean todas iguales.\",\n         \"Que las personas trabajen más horas.\"\n       ],\n       \"correctIndex\": 0,\n       \"explanation\": \"El final dice que es importante que haya menos humo y que se construyan parques.\"\n     }\n   ]",
+  "kind": "target",
+  "sure": true,
+  "why": "comprehension questions rewritten in plain Spanish to ask what the people do, true to the new text"
+ }
+]

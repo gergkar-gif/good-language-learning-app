@@ -31,7 +31,7 @@
       "id": "b1-09-01.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence focuses on someone's subjective physical experience? [¿Cuál se centra en la experiencia física de una persona?]",
+      "question": "Which sentence is about how a person feels physically?",
       "options": [
         "Me siento mareado desde esta mañana. [I have felt dizzy since this morning.]",
         "La consulta está cerrada. [The consultation is closed.]",
@@ -101,7 +101,7 @@
       "id": "b1-09-01.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence correctly describes a temporary emotional state? [¿Cuál describe correctamente un estado emocional temporal?]",
+      "question": "Which sentence describes a temporary emotional state?",
       "options": [
         "Estoy preocupado porque no puedo dormir. [I am worried because I cannot sleep.]",
         "Soy preocupado porque no puedo dormir. [I am worried because I cannot sleep.]",
@@ -116,13 +116,13 @@
       "id": "b1-09-01.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Cuando __ nerviosa, me cuesta dormir.",
+      "sentence": "Carlos __ muy cansado esta semana.",
       "hint": "estar",
-      "answer": "estoy",
+      "answer": "está",
       "teaches": [
         "estar"
       ],
-      "english": "When I am nervous, I find it difficult to sleep."
+      "english": "Carlos is very tired this week."
     },
     {
       "id": "b1-09-01.ex08",
@@ -237,7 +237,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Cómo estaba después de descansar?"
+          "text": "¿Cómo se sentía Carlos después de descansar?"
         },
         {
           "speaker": "B",
@@ -245,14 +245,17 @@
         }
       ],
       "options": [
-        "Se sentía mucho mejor y tenía más energía. [He felt much better and had more energy.]",
-        "Era mucho mejor y estaba más energía. [He was much better and was more energy.]",
-        "Se sentía mucho mejorá y tenía más energía. [He felt much better and had more energy.]"
+        "Se sentía mucho mejor y ya no tenía malestar. [He felt much better and no longer felt unwell.]",
+        "Era mucho mejor y ya no tenía malestar. [He was much better and no longer felt unwell.]",
+        "Se sentó mucho mejor y ya no tenía malestar. [He sat down much better and no longer felt unwell.]"
       ],
       "correct": 0,
       "teaches": [
         "estar"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-09-01.ex15",
@@ -260,7 +263,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe how you feel today and give one reason.",
+          "prompt": "Say that today you feel tired because you have slept little.",
           "answer": "Hoy me siento cansado porque he dormido poco."
         }
       ],
@@ -274,8 +277,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a change in someone's physical or emotional state.",
-          "answer": "Después de descansar, se sintió mucho mejor y tuvo más energía."
+          "prompt": "Say that after resting he felt much better and no longer felt unwell.",
+          "answer": "Después de descansar, se sintió mucho mejor y ya no tuvo malestar."
         }
       ],
       "teaches": [

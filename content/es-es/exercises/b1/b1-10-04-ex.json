@@ -17,6 +17,10 @@
         [
           "acogedor",
           "cosy / welcoming"
+        ],
+        [
+          "adecuado",
+          "adequate"
         ]
       ],
       "teaches": [
@@ -27,7 +31,7 @@
       "id": "b1-10-04.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence describes a hypothetical change? [¿Cuál describe un cambio hipotético?]",
+      "question": "Which sentence describes a hypothetical change?",
       "options": [
         "Reformaría la cocina si tuviera más dinero. [I would renovate the kitchen if I had more money.]",
         "Reformo la cocina cada año. [I renovate the kitchen every year.]",
@@ -107,7 +111,7 @@
       "id": "b1-10-04.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which verb form belongs after «si pudiera elegir»? [¿Qué forma va después de «si pudiera elegir»?]",
+      "question": "Which verb form belongs after «si pudiera elegir»?",
       "options": [
         "viviría [I would live]",
         "viviré [I will live]",
@@ -199,7 +203,7 @@
       "teaches": [
         "b1-home-housing-vocab"
       ],
-      "english": "I would replace the windows because that would let in more light."
+      "english": "I would change the windows because that way there would be more light."
     },
     {
       "id": "b1-10-04.ex12",
@@ -231,14 +235,18 @@
         }
       ],
       "options": [
-        "Ampliaría el salón porque necesito más espacio. [I would enlarge the living room because I need more space.]",
-        "Ampliaría el salón si necesite más espacio. [I would enlarge the living room if I need (subjunctive) more space.]",
-        "Ampliaría el salón si necesitaría más espacio. [I would enlarge the living room if I would need more space.]"
+        "Ampliaría el salón si pudiera. [I would enlarge the living room if I could.]",
+        "Ampliaría el salón si puedo. [I would enlarge the living room if I could.]",
+        "Ampliaría el salón si podría. [I would enlarge the living room if I could.]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "condicional-irregular"
+      }
     },
     {
       "id": "b1-10-04.ex14",
@@ -256,13 +264,17 @@
       ],
       "options": [
         "Viviría en una casa con jardín, aunque estaría lejos del centro. [I would live in a house with a garden, although it would be far from the centre.]",
-        "Viva en una casa con jardín, aunque esté lejos del centro. [I live (subjunctive) in a house with a garden, although it be (subjunctive) far from the centre.]",
-        "Vivir en una casa con jardín, aunque estar lejos del centro. [To live in a house with a garden, although to be far from the centre.]"
+        "Viva en una casa con jardín, aunque esté lejos del centro. [I would live in a house with a garden, although it would be far from the centre.]",
+        "Vivía en una casa con jardín, aunque estaba lejos del centro. [I would live in a house with a garden, although it would be far from the centre.]"
       ],
       "correct": 0,
       "teaches": [
         "condicional-regular"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-10-04.ex15",
@@ -279,14 +291,18 @@
         }
       ],
       "options": [
-        "Cambiaría las ventanas y reformaría el baño para que fuera más acogedor. [I would change the windows and renovate the bathroom so that it was more welcoming.]",
-        "Cambiaré las ventanas y reformaré el baño para que será más acogedor. [I will change the windows and renovate the bathroom so that it will be more welcoming.]",
-        "Cambiaba las ventanas y reformaba el baño para que es más acogedor. [I was changing the windows and renovating the bathroom so that it is more welcoming.]"
+        "Cambiaría las ventanas y reformaría el baño porque así sería más acogedor. [I would change the windows and renovate the bathroom because that way it would be cosier.]",
+        "Cambiaré las ventanas y reformaré el baño porque así será más acogedor. [I would change the windows and renovate the bathroom because that way it would be cosier.]",
+        "Cambiaba las ventanas y reformaba el baño porque así sería más acogedor. [I would change the windows and renovate the bathroom because that way it would be cosier.]"
       ],
       "correct": 0,
       "teaches": [
         "condicional-regular"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-10-04.ex16",
@@ -294,7 +310,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say what you would change in your home and why.",
+          "prompt": "Say that you would renovate the bathroom because that way it would be cosier.",
           "answer": "Reformaría el baño porque así sería más acogedor."
         }
       ],
@@ -308,8 +324,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe your ideal location using si + imperfect subjunctive + conditional.",
-          "answer": "Si pudiera elegir, viviría en un barrio tranquilo cerca del centro porque me resultaría más adecuado."
+          "prompt": "Say that if you could choose, you would live in a quiet neighbourhood near the centre because it would be more suitable.",
+          "answer": "Si pudiera elegir, viviría en un barrio tranquilo cerca del centro porque sería más adecuado."
         }
       ],
       "teaches": [

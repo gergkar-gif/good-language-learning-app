@@ -31,11 +31,11 @@
       "id": "b1-10-01.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence identifies a place with a relative clause? [¿Cuál identifica un lugar con una oración de relativo?]",
+      "question": "Which sentence identifies a place with a relative clause?",
       "options": [
         "El barrio donde vivo es bastante tranquilo. [The neighbourhood where I live is quite quiet.]",
-        "El barrio está tranquilo. [The neighbourhood is quiet.]",
-        "Vivo en el barrio. [I live in the neighbourhood.]"
+        "El barrio está bastante tranquilo hoy. [The neighbourhood is quite quiet today.]",
+        "Vivo en el barrio desde hace un año. [I have lived in the neighbourhood for a year.]"
       ],
       "correct": 0,
       "teaches": [
@@ -103,11 +103,11 @@
       "id": "b1-10-01.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which form completes «Busco un piso que ___ un entorno agradable, pero aún no lo he encontrado»? [¿Qué forma completa la frase?]",
+      "question": "Which form completes «Vivo en un piso que ___ un entorno agradable»?",
       "options": [
-        "tenga [has]",
         "tiene [has]",
-        "tendrá [will have]"
+        "tienen [have]",
+        "tener [to have]"
       ],
       "correct": 0,
       "teaches": [
@@ -118,13 +118,13 @@
       "id": "b1-10-01.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Busco un piso que __ un entorno agradable, pero aún no lo he encontrado.",
-      "hint": "tener",
-      "answer": "tenga",
+      "sentence": "El barrio __ vivo tiene muchos servicios.",
+      "hint": "relative word for a place",
+      "answer": "donde",
       "teaches": [
         "relative-clauses"
       ],
-      "english": "I am looking for a flat that has pleasant surroundings, but I have not found it yet."
+      "english": "The neighbourhood where I live has many services."
     },
     {
       "id": "b1-10-01.ex08",
@@ -170,10 +170,10 @@
       "id": "b1-10-01.ex11",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "Busco un piso que tenga un entorno agradable.",
+      "sentence": "Vivo en un piso que tiene un entorno agradable.",
       "options": [
-        "I am looking for a flat that has pleasant surroundings.",
-        "I found a flat that had unpleasant surroundings.",
+        "I live in a flat that has pleasant surroundings.",
+        "I lived in a flat that had unpleasant surroundings.",
         "I am going to leave a flat with pleasant surroundings."
       ],
       "correct": 0,
@@ -188,7 +188,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué tipo de vivienda buscas?"
+          "text": "¿Cómo es tu vivienda?"
         },
         {
           "speaker": "B",
@@ -196,9 +196,9 @@
         }
       ],
       "options": [
-        "Busco una vivienda que esté cerca del centro y que tenga un entorno tranquilo. [I am looking for a home that is near the centre and has quiet surroundings.]",
-        "Busco una vivienda que estén cerca del centro y que tengan un entorno tranquilo. [I am looking for a home that are (plural) near the centre and that have (plural) quiet surroundings.]",
-        "Busco una vivienda donde tiene cerca del centro. [I am looking for a home where it has near the centre.]"
+        "Es una vivienda que está cerca del centro y que tiene un entorno tranquilo. [It is a home that is near the centre and has quiet surroundings.]",
+        "Es una vivienda que están cerca del centro y que tienen un entorno tranquilo. [It is a home that is near the centre and has quiet surroundings.]",
+        "Es una vivienda donde está cerca del centro y tiene un entorno tranquilo. [It is a home that is near the centre and has quiet surroundings.]"
       ],
       "correct": 0,
       "teaches": [
@@ -221,8 +221,8 @@
       ],
       "options": [
         "Es un barrio que tiene muchos servicios, aunque es bastante tranquilo. [It is a neighbourhood that has many services, although it is quite quiet.]",
-        "Es un barrio que tienen muchos servicios, aunque es bastante tranquilo. [It is a neighbourhood that have (plural) many services, although it is quite quiet.]",
-        "Es un barrio donde tiene muchos servicios y tranquilo. [It is a neighbourhood where it has many services and quiet.]"
+        "Es un barrio que tienen muchos servicios, aunque es bastante tranquilo. [It is a neighbourhood that has many services, although it is quite quiet.]",
+        "Es un barrio donde tiene muchos servicios, aunque es bastante tranquilo. [It is a neighbourhood that has many services, although it is quite quiet.]"
       ],
       "correct": 0,
       "teaches": [
@@ -236,7 +236,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Conoces a algún vecino que trabaje desde casa?"
+          "text": "¿Cómo es tu vecina?"
         },
         {
           "speaker": "B",
@@ -244,9 +244,9 @@
         }
       ],
       "options": [
-        "Sí, conozco a una vecina que trabaja desde casa y que suele estar aquí por la mañana. [Yes, I know a neighbour who works from home and is usually here in the morning.]",
-        "Sí, conozco a una vecina que trabaja desde casa y que trabajará aquí ayer. [Yes, I know a neighbour who works from home and will work here yesterday.]",
-        "Sí, conozco a una vecina donde trabaja desde casa. [Yes, I know a neighbour where she works from home.]"
+        "Es una vecina que trabaja desde casa y que suele estar aquí por la mañana. [She is a neighbour who works from home and is usually here in the morning.]",
+        "Es una vecina que trabajan desde casa y que suele estar aquí por la mañana. [She is a neighbour who works from home and is usually here in the morning.]",
+        "Es una vecina donde trabaja desde casa y que suele estar aquí por la mañana. [She is a neighbour who works from home and is usually here in the morning.]"
       ],
       "correct": 0,
       "teaches": [
@@ -259,7 +259,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe your home using one relative clause.",
+          "prompt": "Say that you live in a home that is near the centre, although it is quite small.",
           "answer": "Vivo en una vivienda que está cerca del centro, aunque es bastante pequeña."
         }
       ],
@@ -273,7 +273,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe your neighbourhood and add one relative clause.",
+          "prompt": "Say that you live in a neighbourhood that has many services, although it is quite quiet.",
           "answer": "Vivo en un barrio que tiene muchos servicios, aunque es bastante tranquilo."
         }
       ],

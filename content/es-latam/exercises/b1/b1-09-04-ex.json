@@ -17,6 +17,10 @@
         [
           "mejorar",
           "to improve"
+        ],
+        [
+          "servicio",
+          "service"
         ]
       ],
       "teaches": [
@@ -27,7 +31,7 @@
       "id": "b1-09-04.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence gives a general recommendation without naming an agent? [¿Cuál da una recomendación general sin nombrar a la persona responsable?]",
+      "question": "Which sentence gives a general recommendation without naming who recommends it?",
       "options": [
         "Se recomienda beber suficiente agua. [It is recommended to drink enough water.]",
         "El médico recomienda beber suficiente agua. [The doctor recommends drinking enough water.]",
@@ -103,7 +107,7 @@
       "id": "b1-09-04.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence shows agreement between the verb and plural noun? [¿Cuál muestra concordancia entre el verbo y un sustantivo plural?]",
+      "question": "In which sentence does the verb agree with the plural noun?",
       "options": [
         "Se ofrecen consultas gratuitas. [Free consultations are offered.]",
         "Se ofrece consultas gratuitas. [Free consultations are offered.]",
@@ -118,13 +122,13 @@
       "id": "b1-09-04.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "En esta clínica se __ consultas gratuitas los viernes.",
-      "hint": "ofrecer",
-      "answer": "ofrecen",
+      "sentence": "Para mejorar la salud, se __ hacer ejercicio todos los días.",
+      "hint": "poder",
+      "answer": "puede",
       "teaches": [
-        "pasiva-refleja"
+        "se-impersonal"
       ],
-      "english": "Free consultations are offered at this clinic on Fridays."
+      "english": "To improve your health, you can exercise every day."
     },
     {
       "id": "b1-09-04.ex08",
@@ -247,7 +251,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué servicios hay los viernes?"
+          "text": "¿Qué servicios hay en esta clínica?"
         },
         {
           "speaker": "B",
@@ -255,9 +259,9 @@
         }
       ],
       "options": [
-        "Se ofrecen consultas gratuitas. [Free consultations are offered.]",
-        "Se ofrece consultas gratuitas. [Free consultations are offered.]",
-        "Se ofrecen una consulta gratuita. [A free consultation is offered.]"
+        "Se ofrecen consultas y tratamientos gratuitos. [Free consultations and treatments are offered.]",
+        "Se ofrece consultas y tratamientos gratuitos. [Free consultations and treatments are offered.]",
+        "Se ofrecer consultas y tratamientos gratuitos. [Free consultations and treatments are offered.]"
       ],
       "correct": 0,
       "teaches": [
@@ -279,9 +283,9 @@
         }
       ],
       "options": [
-        "Se puede cambiar la rutina y evitar algunos hábitos perjudiciales. [The routine can be changed and some harmful habits can be avoided.]",
-        "Se pueden cambiar la rutina y evitar algunos hábitos perjudiciales. [The routine can be changed and some harmful habits can be avoided.]",
-        "Se puede cambiando la rutina y evitado algunos hábitos perjudiciales. [The routine can be changed and some harmful habits can be avoided.]"
+        "Se puede cambiar la rutina. [The routine can be changed.]",
+        "Se pueden cambiar la rutina. [The routine can be changed.]",
+        "Se puede cambiando la rutina. [The routine can be changed.]"
       ],
       "correct": 0,
       "teaches": [
@@ -294,7 +298,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give a general health recommendation using se recomienda.",
+          "prompt": "Say that it is recommended to sleep well and drink enough water.",
           "answer": "Se recomienda dormir bien y beber suficiente agua."
         }
       ],
@@ -308,7 +312,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe two things that can be done to improve health using se puede or se deben.",
+          "prompt": "Say that more exercise can be done and some harmful habits should be avoided.",
           "answer": "Se puede hacer más ejercicio y se deben evitar algunos hábitos perjudiciales."
         }
       ],

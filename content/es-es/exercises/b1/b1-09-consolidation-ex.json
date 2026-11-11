@@ -31,28 +31,31 @@
       "id": "b1-09-consolidation.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence correctly describes a current state? [¿Cuál describe correctamente un estado actual?]",
+      "question": "Which sentence says how you feel right now?",
       "options": [
         "Hoy me siento cansado. [Today I feel tired.]",
         "Hoy soy cansado. [Today I am tired.]",
-        "Hoy me siento cansaré. [Today I will feel tired.]"
+        "Hoy me sentiré cansado. [Today I will feel tired.]"
       ],
       "correct": 0,
       "teaches": [
         "estar"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-09-consolidation.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Te recomiendo que __ unos días.",
-      "hint": "descansar",
-      "answer": "descanses",
+      "sentence": "Te aconsejo que __ más agua.",
+      "hint": "beber",
+      "answer": "bebas",
       "teaches": [
         "subjunctive-influence"
       ],
-      "english": "I recommend that you rest for a few days."
+      "english": "I advise you to drink more water."
     },
     {
       "id": "b1-09-consolidation.ex04",
@@ -103,11 +106,11 @@
       "id": "b1-09-consolidation.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence correctly uses soler? [¿Cuál usa correctamente soler?]",
+      "question": "Which sentence uses soler correctly?",
       "options": [
-        "Solemos cocinar en casa los fines de semana. [We usually cook at home at weekends.]",
-        "Solimos cocinar en casa los fines de semana. [We usually cook at home at weekends.]",
-        "Solemos cocinamos en casa los fines de semana. [We usually cook at home at weekends.]"
+        "Los domingos solemos comer con la familia. [On Sundays we usually eat with the family.]",
+        "Los domingos solimos comer con la familia. [On Sundays we usually eat with the family.]",
+        "Los domingos solemos comemos con la familia. [On Sundays we usually eat with the family.]"
       ],
       "correct": 0,
       "teaches": [
@@ -130,26 +133,24 @@
       "id": "b1-09-consolidation.ex08",
       "category": "grammar",
       "type": "sentence-builder",
-      "english": "It is recommended to drink enough water during the day.",
+      "english": "One should sleep eight hours every night.",
       "tiles": [
         "Se",
-        "recomienda",
-        "beber",
-        "suficiente",
-        "agua",
-        "durante",
-        "el",
-        "día."
+        "debe",
+        "dormir",
+        "ocho",
+        "horas",
+        "cada",
+        "noche."
       ],
       "solution": [
         "Se",
-        "recomienda",
-        "beber",
-        "suficiente",
-        "agua",
-        "durante",
-        "el",
-        "día."
+        "debe",
+        "dormir",
+        "ocho",
+        "horas",
+        "cada",
+        "noche."
       ],
       "teaches": [
         "se-impersonal"
@@ -159,11 +160,11 @@
       "id": "b1-09-consolidation.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence has correct agreement in a passive-like se construction? [¿Cuál tiene concordancia correcta en una construcción pasiva con se?]",
+      "question": "In which sentence does the verb agree with the noun?",
       "options": [
-        "Se ofrecen consultas gratuitas. [Free consultations are offered.]",
-        "Se ofrece consultas gratuitas. [Free consultations are offered.]",
-        "Se ofrecen una consulta gratuita. [A free consultation is offered.]"
+        "Se venden frutas en el mercado. [Fruit is sold at the market.]",
+        "Se vende frutas en el mercado. [Fruit is sold at the market.]",
+        "Se venden una fruta en el mercado. [A piece of fruit is sold at the market.]"
       ],
       "correct": 0,
       "teaches": [
@@ -174,11 +175,11 @@
       "id": "b1-09-consolidation.ex10",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "Me siento mareado desde esta mañana.",
+      "sentence": "Esta semana me siento agotado y tengo mucho malestar.",
       "options": [
-        "I have felt dizzy since this morning.",
-        "I usually feel dizzy in the morning.",
-        "I felt dizzy last year."
+        "This week I feel exhausted and very unwell.",
+        "Last week I felt exhausted and very unwell.",
+        "This week I feel full of energy and very well."
       ],
       "correct": 0,
       "teaches": [
@@ -189,11 +190,11 @@
       "id": "b1-09-consolidation.ex11",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "Es importante que hagas ejercicio con regularidad.",
+      "sentence": "Es importante que bebas agua y que descanses.",
       "options": [
-        "It is important that you exercise regularly.",
-        "It is important that you exercised yesterday.",
-        "It is important to stop exercising regularly."
+        "It is important that you drink water and rest.",
+        "It is important that you drank water and rested.",
+        "It is important to stop drinking water and resting."
       ],
       "correct": 0,
       "teaches": [
@@ -204,11 +205,11 @@
       "id": "b1-09-consolidation.ex12",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Se deben evitar los hábitos que pueden resultar perjudiciales.",
+      "sentence": "Se deben evitar los hábitos que son perjudiciales.",
       "teaches": [
         "b1-health-wellbeing-vocab"
       ],
-      "english": "Habits that can be harmful should be avoided."
+      "english": "Habits that are harmful should be avoided."
     },
     {
       "id": "b1-09-consolidation.ex13",
@@ -225,14 +226,17 @@
         }
       ],
       "options": [
-        "Te recomiendo que descanses y que pidas una consulta si no mejoras. [I recommend that you rest and make an appointment if you do not improve.]",
-        "Te recomiendo que descansas y que pides una consulta si no mejoras. [I recommend that you rest and make an appointment if you do not improve.]",
-        "Te recomiendo que descansarás y pedirás una consulta si no mejoras. [I recommend that you will rest and make an appointment if you do not improve.]"
+        "Te aconsejo que vayas al médico y que bebas más agua. [I advise you to see the doctor and drink more water.]",
+        "Te aconsejo que vas al médico y que bebes más agua. [I advise you to see the doctor and drink more water.]",
+        "Te aconsejo que irás al médico y que beberás más agua. [I advise you to see the doctor and drink more water.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-influence"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-09-consolidation.ex14",
@@ -250,7 +254,7 @@
       ],
       "options": [
         "Se puede hacer ejercicio y se deben evitar algunos hábitos perjudiciales. [Exercise can be done and some harmful habits should be avoided.]",
-        "Se pueden hacer ejercicio y se debe evitar algunos hábitos perjudiciales. [Exercise can be done and some harmful habits should be avoided.]",
+        "Se pueden hacer ejercicio y se deben evitar algunos hábitos perjudiciales. [Exercise can be done and some harmful habits should be avoided.]",
         "Se puede haciendo ejercicio y evitar algunos hábitos perjudiciales. [Exercise can be done and some harmful habits should be avoided.]"
       ],
       "correct": 0,
@@ -262,7 +266,7 @@
       "id": "b1-09-consolidation.ex15",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence combines a habitual structure with an explanation? [¿Cuál combina una estructura habitual con una explicación?]",
+      "question": "Which sentence says what you usually do and gives a reason?",
       "options": [
         "Suelo caminar todos los días porque me ayuda a dormir mejor. [I usually walk every day because it helps me sleep better.]",
         "Suelo caminaré todos los días porque me ayuda a dormir mejor. [I usually will walk every day because it helps me sleep better.]",
@@ -291,7 +295,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a health problem, give advice and explain the reason.",
+          "prompt": "Tell someone who feels tired to rest more, because lack of sleep can affect wellbeing.",
           "answer": "Si te sientes cansado, te recomiendo que descanses más porque la falta de sueño puede afectar al bienestar."
         }
       ],
@@ -305,8 +309,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a healthy routine using soler and one impersonal construction.",
-          "answer": "Suelo caminar todos los días y se recomienda dormir bien para mantener una rutina equilibrada."
+          "prompt": "Say that you usually walk every day and that it is recommended to sleep well to have a balanced routine.",
+          "answer": "Suelo caminar todos los días y se recomienda dormir bien para tener una rutina equilibrada."
         }
       ],
       "teaches": [

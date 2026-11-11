@@ -1,0 +1,277 @@
+[
+ {
+  "file": "content/es-es/grammar/b1/b1-09-01-estar-sentirse-estados-gr.json",
+  "old": "*Estar* describes a temporary physical or emotional state, while *sentirse* focuses on how someone experiences that state. Spanish commonly combines *sentirse* with an adjective or other expression of condition. The distinction matters when describing symptoms, mood and changes in wellbeing.",
+  "new": "You know *estar* for temporary states from A1 Unit 9 (*estoy cansado*) and *sentirse* from A1 Unit 21 (*me siento mal*). Here you use them together to describe how someone feels and how that changes. *Estar* states a current physical or emotional condition, while *sentirse* focuses on how the person experiences it. Both are followed by an adjective.",
+  "kind": "other",
+  "sure": true,
+  "why": "A1 estar (Unit 9) and sentirse (Unit 21) presented as new: open with a recap"
+ },
+ {
+  "file": "content/es-es/vocabulary/b1/b1-09-01-voc.json",
+  "old": "    {\n      \"lemma\": \"bienestar\",\n      \"translation\": \"wellbeing\",\n      \"pos\": \"noun\"\n    }",
+  "new": "    {\n      \"lemma\": \"bienestar\",\n      \"translation\": \"wellbeing\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"energía\",\n      \"translation\": \"energy\",\n      \"pos\": \"noun\"\n    }",
+  "kind": "other",
+  "sure": true,
+  "why": "energía is in no vocabulary list and is used in ex05, ex14 and ex16 of this lesson: add it to the first lesson that uses it"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-09-01-ex.json",
+  "id": "b1-09-01.ex15",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that today you feel tired because you have slept little.",
+     "answer": "Hoy me siento cansado porque he dormido poco."
+    }
+   ]
+  },
+  "kind": "other",
+  "sure": true,
+  "why": "prompt did not pin the stored answer (any reason fits): pin it"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-09-02-consejo-subjuntivo-gr.json",
+  "old": "Advice expressions such as *recomendar que*, *aconsejar que* and *ser importante que* normally introduce the present subjunctive when the person receiving the advice is expressed as a separate subject. The subjunctive marks the recommended or desired action rather than presenting it as an established fact.",
+  "new": "You know the subjunctive after advice and requests (*te recomiendo que*) from B1 Unit 7 and after *es importante que* from A2 Unit 27. Here you use them for health advice. *Recomendar que*, *aconsejar que* and *ser importante que* introduce the present subjunctive when the person receiving the advice is a separate subject. The subjunctive marks the recommended action rather than presenting it as a fact. You also meet *convenir*, from B1 Unit 7, in two patterns.",
+  "kind": "other",
+  "sure": true,
+  "why": "B1 Unit 7 and A2 Unit 27 grammar presented as new: recap"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-09-02-consejo-subjuntivo-gr.json",
+  "old": "When the advice expression has *que* and introduces a different subject, use the present subjunctive: *recomiendo que descanses*. With the same subject, an infinitive is often more natural: *te recomiendo descansar*.",
+  "new": "With *que* and a different subject, use the present subjunctive: *Te recomiendo que descanses.* With *te recomiendo* + infinitive, the person is already named by *te*, so the infinitive is just as natural: *Te recomiendo descansar.* *Convenir* works in both patterns: *Te conviene descansar* / *Conviene que descanses*.",
+  "kind": "other",
+  "sure": true,
+  "why": "tip claimed 'same subject' for te recomiendo descansar (the subjects differ) and gave stray forms; rewrite as natural sentences"
+ },
+ {
+  "file": "content/es-es/vocabulary/b1/b1-09-02-voc.json",
+  "old": "    {\n      \"lemma\": \"agotado\",\n      \"translation\": \"exhausted\",\n      \"pos\": \"adjective\"\n    }",
+  "new": "    {\n      \"lemma\": \"agotado\",\n      \"translation\": \"exhausted\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"regularidad\",\n      \"translation\": \"regularity\",\n      \"pos\": \"noun\"\n    }",
+  "kind": "other",
+  "sure": true,
+  "why": "regularidad is in no vocabulary list and is used by ex04, ex17 and later lessons: add it here, the first lesson that uses it"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-09-03-habitos-soler-gr.json",
+  "old": "*Soler* + infinitive describes actions that happen regularly or habitually. It is especially useful when talking about routines and health habits. Habitual meaning can also be expressed with the present tense, expressions such as *normalmente* and *cada día*, or frequency phrases.",
+  "new": "You know *soler* + infinitive for habits from B1 Unit 9. Here you use it for health routines. *Soler* + infinitive describes actions that happen regularly. Habitual meaning can also be expressed with the present tense and expressions such as *normalmente* and *cada día*.",
+  "kind": "other",
+  "sure": true,
+  "why": "B1 Unit 9 soler presented as new: recap"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-09-03-habitos-soler-gr.json",
+  "old": "I avoid habits that can be harmful to my health.",
+  "new": "I avoid habits that are harmful to my health.",
+  "kind": "other",
+  "sure": true,
+  "why": "english follows the Spanish"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-09-03-ex.json",
+  "id": "b1-09-03.ex16",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you usually walk after dinner because it helps you sleep better.",
+     "answer": "Suelo caminar después de cenar porque me ayuda a dormir mejor."
+    }
+   ]
+  },
+  "kind": "other",
+  "sure": true,
+  "why": "prompt did not pin the stored answer"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-09-04-impersonal-pasiva-gr.json",
+  "old": "Spanish often presents health information without naming a specific person responsible for an action. Impersonal *se* is common for general recommendations, while *se* + third-person verb can describe actions or processes whose agent is not important. These structures are frequent in medical information, notices and public guidance.",
+  "new": "You know impersonal *se* and the passive *se* construction from B1 Unit 11. Here you use them for health information, which Spanish often gives without naming a person: general recommendations take impersonal *se*, and *se* + third-person verb describes actions whose agent is not important. These structures are frequent in medical information, notices and public guidance.",
+  "kind": "other",
+  "sure": true,
+  "why": "B1 Unit 11 grammar presented as new: recap"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04.ex16",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that it is recommended to sleep well and drink enough water.",
+     "answer": "Se recomienda dormir bien y beber suficiente agua."
+    }
+   ]
+  },
+  "kind": "other",
+  "sure": true,
+  "why": "prompt did not pin the stored answer (suficiente stays: it is in this lesson's grammar example)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that more exercise can be done and some harmful habits should be avoided.",
+     "answer": "Se puede hacer más ejercicio y se deben evitar algunos hábitos perjudiciales."
+    }
+   ]
+  },
+  "kind": "other",
+  "sure": true,
+  "why": "prompt did not pin the stored answer"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-09-05-consejo-explicacion-gr.json",
+  "old": "Health communication at B1 involves more than giving isolated recommendations.",
+  "new": "This lesson combines what you know: *estar* and *sentirse* (A1 Units 9 and 21), advice with the subjunctive (B1 Unit 7), *soler* (B1 Unit 9) and impersonal *se* (B1 Unit 11). Health communication at B1 involves more than giving isolated recommendations.",
+  "kind": "other",
+  "sure": true,
+  "why": "integration screen should say it recaps earlier units"
+ },
+ {
+  "file": "content/es-es/vocabulary/b1/b1-09-05-voc.json",
+  "old": "    {\n      \"lemma\": \"calidad de vida\",\n      \"translation\": \"quality of life\",\n      \"pos\": \"expression\"\n    }",
+  "new": "    {\n      \"lemma\": \"calidad de vida\",\n      \"translation\": \"quality of life\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"afectar\",\n      \"translation\": \"to affect\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"insecto\",\n      \"translation\": \"insect\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vendedor\",\n      \"translation\": \"salesman\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"voz\",\n      \"translation\": \"voice\",\n      \"pos\": \"noun\"\n    }",
+  "kind": "other",
+  "sure": true,
+  "why": "afectar is in no list and is used in the consolidation; insecto, vendedor and voz are in no list and the story cannot do without them"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05.ex12",
+  "set": {
+   "options": [
+    "I usually walk every day because that way I feel more energetic.",
+    "Yesterday I walked for a long time because I felt very tired.",
+    "Tomorrow I will walk to the clinic because I feel a little ill."
+   ],
+   "correct": 0
+  },
+  "kind": "other",
+  "sure": true,
+  "why": "length-giveaway: wrong options as long as the right one"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05.ex13",
+  "set": {
+   "english": "It is recommended to rest well, since lack of sleep can affect wellbeing."
+  },
+  "kind": "other",
+  "sure": true,
+  "why": "english did not match the Spanish (it said 'that you' and 'well-being')"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05.ex18",
+  "set": {
+   "template": [
+    {
+     "prompt": "Advise someone to sleep well because lack of sleep can affect wellbeing, then say that you usually rest eight hours.",
+     "answer": "Te recomiendo que duermas bien porque la falta de sueño puede afectar al bienestar. Suelo descansar ocho horas."
+    }
+   ]
+  },
+  "kind": "other",
+  "sure": true,
+  "why": "prompt did not pin the stored answer"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-09-consolidation-ex.json",
+  "id": "b1-09-consolidation.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Tell someone who feels tired to rest more, because lack of sleep can affect wellbeing.",
+     "answer": "Si te sientes cansado, te recomiendo que descanses más porque la falta de sueño puede afectar al bienestar."
+    }
+   ]
+  },
+  "kind": "other",
+  "sure": true,
+  "why": "prompt did not pin the stored answer"
+ },
+ {
+  "file": "content/es-es/lessons/b1/b1-09-01.json",
+  "old": "Use four new health words.",
+  "new": "Use the new words for health and feelings.",
+  "kind": "other",
+  "sure": true,
+  "why": "goals must not count words"
+ },
+ {
+  "file": "content/es-es/lessons/b1/b1-09-01.json",
+  "old": "I can use four new health words.",
+  "new": "I can use the new words for health and feelings.",
+  "kind": "other",
+  "sure": true,
+  "why": "checklist must not count words"
+ },
+ {
+  "file": "content/es-es/lessons/b1/b1-09-02.json",
+  "old": "Use three new health-care words.",
+  "new": "Use the new words for health advice.",
+  "kind": "other",
+  "sure": true,
+  "why": "goals must not count words"
+ },
+ {
+  "file": "content/es-es/lessons/b1/b1-09-02.json",
+  "old": "I can use three new health-care words.",
+  "new": "I can use the new words for health advice.",
+  "kind": "other",
+  "sure": true,
+  "why": "checklist must not count words"
+ },
+ {
+  "file": "content/es-es/lessons/b1/b1-09-03.json",
+  "old": "Use three new health-habit words.",
+  "new": "Use the new words for health habits.",
+  "kind": "other",
+  "sure": true,
+  "why": "goals must not count words"
+ },
+ {
+  "file": "content/es-es/lessons/b1/b1-09-03.json",
+  "old": "I can use three new health-habit words.",
+  "new": "I can use the new words for health habits.",
+  "kind": "other",
+  "sure": true,
+  "why": "checklist must not count words"
+ },
+ {
+  "file": "content/es-es/lessons/b1/b1-09-04.json",
+  "old": "Use three new health-treatment words.",
+  "new": "Use the new words for health treatment.",
+  "kind": "other",
+  "sure": true,
+  "why": "goals must not count words"
+ },
+ {
+  "file": "content/es-es/lessons/b1/b1-09-04.json",
+  "old": "I can use three new health-treatment words.",
+  "new": "I can use the new words for health treatment.",
+  "kind": "other",
+  "sure": true,
+  "why": "checklist must not count words"
+ },
+ {
+  "file": "content/es-es/lessons/b1/b1-09-05.json",
+  "old": "Use three new wellbeing words.",
+  "new": "Use the new words for wellbeing and the story.",
+  "kind": "other",
+  "sure": true,
+  "why": "goals must not count words"
+ },
+ {
+  "file": "content/es-es/lessons/b1/b1-09-05.json",
+  "old": "I can use three new wellbeing words.",
+  "new": "I can use the new words for wellbeing and the story.",
+  "kind": "other",
+  "sure": true,
+  "why": "checklist must not count words"
+ }
+]
