@@ -17,7 +17,7 @@ Fixes: 90 in fixes-home-housing.json; challenges: challenges-home-housing.json (
 ## 2. Metadata
 - 10-05 ex03 now condicional-regular; ex17 porque-y-por-eso; 10-03 ex14 and cons ex14 keep DS plus subjuntivo-morfologia on the subjunctive option; structured-writing prompts pinned.
 ## 3. Goals / checklists
-- 10-04 and 10-05 "three" -> four (lists have four); checklist-you in 10-01 and 10-04; 10-03 line reworded (shared).
+- All "Use N new ... words" lines reworded without counts; checklist-you in 10-01 and 10-04; 10-03 line reworded (shared).
 ## 4. Doubtful
 - Story b1-10 metadata: author "Anónimo / Ensayo urbano" and work "Crónicas de la ciudad (siglo XX)" are invented; source "Adapted from essays and memoirs on urban living and housing". Reviewer to correct (not a classic).
 - The unit teaches no skill of its own; titles "Unit 10 Consolidation" vs Unit 19 (unsure).

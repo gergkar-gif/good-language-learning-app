@@ -16,7 +16,7 @@ Fixes: 80 in fixes-health-wellbeing.json; challenges: challenges-health-wellbein
 - 09-02 ex08 builder tagged subjunctive-influence without subjunctive: now conviene que + subjunctive.
 - 09-03 ex15 retagged ser; ex14 now habitos-soler; structured-writing prompts pinned (all lessons).
 ## 3. Goals / checklists
-- 09-01 five words; 09-02 five words; 09-04 four words; 09-05 seven words (were "three"/"four" for longer lists).
+- Goal and checklist "Use N new ... words" lines (all five lessons) reworded without counts ("Use the new words for ..."); 09-02/04/05 lists were longer than the stated count.
 ## 4. Doubtful
 - The unit teaches no skill of its own ("Grammar this unit teaches" is empty): every screen is a recap.
 - Consolidation title "Unit 9 Consolidation" vs Unit 17 in the unit list (unsure).
