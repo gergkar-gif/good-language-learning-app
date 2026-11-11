@@ -34,7 +34,7 @@
       "question": "Which sentence clearly reports information from a source?",
       "options": [
         "Según la fuente oficial, el suceso ocurrió durante la noche. [According to the official source, the incident happened during the night.]",
-        "A mí me parece muy extraño todo lo que explicaron los vecinos sobre el caso. [To me everything the neighbours explained about the case seems very strange.]",
+        "Para mí es muy extraño todo lo que explicaron los vecinos sobre el caso. [To me everything the neighbours explained about the case is very strange.]",
         "No creo que sea fiable todo lo que explicaron los vecinos sobre el caso. [I do not think everything the neighbours explained about the case is reliable.]"
       ],
       "correct": 0,
@@ -67,7 +67,7 @@
         "sea",
         "del",
         "todo",
-        "exacta."
+        "fiable."
       ],
       "solution": [
         "No",
@@ -78,9 +78,9 @@
         "sea",
         "del",
         "todo",
-        "exacta."
+        "fiable."
       ],
-      "english": "I do not think that news is entirely accurate.",
+      "english": "I do not think that news is entirely reliable.",
       "teaches": [
         "opinion-verbs-mood"
       ]
@@ -173,7 +173,7 @@
       "options": [
         "afirmar [to state]",
         "suceder [to happen]",
-        "difundir [to spread]"
+        "informar [to report]"
       ],
       "correct": 0,
       "teaches": [
@@ -235,9 +235,9 @@
         }
       ],
       "options": [
-        "Dijo que los datos principales estaban confirmados. [It said that the main data were confirmed.]",
-        "Dijo que los datos principales estén confirmados. [It said that the main data are (subjunctive) confirmed.]",
-        "Dijo que los datos principales estarán confirmados. [It said that the main data will be confirmed.]"
+        "Dijo que los datos eran fiables. [It said that the data were reliable.]",
+        "Dijo que los datos sean fiables. [It said that the data are (subjunctive) reliable.]",
+        "Dijo que los datos serán fiables. [It said that the data will be reliable.]"
       ],
       "correct": 0,
       "teaches": [
@@ -279,7 +279,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Cómo se desarrolló la historia?"
+          "text": "¿Cómo fue la historia?"
         },
         {
           "speaker": "B",
@@ -304,7 +304,7 @@
       "options": [
         "En resumen, hay testimonios, pero no creo que la información sea completamente fiable. [In summary, there are testimonies, but I do not think the information is completely reliable.]",
         "En resumen, los periodistas publicaron los primeros datos a primera hora del día. [In summary, the journalists published the initial details early in the day.]",
-        "La fuente oficial informó de la existencia de un vídeo grabado por varios vecinos. [The official source reported the existence of a video recorded by several neighbours.]"
+        "La fuente oficial informó de un vídeo de varios vecinos. [The official source reported a video from several neighbours.]"
       ],
       "correct": 0,
       "teaches": [
@@ -318,7 +318,7 @@
       "template": [
         {
           "prompt": "Report information from the witnesses (a light appeared; later a video came out) and give a cautious evaluation: you do not think the information is completely reliable yet.",
-          "answer": "Según los testigos, apareció una luz; posteriormente surgió un vídeo. No creo que la información sea completamente fiable todavía."
+          "answer": "Según los testigos, apareció una luz; posteriormente apareció un vídeo. No creo que la información sea completamente fiable todavía."
         }
       ],
       "teaches": [
