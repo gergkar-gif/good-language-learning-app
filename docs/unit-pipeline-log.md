@@ -261,6 +261,8 @@ not verified:
 - Challenges are walked since 2026-10-21: each lesson's hand-written
   entry must be the one on screen and its target, typed, must pass the
   app's grader; a lesson with no entry (generated placeholder) fails.
+- `python scripts/check_c1_forms.py <course> <level>` (HU): no C1 formula in screens,
+  items, goals or challenges (added 2026-11-11 after the HU B2 pass).
 - Not covered by any of this: speaking steps (microphone), spoken
   challenge answers, wrong-answer paths, and a native speaker's eye (the
   user spot-checks).
@@ -465,6 +467,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-10 | HU B2 culture 50, 52, 54, 56 | paired read, 2 culture units/reader, text first, no limit, readers run check_c1_forms | | A 365,963, B 401,259 (~192k a unit) | 366 proposed (71 / 81 / 118 / 96), 3 rejected and repaired (1 broken JSON from double quotes) | walk 24/24 |
 | 11-10 | HU B2 culture 58, 60, 62, 64 | paired read, 2 culture units/reader; both stopped by the 5-hour limit, resumed | | A 336,663, B 349,608 (resumed notices) | 365 proposed (98 / 90 / 81 / 96), 19 rejected: 14 cascades rebased by script | walk 24/24 |
 | 11-11 | HU B2 culture 66, 68, 70, 72 | paired read, 2 culture units/reader, no limit | | A 480,996, B 374,814 (~214k a unit) | 438 proposed (110 / 109 / 127 / 92), 5 rejected and repaired | last culture batch; B2 72/72; walk 24/24 |
+| 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
