@@ -92,7 +92,7 @@
       "sentences": [
         "Primero presento mi opinión. [First I state my opinion.]",
         "Después explico la razón. [Then I explain the reason.]",
-        "Finalmente reconozco otra perspectiva. [Finally I acknowledge another perspective.]"
+        "Finalmente reconozco otra opinión. [Finally I acknowledge another view.]"
       ],
       "solution": [
         0,
@@ -120,12 +120,15 @@
       "options": [
         "Porque ofrece una ventaja importante y funciona en la práctica. [Because it offers an important advantage and works in practice.]",
         "Porque ofrece una ventaja importante pero no funciona en la práctica. [Because it offers an important advantage but does not work in practice.]",
-        "Porque ofrezca una ventaja importante siempre. [Because it may offer an important advantage always.]"
+        "Porque ofrezca una ventaja importante y funciona en la práctica. [Because it may offer an important advantage and works in practice.]"
       ],
       "correct": 0,
       "teaches": [
         "b1-education-learning-vocab"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-07-05.ex07",
@@ -193,11 +196,11 @@
       "id": "b1-07-05.ex10",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which is a useful way to acknowledge another view? [¿Cuál reconoce otra perspectiva?]",
+      "question": "Which is a useful way to acknowledge another view? [¿Cuál reconoce otra opinión?]",
       "options": [
         "Entiendo ese argumento, pero... [I understand that argument, but...]",
-        "Eso es falso. [That is false.]",
-        "No me interesa. [I am not interested.]"
+        "Eso es falso, no tiene sentido. [That is false, it makes no sense.]",
+        "No me interesa tu opinión. [I am not interested in your opinion.]"
       ],
       "correct": 0,
       "teaches": [
@@ -221,8 +224,8 @@
       "sentence": "Creo que la práctica es esencial porque permite aplicar lo aprendido.",
       "options": [
         "I think practice is essential because it allows you to apply what you have learned.",
-        "I think practice is unnecessary because it prevents application.",
-        "I thought practice was impossible because it was theoretical."
+        "I think practice is essential because it prevents you from applying what you have learned.",
+        "I think practice is essential because it allows you to forget what you have learned."
       ],
       "correct": 0,
       "teaches": [
@@ -260,7 +263,7 @@
       "id": "b1-07-05.ex14",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which statement uses «defender» correctly? [¿Cuál usa «defender» correctamente?]",
+      "question": "Which statement uses «defender» correctly?",
       "options": [
         "Puedo defender mi opinión con evidencia. [I can defend my opinion with evidence.]",
         "Puedo defendiendo mi opinión con evidencia. [I can defending my opinion with evidence.]",
@@ -275,13 +278,13 @@
       "id": "b1-07-05.ex15",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Tengo un buen __ para apoyar mi opinión.",
+      "sentence": "Tengo un buen __ para explicar mi opinión.",
       "hint": "argument",
       "answer": "argumento",
       "teaches": [
         "b1-education-learning-vocab"
       ],
-      "english": "I have a good argument to support my opinion."
+      "english": "I have a good argument to explain my opinion."
     },
     {
       "id": "b1-07-05.ex16",
@@ -343,11 +346,11 @@
       "id": "b1-07-05.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
+      "question": "According to Rousseau, how should a child learn?",
       "options": [
-        "Rousseau cree que aprender es más que memorizar información.",
-        "Rousseau cree que memorizar es la única forma de aprender.",
-        "El texto trata de un examen tradicional."
+        "He learns from experience, not only by memorising. [Aprende con la experiencia, no solo memorizando.]",
+        "He learns only by memorising information. [Aprende solo memorizando información.]",
+        "He learns by listening to long lessons. [Aprende escuchando lecciones largas.]"
       ],
       "correct": 0
     },
@@ -355,11 +358,11 @@
       "id": "b1-07-05.ex21",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué debía hacer el alumno cuando encontraba un problema?",
+      "question": "What does the educator do instead of giving the answer?",
       "options": [
-        "Concentrarse, hacer preguntas y buscar una solución por sí mismo.",
-        "Esperar a que el educador diera la respuesta.",
-        "Repetir la misma información varias veces."
+        "He prepares situations where the child can discover. [Prepara situaciones en las que el niño descubre.]",
+        "He asks the child to repeat the same lesson. [Pide al niño repetir la misma lección.]",
+        "He gives the child a long list of words. [Da al niño una lista larga de palabras.]"
       ],
       "correct": 0
     },
@@ -367,11 +370,11 @@
       "id": "b1-07-05.ex22",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
+      "question": "What must the educator think about, according to Rousseau?",
       "options": [
-        "La idea de que no todos aprenden de la misma manera.",
-        "Una lista de fechas históricas.",
-        "Una descripción de un examen final."
+        "The age and the needs of the child. [La edad y las necesidades del niño.]",
+        "The price of the books. [El precio de los libros.]",
+        "The grades of the other students. [Las calificaciones de los otros estudiantes.]"
       ],
       "correct": 0
     },
@@ -379,11 +382,11 @@
       "id": "b1-07-05.ex23",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué conclusión encaja mejor con el texto?",
+      "question": "What is learning, for Rousseau?",
       "options": [
-        "Aprender significa desarrollar la capacidad de comprender y actuar.",
-        "Aprobar un examen es el único objetivo de la educación.",
-        "El método de estudio no importa."
+        "Learning to understand and to act. [Aprender a entender y a actuar.]",
+        "Passing an exam with a perfect grade. [Aprobar un examen con calificación perfecta.]",
+        "Repeating what the teacher says. [Repetir lo que dice el profesor.]"
       ],
       "correct": 0
     }

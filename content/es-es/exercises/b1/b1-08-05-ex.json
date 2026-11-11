@@ -25,15 +25,18 @@
     },
     {
       "id": "b1-08-05.ex02",
-      "category": "reading",
+      "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Why was the journey difficult? [¿Por qué fue difícil el viaje?]",
+      "question": "Why was the journey difficult?",
       "options": [
-        "Because the ship suffered a breakdown and the delay became unavoidable. [Porque el barco sufrió una avería y el retraso se hizo inevitable.]",
-        "Because Odiseo had already reached his destination. [Porque Odiseo ya había llegado a su destino.]",
-        "Because there was no luggage at the beginning of the journey. [Porque no había equipaje al principio del viaje.]"
+        "Because the train broke down and the delay became unavoidable. [Porque el tren sufrió una avería y el retraso se hizo inevitable.]",
+        "Because we had already reached our destination. [Porque ya habíamos llegado a nuestro destino.]",
+        "Because there was no luggage at the start of the journey. [Porque no había equipaje al principio del viaje.]"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-travel-mobility-vocab"
+      ]
     },
     {
       "id": "b1-08-05.ex03",
@@ -85,7 +88,7 @@
       "sentences": [
         "Primero llegó una tormenta. [First a storm arrived.]",
         "Después el barco sufrió una avería. [Then the ship suffered a breakdown.]",
-        "Finalmente continuamos la travesía. [Finally we continued the journey.]"
+        "Finalmente el barco continuó la travesía. [Finally the ship continued the journey.]"
       ],
       "solution": [
         0,
@@ -100,11 +103,11 @@
       "id": "b1-08-05.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence combines a past problem with its earlier background? [¿Cuál combina un problema pasado con su contexto anterior?]",
+      "question": "Which sentence combines a past problem with its earlier background?",
       "options": [
         "Habíamos reservado el alojamiento, pero el tren llegó tarde y perdimos la conexión. [We had booked the accommodation, but the train arrived late and we missed the connection.]",
         "Reservaremos el alojamiento, pero si el tren llega tarde perderemos la conexión. [We will book the accommodation, but if the train arrives late we will miss the connection.]",
-        "Reservamos el alojamiento ahora, pero el tren siempre llega tarde y perdemos la conexión. [We book the accommodation now, but the train always arrives late and we miss the connection.]"
+        "Reservamos el alojamiento ahora, pero el tren llega tarde y perdemos la conexión. [We book the accommodation now, but the train arrives late and we miss the connection.]"
       ],
       "correct": 0,
       "teaches": [
@@ -131,11 +134,11 @@
       "id": "b1-08-05.ex08",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "What happened after the storm? [¿Qué ocurrió después de la tormenta?]",
+      "question": "Why did Odysseus's route change?",
       "options": [
-        "The ship suffered a breakdown. [El barco sufrió una avería.]",
-        "Odysseus immediately reached Ithaca. [Odiseo llegó inmediatamente a Ítaca.]",
-        "The crew cancelled the return journey. [La tripulación canceló el regreso.]"
+        "A storm changed his course and took the ships away. [Una tormenta cambió su rumbo y se llevó los barcos.]",
+        "He chose to visit another island on purpose. [Decidió visitar otra isla a propósito.]",
+        "Penelope asked him to change course. [Penélope le pidió cambiar de rumbo.]"
       ],
       "correct": 0
     },
@@ -143,11 +146,11 @@
       "id": "b1-08-05.ex09",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "Why did Odysseus look for an alternative? [¿Por qué buscó Odiseo una alternativa?]",
+      "question": "What happened to the ships and the men of Odysseus?",
       "options": [
-        "Because the breakdown ruined the original plan. [Porque la avería arruinó el plan original.]",
-        "Because he wanted to leave Ithaca. [Porque quería salir de Ítaca.]",
-        "Because he had no destination. [Porque no tenía destino.]"
+        "He lost them during the long journey. [Los perdió durante el largo viaje.]",
+        "They stayed with him until the end. [Se quedaron con él hasta el final.]",
+        "They reached Ithaca before him. [Llegaron a Ítaca antes que él.]"
       ],
       "correct": 0
     },
@@ -155,11 +158,11 @@
       "id": "b1-08-05.ex10",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "What does the final paragraph suggest about the journey? [¿Qué sugiere el último párrafo sobre el viaje?]",
+      "question": "Who received Odysseus on the island?",
       "options": [
-        "The difficulties were part of what gave the journey meaning. [Las dificultades formaron parte de lo que dio sentido al viaje.]",
-        "The destination was completely unimportant. [El destino no tenía ninguna importancia.]",
-        "Odysseus regretted travelling at all. [Odiseo se arrepintió de viajar.]"
+        "The islanders gave him lodging and a ship. [Los habitantes de la isla le dieron alojamiento y un barco.]",
+        "His own men were waiting for him on the coast. [Sus propios hombres lo esperaban en la costa.]",
+        "Penelope gave him lodging and a new ship. [Penélope le dio alojamiento y un barco nuevo.]"
       ],
       "correct": 0
     },
@@ -210,8 +213,8 @@
       "sentence": "La travesía fue difícil, pero conseguimos superar los problemas que surgieron.",
       "options": [
         "The journey was difficult, but we managed to overcome the problems that arose.",
-        "The journey was easy, so we cancelled the problems.",
-        "The journey will be difficult, but we have already arrived."
+        "The journey was easy, but we managed to overcome the problems that arose.",
+        "The journey was difficult, but we failed to overcome the problems that arose."
       ],
       "correct": 0,
       "teaches": [
@@ -225,7 +228,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué ha pasado con el tren?"
+          "text": "¿Qué pasó con el tren?"
         },
         {
           "speaker": "B",
@@ -235,14 +238,15 @@
       "options": [
         "Llegó tarde, perdimos la conexión y ahora necesitamos una alternativa. [It arrived late, we missed the connection and now we need an alternative.]",
         "Llegará tarde, perderemos la conexión y ahora necesitamos una alternativa. [It will arrive late, we will miss the connection and now we need an alternative.]",
-        "Llegue tarde, perdamos la conexión y ahora necesitamos una alternativa. [It arrives (subjunctive) late, we miss (subjunctive) the connection and now we need an alternative.]"
+        "Llegaba tarde, perdíamos la conexión y ahora necesitamos una alternativa. [It was arriving late, we were missing the connection and now we need an alternative.]"
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "imperfect"
       }
     },
     {
@@ -267,7 +271,11 @@
       "correct": 0,
       "teaches": [
         "si-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "condicional-regular"
+      }
     },
     {
       "id": "b1-08-05.ex17",
@@ -285,13 +293,17 @@
       ],
       "options": [
         "Ha sido difícil, pero hemos conseguido superar los problemas. [It has been difficult, but we have managed to overcome the problems.]",
-        "Haya sido difícil, pero hayamos conseguido superar los problemas. [It has (subjunctive) been difficult, but we have (subjunctive) managed to overcome the problems.]",
-        "Sea difícil, pero consigamos superar los problemas. [It is (subjunctive) difficult, but we manage (subjunctive) to overcome the problems.]"
+        "Había sido difícil, pero habíamos conseguido superar los problemas. [It had been difficult, but we had managed to overcome the problems.]",
+        "Será difícil, pero conseguiremos superar los problemas. [It will be difficult, but we will manage to overcome the problems.]"
       ],
       "correct": 0,
       "teaches": [
         "preterito-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "pluscuamperfecto",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-08-05.ex18",
@@ -314,7 +326,7 @@
       "template": [
         {
           "prompt": "Describe a hypothetical alternative to a difficult journey.",
-          "answer": "Si tuviera más tiempo, elegiría otra ruta y viajaría con más calma."
+          "answer": "Si tuviera más tiempo, elegiría otra ruta y viajaría por la costa."
         }
       ],
       "teaches": [

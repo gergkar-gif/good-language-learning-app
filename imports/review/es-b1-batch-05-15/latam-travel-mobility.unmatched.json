@@ -1,0 +1,62 @@
+[
+ {
+  "file": "content/es-es/vocabulary/b1/b1-08-04-voc.json",
+  "id": "b1-08-04 vocab",
+  "old": "      \"translation\": \"alternative\",\n      \"pos\": \"noun\"\n    }",
+  "new": "      \"translation\": \"alternative\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"coger\",\n      \"translation\": \"to take (a train, a bus)\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"siguiente\",\n      \"translation\": \"next\",\n      \"pos\": \"adjective\"\n    }",
+  "kind": "target",
+  "why": "\"cogeremos\" (grammar example, ex02-ex04) is in no list; \"siguiente\" is listed only in b1-33-04. Spain only (coger): es-latam uses tomar.",
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-latam/vocabulary/b1/b1-08-04-voc.json",
+  "id": "b1-08-04 vocab (es-latam)",
+  "old": "      \"translation\": \"alternative\",\n      \"pos\": \"noun\"\n    }",
+  "new": "      \"translation\": \"alternative\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"siguiente\",\n      \"translation\": \"next\",\n      \"pos\": \"adjective\"\n    }",
+  "kind": "target",
+  "why": "\"siguiente\" is listed only in b1-33-04. The es-latam b1-08-04 files still say \"cogeremos\" (in Latin America tomar): reviewer decision.",
+  "sure": false,
+  "variant": "es-latam",
+  "why_unmatched": "not a es-es file"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-08-04-ex.json",
+  "id": "b1-08-04.ex13",
+  "set": {
+   "options": [
+    "Cogeremos el siguiente y avisaremos al alojamiento. [We will take the next one and notify the accommodation.]",
+    "Cogimos el siguiente y avisamos al alojamiento. [We took the next one and notified the accommodation.]",
+    "Habíamos cogido el siguiente y avisado al alojamiento. [We had taken the next one and notified the accommodation.]"
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "pluscuamperfecto"
+   }
+  },
+  "kind": "target",
+  "why": "Option 3 (\"Cogemos ... cuando lo habíamos perdido\") had two faults; now one (pluperfect).",
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-latam/exercises/b1/b1-08-04-ex.json",
+  "id": "b1-08-04.ex13",
+  "set": {
+   "options": [
+    "Tomaremos el siguiente y avisaremos al alojamiento. [We will take the next one and notify the accommodation.]",
+    "Tomamos el siguiente y avisamos al alojamiento. [We took the next one and notified the accommodation.]",
+    "Habíamos tomado el siguiente y avisado al alojamiento. [We had taken the next one and notified the accommodation.]"
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "pluscuamperfecto"
+   }
+  },
+  "kind": "target",
+  "why": "es-latam counterpart of the b1-08-04.ex13 fix (tomar instead of coger); option 3 had two faults.",
+  "sure": false,
+  "variant": "es-latam",
+  "why_unmatched": "not a es-es file"
+ }
+]

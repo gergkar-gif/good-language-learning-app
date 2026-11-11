@@ -27,7 +27,7 @@
       "id": "b1-06-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence clearly gives a cause and consequence? [¿Cuál da claramente una causa y una consecuencia?]",
+      "question": "Which sentence gives a cause and a consequence?",
       "options": [
         "Hubo un retraso porque faltaban unos documentos. [There was a delay because some documents were missing.]",
         "Hubo un retraso en la entrega de los documentos. [There was a delay in the delivery of the documents.]",
@@ -108,7 +108,7 @@
     {
       "id": "b1-06-04.ex06",
       "type": "dialogue-complete",
-      "category": "vocabulary",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "A",
@@ -121,13 +121,16 @@
       ],
       "options": [
         "Hubo un retraso porque faltaba un documento. [There was a delay because a document was missing.]",
-        "Hubo una solución porque llegaremos tarde. [There was a solution because we will arrive late.]",
-        "Habrá un error porque ya terminamos el informe. [There will be an error because we already finished the report.]"
+        "Hubo un retraso, por eso faltaba un documento. [There was a delay, so a document was missing.]",
+        "Hubo un retraso porque faltará un documento. [There was a delay because a document will be missing.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-work-professional-life-vocab"
-      ]
+        "porque-y-por-eso"
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-06-04.ex07",
@@ -151,8 +154,7 @@
       "sentence": "El plazo era muy corto, por eso __ que trabajar más rápido.",
       "hint": "tener",
       "answers": [
-        "tuvimos",
-        "teníamos"
+        "tuvimos"
       ],
       "teaches": [
         "preterite-irregular-stems"
@@ -201,8 +203,8 @@
       "sentence": "Debido a un error en el informe, tuvimos que repetir el análisis.",
       "options": [
         "Because of an error in the report, we had to repeat the analysis.",
-        "Because of a delay, we finished the report early.",
-        "Because of the solution, we rejected the report."
+        "Because of a delay in the report, we had to repeat the analysis.",
+        "Because of an error in the report, we decided to skip the analysis."
       ],
       "correct": 0,
       "teaches": [
@@ -226,7 +228,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué causó el problema?"
+          "text": "¿Cuál es la causa del problema?"
         },
         {
           "speaker": "B",
@@ -236,7 +238,7 @@
       "options": [
         "Hubo un error en el informe, por eso tuvimos que repetir el análisis. [There was an error in the report, so we had to repeat the analysis.]",
         "Tuvimos que repetir el análisis, por eso hubo un error en el informe. [We had to repeat the analysis, so there was an error in the report.]",
-        "Hubo una solución en el informe, por eso no tuvimos ningún problema. [There was a solution in the report, so we had no problem.]"
+        "No hubo un problema, por eso tuvimos que repetir el análisis. [There was no problem, so we had to repeat the analysis.]"
       ],
       "correct": 0,
       "teaches": [
@@ -250,8 +252,8 @@
       "question": "Choose the correct cause connector. [Elige el conector correcto de causa.]",
       "options": [
         "Debido a un error, tuvimos que repetir el trabajo. [Because of an error, we had to repeat the work.]",
-        "Por eso un error, tuvimos que repetir el trabajo. [Therefore an error, we had to repeat the work.]",
-        "Así que un error, tuvimos que repetir el trabajo. [So an error, we had to repeat the work.]"
+        "Debido a hubo un error, tuvimos que repetir el trabajo. [Because of there was an error, we had to repeat the work.]",
+        "Porque un error, tuvimos que repetir el trabajo. [Because an error, we had to repeat the work.]"
       ],
       "correct": 0,
       "teaches": [
@@ -291,7 +293,7 @@
       "template": [
         {
           "prompt": "Describe an error and a solution.",
-          "answer": "Hubo un error en el informe, pero encontramos una solución rápidamente."
+          "answer": "Hubo un error en el informe, pero encontramos una solución a tiempo."
         }
       ],
       "teaches": [
@@ -302,11 +304,11 @@
       "id": "b1-06-04.ex17",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly links cause and consequence? [¿Cuál conecta correctamente causa y consecuencia?]",
+      "question": "Which sentence links cause and consequence correctly?",
       "options": [
         "El plazo era corto, así que trabajamos más rápido. [The deadline was short, so we worked faster.]",
         "El plazo era corto, porque trabajamos más rápido. [The deadline was short because we worked faster.]",
-        "El plazo era corto, debido a trabajamos más rápido. [The deadline was short because we worked faster.]"
+        "El plazo era corto, así que trabajar más rápido. [The deadline was short, so to work faster.]"
       ],
       "correct": 0,
       "teaches": [

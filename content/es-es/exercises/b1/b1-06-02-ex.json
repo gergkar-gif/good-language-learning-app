@@ -30,8 +30,8 @@
       "question": "Which sentence contrasts a former job with the current one? [¿Cuál contrasta un trabajo anterior con el actual?]",
       "options": [
         "Antes trabajaba en una empresa pequeña, pero actualmente trabajo por mi cuenta. [I used to work for a small company, but I currently work for myself.]",
-        "Actualmente trabajaré en una empresa pequeña. [I will currently work at a small company.]",
-        "En el pasado trabajaba en una empresa pequeña. [In the past I used to work at a small company.]"
+        "Antes trabajaba en una empresa pequeña, pero el próximo año trabajaré por mi cuenta. [I used to work for a small company, but next year I will work for myself.]",
+        "En el pasado trabajaba en una empresa pequeña y también en una oficina grande. [In the past I used to work at a small company and also in a large office.]"
       ],
       "correct": 0,
       "teaches": [
@@ -121,19 +121,22 @@
       ],
       "options": [
         "Antes trabajaba en una empresa pequeña, pero ahora trabajo por mi cuenta. [I used to work at a small company, but now I work for myself.]",
-        "Antes trabajaré en una empresa pequeña, pero ahora trabajaba por mi cuenta. [I will work at a small company before, but now I used to work for myself.]",
-        "Antes he trabajado en una empresa pequeña, pero ahora trabajaré por mi cuenta. [I have worked at a small company before, but now I will work for myself.]"
+        "Antes trabajaba en una empresa pequeña, pero ahora trabajaba por mi cuenta. [I used to work at a small company, but now I used to work for myself.]",
+        "Antes trabajaré en una empresa pequeña, pero ahora trabajo por mi cuenta. [I will work at a small company before, but now I work for myself.]"
       ],
       "correct": 0,
       "teaches": [
         "imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-06-02.ex07",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which tense is most natural for a habitual past work situation? [¿Qué tiempo es más natural para una situación laboral habitual en el pasado?]",
+      "question": "Which tense is most natural for a habitual past work situation?",
       "options": [
         "imperfecto [trabajaba]",
         "futuro [trabajaré]",

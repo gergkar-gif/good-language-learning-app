@@ -31,11 +31,11 @@
       "id": "b1-06-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence gives a current professional description? [¿Cuál da una descripción profesional actual?]",
+      "question": "Which sentence gives a current professional description?",
       "options": [
         "Actualmente trabajo con clientes y me encargo de preparar informes. [I currently work with clients and I am in charge of preparing reports.]",
-        "Antes trabajaba con clientes. [I used to work with clients.]",
-        "En el futuro trabajaré con clientes. [In the future I will work with clients.]"
+        "Antes trabajaba con clientes y me encargaba de preparar informes. [I used to work with clients and I was in charge of preparing reports.]",
+        "En el futuro trabajaré con clientes y me encargaré de preparar informes. [In the future I will work with clients and I will be in charge of preparing reports.]"
       ],
       "correct": 0,
       "teaches": [
@@ -106,7 +106,7 @@
     {
       "id": "b1-06-consolidation.ex06",
       "type": "dialogue-complete",
-      "category": "vocabulary",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "A",
@@ -119,19 +119,22 @@
       ],
       "options": [
         "Hubo un retraso porque faltaban unos documentos. [There was a delay because some documents were missing.]",
-        "Hubo un plazo porque terminamos temprano. [There was a deadline because we finished early.]",
-        "Hubo una solución porque no había ningún problema. [There was a solution because there was no problem.]"
+        "Hubo un retraso, por eso faltaban unos documentos. [There was a delay, so some documents were missing.]",
+        "Hubo un retraso porque faltarán unos documentos. [There was a delay because some documents will be missing.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-work-professional-life-vocab"
-      ]
+        "porque-y-por-eso"
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-06-consolidation.ex07",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence expresses obligation? [¿Cuál expresa obligación?]",
+      "question": "Which sentence expresses obligation?",
       "options": [
         "Tenemos que cumplir el plazo. [We have to meet the deadline.]",
         "Podemos cumplir el plazo. [We can meet the deadline.]",
@@ -193,7 +196,7 @@
       "id": "b1-06-consolidation.ex10",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is a passive-like workplace construction? [¿Cuál es una construcción pasiva con se?]",
+      "question": "Which is a passive-like workplace construction?",
       "options": [
         "Se organizan reuniones los lunes. [Meetings are organised on Mondays.]",
         "El director organiza reuniones. [The director organises meetings.]",
@@ -211,8 +214,8 @@
       "sentence": "El plazo era muy corto, por eso tuvimos que trabajar más rápido.",
       "options": [
         "The deadline was very short, so we had to work faster.",
-        "The deadline was long, so we refused to work.",
-        "The deadline was short, but we finished before starting."
+        "The deadline was very long, so we had to work faster.",
+        "The deadline was very short, so we had to work slower."
       ],
       "correct": 0,
       "teaches": [
@@ -245,8 +248,8 @@
       ],
       "options": [
         "No puedo comprometerme porque tengo que terminar otro proyecto. [I cannot commit because I have to finish another project.]",
-        "No puedo comprometerme porque no tengo ninguna otra tarea pendiente. [I cannot commit because I have no other pending task.]",
-        "No puedo comprometerme porque tengo la agenda totalmente libre. [I cannot commit because I have my schedule completely free.]"
+        "No puedo comprometerme porque tengo muy poco trabajo en la oficina. [I cannot commit because I have very little work in the office.]",
+        "Sí puedo comprometerme porque tengo que terminar otro proyecto. [Yes, I can commit because I have to finish another project.]"
       ],
       "correct": 0,
       "teaches": [
@@ -274,13 +277,13 @@
       "category": "vocabulary",
       "sentence": "Debido a un __ en el informe, tuvimos que repetir el análisis.",
       "answers": [
-        "error",
-        "fallo"
+        "error"
       ],
       "teaches": [
         "b1-work-professional-life-vocab"
       ],
-      "english": "Because of a mistake in the report, we had to repeat the analysis."
+      "english": "Because of a mistake in the report, we had to repeat the analysis.",
+      "hint": "mistake"
     },
     {
       "id": "b1-06-consolidation.ex16",
@@ -338,11 +341,11 @@
       "template": [
         {
           "prompt": "Give a complete professional response to a request you cannot accept.",
-          "answer": "Entiendo la petición, pero no puedo aceptar el nuevo plazo porque tengo otra entrega. Necesito aclarar una fecha alternativa."
+          "answer": "Entiendo la petición, pero no puedo aceptar el nuevo plazo porque tengo otra entrega. Necesito aclarar un nuevo plazo."
         },
         {
           "prompt": "Describe a workplace process using se.",
-          "answer": "Se reciben las solicitudes, se revisan los documentos y se seleccionan los candidatos."
+          "answer": "Se publica la oferta, se reciben las solicitudes y se seleccionan los candidatos."
         }
       ],
       "teaches": [
