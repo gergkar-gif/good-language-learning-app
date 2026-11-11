@@ -467,6 +467,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-10 | HU B2 culture 50, 52, 54, 56 | paired read, 2 culture units/reader, text first, no limit, readers run check_c1_forms | | A 365,963, B 401,259 (~192k a unit) | 366 proposed (71 / 81 / 118 / 96), 3 rejected and repaired (1 broken JSON from double quotes) | walk 24/24 |
 | 11-10 | HU B2 culture 58, 60, 62, 64 | paired read, 2 culture units/reader; both stopped by the 5-hour limit, resumed | | A 336,663, B 349,608 (resumed notices) | 365 proposed (98 / 90 / 81 / 96), 19 rejected: 14 cascades rebased by script | walk 24/24 |
 | 11-11 | HU B2 culture 66, 68, 70, 72 | paired read, 2 culture units/reader, no limit | | A 480,996, B 374,814 (~214k a unit) | 438 proposed (110 / 109 / 127 / 92), 5 rejected and repaired | last culture batch; B2 72/72; walk 24/24 |
+| 11-11 | ES B1 pilot: core 1 telling-stories, 3 experiences-memories | read, 1 unit/reader, es-es read and mirrored, no limit | | A 229,521 (+18.5k story rewrite on resume), B 236,968 (~240k a unit) | 243 proposed (108 / 135), 0 rejected, 7 changed by the reviewer | both stories rewritten at B1; Unit 3 es-latam unfrozen (taught_in decision); walk 12/12 per course |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -1745,3 +1746,34 @@ The user took the four recommended options:
   resolves unit ids and exits on a name with no files.
 - **Both readers hit the 5-hour limit at the same time** (they start together); resumed with
   SendMessage after the reset, as the rules say.
+
+### 2026-11-11: ES B1 pilot (core Units 1 and 3)
+
+- **Cost:** ~240k a unit at one unit per reader (8 and 12 minutes), close to the HU B1
+  pilot's language unit (257k). Per-reader overhead is shared from the next batch on:
+  three units per reader, as in the Spanish A2 pass.
+- **The unit stories are retold classics far above B1** (Don Quijote, Sherezade:
+  *desaforados*, *ignotos*, *inexorable*). **Decided by the user (2026-11-11): B1 stories
+  stay retold classics**, brought down to B1 (rulebook § 6c). The Unit 1 reader was only
+  told about the two speeches and had to be resumed for the narration (+18k); the Unit 3
+  reader, told up front, did it in the read. Each batch's focus file must say it for
+  every unit.
+- **Half-quotes:** the Unit 1 story carried altered Cervantes lines. The source could not be
+  fetched (Gutenberg, Wikisource: 403 from the container), so the lines were rewritten as
+  plain adaptation, not repaired. Expect the same in every classic.
+- **Uneven generator quality:** Unit 1's screens were polished, Unit 3's were raw template
+  output (garbled examples, junk tips listing stray forms, non-phrase wrong options). Fix
+  counts will swing between units.
+- **Recurring defects, both units:** A2 tenses presented as new; later forms as wrong options
+  (*haya visto*, *pudieran*); relative *que* before b1-05-04; Spanish question stems in
+  unmet metalanguage; "three new words" goals that miscount the list.
+- **Per-course leftovers after mirroring:** *vosotros* rows in es-latam tables (the files
+  are byte-identical, so every core screen with a full table has one), and *los* for
+  *os* in es-es dialogue. Seen in both units: **to script next batch** (a fixer that drops
+  the *vosotros* row from es-latam tables, refusing when the row is not exact).
+- **`check_unit_refs.py` false positive:** "*pretérito indefinido* claimed from A2 Unit 11,
+  first appears A2 Unit 17", because a2-11-01 writes `*pretérito* *indefinido*` as two
+  italic runs. Checked by hand; fix the script's matching if it recurs.
+- **Story words are unchecked:** `unmet-words.js --stems` does not scan the story. For the
+  user (review.md item 4).
+- **For the user:** `cuanto-mas-tanto-mas` `taught_in` (review.md item 1).
