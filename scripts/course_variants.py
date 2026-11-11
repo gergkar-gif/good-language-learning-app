@@ -82,7 +82,7 @@ KEEP_AFTER = {
 }
 # *móvil* the adjective: *banca móvil*, *aplicación móvil* (mobile banking/app) in both
 KEEP_BEFORE = {"es-es": {"adentro": r"\bMar\s+$"}, "es-latam": {"móvil": r"\b(banca|aplicación|app|telefonía|unidad)\s+$",
-                            "móviles": r"\b(aplicaciones|apps|unidades)\s+$"}}
+                            "móviles": r"\b(aplicaciones|apps|unidades|hospitales|clínicas|bibliotecas|teléfonos)\s+$"}}
 DET = {"el": "la", "los": "las", "un": "una", "unos": "unas", "este": "esta", "estos": "estas", "ese": "esa",
        "esos": "esas", "aquel": "aquella", "aquellos": "aquellas", "nuestro": "nuestra", "nuestros": "nuestras",
        "vuestro": "vuestra", "vuestros": "vuestras", "otro": "otra", "otros": "otras", "mucho": "mucha",

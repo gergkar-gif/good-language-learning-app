@@ -468,6 +468,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-10 | HU B2 culture 58, 60, 62, 64 | paired read, 2 culture units/reader; both stopped by the 5-hour limit, resumed | | A 336,663, B 349,608 (resumed notices) | 365 proposed (98 / 90 / 81 / 96), 19 rejected: 14 cascades rebased by script | walk 24/24 |
 | 11-11 | HU B2 culture 66, 68, 70, 72 | paired read, 2 culture units/reader, no limit | | A 480,996, B 374,814 (~214k a unit) | 438 proposed (110 / 109 / 127 / 92), 5 rejected and repaired | last culture batch; B2 72/72; walk 24/24 |
 | 11-11 | ES B1 pilot: core 1 telling-stories, 3 experiences-memories | read, 1 unit/reader, es-es read and mirrored, no limit | | A 229,521 (+18.5k story rewrite on resume), B 236,968 (~240k a unit) | 243 proposed (108 / 135), 0 rejected, 7 changed by the reviewer | both stories rewritten at B1; Unit 3 es-latam unfrozen (taught_in decision); walk 12/12 per course |
+| 11-11 | ES B1 core 5, 7, 9, 11, 13, 15 | paired read, 3 units/reader, es-es read and mirrored, stories rewritten in the read, no limit | | A 420,688, B 450,898 (~145k a unit) | 418 proposed (93 / 81 / 72 / 60 / 55 / 57), 0 rejected, 6 changed by the reviewer | all six frozen in both courses (B1 8/76); walk 36/36 per course; variant fixer run level-wide by mistake, reverted, `--only` added |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -1777,3 +1778,30 @@ The user took the four recommended options:
 - **Story words are unchecked:** `unmet-words.js --stems` does not scan the story. For the
   user (review.md item 4).
 - **For the user:** `cuanto-mas-tanto-mas` `taught_in` (review.md item 1).
+
+### 2026-11-11: ES B1 core Units 5–15
+
+- **Cost:** ~145k a unit at three units per reader, against ~240k at one per reader in the
+  pilot, with the story rewrite included in the read. Keep three per reader.
+- **Telling the readers up front worked:** the focus file listed the generator's defects from
+  the pilot and the story rule; no reader had to be resumed, and the reviewer changed 6 of
+  418 fixes. The reviewer's own story read before the files arrived caught what no reader
+  would have known to fix: the invented Bartleby ending, the travel-agency splice in the
+  Odyssey, the Samaniego half-quote, the Meg / Meg March clash.
+- **Gutenberg is reachable now** (environment `good-language-learning-app`): Verne and
+  Melville facts were checked against the texts with `curl` and `grep`. Do this for every
+  classic that Gutenberg holds, before the readers return.
+- **Incident, scripted the same day:** `fix_variant_vocab.py` run level-wide rewrote unread
+  units and produced *hospitales celulares*. Reverted outside the batch; the script has
+  `--only <stem prefixes>` and the table guards *móviles* after four more nouns. Run it per
+  batch, after mirroring, never level-wide.
+- **Still by hand:** *coger* → *tomar* in es-latam (the verbs conjugate differently, so the
+  noun table cannot do it), and words met only in the es-es *vosotros* unit (*apetece*,
+  *atención*) that the es-latam unmet check then flags. If either recurs, script it.
+- **A reviewer edit can create a new error:** shortening an es-latam option made a length
+  give-away, caught by the pre-push gate. Run check-content after every hand edit, as step 6
+  says, not only at push.
+- **Recaps in English italics** (*present tense*, *preterite*) make `check_unit_refs.py` say
+  "first appears nowhere"; checked by hand against `skills/es.json`. Ask readers to italicise
+  the Spanish term.
+- **For the user:** the imperfect subjunctive forms have no B1 screen (review.md item 1).

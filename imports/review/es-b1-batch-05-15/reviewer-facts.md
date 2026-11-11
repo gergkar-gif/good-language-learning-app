@@ -13,3 +13,12 @@ Reviewer's read of the six unit stories while the readers ran; both readers were
 | 11 | b1-06 Melville | "el abogado decidió buscar una solución que respetara a todos" | Invented ending. The story ends with the lawyer moving office and Bartleby dying in prison: retell that, or stop before the end | general knowledge; to verify |
 | 13 | b1-07 Rousseau | last paragraph (passing a subject, "nueva evidencia") | Template filler, not Rousseau: cut or mark as the narrator's comment | reading |
 | 15 | b1-08 Homer | "Para comprar el billete, Odiseo tuvo que… una pequeña oficina de viajeros", connections, cancelling | Template splice: rewrite as an honest retelling of the return to Ítaca | reading |
+
+## Verified at review (2026-11-11)
+
+| Story | Claim | Verdict | Source |
+|---|---|---|---|
+| b1-03 Verne | Fogg lived in Saville Row "in 1872"; the bet is twenty thousand pounds; the wager ends 21 December 1872; a sledge with sails; a typhoon in the China Sea; the coal giving out before the ship's wood is burned; the arrest at Liverpool | Confirmed | Project Gutenberg #103 (English translation), read in the container |
+| b1-06 Melville | subtitle "A Story of Wall-Street"; "I would prefer not to" (15 times); the lawyer finds him in the chambers on a Sunday morning; Bartleby removed to the Tombs | Confirmed | Project Gutenberg #11231 |
+| b1-03-03 tip | *ojalá* from an Arabic phrase, "roughly 'if God wills'" | Kept as the reader softened it; not checked against the DLE (site not reachable) | general knowledge |
+| b1-04, b1-05, b1-07, b1-08 | the fable's plot; four March sisters and their mother; *Emilio* 1762 and its ideas in general terms; the Odyssey's outline | Not checked against a text; each retelling states only the outline | general knowledge |

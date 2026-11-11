@@ -531,6 +531,25 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
   screens and items that retell the story must agree with it (who rides,
   who is a child, numbers, names). Carlos and Meg may still appear in B1
   exercises and challenges, living in Budapest.
+- **B1 core, found in Units 1–15 (2026-11-11):** garbled screen examples and
+  "tips" that are lists of stray verb forms; wrong options that are
+  non-phrases or carry two faults; later subjunctive forms as wrong options
+  (*haya visto*, *pudieran*, *habríamos buscado*); relative *que* + clause
+  before b1-05-04; *para que* before b1-04-04; *antes de que*, *después de
+  que*, *por lo tanto* (B2) anywhere; *quizá* + subjunctive before b1-13;
+  Spanish question stems or bracket glosses in unmet metalanguage
+  (*oración, expresa, contexto, correctamente*) or that copy the answer;
+  goals that say "three new words" for a longer list; A1–A2 forms presented
+  as new (open with a recap, the Spanish term in italics: *indefinido*, not
+  *preterite*). **The imperfect subjunctive forms have no B1 screen:**
+  *Si yo fuera tú* is a ready-made phrase in b1-04-02; do not add other
+  *-ra* forms to items before the user decides (ROADMAP 153).
+- **Classic stories:** a story spliced with lesson-template sentences
+  (Odiseo buying a ticket at a travellers' office) or given an invented
+  ending (Bartleby) is rewritten as an honest outline of the work. A
+  character who shares a name with a course character is given the full
+  name ("Meg March"). Challenge scenarios start with the role ("You are
+  Meg." / "You are Carlos.") and use only the known people.
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).

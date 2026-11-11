@@ -13,6 +13,12 @@ would end up with the same option twice. Story text changes need the story's
 narration audio regenerated (the report lists the stories).
 
     python scripts/fix_variant_vocab.py <course> <level> [<level> ...] [--write] [--report <file>]
+        [--only <stem prefix>[,<stem prefix>...]]
+
+`--only b1-03-,b1-04-` limits the run to the files (and challenges) of those
+lesson stems: use it per batch. A level-wide run also rewrites units nobody
+has read, and the word table has adjective homographs (2026-11-11: *hospitales
+móviles* became *hospitales celulares* in an unread es-latam unit).
 """
 import json
 import re
@@ -62,6 +68,11 @@ def walk(node, course, path, changes, refused, skip=SKIP):
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     report = None
+    only = None
+    if "--only" in sys.argv:
+        raw = sys.argv[sys.argv.index("--only") + 1]
+        only = tuple(x for x in raw.split(",") if x)
+        args = [a for a in args if a != raw]
     if "--report" in sys.argv:
         report = Path(sys.argv[sys.argv.index("--report") + 1])
         args = [a for a in args if a != str(report) and a != sys.argv[sys.argv.index("--report") + 1]]
@@ -70,6 +81,9 @@ def main():
     course, levels, write = args[0], [a.lower() for a in args[1:]], "--write" in sys.argv
     base = ROOT / "content" / course
     files = [p for d in DIRS for lv in levels for p in sorted((base / d).rglob(f"{lv}/*.json"))]
+    if only:
+        # story files are named by unit ("b1-03.json"), lesson files by lesson ("b1-03-01-ex.json")
+        files = [p for p in files if any(p.name.startswith(o) or p.name.startswith(o.rstrip("-") + ".") for o in only)]
     lines, n_changes, n_refused, stories = [], 0, 0, []
     for p in files:
         try:
@@ -97,7 +111,7 @@ def main():
         changes, refused = [], []
         ch = data.get("challenges", {})
         for k in list(ch):
-            if any(k.startswith(lv + "-") for lv in levels):
+            if any(k.startswith(lv + "-") for lv in levels) and (not only or k.startswith(only)):
                 ch[k] = walk(ch[k], course, f".challenges.{k}", changes, refused)
         if changes or refused:
             lines.append(f"## {cp.relative_to(ROOT).as_posix()}")
