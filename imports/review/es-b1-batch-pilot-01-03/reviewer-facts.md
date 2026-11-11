@@ -19,5 +19,5 @@ Both readers were sent these notes mid-read.
 
 ## For the user
 
-- Both unit stories are retellings of classics (Don Quijote, Sherezade), not Carlos and Meg stories, and are written far above B1 (*desaforados*, *ignotos*, *inexorable*, *despuntar la aurora*). Whether the B1 core stories stay classics at a B1 level or continue the A1–A2 story line is the user's decision.
+- **Decided by the user 2026-11-11: B1 core stories are retold classics** (rulebook § 6c). They are brought down to B1 level; the Carlos and Meg line is not continued in the stories.
 - Unit 1's screens read as already polished; Unit 3's read as raw template output. Expect uneven cost per unit.

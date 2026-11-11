@@ -521,7 +521,16 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
   and her friends Javier and Marcos (a2-33, es-es); es-es ends with
   *Mañana volamos a Budapest*, es-latam (no Unit 33) with the flight at the
   end of a2-32. In these units they are visitors in Spain, not residents.
-  B1 starts in Budapest.
+- **B1 stories are retold classics (user, 2026-11-11):** the B1 core unit
+  stories (`stories/classics/b1/`: Don Quijote, Sherezade, …) stay
+  retellings of classics; they do not continue the Carlos and Meg line.
+  Bring each down to B1: met words and forms only, rare literary words
+  (*desaforados*, *ignotos*, *inexorable*) rewritten rather than listed.
+  A retelling is an adaptation: never present a line as the author's own
+  words, and never repair a half-quote into a quote from memory. The
+  screens and items that retell the story must agree with it (who rides,
+  who is a child, numbers, names). Carlos and Meg may still appear in B1
+  exercises and challenges, living in Budapest.
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).
