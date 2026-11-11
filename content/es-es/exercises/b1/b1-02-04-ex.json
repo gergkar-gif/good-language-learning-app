@@ -26,34 +26,30 @@
     {
       "id": "b1-02-04.ex02",
       "type": "multiple-choice",
-      "question": "¿Qué conector expresa un cambio gradual?",
+      "question": "Which sentence shows a change that happened gradually?",
       "options": [
         "A medida que crecíamos, entendíamos mejor la historia.",
-        "Desde entonces, entendimos mejor la historia de la familia.",
-        "Al poco tiempo, creceremos."
+        "Al poco tiempo, entendimos la historia de la familia.",
+        "Desde entonces, entendimos la historia de la familia."
       ],
       "correct": 0,
       "teaches": [
         "cuanto-mas-tanto-mas"
       ],
-      "distractor_skills": {
-        "2": "futuro-simple"
-      },
       "category": "grammar"
     },
     {
       "id": "b1-02-04.ex03",
       "type": "fill-blank",
       "sentence": "__, encontró una respuesta y llamó a su familia.",
-      "hint": "a short time later",
+      "hint": "shortly afterwards",
       "answers": [
-        "Al poco tiempo",
-        "Poco después"
+        "Al poco tiempo"
       ],
       "teaches": [
         "b1-experiences-memories-vocab"
       ],
-      "english": "A short time later, he found an answer and called his family.",
+      "english": "Shortly afterwards, he found an answer and called his family.",
       "category": "vocabulary"
     },
     {
@@ -63,46 +59,36 @@
         "Desde",
         "entonces,",
         "guardo",
+        "todas",
         "las",
         "cartas",
-        "que",
-        "me",
-        "escribió."
+        "de",
+        "mi",
+        "abuela."
       ],
-      "solutions": [
-        [
-          "Desde",
-          "entonces,",
-          "guardo",
-          "las",
-          "cartas",
-          "que",
-          "me",
-          "escribió."
-        ],
-        [
-          "guardo",
-          "las",
-          "cartas",
-          "que",
-          "me",
-          "escribió.",
-          "Desde",
-          "entonces,"
-        ]
-      ],
-      "english": "Since then, I keep the letters that she wrote to me.",
+      "english": "Since then, I keep all my grandmother's letters.",
       "teaches": [
         "b1-experiences-memories-vocab"
       ],
-      "category": "vocabulary"
+      "category": "vocabulary",
+      "solution": [
+        "Desde",
+        "entonces,",
+        "guardo",
+        "todas",
+        "las",
+        "cartas",
+        "de",
+        "mi",
+        "abuela."
+      ]
     },
     {
       "id": "b1-02-04.ex05",
       "type": "sentence-order",
       "sentences": [
-        "Recibí una llamada inesperada.",
-        "Al poco tiempo, fui a visitar a mi tía.",
+        "Recibí una llamada de mi tía.",
+        "Al poco tiempo, fui a visitarla.",
         "Desde entonces, hablamos cada semana."
       ],
       "solution": [
@@ -121,7 +107,7 @@
       "prompt": [
         {
           "speaker": "Clara",
-          "text": "¿Cómo cambió tu relación con tu hermano?"
+          "text": "¿Qué pasó entre tu hermano y tú?"
         },
         {
           "speaker": "Mateo",
@@ -129,24 +115,28 @@
         },
         {
           "speaker": "Clara",
-          "text": "Parece que la experiencia los acercó."
+          "text": "Entonces la experiencia os acercó."
         }
       ],
       "options": [
-        "A medida que crecíamos, hablábamos más y desde entonces confiamos el uno en el otro.",
-        "A medida que creceremos, hablaremos más y desde entonces confiaremos el uno en el otro.",
-        "A medida que crecíamos, hablábamos menos y desde entonces perdimos la confianza."
+        "A medida que pasaban los años, hablábamos más y desde entonces somos amigos.",
+        "A medida que pasarán los años, hablaremos más y desde entonces seremos amigos.",
+        "A medida que pasan los años, hablamos más y desde entonces somos amigos."
       ],
       "correct": 0,
       "teaches": [
         "b1-experiences-memories-vocab"
       ],
-      "category": "dialogue"
+      "category": "dialogue",
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "present-tense"
+      }
     },
     {
       "id": "b1-02-04.ex07",
       "type": "multiple-choice",
-      "question": "¿Qué expresión significa «since then»?",
+      "question": "Which expression means «since then»?",
       "options": [
         "desde entonces",
         "al poco tiempo",
@@ -161,13 +151,13 @@
     {
       "id": "b1-02-04.ex08",
       "type": "fill-blank",
-      "sentence": "__ estudiaba más, comprendía mejor las explicaciones.",
+      "sentence": "__ estudiaba más, entendía mejor al profesor.",
       "hint": "as",
       "answer": "A medida que",
       "teaches": [
         "b1-experiences-memories-vocab"
       ],
-      "english": "As I studied more, I understood the explanations better.",
+      "english": "As I studied more, I understood the teacher better.",
       "category": "vocabulary"
     },
     {
@@ -176,7 +166,7 @@
       "template": [
         {
           "prompt": "Describe a gradual change and its result.",
-          "answer": "A medida que pasaban los años, valoraba más las historias que mi abuelo me contaba."
+          "answer": "A medida que pasaban los años, me gustaban más las historias de mi abuelo."
         }
       ],
       "teaches": [
@@ -190,8 +180,8 @@
       "sentence": "Al poco tiempo, encontramos el lugar y, desde entonces, volvimos allí cada verano.",
       "options": [
         "They found the place soon afterwards and returned every summer after that.",
-        "They will look for the place tomorrow.",
-        "They never found the place."
+        "They found the place soon afterwards but never went back there.",
+        "They lost the place soon afterwards and went back every summer."
       ],
       "correct": 0,
       "teaches": [
@@ -215,7 +205,7 @@
       "prompt": [
         {
           "speaker": "Luis",
-          "text": "¿Qué ocurrió después de la discusión?"
+          "text": "¿Qué pasó después de aquella conversación difícil?"
         },
         {
           "speaker": "Pilar",
@@ -223,38 +213,40 @@
         },
         {
           "speaker": "Luis",
-          "text": "Me alegra que pudieran resolverlo."
+          "text": "Me alegro mucho por ti."
         }
       ],
       "options": [
-        "Al poco tiempo, nos escuchamos y desde entonces evitamos el mismo error.",
-        "Al poco tiempo, nos escucharemos y desde entonces evitaremos el mismo error.",
-        "Desde entonces discusión."
+        "Al poco tiempo, me llamó y desde entonces hablamos más.",
+        "Al poco tiempo, me llamará y desde entonces hablaremos más.",
+        "Al poco tiempo, me llama y desde entonces hablamos más."
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "present-tense"
       },
       "category": "dialogue"
     },
     {
       "id": "b1-02-04.ex13",
       "type": "multiple-choice",
-      "question": "Elige una respuesta que conecte dos momentos con claridad.",
+      "question": "Which sentence tells a past event with its result that continues now?",
       "options": [
-        "Aunque dudaba al principio, acepté el trabajo y desde entonces aprendí mucho.",
-        "Aunque dudaba al principio, aceptaré el trabajo y desde entonces aprenderé mucho.",
-        "El trabajo desde."
+        "Aunque tenía miedo al principio, acepté el trabajo y desde entonces aprendo mucho.",
+        "Aunque tendré miedo al principio, aceptaré el trabajo y desde entonces aprenderé mucho.",
+        "Aunque tengo miedo al principio, acepto el trabajo y desde entonces aprendo mucho."
       ],
       "correct": 0,
       "teaches": [
         "preterite-vs-imperfect"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "present-tense"
       },
       "category": "grammar"
     },
@@ -262,15 +254,14 @@
       "id": "b1-02-04.ex14",
       "type": "fill-blank",
       "sentence": "__, el grupo se conocía mejor y trabajaba con más confianza.",
-      "hint": "from then on",
+      "hint": "since then",
       "answers": [
-        "Desde entonces",
-        "A partir de entonces"
+        "Desde entonces"
       ],
       "teaches": [
         "b1-experiences-memories-vocab"
       ],
-      "english": "From then on, the group knew each other better and worked with greater confidence.",
+      "english": "Since then, the group knew each other better and worked with greater confidence.",
       "category": "vocabulary"
     },
     {
@@ -283,7 +274,7 @@
         },
         {
           "prompt": "Describe what changed gradually.",
-          "answer": "A medida que viajaba solo, me sentía más seguro aunque todavía cometía errores."
+          "answer": "A medida que viajaba solo, me sentía más seguro aunque todavía tenía miedo."
         }
       ],
       "teaches": [
@@ -297,11 +288,11 @@
       "template": [
         {
           "prompt": "Retell three linked moments from a memory.",
-          "answer": "Recibimos la noticia, al poco tiempo fuimos al hospital y desde entonces visitamos a mi abuela cada domingo."
+          "answer": "Recibimos la noticia, al poco tiempo fuimos a casa de mi abuela y desde entonces la visitamos cada domingo."
         },
         {
           "prompt": "Explain why the memory remains important.",
-          "answer": "A medida que pasa el tiempo, entiendo mejor lo que aquella visita significó para todos."
+          "answer": "A medida que pasa el tiempo, entiendo mejor por qué aquella visita fue importante para todos."
         }
       ],
       "teaches": [

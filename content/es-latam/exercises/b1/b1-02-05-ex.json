@@ -26,28 +26,32 @@
     {
       "id": "b1-02-05.ex02",
       "type": "multiple-choice",
-      "question": "¿Qué frase combina el fondo y el hecho principal?",
+      "question": "Which sentence combines the background and the main event?",
       "options": [
-        "Mientras Sherezade hablaba, el rey comprendió la enseñanza.",
-        "Sherezade habló de repente y el rey comprendió la enseñanza.",
-        "La enseñanza fue mientras."
+        "Mientras Sherezade hablaba, el rey entendió la enseñanza.",
+        "Sherezade habló y el rey entendió la enseñanza.",
+        "Sherezade hablaba y el rey entendía la enseñanza."
       ],
       "correct": 0,
       "teaches": [
         "preterite-vs-imperfect"
       ],
-      "category": "grammar"
+      "category": "grammar",
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-02-05.ex03",
       "type": "fill-blank",
-      "sentence": "Cuando terminó el relato, el rey __ porque había entendido su error.",
+      "sentence": "Cuando terminó el relato, el rey __ porque había entendido la enseñanza.",
       "hint": "conmoverse",
       "answer": "se conmovió",
       "teaches": [
         "preterito-indefinido"
       ],
-      "english": "When the story ended, the king was moved because he had understood his mistake.",
+      "english": "When the story ended, the king was moved because he had understood the lesson.",
       "category": "grammar"
     },
     {
@@ -97,7 +101,7 @@
       "sentences": [
         "Sherezade conocía muchas historias desde niña.",
         "Una noche, empezó un relato ante el rey.",
-        "Al terminar, el rey pidió que continuara la noche siguiente."
+        "Al terminar, el rey le pidió otra historia para la noche siguiente."
       ],
       "solution": [
         0,
@@ -123,31 +127,32 @@
         },
         {
           "speaker": "A",
-          "text": "Entonces la historia tuvo una consecuencia real."
+          "text": "Entonces la historia cambió al rey."
         }
       ],
       "options": [
-        "Porque el relato lo conmovió y le mostró una enseñanza que no había considerado.",
-        "Porque el relato lo conmoverá y le mostrará una enseñanza que no ha considerado.",
-        "La enseñanza relato."
+        "Porque el relato lo conmovió y nunca había considerado esa enseñanza.",
+        "Porque el relato lo conmoverá y nunca considerará esa enseñanza.",
+        "Porque el relato lo conmovió y nunca ha considerado esa enseñanza."
       ],
       "correct": 0,
       "teaches": [
         "pluscuamperfecto"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "preterito-perfecto"
       },
       "category": "grammar"
     },
     {
       "id": "b1-02-05.ex07",
       "type": "multiple-choice",
-      "question": "¿Qué palabra nombra la idea que una historia deja al lector?",
+      "question": "Which word means 'lesson' (the idea a story leaves with you)?",
       "options": [
         "enseñanza",
-        "pista",
-        "aroma"
+        "costumbre",
+        "infancia"
       ],
       "correct": 0,
       "teaches": [
@@ -158,24 +163,24 @@
     {
       "id": "b1-02-05.ex08",
       "type": "fill-blank",
-      "sentence": "El público __ con la historia porque reconoció su propia experiencia.",
+      "sentence": "El público __ con la historia porque pensó en su experiencia.",
       "hint": "conmoverse",
       "answer": "se conmovió",
       "teaches": [
         "preterito-indefinido"
       ],
-      "english": "The audience was moved by the story because they recognised their own experience.",
+      "english": "The audience was moved by the story because they thought about their experience.",
       "category": "grammar"
     },
     {
       "id": "b1-02-05.ex09",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Por qué Sherezade contaba historias desde niña?",
+      "question": "¿Qué hacía Sherezade cuando era niña?",
       "options": [
-        "Porque escuchaba a viajeros y le interesaban sus relatos.",
-        "Porque quería viajar y nadie le contaba historias.",
-        "Porque no conocía ninguna historia."
+        "Escuchaba las historias de los viajeros.",
+        "Viajaba con los comerciantes del desierto.",
+        "Trabajaba en el palacio del rey."
       ],
       "correct": 0
     },
@@ -183,11 +188,11 @@
       "id": "b1-02-05.ex10",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué pista dejó Sherezade?",
+      "question": "¿Qué hizo Sherezade la primera noche con el rey?",
       "options": [
-        "Una idea en las primeras palabras del relato.",
-        "Una llave debajo de la puerta.",
-        "Un mapa del vecindario."
+        "Empezó una historia para el rey.",
+        "Se fue de la ciudad con su hermana.",
+        "Habló con su padre sobre el plan."
       ],
       "correct": 0
     },
@@ -195,11 +200,11 @@
       "id": "b1-02-05.ex11",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué cambió a medida que Sherezade continuaba?",
+      "question": "¿Qué cambió en el rey?",
       "options": [
-        "El rey entendía mejor las consecuencias de sus decisiones.",
-        "El rey olvidaba todas las historias.",
-        "El rey salía del palacio."
+        "El rey ya no quería casarse cada día.",
+        "Sherezade ya no sabía más historias.",
+        "La ciudad estaba cada vez más triste."
       ],
       "correct": 0
     },
@@ -207,11 +212,11 @@
       "id": "b1-02-05.ex12",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la enseñanza central del texto?",
+      "question": "¿Qué entendió el rey al final?",
       "options": [
-        "Escuchar antes de juzgar puede cambiar una decisión.",
-        "Las historias no tienen efectos.",
-        "Solo los viajeros pueden aprender."
+        "Que era mejor escuchar antes de decidir.",
+        "Que las historias no servían para nada.",
+        "Que Sherezade no sabía más historias."
       ],
       "correct": 0
     },
@@ -258,16 +263,17 @@
         }
       ],
       "options": [
-        "Uno que me conmovió porque su enseñanza parecía sencilla, pero cambiaba todo al final.",
-        "Uno que me conmoverá porque su enseñanza parece sencilla, pero cambiará todo al final.",
-        "Relato enseñanza es."
+        "Recuerdo un relato: me conmovió porque su enseñanza parecía sencilla, pero lo cambiaba todo al final.",
+        "Recuerdo un relato: me conmoverá porque su enseñanza será sencilla, pero lo cambiará todo al final.",
+        "Recuerdo un relato: me conmueve porque su enseñanza es sencilla, pero lo cambia todo al final."
       ],
       "correct": 0,
       "teaches": [
         "preterite-vs-imperfect"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "present-tense"
       },
       "category": "dialogue"
     },
@@ -275,16 +281,20 @@
       "id": "b1-02-05.ex16",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Elige la continuación más natural.",
+      "question": "Which sentence tells the story correctly?",
       "options": [
         "Aunque había oído la historia antes, me conmovió cuando entendí la enseñanza.",
-        "Aunque haya oído la historia antes, me conmovió cuando entendí la enseñanza.",
-        "Aunque había oído la historia antes, me conmovió antes de que entendí la enseñanza."
+        "Aunque oiré la historia antes, me conmovió cuando entendí la enseñanza.",
+        "Aunque había oído la historia antes, me conmovía cuando entendí la enseñanza."
       ],
       "correct": 0,
       "teaches": [
         "pluscuamperfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-02-05.ex17",
@@ -323,11 +333,11 @@
       "template": [
         {
           "prompt": "Describe a story that taught you something.",
-          "answer": "Leí un relato que me conmovió porque mostraba que pedir perdón puede ser difícil."
+          "answer": "Leí un relato y me conmovió porque mostraba que pedir perdón puede ser difícil."
         },
         {
           "prompt": "State its lesson in a connected sentence.",
-          "answer": "La enseñanza quedó conmigo desde entonces, aunque la historia había terminado hacía tiempo."
+          "answer": "Recuerdo esa enseñanza desde entonces, aunque leí la historia hace mucho tiempo."
         }
       ],
       "teaches": [

@@ -26,11 +26,11 @@
     {
       "id": "b1-02-consolidation.ex02",
       "type": "multiple-choice",
-      "question": "Elige el fondo de una memoria.",
+      "question": "Which sentence gives the background of a memory?",
       "options": [
-        "Cuando era niño, mi familia cenaba junta.",
-        "Anoche cenamos juntos.",
-        "El próximo domingo cenaremos juntos."
+        "Cuando era niño, mi familia cenaba junta cada noche.",
+        "Una noche, mi familia cenó junta en casa de mi abuela.",
+        "El domingo, mi familia cenará junta en casa de mi abuela."
       ],
       "correct": 0,
       "teaches": [
@@ -90,8 +90,8 @@
       "type": "sentence-order",
       "sentences": [
         "Teníamos la costumbre de reunirnos los viernes.",
-        "Una noche, presenciamos una discusión inesperada.",
-        "Desde entonces, hablamos con más sinceridad."
+        "Una noche, presenciamos algo muy raro.",
+        "Desde entonces, hablamos más."
       ],
       "solution": [
         0,
@@ -117,31 +117,32 @@
         },
         {
           "speaker": "A",
-          "text": "Parece que cambió tu manera de ver las cosas."
+          "text": "Entonces ese viaje fue muy importante para ti."
         }
       ],
       "options": [
-        "Porque me atreví a viajar solo y comprendí que podía resolver problemas.",
-        "Porque me atreveré a viajar solo y comprenderé que puedo resolver problemas.",
-        "Viaje pista."
+        "Porque me atreví a viajar solo y descubrí que podía hacerlo.",
+        "Porque me atreveré a viajar solo y descubriré que podré hacerlo.",
+        "Porque me atrevo a viajar solo y descubro que puedo hacerlo."
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "present-tense"
       },
       "category": "dialogue"
     },
     {
       "id": "b1-02-consolidation.ex07",
       "type": "listening-choice",
-      "sentence": "Al poco tiempo, encontró la pista que había buscado durante meses.",
+      "sentence": "Al poco tiempo, encontró la pista; la había buscado durante meses.",
       "options": [
         "Soon afterwards, she found the clue she had sought for months.",
-        "She will look for a clue tomorrow.",
-        "She lost the clue."
+        "Soon afterwards, she lost the clue she had sought for months.",
+        "Months earlier, she found the clue and then stopped looking."
       ],
       "correct": 0,
       "teaches": [
@@ -165,7 +166,7 @@
       "template": [
         {
           "prompt": "Describe a childhood habit and a later change.",
-          "answer": "En mi infancia visitábamos a mis tíos, pero un día nos mudamos y todo cambió."
+          "answer": "En mi infancia visitábamos a mis tíos, pero un día fuimos a vivir a otra ciudad y todo cambió."
         }
       ],
       "teaches": [
@@ -176,11 +177,11 @@
     {
       "id": "b1-02-consolidation.ex10",
       "type": "multiple-choice",
-      "question": "¿Qué expresa «desde entonces»?",
+      "question": "Which sentence says «We met in Madrid and have been friends since then»?",
       "options": [
-        "Una consecuencia que continúa después de un hecho.",
-        "Un plan futuro sin relación.",
-        "Una acción anterior a todas las demás."
+        "Nos conocimos en Madrid y, desde entonces, somos amigos.",
+        "Nos conocimos en Madrid y, al poco tiempo, somos amigos.",
+        "Nos conocimos en Madrid y, por primera vez, somos amigos."
       ],
       "correct": 0,
       "teaches": [
@@ -211,42 +212,30 @@
         "el",
         "final",
         "del",
-        "debate."
+        "concierto."
       ],
-      "solutions": [
-        [
-          "Aunque",
-          "tenía",
-          "miedo,",
-          "presencié",
-          "el",
-          "final",
-          "del",
-          "debate."
-        ],
-        [
-          "presencié",
-          "el",
-          "final",
-          "del",
-          "debate.",
-          "Aunque",
-          "tenía",
-          "miedo,"
-        ]
-      ],
-      "english": "Although I was afraid, I witnessed the end of the debate.",
+      "english": "Although I was afraid, I witnessed the end of the concert.",
       "teaches": [
         "preterite-vs-imperfect"
       ],
-      "category": "grammar"
+      "category": "grammar",
+      "solution": [
+        "Aunque",
+        "tenía",
+        "miedo,",
+        "presencié",
+        "el",
+        "final",
+        "del",
+        "concierto."
+      ]
     },
     {
       "id": "b1-02-consolidation.ex13",
       "type": "sentence-order",
       "sentences": [
         "Sherezade conocía muchas historias.",
-        "El rey escuchó una que ella había preparado.",
+        "Esa noche el rey escuchó una historia nueva: Sherezade la había preparado con cuidado.",
         "Después pidió otra porque el relato lo conmovió."
       ],
       "solution": [
@@ -277,27 +266,28 @@
         }
       ],
       "options": [
-        "Me di cuenta de que, aunque cometí un error, podía pedir ayuda y empezar de nuevo.",
-        "Me daré cuenta de que, aunque cometa un error, podré pedir ayuda y empezar de nuevo.",
-        "Error enseñanza."
+        "Me di cuenta de que, aunque tenía miedo, podía pedir ayuda y empezar de nuevo.",
+        "Me daré cuenta de que, aunque tenga miedo, podré pedir ayuda y empezar de nuevo.",
+        "Me doy cuenta de que, aunque tengo miedo, puedo pedir ayuda y empezar de nuevo."
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "present-tense"
       },
       "category": "dialogue"
     },
     {
       "id": "b1-02-consolidation.ex15",
       "type": "listening-choice",
-      "sentence": "El aroma del pan le recordó el vecindario donde había crecido.",
+      "sentence": "El aroma del pan le recordó el vecindario donde había vivido.",
       "options": [
-        "The smell of bread reminded him of the neighbourhood where he had grown up.",
-        "He will move to a neighbourhood tomorrow.",
-        "He did not remember the bread."
+        "The smell of bread reminded him of the neighbourhood where he had lived.",
+        "The smell of bread made him forget the neighbourhood where he lived.",
+        "He did not remember the bread or the neighbourhood where he had lived."
       ],
       "correct": 0,
       "teaches": [
@@ -311,7 +301,7 @@
       "template": [
         {
           "prompt": "Retell a memorable experience with an earlier event.",
-          "answer": "Me conmoví cuando vi la foto porque había olvidado cuánto significaba aquel lugar."
+          "answer": "Me conmoví cuando vi la foto porque había olvidado aquel lugar."
         }
       ],
       "teaches": [
@@ -344,18 +334,19 @@
     {
       "id": "b1-02-consolidation.ex18",
       "type": "multiple-choice",
-      "question": "¿Cuál es un relato coherente?",
+      "question": "Which sentence tells the story correctly?",
       "options": [
         "Mientras caminábamos, vimos una carta; al poco tiempo descubrimos que alguien la había dejado para nosotros.",
         "Mientras caminábamos, veremos una carta; al poco tiempo descubrimos que alguien la dejará para nosotros.",
-        "Mientras caminaremos, vimos una carta; al poco tiempo descubriremos que alguien la deja para nosotros."
+        "Mientras caminábamos, vimos una carta; al poco tiempo descubrimos que alguien la dejaba para nosotros."
       ],
       "correct": 0,
       "teaches": [
-        "preterite-vs-imperfect"
+        "pluscuamperfecto"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "imperfect"
       },
       "category": "grammar"
     }

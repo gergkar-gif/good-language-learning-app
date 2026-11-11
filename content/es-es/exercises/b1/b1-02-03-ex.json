@@ -26,11 +26,11 @@
     {
       "id": "b1-02-03.ex02",
       "type": "multiple-choice",
-      "question": "¿Cuál sitúa una acción antes de otra pasada?",
+      "question": "Which sentence puts one action before another past action?",
       "options": [
         "Me di cuenta de que alguien había dejado una pista.",
         "Me doy cuenta de que alguien dejará una pista.",
-        "Me di cuenta de que alguien dejaría una pista después."
+        "Me di cuenta de que alguien dejaría una pista."
       ],
       "correct": 0,
       "teaches": [
@@ -87,8 +87,8 @@
       "id": "b1-02-03.ex05",
       "type": "sentence-order",
       "sentences": [
-        "Alguien dejó una pista junto a la puerta.",
-        "Más tarde, encontramos la pista bajo una maceta.",
+        "Alguien dejó una pista en la casa.",
+        "Más tarde, encontramos la pista debajo de la mesa.",
         "Entonces nos dimos cuenta de que el mensaje era para nosotros."
       ],
       "solution": [
@@ -119,23 +119,24 @@
         }
       ],
       "options": [
-        "Me di cuenta de que había usado una frase que solo conocía mi hermana.",
-        "Me doy cuenta de que usará una frase que solo conoce mi hermana.",
-        "La carta había pista."
+        "Me di cuenta de que mi hermana había dejado una pista en la carta.",
+        "Me doy cuenta de que mi hermana dejará una pista en la carta.",
+        "Me daría cuenta de que mi hermana dejaría una pista en la carta."
       ],
       "correct": 0,
       "teaches": [
         "pluscuamperfecto"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "condicional-regular"
       },
       "category": "grammar"
     },
     {
       "id": "b1-02-03.ex07",
       "type": "multiple-choice",
-      "question": "¿Qué palabra es una señal que ayuda a resolver un misterio?",
+      "question": "Which word means 'clue'?",
       "options": [
         "pista",
         "recuerdo",
@@ -150,13 +151,13 @@
     {
       "id": "b1-02-03.ex08",
       "type": "fill-blank",
-      "sentence": "No reconocí el lugar porque había __ el nombre de la calle.",
+      "sentence": "No encontré el lugar porque había __ el nombre de la calle.",
       "hint": "olvidar",
       "answer": "olvidado",
       "teaches": [
         "past-participles"
       ],
-      "english": "I did not recognise the place because I had forgotten the name of the street.",
+      "english": "I did not find the place because I had forgotten the name of the street.",
       "category": "grammar"
     },
     {
@@ -171,16 +172,16 @@
       "teaches": [
         "pluscuamperfecto"
       ],
-      "category": "grammar"
+      "category": "writing"
     },
     {
       "id": "b1-02-03.ex10",
       "type": "listening-choice",
-      "sentence": "Cuando revisé las fotos, me di cuenta de que había olvidado una fecha importante.",
+      "sentence": "Cuando miré las fotos, me di cuenta de que había olvidado el cumpleaños de mi madre.",
       "options": [
-        "The speaker realised they had forgotten an important date.",
-        "The speaker will forget a date tomorrow.",
-        "The speaker did not look at the photos."
+        "The speaker realised they had forgotten their mother's birthday.",
+        "The speaker realised they would forget their mother's birthday.",
+        "The speaker did not look at any photos that day."
       ],
       "correct": 0,
       "teaches": [
@@ -218,7 +219,7 @@
       "options": [
         "No me di cuenta de que habían cambiado la hora.",
         "No me di cuenta de que van a cambiar la hora.",
-        "La hora olvidado."
+        "No me di cuenta de que habían cambiar la hora."
       ],
       "correct": 0,
       "teaches": [
@@ -232,17 +233,21 @@
     {
       "id": "b1-02-03.ex13",
       "type": "multiple-choice",
-      "question": "Elige la continuación más natural.",
+      "question": "Which sentence says the train had already left when we arrived?",
       "options": [
         "Cuando llegamos, el tren ya había salido, así que buscamos otra ruta.",
-        "Cuando llegamos, el tren ya haya salido, así que buscamos otra ruta.",
-        "El tren pista."
+        "Cuando llegamos, el tren ya saldrá, así que buscamos otra ruta.",
+        "Cuando llegamos, el tren ya sale, así que buscamos otra ruta."
       ],
       "correct": 0,
       "teaches": [
         "pluscuamperfecto"
       ],
-      "category": "grammar"
+      "category": "grammar",
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "present-tense"
+      }
     },
     {
       "id": "b1-02-03.ex14",
@@ -284,7 +289,7 @@
         },
         {
           "prompt": "Add the result.",
-          "answer": "Cuando lo leí, comprendí que todos me habían estado esperando."
+          "answer": "Cuando lo leí, me di cuenta de que todos me habían esperado."
         }
       ],
       "teaches": [

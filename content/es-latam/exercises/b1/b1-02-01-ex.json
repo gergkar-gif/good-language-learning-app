@@ -31,28 +31,32 @@
       "id": "b1-02-01.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué frase presenta el fondo de un recuerdo?",
+      "question": "Which sentence gives the background of a memory?",
       "options": [
         "Cuando vivíamos allí, el aroma del café entraba por la ventana.",
-        "Esa tarde, el dueño cerró la cafetería temprano y se fue.",
+        "Esa tarde, mi padre cerró la cafetería temprano y se fue.",
         "En aquel momento, un cliente entró de repente y pidió la cuenta."
       ],
       "correct": 0,
       "teaches": [
         "preterite-vs-imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-02-01.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "En mi infancia, mis vecinos __ en la plaza cada tarde.",
+      "sentence": "En mi infancia, mis amigos __ en la plaza cada tarde.",
       "hint": "reunirse",
       "answer": "se reunían",
       "teaches": [
         "imperfect"
       ],
-      "english": "In my childhood, my neighbours used to meet in the square every afternoon."
+      "english": "In my childhood, my friends used to meet in the square every afternoon."
     },
     {
       "id": "b1-02-01.ex04",
@@ -120,21 +124,22 @@
       "options": [
         "Era tranquilo, y todos nos conocíamos aunque vivíamos en calles distintas.",
         "Es tranquilo, y todos nos conocemos aunque vivimos en calles distintas.",
-        "Sería tranquilo, y todos nos conoceríamos aunque viviéramos en calles distintas."
+        "Fue tranquilo, y todos nos conocimos aunque vivimos en calles distintas."
       ],
       "correct": 0,
       "teaches": [
         "imperfect"
       ],
       "distractor_skills": {
-        "1": "present-tense"
+        "1": "present-tense",
+        "2": "preterito-indefinido"
       }
     },
     {
       "id": "b1-02-01.ex07",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "¿Qué palabra nombra un olor agradable que te trae un recuerdo?",
+      "question": "Which word means 'scent'?",
       "options": [
         "aroma",
         "costumbre",
@@ -164,7 +169,7 @@
       "template": [
         {
           "prompt": "Describe a place from your childhood and add a sensory detail.",
-          "answer": "Mi vecindario era pequeño, pero el aroma de las flores llenaba el patio en primavera."
+          "answer": "Mi vecindario era pequeño, pero el aroma de las flores llenaba el parque en primavera."
         }
       ],
       "teaches": [
@@ -178,8 +183,8 @@
       "sentence": "Cuando vivíamos allí, teníamos la costumbre de cenar juntos aunque mi padre llegaba tarde.",
       "options": [
         "They used to eat dinner together although the father arrived late.",
-        "They will have dinner together tomorrow.",
-        "The father never came home."
+        "They are going to eat dinner together although the father arrives late.",
+        "The father never came home, so they always ate without him."
       ],
       "correct": 0,
       "teaches": [
@@ -215,47 +220,49 @@
         }
       ],
       "options": [
-        "Mi madre preparaba pan mientras yo escuchaba la radio en la cocina.",
-        "Mi madre preparó pan todos los días mientras yo escuché la radio en la cocina.",
-        "La radio es infancia."
+        "Mi madre preparaba pan mientras yo escuchaba música en la cocina.",
+        "Mi madre preparó pan todos los días mientras yo escuché música en la cocina.",
+        "Mi madre prepararía pan mientras yo escucharía música en la cocina."
       ],
       "correct": 0,
       "teaches": [
         "imperfect"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido"
+        "1": "preterito-indefinido",
+        "2": "condicional-regular"
       }
     },
     {
       "id": "b1-02-01.ex13",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Elige la respuesta que continúa una memoria de forma natural.",
+      "question": "Which sentence describes a habit in the past?",
       "options": [
         "Aunque vivíamos lejos, visitábamos a mis abuelos todos los domingos.",
         "Aunque viviremos lejos, visitaremos a mis abuelos todos los domingos.",
-        "Lejos era ocurre."
+        "Aunque vivimos lejos, visitamos a mis abuelos todos los domingos."
       ],
       "correct": 0,
       "teaches": [
         "imperfect"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "present-tense"
       }
     },
     {
       "id": "b1-02-01.ex14",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Cuando hacía frío, nosotros __ cerca de la estufa y hablábamos.",
+      "sentence": "Cuando hacía frío, nosotros __ en la cocina y hablábamos.",
       "hint": "sentarse",
       "answer": "nos sentábamos",
       "teaches": [
         "imperfect"
       ],
-      "english": "When it was cold, we would sit near the stove and talk."
+      "english": "When it was cold, we would sit in the kitchen and talk."
     },
     {
       "id": "b1-02-01.ex15",
@@ -264,7 +271,7 @@
       "template": [
         {
           "prompt": "Write one sentence about a childhood habit and explain when it happened.",
-          "answer": "Cuando terminaban las clases, iba al patio porque allí jugaban mis amigos."
+          "answer": "Cuando terminaban las clases, iba al parque porque allí jugaban mis amigos."
         },
         {
           "prompt": "Add a sentence with a sensory detail.",
@@ -282,11 +289,11 @@
       "template": [
         {
           "prompt": "Describe a neighbour or family member in a remembered setting.",
-          "answer": "Mi vecina era amable y nos saludaba desde su balcón cuando pasábamos por la calle."
+          "answer": "Mi abuela era amable y nos hablaba desde su balcón cuando pasábamos por la calle."
         },
         {
           "prompt": "Explain why the memory matters now.",
-          "answer": "Todavía recuerdo esa costumbre porque hacía que el vecindario pareciera una familia."
+          "answer": "Todavía recuerdo esa costumbre porque el vecindario parecía una familia."
         }
       ],
       "teaches": [
