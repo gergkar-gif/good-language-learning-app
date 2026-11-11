@@ -27,3 +27,7 @@ See `reviewer-facts.md`. The Unit 1 story no longer quotes or half-quotes Cervan
 3. The Unit 3 story keeps the frame story's premise (the king has each wife killed the next day), said plainly in B1 words.
 4. Story words are not checked against the vocabulary lists by any script; the Unit 3 story uses a few unlisted words (*palacio*, *reino*, *visir*, *genio*, *traición*, *jurar*, *amanecer*). Decide whether retold classics must use listed words only (then a check gets written) or may rely on tap-to-translate.
 5. Lesson b1-02-03 repeats the pluscuamperfecto of b1-01-03; it now opens as a recap with a "discoveries" angle.
+
+## Decided by the user (2026-11-11)
+
+All five points accepted: `cuanto-mas-tanto-mas` `taught_in` moved to `b1-02-04-conectores-temporales-gr` (es-latam Unit 3 then froze, 0 errors); *soler* stays; the Sherezade premise stays; story words may rely on tap-to-translate (taken as the default, since the user accepted the list without choosing the stricter rule); b1-02-03 stays a recap lesson.
