@@ -27,7 +27,7 @@
       "id": "b1-03-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué frase presenta una predicción sobre el futuro?",
+      "question": "Which sentence makes a prediction about the future?",
       "options": [
         "Creo que el proyecto tendrá éxito porque cuenta con suficiente apoyo.",
         "Voy a reservar el hotel porque ya he elegido las fechas.",
@@ -132,14 +132,18 @@
         }
       ],
       "options": [
-        "Sí, creo que lo lograrán porque ya han avanzado mucho.",
-        "Sí, creo que lo logren porque ya han avanzado mucho.",
-        "Sí, es obvio que lo logren porque tienen suficiente tiempo."
+        "Sí, creo que lo lograrán porque ya han trabajado mucho.",
+        "Sí, creo que lo logren porque ya han trabajado mucho.",
+        "Sí, creo que lo lograron porque ya han trabajado mucho."
       ],
       "correct": 0,
       "teaches": [
         "futuro-simple"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-deseos",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-03-02.ex07",
@@ -218,7 +222,7 @@
       "options": [
         "Si hace buen tiempo, llegaremos antes de las seis.",
         "Llegaremos después de las seis aunque no llueva.",
-        "Ayer llegamos antes de las seis porque no llovió."
+        "Llegamos antes de las seis porque no llovió."
       ],
       "correct": 0,
       "teaches": [
@@ -257,9 +261,9 @@
         }
       ],
       "options": [
-        "Tendremos que esperar al siguiente, aunque quizá lleguemos tarde.",
-        "Tendríamos que esperar al siguiente, aunque quizá llegamos tarde.",
-        "Esperábamos al siguiente, aunque quizá lleguemos tarde."
+        "Tendremos que esperar al próximo, aunque sea muy tarde.",
+        "Tendríamos que esperar al próximo, aunque sea muy tarde.",
+        "Esperábamos al próximo, aunque sea muy tarde."
       ],
       "correct": 0,
       "teaches": [
@@ -274,28 +278,32 @@
       "id": "b1-03-02.ex13",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Elige la continuación más natural: «Creo que el viaje...»",
+      "question": "Which continuation is most natural? «Creo que el viaje...»",
       "options": [
-        "será más largo de lo previsto porque hay obras.",
-        "sea más largo de lo previsto porque hay obras.",
-        "fue más largo de lo previsto porque habrá obras."
+        "será más largo de lo previsto porque hay mucha gente.",
+        "sea más largo de lo previsto porque hay mucha gente.",
+        "fue más largo de lo previsto porque hay mucha gente."
       ],
       "correct": 0,
       "teaches": [
         "futuro-simple"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-deseos",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-03-02.ex14",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "No te preocupes: __ una solución antes de que termine el día.",
+      "sentence": "No te preocupes: __ una solución muy pronto.",
       "hint": "encontrar",
       "answer": "encontraremos",
       "teaches": [
         "futuro-simple"
       ],
-      "english": "Do not worry: we will find a solution before the end of the day."
+      "english": "Do not worry: we will find a solution very soon."
     },
     {
       "id": "b1-03-02.ex15",
@@ -326,7 +334,7 @@
         },
         {
           "prompt": "Use «plazo».",
-          "answer": "Tenemos que terminar antes del plazo porque después será demasiado tarde."
+          "answer": "Tenemos que terminar antes del plazo porque después será muy tarde."
         }
       ],
       "teaches": [

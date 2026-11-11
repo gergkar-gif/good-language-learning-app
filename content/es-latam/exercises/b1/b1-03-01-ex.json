@@ -31,10 +31,10 @@
       "id": "b1-03-01.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál expresa un plan ya conectado con el presente?",
+      "question": "Which sentence expresses a plan that is already linked to the present?",
       "options": [
         "Voy a estudiar en Madrid porque ya he solicitado plaza.",
-        "Estudiaré en Madrid si algún día me apetece.",
+        "Estudiaré en Madrid si algún día quiero.",
         "Estudiaba en Madrid cuando era joven."
       ],
       "correct": 0,
@@ -50,7 +50,7 @@
       "id": "b1-03-01.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El próximo mes __ viajar a Colombia porque ya he comprado los billetes.",
+      "sentence": "El próximo mes __ viajar a Colombia porque ya he comprado los boletos.",
       "hint": "ir",
       "answer": "voy a",
       "teaches": [
@@ -125,8 +125,8 @@
       ],
       "options": [
         "Voy a viajar a Perú porque quiero conocer el país.",
-        "Viajaré a Perú algún día, quizá.",
-        "Viajaba a Perú cuando era estudiante."
+        "Viajaré a Perú algún día porque quiero conocer el país.",
+        "Viajaba a Perú de estudiante porque quería conocer el país."
       ],
       "correct": 0,
       "teaches": [
@@ -157,13 +157,13 @@
       "id": "b1-03-01.ex08",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Estamos __ empezar, así que apaga el ordenador.",
+      "sentence": "Estamos __ empezar, así que escucha bien.",
       "hint": "about to",
       "answer": "a punto de",
       "teaches": [
         "b1-plans-ambitions-vocab"
       ],
-      "english": "We are about to start, so turn off the computer."
+      "english": "We are about to start, so listen carefully."
     },
     {
       "id": "b1-03-01.ex09",
@@ -200,14 +200,15 @@
       "options": [
         "Van a salir temprano.",
         "Ya salieron temprano.",
-        "Solían salir temprano."
+        "Salían temprano cada día."
       ],
       "correct": 0,
       "teaches": [
         "ir-infinitive"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido"
+        "1": "preterito-indefinido",
+        "2": "imperfect"
       }
     },
     {
@@ -241,30 +242,35 @@
       "options": [
         "Sí, voy a buscar otro puesto porque quiero cambiar de sector.",
         "Sí, cambié de trabajo el año pasado porque estaba cansado.",
-        "Sí, cambiaría de trabajo si tuviera más tiempo."
+        "Sí, he cambiado de trabajo porque quería cambiar de sector."
       ],
       "correct": 0,
       "teaches": [
         "ir-infinitive"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido"
+        "1": "preterito-indefinido",
+        "2": "preterito-perfecto"
       }
     },
     {
       "id": "b1-03-01.ex13",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál encaja mejor con «¿Cuál es tu intención?»",
+      "category": "grammar",
+      "question": "Which sentence best answers «¿Cuál es tu intención?»",
       "options": [
-        "Voy a terminar el curso antes de junio porque quiero presentarme al examen.",
-        "Terminé el curso antes de junio el año pasado.",
-        "Terminaba el curso cuando empezó el verano."
+        "Voy a terminar el curso porque quiero presentarme al examen.",
+        "Terminé el curso porque quería presentarme al examen.",
+        "Terminaba el curso porque quería presentarme al examen."
       ],
       "correct": 0,
       "teaches": [
-        "b1-plans-ambitions-vocab"
-      ]
+        "ir-infinitive"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-03-01.ex14",
@@ -307,7 +313,7 @@
         },
         {
           "prompt": "Connect it to your intention.",
-          "answer": "Mi intención es buscar un puesto que me permita aprender más."
+          "answer": "Mi intención es buscar un puesto nuevo para aprender más."
         }
       ],
       "teaches": [

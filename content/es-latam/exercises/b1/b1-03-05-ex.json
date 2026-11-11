@@ -27,10 +27,10 @@
       "id": "b1-03-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál combina una intención con una predicción?",
+      "question": "Which sentence combines an intention with a prediction?",
       "options": [
         "Voy a salir temprano porque mañana tendré que trabajar.",
-        "Saldré temprano porque ayer tenía que trabajar.",
+        "Salí temprano porque mañana tendré que trabajar.",
         "Espero que salgo temprano porque mañana trabajo."
       ],
       "correct": 0,
@@ -38,32 +38,33 @@
         "ir-infinitive"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "preterito-indefinido",
+        "2": "present-tense"
       }
     },
     {
       "id": "b1-03-05.ex03a",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Si todo __ bien, alcanzaremos la meta antes de que termine el mes.",
-      "hint": "salir",
-      "answer": "sale",
+      "sentence": "Mañana tendré que trabajar, así que __ salir temprano.",
+      "hint": "ir",
+      "answer": "voy a",
       "teaches": [
-        "si-clauses"
+        "ir-infinitive"
       ],
-      "english": "If everything goes well, we will reach the goal before the end of the month."
+      "english": "Tomorrow I will have to work, so I am going to leave early."
     },
     {
       "id": "b1-03-05.ex03b",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Si todo sale bien, __ la meta antes de que termine el mes.",
+      "sentence": "Si todo sale bien, __ la meta en un mes.",
       "hint": "alcanzar",
       "answer": "alcanzaremos",
       "teaches": [
         "futuro-simple"
       ],
-      "english": "If everything goes well, we will reach the goal before the end of the month."
+      "english": "If everything goes well, we will reach the goal within a month."
     },
     {
       "id": "b1-03-05.ex04",
@@ -77,9 +78,11 @@
         "sea",
         "tranquilo",
         "aunque",
+        "creo",
+        "que",
         "habrá",
         "algún",
-        "retraso."
+        "problema."
       ],
       "solution": [
         "Espero",
@@ -89,9 +92,11 @@
         "sea",
         "tranquilo",
         "aunque",
+        "creo",
+        "que",
         "habrá",
         "algún",
-        "retraso."
+        "problema."
       ],
       "english": "Build a connected future statement.",
       "teaches": [
@@ -135,16 +140,17 @@
         }
       ],
       "options": [
-        "Voy a empezar un curso que me ayudará a alcanzar una meta profesional.",
-        "Empezaba un curso porque ya había terminado el mes.",
-        "Voy a empezar un curso para que me ayuda a alcanzar una meta profesional."
+        "Voy a empezar un curso para alcanzar una meta profesional.",
+        "Empecé un curso para alcanzar una meta profesional.",
+        "Voy a empezar un curso para alcanzo una meta profesional."
       ],
       "correct": 0,
       "teaches": [
         "ir-infinitive"
       ],
       "distractor_skills": {
-        "1": "imperfect"
+        "1": "preterito-indefinido",
+        "2": "present-tense"
       }
     },
     {
@@ -179,12 +185,12 @@
       "id": "b1-03-05.ex09",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué decisión había tomado Phileas Fogg?",
+      "question": "¿Qué dice Phileas Fogg en el club?",
       "options": [
-        "Dar la vuelta al mundo en ochenta días.",
-        "Quedarse en Londres durante ochenta días.",
-        "Viajar solamente en tren.",
-        "Cambiar su destino cada día."
+        "Que va a dar la vuelta al mundo en ochenta días.",
+        "Que va a quedarse en Londres ochenta días.",
+        "Que va a vender su casa en Londres.",
+        "Que va a viajar sin dinero."
       ],
       "correct": 0
     },
@@ -192,12 +198,12 @@
       "id": "b1-03-05.ex10",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿De qué dependía en parte el éxito del viaje?",
+      "question": "¿Cómo cruzan la nieve en América del Norte?",
       "options": [
-        "De los horarios y las conexiones.",
-        "De encontrar una nueva casa.",
-        "De vender las pertenencias de Fogg.",
-        "De cambiar el recorrido en cada país."
+        "En un trineo con velas.",
+        "En un tren muy rápido.",
+        "En un elefante.",
+        "A pie."
       ],
       "correct": 0
     },
@@ -205,12 +211,12 @@
       "id": "b1-03-05.ex11",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué quería Passepartout?",
+      "question": "¿Qué espera Passepartout al principio del viaje?",
       "options": [
-        "Que el viaje fuera tranquilo.",
-        "Que Fogg abandonara la apuesta.",
-        "Que el plazo fuera más largo.",
-        "Que cambiaran el destino inmediatamente."
+        "Que el viaje sea tranquilo.",
+        "Que Fogg pierda la apuesta.",
+        "Que el plazo sea más largo.",
+        "Que la policía detenga a Fogg."
       ],
       "correct": 0
     },
@@ -218,12 +224,12 @@
       "id": "b1-03-05.ex12",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Por qué algunas personas dudaban de Fogg?",
+      "question": "¿Qué descubre Passepartout al final?",
       "options": [
-        "Porque creían que no terminaría a tiempo.",
-        "Porque no conocía ningún destino.",
-        "Porque no tenía intención de viajar.",
-        "Porque no había tomado una decisión."
+        "Que ganaron un día porque viajaron hacia el este.",
+        "Que perdieron el tren de Liverpool a Londres.",
+        "Que el Reform Club estaba cerrado esa noche.",
+        "Que el barco no tenía madera para el viaje."
       ],
       "correct": 0
     },
@@ -231,10 +237,10 @@
       "id": "b1-03-05.ex13",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Si todo sale bien, alcanzaremos la meta antes de que termine el mes.",
+      "sentence": "Si todo sale bien, alcanzaremos la meta en un mes.",
       "options": [
-        "Si todo sale bien, alcanzaremos la meta antes de que termine el mes.",
-        "Si todo salió bien, alcanzamos la meta antes de que terminara el mes."
+        "Si todo sale bien, alcanzaremos la meta en un mes.",
+        "Si todo salió bien, alcanzamos la meta en un mes."
       ],
       "correct": 0,
       "teaches": [
@@ -248,11 +254,11 @@
       "id": "b1-03-05.ex14",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Espero que el viaje sea tranquilo, aunque seguramente habrá algún retraso.",
+      "sentence": "Espero que el viaje sea tranquilo, aunque creo que habrá algún problema.",
       "teaches": [
         "b1-plans-ambitions-vocab"
       ],
-      "english": "I hope the journey will be peaceful, although there will probably be some delay."
+      "english": "I hope the journey will be peaceful, although I think there will be some problem."
     },
     {
       "id": "b1-03-05.ex15",
@@ -274,7 +280,7 @@
       ],
       "options": [
         "Buscaré otra opción, aunque espero que no sea necesario.",
-        "Buscaba otra opción porque no era necesario.",
+        "Buscaba otra opción, aunque espero que no sea necesario.",
         "Voy a buscar otra opción, aunque espero que no es necesario."
       ],
       "correct": 0,
@@ -282,23 +288,28 @@
         "subjuntivo-deseos"
       ],
       "distractor_skills": {
-        "1": "imperfect"
+        "1": "imperfect",
+        "2": "present-tense"
       }
     },
     {
       "id": "b1-03-05.ex16",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Elige la continuación más natural: «Ojalá...»",
+      "question": "Which continuation is most natural? «Ojalá...»",
       "options": [
-        "encontremos una solución antes de que termine el plazo.",
-        "encontraremos una solución antes de que termine el plazo.",
-        "encontrábamos una solución cuando terminaba el proyecto."
+        "encontremos una solución pronto.",
+        "encontraremos una solución pronto.",
+        "encontrábamos una solución pronto."
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-deseos"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-03-05.ex17a",
@@ -315,25 +326,25 @@
       "id": "b1-03-05.ex17b",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Mi meta es clara: quiero __ la meta aunque el recorrido sea largo.",
+      "sentence": "Quiero __ mi meta aunque el recorrido sea largo.",
       "hint": "to reach",
       "answer": "alcanzar",
       "teaches": [
         "b1-plans-ambitions-vocab"
       ],
-      "english": "My goal is clear: I want to reach the goal even if the journey is long."
+      "english": "I want to reach my goal even if the journey is long."
     },
     {
       "id": "b1-03-05.ex17c",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Mi meta es clara: quiero alcanzar la meta aunque el __ sea largo.",
+      "sentence": "Quiero alcanzar mi meta aunque el __ sea largo.",
       "hint": "journey",
       "answer": "recorrido",
       "teaches": [
         "b1-plans-ambitions-vocab"
       ],
-      "english": "My goal is clear: I want to reach the goal even if the journey is long."
+      "english": "I want to reach my goal even if the journey is long."
     },
     {
       "id": "b1-03-05.ex18",
@@ -360,7 +371,7 @@
       "template": [
         {
           "prompt": "Express a hope with the subjunctive.",
-          "answer": "Espero que el plan funcione aunque surjan problemas."
+          "answer": "Espero que el plan funcione aunque sea complicado."
         },
         {
           "prompt": "End with a future result.",

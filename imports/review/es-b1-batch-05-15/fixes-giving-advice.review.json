@@ -1,0 +1,736 @@
+[
+ {
+  "file": "content/es-es/grammar/b1/b1-04-02-conditional-advice-gr.json",
+  "old": "En tu lugar, buscaría una alternativa que fuera más segura.",
+  "new": "En tu lugar, buscaría una alternativa más segura.",
+  "kind": "target",
+  "why": "relative que + imperfect subjunctive (fuera) before b1-05-04 / b1-38"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-04-02-conditional-advice-gr.json",
+  "old": "Si tuviera más información, esperaría antes de decidir.",
+  "new": "Yo esperaría un poco más antes de decidir.",
+  "kind": "target",
+  "why": "tuviera is an imperfect-subjunctive form not taught before b1-38"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-04-03-subjuntivo-recomendaciones-gr.json",
+  "old": "Te recomiendo que hables con alguien que conozca bien el problema.",
+  "new": "Te recomiendo que hables con tu profesor.",
+  "kind": "target",
+  "why": "relative que + subjunctive before b1-05-04 (speaking step reads this example)"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-04-03-subjuntivo-recomendaciones-gr.json",
+  "old": "Te recomiendo que no tomes una decisión mientras estés enfadado.",
+  "new": "Te recomiendo que no tomes una decisión cuando estés enfadado.",
+  "kind": "target",
+  "why": "mientras + subjunctive is not taught (cuando + subjunctive is A2)"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-04-05-advice-integrated-gr.json",
+  "old": "Si yo fuera tú, pediría ayuda porque el problema podría ser más serio de lo que parece.",
+  "new": "Si yo fuera tú, pediría ayuda porque el problema podría ser serio.",
+  "kind": "target",
+  "why": "lo que (neuter relative) is taught later (relativas-preposicion-el-que b1-20; speaking step reads this example)"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-04-05-advice-integrated-gr.json",
+  "old": "Tienes que actuar con precaución; de lo contrario, podrías asumir un riesgo innecesario.",
+  "new": "Tienes que actuar con precaución porque podrías correr un riesgo.",
+  "kind": "target",
+  "why": "de lo contrario, asumir and innecesario are in no list"
+ },
+ {
+  "file": "content/es-es/vocabulary/b1/b1-04-01-voc.json",
+  "old": "{\n      \"lemma\": \"contrato\",\n      \"translation\": \"contract\",\n      \"pos\": \"noun\"\n    }",
+  "new": "{\n      \"lemma\": \"contrato\",\n      \"translation\": \"contract\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"revisar\",\n      \"translation\": \"to check / review\",\n      \"pos\": \"verb\"\n    }",
+  "kind": "target",
+  "why": "revisar is in no list and is first used in this lesson (screen example, ex08)"
+ },
+ {
+  "file": "content/es-es/vocabulary/b1/b1-04-04-voc.json",
+  "old": "{\n      \"lemma\": \"reducir\",\n      \"translation\": \"to reduce\",\n      \"pos\": \"verb\"\n    }",
+  "new": "{\n      \"lemma\": \"reducir\",\n      \"translation\": \"to reduce\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"esfuerzo\",\n      \"translation\": \"effort\",\n      \"pos\": \"noun\"\n    }",
+  "kind": "target",
+  "why": "esfuerzo is in no list and is first used in this lesson (screen example, ex08); consolidation ex09 needs it"
+ },
+ {
+  "file": "content/es-es/vocabulary/b1/b1-04-05-voc.json",
+  "old": "{\n      \"lemma\": \"analizar\",\n      \"translation\": \"to analyze\",\n      \"pos\": \"verb\"\n    }",
+  "new": "{\n      \"lemma\": \"analizar\",\n      \"translation\": \"to analyze\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"cuervo\",\n      \"translation\": \"crow\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"zorro\",\n      \"translation\": \"fox\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"pico\",\n      \"translation\": \"beak\",\n      \"pos\": \"noun\"\n    }",
+  "kind": "target",
+  "why": "cuervo and zorro are in no list and are needed by the story and its questions"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-01-ex.json",
+  "id": "b1-04-01.ex02",
+  "set": {
+   "question": "Which sentence gives advice rather than a strict obligation?",
+   "options": [
+    "Deberías hablar con ella porque quizá no conoce el problema. [You should speak to her because she may not know the problem.]",
+    "Tienes que entregar el formulario hoy, antes de las cinco. [You have to hand in the form today, before five.]",
+    "Debes entregar el formulario antes de salir de la oficina. [You must hand in the form before leaving the office.]"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away 60 vs 44; Spanish gloss of the stem has unmet words"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-01-ex.json",
+  "id": "b1-04-01.ex03",
+  "set": {
+   "sentence": "Deberías __ con tu profesor antes de decidir.",
+   "english": "You should speak to your teacher before deciding.",
+   "category": "grammar",
+   "teaches": [
+    "deber-vs-tener-que"
+   ]
+  },
+  "kind": "target",
+  "why": "relative que + subjunctive (alguien que conozca) before b1-05-04; the blank is the infinitive after deberías, a form of deber-vs-tener-que (was vocabulary)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-01-ex.json",
+  "id": "b1-04-01.ex06",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "No sé qué hacer con este problema."
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    },
+    {
+     "speaker": "A",
+     "text": "Sí, es mejor pedir ayuda."
+    }
+   ],
+   "options": [
+    "Deberías hablar con un amigo de confianza. [You should talk to a friend you trust.]",
+    "Hablarás con un amigo de confianza. [You will talk to a friend you trust.]",
+    "Hablabas con un amigo de confianza. [You were talking to a friend you trust.]"
+   ],
+   "distractor_skills": {
+    "1": "futuro-simple",
+    "2": "imperfect"
+   }
+  },
+  "kind": "target",
+  "why": "quizá sea (b1-13) in the prompt; relative que + subjunctive; option 2 (tener que haber hablado) is a form no unit teaches"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-01-ex.json",
+  "id": "b1-04-01.ex07",
+  "set": {
+   "options": [
+    "You have to check the data. [Tienes que comprobar los datos.]",
+    "You should check the data. [Deberías comprobar los datos.]",
+    "You may check the data. [Puedes comprobar los datos.]"
+   ]
+  },
+  "kind": "target",
+  "why": "'Deberías haber comprobado' (reproach about the past) is B2 regrets-reproaches"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-01-ex.json",
+  "id": "b1-04-01.ex08",
+  "set": {
+   "hint": "review",
+   "answers": [
+    "revisar"
+   ],
+   "english": "You have to review the data before deciding."
+  },
+  "kind": "target",
+  "why": "answers-alternatives: 'check' fitted revisar and comprobar"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-01-ex.json",
+  "id": "b1-04-01.ex12",
+  "set": {
+   "options": [
+    "Tienes que revisar el contrato porque puede haber un problema. [You have to check the contract because there may be a problem.]",
+    "Revisabas el contrato porque podía haber un problema. [You were checking the contract because there could be a problem.]",
+    "Revisaste el contrato porque podía haber un problema. [You checked the contract because there could be a problem.]"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away 62 vs 47"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-01-ex.json",
+  "id": "b1-04-01.ex13",
+  "set": {
+   "question": "Which is the most direct instruction?",
+   "options": [
+    "Toma una precaución antes de salir. [Take a precaution before leaving.]",
+    "Deberías tomar una precaución antes de salir. [You should take a precaution before leaving.]",
+    "Sería mejor tomar una precaución antes de salir. [It would be better to take a precaution before leaving.]"
+   ]
+  },
+  "kind": "target",
+  "why": "prudente is listed only in b1-04-02; Spanish gloss of the stem (directa)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-02-ex.json",
+  "id": "b1-04-02.ex02",
+  "set": {
+   "question": "Which sentence gives advice by imagining yourself in the other person's place?"
+  },
+  "kind": "target",
+  "why": "Spanish gloss of the stem has unmet words (frase, hipotético)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-02-ex.json",
+  "id": "b1-04-02.ex06",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "Estoy pensando en aceptar el trabajo."
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    },
+    {
+     "speaker": "A",
+     "text": "¿Por qué lo leerías primero?"
+    }
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "futuro-simple"
+   }
+  },
+  "kind": "target",
+  "why": "the last line asked 'Why would you wait?' after an answer about reading the contract"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-02-ex.json",
+  "id": "b1-04-02.ex07",
+  "set": {
+   "options": [
+    "It would be advisable to wait. [Sería aconsejable esperar.]",
+    "You had to wait for them. [Tenías que esperarlos.]",
+    "You are waiting for them. [Los estás esperando.]"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away 30 vs 16"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-02-ex.json",
+  "id": "b1-04-02.ex10",
+  "set": {
+   "options": [
+    "If I were you, I would wait before deciding.",
+    "If I were you, I would decide immediately.",
+    "I waited before deciding."
+   ]
+  },
+  "kind": "target",
+  "why": "garbled English wrong option"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-02-ex.json",
+  "id": "b1-04-02.ex13",
+  "set": {
+   "question": "Which option sounds less direct?"
+  },
+  "kind": "target",
+  "why": "Spanish gloss of the stem unnecessary"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-02-ex.json",
+  "id": "b1-04-02.ex15",
+  "set": {
+   "template": [
+    {
+     "prompt": "Give hypothetical advice with «Si yo fuera tú».",
+     "answer": "Si yo fuera tú, esperaría antes de decidir."
+    },
+    {
+     "prompt": "Give a second recommendation using the conditional.",
+     "answer": "Buscaría una alternativa más segura."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "relative que + imperfect subjunctive (fuera)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-03-ex.json",
+  "id": "b1-04-03.ex02",
+  "set": {
+   "question": "Which verb form follows «Te recomiendo que...»?"
+  },
+  "kind": "target",
+  "why": "Spanish gloss of the stem has unmet words (forma, verbal)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-03-ex.json",
+  "id": "b1-04-03.ex03",
+  "set": {
+   "sentence": "Te recomiendo que __ con tu profesor.",
+   "english": "I recommend that you speak to your teacher."
+  },
+  "kind": "target",
+  "why": "relative que + subjunctive before b1-05-04"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-03-ex.json",
+  "id": "b1-04-03.ex07",
+  "set": {
+   "question": "Which means «recommendation»?"
+  },
+  "kind": "target",
+  "why": "Spanish gloss of the stem has unmet word (significa)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-03-ex.json",
+  "id": "b1-04-03.ex10",
+  "set": {
+   "sentence": "Te recomiendo que no tomes una decisión cuando estés enfadado.",
+   "options": [
+    "I recommend that you do not make a decision when you are angry.",
+    "I recommended that you made a decision when you were angry.",
+    "You should make the decision immediately."
+   ]
+  },
+  "kind": "target",
+  "why": "mientras + subjunctive; sentence changed to match the screen"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-03-ex.json",
+  "id": "b1-04-03.ex11",
+  "set": {
+   "sentence": "Te recomiendo que hables con tu profesor.",
+   "english": "I recommend that you talk to your teacher."
+  },
+  "kind": "target",
+  "why": "relative que + subjunctive before b1-05-04"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-03-ex.json",
+  "id": "b1-04-03.ex15",
+  "set": {
+   "template": [
+    {
+     "prompt": "Recommend that someone do something.",
+     "answer": "Te recomiendo que hables con un experto."
+    },
+    {
+     "prompt": "Give a reason for the recommendation.",
+     "answer": "Es mejor que hables con él antes de decidir."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "relative que + subjunctive before b1-05-04"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-03-ex.json",
+  "id": "b1-04-03.ex16",
+  "set": {
+   "template": [
+    {
+     "prompt": "Use «evitar» with the subjunctive.",
+     "answer": "Te aconsejo que evites tomar una decisión muy rápido."
+    },
+    {
+     "prompt": "Give a recommendation involving alternatives.",
+     "answer": "Les recomiendo que comparen las alternativas antes de elegir."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "demasiado is in a later list"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-04-ex.json",
+  "id": "b1-04-04.ex06",
+  "set": {
+   "options": [
+    "Te recomiendo que compares las alternativas antes de elegir. [I recommend that you compare the alternatives before choosing.]",
+    "Te recomiendo que comparas las alternativas antes de elegir. [I recommend that you compare the alternatives before choosing.]",
+    "Te recomiendo que compararás las alternativas antes de elegir. [I recommend that you will compare the alternatives before choosing.]"
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "futuro-simple"
+   }
+  },
+  "kind": "target",
+  "why": "option 3 had two faults (no que + future)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-04-ex.json",
+  "id": "b1-04-04.ex12",
+  "set": {
+   "options": [
+    "No. Conviene comparar las alternativas, ya que la decisión tendrá consecuencias importantes. [No. It is advisable to compare the alternatives, since the decision will have important consequences.]",
+    "No. Conviene comparar las alternativas, ya que la decisión tuvo consecuencias importantes. [No. It is advisable to compare the alternatives, since the decision had important consequences.]",
+    "No. Conviene comparar las alternativas, para que la decisión tendrá consecuencias importantes. [No. It is advisable to compare the alternatives, so that the decision will have important consequences.]"
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "futuro-simple"
+   }
+  },
+  "kind": "target",
+  "why": "option 2 was wrong by meaning only (a pesar de que + future is grammatical)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-04-ex.json",
+  "id": "b1-04-04.ex13",
+  "set": {
+   "question": "Choose the sentence with purpose."
+  },
+  "kind": "target",
+  "why": "Spanish gloss of the stem has unmet words (frase, finalidad)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-04-ex.json",
+  "id": "b1-04-04.ex14",
+  "set": {
+   "sentence": "Conviene elegir una __ con menos consecuencias negativas.",
+   "english": "It is advisable to choose an alternative with fewer negative consequences."
+  },
+  "kind": "target",
+  "why": "relative que + subjunctive before b1-05-04"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-04-ex.json",
+  "id": "b1-04-04.ex16",
+  "set": {
+   "template": [
+    {
+     "prompt": "Use «resolver» in advice about a problem.",
+     "answer": "Deberías buscar una solución para resolver el problema."
+    },
+    {
+     "prompt": "Use «consecuencia» to explain why the advice matters.",
+     "answer": "La decisión tendrá consecuencias importantes, así que conviene pensar antes de actuar."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "relative que + subjunctive before b1-05-04"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex02",
+  "set": {
+   "question": "Which sentence combines hypothetical advice with a consequence?",
+   "options": [
+    "Si yo fuera tú, pediría ayuda porque el problema podría ser serio. [If I were you, I would ask for help because the problem could be serious.]",
+    "Tienes que pedir ayuda ahora mismo para resolver el problema. [You have to ask for help right now to solve the problem.]",
+    "Si yo fuera tú, pediría ayuda inmediatamente a un compañero. [If I were you, I would ask a colleague for help immediately.]"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away 87 vs 61; Spanish gloss of the stem has unmet words"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex03",
+  "set": {
+   "sentence": "Si sigues este consejo, __ el riesgo de tener problemas.",
+   "english": "If you follow this advice, you will reduce the risk of having problems."
+  },
+  "kind": "target",
+  "why": "cometer and error are in no list"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex07",
+  "set": {
+   "options": [
+    "to put a solution into practice [poner una solución en práctica]",
+    "to look for a different solution [buscar una solución diferente]",
+    "to explain a solution to someone [explicar una solución a alguien]"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away 31 vs 21"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex09",
+  "set": {
+   "question": "What did the fox want from the crow? [¿Qué quería el zorro del cuervo?]"
+  },
+  "kind": "target",
+  "why": "reading questions rewritten for the new story"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex10",
+  "set": {
+   "question": "Why did the crow open its beak? [¿Por qué abrió el pico el cuervo?]",
+   "options": [
+    "Because it wanted to sing after the fox praised it. [Porque el zorro lo alabó y quería cantar.]",
+    "Because it wanted to give the cheese to the fox. [Porque quería darle el queso al zorro.]",
+    "Because it was following a recommendation from a friend. [Porque seguía la recomendación de un amigo.]"
+   ]
+  },
+  "kind": "target",
+  "why": "imperfect subjunctive (alabara) in the gloss; rewritten for the new story"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex11",
+  "set": {
+   "question": "What does the fox tell the crow before he leaves? [¿Qué le dice el zorro al cuervo antes de irse?]",
+   "options": [
+    "That he should be careful if someone praises him. [Que debería tener cuidado si alguien lo alaba.]",
+    "That he should sing more often in the forest. [Que debería cantar más veces en el bosque.]",
+    "That he should buy more cheese at the farm. [Que debería comprar más queso en la granja.]"
+   ]
+  },
+  "kind": "target",
+  "why": "the crow understands nothing in the new story; asks what the fox says at the end"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex12",
+  "set": {
+   "question": "What does the fox recommend that the crow do? [¿Qué le recomienda el zorro al cuervo?]",
+   "options": [
+    "To sing. [Que cante.]",
+    "To fly away. [Que se vaya volando.]",
+    "To come down from the tree. [Que baje del árbol.]"
+   ]
+  },
+  "kind": "target",
+  "why": "the crow gives no advice in the story; asks what the fox recommends"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex13",
+  "set": {
+   "sentence": "Tienes que actuar con precaución porque podrías correr un riesgo.",
+   "options": [
+    "You have to act cautiously because you could run a risk.",
+    "You should act quickly because the risk has disappeared.",
+    "You acted cautiously because there was a risk."
+   ]
+  },
+  "kind": "target",
+  "why": "asumir and innecesario in no list; sentence matches the screen"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "¿Qué me aconsejas si el plan no sale bien?"
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    },
+    {
+     "speaker": "A",
+     "text": "¿Y qué harías después?"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "fuera (hypothetical si-clause) in the question; imperfect subjunctive forms come later"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex16",
+  "set": {
+   "question": "Which sentence gives a recommendation and its purpose?",
+   "options": [
+    "Te recomiendo que revises el plan para que puedas evitar un riesgo. [I recommend that you review the plan so that you can avoid a risk.]",
+    "Revisa el plan esta tarde en la oficina con tus compañeros. [Review the plan this afternoon in the office with your colleagues.]",
+    "Tienes que revisar el plan con el equipo durante la reunión de esta tarde. [You have to review the plan with the team during this afternoon's meeting.]"
+   ]
+  },
+  "kind": "target",
+  "why": "Spanish gloss of the stem; innecesario unmet"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex17",
+  "set": {
+   "sentence": "El __ de aplicar el plan sin pensar puede ser un problema mayor.",
+   "english": "The result of putting the plan into practice without thinking could be a bigger problem."
+  },
+  "kind": "target",
+  "why": "revisarlo (clitic form) and demasiado context"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex18",
+  "set": {
+   "template": [
+    {
+     "prompt": "Give hypothetical advice and explain a risk.",
+     "answer": "Si yo fuera tú, esperaría porque el riesgo podría ser muy alto."
+    },
+    {
+     "prompt": "Recommend an action with the subjunctive.",
+     "answer": "Te recomiendo que revises el plan antes de aplicarlo."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "demasiado is in a later list"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-05-ex.json",
+  "id": "b1-04-05.ex19",
+  "set": {
+   "template": [
+    {
+     "prompt": "Give an obligation and a purpose.",
+     "answer": "Tienes que actuar con precaución para que el resultado sea más seguro."
+    },
+    {
+     "prompt": "Finish with a consequence.",
+     "answer": "Si sigues el consejo, reducirás el riesgo de tener el mismo problema."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "cometer and error are in no list"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-consolidation-ex.json",
+  "id": "b1-04-consolidation.ex02",
+  "set": {
+   "question": "Which is the most direct form of advice?"
+  },
+  "kind": "target",
+  "why": "Spanish gloss of the stem has unmet words"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-consolidation-ex.json",
+  "id": "b1-04-consolidation.ex07",
+  "set": {
+   "question": "Which sentence expresses obligation?"
+  },
+  "kind": "target",
+  "why": "Spanish gloss of the stem has unmet words"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-consolidation-ex.json",
+  "id": "b1-04-consolidation.ex10",
+  "set": {
+   "question": "What does «convendría» express?",
+   "options": [
+    "It would be advisable. [Sería aconsejable.]",
+    "You have to do it now. [Tienes que hacerlo ahora.]",
+    "You are going to do it. [Vas a hacerlo.]"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away 22 vs 16; 'Deberías haber' is a B2 form; Spanish gloss of the stem"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-consolidation-ex.json",
+  "id": "b1-04-consolidation.ex11",
+  "set": {
+   "options": [
+    "I recommend that you review the plan before putting it into practice.",
+    "I recommended that you reviewed the plan before putting it into practice.",
+    "You have to put the plan into practice before reviewing it."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away 69 vs 51; 'yesterday' appeared only in a wrong option"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-consolidation-ex.json",
+  "id": "b1-04-consolidation.ex12",
+  "set": {
+   "sentence": "Tienes que actuar con precaución porque podrías correr un riesgo.",
+   "english": "You have to act cautiously because you could run a risk."
+  },
+  "kind": "target",
+  "why": "asumir and innecesario in no list"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-consolidation-ex.json",
+  "id": "b1-04-consolidation.ex14",
+  "set": {
+   "question": "Choose the correct subjunctive form."
+  },
+  "kind": "target",
+  "why": "Spanish gloss of the stem has an unmet word (subjuntivo)"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-consolidation-ex.json",
+  "id": "b1-04-consolidation.ex15",
+  "set": {
+   "answers": [
+    "precaución"
+   ]
+  },
+  "kind": "target",
+  "why": "answers-alternatives: 'caution' fits precaución only"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-04-consolidation-ex.json",
+  "id": "b1-04-consolidation.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Give hypothetical advice about a difficult decision.",
+     "answer": "Si yo fuera tú, esperaría antes de tomar una decisión."
+    },
+    {
+     "prompt": "Explain the likely consequence.",
+     "answer": "Así reducirías el riesgo de tener un problema."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "cometer and error are in no list"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-04.json",
+  "old": "En lo más alto de una rama venerable de un frondoso roble centenario, en el límite entre el prado y el bosque, descansaba satisfecho un cuervo de plumaje negro y reluciente. Sostenía firmemente apretado en su pico un apetitoso y oloroso trozo de queso curado que acababa de hurtar con gran destreza de la ventana de una granja cercana. Orgulloso de su botín y considerándose el ave más afortunada de la comarca, el cuervo miraba a su alrededor con aire de superioridad, disponiéndose a disfrutar de su delicioso bocado en completa tranquilidad sin temer a ningún rival de las alturas.",
+  "new": "Un cuervo estaba en la rama de un árbol grande, cerca del bosque. Tenía en el pico un trozo de queso que había sacado de la ventana de una granja. El cuervo estaba muy contento y orgulloso, porque nadie tenía un queso tan bueno en todo el bosque. Pensaba comerlo con tranquilidad. Nadie iba a quitárselo, o eso creía él.",
+  "kind": "target",
+  "why": "story rewritten at B1 in the reader's own plain words (no half-quote of Samaniego's verse), same four paragraphs and events; unit grammar shown (si yo fuera usted, le recomiendo que, para que, debería)"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-04.json",
+  "old": "Sin embargo, atraído por el penetrante y exquisito aroma del queso que el viento esparcía entre los matorrales, un zorro astuto y hambriento apareció rondando sigilosamente por la hierba fresca. Al divisar al pájaro en la cima del árbol, el cuadrúpedo calculó al instante la distancia y comprendió que sus patas jamás alcanzarían aquella altura y que cualquier intento de trepar ahuyentaría al ave al primer aleteo. Sabedor de que la fuerza física resultaba inútil frente a los obstáculos insalvables, decidió poner en práctica el arte de la persuasión, convencido de que la vanidad ajena es siempre el punto más vulnerable de cualquier criatura.",
+  "new": "Un zorro hambriento pasó por allí y olió el queso. Le gustaba mucho ese olor y tenía mucha hambre. Miró hacia arriba y vio al cuervo. El zorro no podía subir al árbol, así que decidió usar otro plan: iba a hablar con el cuervo y a alabarlo para conseguir el queso.",
+  "kind": "target",
+  "why": "story rewritten at B1 in the reader's own plain words (no half-quote of Samaniego's verse), same four paragraphs and events; unit grammar shown (si yo fuera usted, le recomiendo que, para que, debería)"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-04.json",
+  "old": "Con una reverencia exquisita y modulando su voz con el tono más suave y meloso, el zorro alzó los ojos hacia la copa del árbol y comenzó su discurso: —¡Tenga usted muy buenos días, excelentísimo señor cuervo! Qué brillo tan deslumbrante y regio tienen sus plumas de terciopelo negro y qué porte tan majestuoso exhibe su elegante silueta recortada contra el cielo azul. Si su melodioso canto iguala tan solo una fracción de la belleza incomparable de sus alas y de su mirada penetrante, no cabe duda alguna en el reino animal de que usted debiera ser coronado por aclamación unánime como el rey supremo de todas las aves del bosque.",
+  "new": "—Buenos días, señor cuervo —dijo el zorro con una sonrisa—. ¡Qué elegante es usted! Nunca he visto un pájaro tan hermoso en este bosque. Todos dicen que su voz también es muy especial. Si yo fuera usted, cantaría ahora mismo. Le recomiendo que cante para que yo pueda oírlo.",
+  "kind": "target",
+  "why": "story rewritten at B1 in the reader's own plain words (no half-quote of Samaniego's verse), same four paragraphs and events; unit grammar shown (si yo fuera usted, le recomiendo que, para que, debería)"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-04.json",
+  "old": "El cuervo, completamente embriagado por semejante catarata de elogios desmedidos y deseoso de demostrarle a su admirador que su voz era tan dulce y prodigiosa como su estampa, no pudo resistir la tentación del aplauso. Estiró el cuello hacia arriba con desmedida vanidad, abrió de par en par el pico y soltó con todas sus fuerzas un graznido áspero, gutural y desafinado. En ese mismo instante, el codiciado trozo de queso se desprendió de sus fauces y cayó a plomo por el aire, siendo atrapado limpiamente al vuelo por las mandíbulas del zorro. Mientras saboreaba el botín con una sonrisa burlona, el zorro se despidió con una valiosa lección: —Sabed, señor vanidoso, que los aduladores viven siempre a expensas de quienes se dejan engañar por sus lisonjas interesadas.",
+  "new": "El cuervo escuchó esas palabras y se sintió el pájaro más importante del bosque. Quería demostrar que tenía una voz bonita, y abrió el pico para cantar. En ese momento el queso cayó al suelo. El zorro lo tomó y se lo comió. Antes de irse, le dijo al cuervo: —Debería pensar más, señor cuervo. Tenga cuidado si alguien lo alaba demasiado: casi siempre quiere algo.",
+  "kind": "target",
+  "why": "story rewritten at B1 in the reader's own plain words (no half-quote of Samaniego's verse), same four paragraphs and events; unit grammar shown (si yo fuera usted, le recomiendo que, para que, debería)"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-04.json",
+  "old": "[\n        {\n          \"question\": \"¿Cuál es la estratagema que idea el zorro para conseguir el queso del cuervo?\",\n          \"options\": [\n            \"Lanza piedras a las ramas para asustar al pájaro y obligarlo a huir.\",\n            \"Apela a la adulación exagerada para despertar la vanidad del cuervo y hacer que cante.\",\n            \"Le ofrece a cambio un racimo de uvas maduras recién recogidas del viñedo.\",\n            \"Trepó sigilosamente por el tronco mientras el cuervo dormía la siesta.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"El zorro sabe que no puede alcanzar el queso por la fuerza, así que adula al cuervo para que abra el pico al intentar cantar.\"\n        },\n        {\n          \"question\": \"¿Qué error garrafal comete el cuervo al escuchar los elogios del visitante?\",\n          \"options\": [\n            \"Arroja el queso deliberadamente creyendo que era un objeto de poco valor.\",\n            \"Abre el pico para cantar queriendo demostrar que su voz es tan hermosa como sus plumas.\",\n            \"Baja a la hierba para compartir su comida con el zorro en señal de amistad.\",\n            \"Se asusta con el sonido del viento y se refugia en el nido de otra ave.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"Cegado por la vanidad, el cuervo abre el pico para exhibir su canto, dejando caer el queso al instante.\"\n        },\n        {\n          \"question\": \"¿Qué valiosa moraleja transmite la fábula tradicional sobre la naturaleza humana?\",\n          \"options\": [\n            \"Que es prudente evitar los bosques densos durante las primeras horas de la mañana.\",\n            \"Que quien se deja seducir por los halagos interesados suele pagar un alto precio por su vanidad.\",\n            \"Que la fuerza muscular siempre resulta superior a la inteligencia en cualquier conflicto.\",\n            \"Que los animales carnívoros no deben alimentarse de productos lácteos.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"La moraleja clásica advierte contra los aduladores, quienes alaban con falsedad para obtener un beneficio a costa de los vanidosos.\"\n        }\n      ]",
+  "new": "[\n        {\n          \"question\": \"¿Qué quiere el zorro del cuervo?\",\n          \"options\": [\n            \"El queso que tiene en el pico.\",\n            \"Un sitio en el árbol.\",\n            \"La ventana de la granja.\",\n            \"Las plumas del cuervo.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"El zorro huele el queso y quiere conseguirlo.\"\n        },\n        {\n          \"question\": \"¿Qué le recomienda el zorro al cuervo?\",\n          \"options\": [\n            \"Que cante.\",\n            \"Que baje del árbol.\",\n            \"Que se vaya volando.\",\n            \"Que coma más queso.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"El zorro dice: «Le recomiendo que cante».\"\n        },\n        {\n          \"question\": \"¿Qué pasa cuando el cuervo abre el pico?\",\n          \"options\": [\n            \"El queso cae al suelo y el zorro se lo come.\",\n            \"El zorro sube al árbol.\",\n            \"El cuervo se va de la granja.\",\n            \"El zorro canta con el cuervo.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Al abrir el pico para cantar, el cuervo deja caer el queso.\"\n        }\n      ]",
+  "kind": "target",
+  "why": "comprehension questions ask what the people do, true to the new text"
+ }
+]

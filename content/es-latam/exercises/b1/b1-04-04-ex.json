@@ -127,12 +127,16 @@
       "options": [
         "Te recomiendo que compares las alternativas antes de elegir. [I recommend that you compare the alternatives before choosing.]",
         "Te recomiendo que comparas las alternativas antes de elegir. [I recommend that you compare the alternatives before choosing.]",
-        "Te recomiendo compararás las alternativas antes de elegir. [I recommend that you will compare the alternatives before choosing.]"
+        "Te recomiendo que compararás las alternativas antes de elegir. [I recommend that you will compare the alternatives before choosing.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-influence"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-04-04.ex07",
@@ -239,7 +243,7 @@
       ],
       "options": [
         "No. Conviene comparar las alternativas, ya que la decisión tendrá consecuencias importantes. [No. It is advisable to compare the alternatives, since the decision will have important consequences.]",
-        "No. Conviene comparar las alternativas, a pesar de que la decisión tendrá consecuencias importantes. [No. It is advisable to compare the alternatives, even though the decision will have important consequences.]",
+        "No. Conviene comparar las alternativas, ya que la decisión tuvo consecuencias importantes. [No. It is advisable to compare the alternatives, since the decision had important consequences.]",
         "No. Conviene comparar las alternativas, para que la decisión tendrá consecuencias importantes. [No. It is advisable to compare the alternatives, so that the decision will have important consequences.]"
       ],
       "correct": 0,
@@ -247,14 +251,15 @@
         "porque-y-por-eso"
       ],
       "distractor_skills": {
-        "1": "concesivas-aunque"
+        "1": "preterito-indefinido",
+        "2": "futuro-simple"
       }
     },
     {
       "id": "b1-04-04.ex13",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Choose the sentence with purpose. [Elige la frase que expresa finalidad.]",
+      "question": "Choose the sentence with purpose.",
       "options": [
         "Te recomiendo que actúes pronto para que no pierdas la oportunidad. [I recommend that you act soon so that you do not miss the opportunity.]",
         "Te recomiendo que actúes pronto porque tienes tiempo. [I recommend that you act soon because you have time.]",
@@ -272,13 +277,13 @@
       "id": "b1-04-04.ex14",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Conviene elegir una __ que tenga menos consecuencias negativas.",
+      "sentence": "Conviene elegir una __ con menos consecuencias negativas.",
       "hint": "alternative",
       "answer": "alternativa",
       "teaches": [
         "b1-giving-advice-vocab"
       ],
-      "english": "It is advisable to choose an alternative that has fewer negative consequences."
+      "english": "It is advisable to choose an alternative with fewer negative consequences."
     },
     {
       "id": "b1-04-04.ex15",
@@ -305,7 +310,7 @@
       "template": [
         {
           "prompt": "Use «resolver» in advice about a problem.",
-          "answer": "Deberías buscar una solución que te ayude a resolver el problema."
+          "answer": "Deberías buscar una solución para resolver el problema."
         },
         {
           "prompt": "Use «consecuencia» to explain why the advice matters.",

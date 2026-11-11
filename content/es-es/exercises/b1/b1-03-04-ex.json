@@ -27,31 +27,32 @@
       "id": "b1-03-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál presenta una intención ya conectada con el presente?",
+      "question": "Which sentence shows an intention that is already linked to the present?",
       "options": [
-        "Voy a reservar el vuelo esta tarde porque ya he elegido las fechas.",
-        "Creo que el vuelo será más caro en verano.",
-        "Quizá el vuelo salga tarde."
+        "Voy a reservar el vuelo porque ya he elegido las fechas.",
+        "Creo que el vuelo será más caro porque hay mucha gente.",
+        "Ojalá el vuelo salga a su hora, porque es muy temprano."
       ],
       "correct": 0,
       "teaches": [
         "ir-infinitive"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "subjuntivo-deseos"
       }
     },
     {
       "id": "b1-03-04.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Esta tarde __ reservar el hotel porque ya he comparado varias opciones.",
+      "sentence": "Esta tarde __ reservar el hotel porque ya he mirado las opciones.",
       "hint": "ir",
       "answer": "voy a",
       "teaches": [
         "ir-infinitive"
       ],
-      "english": "This afternoon I am going to book the hotel because I have already compared several options."
+      "english": "This afternoon I am going to book the hotel because I have already looked at the options."
     },
     {
       "id": "b1-03-04.ex04",
@@ -146,13 +147,16 @@
       ],
       "options": [
         "Voy a cambiar las fechas porque dependen de mi trabajo.",
-        "Voy a cambiar las fechas porque dependen en mi trabajo.",
+        "Voy a cambiado las fechas porque dependen de mi trabajo.",
         "Voy cambiar las fechas porque dependen de mi trabajo."
       ],
       "correct": 0,
       "teaches": [
         "ir-infinitive"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-participles"
+      }
     },
     {
       "id": "b1-03-04.ex07",
@@ -174,13 +178,13 @@
       "id": "b1-03-04.ex08",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El resultado __ del tiempo que tengamos.",
+      "sentence": "El resultado __ del precio.",
       "hint": "depender",
       "answer": "dependerá",
       "teaches": [
         "futuro-simple"
       ],
-      "english": "The result will depend on how much time we have."
+      "english": "The result will depend on the price."
     },
     {
       "id": "b1-03-04.ex09",
@@ -196,7 +200,7 @@
         "el",
         "vuelo",
         "es",
-        "demasiado",
+        "muy",
         "caro."
       ],
       "solution": [
@@ -209,7 +213,7 @@
         "el",
         "vuelo",
         "es",
-        "demasiado",
+        "muy",
         "caro."
       ],
       "english": "Build a changed plan with a reason.",
@@ -236,11 +240,11 @@
       "id": "b1-03-04.ex11",
       "type": "dictation",
       "category": "listening",
-      "sentence": "El resultado dependerá del tiempo que tengamos.",
+      "sentence": "El resultado dependerá del precio.",
       "teaches": [
         "b1-plans-ambitions-vocab"
       ],
-      "english": "The result will depend on how much time we have."
+      "english": "The result will depend on the price."
     },
     {
       "id": "b1-03-04.ex12",
@@ -263,7 +267,7 @@
       "options": [
         "Sí, voy a salir el viernes, aunque el plan dependerá del tiempo.",
         "Sí, creo que saldré el viernes, pero todavía no he decidido nada.",
-        "Sí, salía el viernes aunque el horario cambiará."
+        "Sí, salía el viernes, aunque el plan dependerá del tiempo."
       ],
       "correct": 0,
       "teaches": [
@@ -278,18 +282,18 @@
       "id": "b1-03-04.ex13",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué opción combina correctamente plan y predicción?",
+      "question": "Which sentence correctly combines a plan and a prediction?",
       "options": [
-        "Voy a reservar hoy porque creo que el precio subirá mañana.",
-        "Reservaré hoy porque ya he reservado ayer.",
-        "Voy a reservar ayer porque el precio subirá mañana."
+        "Voy a reservar hoy porque creo que el precio será más caro mañana.",
+        "Voy a reservar hoy porque creo que el precio sea más caro mañana.",
+        "Voy reservar hoy porque creo que el precio será más caro mañana."
       ],
       "correct": 0,
       "teaches": [
         "ir-infinitive"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "subjuntivo-deseos"
       }
     },
     {
@@ -327,7 +331,7 @@
         },
         {
           "prompt": "Add a prediction with the future.",
-          "answer": "Creo que el viaje será cómodo porque el tren es moderno."
+          "answer": "Creo que el viaje será cómodo porque el tren es rápido."
         }
       ],
       "teaches": [
@@ -341,11 +345,11 @@
       "template": [
         {
           "prompt": "Use «decisión».",
-          "answer": "Mi decisión es cambiar el destino porque el vuelo es demasiado caro."
+          "answer": "Mi decisión es cambiar el destino porque el vuelo es muy caro."
         },
         {
           "prompt": "Use «depender de» in a future prediction.",
-          "answer": "La fecha dependerá de cuándo podamos conseguir los billetes."
+          "answer": "El viaje dependerá del precio de los billetes."
         }
       ],
       "teaches": [

@@ -27,11 +27,11 @@
       "id": "b1-05-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence connects a past change with the present? [¿Cuál conecta un cambio pasado con el presente?]",
+      "question": "Which sentence connects a past change with the present?",
       "options": [
         "Hemos cambiado mucho desde que terminamos la universidad. [We have changed a lot since we finished university.]",
-        "Cambiábamos mucho cuando éramos niños. [We used to change a lot when we were children.]",
-        "Cambiaremos mucho el año próximo. [We will change a lot next year.]"
+        "Cambiábamos mucho cuando éramos niños y estudiábamos. [We used to change a lot when we were children and studied.]",
+        "Cambiaremos mucho cuando terminemos la universidad. [We will change a lot when we finish university.]"
       ],
       "correct": 0,
       "teaches": [
@@ -110,7 +110,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Cómo está la relación entre ustedes ahora?"
+          "text": "¿Cómo está la relación entre vosotros ahora?"
         },
         {
           "speaker": "B",
@@ -118,24 +118,28 @@
         },
         {
           "speaker": "A",
-          "text": "Entonces parece que están más unidos."
+          "text": "Entonces estáis más unidos."
         }
       ],
       "options": [
         "Nos hemos acercado porque hemos aprendido a escucharnos. [We have become closer because we have learned to listen to each other.]",
-        "Nos acercábamos porque aprenderemos a escucharnos. [We were becoming closer because we will learn to listen to each other.]",
-        "Nos acercábamos ahora porque hemos aprendido a escucharnos. [We were becoming closer now because we have learned to listen to each other.]"
+        "Nos acercábamos porque hemos aprendido a escucharnos. [We were becoming closer because we have learned to listen to each other.]",
+        "Nos acercaremos porque hemos aprendido a escucharnos. [We will become closer because we have learned to listen to each other.]"
       ],
       "correct": 0,
       "teaches": [
         "preterito-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-05-03.ex07",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does «nos hemos distanciado» mean? [¿Qué significa «nos hemos distanciado»?]",
+      "question": "What does «nos hemos distanciado» mean?",
       "options": [
         "We have grown apart. [Nos hemos hecho más distantes.]",
         "We used to meet. [Solíamos reunirnos.]",
@@ -229,7 +233,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué ha pasado entre ustedes?"
+          "text": "¿Qué ha pasado entre vosotros?"
         },
         {
           "speaker": "B",
@@ -237,12 +241,12 @@
         },
         {
           "speaker": "A",
-          "text": "¿Y ahora se entienden mejor?"
+          "text": "¿Y ahora os entendéis mejor?"
         }
       ],
       "options": [
         "Nos hemos distanciado un poco, aunque seguimos confiando el uno en el otro. [We have grown somewhat distant, although we still trust each other.]",
-        "Nos distanciábamos antes, aunque seguiremos confiando el uno en el otro. [We were growing apart before, although we will continue trusting each other.]",
+        "Nos distanciábamos un poco, aunque seguimos confiando el uno en el otro. [We were growing somewhat distant, although we still trust each other.]",
         "Nos distanciaremos un poco, aunque seguimos confiando el uno en el otro. [We will grow somewhat distant, although we still trust each other.]"
       ],
       "correct": 0,
@@ -250,6 +254,7 @@
         "preterito-perfecto"
       ],
       "distractor_skills": {
+        "1": "imperfect",
         "2": "futuro-simple"
       }
     },
@@ -257,7 +262,7 @@
       "id": "b1-05-03.ex13",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which time expression commonly works with the present perfect to describe recent change? [¿Cuál encaja con el pretérito perfecto para un cambio reciente?]",
+      "question": "Which time expression commonly works with the present perfect to describe recent change?",
       "options": [
         "Últimamente [Lately]",
         "Cada domingo cuando era niño [Every Sunday when I was a child]",
@@ -320,7 +325,7 @@
       "id": "b1-05-03.ex17",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Choose the sentence that describes a change relevant now. [Elige la frase que describe un cambio relevante ahora.]",
+      "question": "Choose the sentence that describes a change relevant now.",
       "options": [
         "Nuestra relación ha mejorado desde que hablamos más. [Our relationship has improved since we started talking more.]",
         "Nuestra relación mejoraba todos los domingos. [Our relationship used to improve every Sunday.]",

@@ -27,16 +27,20 @@
       "id": "b1-05-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence combines a past habit with a present change? [¿Cuál combina un hábito pasado con un cambio actual?]",
+      "question": "Which sentence combines a past habit with a present change?",
       "options": [
         "Aunque antes discutíamos mucho, últimamente nos hemos acercado. [Although we used to argue a lot, lately we have become closer.]",
-        "Aunque antes discutimos mucho, en el futuro nos acercaremos. [Although we argued a lot before, in the future we will get closer.]",
-        "Aunque antes discutíamos mucho, ahora discutiremos más. [Although we used to argue a lot, now we will argue more.]"
+        "Aunque antes discutíamos mucho, en el futuro nos acercaremos. [Although we used to argue a lot, in the future we will get closer.]",
+        "Aunque antes discutimos mucho, últimamente nos hemos acercado. [Although we argued a lot before, lately we have become closer.]"
       ],
       "correct": 0,
       "teaches": [
         "imperfect-vs-present-perfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-05-05.ex03",
@@ -112,20 +116,21 @@
         },
         {
           "speaker": "A",
-          "text": "Fue una buena idea hablar con calma."
+          "text": "Fue una buena idea hablar así."
         }
       ],
       "options": [
-        "Nos escuchamos con calma y nos reconciliamos. [We listened to each other calmly and made up.]",
-        "Nos escucharemos con calma y nos reconciliaremos pronto. [We will listen to each other calmly and make up soon.]",
-        "Nos reconciliamos antes del desacuerdo. [We made up before the disagreement.]"
+        "Nos escuchamos con atención y nos reconciliamos. [We listened to each other carefully and made up.]",
+        "Nos escucharemos con atención y nos reconciliaremos pronto. [We will listen to each other carefully and make up soon.]",
+        "Nos escuchábamos con atención y nos reconciliábamos. [We used to listen to each other carefully and make up.]"
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "futuro-simple",
+        "2": "imperfect"
       }
     },
     {
@@ -135,8 +140,8 @@
       "question": "What is a «desacuerdo»? [¿Qué es un «desacuerdo»?]",
       "options": [
         "a disagreement [una diferencia de opinión]",
-        "a meeting [una reunión]",
-        "a habit [un hábito]"
+        "a long meeting [una reunión larga]",
+        "a good habit [un buen hábito]"
       ],
       "correct": 0,
       "teaches": [
@@ -147,11 +152,10 @@
       "id": "b1-05-05.ex08",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La persona con la __ tuve el desacuerdo ha cambiado.",
+      "sentence": "La persona con __ tuve el desacuerdo ha cambiado.",
       "hint": "whom",
       "answers": [
-        "que",
-        "cual"
+        "quien"
       ],
       "teaches": [
         "relative-clauses"
@@ -162,11 +166,11 @@
       "id": "b1-05-05.ex09",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Why did Meg and Jo sometimes argue? [¿Por qué discutían a veces Meg y Jo?]",
+      "question": "How many sisters lived in the March house? [¿Cuántas hermanas vivían en casa de las March?]",
       "options": [
-        "They had different personalities and sometimes disagreed. [Tenían personalidades diferentes y a veces no estaban de acuerdo.]",
-        "They did not care about each other. [No les importaba la otra.]",
-        "They wanted to leave their family. [Querían dejar a su familia.]"
+        "Four. [Cuatro.]",
+        "Two. [Dos.]",
+        "Three. [Tres.]"
       ],
       "correct": 0
     },
@@ -174,11 +178,11 @@
       "id": "b1-05-05.ex10",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "What did the sisters usually do when one had a problem? [¿Qué solían hacer cuando una tenía un problema?]",
+      "question": "What did the sisters usually do when they were little? [¿Qué solían hacer las hermanas de pequeñas?]",
       "options": [
-        "They supported her and trusted her. [La apoyaban y confiaban en ella.]",
-        "They ignored her. [La ignoraban.]",
-        "They left the house. [Salían de casa.]"
+        "They got together with their mother in the afternoon. [Se reunían con su madre por las tardes.]",
+        "They went to work together every day in town. [Iban juntas al trabajo todos los días en la ciudad.]",
+        "They stayed in different houses in different towns. [Se quedaban en casas diferentes en otros pueblos.]"
       ],
       "correct": 0
     },
@@ -186,11 +190,11 @@
       "id": "b1-05-05.ex11",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "What had changed between Jo and Meg over the years? [¿Qué había cambiado entre Jo y Meg con los años?]",
+      "question": "What did the mother advise Jo and Meg to do? [¿Qué les aconsejó la madre a Jo y a Meg?]",
       "options": [
-        "They understood each other better. [Se entendían mejor.]",
-        "They had stopped being sisters. [Habían dejado de ser hermanas.]",
-        "They had never spoken again. [No habían vuelto a hablar.]"
+        "To talk calmly. [Hablar con calma.]",
+        "To stop seeing each other. [Dejar de verse.]",
+        "To ask their sister Amy. [Preguntarle a su hermana Amy.]"
       ],
       "correct": 0
     },
@@ -213,8 +217,8 @@
       "sentence": "Aunque antes discutíamos mucho, últimamente nos hemos acercado.",
       "options": [
         "Although we used to argue a lot, lately we have become closer.",
-        "Although we argued once, we will become distant tomorrow.",
-        "Although we have become closer, we used to argue tomorrow."
+        "Although we used to argue a lot, lately we have become more distant.",
+        "Although we argue a lot now, we used to be closer."
       ],
       "correct": 0,
       "teaches": [
@@ -225,11 +229,11 @@
       "id": "b1-05-05.ex14",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Después del malentendido, nos reconciliamos y comprendimos mejor la situación.",
+      "sentence": "Después del malentendido, nos reconciliamos y nos entendimos mejor.",
       "teaches": [
         "b1-relationships-vocab"
       ],
-      "english": "After the misunderstanding, we reconciled and understood the situation better."
+      "english": "After the misunderstanding, we made up and understood each other better."
     },
     {
       "id": "b1-05-05.ex15",
@@ -251,7 +255,7 @@
       ],
       "options": [
         "Hemos cambiado y ahora nos entendemos mejor, aunque todavía no estamos de acuerdo en todo. [We have changed and now understand each other better, although we still do not agree on everything.]",
-        "Cambiábamos antes y nos entendíamos mejor, aunque todavía no estábamos de acuerdo en todo. [We used to change before and understood each other better, although we still did not agree on everything.]",
+        "Cambiábamos y ahora nos entendemos mejor, aunque todavía no estamos de acuerdo en todo. [We used to change and now understand each other better, although we still do not agree on everything.]",
         "Hemos cambiado y ahora nos entendimos mejor, aunque todavía no estamos de acuerdo en todo. [We have changed and now we understood each other better, although we still do not agree on everything.]"
       ],
       "correct": 0,
@@ -259,16 +263,17 @@
         "preterito-perfecto"
       ],
       "distractor_skills": {
-        "1": "imperfect"
+        "1": "imperfect",
+        "2": "preterito-indefinido"
       }
     },
     {
       "id": "b1-05-05.ex16",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which structure best identifies the person involved in a disagreement? [¿Qué estructura identifica mejor a la persona implicada?]",
+      "question": "Which structure best identifies the person involved in a disagreement?",
       "options": [
-        "la persona con la que tuve el desacuerdo [the person I had the disagreement with]",
+        "la persona con quien tuve el desacuerdo [the person I had the disagreement with]",
         "la persona donde tuve el desacuerdo [the person where I had the disagreement]",
         "la persona cuando tuve el desacuerdo [the person when I had the disagreement]"
       ],
@@ -300,7 +305,7 @@
         },
         {
           "prompt": "Describe how two people resolved a conflict.",
-          "answer": "Se escucharon con calma y se reconciliaron después del malentendido."
+          "answer": "Se escucharon con atención y se reconciliaron después del malentendido."
         }
       ],
       "teaches": [
@@ -314,7 +319,7 @@
       "template": [
         {
           "prompt": "Identify a person using a relative clause and describe the relationship.",
-          "answer": "La persona con la que tuve el desacuerdo ha cambiado, y ahora confiamos más el uno en el otro."
+          "answer": "La persona con quien tuve el desacuerdo ha cambiado, y ahora confiamos más el uno en el otro."
         },
         {
           "prompt": "Give a general lesson about relationships.",

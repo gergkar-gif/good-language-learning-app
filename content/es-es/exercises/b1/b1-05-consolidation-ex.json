@@ -31,11 +31,11 @@
       "id": "b1-05-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence expresses a reciprocal relationship? [¿Cuál expresa una relación recíproca?]",
+      "question": "Which sentence expresses a reciprocal relationship?",
       "options": [
         "Nos apoyamos cuando tenemos problemas. [We support each other when we have problems.]",
-        "Me apoyo en la pared. [I lean on the wall.]",
-        "Se mira en el espejo. [He/She looks at himself/herself in the mirror.]"
+        "Me apoyo en la pared cuando estoy cansado. [I lean on the wall when I am tired.]",
+        "Se mira en el espejo cuando se prepara. [He looks at himself in the mirror when he gets ready.]"
       ],
       "correct": 0,
       "teaches": [
@@ -114,12 +114,12 @@
         },
         {
           "speaker": "A",
-          "text": "Parece que tenéis una relación muy cercana."
+          "text": "Entonces tenéis una relación muy cercana."
         }
       ],
       "options": [
         "Es el vecino que vive al lado y con quien compartimos muchas actividades. [He is the neighbour who lives next door and with whom we share many activities.]",
-        "Es el vecino donde vive al lado y cuando compartimos actividades. [He is the neighbour where he lives next door and when we share activities.]",
+        "Es el vecino donde vive al lado y con quien compartimos muchas actividades. [He is the neighbour where he lives next door and with whom we share many activities.]",
         "Es el vecino que vive al lado y quien compartimos muchas actividades. [He is the neighbour who lives next door and whom we share many activities.]"
       ],
       "correct": 0,
@@ -131,7 +131,7 @@
       "id": "b1-05-consolidation.ex07",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence describes a habitual past action? [¿Cuál describe una acción habitual en el pasado?]",
+      "question": "Which sentence describes a habitual past action?",
       "options": [
         "Todos los veranos visitábamos a nuestros vecinos. [Every summer we used to visit our neighbours.]",
         "El fin de semana pasado visitamos a nuestros vecinos. [Last weekend we visited our neighbours.]",
@@ -166,8 +166,7 @@
         "La",
         "persona",
         "con",
-        "la",
-        "que",
+        "quien",
         "hablé",
         "ayer",
         "vive",
@@ -177,8 +176,7 @@
         "La",
         "persona",
         "con",
-        "la",
-        "que",
+        "quien",
         "hablé",
         "ayer",
         "vive",
@@ -193,16 +191,20 @@
       "id": "b1-05-consolidation.ex10",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence combines a past habit with a present result? [¿Cuál combina un hábito pasado con un resultado actual?]",
+      "question": "Which sentence combines a past habit with a present result?",
       "options": [
         "Antes discutíamos mucho, pero ahora nos hemos reconciliado. [We used to argue a lot, but now we have made up.]",
         "Antes discutimos mucho y después nos reconciliamos. [We argued a lot before and afterwards we made up.]",
-        "Antes discutiremos mucho, pero ahora nos reconciliábamos. [We will argue a lot before, but now we used to make up.]"
+        "Antes discutíamos mucho, pero ahora nos reconciliábamos. [We used to argue a lot, but now we used to make up.]"
       ],
       "correct": 0,
       "teaches": [
         "imperfect-vs-present-perfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-05-consolidation.ex11",
@@ -211,8 +213,8 @@
       "sentence": "Las personas que saben escucharse pueden resolver los problemas con más facilidad.",
       "options": [
         "People who know how to listen to each other can solve problems more easily.",
-        "People where know how to listen can solve problems.",
-        "People used to listen to each other yesterday."
+        "People where know how to listen to each other can solve problems more easily.",
+        "People listened to each other and solved problems more easily."
       ],
       "correct": 0,
       "teaches": [
@@ -250,7 +252,7 @@
       "options": [
         "Nos escuchamos y nos reconciliamos, así que ahora confiamos más el uno en el otro. [We listened to each other and made up, so now we trust each other more.]",
         "Nos escucharemos y nos reconciliaremos, así que confiaremos más el uno en el otro. [We will listen to each other and make up, so we will trust each other more.]",
-        "Nos hemos reconciliado antes de conocernos, así que nunca hablamos. [We have made up before meeting, so we never talk.]"
+        "Nos escuchábamos y nos reconciliábamos, así que ahora confiamos más el uno en el otro. [We used to listen to each other and make up, so now we trust each other more.]"
       ],
       "correct": 0,
       "teaches": [
@@ -258,14 +260,14 @@
       ],
       "distractor_skills": {
         "1": "futuro-simple",
-        "2": "preterito-perfecto"
+        "2": "imperfect"
       }
     },
     {
       "id": "b1-05-consolidation.ex14",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Choose the correct relative clause. [Elige la oración de relativo correcta.]",
+      "question": "Choose the correct relative clause.",
       "options": [
         "La casa donde nos reuníamos ya no existe. [The house where we used to meet no longer exists.]",
         "La casa que nos reuníamos ya no existe. [The house that we used to meet no longer exists.]",
@@ -334,7 +336,7 @@
         },
         {
           "prompt": "Identify a person with a relative clause.",
-          "answer": "La persona con la que tuve el desacuerdo ha cambiado mucho."
+          "answer": "La persona con quien tuve el desacuerdo ha cambiado mucho."
         }
       ],
       "teaches": [
@@ -348,7 +350,7 @@
       "template": [
         {
           "prompt": "Describe how people can resolve a disagreement.",
-          "answer": "Las personas que saben escucharse pueden hablar con calma y reconciliarse después de un malentendido."
+          "answer": "Las personas que saben escucharse pueden hablar con atención y reconciliarse después de un malentendido."
         },
         {
           "prompt": "Describe a past habit that helped a relationship.",
