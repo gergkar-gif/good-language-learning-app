@@ -33,6 +33,12 @@ const course = positional[0];
 const onlyLevel = positional[1] || null;
 const onlyStems = flag('--stems') ? new Set(flag('--stems').split(',')) : null;
 if (!course) { console.error('usage: unmet-words.js <course> [level] [--stems a,b]'); process.exit(2); }
+// Stems are ONE comma-separated argument. `--stems a b c` used to check only `a` and
+// print [] for the rest (ES B1, 2026-11-11: eight units were frozen on that); refuse it.
+if (positional.length > 2) {
+    console.error(`unmet-words.js: unexpected argument(s) ${positional.slice(2).join(' ')}; --stems takes one comma-separated list (a,b,c)`);
+    process.exit(2);
+}
 
 const root = path.resolve(__dirname, '..');
 process.chdir(root);

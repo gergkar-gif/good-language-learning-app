@@ -541,9 +541,15 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
   (*oración, expresa, contexto, correctamente*) or that copy the answer;
   goals that say "three new words" for a longer list; A1–A2 forms presented
   as new (open with a recap, the Spanish term in italics: *indefinido*, not
-  *preterite*). **The imperfect subjunctive forms have no B1 screen:**
-  *Si yo fuera tú* is a ready-made phrase in b1-04-02; do not add other
-  *-ra* forms to items before the user decides (ROADMAP 153).
+  *preterite*). **The imperfect subjunctive forms are taught in b1-04-02
+  (user, 2026-11-11):** *si* + *-ra* form + conditional is known from Unit 7
+  on; the forms after a past main verb (*pidió que hablara*: b1-38-01,
+  b1-38-02), the *-se* forms, *como si* and the pluperfect subjunctive are
+  still later. **Words:** run `node scripts/unmet-words.js <course> b1
+  --stems a,b,c` (one comma-separated list) in es-es AND es-latam; a core
+  item must not lean on a word listed only in a cultura or latam lesson or
+  in the es-es *vosotros* unit; goal lines say "the new words", never a
+  count.
 - **Classic stories:** a story spliced with lesson-template sentences
   (Odiseo buying a ticket at a travellers' office) or given an invented
   ending (Bartleby) is rewritten as an honest outline of the work. A

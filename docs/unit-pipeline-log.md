@@ -148,7 +148,7 @@ them unless a step below says otherwise.
    <course> <level>/<unit id> --update --reason "..."`; `python
    scripts/validate-content.py --changed`; then `python
    scripts/validate-content.py --warnings` and compare the level's lines
-   with origin/master; `python scripts/check_unit_refs.py <course> <level> <unit ids>` for the recaps readers write, and for B1 and above `node scripts/unmet-words.js <course> <level> --stems …` on the applied fixes (readers skip it) (warnings never fail, so a retag that leaves a
+   with origin/master; `python scripts/check_unit_refs.py <course> <level> <unit ids>` for the recaps readers write, and for B1 and above `node scripts/unmet-words.js <course> <level> --stems a,b,c` (ONE comma-separated list of every lesson stem of the batch, in **each** course: es-latam meets fewer words than es-es) on the applied fixes (readers skip it) (warnings never fail, so a retag that leaves a
    skill under 6 exercises passes `--changed` silently: units 29–34 did
    this to `a2-review-work-past-opinions-vocab`, found only at the level
    checklist); `python scripts/freeze_unit.py <course> <level> <unit id>
@@ -1805,3 +1805,29 @@ The user took the four recommended options:
   "first appears nowhere"; checked by hand against `skills/es.json`. Ask readers to italicise
   the Spanish term.
 - **For the user:** the imperfect subjunctive forms have no B1 screen (review.md item 1).
+
+### 2026-11-11: ES B1, two corrections after Units 1–15 were frozen
+
+- **The reviewer's unmet-word check was void.** `unmet-words.js --stems a b c` (spaces)
+  checks only the first stem and prints `[]`; eight units were frozen and reported as "0 unmet
+  words" on it. Run correctly (`--stems a,b,c`), es-es had 44 hits and es-latam 60 over the
+  eight units. Fixed the same day (`imports/review/es-b1-unmet-fix-01-15/`): 105 text fixes,
+  16 words added to lists (18 in es-latam), all eight units unfrozen, rechecked, rewalked
+  (48/48 per course) and refrozen. **Scripted:** the script now exits on extra positional
+  arguments, and it ignores `[bracket glosses]`, whose English words made up two thirds of
+  the es-latam hits. What is left are inflected forms the lexicon does not lemmatise
+  (*golpeado, conmoverá, arriesgaría, encargo, desplazamos, acercó*) and names.
+- **es-latam meets fewer words than es-es.** A core unit in es-es comes after cultura units
+  whose lists count as met (*viajeros, palacio, desierto, internacional*), and after the
+  *vosotros* unit (*atención, apetecer*). Check both courses, and prefer words that are in a
+  core list: a core item that leans on a cultura list breaks in es-latam.
+- **Basic words are in no list at all** (*ganar, caer, fecha, madera, nieve, realidad,
+  demasiado, varios, existir*): the lists were generated per topic. They go on the list of the
+  first lesson that uses them (`add_vocab_words.py`); goal lines then stop counting words
+  ("the new words", not "four new words"), since every added word made a count wrong.
+- **The imperfect subjunctive forms are B1 now (user, 2026-11-11):**
+  `imperfect-subjunctive-forms` moved from B2 (b2-15-01) to B1, taught in b1-04-02 with a
+  forms screen (regular *-ra*, six irregular stems) and six new items; `skills/frozen-es.json`
+  has the entry. The B2 screen must become a recap that adds the *-se* forms when B2 is read.
+  Still later in B1: the forms after a past main verb (b1-38-01, b1-38-02), *como si*, the
+  pluperfect subjunctive.
