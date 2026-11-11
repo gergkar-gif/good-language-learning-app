@@ -464,6 +464,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-10 | HU B2 culture 42, 44, 46, 48 | paired read, 2 culture units/reader, text first, no limit | | A 410,765, B 410,678 (~205k a unit) | 395 proposed (86 / 106 / 101 / 102), 4 rejected and repaired | present-day family benefits dated by the reviewer; walk 24/24 |
 | 11-10 | HU B2 culture 50, 52, 54, 56 | paired read, 2 culture units/reader, text first, no limit, readers run check_c1_forms | | A 365,963, B 401,259 (~192k a unit) | 366 proposed (71 / 81 / 118 / 96), 3 rejected and repaired (1 broken JSON from double quotes) | walk 24/24 |
 | 11-10 | HU B2 culture 58, 60, 62, 64 | paired read, 2 culture units/reader; both stopped by the 5-hour limit, resumed | | A 336,663, B 349,608 (resumed notices) | 365 proposed (98 / 90 / 81 / 96), 19 rejected: 14 cascades rebased by script | walk 24/24 |
+| 11-11 | HU B2 culture 66, 68, 70, 72 | paired read, 2 culture units/reader, no limit | | A 480,996, B 374,814 (~214k a unit) | 438 proposed (110 / 109 / 127 / 92), 5 rejected and repaired | last culture batch; B2 72/72; walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 

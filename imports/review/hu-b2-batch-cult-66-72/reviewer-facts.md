@@ -1,4 +1,4 @@
-# Reviewer facts, HU B2 culture batch 66-72 (draft, read while the readers run, 2026-11-10)
+# Reviewer facts, HU B2 culture batch 66-72 (2026-11-10, finished 2026-11-11)
 
 | claim | where | verdict so far | source |
 |---|---|---|---|
@@ -17,3 +17,9 @@
 | NYTK; the PULI models | b2-tudomanyjovo-03 | present-day name: HUN-REN Nyelvtudományi Kutatóközpont (check); "garantálják a digitális szuverenitást" is a judgement | — |
 | battery plants in Debrecen, Komárom, Iváncsa, Göd; solar capacity "elérte az országos csúcsfogyasztás szintjét" | b2-tudomanyjovo-04 | plants true; the solar claim: present-day, check | — |
 | *Feltéve, ha* in b2-tudomanyjovo-05 p4 (story) | | stories may keep it; screens and items must not | check_c1_forms.py |
+
+## Result
+
+- Fixed by the readers as well: the 1868 school law (no longer "ingyenes"), the nationality-law priority (named as disputed), Bibó's and Polányi's sayings (paraphrased), "Belső Pista" (removed: not attested), the dress-code and Sziget details (hedged or removed), the UNESCO "világméretű" overclaim, *feltéve, ha* (rewritten in screens and items), the PULI and solar claims (attributed, check).
+- Found by the readers only: the Magyar Tudós Társaság was its name until 1845; Karl Polanyi was the Galilei Circle's first president (the Vasárnapi Kör link unconfirmed); Bibó's 4 November declaration stated more strongly than sources allow; C1 called "mesterszint" (C2 is mastery); twin-word classes mislabelled; *krindzsel*, *kilájkol* not established; the gloss of *flexel*.
+- **Corrected by Claude:** the Fekete Lyuk dated (opened 1987, not the early 1980s); recaps naming *azzal a feltétellel, hogy* as B1 Unit 67 (it is B2 Unit 14); "Belső Pista" left in the story summary, topic list and curriculum; three rejected fixes repaired (a *mindenki* tell, a stem the case check misread, a distractor tag naming the item's own skill); two goal lines by hand.
