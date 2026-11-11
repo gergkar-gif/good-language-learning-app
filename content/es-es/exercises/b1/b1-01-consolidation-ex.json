@@ -103,7 +103,7 @@
       "prompt": [
         {
           "speaker": "Nora",
-          "text": "¿Qué tal el viaje?"
+          "text": "¿Cómo fue el viaje?"
         },
         {
           "speaker": "Tú",
@@ -111,13 +111,13 @@
         },
         {
           "speaker": "Nora",
-          "text": "¡Qué mala suerte! ¿Y qué hiciste?"
+          "text": "¡Qué lástima! ¿Y qué hiciste?"
         }
       ],
       "options": [
-        "Horrible: llegaremos tarde al aeropuerto.",
-        "Horrible: cuando llegamos al aeropuerto, el vuelo sale.",
-        "Horrible: cuando llegamos al aeropuerto, el vuelo ya había salido."
+        "No muy bien: llegaremos tarde al aeropuerto.",
+        "No muy bien: cuando llegamos al aeropuerto, el vuelo sale.",
+        "No muy bien: cuando llegamos al aeropuerto, el vuelo ya había salido."
       ],
       "correct": 2,
       "teaches": [
@@ -132,7 +132,7 @@
       "id": "b1-01-consolidation.ex06",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "De niño, solía pasar los veranos en el campo con mis abuelos.",
+      "sentence": "De niño, pasaba los veranos en el campo con mis abuelos.",
       "options": [
         "As a child, I spent one summer in the countryside with my grandparents.",
         "As a child, I used to spend the summers in the countryside with my grandparents.",
@@ -140,7 +140,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "habitos-soler"
+        "imperfect"
       ]
     },
     {
@@ -150,7 +150,7 @@
       "teaches": [
         "secuencia-narrativa"
       ],
-      "question": "¿Qué oración cuenta los hechos en el orden en que ocurrieron?",
+      "question": "Which sentence tells the events in the order they happened?",
       "options": [
         "Por último cerró la puerta, primero apagó la luz y luego se fue a dormir.",
         "Luego apagó la luz, por último cerró la puerta y primero se fue a dormir.",
@@ -214,20 +214,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "sin embargo",
-          "however"
+          "cartera",
+          "wallet"
         ],
         [
-          "por eso",
-          "that's why"
+          "andén",
+          "platform"
         ],
         [
-          "así que",
-          "so"
+          "paraguas",
+          "umbrella"
         ],
         [
-          "además",
-          "besides, what's more"
+          "vela",
+          "candle"
         ]
       ],
       "teaches": [
@@ -249,20 +249,21 @@
         },
         {
           "speaker": "Iker",
-          "text": "Menos mal que estabas en casa."
+          "text": "Qué suerte que estabas en casa."
         }
       ],
       "options": [
         "Leía en el sofá y, de repente, se fue la luz.",
-        "Leí en el sofá y, de repente, se va la luz.",
-        "Había leído en el sofá la semana que viene."
+        "Leí en el sofá y, de repente, se fue la luz.",
+        "Había leído en el sofá y, de repente, se fue la luz."
       ],
       "correct": 0,
       "teaches": [
         "preterite-vs-imperfect"
       ],
       "distractor_skills": {
-        "1": "present-tense"
+        "1": "preterito-indefinido",
+        "2": "pluscuamperfecto"
       }
     },
     {
@@ -273,7 +274,7 @@
       "options": [
         "Someone was going into the house when I opened the door.",
         "When I opened the door, someone came into the house.",
-        "When I opened the door, I discovered that someone had got into the house."
+        "I opened the door and discovered someone had got in."
       ],
       "correct": 2,
       "teaches": [
@@ -383,14 +384,18 @@
         }
       ],
       "options": [
-        "Sí; por eso no lo encontré nunca.",
-        "Sí; no fue fácil, pero al final encontré un libro precioso.",
-        "Sí; además, no encontré nada."
+        "Sí, no fue fácil; por eso, al final encontré un libro bonito.",
+        "Sí, no fue fácil; sin embargo, al final encontré un libro bonito.",
+        "Sí, no fue fácil; además, al final encontré un libro bonito."
       ],
       "correct": 1,
       "teaches": [
-        "b1-telling-stories-vocab"
-      ]
+        "contrast-concession-connectors"
+      ],
+      "distractor_skills": {
+        "0": "porque-y-por-eso",
+        "2": "ordering-markers"
+      }
     },
     {
       "id": "b1-01-consolidation.ex18",

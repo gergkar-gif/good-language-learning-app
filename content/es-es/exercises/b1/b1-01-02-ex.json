@@ -31,11 +31,11 @@
       "id": "b1-01-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué oración describe el fondo de la escena, no un hecho puntual?",
+      "question": "Which sentence describes the background of the scene, not a single event?",
       "options": [
-        "De repente, llegó el autobús.",
-        "Ana abrió el paraguas y subió.",
-        "Llovía y la gente esperaba bajo el techo de la parada."
+        "De repente, llegó el autobús a la parada.",
+        "Ana abrió el paraguas y subió al autobús.",
+        "Llovía y la gente esperaba en la parada."
       ],
       "correct": 2,
       "teaches": [
@@ -125,18 +125,22 @@
         },
         {
           "speaker": "Sara",
-          "text": "Ah, por eso no oíste el teléfono."
+          "text": "Entonces no oíste el teléfono."
         }
       ],
       "options": [
         "Estaba en la ducha y tenía la radio puesta.",
         "Estuve en la ducha y tuve la radio puesta.",
-        "Me duché y después te llamo."
+        "Estoy en la ducha y tengo la radio puesta."
       ],
       "correct": 0,
       "teaches": [
         "preterite-vs-imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "present-tense"
+      }
     },
     {
       "id": "b1-01-02.ex07",
@@ -158,12 +162,12 @@
       "id": "b1-01-02.ex08",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "De niño, __ jugar al fútbol en el parque con mis primos.",
-      "hint": "soler",
-      "answer": "solía",
+      "sentence": "De niño, __ al fútbol en el parque con mis primos.",
+      "hint": "jugar, yo",
+      "answer": "jugaba",
       "english": "As a child, I used to play football in the park with my cousins.",
       "teaches": [
-        "habitos-soler"
+        "imperfect"
       ]
     },
     {
@@ -249,13 +253,13 @@
         },
         {
           "speaker": "Tomás",
-          "text": "Suena muy distinto de ahora."
+          "text": "Suena muy diferente de ahora."
         }
       ],
       "options": [
-        "Fue tranquilo una vez, el martes.",
+        "Fue tranquilo y los vecinos charlaron en la calle.",
         "Es tranquilo y los vecinos charlan en la calle.",
-        "Era tranquilo; los vecinos charlaban en la calle por las tardes."
+        "Era tranquilo y los vecinos charlaban en la calle."
       ],
       "correct": 2,
       "teaches": [
@@ -273,7 +277,7 @@
       "question": "Completa la historia: «Ana leía en el sofá cuando…»",
       "options": [
         "…alguien llamó a la puerta.",
-        "…alguien llamaba a la puerta cada día.",
+        "…alguien llama a la puerta.",
         "…alguien llamará a la puerta."
       ],
       "correct": 0,
@@ -281,6 +285,7 @@
         "preterite-vs-imperfect"
       ],
       "distractor_skills": {
+        "1": "present-tense",
         "2": "futuro-simple"
       }
     },
@@ -288,10 +293,10 @@
       "id": "b1-01-02.ex14",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Todos los domingos, mi abuela __ una sopa enorme para toda la familia.",
+      "sentence": "Todos los domingos, mi abuela __ una tortilla grande para toda la familia.",
       "hint": "preparar",
       "answer": "preparaba",
-      "english": "Every Sunday, my grandmother used to make a huge soup for the whole family.",
+      "english": "Every Sunday, my grandmother used to make a big omelette for the whole family.",
       "teaches": [
         "imperfect"
       ]
@@ -311,7 +316,7 @@
         },
         {
           "prompt": "Say what suddenly happened.",
-          "answer": "De repente, una señora me ofreció su paraguas."
+          "answer": "De repente, una señora me dio su paraguas."
         }
       ],
       "teaches": [
@@ -324,8 +329,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe a childhood habit with soler.",
-          "answer": "De niño, solía ir a la escuela a pie."
+          "prompt": "Say how you went to school as a child, using de niño.",
+          "answer": "De niño, iba a la escuela a pie."
         },
         {
           "prompt": "Say who you used to go with.",

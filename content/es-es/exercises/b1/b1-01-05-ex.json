@@ -31,25 +31,29 @@
       "id": "b1-01-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "En «Don Quijote ___ por La Mancha cuando vio unos molinos», ¿qué forma describe la escena de fondo?",
+      "question": "In «Don Quijote ___ por La Mancha cuando vio unos molinos», which form sets the scene?",
       "options": [
-        "caminó",
-        "caminaba",
-        "había caminado"
+        "fue",
+        "iba",
+        "había ido"
       ],
       "correct": 1,
       "teaches": [
         "preterite-vs-imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "preterito-indefinido",
+        "2": "pluscuamperfecto"
+      }
     },
     {
       "id": "b1-01-05.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Mientras Sancho __ explicarle la verdad, Don Quijote avanzó hacia los molinos.",
-      "hint": "intentar",
-      "answer": "intentaba",
-      "english": "While Sancho was trying to explain the truth to him, Don Quijote advanced towards the windmills.",
+      "sentence": "Mientras Sancho __ con él, Don Quijote fue hacia los molinos.",
+      "hint": "hablar",
+      "answer": "hablaba",
+      "english": "While Sancho was talking to him, Don Quijote went towards the windmills.",
       "teaches": [
         "imperfect"
       ]
@@ -59,40 +63,28 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "De",
-        "niño",
+        "Don",
+        "Quijote",
         "había",
         "leído",
-        "muchas",
-        "historias",
+        "muchos",
+        "libros",
         "de",
         "caballeros."
       ],
-      "solutions": [
-        [
-          "De",
-          "niño",
-          "había",
-          "leído",
-          "muchas",
-          "historias",
-          "de",
-          "caballeros."
-        ],
-        [
-          "había",
-          "leído",
-          "muchas",
-          "historias",
-          "de",
-          "caballeros.",
-          "De",
-          "niño"
-        ]
-      ],
-      "english": "As a child he had read many stories about knights.",
+      "english": "Don Quijote had read many books about knights.",
       "teaches": [
         "pluscuamperfecto"
+      ],
+      "solution": [
+        "Don",
+        "Quijote",
+        "había",
+        "leído",
+        "muchos",
+        "libros",
+        "de",
+        "caballeros."
       ]
     },
     {
@@ -100,9 +92,9 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "Don Quijote y Sancho caminaban por un camino de La Mancha.",
+        "Don Quijote y Sancho iban por un camino de La Mancha.",
         "De repente, Don Quijote vio unos molinos y creyó que eran gigantes.",
-        "Una de las aspas lo golpeó y lo hizo caer."
+        "Un molino lo golpeó y Don Quijote terminó en el suelo."
       ],
       "solution": [
         0,
@@ -120,7 +112,7 @@
       "prompt": [
         {
           "speaker": "Clara",
-          "text": "¿Por qué atacó Don Quijote los molinos?"
+          "text": "¿Por qué fue Don Quijote contra los molinos?"
         },
         {
           "speaker": "Tú",
@@ -132,9 +124,9 @@
         }
       ],
       "options": [
-        "Porque creía que los campesinos del lugar corrían peligro cerca de las máquinas.",
-        "Porque había leído tantas historias de caballeros que imaginaba aventuras en todas partes.",
-        "Porque pensaba que el dueño de las tierras le había robado su caballo esa noche."
+        "Porque creía que los molinos eran un peligro para la gente del pueblo.",
+        "Porque había leído muchos libros de caballeros y veía aventuras en todo.",
+        "Porque Sancho le había dicho que allí vivía un amigo de su familia."
       ],
       "correct": 1,
       "teaches": [
@@ -145,7 +137,7 @@
       "id": "b1-01-05.ex07",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "¿Qué palabra nombra la marca que deja algo, como el polvo en una armadura?",
+      "question": "Which word means a footprint or trace that something leaves behind?",
       "options": [
         "recuerdo",
         "molino",
@@ -175,9 +167,9 @@
       "category": "reading",
       "question": "¿Qué vio Don Quijote a lo lejos?",
       "options": [
-        "Unos gigantes de verdad.",
+        "Unos gigantes de verdad, muy altos y grandes.",
         "Unos molinos, pero creyó que eran gigantes.",
-        "Un pueblo lleno de caballeros."
+        "Un pueblo con muchos caballeros en la plaza."
       ],
       "correct": 1
     },
@@ -187,9 +179,9 @@
       "category": "reading",
       "question": "¿Qué hizo Sancho cuando vio los molinos?",
       "options": [
-        "Atacó los molinos con Don Quijote.",
+        "Fue con Don Quijote contra los molinos.",
         "Huyó y dejó solo a Don Quijote.",
-        "Intentó explicar que eran molinos."
+        "Le dijo que eran molinos, no gigantes."
       ],
       "correct": 2
     },
@@ -197,10 +189,10 @@
       "id": "b1-01-05.ex11",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Por qué soñaba Don Quijote con aventuras?",
+      "question": "¿Por qué veía gigantes Don Quijote?",
       "options": [
-        "Porque de niño había leído muchas historias de caballeros.",
-        "Porque un mago se lo había pedido.",
+        "Porque había leído muchos libros de caballeros.",
+        "Porque un amigo se lo había pedido.",
         "Porque Sancho le había contado una historia."
       ],
       "correct": 0
@@ -211,9 +203,9 @@
       "category": "reading",
       "question": "¿Cómo explicó Don Quijote lo que había pasado?",
       "options": [
-        "Dijo que se había equivocado.",
-        "Dijo que Sancho había tenido razón.",
-        "Dijo que un mago había cambiado los gigantes por molinos."
+        "Dijo que él no había visto bien los molinos.",
+        "Dijo que Sancho tenía razón y que eran molinos.",
+        "Dijo que alguien había cambiado los gigantes por molinos."
       ],
       "correct": 2
     },
@@ -221,11 +213,11 @@
       "id": "b1-01-05.ex13",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Sancho corrió hacia él mientras el caballero intentaba levantarse.",
+      "sentence": "Sancho fue hacia él mientras el caballero estaba en el suelo.",
       "options": [
-        "Sancho ran towards him while the knight was trying to get up.",
-        "Sancho had run away before the knight got up.",
-        "The knight ran towards Sancho and helped him up."
+        "Sancho went towards him while the knight was on the ground.",
+        "Sancho had gone away before the knight got up.",
+        "The knight went towards Sancho and helped him up."
       ],
       "correct": 0,
       "teaches": [
@@ -236,8 +228,8 @@
       "id": "b1-01-05.ex14",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Ya había oscurecido cuando regresaron al camino.",
-      "english": "It had already got dark when they returned to the road.",
+      "sentence": "Ya había terminado la batalla cuando regresaron al camino.",
+      "english": "The battle had already ended when they returned to the road.",
       "teaches": [
         "pluscuamperfecto"
       ]
@@ -249,7 +241,7 @@
       "prompt": [
         {
           "speaker": "Iván",
-          "text": "¿Qué te pareció el final de la historia?"
+          "text": "¿Qué piensas del final de la historia?"
         },
         {
           "speaker": "Tú",
@@ -261,24 +253,28 @@
         }
       ],
       "options": [
-        "Me hizo gracia: aunque haya perdido, dijo que un mago tenía la culpa.",
-        "Me hizo gracia: aunque había perdido, dijo que un mago tenía la culpa.",
-        "Me hizo gracia que ganara la batalla."
+        "Fue divertido: aunque ha perdido, dijo que alguien tenía la culpa.",
+        "Fue divertido: aunque había perdido, dijo que alguien tenía la culpa.",
+        "Fue divertido: aunque perdía, dijo que alguien tenía la culpa."
       ],
       "correct": 1,
       "teaches": [
         "pluscuamperfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "preterito-perfecto",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-01-05.ex16",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Tu amigo pregunta: «¿Y qué pasó cuando Don Quijote atacó?». ¿Qué respuesta encaja?",
+      "question": "Your friend asks: «¿Y qué pasó cuando Don Quijote fue contra el molino?». Which answer fits?",
       "options": [
-        "Una de las aspas lo golpeaba todos los días.",
-        "Una de las aspas lo había golpeado antes de atacar.",
-        "Una de las aspas lo golpeó y lo hizo caer."
+        "El molino lo golpeaba y Don Quijote terminaba en el suelo.",
+        "El molino ya lo había golpeado y Don Quijote terminó en el suelo.",
+        "El molino lo golpeó y Don Quijote terminó en el suelo."
       ],
       "correct": 2,
       "teaches": [
@@ -308,15 +304,15 @@
       "template": [
         {
           "prompt": "Set the scene: where was Don Quijote and what was he doing?",
-          "answer": "Don Quijote caminaba con Sancho por La Mancha."
+          "answer": "Don Quijote iba con Sancho por La Mancha."
         },
         {
           "prompt": "Say what suddenly happened.",
-          "answer": "De repente, vio unos molinos y los atacó."
+          "answer": "De repente, vio unos molinos y fue contra ellos."
         },
         {
-          "prompt": "Say what he had done as a child.",
-          "answer": "De niño había leído muchas historias de caballeros."
+          "prompt": "Say what he had read before.",
+          "answer": "Antes, había leído muchos libros de caballeros."
         }
       ],
       "teaches": [
@@ -330,11 +326,11 @@
       "template": [
         {
           "prompt": "Retell the end of the story with al final.",
-          "answer": "Al final, una de las aspas lo hizo caer."
+          "answer": "Al final, un molino lo golpeó y Don Quijote terminó en el suelo."
         },
         {
           "prompt": "Say what Don Quijote claimed, using the pluperfect.",
-          "answer": "Dijo que un mago había cambiado los gigantes por molinos."
+          "answer": "Dijo que alguien había cambiado los gigantes por molinos."
         },
         {
           "prompt": "Add a contrast with sin embargo.",
