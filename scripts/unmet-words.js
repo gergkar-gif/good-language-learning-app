@@ -147,11 +147,16 @@ function targetTexts(e) {
     // [text, may be English]: options, matching pairs and quoted question text can be
     // English; sentences, answers, tiles and dialogue lines never are.
     const out = [];
+    // "Text [gloss]": the Spanish courses gloss an option, a sentence-order line or a
+    // question in square brackets, in the other language. The gloss is help, not the
+    // tested text, and its English words were reported as unmet (2026-11-11), so it is
+    // dropped; the part before the bracket is still checked.
+    const bare = x => String(x).replace(/\s*\[[^\]]*\]/g, '');
     const add = (x, maybe) => {
-        if (typeof x === 'string') out.push([x, maybe]);
+        if (typeof x === 'string') out.push([bare(x), maybe]);
         else if (Array.isArray(x)) x.forEach(y => add(y, maybe));
     };
-    if (Array.isArray(e.options)) out.push([e.options.filter(o => typeof o === 'string'), true]);
+    if (Array.isArray(e.options)) out.push([e.options.filter(o => typeof o === 'string').map(bare), true]);
     add(e.sentence, false);
     add(e.answer, false);
     add(e.answers, false);
