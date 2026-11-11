@@ -113,7 +113,7 @@ them unless a step below says otherwise.
    included) and a report. **The harness often refuses the report write:
    save the report from the reader's reply** before anything else (the
    container can restart).
-2. **Sort each fix list:** `python scripts/check_fixes.py <course>
+2. **Sort each fix list:** `python scripts/fold_duplicate_fixes.py <fixes.json>` first (a reader's two `set` fixes for one item), then `python scripts/check_fixes.py <course>
    <level> <unit id> <fixes.json>` → rejected / review / auto. Read only
    the review list (target-language and unsure fixes) and the report's
    non-fix notes; readers propose wrong target-language text a few times a
@@ -1846,8 +1846,8 @@ The user took the four recommended options:
   hand.
 - **`merge_fixes.py` refuses a reader's own duplicate** (the same item set twice, once in
   auto and once in review after `check_fixes` split the list). Merged by a six-line script
-  twice in this batch: **to script** (`check_fixes.py` should fold same-id `set` fixes
-  before it splits).
+  twice in this batch. **Scripted:** `scripts/fold_duplicate_fixes.py`, run before
+  `check_fixes.py` (tested on the batch's list: 2 folded).
 - **The 5-hour limit stopped one reader after two units**; resumed with SendMessage after the
   reset, as the rules say, and it finished in 3 minutes. Its files for the finished units
   were already committed.
