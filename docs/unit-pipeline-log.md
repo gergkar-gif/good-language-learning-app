@@ -469,6 +469,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-11 | HU B2 culture 66, 68, 70, 72 | paired read, 2 culture units/reader, no limit | | A 480,996, B 374,814 (~214k a unit) | 438 proposed (110 / 109 / 127 / 92), 5 rejected and repaired | last culture batch; B2 72/72; walk 24/24 |
 | 11-11 | ES B1 pilot: core 1 telling-stories, 3 experiences-memories | read, 1 unit/reader, es-es read and mirrored, no limit | | A 229,521 (+18.5k story rewrite on resume), B 236,968 (~240k a unit) | 243 proposed (108 / 135), 0 rejected, 7 changed by the reviewer | both stories rewritten at B1; Unit 3 es-latam unfrozen (taught_in decision); walk 12/12 per course |
 | 11-11 | ES B1 core 5, 7, 9, 11, 13, 15 | paired read, 3 units/reader, es-es read and mirrored, stories rewritten in the read, no limit | | A 420,688, B 450,898 (~145k a unit) | 418 proposed (93 / 81 / 72 / 60 / 55 / 57), 0 rejected, 6 changed by the reviewer | all six frozen in both courses (B1 8/76); walk 36/36 per course; variant fixer run level-wide by mistake, reverted, `--only` added |
+| 11-11 | ES B1 core 17, 19, 21, 23, 25, 27 | paired read, 3 units/reader, stories rewritten in the read; A stopped by the 5-hour limit and resumed | | A 393,512 (resumed notice), B 374,756 + 34k unmet follow-up (~130k a unit) | 568 proposed (82 / 96 / 79 / 112 / 106 / 93), 0 rejected, 5 changed by the reviewer | all six frozen in both courses (B1 14/76); unmet check run properly in both courses; 76 words listed; walk 36/36 per course |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -1831,3 +1832,27 @@ The user took the four recommended options:
   has the entry. The B2 screen must become a recap that adds the *-se* forms when B2 is read.
   Still later in B1: the forms after a past main verb (b1-38-01, b1-38-02), *como si*, the
   pluperfect subjunctive.
+
+### 2026-11-11: ES B1 core Units 17–27
+
+- **Cost:** ~130k a unit, the lowest so far, with more fixes per unit (95) than the last
+  batch (70): the focus file now carries the story notes and the generator's defect list, so
+  readers start on the right things.
+- **Readers' unmet-word checks cannot be trusted yet.** Reader A's was sound (11 real words
+  left in three units); reader B's reported "nothing real" and left 69 words. The template
+  now spells the command out. Until two batches come back clean, the reviewer runs
+  `unmet-words.js --stems a,b,c` in both courses on the applied content before anything else,
+  and sends a long list back to the same reader (34k for 69 words) instead of fixing it by
+  hand.
+- **`merge_fixes.py` refuses a reader's own duplicate** (the same item set twice, once in
+  auto and once in review after `check_fixes` split the list). Merged by a six-line script
+  twice in this batch: **to script** (`check_fixes.py` should fold same-id `set` fixes
+  before it splits).
+- **The 5-hour limit stopped one reader after two units**; resumed with SendMessage after the
+  reset, as the rules say, and it finished in 3 minutes. Its files for the finished units
+  were already committed.
+- **Rule changes mid-read reach the readers by message** (the imperfect subjunctive move,
+  the stems format, goal lines without counts): all three were applied by both readers.
+- **Invented attribution:** story `b1-10` carried a made-up author and work. Check every
+  story's `author`/`work`/`source` against the text in the reviewer's read.
+- **es-latam *video*:** by hand this time; add the pair to `course_variants.py` if it recurs.
