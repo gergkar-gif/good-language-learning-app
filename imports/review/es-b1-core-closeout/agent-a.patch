@@ -1,0 +1,3208 @@
+diff --git a/content/es-es/exercises/b1/b1-01-02-ex.json b/content/es-es/exercises/b1/b1-01-02-ex.json
+index 34574a06..87807023 100644
+--- a/content/es-es/exercises/b1/b1-01-02-ex.json
++++ b/content/es-es/exercises/b1/b1-01-02-ex.json
+@@ -344,6 +344,133 @@
+       "teaches": [
+         "imperfect"
+       ]
++    },
++    {
++      "id": "b1-01-02.ex17",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence means «I was about to leave when the phone rang»?",
++      "options": [
++        "Estaba a punto salir cuando sonó el teléfono.",
++        "Estaba a punto de salir cuando sonó el teléfono.",
++        "Estaba a punto de saliendo cuando sonó el teléfono."
++      ],
++      "correct": 1,
++      "teaches": [
++        "estar-a-punto-de"
++      ],
++      "distractor_skills": {
++        "2": "progressive"
++      }
++    },
++    {
++      "id": "b1-01-02.ex18",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Mi hermano estaba a punto __ salir cuando llegamos a casa.",
++      "answer": "de",
++      "teaches": [
++        "estar-a-punto-de"
++      ],
++      "english": "My brother was about to leave when we got home."
++    },
++    {
++      "id": "b1-01-02.ex19",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Nosotros __ a punto de cenar cuando empezó a llover.",
++      "hint": "estar, nosotros",
++      "answer": "estábamos",
++      "teaches": [
++        "estar-a-punto-de"
++      ],
++      "english": "We were about to have dinner when it started to rain."
++    },
++    {
++      "id": "b1-01-02.ex20",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "El",
++        "autobús",
++        "estaba",
++        "a",
++        "punto",
++        "de",
++        "salir",
++        "cuando",
++        "Ana",
++        "llegó",
++        "a",
++        "la",
++        "parada."
++      ],
++      "solution": [
++        "El",
++        "autobús",
++        "estaba",
++        "a",
++        "punto",
++        "de",
++        "salir",
++        "cuando",
++        "Ana",
++        "llegó",
++        "a",
++        "la",
++        "parada."
++      ],
++      "english": "The bus was about to leave when Ana arrived at the stop.",
++      "teaches": [
++        "estar-a-punto-de"
++      ]
++    },
++    {
++      "id": "b1-01-02.ex21",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Sara",
++          "text": "¿Qué hacías cuando llegó tu hermano?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        },
++        {
++          "speaker": "Sara",
++          "text": "Entonces cenaron juntos."
++        }
++      ],
++      "options": [
++        "Estaba a punto de cenar cuando llegó.",
++        "Estoy a punto de cenar cuando llegó.",
++        "Estaba a punto de ceno cuando llegó."
++      ],
++      "correct": 0,
++      "teaches": [
++        "estar-a-punto-de"
++      ],
++      "distractor_skills": {
++        "1": "present-tense",
++        "2": "present-tense"
++      }
++    },
++    {
++      "id": "b1-01-02.ex22",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "Mis padres estaban a punto de salir cuando empezó a llover.",
++      "options": [
++        "My parents were about to leave when it started to rain.",
++        "My parents had already left when it started to rain.",
++        "My parents left when it started to rain."
++      ],
++      "correct": 0,
++      "teaches": [
++        "estar-a-punto-de"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-es/exercises/b1/b1-02-02-ex.json b/content/es-es/exercises/b1/b1-02-02-ex.json
+index fb711d73..a79456c0 100644
+--- a/content/es-es/exercises/b1/b1-02-02-ex.json
++++ b/content/es-es/exercises/b1/b1-02-02-ex.json
+@@ -310,6 +310,128 @@
+       "teaches": [
+         "preterito-indefinido"
+       ]
++    },
++    {
++      "id": "b1-02-02.ex17",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence says that she arrived running?",
++      "options": [
++        "Llegó correr al auditorio.",
++        "Llegó corrió al auditorio.",
++        "Llegó corriendo al auditorio."
++      ],
++      "correct": 2,
++      "teaches": [
++        "gerundio-acciones-paralelas"
++      ],
++      "distractor_skills": {
++        "1": "preterito-indefinido"
++      }
++    },
++    {
++      "id": "b1-02-02.ex18",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Volvimos a casa __ después del concierto.",
++      "hint": "cantar",
++      "answer": "cantando",
++      "teaches": [
++        "gerundio-acciones-paralelas"
++      ],
++      "english": "We went back home singing after the concert."
++    },
++    {
++      "id": "b1-02-02.ex19",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Salí del escenario __.",
++      "hint": "sonreír",
++      "answer": "sonriendo",
++      "teaches": [
++        "gerundio-acciones-paralelas"
++      ],
++      "english": "I left the stage smiling."
++    },
++    {
++      "id": "b1-02-02.ex20",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "Mi",
++        "amigo",
++        "entró",
++        "en",
++        "el",
++        "auditorio",
++        "hablando",
++        "con",
++        "el",
++        "profesor."
++      ],
++      "solution": [
++        "Mi",
++        "amigo",
++        "entró",
++        "en",
++        "el",
++        "auditorio",
++        "hablando",
++        "con",
++        "el",
++        "profesor."
++      ],
++      "english": "My friend came into the auditorium talking with the teacher.",
++      "teaches": [
++        "gerundio-acciones-paralelas"
++      ]
++    },
++    {
++      "id": "b1-02-02.ex21",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Nora",
++          "text": "¿Cómo volvieron a casa después del concierto?"
++        },
++        {
++          "speaker": "Diego",
++          "text": "_____"
++        },
++        {
++          "speaker": "Nora",
++          "text": "Seguro que estaban muy contentos."
++        }
++      ],
++      "options": [
++        "Volvimos cantamos por la calle.",
++        "Volvimos cantando por la calle.",
++        "Volvimos cantado por la calle."
++      ],
++      "correct": 1,
++      "teaches": [
++        "gerundio-acciones-paralelas"
++      ],
++      "distractor_skills": {
++        "0": "present-tense",
++        "2": "past-participles"
++      }
++    },
++    {
++      "id": "b1-02-02.ex22",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "Salimos del auditorio hablando de la actuación.",
++      "options": [
++        "We left the auditorium and talked about the performance later.",
++        "We stayed in the auditorium talking about the performance.",
++        "We left the auditorium talking about the performance."
++      ],
++      "correct": 2,
++      "teaches": [
++        "gerundio-acciones-paralelas"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-es/exercises/b1/b1-02-04-ex.json b/content/es-es/exercises/b1/b1-02-04-ex.json
+index 9b1eb5f8..8e32b4d6 100644
+--- a/content/es-es/exercises/b1/b1-02-04-ex.json
++++ b/content/es-es/exercises/b1/b1-02-04-ex.json
+@@ -299,6 +299,70 @@
+         "b1-experiences-memories-vocab"
+       ],
+       "category": "writing"
++    },
++    {
++      "id": "b1-02-04.ex17",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence says that her brother understood the story better as he studied more?",
++      "options": [
++        "A medida estudiaba, mi hermano entendía mejor la historia.",
++        "A medida que estudiaba, mi hermano entendía mejor la historia.",
++        "A medida que estudiará, mi hermano entendía mejor la historia."
++      ],
++      "correct": 1,
++      "teaches": [
++        "cuanto-mas-tanto-mas"
++      ],
++      "distractor_skills": {
++        "2": "futuro-simple"
++      }
++    },
++    {
++      "id": "b1-02-04.ex18",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "A __ que aprendíamos más, el español nos parecía más fácil.",
++      "answer": "medida",
++      "teaches": [
++        "cuanto-mas-tanto-mas"
++      ],
++      "english": "As we learned more, Spanish seemed easier to us."
++    },
++    {
++      "id": "b1-02-04.ex19",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "A",
++        "medida",
++        "que",
++        "pasaba",
++        "el",
++        "tiempo,",
++        "entendía",
++        "mejor",
++        "a",
++        "mi",
++        "abuela."
++      ],
++      "solution": [
++        "A",
++        "medida",
++        "que",
++        "pasaba",
++        "el",
++        "tiempo,",
++        "entendía",
++        "mejor",
++        "a",
++        "mi",
++        "abuela."
++      ],
++      "english": "As time went by, I understood my grandmother better.",
++      "teaches": [
++        "cuanto-mas-tanto-mas"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-es/exercises/b1/b1-05-04-ex.json b/content/es-es/exercises/b1/b1-05-04-ex.json
+index f6030d83..1f5e09c6 100644
+--- a/content/es-es/exercises/b1/b1-05-04-ex.json
++++ b/content/es-es/exercises/b1/b1-05-04-ex.json
+@@ -333,6 +333,126 @@
+       "teaches": [
+         "relative-clauses"
+       ]
++    },
++    {
++      "id": "b1-05-04.ex18",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which form completes «El vecino ___ hija estudia música nos saluda»?",
++      "options": [
++        "cuyo",
++        "cuya",
++        "cuyas"
++      ],
++      "correct": 1,
++      "teaches": [
++        "relativo-posesivo-cuyo"
++      ]
++    },
++    {
++      "id": "b1-05-04.ex19",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Tengo una amiga __ hermano vive en Madrid.",
++      "answer": "cuyo",
++      "teaches": [
++        "relativo-posesivo-cuyo"
++      ],
++      "english": "I have a friend whose brother lives in Madrid."
++    },
++    {
++      "id": "b1-05-04.ex20",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "Conozco",
++        "a",
++        "una",
++        "familia",
++        "cuyos",
++        "hijos",
++        "comparten",
++        "muchas",
++        "actividades",
++        "con",
++        "los",
++        "vecinos."
++      ],
++      "solution": [
++        "Conozco",
++        "a",
++        "una",
++        "familia",
++        "cuyos",
++        "hijos",
++        "comparten",
++        "muchas",
++        "actividades",
++        "con",
++        "los",
++        "vecinos."
++      ],
++      "english": "I know a family whose children share many activities with the neighbours.",
++      "teaches": [
++        "relativo-posesivo-cuyo"
++      ]
++    },
++    {
++      "id": "b1-05-04.ex21",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Los vecinos, __ casa está al lado, nos ayudan mucho.",
++      "answer": "cuya",
++      "teaches": [
++        "relativo-posesivo-cuyo"
++      ],
++      "english": "The neighbours, whose house is next door, help us a lot."
++    },
++    {
++      "id": "b1-05-04.ex22",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "A",
++          "text": "¿Quién es Marta?"
++        },
++        {
++          "speaker": "B",
++          "text": "_____"
++        },
++        {
++          "speaker": "A",
++          "text": "Por eso conoce bien la ciudad."
++        }
++      ],
++      "options": [
++        "Es la amiga cuya hermano vive en Madrid.",
++        "Es la amiga que hermano vive en Madrid.",
++        "Es la amiga cuyo hermano vive en Madrid."
++      ],
++      "correct": 2,
++      "teaches": [
++        "relativo-posesivo-cuyo"
++      ],
++      "distractor_skills": {
++        "1": "relative-clauses"
++      }
++    },
++    {
++      "id": "b1-05-04.ex23",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "Mi vecina, cuyas amigas viven cerca, nos ayuda mucho.",
++      "options": [
++        "My neighbour and her friends, who live nearby, help us a lot.",
++        "My neighbour, whose friends live nearby, helps us a lot.",
++        "My neighbour, who lives near her friends, helps us a lot."
++      ],
++      "correct": 1,
++      "teaches": [
++        "relativo-posesivo-cuyo"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-es/exercises/b1/b1-07-04-ex.json b/content/es-es/exercises/b1/b1-07-04-ex.json
+index 7f62093a..ecc032fa 100644
+--- a/content/es-es/exercises/b1/b1-07-04-ex.json
++++ b/content/es-es/exercises/b1/b1-07-04-ex.json
+@@ -299,6 +299,48 @@
+       "teaches": [
+         "comparatives"
+       ]
++    },
++    {
++      "id": "b1-07-04.ex18",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence says that this is the most effective strategy of all?",
++      "options": [
++        "Esta es estrategia más eficaz de todas.",
++        "Esta es la estrategia más eficaz de todas.",
++        "Esta es la estrategia muy eficaz de todas."
++      ],
++      "correct": 1,
++      "teaches": [
++        "superlatives"
++      ]
++    },
++    {
++      "id": "b1-07-04.ex19",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Para mí, esta es la __ opción.",
++      "hint": "worst",
++      "answer": "peor",
++      "teaches": [
++        "superlatives"
++      ],
++      "english": "For me, this is the worst option."
++    },
++    {
++      "id": "b1-07-04.ex20",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "Este método es utilísimo para aprender vocabulario.",
++      "options": [
++        "This method is more useful than learning vocabulary.",
++        "This method is not useful for learning vocabulary.",
++        "This method is extremely useful for learning vocabulary."
++      ],
++      "correct": 2,
++      "teaches": [
++        "superlatives"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-es/exercises/b1/b1-12-05-ex.json b/content/es-es/exercises/b1/b1-12-05-ex.json
+index 04997772..b7087495 100644
+--- a/content/es-es/exercises/b1/b1-12-05-ex.json
++++ b/content/es-es/exercises/b1/b1-12-05-ex.json
+@@ -388,6 +388,126 @@
+         "Prepara picarones para llevarlos al palacio."
+       ],
+       "correct": 0
++    },
++    {
++      "id": "b1-12-05.ex24",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence says that she stopped smoking two years ago?",
++      "options": [
++        "Dejó fumar hace dos años.",
++        "Dejó de fumó hace dos años.",
++        "Dejó de fumar hace dos años."
++      ],
++      "correct": 2,
++      "teaches": [
++        "dejar-de-infinitivo"
++      ],
++      "distractor_skills": {
++        "1": "preterito-indefinido"
++      }
++    },
++    {
++      "id": "b1-12-05.ex25",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Hace un año, mi hermano __ de comer dulces.",
++      "hint": "dejar, él",
++      "answer": "dejó",
++      "teaches": [
++        "dejar-de-infinitivo"
++      ],
++      "english": "A year ago, my brother stopped eating sweets."
++    },
++    {
++      "id": "b1-12-05.ex26",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "Hace",
++        "dos",
++        "años",
++        "dejé",
++        "de",
++        "fumar."
++      ],
++      "solution": [
++        "Hace",
++        "dos",
++        "años",
++        "dejé",
++        "de",
++        "fumar."
++      ],
++      "english": "Two years ago I stopped smoking.",
++      "teaches": [
++        "dejar-de-infinitivo"
++      ]
++    },
++    {
++      "id": "b1-12-05.ex27",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence means «I keep cooking at home»?",
++      "options": [
++        "Dejo de cocinar en casa.",
++        "No dejo de cocino en casa.",
++        "No dejo de cocinar en casa."
++      ],
++      "correct": 2,
++      "teaches": [
++        "dejar-de-infinitivo"
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
++    },
++    {
++      "id": "b1-12-05.ex28",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Pablo",
++          "text": "¿Todavía bebes refrescos?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        },
++        {
++          "speaker": "Pablo",
++          "text": "Eso es muy saludable."
++        }
++      ],
++      "options": [
++        "No, dejé de beber refrescos hace un año.",
++        "No, dejo de beber refrescos hace un año.",
++        "No, dejé de bebí refrescos hace un año."
++      ],
++      "correct": 0,
++      "teaches": [
++        "dejar-de-infinitivo"
++      ],
++      "distractor_skills": {
++        "1": "present-tense",
++        "2": "preterito-indefinido"
++      }
++    },
++    {
++      "id": "b1-12-05.ex29",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "Mi hermano dejó de beber refrescos y ahora bebe agua.",
++      "options": [
++        "My brother keeps drinking soft drinks and also drinks water.",
++        "My brother stopped drinking soft drinks and now drinks water.",
++        "My brother will stop drinking soft drinks and then drink water."
++      ],
++      "correct": 1,
++      "teaches": [
++        "dejar-de-infinitivo"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-es/exercises/b1/b1-15-02-ex.json b/content/es-es/exercises/b1/b1-15-02-ex.json
+index 633e4f8b..40a5f974 100644
+--- a/content/es-es/exercises/b1/b1-15-02-ex.json
++++ b/content/es-es/exercises/b1/b1-15-02-ex.json
+@@ -314,6 +314,36 @@
+       "teaches": [
+         "b1-culture-entertainment-vocab"
+       ]
++    },
++    {
++      "id": "b1-15-02.ex18",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which form completes «Los personajes ___ convincentes»?",
++      "options": [
++        "resulta",
++        "resultan",
++        "resulten"
++      ],
++      "correct": 1,
++      "teaches": [
++        "resultar-adjective"
++      ],
++      "distractor_skills": {
++        "2": "subjuntivo-morfologia"
++      }
++    },
++    {
++      "id": "b1-15-02.ex19",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Las escenas resultan muy __.",
++      "hint": "original, plural",
++      "answer": "originales",
++      "teaches": [
++        "resultar-adjective"
++      ],
++      "english": "The scenes turn out to be very original."
+     }
+   ]
+ }
+diff --git a/content/es-es/exercises/b1/b1-22-04-ex.json b/content/es-es/exercises/b1/b1-22-04-ex.json
+index 741ea2f0..c1eb9075 100644
+--- a/content/es-es/exercises/b1/b1-22-04-ex.json
++++ b/content/es-es/exercises/b1/b1-22-04-ex.json
+@@ -316,6 +316,129 @@
+       "teaches": [
+         "condicional-irregular"
+       ]
++    },
++    {
++      "id": "b1-22-04.ex18",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which form completes «Mañana a esta hora ya ___ el examen»?",
++      "options": [
++        "hemos terminado",
++        "habíamos terminado",
++        "habremos terminado"
++      ],
++      "correct": 2,
++      "teaches": [
++        "futuro-perfecto"
++      ],
++      "distractor_skills": {
++        "0": "preterito-perfecto",
++        "1": "pluscuamperfecto"
++      }
++    },
++    {
++      "id": "b1-22-04.ex19",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "En 2030 nosotros __ terminado la casa.",
++      "hint": "haber, nosotros",
++      "answer": "habremos",
++      "teaches": [
++        "futuro-perfecto"
++      ],
++      "english": "By 2030 we will have finished the house."
++    },
++    {
++      "id": "b1-22-04.ex20",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Dentro de diez años, la situación __ cambiado mucho.",
++      "hint": "haber",
++      "answer": "habrá",
++      "teaches": [
++        "futuro-perfecto"
++      ],
++      "english": "In ten years, the situation will have changed a lot."
++    },
++    {
++      "id": "b1-22-04.ex21",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "Mis",
++        "amigos",
++        "habrán",
++        "llegado",
++        "a",
++        "casa",
++        "antes",
++        "de",
++        "las",
++        "ocho."
++      ],
++      "solution": [
++        "Mis",
++        "amigos",
++        "habrán",
++        "llegado",
++        "a",
++        "casa",
++        "antes",
++        "de",
++        "las",
++        "ocho."
++      ],
++      "english": "My friends will have arrived home before eight.",
++      "teaches": [
++        "futuro-perfecto"
++      ]
++    },
++    {
++      "id": "b1-22-04.ex22",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "A",
++          "text": "¿Vas a estar libre el viernes?"
++        },
++        {
++          "speaker": "B",
++          "text": "_____"
++        },
++        {
++          "speaker": "A",
++          "text": "Perfecto, entonces nos vemos ese día."
++        }
++      ],
++      "options": [
++        "Sí, para entonces he terminado el trabajo.",
++        "Sí, para entonces habré terminado el trabajo.",
++        "Sí, para entonces terminé el trabajo."
++      ],
++      "correct": 1,
++      "teaches": [
++        "futuro-perfecto"
++      ],
++      "distractor_skills": {
++        "0": "preterito-perfecto",
++        "2": "preterito-indefinido"
++      }
++    },
++    {
++      "id": "b1-22-04.ex23",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "En 2030 habremos terminado la casa.",
++      "options": [
++        "In 2030 we finished the house.",
++        "In 2030 we are going to start the house.",
++        "By 2030 we will have finished the house."
++      ],
++      "correct": 2,
++      "teaches": [
++        "futuro-perfecto"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-es/exercises/b1/b1-40-02-ex.json b/content/es-es/exercises/b1/b1-40-02-ex.json
+index e063eaf6..f6e9b04c 100644
+--- a/content/es-es/exercises/b1/b1-40-02-ex.json
++++ b/content/es-es/exercises/b1/b1-40-02-ex.json
+@@ -200,6 +200,123 @@
+       "teaches": [
+         "sino-vs-pero"
+       ]
++    },
++    {
++      "id": "b1-40-02.ex12",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence says that he works and also studies?",
++      "options": [
++        "No solo trabaja, sino también estudia.",
++        "No solo trabaja, sino que también estudia.",
++        "Solo trabaja, sino que también estudia."
++      ],
++      "correct": 1,
++      "teaches": [
++        "correlativos-no-solo-sino"
++      ]
++    },
++    {
++      "id": "b1-40-02.ex13",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "No solo habla español, sino __ inglés.",
++      "answer": "también",
++      "teaches": [
++        "correlativos-no-solo-sino"
++      ],
++      "english": "She speaks not only Spanish but also English."
++    },
++    {
++      "id": "b1-40-02.ex14",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Tanto mis padres __ mis abuelos viven en este barrio.",
++      "answer": "como",
++      "teaches": [
++        "correlativos-no-solo-sino"
++      ],
++      "english": "Both my parents and my grandparents live in this neighbourhood."
++    },
++    {
++      "id": "b1-40-02.ex15",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "El",
++        "examen",
++        "no",
++        "solo",
++        "era",
++        "difícil",
++        ",",
++        "sino",
++        "también",
++        "muy",
++        "largo",
++        "."
++      ],
++      "solution": [
++        "El",
++        "examen",
++        "no",
++        "solo",
++        "era",
++        "difícil",
++        ",",
++        "sino",
++        "también",
++        "muy",
++        "largo",
++        "."
++      ],
++      "english": "The exam was not only difficult but also very long.",
++      "teaches": [
++        "correlativos-no-solo-sino"
++      ]
++    },
++    {
++      "id": "b1-40-02.ex16",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Elena",
++          "text": "¿Cómo es tu nuevo trabajo?"
++        },
++        {
++          "speaker": "Sara",
++          "text": "_____"
++        },
++        {
++          "speaker": "Elena",
++          "text": "Me alegro mucho por ti."
++        }
++      ],
++      "options": [
++        "No solo es interesante, sino que también muy bien pagado.",
++        "Solo es interesante, sino también muy bien pagado.",
++        "No solo es interesante, sino también muy bien pagado."
++      ],
++      "correct": 2,
++      "teaches": [
++        "correlativos-no-solo-sino"
++      ]
++    },
++    {
++      "id": "b1-40-02.ex17",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "No solo estudia español, sino también inglés.",
++      "options": [
++        "She studies Spanish but not French.",
++        "She studies not only Spanish but also English.",
++        "She does not study Spanish, but she studies French."
++      ],
++      "correct": 1,
++      "teaches": [
++        "correlativos-no-solo-sino"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-es/grammar/b1/b1-01-02-imperfecto-vs-indefinido-gr.json b/content/es-es/grammar/b1/b1-01-02-imperfecto-vs-indefinido-gr.json
+index 7c12b545..911f6ee0 100644
+--- a/content/es-es/grammar/b1/b1-01-02-imperfecto-vs-indefinido-gr.json
++++ b/content/es-es/grammar/b1/b1-01-02-imperfecto-vs-indefinido-gr.json
+@@ -93,6 +93,61 @@
+         }
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You know *estar* from A1 Unit 9 and the *imperfecto* from A2 Unit 21. New here is *estar a punto de* + infinitive: it says that something was about to happen, and the sentence goes on with the event that came at that moment. In a story it is mostly in the *imperfecto*, and the event that interrupts it is in the *indefinido*: *Estaba a punto de salir cuando sonó el teléfono.* The action itself had not happened yet. The same pattern works in the present for what is about to happen now: *Estoy a punto de salir.*"
++    },
++    {
++      "type": "table",
++      "title": "Estar a punto de + infinitive (imperfecto)",
++      "rows": [
++        [
++          "yo estaba a punto de salir",
++          "I was about to leave"
++        ],
++        [
++          "tú estabas a punto de salir",
++          "you were about to leave"
++        ],
++        [
++          "él, ella, usted estaba a punto de salir",
++          "he, she was / you (formal) were about to leave"
++        ],
++        [
++          "nosotros estábamos a punto de salir",
++          "we were about to leave"
++        ],
++        [
++          "vosotros estabais a punto de salir",
++          "you all were about to leave (Spain)"
++        ],
++        [
++          "ellos, ellas, ustedes estaban a punto de salir",
++          "they, you all were about to leave"
++        ]
++      ]
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Estaba a punto de salir cuando sonó el teléfono.",
++          "english": "I was about to leave when the phone rang."
++        },
++        {
++          "spanish": "El autobús estaba a punto de llegar cuando empezó a llover.",
++          "english": "The bus was about to arrive when it started to rain."
++        },
++        {
++          "spanish": "Estábamos a punto de comer cuando llegó mi hermano.",
++          "english": "We were about to eat when my brother arrived."
++        },
++        {
++          "spanish": "Ahora estoy a punto de salir.",
++          "english": "I am about to leave now."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+       "content": "Ask whether the verb is the stage or the action on it. The stage (weather, time, feelings, what was in progress) takes the *imperfecto*; the action takes the *indefinido*. For past habits the *imperfecto* is also used: *íbamos*, *leía*."
+diff --git a/content/es-es/grammar/b1/b1-02-02-indefinido-experiencias-gr.json b/content/es-es/grammar/b1/b1-02-02-indefinido-experiencias-gr.json
+index 71dbde08..d939b462 100644
+--- a/content/es-es/grammar/b1/b1-02-02-indefinido-experiencias-gr.json
++++ b/content/es-es/grammar/b1/b1-02-02-indefinido-experiencias-gr.json
+@@ -27,6 +27,53 @@
+         }
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You know the gerund from A1 Unit 19 (*estoy comiendo*, *estoy leyendo*). Without *estar*, the gerund also says how or while the main verb happens: it names what the same person is doing at the same moment. *Llegó corriendo* means \"she arrived running\", *Volvimos a casa cantando* means \"we went home singing\". The gerund never changes: the main verb carries the person and the tense."
++    },
++    {
++      "type": "table",
++      "title": "The gerund: one form for every person",
++      "rows": [
++        [
++          "hablar → hablando",
++          "speaking"
++        ],
++        [
++          "correr → corriendo",
++          "running"
++        ],
++        [
++          "salir → saliendo",
++          "leaving"
++        ],
++        [
++          "leer → leyendo",
++          "reading (irregular: -yendo)"
++        ]
++      ]
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Llegó corriendo al auditorio.",
++          "english": "She arrived at the auditorium running."
++        },
++        {
++          "spanish": "Volvimos a casa cantando después del concierto.",
++          "english": "We went back home singing after the concert."
++        },
++        {
++          "spanish": "Salí del escenario sonriendo.",
++          "english": "I left the stage smiling."
++        },
++        {
++          "spanish": "Mi amiga habló mirando al público.",
++          "english": "My friend spoke looking at the audience."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+       "content": "Choose the *indefinido* when the listener can locate the experience as one completed episode, even if its effect lasts. The *imperfecto* stays for the background (*estaba nervioso*, *guardaba silencio*)."
+diff --git a/content/es-es/grammar/b1/b1-05-04-relative-clauses-gr.json b/content/es-es/grammar/b1/b1-05-04-relative-clauses-gr.json
+index 579c37aa..d7db6850 100644
+--- a/content/es-es/grammar/b1/b1-05-04-relative-clauses-gr.json
++++ b/content/es-es/grammar/b1/b1-05-04-relative-clauses-gr.json
+@@ -27,6 +27,53 @@
+         }
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You know possessives such as *mi* and *su* from A1. Inside a relative clause, *cuyo* does their job and means \"whose\": it joins the owner (*la amiga*) to the thing owned (*el hermano*). It agrees in gender and number with the thing owned, not with the owner, and no article follows it: *la amiga cuyo hermano vive en Madrid*, because *hermano* is masculine singular."
++    },
++    {
++      "type": "table",
++      "title": "Cuyo agrees with the thing owned",
++      "rows": [
++        [
++          "cuyo + masculine singular: la amiga cuyo hermano vive en Madrid",
++          "the friend whose brother lives in Madrid"
++        ],
++        [
++          "cuya + feminine singular: el vecino cuya hija estudia música",
++          "the neighbour whose daughter studies music"
++        ],
++        [
++          "cuyos + masculine plural: la familia cuyos hijos viven cerca",
++          "the family whose children live nearby"
++        ],
++        [
++          "cuyas + feminine plural: la vecina cuyas amigas viven cerca",
++          "the neighbour whose friends live nearby"
++        ]
++      ]
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Tengo una amiga cuyo hermano vive en Madrid.",
++          "english": "I have a friend whose brother lives in Madrid."
++        },
++        {
++          "spanish": "El vecino cuya hija estudia música siempre nos saluda.",
++          "english": "The neighbour whose daughter studies music always greets us."
++        },
++        {
++          "spanish": "Conozco a una familia cuyos hijos comparten muchas actividades con los vecinos.",
++          "english": "I know a family whose children share many activities with the neighbours."
++        },
++        {
++          "spanish": "Mi vecina, cuyas amigas viven cerca, nos ayuda mucho.",
++          "english": "My neighbour, whose friends live nearby, helps us a lot."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+       "content": "The relative clause normally follows the noun it describes. Choose the relative form according to its role in the clause, not simply according to the noun before it."
+diff --git a/content/es-es/grammar/b1/b1-12-05-integrated-explanation-and-narrative-gr.json b/content/es-es/grammar/b1/b1-12-05-integrated-explanation-and-narrative-gr.json
+index 1612b958..fd332d91 100644
+--- a/content/es-es/grammar/b1/b1-12-05-integrated-explanation-and-narrative-gr.json
++++ b/content/es-es/grammar/b1/b1-12-05-integrated-explanation-and-narrative-gr.json
+@@ -27,6 +27,61 @@
+         }
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You know the *indefinido* from A2 Unit 11 and the *imperfecto* from A2 Unit 21. New here is *dejar de* + infinitive: it means to stop doing something you did regularly, such as a habit. *Dejé de fumar hace dos años* means \"I stopped smoking two years ago\". With *no*, *no dejar de* + infinitive means to keep on doing it: *No dejo de cocinar en casa* means \"I keep cooking at home\"."
++    },
++    {
++      "type": "table",
++      "title": "Dejar de + infinitive (indefinido)",
++      "rows": [
++        [
++          "yo dejé de fumar",
++          "I stopped smoking"
++        ],
++        [
++          "tú dejaste de fumar",
++          "you stopped smoking"
++        ],
++        [
++          "él, ella, usted dejó de fumar",
++          "he, she stopped / you (formal) stopped smoking"
++        ],
++        [
++          "nosotros dejamos de fumar",
++          "we stopped smoking"
++        ],
++        [
++          "vosotros dejasteis de fumar",
++          "you all stopped smoking (Spain)"
++        ],
++        [
++          "ellos, ellas, ustedes dejaron de fumar",
++          "they, you all stopped smoking"
++        ]
++      ]
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Dejé de fumar hace dos años.",
++          "english": "I stopped smoking two years ago."
++        },
++        {
++          "spanish": "Mi madre dejó de comprar productos preparados.",
++          "english": "My mother stopped buying prepared products."
++        },
++        {
++          "spanish": "Mi hermano dejó de beber refrescos y ahora bebe agua.",
++          "english": "My brother stopped drinking soft drinks and now drinks water."
++        },
++        {
++          "spanish": "Aunque es difícil, no dejo de cocinar en casa.",
++          "english": "Although it is difficult, I keep on cooking at home."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+       "content": "Use connectors to show stages, causes and contrasts so that an account of changing habits becomes a connected narrative."
+diff --git a/content/es-es/grammar/b1/b1-22-04-hypothetical-structures-gr.json b/content/es-es/grammar/b1/b1-22-04-hypothetical-structures-gr.json
+index 45f98486..5a2cb06f 100644
+--- a/content/es-es/grammar/b1/b1-22-04-hypothetical-structures-gr.json
++++ b/content/es-es/grammar/b1/b1-22-04-hypothetical-structures-gr.json
+@@ -27,6 +27,61 @@
+         }
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You know the simple future from A2 Unit 19 and the past participle from A2 Unit 1. The *futuro perfecto* combines them: *haber* in the future (*habré, habrás, habrá, habremos, habréis, habrán*) + the participle, which does not change. It says that something will already be finished by a point in the future: *En 2030 habremos terminado la casa.* Spanish also uses it to guess about the past: *Habrá salido ya* means \"he has probably left already\". You will meet that use later; here you practise the first."
++    },
++    {
++      "type": "table",
++      "title": "Futuro perfecto: haber + participle",
++      "rows": [
++        [
++          "yo habré terminado",
++          "I will have finished"
++        ],
++        [
++          "tú habrás terminado",
++          "you will have finished"
++        ],
++        [
++          "él, ella, usted habrá terminado",
++          "he, she, you (formal) will have finished"
++        ],
++        [
++          "nosotros habremos terminado",
++          "we will have finished"
++        ],
++        [
++          "vosotros habréis terminado",
++          "you all will have finished (Spain)"
++        ],
++        [
++          "ellos, ellas, ustedes habrán terminado",
++          "they, you all will have finished"
++        ]
++      ]
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "En 2030 habremos terminado la casa.",
++          "english": "By 2030 we will have finished the house."
++        },
++        {
++          "spanish": "Para el viernes habré terminado el trabajo.",
++          "english": "By Friday I will have finished the work."
++        },
++        {
++          "spanish": "Dentro de diez años, la situación habrá cambiado mucho.",
++          "english": "In ten years, the situation will have changed a lot."
++        },
++        {
++          "spanish": "No contesta el teléfono; habrá salido ya.",
++          "english": "He is not answering the phone; he has probably left already."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+       "content": "A hypothetical answer can contain both a condition and a probability marker to show degrees of uncertainty."
+diff --git a/content/es-es/grammar/b1/b1-40-02-gr.json b/content/es-es/grammar/b1/b1-40-02-gr.json
+index 2a8689af..0c8d2294 100644
+--- a/content/es-es/grammar/b1/b1-40-02-gr.json
++++ b/content/es-es/grammar/b1/b1-40-02-gr.json
+@@ -45,6 +45,49 @@
+         }
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You know *sino* and *sino que* from the table above. *No solo … sino (también)* is a pair that adds a second item to the first and gives both weight: \"not only … but also\". Before a noun or an adjective use *sino (también)*; before a new conjugated verb use *sino que (también)*. *Tanto … como* (\"both … and\") is the plain version and takes a plural verb: *Tanto mi hermano como yo vivimos aquí.*"
++    },
++    {
++      "type": "table",
++      "title": "No solo … sino (también) and tanto … como",
++      "rows": [
++        [
++          "no solo + noun / adjective, sino (también) + noun / adjective",
++          "No solo es caro, sino también incómodo."
++        ],
++        [
++          "no solo + verb, sino que (también) + verb",
++          "No solo canta, sino que también baila."
++        ],
++        [
++          "tanto A como B (both A and B)",
++          "Tanto mi hermano como yo vivimos aquí."
++        ]
++      ]
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "El examen no solo era difícil, sino también muy largo.",
++          "english": "The exam was not only difficult but also very long."
++        },
++        {
++          "spanish": "No solo perdí el documento, sino que también olvidé el teléfono.",
++          "english": "I not only lost the document but also forgot the phone."
++        },
++        {
++          "spanish": "No solo trabaja los sábados, sino que también estudia por la noche.",
++          "english": "He not only works on Saturdays but also studies at night."
++        },
++        {
++          "spanish": "Tanto la casa como el barrio son muy tranquilos.",
++          "english": "Both the house and the neighbourhood are very quiet."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+       "content": "Formula: Negative clause + noun/adj = **sino**. Negative clause + conjugated verb = **sino que**."
+diff --git a/content/es-es/lessons/b1/b1-01-02.json b/content/es-es/lessons/b1/b1-01-02.json
+index 983bf685..77348b77 100644
+--- a/content/es-es/lessons/b1/b1-01-02.json
++++ b/content/es-es/lessons/b1/b1-01-02.json
+@@ -39,7 +39,11 @@
+         "b1-01-02.ex06",
+         "b1-01-02.ex07",
+         "b1-01-02.ex08",
+-        "b1-01-02.ex09"
++        "b1-01-02.ex09",
++        "b1-01-02.ex17",
++        "b1-01-02.ex18",
++        "b1-01-02.ex19",
++        "b1-01-02.ex20"
+       ]
+     },
+     {
+@@ -48,7 +52,8 @@
+       "ref": "exercises/b1/b1-01-02-ex.json",
+       "exerciseRefs": [
+         "b1-01-02.ex10",
+-        "b1-01-02.ex11"
++        "b1-01-02.ex11",
++        "b1-01-02.ex22"
+       ]
+     },
+     {
+@@ -58,7 +63,8 @@
+       "exerciseRefs": [
+         "b1-01-02.ex12",
+         "b1-01-02.ex13",
+-        "b1-01-02.ex14"
++        "b1-01-02.ex14",
++        "b1-01-02.ex21"
+       ]
+     },
+     {
+diff --git a/content/es-es/lessons/b1/b1-02-02.json b/content/es-es/lessons/b1/b1-02-02.json
+index 622c88fd..f017a7a0 100644
+--- a/content/es-es/lessons/b1/b1-02-02.json
++++ b/content/es-es/lessons/b1/b1-02-02.json
+@@ -39,7 +39,11 @@
+         "b1-02-02.ex06",
+         "b1-02-02.ex07",
+         "b1-02-02.ex08",
+-        "b1-02-02.ex09"
++        "b1-02-02.ex09",
++        "b1-02-02.ex17",
++        "b1-02-02.ex18",
++        "b1-02-02.ex19",
++        "b1-02-02.ex20"
+       ]
+     },
+     {
+@@ -48,7 +52,8 @@
+       "ref": "exercises/b1/b1-02-02-ex.json",
+       "exerciseRefs": [
+         "b1-02-02.ex10",
+-        "b1-02-02.ex11"
++        "b1-02-02.ex11",
++        "b1-02-02.ex22"
+       ]
+     },
+     {
+@@ -58,7 +63,8 @@
+       "exerciseRefs": [
+         "b1-02-02.ex12",
+         "b1-02-02.ex13",
+-        "b1-02-02.ex14"
++        "b1-02-02.ex14",
++        "b1-02-02.ex21"
+       ]
+     },
+     {
+diff --git a/content/es-es/lessons/b1/b1-02-04.json b/content/es-es/lessons/b1/b1-02-04.json
+index f7b8612d..ba01944e 100644
+--- a/content/es-es/lessons/b1/b1-02-04.json
++++ b/content/es-es/lessons/b1/b1-02-04.json
+@@ -39,7 +39,10 @@
+         "b1-02-04.ex06",
+         "b1-02-04.ex07",
+         "b1-02-04.ex08",
+-        "b1-02-04.ex09"
++        "b1-02-04.ex09",
++        "b1-02-04.ex17",
++        "b1-02-04.ex18",
++        "b1-02-04.ex19"
+       ]
+     },
+     {
+diff --git a/content/es-es/lessons/b1/b1-05-04.json b/content/es-es/lessons/b1/b1-05-04.json
+index b2624bc6..0574bfcb 100644
+--- a/content/es-es/lessons/b1/b1-05-04.json
++++ b/content/es-es/lessons/b1/b1-05-04.json
+@@ -39,7 +39,11 @@
+         "b1-05-04.ex06",
+         "b1-05-04.ex07",
+         "b1-05-04.ex08",
+-        "b1-05-04.ex09"
++        "b1-05-04.ex09",
++        "b1-05-04.ex18",
++        "b1-05-04.ex19",
++        "b1-05-04.ex20",
++        "b1-05-04.ex21"
+       ]
+     },
+     {
+@@ -48,7 +52,8 @@
+       "ref": "exercises/b1/b1-05-04-ex.json",
+       "exerciseRefs": [
+         "b1-05-04.ex10",
+-        "b1-05-04.ex11"
++        "b1-05-04.ex11",
++        "b1-05-04.ex23"
+       ]
+     },
+     {
+@@ -59,7 +64,8 @@
+         "b1-05-04.ex12",
+         "b1-05-04.ex13",
+         "b1-05-04.ex14a",
+-        "b1-05-04.ex14b"
++        "b1-05-04.ex14b",
++        "b1-05-04.ex22"
+       ]
+     },
+     {
+diff --git a/content/es-es/lessons/b1/b1-07-04.json b/content/es-es/lessons/b1/b1-07-04.json
+index 58f7a79c..82762b07 100644
+--- a/content/es-es/lessons/b1/b1-07-04.json
++++ b/content/es-es/lessons/b1/b1-07-04.json
+@@ -39,7 +39,9 @@
+         "b1-07-04.ex06",
+         "b1-07-04.ex07",
+         "b1-07-04.ex08",
+-        "b1-07-04.ex09"
++        "b1-07-04.ex09",
++        "b1-07-04.ex18",
++        "b1-07-04.ex19"
+       ]
+     },
+     {
+@@ -48,7 +50,8 @@
+       "ref": "exercises/b1/b1-07-04-ex.json",
+       "exerciseRefs": [
+         "b1-07-04.ex10",
+-        "b1-07-04.ex11"
++        "b1-07-04.ex11",
++        "b1-07-04.ex20"
+       ]
+     },
+     {
+diff --git a/content/es-es/lessons/b1/b1-12-05.json b/content/es-es/lessons/b1/b1-12-05.json
+index 7b62c4ce..2e7d9dcf 100644
+--- a/content/es-es/lessons/b1/b1-12-05.json
++++ b/content/es-es/lessons/b1/b1-12-05.json
+@@ -41,7 +41,11 @@
+         "b1-12-05.ex05",
+         "b1-12-05.ex06",
+         "b1-12-05.ex07",
+-        "b1-12-05.ex12"
++        "b1-12-05.ex12",
++        "b1-12-05.ex24",
++        "b1-12-05.ex25",
++        "b1-12-05.ex26",
++        "b1-12-05.ex27"
+       ]
+     },
+     {
+@@ -65,7 +69,8 @@
+       "ref": "exercises/b1/b1-12-05-ex.json",
+       "exerciseRefs": [
+         "b1-12-05.ex09",
+-        "b1-12-05.ex10"
++        "b1-12-05.ex10",
++        "b1-12-05.ex29"
+       ]
+     },
+     {
+@@ -76,7 +81,8 @@
+         "b1-12-05.ex08",
+         "b1-12-05.ex13",
+         "b1-12-05.ex14",
+-        "b1-12-05.ex15"
++        "b1-12-05.ex15",
++        "b1-12-05.ex28"
+       ]
+     },
+     {
+diff --git a/content/es-es/lessons/b1/b1-15-02.json b/content/es-es/lessons/b1/b1-15-02.json
+index 0992258a..5e7688fc 100644
+--- a/content/es-es/lessons/b1/b1-15-02.json
++++ b/content/es-es/lessons/b1/b1-15-02.json
+@@ -41,7 +41,9 @@
+         "b1-15-02.ex05",
+         "b1-15-02.ex06",
+         "b1-15-02.ex07",
+-        "b1-15-02.ex13"
++        "b1-15-02.ex13",
++        "b1-15-02.ex18",
++        "b1-15-02.ex19"
+       ]
+     },
+     {
+diff --git a/content/es-es/lessons/b1/b1-22-04.json b/content/es-es/lessons/b1/b1-22-04.json
+index 42450007..255fb134 100644
+--- a/content/es-es/lessons/b1/b1-22-04.json
++++ b/content/es-es/lessons/b1/b1-22-04.json
+@@ -41,7 +41,11 @@
+         "b1-22-04.ex05",
+         "b1-22-04.ex06",
+         "b1-22-04.ex07",
+-        "b1-22-04.ex13"
++        "b1-22-04.ex13",
++        "b1-22-04.ex18",
++        "b1-22-04.ex19",
++        "b1-22-04.ex20",
++        "b1-22-04.ex21"
+       ]
+     },
+     {
+@@ -52,7 +56,8 @@
+         "b1-22-04.ex09",
+         "b1-22-04.ex10",
+         "b1-22-04.ex11",
+-        "b1-22-04.ex12"
++        "b1-22-04.ex12",
++        "b1-22-04.ex23"
+       ]
+     },
+     {
+@@ -62,7 +67,8 @@
+       "exerciseRefs": [
+         "b1-22-04.ex08",
+         "b1-22-04.ex14",
+-        "b1-22-04.ex15"
++        "b1-22-04.ex15",
++        "b1-22-04.ex22"
+       ]
+     },
+     {
+diff --git a/content/es-es/lessons/b1/b1-40-02.json b/content/es-es/lessons/b1/b1-40-02.json
+index 10647fea..bd6da2d7 100644
+--- a/content/es-es/lessons/b1/b1-40-02.json
++++ b/content/es-es/lessons/b1/b1-40-02.json
+@@ -37,7 +37,11 @@
+         "b1-40-02.ex03",
+         "b1-40-02.ex04",
+         "b1-40-02.ex05",
+-        "b1-40-02.ex06"
++        "b1-40-02.ex06",
++        "b1-40-02.ex12",
++        "b1-40-02.ex13",
++        "b1-40-02.ex14",
++        "b1-40-02.ex15"
+       ]
+     },
+     {
+@@ -46,7 +50,8 @@
+       "ref": "exercises/b1/b1-40-02-ex.json",
+       "exerciseRefs": [
+         "b1-40-02.ex07",
+-        "b1-40-02.ex08"
++        "b1-40-02.ex08",
++        "b1-40-02.ex17"
+       ]
+     },
+     {
+@@ -55,7 +60,8 @@
+       "ref": "exercises/b1/b1-40-02-ex.json",
+       "exerciseRefs": [
+         "b1-40-02.ex09",
+-        "b1-40-02.ex10"
++        "b1-40-02.ex10",
++        "b1-40-02.ex16"
+       ]
+     },
+     {
+diff --git a/content/es-latam/exercises/b1/b1-01-02-ex.json b/content/es-latam/exercises/b1/b1-01-02-ex.json
+index d6da9927..f07efd94 100644
+--- a/content/es-latam/exercises/b1/b1-01-02-ex.json
++++ b/content/es-latam/exercises/b1/b1-01-02-ex.json
+@@ -344,6 +344,133 @@
+       "teaches": [
+         "imperfect"
+       ]
++    },
++    {
++      "id": "b1-01-02.ex17",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence means «I was about to leave when the phone rang»?",
++      "options": [
++        "Estaba a punto salir cuando sonó el teléfono.",
++        "Estaba a punto de salir cuando sonó el teléfono.",
++        "Estaba a punto de saliendo cuando sonó el teléfono."
++      ],
++      "correct": 1,
++      "teaches": [
++        "estar-a-punto-de"
++      ],
++      "distractor_skills": {
++        "2": "progressive"
++      }
++    },
++    {
++      "id": "b1-01-02.ex18",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Mi hermano estaba a punto __ salir cuando llegamos a casa.",
++      "answer": "de",
++      "teaches": [
++        "estar-a-punto-de"
++      ],
++      "english": "My brother was about to leave when we got home."
++    },
++    {
++      "id": "b1-01-02.ex19",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Nosotros __ a punto de cenar cuando empezó a llover.",
++      "hint": "estar, nosotros",
++      "answer": "estábamos",
++      "teaches": [
++        "estar-a-punto-de"
++      ],
++      "english": "We were about to have dinner when it started to rain."
++    },
++    {
++      "id": "b1-01-02.ex20",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "El",
++        "autobús",
++        "estaba",
++        "a",
++        "punto",
++        "de",
++        "salir",
++        "cuando",
++        "Ana",
++        "llegó",
++        "a",
++        "la",
++        "parada."
++      ],
++      "solution": [
++        "El",
++        "autobús",
++        "estaba",
++        "a",
++        "punto",
++        "de",
++        "salir",
++        "cuando",
++        "Ana",
++        "llegó",
++        "a",
++        "la",
++        "parada."
++      ],
++      "english": "The bus was about to leave when Ana arrived at the stop.",
++      "teaches": [
++        "estar-a-punto-de"
++      ]
++    },
++    {
++      "id": "b1-01-02.ex21",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Sara",
++          "text": "¿Qué hacías cuando llegó tu hermano?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        },
++        {
++          "speaker": "Sara",
++          "text": "Entonces cenaron juntos."
++        }
++      ],
++      "options": [
++        "Estaba a punto de cenar cuando llegó.",
++        "Estoy a punto de cenar cuando llegó.",
++        "Estaba a punto de ceno cuando llegó."
++      ],
++      "correct": 0,
++      "teaches": [
++        "estar-a-punto-de"
++      ],
++      "distractor_skills": {
++        "1": "present-tense",
++        "2": "present-tense"
++      }
++    },
++    {
++      "id": "b1-01-02.ex22",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "Mis padres estaban a punto de salir cuando empezó a llover.",
++      "options": [
++        "My parents were about to leave when it started to rain.",
++        "My parents had already left when it started to rain.",
++        "My parents left when it started to rain."
++      ],
++      "correct": 0,
++      "teaches": [
++        "estar-a-punto-de"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b1/b1-02-02-ex.json b/content/es-latam/exercises/b1/b1-02-02-ex.json
+index fb711d73..a79456c0 100644
+--- a/content/es-latam/exercises/b1/b1-02-02-ex.json
++++ b/content/es-latam/exercises/b1/b1-02-02-ex.json
+@@ -310,6 +310,128 @@
+       "teaches": [
+         "preterito-indefinido"
+       ]
++    },
++    {
++      "id": "b1-02-02.ex17",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence says that she arrived running?",
++      "options": [
++        "Llegó correr al auditorio.",
++        "Llegó corrió al auditorio.",
++        "Llegó corriendo al auditorio."
++      ],
++      "correct": 2,
++      "teaches": [
++        "gerundio-acciones-paralelas"
++      ],
++      "distractor_skills": {
++        "1": "preterito-indefinido"
++      }
++    },
++    {
++      "id": "b1-02-02.ex18",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Volvimos a casa __ después del concierto.",
++      "hint": "cantar",
++      "answer": "cantando",
++      "teaches": [
++        "gerundio-acciones-paralelas"
++      ],
++      "english": "We went back home singing after the concert."
++    },
++    {
++      "id": "b1-02-02.ex19",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Salí del escenario __.",
++      "hint": "sonreír",
++      "answer": "sonriendo",
++      "teaches": [
++        "gerundio-acciones-paralelas"
++      ],
++      "english": "I left the stage smiling."
++    },
++    {
++      "id": "b1-02-02.ex20",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "Mi",
++        "amigo",
++        "entró",
++        "en",
++        "el",
++        "auditorio",
++        "hablando",
++        "con",
++        "el",
++        "profesor."
++      ],
++      "solution": [
++        "Mi",
++        "amigo",
++        "entró",
++        "en",
++        "el",
++        "auditorio",
++        "hablando",
++        "con",
++        "el",
++        "profesor."
++      ],
++      "english": "My friend came into the auditorium talking with the teacher.",
++      "teaches": [
++        "gerundio-acciones-paralelas"
++      ]
++    },
++    {
++      "id": "b1-02-02.ex21",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Nora",
++          "text": "¿Cómo volvieron a casa después del concierto?"
++        },
++        {
++          "speaker": "Diego",
++          "text": "_____"
++        },
++        {
++          "speaker": "Nora",
++          "text": "Seguro que estaban muy contentos."
++        }
++      ],
++      "options": [
++        "Volvimos cantamos por la calle.",
++        "Volvimos cantando por la calle.",
++        "Volvimos cantado por la calle."
++      ],
++      "correct": 1,
++      "teaches": [
++        "gerundio-acciones-paralelas"
++      ],
++      "distractor_skills": {
++        "0": "present-tense",
++        "2": "past-participles"
++      }
++    },
++    {
++      "id": "b1-02-02.ex22",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "Salimos del auditorio hablando de la actuación.",
++      "options": [
++        "We left the auditorium and talked about the performance later.",
++        "We stayed in the auditorium talking about the performance.",
++        "We left the auditorium talking about the performance."
++      ],
++      "correct": 2,
++      "teaches": [
++        "gerundio-acciones-paralelas"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b1/b1-02-04-ex.json b/content/es-latam/exercises/b1/b1-02-04-ex.json
+index 2a589030..84ed5a49 100644
+--- a/content/es-latam/exercises/b1/b1-02-04-ex.json
++++ b/content/es-latam/exercises/b1/b1-02-04-ex.json
+@@ -299,6 +299,70 @@
+         "b1-experiences-memories-vocab"
+       ],
+       "category": "writing"
++    },
++    {
++      "id": "b1-02-04.ex17",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence says that her brother understood the story better as he studied more?",
++      "options": [
++        "A medida estudiaba, mi hermano entendía mejor la historia.",
++        "A medida que estudiaba, mi hermano entendía mejor la historia.",
++        "A medida que estudiará, mi hermano entendía mejor la historia."
++      ],
++      "correct": 1,
++      "teaches": [
++        "cuanto-mas-tanto-mas"
++      ],
++      "distractor_skills": {
++        "2": "futuro-simple"
++      }
++    },
++    {
++      "id": "b1-02-04.ex18",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "A __ que aprendíamos más, el español nos parecía más fácil.",
++      "answer": "medida",
++      "teaches": [
++        "cuanto-mas-tanto-mas"
++      ],
++      "english": "As we learned more, Spanish seemed easier to us."
++    },
++    {
++      "id": "b1-02-04.ex19",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "A",
++        "medida",
++        "que",
++        "pasaba",
++        "el",
++        "tiempo,",
++        "entendía",
++        "mejor",
++        "a",
++        "mi",
++        "abuela."
++      ],
++      "solution": [
++        "A",
++        "medida",
++        "que",
++        "pasaba",
++        "el",
++        "tiempo,",
++        "entendía",
++        "mejor",
++        "a",
++        "mi",
++        "abuela."
++      ],
++      "english": "As time went by, I understood my grandmother better.",
++      "teaches": [
++        "cuanto-mas-tanto-mas"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b1/b1-05-04-ex.json b/content/es-latam/exercises/b1/b1-05-04-ex.json
+index f6030d83..1f5e09c6 100644
+--- a/content/es-latam/exercises/b1/b1-05-04-ex.json
++++ b/content/es-latam/exercises/b1/b1-05-04-ex.json
+@@ -333,6 +333,126 @@
+       "teaches": [
+         "relative-clauses"
+       ]
++    },
++    {
++      "id": "b1-05-04.ex18",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which form completes «El vecino ___ hija estudia música nos saluda»?",
++      "options": [
++        "cuyo",
++        "cuya",
++        "cuyas"
++      ],
++      "correct": 1,
++      "teaches": [
++        "relativo-posesivo-cuyo"
++      ]
++    },
++    {
++      "id": "b1-05-04.ex19",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Tengo una amiga __ hermano vive en Madrid.",
++      "answer": "cuyo",
++      "teaches": [
++        "relativo-posesivo-cuyo"
++      ],
++      "english": "I have a friend whose brother lives in Madrid."
++    },
++    {
++      "id": "b1-05-04.ex20",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "Conozco",
++        "a",
++        "una",
++        "familia",
++        "cuyos",
++        "hijos",
++        "comparten",
++        "muchas",
++        "actividades",
++        "con",
++        "los",
++        "vecinos."
++      ],
++      "solution": [
++        "Conozco",
++        "a",
++        "una",
++        "familia",
++        "cuyos",
++        "hijos",
++        "comparten",
++        "muchas",
++        "actividades",
++        "con",
++        "los",
++        "vecinos."
++      ],
++      "english": "I know a family whose children share many activities with the neighbours.",
++      "teaches": [
++        "relativo-posesivo-cuyo"
++      ]
++    },
++    {
++      "id": "b1-05-04.ex21",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Los vecinos, __ casa está al lado, nos ayudan mucho.",
++      "answer": "cuya",
++      "teaches": [
++        "relativo-posesivo-cuyo"
++      ],
++      "english": "The neighbours, whose house is next door, help us a lot."
++    },
++    {
++      "id": "b1-05-04.ex22",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "A",
++          "text": "¿Quién es Marta?"
++        },
++        {
++          "speaker": "B",
++          "text": "_____"
++        },
++        {
++          "speaker": "A",
++          "text": "Por eso conoce bien la ciudad."
++        }
++      ],
++      "options": [
++        "Es la amiga cuya hermano vive en Madrid.",
++        "Es la amiga que hermano vive en Madrid.",
++        "Es la amiga cuyo hermano vive en Madrid."
++      ],
++      "correct": 2,
++      "teaches": [
++        "relativo-posesivo-cuyo"
++      ],
++      "distractor_skills": {
++        "1": "relative-clauses"
++      }
++    },
++    {
++      "id": "b1-05-04.ex23",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "Mi vecina, cuyas amigas viven cerca, nos ayuda mucho.",
++      "options": [
++        "My neighbour and her friends, who live nearby, help us a lot.",
++        "My neighbour, whose friends live nearby, helps us a lot.",
++        "My neighbour, who lives near her friends, helps us a lot."
++      ],
++      "correct": 1,
++      "teaches": [
++        "relativo-posesivo-cuyo"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b1/b1-07-04-ex.json b/content/es-latam/exercises/b1/b1-07-04-ex.json
+index 7f62093a..ecc032fa 100644
+--- a/content/es-latam/exercises/b1/b1-07-04-ex.json
++++ b/content/es-latam/exercises/b1/b1-07-04-ex.json
+@@ -299,6 +299,48 @@
+       "teaches": [
+         "comparatives"
+       ]
++    },
++    {
++      "id": "b1-07-04.ex18",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence says that this is the most effective strategy of all?",
++      "options": [
++        "Esta es estrategia más eficaz de todas.",
++        "Esta es la estrategia más eficaz de todas.",
++        "Esta es la estrategia muy eficaz de todas."
++      ],
++      "correct": 1,
++      "teaches": [
++        "superlatives"
++      ]
++    },
++    {
++      "id": "b1-07-04.ex19",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Para mí, esta es la __ opción.",
++      "hint": "worst",
++      "answer": "peor",
++      "teaches": [
++        "superlatives"
++      ],
++      "english": "For me, this is the worst option."
++    },
++    {
++      "id": "b1-07-04.ex20",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "Este método es utilísimo para aprender vocabulario.",
++      "options": [
++        "This method is more useful than learning vocabulary.",
++        "This method is not useful for learning vocabulary.",
++        "This method is extremely useful for learning vocabulary."
++      ],
++      "correct": 2,
++      "teaches": [
++        "superlatives"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b1/b1-12-05-ex.json b/content/es-latam/exercises/b1/b1-12-05-ex.json
+index 04997772..b7087495 100644
+--- a/content/es-latam/exercises/b1/b1-12-05-ex.json
++++ b/content/es-latam/exercises/b1/b1-12-05-ex.json
+@@ -388,6 +388,126 @@
+         "Prepara picarones para llevarlos al palacio."
+       ],
+       "correct": 0
++    },
++    {
++      "id": "b1-12-05.ex24",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence says that she stopped smoking two years ago?",
++      "options": [
++        "Dejó fumar hace dos años.",
++        "Dejó de fumó hace dos años.",
++        "Dejó de fumar hace dos años."
++      ],
++      "correct": 2,
++      "teaches": [
++        "dejar-de-infinitivo"
++      ],
++      "distractor_skills": {
++        "1": "preterito-indefinido"
++      }
++    },
++    {
++      "id": "b1-12-05.ex25",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Hace un año, mi hermano __ de comer dulces.",
++      "hint": "dejar, él",
++      "answer": "dejó",
++      "teaches": [
++        "dejar-de-infinitivo"
++      ],
++      "english": "A year ago, my brother stopped eating sweets."
++    },
++    {
++      "id": "b1-12-05.ex26",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "Hace",
++        "dos",
++        "años",
++        "dejé",
++        "de",
++        "fumar."
++      ],
++      "solution": [
++        "Hace",
++        "dos",
++        "años",
++        "dejé",
++        "de",
++        "fumar."
++      ],
++      "english": "Two years ago I stopped smoking.",
++      "teaches": [
++        "dejar-de-infinitivo"
++      ]
++    },
++    {
++      "id": "b1-12-05.ex27",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence means «I keep cooking at home»?",
++      "options": [
++        "Dejo de cocinar en casa.",
++        "No dejo de cocino en casa.",
++        "No dejo de cocinar en casa."
++      ],
++      "correct": 2,
++      "teaches": [
++        "dejar-de-infinitivo"
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
++    },
++    {
++      "id": "b1-12-05.ex28",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Pablo",
++          "text": "¿Todavía bebes refrescos?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        },
++        {
++          "speaker": "Pablo",
++          "text": "Eso es muy saludable."
++        }
++      ],
++      "options": [
++        "No, dejé de beber refrescos hace un año.",
++        "No, dejo de beber refrescos hace un año.",
++        "No, dejé de bebí refrescos hace un año."
++      ],
++      "correct": 0,
++      "teaches": [
++        "dejar-de-infinitivo"
++      ],
++      "distractor_skills": {
++        "1": "present-tense",
++        "2": "preterito-indefinido"
++      }
++    },
++    {
++      "id": "b1-12-05.ex29",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "Mi hermano dejó de beber refrescos y ahora bebe agua.",
++      "options": [
++        "My brother keeps drinking soft drinks and also drinks water.",
++        "My brother stopped drinking soft drinks and now drinks water.",
++        "My brother will stop drinking soft drinks and then drink water."
++      ],
++      "correct": 1,
++      "teaches": [
++        "dejar-de-infinitivo"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b1/b1-15-02-ex.json b/content/es-latam/exercises/b1/b1-15-02-ex.json
+index 633e4f8b..40a5f974 100644
+--- a/content/es-latam/exercises/b1/b1-15-02-ex.json
++++ b/content/es-latam/exercises/b1/b1-15-02-ex.json
+@@ -314,6 +314,36 @@
+       "teaches": [
+         "b1-culture-entertainment-vocab"
+       ]
++    },
++    {
++      "id": "b1-15-02.ex18",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which form completes «Los personajes ___ convincentes»?",
++      "options": [
++        "resulta",
++        "resultan",
++        "resulten"
++      ],
++      "correct": 1,
++      "teaches": [
++        "resultar-adjective"
++      ],
++      "distractor_skills": {
++        "2": "subjuntivo-morfologia"
++      }
++    },
++    {
++      "id": "b1-15-02.ex19",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Las escenas resultan muy __.",
++      "hint": "original, plural",
++      "answer": "originales",
++      "teaches": [
++        "resultar-adjective"
++      ],
++      "english": "The scenes turn out to be very original."
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b1/b1-22-04-ex.json b/content/es-latam/exercises/b1/b1-22-04-ex.json
+index 741ea2f0..c1eb9075 100644
+--- a/content/es-latam/exercises/b1/b1-22-04-ex.json
++++ b/content/es-latam/exercises/b1/b1-22-04-ex.json
+@@ -316,6 +316,129 @@
+       "teaches": [
+         "condicional-irregular"
+       ]
++    },
++    {
++      "id": "b1-22-04.ex18",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which form completes «Mañana a esta hora ya ___ el examen»?",
++      "options": [
++        "hemos terminado",
++        "habíamos terminado",
++        "habremos terminado"
++      ],
++      "correct": 2,
++      "teaches": [
++        "futuro-perfecto"
++      ],
++      "distractor_skills": {
++        "0": "preterito-perfecto",
++        "1": "pluscuamperfecto"
++      }
++    },
++    {
++      "id": "b1-22-04.ex19",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "En 2030 nosotros __ terminado la casa.",
++      "hint": "haber, nosotros",
++      "answer": "habremos",
++      "teaches": [
++        "futuro-perfecto"
++      ],
++      "english": "By 2030 we will have finished the house."
++    },
++    {
++      "id": "b1-22-04.ex20",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Dentro de diez años, la situación __ cambiado mucho.",
++      "hint": "haber",
++      "answer": "habrá",
++      "teaches": [
++        "futuro-perfecto"
++      ],
++      "english": "In ten years, the situation will have changed a lot."
++    },
++    {
++      "id": "b1-22-04.ex21",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "Mis",
++        "amigos",
++        "habrán",
++        "llegado",
++        "a",
++        "casa",
++        "antes",
++        "de",
++        "las",
++        "ocho."
++      ],
++      "solution": [
++        "Mis",
++        "amigos",
++        "habrán",
++        "llegado",
++        "a",
++        "casa",
++        "antes",
++        "de",
++        "las",
++        "ocho."
++      ],
++      "english": "My friends will have arrived home before eight.",
++      "teaches": [
++        "futuro-perfecto"
++      ]
++    },
++    {
++      "id": "b1-22-04.ex22",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "A",
++          "text": "¿Vas a estar libre el viernes?"
++        },
++        {
++          "speaker": "B",
++          "text": "_____"
++        },
++        {
++          "speaker": "A",
++          "text": "Perfecto, entonces nos vemos ese día."
++        }
++      ],
++      "options": [
++        "Sí, para entonces he terminado el trabajo.",
++        "Sí, para entonces habré terminado el trabajo.",
++        "Sí, para entonces terminé el trabajo."
++      ],
++      "correct": 1,
++      "teaches": [
++        "futuro-perfecto"
++      ],
++      "distractor_skills": {
++        "0": "preterito-perfecto",
++        "2": "preterito-indefinido"
++      }
++    },
++    {
++      "id": "b1-22-04.ex23",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "En 2030 habremos terminado la casa.",
++      "options": [
++        "In 2030 we finished the house.",
++        "In 2030 we are going to start the house.",
++        "By 2030 we will have finished the house."
++      ],
++      "correct": 2,
++      "teaches": [
++        "futuro-perfecto"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b1/b1-40-02-ex.json b/content/es-latam/exercises/b1/b1-40-02-ex.json
+index e063eaf6..f6e9b04c 100644
+--- a/content/es-latam/exercises/b1/b1-40-02-ex.json
++++ b/content/es-latam/exercises/b1/b1-40-02-ex.json
+@@ -200,6 +200,123 @@
+       "teaches": [
+         "sino-vs-pero"
+       ]
++    },
++    {
++      "id": "b1-40-02.ex12",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence says that he works and also studies?",
++      "options": [
++        "No solo trabaja, sino también estudia.",
++        "No solo trabaja, sino que también estudia.",
++        "Solo trabaja, sino que también estudia."
++      ],
++      "correct": 1,
++      "teaches": [
++        "correlativos-no-solo-sino"
++      ]
++    },
++    {
++      "id": "b1-40-02.ex13",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "No solo habla español, sino __ inglés.",
++      "answer": "también",
++      "teaches": [
++        "correlativos-no-solo-sino"
++      ],
++      "english": "She speaks not only Spanish but also English."
++    },
++    {
++      "id": "b1-40-02.ex14",
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Tanto mis padres __ mis abuelos viven en este barrio.",
++      "answer": "como",
++      "teaches": [
++        "correlativos-no-solo-sino"
++      ],
++      "english": "Both my parents and my grandparents live in this neighbourhood."
++    },
++    {
++      "id": "b1-40-02.ex15",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "El",
++        "examen",
++        "no",
++        "solo",
++        "era",
++        "difícil",
++        ",",
++        "sino",
++        "también",
++        "muy",
++        "largo",
++        "."
++      ],
++      "solution": [
++        "El",
++        "examen",
++        "no",
++        "solo",
++        "era",
++        "difícil",
++        ",",
++        "sino",
++        "también",
++        "muy",
++        "largo",
++        "."
++      ],
++      "english": "The exam was not only difficult but also very long.",
++      "teaches": [
++        "correlativos-no-solo-sino"
++      ]
++    },
++    {
++      "id": "b1-40-02.ex16",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Elena",
++          "text": "¿Cómo es tu nuevo trabajo?"
++        },
++        {
++          "speaker": "Sara",
++          "text": "_____"
++        },
++        {
++          "speaker": "Elena",
++          "text": "Me alegro mucho por ti."
++        }
++      ],
++      "options": [
++        "No solo es interesante, sino que también muy bien pagado.",
++        "Solo es interesante, sino también muy bien pagado.",
++        "No solo es interesante, sino también muy bien pagado."
++      ],
++      "correct": 2,
++      "teaches": [
++        "correlativos-no-solo-sino"
++      ]
++    },
++    {
++      "id": "b1-40-02.ex17",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "No solo estudia español, sino también inglés.",
++      "options": [
++        "She studies Spanish but not French.",
++        "She studies not only Spanish but also English.",
++        "She does not study Spanish, but she studies French."
++      ],
++      "correct": 1,
++      "teaches": [
++        "correlativos-no-solo-sino"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b1/b1-01-02-imperfecto-vs-indefinido-gr.json b/content/es-latam/grammar/b1/b1-01-02-imperfecto-vs-indefinido-gr.json
+index c7934e78..1a39fe15 100644
+--- a/content/es-latam/grammar/b1/b1-01-02-imperfecto-vs-indefinido-gr.json
++++ b/content/es-latam/grammar/b1/b1-01-02-imperfecto-vs-indefinido-gr.json
+@@ -89,6 +89,57 @@
+         }
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You know *estar* from A1 Unit 9 and the *imperfecto* from A2 Unit 21. New here is *estar a punto de* + infinitive: it says that something was about to happen, and the sentence goes on with the event that came at that moment. In a story it is mostly in the *imperfecto*, and the event that interrupts it is in the *indefinido*: *Estaba a punto de salir cuando sonó el teléfono.* The action itself had not happened yet. The same pattern works in the present for what is about to happen now: *Estoy a punto de salir.*"
++    },
++    {
++      "type": "table",
++      "title": "Estar a punto de + infinitive (imperfecto)",
++      "rows": [
++        [
++          "yo estaba a punto de salir",
++          "I was about to leave"
++        ],
++        [
++          "tú estabas a punto de salir",
++          "you were about to leave"
++        ],
++        [
++          "él, ella, usted estaba a punto de salir",
++          "he, she was / you (formal) were about to leave"
++        ],
++        [
++          "nosotros estábamos a punto de salir",
++          "we were about to leave"
++        ],
++        [
++          "ellos, ellas, ustedes estaban a punto de salir",
++          "they, you all were about to leave"
++        ]
++      ]
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Estaba a punto de salir cuando sonó el teléfono.",
++          "english": "I was about to leave when the phone rang."
++        },
++        {
++          "spanish": "El autobús estaba a punto de llegar cuando empezó a llover.",
++          "english": "The bus was about to arrive when it started to rain."
++        },
++        {
++          "spanish": "Estábamos a punto de comer cuando llegó mi hermano.",
++          "english": "We were about to eat when my brother arrived."
++        },
++        {
++          "spanish": "Ahora estoy a punto de salir.",
++          "english": "I am about to leave now."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+       "content": "Ask whether the verb is the stage or the action on it. The stage (weather, time, feelings, what was in progress) takes the *imperfecto*; the action takes the *indefinido*. For past habits the *imperfecto* is also used: *íbamos*, *leía*."
+diff --git a/content/es-latam/grammar/b1/b1-02-02-indefinido-experiencias-gr.json b/content/es-latam/grammar/b1/b1-02-02-indefinido-experiencias-gr.json
+index 71dbde08..d939b462 100644
+--- a/content/es-latam/grammar/b1/b1-02-02-indefinido-experiencias-gr.json
++++ b/content/es-latam/grammar/b1/b1-02-02-indefinido-experiencias-gr.json
+@@ -27,6 +27,53 @@
+         }
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You know the gerund from A1 Unit 19 (*estoy comiendo*, *estoy leyendo*). Without *estar*, the gerund also says how or while the main verb happens: it names what the same person is doing at the same moment. *Llegó corriendo* means \"she arrived running\", *Volvimos a casa cantando* means \"we went home singing\". The gerund never changes: the main verb carries the person and the tense."
++    },
++    {
++      "type": "table",
++      "title": "The gerund: one form for every person",
++      "rows": [
++        [
++          "hablar → hablando",
++          "speaking"
++        ],
++        [
++          "correr → corriendo",
++          "running"
++        ],
++        [
++          "salir → saliendo",
++          "leaving"
++        ],
++        [
++          "leer → leyendo",
++          "reading (irregular: -yendo)"
++        ]
++      ]
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Llegó corriendo al auditorio.",
++          "english": "She arrived at the auditorium running."
++        },
++        {
++          "spanish": "Volvimos a casa cantando después del concierto.",
++          "english": "We went back home singing after the concert."
++        },
++        {
++          "spanish": "Salí del escenario sonriendo.",
++          "english": "I left the stage smiling."
++        },
++        {
++          "spanish": "Mi amiga habló mirando al público.",
++          "english": "My friend spoke looking at the audience."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+       "content": "Choose the *indefinido* when the listener can locate the experience as one completed episode, even if its effect lasts. The *imperfecto* stays for the background (*estaba nervioso*, *guardaba silencio*)."
+diff --git a/content/es-latam/grammar/b1/b1-05-04-relative-clauses-gr.json b/content/es-latam/grammar/b1/b1-05-04-relative-clauses-gr.json
+index 579c37aa..d7db6850 100644
+--- a/content/es-latam/grammar/b1/b1-05-04-relative-clauses-gr.json
++++ b/content/es-latam/grammar/b1/b1-05-04-relative-clauses-gr.json
+@@ -27,6 +27,53 @@
+         }
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You know possessives such as *mi* and *su* from A1. Inside a relative clause, *cuyo* does their job and means \"whose\": it joins the owner (*la amiga*) to the thing owned (*el hermano*). It agrees in gender and number with the thing owned, not with the owner, and no article follows it: *la amiga cuyo hermano vive en Madrid*, because *hermano* is masculine singular."
++    },
++    {
++      "type": "table",
++      "title": "Cuyo agrees with the thing owned",
++      "rows": [
++        [
++          "cuyo + masculine singular: la amiga cuyo hermano vive en Madrid",
++          "the friend whose brother lives in Madrid"
++        ],
++        [
++          "cuya + feminine singular: el vecino cuya hija estudia música",
++          "the neighbour whose daughter studies music"
++        ],
++        [
++          "cuyos + masculine plural: la familia cuyos hijos viven cerca",
++          "the family whose children live nearby"
++        ],
++        [
++          "cuyas + feminine plural: la vecina cuyas amigas viven cerca",
++          "the neighbour whose friends live nearby"
++        ]
++      ]
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Tengo una amiga cuyo hermano vive en Madrid.",
++          "english": "I have a friend whose brother lives in Madrid."
++        },
++        {
++          "spanish": "El vecino cuya hija estudia música siempre nos saluda.",
++          "english": "The neighbour whose daughter studies music always greets us."
++        },
++        {
++          "spanish": "Conozco a una familia cuyos hijos comparten muchas actividades con los vecinos.",
++          "english": "I know a family whose children share many activities with the neighbours."
++        },
++        {
++          "spanish": "Mi vecina, cuyas amigas viven cerca, nos ayuda mucho.",
++          "english": "My neighbour, whose friends live nearby, helps us a lot."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+       "content": "The relative clause normally follows the noun it describes. Choose the relative form according to its role in the clause, not simply according to the noun before it."
+diff --git a/content/es-latam/grammar/b1/b1-12-05-integrated-explanation-and-narrative-gr.json b/content/es-latam/grammar/b1/b1-12-05-integrated-explanation-and-narrative-gr.json
+index 1612b958..b8d86b6b 100644
+--- a/content/es-latam/grammar/b1/b1-12-05-integrated-explanation-and-narrative-gr.json
++++ b/content/es-latam/grammar/b1/b1-12-05-integrated-explanation-and-narrative-gr.json
+@@ -27,6 +27,57 @@
+         }
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You know the *indefinido* from A2 Unit 11 and the *imperfecto* from A2 Unit 21. New here is *dejar de* + infinitive: it means to stop doing something you did regularly, such as a habit. *Dejé de fumar hace dos años* means \"I stopped smoking two years ago\". With *no*, *no dejar de* + infinitive means to keep on doing it: *No dejo de cocinar en casa* means \"I keep cooking at home\"."
++    },
++    {
++      "type": "table",
++      "title": "Dejar de + infinitive (indefinido)",
++      "rows": [
++        [
++          "yo dejé de fumar",
++          "I stopped smoking"
++        ],
++        [
++          "tú dejaste de fumar",
++          "you stopped smoking"
++        ],
++        [
++          "él, ella, usted dejó de fumar",
++          "he, she stopped / you (formal) stopped smoking"
++        ],
++        [
++          "nosotros dejamos de fumar",
++          "we stopped smoking"
++        ],
++        [
++          "ellos, ellas, ustedes dejaron de fumar",
++          "they, you all stopped smoking"
++        ]
++      ]
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Dejé de fumar hace dos años.",
++          "english": "I stopped smoking two years ago."
++        },
++        {
++          "spanish": "Mi madre dejó de comprar productos preparados.",
++          "english": "My mother stopped buying prepared products."
++        },
++        {
++          "spanish": "Mi hermano dejó de beber refrescos y ahora bebe agua.",
++          "english": "My brother stopped drinking soft drinks and now drinks water."
++        },
++        {
++          "spanish": "Aunque es difícil, no dejo de cocinar en casa.",
++          "english": "Although it is difficult, I keep on cooking at home."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+       "content": "Use connectors to show stages, causes and contrasts so that an account of changing habits becomes a connected narrative."
+diff --git a/content/es-latam/grammar/b1/b1-22-04-hypothetical-structures-gr.json b/content/es-latam/grammar/b1/b1-22-04-hypothetical-structures-gr.json
+index 45f98486..4b0af2c8 100644
+--- a/content/es-latam/grammar/b1/b1-22-04-hypothetical-structures-gr.json
++++ b/content/es-latam/grammar/b1/b1-22-04-hypothetical-structures-gr.json
+@@ -27,6 +27,57 @@
+         }
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You know the simple future from A2 Unit 19 and the past participle from A2 Unit 1. The *futuro perfecto* combines them: *haber* in the future (*habré, habrás, habrá, habremos, habrán*) + the participle, which does not change. It says that something will already be finished by a point in the future: *En 2030 habremos terminado la casa.* Spanish also uses it to guess about the past: *Habrá salido ya* means \"he has probably left already\". You will meet that use later; here you practise the first."
++    },
++    {
++      "type": "table",
++      "title": "Futuro perfecto: haber + participle",
++      "rows": [
++        [
++          "yo habré terminado",
++          "I will have finished"
++        ],
++        [
++          "tú habrás terminado",
++          "you will have finished"
++        ],
++        [
++          "él, ella, usted habrá terminado",
++          "he, she, you (formal) will have finished"
++        ],
++        [
++          "nosotros habremos terminado",
++          "we will have finished"
++        ],
++        [
++          "ellos, ellas, ustedes habrán terminado",
++          "they, you all will have finished"
++        ]
++      ]
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "En 2030 habremos terminado la casa.",
++          "english": "By 2030 we will have finished the house."
++        },
++        {
++          "spanish": "Para el viernes habré terminado el trabajo.",
++          "english": "By Friday I will have finished the work."
++        },
++        {
++          "spanish": "Dentro de diez años, la situación habrá cambiado mucho.",
++          "english": "In ten years, the situation will have changed a lot."
++        },
++        {
++          "spanish": "No contesta el teléfono; habrá salido ya.",
++          "english": "He is not answering the phone; he has probably left already."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+       "content": "A hypothetical answer can contain both a condition and a probability marker to show degrees of uncertainty."
+diff --git a/content/es-latam/grammar/b1/b1-40-02-gr.json b/content/es-latam/grammar/b1/b1-40-02-gr.json
+index 2a8689af..0c8d2294 100644
+--- a/content/es-latam/grammar/b1/b1-40-02-gr.json
++++ b/content/es-latam/grammar/b1/b1-40-02-gr.json
+@@ -45,6 +45,49 @@
+         }
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You know *sino* and *sino que* from the table above. *No solo … sino (también)* is a pair that adds a second item to the first and gives both weight: \"not only … but also\". Before a noun or an adjective use *sino (también)*; before a new conjugated verb use *sino que (también)*. *Tanto … como* (\"both … and\") is the plain version and takes a plural verb: *Tanto mi hermano como yo vivimos aquí.*"
++    },
++    {
++      "type": "table",
++      "title": "No solo … sino (también) and tanto … como",
++      "rows": [
++        [
++          "no solo + noun / adjective, sino (también) + noun / adjective",
++          "No solo es caro, sino también incómodo."
++        ],
++        [
++          "no solo + verb, sino que (también) + verb",
++          "No solo canta, sino que también baila."
++        ],
++        [
++          "tanto A como B (both A and B)",
++          "Tanto mi hermano como yo vivimos aquí."
++        ]
++      ]
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "El examen no solo era difícil, sino también muy largo.",
++          "english": "The exam was not only difficult but also very long."
++        },
++        {
++          "spanish": "No solo perdí el documento, sino que también olvidé el teléfono.",
++          "english": "I not only lost the document but also forgot the phone."
++        },
++        {
++          "spanish": "No solo trabaja los sábados, sino que también estudia por la noche.",
++          "english": "He not only works on Saturdays but also studies at night."
++        },
++        {
++          "spanish": "Tanto la casa como el barrio son muy tranquilos.",
++          "english": "Both the house and the neighbourhood are very quiet."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+       "content": "Formula: Negative clause + noun/adj = **sino**. Negative clause + conjugated verb = **sino que**."
+diff --git a/content/es-latam/lessons/b1/b1-01-02.json b/content/es-latam/lessons/b1/b1-01-02.json
+index 983bf685..77348b77 100644
+--- a/content/es-latam/lessons/b1/b1-01-02.json
++++ b/content/es-latam/lessons/b1/b1-01-02.json
+@@ -39,7 +39,11 @@
+         "b1-01-02.ex06",
+         "b1-01-02.ex07",
+         "b1-01-02.ex08",
+-        "b1-01-02.ex09"
++        "b1-01-02.ex09",
++        "b1-01-02.ex17",
++        "b1-01-02.ex18",
++        "b1-01-02.ex19",
++        "b1-01-02.ex20"
+       ]
+     },
+     {
+@@ -48,7 +52,8 @@
+       "ref": "exercises/b1/b1-01-02-ex.json",
+       "exerciseRefs": [
+         "b1-01-02.ex10",
+-        "b1-01-02.ex11"
++        "b1-01-02.ex11",
++        "b1-01-02.ex22"
+       ]
+     },
+     {
+@@ -58,7 +63,8 @@
+       "exerciseRefs": [
+         "b1-01-02.ex12",
+         "b1-01-02.ex13",
+-        "b1-01-02.ex14"
++        "b1-01-02.ex14",
++        "b1-01-02.ex21"
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b1/b1-02-02.json b/content/es-latam/lessons/b1/b1-02-02.json
+index 622c88fd..f017a7a0 100644
+--- a/content/es-latam/lessons/b1/b1-02-02.json
++++ b/content/es-latam/lessons/b1/b1-02-02.json
+@@ -39,7 +39,11 @@
+         "b1-02-02.ex06",
+         "b1-02-02.ex07",
+         "b1-02-02.ex08",
+-        "b1-02-02.ex09"
++        "b1-02-02.ex09",
++        "b1-02-02.ex17",
++        "b1-02-02.ex18",
++        "b1-02-02.ex19",
++        "b1-02-02.ex20"
+       ]
+     },
+     {
+@@ -48,7 +52,8 @@
+       "ref": "exercises/b1/b1-02-02-ex.json",
+       "exerciseRefs": [
+         "b1-02-02.ex10",
+-        "b1-02-02.ex11"
++        "b1-02-02.ex11",
++        "b1-02-02.ex22"
+       ]
+     },
+     {
+@@ -58,7 +63,8 @@
+       "exerciseRefs": [
+         "b1-02-02.ex12",
+         "b1-02-02.ex13",
+-        "b1-02-02.ex14"
++        "b1-02-02.ex14",
++        "b1-02-02.ex21"
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b1/b1-02-04.json b/content/es-latam/lessons/b1/b1-02-04.json
+index f7b8612d..ba01944e 100644
+--- a/content/es-latam/lessons/b1/b1-02-04.json
++++ b/content/es-latam/lessons/b1/b1-02-04.json
+@@ -39,7 +39,10 @@
+         "b1-02-04.ex06",
+         "b1-02-04.ex07",
+         "b1-02-04.ex08",
+-        "b1-02-04.ex09"
++        "b1-02-04.ex09",
++        "b1-02-04.ex17",
++        "b1-02-04.ex18",
++        "b1-02-04.ex19"
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b1/b1-05-04.json b/content/es-latam/lessons/b1/b1-05-04.json
+index b2624bc6..0574bfcb 100644
+--- a/content/es-latam/lessons/b1/b1-05-04.json
++++ b/content/es-latam/lessons/b1/b1-05-04.json
+@@ -39,7 +39,11 @@
+         "b1-05-04.ex06",
+         "b1-05-04.ex07",
+         "b1-05-04.ex08",
+-        "b1-05-04.ex09"
++        "b1-05-04.ex09",
++        "b1-05-04.ex18",
++        "b1-05-04.ex19",
++        "b1-05-04.ex20",
++        "b1-05-04.ex21"
+       ]
+     },
+     {
+@@ -48,7 +52,8 @@
+       "ref": "exercises/b1/b1-05-04-ex.json",
+       "exerciseRefs": [
+         "b1-05-04.ex10",
+-        "b1-05-04.ex11"
++        "b1-05-04.ex11",
++        "b1-05-04.ex23"
+       ]
+     },
+     {
+@@ -59,7 +64,8 @@
+         "b1-05-04.ex12",
+         "b1-05-04.ex13",
+         "b1-05-04.ex14a",
+-        "b1-05-04.ex14b"
++        "b1-05-04.ex14b",
++        "b1-05-04.ex22"
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b1/b1-07-04.json b/content/es-latam/lessons/b1/b1-07-04.json
+index 58f7a79c..82762b07 100644
+--- a/content/es-latam/lessons/b1/b1-07-04.json
++++ b/content/es-latam/lessons/b1/b1-07-04.json
+@@ -39,7 +39,9 @@
+         "b1-07-04.ex06",
+         "b1-07-04.ex07",
+         "b1-07-04.ex08",
+-        "b1-07-04.ex09"
++        "b1-07-04.ex09",
++        "b1-07-04.ex18",
++        "b1-07-04.ex19"
+       ]
+     },
+     {
+@@ -48,7 +50,8 @@
+       "ref": "exercises/b1/b1-07-04-ex.json",
+       "exerciseRefs": [
+         "b1-07-04.ex10",
+-        "b1-07-04.ex11"
++        "b1-07-04.ex11",
++        "b1-07-04.ex20"
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b1/b1-12-05.json b/content/es-latam/lessons/b1/b1-12-05.json
+index 7b62c4ce..2e7d9dcf 100644
+--- a/content/es-latam/lessons/b1/b1-12-05.json
++++ b/content/es-latam/lessons/b1/b1-12-05.json
+@@ -41,7 +41,11 @@
+         "b1-12-05.ex05",
+         "b1-12-05.ex06",
+         "b1-12-05.ex07",
+-        "b1-12-05.ex12"
++        "b1-12-05.ex12",
++        "b1-12-05.ex24",
++        "b1-12-05.ex25",
++        "b1-12-05.ex26",
++        "b1-12-05.ex27"
+       ]
+     },
+     {
+@@ -65,7 +69,8 @@
+       "ref": "exercises/b1/b1-12-05-ex.json",
+       "exerciseRefs": [
+         "b1-12-05.ex09",
+-        "b1-12-05.ex10"
++        "b1-12-05.ex10",
++        "b1-12-05.ex29"
+       ]
+     },
+     {
+@@ -76,7 +81,8 @@
+         "b1-12-05.ex08",
+         "b1-12-05.ex13",
+         "b1-12-05.ex14",
+-        "b1-12-05.ex15"
++        "b1-12-05.ex15",
++        "b1-12-05.ex28"
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b1/b1-15-02.json b/content/es-latam/lessons/b1/b1-15-02.json
+index 0992258a..5e7688fc 100644
+--- a/content/es-latam/lessons/b1/b1-15-02.json
++++ b/content/es-latam/lessons/b1/b1-15-02.json
+@@ -41,7 +41,9 @@
+         "b1-15-02.ex05",
+         "b1-15-02.ex06",
+         "b1-15-02.ex07",
+-        "b1-15-02.ex13"
++        "b1-15-02.ex13",
++        "b1-15-02.ex18",
++        "b1-15-02.ex19"
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b1/b1-22-04.json b/content/es-latam/lessons/b1/b1-22-04.json
+index 42450007..255fb134 100644
+--- a/content/es-latam/lessons/b1/b1-22-04.json
++++ b/content/es-latam/lessons/b1/b1-22-04.json
+@@ -41,7 +41,11 @@
+         "b1-22-04.ex05",
+         "b1-22-04.ex06",
+         "b1-22-04.ex07",
+-        "b1-22-04.ex13"
++        "b1-22-04.ex13",
++        "b1-22-04.ex18",
++        "b1-22-04.ex19",
++        "b1-22-04.ex20",
++        "b1-22-04.ex21"
+       ]
+     },
+     {
+@@ -52,7 +56,8 @@
+         "b1-22-04.ex09",
+         "b1-22-04.ex10",
+         "b1-22-04.ex11",
+-        "b1-22-04.ex12"
++        "b1-22-04.ex12",
++        "b1-22-04.ex23"
+       ]
+     },
+     {
+@@ -62,7 +67,8 @@
+       "exerciseRefs": [
+         "b1-22-04.ex08",
+         "b1-22-04.ex14",
+-        "b1-22-04.ex15"
++        "b1-22-04.ex15",
++        "b1-22-04.ex22"
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b1/b1-40-02.json b/content/es-latam/lessons/b1/b1-40-02.json
+index 10647fea..bd6da2d7 100644
+--- a/content/es-latam/lessons/b1/b1-40-02.json
++++ b/content/es-latam/lessons/b1/b1-40-02.json
+@@ -37,7 +37,11 @@
+         "b1-40-02.ex03",
+         "b1-40-02.ex04",
+         "b1-40-02.ex05",
+-        "b1-40-02.ex06"
++        "b1-40-02.ex06",
++        "b1-40-02.ex12",
++        "b1-40-02.ex13",
++        "b1-40-02.ex14",
++        "b1-40-02.ex15"
+       ]
+     },
+     {
+@@ -46,7 +50,8 @@
+       "ref": "exercises/b1/b1-40-02-ex.json",
+       "exerciseRefs": [
+         "b1-40-02.ex07",
+-        "b1-40-02.ex08"
++        "b1-40-02.ex08",
++        "b1-40-02.ex17"
+       ]
+     },
+     {
+@@ -55,7 +60,8 @@
+       "ref": "exercises/b1/b1-40-02-ex.json",
+       "exerciseRefs": [
+         "b1-40-02.ex09",
+-        "b1-40-02.ex10"
++        "b1-40-02.ex10",
++        "b1-40-02.ex16"
+       ]
+     },
+     {
