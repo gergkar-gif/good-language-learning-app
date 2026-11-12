@@ -121,6 +121,13 @@ const ALL_CZECH_VERBS = [
     'říkat',
     'žít'
 ];
+
+if (typeof window !== 'undefined') {
+    window.ALL_CZECH_VERBS = ALL_CZECH_VERBS;
+}
+if (typeof global !== 'undefined') {
+    global.ALL_CZECH_VERBS = ALL_CZECH_VERBS;
+}
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = ALL_CZECH_VERBS;
 }

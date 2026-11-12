@@ -299,8 +299,8 @@ const CzechMorphology = (function () {
         const results = [];
         const lower = word.toLowerCase();
 
-        // 2nd person past clitic attached to participle: dělals -> dělal + s, byl’s -> byl + s
-        if (lower.length > 4 && lower.endsWith('ls')) {
+        // 2nd person past clitic attached to participle: dělals -> dělal + s, byls -> byl + s
+        if (lower.length >= 4 && lower.endsWith('ls')) {
             results.push({ stem: lower.slice(0, -1), clitic: 's', analysis: '2nd person singular past auxiliary enclitic (-s = jsi)' });
         }
         if (lower.length > 4 && (lower.endsWith('las') || lower.endsWith('los') || lower.endsWith('lis') || lower.endsWith('lys'))) {

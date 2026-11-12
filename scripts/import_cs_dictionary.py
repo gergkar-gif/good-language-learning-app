@@ -506,7 +506,13 @@ def process_all():
         for i, v in enumerate(final_verb_list):
             comma = "," if i < len(final_verb_list) - 1 else ""
             f.write(f"    '{v}'{comma}\n")
-        f.write("];\n")
+        f.write("];\n\n")
+        f.write("if (typeof window !== 'undefined') {\n")
+        f.write("    window.ALL_CZECH_VERBS = ALL_CZECH_VERBS;\n")
+        f.write("}\n")
+        f.write("if (typeof global !== 'undefined') {\n")
+        f.write("    global.ALL_CZECH_VERBS = ALL_CZECH_VERBS;\n")
+        f.write("}\n")
         f.write("if (typeof module !== 'undefined' && module.exports) {\n")
         f.write("    module.exports = ALL_CZECH_VERBS;\n")
         f.write("}\n")
