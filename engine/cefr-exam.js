@@ -2044,6 +2044,13 @@ const CefrExam = (function () {
         subtitle: 'Państwowa Komisja do spraw Poświadczania Znajomości Języka Polskiego · Poziom B1 (CEFR)'
     });
 
+    const CsCceB1Exam = createModule({
+        id: 'cs-cce-b1-exam',
+        dataFile: 'cce-b1-exam.json',
+        title: 'Certifikovaná zkouška z češtiny pro cizince B1 (CCE-B1)',
+        subtitle: 'Ústav jazykové a odborné přípravy Univerzity Karlovy · Úroveň B1 (CEFR)'
+    });
+
     return {
         createModule: createModule,
         DeleA1Exam: DeleA1Exam,
@@ -2056,7 +2063,8 @@ const CefrExam = (function () {
         EclB2Exam: EclB2Exam,
         CilsB1Exam: CilsB1Exam,
         DelfB1Exam: DelfB1Exam,
-        PlCertyfikatB1Exam: PlCertyfikatB1Exam
+        PlCertyfikatB1Exam: PlCertyfikatB1Exam,
+        CsCceB1Exam: CsCceB1Exam
     };
 })();
 
@@ -2074,6 +2082,7 @@ if (typeof window !== 'undefined') {
     window.CilsB1Exam = CefrExam.CilsB1Exam;
     window.DelfB1Exam = CefrExam.DelfB1Exam;
     window.PlCertyfikatB1Exam = CefrExam.PlCertyfikatB1Exam;
+    window.CsCceB1Exam = CefrExam.CsCceB1Exam;
 }
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = CefrExam;

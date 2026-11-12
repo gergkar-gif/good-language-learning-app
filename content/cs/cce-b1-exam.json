@@ -1,0 +1,210 @@
+{
+  "id": "cs-cce-b1-exam",
+  "board": "Ústav jazykové a odborné přípravy Univerzity Karlovy (ÚJOP UK)",
+  "level": "B1",
+  "title": "Certifikovaná zkouška z češtiny pro cizince B1 (CCE-B1)",
+  "subtitle": "Zkouška z českého jazyka pro cizince · Úroveň B1 (CEFR)",
+  "passingScorePercentage": 60,
+  "skills": {
+    "reading": {
+      "id": "reading",
+      "name": "Čtení s porozuměním",
+      "officialTimeMinutes": 45,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "cs-reading-t1",
+          "tareaNum": 1,
+          "type": "gapped-text",
+          "title": "Část 1: Doplňování vět do textu",
+          "instructions": "Přečtěte si text o českých tradicích a životním stylu. Do každé mezery (1–5) doplňte vhodnou větu (A–G). Dvě věty jsou navíc.",
+          "passage": "Návrat k tradičnímu řemeslu a regionálním produktům v Česku\n\nV posledních letech lze v České republice pozorovat velký zájem o tradiční řemesla a poctivé lokální výrobky. Lidé stále častěji vyhledávají kvalitní potraviny od místních farmářů a ručně vyráběné předměty. [___1___] Tento trend je patrný nejen na venkově, ale i v centrech velkých měst, jako jsou Praha, Brno nebo Plzeň.\n\nVýznamným fenoménem se staly farmářské trhy na náměstích a nábřežích. [___2___] Zákazníci si zde mohou pořídit čerstvý kváskový chléb, domácí sýry, med od včelařů či sezónní ovoce přímo od pěstitelů.\n\nNedílnou součástí české kultury je také tradiční pohostinství a pivovarnictví. [___3___] Malé řemeslné minipivovary a rodinné restaurace oživují staré receptury a nabízejí hostům jedinečné chuťové zážitky.\n\nMnozí mladí designéři a řemeslníci navíc spojují tradiční materiály s moderním designem. [___4___] Český křišťál, keramika nebo ručně šitá obuv tak získávají nový rozměr a úspěšně reprezentují zemi i v zahraničí.\n\nOdborníci se shodují, že podpora lokálních výrobců přináší prospěch celé společnosti. [___5___] Udržuje se tím kulturní dědictví a posiluje se vztah lidí k jejich regionu.",
+          "gaps": [
+            { "id": "gap-1", "num": 1, "correct": "C" },
+            { "id": "gap-2", "num": 2, "correct": "A" },
+            { "id": "gap-3", "num": 3, "correct": "E" },
+            { "id": "gap-4", "num": 4, "correct": "B" },
+            { "id": "gap-5", "num": 5, "correct": "D" }
+          ],
+          "options": [
+            { "letter": "A", "text": "Každý víkend přicházejí na tato místa tisíce návštěvníků, aby si popovídali s výrobci a ochutnali speciality." },
+            { "letter": "B", "text": "Spojení historického umu a současné estetiky oslovuje široké publikum doma i ve světě." },
+            { "letter": "C", "text": "Zájem o udržitelnost a kvalitu se stává přirozenou součástí moderního životního stylu." },
+            { "letter": "D", "text": "Peníze utracené za místní produkty zůstávají v dané oblasti a pomáhají rozvoji venkova." },
+            { "letter": "E", "text": "České pivo a tradiční kuchyně mají ve světě vynikající pověst už po celá staletí." },
+            { "letter": "F", "text": "Všechny supermarkety v zemi byly ze zákona okamžitě zrušeny." },
+            { "letter": "G", "text": "Návštěvníci si musí veškeré jídlo připravovat sami přímo na ulici." }
+          ]
+        },
+        {
+          "id": "cs-reading-t2",
+          "tareaNum": 2,
+          "type": "multiple-choice",
+          "title": "Část 2: Porozumění detailním informacím v textu",
+          "instructions": "Přečtěte si článek o historii a současnosti Národního divadla v Praze. U otázek 6–10 vyberte správnou možnost (A, B, nebo C).",
+          "passage": "Národní divadlo v Praze: Symbol české identity\n\nNárodní divadlo v Praze patří k nejvýznamnějším stavbám v České republice. Bylo postaveno z celonárodních sbírek v druhé polovině 19. století, kdy si Češi přáli mít vlastní reprezentativní scénu pro divadelní hry a opery v mateřském jazyce. Heslo 'Národ sobě', které zdobí portál nad jevištěm, přesně vystihuje atmosféru té doby.\n\nKrátce po slavnostním otevření v srpnu 1881 však budovu zasáhl ničivý požár, který zničil střechu, hlediště i jeviště. Tato katastrofa vyvolala obrovskou vlnu solidarity – během pouhých 47 dní se podařilo vybrat více než milion zlatých na jeho obnovu. Znovuotevření v roce 1883 bylo obrovským triumfem.\n\nDnes Národní divadlo tvoří čtyři umělecké soubory: činohra, opera, balet a Laterna magika. Představení se konají na několika scénách, včetně historické budovy u Vltavy a Stavovského divadla, které je světově proslulé premiérou Mozartovy opery Don Giovanni.",
+          "questions": [
+            {
+              "id": "q-6",
+              "num": 6,
+              "prompt": "Jak bylo Národní divadlo původně financováno?",
+              "options": [
+                { "letter": "A", "text": "Z celonárodních peněžních sbírek občanů." },
+                { "letter": "B", "text": "Výhradně z daru rakouského císaře." },
+                { "letter": "C", "text": "Z prodeje vstupenek na mezinárodní festivaly." }
+              ],
+              "correct": "A"
+            },
+            {
+              "id": "q-7",
+              "num": 7,
+              "prompt": "Co znamená nápis 'Národ sobě' nad jevištěm?",
+              "options": [
+                { "letter": "A", "text": "Že divadlo postavili sami lidé pro svůj národ." },
+                { "letter": "B", "text": "Že v divadle smí hrát pouze herci narození v Praze." },
+                { "letter": "C", "text": "Že vstup je povolen pouze členům spolku." }
+              ],
+              "correct": "A"
+            },
+            {
+              "id": "q-8",
+              "num": 8,
+              "prompt": "Co se stalo v srpnu 1881?",
+              "options": [
+                { "letter": "A", "text": "Budova byla těžce poškozena velkým požárem." },
+                { "letter": "B", "text": "Divadlo bylo zbouráno a přestavěno na muzeum." },
+                { "letter": "C", "text": "Byla zde uvedena premiéra Dona Giovanniho." }
+              ],
+              "correct": "A"
+            },
+            {
+              "id": "q-9",
+              "num": 9,
+              "prompt": "Jak rychle se vybraly peníze na obnovu divadla po požáru?",
+              "options": [
+                { "letter": "A", "text": "Během necelých sedmi týdnů (47 dní)." },
+                { "letter": "B", "text": "Trvalo to více než dvacet let." },
+                { "letter": "C", "text": "Peníze se nikdy nevybraly a divadlo platila banka." }
+              ],
+              "correct": "A"
+            },
+            {
+              "id": "q-10",
+              "num": 10,
+              "prompt": "Čím je světoznámé Stavovské divadlo?",
+              "options": [
+                { "letter": "A", "text": "Uvedením světové premiéry Mozartovy opery Don Giovanni." },
+                { "letter": "B", "text": "Byla to první kamenná budova v Praze." },
+                { "letter": "C", "text": "Hrají se v něm výhradně představení pro děti." }
+              ],
+              "correct": "A"
+            }
+          ]
+        }
+      ]
+    },
+    "grammar": {
+      "id": "grammar",
+      "name": "Gramaticko-lexikální test",
+      "officialTimeMinutes": 45,
+      "maxPoints": 30,
+      "items": [
+        {
+          "id": "g-1",
+          "num": 1,
+          "prompt": "Včera jsme šli na večeři s našimi novými ___.",
+          "options": ["kamarády", "kamarádi", "kamarádech", "kamarádů"],
+          "correct": "kamarády",
+          "explanation": "Předložka 's' vyžaduje 7. pád (instrumentál): s novými kamarády."
+        },
+        {
+          "id": "g-2",
+          "num": 2,
+          "prompt": "Kdybych měl zítra volno, určitě bych ___ na výlet do hor.",
+          "options": ["jel", "jedu", "pojede", "jet"],
+          "correct": "jel",
+          "explanation": "Podmiňovací způsob přítomný: tvar na -l (jel) + bych."
+        },
+        {
+          "id": "g-3",
+          "num": 3,
+          "prompt": "Nemůžu najít svůj telefon, asi jsem ho nechal v ___.",
+          "options": ["autě", "auto", "auta", "autem"],
+          "correct": "autě",
+          "explanation": "Předložka 'v' vyjadřující polohu (kde?) vyžaduje 6. pád (lokál): v autě."
+        },
+        {
+          "id": "g-4",
+          "num": 4,
+          "prompt": "Pan Novák je zkušený lékař, kterého si všichni pacienti velmi ___.",
+          "options": ["váží", "vážíme", "vážit", "vážil"],
+          "correct": "váží",
+          "explanation": "3. osoba množného čísla přítomného času: pacienti si váží."
+        },
+        {
+          "id": "g-5",
+          "num": 5,
+          "prompt": "Musím se ještě naučit hodně nových českých ___.",
+          "options": ["slov", "slova", "slovem", "slovech"],
+          "correct": "slov",
+          "explanation": "Po číslovkách a výrazech množství (hodně) následuje 2. pád množného čísla (genitiv plurálu): hodně slov."
+        }
+      ]
+    },
+    "listening": {
+      "id": "listening",
+      "name": "Poslech s porozuměním",
+      "officialTimeMinutes": 30,
+      "maxPoints": 25,
+      "tasks": [
+        {
+          "id": "cs-listening-t1",
+          "tareaNum": 1,
+          "title": "Rozhlasová zpráva o novém cyklostezkovém projektu",
+          "instructions": "Poslechněte si krátkou zprávu a odpovězte na otázky.",
+          "questions": [
+            {
+              "id": "l-1",
+              "prompt": "Co plánuje město otevřít příští měsíc?",
+              "options": [
+                "Novou cyklostezku podél řeky",
+                "Nové nákupní centrum",
+                "Dálniční obchvat",
+                "Podzemní parkoviště"
+              ],
+              "correct": 0
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "id": "writing",
+      "name": "Psaní",
+      "officialTimeMinutes": 60,
+      "maxPoints": 20,
+      "prompts": [
+        {
+          "id": "w-1",
+          "title": "Formální e-mail: Žádost o informace o jazykovém kurzu",
+          "minWords": 100,
+          "targetWords": 120,
+          "prompt": "Napište formální e-mail řediteli jazykové školy v Praze. Zeptejte se na intenzitu kurzu, cenu a možnost ubytování."
+        }
+      ]
+    },
+    "speaking": {
+      "id": "speaking",
+      "name": "Ústní část",
+      "officialTimeMinutes": 15,
+      "maxPoints": 20,
+      "tasks": [
+        {
+          "id": "s-1",
+          "title": "Monolog: Můj oblíbený způsob trávení volného času",
+          "speechTimeMinutes": 3
+        }
+      ]
+    }
+  }
+}

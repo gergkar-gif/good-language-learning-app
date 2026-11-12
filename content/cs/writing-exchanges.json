@@ -1,0 +1,61 @@
+{
+  "language": "cs",
+  "scenarios": [
+    {
+      "id": "cs-a1-wx01-nakup",
+      "cefrLevel": "A1",
+      "title": "Zpráva z obchodu s potravinami",
+      "titleEn": "Message from the Grocery Store",
+      "situation": "Váš spolubydlící Tomáš je v obchodě a píše zprávu s dotazem, co koupit k večeři.",
+      "situationEn": "Your flatmate Tomáš is at the store and texts asking what to buy for dinner.",
+      "roleplay": {
+        "interlocutorRole": "Tomáš (Spolubydlící)",
+        "interlocutorRoleEn": "Tomáš (Flatmate)",
+        "learnerRole": "Spolubydlící",
+        "learnerRoleEn": "Flatmate",
+        "interlocutorVoice": "cs-CZ"
+      },
+      "targetCompetency": "I can exchange short text messages about groceries and daily food needs",
+      "targetSkills": [
+        "food_shopping",
+        "informal_messaging"
+      ],
+      "unitIds": [
+        "pozdravy-a-predstavovani",
+        "v-kavarne-a-restauraci"
+      ],
+      "requiredLemmas": [
+        "chléb",
+        "sýr",
+        "rajče",
+        "mléko",
+        "prosím",
+        "děkuji"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Ahoj! Jsem v samoobsluze. Co máme koupit k večeři? Dochází chleba a sýr.",
+          "interlocutorTranslation": "Hi! I am in the supermarket. What should we buy for dinner? We are running out of bread and cheese.",
+          "learnerCue": "Odpovězte, aby koupil chléb, sýr a rajčata.",
+          "learnerCueEn": "Reply asking him to buy bread, cheese, and tomatoes.",
+          "vocabularyHints": [
+            "kup prosím chleba — please buy bread",
+            "tvrdý sýr — hard cheese",
+            "rajčata — tomatoes"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "chléb",
+              "chleba",
+              "sýr",
+              "rajčata",
+              "prosím"
+            ],
+            "minWordCount": 3
+          }
+        }
+      ]
+    }
+  ]
+}

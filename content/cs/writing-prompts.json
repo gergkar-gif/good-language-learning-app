@@ -1,0 +1,49 @@
+{
+  "language": "cs",
+  "prompts": [
+    {
+      "id": "cs-b1-mesto-nebo-vesnice",
+      "cefrLevel": "B1",
+      "taskType": "written_argument",
+      "title": "Diskuse: Život ve velkém městě, nebo na vesnici",
+      "prompt": "Mnoho lidí diskutuje o tom, zda je lepší žít ve velkém městě, nebo na klidné vesnici. Napište příspěvek na blog (120-150 slov), ve kterém představíte výhody a nevýhody obou možností a vyjádříte svůj vlastní názor.",
+      "minWords": 120,
+      "targetWords": 150,
+      "suggestedConnectors": [
+        "podle mého názoru",
+        "na jedné straně",
+        "na druhé straně",
+        "navíc",
+        "proto se domnívám, že"
+      ],
+      "rubric": {
+        "content": "Představení argumentů pro a proti a jasné shrnutí.",
+        "cohesion": "Použití spojek a logických odstavců.",
+        "vocabulary": "Slovní zásoba týkající se dopravy, přírody, hluku a životních nákladů.",
+        "grammar": "Správné tvary pádů a podmiňovacího způsobu."
+      }
+    },
+    {
+      "id": "cs-a2-dovolena-snuk",
+      "cefrLevel": "A2",
+      "taskType": "informal_email",
+      "title": "E-mail kamarádovi: Moje dovolená",
+      "prompt": "Napište e-mail kamarádovi z České republiky (60-80 slov), ve kterém popíšete svou nedávnou dovolenou: kde jste byli, jaké bylo počasí a co zajímavého jste viděli.",
+      "minWords": 60,
+      "targetWords": 80,
+      "suggestedConnectors": [
+        "ahoj",
+        "minulý týden",
+        "počasí bylo",
+        "moc se mi to líbilo",
+        "měj se hezky"
+      ],
+      "rubric": {
+        "content": "Odpověď na všechny body zadání.",
+        "cohesion": "Jednoduché spojky: a, ale, protože, takže.",
+        "vocabulary": "Slovní zásoba pro dovolenou, počasí a památky.",
+        "grammar": "Minulý čas sloves (byl jsem, viděl jsem)."
+      }
+    }
+  ]
+}

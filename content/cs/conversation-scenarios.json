@@ -1,0 +1,180 @@
+{
+  "language": "cs",
+  "scenarios": [
+    {
+      "id": "cs-a1-sc01-kavarna",
+      "cefrLevel": "A1",
+      "title": "V kavárně",
+      "titleEn": "At the Café",
+      "situation": "Jste v kavárně v Praze a chcete si objednat kávu, dezert a zaplatit účet.",
+      "situationEn": "You are at a café in Prague and want to order a coffee, a dessert, and pay the bill.",
+      "roleplay": {
+        "interlocutorRole": "Číšník",
+        "interlocutorRoleEn": "Waiter",
+        "learnerRole": "Zákazník",
+        "learnerRoleEn": "Customer",
+        "interlocutorVoice": "cs-CZ"
+      },
+      "targetCompetency": "I can order drinks and snacks in a Czech café and pay",
+      "targetSkills": [
+        "ordering_food",
+        "social_interaction",
+        "numbers_and_prices"
+      ],
+      "unitIds": [
+        "pozdravy-a-predstavovani",
+        "v-kavarne-a-restauraci"
+      ],
+      "requiredLemmas": [
+        "dobrý den",
+        "káva",
+        "čaj",
+        "koláč",
+        "prosím",
+        "děkuji",
+        "účet"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Dobrý den! Co si dáte?",
+          "interlocutorTranslation": "Good day! What will you have?",
+          "learnerCue": "Pozdravte a objednejte si černou kávu (nebo čaj) a jablečný závin.",
+          "learnerCueEn": "Greet and order a black coffee (or tea) and an apple strudel.",
+          "vocabularyHints": [
+            "dobrý den — good day",
+            "dám si černou kávu — I'll have a black coffee",
+            "kávu s mlékem — coffee with milk",
+            "jablečný závin — apple strudel"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "káva",
+              "kávu",
+              "čaj",
+              "prosím",
+              "dám"
+            ],
+            "minWordCount": 3
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Výborně. Chcete do kávy mléko nebo cukr?",
+          "interlocutorTranslation": "Excellent. Would you like milk or sugar in your coffee?",
+          "learnerCue": "Odpovězte, zda chcete mléko/cukr a poděkujte.",
+          "learnerCueEn": "Answer whether you want milk/sugar and say thank you.",
+          "vocabularyHints": [
+            "s mlékem — with milk",
+            "bez cukru — without sugar",
+            "děkuji — thank you"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "mléko",
+              "mlékem",
+              "cukr",
+              "bez",
+              "děkuji"
+            ],
+            "minWordCount": 2
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Tady to je. Přejete si ještě něco dalšího?",
+          "interlocutorTranslation": "Here you are. Would you like anything else?",
+          "learnerCue": "Řekněte, že to je všechno, a požádejte o účet.",
+          "learnerCueEn": "Say that is all, and ask for the bill.",
+          "vocabularyHints": [
+            "to je všechno — that is all",
+            "zaplatím, prosím — I will pay, please",
+            "účet, prosím — the bill, please"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "všechno",
+              "účet",
+              "zaplatím",
+              "prosím"
+            ],
+            "minWordCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "cs-a1-sc02-nadrazi",
+      "cefrLevel": "A1",
+      "title": "Na vlakovém nádraží",
+      "titleEn": "At the Railway Station",
+      "situation": "Kupujete si jízdenku na vlak na Hlavním nádraží v Praze.",
+      "situationEn": "You are buying a train ticket at the Main Station in Prague.",
+      "roleplay": {
+        "interlocutorRole": "Pokladník",
+        "interlocutorRoleEn": "Ticket agent",
+        "learnerRole": "Cestující",
+        "learnerRoleEn": "Passenger",
+        "interlocutorVoice": "cs-CZ"
+      },
+      "targetCompetency": "I can buy train tickets and ask for schedules in Czech",
+      "targetSkills": [
+        "travel_transport",
+        "numbers_and_prices",
+        "asking_directions"
+      ],
+      "unitIds": [
+        "doprava-a-mesto"
+      ],
+      "requiredLemmas": [
+        "dobrý den",
+        "jízdenka",
+        "vlak",
+        "Brno",
+        "prosím",
+        "kolik"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Dobrý den, kam to bude?",
+          "interlocutorTranslation": "Good day, where to?",
+          "learnerCue": "Požádejte o jednu jízdenku do Brna.",
+          "learnerCueEn": "Ask for one ticket to Brno.",
+          "vocabularyHints": [
+            "jednu jízdenku do Brna — one ticket to Brno",
+            "zpáteční jízdenka — return ticket"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "jízdenka",
+              "jízdenku",
+              "Brna",
+              "prosím"
+            ],
+            "minWordCount": 3
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Jednosměrnou, nebo zpáteční? A na jaký čas?",
+          "interlocutorTranslation": "One-way or return? And for what time?",
+          "learnerCue": "Uveďte, že chcete jednosměrnou na nejbližší vlak.",
+          "learnerCueEn": "State that you want one-way for the next train.",
+          "vocabularyHints": [
+            "jednosměrnou — one-way",
+            "nejbližší vlak — the next train"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "jednosměrnou",
+              "vlak",
+              "prosím"
+            ],
+            "minWordCount": 2
+          }
+        }
+      ]
+    }
+  ]
+}

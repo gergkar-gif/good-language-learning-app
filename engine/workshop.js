@@ -73,6 +73,15 @@ const Workshop = (function () {
             category: 'studios'
         },
         {
+            id: 'cs-grammar-studio',
+            icon: 'grammar',
+            title: 'Czech Grammar Studio',
+            sub: '7 Czech cases & Vocative, verbal aspect, motion verbs with prefixes, past auxiliary clitics & spoken Czech.',
+            containerId: 'cs-grammar-studio-root',
+            langs: ['cs'],
+            category: 'studios'
+        },
+        {
             id: 'es-grammar-studio',
             icon: 'grammar',
             title: 'Spanish Grammar Studio',
@@ -212,12 +221,22 @@ const Workshop = (function () {
             level: 'B1'
         },
         {
+            id: 'cs-cce-b1-exam',
+            icon: 'es-dele-exam',
+            title: 'CCE-B1 Czech Exam Prep',
+            sub: 'Certifikovaná zkouška z češtiny pro cizince · ÚJOP UK. Čtení, poslech, gramatika, psaní a mluvení.',
+            containerId: 'cs-cce-b1-exam-root',
+            langs: ['cs'],
+            category: 'exams',
+            level: 'B1'
+        },
+        {
             id: 'verbs',
             icon: 'verbs',
             title: 'Verb Practice',
             sub: 'Conjugation tables and speed drills.',
             containerId: 'verb-driller-root',
-            langs: ['es', 'es-latam', 'es-es', 'fr', 'it', 'pl'],
+            langs: ['es', 'es-latam', 'es-es', 'fr', 'it', 'pl', 'cs'],
             category: 'foundations'
         },
 
@@ -445,10 +464,12 @@ const Workshop = (function () {
             'fr-grammar-studio': typeof FrGrammarStudio !== 'undefined' ? FrGrammarStudio : null,
             'it-grammar-studio': typeof ItGrammarStudio !== 'undefined' ? ItGrammarStudio : null,
             'pl-grammar-studio': typeof PlGrammarStudio !== 'undefined' ? PlGrammarStudio : null,
+            'cs-grammar-studio': typeof CsGrammarStudio !== 'undefined' ? CsGrammarStudio : null,
             'es-grammar-studio': typeof EsGrammarStudio !== 'undefined' ? EsGrammarStudio : null,
             'it-cils-exam': typeof CilsB1Exam !== 'undefined' ? CilsB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.CilsB1Exam : null),
             'fr-delf-exam': typeof DelfB1Exam !== 'undefined' ? DelfB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DelfB1Exam : null),
             'pl-certyfikat-b1-exam': typeof PlCertyfikatB1Exam !== 'undefined' ? PlCertyfikatB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.PlCertyfikatB1Exam : null),
+            'cs-cce-b1-exam': typeof CsCceB1Exam !== 'undefined' ? CsCceB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.CsCceB1Exam : null),
             'hu-cultural-exam': typeof HuCulturalExam !== 'undefined' ? HuCulturalExam : null,
             'es-ccse-exam': typeof CcseExam !== 'undefined' ? CcseExam : null,
             'es-dele-a1-exam': typeof DeleA1Exam !== 'undefined' ? DeleA1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleA1Exam : null),
