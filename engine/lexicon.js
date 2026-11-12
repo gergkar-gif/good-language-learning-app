@@ -945,6 +945,9 @@ if (typeof PolishMorphology !== 'undefined') {
 if (typeof CzechMorphology !== 'undefined') {
     Lexicon.registerMorphology('cs', CzechMorphology);
 }
+if (typeof SlovakMorphology !== 'undefined') {
+    Lexicon.registerMorphology('sk', SlovakMorphology);
+}
 
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = Lexicon;

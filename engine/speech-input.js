@@ -1551,6 +1551,61 @@ const SpeechInput = (function () {
         return w;
     }
 
+    // Slovak phonetic folding: resolves i/y, í/ý homophones, ä/e equivalence,
+    // soft palatal clusters (de/te/ne/le, di/ti/ni/li),
+    // word-final devoicing (b->p, d->t, ď->ť, v->f, z->s, ž->š, h->ch, dz->c, dž->č),
+    // regressive voicing assimilation, and double consonant degemination.
+    function phoneticFoldSk(word) {
+        if (!word) return '';
+        let w = String(word).toLowerCase().trim();
+
+        // 1. Strict homophones & vowel equivalents
+        w = w.replace(/y/g, 'i')
+             .replace(/ý/g, 'í')
+             .replace(/ä/g, 'e');
+
+        // 2. Soft/palatal consonant normalizations before e/i
+        w = w.replace(/de/g, 'ďe')
+             .replace(/te/g, 'ťe')
+             .replace(/ne/g, 'ňe')
+             .replace(/le/g, 'ľe')
+             .replace(/di/g, 'ďi')
+             .replace(/ti/g, 'ťi')
+             .replace(/ni/g, 'ňi')
+             .replace(/li/g, 'ľi')
+             .replace(/dí/g, 'ďí')
+             .replace(/tí/g, 'ťí')
+             .replace(/ní/g, 'ňí')
+             .replace(/lí/g, 'ľí');
+
+        // 3. Regressive voicing assimilation before voiceless consonants
+        w = w.replace(/v(?=[ptkscštchf])/g, 'f')
+             .replace(/b(?=[ptkscštchf])/g, 'p')
+             .replace(/d(?=[ptkscštchf])/g, 't')
+             .replace(/ď(?=[ptkscštchf])/g, 'ť')
+             .replace(/g(?=[ptkscštchf])/g, 'k')
+             .replace(/z(?=[ptkscštchf])/g, 's')
+             .replace(/ž(?=[ptkscštchf])/g, 'š')
+             .replace(/h(?=[ptkscštchf])/g, 'ch');
+
+        // 4. Final obstruent devoicing at word end
+        w = w.replace(/dz$/g, 'c')
+             .replace(/dž$/g, 'č')
+             .replace(/b$/g, 'p')
+             .replace(/d$/g, 't')
+             .replace(/ď$/g, 'ť')
+             .replace(/g$/g, 'k')
+             .replace(/v$/g, 'f')
+             .replace(/z$/g, 's')
+             .replace(/ž$/g, 'š')
+             .replace(/h$/g, 'ch');
+
+        // 5. Degemination: collapse duplicate letters
+        w = w.replace(/(.)\1+/g, '$1');
+
+        return w;
+    }
+
     function genericPhoneticFold(word) {
         if (!word) return '';
         return String(word)
@@ -1566,7 +1621,8 @@ const SpeechInput = (function () {
         fr: phoneticFoldFr,
         it: phoneticFoldIt,
         pl: phoneticFoldPl,
-        cs: phoneticFoldCs
+        cs: phoneticFoldCs,
+        sk: phoneticFoldSk
     };
 
     function registerPhoneticFolder(langCode, folderFn) {

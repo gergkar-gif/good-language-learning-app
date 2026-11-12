@@ -30,7 +30,8 @@ const Lang = (function () {
         fr:         ['fr-FR', 'fr-CA', 'fr'],
         it:         ['it-IT', 'it'],
         pl:         ['pl-PL', 'pl'],
-        cs:         ['cs-CZ', 'cs']
+        cs:         ['cs-CZ', 'cs'],
+        sk:         ['sk-SK', 'sk']
     };
 
     // Course-level names for pickers and track settings
@@ -41,7 +42,8 @@ const Lang = (function () {
         fr:         'French',
         it:         'Italian',
         pl:         'Polish',
-        cs:         'Czech'
+        cs:         'Czech',
+        sk:         'Slovak'
     };
 
     // Natural language names for learner-facing prompts, exercises, and drills
@@ -520,6 +522,96 @@ const Lang = (function () {
                 A2: ['proto', 'nejdřív', 'potom', 'později', 'však', 'kromě toho', 'například'],
                 B1: ['ve skutečnosti', 'přesto', 'naopak', 'v důsledku toho', 'podle mě', 'zatímco'],
                 B2: ['nicméně', 'navzdory tomu', 'na druhou stranu', 'navíc', 'v souvislosti s tím', 'ačkoli']
+            }
+        },
+        sk: {
+            code: 'sk',
+            baseCode: 'sk',
+            name: 'Slovak',
+            courseName: 'Slovak',
+            voices: ['sk-SK', 'sk'],
+            sttLocale: 'sk-SK',
+            tests: [],
+            diacritics: {
+                a: ['á', 'ä'],
+                c: ['č'],
+                d: ['ď'],
+                e: ['é'],
+                i: ['í'],
+                l: ['ĺ', 'ľ'],
+                n: ['ň'],
+                o: ['ó', 'ô'],
+                r: ['ŕ'],
+                s: ['š'],
+                t: ['ť'],
+                u: ['ú'],
+                y: ['ý'],
+                z: ['ž']
+            },
+            openers: {},
+            numberWords: {
+                '1': ['jeden', 'jedna', 'jedno', 'jedného', 'jednej', 'jednému'],
+                '2': ['dva', 'dve', 'dvoch', 'dvom', 'dvoma'],
+                '3': ['tri', 'troch', 'trom', 'tromi'],
+                '4': ['štyri', 'štyroch', 'štyrom', 'štyrmi'],
+                '5': ['päť', 'piatich', 'piatim', 'piatimi'],
+                '6': ['šesť', 'šiestich', 'šiestim', 'šiestimi'],
+                '7': ['sedem', 'siedmich', 'siedmim', 'siedmimi'],
+                '8': ['osem', 'ôsmich', 'ôsmim', 'ôsmimi'],
+                '9': ['deväť', 'deviatich', 'deviatim', 'deviatimi'],
+                '10': ['desať', 'desiatich', 'desiatim', 'desiatimi']
+            },
+            speechAbbreviations: {
+                'napr.': 'na príklad',
+                'atď.': 'a tak ďalej',
+                't.j.': 'to jest',
+                'tzv.': 'tak zvaný',
+                'tzn.': 'to znamená'
+            },
+            examLabels: {
+                trueFalseNotStated: ['Áno', 'Nie', 'Neuvedené']
+            },
+            paradigm: {
+                hasVosotros: false,
+                persons: {
+                    ja: { key: 'ja', label: 'ja' },
+                    ty: { key: 'ty', label: 'ty' },
+                    on: { key: 'on', label: 'on / ona / ono' },
+                    my: { key: 'my', label: 'my' },
+                    vy: { key: 'vy', label: 'vy' },
+                    oni: { key: 'oni', label: 'oni / ony' }
+                },
+                defaultPersons: ['ja', 'ty', 'on', 'my', 'vy', 'oni'],
+                tenses: [
+                    { value: 'indicativo.presente', label: 'Prítomný čas (Present)' },
+                    { value: 'indicativo.minuly', label: 'Minulý čas (Past)' },
+                    { value: 'indicativo.budouci', label: 'Budúci čas (Future)' },
+                    { value: 'podminovaci', label: 'Podmieňovací spôsob (Conditional)' },
+                    { value: 'rozkazovaci', label: 'Rozkazovací spôsob (Imperative)' },
+                    { value: 'all', label: 'All Tenses' }
+                ]
+            },
+            canDoCues: {
+                city: 'Bratislava',
+                monthsExamples: 'január, február, marec...',
+                monthInEvent: 'State when an event or your birthday is using "v" (e.g. "V októbri..." or "V decembri...")',
+                daysExamples: 'pondelok, utorok...',
+                dayInEvent: 'Say which day you do an activity (e.g. v pondelok, v piatok)',
+                cafeGreeting: 'Polite greeting (Dobrý deň / Ahoj)',
+                cafeOrder: 'Order a drink or snack (e.g. "Dám si kávu s mliekom a jablkový koláč")',
+                cafeBill: 'Conclude politely or ask for the bill ("Zaplatím" / "Účet, prosím")',
+                restaurantGreeting: 'Greeting and request a table ("Stôl pre dvoch, prosím")',
+                restaurantOrder: 'Order food and drinks ("Ako predjedlo si dám... a ako hlavné jedlo...")',
+                restaurantBill: 'Ask for the bill ("Zaplatíme, prosím")',
+                directionsInterruption: 'Polite opening (Prepáčte / S dovolením)',
+                directionsAsk: 'Ask for directions (e.g. "Kde je železničná stanica?")',
+                directionsThanks: 'Thank the person (Ďakujem veľmi pekne)'
+            },
+            discourseConnectors: {
+                A1: ['a', 'ale', 'pretože', 'tiež', 'napríklad', 'takže'],
+                A2: ['preto', 'najprv', 'potom', 'neskôr', 'však', 'okrem toho', 'napríklad'],
+                B1: ['v skutočnosti', 'napriek tomu', 'naopak', 'v dôsledku toho', 'podľa mňa', 'kým'],
+                B2: ['napriek tomu', 'na druhej strane', 'navyše', 'v súvislosti s tým', 'hoci']
             }
         }
     };
