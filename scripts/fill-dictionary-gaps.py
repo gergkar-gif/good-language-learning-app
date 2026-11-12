@@ -67,16 +67,18 @@ DICTS = {
     'es': ROOT / 'imports/dictionary/spanish-en.json',
     'fr': ROOT / 'imports/dictionary/french-en.json',
     'it': ROOT / 'imports/dictionary/italian-en.json',
+    'pl': ROOT / 'imports/dictionary/polish-en.json',
 }
 ADDITIONS = {
     'hu': ROOT / 'imports/dictionary/additions-hu.json',
     'es': ROOT / 'imports/dictionary/additions-es.json',
     'fr': ROOT / 'imports/dictionary/additions-fr.json',
     'it': ROOT / 'imports/dictionary/additions-it.json',
+    'pl': ROOT / 'imports/dictionary/additions-pl.json',
 }
 BATCH_DIR = ROOT / 'imports/dictionary/gap-batches'
-COURSES = {'hu': ['hu'], 'es': ['es-es', 'es-latam'], 'fr': ['fr'], 'it': ['it']}
-LANG_NAME = {'hu': 'Hungarian', 'es': 'Spanish', 'fr': 'French', 'it': 'Italian'}
+COURSES = {'hu': ['hu'], 'es': ['es-es', 'es-latam'], 'fr': ['fr'], 'it': ['it'], 'pl': ['pl']}
+LANG_NAME = {'hu': 'Hungarian', 'es': 'Spanish', 'fr': 'French', 'it': 'Italian', 'pl': 'Polish'}
 
 POS = {
     'hu': {'noun', 'verb', 'adjective', 'adverb', 'pronoun', 'numeral', 'postposition',
@@ -87,6 +89,8 @@ POS = {
            'preposition', 'conjunction', 'interjection', 'determiner'},
     'it': {'noun', 'verb', 'adjective', 'adverb', 'proper noun', 'pronoun', 'numeral',
            'preposition', 'conjunction', 'interjection', 'determiner'},
+    'pl': {'noun', 'verb', 'adjective', 'adverb', 'proper noun', 'pronoun', 'numeral',
+           'preposition', 'conjunction', 'interjection', 'determiner', 'particle'},
 }
 GENDERS = {'', 'm', 'f', 'm; f', 'mf'}
 LEMMA_RE = re.compile(r"^[a-záéíóöőúüűñàâäéèêëîïìòôöùûüçœæ][a-záéíóöőúüűñàâäéèêëîïìòôöùûüçœæ' -]*$")
