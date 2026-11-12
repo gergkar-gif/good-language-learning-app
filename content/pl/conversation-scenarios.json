@@ -1,0 +1,201 @@
+{
+  "language": "pl",
+  "scenarios": [
+    {
+      "id": "pl-a1-sc01-kawiarnia",
+      "cefrLevel": "A1",
+      "title": "W kawiarni",
+      "titleEn": "At the Café",
+      "situation": "Jesteś w kawiarni w Krakowie i chcesz zamówić kawę, ciastko i zapłacić rachunek.",
+      "situationEn": "You are at a café in Krakow and want to order a coffee, a pastry, and pay the bill.",
+      "roleplay": {
+        "interlocutorRole": "Kelner",
+        "interlocutorRoleEn": "Waiter",
+        "learnerRole": "Klient",
+        "learnerRoleEn": "Customer",
+        "interlocutorVoice": "pl-PL"
+      },
+      "targetCompetency": "I can order drinks and food in a Polish café and pay",
+      "targetSkills": [
+        "ordering_food",
+        "social_interaction",
+        "numbers_and_prices"
+      ],
+      "unitIds": [
+        "powitania-i-przedstawianie-sie",
+        "w-kawiarni-i-restauracji"
+      ],
+      "requiredLemmas": [
+        "dzień dobry",
+        "kawa",
+        "herbata",
+        "sernik",
+        "proszę",
+        "dziękuję",
+        "rachunek"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Dzień dobry! Co podać?",
+          "interlocutorTranslation": "Good day! What can I get for you?",
+          "learnerCue": "Przywitaj się i poproś o czarną kawę (lub herbatę) oraz sernik.",
+          "learnerCueEn": "Greet and ask for a black coffee (or tea) and a cheesecake.",
+          "vocabularyHints": [
+            "dzień dobry — good day",
+            "poproszę czarną kawę — black coffee please",
+            "kawa z mlekiem — coffee with milk",
+            "kawałek sernika — a piece of cheesecake"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "kawa",
+              "kawę",
+              "herbata",
+              "herbatę",
+              "proszę",
+              "poproszę"
+            ],
+            "minWordCount": 3
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Oczywiście. Czy życzy sobie Pan/Pani coś do picia na zimno, na przykład wodę gazowaną?",
+          "interlocutorTranslation": "Of course. Would you like a cold drink, for example sparkling water?",
+          "learnerCue": "Odpowiedz, że tak, poprosisz niegazowaną wodę, albo podziękuj.",
+          "learnerCueEn": "Reply that yes, you would like still water, or decline politely.",
+          "vocabularyHints": [
+            "poproszę wodę niegazowaną — still water please",
+            "dziękuję, to wszystko — thank you, that is all"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "woda",
+              "wodę",
+              "nie",
+              "tak",
+              "dziękuję"
+            ],
+            "minWordCount": 2
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Proszę bardzo: kawa, sernik i woda. Czy smakowało?",
+          "interlocutorTranslation": "Here you go: coffee, cheesecake, and water. Did you enjoy it?",
+          "learnerCue": "Powiedz, że było pyszne i poproś o rachunek.",
+          "learnerCueEn": "Say it was delicious and ask for the bill.",
+          "vocabularyHints": [
+            "bardzo smaczne / pyszne — very tasty / delicious",
+            "poproszę rachunek — the bill please",
+            "płacę kartą / gotówką — paying by card / cash"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "rachunek",
+              "karta",
+              "kartą",
+              "pyszne",
+              "smaczne",
+              "dziękuję"
+            ],
+            "minWordCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "pl-a1-sc02-hotel",
+      "cefrLevel": "A1",
+      "title": "W recepcji hotelu",
+      "titleEn": "At Hotel Reception",
+      "situation": "Przyjeżdżasz do hotelu w Warszawie i chcesz się zameldować.",
+      "situationEn": "You arrive at a hotel in Warsaw and want to check in.",
+      "roleplay": {
+        "interlocutorRole": "Recepcjonista",
+        "interlocutorRoleEn": "Receptionist",
+        "learnerRole": "Gość",
+        "learnerRoleEn": "Guest",
+        "interlocutorVoice": "pl-PL"
+      },
+      "targetCompetency": "I can check into a hotel, give my details, and ask about amenities",
+      "targetSkills": [
+        "accommodations",
+        "giving_personal_info"
+      ],
+      "unitIds": [
+        "powitania-i-przedstawianie-sie"
+      ],
+      "requiredLemmas": [
+        "dzień dobry",
+        "rezerwacja",
+        "pokój",
+        "nazwisko",
+        "śniadanie",
+        "klucz",
+        "dziękuję"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Dzień dobry, w czym mogę pomóc?",
+          "interlocutorTranslation": "Good day, how can I help you?",
+          "learnerCue": "Przywitaj się i powiedz, że masz rezerwację pokoju na nazwisko Kowalski (lub swoje nazwisko).",
+          "learnerCueEn": "Greet and state you have a room reservation under the name Kowalski (or your name).",
+          "vocabularyHints": [
+            "mam rezerwację — I have a reservation",
+            "na nazwisko... — under the name..."
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "rezerwacja",
+              "rezerwację",
+              "dzień dobry",
+              "mam"
+            ],
+            "minWordCount": 3
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Zgadza się, pokój jednoosobowy na trzy noce. Proszę o paszport lub dowód osobisty.",
+          "interlocutorTranslation": "Correct, a single room for three nights. May I please have your passport or ID card.",
+          "learnerCue": "Powiedz proszę bardzo i podaj dokument.",
+          "learnerCueEn": "Say here you go and hand over your document.",
+          "vocabularyHints": [
+            "proszę bardzo — here you go",
+            "oto mój paszport — here is my passport"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "proszę",
+              "paszport",
+              "dokument"
+            ],
+            "minWordCount": 2
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Dziękuję. Oto klucz do pokoju numer 204. Śniadanie jest od siódmej do dziesiątej w restauracji.",
+          "interlocutorTranslation": "Thank you. Here is the key to room number 204. Breakfast is from seven to ten in the restaurant.",
+          "learnerCue": "Podziękuj i zapytaj o hasło do Wi-Fi.",
+          "learnerCueEn": "Thank them and ask for the Wi-Fi password.",
+          "vocabularyHints": [
+            "dziękuję bardzo — thank you very much",
+            "jakie jest hasło do Wi-Fi? — what is the Wi-Fi password?"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "dziękuję",
+              "wi-fi",
+              "hasło"
+            ],
+            "minWordCount": 3
+          }
+        }
+      ]
+    }
+  ]
+}

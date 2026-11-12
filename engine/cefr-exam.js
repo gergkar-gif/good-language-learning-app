@@ -20,11 +20,12 @@ const CefrExam = (function () {
         const _id = config.id;
         const _dataFile = config.dataFile;
         const _storageKey = `parlour_cefr_v1_${_id}`;
-        const _lang = _id.includes('hu') ? 'hu' : (_id.includes('fr') ? 'fr' : (_id.includes('it') ? 'it' : 'es'));
-        function _t(esStr, huStr, frStr, itStr) {
+        const _lang = _id.includes('hu') ? 'hu' : (_id.includes('fr') ? 'fr' : (_id.includes('it') ? 'it' : (_id.includes('pl') ? 'pl' : 'es')));
+        function _t(esStr, huStr, frStr, itStr, plStr) {
             if (_lang === 'hu') return huStr;
             if (_lang === 'fr') return frStr !== undefined ? frStr : esStr;
             if (_lang === 'it') return itStr !== undefined ? itStr : esStr;
+            if (_lang === 'pl') return plStr !== undefined ? plStr : (itStr !== undefined ? itStr : esStr);
             return esStr;
         }
 
@@ -2036,6 +2037,13 @@ const CefrExam = (function () {
         subtitle: "Diplôme d'études en langue française · Cadre européen commun de référence (CECRL B1)"
     });
 
+    const PlCertyfikatB1Exam = createModule({
+        id: 'pl-certyfikat-b1-exam',
+        dataFile: 'certyfikat-b1-exam.json',
+        title: 'Egzamin Certyfikat Polski B1',
+        subtitle: 'Państwowa Komisja do spraw Poświadczania Znajomości Języka Polskiego · Poziom B1 (CEFR)'
+    });
+
     return {
         createModule: createModule,
         DeleA1Exam: DeleA1Exam,
@@ -2047,7 +2055,8 @@ const CefrExam = (function () {
         EclB1Exam: EclB1Exam,
         EclB2Exam: EclB2Exam,
         CilsB1Exam: CilsB1Exam,
-        DelfB1Exam: DelfB1Exam
+        DelfB1Exam: DelfB1Exam,
+        PlCertyfikatB1Exam: PlCertyfikatB1Exam
     };
 })();
 
@@ -2064,6 +2073,7 @@ if (typeof window !== 'undefined') {
     window.EclB2Exam = CefrExam.EclB2Exam;
     window.CilsB1Exam = CefrExam.CilsB1Exam;
     window.DelfB1Exam = CefrExam.DelfB1Exam;
+    window.PlCertyfikatB1Exam = CefrExam.PlCertyfikatB1Exam;
 }
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = CefrExam;

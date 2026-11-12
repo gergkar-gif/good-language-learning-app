@@ -1,0 +1,57 @@
+{
+  "language": "pl",
+  "tasks": [
+    {
+      "id": "ls-pl-a1-kawiarnia",
+      "level": "A1",
+      "title": "W kawiarni na Starówce",
+      "topic": "Zamawianie napojów i deserów",
+      "format": "dialogue",
+      "context": "W kawiarni w Warszawie, klient zamawia napoje i deser.",
+      "previewSeconds": 30,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Kelnerka",
+            "gender": "female",
+            "text": "Dzień dobry! Co mogę dla państwa przygotować?",
+            "textEn": "Good day! What can I prepare for you?"
+          },
+          {
+            "speaker": "Marek",
+            "gender": "male",
+            "text": "Dzień dobry. Poproszę dużą białą kawę i dwa kawałki szarlotki na ciepło.",
+            "textEn": "Good day. I would like a large coffee with milk and two warm apple pies."
+          },
+          {
+            "speaker": "Kelnerka",
+            "gender": "female",
+            "text": "Oczywiście. Szarlotka jest świeżo upieczona. Czy dodać do niej lody waniliowe?",
+            "textEn": "Certainly. The apple pie is freshly baked. Would you like vanilla ice cream with it?"
+          },
+          {
+            "speaker": "Marek",
+            "gender": "male",
+            "text": "Tak, z lodami będzie wyśmienita. Dziękuję bardzo.",
+            "textEn": "Yes, with ice cream it will be exquisite. Thank you very much."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Co zamawia Marek do jedzenia?",
+          "promptEn": "What does Marek order to eat?",
+          "options": [
+            "Dwa kawałki ciepłej szarlotki z lodami",
+            "Kawałek sernika na zimno",
+            "Dwa rogaliki z czekoladą",
+            "Tylko herbatę z cytryną"
+          ],
+          "answer": "Dwa kawałki ciepłej szarlotki z lodami",
+          "explanation": "Marek mówi: Poproszę dwa kawałki szarlotki na ciepło, i zgadza się na lody waniliowe."
+        }
+      ]
+    }
+  ]
+}

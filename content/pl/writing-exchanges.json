@@ -1,0 +1,62 @@
+{
+  "language": "pl",
+  "scenarios": [
+    {
+      "id": "pl-a1-wx01-zakupy",
+      "cefrLevel": "A1",
+      "title": "Wiadomość ze sklepu spożywczego",
+      "titleEn": "Message from the Grocery Store",
+      "situation": "Twój współlokator Tomasz jest w sklepie i pyta na czacie, co kupić na obiad.",
+      "situationEn": "Your flatmate Tomasz is at the store and texts asking what to buy for dinner.",
+      "roleplay": {
+        "interlocutorRole": "Tomasz (Współlokator)",
+        "interlocutorRoleEn": "Tomasz (Flatmate)",
+        "learnerRole": "Współlokator",
+        "learnerRoleEn": "Flatmate",
+        "interlocutorVoice": "pl-PL"
+      },
+      "targetCompetency": "I can exchange short text messages about groceries and daily food needs",
+      "targetSkills": [
+        "food_shopping",
+        "informal_messaging"
+      ],
+      "unitIds": [
+        "powitania-i-przedstawianie-sie",
+        "w-kawiarni-i-restauracji"
+      ],
+      "requiredLemmas": [
+        "chleb",
+        "ser",
+        "pomidor",
+        "mleko",
+        "proszę",
+        "dziękuję"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Cześć! Jestem w sklepie. Co mamy kupić na kolację? Kończy się chleb i ser.",
+          "interlocutorTranslation": "Hi! I am in the store. What should we buy for dinner? We are running out of bread and cheese.",
+          "learnerCue": "Odpisz, żeby kupił chleb, żółty ser i pomidory.",
+          "learnerCueEn": "Reply asking him to buy bread, yellow cheese, and tomatoes.",
+          "vocabularyHints": [
+            "kup proszę chleb — please buy bread",
+            "żółty ser — yellow cheese",
+            "świeże pomidory — fresh tomatoes"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "chleb",
+              "ser",
+              "pomidor",
+              "pomidory",
+              "kup",
+              "proszę"
+            ],
+            "minWordCount": 3
+          }
+        }
+      ]
+    }
+  ]
+}

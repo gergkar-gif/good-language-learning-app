@@ -64,6 +64,15 @@ const Workshop = (function () {
             category: 'studios'
         },
         {
+            id: 'pl-grammar-studio',
+            icon: 'grammar',
+            title: 'Polish Grammar Studio',
+            sub: 'Biernik vs Dopełniacz negation, Narzędnik & Miejscownik, aspect pairs, virile plurals & clitic pronouns.',
+            containerId: 'pl-grammar-studio-root',
+            langs: ['pl'],
+            category: 'studios'
+        },
+        {
             id: 'es-grammar-studio',
             icon: 'grammar',
             title: 'Spanish Grammar Studio',
@@ -193,12 +202,22 @@ const Workshop = (function () {
             level: 'B1'
         },
         {
+            id: 'pl-certyfikat-b1-exam',
+            icon: 'es-dele-exam',
+            title: 'Certyfikat Polski B1 Exam Prep',
+            sub: 'Państwowa Komisja do spraw Poświadczania Znajomości Języka Polskiego. Rozumienie ze słuchu, czytanie, pisanie i mówienie.',
+            containerId: 'pl-certyfikat-b1-exam-root',
+            langs: ['pl'],
+            category: 'exams',
+            level: 'B1'
+        },
+        {
             id: 'verbs',
             icon: 'verbs',
             title: 'Verb Practice',
             sub: 'Conjugation tables and speed drills.',
             containerId: 'verb-driller-root',
-            langs: ['es', 'es-latam', 'es-es', 'fr', 'it'],
+            langs: ['es', 'es-latam', 'es-es', 'fr', 'it', 'pl'],
             category: 'foundations'
         },
 
@@ -425,9 +444,11 @@ const Workshop = (function () {
             'hu-verb-studio': typeof HuVerbStudio !== 'undefined' ? HuVerbStudio : null,
             'fr-grammar-studio': typeof FrGrammarStudio !== 'undefined' ? FrGrammarStudio : null,
             'it-grammar-studio': typeof ItGrammarStudio !== 'undefined' ? ItGrammarStudio : null,
+            'pl-grammar-studio': typeof PlGrammarStudio !== 'undefined' ? PlGrammarStudio : null,
             'es-grammar-studio': typeof EsGrammarStudio !== 'undefined' ? EsGrammarStudio : null,
             'it-cils-exam': typeof CilsB1Exam !== 'undefined' ? CilsB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.CilsB1Exam : null),
             'fr-delf-exam': typeof DelfB1Exam !== 'undefined' ? DelfB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DelfB1Exam : null),
+            'pl-certyfikat-b1-exam': typeof PlCertyfikatB1Exam !== 'undefined' ? PlCertyfikatB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.PlCertyfikatB1Exam : null),
             'hu-cultural-exam': typeof HuCulturalExam !== 'undefined' ? HuCulturalExam : null,
             'es-ccse-exam': typeof CcseExam !== 'undefined' ? CcseExam : null,
             'es-dele-a1-exam': typeof DeleA1Exam !== 'undefined' ? DeleA1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleA1Exam : null),
