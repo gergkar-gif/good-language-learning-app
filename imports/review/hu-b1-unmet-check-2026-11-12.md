@@ -95,3 +95,9 @@
 - *dallamát*: b1-europaiorokseg-consolidation:challenge › b2-bartokkodaly-01
 - *elnyerte*: b1-europaiorokseg-consolidation:challenge › b2-magyarfilm-05
 - *tengerentúlon*: b1-magyarsag-03:challenge › b2-diaszpora-01
+
+## Decided by the user (2026-11-12): rule (b)
+
+Lists hold the teaching vocabulary; the rest relies on tap-to-translate. Only hard, recurring words are listed. **Done:** *zsoldoshadsereg* (b1-matyas-02), *királyválasztás* (b1-torokkiuzese-04), *következtében* (b1-16-03, was first listed in b1-19-05), *állampolgár* (b1-17-01, was first listed in b1-nemzetiugy-05), *kutató* (b1-21-05, was B2), *újratemet* (b1-otvenhat-05). Six units unfrozen, rechecked, walked (6/6) and refrozen with their previous accepted findings.
+
+**Correction to the table above:** the "real" group is overstated. Nine more candidates turned out to be listed already, hidden by split preverbs or a different citation form (*létrehoz, létrejön, fenntart, fennmarad, eltűnik, megfogalmaz, megjelenik, megérik, összevesz*); they were left alone. The true count of unlisted words is lower than 83, probably by a third.
