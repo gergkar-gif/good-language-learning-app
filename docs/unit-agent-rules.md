@@ -550,7 +550,8 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
   non-phrases or carry two faults; later subjunctive forms as wrong options
   (*haya visto*, *pudieran*, *habríamos buscado*); relative *que* + clause
   before b1-05-04; *para que* before b1-04-04; *antes de que*, *después de
-  que*, *por lo tanto* (B2) anywhere; *quizá* + subjunctive before b1-13;
+  que* (B2) anywhere (*por lo tanto* is NOT B2: it is known from A2 Unit 28;
+  user, 2026-11-12; the earlier B1 batches replaced it, which stays); *quizá* + subjunctive before b1-13;
   Spanish question stems or bracket glosses in unmet metalanguage
   (*oración, expresa, contexto, correctamente*) or that copy the answer;
   goals that say "three new words" for a longer list; A1–A2 forms presented

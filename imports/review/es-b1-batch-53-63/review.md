@@ -27,6 +27,6 @@ State: all six frozen in es-es and es-latam (B1 32/76 per course). check-content
 
 ## For the user
 
-- *por lo tanto* is taught in A2 Unit 28, yet the B1 batches have treated it as B2 and removed it. Should B1 keep it as known, or should A2 drop it?
+- ~~*por lo tanto*~~ decided by the user (2026-11-12): it is known from A2 Unit 28, not B2; the label is fixed in the rulebook, the B1 replacements stay.
 - `b1-30.json` ("Muchas maneras de hablar") is another orphan story file (in the manifest, linked by no lesson).
 - `verbos-regimen-preposicional` is also tagged in b1-40-01/-05/consolidation (the next batch) and in the cultura units b1-autonomias and b1-cortes.

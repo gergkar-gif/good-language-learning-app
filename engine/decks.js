@@ -104,6 +104,7 @@ const Decks = (function () {
         try {
             const res = await fetch(Lang.content('decks/decks.json'));
             catalogue = res.ok ? await res.json() : { decks: [] };
+            catalogue.decks = (catalogue.decks || []).filter(d => !d.hidden);   // hidden tracks (build-manifest.py HIDDEN_TRACKS)
         } catch (error) {
             console.warn('Decks: no deck index for this course.', error);
             catalogue = { decks: [] };

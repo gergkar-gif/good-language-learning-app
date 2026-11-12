@@ -174,6 +174,22 @@ def load_unit_table(lang, level_id):
 # same reasoning as the unit tables above: a level absent for this language
 # (or a unit table entry with no "track") is single-track, and the
 # Learn tab falls back to today's flat unit list.
+# Tracks the app does not show yet (user, 2026-11-12): their units are not read,
+# so the Learn tab, the electives nudge, the Reader library and the Decks tab
+# leave them out. Content, unit tables and every script stay as they are: the
+# generated files only mark them ("hidden": true on the level's track, the
+# unit, its stories and its decks) and the engine filters on load. Remove an
+# entry here to bring a track back.
+HIDDEN_TRACKS = {
+    "es-es": {"b1": {"cultura"}},
+    "es-latam": {"b1": {"latam"}, "b2": {"latam"}},
+}
+
+
+def track_hidden(lang, level, track):
+    return bool(track) and track in HIDDEN_TRACKS.get(lang, {}).get(str(level).lower(), set())
+
+
 LEVEL_TRACKS = {
     "es-latam": {
         "b1": [
@@ -384,6 +400,8 @@ def build_curriculum(lang="es"):
                     }
                     if track:
                         unit["track"] = track
+                        if track_hidden(lang, level_id, track):
+                            unit["hidden"] = True
                     units.append(unit)
             else:
                 auto_units = auto_group_units(lang, level_id, level_path)
@@ -410,7 +428,8 @@ def build_curriculum(lang="es"):
         }
         lang_tracks = LEVEL_TRACKS.get(lang, {})
         if level_id in lang_tracks:
-            level_entry["tracks"] = lang_tracks[level_id]
+            level_entry["tracks"] = [dict(tr, hidden=True) if track_hidden(lang, level_id, tr["id"]) else tr
+                                     for tr in lang_tracks[level_id]]
         levels[level_id.upper()] = level_entry
 
     curr_meta = CURRICULUM_META.get(lang, {
@@ -1171,6 +1190,10 @@ def main():
             continue
         ref_to_unit = _story_unit_index(lang, curricula.get(lang))
         stories = build_stories(lang, ref_to_unit)
+        for s in stories:
+            u = s.get("unit") or {}
+            if track_hidden(lang, u.get("level", ""), u.get("track")):
+                s["hidden"] = True
         with open(stories_dir / "manifest.json", "w", encoding='utf-8') as f:
             json.dump({"generated": generated, "stories": stories}, f, indent=2, ensure_ascii=False)
         with_unit = sum(1 for s in stories if s.get("unit"))
@@ -1181,6 +1204,9 @@ def main():
         decks = build_decks(lang, curriculum=curricula.get(lang))
         if not decks:
             continue
+        for d in decks["decks"]:
+            if track_hidden(lang, d.get("level", ""), d.get("track")):
+                d["hidden"] = True
         out_dir = BASE_LESSONS / lang / "decks"
         out_dir.mkdir(parents=True, exist_ok=True)
         with open(out_dir / "decks.json", "w", encoding="utf-8") as f:

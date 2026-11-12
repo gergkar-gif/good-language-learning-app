@@ -176,11 +176,25 @@ function currentRowIndexFor(level, rows, progress) {
 // startup before anything rendered, leaving a blank page that a reload could
 // not fix, because the choice is saved. Fall back to the default course and
 // say so instead.
+// Tracks marked "hidden" by build-manifest.py (HIDDEN_TRACKS: units not read
+// yet) are left out of everything the app builds from the curriculum: the
+// Learn tab, the walk, the electives nudge. The files stay in the course.
+function dropHiddenTracks(data) {
+    for (const level of Object.values((data && data.levels) || {})) {
+        if (Array.isArray(level.units)) level.units = level.units.filter(u => !u.hidden);
+        if (Array.isArray(level.tracks)) {
+            level.tracks = level.tracks.filter(t => !t.hidden);
+            if (level.tracks.length < 2) delete level.tracks;   // one track left: the flat list
+        }
+    }
+    return data;
+}
+
 async function loadCurriculumData() {
     try {
         const res = await fetch(Lang.content('curriculum/curriculum.json'));
         if (!res.ok) throw new Error('HTTP ' + res.status);
-        return await res.json();
+        return dropHiddenTracks(await res.json());
     } catch (error) {
         if (Lang.code() === Lang.defaultCode()) throw error;
 

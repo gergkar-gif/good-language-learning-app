@@ -1192,7 +1192,7 @@ window.Reader = {
     async ensureStories() {
         if (this.stories.length) return this.stories;
         const manifest = await Content.manifest('stories');
-        this.stories = manifest.stories || [];
+        this.stories = (manifest.stories || []).filter(s => !s.hidden);   // hidden tracks (build-manifest.py HIDDEN_TRACKS)
         return this.stories;
     },
 
