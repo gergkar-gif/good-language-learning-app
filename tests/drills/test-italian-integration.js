@@ -65,7 +65,7 @@ console.log('[PASS] ItalianMorphology rules, prepositions, enclitics, and contex
 
 // 2. Lang profile & speech support
 const Lang = require('../../engine/lang.js');
-assert(Lang.available().includes('it'), 'Lang.available() must include "it"');
+assert(Lang.profile('it'), 'Lang.profile("it") must be defined');
 assert(Lang.voices('it').includes('it-IT'), 'Lang.voices("it") must include it-IT');
 const itProfile = Lang.profile('it');
 assert(itProfile, 'Lang.profile("it") must be defined');

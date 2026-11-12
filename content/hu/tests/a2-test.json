@@ -16,7 +16,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "inflected-pronouns-nalam"
+        "case-inflected-pronouns"
       ]
     },
     {
@@ -28,7 +28,7 @@
         "hozzank"
       ],
       "teaches": [
-        "inflected-pronouns-hozzam"
+        "case-inflected-pronouns"
       ]
     },
     {
@@ -42,29 +42,26 @@
       ],
       "correct": 0,
       "teaches": [
-        "inflected-pronouns-velem"
+        "case-inflected-pronouns"
       ]
     },
     {
       "id": "pronoun-dative-nekem",
       "type": "text-input",
-      "sentence": "Nagyon tetszik _____ ez a magyar népdal.",
+      "sentence": "Ã‰n nagyon szeretem a zenÃ©t. Nagyon tetszik _____ ez a magyar nÃ©pdal.",
       "answer": "nekem",
-      "altAnswers": [
-        "Nekem"
-      ],
       "teaches": [
-        "inflected-pronouns-nekem"
+        "good-for-me-nekem-jo"
       ]
     },
     {
       "id": "translative-va-ve-vowel",
       "type": "dropdown",
-      "sentence": "A hideg idő miatt a tó vize jéggé és hideg_____ változott.",
+      "sentence": "A pulÃ³ver mosÃ¡s utÃ¡n kicsi_____ vÃ¡lt.",
       "options": [
-        "vé",
-        "vá",
-        "vével"
+        "vÃ©",
+        "vÃ¡",
+        "vel"
       ],
       "correct": 0,
       "teaches": [
@@ -77,17 +74,16 @@
       "sentence": "Sokat tanult, és végül híres orvos_____ vált.",
       "answer": "sá",
       "altAnswers": [
-        "sa",
-        "orvossá"
+        "sa"
       ],
       "teaches": [
-        "translative-assimilation"
+        "translative-morphology"
       ]
     },
     {
       "id": "essive-formal-kent",
       "type": "text-input",
-      "sentence": "Carlos egy évig önkéntes_____ dolgozott a kulturális központban.",
+      "sentence": "KÃ¡roly egy Ã©vig Ã¶nkÃ©ntes_____ dolgozott a kulturÃ¡lis kÃ¶zpontban.",
       "answer": "ként",
       "altAnswers": [
         "kent"
@@ -107,7 +103,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "politeness-tetszik"
+        "formal-address-on"
       ]
     },
     {
@@ -121,7 +117,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "tetszik-construction"
+        "erdekel-construction"
       ]
     },
     {
@@ -135,13 +131,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "pragmatics-tessek"
+        "a2-sociocultural-pragmatics-customs-vocab"
       ]
     },
     {
       "id": "igekoto-meg-befejezett",
       "type": "dropdown",
-      "sentence": "Carlos már _____írta a házi feladatot, készen van.",
+      "sentence": "KÃ¡roly mÃ¡r _____Ã­rta a hÃ¡zi feladatot, kÃ©szen van.",
       "options": [
         "meg",
         "el",
@@ -149,7 +145,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "preverbs-aspect"
+        "meg-meaning"
       ]
     },
     {
@@ -158,10 +154,12 @@
       "sentence": "Nem akarom most el_____ a levelet, majd csak holnap.",
       "answer": "küldeni",
       "altAnswers": [
-        "olvasni"
+        "olvasni",
+        "vinni",
+        "postÃ¡zni"
       ],
       "teaches": [
-        "preverb-word-order"
+        "prefix-word-order"
       ]
     },
     {
@@ -175,7 +173,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-conjugation"
+        "definite-past"
       ]
     },
     {
@@ -189,19 +187,16 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-vs-indefinite"
+        "definite-vs-indefinite-conjugation"
       ]
     },
     {
       "id": "mult-ido-regular",
       "type": "text-input",
-      "sentence": "Tegnap este sokáig _____ a vizsgára.",
+      "sentence": "Tegnap este sokÃ¡ig (tanulni, Ã©n) _____ a vizsgÃ¡ra.",
       "answer": "tanultam",
-      "altAnswers": [
-        "Tanultam"
-      ],
       "teaches": [
-        "past-tense-regular"
+        "past-tense-indefinite"
       ]
     },
     {
@@ -215,7 +210,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "past-tense-volt"
+        "van-past"
       ]
     },
     {
@@ -229,7 +224,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "comparative-mint"
+        "comparative-bb"
       ]
     },
     {
@@ -241,7 +236,7 @@
         "nek"
       ],
       "teaches": [
-        "conditional-politeness"
+        "nek-conditional"
       ]
     },
     {
@@ -255,7 +250,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "connectors-mert"
+        "mert-because"
       ]
     },
     {
@@ -269,7 +264,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "cultural-name-days"
+        "a2-holidays-celebrations-vocab"
       ]
     },
     {
@@ -278,12 +273,12 @@
       "prompt": "Egy finom családi ebéd után távozol a vendéglátóidtól. Mit illik mondani?",
       "options": [
         "Nagyon köszönöm a szíves vendéglátást és a finom ebédet!",
-        "Tessék azonnal megenni a maradékot!",
-        "Bocsánat, hogy itt voltam, viszlát."
+        "Tessék azonnal megenni a maradékot, mielőtt elmegyünk innen!",
+        "Bocsánat, hogy itt voltam, most már tényleg elmegyek, viszlát."
       ],
       "correct": 0,
       "teaches": [
-        "pragmatics-hospitality"
+        "a2-sociocultural-pragmatics-customs-vocab"
       ]
     },
     {
@@ -297,7 +292,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "health-vocabulary"
+        "faj-construction"
       ]
     },
     {
@@ -311,21 +306,21 @@
       ],
       "correct": 0,
       "teaches": [
-        "directions-giving"
+        "direction-adverbs-jobbra-balra"
       ]
     },
     {
-      "id": "hatarozoi-igenev-va-ve",
+      "id": "ota-idotartam",
       "type": "dropdown",
-      "sentence": "Az ablak nyit_____ van, engedd be a friss levegőt!",
+      "sentence": "Tavaly szeptember _____ tanulok magyarul.",
       "options": [
-        "va",
-        "ve",
-        "ván"
+        "óta",
+        "múlva",
+        "előtt"
       ],
       "correct": 0,
       "teaches": [
-        "adverbial-participle"
+        "ota-duration"
       ]
     },
     {
@@ -339,7 +334,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "plural-possession"
+        "plural-possessive"
       ]
     },
     {
@@ -351,7 +346,7 @@
         "haragudj"
       ],
       "teaches": [
-        "imperative-subjunctive"
+        "imperative-indefinite"
       ]
     }
   ],
@@ -394,7 +389,7 @@
   "readingSection": {
     "id": "rs-a2-hu",
     "title": "Olvasásértés",
-    "passage": "Kedves Erzsi!\n\nRemélem, jól vagy! Múlt héten Bécsben voltam a barátaimmal. Gyönyörű város! Az első nap megnéztük a Schönbrunn-palotát és a kertjeit. Nagyon szép volt. Este egy kis étteremben vacsoráztunk, ahol bécsi szeleteltet ettünk. Másnap a Kunsthistorisches Múzeumba mentünk, ahol rengeteg festményt és szobrot láttunk. Vásároltam néhány emléktárgyat a barátaimnak. A visszaút vonattal három órát tartott. Elfáradtam, de nagyon boldog voltam. Már tervezem a következő utazást: talán tavasszal Prágába megyek. Ha van kedved, gyere velem!\n\nSzeretettel,\nKati",
+    "passage": "Kedves Erzsi!\n\nRemélem, jól vagy! Múlt héten Bécsben voltam a barátaimmal. Gyönyörű város! Az első nap megnéztük a Schönbrunn-palotát és a kertjeit. Nagyon szép volt. Este egy kis étteremben vacsoráztunk, ahol bécsi szeletet ettünk. Másnap a híres szépművészeti múzeumba mentünk, ahol rengeteg festményt és szobrot láttunk. Vásároltam néhány emléktárgyat a barátaimnak. A visszaút vonattal három órát tartott. Elfáradtam, de nagyon boldog voltam. Már tervezem a következő utazást: talán tavasszal Prágába megyek. Ha van kedved, gyere velem!\n\nSzeretettel,\nKati",
     "questions": [
       {
         "id": "rs-a2-hu-01",
@@ -413,7 +408,7 @@
         "question": "Mit evett Kati az első este?",
         "options": [
           "Gulyást",
-          "Bécsi szeleteltet",
+          "Bécsi szeletet",
           "Pörköltet"
         ],
         "correct": 1
@@ -440,6 +435,102 @@
         "type": "true-false-not-stated",
         "statement": "Kati tavasszal Berlinbe szeretne utazni.",
         "correct": 1
+      },
+      {
+        "id": "rs-a2-hu-06",
+        "type": "true-false-not-stated",
+        "statement": "Kati repülővel ment Bécsbe.",
+        "correct": 2
+      }
+    ]
+  },
+  "listeningSection": {
+    "id": "ls-a2-orvos-idopont",
+    "title": "Időpontfoglalás az orvosnál",
+    "context": "Meg telefonon időpontot kér a háziorvosnál.",
+    "previewSeconds": 30,
+    "audio": {
+      "turns": [
+        {
+          "speaker": "Recepciós",
+          "gender": "female",
+          "text": "Jó napot kívánok, Dr. Szabó rendelője, tessék!"
+        },
+        {
+          "speaker": "Meg",
+          "gender": "female",
+          "text": "Jó napot! Meg vagyok, időpontot szeretnék kérni. Három napja fáj a torkom, és lázam is van."
+        },
+        {
+          "speaker": "Recepciós",
+          "gender": "female",
+          "text": "Értem. Holnap délelőtt tizenegykor vagy csütörtökön délután háromkor tudom fogadni."
+        },
+        {
+          "speaker": "Meg",
+          "gender": "female",
+          "text": "A holnap jó lesz, mert csütörtökön dolgozom."
+        },
+        {
+          "speaker": "Recepciós",
+          "gender": "female",
+          "text": "Rendben, akkor holnap tizenegykor várjuk. Kérem, hozza magával a TAJ-kártyáját!"
+        },
+        {
+          "speaker": "Meg",
+          "gender": "female",
+          "text": "Köszönöm, hozom. Viszonthallásra!"
+        }
+      ]
+    },
+    "questions": [
+      {
+        "id": "ls-a2-hu-01",
+        "type": "listening-mc",
+        "question": "Mi a baja Megnek?",
+        "options": [
+          "Fáj a torka, és lázas",
+          "Fáj a hasa",
+          "Fáj a lába"
+        ],
+        "correct": 0,
+        "evidence": "Három napja fáj a torkom, és lázam is van."
+      },
+      {
+        "id": "ls-a2-hu-02",
+        "type": "listening-mc",
+        "question": "Mikorra kér időpontot Meg?",
+        "options": [
+          "Holnap tizenegyre",
+          "Csütörtök délután háromra",
+          "Hétfő reggelre"
+        ],
+        "correct": 0,
+        "evidence": "A holnap jó lesz."
+      },
+      {
+        "id": "ls-a2-hu-03",
+        "type": "listening-mc",
+        "question": "Miért nem jó Megnek a csütörtök?",
+        "options": [
+          "Mert dolgozik",
+          "Mert utazik",
+          "Mert beteg"
+        ],
+        "correct": 0,
+        "evidence": "Csütörtökön dolgozom."
+      },
+      {
+        "id": "ls-a2-hu-04",
+        "type": "listening-mc",
+        "question": "Mit kell Megnek magával vinnie?",
+        "options": [
+          "A TAJ-kártyáját",
+          "A receptet",
+          "Pénzt"
+        ],
+        "correct": 0,
+        "evidence": "Hozza magával a TAJ-kártyáját!"
       }
     ]
   }

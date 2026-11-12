@@ -939,6 +939,9 @@ if (typeof FrenchMorphology !== 'undefined') {
 if (typeof ItalianMorphology !== 'undefined') {
     Lexicon.registerMorphology('it', ItalianMorphology);
 }
+if (typeof PolishMorphology !== 'undefined') {
+    Lexicon.registerMorphology('pl', PolishMorphology);
+}
 
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = Lexicon;

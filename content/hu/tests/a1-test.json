@@ -16,7 +16,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "vagyok-vagy"
+        "van-zero-copula"
       ]
     },
     {
@@ -30,7 +30,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "question-words"
+        "ki-and-mi"
       ]
     },
     {
@@ -44,7 +44,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "egy-article"
+        "indefinite-article-egy"
       ]
     },
     {
@@ -58,7 +58,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-nem"
+        "negation-with-nem"
       ]
     },
     {
@@ -66,30 +66,26 @@
       "type": "text-input",
       "sentence": "A hűtőben _____ tej, el kell mennem a boltba.",
       "answer": "nincs",
-      "altAnswers": [
-        "Nincs"
-      ],
       "teaches": [
-        "nincs-negation"
+        "nem-vs-nincs-two-kinds-of-negation"
       ]
     },
     {
       "id": "tobbesszam-konyvek",
       "type": "text-input",
-      "sentence": "Az asztalon sok új _____ vannak.",
+      "sentence": "Az asztalon Ãºj _____ vannak.",
       "answer": "könyvek",
       "altAnswers": [
-        "konyvek",
-        "Könyvek"
+        "konyvek"
       ],
       "teaches": [
-        "plural-nouns"
+        "plural-nouns-k"
       ]
     },
     {
       "id": "ban-ben-helyhatarozo",
       "type": "dropdown",
-      "sentence": "Carlos most egy csendes kávézó_____ olvas.",
+      "sentence": "KÃ¡roly most egy csendes kÃ¡vÃ©zÃ³_____ olvas.",
       "options": [
         "ban",
         "ben",
@@ -97,7 +93,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "ban-ben-inessive"
+        "ban-ben-in"
       ]
     },
     {
@@ -111,33 +107,33 @@
       ],
       "correct": 0,
       "teaches": [
-        "ba-be-illative"
+        "movement-with-ba-be"
       ]
     },
     {
       "id": "bol-bel-origin",
       "type": "dropdown",
-      "sentence": "Carlos Magyarország_____ érkezett Vietnámba.",
+      "sentence": "Anna a kÃ¶nyvtÃ¡r_____ jÃ¶n haza.",
       "options": [
-        "ról",
-        "ból",
-        "töl"
+        "bÃ³l",
+        "ban",
+        "ra"
       ],
       "correct": 0,
       "teaches": [
-        "bol-bel-elative"
+        "elative-bol-bel"
       ]
     },
     {
       "id": "bol-bel-varos",
       "type": "text-input",
-      "sentence": "Meg London_____ jött, most Hanoiban lakik.",
+      "sentence": "Meg London_____ jÃ¶n, de most Hanoiban lakik.",
       "answer": "ból",
       "altAnswers": [
         "bol"
       ],
       "teaches": [
-        "origin-cases"
+        "elative-bol-bel"
       ]
     },
     {
@@ -149,13 +145,13 @@
         "ul."
       ],
       "teaches": [
-        "essive-modal-case"
+        "ul-ul-essive-modal"
       ]
     },
     {
       "id": "essive-modal-angol",
       "type": "dropdown",
-      "sentence": "Daniela és Meg angol_____ beszélgetnek.",
+      "sentence": "KÃ¡roly Ã©s Meg angol_____ beszÃ©lgetnek.",
       "options": [
         "ul",
         "ül",
@@ -163,7 +159,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "essive-modal-case"
+        "ul-ul-essive-modal"
       ]
     },
     {
@@ -177,7 +173,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "postpositions-space"
+        "postpositions-basic"
       ]
     },
     {
@@ -191,7 +187,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "postpositions-time"
+        "temporal-postpositions"
       ]
     },
     {
@@ -201,10 +197,16 @@
       "answer": "aludni",
       "altAnswers": [
         "olvasni",
-        "pihenni"
+        "pihenni",
+        "tanulni",
+        "sÃ©tÃ¡lni",
+        "utazni",
+        "dolgozni",
+        "enni",
+        "Ãºszni"
       ],
       "teaches": [
-        "szeret-infinitive"
+        "building-the-infinitive-the-suffix-ni"
       ]
     },
     {
@@ -218,7 +220,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "present-indefinite-verbs"
+        "present-tense-routine-language"
       ]
     },
     {
@@ -232,7 +234,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "present-indefinite-verbs"
+        "present-tense-routine-language"
       ]
     },
     {
@@ -244,7 +246,7 @@
         "-t"
       ],
       "teaches": [
-        "accusative-case"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -258,13 +260,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "numerals-singular-noun"
+        "singular-after-numbers"
       ]
     },
     {
       "id": "birtokos-enyem",
       "type": "dropdown",
-      "sentence": "Ez a táska nem az _____, hanem Lauráé.",
+      "sentence": "Ez a tÃ¡ska az Ã©n tÃ¡skÃ¡m. Ez a tÃ¡ska az _____.",
       "options": [
         "enyém",
         "tied",
@@ -272,7 +274,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "possessive-pronouns"
+        "possessive-pronouns-enyem"
       ]
     },
     {
@@ -286,7 +288,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "shopping-phrases"
+        "a1-shopping-vocab"
       ]
     },
     {
@@ -295,12 +297,12 @@
       "prompt": "A pincér odalép az asztalodhoz. Hogyan rendelsz udvariasan egy ásványvizet?",
       "options": [
         "Egy szénsavmentes ásványvizet kérek szépen.",
-        "Hol van az ásványvíz?",
-        "Köszönöm, viszontlátásra."
+        "Hol van az ásványvíz? Nem látom sehol.",
+        "Köszönöm szépen, viszontlátásra, jó napot kívánok."
       ],
       "correct": 0,
       "teaches": [
-        "restaurant-politeness"
+        "kerek-vs-szeretnek"
       ]
     },
     {
@@ -314,7 +316,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "greetings"
+        "a1-greetings-basic-interaction-vocab"
       ]
     },
     {
@@ -328,35 +330,35 @@
       ],
       "correct": 0,
       "teaches": [
-        "telling-time"
+        "a1-time-dates-vocab"
       ]
     },
     {
-      "id": "nal-nel-adessive",
+      "id": "val-vel-assimilation",
       "type": "dropdown",
-      "sentence": "Ma este a nagymamám_____ vacsorázunk.",
+      "sentence": "A kÃ¡vÃ©t tej_____ kÃ©rem.",
       "options": [
-        "nál",
-        "nél",
-        "hoz"
+        "jel",
+        "el",
+        "vel"
       ],
       "correct": 0,
       "teaches": [
-        "nal-nel-adessive"
+        "val-vel"
       ]
     },
     {
-      "id": "hoz-hez-allative",
+      "id": "tol-tol-origin",
       "type": "dropdown",
-      "sentence": "Holnap elmegyek az orvos_____ vizsgálatra.",
+      "sentence": "A nagymamÃ¡m_____ kapok egy levelet.",
       "options": [
-        "hoz",
-        "hez",
-        "höz"
+        "tÃ³l",
+        "tÅ‘l",
+        "bÃ³l"
       ],
       "correct": 0,
       "teaches": [
-        "hoz-hez-allative"
+        "tol-tol"
       ]
     }
   ],

@@ -113,6 +113,8 @@ No `build-manifest.py` edit is needed. Every level of every course has a unit ta
 
 Carried over from `docs/archive/PLANNING.md`; the rules that still apply to content and exercise behaviour.
 
+- **Level tests** (\content/<course>/tests/\): every \	eaches\ slug is a registered skill at or below the test level (never an ad-hoc slug); one correct option per item (check that the other options are really wrong, e.g. *befejezve* vs *befejezvén*); no item above the level's taught skills; recurring characters only (HU: Károly, Meg).
+
 **Curriculum shape.** Level, then unit, then lesson, then exercise. A lesson takes roughly 5 to 10 minutes. Review lessons introduce nothing new (grammar, vocabulary or reading); earlier material returns through them. At most 20 new vocabulary items per unit, recurring naturally rather than mechanically repeated. A reading appears only once the learner has the language to follow it, and reading-dependent exercises come after it.
 
 **Exercise progression.** Recognise, manipulate, construct, retrieve, use. Vary exercise types rather than testing one grammar point in one format.
