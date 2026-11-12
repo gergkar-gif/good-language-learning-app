@@ -1,0 +1,33 @@
+You are checking and fixing reading texts of the Spanish B1 course of the Parlour language app, in two sibling courses: es-es (Spain) and es-latam (Latin America). Work ONLY in `/home/user/parlour-read-b` (a git worktree; absolute paths). You MAY edit the story files there directly; DO NOT COMMIT, never change git or tool config, never bypass hooks. The reviewer takes your work as `git diff` from this worktree.
+
+Read first: `/home/user/parlour-read-b/docs/unit-agent-rules.md` § 4, § 6a and § 6c (the Spanish section: "B1 stories are retold classics", "Classic stories", character facts, es-latam rules). It is your rulebook.
+
+## The texts
+
+29 B1 stories are in the Reader library (anyone can open them) but no lesson uses them, and nobody has read them. The user wants them KEPT and checked. They are, under `content/<course>/stories/`:
+
+classics/b1/b1-12.json … classics/b1/b1-40.json (every number 12 to 40 with no suffix: b1-12.json, b1-13.json, …, b1-35.json, b1-37.json, b1-38.json, b1-39.json, b1-40.json), plus classics/b1/b1-36-pazosdeulloa.json (es-es only). b1-36.json is NOT in the list (a lesson uses it). That is 29 files in es-es and 28 in es-latam; only 5 pairs are byte-identical, so read the es-es file and then diff the es-latam one (`diff <(python3 -m json.tool a) <(python3 -m json.tool b)`) and read its differing lines.
+
+Some are original course texts (`source` says "Original … written for Parlour"), some are adaptations of real works (Conan Doyle, Pardo Bazán, …). About 11,700 words in es-es.
+
+## For each story, check and fix
+
+1. **Labels honest.** `title`, `author`, `work`, `source`: an original text has no real author; an adaptation names the real work; a text "in the manner of" an author says so ("Pastiche escrito para Parlour a la manera de …; no es un texto suyo.", as in `classics/b1/b1-21-paliques.json`). No invented author or work.
+2. **Facts and plot of a real work.** Check every claim about a real author, work or event against the source. Project Gutenberg is reachable from this machine (`curl -sS -L https://www.gutenberg.org/ebooks/search/?query=<words>` to find an id, then `https://www.gutenberg.org/cache/epub/<id>/pg<id>.txt`), and so is Spanish Wikisource (`python scripts/fetch_wikisource.py "<page title>" <out.txt>`). Save any source text you use under `/home/user/parlour-read-b/sources/` (create it). If the plot is wrong, correct it to the work; if you cannot find a source, keep to what you are sure of, say so in the report, and never quote from memory: no quotation marks around words attributed to an author unless you copied them from a source you read. Half-quotes (an author's line altered) are rewritten as plain retelling.
+3. **Level: B1, no further.** Forms taught in B1 core are fine anywhere (the imperfect subjunctive after a past verb, reported speech, the present perfect subjunctive, *si hubiera … habría …*); forms beyond B1 are rewritten: *como si* + subjunctive, the *-se* imperfect subjunctive forms (*hubiese, tuviese*), the pluperfect subjunctive outside a *si* clause (*ojalá hubiera*), *antes de que / después de que*, rare literary words (*desaforados, inexorable*). Stories are exempt from the met-word rule (the learner taps unknown words), but not from the level. Keep length roughly as it is (rewrite, don't cut to a summary), the same paragraphs and events.
+4. **Natural Spanish**, no template sentences spliced in from lessons, no sentence that repeats the one before, a coherent story from start to end.
+5. **Comprehension questions** (`narration.pedagogical.comprehensionQuestions` or the file's own field): answerable from the text as written, in plain B1 Spanish (no *desopilante, suscitada* in a stem or option), each wrong option clearly wrong, `correctIndex` right, `explanation` true to the text. Rewrite any that ask about another text.
+6. **Course facts:** if Carlos or Meg appear, the facts in the rulebook § 6c hold (Carlos is Hungarian, works in an office; Meg is South African, a student; they live in Budapest in B1; Ana and Andreas are Carlos's siblings; Lauren and Kaylee Meg's sisters). A story character who shares a name with a course character gets a full name.
+7. **es-latam:** no *vosotros*/*os* forms anywhere (*ustedes*), Latin American words (*computadora, celular, carro, boleto, jugo, enojado*, *tomar* the bus; see `scripts/course_variants.py`); apart from those, the es-latam text says the same as the es-es one: apply your es-es fixes there too.
+8. **Do not change** `id`, `level`, `type`, `lesson`, `path`-like fields, or `narration` timing fields other than the questions.
+
+## Checks (from `/home/user/parlour-read-b`)
+
+- Every file you edit is valid JSON (`python3 -m json.tool <file> >/dev/null`).
+- `python3 build-manifest.py` runs clean (it regenerates manifests; expected).
+- `node scripts/audit-reader-coverage.js <course> --story <story stem> --top 0` for each story you rewrote (its "literal compound guess" / "not in the dictionary" words go in group 5 of your report as `word | lemma | pos | gloss |`).
+- `python scripts/check-content.py <course> b1` and say whether any finding names one of these story files.
+
+## Report
+
+Final reply (the harness may refuse a report file; try `/home/user/parlour-read-b/report-b.md` first). One block per story: verdict (fine / fixed / rewritten), what was wrong quoting the text, what you changed, sources used, and every claim you could not verify, marked (unverified). Then 5. Dictionary. Finish and save each story's edits before starting the next, in number order.

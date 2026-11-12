@@ -1,0 +1,41 @@
+You are writing new grammar content for the Spanish B1 core track of the Parlour language app, in two sibling courses: es-es (Spain) and es-latam (Latin America). Work ONLY in `/home/user/parlour-read-a` (a git worktree; absolute paths). You MAY edit content files there directly; DO NOT COMMIT, never change git or tool config, never bypass hooks, never edit `skills/*.json` or generated registries. The reviewer takes your work as `git diff` from this worktree.
+
+Read first, and nothing else unless needed: `/home/user/parlour-read-a/docs/unit-agent-rules.md` § 1–5, § 6a and § 6c (skip § 6b, Hungarian). It is your rulebook. Then, as a model of exactly this job, look at lesson b1-04-02 in es-es: its screen `content/es-es/grammar/b1/b1-04-02-conditional-advice-gr.json` gained a forms section and its exercise file `content/es-es/exercises/b1/b1-04-02-ex.json` gained six items ex17–ex22, listed in a section of `content/es-es/lessons/b1/b1-04-02.json`. Copy that wiring: a new exercise id must also be listed in a lesson section, or the learner never sees it.
+
+## Task 1: six grammar skills that es-es never taught
+
+These six B1 grammar skills were taught only on screens of the `latam` track, which exists only in es-latam and is now hidden. The registry (`skills/es.json`) was moved today: each is now taught on a core screen, in both courses. Each screen does not teach it yet. For each skill:
+
+| skill | new `taught_in` screen (lesson) | what to teach |
+|---|---|---|
+| `estar-a-punto-de` | b1-01-02-imperfecto-vs-indefinido-gr (lesson b1-01-02, Unit 1) | *estar a punto de* + infinitive, in the past mostly: *Estaba a punto de salir cuando sonó el teléfono.* |
+| `gerundio-acciones-paralelas` | b1-02-02-indefinido-experiencias-gr (b1-02-02, Unit 3) | the gerund for an action happening at the same time as the main verb: *Llegó corriendo.* *Volvimos a casa cantando.* |
+| `relativo-posesivo-cuyo` | b1-05-04-relative-clauses-gr (b1-05-04, Unit 9) | *cuyo, cuya, cuyos, cuyas*, agreeing with the thing possessed: *la amiga cuyo hermano vive en Madrid* |
+| `dejar-de-infinitivo` | b1-12-05-integrated-explanation-and-narrative-gr (b1-12-05, Unit 23, food and lifestyle) | *dejar de* + infinitive for stopping a habit: *Dejé de fumar hace dos años.* (and *no dejar de* = keep on) |
+| `futuro-perfecto` | b1-22-04-hypothetical-structures-gr (b1-22-04, Unit 43, imagining the future) | *habré, habrás, habrá…* + participle for something finished by a point in the future: *En 2030 habremos terminado la casa.* Its probability use (*Habrá salido ya*) may be mentioned, not drilled. |
+| `correlativos-no-solo-sino` | b1-40-02-gr (b1-40-02, Unit 76) | *no solo … sino (también)*; the screen already has one table row for it: make it a short real section. *tanto … como* only if it fits in one line. |
+
+For each one:
+1. Add ONE section to that screen (both courses: `content/es-es/grammar/b1/<file>.json` and `content/es-latam/grammar/b1/<file>.json`): a short English explanation, 3–4 examples with English, and a forms table where the form has persons (*futuro perfecto*: es-es with a *vosotros* row, es-latam without; *cuyo*: the four forms). Open it with what the learner already knows if it builds on a known form ("You know the gerund from A2 Unit N…"; unit numbers from `content/es-es/curriculum/units/<level>.json`, the 1-based position in that file). Keep the rest of the screen as it is.
+2. Write SIX new exercises in that lesson's exercise file (both courses), tagged `"teaches": ["<skill>"]`, `category` "grammar", with new ids continuing the file's numbering (`b1-01-02.ex18` …), and list them in a section of the lesson file (both courses), next to the lesson's other grammar practice. Vary the types: multiple-choice, fill-blank, sentence-builder, dialogue-complete, listening-choice, as the file already uses them; copy field names exactly from existing items of the same type. Every item obeys the rulebook § 2 and § 3: one right answer, each wrong option one fault, a real form; `distractor_skills` only on a wrong option that is a well-formed form of another skill; a multiple-choice item takes neither `hint` nor `english`; fill-blanks blank a whole word, have `english`, and `answers` only for true alternatives.
+3. Words: only words met by that lesson (a vocabulary list at or before it, `content/<course>/vocabulary/`), plus the lesson's own screen examples. The learner is early in B1 for the first four skills: Unit 1 knows A1–A2 only. Check with `node scripts/unmet-words.js <course> b1 --stems <stem>` (one stem, or a comma-separated list) in BOTH courses after `python scripts/build_word_lesson_index.py`; fix every hit that is not an inflected form of a listed verb or a name.
+4. es-latam: no *vosotros*/*os* anywhere, *ustedes*; course words per `scripts/course_variants.py` (*computadora, celular, carro, boleto, jugo, enojado, tomar* for buses). Where es-es and es-latam files were identical before, keep them identical except for those variants.
+5. Earlier uses: for each skill, grep the core lessons BEFORE its new screen (both courses; core lesson stems are in `content/es-es/curriculum/units/b1.json`, `track` "core") for the form (*a punto de*, *cuyo/cuya*, *dejó de / dejar de*, *habré/habrá + participle*, *no solo … sino*, a gerund of manner). List each hit in your report with its id and text; do not change them (the reviewer decides).
+
+## Task 2: thin skills (fewer than 6 exercises)
+
+Each of these needs at least 6 exercises tagged with it in the core lessons of EACH course. Count first (`teaches` across `content/<course>/exercises/b1/b1-NN-*-ex.json` for core stems only), then write the missing ones in the skill's own lesson (same wiring as above, both courses):
+- `resultar-adjective` (taught in b1-15-02, screen b1-15-02-evaluation-gr): 4 now.
+- `cuanto-mas-tanto-mas` (b1-02-04, screen b1-02-04-conectores-temporales-gr): es-es 3 now.
+- `superlatives` (b1-07-04, screen b1-07-04-comparison-evaluation-gr): es-latam 5 now; check es-es too.
+Read the screen first; the items test what it teaches.
+
+## Checks (run all from `/home/user/parlour-read-a`, both courses)
+
+- `python3 build-manifest.py` (it regenerates content/*/curriculum and manifests; that is expected) and `python scripts/build_word_lesson_index.py`.
+- `python scripts/check-content.py <course> b1 <unit id>` for every unit you touched (unit ids: Unit 1 telling-stories, 3 experiences-memories, 9 relationships, 23 food-lifestyle, 29 culture-entertainment, 13 education-learning, 43 possibilities-predictions, 76 connectors-prepositional-regimes; check the table for the units of b1-02-04, b1-07-04 and b1-15-02). Fix every error you bring; the gate is "no new errors". Units are frozen: check-content may say so; ignore the freeze, the reviewer unfreezes.
+- `node scripts/render_lesson.js <course> <stems>` and read each touched screen and item as rendered (`!!` = error).
+- `python scripts/validate-content.py --changed` (locked-tag complaints about your NEW ids are expected; report any other failure).
+- `node scripts/unmet-words.js` as above.
+
+Report concisely as your final reply (the harness may refuse a report file; try `/home/user/parlour-read-a/report-a.md` first): per skill, the section you added and the six ids; per thin skill, counts before/after per course; check results before/after per unit and course; earlier uses found (task 1 step 5); every Spanish line you are unsure of, marked (unsure).
