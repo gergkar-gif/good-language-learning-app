@@ -1307,11 +1307,15 @@ const SpeechInput = (function () {
             if (l.startsWith('es')) return 'es';
             if (l.startsWith('fr')) return 'fr';
             if (l.startsWith('it')) return 'it';
+            if (l.startsWith('pl')) return 'pl';
         }
         if (textSample) {
             const s = String(textSample);
             if (/[őűŐŰ]|\b(hogy|vagy|laksz|szia|köszönöm|milyen)\b|(gy|sz|zs|cs|ly|ny|ty)/i.test(s)) {
                 return 'hu';
+            }
+            if (/[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/i.test(s) || /\b(jest|bardzo|dzień|proszę|dziękuję|przepraszam)\b/i.test(s)) {
+                return 'pl';
             }
             if (/[ñ¿¡]/i.test(s)) {
                 return 'es';
@@ -1456,6 +1460,48 @@ const SpeechInput = (function () {
         return w;
     }
 
+    // Polish phonetic folding: resolves rz/ż, ó/u, ch/h homophones,
+    // soft consonants (ci, si, zi, ni, dzi before vowels),
+    // word-final nasal reduction (-ę -> -e), word-final devoicing (b->p, d->t, g->k, w->f, z->s, etc.),
+    // and double consonant degemination.
+    function phoneticFoldPl(word) {
+        if (!word) return '';
+        let w = String(word).toLowerCase().trim();
+
+        // 1. Strict homophones
+        w = w.replace(/rz/g, 'ż')
+             .replace(/ó/g, 'u')
+             .replace(/ch/g, 'h');
+
+        // 2. Soft/palatal consonant variants before vowels (ci/si/zi/ni/dzi + vowel)
+        w = w.replace(/dzi(?=[aąeęioóuy])/g, 'dź')
+             .replace(/ci(?=[aąeęioóuy])/g, 'ć')
+             .replace(/si(?=[aąeęioóuy])/g, 'ś')
+             .replace(/zi(?=[aąeęioóuy])/g, 'ź')
+             .replace(/ni(?=[aąeęioóuy])/g, 'ń');
+
+        // 3. Word-final nasal vowel reduction (-ę -> -e)
+        w = w.replace(/ę$/g, 'e');
+
+        // 4. Voicing assimilation in clusters: w after voiceless consonant -> f
+        w = w.replace(/([ptkscśchf])w/g, '$1f');
+
+        // 5. Final obstruent devoicing at word end
+        w = w.replace(/b$/g, 'p')
+             .replace(/d$/g, 't')
+             .replace(/g$/g, 'k')
+             .replace(/w$/g, 'f')
+             .replace(/z$/g, 's')
+             .replace(/ż$/g, 'sz')
+             .replace(/ź$/g, 'ś')
+             .replace(/dź$/g, 'ć');
+
+        // 6. Degemination: collapse duplicate letters
+        w = w.replace(/(.)\1+/g, '$1');
+
+        return w;
+    }
+
     function genericPhoneticFold(word) {
         if (!word) return '';
         return String(word)
@@ -1469,7 +1515,8 @@ const SpeechInput = (function () {
         hu: phoneticFoldHu,
         es: phoneticFoldEs,
         fr: phoneticFoldFr,
-        it: phoneticFoldIt
+        it: phoneticFoldIt,
+        pl: phoneticFoldPl
     };
 
     function registerPhoneticFolder(langCode, folderFn) {

@@ -28,7 +28,8 @@ const Lang = (function () {
         'es-es':    ['es-ES', 'es'],
         hu:         ['hu-HU', 'hu'],
         fr:         ['fr-FR', 'fr-CA', 'fr'],
-        it:         ['it-IT', 'it']
+        it:         ['it-IT', 'it'],
+        pl:         ['pl-PL', 'pl']
     };
 
     // Course-level names for pickers and track settings
@@ -37,7 +38,8 @@ const Lang = (function () {
         'es-es':    'Spanish (Spain)',
         hu:         'Hungarian',
         fr:         'French',
-        it:         'Italian'
+        it:         'Italian',
+        pl:         'Polish'
     };
 
     // Natural language names for learner-facing prompts, exercises, and drills
@@ -46,12 +48,13 @@ const Lang = (function () {
         'es-es':    'Spanish',
         hu:         'Hungarian',
         fr:         'French',
-        it:         'Italian'
+        it:         'Italian',
+        pl:         'Polish'
     };
 
     // Courses with real content behind them — what the language picker
     // (My Journey) offers.
-    const AVAILABLE = ['es-latam', 'es-es', 'hu', 'fr', 'it'];
+    const AVAILABLE = ['es-latam', 'es-es', 'hu'];
 
     // Can-do cue copy shared by both Spanish courses; only the city differs.
     const ES_CAN_DO_CUES = {
@@ -159,7 +162,7 @@ const Lang = (function () {
             courseName: 'Hungarian',
             voices: ['hu-HU', 'hu'],
             sttLocale: 'hu-HU',
-            tests: ['A1', 'A2', 'B1', 'C1'],
+            tests: ['A1', 'A2', 'B1', 'B2', 'C1'],
             diacritics: { a: ['á'], e: ['é'], i: ['í'], o: ['ó', 'ö', 'ő'], u: ['ú', 'ü', 'ű'] },
             openers: {},
             numberWords: {
@@ -341,6 +344,90 @@ const Lang = (function () {
                 A2: ['quindi', 'prima', 'poi', 'dopo', 'tuttavia', 'inoltre', 'per esempio'],
                 B1: ['in realtà', 'tuttavia', 'd\'altronde', 'di conseguenza', 'secondo me', 'mentre'],
                 B2: ['nondimeno', 'ciononostante', 'd\'altra parte', 'inoltre', 'pertanto', 'benché']
+            }
+        },
+        pl: {
+            code: 'pl',
+            baseCode: 'pl',
+            name: 'Polish',
+            courseName: 'Polish',
+            voices: ['pl-PL', 'pl'],
+            sttLocale: 'pl-PL',
+            tests: [],
+            diacritics: {
+                a: ['ą'],
+                c: ['ć'],
+                e: ['ę'],
+                l: ['ł'],
+                n: ['ń'],
+                o: ['ó'],
+                s: ['ś'],
+                z: ['ź', 'ż']
+            },
+            openers: {},
+            numberWords: {
+                '1': ['jeden', 'jedna', 'jedno', 'jednej', 'jednego'],
+                '2': ['dwa', 'dwie', 'dwóch', 'dwaj', 'dwoje'],
+                '3': ['trzy', 'trzech', 'trzej'],
+                '4': ['cztery', 'czterech', 'czterej'],
+                '5': ['pięć', 'pięciu'],
+                '6': ['sześć', 'sześciu'],
+                '7': ['siedem', 'siedmiu'],
+                '8': ['osiem', 'ośmiu'],
+                '9': ['dziewięć', 'dziewięciu'],
+                '10': ['dziesięć', 'dziesięciu']
+            },
+            speechAbbreviations: {
+                'np.': 'na przykład',
+                'm.in.': 'między innymi',
+                'tzn.': 'to znaczy',
+                'itd.': 'i tak dalej',
+                'itp.': 'i tym podobne'
+            },
+            examLabels: {
+                trueFalseNotStated: ['Prawda', 'Fałsz', 'Brak informacji']
+            },
+            paradigm: {
+                hasVosotros: false,
+                persons: {
+                    ja: { key: 'ja', label: 'ja' },
+                    ty: { key: 'ty', label: 'ty' },
+                    on: { key: 'on', label: 'on / ona / ono' },
+                    my: { key: 'my', label: 'my' },
+                    wy: { key: 'wy', label: 'wy' },
+                    oni: { key: 'oni', label: 'oni / one' }
+                },
+                defaultPersons: ['ja', 'ty', 'on', 'my', 'wy', 'oni'],
+                tenses: [
+                    { value: 'indicativo.presente', label: 'Czas teraźniejszy (Present)' },
+                    { value: 'indicativo.przeszly', label: 'Czas przeszły (Past)' },
+                    { value: 'indicativo.przyszly', label: 'Czas przyszły (Future)' },
+                    { value: 'tryb.przypuszczajacy', label: 'Tryb przypuszczający (Conditional)' },
+                    { value: 'tryb.rozkazujacy', label: 'Tryb rozkazujący (Imperative)' },
+                    { value: 'all', label: 'All Tenses' }
+                ]
+            },
+            canDoCues: {
+                city: 'Warsaw',
+                monthsExamples: 'styczeń, luty, marzec...',
+                monthInEvent: 'State when an event or your birthday is using "w" (e.g. "W październiku..." or "W grudniu...")',
+                daysExamples: 'poniedziałek, wtorek...',
+                dayInEvent: 'Say which day you do an activity (e.g. w poniedziałek, w piątek)',
+                cafeGreeting: 'Polite greeting (Dzień dobry / Cześć)',
+                cafeOrder: 'Order a drink or snack (e.g. "Poproszę kawę z mlekiem i sernik")',
+                cafeBill: 'Conclude politely or ask for the bill ("Poproszę rachunek" / "Dziękuję bardzo")',
+                restaurantGreeting: 'Greeting and request a table ("Stolik dla dwóch osób, poproszę")',
+                restaurantOrder: 'Order food and drinks ("Na pierwsze danie wezmę... a na drugie...")',
+                restaurantBill: 'Ask for the bill ("Rachunek, poproszę")',
+                directionsInterruption: 'Polite opening (Przepraszam)',
+                directionsAsk: 'Ask for directions (e.g. "Gdzie jest dworzec kolejowy?")',
+                directionsThanks: 'Thank the person (Dziękuję bardzo)'
+            },
+            discourseConnectors: {
+                A1: ['i', 'ale', 'ponieważ', 'też', 'na przykład', 'więc'],
+                A2: ['dlatego', 'najpierw', 'potem', 'później', 'jednak', 'oprócz tego', 'na przykład'],
+                B1: ['w rzeczywistości', 'mimo to', 'z kolei', 'w konsekwencji', 'moim zdaniem', 'podczas gdy'],
+                B2: ['niemniej jednak', 'pomimo tego', 'z drugiej strony', 'ponadto', 'w związku z tym', 'chociaż']
             }
         }
     };
