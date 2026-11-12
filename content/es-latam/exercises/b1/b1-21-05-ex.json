@@ -27,11 +27,11 @@
       "id": "b1-21-05.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence contains a sustained argument with concession and justification? [¿Cuál contiene un argumento desarrollado con concesión y justificación?]",
+      "question": "Which sentence contains a sustained argument with concession and justification?",
       "options": [
         "Aunque tiene algunas limitaciones, sus ventajas son importantes porque responde a una necesidad real. [Although it has some limitations, its advantages are important because it responds to a real need.]",
-        "Aunque la propuesta tiene varias limitaciones técnicas, resulta bastante interesante. [Although the proposal has several technical limitations, it turns out quite interesting.]",
-        "No me gusta nada este nuevo proyecto porque genera costes excesivos para el municipio. [I do not like this new project at all because it generates excessive costs for the municipality.]"
+        "Aunque la propuesta tiene varias limitaciones, resulta bastante interesante para todos. [Although the proposal has several limitations, it turns out quite interesting for everyone.]",
+        "No me gusta este nuevo proyecto porque cuesta demasiado dinero a la ciudad. [I do not like this new project because it generates excessive costs for the city.]"
       ],
       "correct": 0,
       "teaches": [
@@ -48,8 +48,7 @@
       ],
       "english": "In conclusion, I consider that we should implement it.",
       "answers": [
-        "conclusión",
-        "resumen"
+        "conclusión"
       ]
     },
     {
@@ -111,18 +110,18 @@
       "id": "b1-21-05.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which expression signals the conclusion of an argument? [¿Qué expresión señala la conclusión de un argumento?]",
+      "question": "Which expression signals the conclusion of an argument?",
       "options": [
         "en conclusión [in conclusion]",
-        "aunque [although]",
-        "además [furthermore]"
+        "sin embargo [however]",
+        "por un lado [on the one hand]"
       ],
       "correct": 0,
       "teaches": [
         "argument-markers"
       ],
       "distractor_skills": {
-        "1": "concesivas-aunque",
+        "1": "contrast-concession-connectors",
         "2": "ordering-markers"
       }
     },
@@ -143,28 +142,32 @@
       "category": "grammar",
       "type": "sentence-builder",
       "tiles": [
-        "Además",
-        "la",
-        "evidencia",
-        "disponible",
-        "sugiere",
+        "Acepto",
+        "el",
+        "cambio",
+        "con",
+        "tal",
+        "de",
         "que",
-        "podría",
-        "funcionar."
+        "todos",
+        "puedan",
+        "participar."
       ],
       "solution": [
-        "Además",
-        "la",
-        "evidencia",
-        "disponible",
-        "sugiere",
+        "Acepto",
+        "el",
+        "cambio",
+        "con",
+        "tal",
+        "de",
         "que",
-        "podría",
-        "funcionar."
+        "todos",
+        "puedan",
+        "participar."
       ],
-      "english": "Furthermore, the available evidence suggests that it could work.",
+      "english": "I accept the change provided that everyone can take part.",
       "teaches": [
-        "argument-markers"
+        "conditional-conjunctions"
       ]
     },
     {
@@ -201,11 +204,11 @@
       "id": "b1-21-05.ex11",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Además, la evidencia disponible sugiere que podría funcionar a largo plazo.",
+      "sentence": "No cambiaré de opinión a menos que haya más evidencia.",
       "teaches": [
-        "argument-markers"
+        "conditional-conjunctions"
       ],
-      "english": "In addition, the available evidence suggests that it could work in the long term."
+      "english": "I will not change my mind unless there is more evidence."
     },
     {
       "id": "b1-21-05.ex12",
@@ -238,8 +241,8 @@
       ],
       "options": [
         "Porque ofrece una solución práctica y la evidencia disponible la apoya. [Because it offers a practical solution and the available evidence supports it.]",
-        "Por lo tanto ofrece una solución práctica y la evidencia disponible la apoya. [Therefore it offers a practical solution and the available evidence supports it.]",
-        "Porque no existe ninguna razón. [Because there is no reason.]"
+        "Aunque ofrece una solución práctica y la evidencia disponible la apoya. [Although it offers a practical solution and the available evidence supports it.]",
+        "Por eso ofrece una solución práctica y la evidencia disponible la apoya. [That is why it offers a practical solution and the available evidence supports it.]"
       ],
       "correct": 0,
       "teaches": [
@@ -262,8 +265,8 @@
       ],
       "options": [
         "Aunque tiene algunas limitaciones, sus ventajas son importantes. [Although it has some limitations, its advantages are important.]",
-        "No tiene limitaciones porque ninguna propuesta tiene límites. [It has no limitations because no proposal has limits.]",
-        "Porque tiene algunas limitaciones, sus ventajas son importantes. [Because it has some limitations, its advantages are important.]"
+        "Porque tiene algunas limitaciones, sus ventajas son importantes. [Because it has some limitations, its advantages are important.]",
+        "Y tiene algunas limitaciones, sus ventajas son importantes. [And it has some limitations, its advantages are important.]"
       ],
       "correct": 0,
       "teaches": [
@@ -300,12 +303,12 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give an opinion, a reason and a qualification.",
-          "answer": "En mi opinión, la propuesta merece apoyo porque ofrece una solución práctica, aunque tiene algunas limitaciones."
+          "prompt": "Say you support a measure only on one condition.",
+          "answer": "Apoyo la medida siempre que sea justa."
         }
       ],
       "teaches": [
-        "argument-markers"
+        "conditional-conjunctions"
       ]
     },
     {
@@ -315,7 +318,7 @@
       "template": [
         {
           "prompt": "Present an opposing point and respond to it.",
-          "answer": "Aunque admito que la propuesta es cara, considero que sus ventajas justifican el coste."
+          "answer": "Aunque admito que la propuesta es cara, considero que sus ventajas son importantes."
         }
       ],
       "teaches": [
@@ -342,23 +345,23 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write a short debate contribution ending with a conclusion.",
-          "answer": "Aunque la propuesta tiene algunas limitaciones, sus ventajas son importantes. Por lo tanto, considero que deberíamos aplicarla y revisar sus resultados."
+          "prompt": "Write a short debate contribution that ends with a condition.",
+          "answer": "Aunque la propuesta tiene algunas limitaciones, sus ventajas son importantes. En conclusión, considero que deberíamos aplicarla con tal de que se revisen sus resultados."
         }
       ],
       "teaches": [
-        "argument-markers"
+        "conditional-conjunctions"
       ]
     },
     {
       "id": "b1-21-05.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
+      "question": "¿Qué hacen muchas personas, según el texto?",
       "options": [
-        "Un debate comunitario explora diferentes posturas sobre una nueva norma.",
-        "Todos los vecinos piensan exactamente lo mismo.",
-        "El debate se cancela antes de empezar."
+        "Opinan sobre un libro o un cuadro sin conocerlo bien.",
+        "Leen todo el libro y después dan su opinión.",
+        "Piden a un experto su opinión antes de hablar."
       ],
       "correct": 0
     },
@@ -366,11 +369,11 @@
       "id": "b1-21-05.ex21",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
+      "question": "¿Qué pide el autor a quien opina?",
       "options": [
-        "Una vecina defendió la libertad de expresar opiniones diferentes.",
-        "Nadie quiso participar en el debate.",
-        "La norma se aprobó sin ninguna discusión."
+        "Que reconozca lo que sabe y admita lo que no sabe.",
+        "Que estudie mucho tiempo antes de dar su opinión.",
+        "Que escriba su opinión en un periódico famoso."
       ],
       "correct": 0
     },
@@ -378,11 +381,11 @@
       "id": "b1-21-05.ex22",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
+      "question": "¿Qué admite la persona que escribe el texto?",
       "options": [
-        "La diferencia entre ofensa y perjuicio.",
-        "Una lista de leyes antiguas.",
-        "Una descripción de otro país."
+        "Que a veces escribe con prisa.",
+        "Que escribe despacio, durante muchos días.",
+        "Que escribe después de hablar con un experto."
       ],
       "correct": 0
     },
@@ -390,11 +393,11 @@
       "id": "b1-21-05.ex23",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
+      "question": "¿Qué conclusión es la mejor para el texto?",
       "options": [
-        "Un buen debate requiere escuchar argumentos.",
-        "Los desacuerdos siempre deben evitarse.",
-        "Solo una opinión puede ser correcta."
+        "Antes de opinar, conviene preguntarse si tenemos argumentos.",
+        "Es mejor no dar opiniones en público ni en privado.",
+        "Solo un experto puede opinar en un periódico."
       ],
       "correct": 0
     }

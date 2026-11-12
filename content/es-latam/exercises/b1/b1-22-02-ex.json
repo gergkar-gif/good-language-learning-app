@@ -27,11 +27,11 @@
       "id": "b1-22-02.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which expression introduces an uncertain possibility? [¿Cuál introduce una posibilidad incierta?]",
+      "question": "Which sentence introduces an uncertain possibility?",
       "options": [
         "Es posible que el resultado sea diferente. [It is possible that the result will be different.]",
-        "El resultado es diferente. [The result is different.]",
-        "El resultado fue diferente. [The result was different.]"
+        "Estoy seguro de que el resultado es diferente. [I am sure that the result is different.]",
+        "Ya sabemos que el resultado fue diferente. [We already know that the result was different.]"
       ],
       "correct": 0,
       "teaches": [
@@ -39,7 +39,7 @@
       ],
       "distractor_skills": {
         "1": "ser",
-        "2": "ser"
+        "2": "preterito-indefinido"
       }
     },
     {
@@ -47,15 +47,14 @@
       "category": "vocabulary",
       "type": "fill-blank",
       "sentence": "__ llegue mañana.",
-      "hint": "perhaps",
+      "hint": "perhaps (starts with q)",
       "teaches": [
         "b1-possibilities-predictions-vocab"
       ],
       "english": "Perhaps he/she will arrive tomorrow.",
       "answers": [
         "Quizá",
-        "Quizás",
-        "Tal vez"
+        "Quizás"
       ]
     },
     {
@@ -107,7 +106,7 @@
       "id": "b1-22-02.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which form follows «Es posible que»? [¿Qué forma sigue a «Es posible que»?]",
+      "question": "Which form follows «Es posible que»?",
       "options": [
         "sea [be]",
         "es [is]",
@@ -179,8 +178,8 @@
       "sentence": "Es posible que el resultado sea diferente.",
       "options": [
         "It is possible that the result will be different.",
-        "The result is certainly the same.",
-        "The result was different yesterday."
+        "It is certain that the result will be the same.",
+        "It is possible that the result was different."
       ],
       "correct": 0,
       "teaches": [
@@ -204,8 +203,8 @@
       "sentence": "Posiblemente habrá más cambios el próximo año.",
       "options": [
         "There will possibly be more changes next year.",
-        "There were definitely no changes.",
-        "The changes happened yesterday."
+        "There were possibly no changes last year.",
+        "There will certainly be no changes next year."
       ],
       "correct": 0,
       "teaches": [
@@ -228,13 +227,17 @@
       ],
       "options": [
         "Quizá llegue mañana. [Perhaps he/she will arrive tomorrow.]",
-        "Llegó mañana. [He/She arrived tomorrow.]",
-        "Llegará ayer. [He/She will arrive yesterday.]"
+        "Quizá llegó mañana. [Perhaps he/she arrived tomorrow.]",
+        "Quizá llegaba mañana. [Perhaps he/she was arriving tomorrow.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-possibilities-predictions-vocab"
-      ]
+        "subjunctive-doubt"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-22-02.ex14",

@@ -27,11 +27,11 @@
       "id": "b1-21-04.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence gives a claim and a justification? [¿Cuál presenta una afirmación y una justificación?]",
+      "question": "Which sentence gives a claim and a justification?",
       "options": [
         "Apoyo la medida porque podría reducir el problema a largo plazo. [I support the measure because it could reduce the problem in the long term.]",
-        "Apoyo la nueva medida económica aprobada recientemente por el parlamento. [I support the new economic measure recently approved by parliament.]",
-        "La medida oficial fue publicada en el boletín informativo del ministerio. [The official measure was published in the ministry's newsletter.]"
+        "Apoyo la nueva medida económica aprobada recientemente por el gobierno. [I support the new economic measure recently approved by the government.]",
+        "La medida fue publicada en el periódico de la ciudad. [The measure was published in the city newsletter.]"
       ],
       "correct": 0,
       "teaches": [
@@ -42,13 +42,13 @@
       "id": "b1-21-04.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "La propuesta es cara; por lo __, necesitamos otra opción.",
-      "hint": "therefore",
-      "answer": "tanto",
+      "sentence": "La propuesta es cara; __, necesitamos otra opción.",
+      "hint": "that is why",
+      "answer": "por eso",
       "teaches": [
         "porque-y-por-eso"
       ],
-      "english": "The proposal is expensive; therefore, we need another option."
+      "english": "The proposal is expensive; that is why we need another option."
     },
     {
       "id": "b1-21-04.ex04",
@@ -83,7 +83,7 @@
       "type": "sentence-order",
       "sentences": [
         "Primero, vemos que la propuesta es cara. [First, we see that the proposal is expensive.]",
-        "Después, por lo tanto, necesitamos otra opción. [Then, therefore, we need another option.]",
+        "Después, por eso, necesitamos otra opción. [Then, that is why we need another option.]",
         "Finalmente, buscamos una alternativa más barata. [Finally, we look for a cheaper alternative.]"
       ],
       "solution": [
@@ -99,9 +99,9 @@
       "id": "b1-21-04.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which connector shows a consequence? [¿Qué conector muestra una consecuencia?]",
+      "question": "Which connector shows a consequence?",
       "options": [
-        "por lo tanto [therefore]",
+        "por eso [that is why]",
         "además [furthermore]",
         "en cambio [by contrast]"
       ],
@@ -125,8 +125,7 @@
       ],
       "english": "I support the measure because it could reduce the problem.",
       "answers": [
-        "porque",
-        "ya que"
+        "porque"
       ]
     },
     {
@@ -165,8 +164,8 @@
       "sentence": "Apoyo la medida porque podría reducir el problema a largo plazo.",
       "options": [
         "I support the measure because it could reduce the problem in the long term.",
-        "I oppose the measure because it is impossible.",
-        "The measure has already solved everything."
+        "I oppose the measure because it could make the problem worse in time.",
+        "The measure has already reduced the problem in the long term."
       ],
       "correct": 0,
       "teaches": [
@@ -180,8 +179,8 @@
       "sentence": "Además, existe evidencia que apoya esta postura.",
       "options": [
         "Furthermore, there is evidence that supports this position.",
-        "There is no evidence.",
-        "The evidence contradicts every position."
+        "Furthermore, there is evidence that contradicts this position.",
+        "Furthermore, there is no evidence that supports this position."
       ],
       "correct": 0,
       "teaches": [
@@ -192,11 +191,11 @@
       "id": "b1-21-04.ex11",
       "category": "listening",
       "type": "dictation",
-      "sentence": "La propuesta es cara; por lo tanto, necesitamos otra opción.",
+      "sentence": "La propuesta es cara; por eso, necesitamos otra opción.",
       "teaches": [
         "porque-y-por-eso"
       ],
-      "english": "The proposal is expensive; therefore, we need another option."
+      "english": "The proposal is expensive; that is why we need another option."
     },
     {
       "id": "b1-21-04.ex12",
@@ -205,8 +204,8 @@
       "sentence": "En cambio, la segunda propuesta sería más sencilla y tendría menos costes.",
       "options": [
         "By contrast, the second proposal would be simpler and would have fewer costs.",
-        "The second proposal would be more expensive.",
-        "The two proposals are identical."
+        "By contrast, the second proposal would be more complex and would have more costs.",
+        "Therefore, the second proposal would be simpler and would have fewer costs."
       ],
       "correct": 0,
       "teaches": [
@@ -229,8 +228,8 @@
       ],
       "options": [
         "Porque podría reducir el problema a largo plazo. [Because it could reduce the problem in the long term.]",
-        "Por lo tanto podría reducir el problema a largo plazo. [Therefore it could reduce the problem in the long term.]",
-        "Porque apoyo que no apoyo. [Because I support that I do not support.]"
+        "Por eso podría reducir el problema a largo plazo. [That is why it could reduce the problem in the long term.]",
+        "Aunque podría reducir el problema a largo plazo. [Although it could reduce the problem in the long term.]"
       ],
       "correct": 0,
       "teaches": [
@@ -277,12 +276,12 @@
       ],
       "options": [
         "En cambio, la segunda sería más sencilla y tendría menos costes. [By contrast, the second would be simpler and would have fewer costs.]",
-        "En cambio, las dos son exactamente iguales. [By contrast, the two are exactly the same.]",
-        "Por eso, ninguna propuesta tiene diferencias. [Therefore, neither proposal has differences.]"
+        "En cambio, la segunda sería más difícil y tendría más costes. [By contrast, the second would be harder and would have more costs.]",
+        "Por eso, la segunda sería más sencilla y tendría menos costes. [That is why the second would be simpler and would have fewer costs.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-opinions-arguments-vocab"
+        "porque-y-por-eso"
       ]
     },
     {
@@ -291,8 +290,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Support an opinion with a reason and consequence.",
-          "answer": "Apoyo la medida porque podría reducir el problema y, por lo tanto, mejorar la situación."
+          "prompt": "Support an opinion and give your reason with ya que.",
+          "answer": "Apoyo la medida ya que podría reducir el problema y mejorar la situación."
         }
       ],
       "teaches": [
@@ -306,7 +305,7 @@
       "template": [
         {
           "prompt": "Compare two proposals using a connector.",
-          "answer": "La primera propuesta es más completa; en cambio, la segunda sería más sencilla y tendría menos costes."
+          "answer": "La primera propuesta es más cara; en cambio, la segunda sería más sencilla y tendría menos costes."
         }
       ],
       "teaches": [

@@ -27,18 +27,19 @@
       "id": "b1-22-05.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence makes a prediction based on a current trend? [¿Cuál hace una predicción basada en una tendencia actual?]",
+      "question": "Which sentence makes a prediction based on a current trend?",
       "options": [
         "Según la tendencia actual, los precios subirán el año que viene. [According to the current trend, prices will rise next year.]",
-        "Según la tendencia pasada, los precios subieron. [According to the past trend, prices rose.]",
-        "Los precios existen. [Prices exist.]"
+        "Según la tendencia pasada, los precios subieron el año pasado. [According to the past trend, prices rose last year.]",
+        "Según la tendencia actual, los precios subían el año que viene. [According to the current trend, prices were rising next year.]"
       ],
       "correct": 0,
       "teaches": [
         "futuro-simple"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido"
+        "1": "preterito-indefinido",
+        "2": "imperfect"
       }
     },
     {
@@ -110,7 +111,7 @@
       "id": "b1-22-05.ex06",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which word means «trend»? [¿Qué palabra significa «tendencia»?]",
+      "question": "Which word means «trend»?",
       "options": [
         "tendencia [trend]",
         "resultado [outcome]",
@@ -230,7 +231,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué indican los datos?"
+          "text": "¿Qué va a pasar con los precios?"
         },
         {
           "speaker": "B",
@@ -267,13 +268,17 @@
       ],
       "options": [
         "No, es posible que el resultado sea diferente. [No, it is possible that the outcome will be different.]",
-        "Sí, es seguro que cambie. [Yes, it is certain that it change.]",
-        "El pronóstico es una tendencia. [The forecast is a trend.]"
+        "No, es posible que el resultado será diferente. [No, it is possible that the outcome will be different (future indicative).]",
+        "No, es posible que el resultado fue diferente. [No, it is possible that the outcome was different.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-doubt"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-22-05.ex15",
@@ -291,8 +296,8 @@
       ],
       "options": [
         "Probablemente tendría que cambiar el plan. [I would probably have to change the plan.]",
-        "Tuve que cambiar el plan. [I had to change the plan.]",
-        "Tenga que cambiar el plan. [I have (subjunctive) to change the plan.]"
+        "Probablemente tuve que cambiar el plan. [I probably had to change the plan.]",
+        "Probablemente tenga que cambiar el plan. [I probably have to (subjunctive) change the plan.]"
       ],
       "correct": 0,
       "teaches": [
@@ -363,11 +368,11 @@
       "id": "b1-22-05.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
+      "question": "¿Qué dice Garcín a sus amigos?",
       "options": [
-        "Un científico prueba una máquina para explorar el futuro con mucha incertidumbre.",
-        "El científico está seguro de todo lo que pasará.",
-        "La máquina nunca llega a funcionar."
+        "Que tiene un pájaro azul dentro de la cabeza.",
+        "Que quiere comprar un pájaro azul en una tienda.",
+        "Que su padre tiene un pájaro azul en París."
       ],
       "correct": 0
     },
@@ -375,11 +380,11 @@
       "id": "b1-22-05.ex21",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
+      "question": "¿Qué hace Garcín cuando recibe la carta de su padre?",
       "options": [
-        "El científico explicó sus hipótesis a una amiga antes del experimento.",
-        "El experimento se canceló por falta de tiempo.",
-        "La máquina se rompió antes de empezar."
+        "No acepta el trabajo y sigue escribiendo poemas.",
+        "Acepta el trabajo y vuelve a la casa de su padre.",
+        "Pide más dinero a su padre para comprar libros."
       ],
       "correct": 0
     },
@@ -387,11 +392,11 @@
       "id": "b1-22-05.ex22",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
+      "question": "¿Para quién son las flores que Garcín trae del campo?",
       "options": [
-        "La idea de que cualquier pronóstico puede fallar ante lo inesperado.",
-        "Una lista de fechas exactas.",
-        "Una descripción del laboratorio de otro científico."
+        "Para Niní, su vecina de ojos azules.",
+        "Para su padre, que vive en Normandía.",
+        "Para el mesero del café donde se reúnen."
       ],
       "correct": 0
     },
@@ -399,11 +404,11 @@
       "id": "b1-22-05.ex23",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
+      "question": "¿Qué escribe Garcín en la última página de su poema?",
       "options": [
-        "El futuro es difícil de predecir con total seguridad.",
-        "El científico predijo el futuro con exactitud.",
-        "La máquina no tuvo ningún efecto."
+        "Que deja abierta la puerta de la jaula para el pájaro azul.",
+        "Que vuelve a la casa de su padre en Normandía.",
+        "Que ya no quiere escribir más poemas en París."
       ],
       "correct": 0
     }

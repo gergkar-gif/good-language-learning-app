@@ -31,11 +31,11 @@
       "id": "b1-21-consolidation.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence combines an opinion with a reason? [¿Cuál combina una opinión con una razón?]",
+      "question": "Which sentence combines an opinion with a reason?",
       "options": [
-        "Creo que esta propuesta es útil porque responde a un problema real. [I think this proposal is useful because it responds to a real problem.]",
-        "Esta propuesta legislativa fue presentada formalmente ante el parlamento. [This legislative proposal was formally presented before parliament.]",
-        "El problema del tráfico terminó después de la inauguración del nuevo puente. [The traffic problem ended after the opening of the new bridge.]"
+        "Creo que este plan es útil porque responde a un problema real. [I think this plan is useful because it responds to a real problem.]",
+        "Este plan fue presentado en la reunión de los vecinos del barrio. [This plan was presented at the neighbours’ meeting.]",
+        "El problema del tráfico terminó después de la inauguración del puente. [The traffic problem ended after the opening of the bridge.]"
       ],
       "correct": 0,
       "teaches": [
@@ -60,23 +60,21 @@
       "type": "sentence-builder",
       "tiles": [
         "Es",
-        "fundamental",
+        "importante",
         "que",
-        "la",
-        "discusión",
-        "sea",
-        "respetuosa."
+        "justifiquemos",
+        "nuestros",
+        "argumentos."
       ],
       "solution": [
         "Es",
-        "fundamental",
+        "importante",
         "que",
-        "la",
-        "discusión",
-        "sea",
-        "respetuosa."
+        "justifiquemos",
+        "nuestros",
+        "argumentos."
       ],
-      "english": "It is fundamental that the discussion be respectful.",
+      "english": "It is important that we justify our arguments.",
       "teaches": [
         "subjunctive-value-judgments"
       ]
@@ -103,10 +101,10 @@
       "id": "b1-21-consolidation.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which connector introduces a concession? [¿Qué conector introduce una concesión?]",
+      "question": "Which connector introduces a concession?",
       "options": [
         "aunque [although]",
-        "por lo tanto [therefore]",
+        "por eso [that is why]",
         "además [furthermore]"
       ],
       "correct": 0,
@@ -122,13 +120,13 @@
       "id": "b1-21-consolidation.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Es necesario que __ la evidencia disponible.",
-      "hint": "considerar",
-      "answer": "consideremos",
+      "sentence": "Es fundamental que __ la evidencia antes de decidir.",
+      "hint": "evaluar",
+      "answer": "evaluemos",
       "teaches": [
         "subjunctive-value-judgments"
       ],
-      "english": "It is necessary that we consider the available evidence."
+      "english": "It is essential that we evaluate the evidence before deciding."
     },
     {
       "id": "b1-21-consolidation.ex08",
@@ -163,26 +161,29 @@
       "id": "b1-21-consolidation.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence contains a justified conclusion? [¿Cuál contiene una conclusión justificada?]",
+      "question": "Which sentence gives a conclusion with a reason?",
       "options": [
         "En conclusión, considero que deberíamos aplicarla porque la evidencia disponible la apoya. [In conclusion, I consider that we should implement it because the available evidence supports it.]",
-        "En conclusión, deberíamos aplicarla porque sí. [In conclusion, we should implement it because yes.]",
-        "La conclusión existe. [The conclusion exists.]"
+        "En conclusión, considero que deberíamos aplicarla, pero la evidencia disponible no la apoya. [In conclusion, I consider that we should implement it, but the available evidence does not support it.]",
+        "En conclusión, considero que deberíamos aplicarla a menos que la evidencia la apoye. [In conclusion, I consider that we should implement it unless the evidence supports it.]"
       ],
       "correct": 0,
       "teaches": [
         "argument-markers"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "conditional-conjunctions"
+      }
     },
     {
       "id": "b1-21-consolidation.ex10",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "Aunque admito sus ventajas, no considero que sea la mejor opción.",
+      "sentence": "Aunque reconozco algunas ventajas, creo que la otra propuesta es mejor.",
       "options": [
-        "Although I admit its advantages, I do not consider it the best option.",
-        "I consider it unquestionably the best option.",
-        "I have not considered its advantages."
+        "Although I recognise some advantages, I think the other proposal is better.",
+        "Although I recognise some advantages, I think this proposal is perfect.",
+        "Because I recognise some advantages, I think the other proposal is better."
       ],
       "correct": 0,
       "teaches": [
@@ -208,11 +209,11 @@
       "id": "b1-21-consolidation.ex12",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Además, existe evidencia que apoya esta postura.",
+      "sentence": "Además, existe un argumento que apoya esta medida.",
       "teaches": [
         "porque-y-por-eso"
       ],
-      "english": "In addition, there is evidence that supports this position."
+      "english": "In addition, there is an argument that supports this measure."
     },
     {
       "id": "b1-21-consolidation.ex13",
@@ -231,7 +232,7 @@
       "options": [
         "Porque existe evidencia que la apoya y responde a un problema real. [Because there is evidence supporting it and it responds to a real problem.]",
         "Aunque existe evidencia que la apoya y responde a un problema real. [Although there is evidence supporting it and it responds to a real problem.]",
-        "Porque no hay ninguna razón. [Because there is no reason.]"
+        "En cambio existe evidencia que la apoya y responde a un problema real. [By contrast there is evidence supporting it and it responds to a real problem.]"
       ],
       "correct": 0,
       "teaches": [
@@ -245,7 +246,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué debemos hacer antes de decidir?"
+          "text": "¿Qué es necesario antes de aplicar la medida?"
         },
         {
           "speaker": "B",
@@ -253,9 +254,9 @@
         }
       ],
       "options": [
-        "Es importante que escuchemos opiniones diferentes. [It is important that we listen to different opinions.]",
-        "Es importante que escuchamos opiniones diferentes. [It is important that we listen to different opinions.]",
-        "Es importante que escucharíamos opiniones diferentes. [It is important that we would listen to different opinions.]"
+        "Es necesario que evaluemos la evidencia disponible. [It is necessary that we evaluate the available evidence.]",
+        "Es necesario que evaluamos la evidencia disponible. [It is necessary that we evaluate the available evidence (indicative).]",
+        "Es necesario que evaluaríamos la evidencia disponible. [It is necessary that we would evaluate the available evidence.]"
       ],
       "correct": 0,
       "teaches": [
@@ -273,7 +274,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Cuál es tu conclusión?"
+          "text": "¿Cuándo aceptas el cambio?"
         },
         {
           "speaker": "B",
@@ -281,9 +282,9 @@
         }
       ],
       "options": [
-        "En conclusión, considero que deberíamos aplicarla, siempre que se revisen sus resultados. [In conclusion, I consider that we should implement it, provided that its results are reviewed.]",
-        "En conclusión, no hay que revisar nada. [In conclusion, nothing needs to be reviewed.]",
-        "En conclusión, considero que deberíamos aplicarla, siempre que se revisan sus resultados. [In conclusion, I consider that we should implement it, provided that its results are reviewed (indicative).]"
+        "Lo acepto siempre que todos puedan participar. [I accept it as long as everyone can take part.]",
+        "Lo acepto siempre que todos pueden participar. [I accept it as long as everyone can take part (indicative).]",
+        "Lo acepto a menos que todos puedan participar. [I accept it unless everyone can take part.]"
       ],
       "correct": 0,
       "teaches": [
@@ -294,11 +295,11 @@
       "id": "b1-21-consolidation.ex16",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence combines concession, justification and opinion? [¿Cuál combina concesión, justificación y opinión?]",
+      "question": "Which sentence combines concession, justification and opinion?",
       "options": [
         "Aunque tiene algunas limitaciones, considero que merece apoyo porque ofrece una solución práctica. [Although it has some limitations, I consider that it deserves support because it offers a practical solution.]",
-        "Considero que esta medida merece apoyo popular porque ofrece una solución inmediata. [I consider that this measure deserves popular support because it offers an immediate solution.]",
-        "Aunque la propuesta tiene algunas limitaciones técnicas, fue aprobada por la mayoría. [Although the proposal has some technical limitations, it was approved by the majority.]"
+        "Considero que esta medida merece mucho apoyo porque ofrece una solución inmediata. [I consider that this measure deserves a lot of support because it offers an immediate solution.]",
+        "Aunque la propuesta tiene algunas limitaciones, fue aprobada por muchas personas. [Although the proposal has some limitations, it was approved by the majority.]"
       ],
       "correct": 0,
       "teaches": [
@@ -312,7 +313,7 @@
       "template": [
         {
           "prompt": "State an opinion, acknowledge another perspective and justify your position.",
-          "answer": "Aunque admito algunas ventajas de la otra opción, considero que esta propuesta es más convincente porque existe evidencia que la apoya."
+          "answer": "Aunque admito algunas ventajas de la otra opción, considero que esta propuesta es más convincente porque hay evidencia que la apoya."
         }
       ],
       "teaches": [
@@ -326,7 +327,7 @@
       "template": [
         {
           "prompt": "Write a short argument ending in a justified conclusion.",
-          "answer": "La propuesta tiene algunas limitaciones; sin embargo, ofrece una solución práctica. Por lo tanto, considero que deberíamos aplicarla y revisar sus resultados."
+          "answer": "La propuesta tiene algunas limitaciones; sin embargo, ofrece una solución práctica. Por eso, considero que deberíamos aplicarla y revisar sus resultados."
         }
       ],
       "teaches": [
