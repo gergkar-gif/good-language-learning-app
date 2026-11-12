@@ -30,8 +30,8 @@
       "question": "Which sentence introduces an argument? [¿Cuál introduce un argumento?]",
       "options": [
         "La desigualdad tiene varias causas. [Inequality has several causes.]",
-        "La desigualdad existe. [Inequality exists.]",
-        "Hay una ciudad. [There is a city.]"
+        "La desigualdad existe en muchas ciudades. [Inequality exists in many cities.]",
+        "Hay una ciudad muy grande en el centro. [There is a very big city in the centre.]"
       ],
       "correct": 0,
       "teaches": [
@@ -102,7 +102,7 @@
       "id": "b1-17-05.ex06",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which connector introduces a contrast? [¿Qué conector introduce un contraste?]",
+      "question": "Which connector introduces a contrast?",
       "options": [
         "sin embargo [however]",
         "además [furthermore]",
@@ -161,8 +161,8 @@
       "sentence": "Además, el acceso a ciertos servicios no es igual.",
       "options": [
         "Furthermore, access to certain services is not equal.",
-        "However, access is identical.",
-        "Finally, there are no services."
+        "However, access to all services is identical for everyone.",
+        "Finally, there are no services for anyone in the city."
       ],
       "correct": 0,
       "teaches": [
@@ -176,8 +176,8 @@
       "sentence": "Sin embargo, existen medidas que pueden mejorar la situación.",
       "options": [
         "However, there are measures that can improve the situation.",
-        "Therefore, no measures exist.",
-        "Furthermore, the situation cannot change."
+        "Therefore, no measures exist to improve any situation.",
+        "Furthermore, nothing can change the situation of anyone."
       ],
       "correct": 0,
       "teaches": [
@@ -225,8 +225,8 @@
       ],
       "options": [
         "La desigualdad tiene varias causas y algunas medidas pueden mejorar la situación. [Inequality has several causes and some measures can improve the situation.]",
-        "La desigualdad no existe y nunca ha existido. [Inequality does not exist and has never existed.]",
-        "La situación es sencilla porque solo existe una causa. [The situation is simple because there is only one cause.]"
+        "La desigualdad tiene varias causas y algunas medidas puede mejorar la situación. [Inequality has several causes and some measures can (singular) improve the situation.]",
+        "La desigualdad tiene varias causas y algunas medidas pueden mejorar de la situación. [Inequality has several causes and some measures can improve of the situation.]"
       ],
       "correct": 0,
       "teaches": [
@@ -240,7 +240,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué otra perspectiva considerarías?"
+          "text": "¿Qué piensan otras personas?"
         },
         {
           "speaker": "B",
@@ -249,13 +249,16 @@
       ],
       "options": [
         "Algunas personas creen que la responsabilidad debe ser principalmente del Gobierno. [Some people believe responsibility should mainly belong to the government.]",
-        "Nadie tiene otra perspectiva. [Nobody has another perspective.]",
+        "Algunas personas creen que la responsabilidad debe ser principal del Gobierno. [Some people believe responsibility should be main of the government.]",
         "Algunas personas creen que la responsabilidad sea principalmente del Gobierno. [Some people believe that responsibility be (subjunctive) mainly of the government.]"
       ],
       "correct": 0,
       "teaches": [
         "opinion-verbs-mood"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-17-05.ex15",
@@ -291,7 +294,7 @@
       "template": [
         {
           "prompt": "State a social problem and explain one cause.",
-          "answer": "La desigualdad tiene varias causas, entre ellas el desempleo y el acceso desigual a los recursos."
+          "answer": "La desigualdad tiene varias causas, entre ellas el desempleo y un acceso a los recursos que no es igual para todos."
         }
       ],
       "teaches": [
@@ -333,7 +336,7 @@
       "template": [
         {
           "prompt": "Write a short sustained argument and conclusion.",
-          "answer": "La desigualdad tiene varias causas y el acceso a ciertos servicios no es igual. Sin embargo, existen medidas que pueden mejorar la situación. En conclusión, la sociedad tiene una responsabilidad compartida."
+          "answer": "La desigualdad tiene varias causas y el acceso a ciertos servicios no es igual. Sin embargo, existen medidas que pueden mejorar la situación. En conclusión, es un problema colectivo y la participación de todos es importante."
         }
       ],
       "teaches": [
@@ -344,11 +347,11 @@
       "id": "b1-17-05.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
+      "question": "What do Jacinta and Fortunata have in common?",
       "options": [
-        "La desigualdad en la ciudad tiene varias causas y requiere participación colectiva.",
-        "Todas las familias de la ciudad viven igual.",
-        "La pobreza no tiene ninguna causa conocida."
+        "Las dos quieren a Juanito Santa Cruz.",
+        "Las dos viven en la misma casa.",
+        "Las dos tienen hijos con Juanito."
       ],
       "correct": 0
     },
@@ -356,11 +359,11 @@
       "id": "b1-17-05.ex21",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
+      "question": "Why is Fortunata's life harder than Jacinta's?",
       "options": [
-        "Una trabajadora social visitó varios barrios.",
-        "Todos los vecinos estaban de acuerdo desde el principio.",
-        "La ciudad no tiene ningún problema de vivienda."
+        "Tiene menos dinero y menos estudios.",
+        "Tiene más hijos que Jacinta.",
+        "Vive lejos de Madrid."
       ],
       "correct": 0
     },
@@ -368,11 +371,11 @@
       "id": "b1-17-05.ex22",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
+      "question": "What does Jacinta not have, in spite of her money?",
       "options": [
-        "La idea de que la desigualdad tiene varias causas.",
-        "Una descripción del clima de la ciudad.",
-        "Una lista de precios de alquiler."
+        "No puede tener hijos.",
+        "No tiene una casa grande.",
+        "No quiere a su esposo."
       ],
       "correct": 0
     },
@@ -380,11 +383,11 @@
       "id": "b1-17-05.ex23",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
+      "question": "What does Fortunata do before she dies?",
       "options": [
-        "Las soluciones a la desigualdad requieren participación de varias instituciones.",
-        "Solo el Gobierno puede resolver la desigualdad.",
-        "La desigualdad no se puede mencionar en público."
+        "Deja a su hijo con Jacinta.",
+        "Se va a vivir con Juanito.",
+        "Pide dinero a Jacinta."
       ],
       "correct": 0
     }

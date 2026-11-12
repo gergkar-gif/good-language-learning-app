@@ -31,11 +31,11 @@
       "id": "b1-16-01.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence contains a relative clause? [¿Cuál contiene una oración de relativo?]",
+      "question": "Which sentence contains a relative clause?",
       "options": [
         "El río, que atraviesa la ciudad, necesita protección. [The river, which crosses the city, needs protection.]",
-        "El río necesita protección. [The river needs protection.]",
-        "Hay un río. [There is a river.]"
+        "El río atraviesa la ciudad y necesita protección. [The river crosses the city and needs protection.]",
+        "Hay un bosque cerca del río y cerca del pueblo. [There is a forest near the river and near the village.]"
       ],
       "correct": 0,
       "teaches": [
@@ -103,7 +103,7 @@
       "id": "b1-16-01.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which word introduces a place relative clause? [¿Qué palabra introduce una oración de relativo de lugar?]",
+      "question": "Which word introduces a place relative clause?",
       "options": [
         "donde [where]",
         "porque [because]",
@@ -162,8 +162,8 @@
       "sentence": "El bosque que está cerca del pueblo es muy tranquilo.",
       "options": [
         "The forest that is near the village is very peaceful.",
-        "The river is near the village.",
-        "The forest has disappeared."
+        "The river that is near the village is very noisy.",
+        "The forest that is near the village has disappeared."
       ],
       "correct": 0,
       "teaches": [
@@ -202,7 +202,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué tipo de bosque es?"
+          "text": "¿Cómo es el bosque?"
         },
         {
           "speaker": "B",
@@ -271,7 +271,10 @@
       "correct": 0,
       "teaches": [
         "relative-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-16-01.ex15",
