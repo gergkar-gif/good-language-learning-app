@@ -50,6 +50,9 @@ const Content = {
         if (lang === 'cs' || (typeof lang === 'string' && lang.startsWith('cs-'))) {
             return this.json(`imports/verbs/cs/${name}.json`);
         }
+        if (lang === 'sk' || (typeof lang === 'string' && lang.startsWith('sk-'))) {
+            return this.json(`imports/verbs/sk/${name}.json`);
+        }
         return this.json(`imports/verbs/${name}.json`);
     },
 

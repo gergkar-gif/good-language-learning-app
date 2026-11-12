@@ -313,6 +313,8 @@ const Verbs = (function () {
             base = (typeof ALL_POLISH_VERBS !== 'undefined') ? ALL_POLISH_VERBS.slice() : ['być', 'mieć', 'robić', 'mówić', 'chcieć'];
         } else if (lang === 'cs' || (typeof lang === 'string' && lang.startsWith('cs-'))) {
             base = (typeof ALL_CZECH_VERBS !== 'undefined') ? ALL_CZECH_VERBS.slice() : ['být', 'mít', 'dělat', 'říkat', 'chtít', 'vědět'];
+        } else if (lang === 'sk' || (typeof lang === 'string' && lang.startsWith('sk-'))) {
+            base = (typeof ALL_SLOVAK_VERBS !== 'undefined') ? ALL_SLOVAK_VERBS.slice() : ['byť', 'mať', 'robiť', 'hovoriť', 'chcieť', 'vedieť'];
         } else {
             base = (typeof ALL_VERBS !== 'undefined') ? ALL_VERBS.slice() : ['hablar', 'comer', 'vivir'];
         }
