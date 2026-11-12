@@ -472,6 +472,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-11 | ES B1 core 17, 19, 21, 23, 25, 27 | paired read, 3 units/reader, stories rewritten in the read; A stopped by the 5-hour limit and resumed | | A 393,512 (resumed notice), B 374,756 + 34k unmet follow-up (~130k a unit) | 568 proposed (82 / 96 / 79 / 112 / 106 / 93), 0 rejected, 5 changed by the reviewer | all six frozen in both courses (B1 14/76); unmet check run properly in both courses; 76 words listed; walk 36/36 per course |
 | 11-12 | ES B1 core 29, 31, 33, 35, 37, 39 | paired read, 3 units/reader, unmet check required of the readers; both stopped by the 5-hour limit before writing, resumed | | A 372,147, B 403,170 (resumed notices; ~130k a unit) | 460 proposed (81 / 68 / 57 / 83 / 74 / 97), 0 rejected, ~7 changed by the reviewer | all six frozen in both courses (B1 20/76); readers' unmet checks held; walk 36/36 per course |
 | 11-12 | ES B1 core 41, 43, 45, 47, 49, 51 | paired read, 3 units/reader; both stopped by the 5-hour limit and resumed | | A 370,764, B 384,297 (resumed notices; ~125k a unit) | 439 proposed (94 / 71 / 74 / 75 / 68 / 57), 1 rejected and rewritten | all six frozen in both courses (B1 26/76); rulebook truncated by the reviewer and restored; walk 36/36 per course |
+| 11-12 | ES B1 core 53, 55, 57, 59, 61, 63 | paired read, 3 units/reader, sources fetched from Wikisource at setup; both stopped by the 5-hour limit and resumed | | A 394,006, B 429,839 (resumed notices; ~137k a unit) | 576 proposed (93 / 92 / 92 / 94 / 91 / 114), 10 rejected and rewritten | all six frozen in both courses (B1 32/76); reader A left 25 check-content errors while reporting 0; walk 36/36 per course |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -1890,3 +1891,29 @@ The user took the four recommended options:
   per batch, after mirroring.
 - **The pre-push scenario test** (`requiredLemmas`) is part of the gate; run it before
   pushing a batch that removes vocabulary entries.
+
+### 2026-11-12: ES B1 core Units 53–63
+
+- **Cost:** ~137k a unit, close to the last three batches. Both readers hit the 5-hour limit
+  together again; the container also restarted during the wait, and no file was lost
+  (the readers' files were in the worktrees, copied and committed on resume).
+- **Wikisource is reachable** where Gutenberg has no copy (Palma's "Don Dimas", Martí's
+  "Nuestra América", Bello's prologue): fetch them with `python scripts/fetch_wikisource.py "<title>" <batch>/sources/<file>.txt`
+  (scripted the same day; the Wikisource API is refused, the page itself is not). With the sources in the batch folder, both readers corrected
+  their stories to the text. Darío's essay could not be fetched; that story rests on an
+  outline from secondary summaries.
+- **A reader's check-content claim was false:** reader A reported "0 errors before and after"
+  for Units 53–57; 25 errors remained (17 length give-aways, absolutes, a time word, a shared
+  checklist line). Two came from the reviewer's own rewrites of rejected fixes, which
+  `check_fixes.py` passed (it checks only the length of the option it is given, not absolutes
+  in a new option). **Change:** the last batch's focus makes the check-content counts a required,
+  reported step, and the reviewer runs check-content on every unit right after applying,
+  before mirroring further edits.
+- **A recurring wrong recap:** readers wrote "*sin embargo* from B1 Unit 1"; it is taught in
+  A2 Unit 28 (a2-perifrasisverbales-03, with *aunque*, *además* and *por lo tanto*). Corrected
+  and put in the next focus file. `check_unit_refs.py` did not catch it, because *sin embargo*
+  does appear in B1 Unit 1.
+- **`mirror_fixes.py` refuses `set` fixes once es-es has been changed:** applying reviewer
+  extras in es-es before mirroring left 7 of 22 unmatched ("es-latam differs on options").
+  When the two files were identical before, apply the same list to the es-latam paths.
+

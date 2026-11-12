@@ -564,6 +564,13 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
   item must not lean on a word listed only in a cultura or latam lesson or
   in the es-es *vosotros* unit; goal lines say "the new words", never a
   count.
+- **B1 core, found in Units 53–63 (2026-11-12):** *sin embargo*, *aunque*,
+  *además* (and *por lo tanto*) are taught in A2 Unit 28, not B1 Unit 1: a recap says
+  "from A2 Unit 28". Stories retold in the past drift into the imperfect subjunctive
+  after a past verb (*era necesario que conocieran*, *le pidió que firmara*; b1-38):
+  report in the indicative or with infinitives, or tell it in the present. Two more
+  lessons registered a skill their screen did not teach (b1-29-03, b1-32-03). A wrong
+  option you lengthen must not bring *nunca, siempre, nadie* or a time word.
 - **Classic stories:** a story spliced with lesson-template sentences
   (Odiseo buying a ticket at a travellers' office) or given an invented
   ending (Bartleby) is rewritten as an honest outline of the work. A
