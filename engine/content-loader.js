@@ -47,6 +47,9 @@ const Content = {
         if (lang === 'pl' || (typeof lang === 'string' && lang.startsWith('pl-'))) {
             return this.json(`imports/verbs/pl/${name}.json`);
         }
+        if (lang === 'cs' || (typeof lang === 'string' && lang.startsWith('cs-'))) {
+            return this.json(`imports/verbs/cs/${name}.json`);
+        }
         return this.json(`imports/verbs/${name}.json`);
     },
 

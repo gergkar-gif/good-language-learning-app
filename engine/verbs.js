@@ -309,6 +309,10 @@ const Verbs = (function () {
             base = (typeof ALL_FRENCH_VERBS !== 'undefined') ? ALL_FRENCH_VERBS.slice() : ['parler', 'aimer', 'finir', 'aller', 'avoir', 'etre', 'faire'];
         } else if (lang === 'it' || (typeof lang === 'string' && lang.startsWith('it-'))) {
             base = (typeof ALL_ITALIAN_VERBS !== 'undefined') ? ALL_ITALIAN_VERBS.slice() : ['parlare', 'credere', 'dormire', 'andare', 'avere', 'essere', 'fare'];
+        } else if (lang === 'pl' || (typeof lang === 'string' && lang.startsWith('pl-'))) {
+            base = (typeof ALL_POLISH_VERBS !== 'undefined') ? ALL_POLISH_VERBS.slice() : ['być', 'mieć', 'robić', 'mówić', 'chcieć'];
+        } else if (lang === 'cs' || (typeof lang === 'string' && lang.startsWith('cs-'))) {
+            base = (typeof ALL_CZECH_VERBS !== 'undefined') ? ALL_CZECH_VERBS.slice() : ['být', 'mít', 'dělat', 'říkat', 'chtít', 'vědět'];
         } else {
             base = (typeof ALL_VERBS !== 'undefined') ? ALL_VERBS.slice() : ['hablar', 'comer', 'vivir'];
         }

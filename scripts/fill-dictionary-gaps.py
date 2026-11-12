@@ -68,6 +68,7 @@ DICTS = {
     'fr': ROOT / 'imports/dictionary/french-en.json',
     'it': ROOT / 'imports/dictionary/italian-en.json',
     'pl': ROOT / 'imports/dictionary/polish-en.json',
+    'cs': ROOT / 'imports/dictionary/czech-en.json',
 }
 ADDITIONS = {
     'hu': ROOT / 'imports/dictionary/additions-hu.json',
@@ -75,14 +76,17 @@ ADDITIONS = {
     'fr': ROOT / 'imports/dictionary/additions-fr.json',
     'it': ROOT / 'imports/dictionary/additions-it.json',
     'pl': ROOT / 'imports/dictionary/additions-pl.json',
+    'cs': ROOT / 'imports/dictionary/additions-cs.json',
 }
 BATCH_DIR = ROOT / 'imports/dictionary/gap-batches'
-COURSES = {'hu': ['hu'], 'es': ['es-es', 'es-latam'], 'fr': ['fr'], 'it': ['it'], 'pl': ['pl']}
-LANG_NAME = {'hu': 'Hungarian', 'es': 'Spanish', 'fr': 'French', 'it': 'Italian', 'pl': 'Polish'}
+COURSES = {'hu': ['hu'], 'es': ['es-es', 'es-latam'], 'fr': ['fr'], 'it': ['it'], 'pl': ['pl'], 'cs': ['cs']}
+LANG_NAME = {'hu': 'Hungarian', 'es': 'Spanish', 'fr': 'French', 'it': 'Italian', 'pl': 'Polish', 'cs': 'Czech'}
 
 POS = {
     'hu': {'noun', 'verb', 'adjective', 'adverb', 'pronoun', 'numeral', 'postposition',
            'conjunction', 'interjection', 'particle', 'determiner'},
+    'cs': {'noun', 'verb', 'adjective', 'adverb', 'pronoun', 'numeral', 'preposition',
+           'conjunction', 'interjection', 'particle', 'determiner', 'phrase', 'proper noun'},
     'es': {'noun', 'verb', 'adjective', 'adverb', 'proper noun', 'pronoun', 'numeral',
            'preposition', 'conjunction', 'interjection', 'determiner'},
     'fr': {'noun', 'verb', 'adjective', 'adverb', 'proper noun', 'pronoun', 'numeral',
