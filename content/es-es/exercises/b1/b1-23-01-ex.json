@@ -31,11 +31,11 @@
       "id": "b1-23-01.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence recommends an option after comparing it? [¿Cuál recomienda una opción después de compararla?]",
+      "question": "Which sentence recommends an option after comparing it?",
       "options": [
         "Creo que sería mejor elegir la primera porque es más barata. [I think it would be better to choose the first one because it is cheaper.]",
-        "La primera opción existe. [The first option exists.]",
-        "La primera opción es tan cara como la segunda. [The first option is as expensive as the second.]"
+        "La primera opción es más barata y la segunda es más segura. [The first option is cheaper and the second is safer.]",
+        "Creo que sería mejor elegir la primera opción para todos. [I think it would be better to choose the first option for everyone.]"
       ],
       "correct": 0,
       "teaches": [
@@ -107,7 +107,7 @@
       "id": "b1-23-01.ex06",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which word means «criterion»? [¿Qué palabra significa «criterio»?]",
+      "question": "Which word means «criterion»?",
       "options": [
         "criterio [criterion]",
         "opción [option]",
@@ -179,8 +179,8 @@
       "sentence": "Te recomiendo que compares los costes antes de decidir.",
       "options": [
         "I recommend that you compare the costs before deciding.",
-        "I recommend that you ignore the costs.",
-        "You compared the costs yesterday."
+        "I recommend that you compare the costs after deciding.",
+        "I recommend that you ignore the costs before deciding."
       ],
       "correct": 0,
       "teaches": [
@@ -214,7 +214,7 @@
       "options": [
         "Creo que sería mejor elegir la primera porque es más barata. [I think it would be better to choose the first one because it is cheaper.]",
         "Creo que sería mejor elegir la primera porque es más barata de la otra. [I think it would be better to choose the first one because it is cheaper of the other.]",
-        "No sé elegir porque la opción. [I do not know choose because the option.]"
+        "Creo que sería mejor elegir la primera porque es tan barata que la otra. [I think it would be better to choose the first one because it is as cheap that the other.]"
       ],
       "correct": 0,
       "teaches": [
@@ -236,9 +236,9 @@
         }
       ],
       "options": [
-        "Compararía los costes y la seguridad. [I would compare the costs and safety.]",
+        "Usaría un criterio más seguro que ese. [I would use a safer criterion than that one.]",
         "Usaría un criterio más seguro de ese. [I would use a safer criterion of that one.]",
-        "Usaría un criterio tan seguro que el primero. [I would use a criterion as safe that the first.]"
+        "Usaría un criterio tan seguro que ese. [I would use a criterion as safe that one.]"
       ],
       "correct": 0,
       "teaches": [
@@ -261,13 +261,16 @@
       ],
       "options": [
         "Te recomiendo que compares las dos opciones. [I recommend that you compare the two options.]",
-        "Te recomiendo que comparas las dos opciones. [I recommend that you compare the two options.]",
-        "Te recomiendo que elijas la opción más mejor. [I recommend that you choose the more better option.]"
+        "Te recomiendo que comparas las dos opciones. [I recommend that you compare the two options (indicative).]",
+        "Te recomiendo que compararás las dos opciones. [I recommend that you will compare the two options.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-influence"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-23-01.ex15",

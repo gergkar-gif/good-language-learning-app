@@ -248,10 +248,16 @@
   "file": "content/es-es/exercises/b1/b1-23-03-ex.json",
   "id": "b1-23-03.ex06",
   "set": {
-   "question": "Which word means «consequence»?"
+   "question": "Which word means «consequence»?",
+   "options": [
+    "consecuencia [consequence]",
+    "desventaja [disadvantage]",
+    "información [information]"
+   ],
+   "correct": 0
   },
   "kind": "target",
-  "why": "Spanish stem"
+  "why": "Spanish stem; length give-away 12 vs 8"
  },
  {
   "file": "content/es-es/exercises/b1/b1-23-03-ex.json",
@@ -460,17 +466,19 @@
     "nuestra",
     "prioridad."
    ],
-   "solution": [
-    "Por",
-    "eso",
-    "creo",
-    "que",
-    "la",
-    "seguridad",
-    "debe",
-    "ser",
-    "nuestra",
-    "prioridad."
+   "solutions": [
+    [
+     "Por",
+     "eso",
+     "creo",
+     "que",
+     "la",
+     "seguridad",
+     "debe",
+     "ser",
+     "nuestra",
+     "prioridad."
+    ]
    ],
    "english": "That is why I think safety should be our priority."
   },
@@ -582,8 +590,8 @@
    "question": "¿Qué estudia Luis de Vargas?",
    "options": [
     "Estudia en el seminario para ser sacerdote.",
-    "Estudia en una escuela para ser médico.",
-    "Estudia en París para ser escritor."
+    "Estudia en Madrid para ser médico.",
+    "Estudia en París para ser profesor."
    ],
    "correct": 0
   },
@@ -655,9 +663,9 @@
   "set": {
    "question": "Which sentence compares two choices and recommends one?",
    "options": [
-    "Te recomiendo la tercera opción porque es más barata que las otras. [I recommend the third option because it is cheaper than the others.]",
-    "La tercera opción es tan barata como las otras dos opciones. [The third option is as cheap as the other two options.]",
-    "Te recomiendo la tercera opción para todos los que quieren. [I recommend the third option for everyone who wants it.]"
+    "Te recomiendo la segunda opción porque es más barata que las otras. [I recommend the second option because it is cheaper than the others.]",
+    "La segunda opción es tan barata como las otras dos opciones. [The second option is as cheap as the other two options.]",
+    "Te recomiendo la segunda opción para todos los que quieren. [I recommend the second option for everyone who wants it.]"
    ],
    "correct": 0
   },
@@ -677,14 +685,16 @@
     "más",
     "tiempo."
    ],
-   "solution": [
-    "Si",
-    "elegimos",
-    "la",
-    "primera",
-    "tendremos",
-    "más",
-    "tiempo."
+   "solutions": [
+    [
+     "Si",
+     "elegimos",
+     "la",
+     "primera",
+     "tendremos",
+     "más",
+     "tiempo."
+    ]
    ],
    "english": "If we choose the first one, we will have more time."
   },
@@ -715,16 +725,18 @@
     "de",
     "decidir."
    ],
-   "solution": [
-    "Es",
-    "mejor",
-    "que",
-    "esperemos",
-    "una",
-    "semana",
-    "antes",
-    "de",
-    "decidir."
+   "solutions": [
+    [
+     "Es",
+     "mejor",
+     "que",
+     "esperemos",
+     "una",
+     "semana",
+     "antes",
+     "de",
+     "decidir."
+    ]
    ],
    "english": "It is better that we wait a week before deciding."
   },
@@ -750,11 +762,11 @@
   "file": "content/es-es/exercises/b1/b1-23-consolidation-ex.json",
   "id": "b1-23-consolidation.ex10",
   "set": {
-   "sentence": "La opción parece atractiva; en cambio, la otra tiene menos riesgo.",
+   "sentence": "La opción parece interesante; en cambio, la otra tiene menos riesgo.",
    "options": [
-    "The option seems attractive; by contrast, the other has less risk.",
-    "The option seems attractive; therefore, the other has less risk.",
-    "The option seems unattractive; by contrast, the other has more risk."
+    "The option seems interesting; by contrast, the other has less risk.",
+    "The option seems interesting; therefore, the other has less risk.",
+    "The option seems uninteresting; by contrast, the other has more risk."
    ],
    "correct": 0
   },
@@ -853,14 +865,14 @@
  {
   "file": "content/es-es/stories/classics/b1/b1-23-pepitajimenez.json",
   "old": "Luis de Vargas había pasado varios años en el seminario, estudiando para ser sacerdote. Cuando volvió al pueblo de su padre, don Pedro, para pasar una temporada antes de tomar los últimos votos, se encontró con dos caminos muy diferentes: continuar hacia la vida religiosa que había planeado desde niño, o quedarse en el pueblo y llevar una vida como la de su padre. Tenía que elegir entre dos opciones, y ninguna de las dos le parecía ya tan sencilla como antes.",
-  "new": "Luis de Vargas estudia en el seminario para ser sacerdote. Un día vuelve al pueblo de su padre, don Pedro. Allí se da cuenta de que la vida religiosa y la vida del pueblo son dos caminos muy diferentes, y todavía no sabe cuál es mejor para él.",
+  "new": "Luis de Vargas estudia en el seminario para ser sacerdote. Un día vuelve al pueblo de su padre, don Pedro. Allí ve que la vida religiosa y la vida del pueblo son dos caminos muy diferentes, y todavía no sabe cuál es mejor para él.",
   "kind": "target",
   "why": "b1-23-pepitajimenez: retold in plain B1 Spanish"
  },
  {
   "file": "content/es-es/stories/classics/b1/b1-23-pepitajimenez.json",
   "old": "En el pueblo conoció a Pepita Jiménez, una joven viuda inteligente y sensible, a quien su padre visitaba con frecuencia. Al principio, Luis se decía que aquella amistad no cambiaba nada en su vocación. Sin embargo, poco a poco descubrió que pensaba en Pepita más de lo que un futuro sacerdote debería pensar en nadie.",
-  "new": "Don Pedro cuenta a su hijo que quiere casarse con Pepita Jiménez, una joven viuda del pueblo. Luis conoce a Pepita y habla con ella muchas veces. Al principio piensa que esa amistad no cambia nada, porque va a ser sacerdote.",
+  "new": "Don Pedro cuenta a su hijo que quiere casarse con Pepita Jiménez, una joven viuda del pueblo. Pepita es joven y está sola desde la muerte de su marido. Luis conoce a Pepita y habla con ella muchas veces. Al principio piensa que esa amistad no cambia nada, porque va a ser sacerdote.",
   "kind": "target",
   "why": "b1-23-pepitajimenez: retold in plain B1 Spanish"
  },
@@ -888,7 +900,7 @@
  {
   "file": "content/es-es/stories/classics/b1/b1-23-pepitajimenez.json",
   "old": "[\n        {\n          \"question\": \"¿Qué dilema interior desgarra la conciencia del joven seminarista Luis de Vargas?\",\n          \"options\": [\n            \"Elegir entre administrar las fincas familiares o alistarse en el regimiento de caballería de la provincia.\",\n            \"Disputar a su padre la herencia de los viñedos comunales ante los magistrados de la audiencia.\",\n            \"Viajar a las misiones de ultramar como misionero o convertirse en profesor de gramática en la capital.\",\n            \"Decidir entre consagrarse a los votos sacerdotales o sucumbir al amor genuino que despierta en él Pepita Jiménez.\"\n          ],\n          \"correctIndex\": 3,\n          \"explanation\": \"Luis experimenta el conflicto íntimo entre su prolongada vocación eclesiástica y el sentimiento amoroso irresistible y puro que le inspira Pepita.\"\n        },\n        {\n          \"question\": \"¿A quién recurre el protagonista para desahogar sus dudas y demandar orientación moral?\",\n          \"options\": [\n            \"A su anciano y sabio tío sacerdote mediante una emotiva correspondencia epistolar confesional.\",\n            \"Al alcalde del pueblo a través de una serie de reuniones secretas en el ayuntamiento.\",\n            \"A los arrieros del camino real que transportaban las cosechas de vino hacia la costa.\",\n            \"Al boticario local en busca de remedios naturales para serenar sus desvelos nocturnos.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Luis vuelca sus zozobras y debates espirituales en largas cartas a su venerado tío, a quien confiesa con transparencia el nacimiento de sus afectos.\"\n        },\n        {\n          \"question\": \"¿Qué principio de honestidad vital abraza finalmente Luis de Vargas en su resolución?\",\n          \"options\": [\n            \"Que las apariencias sociales obligan a sacrificar los deseos íntimos por temor al qué dirán los vecinos.\",\n            \"Que es más noble y sincero vivir un amor verdadero en el mundo que mantener un voto formulado sin madurez.\",\n            \"Que el aislamiento conventual es la única vía para expiar las flaquezas del corazón humano.\",\n            \"Que los mandatos paternos deben desobedecerse siempre por principio de rebeldía juvenil.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"Luis comprende que la verdadera rectitud no radica en sostener un ideal infantil por orgullo, sino en abrazar con valentía el amor real y edificar una vida sincera.\"\n        }\n      ]",
-  "new": "[\n        {\n          \"question\": \"¿Qué estudia Luis de Vargas?\",\n          \"options\": [\n            \"Estudia en el seminario para ser sacerdote.\",\n            \"Estudia en una escuela para ser médico.\",\n            \"Estudia en París para ser escritor.\",\n            \"Estudia con su padre para ser comerciante.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Luis está en el seminario y quiere ser sacerdote.\"\n        },\n        {\n          \"question\": \"¿Qué quiere hacer don Pedro, el padre de Luis?\",\n          \"options\": [\n            \"Quiere vender su casa y vivir en otro pueblo.\",\n            \"Quiere que Luis estudie para ser médico.\",\n            \"Quiere casarse con la joven viuda Pepita.\",\n            \"Quiere viajar al seminario con su hijo.\"\n          ],\n          \"correctIndex\": 2,\n          \"explanation\": \"Don Pedro dice a Luis que quiere casarse con Pepita Jiménez.\"\n        },\n        {\n          \"question\": \"¿Qué le pasa a Luis con Pepita?\",\n          \"options\": [\n            \"Se enamora de ella poco a poco.\",\n            \"Piensa que es una persona poco interesante.\",\n            \"Quiere que su padre se case con otra mujer.\",\n            \"No quiere hablar más con ella.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Al principio Luis cree que no pasa nada, pero poco a poco piensa más en Pepita.\"\n        },\n        {\n          \"question\": \"¿Qué decide Luis al final?\",\n          \"options\": [\n            \"Sigue en el seminario y no ve más a Pepita.\",\n            \"Se va a otro pueblo con su padre.\",\n            \"Deja el seminario y se casa con Pepita.\",\n            \"Espera un año antes de decidir.\"\n          ],\n          \"correctIndex\": 2,\n          \"explanation\": \"Luis deja el seminario y se casa con Pepita.\"\n        }\n      ]",
+  "new": "[\n        {\n          \"question\": \"¿Qué estudia Luis de Vargas?\",\n          \"options\": [\n            \"Estudia en el seminario para ser sacerdote.\",\n            \"Estudia en Madrid para ser médico.\",\n            \"Estudia en París para ser profesor.\",\n            \"Estudia con su padre para ser comerciante.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Luis está en el seminario y quiere ser sacerdote.\"\n        },\n        {\n          \"question\": \"¿Qué quiere hacer don Pedro, el padre de Luis?\",\n          \"options\": [\n            \"Quiere vender su casa y vivir en otro pueblo.\",\n            \"Quiere que Luis estudie para ser médico.\",\n            \"Quiere casarse con la joven viuda Pepita.\",\n            \"Quiere viajar al seminario con su hijo.\"\n          ],\n          \"correctIndex\": 2,\n          \"explanation\": \"Don Pedro dice a Luis que quiere casarse con Pepita Jiménez.\"\n        },\n        {\n          \"question\": \"¿Qué le pasa a Luis con Pepita?\",\n          \"options\": [\n            \"Se enamora de ella poco a poco.\",\n            \"Piensa que es una persona poco interesante.\",\n            \"Quiere que su padre se case con otra mujer.\",\n            \"No quiere hablar más con ella.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Al principio Luis cree que no pasa nada, pero poco a poco piensa más en Pepita.\"\n        },\n        {\n          \"question\": \"¿Qué decide Luis al final?\",\n          \"options\": [\n            \"Sigue en el seminario y no ve más a Pepita.\",\n            \"Se va a otro pueblo con su padre.\",\n            \"Deja el seminario y se casa con Pepita.\",\n            \"Espera un año antes de decidir.\"\n          ],\n          \"correctIndex\": 2,\n          \"explanation\": \"Luis deja el seminario y se casa con Pepita.\"\n        }\n      ]",
   "kind": "target",
   "why": "b1-23-pepitajimenez: comprehension questions ask what the people do, answers true to the new text"
  }
