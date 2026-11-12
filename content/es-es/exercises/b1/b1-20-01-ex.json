@@ -31,11 +31,11 @@
       "id": "b1-20-01.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence describes a specific problem and its effect? [¿Cuál describe un problema concreto y su efecto?]",
+      "question": "Which sentence has a relative clause with a preposition?",
       "options": [
         "El fallo afecta a un servicio del que dependen muchas personas. [The fault affects a service on which many people depend.]",
-        "El servicio público de transporte funciona con normalidad en toda la capital. [The public transport service operates normally throughout the entire capital.]",
-        "Muchas personas trabajan en el mantenimiento de las vías durante toda la noche. [Many people work on track maintenance throughout the entire night.]"
+        "El fallo afecta a un servicio que funciona muy bien en la ciudad. [The fault affects a service that works very well in the city.]",
+        "El fallo afecta a muchas personas que viven en esta ciudad. [The fault affects many people who live in this city.]"
       ],
       "correct": 0,
       "teaches": [
@@ -111,7 +111,7 @@
       "id": "b1-20-01.ex06",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which word describes something that blocks progress? [¿Qué palabra describe algo que bloquea el progreso?]",
+      "question": "Which word means something that stops progress?",
       "options": [
         "obstáculo [obstacle]",
         "avería [breakdown]",
@@ -195,11 +195,11 @@
       "id": "b1-20-01.ex11",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Tenemos un obstáculo que dificulta la solución.",
+      "sentence": "Esta es la avería de la que hablamos ayer.",
       "teaches": [
-        "relative-clauses"
+        "relativas-preposicion-el-que"
       ],
-      "english": "We have an obstacle that makes the solution more difficult."
+      "english": "This is the breakdown we talked about yesterday."
     },
     {
       "id": "b1-20-01.ex12",
@@ -235,7 +235,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Por qué es difícil llegar a tiempo?"
+          "text": "¿Dónde se ha producido la avería?"
         },
         {
           "speaker": "B",
@@ -243,13 +243,13 @@
         }
       ],
       "options": [
-        "Hay un atasco que impide que los autobuses lleguen a tiempo. [There is a traffic jam that prevents buses from arriving on time.]",
-        "Hay un atasco que llega a tiempo. [There is a traffic jam that arrives on time.]",
-        "Hay un atasco porque los autobuses son tiempo. [There is a traffic jam because buses are time.]"
+        "Se ha producido en el edificio en el que vivimos. [It happened in the building we live in.]",
+        "Se ha producido en el edificio que vivimos. [It happened in the building that we live.]",
+        "Se ha producido en el edificio en lo que vivimos. [It happened in the building in what we live.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-problems-solutions-vocab"
+        "relativas-preposicion-el-que"
       ]
     },
     {
@@ -268,12 +268,12 @@
       ],
       "options": [
         "Afecta a un servicio del que dependen muchas personas. [It affects a service on which many people depend.]",
-        "Es una persona que depende de un servicio. [It is a person who depends on a service.]",
-        "Es un servicio que afecta a nadie. [It is a service that affects nobody.]"
+        "Afecta a un servicio que dependen muchas personas. [It affects a service that many people depend.]",
+        "Afecta a un servicio de que dependen muchas personas. [It affects a service of that many people depend.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-problems-solutions-vocab"
+        "relativas-preposicion-el-que"
       ]
     },
     {
@@ -282,7 +282,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a problem, its effect and one affected group.",
+          "prompt": "Say there is a breakdown that affects a service on which many neighbours depend.",
           "answer": "Hay una avería que afecta a un servicio del que dependen muchos vecinos."
         }
       ],
@@ -296,8 +296,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe an obstacle that makes a solution difficult.",
-          "answer": "El atasco es un obstáculo que dificulta la solución porque retrasa los autobuses."
+          "prompt": "Say that the traffic jam is an obstacle that makes the solution difficult, because the buses arrive late.",
+          "answer": "El atasco es un obstáculo que dificulta la solución porque los autobuses llegan tarde."
         }
       ],
       "teaches": [

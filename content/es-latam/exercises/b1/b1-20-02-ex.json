@@ -30,8 +30,8 @@
       "question": "Which sentence identifies a cause? [¿Cuál identifica una causa?]",
       "options": [
         "La falta de mantenimiento desencadenó varios fallos. [The lack of maintenance triggered several failures.]",
-        "El problema principal de la línea es bastante grave. [The main problem on the line is quite serious.]",
-        "El puente colgante de la autopista es bastante largo. [The suspension bridge on the highway is quite long.]"
+        "El problema principal está en el edificio. [The main problem is in the building.]",
+        "El edificio nuevo es bastante grande. [The new building is quite big.]"
       ],
       "correct": 0,
       "teaches": [
@@ -84,7 +84,7 @@
       "sentences": [
         "La falta de mantenimiento desencadenó varios fallos. [The lack of maintenance triggered several failures.]",
         "La situación se agravó. [The situation got worse.]",
-        "Por lo tanto, fue necesario buscar otra solución. [Therefore, it was necessary to look for another solution.]"
+        "Por eso, fue necesario buscar otra solución. [So it was necessary to look for another solution.]"
       ],
       "solution": [
         0,
@@ -99,11 +99,11 @@
       "id": "b1-20-02.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which expression introduces a consequence? [¿Qué expresión introduce una consecuencia?]",
+      "question": "Which expression introduces a consequence?",
       "options": [
-        "por lo tanto [therefore]",
+        "por eso [so]",
         "debido a [due to]",
-        "ya que [since]"
+        "porque [because]"
       ],
       "correct": 0,
       "teaches": [
@@ -162,8 +162,8 @@
       "sentence": "La falta de mantenimiento desencadenó varios fallos.",
       "options": [
         "The lack of maintenance triggered several failures.",
-        "Maintenance solved every failure.",
-        "There were no failures."
+        "Maintenance solved every failure in the building.",
+        "There were no failures in the whole city."
       ],
       "correct": 0,
       "teaches": [
@@ -189,11 +189,11 @@
       "id": "b1-20-02.ex11",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Por lo tanto, fue necesario buscar otra solución.",
+      "sentence": "Por eso, fue necesario buscar otra solución.",
       "teaches": [
         "porque-y-por-eso"
       ],
-      "english": "Therefore, it was necessary to look for another solution."
+      "english": "So it was necessary to look for another solution."
     },
     {
       "id": "b1-20-02.ex12",
@@ -226,8 +226,8 @@
       ],
       "options": [
         "Tuvo su origen en un fallo técnico. [It originated in a technical failure.]",
-        "Tuvo su consecuencia en una reunión. [Its consequence was in a meeting.]",
-        "Tuvo su alternativa en un plazo. [Its alternative was in a deadline.]"
+        "Tuvo su origen de un fallo técnico. [It originated of a technical failure.]",
+        "Tuvo su origen a un fallo técnico. [It originated to a technical failure.]"
       ],
       "correct": 0,
       "teaches": [
@@ -236,7 +236,7 @@
     },
     {
       "id": "b1-20-02.ex14",
-      "category": "dialogue",
+      "category": "grammar",
       "type": "dialogue-complete",
       "prompt": [
         {
@@ -250,12 +250,12 @@
       ],
       "options": [
         "La falta de mantenimiento los desencadenó. [The lack of maintenance triggered them.]",
-        "El mantenimiento los resolvió antes de existir. [Maintenance solved them before they existed.]",
-        "Los fallos desencadenaron el mantenimiento. [The failures triggered maintenance.]"
+        "La falta de mantenimiento lo desencadenó. [The lack of maintenance triggered it.]",
+        "La falta de mantenimiento las desencadenó. [The lack of maintenance triggered them (feminine).]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-problems-solutions-vocab"
+        "objeto-directo"
       ]
     },
     {
@@ -274,7 +274,7 @@
       ],
       "options": [
         "La situación se agravó y fue necesario buscar otra solución. [The situation got worse and it was necessary to look for another solution.]",
-        "La situación fue origen y no ocurrió nada. [The situation was origin and nothing happened.]",
+        "La situación se agrava y fue necesario buscar otra solución. [The situation gets worse and it was necessary to look for another solution.]",
         "La situación se agravará y será necesario buscar otra solución. [The situation will get worse and it will be necessary to look for another solution.]"
       ],
       "correct": 0,
@@ -282,6 +282,7 @@
         "b1-problems-solutions-vocab"
       ],
       "distractor_skills": {
+        "1": "present-tense",
         "2": "futuro-simple"
       }
     },
@@ -291,8 +292,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Explain a cause and its consequence.",
-          "answer": "La falta de mantenimiento desencadenó varios fallos, por lo que la situación se agravó."
+          "prompt": "Say that the lack of maintenance triggered several failures, so the situation got worse.",
+          "answer": "La falta de mantenimiento desencadenó varios fallos, por eso la situación se agravó."
         }
       ],
       "teaches": [
@@ -305,7 +306,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Explain why a problem became worse.",
+          "prompt": "Say that the problem got worse because action was not taken in time, and that another solution was then needed.",
           "answer": "El problema se agravó porque no se actuó a tiempo y después fue necesario buscar otra solución."
         }
       ],

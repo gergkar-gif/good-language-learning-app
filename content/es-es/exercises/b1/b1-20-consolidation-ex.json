@@ -31,30 +31,29 @@
       "id": "b1-20-consolidation.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence combines a problem with a relative clause? [¿Cuál combina un problema con una oración de relativo?]",
+      "question": "Which sentence has a relative clause with a preposition?",
       "options": [
+        "El fallo afecta a un servicio del que dependen muchas personas. [The fault affects a service on which many people depend.]",
         "Hay un atasco que impide que los autobuses lleguen a tiempo. [There is a traffic jam that prevents buses from arriving on time.]",
-        "Hay un atasco enorme en la avenida principal debido a las obras del metro. [There is a huge traffic jam on the main avenue due to the metro works.]",
-        "Los autobuses urbanos llegan con puntualidad a todas las paradas del centro. [City buses arrive punctually at all stops in the city centre.]"
+        "Los autobuses llegan a tiempo a todas las paradas. [Buses arrive on time at all the stops.]"
       ],
       "correct": 0,
       "teaches": [
-        "relative-clauses"
+        "relativas-preposicion-el-que"
       ]
     },
     {
       "id": "b1-20-consolidation.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "El problema se agravó __ no se actuó a tiempo.",
+      "sentence": "La situación se agravó __ nadie actuó a tiempo.",
       "hint": "because",
       "teaches": [
         "porque-y-por-eso"
       ],
-      "english": "The problem got worse because action was not taken in time.",
+      "english": "The situation got worse because nobody acted in time.",
       "answers": [
-        "porque",
-        "ya que"
+        "porque"
       ]
     },
     {
@@ -108,16 +107,19 @@
       "id": "b1-20-consolidation.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which expression introduces a hypothetical condition? [¿Cuál introduce una condición hipotética?]",
+      "question": "Which expression introduces an imagined condition?",
       "options": [
         "si tuviéramos [if we had]",
-        "por lo tanto [therefore]",
-        "además [furthermore]"
+        "como consecuencia [as a consequence]",
+        "sin embargo [however]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "contrast-concession-connectors"
+      }
     },
     {
       "id": "b1-20-consolidation.ex07",
@@ -130,8 +132,7 @@
       ],
       "english": "If the first solution did not work, I would look for an alternative.",
       "answers": [
-        "funcionara",
-        "funcionase"
+        "funcionara"
       ]
     },
     {
@@ -144,7 +145,7 @@
         "rápido",
         "evitaría",
         "más",
-        "daños."
+        "problemas."
       ],
       "solution": [
         "Un",
@@ -152,9 +153,9 @@
         "rápido",
         "evitaría",
         "más",
-        "daños."
+        "problemas."
       ],
-      "english": "A quick change would avoid further damage.",
+      "english": "A quick change would avoid more problems.",
       "teaches": [
         "condicional-regular"
       ]
@@ -163,16 +164,19 @@
       "id": "b1-20-consolidation.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence contains a recommendation with the subjunctive? [¿Cuál contiene una recomendación con subjuntivo?]",
+      "question": "Which sentence recommends an action, with the subjunctive?",
       "options": [
-        "Conviene que se adopten medidas antes del invierno. [It is advisable that measures be adopted before winter.]",
-        "Se adoptaron medidas antes del invierno. [Measures were adopted before winter.]",
-        "Se adoptarán medidas antes del invierno. [Measures will be adopted before winter.]"
+        "Es importante que actuemos a tiempo. [It is important that we act in time.]",
+        "Actuamos a tiempo todos los días. [We act in time every day.]",
+        "Actuaremos a tiempo en el futuro. [We will act in time in the future.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-value-judgments"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-20-consolidation.ex10",
@@ -193,11 +197,11 @@
       "id": "b1-20-consolidation.ex11",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "El equipo técnico resolvería el fallo pronto.",
+      "sentence": "Mi jefe resolvería el fallo pronto.",
       "options": [
-        "The technical team would resolve the fault soon.",
-        "The technical team resolved the fault yesterday.",
-        "The technical team will never resolve it."
+        "My boss would resolve the fault soon.",
+        "My boss resolved the fault yesterday.",
+        "My boss will resolve it tomorrow."
       ],
       "correct": 0,
       "teaches": [
@@ -298,11 +302,11 @@
       "id": "b1-20-consolidation.ex16",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence combines problem, cause and response? [¿Cuál combina problema, causa y respuesta?]",
+      "question": "Which sentence gives a problem, a cause and a response?",
       "options": [
-        "El problema se agravó porque no se actuó a tiempo, por eso es necesario que abordemos su causa. [The problem got worse because action was not taken in time, so it is necessary that we address its cause.]",
-        "El problema del tráfico se agravó rápidamente porque no se tomaron medidas oportunas. [The traffic problem got worse rapidly because timely measures were not taken.]",
-        "Es absolutamente necesario que abordemos todas las dificultades técnicas en el servicio. [It is absolutely necessary that we address all technical difficulties in the service.]"
+        "El problema se agravó porque no se actuó a tiempo; por eso es necesario que abordemos su causa. [The problem got worse because action was not taken in time; so it is necessary that we address its cause.]",
+        "El problema del tráfico se agravó mucho porque no se tomaron medidas a tiempo en la ciudad. [The traffic problem got worse a lot because measures were not taken in time in the city.]",
+        "Es necesario que abordemos la causa del problema y que busquemos otra solución pronto. [It is necessary that we address the cause of the problem and look for another solution soon.]"
       ],
       "correct": 0,
       "teaches": [
@@ -315,7 +319,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Explain a problem, its cause and one necessary action.",
+          "prompt": "Say that the problem got worse because action was not taken in time, and that for this reason it is necessary to address its cause.",
           "answer": "El problema se agravó porque no se actuó a tiempo, por eso es necesario que abordemos su causa."
         }
       ],
@@ -329,8 +333,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write a short problem-solution argument.",
-          "answer": "La primera alternativa parece útil; sin embargo, sería difícil aplicarla. En conclusión, debemos elegir una solución viable."
+          "prompt": "Say that the first alternative seems useful but would be difficult to implement, and that, in short, you must choose a viable solution.",
+          "answer": "La primera alternativa parece útil; sin embargo, sería difícil aplicarla. En resumen, debemos elegir una solución viable."
         }
       ],
       "teaches": [

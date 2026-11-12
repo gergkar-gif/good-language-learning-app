@@ -27,11 +27,11 @@
       "id": "b1-20-05.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence moves from a problem to a consequence? [¿Cuál pasa del problema a la consecuencia?]",
+      "question": "Which sentence goes from a problem to its consequence?",
       "options": [
         "El problema afecta a muchas personas, por eso debemos actuar pronto. [The problem affects many people, so we must act quickly.]",
-        "El problema técnico en las instalaciones afecta diariamente a muchas personas. [The technical problem in the facilities affects many people daily.]",
-        "Existe una solución muy adecuada para modernizar toda la red de transporte. [A very suitable solution exists to modernise the entire transport network.]"
+        "El problema afecta mucho a muchas personas de esta ciudad. [The problem affects many people in this city a lot.]",
+        "Hay una solución para este problema en la ciudad. [There is a solution for this problem in the city.]"
       ],
       "correct": 0,
       "teaches": [
@@ -105,7 +105,7 @@
       "id": "b1-20-05.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which connector adds another consideration? [¿Qué conector añade otra consideración?]",
+      "question": "Which connector adds another consideration?",
       "options": [
         "además [furthermore]",
         "sin embargo [however]",
@@ -127,8 +127,7 @@
       ],
       "english": "The first alternative seems useful; however, it would be difficult to implement.",
       "answers": [
-        "sin embargo",
-        "no obstante"
+        "sin embargo"
       ]
     },
     {
@@ -182,8 +181,8 @@
       "sentence": "La primera alternativa parece útil; sin embargo, sería difícil aplicarla.",
       "options": [
         "The first alternative seems useful; however, it would be difficult to implement.",
-        "The first alternative is impossible.",
-        "The first alternative has already been implemented."
+        "The first alternative is impossible, so nobody will try it.",
+        "The first alternative has already been implemented in the city."
       ],
       "correct": 0,
       "teaches": [
@@ -207,8 +206,8 @@
       "sentence": "En conclusión, esta solución debería ser la prioridad.",
       "options": [
         "In conclusion, this solution should be the priority.",
-        "In conclusion, no solution is needed.",
-        "The priority has already disappeared."
+        "In conclusion, no solution is needed at the moment.",
+        "The priority has already disappeared from the list."
       ],
       "correct": 0,
       "teaches": [
@@ -231,13 +230,17 @@
       ],
       "options": [
         "El problema afecta a muchas personas, por eso debemos actuar pronto. [The problem affects many people, so we must act quickly.]",
-        "El problema afecta a muchas personas, aunque debemos esperar siempre. [The problem affects many people, although we should always wait.]",
-        "El problema afecta a muchas personas que no existe. [The problem affects many people that does not exist.]"
+        "El problema afecta a muchas personas, aunque debemos actuar pronto. [The problem affects many people, although we must act quickly.]",
+        "El problema afecta a muchas personas, sin embargo debemos actuar pronto. [The problem affects many people, however we must act quickly.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-problems-solutions-vocab"
-      ]
+        "porque-y-por-eso"
+      ],
+      "distractor_skills": {
+        "1": "concesivas-aunque",
+        "2": "contrast-concession-connectors"
+      }
     },
     {
       "id": "b1-20-05.ex14",
@@ -256,14 +259,15 @@
       "options": [
         "Parece útil; sin embargo, sería difícil aplicarla. [It seems useful; however, it would be difficult to implement.]",
         "Parece útil porque sería difícil aplicarla. [It seems useful because it would be difficult to implement.]",
-        "Parece útil y no tiene ninguna dificultad. [It seems useful and has no difficulty.]"
+        "Parece útil; por eso, sería difícil aplicarla. [It seems useful; so it would be difficult to implement.]"
       ],
       "correct": 0,
       "teaches": [
         "contrast-concession-connectors"
       ],
       "distractor_skills": {
-        "1": "porque-y-por-eso"
+        "1": "porque-y-por-eso",
+        "2": "porque-y-por-eso"
       }
     },
     {
@@ -282,13 +286,17 @@
       ],
       "options": [
         "Además, debemos considerar el plazo y el coste. [Furthermore, we must consider the time frame and cost.]",
-        "Además, no debemos considerar nada. [Furthermore, we should consider nothing.]",
-        "Además, el plazo y el coste no existen. [Furthermore, the time frame and cost do not exist.]"
+        "Sin embargo, debemos considerar el plazo y el coste. [However, we must consider the time frame and cost.]",
+        "Por eso, debemos considerar el plazo y el coste. [So we must consider the time frame and cost.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-problems-solutions-vocab"
-      ]
+        "argument-markers"
+      ],
+      "distractor_skills": {
+        "1": "contrast-concession-connectors",
+        "2": "porque-y-por-eso"
+      }
     },
     {
       "id": "b1-20-05.ex16",
@@ -296,7 +304,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Identify a problem and explain why action is needed.",
+          "prompt": "Say that the problem affects many people, so you must act soon.",
           "answer": "El problema afecta a muchas personas, por eso debemos actuar pronto."
         }
       ],
@@ -310,7 +318,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Evaluate an alternative and identify a difficulty.",
+          "prompt": "Say that the first alternative seems useful, but that it would be difficult to implement.",
           "answer": "La primera alternativa parece útil; sin embargo, sería difícil aplicarla."
         }
       ],
@@ -324,7 +332,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Compare alternatives and make a recommendation.",
+          "prompt": "Say that the first option is simpler, but that the second would be more effective if you had more time.",
           "answer": "La primera opción es más sencilla, pero la segunda sería más eficaz si tuviéramos más tiempo."
         }
       ],
@@ -338,7 +346,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write a short problem-solution argument.",
+          "prompt": "Write three sentences: the problem has a clear origin; in addition, you must consider several alternatives; in conclusion, this solution should be the priority.",
           "answer": "El problema tiene un origen claro. Además, debemos considerar varias alternativas. En conclusión, esta solución debería ser la prioridad."
         }
       ],
@@ -350,11 +358,11 @@
       "id": "b1-20-05.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
+      "question": "¿Qué le pasa a Paulino al principio?",
       "options": [
-        "Una comunidad busca la mejor solución para reparar un puente dañado.",
-        "El puente nunca tuvo ningún problema.",
-        "Los vecinos deciden no hacer nada."
+        "Pisa una serpiente y le muerde el pie.",
+        "Cae de la canoa al río Paraná.",
+        "Pierde su canoa en el río."
       ],
       "correct": 0
     },
@@ -362,11 +370,11 @@
       "id": "b1-20-05.ex21",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
+      "question": "¿Qué hace Dorotea cuando Paulino le pide caña?",
       "options": [
-        "La falta de mantenimiento había causado varios fallos.",
-        "El puente era completamente nuevo.",
-        "No había ningún atasco de tráfico."
+        "Le trae un vaso lleno.",
+        "Le trae un médico del pueblo.",
+        "Le prepara la canoa para el río."
       ],
       "correct": 0
     },
@@ -374,11 +382,11 @@
       "id": "b1-20-05.ex22",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
+      "question": "¿Qué hace Paulino para llegar a Tacurú-Pucú?",
       "options": [
-        "La comparación entre reparar el puente y cambiar las rutas.",
-        "Una lista de precios de autobuses.",
-        "Una descripción de otro puente."
+        "Va en su canoa por el río Paraná.",
+        "Camina por la selva toda la noche.",
+        "Espera a su compadre en la casa."
       ],
       "correct": 0
     },
@@ -386,11 +394,11 @@
       "id": "b1-20-05.ex23",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
+      "question": "¿Qué cree Paulino cuando se siente mejor?",
       "options": [
-        "Resolver un problema requiere conocer su origen y comparar alternativas.",
-        "Los problemas de infraestructura no tienen solución.",
-        "Cambiar las rutas era imposible."
+        "Que el veneno se va.",
+        "Que la serpiente vuelve.",
+        "Que su mujer llega en otra canoa."
       ],
       "correct": 0
     }

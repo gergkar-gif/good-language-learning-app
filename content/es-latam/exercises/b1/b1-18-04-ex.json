@@ -27,7 +27,7 @@
       "id": "b1-18-04.ex02",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which sentence expresses agreement? [¿Cuál expresa acuerdo?]",
+      "question": "Which sentence says that you agree?",
       "options": [
         "Estoy de acuerdo con la propuesta. [I agree with the proposal.]",
         "No estoy de acuerdo con la propuesta. [I do not agree with the proposal.]",
@@ -95,10 +95,10 @@
       "id": "b1-18-04.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which connector introduces contrast? [¿Qué conector introduce contraste?]",
+      "question": "Which phrase means \"however\"?",
       "options": [
         "sin embargo [however]",
-        "además [furthermore]",
+        "por ejemplo [for example]",
         "por eso [therefore]"
       ],
       "correct": 0,
@@ -106,7 +106,6 @@
         "contrast-concession-connectors"
       ],
       "distractor_skills": {
-        "1": "ordering-markers",
         "2": "porque-y-por-eso"
       }
     },
@@ -169,8 +168,8 @@
       "sentence": "Aunque la propuesta es útil, puede ser difícil aplicarla.",
       "options": [
         "Although the proposal is useful, it may be difficult to implement it.",
-        "The proposal is impossible.",
-        "The proposal has already been implemented."
+        "The proposal is useless, and nobody wanted to implement it.",
+        "The proposal has already been implemented in the whole city."
       ],
       "correct": 0,
       "teaches": [
@@ -233,7 +232,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué problema ves?"
+          "text": "¿Qué piensas de la propuesta?"
         },
         {
           "speaker": "B",
@@ -241,16 +240,17 @@
         }
       ],
       "options": [
-        "Sin embargo, necesitamos más información. [However, we need more information.]",
-        "Por eso, no necesitamos información. [Therefore, we need no information.]",
-        "A pesar de que necesitamos más información. [Although we need more information.]"
+        "Es buena; sin embargo, necesitamos más información. [It is good; however, we need more information.]",
+        "Es buena; por eso, necesitamos más información. [It is good; therefore, we need more information.]",
+        "Es buena; porque necesitamos más información. [It is good; because we need more information.]"
       ],
       "correct": 0,
       "teaches": [
         "contrast-concession-connectors"
       ],
       "distractor_skills": {
-        "1": "porque-y-por-eso"
+        "1": "porque-y-por-eso",
+        "2": "porque-y-por-eso"
       }
     },
     {
@@ -269,13 +269,16 @@
       ],
       "options": [
         "Aunque la propuesta es útil, puede ser difícil aplicarla. [Although the proposal is useful, it may be difficult to implement it.]",
-        "A pesar de la propuesta es útil, puede ser difícil aplicarla. [Despite the proposal is useful, it may be difficult to implement it.]",
+        "Pero la propuesta es útil, puede ser difícil aplicarla. [But the proposal is useful, it may be difficult to implement it.]",
         "Porque la propuesta es útil, puede ser difícil aplicarla. [Because the proposal is useful, it may be difficult to implement it.]"
       ],
       "correct": 0,
       "teaches": [
         "concesivas-aunque"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "porque-y-por-eso"
+      }
     },
     {
       "id": "b1-18-04.ex16",
@@ -283,7 +286,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Agree or disagree with a public proposal and give a reason.",
+          "prompt": "Say that you agree with the proposal because it can improve the service.",
           "answer": "Estoy de acuerdo con la propuesta porque puede mejorar el servicio."
         }
       ],
@@ -297,7 +300,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Express a qualified disagreement.",
+          "prompt": "Say that you do not agree with the measure, but that you understand the objective.",
           "answer": "No estoy de acuerdo con la medida. Sin embargo, entiendo el objetivo."
         }
       ],

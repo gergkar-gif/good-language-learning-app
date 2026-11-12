@@ -31,7 +31,7 @@
       "id": "b1-18-01.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence uses an impersonal se construction? [¿Cuál usa una construcción impersonal con se?]",
+      "question": "Which sentence uses *se* without naming who does the action?",
       "options": [
         "Se publican nuevas leyes cada año. [New laws are published every year.]",
         "El Parlamento publicó una ley. [Parliament published a law.]",
@@ -103,20 +103,16 @@
       "id": "b1-18-01.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence focuses on a completed passive action? [¿Cuál se centra en una acción pasiva completada?]",
+      "question": "The laws were approved by Parliament. Which sentence says this?",
       "options": [
-        "La ley fue aprobada por el Parlamento. [The law was approved by Parliament.]",
-        "Se publica una ley. [A law is published.]",
-        "Se toman decisiones. [Decisions are made.]"
+        "Las leyes fueron aprobadas por el Parlamento. [The laws were approved by Parliament.]",
+        "Las leyes fue aprobadas por el Parlamento. [The laws was approved by Parliament.]",
+        "Las leyes fueron aprobada por el Parlamento. [The laws were approved (singular) by Parliament.]"
       ],
       "correct": 0,
       "teaches": [
         "ser-passive"
-      ],
-      "distractor_skills": {
-        "1": "pasiva-refleja",
-        "2": "pasiva-refleja"
-      }
+      ]
     },
     {
       "id": "b1-18-01.ex07",
@@ -126,7 +122,7 @@
       "hint": "aprobar",
       "answer": "aprobada",
       "teaches": [
-        "past-participles"
+        "ser-passive"
       ],
       "english": "The law was approved by Parliament."
     },
@@ -179,8 +175,8 @@
       "sentence": "Se ofrecen servicios públicos en la ciudad.",
       "options": [
         "Public services are offered in the city.",
-        "Public services are closed.",
-        "The city offers no services."
+        "Public services are closed in the city.",
+        "The city offers no public services now."
       ],
       "correct": 0,
       "teaches": [
@@ -295,8 +291,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a completed public action using a passive-like construction.",
-          "answer": "La ley fue aprobada por el Parlamento después de un debate."
+          "prompt": "Say that the law was approved by Parliament, using ser + past participle.",
+          "answer": "La ley fue aprobada por el Parlamento."
         }
       ],
       "teaches": [

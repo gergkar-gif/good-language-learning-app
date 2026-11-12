@@ -31,7 +31,7 @@
       "options": [
         "Los precios suben porque hay mucha demanda. [Prices rise because there is high demand.]",
         "Los precios de la vivienda suben de forma continua. [Housing prices rise continuously.]",
-        "Los precios de los billetes de tren son bastante altos. [Train ticket prices are quite high.]"
+        "Los precios de los boletos de tren son bastante altos. [Train ticket prices are quite high.]"
       ],
       "correct": 0,
       "teaches": [
@@ -49,8 +49,7 @@
       ],
       "english": "Prices rise because there is high demand.",
       "answers": [
-        "porque",
-        "ya que"
+        "porque"
       ]
     },
     {
@@ -116,7 +115,7 @@
       "id": "b1-19-03.ex06",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which expression means «as a consequence»? [¿Qué expresión significa «como consecuencia»?]",
+      "question": "Which expression means \"as a consequence\"?",
       "options": [
         "como consecuencia [as a consequence]",
         "debido a que [due to the fact that]",
@@ -138,9 +137,7 @@
       ],
       "english": "There is little supply; therefore, the price increases.",
       "answers": [
-        "por eso",
-        "por lo tanto",
-        "por tanto"
+        "por eso"
       ]
     },
     {
@@ -225,8 +222,8 @@
       "sentence": "Como consecuencia, algunas familias gastan menos.",
       "options": [
         "As a consequence, some families spend less.",
-        "As a cause, families spend more.",
-        "Families spend the same."
+        "As a consequence, all families spend more.",
+        "Families spend the same amount as before."
       ],
       "correct": 0,
       "teaches": [
@@ -264,7 +261,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué ocurre cuando hay poca oferta?"
+          "text": "Hay poca oferta."
         },
         {
           "speaker": "B",
@@ -273,13 +270,16 @@
       ],
       "options": [
         "Por eso, el precio aumenta. [Therefore, the price increases.]",
-        "Porque, el precio aumenta. [Because, the price increases.]",
-        "Debido a, el precio aumenta. [Due to, the price increases.]"
+        "Porque el precio aumenta. [Because the price increases.]",
+        "Debido a que el precio aumenta. [Due to the fact that the price increases.]"
       ],
       "correct": 0,
       "teaches": [
         "porque-y-por-eso"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "formal-cause-connectors"
+      }
     },
     {
       "id": "b1-19-03.ex15",
@@ -296,9 +296,9 @@
         }
       ],
       "options": [
-        "Algunas familias gastan menos. [Some families spend less.]",
-        "Algunas familias debido a menos. [Some families due to less.]",
-        "Algunas familias porque menos. [Some families because less.]"
+        "Por eso, algunas familias gastan menos. [Therefore, some families spend less.]",
+        "Porque algunas familias gastan menos. [Because some families spend less.]",
+        "Debido a algunas familias gastan menos. [Due to some families spend less.]"
       ],
       "correct": 0,
       "teaches": [

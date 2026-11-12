@@ -27,7 +27,7 @@
       "id": "b1-18-05.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence proposes an action? [¿Cuál propone una acción?]",
+      "question": "Which sentence proposes something to do?",
       "options": [
         "Es necesario que estudiemos otras opciones. [It is necessary that we study other options.]",
         "El problema afecta a muchos ciudadanos. [The problem affects many citizens.]",
@@ -55,22 +55,24 @@
       "category": "vocabulary",
       "type": "sentence-builder",
       "tiles": [
-        "El",
+        "Es",
+        "necesario",
+        "explicar",
+        "el",
         "problema",
-        "afecta",
-        "a",
-        "muchos",
-        "ciudadanos."
+        "con",
+        "claridad."
       ],
       "solution": [
-        "El",
+        "Es",
+        "necesario",
+        "explicar",
+        "el",
         "problema",
-        "afecta",
-        "a",
-        "muchos",
-        "ciudadanos."
+        "con",
+        "claridad."
       ],
-      "english": "The problem affects many citizens.",
+      "english": "It is necessary to explain the problem with clarity.",
       "teaches": [
         "b1-politics-public-life-vocab"
       ]
@@ -97,18 +99,19 @@
       "id": "b1-18-05.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which phrase introduces a qualification? [¿Qué frase introduce una matización?]",
+      "question": "Which phrase means \"however\"?",
       "options": [
         "Sin embargo [However]",
         "En primer lugar [First of all]",
-        "Por lo tanto [Therefore]"
+        "Por eso [Therefore]"
       ],
       "correct": 0,
       "teaches": [
         "contrast-concession-connectors"
       ],
       "distractor_skills": {
-        "1": "ordering-markers"
+        "1": "ordering-markers",
+        "2": "porque-y-por-eso"
       }
     },
     {
@@ -210,7 +213,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Cuál es tu posición?"
+          "text": "¿Qué piensas de esta propuesta?"
         },
         {
           "speaker": "B",
@@ -234,7 +237,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué dificultad debemos considerar?"
+          "text": "Me gusta la propuesta."
         },
         {
           "speaker": "B",
@@ -243,13 +246,17 @@
       ],
       "options": [
         "Sin embargo, debemos considerar su coste. [However, we must consider its cost.]",
-        "Sin embargo, no debemos considerar nada. [However, we must consider nothing.]",
-        "Sin embargo, debamos considerar su coste. [However, we must (subjunctive) consider its cost.]"
+        "Por eso, debemos considerar su coste. [Therefore, we must consider its cost.]",
+        "Porque debemos considerar su coste. [Because we must consider its cost.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-politics-public-life-vocab"
-      ]
+        "contrast-concession-connectors"
+      ],
+      "distractor_skills": {
+        "1": "porque-y-por-eso",
+        "2": "porque-y-por-eso"
+      }
     },
     {
       "id": "b1-18-05.ex15",
@@ -313,7 +320,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write a short public-discussion contribution.",
+          "prompt": "Say that you think the proposal can work, but that we must consider its cost and citizens' needs.",
           "answer": "Creo que la propuesta puede funcionar. Sin embargo, debemos considerar su coste y las necesidades de los ciudadanos."
         }
       ],
@@ -327,7 +334,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give a connected recommendation.",
+          "prompt": "Say that, because of this, it is necessary for us to study other options before making a final decision.",
           "answer": "Por eso, es necesario que estudiemos otras opciones antes de tomar una decisión definitiva."
         }
       ],
@@ -339,11 +346,11 @@
       "id": "b1-18-05.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
+      "question": "¿Qué hacía la gente de la llanura cuando hablaba el caudillo?",
       "options": [
-        "Una reunión pública debate cómo mejorar el transporte de la ciudad.",
-        "El ayuntamiento decide cancelar todos los servicios.",
-        "Nadie asiste a la reunión."
+        "Obedecía sin hacer preguntas.",
+        "Discutía antes en una asamblea.",
+        "Escribía una constitución."
       ],
       "correct": 0
     },
@@ -351,11 +358,11 @@
       "id": "b1-18-05.ex21",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
+      "question": "¿Qué le pasaba al que no obedecía a Facundo?",
       "options": [
-        "Se habían recibido muchas quejas sobre las conexiones de transporte.",
-        "El transporte funcionaba perfectamente.",
-        "La reunión terminó en unos minutos."
+        "Era castigado.",
+        "Era elegido jefe de la región.",
+        "Era invitado a una asamblea."
       ],
       "correct": 0
     },
@@ -363,11 +370,11 @@
       "id": "b1-18-05.ex22",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
+      "question": "Según el texto, ¿qué se hacía en las ciudades?",
       "options": [
-        "La explicación de cómo el ayuntamiento toma decisiones.",
-        "Una lista de horarios de trenes.",
-        "Una descripción de otro país."
+        "Se escribían constituciones y se discutían las leyes.",
+        "Se confiaba en un solo jefe que iba a caballo.",
+        "Se castigaba a todos los que hablaban mucho."
       ],
       "correct": 0
     },
@@ -375,11 +382,11 @@
       "id": "b1-18-05.ex23",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
+      "question": "¿Qué defendía Sarmiento en su libro?",
       "options": [
-        "Las decisiones públicas deben explicarse con claridad y permitir participación.",
-        "Las decisiones del ayuntamiento no necesitan explicación.",
-        "El problema del transporte ya se resolvió por completo."
+        "Las leyes, los tribunales y las elecciones.",
+        "El gobierno de un caudillo en cada ciudad.",
+        "Una sola persona para tomar las decisiones."
       ],
       "correct": 0
     }

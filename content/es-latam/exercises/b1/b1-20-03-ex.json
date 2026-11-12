@@ -27,16 +27,20 @@
       "id": "b1-20-03.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence correctly uses necessity + subjunctive? [¿Cuál usa correctamente necesidad + subjuntivo?]",
+      "question": "It is necessary that we act so that the problem does not get worse. Which sentence says this?",
       "options": [
-        "Es necesario que actuemos antes de que el problema se agrave. [It is necessary that we act before the problem gets worse.]",
-        "Es necesario que actuamos antes de que el problema se agrava. [It is necessary that we act before the problem gets worse.]",
-        "Es necesario actuar que el problema se agrave. [It is necessary to act that the problem gets worse.]"
+        "Es necesario que actuemos para que el problema no se agrave. [It is necessary that we act so that the problem does not get worse.]",
+        "Es necesario que actuamos para que el problema no se agrave. [It is necessary that we (indicative) act so that the problem does not get worse.]",
+        "Es necesario que actuemos para que el problema no se agrava. [It is necessary that we act so that the problem (indicative) does not get worse.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-value-judgments"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ar-verbs",
+        "2": "ar-verbs"
+      }
     },
     {
       "id": "b1-20-03.ex03",
@@ -103,8 +107,8 @@
       "type": "multiple-choice",
       "question": "Which form follows «Hace falta que»? [¿Qué forma sigue a «Hace falta que»?]",
       "options": [
-        "prevengan [prevent]",
-        "previenen [prevent]",
+        "prevengan [prevent (subjunctive)]",
+        "previenen [prevent (indicative)]",
         "prevenir [to prevent]"
       ],
       "correct": 0,
@@ -136,11 +140,11 @@
         "necesario",
         "que",
         "actuemos",
-        "antes",
-        "de",
+        "para",
         "que",
         "el",
         "problema",
+        "no",
         "se",
         "agrave."
       ],
@@ -149,15 +153,15 @@
         "necesario",
         "que",
         "actuemos",
-        "antes",
-        "de",
+        "para",
         "que",
         "el",
         "problema",
+        "no",
         "se",
         "agrave."
       ],
-      "english": "It is necessary that we act before the problem gets worse.",
+      "english": "It is necessary that we act so that the problem does not get worse.",
       "teaches": [
         "subjunctive-value-judgments"
       ]
@@ -166,11 +170,11 @@
       "id": "b1-20-03.ex09",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "Es necesario que actuemos antes de que el problema se agrave.",
+      "sentence": "Es necesario que actuemos para que el problema no se agrave.",
       "options": [
-        "It is necessary that we act before the problem gets worse.",
-        "We should wait until the problem gets worse.",
-        "The problem has already been solved."
+        "It is necessary that we act so that the problem does not get worse.",
+        "We should wait quietly until the problem gets worse.",
+        "The problem has already been solved by the authorities."
       ],
       "correct": 0,
       "teaches": [
@@ -224,7 +228,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué debemos hacer antes de que el problema empeore?"
+          "text": "¿Qué debemos hacer para que el problema no empeore?"
         },
         {
           "speaker": "B",
@@ -233,7 +237,7 @@
       ],
       "options": [
         "Es necesario que actuemos a tiempo. [It is necessary that we act in time.]",
-        "Es necesario que actuamos a tiempo. [It is necessary that we act in time.]",
+        "Es necesario que actuamos a tiempo. [It is necessary that we (indicative) act in time.]",
         "Es necesario que actuaríamos a tiempo. [It is necessary that we would act in time.]"
       ],
       "correct": 0,
@@ -261,7 +265,7 @@
       ],
       "options": [
         "Hace falta que prevengan nuevas averías. [The authorities need to prevent new breakdowns.]",
-        "Hace falta que previenen nuevas averías. [The authorities need to prevent new breakdowns.]",
+        "Hace falta que previenen nuevas averías. [The authorities (indicative) prevent new breakdowns.]",
         "Hace falta que prevenirán nuevas averías. [The authorities will prevent new breakdowns.]"
       ],
       "correct": 0,
@@ -280,7 +284,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué acción propones?"
+          "text": "¿Qué propones?"
         },
         {
           "speaker": "B",
@@ -289,7 +293,7 @@
       ],
       "options": [
         "Es importante que abordemos la causa del problema. [It is important that we address the cause of the problem.]",
-        "Es importante que abordamos la causa del problema. [It is important that we address the cause of the problem.]",
+        "Es importante que abordamos la causa del problema. [It is important that we (indicative) address the cause of the problem.]",
         "Es importante que abordaríamos la causa del problema. [It is important that we would address the cause of the problem.]"
       ],
       "correct": 0,
@@ -307,7 +311,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give two necessary actions to prevent a problem.",
+          "prompt": "Say that it is necessary for us to act in time and to prevent new breakdowns.",
           "answer": "Es necesario que actuemos a tiempo y que prevengamos nuevas averías."
         }
       ],
@@ -321,7 +325,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Recommend a measure and explain what it addresses.",
+          "prompt": "Say that it is important to address the cause of the problem in order to prevent new breakdowns.",
           "answer": "Es importante que abordemos la causa del problema para prevenir nuevas averías."
         }
       ],
