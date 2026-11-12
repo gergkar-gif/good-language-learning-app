@@ -1,0 +1,790 @@
+[
+ {
+  "file": "content/es-es/grammar/b1/b1-18-01-impersonal-and-passive-like-constructions-gr.json",
+  "old": "\"content\": \"Spanish often describes public processes without naming an individual actor. Use *se* + third-person verb for general processes, and *ser* + past participle when the action or result is foregrounded. These structures are common in descriptions of government and public services.\"",
+  "new": "\"content\": \"You know the *se* passive (*se publican las leyes*) from B1 Unit 11. This lesson adds the passive with *ser* + past participle: *La ley fue aprobada por el Parlamento*. The participle agrees with the subject (*la ley fue aprobada*, *las leyes fueron aprobadas*) and *por* names who does the action. Use the *se* passive when the actor is general or unimportant, and *ser* + participle when you want to name the actor or stress the result.\"",
+  "why": "presents the se passive (B1 Unit 11) as new; the unit's skill is ser + participle",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-18-01-impersonal-and-passive-like-constructions-gr.json",
+  "old": "\"content\": \"Use *se* when the actor is general or unimportant; use a passive-like form when the result or action itself is the focus.\"",
+  "new": "\"content\": \"With *ser* + participle the participle agrees with the subject: *aprobada* after *la ley*, *aprobadas* after *las leyes*. With *se* the verb agrees with the thing: *se publican leyes*.\"",
+  "why": "tip was a vague one-liner; state the agreement rule the lesson drills",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-18-01-impersonal-and-passive-like-constructions-gr.json",
+  "old": "        {\n          \"spanish\": \"Se toman decisiones importantes en estas reuniones.\",\n          \"english\": \"Important decisions are made in these meetings.\"\n        }",
+  "new": "        {\n          \"spanish\": \"Se toman decisiones importantes en estas reuniones.\",\n          \"english\": \"Important decisions are made in these meetings.\"\n        },\n        {\n          \"spanish\": \"Las leyes fueron aprobadas por el Parlamento.\",\n          \"english\": \"The laws were approved by Parliament.\"\n        }",
+  "why": "add a plural ser-passive example so the agreement rule is shown",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-01-ex.json",
+  "id": "b1-18-01.ex02",
+  "set": {
+   "question": "Which sentence uses *se* without naming who does the action?"
+  },
+  "why": "English-only stem (unmet Spanish: construcción, usa)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-01-ex.json",
+  "id": "b1-18-01.ex06",
+  "set": {
+   "question": "The laws were approved by Parliament. Which sentence says this?",
+   "options": [
+    "Las leyes fueron aprobadas por el Parlamento. [The laws were approved by Parliament.]",
+    "Las leyes fue aprobadas por el Parlamento. [The laws was approved by Parliament.]",
+    "Las leyes fueron aprobada por el Parlamento. [The laws were approved (singular) by Parliament.]"
+   ],
+   "correct": 0,
+   "distractor_skills": null
+  },
+  "why": "length give-away 38 vs 20; stem had unmet Spanish (centra, pasiva, completada); wrong options were not ser-passives",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-01-ex.json",
+  "id": "b1-18-01.ex10",
+  "set": {
+   "options": [
+    "Public services are offered in the city.",
+    "Public services are closed in the city.",
+    "The city offers no public services now."
+   ],
+   "correct": 0
+  },
+  "why": "length give-away 40 vs 28",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-01-ex.json",
+  "id": "b1-18-01.ex16",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that the law was approved by Parliament, using ser + past participle.",
+     "answer": "La ley fue aprobada por el Parlamento."
+    }
+   ]
+  },
+  "why": "prompt did not pin the ser-passive; answer used the unmet word debate",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-18-02-necessity-and-subjunctive-gr.json",
+  "old": "\"content\": \"Use es *necesario* *que*, es *importante* que, *hace* *falta* que and *conviene* que + present subjunctive to discuss what governments or institutions should do.\"",
+  "new": "\"content\": \"You know *es importante que* + subjunctive from A2 Unit 27. The same pattern says what governments should do: *es necesario que*, *hace falta que* and *conviene que* are also followed by the present subjunctive.\"",
+  "why": "known A2 Unit 27 pattern presented as new; garbled italics",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-18-02-necessity-and-subjunctive-gr.json",
+  "old": "\"content\": \"When nobody wants to name exactly who should act, Spanish often reaches for passive *se* inside the subjunctive clause: es *importante* que se *garanticen* ciertos derechos, rather than naming *el* *Gobierno* as the subject.\"",
+  "new": "\"content\": \"When you do not want to name who should act, use the *se* passive you know from B1 Unit 11 inside the subjunctive clause: *es importante que se garanticen ciertos derechos*.\"",
+  "why": "garbled italics; recap the se passive",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-02-ex.json",
+  "id": "b1-18-02.ex02",
+  "set": {
+   "question": "It is necessary that the government protect public services. Which sentence says this?"
+  },
+  "why": "stem in unmet Spanish (correctamente, necesidad); put the meaning in English",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-02-ex.json",
+  "id": "b1-18-02.ex10",
+  "set": {
+   "options": [
+    "It is important that certain rights be guaranteed.",
+    "Rights are not important to the government.",
+    "Certain rights were removed from the law."
+   ],
+   "correct": 0
+  },
+  "why": "length give-away 50 vs 38",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-02-ex.json",
+  "id": "b1-18-02.ex12",
+  "set": {
+   "options": [
+    "It is advisable for the government to improve public transport.",
+    "The government improved public transport yesterday.",
+    "The government will close public transport tomorrow."
+   ],
+   "correct": 0
+  },
+  "why": "length give-away 63 vs 38",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-02-ex.json",
+  "id": "b1-18-02.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "¿Qué necesitan las instituciones?"
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Hace falta que respondan a las necesidades de la ciudadanía. [Institutions need to respond to citizens' needs.]",
+    "Hace falta que responden a las necesidades de la ciudadanía. [Institutions need (indicative) to respond to citizens' needs.]",
+    "Hace falta que responderían a las necesidades de la ciudadanía. [Institutions need (conditional) to respond to citizens' needs.]"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "er-ir-verbs",
+    "2": "condicional-regular"
+   }
+  },
+  "why": "length give-away 60 vs 46",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-02-ex.json",
+  "id": "b1-18-02.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "¿Qué conviene hacer?"
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Conviene que el Gobierno mejore el transporte público. [It is advisable for the government to improve public transport.]",
+    "Conviene que el Gobierno mejora el transporte público. [It is advisable that the government improves (indicative) public transport.]",
+    "Conviene que el Gobierno mejoraría el transporte público. [It is advisable that the government would improve (conditional) public transport.]"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ar-verbs",
+    "2": "condicional-regular"
+   }
+  },
+  "why": "glosses of the wrong options were identical to the right one",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/vocabulary/b1/b1-18-02-voc.json",
+  "old": "    {\n      \"lemma\": \"garantizar\",\n      \"translation\": \"to guarantee\",\n      \"pos\": \"verb\"\n    }\n  ]\n}\n",
+  "new": "    {\n      \"lemma\": \"garantizar\",\n      \"translation\": \"to guarantee\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"necesidad\",\n      \"translation\": \"need\",\n      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "why": "necesidades (ex04, grammar example, ex16, consolidation) is in no list in es-latam",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-02-ex.json",
+  "id": "b1-18-02.ex09",
+  "set": {
+   "options": [
+    "It is necessary that the government protect public services.",
+    "The government protected public services yesterday.",
+    "The government will never protect public services."
+   ],
+   "correct": 0
+  },
+  "why": "length give-away 60 vs 40",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-18-03-opinion-and-evaluation-gr.json",
+  "old": "\"content\": \"Use *creo* *que*, *considero* que and me *parece* que to express political opinions. Evaluation can be strengthened with expressions such as es *importante*, es positivo, es *preocupante* and es difícil.\"",
+  "new": "\"content\": \"You know *creo que* and *me parece que* from B1 Unit 13: they take the indicative, and so does *considero que*. To evaluate something, use *es importante que* (A2 Unit 27) or the new *me parece preocupante que*, with the subjunctive.\"",
+  "why": "known B1 Unit 13 / A2 Unit 27 forms presented as new; garbled italics",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-18-03-opinion-and-evaluation-gr.json",
+  "old": "\"content\": \"Watch *me* *parece*: on its own it works like *creo* *que* and takes the indicative, but *me* *parece* *preocupante* que switches to the subjunctive, because now it's an evaluation (*preocupante*) rather than a plain assertion.\"",
+  "new": "\"content\": \"*Me parece que* + indicative gives an opinion (*me parece que la medida es eficaz*); *me parece preocupante que* + subjunctive evaluates (*me parece preocupante que el servicio sea tan caro*).\"",
+  "why": "garbled italics; the contrast the lesson drills",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-03-ex.json",
+  "id": "b1-18-03.ex02",
+  "set": {
+   "question": "Which sentence states an opinion?",
+   "options": [
+    "Creo que la propuesta es positiva. [I think the proposal is positive.]",
+    "La propuesta llega a la ciudad. [The proposal reaches the city.]",
+    "Hay una propuesta para la ciudad. [There is a proposal for the city.]"
+   ],
+   "correct": 0
+  },
+  "why": "length give-away 34 vs 20; unmet existe/expresa; Spanish gloss in stem",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-03-ex.json",
+  "id": "b1-18-03.ex13",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "¿Qué piensas de la propuesta?"
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Creo que la propuesta es positiva. [I think the proposal is positive.]",
+    "Creo que la propuesta sea positiva. [I think the proposal is (subjunctive) positive.]",
+    "No creo que la propuesta es positiva. [I do not think the proposal is (indicative) positive.]"
+   ],
+   "correct": 0
+  },
+  "why": "opinas is in no list; second wrong option carried an agreement fault, not the mood fault the item tests",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-03-ex.json",
+  "id": "b1-18-03.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "¿Qué piensas de la medida?"
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Considero que la medida es eficaz. [I consider the measure effective.]",
+    "Considero que la medida sea eficaz. [I consider that the measure is (subjunctive) effective.]",
+    "Considero de que la medida es eficaz. [I consider of that the measure is effective.]"
+   ],
+   "correct": 0
+  },
+  "why": "valoras unmet in es-latam",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/vocabulary/b1/b1-18-03-voc.json",
+  "old": "    {\n      \"lemma\": \"eficaz\",\n      \"translation\": \"effective\",\n      \"pos\": \"adjective\"\n    }\n  ]\n}\n",
+  "new": "    {\n      \"lemma\": \"eficaz\",\n      \"translation\": \"effective\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"transparente\",\n      \"translation\": \"transparent\",\n      \"pos\": \"adjective\"\n    }\n  ]\n}\n",
+  "why": "transparentes used in ex07, dictation and consolidation is in no list",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-03-ex.json",
+  "id": "b1-18-03.ex06",
+  "set": {
+   "question": "Which expression means \"I consider\"?"
+  },
+  "why": "Spanish bracket gloss in unmet metalanguage (expresión, significa); ask in English",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-18-04-agreement-disagreement-and-connectors-gr.json",
+  "old": "\"content\": \"Use *estoy* de *acuerdo*, no estoy de acuerdo, *sin* *embargo*, además, por eso and *aunque* to connect positions in a public debate.\"",
+  "new": "\"content\": \"You know *sin embargo* from B1 Unit 1, *aunque* and *además* from A2 Unit 28, and *por eso* from A2 Unit 5. In a debate you use them to give a reason, add a point or qualify a view. New here: *estar de acuerdo* and *no estar de acuerdo con* to state your position.\"",
+  "why": "known connectors presented as new; garbled italics",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-04-ex.json",
+  "id": "b1-18-04.ex02",
+  "set": {
+   "question": "Which sentence says that you agree?"
+  },
+  "why": "unmet expresa in the stem; ask in English",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-04-ex.json",
+  "id": "b1-18-04.ex06",
+  "set": {
+   "question": "Which phrase means \"however\"?",
+   "options": [
+    "sin embargo [however]",
+    "por ejemplo [for example]",
+    "por eso [therefore]"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "2": "porque-y-por-eso"
+   }
+  },
+  "why": "length give-away 11 vs 7; stem in unmet Spanish (conector, contraste)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-04-ex.json",
+  "id": "b1-18-04.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "¿Qué piensas de la propuesta?"
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Es buena; sin embargo, necesitamos más información. [It is good; however, we need more information.]",
+    "Es buena; por eso, necesitamos más información. [It is good; therefore, we need more information.]",
+    "Es buena; porque necesitamos más información. [It is good; because we need more information.]"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "porque-y-por-eso",
+    "2": "porque-y-por-eso"
+   }
+  },
+  "why": "a pesar de is taught in b1-32-03 (used as a wrong option); reply \"However, ...\" to a question about a problem was unnatural",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-04-ex.json",
+  "id": "b1-18-04.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "¿Puedes reconocer una dificultad?"
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Aunque la propuesta es útil, puede ser difícil aplicarla. [Although the proposal is useful, it may be difficult to implement it.]",
+    "Pero la propuesta es útil, puede ser difícil aplicarla. [But the proposal is useful, it may be difficult to implement it.]",
+    "Porque la propuesta es útil, puede ser difícil aplicarla. [Because the proposal is useful, it may be difficult to implement it.]"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "2": "porque-y-por-eso"
+   }
+  },
+  "why": "a pesar de (b1-32-03) as a wrong option",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-04-ex.json",
+  "id": "b1-18-04.ex10",
+  "set": {
+   "options": [
+    "Although the proposal is useful, it may be difficult to implement it.",
+    "The proposal is useless, and nobody wanted to implement it.",
+    "The proposal has already been implemented in the whole city."
+   ],
+   "correct": 0
+  },
+  "why": "length give-away 69 vs 42",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/b1/b1-18-05-integrated-public-discussion-gr.json",
+  "old": "\"content\": \"A public discussion combines description, opinion, evaluation, agreement, disagreement and recommendations. Organise a contribution by stating the issue, explaining your position, acknowledging another view and proposing a practical action.\"",
+  "new": "\"content\": \"You know these tools from this unit and from earlier ones: *creo que* (B1 Unit 13), *sin embargo* (B1 Unit 1), *por eso* (A2 Unit 5) and *es necesario que* (A2 Unit 27). A public discussion combines description, opinion, evaluation, agreement, disagreement and recommendations. Organise a contribution by stating the issue, explaining your position, acknowledging another view and proposing a practical action.\"",
+  "why": "integration lesson presents known tools without a recap",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-05-ex.json",
+  "id": "b1-18-05.ex02",
+  "set": {
+   "question": "Which sentence proposes something to do?"
+  },
+  "why": "acción unmet in es-latam; Spanish gloss in stem",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-05-ex.json",
+  "id": "b1-18-05.ex06",
+  "set": {
+   "question": "Which phrase means \"however\"?",
+   "options": [
+    "Sin embargo [However]",
+    "En primer lugar [First of all]",
+    "Por eso [Therefore]"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ordering-markers",
+    "2": "porque-y-por-eso"
+   }
+  },
+  "why": "por lo tanto is B2; stem used the unmet word matización",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-05-ex.json",
+  "id": "b1-18-05.ex13",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "¿Qué piensas de esta propuesta?"
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Creo que la propuesta puede funcionar. [I think the proposal can work.]",
+    "Creo que la propuesta pueda funcionar. [I think the proposal can (subjunctive) work.]",
+    "Creo de que la propuesta puede funcionar. [I think of that the proposal can work.]"
+   ],
+   "correct": 0
+  },
+  "why": "posición is in no list",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-05-ex.json",
+  "id": "b1-18-05.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "Me gusta la propuesta."
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sin embargo, debemos considerar su coste. [However, we must consider its cost.]",
+    "Por eso, debemos considerar su coste. [Therefore, we must consider its cost.]",
+    "Porque debemos considerar su coste. [Because we must consider its cost.]"
+   ],
+   "correct": 0,
+   "teaches": [
+    "contrast-concession-connectors"
+   ],
+   "distractor_skills": {
+    "1": "porque-y-por-eso",
+    "2": "porque-y-por-eso"
+   }
+  },
+  "why": "a reply starting with \"However\" to a question about a difficulty was unnatural; wrong options broke different things",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/vocabulary/b1/b1-18-05-voc.json",
+  "old": "    {\n      \"lemma\": \"claridad\",\n      \"translation\": \"clarity\",\n      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "new": "    {\n      \"lemma\": \"claridad\",\n      \"translation\": \"clarity\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"asamblea\",\n      \"translation\": \"assembly\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"constitución\",\n      \"translation\": \"constitution\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"elección\",\n      \"translation\": \"election\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"caudillo\",\n      \"translation\": \"local strongman leader\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"llanura\",\n      \"translation\": \"plain\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"castigar\",\n      \"translation\": \"to punish\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"crear\",\n      \"translation\": \"to create\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"organizar\",\n      \"translation\": \"to organise\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"tribunal\",\n      \"translation\": \"court\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"obedecer\",\n      \"translation\": \"to obey\",\n      \"pos\": \"verb\"\n    }\n  ]\n}\n",
+  "why": "story words the retelling cannot do without",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-05-ex.json",
+  "id": "b1-18-05.ex20",
+  "set": {
+   "question": "¿Qué hacía la gente de la llanura cuando hablaba el caudillo?",
+   "options": [
+    "Obedecía sin hacer preguntas.",
+    "Discutía antes en una asamblea.",
+    "Escribía una constitución."
+   ],
+   "correct": 0
+  },
+  "why": "reading item was about a transport meeting, not the story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-05-ex.json",
+  "id": "b1-18-05.ex21",
+  "set": {
+   "question": "¿Qué le pasaba al que no obedecía a Facundo?",
+   "options": [
+    "Era castigado.",
+    "Era elegido jefe de la región.",
+    "Era invitado a una asamblea."
+   ],
+   "correct": 0
+  },
+  "why": "reading item was about a transport meeting, not the story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-05-ex.json",
+  "id": "b1-18-05.ex22",
+  "set": {
+   "question": "Según el texto, ¿qué se hacía en las ciudades?",
+   "options": [
+    "Se escribían constituciones y se discutían las leyes.",
+    "Se confiaba en un solo jefe que iba a caballo.",
+    "Se castigaba a todos los que hablaban mucho."
+   ],
+   "correct": 0
+  },
+  "why": "reading item was about a transport meeting, not the story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-05-ex.json",
+  "id": "b1-18-05.ex23",
+  "set": {
+   "question": "¿Qué cambió con el tiempo?",
+   "options": [
+    "Se crearon tribunales y se organizaron elecciones.",
+    "Las ciudades aceptaron el gobierno de un caudillo.",
+    "Las elecciones fueron prohibidas en todo el país."
+   ],
+   "correct": 0
+  },
+  "why": "reading item was about a transport meeting, not the story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-05-ex.json",
+  "id": "b1-18-05.ex04",
+  "set": {
+   "tiles": [
+    "Es",
+    "necesario",
+    "explicar",
+    "el",
+    "problema",
+    "con",
+    "claridad."
+   ],
+   "solution": [
+    "Es",
+    "necesario",
+    "explicar",
+    "el",
+    "problema",
+    "con",
+    "claridad."
+   ],
+   "english": "It is necessary to explain the problem with clarity."
+  },
+  "why": "claridad was listed but never used; builder now uses it (the old sentence stays in listening ex09 and the screen)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-consolidation-ex.json",
+  "id": "b1-18-consolidation.ex03",
+  "set": {
+   "sentence": "Es importante que el ayuntamiento __ los parques.",
+   "hint": "mejorar",
+   "answer": "mejore",
+   "english": "It is important that the city council improve the parks."
+  },
+  "why": "copied 02.ex08 sentence; vary",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-consolidation-ex.json",
+  "id": "b1-18-consolidation.ex04",
+  "set": {
+   "tiles": [
+    "Pienso",
+    "que",
+    "la",
+    "ley",
+    "es",
+    "necesaria."
+   ],
+   "solution": [
+    "Pienso",
+    "que",
+    "la",
+    "ley",
+    "es",
+    "necesaria."
+   ],
+   "english": "I think the law is necessary."
+  },
+  "why": "reforma unmet in es-latam",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-consolidation-ex.json",
+  "id": "b1-18-consolidation.ex06",
+  "set": {
+   "options": [
+    "Es necesario que [It is necessary that]",
+    "Me parece que [It seems to me that]",
+    "Por otro lado [On the other hand]"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "giving-opinions",
+    "2": "ordering-markers"
+   }
+  },
+  "why": "length give-away 16 vs 11",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-consolidation-ex.json",
+  "id": "b1-18-consolidation.ex07",
+  "set": {
+   "sentence": "No estamos __ acuerdo con esa ley.",
+   "hint": "preposition",
+   "answer": "de",
+   "english": "We do not agree with that law."
+  },
+  "why": "copied 04.ex03; vary",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-consolidation-ex.json",
+  "id": "b1-18-consolidation.ex10",
+  "set": {
+   "sentence": "Creo que la ley es buena.",
+   "options": [
+    "I think the law is good.",
+    "I disagree with the law.",
+    "The law is not here now."
+   ],
+   "correct": 0
+  },
+  "why": "Opino / justa are in no list (es-latam: justa in B2)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-consolidation-ex.json",
+  "id": "b1-18-consolidation.ex11",
+  "set": {
+   "sentence": "Es importante que la ley sea clara.",
+   "options": [
+    "It is important that the law be clear.",
+    "The law was clear to everyone yesterday.",
+    "The law will never be clear to anyone."
+   ],
+   "correct": 0
+  },
+  "why": "copied 03.ex11 (transparentes unmet in the consolidation); vary",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-consolidation-ex.json",
+  "id": "b1-18-consolidation.ex12",
+  "set": {
+   "sentence": "Aunque la ley es útil, puede ser difícil aplicarla.",
+   "english": "Although the law is useful, it may be difficult to implement it."
+  },
+  "why": "copied 04.ex10; vary",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-consolidation-ex.json",
+  "id": "b1-18-consolidation.ex16",
+  "set": {
+   "question": "Which sentence gives an opinion, a contrast and a recommendation?",
+   "options": [
+    "Creo que la propuesta es buena; sin embargo, es necesario que estudiemos otras opciones. [I think the proposal is good; however, it is necessary that we study other options.]",
+    "Creo que la propuesta es buena; sin embargo, hay dudas en la ciudad. [I think the proposal is good; however, there are doubts in the city.]",
+    "Es necesario que estudiemos otras opciones antes de aprobar la ley. [It is necessary that we study other options before approving the law.]"
+   ],
+   "correct": 0
+  },
+  "why": "all options 80+ characters and full of unmet words (coste, equipo, genera, detenidamente, económico); options two and three did not isolate opinion, contrast and recommendation cleanly",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-consolidation-ex.json",
+  "id": "b1-18-consolidation.ex02",
+  "set": {
+   "question": "Which sentence does not say who publishes the laws?",
+   "options": [
+    "Se publican nuevas leyes cada año. [New laws are published every year.]",
+    "El Gobierno publica una ley. [The government publishes a law.]",
+    "El Gobierno decide. [The government decides.]"
+   ],
+   "correct": 0
+  },
+  "why": "construcción impersonal in the Spanish gloss is unmet; copied 01.ex02 stem; El Parlamento unmet in es-latam",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/b1/b1-18-consolidation-ex.json",
+  "id": "b1-18-consolidation.ex13",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "A",
+     "text": "¿Cómo trabaja el ayuntamiento?"
+    },
+    {
+     "speaker": "B",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Se estudian las necesidades y después se preparan propuestas. [Needs are studied and then proposals are prepared.]",
+    "Se estudia las necesidades y después se prepara propuestas. [Needs is (singular) studied and then proposals is prepared.]",
+    "Se estudien las necesidades y después se preparen propuestas. [Needs be (subjunctive) studied and then proposals be prepared.]"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "2": "subjuntivo-morfologia"
+   }
+  },
+  "why": "proceso unmet in es-latam",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-18-facundo.json",
+  "old": "\"text\": \"En las provincias del interior de Argentina, durante el siglo diecinueve, no siempre se gobernaba desde una oficina ni se aplicaban las mismas leyes en todas partes. En muchos lugares se obedecía, sobre todo, a un caudillo: un jefe local cuya autoridad no había sido votada, sino ganada en la práctica, entre los hombres de la llanura.\"",
+  "new": "\"text\": \"En el siglo diecinueve, en las provincias del interior de Argentina, no se gobernaba como en una ciudad. Allí no había oficinas y las leyes no eran las mismas en todas partes. En muchos lugares se obedecía a un caudillo, un jefe local que los ciudadanos no habían elegido. Su poder no venía de una votación, sino de su fuerza entre los hombres de la llanura.\"",
+  "why": "retell at B1: remove cuya/cuyas/fueran tomadas/había sido votada; add \"según Sarmiento\" for his judgement; keep the five paragraphs and their facts",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-18-facundo.json",
+  "old": "\"text\": \"Facundo Quiroga era uno de esos caudillos. Se decía que su fuerza venía del respeto y del miedo que provocaba entre los habitantes de la región. Las decisiones importantes se tomaban rápidamente, sin largas discusiones: se castigaba al que desobedecía y se premiaba al que era fiel. De esta manera se mantenía el orden en un territorio donde el Estado central era todavía débil.\"",
+  "new": "\"text\": \"Facundo Quiroga fue uno de esos caudillos. Según Sarmiento, su poder venía del miedo y del respeto que sentía la gente de la región. Las decisiones importantes se tomaban rápidamente, sin largas discusiones. El que no obedecía era castigado y el que era fiel era premiado. Así se mantenía el orden en un territorio donde el Estado todavía era débil.\"",
+  "why": "retell at B1: remove cuya/cuyas/fueran tomadas/había sido votada; add \"según Sarmiento\" for his judgement; keep the five paragraphs and their facts",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-18-facundo.json",
+  "old": "\"text\": \"En las ciudades, en cambio, se buscaba organizar la vida pública de otra forma: se escribían constituciones, se discutían las leyes en asambleas y se esperaba que las decisiones fueran tomadas por instituciones y no por una sola persona. Por eso, cuando los caudillos como Facundo llegaban a la capital, muchos los consideraban una amenaza para ese orden que se intentaba construir.\"",
+  "new": "\"text\": \"En las ciudades, en cambio, la vida pública se organizaba de otra manera. Se escribían constituciones, las leyes se discutían en asambleas y las decisiones eran tomadas por instituciones, no por una sola persona. Por eso, cuando un caudillo como Facundo llegaba a la capital, muchos pensaban que era una amenaza para ese orden. Para Sarmiento, el caudillo era un peligro para las ciudades.\"",
+  "why": "retell at B1: remove cuya/cuyas/fueran tomadas/había sido votada; add \"según Sarmiento\" for his judgement; keep the five paragraphs and their facts",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-18-facundo.json",
+  "old": "\"text\": \"Sin embargo, en la llanura las cosas se veían de otro modo. Allí no se entendía fácilmente el lenguaje de las asambleas ni de las constituciones escritas en la ciudad. Se confiaba, en cambio, en un hombre fuerte que podía ser reconocido a caballo, cuya palabra era ley en su territorio y cuyas órdenes se cumplían sin necesidad de explicación.\"",
+  "new": "\"text\": \"Sin embargo, en la llanura las cosas se veían de otra manera. Allí la gente no entendía bien el lenguaje de las asambleas ni de las constituciones escritas en la ciudad. Confiaba en un hombre fuerte que montaba a caballo y que no tenía que explicar sus órdenes. Su palabra era ley en su territorio y todos cumplían lo que decía.\"",
+  "why": "retell at B1: remove cuya/cuyas/fueran tomadas/había sido votada; add \"según Sarmiento\" for his judgement; keep the five paragraphs and their facts",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-18-facundo.json",
+  "old": "\"text\": \"Con el tiempo, esta forma de gobierno personal fue reemplazada, poco a poco, por instituciones más estables: se crearon tribunales, se organizaron elecciones y se establecieron reglas que debían respetarse en todo el país. Aun así, la figura del caudillo, tan discutida por unos y tan admirada por otros, siguió siendo recordada como una parte esencial de la historia política de la región.\"",
+  "new": "\"text\": \"Con el tiempo, este gobierno personal fue sustituido poco a poco por instituciones más estables. Se crearon tribunales, se organizaron elecciones y se establecieron reglas para todo el país. Aun así, el caudillo sigue presente en la memoria de la región: unos lo critican y otros lo admiran.\"",
+  "why": "retell at B1: remove cuya/cuyas/fueran tomadas/había sido votada; add \"según Sarmiento\" for his judgement; keep the five paragraphs and their facts",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/classics/b1/b1-18-facundo.json",
+  "old": "[\n        {\n          \"question\": \"¿Qué confrontación sociopolítica expone Sarmiento en su semblanza sobre Facundo Quiroga?\",\n          \"options\": [\n            \"El litigio comercial entre armadores marítimos y los productores de lana de la Patagonia.\",\n            \"El choque entre el caudillismo personalista de las pampas y el orden institucional y legal de las ciudades.\",\n            \"La rebelión de los soldados regulares contra las autoridades eclesiásticas del virreinato.\",\n            \"La alianza estratégica entre los terratenientes porteños y los corsarios del Río de la Plata.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"Sarmiento describe el antagonismo histórico entre la autoridad personalista del caudillo rural y el modelo republicano de asambleas y constituciones urbanas.\"\n        },\n        {\n          \"question\": \"¿En qué fundamentaba Facundo Quiroga su autoridad sobre los gauchos de la llanura?\",\n          \"options\": [\n            \"En un título nobiliario concedido por la corona española antes de la independencia.\",\n            \"En un riguroso proceso de elección democrática mediante sufragio universal en las provincias.\",\n            \"En su prestigio combativo a caballo, su rapidez de mando y el temor y respeto que infundía en su territorio.\",\n            \"En su condición de juez supremo graduado en las universidades más prestigiosas del continente.\"\n          ],\n          \"correctIndex\": 2,\n          \"explanation\": \"El caudillo gobernaba por carisma fáctico, rapidez en las decisiones y liderazgo a caballo en un espacio donde las instituciones estatales eran incipientes.\"\n        },\n        {\n          \"question\": \"¿Qué evolución histórica acabó arrinconando la figura del caudillo en la vida nacional?\",\n          \"options\": [\n            \"La intervención militar de potencias extranjeras que disolvió por decreto los gobiernos provinciales.\",\n            \"El abandono total de la cría de ganado en las pampas a favor de la minería de oro y plata.\",\n            \"La decisión de los propios caudillos de retirarse simultáneamente a la vida monástica.\",\n            \"La instauración progresiva de tribunales estables, comicios regulares y normas jurídicas compartidas en todo el país.\"\n          ],\n          \"correctIndex\": 3,\n          \"explanation\": \"Con el tiempo, el arbitrio personal del caudillo cedió su sitio a la institucionalización estatal: leyes escritas, comicios y cortes judiciales para toda la nación.\"\n        }\n      ]",
+  "new": "[\n          {\n            \"question\": \"¿Cómo se mantenía el orden con Facundo Quiroga?\",\n            \"options\": [\n              \"Se castigaba al que no obedecía y se premiaba al fiel.\",\n              \"Los ciudadanos votaban cada año en una asamblea.\",\n              \"Los jueces de la capital viajaban a cada pueblo.\"\n            ],\n            \"correctIndex\": 0,\n            \"explanation\": \"Según el texto, el que no obedecía era castigado y el que era fiel era premiado.\"\n          },\n          {\n            \"question\": \"¿Qué hacían en las ciudades con las leyes?\",\n            \"options\": [\n              \"Las discutían en asambleas.\",\n              \"Las decidía un solo jefe a caballo.\",\n              \"Las cambiaba cada caudillo del campo.\"\n            ],\n            \"correctIndex\": 0,\n            \"explanation\": \"En las ciudades se escribían constituciones y las leyes se discutían en asambleas.\"\n          },\n          {\n            \"question\": \"¿Qué pasó con el tiempo?\",\n            \"options\": [\n              \"Se crearon tribunales y se organizaron elecciones.\",\n              \"Los caudillos volvieron a gobernar las ciudades.\",\n              \"Se prohibió hablar de la historia de la región.\"\n            ],\n            \"correctIndex\": 0,\n            \"explanation\": \"El gobierno personal fue sustituido por instituciones más estables.\"\n          }\n        ]",
+  "why": "story questions asked for jargon (\"confrontación sociopolítica\", \"semblanza\") and were not about what people do; rewritten at B1",
+  "kind": "target"
+ }
+]
