@@ -29,7 +29,8 @@ const Lang = (function () {
         hu:         ['hu-HU', 'hu'],
         fr:         ['fr-FR', 'fr-CA', 'fr'],
         it:         ['it-IT', 'it'],
-        pl:         ['pl-PL', 'pl']
+        pl:         ['pl-PL', 'pl'],
+        cs:         ['cs-CZ', 'cs']
     };
 
     // Course-level names for pickers and track settings
@@ -39,7 +40,8 @@ const Lang = (function () {
         hu:         'Hungarian',
         fr:         'French',
         it:         'Italian',
-        pl:         'Polish'
+        pl:         'Polish',
+        cs:         'Czech'
     };
 
     // Natural language names for learner-facing prompts, exercises, and drills
@@ -49,7 +51,8 @@ const Lang = (function () {
         hu:         'Hungarian',
         fr:         'French',
         it:         'Italian',
-        pl:         'Polish'
+        pl:         'Polish',
+        cs:         'Czech'
     };
 
     // Courses with real content behind them — what the language picker
@@ -428,6 +431,95 @@ const Lang = (function () {
                 A2: ['dlatego', 'najpierw', 'potem', 'później', 'jednak', 'oprócz tego', 'na przykład'],
                 B1: ['w rzeczywistości', 'mimo to', 'z kolei', 'w konsekwencji', 'moim zdaniem', 'podczas gdy'],
                 B2: ['niemniej jednak', 'pomimo tego', 'z drugiej strony', 'ponadto', 'w związku z tym', 'chociaż']
+            }
+        },
+        cs: {
+            code: 'cs',
+            baseCode: 'cs',
+            name: 'Czech',
+            courseName: 'Czech',
+            voices: ['cs-CZ', 'cs'],
+            sttLocale: 'cs-CZ',
+            tests: [],
+            diacritics: {
+                a: ['á'],
+                c: ['č'],
+                d: ['ď'],
+                e: ['é', 'ě'],
+                i: ['í'],
+                n: ['ň'],
+                o: ['ó'],
+                r: ['ř'],
+                s: ['š'],
+                t: ['ť'],
+                u: ['ú', 'ů'],
+                y: ['ý'],
+                z: ['ž']
+            },
+            openers: {},
+            numberWords: {
+                '1': ['jeden', 'jedna', 'jedno', 'jednoho', 'jedné', 'jednomu'],
+                '2': ['dva', 'dvě', 'dvou', 'dvěma'],
+                '3': ['tři', 'tří', 'třem', 'třemi'],
+                '4': ['čtyři', 'čtyř', 'čtyřem', 'čtyřmi'],
+                '5': ['pět', 'pěti'],
+                '6': ['šest', 'šesti'],
+                '7': ['sedm', 'sedmi'],
+                '8': ['osm', 'osmi'],
+                '9': ['devět', 'devíti'],
+                '10': ['deset', 'deseti']
+            },
+            speechAbbreviations: {
+                'např.': 'na příklad',
+                'atd.': 'a tak dále',
+                'tj.': 'to jest',
+                'tzv.': 'tak zvaný',
+                'tzn.': 'to znamená'
+            },
+            examLabels: {
+                trueFalseNotStated: ['Ano', 'Ne', 'Neuvedeno']
+            },
+            paradigm: {
+                hasVosotros: false,
+                persons: {
+                    ja: { key: 'ja', label: 'já' },
+                    ty: { key: 'ty', label: 'ty' },
+                    on: { key: 'on', label: 'on / ona / ono' },
+                    my: { key: 'my', label: 'my' },
+                    vy: { key: 'vy', label: 'vy' },
+                    oni: { key: 'oni', label: 'oni / ony / ona' }
+                },
+                defaultPersons: ['ja', 'ty', 'on', 'my', 'vy', 'oni'],
+                tenses: [
+                    { value: 'indicativo.presente', label: 'Přítomný čas (Present)' },
+                    { value: 'indicativo.minuly', label: 'Minulý čas (Past)' },
+                    { value: 'indicativo.budouci', label: 'Budoucí čas (Future)' },
+                    { value: 'podminovaci', label: 'Podmiňovací způsob (Conditional)' },
+                    { value: 'rozkazovaci', label: 'Rozkazovací způsob (Imperative)' },
+                    { value: 'all', label: 'All Tenses' }
+                ]
+            },
+            canDoCues: {
+                city: 'Prague',
+                monthsExamples: 'leden, únor, březen...',
+                monthInEvent: 'State when an event or your birthday is using "v" (e.g. "V říjnu..." or "V prosinci...")',
+                daysExamples: 'pondělí, úterý...',
+                dayInEvent: 'Say which day you do an activity (e.g. v pondělí, v pátek)',
+                cafeGreeting: 'Polite greeting (Dobrý den / Ahoj)',
+                cafeOrder: 'Order a drink or snack (e.g. "Dám si kávu s mlékem a jablečný závin")',
+                cafeBill: 'Conclude politely or ask for the bill ("Zaplatím" / "Účet, prosím")',
+                restaurantGreeting: 'Greeting and request a table ("Stůl pro dva, prosím")',
+                restaurantOrder: 'Order food and drinks ("Jako předkrm si dám... a jako hlavní jídlo...")',
+                restaurantBill: 'Ask for the bill ("Zaplatíme, prosím")',
+                directionsInterruption: 'Polite opening (Promiňte / S dovolením)',
+                directionsAsk: 'Ask for directions (e.g. "Kde je vlakové nádraží?")',
+                directionsThanks: 'Thank the person (Děkuji moc)'
+            },
+            discourseConnectors: {
+                A1: ['a', 'ale', 'protože', 'taky', 'například', 'takže'],
+                A2: ['proto', 'nejdřív', 'potom', 'později', 'však', 'kromě toho', 'například'],
+                B1: ['ve skutečnosti', 'přesto', 'naopak', 'v důsledku toho', 'podle mě', 'zatímco'],
+                B2: ['nicméně', 'navzdory tomu', 'na druhou stranu', 'navíc', 'v souvislosti s tím', 'ačkoli']
             }
         }
     };

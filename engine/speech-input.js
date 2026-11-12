@@ -1502,6 +1502,55 @@ const SpeechInput = (function () {
         return w;
     }
 
+    // Czech phonetic folding: resolves i/y, í/ý, ú/ů, mě/mně homophones,
+    // soft palatal clusters (dě/tě/ně, di/ti/ni),
+    // word-final devoicing (b->p, d->t, ď->ť, v->f, z->s, ž->š, h->ch),
+    // and double consonant degemination.
+    function phoneticFoldCs(word) {
+        if (!word) return '';
+        let w = String(word).toLowerCase().trim();
+
+        // 1. Strict homophones
+        w = w.replace(/mně/g, 'mě')
+             .replace(/y/g, 'i')
+             .replace(/ý/g, 'í')
+             .replace(/ů/g, 'ú');
+
+        // 2. Soft/palatal consonant normalizations before e/i
+        w = w.replace(/mě/g, 'mňe')
+             .replace(/dě/g, 'ďe')
+             .replace(/tě/g, 'ťe')
+             .replace(/ně/g, 'ňe')
+             .replace(/di/g, 'ďi')
+             .replace(/ti/g, 'ťi')
+             .replace(/ni/g, 'ňi')
+             .replace(/dí/g, 'ďí')
+             .replace(/tí/g, 'ťí')
+             .replace(/ní/g, 'ňí');
+
+        // 3. Regressive voicing assimilation before voiceless consonants
+        w = w.replace(/v(?=[ptkscštchf])/g, 'f')
+             .replace(/b(?=[ptkscštchf])/g, 'p')
+             .replace(/d(?=[ptkscštchf])/g, 't')
+             .replace(/z(?=[ptkscštchf])/g, 's')
+             .replace(/ž(?=[ptkscštchf])/g, 'š');
+
+        // 4. Final obstruent devoicing at word end
+        w = w.replace(/b$/g, 'p')
+             .replace(/d$/g, 't')
+             .replace(/ď$/g, 'ť')
+             .replace(/g$/g, 'k')
+             .replace(/v$/g, 'f')
+             .replace(/z$/g, 's')
+             .replace(/ž$/g, 'š')
+             .replace(/h$/g, 'ch');
+
+        // 5. Degemination: collapse duplicate letters
+        w = w.replace(/(.)\1+/g, '$1');
+
+        return w;
+    }
+
     function genericPhoneticFold(word) {
         if (!word) return '';
         return String(word)
@@ -1516,7 +1565,8 @@ const SpeechInput = (function () {
         es: phoneticFoldEs,
         fr: phoneticFoldFr,
         it: phoneticFoldIt,
-        pl: phoneticFoldPl
+        pl: phoneticFoldPl,
+        cs: phoneticFoldCs
     };
 
     function registerPhoneticFolder(langCode, folderFn) {
