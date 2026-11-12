@@ -164,7 +164,9 @@ them unless a step below says otherwise.
    section (what recurred goes into rulebook § 6 the same day, anything
    seen twice gets a script, below); ROADMAP 153 and ACHIEVED 153. Commit
    and push to `master` (user, 2026-10-30: everything on master, no other
-   branches).
+   branches). If `git pull --rebase` stops on the generated files (manifests, decks,
+   curricula, indexes) that the Auto-sync commits rewrite, run `python
+   scripts/resolve_generated_conflicts.py` (it refuses if any other file conflicts).
 8. **Walk:** `node scripts/walk_lessons.js <course> <level> --only
    <stems> --jobs 4` with `python scripts/dev-server.py 8131` running,
    after the first frozen units of a new course (an engine defect hits
