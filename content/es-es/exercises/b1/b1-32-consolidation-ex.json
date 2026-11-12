@@ -31,11 +31,11 @@
       "id": "b1-32-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence gives a cause? [¿Cuál expresa una causa?]",
+      "question": "Which sentence gives a cause?",
       "options": [
         "La ciudad cambió debido a la falta de agua. [The city changed due to the lack of water.]",
-        "La ciudad cambió por eso. [The city changed as a result.]",
-        "La ciudad cambió sin embargo. [The city changed however.]"
+        "La ciudad cambió; por eso, hay menos agua. [The city changed; that is why there is less water.]",
+        "La ciudad cambió; sin embargo, sigue igual. [The city changed; however, it stays the same.]"
       ],
       "correct": 0,
       "teaches": [
@@ -53,9 +53,7 @@
       "hint": "as a result",
       "english": "The price went up; as a result, many people changed their plans.",
       "answers": [
-        "como resultado",
-        "por eso",
-        "por lo tanto"
+        "como resultado"
       ]
     },
     {
@@ -101,11 +99,11 @@
       "id": "b1-32-consolidation.ex06",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence combines contrast and consequence? [¿Cuál combina contraste y consecuencia?]",
+      "question": "Which sentence combines contrast and consequence?",
       "options": [
         "Era caro; sin embargo, lo compramos, por eso tuvimos que ahorrar. [It was expensive; however, we bought it, so we had to save.]",
-        "El coche era bastante caro; sin embargo, decidimos pedir un préstamo al banco. [The car was quite expensive; however, we decided to ask the bank for a loan.]",
-        "Compramos una casa en las afueras, por eso tuvimos que ahorrar durante años. [We bought a house on the outskirts, so we had to save for years.]"
+        "Era caro; sin embargo, decidimos esperar un poco más de tiempo. [It was expensive; however, we decided to wait a little longer.]",
+        "Compramos una casa nueva, por eso tuvimos que ahorrar mucho tiempo. [We bought a new house, so we had to save for a long time.]"
       ],
       "correct": 0,
       "teaches": [
@@ -123,8 +121,7 @@
       ],
       "english": "The objective is to achieve good results.",
       "answers": [
-        "lograr",
-        "conseguir"
+        "lograr"
       ]
     },
     {
@@ -160,11 +157,11 @@
       "id": "b1-32-consolidation.ex09",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence best integrates the unit? [¿Cuál integra mejor la unidad?]",
+      "question": "Which sentence best integrates the unit?",
       "options": [
         "El proyecto es necesario porque hay un problema; sin embargo, debe ser económico para que pueda funcionar. [The project is necessary because there is a problem; however, it must be economical so that it can work.]",
-        "El proyecto de renovación urbana ya existe y cuenta con el apoyo del ayuntamiento. [The urban renewal project already exists and has the support of the city council.]",
-        "Hay un problema grave de congestión vehicular en las avenidas principales del centro. [There is a serious problem of vehicular congestion on the main avenues of the centre.]"
+        "El proyecto nuevo ya existe y cuenta con el apoyo de todos los vecinos de la ciudad. [The new project already exists and has the support of all the city's neighbours.]",
+        "Hay un problema de transporte en las calles principales del centro de la ciudad. [There is a transport problem on the main streets of the city centre.]"
       ],
       "correct": 0,
       "teaches": [
@@ -228,7 +225,7 @@
       "options": [
         "Ocurrió debido a la falta de transporte. [It happened due to the lack of transport.]",
         "Ocurrió por eso la falta de transporte. [It happened therefore the lack of transport.]",
-        "Ocurrió sin embargo. [It happened however.]"
+        "Ocurrió debido la falta de transporte. [It happened due the lack of transport.]"
       ],
       "correct": 0,
       "teaches": [
@@ -251,13 +248,16 @@
       ],
       "options": [
         "Como resultado, tuvimos que cambiar de plan. [As a result, we had to change our plan.]",
-        "Porque tuvimos que cambiar de plan ayer. [Because we had to change our plan yesterday.]",
+        "Porque tuvimos que cambiar de plan al final. [Because we had to change our plan in the end.]",
         "Aunque tuvimos que cambiar de plan al final. [Although we had to change our plan in the end.]"
       ],
       "correct": 0,
       "teaches": [
         "porque-y-por-eso"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "concesivas-aunque"
+      }
     },
     {
       "id": "b1-32-consolidation.ex15",
@@ -275,8 +275,8 @@
       ],
       "options": [
         "El objetivo es mejorar el servicio. [The objective is to improve the service.]",
-        "El objetivo es por eso. [The objective is therefore.]",
-        "El objetivo es sin embargo. [The objective is however.]"
+        "El objetivo es porque el servicio. [The objective is because the service.]",
+        "El objetivo es mejoramos el servicio. [The objective is we improve the service.]"
       ],
       "correct": 0,
       "teaches": [
@@ -287,11 +287,11 @@
       "id": "b1-32-consolidation.ex16",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence best shows a balanced argument? [¿Cuál muestra mejor un argumento equilibrado?]",
+      "question": "Which sentence best shows a balanced argument?",
       "options": [
         "La solución es cara; sin embargo, puede lograr buenos resultados y proteger el entorno. [The solution is expensive; however, it can achieve good results and protect the environment.]",
-        "La solución propuesta resulta excesivamente cara, por eso consideramos que es muy mala. [The proposed solution turns out excessively expensive, so we consider it very bad.]",
-        "La solución aprobada por el comité técnico es simplemente buena y muy conveniente. [The solution approved by the technical committee is simply good and very convenient.]"
+        "La solución propuesta resulta muy cara, por eso consideramos que no es buena. [The proposed solution turns out very expensive, so we consider it is not good.]",
+        "La solución que aprobó el ayuntamiento es buena y muy conveniente para todos. [The solution the city council approved is good and very convenient for everyone.]"
       ],
       "correct": 0,
       "teaches": [
@@ -304,7 +304,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain a problem using cause and consequence.",
+          "prompt": "Say there was little transport, so many people had problems (use por eso).",
           "answer": "Había poco transporte, por eso muchas personas tuvieron problemas."
         }
       ],
@@ -318,8 +318,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write a short connected argument using cause, contrast, purpose and consequence.",
-          "answer": "El proyecto es necesario porque hay un problema. Sin embargo, debe ser económico para que pueda funcionar. Por lo tanto, debemos buscar una solución equilibrada."
+          "prompt": "Write a short argument: the project is necessary because there is a problem; however, it must be economical so that it can work; so we must look for a balanced solution.",
+          "answer": "El proyecto es necesario porque hay un problema. Sin embargo, debe ser económico para que pueda funcionar. Por eso, debemos buscar una solución equilibrada."
         }
       ],
       "teaches": [

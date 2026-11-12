@@ -27,11 +27,11 @@
       "id": "b1-28-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence defends a position? [¿Cuál defiende una posición?]",
+      "question": "Which sentence defends a position?",
       "options": [
         "Creo que esta regla es necesaria porque protege a todos. [I think this rule is necessary because it protects everyone.]",
-        "Esta regla oficial de convivencia existe en todos los edificios residenciales. [This official rule of coexistence exists in all residential buildings.]",
-        "El texto completo de la nueva normativa está disponible en el tablón de anuncios. [The full text of the new regulation is available on the notice board.]"
+        "Esta regla existe en todos los edificios de la ciudad. [This rule exists in all the buildings of the city.]",
+        "El texto de la regla está en la puerta del edificio. [The text of the rule is on the door of the building.]"
       ],
       "correct": 0,
       "teaches": [
@@ -82,9 +82,9 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "La regla es incómoda. [The rule is inconvenient.]",
-        "Debemos respetarla. [We must respect it.]",
-        "Aunque la regla sea incómoda, debemos respetarla. [Although the rule may be inconvenient, we must respect it.]"
+        "Creo que la regla es necesaria porque protege a todos. [I think the rule is necessary because it protects everyone.]",
+        "Aunque sea incómoda, debemos respetarla. [Although it may be inconvenient, we must respect it.]",
+        "Por eso es importante que todos la cumplan. [That is why it is important that everyone follows it.]"
       ],
       "solution": [
         0,
@@ -99,11 +99,11 @@
       "id": "b1-28-05.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «to justify»? [¿Qué palabra significa «justificar»?]",
+      "question": "Which word means «to justify»?",
       "options": [
-        "justificar [to justify]",
-        "defender [to defend]",
-        "cumplir [to comply with]"
+        "justificar",
+        "defender",
+        "cumplir"
       ],
       "correct": 0,
       "teaches": [
@@ -114,13 +114,13 @@
       "id": "b1-28-05.ex07",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Quiero ___ mi posición con dos razones.",
+      "sentence": "Quiero ___ mi opinión con dos razones.",
       "hint": "to defend",
       "answer": "defender",
       "teaches": [
         "b1-rules-rights-responsibilities-vocab"
       ],
-      "english": "I want to defend my position with two reasons."
+      "english": "I want to defend my opinion with two reasons."
     },
     {
       "id": "b1-28-05.ex08",
@@ -211,12 +211,12 @@
       ],
       "options": [
         "Creo que es necesaria porque protege a todos. [I think it is necessary because it protects everyone.]",
-        "Defiendo a mis amigos en la plaza. [I defend my friends in the square.]",
-        "No la defiendo porque la defiendo. [I do not defend it because I defend it.]"
+        "Creo que es necesaria pero protege a todos. [I think it is necessary but it protects everyone.]",
+        "Creo que es necesaria por eso protege a todos. [I think it is necessary that is why it protects everyone.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-rules-rights-responsibilities-vocab"
+        "porque-y-por-eso"
       ]
     },
     {
@@ -226,7 +226,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Es justo aplicar la misma regla a todos?"
+          "text": "¿Es bueno aplicar la misma regla a todos?"
         },
         {
           "speaker": "B",
@@ -262,8 +262,8 @@
       ],
       "options": [
         "Entiendo la crítica, pero creo que la regla tiene una razón importante. [I understand the criticism, but I think the rule has an important reason.]",
-        "No creo que la crítica tiene razón. [I do not think the criticism is (indicative) right.]",
-        "La crítica es una regla. [The criticism is a rule.]"
+        "Entiendo la crítica, pero no creo que la regla tiene una razón importante. [I understand the criticism, but I do not think the rule has (indicative) an important reason.]",
+        "Entiendo la crítica, por eso creo que la regla tiene una razón importante. [I understand the criticism, that is why I think the rule has an important reason.]"
       ],
       "correct": 0,
       "teaches": [
@@ -279,7 +279,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "State a position about a rule.",
+          "prompt": "Say that you think this rule is necessary because it protects everyone.",
           "answer": "Creo que esta regla es necesaria porque protege a todos."
         }
       ],
@@ -293,7 +293,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give two reasons for your position.",
+          "prompt": "Say that the rule is necessary because it improves safety and protects citizens' rights.",
           "answer": "La regla es necesaria porque mejora la seguridad y protege los derechos de los ciudadanos."
         }
       ],
@@ -307,7 +307,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Respond to an opposing view.",
+          "prompt": "Say that although you understand the criticism, you think we must keep the rule.",
           "answer": "Aunque entiendo la crítica, creo que debemos mantener la regla."
         }
       ],
@@ -321,7 +321,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Defend a rule using cause and consequence.",
+          "prompt": "Say that you think the rule is necessary because it reduces problems, so we must respect it.",
           "answer": "Creo que la regla es necesaria porque reduce los problemas; por eso debemos respetarla."
         }
       ],
@@ -335,7 +335,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write a short argument about a difficult rule.",
+          "prompt": "Write two sentences: the rule may be inconvenient, but it is important that rules are fair and protect everyone; although some people may disagree, we must consider their reasons.",
           "answer": "La regla puede ser incómoda, pero es importante que las normas sean justas y que protejan a todos. Aunque algunas personas no estén de acuerdo, debemos considerar sus razones."
         }
       ],
@@ -347,11 +347,11 @@
       "id": "b1-28-05.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
+      "question": "¿Qué dice Martí sobre el gobierno de un país?",
       "options": [
-        "El ayuntamiento impone una nueva regla y escucha después las opiniones de los ciudadanos.",
-        "El ayuntamiento elimina todas las normas de la plaza.",
-        "Nadie se opone a la nueva regla."
+        "Dice que tiene que nacer del propio país.",
+        "Dice que debe copiar el gobierno de Europa.",
+        "Dice que no hace falta tener gobierno."
       ],
       "correct": 0
     },
@@ -359,11 +359,11 @@
       "id": "b1-28-05.ex21",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
+      "question": "¿Qué hay que enseñar primero en las escuelas, según Martí?",
       "options": [
-        "Se permite entrar en coche en una emergencia.",
-        "Está prohibido caminar por la plaza.",
-        "La regla solo afecta a los turistas."
+        "La historia de América.",
+        "La historia de Europa.",
+        "Las leyes de otros países."
       ],
       "correct": 0
     },
@@ -371,11 +371,11 @@
       "id": "b1-28-05.ex22",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
+      "question": "¿Qué dice Martí sobre aprender de otros países?",
       "options": [
-        "Una buena norma debe considerar tanto los derechos como las responsabilidades.",
-        "Las normas nunca deben tener excepciones.",
-        "Los comerciantes están todos de acuerdo desde el principio."
+        "Dice que se puede, pero la base tiene que ser propia.",
+        "Dice que hay que copiar las leyes de Europa.",
+        "Dice que no se puede aprender nada de ellos."
       ],
       "correct": 0
     },
@@ -383,11 +383,11 @@
       "id": "b1-28-05.ex23",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
+      "question": "¿Cuál es la responsabilidad de cada ciudadano, según el texto?",
       "options": [
-        "El ayuntamiento mantiene la regla pero crea excepciones para equilibrar intereses.",
-        "El ayuntamiento cancela la regla por completo.",
-        "Los comerciantes consiguen eliminar la norma."
+        "Conocer su tierra y ayudar a crear leyes justas.",
+        "Copiar las leyes de un país más rico.",
+        "Vivir en Europa y olvidar su propia tierra."
       ],
       "correct": 0
     }

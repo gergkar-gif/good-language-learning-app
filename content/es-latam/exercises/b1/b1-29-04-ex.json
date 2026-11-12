@@ -27,11 +27,11 @@
       "id": "b1-29-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence uses a relative clause for a place? [¿Cuál usa una oración relativa para un lugar?]",
+      "question": "Which sentence uses a relative clause for a place?",
       "options": [
         "El barrio donde vivo tiene muchos parques. [The neighbourhood where I live has many parks.]",
-        "Vivo en un barrio. [I live in a neighbourhood.]",
-        "El barrio es grande. [The neighbourhood is big.]"
+        "Vivo en un barrio con muchos parques. [I live in a neighbourhood with many parks.]",
+        "El barrio es grande y tiene parques. [The neighbourhood is big and has parks.]"
       ],
       "correct": 0,
       "teaches": [
@@ -82,13 +82,13 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "Después, la gente me ayudó mucho. [Then the people helped me a lot.]",
-        "Primero conocí a la gente. [First I met the people.]",
-        "La gente que conocí me ayudó mucho. [The people I met helped me a lot.]"
+        "Conocí a mucha gente. [I met a lot of people.]",
+        "La gente que conocí me ayudó mucho. [The people I met helped me a lot.]",
+        "Por eso ahora me siento en casa. [That is why I now feel at home.]"
       ],
       "solution": [
-        1,
         0,
+        1,
         2
       ],
       "teaches": [
@@ -99,11 +99,11 @@
       "id": "b1-29-04.ex06",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which expression means «what makes a home»? [¿Qué expresión introduce «lo que hace un hogar»?]",
+      "question": "Which sentence is correct?",
       "options": [
-        "Lo que hace un hogar [What makes a home]",
-        "Donde hace un hogar [Where a home makes]",
-        "Que hace hogar [That makes home]"
+        "Lo que más me gusta de la ciudad es la gente. [What I like most about the city is the people.]",
+        "Que más me gusta de la ciudad es la gente. [That I like most about the city is the people.]",
+        "Donde más me gusta de la ciudad es la gente. [Where I like most about the city is the people.]"
       ],
       "correct": 0,
       "teaches": [
@@ -236,7 +236,7 @@
       "options": [
         "Lo que hace un hogar es la sensación de pertenencia. [What makes a home is the feeling of belonging.]",
         "Que hace un hogar es la sensación de pertenencia. [That makes a home is the feeling of belonging.]",
-        "Donde hace un hogar la casa. [Where a home makes the house.]"
+        "Donde hace un hogar es la sensación de pertenencia. [Where a home makes is the feeling of belonging.]"
       ],
       "correct": 0,
       "teaches": [
@@ -273,7 +273,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe a place using donde.",
+          "prompt": "Say that the neighbourhood where you live has many shops (use donde).",
           "answer": "El barrio donde vivo tiene muchas tiendas."
         }
       ],
@@ -287,7 +287,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe people using que.",
+          "prompt": "Say that the people you met helped you a lot (use que).",
           "answer": "Las personas que conocí me ayudaron mucho."
         }
       ],
@@ -298,15 +298,15 @@
     {
       "id": "b1-29-04.ex17",
       "type": "structured-writing",
-      "category": "writing",
+      "category": "grammar",
       "template": [
         {
-          "prompt": "Explain what makes a place feel like home.",
+          "prompt": "Say that what makes a home is the feeling of belonging (use lo que).",
           "answer": "Lo que hace un hogar es la sensación de pertenencia."
         }
       ],
       "teaches": [
-        "b1-migration-identity-vocab"
+        "relativas-preposicion-el-que"
       ]
     }
   ]

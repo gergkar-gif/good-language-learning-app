@@ -27,7 +27,7 @@
       "id": "b1-28-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence gives a cause? [¿Cuál expresa una causa?]",
+      "question": "Which sentence gives a cause?",
       "options": [
         "Tenemos derechos porque somos ciudadanos. [We have rights because we are citizens.]",
         "Tenemos derechos; por eso somos ciudadanos. [We have rights; therefore we are citizens.]",
@@ -46,15 +46,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "La regla es necesaria; ___ debemos cumplirla.",
-      "hint": "therefore",
-      "answers": [
-        "por eso",
-        "por lo tanto"
-      ],
+      "hint": "that is why",
       "teaches": [
         "porque-y-por-eso"
       ],
-      "english": "The rule is necessary; therefore, we must follow it."
+      "english": "The rule is necessary; that is why we must follow it.",
+      "answer": "por eso"
     },
     {
       "id": "b1-28-04.ex04",
@@ -93,9 +90,9 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "La regla es necesaria. [The rule is necessary.]",
-        "Debemos cumplirla. [We must follow it.]",
-        "La regla es necesaria; por eso debemos cumplirla. [The rule is necessary; therefore we must follow it.]"
+        "Hay muchos carros en la calle. [There are a lot of cars in the street.]",
+        "Por eso la norma es necesaria. [That is why the rule is necessary.]",
+        "Debemos cumplirla. [We must follow it.]"
       ],
       "solution": [
         0,
@@ -110,11 +107,11 @@
       "id": "b1-28-04.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «consequence»? [¿Qué palabra significa «consecuencia»?]",
+      "question": "Which word means «consequence»?",
       "options": [
-        "consecuencia [consequence]",
-        "responsabilidad [responsibility]",
-        "derecho [right]"
+        "consecuencia",
+        "responsabilidad",
+        "derecho"
       ],
       "correct": 0,
       "teaches": [
@@ -245,7 +242,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Cuál fue la consecuencia?"
+          "text": "¿Cuál fue la consecuencia de la norma?"
         },
         {
           "speaker": "B",
@@ -253,13 +250,13 @@
         }
       ],
       "options": [
-        "La decisión tuvo una consecuencia importante. [The decision had an important consequence.]",
-        "La decisión fue una causa porque sí. [The decision was a cause because yes.]",
-        "No hubo ninguna consecuencia porque hubo una consecuencia. [There was no consequence because there was a consequence.]"
+        "Por eso hay menos problemas. [That is why there are fewer problems.]",
+        "Porque hay menos problemas. [Because there are fewer problems.]",
+        "Debido a hay menos problemas. [Because of there are fewer problems.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-rules-rights-responsibilities-vocab"
+        "porque-y-por-eso"
       ]
     },
     {
@@ -278,8 +275,8 @@
       ],
       "options": [
         "Debido a la situación, cambiaron la norma. [Because of the situation, they changed the rule.]",
-        "Por eso la situación. [Therefore the situation.]",
-        "Por lo tanto la situación, cambiaron la norma. [Therefore the situation, they changed the rule.]"
+        "Por eso la situación, cambiaron la norma. [That is why the situation, they changed the rule.]",
+        "Debido a la situación es difícil, cambiaron la norma. [Because of the situation is difficult, they changed the rule.]"
       ],
       "correct": 0,
       "teaches": [
@@ -292,7 +289,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain a right and its justification.",
+          "prompt": "Say that we have the right to take part because we are citizens.",
           "answer": "Tenemos derecho a participar porque somos ciudadanos."
         }
       ],
@@ -306,7 +303,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain a consequence of a rule.",
+          "prompt": "Say that the rule reduced the problems, so they decided to keep it (use por eso).",
           "answer": "La regla redujo los problemas; por eso decidieron mantenerla."
         }
       ],
@@ -320,7 +317,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Connect a responsibility to a reason.",
+          "prompt": "Say that we have the responsibility to respect the rules because they affect everyone.",
           "answer": "Tenemos la responsabilidad de respetar las normas porque afectan a todos."
         }
       ],

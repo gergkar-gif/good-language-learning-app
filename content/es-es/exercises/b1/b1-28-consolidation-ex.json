@@ -31,7 +31,7 @@
       "id": "b1-28-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence expresses prohibition? [¿Cuál expresa prohibición?]",
+      "question": "Which sentence expresses a prohibition?",
       "options": [
         "No se permite fumar aquí. [Smoking is not allowed here.]",
         "Hay que respetar las normas. [People have to respect the rules.]",
@@ -46,13 +46,13 @@
       "id": "b1-28-consolidation.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Es necesario que todos ___ la ley.",
-      "hint": "respetar",
-      "answer": "respeten",
+      "sentence": "Es importante que todos ___ las reglas.",
+      "hint": "cumplir",
+      "answer": "cumplan",
       "teaches": [
         "subjunctive-value-judgments"
       ],
-      "english": "It is necessary that everyone respect the law."
+      "english": "It is important that everyone follows the rules."
     },
     {
       "id": "b1-28-consolidation.ex04",
@@ -88,8 +88,8 @@
       ],
       "sentences": [
         "El ruido molestaba a los vecinos. [The noise bothered the neighbours.]",
-        "El ayuntamiento prohibió el tráfico. [The council banned traffic.]",
-        "El ruido molestaba a los vecinos, por eso el ayuntamiento prohibió el tráfico. [The noise bothered the neighbours, so the council banned traffic.]"
+        "Por eso el ayuntamiento prohibió el tráfico. [That is why the council banned traffic.]",
+        "Ahora la calle está más tranquila. [Now the street is quieter.]"
       ],
       "solution": [
         0,
@@ -101,31 +101,31 @@
       "id": "b1-28-consolidation.ex06",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence combines necessity and the subjunctive? [¿Cuál combina necesidad y subjuntivo?]",
+      "question": "Which sentence uses the subjunctive correctly?",
       "options": [
-        "Es importante que las normas sean justas. [It is important that rules are fair.]",
-        "Es importante que las normas son justas. [It is important that rules are fair.]",
-        "Es importante las normas ser justas. [It is important the rules to be fair.]"
+        "Es fundamental que los vecinos hablen. [It is essential that the neighbours talk.]",
+        "Es fundamental que los vecinos hablan. [It is essential that the neighbours talk.]",
+        "Es fundamental los vecinos hablar. [It is essential the neighbours to talk.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-value-judgments"
       ],
       "distractor_skills": {
-        "1": "ser"
+        "1": "ar-verbs"
       }
     },
     {
       "id": "b1-28-consolidation.ex07",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Tenemos una ___ con los demás ciudadanos.",
+      "sentence": "Tenemos una ___ con nuestros vecinos.",
       "hint": "responsibility",
       "answer": "responsabilidad",
       "teaches": [
         "b1-rules-rights-responsibilities-vocab"
       ],
-      "english": "We have a responsibility towards other citizens."
+      "english": "We have a responsibility towards our neighbours."
     },
     {
       "id": "b1-28-consolidation.ex08",
@@ -137,34 +137,37 @@
       "tiles": [
         "Está",
         "prohibido",
-        "aparcar",
-        "aquí."
+        "entrar",
+        "con",
+        "perros."
       ],
       "solutions": [
         [
           "Está",
           "prohibido",
-          "aparcar",
-          "aquí."
+          "entrar",
+          "con",
+          "perros."
         ],
         [
-          "Aquí",
+          "Entrar",
+          "con",
+          "perros",
           "está",
-          "prohibido",
-          "aparcar."
+          "prohibido."
         ]
       ],
-      "english": "Parking here is forbidden."
+      "english": "Entering with dogs is forbidden."
     },
     {
       "id": "b1-28-consolidation.ex09",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which sentence best integrates the unit? [¿Cuál integra mejor la unidad?]",
+      "question": "Which sentence defends a rule using rights?",
       "options": [
-        "Creo que esta regla es necesaria porque protege los derechos de todos, aunque debemos considerar sus consecuencias. [I think this rule is necessary because it protects everyone's rights, although we must consider its consequences.]",
-        "Esta regla oficial de convivencia existe en todos los edificios residenciales y se aplica a cada vecino. [This official rule of coexistence exists in all residential buildings and applies to each neighbour.]",
-        "Todos los ciudadanos tenemos derechos fundamentales reconocidos en la constitución del país desde su aprobación. [All citizens have fundamental rights recognised in the country's constitution since its approval.]"
+        "Creo que la regla es necesaria porque protege los derechos de todos. [I think the rule is necessary because it protects everyone's rights.]",
+        "Esta regla existe en todos los edificios de la ciudad. [This rule exists in all the buildings of the city.]",
+        "Todos los ciudadanos tenemos derechos fundamentales. [All citizens have fundamental rights.]"
       ],
       "correct": 0,
       "teaches": [
@@ -178,8 +181,8 @@
       "sentence": "Es fundamental que haya reglas claras.",
       "options": [
         "It is essential that there be clear rules.",
-        "There are no clear rules.",
-        "Clear rules are forbidden."
+        "It is essential that there are no clear rules.",
+        "Clear rules are forbidden in this place."
       ],
       "correct": 0,
       "teaches": [
@@ -255,13 +258,16 @@
       ],
       "options": [
         "Porque protege a todos. [Because it protects everyone.]",
-        "Por eso porque. [Therefore because.]",
-        "Aunque la regla. [Although the rule.]"
+        "Por eso protege a todos. [That is why it protects everyone.]",
+        "Aunque protege a todos. [Although it protects everyone.]"
       ],
       "correct": 0,
       "teaches": [
         "porque-y-por-eso"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "concesivas-aunque"
+      }
     },
     {
       "id": "b1-28-consolidation.ex15",
@@ -279,23 +285,26 @@
       ],
       "options": [
         "Creo que es necesaria porque protege a todos. [I think it is necessary because it protects everyone.]",
-        "No sé porque sí. [I do not know because yes.]",
-        "La regla es un derecho porque regla. [The rule is a right because rule.]"
+        "Creo que es necesaria por eso protege a todos. [I think it is necessary that is why it protects everyone.]",
+        "Creo que es necesaria aunque protege a todos. [I think it is necessary although it protects everyone.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-rules-rights-responsibilities-vocab"
-      ]
+        "porque-y-por-eso"
+      ],
+      "distractor_skills": {
+        "2": "concesivas-aunque"
+      }
     },
     {
       "id": "b1-28-consolidation.ex16",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which statement best connects rights and responsibilities? [¿Cuál relaciona mejor derechos y responsabilidades?]",
+      "question": "Which statement connects rights and responsibilities?",
       "options": [
-        "Los derechos son importantes, pero también tenemos la responsabilidad de respetar los derechos de los demás. [Rights are important, but we also have a responsibility to respect other people's rights.]",
-        "Tener derechos garantizados significa que nadie debe asumir ninguna responsabilidad social. [Having guaranteed rights means that no one has to take on any social responsibility.]",
-        "Las responsabilidades individuales no tienen ninguna relación con las leyes del estado. [Individual responsibilities do not have any relationship with the laws of the state.]"
+        "Tenemos derechos, pero también la responsabilidad de respetar los derechos de nuestros vecinos. [We have rights, but also the responsibility to respect our neighbours' rights.]",
+        "Si tenemos derechos, no tenemos la responsabilidad de respetar las reglas. [If we have rights, we do not have the responsibility to respect the rules.]",
+        "Las responsabilidades de cada persona no tienen relación con las leyes. [Each person's responsibilities have no relation to the laws.]"
       ],
       "correct": 0,
       "teaches": [
@@ -308,8 +317,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "State a rule, explain why it exists and mention a consequence.",
-          "answer": "No se permite aparcar aquí porque protege a los peatones; por eso debemos respetar la norma."
+          "prompt": "Say that smoking is not allowed here because it protects the children, so we must respect the rule.",
+          "answer": "No se permite fumar aquí porque protege a los niños; por eso debemos respetar la norma."
         }
       ],
       "teaches": [
@@ -322,7 +331,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write a short political argument about a rule, using rights and responsibility.",
+          "prompt": "Write two sentences: you think the rule is necessary because it protects everyone's rights; although it may be inconvenient, we have the responsibility to respect it and consider its consequences.",
           "answer": "Creo que esta regla es necesaria porque protege los derechos de todos. Aunque sea incómoda, tenemos la responsabilidad de respetarla y considerar sus consecuencias."
         }
       ],

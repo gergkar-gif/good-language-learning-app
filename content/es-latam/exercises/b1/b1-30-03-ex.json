@@ -27,7 +27,7 @@
       "id": "b1-30-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly uses the subjunctive? [¿Cuál usa correctamente el subjuntivo?]",
+      "question": "Which sentence correctly uses the subjunctive?",
       "options": [
         "Es importante que respetemos las tradiciones. [It is important that we respect traditions.]",
         "Es importante que respetamos las tradiciones. [It is important that we respect traditions.]",
@@ -100,7 +100,7 @@
       "id": "b1-30-03.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «value»? [¿Qué palabra significa «valor»?]",
+      "question": "Which word means «value»?",
       "options": [
         "valor [value]",
         "lengua [language]",
@@ -195,7 +195,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué es importante?"
+          "text": "¿Qué es necesario?"
         },
         {
           "speaker": "B",
@@ -203,9 +203,9 @@
         }
       ],
       "options": [
-        "Es importante que respetemos las tradiciones. [It is important that we respect traditions.]",
-        "Es importante que respetamos las tradiciones. [It is important that we respect traditions.]",
-        "Es importante respetamos. [It is important we respect.]"
+        "Es necesario que comparemos las costumbres. [It is necessary that we compare customs.]",
+        "Es necesario que comparamos las costumbres. [It is necessary that we compare customs.]",
+        "Es necesario comparamos las costumbres. [It is necessary we compare customs.]"
       ],
       "correct": 0,
       "teaches": [
@@ -259,12 +259,15 @@
       "options": [
         "Puede expresar un valor. [It can express a value.]",
         "Puede expresó un valor. [It can expressed a value.]",
-        "Puede expresar ninguna cultura. [It can express no culture.]"
+        "Pueden expresar un valor. [They can express a value.]"
       ],
       "correct": 0,
       "teaches": [
         "querer-poder"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-30-03.ex15",
@@ -272,8 +275,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Evaluate a cultural tradition.",
-          "answer": "Es importante que respetemos las tradiciones de otras personas."
+          "prompt": "Say that it is necessary that we compare customs without judging them.",
+          "answer": "Es necesario que comparemos las costumbres sin juzgarlas."
         }
       ],
       "teaches": [
@@ -286,8 +289,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say why learning about cultures is useful.",
-          "answer": "Es bueno que conozcamos otras culturas porque podemos comprender otras perspectivas."
+          "prompt": "Say that it is good that we learn about other cultures because we can understand other perspectives.",
+          "answer": "Es bueno que conozcamos otras culturas porque podemos entender otras perspectivas."
         }
       ],
       "teaches": [
@@ -300,7 +303,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Evaluate one cultural practice.",
+          "prompt": "Say that you think this practice is interesting, although it depends on each community's values.",
           "answer": "Creo que esta práctica es interesante, aunque depende de los valores de cada comunidad."
         }
       ],

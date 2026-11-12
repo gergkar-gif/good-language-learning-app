@@ -27,11 +27,11 @@
       "id": "b1-27-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence expresses intended meaning? [¿Cuál expresa el significado que alguien quería comunicar?]",
+      "question": "Which sentence says what someone meant?",
       "options": [
         "Quiso decir que no estaba de acuerdo. [He meant that he did not agree.]",
         "Quiso decir si no estaba de acuerdo. [He meant whether he did not agree.]",
-        "Quiso decir con no estaba de acuerdo. [He meant with he did not agree.]"
+        "Quiso decir no estaba de acuerdo. [He meant did not agree.]"
       ],
       "correct": 0,
       "teaches": [
@@ -82,9 +82,9 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "No entendí el mensaje. [I did not understand the message.]",
-        "Pregunté qué significaba. [I asked what it meant.]",
-        "No entendí el mensaje y pregunté qué significaba. [I did not understand the message and asked what it meant.]"
+        "No entendí el mensaje de Ana. [I did not understand Ana's message.]",
+        "Le pregunté qué quería decir. [I asked her what she meant.]",
+        "Me explicó que quería ayuda. [She explained to me that she wanted help.]"
       ],
       "solution": [
         0,
@@ -99,11 +99,11 @@
       "id": "b1-27-03.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «intention»? [¿Qué palabra significa «intención»?]",
+      "question": "Which word means «intention»?",
       "options": [
-        "intención [intention]",
-        "significado [meaning]",
-        "reacción [reaction]"
+        "intención",
+        "significado",
+        "reacción"
       ],
       "correct": 0,
       "teaches": [
@@ -238,7 +238,7 @@
       "options": [
         "Quería saber si podíamos ayudar. [She wanted to know if we could help.]",
         "Quería saber que podíamos ayudar. [She wanted to know that we could help.]",
-        "Quería saber podemos ayudar. [She wanted know we can help.]"
+        "Quería saber de si podíamos ayudar. [She wanted to know of whether we could help.]"
       ],
       "correct": 0,
       "teaches": [
@@ -252,7 +252,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Cuál era su intención?"
+          "text": "¿Qué quería hacer con el problema?"
         },
         {
           "speaker": "B",
@@ -260,9 +260,9 @@
         }
       ],
       "options": [
-        "Según ella, quería explicar el problema. [According to her, she wanted to explain the problem.]",
-        "Según ella, le lo quería explicar. [According to her, she wanted to explain it (le lo) to him.]",
-        "Según ella, lo se quería explicar. [According to her, she wanted to explain it (lo se) to him.]"
+        "Según ella, se lo quería explicar a Marta. [According to her, she wanted to explain it to Marta.]",
+        "Según ella, le lo quería explicar a Marta. [According to her, she wanted to explain it (le lo) to Marta.]",
+        "Según ella, lo se quería explicar a Marta. [According to her, she wanted to explain it (lo se) to Marta.]"
       ],
       "correct": 0,
       "teaches": [
@@ -275,7 +275,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain what someone meant.",
+          "prompt": "Say that he meant that he did not agree.",
           "answer": "Quiso decir que no estaba de acuerdo."
         }
       ],
@@ -289,7 +289,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Report an indirect intention.",
+          "prompt": "Say that she wanted to know whether we could help.",
           "answer": "Quería saber si podíamos ayudar."
         }
       ],
@@ -303,7 +303,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain how a message was interpreted.",
+          "prompt": "Say that you thought the message meant something different.",
           "answer": "Pensé que el mensaje significaba una cosa diferente."
         }
       ],

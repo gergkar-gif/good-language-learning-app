@@ -31,11 +31,11 @@
       "id": "b1-32-01.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence gives a cause? [¿Cuál expresa una causa?]",
+      "question": "Which sentence gives a cause?",
       "options": [
         "La ciudad cambió debido a la falta de agua. [The city changed due to the lack of water.]",
-        "La ciudad cambió por eso. [The city changed as a result.]",
-        "La ciudad cambiará. [The city will change.]"
+        "La ciudad cambió; por eso, hay menos agua. [The city changed; that is why there is less water.]",
+        "La ciudad cambiará en los próximos años. [The city will change in the coming years.]"
       ],
       "correct": 0,
       "teaches": [
@@ -107,7 +107,7 @@
       "id": "b1-32-01.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which connector means «because / since»? [¿Qué conector significa «porque / ya que»?]",
+      "question": "Which connector means «because / since»?",
       "options": [
         "ya que [because]",
         "por eso [therefore]",
@@ -123,14 +123,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "___ había poco tiempo, salimos temprano.",
-      "hint": "as / since",
+      "hint": "as",
       "teaches": [
         "porque-y-por-eso"
       ],
       "english": "As there was little time, we left early.",
       "answers": [
-        "Como",
-        "Ya que"
+        "Como"
       ]
     },
     {
@@ -215,7 +214,7 @@
       "options": [
         "Cambió debido a la falta de agua. [It changed due to the lack of water.]",
         "Cambió por eso la falta de agua. [It changed therefore the lack of water.]",
-        "Cambió sin embargo. [It changed however.]"
+        "Cambió debido la falta de agua. [It changed due the lack of water.]"
       ],
       "correct": 0,
       "teaches": [
@@ -238,13 +237,16 @@
       ],
       "options": [
         "Porque había poco tiempo. [Because there was little time.]",
-        "Por eso había tiempo. [Therefore there was time.]",
-        "Aunque temprano. [Although early.]"
+        "Por eso había poco tiempo. [That is why there was little time.]",
+        "Aunque había poco tiempo. [Although there was little time.]"
       ],
       "correct": 0,
       "teaches": [
         "porque-y-por-eso"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "concesivas-aunque"
+      }
     },
     {
       "id": "b1-32-01.ex14",
@@ -263,7 +265,7 @@
       "options": [
         "La causa fue la falta de transporte. [The cause was the lack of transport.]",
         "La consecuencia fue la falta de transporte. [The consequence was the lack of transport.]",
-        "El problema fue por eso. [The problem was therefore.]"
+        "La causa fue para la falta de transporte. [The cause was for the lack of transport.]"
       ],
       "correct": 0,
       "teaches": [
@@ -276,7 +278,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give one cause for a problem.",
+          "prompt": "Say that the problem happened because it rained a lot.",
           "answer": "El problema ocurrió porque llovió mucho."
         }
       ],
@@ -290,7 +292,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Use debido a to explain a cause.",
+          "prompt": "Say that the city changed due to the lack of water (use debido a).",
           "answer": "La ciudad cambió debido a la falta de agua."
         }
       ],

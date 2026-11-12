@@ -31,7 +31,7 @@
       "id": "b1-31-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence is a future prediction? [¿Cuál es una predicción futura?]",
+      "question": "Which sentence is a future prediction?",
       "options": [
         "La sociedad cambiará mucho. [Society will change a lot.]",
         "La sociedad cambió mucho. [Society changed a lot.]",
@@ -105,7 +105,7 @@
       "id": "b1-31-consolidation.ex06",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence combines necessity and the subjunctive? [¿Cuál combina necesidad y subjuntivo?]",
+      "question": "Which sentence combines necessity and the subjunctive?",
       "options": [
         "Es importante que aprendamos nuevas habilidades. [It is important that we learn new skills.]",
         "Es importante que aprendemos nuevas habilidades. [It is important that we learn new skills.]",
@@ -153,11 +153,11 @@
       "id": "b1-31-consolidation.ex09",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which sentence best integrates the unit? [¿Cuál integra mejor la unidad?]",
+      "question": "Which sentence best integrates the unit?",
       "options": [
         "Probablemente habrá cambios, y es importante que nos preparemos para diferentes escenarios. [There will probably be changes, and it is important that we prepare for different scenarios.]",
-        "Habrá importantes cambios en la organización del trabajo según todos los expertos. [There will be important changes in work organisation according to all experts.]",
-        "El futuro de las próximas generaciones depende directamente de las decisiones de hoy. [The future of the next generations depends directly on the decisions of today.]"
+        "Habrá muchos cambios en la organización del trabajo según todos los expertos. [There will be many changes in work organisation according to all experts.]",
+        "El futuro de la sociedad depende de las decisiones que tomamos todos los días. [The future of society depends on the decisions we make every day.]"
       ],
       "correct": 0,
       "teaches": [
@@ -171,8 +171,8 @@
       "sentence": "Es posible que la sociedad sea diferente.",
       "options": [
         "It is possible that society will be different.",
-        "Society is certainly identical.",
-        "Society cannot change."
+        "Society will certainly be identical to today.",
+        "Society cannot change in the coming years."
       ],
       "correct": 0,
       "teaches": [
@@ -186,8 +186,8 @@
       "sentence": "Si hubiera menos recursos, habría más problemas.",
       "options": [
         "If there were fewer resources, there would be more problems.",
-        "There will be fewer resources.",
-        "There were fewer problems yesterday."
+        "There will be fewer resources, so there will be more problems.",
+        "There were fewer resources, so there were more problems yesterday."
       ],
       "correct": 0,
       "teaches": [
@@ -220,13 +220,16 @@
       ],
       "options": [
         "Prepararnos para diferentes posibilidades. [Prepare for different possibilities.]",
-        "Prepararnos porque probable. [Prepare because likely.]",
-        "Es necesario que esperamos algo. [It is necessary that we wait for something.]"
+        "Prepararnos por diferentes posibilidades. [Prepare because of different possibilities.]",
+        "Es necesario que esperamos un cambio. [It is necessary that we wait for a change.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-value-judgments"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "por-vs-para"
+      }
     },
     {
       "id": "b1-31-consolidation.ex14",
@@ -245,12 +248,15 @@
       "options": [
         "Probablemente habrá nuevas formas de trabajo. [There will probably be new forms of work.]",
         "Probablemente haberá nuevas formas de trabajo. [There will probably be new forms of work.]",
-        "Probablemente no futuro. [Probably no future.]"
+        "Probablemente habría nuevas formas de trabajo. [There would probably be new forms of work.]"
       ],
       "correct": 0,
       "teaches": [
         "futuro-simple"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "condicional-irregular"
+      }
     },
     {
       "id": "b1-31-consolidation.ex15",
@@ -269,21 +275,24 @@
       "options": [
         "Me adaptaría y buscaría nuevas habilidades. [I would adapt and look for new skills.]",
         "Me adapte y busque nuevas habilidades. [I adapt (subjunctive) and look for new skills.]",
-        "Es necesario que me adaptaría rápidamente. [It is necessary that I would adapt quickly.]"
+        "Es necesario que me adaptaría pronto. [It is necessary that I would adapt soon.]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-31-consolidation.ex16",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which statement best combines prediction and preparation? [¿Cuál combina mejor predicción y preparación?]",
+      "question": "Which statement best combines prediction and preparation?",
       "options": [
         "Aunque no sabemos exactamente qué ocurrirá, es importante que nos preparemos. [Although we do not know exactly what will happen, it is important that we prepare.]",
-        "Sabemos exactamente qué ocurrirá en los próximos años gracias a las estadísticas. [We know exactly what will happen in the coming years thanks to statistics.]",
+        "Sabemos exactamente qué ocurrirá en los próximos años gracias a los expertos. [We know exactly what will happen in the coming years thanks to the experts.]",
         "No resulta necesario preparar ningún plan especial porque las cosas no van a cambiar. [It does not turn out necessary to prepare any special plan because things are not going to change.]"
       ],
       "correct": 0,
@@ -297,7 +306,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give a prediction and explain how society should respond.",
+          "prompt": "Say that there will probably be important changes, so it is necessary that society prepares.",
           "answer": "Probablemente habrá cambios importantes, por eso es necesario que la sociedad se prepare."
         }
       ],
@@ -311,7 +320,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write a short argument using prediction, probability and hypothetical language.",
+          "prompt": "Write: the future is uncertain but there will probably be changes; if they were fast we would have to adapt, so it is important that we prepare.",
           "answer": "El futuro es incierto, pero probablemente habrá cambios. Si fueran rápidos, tendríamos que adaptarnos, por lo que es importante que nos preparemos."
         }
       ],

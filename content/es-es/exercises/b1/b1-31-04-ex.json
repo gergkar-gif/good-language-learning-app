@@ -27,7 +27,7 @@
       "id": "b1-31-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence expresses necessity with the subjunctive? [¿Cuál expresa necesidad con subjuntivo?]",
+      "question": "Which sentence expresses necessity with the subjunctive?",
       "options": [
         "Es necesario que preparemos las ciudades. [It is necessary that we prepare the cities.]",
         "Es necesario que preparamos las ciudades. [It is necessary that we prepare the cities.]",
@@ -97,7 +97,7 @@
       "id": "b1-31-04.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «necessity»? [¿Qué palabra significa «necesidad»?]",
+      "question": "Which word means «necessity»?",
       "options": [
         "necesidad [necessity]",
         "incertidumbre [uncertainty]",
@@ -119,8 +119,7 @@
       ],
       "english": "The need to prepare is clear.",
       "answers": [
-        "necesidad",
-        "importancia"
+        "necesidad"
       ]
     },
     {
@@ -253,12 +252,15 @@
       "options": [
         "Debemos prepararnos para diferentes escenarios. [We should prepare for different scenarios.]",
         "Es necesario que nos preparamos para diferentes escenarios. [It is necessary that we prepare for different scenarios.]",
-        "No debemos escenario. [We should not scenario.]"
+        "Debemos prepararnos por diferentes escenarios. [We should prepare because of different scenarios.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-value-judgments"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "por-vs-para"
+      }
     },
     {
       "id": "b1-31-04.ex15",
@@ -266,7 +268,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "State one necessity for the future.",
+          "prompt": "Say that it is necessary that we prepare the cities.",
           "answer": "Es necesario que preparemos las ciudades."
         }
       ],
@@ -280,7 +282,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "State one important preparation.",
+          "prompt": "Say that it is important that we learn new skills.",
           "answer": "Es importante que aprendamos nuevas habilidades."
         }
       ],
@@ -294,7 +296,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain what institutions should prepare for.",
+          "prompt": "Say that it is necessary that institutions prepare for different scenarios.",
           "answer": "Es necesario que las instituciones se preparen para diferentes escenarios."
         }
       ],

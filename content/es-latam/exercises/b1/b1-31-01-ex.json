@@ -31,7 +31,7 @@
       "id": "b1-31-01.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence is a future prediction? [¿Cuál es una predicción sobre el futuro?]",
+      "question": "Which sentence is a future prediction?",
       "options": [
         "La sociedad cambiará mucho. [Society will change a lot.]",
         "La sociedad cambia mucho. [Society changes a lot.]",
@@ -101,7 +101,7 @@
       "id": "b1-31-01.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which verb means «to transform»? [¿Qué verbo significa «transformar»?]",
+      "question": "Which verb means «to transform»?",
       "options": [
         "transformar [to transform]",
         "predecir [to predict]",
@@ -116,13 +116,13 @@
       "id": "b1-31-01.ex07",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El desarrollo tecnológico ___ la sociedad.",
+      "sentence": "La tecnología ___ la sociedad.",
       "hint": "transformar",
       "answer": "transformará",
       "teaches": [
         "futuro-simple"
       ],
-      "english": "Technological development will transform society."
+      "english": "Technology will transform society."
     },
     {
       "id": "b1-31-01.ex08",
@@ -169,8 +169,8 @@
       "sentence": "La tecnología tendrá un papel importante.",
       "options": [
         "Technology will have an important role.",
-        "Technology had no role.",
-        "Technology has disappeared."
+        "Technology had an important role.",
+        "Technology has an important role."
       ],
       "correct": 0,
       "teaches": [
@@ -203,7 +203,7 @@
       ],
       "options": [
         "La sociedad cambiará mucho. [Society will change a lot.]",
-        "La sociedad cambió por completo. [Society changed completely.]",
+        "La sociedad cambió mucho. [Society changed a lot.]",
         "La sociedad cambie mucho. [Society change (subjunctive) a lot.]"
       ],
       "correct": 0,
@@ -211,7 +211,8 @@
         "futuro-simple"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido"
+        "1": "preterito-indefinido",
+        "2": "subjuntivo-morfologia"
       }
     },
     {
@@ -274,7 +275,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Make one prediction about society.",
+          "prompt": "Say that society will change a lot in the coming years.",
           "answer": "La sociedad cambiará mucho en los próximos años."
         }
       ],
@@ -288,8 +289,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Make one prediction about technology.",
-          "answer": "La tecnología tendrá un papel aún más importante."
+          "prompt": "Say that technology will have an even more important role.",
+          "answer": "La tecnología tendrá un papel todavía más importante."
         }
       ],
       "teaches": [

@@ -27,11 +27,11 @@
       "id": "b1-30-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence expresses contrast? [¿Cuál expresa contraste?]",
+      "question": "Which sentence expresses contrast?",
       "options": [
         "Aunque son diferentes, tienen algo en común. [Although they are different, they have something in common.]",
-        "Ambas culturas son diferentes en sus tradiciones. [Both cultures are different in their traditions.]",
-        "Los dos idiomas son similares en su gramática. [The two languages are similar in their grammar.]"
+        "Las dos tradiciones son muy parecidas entre sí. [The two traditions are very similar to each other.]",
+        "Esta fiesta es tan importante como la otra. [This celebration is as important as the other one.]"
       ],
       "correct": 0,
       "teaches": [
@@ -110,7 +110,7 @@
       "id": "b1-30-04.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «difference»? [¿Qué palabra significa «diferencia»?]",
+      "question": "Which word means «difference»?",
       "options": [
         "diferencia [difference]",
         "semejanza [similarity]",
@@ -188,8 +188,8 @@
       "sentence": "Las dos tradiciones son diferentes pero tienen algo en común.",
       "options": [
         "The two traditions are different but have something in common.",
-        "The two traditions are identical.",
-        "The two traditions have no connection."
+        "The two traditions are exactly the same in every way.",
+        "The two traditions are different and have no connection at all."
       ],
       "correct": 0,
       "teaches": [
@@ -223,7 +223,7 @@
       "options": [
         "No, son diferentes, pero tienen algo en común. [No, they are different, but they have something in common.]",
         "No, son diferentes, pero tienen nada en común. [No, they are different, but they have nothing in common.]",
-        "No, no tienen cultura. [No, they have no culture.]"
+        "Sí, son diferentes, pero tienen algo en común. [Yes, they are different, but they have something in common.]"
       ],
       "correct": 0,
       "teaches": [
@@ -247,12 +247,15 @@
       "options": [
         "Tienen valores parecidos. [They have similar values.]",
         "Aunque son diferentes, pero tienen valores parecidos. [Although they are different, but they have similar values.]",
-        "No tienen ninguna perspectiva porque sí. [They have no perspective because yes.]"
+        "Tienen valores parecida. [They have similar values.]"
       ],
       "correct": 0,
       "teaches": [
         "concesivas-aunque"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "adjective-agreement"
+      }
     },
     {
       "id": "b1-30-04.ex14",
@@ -270,8 +273,8 @@
       ],
       "options": [
         "Son diferentes, pero también tienen semejanzas. [They are different, but they also have similarities.]",
-        "Son comparación. [They are comparison.]",
-        "No puedo comparar porque cultura. [I cannot compare because culture.]"
+        "Son diferentes, porque también tienen semejanzas. [They are different, because they also have similarities.]",
+        "Son diferentes, pero también son semejanzas. [They are different, but they are also similarities.]"
       ],
       "correct": 0,
       "teaches": [
@@ -284,8 +287,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Compare two cultural practices.",
-          "answer": "Las dos prácticas son diferentes, pero tienen una función parecida."
+          "prompt": "Say that the two practices are different but have similar values.",
+          "answer": "Las dos prácticas son diferentes, pero tienen valores parecidos."
         }
       ],
       "teaches": [
@@ -298,8 +301,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give one similarity and one difference.",
-          "answer": "Una semejanza es la importancia de la familia; una diferencia es la forma de celebrarla."
+          "prompt": "Give one similarity (the value of the family) and one difference (the way of celebrating it).",
+          "answer": "Una semejanza es el valor de la familia; una diferencia es la forma de celebrarla."
         }
       ],
       "teaches": [
@@ -312,7 +315,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain why comparison does not mean ranking cultures.",
+          "prompt": "Say that comparing cultures lets us find similarities and differences without deciding which is better.",
           "answer": "Comparar culturas permite encontrar semejanzas y diferencias sin decidir cuál es mejor."
         }
       ],

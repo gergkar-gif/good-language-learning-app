@@ -26,27 +26,27 @@
     {
       "id": "b1-29-03.ex02",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which sentence describes adaptation as a process? [¿Cuál describe la adaptación como un proceso?]",
+      "category": "grammar",
+      "question": "Which sentence is correct?",
       "options": [
-        "Poco a poco me adapté a la nueva ciudad. [Little by little I adapted to the new city.]",
-        "La ciudad donde vivo ahora es completamente nueva para mí. [The city where I live now is completely new to me.]",
-        "Actualmente vivo en el centro histórico de la ciudad. [Currently I live in the historic centre of the city.]"
+        "Un día me di cuenta de que ya conocía el barrio. [One day I realised that I already knew the neighbourhood.]",
+        "Un día me di cuenta en que ya conocía el barrio. [One day I realised in that I already knew the neighbourhood.]",
+        "Un día me di cuenta ya conocía el barrio. [One day I realised I already knew the neighbourhood.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-migration-identity-vocab"
+        "verbos-regimen-preposicional"
       ]
     },
     {
       "id": "b1-29-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Me ___ a los nuevos horarios.",
+      "sentence": "Me acostumbré ___ los nuevos horarios.",
       "hint": "acostumbrarse",
-      "answer": "acostumbré",
+      "answer": "a",
       "teaches": [
-        "preterito-indefinido"
+        "verbos-regimen-preposicional"
       ],
       "english": "I got used to the new schedules."
     },
@@ -116,11 +116,11 @@
       "id": "b1-29-03.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «experience»? [¿Qué palabra significa «experiencia»?]",
+      "question": "Which word means «experience»?",
       "options": [
-        "experiencia [experience]",
-        "llegada [arrival]",
-        "hogar [home]"
+        "experiencia",
+        "llegada",
+        "pertenencia"
       ],
       "correct": 0,
       "teaches": [
@@ -169,8 +169,8 @@
       "sentence": "Poco a poco me adapté a la nueva ciudad.",
       "options": [
         "Little by little I adapted to the new city.",
-        "I left the new city immediately.",
-        "I was born in the new city."
+        "Little by little I left the new city.",
+        "I was born in the new city many years ago."
       ],
       "correct": 0,
       "teaches": [
@@ -209,7 +209,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Te adaptaste rápidamente?"
+          "text": "¿Te adaptaste muy rápido?"
         },
         {
           "speaker": "B",
@@ -245,16 +245,13 @@
       ],
       "options": [
         "Me acostumbré a los nuevos horarios. [I got used to the new schedules.]",
-        "Me acostumbraré a los nuevos horarios. [I will get used to the new schedules.]",
-        "Me adapté a nadie. [I adapted to nobody.]"
+        "Me acostumbré en los nuevos horarios. [I got used in the new schedules.]",
+        "Me acostumbré los nuevos horarios. [I got used the new schedules.]"
       ],
       "correct": 0,
       "teaches": [
-        "preterito-indefinido"
-      ],
-      "distractor_skills": {
-        "1": "futuro-simple"
-      }
+        "verbos-regimen-preposicional"
+      ]
     },
     {
       "id": "b1-29-03.ex14",
@@ -273,14 +270,15 @@
       "options": [
         "Fue difícil, pero aprendí mucho. [It was difficult, but I learned a lot.]",
         "Sea difícil, pero aprendí mucho. [It be (subjunctive) difficult, but I learned a lot.]",
-        "Era aprenderé mucho. [It was I will learn a lot.]"
+        "Fue difícil, pero aprenderé mucho. [It was difficult, but I will learn a lot.]"
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "subjuntivo-morfologia"
+        "1": "subjuntivo-morfologia",
+        "2": "futuro-simple"
       }
     },
     {
@@ -289,7 +287,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe one change after moving.",
+          "prompt": "Say that little by little you adapted to the new city.",
           "answer": "Poco a poco me adapté a la nueva ciudad."
         }
       ],
@@ -303,7 +301,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe something you got used to.",
+          "prompt": "Say that you got used to the schedules and to the food.",
           "answer": "Me acostumbré a los horarios y a la comida."
         }
       ],
@@ -317,7 +315,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain what you learned from an experience.",
+          "prompt": "Say that it was an important experience and that you learned to adapt.",
           "answer": "Fue una experiencia importante y aprendí a adaptarme."
         }
       ],

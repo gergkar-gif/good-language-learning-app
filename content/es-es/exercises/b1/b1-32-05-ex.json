@@ -27,11 +27,11 @@
       "id": "b1-32-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence builds an argument with more than one connector? [¿Cuál construye un argumento con varios conectores?]",
+      "question": "Which sentence builds an argument with more than one connector?",
       "options": [
         "La medida es útil porque reduce los costes; además, protege el medio ambiente. [The measure is useful because it reduces costs; furthermore, it protects the environment.]",
-        "La medida aprobada por el ayuntamiento es verdaderamente útil para los ciudadanos. [The measure approved by the city council is truly useful for citizens.]",
-        "La nueva propuesta económica reduce notablemente los costes de transporte público. [The new economic proposal notably reduces public transport costs.]"
+        "La medida que aprobó el ayuntamiento es muy útil para todos los vecinos. [The measure the city council approved is very useful for all the neighbours.]",
+        "La nueva propuesta reduce mucho los costes del transporte público de la ciudad. [The new proposal greatly reduces the public transport costs of the city.]"
       ],
       "correct": 0,
       "teaches": [
@@ -49,8 +49,7 @@
       ],
       "english": "The measure is useful because it reduces costs; furthermore, it protects the environment.",
       "answers": [
-        "además",
-        "asimismo"
+        "además"
       ]
     },
     {
@@ -93,7 +92,7 @@
       "sentences": [
         "Primero, la medida reduce los costes. [First, the measure reduces costs.]",
         "Además, protege el medio ambiente. [Besides, it protects the environment.]",
-        "Por lo tanto, es una medida útil. [Therefore, it is a useful measure.]"
+        "Por eso, es una medida útil. [That is why it is a useful measure.]"
       ],
       "solution": [
         0,
@@ -108,11 +107,11 @@
       "id": "b1-32-05.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which phrase means «on the other hand»? [¿Qué expresión significa «por otra parte»?]",
+      "question": "Which phrase means «on the other hand»?",
       "options": [
         "por otra parte [on the other hand]",
-        "por lo tanto [therefore]",
-        "debido a [due to]"
+        "por esa razón [for that reason]",
+        "a pesar de [despite]"
       ],
       "correct": 0,
       "teaches": [
@@ -166,8 +165,8 @@
       "sentence": "La medida es útil porque reduce los costes; además, protege el medio ambiente.",
       "options": [
         "The measure is useful because it reduces costs; furthermore, it protects the environment.",
-        "The measure is expensive and has no benefits.",
-        "The measure reduces costs but harms the environment."
+        "The measure is not useful because it raises costs; however, it protects the environment.",
+        "The measure is useful because it reduces costs; however, it harms the environment."
       ],
       "correct": 0,
       "teaches": [
@@ -181,8 +180,8 @@
       "sentence": "Es una solución cara; sin embargo, puede lograr buenos resultados.",
       "options": [
         "It is an expensive solution; however, it can achieve good results.",
-        "It is a cheap solution, so it cannot work.",
-        "It is expensive because it achieves no results."
+        "It is a cheap solution; therefore, it cannot achieve any results.",
+        "It is an expensive solution; because of that, it cannot achieve good results."
       ],
       "correct": 0,
       "teaches": [
@@ -215,8 +214,8 @@
       ],
       "options": [
         "Porque reduce los costes y además protege el medio ambiente. [Because it reduces costs and furthermore protects the environment.]",
-        "Por otra parte, no es útil. [On the other hand, it is not useful.]",
-        "Sin embargo, porque resultado. [However, because result.]"
+        "Por otra parte, la medida no es útil para las personas. [On the other hand, the measure is not useful for people.]",
+        "Porque reduce los costes y sin embargo protege el medio ambiente. [Because it reduces costs and however protects the environment.]"
       ],
       "correct": 0,
       "teaches": [
@@ -239,8 +238,8 @@
       ],
       "options": [
         "Por otra parte, debemos proteger el entorno. [On the other hand, we must protect the environment.]",
-        "Por eso debemos ignorarlo. [Therefore we must ignore it.]",
-        "Debido a además. [Due to furthermore.]"
+        "Por eso debemos olvidar el entorno de la ciudad. [That is why we must forget the city's surroundings.]",
+        "Debido a además debemos proteger el entorno. [Due to furthermore we must protect the environment.]"
       ],
       "correct": 0,
       "teaches": [
@@ -265,9 +264,9 @@
         }
       ],
       "options": [
-        "Por lo tanto, esta solución parece la más adecuada. [Therefore, this solution seems the most appropriate.]",
-        "Por lo tanto que esta solución parece la más adecuada. [Therefore that this solution seems the most appropriate.]",
-        "Debido a resultado. [Due to result.]"
+        "Así que esta solución parece la más adecuada. [So this solution seems the most appropriate.]",
+        "Así que que esta solución parece la más adecuada. [So that this solution seems the most appropriate.]",
+        "Debido a esta solución parece la más adecuada. [Due to this solution seems the most appropriate.]"
       ],
       "correct": 0,
       "teaches": [
@@ -280,7 +279,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give a reason and an additional supporting point.",
+          "prompt": "Give a reason and an additional supporting point: the measure is useful because it reduces costs, and it also protects the environment.",
           "answer": "La medida es útil porque reduce los costes; además, protege el medio ambiente."
         }
       ],
@@ -294,7 +293,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Present a contrasting point.",
+          "prompt": "Say the solution is expensive; however, it can achieve good results.",
           "answer": "La solución es cara; sin embargo, puede lograr buenos resultados."
         }
       ],
@@ -308,7 +307,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Present two sides of an issue.",
+          "prompt": "Present two sides: the project can improve transport (por una parte), and it can be expensive (por otra parte).",
           "answer": "Por una parte, el proyecto puede mejorar el transporte; por otra parte, puede ser caro."
         }
       ],
@@ -322,8 +321,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Build a short argument using cause and consequence.",
-          "answer": "El proyecto es necesario porque el transporte es un problema. Por lo tanto, debemos actuar pronto."
+          "prompt": "Build a short argument: the project is necessary because transport is a problem, so we must act soon (use así que).",
+          "answer": "El proyecto es necesario porque el transporte es un problema. Así que debemos actuar pronto."
         }
       ],
       "teaches": [
@@ -336,7 +335,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Build a short argument using contrast and purpose.",
+          "prompt": "Build a short argument: the solution can be expensive; however, it is useful to improve the service and achieve better results.",
           "answer": "La solución puede ser cara; sin embargo, es útil para mejorar el servicio y lograr mejores resultados."
         }
       ],
@@ -348,11 +347,11 @@
       "id": "b1-32-05.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
+      "question": "¿Qué se pregunta el autor?",
       "options": [
-        "Una tormenta daña los caminos y la comunidad busca junta una solución para el transporte.",
-        "El alcalde decide no hacer nada tras la tormenta.",
-        "Los comerciantes abandonan la ciudad."
+        "Por qué la gente pasea por la tarde y no por la mañana.",
+        "Por qué hace tanto calor en verano.",
+        "Por qué los periódicos hablan de los paseos."
       ],
       "correct": 0
     },
@@ -360,11 +359,11 @@
       "id": "b1-32-05.ex21",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
+      "question": "¿Por qué no pasea la gente por la mañana?",
       "options": [
-        "Algunos ciudadanos dudan del proyecto porque era caro y podía crear otros problemas.",
-        "Todos los ciudadanos están de acuerdo desde el principio.",
-        "El proyecto no cuesta nada."
+        "Porque casi todos tienen que trabajar.",
+        "Porque hace mucho frío.",
+        "Porque los vecinos no se conocen."
       ],
       "correct": 0
     },
@@ -372,11 +371,11 @@
       "id": "b1-32-05.ex22",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
+      "question": "¿Qué hacen los vecinos durante el paseo?",
       "options": [
-        "Comparar diferentes proyectos ayuda a elegir la mejor solución para la comunidad.",
-        "Es mejor no organizar reuniones para hablar del problema.",
-        "El transporte no es importante para el mercado."
+        "Hablan de las noticias y hacen nuevas amistades.",
+        "Compran el periódico y vuelven a casa.",
+        "Trabajan en la calle hasta la noche."
       ],
       "correct": 0
     },
@@ -384,11 +383,11 @@
       "id": "b1-32-05.ex23",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
+      "question": "¿Qué propone el autor al final?",
       "options": [
-        "Proponen un proyecto más pequeño que resuelve el problema sin crear nuevos costes.",
-        "Deciden no construir ningún camino nuevo.",
-        "El proyecto final es mucho más caro que el original."
+        "Preguntarnos por qué hacemos las cosas por costumbre.",
+        "Dejar de pasear por la tarde y quedarnos en casa.",
+        "Hablar menos con los vecinos de nuestra calle."
       ],
       "correct": 0
     }

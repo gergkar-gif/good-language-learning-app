@@ -27,11 +27,11 @@
       "id": "b1-31-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence expresses a hypothetical situation? [¿Cuál expresa una situación hipotética?]",
+      "question": "Which sentence expresses a hypothetical situation?",
       "options": [
         "Si cambiara la sociedad, tendríamos que adaptarnos. [If society changed, we would have to adapt.]",
-        "La sociedad moderna cambiará durante los próximos años. [Modern society will change over the coming years.]",
-        "La estructura social ha cambiado de manera importante. [Social structure has changed significantly.]"
+        "La sociedad cambiará durante los próximos años. [Society will change over the coming years.]",
+        "La sociedad ha cambiado mucho en los últimos años. [Society has changed a lot in recent years.]"
       ],
       "correct": 0,
       "teaches": [
@@ -53,8 +53,7 @@
       ],
       "english": "If there were fewer resources, there would be more problems.",
       "answers": [
-        "hubiera",
-        "hubiese"
+        "hubiera"
       ]
     },
     {
@@ -106,7 +105,7 @@
       "id": "b1-31-03.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «scenario»? [¿Qué palabra significa «escenario»?]",
+      "question": "Which word means «scenario»?",
       "options": [
         "escenario [scenario]",
         "sociedad [society]",
@@ -203,7 +202,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué pasaría si cambiaran las condiciones?"
+          "text": "¿Qué pasaría si cambiaran las cosas?"
         },
         {
           "speaker": "B",
@@ -218,7 +217,10 @@
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-31-03.ex13",
@@ -242,7 +244,10 @@
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-31-03.ex14",
@@ -268,6 +273,7 @@
         "hypothetical-structures"
       ],
       "distractor_skills": {
+        "1": "subjuntivo-morfologia",
         "2": "imperfect"
       }
     },
@@ -277,7 +283,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe one hypothetical change.",
+          "prompt": "Say that if society changed, we would have to adapt.",
           "answer": "Si cambiara la sociedad, tendríamos que adaptarnos."
         }
       ],
@@ -291,7 +297,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give a hypothetical consequence.",
+          "prompt": "Say that if there were fewer resources, there would be more problems.",
           "answer": "Si hubiera menos recursos, habría más problemas."
         }
       ],
@@ -305,7 +311,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe what you would do in an uncertain scenario.",
+          "prompt": "Say that you would look for information and adapt to the new situation.",
           "answer": "Buscaría información y me adaptaría a la nueva situación."
         }
       ],

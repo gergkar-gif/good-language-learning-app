@@ -27,11 +27,11 @@
       "id": "b1-30-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence expresses an opinion about language and identity? [¿Cuál expresa una opinión sobre lengua e identidad?]",
+      "question": "Which sentence expresses an opinion about language and identity?",
       "options": [
         "Creo que la lengua influye en nuestra identidad. [I think language influences our identity.]",
-        "Hablo español. [I speak Spanish.]",
-        "Mi lengua es española. [My language is Spanish.]"
+        "Hablo español en mi casa con mi familia. [I speak Spanish at home with my family.]",
+        "Mi lengua es española y la hablo en casa. [My language is Spanish and I speak it at home.]"
       ],
       "correct": 0,
       "teaches": [
@@ -99,7 +99,7 @@
       "id": "b1-30-02.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «to belong»? [¿Qué palabra significa «pertenecer»?]",
+      "question": "Which word means «to belong»?",
       "options": [
         "pertenecer [to belong]",
         "comparar [to compare]",
@@ -208,7 +208,7 @@
       "options": [
         "La lengua puede formar parte de la identidad. [Language can be part of identity.]",
         "No creo que la lengua forma parte de la identidad. [I do not think that language forms part of identity.]",
-        "No tiene relación porque identidad. [It has no relation because identity.]"
+        "La lengua puede formar parte a la identidad. [Language can be part to identity.]"
       ],
       "correct": 0,
       "teaches": [
@@ -222,7 +222,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Dónde hablas tu lengua?"
+          "text": "¿Crees que hablas tu lengua en el trabajo?"
         },
         {
           "speaker": "B",
@@ -230,14 +230,17 @@
         }
       ],
       "options": [
-        "La hablo con mi familia. [I speak it with my family.]",
+        "Creo que la hablo poco en el trabajo. [I think I speak it little at work.]",
         "No creo que la hablo en el trabajo. [I do not think that I speak it at work.]",
-        "La lengua habla a mí. [The language speaks to me.]"
+        "Creo que la hable poco en el trabajo. [I think that I speak it little at work.]"
       ],
       "correct": 0,
       "teaches": [
         "opinion-verbs-mood"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-30-02.ex14",
@@ -256,12 +259,15 @@
       "options": [
         "Sí, creo que puede influir. [Yes, I think it can influence it.]",
         "No, no creo que puede influir. [No, I do not think that it can influence it.]",
-        "No, porque lengua. [No, because language.]"
+        "Sí, creo que pueda influir. [Yes, I think that it can influence it.]"
       ],
       "correct": 0,
       "teaches": [
         "opinion-verbs-mood"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-30-02.ex15",
@@ -269,7 +275,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain how language can relate to identity.",
+          "prompt": "Explain that language is part of our identity because it expresses experiences and relationships.",
           "answer": "La lengua forma parte de nuestra identidad porque expresa experiencias y relaciones."
         }
       ],
@@ -283,8 +289,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give your opinion about multilingual identity.",
-          "answer": "Creo que hablar varias lenguas puede formar parte de una identidad diversa."
+          "prompt": "Give your opinion: speaking several languages can be part of our identity.",
+          "answer": "Creo que hablar varias lenguas puede formar parte de nuestra identidad."
         }
       ],
       "teaches": [
@@ -297,8 +303,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain why people may keep more than one language.",
-          "answer": "Una persona puede mantener varias lenguas porque cada una está relacionada con diferentes partes de su vida."
+          "prompt": "Say that a person can keep several languages because each one is part of their life.",
+          "answer": "Una persona puede mantener varias lenguas porque cada una forma parte de su vida."
         }
       ],
       "teaches": [
