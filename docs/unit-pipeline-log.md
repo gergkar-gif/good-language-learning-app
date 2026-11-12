@@ -471,6 +471,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-11 | ES B1 core 5, 7, 9, 11, 13, 15 | paired read, 3 units/reader, es-es read and mirrored, stories rewritten in the read, no limit | | A 420,688, B 450,898 (~145k a unit) | 418 proposed (93 / 81 / 72 / 60 / 55 / 57), 0 rejected, 6 changed by the reviewer | all six frozen in both courses (B1 8/76); walk 36/36 per course; variant fixer run level-wide by mistake, reverted, `--only` added |
 | 11-11 | ES B1 core 17, 19, 21, 23, 25, 27 | paired read, 3 units/reader, stories rewritten in the read; A stopped by the 5-hour limit and resumed | | A 393,512 (resumed notice), B 374,756 + 34k unmet follow-up (~130k a unit) | 568 proposed (82 / 96 / 79 / 112 / 106 / 93), 0 rejected, 5 changed by the reviewer | all six frozen in both courses (B1 14/76); unmet check run properly in both courses; 76 words listed; walk 36/36 per course |
 | 11-12 | ES B1 core 29, 31, 33, 35, 37, 39 | paired read, 3 units/reader, unmet check required of the readers; both stopped by the 5-hour limit before writing, resumed | | A 372,147, B 403,170 (resumed notices; ~130k a unit) | 460 proposed (81 / 68 / 57 / 83 / 74 / 97), 0 rejected, ~7 changed by the reviewer | all six frozen in both courses (B1 20/76); readers' unmet checks held; walk 36/36 per course |
+| 11-12 | ES B1 core 41, 43, 45, 47, 49, 51 | paired read, 3 units/reader; both stopped by the 5-hour limit and resumed | | A 370,764, B 384,297 (resumed notices; ~125k a unit) | 439 proposed (94 / 71 / 74 / 75 / 68 / 57), 1 rejected and rewritten | all six frozen in both courses (B1 26/76); rulebook truncated by the reviewer and restored; walk 36/36 per course |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -1873,3 +1874,19 @@ The user took the four recommended options:
 - **Both readers hit the 5-hour limit before writing a file** (they start together). Resumed
   after the reset; nothing lost, but a batch costs a wall-clock wait. Starting the second
   reader later would not help (the limit is shared).
+
+### 2026-11-12: ES B1 core Units 41–51
+
+- **Cost:** ~125k a unit. Both readers hit the 5-hour limit partway (the third batch in a
+  row); resumed after the reset with no loss.
+- **The reviewer truncated the rulebook** in a HU commit (a Python insert that wrote a
+  slice instead of the whole file) and did not notice for two batches. **Check:** after any
+  scripted edit of a record, compare its line count with the previous commit
+  (`git show HEAD~1:<file> | wc -l`). Restored the same day.
+- **Generated lessons that do not teach their own skill** recur (b1-20-01, b1-24-04,
+  b1-25-01): the focus file's list of the batch's `taught_in` screens is what lets readers
+  catch them; keep it.
+- **Spanish glosses in English stems** are now stripped by `drop_spanish_stem_glosses.py`
+  per batch, after mirroring.
+- **The pre-push scenario test** (`requiredLemmas`) is part of the gate; run it before
+  pushing a batch that removes vocabulary entries.
