@@ -191,6 +191,15 @@ function targetTexts(e) {
 (async () => {
     Lang.set(course);
     await Lexicon.load();
+    // Refuse rather than report a false "nothing unmet" (ES B1 batch 65-76, 2026-11-12): with no
+    // dictionary every word looks English and is skipped; with no index nothing counts as met.
+    {
+        const probe = Lang.code() === 'hu' ? 'ház' : 'casa';
+        let ok = false;
+        try { ok = (Lexicon.lookup(probe).readings || []).length > 0; } catch (e) { ok = false; }
+        if (!ok) { console.error(`unmet-words: the dictionary did not load (no reading for "${probe}"); is imports/dictionary/ in this checkout? Nothing checked.`); process.exit(2); }
+        if (!Object.keys(index).length) { console.error(`unmet-words: content/${course}/indexes/word-lesson-index.json is missing or empty; run python scripts/build_word_lesson_index.py first. Nothing checked.`); process.exit(2); }
+    }
     let ignore = new Set();
     try {
         const ig = readJson('imports/dictionary/coverage-ignore.json') || {};

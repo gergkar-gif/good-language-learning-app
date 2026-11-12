@@ -473,6 +473,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-12 | ES B1 core 29, 31, 33, 35, 37, 39 | paired read, 3 units/reader, unmet check required of the readers; both stopped by the 5-hour limit before writing, resumed | | A 372,147, B 403,170 (resumed notices; ~130k a unit) | 460 proposed (81 / 68 / 57 / 83 / 74 / 97), 0 rejected, ~7 changed by the reviewer | all six frozen in both courses (B1 20/76); readers' unmet checks held; walk 36/36 per course |
 | 11-12 | ES B1 core 41, 43, 45, 47, 49, 51 | paired read, 3 units/reader; both stopped by the 5-hour limit and resumed | | A 370,764, B 384,297 (resumed notices; ~125k a unit) | 439 proposed (94 / 71 / 74 / 75 / 68 / 57), 1 rejected and rewritten | all six frozen in both courses (B1 26/76); rulebook truncated by the reviewer and restored; walk 36/36 per course |
 | 11-12 | ES B1 core 53, 55, 57, 59, 61, 63 | paired read, 3 units/reader, sources fetched from Wikisource at setup; both stopped by the 5-hour limit and resumed | | A 394,006, B 429,839 (resumed notices; ~137k a unit) | 576 proposed (93 / 92 / 92 / 94 / 91 / 114), 10 rejected and rewritten | all six frozen in both courses (B1 32/76); reader A left 25 check-content errors while reporting 0; walk 36/36 per course |
+| 11-12 | ES B1 core 65, 67, 69, 71, 73, 74, 75, 76 (last core batch) | paired read, 4 units/reader (73–76 are short units, 63 items, no story); no limit stop | | A 481,357 (28 min), B 459,982 (32 min); ~120k a full unit, ~115k a short one | 687 proposed (86 / 78 / 94 / 79 / 90 / 85 / 85 / 90), 0 rejected | all eight frozen in both courses (core 40/40); reader B left 45 unmet hits across the two courses while reporting 0–3; walk 48/48 per course |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -1916,4 +1917,25 @@ The user took the four recommended options:
 - **`mirror_fixes.py` refuses `set` fixes once es-es has been changed:** applying reviewer
   extras in es-es before mirroring left 7 of 22 unmatched ("es-latam differs on options").
   When the two files were identical before, apply the same list to the es-latam paths.
+
+### 2026-11-12: ES B1 core Units 65–76 (core track finished)
+
+- **Cost:** ~120k a full unit at four units per reader, the lowest of the pass, and neither
+  reader hit the 5-hour limit (the batch started straight after the reset). Four short units
+  per reader (Units 73–76) cost about the same as three full ones.
+- **Readers' self-reported counts are still not reliable**, in a new way each batch: reader A
+  was exact this time (0 / 0, confirmed), reader B reported 0–3 unmet hits a unit while 45
+  remained across the courses. Reader A blamed a checkout without `imports/dictionary/`; tested,
+  that is not it (the lexicon loads without it), so the cause is unknown (likely a stale index or
+  the wrong stems in its scratch copy). `unmet-words.js` now refuses to run when the lexicon or
+  the word index fails to load, so at least that failure cannot pass as "0". The reviewer's own
+  rerun in both courses stays a required step.
+- **Two invented character facts in challenges** in two batches running (Carlos "speaks Spanish
+  at work", Kaylee "became a teacher"). Challenges get the same check against the known facts
+  as items; the focus file's people list is not enough.
+- **The rulebook had an ambiguous family line** ("his parents, Ana and Andreas"); the content
+  and the focus files have Ana and Andreas as Carlos's siblings. Reworded.
+- **Short units (73–76) carried another generator's defects:** Spanish grammar jargon as
+  vocabulary, Spanish writing prompts, one checklist line shared by four units. A focus file for
+  a later level should list these up front.
 
