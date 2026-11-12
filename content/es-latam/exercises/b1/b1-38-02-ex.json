@@ -26,8 +26,8 @@
       "id": "b1-38-02.ex02",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "El guía nos pidió que no nos _____ del grupo.",
-      "english": "The guide asked us not to separate from the group.",
+      "sentence": "El profesor nos pidió que no nos _____ del grupo.",
+      "english": "The teacher asked us not to separate from the group.",
       "teaches": [
         "estilo-indirecto-ordenes"
       ],
@@ -67,7 +67,7 @@
       "id": "b1-38-02.ex04",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "El conductor tuvo que _____ el coche ante el semáforo rojo.",
+      "question": "El conductor tuvo que _____ el vehículo ante el semáforo rojo.",
       "options": [
         "detener",
         "ordenar",
@@ -100,7 +100,7 @@
       "pairs": [
         [
           "«¡Ven!»",
-          "Me dijo que fuera"
+          "Me dijo que viniera"
         ],
         [
           "«¡Hazlo!»",
@@ -123,11 +123,11 @@
       "id": "b1-38-02.ex07",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "El recepcionista nos rogó que no hiciéramos ruido por la noche.",
+      "sentence": "El director nos rogó que no hiciéramos ruido por la noche.",
       "options": [
         "Pidió silencio durante la noche.",
         "Dijo que podíamos poner música.",
-        "Se quejó del recepcionista."
+        "Dio la instrucción de cerrar la puerta."
       ],
       "correct": 0,
       "teaches": [
@@ -159,14 +159,18 @@
         }
       ],
       "options": [
-        "Me ordenó que le mostrara el carnet de conducir.",
-        "Me ordenó que le muestro el carnet.",
-        "Me dice que le mostraba el carnet."
+        "Me ordenó que le mostrara el pasaporte.",
+        "Me ordenó que le muestro el pasaporte.",
+        "Me ordenó que le mostré el pasaporte."
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto-ordenes"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-38-02.ex10",
@@ -174,23 +178,27 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Sara",
-          "text": "¿Qué les pidió la anfitriona?"
+          "speaker": "Meg",
+          "text": "¿Qué te pidió la profesora?"
         },
         {
-          "speaker": "Invitados",
+          "speaker": "Carlos",
           "text": "____."
         }
       ],
       "options": [
-        "Nos pidió que nos sintiéramos como en casa.",
-        "Nos pidió que nos sentimos en casa.",
-        "Nos pide que nos sentáramos."
+        "Me pidió que me sentara delante.",
+        "Me pidió que me siento delante.",
+        "Me pidió que me sentaré delante."
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto-ordenes"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-38-02.ex11",
@@ -198,7 +206,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Escribe una frase diciendo que tu amigo te pidió que le ayudaras.",
+          "prompt": "Say that a friend asked you to help him.",
           "answer": "Mi amigo me pidió que le ayudara."
         }
       ],

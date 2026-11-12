@@ -69,12 +69,12 @@
       "id": "b1-38-01.ex04",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Seguimos al pie de la letra la _____ del especialista.",
+      "question": "Si estás enfermo, el médico te dice que guardes _____ en casa.",
       "options": [
-        "recomendación",
         "reposo",
+        "recomendación",
         "ceremonia",
-        "gobernar"
+        "exigir"
       ],
       "correct": 0,
       "teaches": [
@@ -102,19 +102,19 @@
       "pairs": [
         [
           "Quiero que hables",
-          "Present -> Present subjunctive"
+          "I want you to speak"
         ],
         [
           "Quería que hablaras",
-          "Past -> Imperfect subjunctive"
+          "I wanted you to speak"
         ],
         [
           "Me pidió que fuera",
-          "Indefinido -> Imperfect subjunctive"
+          "He asked me to go"
         ],
         [
           "Me gustaría que vinieras",
-          "Conditional -> Imperfect subjunctive"
+          "I would like you to come"
         ]
       ],
       "teaches": [
@@ -128,8 +128,8 @@
       "sentence": "El director exigió que todos los empleados entregaran los informes a tiempo.",
       "options": [
         "Exigió la entrega puntual de informes.",
-        "Pidió aplazar los informes.",
-        "No quiso leer los informes."
+        "Pidió esperar más tiempo para los informes.",
+        "No quiso leer los informes de la semana."
       ],
       "correct": 0,
       "teaches": [
@@ -161,14 +161,18 @@
         }
       ],
       "options": [
-        "Me recomendó que descansara durante una semana.",
-        "Me recomendó que descanso.",
-        "Me recomienda que descansaba."
+        "Me aconsejó que descansara durante una semana.",
+        "Me aconsejó que descanso durante una semana.",
+        "Me aconsejó que descansaré durante una semana."
       ],
       "correct": 0,
       "teaches": [
         "correlacion-temporal-subjuntivo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-38-01.ex10",
@@ -186,13 +190,17 @@
       ],
       "options": [
         "Porque mi padre no quería que gastara tanto dinero.",
-        "Porque mi padre no quiere que gastaba.",
-        "Porque mi padre quería que gaste."
+        "Porque mi padre no quería que gastaba tanto dinero.",
+        "Porque mi padre no quería que gaste tanto dinero."
       ],
       "correct": 0,
       "teaches": [
         "correlacion-temporal-subjuntivo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-38-01.ex11",
@@ -200,7 +208,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Escribe una frase diciendo que tus padres querían que estudiaras más.",
+          "prompt": "Say that your parents wanted you to study more.",
           "answer": "Mis padres querían que yo estudiara más."
         }
       ],

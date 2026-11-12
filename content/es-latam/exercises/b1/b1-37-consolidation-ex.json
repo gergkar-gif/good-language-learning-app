@@ -8,25 +8,26 @@
       "question": "Espero que ustedes _____ tenido un viaje agradable.",
       "options": [
         "hayan",
-        "hayen",
+        "hayas",
         "han",
-        "hubieran"
+        "habían"
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-perfecto"
       ],
       "distractor_skills": {
-        "2": "preterito-perfecto"
+        "2": "preterito-perfecto",
+        "3": "pluscuamperfecto"
       }
     },
     {
       "id": "b1-37.cons.ex02",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Me alegro de que nosotros _____ superado todos los obstáculos.",
+      "sentence": "Me alegro de que nosotros _____ terminado todos los ejercicios.",
       "answer": "hayamos",
-      "english": "I am glad that we have overcome all the obstacles.",
+      "english": "I am glad that we have finished all the exercises.",
       "teaches": [
         "subjuntivo-perfecto"
       ]
@@ -88,11 +89,11 @@
       "id": "b1-37.cons.ex05",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "Es fantástico que hayan podido resolver el problema tan rápidamente.",
+      "sentence": "Es fantástico que hayan podido resolver el problema.",
       "options": [
-        "Elogia la rapidez de la solución.",
-        "Se queja de la tardanza.",
-        "No sabe si se resolvió."
+        "Se alegra de que hayan podido resolverlo.",
+        "Pregunta si han podido resolver el problema.",
+        "Dice que no han podido resolver el problema."
       ],
       "correct": 0,
       "teaches": [
@@ -126,12 +127,15 @@
       "options": [
         "Dudo que haya llegado todavía.",
         "Dudo que ha llegado todavía.",
-        "Creo que haya llegado."
+        "Creo que haya llegado todavía."
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-perfecto"
+      }
     },
     {
       "id": "b1-37.cons.ex08",
@@ -139,7 +143,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Escribe una frase diciendo que te alegras de que todo haya salido bien.",
+          "prompt": "Say that you are glad that everything has gone well.",
           "answer": "Me alegro de que todo haya salido bien."
         }
       ],

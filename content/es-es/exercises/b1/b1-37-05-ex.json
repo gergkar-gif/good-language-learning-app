@@ -5,21 +5,21 @@
       "id": "b1-37-05.ex01",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Espero que Pedro _____ ayer todo lo necesario.",
+      "question": "Pedro fue a la tienda esta mañana. Espero que _____ lo necesario.",
       "options": [
         "haya comprado",
+        "había comprado",
         "compre",
-        "compraba",
-        "compraría"
+        "compraba"
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-perfecto"
       ],
       "distractor_skills": {
-        "1": "subjuntivo-deseos",
-        "2": "imperfect",
-        "3": "condicional-regular"
+        "1": "pluscuamperfecto",
+        "2": "subjuntivo-morfologia",
+        "3": "imperfect"
       }
     },
     {
@@ -41,7 +41,7 @@
         "Espero",
         "que",
         "hayan",
-        "comprendido",
+        "entendido",
         "la",
         "diferencia",
         "."
@@ -50,7 +50,7 @@
         "Espero",
         "que",
         "hayan",
-        "comprendido",
+        "entendido",
         "la",
         "diferencia",
         "."
@@ -94,19 +94,19 @@
       "pairs": [
         [
           "Espero que venga mañana",
-          "Present subjunctive (future)"
+          "I hope he comes tomorrow"
         ],
         [
-          "Espero que haya venido ayer",
-          "Perfect subjunctive (past)"
+          "Espero que haya venido ya",
+          "I hope he has already come"
         ],
         [
           "Dudo que lo haga",
-          "Present subjunctive"
+          "I doubt he will do it"
         ],
         [
           "Dudo que lo haya hecho",
-          "Perfect subjunctive"
+          "I doubt he has done it"
         ]
       ],
       "teaches": [
@@ -117,7 +117,7 @@
       "id": "b1-37-05.ex07",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "Me alegro muchísimo de que hayan disfrutado de su estancia en la ciudad.",
+      "sentence": "Me alegro mucho de que hayan disfrutado de su estancia en la ciudad.",
       "options": [
         "Se alegra por la experiencia vivida.",
         "Pregunta si van a venir a la ciudad.",
@@ -154,13 +154,17 @@
       ],
       "options": [
         "No creo que lo haya leído todavía.",
-        "No creo que lo lee.",
-        "Dudo que lo leerá."
+        "No creo que lo lee todavía.",
+        "Dudo que lo leerá todavía."
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-37-05.ex10",
@@ -179,12 +183,16 @@
       "options": [
         "Se lo mandaré en cuanto lo hayamos terminado.",
         "Se lo mandaré en cuanto lo habíamos terminado.",
-        "Se lo mandé cuando lo haya terminado."
+        "Se lo mandaré en cuanto lo terminamos."
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "pluscuamperfecto",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-37-05.ex11",
@@ -192,7 +200,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Escribe una frase diciendo que esperas que tus amigos hayan descansado.",
+          "prompt": "Say that you hope your friends have rested.",
           "answer": "Espero que mis amigos hayan descansado."
         }
       ],

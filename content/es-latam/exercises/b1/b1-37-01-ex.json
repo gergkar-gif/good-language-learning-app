@@ -8,16 +8,17 @@
       "question": "Espero que tú _____ descansado bien este fin de semana.",
       "options": [
         "hayas",
-        "hayis",
+        "hayan",
         "has",
-        "hubieras"
+        "habías"
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-perfecto"
       ],
       "distractor_skills": {
-        "2": "preterito-perfecto"
+        "2": "preterito-perfecto",
+        "3": "pluscuamperfecto"
       }
     },
     {
@@ -64,10 +65,10 @@
       "id": "b1-37-01.ex04",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Obtuvimos un excelente _____ en la evaluación final.",
+      "question": "Antes de salir, voy a _____ que la puerta está cerrada.",
       "options": [
-        "resultado",
-        "llegada",
+        "comprobar",
+        "completar",
         "participio",
         "asunto"
       ],
@@ -93,20 +94,20 @@
       "type": "matching",
       "pairs": [
         [
-          "Que hayas venido",
-          "That you have come"
+          "noticia",
+          "news"
         ],
         [
-          "Que hayamos visto",
-          "That we have seen"
+          "logro",
+          "achievement"
         ],
         [
-          "Que hayan dicho",
-          "That they have said"
+          "resultado",
+          "result"
         ],
         [
-          "Que haya terminado",
-          "That it has ended"
+          "llegada",
+          "arrival"
         ]
       ],
       "teaches": [
@@ -117,9 +118,9 @@
       "id": "b1-37-01.ex07",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "Es una lástima que no hayan podido venir a la fiesta de aniversario.",
+      "sentence": "Es una lástima que no hayan podido venir a la fiesta del sábado.",
       "options": [
-        "Lamenta que no hayan asistido.",
+        "Siente que no hayan venido.",
         "Se alegra de que hayan venido.",
         "Pregunta si van a venir."
       ],
@@ -154,13 +155,17 @@
       ],
       "options": [
         "Me alegro de que hayamos llegado bien.",
-        "Me alegro de que hemos llegado bien.",
-        "Espero que llegábamos."
+        "Me alegro de que llegamos bien.",
+        "Me alegro de que lleguemos bien."
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-37-01.ex10",
@@ -168,23 +173,27 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Profesor",
-          "text": "¿Ha terminado todo el mundo el ejercicio?"
+          "speaker": "Meg",
+          "text": "¡Tengo una noticia! Ya he completado mi trabajo final."
         },
         {
-          "speaker": "Alumnos",
+          "speaker": "Carlos",
           "text": "____."
         }
       ],
       "options": [
-        "Sí profesor, nos alegra que hayamos terminado.",
-        "No profesor, nos alegra que termináramos.",
-        "Ojalá terminamos."
+        "Me alegro de que lo hayas completado.",
+        "Me alegro de que lo has completado.",
+        "Me alegro de que lo completes."
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-perfecto",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-37-01.ex11",
@@ -192,7 +201,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Escribe una frase deseando que tu amigo haya tenido un buen día.",
+          "prompt": "Say to a friend that you hope she has had a good day.",
           "answer": "Espero que hayas tenido un buen día."
         }
       ],

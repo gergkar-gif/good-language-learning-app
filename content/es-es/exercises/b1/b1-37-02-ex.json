@@ -42,7 +42,7 @@
         "que",
         "te",
         "hayas",
-        "lastimado",
+        "caído",
         "."
       ],
       "solution": [
@@ -51,10 +51,10 @@
         "que",
         "te",
         "hayas",
-        "lastimado",
+        "caído",
         "."
       ],
-      "english": "I am very sorry that you hurt yourself.",
+      "english": "I am very sorry that you fell.",
       "teaches": [
         "subjuntivo-perfecto"
       ]
@@ -66,8 +66,8 @@
       "question": "Fue un gran _____ saber que todos llegaron a salvo.",
       "options": [
         "alivio",
-        "pena",
-        "lástima",
+        "lamentar",
+        "reaccionar",
         "cancelar"
       ],
       "correct": 0,
@@ -79,9 +79,9 @@
       "id": "b1-37-02.ex05",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Es sorprendente que nadie se _____ enterado del cambio de hora.",
+      "sentence": "Es sorprendente que nadie _____ llegado tarde hoy.",
       "answer": "haya",
-      "english": "It is surprising that nobody found out about the time change.",
+      "english": "It is surprising that nobody has arrived late today.",
       "teaches": [
         "subjuntivo-perfecto"
       ]
@@ -116,11 +116,11 @@
       "id": "b1-37-02.ex07",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "Me parece estupendo que hayan publicado tu artículo de investigación.",
+      "sentence": "Me parece maravilloso que hayas tenido esta oportunidad.",
       "options": [
-        "Felicita por la publicación del artículo.",
-        "Dice que el artículo tiene errores.",
-        "Pide escribir un nuevo artículo."
+        "Se alegra por la oportunidad de la otra persona.",
+        "Lamenta que la otra persona no haya podido ir.",
+        "Pregunta si la otra persona tendrá otra oportunidad."
       ],
       "correct": 0,
       "teaches": [
@@ -131,8 +131,8 @@
       "id": "b1-37-02.ex08",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Qué bien que hayamos tomado esta decisión tan acertada.",
-      "english": "How great that we have made such a wise decision.",
+      "sentence": "Qué bien que hayamos tomado esta decisión.",
+      "english": "How great that we have made this decision.",
       "teaches": [
         "subjuntivo-perfecto"
       ]
@@ -153,13 +153,17 @@
       ],
       "options": [
         "¡Qué alegría que las hayas conseguido!",
-        "Qué alegría que las consigues.",
-        "Siento que no las tengas."
+        "¡Qué alegría que las consigues!",
+        "¡Qué alegría que las consigas!"
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-37-02.ex10",
@@ -176,14 +180,18 @@
         }
       ],
       "options": [
-        "Es una lástima que no hayas llegado a tiempo.",
-        "Es una lástima que no llegas.",
-        "Me alegro de que lo entregues."
+        "Es una lástima que no lo hayas entregado.",
+        "Es una lástima que no lo entregues.",
+        "Es una lástima que no lo entregaste."
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-37-02.ex11",
@@ -191,7 +199,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Escribe una frase diciendo que te alegras de que tus amigos hayan venido.",
+          "prompt": "Say that you are glad that your friends have come.",
           "answer": "Me alegro de que mis amigos hayan venido."
         }
       ],
