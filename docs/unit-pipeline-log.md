@@ -470,6 +470,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-11 | ES B1 pilot: core 1 telling-stories, 3 experiences-memories | read, 1 unit/reader, es-es read and mirrored, no limit | | A 229,521 (+18.5k story rewrite on resume), B 236,968 (~240k a unit) | 243 proposed (108 / 135), 0 rejected, 7 changed by the reviewer | both stories rewritten at B1; Unit 3 es-latam unfrozen (taught_in decision); walk 12/12 per course |
 | 11-11 | ES B1 core 5, 7, 9, 11, 13, 15 | paired read, 3 units/reader, es-es read and mirrored, stories rewritten in the read, no limit | | A 420,688, B 450,898 (~145k a unit) | 418 proposed (93 / 81 / 72 / 60 / 55 / 57), 0 rejected, 6 changed by the reviewer | all six frozen in both courses (B1 8/76); walk 36/36 per course; variant fixer run level-wide by mistake, reverted, `--only` added |
 | 11-11 | ES B1 core 17, 19, 21, 23, 25, 27 | paired read, 3 units/reader, stories rewritten in the read; A stopped by the 5-hour limit and resumed | | A 393,512 (resumed notice), B 374,756 + 34k unmet follow-up (~130k a unit) | 568 proposed (82 / 96 / 79 / 112 / 106 / 93), 0 rejected, 5 changed by the reviewer | all six frozen in both courses (B1 14/76); unmet check run properly in both courses; 76 words listed; walk 36/36 per course |
+| 11-12 | ES B1 core 29, 31, 33, 35, 37, 39 | paired read, 3 units/reader, unmet check required of the readers; both stopped by the 5-hour limit before writing, resumed | | A 372,147, B 403,170 (resumed notices; ~130k a unit) | 460 proposed (81 / 68 / 57 / 83 / 74 / 97), 0 rejected, ~7 changed by the reviewer | all six frozen in both courses (B1 20/76); readers' unmet checks held; walk 36/36 per course |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -1856,3 +1857,19 @@ The user took the four recommended options:
 - **Invented attribution:** story `b1-10` carried a made-up author and work. Check every
   story's `author`/`work`/`source` against the text in the reviewer's read.
 - **es-latam *video*:** by hand this time; add the pair to `course_variants.py` if it recurs.
+
+### 2026-11-12: ES B1 core Units 29–39
+
+- **The readers' unmet-word checks held** this time: the focus file made the check a required
+  step with the exact command, and both readers reported before/after counts per course. The
+  reviewer's own run matched (0, and three inflected forms). Keep the paragraph in every focus
+  file; the reviewer still reruns it.
+- **Public-domain sources in the batch folder pay off:** with the Gutenberg text of "A la
+  deriva" and the English translation of the coati tale in `sources/`, the readers corrected
+  a wrong tale and a wrong plot without inventing anything. Do this for every classic that
+  Gutenberg holds, at setup.
+- **The generator registered a skill on a screen that did not teach it** (b1-20-01). Readers
+  catch it when the focus file lists the batch's `taught_in` screens; keep that list.
+- **Both readers hit the 5-hour limit before writing a file** (they start together). Resumed
+  after the reset; nothing lost, but a batch costs a wall-clock wait. Starting the second
+  reader later would not help (the limit is shared).
