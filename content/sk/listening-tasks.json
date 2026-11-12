@@ -1,0 +1,57 @@
+{
+  "language": "sk",
+  "tasks": [
+    {
+      "id": "ls-sk-a1-kaviaren",
+      "level": "A1",
+      "title": "V kaviarni na Korze",
+      "topic": "Objednávanie nápojov a koláčov",
+      "format": "dialogue",
+      "context": "V kaviarni v Bratislave si zákazník objednáva nápoj a koláč.",
+      "previewSeconds": 30,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Čašníčka",
+            "gender": "female",
+            "text": "Dobrý deň! Čo si dáte?",
+            "textEn": "Good day! What will you have?"
+          },
+          {
+            "speaker": "Marek",
+            "gender": "male",
+            "text": "Dobrý deň. Dám si veľkú kávu s mliekom a dva kúsky teplého jablkového koláča.",
+            "textEn": "Good day. I'll have a large coffee with milk and two slices of warm apple cake."
+          },
+          {
+            "speaker": "Čašníčka",
+            "gender": "female",
+            "text": "Určite. Koláč je čerstvo upečený. Želáte si k nemu aj vanilkovú zmrzlinu?",
+            "textEn": "Certainly. The cake is freshly baked. Would you like vanilla ice cream with it?"
+          },
+          {
+            "speaker": "Marek",
+            "gender": "male",
+            "text": "Áno, so zmrzlinou to bude výborné. Ďakujem veľmi pekne.",
+            "textEn": "Yes, with ice cream it will be great. Thank you very much."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Čo si Marek objednáva k jedlu?",
+          "promptEn": "What does Marek order to eat?",
+          "options": [
+            "Dva kúsky teplého jablkového koláča so zmrzlinou",
+            "Kúsok tvarohového koláča",
+            "Dva čokoládové croissanty",
+            "Iba čierny čaj s citrónom"
+          ],
+          "answerIndex": 0,
+          "explanation": "Marek says: 'Dám si veľkú kávu s mliekom a dva kúsky teplého jablkového koláča' and agrees to have it with vanilla ice cream."
+        }
+      ]
+    }
+  ]
+}

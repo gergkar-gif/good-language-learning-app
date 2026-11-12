@@ -1,0 +1,79 @@
+{
+  "language": "sk",
+  "scenarios": [
+    {
+      "id": "sk-a1-wx01-nakup",
+      "cefrLevel": "A1",
+      "title": "Správa z obchodu",
+      "titleEn": "Message from the Grocery Store",
+      "situation": "Váš spolubývajúci Martin je v obchode a píše správu s otázkou, čo kúpiť na večeru.",
+      "situationEn": "Your flatmate Martin is at the store and texts asking what to buy for dinner.",
+      "roleplay": {
+        "interlocutorRole": "Martin (Spolubývajúci)",
+        "interlocutorRoleEn": "Martin (Flatmate)",
+        "learnerRole": "Spolubývajúci",
+        "learnerRoleEn": "Flatmate",
+        "interlocutorVoice": "sk-SK"
+      },
+      "targetCompetency": "I can exchange short text messages about groceries and daily food needs in Slovak",
+      "targetSkills": [
+        "food_shopping",
+        "informal_messaging"
+      ],
+      "unitIds": [
+        "pozdravy-a-predstavovanie",
+        "v-kaviarni-a-restauracii"
+      ],
+      "requiredLemmas": [
+        "chlieb",
+        "syr",
+        "paradajka",
+        "mlieko",
+        "prosím",
+        "ďakujem"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Ahoj! Som v potravinách. Čo máme kúpiť na večeru? Nemáme chlieb ani syr.",
+          "interlocutorTranslation": "Hi! I am in the grocery store. What should we buy for dinner? We have no bread or cheese.",
+          "learnerCue": "Odpovedzte, aby kúpil chlieb, syr a paradajky.",
+          "learnerCueEn": "Reply asking him to buy bread, cheese, and tomatoes.",
+          "vocabularyHints": [
+            "kúp prosím čerstvý chlieb — please buy fresh bread",
+            "kúp syr a paradajky — buy cheese and tomatoes"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "chlieb",
+              "syr",
+              "paradajky",
+              "kúp",
+              "prosím"
+            ],
+            "minWordCount": 3
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Rozumiem, kúpim to. Chceš aj niečo sladké alebo minerálku?",
+          "interlocutorTranslation": "Got it, I will buy that. Do you want something sweet or mineral water too?",
+          "learnerCue": "Napíšte, že prosíte čokoládu a ďakujete.",
+          "learnerCueEn": "Write that you would like chocolate and say thank you.",
+          "vocabularyHints": [
+            "čokoládu, prosím — chocolate, please",
+            "ďakujem veľmi pekne — thank you very much"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "čokoládu",
+              "prosím",
+              "ďakujem"
+            ],
+            "minWordCount": 2
+          }
+        }
+      ]
+    }
+  ]
+}

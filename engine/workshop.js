@@ -82,6 +82,15 @@ const Workshop = (function () {
             category: 'studios'
         },
         {
+            id: 'sk-grammar-studio',
+            icon: 'grammar',
+            title: 'Slovak Grammar Studio',
+            sub: '6 Slovak cases, rhythmic law & diphthongs, aspect pairs & motion prefixes, unified past clitics & softening.',
+            containerId: 'sk-grammar-studio-root',
+            langs: ['sk'],
+            category: 'studios'
+        },
+        {
             id: 'es-grammar-studio',
             icon: 'grammar',
             title: 'Spanish Grammar Studio',
@@ -231,12 +240,22 @@ const Workshop = (function () {
             level: 'B1'
         },
         {
+            id: 'sk-ecl-b1-exam',
+            icon: 'es-dele-exam',
+            title: 'ECL Slovak B1 Exam Prep',
+            sub: 'Skúška ECL zo slovenského jazyka · Univerzita Komenského (SAS). Čítanie, počúvanie, písanie a ústna časť.',
+            containerId: 'sk-ecl-b1-exam-root',
+            langs: ['sk'],
+            category: 'exams',
+            level: 'B1'
+        },
+        {
             id: 'verbs',
             icon: 'verbs',
             title: 'Verb Practice',
             sub: 'Conjugation tables and speed drills.',
             containerId: 'verb-driller-root',
-            langs: ['es', 'es-latam', 'es-es', 'fr', 'it', 'pl', 'cs'],
+            langs: ['es', 'es-latam', 'es-es', 'fr', 'it', 'pl', 'cs', 'sk'],
             category: 'foundations'
         },
 
@@ -465,11 +484,13 @@ const Workshop = (function () {
             'it-grammar-studio': typeof ItGrammarStudio !== 'undefined' ? ItGrammarStudio : null,
             'pl-grammar-studio': typeof PlGrammarStudio !== 'undefined' ? PlGrammarStudio : null,
             'cs-grammar-studio': typeof CsGrammarStudio !== 'undefined' ? CsGrammarStudio : null,
+            'sk-grammar-studio': typeof SkGrammarStudio !== 'undefined' ? SkGrammarStudio : null,
             'es-grammar-studio': typeof EsGrammarStudio !== 'undefined' ? EsGrammarStudio : null,
             'it-cils-exam': typeof CilsB1Exam !== 'undefined' ? CilsB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.CilsB1Exam : null),
             'fr-delf-exam': typeof DelfB1Exam !== 'undefined' ? DelfB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DelfB1Exam : null),
             'pl-certyfikat-b1-exam': typeof PlCertyfikatB1Exam !== 'undefined' ? PlCertyfikatB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.PlCertyfikatB1Exam : null),
             'cs-cce-b1-exam': typeof CsCceB1Exam !== 'undefined' ? CsCceB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.CsCceB1Exam : null),
+            'sk-ecl-b1-exam': typeof SkEclB1Exam !== 'undefined' ? SkEclB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.SkEclB1Exam : null),
             'hu-cultural-exam': typeof HuCulturalExam !== 'undefined' ? HuCulturalExam : null,
             'es-ccse-exam': typeof CcseExam !== 'undefined' ? CcseExam : null,
             'es-dele-a1-exam': typeof DeleA1Exam !== 'undefined' ? DeleA1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleA1Exam : null),

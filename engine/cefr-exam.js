@@ -2051,6 +2051,13 @@ const CefrExam = (function () {
         subtitle: 'Ústav jazykové a odborné přípravy Univerzity Karlovy · Úroveň B1 (CEFR)'
     });
 
+    const SkEclB1Exam = createModule({
+        id: 'sk-ecl-b1-exam',
+        dataFile: 'ecl-b1-exam.json',
+        title: 'Medzinárodná skúška ECL zo slovenského jazyka B1',
+        subtitle: 'Európske konzorcium pre certifikáciu znalostí moderných jazykov · Úroveň B1 (CEFR)'
+    });
+
     return {
         createModule: createModule,
         DeleA1Exam: DeleA1Exam,
@@ -2064,7 +2071,8 @@ const CefrExam = (function () {
         CilsB1Exam: CilsB1Exam,
         DelfB1Exam: DelfB1Exam,
         PlCertyfikatB1Exam: PlCertyfikatB1Exam,
-        CsCceB1Exam: CsCceB1Exam
+        CsCceB1Exam: CsCceB1Exam,
+        SkEclB1Exam: SkEclB1Exam
     };
 })();
 
@@ -2083,6 +2091,7 @@ if (typeof window !== 'undefined') {
     window.DelfB1Exam = CefrExam.DelfB1Exam;
     window.PlCertyfikatB1Exam = CefrExam.PlCertyfikatB1Exam;
     window.CsCceB1Exam = CefrExam.CsCceB1Exam;
+    window.SkEclB1Exam = CefrExam.SkEclB1Exam;
 }
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = CefrExam;

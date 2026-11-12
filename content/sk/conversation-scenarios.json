@@ -1,0 +1,187 @@
+{
+  "language": "sk",
+  "scenarios": [
+    {
+      "id": "sk-a1-sc01-kaviaren",
+      "cefrLevel": "A1",
+      "title": "V kaviarni",
+      "titleEn": "At the Café",
+      "situation": "Ste v kaviarni v Bratislave a chcete si objednať kávu, koláč a zaplatiť účet.",
+      "situationEn": "You are at a café in Bratislava and want to order a coffee, a cake, and pay the bill.",
+      "roleplay": {
+        "interlocutorRole": "Čašník",
+        "interlocutorRoleEn": "Waiter",
+        "learnerRole": "Zákazník",
+        "learnerRoleEn": "Customer",
+        "interlocutorVoice": "sk-SK"
+      },
+      "targetCompetency": "I can order drinks and snacks in a Slovak café and pay",
+      "targetSkills": [
+        "ordering_food",
+        "social_interaction",
+        "numbers_and_prices"
+      ],
+      "unitIds": [
+        "pozdravy-a-predstavovanie",
+        "v-kaviarni-a-restauracii"
+      ],
+      "requiredLemmas": [
+        "dobrý deň",
+        "káva",
+        "čaj",
+        "koláč",
+        "prosím",
+        "ďakujem",
+        "účet"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Dobrý deň! Čo si dáte?",
+          "interlocutorTranslation": "Good day! What will you have?",
+          "learnerCue": "Pozdravte a objednajte si kávu (alebo čaj) a jablkový koláč.",
+          "learnerCueEn": "Greet and order a coffee (or tea) and an apple cake.",
+          "vocabularyHints": [
+            "dobrý deň — good day",
+            "dám si čiernu kávu — I'll have a black coffee",
+            "kávu s mliekom — coffee with milk",
+            "jablkový koláč — apple cake"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "káva",
+              "kávu",
+              "čaj",
+              "prosím",
+              "dám"
+            ],
+            "minWordCount": 3
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Výborne, káva a koláč. Dáte si ešte niečo na pitie alebo minerálku?",
+          "interlocutorTranslation": "Great, coffee and cake. Would you like anything else to drink or mineral water?",
+          "learnerCue": "Odpovedzte, že minerálku bez bubliniek (tichú vodu) alebo nie, ďakujem.",
+          "learnerCueEn": "Reply asking for still water or say no, thank you.",
+          "vocabularyHints": [
+            "tichú minerálku — still mineral water",
+            "nie, ďakujem — no, thank you",
+            "to je všetko — that is all"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "voda",
+              "vodu",
+              "minerálka",
+              "minerálku",
+              "nie",
+              "všetko",
+              "ďakujem"
+            ],
+            "minWordCount": 2
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Páči sa, tu je vaša káva a koláč. Chutí vám?",
+          "interlocutorTranslation": "Here you go, here is your coffee and cake. Is everything tasting good?",
+          "learnerCue": "Poďakujte, pochváľte koláč a požiadajte o účet.",
+          "learnerCueEn": "Thank the waiter, praise the cake, and ask for the bill.",
+          "vocabularyHints": [
+            "ďakujem, je to výborné — thank you, it is excellent",
+            "zaplatím, prosím — I will pay, please",
+            "účet, prosím — the bill, please",
+            "môžem platiť kartou? — can I pay by card?"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "ďakujem",
+              "účet",
+              "zaplatím",
+              "kartou",
+              "prosím"
+            ],
+            "minWordCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "sk-a1-sc02-informacie",
+      "cefrLevel": "A1",
+      "title": "Na stanici",
+      "titleEn": "At the Station",
+      "situation": "Hľadáte vlak na hlavnej stanici v Bratislave a pýtate sa na odchod a nástupište.",
+      "situationEn": "You are at the main station in Bratislava asking for train departure and platform details.",
+      "roleplay": {
+        "interlocutorRole": "Pracovník informácií",
+        "interlocutorRoleEn": "Information clerk",
+        "learnerRole": "Cestujúci",
+        "learnerRoleEn": "Traveler",
+        "interlocutorVoice": "sk-SK"
+      },
+      "targetCompetency": "I can ask for simple travel directions and train times in Slovak",
+      "targetSkills": [
+        "asking_directions",
+        "public_transport"
+      ],
+      "unitIds": [
+        "pozdravy-a-predstavovanie"
+      ],
+      "requiredLemmas": [
+        "prepáčte",
+        "vlak",
+        "stanica",
+        "nástupište",
+        "odchod",
+        "kedy",
+        "kde"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Dobrý deň, môžem vám pomôcť?",
+          "interlocutorTranslation": "Good day, may I help you?",
+          "learnerCue": "Pozdravte, ospravedlňte sa a spýtajte sa, kedy odchádza vlak do Košíc.",
+          "learnerCueEn": "Greet, excuse yourself, and ask when the train to Košice leaves.",
+          "vocabularyHints": [
+            "prepáčte, kedy odchádza vlak? — excuse me, when does the train leave?",
+            "vlak do Košíc — train to Košice"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "prepáčte",
+              "vlak",
+              "kedy",
+              "Košice",
+              "odchádza"
+            ],
+            "minWordCount": 3
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Rýchlik do Košíc odchádza o desiatej hodine z tretieho nástupišťa.",
+          "interlocutorTranslation": "The express train to Košice departs at ten o'clock from platform 3.",
+          "learnerCue": "Poďakujte a zaželajte pekný deň.",
+          "learnerCueEn": "Say thank you and wish them a nice day.",
+          "vocabularyHints": [
+            "veľmi pekne ďakujem — thank you very much",
+            "pekný deň — have a nice day",
+            "dovidenia — goodbye"
+          ],
+          "validationCriteria": {
+            "requiredKeywords": [
+              "ďakujem",
+              "pekný",
+              "deň",
+              "dovidenia"
+            ],
+            "minWordCount": 2
+          }
+        }
+      ]
+    }
+  ]
+}
