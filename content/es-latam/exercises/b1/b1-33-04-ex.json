@@ -27,7 +27,7 @@
       "id": "b1-33-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which change is correct? [¿Qué cambio es correcto?]",
+      "question": "Which change is correct?",
       "options": [
         "«Vivo aquí» → Dijo que vivía allí. [“I live here” → He said that he lived there.]",
         "«Vivo aquí» → Dijo que vivo aquí. [“I live here” → He said that I live here.]",
@@ -53,8 +53,7 @@
       ],
       "english": "“I am here” → He said that he was there.",
       "answers": [
-        "estaba",
-        "estuvo"
+        "estaba"
       ]
     },
     {
@@ -100,7 +99,7 @@
       "id": "b1-33-04.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «perspective»? [¿Qué palabra significa «perspectiva»?]",
+      "question": "Which word means «perspective»?",
       "options": [
         "perspectiva [perspective]",
         "conversación [conversation]",
@@ -128,20 +127,24 @@
       "type": "sentence-builder",
       "category": "vocabulary",
       "tiles": [
-        "La",
+        "Ana",
+        "contó",
+        "la",
         "conversación",
-        "cambió",
-        "de",
+        "desde",
+        "su",
         "perspectiva."
       ],
       "solution": [
-        "La",
+        "Ana",
+        "contó",
+        "la",
         "conversación",
-        "cambió",
-        "de",
+        "desde",
+        "su",
         "perspectiva."
       ],
-      "english": "The conversation changed perspective.",
+      "english": "Ana recounted the conversation from her perspective.",
       "teaches": [
         "b1-reported-speech-vocab"
       ]
@@ -153,7 +156,7 @@
       "sentence": "«Vivo aquí» → Dijo que vivía allí.",
       "options": [
         "“I live here” → He said that he lived there.",
-        "“I lived there” → He said that he lives here.",
+        "“I live here” → He said that he lived here.",
         "“I live here” → He asked if I lived there."
       ],
       "correct": 0,
@@ -168,8 +171,8 @@
       "sentence": "«Mañana voy» → Dijo que al día siguiente iba.",
       "options": [
         "“I am going tomorrow” → He said that he was going the next day.",
-        "“I went yesterday” → He said that he was going tomorrow.",
-        "“I go tomorrow” → He asked where I went."
+        "“I am going tomorrow” → He asked if I was going the next day.",
+        "“I am going tomorrow” → He said that he went the day before."
       ],
       "correct": 0,
       "teaches": [
@@ -217,7 +220,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué pasó con «aquí» al cambiar la perspectiva?"
+          "text": "¿Cómo se cuenta «Estoy en mi habitación»?"
         },
         {
           "speaker": "B",
@@ -225,14 +228,18 @@
         }
       ],
       "options": [
-        "Se convirtió en «allí». [It became “there”.]",
-        "Se convirtió en «entonces». [It became “then”.]",
-        "No cambió nunca. [It never changed.]"
+        "Dijo que estaba en su habitación. [He said that he was in his room.]",
+        "Dijo que estaba en mi habitación. [He said that he was in my room.]",
+        "Dijo que había estado en su habitación. [He said that he had been in his room.]"
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "possessives",
+        "2": "pluscuamperfecto"
+      }
     },
     {
       "id": "b1-33-04.ex14",
@@ -249,9 +256,9 @@
         }
       ],
       "options": [
-        "Porque cambia la perspectiva del hablante. [Because the speaker's perspective changes.]",
-        "Porque no existe la conversación. [Because the conversation does not exist.]",
-        "Porque no cambia la perspectiva del hablante. [Because the speaker's perspective does not change.]"
+        "Porque cambia la perspectiva de quien cuenta. [Because the perspective of the person telling it changes.]",
+        "Porque cambia el tema de la conversación. [Because the topic of the conversation changes.]",
+        "Porque cambia el número de personas. [Because the number of people changes.]"
       ],
       "correct": 0,
       "teaches": [
@@ -264,7 +271,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Report a sentence with a changed pronoun or place expression.",
+          "prompt": "Report what he said: «Vivo aquí».",
           "answer": "Dijo que vivía allí."
         }
       ],
@@ -278,7 +285,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Report a sentence with a changed time expression.",
+          "prompt": "Report what he said: «Mañana voy». Use al día siguiente.",
           "answer": "Dijo que al día siguiente iba."
         }
       ],

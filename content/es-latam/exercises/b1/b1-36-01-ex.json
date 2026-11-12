@@ -31,11 +31,11 @@
       "id": "b1-36-01.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence best begins a connected narrative? [¿Qué frase inicia mejor una narración conectada?]",
+      "question": "Which sentence best begins a story about the past?",
       "options": [
         "Cuando llegué, ya había empezado la reunión. [When I arrived, the meeting had already started.]",
-        "La reunión es interesante. [The meeting is interesting.]",
-        "Es posible que llegue. [It is possible that I will arrive.]"
+        "La reunión es interesante y muy larga. [The meeting is interesting and very long.]",
+        "Es posible que llegue a la reunión. [It is possible that I will arrive at the meeting.]"
       ],
       "correct": 0,
       "teaches": [
@@ -108,7 +108,7 @@
       "id": "b1-36-01.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «experience»? [¿Qué palabra significa «experiencia»?]",
+      "question": "Which word means «experience»?",
       "options": [
         "experiencia [experience]",
         "recuerdo [memory]",
@@ -165,8 +165,8 @@
       "sentence": "Con el tiempo, consiguió superar la dificultad.",
       "options": [
         "Over time, she managed to overcome the difficulty.",
-        "At first, she created the difficulty.",
-        "She will avoid the difficulty tomorrow."
+        "At first, she created a new difficulty for us.",
+        "She would avoid the difficulty."
       ],
       "correct": 0,
       "teaches": [
@@ -181,7 +181,7 @@
       "options": [
         "After speaking with them, I changed my mind.",
         "Before speaking with them, I had changed my mind.",
-        "I will speak with them tomorrow."
+        "I will speak with them."
       ],
       "correct": 0,
       "teaches": [
@@ -192,11 +192,11 @@
       "id": "b1-36-01.ex11",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Con el tiempo, consiguió superar la dificultad.",
+      "sentence": "Al principio no sabía qué hacer, pero con el tiempo encontré una solución.",
       "teaches": [
         "b1-independent-spanish-vocab"
       ],
-      "english": "Over time, he managed to overcome the difficulty."
+      "english": "At first I didn't know what to do, but over time I found a solution."
     },
     {
       "id": "b1-36-01.ex12",
@@ -215,12 +215,16 @@
       "options": [
         "Cambié de opinión. [I changed my mind.]",
         "Cambie de opinión. [I change (subjunctive) my mind.]",
-        "Haya cambiado de opinión. [I have (subjunctive) changed my mind.]"
+        "Cambiaba de opinión. [I used to change my mind.]"
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-36-01.ex13",
@@ -238,13 +242,17 @@
       ],
       "options": [
         "Fue difícil, pero aprendí mucho. [It was difficult, but I learned a lot.]",
-        "Sea difícil, pero aprendí mucho. [It be (subjunctive) difficult, but I learned a lot.]",
+        "Fue difícil, pero aprendiera mucho. [It was difficult, but I learned (subjunctive) a lot.]",
         "Fue difícil, pero aprenda mucho. [It was difficult, but I learn (subjunctive) a lot.]"
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect-subjunctive-forms",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-36-01.ex14",
@@ -276,7 +284,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Tell a short story about a difficult experience.",
+          "prompt": "Say that it was a difficult experience, but afterwards you found a solution.",
           "answer": "Fue una experiencia difícil, pero después encontré una solución."
         }
       ],
@@ -290,7 +298,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe what happened before and after an important event.",
+          "prompt": "Write two sentences: when you arrived, the meeting had already started; afterwards you talked with your colleagues.",
           "answer": "Cuando llegué, ya había empezado la reunión. Después hablé con mis compañeros."
         }
       ],
@@ -304,7 +312,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Connect an experience to something you learned.",
+          "prompt": "Say that the experience was complicated, but you learned that you had to listen to other opinions.",
           "answer": "La experiencia fue complicada, pero aprendí que debía escuchar otras opiniones."
         }
       ],

@@ -27,16 +27,20 @@
       "id": "b1-35-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence best expresses reflection on a past alternative? [¿Cuál expresa mejor una reflexión sobre una alternativa pasada?]",
+      "question": "Which sentence best expresses a reflection on a past alternative?",
       "options": [
         "Si hubiera tomado otro camino, mi vida habría sido diferente. [If I had taken another path, my life would have been different.]",
-        "Todos los días tomo otro camino para volver a mi casa después de trabajar. [Every day I take another path to return home after working.]",
-        "Ayer por la tarde tomé otro camino diferente para evitar las obras de la calle. [Yesterday afternoon I took a different path to avoid road works.]"
+        "Todos los días tomo otro camino para volver a casa después de trabajar. [Every day I take another path to return home after working.]",
+        "Tomé otro camino diferente para evitar las obras de la calle. [I took a different path to avoid the road works.]"
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
-      ]
+        "pluscuamperfecto-subjuntivo-si"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-35-05.ex03",
@@ -80,7 +84,7 @@
       ],
       "english": "If I had taken another path, my life would have been different.",
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ]
     },
     {
@@ -98,17 +102,17 @@
         2
       ],
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ]
     },
     {
       "id": "b1-35-05.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which verb means «to regret»? [¿Qué verbo significa «arrepentirse»?]",
+      "question": "Which verb means «to regret»?",
       "options": [
         "arrepentirse [to regret]",
-        "elegir [to choose]",
+        "preocuparse [to worry]",
         "imaginar [to imagine]"
       ],
       "correct": 0,
@@ -171,7 +175,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ]
     },
     {
@@ -193,11 +197,11 @@
       "id": "b1-35-05.ex11",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Si hubiera tomado otro camino, mi vida habría sido diferente.",
+      "sentence": "Si hubiera salido antes, habría llegado a tiempo.",
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ],
-      "english": "If I had taken another path, my life would have been different."
+      "english": "If I had left earlier, I would have arrived on time."
     },
     {
       "id": "b1-35-05.ex12",
@@ -239,15 +243,16 @@
       ],
       "options": [
         "Mi vida habría sido diferente. [My life would have been different.]",
-        "Mi vida habrá sido diferente. [My life will have been different.]",
-        "Mi vida haya sido diferente. [My life has (subjunctive) been different.]"
+        "Mi vida había sido diferente. [My life had been different.]",
+        "Mi vida ha sido diferente. [My life has been different.]"
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ],
       "distractor_skills": {
-        "1": "futuro-perfecto"
+        "1": "pluscuamperfecto",
+        "2": "preterito-perfecto"
       }
     },
     {
@@ -267,12 +272,16 @@
       "options": [
         "Volvería a elegir con cuidado. [I would choose carefully again.]",
         "Vuelva a elegir con cuidado. [I choose (subjunctive) carefully again.]",
-        "Haya vuelto a elegir con cuidado. [I have (subjunctive) chosen carefully again.]"
+        "Volví a elegir con cuidado. [I chose carefully again.]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-35-05.ex15",
@@ -280,12 +289,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Reflect on a past choice using the conditional perfect.",
+          "prompt": "Say that if you had made another decision, the result would have been different.",
           "answer": "Si hubiera tomado otra decisión, el resultado habría sido diferente."
         }
       ],
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ]
     },
     {
@@ -294,7 +303,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say whether you would make the same choice again.",
+          "prompt": "Say that if you had another opportunity, you would choose carefully again.",
           "answer": "Si tuviera otra oportunidad, volvería a elegir con cuidado."
         }
       ],
@@ -308,12 +317,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe an alternative path and its possible consequence.",
+          "prompt": "Say that if you had chosen another path, you would have met other people.",
           "answer": "Si hubiera elegido otro camino, habría conocido a otras personas."
         }
       ],
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ]
     },
     {
@@ -322,7 +331,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give a short reflection on a decision you made.",
+          "prompt": "Write two sentences: if you had had more information, you might have made another decision; however, now you think you learned something important.",
           "answer": "Si hubiera tenido más información, quizá habría tomado otra decisión. Sin embargo, ahora creo que aprendí algo importante."
         }
       ],
@@ -336,23 +345,23 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write a short hypothetical account comparing the choice you made with an alternative.",
-          "answer": "Si hubiera elegido otra opción, algunas cosas habrían sido diferentes. Aun así, no sé si el resultado habría sido mejor."
+          "prompt": "Write two sentences: if you had chosen another option, some things would have been different; however, you do not know if the result would have been better.",
+          "answer": "Si hubiera elegido otra opción, algunas cosas habrían sido diferentes. Sin embargo, no sé si el resultado habría sido mejor."
         }
       ],
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ]
     },
     {
       "id": "b1-35-05.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
+      "question": "¿Qué hace Fernando al principio de la historia?",
       "options": [
-        "Alicia imagina varias posibilidades antes de decidir qué camino seguir.",
-        "Alicia ya sabe exactamente qué va a pasar en el futuro.",
-        "Alicia decide no tomar ninguna decisión."
+        "Sigue a un ciervo hasta la fuente.",
+        "Busca a una mujer de ojos verdes en la ciudad.",
+        "Habla con Íñigo sobre su viaje a la ciudad."
       ],
       "correct": 0
     },
@@ -360,11 +369,11 @@
       "id": "b1-35-05.ex21",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
+      "question": "¿Qué le dice Íñigo sobre la fuente?",
       "options": [
-        "Alicia piensa en qué habría pasado si hubiera llegado unos minutos antes.",
-        "Alicia nunca piensa en el pasado.",
-        "Alicia elige el mismo camino que siempre ha seguido."
+        "Que en la fuente vive un espíritu del mal.",
+        "Que el ciervo está enfermo y no puede correr.",
+        "Que los perros no conocen el camino de la fuente."
       ],
       "correct": 0
     },
@@ -372,11 +381,11 @@
       "id": "b1-35-05.ex22",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
+      "question": "¿Qué le cuenta Fernando a Íñigo?",
       "options": [
-        "Cada alternativa tiene una posible consecuencia que Alicia intenta imaginar.",
-        "Solo existe un camino posible para Alicia.",
-        "Las decisiones de Alicia no tienen consecuencias."
+        "Que ha visto a una mujer de ojos verdes.",
+        "Que ha vuelto a ver a su familia.",
+        "Que ha encontrado una casa cerca de la fuente."
       ],
       "correct": 0
     },
@@ -384,11 +393,11 @@
       "id": "b1-35-05.ex23",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
+      "question": "¿Cómo termina la historia?",
       "options": [
-        "Alicia acepta que no puede conocer todos los resultados, pero elige con cuidado.",
-        "Alicia se arrepiente de todas sus decisiones.",
-        "Alicia deja de imaginar otras posibilidades."
+        "Fernando cae al agua y el agua se cierra sobre él.",
+        "Fernando vuelve a casa con el ciervo.",
+        "La mujer sale del agua y se va con Íñigo."
       ],
       "correct": 0
     }

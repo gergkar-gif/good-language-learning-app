@@ -27,11 +27,11 @@
       "id": "b1-36-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence gives a cause? [¿Cuál expresa una causa?]",
+      "question": "Which sentence gives a cause?",
       "options": [
         "El problema existe porque falta información. [The problem exists because there is a lack of information.]",
-        "El problema será menor. [The problem will be smaller.]",
-        "Quizá exista otro problema. [Perhaps there is another problem.]"
+        "El problema será menor si trabajamos juntos. [The problem will be smaller if we work together.]",
+        "Quizá exista otro problema en la oficina. [Perhaps there is another problem in the office.]"
       ],
       "correct": 0,
       "teaches": [
@@ -104,7 +104,7 @@
       "id": "b1-36-03.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «solution»? [¿Qué palabra significa «solución»?]",
+      "question": "Which word means «solution»?",
       "options": [
         "solución [solution]",
         "consecuencia [consequence]",
@@ -157,8 +157,8 @@
       "sentence": "El problema existe porque falta información.",
       "options": [
         "The problem exists because there is a lack of information.",
-        "The problem will disappear tomorrow.",
-        "There is no information problem."
+        "The problem exists although there is enough information.",
+        "The problem will disappear when there is information."
       ],
       "correct": 0,
       "teaches": [
@@ -172,8 +172,8 @@
       "sentence": "Por eso, es necesario que busquemos una solución.",
       "options": [
         "Therefore, it is necessary that we look for a solution.",
-        "Therefore, we found a solution yesterday.",
-        "It is possible that there is no solution."
+        "Therefore, we found a good solution together.",
+        "It is possible that there is no solution for us."
       ],
       "correct": 0,
       "teaches": [
@@ -184,11 +184,11 @@
       "id": "b1-36-03.ex11",
       "type": "dictation",
       "category": "listening",
-      "sentence": "La consecuencia es que algunas familias pierden tiempo.",
+      "sentence": "Algunas familias llegan tarde porque el transporte no funciona bien.",
       "teaches": [
         "b1-independent-spanish-vocab"
       ],
-      "english": "The consequence is that some families lose time."
+      "english": "Some families arrive late because the transport doesn't work well."
     },
     {
       "id": "b1-36-03.ex12",
@@ -207,12 +207,15 @@
       "options": [
         "Porque falta información. [Because there is a lack of information.]",
         "Porque falte información. [Because there is (subjunctive) a lack of information.]",
-        "Porque información. [Because information.]"
+        "Porque faltan información. [Because there are lacking information.]"
       ],
       "correct": 0,
       "teaches": [
         "porque-y-por-eso"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-36-03.ex13",
@@ -231,7 +234,7 @@
       "options": [
         "Algunas familias pierden tiempo. [Some families lose time.]",
         "Algunas familias pierdan tiempo. [Some families lose (subjunctive) time.]",
-        "Algunas familias hayan perdido tiempo. [Some families have (subjunctive) lost time.]"
+        "Algunas familias pierde tiempo. [Some families loses time.]"
       ],
       "correct": 0,
       "teaches": [
@@ -268,7 +271,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe a simple problem and its cause.",
+          "prompt": "Say that the problem exists because information is missing.",
           "answer": "El problema existe porque falta información."
         }
       ],
@@ -282,7 +285,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe one consequence of a problem.",
+          "prompt": "Say that the consequence is that some people lose time.",
           "answer": "La consecuencia es que algunas personas pierden tiempo."
         }
       ],
@@ -296,7 +299,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Propose and evaluate a solution.",
+          "prompt": "Say that it is necessary that we look for a solution and that you think this proposal can help.",
           "answer": "Es necesario que busquemos una solución y creo que esta propuesta puede ayudar."
         }
       ],

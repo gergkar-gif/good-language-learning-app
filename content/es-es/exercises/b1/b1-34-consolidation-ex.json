@@ -31,7 +31,7 @@
       "id": "b1-34-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence normally requires the subjunctive? [¿Cuál normalmente requiere subjuntivo?]",
+      "question": "Which sentence requires the subjunctive?",
       "options": [
         "No creo que sea necesario. [I don't think it is necessary.]",
         "Estoy seguro de que es necesario. [I am sure it is necessary.]",
@@ -99,7 +99,7 @@
       "id": "b1-34-consolidation.ex06",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly expresses evaluation? [¿Cuál expresa correctamente una valoración?]",
+      "question": "Which sentence correctly expresses an evaluation?",
       "options": [
         "Es importante que participen. [It is important that they participate.]",
         "Es importante que participan. [It is important that they participate.]",
@@ -149,11 +149,11 @@
       "id": "b1-34-consolidation.ex09",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence best integrates certainty, doubt and evaluation? [¿Cuál integra mejor certeza, duda y valoración?]",
+      "question": "Which sentence combines certainty, doubt and evaluation?",
       "options": [
         "Estoy seguro de que puede ayudar, pero no creo que sea suficiente y es importante que estudiemos otras opciones. [I am sure it can help, but I don't think it is enough and it is important that we study other options.]",
-        "Estoy completamente seguro de que esta propuesta técnica puede ayudar a solucionar el problema. [I am completely sure that this technical proposal can help solve the problem.]",
-        "No sé con certeza cuál es la mejor alternativa porque todavía no conocemos todos los detalles. [I do not know with certainty which is the best alternative because we still do not know all the details.]"
+        "Estoy seguro de que esta propuesta de la empresa puede ayudar a resolver el problema en poco tiempo. [I am sure that this proposal from the company can help solve the problem in a short time.]",
+        "No sé cuál es la mejor alternativa porque todavía no conocemos los detalles del proyecto. [I do not know which is the best alternative because we still do not know the details of the project.]"
       ],
       "correct": 0,
       "teaches": [
@@ -185,8 +185,8 @@
       "sentence": "No creo que la solución sea perfecta, aunque estoy seguro de que puede ayudar.",
       "options": [
         "I don't think the solution is perfect, although I am sure it can help.",
-        "I am sure the solution is perfect.",
-        "I don't think the solution can help at all."
+        "I am sure the solution is perfect, although I doubt it can help.",
+        "I don't think the solution is perfect, so I doubt it can help."
       ],
       "correct": 0
     },
@@ -219,8 +219,8 @@
       ],
       "options": [
         "Sí, es posible que llegue tarde. [Yes, it is possible that he will arrive late.]",
-        "No, es posible que llega tarde. [No, it is possible that he arrives late.]",
-        "Sí, dudo que llegue tarde. [Yes, I doubt that he will arrive late.]"
+        "Sí, es posible que llega tarde. [Yes, it is possible that he arrives late.]",
+        "Sí, es seguro que llegue tarde. [Yes, it is certain that he will arrive late.]"
       ],
       "correct": 0
     },
@@ -276,11 +276,11 @@
       "id": "b1-34-consolidation.ex16",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence gives a balanced opinion? [¿Cuál da una opinión equilibrada?]",
+      "question": "Which sentence gives a balanced opinion?",
       "options": [
         "No creo que la solución sea perfecta, aunque estoy convencido de que puede ayudar. [I don't think the solution is perfect, although I am convinced it can help.]",
-        "La solución técnica propuesta por el equipo de ingenieros es totalmente perfecta. [The technical solution proposed by the engineering team is totally perfect.]",
-        "La nueva propuesta resulta completamente inútil y no sirve para resolver nada. [The new proposal turns out completely useless and is of no use for solving anything.]"
+        "La solución propuesta por los ingenieros es perfecta y debemos aprobarla. [The solution proposed by the engineers is perfect and we must approve it.]",
+        "La nueva propuesta de la empresa no sirve para resolver el problema que tenemos. [The company's new proposal is useless for solving the problem we have.]"
       ],
       "correct": 0,
       "teaches": [
@@ -293,7 +293,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Express certainty and doubt about the same idea.",
+          "prompt": "Say that you are sure it can help, but not sure that it is enough.",
           "answer": "Estoy seguro de que puede ayudar, pero no estoy seguro de que sea suficiente."
         }
       ],
@@ -307,7 +307,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write a short nuanced opinion using negated opinion, possibility and evaluation.",
+          "prompt": "Write two sentences: you do not think there is a perfect solution; it is possible that several options exist and it is important that we study them before deciding.",
           "answer": "No creo que haya una solución perfecta. Es posible que existan varias opciones y es importante que las estudiemos antes de decidir."
         }
       ],

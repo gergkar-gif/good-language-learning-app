@@ -31,7 +31,7 @@
       "id": "b1-35-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence describes a present/future hypothetical? [¿Cuál describe una situación hipotética presente/futura?]",
+      "question": "Which sentence describes a present or future hypothetical?",
       "options": [
         "Si tuviera más tiempo, viajaría. [If I had more time, I would travel.]",
         "Si hubiera tenido más tiempo, habría viajado. [If I had had more time, I would have travelled.]",
@@ -46,15 +46,14 @@
       "id": "b1-35-consolidation.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Si ___ más información, habría decidido de otra manera.",
+      "sentence": "Si ___ más información, habría tomado otra decisión.",
       "hint": "tener",
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ],
-      "english": "If I had had more information, I would have decided differently.",
+      "english": "If I had had more information, I would have made a different decision.",
       "answers": [
-        "hubiera tenido",
-        "hubiese tenido"
+        "hubiera tenido"
       ]
     },
     {
@@ -62,7 +61,7 @@
       "type": "sentence-builder",
       "category": "grammar",
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ],
       "tiles": [
         "Si",
@@ -101,14 +100,14 @@
         2
       ],
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ]
     },
     {
       "id": "b1-35-consolidation.ex06",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly describes a hypothetical consequence? [¿Cuál describe correctamente una consecuencia hipotética?]",
+      "question": "Which sentence describes a hypothetical consequence?",
       "options": [
         "Si cambiara el plan, ocurriría algo diferente. [If the plan changed, something different would happen.]",
         "Si cambiaría el plan, ocurriría algo diferente. [If I would change the plan, something different would happen.]",
@@ -157,23 +156,27 @@
       ],
       "english": "If I had taken another path, it would have been different.",
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ]
     },
     {
       "id": "b1-35-consolidation.ex09",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence best integrates hypothetical language? [¿Cuál integra mejor el lenguaje hipotético?]",
+      "question": "Which sentence contains a condition about a past that did not happen?",
       "options": [
-        "Si tuviera otra oportunidad, cambiaría mi decisión; si hubiera sabido más, habría elegido otra opción. [If I had another opportunity, I would change my decision; if I had known more, I would have chosen another option.]",
-        "Actualmente tengo una decisión importante que tomar sobre mi futuro profesional y necesito consultarlo con mi familia. [Currently I have an important decision to make regarding my professional future and need to consult it with my family.]",
-        "Ayer finalmente elegí una opción muy conveniente entre todas las alternativas disponibles después de comparar los costes. [Yesterday I finally chose a very convenient option among all the available alternatives after comparing costs.]"
+        "Si hubiera sabido más, habría elegido otra opción. [If I had known more, I would have chosen another option.]",
+        "Si supiera más sobre el tema, elegiría otra opción. [If I knew more about the topic, I would choose another option.]",
+        "Si sé más sobre el tema, elijo otra opción. [If I know more about the topic, I choose another option.]"
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
-      ]
+        "pluscuamperfecto-subjuntivo-si"
+      ],
+      "distractor_skills": {
+        "1": "hypothetical-structures",
+        "2": "si-clauses"
+      }
     },
     {
       "id": "b1-35-consolidation.ex10",
@@ -197,12 +200,12 @@
       "sentence": "Si hubiera tenido más tiempo, habría viajado.",
       "options": [
         "If I had had more time, I would have travelled.",
-        "If I had more time, I would travel.",
-        "I travelled because I had more time."
+        "If I had more time, I would travel somewhere.",
+        "I travelled a lot because I had more time."
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ]
     },
     {
@@ -211,7 +214,7 @@
       "category": "listening",
       "sentence": "Si hubiera tomado otro camino, habría sido diferente.",
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ],
       "english": "If I had taken another path, things would have been different."
     },
@@ -232,12 +235,16 @@
       "options": [
         "Elegiría otra. [I would choose another one.]",
         "Elija otra. [I choose (subjunctive) another one.]",
-        "Haya elegido otra. [I have (subjunctive) chosen another one.]"
+        "Elegí otra. [I chose another one.]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-35-consolidation.ex14",
@@ -255,15 +262,16 @@
       ],
       "options": [
         "Habría elegido otra opción. [I would have chosen another option.]",
-        "Habré elegido otra opción. [I will have chosen another option.]",
-        "Haya elegido otra opción. [I have (subjunctive) chosen another option.]"
+        "Había elegido otra opción. [I had chosen another option.]",
+        "He elegido otra opción. [I have chosen another option.]"
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ],
       "distractor_skills": {
-        "1": "futuro-perfecto"
+        "1": "pluscuamperfecto",
+        "2": "preterito-perfecto"
       }
     },
     {
@@ -283,18 +291,22 @@
       "options": [
         "Elegiría otra alternativa. [I would choose another alternative.]",
         "Elija otra alternativa. [I choose (subjunctive) another alternative.]",
-        "Haya elegido otra alternativa. [I have (subjunctive) chosen another alternative.]"
+        "Elegí otra alternativa. [I chose another alternative.]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-35-consolidation.ex16",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly contrasts the two hypothetical patterns? [¿Cuál contrasta correctamente los dos tipos de hipótesis?]",
+      "question": "Which sentence correctly contrasts the two hypothetical patterns?",
       "options": [
         "Si tuviera tiempo, viajaría; si hubiera tenido tiempo, habría viajado. [If I had time, I would travel; if I had had time, I would have travelled.]",
         "Si tuviera tiempo, viajé; si hubiera tenido tiempo, habría viajado. [If I had time, I travelled; if I had had time, I would have travelled.]",
@@ -302,7 +314,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ]
     },
     {
@@ -311,7 +323,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give a present/future hypothetical.",
+          "prompt": "Say that if you had more time, you would travel.",
           "answer": "Si tuviera más tiempo, viajaría."
         }
       ],
@@ -325,12 +337,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give a past hypothetical and its consequence.",
+          "prompt": "Say that if you had had more information, you would have made another decision.",
           "answer": "Si hubiera tenido más información, habría tomado otra decisión."
         }
       ],
       "teaches": [
-        "si-clauses"
+        "pluscuamperfecto-subjuntivo-si"
       ]
     }
   ]

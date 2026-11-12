@@ -27,11 +27,11 @@
       "id": "b1-34-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence presents a nuanced opinion? [¿Cuál presenta una opinión matizada?]",
+      "question": "Which sentence presents a nuanced opinion?",
       "options": [
         "No creo que la solución sea perfecta, aunque estoy seguro de que puede ayudar. [I don't think the solution is perfect, although I am sure it can help.]",
-        "La solución técnica propuesta por el equipo de ingenieros es totalmente perfecta. [The technical solution proposed by the engineering team is totally perfect.]",
-        "La nueva propuesta resulta completamente mala y generará grandes inconvenientes. [The new proposal turns out completely bad and will generate major drawbacks.]"
+        "La solución propuesta por los ingenieros es perfecta y debemos aprobarla. [The solution proposed by the engineers is perfect and we must approve it.]",
+        "La nueva propuesta de la empresa no sirve y creará muchos problemas. [The company's new proposal is useless and will create many problems.]"
       ],
       "correct": 0,
       "teaches": [
@@ -99,11 +99,11 @@
       "id": "b1-34-05.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «nuance»? [¿Qué palabra significa «matiz»?]",
+      "question": "Which word means «nuance»?",
       "options": [
         "matiz [nuance]",
         "argumento [argument]",
-        "certeza [certainty]"
+        "absoluto [absolute]"
       ],
       "correct": 0,
       "teaches": [
@@ -154,8 +154,8 @@
       "sentence": "No creo que la solución sea perfecta, aunque estoy seguro de que puede ayudar.",
       "options": [
         "I don't think the solution is perfect, although I am sure it can help.",
-        "I am sure the solution is perfect and cannot help.",
-        "I doubt that the solution exists."
+        "I don't think the solution is perfect, although I doubt that it can help.",
+        "I am sure the solution is perfect, although I doubt that it can help."
       ],
       "correct": 0,
       "teaches": [
@@ -228,7 +228,7 @@
       "options": [
         "Es posible que existan otras opciones. [There may be other options.]",
         "Es posible que existen otras opciones. [There may be other options.]",
-        "Estoy seguro que existan. [I am sure that they exist.]"
+        "Estoy seguro de que existan. [I am sure that they exist.]"
       ],
       "correct": 0,
       "teaches": [
@@ -265,7 +265,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give a nuanced opinion using no creo que and aunque.",
+          "prompt": "Say that you do not think the solution is perfect, although it can help.",
           "answer": "No creo que la solución sea perfecta, aunque puede ayudar."
         }
       ],
@@ -279,7 +279,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Combine possibility and evaluation.",
+          "prompt": "Say that other options may exist and that it is important that we study them.",
           "answer": "Es posible que existan otras opciones y es importante que las estudiemos."
         }
       ],
@@ -293,7 +293,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Contrast certainty and doubt.",
+          "prompt": "Say that you are sure the idea can help, but not sure that it is enough.",
           "answer": "Estoy seguro de que la idea puede ayudar, pero no estoy seguro de que sea suficiente."
         }
       ],
@@ -307,7 +307,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give a balanced opinion with at least two perspectives.",
+          "prompt": "Write two sentences: you do not think there is a perfect solution; however, you are convinced that some measures can help.",
           "answer": "No creo que haya una solución perfecta. Sin embargo, estoy convencido de que algunas medidas pueden ayudar."
         }
       ],
@@ -321,7 +321,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write a short nuanced argument using certainty, doubt and evaluation.",
+          "prompt": "Write two sentences: you are convinced that the problem is important, although you do not think a simple solution exists; several options may exist and it is necessary that we study them.",
           "answer": "Estoy convencido de que el problema es importante, aunque no creo que exista una solución sencilla. Es posible que haya varias opciones y es necesario que las estudiemos."
         }
       ],
@@ -333,11 +333,11 @@
       "id": "b1-34-05.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
+      "question": "¿Qué discuten hoy en los cafés de Madrid?",
       "options": [
-        "Marco escucha varias opiniones y construye una postura con matices, sin certezas absolutas.",
-        "Marco está seguro de que solo existe una explicación correcta.",
-        "Marco rechaza escuchar la opinión de los demás."
+        "Si el teatro nuevo es mejor que el de antes.",
+        "Si los cafés nuevos son mejores que los viejos.",
+        "Si hay que cerrar los teatros viejos de la ciudad."
       ],
       "correct": 0
     },
@@ -345,11 +345,11 @@
       "id": "b1-34-05.ex21",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
+      "question": "¿Qué le parece extraño al autor?",
       "options": [
-        "Una amiga le dice a Marco que es posible que algunas personas tengan razón.",
-        "Marco decide no hablar con nadie sobre el tema.",
-        "Marco cambia de opinión sin pensar en las razones."
+        "Que tantos críticos estén tan seguros de su opinión.",
+        "Que los autores jóvenes tengan tanto talento.",
+        "Que el teatro antiguo ya no exista en Madrid."
       ],
       "correct": 0
     },
@@ -357,11 +357,11 @@
       "id": "b1-34-05.ex22",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
+      "question": "¿Qué le molesta al autor?",
       "options": [
-        "Para Marco, la diferencia entre una certeza y una posibilidad es importante.",
-        "Marco cree que todas las propuestas son igual de realistas.",
-        "Marco piensa que las consecuencias no importan."
+        "Que se aplauda algo solo porque es nuevo.",
+        "Que los autores hablen de teatro en los cafés.",
+        "Que el teatro nuevo cueste tanto dinero."
       ],
       "correct": 0
     },
@@ -369,11 +369,11 @@
       "id": "b1-34-05.ex23",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
+      "question": "¿Qué piensa el autor al final?",
       "options": [
-        "Reconocer la incertidumbre ayuda a construir una opinión más cuidadosa.",
-        "Es mejor no tener ninguna opinión sobre el tema.",
-        "Marco decide que su primera idea era la única válida."
+        "Que dudar con cuidado es mejor que afirmar sin pensar.",
+        "Que el teatro antiguo es mejor que el teatro nuevo.",
+        "Que una opinión segura es mejor que una opinión con razones."
       ],
       "correct": 0
     }

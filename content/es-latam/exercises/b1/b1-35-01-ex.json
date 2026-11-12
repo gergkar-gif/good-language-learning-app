@@ -31,16 +31,20 @@
       "id": "b1-35-01.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence describes a hypothetical choice? [¿Cuál describe una elección hipotética?]",
+      "question": "Which sentence describes a hypothetical choice?",
       "options": [
         "Si tuviera la opción, elegiría otra. [If I had the option, I would choose another one.]",
-        "Tengo una opción. [I have an option.]",
-        "Elegí otra opción. [I chose another option.]"
+        "Cuando tengo la opción, elijo otra. [When I have the option, I choose another one.]",
+        "Tuve la opción y elegí otra. [I had the option and chose another one.]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-35-01.ex03",
@@ -101,7 +105,7 @@
       "id": "b1-35-01.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «option»? [¿Qué palabra significa «opción»?]",
+      "question": "Which word means «option»?",
       "options": [
         "opción [option]",
         "decisión [decision]",
@@ -181,11 +185,11 @@
       "id": "b1-35-01.ex11",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Si tuviera la opción, elegiría otra.",
+      "sentence": "Si tuviéramos más información, decidiríamos mejor.",
       "teaches": [
         "hypothetical-structures"
       ],
-      "english": "If I had the option, I would choose another one."
+      "english": "If we had more information, we would decide better."
     },
     {
       "id": "b1-35-01.ex12",
@@ -274,7 +278,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say what you would choose if you had a choice.",
+          "prompt": "Say that if you had the option, you would choose another one.",
           "answer": "Si tuviera la opción, elegiría otra."
         }
       ],
@@ -288,7 +292,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say what you would prefer if you could decide.",
+          "prompt": "Say that if you could decide, you would prefer to wait.",
           "answer": "Si pudiera decidir, preferiría esperar."
         }
       ],

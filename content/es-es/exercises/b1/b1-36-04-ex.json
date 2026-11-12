@@ -27,7 +27,7 @@
       "id": "b1-36-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence expresses an uncertain prediction? [¿Cuál expresa una predicción incierta?]",
+      "question": "Which sentence expresses an uncertain prediction?",
       "options": [
         "Es posible que cambie la situación. [It is possible that the situation will change.]",
         "La situación cambió. [The situation changed.]",
@@ -97,7 +97,7 @@
       "id": "b1-36-04.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which verb means «to predict»? [¿Qué verbo significa «predecir»?]",
+      "question": "Which verb means «to predict»?",
       "options": [
         "predecir [to predict]",
         "superar [to overcome]",
@@ -130,7 +130,7 @@
         "más",
         "recursos",
         "podríamos",
-        "desarrollar",
+        "crear",
         "nuevas",
         "ideas."
       ],
@@ -140,11 +140,11 @@
         "más",
         "recursos",
         "podríamos",
-        "desarrollar",
+        "crear",
         "nuevas",
         "ideas."
       ],
-      "english": "If there were more resources, we could develop new ideas.",
+      "english": "If there were more resources, we could create new ideas.",
       "teaches": [
         "hypothetical-structures"
       ]
@@ -156,8 +156,8 @@
       "sentence": "Es posible que cambie la situación.",
       "options": [
         "It is possible that the situation will change.",
-        "The situation definitely changed.",
-        "The situation always changes."
+        "It is certain that the situation will change.",
+        "It is possible that the situation has changed."
       ],
       "correct": 0,
       "teaches": [
@@ -183,11 +183,11 @@
       "id": "b1-36-04.ex11",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Nadie puede predecir exactamente lo que ocurrirá.",
+      "sentence": "Es posible que la situación cambie durante los próximos años.",
       "teaches": [
         "b1-independent-spanish-vocab"
       ],
-      "english": "No one can predict exactly what will happen."
+      "english": "It is possible that the situation will change during the next few years."
     },
     {
       "id": "b1-36-04.ex12",
@@ -230,12 +230,16 @@
       "options": [
         "Prepararía otra propuesta. [I would prepare another proposal.]",
         "Prepare otra propuesta. [I prepare (subjunctive) another proposal.]",
-        "Haya preparado otra propuesta. [I have (subjunctive) prepared another proposal.]"
+        "Preparé otra propuesta. [I prepared another proposal.]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-36-04.ex14",
@@ -267,7 +271,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Make a prediction using es posible que.",
+          "prompt": "Say that it is possible that the situation will change.",
           "answer": "Es posible que la situación cambie."
         }
       ],
@@ -281,7 +285,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe what you would do with more time.",
+          "prompt": "Say that if you had more time, you would prepare another proposal.",
           "answer": "Si tuviera más tiempo, prepararía otra propuesta."
         }
       ],
@@ -295,7 +299,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Combine a prediction and a hypothetical situation.",
+          "prompt": "Say that it is possible that the situation will change, but if you had more resources you would prepare a different solution.",
           "answer": "Es posible que cambie la situación, pero si tuviera más recursos, prepararía una solución diferente."
         }
       ],
@@ -309,7 +313,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Discuss two possible futures.",
+          "prompt": "Write two sentences: if everything stays the same, there will be problems; if we change some things, the situation could improve.",
           "answer": "Si todo continúa igual, habrá problemas. Si cambiamos algunas cosas, la situación podría mejorar."
         }
       ],

@@ -27,11 +27,11 @@
       "id": "b1-36-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence best shows cumulative B1 communication? [¿Cuál muestra mejor una comunicación acumulativa de B1?]",
+      "question": "Which sentence best shows B1 communication?",
       "options": [
         "No creo que sea perfecto, pero es posible que ayude si lo hacemos juntos. [I don't think it is perfect, but it may help if we do it together.]",
-        "Este nuevo plan de trabajo es absolutamente perfecto para todos los miembros del grupo. [This new work plan is absolutely perfect for all group members.]",
-        "Mañana por la mañana nos reunimos en la oficina para hablar del asunto con todo el grupo. [Tomorrow morning we meet in the office to discuss the matter with the whole group.]"
+        "Este nuevo plan de trabajo es perfecto y debemos aprobarlo ya. [This new work plan is perfect and we must approve it now.]",
+        "El grupo se reúne en la oficina para hablar del plan de trabajo. [The group meets in the office to talk about the work plan.]"
       ],
       "correct": 0,
       "teaches": [
@@ -103,7 +103,7 @@
       "id": "b1-36-05.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «challenge»? [¿Qué palabra significa «reto»?]",
+      "question": "Which word means «challenge»?",
       "options": [
         "reto [challenge]",
         "herramienta [tool]",
@@ -158,8 +158,8 @@
       "sentence": "Es importante que expliquemos las consecuencias antes de decidir.",
       "options": [
         "It is important that we explain the consequences before deciding.",
-        "We explained the consequences yesterday.",
-        "It is possible that we decide tomorrow."
+        "We explained the consequences and we decided together.",
+        "It is possible that we decide to explain it."
       ],
       "correct": 0,
       "teaches": [
@@ -185,11 +185,11 @@
       "id": "b1-36-05.ex11",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Aunque el problema es complejo, hay varias opciones que podemos estudiar.",
+      "sentence": "Aunque el problema es difícil, hay varias opciones que podemos estudiar.",
       "teaches": [
         "concesivas-aunque"
       ],
-      "english": "Although the problem is complex, there are several options we can study."
+      "english": "Although the problem is difficult, there are several options we can study."
     },
     {
       "id": "b1-36-05.ex12",
@@ -256,12 +256,16 @@
       "options": [
         "Buscaría una solución diferente. [I would look for a different solution.]",
         "Busque una solución diferente. [I look (subjunctive) for a different solution.]",
-        "Haya buscado una solución diferente. [I have (subjunctive) looked for a different solution.]"
+        "Busqué una solución diferente. [I looked for a different solution.]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-36-05.ex15",
@@ -269,7 +273,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Tell a short story, then give your opinion about it.",
+          "prompt": "Write two sentences: first a problem happened; afterwards you found a solution and now you think you learned something important.",
           "answer": "Primero ocurrió un problema. Después encontré una solución y ahora creo que aprendí algo importante."
         }
       ],
@@ -283,7 +287,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain a problem, its cause and one solution.",
+          "prompt": "Write two sentences: the problem exists because information is missing; therefore it is necessary that we improve communication.",
           "answer": "El problema existe porque falta información. Por eso, es necesario que mejoremos la comunicación."
         }
       ],
@@ -297,7 +301,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Give an opinion using contrast and justification.",
+          "prompt": "Say that you do not think it is the best option, although you understand the argument because it can be useful in some situations.",
           "answer": "No creo que sea la mejor opción, aunque entiendo el argumento porque puede ser útil en algunas situaciones."
         }
       ],
@@ -311,7 +315,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Combine a prediction with a hypothetical alternative.",
+          "prompt": "Write two sentences: it is possible that the situation will change; if we had more resources, we could be better prepared.",
           "answer": "Es posible que la situación cambie. Si tuviéramos más recursos, podríamos prepararnos mejor."
         }
       ],
@@ -325,8 +329,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write a connected B1-level response to a practical problem.",
-          "answer": "El problema es importante porque afecta a muchas personas. No creo que exista una solución perfecta, pero es posible que algunas medidas ayuden. Si trabajáramos juntos, podríamos mejorar la situación."
+          "prompt": "Write three sentences: the problem is important for many people; you do not think a perfect solution exists, but it is possible that some measures help; if we worked together, we could improve the situation.",
+          "answer": "El problema es importante para muchas personas. No creo que exista una solución perfecta, pero es posible que algunas medidas ayuden. Si trabajáramos juntos, podríamos mejorar la situación."
         }
       ],
       "teaches": [
@@ -337,11 +341,11 @@
       "id": "b1-36-05.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
+      "question": "¿Qué hace Marta cuando tiene un problema en su trabajo?",
       "options": [
-        "Marta reflexiona sobre varias experiencias y aprende a comunicar sus ideas con cuidado.",
-        "Marta nunca cambia de opinión sobre nada.",
-        "Marta decide dejar de participar en su comunidad."
+        "Habla con otras personas y prueba una solución diferente.",
+        "Escribe a su jefe y espera una respuesta.",
+        "Compra una herramienta nueva para resolver el problema."
       ],
       "correct": 0
     },
@@ -349,11 +353,11 @@
       "id": "b1-36-05.ex21",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
+      "question": "¿Qué problema existe en la comunidad de Marta?",
       "options": [
-        "En su comunidad todavía existe un problema relacionado con el transporte.",
-        "El transporte de la comunidad funciona perfectamente.",
-        "Marta no propone ninguna solución."
+        "Algunas personas llegan tarde al trabajo por el transporte.",
+        "Algunas familias no tienen casa cerca del trabajo.",
+        "Los vecinos no pueden hablar entre ellos."
       ],
       "correct": 0
     },
@@ -361,11 +365,11 @@
       "id": "b1-36-05.ex22",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
+      "question": "¿Qué propone Marta para el transporte?",
       "options": [
-        "Marta cree que es importante escuchar diferentes opiniones antes de decidir.",
-        "Marta piensa que solo su opinión importa.",
-        "Marta cree que el futuro está completamente decidido."
+        "Mejorar la información y cambiar algunas rutas.",
+        "Cerrar las rutas que usan pocas personas.",
+        "Pedir a los vecinos que usen más la bicicleta."
       ],
       "correct": 0
     },
@@ -373,11 +377,11 @@
       "id": "b1-36-05.ex23",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
+      "question": "¿Qué piensa Marta sobre aprender español?",
       "options": [
-        "Marta ve que ahora se expresa con más confianza.",
-        "Marta piensa que no ha aprendido nada nuevo.",
-        "Marta decide dejar de estudiar español."
+        "Que una buena herramienta ayuda, pero la práctica es necesaria.",
+        "Que una buena herramienta es suficiente para aprender.",
+        "Que no es necesario explicar las razones de una idea."
       ],
       "correct": 0
     }

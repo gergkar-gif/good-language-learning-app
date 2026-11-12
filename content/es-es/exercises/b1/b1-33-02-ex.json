@@ -27,7 +27,7 @@
       "id": "b1-33-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly reports a statement? [¿Cuál reproduce correctamente una afirmación?]",
+      "question": "Which sentence correctly reports a statement?",
       "options": [
         "Él me dijo que no tenía tiempo. [He told me that he did not have time.]",
         "Él me dijo si no tenía tiempo. [He told me if he did not have time.]",
@@ -49,8 +49,7 @@
       ],
       "english": "She explained that she lived there.",
       "answers": [
-        "vivía",
-        "vivió"
+        "vivía"
       ]
     },
     {
@@ -102,7 +101,7 @@
       "id": "b1-33-02.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which verb means «to inform»? [¿Qué verbo significa «informar»?]",
+      "question": "Which verb means «to inform»?",
       "options": [
         "informar [to inform]",
         "preguntar [to ask]",
@@ -162,7 +161,7 @@
       "options": [
         "He told me that he did not have time.",
         "He asked if he had time.",
-        "He said he would have time tomorrow."
+        "He said that he would have time."
       ],
       "correct": 0,
       "teaches": [
@@ -175,9 +174,9 @@
       "category": "listening",
       "sentence": "Ella aseguró que no había visto a nadie.",
       "options": [
-        "She assured that she had not seen anyone.",
-        "She asked who she had seen.",
-        "She said she would see someone."
+        "She stated firmly that she had not seen anyone.",
+        "She asked who it was that she had seen.",
+        "She said that she would not see anyone."
       ],
       "correct": 0,
       "teaches": [
@@ -210,13 +209,16 @@
       ],
       "options": [
         "Me dijo que no tenía tiempo. [He told me that he did not have time.]",
-        "Me preguntó si tiempo. [He asked me if time.]",
-        "Me dijo que no tener tiempo. [He told me that not to have time.]"
+        "Me preguntó si tenía tiempo. [He asked me if he had time.]",
+        "Me dijo no tenía tiempo. [He told me he did not have time.]"
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto-informacion"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preguntas-indirectas"
+      }
     },
     {
       "id": "b1-33-02.ex13",
@@ -234,7 +236,7 @@
       ],
       "options": [
         "Explicó que vivía allí. [She explained that she lived there.]",
-        "Explicó si vivía. [She explained if she lived.]",
+        "Explicó vivía allí. [She explained she lived there.]",
         "Preguntó que vivía. [She asked that she lived.]"
       ],
       "correct": 0,
@@ -257,14 +259,17 @@
         }
       ],
       "options": [
-        "Aseguró que no había visto a nadie. [The witness assured that he had not seen anyone.]",
+        "Aseguró que no había visto a nadie. [He assured that he had not seen anyone.]",
         "Aseguró que no haber visto a nadie. [He assured that not to have seen anyone.]",
-        "Preguntó a nadie. [He asked nobody.]"
+        "Preguntó si no había visto a nadie. [He asked if he had not seen anyone.]"
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto-informacion"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "preguntas-indirectas"
+      }
     },
     {
       "id": "b1-33-02.ex15",
@@ -272,7 +277,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Report a statement using dijo que.",
+          "prompt": "Say that he told you he did not have time.",
           "answer": "Él me dijo que no tenía tiempo."
         }
       ],
@@ -286,7 +291,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Report a statement using explicó que.",
+          "prompt": "Say that she explained that she lived there.",
           "answer": "Ella explicó que vivía allí."
         }
       ],
@@ -300,7 +305,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Report what a witness assured.",
+          "prompt": "Say that the witness assured that he had not seen anyone.",
           "answer": "El testigo aseguró que no había visto a nadie."
         }
       ],

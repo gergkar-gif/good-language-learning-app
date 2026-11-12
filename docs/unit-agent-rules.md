@@ -519,7 +519,7 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
 - **Story line (user, 2026-10-21):** Carlos and Meg decide in Unit 19 to
   move to Budapest *algún día*; they live in Hanoi until the end of A2,
   where the move happens. Carlos grew up in Hungary (a village by a lake;
-  his parents, Ana and Andreas); his father's mother lives in Madrid (the
+  his siblings Ana and Andreas); his father's mother lives in Madrid (the
   tortilla recipe, Ana's studies there). Lucía is back in Spain after
   a2-18 and Daniela in Chile after a2-20: calls and messages only (their
   lines in Units 21–30 went to Ana or Kaylee).

@@ -27,7 +27,7 @@
       "id": "b1-34-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly expresses evaluation? [¿Cuál expresa correctamente una valoración?]",
+      "question": "Which sentence correctly expresses an evaluation?",
       "options": [
         "Es importante que escuchemos otras opiniones. [It is important that we listen to other opinions.]",
         "Es importante que escuchamos otras opiniones. [It is important that we listen to other opinions.]",
@@ -95,7 +95,7 @@
       "id": "b1-34-04.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which verb means «to value / assess»? [¿Qué verbo significa «valorar»?]",
+      "question": "Which verb means «to value / assess»?",
       "options": [
         "valorar [to value]",
         "preocuparse [to worry]",
@@ -110,15 +110,14 @@
       "id": "b1-34-04.ex07",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Es importante ___ las consecuencias.",
-      "hint": "to assess",
+      "sentence": "Es importante ___ el trabajo de otras personas.",
+      "hint": "to value",
       "teaches": [
         "b1-complex-opinions-vocab"
       ],
-      "english": "It is important to assess the consequences.",
+      "english": "It is important to value other people's work.",
       "answers": [
-        "valorar",
-        "evaluar"
+        "valorar"
       ]
     },
     {
@@ -182,11 +181,11 @@
       "id": "b1-34-04.ex11",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Es necesario que todos puedan participar.",
+      "sentence": "Es importante que todos hablen.",
       "teaches": [
         "b1-complex-opinions-vocab"
       ],
-      "english": "It is necessary that everyone be able to participate."
+      "english": "It is important that everyone speaks."
     },
     {
       "id": "b1-34-04.ex12",
@@ -203,9 +202,9 @@
         }
       ],
       "options": [
-        "Es importante que escuchemos otras opiniones. [It is important that we listen to other opinions.]",
-        "Es importante que escuchamos otras opiniones. [It is important that we listen to other opinions.]",
-        "Es importante si escuchamos. [It is important if we listen.]"
+        "Es necesario que todos participen. [It is necessary that everyone participates.]",
+        "Es necesario que todos participan. [It is necessary that everyone participates.]",
+        "Es necesario si todos participen. [It is necessary if everyone participates.]"
       ],
       "correct": 0,
       "teaches": [
@@ -228,13 +227,16 @@
       ],
       "options": [
         "Me preocupa que afecte a otras personas. [I am concerned that it affects other people.]",
-        "Me preocupa que afecta a otras personas. [I am concerned that it affects other people.]",
+        "Me preocupa que afectó a otras personas. [I am concerned that it affected other people.]",
         "Me preocupa si afecte. [I am concerned if it affects.]"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-emotion"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-34-04.ex14",
@@ -252,8 +254,8 @@
       ],
       "options": [
         "Deberíamos valorar las consecuencias. [We should assess the consequences.]",
-        "Deberíamos que valorar. [We should that assess.]",
-        "Valoremos que las consecuencias. [Let us assess that the consequences.]"
+        "Deberíamos que valorar las consecuencias. [We should that assess the consequences.]",
+        "Deberíamos valoras las consecuencias. [We should you assess the consequences.]"
       ],
       "correct": 0,
       "teaches": [
@@ -266,7 +268,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Express an evaluation with es importante que.",
+          "prompt": "Say that it is important that everyone participates.",
           "answer": "Es importante que todos participen."
         }
       ],
@@ -280,7 +282,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say what you are concerned about.",
+          "prompt": "Say that it worries you that the decision affects other people.",
           "answer": "Me preocupa que la decisión afecte a otras personas."
         }
       ],
@@ -294,7 +296,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Evaluate an action and explain why it matters.",
+          "prompt": "Say that it is important that we listen to other opinions because a decision must consider different perspectives.",
           "answer": "Es importante que escuchemos otras opiniones porque una decisión debe considerar diferentes perspectivas."
         }
       ],

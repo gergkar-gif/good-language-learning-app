@@ -31,7 +31,7 @@
       "id": "b1-33-01.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence is indirect speech? [¿Cuál es estilo indirecto?]",
+      "question": "Which sentence is indirect speech?",
       "options": [
         "Ella dijo: «Estoy cansada». [She said: “I am tired.”]",
         "Ella dijo que estaba cansada. [She said that she was tired.]",
@@ -53,8 +53,7 @@
       ],
       "english": "She said that she was tired.",
       "answers": [
-        "estaba",
-        "estuvo"
+        "estaba"
       ]
     },
     {
@@ -102,11 +101,11 @@
       "id": "b1-33-01.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which verb means «to state»? [¿Qué verbo significa «afirmar»?]",
+      "question": "Which verb means «to state»?",
       "options": [
         "afirmar [to state]",
         "contar [to tell]",
-        "averiguar [to find out]"
+        "decir [to say]"
       ],
       "correct": 0,
       "teaches": [
@@ -174,8 +173,8 @@
       "sentence": "El testigo afirmó que había visto a un hombre.",
       "options": [
         "The witness stated that he had seen a man.",
-        "The witness asked about a man.",
-        "The witness will see a man."
+        "The witness asked if he had seen a man.",
+        "The witness said that he would see a man."
       ],
       "correct": 0,
       "teaches": [
@@ -186,11 +185,11 @@
       "id": "b1-33-01.ex11",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Ella explicó que estaba en la calle.",
+      "sentence": "Ella contó que estaba en casa.",
       "teaches": [
         "b1-reported-speech-vocab"
       ],
-      "english": "She explained that she was on the street."
+      "english": "She told us that she was at home."
     },
     {
       "id": "b1-33-01.ex12",
@@ -233,12 +232,15 @@
       "options": [
         "Afirmó que había visto a un hombre. [He stated that he had seen a man.]",
         "Afirmó había visto a un hombre. [He stated he had seen a man.]",
-        "Preguntó un hombre. [He asked a man.]"
+        "Afirmó que vería a un hombre. [He stated that he would see a man.]"
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "condicional-regular"
+      }
     },
     {
       "id": "b1-33-01.ex14",
@@ -257,7 +259,7 @@
       "options": [
         "Explicó que estaba en la calle. [She explained that she was in the street.]",
         "Explicó estaba en la calle. [She explained she was in the street.]",
-        "Preguntó la calle. [She asked the street.]"
+        "Preguntó que estaba en la calle. [She asked that she was in the street.]"
       ],
       "correct": 0,
       "teaches": [
@@ -270,7 +272,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Report something someone said.",
+          "prompt": "Report what she said: “I am tired.”",
           "answer": "Ella dijo que estaba cansada."
         }
       ],
@@ -284,7 +286,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Report a statement using afirmó que.",
+          "prompt": "Say that the witness stated that he had seen a man.",
           "answer": "El testigo afirmó que había visto a un hombre."
         }
       ],

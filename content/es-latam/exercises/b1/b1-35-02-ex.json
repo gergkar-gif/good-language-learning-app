@@ -27,16 +27,20 @@
       "id": "b1-35-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence describes a hypothetical consequence? [¿Cuál describe una consecuencia hipotética?]",
+      "question": "Which sentence describes a hypothetical consequence?",
       "options": [
         "Si cambiara el plan, ocurriría algo diferente. [If the plan changed, something different would happen.]",
-        "El plan de contingencia cambia según las necesidades. [The contingency plan changes according to needs.]",
-        "El plan inicial cambió tras la decisión del director. [The initial plan changed following the director's decision.]"
+        "El plan cambia cada semana según el trabajo. [The plan changes every week according to the work.]",
+        "El plan cambió después de la decisión del director. [The plan changed after the director's decision.]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-35-02.ex03",
@@ -99,7 +103,7 @@
       "id": "b1-35-02.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means «consequence»? [¿Qué palabra significa «consecuencia»?]",
+      "question": "Which word means «consequence»?",
       "options": [
         "consecuencia [consequence]",
         "resultado [result]",
@@ -150,8 +154,8 @@
       "sentence": "Si cambiara el plan, ocurriría algo diferente.",
       "options": [
         "If the plan changed, something different would happen.",
-        "The plan changed and something happened.",
-        "The plan will change tomorrow."
+        "If the plan changes, something different happens.",
+        "The plan changed, so something different happened."
       ],
       "correct": 0,
       "teaches": [
@@ -177,11 +181,11 @@
       "id": "b1-35-02.ex11",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Si lloviera, no saldríamos.",
+      "sentence": "Si cambiara el plan, el resultado sería diferente.",
       "teaches": [
         "hypothetical-structures"
       ],
-      "english": "If it rained, we would not go out."
+      "english": "If the plan changed, the result would be different."
     },
     {
       "id": "b1-35-02.ex12",
@@ -261,7 +265,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe what would happen if a plan changed.",
+          "prompt": "Say that if the plan changed, something different would happen.",
           "answer": "Si cambiara el plan, ocurriría algo diferente."
         }
       ],
@@ -275,7 +279,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe a hypothetical consequence of bad weather.",
+          "prompt": "Say that if it rained, you would not go out.",
           "answer": "Si lloviera, no saldríamos."
         }
       ],
@@ -289,7 +293,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain a possible result of a hypothetical decision.",
+          "prompt": "Say that if we changed the decision, the result would be different.",
           "answer": "Si cambiáramos la decisión, el resultado sería diferente."
         }
       ],
