@@ -1,0 +1,4378 @@
+diff --git a/content/es-latam/exercises/b2/b2-17-01-ex.json b/content/es-latam/exercises/b2/b2-17-01-ex.json
+index 1b0f6032..81e381e6 100644
+--- a/content/es-latam/exercises/b2/b2-17-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-17-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "afirmar",
+-          "to state firmly"
++          "aún",
++          "still, yet"
+         ],
+         [
+-          "comunicado",
+-          "official statement"
++          "vigente",
++          "still valid"
+         ],
+         [
+-          "testimonio",
+-          "firsthand witness account"
++          "cumplirse",
++          "to come true"
+         ],
+         [
+-          "correlación",
+-          "tense agreement in grammar"
++          "quedar en",
++          "to agree to"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-17-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El portavoz declaró a la prensa que el ministro __ el decreto esa misma tarde.",
+-      "hint": "firmar",
+-      "answer": "firmaría",
+-      "english": "The spokesperson declared to the press that the minister would sign the decree that very afternoon.",
++      "sentence": "Meg dijo que el día anterior ya __ terminado el informe.",
++      "hint": "haber",
++      "answer": "había",
++      "english": "Meg said that the day before she had already finished the report.",
+       "teaches": [
+         "estilo-indirecto"
+       ]
+@@ -43,47 +43,48 @@
+       "id": "b2-17-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cómo se traslada al estilo indirecto en pasado la afirmación: 'Compré las acciones en la bolsa'?",
++      "question": "Last year Luis said: «Me mudaré a Lima.» He never moved. Which sentence reports it?",
+       "options": [
+-        "Explicó que había comprado las acciones en la bolsa.",
+-        "Explicó que comprará las acciones en la bolsa.",
+-        "Explicó que compra las acciones en la bolsa.",
+-        "Explicó que compraría las acciones en la bolsa."
++        "Luis dijo que se mudaría a Lima.",
++        "Luis dijo que se mudará a Lima.",
++        "Luis dijo que se mudó a Lima."
+       ],
+       "correct": 0,
+       "teaches": [
+         "estilo-indirecto"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "futuro-simple",
++        "2": "preterito-indefinido"
++      }
+     },
+     {
+       "id": "b2-17-01.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "El",
+-        "geólogo",
+-        "afirmó",
++        "Carlos",
++        "dijo",
+         "que",
+-        "el",
+-        "volcán",
++        "aún",
++        "no",
+         "había",
+-        "entrado",
+-        "en",
+-        "actividad."
++        "leído",
++        "el",
++        "correo."
+       ],
+       "solution": [
+-        "El",
+-        "geólogo",
+-        "afirmó",
++        "Carlos",
++        "dijo",
+         "que",
+-        "el",
+-        "volcán",
++        "aún",
++        "no",
+         "había",
+-        "entrado",
+-        "en",
+-        "actividad."
++        "leído",
++        "el",
++        "correo."
+       ],
+-      "english": "The geologist stated that the volcano had entered into activity.",
++      "english": "Carlos said that he had not yet read the email.",
+       "teaches": [
+         "estilo-indirecto"
+       ]
+@@ -94,31 +95,35 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Reportera",
+-          "text": "¿Qué dijo el presidente ejecutivo tras salir de la cumbre energética?"
++          "speaker": "Luis",
++          "text": "¿Qué te dijo Ana sobre su viaje?"
+         },
+         {
+-          "speaker": "Asistente",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
++      "hint": "Last month Ana told you: “I will leave on Friday.” She left that week.",
+       "options": [
+-        "Aseguró que la empresa aumentaría la producción de energía eólica en los próximos tres años.",
+-        "Asegura que vendrá mañana por la tarde a la oficina.",
+-        "El café colombiano tiene un aroma sumamente agradable.",
+-        "Los contratos se firman con pluma de tinta negra."
++        "Me dijo que saldría el viernes.",
++        "Me dijo que salió el viernes.",
++        "Me dijo que había salido el viernes."
+       ],
+       "correct": 0,
+       "teaches": [
+         "estilo-indirecto"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "preterito-indefinido",
++        "2": "pluscuamperfecto"
++      }
+     },
+     {
+       "id": "b2-17-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La delegada señaló que habían alcanzado un consenso preliminar antes de suspender la sesión.",
+-      "english": "The delegate pointed out that they had reached a preliminary consensus before suspending the session.",
++      "sentence": "Carlos dijo que ya había enviado el correo.",
++      "english": "Carlos said that he had already sent the email.",
+       "teaches": [
+         "estilo-indirecto"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-17-02-ex.json b/content/es-latam/exercises/b2/b2-17-02-ex.json
+index 843d9d89..e9a3cdd2 100644
+--- a/content/es-latam/exercises/b2/b2-17-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-17-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "indagar",
+-          "to look deeply into"
++          "preguntarse",
++          "to wonder"
+         ],
+         [
+-          "inquirir",
+-          "to ask in formal inquiry"
++          "desconocer",
++          "not to know"
+         ],
+         [
+-          "deliberación",
+-          "formal thoughtful debate"
++          "el interrogante",
++          "open question"
+         ],
+         [
+-          "esclarecer",
+-          "to bring truth to light"
++          "aclarar",
++          "to make clear"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-17-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El inspector nos preguntó __ habíamos visto a los sospechosos merodeando por el edificio.",
+-      "hint": "whether",
+-      "answer": "si",
+-      "english": "The inspector asked us whether we had seen the suspects loitering around the building.",
++      "sentence": "La semana pasada Luis me preguntó si ya __ visto a Ana.",
++      "hint": "haber",
++      "answer": "había",
++      "english": "Last week Luis asked me whether I had already seen Ana.",
+       "teaches": [
+         "discurso-indirecto-interrogativas"
+       ]
+@@ -43,12 +43,11 @@
+       "id": "b2-17-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la transformación correcta al estilo indirecto de la pregunta: '¿Dónde pusiste los planos?'?",
++      "question": "The teacher asked: «¿Cuándo entregarán el trabajo?» Which sentence reports it?",
+       "options": [
+-        "Me preguntó dónde había puesto los planos.",
+-        "Me preguntó si dónde puse los planos.",
+-        "Me preguntó dónde pongo los planos.",
+-        "Me preguntó que dónde pondré los planos."
++        "La profesora preguntó cuándo entregarían el trabajo.",
++        "La profesora preguntó cuando entregarían el trabajo.",
++        "La profesora preguntó si cuándo entregarían el trabajo."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -60,28 +59,28 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "La",
+-        "jueza",
+-        "quiso",
+-        "saber",
+-        "por",
+-        "qué",
+-        "no",
+-        "habían",
+-        "comparecido."
++        "Luis",
++        "se",
++        "preguntaba",
++        "si",
++        "Ana",
++        "había",
++        "recibido",
++        "su",
++        "mensaje."
+       ],
+       "solution": [
+-        "La",
+-        "jueza",
+-        "quiso",
+-        "saber",
+-        "por",
+-        "qué",
+-        "no",
+-        "habían",
+-        "comparecido."
++        "Luis",
++        "se",
++        "preguntaba",
++        "si",
++        "Ana",
++        "había",
++        "recibido",
++        "su",
++        "mensaje."
+       ],
+-      "english": "The judge wanted to know why they had not appeared.",
++      "english": "Luis was wondering whether Ana had received his message.",
+       "teaches": [
+         "discurso-indirecto-interrogativas"
+       ]
+@@ -92,31 +91,34 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Abogado",
+-          "text": "¿Qué le preguntó el fiscal al testigo durante el interrogatorio?"
++          "speaker": "Meg",
++          "text": "¿Qué te preguntó el médico?"
+         },
+         {
+-          "speaker": "Procuradora",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
++      "hint": "The doctor asked you: “Do you sleep well?”",
+       "options": [
+-        "Le preguntó cuándo había tenido conocimiento de las irregularidades contables de la empresa.",
+-        "El tribunal se encuentra en la avenida principal de la ciudad.",
+-        "El café del tribunal está cerrado durante las vacaciones de verano.",
+-        "Los testigos visten ropa formal ante el jurado popular."
++        "Me preguntó si dormía bien.",
++        "Me preguntó que dormía bien.",
++        "Me preguntó si dormiría bien."
+       ],
+       "correct": 0,
+       "teaches": [
+         "discurso-indirecto-interrogativas"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "condicional-regular"
++      }
+     },
+     {
+       "id": "b2-17-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El periodista indagó cuántos recursos públicos se habían destinado a la construcción del hospital.",
+-      "english": "The journalist inquired how many public resources had been allocated to building the hospital.",
++      "sentence": "Nadie sabía por qué se había ido tan temprano.",
++      "english": "Nobody knew why he had left so early.",
+       "teaches": [
+         "discurso-indirecto-interrogativas"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-17-03-ex.json b/content/es-latam/exercises/b2/b2-17-03-ex.json
+index 4fa0f77a..cca72665 100644
+--- a/content/es-latam/exercises/b2/b2-17-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-17-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "exigir",
+-          "to demand categorically"
++          "suplicar",
++          "to beg"
+         ],
+         [
+-          "suplicar",
+-          "to plead earnestly"
++          "encargar",
++          "to ask someone to take care of"
+         ],
+         [
+-          "prohibición",
+-          "statutory ban"
++          "reclamar",
++          "to demand"
+         ],
+         [
+-          "instar",
+-          "to urge prompt action"
++          "el encargo",
++          "errand"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-17-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El oficial nos ordenó que no __ la zona acordonada bajo ninguna circunstancia.",
+-      "hint": "cruzar",
+-      "answer": "cruzáramos",
+-      "english": "The officer ordered us not to cross the cordoned-off area under any circumstance.",
++      "sentence": "La profesora nos pidió que __ en silencio.",
++      "hint": "trabajar",
++      "answers": [
++        "trabajáramos",
++        "trabajásemos"
++      ],
++      "english": "The teacher asked us to work in silence.",
+       "teaches": [
+         "estilo-indirecto-ordenes"
+       ]
+@@ -43,45 +46,48 @@
+       "id": "b2-17-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cómo se reporta en pasado la instrucción médica: 'Tome este medicamento cada ocho horas'?",
++      "question": "Luis asked: «¿Puedes cerrar la ventana?» Which sentence reports his request?",
+       "options": [
+-        "El doctor me indicó que tomara ese medicamento cada ocho horas.",
+-        "El doctor me indicó que tomo ese medicamento cada ocho horas.",
+-        "El doctor me indicó que tomaré ese medicamento cada ocho horas.",
+-        "El doctor me indicó que había tomado ese medicamento cada ocho horas."
++        "Luis me pidió que cerrara la ventana.",
++        "Luis me preguntó si cerraba la ventana.",
++        "Luis me pidió que cerraría la ventana."
+       ],
+       "correct": 0,
+       "teaches": [
+         "estilo-indirecto-ordenes"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "imperfect",
++        "2": "condicional-regular"
++      }
+     },
+     {
+       "id": "b2-17-03.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Nos",
+-        "suplicaron",
++        "Ana",
++        "me",
++        "ha",
++        "pedido",
+         "que",
+-        "guardáramos",
+-        "absoluto",
+-        "silencio",
+-        "durante",
+-        "el",
+-        "rescate."
++        "te",
++        "llame",
++        "esta",
++        "tarde."
+       ],
+       "solution": [
+-        "Nos",
+-        "suplicaron",
++        "Ana",
++        "me",
++        "ha",
++        "pedido",
+         "que",
+-        "guardáramos",
+-        "absoluto",
+-        "silencio",
+-        "durante",
+-        "el",
+-        "rescate."
++        "te",
++        "llame",
++        "esta",
++        "tarde."
+       ],
+-      "english": "They begged us to keep absolute silence during the rescue.",
++      "english": "Ana has asked me to call you this afternoon.",
+       "teaches": [
+         "estilo-indirecto-ordenes"
+       ]
+@@ -92,31 +98,35 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Diplomático",
+-          "text": "¿Qué resolvió el Consejo de Seguridad con respecto a las hostilidades en la frontera?"
++          "speaker": "Luis",
++          "text": "¿Por qué no abriste la puerta?"
+         },
+         {
+-          "speaker": "Canciller",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
++      "hint": "The neighbour had told you: “Don’t open the door to anyone.”",
+       "options": [
+-        "Emitió una resolución vinculante instando a que ambas partes cesaran el fuego de inmediato.",
+-        "La sala de conferencias tiene capacidad para doscientas personas.",
+-        "Los diplomáticos almuerzan en el restaurante del tercer piso.",
+-        "El tratado de paz se firmó sobre papel pergamino en el siglo pasado."
++        "El vecino me dijo que no abriera la puerta a nadie.",
++        "El vecino me dijo que no abría la puerta a nadie.",
++        "El vecino me dijo que no abra la puerta a nadie."
+       ],
+       "correct": 0,
+       "teaches": [
+         "estilo-indirecto-ordenes"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "imperfect",
++        "2": "subjuntivo-morfologia"
++      }
+     },
+     {
+       "id": "b2-17-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La directora nos exigió que entregáramos las conclusiones periciales antes de que concluyera la semana.",
+-      "english": "The director demanded that we submit the expert findings before the week ended.",
++      "sentence": "El médico me pidió que descansara unos días.",
++      "english": "The doctor asked me to rest for a few days.",
+       "teaches": [
+         "estilo-indirecto-ordenes"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-17-04-ex.json b/content/es-latam/exercises/b2/b2-17-04-ex.json
+index c939d89d..ddfa4bc1 100644
+--- a/content/es-latam/exercises/b2/b2-17-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-17-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "deíctico",
+-          "context-pointing word"
++          "la víspera",
++          "the day before"
+         ],
+         [
+-          "coordenada",
+-          "spatial or temporal anchor"
++          "acá",
++          "here"
+         ],
+         [
+-          "distanciamiento",
+-          "perspective displacement"
++          "allá",
++          "there"
+         ],
+         [
+-          "enunciación",
+-          "act of uttering speech"
++          "a la mañana siguiente",
++          "the next morning"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-17-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El ministro anunció que la comitiva partiría al día __ hacia la conferencia internacional.",
+-      "hint": "following",
+-      "answer": "siguiente",
+-      "english": "The minister announced that the delegation would depart the following day for the international conference.",
++      "sentence": "Carlos dijo que se quedaba en Madrid porque su familia vivía __.",
++      "hint": "there",
++      "answers": [
++        "allí",
++        "allá"
++      ],
++      "english": "Carlos said that he was staying in Madrid because his family lived there.",
+       "teaches": [
+         "discurso-indirecto-deicticos"
+       ]
+@@ -43,12 +46,11 @@
+       "id": "b2-17-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cómo se adapta en estilo indirecto pasado la frase: 'Estaremos aquí mañana por la tarde'?",
++      "question": "On Monday Ana said: «Mañana vengo a verte.» On Wednesday you retell it. Which sentence is correct?",
+       "options": [
+-        "Aseguraron que estarían allí al día siguiente por la tarde.",
+-        "Aseguraron que están aquí mañana por la tarde.",
+-        "Aseguraron que hubieran estado aquí ayer tarde.",
+-        "Aseguraron que estarán allí hoy por la tarde."
++        "Ana dijo que vendría a verme al día siguiente.",
++        "Ana dijo que vendría a verme mañana.",
++        "Ana dijo que vendría a verme el día anterior."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -61,27 +63,27 @@
+       "category": "grammar",
+       "tiles": [
+         "Nos",
+-        "explicó",
++        "contó",
+         "que",
+         "aquel",
+-        "documento",
++        "viaje",
+         "había",
+         "sido",
+-        "redactado",
+-        "entonces."
++        "muy",
++        "largo."
+       ],
+       "solution": [
+         "Nos",
+-        "explicó",
++        "contó",
+         "que",
+         "aquel",
+-        "documento",
++        "viaje",
+         "había",
+         "sido",
+-        "redactado",
+-        "entonces."
++        "muy",
++        "largo."
+       ],
+-      "english": "He explained to us that that document had been drafted back then.",
++      "english": "He told us that that trip had been very long.",
+       "teaches": [
+         "discurso-indirecto-deicticos"
+       ]
+@@ -92,19 +94,19 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Corresponsal",
+-          "text": "¿Cómo reportó el enviado especial el mensaje que los líderes grabaron hace tres días diciendo 'Firmaremos el pacto aquí mañana'?"
++          "speaker": "Luis",
++          "text": "¿Qué te dijo Ana?"
+         },
+         {
+-          "speaker": "Editora",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
++      "hint": "Last week Ana said: “Come to my house tomorrow.” You are not at her house now.",
+       "options": [
+-        "Informó que los mandatarios habían asegurado que firmarían el pacto allí al día siguiente.",
+-        "Informó que los mandatarios firmarán el pacto aquí mañana sin falta.",
+-        "El canal de televisión emite programas de entretenimiento los fines de semana.",
+-        "Los periódicos se imprimen en prensas rotativas de alta velocidad."
++        "Me dijo que fuera a su casa al día siguiente.",
++        "Me dijo que viniera a su casa al día siguiente.",
++        "Me dijo que fuera a su casa mañana."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -115,8 +117,8 @@
+       "id": "b2-17-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La testigo declaró que había visto al sospechoso en aquel mismo portal la noche anterior al incidente.",
+-      "english": "The witness declared that she had seen the suspect in that very doorway the night before the incident.",
++      "sentence": "Ana contó que la víspera había estado allí con sus hijos.",
++      "english": "Ana said that the day before she had been there with her children.",
+       "teaches": [
+         "discurso-indirecto-deicticos"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-17-05-ex.json b/content/es-latam/exercises/b2/b2-17-05-ex.json
+index efd9ca60..8d3d1303 100644
+--- a/content/es-latam/exercises/b2/b2-17-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-17-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "polifonía",
+-          "multiple narrative voices"
++          "el narrador",
++          "narrator"
+         ],
+         [
+-          "focalización",
+-          "character perspective lens"
++          "la exclamación",
++          "exclamation"
+         ],
+         [
+-          "conciencia",
+-          "internal stream of thought"
++          "inquieto",
++          "restless, worried"
+         ],
+         [
+-          "verosimilitud",
+-          "artistic realism"
++          "darle vueltas a",
++          "to keep thinking about"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-17-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En la novela indigenista, el campesino miraba la colina desierta: ¿adónde __ sus hijos tras el desalojo forzoso?",
+-      "hint": "ir",
+-      "answer": "irían",
+-      "english": "In the indigenist novel, the peasant looked at the deserted hill: where would his children go after the forced eviction?",
++      "sentence": "Luis abrió la carta. ¡Por fin! __ mismo se lo diría a todos.",
++      "hint": "tomorrow",
++      "answer": "Mañana",
++      "english": "Luis opened the letter. At last! He would tell everyone that very tomorrow.",
+       "teaches": [
+         "discurso-indirecto-libre"
+       ]
+@@ -43,12 +43,11 @@
+       "id": "b2-17-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué rasgo sintáctico define de manera concluyente al discurso indirecto libre?",
++      "question": "Which sentence gives Ana’s thought as free indirect speech?",
+       "options": [
+-        "La ausencia de verbo de comunicación introductorio (decir, pensar) y de nexo subordinante (que).",
+-        "El uso obligatorio de comillas dobles y guiones largos de conversación.",
+-        "La presencia constante de verbos en tiempo futuro de indicativo.",
+-        "La narración obligatoria en segunda persona del singular."
++        "Ana miró el reloj. ¿Dónde estaba Pedro?",
++        "Ana miró el reloj y se preguntó dónde estaba Pedro.",
++        "Ana miró el reloj y dijo: «¿Dónde estás, Pedro?»"
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -60,30 +59,20 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "¿Qué",
+-        "haría",
+-        "él",
+-        "ahora",
+-        "sin",
+-        "su",
+-        "familia",
+-        "ni",
+-        "su",
+-        "choza?"
++        "¿Quién",
++        "había",
++        "escrito",
++        "aquel",
++        "informe?"
+       ],
+       "solution": [
+-        "¿Qué",
+-        "haría",
+-        "él",
+-        "ahora",
+-        "sin",
+-        "su",
+-        "familia",
+-        "ni",
+-        "su",
+-        "choza?"
++        "¿Quién",
++        "había",
++        "escrito",
++        "aquel",
++        "informe?"
+       ],
+-      "english": "What would he do now without his family or his hut?",
++      "english": "Who had written that report?",
+       "teaches": [
+         "discurso-indirecto-libre"
+       ]
+@@ -94,19 +83,18 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Crítica literaria",
+-          "text": "¿Por qué Jorge Icaza recurre al discurso indirecto libre en pasajes cruciales de Huasipungo?"
++          "speaker": "Meg",
++          "text": "Leí esto: «Carlos esperó. ¿Vendría Ana? Ya no le quedaba tiempo.» ¿Quién se pregunta si viene Ana?"
+         },
+         {
+-          "speaker": "Profesor",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Para sumergir al lector directamente en la angustia existencial del comunero sin la distancia fría de un relator externo.",
+-        "Porque en los años treinta la gramática española no permitía el uso de comillas.",
+-        "Para abaratar los costos de imprenta suprimiendo los signos de puntuación.",
+-        "Porque los personajes de la novela hablaban exclusivamente en idiomas europeos."
++        "Carlos; es su pensamiento, contado en pasado.",
++        "El narrador, que no sabe nada de Carlos.",
++        "Ana, porque ella es la que viene."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -117,8 +105,8 @@
+       "id": "b2-17-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "¿Cómo resistir el embate de los fusiles si el hambre consumía sus últimas fuerzas desde hacía semanas?",
+-      "english": "How could they resist the onslaught of rifles if hunger had been draining their last strength for weeks?",
++      "sentence": "Luis miró el reloj. ¿Cuándo terminaría aquello?",
++      "english": "Luis looked at the clock. When would that end?",
+       "teaches": [
+         "discurso-indirecto-libre"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-17-consolidation-ex.json b/content/es-latam/exercises/b2/b2-17-consolidation-ex.json
+index a8889290..6fdcbd4f 100644
+--- a/content/es-latam/exercises/b2/b2-17-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-17-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "traslación",
+-          "systematic tense shift"
++          "aún",
++          "still, yet"
+         ],
+         [
+-          "indagación",
+-          "profound questioning"
++          "suplicar",
++          "to beg"
+         ],
+         [
+-          "mandato",
+-          "binding directive"
++          "la víspera",
++          "the day before"
+         ],
+         [
+-          "deíctico",
+-          "contextual pointer"
++          "el narrador",
++          "narrator"
+         ]
+       ],
+       "teaches": [
+@@ -31,24 +31,23 @@
+       "id": "b2-17-consolidation.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El hacendado ordenó tajantemente que todos los huasipungueros se __ de sus parcelas ancestrales.",
+-      "hint": "retirar",
+-      "answer": "retiraran",
+-      "english": "The landowner strictly ordered all the huasipungueros to withdraw from their ancestral parcels.",
++      "sentence": "Un lector dijo que el domingo anterior ya __ terminado el libro.",
++      "hint": "haber",
++      "answer": "había",
++      "english": "A reader said that the Sunday before he had already finished the book.",
+       "teaches": [
+-        "estilo-indirecto-ordenes"
++        "estilo-indirecto"
+       ]
+     },
+     {
+       "id": "b2-17-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cómo se reporta en pasado la pregunta directa: '¿Cuándo terminará la construcción de la carretera'?",
++      "question": "A student asked: «¿Cuándo se publicó la novela?» Which sentence reports it?",
+       "options": [
+-        "Preguntaron cuándo terminaría la construcción de la carretera.",
+-        "Preguntaron si cuándo termina la construcción de la carretera.",
+-        "Preguntaron cuándo terminó la construcción de la carretera.",
+-        "Preguntaron que cuándo terminará la construcción de la carretera."
++        "Un estudiante preguntó cuándo se había publicado la novela.",
++        "Un estudiante preguntó cuando se había publicado la novela.",
++        "Un estudiante preguntó si cuándo se había publicado la novela."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -57,90 +56,99 @@
+     },
+     {
+       "id": "b2-17-consolidation.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "sentence": "El cronista aseguró que la asamblea comunitaria se había celebrado el día __ en la plaza mayor.",
+-      "hint": "previous",
+-      "answer": "anterior",
+-      "english": "The chronicler stated that the community assembly had been held the previous day in the main plaza.",
++      "tiles": [
++        "La",
++        "profesora",
++        "nos",
++        "pidió",
++        "que",
++        "leyéramos",
++        "el",
++        "primer",
++        "capítulo."
++      ],
++      "solution": [
++        "La",
++        "profesora",
++        "nos",
++        "pidió",
++        "que",
++        "leyéramos",
++        "el",
++        "primer",
++        "capítulo."
++      ],
++      "english": "The teacher asked us to read the first chapter.",
+       "teaches": [
+-        "discurso-indirecto-deicticos"
++        "estilo-indirecto-ordenes"
+       ]
+     },
+     {
+       "id": "b2-17-consolidation.ex05",
+-      "type": "multiple-choice",
++      "type": "fill-blank",
+       "category": "grammar",
+-      "question": "¿Qué distingue al estilo indirecto libre frente al estilo indirecto convencional?",
+-      "options": [
+-        "Fusiona la voz del relator con la conciencia del personaje eliminando el verbo introductorio y el nexo que.",
+-        "Exige siempre el uso de comillas inglesas al inicio y final de cada párrafo.",
+-        "Obliga al narrador a traducir todos los términos al latín eclesiástico.",
+-        "Se utiliza exclusivamente en cartas comerciales y contratos jurídicos."
+-      ],
+-      "correct": 0,
++      "sentence": "Un lector contó que la noche __ había terminado la novela.",
++      "hint": "previous",
++      "answer": "anterior",
++      "english": "A reader said that the night before he had finished the novel.",
+       "teaches": [
+-        "discurso-indirecto-libre"
++        "discurso-indirecto-deicticos"
+       ]
+     },
+     {
+       "id": "b2-17-consolidation.ex06",
+-      "type": "sentence-builder",
+-      "category": "grammar",
+-      "tiles": [
+-        "Los",
+-        "comuneros",
+-        "clamaban",
+-        "que",
+-        "aquella",
+-        "tierra",
+-        "pertenecía",
+-        "a",
+-        "sus",
+-        "hijos."
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Luis",
++          "text": "¿Qué te preguntó la profesora?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        }
+       ],
+-      "solution": [
+-        "Los",
+-        "comuneros",
+-        "clamaban",
+-        "que",
+-        "aquella",
+-        "tierra",
+-        "pertenecía",
+-        "a",
+-        "sus",
+-        "hijos."
++      "hint": "The teacher asked you: “Have you read the book?”",
++      "options": [
++        "Me preguntó si había leído el libro.",
++        "Me preguntó que había leído el libro.",
++        "Me preguntó si hubiera leído el libro."
+       ],
+-      "english": "The villagers cried out that that land belonged to their children.",
++      "correct": 0,
+       "teaches": [
+-        "estilo-indirecto"
+-      ]
++        "discurso-indirecto-interrogativas"
++      ],
++      "distractor_skills": {
++        "2": "pluperfect-subjunctive-forms"
++      }
+     },
+     {
+       "id": "b2-17-consolidation.ex07",
+-      "type": "dictation",
+-      "category": "listening",
+-      "sentence": "El prefecto exigió que los líderes comunitarios presentaran los títulos de propiedad ante el juzgado cantonal.",
+-      "english": "The prefect demanded that community leaders present the property titles before the cantonal court.",
+-      "teaches": [
+-        "estilo-indirecto-ordenes"
+-      ]
+-    },
+-    {
+-      "id": "b2-17-consolidation.ex08",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué trascendencia histórica ostenta la novela Huasipungo de Jorge Icaza en la literatura latinoamericana?",
++      "question": "Which sentence tells us what Meg is thinking, without a verb like pensó?",
+       "options": [
+-        "Consagró el realismo social indigenista denunciando la explotación feudal del campesinado andino.",
+-        "Fue una comedia satírica sobre la moda aristocrática en las cortes de Europa.",
+-        "Constituyó el primer manual de agronomía para el cultivo de trigo en tierras templadas.",
+-        "Narró expediciones espaciales en una clave de ciencia ficción vanguardista."
++        "Meg miró el reloj. ¿Llegaría a tiempo?",
++        "Meg pensó que no llegaría a tiempo.",
++        "Meg dijo: «No llegaré a tiempo.»"
+       ],
+       "correct": 0,
+       "teaches": [
+         "discurso-indirecto-libre"
+       ]
++    },
++    {
++      "id": "b2-17-consolidation.ex08",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "Algunos lectores se preguntaron por qué la historia les parecía tan cercana.",
++      "english": "Some readers wondered why the story seemed so close to them.",
++      "teaches": [
++        "discurso-indirecto-interrogativas"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-18-01-ex.json b/content/es-latam/exercises/b2/b2-18-01-ex.json
+index 073ec8e3..2ba349a3 100644
+--- a/content/es-latam/exercises/b2/b2-18-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-18-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "aseverar",
+-          "to affirm as factual truth"
++          "señalar",
++          "to point out"
+         ],
+         [
+-          "sostener",
+-          "to maintain a defended thesis"
++          "precisar",
++          "to specify"
+         ],
+         [
+-          "recalcar",
+-          "to stress with special emphasis"
++          "agregar",
++          "to add"
+         ],
+         [
+-          "puntualizar",
+-          "to clarify specific nuances"
++          "recalcar",
++          "to stress"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-18-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En su informe pericial, la ingeniera __ que los cimientos del puente presentaban fallas graves.",
+-      "hint": "aseverar",
+-      "answer": "aseveró",
+-      "english": "In her expert report, the engineer asserted that the bridge foundations showed serious flaws.",
++      "sentence": "Meg dijo que llegaría tarde y __ que traería el pan.",
++      "hint": "añadir",
++      "answers": [
++        "añadió",
++        "agregó"
++      ],
++      "english": "Meg said she would be late and added that she would bring the bread.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+@@ -43,45 +46,47 @@
+       "id": "b2-18-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué matiz pragmático aporta el verbo 'recalcar' frente al neutro 'decir'?",
++      "question": "Ana said: «No fue mi error.» Which sentence reports her denial?",
+       "options": [
+-        "Indica que el emisor puso especial énfasis y subrayó deliberadamente ese punto concreto.",
+-        "Señala que el hablante tenía dudas sobre la veracidad del mensaje transmitido.",
+-        "Indica que el mensaje fue pronunciado en voz muy baja y confidencial.",
+-        "Expresa que la afirmación fue desmentida minutos después por los testigos."
++        "Ana negó que fuera su error.",
++        "Ana negó que era su error.",
++        "Ana negó de que fuera su error."
+       ],
+       "correct": 0,
+       "teaches": [
+         "reporting-verbs"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "imperfect"
++      }
+     },
+     {
+       "id": "b2-18-01.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "El",
+-        "canciller",
+-        "recalcó",
++        "Ana",
++        "me",
++        "recordó",
+         "que",
+-        "el",
+-        "tratado",
+-        "garantizaba",
+         "la",
+-        "paz."
++        "reunión",
++        "era",
++        "el",
++        "lunes."
+       ],
+       "solution": [
+-        "El",
+-        "canciller",
+-        "recalcó",
++        "Ana",
++        "me",
++        "recordó",
+         "que",
+-        "el",
+-        "tratado",
+-        "garantizaba",
+         "la",
+-        "paz."
++        "reunión",
++        "era",
++        "el",
++        "lunes."
+       ],
+-      "english": "The chancellor stressed that the treaty guaranteed peace.",
++      "english": "Ana reminded me that the meeting was on Monday.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+@@ -92,31 +97,35 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Periodista",
+-          "text": "¿Cómo resumiría la declaración del director del banco central ante la comisión parlamentaria?"
++          "speaker": "Meg",
++          "text": "¿Por qué llegaste temprano a la oficina?"
+         },
+         {
+-          "speaker": "Analista",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
++      "hint": "Your boss reminded you: “Arrive before nine.”",
+       "options": [
+-        "Sostuvo que las reservas monetarias eran sólidas, pero puntualizó que la inflación global exigía prudencia fiscal.",
+-        "El edificio del banco central tiene diez pisos y una fachada de mármol gris.",
+-        "Los banqueros almorzaron en un restaurante tradicional del centro histórico.",
+-        "El precio del café bajó en los mercados internacionales durante el verano."
++        "Mi jefe me recordó que llegara antes de las nueve.",
++        "Mi jefe me recordó que llegaba antes de las nueve.",
++        "Mi jefe me recordó que llegue antes de las nueve."
+       ],
+       "correct": 0,
+       "teaches": [
+         "reporting-verbs"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "imperfect",
++        "2": "subjuntivo-morfologia"
++      }
+     },
+     {
+       "id": "b2-18-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La investigadora constató que los datos climáticos confirmaban el retroceso acelerado de los glaciares andinos.",
+-      "english": "The researcher verified that the climate data confirmed the accelerated retreat of Andean glaciers.",
++      "sentence": "Luis admitió que se había equivocado de calle.",
++      "english": "Luis admitted that he had gone down the wrong street.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-18-02-ex.json b/content/es-latam/exercises/b2/b2-18-02-ex.json
+index a6e72b8f..9e007a93 100644
+--- a/content/es-latam/exercises/b2/b2-18-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-18-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "desmentir",
+-          "to deny rumors formally"
++          "contradecir",
++          "to contradict"
+         ],
+         [
+-          "refutar",
+-          "to disprove with empirical evidence"
++          "replicar",
++          "to answer back"
+         ],
+         [
+-          "impugnar",
+-          "to challenge legal validity"
++          "objetar",
++          "to object"
+         ],
+         [
+-          "rebatir",
+-          "to counter opposed arguments"
++          "oponerse a",
++          "to oppose"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-18-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El ministerio desmintió categóricamente que se __ privatizar el sistema público de salud.",
+-      "hint": "ir",
+-      "answer": "fuera a",
+-      "english": "The ministry categorically denied that it was going to privatize the public health system.",
++      "sentence": "Luis negó que Ana __ llegado tarde.",
++      "hint": "haber",
++      "answers": [
++        "hubiera",
++        "hubiese"
++      ],
++      "english": "Luis denied that Ana had arrived late.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+@@ -43,45 +46,41 @@
+       "id": "b2-18-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la diferencia conceptual entre 'desmentir' y 'refutar'?",
++      "question": "Carlos did the work and now says so. Which sentence reports his admission?",
+       "options": [
+-        "Desmentir declara que algo es falso; refutar demuestra su falsedad mediante argumentos y pruebas.",
+-        "Desmentir se usa únicamente en tribunales y refutar en conversaciones familiares.",
+-        "Ambos verbos son completamente idénticos y pueden intercambiarse sin cambio alguno.",
+-        "Refutar significa apoyar entusiastamente una propuesta comercial."
++        "Carlos admitió que había hecho el trabajo.",
++        "Carlos admitió que hubiera hecho el trabajo.",
++        "Carlos negó haber hecho el trabajo."
+       ],
+       "correct": 0,
+       "teaches": [
+         "reporting-verbs"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "pluperfect-subjunctive-forms"
++      }
+     },
+     {
+       "id": "b2-18-02.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Los",
+-        "comuneros",
+-        "impugnaron",
++        "Meg",
++        "negó",
++        "haber",
++        "visto",
+         "el",
+-        "desalojo",
+-        "ante",
+-        "la",
+-        "corte",
+-        "superior."
++        "mensaje."
+       ],
+       "solution": [
+-        "Los",
+-        "comuneros",
+-        "impugnaron",
++        "Meg",
++        "negó",
++        "haber",
++        "visto",
+         "el",
+-        "desalojo",
+-        "ante",
+-        "la",
+-        "corte",
+-        "superior."
++        "mensaje."
+       ],
+-      "english": "The community members contested the eviction before the superior court.",
++      "english": "Meg denied having seen the message.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+@@ -92,31 +91,34 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Fiscal",
+-          "text": "¿Cómo reaccionó la defensa ante las pruebas documentales presentadas en el juicio?"
++          "speaker": "Luis",
++          "text": "¿Qué dijo Ana cuando le preguntaste por el dinero?"
+         },
+         {
+-          "speaker": "Secretaria judicial",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
++      "hint": "Ana said: “I did not take the money.”",
+       "options": [
+-        "El abogado defensor intentó rebatir los peritajes alegando que la cadena de custodia había sido vulnerada.",
+-        "El tribunal comenzó la audiencia a las nueve en punto de la mañana.",
+-        "El código penal consta de varios cientos de artículos redactados en latín.",
+-        "La sala de audiencias cuenta con micrófonos digitales para grabar la voz."
++        "Negó haber tomado el dinero.",
++        "Negó que había tomado el dinero.",
++        "Admitió haber tomado el dinero."
+       ],
+       "correct": 0,
+       "teaches": [
+         "reporting-verbs"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "pluscuamperfecto"
++      }
+     },
+     {
+       "id": "b2-18-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La asamblea comunitaria rebatió los argumentos de la corporación minera demostrando el impacto en las fuentes hídricas.",
+-      "english": "The community assembly rebutted the mining corporation's arguments by proving the impact on water sources.",
++      "sentence": "Ana replicó que ya había avisado a todos.",
++      "english": "Ana answered back that she had already told everyone.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-18-03-ex.json b/content/es-latam/exercises/b2/b2-18-03-ex.json
+index ce954518..6f828f7e 100644
+--- a/content/es-latam/exercises/b2/b2-18-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-18-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "advertir",
+-          "to caution of impending risk"
++          "alertar",
++          "to alert"
+         ],
+         [
+-          "alertar",
+-          "to sound the alarm on hazards"
++          "el recordatorio",
++          "reminder"
+         ],
+         [
+-          "recordar",
+-          "to bring to mind an obligation"
++          "la amenaza",
++          "threat"
+         ],
+         [
+-          "conminar",
+-          "to demand compliance under penalty"
++          "cuidarse de",
++          "to watch out for"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-18-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El guardaparque nos advirtió que no nos __ del sendero señalizado en la montaña.",
+-      "hint": "desviar",
+-      "answer": "desviáramos",
+-      "english": "The park ranger warned us not to stray from the marked trail on the mountain.",
++      "sentence": "El guía nos advirtió que no __ por el puente.",
++      "hint": "cruzar",
++      "answers": [
++        "cruzáramos",
++        "cruzásemos"
++      ],
++      "english": "The guide warned us not to cross the bridge.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+@@ -43,17 +46,19 @@
+       "id": "b2-18-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué diferencia de significado existe entre 'Advirtió que salían temprano' y 'Advirtió que salieran temprano'?",
++      "question": "Ana said to Luis: «El banco cierra a las tres.» Which sentence reports a reminder of a fact?",
+       "options": [
+-        "La primera informa sobre un hecho (indicativo); la segunda formula una advertencia o mandato imperativo (subjuntivo).",
+-        "La primera expresa una duda existencial y la segunda una certeza matemática.",
+-        "La primera se refiere al pasado y la segunda obligatoriamente al siglo diecinueve.",
+-        "Ninguna; ambas oraciones son exactamente intercambiables en todos los contextos."
++        "Ana le recordó que el banco cerraba a las tres.",
++        "Ana le recordó que el banco cerrara a las tres.",
++        "Ana le recordó de que el banco cerraba a las tres."
+       ],
+       "correct": 0,
+       "teaches": [
+         "reporting-verbs"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "imperfect-subjunctive-forms"
++      }
+     },
+     {
+       "id": "b2-18-03.ex04",
+@@ -61,31 +66,25 @@
+       "category": "grammar",
+       "tiles": [
+         "Los",
+-        "geólogos",
++        "vecinos",
+         "alertaron",
+         "de",
+         "que",
+-        "el",
+-        "volcán",
+-        "podía",
+-        "entrar",
+-        "en",
+-        "erupción."
++        "venía",
++        "una",
++        "tormenta."
+       ],
+       "solution": [
+         "Los",
+-        "geólogos",
++        "vecinos",
+         "alertaron",
+         "de",
+         "que",
+-        "el",
+-        "volcán",
+-        "podía",
+-        "entrar",
+-        "en",
+-        "erupción."
++        "venía",
++        "una",
++        "tormenta."
+       ],
+-      "english": "The geologists warned that the volcano could erupt.",
++      "english": "The neighbours warned that a storm was coming.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+@@ -96,31 +95,34 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Alcaldesa",
+-          "text": "¿Qué medida cautelar adoptó el comité de emergencia tras el informe sobre la crecida del río?"
++          "speaker": "Meg",
++          "text": "¿Por qué cerraste todas las ventanas?"
+         },
+         {
+-          "speaker": "Director de Protección Civil",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
++      "hint": "The forecast warned: “There will be a storm tonight.”",
+       "options": [
+-        "Conminamos a las poblaciones de las riberas bajas a que evacuaran preventivamente hacia zonas altas.",
+-        "Los ríos andinos nacen en los deshielos de las cumbres nevadas.",
+-        "Compramos nuevos escritorios de madera para la oficina de turismo municipal.",
+-        "El agua potable contiene sales minerales disueltas en cantidades moderadas."
++        "El pronóstico advirtió que habría una tormenta esa noche.",
++        "El pronóstico advirtió que hubiera una tormenta esa noche.",
++        "El pronóstico advirtió a que habría una tormenta esa noche."
+       ],
+       "correct": 0,
+       "teaches": [
+         "reporting-verbs"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "imperfect-subjunctive-forms"
++      }
+     },
+     {
+       "id": "b2-18-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El tribunal recordó a las partes litigantes que el desacato a la resolución acarrearía severas sanciones penales.",
+-      "english": "The court reminded the litigating parties that contempt of the ruling would entail severe criminal penalties.",
++      "sentence": "Ana me recordó que cerrara la puerta con llave.",
++      "english": "Ana reminded me to lock the door.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-18-04-ex.json b/content/es-latam/exercises/b2/b2-18-04-ex.json
+index d85ecab5..7346ffaa 100644
+--- a/content/es-latam/exercises/b2/b2-18-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-18-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "reprochar",
+-          "to blame someone for moral failure"
++          "culpar",
++          "to blame"
+         ],
+         [
+-          "censurar",
+-          "to condemn unethical behavior"
++          "acusar",
++          "to accuse"
+         ],
+         [
+-          "cuestionar",
+-          "to doubt legitimacy or truth"
++          "echar en cara",
++          "to throw in someone’s face"
+         ],
+         [
+-          "increpar",
+-          "to confront and scold angrily"
++          "la queja",
++          "complaint"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-18-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La comunidad le reprochó al gobernador que no __ cumplido sus promesas de campaña electoral.",
+-      "hint": "haber",
+-      "answer": "hubiera",
+-      "english": "The community reproached the governor for not having fulfilled his campaign promises.",
++      "sentence": "Ana me __ que no hubiera llamado antes.",
++      "hint": "reprochar",
++      "answer": "reprochó",
++      "english": "Ana reproached me for not having called earlier.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+@@ -43,45 +43,43 @@
+       "id": "b2-18-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué el verbo 'reprochar que' exige obligatoriamente modo subjuntivo en la proposición subordinada?",
++      "question": "Ana said to Luis: «No me ayudaste.» Which sentence reports it as a reproach?",
+       "options": [
+-        "Porque expresa un juicio de valor afectivo y una censura moral sobre una conducta previa.",
+-        "Porque describe una acción que ocurrirá con certeza en el siglo próximo.",
+-        "Porque es un verbo de percepción física como ver u oír.",
+-        "Porque se utiliza exclusivamente en oraciones interrogativas directas."
++        "Ana le reprochó que no la hubiera ayudado.",
++        "Ana le explicó que no la había ayudado.",
++        "Ana le sugirió que no la ayudara."
+       ],
+       "correct": 0,
+       "teaches": [
+         "reporting-verbs"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "pluscuamperfecto"
++      }
+     },
+     {
+       "id": "b2-18-04.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Los",
+-        "diputados",
+-        "censuraron",
+-        "la",
+-        "omisión",
++        "Me",
++        "acusó",
+         "de",
+-        "las",
+-        "autoridades",
+-        "locales."
++        "haber",
++        "olvidado",
++        "la",
++        "llave."
+       ],
+       "solution": [
+-        "Los",
+-        "diputados",
+-        "censuraron",
+-        "la",
+-        "omisión",
++        "Me",
++        "acusó",
+         "de",
+-        "las",
+-        "autoridades",
+-        "locales."
++        "haber",
++        "olvidado",
++        "la",
++        "llave."
+       ],
+-      "english": "The deputies censured the omission of the local authorities.",
++      "english": "He accused me of having forgotten the key.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+@@ -92,31 +90,34 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Líder comunal",
+-          "text": "¿Qué le recriminó Rosendo Maqui al hacendado durante el violento deslinde de tierras?"
++          "speaker": "Meg",
++          "text": "¿Por qué está enojada Ana contigo?"
+         },
+         {
+-          "speaker": "Testigo",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
++      "hint": "Ana said: “You should have told me about the delay.”",
+       "options": [
+-        "Le reprochó con amargura que hubiera comprado testimonios falsos para despojar a los comuneros de sus parcelas ancestrales.",
+-        "Le ofreció un café caliente para abrigarse de la brisa serrana.",
+-        "El ganado pacía pacíficamente en los prados comunales del valle.",
+-        "Los caballos de la hacienda eran de raza andaluza importada."
++        "Me reprochó que no le hubiera avisado del retraso.",
++        "Me recordó que no le hubiera avisado del retraso.",
++        "Me reprochó que no le avisara del retraso."
+       ],
+       "correct": 0,
+       "teaches": [
+         "reporting-verbs"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "imperfect-subjunctive-forms"
++      }
+     },
+     {
+       "id": "b2-18-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La prensa independiente cuestionó severamente que los contratos mineros se hubieran firmado en audiencias a puerta cerrada.",
+-      "english": "The independent press severely questioned that the mining contracts had been signed in closed-door hearings.",
++      "sentence": "Los vecinos culparon al alcalde del problema.",
++      "english": "The neighbours blamed the mayor for the problem.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-18-05-ex.json b/content/es-latam/exercises/b2/b2-18-05-ex.json
+index e9a95055..1da9348a 100644
+--- a/content/es-latam/exercises/b2/b2-18-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-18-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "conjeturar",
+-          "to infer from circumstantial evidence"
++          "supuestamente",
++          "allegedly"
+         ],
+         [
+-          "insinuar",
+-          "to hint obliquely without naming"
++          "al parecer",
++          "apparently"
+         ],
+         [
+-          "alegar",
+-          "to claim without official proof"
++          "presunto",
++          "alleged"
+         ],
+         [
+-          "especular",
+-          "to theorize without firm basis"
++          "dar a entender",
++          "to imply"
+         ]
+       ],
+       "teaches": [
+@@ -31,24 +31,23 @@
+       "id": "b2-18-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La defensa __ que el imputado se hallaba en otra provincia el día del despojo territorial.",
+-      "hint": "alegar",
+-      "answer": "alegó",
+-      "english": "The defense claimed that the accused was in another province the day of the land seizure.",
++      "sentence": "__ el vecino, el río subió mucho anoche.",
++      "hint": "according to",
++      "answer": "Según",
++      "english": "According to the neighbour, the river rose a lot last night.",
+       "teaches": [
+-        "reporting-verbs"
++        "estilo-indirecto-informacion"
+       ]
+     },
+     {
+       "id": "b2-18-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué un periodista profesional elige 'alegar que' en lugar de 'afirmar que' en una crónica judicial?",
++      "question": "Which sentence reports the claim as someone else’s, without saying it is true?",
+       "options": [
+-        "Para distanciarse de la afirmación y dejar en claro que se trata de un argumento no verificado de parte.",
+-        "Porque la palabra afirmar está prohibida en los manuales de redacción de los diarios.",
+-        "Para indicar que el juicio ya concluyó con una sentencia condenatoria firme.",
+-        "Porque alegar significa que el tribunal aprobó la declaración de manera unánime."
++        "Según una vecina, el río había subido mucho.",
++        "El río había subido mucho.",
++        "Seguramente el río había subido mucho."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -60,26 +59,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Los",
+-        "editorialistas",
+-        "insinuaron",
+-        "que",
+-        "hubo",
+-        "presiones",
+-        "políticas",
+-        "ocultas."
++        "El",
++        "presunto",
++        "culpable",
++        "negó",
++        "haber",
++        "estado",
++        "allí."
+       ],
+       "solution": [
+-        "Los",
+-        "editorialistas",
+-        "insinuaron",
+-        "que",
+-        "hubo",
+-        "presiones",
+-        "políticas",
+-        "ocultas."
++        "El",
++        "presunto",
++        "culpable",
++        "negó",
++        "haber",
++        "estado",
++        "allí."
+       ],
+-      "english": "The editorialists hinted that there were hidden political pressures.",
++      "english": "The alleged culprit denied having been there.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+@@ -90,19 +87,19 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Corresponsal",
+-          "text": "¿Qué postura adoptó la empresa acusada de contaminar el río comunal?"
++          "speaker": "Luis",
++          "text": "¿Es verdad que cerraron la tienda?"
+         },
+         {
+-          "speaker": "Abogada ambiental",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
++      "hint": "You read it in the paper, but nobody has confirmed it.",
+       "options": [
+-        "Alegó que sus efluentes cumplían los estándares técnicos, insinuando que la turbidez del agua se debía a deslaves naturales.",
+-        "Los ríos de la sierra bajan caudalosos desde los glaciares en la primavera.",
+-        "La empresa se fundó hace cincuenta años en la ciudad capital.",
+-        "El agua mineral con gas se vende en botellas de vidrio reciclado."
++        "Al parecer sí, aún no está confirmado.",
++        "Sí, lo vi con mis propios ojos.",
++        "Sí, ya lo han confirmado los dueños."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -113,8 +110,8 @@
+       "id": "b2-18-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Los analistas conjeturaron que las partes alcanzarían un acuerdo preliminar antes de la próxima asamblea general.",
+-      "english": "The analysts conjectured that the parties would reach a preliminary agreement before the next general assembly.",
++      "sentence": "Al parecer, el director ya había salido de la oficina.",
++      "english": "Apparently, the director had already left the office.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-18-consolidation-ex.json b/content/es-latam/exercises/b2/b2-18-consolidation-ex.json
+index 4cb5f494..5ca72224 100644
+--- a/content/es-latam/exercises/b2/b2-18-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-18-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "aseverar",
+-          "to state as factual truth"
++          "señalar",
++          "to point out"
+         ],
+         [
+-          "rebatir",
+-          "to counter opposing arguments"
++          "contradecir",
++          "to contradict"
+         ],
+         [
+-          "reprochar",
+-          "to blame for ethical failure"
++          "culpar",
++          "to blame"
+         ],
+         [
+-          "alegar",
+-          "to claim without endorsement"
++          "supuestamente",
++          "allegedly"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-18-consolidation.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En la novela de Ciro Alegría, el alcalde Rosendo Maqui __ que la tierra pertenecía a la comunidad desde tiempos inmemoriales.",
+-      "hint": "sostener",
+-      "answer": "sostuvo",
+-      "english": "In Ciro Alegría's novel, Mayor Rosendo Maqui maintained that the land belonged to the community since times immemorial.",
++      "sentence": "Mi jefe me __ que el informe estaba listo.",
++      "hint": "asegurar",
++      "answer": "aseguró",
++      "english": "My boss assured me that the report was ready.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+@@ -43,85 +43,102 @@
+       "id": "b2-18-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué función cumple el verbo 'desmentir' en una rueda de prensa oficial?",
++      "question": "Luis said: «No fui yo.» Which sentence reports his denial?",
+       "options": [
+-        "Negar rotundamente la veracidad de una información o rumor considerado falso.",
+-        "Confirmar que un tratado entrará en vigor de inmediato.",
+-        "Pedir disculpas públicas por un error administrativo.",
+-        "Felicitar a los organizadores de un certamen cultural."
++        "Luis negó que hubiera sido él.",
++        "Luis negó que había sido él.",
++        "Luis negó de que hubiera sido él."
+       ],
+       "correct": 0,
+       "teaches": [
+         "reporting-verbs"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "pluscuamperfecto"
++      }
+     },
+     {
+       "id": "b2-18-consolidation.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "sentence": "Los ancianos advirtieron a la asamblea comunal que no se __ en promesas de abogados corruptos.",
+-      "hint": "confiar",
+-      "answer": "confiara",
+-      "english": "The elders warned the community assembly not to trust corrupt lawyers' promises.",
++      "tiles": [
++        "Algunos",
++        "lectores",
++        "admiten",
++        "que",
++        "el",
++        "libro",
++        "es",
++        "difícil",
++        "de",
++        "leer."
++      ],
++      "solution": [
++        "Algunos",
++        "lectores",
++        "admiten",
++        "que",
++        "el",
++        "libro",
++        "es",
++        "difícil",
++        "de",
++        "leer."
++      ],
++      "english": "Some readers admit that the book is hard to read.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+     },
+     {
+       "id": "b2-18-consolidation.ex05",
+-      "type": "multiple-choice",
++      "type": "fill-blank",
+       "category": "grammar",
+-      "question": "¿Qué efecto retórico logra un autor al usar 'reprochó que' seguido de subjuntivo en una crónica?",
+-      "options": [
+-        "Enfatiza la condena moral y la decepción ética ante una omisión o falta cometida.",
+-        "Expresa un deseo futuro de que la economía prospere sin inflación.",
+-        "Describe un paisaje natural de forma neutra y puramente geométrica.",
+-        "Introduce una fórmula de cortesía epistolar obligatoria en cartas comerciales."
++      "sentence": "El guía nos advirtió que no __ nada.",
++      "hint": "tocar",
++      "answers": [
++        "tocáramos",
++        "tocásemos"
+       ],
+-      "correct": 0,
++      "english": "The guide warned us not to touch anything.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+     },
+     {
+       "id": "b2-18-consolidation.ex06",
+-      "type": "sentence-builder",
+-      "category": "grammar",
+-      "tiles": [
+-        "El",
+-        "hacendado",
+-        "alegó",
+-        "que",
+-        "poseía",
+-        "los",
+-        "títulos",
+-        "legítimos",
+-        "de",
+-        "compra."
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "¿Qué te dijo tu amiga?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        }
+       ],
+-      "solution": [
+-        "El",
+-        "hacendado",
+-        "alegó",
+-        "que",
+-        "poseía",
+-        "los",
+-        "títulos",
+-        "legítimos",
+-        "de",
+-        "compra."
++      "hint": "Your friend said: “You never wrote to me.”",
++      "options": [
++        "Me reprochó que nunca le hubiera escrito.",
++        "Me recordó que nunca le hubiera escrito.",
++        "Me reprochó que nunca le escribiera."
+       ],
+-      "english": "The landowner claimed that he possessed the legitimate purchase titles.",
++      "correct": 0,
+       "teaches": [
+         "reporting-verbs"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "imperfect-subjunctive-forms"
++      }
+     },
+     {
+       "id": "b2-18-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El tribunal desestimó la demanda comunitaria tras rebatir los alegatos sobre la posesión inmemorial de las tierras.",
+-      "english": "The court dismissed the community lawsuit after rebutting the claims regarding immemorial land possession.",
++      "sentence": "Algunos lectores señalaron que el título era difícil de entender.",
++      "english": "Some readers pointed out that the title was hard to understand.",
+       "teaches": [
+         "reporting-verbs"
+       ]
+@@ -130,12 +147,11 @@
+       "id": "b2-18-consolidation.ex08",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué tema central inmortalizó Ciro Alegría en su obra maestra El mundo es ancho y ajeno?",
++      "question": "Which sentence puts the claim on someone else?",
+       "options": [
+-        "La lucha titánica de la comunidad indígena de Rumi por defender sus tierras comunales frente al latifundismo voraz.",
+-        "La construcción del primer ferrocarril eléctrico en las costas del mar Pacífico.",
+-        "Las aventuras cómicas de un hidalgo en los caminos de la Mancha en el siglo diecisiete.",
+-        "Un tratado de astronomía maya sobre los eclipses solares en Yucatán."
++        "Supuestamente, el alcalde ya había firmado.",
++        "El alcalde ya había firmado.",
++        "Sin duda, el alcalde ya había firmado."
+       ],
+       "correct": 0,
+       "teaches": [
+diff --git a/content/es-latam/grammar/b2/b2-17-01-a-gr.json b/content/es-latam/grammar/b2/b2-17-01-a-gr.json
+index 6a477d09..51e4fef5 100644
+--- a/content/es-latam/grammar/b2/b2-17-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-17-01-a-gr.json
+@@ -1,44 +1,81 @@
+ {
+   "id": "grammar.b2.17.01.discurso-indirecto-tiempos-pasados",
+-  "title": "El estilo indirecto con verbo principal en pasado: traslación temporal de asertos",
++  "title": "Reported Statements: Shift or Stay",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Cuando reproducimos las palabras de otra persona y el verbo introductorio se halla en un tiempo pretérito (*dijo, afirmó, explicó, comunicó*), los tiempos verbales del mensaje original experimentan una **traslación temporal obligatoria hacia el pasado** (correlación de tiempos o *consecutio temporum*).\n\nEsta regla formal garantiza la coherencia temporal de la narración, desplazando la perspectiva enunciativa desde el presente del emisor original hasta el marco pretérito del relator."
++      "title": "What you know",
++      "content": "You know reported statements from B1 Unit 13: after a past verb such as *dijo que*, the verb inside the report moves one step back. The *presente* becomes the *imperfecto*, the *indefinido* and the *perfecto* become the *pluscuamperfecto*, and the *futuro* becomes the *condicional*. You also met the time words that move with them (*mañana* → *al día siguiente*) in B1 Unit 33 and B1 Unit 38. This lesson keeps that pattern and adds a B2 question: when does the verb not have to move?"
+     },
+     {
+       "type": "table",
+-      "title": "Tabla de correspondencias temporales de asertos",
++      "title": "The shift in one place",
+       "rows": [
+         [
+-          "Presente ('Trabajo aquí') -> Imperfecto",
+-          "Dijo que trabajaba allí."
++          "«Trabajo en una oficina.»",
++          "Dijo que trabajaba en una oficina."
+         ],
+         [
+-          "Indefinido ('Llegué ayer') -> Pluscuamperfecto",
+-          "Afirmó que había llegado el día anterior."
++          "«Llegué ayer.»",
++          "Dijo que había llegado el día anterior."
+         ],
+         [
+-          "Pretérito Perfecto ('He leído el informe') -> Pluscuamperfecto",
+-          "Comentó que había leído el informe."
++          "«He terminado el informe.»",
++          "Dijo que había terminado el informe."
+         ],
+         [
+-          "Futuro Simple ('Firmaremos hoy') -> Condicional Simple",
+-          "Aseguró que firmarían ese día."
++          "«Llegaré mañana.»",
++          "Dijo que llegaría al día siguiente."
+         ],
+         [
+-          "Futuro Compuesto ('Habré terminado') -> Condicional Compuesto",
+-          "Sostuvo que habría terminado."
++          "«Vivía en Quito.»",
++          "Dijo que vivía en Quito."
+         ],
+         [
+-          "Imperfecto ('Vivía en Quito') -> Imperfecto (invariable)",
+-          "Aclaró que vivía en Quito."
++          "«Ya había salido.»",
++          "Dijo que ya había salido."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Two tenses that stay",
++      "content": "The *imperfecto* and the *pluscuamperfecto* have nowhere further back to go, so they stay as they are (the last two rows)."
++    },
++    {
++      "type": "text",
++      "title": "New: when the verb can stay",
++      "content": "Moving the verb back is the safe default, and the only choice when you tell a story about the past. But Spanish lets you keep the original tense when what was said is still true, or still to come, at the moment you report it:\n\n• **Still true:** *Me dijo que vive en Lima.* Keeping *vive* says that it is true now. *Me dijo que vivía en Lima* is also correct, but it does not say whether it is still true.\n• **Still to come:** *Ana dijo que la reunión es mañana.* (She said it today, and the meeting is tomorrow.)\n• **A reporting verb in the present** moves nothing: *Ana dice que llega tarde*, *Ana ha dicho que llega tarde*.\n• **No longer true, or never happened:** the verb must move back: *Luis dijo que se mudaría a Lima, pero no se mudó.*"
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Me dijo que vive en Lima.",
++          "english": "He told me that he lives in Lima. (He still does.)"
++        },
++        {
++          "spanish": "Me dijo que vivía en Lima.",
++          "english": "He told me that he lived in Lima. (This does not say whether he still does.)"
++        },
++        {
++          "spanish": "Ana dijo que la reunión es mañana.",
++          "english": "Ana said that the meeting is tomorrow. (She said it today.)"
++        },
++        {
++          "spanish": "Ana dice que llega tarde.",
++          "english": "Ana says that she is arriving late."
++        },
++        {
++          "spanish": "Luis dijo que se mudaría a Lima, pero no se mudó.",
++          "english": "Luis said that he would move to Lima, but he did not."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "El pretérito imperfecto y el pluscuamperfecto permanecen inalterables en la traslación indirecta porque ya representan el pasado duradero o anterior: *'Yo ya había salido' -> Declaró que ya había salido*."
++      "content": "Ask one question: is it still true, or still to come, when I speak? If yes, you may keep the present. In a story, or when things have changed, move the verb back. To show that something happened earlier, use the *pluscuamperfecto*: *Dijo que había llegado el día anterior*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-17-02-a-gr.json b/content/es-latam/grammar/b2/b2-17-02-a-gr.json
+index eb7c5e85..a1d5be47 100644
+--- a/content/es-latam/grammar/b2/b2-17-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-17-02-a-gr.json
+@@ -1,44 +1,73 @@
+ {
+   "id": "grammar.b2.17.02.discurso-indirecto-interrogativas",
+-  "title": "Preguntas indirectas y traslación interrogativa en pasado",
++  "title": "Reported Questions in the Past",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Al reportar interrogaciones con verbos introductorios en pasado (*preguntó, quiso saber, indagó, averiguó*), distinguimos dos estructuras fundamentales:\n\n1. **Interrogativas totales (sí/no):** Se introducen con la conjunción **si** (sin tilde), aplicando la misma traslación temporal que en los asertos (*'¿Vendrás mañana?' -> Me preguntó si vendría al día siguiente*).\n\n2. **Interrogativas parciales:** Mantienen el pronombre o adverbio interrogativo con su tilde diacrítica (*qué, cuándo, dónde, cómo, por qué, quién*), sin signos de interrogación y con traslación temporal de tiempos verbales."
++      "title": "What you know",
++      "content": "You know reported questions with a question word from A2 Unit 14 (*Preguntó dónde trabajó*) and *preguntar si* for yes/no questions from B1 Unit 33 (*Me preguntó si tenía tiempo*). Both lose the question marks, and the verb moves back one step, as in any report. This lesson puts the two kinds together and shows where else the same pattern appears."
+     },
+     {
+       "type": "table",
+-      "title": "Traslación de preguntas directas a estilo indirecto",
++      "title": "Question → reported question",
+       "rows": [
+         [
+-          "'¿Llegó el informe?' -> si + pluscuamperfecto",
++          "«¿Llegó el informe?»",
+           "Me preguntó si había llegado el informe."
+         ],
+         [
+-          "'¿Cuándo saldrán?' -> cuándo + condicional",
++          "«¿Cuándo saldrán?»",
+           "Quiso saber cuándo saldrían."
+         ],
+         [
+-          "'¿Dónde vives?' -> dónde + imperfecto",
+-          "Indagó dónde vivía yo en ese momento."
++          "«¿Dónde vives?»",
++          "Me preguntó dónde vivía."
+         ],
+         [
+-          "'¿Por qué renunciaste?' -> por qué + pluscuamperfecto",
+-          "Averiguó por qué había renunciado."
++          "«¿Por qué te fuiste?»",
++          "Me preguntó por qué me había ido."
+         ],
+         [
+-          "'¿Quién es el responsable?' -> quién + imperfecto",
+-          "Inquirió quién era el responsable."
+-        ],
+-        [
+-          "'¿Podemos pasar?' -> si + imperfecto",
+-          "Preguntaron si podían pasar."
++          "«¿Quién ha llamado?»",
++          "Preguntó quién había llamado."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Three things to watch",
++      "content": "• **Yes/no question → *si*.** *Si* has no accent. The question word of an information question stays, with its accent: *dónde*, *cuándo*, *por qué*, *quién*.\n• **The verb moves back as in any report:** *saldrán* → *saldrían*, *vives* → *vivía*, *llegó* and *ha llamado* → *había llegado*, *había llamado*.\n• **No question marks and no extra *que*.** Say *Me preguntó si venía*, not *Me preguntó que venía*: that would report a statement.\n• **The person follows the point of view.** What she asked you (*¿Dónde vives?*) you retell as *Me preguntó dónde vivía*."
++    },
++    {
++      "type": "text",
++      "title": "Not only after *preguntar*",
++      "content": "The same pattern appears after verbs that are not about asking, when someone wonders or does not know: *Luis se preguntaba si Ana había llegado*, *No sabía dónde estaba su hermana*, *Nadie entendía por qué se había ido*. Nobody asked these questions out loud, but the question word, the accent and the verb shift work exactly as before. *Preguntarse* means \"to wonder\" (literally \"to ask yourself\")."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Me preguntó si había comido.",
++          "english": "She asked me if I had eaten."
++        },
++        {
++          "spanish": "Quiso saber cuándo saldrían.",
++          "english": "He wanted to know when they would leave."
++        },
++        {
++          "spanish": "Luis se preguntaba si Ana había recibido su mensaje.",
++          "english": "Luis was wondering whether Ana had received his message."
++        },
++        {
++          "spanish": "No sabía dónde estaban las llaves.",
++          "english": "He did not know where the keys were."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Recuerda que en las preguntas indirectas **nunca** se colocan signos de interrogación (¿ ?). Los interrogativos (*qué, quién, cuál, cuándo, dónde, cómo*) conservan siempre su tilde ortográfica para distinguirlos de los pronombres relativos."
++      "content": "Find the clue in the original question: *si* for yes/no, the question word for information. It comes straight after the reporting verb, with no *que*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-17-03-a-gr.json b/content/es-latam/grammar/b2/b2-17-03-a-gr.json
+index 9d0fe131..5da3c2a1 100644
+--- a/content/es-latam/grammar/b2/b2-17-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-17-03-a-gr.json
+@@ -1,44 +1,69 @@
+ {
+-  "id": "grammar.b2.17.03.discurso-indirecto-peticiones-subjuntivo",
+-  "title": "Órdenes, ruegos y peticiones referidas: del imperativo al imperfecto de subjuntivo",
++  "id": "grammar.b2.17.03.estilo-indirecto-ordenes-pasado",
++  "title": "Reported Orders and Requests",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Cuando se reporta una orden directa, petición, consejo o prohibición formulada originalmente en modo imperativo o en presente de subjuntivo (*'¡Firme aquí!', 'Por favor, no salgan'*) y el verbo introductorio está en pasado (*ordenó, pidió, sugirió, prohibió, rogó*), la cláusula subordinada pasa obligatoriamente al **pretérito imperfecto de subjuntivo** (*-ra* o *-se*).\n\nEste mecanismo de traslación refleja la influencia sobre la conducta de un interlocutor proyectada en el pasado."
++      "title": "What you know",
++      "content": "You know from B1 Unit 38 that an order or a request is reported with *que* and the imperfect subjunctive after a past verb: *Me dijo que viniera*, *Me pidió que le ayudara*. (You know the imperfect subjunctive forms from B1 Unit 4.) This lesson adds two points."
+     },
+     {
+       "type": "table",
+-      "title": "Correspondencias de mandatos y peticiones",
++      "title": "Order or request → reported",
+       "rows": [
+         [
+-          "'¡Entreguen los pasaportes!' -> que + imperfecto subj.",
+-          "Nos ordenó que entregáramos los pasaportes."
++          "«¡Cierra la ventana!»",
++          "Me dijo que cerrara la ventana."
+         ],
+         [
+-          "'No revele el secreto' -> que + imperfecto subj.",
+-          "Le suplicó que no revelara el secreto."
++          "«¿Puedes cerrar la ventana?»",
++          "Me pidió que cerrara la ventana."
+         ],
+         [
+-          "'Vengan temprano' -> que + imperfecto subj.",
+-          "Les pidió que vinieran temprano."
++          "«No cierren la puerta.»",
++          "Nos pidió que no cerráramos la puerta."
+         ],
+         [
+-          "'Ten cuidado con el camino' -> que + imperfecto subj.",
+-          "Me aconsejó que tuviera cuidado."
+-        ],
+-        [
+-          "'No estacionen frente a la puerta' -> prohibió que",
+-          "Prohibió que estacionaran frente a la puerta."
+-        ],
+-        [
+-          "'Revisen los cálculos' -> instó a que",
+-          "Instó a que revisaran los cálculos minuciosamente."
++          "«Por favor, ayúdame.»",
++          "Me rogó que lo ayudara."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "New 1: a question can be a request",
++      "content": "A request is often asked as a question: *¿Puedes…?*, *¿Podrías…?*. When the person wants you to do something, you report it as a request with *pidió que* and the subjunctive. Reporting it with *preguntó si* would report a real question about whether you are able: *Me preguntó si podía cerrar la ventana* (she wanted to know whether I could)."
++    },
++    {
++      "type": "text",
++      "title": "New 2: the reporting verb sets the tense",
++      "content": "The subjunctive follows the reporting verb. After a past verb (*pidió*, *dijo*) use the imperfect subjunctive: *Ana me pidió que te llamara*. After the present perfect or the present (*ha pedido*, *me pide*) use the present subjunctive, the one you know from A2 Unit 27: *Ana me ha pedido que te llame*."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Luis me pidió que cerrara la ventana.",
++          "english": "Luis asked me to close the window."
++        },
++        {
++          "spanish": "Ana me ha pedido que te llame esta tarde.",
++          "english": "Ana has asked me to call you this afternoon."
++        },
++        {
++          "spanish": "El médico me dijo que descansara unos días.",
++          "english": "The doctor told me to rest for a few days."
++        },
++        {
++          "spanish": "Nos pidieron que no habláramos en voz alta.",
++          "english": "They asked us not to talk loudly."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Verbos como *decir* cambian de significado según el modo de la subordinada:\n- Con indicativo transmite información: *Dijo que venía* (afirmación).\n- Con subjuntivo transmite una orden o mandato: *Dijo que viniera* (imperativo indirecto: *'¡Ven!'*)."
++      "content": "Remember the difference you know from B1 Unit 38: *Dijo que venía* reports information (indicative), *Dijo que viniera* reports an order (subjunctive)."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-17-04-a-gr.json b/content/es-latam/grammar/b2/b2-17-04-a-gr.json
+index d30b7a4f..5388defb 100644
+--- a/content/es-latam/grammar/b2/b2-17-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-17-04-a-gr.json
+@@ -1,44 +1,93 @@
+ {
+   "id": "grammar.b2.17.04.discurso-indirecto-deicticos",
+-  "title": "Traslación de deícticos temporales, espaciales y demostrativos en el relato",
++  "title": "Time and Place Words in Retelling",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Además de los verbos, el estilo indirecto en pasado exige adaptar todos los **elementos deícticos** (adverbios de tiempo y lugar, demostrativos y posesivos) cuyo significado dependía originalmente del momento y lugar de la enunciación primaria.\n\nCuando el relator habla desde un tiempo y espacio distintos al del hablante original, estos marcadores se desplazan sistemáticamente desde la proximidad hacia la lejanía."
++      "title": "What you know",
++      "content": "You know *al día siguiente*, *aquel día* and *el día anterior* from B1 Unit 38, and *aquí* → *allí* and *mañana* → *al día siguiente* from B1 Unit 33. You know *este*, *ese* and *aquel* from A1 Unit 11. The idea behind all of them is the same: time and place words point from where the speaker stands. When you retell, you stand somewhere else, so they change. This lesson gives the full list and says when they do not change."
+     },
+     {
+       "type": "table",
+-      "title": "Tabla de equivalencias deícticas en pasado",
++      "title": "What was said → what you retell",
+       "rows": [
+         [
+-          "hoy / esta tarde",
+-          "aquel día / ese día / esa tarde"
++          "hoy",
++          "aquel día, ese día"
+         ],
+         [
+-          "ayer / anoche",
+-          "el día anterior / la víspera / la noche anterior"
++          "ayer",
++          "el día anterior, la víspera"
+         ],
+         [
+-          "mañana / el año que viene",
+-          "al día siguiente / el año siguiente"
++          "mañana",
++          "al día siguiente"
+         ],
+         [
+-          "aquí / acá",
+-          "allí / allá / en ese lugar"
++          "ahora",
++          "entonces, en aquel momento"
+         ],
+         [
+-          "este / esta / esto",
+-          "aquel / aquella / aquello / ese / esa"
++          "esta semana",
++          "aquella semana"
+         ],
+         [
+-          "hace tres días / ahora",
+-          "hacía tres días / entonces / en aquel momento"
++          "la semana próxima",
++          "la semana siguiente"
++        ],
++        [
++          "hace tres días",
++          "tres días antes"
++        ],
++        [
++          "aquí, acá",
++          "allí, allá"
++        ],
++        [
++          "este, esta",
++          "ese, esa, aquel, aquella"
++        ],
++        [
++          "venir",
++          "ir"
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "New: venir becomes ir",
++      "content": "*Venir* and *ir* depend on where you stand when you retell. Ana says from her house: «Ven a mi casa mañana.» If you retell it somewhere else, you say *Me dijo que fuera a su casa al día siguiente*. If you retell it at her house, *venir* stays: *Me dijo que viniera al día siguiente*."
++    },
++    {
++      "type": "text",
++      "title": "New: when the words stay",
++      "content": "If you retell on the same day and in the same place, nothing has to change. Ana said this morning: «Llego hoy.» At noon, in the same office, you say *Dijo que llegaba hoy*. Only the verb moves back."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Ana dijo que estaría allí al día siguiente.",
++          "english": "Ana said that she would be there the next day."
++        },
++        {
++          "spanish": "Me contó que aquella semana había estado muy ocupada.",
++          "english": "She told me that she had been very busy that week."
++        },
++        {
++          "spanish": "Me dijo que fuera a su casa al día siguiente.",
++          "english": "She told me to go to her house the next day."
++        },
++        {
++          "spanish": "Dijo que llegaba hoy.",
++          "english": "He said that he was arriving today. (Said the same day.)"
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "La adaptación no es automática si el marco temporal sigue vigente: si alguien dijo esta mañana *'Vendré hoy'* y tú lo cuentas esa misma tarde, dirás: *'Dijo que vendría hoy'*, conservando el deíctico porque el día aún no ha concluido."
++      "content": "Before you retell, ask yourself three things: when am I speaking, where am I, and who am I speaking to? If the answers are the same as in the original, keep the words. If not, move them."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-17-05-a-gr.json b/content/es-latam/grammar/b2/b2-17-05-a-gr.json
+index 3c5ed45b..57d979d7 100644
+--- a/content/es-latam/grammar/b2/b2-17-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-17-05-a-gr.json
+@@ -1,44 +1,61 @@
+ {
+   "id": "grammar.b2.17.05.discurso-indirecto-libre",
+-  "title": "El discurso indirecto libre en la prosa narrativa hispanoamericana",
++  "title": "Thoughts Without a Reporting Verb",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "El **discurso indirecto libre** es un refinado recurso estilístico característico de la gran narrativa hispanoamericana moderna (desde Juan Rulfo y Gabriel García Márquez hasta Jorge Icaza). En él, los pensamientos, dudas y emociones de un personaje se funden directamente con la voz del narrador **sin verbo introductorio** (*dijo, pensó*) y **sin conjunción subordinante** (*que*).\n\nSintácticamente conserva la tercera persona y los tiempos del pasado del narrador (imperfecto, pluscuamperfecto, condicional), pero adopta el tono afectivo, las exclamaciones, las dudas y los deícticos subjetivos del personaje."
++      "title": "What you know, and what is new",
++      "content": "You know reported speech with a verb that introduces it: *Pensó que no tenía tiempo*, *Se preguntó dónde estaba Pedro*. In stories there is a third way. The narrator gives a character's thoughts, doubts or feelings **without** a verb like *pensó* and without *que*. This is called free indirect speech. This lesson teaches you to recognise it, so that you read a character's thought as the character's, not as the narrator's opinion."
+     },
+     {
+       "type": "table",
+-      "title": "Comparativa de estilos narrativos",
++      "title": "Three ways to tell the same thought",
+       "rows": [
+         [
+-          "Estilo Directo",
+-          "Andrés pensó: '¿Adónde iremos ahora? No tengo tierras.'"
++          "Direct",
++          "Ana pensó: «¿Dónde está Pedro? Otra vez llega tarde.»"
+         ],
+         [
+-          "Estilo Indirecto Canónico",
+-          "Andrés pensó que adónde irían entonces, pues no tenía tierras."
++          "Reported",
++          "Ana se preguntó dónde estaba Pedro y pensó que otra vez llegaba tarde."
+         ],
+         [
+-          "Discurso Indirecto Libre",
+-          "¿Adónde irían ahora? Ya no le quedaban tierras ni maíz."
+-        ],
+-        [
+-          "Efecto Estético",
+-          "Fundición íntima entre la voz del narrador y la angustia del protagonista."
+-        ],
+-        [
+-          "Tiempos Verbales",
+-          "Uso predominante del imperfecto y condicional con valor subjetivo."
+-        ],
+-        [
+-          "Marcadores Emotivos",
+-          "Exclamaciones e interrogaciones sin comillas ni guiones de diálogo."
++          "Free indirect",
++          "Ana miró el reloj. ¿Dónde estaba Pedro? Otra vez llegaba tarde."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "How it works",
++      "content": "Free indirect speech is like reported speech in two ways: it keeps the third person and the past tenses of the narration (*estaba*, *llegaba*, and the conditional for what is still to come). It is like direct speech in two others: it keeps the character's questions and exclamations, and the character's own point of view. That is why a word like *mañana* can stay next to a past verb: *Luis abrió la carta. ¡Por fin! Mañana mismo se lo diría a todos.*"
++    },
++    {
++      "type": "text",
++      "title": "Four clues",
++      "content": "• There is no *pensó que*, *dijo que* or *se preguntó*, and no quotation marks.\n• The sentence is a question, a doubt or an exclamation inside the narration.\n• The time and place words belong to the character: *ahora*, *mañana*, *aquí*, *aquello*.\n• The verb is in a past tense, but the thought sounds like the character speaking."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Ana miró el reloj. ¿Dónde estaba Pedro?",
++          "english": "Ana looked at the clock. Where was Pedro?"
++        },
++        {
++          "spanish": "Luis abrió la carta. ¡Por fin! Mañana mismo se lo diría a todos.",
++          "english": "Luis opened the letter. At last! He would tell everyone tomorrow."
++        },
++        {
++          "spanish": "El jefe leyó el informe. ¿Quién lo había escrito? Aquello no tenía sentido.",
++          "english": "The boss read the report. Who had written it? That made no sense."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Para reconocer el discurso indirecto libre en un texto literario B2, busca oraciones interrogativas o exclamativas en tercera persona del pasado que expresen la perplejidad íntima de un personaje sin que aparezca la fórmula explícita *'él se preguntaba'*. Es la marca suprema de la introspección narrativa moderna."
++      "content": "You only need to recognise this form, not to write it. When a narrated sentence suddenly asks a question or exclaims, ask: whose thought is this? If it is a character's, it is free indirect speech."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-18-01-a-gr.json b/content/es-latam/grammar/b2/b2-18-01-a-gr.json
+index 911b1355..cfc6db49 100644
+--- a/content/es-latam/grammar/b2/b2-18-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-18-01-a-gr.json
+@@ -1,44 +1,105 @@
+ {
+   "id": "grammar.b2.18.01.verbos-comunicacion-aseverativos",
+-  "title": "Verbos declarativos y aseverativos: precisión en la atribución formal",
++  "title": "Reporting Verbs: How It Was Said",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En el registro formal, periodístico y académico de nivel B2, el uso excesivo del verbo comodín *decir* empobrece la prosa y desdibuja la intención pragmática del emisor. El español culto dispone de una rica batería de **verbos aseverativos y declarativos** que especifican el grado de certeza, la solemnidad o la contundencia con que se formula una afirmación.\n\nVerbos como **aseverar**, **sostener**, **recalcar** o **puntualizar** rigen normalmente proposiciones subordinadas sustantivas en modo indicativo cuando el hablante valida la existencia del hecho informado (*El ministro aseveró que el déficit había disminuido*)."
++      "title": "What you know",
++      "content": "You know *decir que* and the tense shifts of reported speech from B1 Unit 13 and B2 Unit 17. You also know a few reporting verbs: *afirmar* and *declarar* from B1 Unit 13, *asegurar* from B1 Unit 33, *advertir* and *sugerir* from B1 Unit 38, and *negar* and *desmentir* from B2 Unit 5. A reporting verb does more than say that someone spoke. It also says how the thing was said: firmly, as an admission, as a warning, as a blame. This lesson gives you the set of verbs and the rule for the mood that follows them. The next four lessons practise one group each."
+     },
+     {
+       "type": "table",
+-      "title": "Matices de verbos aseverativos formales",
++      "title": "Ten verbs and what they add",
+       "rows": [
+         [
+-          "aseverar",
+-          "to state categorically as absolute truth without room for doubt"
++          "afirmar, asegurar",
++          "states it firmly, as something true"
+         ],
+         [
+-          "sostener",
+-          "to defend an argument or thesis tenaciously against opposition"
++          "explicar",
++          "gives the reason or the way"
+         ],
+         [
+-          "recalcar",
+-          "to put heavy emphasis on a crucial detail of the message"
++          "añadir",
++          "adds a further point"
+         ],
+         [
+-          "puntualizar",
+-          "to specify fine distinctions or correct minor inaccuracies"
++          "admitir",
++          "accepts something, often unwillingly"
+         ],
+         [
+-          "constatar",
+-          "to verify objectively that an event has actually transpired"
++          "negar",
++          "refuses to accept a claim"
+         ],
+         [
+-          "manifestar",
+-          "to declare an official position openly in public communiques"
++          "advertir",
++          "warns, or draws attention to a danger"
++        ],
++        [
++          "recordar",
++          "reminds someone of something"
++        ],
++        [
++          "reprochar",
++          "blames someone for what they did or did not do"
++        ],
++        [
++          "sugerir",
++          "proposes something without ordering it"
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "One rule for the mood",
++      "content": "After a reporting verb, ask what follows it:\n\n• **A fact the speaker states: indicative.** *Afirmó que la tienda cerraba a las ocho. Admitió que se había equivocado.* After a past verb the tense moves back, as in B2 Unit 17.\n• **A claim that is rejected: subjunctive.** *Negó que fuera su error.* You know *negar que* + subjunctive from B2 Unit 5.\n• ***Advertir* and *recordar* can report either.** If what follows is a fact, use the indicative: *Me advirtió que el tren salía a las ocho. Me recordó que la reunión era el lunes.* If it is something to do or not to do, use the subjunctive, as for the orders of B1 Unit 38: *Me advirtió que no llegara tarde. Me recordó que cerrara la puerta.*\n• ***Sugerir* and *reprochar* take the subjunctive.** *Sugirió que esperáramos* (a proposal). *Me reprochó que no hubiera llamado* (a blame). For something that was not done, the pluperfect subjunctive is the form you learned in B2 Unit 16."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Afirmó que la tienda cerraba a las ocho.",
++          "english": "He stated that the shop closed at eight."
++        },
++        {
++          "spanish": "Explicó que no tenía tiempo.",
++          "english": "She explained that she had no time."
++        },
++        {
++          "spanish": "Añadió que volvería al día siguiente.",
++          "english": "He added that he would come back the next day."
++        },
++        {
++          "spanish": "Admitió que se había equivocado.",
++          "english": "She admitted that she had made a mistake."
++        },
++        {
++          "spanish": "Negó que fuera su error.",
++          "english": "He denied that it was his mistake."
++        },
++        {
++          "spanish": "Me advirtió que el tren salía a las ocho.",
++          "english": "He warned me that the train left at eight."
++        },
++        {
++          "spanish": "Me advirtió que no llegara tarde.",
++          "english": "He warned me not to be late."
++        },
++        {
++          "spanish": "Me reprochó que no hubiera llamado.",
++          "english": "She reproached me for not having called."
++        }
++      ]
++    },
++    {
++      "type": "text",
++      "title": "More verbs of the same kind",
++      "content": "*Señalar* 'to point out', *precisar* 'to specify', *agregar* 'to add' and *recalcar* 'to stress' state a fact too, so they take the indicative: *Señaló que el puente estaba cerrado.* *Agregar* is very common in Latin America for *añadir*."
++    },
+     {
+       "type": "tip",
+-      "content": "Observa el régimen preposicional: *sostener que* (sin preposición), *hacer hincapié en que*, *puntualizar que*. Evita el queísmo incorrecto: no digas *'aseveró de que'*, sino *'aseveró que'*."
++      "content": "Ask what the verb is doing. Stating or accepting a fact: indicative. Rejecting a claim, proposing, blaming, or telling someone to do something: subjunctive. *Advertir* and *recordar* are the two that can go either way, depending on whether they inform or give an instruction."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-18-02-a-gr.json b/content/es-latam/grammar/b2/b2-18-02-a-gr.json
+index 2ec5d874..e5beca16 100644
+--- a/content/es-latam/grammar/b2/b2-18-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-18-02-a-gr.json
+@@ -1,44 +1,72 @@
+ {
+   "id": "grammar.b2.18.02.verbos-comunicacion-disputa-refutacion",
+-  "title": "Verbos de disputa, refutación y réplica dialéctica",
++  "title": "Denying, Admitting, Answering Back",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En el debate dialéctico, la controversia judicial y la prensa de investigación, los **verbos de disputa y refutación** permiten estructurar la réplica a las afirmaciones de un adversario. Estos verbos denotan una actitud de oposición activa, rechazo frontal o desarticulación racional de una tesis previa.\n\nEs fundamental distinguir entre **desmentir** (declarar categóricamente que una noticia o rumor es falso), **refutar** o **rebatir** (demostrar con pruebas o razonamientos sólidos la falsedad o invalidez de una tesis) e **impugnar** (cuestionar la validez legal o formal de un acto, elección o documento)."
++      "title": "What you know",
++      "content": "You know *negar que*, *desmentir que* and *no negar que* from B2 Unit 5, and *negarse a* from B1 Unit 40. You know *admitir* from B1 Unit 21, *reconocer* from B1 Unit 7, and the rule \"same person: infinitive\" from B2 Unit 4. In a dispute there are two sides: those who reject a claim (*negar*, *desmentir*, *contradecir*) and those who accept it (*admitir*, *reconocer*). This lesson reports both."
+     },
+     {
+       "type": "table",
+-      "title": "Verbos de controversia y sus regímenes sintácticos",
++      "title": "Denying and admitting",
+       "rows": [
+         [
+-          "desmentir un rumor",
+-          "El portavoz desmintió que hubiera habido negociaciones secretas."
++          "negar / desmentir + que + subjunctive",
++          "Negó que fuera culpable."
+         ],
+         [
+-          "refutar una hipótesis",
+-          "La científica refutó con datos la hipótesis del consorcio minero."
++          "negar que + pluperfect subjunctive (a past action)",
++          "Negó que hubiera estado allí."
+         ],
+         [
+-          "rebatir un argumento",
+-          "El abogado rebatió punto por punto los alegatos de la fiscalía."
++          "negar + haber + participle (same person)",
++          "Negó haber estado allí."
+         ],
+         [
+-          "impugnar un fallo",
+-          "Los campesinos impugnaron la resolución judicial ante el tribunal."
++          "admitir / reconocer + que + indicative",
++          "Admitió que había cometido un error."
+         ],
+         [
+-          "objetar una propuesta",
+-          "La delegada objetó que el presupuesto ignoraba la educación rural."
++          "admitir / reconocer + haber + participle (same person)",
++          "Admitió haber cometido un error."
+         ],
+         [
+-          "contradecir un testimonio",
+-          "Las grabaciones contradijeron la versión inicial del sospechoso."
++          "replicar / objetar + que + indicative",
++          "Replicó que ya había avisado."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "The same fact from both sides",
++      "content": "The same fact can be reported from both sides. «Fui yo» becomes *Admitió que había sido él* or *Admitió haberlo hecho*. «No fui yo» becomes *Negó que hubiera sido él* or *Negó haberlo hecho*. When the person who denies or admits is also the person who acted, the infinitive with *haber* is the natural choice, just as with the verbs of B2 Unit 4. When someone else acted, use *que*: *Negó que su hermano lo hubiera hecho*. *Contradecir* takes the person as its object: *Me contradijo* (He contradicted me)."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Luis negó que Ana hubiera llegado tarde.",
++          "english": "Luis denied that Ana had arrived late."
++        },
++        {
++          "spanish": "Meg negó haber visto el mensaje.",
++          "english": "Meg denied having seen the message."
++        },
++        {
++          "spanish": "Carlos admitió que había hecho el trabajo.",
++          "english": "Carlos admitted that he had done the work."
++        },
++        {
++          "spanish": "Ana replicó que ya había avisado a todos.",
++          "english": "Ana answered back that she had already told everyone."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Cuando *desmentir* introduce una cláusula con *que*, puede exigir **modo subjuntivo** si se enfatiza el rechazo de la veracidad del hecho: *Desmintió que hubiera participado en el soborno* (subjuntivo = no ocurrió según el hablante)."
++      "content": "Choose the verb first, then the mood: rejecting (*negar*, *desmentir*) takes the subjunctive, accepting (*admitir*, *reconocer*) and answering back (*replicar*, *objetar*) take the indicative. With the same person, use *haber* + participle."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-18-03-a-gr.json b/content/es-latam/grammar/b2/b2-18-03-a-gr.json
+index 9a65ceb7..8fc9f5d0 100644
+--- a/content/es-latam/grammar/b2/b2-18-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-18-03-a-gr.json
+@@ -1,44 +1,68 @@
+ {
+   "id": "grammar.b2.18.03.verbos-comunicacion-advertencia-recordatorio",
+-  "title": "Verbos de advertencia, prevención y recordatorio",
++  "title": "Warning and Reminding",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Cuando un emisor anticipa un peligro futuro, previene sobre un riesgo inminente o recuerda una obligación legal pendiente, el español culto emplea verbos especializados de advertencia como **advertir**, **alertar**, **prevenir** y **conminar**.\n\nEl verbo **advertir** presenta una interesante bivalencia sintáctica y semántica:\n1. Con **indicativo** significa percibir o comunicar un hecho objetivo (*Nos advirtió que el camino estaba bloqueado*).\n2. Con **subjuntivo** funciona como orden o advertencia imperativa (*Nos advirtió que no cruzáramos el río crecido*)."
++      "title": "What you know",
++      "content": "You know *advertir que* with the indicative or the subjunctive from B1 Unit 38, and *recordar* from A2. The rule you learned in the first lesson of this unit is the whole point here: a warning or a reminder can pass on a fact, or it can tell someone what to do. A fact takes the indicative. Something to do or not to do takes the subjunctive, as in the reported orders of B1 Unit 38."
+     },
+     {
+       "type": "table",
+-      "title": "Verbos de advertencia y sus regímenes",
++      "title": "Warning and reminding",
+       "rows": [
+         [
+-          "advertir (de) que + ind.",
+-          "Los meteorólogos advirtieron que la tormenta llegaría esa noche."
++          "advertir que + indicative (a fact, a danger)",
++          "Nos advirtió que el puente estaba cerrado."
+         ],
+         [
+-          "advertir que + subj.",
+-          "El guía nos advirtió que tuviéramos prudencia en el precipicio."
++          "advertir que + subjunctive (do or don't do)",
++          "Nos advirtió que no cruzáramos."
+         ],
+         [
+-          "alertar sobre / de que",
+-          "La comunidad alertó sobre la presencia de taladores ilegales."
++          "recordar que + indicative (a fact)",
++          "Me recordó que la tienda cerraba a las ocho."
+         ],
+         [
+-          "recordar que + ind.",
+-          "El juez recordó que el plazo de apelación vencía el viernes."
++          "recordar que + subjunctive (do it)",
++          "Me recordó que cerrara la puerta."
+         ],
+         [
+-          "conminar a que + subj.",
+-          "El prefecto conminó a la empresa a que suspendiera las obras."
+-        ],
+-        [
+-          "prevenir contra / de",
+-          "Los ancianos previnieron a los jóvenes de no perder la memoria ancestral."
++          "alertar de que + indicative (a danger)",
++          "Alertaron de que venía una tormenta."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Reminding someone, or remembering",
++      "content": "*Me recordó* means \"he reminded me\": the person reminded is the indirect object (*me*, *te*, *le*). Do not confuse it with *recordé* \"I remembered\". Ask yourself one question to choose the mood: is it information or a task? Information (the bridge is closed, the shop closes at eight): indicative. A task (don't cross, close the door): subjunctive."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Nos advirtió que el puente estaba cerrado.",
++          "english": "He warned us that the bridge was closed."
++        },
++        {
++          "spanish": "Nos advirtió que no cruzáramos.",
++          "english": "He warned us not to cross."
++        },
++        {
++          "spanish": "Me recordó que la tienda cerraba a las ocho.",
++          "english": "She reminded me that the shop closed at eight."
++        },
++        {
++          "spanish": "Me recordó que cerrara la puerta.",
++          "english": "She reminded me to close the door."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Con el verbo *advertir* con sentido de advertencia de riesgo, tanto *advertir que* como *advertir de que* son construcciones admitidas por la Real Academia Española (*advirtió de que era peligroso* = *advirtió que era peligroso*)."
++      "content": "In the sense of \"remind\", *recordar* takes *que* directly: *Me recordó que…*, not *Me recordó de que…*. *Advertir* takes *que*, and *alertar* takes *de que*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-18-04-a-gr.json b/content/es-latam/grammar/b2/b2-18-04-a-gr.json
+index 2627b132..067a20cf 100644
+--- a/content/es-latam/grammar/b2/b2-18-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-18-04-a-gr.json
+@@ -1,44 +1,68 @@
+ {
+   "id": "grammar.b2.18.04.verbos-comunicacion-reproche-critica",
+-  "title": "Verbos de reproche, censura y evaluación crítica",
++  "title": "Reproaching and Blaming",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En el análisis crítico, los debates parlamentarios y la literatura de denuncia social (como las novelas indigenistas de Ciro Alegría), los **verbos de reproche y censura** permiten reportar acusaciones morales, señalamientos éticos o desaprobaciones explícitas de conductas pasadas.\n\nVerbos como **reprochar**, **recriminar** y **censurar** construyen cláusulas subordinadas sustantivas donde el emisor juzga retrospectivamente una falta, negligencia o injusticia cometida por su contraparte (*Le reprochó que no hubiera defendido a la comunidad*)."
++      "title": "What you know",
++      "content": "You know how to look back at a mistake with *Deberías haber llamado* from B2 Unit 10, and the verbs *quejarse* from B2 Unit 5 and *criticar* from B2 Unit 14. When you report such a reproach, the verb *reprochar* (or *echar en cara*) is the one that says what was said: not just that someone spoke, but that they blamed someone. It takes *que* and the subjunctive; for something that was not done in the past, use the pluperfect subjunctive from B2 Unit 16."
+     },
+     {
+       "type": "table",
+-      "title": "Estructuras de reproche y crítica",
++      "title": "Reproach and blame",
+       "rows": [
+         [
+-          "reprochar (a alguien) que + subj.",
+-          "Los comuneros le reprocharon al alcalde que hubiera pactado con el patrón."
++          "reprochar / echar en cara + que + subjunctive",
++          "Me reprochó que no hubiera llamado."
+         ],
+         [
+-          "recriminar (a alguien) por + inf.",
+-          "El juez le recriminó por haber falsificado los títulos de propiedad."
++          "reprochar + haber + participle (the person blamed acted)",
++          "Me reprochó no haber llamado."
+         ],
+         [
+-          "censurar la conducta de",
+-          "La prensa independiente censuró la pasividad del gobierno ante la violencia."
++          "reprochar + noun",
++          "Me reprochó mi retraso."
+         ],
+         [
+-          "cuestionar la legitimidad de",
+-          "Los líderes andinos cuestionaron que el tribunal fallara a espaldas del pueblo."
++          "culpar a alguien de + noun",
++          "Me culpó del retraso."
+         ],
+         [
+-          "denunciar que + ind.",
+-          "Los campesinos denunciaron que los guardias habían incendiado las cosechas."
+-        ],
+-        [
+-          "increpar a viva voz",
+-          "El dirigente increpó al terrateniente exigiéndole respeto para los ancianos."
++          "acusar a alguien de + haber + participle",
++          "Me acusó de haber llegado tarde."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Which verb?",
++      "content": "*Reprochar* and *echar en cara* report a complaint about something that was not done as it should have been. «Deberías haber llamado» and «No llamaste» are both reported as *Me reprochó que no hubiera llamado*. *Culpar* and *acusar* name the fault the person is held responsible for, with *de* and a noun or *haber* + participle. Do not use *que* after them."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Ana me reprochó que no hubiera llamado antes.",
++          "english": "Ana reproached me for not having called earlier."
++        },
++        {
++          "spanish": "Me echó en cara que no la hubiera ayudado.",
++          "english": "She threw it in my face that I had not helped her."
++        },
++        {
++          "spanish": "Me acusó de haber olvidado la llave.",
++          "english": "He accused me of having forgotten the key."
++        },
++        {
++          "spanish": "Los vecinos culparon al alcalde del problema.",
++          "english": "The neighbours blamed the mayor for the problem."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Observa que *reprochar que* rige habitualmente **subjuntivo** porque el emisor no se limita a comunicar un hecho, sino que proyecta sobre él una valoración afectiva de censura moral: *Me reprochó que llegara tarde*."
++      "content": "When the person blamed is the one who acted, the infinitive is usually smoother: *Me reprochó no haber llamado*. When the blame falls on a third person, keep *que*: *Le reprochó que su hermano no hubiera llamado*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-18-05-a-gr.json b/content/es-latam/grammar/b2/b2-18-05-a-gr.json
+index ccb2c86a..cc99417c 100644
+--- a/content/es-latam/grammar/b2/b2-18-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-18-05-a-gr.json
+@@ -1,44 +1,77 @@
+ {
+   "id": "grammar.b2.18.05.verbos-comunicacion-subjetividad-conjetura",
+-  "title": "Verbos de conjetura, sospecha y distanciamiento epistémico",
++  "title": "Keeping Your Distance",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En el periodismo de rigor y el análisis ensayístico de nivel B2, a menudo es imperativo reportar declaraciones ajenas **sin asumir la responsabilidad de su veracidad**. Los verbos de distanciamiento epistémico permiten al redactor señalar que una información no ha sido comprobada de forma independiente, o que constituye una mera hipótesis de su interlocutor.\n\nVerbos como **alegar** (*alegó que había actuado en defensa propia*), **insinuar** (*insinuó que existían presiones políticas*), **conjeturar** o **especular** permiten modular con máxima sutileza la distancia crítica entre el relator y el mensaje reportado."
++      "title": "What you know",
++      "content": "You know *según* for citing a source from B1 Unit 13, *por lo visto* from B2 Unit 3 and the impersonal *se* from B1 Unit 6. All of them put a claim on someone else's shoulders: you report it, but you do not say that it is true. This lesson adds three more tools for the same job, and shows you a news form to recognise."
+     },
+     {
+       "type": "table",
+-      "title": "Verbos de distanciamiento epistémico",
++      "title": "Reporting from a distance",
+       "rows": [
+         [
+-          "alegar que",
+-          "He alleged that the contract had already been rescinded (unverified claim)."
++          "según + source",
++          "Según el vecino, la tienda cerró."
+         ],
+         [
+-          "insinuar que",
+-          "The columnist hinted that private interests guided the legislative vote."
++          "al parecer",
++          "Al parecer, el director ya había salido."
+         ],
+         [
+-          "conjeturar que",
+-          "Analysts conjectured that the border dispute would be resolved diplomatically."
++          "supuestamente",
++          "Supuestamente, el contrato ya estaba firmado."
+         ],
+         [
+-          "presumir que",
+-          "Investigators presumed that the documents were stored in the vault."
++          "presunto + noun",
++          "el presunto culpable (the alleged culprit)"
+         ],
+         [
+-          "especular con que",
+-          "The markets speculated that the interest rates would rise next quarter."
++          "dar a entender que + indicative",
++          "Dio a entender que sabía más."
+         ],
+         [
+-          "dar a entender que",
+-          "The spokesperson implied that significant policy changes were underway."
++          "se dice que + indicative",
++          "Se dice que la tienda cerró el mes pasado."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Saying it, or passing it on",
++      "content": "Compare *El río había subido mucho* (you say it is so) with *Según una vecina, el río había subido mucho* or *Al parecer, el río había subido mucho* (you pass it on). These tools are followed by the indicative, because you are reporting what is said or seen, not rejecting it. *Supuestamente* and *presunto* go further: they suggest that the claim may not be true."
++    },
++    {
++      "type": "text",
++      "title": "A form to recognise",
++      "content": "In newspapers you will meet a conditional used to pass on a rumour: *El ministro habría dicho que no vendría* (\"The minister reportedly said that he would not come\"). The conditional tells you that the writer reports it without confirming it. Some Spanish style guides advise against it in careful writing, but you will see it in the news, so learn to recognise it. You do not need to use it."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Según el vecino, el río subió mucho anoche.",
++          "english": "According to the neighbour, the river rose a lot last night."
++        },
++        {
++          "spanish": "Al parecer, el director ya había salido de la oficina.",
++          "english": "Apparently, the director had already left the office."
++        },
++        {
++          "spanish": "El presunto culpable negó haber estado allí.",
++          "english": "The alleged culprit denied having been there."
++        },
++        {
++          "spanish": "Se dice que la tienda cerró el mes pasado.",
++          "english": "It is said that the shop closed last month."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "El verbo *alegar* es el recurso estrella del periodismo legal anglo e hispanoamericano: al escribir *'El acusado alegó que...'*, el periodista informa de lo que dijo la defensa sin respaldar su certeza factual, protegiéndose contra demandas de difamación."
++      "content": "Pick the tool by what you want to say: a named source (*según*), something you saw or read (*al parecer*, *por lo visto*), or a claim you doubt (*supuestamente*, *presunto*)."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-17-01.json b/content/es-latam/lessons/b2/b2-17-01.json
+index f289ebde..6b6b1407 100644
+--- a/content/es-latam/lessons/b2/b2-17-01.json
++++ b/content/es-latam/lessons/b2/b2-17-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.17.01",
+-  "title": "El estilo indirecto con verbo principal en pasado: traslación de asertos",
++  "title": "Reported Statements: Shift or Stay",
+   "level": "B2",
+-  "goal": "Master the backshifting of statements from direct to indirect discourse with past reporting verbs.",
+-  "grammar": "el estilo indirecto con verbo principal en pasado: traslación temporal de asertos",
++  "goal": "Review reported statements after a past verb and learn when the verb can stay as it was.",
++  "grammar": "Reported statements: backshift, and when the original tense can stay",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Apply systematic tense backshifting to statements in past reporting frames.",
+-        "Recognize invariable tenses like the imperfect and pluperfect in reported speech.",
+-        "Distinguish between direct speech assertion and indirect reported perspective."
++        "I can report what someone said and move the verb back (dijo que tenía, había llegado, llegaría).",
++        "I can keep the present when what was said is still true, or after a reporting verb in the present.",
++        "I can use the new words for still, valid, coming true and agreeing."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-17-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can report what someone said and move the verb back (dijo que tenía, había llegado, llegaría).",
++        "I can keep the present when what was said is still true, or after a reporting verb in the present.",
++        "I can use the new words for still, valid, coming true and agreeing."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-17-02.json b/content/es-latam/lessons/b2/b2-17-02.json
+index be26a3fb..5f97c36d 100644
+--- a/content/es-latam/lessons/b2/b2-17-02.json
++++ b/content/es-latam/lessons/b2/b2-17-02.json
+@@ -1,16 +1,17 @@
+ {
+   "id": "lesson.b2.17.02",
+-  "title": "Preguntas indirectas y traslación interrogativa en pasado",
++  "title": "Reported Questions in the Past",
+   "level": "B2",
+-  "goal": "Report yes/no questions and information questions in past frames using 'si' and interrogative pronouns.",
+-  "grammar": "interrogativas indirectas totales y parciales con verbos introductorios en pasado",
++  "goal": "Report yes/no questions with si and information questions with a question word after a past verb, and use the same pattern after preguntarse and no sabía.",
++  "grammar": "Reported questions and indirect question clauses in the past",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Transform direct yes/no questions into indirect clauses using 'si'.",
+-        "Report wh-questions preserving diacritic accent marks on interrogative pronouns.",
+-        "Synthesize judicial, diplomatic, and investigative inquiries in formal past frames."
++        "I can report a yes/no question with si and an information question with its question word after a past verb.",
++        "I can move the verb back in a reported question (¿Cuándo saldrán? becomes quiso saber cuándo saldrían).",
++        "I can use preguntarse and no sabía with a question word.",
++        "I can use the new words for wondering and not knowing."
+       ]
+     },
+     {
+@@ -51,6 +52,20 @@
+       "exerciseRefs": [
+         "b2-17-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can report a yes/no question with si and an information question with its question word after a past verb.",
++        "I can move the verb back in a reported question (¿Cuándo saldrán? becomes quiso saber cuándo saldrían).",
++        "I can use preguntarse and no sabía with a question word.",
++        "I can use the new words for wondering and not knowing."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-17-03.json b/content/es-latam/lessons/b2/b2-17-03.json
+index d53eea09..cf6e23e9 100644
+--- a/content/es-latam/lessons/b2/b2-17-03.json
++++ b/content/es-latam/lessons/b2/b2-17-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.17.03",
+-  "title": "Órdenes, ruegos y peticiones referidas: del imperativo al subjuntivo",
++  "title": "Reported Orders and Requests",
+   "level": "B2",
+-  "goal": "Report direct commands, requests, and prohibitions by shifting imperatives to the imperfect subjunctive.",
+-  "grammar": "estilo indirecto de mandatos y peticiones con verbo en pasado y pretérito imperfecto de subjuntivo",
++  "goal": "Review reported orders and requests with the imperfect subjunctive, then report requests asked as questions and choose the present or imperfect subjunctive by the reporting verb.",
++  "grammar": "Reported orders and requests: asked as questions, present or imperfect subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Transform imperative commands into subordinate clauses with the imperfect subjunctive.",
+-        "Differentiate between reporting information (indicative) and reporting commands (subjunctive).",
+-        "Formulate formal institutional directives and legal injunctions in reported speech."
++        "I can report an order or a request with que + the imperfect subjunctive, also when it was asked as a question.",
++        "I can use the present subjunctive after ha pedido and the imperfect after pidió.",
++        "I can use the new words for begging, demanding and errands."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-17-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can report an order or a request with que + the imperfect subjunctive, also when it was asked as a question.",
++        "I can use the present subjunctive after ha pedido and the imperfect after pidió.",
++        "I can use the new words for begging, demanding and errands."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-17-04.json b/content/es-latam/lessons/b2/b2-17-04.json
+index db71ef16..1d6f6d9d 100644
+--- a/content/es-latam/lessons/b2/b2-17-04.json
++++ b/content/es-latam/lessons/b2/b2-17-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.17.04",
+-  "title": "Traslación de deícticos temporales, espaciales y demostrativos",
++  "title": "Time and Place Words in Retelling",
+   "level": "B2",
+-  "goal": "Systematically shift temporal, spatial, and demonstrative deictic markers in past reported speech frames.",
+-  "grammar": "traslación deíctica temporal y espacial en el discurso referido",
++  "goal": "Review the time and place words that change when you retell, add the rest of the list and venir becoming ir, and learn when they stay.",
++  "grammar": "Time and place words in reported speech",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Shift temporal deictics from proximity to distance (hoy -> ese día, ayer -> el día anterior).",
+-        "Shift spatial adverbs (aquí -> allí) and demonstratives (este -> aquel).",
+-        "Determine whether deictic adaptation is required based on the persistence of the temporal frame."
++        "I can change time and place words when I retell what someone said (hoy becomes aquel día, aquí becomes allí).",
++        "I can change este to aquel and venir to ir, and keep the words when the time and place have not changed.",
++        "I can use the new words for the day before, here and there."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-17-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can change time and place words when I retell what someone said (hoy becomes aquel día, aquí becomes allí).",
++        "I can change este to aquel and venir to ir, and keep the words when the time and place have not changed.",
++        "I can use the new words for the day before, here and there."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-17-05.json b/content/es-latam/lessons/b2/b2-17-05.json
+index 19cbb0bd..77db622e 100644
+--- a/content/es-latam/lessons/b2/b2-17-05.json
++++ b/content/es-latam/lessons/b2/b2-17-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.17.05",
+-  "title": "El discurso indirecto libre en la prosa narrativa hispanoamericana",
++  "title": "Thoughts Without a Reporting Verb",
+   "level": "B2",
+-  "goal": "Analyze and deploy free indirect discourse in literary narratives, blending narrator voice and character consciousness.",
+-  "grammar": "el discurso indirecto libre en la prosa narrativa hispanoamericana",
++  "goal": "Recognise free indirect speech in a story: a character’s question, doubt or exclamation told in the narrator’s past tense.",
++  "grammar": "Free indirect speech: recognising it in narration",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Identify the absence of reporting verbs and subordinating conjunctions in free indirect style.",
+-        "Analyze the emotional and existential focalization achieved in Latin American social realism.",
+-        "Recognize subjective past interrogatives and exclamations in third-person narrative prose."
++        "I can spot free indirect speech in a story: a character’s question, doubt or exclamation told in the narrator’s past tense.",
++        "I can tell it apart from direct speech and from reported speech with a verb like pensó que.",
++        "I can use the new words for talking about narration."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-17-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can spot free indirect speech in a story: a character’s question, doubt or exclamation told in the narrator’s past tense.",
++        "I can tell it apart from direct speech and from reported speech with a verb like pensó que.",
++        "I can use the new words for talking about narration."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-17-consolidation.json b/content/es-latam/lessons/b2/b2-17-consolidation.json
+index 51c8dc35..91f156f7 100644
+--- a/content/es-latam/lessons/b2/b2-17-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-17-consolidation.json
+@@ -1,16 +1,17 @@
+ {
+   "id": "lesson.b2.17.consolidation",
+-  "title": "Consolidación B2: El discurso referido y Huasipungo",
++  "title": "Unit 17 Consolidation: Retelling What Was Said",
+   "level": "B2",
+-  "goal": "Synthesize reported speech backshifting, indirect questions, requests, and free indirect discourse through Jorge Icaza's indigenist classic Huasipungo.",
+-  "grammar": "síntesis del discurso referido en el pasado y adaptación literaria de Huasipungo",
++  "goal": "Review reported statements, questions and requests, time and place words in retelling and free indirect speech, and read a short text about Icaza and Huasipungo.",
++  "grammar": "Review of reported speech in the past and free indirect speech",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Master temporal backshifting of statements, questions, and commands in past narrative frames.",
+-        "Shift temporal and spatial deictic markers accurately according to narrative perspective.",
+-        "Analyze social and indigenous struggles in the Ecuadorian Andes through literary indigenism."
++        "I can report statements, questions and requests after a past verb.",
++        "I can change time and place words when I retell what someone said.",
++        "I can spot free indirect speech in a short story.",
++        "I can read a short text about Jorge Icaza and his novel Huasipungo."
+       ]
+     },
+     {
+@@ -39,11 +40,12 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "Domino la traslación temporal de asertos en estilo indirecto con verbo principal en pasado.",
+-        "Formulo interrogativas indirectas totales y parciales con tildes diacríticas correctas.",
+-        "Transformo mandatos e imperativos en cláusulas con pretérito imperfecto de subjuntivo.",
+-        "Reconozco el discurso indirecto libre en la prosa narrativa andina y latinoamericana."
+-      ]
++        "I can report statements, questions and requests after a past verb.",
++        "I can change time and place words when I retell what someone said.",
++        "I can spot free indirect speech in a short story.",
++        "I can read a short text about Jorge Icaza and his novel Huasipungo."
++      ],
++      "title": "Can you do this?"
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-18-01.json b/content/es-latam/lessons/b2/b2-18-01.json
+index 270e9af9..eb333589 100644
+--- a/content/es-latam/lessons/b2/b2-18-01.json
++++ b/content/es-latam/lessons/b2/b2-18-01.json
+@@ -1,16 +1,17 @@
+ {
+   "id": "lesson.b2.18.01",
+-  "title": "Verbos declarativos y aseverativos formales",
++  "title": "Reporting Verbs: How It Was Said",
+   "level": "B2",
+-  "goal": "Deploy assertive and declarative reporting verbs (aseverar, sostener, recalcar) to specify conviction and formal attribution.",
+-  "grammar": "verbos declarativos y aseverativos formales en el registro periodístico y académico",
++  "goal": "Learn the reporting verbs that say how something was said, and which of them take the indicative or the subjunctive.",
++  "grammar": "Reporting verbs (afirmar, explicar, añadir, admitir, negar, advertir, recordar, reprochar, sugerir) and their mood",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Select precise assertive verbs (aseverar, sostener) instead of overusing 'decir'.",
+-        "Emphasize critical distinctions using 'recalcar' and 'puntualizar'.",
+-        "Avoid incorrect 'dequeísmo' in formal assertive clauses."
++        "I can choose a reporting verb that says how something was said (afirmar, explicar, añadir, admitir, negar, advertir, recordar, reprochar, sugerir).",
++        "I can use the indicative after verbs that state a fact and the subjunctive after negar que.",
++        "I can use advertir and recordar with the indicative for a fact and the subjunctive for an order.",
++        "I can use the new words for pointing out, specifying and stressing."
+       ]
+     },
+     {
+@@ -51,6 +52,20 @@
+       "exerciseRefs": [
+         "b2-18-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can choose a reporting verb that says how something was said (afirmar, explicar, añadir, admitir, negar, advertir, recordar, reprochar, sugerir).",
++        "I can use the indicative after verbs that state a fact and the subjunctive after negar que.",
++        "I can use advertir and recordar with the indicative for a fact and the subjunctive for an order.",
++        "I can use the new words for pointing out, specifying and stressing."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-18-02.json b/content/es-latam/lessons/b2/b2-18-02.json
+index 1fbd6bb5..c9dbf0e6 100644
+--- a/content/es-latam/lessons/b2/b2-18-02.json
++++ b/content/es-latam/lessons/b2/b2-18-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.18.02",
+-  "title": "Verbos de disputa, refutación y réplica dialéctica",
++  "title": "Denying, Admitting, Answering Back",
+   "level": "B2",
+-  "goal": "Master verbs of dispute, refutation, and legal challenge (desmentir, refutar, impugnar, rebatir) in debate.",
+-  "grammar": "verbos de controversia dialéctica, refutación argumentativa y desmentido institucional",
++  "goal": "Report a denial, an admission and an answer back, with the right mood or with haber + participle.",
++  "grammar": "Denying and admitting: negar, desmentir, admitir, reconocer, replicar",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Distinguish between declaring falsehood (desmentir) and proving invalidity (refutar, rebatir).",
+-        "Challenge the legal validity of acts and rulings using 'impugnar'.",
+-        "Apply correct subjunctive mood following 'desmentir que' when truth value is rejected."
++        "I can report a denial with negar que + subjunctive or negar + haber + participle, and an admission with admitir que + indicative.",
++        "I can report that someone answered back or objected with replicar or objetar + que.",
++        "I can use the new words for contradicting and opposing."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-18-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can report a denial with negar que + subjunctive or negar + haber + participle, and an admission with admitir que + indicative.",
++        "I can report that someone answered back or objected with replicar or objetar + que.",
++        "I can use the new words for contradicting and opposing."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-18-03.json b/content/es-latam/lessons/b2/b2-18-03.json
+index 455e1f7d..c1659afc 100644
+--- a/content/es-latam/lessons/b2/b2-18-03.json
++++ b/content/es-latam/lessons/b2/b2-18-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.18.03",
+-  "title": "Verbos de advertencia, prevención y recordatorio",
++  "title": "Warning and Reminding",
+   "level": "B2",
+-  "goal": "Deploy communication verbs of warning, risk anticipation, and legal reminders (advertir, alertar, conminar).",
+-  "grammar": "verbos de advertencia, precaución institucional y recordatorio legal",
++  "goal": "Report a warning or a reminder, as a fact with the indicative and as an instruction with the subjunctive.",
++  "grammar": "Warning and reminding: advertir, recordar, alertar",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Master the indicative/subjunctive alternation with 'advertir que'.",
+-        "Deploy 'alertar sobre/de que' to anticipate public risks.",
+-        "Formulate formal institutional injunctions using 'conminar a que + subjuntivo'."
++        "I can report a warning or a reminder of a fact with advertir or recordar + que + indicative.",
++        "I can report a warning or a reminder to do something with advertir or recordar + que + subjunctive.",
++        "I can use the new words for alerting and reminding."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-18-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can report a warning or a reminder of a fact with advertir or recordar + que + indicative.",
++        "I can report a warning or a reminder to do something with advertir or recordar + que + subjunctive.",
++        "I can use the new words for alerting and reminding."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-18-04.json b/content/es-latam/lessons/b2/b2-18-04.json
+index e209e2b0..6f551919 100644
+--- a/content/es-latam/lessons/b2/b2-18-04.json
++++ b/content/es-latam/lessons/b2/b2-18-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.18.04",
+-  "title": "Verbos de reproche, censura y evaluación crítica",
++  "title": "Reproaching and Blaming",
+   "level": "B2",
+-  "goal": "Express retrospective moral censure, critique, and ethical reproach using specialized reporting verbs (reprochar, censurar).",
+-  "grammar": "verbos de reproche ético, censura institucional y cuestionamiento crítico",
++  "goal": "Report a reproach with reprochar, and name a fault with culpar or acusar.",
++  "grammar": "Reproaching and blaming: reprochar, echar en cara, culpar, acusar",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Report moral accusations and omissions using 'reprochar (a alguien) que + subjuntivo'.",
+-        "Formulate institutional censure using 'censurar' and 'recriminar'.",
+-        "Critique procedural and ethical legitimacy using 'cuestionar que + subjuntivo'."
++        "I can report a reproach with reprochar or echar en cara + que + subjunctive.",
++        "I can name the fault with culpar or acusar a alguien de.",
++        "I can use the new words for blaming and complaining."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-18-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can report a reproach with reprochar or echar en cara + que + subjunctive.",
++        "I can name the fault with culpar or acusar a alguien de.",
++        "I can use the new words for blaming and complaining."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-18-05.json b/content/es-latam/lessons/b2/b2-18-05.json
+index 97da4641..af741911 100644
+--- a/content/es-latam/lessons/b2/b2-18-05.json
++++ b/content/es-latam/lessons/b2/b2-18-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.18.05",
+-  "title": "Verbos de conjetura, sospecha y distanciamiento epistémico",
++  "title": "Keeping Your Distance",
+   "level": "B2",
+-  "goal": "Employ journalistic distancing verbs (alegar, conjeturar, insinuar) to report claims without committing to their truth value.",
+-  "grammar": "verbos de distanciamiento epistémico, cautela informativa y conjetura en la prensa",
++  "goal": "Report a claim without saying that it is true, and recognise the news conditional.",
++  "grammar": "Reporting from a distance: según, al parecer, supuestamente, presunto",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Deploy 'alegar que' to report unverified legal claims neutrally.",
+-        "Indicate subtle oblique hints using 'insinuar que'.",
+-        "Frame analytical hypotheses and speculative scenarios using 'conjeturar' and 'especular'."
++        "I can report a claim without saying it is true, with según, al parecer, supuestamente and presunto.",
++        "I can recognise the news conditional (El ministro habría dicho…).",
++        "I can use the new words for reporting from a distance."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-18-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can report a claim without saying it is true, with según, al parecer, supuestamente and presunto.",
++        "I can recognise the news conditional (El ministro habría dicho…).",
++        "I can use the new words for reporting from a distance."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-18-consolidation.json b/content/es-latam/lessons/b2/b2-18-consolidation.json
+index 16c0ba51..d341facc 100644
+--- a/content/es-latam/lessons/b2/b2-18-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-18-consolidation.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.18.consolidation",
+-  "title": "Consolidación B2: Verbos retóricos y El mundo es ancho y ajeno",
++  "title": "Unit 18 Consolidation: Saying How It Was Said",
+   "level": "B2",
+-  "goal": "Synthesize rhetorical reporting verbs of assertion, refutation, warning, and critique through Ciro Alegría's indigenist masterpiece El mundo es ancho y ajeno.",
+-  "grammar": "síntesis de verbos de comunicación retórica y adaptación de El mundo es ancho y ajeno",
++  "goal": "Review reporting verbs and their mood, and reporting from a distance, and read a short text about Alegría and El mundo es ancho y ajeno.",
++  "grammar": "Review of reporting verbs and reporting from a distance",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Select nuanced communication verbs to convey precise rhetorical stance in formal discourse.",
+-        "Employ epistemic distancing (alegar, conjeturar) to maintain objective neutrality.",
+-        "Analyze the tragic struggle of the Andean indigenous community against feudal dispossession."
++        "I can choose the reporting verb and the mood for statements, denials, warnings and reproaches.",
++        "I can report a claim from a distance, without saying it is true.",
++        "I can read a short text about Ciro Alegría and his novel El mundo es ancho y ajeno."
+       ]
+     },
+     {
+@@ -39,11 +39,11 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "Utilizo verbos aseverativos (aseverar, sostener, recalcar) con propiedad y rigor.",
+-        "Distingo entre desmentir una falsedad y refutar una tesis con argumentos.",
+-        "Manejo la alternancia de modo con verbos de advertencia (advertir que + ind./subj.).",
+-        "Aplico verbos de distanciamiento epistémico (alegar, insinuar) en crónicas formales."
+-      ]
++        "I can choose the reporting verb and the mood for statements, denials, warnings and reproaches.",
++        "I can report a claim from a distance, without saying it is true.",
++        "I can read a short text about Ciro Alegría and his novel El mundo es ancho y ajeno."
++      ],
++      "title": "Can you do this?"
+     }
+   ]
+ }
+diff --git a/content/es-latam/stories/classics/b2/b2-17.json b/content/es-latam/stories/classics/b2/b2-17.json
+index ce3dc88f..9fca93d4 100644
+--- a/content/es-latam/stories/classics/b2/b2-17.json
++++ b/content/es-latam/stories/classics/b2/b2-17.json
+@@ -1,89 +1,90 @@
+ {
+   "id": "story.b2.17.icaza",
+-  "title": "Huasipungo: El grito de la tierra y la resistencia comunitaria",
++  "title": "Icaza y Huasipungo",
+   "level": "B2",
+   "lesson": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Adaptación literaria de nivel B2 de la cumbre indigenista de Jorge Icaza: la vida de Andrés Chiliquinga en los páramos de Cangahua, el despojo de los huasipungos por el hacendado don Alfonso Pereira y una compañía maderera extranjera, la muerte de su compañera Cunshi y el levantamiento campesino final defendiendo sus parcelas ancestrales bajo el lema inextinguible de la resistencia andina.",
+-  "characters": [
+-    "Andrés Chiliquinga",
+-    "Cunshi",
+-    "Don Alfonso Pereira",
+-    "Míster Chapy",
+-    "El Cura Pedro"
+-  ],
++  "summary": "Texto sobre Jorge Icaza, escritor ecuatoriano, y sobre su novela Huasipungo, una novela del indigenismo ecuatoriano.",
++  "characters": [],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En las faldas escarpadas de la cordillera ecuatoriana, donde el viento helado del páramo azota los pajonales sin tregua, se extendían los huasipungos de la hacienda Cuchitambo. Para Andrés Chiliquinga y su compañera Cunshi, el huasipungo no era una simple concesión graciosa de la hacienda: era un pedazo minúsculo de tierra pedregosa que sus antepasados habían regado con sudor inmemorial. Allí levantaban su choza de barro y paja, sembraban unas cuantas hileras de papas y maíz, y a cambio de aquel rincón de supervivencia entregaban semanas enteras de faena gratuita abriendo zanjas, deshierbando laderas y apacentando el ganado del patrón. Desde el alba hasta el anochecer, las campanas de la hacienda marcaban el ritmo implacable de una servidumbre hereditaria que encadenaba a las familias a la tierra ajena, sin recibir jamás salario monetario ni derechos legales."
++      "text": "Jorge Icaza fue un escritor ecuatoriano. Nació en 1906 y murió en 1978. Escribió la novela *Huasipungo*, que se publicó en 1934. En este texto no contamos la novela: hablamos de ella y de su autor, y también de la manera de leerla."
+     },
+     {
+       "type": "narration",
+-      "text": "El frágil equilibrio de aquella servidumbre feudal se fracturó cuando don Alfonso Pereira, acosado por pesadas deudas bancarias en la capital, pactó un lucrativo acuerdo con míster Chapy, el representante de una poderosa corporación maderera y petrolera extranjera. Los empresarios requerían construir de urgencia una amplia carretera carreteable que comunicara las serranías con los yacimientos de la selva virgen. Para abrir paso a los camiones y aserraderos mecánicos, era indispensable drenar las ciénagas pantanosas y desalojar sin miramientos las humildes chozas que estorbaban el trazado de la obra."
++      "text": "*Huasipungo* es una novela del indigenismo ecuatoriano. Se llama indigenista a una novela que se ocupa de los indígenas y de sus problemas. En este caso, el tema es la pobreza de los indígenas y la explotación que sufrían a manos de los dueños de la tierra. Muchos críticos dijeron que la novela era un buen ejemplo de ese movimiento."
+     },
+     {
+       "type": "narration",
+-      "text": "El hacendado y el párroco local convocaron a los comuneros para ordenarles que entregaran todo su esfuerzo en las faenas camineras. Aseguraban que la carretera traería el progreso cristiano a toda la comarca y que Dios castigaría severamente a quienes eludieran el trabajo comunal. Andrés y sus compañeros obedecieron cabizbajos, pero las jornadas resultaron mortales. Hundidos hasta la cintura en el lodo podrido de los pantanos, bajo lluvias torrenciales que no cesaban jamás, decenas de indígenas enfermaron de fiebres malignas o quedaron sepultados por los repentinos desprendimientos de tierra de las quebradas."
++      "text": "El título necesita una explicación. Un *huasipungo* era la pequeña parcela de tierra que una hacienda dejaba usar a un trabajador indígena. Una hacienda es una gran propiedad del campo que tiene un dueño. Por eso el título nombra esa parcela."
+     },
+     {
+       "type": "narration",
+-      "text": "Cuando la carretera estuvo casi terminada a costa de innumerables vidas humanas, llegó la orden definitiva que nadie quería creer: el hacendado anunció que los huasipungos debían ser desmantelados y que las familias debían retirarse hacia las cumbres estériles del páramo alto, donde ni el ganado lograba alimentarse. Andrés Chiliquinga sintió que el suelo se abría bajo sus pies. ¿Adónde irían ahora con los niños famélicos? Las laderas más altas estaban azotadas por heladas implacables que congelaban las raíces antes de brotar. Poco después, una peste implacable se propagó por las chozas y Cunshi enfermó gravemente de gangrena estomacal tras comer carne podrida de una res desechada por la hacienda."
++      "text": "Hablar de un libro es distinto de contarlo. Cuando alguien dice que una novela trata de la pobreza, no cuenta lo que pasa en ella. Los críticos dijeron que *Huasipungo* trataba de la explotación de los indígenas, pero esa frase no cuenta ninguna escena. Para saber qué hay en las páginas del libro, hay que leerlo."
+     },
+     {
+       "type": "narration",
+-      "text": "La agonía de Cunshi sumió a Andrés en la desesperación más desgarradora. Para pagar el entierro en el camposanto católico y evitar que el alma de su compañera vagara en las sombras, el cura le exigió una suma exorbitante de dinero que Andrés no poseía. Desesperado, el comunero robó una vaca de la manada patronal para venderla en el pueblo vecino, pero fue capturado por los mayordomos y azotado con saña ejemplarizante en el patio central de la hacienda hasta perder el conocimiento. Atado al poste de castigo, Andrés soportó los latigazos en silencio mientras el patrón advertía a los demás comuneros que ese sería el destino implacable de cualquiera que osara desafiar la autoridad señorial."
++      "text": "Un lector que no conozca Ecuador podría preguntarse qué era una hacienda en aquellos años. Otro podría preguntarse si una novela de 1934 todavía puede interesar hoy. Un tercero querría saber quiénes eran los dueños de la tierra y quiénes trabajaban para ellos. Son buenas preguntas para empezar a leer."
+     },
+     {
+       "type": "narration",
+-      "text": "Apenas recobró el aliento y enterró a Cunshi en la soledad de la ladera, Andrés comprendió que la resignación ya no tenía sentido alguno. Cuando los peones de la compañía y los soldados arribaron armados para incendiar los techos de paja y expulsar a los campesinos con bayonetas caladas, Andrés levantó su machete oxidado y convocó a toda la comunidad con el bramido sordo del churo ancestral. Hombres, ancianos y mujeres con sus hijos en brazos se parapetaron en la choza comunal más alta, negándose a claudicar ante el avance de las tropas armadas."
++      "text": "Imagine a un lector joven que abre el libro por primera vez. ¿Qué era un huasipungo? Lo buscaría en un diccionario, y ya no tendría dudas sobre el título. Después seguiría leyendo con más atención."
+     },
+     {
+       "type": "narration",
+-      "text": "El estampido de los fusiles no tardó en rasgar el aire gélido de la sierra andina. Aunque el fuego devoraba las vigas de madera y las balas atravesaban el adobe sin piedad, el clamor de los rebeldes se elevó como una sola voz poderosa por encima de las montañas: «¡Ñucanchik huasipungo! ¡La tierra es nuestra!». En esa resistencia trágica e indomeñable, Jorge Icaza plasmó para siempre el dolor visceral de los pueblos originarios y la dignidad inquebrantable de una cultura que jamás aceptó el despojo como destino inevitable."
++      "text": "Hay un último dato que conviene recordar. La novela se publicó en 1934, y su autor murió en 1978, cuarenta y cuatro años después. Además, el autor nació en 1906, es decir, unos veintiocho años antes de la publicación de la novela."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Por qué don Alfonso Pereira decidió desalojar los huasipungos de los comuneros indígenas?",
++          "question": "According to the text, what was a huasipungo?",
++          "options": [
++            "La pequeña parcela de tierra que una hacienda dejaba usar a un trabajador indígena.",
++            "Una gran propiedad del campo que tenía un dueño.",
++            "El nombre de un pueblo de Ecuador."
++          ],
++          "correctIndex": 0,
++          "explanation": "The text says that a huasipungo was the small plot of land that a hacienda let an indigenous worker use. A hacienda is the large estate."
++        },
++        {
++          "question": "According to the text, what is Huasipungo about?",
+           "options": [
+-            "Para abrir paso a una carretera exigida por una corporación maderera y petrolera extranjera.",
+-            "Para construir un balneario turístico de aguas termales en la montaña.",
+-            "Porque los huasipungueros se negaban a cultivar maíz para el mercado local.",
+-            "Para vender las tierras a una orden religiosa procedente de la capital."
++            "La pobreza de los indígenas y su explotación por los dueños de la tierra.",
++            "La vida de los dueños de las haciendas en la ciudad.",
++            "Un viaje de un escritor por Europa."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El hacendado pactó con inversionistas extranjeros la construcción de una carretera hacia la selva maderera, lo que requería desalojar y destruir las chozas campesinas."
++          "explanation": "The text says that the theme is the poverty of indigenous people and their exploitation by the owners of the land."
+         },
+         {
+-          "question": "¿Qué situación desesperada empujó a Andrés Chiliquinga a robar una res de la hacienda?",
++          "question": "Which question does the text say a reader might ask?",
+           "options": [
+-            "La necesidad apremiante de pagar los derechos eclesiásticos para sepultar a su compañera Cunshi.",
+-            "El deseo de fundar su propia carnicería en el mercado del pueblo cantonal.",
+-            "Una apuesta económica que había perdido con los mayordomos del establo.",
+-            "La orden secreta que le habían dado los delegados de la compañía extranjera."
++            "Si una novela de 1934 todavía puede interesar hoy.",
++            "Dónde vive hoy el autor.",
++            "Cuánto cuesta el libro."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El cura le exigió una elevada suma de dinero para permitir el entierro de Cunshi en el camposanto, lo que llevó a Andrés a cometer el robo para conseguir los fondos."
++          "explanation": "The text says that one reader might wonder whether a novel from 1934 can still be of interest today."
+         },
+         {
+-          "question": "¿Cuál fue la respuesta final de la comunidad campesina ante la llegada de las tropas armadas para desalojarlos?",
++          "question": "How many years after the novel was published did its author die?",
+           "options": [
+-            "Se atrincheraron en las chozas altas y resistieron al grito ancestral de '¡Ñucanchik huasipungo!'.",
+-            "Abandonaron pacíficamente la sierra para trasladarse a trabajar en los puertos marítimos.",
+-            "Aceptaron una compensación económica y firmaron un acuerdo voluntario de traslado.",
+-            "Se dispersaron en secreto por la noche sin presentar ninguna oposición organizada."
++            "Cuarenta y cuatro años.",
++            "Veinte años.",
++            "Setenta años."
+           ],
+           "correctIndex": 0,
+-          "explanation": "Liderados por Andrés tras el llamado del churo, los comuneros se atrincheraron en la choza alta y defendieron sus tierras ancestrales frente a las tropas."
++          "explanation": "The novel was published in 1934 and the author died in 1978, forty-four years later."
+         }
+       ]
+     }
+   },
+   "author": "Jorge Icaza (Ecuador, 1906–1978)",
+   "work": "Huasipungo (1934)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Jorge Icaza",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "order": 17
+ }
+diff --git a/content/es-latam/stories/classics/b2/b2-18.json b/content/es-latam/stories/classics/b2/b2-18.json
+index 0ac1212c..860b96db 100644
+--- a/content/es-latam/stories/classics/b2/b2-18.json
++++ b/content/es-latam/stories/classics/b2/b2-18.json
+@@ -1,89 +1,90 @@
+ {
+   "id": "story.b2.18.alegria",
+-  "title": "El mundo es ancho y ajeno: La resistencia inmortal de la comunidad de Rumi",
++  "title": "Alegría y El mundo es ancho y ajeno",
+   "level": "B2",
+   "lesson": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Adaptación literaria de nivel B2 de la obra maestra del indigenismo peruano de Ciro Alegría: la vida armónica de la comunidad andina de Rumi bajo el liderazgo de su sabio alcalde Rosendo Maqui, el despojo legal orquestado por el codicioso hacendado Álvaro Amenábar, la muerte de Rosendo en prisión y el regreso de Benito Castro para organizar la defensa final de la tierra comunal.",
+-  "characters": [
+-    "Rosendo Maqui",
+-    "Don Álvaro Amenábar",
+-    "Benito Castro",
+-    "Bismark Ruiz",
+-    "Marguina"
+-  ],
++  "summary": "Texto sobre Ciro Alegría, escritor peruano, y sobre su novela El mundo es ancho y ajeno, que cuenta la historia de una comunidad indígena de los Andes del Perú.",
++  "characters": [],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En las laderas fértiles de los Andes septentrionales del Perú, abrazada por el rumor transparente de las quebradas y el verdor de los trigales, florecía la comunidad indígena de Rumi. Para sus centenares de comuneros, la tierra no era una mercancía que pudiera comprarse o venderse en las ferias coloniales, sino una madre generosa que sus abuelos habían cultivado en hermandad solidaria desde tiempos inmemoriales. Al frente de aquel pueblo laborioso se hallaba el viejo alcalde Rosendo Maqui, un hombre sabio de cabellos plateados, rostro surcado de arrugas venerables y ojos penetrantes que conocía el secreto de las hierbas curativas y conversaba con el espíritu del cerro Rumi."
++      "text": "Ciro Alegría fue un escritor peruano. Nació en 1909 y murió en 1967. Creció en la hacienda de su abuelo y conoció de cerca el mundo indígena, que más tarde aparecería en su novela. En 1941 se publicó su novela *El mundo es ancho y ajeno*."
+     },
+     {
+       "type": "narration",
+-      "text": "El sosiego ancestral de la comunidad se quebró cuando el codicioso hacendado don Álvaro Amenábar de Umay puso sus ojos ambiciosos sobre los valles de Rumi. Amenábar no se conformaba con sus inmensas posesiones ganaderas; requería apoderarse de las tierras fértiles de los comuneros y forzar a sus hombres a trabajar como peones semiesclavos en sus peligrosos lavaderos de oro en las selvas calientes del río Marañón. Amparado en su poder económico y en sus relaciones de compadrazgo político, el hacendado interpuso una fraudulenta demanda de linderos contra Rumi ante el tribunal provincial."
++      "text": "La novela cuenta la historia de Rumi, una comunidad indígena de los Andes del norte del Perú. En la historia hay un líder, el alcalde Rosendo Maqui, y un hacendado poderoso que se queda con las tierras de la comunidad. Una hacienda es una gran propiedad del campo, y el hacendado es su dueño."
+     },
+     {
+       "type": "narration",
+-      "text": "Rosendo Maqui convocó a la asamblea comunal y viajó a la ciudad para contratar al abogado Bismark Ruiz. En el juzgado, el viejo alcalde aseveró con dignidad que la comunidad poseía títulos virreinales sellados por el propio rey de España que acreditaban la propiedad colectiva desde hacía más de tres siglos. Sin embargo, el aparato judicial estaba completamente corrompido: Amenábar sobornó al juez, compró testimonios falsos de testigos perjuros que afirmaban bajo juramento que Rumi pertenecía a la hacienda Umay, e intimidó a los escribanos locales. Pese a que los comuneros rebatieron las calumnias con documentos irrefutables, el tribunal dictó un fallo infame despojando a Rumi de todas sus tierras agrícolas."
++      "text": "El título merece una explicación. Dice que, para los pobres, el mundo es ancho, pero es de otros. En español, *ajeno* significa que pertenece a otra persona. Así, el título habla de un mundo grande que, para los pobres, pertenece a otros. Quien lea el título no podrá negar que se refiere a la pobreza."
+     },
+     {
+       "type": "narration",
+-      "text": "Los comuneros fueron forzados a abandonar sus huertos, sus molinos de trigo y sus casas de adobe. Con lágrimas en los ojos pero con la cabeza erguida, Rosendo Maqui guio a su pueblo hacia las alturas pedregosas y gélidas de Yanañahui, una meseta estéril donde el viento helado calaba los huesos. Allí levantaron nuevas chozas precarias, desafiando a la intemperie y sembrando papas amargas en la roca viva. Pero la saña del hacendado no tenía límites: para desarticular la moral de los campesinos, acusó a Rosendo de liderar un motín sedicioso y lo encarceló en una celda húmeda de la capital provincial, donde el noble anciano murió tras ser salvajemente golpeado por los carceleros."
++      "text": "Los críticos afirman que la novela trata de la pérdida de las tierras de una comunidad indígena. Otros críticos explican que el autor conocía bien ese mundo, porque creció en la hacienda de su abuelo."
+     },
+     {
+       "type": "narration",
+-      "text": "La comunidad parecía condenada a extinguirse entre la dispersión forzada y el desaliento. Desesperados por el hambre, muchos comuneros emigraron a la costa para cortar caña de azúcar en haciendas palúdicas, o marcharon a las minas de carbón donde la tisis pulverizaba los pulmones de los jóvenes. Sin embargo, la esperanza renació con el regreso inesperado de Benito Castro, un comunero adoptado por Rosendo que había recorrido el mundo como soldado y tipógrafo, aprendiendo a leer las leyes y a descifrar los mecanismos de dominación de la sociedad criolla."
++      "text": "Algunos lectores admiten que no conocían la palabra *ajeno* y que tuvieron que buscarla. Un lector que no conozca los Andes podría preguntarse cómo vive una comunidad como Rumi y quién manda en ella. Son buenas preguntas para empezar a leer."
+     },
+     {
+       "type": "narration",
+-      "text": "Elegido como nuevo alcalde por la asamblea comunitaria, Benito proclamó que la huida hacia tierras más altas ya no era una opción viable porque 'el mundo es ancho, pero ajeno para los pobres que no tienen armas ni justicia'. El joven líder enseñó a los comuneros a organizarse militarmente, a colocar centinelas en los desfiladeros y a defender las parcelas que les quedaban frente al avance de los mayordomos y de la policía montada enviada por el prefecto departamental."
++      "text": "Este texto no cuenta la novela. Solo dice de qué trata: de la comunidad de Rumi, de su alcalde y del hacendado que se queda con la tierra. No dice qué hace el alcalde ni cómo termina la historia, porque eso pertenece al libro. Se suele advertir que un resumen no sustituye a la lectura, y por eso aquí hablamos del libro y de su autor, pero no lo contamos."
+     },
+     {
+       "type": "narration",
+-      "text": "La batalla final estalló en los riscos de Yanañahui cuando las tropas gubernamentales atacaron con fusiles Máuser automáticos. Aunque los comuneros resistieron con heroísmo usando hondas, piedras rodantes y viejas escopetas de caza, la superioridad militar de los atacantes se impuso en una masacre desgarradora. Benito Castro cayó mortalmente herido en las rocas mientras contemplaba a su pueblo resistir hasta el último aliento. En esta cumbre de la novela indigenista latinoamericana, Ciro Alegría no solo retrató la tragedia del despojo feudal, sino la dignidad indomable de la comunidad andina, cuyo amor sagrado por la tierra sobrevive a todas las violencias de la historia."
++      "text": "Un último dato: la novela se publicó en 1941, y Alegría murió en 1967, veintiséis años después."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Por qué el hacendado don Álvaro Amenábar interpuso una demanda fraudulenta contra la comunidad de Rumi?",
++          "question": "According to the text, what does the title say?",
++          "options": [
++            "Que, para los pobres, el mundo es ancho, pero es de otros.",
++            "Que el mundo es pequeño para los ricos.",
++            "Que la tierra es de quien la trabaja."
++          ],
++          "correctIndex": 0,
++          "explanation": "The text says that the title says that, for the poor, the world is wide but belongs to others."
++        },
++        {
++          "question": "Who is Rosendo Maqui, according to the text?",
+           "options": [
+-            "Para arrebatarles sus tierras agrícolas y obligar a los comuneros a trabajar como mano de obra en sus minas.",
+-            "Para construir una universidad pedagógica en beneficio de los niños indígenas de la sierra.",
+-            "Porque la comunidad de Rumi había invadido los pastizales ganaderos de la hacienda Umay.",
+-            "Para proteger los bosques andinos de la tala ilegal de madera comercial."
++            "El alcalde, el líder de la comunidad de Rumi.",
++            "Un hacendado poderoso.",
++            "El abuelo del autor."
+           ],
+           "correctIndex": 0,
+-          "explanation": "Amenábar ambicionaba las ricas tierras de Rumi y necesitaba mano de obra barata forzada para sus lavaderos de oro en el río Marañón."
++          "explanation": "The text says that the community has a leader, the mayor (alcalde) Rosendo Maqui."
+         },
+         {
+-          "question": "¿Qué destino sufrió el sabio alcalde Rosendo Maqui tras el despojo de las tierras comunales?",
++          "question": "According to the text, why did Alegría know the indigenous world well?",
+           "options": [
+-            "Fue encarcelado injustamente bajo falsas acusaciones de sedición y murió a causa de los golpes recibidos en prisión.",
+-            "Se convirtió en hacendado próspero y compró parcelas agrícolas en la costa norte.",
+-            "Emigró a Europa para estudiar jurisprudencia en la Universidad de París.",
+-            "Fue nombrado juez de primera instancia por el prefecto del departamento."
++            "Porque creció en la hacienda de su abuelo.",
++            "Porque fue alcalde de una comunidad.",
++            "Porque vivió en Rumi de adulto."
+           ],
+           "correctIndex": 0,
+-          "explanation": "Rosendo fue apresado con calumnias tras el traslado a Yanañahui y falleció en su celda debido a los maltratos de los carceleros."
++          "explanation": "The text says that he grew up on his grandfather's estate and knew the indigenous world closely."
+         },
+         {
+-          "question": "¿Qué lección fundamental transmitió Benito Castro a la comunidad tras regresar de sus viajes?",
++          "question": "How many years passed between the publication of the novel and the death of its author?",
+           "options": [
+-            "Que el mundo era ancho pero ajeno para los desposeídos, y que debían defender la tierra con organización y firmeza.",
+-            "Que los campesinos debían abandonar la agricultura para dedicarse al comercio de telas importadas.",
+-            "Que el hacendado tenía el derecho divino de administrar todas las montañas del Perú.",
+-            "Que la solución residía en aceptar pacíficamente la servidumbre feudal de la hacienda."
++            "Veintiséis años.",
++            "Diez años.",
++            "Cuarenta años."
+           ],
+           "correctIndex": 0,
+-          "explanation": "Benito sintetizó el título de la novela advirtiendo que el mundo era ancho pero ajeno para los campesinos sin tierras, liderando la resistencia armada."
++          "explanation": "The novel was published in 1941 and the author died in 1967, twenty-six years later."
+         }
+       ]
+     }
+   },
+   "author": "Ciro Alegría (Perú, 1909–1967)",
+   "work": "El mundo es ancho y ajeno (1941)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Ciro Alegría",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "order": 18
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-17-01-voc.json b/content/es-latam/vocabulary/b2/b2-17-01-voc.json
+index c62fa36d..18540658 100644
+--- a/content/es-latam/vocabulary/b2/b2-17-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-17-01-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.17.01",
+   "lesson": "b2-17-01",
+-  "title": "Verbos introductorios y traslación de asertos",
+-  "theme": "Léxico de comunicación indirecta, testimonio y aserción",
++  "title": "Words for what is still true",
++  "theme": "Passing on what was said",
+   "words": [
+     {
+-      "lemma": "afirmar",
+-      "translation": "to assert, to affirm",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "declarar",
+-      "translation": "to declare, to state formally",
+-      "pos": "verb"
++      "lemma": "aún",
++      "translation": "still, yet",
++      "pos": "adverb"
+     },
+     {
+-      "lemma": "comunicado",
+-      "translation": "official communique, statement",
+-      "pos": "noun"
++      "lemma": "vigente",
++      "translation": "still valid, in force",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "testimonio",
+-      "translation": "testimony, witness account",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "correlación",
+-      "translation": "tense correlation, concordance",
+-      "pos": "noun"
++      "lemma": "cumplirse",
++      "translation": "to come true, to be fulfilled",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "anterioridad",
+-      "translation": "anteriority, prior occurrence",
+-      "pos": "noun"
++      "lemma": "quedar en",
++      "translation": "to agree to, to arrange to",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-17-02-voc.json b/content/es-latam/vocabulary/b2/b2-17-02-voc.json
+index 7c44adec..32101590 100644
+--- a/content/es-latam/vocabulary/b2/b2-17-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-17-02-voc.json
+@@ -1,37 +1,27 @@
+ {
+   "id": "vocab.b2.17.02",
+   "lesson": "b2-17-02",
+-  "title": "Preguntas indirectas e indagación en pasado",
+-  "theme": "Léxico de interrogación, indagación judicial y diplomática",
++  "title": "Words for asking and wondering",
++  "theme": "Questions, doubts and wondering",
+   "words": [
+     {
+-      "lemma": "indagar",
+-      "translation": "to investigate, to inquire into",
++      "lemma": "preguntarse",
++      "translation": "to wonder",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "inquirir",
+-      "translation": "to inquire, to ask formally",
++      "lemma": "desconocer",
++      "translation": "not to know, to be unaware of",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "cuestionario",
+-      "translation": "questionnaire, survey",
++      "lemma": "el interrogante",
++      "translation": "open question",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "deliberación",
+-      "translation": "deliberation, debate",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "averiguación",
+-      "translation": "fact-finding investigation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "esclarecer",
+-      "translation": "to clarify, to shed light on",
++      "lemma": "aclarar",
++      "translation": "to make clear, to clear up",
+       "pos": "verb"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-17-03-voc.json b/content/es-latam/vocabulary/b2/b2-17-03-voc.json
+index e7ac8ccc..9756919c 100644
+--- a/content/es-latam/vocabulary/b2/b2-17-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-17-03-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.17.03",
+   "lesson": "b2-17-03",
+-  "title": "Mandatos, peticiones y prohibiciones en estilo indirecto",
+-  "theme": "Léxico de directrices, órdenes institucionales y requerimientos",
++  "title": "Words for requests and demands",
++  "theme": "Asking people to do things",
+   "words": [
+-    {
+-      "lemma": "exigir",
+-      "translation": "to demand, to require strictly",
+-      "pos": "verb"
+-    },
+     {
+       "lemma": "suplicar",
+-      "translation": "to plead, to beg",
++      "translation": "to beg",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "prohibición",
+-      "translation": "prohibition, ban",
+-      "pos": "noun"
++      "lemma": "encargar",
++      "translation": "to ask someone to take care of something",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "mandato",
+-      "translation": "mandate, official command",
+-      "pos": "noun"
++      "lemma": "reclamar",
++      "translation": "to demand, to claim",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "requerimiento",
+-      "translation": "formal injunction, summons",
++      "lemma": "el encargo",
++      "translation": "errand, request",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "instar",
+-      "translation": "to urge, to press strongly",
+-      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-17-04-voc.json b/content/es-latam/vocabulary/b2/b2-17-04-voc.json
+index f77a13b1..78f508e7 100644
+--- a/content/es-latam/vocabulary/b2/b2-17-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-17-04-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.17.04",
+   "lesson": "b2-17-04",
+-  "title": "Traslación de deícticos temporales y espaciales",
+-  "theme": "Léxico de coordenadas temporales, espaciales y contextuales",
++  "title": "Words for time and place when retelling",
++  "theme": "Before, after, here and there",
+   "words": [
+     {
+-      "lemma": "deíctico",
+-      "translation": "deictic, context-dependent pointer",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "coordenada",
+-      "translation": "coordinate, spatial/temporal frame",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "advenimiento",
+-      "translation": "arrival, advent of an event",
++      "lemma": "la víspera",
++      "translation": "the day before",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "proximidad",
+-      "translation": "proximity, closeness",
+-      "pos": "noun"
++      "lemma": "acá",
++      "translation": "here",
++      "pos": "adverb"
+     },
+     {
+-      "lemma": "distanciamiento",
+-      "translation": "distancing, temporal displacement",
+-      "pos": "noun"
++      "lemma": "allá",
++      "translation": "there",
++      "pos": "adverb"
+     },
+     {
+-      "lemma": "enunciación",
+-      "translation": "enunciation, act of speaking",
+-      "pos": "noun"
++      "lemma": "a la mañana siguiente",
++      "translation": "the next morning",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-17-05-voc.json b/content/es-latam/vocabulary/b2/b2-17-05-voc.json
+index 92afbcf4..cda471e8 100644
+--- a/content/es-latam/vocabulary/b2/b2-17-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-17-05-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.17.05",
+   "lesson": "b2-17-05",
+-  "title": "Discurso indirecto libre y polifonía narrativa",
+-  "theme": "Léxico de técnica literaria, focalización y conciencia narrativa",
++  "title": "Words for talking about narration",
++  "theme": "Narrator, thoughts and doubts",
+   "words": [
+     {
+-      "lemma": "polifonía",
+-      "translation": "polyphony, coexistence of voices",
++      "lemma": "el narrador",
++      "translation": "narrator",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "monólogo",
+-      "translation": "monologue, interior reflection",
++      "lemma": "la exclamación",
++      "translation": "exclamation",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "focalización",
+-      "translation": "narrative focalization, viewpoint",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "conciencia",
+-      "translation": "consciousness, internal mind",
+-      "pos": "noun"
++      "lemma": "inquieto",
++      "translation": "restless, worried",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "fluctuar",
+-      "translation": "to fluctuate, to oscillate",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "verosimilitud",
+-      "translation": "verisimilitude, realism",
+-      "pos": "noun"
++      "lemma": "darle vueltas a",
++      "translation": "to keep thinking about",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-18-01-voc.json b/content/es-latam/vocabulary/b2/b2-18-01-voc.json
+index 64d49ae8..52fb8030 100644
+--- a/content/es-latam/vocabulary/b2/b2-18-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-18-01-voc.json
+@@ -1,37 +1,27 @@
+ {
+   "id": "vocab.b2.18.01",
+   "lesson": "b2-18-01",
+-  "title": "Verbos declarativos y aseverativos formales",
+-  "theme": "Léxico de aseveración categórica, argumentación formal y rigor discursivo",
++  "title": "Words for pointing out and stressing",
++  "theme": "How something is said",
+   "words": [
+     {
+-      "lemma": "aseverar",
+-      "translation": "to assert firmly, to state as factual",
++      "lemma": "señalar",
++      "translation": "to point out",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "sostener",
+-      "translation": "to maintain, to argue a position",
++      "lemma": "precisar",
++      "translation": "to specify",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "puntualizar",
+-      "translation": "to point out, to specify in detail",
++      "lemma": "agregar",
++      "translation": "to add",
+       "pos": "verb"
+     },
+     {
+       "lemma": "recalcar",
+-      "translation": "to emphasize, to stress repeatedly",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "constatar",
+-      "translation": "to verify, to establish as fact",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "manifestar",
+-      "translation": "to express, to state publicly",
++      "translation": "to stress, to emphasise",
+       "pos": "verb"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-18-02-voc.json b/content/es-latam/vocabulary/b2/b2-18-02-voc.json
+index f58e6950..90cee64d 100644
+--- a/content/es-latam/vocabulary/b2/b2-18-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-18-02-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.18.02",
+   "lesson": "b2-18-02",
+-  "title": "Verbos de disputa, refutación y desmentido",
+-  "theme": "Léxico de controversia judicial, debate parlamentario y réplica dialéctica",
++  "title": "Words for disagreeing",
++  "theme": "Contradicting and objecting",
+   "words": [
+     {
+-      "lemma": "desmentir",
+-      "translation": "to deny formally, to debunk rumors",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "refutar",
+-      "translation": "to refute, to disprove with evidence",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "impugnar",
+-      "translation": "to contest, to challenge legally",
++      "lemma": "contradecir",
++      "translation": "to contradict",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "rebatir",
+-      "translation": "to rebut, to counter an argument",
++      "lemma": "replicar",
++      "translation": "to answer back, to reply",
+       "pos": "verb"
+     },
+     {
+       "lemma": "objetar",
+-      "translation": "to object, to raise an exception",
++      "translation": "to object",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "contradecir",
+-      "translation": "to contradict, to oppose a claim",
+-      "pos": "verb"
++      "lemma": "oponerse a",
++      "translation": "to oppose",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-18-03-voc.json b/content/es-latam/vocabulary/b2/b2-18-03-voc.json
+index 404a912b..439759bb 100644
+--- a/content/es-latam/vocabulary/b2/b2-18-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-18-03-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.18.03",
+   "lesson": "b2-18-03",
+-  "title": "Verbos de advertencia, prevención y recordatorio",
+-  "theme": "Léxico de previsión de riesgos, cautela institucional y recomendaciones",
++  "title": "Words for warnings and reminders",
++  "theme": "Alerting and reminding",
+   "words": [
+-    {
+-      "lemma": "advertir",
+-      "translation": "to warn, to caution of danger",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "prevenir",
+-      "translation": "to forewarn, to take preventive measures",
+-      "pos": "verb"
+-    },
+     {
+       "lemma": "alertar",
+-      "translation": "to alert, to raise a flag",
++      "translation": "to alert",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "recordar",
+-      "translation": "to remind of an existing obligation",
+-      "pos": "verb"
++      "lemma": "el recordatorio",
++      "translation": "reminder",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "conminar",
+-      "translation": "to summon formally under threat of penalty",
+-      "pos": "verb"
++      "lemma": "la amenaza",
++      "translation": "threat",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "apercibir",
+-      "translation": "to give official admonition/notice",
+-      "pos": "verb"
++      "lemma": "cuidarse de",
++      "translation": "to watch out for",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-18-04-voc.json b/content/es-latam/vocabulary/b2/b2-18-04-voc.json
+index 7b00955a..0832380d 100644
+--- a/content/es-latam/vocabulary/b2/b2-18-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-18-04-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.18.04",
+   "lesson": "b2-18-04",
+-  "title": "Verbos de reproche, censura y crítica discursiva",
+-  "theme": "Léxico de denuncia social, crítica política y reprobación ética",
++  "title": "Words for blaming and complaining",
++  "theme": "Blame and reproach",
+   "words": [
+     {
+-      "lemma": "reprochar",
+-      "translation": "to reproach, to blame for an error",
++      "lemma": "culpar",
++      "translation": "to blame",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "censurar",
+-      "translation": "to censure, to condemn publicly",
++      "lemma": "acusar",
++      "translation": "to accuse",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "recriminar",
+-      "translation": "to recriminate, to counter-blame",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "cuestionar",
+-      "translation": "to question, to dispute integrity",
+-      "pos": "verb"
++      "lemma": "echar en cara",
++      "translation": "to throw in someone’s face",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "denunciar",
+-      "translation": "to denounce, to expose wrongdoing",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "increpar",
+-      "translation": "to scold sharply, to call out angrily",
+-      "pos": "verb"
++      "lemma": "la queja",
++      "translation": "complaint",
++      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-18-05-voc.json b/content/es-latam/vocabulary/b2/b2-18-05-voc.json
+index d666b709..da44df8b 100644
+--- a/content/es-latam/vocabulary/b2/b2-18-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-18-05-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.18.05",
+   "lesson": "b2-18-05",
+-  "title": "Verbos de conjetura, sospecha y distanciamiento epistémico",
+-  "theme": "Léxico de cautela periodística, hipótesis forenses y no-compromiso asertivo",
++  "title": "Words for reporting from a distance",
++  "theme": "Apparently, allegedly",
+   "words": [
+     {
+-      "lemma": "conjeturar",
+-      "translation": "to conjecture, to surmise",
+-      "pos": "verb"
++      "lemma": "supuestamente",
++      "translation": "allegedly, supposedly",
++      "pos": "adverb"
+     },
+     {
+-      "lemma": "sospechar",
+-      "translation": "to suspect, to infer with doubt",
+-      "pos": "verb"
++      "lemma": "al parecer",
++      "translation": "apparently",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "insinuar",
+-      "translation": "to insinuate, to hint subtly",
+-      "pos": "verb"
++      "lemma": "presunto",
++      "translation": "alleged",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "presumir",
+-      "translation": "to presume, to take for granted tentatively",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "especular",
+-      "translation": "to speculate without full certainty",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "alegar",
+-      "translation": "to claim/allege without endorsement",
+-      "pos": "verb"
++      "lemma": "dar a entender",
++      "translation": "to imply, to give to understand",
++      "pos": "expression"
+     }
+   ]
+ }
