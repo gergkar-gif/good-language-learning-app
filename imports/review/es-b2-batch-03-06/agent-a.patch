@@ -1,0 +1,4306 @@
+diff --git a/content/es-latam/exercises/b2/b2-03-01-ex.json b/content/es-latam/exercises/b2/b2-03-01-ex.json
+index f6823cc7..13921212 100644
+--- a/content/es-latam/exercises/b2/b2-03-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-03-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la conjetura",
+-          "conjecture, guess"
++          "adivinar",
++          "to guess"
+         ],
+         [
+-          "plausible",
+-          "plausible"
++          "acertar",
++          "to guess right, to get it right"
+         ],
+         [
+-          "inverosímil",
+-          "improbable, unbelievable"
++          "la corazonada",
++          "hunch"
+         ],
+         [
+-          "corroborar",
+-          "to corroborate, to confirm"
++          "el pronóstico",
++          "forecast"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-03-01.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál de las siguientes oraciones es gramaticalmente correcta según las reglas modales del español culto?",
++      "question": "Maybe Lucía will arrive late. Which sentence says this correctly?",
+       "options": [
+-        "A lo mejor el embajador llega a tiempo para la ceremonia de apertura.",
+-        "A lo mejor el embajador llegue a tiempo para la ceremonia de apertura.",
+-        "A lo mejor el embajador llegara a tiempo para la ceremonia de apertura."
++        "Puede que Lucía llegue tarde.",
++        "Puede que Lucía llega tarde.",
++        "A lo mejor Lucía llegue tarde."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -46,10 +46,10 @@
+       "id": "b2-03-01.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Tal vez el comité consultivo __ conveniente revisar el protocolo de seguridad.",
+-      "hint": "considerar - subjunctive",
+-      "answer": "considere",
+-      "english": "Perhaps the advisory committee considers it convenient to review the safety protocol.",
++      "sentence": "Puede que Lucía ya __ en casa.",
++      "hint": "estar, she",
++      "answer": "esté",
++      "english": "Lucía may already be at home.",
+       "teaches": [
+         "subjunctive-doubt"
+       ]
+@@ -63,20 +63,20 @@
+         "lo",
+         "mejor",
+         "ya",
+-        "descubrieron",
+-        "el",
+-        "motivo."
++        "salieron",
++        "de",
++        "casa."
+       ],
+       "solution": [
+         "A",
+         "lo",
+         "mejor",
+         "ya",
+-        "descubrieron",
+-        "el",
+-        "motivo."
++        "salieron",
++        "de",
++        "casa."
+       ],
+-      "english": "Maybe they already discovered the motive.",
++      "english": "Maybe they have already left home.",
+       "teaches": [
+         "subjunctive-doubt"
+       ]
+@@ -87,22 +87,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Fiscal",
+-          "text": "¿Qué tan verosímil considera la coartada presentada por el acusado?"
++          "speaker": "Ana",
++          "text": "¿Crees que Marta viene a la fiesta?"
+         },
+         {
+-          "speaker": "Perito",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Fiscal",
+-          "text": "En ese caso, debemos recabar testimonios adicionales."
++          "speaker": "Ana",
++          "text": "Bueno, vamos a esperar un poco."
+         }
+       ],
+       "options": [
+-        "Quizás haya elementos ciertos, pero la cronología de los hechos resulta inverosímil.",
+-        "El código penal fue promulgado hace más de cincuenta años en la república.",
+-        "Ayer compramos varias carpetas de archivo en la papelería central."
++        "No sé, tal vez venga si termina el trabajo.",
++        "No sé, a lo mejor venga si termina el trabajo.",
++        "No sé, tal vez vienes si termina el trabajo."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -113,8 +113,8 @@
+       "id": "b2-03-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "A lo mejor los peritos encuentran nuevos indicios que permitan esclarecer el enigma.",
+-      "english": "Maybe the forensics experts will find new clues that allow clearing up the enigma.",
++      "sentence": "A lo mejor Marta se quedó dormida y por eso no contesta.",
++      "english": "Maybe Marta fell asleep and that is why she is not answering.",
+       "teaches": [
+         "subjunctive-doubt"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-03-02-ex.json b/content/es-latam/exercises/b2/b2-03-02-ex.json
+index e8827b42..aefcc299 100644
+--- a/content/es-latam/exercises/b2/b2-03-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-03-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "descartar",
+-          "to rule out, to dismiss"
++          "suponer",
++          "to suppose, to assume"
+         ],
+         [
+-          "factible",
+-          "feasible, doable"
++          "descartar",
++          "to rule out"
+         ],
+         [
+-          "indudable",
+-          "undoubted, unmistakable"
++          "dudoso",
++          "doubtful"
+         ],
+         [
+-          "la premisa",
+-          "premise"
++          "la certeza",
++          "certainty"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-03-02.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué modo verbal exige la matriz 'Cabe la posibilidad de que'?",
++      "question": "Which sentence is correct Spanish?",
+       "options": [
+-        "Subjuntivo, porque denota una hipótesis o posibilidad no confirmada.",
+-        "Indicativo, porque afirma un hecho factual evidente.",
+-        "Imperativo, porque imparte una instrucción judicial obligatoria."
++        "Es evidente que Pablo tiene razón.",
++        "Es evidente que Pablo tenga razón.",
++        "No es evidente que Pablo tiene razón."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -46,10 +46,10 @@
+       "id": "b2-03-02.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Es muy probable que la junta directiva __ la propuesta de fusión empresarial.",
+-      "hint": "aprobar",
+-      "answer": "apruebe",
+-      "english": "It is very probable that the board of directors will approve the business merger proposal.",
++      "sentence": "Es probable que Lucía __ la verdad.",
++      "hint": "saber, she",
++      "answer": "sepa",
++      "english": "It is probable that Lucía knows the truth.",
+       "teaches": [
+         "subjunctive-doubt"
+       ]
+@@ -59,24 +59,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Cabe",
+-        "la",
+-        "posibilidad",
+-        "de",
++        "No",
++        "es",
++        "seguro",
+         "que",
+         "hayan",
+-        "escapado."
++        "salido",
++        "todavía."
+       ],
+       "solution": [
+-        "Cabe",
+-        "la",
+-        "posibilidad",
+-        "de",
++        "No",
++        "es",
++        "seguro",
+         "que",
+         "hayan",
+-        "escapado."
++        "salido",
++        "todavía."
+       ],
+-      "english": "There is a possibility that they have escaped.",
++      "english": "It is not certain that they have left yet.",
+       "teaches": [
+         "subjunctive-doubt"
+       ]
+@@ -87,22 +87,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Médica",
+-          "text": "¿Descarta usted que el paciente haya contraído el virus en el laboratorio?"
++          "speaker": "Ana",
++          "text": "¿Pablo va a venir a la cena?"
+         },
+         {
+-          "speaker": "Epidemiólogo",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Médica",
+-          "text": "En ese caso, debemos mantener el cerco sanitario estricto."
++          "speaker": "Ana",
++          "text": "Entonces cenamos sin él."
+         }
+       ],
+       "options": [
+-        "No descarto nada; es sumamente probable que el contagio se haya producido allí.",
+-        "El hospital cuenta con trescientas camas de hospitalización general.",
+-        "Las vacunas suelen distribuirse de forma gratuita en los centros de salud."
++        "No es seguro; es probable que tenga trabajo.",
++        "No es seguro; es probable que tiene trabajo.",
++        "No es seguro; es evidente que tenga trabajo."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -113,8 +113,8 @@
+       "id": "b2-03-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Es poco probable que los acreedores acepten una reestructuración de la deuda sin garantías.",
+-      "english": "It is unlikely that the creditors will accept a debt restructuring without guarantees.",
++      "sentence": "No descarto nada, pero es dudoso que lleguen antes de las nueve.",
++      "english": "I am not ruling anything out, but it is doubtful that they will arrive before nine.",
+       "teaches": [
+         "subjunctive-doubt"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-03-03-ex.json b/content/es-latam/exercises/b2/b2-03-03-ex.json
+index 812a5444..fbdaa62a 100644
+--- a/content/es-latam/exercises/b2/b2-03-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-03-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "averiguar",
+-          "to find out, to ascertain"
++          "calcular",
++          "to work out, to estimate"
+         ],
+         [
+-          "deducir",
+-          "to deduce, to infer"
++          "a juzgar por",
++          "judging by"
+         ],
+         [
+-          "presunto",
+-          "alleged, presumed"
++          "el aspecto",
++          "appearance, look"
+         ],
+         [
+-          "el rastro",
+-          "trail, trace"
++          "tardar",
++          "to take a long time, to be late"
+         ]
+       ],
+       "teaches": [
+@@ -31,27 +31,31 @@
+       "id": "b2-03-03.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué significado tiene 'Estará en su despacho' en respuesta a '¿Dónde está el decano?'?",
++      "question": "Pablo is not at home. Which sentence guesses where he is now?",
+       "options": [
+-        "Supongo o conjeturo que probablemente se encuentra en su despacho ahora.",
+-        "Irá físicamente a su despacho dentro de dos horas.",
+-        "Tiene la obligación legal de permanecer en su despacho."
++        "Estará en la oficina.",
++        "Estaba en la oficina.",
++        "Estuvo en la oficina."
+       ],
+       "correct": 0,
+       "teaches": [
+         "future-probability"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "imperfect",
++        "2": "preterito-indefinido"
++      }
+     },
+     {
+       "id": "b2-03-03.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "No contesta el teléfono; se __ quedado dormido tras el largo viaje.",
+-      "hint": "haber - future conjecture",
++      "sentence": "Marta no contesta; ya __ salido de casa.",
++      "hint": "haber, she",
+       "answer": "habrá",
+-      "english": "He doesn't answer the phone; he must have fallen asleep after the long journey.",
++      "english": "Marta is not answering; she has probably already left home.",
+       "teaches": [
+-        "future-probability"
++        "futuro-perfecto"
+       ]
+     },
+     {
+@@ -59,26 +63,28 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "¿Quién",
+-        "será",
+-        "a",
+-        "estas",
+-        "horas",
+-        "de",
+-        "la",
+-        "noche?"
++        "A",
++        "juzgar",
++        "por",
++        "su",
++        "aspecto,",
++        "tendrá",
++        "unos",
++        "cuarenta",
++        "años."
+       ],
+       "solution": [
+-        "¿Quién",
+-        "será",
+-        "a",
+-        "estas",
+-        "horas",
+-        "de",
+-        "la",
+-        "noche?"
++        "A",
++        "juzgar",
++        "por",
++        "su",
++        "aspecto,",
++        "tendrá",
++        "unos",
++        "cuarenta",
++        "años."
+       ],
+-      "english": "Who could it be at these hours of the night?",
++      "english": "Judging by his appearance, he is probably about forty.",
+       "teaches": [
+         "future-probability"
+       ]
+@@ -89,34 +95,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Investigador",
+-          "text": "¿Por qué no se presentó el testigo clave a la audiencia de hoy?"
++          "speaker": "Ana",
++          "text": "¿Por qué tarda tanto Pablo?"
+         },
+         {
+-          "speaker": "Ayudante",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Investigador",
+-          "text": "Es lo más probable; enviaremos a alguien a verificar su domicilio."
++          "speaker": "Ana",
++          "text": "Sí, a esta hora hay mucho tráfico."
+         }
+       ],
+       "options": [
+-        "Habrá recibido amenazas o tendrá temor a represalias de la banda.",
+-        "El tribunal sesiona de lunes a viernes en el palacio de justicia.",
+-        "El testigo declaró el año pasado ante un juez de instrucción."
++        "No sé; habrá encontrado mucho tráfico.",
++        "No sé; encontró mucho tráfico.",
++        "No sé; habrás encontrado mucho tráfico."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "future-probability"
+-      ]
++        "futuro-perfecto"
++      ],
++      "distractor_skills": {
++        "1": "preterito-indefinido"
++      }
+     },
+     {
+       "id": "b2-03-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Tendrá sus razones para guardar silencio, pero su actitud despierta muchas sospechas.",
+-      "english": "He must have his reasons for keeping silent, but his attitude arouses many suspicions.",
++      "sentence": "Calculo que serán las nueve y media.",
++      "english": "I reckon it is about half past nine.",
+       "teaches": [
+         "future-probability"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-03-04-ex.json b/content/es-latam/exercises/b2/b2-03-04-ex.json
+index bc7b369a..9a2dc25f 100644
+--- a/content/es-latam/exercises/b2/b2-03-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-03-04-ex.json
+@@ -8,19 +8,19 @@
+       "pairs": [
+         [
+           "rondar",
+-          "to hover around, to be around"
++          "to be around (an age or a figure)"
+         ],
+         [
+-          "la incertidumbre",
+-          "uncertainty"
++          "la madrugada",
++          "early hours of the morning"
+         ],
+         [
+-          "constatar",
+-          "to verify, to confirm"
++          "la incertidumbre",
++          "uncertainty"
+         ],
+         [
+-          "el móvil",
+-          "motive (of a crime)"
++          "quién sabe",
++          "who knows"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +31,29 @@
+       "id": "b2-03-04.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué expresa el condicional en 'En aquel entonces el coronel tendría unos cincuenta años'?",
++      "question": "When I looked out of the window, it was probably about six. Which sentence says this?",
+       "options": [
+-        "Conjetura o cálculo aproximado sobre una situación en el pasado.",
+-        "Una acción futura que dependía de una condición no cumplida.",
+-        "Un deseo cortés formulado ante una autoridad militar."
++        "Cuando miré por la ventana, serían las seis.",
++        "Cuando miré por la ventana, serán las seis.",
++        "Cuando miré por la ventana, eran las seis."
+       ],
+       "correct": 0,
+       "teaches": [
+         "future-probability"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "futuro-simple",
++        "2": "imperfect"
++      }
+     },
+     {
+       "id": "b2-03-04.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Cuando los vecinos salieron a la plaza, __ las cuatro de la madrugada.",
+-      "hint": "ser - conditional of past conjecture",
++      "sentence": "Cuando llegamos a casa, __ las tres de la madrugada.",
++      "hint": "ser, it",
+       "answer": "serían",
+-      "english": "When the neighbors came out into the square, it must have been four in the morning.",
++      "english": "When we got home it was probably about three in the morning.",
+       "teaches": [
+         "future-probability"
+       ]
+@@ -59,22 +63,22 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "¿Quién",
+-        "sabría",
+-        "entonces",
+-        "la",
+-        "verdadera",
+-        "historia?"
++        "¿Por",
++        "qué",
++        "nadie",
++        "lo",
++        "impediría",
++        "entonces?"
+       ],
+       "solution": [
+-        "¿Quién",
+-        "sabría",
+-        "entonces",
+-        "la",
+-        "verdadera",
+-        "historia?"
++        "¿Por",
++        "qué",
++        "nadie",
++        "lo",
++        "impediría",
++        "entonces?"
+       ],
+-      "english": "Who could have known the true story back then?",
++      "english": "Why did nobody stop it then, I wonder?",
+       "teaches": [
+         "future-probability"
+       ]
+@@ -85,34 +89,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Cronista",
+-          "text": "¿A qué hora exacta ocurrieron los trágicos sucesos?"
++          "speaker": "Ana",
++          "text": "¿Cuántos años tenía el vecino?"
+         },
+         {
+-          "speaker": "Vecino",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Cronista",
+-          "text": "Esa franja horaria coincide con los testimonios del panadero."
++          "speaker": "Ana",
++          "text": "Entonces ya era mayor."
+         }
+       ],
+       "options": [
+-        "Serían las seis y media cuando Santiago Nasar bajó hacia el muelle del puerto.",
+-        "El puerto fluvial fue construido por ingenieros holandeses hace dos siglos.",
+-        "Los lunes por la mañana siempre hay mercado de pescado fresco en la dársena."
++        "Quién sabe; rondaría los sesenta.",
++        "Quién sabe; rondará los sesenta.",
++        "Quién sabe; rondarías los sesenta."
+       ],
+       "correct": 0,
+       "teaches": [
+         "future-probability"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-03-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Nadie pudo precisar cuánto dinero llevaría la víctima en la cartera aquella fatídica noche.",
+-      "english": "No one could specify how much money the victim must have been carrying in his wallet that fateful night.",
++      "sentence": "Serían las tres de la madrugada cuando alguien llamó a la puerta.",
++      "english": "It was probably about three in the morning when someone knocked at the door.",
+       "teaches": [
+         "future-probability"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-03-05-ex.json b/content/es-latam/exercises/b2/b2-03-05-ex.json
+index 1aab24c4..6bd85363 100644
+--- a/content/es-latam/exercises/b2/b2-03-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-03-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "presumiblemente",
+-          "presumably"
++          "seguramente",
++          "most likely"
+         ],
+         [
+-          "fehaciente",
+-          "reliable, irrefutable"
++          "sin duda",
++          "without doubt"
+         ],
+         [
+-          "tajante",
+-          "blunt, categorical"
++          "por lo visto",
++          "apparently"
+         ],
+         [
+-          "disipar",
+-          "to dispel, to dissipate"
++          "el matiz",
++          "nuance, shade of meaning"
+         ]
+       ],
+       "teaches": [
+@@ -30,26 +30,26 @@
+     {
+       "id": "b2-03-05.ex02",
+       "type": "multiple-choice",
+-      "category": "grammar",
+-      "question": "¿Qué función cumple 'presumiblemente' en 'El manuscrito fue redactado presumiblemente en el siglo dieciocho'?",
++      "category": "vocabulary",
++      "question": "Which sentence says that the speaker is sure?",
+       "options": [
+-        "Atenúa la afirmación indicando una deducción verosímil sin certeza absoluta.",
+-        "Indica una condición indispensable para que el manuscrito exista.",
+-        "Ordena cronológicamente los capítulos del texto."
++        "Sin duda Marta tiene razón.",
++        "Posiblemente Marta tiene razón.",
++        "A lo mejor Marta tiene razón."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "subjunctive-doubt"
++        "b2-hypothesizing-probability-vocab"
+       ]
+     },
+     {
+       "id": "b2-03-05.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Las pruebas presentadas por la fiscalía demostraron de forma __ la culpabilidad del sospechoso.",
+-      "hint": "reliable",
+-      "answer": "fehaciente",
+-      "english": "The evidence presented by the prosecution irrefutably demonstrated the suspect's guilt.",
++      "sentence": "Sin duda, Pablo __ razón en esto.",
++      "hint": "tener, he",
++      "answer": "tiene",
++      "english": "Without doubt, Pablo is right about this.",
+       "teaches": [
+         "subjunctive-doubt"
+       ]
+@@ -59,28 +59,26 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Presumiblemente",
+-        "los",
+-        "fondos",
+-        "fueron",
+-        "desviados",
+-        "hacia",
+-        "el",
+-        "exterior."
++        "Seguramente",
++        "Marta",
++        "ya",
++        "salió",
++        "de",
++        "la",
++        "oficina."
+       ],
+       "solution": [
+-        "Presumiblemente",
+-        "los",
+-        "fondos",
+-        "fueron",
+-        "desviados",
+-        "hacia",
+-        "el",
+-        "exterior."
++        "Seguramente",
++        "Marta",
++        "ya",
++        "salió",
++        "de",
++        "la",
++        "oficina."
+       ],
+-      "english": "Presumably the funds were diverted abroad.",
++      "english": "Marta has most likely left the office already.",
+       "teaches": [
+-        "subjunctive-doubt"
++        "stance-adverbs"
+       ]
+     },
+     {
+@@ -89,36 +87,36 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Catedrático",
+-          "text": "¿Podemos sostener de forma tajante que la hipótesis fue corroborada?"
++          "speaker": "Ana",
++          "text": "¿Pablo ya sabe la noticia?"
+         },
+         {
+-          "speaker": "Doctorando",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Catedrático",
+-          "text": "Una prudencia metodológica ejemplar para su tesis doctoral."
++          "speaker": "Ana",
++          "text": "Entonces no hace falta llamarlo."
+         }
+       ],
+       "options": [
+-        "Conviene ser cautelosos; los datos apuntan en esa dirección, pero aún no contamos con pruebas fehacientes.",
+-        "Ayer compramos una nueva pizarra para el aula magna de la facultad.",
+-        "El semestre universitario concluirá a finales del mes de noviembre."
++        "Sí, sin duda; yo mismo se la di ayer.",
++        "Sí, a lo mejor; yo mismo se la di ayer.",
++        "Sí, quizás; yo mismo se la di ayer."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "subjunctive-doubt"
++        "b2-hypothesizing-probability-vocab"
+       ]
+     },
+     {
+       "id": "b2-03-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Para disipar las sospechas, el consejo directivo presentó un informe con pruebas fehacientes.",
+-      "english": "To dispel suspicions, the board of directors presented a report with irrefutable evidence.",
++      "sentence": "Por lo visto, Pablo cambió de trabajo, pero no sé nada más.",
++      "english": "Apparently Pablo has changed jobs, but I know nothing more.",
+       "teaches": [
+-        "subjunctive-doubt"
++        "stance-adverbs"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-03-consolidation-ex.json b/content/es-latam/exercises/b2/b2-03-consolidation-ex.json
+index b6199a67..71ba56ae 100644
+--- a/content/es-latam/exercises/b2/b2-03-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-03-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la conjetura",
+-          "conjecture, guess"
++          "la corazonada",
++          "hunch"
+         ],
+         [
+           "descartar",
+-          "to rule out, to dismiss"
++          "to rule out"
+         ],
+         [
+-          "presunto",
+-          "alleged, presumed"
++          "seguramente",
++          "most likely"
+         ],
+         [
+-          "fehaciente",
+-          "irrefutable, reliable"
++          "la incertidumbre",
++          "uncertainty"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-03-consolidation.ex02",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "Según el análisis de 'Crónica de una muerte anunciada', ¿qué demuestra la multiplicidad de testimonios recogidos por el narrador?",
++      "question": "According to the text, what do the readers of the novel wonder about?",
+       "options": [
+-        "Que la memoria es un laberinto de versiones contradictorias y conjeturas sobre un destino fatal.",
+-        "Que todos los testigos mintieron deliberadamente ante el juez instructor.",
+-        "Que el crimen se resolvió en menos de veinticuatro horas gracias a pruebas forenses definitivas."
++        "Por qué nadie hace nada para evitar el crimen.",
++        "Quién es el autor del crimen en realidad.",
++        "En qué año se publicó la novela por primera vez."
+       ],
+       "correct": 0
+     },
+@@ -43,27 +43,30 @@
+       "id": "b2-03-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "En la frase 'Serían las seis cuando los hermanos salieron de la tienda', ¿qué expresa el verbo 'serían'?",
++      "question": "Which sentence is correct Spanish?",
+       "options": [
+-        "Cálculo o suposición aproximada sobre la hora en el pasado.",
+-        "Una orden indirecta transmitida en estilo indirecto.",
+-        "Una condición imposible en el presente."
++        "Es probable que los vecinos hayan visto algo.",
++        "Es probable que los vecinos han visto algo.",
++        "Es probable que los vecinos habrán visto algo."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "future-probability"
+-      ]
++        "subjunctive-doubt"
++      ],
++      "distractor_skills": {
++        "2": "futuro-perfecto"
++      }
+     },
+     {
+       "id": "b2-03-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Es muy probable que los peritos judiciales no __ todas las huellas de la escena del crimen.",
+-      "hint": "encontrar",
+-      "answer": "hayan encontrado",
+-      "english": "It is very probable that the forensic experts did not find all the footprints at the crime scene.",
++      "sentence": "Los vecinos no dicen nada; __ miedo.",
++      "hint": "tener, they",
++      "answer": "tendrán",
++      "english": "The neighbours say nothing; they are probably afraid.",
+       "teaches": [
+-        "subjunctive-doubt"
++        "future-probability"
+       ]
+     },
+     {
+@@ -71,10 +74,10 @@
+       "type": "sentence-order",
+       "category": "grammar",
+       "sentences": [
+-        "A lo mejor los vecinos pensaron que se trataba de una broma de carnaval. [Maybe the neighbors thought it was a carnival joke.]",
+-        "Serían las seis de la mañana cuando Santiago Nasar salió de su casa vestido de blanco. [It must have been six in the morning when Santiago Nasar left his house dressed in white.]",
+-        "Cabe la posibilidad de que nadie se atreviera a advertirle del peligro inminente. [There is a possibility that no one dared to warn him of the imminent danger.]",
+-        "El informe forense concluyó que el ataque se produjo de manera fulminante. [The forensic report concluded that the attack took place in a lightning flash.]"
++        "García Márquez nació en 1927 en Aracataca, Colombia. [García Márquez was born in 1927 in Aracataca, Colombia.]",
++        "En 1981 publicó Crónica de una muerte anunciada. [In 1981 he published Crónica de una muerte anunciada.]",
++        "En 1982 ganó el Nobel de Literatura. [In 1982 he won the Nobel Prize in Literature.]",
++        "Murió en 2014 en la Ciudad de México. [He died in 2014 in Mexico City.]"
+       ],
+       "solution": [
+         0,
+@@ -83,8 +86,7 @@
+         3
+       ],
+       "teaches": [
+-        "subjunctive-doubt",
+-        "future-probability"
++        "preterito-indefinido"
+       ]
+     },
+     {
+@@ -93,34 +95,34 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Crítico literario",
+-          "text": "¿Por qué García Márquez utiliza con tanta frecuencia el condicional en la novela?"
++          "speaker": "Profesora",
++          "text": "¿Por qué crees que nadie lo impidió?"
+         },
+         {
+-          "speaker": "Investigadora",
++          "speaker": "Estudiante",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Crítico literario",
+-          "text": "Una técnica narrativa que refuerza la tragedia colectiva."
++          "speaker": "Profesora",
++          "text": "Es una buena hipótesis."
+         }
+       ],
+       "options": [
+-        "Porque le permite reconstruir los sucesos pasados como hipótesis de los testigos en lugar de certezas dogmáticas.",
+-        "Porque el autor desconocía las reglas de conjugación del pretérito indefinido.",
+-        "Porque la historia transcurre en un futuro distante de ciencia ficción."
++        "Es probable que nadie lo creyera de verdad.",
++        "Es probable que nadie lo creía de verdad.",
++        "Es evidente que nadie lo creyera de verdad."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "future-probability"
++        "subjunctive-doubt"
+       ]
+     },
+     {
+       "id": "b2-03-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Presumiblemente, los motivos del crimen nunca quedaron esclarecidos de forma fehaciente.",
+-      "english": "Presumably, the motives of the crime were never irrefutably clarified.",
++      "sentence": "Quizás nadie lo creyera, pero sin duda todos lo sabían.",
++      "english": "Perhaps nobody believed it, but without doubt everybody knew.",
+       "teaches": [
+         "subjunctive-doubt"
+       ]
+@@ -131,12 +133,20 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Escribe una conjetura sobre una situación pasada utilizando el condicional simple de probabilidad y el adverbio 'rondar'.",
+-          "answer": "Cuando comenzó la asamblea, la temperatura en la sala rondaría los cuarenta grados."
++          "prompt": "Say that maybe Ana is ill, using a lo mejor.",
++          "answer": "A lo mejor Ana está enferma."
++        },
++        {
++          "prompt": "Say that Pablo is probably at home, using the future.",
++          "answer": "Pablo estará en casa."
++        },
++        {
++          "prompt": "Say that it is unlikely that they have arrived, using es poco probable que.",
++          "answer": "Es poco probable que hayan llegado."
+         }
+       ],
+       "teaches": [
+-        "future-probability"
++        "b2-hypothesizing-probability-vocab"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-05-01-ex.json b/content/es-latam/exercises/b2/b2-05-01-ex.json
+index 0374cca4..92d9ef6d 100644
+--- a/content/es-latam/exercises/b2/b2-05-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-05-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el postulado",
+-          "postulate, premise"
++          "convencer",
++          "to convince"
+         ],
+         [
+-          "la aseveración",
+-          "assertion, claim"
++          "equivocarse",
++          "to be wrong, to make a mistake"
+         ],
+         [
+-          "inverosímil",
+-          "unlikely, implausible"
++          "la creencia",
++          "belief"
+         ],
+         [
+-          "falaz",
+-          "fallacious, misleading"
++          "dar por hecho",
++          "to take for granted"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-05-01.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué se utiliza el subjuntivo en 'No creemos que esa teoría explique la complejidad del fenómeno'?",
++      "question": "Which sentence means \"I don't think the plan is good\"?",
+       "options": [
+-        "Porque la negación de la matriz de creencia ('no creemos') suspende la aserción de la proposición subordinada.",
+-        "Porque 'explicar' es un verbo intransitivo que rechaza el indicativo.",
+-        "Porque la oración expresa un mandato indirecto a los científicos."
++        "No creo que el plan sea bueno.",
++        "No creo que el plan es bueno.",
++        "Creo que el plan sea bueno."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -46,10 +46,10 @@
+       "id": "b2-05-01.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La historiadora no opina que el cambio político __ de un día para otro.",
+-      "hint": "ocurrir",
+-      "answer": "ocurra",
+-      "english": "The historian does not believe that the political change happens overnight.",
++      "sentence": "No me parece que Ana __ razón.",
++      "hint": "tener, she",
++      "answer": "tenga",
++      "english": "It does not seem to me that Ana is right.",
+       "teaches": [
+         "opinion-verbs-mood"
+       ]
+@@ -59,24 +59,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "No",
+-        "consideramos",
++        "Creo",
+         "que",
+-        "esa",
+-        "postura",
+-        "sea",
+-        "sostenible."
++        "no",
++        "es",
++        "una",
++        "buena",
++        "idea."
+       ],
+       "solution": [
+-        "No",
+-        "consideramos",
++        "Creo",
+         "que",
+-        "esa",
+-        "postura",
+-        "sea",
+-        "sostenible."
++        "no",
++        "es",
++        "una",
++        "buena",
++        "idea."
+       ],
+-      "english": "We do not consider that that position is tenable.",
++      "english": "I think it is not a good idea.",
+       "teaches": [
+         "opinion-verbs-mood"
+       ]
+@@ -87,22 +87,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Profesor",
+-          "text": "¿Crees que la hipótesis del autor sobre el colapso social está suficientemente fundamentada?"
++          "speaker": "Ana",
++          "text": "¿Vienen Pablo y Marta a la cena?"
+         },
+         {
+-          "speaker": "Estudiante de maestría",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Profesor",
+-          "text": "Coincido plenamente; sus premisas se apoyan en una muestra demasiado reducida."
++          "speaker": "Ana",
++          "text": "Entonces cenamos nosotras solas."
+         }
+       ],
+       "options": [
+-        "No me parece que los datos estadísticos respalden una afirmación tan categórica.",
+-        "El informe preliminar tiene ochenta páginas y varios apéndices gráficos.",
+-        "La biblioteca cierra sus puertas a las ocho de la noche los fines de semana."
++        "Creo que no vienen.",
++        "No creo que vienen.",
++        "Creo que no vengan."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -113,8 +113,8 @@
+       "id": "b2-05-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "No pienso que la solución al diferendo dependa únicamente de voluntades individuales.",
+-      "english": "I do not think that the solution to the dispute depends solely on individual wills.",
++      "sentence": "Marta no creía que fuera verdad, pero Pablo estaba convencido.",
++      "english": "Marta did not think it was true, but Pablo was convinced.",
+       "teaches": [
+         "opinion-verbs-mood"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-05-02-ex.json b/content/es-latam/exercises/b2/b2-05-02-ex.json
+index add9bf91..1ead7793 100644
+--- a/content/es-latam/exercises/b2/b2-05-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-05-02-ex.json
+@@ -8,19 +8,19 @@
+       "pairs": [
+         [
+           "desmentir",
+-          "to deny, to refute"
++          "to deny, to contradict"
+         ],
+         [
+-          "cuestionar",
+-          "to question, to challenge"
++          "poner en duda",
++          "to question, to call into doubt"
+         ],
+         [
+-          "la incertidumbre",
+-          "uncertainty"
++          "el escepticismo",
++          "scepticism"
+         ],
+         [
+-          "el escepticismo",
+-          "skepticism"
++          "la sospecha",
++          "suspicion"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-05-02.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué modo exige la subordinada en 'El director niega que la empresa _____ en prácticas desleales'?",
++      "question": "Which sentence says that the speaker is sure Marta knows it?",
+       "options": [
+-        "Subjuntivo (haya incurrido), porque 'negar' es un verbo léxico de falsedad que induce subjuntivo.",
+-        "Indicativo (ha incurrido), porque el director es la máxima autoridad corporativa.",
+-        "Condicional (habría incurrido), porque es un rumor periodístico."
++        "No dudo que Marta lo sabe.",
++        "Dudo que Marta lo sepa.",
++        "Niego que Marta lo sepa."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -46,10 +46,10 @@
+       "id": "b2-05-02.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Los peritos dudan que el incendio __ accidental.",
+-      "hint": "ser",
+-      "answer": "sea",
+-      "english": "The experts doubt that the fire is accidental.",
++      "sentence": "Dudo que Pablo __ la respuesta.",
++      "hint": "saber, he",
++      "answer": "sepa",
++      "english": "I doubt that Pablo knows the answer.",
+       "teaches": [
+         "subjunctive-doubt"
+       ]
+@@ -59,24 +59,22 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Dudamos",
++        "No",
++        "dudo",
+         "que",
+-        "hayan",
+-        "actuado",
+-        "con",
+-        "total",
+-        "transparencia."
++        "Marta",
++        "tiene",
++        "razón."
+       ],
+       "solution": [
+-        "Dudamos",
++        "No",
++        "dudo",
+         "que",
+-        "hayan",
+-        "actuado",
+-        "con",
+-        "total",
+-        "transparencia."
++        "Marta",
++        "tiene",
++        "razón."
+       ],
+-      "english": "We doubt that they have acted with total transparency.",
++      "english": "I do not doubt that Marta is right.",
+       "teaches": [
+         "subjunctive-doubt"
+       ]
+@@ -87,22 +85,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Periodista",
+-          "text": "¿Qué declaró el ministro respecto a las acusaciones de malversación?"
++          "speaker": "Ana",
++          "text": "Marta dice que ella no lo hizo."
+         },
+         {
+-          "speaker": "Portavoz de prensa",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Periodista",
+-          "text": "Sin embargo, el tribunal de cuentas abrirá una auditoría formal."
++          "speaker": "Ana",
++          "text": "Entonces hablamos con ella."
+         }
+       ],
+       "options": [
+-        "Negó rotundamente que se hubieran desviado fondos públicos asignados al programa de salud.",
+-        "Los edificios coloniales del centro histórico tienen fachadas de cantera gris.",
+-        "El precio del transporte público aumentó a principios del mes pasado."
++        "Pongo en duda que diga la verdad; ya la conozco.",
++        "Pongo en duda que dice la verdad; ya la conozco.",
++        "Pongo en duda que digas la verdad; ya la conozco."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -113,8 +111,8 @@
+       "id": "b2-05-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Ponemos en duda que los nuevos gravámenes arancelarios fomenten la competitividad nacional.",
+-      "english": "We call into question whether the new tariff duties encourage national competitiveness.",
++      "sentence": "El jefe negó que fuera su error y desmintió los rumores.",
++      "english": "The boss denied that it was his mistake and contradicted the rumours.",
+       "teaches": [
+         "subjunctive-doubt"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-05-03-ex.json b/content/es-latam/exercises/b2/b2-05-03-ex.json
+index 100d2f21..f236a6c4 100644
+--- a/content/es-latam/exercises/b2/b2-05-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-05-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "rectificar",
+-          "to rectify, to correct"
++          "enojarse",
++          "to get angry"
+         ],
+         [
+-          "la salvedad",
+-          "caveat, exception"
++          "quejarse",
++          "to complain"
+         ],
+         [
+-          "tergiversar",
+-          "to distort, to misrepresent"
++          "la excusa",
++          "excuse"
+         ],
+         [
+-          "rebatir",
+-          "to refute, to rebut"
++          "en el fondo",
++          "deep down, at heart"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-05-03.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué la estructura 'No es que no queramos cooperar, sino que nos faltan garantías jurídicas' combina subjuntivo e indicativo?",
++      "question": "Which sentence is correct Spanish?",
+       "options": [
+-        "Porque la primera cláusula descarta una falsa motivación (en subjuntivo) y la segunda asevera la causa real (en indicativo).",
+-        "Porque 'querer' siempre rige subjuntivo y 'faltar' siempre rige indicativo.",
+-        "Porque se trata de una oración condicional mixta de pasado y presente."
++        "No es que no quiera ir, sino que no puedo.",
++        "No es que no quiera ir, sino no puedo.",
++        "No es que no quiera ir, sino que no pueda."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -46,10 +46,10 @@
+       "id": "b2-05-03.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "No es que la propuesta __ deficiente, sino que los plazos de ejecución son demasiado ajustados.",
+-      "hint": "ser",
+-      "answer": "sea",
+-      "english": "It is not that the proposal is deficient, but rather that implementation deadlines are too tight.",
++      "sentence": "No es que Ana se __ de todo, sino que hoy tiene mucho trabajo.",
++      "hint": "quejarse, she",
++      "answer": "queje",
++      "english": "It is not that Ana complains about everything, it is that she has a lot of work today.",
+       "teaches": [
+         "refutacion-no-es-que-sino"
+       ]
+@@ -62,27 +62,25 @@
+         "No",
+         "es",
+         "que",
+-        "ignoremos",
+-        "el",
+-        "problema,",
++        "tenga",
++        "miedo,",
+         "sino",
+         "que",
+-        "faltan",
+-        "fondos."
++        "prefiero",
++        "esperar."
+       ],
+       "solution": [
+         "No",
+         "es",
+         "que",
+-        "ignoremos",
+-        "el",
+-        "problema,",
++        "tenga",
++        "miedo,",
+         "sino",
+         "que",
+-        "faltan",
+-        "fondos."
++        "prefiero",
++        "esperar."
+       ],
+-      "english": "It is not that we ignore the problem, but rather that funds are lacking.",
++      "english": "It is not that I am afraid, it is that I prefer to wait.",
+       "teaches": [
+         "refutacion-no-es-que-sino"
+       ]
+@@ -93,22 +91,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Auditor",
+-          "text": "¿Por qué el comité directivo rechazó el plan de digitalización presentado por el departamento técnico?"
++          "speaker": "Ana",
++          "text": "¿Por qué no vienes a la fiesta? ¿Estás enojado conmigo?"
+         },
+         {
+-          "speaker": "Vocal del comité",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Auditor",
+-          "text": "Entiendo, entonces reformularán los términos del cronograma."
++          "speaker": "Ana",
++          "text": "Entiendo. Descansa y hablamos mañana."
+         }
+       ],
+       "options": [
+-        "No es que consideremos innecesaria la modernización, sino que la propuesta financiera compromete la liquidez a corto plazo.",
+-        "Las instalaciones del archivo central fueron remodeladas durante el verano pasado.",
+-        "Los servidores informáticos consumen abundante energía durante las noches."
++        "No es que esté enojado, sino que estoy muy cansado.",
++        "No es que estoy enojado, sino que estoy muy cansado.",
++        "No es que esté enojado, sino que esté muy cansado."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -119,8 +117,8 @@
+       "id": "b2-05-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "No es que nos opongamos a la reforma tributaria, sino que demandamos mayor equidad distributiva.",
+-      "english": "It is not that we oppose the tax reform, but rather that we demand greater distributive equity.",
++      "sentence": "No es que ponga excusas, sino que en el fondo tiene miedo.",
++      "english": "It is not that she makes excuses; deep down she is afraid.",
+       "teaches": [
+         "refutacion-no-es-que-sino"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-05-04-ex.json b/content/es-latam/exercises/b2/b2-05-04-ex.json
+index 96243138..2cbe0c74 100644
+--- a/content/es-latam/exercises/b2/b2-05-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-05-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la plausibilidad",
+-          "plausibility"
++          "acaso",
++          "by any chance (in a rhetorical question)"
+         ],
+         [
+-          "conjeturar",
+-          "to conjecture, to surmise"
++          "plantear",
++          "to raise, to put forward"
+         ],
+         [
+-          "la verosimilitud",
+-          "verisimilitude, credibility"
++          "dar la razón",
++          "to say that someone is right"
+         ],
+         [
+-          "factible",
+-          "feasible, workable"
++          "la objeción",
++          "objection"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-05-04.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué modo exige de forma obligatoria la expresión impersonal 'puede que'?",
++      "question": "Which sentence is correct Spanish?",
+       "options": [
+-        "Modo subjuntivo, porque denota posibilidad e indeterminación sobre la factualidad del evento.",
+-        "Modo indicativo, siempre que el hecho esté ocurriendo en el presente.",
+-        "Modo infinitivo, porque carece de concordancia de persona."
++        "Puede ser que Marta tenga razón.",
++        "Puede ser que Marta tiene razón.",
++        "Puede ser que Marta tengas razón."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -45,13 +45,13 @@
+     {
+       "id": "b2-05-04.ex03",
+       "type": "fill-blank",
+-      "category": "grammar",
+-      "sentence": "Es muy probable que los delegados __ el memorando de entendimiento mañana.",
+-      "hint": "firmar",
+-      "answer": "firmen",
+-      "english": "It is very likely that the delegates will sign the memorandum of understanding tomorrow.",
++      "category": "vocabulary",
++      "sentence": "¿__ crees que es tan fácil?",
++      "hint": "rhetorical question",
++      "answer": "Acaso",
++      "english": "Do you really think it is that easy?",
+       "teaches": [
+-        "subjunctive-doubt"
++        "b2-doubt-denial-epistemic-stance-vocab"
+       ]
+     },
+     {
+@@ -61,24 +61,30 @@
+       "tiles": [
+         "Puede",
+         "que",
+-        "hayan",
+-        "encontrado",
+-        "nuevos",
+-        "indicios",
+-        "del",
+-        "caso."
++        "tengas",
++        "razón,",
++        "pero",
++        "no",
++        "creo",
++        "que",
++        "sea",
++        "tan",
++        "simple."
+       ],
+       "solution": [
+         "Puede",
+         "que",
+-        "hayan",
+-        "encontrado",
+-        "nuevos",
+-        "indicios",
+-        "del",
+-        "caso."
++        "tengas",
++        "razón,",
++        "pero",
++        "no",
++        "creo",
++        "que",
++        "sea",
++        "tan",
++        "simple."
+       ],
+-      "english": "It may be that they have found new clues about the case.",
++      "english": "You may be right, but I do not think it is that simple.",
+       "teaches": [
+         "subjunctive-doubt"
+       ]
+@@ -89,22 +95,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Diplomático",
+-          "text": "¿Cree que la cumbre multilateral concluya con un tratado vinculante sobre emisiones?"
++          "speaker": "Ana",
++          "text": "Creo que Pablo se equivocó y que debe pedir perdón."
+         },
+         {
+-          "speaker": "Analista ambiental",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Diplomático",
+-          "text": "En efecto, los intereses económicos de las potencias son divergentes."
++          "speaker": "Ana",
++          "text": "Bueno, hablemos con él primero."
+         }
+       ],
+       "options": [
+-        "Puede que firmen una declaración de intenciones, pero es poco probable que adopten metas legalmente obligatorias.",
+-        "El palacio de convenciones fue renovado por el ministerio de obras públicas.",
+-        "Las credenciales de acceso se entregan en el mostrador del vestíbulo."
++        "Es posible que se haya equivocado, pero no creo que deba pedir perdón.",
++        "Es posible que se ha equivocado, pero no creo que deba pedir perdón.",
++        "Es posible que se haya equivocado, pero creo que no deba pedir perdón."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -115,10 +121,10 @@
+       "id": "b2-05-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Quizás convenga postergar la votación definitiva hasta que se disipen todas las dudas jurídicas.",
+-      "english": "Perhaps it is advisable to postpone the final vote until all legal doubts are dispelled.",
++      "sentence": "Te doy la razón en parte, pero quiero plantear una objeción.",
++      "english": "I agree with you in part, but I want to raise an objection.",
+       "teaches": [
+-        "subjunctive-doubt"
++        "b2-doubt-denial-epistemic-stance-vocab"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-05-05-ex.json b/content/es-latam/exercises/b2/b2-05-05-ex.json
+index 9c1bef3d..12a2f50a 100644
+--- a/content/es-latam/exercises/b2/b2-05-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-05-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la discrepancia",
+-          "discrepancy, divergence"
++          "matizar",
++          "to qualify, to add nuance"
+         ],
+         [
+-          "zanjar",
+-          "to settle, to resolve"
++          "ceder",
++          "to give way, to give in"
+         ],
+         [
+-          "sesgado",
+-          "biased, slanted"
++          "tener en cuenta",
++          "to take into account"
+         ],
+         [
+-          "esgrimir",
+-          "to put forward, to wield an argument"
++          "llevar la contraria",
++          "to contradict, to be contrary"
+         ]
+       ],
+       "teaches": [
+@@ -31,60 +31,58 @@
+       "id": "b2-05-05.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué opción integra con mayor precisión la duda y la rectificación formal?",
++      "question": "Which sentence is correct Spanish?",
+       "options": [
+-        "Dudamos que el plan sea viable; no es que rechacemos la idea, sino que carecemos de recursos técnicos.",
+-        "Dudamos que el plan es viable; no es que rechazamos la idea, sino que carezcamos de recursos.",
+-        "No dudamos que el plan sea viable; no es que rechazamos la idea, sino que carecemos de recursos."
++        "No es que esté en contra de la idea, sino que me faltan datos.",
++        "No es que estoy en contra de la idea, sino que me faltan datos.",
++        "No es que esté en contra de la idea, sino me faltan datos."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "subjunctive-doubt"
++        "refutacion-no-es-que-sino"
+       ]
+     },
+     {
+       "id": "b2-05-05.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La delegación no considera que el mediador internacional __ parcializado en sus apreciaciones.",
+-      "hint": "estar",
+-      "answer": "esté",
+-      "english": "The delegation does not consider that the international mediator is biased in his appraisals.",
++      "sentence": "Yo no diría que __ un error.",
++      "hint": "ser, it",
++      "answer": "sea",
++      "english": "I wouldn't say it is a mistake.",
+       "teaches": [
+-        "opinion-verbs-mood"
++        "subjunctive-doubt"
+       ]
+     },
+     {
+       "id": "b2-05-05.ex04",
+       "type": "sentence-builder",
+-      "category": "grammar",
++      "category": "vocabulary",
+       "tiles": [
+-        "No",
+-        "es",
+-        "que",
+-        "desestimemos",
+-        "su",
+-        "tesis,",
+-        "sino",
+-        "que",
+-        "exige",
+-        "matices."
++        "Puedo",
++        "ceder",
++        "en",
++        "esto,",
++        "pero",
++        "quiero",
++        "matizar",
++        "mi",
++        "opinión."
+       ],
+       "solution": [
+-        "No",
+-        "es",
+-        "que",
+-        "desestimemos",
+-        "su",
+-        "tesis,",
+-        "sino",
+-        "que",
+-        "exige",
+-        "matices."
++        "Puedo",
++        "ceder",
++        "en",
++        "esto,",
++        "pero",
++        "quiero",
++        "matizar",
++        "mi",
++        "opinión."
+       ],
+-      "english": "It is not that we dismiss your thesis, but rather that it demands nuances.",
++      "english": "I can give way on this, but I want to qualify my opinion.",
+       "teaches": [
+-        "refutacion-no-es-que-sino"
++        "b2-doubt-denial-epistemic-stance-vocab"
+       ]
+     },
+     {
+@@ -93,36 +91,36 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Moderadora",
+-          "text": "¿Cómo responde la comisión evaluadora ante las objeciones presentadas por los investigadores discrepantes?"
++          "speaker": "Ana",
++          "text": "Tu propuesta no me convence. Creo que es mala."
+         },
+         {
+-          "speaker": "Presidente de la mesa",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Moderadora",
+-          "text": "Una aclaración muy oportuna para continuar el diálogo constructivo."
++          "speaker": "Ana",
++          "text": "Entiendo tu punto de vista, gracias."
+         }
+       ],
+       "options": [
+-        "No es que pretendamos silenciar las discrepancias metodológicas, sino que debemos ceñirnos a los estándares verificables del protocolo.",
+-        "La sala de conferencias dispone de proyectores digitales y traducción simultánea.",
+-        "Los ponentes recibieron un certificado de asistencia al término de las jornadas académicas."
++        "Puede que tengas razón en algo, pero no creo que sea tan mala.",
++        "Puede que tienes razón en algo, pero no creo que sea tan mala.",
++        "Puede que tengas razón en algo, pero no creo que es tan mala."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "refutacion-no-es-que-sino"
++        "subjunctive-doubt"
+       ]
+     },
+     {
+       "id": "b2-05-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Puede que existan interpretaciones divergentes, pero nadie niega que los resultados ameritan un debate profundo.",
+-      "english": "There may be divergent interpretations, but nobody denies that the results merit a profound debate.",
++      "sentence": "No es que quiera llevarte la contraria, sino que hay que tener en cuenta otros datos.",
++      "english": "It is not that I want to contradict you, but that other data must be taken into account.",
+       "teaches": [
+-        "subjunctive-doubt"
++        "refutacion-no-es-que-sino"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-05-consolidation-ex.json b/content/es-latam/exercises/b2/b2-05-consolidation-ex.json
+index 885a53b3..374989bc 100644
+--- a/content/es-latam/exercises/b2/b2-05-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-05-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el postulado",
+-          "postulate, premise"
++          "la creencia",
++          "belief"
+         ],
+         [
+           "desmentir",
+-          "to refute, to deny"
++          "to deny, to contradict"
+         ],
+         [
+-          "la salvedad",
+-          "caveat, exception"
++          "la excusa",
++          "excuse"
+         ],
+         [
+-          "la verosimilitud",
+-          "verisimilitude, credibility"
++          "matizar",
++          "to qualify, to add nuance"
+         ]
+       ],
+       "teaches": [
+@@ -30,43 +30,40 @@
+     {
+       "id": "b2-05-consolidation.ex02",
+       "type": "multiple-choice",
+-      "category": "grammar",
+-      "question": "¿En cuál de las siguientes frases se selecciona el modo indicativo en lugar del subjuntivo?",
++      "category": "reading",
++      "question": "According to the text, when did the revised edition of the book come out?",
+       "options": [
+-        "No dudo que los resultados tienen una base empírica incuestionable.",
+-        "No creo que los resultados tengan una base empírica incuestionable.",
+-        "Dudo que los resultados tengan una base empírica incuestionable."
++        "En 1959, nueve años después del libro.",
++        "En 1950, con el primer ensayo.",
++        "En 1949, en una revista."
+       ],
+-      "correct": 0,
+-      "teaches": [
+-        "subjunctive-doubt"
+-      ]
++      "correct": 0
+     },
+     {
+       "id": "b2-05-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la función sintáctica y pragmática de la fórmula 'no es que... sino que...'?",
++      "question": "Which sentence is correct Spanish?",
+       "options": [
+-        "Rectificar una premisa errónea en subjuntivo y aseverar la explicación verdadera en indicativo.",
+-        "Expresar una hipótesis irreal sobre el pasado con pluscuamperfecto.",
+-        "Introducir una orden atenuada con pronombres enclíticos."
++        "No creo que todos los lectores piensen igual.",
++        "No creo que todos los lectores piensan igual.",
++        "Creo que todos los lectores piensen igual."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "refutacion-no-es-que-sino"
++        "opinion-verbs-mood"
+       ]
+     },
+     {
+       "id": "b2-05-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Puede que el tribunal __ conveniente escuchar a nuevos testigos antes del veredicto.",
+-      "hint": "considerar",
+-      "answer": "considere",
+-      "english": "It may be that the court considers it advisable to hear new witnesses before the verdict.",
++      "sentence": "No es que el libro no __ valor, sino que es una interpretación personal.",
++      "hint": "tener, it",
++      "answer": "tenga",
++      "english": "It is not that the book has no value, but that it is a personal interpretation.",
+       "teaches": [
+-        "subjunctive-doubt"
++        "refutacion-no-es-que-sino"
+       ]
+     },
+     {
+@@ -74,10 +71,10 @@
+       "type": "sentence-order",
+       "category": "grammar",
+       "sentences": [
+-        "No consideramos que la tesis del autor refleje con exactitud la complejidad histórica. [We do not consider that the author's thesis accurately reflects historical complexity.]",
+-        "Los expertos dudan que la política monetaria resuelva la inflación sin causar recesión. [Experts doubt that monetary policy resolves inflation without causing recession.]",
+-        "No es que los ciudadanos rechacen las normas, sino que exigen instituciones probas. [It is not that citizens reject rules, but rather that they demand honest institutions.]",
+-        "Es factible que la cumbre multilateral concluya con un compromiso vinculante. [It is feasible that the multilateral summit concludes with a binding commitment.]"
++        "Los primeros ensayos aparecieron en 1949 en una revista. [The first essays appeared in 1949 in a magazine.]",
++        "El libro se publicó en 1950. [The book was published in 1950.]",
++        "En 1959 salió una edición revisada. [A revised edition came out in 1959.]",
++        "En 1990 Paz ganó el Nobel de Literatura. [In 1990 Paz won the Nobel Prize in Literature.]"
+       ],
+       "solution": [
+         0,
+@@ -86,9 +83,7 @@
+         3
+       ],
+       "teaches": [
+-        "opinion-verbs-mood",
+-        "subjunctive-doubt",
+-        "refutacion-no-es-que-sino"
++        "preterito-indefinido"
+       ]
+     },
+     {
+@@ -97,36 +92,36 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Crítico literario",
+-          "text": "¿Por qué afirma Octavio Paz que la máscara del mexicano no es un signo de falsedad moral?"
++          "speaker": "Profesora",
++          "text": "¿Puede un libro explicar a todo un país?"
+         },
+         {
+-          "speaker": "Ensayista",
++          "speaker": "Estudiante",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Crítico literario",
+-          "text": "Exacto: la máscara es una defensa frente a la herida de la historia."
++          "speaker": "Profesora",
++          "text": "Es una buena pregunta."
+         }
+       ],
+       "options": [
+-        "Porque no es que el mexicano carezca de sinceridad, sino que utiliza el pudor y la reserva como escudo para preservar su intimidad.",
+-        "Porque en las pirámides prehispánicas se colocaban mascarones de jade en las tumbas.",
+-        "Porque las fiestas populares se financian mediante cooperaciones vecinales voluntarias."
++        "Lo dudo; dudo que un solo libro pueda hacerlo.",
++        "Lo dudo; dudo que un solo libro puede hacerlo.",
++        "Lo dudo; dudo que un solo libro puedas hacerlo."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "refutacion-no-es-que-sino"
++        "subjunctive-doubt"
+       ]
+     },
+     {
+       "id": "b2-05-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "No pensamos que la controversia deba zanjarse sin escuchar a todas las voces implicadas.",
+-      "english": "We do not think that the controversy should be settled without listening to all implicated voices.",
++      "sentence": "Según el autor, estos temas ayudan a entender la identidad, pero es posible que no todos estén de acuerdo.",
++      "english": "According to the author, these themes help to understand identity, but it is possible that not everybody agrees.",
+       "teaches": [
+-        "opinion-verbs-mood"
++        "subjunctive-doubt"
+       ]
+     },
+     {
+@@ -135,12 +130,20 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Escribe una refutación académica utilizando la fórmula 'No es que [subjuntivo], sino que [indicativo]'.",
+-          "answer": "No es que desestimemos los hallazgos empíricos, sino que consideramos necesaria una mayor fundamentación estadística."
++          "prompt": "Say that you do not think it is true, using no creo que.",
++          "answer": "No creo que sea verdad."
++        },
++        {
++          "prompt": "Say that it is not that you are tired, but that you have no time, using no es que ... sino que ...",
++          "answer": "No es que esté cansado, sino que no tengo tiempo."
++        },
++        {
++          "prompt": "Say that you doubt that he is right, using dudo que.",
++          "answer": "Dudo que tenga razón."
+         }
+       ],
+       "teaches": [
+-        "refutacion-no-es-que-sino"
++        "b2-doubt-denial-epistemic-stance-vocab"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/grammar/b2/b2-03-01-a-gr.json b/content/es-latam/grammar/b2/b2-03-01-a-gr.json
+index 3005d1f2..c59182c7 100644
+--- a/content/es-latam/grammar/b2/b2-03-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-03-01-a-gr.json
+@@ -1,55 +1,67 @@
+ {
+   "id": "grammar.b2.03.01.probabilidad-marcadores",
+-  "title": "Marcadores de probabilidad y selección de modo",
++  "title": "Maybe: Markers and Mood",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "La graduación epistémica",
+-      "content": "En el nivel B2, expresar probabilidad no se limita a usar 'tal vez'. El hablante competente modula el grado de compromiso con la verdad seleccionando entre indicativo (mayor certeza o hecho verosímil) y subjuntivo (duda, escepticismo o menor probabilidad)."
++      "title": "Which mood after \"maybe\"?",
++      "content": "You know *quizás* and *dudo que* with the subjunctive from B1 Unit 13, and *tal vez*, *puede que* and *probablemente* from B1 Unit 22. At B2 the question is how sure you want to sound. The mood after a word for 'maybe' shows it: the indicative makes your guess sound fairly likely, and the subjunctive leaves more room for doubt. One marker, *a lo mejor*, gives you no choice: it takes only the indicative."
+     },
+     {
+       "type": "table",
+-      "title": "Marcadores y régimen modal",
++      "title": "Markers and the mood after them",
+       "rows": [
+         [
+-          "A lo mejor / Igual / Lo mismo",
+-          "Rigen SIEMPRE indicativo en todas las variedades: 'A lo mejor viene mañana' (nunca subjuntivo)"
++          "A lo mejor viene hoy.",
++          "A lo mejor takes only the indicative. There is no subjunctive version."
+         ],
+         [
+-          "Quizás / Tal vez / Acaso",
+-          "Antepuestos admiten indicativo (compromiso alto) o subjuntivo (compromiso bajo): 'Quizás llega hoy' vs 'Quizás llegue hoy'"
++          "Quizás viene hoy.",
++          "Quizás and tal vez + indicative: you think it is quite likely."
+         ],
+         [
+-          "Posposición de marcadores",
+-          "Si van pospuestos al verbo, exigen obligatoriamente indicativo: 'Vendrá mañana, tal vez', 'Lo sabe, quizás'"
++          "Quizás venga hoy.",
++          "Quizás and tal vez + subjunctive: you are less sure."
+         ],
+         [
+-          "Por ahí / Capaz que (América Latina)",
+-          "'Capaz que' rige subjuntivo en el Cono Sur y Andes: 'Capaz que no venga'; 'Por ahí' rige indicativo: 'Por ahí se le olvidó'"
++          "Puede que venga hoy.",
++          "Puede que and es posible que always take the subjunctive."
++        ],
++        [
++          "Viene hoy, quizás.",
++          "After the verb, quizás and tal vez take the indicative."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos contrastivos",
++      "title": "Examples in context",
+       "items": [
+         {
+-          "spanish": "A lo mejor encontramos una solución antes del fin de semana.",
+-          "english": "Maybe we will find a solution before the weekend."
++          "spanish": "A lo mejor Marta se quedó dormida.",
++          "english": "Maybe Marta fell asleep."
++        },
++        {
++          "spanish": "Tal vez tiene razón.",
++          "english": "Perhaps she is right."
++        },
++        {
++          "spanish": "Tal vez tenga razón, pero no estoy seguro.",
++          "english": "Perhaps she is right, but I am not sure."
+         },
+         {
+-          "spanish": "Quizás tengan razón los auditores en sus observaciones preliminares.",
+-          "english": "Perhaps the auditors are right in their preliminary observations."
++          "spanish": "Puede que llueva esta tarde.",
++          "english": "It may rain this afternoon."
+         },
+         {
+-          "spanish": "El testigo cambió su versión; sospechaba algo, tal vez.",
+-          "english": "The witness changed his version; he suspected something, perhaps."
++          "spanish": "Está en la oficina, tal vez.",
++          "english": "He is in the office, perhaps."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Recuerda la regla de oro: jamás uses subjuntivo con 'a lo mejor'. Decir 'A lo mejor tengamos' es un error agramatical grave en cualquier examen de certificación B2."
++      "content": "*Quizás* allows both moods, but *a lo mejor* does not: *A lo mejor venga* is a typical learner mistake. If you want the subjunctive, switch to *quizás*, *tal vez* or *puede que*. The indicative after *quizás* is not wrong, it only sounds surer."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-03-02-a-gr.json b/content/es-latam/grammar/b2/b2-03-02-a-gr.json
+index 85856425..90c02784 100644
+--- a/content/es-latam/grammar/b2/b2-03-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-03-02-a-gr.json
+@@ -1,51 +1,64 @@
+ {
+   "id": "grammar.b2.03.02.matrices-impersonales",
+-  "title": "Matrices impersonales de probabilidad y certeza",
++  "title": "Likely, Certain, Doubtful",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Estructuras impersonales con 'ser' y sustantivos",
+-      "content": "Las oraciones subordinadas sustantivas que dependen de matrices impersonales seleccionan el modo según si la matriz afirma certeza objetiva o probabilidad/duda."
++      "title": "One rule sorts them all",
++      "content": "You know *es posible que* and *dudo que* with the subjunctive, and *es evidente que* with the indicative, from B1 Unit 13, and *no creo que* from B1 Unit 7. Spanish has a whole family of expressions like these, and one rule sorts them. If you present something as certain, use the indicative. If you only say that it is probable, possible or doubtful, use the subjunctive. Saying that a certain thing is *not* certain also takes the subjunctive."
+     },
+     {
+       "type": "table",
+-      "title": "Régimen modal según la matriz impersonal",
++      "title": "Three groups",
+       "rows": [
+         [
+-          "Matrices de certeza -> INDICATIVO",
+-          "Es indudable que, es evidente que, está claro que, es seguro que: 'Es evidente que hubo irregularidades'"
++          "Es evidente que viene.",
++          "You present it as a fact, so: indicative. Also está claro que, es seguro que, no hay duda de que."
+         ],
+         [
+-          "Matrices de probabilidad/posibilidad -> SUBJUNTIVO",
+-          "Es probable que, es posible que, cabe la posibilidad de que, hay pocas dudas de que: 'Es probable que presenten apelación'"
++          "Es probable que venga.",
++          "You only say how likely it is, so: subjunctive. Also es posible que, es poco probable que, es improbable que."
+         ],
+         [
+-          "Matrices de certeza NEGADAS -> SUBJUNTIVO",
+-          "No es seguro que, no está claro que, no es verdad que: 'No está claro que hayan actuado de buena fe'"
++          "No es seguro que venga.",
++          "You say that a certain thing is not certain, so: subjunctive. Also no está claro que, no es evidente que."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Things that already happened",
++      "content": "For a past event, use the present perfect subjunctive from B1 Unit 37 after the expressions of the second and third group: *Es probable que hayan salido*, *No es seguro que lo haya visto*."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el debate formal",
++      "title": "Examples in context",
+       "items": [
+         {
+-          "spanish": "Cabe la posibilidad de que el vuelo sufra demoras debido a la niebla.",
+-          "english": "There is a possibility that the flight may suffer delays due to fog."
++          "spanish": "Es evidente que Marta sabe la verdad.",
++          "english": "It is clear that Marta knows the truth."
++        },
++        {
++          "spanish": "Es probable que Marta sepa la verdad.",
++          "english": "It is probable that Marta knows the truth."
++        },
++        {
++          "spanish": "No es seguro que Marta sepa la verdad.",
++          "english": "It is not certain that Marta knows the truth."
+         },
+         {
+-          "spanish": "Es probable que los cancilleres alcancen un consenso antes de la medianoche.",
+-          "english": "It is probable that the chancellors will reach a consensus before midnight."
++          "spanish": "No hay duda de que Marta sabe la verdad.",
++          "english": "There is no doubt that Marta knows the truth."
+         },
+         {
+-          "spanish": "No cabe duda de que el informe contiene revelaciones de enorme gravedad.",
+-          "english": "There is no doubt that the report contains revelations of immense gravity."
++          "spanish": "Es poco probable que hayan salido tan temprano.",
++          "english": "It is unlikely that they left so early."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Atención a 'No cabe duda de que': al ser una afirmación enfática de certeza, exige indicativo ('No cabe duda de que es culpable'), mientras que 'Cabe la posibilidad de que' exige subjuntivo ('Cabe la posibilidad de que sea inocente')."
++      "content": "Watch the negatives that are not negative. *No hay duda de que* and *no dudo que* mean that you are sure, so they take the indicative, while *dudo que* and *es dudoso que* take the subjunctive. The question to ask is always: am I presenting this as certain?"
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-03-03-a-gr.json b/content/es-latam/grammar/b2/b2-03-03-a-gr.json
+index f5911ac9..4052a17f 100644
+--- a/content/es-latam/grammar/b2/b2-03-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-03-03-a-gr.json
+@@ -1,51 +1,72 @@
+ {
+   "id": "grammar.b2.03.03.futuro-conjetura",
+-  "title": "El futuro simple y compuesto de conjetura",
++  "title": "Guessing About Now: The Future",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "El valor modal del futuro",
+-      "content": "En español, las formas del futuro no solo indican posterioridad temporal, sino que cumplen una función modal epistémica primordial: expresar conjetura, suposición o probabilidad en el presente o en el pasado reciente."
++      "title": "The tense of what you cannot check",
++      "content": "You know the future tense (*viajaré*, *viajará*) from A2 Unit 19, and the future for a guess about the present (*Estará en casa*) from B1 Unit 22. You also met the future perfect there: *habrá*, *habrás*, *habremos*... + the past participle. The B1 lesson only mentioned its second use: a guess about something that has already happened. Spanish uses the future for guesses because the future is the tense of what you cannot check yet, and a guess is exactly that. English says 'must be', 'probably' or 'I suppose'."
+     },
+     {
+       "type": "table",
+-      "title": "Valores epistémicos del futuro",
++      "title": "Two tenses for guessing",
+       "rows": [
+         [
+-          "Futuro simple -> Probabilidad en el PRESENTE",
+-          "'¿Qué hora es? —Serán las tres' (= Probablemente son las tres); '¿Quién llama? —Será el cartero' (= Supongo que es el cartero)"
++          "Estará en casa.",
++          "He is probably at home. (future: a guess about now)"
+         ],
+         [
+-          "Futuro compuesto -> Probabilidad en el PASADO RECIENTE",
+-          "'Habrá salido ya' (= Probablemente ya ha salido / Supongo que ya salió); '¿Dónde habrá dejado las llaves?' (= ¿Dónde las habrá puesto?)"
++          "Serán las nueve.",
++          "It is probably nine o'clock."
+         ],
+         [
+-          "Preguntas retóricas de extrañeza",
+-          "'¿Será verdad lo que dicen?' (= Me pregunto si es verdad); '¿Dónde estará metido?' (= No tengo idea de dónde está)"
++          "Estará durmiendo.",
++          "He is probably sleeping. (estar in the future + gerund: a guess about what is going on now)"
++        ],
++        [
++          "Habrá salido ya.",
++          "He has probably left already. (future perfect: a guess about what has happened)"
++        ],
++        [
++          "¿Dónde estará?",
++          "Where can he be? (a question you ask yourself)"
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Prediction or guess?",
++      "content": "The same future can predict or guess. *Llegará mañana* looks ahead, but *Estará en casa* is about now. Context decides: *mañana* points forward, *ya* and *ahora* point to now. With action verbs, use *estar* + gerund for a guess about what is happening now."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el discurso deductivo",
++      "title": "Examples in context",
+       "items": [
+         {
+-          "spanish": "Tendrá unos cuarenta años, a juzgar por su aspecto físico.",
+-          "english": "He is probably around forty years old, judging by his physical appearance."
++          "spanish": "Marta no contesta; estará durmiendo.",
++          "english": "Marta is not answering; she is probably sleeping."
++        },
++        {
++          "spanish": "Tendrá unos cuarenta años, a juzgar por su aspecto.",
++          "english": "She is probably about forty, judging by her appearance."
++        },
++        {
++          "spanish": "Ya habrán llegado a casa.",
++          "english": "They have probably got home by now."
+         },
+         {
+-          "spanish": "¿Dónde se habrán metido los documentos de la licitación?",
+-          "english": "Where could the bidding documents have gotten to?"
++          "spanish": "¿Dónde habré dejado las llaves?",
++          "english": "Where can I have left my keys?"
+         },
+         {
+-          "spanish": "Habrá tenido algún contratiempo en el aeropuerto, pues no ha llegado aún.",
+-          "english": "She must have had some mishap at the airport, for she hasn't arrived yet."
++          "spanish": "Serán las nueve y media.",
++          "english": "It is probably half past nine."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "El futuro de probabilidad equivale semánticamente a construcciones perifrásticas con 'deber de + infinitivo' o 'probablemente + presente', pero resulta mucho más natural y conciso en español hablado y literario."
++      "content": "A guess in the future tense already says 'I am not sure', so you do not need an extra marker. If you are sure, use the present: *Está en casa*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-03-04-a-gr.json b/content/es-latam/grammar/b2/b2-03-04-a-gr.json
+index 7d3f2caa..3fe765a3 100644
+--- a/content/es-latam/grammar/b2/b2-03-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-03-04-a-gr.json
+@@ -1,51 +1,64 @@
+ {
+   "id": "grammar.b2.03.04.condicional-conjetura",
+-  "title": "El condicional de conjetura en el pasado",
++  "title": "Guessing About Then: The Conditional",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "La conjetura en el pasado",
+-      "content": "Así como el futuro simple expresa conjetura sobre el presente ('tendrá hambre ahora'), el condicional simple expresa conjetura o probabilidad sobre un momento del pasado ('tendría hambre entonces' = probablemente tenía hambre). Es el tiempo estrella de la crónica periodística, la novela policial y la reconstrucción histórica."
++      "title": "The guess follows the time of the story",
++      "content": "You know the conditional (*me gustaría*) from A2 Unit 26, and from B1 Unit 22 that it can guess about the past: *Serían las ocho cuando llegó el tren*. This lesson gives the rule that decides between the two guessing tenses: they follow the time of what you are saying. Speaking about now, guess with the future (*Estará en casa*). Telling something in the past, guess with the conditional (*Estaría en casa*). The conditional is also how you wonder aloud about a past event: *¿Por qué nadie lo impediría?* means 'Why did nobody stop it, I wonder?'"
+     },
+     {
+       "type": "table",
+-      "title": "Paralelismo modal entre futuro y condicional",
++      "title": "The same guess, now and then",
+       "rows": [
+         [
+-          "Presente -> Futuro simple",
+-          "'Serán las cinco' (= Supongo que son las cinco ahora)"
++          "Serán las diez. / Serían las diez.",
++          "It is probably ten. / It was probably ten."
+         ],
+         [
+-          "Pasado -> Condicional simple",
+-          "'Serían las cinco cuando llegó' (= Supongo que eran las cinco cuando llegó)"
++          "Tendrá treinta años. / Tendría treinta años.",
++          "He is probably thirty. / He was probably thirty."
+         ],
+         [
+-          "Pasado anterior -> Condicional compuesto",
+-          "'Habría cumplido veinte años cuando se marchó' (= Probablemente ya había cumplido veinte años)"
++          "¿Quién llamará? / ¿Quién llamaría?",
++          "Who can be calling? / Who can have been calling?"
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "A guess is not a condition",
++      "content": "Do not confuse this conditional with the one that needs a condition: *Iría si pudiera* 'I would go if I could'. A guess has no *if* clause and no imagined situation. It says what the speaker thinks was true at that moment. It is also different from the polite conditional (*Me gustaría...*)."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en crónicas y relatos",
++      "title": "Examples in context",
+       "items": [
+         {
+-          "spanish": "El sospechoso rondaría los treinta años y vestía una chaqueta oscura.",
+-          "english": "The suspect must have been around thirty years old and was wearing a dark jacket."
++          "spanish": "Cuando salí de casa, serían las nueve.",
++          "english": "When I left home it was probably about nine."
++        },
++        {
++          "spanish": "El vecino tendría unos sesenta años.",
++          "english": "The neighbour was probably about sixty."
++        },
++        {
++          "spanish": "Nadie contestó; estarían todos dormidos.",
++          "english": "Nobody answered; they were probably all asleep."
+         },
+         {
+-          "spanish": "¿Quién llamaría a la puerta a esas horas de la madrugada?",
+-          "english": "Who could have been knocking at the door at those hours of the dawn?"
++          "spanish": "¿Por qué nadie lo impediría?",
++          "english": "Why did nobody stop it, I wonder?"
+         },
+         {
+-          "spanish": "Habrían sido las tres cuando se escuchó el primer disparo en el callejón.",
+-          "english": "It must have been three o'clock when the first gunshot was heard in the alley."
++          "spanish": "¿Quién llamaría a esa hora?",
++          "english": "Who can have been calling at that hour?"
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "No confundas el condicional hipotético ('yo iría si tuviera tiempo') con el condicional de conjetura ('serían las dos cuando ocurrió'). En este último no hay ninguna condición expresa; funciona como un marcador de probabilidad retrospectiva."
++      "content": "The guess takes its time from the story, so it often sits next to a preterite: *Cuando llegué, serían las diez*. Do not use the conditional for a guess about now, and do not use the future in a story set in the past."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-03-05-a-gr.json b/content/es-latam/grammar/b2/b2-03-05-a-gr.json
+index 30806323..fc987529 100644
+--- a/content/es-latam/grammar/b2/b2-03-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-03-05-a-gr.json
+@@ -1,51 +1,77 @@
+ {
+   "id": "grammar.b2.03.05.adverbios-epistemicos",
+-  "title": "Adverbios epistémicos y atenuación de asertos",
++  "title": "Probably, Surely, Without Doubt",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "El arte de matizar las afirmaciones",
+-      "content": "En la argumentación académica, jurídica y periodística B2, afirmar algo de manera tajante sin pruebas contundentes resta credibilidad. Los adverbios epistémicos y las locuciones parentéticas permiten calibrar el grado de certeza sin comprometer la objetividad del análisis."
++      "title": "A scale of adverbs",
++      "content": "You know stance adverbs such as *francamente* and *indudablemente*, with their commas, from B2 Unit 1, and *probablemente* and *posiblemente* from B1 Unit 22. Here is the whole scale of adverbs of probability, from less sure to more sure, and the mood each one takes."
+     },
+     {
+       "type": "table",
+-      "title": "Adverbios y locuciones epistémicas",
++      "title": "From less sure to more sure",
+       "rows": [
+         [
+-          "Presumiblemente / Supuestamente",
+-          "Basado en indicios razonables pero sin confirmación definitiva: 'El acuerdo fue firmado presumiblemente a puerta cerrada'"
++          "a lo mejor, quizás, tal vez",
++          "maybe: it could be, or not"
+         ],
+         [
+-          "Aparentemente / Según parece",
+-          "Basado en la evidencia visible o en testimonios externos: 'Aparentemente, no hubo daños estructurales'"
++          "posiblemente",
++          "possibly"
+         ],
+         [
+-          "Con toda probabilidad",
+-          "Certeza casi absoluta fundada en la lógica deductiva: 'Con toda probabilidad, el fallo se dará a conocer el viernes'"
++          "probablemente",
++          "probably: it is likely"
++        ],
++        [
++          "seguramente",
++          "most likely; it does not mean 'certainly'"
++        ],
++        [
++          "sin duda",
++          "without doubt: you are sure"
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Which mood?",
++      "content": "*A lo mejor*, *seguramente* and *sin duda* are followed by the indicative. *Quizás* and *tal vez* take either mood, as in Lesson 1. After *probablemente* and *posiblemente* the indicative is the usual choice: *Probablemente llega mañana*. The subjunctive is also possible when the adverb opens the sentence, and it adds a touch of doubt. If you are unsure, the indicative is the safe choice with these two."
++    },
++    {
++      "type": "text",
++      "title": "Position, and a different kind of adverb",
++      "content": "As with the stance adverbs of B2 Unit 1, these adverbs can open the sentence, sit between commas or close it: *Seguramente, Marta ya salió.* / *Marta, seguramente, ya salió.* / *Marta ya salió, seguramente.* *Por lo visto* 'apparently' is different: it does not say how likely you think something is, it says that you know it from what you saw or heard."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el ensayo formal",
++      "title": "Examples in context",
+       "items": [
+         {
+-          "spanish": "El informe pericial demuestra fehacientemente que el incendio fue intencional.",
+-          "english": "The forensic report irrefutably demonstrates that the fire was intentional."
++          "spanish": "Seguramente Marta ya salió de la oficina.",
++          "english": "Marta has most likely left the office already."
++        },
++        {
++          "spanish": "Sin duda, es la mejor opción.",
++          "english": "Without doubt, it is the best option."
++        },
++        {
++          "spanish": "Posiblemente tiene razón, pero no estoy seguro.",
++          "english": "She is possibly right, but I am not sure."
+         },
+         {
+-          "spanish": "Presumiblemente, los negociadores alcanzaron un principio de entendimiento antes del amanecer.",
+-          "english": "Presumably, the negotiators reached a preliminary understanding before dawn."
++          "spanish": "Por lo visto, Pablo cambió de trabajo.",
++          "english": "Apparently, Pablo has changed jobs."
+         },
+         {
+-          "spanish": "Según parece, las discrepancias presupuestarias son menos graves de lo previsto.",
+-          "english": "Apparently, the budgetary discrepancies are less serious than anticipated."
++          "spanish": "Marta ya salió, seguramente.",
++          "english": "Marta has already left, most likely."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "La posición del adverbio epistémico en la frase altera el ritmo: al inicio de la oración ('Presumiblemente, el autor...') califica a toda la proposición; intercalado entre comas aporta un matiz reflexivo de cautela."
++      "content": "*Seguramente* is closer to English 'most likely' than to 'surely' or 'certainly'. For certainty, use *sin duda*. One marker is enough for a guess: *seguramente a lo mejor* sounds heavy."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-05-01-a-gr.json b/content/es-latam/grammar/b2/b2-05-01-a-gr.json
+index 4f0e1c18..4fa58534 100644
+--- a/content/es-latam/grammar/b2/b2-05-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-05-01-a-gr.json
+@@ -1,55 +1,68 @@
+ {
+   "id": "grammar.b2.05.01.creencia-negada",
+-  "title": "Subjuntivo tras matrices de opinión y creencia en forma negativa",
++  "title": "Opinion Verbs: Saying You Do Not Think So",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Contraste afirmativo vs negativo en verbos de entendimiento",
+-      "content": "Los verbos de opinión, percepción mental y comunicación (creer, pensar, opinar, considerar, estimar, parecer) rigen indicativo cuando la cláusula principal es afirmativa, porque aseveran la realidad de la subordinada: 'Creo que la hipótesis es válida'. Sin embargo, al formularse en forma negativa, el hablante rechaza la aserción o suspende el compromiso con su veracidad, rigiendo obligatoriamente subjuntivo: 'No creo que la hipótesis sea válida'."
++      "title": "Where the \"no\" goes",
++      "content": "You know *creo que* + indicative and *no creo que* + subjunctive from B1 Unit 7, and *dudo que* from B1 Unit 13. The rule is simple: an opinion you hold is stated as a fact, so it takes the indicative; an opinion you reject is not stated as a fact, so it takes the subjunctive. At B2 you apply this to the whole family of opinion verbs (*pensar*, *opinar*, *considerar*, *parecer*), and you learn that the mood depends on where the *no* stands."
+     },
+     {
+       "type": "table",
+-      "title": "Selección modal según la polaridad de la matriz",
++      "title": "Opinion verbs and mood",
+       "rows": [
+         [
+-          "Matriz afirmativa -> INDICATIVO",
+-          "'Pienso que los datos confirman la teoría' / 'Consideramos que es un avance'"
++          "Pienso que tiene razón. / Me parece que tiene razón.",
++          "You hold the opinion: indicative."
+         ],
+         [
+-          "Matriz negativa -> SUBJUNTIVO",
+-          "'No pienso que los datos confirmen la teoría' / 'No consideramos que sea suficiente'"
++          "No pienso que tenga razón. / No me parece que tenga razón.",
++          "You reject the opinion: subjunctive."
+         ],
+         [
+-          "Interrogación negativa retórica -> INDICATIVO o SUBJUNTIVO",
+-          "'¿No crees que tiene / tenga razón?' (según si se presupone afirmación o duda)"
++          "Creo que no tiene razón.",
++          "The no belongs to the second verb, so the opinion verb is affirmative: indicative."
+         ],
+         [
+-          "Negación de mandato -> SUBJUNTIVO",
+-          "'No creas que sea tan sencillo' (exhortación a no albergar una falsa creencia)"
++          "No creía que fuera verdad.",
++          "In the past, the subjunctive moves back too: imperfect subjunctive."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Two ways to say almost the same thing",
++      "content": "English 'I don't think he is coming' can be *Creo que no viene* or *No creo que venga*. Both are correct, but they are built differently: in the first one the opinion verb is affirmative, so the verb after it is in the indicative; in the second one the opinion verb is negated, so the verb after it is in the subjunctive. Choose the mood by looking at where the *no* is."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el ensayo académico",
++      "title": "Examples in context",
+       "items": [
+         {
+-          "spanish": "No consideramos que las conclusiones del estudio reflejen fielmente la realidad socioeconómica.",
+-          "english": "We do not consider that the study's conclusions faithfully reflect socioeconomic reality."
++          "spanish": "Pienso que la idea es buena.",
++          "english": "I think the idea is good."
++        },
++        {
++          "spanish": "No pienso que la idea sea buena.",
++          "english": "I don't think the idea is good."
++        },
++        {
++          "spanish": "Creo que no es una buena idea.",
++          "english": "I think it is not a good idea."
+         },
+         {
+-          "spanish": "Los analistas no opinan que la reforma tributaria resuelva el déficit a corto plazo.",
+-          "english": "Analysts do not believe that the tax reform will resolve the deficit in the short term."
++          "spanish": "No me parece que tenga razón.",
++          "english": "It doesn't seem to me that he is right."
+         },
+         {
+-          "spanish": "No me parece que la evidencia presentada baste para refutar el postulado inicial.",
+-          "english": "It does not seem to me that the evidence presented is sufficient to refute the initial premise."
++          "spanish": "No creía que fuera verdad.",
++          "english": "I didn't think it was true."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Cuidado con 'no dudar que': como la negación de una duda equivale a una certeza afirmativa, rige indicativo: 'No dudo que tienes razón'."
++      "content": "Only the opinion verb decides the mood. Once a *no* stands in front of it (*no creo*, *no pienso*, *no me parece*), the subjunctive follows. Verbs of doubt work the other way round, as you will see in the next lesson."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-05-02-a-gr.json b/content/es-latam/grammar/b2/b2-05-02-a-gr.json
+index 8e45ed0c..ea9883e3 100644
+--- a/content/es-latam/grammar/b2/b2-05-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-05-02-a-gr.json
+@@ -1,55 +1,64 @@
+ {
+   "id": "grammar.b2.05.02.duda-negacion-lexica",
+-  "title": "Subjuntivo con verbos léxicos de duda, negación e impugnación",
++  "title": "Doubt and Denial Verbs",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Verbos que codifican duda o falsedad de modo inherente",
+-      "content": "A diferencia de los verbos de creencia (que necesitan la partícula 'no' para inducir subjuntivo), los verbos que contienen duda o negación en su significado léxico intrínseco (dudar, negar, cuestionar, poner en duda, impugnar) rigen siempre subjuntivo en la proposición subordinada: 'Dudo que hayan actuado de buena fe', 'El portavoz negó que existieran irregularidades contables'."
++      "title": "The doubt is already in the verb",
++      "content": "You know *dudo que* + subjunctive from B1 Unit 13 and *no creo que* from B1 Unit 7. Some verbs carry the doubt or the denial in their own meaning, so they need no *no*: *dudar que*, *negar que*, *desmentir que* and *poner en duda que* take the subjunctive. Put a *no* in front of them and the doubt is cancelled: you now accept the thing as true, so *no dudar que* and *no negar que* take the indicative. This is the mirror image of the opinion verbs in the last lesson."
+     },
+     {
+       "type": "table",
+-      "title": "Duda afirmativa vs duda negada",
++      "title": "Doubt and denial, with and without no",
+       "rows": [
+         [
+-          "dudar que + SUBJUNTIVO",
+-          "'Dudo que el tratado resuelva las tensiones limítrofes' (incertidumbre manifiesta)"
++          "Dudo que venga. / Niego que lo sepa.",
++          "Doubt or denial: subjunctive."
+         ],
+         [
+-          "negar que + SUBJUNTIVO",
+-          "'La cancillería niega que se hayan violado los protocolos internacionales'"
++          "No dudo que viene. / No niego que lo sabe.",
++          "Doubt or denial cancelled: indicative. You accept it as true."
+         ],
+         [
+-          "no dudar que + INDICATIVO",
+-          "'No dudo que el equipo tiene capacidad técnica' (certeza indudable)"
+-        ],
+-        [
+-          "no negar que + INDICATIVO o SUBJUNTIVO",
+-          "'No niego que es difícil' (admisión de un hecho) frente a 'No niego que sea posible' (concesión cautelosa)"
++          "Creo que viene. / No creo que venga.",
++          "Compare: with an opinion verb it is the other way round. Affirmative: indicative. Negative: subjunctive."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "In the past",
++      "content": "As in B1 Unit 38, the subjunctive moves back when the main verb is in the past: *Negó que lo supiera*, *Dudaba que viniera*."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el debate sociopolítico",
++      "title": "Examples in context",
+       "items": [
+         {
+-          "spanish": "La comisión anticorrupción cuestiona que los contratos se adjudicaran con transparencia.",
+-          "english": "The anti-corruption commission questions whether the contracts were awarded transparently."
++          "spanish": "Dudo que Marta lo sepa.",
++          "english": "I doubt that Marta knows it."
++        },
++        {
++          "spanish": "No dudo que Marta lo sabe.",
++          "english": "I do not doubt that Marta knows it."
++        },
++        {
++          "spanish": "El jefe negó que fuera su error.",
++          "english": "The boss denied that it was his mistake."
+         },
+         {
+-          "spanish": "El presidente desmintió que su gabinete hubiera participado en las negociaciones secretas.",
+-          "english": "The president denied that his cabinet had participated in the secret negotiations."
++          "spanish": "Pablo desmintió que fuera cierto.",
++          "english": "Pablo denied that it was true."
+         },
+         {
+-          "spanish": "Muchos juristas ponen en tela de juicio que la enmienda respete los principios constitucionales.",
+-          "english": "Many jurists call into question whether the amendment respects constitutional principles."
++          "spanish": "Pongo en duda que sea una buena idea.",
++          "english": "I question whether it is a good idea."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Recuerda la alternancia temporal: si la matriz está en presente ('dudo'), la subordinada va en presente de subjuntivo ('venga') o pretérito perfecto de subjuntivo ('haya venido'); si está en pasado ('dudaba'), rige imperfecto ('viniera') o pluscuamperfecto ('hubiera venido')."
++      "content": "With *no negar que* you will hear both moods. The indicative admits a fact (*No niego que es difícil*), and the subjunctive is also used, so learn the indicative first. With *no dudar que* the indicative is the rule."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-05-03-a-gr.json b/content/es-latam/grammar/b2/b2-05-03-a-gr.json
+index 2c419438..290f7d78 100644
+--- a/content/es-latam/grammar/b2/b2-05-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-05-03-a-gr.json
+@@ -1,55 +1,64 @@
+ {
+   "id": "grammar.b2.05.03.refutacion-no-es-que-sino",
+-  "title": "Estructuras de refutación discursiva con 'no es que' + subjuntivo",
++  "title": "Correcting a Reason: No es que… sino que…",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Mecanismo retórico de aclaración y rectificación",
+-      "content": "La fórmula 'no es que + subjuntivo, sino (que) + indicativo' es una de las construcciones argumentativas más elegantes del español formal. Se utiliza para desestimar una falsa interpretación o premisa errónea en la primera parte (marcada con subjuntivo porque se niega su pertinencia o adecuación explicativa) y sustituirla inmediatamente por la verdadera causa o explicación (marcada con indicativo porque se asevera como un hecho real): 'No es que rechacemos la propuesta, sino que carecemos de presupuesto'."
++      "title": "Reject one reason, give the real one",
++      "content": "You know *sino* and *sino que* from B1 Unit 40, and the subjunctive after doubt, as in *dudo que*, from B1 Unit 13. New here is a pattern for correcting a reason: *No es que* + subjunctive, *sino que* + indicative. It rejects a reason that someone might assume and gives the real one: *No es que no quiera, sino que no puedo* means 'It is not that I don't want to, it is that I can't.'"
++    },
++    {
++      "type": "text",
++      "title": "Why the moods differ",
++      "content": "The first part names a reason you say is *not* the case. You are not stating it as a fact, so the verb is in the subjunctive, as after *no creo que*. The second part gives the true reason, which you do state as a fact, so after *sino que* the verb is in the indicative. *Sino que* always keeps its *que*, because a conjugated verb follows (B1 Unit 40)."
+     },
+     {
+       "type": "table",
+-      "title": "Esquema sintáctico de la rectificación",
++      "title": "Same pattern, three tenses",
+       "rows": [
+         [
+-          "Segmento refutado (SUBJUNTIVO)",
+-          "'No es que queramos imponer restricciones...' (rechaza el motivo aparente)"
+-        ],
+-        [
+-          "Segmento correctivo (INDICATIVO)",
+-          "'...sino que debemos velar por la seguridad' (afirma el motivo real)"
++          "No es que no quiera, sino que no puedo.",
++          "It is not that I don't want to, it is that I can't."
+         ],
+         [
+-          "Variante de pasado",
+-          "'No era que ignorara la ley, sino que decidió actuar por necesidad'"
++          "No es que esté enojado, sino que estoy cansado.",
++          "It is not that I am angry, it is that I am tired."
+         ],
+         [
+-          "Con adjetivos evaluativos",
+-          "'No es que sea imposible, sino que exige una inversión considerable'"
++          "No era que no me gustara, sino que no tenía tiempo.",
++          "It was not that I didn't like it, it was that I had no time. (past: imperfect subjunctive, then imperfect)"
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el discurso formal",
++      "title": "Examples in context",
+       "items": [
+         {
+-          "spanish": "No es que desconfiemos de sus capacidades, sino que el protocolo exige una certificación oficial.",
+-          "english": "It is not that we distrust your capabilities, but rather that the protocol requires an official certification."
++          "spanish": "No es que no quiera ir, sino que no puedo.",
++          "english": "It is not that I do not want to go, but that I cannot."
++        },
++        {
++          "spanish": "No es que Marta esté enojada, sino que está cansada.",
++          "english": "It is not that Marta is angry, it is that she is tired."
++        },
++        {
++          "spanish": "No es que no me guste el trabajo, sino que gano poco.",
++          "english": "It is not that I dislike the job, but that I earn little."
+         },
+         {
+-          "spanish": "No es que la ciudadanía sea apática, sino que las instituciones tradicionales han perdido credibilidad.",
+-          "english": "It is not that the citizenry is apathetic, but rather that traditional institutions have lost credibility."
++          "spanish": "No era que Pablo no quisiera ayudar, sino que no sabía cómo.",
++          "english": "It was not that Pablo did not want to help, but that he did not know how."
+         },
+         {
+-          "spanish": "No era que faltaran recursos naturales, sino que la distribución de la tierra era profundamente desigual.",
+-          "english": "It was not that natural resources were lacking, but rather that land distribution was profoundly unequal."
++          "spanish": "No es que tenga miedo, sino que prefiero esperar.",
++          "english": "It is not that I am afraid, it is that I prefer to wait."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "¡Recuerda!: En el segundo término, 'sino que' introduce una oración con verbo conjugado ('sino que tenemos...'), mientras que 'sino' a secas introduce un sintagma nominal o adjetival ('no era blanco, sino gris')."
++      "content": "Use this pattern when you expect someone to draw a wrong conclusion. It is a kind way to disagree, because you correct a reason, not a person. *Pero* would only add a limit to what you said; *sino que* replaces the wrong reason with the right one."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-05-04-a-gr.json b/content/es-latam/grammar/b2/b2-05-04-a-gr.json
+index f1519bb1..a1f8a4d1 100644
+--- a/content/es-latam/grammar/b2/b2-05-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-05-04-a-gr.json
+@@ -1,59 +1,68 @@
+ {
+   "id": "grammar.b2.05.04.matizacion-epistemica",
+-  "title": "Moduladores epistémicos de probabilidad: puede que, es probable que, quizá y tal vez",
++  "title": "Hedging an Opinion",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Gradación de la certeza y alternancia modal",
+-      "content": "En el registro formal B2, modular el grado de adhesión a una afirmación evita juicios dogmáticos. Las expresiones impersonales 'puede que', 'es probable que' y 'es posible que' rigen siempre subjuntivo: 'Puede que las negociaciones concluyan la próxima semana'. Por otra parte, los adverbios de duda ('quizá / quizás', 'tal vez', 'acaso') admiten alternancia: si anteceden al verbo, seleccionan subjuntivo para denotar mayor incertidumbre, o indicativo para sugerir mayor probabilidad factual. Si van pospuestos al verbo, exigen obligatoriamente indicativo: 'Vendrá mañana, tal vez'."
++      "title": "Using what you already know",
++      "content": "You know the possibility markers *puede que*, *es probable que* and *quizás* from B2 Unit 3: *puede que*, *es probable que* and *es posible que* always take the subjunctive, *quizás* and *tal vez* take either mood, and *a lo mejor* takes only the indicative. This lesson does not repeat them. It shows how to use them to hedge an opinion in a discussion, and adds three new things: *puede ser que*, the rhetorical question *¿acaso...?* and the polite way to grant a point before you disagree."
+     },
+     {
+       "type": "table",
+-      "title": "Matices y reglas modales con moduladores de probabilidad",
++      "title": "Three new tools",
+       "rows": [
+         [
+-          "puede que / es probable que / es posible que + SUBJUNTIVO (invariable)",
+-          "'Es probable que el parlamento apruebe la moción'"
++          "Puede ser que tengas razón.",
++          "Puede ser que is another way to say puede que: subjunctive."
+         ],
+         [
+-          "quizás / tal vez + SUBJUNTIVO (mayor incertidumbre o hipótesis)",
+-          "'Quizás logren un acuerdo de paz duradero'"
++          "¿Acaso crees que es tan fácil?",
++          "A question that is not a real question: it shows doubt or disbelief. Do you really think it is that easy? Indicative."
+         ],
+         [
+-          "quizás / tal vez + INDICATIVO (mayor inclinación a la verdad del hecho)",
+-          "'Tal vez tienen razones de peso para postergar el viaje'"
++          "Puede que sí, puede que no.",
++          "A fixed phrase for 'maybe yes, maybe no'."
+         ],
+         [
+-          "a lo mejor / igual / lo mismo + INDICATIVO (registro coloquial / general)",
+-          "'A lo mejor llega tarde' (nunca lleva subjuntivo)"
+-        ],
+-        [
+-          "adverbio pospuesto al verbo -> INDICATIVO obligatorio",
+-          "'Llegarán a tiempo, tal vez' (nunca '*Lleguen a tiempo, tal vez')"
++          "Quizás tengas razón, pero no creo que sea tan simple.",
++          "Grant a point with a possibility marker, then state your doubt."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "The rhetorical question",
++      "content": "*¿Acaso...?* expects the answer 'no'. *¿Acaso crees que es fácil?* does not ask whether you think it is easy: it says you should not think so. It can sound sharp, so use it with people you know well, or in an argument you are happy to have."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el análisis geopolítico y social",
++      "title": "Examples in context",
+       "items": [
+         {
+-          "spanish": "Puede que el incremento en las tasas de interés desacelere el crecimiento de las inversiones.",
+-          "english": "It may be that the rise in interest rates slows down investment growth."
++          "spanish": "Puede ser que Marta tenga razón.",
++          "english": "Marta may be right."
++        },
++        {
++          "spanish": "¿Acaso crees que es tan fácil?",
++          "english": "Do you really think it is that easy?"
++        },
++        {
++          "spanish": "Puede que sí, puede que no.",
++          "english": "Maybe yes, maybe not."
+         },
+         {
+-          "spanish": "Es factible que las dos delegaciones alcancen un entendimiento en materia migratoria.",
+-          "english": "It is feasible that the two delegations reach an understanding on migration matters."
++          "spanish": "Quizás tengas razón, pero no creo que sea tan simple.",
++          "english": "Perhaps you are right, but I do not think it is that simple."
+         },
+         {
+-          "spanish": "Tal vez existan indicios suficientes para reabrir la investigación penal.",
+-          "english": "Perhaps there are sufficient indications to reopen the criminal investigation."
++          "spanish": "Es posible que se haya equivocado, pero no creo que lo haga otra vez.",
++          "english": "It is possible that he made a mistake, but I do not think he will do it again."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "'A lo mejor' es un falso amigo sintáctico: a pesar de expresar probabilidad como 'quizás', en español rige SIEMPRE modo indicativo."
++      "content": "To disagree without sounding rude, grant the point first with a possibility marker and put your doubt in the second half: *Es posible que..., pero no creo que...*"
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-05-05-a-gr.json b/content/es-latam/grammar/b2/b2-05-05-a-gr.json
+index 9aef2910..c1e5158f 100644
+--- a/content/es-latam/grammar/b2/b2-05-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-05-05-a-gr.json
+@@ -1,33 +1,64 @@
+ {
+   "id": "grammar.b2.05.05.escepticismo-dialectico",
+-  "title": "Integración discursiva: Escepticismo, rectificación y atenuación en el debate intelectual",
++  "title": "Disagreeing Politely",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Síntesis de posicionamiento epistémico",
+-      "content": "El debate intelectual y la diplomacia de nivel B2 exigen articular objeciones sin agresividad. Esto se logra combinando matrices de opinión negada ('no estimamos que...'), aclaraciones rectificativas ('no es que desconozcamos X, sino que advertimos Y') y moduladores de probabilidad ('puede que existan alternativas'). Esta constelación modal permite desarmar argumentos falaces manteniendo el rigor académico y la cortesía discursiva."
++      "title": "Putting the unit together",
++      "content": "You know *no creo que* from B1 Unit 7, *dudo que* from B1 Unit 13, *sino que* from B1 Unit 40 and the polite conditional (*me gustaría*) from A2 Unit 26. In this unit you added the opinion verbs with *no*, the verbs of doubt and denial, *no es que... sino que...* and the possibility markers. Together they give you a way to disagree that is clear but not rude: grant a point, state your doubt, correct the reason, and soften with the conditional."
++    },
++    {
++      "type": "table",
++      "title": "A polite disagreement in four moves",
++      "rows": [
++        [
++          "Puede que tengas razón.",
++          "Grant a point."
++        ],
++        [
++          "Pero no creo que sea tan sencillo.",
++          "State your doubt (subjunctive)."
++        ],
++        [
++          "No es que me oponga, sino que me faltan datos.",
++          "Correct the reason (no es que... sino que...)."
++        ],
++        [
++          "Yo no diría que sea un error.",
++          "Soften with the conditional diría and the subjunctive."
++        ]
++      ]
++    },
++    {
++      "type": "text",
++      "title": "Softening with the conditional",
++      "content": "*No digo que sea un error* states your view directly. *No diría que sea un error* ('I wouldn't say it is a mistake') is gentler, because the conditional makes it sound like a suggestion. Both take the subjunctive, as other negated verbs of saying and thinking do."
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el ensayo argumentativo",
++      "title": "Examples in context",
+       "items": [
+         {
+-          "spanish": "No consideramos que el informe sea concluyente, y dudamos que los datos hayan sido recopilados sin sesgos.",
+-          "english": "We do not consider that the report is conclusive, and we doubt that data was collected without bias."
++          "spanish": "Puede que tengas razón, pero no creo que sea tan sencillo.",
++          "english": "You may be right, but I do not think it is that simple."
++        },
++        {
++          "spanish": "Yo no diría que sea un error, pero dudo que sea la mejor opción.",
++          "english": "I wouldn't say it is a mistake, but I doubt it is the best option."
+         },
+         {
+-          "spanish": "No es que pretendamos zanjar la controversia unilateralmente, sino que esgrimimos salvaguardas legítimas.",
+-          "english": "It is not that we seek to settle the controversy unilaterally, but rather that we wield legitimate safeguards."
++          "spanish": "No es que esté en contra de la idea, sino que me faltan datos.",
++          "english": "It is not that I am against the idea, it is that I lack data."
+         },
+         {
+-          "spanish": "Puede que ambas partes muestren reticencia a ceder, pero es factible que alcancen un consenso pragmático.",
+-          "english": "Both parties may show reluctance to yield, but it is feasible that they reach a pragmatic consensus."
++          "spanish": "Entiendo tu punto de vista, pero no estoy de acuerdo.",
++          "english": "I understand your point of view, but I do not agree."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Para atenuar una crítica contundente, utiliza el condicional en la matriz: 'No me atrevería a decir que sea un error total, pero...' o 'Sería dudoso que tal premisa se sostuviera'."
++      "content": "Disagree with the idea, not with the person. *No creo que eso sea cierto* sounds calmer than *Estás equivocado*. And when the other person has a good point, say so: *Tienes razón en eso*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-03-01.json b/content/es-latam/lessons/b2/b2-03-01.json
+index 30537a5d..48b77e53 100644
+--- a/content/es-latam/lessons/b2/b2-03-01.json
++++ b/content/es-latam/lessons/b2/b2-03-01.json
+@@ -1,24 +1,24 @@
+ {
+   "id": "lesson.b2.03.01",
+-  "title": "Probability Markers & Mood Alternation",
++  "title": "Maybe: Markers and Mood",
+   "level": "B2",
+-  "goal": "Calibrate epistemic probability using markers that govern indicative (a lo mejor, igual) or alternate with subjunctive (quizás, tal vez).",
+-  "grammar": "marcadores de probabilidad y selección entre indicativo y subjuntivo",
++  "goal": "Choose between the indicative and the subjunctive after a lo mejor, quizás, tal vez and puede que to show how sure you are.",
++  "grammar": "Probability markers and mood",
+   "sections": [
+     {
+       "type": "intro",
+-      "title": "Unit 3: Hypothesizing & Probability",
++      "title": "Unit 3: Hypothesizing and Probability",
+       "body": [
+-        "Welcome to Unit 3: Hypothesizing & Probability. In upper-intermediate Spanish, expressing doubt and certainty is not an all-or-nothing affair; it is a nuanced scale of probability.",
+-        "In this unit, inspired by Gabriel García Márquez's investigative masterpiece 'Crónica de una muerte anunciada', you will master the epistemic markers of conjecture, impersonal probability matrices, the future and conditional of probability, and the delicate art of hedging in intellectual discourse."
++        "At B2 you do not only say what you know and what you do not know. You also show how sure you are: it is certain, likely, possible or just a guess. This unit is about that scale.",
++        "You will practise the words for 'maybe' and the mood after them, expressions such as es probable que, the future and the conditional for guesses, and adverbs such as seguramente and sin duda. The unit ends with a short text about the Colombian writer Gabriel García Márquez and his novel Crónica de una muerte anunciada."
+       ]
+     },
+     {
+       "type": "goal",
+       "items": [
+-        "Distinguish markers that strictly mandate indicative from those allowing subjunctive.",
+-        "Modulate epistemic commitment to convey varying degrees of doubt and conviction.",
+-        "Use B2 vocabulary of hypothesis, verification, and investigative analysis."
++        "I can use a lo mejor with the indicative and puede que with the subjunctive.",
++        "I can choose the indicative or the subjunctive after quizás and tal vez to show how sure I am.",
++        "I can use the new words for guessing."
+       ]
+     },
+     {
+@@ -59,6 +59,19 @@
+       "exerciseRefs": [
+         "b2-03-01.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use a lo mejor with the indicative and puede que with the subjunctive.",
++        "I can choose the indicative or the subjunctive after quizás and tal vez to show how sure I am.",
++        "I can use the new words for guessing."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-03-02.json b/content/es-latam/lessons/b2/b2-03-02.json
+index ab45db98..80b6b7d1 100644
+--- a/content/es-latam/lessons/b2/b2-03-02.json
++++ b/content/es-latam/lessons/b2/b2-03-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.03.02",
+-  "title": "Impersonal Matrices of Probability",
++  "title": "Likely, Certain, Doubtful",
+   "level": "B2",
+-  "goal": "Formulate high-level institutional and scholarly probability statements using impersonal matrices with indicative and subjunctive.",
+-  "grammar": "matrices impersonales de probabilidad y certeza en la subordinación",
++  "goal": "Choose the mood after expressions such as es probable que, es evidente que and no es seguro que.",
++  "grammar": "Impersonal expressions of probability and certainty",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Govern mood correctly after impersonal matrices of likelihood (es probable que + subj).",
+-        "Contrast certainty matrices (es seguro que + ind) with negated certainty (no es seguro que + subj).",
+-        "Employ formal analytical vocabulary (descartar, plausible, indudable)."
++        "I can use es probable que and no es seguro que with the subjunctive, and es evidente que with the indicative.",
++        "I can use the present perfect subjunctive after these expressions for things that already happened.",
++        "I can use the new words for weighing possibilities."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-03-02.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use es probable que and no es seguro que with the subjunctive, and es evidente que with the indicative.",
++        "I can use the present perfect subjunctive after these expressions for things that already happened.",
++        "I can use the new words for weighing possibilities."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-03-03.json b/content/es-latam/lessons/b2/b2-03-03.json
+index c775e792..c535588a 100644
+--- a/content/es-latam/lessons/b2/b2-03-03.json
++++ b/content/es-latam/lessons/b2/b2-03-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.03.03",
+-  "title": "Future of Conjecture: Present & Past",
++  "title": "Guessing About Now: The Future",
+   "level": "B2",
+-  "goal": "Express spontaneous deductions, present assumptions, and recent past conjectures using the simple and compound future.",
+-  "grammar": "el futuro simple y compuesto de conjetura epistémica",
++  "goal": "Use the future and the future perfect to guess about the present and about what has probably happened.",
++  "grammar": "The future for guesses",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Use the simple future to speculate about current states (tendrá unos cuarenta años).",
+-        "Use the compound future for logical deductions about past events (se habrá quedado dormido).",
+-        "Deploy deductive vocabulary (averiguar, deducir, presunto, cálculo)."
++        "I can use the future to guess about the present, as in estará en casa.",
++        "I can use the future perfect to guess about what has already happened, as in habrá salido ya.",
++        "I can use the new words for working things out."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-03-03.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use the future to guess about the present, as in estará en casa.",
++        "I can use the future perfect to guess about what has already happened, as in habrá salido ya.",
++        "I can use the new words for working things out."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-03-04.json b/content/es-latam/lessons/b2/b2-03-04.json
+index 2a8c80f2..5ac5f372 100644
+--- a/content/es-latam/lessons/b2/b2-03-04.json
++++ b/content/es-latam/lessons/b2/b2-03-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.03.04",
+-  "title": "Conditional of Probability in the Past",
++  "title": "Guessing About Then: The Conditional",
+   "level": "B2",
+-  "goal": "Reconstruct historical and forensic timelines by formulating retrospective conjectures with the simple and compound conditional.",
+-  "grammar": "el condicional simple y compuesto de conjetura en marcos pretéritos",
++  "goal": "Use the conditional to guess about a moment in the past, and tell it apart from the conditional that needs a condition.",
++  "grammar": "The conditional for guesses about the past",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate speculative past estimates using the conditional (serían las tres).",
+-        "Integrate forensic and investigative vocabulary into narrative chronicles.",
+-        "Distinguish between hypothetical conditionality and past epistemic conjecture."
++        "I can use the conditional to guess about a moment in the past, as in serían las diez.",
++        "I can choose between the future and the conditional by the time I am talking about.",
++        "I can use the new words for looking back."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-03-04.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use the conditional to guess about a moment in the past, as in serían las diez.",
++        "I can choose between the future and the conditional by the time I am talking about.",
++        "I can use the new words for looking back."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-03-05.json b/content/es-latam/lessons/b2/b2-03-05.json
+index ad1e6c21..c96e54ac 100644
+--- a/content/es-latam/lessons/b2/b2-03-05.json
++++ b/content/es-latam/lessons/b2/b2-03-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.03.05",
+-  "title": "Epistemic Adverbs & Assertive Hedging",
++  "title": "Probably, Surely, Without Doubt",
+   "level": "B2",
+-  "goal": "Master the rhetoric of hedging and epistemic qualification in scholarly and journalistic debates using adverbs of probability.",
+-  "grammar": "adverbios epistémicos y atenuación de asertos en la prosa analítica",
++  "goal": "Rank the adverbs of probability from less sure to more sure and use them with the right mood.",
++  "grammar": "Adverbs of probability",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Hedge academic claims using adverbs of probability (presumiblemente, aparentemente).",
+-        "Avoid overly categorical claims in analytical essays through tactical qualification.",
+-        "Deploy high-register evidentiary vocabulary (fehaciente, tajante, disipar, conjetura)."
++        "I can use seguramente, probablemente and sin duda to say how sure I am.",
++        "I can say which adverbs of probability take the indicative and which allow the subjunctive.",
++        "I can use the new words for degrees of certainty."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-03-05.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use seguramente, probablemente and sin duda to say how sure I am.",
++        "I can say which adverbs of probability take the indicative and which allow the subjunctive.",
++        "I can use the new words for degrees of certainty."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-03-consolidation.json b/content/es-latam/lessons/b2/b2-03-consolidation.json
+index 592e776a..310ec7d4 100644
+--- a/content/es-latam/lessons/b2/b2-03-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-03-consolidation.json
+@@ -2,16 +2,15 @@
+   "id": "lesson.b2.03.consolidation",
+   "title": "Unit 3 Consolidation",
+   "level": "B2",
+-  "goal": "Consolidate epistemic probability markers, impersonal matrices, future and conditional of conjecture, and academic hedging.",
+-  "grammar": "síntesis de hipótesis, probabilidad y conjetura en español",
++  "goal": "Review markers of probability, expressions of likelihood, the future and the conditional for guesses and adverbs of probability, and read a text about Gabriel García Márquez.",
++  "grammar": "Review: hypothesizing and probability",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Consolidate indicative vs subjunctive selection with probability triggers.",
+-        "Formulate speculative hypotheses with future and conditional of conjecture.",
+-        "Apply assertive hedging and epistemic qualification to complex arguments.",
+-        "Analyze journalistic and literary excerpts from Gabriel García Márquez."
++        "Review the markers of probability and the mood after them.",
++        "Review the future and the conditional for guesses, and the adverbs of probability.",
++        "Read a text about the writer Gabriel García Márquez and his novel."
+       ]
+     },
+     {
+@@ -40,10 +39,10 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can use a lo mejor with indicative and quizás/tal vez with indicative or subjunctive.",
+-        "I can govern mood accurately after impersonal probability matrices (es probable que).",
+-        "I can formulate deductions about the present and past using the future and conditional of conjecture.",
+-        "I can qualify assertions and hedge claims in academic and professional prose."
++        "I can say how sure I am about something in the present and in the past.",
++        "I can choose the right mood after a lo mejor, quizás, puede que and es probable que.",
++        "I can guess with the future, the future perfect and the conditional.",
++        "I can read a short text about a writer and his novel."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-05-01.json b/content/es-latam/lessons/b2/b2-05-01.json
+index b222bf88..8d22cd41 100644
+--- a/content/es-latam/lessons/b2/b2-05-01.json
++++ b/content/es-latam/lessons/b2/b2-05-01.json
+@@ -1,24 +1,24 @@
+ {
+   "id": "lesson.b2.05.01",
+-  "title": "Negación de opiniones y creencias",
++  "title": "Opinion Verbs: Saying You Do Not Think So",
+   "level": "B2",
+-  "goal": "Express critical intellectual judgment and counter-arguments using the subjunctive after negated verbs of opinion and belief.",
+-  "grammar": "el modo subjuntivo tras matrices de pensamiento, creencia y percepción en forma negativa",
++  "goal": "Use the indicative after opinion verbs and the subjunctive after the same verbs with no, and place the no correctly.",
++  "grammar": "Opinion verbs and mood",
+   "sections": [
+     {
+       "type": "intro",
+-      "title": "Unit 5: Doubt, Denial & Epistemic Stance",
++      "title": "Unit 5: Doubt, Denial and Opinion",
+       "body": [
+-        "Welcome to Unit 5 of Spanish B2 Core: Doubt, Denial & Epistemic Stance. At the B2 level, critical engagement requires learning how to distance oneself from propositions, dispute arguments, and calibrate certainty.",
+-        "In this first lesson, we explore the contrast between affirmative assertion and negated belief matrices ('creer', 'pensar', 'opinar', 'considerar'), mastering the subjunctive mechanics of intellectual critique."
++        "At B2 you give opinions, but you also doubt, deny and politely disagree with other people's opinions. This unit is about the moods of that kind of conversation.",
++        "You will practise opinion verbs with and without no, verbs of doubt and denial, the pattern no es que… sino que… for correcting a reason, expressions of possibility for hedging an opinion, and how to put them together to disagree politely. The unit ends with a short text about the Mexican writer Octavio Paz and his book of essays El laberinto de la soledad."
+       ]
+     },
+     {
+       "type": "goal",
+       "items": [
+-        "Distinguish modal selection between affirmative (indicative) and negative (subjunctive) belief matrices.",
+-        "Deploy academic debate vocabulary (postulado, aseveración, disentir, falaz).",
+-        "Formulate nuanced philosophical and sociological counter-arguments."
++        "I can use no creo que and no me parece que with the subjunctive.",
++        "I can tell creo que no with the indicative from no creo que with the subjunctive.",
++        "I can use the new words for opinions and beliefs."
+       ]
+     },
+     {
+@@ -59,6 +59,19 @@
+       "exerciseRefs": [
+         "b2-05-01.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use no creo que and no me parece que with the subjunctive.",
++        "I can tell creo que no with the indicative from no creo que with the subjunctive.",
++        "I can use the new words for opinions and beliefs."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-05-02.json b/content/es-latam/lessons/b2/b2-05-02.json
+index da271945..dcb7039d 100644
+--- a/content/es-latam/lessons/b2/b2-05-02.json
++++ b/content/es-latam/lessons/b2/b2-05-02.json
+@@ -1,24 +1,16 @@
+ {
+   "id": "lesson.b2.05.02",
+-  "title": "Verbos léxicos de duda, negación e incertidumbre",
++  "title": "Doubt and Denial Verbs",
+   "level": "B2",
+-  "goal": "Deploy lexical verbs of doubt, denial, and contestation (dudar, negar, cuestionar) with required subjunctive complements.",
+-  "grammar": "el régimen de subjuntivo con verbos inherentemente negativos o dubitativos",
++  "goal": "Use dudar que and negar que with the subjunctive, and no dudar que with the indicative.",
++  "grammar": "Verbs of doubt and denial",
+   "sections": [
+-    {
+-      "type": "intro",
+-      "title": "Lexical Verbs of Doubt & Negation",
+-      "body": [
+-        "In this second lesson, we explore verbs whose very meaning embodies doubt, contestation, or denial: 'dudar', 'negar', 'cuestionar', and 'desmentir'.",
+-        "We analyze why these verbs inherently induce the subjunctive, and practice the crucial pragmatic contrast between affirmative doubt and negated doubt ('no dudar que' + indicativo)."
+-      ]
+-    },
+     {
+       "type": "goal",
+       "items": [
+-        "Identify verbs that inherently code epistemic doubt and negation.",
+-        "Contrast 'dudar que' (subjunctive) with 'no dudar que' (indicative).",
+-        "Articulate rigorous scholarly skepticism in institutional discourse."
++        "I can use dudo que and niego que with the subjunctive.",
++        "I can use no dudo que and no niego que with the indicative.",
++        "I can use the new words for doubt and denial."
+       ]
+     },
+     {
+@@ -59,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-05-02.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use dudo que and niego que with the subjunctive.",
++        "I can use no dudo que and no niego que with the indicative.",
++        "I can use the new words for doubt and denial."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-05-03.json b/content/es-latam/lessons/b2/b2-05-03.json
+index d0bc124e..f80239ee 100644
+--- a/content/es-latam/lessons/b2/b2-05-03.json
++++ b/content/es-latam/lessons/b2/b2-05-03.json
+@@ -1,24 +1,16 @@
+ {
+   "id": "lesson.b2.05.03",
+-  "title": "Refutación discursiva: No es que... sino que...",
++  "title": "Correcting a Reason: No es que… sino que…",
+   "level": "B2",
+-  "goal": "Master discursive rectification and nuanced refutation using the paired formula 'no es que' + subjunctive followed by 'sino que' + indicative.",
+-  "grammar": "la correlación modal en construcciones rectificativas de negación y contraafirmación",
++  "goal": "Reject a reason with no es que and the subjunctive, and give the real reason with sino que and the indicative.",
++  "grammar": "No es que… sino que…",
+   "sections": [
+-    {
+-      "type": "intro",
+-      "title": "Discursive Refutation & Rectification",
+-      "body": [
+-        "One of the most powerful rhetorical devices in sophisticated argument is the clarification formula: 'no es que... sino que...'.",
+-        "In this lesson, we study how to dismiss misunderstandings in the subjunctive while establishing empirical reality in the indicative, sharpening our persuasive edge."
+-      ]
+-    },
+     {
+       "type": "goal",
+       "items": [
+-        "Deconstruct erroneous assumptions using 'no es que' + subjunctive.",
+-        "Assert true motivations with 'sino que' + indicative.",
+-        "Apply high-register vocabulary of clarification (matiz, salvedad, rebatir, rectificar)."
++        "I can reject a reason with no es que and the subjunctive.",
++        "I can give the real reason with sino que and the indicative.",
++        "I can use the new words for reasons and complaints."
+       ]
+     },
+     {
+@@ -59,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-05-03.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can reject a reason with no es que and the subjunctive.",
++        "I can give the real reason with sino que and the indicative.",
++        "I can use the new words for reasons and complaints."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-05-04.json b/content/es-latam/lessons/b2/b2-05-04.json
+index eb7d24be..7a8d772b 100644
+--- a/content/es-latam/lessons/b2/b2-05-04.json
++++ b/content/es-latam/lessons/b2/b2-05-04.json
+@@ -1,24 +1,16 @@
+ {
+   "id": "lesson.b2.05.04",
+-  "title": "Moduladores epistémicos de posibilidad y probabilidad",
++  "title": "Hedging an Opinion",
+   "level": "B2",
+-  "goal": "Calibrate degrees of certainty, conjecture, and likelihood using epistemic markers like 'puede que', 'es probable que', and 'quizás'.",
+-  "grammar": "moduladores de probabilidad y alternancia modal con adverbios de duda",
++  "goal": "Hedge an opinion with puede ser que, es posible que and quizás, and use ¿acaso...? as a rhetorical question.",
++  "grammar": "Hedging and rhetorical questions",
+   "sections": [
+-    {
+-      "type": "intro",
+-      "title": "Epistemic Modulators of Probability",
+-      "body": [
+-        "Intellectual maturity requires knowing how to frame hypotheses without claiming unearned certainty.",
+-        "In this lesson, we study epistemic modifiers: from categorical subjunctive triggers ('puede que', 'es probable que') to versatile modal adverbs ('quizás', 'tal vez')."
+-      ]
+-    },
+     {
+       "type": "goal",
+       "items": [
+-        "Master invariable subjunctive triggers of possibility ('puede que', 'es probable que').",
+-        "Understand modal nuance between indicative and subjunctive after 'tal vez' and 'quizás'.",
+-        "Express cautious scholarly and diplomatic hypotheses."
++        "I can hedge an opinion with puede ser que and es posible que.",
++        "I can use ¿acaso...? for a question that is not a real question.",
++        "I can use the new words for discussing an idea."
+       ]
+     },
+     {
+@@ -59,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-05-04.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can hedge an opinion with puede ser que and es posible que.",
++        "I can use ¿acaso...? for a question that is not a real question.",
++        "I can use the new words for discussing an idea."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-05-05.json b/content/es-latam/lessons/b2/b2-05-05.json
+index 898e716c..e70e1105 100644
+--- a/content/es-latam/lessons/b2/b2-05-05.json
++++ b/content/es-latam/lessons/b2/b2-05-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.05.05",
+-  "title": "Escepticismo diplomático, debate intelectual y dialéctica",
++  "title": "Disagreeing Politely",
+   "level": "B2",
+-  "goal": "Synthesize epistemic stance, negation of belief, lexical doubt, and discursive refutation in high-register intellectual debates.",
+-  "grammar": "integración de posicionamiento epistémico, duda razonada y rectificación retórica",
++  "goal": "Combine a granted point, doubt and no es que… sino que… to disagree politely.",
++  "grammar": "Polite disagreement",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate courteous intellectual objections without dogmatic assertion.",
+-        "Combine 'no es que' + subjunctive with 'sino que' + indicative in academic debates.",
+-        "Deploy lexical diplomacy verbs (zanjar, disentir, esgrimir, sesgado)."
++        "I can disagree politely by granting a point and then stating my doubt.",
++        "I can soften a disagreement with no diría que and the subjunctive.",
++        "I can use the new words for debating an idea."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-05-05.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can disagree politely by granting a point and then stating my doubt.",
++        "I can soften a disagreement with no diría que and the subjunctive.",
++        "I can use the new words for debating an idea."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-05-consolidation.json b/content/es-latam/lessons/b2/b2-05-consolidation.json
+index fb938a5e..ba5d93ae 100644
+--- a/content/es-latam/lessons/b2/b2-05-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-05-consolidation.json
+@@ -2,16 +2,15 @@
+   "id": "lesson.b2.05.consolidation",
+   "title": "Unit 5 Consolidation",
+   "level": "B2",
+-  "goal": "Consolidate epistemic positioning, negation of belief matrices, lexical doubt, rectificative refutation, and probability modulators.",
+-  "grammar": "síntesis de estructuras de duda, negación, refutación retórica y matización epistémica",
++  "goal": "Review opinion verbs, verbs of doubt and denial, no es que… sino que… and possibility markers, and read a text about Octavio Paz and his book of essays.",
++  "grammar": "Review: doubt, denial and stance",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Deploy the subjunctive after negated opinion and perception verbs.",
+-        "Distinguish affirmative doubt (subjunctive) from negated doubt (indicative).",
+-        "Construct elegant discursive refutations with 'no es que... sino que...'.",
+-        "Analyze philosophical essays from Octavio Paz's 'El laberinto de la soledad'."
++        "Review opinion verbs and verbs of doubt and denial, with and without no.",
++        "Review no es que… sino que… and the possibility markers for hedging an opinion.",
++        "Read a text about the writer Octavio Paz and his book of essays."
+       ]
+     },
+     {
+@@ -40,10 +39,10 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can govern the subjunctive after negated belief verbs (no creo, no opino que).",
+-        "I can use lexical doubt verbs (dudar, negar, cuestionar) with proper modal selection.",
+-        "I can construct nuanced refutations using 'no es que' + subjunctive and 'sino que' + indicative.",
+-        "I can calibrate degrees of possibility using 'puede que', 'es probable que', and 'quizás'."
++        "I can say that I do not think, doubt or deny something, with the right mood.",
++        "I can correct a reason with no es que and the subjunctive, and sino que and the indicative.",
++        "I can hedge an opinion and disagree politely.",
++        "I can read a short text about a writer and his book."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/stories/classics/b2/b2-03.json b/content/es-latam/stories/classics/b2/b2-03.json
+index 5a5df801..4928b7bf 100644
+--- a/content/es-latam/stories/classics/b2/b2-03.json
++++ b/content/es-latam/stories/classics/b2/b2-03.json
+@@ -1,91 +1,90 @@
+ {
+   "id": "story.b2.03.garciamarquez",
+-  "title": "Gabriel García Márquez: Memoria, fatalidad y conjetura",
++  "title": "García Márquez y una muerte anunciada",
+   "level": "B2",
+   "lesson": 5,
+   "order": 3,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "characters": [
+-    "Santiago Nasar",
+-    "Pedro Vicario",
+-    "Pablo Vicario",
+-    "Ángela Vicario",
+-    "Bayardo San Román",
+-    "Plácida Linero",
+-    "Clotilde Armenta"
+-  ],
+-  "summary": "Adaptación pedagógica para nivel B2 de la célebre novela de Gabriel García Márquez: la inexorable cadena de fatalidades y desidias que culminan en el trágico asesinato de Santiago Nasar a plena luz del día.",
++  "characters": [],
++  "summary": "Texto sobre Gabriel García Márquez y su novela Crónica de una muerte anunciada, con las preguntas que se hace el lector: ¿por qué nadie hizo nada?",
+   "author": "Gabriel García Márquez (Colombia, 1927–2014)",
+   "work": "Crónica de una muerte anunciada (1981)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Gabriel García Márquez",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "El día en que lo iban a matar, Santiago Nasar se levantó a las 5:30 de la mañana para esperar el buque en que llegaba el obispo. Había dormido poco y mal a causa de las celebraciones desenfrenadas de la boda entre el adinerado forastero Bayardo San Román y la joven Ángela Vicario, fiesta que había congregado al pueblo entero hasta la madrugada. Vestido con camisa y pantalón de lino blanco sin almidón, Santiago bajó a la cocina con la mente despejada y el ánimo alegre. Su madre, Plácida Linero, célebre por interpretar sueños premonitorios ajenos, desestimó el extraño sueño que su hijo había tenido la noche previa con árboles y pájaros, creyendo que se trataba de un augurio inocente."
+-    },
+-    {
+-      "type": "narration",
+-      "text": "Nadie en la casa sospechaba la catástrofe que ya se cernía sobre ellos. Apenas unas horas antes, en la intimidad de la noche de bodas, Bayardo San Román había descubierto que su desposada no era virgen y la había devuelto ultrajado a la casa paterna. Ante los golpes furiosos de su madre y la mirada atónita de sus parientes, Ángela Vicario había susurrado un único nombre para salvar su pellejo: Santiago Nasar. Para sus hermanos gemelos, Pedro y Pablo Vicario, jóvenes carniceros de veinticuatro años, la restauración del honor familiar no admitía dudas: debían lavar la afrenta con sangre antes de que el sol despuntara por completo en el horizonte fluvial."
++      "text": "Gabriel García Márquez nació en 1927 en Aracataca, un pueblo de Colombia, y murió en 2014 en la Ciudad de México. En 1982 ganó el Premio Nobel de Literatura, un año después de publicar una novela corta: Crónica de una muerte anunciada."
+     },
+     {
+       "type": "narration",
+-      "text": "Envueltos en chaquetas de paño grueso y armados con dos enormes cuchillos de destazar cerdos envueltos en periódicos viejos, los gemelos se apostaron en la tienda de leche de Clotilde Armenta, situada frente a la vivienda de Santiago. Lejos de ocultar su designio, proclamaron a viva voz ante cada cliente madrugador que aguardaban allí para degollar a Santiago Nasar. Clotilde comprendió de inmediato que los muchachos no sentían sed de venganza, sino un pavor secreto a la obligación que la moral comunitaria les imponía. Al divulgar su plan a gritos, albergaban la íntima esperanza de que una autoridad interviniera a tiempo y les impidiera consumar el crimen."
++      "text": "La novela se inspira en un asesinato real que ocurrió en 1951 en Sucre, un pueblo de Colombia. Sin embargo, no es un informe del caso, sino una ficción, y por eso los nombres de la novela son inventados. García Márquez partió de un hecho real y lo convirtió en literatura."
+     },
+     {
+       "type": "narration",
+-      "text": "Sin embargo, el pueblo quedó atrapado en un laberinto de negligencias e indiferencias colectivas. El coronel Lázaro Aponte, alcalde municipal, se limitó a quitarles los primeros cuchillos y mandarlos a dormir, creyendo cancelada la amenaza sin advertir que los gemelos regresarían minutos más tarde con dos hojas aún más afiladas. El sacerdote, atareado con los preparativos litúrgicos para la efímera bendición pastoral desde el barco, postergó la advertencia para más tarde. Otros vecinos pensaron que se trataba de una fanfarronada de borrachos, mientras algunos asumieron que la propia familia de la víctima ya estaba prevenida."
++      "text": "En el libro, todo el pueblo sabe que dos hermanos gemelos van a matar a Santiago Nasar, y nadie lo impide. Lo que llama la atención no es quién va a matar a Santiago, sino que nadie haga nada para evitarlo."
+     },
+     {
+       "type": "narration",
+-      "text": "Ajeno por completo al drama que congregaba miradas nerviosas a su paso, Santiago Nasar presenció la llegada del barco en el muelle. El pontón del obispo ni siquiera atracó: el prelado se limitó a impartir una bendición mecánica desde la baranda mientras la nave proseguía su curso río arriba. Desilusionado por la brevedad del acto pero todavía animado por el ambiente festivo, Santiago emprendió el regreso a pie hacia la plaza central, deteniéndose a bromear en las esquinas sin que nadie se atreviera a romper el silencio cómplice que lo rodeaba como un manto de hielo."
++      "text": "¿Por qué nadie lo impediría? Los lectores solo pueden hacer suposiciones. Es probable que algunos vecinos no creyeran la amenaza, y quizá otros tuvieran miedo. Tal vez pensaran que no era asunto suyo, o a lo mejor nadie quería meterse en problemas. Puede que cada persona creyera que otra iba a actuar. Son solo hipótesis de quien lee, no hechos del libro, y cada lector puede imaginar otras explicaciones."
+     },
+     {
+       "type": "narration",
+-      "text": "Solo cuando entró a la casa de su prometida, Flora Miguel, Santiago supo con horror la verdad que todos conocían. Desorientado y temblando de incredulidad, echó a correr hacia su vivienda por el medio de la plaza abierta. Al verlo venir perseguido a carrera abierta por los gemelos con los cuchillos en alto, la multitud que salía de la misa dominical se paralizó en un griterío ensordecedor. Su madre, alertada por los alaridos callejeros y creyendo erróneamente que Santiago ya se encontraba a salvo en el interior, trancó con trancas de hierro la pesada puerta principal de la casa, dejándolo atrapado en la acera."
++      "text": "Años después, un narrador vuelve al pueblo y reconstruye lo que pasó, como lo haría un periodista que investiga un caso. Reconstruir una historia años después nunca es fácil, y es posible que los recuerdos de la gente no coincidan. ¿Qué habrá pensado al volver? ¿Habrá entendido por fin lo que ocurrió? Los lectores solo pueden hacer suposiciones sobre eso también."
+     },
+     {
+       "type": "narration",
+-      "text": "Allí, contra la madera maciza de la puerta cerrada, los hermanos Vicario descargaron sus tajos con una furia desesperada. Santiago cayó de rodillas sobre el polvo blanco, atravesado por múltiples heridas, mientras los agresores se entregaban de inmediato a la iglesia confesando el acto de honor consumado. Poniéndose de pie con una dignidad sobrehumana, el joven se sujetó las vísceras con ambas manos, rodeó la casa por el callejón lateral, entró por la cocina y le susurró a la servidumbre con su último aliento: «Me mataron, niña Wene». Así se cerró la crónica de un destino anunciado que una comunidad entera conoció con horas de anticipación pero que nadie supo o quiso evitar."
++      "text": "Hoy, muchos lectores se preguntarán qué harían ellos en un pueblo así. Seguramente cada persona termina el libro con una respuesta distinta. Sin duda, es una historia que invita a hacerse preguntas, y el título anuncia desde el principio que la muerte de Santiago no será una sorpresa."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Por qué motivo los hermanos gemelos Pedro y Pablo Vicario deciden buscar a Santiago Nasar?",
++          "question": "According to the text, what inspired the novel?",
+           "options": [
+-            "Porque Santiago había estafado a Bayardo San Román durante la compraventa de una mansión.",
+-            "Para vengar el honor mancillado de su hermana Ángela, quien señaló a Santiago tras ser devuelta en su noche de bodas.",
+-            "Por un conflicto de linderos ganaderos surgido durante los festejos patronales del pueblo fluvial.",
+-            "Siguiendo las órdenes expresas del coronel Lázaro Aponte para imponer el orden público en el muelle."
++            "Un asesinato real que ocurrió en 1951 en un pueblo de Colombia.",
++            "Un viaje de García Márquez a su pueblo después del Premio Nobel.",
++            "Un artículo de periódico que el autor leyó en 1927.",
++            "Una historia que el autor oyó en la Ciudad de México."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "Bayardo San Román devuelve a Ángela Vicario tras descubrir que no es virgen, y ella acusa a Santiago Nasar, desencadenando el mandato familiar de vengar la afrenta."
++          "correctIndex": 0,
++          "explanation": "The text says that the novel is inspired by a real killing that took place in 1951 in Sucre, a town in Colombia. The names in the novel are invented."
+         },
+         {
+-          "question": "¿Qué paradoja psicológica observa Clotilde Armenta en la conducta de los gemelos Vicario en su tienda?",
++          "question": "What does the whole town know in the novel, according to the text?",
+           "options": [
+-            "Comprende que anuncian su crimen a viva voz deseando en secreto que alguien los detenga para no tener que matar.",
+-            "Advierte que pretenden simular una pelea callejera para ocultar un robo a la caja comunal de ahorros.",
+-            "Nota que están completamente sobrios y planean huir en el barco fluvial del obispo tras el atentado.",
+-            "Descubre que los gemelos habían sido sobornados por la servidumbre de la casa de Santiago."
++            "Que dos hermanos gemelos van a matar a Santiago Nasar.",
++            "Que Santiago Nasar va a salir del pueblo para siempre.",
++            "Que un periodista va a escribir un libro sobre el pueblo.",
++            "Que el autor va a ganar el Premio Nobel."
+           ],
+           "correctIndex": 0,
+-          "explanation": "Clotilde percibe que los hermanos pregonan sus intenciones porque no desean matar, sino que anhelan que la sociedad o la autoridad les impida cometer el acto trágico."
++          "explanation": "The text says that the whole town knows that two twin brothers are going to kill Santiago Nasar, and that nobody stops them."
+         },
+         {
+-          "question": "¿Qué circunstancia desafortunada sella de manera irreversible la muerte de Santiago Nasar en la entrada de su hogar?",
++          "question": "What does the narrator do years later?",
+           "options": [
+-            "Que su prometida Flora Miguel lo encerró en el sótano para evitar que huyera del pueblo.",
+-            "Que el coronel Lázaro Aponte le confiscó su revólver minutos antes del enfrentamiento final.",
+-            "Que su propia madre atrancó la puerta principal creyendo erróneamente que él ya estaba dentro protegido.",
+-            "Que una multitud enfurecida bloqueó el callejón de la iglesia para impedir la intervención de la policía."
++            "Vuelve al pueblo y reconstruye lo que pasó, como un periodista.",
++            "Se va del pueblo y no vuelve a hablar del caso.",
++            "Escribe una carta al autor para pedirle un premio.",
++            "Cuenta lo que pasó, pero solo con nombres reales."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "Plácida Linero ve correr a la gente y, creyendo que su hijo ya ha ingresado a la casa, pasa el cerrojo de la puerta principal, dejándolo a merced de los cuchillos de los gemelos."
++          "correctIndex": 0,
++          "explanation": "The text says that a narrator goes back to the town and reconstructs what happened, like a journalist investigating a case."
++        },
++        {
++          "question": "In the text, are the explanations for why nobody acted facts from the book?",
++          "options": [
++            "No, son solo hipótesis de los lectores.",
++            "Sí, el libro da todas las explicaciones.",
++            "Sí, el autor las escribió en 1982.",
++            "No, porque nadie hizo nada en realidad."
++          ],
++          "correctIndex": 0,
++          "explanation": "The text says that these are only hypotheses of the reader, not facts from the book, and that each reader can imagine other explanations."
+         }
+       ]
+     }
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/content/es-latam/stories/classics/b2/b2-05.json b/content/es-latam/stories/classics/b2/b2-05.json
+index 2acefe42..aefc4260 100644
+--- a/content/es-latam/stories/classics/b2/b2-05.json
++++ b/content/es-latam/stories/classics/b2/b2-05.json
+@@ -1,87 +1,79 @@
+ {
+   "id": "story.b2.05.paz",
+-  "title": "Octavio Paz: Las máscaras de la soledad y la dialéctica del ser",
++  "title": "Octavio Paz y El laberinto de la soledad",
+   "level": "B2",
+   "lesson": 5,
+   "order": 5,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "characters": [
+-    "El ensayista",
+-    "El mexicano contemporáneo",
+-    "El pueblo en fiesta"
+-  ],
+-  "summary": "Adaptación pedagógica para nivel B2 de la célebre obra de Octavio Paz: una exploración filosófica sobre las máscaras defensivas de la identidad, el recelo ante la intimidad y la fiesta colectiva como liberación existencial.",
++  "characters": [],
++  "summary": "Texto sobre Octavio Paz y su libro de ensayos El laberinto de la soledad, presentado como la visión personal de un autor que cada lector puede discutir.",
+   "author": "Octavio Paz (México, 1914–1998, Premio Nobel 1990)",
+   "work": "El laberinto de la soledad (1950)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de los ensayos clásicos de Octavio Paz",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume el contenido del original.",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Al contemplar los vaivenes de la conducta colectiva, Octavio Paz emprende una de las indagaciones existenciales más penetrantes del pensamiento en lengua española. Lejos de proponer un mero inventario de costumbres folclóricas o un análisis estadístico distante, el autor concibe la identidad como un laberinto íntimo donde cada gesto social oculta una herida histórica. El individuo se debate de continuo entre el deseo vehemente de entrar en comunión con sus semejantes y el pavor instintivo de ser lastimado o sometido por la mirada ajena, levantando a su alrededor una fortaleza invisible de prudencia y distancia."
+-    },
+-    {
+-      "type": "narration",
+-      "text": "En ese escenario cotidiano cobra forma la institución protectora de la máscara. La cortesía ceremoniosa, la sonrisa comedida y el tono sosegado no constituyen simples fórmulas de urbanidad; operan como una armadura psicológica que salvaguarda la intimidad frente a la indiscreción del mundo. En la cultura que describe Paz, abrirse al prójimo —lo que en el habla popular se designa con el elocuente verbo «rajarse»— equivale a una claudicación imperdonable, una debilidad que entrega al sujeto desarmado en manos del enemigo. De ahí que el ideal de respetabilidad se apoye en la reserva inquebrantable, en la capacidad estoica de callar el sufrimiento sin que una sola queja delate la zozobra interior."
++      "text": "Octavio Paz fue un poeta y ensayista mexicano, es decir, escribió poesía y también ensayos. Nació en 1914, murió en 1998 en la Ciudad de México y en 1990 recibió el Premio Nobel de Literatura. Entre sus obras hay un libro de ensayos sobre México: El laberinto de la soledad."
+     },
+     {
+       "type": "narration",
+-      "text": "No obstante, esta disciplina del hermetismo engendra una soledad asfixiante que amenaza con petrificar el alma de la comunidad. El ser humano no puede vivir recluido indefinidamente tras sus parapetos defensivos sin buscar una vía de escape que restablezca el equilibrio vital. Es entonces cuando interviene el fenómeno catártico de la fiesta. Frente a la penuria de los recursos materiales y la rutina severa del calendario laboral, la celebración patronal o patria irrumpe con la fuerza de un vendaval liberador que trastoca de raíz todas las jerarquías y prohibiciones establecidas por la costumbre."
++      "text": "Los primeros ensayos del libro aparecieron en 1949 en la revista Cuadernos Americanos. El libro se publicó en 1950, y en 1959 salió una edición revisada."
+     },
+     {
+       "type": "narration",
+-      "text": "Durante la fiesta, el orden riguroso salta por los aires en una explosión de música, cohetes, incienso y bebidas compartidas. El pueblo entero parece derrochar en veinticuatro horas lo que ha ahorrado durante meses enteros de privaciones y fatigas. Las máscaras de la circunspección caen fulminadas: el tímido alza la voz para entonar canciones desgarradas, el vecino rencoroso abraza a su antiguo adversario y los desconocidos se reconocen como hermanos en el seno de una misma marea festiva. La fiesta no es un simple esparcimiento; es un ritual sagrado de catarsis colectiva donde la sociedad se despoja de sus miedos para reencontrarse en el vértigo del presente puro."
++      "text": "El libro trata de la identidad mexicana, es decir, de cómo se ven a sí mismos los mexicanos. Paz habla de la soledad, de las máscaras que la gente se pone, de las fiestas y de la manera de enfrentar la muerte, y también de la historia de México. Según Paz, estos temas ayudan a entender esa identidad. Como el libro mira a México desde varios temas, no se lee como una sola historia, sino como una serie de ensayos."
+     },
+     {
+       "type": "narration",
+-      "text": "Sin embargo, toda fiesta concluye de manera inexorable al despuntar el alba. La música enmudece, las cenizas de los fuegos de artificio se enfrían sobre el suelo de la plaza y los participantes retornan con pasos lentos a sus hogares silenciosos. Tras el estallido efímero de comunión, la sobriedad vuelve a imponer su tiranía. El individuo comprueba con desasosiego que los lazos tejidos en la embriaguez del festejo se disuelven ante la luz cruda del nuevo día, obligándolo a colocarse nuevamente la máscara del recelo para afrontar las asperezas de la vida cotidiana."
++      "text": "Conviene leer el libro con cuidado. Son ideas de Paz, no hechos que valgan para todos los mexicanos. No creo que una sola persona pueda describir a todo un país, y dudo que todos los lectores estén de acuerdo con él. No es que el libro no tenga valor, sino que es una interpretación personal, y como tal se puede discutir."
+     },
+     {
+       "type": "narration",
+-      "text": "La conclusión que extrae Paz trasciende con creces las fronteras geográficas de su patria. La condición solitaria no representa un castigo exclusivo de un pueblo en particular ni una fatalidad irremediable inscrita en la geografía, sino el trance constitutivo de todo ser humano que toma conciencia de su singularidad. El verdadero desafío ético y espiritual radica en aprender a franquear los muros del laberinto sin anular la dignidad personal: transformar el aislamiento defensivo en un diálogo fecundo con el otro, reconociendo que solo mediante la entrega generosa de la libertad propia se alcanza la auténtica plenitud en la historia."
++      "text": "Es posible que algunos lectores encuentren en el libro una descripción exacta de sí mismos, y es posible que otros no se reconozcan en absoluto. Puede que cada lector reaccione de una manera distinta. Por ejemplo, alguien puede encontrar interesantes las ideas de Paz sobre las fiestas y dudar de sus ideas sobre otros temas. Quizás ese sea el mejor modo de leerlo: con curiosidad, pero sin aceptar todo sin pensar."
+     },
+     {
+       "type": "narration",
+-      "text": "Así, las reflexiones de Paz continúan iluminando a lectores de diversas latitudes y épocas. Frente a un mundo moderno que a menudo promueve el individualismo egoísta y el consumo deshumanizado, el laberinto de la soledad nos recuerda que la soledad compartida es la antesala de la solidaridad. Mirar de frente nuestras propias máscaras, admitir nuestras fragilidades sin vergüenza y tender puentes fraternales hacia quienes nos rodean constituye el único camino viable para construir una sociedad donde la dignidad y la empatía triunfen sobre el silencio y el desamparo."
++      "text": "Hoy podemos leer a Paz como lo que es: un ensayista que ofrece su visión de México. No es que debamos aceptar todas sus ideas, sino que podemos usarlas para hacernos nuestras propias preguntas. Un libro de ensayos no cierra la discusión; más bien la abre."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Qué función primordial atribuye Octavio Paz a la metáfora de la máscara en la vida social cotidiana?",
++          "question": "According to the text, when did the first essays of the book appear?",
+           "options": [
+-            "Funciona como una prenda de carnaval obligatoria para participar en los comicios electorales.",
+-            "Opera como un escudo protector que disimula la intimidad y previene la vulnerabilidad ante los demás.",
+-            "Constituye una técnica pedagógica empleada en las academias militares para inculcar disciplina.",
+-            "Es un símbolo decorativo diseñado para conmemorar las alianzas comerciales prehispánicas."
++            "En 1949, en la revista Cuadernos Americanos.",
++            "En 1950, en una edición revisada.",
++            "En 1959, en la revista Cuadernos Americanos.",
++            "En 1990, junto con el Premio Nobel."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "Paz sostiene que la máscara (cortesía, disimulo, reserva) actúa como una coraza protectora frente a un exterior percibido como amenazante."
++          "correctIndex": 0,
++          "explanation": "The text says that the first essays appeared in 1949 in the magazine Cuadernos Americanos. The book came out in 1950 and a revised edition in 1959."
+         },
+         {
+-          "question": "¿De qué manera transforma la fiesta el orden cotidiano instaurado por la costumbre?",
++          "question": "What is the book about, according to the text?",
+           "options": [
+-            "Refuerza las diferencias de casta exigiendo que cada grupo social desfile por separado en la plaza.",
+-            "Suspende temporalmente las restricciones y el recelo, permitiendo una catarsis de comunión colectiva desbordante.",
+-            "Prohíbe el uso de instrumentos musicales para preservar el descanso de los trabajadores del campo.",
+-            "Establece un código mercantil que multiplica las tasas impositivas sobre los artículos de lujo."
++            "La identidad de los mexicanos, es decir, cómo se ven a sí mismos.",
++            "La vida diaria de los poetas mexicanos.",
++            "La historia de la revista Cuadernos Americanos.",
++            "Los viajes de Paz por Europa."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "La fiesta rompe el hermetismo habitual: destruye las máscaras defensivas y posibilita un estallido de comunión, derroche y fraternidad colectiva."
++          "correctIndex": 0,
++          "explanation": "The text says that it is a book about Mexican identity, about how Mexicans see themselves. It also talks about solitude, masks, festivals, death and the history of Mexico."
+         },
+         {
+-          "question": "¿Cuál es la lección ontológica y universal con la que culmina el ensayo sobre el laberinto humano?",
++          "question": "How does the text say we should treat Paz's ideas?",
+           "options": [
+-            "Que la soledad es una condena incorregible que condena a todas las civilizaciones a la desintegración.",
+-            "Que el individuo solo puede hallar la felicidad refugiándose en conventos alejados del bullicio urbano.",
+-            "Que la soledad es la condición inherente al ser humano, cuya superación exige el encuentro solidario y sincero con el otro.",
+-            "Que el progreso técnico moderno resolverá automáticamente cualquier dilema ético o existencial."
++            "Como su interpretación personal, que se puede discutir.",
++            "Como hechos que valen para todos los mexicanos.",
++            "Como una descripción exacta de cada lector.",
++            "Como ideas sin ningún valor."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "Paz concluye que la soledad es universal a toda conciencia humana, y que el reto consiste en salir del laberinto mediante la reconciliación y el diálogo abierto con los demás."
++          "correctIndex": 0,
++          "explanation": "The text says that these are ideas of Paz, not facts that are true for all Mexicans, and that the book is a personal interpretation that can be discussed. It adds that the book does have value."
+         }
+       ]
+     }
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/content/es-latam/vocabulary/b2/b2-03-01-voc.json b/content/es-latam/vocabulary/b2/b2-03-01-voc.json
+index e68151b0..45c7e421 100644
+--- a/content/es-latam/vocabulary/b2/b2-03-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-03-01-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.03.01",
+   "lesson": "b2-03-01",
+-  "title": "Incertidumbre, certeza y especulación",
+-  "theme": "Hipótesis, grados de probabilidad y conjetura",
++  "title": "Words for guessing",
++  "theme": "Hypothesizing and probability",
+   "words": [
+     {
+-      "lemma": "la hipótesis",
+-      "translation": "hypothesis",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "la certeza",
+-      "translation": "certainty",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "la conjetura",
+-      "translation": "conjecture, guess",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "plausible",
+-      "translation": "plausible",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "inverosímil",
+-      "translation": "improbable, unbelievable",
+-      "pos": "adjective"
++      "lemma": "adivinar",
++      "translation": "to guess",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "indagar",
+-      "translation": "to investigate, to probe",
++      "lemma": "acertar",
++      "translation": "to guess right, to get it right",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "el indicio",
+-      "translation": "clue, sign, indication",
++      "lemma": "la corazonada",
++      "translation": "hunch",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "corroborar",
+-      "translation": "to corroborate, to confirm",
+-      "pos": "verb"
++      "lemma": "el pronóstico",
++      "translation": "forecast",
++      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-03-02-voc.json b/content/es-latam/vocabulary/b2/b2-03-02-voc.json
+index abff2671..2319cb44 100644
+--- a/content/es-latam/vocabulary/b2/b2-03-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-03-02-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.03.02",
+   "lesson": "b2-03-02",
+-  "title": "Matrices de evaluación y posibilidad",
+-  "theme": "Expresiones impersonales y grados de verosimilitud",
++  "title": "Words for weighing possibilities",
++  "theme": "Hypothesizing and probability",
+   "words": [
+     {
+-      "lemma": "caber",
+-      "translation": "to fit, to be room for (cabe la posibilidad)",
++      "lemma": "suponer",
++      "translation": "to suppose, to assume",
+       "pos": "verb"
+     },
+     {
+       "lemma": "descartar",
+-      "translation": "to rule out, to dismiss",
++      "translation": "to rule out",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la probabilidad",
+-      "translation": "probability, likelihood",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "indudable",
+-      "translation": "undoubted, unmistakable",
++      "lemma": "dudoso",
++      "translation": "doubtful",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "la sospecha",
+-      "translation": "suspicion",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "la premisa",
+-      "translation": "premise",
++      "lemma": "la certeza",
++      "translation": "certainty",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "suponer",
+-      "translation": "to suppose, to assume",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "factible",
+-      "translation": "feasible, doable",
+-      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-03-03-voc.json b/content/es-latam/vocabulary/b2/b2-03-03-voc.json
+index baa5b770..17990331 100644
+--- a/content/es-latam/vocabulary/b2/b2-03-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-03-03-voc.json
+@@ -1,47 +1,27 @@
+ {
+   "id": "vocab.b2.03.03",
+   "lesson": "b2-03-03",
+-  "title": "Conjetura temporal e inferencia",
+-  "theme": "Deducción lógica y cálculo de posibilidades",
++  "title": "Words for working things out",
++  "theme": "Hypothesizing and probability",
+   "words": [
+     {
+-      "lemma": "averiguar",
+-      "translation": "to find out, to ascertain",
++      "lemma": "calcular",
++      "translation": "to work out, to estimate",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "deducir",
+-      "translation": "to deduce, to infer",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "la estimación",
+-      "translation": "estimate, estimation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "el rastro",
+-      "translation": "trail, trace",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "aproximado",
+-      "translation": "approximate",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "presunto",
+-      "translation": "alleged, presumed",
+-      "pos": "adjective"
++      "lemma": "a juzgar por",
++      "translation": "judging by",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "el cálculo",
+-      "translation": "calculation, estimate",
++      "lemma": "el aspecto",
++      "translation": "appearance, look",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "desconocer",
+-      "translation": "to be unaware of, to not know",
++      "lemma": "tardar",
++      "translation": "to take a long time, to be late",
+       "pos": "verb"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-03-04-voc.json b/content/es-latam/vocabulary/b2/b2-03-04-voc.json
+index f1b89d2e..a9aa163d 100644
+--- a/content/es-latam/vocabulary/b2/b2-03-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-03-04-voc.json
+@@ -1,17 +1,17 @@
+ {
+   "id": "vocab.b2.03.04",
+   "lesson": "b2-03-04",
+-  "title": "Conjetura retrospectiva y reconstrucción",
+-  "theme": "Suposiciones sobre el pasado y crónica judicial",
++  "title": "Words for looking back",
++  "theme": "Hypothesizing and probability",
+   "words": [
+     {
+       "lemma": "rondar",
+-      "translation": "to hover around, to prowl, to be around",
++      "translation": "to be around (an age or a figure)",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "el testigo",
+-      "translation": "witness",
++      "lemma": "la madrugada",
++      "translation": "early hours of the morning",
+       "pos": "noun"
+     },
+     {
+@@ -20,29 +20,9 @@
+       "pos": "noun"
+     },
+     {
+-      "lemma": "reconstruir",
+-      "translation": "to reconstruct",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "aparente",
+-      "translation": "apparent",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "constatar",
+-      "translation": "to verify, to confirm, to state",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "la cuartada",
+-      "translation": "alibi",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "el móvil",
+-      "translation": "motive (of a crime)",
+-      "pos": "noun"
++      "lemma": "quién sabe",
++      "translation": "who knows",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-03-05-voc.json b/content/es-latam/vocabulary/b2/b2-03-05-voc.json
+index 25a096cc..9bb99472 100644
+--- a/content/es-latam/vocabulary/b2/b2-03-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-03-05-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.03.05",
+   "lesson": "b2-03-05",
+-  "title": "Atenuación asertiva y argumentación",
+-  "theme": "Adverbios epistémicos y cautela en el juicio",
++  "title": "Words for degrees of certainty",
++  "theme": "Hypothesizing and probability",
+   "words": [
+     {
+-      "lemma": "presumiblemente",
+-      "translation": "presumably",
++      "lemma": "seguramente",
++      "translation": "most likely",
+       "pos": "adverb"
+     },
+     {
+-      "lemma": "aparentemente",
+-      "translation": "apparently",
+-      "pos": "adverb"
+-    },
+-    {
+-      "lemma": "sostener",
+-      "translation": "to claim, to maintain, to uphold",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "la deducción",
+-      "translation": "deduction",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "fehaciente",
+-      "translation": "reliable, irrefutable, authentic",
+-      "pos": "adjective"
++      "lemma": "sin duda",
++      "translation": "without doubt",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "tajante",
+-      "translation": "blunt, sharp, categorical",
+-      "pos": "adjective"
++      "lemma": "por lo visto",
++      "translation": "apparently",
++      "pos": "expression"
+     },
+     {
+       "lemma": "el matiz",
+       "translation": "nuance, shade of meaning",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "disipar",
+-      "translation": "to dispel, to dissipate",
+-      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-05-01-voc.json b/content/es-latam/vocabulary/b2/b2-05-01-voc.json
+index bf3193db..6b7374d5 100644
+--- a/content/es-latam/vocabulary/b2/b2-05-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-05-01-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.05.01",
+   "lesson": "b2-05-01",
+-  "title": "Pensamiento crítico y juicio intelectual",
+-  "theme": "Verbos de opinión, creencia y matrices cognitivas",
++  "title": "Words for opinions and beliefs",
++  "theme": "Doubt, denial and stance",
+   "words": [
+     {
+-      "lemma": "el postulado",
+-      "translation": "postulate, premise",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "concebir",
+-      "translation": "to conceive, to imagine",
++      "lemma": "convencer",
++      "translation": "to convince",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "inverosímil",
+-      "translation": "unlikely, implausible",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "la aseveración",
+-      "translation": "assertion, claim",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "disentir",
+-      "translation": "to dissent, to disagree",
++      "lemma": "equivocarse",
++      "translation": "to be wrong, to make a mistake",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la certeza",
+-      "translation": "certainty",
++      "lemma": "la creencia",
++      "translation": "belief",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "falaz",
+-      "translation": "fallacious, misleading",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "vislumbrar",
+-      "translation": "to glimpse, to envision",
+-      "pos": "verb"
++      "lemma": "dar por hecho",
++      "translation": "to take for granted",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-05-02-voc.json b/content/es-latam/vocabulary/b2/b2-05-02-voc.json
+index 61535049..ee2f7778 100644
+--- a/content/es-latam/vocabulary/b2/b2-05-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-05-02-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.05.02",
+   "lesson": "b2-05-02",
+-  "title": "Incertidumbre, refutación y escepticismo",
+-  "theme": "Verbos léxicos de duda, impugnación y desmentido",
++  "title": "Words for doubt and denial",
++  "theme": "Doubt, denial and stance",
+   "words": [
+-    {
+-      "lemma": "dudar",
+-      "translation": "to doubt",
+-      "pos": "verb"
+-    },
+     {
+       "lemma": "desmentir",
+-      "translation": "to deny, to refute",
++      "translation": "to deny, to contradict",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "cuestionar",
+-      "translation": "to question, to challenge",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "la incertidumbre",
+-      "translation": "uncertainty",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "sospechoso",
+-      "translation": "suspicious",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "la impugnación",
+-      "translation": "challenge, contestation",
+-      "pos": "noun"
++      "lemma": "poner en duda",
++      "translation": "to question, to call into doubt",
++      "pos": "expression"
+     },
+     {
+       "lemma": "el escepticismo",
+-      "translation": "skepticism",
++      "translation": "scepticism",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "poner en tela de juicio",
+-      "translation": "to call into question",
+-      "pos": "verb"
++      "lemma": "la sospecha",
++      "translation": "suspicion",
++      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-05-03-voc.json b/content/es-latam/vocabulary/b2/b2-05-03-voc.json
+index eb174c13..6bbb7f09 100644
+--- a/content/es-latam/vocabulary/b2/b2-05-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-05-03-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.05.03",
+   "lesson": "b2-05-03",
+-  "title": "Argumentación y rectificación",
+-  "theme": "Estructuras contrastivas de refutación y aclaración conceptual",
++  "title": "Words for reasons and complaints",
++  "theme": "Doubt, denial and stance",
+   "words": [
+     {
+-      "lemma": "rectificar",
+-      "translation": "to rectify, to correct",
++      "lemma": "enojarse",
++      "translation": "to get angry",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la salvedad",
+-      "translation": "caveat, exception",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "el matiz",
+-      "translation": "nuance, shade of meaning",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "tergiversar",
+-      "translation": "to distort, to misrepresent",
++      "lemma": "quejarse",
++      "translation": "to complain",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la objeción",
+-      "translation": "objection",
++      "lemma": "la excusa",
++      "translation": "excuse",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "esclarecer",
+-      "translation": "to clarify, to shed light on",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "inadmisible",
+-      "translation": "inadmissible, unacceptable",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "rebatir",
+-      "translation": "to refute, to rebut",
+-      "pos": "verb"
++      "lemma": "en el fondo",
++      "translation": "deep down, at heart",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-05-04-voc.json b/content/es-latam/vocabulary/b2/b2-05-04-voc.json
+index 94c08a96..7d92074b 100644
+--- a/content/es-latam/vocabulary/b2/b2-05-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-05-04-voc.json
+@@ -1,47 +1,27 @@
+ {
+   "id": "vocab.b2.05.04",
+   "lesson": "b2-05-04",
+-  "title": "Conjetura y ponderación de hipótesis",
+-  "theme": "Adverbios de duda, matrices de probabilidad y grados de certeza",
++  "title": "Words for discussing an idea",
++  "theme": "Doubt, denial and stance",
+   "words": [
+     {
+       "lemma": "acaso",
+-      "translation": "perhaps, maybe",
++      "translation": "by any chance (in a rhetorical question)",
+       "pos": "adverb"
+     },
+     {
+-      "lemma": "la plausibilidad",
+-      "translation": "plausibility",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "conjeturar",
+-      "translation": "to conjecture, to surmise",
++      "lemma": "plantear",
++      "translation": "to raise, to put forward",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "presunto",
+-      "translation": "presumed, alleged",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "la verosimilitud",
+-      "translation": "verisimilitude, credibility",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "factible",
+-      "translation": "feasible, workable",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "la probabilidad",
+-      "translation": "probability, likelihood",
+-      "pos": "noun"
++      "lemma": "dar la razón",
++      "translation": "to say that someone is right",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "el indicio",
+-      "translation": "indication, clue, hint",
++      "lemma": "la objeción",
++      "translation": "objection",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-05-05-voc.json b/content/es-latam/vocabulary/b2/b2-05-05-voc.json
+index 4ee81609..6b8b5afa 100644
+--- a/content/es-latam/vocabulary/b2/b2-05-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-05-05-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.05.05",
+   "lesson": "b2-05-05",
+-  "title": "Dialéctica, controversia y escepticismo",
+-  "theme": "Debate intelectual, contraste de hipótesis y diplomacia",
++  "title": "Words for a discussion",
++  "theme": "Doubt, denial and stance",
+   "words": [
+     {
+-      "lemma": "la discrepancia",
+-      "translation": "discrepancy, divergence",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "controvertido",
+-      "translation": "controversial, disputed",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "zanjar",
+-      "translation": "to settle, to resolve",
++      "lemma": "matizar",
++      "translation": "to qualify, to add nuance",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "el diferendo",
+-      "translation": "dispute, disagreement",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "sesgado",
+-      "translation": "biased, slanted",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "la reticencia",
+-      "translation": "reluctance, reticence",
+-      "pos": "noun"
++      "lemma": "ceder",
++      "translation": "to give way, to give in",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "esgrimir",
+-      "translation": "to wield (an argument), to put forward",
+-      "pos": "verb"
++      "lemma": "tener en cuenta",
++      "translation": "to take into account",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "categórico",
+-      "translation": "categorical, definitive",
+-      "pos": "adjective"
++      "lemma": "llevar la contraria",
++      "translation": "to contradict, to be contrary",
++      "pos": "expression"
+     }
+   ]
+ }
