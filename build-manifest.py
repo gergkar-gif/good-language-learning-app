@@ -181,6 +181,7 @@ def load_unit_table(lang, level_id):
 # unit, its stories and its decks) and the engine filters on load. Remove an
 # entry here to bring a track back.
 HIDDEN_TRACKS = {
+    "hu": {"c1": {"culture"}},
     "es-es": {"b1": {"cultura"}},
     "es-latam": {"b1": {"latam"}, "b2": {"latam"}},
 }
