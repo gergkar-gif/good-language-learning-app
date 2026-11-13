@@ -18,12 +18,10 @@ text, so a recap of a form rather than a word (*adjuk hozzá* for the
 imperative taught in A2 Unit 10, *kapcsolataimat* for plural possessed nouns)
 can be a false positive: read each hit.
 
---labels reads "<level> Unit N" as the app numbers units: per track (the Nth
-core unit, the label curriculum.json gives it; build-manifest.py counts per
-track), resolved in the track of the screen's own unit, or the level's only
-track. Without it, N is the position in the level's unit table (the older
-convention: HU B1/B2 and some ES B1 recaps). Spanish B2 uses --labels
-(2026-11-13); the two conventions agree only for levels with one track.
+Unit numbers follow scripts/unit_numbers.py (the app's numbers, one rule for
+every course, user 2026-11-13): "B1 Unit 11" is the 11th core unit, "B1
+Citizenship Unit 7" the 7th of that track. (--labels is accepted and ignored:
+it was the opt-in for this rule before the recaps were renumbered.)
 Exit 1 when anything is reported.
 """
 import glob
@@ -32,11 +30,14 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import unit_numbers as un  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 ORDER = ["a1", "a2", "b1", "b2", "c1"]
-REF = re.compile(r"\*([^*]+)\*(?:[^*]{0,40}?\bfrom | \()(A1|A2|B1|B2|C1) Unit (\d+)")
+REF = re.compile(r"\*([^*]+)\*(?:[^*]{0,40}?\bfrom | \()(A1|A2|B1|B2|C1)(?: (Citizenship|Culture|Cultura|Latin America))? Unit (\d+)")
 LETTER = "a-záéíóöőúüű"
-BARE = re.compile(r"[Yy]ou (?:already )?know [^.\"]{0,120}?\bfrom (?:A1|A2|B1|B2|C1) Unit \d+")
+BARE = re.compile(r"[Yy]ou (?:already )?know [^.\"]{0,120}?\bfrom (?:A1|A2|B1|B2|C1)(?: (?:Citizenship|Culture|Cultura|Latin America))? Unit \d+")
 
 
 def stem_of(f, pos=None):
@@ -52,7 +53,6 @@ def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     bare = "--bare" in sys.argv
-    labels = "--labels" in sys.argv
     args = [a for a in sys.argv if a not in ("--bare", "--labels")]
     course, level, only = args[1], args[2].lower(), set(args[3:])
     pos, stems_of, track_of, by_label, label_of = {}, {}, {}, {}, {}
@@ -101,21 +101,17 @@ def main():
             word = re.split(r"\.\.\.|…", m.group(1))[0].strip(" ,.'")
             if len(word) < 3 or word.startswith("-"):
                 continue
-            claim = (ORDER.index(m.group(2).lower()), int(m.group(3)))
-            if labels:
-                tracks = {tr for (li, tr, _) in by_label if li == claim[0]}
-                own = track_of.get(stem_of(f, pos))
-                tr = own if own in tracks else (next(iter(tracks)) if len(tracks) == 1 else own)
-                if (claim[0], tr, claim[1]) not in by_label:
-                    print(f"{Path(f).name}: *{word}* claimed from {m.group(2)} Unit {m.group(3)}: no such unit in track {tr}")
-                    hits += 1
-                    continue
-                claim = (claim[0], by_label[(claim[0], tr, claim[1])])
+            lv = m.group(2).lower()
+            idx = un.resolve(course, lv, m.group(3), int(m.group(4)))
+            if idx is None:
+                print(f"{Path(f).name}: *{word}* claimed from {m.group(0)[m.group(0).index(m.group(2)):]}: no such unit")
+                hits += 1
+                continue
+            claim = (ORDER.index(lv), idx + 1)
             seen = first(word)
             if seen is None or seen > claim:
-                n = (label_of[seen] if labels else seen[1]) if seen else None
-                where = "nowhere" if seen is None else f"{ORDER[seen[0]].upper()} Unit {n}"
-                print(f"{Path(f).name}: *{word}* claimed from {m.group(2)} Unit {m.group(3)}, first appears {where}")
+                where = "nowhere" if seen is None else un.name(course, ORDER[seen[0]], seen[1] - 1)
+                print(f"{Path(f).name}: *{word}* claimed from {m.group(0)[m.group(0).index(m.group(2)):]}, first appears {where}")
                 hits += 1
         # a recap with no italicised word can't be checked (HU B2 pilot: both
         # readers wrote "You know viszont … from B1 Unit 21"): list it

@@ -193,10 +193,15 @@ exempt from met words, not from the level · Wrong options and fixes: a wrong
 option must be a real error of one kind, not a second option with the same
 fault (*Látlak nem* / *Látlak téged nem*) · Text fixes in JSON: escape a
 double quote inside a string (`\"`); `apply_replacements.py` refuses a fix
-that leaves invalid JSON · "You know … from Unit N": N is the unit number in
-`content/<course>/curriculum/units/<level>.json`, not the lesson number
-(a2-13 is in Unit 3, a2-105 in Unit 21; A1 material: "from A1"). Readers in
-units 39–44 wrote "from Unit 13" for a2-13 · A hint naming the tested ending
+that leaves invalid JSON · "You know … from Unit N": N is the unit number the app shows, the same rule
+in every course (user, 2026-11-13; `scripts/unit_numbers.py`): units are
+numbered per track, so "B1 Unit 11" is the 11th core unit (in a one-track
+level, the 11th unit), and a unit of another track is named: "B1 Citizenship
+Unit 7", "B2 Culture Unit 4". The knowledge sheet prints these names. Not the
+lesson number (a2-13 is in Unit 3, a2-105 in Unit 21; A1 material: "from A1"),
+and not the position in `units/<level>.json` (HU B1 core and citizenship
+interleave there; 683 recaps written that way were renumbered on
+2026-11-13). Readers in units 39–44 wrote "from Unit 13" for a2-13 · A hint naming the tested ending
 (*buli + -ra*, *anya + -nak/-nek*) gives the answer away: name the word and
 its role (*buli, for*); `check-content` flags it at A1–B1 (`hint-suffix`;
 unit 47 had six) · A new unit that recaps an earlier one must check the
@@ -587,7 +592,8 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).
 - **Stems are not uniform** (`a1-01-01`, `a1-03c-03`,
-  `a1-demonstrative-01`); unit numbers for "You know … from Unit N" come
-  from `content/es-es/curriculum/units/<level>.json` (the knowledge sheet
-  prints them). es-es A2 has one unit more than es-latam
-  (unit 33 `vosotros`, the last), so unit numbers match in both courses.
+  `a1-demonstrative-01`); unit numbers for "You know … from Unit N" are
+  the app's (per track, § 5; the knowledge sheet prints them). Core units
+  have the same number in both courses (B1 core Unit 25 is `b1-25-*` in
+  es-es and es-latam); es-es A2 has one unit more than es-latam (unit 33
+  `vosotros`, the last), so A2 numbers match too.

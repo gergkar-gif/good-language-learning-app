@@ -23,6 +23,8 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 ROOT = Path(__file__).resolve().parent.parent
 LEVELS = ["a1", "a2", "b1", "b2", "c1", "c2"]
 
@@ -73,13 +75,15 @@ def main():
             if (name == s or name.startswith(s + "-")) and (best is None or len(s) > len(best)):
                 best = s
         return best
-    # "You know … from Unit N": N is the number the app shows, counted per track
-    # within the level (build-manifest.py: "Position is counted per track"), so
-    # B2 core Unit 2 is the second core unit, whatever the table interleaves.
-    num = {}
+    # "You know … from Unit N": the number the app shows (scripts/unit_numbers.py:
+    # per track; "B1 Unit 11" is core, another track is named, "B1 Citizenship Unit 7")
+    import unit_numbers as un
+    tables = {lv: un.table(course, lv) for lv in LEVELS}
+    idx_in_level = {}
     for i, (lv, u) in enumerate(units):
-        num[i] = sum(1 for lv2, u2 in units[:i] if lv2 == lv and u2.get("track") == u.get("track")) + 1
-    name = lambda i: f"{units[i][0].upper()} Unit {num[i]} {units[i][1].get('id')}"
+        idx_in_level[i] = sum(1 for lv2, _ in units[:i] if lv2 == lv)
+    num = {i: un.number(course, units[i][0], idx_in_level[i], tables[units[i][0]])[1] for i in idx_in_level}
+    name = lambda i: f"{un.name(course, units[i][0], idx_in_level[i], tables[units[i][0]])} {units[i][1].get('id')}"
 
     skills = (read(f"skills/{lang}.json") or {}).get("skills", {})
     before, here, later, hidden_skills = {}, [], [], []
