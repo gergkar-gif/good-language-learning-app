@@ -1,0 +1,4185 @@
+diff --git a/content/es-latam/exercises/b2/b2-24-01-ex.json b/content/es-latam/exercises/b2/b2-24-01-ex.json
+index afff8e12..0b9c086d 100644
+--- a/content/es-latam/exercises/b2/b2-24-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-24-01-ex.json
+@@ -5,25 +5,27 @@
+       "id": "b2-24-01.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué matiz aspectual primordial aporta la perífrasis 'llevar + gerundio'?",
++      "question": "Which sentence says that the band began rehearsing the new song a month ago and is still rehearsing it?",
+       "options": [
+-        "Cuantifica la duración temporal acumulada de una acción iniciada en el pasado que sigue vigente.",
+-        "Indica el cese definitivo e irreversible de una actividad profesional prolongada.",
+-        "Expresa una acción repentina e involuntaria motivada por el miedo o el asombro.",
+-        "Describe un hábito futuro que comenzará tras cumplir un requisito previo."
++        "El grupo lleva un mes ensayando la canción nueva.",
++        "El grupo lleva un mes ensayado la canción nueva.",
++        "El grupo lleva un mes ensayar la canción nueva."
+       ],
+       "correct": 0,
+       "teaches": [
+         "perifrasis-verbales"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "past-participles"
++      }
+     },
+     {
+       "id": "b2-24-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Los investigadores porteños __ meses analizando los planos originales de los primeros conventillos de La Boca.",
++      "sentence": "Los vecinos __ tres meses aguantando el ruido de la obra.",
+       "answer": "llevan",
+-      "english": "The Buenos Aires researchers have been analyzing the original plans of the first La Boca tenements for months.",
++      "english": "The neighbours have been putting up with the noise from the building work for three months.",
+       "teaches": [
+         "perifrasis-verbales"
+       ]
+@@ -34,29 +36,31 @@
+       "category": "grammar",
+       "tiles": [
+         "Llevábamos",
+-        "tres",
+-        "años",
+-        "viviendo",
++        "una",
++        "hora",
++        "esperando",
+         "en",
+-        "San Telmo",
++        "la",
++        "fila",
+         "cuando",
+         "abrieron",
+-        "el",
+-        "taller."
++        "la",
++        "puerta."
+       ],
+       "solution": [
+         "Llevábamos",
+-        "tres",
+-        "años",
+-        "viviendo",
++        "una",
++        "hora",
++        "esperando",
+         "en",
+-        "San Telmo",
++        "la",
++        "fila",
+         "cuando",
+         "abrieron",
+-        "el",
+-        "taller."
++        "la",
++        "puerta."
+       ],
+-      "english": "We had been living in San Telmo for three years when they opened the workshop.",
++      "english": "We had been waiting in the queue for an hour when they opened the door.",
+       "teaches": [
+         "perifrasis-verbales"
+       ]
+@@ -67,24 +71,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "trayectoria",
+-          "track record / trajectory"
++          "la fila",
++          "queue, line of people"
+         ],
+         [
+-          "andadura",
+-          "journey / course of time"
++          "ensayar",
++          "to rehearse, to practise"
+         ],
+         [
+-          "ininterrumpido",
+-          "uninterrupted"
++          "el taller",
++          "workshop"
+         ],
+         [
+-          "permanencia",
+-          "permanence / stay"
++          "aguantar",
++          "to put up with, to bear"
+         ],
+         [
+-          "constancia",
+-          "perseverance / steady effort"
++          "la obra",
++          "building work"
+         ]
+       ],
+       "teaches": [
+@@ -94,34 +98,36 @@
+     {
+       "id": "b2-24-01.ex05",
+       "type": "dialogue-complete",
+-      "category": "grammar",
++      "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Martín",
+-          "text": "¿Cuánto tiempo hace que trabajás en este archivo histórico?"
++          "speaker": "Marta",
++          "text": "Hace mucho que no vemos a Pablo, ¿verdad?"
+         },
+         {
+-          "speaker": "Valeria",
+-          "text": "La verdad es que ya __ casi una década ordenando estos legajos."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "llevo",
+-        "rompo a",
+-        "vuelvo a",
+-        "pongo a"
++        "Sí, ya llevamos un mes sin verlo.",
++        "Sí, ya llevamos un mes sin viéndolo.",
++        "Sí, ya llevamos un mes no verlo."
+       ],
+       "correct": 0,
+       "teaches": [
+         "perifrasis-verbales"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "gerundios-irregulares"
++      }
+     },
+     {
+       "id": "b2-24-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El maestro de tango lleva más de cuarenta años perfeccionando su estilo en los salones de baile.",
+-      "english": "The tango master has been perfecting his style in dance halls for more than forty years.",
++      "sentence": "Mi vecino lleva veinte años trabajando en el mismo taller.",
++      "english": "My neighbour has been working in the same workshop for twenty years.",
+       "teaches": [
+         "perifrasis-verbales"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-24-02-ex.json b/content/es-latam/exercises/b2/b2-24-02-ex.json
+index 1223be98..2b3004b0 100644
+--- a/content/es-latam/exercises/b2/b2-24-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-24-02-ex.json
+@@ -5,25 +5,33 @@
+       "id": "b2-24-02.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la función semántica de 'seguir + gerundio' frente a 'dejar de + infinitivo'?",
++      "question": "Which sentence says that Rosa has not stopped practising, even though it is late?",
+       "options": [
+-        "Focaliza la continuidad inalterada de una acción frente a obstáculos o expectativas de cese.",
+-        "Expresa el inicio fulminante y sorpresivo de una emoción intensa.",
+-        "Indica la conclusión fortuita y no planificada de un proceso complejo.",
+-        "Manifiesta la repetición cíclica de una acción tras haber sido interrumpida."
++        "Aunque es tarde, Rosa deja de practicar.",
++        "Aunque es tarde, Rosa sigue practicando.",
++        "Aunque es tarde, Rosa vuelve a practicar."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "perifrasis-verbales"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "dejar-de-infinitivo",
++        "2": "volver-a-infinitivo"
++      }
+     },
+     {
+       "id": "b2-24-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "A pesar de las transformaciones modernas de la ciudad, las viejas milongas __ reuniendo a cientos de apasionados.",
+-      "answer": "siguen",
+-      "english": "Despite modern transformations of the city, the old milongas keep bringing together hundreds of enthusiasts.",
++      "sentence": "Aunque llovía mucho, los niños __ jugando en el patio.",
++      "answers": [
++        "seguían",
++        "siguieron",
++        "continuaban",
++        "continuaron"
++      ],
++      "english": "Although it was raining hard, the children kept on playing in the yard.",
+       "teaches": [
+         "perifrasis-verbales"
+       ]
+@@ -33,32 +41,26 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Los",
+-        "músicos",
+-        "siguieron",
+-        "ensayando",
+-        "la",
+-        "pieza",
+-        "a",
+-        "pesar",
+-        "del",
+-        "corte",
+-        "eléctrico."
++        "Mi",
++        "tío",
++        "sigue",
++        "sin",
++        "hablar",
++        "con",
++        "su",
++        "vecino."
+       ],
+       "solution": [
+-        "Los",
+-        "músicos",
+-        "siguieron",
+-        "ensayando",
+-        "la",
+-        "pieza",
+-        "a",
+-        "pesar",
+-        "del",
+-        "corte",
+-        "eléctrico."
++        "Mi",
++        "tío",
++        "sigue",
++        "sin",
++        "hablar",
++        "con",
++        "su",
++        "vecino."
+       ],
+-      "english": "The musicians kept rehearsing the piece despite the power outage.",
++      "english": "My uncle still isn't speaking to his neighbour.",
+       "teaches": [
+         "perifrasis-verbales"
+       ]
+@@ -69,24 +71,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "persistencia",
+-          "persistence"
++          "el patio",
++          "yard, courtyard"
+         ],
+         [
+-          "obstinación",
+-          "obstinacy / stubbornness"
++          "el concurso",
++          "contest, competition"
+         ],
+         [
+-          "vigencia",
+-          "validity / current relevance"
++          "rendirse",
++          "to give up"
+         ],
+         [
+-          "perdurabilidad",
+-          "durability / endurance"
+-        ],
+-        [
+-          "inalterable",
+-          "unalterable / unchanging"
++          "continuar",
++          "to carry on"
+         ]
+       ],
+       "teaches": [
+@@ -96,34 +94,36 @@
+     {
+       "id": "b2-24-02.ex05",
+       "type": "dialogue-complete",
+-      "category": "grammar",
++      "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Federico",
+-          "text": "¿No pensaron en clausurar la imprenta tras la crisis del papel?"
++          "speaker": "Rosa",
++          "text": "¿Ya sabes quién ganó el concurso?"
+         },
+         {
+-          "speaker": "Clara",
+-          "text": "Al contrario, nosotros __ imprimiendo obras independientes con el mismo empeño."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "seguimos",
+-        "rompemos a",
+-        "echamos a",
+-        "pasamos a"
++        "No, sigo sin sabiéndolo.",
++        "No, sigo sin saberlo.",
++        "No, sigo no saberlo."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "perifrasis-verbales"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "progressive"
++      }
+     },
+     {
+       "id": "b2-24-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Aunque pasen las décadas, la poesía de Manzi sigue emocionando por su honda melancolía.",
+-      "english": "Even though decades go by, Manzi's poetry continues to move people with its deep melancholy.",
++      "sentence": "Los jugadores no quisieron rendirse y siguieron entrenando para el concurso.",
++      "english": "The players refused to give up and kept on training for the contest.",
+       "teaches": [
+         "perifrasis-verbales"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-24-03-ex.json b/content/es-latam/exercises/b2/b2-24-03-ex.json
+index 6f1c95e9..205ca164 100644
+--- a/content/es-latam/exercises/b2/b2-24-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-24-03-ex.json
+@@ -5,25 +5,30 @@
+       "id": "b2-24-03.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué diferencia específica presenta 'ir + gerundio' frente a 'estar + gerundio'?",
++      "question": "Which sentence says that Marta is gradually getting used to her new job, step by step?",
+       "options": [
+-        "Expresa un desarrollo paulatino, incremental y paso a paso hacia una culminación.",
+-        "Describe una acción estática que ocurre simultáneamente a otra sin progreso alguno.",
+-        "Indica una orden perentoria que el interlocutor debe cumplir de inmediato.",
+-        "Señala la culminación violenta y accidental de un suceso inesperado."
++        "Marta va a acostumbrarse a su nuevo trabajo.",
++        "Marta va acostumbrarse a su nuevo trabajo.",
++        "Marta va acostumbrándose a su nuevo trabajo."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "gerund-periphrases"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "ir-infinitive"
++      }
+     },
+     {
+       "id": "b2-24-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Con el arribo de cada oleada de familias, el barrio se __ transformando en un polo comercial cosmopolita.",
+-      "answer": "fue",
+-      "english": "With the arrival of each wave of families, the neighborhood was gradually transforming into a cosmopolitan commercial hub.",
++      "sentence": "A medida que pasaban los meses, el barrio se __ transformando en un lugar más tranquilo.",
++      "answers": [
++        "iba",
++        "fue"
++      ],
++      "english": "As the months went by, the neighbourhood gradually turned into a quieter place.",
+       "teaches": [
+         "gerund-periphrases"
+       ]
+@@ -33,30 +38,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Poco",
++        "El",
++        "proyecto",
++        "va",
++        "avanzando",
+         "a",
+-        "poco",
+-        "vamos",
+-        "comprendiendo",
+-        "la",
+-        "complejidad",
+-        "sociológica",
+-        "del",
+-        "puerto."
++        "buen",
++        "ritmo."
+       ],
+       "solution": [
+-        "Poco",
++        "El",
++        "proyecto",
++        "va",
++        "avanzando",
+         "a",
+-        "poco",
+-        "vamos",
+-        "comprendiendo",
+-        "la",
+-        "complejidad",
+-        "sociológica",
+-        "del",
+-        "puerto."
++        "buen",
++        "ritmo."
+       ],
+-      "english": "Little by little, we are gradually understanding the sociological complexity of the port.",
++      "english": "The project is moving forward at a good pace.",
+       "teaches": [
+         "gerund-periphrases"
+       ]
+@@ -67,24 +66,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "paulatino",
+-          "gradual / step-by-step"
+-        ],
+-        [
+-          "despliegue",
+-          "unfolding / rollout"
++          "llenarse",
++          "to fill up"
+         ],
+         [
+-          "afianzamiento",
+-          "consolidation / strengthening"
++          "avanzar",
++          "to move forward, to make progress"
+         ],
+         [
+-          "maduración",
+-          "maturation / ripening"
++          "el ritmo",
++          "pace, rhythm"
+         ],
+         [
+-          "decantación",
+-          "distillation / settling down"
++          "el aprendizaje",
++          "learning, the process of learning"
+         ]
+       ],
+       "teaches": [
+@@ -94,34 +89,36 @@
+     {
+       "id": "b2-24-03.ex05",
+       "type": "dialogue-complete",
+-      "category": "grammar",
++      "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Horacio",
+-          "text": "¿Cómo evoluciona la restauración de las cúpulas históricas?"
++          "speaker": "Ana",
++          "text": "¿Cómo va tu aprendizaje del español?"
+         },
+         {
+-          "speaker": "Beatriz",
+-          "text": "Los arquitectos __ recuperando los detalles originales fachada por fachada."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "van",
+-        "andan",
+-        "echan a",
+-        "rompen a"
++        "Bien, poco a poco voy entendido más.",
++        "Bien, poco a poco voy entender más.",
++        "Bien, poco a poco voy entendiendo más."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "gerund-periphrases"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "past-participles"
++      }
+     },
+     {
+       "id": "b2-24-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Las diferencias estéticas entre ambas corrientes poéticas se fueron atenuando con los años.",
+-      "english": "The aesthetic differences between both poetic movements gradually softened over the years.",
++      "sentence": "Con los años, la ciudad se fue llenando de cafés y tiendas.",
++      "english": "Over the years, the city gradually filled up with cafés and shops.",
+       "teaches": [
+         "gerund-periphrases"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-24-04-ex.json b/content/es-latam/exercises/b2/b2-24-04-ex.json
+index 83d7eb64..a6ac8802 100644
+--- a/content/es-latam/exercises/b2/b2-24-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-24-04-ex.json
+@@ -5,25 +5,28 @@
+       "id": "b2-24-04.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué rasgo característico distingue a la perífrasis 'andar + gerundio'?",
++      "question": "Which sentence says that Pedro is going around telling everyone my secret, and the speaker is annoyed?",
+       "options": [
+-        "Describe una actividad dispersa, errática, itinerante o no sujeta a un plan estricto.",
+-        "Indica una progresión matemática perfectamente secuencial y acumulativa.",
+-        "Denota una acción que concluye bruscamente antes de alcanzar su meta.",
+-        "Expresa una orden solemne emitida por una autoridad eclesiástica o jurídica."
++        "Pedro acaba de contar mi secreto a todo el mundo.",
++        "Pedro va a contar mi secreto a todo el mundo.",
++        "Pedro anda contando mi secreto a todo el mundo."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "gerund-periphrases"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "perifrasis-verbales",
++        "1": "ir-infinitive"
++      }
+     },
+     {
+       "id": "b2-24-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El cronista porteño __ buscando testimonios orales por los cafetines más escondidos de Boedo.",
++      "sentence": "Mi primo __ buscando casa por todas partes.",
+       "answer": "anda",
+-      "english": "The Buenos Aires chronicler is going around looking for oral testimonies in the most hidden little cafés of Boedo.",
++      "english": "My cousin is going around looking for a house everywhere.",
+       "teaches": [
+         "gerund-periphrases"
+       ]
+@@ -33,30 +36,26 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Los",
+-        "vecinos",
+-        "andan",
+-        "diciendo",
+-        "que",
+-        "abrirán",
+-        "un",
+-        "nuevo",
+-        "centro",
+-        "cultural."
++        "¿Por",
++        "qué",
++        "andas",
++        "contando",
++        "chismes",
++        "de",
++        "tus",
++        "vecinos?"
+       ],
+       "solution": [
+-        "Los",
+-        "vecinos",
+-        "andan",
+-        "diciendo",
+-        "que",
+-        "abrirán",
+-        "un",
+-        "nuevo",
+-        "centro",
+-        "cultural."
++        "¿Por",
++        "qué",
++        "andas",
++        "contando",
++        "chismes",
++        "de",
++        "tus",
++        "vecinos?"
+       ],
+-      "english": "The neighbors are going around saying that they will open a new cultural center.",
++      "english": "Why are you going around telling gossip about your neighbours?",
+       "teaches": [
+         "gerund-periphrases"
+       ]
+@@ -67,24 +66,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "errante",
+-          "wandering / roving"
+-        ],
+-        [
+-          "desasosiego",
+-          "restlessness / uneasiness"
++          "el chisme",
++          "piece of gossip"
+         ],
+         [
+-          "merodear",
+-          "to prowl / to loiter about"
++          "la mudanza",
++          "move, change of home"
+         ],
+         [
+-          "trajín",
+-          "bustle / coming and going"
++          "inquieto",
++          "restless, uneasy"
+         ],
+         [
+-          "deriva",
+-          "drift / wandering course"
++          "por todas partes",
++          "everywhere"
+         ]
+       ],
+       "teaches": [
+@@ -94,34 +89,36 @@
+     {
+       "id": "b2-24-04.ex05",
+       "type": "dialogue-complete",
+-      "category": "grammar",
++      "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Ernesto",
+-          "text": "¿Supiste algo de Silvio en estos últimos días?"
++          "speaker": "Sara",
++          "text": "¿Qué sabes de Luis? Hace días que no lo veo."
+         },
+         {
+-          "speaker": "Lucía",
+-          "text": "Sí, me contaron que __ tramando otro invento insólito en su taller."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "anda",
+-        "rompe a",
+-        "lleva a",
+-        "pasa a"
++        "Anda buscado casa por toda la ciudad.",
++        "Anda buscando casa por toda la ciudad.",
++        "Anda buscar casa por toda la ciudad."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "gerund-periphrases"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "past-participles"
++      }
+     },
+     {
+       "id": "b2-24-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "No andes divulgando sospechas infundadas antes de revisar los documentos oficiales.",
+-      "english": "Do not go around spreading unfounded suspicions before reviewing the official documents.",
++      "sentence": "Los vecinos andaban inquietos, preparando la mudanza.",
++      "english": "The neighbours were going around uneasy, getting the move ready.",
+       "teaches": [
+         "gerund-periphrases"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-24-05-ex.json b/content/es-latam/exercises/b2/b2-24-05-ex.json
+index 8820a472..bcaa7812 100644
+--- a/content/es-latam/exercises/b2/b2-24-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-24-05-ex.json
+@@ -5,25 +5,27 @@
+       "id": "b2-24-05.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué énfasis aporta 'venir + gerundio' en el discurso histórico y ensayístico?",
++      "question": "Which sentence says that food prices have been going up for months and are still going up?",
+       "options": [
+-        "Subraya la trayectoria acumulativa y continuada de un proceso desde el pasado hasta el presente.",
+-        "Indica que el sujeto está a punto de emprender un viaje físico hacia su lugar natal.",
+-        "Expresa una duda epistemológica sobre la veracidad de testimonios antiguos.",
+-        "Señala la culminación repentina de una disputa comercial tras una mediación."
++        "Los precios vienen subido desde hace meses.",
++        "Los precios vienen subiendo desde hace meses.",
++        "Los precios vienen subir desde hace meses."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "gerund-periphrases"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "past-participles"
++      }
+     },
+     {
+       "id": "b2-24-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Los sociólogos rioplatenses __ advirtiendo sobre las secuelas emocionales de las crisis recurrentes.",
+-      "answer": "vienen",
+-      "english": "River Plate sociologists have been warning about the emotional aftermath of recurrent crises.",
++      "sentence": "Esta empresa __ creciendo año tras año.",
++      "answer": "viene",
++      "english": "This company has been growing year after year.",
+       "teaches": [
+         "gerund-periphrases"
+       ]
+@@ -33,30 +35,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Esta",
+-        "editorial",
+-        "viene",
+-        "publicando",
+-        "obras",
+-        "filosóficas",
+-        "fundamentales",
+-        "desde",
+-        "hace",
+-        "décadas."
++        "Últimamente",
++        "vengo",
++        "pensando",
++        "en",
++        "cambiar",
++        "de",
++        "trabajo."
+       ],
+       "solution": [
+-        "Esta",
+-        "editorial",
+-        "viene",
+-        "publicando",
+-        "obras",
+-        "filosóficas",
+-        "fundamentales",
+-        "desde",
+-        "hace",
+-        "décadas."
++        "Últimamente",
++        "vengo",
++        "pensando",
++        "en",
++        "cambiar",
++        "de",
++        "trabajo."
+       ],
+-      "english": "This publishing house has been publishing fundamental philosophical works for decades.",
++      "english": "Lately I have been thinking about changing jobs.",
+       "teaches": [
+         "gerund-periphrases"
+       ]
+@@ -67,24 +63,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "acumulativo",
+-          "cumulative"
+-        ],
+-        [
+-          "gestación",
+-          "gestation / genesis"
++          "últimamente",
++          "lately"
+         ],
+         [
+-          "sedimentación",
+-          "gradual buildup / sedimentation"
++          "año tras año",
++          "year after year"
+         ],
+         [
+-          "reiteración",
+-          "repetition / reiteration"
++          "el alimento",
++          "food, foodstuff"
+         ],
+         [
+-          "continuo",
+-          "continuum / continuous flow"
++          "la subida",
++          "rise, increase"
+         ]
+       ],
+       "teaches": [
+@@ -94,34 +86,36 @@
+     {
+       "id": "b2-24-05.ex05",
+       "type": "dialogue-complete",
+-      "category": "grammar",
++      "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Santiago",
+-          "text": "¿Desde cuándo se debate la reapertura de ese mítico teatro?"
++          "speaker": "Marta",
++          "text": "¿Por qué quieres cambiar de casa?"
+         },
+         {
+-          "speaker": "Mariana",
+-          "text": "Los vecinos y artistas lo __ reclamando desde hace más de quince años."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "vienen",
+-        "echan a",
+-        "rompen a",
+-        "pasan a"
++        "Es algo que vengo pensando desde hace meses.",
++        "Es algo que vengo pensado desde hace meses.",
++        "Es algo que vengo pensar desde hace meses."
+       ],
+       "correct": 0,
+       "teaches": [
+         "gerund-periphrases"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "past-participles"
++      }
+     },
+     {
+       "id": "b2-24-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El historiador viene sosteniendo que la identidad urbana de Buenos Aires nació en los conventillos.",
+-      "english": "The historian has been maintaining that the urban identity of Buenos Aires was born in the tenements.",
++      "sentence": "La subida de los alimentos viene afectando a muchas familias.",
++      "english": "The rise in food prices has been affecting many families.",
+       "teaches": [
+         "gerund-periphrases"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-24-consolidation-ex.json b/content/es-latam/exercises/b2/b2-24-consolidation-ex.json
+index e5cfdd2c..3dd1939a 100644
+--- a/content/es-latam/exercises/b2/b2-24-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-24-consolidation-ex.json
+@@ -5,25 +5,28 @@
+       "id": "b2-24-consolidation.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué perífrasis durativa expresa un avance gradual y escalonado hacia una meta?",
++      "question": "Which verb completes the sentence? Mi hermana ___ tres años estudiando alemán.",
+       "options": [
+-        "Ir + gerundio",
+-        "Andar + gerundio",
+-        "Echarse a + infinitivo",
+-        "Romper a + infinitivo"
++        "va",
++        "anda",
++        "sigue",
++        "lleva"
+       ],
+-      "correct": 0,
++      "correct": 3,
+       "teaches": [
+-        "gerund-periphrases"
++        "perifrasis-verbales"
+       ]
+     },
+     {
+       "id": "b2-24-consolidation.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Aunque algunos críticos pronosticaban su desaparición, las orquestas típicas __ interpretando tango clásico.",
+-      "answer": "siguen",
+-      "english": "Although some critics predicted their disappearance, typical orchestras keep performing classic tango.",
++      "sentence": "Aunque pasan los años, las abuelas del barrio __ cocinando para toda la familia.",
++      "answers": [
++        "siguen",
++        "continúan"
++      ],
++      "english": "Although the years go by, the grandmothers of the neighbourhood still cook for the whole family.",
+       "teaches": [
+         "perifrasis-verbales"
+       ]
+@@ -37,26 +40,26 @@
+         "vecinos",
+         "llevaban",
+         "meses",
+-        "reclamando",
+-        "la",
+-        "preservación",
++        "quejándose",
+         "del",
+-        "viejo",
+-        "cine."
++        "ruido",
++        "de",
++        "la",
++        "obra."
+       ],
+       "solution": [
+         "Los",
+         "vecinos",
+         "llevaban",
+         "meses",
+-        "reclamando",
+-        "la",
+-        "preservación",
++        "quejándose",
+         "del",
+-        "viejo",
+-        "cine."
++        "ruido",
++        "de",
++        "la",
++        "obra."
+       ],
+-      "english": "The neighbors had been demanding the preservation of the old cinema for months.",
++      "english": "The neighbours had been complaining about the noise from the building work for months.",
+       "teaches": [
+         "perifrasis-verbales"
+       ]
+@@ -67,24 +70,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "continuidad",
+-          "continuity"
++          "la fila",
++          "queue, line of people"
+         ],
+         [
+-          "latente",
+-          "latent / dormant"
++          "rendirse",
++          "to give up"
+         ],
+         [
+-          "progresión",
+-          "progression"
++          "avanzar",
++          "to move forward, to make progress"
+         ],
+         [
+-          "desasosiego",
+-          "restlessness / uneasiness"
++          "la mudanza",
++          "move, change of home"
+         ],
+         [
+-          "sedimentación",
+-          "gradual buildup / sedimentation"
++          "últimamente",
++          "lately"
+         ]
+       ],
+       "teaches": [
+@@ -94,7 +97,7 @@
+     {
+       "id": "b2-24-consolidation.ex05",
+       "type": "dialogue-complete",
+-      "category": "grammar",
++      "category": "dialogue",
+       "prompt": [
+         {
+           "speaker": "Esteban",
+@@ -102,42 +105,46 @@
+         },
+         {
+           "speaker": "Camila",
+-          "text": "Brillante; el autor __ explorando esas paradojas existenciales desde hace años."
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "viene",
+-        "rompe a",
+-        "echa a",
+-        "pasa a"
++        "Muy bueno; el autor viene escribiendo sobre él desde hace años.",
++        "Muy bueno; el autor viene escrito sobre él desde hace años.",
++        "Muy bueno; el autor viene escribir sobre él desde hace años."
+       ],
+       "correct": 0,
+       "teaches": [
+         "gerund-periphrases"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "past-participles"
++      }
+     },
+     {
+       "id": "b2-24-consolidation.ex06",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué matiz pragmático introduce frecuentemente 'andar + gerundio' en la interacción oral?",
++      "question": "Which sentence is correct?",
+       "options": [
+-        "Inquietud, reproche o dispersión en la realización de una tarea.",
+-        "Certeza científica respaldada por experimentos contrastados.",
+-        "Obligación legal impuesta por una corte suprema.",
+-        "Aceptación sumisa de un veredicto desfavorable."
++        "Seguimos sin recibir noticias de Elena.",
++        "Seguimos sin recibiendo noticias de Elena.",
++        "Seguimos no recibir noticias de Elena."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "gerund-periphrases"
+-      ]
++        "perifrasis-verbales"
++      ],
++      "distractor_skills": {
++        "1": "progressive"
++      }
+     },
+     {
+       "id": "b2-24-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "A lo largo de las décadas, la metrópolis fue transformando sus márgenes portuarios en modernos distritos culturales.",
+-      "english": "Over the decades, the metropolis was gradually transforming its port waterfronts into modern cultural districts.",
++      "sentence": "Poco a poco, los estudiantes iban perdiendo el miedo a hablar en público.",
++      "english": "Little by little, the students were losing their fear of speaking in public.",
+       "teaches": [
+         "gerund-periphrases"
+       ]
+@@ -146,9 +153,9 @@
+       "id": "b2-24-consolidation.ex08",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "¿Por qué __ diciendo falsedades sobre el proyecto editorial en lugar de informarte adecuadamente?",
+-      "answer": "andás",
+-      "english": "Why are you going around saying falsehoods about the publishing project instead of properly informing yourself?",
++      "sentence": "¿Por qué __ diciendo mentiras sobre mí?",
++      "answer": "andas",
++      "english": "Why are you going around telling lies about me?",
+       "teaches": [
+         "gerund-periphrases"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-26-01-ex.json b/content/es-latam/exercises/b2/b2-26-01-ex.json
+index 124aa81a..59c54192 100644
+--- a/content/es-latam/exercises/b2/b2-26-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-26-01-ex.json
+@@ -5,94 +5,124 @@
+       "id": "b2-26-01.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence is a guess, not a duty?",
++      "options": [
++        "Debemos devolver el libro a la biblioteca hoy.",
++        "El pasillo está oscuro: debe de ser tarde.",
++        "Tienes que devolver el libro a la biblioteca hoy."
++      ],
++      "correct": 1,
+       "teaches": [
+         "perifrasis-deber-obligacion-conjetura"
+       ],
+-      "question": "¿Qué matiz distingue a 'deber + infinitivo' de 'deber de + infinitivo' en la norma culta formal?",
+-      "options": [
+-        "'Deber' sin preposición denota obligación moral o necesidad estricta; 'deber de' expresa probabilidad o conjetura epistémica.",
+-        "'Deber' expresa futuro incierto y 'deber de' expresa pasado inmediato retrospectivo.",
+-        "'Deber de' es un arcaísmo medieval completamente desaconsejado en todos los contextos.",
+-        "Ambas formas son estrictamente sinónimas e intercambiables sin variación estilística alguna."
+-      ],
+-      "correct": 0
++      "distractor_skills": {
++        "2": "tener-que"
++      }
+     },
+     {
+       "id": "b2-26-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Las luces están apagadas; los vecinos deben __ estar durmiendo.",
++      "answer": "de",
++      "english": "The lights are off; the neighbours must be asleep.",
+       "teaches": [
+         "perifrasis-deber-obligacion-conjetura"
+-      ],
+-      "sentence": "Para salvaguardar la vigencia del estado de derecho, los magistrados __ actuar con absoluta probidad e independencia.",
+-      "answer": "deben",
+-      "english": "In order to safeguard the rule of law, magistrates must act with absolute integrity and independence."
++      ]
+     },
+     {
+       "id": "b2-26-01.ex03",
+-      "type": "multiple-choice",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "perifrasis-deber-obligacion-conjetura"
++      "tiles": [
++        "Todos",
++        "debemos",
++        "respetar",
++        "las",
++        "reglas",
++        "del",
++        "edificio."
+       ],
+-      "question": "¿Cuál de las siguientes oraciones formula una conjetura o deducción tentativa basada en indicios?",
+-      "options": [
+-        "Debemos presentar los recursos de hábeas corpus antes de las doce.",
+-        "A juzgar por las luces encendidas en el archivo, el juez debe de estar revisando los legajos.",
+-        "Tienes que acatar las órdenes emitidas por el tribunal electoral.",
+-        "Hay que promover la educación en derechos humanos en todas las escuelas."
++      "solution": [
++        "Todos",
++        "debemos",
++        "respetar",
++        "las",
++        "reglas",
++        "del",
++        "edificio."
+       ],
+-      "correct": 1
+-    },
+-    {
+-      "id": "b2-26-01.ex04",
+-      "type": "fill-blank",
+-      "category": "grammar",
++      "english": "We must all respect the building's rules.",
+       "teaches": [
+         "perifrasis-deber-obligacion-conjetura"
+-      ],
+-      "sentence": "No contesta a mis llamadas insistentes; María debe __ haber salido a caminar por la ribera.",
+-      "answer": "de",
+-      "english": "She does not answer my persistent calls; María must have gone out for a walk along the riverbank."
++      ]
+     },
+     {
+-      "id": "b2-26-01.ex05",
++      "id": "b2-26-01.ex04",
+       "type": "matching",
+       "category": "vocabulary",
+-      "teaches": [
+-        "b2-modal-periphrases-conjecture-duty-vocab"
+-      ],
+       "pairs": [
+         [
+-          "el deber moral",
+-          "the moral duty / obligation"
++          "la regla",
++          "rule"
+         ],
+         [
+-          "la conjetura epistémica",
+-          "the epistemic conjecture / surmise"
++          "firmar",
++          "to sign"
+         ],
+         [
+-          "el indicio observable",
+-          "the observable clue / sign"
++          "el pasillo",
++          "corridor, hallway"
+         ],
+         [
+-          "la obligatoriedad legal",
+-          "the legal compulsoriness"
++          "encendido",
++          "switched on"
++        ],
++        [
++          "apagado",
++          "switched off"
+         ]
++      ],
++      "teaches": [
++        "b2-modal-periphrases-conjecture-duty-vocab"
+       ]
+     },
+     {
+-      "id": "b2-26-01.ex06",
+-      "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "En 'El túnel' de Ernesto Sabato, ¿por qué Juan Pablo Castel decide narrar el crimen desde su celda?",
++      "id": "b2-26-01.ex05",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Ana",
++          "text": "¿Qué debo hacer con estos documentos?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        }
++      ],
+       "options": [
+-        "Para pedir clemencia a los jueces y reducir su condena penitenciaria.",
+-        "Porque abriga la esperanza de que al menos una persona lúcida llegue a comprender sus razones.",
+-        "Para demostrar que los críticos de arte conspiraron para destruir su prestigio profesional.",
+-        "Porque su abogado le exigió escribir un texto exculpatorio para publicar en los diarios."
++        "Debes de firmarlos hoy.",
++        "Debes firmarlos hoy.",
++        "Debes firmarlas hoy."
+       ],
+-      "correct": 1
++      "correct": 1,
++      "teaches": [
++        "perifrasis-deber-obligacion-conjetura"
++      ],
++      "distractor_skills": {
++        "2": "objeto-directo"
++      }
++    },
++    {
++      "id": "b2-26-01.ex06",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "Las luces están encendidas: debe de haber alguien en casa.",
++      "english": "The lights are on: there must be someone at home.",
++      "teaches": [
++        "perifrasis-deber-obligacion-conjetura"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-26-02-ex.json b/content/es-latam/exercises/b2/b2-26-02-ex.json
+index 1472be47..a7e3851f 100644
+--- a/content/es-latam/exercises/b2/b2-26-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-26-02-ex.json
+@@ -5,94 +5,125 @@
+       "id": "b2-26-02.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence uses haber de + infinitive?",
++      "options": [
++        "Hay que reconocer que tienes razón.",
++        "He de reconocer que tienes razón.",
++        "Tengo que reconocer que tienes razón."
++      ],
++      "correct": 1,
+       "teaches": [
+         "perifrasis-haber-de-infinitivo"
+       ],
+-      "question": "¿Qué valor discursivo adquiere 'haber de + infinitivo' en pretérito imperfecto en: 'Aquel cuadro expuesto en el salón había de transformar su vida'?",
+-      "options": [
+-        "Señala una obligación laboral impuesta por el jurado de la exposición.",
+-        "Anticipa un destino ineludible o acontecimiento crucial proyectado hacia el porvenir narrativo.",
+-        "Expresa una prohibición legal que impidió la venta de la pintura.",
+-        "Denota una acción repentina e involuntaria iniciada en ese mismo instante."
+-      ],
+-      "correct": 1
++      "distractor_skills": {
++        "0": "hay-que",
++        "2": "tener-que"
++      }
+     },
+     {
+       "id": "b2-26-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Años después, aquella casa __ de convertirse en un museo.",
++      "answers": [
++        "había",
++        "habría"
++      ],
++      "english": "Years later, that house was to become a museum.",
+       "teaches": [
+         "perifrasis-haber-de-infinitivo"
+-      ],
+-      "sentence": "Los pueblos que pretenden vivir en paz han __ enfrentar con valentía las verdades más dolorosas de su historia.",
+-      "answer": "de",
+-      "english": "Peoples who aspire to live in peace must bravely face the most painful truths of their history."
++      ]
+     },
+     {
+       "id": "b2-26-02.ex03",
+-      "type": "multiple-choice",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "perifrasis-haber-de-infinitivo"
++      "tiles": [
++        "Los",
++        "estudiantes",
++        "han",
++        "de",
++        "llegar",
++        "antes",
++        "de",
++        "las",
++        "nueve."
+       ],
+-      "question": "¿A qué registro lingüístico pertenece fundamentalmente la perífrasis 'haber de + infinitivo'?",
+-      "options": [
+-        "Al registro coloquial informal propio del lunfardo arrabalero.",
+-        "Al registro formal, literario y ensayístico de corte culto.",
+-        "Al lenguaje técnico exclusivo de la contabilidad agropecuaria.",
+-        "Al dialecto infantil empleado en canciones de cuna."
++      "solution": [
++        "Los",
++        "estudiantes",
++        "han",
++        "de",
++        "llegar",
++        "antes",
++        "de",
++        "las",
++        "nueve."
+       ],
+-      "correct": 1
+-    },
+-    {
+-      "id": "b2-26-02.ex04",
+-      "type": "fill-blank",
+-      "category": "grammar",
++      "english": "Students are to arrive before nine.",
+       "teaches": [
+         "perifrasis-haber-de-infinitivo"
+-      ],
+-      "sentence": "Si has de emitir un veredicto definitivo, __ examinando la totalidad de los testimonios presentados.",
+-      "answer": "hazlo",
+-      "english": "If you are to deliver a definitive verdict, do so by examining the totality of the testimonies presented."
++      ]
+     },
+     {
+-      "id": "b2-26-02.ex05",
++      "id": "b2-26-02.ex04",
+       "type": "matching",
+       "category": "vocabulary",
+-      "teaches": [
+-        "b2-modal-periphrases-conjecture-duty-vocab"
+-      ],
+       "pairs": [
+         [
+-          "el designio ineludible",
+-          "the inescapable grand design"
++          "haber de",
++          "to have to, to be to (formal)"
+         ],
+         [
+-          "la inexorabilidad del tiempo",
+-          "the inexorability of time"
++          "reconocer",
++          "to admit, to recognise"
+         ],
+         [
+-          "el precepto constitucional",
+-          "the constitutional precept"
++          "con calma",
++          "calmly, without hurry"
+         ],
+         [
+-          "el mandato popular",
+-          "the popular mandate"
++          "para siempre",
++          "for ever"
+         ]
++      ],
++      "teaches": [
++        "b2-modal-periphrases-conjecture-duty-vocab"
+       ]
+     },
+     {
+-      "id": "b2-26-02.ex06",
+-      "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "¿Qué representaba para Castel la pequeña ventana pintada en su cuadro 'Maternidad'?",
++      "id": "b2-26-02.ex05",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Ana",
++          "text": "¿Vas a aceptar su propuesta?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        }
++      ],
+       "options": [
+-        "Una crítica irónica a las técnicas académicas de pintura del siglo diecinueve.",
+-        "El único mensaje auténtico y desgarrador sobre su profunda soledad existencial.",
+-        "Un simple detalle decorativo para equilibrar la composición de luces y sombras.",
+-        "Un homenaje nostálgico a la casa de campo de sus abuelos en la provincia."
++        "He de pensándolo con calma antes de contestar.",
++        "He pensarlo con calma antes de contestar.",
++        "He de pensarlo con calma antes de contestar."
+       ],
+-      "correct": 1
++      "correct": 2,
++      "teaches": [
++        "perifrasis-haber-de-infinitivo"
++      ]
++    },
++    {
++      "id": "b2-26-02.ex06",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "Aquel viaje había de cambiar su vida para siempre.",
++      "english": "That journey was to change his life for ever.",
++      "teaches": [
++        "perifrasis-haber-de-infinitivo"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-26-03-ex.json b/content/es-latam/exercises/b2/b2-26-03-ex.json
+index 83a672f6..5fa6e4d8 100644
+--- a/content/es-latam/exercises/b2/b2-26-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-26-03-ex.json
+@@ -5,94 +5,125 @@
+       "id": "b2-26-03.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "teaches": [
+-        "tener-que"
+-      ],
+-      "question": "¿Qué diferencia semántica existe entre 'tener que + infinitivo' y 'deber + infinitivo'?",
++      "question": "Which sentence names a need that comes from the situation, not from a moral duty?",
+       "options": [
+-        "'Tener que' expresa obligación impuesta por presiones externas o necesidades ineludibles; 'deber' apela al deber moral o ético interno.",
+-        "'Tener que' se utiliza únicamente para el clima, mientras 'deber' se aplica a contratos.",
+-        "'Deber' exige subjuntivo en oraciones afirmativas, mientras 'tener que' solo admite infinitivo pasivo.",
+-        "Ambas perífrasis expresan exactamente el mismo matiz de cortesía formal."
++        "Deberíamos ayudar más a nuestros vecinos.",
++        "Tengo que salir ya, porque el tren sale a las siete.",
++        "Debes ayudar a tus vecinos cuando lo necesitan."
++      ],
++      "correct": 1,
++      "teaches": [
++        "deber-vs-tener-que"
+       ],
+-      "correct": 0
++      "distractor_skills": {
++        "0": "condicional-consejos"
++      }
+     },
+     {
+       "id": "b2-26-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Si quieres vivir aquí, tienes __ pagar el alquiler.",
++      "answer": "que",
++      "english": "If you want to live here, you have to pay the rent.",
+       "teaches": [
+         "tener-que"
+-      ],
+-      "sentence": "Ante la gravedad de la crisis cambiaria en diciembre de 2001, el gobierno __ que decretar la inmovilización de fondos.",
+-      "answer": "tuvo",
+-      "english": "Faced with the severity of the exchange crisis in December 2001, the government had to decree the freezing of funds."
++      ]
+     },
+     {
+       "id": "b2-26-03.ex03",
+-      "type": "multiple-choice",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "tener-que"
++      "tiles": [
++        "Tengo",
++        "que",
++        "salir",
++        "ya,",
++        "porque",
++        "el",
++        "tren",
++        "sale",
++        "a",
++        "las",
++        "siete."
+       ],
+-      "question": "¿Qué valor adquiere 'tener que + infinitivo' en condicional en: 'Para comprender la magnitud de la tragedia, tendríamos que examinar los legajos'?",
+-      "options": [
+-        "Plantea un requisito hipotético indispensable para alcanzar un entendimiento cabal del hecho.",
+-        "Confirma que los documentos ya fueron destruidos por las autoridades judiciales.",
+-        "Prohíbe terminantemente la consulta de archivos clasificados por razones de seguridad.",
+-        "Indica una acción que acaba de completarse hace escasos segundos."
++      "solution": [
++        "Tengo",
++        "que",
++        "salir",
++        "ya,",
++        "porque",
++        "el",
++        "tren",
++        "sale",
++        "a",
++        "las",
++        "siete."
+       ],
+-      "correct": 0
+-    },
+-    {
+-      "id": "b2-26-03.ex04",
+-      "type": "fill-blank",
+-      "category": "grammar",
++      "english": "I have to leave now, because the train leaves at seven.",
+       "teaches": [
+         "tener-que"
+-      ],
+-      "sentence": "Los testigos de las causas federales tuvieron que __ con custodia especial debido a las amenazas.",
+-      "answer": "comparecer",
+-      "english": "Witnesses in federal cases had to appear under special protection due to threats."
++      ]
+     },
+     {
+-      "id": "b2-26-03.ex05",
++      "id": "b2-26-03.ex04",
+       "type": "matching",
+       "category": "vocabulary",
+-      "teaches": [
+-        "b2-modal-periphrases-conjecture-duty-vocab"
+-      ],
+       "pairs": [
+         [
+-          "el apremio financiero",
+-          "the pressing financial urgency"
++          "el alquiler",
++          "rent"
+         ],
+         [
+-          "la coacción externa",
+-          "the external coercion / duress"
++          "entregar",
++          "to hand in, to deliver"
+         ],
+         [
+-          "la constricción presupuestaria",
+-          "the budgetary constraint"
++          "el informe",
++          "report"
+         ],
+         [
+-          "el requerimiento judicial",
+-          "the judicial requirement"
++          "probar",
++          "to try, to taste"
+         ]
++      ],
++      "teaches": [
++        "b2-modal-periphrases-conjecture-duty-vocab"
+       ]
+     },
+     {
+-      "id": "b2-26-03.ex06",
+-      "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "¿Por qué Castel se siente angustiado y confundido tras sus primeros encuentros con María?",
++      "id": "b2-26-03.ex05",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Ana",
++          "text": "¿Por qué no vienes a la fiesta?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        }
++      ],
+       "options": [
+-        "Porque ella le exige grandes sumas de dinero a cambio de posar como modelo.",
+-        "Porque María resulta impenetrable en sus secretos y se niega a someterse a sus deducciones.",
+-        "Porque el marido de María amenaza con clausurar su taller de pintura en La Boca.",
+-        "Porque la crítica de arte rechaza categóricamente las nuevas obras que produce."
++        "Lo siento, tengo trabajar; mañana entrego un informe.",
++        "Lo siento, tengo que trabajando; mañana entrego un informe.",
++        "Lo siento, tengo que trabajar; mañana entrego un informe."
+       ],
+-      "correct": 1
++      "correct": 2,
++      "teaches": [
++        "tener-que"
++      ]
++    },
++    {
++      "id": "b2-26-03.ex06",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "Tienes que probar este pastel; está delicioso.",
++      "english": "You have to try this cake; it is delicious.",
++      "teaches": [
++        "tener-que"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-26-04-ex.json b/content/es-latam/exercises/b2/b2-26-04-ex.json
+index 5b75b73b..13491ce4 100644
+--- a/content/es-latam/exercises/b2/b2-26-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-26-04-ex.json
+@@ -5,94 +5,123 @@
+       "id": "b2-26-04.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence is a rule for everyone, without naming who has to do it?",
++      "options": [
++        "Para entrar, tengo que mostrar el pasaporte.",
++        "Para entrar, hay que mostrar el pasaporte.",
++        "Para entrar, debo mostrar el pasaporte."
++      ],
++      "correct": 1,
+       "teaches": [
+         "hay-que"
+       ],
+-      "question": "¿Cómo se conjuga el verbo auxiliar en la perífrasis impersonal de obligación 'haber que + infinitivo'?",
+-      "options": [
+-        "Concuerda en número y persona con el sustantivo que sigue al infinitivo.",
+-        "Se conjuga exclusivamente en tercera persona del singular en todos los tiempos verbales.",
+-        "Adopta formas reflexivas con el pronombre 'se' adherido al auxiliar.",
+-        "Solo existe en modo imperativo afirmativo de segunda persona."
+-      ],
+-      "correct": 1
++      "distractor_skills": {
++        "0": "tener-que"
++      }
+     },
+     {
+       "id": "b2-26-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Antes __ que esperar horas para entrar.",
++      "answer": "había",
++      "english": "In the past you had to wait hours to get in.",
+       "teaches": [
+         "hay-que"
+-      ],
+-      "sentence": "Para consolidar una cultura democrática basada en el respeto mutuo, __ que garantizar el derecho a la verdad.",
+-      "answer": "hay",
+-      "english": "In order to consolidate a democratic culture based on mutual respect, one must guarantee the right to truth."
++      ]
+     },
+     {
+       "id": "b2-26-04.ex03",
+-      "type": "multiple-choice",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "hay-que"
++      "tiles": [
++        "Habría",
++        "que",
++        "hablar",
++        "con",
++        "ella",
++        "antes",
++        "de",
++        "decidir."
+       ],
+-      "question": "¿Qué matiz pragmático aporta 'habría que + infinitivo' en un debate formal sobre políticas públicas?",
+-      "options": [
+-        "Introduce una recomendación o sugerencia con cortesía y distanciamiento deliberado.",
+-        "Formula una orden tajante y punitiva contra los legisladores opositores.",
+-        "Constata un hecho consumado que ya no admite ninguna rectificación futura.",
+-        "Expresa arrepentimiento moral por un error cometido en el ejercicio del cargo."
++      "solution": [
++        "Habría",
++        "que",
++        "hablar",
++        "con",
++        "ella",
++        "antes",
++        "de",
++        "decidir."
+       ],
+-      "correct": 0
+-    },
+-    {
+-      "id": "b2-26-04.ex04",
+-      "type": "fill-blank",
+-      "category": "grammar",
++      "english": "We should talk to her before deciding.",
+       "teaches": [
+         "hay-que"
+-      ],
+-      "sentence": "Tras el estallido social del 2001, __ que reconstruir la confianza ciudadana en las instituciones representativas.",
+-      "answer": "hubo",
+-      "english": "After the social unrest of 2001, it was necessary to rebuild citizen trust in representative institutions."
++      ]
+     },
+     {
+-      "id": "b2-26-04.ex05",
++      "id": "b2-26-04.ex04",
+       "type": "matching",
+       "category": "vocabulary",
+-      "teaches": [
+-        "b2-modal-periphrases-conjecture-duty-vocab"
+-      ],
+       "pairs": [
+         [
+-          "el menester urgente",
+-          "the urgent necessity / task"
++          "el permiso",
++          "permit, permission"
+         ],
+         [
+-          "la diligencia procesal",
+-          "the procedural diligence"
++          "llenar",
++          "to fill in"
+         ],
+         [
+-          "el consenso mayoritario",
+-          "the majority consensus"
++          "el formulario",
++          "form"
+         ],
+         [
+-          "el recaudo prudente",
+-          "the prudent safeguard / precaution"
++          "mostrar",
++          "to show"
++        ],
++        [
++          "apagar",
++          "to switch off"
+         ]
++      ],
++      "teaches": [
++        "b2-modal-periphrases-conjecture-duty-vocab"
+       ]
+     },
+     {
+-      "id": "b2-26-04.ex06",
+-      "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "¿Qué conclusión amarga extrae Castel al contemplar su relación con María a través de la imagen del túnel?",
++      "id": "b2-26-04.ex05",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Ana",
++          "text": "¿Qué hay que hacer para pedir un permiso?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        }
++      ],
+       "options": [
+-        "Que ambos habitaban túneles paralelos y que las paredes de vidrio impidieron toda comunicación verdadera.",
+-        "Que María logró rescatarlo del abismo de su locura mediante el amor conyugal.",
+-        "Que el crimen fue un error judicial provocado por falsos testimonios de la servidumbre.",
+-        "Que la soledad solo puede vencerse abandonando el arte de la pintura."
++        "Hay llenar un formulario y entregarlo.",
++        "Hay que llenaré un formulario y entregarlo.",
++        "Hay que llenar un formulario y entregarlo."
+       ],
+-      "correct": 0
++      "correct": 2,
++      "teaches": [
++        "hay-que"
++      ]
++    },
++    {
++      "id": "b2-26-04.ex06",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "Al salir de la oficina, hay que apagar las luces.",
++      "english": "When leaving the office, you have to switch off the lights.",
++      "teaches": [
++        "hay-que"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-26-05-ex.json b/content/es-latam/exercises/b2/b2-26-05-ex.json
+index 9bc7a62c..a605f461 100644
+--- a/content/es-latam/exercises/b2/b2-26-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-26-05-ex.json
+@@ -5,94 +5,119 @@
+       "id": "b2-26-05.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Nobody else has the key. Which sentence shows that the speaker is almost sure it is him?",
++      "options": [
++        "Puede ser él.",
++        "Quizás sea él.",
++        "Tiene que ser él."
++      ],
++      "correct": 2,
+       "teaches": [
+         "perifrasis-modales-probabilidad-epistemica"
+       ],
+-      "question": "¿Qué grado de certidumbre expresa la perífrasis 'debe de haber sido' en un análisis histórico retrospectivo?",
+-      "options": [
+-        "Certidumbre matemática absoluta respaldada por grabaciones directas.",
+-        "Probabilidad deductiva alta basada en indicios e inferencias lógicas del contexto.",
+-        "Duda radical e imposibilidad factual de que el acontecimiento haya tenido lugar.",
+-        "Obligación jurídica impuesta por las normas vigentes en la época."
+-      ],
+-      "correct": 1
++      "distractor_skills": {
++        "1": "subjunctive-doubt"
++      }
+     },
+     {
+       "id": "b2-26-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Mira, tiene la cara pálida; __ de estar enfermo.",
++      "answer": "debe",
++      "english": "Look, his face is pale; he must be ill.",
+       "teaches": [
+         "perifrasis-modales-probabilidad-epistemica"
+-      ],
+-      "sentence": "A juzgar por las contradicciones del relato, el sospechoso debió __ inventar su coartada de forma improvisada.",
+-      "answer": "de",
+-      "english": "Judging by the contradictions in the account, the suspect must have invented his alibi on the spur of the moment."
++      ]
+     },
+     {
+       "id": "b2-26-05.ex03",
+-      "type": "multiple-choice",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "perifrasis-modales-probabilidad-epistemica"
++      "tiles": [
++        "Puede",
++        "que",
++        "llueva",
++        "esta",
++        "tarde;",
++        "lleva",
++        "el",
++        "paraguas."
+       ],
+-      "question": "¿En cuál de las siguientes opciones se utiliza una perífrasis de probabilidad para matizar una hipótesis psicológica?",
+-      "options": [
+-        "Castel tenía que asistir puntualmente al juicio penal en la capital.",
+-        "El silencio prolongado de María debió de alimentar las sospechas más tortuosas del pintor.",
+-        "Hay que pintar con pigmentos de calidad para que los lienzos perduren.",
+-        "Debe usted firmar la declaración jurada ante el escribano."
++      "solution": [
++        "Puede",
++        "que",
++        "llueva",
++        "esta",
++        "tarde;",
++        "lleva",
++        "el",
++        "paraguas."
+       ],
+-      "correct": 1
+-    },
+-    {
+-      "id": "b2-26-05.ex04",
+-      "type": "fill-blank",
+-      "category": "grammar",
++      "english": "It may rain this afternoon; take the umbrella.",
+       "teaches": [
+         "perifrasis-modales-probabilidad-epistemica"
+-      ],
+-      "sentence": "Las privaciones padecidas en el cautiverio clandestino deben de haber __ una huella indeleble en las víctimas.",
+-      "answer": "dejado",
+-      "english": "The hardships endured in clandestine captivity must have left an indelible mark on the victims."
++      ]
+     },
+     {
+-      "id": "b2-26-05.ex05",
++      "id": "b2-26-05.ex04",
+       "type": "matching",
+       "category": "vocabulary",
+-      "teaches": [
+-        "b2-modal-periphrases-conjecture-duty-vocab"
+-      ],
+       "pairs": [
+         [
+-          "la verosimilitud narrativa",
+-          "the narrative verisimilitude"
++          "puede que",
++          "it may be that"
+         ],
+         [
+-          "la inferencia analítica",
+-          "the analytical inference"
++          "pálido",
++          "pale"
+         ],
+         [
+-          "la sospecha obsesiva",
+-          "the obsessive suspicion"
++          "la llave",
++          "key"
+         ],
+         [
+-          "la incertidumbre radical",
+-          "the radical uncertainty"
++          "el paraguas",
++          "umbrella"
+         ]
++      ],
++      "teaches": [
++        "b2-modal-periphrases-conjecture-duty-vocab"
+       ]
+     },
+     {
+-      "id": "b2-26-05.ex06",
+-      "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "¿Qué desencadena el ataque final de Castel contra María en la estancia de Hunter?",
++      "id": "b2-26-05.ex05",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Ana",
++          "text": "Marta todavía no ha llegado. ¿Dónde estará?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        }
++      ],
+       "options": [
+-        "El descubrimiento de una carta donde María revelaba que lo consideraba un asesino en potencia.",
+-        "La convicción delirante de que María era amante de Hunter y se burlaba de su búsqueda de pureza.",
+-        "Una discusión acalorada sobre el valor monetario de los retratos que Castel había expuesto.",
+-        "La negativa tajante de María a divorciarse formalmente de su esposo ciego Allende."
++        "Debe de ha perdido el autobús.",
++        "Debe de haber perdido el autobús.",
++        "Debe de perdido el autobús."
+       ],
+-      "correct": 1
++      "correct": 1,
++      "teaches": [
++        "perifrasis-modales-probabilidad-epistemica"
++      ]
++    },
++    {
++      "id": "b2-26-05.ex06",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "Tiene que ser él: nadie más tiene la llave.",
++      "english": "It has to be him: nobody else has the key.",
++      "teaches": [
++        "perifrasis-modales-probabilidad-epistemica"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-26-consolidation-ex.json b/content/es-latam/exercises/b2/b2-26-consolidation-ex.json
+index eefc2c65..dc2ed8a2 100644
+--- a/content/es-latam/exercises/b2/b2-26-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-26-consolidation-ex.json
+@@ -5,123 +5,149 @@
+       "id": "b2-26-consolidation.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "teaches": [
+-        "perifrasis-deber-obligacion-conjetura",
+-        "perifrasis-haber-de-infinitivo"
+-      ],
+-      "question": "¿Qué combinación modal completa con corrección formal: 'Los ciudadanos __ respetar los fallos, si bien los historiadores __ de evaluar sus alcances'?",
++      "question": "Which sentence is a guess about the present?",
+       "options": [
+-        "deben / habrán",
+-        "deben de / tendrían",
+-        "tienen / hubieran",
+-        "hayan de / debieron de"
++        "Hemos de estar en la biblioteca a las ocho.",
++        "Debe de estar en la biblioteca.",
++        "Debe estudiar en la biblioteca."
+       ],
+-      "correct": 0
++      "correct": 1,
++      "teaches": [
++        "perifrasis-deber-obligacion-conjetura"
++      ]
+     },
+     {
+       "id": "b2-26-consolidation.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Para abrir la cuenta, __ que mostrar un documento.",
++      "answer": "hay",
++      "english": "To open the account, you have to show a document.",
+       "teaches": [
+-        "tener-que"
+-      ],
+-      "sentence": "Ante el colapso del sistema financiero en 2001, los sectores populares tuvieron que __ comedores comunitarios.",
+-      "answer": "organizar",
+-      "english": "Faced with the collapse of the financial system in 2001, popular sectors had to organize community soup kitchens."
++        "hay-que"
++      ]
+     },
+     {
+       "id": "b2-26-consolidation.ex03",
+-      "type": "multiple-choice",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "hay-que",
+-        "perifrasis-modales-probabilidad-epistemica"
++      "tiles": [
++        "Hemos",
++        "de",
++        "reconocer",
++        "que",
++        "el",
++        "plan",
++        "tiene",
++        "problemas."
+       ],
+-      "question": "¿Cuál es la interpretación de: 'Habría que examinar con rigor los archivos; los testimonios deben de haber sido exhaustivos'?",
+-      "options": [
+-        "Una sugerencia impersonal prudente seguida de una conjetura de probabilidad basada en indicios.",
+-        "Una prohibición legal absoluta seguida de una confirmación pericial irrevocable.",
+-        "Un lamento amargo sobre la inutilidad de investigar los abusos del pasado.",
+-        "Una orden perentoria dirigida exclusivamente a los secretarios del juzgado."
++      "solution": [
++        "Hemos",
++        "de",
++        "reconocer",
++        "que",
++        "el",
++        "plan",
++        "tiene",
++        "problemas."
+       ],
+-      "correct": 0
++      "english": "We must admit that the plan has problems.",
++      "teaches": [
++        "perifrasis-haber-de-infinitivo"
++      ]
+     },
+     {
+       "id": "b2-26-consolidation.ex04",
+-      "type": "fill-blank",
+-      "category": "grammar",
+-      "teaches": [
+-        "perifrasis-deber-obligacion-conjetura"
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "la regla",
++          "rule"
++        ],
++        [
++          "reconocer",
++          "to admit, to recognise"
++        ],
++        [
++          "el informe",
++          "report"
++        ],
++        [
++          "el formulario",
++          "form"
++        ],
++        [
++          "pálido",
++          "pale"
++        ]
+       ],
+-      "sentence": "A juzgar por las ovaciones atronadoras que colman el estadio, el delantero estrella debe __ haber marcado un gol de antología.",
+-      "answer": "de",
+-      "english": "Judging by the thunderous cheers filling the stadium, the star striker must have scored an unforgettable goal."
++      "teaches": [
++        "b2-modal-periphrases-conjecture-duty-vocab"
++      ]
+     },
+     {
+       "id": "b2-26-consolidation.ex05",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "perifrasis-haber-de-infinitivo"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Ana",
++          "text": "Llaman a la puerta. ¿Quién será?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Por qué es culta y solemne la frase: 'Aquel testimonio valiente de las Madres había de inspirar a generaciones enteras de defensores cívicos'?",
+       "options": [
+-        "Porque emplea 'haber de' en imperfecto para proyectar un destino histórico ineludible y trascendente.",
+-        "Porque sustituye de manera incorrecta al pretérito perfecto simple de indicativo.",
+-        "Porque utiliza una voz pasiva sin sujeto paciente expreso.",
+-        "Porque recurre a un modismo gauchesco propio de la poesía del Martín Fierro."
++        "Tiene que sea el vecino; ya es la hora.",
++        "Tiene ser el vecino; ya es la hora.",
++        "Tiene que ser el vecino; ya es la hora."
++      ],
++      "correct": 2,
++      "teaches": [
++        "perifrasis-modales-probabilidad-epistemica"
+       ],
+-      "correct": 0
++      "distractor_skills": {
++        "0": "subjuntivo-morfologia"
++      }
+     },
+     {
+       "id": "b2-26-consolidation.ex06",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
+-      "teaches": [
+-        "hay-que"
++      "question": "Which list puts the three guesses in order from least sure to most sure?",
++      "options": [
++        "Puede ser él, debe de ser él, tiene que ser él.",
++        "Tiene que ser él, debe de ser él, puede ser él.",
++        "Debe de ser él, puede ser él, tiene que ser él."
+       ],
+-      "sentence": "Para evitar que los abusos dictatoriales vuelvan a repetirse, __ que mantener viva la memoria en las aulas.",
+-      "answer": "hay",
+-      "english": "In order to prevent dictatorial abuses from recurring, one must keep memory alive in classrooms."
++      "correct": 0,
++      "teaches": [
++        "perifrasis-modales-probabilidad-epistemica"
++      ]
+     },
+     {
+       "id": "b2-26-consolidation.ex07",
+-      "type": "matching",
+-      "category": "vocabulary",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "Para entender bien la novela, hay que leerla con calma.",
++      "english": "To understand the novel well, you have to read it calmly.",
+       "teaches": [
+-        "b2-modal-periphrases-conjecture-duty-vocab"
+-      ],
+-      "pairs": [
+-        [
+-          "el imperativo ético",
+-          "the ethical imperative"
+-        ],
+-        [
+-          "la plausibilidad de la tesis",
+-          "the plausibility of the thesis"
+-        ],
+-        [
+-          "la deducción verosímil",
+-          "the credible deduction"
+-        ],
+-        [
+-          "la prescripción legal",
+-          "the legal statutory limitation"
+-        ]
++        "hay-que"
+       ]
+     },
+     {
+       "id": "b2-26-consolidation.ex08",
+-      "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "¿Cómo se vincula el dilema de Castel en 'El túnel' con la problemática de la incomunicación humana?",
+-      "options": [
+-        "Castel demuestra que el arte figurativo es el único medio infalible para entender a los demás.",
+-        "El protagonista revela la tragedia de mentes prisioneras de sus propios delirios deductivos, incapaces de aceptar la alteridad del otro.",
+-        "La novela plantea que el aislamiento urbano se resuelve mudándose a estancias rurales de la provincia.",
+-        "El autor argumenta que las instituciones judiciales operan siempre con perfecta empatía hacia los acusados."
+-      ],
+-      "correct": 1
++      "type": "fill-blank",
++      "category": "grammar",
++      "sentence": "Los vecinos no contestan; __ de haber salido de viaje.",
++      "answer": "deben",
++      "english": "The neighbours are not answering; they must have gone away.",
++      "teaches": [
++        "perifrasis-modales-probabilidad-epistemica"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-24-01-a-gr.json b/content/es-latam/grammar/b2/b2-24-01-a-gr.json
+index 1aa4116e..470ccb2c 100644
+--- a/content/es-latam/grammar/b2/b2-24-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-24-01-a-gr.json
+@@ -1,36 +1,51 @@
+ {
+   "id": "grammar.b2.24.01.llevar-gerundio",
+-  "title": "Perífrasis durativas: Llevar + gerundio",
++  "title": "Llevar + Gerund",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis aspectual *llevar + gerundio* cuantifica la duración temporal ininterrumpida de una acción o estado que comenzó en el pasado y continúa vigente en el momento de referencia. Exige obligatoriamente la expresión de un complemento temporal (*dos semanas*, *décadas*, *mucho tiempo*). A diferencia de *hace... que*, *llevar + gerundio* pone el foco sintáctico en la persistencia activa del sujeto durante todo ese intervalo acumulado."
++      "content": "You know *desde hace* from A2 Unit 7: *Estudio español desde hace tres años*. Spanish has a second way to say it, with *llevar*: *Llevo tres años estudiando español*. You know *estar* + gerund from A1 Unit 19 (*estoy estudiando*). In this pattern *llevar* takes the place of *estar*, and the length of time comes straight after it, with no word for \"for\" in between. The action began in the past and is still going on now. Because the time comes first, this is the natural choice when you want to stress how long something has taken, or how much effort it has cost.",
++      "title": "How long has it been going on?"
+     },
+     {
+       "type": "table",
+-      "title": "Estructura y contrastes de Llevar + gerundio",
++      "title": "llevar + length of time + gerund",
+       "rows": [
+         [
+-          "Llevo tres años investigando la arquitectura de los conventillos porteños.",
+-          "I have been researching the architecture of Buenos Aires tenements for three years."
++          "Llevo tres años estudiando español.",
++          "I have been studying Spanish for three years."
+         ],
+         [
+-          "Los arqueólogos urbanos llevaban meses excavando las márgenes del Riachuelo.",
+-          "The urban archaeologists had been excavating the banks of the Riachuelo for months."
++          "Llevamos una hora esperando el autobús.",
++          "We have been waiting for the bus for an hour."
+         ],
+         [
+-          "¿Cuánto tiempo llevás viviendo en el barrio de San Telmo?",
+-          "How long have you been living in the San Telmo neighborhood?"
++          "¿Cuánto tiempo llevas trabajando aquí?",
++          "How long have you been working here?"
+         ],
+         [
+-          "Llevamos semanas debatiendo la vigencia del psicoanálisis en la cultura popular.",
+-          "We have been debating the relevance of psychoanalysis in popular culture for weeks."
++          "Mi hermana lleva mucho tiempo buscando casa.",
++          "My sister has been looking for a house for a long time."
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In the past, and with sin",
++      "items": [
++        {
++          "spanish": "Llevábamos una hora esperando cuando llegó el tren.",
++          "english": "We had been waiting for an hour when the train arrived."
++        },
++        {
++          "spanish": "Llevo una semana sin dormir bien.",
++          "english": "I have not slept well for a week."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Para la negación de acciones prolongadas, se emplea frecuentemente la estructura alternativa *llevar + sin + infinitivo*: *Lleva tres meses sin ensayar con la orquesta típica* ('He has gone three months without rehearsing with the tango orchestra')."
++      "content": "The verb after the time is always a gerund: *estudiando*, never *estudiar* or *estudiado*. To say how long you have gone without doing something, use *sin* + infinitive: *Llevo una semana sin dormir bien*, not *Llevo una semana no durmiendo*. Use *llevar* only for something that is still going on; for a finished action, use the preterite: *Estudié tres años*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-24-02-a-gr.json b/content/es-latam/grammar/b2/b2-24-02-a-gr.json
+index fef64d05..deb60183 100644
+--- a/content/es-latam/grammar/b2/b2-24-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-24-02-a-gr.json
+@@ -1,36 +1,37 @@
+ {
+   "id": "grammar.b2.24.02.seguir-gerundio",
+-  "title": "Perífrasis de continuidad: Seguir + gerundio",
++  "title": "Seguir + Gerund",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis *seguir + gerundio* (junto con su variante más formal *continuar + gerundio*) focaliza el mantenimiento de una acción o estado frente a posibles obstáculos, interrupciones o la expectativa contraria de cese. Señala que las circunstancias no han alterado el curso del acontecimiento. Se opone directamente a *dejar de + infinitivo*."
++      "content": "You know *seguir* + gerund from A2 Unit 28: *Sigo trabajando aquí* means \"I am still working here\". The action has not stopped, and it is the opposite of *dejar de* + infinitive (you know *dejar de* from B1 Unit 12). B2 adds two things. First, *seguir sin* + infinitive says that something still has not happened: *Sigo sin saber la respuesta* is \"I still don't know the answer\". Second, *seguir* in the past often shows that something went on in spite of a difficulty: *Aunque llovía, seguimos caminando*.",
++      "title": "You know it, with two additions"
+     },
+     {
+       "type": "table",
+-      "title": "Usos de Seguir + gerundio",
++      "title": "Seguir in different shapes",
+       "rows": [
+         [
+-          "A pesar de las transformaciones modernas, la milonga sigue convocando a jóvenes y veteranos.",
+-          "Despite modern transformations, the milonga continues to bring together youths and veterans."
++          "Sigo viviendo en el mismo barrio.",
++          "I still live in the same neighbourhood."
+         ],
+         [
+-          "Los historiadores siguen debatiendo el origen exacto del término lunfardo.",
+-          "Historians keep debating the exact origin of the term lunfardo."
++          "Mi tío sigue sin hablar con su vecino.",
++          "My uncle still isn't speaking to his neighbour."
+         ],
+         [
+-          "Aunque el café cerró temporalmente, sus antiguos clientes siguieron reuniéndose en la esquina.",
+-          "Although the café closed temporarily, its former patrons kept meeting on the corner."
++          "Aunque llovía, seguimos caminando.",
++          "Although it was raining, we kept on walking."
+         ],
+         [
+-          "La obra de Borges sigue cautivando por su deslumbrante precisión metafísica.",
+-          "Borges's work continues to captivate through its dazzling metaphysical precision."
++          "Todavía seguías durmiendo cuando llamé.",
++          "You were still sleeping when I called."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "En registros cultos, *continuar + gerundio* aporta un tono más solemne y formal que *seguir + gerundio*, especialmente en ensayos historiográficos o discursos académicos."
++      "content": "After *sin* the verb is always an infinitive: *Sigo sin saber*, never *Sigo sin sabiendo*. *Continuar* + gerund means the same as *seguir* + gerund and sounds a little more formal: *Los vecinos continuaron hablando*. Remember too that *seguir* can take an adjective or a place instead of a gerund: *Sigue enfermo*, *Sigue aquí*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-24-03-a-gr.json b/content/es-latam/grammar/b2/b2-24-03-a-gr.json
+index 0f719bce..b183d863 100644
+--- a/content/es-latam/grammar/b2/b2-24-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-24-03-a-gr.json
+@@ -1,36 +1,37 @@
+ {
+   "id": "grammar.b2.24.03.perifrasis-ir-gerundio",
+-  "title": "Perífrasis progresivas: Ir + gerundio",
++  "title": "Ir + Gerund",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis *ir + gerundio* expresa una acción que progresa de forma paulatina, acumulativa y gradual, paso a paso, orientada hacia una culminación o desarrollo sucesivo. No denota mera continuidad estática, sino una evolución incremental que avanza fase por fase en el tiempo."
++      "content": "You know *ir a* + infinitive from A1 Unit 25 (\"going to\"), *estar* + gerund from A1 Unit 19 and *poco a poco* from A2 Unit 28. *Ir* + gerund is a different pattern: there is no *a*, and the verb after it is a gerund. It says that something moves forward step by step instead of happening all at once: *Voy aprendiendo* is \"I'm gradually picking it up\". It goes very well with *poco a poco* and with *a medida que* (B1 Unit 2). *Ir* can be in any tense: *voy aprendiendo*, *iba aprendiendo*, *fui aprendiendo*. With a reflexive verb, the pronoun goes before *ir*: *El barrio se iba llenando de tiendas*.",
++      "title": "Gradual progress"
+     },
+     {
+       "type": "table",
+-      "title": "Ejemplos de Ir + gerundio",
++      "title": "ir + gerund",
+       "rows": [
+         [
+-          "Con la llegada de cada barco, la ciudad se fue transformando en una colmena cosmopolita.",
+-          "With the arrival of each ship, the city gradually transformed into a cosmopolitan beehive."
++          "Poco a poco voy entendiendo mejor el español.",
++          "Little by little I am coming to understand Spanish better."
+         ],
+         [
+-          "Los acordes del bandoneón van ganando intensidad a medida que avanza la pieza.",
+-          "The bandoneon chords gradually gain intensity as the piece progresses."
++          "A medida que pasaban los días, íbamos conociendo a los vecinos.",
++          "As the days went by, we got to know the neighbours little by little."
+         ],
+         [
+-          "Vamos comprendiendo la complejidad urbanística de Buenos Aires al recorrer sus bulevares.",
+-          "We are gradually understanding Buenos Aires's urban complexity as we traverse its boulevards."
++          "El barrio se fue llenando de tiendas nuevas.",
++          "The neighbourhood gradually filled up with new shops."
+         ],
+         [
+-          "Las antiguas disputas teóricas se fueron disolviendo con el paso de las generaciones.",
+-          "The old theoretical disputes gradually dissolved with the passing of generations."
++          "El proyecto va avanzando a buen ritmo.",
++          "The project is moving forward at a good pace."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Se asocia de manera natural con marcadores de gradualidad como *poco a poco*, *paulatinamente*, *paso a paso* y *a medida que*."
++      "content": "*Voy a estudiar* and *Voy estudiando* look alike, but they mean different things. With *a* + infinitive it is a plan (\"I am going to study\"); without *a*, and with a gerund, it is gradual progress (\"I am studying as I go\"). In the past, *se iba llenando* shows the change while it was happening, and *se fue llenando* sums it up as one finished change."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-24-04-a-gr.json b/content/es-latam/grammar/b2/b2-24-04-a-gr.json
+index 2409f3ca..8ac00fa1 100644
+--- a/content/es-latam/grammar/b2/b2-24-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-24-04-a-gr.json
+@@ -1,36 +1,37 @@
+ {
+   "id": "grammar.b2.24.04.perifrasis-andar-gerundio",
+-  "title": "Perífrasis progresivas: Andar + gerundio",
++  "title": "Andar + Gerund",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis *andar + gerundio* denota una acción reiterada, dispersa, errática o sin un rumbo fijo, desarrollada en diversos momentos o lugares. Con frecuencia introduce un matiz de inquietud, reproche o informalidad coloquial en el discurso, sugiriendo que el sujeto se halla desasosegado o vagando en su tarea."
++      "content": "You know *estar* + gerund from A1 Unit 19, and in the last lesson you met *ir* + gerund. *Andar* + gerund also means that someone is doing something, but it adds the idea of going around: the action is spread over several days or places, and it has no clear direction. *Anda buscando trabajo* is \"He's going around looking for a job\". Speakers often add a note of worry or complaint, especially when they say it about someone else: *¿Por qué andas diciendo eso?* is \"Why are you going around saying that?\". *Andar* can be in any tense. Its preterite has an irregular stem: *anduve*, *anduvo*, *anduvimos*.",
++      "title": "Going around doing something"
+     },
+     {
+       "type": "table",
+-      "title": "Ejemplos de Andar + gerundio",
++      "title": "andar + gerund",
+       "rows": [
+         [
+-          "El cronista anda buscando testimonios orales por los viejos bodegones de Boedo.",
+-          "The chronicler is going around looking for oral testimonies in the old taverns of Boedo."
++          "Mi primo anda buscando casa por todas partes.",
++          "My cousin is going around looking for a house everywhere."
+         ],
+         [
+-          "Andan diciendo en el barrio que la vieja librería va a transformarse en un centro cultural.",
+-          "People around the neighborhood are going around saying that the old bookstore will become a cultural center."
++          "¿Por qué andas contando chismes de tus vecinos?",
++          "Why are you going around telling gossip about your neighbours?"
+         ],
+         [
+-          "Silvio anda ideando inventos mecánicos en su humilde taller de Flores.",
+-          "Silvio is going around devising mechanical inventions in his humble Flores workshop."
++          "Los vecinos andaban inquietos, preguntando por la obra.",
++          "The neighbours were going around uneasy, asking about the building work."
+         ],
+         [
+-          "Los inspectores anduvieron revisando las condiciones de habitabilidad en los conventillos.",
+-          "The inspectors went around inspecting the living conditions in the tenement houses."
++          "Anduvimos preguntando por el barrio, pero nadie sabía nada.",
++          "We went around the neighbourhood asking, but nobody knew anything."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "No confundas *ir + gerundio* (proceso ordenado y paulatino hacia una meta) con *andar + gerundio* (proceso intermitente, desordenado, disperso o errático)."
++      "content": "Do not mix up *ir* and *andar* with a gerund. *Van arreglando la calle* means the street is being repaired bit by bit, in order. *Andan arreglando la calle* means the workers are around, doing repairs here and there, with no clear order. *Andar* + gerund is also very common in conversation, so it often sounds informal."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-24-05-a-gr.json b/content/es-latam/grammar/b2/b2-24-05-a-gr.json
+index e52c9286..55df349a 100644
+--- a/content/es-latam/grammar/b2/b2-24-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-24-05-a-gr.json
+@@ -1,36 +1,37 @@
+ {
+   "id": "grammar.b2.24.05.perifrasis-venir-gerundio",
+-  "title": "Perífrasis acumulativas: Venir + gerundio",
++  "title": "Venir + Gerund",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis *venir + gerundio* describe una acción que se originó en un punto temporal pretérito y se ha venido desarrollando, acumulando o repitiendo de manera ininterrumpida o recurrente hasta alcanzar el presente de la enunciación. Enfatiza el espesor histórico, la trayectoria previa y el peso acumulativo del proceso."
++      "content": "You know *llevar* + time + gerund from the first lesson of this unit: *Llevo tres años trabajando aquí*. *Venir* + gerund also says that something began in the past and goes on until now, but it looks back along the whole way: the speaker sees a process that has built up, or a habit that has kept repeating. It is common in news, reports and speeches: *Los precios vienen subiendo desde hace meses*. It often goes with *desde*, *desde hace*, *últimamente* or *año tras año*, and it does not count the time. *Venir* can also be in the imperfect: *Veníamos hablando de eso cuando llegó Ana*.",
++      "title": "Looking back along the way"
+     },
+     {
+       "type": "table",
+-      "title": "Ejemplos de Venir + gerundio",
++      "title": "venir + gerund",
+       "rows": [
+         [
+-          "Los sociólogos vienen advirtiendo sobre las profundas huellas identitarias de la inmigración masiva.",
+-          "Sociologists have long been warning about the deep identity marks left by mass immigration."
++          "Los precios vienen subiendo desde hace varios meses.",
++          "Prices have been going up for several months."
+         ],
+         [
+-          "Desde principios del siglo XX, el tango viene expresando las nostalgias del desarraigo rioplatense.",
+-          "Since the beginning of the 20th century, tango has been expressing the nostalgia of River Plate uprooting."
++          "Vengo pensando en cambiar de trabajo desde el verano.",
++          "I have been thinking about changing jobs since the summer."
+         ],
+         [
+-          "Esta editorial independiente viene publicando joyas del pensamiento filosófico latinoamericano.",
+-          "This independent publishing house has been publishing gems of Latin American philosophical thought."
++          "Esta empresa viene creciendo año tras año.",
++          "This company has been growing year after year."
+         ],
+         [
+-          "Vengo sosteniendo que Buenos Aires es una ciudad que se piensa a sí misma a través de sus cafés.",
+-          "I have been maintaining that Buenos Aires is a city that contemplates itself through its cafés."
++          "Veníamos hablando de eso cuando llegó Ana.",
++          "We had been talking about that when Ana arrived."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Frente a *llevar + gerundio* (que enfatiza el cómputo exacto de tiempo), *venir + gerundio* subraya la persistencia histórica y la gestación acumulativa que desemboca en la situación actual."
++      "content": "*Llevar* counts the time and *venir* follows the process. You say *Llevo tres años pensando en eso*, with the number of years, but *Vengo pensando en eso desde hace tiempo*, without counting. Do not put a counted length of time right after *venir*: not *Vengo tres años pensando*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-26-01-a-gr.json b/content/es-latam/grammar/b2/b2-26-01-a-gr.json
+index b6b6593a..61583163 100644
+--- a/content/es-latam/grammar/b2/b2-26-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-26-01-a-gr.json
+@@ -1,36 +1,37 @@
+ {
+   "id": "grammar.b2.26.01.deber-obligacion-conjetura",
+-  "title": "Perífrasis modales: Deber vs. Deber de + infinitivo",
++  "title": "Deber and Deber de",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La gramática normativa distingue con rigor dos valores modales en las perífrasis construidas con *deber*. La estructura sin preposición, *deber + infinitivo*, expresa obligación deontológica, necesidad moral o mandato legal (*debes respetar las leyes*). Por el contrario, la variante con preposición, *deber de + infinitivo*, expresa conjetura epistémica, probabilidad o deducción tentativa basada en indicios observables (*debe de tener unos treinta años* = supongo que tiene esa edad)."
++      "content": "You know *deber* + infinitive from B1 Unit 4: *Debes descansar* is \"You should rest\". It names a duty or a piece of advice. Careful Spanish adds a small word to make a different meaning: *deber de* + infinitive is a guess based on evidence. You know *Estará en casa* (\"He must be at home\") from B1 Unit 22, the future of probability; *Debe de estar en casa* says the same thing. So the rule is: *deber* with no *de* for a duty, *deber de* for a guess.",
++      "title": "Two small words, two meanings"
+     },
+     {
+       "type": "table",
+-      "title": "Contraste entre Obligación Moral y Conjetura",
++      "title": "deber and deber de",
+       "rows": [
+         [
+-          "El pintor debe entregar el retrato antes de que concluya el plazo fijado.",
+-          "The painter must deliver the portrait before the agreed deadline expires."
++          "Debes llamar a tu abuela hoy.",
++          "You should call your grandmother today."
+         ],
+         [
+-          "María no responde al teléfono; debe de haber salido a caminar por el parque.",
+-          "María does not answer the phone; she must have gone out for a walk in the park."
++          "Todos debemos respetar las reglas.",
++          "We must all respect the rules."
+         ],
+         [
+-          "Debemos analizar con objetividad las pruebas forenses del archivo.",
+-          "We must objectively analyze the forensic evidence from the archive."
++          "Las luces están encendidas: debe de estar en casa.",
++          "The lights are on: he must be at home."
+         ],
+         [
+-          "A juzgar por las luces encendidas, el testigo debe de estar todavía en su despacho.",
+-          "Judging by the lights on, the witness must still be in his office."
++          "No contesta el teléfono; debe de haber salido.",
++          "He is not answering the phone; he must have gone out."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "En la norma culta formal, el uso de *deber de* para indicar obligación (*debes de estudiar más*) se considera inapropiado y debe evitarse. En cambio, *deber* sin preposición se admite con frecuencia creciente en la lengua hablada para expresar probabilidad, aunque en textos ensayísticos se prefiere mantener la distinción nítida."
++      "content": "In real life speakers mix the two. You will often hear *Debe estar en casa* for a guess, and some people even say *Debes de llamar* for a duty. Both are understood, but books on grammar call the second one a mistake and prefer to keep *de* for guesses. For your own Spanish, keep the difference: no *de* for a duty, *de* for a guess. For a guess about the past, put *haber* + a past participle after *deber de*: *debe de haber salido*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-26-02-a-gr.json b/content/es-latam/grammar/b2/b2-26-02-a-gr.json
+index 1a2b350f..e3448d12 100644
+--- a/content/es-latam/grammar/b2/b2-26-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-26-02-a-gr.json
+@@ -1,36 +1,37 @@
+ {
+   "id": "grammar.b2.26.02.haber-de-infinitivo",
+-  "title": "Modalidad culta: Haber de + infinitivo",
++  "title": "Haber de + Infinitive",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis modal *haber de + infinitivo* pertenece al registro formal y literario. Puede expresar dos valores fundamentales: una obligación o necesidad atenuada equivalente a un deber moral o institucional fijado de antemano (*hemos de reconocer la verdad*), o bien un destino ineludible o prospección fatal que orienta el porvenir de los acontecimientos (*aquel suceso habría de marcar para siempre su destino*)."
++      "content": "You know *haber* from the present perfect (A2 Unit 1): *he*, *has*, *ha*, *hemos*, *han*. The same forms, followed by *de* and an infinitive, make a formal pattern that you mostly read in books, speeches and careful writing. It has two uses. The first is a duty, a little more serious than *tener que*: *He de reconocer que tienes razón* is \"I must admit that you are right\". The second is for stories: *había de* or *habría de* + infinitive says what was going to happen later, as if the writer already knew: *Aquel viaje había de cambiar su vida* is \"That journey was to change his life\".",
++      "title": "A formal pattern"
+     },
+     {
+       "type": "table",
+-      "title": "Valores de Haber de + infinitivo en prosa formal",
++      "title": "haber de + infinitive",
+       "rows": [
+         [
+-          "Hemos de admitir que la memoria histórica constituye el cimiento de la democracia.",
+-          "We must admit that historical memory constitutes the foundation of democracy."
++          "He de reconocer que tienes razón.",
++          "I must admit that you are right."
+         ],
+         [
+-          "Aquel encuentro en el Salón de Primavera había de desencadenar una tragedia irreparable.",
+-          "That meeting at the Spring Salon was destined to unleash an irreparable tragedy."
++          "Los estudiantes han de llegar antes de las nueve.",
++          "Students are to arrive before nine."
+         ],
+         [
+-          "Si has de juzgar mis actos, hazlo examinando las circunstancias que los motivaron.",
+-          "If you are to judge my actions, do so by examining the circumstances that motivated them."
++          "Aquel viaje había de cambiar su vida.",
++          "That journey was to change his life."
+         ],
+         [
+-          "Los historiadores habrán de revisar minuciosamente los documentos recién desclasificados.",
+-          "Historians will have to scrutinize meticulously the newly declassified documents."
++          "Años después, aquella casa habría de convertirse en un museo.",
++          "Years later, that house was to become a museum."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "En pretérito imperfecto (*había de...*) o condicional simple (*habría de...*), esta perífrasis actúa frecuentemente en biografías y relatos históricos para anunciar hechos futuros respecto del tiempo narrativo principal."
++      "content": "Do not confuse *haber de* with *hay que*. *Haber de* changes with the person (*he de*, *has de*, *hemos de*), but *hay que* never does. In everyday speech people say *tengo que* or *debo* instead, so use *haber de* when you want to sound formal or when you tell a story."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-26-03-a-gr.json b/content/es-latam/grammar/b2/b2-26-03-a-gr.json
+index fd9fa44f..6678079f 100644
+--- a/content/es-latam/grammar/b2/b2-26-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-26-03-a-gr.json
+@@ -1,36 +1,37 @@
+ {
+   "id": "grammar.b2.26.03.tener-que-infinitivo",
+-  "title": "Necesidad objetiva: Tener que + infinitivo",
++  "title": "Tener que",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "A diferencia de *deber + infinitivo* (que apela a un imperativo ético o moral interno), *tener que + infinitivo* expresa una obligación ineludible impuesta por circunstancias externas, necesidades materiales imperiosas o exigencias institucionales forzosas. En tiempos del pasado (*tuve que declarar*), constata la realización efectiva de la acción forzada."
++      "content": "You know *tener que* + infinitive from A1 Unit 18, and *deber* from B1 Unit 4, where *deber* gives advice and *tener que* is stronger. At B2 the useful question is where the pressure comes from. *Deber* talks about a duty or a moral rule: *Debes ayudar a tus vecinos*. *Tener que* talks about a need that comes from the situation, and the speaker cannot change it: *Tengo que salir ya, porque el tren sale a las siete*. That is why *tener que* so often comes with a reason (*porque*, *si quieres*). It can also be a warm recommendation: *Tienes que probar este pastel* means \"You must try this cake\".",
++      "title": "A need, not a duty"
+     },
+     {
+       "type": "table",
+-      "title": "Usos de Tener que en distintos marcos temporales",
++      "title": "tener que",
+       "rows": [
+         [
+-          "Ante la gravedad de la crisis bancaria, el gobierno tuvo que decretar el estado de emergencia.",
+-          "Faced with the severity of the banking crisis, the government had to decree a state of emergency."
++          "Tengo que salir ya, porque el tren sale a las siete.",
++          "I have to leave now, because the train leaves at seven."
+         ],
+         [
+-          "Los ciudadanos tuvieron que organizarse en asambleas barriales para sostener comedores comunitarios.",
+-          "Citizens had to organize into neighborhood assemblies to sustain community soup kitchens."
++          "Si quieres vivir aquí, tienes que pagar el alquiler.",
++          "If you want to live here, you have to pay the rent."
+         ],
+         [
+-          "Para comprender la magnitud de la tragedia, tendríamos que examinar los legajos de la CONADEP.",
+-          "To understand the magnitude of the tragedy, we would have to examine the CONADEP files."
++          "Debes ayudar a tus vecinos.",
++          "You should help your neighbours."
+         ],
+         [
+-          "El testigo tuvo que comparecer ante el tribunal penal bajo estrictas medidas de seguridad.",
+-          "The witness had to appear before the criminal court under strict security measures."
++          "Tienes que probar este pastel; está delicioso.",
++          "You have to try this cake; it is delicious."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "En enunciados condicionales contraargumentativos, *tener que + infinitivo* en condicional (*tendrías que haberlo sabido*) expresa reproche ante una negligencia o descuido imputable al interlocutor."
++      "content": "*Tener que* always has a person: *tengo que*, *tienes que*, *tiene que*. When no one in particular has to do it, Spanish uses *hay que* (the next lesson). Do not use *tener que* for a rule that is the same for everybody. Later in this unit you will also see *tener que* used for a guess, as in *Tiene que ser él*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-26-04-a-gr.json b/content/es-latam/grammar/b2/b2-26-04-a-gr.json
+index 4a65126c..5fb1cdcd 100644
+--- a/content/es-latam/grammar/b2/b2-26-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-26-04-a-gr.json
+@@ -1,36 +1,37 @@
+ {
+   "id": "grammar.b2.26.04.haber-que-impersonal",
+-  "title": "Obligación generalizada: Haber que + infinitivo",
++  "title": "Hay que",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis impersonal *haber que + infinitivo* expresa necesidad u obligación universal sin atribuirla a un sujeto agente específico. Se conjuga únicamente en tercera persona del singular de todos los tiempos verbales (*hay que*, *había que*, *hubo que*, *habrá que*, *habría que*). Es el recurso por excelencia en editoriales periodísticos, manifiestos cívicos y análisis sociológicos para formular prioridades colectivas."
++      "content": "You know *hay que* + infinitive from A1 Unit 18: *Hay que trabajar*. It never changes for the person, because it names no one: the need belongs to everybody. At B2 that is exactly its job. It is the pattern of notices, instructions and general advice: *Para entrar, hay que mostrar el pasaporte*. It has one form for each tense, always in the third person: *hay que*, *había que*, *habrá que*, *habría que*. The conditional makes it softer, like a suggestion: *Habría que hablar con ella* is \"We should talk to her\".",
++      "title": "Everybody, and nobody in particular"
+     },
+     {
+       "type": "table",
+-      "title": "La obligación impersonal en el análisis sociopolítico",
++      "title": "hay que",
+       "rows": [
+         [
+-          "Hay que preservar la independencia judicial para garantizar la vigencia del estado de derecho.",
+-          "One must preserve judicial independence to guarantee the rule of law."
++          "Para entrar, hay que mostrar el pasaporte.",
++          "To get in, you have to show your passport."
+         ],
+         [
+-          "Tras el colapso del 2001, hubo que reinventar los mecanismos de solidaridad barrial.",
+-          "After the 2001 collapse, it was necessary to reinvent neighborhood solidarity mechanisms."
++          "Antes había que esperar horas para entrar.",
++          "In the past you had to wait hours to get in."
+         ],
+         [
+-          "Habrá que diseñar políticas monetarias que protejan el poder adquisitivo de los asalariados.",
+-          "It will be necessary to design monetary policies that protect the purchasing power of wage earners."
++          "Mañana habrá que llegar temprano.",
++          "Tomorrow we will have to arrive early."
+         ],
+         [
+-          "Para sanar las heridas del autoritarismo, habría que promover juicios con garantías plenas.",
+-          "To heal the wounds of authoritarianism, one ought to promote trials with full guarantees."
++          "Habría que hablar con ella antes de decidir.",
++          "We should talk to her before deciding."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "La forma en condicional, *habría que + infinitivo*, es ideal en debates formales de nivel B2 para formular sugerencias o recomendaciones con cortesía argumentativa y distancia prudente."
++      "content": "Compare *Hay que salir temprano* (what the situation asks of everyone) with *Tengo que salir temprano* (my own need). Never put a person into *hay que*: not *hay que yo salir*. If you want to name who has to act, use *tener que*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-26-05-a-gr.json b/content/es-latam/grammar/b2/b2-26-05-a-gr.json
+index 22aeb309..2e7f1103 100644
+--- a/content/es-latam/grammar/b2/b2-26-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-26-05-a-gr.json
+@@ -1,36 +1,37 @@
+ {
+   "id": "grammar.b2.26.05.perifrasis-modales-probabilidad-epistemica",
+-  "title": "Calibración epistémica de probabilidad y conjetura",
++  "title": "Guessing With Modal Verbs",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En la argumentación formal de nivel B2, el emisor calibra su grado de certeza o escepticismo combinando perífrasis modales con adverbios epistémicos. Las fórmulas *debe de haber sido*, *puede que haya ocurrido* y *habrá de considerarse* permiten matizar hipótesis complejas en la reconstrucción de hechos históricos o en la introspección psicológica de obras literarias."
++      "content": "You know the future of probability (*Estará en casa*) from B1 Unit 22 and the whole family of guessing words from B2 Unit 3, including *puede que* + subjunctive. Spanish also guesses with modal verbs, and each one shows a different degree of confidence. *Poder* is the least sure: *Puede estar enfermo* is \"He may be ill\". *Deber de* is a good guess from signs: *Debe de estar enfermo* is \"He must be ill\". *Tener que* is nearly certain, because you see no other explanation: *Tiene que ser él* is \"It has to be him\". For the past, add *haber* + a past participle: *Debe de haber salido*, *Puede haber salido*, *Tiene que haber salido*.",
++      "title": "How sure are you?"
+     },
+     {
+       "type": "table",
+-      "title": "Escala de certeza y conjetura epistémica",
++      "title": "From less sure to more sure",
+       "rows": [
+         [
+-          "El acusado debió de planificar su coartada con minuciosa antelación.",
+-          "The accused must have planned his alibi with meticulous forethought."
++          "Puede estar enfermo.",
++          "He may be ill."
+         ],
+         [
+-          "Las declaraciones contradictorias de los testigos deben de haber desconcertado a los jueces.",
+-          "The witnesses' contradictory statements must have bewildered the judges."
++          "Debe de estar enfermo.",
++          "He must be ill."
+         ],
+         [
+-          "Castel no podía admitir que María tuviera una vida impenetrable fuera de su cuadro.",
+-          "Castel could not admit that María might have an impenetrable life outside his painting."
++          "Tiene que ser él; nadie más tiene la llave.",
++          "It has to be him; nobody else has the key."
+         ],
+         [
+-          "Aquel silencio prolongado debió de alimentar sus más oscuras sospechas de infidelidad.",
+-          "That prolonged silence must have fed his darkest suspicions of infidelity."
++          "Puede que llueva esta tarde.",
++          "It may rain this afternoon."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "El pretérito perfecto compuesto modal (*debe de haber estado*) sitúa la deducción en el presente pero proyectada hacia un hecho concluido: *Debe de haber sido muy duro vivir en la clandestinidad durante la dictadura*."
++      "content": "*Tiene que ser él* is a guess because the verb is *ser* (or *estar*, or another verb that describes a state). *Tiene que salir* is a need. Watch also the difference between *Puede venir* (infinitive, \"he may come\") and *Puede que venga* (*que* + subjunctive, \"it is possible that he comes\"): the meaning is the same, but the grammar is not."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-24-01.json b/content/es-latam/lessons/b2/b2-24-01.json
+index 77052e19..1ad3a25d 100644
+--- a/content/es-latam/lessons/b2/b2-24-01.json
++++ b/content/es-latam/lessons/b2/b2-24-01.json
+@@ -1,7 +1,9 @@
+ {
+   "id": "lesson.b2.24.01",
+-  "title": "Durative Periphrasis: Llevar + Gerundio",
++  "title": "Llevar + Gerund: How Long Something Has Been Going On",
+   "level": "B2",
++  "goal": "Say how long something has been going on with llevar, a length of time and a gerund.",
++  "grammar": "llevar + gerund",
+   "sections": [
+     {
+       "type": "grammar",
+@@ -23,6 +25,19 @@
+         "b2-24-01.ex05",
+         "b2-24-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say how long something has been going on with llevar, a length of time and a gerund.",
++        "I can say how long I have gone without doing something with llevar sin and an infinitive.",
++        "I can use the new words for queues, building work and long efforts."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-24-02.json b/content/es-latam/lessons/b2/b2-24-02.json
+index 6c9c00e9..0c8430e4 100644
+--- a/content/es-latam/lessons/b2/b2-24-02.json
++++ b/content/es-latam/lessons/b2/b2-24-02.json
+@@ -1,7 +1,9 @@
+ {
+   "id": "lesson.b2.24.02",
+-  "title": "Continuity Periphrasis: Seguir + Gerundio",
++  "title": "Seguir + Gerund: Still Going On",
+   "level": "B2",
++  "goal": "Say that something is still going on, or still has not happened, with seguir.",
++  "grammar": "seguir + gerund and seguir sin",
+   "sections": [
+     {
+       "type": "grammar",
+@@ -23,6 +25,19 @@
+         "b2-24-02.ex05",
+         "b2-24-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say that something is still going on with seguir and a gerund, in the present and the past.",
++        "I can say that something still has not happened with seguir sin and an infinitive.",
++        "I can use the new words for contests and for not giving up."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-24-03.json b/content/es-latam/lessons/b2/b2-24-03.json
+index 1f40a62f..eb2fe6c7 100644
+--- a/content/es-latam/lessons/b2/b2-24-03.json
++++ b/content/es-latam/lessons/b2/b2-24-03.json
+@@ -1,7 +1,9 @@
+ {
+   "id": "lesson.b2.24.03",
+-  "title": "Progressive Periphrasis: Ir + Gerundio",
++  "title": "Ir + Gerund: Step by Step",
+   "level": "B2",
++  "goal": "Say that something happens gradually, step by step, with ir and a gerund.",
++  "grammar": "ir + gerund",
+   "sections": [
+     {
+       "type": "grammar",
+@@ -23,6 +25,19 @@
+         "b2-24-03.ex05",
+         "b2-24-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say that something happens gradually with ir and a gerund.",
++        "I can use ir + gerund in the present, the imperfect and the preterite.",
++        "I can use the new words for progress and learning."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-24-04.json b/content/es-latam/lessons/b2/b2-24-04.json
+index c50d2506..376647f2 100644
+--- a/content/es-latam/lessons/b2/b2-24-04.json
++++ b/content/es-latam/lessons/b2/b2-24-04.json
+@@ -1,7 +1,9 @@
+ {
+   "id": "lesson.b2.24.04",
+-  "title": "Progressive Periphrasis: Andar + Gerundio",
++  "title": "Andar + Gerund: Going Around Doing",
+   "level": "B2",
++  "goal": "Say that someone is going around doing something, here and there, with andar and a gerund.",
++  "grammar": "andar + gerund",
+   "sections": [
+     {
+       "type": "grammar",
+@@ -23,6 +25,19 @@
+         "b2-24-04.ex05",
+         "b2-24-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say that someone is going around doing something, here and there, with andar and a gerund.",
++        "I can tell andar + gerund from ir + gerund.",
++        "I can use the new words for gossip and moving house."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-24-05.json b/content/es-latam/lessons/b2/b2-24-05.json
+index 97451f1e..9cf43e33 100644
+--- a/content/es-latam/lessons/b2/b2-24-05.json
++++ b/content/es-latam/lessons/b2/b2-24-05.json
+@@ -1,7 +1,9 @@
+ {
+   "id": "lesson.b2.24.05",
+-  "title": "Cumulative Periphrasis: Venir + Gerundio",
++  "title": "Venir + Gerund: Building Up to Now",
+   "level": "B2",
++  "goal": "Say that something has been developing up to now with venir and a gerund.",
++  "grammar": "venir + gerund",
+   "sections": [
+     {
+       "type": "grammar",
+@@ -23,6 +25,19 @@
+         "b2-24-05.ex05",
+         "b2-24-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say that something has been developing up to now with venir and a gerund.",
++        "I can tell venir + gerund from llevar + a length of time.",
++        "I can use the new words for trends and change over time."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-24-consolidation.json b/content/es-latam/lessons/b2/b2-24-consolidation.json
+index 3551adf5..af80b818 100644
+--- a/content/es-latam/lessons/b2/b2-24-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-24-consolidation.json
+@@ -1,14 +1,14 @@
+ {
+   "id": "lesson.b2.24.consolidation",
+-  "title": "Consolidación: Perífrasis durativas y de continuidad",
++  "title": "Unit 24 Consolidation",
+   "level": "B2",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Dominar los contrastes aspectuales de las perífrasis durativas (llevar, seguir, ir, andar, venir + gerundio).",
+-        "Integrar el léxico formal de continuidad, persistencia, gradualidad y decurso temporal.",
+-        "Analizar textos literarios complejos a partir de la adaptación de Roberto Arlt."
++        "Review llevar, seguir, ir, andar and venir with a gerund.",
++        "Review seguir sin and the difference between ir, andar and venir.",
++        "Read a retelling of the first part of Roberto Arlt's novel El juguete rabioso."
+       ]
+     },
+     {
+@@ -37,12 +37,13 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "Distingo con precisión los valores de llevar, seguir, ir, andar y venir con gerundio.",
+-        "Puedo expresar duración ininterrumpida y persistencia activa con soltura en registro formal.",
+-        "Comprendo la prosa psicológica y social de la novela clásica porteña de Roberto Arlt.",
+-        "Utilizo adecuadamente el vocabulario sobre trayectorias, afianzamiento y procesos acumulativos.",
+-        "Aplico matices aspectuales sutiles en la argumentación escrita de nivel B2."
+-      ]
++        "I can tell llevar, seguir, ir, andar and venir with a gerund apart.",
++        "I can say how long something has been going on and that it is still going on.",
++        "I can read a short retelling of the first part of Roberto Arlt's novel El juguete rabioso."
++      ],
++      "title": "Can you do this?"
+     }
+-  ]
++  ],
++  "goal": "Review llevar, seguir, ir, andar and venir with a gerund, and read a retelling of the first part of El juguete rabioso.",
++  "grammar": "Review: durative and progressive periphrases"
+ }
+diff --git a/content/es-latam/lessons/b2/b2-26-01.json b/content/es-latam/lessons/b2/b2-26-01.json
+index 6dcbeb1c..384c5cf6 100644
+--- a/content/es-latam/lessons/b2/b2-26-01.json
++++ b/content/es-latam/lessons/b2/b2-26-01.json
+@@ -1,7 +1,9 @@
+ {
+   "id": "lesson.b2.26.01",
+-  "title": "La obligación moral y la conjetura: Deber vs. Deber de + infinitivo",
++  "title": "Deber and Deber de: Duty or Guess",
+   "level": "B2",
++  "goal": "Use deber for a duty and deber de for a guess.",
++  "grammar": "deber vs deber de",
+   "sections": [
+     {
+       "type": "story",
+@@ -27,6 +29,19 @@
+         "b2-26-01.ex05",
+         "b2-26-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use deber + infinitive for a duty and deber de + infinitive for a guess.",
++        "I can say why speakers sometimes mix deber and deber de.",
++        "I can use the new words for rules and for lights on or off."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-26-02.json b/content/es-latam/lessons/b2/b2-26-02.json
+index ccb191cb..0ed4e211 100644
+--- a/content/es-latam/lessons/b2/b2-26-02.json
++++ b/content/es-latam/lessons/b2/b2-26-02.json
+@@ -1,7 +1,9 @@
+ {
+   "id": "lesson.b2.26.02",
+-  "title": "El deber formal y el destino ineludible: Haber de + infinitivo",
++  "title": "Haber de + Infinitive: Formal Duty and Destiny",
+   "level": "B2",
++  "goal": "Use haber de + infinitive for a formal duty and for what was going to happen.",
++  "grammar": "haber de + infinitive",
+   "sections": [
+     {
+       "type": "grammar",
+@@ -23,6 +25,19 @@
+         "b2-26-02.ex05",
+         "b2-26-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use haber de + infinitive for a formal duty.",
++        "I can use había de + infinitive to say what was going to happen later.",
++        "I can use the new words for admitting something and taking your time."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-26-03.json b/content/es-latam/lessons/b2/b2-26-03.json
+index 24757e3d..8c463eed 100644
+--- a/content/es-latam/lessons/b2/b2-26-03.json
++++ b/content/es-latam/lessons/b2/b2-26-03.json
+@@ -1,7 +1,9 @@
+ {
+   "id": "lesson.b2.26.03",
+-  "title": "La necesidad objetiva y la imposición externa: Tener que + infinitivo",
++  "title": "Tener que: A Need From the Situation",
+   "level": "B2",
++  "goal": "Use tener que for a need that comes from the situation.",
++  "grammar": "tener que",
+   "sections": [
+     {
+       "type": "grammar",
+@@ -23,6 +25,19 @@
+         "b2-26-03.ex05",
+         "b2-26-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use tener que for a need that comes from the situation, and give the reason.",
++        "I can tell tener que from deber and from hay que.",
++        "I can use the new words for rent and reports."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-26-04.json b/content/es-latam/lessons/b2/b2-26-04.json
+index c13cf540..9d9c0747 100644
+--- a/content/es-latam/lessons/b2/b2-26-04.json
++++ b/content/es-latam/lessons/b2/b2-26-04.json
+@@ -1,7 +1,9 @@
+ {
+   "id": "lesson.b2.26.04",
+-  "title": "La obligación universal e impersonal: Haber que + infinitivo",
++  "title": "Hay que: A Rule for Everyone",
+   "level": "B2",
++  "goal": "Use hay que for a rule or a need that is the same for everyone.",
++  "grammar": "hay que",
+   "sections": [
+     {
+       "type": "grammar",
+@@ -23,6 +25,19 @@
+         "b2-26-04.ex05",
+         "b2-26-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use hay que for a rule or a need that is the same for everyone.",
++        "I can use había que, habrá que and habría que.",
++        "I can use the new words for forms and permits."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-26-05.json b/content/es-latam/lessons/b2/b2-26-05.json
+index 3fff7211..5438baaa 100644
+--- a/content/es-latam/lessons/b2/b2-26-05.json
++++ b/content/es-latam/lessons/b2/b2-26-05.json
+@@ -1,7 +1,9 @@
+ {
+   "id": "lesson.b2.26.05",
+-  "title": "La calibración epistémica de la probabilidad y la conjetura",
++  "title": "Guessing With Modal Verbs",
+   "level": "B2",
++  "goal": "Guess with deber de, poder and tener que, and say how sure you are.",
++  "grammar": "modal verbs for guessing",
+   "sections": [
+     {
+       "type": "grammar",
+@@ -23,6 +25,19 @@
+         "b2-26-05.ex05",
+         "b2-26-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can guess with deber de, poder and tener que, and show how sure I am.",
++        "I can use puede que + subjunctive for a guess.",
++        "I can use the new words for clues and evidence."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-26-consolidation.json b/content/es-latam/lessons/b2/b2-26-consolidation.json
+index c0d06df3..ff24010b 100644
+--- a/content/es-latam/lessons/b2/b2-26-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-26-consolidation.json
+@@ -1,14 +1,14 @@
+ {
+   "id": "lesson.b2.26.consolidation",
+-  "title": "Consolidación: Perífrasis modales de conjetura y deber",
++  "title": "Unit 26 Consolidation",
+   "level": "B2",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Dominar las perífrasis modales de obligación y conjetura (deber, deber de, haber de, tener que, haber que).",
+-        "Calibrar con exactitud el grado de certidumbre, deducción epistémica y necesidad en la argumentación.",
+-        "Integrar el léxico especializado de la deducción, el deber cívico y la introspección existencial."
++        "Review deber for a duty and deber de for a guess.",
++        "Review haber de, tener que and hay que, and the modal verbs for guessing.",
++        "Read a text about Ernesto Sabato and his novel Sobre héroes y tumbas."
+       ]
+     },
+     {
+@@ -33,12 +33,13 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "Distingo con rigor normativo entre 'deber + infinitivo' (obligación) y 'deber de + infinitivo' (conjetura).",
+-        "Utilizo 'haber de + infinitivo' en prosa formal para expresar mandatos atenuados y destinos inevitables.",
+-        "Empleo 'tener que + infinitivo' para constatar necesidades objetivas e imposiciones materiales externas.",
+-        "Aplico la forma impersonal 'haber que + infinitivo' para formular prioridades institucionales y comunitarias.",
+-        "Interpreto la prosa existencialista de Ernesto Sabato valorando los matices de conjetura y certeza obsesiva."
+-      ]
++        "I can tell deber, deber de, haber de, tener que and hay que apart.",
++        "I can rank a guess as less or more sure, from puede to tiene que.",
++        "I can read a short text about Ernesto Sabato and his novel Sobre héroes y tumbas."
++      ],
++      "title": "Can you do this?"
+     }
+-  ]
++  ],
++  "goal": "Review deber, deber de, haber de, tener que and hay que, the modal verbs for guessing, and read a text about Sabato and Sobre héroes y tumbas.",
++  "grammar": "Review: modal periphrases"
+ }
+diff --git a/content/es-latam/stories/classics/b2/b2-24.json b/content/es-latam/stories/classics/b2/b2-24.json
+index 5e3e70a3..43e77146 100644
+--- a/content/es-latam/stories/classics/b2/b2-24.json
++++ b/content/es-latam/stories/classics/b2/b2-24.json
+@@ -1,84 +1,89 @@
+ {
+   "id": "story.b2.24.arlt",
+-  "title": "El juguete rabioso: La noche porteña y la invención en los arrabales",
++  "title": "El juguete rabioso: Los ladrones",
+   "level": "B2",
+   "lesson": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Una adaptación literaria de 'El juguete rabioso' (1926), la clásica novela de Roberto Arlt: los anhelos juveniles de Silvio Astier en el barrio de Flores, la tensión entre la vocación de inventor y la miseria urbana, el deambular nocturno por los cafetines y librerías de lance, y el desgarrador dilema ético que culmina en la traición al Rengo como una oscura afirmación de su propia fatalidad.",
++  "summary": "A retelling of the first part of Roberto Arlt's novel El juguete rabioso (1926): Silvio, a boy from Flores, his friend Enrique and their club of thieves, up to the night of the robbery at a school library.",
+   "characters": [
+-    "Silvio Astier",
+-    "Madre de Silvio",
+-    "El Rengo",
+-    "Comerciante de Belgrano"
++    "Silvio",
++    "Enrique Irzubeta",
++    "Lucio",
++    "Hipólito",
++    "El zapatero andaluz"
+   ],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "La ciudad de Buenos Aires crecía hacia los cuatro rumbos como una colmena desbordada por el vapor de las locomotoras, el rumor incesante de las imprentas y el trajín de miles de recién llegados que buscaban su destino entre callejones de barro y avenidas recién trazadas. En aquel arrabal brumoso de Flores, Silvio Astier llevaba meses alimentando un sueño desmesurado que lo apartaba de las mezquindades de la vida cotidiana: ansiaba convertirse en un inventor insigne, en un demiurgo capaz de doblegar las leyes de la física mediante la audacia del ingenio. En su pequeño cuarto atestado de engranajes oxidados, libros de química deshojados y frascos de reactivos comprados con monedas escasas, la penumbra apenas retrocedía ante la débil llama de un mechero de gas."
++      "text": "En la primera parte de El juguete rabioso, Silvio tenía catorce años y vivía en el barrio de Flores, en Buenos Aires. Un viejo zapatero andaluz le alquilaba por unos centavos cuadernillos con aventuras de bandoleros, y Silvio los devoraba. Esas historias le gustaban tanto que seguía soñando con ser un bandido como los de los libros."
+     },
+     {
+       "type": "narration",
+-      "text": "Su madre, mujer de ademanes fatigosos y ojos oscurecidos por las privaciones del conventillo, lo contemplaba desde el umbral con una mezcla de piedad y reproche. Le recordaba que los años de juventud pasaban de prisa y que el pan no se ganaba descifrando esquemas fantásticos en la soledad de la noche. Sin embargo, Silvio seguía sosteniendo que la verdadera grandeza residía en trascender la mediocridad impuesta por la miseria urbana. En los momentos de mayor agobio, cuando la falta de recursos paralizaba sus experimentos, su espíritu no se resignaba; por el contrario, su mente se fue acostumbrando a concebir artefactos mecánicos extraordinarios: un cañón de señales para barcos en peligro, una ganzúa electromagnética y una máquina para escribir señales en las nubes."
++      "text": "En el almacén del barrio conoció a Enrique Irzubeta, al que todos llamaban el falsificador porque había copiado una bandera de Nicaragua para un concurso de una fábrica de caramelos. Un amigo de los dos, Hipólito, presentó a Silvio como el del cañón. Silvio había hecho un cañón pequeño con un tubo de hierro y plomo, y lo había probado en un campo. El disparo sonó tan fuerte que dos policías se acercaron corriendo, y los muchachos huyeron sin el cañón."
+     },
+     {
+       "type": "narration",
+-      "text": "Durante las tardes lluviosas, cuando el fango del arrabal hacía impracticable cualquier paseo largo, Silvio andaba recorriendo las librerías de lance de la calle Corrientes y los mostradores de los prestamistas en busca de manuales de mecánica aplicada. El joven observaba a la multitud abigarrada de dependientes, inmigrantes italianos, poetas bohemios y estafadores de poca monta que pululaban bajo los toldos mojados. Sentía que una fuerza subterránea y violenta latía en el pavimento húmedo de la metrópolis. Los intelectuales consagrados venían proclamando desde los periódicos elegantes el advenimiento de una edad dorada para la República, pero Silvio contemplaba la otra cara de la moneda: la dureza de las pensiones clandestinas, el desamparo de los adolescentes sin oficio y la humillación diaria del empleo servil."
++      "text": "Desde entonces fueron grandes amigos. De tanto hablar de bandidos, Silvio y Enrique se convencieron de que robar era algo bueno y decidieron formar un club de ladrones. Empezaron por las casas vacías: después del almuerzo, andaban buscando carteles de casas en alquiler, pedían las llaves, arrancaban cables y grifos, y los vendían a un plomero, que les pagaba solo la décima parte de su valor. Con cada robo, Silvio iba aprendiendo a mantener la sangre fría."
+     },
+     {
+       "type": "narration",
+-      "text": "Una noche de invierno, desesperado por conseguir capital para patentar un invento que juzgaba revolucionario, Silvio se reunió con el Rengo, un compadrito taciturno y cojo que frecuentaba las tabernas de los muelles. El hombre lo escuchó mientras bebían aguardiente en un bodegón donde el humo del tabaco se mezclaba con el aliento áspero de los estibadores. El Rengo le propuso un golpe audaz: saquear la caja fuerte de un comerciante adinerado que guardaba sus ganancias en una casa desguarnecida de Belgrano. Durante varias jornadas, Silvio anduvo sopesando el dilema moral con angustia punzante. Sabía que cruzar esa frontera implicaba renunciar a sus ideales de redención por la ciencia y sumergirse definitivamente en el fango de la delincuencia arrabalera."
++      "text": "Más tarde se unió un tercer muchacho, Lucio, y el grupo se llamó Club de los Caballeros de Media Noche. Se reunían en un cuarto del fondo de la casa de Enrique, y allí tenían un cuaderno, el Diario de Sesiones, donde anotaban sus propuestas."
+     },
+     {
+       "type": "narration",
+-      "text": "La noche señalada para el asalto, la ciudad parecía una trampa geométrica tendida bajo un cielo encapotado. El viento frío del Río de la Plata soplaba sobre los techos de zinc, levantando torbellinos de ceniza y hojas secas. Al aproximarse a la mansión silenciosa, Silvio comprendió que la fatalidad no se resolvía mediante el delito vulgar, sino a través de un acto más desgarrador y desconcertante. De manera imprevista, resolvió delatar al Rengo ante el dueño de la casa y las autoridades policiales. Aquella traición no nacía de la virtud cívica ni del miedo al presidio, sino de un impulso sombrío y luciferino: el deseo de comprobar hasta qué abismo de soledad y desprecio podía descender su propia alma en una urbe despiadada que devoraba las ilusiones de sus hijos."
++      "text": "Una noche de lluvia, los tres decidieron robar la biblioteca de una escuela, porque los porteros no estaban: había vacaciones. Saltaron la verja, encontraron en una caseta una cesta con lámparas eléctricas y se las llevaron. Luego forzaron la puerta de la biblioteca, y Enrique eligió los libros que se podían vender bien. Llevaban media hora dentro cuando oyeron pasos. Era solo un borracho que cantaba, y se fue sin verlos."
+     },
+     {
+       "type": "narration",
+-      "text": "Al amanecer, mientras el Rengo era conducido engrillado por los agentes policiales bajo una llovizna helada, Silvio caminó sin rumbo hacia las dársenas del puerto, sintiendo en el pecho una extraña y amarga serenidad. En *El juguete rabioso*, Roberto Arlt supo plasmar la desesperación existencial de una generación atrapada entre los deslumbrantes espejismos de la modernización tecnológica y la crudeza de la exclusión social. La figura de Silvio Astier perdura en la literatura hispanoamericana como el testimonio implacable de un alma herida que, en medio de la niebla porteña, prefirió consumirse en su propio fuego antes que capitular ante la monotonía servil del mundo de los hombres sensatos."
++      "text": "Hacia las tres de la mañana salieron y dejaron lo robado en la casa de Lucio. Poco después, Silvio estaba en su casa cuando alguien golpeó la puerta: era Enrique, que llegaba sin aliento, con algunos libros, porque un policía lo había perseguido. Los silbatos sonaron por el barrio hasta que todo quedó en silencio."
++    },
++    {
++      "type": "narration",
++      "text": "Más tarde, los tres amigos se reunieron en el cuarto del club. Lucio leyó un recorte de periódico: un agente había visto a un hombre sospechoso con un paquete bajo el brazo, y el hombre había huido. Lucio y Silvio pensaron que lo mejor era disolver el club. Enrique, en cambio, dijo que seguiría robando aunque lo dejaran solo."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál era el anhelo fundamental que Silvio Astier perseguía en su modesto cuarto de Flores?",
++          "question": "How did Silvio first get to know stories about bandits?",
+           "options": [
+-            "Convertirse en un inventor ilustre capaz de superar la mediocridad cotidiana mediante el ingenio científico.",
+-            "Acumular suficiente capital para comprar tierras ganaderas en la provincia de Buenos Aires.",
+-            "Heredar el negocio textil de su familia en Génova y regresar a Europa en el primer vapor transatlántico.",
+-            "Aprender a tocar el bandoneón para ingresar en una orquesta típica de tango en los cabarets céntricos."
++            "Un zapatero andaluz le alquilaba cuadernillos de aventuras.",
++            "Su maestro le regaló una colección de novelas de piratas.",
++            "Su madre le contaba historias de bandidos por la noche.",
++            "Enrique le prestaba libros de la biblioteca de la escuela."
+           ],
+           "correctIndex": 0,
+-          "explanation": "Silvio sueña obsesivamente con consagrarse como inventor e ingeniero creador de artefactos extraordinarios."
++          "explanation": "The text says that an old Andalusian shoemaker rented him booklets of bandit adventures for a few cents."
+         },
+         {
+-          "question": "¿Qué contradicción observaba Silvio entre los discursos oficiales y la realidad cotidiana de la urbe?",
++          "question": "What did Silvio and Enrique sell to the plumber?",
+           "options": [
+-            "Los periódicos pregonaban una edad dorada mientras él constataba la dureza de las pensiones y la miseria urbana.",
+-            "El gobierno obligaba a todos los jóvenes a emigrar al campo a pesar del auge de las fábricas porteñas.",
+-            "Las autoridades prohibían la venta de libros científicos y clausuraban los institutos técnicos de enseñanza.",
+-            "La policía impedía que los barcos descargaran mercancías en las dársenas de Puerto Madero."
++            "Libros que habían sacado de una biblioteca.",
++            "Cables y grifos que arrancaban de casas vacías.",
++            "Aeroplanos de bambú que hacía Hipólito.",
++            "Cuadernillos de aventuras del zapatero."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "Silvio percibe el abismo entre la retórica optimista de la élite y la miseria descarnada de los arrabales."
++          "correctIndex": 1,
++          "explanation": "In empty houses for rent they pulled out cables and taps and sold them to a plumber, who paid only a tenth of their value."
+         },
+         {
+-          "question": "¿Por qué motivo crucial resolvió Silvio delatar al Rengo antes de cometer el asalto planificado?",
++          "question": "What did Enrique say at the end of the passage?",
+           "options": [
+-            "Por un impulso sombrío de comprobar hasta qué abismo de soledad y desprecio podía descender su propia alma.",
+-            "Porque el comerciante asaltado le ofreció una generosa recompensa monetaria para abrir su propio taller mecánico.",
+-            "Debido a que su madre le rogó entre lágrimas que no manchara el honor honrado de la familia obrera.",
+-            "Para evitar que la policía descubriera que él no tenía documentos de identidad argentinos válidos."
++            "Que se iría a vivir a otra ciudad.",
++            "Que él también quería disolver el club.",
++            "Que seguiría robando aunque lo dejaran solo.",
++            "Que le contaría todo a la policía."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "La traición de Silvio es un acto existencial gratuito y autodestructivo, característico del universo de Arlt."
++          "correctIndex": 2,
++          "explanation": "Lucio and Silvio wanted to close the club, but Enrique said he would go on even if they left him alone."
+         }
+       ]
+     }
+   },
+   "author": "Roberto Arlt (Argentina, 1900–1942)",
+   "work": "El juguete rabioso (1926)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Roberto Arlt",
++  "source": "Adaptación para estudiantes de nivel B2 de la novela de Roberto Arlt (dominio público), contrastada con el texto de Wikisource.",
+   "order": 24
+ }
+diff --git a/content/es-latam/stories/classics/b2/b2-26.json b/content/es-latam/stories/classics/b2/b2-26.json
+index 7be74819..5a67d548 100644
+--- a/content/es-latam/stories/classics/b2/b2-26.json
++++ b/content/es-latam/stories/classics/b2/b2-26.json
+@@ -1,84 +1,79 @@
+ {
+   "id": "story.b2.26.sabato",
+-  "title": "El túnel: La obsesión, el juicio y la soledad en el laberinto interior",
++  "title": "Ernesto Sabato y Sobre héroes y tumbas",
+   "level": "B2",
+   "lesson": 1,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Una adaptación literaria de 'El túnel' (1948), la célebre novela existencialista de Ernesto Sabato: el pintor Juan Pablo Castel relata desde su celda carcelaria la obsesiva búsqueda de María Iribarne tras contemplar la ventanita de su cuadro en el Salón de Primavera, el encadenamiento de conjeturas y deberes autoimpuestos, y la trágica soledad de dos seres incomunicados en túneles paralelos.",
+-  "characters": [
+-    "Juan Pablo Castel",
+-    "María Iribarne",
+-    "Allende",
+-    "Hunter"
+-  ],
++  "summary": "A text about Ernesto Sabato and his second novel, Sobre héroes y tumbas (1961): its main figures, its long section Informe sobre ciegos and its place in Argentine literature.",
++  "characters": [],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Desde el encierro claustrofóbico de mi celda en la penitenciaría, he de comenzar este relato sin recurrir a vanas justificaciones morales ni a falsas disculpas ante los hombres que se arrogan el derecho de juzgarme. Bastará decir que soy Juan Pablo Castel, el pintor que mató a María Iribarne. Me mueve únicamente la imperiosa necesidad de que una sola persona, al menos un alma lúcida sobre la tierra, pueda llegar a comprender los laberintos intrincados y las deducciones matemáticas que me empujaron inevitablemente hacia el abismo. Todo comenzó en el Salón de Primavera de Buenos Aires, durante la exposición anual en que exhibí mi cuadro titulado *Maternidad*. En la parte superior izquierda del lienzo, casi inadvertida para los críticos vanidosos que hablaban con pedantería de armonías cromáticas, había pintado una ventanita abierta sobre una playa solitaria, donde una mujer inmóvil contemplaba la inmensidad del mar embravecido como esperando algo angustioso y lejano."
++      "text": "Ernesto Sabato fue un escritor argentino. Nació en 1911 y murió en 2011. Antes de ser escritor fue físico, y años después presidió la CONADEP. Entre sus libros hay una novela de 1961 que se llama Sobre héroes y tumbas."
+     },
+     {
+       "type": "narration",
+-      "text": "Nadie pareció prestar la menor atención a aquel detalle recóndito, que constituía en verdad la única parte entrañable y auténtica de mi obra, excepto una muchacha desconocida de mirada penetrante y ademanes sobrios. Se detuvo largamente frente a la ventanita, ensimismada en un silencio tan denso y elocuente que comprendí de inmediato que ella debía de haber intuido el mensaje secreto de mi alma. Debió de haber sentido el mismo frío cósmico y la misma desesperación metafísica que me devoraban desde la infancia. Sin embargo, antes de que pudiera vencer mi timidez montaraz para abordarla, la mujer desapareció entre la multitud de curiosos. A partir de esa tarde fatídica, mi existencia entera se transformó en un torbellino monomaníaco: tenía que encontrarla a cualquier precio; debía de hallarse en algún rincón de la urbe, caminando por las calles céntricas o trabajando en algún edificio gubernamental."
++      "text": "Sobre héroes y tumbas es la segunda novela de Sabato: antes de ella, el autor ya había publicado otra. Se publicó por primera vez en Buenos Aires. Hoy se considera un clásico de la literatura argentina, y un clásico es un libro que se sigue leyendo con los años."
+     },
+     {
+       "type": "narration",
+-      "text": "Durante meses interminables recorrí las avenidas porteñas con la mirada febril de un detective alucinado, ensayando en mi mente cientos de diálogos hipotéticos para el instante en que el destino me la devolviera. Cuando finalmente la divisé una mañana cruzando la calle San Martín hacia el edificio de la compañía de transportes donde trabajaba, sentí que las piernas me temblaban como si una corriente eléctrica me atravesara el pecho. Tuve que obligarme a avanzar con aplomo, reprimir los latidos desbocados del corazón y cerrarle el paso con una brusquedad que la alarmó al principio. 'Tengo que hablar con usted de la ventanita de mi cuadro', le dije con una voz ronca que parecía pertenecer a otro hombre. Ella palideció ligeramente, reconoció al autor de la tela y admitió en voz baja que recordaba la escena con una nitidez asombrosa."
++      "text": "Los personajes principales son Martín, un joven de Buenos Aires, Alejandra y su padre, Fernando. Para saber qué les pasa, el lector tiene que leer la novela."
+     },
+     {
+       "type": "narration",
+-      "text": "Así comenzaron nuestros encuentros en las plazas solitarias de Buenos Aires y en la penumbra de mi taller, donde habríamos de edificar una relación tortuosa gobernada por mis interrogatorios implacables y mis celos destructivos. María era un enigma insondable: estaba casada con un hombre ciego de refinada cortesía llamado Allende, frecuentaba la estancia campestre de su primo Hunter en la provincia de Buenos Aires y dosificaba sus confesiones con una parquedad que me enloquecía de incertidumbre. En mi afán obsesivo por desentrañar cada instante de su vida, me encerraba en el taller a formular silogismos geométricos: si María amaba a su esposo ciego, no debía de engañarlo; pero si me buscaba a mí, forzosamente tenía que mentirle a él; y si mentía a Allende con semejante naturalidad, ¿por qué no habría de engañarme a mí también con Hunter en las noches de campo?"
++      "text": "El título junta dos palabras: héroes, que son las personas admiradas por lo que hacen, y tumbas, que son los lugares donde se entierra a los muertos."
+     },
+     {
+       "type": "narration",
+-      "text": "Aquella inferencia diabólica terminó por envenenar por completo mi entendimiento. Me convencí de que Hunter debía de ser su amante y de que sus aparentes silencios de complicidad espiritual no eran más que la máscara perversa de una hipocresía sistemática. Viajé en secreto a la estancia bajo una lluvia torrencial, oculto entre los matorrales del parque oscuro mientras vigilaba las ventanas iluminadas de la mansión. Al advertir que María se retiraba a su dormitorio tras pasear a solas con su primo, di por probada mi teoría condenatoria sin admitir la menor posibilidad de refutación. Trepé por la cornisa empapada, irrumpí en la habitación con el cuchillo empuñado y clavé la hoja en su pecho mientras sus ojos desmesurados me miraban con una tristeza infinita y desamparada, sin el más leve reproche."
++      "text": "La novela contiene una sección muy larga que se llama Informe sobre ciegos. La palabra informe nombra un texto que da información sobre un tema, y los ciegos son las personas que no ven. Esa sección había de publicarse más tarde también por separado. Si se pudo publicar sola, debe de poder leerse sin el resto del libro."
+     },
+     {
+       "type": "narration",
+-      "text": "Hoy comprendo, desde la desolación irrevocable de mi celda, que toda mi existencia fue un túnel oscuro y solitario en el que transcurrí mi infancia, mi juventud y mi madurez. En un destello ilusorio creí que María caminaba por un túnel semejante y que en algún punto misterioso nuestras trayectorias se habían cruzado para redimirnos del desamparo existencial. Pero qué estúpida ceguera: los túneles eran paralelos y las paredes de vidrio que nos separaban jamás permitieron que una sola palabra de verdadero amor cruzara el abismo. María observaba mi penumbra desde afuera como una espectadora compasiva ante una fiera enjaulada, mientras yo continuaba encerrado para siempre en la cárcel inexpugnable de mi propia mente en tinieblas."
++      "text": "Aun así, quien quiera leer la novela completa tiene que leer también esa sección, porque forma parte de ella. Hay dos maneras de empezar: con la novela entera o solo con el Informe sobre ciegos. La novela entera exige más tiempo, y por eso hay que decidir antes cuánto tiempo se tiene."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Qué elemento del cuadro 'Maternidad' despierta la conexión inicial entre Juan Pablo Castel y María Iribarne?",
++          "question": "What happened to the Informe sobre ciegos after the novel came out?",
+           "options": [
+-            "La figura imponente de la madre que ocupa el centro de la escena.",
+-            "Una pequeña ventana abierta hacia una playa solitaria en el ángulo superior izquierdo.",
+-            "Los colores vivos utilizados para pintar el vestido de la campesina.",
+-            "La firma estilizada del autor grabada en relieve sobre el marco dorado."
++            "Se publicó más tarde también por separado.",
++            "Se quitó de la novela en las ediciones nuevas.",
++            "Se convirtió en la primera novela de Sabato.",
++            "Se publicó antes que el resto de la novela."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "La ventanita con la mujer solitaria contemplando el mar es el detalle inadvertido que solo María observa con detenimiento."
++          "correctIndex": 0,
++          "explanation": "The text says that this long section was later also published on its own."
+         },
+         {
+-          "question": "¿Cuál es el defecto psicológico central que corroe la relación de Castel con María a lo largo de la novela?",
++          "question": "Who are the main figures of the novel, according to the text?",
+           "options": [
+-            "Su ambición desmedida por obtener reconocimiento financiero y premios internacionales.",
+-            "Su desprecio absoluto por la pintura al óleo y los encargos oficiales.",
+-            "Su obsesión analítica implacable, alimentada por celos paranoides e interrogatorios agotadores.",
+-            "Su deseo recurrente de abandonar la ciudad de Buenos Aires para vivir en Europa."
++            "Martín, Alejandra y su padre Fernando.",
++            "Juan Pablo Castel y María Iribarne.",
++            "Un físico, un pintor y un escritor.",
++            "Sabato, Martín y Alejandra."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "Castel analiza cada gesto de María con deducciones obsesivas que lo sumergen en la desconfianza destructiva."
++          "correctIndex": 0,
++          "explanation": "The text names Martín, a young man of Buenos Aires, Alejandra and her father Fernando."
+         },
+         {
+-          "question": "¿Qué metáfora existencial sintetiza el desenlace de la obra respecto al destino humano?",
++          "question": "What does the text conclude from the fact that the Informe sobre ciegos was published on its own?",
+           "options": [
+-            "La del túnel solitario y paralelo, que simboliza la irremediable incomunicación entre las almas.",
+-            "La del faro costero que ilumina a los barcos perdidos en medio de la tormenta.",
+-            "La del puente levadizo que permite unir dos mundos opuestos gracias a la verdad.",
+-            "La de la plaza pública donde todas las clases sociales se reconcilian fraternalmente."
++            "Que seguramente puede leerse sin el resto de la novela.",
++            "Que no forma parte de la novela.",
++            "Que es más corto que el resto de la novela.",
++            "Que Sabato lo escribió después de la CONADEP."
+           ],
+           "correctIndex": 0,
+-          "explanation": "Castel concluye que cada ser transita por su propio túnel oscuro y que la conexión perfecta fue solo una ilusión."
++          "explanation": "The text says that, since it could be published on its own, it must be possible to read it without the rest of the book."
+         }
+       ]
+     }
+   },
+   "author": "Ernesto Sabato (Argentina, 1911–2011)",
+-  "work": "El túnel (1948)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Ernesto Sabato",
++  "work": "Sobre héroes y tumbas (1961)",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "order": 26
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-24-01-voc.json b/content/es-latam/vocabulary/b2/b2-24-01-voc.json
+index 59945a4e..84abf072 100644
+--- a/content/es-latam/vocabulary/b2/b2-24-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-24-01-voc.json
+@@ -1,57 +1,32 @@
+ {
+   "id": "vocab.b2.24.01",
+   "lesson": "b2-24-01",
+-  "title": "Durative Periphrasis: Llevar + Gerundio",
++  "title": "Llevar + gerund",
+   "words": [
+     {
+       "lemma": "llevar",
+-      "translation": "to have been doing (duration)",
++      "translation": "to have been doing something for (a length of time)",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "trayectoria",
+-      "translation": "trajectory / track record",
++      "lemma": "la fila",
++      "translation": "queue, line of people",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "andadura",
+-      "translation": "walk / journey / course of time",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "continuidad",
+-      "translation": "continuity",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "ininterrumpido",
+-      "translation": "uninterrupted",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "acúmulo",
+-      "translation": "accumulation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "prolongado",
+-      "translation": "prolonged / extended",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "permanencia",
+-      "translation": "stay / permanence",
+-      "pos": "noun"
++      "lemma": "ensayar",
++      "translation": "to rehearse, to practise",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "constancia",
+-      "translation": "perseverance / steady effort",
++      "lemma": "el taller",
++      "translation": "workshop",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "decurso",
+-      "translation": "course / lapse of time",
+-      "pos": "noun"
++      "lemma": "aguantar",
++      "translation": "to put up with, to bear",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-24-02-voc.json b/content/es-latam/vocabulary/b2/b2-24-02-voc.json
+index 344ecb92..dd35a425 100644
+--- a/content/es-latam/vocabulary/b2/b2-24-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-24-02-voc.json
+@@ -1,57 +1,37 @@
+ {
+   "id": "vocab.b2.24.02",
+   "lesson": "b2-24-02",
+-  "title": "Durative Periphrasis: Seguir + Gerundio",
++  "title": "Seguir + gerund",
+   "words": [
+     {
+       "lemma": "seguir",
+-      "translation": "to continue / to keep on doing",
++      "translation": "to keep doing, to still be doing",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "persistencia",
+-      "translation": "persistence",
++      "lemma": "el patio",
++      "translation": "yard, courtyard",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "obstinación",
+-      "translation": "obstinacy / stubbornness",
++      "lemma": "el concurso",
++      "translation": "contest, competition",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "vigencia",
+-      "translation": "validity / current relevance",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "inalterable",
+-      "translation": "unalterable / unchanging",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "firmeza",
+-      "translation": "firmness / steadfastness",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "perdurabilidad",
+-      "translation": "durability / endurance",
+-      "pos": "noun"
++      "lemma": "rendirse",
++      "translation": "to give up",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "latente",
+-      "translation": "latent / dormant",
+-      "pos": "adjective"
++      "lemma": "continuar",
++      "translation": "to carry on",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "empeño",
+-      "translation": "determination / tenacity",
++      "lemma": "el jugador",
++      "translation": "player",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "constante",
+-      "translation": "constant / unwavering",
+-      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-24-03-voc.json b/content/es-latam/vocabulary/b2/b2-24-03-voc.json
+index f021f2d7..9b00cab4 100644
+--- a/content/es-latam/vocabulary/b2/b2-24-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-24-03-voc.json
+@@ -1,56 +1,21 @@
+ {
+   "id": "vocab.b2.24.03",
+   "lesson": "b2-24-03",
+-  "title": "Progressive Periphrasis: Ir + Gerundio",
++  "title": "Ir + gerund",
+   "words": [
+     {
+-      "lemma": "ir",
+-      "translation": "to do gradually / step by step",
++      "lemma": "llenarse",
++      "translation": "to fill up",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "paulatino",
+-      "translation": "gradual / step-by-step",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "gradual",
+-      "translation": "gradual",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "despliegue",
+-      "translation": "unfolding / rollout",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "afianzamiento",
+-      "translation": "consolidation / strengthening",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "maduración",
+-      "translation": "maturation / ripening",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "progresión",
+-      "translation": "progression",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "asentamiento",
+-      "translation": "settling / establishing",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "desenlace",
+-      "translation": "unraveling / outcome",
+-      "pos": "noun"
++      "lemma": "avanzar",
++      "translation": "to move forward, to make progress",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "decantación",
+-      "translation": "settling down / distillation",
++      "lemma": "el ritmo",
++      "translation": "pace, rhythm",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-24-04-voc.json b/content/es-latam/vocabulary/b2/b2-24-04-voc.json
+index 258522e5..d2eae39b 100644
+--- a/content/es-latam/vocabulary/b2/b2-24-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-24-04-voc.json
+@@ -1,57 +1,32 @@
+ {
+   "id": "vocab.b2.24.04",
+   "lesson": "b2-24-04",
+-  "title": "Progressive Periphrasis: Andar + Gerundio",
++  "title": "Andar + gerund",
+   "words": [
+     {
+       "lemma": "andar",
+-      "translation": "to go around doing / to be roaming about",
++      "translation": "to go around doing something",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "errante",
+-      "translation": "wandering / roving",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "desasosiego",
+-      "translation": "restlessness / uneasiness",
++      "lemma": "el chisme",
++      "translation": "piece of gossip",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "inquietud",
+-      "translation": "restlessness / concern",
++      "lemma": "la mudanza",
++      "translation": "move, change of home",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "disperso",
+-      "translation": "dispersed / scattered",
++      "lemma": "inquieto",
++      "translation": "restless, uneasy",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "merodear",
+-      "translation": "to prowl / to loiter about",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "rondar",
+-      "translation": "to hover around / to haunt",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "rumor",
+-      "translation": "rumor / murmur",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "trajín",
+-      "translation": "bustle / coming and going",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "deriva",
+-      "translation": "drift / wandering course",
+-      "pos": "noun"
++      "lemma": "por todas partes",
++      "translation": "everywhere",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-24-05-voc.json b/content/es-latam/vocabulary/b2/b2-24-05-voc.json
+index c6a677e6..b60caefb 100644
+--- a/content/es-latam/vocabulary/b2/b2-24-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-24-05-voc.json
+@@ -1,56 +1,31 @@
+ {
+   "id": "vocab.b2.24.05",
+   "lesson": "b2-24-05",
+-  "title": "Cumulative Periphrasis: Venir + Gerundio",
++  "title": "Venir + gerund",
+   "words": [
+     {
+       "lemma": "venir",
+-      "translation": "to have been developing (historically)",
++      "translation": "to have been doing something up to now",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "acumulativo",
+-      "translation": "cumulative",
+-      "pos": "adjective"
++      "lemma": "últimamente",
++      "translation": "lately",
++      "pos": "adverb"
+     },
+     {
+-      "lemma": "gestación",
+-      "translation": "gestation / genesis",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "precedente",
+-      "translation": "precedent",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "secuela",
+-      "translation": "consequence / aftermath",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "sedimentación",
+-      "translation": "sedimentation / gradual buildup",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "reiteración",
+-      "translation": "repetition / reiteration",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "herencia",
+-      "translation": "legacy / inheritance",
+-      "pos": "noun"
++      "lemma": "año tras año",
++      "translation": "year after year",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "transcurso",
+-      "translation": "lapse / course of time",
++      "lemma": "el alimento",
++      "translation": "food, foodstuff",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "continuo",
+-      "translation": "continuum / continuous flow",
++      "lemma": "la subida",
++      "translation": "rise, increase",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-26-01-voc.json b/content/es-latam/vocabulary/b2/b2-26-01-voc.json
+index 25173520..8840615a 100644
+--- a/content/es-latam/vocabulary/b2/b2-26-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-26-01-voc.json
+@@ -1,57 +1,37 @@
+ {
+   "id": "vocab.b2.26.01",
+   "lesson": "b2-26-01",
+-  "title": "Modal Periphrasis: Deber vs. Deber de",
++  "title": "Deber and deber de",
+   "words": [
+     {
+       "lemma": "deber",
+-      "translation": "duty / moral obligation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "conjetura",
+-      "translation": "conjecture / theoretical surmise",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "obligatoriedad",
+-      "translation": "mandatory nature / compulsoriness",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "suposición",
+-      "translation": "supposition / assumption",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "certeza",
+-      "translation": "certainty",
+-      "pos": "noun"
++      "translation": "to have to, ought to (with de: must be)",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "probabilidad",
+-      "translation": "probability / likelihood",
++      "lemma": "la regla",
++      "translation": "rule",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "presunción",
+-      "translation": "presumption / deduction",
+-      "pos": "noun"
++      "lemma": "firmar",
++      "translation": "to sign",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "rigor",
+-      "translation": "rigor / strictness",
++      "lemma": "el pasillo",
++      "translation": "corridor, hallway",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "imposición",
+-      "translation": "imposition / requirement",
+-      "pos": "noun"
++      "lemma": "encendido",
++      "translation": "switched on",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "indicio",
+-      "translation": "clue / sign / indication",
+-      "pos": "noun"
++      "lemma": "apagado",
++      "translation": "switched off",
++      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-26-02-voc.json b/content/es-latam/vocabulary/b2/b2-26-02-voc.json
+index fbde63de..297a999c 100644
+--- a/content/es-latam/vocabulary/b2/b2-26-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-26-02-voc.json
+@@ -1,57 +1,27 @@
+ {
+   "id": "vocab.b2.26.02",
+   "lesson": "b2-26-02",
+-  "title": "Formal Necessity: Haber de + Infinitivo",
++  "title": "Haber de + infinitive",
+   "words": [
+     {
+-      "lemma": "destino",
+-      "translation": "destiny / fate",
+-      "pos": "noun"
++      "lemma": "haber de",
++      "translation": "to have to, to be to (formal)",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "inexorabilidad",
+-      "translation": "inexorability / unavoidability",
+-      "pos": "noun"
++      "lemma": "reconocer",
++      "translation": "to admit, to recognise",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "precepto",
+-      "translation": "precept / statutory rule",
+-      "pos": "noun"
++      "lemma": "con calma",
++      "translation": "calmly, without hurry",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "designio",
+-      "translation": "design / grand plan",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "mandato",
+-      "translation": "mandate / command",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "ineludible",
+-      "translation": "unavoidable / inescapable",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "devenir",
+-      "translation": "future course / unfolding",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "estipulación",
+-      "translation": "stipulation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "designación",
+-      "translation": "designation / assignment",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "vínculo",
+-      "translation": "bond / binding tie",
+-      "pos": "noun"
++      "lemma": "para siempre",
++      "translation": "for ever",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-26-03-voc.json b/content/es-latam/vocabulary/b2/b2-26-03-voc.json
+index 3428c320..37f554c6 100644
+--- a/content/es-latam/vocabulary/b2/b2-26-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-26-03-voc.json
+@@ -1,57 +1,32 @@
+ {
+   "id": "vocab.b2.26.03",
+   "lesson": "b2-26-03",
+-  "title": "Objective Necessity: Tener que + Infinitivo",
++  "title": "Tener que",
+   "words": [
+     {
+-      "lemma": "urgencia",
+-      "translation": "urgency / pressing need",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "apremio",
+-      "translation": "urgency / pressure",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "coacción",
+-      "translation": "coercion / duress",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "imperativo",
+-      "translation": "imperative / compelling duty",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "contingencia",
+-      "translation": "contingency / eventuality",
+-      "pos": "noun"
++      "lemma": "tener que",
++      "translation": "to have to",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "constricción",
+-      "translation": "constraint / restriction",
++      "lemma": "el alquiler",
++      "translation": "rent",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "inevitabilidad",
+-      "translation": "inevitability",
+-      "pos": "noun"
++      "lemma": "entregar",
++      "translation": "to hand in, to deliver",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "requerimiento",
+-      "translation": "requirement / demand",
++      "lemma": "el informe",
++      "translation": "report",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "obligado",
+-      "translation": "compelled / obliged",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "forzoso",
+-      "translation": "forced / inevitable",
+-      "pos": "adjective"
++      "lemma": "probar",
++      "translation": "to try, to taste",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-26-04-voc.json b/content/es-latam/vocabulary/b2/b2-26-04-voc.json
+index 4fcfde77..24700711 100644
+--- a/content/es-latam/vocabulary/b2/b2-26-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-26-04-voc.json
+@@ -1,57 +1,37 @@
+ {
+   "id": "vocab.b2.26.04",
+   "lesson": "b2-26-04",
+-  "title": "Impersonal Obligation: Haber que + Infinitivo",
++  "title": "Hay que",
+   "words": [
+     {
+-      "lemma": "menester",
+-      "translation": "necessity / necessary task",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "precisión",
+-      "translation": "need / necessity / precision",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "colectividad",
+-      "translation": "collectivity / community",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "prioridad",
+-      "translation": "priority",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "consenso",
+-      "translation": "consensus",
+-      "pos": "noun"
++      "lemma": "hay que",
++      "translation": "it is necessary to, one has to",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "recaudo",
+-      "translation": "precaution / safeguard",
++      "lemma": "el permiso",
++      "translation": "permit, permission",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "diligencia",
+-      "translation": "diligence / procedural step",
+-      "pos": "noun"
++      "lemma": "llenar",
++      "translation": "to fill in",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "prudencia",
+-      "translation": "prudence / caution",
++      "lemma": "el formulario",
++      "translation": "form",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "remedio",
+-      "translation": "remedy / solution",
+-      "pos": "noun"
++      "lemma": "mostrar",
++      "translation": "to show",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "disposición",
+-      "translation": "disposition / readiness",
+-      "pos": "noun"
++      "lemma": "apagar",
++      "translation": "to switch off",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-26-05-voc.json b/content/es-latam/vocabulary/b2/b2-26-05-voc.json
+index 8312b428..ca3aa137 100644
+--- a/content/es-latam/vocabulary/b2/b2-26-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-26-05-voc.json
+@@ -1,56 +1,26 @@
+ {
+   "id": "vocab.b2.26.05",
+   "lesson": "b2-26-05",
+-  "title": "Epistemic Conjecture & Probability",
++  "title": "Guessing",
+   "words": [
+     {
+-      "lemma": "deducción",
+-      "translation": "deduction / inference",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "inferencia",
+-      "translation": "inference",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "plausibilidad",
+-      "translation": "plausibility",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "verosimilitud",
+-      "translation": "verisimilitude / credibility",
+-      "pos": "noun"
++      "lemma": "puede que",
++      "translation": "it may be that",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "incertidumbre",
+-      "translation": "uncertainty",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "escepticismo",
+-      "translation": "skepticism",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "sospecha",
+-      "translation": "suspicion / hunch",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "postulado",
+-      "translation": "postulate / premise",
+-      "pos": "noun"
++      "lemma": "pálido",
++      "translation": "pale",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "presunción",
+-      "translation": "presumption",
++      "lemma": "la llave",
++      "translation": "key",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "hipótesis",
+-      "translation": "hypothesis",
++      "lemma": "el paraguas",
++      "translation": "umbrella",
+       "pos": "noun"
+     }
+   ]
