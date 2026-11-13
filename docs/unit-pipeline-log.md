@@ -504,6 +504,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-12 | ES B1 core 53, 55, 57, 59, 61, 63 | paired read, 3 units/reader, sources fetched from Wikisource at setup; both stopped by the 5-hour limit and resumed | | A 394,006, B 429,839 (resumed notices; ~137k a unit) | 576 proposed (93 / 92 / 92 / 94 / 91 / 114), 10 rejected and rewritten | all six frozen in both courses (B1 32/76); reader A left 25 check-content errors while reporting 0; walk 36/36 per course |
 | 11-12 | ES B1 core 65, 67, 69, 71, 73, 74, 75, 76 (last core batch) | paired read, 4 units/reader (73–76 are short units, 63 items, no story); no limit stop | | A 481,357 (28 min), B 459,982 (32 min); ~120k a full unit, ~115k a short one | 687 proposed (86 / 78 / 94 / 79 / 90 / 85 / 85 / 90), 0 rejected | all eight frozen in both courses (core 40/40); reader B left 45 unmet hits across the two courses while reporting 0–3; walk 48/48 per course |
 | 11-12 | ES B1 core close-out (6 skills to core screens, 3 thin skills, 29 Reader stories) | two edit-in-place agents (Sonnet), reviewer applies their diff | A 237,046 (11 min), B 290,975 (14 min) | | all eight touched units rechecked, walked 48/48 per course, refrozen; 2 reviewer edits to A, es-latam labels fixed after B |
+| 11-13 | ES B2 pilot, core Units 1 and 2 (es-latam only) | two edit-in-place agents (Sonnet), one unit each; reviewer applies diffs | A 292,498 (14 min), B 304,407 (14 min); ~300k a unit | | 0 errors after, unmet 140 → 0; screens rewritten in English, two texts replaced | walked 12/12, both frozen; 5 reviewer edits + 4 items for two new skills |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -1985,4 +1986,27 @@ The user took the four recommended options:
   start of a level, not at its end.
 - **Scripted:** `check_fixes.py` prints errors a list leaves; `resolve_generated_conflicts.py`
   for the Auto-sync conflicts (three in one day).
+
+### 2026-11-13: ES B2 pilot (core Units 1 and 2)
+
+- **B2 needs rewriting, not fixing:** every screen explained grammar in academic Spanish,
+  every question stem was Spanish, the unit stories retold in-copyright novels, and
+  the core units drilled 12 skills whose only screen is on the hidden latam track.
+  The user's decisions (`imports/review/es-b2-pilot/decisions.md`) made it new
+  content, so the pilot used edit-in-place agents (ES B1 close-out practice), not fix
+  lists. ~300k a unit at one unit per agent, all checks clean on return; the
+  reviewer's read found 5 things to change (a later periphrasis in the text, Spanish
+  question stems, a recap missed across units, two invented challenge facts).
+- **Found at level start, scripted the same day:** the word index, `unmet-words.js`
+  and the knowledge sheets counted hidden tracks as met (2,196 es-latam lemmas); unit
+  numbers were table positions, not the app's (812 recaps renumbered,
+  `scripts/unit_numbers.py`); `build_cognates.py` for the cognate allowance.
+- **Change for the next batches:** brief = `scripts/templates/edit-spanish-latam-b2.txt`
+  + per-unit notes (text to replace and its author's facts, the unit's skills and their
+  status, any hidden-track skill to move). Two units per agent next (Units 3–6), to
+  see whether the per-unit cost falls as it did in B1; check each agent's challenges
+  against the character facts; tell agents that a lesson with no checklist gets one
+  from `add_missing_checklists.py` before `canDo` is written.
+- **Per-unit notes must name the cross-unit forms:** agent A taught *apenas* "barely"
+  in Unit 1 while agent B taught *apenas* "as soon as" as new in Unit 2.
 

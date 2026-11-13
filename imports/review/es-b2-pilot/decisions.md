@@ -48,3 +48,10 @@ Found at setup and decided by the user:
 6. **Copyright: make the texts safe** (confirms decision 2 for all 27).
 7. **New units may be added** where a skill has no core home (*de tal manera
    que*, absolute participles) and a section in an existing unit doesn't fit.
+
+## Sign-offs after the pilot (user, 2026-11-13)
+
+8. `stance-adverbs`: `taught_in` b2-brasilsudeste-04-a-gr → b2-01-02-a-gr (core Unit 1).
+9. Two new B2 skills for forms Unit 2 teaches and no skill covered:
+   `conectores-temporales-narrativos` (*apenas*, *al cabo de*, *conforme*; b2-02-04) and
+   `imperfecto-de-cortesia` (*quería pedirle*, *venía a preguntar*; b2-02-05).

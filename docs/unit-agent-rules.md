@@ -328,6 +328,18 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
 
 ### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
 
+- **B2 (es-latam only; user, 2026-11-13):** screens, lesson titles, goals and
+  question stems are in English (the generator wrote academic Spanish); unit texts
+  on works still in copyright are original texts *about* the author and the work
+  (no retold scenes, no quotations, every claim checked); public-domain works are
+  retold against their source. From B2 a transparent English cognate counts as met
+  (`imports/dictionary/cognates-es.json`, `scripts/build_cognates.py`); every other
+  unmet word is listed or replaced. A skill whose only screen is on a hidden track
+  is not met: rewrite its use away, or the reviewer moves its `taught_in` with the
+  user's sign-off. A B2 lesson's own skills: `stance-adverbs` b2-01-02,
+  `conectores-temporales-narrativos` b2-02-04 (*apenas* "as soon as"; *apenas*
+  "barely" is b2-01-02), `imperfecto-de-cortesia` b2-02-05.
+
 - **es-latam has no *vosotros*** (AGENTS.md): no *vosotros*/*os* forms in
   readings, screens, examples, exercises or challenges; *ustedes* for
   plural "you" (`check-content` flags it: `latam-vosotros`). Only the verb

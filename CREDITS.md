@@ -118,6 +118,8 @@ The following classic literary works are adapted in the Parlour Library as simpl
 | Aesop | Traditional fables | Simplified Spanish adaptation. Public domain. |
 | Simón Bolívar | *Carta de Jamaica* | Simplified historical text. Public domain. |
 
+Spanish B2 unit texts on works that are still in copyright (from 2026-11-13: Jorge Luis Borges, Juan Rulfo, and further B2 units as they are read) are original Parlour texts **about** the author and the work. They do not reproduce, quote or retell the works.
+
 Stories in the **World** track and **Original** track are fully original texts written for Parlour and do not reproduce any copyrighted work.
 
 ---
