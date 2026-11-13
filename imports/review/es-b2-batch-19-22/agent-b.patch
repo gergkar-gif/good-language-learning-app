@@ -1,0 +1,4167 @@
+diff --git a/content/es-latam/exercises/b2/b2-20-01-ex.json b/content/es-latam/exercises/b2/b2-20-01-ex.json
+index 57ccbdd5..9baed8c4 100644
+--- a/content/es-latam/exercises/b2/b2-20-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-20-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "erigir",
+-          "to build monumental structure"
++          "fundar",
++          "to found"
+         ],
+         [
+-          "redactar",
+-          "to compose formal prose"
++          "inaugurar",
++          "to open officially"
+         ],
+         [
+-          "tratado",
+-          "signed diplomatic pact"
++          "derribar",
++          "to knock down"
+         ],
+         [
+-          "inaugurado",
+-          "officially opened to public"
++          "monumento",
++          "monument"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-20-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Las actas fundacionales de la república fueron __ por los diputados constituyentes.",
+-      "hint": "redactar",
+-      "answer": "redactadas",
+-      "english": "The founding acts of the republic were drafted by the constituent deputies.",
++      "sentence": "Las primeras casas del barrio fueron __ en 1950.",
++      "hint": "construir, passive",
++      "answer": "construidas",
++      "english": "The first houses in the neighbourhood were built in 1950.",
+       "teaches": [
+         "ser-passive"
+       ]
+@@ -43,12 +43,12 @@
+       "id": "b2-20-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué el participio en la pasiva analítica 'Las leyes fueron promulgadas' lleva desinencia femenina plural?",
++      "question": "Which sentence says \"The new laws have been approved\"?",
+       "options": [
+-        "Porque en la pasiva con ser el participio concuerda estrictamente en género y número con el sujeto paciente.",
+-        "Porque el verbo ser siempre impone terminación femenina a los participios.",
+-        "Porque las leyes son objetos que carecen de género gramatical.",
+-        "Porque la concordancia en género solo es obligatoria en tiempo presente."
++        "Las nuevas leyes han sido aprobadas.",
++        "Las nuevas leyes han sido aprobados.",
++        "Las nuevas leyes han sido aprobada.",
++        "Las nuevas leyes ha sido aprobadas."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -60,26 +60,22 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "El",
+-        "templo",
+-        "colonial",
++        "La",
++        "novela",
+         "fue",
+-        "erigido",
+-        "sobre",
+-        "cimientos",
+-        "incaicos."
++        "publicada",
++        "en",
++        "1919."
+       ],
+       "solution": [
+-        "El",
+-        "templo",
+-        "colonial",
++        "La",
++        "novela",
+         "fue",
+-        "erigido",
+-        "sobre",
+-        "cimientos",
+-        "incaicos."
++        "publicada",
++        "en",
++        "1919."
+       ],
+-      "english": "The colonial temple was erected over Inca foundations.",
++      "english": "The novel was published in 1919.",
+       "teaches": [
+         "ser-passive"
+       ]
+@@ -90,19 +86,19 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Historiador",
+-          "text": "¿Cuándo se inauguraron las obras del ferrocarril andino?"
++          "speaker": "Carlos",
++          "text": "¿Cuándo van a abrir el museo nuevo?"
+         },
+         {
+-          "speaker": "Archivera",
+-          "text": "Los primeros tramos _____ en agosto de mil novecientos trece."
++          "speaker": "Meg",
++          "text": "El museo _____ la semana próxima."
+         }
+       ],
+       "options": [
+-        "fueron inaugurados",
++        "será inaugurado",
+         "fue inaugurado",
+-        "fueron inauguradas",
+-        "se inauguró a"
++        "serán inaugurados",
++        "será inaugurada"
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -113,8 +109,8 @@
+       "id": "b2-20-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Todas las cláusulas del tratado fueron ratificadas por el congreso.",
+-      "english": "All clauses of the treaty were ratified by congress.",
++      "sentence": "El monumento fue inaugurado por el alcalde en 1950.",
++      "english": "The monument was opened by the mayor in 1950.",
+       "teaches": [
+         "ser-passive"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-20-02-ex.json b/content/es-latam/exercises/b2/b2-20-02-ex.json
+index 79a52dfb..45b14a71 100644
+--- a/content/es-latam/exercises/b2/b2-20-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-20-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "artífice",
+-          "primary author of outcome"
++          "alcalde",
++          "mayor"
+         ],
+         [
+-          "auspiciar",
+-          "to sponsor formally"
++          "congreso",
++          "congress, parliament"
+         ],
+         [
+-          "unánime",
+-          "in full total agreement"
++          "terrateniente",
++          "landowner"
+         ],
+         [
+-          "deliberado",
+-          "done with clear intent"
++          "indígena",
++          "indigenous person"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,9 @@
+       "id": "b2-20-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La reforma constitucional fue aprobada __ una abrumadora mayoría de los congresistas.",
+-      "hint": "by",
++      "sentence": "La nueva ley fue aprobada __ el congreso la semana pasada.",
+       "answer": "por",
+-      "english": "The constitutional reform was approved by an overwhelming majority of congress members.",
++      "english": "The new law was approved by congress last week.",
+       "teaches": [
+         "ser-passive"
+       ]
+@@ -43,14 +42,14 @@
+       "id": "b2-20-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿En qué circunstancias es indispensable incluir el complemento agente con 'por' en una oración pasiva analítica?",
++      "question": "Which sentence says \"The door was opened with a key\"?",
+       "options": [
+-        "Cuando la identidad específica del causante o ejecutor aporta información jurídica, histórica o narrativa fundamental.",
+-        "Siempre, ya que ninguna oración pasiva puede existir sin complemento agente explícito.",
+-        "Únicamente cuando el sujeto paciente sea una persona viva.",
+-        "Solo cuando el verbo esté conjugado en modo subjuntivo."
++        "La puerta fue abierta por una llave.",
++        "La puerta fue abierta de una llave.",
++        "La puerta fue abierta con una llave.",
++        "La puerta fue abierta para una llave."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "ser-passive"
+       ]
+@@ -60,28 +59,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "La",
+-        "resolución",
+-        "fue",
+-        "rubricada",
++        "Los",
++        "indígenas",
++        "fueron",
++        "oprimidos",
+         "por",
+-        "el",
+-        "ministro",
+-        "de",
+-        "justicia."
++        "los",
++        "terratenientes."
+       ],
+       "solution": [
+-        "La",
+-        "resolución",
+-        "fue",
+-        "rubricada",
++        "Los",
++        "indígenas",
++        "fueron",
++        "oprimidos",
+         "por",
+-        "el",
+-        "ministro",
+-        "de",
+-        "justicia."
++        "los",
++        "terratenientes."
+       ],
+-      "english": "The resolution was signed by the minister of justice.",
++      "english": "The indigenous people were oppressed by the landowners.",
+       "teaches": [
+         "ser-passive"
+       ]
+@@ -92,21 +87,21 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Diputado",
+-          "text": "¿Quién redactó la ponencia final del proyecto minero?"
++          "speaker": "Carlos",
++          "text": "¿Quién construyó el puente nuevo?"
+         },
+         {
+-          "speaker": "Relator",
+-          "text": "El documento _____ los miembros de la comisión técnica independiente."
++          "speaker": "Meg",
++          "text": "El puente _____ una empresa local."
+         }
+       ],
+       "options": [
+-        "fue elaborado por",
+-        "estuvo elaborado de",
+-        "se elaboró para",
+-        "fueron elaborados con"
++        "fue construido con",
++        "fue construido de",
++        "fue construido por",
++        "fue construido en"
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "ser-passive"
+       ]
+@@ -115,8 +110,8 @@
+       "id": "b2-20-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Los derechos comunitarios fueron respaldados por la corte suprema de justicia.",
+-      "english": "Community rights were backed by the supreme court of justice.",
++      "sentence": "El premio fue ganado por una estudiante de la ciudad.",
++      "english": "The prize was won by a student from the city.",
+       "teaches": [
+         "ser-passive"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-20-03-ex.json b/content/es-latam/exercises/b2/b2-20-03-ex.json
+index f8904ced..47b90fcd 100644
+--- a/content/es-latam/exercises/b2/b2-20-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-20-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "desenlace",
+-          "final outcome of plot"
++          "inundar",
++          "to flood"
+         ],
+         [
+-          "clausurar",
+-          "to seal or close down"
++          "dañar",
++          "to damage"
+         ],
+         [
+-          "devastar",
+-          "to lay waste to area"
++          "clausurar",
++          "to close down officially"
+         ],
+         [
+-          "consumado",
+-          "fully carried out"
++          "agotado",
++          "sold out"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,9 @@
+       "id": "b2-20-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Cuando los peritos llegaron al yacimiento, los accesos principales ya __ clausurados con bloques de hormigón.",
+-      "hint": "estar",
+-      "answer": "estaban",
+-      "english": "When the inspectors arrived at the site, the main accesses were already sealed with concrete blocks.",
++      "sentence": "La tienda fue cerrada a las ocho y ahora __ cerrada.",
++      "answer": "está",
++      "english": "The shop was closed at eight and now it is closed.",
+       "teaches": [
+         "pasiva-estado-estar-participio"
+       ]
+@@ -43,45 +42,45 @@
+       "id": "b2-20-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la diferencia semántica fundamental entre 'El puente fue destruido' y 'El puente está destruido'?",
++      "question": "Which sentence tells you the road is closed right now?",
+       "options": [
+-        "La primera describe la acción o acontecimiento violento; la segunda describe el estado resultante presente.",
+-        "La primera es incorrecta en español y la segunda es la única aceptada por la academia.",
+-        "La primera indica que el puente aún funciona y la segunda que está en obras.",
+-        "Ambas expresan exactamente lo mismo sin ningún matiz temporal o aspectual."
++        "El camino fue cerrado.",
++        "El camino estaba cerrado.",
++        "El camino está cerrado.",
++        "El camino será cerrado."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "pasiva-estado-estar-participio"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "ser-passive",
++        "3": "ser-passive"
++      }
+     },
+     {
+       "id": "b2-20-03.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Los",
+-        "socavones",
+-        "antiguos",
+-        "están",
+-        "inundados",
+-        "por",
+-        "las",
+-        "aguas",
+-        "subterráneas."
++        "La",
++        "novela",
++        "está",
++        "ambientada",
++        "en",
++        "el",
++        "altiplano."
+       ],
+       "solution": [
+-        "Los",
+-        "socavones",
+-        "antiguos",
+-        "están",
+-        "inundados",
+-        "por",
+-        "las",
+-        "aguas",
+-        "subterráneas."
++        "La",
++        "novela",
++        "está",
++        "ambientada",
++        "en",
++        "el",
++        "altiplano."
+       ],
+-      "english": "The old mine shafts are flooded by subterranean waters.",
++      "english": "The novel is set on the high plateau.",
+       "teaches": [
+         "pasiva-estado-estar-participio"
+       ]
+@@ -92,31 +91,35 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Auditor",
+-          "text": "¿En qué condición encontramos el archivo histórico de la gobernación?"
++          "speaker": "Carlos",
++          "text": "¿Vamos al museo ahora?"
+         },
+         {
+-          "speaker": "Archivero",
+-          "text": "Los expedientes más valiosos _____ en cajas ignífugas bajo llave."
++          "speaker": "Meg",
++          "text": "No, el museo _____ desde las seis."
+         }
+       ],
+       "options": [
+-        "están preservados",
+-        "fueron preservando",
+-        "están preservando a",
+-        "habían sido de"
++        "fue cerrado",
++        "está cerrando",
++        "está cerrado",
++        "está cerrada"
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "pasiva-estado-estar-participio"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "ser-passive",
++        "1": "progressive"
++      }
+     },
+     {
+       "id": "b2-20-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Las fronteras interprovinciales permanecen cerradas por orden sanitaria.",
+-      "english": "Interprovincial borders remain closed by sanitary order.",
++      "sentence": "Los cuadros del museo están dañados por el agua.",
++      "english": "The paintings in the museum are damaged by the water.",
+       "teaches": [
+         "pasiva-estado-estar-participio"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-20-04-ex.json b/content/es-latam/exercises/b2/b2-20-04-ex.json
+index 1c2e0886..d3bc0cd6 100644
+--- a/content/es-latam/exercises/b2/b2-20-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-20-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "electo",
+-          "elected official awaiting office"
++          "imprimir",
++          "to print"
+         ],
+         [
+-          "impreso",
+-          "published hard copy text"
++          "freír",
++          "to fry"
+         ],
+         [
+           "proveer",
+-          "to supply essentials"
++          "to supply"
+         ],
+         [
+-          "confeso",
+-          "admitted guilty culprit"
++          "electo",
++          "elected (not yet in office)"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-20-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El presidente __ asumirá el mando supremo ante la asamblea legislativa en agosto.",
+-      "hint": "elect",
+-      "answer": "electo",
+-      "english": "The president-elect will assume supreme command before the legislative assembly in August.",
++      "sentence": "Para la cena hay papas __ y ensalada.",
++      "hint": "freír, as an adjective",
++      "answer": "fritas",
++      "english": "For dinner there are fried potatoes and salad.",
+       "teaches": [
+         "participios-irregulares-dobles"
+       ]
+@@ -43,14 +43,14 @@
+       "id": "b2-20-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuáles son las dos formas de participio válidas para el verbo 'imprimir' en la pasiva con ser?",
++      "question": "Which sentence says \"The book is printed in Chile\"?",
+       "options": [
+-        "Tanto 'imprimido' como 'impreso' son formas plenamente válidas como participio verbal.",
+-        "Únicamente 'imprimido', ya que 'impreso' es un error vulgar.",
+-        "Únicamente 'impreso', porque la forma regular desapareció en el siglo dieciocho.",
+-        "Ninguna, el verbo imprimir carece de voz pasiva en español."
++        "El libro está imprimido en Chile.",
++        "El libro está impresa en Chile.",
++        "El libro están impreso en Chile.",
++        "El libro está impreso en Chile."
+       ],
+-      "correct": 0,
++      "correct": 3,
+       "teaches": [
+         "participios-irregulares-dobles"
+       ]
+@@ -60,24 +60,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Los",
+-        "manifiestos",
+-        "fueron",
+-        "impresos",
+-        "en",
+-        "imprentas",
+-        "clandestinas."
++        "La",
++        "biblioteca",
++        "está",
++        "provista",
++        "de",
++        "libros",
++        "nuevos."
+       ],
+       "solution": [
+-        "Los",
+-        "manifiestos",
+-        "fueron",
+-        "impresos",
+-        "en",
+-        "imprentas",
+-        "clandestinas."
++        "La",
++        "biblioteca",
++        "está",
++        "provista",
++        "de",
++        "libros",
++        "nuevos."
+       ],
+-      "english": "The manifestos were printed in clandestine printing presses.",
++      "english": "The library is supplied with new books.",
+       "teaches": [
+         "participios-irregulares-dobles"
+       ]
+@@ -88,21 +88,21 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Ministra",
+-          "text": "¿Se distribuyó el material de auxilio a las comunidades damnificadas?"
++          "speaker": "Meg",
++          "text": "¿Qué hay para comer?"
+         },
+         {
+-          "speaker": "Director",
+-          "text": "Sí, todos los albergues _____ de agua potable y mantas de lana."
++          "speaker": "Carlos",
++          "text": "Pescado _____ con arroz."
+         }
+       ],
+       "options": [
+-        "han sido provistos",
+-        "han sido electos",
+-        "están imprimiendo",
+-        "fueron confesos"
++        "frita",
++        "frito",
++        "fritos",
++        "freír"
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "participios-irregulares-dobles"
+       ]
+@@ -111,8 +111,8 @@
+       "id": "b2-20-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Las autoridades electas juraron defender la constitución del estado plurinacional.",
+-      "english": "The elected authorities swore to defend the constitution of the plurinational state.",
++      "sentence": "Ya he imprimido los boletos para el viaje.",
++      "english": "I have already printed the tickets for the trip.",
+       "teaches": [
+         "participios-irregulares-dobles"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-20-05-ex.json b/content/es-latam/exercises/b2/b2-20-05-ex.json
+index e6677d0a..95a3621e 100644
+--- a/content/es-latam/exercises/b2/b2-20-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-20-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "ponderación",
+-          "careful evaluation of terms"
++          "redactar",
++          "to draft"
+         ],
+         [
+-          "alternar",
+-          "to switch between structures"
++          "comunicado",
++          "official statement"
+         ],
+         [
+-          "despersonalizar",
+-          "to make objective in tone"
++          "acuerdo",
++          "agreement"
+         ],
+         [
+-          "sucinto",
+-          "brief and tightly phrased"
++          "anunciar",
++          "to announce"
+         ]
+       ],
+       "teaches": [
+@@ -31,57 +31,65 @@
+       "id": "b2-20-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En la crónica histórica se prefiere la pasiva __ cuando el agente humano debe explicitarse con rigor.",
+-      "hint": "analytical",
+-      "answer": "analítica",
+-      "english": "In historical chronicles the analytical passive is preferred when the human agent must be explicitly stated.",
++      "sentence": "Durante la reunión se __ dos acuerdos nuevos.",
++      "hint": "firmar",
++      "answer": "firmaron",
++      "english": "During the meeting two new agreements were signed.",
+       "teaches": [
+-        "choosing-passive-type"
++        "pasiva-refleja"
+       ]
+     },
+     {
+       "id": "b2-20-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué un exceso reiterado de pasivas analíticas con 'ser' empobrece la prosa en español?",
++      "question": "Which sentence keeps the plan as the subject and says who approved it?",
+       "options": [
+-        "Porque calca la sintaxis germánica o anglosajona, restando agilidad natural al ritmo del español culto.",
+-        "Porque las pasivas con ser están prohibidas en todos los tratados académicos.",
+-        "Porque el verbo ser solo puede utilizarse dos veces por página en español.",
+-        "Porque los participios pierden su significado cuando se repiten en plural."
++        "Se aprobó el plan en la reunión.",
++        "El alcalde aprobó el plan en la reunión.",
++        "El plan fue aprobado por el alcalde en la reunión.",
++        "El plan fue aprobado en la reunión."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "choosing-passive-type"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "pasiva-refleja",
++        "3": "ser-passive"
++      }
+     },
+     {
+       "id": "b2-20-05.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "El",
+-        "documento",
+-        "histórico",
+-        "fue",
+-        "custodiado",
+-        "por",
+-        "los",
+-        "ancianos."
++        "La",
++        "novela",
++        "es",
++        "considerada",
++        "el",
++        "primer",
++        "texto",
++        "del",
++        "indigenismo",
++        "boliviano."
+       ],
+       "solution": [
+-        "El",
+-        "documento",
+-        "histórico",
+-        "fue",
+-        "custodiado",
+-        "por",
+-        "los",
+-        "ancianos."
++        "La",
++        "novela",
++        "es",
++        "considerada",
++        "el",
++        "primer",
++        "texto",
++        "del",
++        "indigenismo",
++        "boliviano."
+       ],
+-      "english": "The historical document was guarded by the elders.",
++      "english": "The novel is considered the first text of Bolivian indigenismo.",
+       "teaches": [
+-        "choosing-passive-type"
++        "ser-passive"
+       ]
+     },
+     {
+@@ -90,21 +98,21 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Editor",
+-          "text": "¿Cómo redactamos la nota sobre los nuevos acuerdos agrícolas?"
++          "speaker": "Carlos",
++          "text": "¿Quién redactó el comunicado?"
+         },
+         {
+-          "speaker": "Redactora",
+-          "text": "Podemos escribir: '_____ tras intensas deliberaciones comunitarias'."
++          "speaker": "Meg",
++          "text": "El comunicado _____ el alcalde."
+         }
+       ],
+       "options": [
+-        "Se suscribieron los acuerdos",
+-        "Fue suscrito a los acuerdos",
+-        "Estuvieron suscribiendo de",
+-        "Se suscribió por los acuerdos"
++        "se redactó por",
++        "fue redactado por",
++        "fue redactada por",
++        "fueron redactados por"
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "choosing-passive-type"
+       ]
+@@ -113,8 +121,8 @@
+       "id": "b2-20-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La alternancia entre pasiva refleja y analítica dota de elegancia a la prosa.",
+-      "english": "Alternating between reflexive and analytical passives endows prose with elegance.",
++      "sentence": "La ley fue aprobada por el congreso y ya está publicada.",
++      "english": "The law was approved by congress and is already published.",
+       "teaches": [
+         "choosing-passive-type"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-20-consolidation-ex.json b/content/es-latam/exercises/b2/b2-20-consolidation-ex.json
+index e69c464f..00ec5be3 100644
+--- a/content/es-latam/exercises/b2/b2-20-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-20-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "erigir",
+-          "to erect monument"
++          "fundar",
++          "to found"
+         ],
+         [
+-          "artífice",
+-          "principal author of act"
++          "alcalde",
++          "mayor"
+         ],
+         [
+-          "electo",
+-          "chosen official awaiting office"
++          "clausurar",
++          "to close down officially"
+         ],
+         [
+-          "devastar",
+-          "to lay waste utterly"
++          "redactar",
++          "to draft"
+         ]
+       ],
+       "teaches": [
+@@ -31,26 +31,26 @@
+       "id": "b2-20-consolidation.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En la novela Raza de bronce, las tierras de los comuneros aymaras fueron __ por el codicioso hacendado Pantoja.",
+-      "hint": "usurpar",
+-      "answer": "usurpadas",
+-      "english": "In the novel Raza de bronce, the lands of the Aymara villagers were usurped by the greedy landowner Pantoja.",
++      "sentence": "La novela fue __ por Alcides Arguedas.",
++      "hint": "escribir, passive",
++      "answer": "escrita",
++      "english": "The novel was written by Alcides Arguedas.",
+       "teaches": [
+-        "choosing-passive-type"
++        "ser-passive"
+       ]
+     },
+     {
+       "id": "b2-20-consolidation.ex03",
+       "type": "multiple-choice",
+-      "category": "grammar",
+-      "question": "En la obra de Alcides Arguedas, ¿cómo se describe el desenlace trágico de la comunidad de Kohahuyo?",
++      "category": "reading",
++      "question": "According to the text, what is the theme of Raza de bronce?",
+       "options": [
+-        "Tras el asesinato de la joven Wata Wara por los patrones, los comuneros se sublevan y la hacienda es consumida por el fuego vengador.",
+-        "Los campesinos deciden vender voluntariamente sus bofedales para trasladarse a vivir a París.",
+-        "El terrateniente divide pacíficamente sus tierras entre los ancianos en un banquete festivo.",
+-        "Llega una expedición arqueológica que desentierra tesoros de oro salvando a todos."
++        "La historia de una familia de escritores.",
++        "La opresión de los indígenas por los terratenientes.",
++        "La vida del autor en una ciudad grande.",
++        "Un viaje por el Altiplano."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "choosing-passive-type"
+       ]
+@@ -59,10 +59,9 @@
+       "id": "b2-20-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Al final del relato, las casas patronales ya __ completamente consumidas por las llamas.",
+-      "hint": "estar",
+-      "answer": "estaban",
+-      "english": "At the end of the story, the manor houses were already completely consumed by the flames.",
++      "sentence": "La novela __ ambientada en una comunidad indígena del Altiplano.",
++      "answer": "está",
++      "english": "The novel is set in an indigenous community of the Altiplano.",
+       "teaches": [
+         "pasiva-estado-estar-participio"
+       ]
+@@ -72,32 +71,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Los",
+-        "comuneros",
+-        "fueron",
+-        "empujados",
+-        "a",
+-        "la",
+-        "rebelión",
+-        "por",
+-        "la",
+-        "injusticia."
++        "Esta",
++        "novela",
++        "fue",
++        "publicada",
++        "en",
++        "1919."
+       ],
+       "solution": [
+-        "Los",
+-        "comuneros",
+-        "fueron",
+-        "empujados",
+-        "a",
+-        "la",
+-        "rebelión",
+-        "por",
+-        "la",
+-        "injusticia."
++        "Esta",
++        "novela",
++        "fue",
++        "publicada",
++        "en",
++        "1919."
+       ],
+-      "english": "The communal villagers were pushed into rebellion by injustice.",
++      "english": "This novel was published in 1919.",
+       "teaches": [
+-        "choosing-passive-type"
++        "ser-passive"
+       ]
+     },
+     {
+@@ -106,31 +97,31 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Agapito Choque",
+-          "text": "¿Qué suerte corrió la caravana que descendió a los yungas cálidos?"
++          "speaker": "Meg",
++          "text": "¿Qué dice el texto sobre el indigenismo?"
+         },
+         {
+-          "speaker": "Cachapa",
+-          "text": "Muchos compañeros _____ por las fiebres tropicales y el agotamiento del viaje."
++          "speaker": "Carlos",
++          "text": "La novela _____ el primer texto del indigenismo boliviano."
+         }
+       ],
+       "options": [
+-        "fueron diezmados",
+-        "fueron diezmadas",
+-        "estuvieron diezmando a",
+-        "se diezmó con"
++        "es considerado",
++        "son consideradas",
++        "ser considerada",
++        "es considerada"
+       ],
+-      "correct": 0,
++      "correct": 3,
+       "teaches": [
+-        "choosing-passive-type"
++        "ser-passive"
+       ]
+     },
+     {
+       "id": "b2-20-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La dignidad de la raza indígena fue defendida con heroísmo frente al despojo feudal.",
+-      "english": "The dignity of the indigenous race was defended with heroism against feudal dispossession.",
++      "sentence": "La novela es considerada el primer texto del indigenismo boliviano.",
++      "english": "The novel is considered the first text of Bolivian indigenismo.",
+       "teaches": [
+         "choosing-passive-type"
+       ]
+@@ -139,17 +130,21 @@
+       "id": "b2-20-consolidation.ex08",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la regla fundamental para concordar el participio en la pasiva con 'ser' frente a los tiempos compuestos con 'haber'?",
++      "question": "Which sentence describes a result, not an action?",
+       "options": [
+-        "Con 'ser' el participio concuerda en género y número con el sujeto paciente; con 'haber' el participio es invariable terminado en -o.",
+-        "Con 'ser' el participio termina siempre en -o; con 'haber' concuerda con el objeto directo.",
+-        "Ambos auxiliares exigen concordancia obligatoria en género y número.",
+-        "Ninguno de los dos auxiliares permite variación en género y número."
++        "La novela fue publicada en 1919.",
++        "La novela se publicó en 1919.",
++        "La novela está ambientada en el Altiplano.",
++        "Arguedas publicó la novela en 1919."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+-        "choosing-passive-type"
+-      ]
++        "pasiva-estado-estar-participio"
++      ],
++      "distractor_skills": {
++        "0": "ser-passive",
++        "1": "pasiva-refleja"
++      }
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-22-01-ex.json b/content/es-latam/exercises/b2/b2-22-01-ex.json
+index 6c836854..14b58f42 100644
+--- a/content/es-latam/exercises/b2/b2-22-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-22-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "ponerse",
+-          "to become emotionally or temporarily"
++          "avergonzado",
++          "embarrassed"
+         ],
+         [
+-          "quedarse",
+-          "to end up in a lasting resulting state"
++          "callado",
++          "quiet, silent"
+         ],
+         [
+-          "mutabilidad",
+-          "quality of being subject to change"
++          "enojado",
++          "angry"
+         ],
+         [
+-          "desconcierto",
+-          "state of perplexity or confusion"
++          "decepcionado",
++          "disappointed"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-22-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Al enterarse de la dimisión del ministro, el vocero se __ pálido de desconcierto.",
+-      "hint": "turned",
++      "sentence": "La mala noticia nos __ muy tristes a todos.",
++      "hint": "ponerse, preterite",
+       "answer": "puso",
+-      "english": "Upon learning of the minister's resignation, the spokesperson turned pale with bewilderment.",
++      "english": "The bad news made us all very sad.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -43,14 +43,14 @@
+       "id": "b2-22-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué se utiliza 'quedarse' en 'Tras la inundación, cientos de familias se quedaron sin hogar'?",
++      "question": "Which sentence means \"The company closed and the workers were left without jobs\"?",
+       "options": [
+-        "Porque expresa un estado resultante involuntario de privación o secuela duradera.",
+-        "Porque describe una decisión voluntaria tomada de común acuerdo entre vecinos.",
+-        "Porque el verbo quedarse solo se conjuga en pretérito perfecto compuesto.",
+-        "Porque se trata de una acción temporal que desaparece en cuestión de minutos."
++        "La empresa cerró y los trabajadores se pusieron sin empleo.",
++        "La empresa cerró y los trabajadores se hicieron sin empleo.",
++        "La empresa cerró y los trabajadores se quedaron sin empleo.",
++        "La empresa cerró y los trabajadores se volvieron sin empleo."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -60,26 +60,34 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "La",
+-        "actriz",
++        "Al",
++        "ver",
++        "el",
++        "precio,",
++        "Luis",
+         "se",
+         "puso",
+-        "nerviosa",
+-        "ante",
+-        "las",
+-        "cámaras."
++        "pálido",
++        "y",
++        "se",
++        "quedó",
++        "callado."
+       ],
+       "solution": [
+-        "La",
+-        "actriz",
++        "Al",
++        "ver",
++        "el",
++        "precio,",
++        "Luis",
+         "se",
+         "puso",
+-        "nerviosa",
+-        "ante",
+-        "las",
+-        "cámaras."
++        "pálido",
++        "y",
++        "se",
++        "quedó",
++        "callado."
+       ],
+-      "english": "The actress became nervous in front of the cameras.",
++      "english": "On seeing the price, Luis turned pale and fell silent.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -90,21 +98,21 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Diputado",
+-          "text": "¿Cómo reaccionó la audiencia ante las cifras del déficit?"
++          "speaker": "Carlos",
++          "text": "¿Qué pasó cuando entró la directora?"
+         },
+         {
+-          "speaker": "Asesora",
+-          "text": "Todos los presentes _____ atónitos al comprobar la magnitud del desfalco."
++          "speaker": "Meg",
++          "text": "Todos _____ callados."
+         }
+       ],
+       "options": [
++        "se hicieron",
+         "se quedaron",
+-        "se pusieron a",
+-        "quedándose",
+-        "fueron puestos"
++        "se volvieron",
++        "se convirtieron"
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -113,8 +121,8 @@
+       "id": "b2-22-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El testigo se quedó perplejo al reconocer el arma en el tribunal.",
+-      "english": "The witness was left perplexed upon recognizing the weapon in court.",
++      "sentence": "Al oír la noticia, mi vecina se puso pálida y se quedó sin palabras.",
++      "english": "On hearing the news, my neighbour turned pale and was left speechless.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-22-02-ex.json b/content/es-latam/exercises/b2/b2-22-02-ex.json
+index e515e1a3..d5c96c12 100644
+--- a/content/es-latam/exercises/b2/b2-22-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-22-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "volverse",
+-          "to undergo involuntary character change"
++          "desconfiado",
++          "distrustful"
+         ],
+         [
+-          "hacerse",
+-          "to adopt identity or profession intentionally"
++          "insoportable",
++          "unbearable"
+         ],
+         [
+-          "paulatino",
+-          "occurring step by step or gradually"
++          "egoísta",
++          "selfish"
+         ],
+         [
+-          "escéptico",
+-          "inclined to doubt or question assertions"
++          "serio",
++          "serious"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,9 @@
+       "id": "b2-22-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Con el paso de los años, el fiscal se __ sumamente desconfiado de las presiones políticas.",
+-      "hint": "became",
+-      "answer": "volvió",
+-      "english": "With the passing of the years, the prosecutor became extremely distrustful of political pressures.",
++      "sentence": "Mi hermana estudió mucho y se __ abogada.",
++      "answer": "hizo",
++      "english": "My sister studied a lot and became a lawyer.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -43,14 +42,14 @@
+       "id": "b2-22-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿En cuál de las siguientes oraciones es normativamente obligatorio emplear 'hacerse' en vez de 'volverse'?",
++      "question": "Which sentence says \"It is getting late\"?",
+       "options": [
+-        "Tras culminar sus estudios universitarios, ella se hizo abogada laboralista.",
+-        "Después del accidente ferroviario, el maquinista se hizo sumamente miedoso.",
+-        "El tiempo atmosférico se hizo nublado en apenas cinco minutos.",
+-        "Al escuchar la noticia falsa, el público se hizo furioso de inmediato."
++        "Se vuelve tarde.",
++        "Se pone tarde.",
++        "Se convierte tarde.",
++        "Se hace tarde."
+       ],
+-      "correct": 0,
++      "correct": 3,
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -60,26 +59,28 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "El",
+-        "dirigente",
++        "Con",
++        "los",
++        "años,",
++        "mi",
++        "tío",
+         "se",
+-        "hizo",
+-        "militante",
+-        "por",
+-        "firme",
+-        "convicción."
++        "volvió",
++        "muy",
++        "desconfiado."
+       ],
+       "solution": [
+-        "El",
+-        "dirigente",
++        "Con",
++        "los",
++        "años,",
++        "mi",
++        "tío",
+         "se",
+-        "hizo",
+-        "militante",
+-        "por",
+-        "firme",
+-        "convicción."
++        "volvió",
++        "muy",
++        "desconfiado."
+       ],
+-      "english": "The leader became a party member out of firm conviction.",
++      "english": "With the years, my uncle became very distrustful.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -90,21 +91,21 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Periodista",
+-          "text": "¿Por qué cambió tanto la actitud del novelista hacia la crítica?"
++          "speaker": "Carlos",
++          "text": "¿Cómo está la situación en el barrio?"
+         },
+         {
+-          "speaker": "Editor",
+-          "text": "A raíz de las polémicas injustas, _____ muy escéptico y solitario."
++          "speaker": "Meg",
++          "text": "Con tanto ruido, _____ insoportable."
+         }
+       ],
+       "options": [
+-        "se volvió",
+-        "se hizo",
+         "se convirtió",
+-        "quedose"
++        "se hizo en",
++        "se volvió",
++        "se quedó en"
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -113,8 +114,8 @@
+       "id": "b2-22-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El antiguo militar se hizo pacifista tras presenciar los horrores del combate.",
+-      "english": "The former military officer became a pacifist after witnessing the horrors of combat.",
++      "sentence": "Mi vecina estudió música y se hizo profesora.",
++      "english": "My neighbour studied music and became a teacher.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-22-03-ex.json b/content/es-latam/exercises/b2/b2-22-03-ex.json
+index efa721dc..4f2d2cce 100644
+--- a/content/es-latam/exercises/b2/b2-22-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-22-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "convertirse",
+-          "to turn into something new categorically"
++          "estación",
++          "station"
+         ],
+         [
+-          "metamorfosis",
+-          "profound structural transformation"
++          "mercado",
++          "market"
+         ],
+         [
+-          "paradigma",
+-          "accepted model or conceptual framework"
++          "tormenta",
++          "storm"
+         ],
+         [
+-          "transmutar",
+-          "to change from one nature into another"
++          "fábrica",
++          "factory"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,9 @@
+       "id": "b2-22-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La humilde caleta de pescadores se convirtió __ un próspero polo turístico internacional.",
+-      "hint": "into",
++      "sentence": "La plaza se convirtió __ un mercado los domingos.",
+       "answer": "en",
+-      "english": "The humble fishing cove turned into a prosperous international tourist hub.",
++      "english": "The square became a market on Sundays.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -43,14 +42,14 @@
+       "id": "b2-22-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué exigencia sintáctica distingue a 'convertirse en' de otros verbos de cambio?",
++      "question": "Which sentence says \"The city turned the factory into a museum\"?",
+       "options": [
+-        "Rige obligatoriamente la preposición 'en' seguida de un sintagma nominal categorial.",
+-        "Solo puede conjugarse en primera persona del plural del presente indicativo.",
+-        "Exige siempre un adjetivo calificativo sin ninguna preposición intermedia.",
+-        "No admite sujetos inanimados ni colectivos bajo ninguna circunstancia."
++        "La ciudad transformó la fábrica un museo.",
++        "La ciudad transformó la fábrica de un museo.",
++        "La ciudad transformó la fábrica con un museo.",
++        "La ciudad transformó la fábrica en un museo."
+       ],
+-      "correct": 0,
++      "correct": 3,
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -61,25 +60,27 @@
+       "category": "grammar",
+       "tiles": [
+         "El",
+-        "puerto",
++        "pequeño",
++        "pueblo",
+         "se",
+         "transformó",
+         "en",
+-        "el",
+-        "epicentro",
+-        "comercial."
++        "una",
++        "ciudad",
++        "grande."
+       ],
+       "solution": [
+         "El",
+-        "puerto",
++        "pequeño",
++        "pueblo",
+         "se",
+         "transformó",
+         "en",
+-        "el",
+-        "epicentro",
+-        "comercial."
++        "una",
++        "ciudad",
++        "grande."
+       ],
+-      "english": "The port transformed into the commercial epicenter.",
++      "english": "The small town turned into a big city.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -90,21 +91,21 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Historiadora",
+-          "text": "¿Cómo influyó el ferrocarril en el desarrollo de la comarca?"
++          "speaker": "Carlos",
++          "text": "¿Qué pasó con la estación vieja?"
+         },
+         {
+-          "speaker": "Geógrafo",
+-          "text": "La llegada del tren hizo que la aldea _____ en una ciudad pujante."
++          "speaker": "Meg",
++          "text": "La ciudad la _____ un hotel."
+         }
+       ],
+       "options": [
+-        "se convirtiera",
+-        "se hiciera a",
+-        "se pusiera en",
+-        "volviérase"
++        "hizo en",
++        "convirtió",
++        "volvió en",
++        "convirtió en"
+       ],
+-      "correct": 0,
++      "correct": 3,
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -113,8 +114,8 @@
+       "id": "b2-22-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El antiguo teatro de madera se transformó en un centro cultural comunitario.",
+-      "english": "The old wooden theater transformed into a community cultural center.",
++      "sentence": "La tormenta convirtió la calle en un río.",
++      "english": "The storm turned the street into a river.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-22-04-ex.json b/content/es-latam/exercises/b2/b2-22-04-ex.json
+index 2fb0cecf..852e4044 100644
+--- a/content/es-latam/exercises/b2/b2-22-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-22-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "llegar a ser",
+-          "to become through effort and progression"
++          "carrera",
++          "career"
+         ],
+         [
+-          "culminación",
+-          "final peak of a historical process"
++          "cantante",
++          "singer"
+         ],
+         [
+-          "consagración",
+-          "definitive official recognition"
++          "estrella",
++          "star"
+         ],
+         [
+-          "trayectoria",
+-          "course of career or human progression"
++          "esfuerzo",
++          "effort"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,9 @@
+       "id": "b2-22-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Tras décadas de magisterio rural, Gabriela Mistral llegó a __ la primera Nobel de América Latina.",
+-      "hint": "to be",
++      "sentence": "Trabajó con mucho esfuerzo y llegó a __ directora del hospital.",
+       "answer": "ser",
+-      "english": "After decades of rural teaching, Gabriela Mistral eventually became Latin America's first Nobel laureate.",
++      "english": "She worked with great effort and ended up as director of the hospital.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -43,14 +42,14 @@
+       "id": "b2-22-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué dimensión pragmática aporta la perífrasis 'llegar a ser' frente a un simple verbo copulativo?",
++      "question": "Which sentence says that she reached a top position after many years of work?",
+       "options": [
+-        "Subraya el largo proceso de esfuerzo, mérito y perseverancia que culmina en un logro trascendente.",
+-        "Indica una casualidad fortuita ocurrida sin intervención de la voluntad personal.",
+-        "Expresa una orden perentoria dictada por una autoridad académica.",
+-        "Señala que el resultado fue decepcionante o de poca duración en el tiempo."
++        "Después de muchos años de trabajo, se quedó directora.",
++        "Después de muchos años de trabajo, llegó a ser directora.",
++        "Después de muchos años de trabajo, se puso directora.",
++        "Después de muchos años de trabajo, se volvió directora."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -60,26 +59,28 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Con",
+-        "tenacidad",
+-        "aquel",
+-        "joven",
++        "Mi",
++        "abuelo",
+         "llegó",
+         "a",
+         "ser",
+-        "rector."
++        "alcalde",
++        "de",
++        "su",
++        "pueblo."
+       ],
+       "solution": [
+-        "Con",
+-        "tenacidad",
+-        "aquel",
+-        "joven",
++        "Mi",
++        "abuelo",
+         "llegó",
+         "a",
+         "ser",
+-        "rector."
++        "alcalde",
++        "de",
++        "su",
++        "pueblo."
+       ],
+-      "english": "With tenacity that young man eventually became university president.",
++      "english": "My grandfather ended up as mayor of his town.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -90,21 +91,21 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Estudiante",
+-          "text": "¿Esperaba el novelista alcanzar tal prestigio internacional?"
++          "speaker": "Carlos",
++          "text": "¿Cómo empezó ese cantante?"
+         },
+         {
+-          "speaker": "Catedrática",
+-          "text": "Jamás lo imaginó en sus inicios, pero con los años _____ una voz universal."
++          "speaker": "Meg",
++          "text": "Cantaba en la calle, pero con los años _____ una estrella."
+         }
+       ],
+       "options": [
++        "se puso",
++        "se volvió",
+         "llegó a ser",
+-        "se puso a ser",
+-        "quedó siendo de",
+-        "hízose por"
++        "se quedó"
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -113,8 +114,8 @@
+       "id": "b2-22-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La obra de Baldomero Lillo llegó a ser la cumbre del realismo minero chileno.",
+-      "english": "Baldomero Lillo's work eventually became the peak of Chilean mining realism.",
++      "sentence": "Con mucho trabajo, la pequeña tienda llegó a ser una gran empresa.",
++      "english": "With a lot of work, the small shop grew into a big company.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-22-05-ex.json b/content/es-latam/exercises/b2/b2-22-05-ex.json
+index d5b57b87..cb1dd9a6 100644
+--- a/content/es-latam/exercises/b2/b2-22-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-22-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "semántica",
+-          "study of linguistic meaning"
++          "palidecer",
++          "to turn pale"
+         ],
+         [
+-          "estilística",
+-          "art of expressive textual choices"
++          "enrojecer",
++          "to go red"
+         ],
+         [
+-          "ponderación",
+-          "balanced evaluation of nuances"
++          "enmudecer",
++          "to fall silent"
+         ],
+         [
+-          "fluidez",
+-          "smooth natural flow of prose"
++          "empobrecerse",
++          "to become poor"
+         ]
+       ],
+       "teaches": [
+@@ -30,27 +30,27 @@
+     {
+       "id": "b2-22-05.ex02",
+       "type": "fill-blank",
+-      "category": "grammar",
+-      "sentence": "El antiguo mineral de carbón pasó a __ un monumento patrimonial protegido por el estado.",
+-      "hint": "to be",
+-      "answer": "ser",
+-      "english": "The former coal mine transitioned into being a heritage monument protected by the state.",
++      "category": "vocabulary",
++      "sentence": "Al oír la pregunta, mi hermana __ y no supo qué decir.",
++      "hint": "enrojecer, preterite",
++      "answer": "enrojeció",
++      "english": "On hearing the question, my sister went red and did not know what to say.",
+       "teaches": [
+-        "verbs-of-change"
++        "b2-verbs-becoming-transformation-vocab"
+       ]
+     },
+     {
+       "id": "b2-22-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la opción estilísticamente más elegante para condensar 'El cielo se puso oscuro súbitamente'?",
++      "question": "Which sentence describes a quick, passing reaction?",
+       "options": [
+-        "El cielo se ensombreció de manera repentina.",
+-        "El cielo se hizo muy oscuro de repente.",
+-        "El cielo se volvió oscurecido sin aviso.",
+-        "El cielo llegó a ser una cosa muy oscura."
++        "Se hizo nervioso al hablar con el jefe.",
++        "Se convirtió nervioso al hablar con el jefe.",
++        "Se puso nervioso al hablar con el jefe.",
++        "Se volvió nervioso al hablar con el jefe."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -58,30 +58,28 @@
+     {
+       "id": "b2-22-05.ex04",
+       "type": "sentence-builder",
+-      "category": "grammar",
++      "category": "vocabulary",
+       "tiles": [
+-        "La",
+-        "propuesta",
+-        "pasó",
+-        "a",
+-        "ser",
+-        "la",
+-        "prioridad",
+-        "legislativa."
++        "Con",
++        "el",
++        "comercio,",
++        "el",
++        "pueblo",
++        "se",
++        "enriqueció."
+       ],
+       "solution": [
+-        "La",
+-        "propuesta",
+-        "pasó",
+-        "a",
+-        "ser",
+-        "la",
+-        "prioridad",
+-        "legislativa."
++        "Con",
++        "el",
++        "comercio,",
++        "el",
++        "pueblo",
++        "se",
++        "enriqueció."
+       ],
+-      "english": "The proposal transitioned into being the legislative priority.",
++      "english": "With trade, the town became rich.",
+       "teaches": [
+-        "verbs-of-change"
++        "b2-verbs-becoming-transformation-vocab"
+       ]
+     },
+     {
+@@ -90,21 +88,21 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Crítico",
+-          "text": "¿Qué verbo de cambio refleja mejor la consagración del pintor?"
++          "speaker": "Carlos",
++          "text": "¿Qué le pasó a esa familia después de la crisis?"
+         },
+         {
+-          "speaker": "Curadora",
+-          "text": "Sin duda 'llegó a ser maestro', porque resalta el mérito acumulado de su vida."
++          "speaker": "Meg",
++          "text": "Perdió la casa y se _____ sin dinero."
+         }
+       ],
+       "options": [
+-        "llegó a ser maestro",
+-        "se puso maestro",
+-        "quedó en maestro",
+-        "volviose maestro"
++        "hizo",
++        "volvió",
++        "quedó",
++        "convirtió"
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -113,10 +111,10 @@
+       "id": "b2-22-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La concertación de fuerzas políticas desembocó en un acuerdo constituyente histórico.",
+-      "english": "The consensus of political forces culminated in a historic constitutional agreement.",
++      "sentence": "El público enmudeció cuando apareció el cantante.",
++      "english": "The audience fell silent when the singer appeared.",
+       "teaches": [
+-        "verbs-of-change"
++        "b2-verbs-becoming-transformation-vocab"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-22-consolidation-ex.json b/content/es-latam/exercises/b2/b2-22-consolidation-ex.json
+index 63eb4a76..bfb4e3b6 100644
+--- a/content/es-latam/exercises/b2/b2-22-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-22-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "enmudecer",
+-          "to become speechless or silent"
++          "palidecer",
++          "to turn pale"
+         ],
+         [
+-          "enriquecerse",
+-          "to acquire wealth or intellectual depth"
++          "enmudecer",
++          "to fall silent"
+         ],
+         [
+-          "reconfigurar",
+-          "to alter structural arrangement"
++          "esfuerzo",
++          "effort"
+         ],
+         [
+-          "consagración",
+-          "definitive triumph and public acclaim"
++          "tormenta",
++          "storm"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,9 @@
+       "id": "b2-22-con.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Al contemplar el derrumbe en la galería, la madre del minero se __ sin aliento.",
+-      "hint": "was left",
+-      "answer": "quedó",
+-      "english": "Upon beholding the cave-in in the shaft, the miner's mother was left breathless.",
++      "sentence": "Cuando el jefe habló, los dos hombres se __ sin trabajo.",
++      "answer": "quedaron",
++      "english": "When the boss spoke, the two men were left without work.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -42,15 +41,14 @@
+     {
+       "id": "b2-22-con.ex03",
+       "type": "multiple-choice",
+-      "category": "grammar",
+-      "question": "¿Qué verbo de cambio expresa una transformación radical de categoría con régimen preposicional obligatorio?",
++      "category": "reading",
++      "question": "What did the two men do when the foreman offered them work in the dangerous gallery?",
+       "options": [
+-        "Convertirse en, porque rige siempre la preposición 'en' seguida de un sustantivo.",
+-        "Ponerse, porque solo admite participios verbales terminados en -ado e -ido.",
+-        "Hacerse, porque no tolera sustantivos ideológicos ni religiosos.",
+-        "Llegar a ser, porque exige un complemento circunstancial de tiempo pretérito."
++        "Dijeron que no, porque tenían miedo y buscaron trabajo en otra parte.",
++        "Aceptaron el trabajo, porque para ellos morir de hambre era peor que el peligro.",
++        "Pidieron al jefe más dinero antes de aceptar el trabajo nuevo allí."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -60,26 +58,30 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Con",
+-        "esfuerzo",
+-        "constante",
+-        "llegó",
+-        "a",
+-        "ser",
+-        "un",
+-        "referente."
++        "El",
++        "jefe",
++        "protestó,",
++        "pero",
++        "su",
++        "voz",
++        "se",
++        "volvió",
++        "más",
++        "amable."
+       ],
+       "solution": [
+-        "Con",
+-        "esfuerzo",
+-        "constante",
+-        "llegó",
+-        "a",
+-        "ser",
+-        "un",
+-        "referente."
++        "El",
++        "jefe",
++        "protestó,",
++        "pero",
++        "su",
++        "voz",
++        "se",
++        "volvió",
++        "más",
++        "amable."
+       ],
+-      "english": "With constant effort he eventually became an authority.",
++      "english": "The boss protested, but his voice became kinder.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -90,21 +92,21 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Profesor",
+-          "text": "¿Por qué el joven obrero decidió estudiar derecho?"
++          "speaker": "Carlos",
++          "text": "¿Cómo se sintió María al abrir la puerta por la mañana?"
+         },
+         {
+-          "speaker": "Compañera",
+-          "text": "Quería _____ abogado para defender a sus hermanos de los abusos patronales."
++          "speaker": "Meg",
++          "text": "Se _____ encantada con la mañana."
+         }
+       ],
+       "options": [
+-        "hacerse",
+-        "volverse",
+-        "ponerse",
+-        "quedarse"
++        "hizo",
++        "volvió",
++        "convirtió",
++        "quedó"
+       ],
+-      "correct": 0,
++      "correct": 3,
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -113,8 +115,8 @@
+       "id": "b2-22-con.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El relato minero se convirtió en el grito de protesta de toda una generación.",
+-      "english": "The mining tale turned into the outcry of an entire generation.",
++      "sentence": "Los dos hombres se quedaron preocupados cuando el jefe los detuvo.",
++      "english": "The two men were left worried when the boss stopped them.",
+       "teaches": [
+         "verbs-of-change"
+       ]
+@@ -123,27 +125,29 @@
+       "id": "b2-22-con.ex07",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué dimensión social denuncia Baldomero Lillo en 'El chiflón del diablo'?",
++      "question": "What did María say she preferred, according to the text?",
+       "options": [
+-        "La deshumanización patronal que sacrificaba vidas obreras en galerías inseguras por codicia de carbón.",
+-        "El encarecimiento de los billetes de tren entre las ciudades de Santiago y Concepción.",
+-        "La rivalidad deportiva entre los equipos de fútbol de los puertos carboníferos.",
+-        "La falta de bibliotecas públicas en los pueblos rurales del valle central."
++        "Que quería que su hijo trabajara más horas cada día, porque era joven.",
++        "Que prefería pedir dinero en la calle a verlo trabajar en esa galería.",
++        "Que no tenía miedo del trabajo de su hijo ni de lo que podía pasar."
+       ],
+-      "correct": 0
++      "correct": 1,
++      "teaches": [
++        "verbs-of-change"
++      ]
+     },
+     {
+       "id": "b2-22-con.ex08",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la correspondencia funcional correcta en el sistema de verbos de devenir?",
++      "question": "Which sentence shows a complete change into something new?",
+       "options": [
+-        "Ponerse (transitorio físico/anímico), volverse (carácter involuntario), hacerse (voluntario/tiempo), convertirse en (metamorfosis categorial).",
+-        "Ponerse (profesión definitiva), volverse (metamorfosis categorial con en), hacerse (secuela irreversible de salud).",
+-        "Convertirse en (emoción momentánea), quedarse (ascenso meritorio paulatino), llegar a ser (accidente transitorio).",
+-        "Todos los verbos de cambio son sinónimos absolutos y pueden permutarse libremente sin alterar el sentido."
++        "La tienda se puso un restaurante.",
++        "La tienda se volvió un restaurante.",
++        "La tienda se quedó un restaurante.",
++        "La tienda se convirtió en un restaurante."
+       ],
+-      "correct": 0,
++      "correct": 3,
+       "teaches": [
+         "verbs-of-change"
+       ]
+diff --git a/content/es-latam/grammar/b2/b2-20-01-a-gr.json b/content/es-latam/grammar/b2/b2-20-01-a-gr.json
+index 32772bc9..83d4c2d7 100644
+--- a/content/es-latam/grammar/b2/b2-20-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-20-01-a-gr.json
+@@ -1,44 +1,58 @@
+ {
+   "id": "grammar.b2.20.01.pasiva-analitica-ser-participio",
+-  "title": "Voz pasiva analítica con ser y participio",
++  "title": "The Passive with Ser: Tenses and Agreement",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La **voz pasiva analítica** o de acción se forma con el verbo auxiliar **ser** conjugado en el tiempo correspondiente seguido del **participio del verbo principal**, el cual concuerda obligatoriamente en género y número con el sujeto paciente.\n\nEsta estructura focaliza el proceso dinámico experimentado por el sujeto: *El puente fue erigido por los ingenieros*, *Las actas fueron redactadas por el secretario*. Se utiliza profusamente en textos históricos, periodísticos y jurídicos para enfatizar al paciente de la acción."
++      "content": "You know the *ser* passive from B1 Unit 18: *La ley fue aprobada por el Parlamento*. It works because the thing that is affected becomes the subject, and the participle describes it, so the participle agrees with it like an adjective: *el puente fue construido*, *las casas fueron construidas*. What is new at B2 is the range. Only *ser* changes tense; the participle stays as it is. So you can use the passive for what happened (*fue publicada*), what has happened (*ha sido publicada*) and what will happen (*será publicada*)."
+     },
+     {
+       "type": "table",
+-      "title": "Concordancia de género y número en la pasiva con ser",
++      "title": "One participle, three tenses",
+       "rows": [
+         [
+-          "El monumento fue erigido en la plaza mayor.",
+-          "The monument was erected in the main square."
++          "El puente fue construido en 1950.",
++          "The bridge was built in 1950."
+         ],
+         [
+-          "La constitución fue promulgada en el congreso.",
+-          "The constitution was promulgated in congress."
++          "El puente ha sido reparado esta semana.",
++          "The bridge has been repaired this week."
+         ],
+         [
+-          "Los tratados fueron suscritos por los presidentes.",
+-          "The treaties were signed by the presidents."
++          "El puente será inaugurado mañana.",
++          "The bridge will be opened tomorrow."
+         ],
+         [
+-          "Las resoluciones fueron redactadas con rigor.",
+-          "The resolutions were drafted with rigor."
++          "Las casas fueron construidas por los vecinos.",
++          "The houses were built by the neighbours."
+         ],
+         [
+-          "El edificio histórico fue restaurado por artesanos.",
+-          "The historic building was restored by craftspeople."
+-        ],
+-        [
+-          "Las murallas fueron derribadas durante el asedio.",
+-          "The defensive walls were torn down during the siege."
++          "Los resultados serán anunciados el lunes.",
++          "The results will be announced on Monday."
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "With and without the doer",
++      "items": [
++        {
++          "spanish": "La novela fue publicada en 1919.",
++          "english": "The novel was published in 1919."
++        },
++        {
++          "spanish": "La universidad fue fundada por un grupo de estudiantes.",
++          "english": "The university was founded by a group of students."
++        },
++        {
++          "spanish": "Las obras han sido anunciadas.",
++          "english": "The works have been announced."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Recuerda que el participio pasivo con 'ser' varía siempre en género y número: *fue redactad-o*, *fue redactad-a*, *fueron redactad-os*, *fueron redactad-as*."
++      "content": "The *ser* passive sounds like a news report or a history book. In conversation Spanish often prefers an active verb (*El alcalde inauguró el puente*) or the *se* passive from B1 Unit 6 (*Se inauguró el puente*). Whatever the tense, the participle agrees with the subject: *fue anunciado*, *fue anunciada*, *fueron anunciados*, *fueron anunciadas*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-20-02-a-gr.json b/content/es-latam/grammar/b2/b2-20-02-a-gr.json
+index 85e7e85a..75ff71fa 100644
+--- a/content/es-latam/grammar/b2/b2-20-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-20-02-a-gr.json
+@@ -1,44 +1,54 @@
+ {
+-  "id": "grammar.b2.20.02.pasiva-complemento-agente-por",
+-  "title": "El complemento agente introducido por por",
++  "id": "grammar.b2.20.02.complemento-agente-por",
++  "title": "Naming the Doer with Por",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En la pasiva analítica, el ejecutor de la acción se expresa mediante el **complemento agente**, introducido casi invariablemente por la preposición **por** (y excepcionalmente por *de* con verbos de afección o conocimiento: *ser temido de todos*).\n\nEl complemento agente se explicita cuando la identidad del causante aporta información informativa o jurídica indispensable: *La ley fue vetada por el poder ejecutivo*. Si el agente es genérico o irrelevante, suele omitirse o reemplazarse por una pasiva refleja."
++      "content": "You know *por* for the doer from B1 Unit 18: in a passive with *ser*, it names who does the action, as in *La ley fue aprobada por el Parlamento*. At B2 the question is when to add it. Name the doer when it is new or important information: *La reforma fue aprobada por el Congreso*. Leave it out when the doer is obvious, unknown or unimportant: *La puerta fue cerrada a las ocho*. If nobody matters at all, Spanish usually prefers the *se* passive from B1 Unit 6 to a *ser* passive without *por*."
+     },
+     {
+       "type": "table",
+-      "title": "Uso y función del complemento agente con por",
++      "title": "Doer, tool and reason",
+       "rows": [
+         [
+-          "El decreto fue rubricado por el presidente.",
+-          "The decree was signed by the president."
++          "El mural fue pintado por una artista.",
++          "The mural was painted by an artist. (the doer: *por*)"
+         ],
+         [
+-          "Las tierras fueron defendidas por los comuneros.",
+-          "The lands were defended by the communal villagers."
++          "La puerta fue abierta con una llave.",
++          "The door was opened with a key. (a tool: *con*)"
+         ],
+         [
+-          "El concierto fue auspiciado por el ministerio.",
+-          "The concert was sponsored by the ministry."
++          "El museo fue cerrado por la policía.",
++          "The museum was closed by the police. (*por* = the doer)"
+         ],
+         [
+-          "La propuesta fue aprobada por votación unánime.",
+-          "The proposal was approved by unanimous vote."
+-        ],
+-        [
+-          "La novela fue aclamada por la crítica internacional.",
+-          "The novel was acclaimed by international critics."
+-        ],
+-        [
+-          "El proyecto fue respaldado por las asambleas locales.",
+-          "The project was backed by the local assemblies."
++          "El museo fue cerrado por falta de dinero.",
++          "The museum was closed because of a lack of money. (*por* = the reason)"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "La carta fue escrita por mi abuelo.",
++          "english": "The letter was written by my grandfather."
++        },
++        {
++          "spanish": "El premio fue entregado por el alcalde.",
++          "english": "The prize was handed over by the mayor."
++        },
++        {
++          "spanish": "Los cuadros fueron dañados por el agua.",
++          "english": "The paintings were damaged by the water."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Evita usar 'por' cuando se trate de un medio instrumental en lugar de un agente humano consciente: no digas *'fue destruido por un martillo'*, sino *'con un martillo'*."
++      "content": "*Por* after a passive can mean two things: the doer (*por la policía*) or the reason (*por falta de dinero*), as you know *por* from A2 Unit 30. A tool or a means takes *con*, not *por*: *abierta con una llave*. Water or wind can be a doer, because they act on their own: *dañados por el agua*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-20-03-a-gr.json b/content/es-latam/grammar/b2/b2-20-03-a-gr.json
+index e8de19ed..f1bf43ae 100644
+--- a/content/es-latam/grammar/b2/b2-20-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-20-03-a-gr.json
+@@ -1,44 +1,58 @@
+ {
+   "id": "grammar.b2.20.03.pasiva-estado-estar-participio",
+-  "title": "La pasiva de estado con estar y participio",
++  "title": "Estar + Participle: The Result",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "A diferencia de la pasiva con *ser* (que denota una acción o acontecimiento en desarrollo), la **pasiva de estado o resultativa** con **estar + participio** describe el estado o resultado estático alcanzado tras la culminación de un proceso previo.\n\nContrasta: *La puerta fue cerrada a medianoche* (acción puntual ejecutada por alguien) frente a *La puerta estaba cerrada cuando llegamos* (estado descriptivo visible)."
++      "content": "You know *estar* for places and temporary states from A1 Unit 9, and the *ser* passive from B1 Unit 18. *Ser* + participle tells the action: someone closed the door. *Estar* + participle tells the result: the door is shut now. *La puerta fue cerrada a las ocho* (the action happened at eight) but *La puerta está cerrada* (you can see it shut). It works because a finished action leaves something behind, and *estar* describes what is there. The participle is still like an adjective and agrees with the subject: *las puertas están cerradas*."
+     },
+     {
+       "type": "table",
+-      "title": "Contraste entre pasiva de acción (ser) y pasiva de estado (estar)",
++      "title": "Action and result",
+       "rows": [
+         [
+-          "El informe fue concluido anoche.",
+-          "The report was concluded last night (action)."
++          "El camino fue cerrado ayer.",
++          "The road was closed yesterday. (the action)"
+         ],
+         [
+-          "El informe ya está concluido.",
+-          "The report is already concluded (resultant state)."
++          "El camino está cerrado.",
++          "The road is closed. (the result, now)"
+         ],
+         [
+-          "Las minas fueron clausuradas por el gobierno.",
+-          "The mines were shut down by the government (action)."
++          "Cuando llegamos, la tienda ya estaba cerrada.",
++          "When we arrived, the shop was already closed. (the result, then)"
+         ],
+         [
+-          "Las minas están clausuradas desde enero.",
+-          "The mines have been shut down since January (state)."
++          "Las entradas están agotadas.",
++          "The tickets are sold out. (the result)"
+         ],
+         [
+-          "El conflicto fue resuelto mediante diálogo.",
+-          "The conflict was resolved through dialogue (action)."
+-        ],
+-        [
+-          "El conflicto está totalmente resuelto.",
+-          "The conflict is completely resolved (state)."
++          "Las calles están inundadas desde el lunes.",
++          "The streets have been flooded since Monday. (the result)"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "El museo fue clausurado en junio y sigue cerrado.",
++          "english": "The museum was closed down in June and is still shut."
++        },
++        {
++          "spanish": "Los cuadros están dañados por el agua.",
++          "english": "The paintings are damaged by the water."
++        },
++        {
++          "spanish": "La carta ya está escrita.",
++          "english": "The letter is already written."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "En la pasiva de estado con 'estar', el complemento agente con 'por' rara vez aparece, ya que la atención se focaliza enteramente en la condición estática del sujeto."
++      "content": "With *estar* you almost never add *por* and a doer, because you are looking at the result, not at who did it. To say who did it, go back to *ser*: *fue cerrada por la policía*. A time word like *ya*, *ahora* or *desde* points to a result: *ya está terminado*, *desde ayer está cerrado*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-20-04-a-gr.json b/content/es-latam/grammar/b2/b2-20-04-a-gr.json
+index b8a515f3..38dfdd49 100644
+--- a/content/es-latam/grammar/b2/b2-20-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-20-04-a-gr.json
+@@ -1,44 +1,54 @@
+ {
+   "id": "grammar.b2.20.04.participios-irregulares-dobles",
+-  "title": "Participios irregulares y formas dobles en español",
++  "title": "Verbs with Two Participles",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Determinados verbos españoles disponen de **dos formas de participio**: una regular terminada en *-ado/-ido* y otra irregular heredada del latín (*elegido/electo*, *imprimido/impreso*, *proveído/provisto*, *soltado/suelto*).\n\nEn la lengua culta contemporánea, las formas regulares se emplean preferentemente en los tiempos compuestos (*ha elegido*), mientras que las formas irregulares actúan predominantemente como adjetivos o en pasivas de estado (*el presidente electo*, *los libros están impresos*). Con *imprimir*, *freír* y *proveer*, ambas formas son válidas en la pasiva analítica."
++      "content": "You know participles such as *hablado* and *escrito* from A2 Unit 1. A few verbs have two: a regular one in *-ado* or *-ido* and a short one inherited from Latin. The regular one is the one you use after *haber*: *Ya he imprimido el informe*. The short one is the one that works as an adjective, including after *estar*: *el informe está impreso*, *papas fritas*, *la tienda está provista de agua*. It is worth learning only the common pairs below; for all other verbs there is just one participle."
+     },
+     {
+       "type": "table",
+-      "title": "Distribución de participios dobles regulares e irregulares",
++      "title": "The common pairs",
+       "rows": [
+         [
+-          "El informe ha sido imprimido / impreso.",
+-          "The report has been printed (both valid with ser)."
++          "imprimir: imprimido / impreso",
++          "he imprimido el informe / un libro impreso"
+         ],
+         [
+-          "El texto ya está impreso en papel vitela.",
+-          "The text is already printed on vellum paper (adjective/state)."
++          "freír: freído / frito",
++          "he freído el pescado / papas fritas"
+         ],
+         [
+-          "El congreso ha elegido a los nuevos magistrados.",
+-          "Congress has elected the new magistrates (compound tense)."
++          "proveer: proveído / provisto",
++          "he proveído la comida / una tienda provista de agua"
+         ],
+         [
+-          "Los magistrados electos asumirán el cargo.",
+-          "The elected magistrates will take office (adjective)."
+-        ],
+-        [
+-          "El pueblo ha sido provisto de víveres.",
+-          "The village has been supplied with foodstuffs."
+-        ],
+-        [
+-          "El almacén está bien provisto para el invierno.",
+-          "The storehouse is well supplied for the winter."
++          "elegir: elegido / electo",
++          "han elegido a la alcaldesa / la alcaldesa electa"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Ya hemos imprimido los boletos.",
++          "english": "We have already printed the tickets."
++        },
++        {
++          "spanish": "Los boletos ya están impresos.",
++          "english": "The tickets are already printed."
++        },
++        {
++          "spanish": "El presidente electo visitó la escuela.",
++          "english": "The president-elect visited the school."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Con verbos como *atender* y *despertar*, solo la forma regular es auténtico participio verbal (*ha atendido*, *ha despertado*); las formas *atento* y *despierto* son adjetivos independientes."
++      "content": "A good test: if you can put *haber* before it, use the regular form (*han freído*); if it describes a noun or follows *estar*, use the short form (*frito*, *impreso*, *provisto*). *Electo* only describes someone elected who has not yet taken office; after *haber* the verb is always *elegido*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-20-05-a-gr.json b/content/es-latam/grammar/b2/b2-20-05-a-gr.json
+index df20ba54..92394f0f 100644
+--- a/content/es-latam/grammar/b2/b2-20-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-20-05-a-gr.json
+@@ -1,44 +1,54 @@
+ {
+-  "id": "grammar.b2.20.05.seleccion-estilistica-pasivas",
+-  "title": "Selección estilística entre pasivas en la prosa formal",
++  "id": "grammar.b2.20.05.choosing-passive-type",
++  "title": "Choosing the Right Passive",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "El redactor de nivel B2 debe saber seleccionar con criterio estilístico entre la **pasiva refleja** (*se firmó el pacto*), la **pasiva analítica** (*el pacto fue firmado por los delegados*) y la **pasiva de estado** (*el pacto está firmado*).\n\nLa pasiva analítica es idónea para crónicas históricas con agente explícito; la pasiva refleja aporta fluidez al estilo periodístico despersonalizado; y la pasiva de estado fija la situación final de un proceso institucional."
++      "content": "You now have four ways to say what happened to something. Ask two questions. First: do you want to name who did it? Second: are you describing the action or its result? Active verb: the doer is the subject (*El alcalde aprobó el plan*). *Ser* passive: the thing is the subject and the doer is named with *por* (*El plan fue aprobado por el alcalde*). Passive *se* from B1 Unit 6: no doer, general or unknown (*Se aprobó el plan*). *Estar* + participle: the result (*El plan ya está aprobado*)."
+     },
+     {
+       "type": "table",
+-      "title": "Criterios de adecuación estilística en la prosa formal",
++      "title": "Same event, four choices",
+       "rows": [
+         [
+-          "Se promulgaron tres leyes prioritarias.",
+-          "Three priority laws were promulgated (reflexive passive, agentless fluid)."
++          "El alcalde aprobó el plan.",
++          "The mayor approved the plan. (the doer matters)"
+         ],
+         [
+-          "Las leyes fueron promulgadas por el presidente.",
+-          "The laws were promulgated by the president (analytical passive with agent)."
++          "El plan fue aprobado por el alcalde.",
++          "The plan was approved by the mayor. (the plan first, doer named)"
+         ],
+         [
+-          "Las leyes ya están promulgadas en la gaceta.",
+-          "The laws are already promulgated in the gazette (resultant state)."
++          "Se aprobó el plan.",
++          "The plan was approved. (no doer)"
+         ],
+         [
+-          "Se clausuraron los socavones clandestinos.",
+-          "Clandestine mine shafts were closed (fluid institutional summary)."
+-        ],
+-        [
+-          "Los socavones fueron clausurados por la policía.",
+-          "The mine shafts were closed by the police (specific event chronicle)."
+-        ],
+-        [
+-          "Los accesos están clausurados con sellos oficiales.",
+-          "Access points are sealed with official stamps (current condition)."
++          "El plan ya está aprobado.",
++          "The plan is already approved. (the result)"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Se anunciaron los resultados esta mañana.",
++          "english": "The results were announced this morning."
++        },
++        {
++          "spanish": "Los resultados fueron anunciados por el jurado.",
++          "english": "The results were announced by the jury."
++        },
++        {
++          "spanish": "Los resultados ya están anunciados.",
++          "english": "The results have already been announced."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Evita sobrecargar un mismo párrafo con sucesivas pasivas analíticas con 'ser'; alterna con pasivas reflejas y construcciones activas para dinamizar la lectura."
++      "content": "English uses the passive a lot, so English speakers tend to use the *ser* passive too much. In Spanish, if no doer is named, *se* is usually the natural choice, and if the doer is the point, an active verb is. Do not use *se* together with *por* and a doer: *Se aprobó el plan por el alcalde* is wrong."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-22-01-a-gr.json b/content/es-latam/grammar/b2/b2-22-01-a-gr.json
+index e296c31a..85530f6b 100644
+--- a/content/es-latam/grammar/b2/b2-22-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-22-01-a-gr.json
+@@ -1,36 +1,58 @@
+ {
+-  "id": "grammar.b2.22.01.verbos-cambio-ponerse-quedarse",
+-  "title": "Los verbos de cambio ponerse y quedarse: reacciones y estados resultantes",
++  "id": "grammar.b2.22.01.ponerse-quedarse",
++  "title": "Ponerse and Quedarse: The Change and What Stays",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En el sistema de los verbos de cambio o devenir en español, *ponerse* y *quedarse* expresan transiciones de estado asociadas a consecuencias físicas, anímicas o circunstanciales. *Ponerse* denota una alteración involuntaria, súbita y generalmente transitoria en el estado de ánimo, la salud o el aspecto físico (*se puso furiosa*, *se puso pálido*). En contraste, *quedarse* resalta el estado final o resultante en que permanece el sujeto tras un suceso imprevisto o irreversible (*se quedó sin palabras*, *se quedó ciego*)."
++      "content": "You know *ponerse* from B1 Unit 25 and B1 Unit 39: a sudden, temporary change of mood, health or looks (*se puso pálido*). You also know *quedarse* from B1 Unit 39: the state that is left after something happens (*se quedó sin trabajo*). At B2 you use them together, because one event often has both parts. *Ponerse* is the change itself, the moment you go red or nervous. *Quedarse* is where you end up afterwards: *Se puso pálido y se quedó callado*. A cause can also be the subject, and the person becomes the object: *La noticia nos puso tristes* (the news made us sad)."
+     },
+     {
+       "type": "table",
+-      "title": "Contraste funcional: Ponerse vs Quedarse",
++      "title": "The change and the state that stays",
+       "rows": [
+         [
+-          "Al escuchar la sentencia, el acusado se puso lívido.",
+-          "Upon hearing the sentence, the defendant turned pale."
++          "Se puso nerviosa antes del examen.",
++          "She got nervous before the exam. (the change)"
+         ],
+         [
+-          "La diplomática se puso nerviosa durante el debate televisivo.",
+-          "The diplomat became nervous during the televised debate."
++          "Se quedó callada durante toda la cena.",
++          "She stayed quiet for the whole dinner. (the state)"
+         ],
+         [
+-          "Tras el terremoto, miles de familias se quedaron sin hogar.",
+-          "After the earthquake, thousands of families were left homeless."
++          "La noticia nos puso muy tristes.",
++          "The news made us very sad. (the cause is the subject)"
+         ],
+         [
+-          "El público se quedó boquiabierto ante la elocuencia de la oradora.",
+-          "The audience was left agape at the speaker's eloquence."
++          "Los trabajadores se quedaron sin empleo.",
++          "The workers were left without jobs. (the result)"
++        ],
++        [
++          "Al ver el precio, se puso pálido y se quedó sin palabras.",
++          "On seeing the price, he turned pale and was left speechless. (both)"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Mi hermano se puso rojo de vergüenza.",
++          "english": "My brother went red with embarrassment."
++        },
++        {
++          "spanish": "Cuando entró el jefe, todos nos quedamos callados.",
++          "english": "When the boss came in, we all fell silent."
++        },
++        {
++          "spanish": "Se puso a llorar.",
++          "english": "She started to cry."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "*Ponerse* se combina fundamentalmente con adjetivos de emoción o aspecto (*triste, contento, rojo, enfermo*). *Quedarse* se construye con adjetivos que expresan pérdida o secuela física/psicológica (*sordo, viudo, perplejo, absorto*)."
++      "content": "Do not mix up *ponerse* + adjective (*se puso triste*, she became sad) with *ponerse a* from A2 Unit 32 (*se puso a llorar*, she started to cry). And with *quedarse* the adjective or *sin* + noun tells you what is left: *quedarse callado*, *quedarse sin dinero*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-22-02-a-gr.json b/content/es-latam/grammar/b2/b2-22-02-a-gr.json
+index 0e8b4590..f09e1bc9 100644
+--- a/content/es-latam/grammar/b2/b2-22-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-22-02-a-gr.json
+@@ -1,36 +1,58 @@
+ {
+-  "id": "grammar.b2.22.02.verbos-cambio-hacerse-volverse",
+-  "title": "Los verbos de cambio hacerse y volverse: voluntad frente a cambio de carácter",
++  "id": "grammar.b2.22.02.hacerse-volverse",
++  "title": "Hacerse and Volverse: Effort or Character",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "*Hacerse* y *volverse* describen transformaciones profundas y duraderas, pero divergen en la intervención de la voluntad del sujeto. *Hacerse* implica un proceso voluntario o una evolución paulatina vinculada a la profesión, la religión, la ideología o el paso natural del tiempo (*se hizo abogado*, *se hizo vegetariano*, *se hace tarde*). Por el contrario, *volverse* expresa un cambio radical e involuntario en el carácter, la personalidad o la conducta de alguien, con frecuencia de signo negativo o inesperado (*se volvió desconfiado*, *se volvió intolerante*)."
++      "content": "You know *hacerse* from B1 Unit 25 and B1 Unit 39: a change you reach by effort, or with time (*se hizo médico*, *se hace tarde*). You know *volverse* from B1 Unit 39: a deep, lasting change of character (*se volvió desconfiado*). At B2 the difference to learn is who is behind the change. With *hacerse* a person chooses or works towards it: a profession, a belief, a group. That is why it takes a noun: *se hizo abogada*, *se hizo vegetariano*. With *volverse* the change simply happens to the person or the thing, and it takes an adjective: *se volvió egoísta*, *la situación se volvió imposible*. A noun after *volverse* does not work."
+     },
+     {
+       "type": "table",
+-      "title": "Contraste: Hacerse (voluntario/paulatino) vs Volverse (involuntario/carácter)",
++      "title": "Choose or happen",
+       "rows": [
+         [
+-          "Tras años de estudio nocturno, se hizo diplomática de carrera.",
+-          "After years of evening study, she became a career diplomat."
++          "Estudió mucho y se hizo abogada.",
++          "She studied a lot and became a lawyer. (a profession)"
+         ],
+         [
+-          "Con el paso de los años, el poeta se hizo muy devoto.",
+-          "With the passing of the years, the poet became very devout."
++          "Se hizo vegetariano hace dos años.",
++          "He became vegetarian two years ago. (a choice)"
+         ],
+         [
+-          "El veterano se volvió hosco y solitario tras la guerra.",
+-          "The veteran became sullen and reclusive after the war."
++          "Con los años, mi tío se volvió muy desconfiado.",
++          "With the years, my uncle became very distrustful. (it happened to him)"
+         ],
+         [
+-          "La situación económica se volvió insostenible para el comercio.",
+-          "The economic situation became unsustainable for trade."
++          "El tráfico se ha vuelto imposible.",
++          "The traffic has become impossible. (it happened to a thing)"
++        ],
++        [
++          "Ya se hace tarde.",
++          "It is getting late. (time passing)"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Mi vecina estudió música y se hizo profesora.",
++          "english": "My neighbour studied music and became a teacher."
++        },
++        {
++          "spanish": "Desde que cambió de trabajo, se ha vuelto más serio.",
++          "english": "Since he changed jobs, he has become more serious."
++        },
++        {
++          "spanish": "Se hizo el sordo cuando le pedí el dinero.",
++          "english": "He pretended not to hear when I asked him for the money."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Para cambios involuntarios de personalidad use *volverse* (*se volvió arrogante*). Evite emplear *hacerse* con defectos o trastornos involuntarios (*no se dice *se hizo loco*, sino *se volvió loco*)."
++      "content": "Watch *hacerse el* + adjective: it does not mean \"become\", it means \"pretend to be\": *se hizo el sordo*, *se hizo el tonto*. You can use *hacerse* + adjective for a slow change (*se hizo famoso*), but a profession can only follow *hacerse*, never *volverse*: *se hizo médico*, not *se volvió médico*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-22-03-a-gr.json b/content/es-latam/grammar/b2/b2-22-03-a-gr.json
+index 3c579b1c..c8f5ce0c 100644
+--- a/content/es-latam/grammar/b2/b2-22-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-22-03-a-gr.json
+@@ -1,36 +1,54 @@
+ {
+-  "id": "grammar.b2.22.03.verbos-cambio-convertirse-transformarse",
+-  "title": "Convertirse en y transformarse en: metamorfosis radical y cambio de categoría",
++  "id": "grammar.b2.22.03.convertirse-transformarse",
++  "title": "Convertirse en and Transformarse en",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Las perífrasis reflexivas con preposición *convertirse en* y *transformarse en* indican una metamorfosis sustancial o un cambio categorial profundo donde una entidad pasa a ser algo por completo diferente. A diferencia de los otros verbos de cambio que admiten adjetivos directos, *convertirse en* y *transformarse en* rigen necesariamente un sintagma nominal introducido por la preposición *en* (*el puerto se convirtió en una metrópoli*, *la protesta se transformó en un estallido social*)."
++      "content": "You know *convertirse en* from B1 Unit 25 and B1 Unit 39: a complete change into something new (*La oruga se convirtió en mariposa*). *Transformarse en* means almost the same, but it stresses that the shape or form changes, not only the kind of thing: *La plaza se transformó en un mercado*. Both need *en* + a noun, never an adjective alone. At B2 you also use them with someone or something causing the change. Then the verb loses *se* and the thing changed becomes the object: *La tormenta convirtió la calle en un río*, *La ciudad transformó la fábrica en un museo*."
+     },
+     {
+       "type": "table",
+-      "title": "Régimen preposicional y alcance de Convertirse en / Transformarse en",
++      "title": "The change and the cause",
+       "rows": [
+         [
+-          "Valparaíso se convirtió en el principal emporio comercial del Pacífico sur.",
+-          "Valparaíso became the main commercial emporium of the South Pacific."
++          "La plaza se convirtió en un mercado.",
++          "The square became a market. (it changed)"
+         ],
+         [
+-          "La pequeña caleta de pescadores se transformó en un balneario cosmopolita.",
+-          "The small fishing cove transformed into a cosmopolitan seaside resort."
++          "El pequeño pueblo se transformó en una ciudad.",
++          "The small town turned into a city. (it changed)"
+         ],
+         [
+-          "El poema lírico se convirtió en el himno de los trabajadores mineros.",
+-          "The lyric poem became the anthem of the mining workers."
++          "La tormenta convirtió la calle en un río.",
++          "The storm turned the street into a river. (a cause)"
+         ],
+         [
+-          "La crisis institucional se transformó en una oportunidad constituyente.",
+-          "The institutional crisis transformed into a constitutional opportunity."
++          "La ciudad transformó la fábrica en un museo.",
++          "The city transformed the factory into a museum. (a cause)"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "La estación vieja se convirtió en un hotel.",
++          "english": "The old station became a hotel."
++        },
++        {
++          "spanish": "La fama la convirtió en otra persona.",
++          "english": "Fame turned her into a different person."
++        },
++        {
++          "spanish": "Con tanta lluvia, el camino se transformó en barro.",
++          "english": "With so much rain, the road turned into mud."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Recuerde siempre la preposición *en*: es agramatical decir '*se convirtió un líder'*; la construcción normativa exige invariablemente '*se convirtió en un líder*'."
++      "content": "Always keep *en*: *se convirtió en un líder*, not *se convirtió un líder*. And if you want to say only what someone is like (an adjective), you need another verb: *se volvió tacaño*, not *se convirtió tacaño*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-22-04-a-gr.json b/content/es-latam/grammar/b2/b2-22-04-a-gr.json
+index 3e670b33..393e314f 100644
+--- a/content/es-latam/grammar/b2/b2-22-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-22-04-a-gr.json
+@@ -1,36 +1,54 @@
+ {
+-  "id": "grammar.b2.22.04.verbos-cambio-llegar-a-ser",
+-  "title": "La perífrasis llegar a ser: culminación de un proceso y reconocimiento",
++  "id": "grammar.b2.22.04.llegar-a-ser",
++  "title": "Llegar a ser: The Long Road",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La locución *llegar a ser* representa la culminación exitosa de una prolongada trayectoria vital, profesional o artística marcada por el esfuerzo continuado, la perseverancia y la superación de obstáculos. Implica una valoración altamente positiva o de notable trascendencia histórica, situando al sujeto en una cúspide o posición relevante (*Gabriela Mistral llegó a ser la primera latinoamericana en ganar el Premio Nobel de Literatura*)."
++      "content": "You know *llegar a ser* from B1 Unit 39: the high point of a long effort (*llegó a ser presidente de la compañía*). At B2 you use it in more places. Like any verb, it can follow *querer* or *poder* (*quiero llegar a ser*, *puede llegar a ser*), and it can also describe a thing that grows into something important: *La tienda llegó a ser una gran empresa*. It always carries the idea of a path: time, effort and steps. That is the difference from *convertirse en* (the thing becomes completely new) and from *hacerse* (you simply become, with no sense of a high point). In this lesson *llegar a* always comes with *ser*."
+     },
+     {
+       "type": "table",
+-      "title": "Usos de Llegar a ser como culminación de trayectoria",
++      "title": "Ways to say \"become\"",
+       "rows": [
+         [
+-          "Aquella humilde maestra rural llegó a ser una figura intelectual ecuménica.",
+-          "That humble rural schoolteacher eventually became an ecumenical intellectual figure."
++          "Mi tío se hizo alcalde.",
++          "My uncle became mayor. (he simply became it)"
+         ],
+         [
+-          "Con tenacidad inquebrantable, el dirigente sindical llegó a ser presidente.",
+-          "With unbreakable tenacity, the union leader eventually became president."
++          "Mi tío llegó a ser alcalde.",
++          "My uncle ended up as mayor. (after a long road)"
+         ],
+         [
+-          "Esa obra novelística llegó a ser el clásico indiscutible del realismo social.",
+-          "That novelistic work eventually became the unquestioned classic of social realism."
++          "La tienda llegó a ser una gran empresa.",
++          "The shop grew into a big company. (steps over time)"
+         ],
+         [
+-          "El carbón de Lota llegó a ser el combustible fundamental de la armada nacional.",
+-          "The coal of Lota eventually became the fundamental fuel of the national navy."
++          "La estación se convirtió en un hotel.",
++          "The station became a hotel. (a complete change)"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Quiero llegar a ser una buena cocinera.",
++          "english": "I want to become a good cook."
++        },
++        {
++          "spanish": "Con el tiempo, llegó a ser muy famoso.",
++          "english": "With time, he became very famous."
++        },
++        {
++          "spanish": "Puede llegar a ser un gran músico.",
++          "english": "He could become a great musician."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "*Llegar a ser* resalta el largo proceso de ascenso y el mérito acumulado. No se emplea para cambios instantáneos o accidentales."
++      "content": "Do not use *llegar a ser* for a quick or passing change: you do not *llegar a ser pálido*, you *se pone pálido*. It also needs the road to be long enough: it fits a career, a business or a city, not a mood."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-22-05-a-gr.json b/content/es-latam/grammar/b2/b2-22-05-a-gr.json
+index 3894b9fa..d3bbcffe 100644
+--- a/content/es-latam/grammar/b2/b2-22-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-22-05-a-gr.json
+@@ -1,44 +1,58 @@
+ {
+-  "id": "grammar.b2.22.05.seleccion-estilistica-verbos-cambio",
+-  "title": "Criterios estilísticos y matices semánticos en los verbos de devenir",
++  "id": "grammar.b2.22.05.matices-verbos-de-cambio",
++  "title": "Choosing a Verb of Change",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "El dominio de los verbos de devenir en el nivel B2 superior reside en seleccionar con precisión el matiz adecuado entre *ponerse, quedarse, volverse, hacerse, convertirse en, transformarse en* y *llegar a ser*. A ellos se suman opciones de registro culto como *pasar a ser* (transición funcional) o verbos derivados que condensan el cambio en una sola palabra léxica (*enriquecerse, empobrecerse, enmudecer, palidecer*)."
++      "content": "You know *ponerse*, *quedarse*, *volverse* and *hacerse* from B1 Unit 25, and *llegar a ser* from B1 Unit 39. To choose, ask what kind of change it is. A quick, passing reaction: *ponerse*. The state left after an event: *quedarse*. A lasting change in character or in a situation: *volverse*. A profession or choice: *hacerse*. A complete change into something new: *convertirse en* or *transformarse en*. The high point of a long road: *llegar a ser*. At B2 you also meet a shorter way for some of them: one verb that carries the change inside it, such as *palidecer* (= *ponerse pálido*) or *enrojecer* (= *ponerse rojo*). It sounds a little more written, and it is shorter."
+     },
+     {
+       "type": "table",
+-      "title": "Matices semánticos en los verbos de transformación",
++      "title": "Two words or one",
+       "rows": [
+         [
+-          "Se puso furioso / Palideció al oír la noticia.",
+-          "Temporary physical/emotional reaction."
++          "ponerse pálido / palidecer",
++          "to turn pale"
+         ],
+         [
+-          "Se quedó sin empleo tras el cierre del yacimiento.",
+-          "Resultant state of deprivation or outcome."
++          "ponerse rojo / enrojecer",
++          "to go red"
+         ],
+         [
+-          "Se volvió taciturno con el paso de los años.",
+-          "Involuntary permanent shift in temperament."
++          "quedarse mudo / enmudecer",
++          "to fall silent"
+         ],
+         [
+-          "Se hizo militante por convicción política.",
+-          "Voluntary ideological or professional adoption."
++          "hacerse rico / enriquecerse",
++          "to become rich"
+         ],
+         [
+-          "Se convirtió en la capital cultural del país.",
+-          "Radical transformation into a new category."
+-        ],
+-        [
+-          "Llegó a ser una gloria de las letras hispánicas.",
+-          "Culmination of lifelong endeavor and recognition."
++          "hacerse pobre / empobrecerse",
++          "to become poor"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Al oír el precio, mi madre palideció.",
++          "english": "On hearing the price, my mother turned pale."
++        },
++        {
++          "spanish": "Con el comercio, el pueblo se enriqueció.",
++          "english": "With trade, the town became rich."
++        },
++        {
++          "spanish": "El público enmudeció cuando apareció el cantante.",
++          "english": "The audience fell silent when the singer appeared."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Para enriquecer su estilo, combine los verbos perifrásticos de cambio con verbos derivados directos (*se puso rojo* -> *enrojeció*; *se hizo rico* -> *se enriqueció*)."
++      "content": "Mind the *se*: *palidecer*, *enrojecer* and *enmudecer* have none, while *enriquecerse* and *empobrecerse* keep it. If you are not sure which to use, the two-word form (*se puso pálido*) is always right."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-20-01.json b/content/es-latam/lessons/b2/b2-20-01.json
+index 8db393e0..405b42cd 100644
+--- a/content/es-latam/lessons/b2/b2-20-01.json
++++ b/content/es-latam/lessons/b2/b2-20-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.20.01",
+-  "title": "Voz pasiva analítica con ser y participio",
++  "title": "The Passive with Ser: Tenses and Agreement",
+   "level": "B2",
+-  "goal": "Master analytical passive sentences with 'ser + participio' and enforce strict gender and number agreement with the subject patient.",
+-  "grammar": "voz pasiva analítica con ser y concordancia de género y número del participio",
++  "goal": "Use the passive with ser in the past, the present perfect and the future, and make the participle agree.",
++  "grammar": "the passive with ser in several tenses, participle agreement",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Construct analytical passive sentences with 'ser' in various tenses.",
+-        "Ensure gender and number agreement of past participles with subject patients.",
+-        "Identify contexts where the analytical passive is preferred over active voice."
++        "I can use the passive with *ser* in the preterite, the present perfect and the future.",
++        "I can make the participle agree with the thing that is affected.",
++        "I can tell when the passive with *ser* sounds natural and when an active verb or *se* is better."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-20-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use the passive with *ser* in the preterite, the present perfect and the future.",
++        "I can make the participle agree with the thing that is affected.",
++        "I can tell when the passive with *ser* sounds natural and when an active verb or *se* is better."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-20-02.json b/content/es-latam/lessons/b2/b2-20-02.json
+index 113ed086..b0bcc1f1 100644
+--- a/content/es-latam/lessons/b2/b2-20-02.json
++++ b/content/es-latam/lessons/b2/b2-20-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.20.02",
+-  "title": "El complemento agente introducido por por",
++  "title": "Naming the Doer with Por",
+   "level": "B2",
+-  "goal": "Deploy agentive prepositional phrases with 'por' in passive sentences when the agent provides indispensable historical or legal information.",
+-  "grammar": "estructura, uso y restricciones estilísticas del complemento agente con por",
++  "goal": "Decide when to name the doer with por in a passive with ser, and keep por for people and groups, not tools.",
++  "grammar": "the doer with por in the passive with ser",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Identify when agentive complements with 'por' are essential in formal prose.",
+-        "Distinguish between conscious human agents and instrumental means.",
+-        "Avoid redundant or awkward agent phrases in general statements."
++        "I can name the doer of a passive with *por* when it is important.",
++        "I can leave the doer out when it is obvious or unknown.",
++        "I can tell *por* (the doer) from *con* (a tool) and from *por* (a reason)."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-20-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can name the doer of a passive with *por* when it is important.",
++        "I can leave the doer out when it is obvious or unknown.",
++        "I can tell *por* (the doer) from *con* (a tool) and from *por* (a reason)."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-20-03.json b/content/es-latam/lessons/b2/b2-20-03.json
+index 35450f54..aa6fb67f 100644
+--- a/content/es-latam/lessons/b2/b2-20-03.json
++++ b/content/es-latam/lessons/b2/b2-20-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.20.03",
+-  "title": "La pasiva de estado con estar y participio",
++  "title": "Estar + Participle: The Result",
+   "level": "B2",
+-  "goal": "Distinguish processual action passives with 'ser' from resultant state passives with 'estar + participio'.",
+-  "grammar": "pasiva de estado resultativa con estar y participio frente a la pasiva de proceso con ser",
++  "goal": "Use estar + participle to describe the result of an action, and tell it apart from the passive with ser.",
++  "grammar": "the result with estar + participle",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Select between eventive 'ser + participio' and stative 'estar + participio'.",
+-        "Describe final resultant conditions in institutional and historical contexts.",
+-        "Apply correct gender/number agreement in resultative state clauses."
++        "I can use *estar* + participle to describe the result of an action.",
++        "I can tell the action (*fue cerrada*) from the result (*está cerrada*).",
++        "I can make the participle agree with the subject after *estar*."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-20-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *estar* + participle to describe the result of an action.",
++        "I can tell the action (*fue cerrada*) from the result (*está cerrada*).",
++        "I can make the participle agree with the subject after *estar*."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-20-04.json b/content/es-latam/lessons/b2/b2-20-04.json
+index d712872c..07687543 100644
+--- a/content/es-latam/lessons/b2/b2-20-04.json
++++ b/content/es-latam/lessons/b2/b2-20-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.20.04",
+-  "title": "Participios irregulares y formas dobles",
++  "title": "Verbs with Two Participles",
+   "level": "B2",
+-  "goal": "Master regular and irregular double past participle forms and their distinctive verbal vs adjectival syntactic distributions.",
+-  "grammar": "morfología y uso de participios dobles regulares e irregulares en español",
++  "goal": "Choose the regular or the short participle for imprimir, freír, proveer and elegir.",
++  "grammar": "verbs with two participles",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Distinguish regular verbal participles (imprimido) from adjectival forms (impreso).",
+-        "Apply correct double participles with verbs like elegir/electo and proveer/provisto.",
+-        "Avoid confusing pure adjectives with verbal participles."
++        "I can use the regular participle after *haber* with *imprimir*, *freír*, *proveer* and *elegir*.",
++        "I can use the short participle (*impreso*, *frito*, *provisto*, *electo*) as an adjective.",
++        "I can use the new words for printing, frying and supplying."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-20-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use the regular participle after *haber* with *imprimir*, *freír*, *proveer* and *elegir*.",
++        "I can use the short participle (*impreso*, *frito*, *provisto*, *electo*) as an adjective.",
++        "I can use the new words for printing, frying and supplying."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-20-05.json b/content/es-latam/lessons/b2/b2-20-05.json
+index 3623d991..87b7e0a1 100644
+--- a/content/es-latam/lessons/b2/b2-20-05.json
++++ b/content/es-latam/lessons/b2/b2-20-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.20.05",
+-  "title": "Selección estilística entre pasivas",
++  "title": "Choosing the Right Passive",
+   "level": "B2",
+-  "goal": "Select with stylistic mastery between reflexive passives, analytical passives with 'ser', and resultative passives with 'estar'.",
+-  "grammar": "criterios de selección y alternancia estilística entre pasiva refleja, analítica y de estado",
++  "goal": "Choose between the active, the passive with ser, passive se and estar + participle.",
++  "grammar": "choosing a passive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Evaluate stylistic naturalness across different passive structures.",
+-        "Alternate passive types to avoid repetitive Germanic passive calques.",
+-        "Produce balanced, elegant formal prose adhering to CEFR B2 house style."
++        "I can choose between an active verb, the passive with *ser*, passive *se* and *estar* + participle.",
++        "I can name the doer with *por* only when it matters.",
++        "I can use the new words for announcements and agreements."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-20-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can choose between an active verb, the passive with *ser*, passive *se* and *estar* + participle.",
++        "I can name the doer with *por* only when it matters.",
++        "I can use the new words for announcements and agreements."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-20-consolidation.json b/content/es-latam/lessons/b2/b2-20-consolidation.json
+index 0ee7bdec..ab1f201f 100644
+--- a/content/es-latam/lessons/b2/b2-20-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-20-consolidation.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.20.consolidation",
+-  "title": "Consolidación B2: Voz pasiva y Raza de bronce de Alcides Arguedas",
++  "title": "Unit Review: Passives and Arguedas",
+   "level": "B2",
+-  "goal": "Synthesize analytical and resultative passive structures through Alcides Arguedas's indigenist landmark Raza de bronce.",
+-  "grammar": "síntesis de voz pasiva analítica y de estado y adaptación de Raza de bronce",
++  "goal": "Review the passives with ser, the result with estar and the choice between them in a text about Alcides Arguedas.",
++  "grammar": "review of the passives and a text about Alcides Arguedas",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Master participle agreement in analytical passives across all tenses.",
+-        "Differentiate clearly between action passives (ser) and resultative state passives (estar).",
+-        "Analyze the tragic struggle and rebellion of the Aymara people against feudal dispossession."
++        "I can read a short text about Alcides Arguedas and his novel Raza de bronce.",
++        "I can tell the action (*fue publicada*) from the result (*está ambientada*).",
++        "I can choose the right passive to write one sentence about the author and his novel."
+       ]
+     },
+     {
+@@ -39,10 +39,9 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "Aplico la concordancia de género y número en participios pasivos con 'ser'.",
+-        "Distingo con precisión entre la pasiva de acción ('fue destruido') y de estado ('está destruido').",
+-        "Utilizo adecuadamente el complemento agente con 'por' sin caer en calcos forzados.",
+-        "Manejo las formas dobles de participios regulares e irregulares en la prosa formal."
++        "I can read a short text about Alcides Arguedas and his novel Raza de bronce.",
++        "I can tell the action (*fue publicada*) from the result (*está ambientada*).",
++        "I can choose the right passive to write one sentence about the author and his novel."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-22-01.json b/content/es-latam/lessons/b2/b2-22-01.json
+index 1bb90b62..2c272a93 100644
+--- a/content/es-latam/lessons/b2/b2-22-01.json
++++ b/content/es-latam/lessons/b2/b2-22-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.22.01",
+-  "title": "Los verbos de cambio ponerse y quedarse",
++  "title": "Ponerse and Quedarse: The Change and What Stays",
+   "level": "B2",
+-  "goal": "Master verbs of becoming 'ponerse' and 'quedarse' to express sudden emotional reactions and resulting states.",
+-  "grammar": "verbos de cambio ponerse y quedarse: reacciones anímicas y estados resultantes",
++  "goal": "Use ponerse for the change and quedarse for the state that stays, and let a cause be the subject.",
++  "grammar": "ponerse and quedarse in one event",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Deploy 'ponerse' with emotional and physical adjectives for temporary reactions.",
+-        "Utilize 'quedarse' to emphasize the final resulting condition or deprivation.",
+-        "Distinguish between voluntary decisions and involuntary states."
++        "I can use *ponerse* for a sudden change and *quedarse* for the state that stays.",
++        "I can say what a piece of news did to people: *La noticia nos puso tristes*.",
++        "I can use the new words for reactions."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-22-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *ponerse* for a sudden change and *quedarse* for the state that stays.",
++        "I can say what a piece of news did to people: *La noticia nos puso tristes*.",
++        "I can use the new words for reactions."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-22-02.json b/content/es-latam/lessons/b2/b2-22-02.json
+index eaa2fca2..b3dda6d5 100644
+--- a/content/es-latam/lessons/b2/b2-22-02.json
++++ b/content/es-latam/lessons/b2/b2-22-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.22.02",
+-  "title": "Los verbos de cambio hacerse y volverse",
++  "title": "Hacerse and Volverse: Effort or Character",
+   "level": "B2",
+-  "goal": "Deploy 'hacerse' for voluntary professional/ideological changes and 'volverse' for involuntary character shifts.",
+-  "grammar": "verbos de cambio hacerse y volverse: voluntad frente a cambio involuntario de carácter",
++  "goal": "Choose hacerse for a profession or a choice and volverse for a change that happens to a person or thing.",
++  "grammar": "hacerse and volverse",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Select 'hacerse' for gradual or voluntary ideological and career developments.",
+-        "Apply 'volverse' for permanent involuntary transformations in temperament.",
+-        "Avoid using 'hacerse' with involuntary psychological disorders."
++        "I can use *hacerse* + noun for a profession or a choice.",
++        "I can use *volverse* + adjective for a change that happens to a person or a thing.",
++        "I can tell *hacerse* (become) from *hacerse el* (pretend)."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-22-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *hacerse* + noun for a profession or a choice.",
++        "I can use *volverse* + adjective for a change that happens to a person or a thing.",
++        "I can tell *hacerse* (become) from *hacerse el* (pretend)."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-22-03.json b/content/es-latam/lessons/b2/b2-22-03.json
+index 96af3913..0e34a252 100644
+--- a/content/es-latam/lessons/b2/b2-22-03.json
++++ b/content/es-latam/lessons/b2/b2-22-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.22.03",
+-  "title": "Convertirse en y transformarse en: metamorfosis radical",
++  "title": "Convertirse en and Transformarse en",
+   "level": "B2",
+-  "goal": "Master 'convertirse en' and 'transformarse en' for categorical metamorphosis and profound structural change.",
+-  "grammar": "convertirse en y transformarse en: metamorfosis categorial y régimen preposicional",
++  "goal": "Use convertirse en and transformarse en for a complete change, with en + noun, also when someone or something causes it.",
++  "grammar": "convertirse en and transformarse en",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Enforce the mandatory preposition 'en' before noun phrases.",
+-        "Describe radical societal, urban, and historical conversions.",
+-        "Distinguish categorical noun transformations from adjectival states."
++        "I can use *convertirse en* and *transformarse en* with a noun.",
++        "I can say who or what caused the change: *La tormenta convirtió la calle en un río*.",
++        "I can use the new words for places."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-22-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *convertirse en* and *transformarse en* with a noun.",
++        "I can say who or what caused the change: *La tormenta convirtió la calle en un río*.",
++        "I can use the new words for places."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-22-04.json b/content/es-latam/lessons/b2/b2-22-04.json
+index 0a3463b8..0113e938 100644
+--- a/content/es-latam/lessons/b2/b2-22-04.json
++++ b/content/es-latam/lessons/b2/b2-22-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.22.04",
+-  "title": "La perífrasis llegar a ser: culminación de un proceso",
++  "title": "Llegar a ser: The Long Road",
+   "level": "B2",
+-  "goal": "Deploy the periphrasis 'llegar a ser' to capture the culmination of prolonged endeavor and public recognition.",
+-  "grammar": "perífrasis llegar a ser: culminación de trayectoria vital y logro histórico",
++  "goal": "Use llegar a ser for the high point of a long road, and tell it apart from hacerse and convertirse en.",
++  "grammar": "llegar a ser",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Highlight long-term effort and perseverance culminating in prominent status.",
+-        "Apply 'llegar a ser' in biographical and artistic historical portraits.",
+-        "Avoid using 'llegar a ser' for sudden accidental occurrences."
++        "I can use *llegar a ser* for a result reached after a long road.",
++        "I can tell *llegar a ser* from *hacerse* and *convertirse en*.",
++        "I can use the new words for careers."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-22-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *llegar a ser* for a result reached after a long road.",
++        "I can tell *llegar a ser* from *hacerse* and *convertirse en*.",
++        "I can use the new words for careers."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-22-05.json b/content/es-latam/lessons/b2/b2-22-05.json
+index 5eea80ad..745dceb3 100644
+--- a/content/es-latam/lessons/b2/b2-22-05.json
++++ b/content/es-latam/lessons/b2/b2-22-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.22.05",
+-  "title": "Selección estilística y matices en los verbos de cambio",
++  "title": "Choosing a Verb of Change",
+   "level": "B2",
+-  "goal": "Select with stylistic mastery among all verbs of becoming and integrate derived lexical change verbs in formal prose.",
+-  "grammar": "criterios de selección estilística y alternancia léxica en los verbos de devenir",
++  "goal": "Choose the right verb of change for a moment, a result, a character, a choice or a transformation, and meet one-word verbs of change.",
++  "grammar": "choosing a verb of change",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Evaluate semantic nuances across the entire paradigm of becoming verbs.",
+-        "Integrate synthetic derived verbs (enrojecer, empobrecerse, ensombrecer) for concision.",
+-        "Produce balanced and nuanced analytical prose following CEFR B2 house style."
++        "I can choose the right verb of change by asking what kind of change it is.",
++        "I can use one-word verbs such as *palidecer* and *enrojecer* for a change.",
++        "I can use the new one-word verbs of change."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-22-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can choose the right verb of change by asking what kind of change it is.",
++        "I can use one-word verbs such as *palidecer* and *enrojecer* for a change.",
++        "I can use the new one-word verbs of change."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-22-consolidation.json b/content/es-latam/lessons/b2/b2-22-consolidation.json
+index caaa0a2d..745be69c 100644
+--- a/content/es-latam/lessons/b2/b2-22-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-22-consolidation.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.22.consolidation",
+-  "title": "Consolidación B2: Verbos de cambio y Sub terra de Baldomero Lillo",
++  "title": "Unit Review: Verbs of Change and Lillo",
+   "level": "B2",
+-  "goal": "Synthesize verbs of becoming and transformation through Baldomero Lillo's Chilean mining classic El chiflón del diablo.",
+-  "grammar": "síntesis del paradigma de verbos de cambio y adaptación de Sub terra",
++  "goal": "Review the verbs of change through a retelling of a story by Baldomero Lillo.",
++  "grammar": "review of the verbs of change and a retelling of a story by Baldomero Lillo",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Master functional distinctions between ponerse, quedarse, volverse, and hacerse.",
+-        "Deploy convertirse en and llegar a ser with correct syntax and register in formal prose.",
+-        "Analyze the human tragedy and social denunciation of the Lota coal miners in Chilean realism."
++        "I can read a short retelling of a story by Baldomero Lillo and notice the verbs of change in it.",
++        "I can use *ponerse*, *quedarse*, *volverse*, *hacerse*, *convertirse en* and *llegar a ser* for different kinds of change.",
++        "I can choose the verb that fits the kind of change."
+       ]
+     },
+     {
+@@ -39,11 +39,9 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "Distingo entre cambios transitorios (ponerse) y estados resultantes (quedarse).",
+-        "Utilizo 'hacerse' para evoluciones voluntarias y 'volverse' para cambios de carácter.",
+-        "Construyo correctamente 'convertirse en' con la preposición 'en' y sintagma nominal.",
+-        "Aplico 'llegar a ser' para resaltar el mérito acumulado de una trayectoria vital.",
+-        "Selecciono con fluidez y variedad léxica los verbos de devenir en la prosa ensayística."
++        "I can read a short retelling of a story by Baldomero Lillo and notice the verbs of change in it.",
++        "I can use *ponerse*, *quedarse*, *volverse*, *hacerse*, *convertirse en* and *llegar a ser* for different kinds of change.",
++        "I can choose the verb that fits the kind of change."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/stories/classics/b2/b2-20.json b/content/es-latam/stories/classics/b2/b2-20.json
+index eb6b0a04..01ac7baa 100644
+--- a/content/es-latam/stories/classics/b2/b2-20.json
++++ b/content/es-latam/stories/classics/b2/b2-20.json
+@@ -1,85 +1,90 @@
+ {
+   "id": "story.b2.20.arguedas",
+-  "title": "Raza de bronce: La epopeya trágica de Kohahuyo y la furia del altiplano",
++  "title": "Alcides Arguedas y Raza de bronce",
+   "level": "B2",
+   "lesson": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Adaptación literaria de la obra fundacional del indigenismo boliviano de Alcides Arguedas: la comunidad aymara de Kohahuyo a orillas del lago Titicaca, el penoso viaje de los comuneros a través de los desfiladeros andinos hacia los yungas cálidos, el abuso despótico del hacendado Pantoja, el ultraje a Wata Wara y la rebelión justiciera de la estirpe de bronce.",
+-  "characters": [
+-    "Agapito Choque (sabio anciano aymara)",
+-    "Cachapa (joven pescador de totora)",
+-    "Wata Wara (pastora aymara)",
+-    "Hacendado don Fernando Pantoja",
+-    "Mayordomo Troche"
+-  ],
++  "summary": "Texto sobre Alcides Arguedas, escritor boliviano, y sobre su novela Raza de bronce, considerada el primer texto del indigenismo boliviano.",
++  "characters": [],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "A orillas de las aguas azules y gélidas del lago Titicaca, bajo la mirada imperturbable de los nevados de la Cordillera Real que recortan sus aristas de hielo contra el firmamento andino, la milenaria comunidad aymara de Kohahuyo desarrollaba su existencia en un diálogo permanente con la tierra. En esta agreste meseta donde el viento de la puna azota los pastizales de ichu y los bofedales verdosos, los comuneros pastoreaban sus rebaños de llamas y cultivaban sus parcelas de papa y quinua, atados a los ciclos solares mediante la devoción profunda a la Pachamama. Sin embargo, sobre aquella armonía ancestral pesaba la sombra implacable del feudalismo republicano: la hacienda vecina, usurpada gradualmente a los campesinos mediante escrituras fraudulentas, era gobernada con mano de hierro por don Fernando Pantoja, un terrateniente despótico que consideraba a los indígenas meras bestias de carga obligadas a la servidumbre perpetua."
++      "text": "Alcides Arguedas fue un escritor boliviano. Nació en 1879 y murió en 1946. Este texto trata de su novela Raza de bronce y de la manera de leerla. No cuenta ninguna escena de la novela ni cita ninguna frase del libro, porque queremos hablar del libro y de su autor, no contar el libro. Los datos de este texto son pocos: el nombre del autor, algunas fechas, el lugar de la historia y su tema."
+     },
+     {
+       "type": "narration",
+-      "text": "Un día aciago, la tranquilidad de Kohahuyo fue quebrantada por una orden terminante del patrón. Se exigió que una comitiva de comuneros emprendiera una expedición suicida: debían descender desde las alturas heladas de cuatro mil metros hacia los valles tropicales y húmedos de los Yungas para comprar y transportar sobre sus espaldas decenas de quintales de semillas y productos agrícolas. Liderada por el respetado anciano Agapito Choque y por el joven pescador Cachapa —prometido de la hermosa doncella Wata Wara—, la caravana de mitayos emprendió la marcha. El periplo fue una pesadilla dantesca: los abismos rocosos cobraron la vida de hombres y mulas que se despeñaron en los precipicios, mientras en las tierras bajas el paludismo y las fiebres malignas diezmaron a los sobrevivientes, regresando al altiplano un puñado de espectros hambrientos y quebrantados por el sufrimiento."
++      "text": "La novela fue escrita por Arguedas y fue publicada en 1919. Entre su nacimiento y esa fecha pasaron cuarenta años, y el autor todavía vivía cuando el libro salió. Él murió en 1946, veintisiete años después de la publicación. Hoy han pasado más de cien años desde 1919."
+     },
+     {
+       "type": "narration",
+-      "text": "Pero el dolor más lacerante aguardaba a Cachapa en su propio suelo natal. Durante los meses de forzosa ausencia de los hombres jóvenes, el abuso patronal se había desbordado sin contención legal alguna. Wata Wara, cuya belleza ingenua y mirada luminosa despertaban la codicia de los capataces, fue perseguida en los roquedales solitarios mientras pastoreaba sus ovejas. Pantoja y sus secuaces, envalentonados por la embriaguez y la absoluta impunidad de su condición aristocrática, consumaron un crimen atroz: la joven pastora fue asaltada, ultrajada salvajemente y su cuerpo sin vida fue abandonado entre los pajonales fríos de la quebrada para encubrir la felonía."
++      "text": "Raza de bronce está ambientada en una comunidad indígena del Altiplano. Una novela está ambientada en un lugar cuando la historia pasa en ese lugar. En este caso, ese lugar es una comunidad indígena del Altiplano."
+     },
+     {
+       "type": "narration",
+-      "text": "El hallazgo del cadáver destrozado de Wata Wara desató un cataclismo en el alma colectiva de la comunidad. El llanto silencioso de las ancianas y la desesperación enloquecida de Cachapa se transformaron en un relámpago de dignidad inextinguible. Agapito Choque convocó a un consejo secreto de emergencia en las cavernas sagradas del cerro: por primera vez en generaciones, los ancianos no aconsejaron la resignación piadosa ni el repliegue sumiso. En la noche cerrada del altiplano, el sonido sordo, ronco y estremecedor de los *pututus* —los ancestrales cuernos marinos de guerra de los incas— comenzó a retumbar de cumbre en cumbre, quebrando el silencio secular de la noche andina."
++      "text": "El tema del libro es la opresión de los indígenas por los terratenientes. Un terrateniente es una persona que tiene mucha tierra. En la novela, los indígenas son oprimidos por esas personas."
+     },
+     {
+       "type": "narration",
+-      "text": "Desde todas las quebradas, caseríos y ayllus lacustres, millares de hombres y mujeres de la 'raza de bronce' convergieron en silencio hacia la casa de la hacienda patronal, armados con hondas, piedras, palos y teas encendidas. Sitiados tras sus gruesos muros de adobe y rejas coloniales, Pantoja y sus mayordomos abrieron fuego desesperadamente con sus fusiles de cacería, pero la marea humana, impulsada por siglos de agravios contenidos y el clamor irrenunciable de justicia, resultó incontenible. Las puertas de roble fueron derribadas a golpes de ariete, los disparos fueron sofocados por una lluvia torrencial de peñascos y las llamas purificadoras envolvieron las habitaciones señoriales y los graneros patronales en un voraz incendio que iluminó las cumbres nevadas del Illampu."
++      "text": "La novela es considerada el primer texto del indigenismo boliviano. La palabra indigenismo viene de la palabra indígena. Esta frase no dice quién considera así la novela: la pasiva permite no decirlo. Por eso conviene recordar que es una afirmación que hemos recibido, no un dato que podamos comprobar en este texto."
+     },
+     {
+       "type": "narration",
+-      "text": "Al despuntar el alba sobre las aguas sagradas del Titicaca, las cenizas humeantes de la hacienda proclamaban el despertar irrevocable de un pueblo que jamás volvería a arrodillarse. La novela de Alcides Arguedas inmortalizó así el drama social de los Andes bolivianos, demostrando que detrás de la aparente pasividad del hombre originario late una fuerza geológica invencible, templada como el bronce, capaz de levantarse como una tempestad para reconquistar su libertad, su tierra y su destino soberano en la historia de América."
++      "text": "Resumimos lo que sabemos. La novela fue escrita por un autor boliviano y fue publicada en 1919. Está ambientada en una comunidad indígena del Altiplano. Su tema es la opresión de los indígenas por los terratenientes. Y es considerada el primer texto del indigenismo boliviano."
++    },
++    {
++      "type": "narration",
++      "text": "Un texto corto como este no puede sustituir a la novela. Quien quiera saber qué pasa en ella tiene que leerla. Cuando termine de leerla, el lector podrá comparar lo que dice este texto con lo que dice el libro."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Qué misión mortífera impuso el hacendado Pantoja a los comuneros aymaras de Kohahuyo?",
++          "question": "According to the text, in what year was Raza de bronce published?",
+           "options": [
+-            "Descender a pie hacia los valles tropicales de los Yungas para transportar pesadas cargas de semillas sufriendo fiebres y abismos.",
+-            "Navegar en canoas hasta las costas de California para comprar oro en las minas.",
+-            "Construir un palacio de mármol blanco traído exclusivamente desde las canteras de Italia.",
+-            "Sembrar uvas francesas en las cumbres nevadas del monte Illampu."
++            "En 1946, el año en que murió el autor.",
++            "En 1879, el año en que nació el autor.",
++            "En 1919, cuando el autor todavía vivía."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "Pantoja forzó a la comitiva a un extenuante viaje a los Yungas donde muchos murieron por fiebres y despeñamientos."
++          "correctIndex": 2,
++          "explanation": "The text says that the novel was published in 1919, when the author was still alive."
+         },
+         {
+-          "question": "¿Qué trágico acontecimiento desató la sublevación general de los comuneros contra la hacienda patronal?",
++          "question": "According to the text, where is Raza de bronce set?",
+           "options": [
+-            "El ultraje y asesinato de la joven pastora Wata Wara a manos de Pantoja y sus capataces durante la ausencia de los hombres.",
+-            "La subida de impuestos aduaneros decretada por el ministerio de hacienda en La Paz.",
+-            "La llegada de una plaga de langostas que devoró los campos de quinua de la cuenca lacustre.",
+-            "El rechazo del obispo a consagrar la nueva capilla católica de la comunidad."
++            "En una comunidad indígena del Altiplano.",
++            "En una gran ciudad de Bolivia.",
++            "En un lugar que el texto no nombra."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El ultraje y crimen de Wata Wara colmó la paciencia comunal, desatando el llamado a las armas con los pututus."
++          "explanation": "The text says that the novel is set in an indigenous community of the Altiplano."
+         },
+         {
+-          "question": "¿Qué instrumento ancestral andino se empleó para convocar a la rebelión indígena de Kohahuyo en la noche?",
++          "question": "What is the theme of the novel, according to the text?",
+           "options": [
+-            "El pututu, una trompeta o caracol marino que emite un bramido sordo de largo alcance.",
+-            "Campanas de bronce importadas de los campanarios de Sevilla.",
+-            "Tambores metálicos de marcha militar francesa.",
+-            "Señales de telégrafo eléctrico instaladas a lo largo de la ribera del lago."
++            "La vida de Alcides Arguedas.",
++            "La opresión de los indígenas por los terratenientes.",
++            "La historia de una familia de escritores."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "El sonido telúrico del pututu resonó de cerro en cerro para congregar a los ayllus aymaras en armas."
++          "correctIndex": 1,
++          "explanation": "The text says that the theme is the oppression of indigenous people by landowners."
++        },
++        {
++          "question": "How does the text describe the place of the novel in Bolivian literature?",
++          "options": [
++            "Como la última obra del indigenismo boliviano.",
++            "Como una novela sin relación con el indigenismo.",
++            "Como el primer texto del indigenismo boliviano."
++          ],
++          "correctIndex": 2,
++          "explanation": "The text says that the novel is considered the first text of Bolivian indigenismo."
+         }
+       ]
+     }
+   },
+   "author": "Alcides Arguedas (Bolivia, 1879–1946)",
+   "work": "Raza de bronce (1919)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Alcides Arguedas",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "order": 20
+ }
+diff --git a/content/es-latam/stories/classics/b2/b2-22.json b/content/es-latam/stories/classics/b2/b2-22.json
+index 96e5d173..323e3164 100644
+--- a/content/es-latam/stories/classics/b2/b2-22.json
++++ b/content/es-latam/stories/classics/b2/b2-22.json
+@@ -1,84 +1,93 @@
+ {
+   "id": "story.b2.22.lillo",
+-  "title": "El abismo del carbón: El chiflón del diablo y el grito de Lota",
++  "title": "El chiflón del diablo",
+   "level": "B2",
+   "lesson": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Una adaptación literaria de 'El chiflón del diablo', obra cumbre de 'Sub terra' (1904) del maestro chileno Baldomero Lillo: en las minas submarinas de carbón de Lota, el joven minero Cabeza de Cobre es forzado a trabajar en la galería más letal del yacimiento, donde la codicia patronal, la oscuridad asfixiante y el amor desgarrado de una madre desembocan en una tragedia inolvidable.",
++  "summary": "Adaptación del cuento El chiflón del diablo, de Baldomero Lillo: dos mineros aceptan un puesto en una galería peligrosa, y una madre espera noticias de su hijo.",
+   "characters": [
+-    "Joven minero Cabeza de Cobre",
+-    "Madre María de los Ángeles",
+-    "Capataz despótico de la mina",
+-    "Compañero barretero Pedro"
++    "Cabeza de Cobre (minero joven)",
++    "María de los Ángeles (su madre)"
+   ],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En la costa gris y batida por las olas del golfo de Arauco, donde el océano Pacífico ruge con furia incansable contra los acantilados de piedra pizarra, se alzaban las fauces colosales de las minas de carbón de Lota. A fines del siglo diecinueve, la prosperidad industrial de la república chilena y el vapor que movía a los ferrocarriles y buques de guerra dependían de las entrañas negras de aquel yacimiento subterráneo que se internaba kilómetros enteros bajo el lecho marino. En la superficie, los parques señoriales de la familia Cousiño lucían fuentes de hierro fundido y palacios de mármol; pero en el fondo de la tierra, a centenares de metros bajo el agua salada, miles de barreteros descalzos y niños enganchados consumían sus vidas en galerías sofocantes donde el aire viciado olía a azufre y a humedad sepulcral."
++      "text": "Una fría mañana de invierno, un capataz miraba desde su mesa cómo bajaban los mineros. Cuando pasaron dos barreteros, uno joven de pelo rojo, al que llamaban Cabeza de Cobre, y otro mucho mayor, el capataz los detuvo. Los dos se quedaron preocupados."
+     },
+     {
+       "type": "narration",
+-      "text": "Entre aquellos condenados de la roca destacaba un muchacho de apenas veinte años a quien todos llamaban con cariño 'Cabeza de Cobre', a causa de su espesa cabellera rojiza y su temperamento leal. Huérfano de padre —un viejo barretero que había muerto años atrás sepultado por un derrumbe—, el joven sostenía con su magro jornal a su anciana madre, María de los Ángeles, y a dos hermanos pequeños. Aquella mañana aciaga, al presentarse en la boca del pique para iniciar su turno, el capataz de la mina lo apartó de su cuadrilla habitual con una sonrisa despectiva y le notificó una orden inapelable: debía trasladarse de inmediato a trabajar en 'El chiflón del diablo'."
++      "text": "El capataz les explicó que tenía la orden de reducir el personal de esa veta, y que por eso se quedaban sin trabajo. En otras partes de la mina sobraba gente. El mayor habló del Chiflón del Diablo, y el capataz protestó: en la compañía no se obligaba a nadie. Pero su voz se volvió más suave y les ofreció dos puestos en esa galería. Tenían que decidirse en ese momento, porque mañana sería tarde."
+     },
+     {
+       "type": "narration",
+-      "text": "Un estremecimiento de pavor helado recorrió el cuerpo de los mineros que escucharon la disposición. El Chiflón del diablo no era una galería cualquiera: era un conducto angosto, traicionero y vertical, famoso por sus constantes desprendimientos de roca y sus emanaciones invisibles de gas grisú. La empresa, en su implacable afán de lucro, se negaba a invertir en maderamen para apuntalar los techos agrietados de aquel socavón maldito, prefiriendo enviar allí a los obreros más pobres o a los castigados por reclamar mejores pagas. Sabedor de que rechazar la orden significaba la expulsión inmediata de la choza comunal y la condena a morir de hambre en las colinas, Cabeza de Cobre agachó la frente, apretó los labios y descendió amarrado a la jaula metálica que crujía en la oscuridad del abismo."
++      "text": "Los dos hombres conocían esa táctica y ya habían decidido aceptar. Era invierno, y para ellos morir bajo un derrumbe era mejor que morir de hambre. Aceptaron sin protestar y poco después bajaban en el ascensor hacia el fondo de la mina."
+     },
+     {
+       "type": "narration",
+-      "text": "En la choza de barro y tablas del campamento minero, el corazón de María de los Ángeles presintió la tragedia con la certeza infalible de las madres del carbón. Al enterarse por los vecinos de que su hijo había sido enviado al Chiflón, la anciana arrojó el mandil, atravesó corriendo los senderos polvorientos y llegó descalza a la explanada del pique principal. Justo en ese instante, un estruendo sordo y subterráneo sacudió las colinas de Lota: la tierra tembló bajo sus pies, una bocanada espesa de humo negro brotó por la boca del pozo y la campana de alarma comenzó a repicar con su tañido fúnebre. Un derrumbe masivo había sepultado la fatídica galería."
++      "text": "Esa galería tenía mala fama. Cuanto más se cavaba, más se volvía porosa la roca, y el agua dejó inseguro el techo. Poner madera costaba mucho, y la empresa fue cuidando cada vez menos ese trabajo. A veces había que sacar de allí heridos y también muertos. Aun así, la empresa no abandonó la galería, porque el carbón de allí era mejor que el de otras vetas."
+     },
+     {
+       "type": "narration",
+-      "text": "Durante horas de angustia insoportable, entre el llanto desgarrador de decenas de mujeres que clamaban por sus deudos frente a los cordones de la policía armada, la jaula del ascensor subió lentamente desde las profundidades cargando una camilla cubierta por mantas ensangrentadas. Cuando los camilleros destaparon el rostro pálido y sereno del muchacho, cuya cabellera cobriza relucía bajo el sol mortecino, la anciana no gritó ni maldijo a los capataces. Acarició la frente fría de su único amparo terrenal, contempló el abismo insondable del pique que le había arrebatado a su esposo y a su hijo, y en un rapto de dolor absoluto, se arrojó al fondo negro del pozo para unirse eternamente a sus muertos."
++      "text": "Aquella noche Cabeza de Cobre llegó a casa más tarde que de costumbre, serio y callado. Su madre, María de los Ángeles, había perdido a su marido y a dos hijos en la mina, y solo le quedaba él. Ella dijo que prefería mendigar a verlo trabajar en el Chiflón del Diablo. Él se quedó callado y a la mañana siguiente se fue a trabajar sin decirle que había cambiado de trabajo."
+     },
+     {
+       "type": "narration",
+-      "text": "Con *Sub terra*, Baldomero Lillo desgarró el velo de la hipocresía aristocrática chilena, convirtiendo el dolor mudo del minero en una epopeya de denuncia social imperecedera. Al evocar hoy la tragedia del Chiflón del diablo, la memoria nacional recuerda con veneración a aquellos mártires de la roca, cuya sangre derramada en las profundidades marinas iluminó el camino hacia la conquista irrenunciable de la justicia, el respeto al trabajo y la dignidad humana en el corazón de Chile."
++      "text": "Una hora después, María abrió la puerta y se quedó encantada con la mañana tan luminosa. Cerca del mediodía sonó la campana de alarma, y las mujeres corrieron al pozo. Los obreros dijeron que había un derrumbe en el Chiflón del Diablo y tres muertos. María sintió esperanza: estaba segura de que su hijo no era uno de ellos."
++    },
++    {
++      "type": "narration",
++      "text": "Pasaron las horas. Por fin el ascensor subió con tres cuerpos, y el tercero tenía el pelo rojo: era Cabeza de Cobre. María se quedó inmóvil, mirando el pozo. Un rayo de sol entró en él y ella creyó ver a su hijo en una galería; se oyó un chasquido seco, la imagen desapareció y desde el fondo subió el grito de su hijo, llamándola. Nadie supo cómo pasó la barrera. La vieron un instante mover las piernas en el vacío y luego desapareció en el pozo, sin gritar."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Por qué la galería 'El chiflón del diablo' era temida por todos los mineros del carbón de Lota?",
++          "question": "Why did the foreman say the two miners were left without work?",
+           "options": [
+-            "Porque era un socavón sumamente inestable y peligroso donde la empresa no apuntalaba los techos para ahorrar costos.",
+-            "Porque albergaba manantiales de agua hirviendo que inundaban constantemente los túneles.",
+-            "Porque era el lugar exclusivo donde los ingenieros europeos guardaban su instrumental científico.",
+-            "Porque la entrada a la galería estaba prohibida para todos los ciudadanos nacidos en Chile."
++            "Habían llegado tarde a su turno.",
++            "Tenía la orden de reducir el personal de esa veta.",
++            "Los dos querían trabajar en otra mina."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "El Chiflón del diablo carecía de vigas de seguridad y registraba derrumbes mortales frecuentes."
++          "correctIndex": 1,
++          "explanation": "The text says that the foreman had the order to reduce the staff of that vein."
+         },
+         {
+-          "question": "¿Qué motivo obligó al joven 'Cabeza de Cobre' a aceptar el peligroso traslado al Chiflón?",
++          "question": "What did the two miners do when the foreman offered them work in the Chiflón del Diablo?",
+           "options": [
+-            "La necesidad apremiante de no ser despedido para poder sustentar a su anciana madre y a sus hermanos.",
+-            "El deseo de ganar una medalla deportiva concedida por el sindicato de barreteros.",
+-            "Una promesa religiosa formulada durante las fiestas de fin de año en la catedral.",
+-            "El anhelo de estudiar ingeniería de minas en una universidad del extranjero."
++            "Dijeron que no y buscaron trabajo en otra mina.",
++            "Pidieron al capataz más dinero.",
++            "Aceptaron los puestos, porque morir en un derrumbe les parecía mejor que morir de hambre."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "El minero aceptó el riesgo mortal para no perder su salario y evitar el desalojo de su familia."
++          "correctIndex": 2,
++          "explanation": "The text says that they had already decided to accept, because dying in a collapse seemed better to them than dying of hunger."
+         },
+         {
+-          "question": "¿Cómo culmina la trágica historia tras confirmarse la muerte del joven obrero en el derrumbe?",
++          "question": "Why did the company not abandon the gallery, according to the text?",
+           "options": [
+-            "Su madre María de los Ángeles, enloquecida por el dolor, se arroja al abismo del pozo para morir con él.",
+-            "Los trabajadores incendian las oficinas de la empresa y huyen en barcas hacia la Argentina.",
+-            "El capataz de la mina renuncia a su puesto y funda una escuela nocturna para niños pobres.",
+-            "El gobierno decreta el cierre definitivo de todas las minas de carbón del golfo de Arauco."
++            "Porque el carbón de allí era mejor que el de otras vetas.",
++            "Porque la galería era la más segura de la mina.",
++            "Porque los mineros pedían trabajar allí."
+           ],
+           "correctIndex": 0,
+-          "explanation": "La madre se suicida arrojándose al pique del pozo ante el dolor insoportable de perder a su hijo."
++          "explanation": "The text says that the coal from that gallery was better than the coal from other veins."
++        },
++        {
++          "question": "What does María do when she sees that the third body has red hair?",
++          "options": [
++            "Se va corriendo a su casa.",
++            "Se queda inmóvil.",
++            "Habla con el capataz."
++          ],
++          "correctIndex": 1,
++          "explanation": "The text says that María stayed motionless."
+         }
+       ]
+     }
+   },
+   "author": "Baldomero Lillo (Chile, 1867–1923)",
+   "work": "Sub terra: El chiflón del diablo (1904)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir del relato clásico de Baldomero Lillo",
++  "source": "Adaptación para estudiantes de nivel B2 del cuento de Baldomero Lillo (dominio público), contrastada con el texto de Wikisource.",
+   "order": 22
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-20-01-voc.json b/content/es-latam/vocabulary/b2/b2-20-01-voc.json
+index 083b5579..a1092374 100644
+--- a/content/es-latam/vocabulary/b2/b2-20-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-20-01-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.20.01",
+   "lesson": "b2-20-01",
+-  "title": "La pasiva analítica y concordancia del participio",
++  "title": "The passive: events and monuments",
+   "theme": "analytical and resultative passives in formal spanish",
+   "words": [
+     {
+-      "lemma": "erigir",
+-      "translation": "to erect / to construct monumentally",
++      "lemma": "fundar",
++      "translation": "to found, to set up",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "redactar",
+-      "translation": "to draft / to write formal text",
++      "lemma": "inaugurar",
++      "translation": "to open officially",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "monumento",
+-      "translation": "monument / historic memorial structure",
+-      "pos": "noun"
++      "lemma": "derribar",
++      "translation": "to knock down",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "tratado",
+-      "translation": "international formal treaty",
++      "lemma": "monumento",
++      "translation": "monument",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "paciente",
+-      "translation": "syntactic patient receiving action",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "inaugurado",
+-      "translation": "inaugurated / officially opened",
+-      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-20-02-voc.json b/content/es-latam/vocabulary/b2/b2-20-02-voc.json
+index 2a6e1adc..582d1114 100644
+--- a/content/es-latam/vocabulary/b2/b2-20-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-20-02-voc.json
+@@ -1,38 +1,33 @@
+ {
+   "id": "vocab.b2.20.02",
+   "lesson": "b2-20-02",
+-  "title": "El complemento agente con por",
++  "title": "Who did it",
+   "theme": "analytical and resultative passives in formal spanish",
+   "words": [
+     {
+-      "lemma": "promotor",
+-      "translation": "promoter / initiator of an undertaking",
++      "lemma": "alcalde",
++      "translation": "mayor",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "artífice",
+-      "translation": "architect / primary author of an outcome",
++      "lemma": "congreso",
++      "translation": "congress, parliament",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "sancionar",
+-      "translation": "to pass legislation / to impose legal sanction",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "auspiciar",
+-      "translation": "to sponsor / to patronize formally",
+-      "pos": "verb"
++      "lemma": "terrateniente",
++      "translation": "landowner",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "unánime",
+-      "translation": "unanimous in agreement",
+-      "pos": "adjective"
++      "lemma": "indígena",
++      "translation": "indigenous person, indigenous",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "deliberado",
+-      "translation": "deliberate / consciously intentional",
+-      "pos": "adjective"
++      "lemma": "oprimir",
++      "translation": "to oppress",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-20-03-voc.json b/content/es-latam/vocabulary/b2/b2-20-03-voc.json
+index 64531bb6..23a40726 100644
+--- a/content/es-latam/vocabulary/b2/b2-20-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-20-03-voc.json
+@@ -1,38 +1,38 @@
+ {
+   "id": "vocab.b2.20.03",
+   "lesson": "b2-20-03",
+-  "title": "La pasiva de estado con estar y participio",
++  "title": "Results and states",
+   "theme": "analytical and resultative passives in formal spanish",
+   "words": [
+     {
+-      "lemma": "estado",
+-      "translation": "state / resultant condition",
+-      "pos": "noun"
++      "lemma": "inundar",
++      "translation": "to flood",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "desenlace",
+-      "translation": "outcome / denouement of events",
+-      "pos": "noun"
++      "lemma": "dañar",
++      "translation": "to damage",
++      "pos": "verb"
+     },
+     {
+       "lemma": "clausurar",
+-      "translation": "to seal off / to close permanently",
++      "translation": "to close down officially",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "devastar",
+-      "translation": "to lay waste / to devastate thoroughly",
+-      "pos": "verb"
++      "lemma": "agotado",
++      "translation": "sold out, exhausted",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "resuelto",
+-      "translation": "resolved / settled conclusively",
++      "lemma": "ambientada",
++      "translation": "set (of a story, in a place)",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "consumado",
+-      "translation": "consummated / fully completed",
+-      "pos": "adjective"
++      "lemma": "altiplano",
++      "translation": "high plateau",
++      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-20-04-voc.json b/content/es-latam/vocabulary/b2/b2-20-04-voc.json
+index acbc7343..443b6b7e 100644
+--- a/content/es-latam/vocabulary/b2/b2-20-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-20-04-voc.json
+@@ -1,37 +1,27 @@
+ {
+   "id": "vocab.b2.20.04",
+   "lesson": "b2-20-04",
+-  "title": "Participios irregulares y formas dobles",
++  "title": "Printing, frying and supplying",
+   "theme": "analytical and resultative passives in formal spanish",
+   "words": [
+     {
+-      "lemma": "electo",
+-      "translation": "elected official awaiting inauguration",
+-      "pos": "adjective"
++      "lemma": "imprimir",
++      "translation": "to print",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "impreso",
+-      "translation": "printed / published in hard copy",
+-      "pos": "adjective"
++      "lemma": "freír",
++      "translation": "to fry",
++      "pos": "verb"
+     },
+     {
+       "lemma": "proveer",
+-      "translation": "to provide / to supply essential resources",
++      "translation": "to supply",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "reparto",
+-      "translation": "distribution / allotment of shares",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "suplente",
+-      "translation": "substitute / deputy alternate",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "confeso",
+-      "translation": "self-confessed / admitted culpability",
++      "lemma": "electo",
++      "translation": "elected (not yet in office)",
+       "pos": "adjective"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-20-05-voc.json b/content/es-latam/vocabulary/b2/b2-20-05-voc.json
+index 422b5b4c..df479601 100644
+--- a/content/es-latam/vocabulary/b2/b2-20-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-20-05-voc.json
+@@ -1,38 +1,33 @@
+ {
+   "id": "vocab.b2.20.05",
+   "lesson": "b2-20-05",
+-  "title": "Selección estilística entre pasivas",
++  "title": "Announcements and agreements",
+   "theme": "analytical and resultative passives in formal spanish",
+   "words": [
+     {
+-      "lemma": "estilo",
+-      "translation": "style / prose register register",
+-      "pos": "noun"
++      "lemma": "redactar",
++      "translation": "to draft, to write up",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "ponderación",
+-      "translation": "weighing of alternatives / deliberation",
++      "lemma": "comunicado",
++      "translation": "official statement",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "alternar",
+-      "translation": "to alternate between syntactic forms",
+-      "pos": "verb"
++      "lemma": "acuerdo",
++      "translation": "agreement",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "despersonalizar",
+-      "translation": "to depersonalize prose for objectivity",
++      "lemma": "anunciar",
++      "translation": "to announce",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "discursivo",
+-      "translation": "discursive / textual",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "sucinto",
+-      "translation": "succinct / concise and precise",
+-      "pos": "adjective"
++      "lemma": "indigenismo",
++      "translation": "indigenismo (writing about indigenous peoples)",
++      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-22-01-voc.json b/content/es-latam/vocabulary/b2/b2-22-01-voc.json
+index eb62cc66..6e4422be 100644
+--- a/content/es-latam/vocabulary/b2/b2-22-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-22-01-voc.json
+@@ -1,51 +1,26 @@
+ {
+   "id": "vocab.b2.22.01",
+   "lesson": "b2-22-01",
+-  "title": "Cambios transitorios, reacciones y estados resultantes",
++  "title": "Reactions and what stays",
+   "words": [
+     {
+-      "lemma": "ponerse",
+-      "translation": "to become (sudden, emotional, temporary)",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "quedarse",
+-      "translation": "to end up, be left in state",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "mutabilidad",
+-      "translation": "mutability / changeability",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "transitorio",
+-      "translation": "transitory / temporary",
++      "lemma": "avergonzado",
++      "translation": "embarrassed, ashamed",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "enrojecer",
+-      "translation": "to blush / turn red",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "desconcierto",
+-      "translation": "bewilderment / confusion",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "ensombrecer",
+-      "translation": "to overshadow / darken mood",
+-      "pos": "verb"
++      "lemma": "callado",
++      "translation": "quiet, silent",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "aturdimiento",
+-      "translation": "daze / numbness",
+-      "pos": "noun"
++      "lemma": "enojado",
++      "translation": "angry",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "perplejo",
+-      "translation": "perplexed / baffled",
++      "lemma": "decepcionado",
++      "translation": "disappointed",
+       "pos": "adjective"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-22-02-voc.json b/content/es-latam/vocabulary/b2/b2-22-02-voc.json
+index 8de65263..6d5f29fd 100644
+--- a/content/es-latam/vocabulary/b2/b2-22-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-22-02-voc.json
+@@ -1,52 +1,27 @@
+ {
+   "id": "vocab.b2.22.02",
+   "lesson": "b2-22-02",
+-  "title": "Transformaciones graduales, ideológicas y de carácter",
++  "title": "Character and choices",
+   "words": [
+     {
+-      "lemma": "volverse",
+-      "translation": "to become (involuntary, lasting character shift)",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "hacerse",
+-      "translation": "to become (voluntary, ideological, profession)",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "paulatino",
+-      "translation": "gradual / step by step",
++      "lemma": "desconfiado",
++      "translation": "distrustful",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "involuntario",
+-      "translation": "involuntary",
++      "lemma": "insoportable",
++      "translation": "unbearable",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "idiosincrasia",
+-      "translation": "idiosyncrasy / distinctive character",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "escéptico",
+-      "translation": "skeptical",
++      "lemma": "egoísta",
++      "translation": "selfish",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "arraigo",
+-      "translation": "deep rootedness / attachment",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "intransigente",
+-      "translation": "uncompromising / intransigent",
++      "lemma": "serio",
++      "translation": "serious",
+       "pos": "adjective"
+-    },
+-    {
+-      "lemma": "militancia",
+-      "translation": "political activism / membership",
+-      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-22-03-voc.json b/content/es-latam/vocabulary/b2/b2-22-03-voc.json
+index 51bd019f..e6d3b074 100644
+--- a/content/es-latam/vocabulary/b2/b2-22-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-22-03-voc.json
+@@ -1,51 +1,31 @@
+ {
+   "id": "vocab.b2.22.03",
+   "lesson": "b2-22-03",
+-  "title": "Metamorfosis radical y cambio de naturaleza",
++  "title": "Places that change",
+   "words": [
+     {
+-      "lemma": "convertirse",
+-      "translation": "to turn into / become (radical shift)",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "transformarse",
+-      "translation": "to transform into",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "metamorfosis",
+-      "translation": "metamorphosis",
++      "lemma": "estación",
++      "translation": "station",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "conversión",
+-      "translation": "conversion / change of nature",
++      "lemma": "mercado",
++      "translation": "market",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "mutación",
+-      "translation": "mutation / structural change",
++      "lemma": "tormenta",
++      "translation": "storm",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "reconfigurar",
+-      "translation": "to reconfigure / reshape",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "paradigma",
+-      "translation": "paradigm",
++      "lemma": "fábrica",
++      "translation": "factory",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "transmutar",
+-      "translation": "to transmute",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "trascendencia",
+-      "translation": "transcendence / historical scope",
++      "lemma": "pueblo",
++      "translation": "town, village",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-22-04-voc.json b/content/es-latam/vocabulary/b2/b2-22-04-voc.json
+index 348e2c78..72519d56 100644
+--- a/content/es-latam/vocabulary/b2/b2-22-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-22-04-voc.json
+@@ -1,52 +1,27 @@
+ {
+   "id": "vocab.b2.22.04",
+   "lesson": "b2-22-04",
+-  "title": "Culminación, trayectoria y logro progresivo",
++  "title": "A long road",
+   "words": [
+     {
+-      "lemma": "llegar a ser",
+-      "translation": "to eventually become through effort",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "culminación",
+-      "translation": "culmination / pinnacle",
++      "lemma": "carrera",
++      "translation": "career",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "consagración",
+-      "translation": "definitive recognition / triumph",
++      "lemma": "cantante",
++      "translation": "singer",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "trayectoria",
+-      "translation": "career trajectory / path",
++      "lemma": "estrella",
++      "translation": "star",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "empeño",
+-      "translation": "tenacious effort / determination",
++      "lemma": "esfuerzo",
++      "translation": "effort",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "perseverancia",
+-      "translation": "perseverance",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "cúspide",
+-      "translation": "peak / summit",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "itinerario",
+-      "translation": "itinerary / development path",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "advenir",
+-      "translation": "to come about / arrive",
+-      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-22-05-voc.json b/content/es-latam/vocabulary/b2/b2-22-05-voc.json
+index 9548a46d..336b723e 100644
+--- a/content/es-latam/vocabulary/b2/b2-22-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-22-05-voc.json
+@@ -1,51 +1,31 @@
+ {
+   "id": "vocab.b2.22.05",
+   "lesson": "b2-22-05",
+-  "title": "Precisión semántica y selección estilística de cambio",
++  "title": "One verb, one change",
+   "words": [
+     {
+-      "lemma": "matiz",
+-      "translation": "nuance / shade of meaning",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "semántica",
+-      "translation": "semantics",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "estilística",
+-      "translation": "stylistics",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "connotación",
+-      "translation": "connotation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "ponderación",
+-      "translation": "deliberate weighing / evaluation",
+-      "pos": "noun"
++      "lemma": "palidecer",
++      "translation": "to turn pale",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "fluidez",
+-      "translation": "fluency / prose rhythm",
+-      "pos": "noun"
++      "lemma": "enrojecer",
++      "translation": "to go red",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "expresividad",
+-      "translation": "expressiveness",
+-      "pos": "noun"
++      "lemma": "enmudecer",
++      "translation": "to fall silent",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "pasar a",
+-      "translation": "to transition into being",
++      "lemma": "enriquecerse",
++      "translation": "to become rich",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "desembocar",
+-      "translation": "to lead into / culminate in",
++      "lemma": "empobrecerse",
++      "translation": "to become poor",
+       "pos": "verb"
+     }
+   ]
