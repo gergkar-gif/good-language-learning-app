@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "lamentar",
-          "to regret, to lament"
+          "temer",
+          "to fear"
         ],
         [
-          "deplorar",
-          "to deplore, to lament deeply"
+          "consolar",
+          "to comfort"
         ],
         [
-          "la aflicción",
-          "affliction, grief"
+          "el pésame",
+          "condolences"
         ],
         [
-          "el desagravio",
-          "redress, apology, vindication"
+          "apenado",
+          "sorry, saddened"
         ]
       ],
       "teaches": [
@@ -31,27 +31,33 @@
       "id": "b2-06-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿En cuál de las siguientes oraciones 'sentir que' rige modo subjuntivo?",
+      "question": "Which sentence means \"I'm sorry that you are ill\"?",
       "options": [
-        "Siento mucho que hayas tenido que pasar por esa amarga experiencia.",
-        "Siento que alguien me está observando desde la ventana.",
-        "Sentí que el temblor sacudía levemente el suelo."
+        "Siento que estés enfermo.",
+        "Siento que estás enfermo.",
+        "Siento de que estés enfermo."
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-emotion"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b2-06-02.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Deploramos profundamente que las partes en conflicto no __ el cese al fuego humanitario.",
-      "hint": "respetar",
-      "answer": "respeten",
-      "english": "We deeply deplore that the parties in conflict do not respect the humanitarian ceasefire.",
+      "sentence": "Temíamos que el tren __ tarde.",
+      "hint": "llegar, imperfect subjunctive",
+      "answers": [
+        "llegara",
+        "llegase"
+      ],
+      "english": "We were afraid that the train would arrive late.",
       "teaches": [
-        "subjunctive-emotion"
+        "correlacion-temporal-subjuntivo"
       ]
     },
     {
@@ -61,24 +67,26 @@
       "tiles": [
         "Lamentamos",
         "que",
-        "las",
-        "familias",
+        "no",
         "hayan",
-        "sufrido",
-        "tanto",
-        "dolor."
+        "podido",
+        "venir",
+        "a",
+        "la",
+        "cena."
       ],
       "solution": [
         "Lamentamos",
         "que",
-        "las",
-        "familias",
+        "no",
         "hayan",
-        "sufrido",
-        "tanto",
-        "dolor."
+        "podido",
+        "venir",
+        "a",
+        "la",
+        "cena."
       ],
-      "english": "We regret that the families have suffered so much pain.",
+      "english": "We are sorry that they have not been able to come to the dinner.",
       "teaches": [
         "subjunctive-emotion"
       ]
@@ -89,34 +97,37 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Portavoz de la Cruz Roja",
-          "text": "¿Cuál es la postura oficial del organismo tras el colapso del puente fronterizo?"
+          "speaker": "Ana",
+          "text": "Mi amiga está muy apenada y quiero consolarla. ¿Qué hago?"
         },
         {
-          "speaker": "Delegada regional",
+          "speaker": "Tú",
           "text": "_____"
         },
         {
-          "speaker": "Portavoz de la Cruz Roja",
-          "text": "Iniciaremos de inmediato el puente aéreo para suministrar medicinas."
+          "speaker": "Ana",
+          "text": "Tienes razón, voy a llamarla."
         }
       ],
       "options": [
-        "Lamentamos profundamente que las comunidades ribereñas hayan quedado incomunicadas y exigimos un corredor seguro.",
-        "El puente fue construido en hormigón armado durante la administración anterior.",
-        "Las lanchas de motor consumen combustible diésel para su desplazamiento."
+        "Es mejor que la escuches con calma.",
+        "Es mejor que la escuchas con calma.",
+        "Es mejor que la escuchar con calma."
       ],
       "correct": 0,
       "teaches": [
-        "subjunctive-emotion"
-      ]
+        "subjunctive-value-judgments"
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b2-06-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Nos alegra que los acuerdos de reconciliación hayan devuelto la tranquilidad a los pobladores.",
-      "english": "We are glad that the reconciliation agreements have returned peace of mind to the townspeople.",
+      "sentence": "Les damos el pésame y sentimos que estén tan apenados.",
+      "english": "We offer you our condolences and we are sorry that you are so saddened.",
       "teaches": [
         "subjunctive-emotion"
       ]

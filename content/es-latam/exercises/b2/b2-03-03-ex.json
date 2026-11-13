@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "averiguar",
-          "to find out, to ascertain"
+          "calcular",
+          "to work out, to estimate"
         ],
         [
-          "deducir",
-          "to deduce, to infer"
+          "a juzgar por",
+          "judging by"
         ],
         [
-          "presunto",
-          "alleged, presumed"
+          "el aspecto",
+          "appearance, look"
         ],
         [
-          "el rastro",
-          "trail, trace"
+          "tardar",
+          "to take a long time, to be late"
         ]
       ],
       "teaches": [
@@ -31,27 +31,31 @@
       "id": "b2-03-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué significado tiene 'Estará en su despacho' en respuesta a '¿Dónde está el decano?'?",
+      "question": "Pablo is not at home. Which sentence guesses where he is now?",
       "options": [
-        "Supongo o conjeturo que probablemente se encuentra en su despacho ahora.",
-        "Irá físicamente a su despacho dentro de dos horas.",
-        "Tiene la obligación legal de permanecer en su despacho."
+        "Estará en la oficina.",
+        "Estaba en la oficina.",
+        "Estuvo en la oficina."
       ],
       "correct": 0,
       "teaches": [
         "future-probability"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b2-03-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "No contesta el teléfono; se __ quedado dormido tras el largo viaje.",
-      "hint": "haber - future conjecture",
+      "sentence": "Marta no contesta; ya __ salido de casa.",
+      "hint": "haber, she",
       "answer": "habrá",
-      "english": "He doesn't answer the phone; he must have fallen asleep after the long journey.",
+      "english": "Marta is not answering; she has probably already left home.",
       "teaches": [
-        "future-probability"
+        "futuro-perfecto"
       ]
     },
     {
@@ -59,26 +63,28 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "¿Quién",
-        "será",
-        "a",
-        "estas",
-        "horas",
-        "de",
-        "la",
-        "noche?"
+        "A",
+        "juzgar",
+        "por",
+        "su",
+        "aspecto,",
+        "tendrá",
+        "unos",
+        "cuarenta",
+        "años."
       ],
       "solution": [
-        "¿Quién",
-        "será",
-        "a",
-        "estas",
-        "horas",
-        "de",
-        "la",
-        "noche?"
+        "A",
+        "juzgar",
+        "por",
+        "su",
+        "aspecto,",
+        "tendrá",
+        "unos",
+        "cuarenta",
+        "años."
       ],
-      "english": "Who could it be at these hours of the night?",
+      "english": "Judging by his appearance, he is probably about forty.",
       "teaches": [
         "future-probability"
       ]
@@ -89,34 +95,37 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Investigador",
-          "text": "¿Por qué no se presentó el testigo clave a la audiencia de hoy?"
+          "speaker": "Ana",
+          "text": "¿Por qué tarda tanto Pablo?"
         },
         {
-          "speaker": "Ayudante",
+          "speaker": "Tú",
           "text": "_____"
         },
         {
-          "speaker": "Investigador",
-          "text": "Es lo más probable; enviaremos a alguien a verificar su domicilio."
+          "speaker": "Ana",
+          "text": "Sí, a esta hora hay mucho tráfico."
         }
       ],
       "options": [
-        "Habrá recibido amenazas o tendrá temor a represalias de la banda.",
-        "El tribunal sesiona de lunes a viernes en el palacio de justicia.",
-        "El testigo declaró el año pasado ante un juez de instrucción."
+        "No sé; habrá encontrado mucho tráfico.",
+        "No sé; encontró mucho tráfico.",
+        "No sé; habrás encontrado mucho tráfico."
       ],
       "correct": 0,
       "teaches": [
-        "future-probability"
-      ]
+        "futuro-perfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "b2-03-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Tendrá sus razones para guardar silencio, pero su actitud despierta muchas sospechas.",
-      "english": "He must have his reasons for keeping silent, but his attitude arouses many suspicions.",
+      "sentence": "Calculo que serán las nueve y media.",
+      "english": "I reckon it is about half past nine.",
       "teaches": [
         "future-probability"
       ]

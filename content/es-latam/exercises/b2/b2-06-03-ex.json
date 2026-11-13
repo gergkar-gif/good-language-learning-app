@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "inaudito",
-          "unheard of, unprecedented"
+          "menos mal",
+          "thank goodness"
         ],
         [
-          "desgarrador",
-          "heartbreaking, harrowing"
+          "la barbaridad",
+          "outrage, awful thing"
         ],
         [
-          "el oprobio",
-          "opprobrium, disgrace"
+          "el susto",
+          "fright, scare"
         ],
         [
-          "vergonzoso",
-          "shameful, disgraceful"
+          "horrible",
+          "horrible"
         ]
       ],
       "teaches": [
@@ -31,25 +31,28 @@
       "id": "b2-06-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál de las siguientes expresiones exclamativas exige MODO INDICATIVO en lugar de subjuntivo?",
+      "question": "Which sentence says \"What a shame that you can't come!\"?",
       "options": [
-        "¡Menos mal que...!",
-        "¡Qué lástima que...!",
-        "¡Es una vergüenza que...!"
+        "¡Qué pena que no puedas venir!",
+        "¡Qué pena que no puedes venir!",
+        "¡Qué pena que no poder venir!"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-emotion"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b2-06-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "¡Qué indignante que los responsables __ impunes ante la justicia!",
-      "hint": "quedar",
-      "answer": "queden",
-      "english": "How outrageous that the culprits remain unpunished before justice!",
+      "sentence": "¡Qué bien que ustedes __ a la fiesta!",
+      "hint": "venir, they, present subjunctive",
+      "answer": "vengan",
+      "english": "How good that you are coming to the party!",
       "teaches": [
         "subjunctive-emotion"
       ]
@@ -60,25 +63,21 @@
       "category": "grammar",
       "tiles": [
         "¡Qué",
-        "tristeza",
+        "horrible",
         "que",
-        "hayan",
-        "destruido",
-        "ese",
-        "patrimonio",
-        "histórico!"
+        "haya",
+        "pasado",
+        "esto!"
       ],
       "solution": [
         "¡Qué",
-        "tristeza",
+        "horrible",
         "que",
-        "hayan",
-        "destruido",
-        "ese",
-        "patrimonio",
-        "histórico!"
+        "haya",
+        "pasado",
+        "esto!"
       ],
-      "english": "What a sadness that they have destroyed that historical heritage!",
+      "english": "How horrible that this has happened!",
       "teaches": [
         "subjunctive-emotion"
       ]
@@ -89,34 +88,37 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Ciudadana indignada",
-          "text": "¿Viste cómo concluyó la audiencia preliminar del caso de corrupción?"
+          "speaker": "Ana",
+          "text": "Dicen que van a cerrar el cine del barrio."
         },
         {
-          "speaker": "Abogado",
+          "speaker": "Tú",
           "text": "_____"
         },
         {
-          "speaker": "Ciudadana indignada",
-          "text": "Es un auténtico insulto a la decencia cívica."
+          "speaker": "Ana",
+          "text": "Sí, a mí también me da pena."
         }
       ],
       "options": [
-        "¡Es un verdadero oprobio que los jueces desestimen pruebas tan contundentes sin justificación alguna!",
-        "La audiencia comenzó a las nueve y media de la mañana en la sala tres.",
-        "El código penal fue reformado por última vez hace cinco años."
+        "¡Qué barbaridad que cierren el cine del barrio!",
+        "¡Qué barbaridad que cierran el cine del barrio!",
+        "¡Qué barbaridad que cerrar el cine del barrio!"
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-emotion"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b2-06-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "¡Menos mal que los vecinos rescataron a tiempo los documentos históricos de la inundación!",
-      "english": "Thank goodness the neighbors rescued the historical documents from the flood in time!",
+      "sentence": "¡Menos mal que nadie se hizo daño, qué susto!",
+      "english": "Thank goodness nobody got hurt, what a scare!",
       "teaches": [
         "subjunctive-emotion"
       ]

@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "inquietar",
-          "to worry, to disquiet"
+          "preocupar",
+          "to worry"
         ],
         [
-          "deplorar",
-          "to deplore, to lament deeply"
+          "temer",
+          "to fear"
         ],
         [
-          "inaudito",
-          "unheard of, unprecedented"
+          "menos mal",
+          "thank goodness"
         ],
         [
-          "conculcar",
-          "to violate, to infringe rights"
+          "el hecho",
+          "fact"
         ]
       ],
       "teaches": [
@@ -30,43 +30,47 @@
     {
       "id": "b2-06-consolidation.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿En cuál de las siguientes opciones se utiliza incorrectamente el modo verbal?",
+      "category": "reading",
+      "question": "According to the text, when was Las venas abiertas de América Latina published?",
       "options": [
-        "¡Menos mal que llegues a tiempo para la reunión!",
-        "Nos indigna que se toleren semejantes abusos institucionales.",
-        "El hecho de que hayan ganado no significa que tengan la razón."
+        "En 1971.",
+        "En 1940.",
+        "En 2015."
       ],
-      "correct": 0,
-      "teaches": [
-        "subjunctive-emotion"
-      ]
+      "correct": 0
     },
     {
       "id": "b2-06-consolidation.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cómo se comporta la concordancia del verbo de afección psíquica cuando el sujeto sintáctico es una proposición introducida por 'que'?",
+      "question": "Which sentence says \"It worries me that they ban books\"?",
       "options": [
-        "Se conjuga en tercera persona singular (nos preocupa que...), sin importar el número de personas afectadas.",
-        "Debe concordar en plural si el pronombre de objeto indirecto es 'nos' o 'les'.",
-        "Adopta forma impersonal con el pronombre 'se' obligatoriamente."
+        "Me preocupa que prohíban libros.",
+        "Me preocupan que prohíban libros.",
+        "Me preocupa que prohíben libros."
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-emotion"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "gustar",
+        "2": "present-tense"
+      }
     },
     {
       "id": "b2-06-consolidation.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A los ciudadanos les asombra que el gobierno __ los informes técnicos sobre el impacto ambiental.",
-      "hint": "desoír",
-      "answer": "desoiga",
-      "english": "It astounds citizens that the government ignores technical reports on environmental impact.",
+      "sentence": "El hecho de que el libro se __ en varios países no cambia lo que dice.",
+      "hint": "prohibir, imperfect subjunctive",
+      "answers": [
+        "prohibiera",
+        "prohibiese"
+      ],
+      "english": "The fact that the book was banned in several countries does not change what it says.",
       "teaches": [
-        "subjunctive-emotion"
+        "el-hecho-de-que-subjuntivo"
       ]
     },
     {
@@ -74,10 +78,10 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "A la sociedad civil le indigna que persista la opacidad en las instituciones públicas. [Civil society is outraged that opacity persists in public institutions.]",
-        "Lamentamos profundamente que el desastre natural haya dejado a tantas familias sin hogar. [We deeply regret that the natural disaster left so many families homeless.]",
-        "¡Es un flagrante atropello que se vulnere la libertad de expresión de los periodistas! [It is a flagrant outrage that journalists' freedom of expression is violated!]",
-        "El hecho de que el país sea pródigo en recursos no garantiza una distribución equitativa. [The fact that the country is bountiful in resources does not guarantee equitable distribution.]"
+        "Eduardo Galeano nació en Montevideo en 1940. [Eduardo Galeano was born in Montevideo in 1940.]",
+        "Las venas abiertas de América Latina se publicó en 1971. [Las venas abiertas de América Latina was published in 1971.]",
+        "En los años setenta, varias dictaduras militares prohibieron el libro. [In the 1970s, several military dictatorships banned the book.]",
+        "Galeano murió en Montevideo en 2015. [Galeano died in Montevideo in 2015.]"
       ],
       "solution": [
         0,
@@ -86,8 +90,7 @@
         3
       ],
       "teaches": [
-        "subjunctive-emotion",
-        "el-hecho-de-que-subjuntivo"
+        "secuencia-narrativa"
       ]
     },
     {
@@ -96,34 +99,37 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Historiador",
-          "text": "¿Por qué la obra de Eduardo Galeano sigue despertando tanta conmoción ética más de medio siglo después?"
+          "speaker": "Profesor",
+          "text": "¿Qué hay que recordar al leer este libro?"
         },
         {
-          "speaker": "Ensayista",
+          "speaker": "Estudiante",
           "text": "_____"
         },
         {
-          "speaker": "Historiador",
-          "text": "Una prosa que transforma la herida de la historia en esperanza insumisa."
+          "speaker": "Profesor",
+          "text": "Exacto, otros autores pueden pensar otra cosa."
         }
       ],
       "options": [
-        "Porque al lector le conmueve que Galeano haya rescatado la memoria viva de los despojados con una vehemencia moral inquebrantable.",
-        "Porque las minas de plata de Potosí se encuentran a más de cuatro mil metros sobre el nivel del mar.",
-        "Porque las ediciones de bolsillo del libro suelen encuadernarse en tapa blanda."
+        "Es importante que recordemos que es la visión de Galeano.",
+        "Es importante que recordamos que es la visión de Galeano.",
+        "Es importante que recordar que es la visión de Galeano."
       ],
       "correct": 0,
       "teaches": [
-        "subjunctive-emotion"
-      ]
+        "subjunctive-value-judgments"
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b2-06-consolidation.ex07",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Deploramos que las advertencias de los científicos hayan sido minimizadas durante tanto tiempo.",
-      "english": "We deplore that scientists' warnings have been downplayed for so long.",
+      "sentence": "Es posible que a un lector nuevo le sorprenda que el libro se lea como un reportaje.",
+      "english": "A new reader may be surprised that the book reads like a news report.",
       "teaches": [
         "subjunctive-emotion"
       ]
@@ -134,14 +140,51 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Escribe una frase de indignación cívica combinando un verbo de afección psicológica y la construcción 'el hecho de que' con subjuntivo.",
-          "answer": "Nos indigna que las autoridades toleren la impunidad; el hecho de que no investiguen los atropellos agrava la crisis."
+          "prompt": "Say that it bothers you that your neighbours make noise at night, using me molesta que.",
+          "answer": "Me molesta que mis vecinos hagan ruido por la noche."
+        },
+        {
+          "prompt": "Say \"What a shame that you can't come!\".",
+          "answer": "¡Qué pena que no puedas venir!"
+        },
+        {
+          "prompt": "Say that the fact that he arrives late bothers you, starting with el hecho de que.",
+          "answer": "El hecho de que llegue tarde me molesta."
         }
       ],
       "teaches": [
-        "subjunctive-emotion",
         "el-hecho-de-que-subjuntivo"
       ]
+    },
+    {
+      "id": "b2-06-consolidation.ex09",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Why does the text say it is a good idea to read the book critically?",
+      "options": [
+        "Porque es la visión de Galeano, no la única posible.",
+        "Porque el libro tiene muchos errores en las fechas.",
+        "Porque el libro está escrito en un estilo muy técnico."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b2-06-consolidation.ex10",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence says \"I'm afraid they will arrive late\"?",
+      "options": [
+        "Temo que lleguen tarde.",
+        "Temo que llegan tarde.",
+        "Temo que llegar tarde."
+      ],
+      "correct": 0,
+      "teaches": [
+        "subjunctive-emotion"
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     }
   ]
 }

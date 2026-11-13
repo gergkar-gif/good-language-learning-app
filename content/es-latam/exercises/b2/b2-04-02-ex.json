@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "inadmisible",
-          "unacceptable, inadmissible"
+          "razonable",
+          "reasonable"
         ],
         [
-          "pertinente",
-          "pertinent, relevant"
+          "inaceptable",
+          "unacceptable"
         ],
         [
-          "censurable",
-          "blameworthy, censurable"
+          "ridículo",
+          "ridiculous"
         ],
         [
-          "convenir",
-          "to be advisable, to suit"
+          "comprensible",
+          "understandable"
         ]
       ],
       "teaches": [
@@ -31,27 +31,33 @@
       "id": "b2-04-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué modo exige la matriz 'Es inadmisible que'?",
+      "question": "Which sentence says that it is unfair that they have changed the schedule?",
       "options": [
-        "Subjuntivo, porque formula una valoración ética subjetiva.",
-        "Indicativo, porque describe una regla matemática comprobada.",
-        "Futuro simple, porque pospone el juicio para el próximo año."
+        "Es injusto que hayan cambiado el horario.",
+        "Es injusto que han cambiado el horario.",
+        "Es injusto que hayan cambiando el horario."
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-value-judgments"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-perfecto"
+      }
     },
     {
       "id": "b2-04-02.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Es indispensable que la comisión __ un informe detallado sobre el impacto ecológico.",
-      "hint": "presentar",
-      "answer": "presente",
-      "english": "It is indispensable that the commission submit a detailed report on the ecological impact.",
+      "sentence": "Era normal que nosotros __ cansados después del viaje.",
+      "hint": "estar, we, imperfect subjunctive",
+      "answers": [
+        "estuviéramos",
+        "estuviésemos"
+      ],
+      "english": "It was normal that we were tired after the trip.",
       "teaches": [
-        "subjunctive-value-judgments"
+        "correlacion-temporal-subjuntivo"
       ]
     },
     {
@@ -60,25 +66,27 @@
       "category": "grammar",
       "tiles": [
         "Es",
-        "insólito",
+        "razonable",
         "que",
-        "nadie",
-        "haya",
-        "denunciado",
+        "pidan",
+        "más",
+        "tiempo",
+        "para",
         "el",
-        "fraude."
+        "proyecto."
       ],
       "solution": [
         "Es",
-        "insólito",
+        "razonable",
         "que",
-        "nadie",
-        "haya",
-        "denunciado",
+        "pidan",
+        "más",
+        "tiempo",
+        "para",
         "el",
-        "fraude."
+        "proyecto."
       ],
-      "english": "It is unheard of that no one reported the fraud.",
+      "english": "It is reasonable that they ask for more time for the project.",
       "teaches": [
         "subjunctive-value-judgments"
       ]
@@ -89,34 +97,37 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Editorialista",
-          "text": "¿Qué opinión le merece la negativa de los funcionarios a declarar?"
+          "speaker": "Ana",
+          "text": "Dicen que van a cerrar la biblioteca los sábados. ¿Qué opinas?"
         },
         {
-          "speaker": "Jurista",
+          "speaker": "Tú",
           "text": "_____"
         },
         {
-          "speaker": "Editorialista",
-          "text": "Coincido plenamente; socava la confianza en las instituciones."
+          "speaker": "Ana",
+          "text": "Estoy de acuerdo."
         }
       ],
       "options": [
-        "Es sumamente censurable que servidores públicos eludan la rendición de cuentas ante la ciudadanía.",
-        "El palacio de gobierno tiene una fachada renacentista con seis balcones de hierro forjado.",
-        "Los funcionarios públicos cobran sus salarios el último día hábil de cada mes."
+        "Es inaceptable que cierren la biblioteca los sábados.",
+        "Es inaceptable que cierran la biblioteca los sábados.",
+        "Es inaceptable que cerrar la biblioteca los sábados."
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-value-judgments"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b2-04-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Conviene que todos los actores políticos antepongan el bienestar colectivo a sus intereses partidistas.",
-      "english": "It is advisable that all political actors prioritize the collective well-being over their partisan interests.",
+      "sentence": "Es normal que los jóvenes quieran más libertad, pero conviene que hablen con sus padres.",
+      "english": "It is normal that young people want more freedom, but it is a good idea for them to talk to their parents.",
       "teaches": [
         "subjunctive-value-judgments"
       ]

@@ -8,19 +8,19 @@
       "pairs": [
         [
           "rondar",
-          "to hover around, to be around"
+          "to be around (an age or a figure)"
+        ],
+        [
+          "la madrugada",
+          "early hours of the morning"
         ],
         [
           "la incertidumbre",
           "uncertainty"
         ],
         [
-          "constatar",
-          "to verify, to confirm"
-        ],
-        [
-          "el móvil",
-          "motive (of a crime)"
+          "quién sabe",
+          "who knows"
         ]
       ],
       "teaches": [
@@ -31,25 +31,29 @@
       "id": "b2-03-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué expresa el condicional en 'En aquel entonces el coronel tendría unos cincuenta años'?",
+      "question": "When I looked out of the window, it was probably about six. Which sentence says this?",
       "options": [
-        "Conjetura o cálculo aproximado sobre una situación en el pasado.",
-        "Una acción futura que dependía de una condición no cumplida.",
-        "Un deseo cortés formulado ante una autoridad militar."
+        "Cuando miré por la ventana, serían las seis.",
+        "Cuando miré por la ventana, serán las seis.",
+        "Cuando miré por la ventana, eran las seis."
       ],
       "correct": 0,
       "teaches": [
         "future-probability"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b2-03-04.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Cuando los vecinos salieron a la plaza, __ las cuatro de la madrugada.",
-      "hint": "ser - conditional of past conjecture",
+      "sentence": "Cuando llegamos a casa, __ las tres de la madrugada.",
+      "hint": "ser, it",
       "answer": "serían",
-      "english": "When the neighbors came out into the square, it must have been four in the morning.",
+      "english": "When we got home it was probably about three in the morning.",
       "teaches": [
         "future-probability"
       ]
@@ -59,22 +63,22 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "¿Quién",
-        "sabría",
-        "entonces",
-        "la",
-        "verdadera",
-        "historia?"
+        "¿Por",
+        "qué",
+        "nadie",
+        "lo",
+        "impediría",
+        "entonces?"
       ],
       "solution": [
-        "¿Quién",
-        "sabría",
-        "entonces",
-        "la",
-        "verdadera",
-        "historia?"
+        "¿Por",
+        "qué",
+        "nadie",
+        "lo",
+        "impediría",
+        "entonces?"
       ],
-      "english": "Who could have known the true story back then?",
+      "english": "Why did nobody stop it then, I wonder?",
       "teaches": [
         "future-probability"
       ]
@@ -85,34 +89,37 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Cronista",
-          "text": "¿A qué hora exacta ocurrieron los trágicos sucesos?"
+          "speaker": "Ana",
+          "text": "¿Cuántos años tenía el vecino?"
         },
         {
-          "speaker": "Vecino",
+          "speaker": "Tú",
           "text": "_____"
         },
         {
-          "speaker": "Cronista",
-          "text": "Esa franja horaria coincide con los testimonios del panadero."
+          "speaker": "Ana",
+          "text": "Entonces ya era mayor."
         }
       ],
       "options": [
-        "Serían las seis y media cuando Santiago Nasar bajó hacia el muelle del puerto.",
-        "El puerto fluvial fue construido por ingenieros holandeses hace dos siglos.",
-        "Los lunes por la mañana siempre hay mercado de pescado fresco en la dársena."
+        "Quién sabe; rondaría los sesenta.",
+        "Quién sabe; rondará los sesenta.",
+        "Quién sabe; rondarías los sesenta."
       ],
       "correct": 0,
       "teaches": [
         "future-probability"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "b2-03-04.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Nadie pudo precisar cuánto dinero llevaría la víctima en la cartera aquella fatídica noche.",
-      "english": "No one could specify how much money the victim must have been carrying in his wallet that fateful night.",
+      "sentence": "Serían las tres de la madrugada cuando alguien llamó a la puerta.",
+      "english": "It was probably about three in the morning when someone knocked at the door.",
       "teaches": [
         "future-probability"
       ]

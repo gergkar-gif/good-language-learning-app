@@ -505,6 +505,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-12 | ES B1 core 65, 67, 69, 71, 73, 74, 75, 76 (last core batch) | paired read, 4 units/reader (73–76 are short units, 63 items, no story); no limit stop | | A 481,357 (28 min), B 459,982 (32 min); ~120k a full unit, ~115k a short one | 687 proposed (86 / 78 / 94 / 79 / 90 / 85 / 85 / 90), 0 rejected | all eight frozen in both courses (core 40/40); reader B left 45 unmet hits across the two courses while reporting 0–3; walk 48/48 per course |
 | 11-12 | ES B1 core close-out (6 skills to core screens, 3 thin skills, 29 Reader stories) | two edit-in-place agents (Sonnet), reviewer applies their diff | A 237,046 (11 min), B 290,975 (14 min) | | all eight touched units rechecked, walked 48/48 per course, refrozen; 2 reviewer edits to A, es-latam labels fixed after B |
 | 11-13 | ES B2 pilot, core Units 1 and 2 (es-latam only) | two edit-in-place agents (Sonnet), one unit each; reviewer applies diffs | A 292,498 (14 min), B 304,407 (14 min); ~300k a unit | | 0 errors after, unmet 140 → 0; screens rewritten in English, two texts replaced | walked 12/12, both frozen; 5 reviewer edits + 4 items for two new skills |
+| 11-13 | ES B2 core Units 3–6 (es-latam) | two edit-in-place agents (Sonnet), two units each, paired by topic | A 375,044 (19 min), B 339,242 (18 min); ~180k a unit | | 0 errors / 0 suspects after in all four, unmet 357 → 0 | walked 24/24, all frozen; 5 reviewer edits |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2009,4 +2010,20 @@ The user took the four recommended options:
   from `add_missing_checklists.py` before `canDo` is written.
 - **Per-unit notes must name the cross-unit forms:** agent A taught *apenas* "barely"
   in Unit 1 while agent B taught *apenas* "as soon as" as new in Unit 2.
+
+### 2026-11-13: ES B2 core Units 3–6
+
+- **Two units per agent cut the cost from ~300k to ~180k a unit** with no loss: all
+  four units came back at 0 errors, 0 suspects, 0 unmet words. Next batch stays at two
+  per agent; try three once a batch has no registry moves.
+- **Pairing by topic worked:** Units 3/5 (probability, doubt) and 4/6 (influence,
+  emotion) each recap their partner correctly. The one cross-agent defect was two
+  identical consolidation checklist lines (`checklist-shared` caught it). **Change:**
+  the brief asks for the author's name in the text's checklist line.
+- **What the reviewer still finds:** claims about an author's intent the fact list
+  doesn't support, a challenge target that breaks its own unit's rule, an over-wide
+  grammar claim (*pedir* + infinitive). All in prose the checks can't read; keep reading
+  every text, screen tip and challenge target.
+- **Registry decisions asked ahead:** the six moves for Units 7–10 were signed off while
+  this batch ran, so the next one starts without a stop.
 

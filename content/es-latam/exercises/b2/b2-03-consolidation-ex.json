@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "la conjetura",
-          "conjecture, guess"
+          "la corazonada",
+          "hunch"
         ],
         [
           "descartar",
-          "to rule out, to dismiss"
+          "to rule out"
         ],
         [
-          "presunto",
-          "alleged, presumed"
+          "seguramente",
+          "most likely"
         ],
         [
-          "fehaciente",
-          "irrefutable, reliable"
+          "la incertidumbre",
+          "uncertainty"
         ]
       ],
       "teaches": [
@@ -31,11 +31,11 @@
       "id": "b2-03-consolidation.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Según el análisis de 'Crónica de una muerte anunciada', ¿qué demuestra la multiplicidad de testimonios recogidos por el narrador?",
+      "question": "According to the text, what do the readers of the novel wonder about?",
       "options": [
-        "Que la memoria es un laberinto de versiones contradictorias y conjeturas sobre un destino fatal.",
-        "Que todos los testigos mintieron deliberadamente ante el juez instructor.",
-        "Que el crimen se resolvió en menos de veinticuatro horas gracias a pruebas forenses definitivas."
+        "Por qué nadie hace nada para evitar el crimen.",
+        "Quién es el autor del crimen en realidad.",
+        "En qué año se publicó la novela por primera vez."
       ],
       "correct": 0
     },
@@ -43,27 +43,30 @@
       "id": "b2-03-consolidation.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "En la frase 'Serían las seis cuando los hermanos salieron de la tienda', ¿qué expresa el verbo 'serían'?",
+      "question": "Which sentence is correct Spanish?",
       "options": [
-        "Cálculo o suposición aproximada sobre la hora en el pasado.",
-        "Una orden indirecta transmitida en estilo indirecto.",
-        "Una condición imposible en el presente."
+        "Es probable que los vecinos hayan visto algo.",
+        "Es probable que los vecinos han visto algo.",
+        "Es probable que los vecinos habrán visto algo."
       ],
       "correct": 0,
       "teaches": [
-        "future-probability"
-      ]
+        "subjunctive-doubt"
+      ],
+      "distractor_skills": {
+        "2": "futuro-perfecto"
+      }
     },
     {
       "id": "b2-03-consolidation.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Es muy probable que los peritos judiciales no __ todas las huellas de la escena del crimen.",
-      "hint": "encontrar",
-      "answer": "hayan encontrado",
-      "english": "It is very probable that the forensic experts did not find all the footprints at the crime scene.",
+      "sentence": "Los vecinos no dicen nada; __ miedo.",
+      "hint": "tener, they",
+      "answer": "tendrán",
+      "english": "The neighbours say nothing; they are probably afraid.",
       "teaches": [
-        "subjunctive-doubt"
+        "future-probability"
       ]
     },
     {
@@ -71,10 +74,10 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "A lo mejor los vecinos pensaron que se trataba de una broma de carnaval. [Maybe the neighbors thought it was a carnival joke.]",
-        "Serían las seis de la mañana cuando Santiago Nasar salió de su casa vestido de blanco. [It must have been six in the morning when Santiago Nasar left his house dressed in white.]",
-        "Cabe la posibilidad de que nadie se atreviera a advertirle del peligro inminente. [There is a possibility that no one dared to warn him of the imminent danger.]",
-        "El informe forense concluyó que el ataque se produjo de manera fulminante. [The forensic report concluded that the attack took place in a lightning flash.]"
+        "García Márquez nació en 1927 en Aracataca, Colombia. [García Márquez was born in 1927 in Aracataca, Colombia.]",
+        "En 1981 publicó Crónica de una muerte anunciada. [In 1981 he published Crónica de una muerte anunciada.]",
+        "En 1982 ganó el Nobel de Literatura. [In 1982 he won the Nobel Prize in Literature.]",
+        "Murió en 2014 en la Ciudad de México. [He died in 2014 in Mexico City.]"
       ],
       "solution": [
         0,
@@ -83,8 +86,7 @@
         3
       ],
       "teaches": [
-        "subjunctive-doubt",
-        "future-probability"
+        "preterito-indefinido"
       ]
     },
     {
@@ -93,34 +95,34 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Crítico literario",
-          "text": "¿Por qué García Márquez utiliza con tanta frecuencia el condicional en la novela?"
+          "speaker": "Profesora",
+          "text": "¿Por qué crees que nadie lo impidió?"
         },
         {
-          "speaker": "Investigadora",
+          "speaker": "Estudiante",
           "text": "_____"
         },
         {
-          "speaker": "Crítico literario",
-          "text": "Una técnica narrativa que refuerza la tragedia colectiva."
+          "speaker": "Profesora",
+          "text": "Es una buena hipótesis."
         }
       ],
       "options": [
-        "Porque le permite reconstruir los sucesos pasados como hipótesis de los testigos en lugar de certezas dogmáticas.",
-        "Porque el autor desconocía las reglas de conjugación del pretérito indefinido.",
-        "Porque la historia transcurre en un futuro distante de ciencia ficción."
+        "Es probable que nadie lo creyera de verdad.",
+        "Es probable que nadie lo creía de verdad.",
+        "Es evidente que nadie lo creyera de verdad."
       ],
       "correct": 0,
       "teaches": [
-        "future-probability"
+        "subjunctive-doubt"
       ]
     },
     {
       "id": "b2-03-consolidation.ex07",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Presumiblemente, los motivos del crimen nunca quedaron esclarecidos de forma fehaciente.",
-      "english": "Presumably, the motives of the crime were never irrefutably clarified.",
+      "sentence": "Quizás nadie lo creyera, pero sin duda todos lo sabían.",
+      "english": "Perhaps nobody believed it, but without doubt everybody knew.",
       "teaches": [
         "subjunctive-doubt"
       ]
@@ -131,12 +133,20 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Escribe una conjetura sobre una situación pasada utilizando el condicional simple de probabilidad y el adverbio 'rondar'.",
-          "answer": "Cuando comenzó la asamblea, la temperatura en la sala rondaría los cuarenta grados."
+          "prompt": "Say that maybe Ana is ill, using a lo mejor.",
+          "answer": "A lo mejor Ana está enferma."
+        },
+        {
+          "prompt": "Say that Pablo is probably at home, using the future.",
+          "answer": "Pablo estará en casa."
+        },
+        {
+          "prompt": "Say that it is unlikely that they have arrived, using es poco probable que.",
+          "answer": "Es poco probable que hayan llegado."
         }
       ],
       "teaches": [
-        "future-probability"
+        "b2-hypothesizing-probability-vocab"
       ]
     }
   ]
