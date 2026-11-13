@@ -100,6 +100,22 @@ for (const level of LEVELS) {
     }
 }
 
+// Lessons of a hidden track (HIDDEN_TRACKS in build-manifest.py; "hidden": true on the
+// unit in the generated curriculum.json): the learner never sees them, so their
+// screens teach nothing to the visible lessons. The word index leaves their
+// vocabulary lists out already (build_word_lesson_index.py). A hidden lesson
+// checked on its own is checked against the visible course only, so its own
+// track's words show as unmet until the track is shown again.
+const hiddenStems = new Set();
+for (const lv of Object.values((readJson(`content/${course}/curriculum/curriculum.json`) || {}).levels || {})) {
+    for (const u of lv.units || []) {
+        if (u.hidden) for (const l of u.lessons || []) hiddenStems.add(String(l.id).replace(/^lesson\./, '').replace(/\./g, '-'));
+    }
+}
+if (onlyStems && [...onlyStems].some(s => hiddenStems.has(s))) {
+    console.error('unmet-words.js: some of these stems are in a hidden track; its own words are not counted as met');
+}
+
 // Words met through vocabulary lists: word -> earliest position.
 const firstAt = new Map();
 const meet = (word, pos) => {
@@ -109,7 +125,7 @@ const meet = (word, pos) => {
 const index = (readJson(`content/${course}/indexes/word-lesson-index.json`) || {}).byLemma || {};
 for (const [lemma, lessonId] of Object.entries(index)) {
     const stem = lessonId.replace(/^lesson\./, '').replace(/\./g, '-');
-    if (!order.has(stem)) continue;
+    if (!order.has(stem) || hiddenStems.has(stem)) continue;
     meet(lemma, order.get(stem));
     for (const t of tokens(lemma)) meet(t, order.get(stem));
 }
@@ -133,13 +149,14 @@ for (const stem of order.keys()) {
         for (const s of g.sections || []) {
             if (s.type === 'table') {
                 for (const row of s.rows || []) for (const cell of row) {
+                    if (hiddenStems.has(stem)) continue;
                     tokens(String(cell).replace(/\([^)]*\)/g, '')).filter(t => !ENGLISH.has(lower(t)))
                         .forEach(t => meet(t, order.get(stem)));
                 }
             } else if (s.type !== 'examples') {
                 for (const it of italics(s.content)) {
                     const ts = tokens(it);
-                    if (ts.length === 1) meet(ts[0], order.get(stem));
+                    if (ts.length === 1 && !hiddenStems.has(stem)) meet(ts[0], order.get(stem));
                 }
             }
         }

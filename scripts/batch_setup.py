@@ -7,6 +7,8 @@ start of every batch.
 
 Unit numbers are 1-based positions in content/<course>/curriculum/units/<level>.json
 (the course is es-es unless --course hu: Spanish is read in es-es and mirrored).
+--course es-latam reads a level that exists only in es-latam (B2): one course,
+nothing mirrored, template scripts/templates/read-spanish-latam.txt.
 Hungarian uses scripts/templates/read-hungarian.txt, and a unit of the
 `citizenship` track (HU B1 history and civics) gets the facts block
 scripts/templates/history-block.txt (user, 2026-10-22).
@@ -101,9 +103,10 @@ def main():
         k, v = a.split("=")
         readers[k.upper()] = [int(x) for x in v.split(",")]
     units = read(ROOT / f"content/{course}/curriculum/units/{level}.json")
-    spanish = course.startswith("es")
+    spanish = course == "es-es"
+    single = course.startswith("es") and not spanish   # es-latam alone (B2 has no es-es)
     latam_ids = {u["id"] for u in read(ROOT / f"content/es-latam/curriculum/units/{level}.json") or []} if spanish else set()
-    template = (ROOT / f"scripts/templates/read-{'spanish' if spanish else 'hungarian'}.txt").read_text(encoding="utf-8")
+    template = (ROOT / f"scripts/templates/read-{'spanish' if spanish else 'spanish-latam' if single else 'hungarian'}.txt").read_text(encoding="utf-8")
     history = (ROOT / "scripts/templates/history-block.txt").read_text(encoding="utf-8")
     batch.mkdir(parents=True, exist_ok=True)
     base = run(["git", "rev-parse", "--short", "origin/master"]).stdout.strip()
@@ -111,7 +114,8 @@ def main():
 
     setup = [f"# {course.split('-')[0]} {level.upper()} batch: {batch.name}", "",
              f"Started {now} from origin/master {base}. "
-             f"{len(readers)} Sonnet reader(s)" + ("; es-es read once, fixes mirrored to es-latam." if spanish else "."), ""]
+             f"{len(readers)} Sonnet reader(s)" + ("; es-es read once, fixes mirrored to es-latam." if spanish else
+                                               "; es-latam only (the level has no es-es course), nothing mirrored." if single else "."), ""]
     table = ["| Unit | es-es | es-latam |", "|---|---|---|"] if spanish else ["| Unit | track | errors / suspects |", "|---|---|---|"]
     differ = []
     for key, nums in readers.items():

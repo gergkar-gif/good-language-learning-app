@@ -67,6 +67,11 @@ def build_index(lang):
         if not level:
             continue
         for unit in level.get("units", []):
+            # A hidden track (HIDDEN_TRACKS in build-manifest.py) is not shown to the
+            # learner: a word listed only there has not been met, and "where did I
+            # learn this" must not point at a lesson the app does not show.
+            if unit.get("hidden"):
+                continue
             for lesson in unit.get("lessons", []):
                 lesson_id = lesson.get("id")
                 if not lesson_id:

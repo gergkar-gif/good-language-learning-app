@@ -55,6 +55,13 @@ def main():
     for i, (lv, u) in enumerate(units):
         for s in u.get("stems", []):
             unit_of[s] = i
+    # Units of a hidden track (HIDDEN_TRACKS in build-manifest.py, "hidden": true in
+    # the generated curriculum.json) are not shown: what only they teach is not met.
+    hidden_slugs = {(lk.lower(), u.get("slug")) for lk, L in ((read(f"content/{course}/curriculum/curriculum.json") or {})
+                    .get("levels") or {}).items() for u in L.get("units", []) if u.get("hidden")}
+    hidden = {i for i, (lv, u) in enumerate(units) if (lv, u.get("id")) in hidden_slugs}
+    if pos in hidden:
+        hidden = set()               # reading a hidden unit: its own track counts
 
     def stem_of(name):
         """The stem a screen id or file name belongs to: the longest stem it
@@ -73,7 +80,7 @@ def main():
     name = lambda i: f"{units[i][0].upper()} Unit {num[i]} {units[i][1].get('id')}"
 
     skills = (read(f"skills/{lang}.json") or {}).get("skills", {})
-    before, here, later = {}, [], []
+    before, here, later, hidden_skills = {}, [], [], []
     # skills of the next level in a family this unit's exercises drill: a lesson
     # teaching one of them under a neighbouring tag is invisible to the validator
     next_level = LEVELS[LEVELS.index(level) + 1] if level != LEVELS[-1] else None
@@ -93,7 +100,9 @@ def main():
                 above.append(sk)
             continue
         line = f"{sk.get('title', slug)} (`{slug}`, {scr})"
-        if i < pos:
+        if i in hidden:
+            hidden_skills.append(f"{name(i)}: {line}")
+        elif i < pos:
             before.setdefault(i, []).append(line)
         elif i == pos:
             here.append(line)
@@ -105,14 +114,14 @@ def main():
     by_lid = {"lesson." + s.replace("-", "."): s for s in unit_of}
     for lemma, lid in ((read(f"content/{course}/indexes/word-lesson-index.json") or {}).get("byLemma") or {}).items():
         i = unit_of.get(by_lid.get(lid))
-        if i is not None and i < pos:
+        if i is not None and i < pos and i not in hidden:
             words.setdefault(i, []).append(lemma)
 
     titles = {}
     for lv in sorted({lv for lv, _ in units[:pos]}, key=LEVELS.index):
         for f in sorted((ROOT / f"content/{course}/grammar/{lv}").glob("*-gr.json")):
             i = unit_of.get(stem_of(f.name))
-            if i is None or i >= pos:
+            if i is None or i >= pos or i in hidden:
                 continue
             g = read(f.relative_to(ROOT))
             if isinstance(g, dict) and g.get("title"):
@@ -130,6 +139,9 @@ def main():
     lines += ["", "## Grammar this unit teaches", ""] + [f"- {x}" for x in sorted(here)] or ["- (none)"]
     lines += ["", f"## Grammar later in {level.upper()} (not met: don't use, or present as new only if this unit teaches it)", ""]
     lines += [f"- {name(i)}: {x}" for i, x in sorted(later)] or ["- (none)"]
+    if hidden_skills:
+        lines += ["", "## Taught only on a screen of a hidden track (the learner has NOT met it: used or drilled here = a defect to report, the skill needs a screen in a core unit)", ""]
+        lines += [f"- {x}" for x in sorted(hidden_skills)]
     lines += ["", f"## Same family as this unit's grammar, taught at {(next_level or '').upper()} (presented or drilled here = a defect, or the skill's level is wrong: report it)", ""]
     same = sorted((s.get("level", ""), s.get("family", ""), f"{s.get('title', slug)} (`{slug}`, {s.get('taught_in')})")
                   for slug, s in skills.items() if s in above and s.get("family") in families)
