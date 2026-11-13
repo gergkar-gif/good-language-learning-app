@@ -1,0 +1,4359 @@
+diff --git a/content/es-latam/exercises/b2/b2-11-01-ex.json b/content/es-latam/exercises/b2/b2-11-01-ex.json
+index c7963575..35ca4930 100644
+--- a/content/es-latam/exercises/b2/b2-11-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-11-01-ex.json
+@@ -6,21 +6,25 @@
+       "type": "matching",
+       "category": "vocabulary",
+       "pairs": [
++        [
++          "el rumbo",
++          "course, direction"
++        ],
+         [
+           "el requisito",
+-          "requirement, prerequisite"
++          "requirement"
+         ],
+         [
+           "el escollo",
+-          "stumbling block, hurdle"
++          "stumbling block, obstacle"
+         ],
+         [
+-          "indispensable",
+-          "indispensable, essential"
++          "la cláusula",
++          "clause (in a contract)"
+         ],
+         [
+-          "la cláusula",
+-          "clause, stipulation"
++          "condicionar",
++          "to shape, to make depend on"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,10 @@
+       "id": "b2-11-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Si la empresa no hubiera diversificado sus inversiones en 2018, hoy __ al borde de la bancarrota.",
+-      "hint": "estar - condicional simple",
+-      "answer": "estaría",
+-      "english": "If the company had not diversified its investments in 2018, today it would be on the brink of bankruptcy.",
++      "sentence": "Si hubiera estudiado medicina, ahora __ médica.",
++      "hint": "ser",
++      "answer": "sería",
++      "english": "If I had studied medicine, I would be a doctor now.",
+       "teaches": [
+         "mixed-conditionals"
+       ]
+@@ -43,16 +47,20 @@
+       "id": "b2-11-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué se utiliza condicional simple en 'Si hubieras nacido en el siglo XIX, hoy no disfrutarías de estos derechos'?",
++      "question": "Which sentence means \"If I had accepted the job, I would live in Lima now\"?",
+       "options": [
+-        "Porque la prótasis alude a un hecho pasado no verificado y la apódosis a una consecuencia en el presente del hablante.",
+-        "Porque en las oraciones condicionales mixtas nunca se admiten formas del modo subjuntivo.",
+-        "Porque el verbo 'disfrutar' solo admite desinencias de condicional simple en registros literarios."
++        "Si hubiera aceptado el trabajo, ahora habría vivido en Lima.",
++        "Si hubiera aceptado el trabajo, ahora viviría en Lima.",
++        "Si aceptara el trabajo, ahora viviría en Lima."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "mixed-conditionals"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "pluscuamperfecto-subjuntivo-si",
++        "2": "hypothetical-structures"
++      }
+     },
+     {
+       "id": "b2-11-01.ex04",
+@@ -60,27 +68,31 @@
+       "category": "grammar",
+       "tiles": [
+         "Si",
+-        "hubiéramos",
+-        "firmado",
+-        "el",
+-        "acuerdo,",
+-        "hoy",
+-        "tendríamos",
+-        "mayores",
+-        "beneficios."
++        "no",
++        "hubiera",
++        "aceptado",
++        "aquel",
++        "empleo,",
++        "mi",
++        "vida",
++        "tendría",
++        "otro",
++        "rumbo."
+       ],
+       "solution": [
+         "Si",
+-        "hubiéramos",
+-        "firmado",
+-        "el",
+-        "acuerdo,",
+-        "hoy",
+-        "tendríamos",
+-        "mayores",
+-        "beneficios."
++        "no",
++        "hubiera",
++        "aceptado",
++        "aquel",
++        "empleo,",
++        "mi",
++        "vida",
++        "tendría",
++        "otro",
++        "rumbo."
+       ],
+-      "english": "If we had signed the agreement, today we would have greater benefits.",
++      "english": "If I had not accepted that job, my life would have a different course.",
+       "teaches": [
+         "mixed-conditionals"
+       ]
+@@ -91,34 +103,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Analista",
+-          "text": "¿Qué consecuencias tuvo la postergación de la reforma energética aprobada en 2015?"
++          "speaker": "Ana",
++          "text": "¿Y por qué no trabajas en el banco?"
+         },
+         {
+-          "speaker": "Consultora",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Analista",
+-          "text": "Esa miopía estratégica nos ata a combustibles fósiles sumamente costosos."
++          "speaker": "Ana",
++          "text": "Todavía puedes buscar otro puesto."
+         }
+       ],
+       "options": [
+-        "Si el congreso hubiera aprobado la ley en su momento, el país contaría hoy con una matriz eléctrica enteramente limpia.",
+-        "Las turbinas eólicas generan energía mecánica a través de la fuerza del viento costero.",
+-        "El precio del barril de petróleo crudo fluctúa según las tensiones geopolíticas globales."
++        "Si cumplo todos los requisitos, ahora trabajaría allí.",
++        "Si hubiera cumplido todos los requisitos, ahora habría trabajado allí.",
++        "Si hubiera cumplido todos los requisitos, ahora trabajaría allí."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "mixed-conditionals"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "pluscuamperfecto-subjuntivo-si"
++      }
+     },
+     {
+       "id": "b2-11-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Si hubiésemos tomado esa decisión a tiempo, hoy no enfrentaríamos esta crisis.",
+-      "english": "If we had made that decision in time, today we would not be facing this crisis.",
++      "sentence": "Si hubiéramos comprado esa casa, ahora viviríamos en el centro.",
++      "english": "If we had bought that house, we would live in the centre now.",
+       "teaches": [
+         "mixed-conditionals"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-11-02-ex.json b/content/es-latam/exercises/b2/b2-11-02-ex.json
+index 47b700ce..cdba48f2 100644
+--- a/content/es-latam/exercises/b2/b2-11-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-11-02-ex.json
+@@ -7,20 +7,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la salvedad",
+-          "qualification, caveat"
++          "terco",
++          "stubborn"
+         ],
+         [
+-          "restringir",
+-          "to restrict, to curtail"
++          "despistado",
++          "absent-minded"
+         ],
+         [
+-          "el plazo perentorio",
+-          "strict term, peremptory deadline"
++          "sensato",
++          "sensible"
+         ],
+         [
+-          "sensato",
+-          "sensible, wise"
++          "desconfiado",
++          "distrustful"
++        ],
++        [
++          "derrochador",
++          "wasteful with money"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,13 @@
+       "id": "b2-11-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Si el director fuera más prudente, no se __ involucrado en aquel litigio comercial el año pasado.",
+-      "hint": "haber - condicional compuesto",
+-      "answer": "habría",
+-      "english": "If the director were more prudent, he would not have gotten involved in that commercial litigation last year.",
++      "sentence": "Si mi hermano fuera más sensato, no __ vendido el carro.",
++      "hint": "haber",
++      "answers": [
++        "habría",
++        "hubiera"
++      ],
++      "english": "If my brother were more sensible, he would not have sold the car.",
+       "teaches": [
+         "mixed-conditionals"
+       ]
+@@ -43,16 +50,19 @@
+       "id": "b2-11-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué tipo de relación expresa 'Si no fuéramos tan exigentes, habríamos aceptado su oferta'?",
++      "question": "Which sentence means \"If I were less stubborn, I would have said sorry yesterday\"?",
+       "options": [
+-        "Un rasgo permanente de personalidad en la condición que influyó en una decisión pretérita específica.",
+-        "Una orden directa de un superior jerárquico que debe cumplirse en el futuro.",
+-        "Una hipótesis matemática comprobada mediante experimentos de laboratorio."
++        "Si fuera menos terco, ayer pediría perdón.",
++        "Si era menos terco, ayer habría pedido perdón.",
++        "Si fuera menos terco, ayer habría pedido perdón."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "mixed-conditionals"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "imperfect"
++      }
+     },
+     {
+       "id": "b2-11-02.ex04",
+@@ -60,27 +70,27 @@
+       "category": "grammar",
+       "tiles": [
+         "Si",
+-        "fueras",
+-        "más",
+-        "sensato,",
++        "Pablo",
+         "no",
+-        "habrías",
+-        "firmado",
+-        "ese",
+-        "documento."
++        "fuera",
++        "tan",
++        "derrochador,",
++        "habría",
++        "ahorrado",
++        "más."
+       ],
+       "solution": [
+         "Si",
+-        "fueras",
+-        "más",
+-        "sensato,",
++        "Pablo",
+         "no",
+-        "habrías",
+-        "firmado",
+-        "ese",
+-        "documento."
++        "fuera",
++        "tan",
++        "derrochador,",
++        "habría",
++        "ahorrado",
++        "más."
+       ],
+-      "english": "If you were more sensible, you would not have signed that document.",
++      "english": "If Pablo were not so wasteful with money, he would have saved more.",
+       "teaches": [
+         "mixed-conditionals"
+       ]
+@@ -91,22 +101,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Abogada",
+-          "text": "¿Por qué el testigo incurrió en tantas contradicciones durante el juicio oral?"
++          "speaker": "Ana",
++          "text": "Marcos olvidó la cita con el médico otra vez."
+         },
+         {
+-          "speaker": "Fiscal",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Abogada",
+-          "text": "Esa predisposición al engaño destruyó por completo su credibilidad ante el tribunal."
++          "speaker": "Ana",
++          "text": "Tienes razón."
+         }
+       ],
+       "options": [
+-        "Si ese individuo fuera honesto por naturaleza, no habría falseado las declaraciones juradas en la instrucción penal.",
+-        "Los códigos procesales civiles se actualizan mediante reformas votadas en el parlamento.",
+-        "La sala de audiencias cuenta con micrófonos para registrar el testimonio de los peritos."
++        "Si fuera menos despistado, habría llegado a tiempo a la cita.",
++        "Si fuera menos despistado, llegaría a tiempo a la cita.",
++        "Si es menos despistado, habría llegado a tiempo a la cita."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -117,8 +127,8 @@
+       "id": "b2-11-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Si fueran más prudentes, no habrían desatendido las recomendaciones técnicas.",
+-      "english": "If they were more prudent, they would not have neglected the technical recommendations.",
++      "sentence": "Si no fueran tan desconfiados, habrían aceptado la oferta.",
++      "english": "If they were not so distrustful, they would have accepted the offer.",
+       "teaches": [
+         "mixed-conditionals"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-11-03-ex.json b/content/es-latam/exercises/b2/b2-11-03-ex.json
+index 36cdceab..f6cdb85a 100644
+--- a/content/es-latam/exercises/b2/b2-11-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-11-03-ex.json
+@@ -8,15 +8,19 @@
+       "pairs": [
+         [
+           "pactar",
+-          "to agree upon, to covenant"
++          "to agree on"
+         ],
+         [
+           "la contrapartida",
+-          "counterpart, quid pro quo"
++          "something in return"
++        ],
++        [
++          "la fianza",
++          "deposit"
+         ],
+         [
+           "la salvaguarda",
+-          "safeguard, protection"
++          "safeguard"
+         ],
+         [
+           "vinculante",
+@@ -31,10 +35,10 @@
+       "id": "b2-11-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La delegación suscribirá el protocolo ambiental a condición de que los países industrializados __ fondos de mitigación.",
+-      "hint": "aportar - presente subjuntivo",
+-      "answer": "aporten",
+-      "english": "The delegation will sign the environmental protocol on the condition that industrialized nations provide mitigation funds.",
++      "sentence": "El dueño devolverá la fianza siempre y cuando __ el apartamento limpio.",
++      "hint": "dejar",
++      "answer": "dejemos",
++      "english": "The owner will return the deposit as long as we leave the flat clean.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+@@ -43,44 +47,54 @@
+       "id": "b2-11-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué modo verbal exigen obligatoriamente las locuciones 'con tal de que' y 'a condición de que'?",
++      "question": "Which sentence means \"I will lend you the car as long as you bring it back before six\"?",
+       "options": [
+-        "Modo subjuntivo siempre, tanto en pasado como en presente.",
+-        "Modo indicativo si la acción se considera segura o evidente.",
+-        "Modo infinitivo compuesto únicamente."
++        "Te presto el carro siempre y cuando lo devuelves antes de las seis.",
++        "Te presto el carro siempre y cuando lo devuelvas antes de las seis.",
++        "Te presto el carro siempre y cuando lo devolverás antes de las seis."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "conditional-conjunctions"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "present-tense",
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-11-03.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Aceptaremos",
++        "Firmaremos",
+         "el",
+-        "trato",
++        "contrato",
+         "con",
+-        "tal",
++        "la",
++        "condición",
+         "de",
+         "que",
+-        "haya",
+-        "garantías."
++        "nos",
++        "den",
++        "más",
++        "tiempo."
+       ],
+       "solution": [
+-        "Aceptaremos",
++        "Firmaremos",
+         "el",
+-        "trato",
++        "contrato",
+         "con",
+-        "tal",
++        "la",
++        "condición",
+         "de",
+         "que",
+-        "haya",
+-        "garantías."
++        "nos",
++        "den",
++        "más",
++        "tiempo."
+       ],
+-      "english": "We will accept the deal provided that there are guarantees.",
++      "english": "We will sign the contract on the condition that they give us more time.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+@@ -91,34 +105,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Ministro",
+-          "text": "¿Bajo qué condiciones apoyará su bancada el presupuesto general del Estado?"
++          "speaker": "Ana",
++          "text": "¿Vas a firmar el contrato con la empresa?"
+         },
+         {
+-          "speaker": "Portavoz parlamentario",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Ministro",
+-          "text": "Tomamos nota de esa exigencia irrenunciable para incorporarla al articulado."
++          "speaker": "Ana",
++          "text": "Entonces espera su respuesta."
+         }
+       ],
+       "options": [
+-        "Daremos nuestra anuencia siempre y cuando se congelen las tarifas de servicios básicos para los sectores vulnerables.",
+-        "El edificio del senado cuenta con alfombras rojas en las escalinatas principales.",
+-        "Las sesiones legislativas ordinarias comienzan a las diez de la mañana los días martes."
++        "Sí, a condición de que me aumentan el sueldo.",
++        "Sí, a condición de me aumenten el sueldo.",
++        "Sí, a condición de que me aumenten el sueldo."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "conditional-conjunctions"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "present-tense"
++      }
+     },
+     {
+       "id": "b2-11-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Suscribiremos el acuerdo a condición de que se establezcan salvaguardas claras.",
+-      "english": "We will sign the agreement on the condition that clear safeguards are established.",
++      "sentence": "Aceptaremos el acuerdo con tal de que haya una contrapartida.",
++      "english": "We will accept the agreement as long as there is something in return.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-11-04-ex.json b/content/es-latam/exercises/b2/b2-11-04-ex.json
+index 3fa2f547..69433a94 100644
+--- a/content/es-latam/exercises/b2/b2-11-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-11-04-ex.json
+@@ -8,19 +8,23 @@
+       "pairs": [
+         [
+           "la dispensa",
+-          "dispensation, exemption"
++          "exemption"
+         ],
+         [
+           "eximir",
+-          "to exempt, to excuse"
++          "to exempt"
+         ],
+         [
+-          "la causal",
+-          "legal cause, grounds"
++          "la fuerza mayor",
++          "circumstances beyond anyone's control"
+         ],
+         [
+-          "la fuerza mayor",
+-          "force majeure, act of God"
++          "el imprevisto",
++          "unexpected event"
++        ],
++        [
++          "incurrir",
++          "to fall into, to incur"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,10 @@
+       "id": "b2-11-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La exportación de granos quedará prohibida a menos que las empresas __ el abastecimiento del mercado interno.",
+-      "hint": "garantizar - presente subjuntivo",
+-      "answer": "garanticen",
+-      "english": "Grain export will be prohibited unless companies guarantee supply to the domestic market.",
++      "sentence": "Iremos a la playa a no ser que __ mañana.",
++      "hint": "llover",
++      "answer": "llueva",
++      "english": "We will go to the beach unless it rains tomorrow.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+@@ -43,16 +47,20 @@
+       "id": "b2-11-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿A qué formulación equivale exactamente 'No suspenderemos el desalojo a no ser que medie una orden judicial'?",
++      "question": "Which sentence means the same as \"No saldremos a menos que mejore el tiempo\"?",
+       "options": [
+-        "A 'No suspenderemos el desalojo si no media una orden judicial'.",
+-        "A 'Suspenderemos el desalojo aunque medie una orden judicial'.",
+-        "A 'Suspenderemos el desalojo porque medió una orden judicial'."
++        "No saldremos aunque mejore el tiempo.",
++        "No saldremos si no mejora el tiempo.",
++        "No saldremos porque mejora el tiempo."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "conditional-conjunctions"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "concesivas-aunque",
++        "2": "por-que-y-porque"
++      }
+     },
+     {
+       "id": "b2-11-04.ex04",
+@@ -60,29 +68,29 @@
+       "category": "grammar",
+       "tiles": [
+         "No",
+-        "habrá",
+-        "acuerdo",
++        "cambiaremos",
++        "la",
++        "fecha",
+         "a",
+         "menos",
+         "que",
+-        "cedan",
+-        "en",
+-        "sus",
+-        "demandas."
++        "haya",
++        "un",
++        "imprevisto."
+       ],
+       "solution": [
+         "No",
+-        "habrá",
+-        "acuerdo",
++        "cambiaremos",
++        "la",
++        "fecha",
+         "a",
+         "menos",
+         "que",
+-        "cedan",
+-        "en",
+-        "sus",
+-        "demandas."
++        "haya",
++        "un",
++        "imprevisto."
+       ],
+-      "english": "There will be no agreement unless they yield on their demands.",
++      "english": "We will not change the date unless something unexpected happens.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+@@ -93,34 +101,38 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Comisario",
+-          "text": "¿Bajo qué circunstancias se autorizaría el desembarco de la tripulación en cuarentena?"
++          "speaker": "Ana",
++          "text": "¿Sales a las seis hoy?"
+         },
+         {
+-          "speaker": "Inspectora sanitaria",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Comisario",
+-          "text": "De acuerdo; el buque permanecerá fondeado en la bahía hasta nuevo aviso."
++          "speaker": "Ana",
++          "text": "Entonces te espero."
+         }
+       ],
+       "options": [
+-        "Nadie podrá descender a tierra firme a menos que los médicos certifiquen la ausencia total de síntomas infecciosos.",
+-        "Las gaviotas anidan en los acantilados rocosos durante los meses de primavera.",
+-        "El puerto deportivo ofrece amarres seguros para yates de recreo."
++        "Sí, salgo a las seis, salvo que hay mucho trabajo.",
++        "Sí, salgo a las seis, salvo si haya mucho trabajo.",
++        "Sí, salgo a las seis, salvo si hay mucho trabajo."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "conditional-conjunctions"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "present-tense",
++        "1": "subjuntivo-morfologia"
++      }
+     },
+     {
+       "id": "b2-11-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "No modificaremos el contrato a no ser que intervenga una causal de fuerza mayor.",
+-      "english": "We will not modify the contract unless a force majeure event intervenes.",
++      "sentence": "Todos pagarán la entrada, a menos que tengan una dispensa.",
++      "english": "Everyone will pay the entrance fee unless they have an exemption.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-11-05-ex.json b/content/es-latam/exercises/b2/b2-11-05-ex.json
+index f75a4057..46d33ec3 100644
+--- a/content/es-latam/exercises/b2/b2-11-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-11-05-ex.json
+@@ -8,19 +8,23 @@
+       "pairs": [
+         [
+           "la objeción",
+-          "objection, challenge"
++          "objection"
+         ],
+         [
+           "el reparo",
+-          "qualm, objection"
++          "reservation, objection"
+         ],
+         [
+-          "sopesar",
+-          "to weigh up, to ponder"
++          "discrepar",
++          "to disagree"
+         ],
+         [
+-          "la venia",
+-          "permission, leave, nod"
++          "matizar",
++          "to qualify, to add nuance"
++        ],
++        [
++          "la molestia",
++          "trouble, bother"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,10 @@
+       "id": "b2-11-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Si se me __ intervenir en este debate, sugeriría posponer la votación hasta mañana.",
+-      "hint": "permitir - presente indicativo",
+-      "answer": "permite",
+-      "english": "If I am permitted to intervene in this debate, I would suggest postponing the vote until tomorrow.",
++      "sentence": "Si no me __, el vuelo sale a las ocho.",
++      "hint": "equivocar",
++      "answer": "equivoco",
++      "english": "If I am not mistaken, the flight leaves at eight.",
+       "teaches": [
+         "polite-softening"
+       ]
+@@ -43,16 +47,20 @@
+       "id": "b2-11-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué función pragmática cumple el giro 'si bien se mira' en una exposición formal?",
++      "question": "Which sentence softens the statement with \"if I am not mistaken\"?",
+       "options": [
+-        "Atenúa una afirmación e invita al auditorio a reconsiderar el asunto desde una perspectiva más ecuánime.",
+-        "Indica una duda absoluta sobre la veracidad de los hechos observados visualmente.",
+-        "Exige la presentación obligatoria de fotografías como prueba pericial."
++        "Si no me equivocara, la reunión es el jueves.",
++        "Si no me equivoque, la reunión es el jueves.",
++        "Si no me equivoco, la reunión es el jueves."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "polite-softening"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "imperfect-subjunctive-forms",
++        "1": "subjuntivo-morfologia"
++      }
+     },
+     {
+       "id": "b2-11-05.ex04",
+@@ -60,27 +68,25 @@
+       "category": "grammar",
+       "tiles": [
+         "Si",
+-        "se",
+         "me",
+         "permite,",
+         "quisiera",
+         "hacer",
+-        "un",
++        "una",
+         "breve",
+-        "reparo."
++        "objeción."
+       ],
+       "solution": [
+         "Si",
+-        "se",
+         "me",
+         "permite,",
+         "quisiera",
+         "hacer",
+-        "un",
++        "una",
+         "breve",
+-        "reparo."
++        "objeción."
+       ],
+-      "english": "If I may, I would like to make a brief objection.",
++      "english": "If you will allow me, I would like to make a short objection.",
+       "teaches": [
+         "polite-softening"
+       ]
+@@ -91,24 +97,24 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Senador",
+-          "text": "El dictamen de la comisión fue aprobado por mayoría absoluta."
++          "speaker": "Jefa",
++          "text": "Ya terminé el informe."
+         },
+         {
+-          "speaker": "Senadora opositora",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Senador",
+-          "text": "Tiene usted la palabra para fundar su voto en contra."
++          "speaker": "Jefa",
++          "text": "Claro, se lo mando esta tarde."
+         }
+       ],
+       "options": [
+-        "Con la venia de la mesa directiva, si se me permite una precisión, desearía dejar asentada una reserva fundamental.",
+-        "El reloj del recinto marca exactamente las cuatro y cuarto de la tarde.",
+-        "Los diarios nacionales publicaron resúmenes de la jornada de ayer."
++        "Si no hay molestia, ¿me lo podría mandar hoy?",
++        "Si no es molestia, ¿me lo podría mandar hoy?",
++        "Si no es molesta, ¿me lo podría mandar hoy?"
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "polite-softening"
+       ]
+@@ -117,8 +123,8 @@
+       "id": "b2-11-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Si cupiera alguna objeción a la propuesta, convendría formularla con prontitud.",
+-      "english": "If any objection to the proposal were conceivable, it would be advisable to formulate it promptly.",
++      "sentence": "Si mal no recuerdo, la reunión empieza a las diez.",
++      "english": "If I remember rightly, the meeting starts at ten.",
+       "teaches": [
+         "polite-softening"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-11-consolidation-ex.json b/content/es-latam/exercises/b2/b2-11-consolidation-ex.json
+index 6a959b19..23051407 100644
+--- a/content/es-latam/exercises/b2/b2-11-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-11-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el requisito",
+-          "requirement, prerequisite"
++          "el rumbo",
++          "course, direction"
+         ],
+         [
+-          "la salvedad",
+-          "qualification, caveat"
++          "la fianza",
++          "deposit"
+         ],
+         [
+-          "la salvaguarda",
+-          "safeguard, protection"
++          "el imprevisto",
++          "unexpected event"
+         ],
+         [
+-          "la causal",
+-          "legal cause, grounds"
++          "la objeción",
++          "objection"
+         ]
+       ],
+       "teaches": [
+@@ -31,40 +31,47 @@
+       "id": "b2-11-consolidation.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué esquema temporal caracteriza a la condicional mixta 'Si hubiéramos aceptado aquel plan, hoy tendríamos estabilidad'?",
++      "question": "Which sentence means \"If he were more careful, he would not have lost the keys\"?",
+       "options": [
+-        "Condición irreal situada en el pasado que produce una consecuencia visible en el presente.",
+-        "Condición habitual en presente que genera un resultado consumado en el pasado.",
+-        "Mandato imperativo que exige cumplimiento inmediato en el futuro próximo."
++        "Si es más prudente, no habría perdido las llaves.",
++        "Si fuera más prudente, no habría perdido las llaves.",
++        "Si fuera más prudente, no perdería las llaves."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "mixed-conditionals"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "si-clauses"
++      }
+     },
+     {
+       "id": "b2-11-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál de las siguientes oraciones contiene un nexo condicional restrictivo correctamente construido?",
++      "question": "Which sentence sets the condition correctly?",
+       "options": [
+-        "Aceptaremos el pacto a condición de que se garanticen los derechos adquiridos.",
+-        "Aceptaremos el pacto a condición de que se garantizarán los derechos adquiridos.",
+-        "Aceptaremos el pacto a condición de que se garantizan los derechos adquiridos."
++        "Iremos al concierto siempre y cuando conseguiremos entradas.",
++        "Iremos al concierto siempre y cuando consigamos entradas.",
++        "Iremos al concierto siempre y cuando conseguimos entradas."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "conditional-conjunctions"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "futuro-simple",
++        "2": "present-tense"
++      }
+     },
+     {
+       "id": "b2-11-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "No levantaremos el estado de emergencia a menos que la corte suprema __ la legalidad de los decretos.",
+-      "hint": "avalar - presente subjuntivo",
+-      "answer": "avale",
+-      "english": "We will not lift the state of emergency unless the supreme court endorses the legality of the decrees.",
++      "sentence": "El museo abre todos los días, excepto que __ una fiesta.",
++      "hint": "haber",
++      "answer": "haya",
++      "english": "The museum opens every day, unless there is a festival.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+@@ -74,56 +81,37 @@
+       "type": "sentence-order",
+       "category": "grammar",
+       "sentences": [
+-        "Si no hubiéramos negociado las cláusulas a tiempo, hoy estaríamos desprotegidos. [If we had not negotiated the clauses in time, today we would be unprotected.]",
+-        "Si fuéramos más flexibles, habríamos alcanzado un acuerdo en aquella reunión. [If we were more flexible, we would have reached an agreement in that meeting.]",
+-        "Firmaremos el contrato siempre y cuando respeten las salvaguardas pactadas. [We will sign the contract provided that they respect the agreed safeguards.]",
+-        "La asamblea continuará a menos que la mayoría solicite un receso de cortesía. [The assembly will continue unless the majority requests a courtesy recess.]"
++        "Mario Benedetti nació en 1920. [Mario Benedetti was born in 1920.]",
++        "Benedetti publicó La tregua en 1960. [Benedetti published La tregua in 1960.]",
++        "Benedetti murió en 2009. [Benedetti died in 2009.]"
+       ],
+       "solution": [
+         0,
+         1,
+-        2,
+-        3
++        2
+       ],
+       "teaches": [
+-        "mixed-conditionals",
+-        "conditional-conjunctions"
++        "secuencia-narrativa"
+       ]
+     },
+     {
+       "id": "b2-11-consolidation.ex06",
+-      "type": "dialogue-complete",
+-      "category": "dialogue",
+-      "prompt": [
+-        {
+-          "speaker": "Lector",
+-          "text": "¿Cómo definiría el sentido del destino en La tregua de Mario Benedetti?"
+-        },
+-        {
+-          "speaker": "Crítica",
+-          "text": "_____"
+-        },
+-        {
+-          "speaker": "Lector",
+-          "text": "Un conmovedor testimonio sobre la fragilidad de la felicidad cotidiana."
+-        }
+-      ],
++      "type": "multiple-choice",
++      "category": "reading",
++      "question": "According to the text, who starts working in Santomé's office?",
+       "options": [
+-        "Martín Santomé vive atrapado en una condicional mixta desgarradora: si el amor de Laura no hubiera iluminado su tedio burocrático, hoy sería un anciano amargado sin memoria luminosa.",
+-        "Martín Santomé vive satisfecho con su vida de oficina: nunca ha deseado otra cosa ni ha conocido el amor en su madurez.",
+-        "Martín Santomé cree que el azar decide el curso de las vidas grises: las circunstancias cotidianas pesan más en su ánimo que las ilusiones de un porvenir feliz."
++        "Una mujer joven llamada Laura Avellaneda.",
++        "Un compañero de la universidad llamado Jaime.",
++        "Una de las hijas de Santomé."
+       ],
+-      "correct": 0,
+-      "teaches": [
+-        "mixed-conditionals"
+-      ]
++      "correct": 0
+     },
+     {
+       "id": "b2-11-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Aprobaremos el pliego de condiciones siempre que se respeten los plazos estipulados.",
+-      "english": "We will approve the specifications provided that the stipulated deadlines are respected.",
++      "sentence": "Compraremos la casa con tal de que el banco nos dé el dinero.",
++      "english": "We will buy the house as long as the bank gives us the money.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+@@ -134,13 +122,33 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Redacta una cláusula contractual o directriz formal empleando un nexo restrictivo ('siempre y cuando', 'a condición de que') o un período condicional mixto.",
+-          "answer": "La junta directiva autorizará el financiamiento del proyecto siempre y cuando los auditores externos avalen el balance contable sin reservas."
++          "prompt": "Say that if you had learned Spanish earlier, you would speak it better now.",
++          "answer": "Si hubiera aprendido español antes, ahora lo hablaría mejor."
++        },
++        {
++          "prompt": "Say that you will accept the offer as long as the price goes down, using con tal de que.",
++          "answer": "Aceptaré la oferta con tal de que baje el precio."
++        },
++        {
++          "prompt": "Say that, if you are not mistaken, the meeting is at ten, using si no me equivoco.",
++          "answer": "Si no me equivoco, la reunión es a las diez."
+         }
+       ],
+       "teaches": [
+-        "conditional-conjunctions"
++        "b2-mixed-restrictive-conditionals-vocab"
+       ]
++    },
++    {
++      "id": "b2-11-consolidation.ex09",
++      "type": "multiple-choice",
++      "category": "reading",
++      "question": "According to the text, when did La tregua come out?",
++      "options": [
++        "En 1960.",
++        "En 1920.",
++        "En 2009."
++      ],
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-12-01-ex.json b/content/es-latam/exercises/b2/b2-12-01-ex.json
+index 64da9f0c..f0d52e69 100644
+--- a/content/es-latam/exercises/b2/b2-12-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-12-01-ex.json
+@@ -11,16 +11,20 @@
+           "purpose, aim"
+         ],
+         [
+-          "el cometido",
+-          "task, mandate, mission"
++          "la finalidad",
++          "aim, purpose"
+         ],
+         [
+-          "encaminar",
+-          "to channel, to direct towards"
++          "la meta",
++          "goal, target"
++        ],
++        [
++          "perseguir",
++          "to pursue, to aim at"
+         ],
+         [
+           "la directriz",
+-          "guideline, directive"
++          "guideline"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,13 @@
+       "id": "b2-12-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El parlamento aprobó la ley a fin de que los ciudadanos __ sus derechos fundamentales ante los tribunales.",
+-      "hint": "poder - presente subjuntivo",
+-      "answer": "puedan",
+-      "english": "Parliament passed the law so that citizens can exercise their fundamental rights before the courts.",
++      "sentence": "La escuela organizó una reunión a fin de que los padres __ al director.",
++      "hint": "conocer",
++      "answers": [
++        "conocieran",
++        "conociesen"
++      ],
++      "english": "The school organised a meeting so that the parents could meet the head.",
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+       ]
+@@ -43,44 +50,52 @@
+       "id": "b2-12-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué la oración 'El canciller intervino para que se reanude el diálogo' exige modo subjuntivo?",
++      "question": "Which sentence means \"The teacher repeated the rule so that we would understand it\"?",
+       "options": [
+-        "Porque expresa una intención o finalidad prospectiva con sujetos gramaticales distintos en ambas cláusulas.",
+-        "Porque la conjunción 'para que' es un conector causal que describe hechos ya consumados.",
+-        "Porque el verbo 'reanudar' pertenece a la tercera conjugación de verbos reflexivos."
++        "La profesora repitió la regla a fin de que la entendíamos.",
++        "La profesora repitió la regla a fin de que la entendiéramos.",
++        "La profesora repitió la regla a fin de que la entenderíamos."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "imperfect",
++        "2": "condicional-regular"
++      }
+     },
+     {
+       "id": "b2-12-01.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "El",
+-        "gobierno",
+-        "legisló",
+-        "a",
+-        "fin",
++        "Cambiaremos",
++        "el",
++        "horario",
++        "con",
++        "el",
++        "objeto",
+         "de",
+         "que",
+-        "hubiera",
+-        "justicia."
++        "todos",
++        "puedan",
++        "venir."
+       ],
+       "solution": [
+-        "El",
+-        "gobierno",
+-        "legisló",
+-        "a",
+-        "fin",
++        "Cambiaremos",
++        "el",
++        "horario",
++        "con",
++        "el",
++        "objeto",
+         "de",
+         "que",
+-        "hubiera",
+-        "justicia."
++        "todos",
++        "puedan",
++        "venir."
+       ],
+-      "english": "The government legislated so that there would be justice.",
++      "english": "We will change the schedule so that everyone can come.",
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+       ]
+@@ -91,34 +106,38 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Rectora",
+-          "text": "¿Con qué propósito se fundó el nuevo centro de investigaciones bioéticas?"
++          "speaker": "Ana",
++          "text": "¿Con qué propósito mandaron una carta a todos los vecinos?"
+         },
+         {
+-          "speaker": "Investigador principal",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Rectora",
+-          "text": "Un cometido esencial para asegurar la dimensión humanista de la ciencia."
++          "speaker": "Ana",
++          "text": "Entonces ya todos están informados."
+         }
+       ],
+       "options": [
+-        "Se creó a fin de que los académicos evalúen el impacto de las tecnologías emergentes sobre los derechos ciudadanos.",
+-        "El laboratorio central dispone de tres microscopios electrónicos adquiridos en Japón.",
+-        "Las clases presenciales de biología general comienzan puntualmente a las ocho de la mañana."
++        "La mandaron a fin de que todos sabrían las reglas nuevas.",
++        "La mandaron a fin de que todos supieran las reglas nuevas.",
++        "La mandaron a fin de que todos saben las reglas nuevas."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "condicional-regular",
++        "2": "present-tense"
++      }
+     },
+     {
+       "id": "b2-12-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Se reformó el estatuto con el objeto de que se garantice la equidad interna.",
+-      "english": "The statute was reformed in order for internal equity to be guaranteed.",
++      "sentence": "Convocaron a una reunión a fin de que todos opinaran sobre el plan.",
++      "english": "They called a meeting so that everyone could give an opinion on the plan.",
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-12-02-ex.json b/content/es-latam/exercises/b2/b2-12-02-ex.json
+index d1a0755d..5a274243 100644
+--- a/content/es-latam/exercises/b2/b2-12-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-12-02-ex.json
+@@ -8,19 +8,23 @@
+       "pairs": [
+         [
+           "propiciar",
+-          "to foster, to facilitate"
++          "to encourage, to bring about"
+         ],
+         [
+-          "la atribución",
+-          "power, authority, attribution"
++          "el afán",
++          "keen desire"
+         ],
+         [
+-          "el afán",
+-          "eagerness, keen desire"
++          "emprender",
++          "to undertake"
++        ],
++        [
++          "la gestión",
++          "step taken, procedure"
+         ],
+         [
+-          "viabilizar",
+-          "to make viable, to facilitate"
++          "diligente",
++          "diligent, hard-working"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,10 @@
+       "id": "b2-12-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El canciller solicitó una reunión urgente a fin de __ los términos del acuerdo de paz.",
+-      "hint": "negociar - infinitivo",
+-      "answer": "negociar",
+-      "english": "The foreign minister requested an urgent meeting in order to negotiate the terms of the peace agreement.",
++      "sentence": "El alcalde viajó a la capital con el objeto de __ con la ministra.",
++      "hint": "to meet, reflexive",
++      "answer": "reunirse",
++      "english": "The mayor travelled to the capital in order to meet the minister.",
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+       ]
+@@ -43,44 +47,47 @@
+       "id": "b2-12-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué es incorrecto decir 'El abogado fue al tribunal para que él presentara la demanda'?",
++      "question": "Which sentence says that Marta works so that she herself can buy a house?",
+       "options": [
+-        "Porque al haber correferencia de sujeto entre el verbo principal y la finalidad debe emplearse infinitivo: 'para presentar la demanda'.",
+-        "Porque el verbo 'presentar' solo admite subjuntivo cuando va precedido de adverbios de duda.",
+-        "Porque en las oraciones jurídicas está prohibido el uso de pronombres personales de tercera persona."
++        "Marta trabaja mucho para que compre una casa.",
++        "Marta trabaja mucho para comprar una casa.",
++        "Marta trabaja mucho para que compra una casa."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+-        "subjuntivo-de-finalidad-para-que"
+-      ]
++        "infinitive-vs-que-subjunctive"
++      ],
++      "distractor_skills": {
++        "2": "present-tense"
++      }
+     },
+     {
+       "id": "b2-12-02.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Los",
+-        "expertos",
+-        "viajaron",
+-        "para",
+-        "evaluar",
+-        "los",
+-        "daños",
+-        "del",
+-        "sismo."
++        "Hizo",
++        "varias",
++        "gestiones",
++        "a",
++        "fin",
++        "de",
++        "obtener",
++        "el",
++        "permiso."
+       ],
+       "solution": [
+-        "Los",
+-        "expertos",
+-        "viajaron",
+-        "para",
+-        "evaluar",
+-        "los",
+-        "daños",
+-        "del",
+-        "sismo."
++        "Hizo",
++        "varias",
++        "gestiones",
++        "a",
++        "fin",
++        "de",
++        "obtener",
++        "el",
++        "permiso."
+       ],
+-      "english": "The experts traveled in order to evaluate the earthquake damage.",
++      "english": "She took several steps in order to get the permit.",
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+       ]
+@@ -91,34 +98,34 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Contralor",
+-          "text": "¿Con qué propósito comparece la directiva ante la comisión parlamentaria?"
++          "speaker": "Ana",
++          "text": "¿Por qué viajas a Lima?"
+         },
+         {
+-          "speaker": "Abogado corporativo",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Contralor",
+-          "text": "Escucharemos sus descargos con la debida atención reglamentaria."
++          "speaker": "Ana",
++          "text": "Qué buena idea."
+         }
+       ],
+       "options": [
+-        "Comparecemos con el objeto de aclarar los informes contables y disipar cualquier sombra de duda.",
+-        "Las actas de la sesión anterior están encuadernadas en piel de color verde oscuro.",
+-        "El ascensor del parlamento tiene capacidad para seis personas simultáneamente."
++        "Viajo con el objeto de que visite a unos amigos.",
++        "Viajo con el objeto en visitar a unos amigos.",
++        "Viajo con el objeto de visitar a unos amigos."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+-        "subjuntivo-de-finalidad-para-que"
++        "infinitive-vs-que-subjunctive"
+       ]
+     },
+     {
+       "id": "b2-12-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El comité se congregó a fin de dirimir las discrepancias sobre el proyecto.",
+-      "english": "The committee convened in order to resolve discrepancies regarding the project.",
++      "sentence": "Emprendimos el viaje a fin de visitar a la familia.",
++      "english": "We set out on the trip in order to visit the family.",
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-12-03-ex.json b/content/es-latam/exercises/b2/b2-12-03-ex.json
+index 517b536c..ec3895f5 100644
+--- a/content/es-latam/exercises/b2/b2-12-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-12-03-ex.json
+@@ -8,19 +8,23 @@
+       "pairs": [
+         [
+           "el horizonte",
+-          "horizon, outlook"
+-        ],
+-        [
+-          "la prospectiva",
+-          "foresight, forward-looking analysis"
++          "outlook, time horizon"
+         ],
+         [
+           "la envergadura",
+-          "scope, scale, magnitude"
++          "scale, scope"
+         ],
+         [
+           "el hito",
+-          "milestone, landmark"
++          "milestone"
++        ],
++        [
++          "proyectar",
++          "to plan, to project"
++        ],
++        [
++          "la previsión",
++          "forecast"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,13 @@
+       "id": "b2-12-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La cumbre internacional sesionó con miras a __ un tratado vinculante sobre biodiversidad marina.",
+-      "hint": "aprobar - infinitivo",
+-      "answer": "aprobar",
+-      "english": "The international summit met with a view to approving a binding treaty on marine biodiversity.",
++      "sentence": "La ciudad construyó un parque con __ a mejorar la vida de los vecinos.",
++      "hint": "plural noun",
++      "answers": [
++        "miras",
++        "vistas"
++      ],
++      "english": "The city built a park with a view to improving the neighbours' lives.",
+       "teaches": [
+         "purpose-connectors"
+       ]
+@@ -43,42 +50,46 @@
+       "id": "b2-12-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué diferencia semántica existe entre 'Habló de modo que todos se enteraron' y 'Habló de modo que todos se enteraran'?",
++      "question": "Which sentence can replace \"Aprendemos inglés con miras a trabajar fuera\"?",
+       "options": [
+-        "La primera es consecutiva (constata un hecho real en indicativo) y la segunda es final (expresa el propósito o intención en subjuntivo).",
+-        "Ambas expresan exactamente lo mismo sin ningún cambio de significado.",
+-        "La primera expresa una orden obligatoria y la segunda un deseo irrealizable."
++        "Aprendemos inglés después de trabajar fuera.",
++        "Aprendemos inglés con vistas a trabajar fuera.",
++        "Aprendemos inglés a pesar de trabajar fuera."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "purpose-connectors"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "antes-despues-infinitive",
++        "2": "a-pesar-de"
++      }
+     },
+     {
+       "id": "b2-12-03.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Trabajamos",
++        "Ahorramos",
++        "dinero",
+         "con",
+         "miras",
+         "a",
+-        "consolidar",
+-        "la",
+-        "paz",
+-        "continental."
++        "comprar",
++        "una",
++        "casa."
+       ],
+       "solution": [
+-        "Trabajamos",
++        "Ahorramos",
++        "dinero",
+         "con",
+         "miras",
+         "a",
+-        "consolidar",
+-        "la",
+-        "paz",
+-        "continental."
++        "comprar",
++        "una",
++        "casa."
+       ],
+-      "english": "We work with a view to consolidating continental peace.",
++      "english": "We save money with a view to buying a house.",
+       "teaches": [
+         "purpose-connectors"
+       ]
+@@ -89,24 +100,24 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Ministra de Comercio",
+-          "text": "¿Con qué horizonte temporal se negoció el acuerdo aduanero regional?"
++          "speaker": "Ana",
++          "text": "¿Con qué objetivo abrieron esa oficina?"
+         },
+         {
+-          "speaker": "Negociador jefe",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Ministra de Comercio",
+-          "text": "Una meta ambiciosa que potenciará nuestras exportaciones hacia el Pacífico."
++          "speaker": "Ana",
++          "text": "Parece un buen plan."
+         }
+       ],
+       "options": [
+-        "Se estructuró con vistas a eliminar los aranceles industriales de forma progresiva en un plazo de diez años.",
+-        "Los puertos fluviales del continente registran variaciones estacionales en el calado de los barcos.",
+-        "El salón de recepciones de la cancillería fue remodelado en el año 2012."
++        "La abrieron con vistas en crecer en el mercado regional.",
++        "La abrieron con vistas a creciendo en el mercado regional.",
++        "La abrieron con vistas a crecer en el mercado regional."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "purpose-connectors"
+       ]
+@@ -115,8 +126,8 @@
+       "id": "b2-12-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Se coordinaron los esfuerzos de modo que se optimizaran los recursos disponibles.",
+-      "english": "Efforts were coordinated so that available resources would be optimized.",
++      "sentence": "Cambiamos el horario de modo que todos pudieran venir.",
++      "english": "We changed the schedule so that everyone could come.",
+       "teaches": [
+         "purpose-connectors"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-12-04-ex.json b/content/es-latam/exercises/b2/b2-12-04-ex.json
+index 88435b8e..cb672f4f 100644
+--- a/content/es-latam/exercises/b2/b2-12-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-12-04-ex.json
+@@ -8,19 +8,23 @@
+       "pairs": [
+         [
+           "la cautela",
+-          "caution, prudence"
++          "caution"
+         ],
+         [
+-          "soslayar",
+-          "to avoid, to sidestep"
++          "el contratiempo",
++          "setback, unexpected problem"
+         ],
+         [
+-          "precaver",
+-          "to guard against, to prevent"
++          "disuadir",
++          "to dissuade, to talk out of"
+         ],
+         [
+-          "disuadir",
+-          "to deter, to dissuade"
++          "la advertencia",
++          "warning"
++        ],
++        [
++          "resguardar",
++          "to protect, to keep safe"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,10 @@
+       "id": "b2-12-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Las autoridades evacuaron las poblaciones costeras a fin de que el huracán no __ pérdidas de vidas humanas.",
+-      "hint": "cobrarse - imperfecto subjuntivo",
+-      "answer": "se cobrara",
+-      "english": "Authorities evacuated coastal populations so that the hurricane would not claim human lives.",
++      "sentence": "Cierra la puerta para que el gato no __ a la calle.",
++      "hint": "salir",
++      "answer": "salga",
++      "english": "Close the door so that the cat does not go out into the street.",
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+       ]
+@@ -43,46 +47,50 @@
+       "id": "b2-12-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué valor pragmático aporta la construcción 'para que no se malinterprete mi postura'?",
++      "question": "Which sentence means \"Take an umbrella, in case it rains\"?",
+       "options": [
+-        "Una finalidad preventiva que busca despejar dudas y precaver equívocos en la comunicación.",
+-        "Una prohibición legal imperativa de carácter sancionatorio.",
+-        "Una hipótesis contrafáctica imposible sobre el pasado histórico."
++        "Lleva un paraguas, no sea que llueve.",
++        "Lleva un paraguas, no sea que llueva.",
++        "Lleva un paraguas, no sea que lloverá."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+-        "subjuntivo-de-finalidad-para-que"
+-      ]
++        "purpose-connectors"
++      ],
++      "distractor_skills": {
++        "0": "present-tense",
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-12-04.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Tomaron",
+-        "medidas",
+-        "para",
+-        "que",
++        "Anotamos",
++        "la",
++        "hora",
++        "a",
++        "fin",
++        "de",
+         "no",
+-        "se",
+-        "repitiera",
+-        "el",
+-        "desastre."
++        "llegar",
++        "tarde."
+       ],
+       "solution": [
+-        "Tomaron",
+-        "medidas",
+-        "para",
+-        "que",
++        "Anotamos",
++        "la",
++        "hora",
++        "a",
++        "fin",
++        "de",
+         "no",
+-        "se",
+-        "repitiera",
+-        "el",
+-        "desastre."
++        "llegar",
++        "tarde."
+       ],
+-      "english": "They took measures so that the disaster would not repeat itself.",
++      "english": "We wrote down the time so as not to arrive late.",
+       "teaches": [
+-        "subjuntivo-de-finalidad-para-que"
++        "infinitive-vs-que-subjunctive"
+       ]
+     },
+     {
+@@ -91,34 +99,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Ministro de Salud",
+-          "text": "¿Por qué se declaró la cuarentena preventiva en los puertos de desembarco?"
++          "speaker": "Ana",
++          "text": "¿Por qué hablas tan bajo?"
+         },
+         {
+-          "speaker": "Epidemióloga",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Ministro de Salud",
+-          "text": "Una salvaguarda indispensable para proteger a toda la población insular."
++          "speaker": "Ana",
++          "text": "Claro, entiendo."
+         }
+       ],
+       "options": [
+-        "Se procedió al aislamiento preventivo para que el virus no se propagara de manera comunitaria hacia los centros urbanos.",
+-        "Los almacenes aduaneros resguardan cargamentos de café en sacos de yute natural.",
+-        "Las gaviotas marinas sobrevuelan las bahías durante la bajamar."
++        "Hablo bajo para que no despierto al bebé.",
++        "Hablo bajo para no despertar el bebé.",
++        "Hablo bajo para no despertar al bebé."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+-        "subjuntivo-de-finalidad-para-que"
+-      ]
++        "infinitive-vs-que-subjunctive"
++      ],
++      "distractor_skills": {
++        "0": "present-tense"
++      }
+     },
+     {
+       "id": "b2-12-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Se reforzó el blindaje legal a fin de que no prosperen demandas fraudulentas.",
+-      "english": "Legal shielding was reinforced so that fraudulent lawsuits do not succeed.",
++      "sentence": "Cerramos las ventanas a fin de que no entrara el frío.",
++      "english": "We closed the windows so that the cold would not come in.",
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-12-05-ex.json b/content/es-latam/exercises/b2/b2-12-05-ex.json
+index 33ad39de..f8e41022 100644
+--- a/content/es-latam/exercises/b2/b2-12-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-12-05-ex.json
+@@ -7,20 +7,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el móvil",
+-          "motive, driving reason"
++          "proponerse",
++          "to set out to, to resolve"
+         ],
+         [
+-          "la coartada",
+-          "alibi, pretext"
++          "el empeño",
++          "determination, effort"
+         ],
+         [
+-          "dilucidar",
+-          "to elucidate, to clarify"
++          "esmerarse",
++          "to take great care"
+         ],
+         [
+-          "la teleología",
+-          "doctrine of purpose, teleology"
++          "el anhelo",
++          "longing, deep wish"
++        ],
++        [
++          "la voluntad",
++          "will, willingness"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,13 @@
+       "id": "b2-12-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Castel afirmó que pintó aquella ventanita al solo efecto de que María Iribarne __ su mensaje secreto.",
+-      "hint": "descifrar - imperfecto subjuntivo",
+-      "answer": "descifrara",
+-      "english": "Castel stated that he painted that little window for the sole purpose of María Iribarne deciphering his secret message.",
++      "sentence": "Si pudiera, ayudaría a mi hermana para que ella no __ sola.",
++      "hint": "estar",
++      "answers": [
++        "estuviera",
++        "estuviese"
++      ],
++      "english": "If I could, I would help my sister so that she would not be alone.",
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+       ]
+@@ -43,44 +50,54 @@
+       "id": "b2-12-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué matiz expresa la locución 'al solo efecto de' frente al conector estándar 'para'?",
++      "question": "Which sentence means \"If I had time, I would help so that they would finish sooner\"?",
+       "options": [
+-        "Enfatiza la exclusividad absoluta del propósito, descartando cualquier otra motivación colateral.",
+-        "Indica una consecuencia no deseada provocada por un descuido fortuito.",
+-        "Expresa una condición matemática aplicable únicamente a magnitudes físicas."
++        "Si tuviera tiempo, ayudaría para que terminan antes.",
++        "Si tuviera tiempo, ayudaría para que terminaran antes.",
++        "Si tuviera tiempo, ayudaría para que terminarían antes."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "present-tense",
++        "2": "condicional-regular"
++      }
+     },
+     {
+       "id": "b2-12-05.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Pintó",
+-        "el",
+-        "cuadro",
++        "Si",
++        "pudiera,",
++        "lo",
++        "haría",
+         "para",
+         "que",
+-        "alguien",
+-        "comprendiera",
+-        "su",
+-        "soledad."
++        "mis",
++        "hijos",
++        "estudiaran",
++        "en",
++        "otra",
++        "ciudad."
+       ],
+       "solution": [
+-        "Pintó",
+-        "el",
+-        "cuadro",
++        "Si",
++        "pudiera,",
++        "lo",
++        "haría",
+         "para",
+         "que",
+-        "alguien",
+-        "comprendiera",
+-        "su",
+-        "soledad."
++        "mis",
++        "hijos",
++        "estudiaran",
++        "en",
++        "otra",
++        "ciudad."
+       ],
+-      "english": "He painted the picture so that someone would understand his loneliness.",
++      "english": "If I could, I would do it so that my children could study in another city.",
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+       ]
+@@ -91,34 +108,38 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Crítico literario",
+-          "text": "¿Cuál era la verdadera finalidad de Castel al escribir su confesión desde la cárcel?"
++          "speaker": "Ana",
++          "text": "¿Por qué no dijiste nada en la reunión?"
+         },
+         {
+-          "speaker": "Profesora",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Crítico literario",
+-          "text": "Una trágica búsqueda de justificación ante un mundo que juzga impenetrable."
++          "speaker": "Ana",
++          "text": "Entiendo."
+         }
+       ],
+       "options": [
+-        "Escribió su relato al solo fin de que al menos una persona entendiera los móviles de su crimen y la desesperación de su alma.",
+-        "Los talleres de encuadernación de Buenos Aires utilizaban cuero vacuno repujado.",
+-        "El tranvía de la plaza San Martín circulaba cada quince minutos durante los días laborables."
++        "Si hubiera hablado, lo habría hecho para que me entendieron.",
++        "Si hubiera hablado, lo habría hecho para que me entendieran.",
++        "Si hubiera hablado, lo habría hecho para que me entienden."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "preterito-indefinido",
++        "2": "present-tense"
++      }
+     },
+     {
+       "id": "b2-12-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Actuó de esa manera al solo fin de que se conociera la verdad oculta.",
+-      "english": "He acted in that manner for the sole purpose that the hidden truth be known.",
++      "sentence": "Si tuviera más dinero, compraría libros para que los niños leyeran más.",
++      "english": "If I had more money, I would buy books so that the children would read more.",
+       "teaches": [
+         "subjuntivo-de-finalidad-para-que"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-12-consolidation-ex.json b/content/es-latam/exercises/b2/b2-12-consolidation-ex.json
+index 3f103a78..99fcbd49 100644
+--- a/content/es-latam/exercises/b2/b2-12-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-12-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el cometido",
+-          "task, mandate, mission"
++          "el propósito",
++          "purpose, aim"
+         ],
+         [
+-          "la directriz",
+-          "guideline, directive"
++          "la cautela",
++          "caution"
+         ],
+         [
+-          "la cautela",
+-          "caution, prudence"
++          "el hito",
++          "milestone"
+         ],
+         [
+-          "el móvil",
+-          "motive, driving reason"
++          "el empeño",
++          "determination, effort"
+         ]
+       ],
+       "teaches": [
+@@ -31,26 +31,29 @@
+       "id": "b2-12-consolidation.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuándo debe utilizarse infinitivo en lugar de subjuntivo en una oración de finalidad?",
++      "question": "Which sentence means \"The boss changed the plan so that the team would work better\"?",
+       "options": [
+-        "Cuando el sujeto del verbo principal y el sujeto de la finalidad coinciden (correferencia).",
+-        "Cuando la acción subordinada se sitúa en un pasado remoto.",
+-        "Cuando el verbo principal es de mandato o influencia imperativa."
++        "El jefe cambió el plan para trabajar mejor.",
++        "El jefe cambió el plan para que el equipo trabajara mejor.",
++        "El jefe cambió el plan para que el equipo trabaja mejor."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+-        "subjuntivo-de-finalidad-para-que"
+-      ]
++        "infinitive-vs-que-subjunctive"
++      ],
++      "distractor_skills": {
++        "2": "present-tense"
++      }
+     },
+     {
+       "id": "b2-12-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué modo exige la locución 'a fin de que' cuando hay cambio de sujeto?",
++      "question": "Which sentence is correct?",
+       "options": [
+-        "Modo subjuntivo siempre, rigiéndose por la correlación temporal de tiempos.",
+-        "Modo indicativo si la meta ya ha sido alcanzada satisfactoriamente.",
+-        "Modo imperativo afirmativo en oraciones exhortativas."
++        "Cambiaron la hora a fin de que todos pudieran venir.",
++        "Cambiaron la hora a fin de todos pudieran venir.",
++        "Cambiaron la hora a fin que todos pudieran venir."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -61,12 +64,12 @@
+       "id": "b2-12-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Se adoptaron salvaguardas estrictas para que la crisis financiera no __ el tejido productivo nacional.",
+-      "hint": "destruir - imperfecto subjuntivo",
+-      "answer": "destruyera",
+-      "english": "Strict safeguards were adopted so that the financial crisis would not destroy the national productive fabric.",
++      "sentence": "Salimos temprano para no __ el tren.",
++      "hint": "to miss",
++      "answer": "perder",
++      "english": "We left early so as not to miss the train.",
+       "teaches": [
+-        "subjuntivo-de-finalidad-para-que"
++        "infinitive-vs-que-subjunctive"
+       ]
+     },
+     {
+@@ -74,10 +77,10 @@
+       "type": "sentence-order",
+       "category": "grammar",
+       "sentences": [
+-        "El ministerio legisló a fin de que los ciudadanos contaran con garantías plenas. [The ministry legislated so that citizens would have full guarantees.]",
+-        "La directiva sesionó con el objeto de evaluar el plan de inversiones bienal. [The board met in order to evaluate the biennial investment plan.]",
+-        "Se diseñó el protocolo con miras a consolidar la transición energética nacional. [The protocol was designed with a view to consolidating national energy transition.]",
+-        "Se tomaron precauciones para que no se filtrara información estratégica. [Precautions were taken so that strategic information would not be leaked.]"
++        "Ernesto Sabato nació en 1911. [Ernesto Sabato was born in 1911.]",
++        "El túnel apareció en 1948 y fue su primera novela. [El túnel came out in 1948 and was his first novel.]",
++        "El informe de la comisión, de 1984, se llama Nunca más. [The commission's report, from 1984, is called Nunca más.]",
++        "Sabato murió en 2011. [Sabato died in 2011.]"
+       ],
+       "solution": [
+         0,
+@@ -86,44 +89,27 @@
+         3
+       ],
+       "teaches": [
+-        "subjuntivo-de-finalidad-para-que",
+-        "purpose-connectors"
++        "secuencia-narrativa"
+       ]
+     },
+     {
+       "id": "b2-12-consolidation.ex06",
+-      "type": "dialogue-complete",
+-      "category": "dialogue",
+-      "prompt": [
+-        {
+-          "speaker": "Lectora",
+-          "text": "¿Cómo interpreta la obsesión de Castel por María Iribarne en El túnel?"
+-        },
+-        {
+-          "speaker": "Ensayista",
+-          "text": "_____"
+-        },
+-        {
+-          "speaker": "Lectora",
+-          "text": "Un desgarramiento trágico donde el deseo de comunión termina en destrucción."
+-        }
+-      ],
++      "type": "multiple-choice",
++      "category": "reading",
++      "question": "According to the text, in what year did El túnel come out?",
+       "options": [
+-        "Castel concibió su pintura con el único propósito de que alguien rescatara su alma del aislamiento absoluto del túnel existencial.",
+-        "Las galerías de pintura del centro de Buenos Aires abrían de martes a sábado.",
+-        "Los marcos de madera dorada se fabricaban en pequeños talleres de artesanos italianos."
++        "En 1948.",
++        "En 1984.",
++        "En 2011."
+       ],
+-      "correct": 0,
+-      "teaches": [
+-        "subjuntivo-de-finalidad-para-que"
+-      ]
++      "correct": 0
+     },
+     {
+       "id": "b2-12-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Se redactaron las directrices con miras a optimizar el rendimiento del equipo.",
+-      "english": "Guidelines were drafted with a view to optimizing team performance.",
++      "sentence": "Estudiamos mucho con vistas al examen de junio.",
++      "english": "We study hard with the June exam in mind.",
+       "teaches": [
+         "purpose-connectors"
+       ]
+@@ -134,13 +120,33 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Redacta una declaración de objetivos institucionales empleando una cláusula final con subjuntivo ('a fin de que') o una locución prospectiva ('con miras a').",
+-          "answer": "La institución implementó nuevos protocolos de fiscalización a fin de que los recursos públicos se asignen con absoluta transparencia y probidad."
++          "prompt": "Say that you are learning Spanish in order to travel, using para.",
++          "answer": "Aprendo español para viajar."
++        },
++        {
++          "prompt": "Say that you left the key on the table so that your sister could come in, using para que.",
++          "answer": "Dejé la llave en la mesa para que mi hermana pudiera entrar."
++        },
++        {
++          "prompt": "Say that you write down the address in case you forget it, using no sea que.",
++          "answer": "Anoto la dirección, no sea que la olvide."
+         }
+       ],
+       "teaches": [
+-        "subjuntivo-de-finalidad-para-que"
++        "b2-purpose-clauses-vocab"
+       ]
++    },
++    {
++      "id": "b2-12-consolidation.ex09",
++      "type": "multiple-choice",
++      "category": "reading",
++      "question": "According to the text, what is the report of the CONADEP also known as?",
++      "options": [
++        "El Informe Sabato.",
++        "El Informe Castel.",
++        "El Informe del túnel."
++      ],
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-11-01-a-gr.json b/content/es-latam/grammar/b2/b2-11-01-a-gr.json
+index 5a638f20..acf90dd6 100644
+--- a/content/es-latam/grammar/b2/b2-11-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-11-01-a-gr.json
+@@ -1,51 +1,59 @@
+ {
+   "id": "grammar.b2.11.01.mixtas-pasado-presente",
+-  "title": "Condicionales mixtas: condición en pasado y repercusión en presente",
++  "title": "A Past Cause, a Present Result",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Cruce temporal entre hipótesis pasada y realidad presente",
+-      "content": "Las oraciones condicionales mixtas de tipo pasado-presente conectan una acción irreal ocurrida en el pasado con una consecuencia que subsiste en el presente o futuro. Se construyen mediante la fórmula: 'Si + pluscuamperfecto de subjuntivo (pasado), condicional simple (presente)': 'Si hubieras aceptado la beca en París el año pasado, ahora trabajarías como diplomático'."
++      "title": "What you already know",
++      "content": "You know two ways to imagine things with *si*. From B1 Unit 35: *si* + *hubiera* + past participle, with *habría* + participle in the result, imagines a past that did not happen (*Si hubiera estudiado, habría aprobado*). From B1 Unit 4: *si* + imperfect subjunctive with the conditional imagines the present (*Si tuviera tiempo, viajaría*). A mixed conditional uses one of each. The *si* clause looks back at a past choice that was not made, and the result clause is about now, so the result takes the simple conditional, not *habría* + participle: *Si hubiera estudiado medicina, ahora sería médica* means \"If I had studied medicine, I would be a doctor now.\" I did not study medicine, and I am not a doctor. A past choice can change the present, and each clause uses the tense for its own time."
+     },
+     {
+       "type": "table",
+-      "title": "Esquema comparativo del condicional mixto",
++      "title": "Same condition, two results",
+       "rows": [
+         [
+-          "Tercer condicional puro (pasado-pasado)",
+-          "'Si hubieras estudiado, habrías aprobado el examen ayer'"
++          "Si hubiera estudiado más, habría aprobado el examen.",
++          "If I had studied more, I would have passed the exam. (Past result: B1 Unit 35.)"
+         ],
+         [
+-          "Condicional mixto (pasado-presente)",
+-          "'Si hubieras estudiado aquella carrera, hoy tendrías más oportunidades'"
++          "Si hubiera estudiado más, ahora tendría un mejor trabajo.",
++          "If I had studied more, I would have a better job now. (Result in the present.)"
+         ],
+         [
+-          "Alternativa de apódosis con gerundio",
+-          "'Si hubiésemos tomado esa ruta, ahora estaríamos llegando a la costa'"
++          "Si me hubiera mudado al sur, ahora viviría cerca del mar.",
++          "If I had moved south, I would live near the sea now."
++        ],
++        [
++          "Si no hubiéramos vendido la casa, hoy tendríamos un jardín.",
++          "If we had not sold the house, we would have a garden today."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el discurso formal y biográfico",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Si el ministerio hubiera invertido en infraestructura hospitalaria hace cinco años, el sistema de salud no colapsaría hoy.",
+-          "english": "If the ministry had invested in hospital infrastructure five years ago, the healthcare system would not collapse today."
++          "spanish": "Si hubiera aceptado aquel empleo, ahora viviría en Lima.",
++          "english": "If I had accepted that job, I would live in Lima now."
++        },
++        {
++          "spanish": "Si no nos hubiéramos conocido en la universidad, hoy no estaríamos juntos.",
++          "english": "If we had not met at university, we would not be together today."
+         },
+         {
+-          "spanish": "Si no nos hubiesen otorgado ese crédito inicial, no estaríamos celebrando el décimo aniversario de la empresa.",
+-          "english": "If they had not granted us that initial loan, we would not be celebrating the company's tenth anniversary."
++          "spanish": "Si mis padres no hubieran viajado a Chile, yo no hablaría español.",
++          "english": "If my parents had not travelled to Chile, I would not speak Spanish."
+         },
+         {
+-          "spanish": "Si el tratado comercial se hubiera ratificado en 2010, nuestro país tendría una posición arancelaria preferente.",
+-          "english": "If the trade agreement had been ratified in 2010, our country would have a preferential tariff position."
++          "spanish": "Si hubieras llamado ayer, ahora sabrías la respuesta.",
++          "english": "If you had called yesterday, you would know the answer now."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Presta suma atención a los adverbios temporales como 'ahora', 'hoy', 'en la actualidad' o 'en estos momentos' en la apódosis, ya que actúan como la señal inequívoca para elegir condicional simple en lugar de compuesto."
++      "content": "Look at the result clause. A word that points to now, such as *ahora*, *hoy*, *todavía* or *ya*, usually means the simple conditional. If the result belongs to the past too, you are back in the pattern of B1 Unit 35 and need *habría* + participle. English works the same way (\"If I had studied, I would be a doctor now\"). In the *si* clause, *habría* never appears: say *si hubiera estudiado*, not *si habría estudiado*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-11-02-a-gr.json b/content/es-latam/grammar/b2/b2-11-02-a-gr.json
+index 7455582e..af1f2c0c 100644
+--- a/content/es-latam/grammar/b2/b2-11-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-11-02-a-gr.json
+@@ -1,51 +1,59 @@
+ {
+   "id": "grammar.b2.11.02.mixtas-presente-pasado",
+-  "title": "Condicionales mixtas: condición general y consecuencia en el pasado",
++  "title": "A Lasting Trait, a Past Result",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Rasgo permanente o intemporal con resultado pretérito",
+-      "content": "La segunda variante de condicional mixto expresa una condición intemporal o un rasgo permanente del sujeto (imperfecto de subjuntivo) que condicionó un hecho pasado específico (condicional compuesto o pluscuamperfecto de subjuntivo): 'Si fueras más prudente (rasgo permanente actual), no habrías firmado ese contrato fraudulento la semana pasada'."
++      "title": "What you already know",
++      "content": "The last lesson started in the past and ended now. This one goes the other way. The *si* clause describes something that is true in general: a trait, a habit or a situation that lasts. For that you use the imperfect subjunctive. You know *tuviera* from B1 Unit 4, and *fuera* works the same way: *Si fuera más prudente* means \"If he were more careful\" (and he is not a careful person). The result clause looks at one thing that happened in the past, so it takes *habría* + participle, as in B1 Unit 35: *Si fuera más prudente, no habría dicho eso* means \"If he were more careful, he would not have said that.\" The imperfect subjunctive here does not point to the past. It pictures a lasting quality that is not true, and the second clause says what that quality cost us back then."
+     },
+     {
+       "type": "table",
+-      "title": "Estructura del condicional mixto presente-pasado",
++      "title": "Which clause looks where?",
+       "rows": [
+         [
+-          "Prótasis (rasgo permanente)",
+-          "'Si fuera bilingüe...' / 'Si tuviera paciencia...'"
++          "Si hubiera estudiado medicina, ahora sería médica.",
++          "Last lesson: a past condition, a result now."
+         ],
+         [
+-          "Apódosis (resultado pasado)",
+-          "'...habría postulado al cargo en la embajada el año pasado'"
++          "Si fuera más paciente, habría esperado.",
++          "This lesson: a lasting trait, a past result."
+         ],
+         [
+-          "Variante estilística de apódosis",
+-          "'...hubiera postulado al cargo en la embajada el año pasado'"
++          "Si fuera más prudente, no habría dicho eso.",
++          "If he were more careful, he would not have said that."
++        ],
++        [
++          "Si hablara mejor inglés, habría conseguido el puesto.",
++          "If I spoke better English, I would have got the job."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el debate crítico y judicial",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Si el magistrado fuera verdaderamente independiente, no habría dictado esa sentencia tan parcializada.",
+-          "english": "If the magistrate were truly independent, he would not have handed down such a biased ruling."
++          "spanish": "Si mi hermano no fuera tan terco, habría pedido perdón.",
++          "english": "If my brother were not so stubborn, he would have said sorry."
++        },
++        {
++          "spanish": "Si no tuviéramos miedo a volar, habríamos ido en avión.",
++          "english": "If we were not afraid of flying, we would have gone by plane."
+         },
+         {
+-          "spanish": "Si no amáramos tanto la libertad de cátedra, habríamos claudicado ante las presiones ministeriales.",
+-          "english": "If we did not love academic freedom so much, we would have yielded to ministerial pressures."
++          "spanish": "Si Marta fuera más ordenada, no habría perdido las llaves.",
++          "english": "If Marta were tidier, she would not have lost the keys."
+         },
+         {
+-          "spanish": "Si nuestra economía fuera menos vulnerable a los mercados externos, la devaluación de 1999 no habría causado tanto estrago.",
+-          "english": "If our economy were less vulnerable to external markets, the 1999 devaluation would not have wreaked such havoc."
++          "spanish": "Si mi hermana viviera cerca, la habríamos visitado más.",
++          "english": "If my sister lived nearby, we would have visited her more."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Distingue claramente entre un estado temporal ('si hubieras estado cansado ayer') y un rasgo definitorio o permanente ('si fueras una persona meticulosa'). Los rasgos permanentes exigen imperfecto de subjuntivo."
++      "content": "Ask yourself whether the condition is one moment or a lasting quality. For one moment in the past, use the full past pattern: *Si hubiera estado cansado ayer, no habría salido*. For a trait or a situation (*ser*, *tener*, *vivir*, *hablar*), use the imperfect subjunctive: *Si fuera más prudente…*. In the result you can also use *hubiera* + participle instead of *habría*, as you saw in B2 Unit 10: *Si fuera más prudente, no hubiera dicho eso*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-11-03-a-gr.json b/content/es-latam/grammar/b2/b2-11-03-a-gr.json
+index 9a1f31aa..1d625a05 100644
+--- a/content/es-latam/grammar/b2/b2-11-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-11-03-a-gr.json
+@@ -1,51 +1,63 @@
+ {
+   "id": "grammar.b2.11.03.condicionales-restrictivas",
+-  "title": "Nexos condicionales restrictivos: siempre que, con tal de que, a condición de que",
++  "title": "Strict Conditions: Siempre y Cuando and More",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Estipulación de requisitos indispensables con subjuntivo",
+-      "content": "Los nexos condicionales restrictivos expresan condiciones sine qua non: la apódosis solo se cumplirá si se verifica de modo estricto la circunstancia introducida por el conector. Exigen obligatoriamente el modo subjuntivo tanto en presente como en pasado: 'con tal de que', 'siempre que', 'siempre y cuando', 'a condición de que', 'con la condición de que'."
++      "title": "What you already know",
++      "content": "You know three ways to make a strict condition: *con tal de que* from B1 Unit 21, *siempre que* from B2 Unit 7 and *a condición de que* from B2 Unit 9. They say that the main clause is true only if the condition is met, and the verb after them is in the subjunctive: the present subjunctive after a present or future verb, the imperfect subjunctive after a conditional or past verb (*Dijeron que firmarían siempre que les diéramos más tiempo*). The subjunctive is there because you are naming a requirement, not stating a fact. This lesson adds two more phrases. *Siempre y cuando* is *siempre que* with more weight, and it only ever means \"provided that\", never \"whenever\". *Con la condición de que* is a longer *a condición de que*."
+     },
+     {
+       "type": "table",
+-      "title": "Matices de los nexos restrictivos",
++      "title": "Strict conditions",
+       "rows": [
+         [
+-          "'Con tal de que' (concesión interesada)",
+-          "'Firmaremos el pacto con tal de que garanticen la estabilidad laboral'"
++          "siempre que + subjunctive",
++          "provided that (B2 Unit 7)"
+         ],
+         [
+-          "'A condición de que' (exigencia contractual)",
+-          "'El banco otorgará el préstamo a condición de que presenten avales bancarios'"
++          "con tal de que + subjunctive",
++          "as long as (B1 Unit 21)"
+         ],
+         [
+-          "'Siempre que / Siempre y cuando' (requisito estricto)",
+-          "'Aprobaremos la moción siempre y cuando se respeten los plazos legales'"
++          "a condición de que + subjunctive",
++          "on condition that (B2 Unit 9)"
++        ],
++        [
++          "siempre y cuando + subjunctive",
++          "as long as, provided that (new)"
++        ],
++        [
++          "con la condición de que + subjunctive",
++          "on the condition that (new)"
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en la diplomacia y el derecho",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "La oposición apoyará la reforma tributaria siempre y cuando los recursos se destinen a la salud pública.",
+-          "english": "The opposition will support the tax reform provided that the resources are allocated to public health."
++          "spanish": "Te presto el carro siempre y cuando lo devuelvas antes de las seis.",
++          "english": "I will lend you the car as long as you bring it back before six."
++        },
++        {
++          "spanish": "El dueño devolverá la fianza siempre y cuando dejemos el apartamento limpio.",
++          "english": "The owner will return the deposit as long as we leave the flat clean."
+         },
+         {
+-          "spanish": "El sindicato aceptó congelar los salarios con tal de que no se despidiera a ningún trabajador.",
+-          "english": "The union agreed to freeze wages provided that no worker was dismissed."
++          "spanish": "Firmaremos el contrato con la condición de que nos den más tiempo.",
++          "english": "We will sign the contract on the condition that they give us more time."
+         },
+         {
+-          "spanish": "El presidente firmó el tratado a condición de que se resguardara la soberanía marítima de la nación.",
+-          "english": "The president signed the treaty on the condition that the nation's maritime sovereignty was protected."
++          "spanish": "Dijeron que aceptarían siempre y cuando bajáramos el precio.",
++          "english": "They said they would accept as long as we lowered the price."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Cuidado con 'siempre que': cuando tiene valor temporal significa 'cada vez que' y rige indicativo para hechos habituales ('Siempre que viaja a Santo Domingo visita la Zona Colonial'). Solo rige subjuntivo cuando tiene valor condicional restrictivo ('Te prestaré el libro siempre que lo cuides')."
++      "content": "Compare a plain *si* with a strict condition. You know *si* + present from B1 Unit 8, and *Te presto el carro si me avisas* just says what will happen. *Te presto el carro siempre y cuando me avises* makes your warning a requirement. After all these phrases, keep the subjunctive: say *siempre y cuando lleguen a tiempo*, not *siempre y cuando llegan* or *llegarán*, even when the main verb is in the future."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-11-04-a-gr.json b/content/es-latam/grammar/b2/b2-11-04-a-gr.json
+index 7fcd64eb..b11b86fc 100644
+--- a/content/es-latam/grammar/b2/b2-11-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-11-04-a-gr.json
+@@ -1,51 +1,59 @@
+ {
+   "id": "grammar.b2.11.04.condicionales-exceptivas",
+-  "title": "Nexos condicionales exceptivos y negativos: a no ser que, a menos que, salvo que",
++  "title": "Unless: Adding Excepto Que and Excepto Si",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Formulación de la única excepción que invalidaría una regla",
+-      "content": "Los conectores condicionales exceptivos introducen el único acontecimiento capaz de impedir que se cumpla lo afirmado en la oración principal. Equivalen a 'si no...' y exigen obligatoriamente modo subjuntivo: 'a menos que', 'a no ser que', 'salvo que', 'excepto que': 'La huelga continuará a menos que la patronal presente una propuesta razonable'."
++      "title": "What you already know",
++      "content": "You know *a menos que* \"unless\" from B1 Unit 21, and *a no ser que*, *salvo que* and *salvo si* from B2 Unit 9. Each one names the only thing that could stop the main clause from being true: *Iremos al parque a menos que llueva*. The exception has not happened yet, so these phrases take the subjunctive, with the same tense rule as in the last lesson. This lesson adds *excepto que* and *excepto si*, which work exactly like *salvo que* and *salvo si*. A useful test is to swap the phrase for *si no*: *Iremos a menos que llueva* means the same as *Iremos si no llueve*. The plan holds, and one exception could cancel it."
+     },
+     {
+       "type": "table",
+-      "title": "Conectores exceptivos y alternancias de registro",
++      "title": "Ways to say \"unless\"",
+       "rows": [
+         [
+-          "'A menos que' / 'A no ser que'",
+-          "Formas estándar y formales: 'No habrá juicio a no ser que se presenten pruebas nuevas'"
++          "a menos que, a no ser que + subjunctive",
++          "unless"
+         ],
+         [
+-          "'Salvo que' / 'Excepto que'",
+-          "Frecuentes en el registro normativo: 'El plazo vencerá hoy, salvo que medie causa fortuita'"
++          "salvo que, excepto que + subjunctive",
++          "unless, except if (a little more formal)"
+         ],
+         [
+-          "'Salvo si' / 'Excepto si'",
+-          "Rigen modo indicativo o imperfecto subjuntivo: 'Iré a la reunión, salvo si llueve demasiado'"
++          "salvo si, excepto si + indicative",
++          "except if (built like si)"
++        ],
++        [
++          "Iremos a menos que llueva. = Iremos si no llueve.",
++          "We will go unless it rains. = We will go if it does not rain."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en reglamentos institucionales",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Los contratos de obra pública no podrán suspenderse a menos que intervenga una orden judicial fundada.",
+-          "english": "Public works contracts may not be suspended unless a well-founded court order intervenes."
++          "spanish": "El museo abre todos los días, excepto si hay una fiesta.",
++          "english": "The museum opens every day, except if there is a festival."
++        },
++        {
++          "spanish": "Nadie entra a la sala excepto que tenga permiso.",
++          "english": "No one enters the room unless they have permission."
+         },
+         {
+-          "spanish": "El imputado no podrá abandonar el territorio nacional a no ser que el tribunal conceda una fianza especial.",
+-          "english": "The accused may not leave the national territory unless the court grants special bail."
++          "spanish": "No cambiaremos la fecha a menos que haya un imprevisto.",
++          "english": "We will not change the date unless something unexpected happens."
+         },
+         {
+-          "spanish": "La sesión parlamentaria continuará por tiempo indefinido salvo que la mayoría vote un receso.",
+-          "english": "The parliamentary session will continue indefinitely unless the majority votes for a recess."
++          "spanish": "Dijo que vendría a no ser que tuviera trabajo.",
++          "english": "She said she would come unless she had work."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "No confundas 'salvo que' (+ subjuntivo: 'salvo que cambie el clima') con 'salvo si' (+ indicativo: 'salvo si cambia el clima'). Ambos giros son correctos, pero la presencia de 'si' exige el indicativo en el presente."
++      "content": "Do not mix the two groups. Phrases with *que* (*a menos que*, *a no ser que*, *salvo que*, *excepto que*) take the subjunctive: *excepto que haya*. Phrases with *si* (*salvo si*, *excepto si*) take the indicative: *excepto si hay*. Do not use *aunque* here: *No saldremos aunque mejore el tiempo* means \"We will not go out even if the weather improves\", the opposite idea."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-11-05-a-gr.json b/content/es-latam/grammar/b2/b2-11-05-a-gr.json
+index 737c8335..9973d70e 100644
+--- a/content/es-latam/grammar/b2/b2-11-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-11-05-a-gr.json
+@@ -1,51 +1,59 @@
+ {
+   "id": "grammar.b2.11.05.parenteticas-cortesia",
+-  "title": "Condicionales parentéticas, atenuadas y de cortesía institucional",
++  "title": "If I May: Polite Conditions",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Fórmulas condicionales de atenuación discursiva",
+-      "content": "En la oratoria parlamentaria, diplomática y académica, las cláusulas condicionales parentéticas sirven para matizar asertos categóricos, solicitar la anuencia del auditorio y formular críticas sin herir susceptibilidades: 'si se me permite la expresión', 'si no me equivoco', 'si cupiera alguna duda', 'si bien se mira'."
++      "title": "What you already know",
++      "content": "You know *quisiera* and *me gustaría* from A2 Unit 26, where the conditional softens a request (*¿Podría ayudarme?*). You also know from B2 Unit 9 how *si* + imperfect subjunctive puts a request at a distance (*Si tuviera un momento…*). This lesson adds a different kind of *si* clause. It is not imagined: the condition is real, and the verb is in the present indicative. The speaker is checking a fact or asking permission while speaking, and the phrase makes the sentence sound careful and polite. Four useful ones are *si no me equivoco* \"if I'm not mistaken\", *si mal no recuerdo* \"if I remember rightly\", *si me permite* \"if you will allow me\" and *si no es molestia* \"if it is no trouble\". They can come at the start, in the middle or at the end of a sentence, and they are always set off with commas."
+     },
+     {
+       "type": "table",
+-      "title": "Fórmulas canónicas de atenuación condicional",
++      "title": "Four polite phrases",
+       "rows": [
+         [
+-          "Permiso para opinar",
+-          "'Si se me permite la observación, el presupuesto adolece de imprecisiones'"
++          "Si no me equivoco, la reunión es el jueves.",
++          "If I am not mistaken, the meeting is on Thursday. (checking a fact)"
+         ],
+         [
+-          "Modestia epistemológica",
+-          "'Si no estoy en un error, la jurisprudencia avala nuestra postura'"
++          "Si mal no recuerdo, empieza a las diez.",
++          "If I remember rightly, it starts at ten. (checking a memory)"
+         ],
+         [
+-          "Hipótesis de ponderación",
+-          "'Si bien se mira, ambas partes persiguen el mismo objetivo de fondo'"
++          "Si me permite, quisiera hacer una pregunta.",
++          "If you will allow me, I would like to ask a question. (asking leave to speak)"
++        ],
++        [
++          "Si no es molestia, ¿me lo podría enviar hoy?",
++          "If it is no trouble, could you send it to me today? (softening a request)"
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el debate parlamentario y académico",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Si cupiera alguna objeción a este proyecto de ley, radicaría exclusivamente en su régimen transitorio.",
+-          "english": "If any objection to this bill were conceivable, it would lie exclusively in its transitional regime."
++          "spanish": "Usted, si no me equivoco, ya trabajó con nosotros.",
++          "english": "You, if I am not mistaken, have already worked with us."
++        },
++        {
++          "spanish": "Si me permite, quisiera hacer una breve objeción.",
++          "english": "If you will allow me, I would like to make a short objection."
+         },
+         {
+-          "spanish": "Con la venia de la presidencia, si se me permite intervenir, quisiera plantear un reparo de orden reglamentario.",
+-          "english": "With the chair's permission, if I may intervene, I would like to raise a point of order."
++          "spanish": "Si no es molestia, ¿podría repetir la dirección?",
++          "english": "If it is no trouble, could you repeat the address?"
+         },
+         {
+-          "spanish": "Si se analizan los resultados con ecuanimidad, salta a la vista que el crecimiento económico ha sido asimétrico.",
+-          "english": "If the results are analyzed with impartiality, it is evident that economic growth has been asymmetric."
++          "spanish": "El plazo termina el viernes, si mal no recuerdo.",
++          "english": "The deadline ends on Friday, if I remember rightly."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Estas fórmulas condicionales se aíslan obligatoriamente entre comas al redactar, marcando una pausa entonativa en el discurso oral formal."
++      "content": "With someone you call *usted*, say *si me permite* and *si no le importa*. With a friend, change the pronoun: *si me permites*, *si no te importa*. Keep these phrases in the present indicative, because they are real conditions. The imperfect subjunctive (*si fuera tan amable de…*) belongs to the more distant requests of B2 Unit 9. Write a comma before and after the phrase when it sits in the middle of a sentence."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-12-01-a-gr.json b/content/es-latam/grammar/b2/b2-12-01-a-gr.json
+index a9dcf6ee..0d2b357f 100644
+--- a/content/es-latam/grammar/b2/b2-12-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-12-01-a-gr.json
+@@ -1,51 +1,63 @@
+ {
+   "id": "grammar.b2.12.01.finales-subjuntivo",
+-  "title": "Oraciones finales con subjuntivo: a fin de que, para que, con el objeto de que",
++  "title": "Formal Purpose: A Fin de Que and Con el Objeto de Que",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Estructuras de finalidad con cambio de sujeto",
+-      "content": "Las oraciones subordinadas finales expresan la meta, el propósito o la intención que orienta la acción de la oración principal. Cuando existe cambio de sujeto entre el verbo principal y el subordinado, exigen de manera categórica el modo subjuntivo: 'para que', 'a fin de que', 'con el objeto de que', 'con el propósito de que', 'con la intención de que'."
++      "title": "What you already know",
++      "content": "You know *para que* + subjunctive from B1 Unit 4. It gives the purpose of an action when the person in the second clause is not the person in the first: *Habla despacio para que te entiendan*. You also know *hablara* from B1 Unit 38: after a past verb the subjunctive moves to the imperfect (*pidió que hablara*). This lesson adds two more connectors with exactly the same grammar: *a fin de que* and *con el objeto de que*. Both mean \"so that\" or \"in order that\", and both sound more formal than *para que*, so you will see them in notices, announcements and writing. The rule stays the same: two different subjects, then the subjunctive. Use the present subjunctive after a present or future verb, and the imperfect subjunctive after a past verb."
+     },
+     {
+       "type": "table",
+-      "title": "Conectores finales en registro formal",
++      "title": "Three ways to say \"so that\"",
+       "rows": [
+         [
+-          "'Para que' (estándar universal)",
+-          "'El ministerio aprobó la partida para que los hospitales compren insumos'"
++          "para que + subjunctive",
++          "so that (everyday; B1 Unit 4)"
+         ],
+         [
+-          "'A fin de que' (registro institucional)",
+-          "'Se reformó el reglamento a fin de que la comisión delibere con celeridad'"
++          "a fin de que + subjunctive",
++          "so that, in order that (more formal)"
+         ],
+         [
+-          "'Con el objeto de que' (registro legislativo)",
+-          "'Se dictó la orden con el objeto de que las partes resuelvan la disputa'"
++          "con el objeto de que + subjunctive",
++          "so that, in order that (formal, written)"
++        ],
++        [
++          "Present or future verb: …, a fin de que vengan.",
++          "The subjunctive is in the present."
++        ],
++        [
++          "Past verb: …, a fin de que vinieran.",
++          "The subjunctive is in the imperfect."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el discurso institucional y corporativo",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "La comisión redactó nuevas directrices a fin de que los auditores evalúen el gasto público con total transparencia.",
+-          "english": "The commission drafted new guidelines so that auditors may evaluate public spending with total transparency."
++          "spanish": "La escuela organizó una reunión a fin de que los padres conocieran al director.",
++          "english": "The school organised a meeting so that the parents could meet the head."
++        },
++        {
++          "spanish": "Cambiaremos el horario con el objeto de que todos puedan venir.",
++          "english": "We will change the schedule so that everyone can come."
+         },
+         {
+-          "spanish": "El director convocó a la asamblea con el objeto de que los accionistas voten la ampliación de capital.",
+-          "english": "The director convened the assembly in order for shareholders to vote on the capital increase."
++          "spanish": "Te envío el plano a fin de que encuentres la casa sin problemas.",
++          "english": "I am sending you the map so that you can find the house without problems."
+         },
+         {
+-          "spanish": "Diseñamos un plan de capacitación integral para que los docentes incorporen herramientas digitales en el aula.",
+-          "english": "We designed a comprehensive training plan so that teachers incorporate digital tools in the classroom."
++          "spanish": "Hablé con el jefe con el objeto de que nos diera más tiempo.",
++          "english": "I spoke to the boss so that he would give us more time."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "En la correlación temporal, el verbo final adopta presente de subjuntivo tras presentes o futuros ('convoca para que voten'), e imperfecto o pluscuamperfecto de subjuntivo tras tiempos del pasado ('convocó para que votaran / votasen')."
++      "content": "These connectors need two different subjects. If the same person acts twice, use an infinitive instead (the next lesson). Never use the indicative or the future after them: say *a fin de que lleguen*, not *a fin de que llegan* or *llegarán*, and *a fin de que llegaran*, not *llegarían*, after a past verb. The meaning is the same as *para que*: choose the longer forms when you want a more formal tone."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-12-02-a-gr.json b/content/es-latam/grammar/b2/b2-12-02-a-gr.json
+index cdc7601e..d4a12ba2 100644
+--- a/content/es-latam/grammar/b2/b2-12-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-12-02-a-gr.json
+@@ -1,51 +1,63 @@
+ {
+   "id": "grammar.b2.12.02.finalidad-infinitivo",
+-  "title": "Finalidad con infinitivo: correferencia y locuciones prepositivas",
++  "title": "One Person, One Verb: Purpose with the Infinitive",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Regla de correferencia de sujeto en oraciones finales",
+-      "content": "Cuando el sujeto de la acción principal y el de la finalidad coinciden (correferencia subjetiva), la norma gramatical exige el uso del infinitivo precedido de preposición: 'para', 'a fin de', 'con el objeto de', 'al objeto de', 'con miras a', 'con el propósito de': 'El ministro viajó a Ginebra para exponer la postura nacional' (nunca *'para que él exponga'*)."
++      "title": "What you already know",
++      "content": "You know the rule of B2 Unit 4: when the same person acts in both parts of the sentence, Spanish uses an infinitive, and when the second action belongs to someone else it uses *que* + subjunctive. Purpose follows the same rule. You know *para* + infinitive from A2 Unit 30 and *con el fin de* + infinitive from B1 Unit 32: *Estudio para aprobar* means \"I study in order to pass.\" This lesson adds the infinitive partners of the connectors in the last lesson: *a fin de* and *con el objeto de* + infinitive. One subject means an infinitive, and two subjects mean *que* + subjunctive."
+     },
+     {
+       "type": "table",
+-      "title": "Construcciones de finalidad con infinitivo",
++      "title": "One subject or two?",
+       "rows": [
+         [
+-          "'Para + infinitivo'",
+-          "'Los delegados se reunieron para debatir la moción'"
++          "Trabajo para comprar una casa.",
++          "I work to buy a house. (I work, and I buy.)"
+         ],
+         [
+-          "'A fin de + infinitivo'",
+-          "'La empresa redujo costos a fin de evitar despidos masivos'"
++          "Trabajo para que mi hijo compre una casa.",
++          "I work so that my son buys a house. (two people)"
+         ],
+         [
+-          "'Con el objeto de + infinitivo'",
+-          "'Presentamos la solicitud con el objeto de obtener la licencia ambiental'"
++          "Salimos temprano a fin de llegar a tiempo.",
++          "We leave early in order to arrive on time. (one subject)"
++        ],
++        [
++          "Salimos temprano a fin de que ellos lleguen a tiempo.",
++          "We leave early so that they arrive on time. (two subjects)"
++        ],
++        [
++          "Viajó con el objeto de conocer el país.",
++          "She travelled in order to get to know the country."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en resoluciones y actas de acuerdos",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "La junta directiva sesionó con el objeto de evaluar el plan financiero del próximo bienio.",
+-          "english": "The board of directors convened in order to evaluate the financial plan for the next biennium."
++          "spanish": "El alcalde viajó a la capital con el objeto de reunirse con la ministra.",
++          "english": "The mayor travelled to the capital in order to meet the minister."
++        },
++        {
++          "spanish": "Reservamos con tiempo a fin de conseguir buenos precios.",
++          "english": "We booked in advance in order to get good prices."
+         },
+         {
+-          "spanish": "El presidente creó una comisión especial a fin de investigar los sobreprecios en la licitación.",
+-          "english": "The president created a special commission in order to investigate price overruns in the bidding process."
++          "spanish": "Hizo varias gestiones a fin de obtener el permiso.",
++          "english": "She took several steps in order to get the permit."
+         },
+         {
+-          "spanish": "Adoptamos protocolos estrictos para garantizar la trazabilidad de los fondos públicos.",
+-          "english": "We adopted strict protocols to guarantee the traceability of public funds."
++          "spanish": "Aprendí inglés para trabajar en el extranjero.",
++          "english": "I learned English in order to work abroad."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "El uso de la subordinada con 'para que' cuando hay correferencia de sujeto (*'Trabajo duro para que yo pueda comprar una casa'*) es un error estilístico grave en español; debe decirse siempre: 'Trabajo duro para comprar una casa'."
++      "content": "English lets you add a second subject (\"I work so that I can buy a house\"), and learners sometimes copy it. In Spanish, say *Trabajo para comprar una casa*, not *Trabajo para que yo compre una casa*. The infinitive has no ending to change, so who acts is clear from the main verb: *a fin de llegar* is \"in order to arrive\" for whoever is speaking."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-12-03-a-gr.json b/content/es-latam/grammar/b2/b2-12-03-a-gr.json
+index 6a64e303..a20b8807 100644
+--- a/content/es-latam/grammar/b2/b2-12-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-12-03-a-gr.json
+@@ -1,51 +1,59 @@
+ {
+   "id": "grammar.b2.12.03.con-vistas-a-miras-a",
+-  "title": "Finales con miras a, con vistas a y de modo que",
++  "title": "Looking Ahead: Con Miras A and Con Vistas A",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Locuciones finales de prospección y planificación",
+-      "content": "Para expresar propósitos enmarcados en planes estratégicos de mediano y largo plazo, el registro culto recurre a locuciones complejas como 'con miras a', 'con vistas a', 'en orden a' (con sustantivo o infinitivo: 'con miras a consolidar la integración') y 'de modo que / de manera que' (con valor final exigiendo subjuntivo: 'redactamos el informe de modo que todos comprendan las conclusiones')."
++      "title": "What you already know",
++      "content": "You know *para* + infinitive (A2 Unit 30), *para que* (B1 Unit 4) and *con el fin de* + infinitive (B1 Unit 32). This lesson adds two phrases for a purpose that looks ahead, often a plan or a project: *con miras a* and *con vistas a*, \"with a view to\". They mean the same, and both take an infinitive or a noun: *con miras a ampliar la oficina*, *con vistas a las vacaciones*. With a noun, remember that *a* + *el* becomes *al*: *con miras al verano*. *Con el fin de* also means \"in order to\" and normally takes an infinitive. One more pattern gives a purpose with two different subjects: *de modo que* + subjunctive, like *para que*: *Hablé despacio de modo que todos entendieran*."
+     },
+     {
+       "type": "table",
+-      "title": "Matices de prospección estratégica",
++      "title": "Purpose that looks ahead",
+       "rows": [
+         [
+-          "'Con miras a + inf / sust'",
+-          "'El gobierno suscribió el convenio con miras a abrir nuevos mercados asiáticos'"
++          "con miras a + infinitive or noun",
++          "with a view to (a plan)"
+         ],
+         [
+-          "'Con vistas a + inf / sust'",
+-          "'Se construyó el parque tecnológico con vistas a la transición energética'"
++          "con vistas a + infinitive or noun",
++          "with a view to (a plan)"
+         ],
+         [
+-          "'De modo que + subjuntivo'",
+-          "'Organizamos los turnos de manera que nadie trabaje más de ocho horas'"
++          "con el fin de + infinitive",
++          "in order to (B1 Unit 32)"
++        ],
++        [
++          "de modo que + subjunctive",
++          "so that (two different subjects)"
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en planes estratégicos de desarrollo",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "El banco central ajustó las tasas de interés con miras a frenar la inflación en el segundo semestre.",
+-          "english": "The central bank adjusted interest rates with a view to curbing inflation in the second semester."
++          "spanish": "Ahorramos dinero con miras a comprar una casa.",
++          "english": "We save money with a view to buying a house."
++        },
++        {
++          "spanish": "El club reservó el hotel con vistas a las vacaciones de julio.",
++          "english": "The club booked the hotel with the July holidays in mind."
+         },
+         {
+-          "spanish": "Se diseñó el plan de infraestructura con vistas a modernizar la red ferroviaria nacional.",
+-          "english": "The infrastructure plan was designed with a view to modernizing the national railway network."
++          "spanish": "Abrieron una oficina nueva con miras al mercado regional.",
++          "english": "They opened a new office with the regional market in mind."
+         },
+         {
+-          "spanish": "Distribuimos los recursos de modo que los municipios más rezagados reciban prioridad inmediata.",
+-          "english": "We distributed resources so that the most lagging municipalities receive immediate priority."
++          "spanish": "Cambiamos el horario de modo que todos pudieran venir.",
++          "english": "We changed the schedule so that everyone could come."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Cuidado con 'de modo que': si va seguido de indicativo tiene valor consecutivo ('Llegó tarde, de modo que perdió el tren'). Solo tiene valor final cuando va seguido de subjuntivo ('Explicó las reglas de modo que todos las cumplieran')."
++      "content": "Use an infinitive after *con miras a* or *con vistas a* when you name what you plan to do, and a noun when you name the event: *con miras a comprar*, *con miras al viaje*. Do not change the preposition: it is always *a*, never *en* or *para*. These phrases sound planned and a little formal, so for a simple everyday purpose *para* is still the natural word. After *de modo que*, a purpose uses the subjunctive: *de modo que todos entiendan*, with the imperfect after a past verb."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-12-04-a-gr.json b/content/es-latam/grammar/b2/b2-12-04-a-gr.json
+index 13ca3676..53beaf6a 100644
+--- a/content/es-latam/grammar/b2/b2-12-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-12-04-a-gr.json
+@@ -1,51 +1,59 @@
+ {
+   "id": "grammar.b2.12.04.finales-negativas",
+-  "title": "Finales negativas e inhibición de consecuencias indeseadas",
++  "title": "Preventing Something: Para Que No and No Sea Que",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Estructuras para evitar un resultado adverso",
+-      "content": "Cuando la finalidad de una acción consiste en impedir, evitar o prevenir que ocurra un evento perjudicial, el español recurre a oraciones finales negativas o preventivas: 'para que no', 'a fin de que no', 'con el objeto de que no' (con subjuntivo) o locuciones prepositivas de valor prohibitivo como 'para no + inf' o 'a fin de no + inf' cuando hay correferencia."
++      "title": "What you already know",
++      "content": "You know *para que* + subjunctive from B1 Unit 4, and *para* + infinitive when one person acts, from B2 Unit 4. To say that the purpose is to avoid something, put *no* right after the connector: *Cierro la ventana para que no entre el frío* means \"I close the window so that the cold does not come in.\" With one subject use an infinitive: *Hablo bajo para no despertar al bebé*. The tense rule is the same as before. There is one more pattern for precautions: *no sea que* + subjunctive, \"in case\". It comes after a command or a plan and warns about something that might happen: *Lleva un paraguas, no sea que llueva*."
+     },
+     {
+       "type": "table",
+-      "title": "Esquemas de finalidad preventiva y disuasoria",
++      "title": "Purpose that avoids something",
+       "rows": [
+         [
+-          "'Para que no + subjuntivo'",
+-          "'Reforzaron los terraplenes para que el río no desborde la ciudad'"
++          "para que no + subjunctive",
++          "so that … does not (two subjects)"
+         ],
+         [
+-          "'A fin de que no + subjuntivo'",
+-          "'Se blindaron los archivos a fin de que no se filtren datos confidenciales'"
++          "a fin de que no + subjunctive",
++          "so that … does not (formal)"
+         ],
+         [
+-          "'Para no + infinitivo' (correferencia)",
+-          "'El testigo usó un seudónimo para no sufrir represalias'"
++          "para no, a fin de no + infinitive",
++          "in order not to (one subject)"
++        ],
++        [
++          "…, no sea que + subjunctive",
++          "in case, just in case"
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en gestión de crisis y protocolos de seguridad",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "El banco central intervino en el mercado cambiario para que no se desatara una corrida especulativa.",
+-          "english": "The central bank intervened in the foreign exchange market so that a speculative run would not break out."
++          "spanish": "Cierra la puerta para que el gato no salga a la calle.",
++          "english": "Close the door so that the cat does not go out into the street."
++        },
++        {
++          "spanish": "Anotamos la hora a fin de no llegar tarde.",
++          "english": "We wrote down the time so as not to arrive late."
+         },
+         {
+-          "spanish": "Los diplomáticos redactaron el comunicado con suma cautela a fin de no herir susceptibilidades regionales.",
+-          "english": "Diplomats drafted the communiqué with great caution in order not to hurt regional sensitivities."
++          "spanish": "Anota el número, no sea que lo olvides.",
++          "english": "Write the number down, in case you forget it."
+         },
+         {
+-          "spanish": "Se instalaron cortafuegos digitales para que los atacantes no vulneren los servidores electorales.",
+-          "english": "Digital firewalls were installed so that attackers do not breach the electoral servers."
++          "spanish": "Cerramos las ventanas a fin de que no entrara el frío.",
++          "english": "We closed the windows so that the cold would not come in."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Evita el calco innecesario del inglés 'in order not to' traducido como *'de orden a no'*. Usa con naturalidad 'a fin de no + inf' o 'para no + inf'."
++      "content": "Put *no* between the connector and the verb: *para que no salga*, *para no salir*. Keep the subjunctive after *no sea que*: say *no sea que llueva*, not *no sea que llueve*. *No sea que* is a warning about a possible problem rather than a plain purpose, so it has no infinitive form."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-12-05-a-gr.json b/content/es-latam/grammar/b2/b2-12-05-a-gr.json
+index 36a9560b..42a9818a 100644
+--- a/content/es-latam/grammar/b2/b2-12-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-12-05-a-gr.json
+@@ -1,51 +1,59 @@
+ {
+   "id": "grammar.b2.12.05.finalidad-condicional",
+-  "title": "Finalidad en marcos hipotéticos y condicionales",
++  "title": "Purpose Inside a Hypothesis",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Intersección de finalidad e hipótesis en la literatura y el debate moral",
+-      "content": "En la prosa reflexiva, psicológica y jurídica, las oraciones finales se subordinan frecuentemente a períodos condicionales e hipótesis sobre intenciones humanas: 'Si hubiera actuado de ese modo, habría sido únicamente para que lo perdonaran'; 'Pintó aquel cuadro al solo efecto de que alguien se asomara a su soledad interior'."
++      "title": "What you already know",
++      "content": "You know *tuviera* from B1 Unit 4 (*Si tuviera tiempo, viajaría*) and *hubiera* from B1 Unit 35, where *si* + *hubiera* + participle goes with *habría*. A purpose clause can sit inside the result of such a sentence: \"If I could, I would do it so that …\". The result verb is in the conditional, so the verb of the purpose clause moves to the imperfect subjunctive, the same rule as after a past verb in B1 Unit 38: *Si pudiera, lo haría para que mis hijos estudiaran*. It works with the past conditional too: *Si hubiera podido, lo habría hecho para que no sufrieran*. If the same person acts twice, the purpose is an infinitive as usual: *Si tuviera dinero, viajaría para conocer el mundo*."
+     },
+     {
+       "type": "table",
+-      "title": "Esquemas de finalidad subordinada a hipótesis",
++      "title": "A purpose in the result clause",
+       "rows": [
+         [
+-          "Finalidad en apódosis condicional",
+-          "'Si tuviera los recursos, crearía una fundación para que los niños huérfanos estudien'"
++          "Si pudiera, lo haría para que mis hijos estudiaran.",
++          "If I could, I would do it so that my children could study."
+         ],
+         [
+-          "Finalidad contrafáctica de pasado",
+-          "'De haber aceptado el soborno, habría sido con el fin de salvar a su familia'"
++          "Si tuviera tiempo, ayudaría a fin de que terminaran antes.",
++          "If I had time, I would help so that they would finish sooner."
+         ],
+         [
+-          "Finalidad exclusiva ('al solo efecto de')",
+-          "'Declaró ante la prensa al solo efecto de que se conociera la verdad'"
++          "Si hubiera podido, lo habría hecho para que no sufrieran.",
++          "If I had been able to, I would have done it so that they would not suffer."
++        ],
++        [
++          "Si tuviera dinero, viajaría para conocer el mundo.",
++          "If I had money, I would travel to see the world. (one person: infinitive)"
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en crítica literaria y análisis psicológico",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "En El túnel de Sabato, Juan Pablo Castel confiesa que pintó la ventanita para que una sola persona comprendiera su angustia.",
+-          "english": "In Sabato's The Tunnel, Juan Pablo Castel confesses that he painted the little window so that one single person would understand his anguish."
++          "spanish": "Si tuviera más dinero, compraría libros para que los niños leyeran más.",
++          "english": "If I had more money, I would buy books so that the children would read more."
++        },
++        {
++          "spanish": "Si pudiera, hablaría con ella para que no se sintiera sola.",
++          "english": "If I could, I would talk to her so that she would not feel alone."
+         },
+         {
+-          "spanish": "Si el protagonista hubiera ocultado el manuscrito, habría sido para que la posteridad juzgara sus verdaderos móviles.",
+-          "english": "If the protagonist had hidden the manuscript, it would have been so that posterity would judge his true motives."
++          "spanish": "Si hubiera tenido tiempo, habría llamado para que supieran que estaba bien.",
++          "english": "If I had had time, I would have called so that they would know I was fine."
+         },
+         {
+-          "spanish": "El juez interrogó al testigo al solo efecto de dilucidar si existía premeditación en sus actos.",
+-          "english": "The judge questioned the witness for the sole purpose of determining whether premeditation existed in his actions."
++          "spanish": "Si fuera director, cambiaría el horario a fin de que todos pudieran descansar.",
++          "english": "If I were the director, I would change the schedule so that everyone could rest."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "La fórmula 'al solo efecto de + inf' o 'al solo fin de que + subj' denota un propósito exclusivo, descartando cualquier otra motivación secundaria."
++      "content": "Look at the verb before *para que*. If it is a conditional (*haría*, *ayudaría*, *habría hecho*), use the imperfect subjunctive: *para que estudiaran*. If it is a present or a future (*hago*, *haré*), use the present subjunctive: *para que estudien*. Never put a conditional after *para que*: say *para que estudiaran*, not *para que estudiarían*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-11-01.json b/content/es-latam/lessons/b2/b2-11-01.json
+index 0a749d02..1ed984cb 100644
+--- a/content/es-latam/lessons/b2/b2-11-01.json
++++ b/content/es-latam/lessons/b2/b2-11-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.11.01",
+-  "title": "Condicionales mixtas: pasado con presente",
++  "title": "A Past Cause, a Present Result",
+   "level": "B2",
+-  "goal": "Master mixed conditional sentences connecting past hypothetical causes (pluperfect subjunctive) to present realities (conditional simple).",
+-  "grammar": "condicionales mixtas de pasado a presente: si hubiera hecho... hoy tendría",
++  "goal": "Say how a different past would change the present with si hubiera and the simple conditional.",
++  "grammar": "Mixed conditionals: past condition, present result",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Construct mixed conditionals linking past decisions to ongoing current realities.",
+-        "Use temporal markers (hoy, ahora, actualmente) to select the correct mood and tense in apodosis.",
+-        "Deploy vocabulary of prerequisites and commitments (requisito, cláusula, escollo, subordinar)."
++        "I can say how a different past would change the present with si hubiera and the simple conditional.",
++        "I can choose between the simple conditional and habría + participle by looking at the time of the result.",
++        "I can use the new words for requirements and obstacles."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-11-01.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say how a different past would change the present with si hubiera and the simple conditional.",
++        "I can choose between the simple conditional and habría + participle by looking at the time of the result.",
++        "I can use the new words for requirements and obstacles."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-11-02.json b/content/es-latam/lessons/b2/b2-11-02.json
+index 8184bfb1..80240481 100644
+--- a/content/es-latam/lessons/b2/b2-11-02.json
++++ b/content/es-latam/lessons/b2/b2-11-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.11.02",
+-  "title": "Condicionales mixtas: condición general y consecuencia en el pasado",
++  "title": "A Lasting Trait, a Past Result",
+   "level": "B2",
+-  "goal": "Construct mixed conditionals combining an ongoing trait or general condition (imperfect subjunctive) with a past result (compound conditional).",
+-  "grammar": "condicionales mixtas de rasgo general a pasado: si fuera más prudente, no habría firmado...",
++  "goal": "Say how a lasting trait would have changed a past event with si + imperfect subjunctive and habría + participle.",
++  "grammar": "Mixed conditionals: lasting condition, past result",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate mixed conditionals where a timeless condition accounts for a specific past decision.",
+-        "Differentiate transient past conditions from persistent character traits.",
+-        "Deploy legal and deliberative vocabulary (salvedad, estipular, plazo perentorio, vincular)."
++        "I can say how a lasting trait would have changed a past event with si + imperfect subjunctive and habría + participle.",
++        "I can tell a lasting condition from one moment in the past.",
++        "I can use the new words for personality traits."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-11-02.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say how a lasting trait would have changed a past event with si + imperfect subjunctive and habría + participle.",
++        "I can tell a lasting condition from one moment in the past.",
++        "I can use the new words for personality traits."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-11-03.json b/content/es-latam/lessons/b2/b2-11-03.json
+index 7c3e58ca..9a375663 100644
+--- a/content/es-latam/lessons/b2/b2-11-03.json
++++ b/content/es-latam/lessons/b2/b2-11-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.11.03",
+-  "title": "Nexos condicionales restrictivos: siempre que, con tal de que, a condición de que",
++  "title": "Strict Conditions: Siempre y Cuando and More",
+   "level": "B2",
+-  "goal": "Master restrictive conditional connectors ('con tal de que', 'a condición de que', 'siempre que') requiring subjunctive in negotiations and formal treaties.",
+-  "grammar": "condicionales restrictivas con subjuntivo: siempre y cuando, con tal de que, a condición de que",
++  "goal": "Set strict conditions with siempre y cuando and con la condición de que, and keep the subjunctive after every connector that sets terms.",
++  "grammar": "Strict conditions with the subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate contractual prerequisites using 'a condición de que' and 'con tal de que'.",
+-        "Distinguish conditional 'siempre que' (+ subj) from temporal 'siempre que' (+ ind).",
+-        "Deploy negotiation vocabulary (contrapartida, salvaguarda, anuencia, vinculante)."
++        "I can set a strict condition with siempre y cuando and con la condición de que.",
++        "I can keep the subjunctive after all the connectors that set terms.",
++        "I can use the new words for deals and agreements."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-11-03.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can set a strict condition with siempre y cuando and con la condición de que.",
++        "I can keep the subjunctive after all the connectors that set terms.",
++        "I can use the new words for deals and agreements."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-11-04.json b/content/es-latam/lessons/b2/b2-11-04.json
+index a01048b8..61590413 100644
+--- a/content/es-latam/lessons/b2/b2-11-04.json
++++ b/content/es-latam/lessons/b2/b2-11-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.11.04",
+-  "title": "Nexos condicionales exceptivos y negativos: a no ser que, a menos que, salvo que",
++  "title": "Unless: Adding Excepto Que and Excepto Si",
+   "level": "B2",
+-  "goal": "Master exceptive conditional clauses ('a no ser que', 'a menos que', 'salvo que') with subjunctive to formulate exceptions in formal regulations.",
+-  "grammar": "condicionales exceptivas y negativas con subjuntivo: a menos que, a no ser que, salvo que",
++  "goal": "Name the one exception that would change a plan with a menos que, a no ser que, salvo que and excepto que, and use salvo si and excepto si with the indicative.",
++  "grammar": "Exceptions with the subjunctive and the indicative",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate negative exceptions using 'a menos que' and 'a no ser que' + subjunctive.",
+-        "Distinguish 'salvo que' (+ subj) from 'salvo si' (+ ind).",
+-        "Deploy administrative and legal vocabulary (dispensa, eximir, causal, fuerza mayor)."
++        "I can name the one exception that would change a plan with a menos que, a no ser que, salvo que and excepto que.",
++        "I can use salvo si and excepto si with the indicative.",
++        "I can use the new words for exceptions and unexpected events."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-11-04.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can name the one exception that would change a plan with a menos que, a no ser que, salvo que and excepto que.",
++        "I can use salvo si and excepto si with the indicative.",
++        "I can use the new words for exceptions and unexpected events."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-11-05.json b/content/es-latam/lessons/b2/b2-11-05.json
+index 3a6db1ba..35595761 100644
+--- a/content/es-latam/lessons/b2/b2-11-05.json
++++ b/content/es-latam/lessons/b2/b2-11-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.11.05",
+-  "title": "Condicionales parentéticas, atenuadas y de cortesía institucional",
++  "title": "If I May: Polite Conditions",
+   "level": "B2",
+-  "goal": "Master parenthetical conditional formulas ('si se me permite', 'si bien se mira', 'si cupiera alguna duda') for diplomatic mitigation in institutional discourse.",
+-  "grammar": "condicionales de cortesía y atenuación retórica en debates institucionales y académicos",
++  "goal": "Soften a statement or a request with si no me equivoco, si mal no recuerdo, si me permite and si no es molestia.",
++  "grammar": "Polite si phrases in the present indicative",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Deploy polite mitigation formulas in speeches ('si no me equivoco', 'si se me permite').",
+-        "Punctuate parenthetical conditional clauses properly with commas in formal prose.",
+-        "Use diplomatic vocabulary of reservation and consensus (reparo, venia, sopesar, discrepar)."
++        "I can soften a statement or a request with si no me equivoco, si mal no recuerdo, si me permite and si no es molestia.",
++        "I can set these polite phrases off with commas.",
++        "I can use the new words for objections and polite disagreement."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-11-05.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can soften a statement or a request with si no me equivoco, si mal no recuerdo, si me permite and si no es molestia.",
++        "I can set these polite phrases off with commas.",
++        "I can use the new words for objections and polite disagreement."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-11-consolidation.json b/content/es-latam/lessons/b2/b2-11-consolidation.json
+index c1ade436..538c4355 100644
+--- a/content/es-latam/lessons/b2/b2-11-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-11-consolidation.json
+@@ -2,16 +2,16 @@
+   "id": "lesson.b2.11.consolidation",
+   "title": "Unit 11 Consolidation: Mixed Conditionals & Restrictive Conditions",
+   "level": "B2",
+-  "goal": "Consolidate mixed conditionals, restrictive connectors (con tal de que, siempre que), and exceptive clauses through literary analysis of Benedetti's 'La tregua'.",
+-  "grammar": "síntesis de condicionales mixtas (pasado-presente y presente-pasado), nexos restrictivos con subjuntivo y atenuación de cortesía",
++  "goal": "Review mixed conditionals, strict conditions, exceptions and polite si phrases, and read a text about Mario Benedetti and his novel La tregua.",
++  "grammar": "Review: mixed and restrictive conditionals",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate cross-temporal mixed conditionals connecting past events to present realities.",
+-        "Deploy restrictive and exceptive conditional connectors ('con tal de que', 'a no ser que') with subjunctive.",
+-        "Apply parenthetical polite formulas ('si se me permite', 'si bien se mira') in formal prose.",
+-        "Analyze the existential turning points in Mario Benedetti's 'La tregua'."
++        "Review the two mixed conditionals: a past condition with a result now, and a lasting trait with a past result.",
++        "Review the connectors that set conditions and name exceptions.",
++        "Review the polite si phrases.",
++        "Read a text about the writer Mario Benedetti and his novel La tregua."
+       ]
+     },
+     {
+@@ -34,16 +34,17 @@
+         "b2-11-consolidation.ex05",
+         "b2-11-consolidation.ex06",
+         "b2-11-consolidation.ex07",
+-        "b2-11-consolidation.ex08"
++        "b2-11-consolidation.ex08",
++        "b2-11-consolidation.ex09"
+       ]
+     },
+     {
+       "type": "checklist",
+       "items": [
+-        "I can formulate mixed conditionals linking past unfulfilled events to present consequences.",
+-        "I can connect general/permanent traits to specific past results with mixed conditionals.",
+-        "I can deploy restrictive conditional connectors ('con tal de que', 'siempre que') requiring subjunctive.",
+-        "I can use exceptive clauses ('a no ser que', 'salvo que') in administrative and legal writing."
++        "I can say how a different past would change the present, and how a lasting trait would have changed the past.",
++        "I can set conditions and name exceptions with the connectors of this unit.",
++        "I can soften a statement with a polite si phrase.",
++        "I can read a short text about Mario Benedetti and his novel La tregua."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-12-01.json b/content/es-latam/lessons/b2/b2-12-01.json
+index f042a07d..84399eff 100644
+--- a/content/es-latam/lessons/b2/b2-12-01.json
++++ b/content/es-latam/lessons/b2/b2-12-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.12.01",
+-  "title": "Oraciones finales con subjuntivo: a fin de que, para que, con el objeto de que",
++  "title": "Formal Purpose: A Fin de Que and Con el Objeto de Que",
+   "level": "B2",
+-  "goal": "Master purpose clauses requiring the subjunctive (para que, a fin de que, con el objeto de que) under subject change in formal institutional prose.",
+-  "grammar": "oraciones subordinadas finales con subjuntivo: para que, a fin de que, con el objeto de que",
++  "goal": "State a purpose with a fin de que and con el objeto de que, with the right subjunctive tense.",
++  "grammar": "Purpose with two subjects: a fin de que, con el objeto de que",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate institutional purpose clauses with 'a fin de que' and 'con el objeto de que'.",
+-        "Apply sequence of tenses between main verb and subjunctive purpose verb.",
+-        "Deploy strategic vocabulary (cometido, directriz, encaminar, programático)."
++        "I can state a purpose with a fin de que and con el objeto de que and the right subjunctive tense.",
++        "I can choose the present or the imperfect subjunctive from the main verb.",
++        "I can use the new words for aims and goals."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-12-01.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can state a purpose with a fin de que and con el objeto de que and the right subjunctive tense.",
++        "I can choose the present or the imperfect subjunctive from the main verb.",
++        "I can use the new words for aims and goals."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-12-02.json b/content/es-latam/lessons/b2/b2-12-02.json
+index 8ee10b08..8e0cc4b0 100644
+--- a/content/es-latam/lessons/b2/b2-12-02.json
++++ b/content/es-latam/lessons/b2/b2-12-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.12.02",
+-  "title": "Finalidad con infinitivo: correferencia y preposiciones",
++  "title": "One Person, One Verb: Purpose with the Infinitive",
+   "level": "B2",
+-  "goal": "Master infinitive purpose clauses under subject coreference (para + inf, a fin de + inf) in official resolutions and administrative reports.",
+-  "grammar": "construcciones finales con infinitivo bajo correferencia: para, a fin de, con el objeto de",
++  "goal": "State a purpose with para, a fin de and con el objeto de + infinitive when one person acts.",
++  "grammar": "Purpose with one subject: the infinitive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Apply the coreference rule selecting infinitive over subjunctive in purpose clauses.",
+-        "Utilize compound prepositional locutions ('con el objeto de', 'a fin de') with infinitive.",
+-        "Deploy institutional mandate vocabulary (atribución, propiciar, viabilizar, diligente)."
++        "I can state a purpose with para, a fin de and con el objeto de + infinitive when one person acts.",
++        "I can choose between the infinitive and que + subjunctive by looking at the subjects.",
++        "I can use the new words for plans and efforts."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-12-02.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can state a purpose with para, a fin de and con el objeto de + infinitive when one person acts.",
++        "I can choose between the infinitive and que + subjunctive by looking at the subjects.",
++        "I can use the new words for plans and efforts."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-12-03.json b/content/es-latam/lessons/b2/b2-12-03.json
+index 822ce32c..c603610f 100644
+--- a/content/es-latam/lessons/b2/b2-12-03.json
++++ b/content/es-latam/lessons/b2/b2-12-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.12.03",
+-  "title": "Finales con miras a, con vistas a y de modo que",
++  "title": "Looking Ahead: Con Miras A and Con Vistas A",
+   "level": "B2",
+-  "goal": "Master prospective purpose locutions ('con miras a', 'con vistas a', 'de modo que + subj') in strategic planning and multilateral agreements.",
+-  "grammar": "locuciones de finalidad prospectiva y estratégica: con miras a, con vistas a, de modo que + subjuntivo",
++  "goal": "State a plan with con miras a and con vistas a, and use de modo que + subjunctive for a purpose with two subjects.",
++  "grammar": "Purpose that looks ahead: con miras a, con vistas a",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate long-term strategic aims using 'con miras a' and 'con vistas a'.",
+-        "Differentiate final 'de modo que' (+ subj) from consecutive 'de modo que' (+ ind).",
+-        "Deploy forward-looking planning vocabulary (horizonte, prospectiva, envergadura, articular)."
++        "I can state a plan with con miras a and con vistas a + infinitive or noun.",
++        "I can use de modo que + subjunctive for a purpose with two subjects.",
++        "I can use the new words for plans and long-term goals."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-12-03.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can state a plan with con miras a and con vistas a + infinitive or noun.",
++        "I can use de modo que + subjunctive for a purpose with two subjects.",
++        "I can use the new words for plans and long-term goals."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-12-04.json b/content/es-latam/lessons/b2/b2-12-04.json
+index 756e3a7c..65f738c7 100644
+--- a/content/es-latam/lessons/b2/b2-12-04.json
++++ b/content/es-latam/lessons/b2/b2-12-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.12.04",
+-  "title": "Finales negativas e inhibición de consecuencias indeseadas",
++  "title": "Preventing Something: Para Que No and No Sea Que",
+   "level": "B2",
+-  "goal": "Master negative purpose clauses ('para que no', 'a fin de que no') in risk prevention, security protocols, and crisis management.",
+-  "grammar": "oraciones finales negativas y preventivas: para que no + subjuntivo, a fin de no + infinitivo",
++  "goal": "Say what you want to avoid with para que no, a fin de que no and para no + infinitive, and warn with no sea que.",
++  "grammar": "Negative purpose and precautions",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate preventive purpose clauses inhibiting unwanted events with 'para que no'.",
+-        "Use coreferent negative infinitive structures ('a fin de no + inf').",
+-        "Deploy risk mitigation vocabulary (cautela, precaver, blindaje, disuadir, salvaguardia)."
++        "I can say what I want to avoid with para que no, a fin de que no and para no + infinitive.",
++        "I can warn about a possible problem with no sea que + subjunctive.",
++        "I can use the new words for caution and precautions."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-12-04.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say what I want to avoid with para que no, a fin de que no and para no + infinitive.",
++        "I can warn about a possible problem with no sea que + subjunctive.",
++        "I can use the new words for caution and precautions."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-12-05.json b/content/es-latam/lessons/b2/b2-12-05.json
+index 6ba68db7..4dae03d3 100644
+--- a/content/es-latam/lessons/b2/b2-12-05.json
++++ b/content/es-latam/lessons/b2/b2-12-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.12.05",
+-  "title": "Finalidad en marcos hipotéticos y condicionales",
++  "title": "Purpose Inside a Hypothesis",
+   "level": "B2",
+-  "goal": "Master purpose clauses embedded within hypothetical frames, exclusive purpose locutions ('al solo efecto de'), and moral motive analysis.",
+-  "grammar": "finalidad en períodos hipotéticos y locuciones de propósito exclusivo: al solo efecto de, al solo fin de que",
++  "goal": "Add a purpose clause to a hypothetical sentence, with the imperfect subjunctive after the conditional.",
++  "grammar": "Purpose in hypothetical sentences",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Embed purpose clauses inside counterfactual and conditional periods.",
+-        "Deploy exclusive purpose formulas ('al solo efecto de + inf', 'al solo fin de que + subj').",
+-        "Analyze literary and psychological motives using teleological vocabulary (móvil, teleología, dilema)."
++        "I can add a purpose clause to a hypothetical sentence with the imperfect subjunctive.",
++        "I can use the same pattern with the past conditional.",
++        "I can use the new words for determination and effort."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-12-05.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can add a purpose clause to a hypothetical sentence with the imperfect subjunctive.",
++        "I can use the same pattern with the past conditional.",
++        "I can use the new words for determination and effort."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-12-consolidation.json b/content/es-latam/lessons/b2/b2-12-consolidation.json
+index b44970b2..0bfa61bc 100644
+--- a/content/es-latam/lessons/b2/b2-12-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-12-consolidation.json
+@@ -2,16 +2,16 @@
+   "id": "lesson.b2.12.consolidation",
+   "title": "Unit 12 Consolidation: Finality, Purpose & Institutional Goals",
+   "level": "B2",
+-  "goal": "Consolidate purpose clauses (para que, a fin de que), infinitive coreference, negative purpose, and prospective planning through literary analysis of Sabato's 'El túnel'.",
+-  "grammar": "síntesis de oraciones de finalidad con subjuntivo e infinitivo, locuciones prospectivas (con miras a) y propósitos exclusivos",
++  "goal": "Review purpose with para, a fin de que and con miras a, negative purpose and purpose inside hypothetical sentences, and read a text about Ernesto Sabato and his novel El túnel.",
++  "grammar": "Review: purpose clauses",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate complex purpose clauses differentiating coreference (infinitive) from change of subject (subjunctive).",
+-        "Deploy forward-looking locutions ('con miras a', 'con vistas a') and exclusive purpose ('al solo efecto de').",
+-        "Construct negative preventive purpose structures ('para que no + subj').",
+-        "Analyze teleological and existential motives in Ernesto Sabato's 'El túnel'."
++        "Review purpose with one subject (infinitive) and with two subjects (que + subjunctive).",
++        "Review purpose that looks ahead, and negative purpose.",
++        "Review purpose inside a hypothetical sentence.",
++        "Read a text about the writer Ernesto Sabato and his novel El túnel."
+       ]
+     },
+     {
+@@ -34,16 +34,17 @@
+         "b2-12-consolidation.ex05",
+         "b2-12-consolidation.ex06",
+         "b2-12-consolidation.ex07",
+-        "b2-12-consolidation.ex08"
++        "b2-12-consolidation.ex08",
++        "b2-12-consolidation.ex09"
+       ]
+     },
+     {
+       "type": "checklist",
+       "items": [
+-        "I can formulate purpose clauses with 'a fin de que' and 'para que' using correct subjunctive sequence.",
+-        "I can apply the coreference rule with 'para + infinitivo' and 'con el objeto de + infinitivo'.",
+-        "I can employ prospective connectors ('con miras a', 'con vistas a') in strategic planning.",
+-        "I can express preventive caution using negative purpose clauses ('para que no')."
++        "I can state a purpose with para, a fin de, con el objeto de and con miras a, with an infinitive or que + subjunctive.",
++        "I can say what I want to avoid with para que no and no sea que.",
++        "I can add a purpose to a hypothetical sentence.",
++        "I can read a short text about Ernesto Sabato and his novel El túnel."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/stories/classics/b2/b2-11.json b/content/es-latam/stories/classics/b2/b2-11.json
+index cce0f712..9eb65993 100644
+--- a/content/es-latam/stories/classics/b2/b2-11.json
++++ b/content/es-latam/stories/classics/b2/b2-11.json
+@@ -1,84 +1,74 @@
+ {
+   "id": "story.b2.11.benedetti",
+-  "title": "Mario Benedetti: La tregua",
++  "title": "Mario Benedetti y La tregua",
+   "level": "B2",
+-  "lesson": 6,
++  "lesson": 5,
++  "order": 11,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "characters": [
+-    "Martín Santomé",
+-    "Laura Avellaneda",
+-    "Jaime Santomé"
+-  ],
+-  "summary": "Adaptación pedagógica para nivel B2 de la célebre novela de Mario Benedetti: el diario íntimo de un oficinista a punto de jubilarse, el inesperado despertar del amor frente a la monotonía y la contingencia implacable del destino.",
++  "characters": [],
++  "summary": "Texto sobre Mario Benedetti, el escritor uruguayo, y su novela La tregua, que está escrita en forma de diario.",
+   "author": "Mario Benedetti (Uruguay, 1920–2009)",
+   "work": "La tregua (1960)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Mario Benedetti",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Martín Santomé es un hombre de cuarenta y nueve años que cuenta los días con precisión burocrática para jubilarse como jefe contable en Montevideo. Viudo desde hacía dos décadas tras la muerte de su esposa Isabel, su existencia se había reducido a una rutina gris: revisar balances en un despacho oscuro, tomar café con leche y convivir con sus tres hijos adultos en una atmósfera de respetuosa distancia emocional. Santomé sentía que si el tedio no hubiera gobernado su vida durante tantos años, hoy no miraría el porvenir con semejante escepticismo cansado, temiendo que el retiro desnudara su absoluta soledad interior."
+-    },
+-    {
+-      "type": "narration",
+-      "text": "Para conjurar el vacío y ordenar sus pensamientos dispersos, Martín decide iniciar un diario personal donde anota sus reflexiones cotidianas sobre el paso del tiempo, la rutina de la oficina y las manías de sus subalternos. Todo parecía destinado a transcurrir por los mismos cauces previsibles hasta una mañana lluviosa de febrero en que ingresa al departamento contable un grupo de nuevos empleados jóvenes. Entre ellos destaca Laura Avellaneda, una mujer de veinticuatro años, de mirada serena, modales discretos y una inteligencia luminosa que contrasta de inmediato con la vulgaridad y la holgazanería imperantes entre los antiguos empleados. Desde el primer instante, Martín observa con asombro que la presencia silenciosa de la joven altera la pesada respiración de la oficina."
++      "text": "Mario Benedetti fue un escritor uruguayo. Nació en 1920 y murió en 2009. Una de sus novelas es La tregua, que se publicó en 1960. En este texto vamos a hablar de ese libro y de la forma en que está escrito, pero no vamos a contar su final."
+     },
+     {
+       "type": "narration",
+-      "text": "A medida que pasan las semanas, la admiración profesional de Santomé se transforma en una apasionada conmoción afectiva. Descubre que Laura no solo es una contable meticulosa, sino un ser humano dotado de calidez espiritual y profunda capacidad de comprensión. A pesar de los veinticinco años de diferencia de edad y del temor al ridículo social, Martín reúne el coraje para invitarla a conversar a un café de la plaza Independencia. Allí descubren una complicidad construida sobre confidencias pausadas y una mutua necesidad de afecto que desmorona las reservas que él había alzado contra el mundo."
++      "text": "La tregua está escrita en forma de diario. Es el diario de Martín Santomé, y por eso el lector conoce la historia por las palabras de Santomé. Quien abre el libro no escucha a un narrador que cuenta desde fuera: lee las páginas de un diario. Si Benedetti no hubiera escrito la novela en forma de diario, hoy el lector no conocería a Santomé por sus propias palabras."
+     },
+     {
+       "type": "narration",
+-      "text": "Poco después, deciden alquilar un modesto departamento en un viejo edificio de la calle Coronel Brandzen para resguardar su intimidad del escrutinio de los colegas de trabajo y de las miradas censuradoras de la sociedad provinciana. En ese refugio soleado, adornado apenas con un par de sillas y una mesa de pino, florece entre ambos un amor luminoso, tierno y sincero que devuelve a Martín una vitalidad que creía extinta para siempre. En las páginas de su diario, el contable escribe conmovido que Dios o el destino le han concedido una 'tregua': un paréntesis inesperado de felicidad plena y redención en medio del largo y áspero combate de la monotonía cotidiana."
++      "text": "Santomé es viudo y tiene tres hijos. Trabaja en una oficina y está cerca de la jubilación. Como el libro es su diario, el lector no podría saber nada de la vida de Santomé, a menos que él la escribiera en esas páginas."
+     },
+     {
+       "type": "narration",
+-      "text": "Martín comprende entonces que si Laura no hubiera aparecido en su oficina aquella mañana de invierno, hoy seguiría siendo un autómata gris condenado a vegetar entre libros mayores y facturas sin memoria de belleza. El amor de la joven le devuelve la alegría de los sentidos y la fe en el porvenir; juntos planifican viajes por el interior del país y sueñan con la vida compartida que inaugurarán en cuanto se concrete su jubilación definitiva. Santomé se siente transformado: sus relaciones familiares con sus hijos mejoran gracias a una nueva tolerancia, y en la oficina sus antiguos empleados notan que la severidad adusta del jefe ha dejado paso a una mirada comprensiva y benevolente."
++      "text": "En esa misma oficina empieza a trabajar una mujer joven, Laura Avellaneda, y Santomé se enamora de ella. El lector sigue ese amor a través del diario, tal como Santomé lo escribe. Si La tregua no fuera el diario de Santomé, los lectores de 1960 no habrían conocido a Laura desde su punto de vista."
+     },
+     {
+       "type": "narration",
+-      "text": "Sin embargo, la felicidad humana suele estar condicionada por una fragilidad desgarradora que ninguna cautela puede conjurar. A comienzos de junio, Laura contrae un fuerte resfriado que la obliga a guardar reposo en su casa familiar. Pasan los días sin que regrese a la oficina y las cartas que Martín le envía no reciben respuesta. Desesperado por la incertidumbre y obligado a mantener la reserva para no comprometer el honor de la muchacha ante su familia conservadora, Santomé vive semanas de angustia indecible hasta que una tarde recibe la llamada devastadora del tío de Laura: la joven había sufrido un ataque repentino de gripe agravado por una complicación pulmonar irreversible, falleciendo en el sanatorio en la más absoluta soledad clínica."
++      "text": "Benedetti publicó La tregua en 1960. Si no la hubiera publicado, los lectores de hoy no podrían abrir el diario de Santomé y leerlo."
+     },
+     {
+       "type": "narration",
+-      "text": "El impacto de la noticia desmorona el mundo de Martín de manera fulminante. Al regresar a su departamento vacío, comprende con amarga lucidez que la tregua ha concluido para siempre y que la rutina implacable reclama de nuevo sus derechos legítimos sobre su vida. No obstante, mientras cierra su diario con mano temblorosa frente al horizonte plomizo del Río de la Plata, sabe que nada podrá arrebatarle el milagro de haber sido amado con tanta pureza: si no hubiera conocido a Laura Avellaneda, jamás habría sabido que la felicidad existía, y esa certeza luminosa, aun teñida por el dolor del duelo irreparable, será el escudo secreto que lo acompañará hasta el último de sus días."
++      "text": "Este texto no cuenta cómo termina la novela. Quien quiera conocer el final podrá hacerlo a condición de que lea el libro entero. Con tal de que llegue hasta la última página, el lector sabrá qué pasa con Santomé y con Laura, algo que aquí no vamos a decir. Por eso este texto solo presenta a los dos personajes de los que hablamos y la forma del libro."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿En qué circunstancias vitales y anímicas se encontraba Martín Santomé antes de conocer a Laura Avellaneda?",
++          "question": "According to the text, how is La tregua written?",
+           "options": [
+-            "Llevaba una existencia rutinaria y solitaria como jefe contable viudo, esperando con escepticismo una inminente jubilación.",
+-            "Acababa de regresar del exilio político en Europa tras fundar una editorial de poesía vanguardista.",
+-            "Administraba una estancia ganadera en el departamento de Tacuarembó amenazada por la sequía.",
+-            "Preparaba su candidatura política para el consejo de administración municipal de la capital uruguaya."
++            "En forma de diario.",
++            "Como una serie de cartas entre dos personas.",
++            "Como una obra de teatro en tres actos."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El párrafo 1 detalla que Santomé era un viudo de 49 años que vivía sumido en la rutina contable y el aislamiento emocional, esperando su jubilación."
++          "explanation": "The text says that La tregua is written in the form of a diary, the diary of Martín Santomé."
+         },
+         {
+-          "question": "¿Qué significado otorgaba Santomé al concepto de 'la tregua' en las páginas de su diario íntimo?",
++          "question": "What does the text say about Martín Santomé?",
+           "options": [
+-            "Un paréntesis inesperado de felicidad y amor luminoso concedido por el destino en medio de la monotonía cotidiana.",
+-            "Un armisticio diplomático firmado entre las facciones gremiales de los empleados de comercio.",
+-            "Una prórroga legal concedida por el tribunal de apelaciones para evitar el desahucio de su vivienda.",
+-            "Un descanso médico temporal que le permitía ausentarse de la oficina durante los meses de verano."
++            "Es viudo, tiene tres hijos y trabaja en una oficina.",
++            "Es soltero y vive solo en el campo.",
++            "Es un joven que acaba de empezar a trabajar."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El párrafo 4 explica que Santomé definió su relación con Laura como una tregua providencial de plenitud afectiva frente a la aspereza de la vida gris."
++          "explanation": "The text says that Santomé is a widower with three children, that he works in an office and that he is close to retirement."
+         },
+         {
+-          "question": "¿A qué certeza íntima llega Martín Santomé tras el trágico fallecimiento de Laura al final del relato?",
++          "question": "According to the text, how can a reader find out how the novel ends?",
+           "options": [
+-            "Que el dolor del duelo no borra el milagro de haber descubierto la felicidad auténtica a través del amor.",
+-            "Que debe renunciar de inmediato a sus derechos jubilatorios para marcharse a vivir a Buenos Aires.",
+-            "Que las cartas y memorias escritas en su diario deben ser destruidas para no despertar suspicacias familiares.",
+-            "Que el trabajo en la oficina es la única salvación moral frente a la fragilidad de las ilusiones humanas."
++            "Leyendo el libro entero.",
++            "Leyendo solo este texto.",
++            "Leyendo otras novelas de Benedetti."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El párrafo 7 subraya que, pese a la desolación de la pérdida, la certeza de haber amado y sido amado será el consuelo imperecedero de su existencia."
++          "explanation": "The text says that it does not tell the ending, and that a reader can find it out on condition that they read the whole book."
+         }
+       ]
+     }
+diff --git a/content/es-latam/stories/classics/b2/b2-12.json b/content/es-latam/stories/classics/b2/b2-12.json
+index ce071ba7..7dd115ae 100644
+--- a/content/es-latam/stories/classics/b2/b2-12.json
++++ b/content/es-latam/stories/classics/b2/b2-12.json
+@@ -1,84 +1,74 @@
+ {
+   "id": "story.b2.12.sabato",
+-  "title": "Ernesto Sabato: El túnel",
++  "title": "Ernesto Sabato y El túnel",
+   "level": "B2",
+-  "lesson": 6,
++  "lesson": 5,
++  "order": 12,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "characters": [
+-    "Juan Pablo Castel",
+-    "María Iribarne",
+-    "Allende"
+-  ],
+-  "summary": "Adaptación pedagógica para nivel B2 de la célebre novela existencialista de Ernesto Sabato: la confesión de Juan Pablo Castel desde la cárcel, los propósitos inconfesables de su arte y la soledad incurable del alma humana.",
++  "characters": [],
++  "summary": "Texto sobre Ernesto Sabato, el escritor argentino que antes fue físico, sobre su novela El túnel y sobre el informe Nunca más.",
+   "author": "Ernesto Sabato (Argentina, 1911–2011)",
+   "work": "El túnel (1948)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Ernesto Sabato",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Bastará decir que soy Juan Pablo Castel, el pintor que mató a María Iribarne. Supongo que el proceso judicial está en el recuerdo de todos y que no se necesitan mayores explicaciones sobre mi persona. Aunque ni los más benevolentes críticos de arte comprendieron jamás el sentido profundo de mis cuadros, redacto estas páginas desde mi celda con el solo propósito de que al menos una persona en este mundo entienda los móviles íntimos de mi crimen, a fin de que mi aislamiento espiritual no sea absoluto. Desprecio la vanidad mezquina de quienes escriben para vanagloriarse; mi confesión persigue un fin estrictamente teleológico: dilucidar cómo una búsqueda desesperada de comunión humana terminó desembocando en una tragedia irreparable."
+-    },
+-    {
+-      "type": "narration",
+-      "text": "Todo comenzó en el Salón de Primavera de 1946, donde expuse un cuadro titulado 'Maternidad'. Era una composición aparentemente clásica, pero en la esquina superior izquierda, a través de una ventanita diminuta, se abría una escena solitaria y desolada: una playa vacía y una mujer que contemplaba el mar embravecido como esperando algo inaccesible. Pinté esa ventanita con el objeto de que alguien descifrara la soledad que me devoraba por dentro, para que un alma afín supiera que aquel detalle marginal constituía el mensaje verdadero de mi existencia. Nadie pareció advertirlo; los críticos pasaban de largo prodigando elogios técnicos vacíos, hasta que vi a una muchacha desconocida que se detuvo fijamente ante la pequeña ventana, mirando el mar con una concentración que delataba un estremecimiento idéntico al mío."
++      "text": "Ernesto Sabato fue un escritor argentino. Nació en 1911 y murió en 2011. Este texto presenta al autor y a su primera novela, El túnel, y también habla de otro trabajo que hizo años después. Lo cuenta en orden para que el lector sepa quién fue Sabato antes de abrir el libro."
+     },
+     {
+       "type": "narration",
+-      "text": "Durante meses la busqué obsesivamente por las calles de Buenos Aires. Caminaba sin descanso entre la multitud de la calle San Martín y la plaza San Martín con el afán de encontrarla, ensayando mentalmente cientos de diálogos a fin de no espantarla en cuanto la viera. Cuando por fin tropecé con ella a la salida de un edificio de oficinas, la abordé con una mezcla de furia y torpeza, exigiéndole que me hablara de la ventanita. María Iribarne —así se llamaba— palideció y admitió con voz temblorosa que recordaba la pintura constantemente, revelándome que ella también vivía atrapada en un abismo de incomunicación."
++      "text": "Sabato no empezó como escritor. Primero se formó como físico y trabajó como físico, y solo más tarde llegó a la literatura. Eso quiere decir que, antes de publicar su primera novela, ya tenía una profesión científica."
+     },
+     {
+       "type": "narration",
+-      "text": "A partir de aquel encuentro, iniciamos una relación tormentosa y desigual. Visité a María en su casona señorial, donde descubrí con estupor que estaba casada con un hombre ciego llamado Allende, individuo sereno y lúcido que aceptaba la amistad de su esposa con generosa benevolencia. Mis celos patológicos comenzaron a torturarme sin tregua: necesitaba someter a María a interrogatorios despiadados con el propósito de arrancarle certezas absolutas, a fin de que no quedara el menor resquicio de duda sobre la exclusividad de su amor. Cada una de sus vacilaciones se transformaba en una herida sangrante en mi orgullo, empujándome a redactar cartas cargadas de veneno y reproches para herirla hasta lo más profundo."
++      "text": "El túnel apareció en 1948 y fue su primera novela. La cuenta un pintor, Juan Pablo Castel, en primera persona. Desde la primera página, Castel explica que mató a la mujer que amaba, y explica también por qué. Por eso el lector no necesita llegar al final para saber qué hizo Castel."
+     },
+     {
+       "type": "narration",
+-      "text": "En una estancia remota donde María solía refugiarse, frente a los mismos acantilados y el mar tempestuoso que yo había pintado en mi ventanita, creí por breves instantes alcanzar la redención. Paseamos por la playa con vistas a sellar un pacto indestructible que nos protegiera de la hostilidad del mundo. Sin embargo, mi mente hiperlúcida y destructiva no podía tolerar el misterio: sospeché de inmediato que María mantenía vínculos inconfesables con su primo Hunter, interpretando cada gesto inocente como una coartada hipócrita para burlarse de mi devoción ciega."
++      "text": "El lector que abre el libro con el fin de conocer las razones de Castel no tiene que buscarlas fuera del texto: las da el propio pintor. Quien lee El túnel lee, por tanto, la explicación del propio pintor y no la de otra persona. Para entender lo que dice, basta leer sus palabras con atención. Este texto tampoco cuenta toda la historia a fin de que el lector la descubra por sí mismo."
+     },
+     {
+       "type": "narration",
+-      "text": "La convicción febril de que María engañaba a todos —a su esposo ciego, a Hunter y a mí— selló su destino y el mío. Regresé a Buenos Aires como un autómata consumido por el insomnio y la desesperación. Conseguí un cuchillo de carnicero y conduje bajo la lluvia torrencial hacia la estancia con el solo fin de consumar el desenlace inevitable. Al subir a su dormitorio en la penumbra de la medianoche, le clavé el acero en el pecho susurrándole que debía matarla para que nadie más mancillara aquel secreto que solo a los dos pertenecía. Su mirada agonizante no contenía odio, sino una compasión infinita que me persigue noche y día en el encierro."
++      "text": "Años más tarde, Sabato presidió la CONADEP, la comisión que investigó lo ocurrido con las personas desaparecidas durante la dictadura argentina. El informe de esa comisión, de 1984, se llama Nunca más. También se conoce como el Informe Sabato. Para saber más sobre el trabajo de la comisión, el lector tiene que buscar ese informe."
+     },
+     {
+       "type": "narration",
+-      "text": "Ahora comprendo la verdad atroz que rigió mi destino: todos los seres humanos habitan sus propios túneles individuales, oscuros y paralelos, a lo largo de los cuales transitamos desde la infancia hasta la muerte. Yo había creído ingenuamente que María viajaba por otro túnel paralelo al mío y que nuestras ventanas se habían cruzado por un prodigio del destino; pero en realidad mi túnel siempre estuvo cerrado por murallas de cristal impenetrable. Escribo estas memorias para que quede constancia de mi desastre, sabiendo que mientras los muros de la prisión me resguardan del mundo exterior, mi espíritu continuará encerrado para siempre en la soledad más implacable."
++      "text": "Así, hay dos caminos para conocer a Sabato: leer El túnel o leer Nunca más. Con el fin de elegir bien, el lector puede preguntarse qué busca: una novela contada por un pintor o el informe de una comisión. Cada camino ofrece algo distinto: uno es una novela de 1948 y el otro es un informe de 1984. En los dos casos, ya sabe quién fue el autor y cuándo vivió."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál era la verdadera finalidad de la ventanita en el cuadro 'Maternidad' de Juan Pablo Castel?",
++          "question": "What was Sabato before he became a writer, according to the text?",
+           "options": [
+-            "Transmitir su soledad interior para que un alma afín descifrara el mensaje profundo de su existencia.",
+-            "Demostrar a los críticos académicos su maestría en la perspectiva óptica geométrica.",
+-            "Publicitar las playas vírgenes del sur bonaerense para incentivar el turismo.",
+-            "Cumplir con un encargo religioso contratado por una cofradía de la catedral."
++            "Un físico.",
++            "Un pintor.",
++            "Un médico."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El párrafo 2 explica que Castel pintó la escena marginal de la ventana para que alguien sintiera la misma soledad y descifrara su verdadero ser."
++          "explanation": "The text says that Sabato trained and worked as a physicist and came to literature only later."
+         },
+         {
+-          "question": "¿Qué patología psicológica destruyó la posibilidad de comunión entre Castel y María Iribarne?",
++          "question": "Who tells the story of El túnel, according to the text?",
+           "options": [
+-            "Sus celos obsesivos e interrogatorios despiadados para exigir certezas de fidelidad absoluta.",
+-            "Su adicción incontrolable al juego de cartas en los clubes del puerto de Buenos Aires.",
+-            "Su negativa absoluta a vender obras de arte a coleccionistas extranjeros.",
+-            "Su fobia insuperable a viajar en ferrocarril hacia la campiña pampeana."
++            "Un pintor, Juan Pablo Castel, en primera persona.",
++            "Un narrador que no es ningún personaje.",
++            "Una mujer que conoce al pintor."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El párrafo 4 detalla cómo los celos patológicos de Castel y sus inquisiciones constantes arruinaron la relación al buscar una exclusividad asfixiante."
++          "explanation": "The text says that a painter, Juan Pablo Castel, tells the novel in the first person."
+         },
+         {
+-          "question": "¿Qué metáfora existencial sintetiza la desolada conclusión de Castel al final de su relato?",
++          "question": "What does the text say about the report of the commission that Sabato presided over?",
+           "options": [
+-            "La certidumbre de que cada ser humano vive recluido en su propio túnel oscuro e impenetrable.",
+-            "La comparación de la sociedad con un tablero de ajedrez donde el azar decide los destinos.",
+-            "La visión de la historia humana como un laberinto circular sin salida ética posible.",
+-            "La convicción de que el arte pictórico reemplaza plenamente a la justicia de los tribunales."
++            "Es de 1984, se llama Nunca más y también se conoce como el Informe Sabato.",
++            "Es de 1948, se llama El túnel y es una novela.",
++            "Es de 2011, se llama Informe Sabato y es un libro de física."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El párrafo 7 expone la célebre metáfora del túnel: la imposibilidad de salir del aislamiento individual y la incomunicación radical entre las almas."
++          "explanation": "The text says that the report of the CONADEP is from 1984, is called Nunca más and is also known as the Informe Sabato."
+         }
+       ]
+     }
+diff --git a/content/es-latam/vocabulary/b2/b2-11-01-voc.json b/content/es-latam/vocabulary/b2/b2-11-01-voc.json
+index fc475146..b79ef8c1 100644
+--- a/content/es-latam/vocabulary/b2/b2-11-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-11-01-voc.json
+@@ -1,48 +1,33 @@
+ {
+   "id": "vocab.b2.11.01",
+   "lesson": "b2-11-01",
+-  "title": "Requisitos, condiciones y repercusiones actuales",
+-  "theme": "Vocabulario de requisitos indispensables y consecuencias presentes",
++  "title": "Words for requirements and consequences",
++  "theme": "Mixed conditionals",
+   "words": [
+     {
+-      "lemma": "el requisito",
+-      "translation": "requirement, prerequisite",
++      "lemma": "el rumbo",
++      "translation": "course, direction",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "la prerrogativa",
+-      "translation": "prerogative, privilege",
++      "lemma": "el requisito",
++      "translation": "requirement",
+       "pos": "noun"
+     },
+-    {
+-      "lemma": "subordinar",
+-      "translation": "to subordinate",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "indispensable",
+-      "translation": "indispensable, essential",
+-      "pos": "adjective"
+-    },
+     {
+       "lemma": "el escollo",
+-      "translation": "stumbling block, hurdle",
++      "translation": "stumbling block, obstacle",
+       "pos": "noun"
+     },
+-    {
+-      "lemma": "condicionar",
+-      "translation": "to condition, to determine",
+-      "pos": "verb"
+-    },
+     {
+       "lemma": "la cláusula",
+-      "translation": "clause, stipulation",
++      "translation": "clause (in a contract)",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "el compromiso",
+-      "translation": "commitment, compromise",
+-      "pos": "noun"
++      "lemma": "condicionar",
++      "translation": "to shape, to make depend on",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-11-02-voc.json b/content/es-latam/vocabulary/b2/b2-11-02-voc.json
+index fde06822..dba7f624 100644
+--- a/content/es-latam/vocabulary/b2/b2-11-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-11-02-voc.json
+@@ -1,47 +1,32 @@
+ {
+   "id": "vocab.b2.11.02",
+   "lesson": "b2-11-02",
+-  "title": "Condiciones permanentes y consecuencias retrospectivas",
+-  "theme": "Vocabulario de rasgos permanentes, salvedades y nulidades",
++  "title": "Words for personality traits",
++  "theme": "Mixed conditionals",
+   "words": [
+     {
+-      "lemma": "la salvedad",
+-      "translation": "qualification, exception, caveat",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "el agravio",
+-      "translation": "offense, grievance",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "restringir",
+-      "translation": "to restrict, to curtail",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "estipular",
+-      "translation": "to stipulate",
+-      "pos": "verb"
++      "lemma": "terco",
++      "translation": "stubborn",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "el plazo perentorio",
+-      "translation": "peremptory deadline, strict term",
+-      "pos": "noun"
++      "lemma": "despistado",
++      "translation": "absent-minded",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "vincular",
+-      "translation": "to bind, to link",
+-      "pos": "verb"
++      "lemma": "sensato",
++      "translation": "sensible",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "la nulidad",
+-      "translation": "nullity, invalidity",
+-      "pos": "noun"
++      "lemma": "desconfiado",
++      "translation": "distrustful",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "sensato",
+-      "translation": "sensible, wise",
++      "lemma": "derrochador",
++      "translation": "wasteful with money",
+       "pos": "adjective"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-11-03-voc.json b/content/es-latam/vocabulary/b2/b2-11-03-voc.json
+index 0b28e62e..1bfdc842 100644
+--- a/content/es-latam/vocabulary/b2/b2-11-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-11-03-voc.json
+@@ -1,43 +1,28 @@
+ {
+   "id": "vocab.b2.11.03",
+   "lesson": "b2-11-03",
+-  "title": "Negociación contractual y condiciones estrictas",
+-  "theme": "Vocabulario de pactos, salvaguardas y acuerdos formales",
++  "title": "Words for deals and agreements",
++  "theme": "Restrictive conditions",
+   "words": [
+     {
+       "lemma": "pactar",
+-      "translation": "to agree upon, to covenant",
++      "translation": "to agree on",
+       "pos": "verb"
+     },
+     {
+       "lemma": "la contrapartida",
+-      "translation": "counterpart, quid pro quo",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "la salvaguarda",
+-      "translation": "safeguard, protection",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "la anuencia",
+-      "translation": "consent, concurrence",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "el canje",
+-      "translation": "exchange, trade",
++      "translation": "something in return",
+       "pos": "noun"
+     },
+     {
+       "lemma": "la fianza",
+-      "translation": "bail, security deposit, bond",
++      "translation": "deposit",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "conmutar",
+-      "translation": "to commute, to exchange",
+-      "pos": "verb"
++      "lemma": "la salvaguarda",
++      "translation": "safeguard",
++      "pos": "noun"
+     },
+     {
+       "lemma": "vinculante",
+diff --git a/content/es-latam/vocabulary/b2/b2-11-04-voc.json b/content/es-latam/vocabulary/b2/b2-11-04-voc.json
+index f7802186..c8843bcf 100644
+--- a/content/es-latam/vocabulary/b2/b2-11-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-11-04-voc.json
+@@ -1,48 +1,33 @@
+ {
+   "id": "vocab.b2.11.04",
+   "lesson": "b2-11-04",
+-  "title": "Excepciones formales, dispensas y exoneraciones",
+-  "theme": "Vocabulario de causales de fuerza mayor y exenciones jurídicas",
++  "title": "Words for exceptions and the unexpected",
++  "theme": "Exceptions",
+   "words": [
+     {
+       "lemma": "la dispensa",
+-      "translation": "dispensation, exemption",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "la salvedad",
+-      "translation": "caveat, reservation",
++      "translation": "exemption",
+       "pos": "noun"
+     },
+     {
+       "lemma": "eximir",
+-      "translation": "to exempt, to excuse",
++      "translation": "to exempt",
+       "pos": "verb"
+     },
+-    {
+-      "lemma": "la causal",
+-      "translation": "grounds, legal cause",
+-      "pos": "noun"
+-    },
+     {
+       "lemma": "la fuerza mayor",
+-      "translation": "force majeure, act of God",
++      "translation": "circumstances beyond anyone's control",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "la exoneración",
+-      "translation": "exoneration, waiver",
++      "lemma": "el imprevisto",
++      "translation": "unexpected event",
+       "pos": "noun"
+     },
+     {
+       "lemma": "incurrir",
+-      "translation": "to incur, to fall into",
++      "translation": "to fall into, to incur",
+       "pos": "verb"
+-    },
+-    {
+-      "lemma": "perentorio",
+-      "translation": "peremptory, urgent, unappealable",
+-      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-11-05-voc.json b/content/es-latam/vocabulary/b2/b2-11-05-voc.json
+index 06dbff1e..2c08eaea 100644
+--- a/content/es-latam/vocabulary/b2/b2-11-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-11-05-voc.json
+@@ -1,48 +1,33 @@
+ {
+   "id": "vocab.b2.11.05",
+   "lesson": "b2-11-05",
+-  "title": "Atenuación retórica, reservas y cortesía diplomática",
+-  "theme": "Vocabulario de reservas formales, objeciones y anuencias",
++  "title": "Words for objections and polite disagreement",
++  "theme": "Polite conditions",
+   "words": [
+     {
+       "lemma": "la objeción",
+-      "translation": "objection, challenge",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "la reserva",
+-      "translation": "reservation, caveat",
++      "translation": "objection",
+       "pos": "noun"
+     },
+     {
+       "lemma": "el reparo",
+-      "translation": "qualm, objection, faultfinding",
++      "translation": "reservation, objection",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "sopesar",
+-      "translation": "to weigh up, to ponder",
++      "lemma": "discrepar",
++      "translation": "to disagree",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la venia",
+-      "translation": "permission, leave, nod",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "la discrepancia",
+-      "translation": "discrepancy, disagreement",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "atenuar",
+-      "translation": "to attenuate, to tone down",
++      "lemma": "matizar",
++      "translation": "to qualify, to add nuance",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "legítimo",
+-      "translation": "legitimate, rightful",
+-      "pos": "adjective"
++      "lemma": "la molestia",
++      "translation": "trouble, bother",
++      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-12-01-voc.json b/content/es-latam/vocabulary/b2/b2-12-01-voc.json
+index 39f22ffd..da80042b 100644
+--- a/content/es-latam/vocabulary/b2/b2-12-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-12-01-voc.json
+@@ -1,8 +1,8 @@
+ {
+   "id": "vocab.b2.12.01",
+   "lesson": "b2-12-01",
+-  "title": "Misión institucional, finalidades y metas estratégicas",
+-  "theme": "Vocabulario de objetivos programáticos, directrices y propósitos",
++  "title": "Words for aims and goals",
++  "theme": "Purpose clauses",
+   "words": [
+     {
+       "lemma": "el propósito",
+@@ -11,37 +11,22 @@
+     },
+     {
+       "lemma": "la finalidad",
+-      "translation": "end, ultimate purpose",
++      "translation": "aim, purpose",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "encaminar",
+-      "translation": "to direct, to channel towards",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "el cometido",
+-      "translation": "task, mandate, mission",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "la directriz",
+-      "translation": "guideline, directive",
++      "lemma": "la meta",
++      "translation": "goal, target",
+       "pos": "noun"
+     },
+     {
+       "lemma": "perseguir",
+-      "translation": "to pursue, to seek",
++      "translation": "to pursue, to aim at",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "programático",
+-      "translation": "programmatic",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "la meta",
+-      "translation": "goal, target",
++      "lemma": "la directriz",
++      "translation": "guideline",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-12-02-voc.json b/content/es-latam/vocabulary/b2/b2-12-02-voc.json
+index 6d877782..79a874bf 100644
+--- a/content/es-latam/vocabulary/b2/b2-12-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-12-02-voc.json
+@@ -1,47 +1,32 @@
+ {
+   "id": "vocab.b2.12.02",
+   "lesson": "b2-12-02",
+-  "title": "Correferencia, planes de acción y ejecución directa",
+-  "theme": "Vocabulario de ejecución estratégica, competencias y cometidos",
++  "title": "Words for plans and efforts",
++  "theme": "Purpose with the infinitive",
+   "words": [
+-    {
+-      "lemma": "la prerrogativa",
+-      "translation": "prerogative, privilege",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "acatar",
+-      "translation": "to comply with, to abide by",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "la atribución",
+-      "translation": "power, authority, attribution",
+-      "pos": "noun"
+-    },
+     {
+       "lemma": "propiciar",
+-      "translation": "to foster, to facilitate",
++      "translation": "to encourage, to bring about",
+       "pos": "verb"
+     },
+     {
+       "lemma": "el afán",
+-      "translation": "eagerness, zeal, keen desire",
++      "translation": "keen desire",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "viabilizar",
+-      "translation": "to make viable, to facilitate",
++      "lemma": "emprender",
++      "translation": "to undertake",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la competencia",
+-      "translation": "jurisdiction, competence",
++      "lemma": "la gestión",
++      "translation": "step taken, procedure",
+       "pos": "noun"
+     },
+     {
+       "lemma": "diligente",
+-      "translation": "diligent",
++      "translation": "diligent, hard-working",
+       "pos": "adjective"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-12-03-voc.json b/content/es-latam/vocabulary/b2/b2-12-03-voc.json
+index e2976f9d..5d030d41 100644
+--- a/content/es-latam/vocabulary/b2/b2-12-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-12-03-voc.json
+@@ -1,47 +1,32 @@
+ {
+   "id": "vocab.b2.12.03",
+   "lesson": "b2-12-03",
+-  "title": "Prospectiva estratégica, horizontes y metas institucionales",
+-  "theme": "Vocabulario de proyección a largo plazo, prospectiva y horizontes",
++  "title": "Words for plans and long-term goals",
++  "theme": "Purpose that looks ahead",
+   "words": [
+     {
+       "lemma": "el horizonte",
+-      "translation": "horizon, outlook",
++      "translation": "outlook, time horizon",
+       "pos": "noun"
+     },
+-    {
+-      "lemma": "la prospectiva",
+-      "translation": "foresight, forward-looking analysis",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "proyectar",
+-      "translation": "to project, to plan",
+-      "pos": "verb"
+-    },
+     {
+       "lemma": "la envergadura",
+-      "translation": "scope, magnitude, scale",
++      "translation": "scale, scope",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "estratégico",
+-      "translation": "strategic",
+-      "pos": "adjective"
++      "lemma": "el hito",
++      "translation": "milestone",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "articular",
+-      "translation": "to articulate, to coordinate",
++      "lemma": "proyectar",
++      "translation": "to plan, to project",
+       "pos": "verb"
+     },
+     {
+       "lemma": "la previsión",
+-      "translation": "forecast, foresight",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "el hito",
+-      "translation": "milestone, landmark",
++      "translation": "forecast",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-12-04-voc.json b/content/es-latam/vocabulary/b2/b2-12-04-voc.json
+index ba1f52ec..fcebff16 100644
+--- a/content/es-latam/vocabulary/b2/b2-12-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-12-04-voc.json
+@@ -1,48 +1,33 @@
+ {
+   "id": "vocab.b2.12.04",
+   "lesson": "b2-12-04",
+-  "title": "Prevención de riesgos, cautelas y salvaguardas",
+-  "theme": "Vocabulario de mitigación de daños, cautela e inhibición de riesgos",
++  "title": "Words for caution and precautions",
++  "theme": "Negative purpose",
+   "words": [
+     {
+       "lemma": "la cautela",
+-      "translation": "caution, prudence",
++      "translation": "caution",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "soslayar",
+-      "translation": "to avoid, to sidestep",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "la contingencia",
+-      "translation": "contingency, risk",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "precaver",
+-      "translation": "to prevent, to guard against",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "el blindaje",
+-      "translation": "shielding, legal safeguard",
++      "lemma": "el contratiempo",
++      "translation": "setback, unexpected problem",
+       "pos": "noun"
+     },
+     {
+       "lemma": "disuadir",
+-      "translation": "to deter, to dissuade",
++      "translation": "to dissuade, to talk out of",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la salvaguardia",
+-      "translation": "safeguard, protection",
++      "lemma": "la advertencia",
++      "translation": "warning",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "preventivo",
+-      "translation": "preventive",
+-      "pos": "adjective"
++      "lemma": "resguardar",
++      "translation": "to protect, to keep safe",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-12-05-voc.json b/content/es-latam/vocabulary/b2/b2-12-05-voc.json
+index 29cb19c7..5574e824 100644
+--- a/content/es-latam/vocabulary/b2/b2-12-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-12-05-voc.json
+@@ -1,48 +1,33 @@
+ {
+   "id": "vocab.b2.12.05",
+   "lesson": "b2-12-05",
+-  "title": "Finalidades hipotéticas, retórica de intenciones y dilemas morales",
+-  "theme": "Vocabulario de motivaciones ocultas, teleología y juicio ético",
++  "title": "Words for determination and effort",
++  "theme": "Purpose in hypothetical sentences",
+   "words": [
+     {
+-      "lemma": "el móvil",
+-      "translation": "motive, driving reason",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "inconfesable",
+-      "translation": "unmentionable, unconfessable",
+-      "pos": "adjective"
++      "lemma": "proponerse",
++      "translation": "to set out to, to resolve",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "la coartada",
+-      "translation": "alibi, pretext",
++      "lemma": "el empeño",
++      "translation": "determination, effort",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "dilucidar",
+-      "translation": "to elucidate, to shed light on",
++      "lemma": "esmerarse",
++      "translation": "to take great care",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la teleología",
+-      "translation": "teleology, doctrine of purpose",
++      "lemma": "el anhelo",
++      "translation": "longing, deep wish",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "el dilema",
+-      "translation": "dilemma",
++      "lemma": "la voluntad",
++      "translation": "will, willingness",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "desentrañar",
+-      "translation": "to unravel, to decipher",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "inconfeso",
+-      "translation": "unconfessed, covert",
+-      "pos": "adjective"
+     }
+   ]
+ }
