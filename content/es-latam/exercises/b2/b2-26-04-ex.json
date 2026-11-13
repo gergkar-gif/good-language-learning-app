@@ -5,94 +5,123 @@
       "id": "b2-26-04.ex01",
       "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence is a rule for everyone, without naming who has to do it?",
+      "options": [
+        "Para entrar, tengo que mostrar el pasaporte.",
+        "Para entrar, hay que mostrar el pasaporte.",
+        "Para entrar, debo mostrar el pasaporte."
+      ],
+      "correct": 1,
       "teaches": [
         "hay-que"
       ],
-      "question": "¿Cómo se conjuga el verbo auxiliar en la perífrasis impersonal de obligación 'haber que + infinitivo'?",
-      "options": [
-        "Concuerda en número y persona con el sustantivo que sigue al infinitivo.",
-        "Se conjuga exclusivamente en tercera persona del singular en todos los tiempos verbales.",
-        "Adopta formas reflexivas con el pronombre 'se' adherido al auxiliar.",
-        "Solo existe en modo imperativo afirmativo de segunda persona."
-      ],
-      "correct": 1
+      "distractor_skills": {
+        "0": "tener-que"
+      }
     },
     {
       "id": "b2-26-04.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Antes __ que esperar horas para entrar.",
+      "answer": "había",
+      "english": "In the past you had to wait hours to get in.",
       "teaches": [
         "hay-que"
-      ],
-      "sentence": "Para consolidar una cultura democrática basada en el respeto mutuo, __ que garantizar el derecho a la verdad.",
-      "answer": "hay",
-      "english": "In order to consolidate a democratic culture based on mutual respect, one must guarantee the right to truth."
+      ]
     },
     {
       "id": "b2-26-04.ex03",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "Habría",
+        "que",
+        "hablar",
+        "con",
+        "ella",
+        "antes",
+        "de",
+        "decidir."
+      ],
+      "solution": [
+        "Habría",
+        "que",
+        "hablar",
+        "con",
+        "ella",
+        "antes",
+        "de",
+        "decidir."
+      ],
+      "english": "We should talk to her before deciding.",
       "teaches": [
         "hay-que"
-      ],
-      "question": "¿Qué matiz pragmático aporta 'habría que + infinitivo' en un debate formal sobre políticas públicas?",
-      "options": [
-        "Introduce una recomendación o sugerencia con cortesía y distanciamiento deliberado.",
-        "Formula una orden tajante y punitiva contra los legisladores opositores.",
-        "Constata un hecho consumado que ya no admite ninguna rectificación futura.",
-        "Expresa arrepentimiento moral por un error cometido en el ejercicio del cargo."
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b2-26-04.ex04",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "hay-que"
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "el permiso",
+          "permit, permission"
+        ],
+        [
+          "llenar",
+          "to fill in"
+        ],
+        [
+          "el formulario",
+          "form"
+        ],
+        [
+          "mostrar",
+          "to show"
+        ],
+        [
+          "apagar",
+          "to switch off"
+        ]
       ],
-      "sentence": "Tras el estallido social del 2001, __ que reconstruir la confianza ciudadana en las instituciones representativas.",
-      "answer": "hubo",
-      "english": "After the social unrest of 2001, it was necessary to rebuild citizen trust in representative institutions."
+      "teaches": [
+        "b2-modal-periphrases-conjecture-duty-vocab"
+      ]
     },
     {
       "id": "b2-26-04.ex05",
-      "type": "matching",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-modal-periphrases-conjecture-duty-vocab"
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Ana",
+          "text": "¿Qué hay que hacer para pedir un permiso?"
+        },
+        {
+          "speaker": "Tú",
+          "text": "_____"
+        }
       ],
-      "pairs": [
-        [
-          "el menester urgente",
-          "the urgent necessity / task"
-        ],
-        [
-          "la diligencia procesal",
-          "the procedural diligence"
-        ],
-        [
-          "el consenso mayoritario",
-          "the majority consensus"
-        ],
-        [
-          "el recaudo prudente",
-          "the prudent safeguard / precaution"
-        ]
+      "options": [
+        "Hay llenar un formulario y entregarlo.",
+        "Hay que llenaré un formulario y entregarlo.",
+        "Hay que llenar un formulario y entregarlo."
+      ],
+      "correct": 2,
+      "teaches": [
+        "hay-que"
       ]
     },
     {
       "id": "b2-26-04.ex06",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué conclusión amarga extrae Castel al contemplar su relación con María a través de la imagen del túnel?",
-      "options": [
-        "Que ambos habitaban túneles paralelos y que las paredes de vidrio impidieron toda comunicación verdadera.",
-        "Que María logró rescatarlo del abismo de su locura mediante el amor conyugal.",
-        "Que el crimen fue un error judicial provocado por falsos testimonios de la servidumbre.",
-        "Que la soledad solo puede vencerse abandonando el arte de la pintura."
-      ],
-      "correct": 0
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "Al salir de la oficina, hay que apagar las luces.",
+      "english": "When leaving the office, you have to switch off the lights.",
+      "teaches": [
+        "hay-que"
+      ]
     }
   ]
 }

@@ -6,15 +6,13 @@
       "type": "multiple-choice",
       "category": "grammar",
       "teaches": [
-        "dejar-de-infinitivo",
-        "perifrasis-verbales"
+        "dejar-de-infinitivo"
       ],
-      "question": "¿Qué pareja de perífrasis completa adecuadamente la oración: 'El estanciero __ de desconfiar apenas el resero __ de entregar intacto todo el ganado'?",
+      "question": "Which sentence means \"It did not stop raining all night\"?",
       "options": [
-        "dejó / acabó de",
-        "rompió a / se puso a",
-        "echó a / anduvo por",
-        "dio por / siguió de"
+        "No dejó de llover en toda la noche.",
+        "Dejó de llover en toda la noche.",
+        "No dejó llover en toda la noche."
       ],
       "correct": 0
     },
@@ -23,53 +21,57 @@
       "type": "fill-blank",
       "category": "grammar",
       "teaches": [
-        "terminar-por-infinitivo"
+        "perifrasis-verbales"
       ],
-      "sentence": "Aunque al principio dudaba de sus dotes de arriero, el joven terminó __ ganarse el respeto de todos.",
-      "answer": "por",
-      "english": "Although at first he doubted his skills as a cattle drover, the young man finally earned everyone's respect."
+      "sentence": "Cuando llamaste, yo __ de salir de casa.",
+      "answer": "acababa",
+      "english": "When you called, I had just left the house.",
+      "hint": "acabar"
     },
     {
       "id": "b2-25-consolidation.ex03",
       "type": "multiple-choice",
       "category": "grammar",
       "teaches": [
-        "perifrasis-llegar-a-infinitivo",
-        "perifrasis-dar-por-participio"
+        "terminar-por-infinitivo"
       ],
-      "question": "¿Qué expresa la secuencia: 'Nadie pensó que llegaría a heredar las tierras, pero el juez dio por concluidas las disputas familiares'?",
+      "question": "Which sentence means \"After many arguments, they ended up accepting the plan\"?",
       "options": [
-        "Un hito culminante e insólito seguido de una resolución judicial que zanja definitivamente un proceso.",
-        "Una prohibición legal que impide el acceso a la propiedad privada en la provincia.",
-        "Un cese momentáneo de hostilidades que se reanudará en la próxima primavera.",
-        "Una hipótesis fantástica sin base documental en el archivo de la estancia."
+        "Después de muchas discusiones, terminaron de aceptar el plan.",
+        "Después de muchas discusiones, terminaron por aceptar el plan.",
+        "Después de muchas discusiones, terminaron en aceptar el plan.",
+        "Después de muchas discusiones, terminaron por aceptando el plan."
       ],
-      "correct": 0
+      "correct": 1,
+      "distractor_skills": {
+        "0": "perifrasis-verbales"
+      }
     },
     {
       "id": "b2-25-consolidation.ex04",
       "type": "fill-blank",
       "category": "grammar",
       "teaches": [
-        "perifrasis-dar-por-participio"
+        "perifrasis-llegar-a-infinitivo"
       ],
-      "sentence": "No des por __ que el viaje por las estepas patagónicas resultará exento de contratiempos.",
-      "answer": "hecho",
-      "english": "Do not take for granted that the journey across the Patagonian steppes will be free of setbacks."
+      "sentence": "Estaba tan cansado que __ a dormirse en la silla.",
+      "answer": "llegó",
+      "english": "He was so tired that he even fell asleep on the chair.",
+      "hint": "llegar, he"
     },
     {
       "id": "b2-25-consolidation.ex05",
       "type": "multiple-choice",
       "category": "grammar",
       "teaches": [
-        "dejar-de-infinitivo"
+        "perifrasis-dar-por-participio"
       ],
-      "question": "¿Cuál es la interpretación correcta de: 'El viento pampeano no dejó de soplar durante tres días consecutivos'?",
+      "question": "Which sentence means \"She took it for granted that you knew\"?",
       "options": [
-        "El viento sopló de manera ininterrumpida y persistente durante todo ese período.",
-        "El viento se detuvo de repente a la primera hora del amanecer.",
-        "Hizo tanto calor que el viento apenas se sintió en las copas de los ombúes.",
-        "El viento sopló solamente de forma intermitente durante unos breves instantes."
+        "Daba por hecho que lo sabías.",
+        "Daba por hecha que lo sabías.",
+        "Daba hecho que lo sabías.",
+        "Daba por hecho de que lo sabías."
       ],
       "correct": 0
     },
@@ -78,11 +80,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "teaches": [
-        "perifrasis-verbales"
+        "perifrasis-dar-por-participio"
       ],
-      "sentence": "Los peones acababan de encender el fogón cuando el trueno __ a retumbar en el horizonte pampeano.",
-      "answer": "comenzo",
-      "english": "The ranch hands had just lit the campfire when thunder began to rumble on the pampas horizon."
+      "sentence": "El equipo dio por __ la reunión a las seis.",
+      "answer": "terminada",
+      "english": "The team declared the meeting over at six.",
+      "hint": "terminar"
     },
     {
       "id": "b2-25-consolidation.ex07",
@@ -93,20 +96,24 @@
       ],
       "pairs": [
         [
-          "el cese definitivo",
-          "the definitive cessation"
+          "dejar de",
+          "to stop doing"
         ],
         [
-          "la culminación del proceso",
-          "the culmination of the process"
+          "acabar de",
+          "to have just done"
         ],
         [
-          "el desenlace forzoso",
-          "the inevitable outcome"
+          "terminar por",
+          "to end up doing"
         ],
         [
-          "el logro del hito",
-          "the achievement of the milestone"
+          "llegar a",
+          "to get as far as doing"
+        ],
+        [
+          "dar por",
+          "to take as (finished, lost, certain)"
         ]
       ]
     },
@@ -114,14 +121,13 @@
       "id": "b2-25-consolidation.ex08",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es el mensaje filosófico que Don Segundo Sombra transmite a Fabio Cáceres antes de su partida final?",
+      "question": "How long did Don Segundo stay in the countryside before he decided to leave?",
       "options": [
-        "Que la libertad interior y la rectitud moral no dependen de las posesiones materiales que se administren.",
-        "Que un verdadero gaucho debe renegar de cualquier instrucción escolar o documento legal.",
-        "Que la única forma de felicidad consiste en abandonar la patria y viajar hacia tierras lejanas.",
-        "Que el poder económico es el único instrumento legítimo para imponer justicia en las pampas."
+        "Un año.",
+        "Tres años.",
+        "Cinco años."
       ],
-      "correct": 0
+      "correct": 1
     }
   ]
 }

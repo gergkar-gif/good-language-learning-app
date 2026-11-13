@@ -510,6 +510,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-13 | ES B2 core Units 11–14 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 381,736 (19 min), B 287,277 (15 min); ~167k a unit | | 0 errors in all four, 2 suspects accepted, unmet 0 | walked 24/24, all frozen; 6 reviewer edits |
 | 11-13 | ES B2 core Units 15–18 (es-latam) | two edit-in-place agents (Sonnet), two units each; A resumed after the 5-hour limit | A 382,383 (both runs), B 371,207 (20 min); ~188k a unit | | 0 errors in all four, 2 suspects accepted, unmet 0 | walked 24/24, all frozen; filler cut from all four texts |
 | 11-13 | ES B2 core Units 19–22 (es-latam) | two edit-in-place agents (Sonnet), two units each; no registry moves | A 296,895 (15 min), B 318,445 (19 min); ~154k a unit | | 0 errors / 0 suspects in all four, unmet 0 | walked 24/24, all frozen; 3 texts rewritten by the reviewer, a participle rule corrected |
+| 11-13 | ES B2 core Units 23–26 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 334,129 (18 min), B 351,819 (19 min); ~171k a unit | | 0 errors in all four, 3 suspects accepted, unmet 0 | walked 24/24, all frozen; 9 challenges in frozen Units 17–18, 26 fixed for character facts |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2084,4 +2085,19 @@ The user took the four recommended options:
   finds titles the guessed page name misses; chaptered works fetch as `<Title>/<chapter>`.
 - **Grammar claims still need the reviewer's knowledge:** the double-participle rule was
   stated too strictly; the agent flagged it as unchecked (RAE pages refuse the fetch).
+
+### 2026-11-13: ES B2 core Units 23–26
+
+- **Character facts need a script, not a read:** "Ana" is Carlos's sister in the B1
+  stories; two batches of challenges (Units 17–18) used her as a colleague, and the
+  reviewer froze them. Found by a name scan over all B2 challenges. **Scripted next:** a
+  `check-content` check that flags a named person in a challenge who is not in the
+  course's character list, or who is given a role the list contradicts.
+- **A batch's vocabulary cuts can unmeet words in frozen units** (*dueños*, *herencia*).
+  **Change:** run `unmet-words.js` over every frozen unit of the level, not only the
+  batch, before freezing a batch.
+- Two retellings against fetched sources (Güiraldes, Arlt) caught invented events and a
+  wrong family relation in the old texts.
+- Agents shared the session scratchpad and collided once: briefs now give each agent its
+  own scratch subfolder.
 

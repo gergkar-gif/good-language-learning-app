@@ -11,19 +11,27 @@
       "pairs": [
         [
           "volver a",
-          "to do again / to repeat an action"
-        ],
-        [
-          "reiteración",
-          "reiteration / repetition"
+          "to do again"
         ],
         [
           "reanudar",
-          "to resume / to pick up again"
+          "to resume, to start again"
         ],
         [
           "tentativa",
-          "attempt / try"
+          "attempt"
+        ],
+        [
+          "insistencia",
+          "insistence, persistence"
+        ],
+        [
+          "repetición",
+          "repetition"
+        ],
+        [
+          "recaída",
+          "relapse, setback"
         ]
       ]
     },
@@ -34,9 +42,10 @@
       "teaches": [
         "volver-a-infinitivo"
       ],
-      "sentence": "Tras el temporal en el estrecho, los veleros volvieron a __ rumbo hacia el cabo de Hornos.",
-      "answer": "fijar",
-      "english": "After the storm in the strait, the sailboats once again set course toward Cape Horn."
+      "sentence": "Ayer llovió, y hoy __ a llover.",
+      "answer": "volvió",
+      "english": "It rained yesterday, and today it has rained again.",
+      "hint": "volver"
     },
     {
       "id": "b2-23-04.ex03",
@@ -45,14 +54,17 @@
       "teaches": [
         "volver-a-infinitivo"
       ],
-      "question": "¿Qué valor adquiere la perífrasis 'volver a + infinitivo' cuando va precedida de negación tajante?",
+      "question": "Which sentence means the same as *Llamó otra vez*?",
       "options": [
-        "Expresa la promesa o resolución terminante de no repetir jamás una acción en el futuro.",
-        "Denota que la acción se ejecutará con el doble de rapidez en el próximo intento.",
-        "Indica una duda gramatical sobre el tiempo verbal correcto del participio.",
-        "Señala que la acción ya fue realizada exitosamente por un agente anónimo."
+        "Volvió llamar.",
+        "Volvió a llamar.",
+        "Volvió de llamar.",
+        "Dejó de llamar."
       ],
-      "correct": 0
+      "correct": 1,
+      "distractor_skills": {
+        "3": "dejar-de-infinitivo"
+      }
     },
     {
       "id": "b2-23-04.ex04",
@@ -62,28 +74,28 @@
         "volver-a-infinitivo"
       ],
       "tiles": [
-        "Los",
-        "científicos",
-        "volvieron",
+        "Ella",
+        "no",
+        "volvió",
         "a",
-        "medir",
-        "el",
-        "grosor",
-        "del",
-        "glaciar."
+        "llamar",
+        "después",
+        "de",
+        "la",
+        "reunión."
       ],
       "solution": [
-        "Los",
-        "científicos",
-        "volvieron",
+        "Ella",
+        "no",
+        "volvió",
         "a",
-        "medir",
-        "el",
-        "grosor",
-        "del",
-        "glaciar."
+        "llamar",
+        "después",
+        "de",
+        "la",
+        "reunión."
       ],
-      "english": "The scientists measured the thickness of the glacier once again."
+      "english": "She did not call again after the meeting."
     },
     {
       "id": "b2-23-04.ex05",
@@ -94,21 +106,21 @@
       ],
       "prompt": [
         {
-          "speaker": "Periodista",
-          "text": "¿Habrá nuevas expediciones arqueológicas al desierto de Atacama este verano?"
+          "speaker": "Jefa",
+          "text": "Es la segunda vez esta semana que llega tarde."
         },
         {
-          "speaker": "Director del museo",
-          "text": "Por supuesto, nuestro equipo multidisciplinario..."
+          "speaker": "Empleado",
+          "text": "Lo siento mucho. Le prometo que no..."
         }
       ],
       "options": [
-        "volverá a excavar el sitio ceremonial de los geoglifos milenarios.",
-        "se echará a reír frente a las cerámicas prehispánicas encontradas.",
-        "romperá a llorar sin motivo antes de partir hacia el salar.",
-        "pasará a cancelar de inmediato toda investigación científica regional."
+        "volverás a llegar tarde.",
+        "volveré a llegar tarde.",
+        "volveré llegar tarde.",
+        "volveré a llegué tarde."
       ],
-      "correct": 0
+      "correct": 1
     },
     {
       "id": "b2-23-04.ex06",
@@ -117,8 +129,8 @@
       "teaches": [
         "volver-a-infinitivo"
       ],
-      "sentence": "El práctico de canales aseguró que volvería a inspeccionar la carta náutica antes de zarpar.",
-      "english": "The channel pilot assured that he would inspect the nautical chart once again before setting sail."
+      "sentence": "Después de la tormenta, el sol volvió a salir.",
+      "english": "After the storm, the sun came out again."
     }
   ]
 }

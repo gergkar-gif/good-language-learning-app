@@ -5,94 +5,119 @@
       "id": "b2-26-05.ex01",
       "type": "multiple-choice",
       "category": "grammar",
+      "question": "Nobody else has the key. Which sentence shows that the speaker is almost sure it is him?",
+      "options": [
+        "Puede ser él.",
+        "Quizás sea él.",
+        "Tiene que ser él."
+      ],
+      "correct": 2,
       "teaches": [
         "perifrasis-modales-probabilidad-epistemica"
       ],
-      "question": "¿Qué grado de certidumbre expresa la perífrasis 'debe de haber sido' en un análisis histórico retrospectivo?",
-      "options": [
-        "Certidumbre matemática absoluta respaldada por grabaciones directas.",
-        "Probabilidad deductiva alta basada en indicios e inferencias lógicas del contexto.",
-        "Duda radical e imposibilidad factual de que el acontecimiento haya tenido lugar.",
-        "Obligación jurídica impuesta por las normas vigentes en la época."
-      ],
-      "correct": 1
+      "distractor_skills": {
+        "1": "subjunctive-doubt"
+      }
     },
     {
       "id": "b2-26-05.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Mira, tiene la cara pálida; __ de estar enfermo.",
+      "answer": "debe",
+      "english": "Look, his face is pale; he must be ill.",
       "teaches": [
         "perifrasis-modales-probabilidad-epistemica"
-      ],
-      "sentence": "A juzgar por las contradicciones del relato, el sospechoso debió __ inventar su coartada de forma improvisada.",
-      "answer": "de",
-      "english": "Judging by the contradictions in the account, the suspect must have invented his alibi on the spur of the moment."
+      ]
     },
     {
       "id": "b2-26-05.ex03",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "Puede",
+        "que",
+        "llueva",
+        "esta",
+        "tarde;",
+        "lleva",
+        "el",
+        "paraguas."
+      ],
+      "solution": [
+        "Puede",
+        "que",
+        "llueva",
+        "esta",
+        "tarde;",
+        "lleva",
+        "el",
+        "paraguas."
+      ],
+      "english": "It may rain this afternoon; take the umbrella.",
       "teaches": [
         "perifrasis-modales-probabilidad-epistemica"
-      ],
-      "question": "¿En cuál de las siguientes opciones se utiliza una perífrasis de probabilidad para matizar una hipótesis psicológica?",
-      "options": [
-        "Castel tenía que asistir puntualmente al juicio penal en la capital.",
-        "El silencio prolongado de María debió de alimentar las sospechas más tortuosas del pintor.",
-        "Hay que pintar con pigmentos de calidad para que los lienzos perduren.",
-        "Debe usted firmar la declaración jurada ante el escribano."
-      ],
-      "correct": 1
+      ]
     },
     {
       "id": "b2-26-05.ex04",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "perifrasis-modales-probabilidad-epistemica"
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "puede que",
+          "it may be that"
+        ],
+        [
+          "pálido",
+          "pale"
+        ],
+        [
+          "la llave",
+          "key"
+        ],
+        [
+          "el paraguas",
+          "umbrella"
+        ]
       ],
-      "sentence": "Las privaciones padecidas en el cautiverio clandestino deben de haber __ una huella indeleble en las víctimas.",
-      "answer": "dejado",
-      "english": "The hardships endured in clandestine captivity must have left an indelible mark on the victims."
+      "teaches": [
+        "b2-modal-periphrases-conjecture-duty-vocab"
+      ]
     },
     {
       "id": "b2-26-05.ex05",
-      "type": "matching",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-modal-periphrases-conjecture-duty-vocab"
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Ana",
+          "text": "Marta todavía no ha llegado. ¿Dónde estará?"
+        },
+        {
+          "speaker": "Tú",
+          "text": "_____"
+        }
       ],
-      "pairs": [
-        [
-          "la verosimilitud narrativa",
-          "the narrative verisimilitude"
-        ],
-        [
-          "la inferencia analítica",
-          "the analytical inference"
-        ],
-        [
-          "la sospecha obsesiva",
-          "the obsessive suspicion"
-        ],
-        [
-          "la incertidumbre radical",
-          "the radical uncertainty"
-        ]
+      "options": [
+        "Debe de ha perdido el autobús.",
+        "Debe de haber perdido el autobús.",
+        "Debe de perdido el autobús."
+      ],
+      "correct": 1,
+      "teaches": [
+        "perifrasis-modales-probabilidad-epistemica"
       ]
     },
     {
       "id": "b2-26-05.ex06",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué desencadena el ataque final de Castel contra María en la estancia de Hunter?",
-      "options": [
-        "El descubrimiento de una carta donde María revelaba que lo consideraba un asesino en potencia.",
-        "La convicción delirante de que María era amante de Hunter y se burlaba de su búsqueda de pureza.",
-        "Una discusión acalorada sobre el valor monetario de los retratos que Castel había expuesto.",
-        "La negativa tajante de María a divorciarse formalmente de su esposo ciego Allende."
-      ],
-      "correct": 1
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "Tiene que ser él: nadie más tiene la llave.",
+      "english": "It has to be him: nobody else has the key.",
+      "teaches": [
+        "perifrasis-modales-probabilidad-epistemica"
+      ]
     }
   ]
 }

@@ -5,94 +5,125 @@
       "id": "b2-26-03.ex01",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "tener-que"
-      ],
-      "question": "¿Qué diferencia semántica existe entre 'tener que + infinitivo' y 'deber + infinitivo'?",
+      "question": "Which sentence names a need that comes from the situation, not from a moral duty?",
       "options": [
-        "'Tener que' expresa obligación impuesta por presiones externas o necesidades ineludibles; 'deber' apela al deber moral o ético interno.",
-        "'Tener que' se utiliza únicamente para el clima, mientras 'deber' se aplica a contratos.",
-        "'Deber' exige subjuntivo en oraciones afirmativas, mientras 'tener que' solo admite infinitivo pasivo.",
-        "Ambas perífrasis expresan exactamente el mismo matiz de cortesía formal."
+        "Deberíamos ayudar más a nuestros vecinos.",
+        "Tengo que salir ya, porque el tren sale a las siete.",
+        "Debes ayudar a tus vecinos cuando lo necesitan."
       ],
-      "correct": 0
+      "correct": 1,
+      "teaches": [
+        "deber-vs-tener-que"
+      ],
+      "distractor_skills": {
+        "0": "condicional-consejos"
+      }
     },
     {
       "id": "b2-26-03.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Si quieres vivir aquí, tienes __ pagar el alquiler.",
+      "answer": "que",
+      "english": "If you want to live here, you have to pay the rent.",
       "teaches": [
         "tener-que"
-      ],
-      "sentence": "Ante la gravedad de la crisis cambiaria en diciembre de 2001, el gobierno __ que decretar la inmovilización de fondos.",
-      "answer": "tuvo",
-      "english": "Faced with the severity of the exchange crisis in December 2001, the government had to decree the freezing of funds."
+      ]
     },
     {
       "id": "b2-26-03.ex03",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "Tengo",
+        "que",
+        "salir",
+        "ya,",
+        "porque",
+        "el",
+        "tren",
+        "sale",
+        "a",
+        "las",
+        "siete."
+      ],
+      "solution": [
+        "Tengo",
+        "que",
+        "salir",
+        "ya,",
+        "porque",
+        "el",
+        "tren",
+        "sale",
+        "a",
+        "las",
+        "siete."
+      ],
+      "english": "I have to leave now, because the train leaves at seven.",
       "teaches": [
         "tener-que"
-      ],
-      "question": "¿Qué valor adquiere 'tener que + infinitivo' en condicional en: 'Para comprender la magnitud de la tragedia, tendríamos que examinar los legajos'?",
-      "options": [
-        "Plantea un requisito hipotético indispensable para alcanzar un entendimiento cabal del hecho.",
-        "Confirma que los documentos ya fueron destruidos por las autoridades judiciales.",
-        "Prohíbe terminantemente la consulta de archivos clasificados por razones de seguridad.",
-        "Indica una acción que acaba de completarse hace escasos segundos."
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b2-26-03.ex04",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "tener-que"
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "el alquiler",
+          "rent"
+        ],
+        [
+          "entregar",
+          "to hand in, to deliver"
+        ],
+        [
+          "el informe",
+          "report"
+        ],
+        [
+          "probar",
+          "to try, to taste"
+        ]
       ],
-      "sentence": "Los testigos de las causas federales tuvieron que __ con custodia especial debido a las amenazas.",
-      "answer": "comparecer",
-      "english": "Witnesses in federal cases had to appear under special protection due to threats."
+      "teaches": [
+        "b2-modal-periphrases-conjecture-duty-vocab"
+      ]
     },
     {
       "id": "b2-26-03.ex05",
-      "type": "matching",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-modal-periphrases-conjecture-duty-vocab"
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Ana",
+          "text": "¿Por qué no vienes a la fiesta?"
+        },
+        {
+          "speaker": "Tú",
+          "text": "_____"
+        }
       ],
-      "pairs": [
-        [
-          "el apremio financiero",
-          "the pressing financial urgency"
-        ],
-        [
-          "la coacción externa",
-          "the external coercion / duress"
-        ],
-        [
-          "la constricción presupuestaria",
-          "the budgetary constraint"
-        ],
-        [
-          "el requerimiento judicial",
-          "the judicial requirement"
-        ]
+      "options": [
+        "Lo siento, tengo trabajar; mañana entrego un informe.",
+        "Lo siento, tengo que trabajando; mañana entrego un informe.",
+        "Lo siento, tengo que trabajar; mañana entrego un informe."
+      ],
+      "correct": 2,
+      "teaches": [
+        "tener-que"
       ]
     },
     {
       "id": "b2-26-03.ex06",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Por qué Castel se siente angustiado y confundido tras sus primeros encuentros con María?",
-      "options": [
-        "Porque ella le exige grandes sumas de dinero a cambio de posar como modelo.",
-        "Porque María resulta impenetrable en sus secretos y se niega a someterse a sus deducciones.",
-        "Porque el marido de María amenaza con clausurar su taller de pintura en La Boca.",
-        "Porque la crítica de arte rechaza categóricamente las nuevas obras que produce."
-      ],
-      "correct": 1
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "Tienes que probar este pastel; está delicioso.",
+      "english": "You have to try this cake; it is delicious.",
+      "teaches": [
+        "tener-que"
+      ]
     }
   ]
 }
