@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "desinencia",
-          "inflectional verb ending"
+          "el encargo",
+          "task, job given to someone"
         ],
         [
-          "etimológico",
-          "etymological"
+          "pendiente",
+          "outstanding, still to be done"
         ],
         [
-          "alternancia",
-          "alternation"
+          "encargarse de",
+          "to take charge of"
         ],
         [
-          "paradigma",
-          "inflectional model"
+          "imponer",
+          "to impose, to set (a deadline)"
         ]
       ],
       "teaches": [
@@ -31,10 +31,13 @@
       "id": "b2-15-01.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El profesor dudaba de que los estudiantes __ el texto a tiempo.",
+      "sentence": "Mi jefe quería que nosotros __ el encargo antes del viernes.",
       "hint": "terminar",
-      "answer": "terminaran",
-      "english": "The professor doubted that the students would finish the text on time.",
+      "answers": [
+        "termináramos",
+        "terminásemos"
+      ],
+      "english": "My boss wanted us to finish the task before Friday.",
       "teaches": [
         "imperfect-subjunctive-forms"
       ]
@@ -43,45 +46,49 @@
       "id": "b2-15-01.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál es el origen etimológico de la desinencia verbal en -ra?",
+      "question": "The boss asked the team to bring the documents. Which sentence is correct?",
       "options": [
-        "Proviene del pluscuamperfecto de indicativo del latín.",
-        "Deriva del futuro imperfecto del griego clásico.",
-        "Surgió como una invención dialectal del siglo XVIII.",
-        "Procede exclusivamente del imperativo plural visigodo."
+        "El jefe nos pidió que traigamos los documentos pendientes.",
+        "El jefe nos pidió que trajimos los documentos pendientes.",
+        "El jefe nos pidió que trajéramos los documentos pendientes.",
+        "El jefe nos pidió que trajeramos los documentos pendientes."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "imperfect-subjunctive-forms"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "subjuntivo-morfologia",
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "b2-15-01.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "No",
-        "era",
-        "probable",
+        "Mi",
+        "jefe",
+        "quería",
         "que",
-        "ellos",
-        "viniesen",
-        "a",
-        "la",
-        "reunión."
+        "me",
+        "encargara",
+        "de",
+        "ese",
+        "proyecto."
       ],
       "solution": [
-        "No",
-        "era",
-        "probable",
+        "Mi",
+        "jefe",
+        "quería",
         "que",
-        "ellos",
-        "viniesen",
-        "a",
-        "la",
-        "reunión."
+        "me",
+        "encargara",
+        "de",
+        "ese",
+        "proyecto."
       ],
-      "english": "It was not likely that they would come to the meeting.",
+      "english": "My boss wanted me to take charge of that project.",
       "teaches": [
         "imperfect-subjunctive-forms"
       ]
@@ -92,31 +99,34 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Valentina",
-          "text": "¿Esperabas que el embajador hablara hoy sobre el acuerdo comercial?"
+          "speaker": "Ana",
+          "text": "¿Por qué estás tan nervioso?"
         },
         {
-          "speaker": "Mateo",
+          "speaker": "Tú",
           "text": "_____"
         }
       ],
       "options": [
-        "Sí, todos deseábamos que hablase con total franqueza sobre los aranceles.",
-        "No, el embajador siempre habla en presente de indicativo.",
-        "Creo que el acuerdo se firma mañana sin ninguna duda.",
-        "Ayer compramos los boletos de avión para Caracas."
+        "El jefe nos impuso un plazo corto: quería que terminamos hoy.",
+        "El jefe nos impuso un plazo corto: quería que termináramos hoy.",
+        "El jefe nos impuso un plazo corto: quería que terminemos hoy."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "imperfect-subjunctive-forms"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "present-tense",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b2-15-01.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Aunque tuviéramos discrepancias metodológicas, acordamos redactar el dictamen de común acuerdo.",
-      "english": "Even if we had methodological discrepancies, we agreed to draft the ruling by mutual agreement.",
+      "sentence": "El profesor pidió que leyésemos el texto en voz alta.",
+      "english": "The teacher asked us to read the text aloud.",
       "teaches": [
         "imperfect-subjunctive-forms"
       ]

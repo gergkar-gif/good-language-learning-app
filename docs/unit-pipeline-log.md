@@ -508,6 +508,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-13 | ES B2 core Units 3–6 (es-latam) | two edit-in-place agents (Sonnet), two units each, paired by topic | A 375,044 (19 min), B 339,242 (18 min); ~180k a unit | | 0 errors / 0 suspects after in all four, unmet 357 → 0 | walked 24/24, all frozen; 5 reviewer edits |
 | 11-13 | ES B2 core Units 7–10 (es-latam) | two edit-in-place agents (Sonnet), two units each; both resumed after the 5-hour limit | A 325,030, B 324,492 (both runs); ~163k a unit | | 0 errors in all four, 2 suspects accepted; 4 unmet words the agents missed fixed | walked 24/24, all frozen; ~10 reviewer edits |
 | 11-13 | ES B2 core Units 11–14 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 381,736 (19 min), B 287,277 (15 min); ~167k a unit | | 0 errors in all four, 2 suspects accepted, unmet 0 | walked 24/24, all frozen; 6 reviewer edits |
+| 11-13 | ES B2 core Units 15–18 (es-latam) | two edit-in-place agents (Sonnet), two units each; A resumed after the 5-hour limit | A 382,383 (both runs), B 371,207 (20 min); ~188k a unit | | 0 errors in all four, 2 suspects accepted, unmet 0 | walked 24/24, all frozen; filler cut from all four texts |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2055,4 +2056,17 @@ The user took the four recommended options:
 - **Agents report the unmet count after their last edit now** (brief rule from Units
   7–10): both batches' counts matched the reviewer's rerun.
 - ~167k a unit, as before. Batch started right after a limit reset: no stop.
+
+### 2026-11-13: ES B2 core Units 15–18
+
+- **Texts about a work drift into meta-commentary** once the fact list is short (four
+  facts for *Ifigenia*): "this text does not tell the story", "let us summarise", date
+  arithmetic. Cutting it left ~220 words. **Change for batch 23+:** the brief asks for
+  250–350 words and says that a short fact list means a short text; no paragraph about
+  the text itself.
+- **Asterisks in story text** (B's texts) would show literally in the Reader: stripped,
+  template rule added. 291 older story paragraphs across the courses carry them (mostly
+  in unread texts); to check with the level checklist.
+- **Running the next batch during the review** (19–22 launched at 14:15 while 15–16 was
+  reviewed) kept both agent slots busy right after the limit reset.
 

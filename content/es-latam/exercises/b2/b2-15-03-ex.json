@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "cortesía",
-          "politeness"
+          "el trámite",
+          "procedure, formality"
         ],
         [
-          "atenuación",
-          "mitigation / softening"
+          "la ventanilla",
+          "service desk"
         ],
         [
-          "petición",
-          "formal request"
+          "el comprobante",
+          "receipt, proof of payment"
         ],
         [
-          "deferencia",
-          "respectful deference"
+          "tramitar",
+          "to process (a document)"
         ]
       ],
       "teaches": [
@@ -31,10 +31,13 @@
       "id": "b2-15-03.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Disculpe, señor Ministro, ¿__ usted concedernos diez minutos de su audiencia?",
-      "hint": "poder",
-      "answer": "pudiera",
-      "english": "Excuse me, Mr. Minister, could you grant us ten minutes of your audience?",
+      "sentence": "Quisiera que usted me __ a tramitar este documento.",
+      "hint": "ayudar",
+      "answers": [
+        "ayudara",
+        "ayudase"
+      ],
+      "english": "I would like you to help me process this document.",
       "teaches": [
         "polite-softening"
       ]
@@ -43,17 +46,19 @@
       "id": "b2-15-03.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Por qué es incorrecto decir 'Quisiese un vaso de agua' para pedir algo con cortesía?",
+      "question": "You are at an office and want to ask very politely where counter three is. Which sentence works?",
       "options": [
-        "Porque en las oraciones independientes de cortesía modal solo es gramatical la desinencia en -ra.",
-        "Porque el verbo querer no admite subjuntivo bajo ninguna circunstancia.",
-        "Porque en español solo se puede pedir agua usando el imperativo.",
-        "Porque la forma debiese sustituye obligatoriamente a quisiese."
+        "¿Pudiese decirme dónde está la ventanilla tres?",
+        "¿Pudo decirme dónde está la ventanilla tres?",
+        "¿Pudiera decirme dónde está la ventanilla tres?"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "polite-softening"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "b2-15-03.ex04",
@@ -61,25 +66,25 @@
       "category": "grammar",
       "tiles": [
         "Quisiéramos",
-        "proponer",
-        "una",
-        "solución",
-        "equitativa",
-        "para",
-        "ambas",
-        "partes."
+        "que",
+        "nos",
+        "entregara",
+        "el",
+        "comprobante",
+        "del",
+        "pago."
       ],
       "solution": [
         "Quisiéramos",
-        "proponer",
-        "una",
-        "solución",
-        "equitativa",
-        "para",
-        "ambas",
-        "partes."
+        "que",
+        "nos",
+        "entregara",
+        "el",
+        "comprobante",
+        "del",
+        "pago."
       ],
-      "english": "We would like to propose an equitable solution for both parties.",
+      "english": "We would like you to give us the receipt for the payment.",
       "teaches": [
         "polite-softening"
       ]
@@ -90,31 +95,34 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Asistente",
-          "text": "Buenos días, ¿en qué puedo colaborar con usted hoy?"
+          "speaker": "Empleada",
+          "text": "Buenos días, ¿en qué puedo ayudarle?"
         },
         {
-          "speaker": "Investigador",
+          "speaker": "Tú",
           "text": "_____"
         }
       ],
       "options": [
-        "Quisiera revisar los archivos históricos del siglo diecinueve correspondientes a la cancillería.",
-        "Quiero que me des todos los papeles ahora mismo sin dilación.",
-        "Ayer almorcé una sopa caliente en el comedor central.",
-        "Los archivos están cerrados durante todo el fin de semana."
+        "Quisiera que me explicaría cómo se hace este trámite.",
+        "Quisiera que me explico cómo se hace este trámite.",
+        "Quisiera que me explicara cómo se hace este trámite."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "polite-softening"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "condicional-regular",
+        "1": "present-tense"
+      }
     },
     {
       "id": "b2-15-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Debiéramos examinar con cautela las cláusulas contractuales antes de estampar la firma definitiva.",
-      "english": "We ought to cautiously examine the contractual clauses before placing our definitive signature.",
+      "sentence": "Debiéramos revisar el contrato antes de firmarlo.",
+      "english": "We ought to check the contract before signing it.",
       "teaches": [
         "polite-softening"
       ]

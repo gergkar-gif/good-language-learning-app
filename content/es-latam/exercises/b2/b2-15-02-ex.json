@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "coloquial",
-          "everyday / informal"
+          "la prensa",
+          "the press, newspapers"
         ],
         [
-          "arcaizante",
-          "archaizing in tone"
+          "el titular",
+          "headline"
         ],
         [
-          "protocolar",
-          "formal protocol"
+          "la sentencia",
+          "court ruling"
         ],
         [
-          "predominio",
-          "prevalence / predominance"
+          "la revista",
+          "magazine"
         ]
       ],
       "teaches": [
@@ -31,10 +31,13 @@
       "id": "b2-15-02.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "En el español americano habitual, resulta mucho más natural decir: 'Ojalá __ tiempo libre mañana'.",
-      "hint": "tener",
-      "answer": "tuviera",
-      "english": "In standard American Spanish, it is much more natural to say: 'I wish I had free time tomorrow'.",
+      "sentence": "El juez pidió que se __ la sentencia en voz alta.",
+      "hint": "leer",
+      "answers": [
+        "leyera",
+        "leyese"
+      ],
+      "english": "The judge asked for the ruling to be read aloud.",
       "teaches": [
         "imperfect-subjunctive-forms"
       ]
@@ -43,17 +46,20 @@
       "id": "b2-15-02.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿En qué tipo de textos suele encontrarse con mayor frecuencia la variante en -se en América Latina?",
+      "question": "Which sentence means the same as *Quería que vinieras temprano*?",
       "options": [
-        "En documentos jurídicos notariales, textos académicos formales y discursos solemnes.",
-        "En conversaciones informales entre jóvenes universitarios.",
-        "En mensajes de texto rápidos y redes sociales cotidianas.",
-        "Únicamente en manuales técnicos de cocina tradicional."
+        "Quería que vendrías temprano.",
+        "Quería que vinieses temprano.",
+        "Quería que viniste temprano."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "imperfect-subjunctive-forms"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "condicional-irregular",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b2-15-02.ex04",
@@ -61,27 +67,27 @@
       "category": "grammar",
       "tiles": [
         "La",
-        "variante",
-        "en",
-        "-ra",
-        "predomina",
-        "en",
+        "prensa",
+        "quería",
+        "que",
         "el",
-        "español",
-        "hispanoamericano."
+        "presidente",
+        "hablase",
+        "del",
+        "problema."
       ],
       "solution": [
         "La",
-        "variante",
-        "en",
-        "-ra",
-        "predomina",
-        "en",
+        "prensa",
+        "quería",
+        "que",
         "el",
-        "español",
-        "hispanoamericano."
+        "presidente",
+        "hablase",
+        "del",
+        "problema."
       ],
-      "english": "The variant in -ra predominates in Spanish American Spanish.",
+      "english": "The press wanted the president to talk about the problem.",
       "teaches": [
         "imperfect-subjunctive-forms"
       ]
@@ -92,21 +98,20 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Abogado Pérez",
-          "text": "He redactado la cláusula estipulando que en caso de que surgiese algún diferendo se recurra al arbitraje."
+          "speaker": "Meg",
+          "text": "En un titular de esta revista leí «si el país tuviese más escuelas…». ¿Es lo mismo que «tuviera»?"
         },
         {
-          "speaker": "Colega",
+          "speaker": "Tú",
           "text": "_____"
         }
       ],
       "options": [
-        "Es impecable; ese uso de la desinencia en -se confiere al contrato un rigor jurídico intachable.",
-        "No me gusta el café con azúcar por las mañanas.",
-        "Ayer fuimos al cine a ver una película de acción.",
-        "Las desinencias en -ra son incorrectas según la ley."
+        "No, «tuviese» es un error en América Latina.",
+        "Sí, es lo mismo, pero «tuviese» suena más formal.",
+        "No, «tuviese» habla del pasado y «tuviera» del presente."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "imperfect-subjunctive-forms"
       ]
@@ -115,8 +120,8 @@
       "id": "b2-15-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Aunque ambas formas sean correctas, la prensa latinoamericana prefiere de manera uniforme la terminación en -ra.",
-      "english": "Even though both forms are correct, Latin American press uniformly prefers the termination in -ra.",
+      "sentence": "El reglamento pedía que todos llegasen a las ocho.",
+      "english": "The rules asked everyone to arrive at eight.",
       "teaches": [
         "imperfect-subjunctive-forms"
       ]

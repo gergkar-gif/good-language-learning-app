@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "estilístico",
-          "stylistic"
+          "derrocar",
+          "to overthrow"
         ],
         [
-          "periodístico",
-          "journalistic"
+          "el golpe de Estado",
+          "coup"
         ],
         [
-          "antedicho",
-          "aforementioned"
+          "la crónica",
+          "news report, chronicle"
         ],
         [
-          "vestigio",
-          "historical trace / vestige"
+          "el cronista",
+          "chronicler, news reporter"
         ]
       ],
       "teaches": [
@@ -31,10 +31,13 @@
       "id": "b2-15-05.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "En la crónica necrológica se recordó la figura del novelista que __ el Premio Nobel de Literatura.",
-      "hint": "obtener",
-      "answer": "obtuviera",
-      "english": "In the obituary column, the figure of the novelist who had obtained the Nobel Prize for Literature was recalled.",
+      "sentence": "La ciudad donde __ el poeta es muy pequeña.",
+      "hint": "nacer, ordinary past",
+      "answers": [
+        "nació",
+        "había nacido"
+      ],
+      "english": "The city where the poet was born is very small.",
       "teaches": [
         "subjuntivo-imperfecto-estilistico-ra"
       ]
@@ -43,17 +46,22 @@
       "id": "b2-15-05.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿A qué tiempo verbal equivale la frase periodística 'el acuerdo que rubricaran los mandatarios'?",
+      "question": "Which sentence has a -ra form with the value of a past indicative, not a condition, a wish or a request?",
       "options": [
-        "A 'que habían rubricado' o 'que rubricaron' en modo indicativo.",
-        "A una orden imperativa futura e irrevocable.",
-        "A un deseo irrealizable e incierto en presente.",
-        "A una condición hipotética sin cumplir."
+        "Si el golpe de Estado derrocara al presidente, el país cambiaría.",
+        "Ojalá el golpe de Estado no derrocara al presidente.",
+        "El golpe de Estado que derrocara al presidente ocurrió de noche.",
+        "El cronista temía que el golpe de Estado derrocara al presidente."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "subjuntivo-imperfecto-estilistico-ra"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "hypothetical-structures",
+        "1": "subjuntivo-deseos",
+        "3": "correlacion-temporal-subjuntivo"
+      }
     },
     {
       "id": "b2-15-05.ex04",
@@ -61,25 +69,31 @@
       "category": "grammar",
       "tiles": [
         "El",
-        "ministro",
+        "cronista,",
         "que",
-        "asumiera",
-        "el",
-        "cargo",
-        "renunció",
-        "ayer."
+        "naciera",
+        "en",
+        "un",
+        "pueblo",
+        "pequeño,",
+        "escribió",
+        "muchas",
+        "crónicas."
       ],
       "solution": [
         "El",
-        "ministro",
+        "cronista,",
         "que",
-        "asumiera",
-        "el",
-        "cargo",
-        "renunció",
-        "ayer."
+        "naciera",
+        "en",
+        "un",
+        "pueblo",
+        "pequeño,",
+        "escribió",
+        "muchas",
+        "crónicas."
       ],
-      "english": "The minister who had assumed office resigned yesterday.",
+      "english": "The chronicler, who was born in a small town, wrote many chronicles.",
       "teaches": [
         "subjuntivo-imperfecto-estilistico-ra"
       ]
@@ -90,31 +104,35 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Editor",
-          "text": "¿Por qué el articulista escribió 'la reforma que promoviera el presidente' en lugar de 'promovió'?"
+          "speaker": "Meg",
+          "text": "En esta crónica dice «el libro que publicara en 1950». ¿Qué significa?"
         },
         {
-          "speaker": "Corrector",
+          "speaker": "Tú",
           "text": "_____"
         }
       ],
       "options": [
-        "Es un recurso estilístico formal muy extendido en el periodismo que evoca el antiguo valor etimológico de pluscuamperfecto de indicativo.",
-        "Se trata de un descuido tipográfico que debe corregirse de inmediato.",
-        "El presidente no quiso firmar la reforma porque no le gustaba.",
-        "En los artículos de opinión está prohibido conjugar los verbos en pasado."
+        "Significa que el autor publicaría un libro si pudiera.",
+        "Significa «el libro que publicó en 1950»; es un estilo formal.",
+        "Significa que el autor quiere publicar un libro en 1950."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "subjuntivo-imperfecto-estilistico-ra"
       ]
     },
     {
       "id": "b2-15-05.ex06",
-      "type": "dictation",
+      "type": "listening-choice",
       "category": "listening",
-      "sentence": "La delegación visitó el palacio colonial donde residiera el primer gobernador republicano.",
-      "english": "The delegation visited the colonial palace where the first republican governor had resided.",
+      "sentence": "Rómulo Gallegos, que fuera presidente de Venezuela en 1948, murió en 1969.",
+      "options": [
+        "Rómulo Gallegos, who wanted to be president of Venezuela in 1948, died in 1969.",
+        "Rómulo Gallegos, who was president of Venezuela in 1948, died in 1969.",
+        "If Rómulo Gallegos were president of Venezuela in 1948, he would die in 1969."
+      ],
+      "correct": 1,
       "teaches": [
         "subjuntivo-imperfecto-estilistico-ra"
       ]

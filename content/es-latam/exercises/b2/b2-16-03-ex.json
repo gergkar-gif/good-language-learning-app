@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "condición",
-          "prerequisite condition"
+          "la falla",
+          "fault, flaw"
         ],
         [
-          "infinitivo",
-          "infinitive verb form"
+          "la revisión",
+          "check, inspection"
         ],
         [
-          "peritaje",
-          "expert survey"
+          "el derrumbe",
+          "collapse"
         ],
         [
-          "desenlace",
-          "final outcome"
+          "la inundación",
+          "flood"
         ]
       ],
       "teaches": [
@@ -31,10 +31,9 @@
       "id": "b2-16-03.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "De __ mediado una intervención judicial a tiempo, el fraude se habría prevenido.",
-      "hint": "to have",
+      "sentence": "De __ revisado la falla a tiempo, habrían evitado el derrumbe.",
       "answer": "haber",
-      "english": "Had a judicial intervention mediated in time, the fraud would have been prevented.",
+      "english": "Had they checked the fault in time, they would have prevented the collapse.",
       "teaches": [
         "implicit-conditionals"
       ]
@@ -43,17 +42,20 @@
       "id": "b2-16-03.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿A qué oración equivale exactamente la expresión 'De haber contado con más tiempo'?",
+      "question": "Which sentence says, without si, that if they had checked the bridge, there would have been no collapse?",
       "options": [
-        "A 'Si hubiéramos contado con más tiempo' en modo subjuntivo contrafáctico.",
-        "A 'Cuando tengamos más tiempo' en modo subjuntivo futuro.",
-        "A 'Porque tenemos mucho tiempo disponible' en indicativo causal.",
-        "A 'Para que todos tengan tiempo libre' en cláusula final."
+        "De hubieran revisado el puente, no habría ocurrido el derrumbe.",
+        "De haber revisado el puente, no ocurrirá el derrumbe.",
+        "De haber revisado el puente, no habría ocurrido el derrumbe.",
+        "Haber revisado el puente, no habría ocurrido el derrumbe."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "implicit-conditionals"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "b2-16-03.ex04",
@@ -61,25 +63,29 @@
       "category": "grammar",
       "tiles": [
         "De",
-        "haber",
-        "sabido",
-        "el",
-        "desenlace,",
         "no",
-        "habríamos",
-        "viajado."
+        "haber",
+        "revisado",
+        "el",
+        "puente,",
+        "habría",
+        "habido",
+        "un",
+        "derrumbe."
       ],
       "solution": [
         "De",
-        "haber",
-        "sabido",
-        "el",
-        "desenlace,",
         "no",
-        "habríamos",
-        "viajado."
+        "haber",
+        "revisado",
+        "el",
+        "puente,",
+        "habría",
+        "habido",
+        "un",
+        "derrumbe."
       ],
-      "english": "Had we known the outcome, we wouldn't have traveled.",
+      "english": "Had they not checked the bridge, there would have been a collapse.",
       "teaches": [
         "implicit-conditionals"
       ]
@@ -91,7 +97,7 @@
       "prompt": [
         {
           "speaker": "Abogada",
-          "text": "¿Qué dictaminó la comisión pericial sobre el colapso del puente?"
+          "text": "¿Qué dijeron los expertos sobre el derrumbe?"
         },
         {
           "speaker": "Ingeniero",
@@ -99,22 +105,24 @@
         }
       ],
       "options": [
-        "Concluyeron que de haberse realizado el mantenimiento preventivo anual, la falla estructural no se habría producido.",
-        "El puente mide trescientos metros de longitud sobre el río.",
-        "El mantenimiento de puentes se realiza en días soleados.",
-        "Ayer compramos los materiales de construcción en la ferretería."
+        "Dijeron que, de haber hecho la revisión a tiempo, la falla no cause daños.",
+        "Dijeron que, de hubiera hecho la revisión a tiempo, la falla no habría causado daños.",
+        "Dijeron que, de haber hecho la revisión a tiempo, la falla no habría causado daños."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "implicit-conditionals"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b2-16-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "De haberse respetado el calendario electoral, la tensión política se habría disipado pacíficamente.",
-      "english": "Had the electoral calendar been respected, political tension would have dissipated peacefully.",
+      "sentence": "De haberlo sabido, habríamos revisado la falla antes.",
+      "english": "Had we known, we would have checked the fault earlier.",
       "teaches": [
         "implicit-conditionals"
       ]

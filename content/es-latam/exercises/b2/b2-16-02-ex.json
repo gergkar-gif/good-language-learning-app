@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "lamento",
-          "regret / lamentation"
+          "añorar",
+          "to long for"
         ],
         [
-          "nostalgia",
-          "longing for the past"
+          "echar de menos",
+          "to miss"
         ],
         [
-          "irreversible",
-          "cannot be undone"
+          "el consuelo",
+          "comfort, consolation"
         ],
         [
-          "remordimiento",
-          "remorseful feeling"
+          "suspirar",
+          "to sigh"
         ]
       ],
       "teaches": [
@@ -31,10 +31,13 @@
       "id": "b2-16-02.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "¡Ojalá __ la advertencia de los especialistas antes de emprender la inversión!",
-      "hint": "escuchar",
-      "answer": "hubiéramos escuchado",
-      "english": "If only we had listened to the specialists' warning before undertaking the investment!",
+      "sentence": "Ahora añoro mi ciudad: ¡ojalá no me __ mudado!",
+      "hint": "haber",
+      "answers": [
+        "hubiera",
+        "hubiese"
+      ],
+      "english": "Now I long for my city: I wish I had not moved!",
       "teaches": [
         "counterfactual-wishes"
       ]
@@ -43,43 +46,45 @@
       "id": "b2-16-02.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué matiz pragmático expresa la frase '¡Ojalá hubieras asistido a la ceremonia!'?",
+      "question": "You did not call your grandmother last week, and now you regret it. Which sentence says so?",
       "options": [
-        "Un lamento o arrepentimiento retrospectivo sobre un hecho pasado que no ocurrió.",
-        "Una invitación cordial para un evento del próximo año.",
-        "Una orden imperativa de asistencia inmediata.",
-        "Una hipótesis de futuro probable."
+        "Ojalá llame a mi abuela.",
+        "Ojalá llamara a mi abuela.",
+        "Ojalá hubiera llamado a mi abuela.",
+        "Ojalá habría llamado a mi abuela."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "counterfactual-wishes"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "subjuntivo-deseos",
+        "1": "imperfect-subjunctive-forms"
+      }
     },
     {
       "id": "b2-16-02.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "¡Ojalá",
-        "hubiésemos",
-        "tenido",
-        "mayor",
-        "prudencia",
-        "en",
-        "aquel",
-        "momento!"
+        "Suspiró:",
+        "¡ojalá",
+        "no",
+        "hubiera",
+        "perdido",
+        "la",
+        "ocasión!"
       ],
       "solution": [
-        "¡Ojalá",
-        "hubiésemos",
-        "tenido",
-        "mayor",
-        "prudencia",
-        "en",
-        "aquel",
-        "momento!"
+        "Suspiró:",
+        "¡ojalá",
+        "no",
+        "hubiera",
+        "perdido",
+        "la",
+        "ocasión!"
       ],
-      "english": "If only we had had greater prudence at that moment!",
+      "english": "He sighed: I wish I had not missed the chance!",
       "teaches": [
         "counterfactual-wishes"
       ]
@@ -91,30 +96,32 @@
       "prompt": [
         {
           "speaker": "Beatriz",
-          "text": "Al final cancelaron el vuelo por el temporal de nieve en la cordillera."
+          "text": "Echo de menos a mi hermano; casi no hablamos."
         },
         {
-          "speaker": "Gonzalo",
+          "speaker": "Tú",
           "text": "_____"
         }
       ],
       "options": [
-        "¡Qué lástima! ¡Ojalá hubiéramos salido en el vuelo de la mañana como sugeriste!",
-        "El clima siempre es cálido en el mes de agosto.",
-        "Me gusta mucho el café con leche por las mañanas.",
-        "Los aviones vuelan a diez mil metros de altitud."
+        "Ojalá lo habrías llamado más a menudo.",
+        "Ojalá lo hubieras llamado más a menudo.",
+        "Ojalá lo habías llamado más a menudo."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "counterfactual-wishes"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "pluscuamperfecto"
+      }
     },
     {
       "id": "b2-16-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "¡Ojalá el gobierno hubiera implementado las reformas económicas antes del estallido de la crisis!",
-      "english": "If only the government had implemented the economic reforms before the crisis erupted!",
+      "sentence": "¡Ojalá hubiese escuchado el consejo de mi madre!",
+      "english": "I wish I had listened to my mother's advice!",
       "teaches": [
         "counterfactual-wishes"
       ]

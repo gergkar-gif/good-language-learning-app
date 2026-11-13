@@ -1,0 +1,4473 @@
+diff --git a/content/es-latam/exercises/b2/b2-15-01-ex.json b/content/es-latam/exercises/b2/b2-15-01-ex.json
+index f22ee842..39e4a879 100644
+--- a/content/es-latam/exercises/b2/b2-15-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-15-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "desinencia",
+-          "inflectional verb ending"
++          "el encargo",
++          "task, job given to someone"
+         ],
+         [
+-          "etimológico",
+-          "etymological"
++          "pendiente",
++          "outstanding, still to be done"
+         ],
+         [
+-          "alternancia",
+-          "alternation"
++          "encargarse de",
++          "to take charge of"
+         ],
+         [
+-          "paradigma",
+-          "inflectional model"
++          "imponer",
++          "to impose, to set (a deadline)"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-15-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El profesor dudaba de que los estudiantes __ el texto a tiempo.",
++      "sentence": "Mi jefe quería que nosotros __ el encargo antes del viernes.",
+       "hint": "terminar",
+-      "answer": "terminaran",
+-      "english": "The professor doubted that the students would finish the text on time.",
++      "answers": [
++        "termináramos",
++        "terminásemos"
++      ],
++      "english": "My boss wanted us to finish the task before Friday.",
+       "teaches": [
+         "imperfect-subjunctive-forms"
+       ]
+@@ -43,45 +46,49 @@
+       "id": "b2-15-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es el origen etimológico de la desinencia verbal en -ra?",
++      "question": "The boss asked the team to bring the documents. Which sentence is correct?",
+       "options": [
+-        "Proviene del pluscuamperfecto de indicativo del latín.",
+-        "Deriva del futuro imperfecto del griego clásico.",
+-        "Surgió como una invención dialectal del siglo XVIII.",
+-        "Procede exclusivamente del imperativo plural visigodo."
++        "El jefe nos pidió que traigamos los documentos pendientes.",
++        "El jefe nos pidió que trajimos los documentos pendientes.",
++        "El jefe nos pidió que trajéramos los documentos pendientes.",
++        "El jefe nos pidió que trajeramos los documentos pendientes."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "imperfect-subjunctive-forms"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "subjuntivo-morfologia",
++        "1": "preterito-indefinido"
++      }
+     },
+     {
+       "id": "b2-15-01.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "No",
+-        "era",
+-        "probable",
++        "Mi",
++        "jefe",
++        "quería",
+         "que",
+-        "ellos",
+-        "viniesen",
+-        "a",
+-        "la",
+-        "reunión."
++        "me",
++        "encargara",
++        "de",
++        "ese",
++        "proyecto."
+       ],
+       "solution": [
+-        "No",
+-        "era",
+-        "probable",
++        "Mi",
++        "jefe",
++        "quería",
+         "que",
+-        "ellos",
+-        "viniesen",
+-        "a",
+-        "la",
+-        "reunión."
++        "me",
++        "encargara",
++        "de",
++        "ese",
++        "proyecto."
+       ],
+-      "english": "It was not likely that they would come to the meeting.",
++      "english": "My boss wanted me to take charge of that project.",
+       "teaches": [
+         "imperfect-subjunctive-forms"
+       ]
+@@ -92,34 +99,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Valentina",
+-          "text": "¿Esperabas que el embajador hablara hoy sobre el acuerdo comercial?"
++          "speaker": "Ana",
++          "text": "¿Por qué estás tan nervioso?"
+         },
+         {
+-          "speaker": "Mateo",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Sí, todos deseábamos que hablase con total franqueza sobre los aranceles.",
+-        "No, el embajador siempre habla en presente de indicativo.",
+-        "Creo que el acuerdo se firma mañana sin ninguna duda.",
+-        "Ayer compramos los boletos de avión para Caracas."
++        "El jefe nos impuso un plazo corto: quería que terminamos hoy.",
++        "El jefe nos impuso un plazo corto: quería que termináramos hoy.",
++        "El jefe nos impuso un plazo corto: quería que terminemos hoy."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "imperfect-subjunctive-forms"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "present-tense",
++        "2": "subjuntivo-morfologia"
++      }
+     },
+     {
+       "id": "b2-15-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Aunque tuviéramos discrepancias metodológicas, acordamos redactar el dictamen de común acuerdo.",
+-      "english": "Even if we had methodological discrepancies, we agreed to draft the ruling by mutual agreement.",
++      "sentence": "El profesor pidió que leyésemos el texto en voz alta.",
++      "english": "The teacher asked us to read the text aloud.",
+       "teaches": [
+         "imperfect-subjunctive-forms"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-15-02-ex.json b/content/es-latam/exercises/b2/b2-15-02-ex.json
+index 09fd4cfe..cd6378f0 100644
+--- a/content/es-latam/exercises/b2/b2-15-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-15-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "coloquial",
+-          "everyday / informal"
++          "la prensa",
++          "the press, newspapers"
+         ],
+         [
+-          "arcaizante",
+-          "archaizing in tone"
++          "el titular",
++          "headline"
+         ],
+         [
+-          "protocolar",
+-          "formal protocol"
++          "la sentencia",
++          "court ruling"
+         ],
+         [
+-          "predominio",
+-          "prevalence / predominance"
++          "la revista",
++          "magazine"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-15-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En el español americano habitual, resulta mucho más natural decir: 'Ojalá __ tiempo libre mañana'.",
+-      "hint": "tener",
+-      "answer": "tuviera",
+-      "english": "In standard American Spanish, it is much more natural to say: 'I wish I had free time tomorrow'.",
++      "sentence": "El juez pidió que se __ la sentencia en voz alta.",
++      "hint": "leer",
++      "answers": [
++        "leyera",
++        "leyese"
++      ],
++      "english": "The judge asked for the ruling to be read aloud.",
+       "teaches": [
+         "imperfect-subjunctive-forms"
+       ]
+@@ -43,17 +46,20 @@
+       "id": "b2-15-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿En qué tipo de textos suele encontrarse con mayor frecuencia la variante en -se en América Latina?",
++      "question": "Which sentence means the same as *Quería que vinieras temprano*?",
+       "options": [
+-        "En documentos jurídicos notariales, textos académicos formales y discursos solemnes.",
+-        "En conversaciones informales entre jóvenes universitarios.",
+-        "En mensajes de texto rápidos y redes sociales cotidianas.",
+-        "Únicamente en manuales técnicos de cocina tradicional."
++        "Quería que vendrías temprano.",
++        "Quería que vinieses temprano.",
++        "Quería que viniste temprano."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "imperfect-subjunctive-forms"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "condicional-irregular",
++        "2": "preterito-indefinido"
++      }
+     },
+     {
+       "id": "b2-15-02.ex04",
+@@ -61,27 +67,27 @@
+       "category": "grammar",
+       "tiles": [
+         "La",
+-        "variante",
+-        "en",
+-        "-ra",
+-        "predomina",
+-        "en",
++        "prensa",
++        "quería",
++        "que",
+         "el",
+-        "español",
+-        "hispanoamericano."
++        "presidente",
++        "hablase",
++        "del",
++        "problema."
+       ],
+       "solution": [
+         "La",
+-        "variante",
+-        "en",
+-        "-ra",
+-        "predomina",
+-        "en",
++        "prensa",
++        "quería",
++        "que",
+         "el",
+-        "español",
+-        "hispanoamericano."
++        "presidente",
++        "hablase",
++        "del",
++        "problema."
+       ],
+-      "english": "The variant in -ra predominates in Spanish American Spanish.",
++      "english": "The press wanted the president to talk about the problem.",
+       "teaches": [
+         "imperfect-subjunctive-forms"
+       ]
+@@ -92,21 +98,20 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Abogado Pérez",
+-          "text": "He redactado la cláusula estipulando que en caso de que surgiese algún diferendo se recurra al arbitraje."
++          "speaker": "Meg",
++          "text": "En un titular de esta revista leí «si el país tuviese más escuelas…». ¿Es lo mismo que «tuviera»?"
+         },
+         {
+-          "speaker": "Colega",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Es impecable; ese uso de la desinencia en -se confiere al contrato un rigor jurídico intachable.",
+-        "No me gusta el café con azúcar por las mañanas.",
+-        "Ayer fuimos al cine a ver una película de acción.",
+-        "Las desinencias en -ra son incorrectas según la ley."
++        "No, «tuviese» es un error en América Latina.",
++        "Sí, es lo mismo, pero «tuviese» suena más formal.",
++        "No, «tuviese» habla del pasado y «tuviera» del presente."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "imperfect-subjunctive-forms"
+       ]
+@@ -115,11 +120,11 @@
+       "id": "b2-15-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Aunque ambas formas sean correctas, la prensa latinoamericana prefiere de manera uniforme la terminación en -ra.",
+-      "english": "Even though both forms are correct, Latin American press uniformly prefers the termination in -ra.",
++      "sentence": "El reglamento pedía que todos llegasen a las ocho.",
++      "english": "The rules asked everyone to arrive at eight.",
+       "teaches": [
+         "imperfect-subjunctive-forms"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-15-03-ex.json b/content/es-latam/exercises/b2/b2-15-03-ex.json
+index 9651f23b..7bc8b356 100644
+--- a/content/es-latam/exercises/b2/b2-15-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-15-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "cortesía",
+-          "politeness"
++          "el trámite",
++          "procedure, formality"
+         ],
+         [
+-          "atenuación",
+-          "mitigation / softening"
++          "la ventanilla",
++          "service desk"
+         ],
+         [
+-          "petición",
+-          "formal request"
++          "el comprobante",
++          "receipt, proof of payment"
+         ],
+         [
+-          "deferencia",
+-          "respectful deference"
++          "tramitar",
++          "to process (a document)"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-15-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Disculpe, señor Ministro, ¿__ usted concedernos diez minutos de su audiencia?",
+-      "hint": "poder",
+-      "answer": "pudiera",
+-      "english": "Excuse me, Mr. Minister, could you grant us ten minutes of your audience?",
++      "sentence": "Quisiera que usted me __ a tramitar este documento.",
++      "hint": "ayudar",
++      "answers": [
++        "ayudara",
++        "ayudase"
++      ],
++      "english": "I would like you to help me process this document.",
+       "teaches": [
+         "polite-softening"
+       ]
+@@ -43,17 +46,19 @@
+       "id": "b2-15-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué es incorrecto decir 'Quisiese un vaso de agua' para pedir algo con cortesía?",
++      "question": "You are at an office and want to ask very politely where counter three is. Which sentence works?",
+       "options": [
+-        "Porque en las oraciones independientes de cortesía modal solo es gramatical la desinencia en -ra.",
+-        "Porque el verbo querer no admite subjuntivo bajo ninguna circunstancia.",
+-        "Porque en español solo se puede pedir agua usando el imperativo.",
+-        "Porque la forma debiese sustituye obligatoriamente a quisiese."
++        "¿Pudiese decirme dónde está la ventanilla tres?",
++        "¿Pudo decirme dónde está la ventanilla tres?",
++        "¿Pudiera decirme dónde está la ventanilla tres?"
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "polite-softening"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "preterito-indefinido"
++      }
+     },
+     {
+       "id": "b2-15-03.ex04",
+@@ -61,25 +66,25 @@
+       "category": "grammar",
+       "tiles": [
+         "Quisiéramos",
+-        "proponer",
+-        "una",
+-        "solución",
+-        "equitativa",
+-        "para",
+-        "ambas",
+-        "partes."
++        "que",
++        "nos",
++        "entregara",
++        "el",
++        "comprobante",
++        "del",
++        "pago."
+       ],
+       "solution": [
+         "Quisiéramos",
+-        "proponer",
+-        "una",
+-        "solución",
+-        "equitativa",
+-        "para",
+-        "ambas",
+-        "partes."
++        "que",
++        "nos",
++        "entregara",
++        "el",
++        "comprobante",
++        "del",
++        "pago."
+       ],
+-      "english": "We would like to propose an equitable solution for both parties.",
++      "english": "We would like you to give us the receipt for the payment.",
+       "teaches": [
+         "polite-softening"
+       ]
+@@ -90,34 +95,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Asistente",
+-          "text": "Buenos días, ¿en qué puedo colaborar con usted hoy?"
++          "speaker": "Empleada",
++          "text": "Buenos días, ¿en qué puedo ayudarle?"
+         },
+         {
+-          "speaker": "Investigador",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Quisiera revisar los archivos históricos del siglo diecinueve correspondientes a la cancillería.",
+-        "Quiero que me des todos los papeles ahora mismo sin dilación.",
+-        "Ayer almorcé una sopa caliente en el comedor central.",
+-        "Los archivos están cerrados durante todo el fin de semana."
++        "Quisiera que me explicaría cómo se hace este trámite.",
++        "Quisiera que me explico cómo se hace este trámite.",
++        "Quisiera que me explicara cómo se hace este trámite."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "polite-softening"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "condicional-regular",
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-15-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Debiéramos examinar con cautela las cláusulas contractuales antes de estampar la firma definitiva.",
+-      "english": "We ought to cautiously examine the contractual clauses before placing our definitive signature.",
++      "sentence": "Debiéramos revisar el contrato antes de firmarlo.",
++      "english": "We ought to check the contract before signing it.",
+       "teaches": [
+         "polite-softening"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-15-04-ex.json b/content/es-latam/exercises/b2/b2-15-04-ex.json
+index 04a08774..6f06dc43 100644
+--- a/content/es-latam/exercises/b2/b2-15-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-15-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "contrafáctico",
+-          "counterfactual"
++          "aparentar",
++          "to pretend, to look as if"
+         ],
+         [
+-          "simulación",
+-          "pretense / simulation"
++          "disimular",
++          "to hide a feeling"
+         ],
+         [
+-          "conjetura",
+-          "reasoned guess"
++          "la broma",
++          "joke"
+         ],
+         [
+-          "desiderativo",
+-          "expressing a wish"
++          "exagerar",
++          "to exaggerate"
+         ]
+       ],
+       "teaches": [
+@@ -31,57 +31,61 @@
+       "id": "b2-15-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El testigo declaró ante el juez con evasivas, como si no __ nada de lo ocurrido.",
+-      "hint": "saber",
+-      "answer": "supiera",
+-      "english": "The witness testified before the judge evasively, as if he knew nothing of what had happened.",
++      "sentence": "Habla en serio, pero todos lo escuchan como si __ una broma.",
++      "hint": "ser",
++      "answers": [
++        "fuera",
++        "fuese"
++      ],
++      "english": "He is serious, but everyone listens to him as if it were a joke.",
+       "teaches": [
+-        "hypothetical-structures"
++        "como-si"
+       ]
+     },
+     {
+       "id": "b2-15-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué tiempo verbal exige rigurosamente la locución comparativa 'como si' para indicar simultaneidad irreal?",
++      "question": "Luis makes a small problem sound huge. Which sentence describes him?",
+       "options": [
+-        "El imperfecto de subjuntivo (en -ra o -se).",
+-        "El presente de indicativo.",
+-        "El futuro simple de indicativo.",
+-        "El presente de subjuntivo obligatoriamente."
++        "Exagera: habla como si el problema fuera enorme.",
++        "Exagera: habla como si el problema es enorme.",
++        "Exagera: habla como si el problema sea enorme."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "hypothetical-structures"
+-      ]
++        "como-si"
++      ],
++      "distractor_skills": {
++        "1": "present-tense",
++        "2": "subjuntivo-morfologia"
++      }
+     },
+     {
+       "id": "b2-15-04.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "¡Ojalá",
+-        "tuviéramos",
+-        "la",
+-        "certeza",
+-        "absoluta",
+-        "sobre",
+-        "el",
+-        "resultado!"
++        "Ojalá",
++        "pudiera",
++        "disimular",
++        "mejor",
++        "cuando",
++        "estoy",
++        "nervioso."
+       ],
+       "solution": [
+-        "¡Ojalá",
+-        "tuviéramos",
+-        "la",
+-        "certeza",
+-        "absoluta",
+-        "sobre",
+-        "el",
+-        "resultado!"
++        "Ojalá",
++        "pudiera",
++        "disimular",
++        "mejor",
++        "cuando",
++        "estoy",
++        "nervioso."
+       ],
+-      "english": "I wish we had absolute certainty about the outcome!",
++      "english": "I wish I could hide it better when I am nervous.",
+       "teaches": [
+-        "hypothetical-structures"
++        "subjuntivo-deseos"
+       ]
+     },
+     {
+@@ -90,34 +94,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Mariana",
+-          "text": "¿Notaste cómo reaccionó Julián al enterarse de la auditoría externa?"
++          "speaker": "Ana",
++          "text": "Julián parece muy tranquilo hoy, ¿no?"
+         },
+         {
+-          "speaker": "Camilo",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Sí, se encogió de hombros y sonrió como si la medida no tuviese ninguna consecuencia para su equipo.",
+-        "No conozco al nuevo director de la empresa auditora.",
+-        "La auditoría comenzará el próximo lunes a primera hora.",
+-        "Julián tiene un automóvil de color rojo oscuro."
++        "Sí, pero solo aparenta: habla como si todo está bien.",
++        "Sí, pero solo aparenta: habla como si todo esté bien.",
++        "Sí, pero solo aparenta: habla como si todo estuviera bien."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+-        "hypothetical-structures"
+-      ]
++        "como-si"
++      ],
++      "distractor_skills": {
++        "0": "present-tense",
++        "1": "subjuntivo-morfologia"
++      }
+     },
+     {
+       "id": "b2-15-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "¡Ojalá encontráramos una vía diplomática que evitara mayores tensiones fronterizas entre ambas naciones!",
+-      "english": "I wish we found a diplomatic path that avoided further border tensions between both nations!",
++      "sentence": "Ojalá viviéramos más cerca del mar.",
++      "english": "I wish we lived closer to the sea.",
+       "teaches": [
+-        "hypothetical-structures"
++        "subjuntivo-deseos"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-15-05-ex.json b/content/es-latam/exercises/b2/b2-15-05-ex.json
+index dfa79184..1aea2c19 100644
+--- a/content/es-latam/exercises/b2/b2-15-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-15-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "estilístico",
+-          "stylistic"
++          "derrocar",
++          "to overthrow"
+         ],
+         [
+-          "periodístico",
+-          "journalistic"
++          "el golpe de Estado",
++          "coup"
+         ],
+         [
+-          "antedicho",
+-          "aforementioned"
++          "la crónica",
++          "news report, chronicle"
+         ],
+         [
+-          "vestigio",
+-          "historical trace / vestige"
++          "el cronista",
++          "chronicler, news reporter"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-15-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En la crónica necrológica se recordó la figura del novelista que __ el Premio Nobel de Literatura.",
+-      "hint": "obtener",
+-      "answer": "obtuviera",
+-      "english": "In the obituary column, the figure of the novelist who had obtained the Nobel Prize for Literature was recalled.",
++      "sentence": "La ciudad donde __ el poeta es muy pequeña.",
++      "hint": "nacer, ordinary past",
++      "answers": [
++        "nació",
++        "había nacido"
++      ],
++      "english": "The city where the poet was born is very small.",
+       "teaches": [
+         "subjuntivo-imperfecto-estilistico-ra"
+       ]
+@@ -43,17 +46,22 @@
+       "id": "b2-15-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿A qué tiempo verbal equivale la frase periodística 'el acuerdo que rubricaran los mandatarios'?",
++      "question": "Which sentence has a -ra form with the value of a past indicative, not a condition, a wish or a request?",
+       "options": [
+-        "A 'que habían rubricado' o 'que rubricaron' en modo indicativo.",
+-        "A una orden imperativa futura e irrevocable.",
+-        "A un deseo irrealizable e incierto en presente.",
+-        "A una condición hipotética sin cumplir."
++        "Si el golpe de Estado derrocara al presidente, el país cambiaría.",
++        "Ojalá el golpe de Estado no derrocara al presidente.",
++        "El golpe de Estado que derrocara al presidente ocurrió de noche.",
++        "El cronista temía que el golpe de Estado derrocara al presidente."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "subjuntivo-imperfecto-estilistico-ra"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "hypothetical-structures",
++        "1": "subjuntivo-deseos",
++        "3": "correlacion-temporal-subjuntivo"
++      }
+     },
+     {
+       "id": "b2-15-05.ex04",
+@@ -61,25 +69,31 @@
+       "category": "grammar",
+       "tiles": [
+         "El",
+-        "ministro",
++        "cronista,",
+         "que",
+-        "asumiera",
+-        "el",
+-        "cargo",
+-        "renunció",
+-        "ayer."
++        "naciera",
++        "en",
++        "un",
++        "pueblo",
++        "pequeño,",
++        "escribió",
++        "muchas",
++        "crónicas."
+       ],
+       "solution": [
+         "El",
+-        "ministro",
++        "cronista,",
+         "que",
+-        "asumiera",
+-        "el",
+-        "cargo",
+-        "renunció",
+-        "ayer."
++        "naciera",
++        "en",
++        "un",
++        "pueblo",
++        "pequeño,",
++        "escribió",
++        "muchas",
++        "crónicas."
+       ],
+-      "english": "The minister who had assumed office resigned yesterday.",
++      "english": "The chronicler, who was born in a small town, wrote many chronicles.",
+       "teaches": [
+         "subjuntivo-imperfecto-estilistico-ra"
+       ]
+@@ -90,34 +104,38 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Editor",
+-          "text": "¿Por qué el articulista escribió 'la reforma que promoviera el presidente' en lugar de 'promovió'?"
++          "speaker": "Meg",
++          "text": "En esta crónica dice «el libro que publicara en 1950». ¿Qué significa?"
+         },
+         {
+-          "speaker": "Corrector",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Es un recurso estilístico formal muy extendido en el periodismo que evoca el antiguo valor etimológico de pluscuamperfecto de indicativo.",
+-        "Se trata de un descuido tipográfico que debe corregirse de inmediato.",
+-        "El presidente no quiso firmar la reforma porque no le gustaba.",
+-        "En los artículos de opinión está prohibido conjugar los verbos en pasado."
++        "Significa que el autor publicaría un libro si pudiera.",
++        "Significa «el libro que publicó en 1950»; es un estilo formal.",
++        "Significa que el autor quiere publicar un libro en 1950."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "subjuntivo-imperfecto-estilistico-ra"
+       ]
+     },
+     {
+       "id": "b2-15-05.ex06",
+-      "type": "dictation",
++      "type": "listening-choice",
+       "category": "listening",
+-      "sentence": "La delegación visitó el palacio colonial donde residiera el primer gobernador republicano.",
+-      "english": "The delegation visited the colonial palace where the first republican governor had resided.",
++      "sentence": "Rómulo Gallegos, que fuera presidente de Venezuela en 1948, murió en 1969.",
++      "options": [
++        "Rómulo Gallegos, who wanted to be president of Venezuela in 1948, died in 1969.",
++        "Rómulo Gallegos, who was president of Venezuela in 1948, died in 1969.",
++        "If Rómulo Gallegos were president of Venezuela in 1948, he would die in 1969."
++      ],
++      "correct": 1,
+       "teaches": [
+         "subjuntivo-imperfecto-estilistico-ra"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-15-consolidation-ex.json b/content/es-latam/exercises/b2/b2-15-consolidation-ex.json
+index a5ff2690..6c9ad81c 100644
+--- a/content/es-latam/exercises/b2/b2-15-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-15-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "desinencia",
+-          "verb inflectional ending"
++          "el encargo",
++          "task, job given to someone"
+         ],
+         [
+-          "cortesía",
+-          "polite mitigation"
++          "la sentencia",
++          "court ruling"
+         ],
+         [
+-          "contrafáctico",
+-          "counterfactual scenario"
++          "aparentar",
++          "to pretend, to put on an appearance"
+         ],
+         [
+-          "vestigio",
+-          "historical trace / remnant"
++          "derrocar",
++          "to overthrow"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-15-consolidation.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Si el hacendado __ la ley con firmeza, la violencia en el llano habría cesado mucho antes.",
+-      "hint": "aplicar",
+-      "answer": "aplicara",
+-      "english": "If the rancher had applied the law with firmness, violence in the plains would have ceased much earlier.",
++      "sentence": "El profesor nos pidió que __ el capítulo dos veces.",
++      "hint": "leer",
++      "answers": [
++        "leyéramos",
++        "leyésemos"
++      ],
++      "english": "The teacher asked us to read the chapter twice.",
+       "teaches": [
+         "imperfect-subjunctive-forms"
+       ]
+@@ -43,83 +46,89 @@
+       "id": "b2-15-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál de las siguientes oraciones formula una petición atenuada de cortesía de manera correcta?",
++      "question": "You want to ask very politely to speak to the director. Which sentence works?",
+       "options": [
+-        "Quisiera solicitar formalmente una prórroga para la entrega del informe.",
+-        "Quisiese solicitar formalmente una prórroga para la entrega del informe.",
+-        "Quiero que me des una prórroga inmediatamente.",
+-        "Querría yo que tú quisieras darme una prórroga."
++        "Quisiese hablar con el director, por favor.",
++        "Quise hablar con el director, por favor.",
++        "Quisiera hablar con el director, por favor."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "polite-softening"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "preterito-indefinido"
++      }
+     },
+     {
+       "id": "b2-15-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El protagonista cabalgaba por la sabana como si no __ ningún peligro en las ciénagas.",
+-      "hint": "temer",
+-      "answer": "temiera",
+-      "english": "The protagonist rode through the savanna as if he feared no danger in the marshes.",
++      "sentence": "Mi compañero habla como si __ el jefe de la oficina.",
++      "hint": "ser",
++      "answers": [
++        "fuera",
++        "fuese"
++      ],
++      "english": "My colleague talks as if he were the boss of the office.",
+       "teaches": [
+-        "hypothetical-structures"
++        "como-si"
+       ]
+     },
+     {
+       "id": "b2-15-consolidation.ex05",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué rasgo distingue el uso de -ra con valor de indicativo en la prosa periodística?",
++      "question": "Which sentence has a -ra form with the value of a past indicative?",
+       "options": [
+-        "Que equivale a un pretérito o pluscuamperfecto de indicativo y solo es posible con la desinencia en -ra.",
+-        "Que expresa una orden imperativa que debe cumplirse en el futuro.",
+-        "Que es una regla moderna inventada en los medios digitales de comunicación.",
+-        "Que se puede reemplazar indistintamente por la desinencia en -se sin alterar la norma culta."
++        "Si el autor publicara una novela, la leería.",
++        "Mi madre quería que el autor publicara otra novela.",
++        "La novela, que publicara el autor en 1929, ocurre en las llanuras.",
++        "Ojalá el autor publicara otra novela."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "subjuntivo-imperfecto-estilistico-ra"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "hypothetical-structures",
++        "1": "correlacion-temporal-subjuntivo",
++        "3": "subjuntivo-deseos"
++      }
+     },
+     {
+       "id": "b2-15-consolidation.ex06",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Debiéramos",
+-        "fomentar",
+-        "el",
+-        "diálogo",
+-        "civilizado",
+-        "en",
+-        "todo",
+-        "el",
+-        "territorio."
++        "Ojalá",
++        "tuviera",
++        "más",
++        "tiempo",
++        "para",
++        "leer",
++        "novelas."
+       ],
+       "solution": [
+-        "Debiéramos",
+-        "fomentar",
+-        "el",
+-        "diálogo",
+-        "civilizado",
+-        "en",
+-        "todo",
+-        "el",
+-        "territorio."
++        "Ojalá",
++        "tuviera",
++        "más",
++        "tiempo",
++        "para",
++        "leer",
++        "novelas."
+       ],
+-      "english": "We ought to foster civilized dialogue throughout the territory.",
++      "english": "I wish I had more time to read novels.",
+       "teaches": [
+-        "polite-softening"
++        "subjuntivo-deseos"
+       ]
+     },
+     {
+       "id": "b2-15-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "En la novela cumbre de Gallegos, Santos Luzardo luchó para que la civilización triunfara sobre la barbarie.",
+-      "english": "In Gallegos's masterwork novel, Santos Luzardo fought so that civilization would triumph over barbarism.",
++      "sentence": "Si usted leyera la novela, conocería a Santos Luzardo.",
++      "english": "If you read the novel, you would meet Santos Luzardo.",
+       "teaches": [
+         "imperfect-subjunctive-forms"
+       ]
+@@ -127,18 +136,14 @@
+     {
+       "id": "b2-15-consolidation.ex08",
+       "type": "multiple-choice",
+-      "category": "grammar",
+-      "question": "¿Cuál es la distribución sociolingüística predominante del imperfecto de subjuntivo en América Latina?",
++      "category": "reading",
++      "question": "According to the text, how is Doña Bárbara often read?",
+       "options": [
+-        "La desinencia en -ra abarca más del noventa y cinco por ciento de las ocurrencias habituales.",
+-        "La desinencia en -se es la única empleada en el lenguaje de la calle.",
+-        "Ambas desinencias se usan exactamente en una proporción del cincuenta por ciento.",
+-        "Ninguna de las dos formas se utiliza en el habla hispanoamericana."
++        "Como un libro de historia sobre el golpe militar de 1948.",
++        "Como una novela sobre la vida de Gallegos.",
++        "Como un conflicto entre la civilización y la barbarie."
+       ],
+-      "correct": 0,
+-      "teaches": [
+-        "imperfect-subjunctive-forms"
+-      ]
++      "correct": 2
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-16-01-ex.json b/content/es-latam/exercises/b2/b2-16-01-ex.json
+index 90c35f68..b0cb282a 100644
+--- a/content/es-latam/exercises/b2/b2-16-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-16-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "auxiliar",
+-          "auxiliary verb"
++          "la ocasión",
++          "chance, occasion"
+         ],
+         [
+-          "participio",
+-          "verb participle"
++          "el descuido",
++          "oversight, careless slip"
+         ],
+         [
+-          "anterioridad",
+-          "prior occurrence"
++          "la multa",
++          "fine"
+         ],
+         [
+-          "retrospectivo",
+-          "looking back in time"
++          "olvidarse de",
++          "to forget about"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-16-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Dudábamos de que el consorcio __ el contrato antes de la fecha límite.",
+-      "hint": "firmar",
+-      "answer": "hubiera firmado",
+-      "english": "We doubted that the consortium had signed the contract before the deadline.",
++      "sentence": "Si Marta no se __ de la fecha, no habría pagado la multa.",
++      "hint": "olvidarse",
++      "answers": [
++        "hubiera olvidado",
++        "hubiese olvidado"
++      ],
++      "english": "If Marta had not forgotten about the date, she would not have paid the fine.",
+       "teaches": [
+         "pluperfect-subjunctive-forms"
+       ]
+@@ -43,17 +46,20 @@
+       "id": "b2-16-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cómo se forma morfológicamente el pretérito pluscuamperfecto de subjuntivo?",
++      "question": "Ana did not know about the chance. If she had known, she would have gone. Which sentence says so?",
+       "options": [
+-        "Con el imperfecto de subjuntivo de haber (hubiera/hubiese) más el participio invariable.",
+-        "Con el presente de subjuntivo de haber más el infinitivo del verbo.",
+-        "Con el condicional simple de haber más el gerundio del verbo.",
+-        "Con el pretérito indefinido de ser más el adjetivo correspondiente."
++        "Si Ana había sabido de la ocasión, habría ido.",
++        "Si Ana hubiera sabido de la ocasión, habría ido.",
++        "Si Ana habría sabido de la ocasión, habría ido.",
++        "Si Ana hubiera sabida de la ocasión, habría ido."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "pluperfect-subjunctive-forms"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "pluscuamperfecto"
++      }
+     },
+     {
+       "id": "b2-16-01.ex04",
+@@ -61,25 +67,23 @@
+       "category": "grammar",
+       "tiles": [
+         "No",
+-        "creíamos",
++        "creía",
+         "que",
+-        "ellos",
+-        "hubiesen",
+-        "tomado",
+-        "esa",
+-        "decisión."
++        "hubiésemos",
++        "perdido",
++        "tantas",
++        "ocasiones."
+       ],
+       "solution": [
+         "No",
+-        "creíamos",
++        "creía",
+         "que",
+-        "ellos",
+-        "hubiesen",
+-        "tomado",
+-        "esa",
+-        "decisión."
++        "hubiésemos",
++        "perdido",
++        "tantas",
++        "ocasiones."
+       ],
+-      "english": "We did not believe that they had made that decision.",
++      "english": "I did not think we had missed so many chances.",
+       "teaches": [
+         "pluperfect-subjunctive-forms"
+       ]
+@@ -90,34 +94,36 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Valeria",
+-          "text": "¿Esperabas que la junta directiva hubiera aprobado el presupuesto ayer?"
++          "speaker": "Ana",
++          "text": "¿Por qué pagaste la multa?"
+         },
+         {
+-          "speaker": "Esteban",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Sí, todos confiábamos en que hubieran alcanzado un acuerdo unánime tras la deliberación.",
+-        "Ayer almorcé una ensalada fresca en el comedor universitario.",
+-        "El presupuesto se aprueba siempre en presente de indicativo.",
+-        "No conozco las oficinas centrales de la empresa."
++        "Por un descuido: si hubiera mirado la fecha, no la habría pagado.",
++        "Por un descuido: si había mirado la fecha, no la habría pagado.",
++        "Por un descuido: si habría mirado la fecha, no la habría pagado."
+       ],
+       "correct": 0,
+       "teaches": [
+         "pluperfect-subjunctive-forms"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "pluscuamperfecto"
++      }
+     },
+     {
+       "id": "b2-16-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Nos sorprendió que el diplomático hubiera presentado su dimisión sin previo aviso.",
+-      "english": "We were surprised that the diplomat had submitted his resignation without prior notice.",
++      "sentence": "Si lo hubiéramos sabido, no habríamos perdido la ocasión.",
++      "english": "If we had known, we would not have missed the chance.",
+       "teaches": [
+         "pluperfect-subjunctive-forms"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-16-02-ex.json b/content/es-latam/exercises/b2/b2-16-02-ex.json
+index 281224be..8bc4e13f 100644
+--- a/content/es-latam/exercises/b2/b2-16-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-16-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "lamento",
+-          "regret / lamentation"
++          "añorar",
++          "to long for"
+         ],
+         [
+-          "nostalgia",
+-          "longing for the past"
++          "echar de menos",
++          "to miss"
+         ],
+         [
+-          "irreversible",
+-          "cannot be undone"
++          "el consuelo",
++          "comfort, consolation"
+         ],
+         [
+-          "remordimiento",
+-          "remorseful feeling"
++          "suspirar",
++          "to sigh"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-16-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "¡Ojalá __ la advertencia de los especialistas antes de emprender la inversión!",
+-      "hint": "escuchar",
+-      "answer": "hubiéramos escuchado",
+-      "english": "If only we had listened to the specialists' warning before undertaking the investment!",
++      "sentence": "Ahora añoro mi ciudad: ¡ojalá no me __ mudado!",
++      "hint": "haber",
++      "answers": [
++        "hubiera",
++        "hubiese"
++      ],
++      "english": "Now I long for my city: I wish I had not moved!",
+       "teaches": [
+         "counterfactual-wishes"
+       ]
+@@ -43,43 +46,45 @@
+       "id": "b2-16-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué matiz pragmático expresa la frase '¡Ojalá hubieras asistido a la ceremonia!'?",
++      "question": "You did not call your grandmother last week, and now you regret it. Which sentence says so?",
+       "options": [
+-        "Un lamento o arrepentimiento retrospectivo sobre un hecho pasado que no ocurrió.",
+-        "Una invitación cordial para un evento del próximo año.",
+-        "Una orden imperativa de asistencia inmediata.",
+-        "Una hipótesis de futuro probable."
++        "Ojalá llame a mi abuela.",
++        "Ojalá llamara a mi abuela.",
++        "Ojalá hubiera llamado a mi abuela.",
++        "Ojalá habría llamado a mi abuela."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "counterfactual-wishes"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "subjuntivo-deseos",
++        "1": "imperfect-subjunctive-forms"
++      }
+     },
+     {
+       "id": "b2-16-02.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "¡Ojalá",
+-        "hubiésemos",
+-        "tenido",
+-        "mayor",
+-        "prudencia",
+-        "en",
+-        "aquel",
+-        "momento!"
++        "Suspiró:",
++        "¡ojalá",
++        "no",
++        "hubiera",
++        "perdido",
++        "la",
++        "ocasión!"
+       ],
+       "solution": [
+-        "¡Ojalá",
+-        "hubiésemos",
+-        "tenido",
+-        "mayor",
+-        "prudencia",
+-        "en",
+-        "aquel",
+-        "momento!"
++        "Suspiró:",
++        "¡ojalá",
++        "no",
++        "hubiera",
++        "perdido",
++        "la",
++        "ocasión!"
+       ],
+-      "english": "If only we had had greater prudence at that moment!",
++      "english": "He sighed: I wish I had not missed the chance!",
+       "teaches": [
+         "counterfactual-wishes"
+       ]
+@@ -91,33 +96,35 @@
+       "prompt": [
+         {
+           "speaker": "Beatriz",
+-          "text": "Al final cancelaron el vuelo por el temporal de nieve en la cordillera."
++          "text": "Echo de menos a mi hermano; casi no hablamos."
+         },
+         {
+-          "speaker": "Gonzalo",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "¡Qué lástima! ¡Ojalá hubiéramos salido en el vuelo de la mañana como sugeriste!",
+-        "El clima siempre es cálido en el mes de agosto.",
+-        "Me gusta mucho el café con leche por las mañanas.",
+-        "Los aviones vuelan a diez mil metros de altitud."
++        "Ojalá lo habrías llamado más a menudo.",
++        "Ojalá lo hubieras llamado más a menudo.",
++        "Ojalá lo habías llamado más a menudo."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "counterfactual-wishes"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "pluscuamperfecto"
++      }
+     },
+     {
+       "id": "b2-16-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "¡Ojalá el gobierno hubiera implementado las reformas económicas antes del estallido de la crisis!",
+-      "english": "If only the government had implemented the economic reforms before the crisis erupted!",
++      "sentence": "¡Ojalá hubiese escuchado el consejo de mi madre!",
++      "english": "I wish I had listened to my mother's advice!",
+       "teaches": [
+         "counterfactual-wishes"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-16-03-ex.json b/content/es-latam/exercises/b2/b2-16-03-ex.json
+index c9ad3ca5..0076000e 100644
+--- a/content/es-latam/exercises/b2/b2-16-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-16-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "condición",
+-          "prerequisite condition"
++          "la falla",
++          "fault, flaw"
+         ],
+         [
+-          "infinitivo",
+-          "infinitive verb form"
++          "la revisión",
++          "check, inspection"
+         ],
+         [
+-          "peritaje",
+-          "expert survey"
++          "el derrumbe",
++          "collapse"
+         ],
+         [
+-          "desenlace",
+-          "final outcome"
++          "la inundación",
++          "flood"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,9 @@
+       "id": "b2-16-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "De __ mediado una intervención judicial a tiempo, el fraude se habría prevenido.",
+-      "hint": "to have",
++      "sentence": "De __ revisado la falla a tiempo, habrían evitado el derrumbe.",
+       "answer": "haber",
+-      "english": "Had a judicial intervention mediated in time, the fraud would have been prevented.",
++      "english": "Had they checked the fault in time, they would have prevented the collapse.",
+       "teaches": [
+         "implicit-conditionals"
+       ]
+@@ -43,17 +42,20 @@
+       "id": "b2-16-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿A qué oración equivale exactamente la expresión 'De haber contado con más tiempo'?",
++      "question": "Which sentence says, without si, that if they had checked the bridge, there would have been no collapse?",
+       "options": [
+-        "A 'Si hubiéramos contado con más tiempo' en modo subjuntivo contrafáctico.",
+-        "A 'Cuando tengamos más tiempo' en modo subjuntivo futuro.",
+-        "A 'Porque tenemos mucho tiempo disponible' en indicativo causal.",
+-        "A 'Para que todos tengan tiempo libre' en cláusula final."
++        "De hubieran revisado el puente, no habría ocurrido el derrumbe.",
++        "De haber revisado el puente, no ocurrirá el derrumbe.",
++        "De haber revisado el puente, no habría ocurrido el derrumbe.",
++        "Haber revisado el puente, no habría ocurrido el derrumbe."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "implicit-conditionals"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-16-03.ex04",
+@@ -61,25 +63,29 @@
+       "category": "grammar",
+       "tiles": [
+         "De",
++        "no",
+         "haber",
+-        "sabido",
++        "revisado",
+         "el",
+-        "desenlace,",
+-        "no",
+-        "habríamos",
+-        "viajado."
++        "puente,",
++        "habría",
++        "habido",
++        "un",
++        "derrumbe."
+       ],
+       "solution": [
+         "De",
++        "no",
+         "haber",
+-        "sabido",
++        "revisado",
+         "el",
+-        "desenlace,",
+-        "no",
+-        "habríamos",
+-        "viajado."
++        "puente,",
++        "habría",
++        "habido",
++        "un",
++        "derrumbe."
+       ],
+-      "english": "Had we known the outcome, we wouldn't have traveled.",
++      "english": "Had they not checked the bridge, there would have been a collapse.",
+       "teaches": [
+         "implicit-conditionals"
+       ]
+@@ -91,7 +97,7 @@
+       "prompt": [
+         {
+           "speaker": "Abogada",
+-          "text": "¿Qué dictaminó la comisión pericial sobre el colapso del puente?"
++          "text": "¿Qué dijeron los expertos sobre el derrumbe?"
+         },
+         {
+           "speaker": "Ingeniero",
+@@ -99,25 +105,27 @@
+         }
+       ],
+       "options": [
+-        "Concluyeron que de haberse realizado el mantenimiento preventivo anual, la falla estructural no se habría producido.",
+-        "El puente mide trescientos metros de longitud sobre el río.",
+-        "El mantenimiento de puentes se realiza en días soleados.",
+-        "Ayer compramos los materiales de construcción en la ferretería."
++        "Dijeron que, de haber hecho la revisión a tiempo, la falla no cause daños.",
++        "Dijeron que, de hubiera hecho la revisión a tiempo, la falla no habría causado daños.",
++        "Dijeron que, de haber hecho la revisión a tiempo, la falla no habría causado daños."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "implicit-conditionals"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "subjuntivo-morfologia"
++      }
+     },
+     {
+       "id": "b2-16-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "De haberse respetado el calendario electoral, la tensión política se habría disipado pacíficamente.",
+-      "english": "Had the electoral calendar been respected, political tension would have dissipated peacefully.",
++      "sentence": "De haberlo sabido, habríamos revisado la falla antes.",
++      "english": "Had we known, we would have checked the fault earlier.",
+       "teaches": [
+         "implicit-conditionals"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-16-04-ex.json b/content/es-latam/exercises/b2/b2-16-04-ex.json
+index 44e69394..d01786e1 100644
+--- a/content/es-latam/exercises/b2/b2-16-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-16-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "alternativa",
+-          "course of action option"
++          "acertado",
++          "right, wise"
+         ],
+         [
+-          "omisión",
+-          "failure to take action"
++          "oportuno",
++          "timely, well chosen"
+         ],
+         [
+-          "bifurcación",
+-          "historical turning point"
++          "el acierto",
++          "good move"
+         ],
+         [
+-          "reproche",
+-          "critical reproach"
++          "la imprudencia",
++          "rash act"
+         ]
+       ],
+       "teaches": [
+@@ -31,59 +31,66 @@
+       "id": "b2-16-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "A la luz de los acontecimientos posteriores, más nos __ valido buscar un consenso con la oposición.",
++      "sentence": "Fue una imprudencia que nadie __ avisado a los vecinos.",
+       "hint": "haber",
+-      "answer": "hubiera",
+-      "english": "In light of subsequent events, it would have been far better for us to seek a consensus with the opposition.",
++      "answers": [
++        "hubiera",
++        "hubiese"
++      ],
++      "english": "It was careless that nobody had warned the neighbours.",
+       "teaches": [
+-        "regrets-reproaches"
++        "pluperfect-subjunctive-forms"
+       ]
+     },
+     {
+       "id": "b2-16-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué función discursiva cumple la estructura 'Habríamos debido prever la crisis bancaria'?",
++      "question": "They sold the house last year, and today you think it was a mistake. Which sentence says so?",
+       "options": [
+-        "Formular un juicio crítico retrospectivo sobre una responsabilidad u omisión en el pasado.",
+-        "Predecir un evento financiero que ocurrirá en el próximo trimestre.",
+-        "Prohibir que los bancos otorguen préstamos en moneda extranjera.",
+-        "Describir una rutina bancaria cotidiana sin emitir opiniones."
++        "Habría sido mejor que no hayan vendido la casa.",
++        "Habría sido mejor que no hubieran vendido la casa.",
++        "Habría sido mejor que no habrían vendido la casa.",
++        "Habría sido mejor que no venden la casa."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+-        "regrets-reproaches"
+-      ]
++        "pluperfect-subjunctive-forms"
++      ],
++      "distractor_skills": {
++        "0": "subjuntivo-perfecto",
++        "3": "present-tense"
++      }
+     },
+     {
+       "id": "b2-16-04.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Más",
+-        "les",
+-        "hubiera",
+-        "valido",
+-        "acatar",
+-        "el",
+-        "fallo",
+-        "del",
+-        "tribunal."
++        "No",
++        "creíamos",
++        "que",
++        "hubiesen",
++        "tomado",
++        "una",
++        "decisión",
++        "tan",
++        "acertada."
+       ],
+       "solution": [
+-        "Más",
+-        "les",
+-        "hubiera",
+-        "valido",
+-        "acatar",
+-        "el",
+-        "fallo",
+-        "del",
+-        "tribunal."
++        "No",
++        "creíamos",
++        "que",
++        "hubiesen",
++        "tomado",
++        "una",
++        "decisión",
++        "tan",
++        "acertada."
+       ],
+-      "english": "It would have been far better for them to comply with the court's ruling.",
++      "english": "We did not think they had made such a wise decision.",
+       "teaches": [
+-        "regrets-reproaches"
++        "pluperfect-subjunctive-forms"
+       ]
+     },
+     {
+@@ -92,34 +99,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Analista",
+-          "text": "¿Cómo juzga la historiografía la decisión del presidente de no nacionalizar los ferrocarriles en 1930?"
++          "speaker": "Ana",
++          "text": "Luis no vino a la fiesta ayer."
+         },
+         {
+-          "speaker": "Profesor",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Los historiadores coinciden en que habría convenido acelerar la regulación estatal para evitar la fuga de capitales.",
+-        "Los trenes circulan sobre rieles de acero laminado en caliente.",
+-        "El café venezolano era muy apreciado en las capitales de Europa.",
+-        "En 1930 no existían carreteras pavimentadas en América del Sur."
++        "Me sorprendió que no haya venido; siempre es muy puntual.",
++        "Me sorprendió que no había venido; siempre es muy puntual.",
++        "Me sorprendió que no hubiera venido; siempre es muy puntual."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+-        "regrets-reproaches"
+-      ]
++        "pluperfect-subjunctive-forms"
++      ],
++      "distractor_skills": {
++        "0": "subjuntivo-perfecto",
++        "1": "pluscuamperfecto"
++      }
+     },
+     {
+       "id": "b2-16-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Bien pudiera haberse evitado la fractura institucional mediante un pacto de gobernabilidad democrática.",
+-      "english": "The institutional fracture could very well have been avoided through a democratic governance pact.",
++      "sentence": "Habría sido más oportuno que nos hubieran avisado antes.",
++      "english": "It would have been more timely if they had warned us earlier.",
+       "teaches": [
+-        "regrets-reproaches"
++        "pluperfect-subjunctive-forms"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-16-05-ex.json b/content/es-latam/exercises/b2/b2-16-05-ex.json
+index ea5f47f5..d8218973 100644
+--- a/content/es-latam/exercises/b2/b2-16-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-16-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "matiz",
+-          "fine nuance"
++          "la edición",
++          "edition"
+         ],
+         [
+-          "cadencia",
+-          "rhythmic cadence"
++          "el pasaje",
++          "passage"
+         ],
+         [
+-          "arcaísmo",
+-          "archaic turn of phrase"
++          "el prólogo",
++          "preface, foreword"
+         ],
+         [
+-          "prosodia",
+-          "rhythmic prosody"
++          "el ejemplar",
++          "copy of a book"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,13 @@
+       "id": "b2-16-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En la novela de Teresa de la Parra, la protagonista sentía como si su juventud se __ marchitado entre convencionalismos.",
++      "sentence": "En el prólogo de esta edición dice que, si el autor lo __ sabido, habría cambiado el pasaje.",
+       "hint": "haber",
+-      "answer": "hubiese",
+-      "english": "In Teresa de la Parra's novel, the protagonist felt as if her youth had withered among conventionalisms.",
++      "answers": [
++        "hubiera",
++        "hubiese"
++      ],
++      "english": "The preface of this edition says that if the author had known, he would have changed the passage.",
+       "teaches": [
+         "pluperfect-subjunctive-forms"
+       ]
+@@ -43,51 +46,46 @@
+       "id": "b2-16-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué un escritor culto elige a menudo 'hubiese' en lugar de 'hubiera' en un pasaje narrativo?",
++      "question": "Which sentence means the same as *Si hubiese leído el prólogo, habría entendido el pasaje*?",
+       "options": [
+-        "Para evitar la cacofonía y dotar al relato de una cadencia prosódica lírica y sosegada.",
+-        "Porque la forma hubiera está terminantemente prohibida en la literatura.",
+-        "Porque hubiese se refiere exclusivamente a acontecimientos del siglo diecinueve.",
+-        "Para indicar que el personaje principal es extranjero."
++        "Si había leído el prólogo, habría entendido el pasaje.",
++        "Si leyera el prólogo, entendería el pasaje.",
++        "Si hubiera leído el prólogo, habría entendido el pasaje.",
++        "Si haya leído el prólogo, habría entendido el pasaje."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "pluperfect-subjunctive-forms"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "pluscuamperfecto",
++        "1": "hypothetical-structures",
++        "3": "subjuntivo-perfecto"
++      }
+     },
+     {
+       "id": "b2-16-05.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Era",
+-        "como",
+-        "si",
+-        "la",
+-        "memoria",
+-        "se",
+-        "hubiese",
+-        "disuelto",
+-        "en",
+-        "la",
+-        "niebla."
++        "Ojalá",
++        "hubiésemos",
++        "leído",
++        "esa",
++        "edición",
++        "antes."
+       ],
+       "solution": [
+-        "Era",
+-        "como",
+-        "si",
+-        "la",
+-        "memoria",
+-        "se",
+-        "hubiese",
+-        "disuelto",
+-        "en",
+-        "la",
+-        "niebla."
++        "Ojalá",
++        "hubiésemos",
++        "leído",
++        "esa",
++        "edición",
++        "antes."
+       ],
+-      "english": "It was as if memory had dissolved in the fog.",
++      "english": "I wish we had read that edition earlier.",
+       "teaches": [
+-        "pluperfect-subjunctive-forms"
++        "counterfactual-wishes"
+       ]
+     },
+     {
+@@ -96,21 +94,20 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Crítica",
+-          "text": "¿Qué efecto estético logra Teresa de la Parra al emplear la forma 'hubiese' en las cartas de Ifigenia?"
++          "speaker": "Meg",
++          "text": "Mi ejemplar dice «si hubiésemos sabido». ¿Cómo lo digo en la conversación?"
+         },
+         {
+-          "speaker": "Profesor",
++          "speaker": "Tú",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Modula la voz epistolar de María Eugenia con una intimidad melancólica y una elegancia irónica que cuestiona la hipocresía social.",
+-        "Comete una serie de faltas ortográficas propias de la juventud inexperta.",
+-        "Demuestra que no conocía las reglas de la gramática castellana contemporánea.",
+-        "Obliga al lector a consultar un diccionario de términos jurídicos."
++        "Debes decir «si habríamos sabido»; es más natural.",
++        "Puedes decir «si hubiéramos sabido»; significa lo mismo.",
++        "Debes decir «si hubiéramos saber»; es más natural."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "pluperfect-subjunctive-forms"
+       ]
+@@ -119,11 +116,11 @@
+       "id": "b2-16-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Aunque nadie se hubiese atrevido a desafiar la tradición familiar, su espíritu rebelde jamás claudicó.",
+-      "english": "Even though no one had dared to challenge family tradition, her rebellious spirit never surrendered.",
++      "sentence": "Si hubiésemos leído el prólogo, habríamos entendido el pasaje.",
++      "english": "If we had read the preface, we would have understood the passage.",
+       "teaches": [
+         "pluperfect-subjunctive-forms"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-16-consolidation-ex.json b/content/es-latam/exercises/b2/b2-16-consolidation-ex.json
+index 20ec0008..98c8fa55 100644
+--- a/content/es-latam/exercises/b2/b2-16-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-16-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "auxiliar",
+-          "auxiliary verb"
++          "la ocasión",
++          "chance, occasion"
+         ],
+         [
+-          "lamento",
+-          "retrospective regret"
++          "añorar",
++          "to long for"
+         ],
+         [
+-          "peritaje",
+-          "expert survey"
++          "la falla",
++          "fault, flaw"
+         ],
+         [
+-          "cadencia",
+-          "rhythmic phrasing"
++          "el acierto",
++          "good move"
+         ]
+       ],
+       "teaches": [
+@@ -31,54 +31,63 @@
+       "id": "b2-16-consolidation.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "¡Ojalá la protagonista de la novela __ encontrado una sociedad más abierta a la emancipación de la mujer!",
++      "sentence": "Si ustedes me __ avisado, yo habría ido.",
+       "hint": "haber",
+-      "answer": "hubiera",
+-      "english": "If only the novel's protagonist had found a society more open to women's emancipation!",
++      "answers": [
++        "hubieran",
++        "hubiesen"
++      ],
++      "english": "If you had told me, I would have gone.",
+       "teaches": [
+-        "counterfactual-wishes"
++        "pluperfect-subjunctive-forms"
+       ]
+     },
+     {
+       "id": "b2-16-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué estructura condicional culta abrevia 'si hubiera recibido la herencia paterna'?",
++      "question": "You did not buy the tickets in time. Which sentence says that you regret it?",
+       "options": [
+-        "De haber recibido la herencia paterna.",
+-        "Por recibir la herencia paterna.",
+-        "Habiendo de recibir la herencia paterna.",
+-        "Con tal de que recibiera la herencia paterna."
++        "Ojalá compre los boletos a tiempo.",
++        "Ojalá hubiera comprado los boletos a tiempo.",
++        "Ojalá comprara los boletos a tiempo.",
++        "Ojalá habría comprado los boletos a tiempo."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+-        "implicit-conditionals"
+-      ]
++        "counterfactual-wishes"
++      ],
++      "distractor_skills": {
++        "0": "subjuntivo-deseos",
++        "2": "imperfect-subjunctive-forms"
++      }
+     },
+     {
+       "id": "b2-16-consolidation.ex04",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
+-      "sentence": "A la sociedad caraqueña de entonces más le __ valido escuchar la voz lúcida de sus jóvenes escritoras.",
+-      "hint": "haber",
+-      "answer": "hubiera",
+-      "english": "It would have been far better for the Caracas society of that time to listen to the lucid voice of its young women writers.",
++      "question": "Which sentence says, without si, that if she had told us, we would have helped her?",
++      "options": [
++        "De hubiera avisado, la habríamos ayudado.",
++        "De haber avisado, la habríamos ayudado.",
++        "De avisarnos haber, la habríamos ayudado."
++      ],
++      "correct": 1,
+       "teaches": [
+-        "regrets-reproaches"
++        "implicit-conditionals"
+       ]
+     },
+     {
+       "id": "b2-16-consolidation.ex05",
+-      "type": "multiple-choice",
++      "type": "fill-blank",
+       "category": "grammar",
+-      "question": "¿Cuál es la función estilística de alternar hubiera y hubiese en la prosa narrativa?",
+-      "options": [
+-        "Evitar repeticiones cacofónicas y matizar el ritmo melódico e introspectivo de las oraciones.",
+-        "Indicar que el narrador no sabe cuál de las dos formas es correcta.",
+-        "Señalar obligatoriamente un cambio de tiempo verbal entre presente y futuro.",
+-        "Ninguna; ambas formas deben usarse de manera idéntica sin variación."
++      "sentence": "No creía que ellos __ terminado tan pronto.",
++      "hint": "haber",
++      "answers": [
++        "hubieran",
++        "hubiesen"
+       ],
+-      "correct": 0,
++      "english": "I did not think they had finished so soon.",
+       "teaches": [
+         "pluperfect-subjunctive-forms"
+       ]
+@@ -88,38 +97,36 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "De",
+-        "haber",
+-        "tenido",
+-        "autonomía",
+-        "financiera,",
+-        "María",
+-        "habría",
++        "Habría",
+         "sido",
+-        "libre."
++        "mejor",
++        "que",
++        "hubiéramos",
++        "leído",
++        "el",
++        "prólogo."
+       ],
+       "solution": [
+-        "De",
+-        "haber",
+-        "tenido",
+-        "autonomía",
+-        "financiera,",
+-        "María",
+-        "habría",
++        "Habría",
+         "sido",
+-        "libre."
++        "mejor",
++        "que",
++        "hubiéramos",
++        "leído",
++        "el",
++        "prólogo."
+       ],
+-      "english": "Had she had financial autonomy, María would have been free.",
++      "english": "It would have been better if we had read the preface.",
+       "teaches": [
+-        "implicit-conditionals"
++        "pluperfect-subjunctive-forms"
+       ]
+     },
+     {
+       "id": "b2-16-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Ifigenia simbolizó el doloroso dilema entre la libertad individual y el sacrificio social.",
+-      "english": "Iphigenia symbolized the painful dilemma between individual freedom and social sacrifice.",
++      "sentence": "Si hubiéramos leído la novela, habríamos entendido la carta.",
++      "english": "If we had read the novel, we would have understood the letter.",
+       "teaches": [
+         "pluperfect-subjunctive-forms"
+       ]
+@@ -127,18 +134,14 @@
+     {
+       "id": "b2-16-consolidation.ex08",
+       "type": "multiple-choice",
+-      "category": "grammar",
+-      "question": "¿Qué representa la obra Ifigenia de Teresa de la Parra en las letras latinoamericanas?",
++      "category": "reading",
++      "question": "According to the text, in which year was Ifigenia published?",
+       "options": [
+-        "Una de las cumbres fundacionales de la narrativa feminista y psicológica moderna de principios del siglo veinte.",
+-        "Un tratado de botánica tropical sobre las flores del valle de Caracas.",
+-        "Una crónica militar sobre las guerras de independencia de Bolívar.",
+-        "Un manual pedagógico para la enseñanza de idiomas extranjeros."
++        "1929.",
++        "1924.",
++        "1936."
+       ],
+-      "correct": 0,
+-      "teaches": [
+-        "pluperfect-subjunctive-forms"
+-      ]
++      "correct": 1
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-15-01-a-gr.json b/content/es-latam/grammar/b2/b2-15-01-a-gr.json
+index 813904d7..58b23de4 100644
+--- a/content/es-latam/grammar/b2/b2-15-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-15-01-a-gr.json
+@@ -1,44 +1,102 @@
+ {
+-  "id": "grammar.b2.15.01.subjuntivo-imperfecto-ra-se",
+-  "title": "Las dos desinencias del imperfecto de subjuntivo: -ra y -se",
++  "id": "grammar.b2.15.01.subjuntivo-imperfecto-formas",
++  "title": "The Imperfect Subjunctive: Stem and Endings",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "El español dispone de dos paradigmas morfológicos plenamente válidos para conjugar el imperfecto de subjuntivo: las formas terminadas en **-ra** (*cantara, comiera, viviera*) y las terminadas en **-se** (*cantase, comiese, viviese*). Ambas desinencias proceden históricamente de tiempos latinos distintos: la forma en *-ra* deriva del pluscuamperfecto de indicativo latino (*amaveram*), mientras que la forma en *-se* proviene del pluscuamperfecto de subjuntivo latino (*amavissem*). En la inmensa mayoría de los contextos subordinados actuales, ambas formas son gramaticalmente intercambiables y equivalentes en significado."
++      "title": "What you know",
++      "content": "You know the forms *tuviera* and *hablara* from B1 Unit 4, and the imperfect subjunctive after a past verb, as in *Quería que vinieras*, from B1 Unit 38. From B1 Unit 4 you also know how to build it: take the *ellos* form of the preterite, remove *-ron* and add the endings. This lesson puts the whole system in one place, shows the *-ra* and *-se* endings side by side, and groups the irregular verbs so that you can see why they look the way they do."
+     },
+     {
+       "type": "table",
+-      "title": "Conjugación comparativa de -ra y -se",
++      "title": "Hablar with both endings",
+       "rows": [
+         [
+-          "yo cantara / cantase",
+-          "I sang / were to sing"
++          "yo hablara / hablase",
++          "I"
+         ],
+         [
+-          "tú cantaras / cantases",
+-          "you sang / were to sing"
++          "tú hablaras / hablases",
++          "you (informal)"
+         ],
+         [
+-          "él/ella hablara / hablase",
+-          "he/she spoke / were to speak"
++          "él, ella, usted hablara / hablase",
++          "he, she, you (formal)"
+         ],
+         [
+-          "nosotros comiéramos / comiésemos",
+-          "we ate / were to eat"
++          "nosotros habláramos / hablásemos",
++          "we"
+         ],
+         [
+-          "ustedes vivieran / viviesen",
+-          "you all lived / were to live"
++          "ellos, ellas, ustedes hablaran / hablasen",
++          "they, you all"
++        ]
++      ]
++    },
++    {
++      "type": "text",
++      "title": "The stem comes from the preterite",
++      "content": "Every verb follows the same steps: the *ellos* form of the preterite, minus *-ron*, plus the endings. *Hablaron* gives *habla-*, *comieron* gives *comie-* and *vivieron* gives *vivie-*. Because the stem comes from the preterite, an irregular preterite passes its irregularity on, and the present tense does not matter: *tengo*, but *tuvieron* gives *tuviera*; *puedo*, but *pudieron* gives *pudiera*."
++    },
++    {
++      "type": "table",
++      "title": "Irregular stems, in groups",
++      "rows": [
++        [
++          "tuvieron → tuviera, tuviese",
++          "tener. Also: hicieron → hiciera (hacer), pudieron → pudiera (poder), quisieron → quisiera (querer), pusieron → pusiera (poner), vinieron → viniera (venir), supieron → supiera (saber), estuvieron → estuviera (estar)"
+         ],
+         [
+-          "ellos durmieran / durmiesen",
+-          "they slept / were to sleep"
++          "fueron → fuera, fuese",
++          "ser and ir share one form"
++        ],
++        [
++          "dijeron → dijera, dijese",
++          "decir. After *j* the *i* of *-ieron* disappears. Also: trajeron → trajera (traer), condujeron → condujera (conducir)"
++        ],
++        [
++          "leyeron → leyera, leyese",
++          "leer. The *i* between two vowels becomes *y*. Also: oyeron → oyera (oír), construyeron → construyera (construir)"
++        ],
++        [
++          "pidieron → pidiera, pidiese",
++          "pedir. The vowel change of the preterite stays. Also: durmieron → durmiera (dormir), sintieron → sintiera (sentir), siguieron → siguiera (seguir)"
++        ],
++        [
++          "dieron → diera, vieron → viera",
++          "dar and ver have short stems"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Mi jefe quería que termináramos el informe hoy.",
++          "english": "My boss wanted us to finish the report today."
++        },
++        {
++          "spanish": "Nos pidieron que trajéramos los documentos.",
++          "english": "They asked us to bring the documents."
++        },
++        {
++          "spanish": "Le dije que leyese el contrato con cuidado.",
++          "english": "I told him to read the contract carefully."
++        },
++        {
++          "spanish": "No creía que ellos dijeran la verdad.",
++          "english": "I did not think they were telling the truth."
++        },
++        {
++          "spanish": "Si pudiera, dormiría hasta tarde.",
++          "english": "If I could, I would sleep late."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Ambas formas parten siempre de la tercera persona plural del pretérito indefinido: de *hablaron* se elimina *-ron* para obtener la raíz *habla-*, a la que se añaden las desinencias *-ra/-ras/-ra/-ramos/-ran* o *-se/-ses/-se/-semos/-sen*. Recuerda que la primera persona del plural siempre lleva tilde en la vocal temática: *cantáramos*, *tuviésemos*."
++      "content": "In the *nosotros* form the stress falls on the vowel before the ending, so it always carries an accent: *habláramos*, *comiéramos*, *tuviésemos*. The commonest mistake is to treat an irregular verb as a regular one: *trajera*, not *trayera*, and *dijera*, not *dijiera*. If you know the preterite *ellos* form, you can build the subjunctive."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-15-02-a-gr.json b/content/es-latam/grammar/b2/b2-15-02-a-gr.json
+index 3f3c270c..67a858a6 100644
+--- a/content/es-latam/grammar/b2/b2-15-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-15-02-a-gr.json
+@@ -1,44 +1,73 @@
+ {
+-  "id": "grammar.b2.15.02.subjuntivo-imperfecto-registro",
+-  "title": "Contraste de registro estilístico entre -ra y -se",
++  "id": "grammar.b2.15.02.subjuntivo-imperfecto-ra-o-se",
++  "title": "Two Endings, One Tense: -ra and -se",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Aunque ambas variantes son intercambiables en gramática descriptiva, su distribución estilística y geográfica presenta notorias divergencias en el mundo hispanohablante. En toda América Latina, la variante en **-ra** ostenta un predominio casi hegemónico (más del 95% de las ocurrencias tanto en el habla oral coloquial como en la prensa escrita y la literatura). Por el contrario, la forma en **-se** ha quedado relegada a registros sumamente formales, textos jurídicos, actas notariales, prosa académica o discursos solemnes."
++      "title": "What you know",
++      "content": "You know both sets of endings from the last lesson: *hablara* and *hablase*, *tuviera* and *tuviese*. This lesson is about which one to use."
++    },
++    {
++      "type": "text",
++      "title": "Same meaning",
++      "content": "*-ra* and *-se* mean exactly the same, and they follow the same rules after *que*, after *si* and after *como si*. Nothing in the grammar changes if you swap one for the other: *Quería que vinieras* and *Quería que vinieses* say the same thing. The difference is how often you meet each one, and where."
+     },
+     {
+       "type": "table",
+-      "title": "Distribución sociolingüística y de registro",
++      "title": "The same sentence in both forms",
+       "rows": [
+         [
+-          "quisiera un café (oral)",
+-          "I would like a coffee (natural, widespread)"
++          "Quería que me ayudaras.",
++          "I wanted you to help me. (the usual form, in speech and in writing)"
+         ],
+         [
+-          "quisiese expresar mi gratitud (protocolar)",
+-          "I would wish to express my gratitude (solemn)"
++          "Quería que me ayudases.",
++          "The same. (more formal, found mostly in writing)"
+         ],
+         [
+-          "si tuviera tiempo iría (LatAm estándar)",
+-          "if I had time I would go (predominant in LatAm)"
++          "Si tuviera tiempo, iría.",
++          "If I had time, I would go. (the usual form)"
+         ],
+         [
+-          "en caso de que compareciese (jurídico)",
+-          "in case he/she were to appear (legal statute)"
++          "Si tuviese tiempo, iría.",
++          "The same. (older or more formal style)"
+         ],
+         [
+-          "como si no supiera nada (común)",
+-          "as if he didn't know anything (spontaneous standard)"
++          "No creía que pudieran venir.",
++          "I did not think they could come."
+         ],
+         [
+-          "a menos que sobreviniese un fallo (académico)",
+-          "unless a ruling were to supervene (formal analysis)"
++          "No creía que pudiesen venir.",
++          "The same, in a more formal style."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Which one to use",
++      "content": "In Latin America *-ra* is by far the commoner form, in conversation and in most writing. *-se* is a form you meet more in reading than in speech: in older books, in laws and contracts, and in formal speeches. Both are correct, so you can read either without any change of meaning. When you speak or write, use *-ra*; recognise *-se* when you read it. Choose one form for a whole text and keep to it."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Mi abuelo quería que estudiáramos medicina.",
++          "english": "My grandfather wanted us to study medicine."
++        },
++        {
++          "spanish": "El director pidió que los alumnos leyesen el reglamento.",
++          "english": "The director asked the students to read the rules."
++        },
++        {
++          "spanish": "Si la ley fuese más clara, habría menos problemas.",
++          "english": "If the law were clearer, there would be fewer problems."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Para desenvolverte con naturalidad en el español de América Latina, utiliza sistemáticamente las formas en *-ra* en tus conversaciones y redacciones cotidianas. Reserva *-se* para cuando desees dotar a tu texto de una solemnidad especial, un matiz arcaizante deliberado o un tono forense muy estricto."
++      "content": "You know *quisiera* from B2 Unit 9, with *pudiera* and *debiera*: these polite forms only work with *-ra*, and *quisiese* does not soften a request. So *-ra* and *-se* are interchangeable in most places, but not in those three polite forms."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-15-03-a-gr.json b/content/es-latam/grammar/b2/b2-15-03-a-gr.json
+index 85d8fff3..f23109d6 100644
+--- a/content/es-latam/grammar/b2/b2-15-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-15-03-a-gr.json
+@@ -1,44 +1,64 @@
+ {
+   "id": "grammar.b2.15.03.subjuntivo-imperfecto-cortesia",
+-  "title": "Fórmulas de cortesía y atenuación con imperfecto de subjuntivo",
++  "title": "Softer Requests: Quisiera, Pudiera, Debiera",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Uno de los usos independientes más distinguidos del imperfecto de subjuntivo en español es la expresión de **cortesía pragmática y atenuación**. Tres verbos modales específicos —**querer**, **deber** y **poder**— se emplean en imperfecto de subjuntivo (*quisiera*, *debiera*, *pudiera*) en oraciones principales para suavizar peticiones, consejos o sugerencias, sustituyendo ventajosamente al condicional simple (*querría, debería, podría*)."
++      "title": "What you know",
++      "content": "You know *quisiera* from B2 Unit 9, together with *pudiera* and *debiera*. They are the *-ra* forms of *querer*, *poder* and *deber*, and they soften a request or a piece of advice in the same way as *querría*, *podría* and *debería*. Only the *-ra* form works like this: *quisiese* does not soften a request. You also know *agradecería* from B2 Unit 9, which is followed by *que* and the imperfect subjunctive (*Le agradecería que me enviara el contrato*)."
++    },
++    {
++      "type": "text",
++      "title": "One more pattern: quisiera que",
++      "content": "*Quisiera* can also be followed by *que* and the imperfect subjunctive, when you want someone else to do something: *Quisiera que me explicara el trámite* \"I would like you to explain the procedure to me\". You know *Quiero que comas* from B2 Unit 4: with one subject use the infinitive (*Quisiera hablar con usted*), and with two subjects use *que* + subjunctive. The verb after *quisiera que* is in the imperfect subjunctive, which keeps the same distance and politeness as *quisiera* itself. Compare the direct *Quiero que me ayude* with the softer *Quisiera que me ayudara*."
+     },
+     {
+       "type": "table",
+-      "title": "Formulaciones atenuadas de cortesía",
++      "title": "Polite forms",
+       "rows": [
+         [
+-          "Quisiera consultar una duda.",
+-          "I would like to ask a question."
+-        ],
+-        [
+-          "¿Pudiera usted indicarme la oficina?",
+-          "Could you show me the office?"
++          "Quisiera hablar con la directora.",
++          "I would like to speak to the director."
+         ],
+         [
+-          "Debiéramos considerar otra opción.",
+-          "We ought to consider another option."
++          "¿Pudiera decirme dónde está la oficina?",
++          "Could you tell me where the office is?"
+         ],
+         [
+-          "Quisiéramos agradecer su amable atención.",
+-          "We would like to thank your kind attention."
++          "Debieras descansar un poco.",
++          "You ought to rest a little."
+         ],
+         [
+-          "¿Pudieras prestarme ese informe?",
+-          "Could you lend me that report?"
++          "Quisiera que me explicara cómo funciona.",
++          "I would like you to explain how it works."
+         ],
+         [
+-          "No debieras precipitar tu dictamen.",
+-          "You ought not to rush your ruling."
++          "Quisiéramos que nos recibiera mañana.",
++          "We would like you to see us tomorrow."
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Buenos días, quisiera que me ayudara con este documento.",
++          "english": "Good morning, I would like you to help me with this document."
++        },
++        {
++          "spanish": "¿Pudiera esperar un momento, por favor?",
++          "english": "Could you wait a moment, please?"
++        },
++        {
++          "spanish": "Debiéramos revisar el contrato antes de firmarlo.",
++          "english": "We ought to check the contract before signing it."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Ten presente una asimetría modal fundamental: en este uso atenuado de cortesía en cláusulas independientes, **únicamente se admite la forma en -ra** (*quisiera, debiera, pudiera*). Las formas en *-se* (*quisiese, debiese, pudiese*) resultan agramaticales o arcaicas en función de petición directa independiente (*'Quisiera un favor'*, nunca *'Quisiese un favor'*)."
++      "content": "Keep the *-ra* form in all of these: *quisiera*, never *quisiese*, to ask for something politely. After *quisiera que*, do not use the indicative or the conditional: *Quisiera que me ayudara*, not *Quisiera que me ayudo* or *Quisiera que me ayudaría*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-15-04-a-gr.json b/content/es-latam/grammar/b2/b2-15-04-a-gr.json
+index 3acb060f..3c4b5ed9 100644
+--- a/content/es-latam/grammar/b2/b2-15-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-15-04-a-gr.json
+@@ -1,44 +1,87 @@
+ {
+-  "id": "grammar.b2.15.04.subjuntivo-imperfecto-hipotesis",
+-  "title": "Hipótesis irreales y deseos presentes con 'como si' y 'ojalá'",
++  "id": "grammar.b2.15.04.como-si-ojala",
++  "title": "As If and I Wish: Como Si and Ojalá",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "El imperfecto de subjuntivo es la forma obligada para expresar situaciones hipotéticas contrarias a la realidad presente o de difícil cumplimiento. Se manifiesta principalmente en dos estructuras modales cruciales de nivel B2:\n1. **Locución comparativa irreal 'como si'**: introduce siempre subjuntivo (*como si supiera, como si fuese*), denotando una equiparación ficticia que el hablante sabe que no se corresponde con los hechos.\n2. **Partícula desiderativa 'ojalá'**: seguida de imperfecto de subjuntivo (*¡ojalá tuviera!, ¡ojalá lloviese!*), formula un deseo sentido en el presente pero percibido como irrealizable o de bajísima probabilidad actual."
++      "title": "What you know",
++      "content": "You know the imperfect subjunctive for imagined situations (*si tuviera tiempo*, B1 Unit 4), and you know *ojalá* with the present subjunctive from B1 Unit 3 (*Ojalá encontremos una solución*). This lesson adds *como si* \"as if\", which is new, and *ojalá* with the imperfect subjunctive."
++    },
++    {
++      "type": "text",
++      "title": "Como si: an unreal comparison",
++      "content": "*Como si* introduces a comparison with something unreal: the speaker knows that it is not true. The verb that follows is in the imperfect subjunctive, whether the first verb is in the present or in the past: *Habla como si lo supiera todo* \"He talks as if he knew everything\" and *Hablaba como si lo supiera todo* \"He was talking as if he knew everything\". English does the same thing with a past form (\"as if he knew\", \"as if he were\"), so the idea is not strange: Spanish uses the imperfect subjunctive where English uses the past."
+     },
+     {
+       "type": "table",
+-      "title": "Estructuras hipotéticas de irrealidad presente",
++      "title": "Como si + imperfect subjunctive",
+       "rows": [
+         [
+-          "Habla como si fuera el dueño del consorcio.",
+-          "He speaks as if he were the owner of the consortium."
++          "Habla como si lo supiera todo.",
++          "He talks as if he knew everything."
++        ],
++        [
++          "Me mira como si no me conociera.",
++          "She looks at me as if she did not know me."
+         ],
+         [
+-          "Camina como si no le doliese la pierna.",
+-          "She walks as if her leg didn't hurt."
++          "Actuaba como si fuera el jefe.",
++          "He acted as if he were the boss."
+         ],
+         [
+-          "¡Ojalá tuviéramos mayores recursos fiscales!",
+-          "I wish we had greater fiscal resources!"
++          "Se sentía como si estuviera de vacaciones.",
++          "She felt as if she were on holiday."
++        ]
++      ]
++    },
++    {
++      "type": "text",
++      "title": "Ojalá: a wish that is unlikely now",
++      "content": "*Ojalá* with the present subjunctive is a wish that can still come true: *Ojalá tenga tiempo mañana* \"I hope I have time tomorrow\". With the imperfect subjunctive it is a wish for something that is not true now, or that you think is unlikely: *Ojalá tuviera más tiempo* \"I wish I had more time\". The imperfect subjunctive again marks the distance from reality, as in the English \"I wish I had\"."
++    },
++    {
++      "type": "table",
++      "title": "Ojalá + imperfect subjunctive",
++      "rows": [
++        [
++          "Ojalá tuviera más tiempo.",
++          "I wish I had more time."
+         ],
+         [
+-          "Actúan como si conocieran el desenlace.",
+-          "They act as if they knew the outcome."
++          "Ojalá viviéramos más cerca del mar.",
++          "I wish we lived closer to the sea."
+         ],
+         [
+-          "¡Ojalá viviera más cerca de la universidad!",
+-          "I wish he lived closer to the university!"
++          "Ojalá no lloviera tanto en esta ciudad.",
++          "I wish it did not rain so much in this city."
+         ],
+         [
+-          "Me mira como si yo fuese un forastero.",
+-          "She looks at me as if I were a stranger."
++          "Ojalá pudieras venir con nosotros.",
++          "I wish you could come with us."
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Mi compañero habla como si fuera el jefe de la oficina.",
++          "english": "My colleague talks as if he were the boss of the office."
++        },
++        {
++          "spanish": "Me trató como si fuéramos viejos amigos.",
++          "english": "He treated me as if we were old friends."
++        },
++        {
++          "spanish": "Ojalá supiera la respuesta.",
++          "english": "I wish I knew the answer."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Recuerda que después de 'como si' **nunca** se utiliza el presente de subjuntivo ni el indicativo: decir *'habla como si tenga dinero'* o *'habla como si tiene dinero'* constituye un error grave en la norma culta. La correlación modal exige siempre imperfecto (para simultaneidad) o pluscuamperfecto (para anterioridad)."
++      "content": "After *como si* never use the indicative or the present subjunctive: *habla como si lo sabe* and *habla como si lo sepa* are mistakes. The imperfect subjunctive is also what follows *si* in *si tuviera tiempo*. The *-se* forms exist here too (*como si fuese*), but *-ra* is the usual one."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-15-05-a-gr.json b/content/es-latam/grammar/b2/b2-15-05-a-gr.json
+index 605ebba1..e19be501 100644
+--- a/content/es-latam/grammar/b2/b2-15-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-15-05-a-gr.json
+@@ -1,44 +1,64 @@
+ {
+-  "id": "grammar.b2.15.05.subjuntivo-imperfecto-estilistico-ra",
+-  "title": "El uso estilístico de -ra con valor de indicativo en la prosa formal",
++  "id": "grammar.b2.15.05.subjuntivo-ra-estilistico",
++  "title": "Reading the Formal -ra: el que fuera presidente",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En la prosa periodística, ensayística y literaria formal del ámbito hispánico, es sumamente frecuente encontrar la forma en **-ra** empleada con valor de tiempo pretérito de indicativo (equivalente a *había sido*, *fue* o *había llegado*). Este fenómeno gramatical no es una incorrección caprichosa, sino un vestigio etimológico directo del latín clásico, donde la desinencia *-ra* correspondía originalmente al pluscuamperfecto de indicativo (*había amado*).\n\nAunque los manuales de estilo desaconsejan su proliferación indiscriminada en textos técnicos, su reconocimiento y apreciación estilística resultan indispensables para alcanzar la competencia lectora de nivel B2 en literatura y crónica política."
++      "title": "What you know, and what is new",
++      "content": "You know the *-ra* form of the imperfect subjunctive for conditions, wishes and requests. In formal writing, above all in news reports, history and some novels, it sometimes does something else: it works like a past indicative. *El que fuera presidente* means *el que había sido presidente* \"the one who had been president\". This is a form to **recognise** when you read. You do not need to use it, and in conversation you would say *fue* or *había sido*."
+     },
+     {
+       "type": "table",
+-      "title": "Equivalencias del valor indicativo de -ra",
++      "title": "The -ra form with the value of a past indicative",
+       "rows": [
+         [
+-          "el que fuera presidente del senado",
+-          "the one who was / had been president of the senate"
++          "el que fuera presidente",
++          "the one who had been president (= *el que había sido presidente*)"
+         ],
+         [
+-          "la ley que aprobara el Congreso en 1999",
+-          "the law that Congress approved / had approved in 1999"
++          "la ciudad donde naciera el poeta",
++          "the city where the poet was born (= *donde nació*)"
+         ],
+         [
+-          "el edificio donde naciera el ilustre poeta",
+-          "the building where the illustrious poet was born"
++          "el libro que publicara en 1950",
++          "the book that he published in 1950 (= *que publicó*)"
+         ],
+         [
+-          "el acuerdo al que llegaran los cancilleres",
+-          "the agreement that the chancellors had reached"
++          "como dijera el cronista",
++          "as the chronicler said (= *como dijo*)"
+         ],
+         [
+-          "la huelga que paralizara el transporte",
+-          "the strike that paralyzed / had paralyzed transit"
+-        ],
+-        [
+-          "según afirmara el portavoz gubernamental",
+-          "as the government spokesperson stated"
++          "los acuerdos que firmaran entonces",
++          "the agreements they had signed then (= *que habían firmado*)"
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "How to recognise it",
++      "content": "How can you tell? Look for three signs. First, the clause states a fact about the past: a person, a place or a thing that really existed, usually named or already known. Second, there is no *si*, no *ojalá*, no *como si* and no verb of wish or request before it. Third, it usually sits in a relative clause (after *que*, *quien* or *donde*) or after *como*. Compare *Si fuera presidente, cambiaría la ley* \"If I were president, I would change the law\", which is imagined, with *el hombre que fuera presidente en 1948* \"the man who had been president in 1948\", which is a fact."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Rómulo Gallegos, que fuera presidente de Venezuela en 1948, murió en 1969.",
++          "english": "Rómulo Gallegos, who was president of Venezuela in 1948, died in 1969."
++        },
++        {
++          "spanish": "El pueblo donde naciera la escritora es hoy una ciudad grande.",
++          "english": "The town where the writer was born is a large city today."
++        },
++        {
++          "spanish": "La cronista recordó el golpe que derrocara al presidente.",
++          "english": "The reporter recalled the coup that had overthrown the president."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Fíjate bien en la restricción morfológica: este valor de indicativo **solo lo posee la forma en -ra** (*fuera, naciera, aprobara*). Jamás se puede emplear la desinencia en *-se* con valor de indicativo (*'el que fuese presidente'* con valor afirmativo fáctico sería un error garrafal)."
++      "content": "Only the *-ra* form does this. *Fuese* cannot replace *fuera* in *el que fuera presidente*. You will read this form in the text that closes the unit."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-16-01-a-gr.json b/content/es-latam/grammar/b2/b2-16-01-a-gr.json
+index 95599d69..4b1ac793 100644
+--- a/content/es-latam/grammar/b2/b2-16-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-16-01-a-gr.json
+@@ -1,44 +1,94 @@
+ {
+-  "id": "grammar.b2.16.01.subjuntivo-pluscuamperfecto-formas",
+-  "title": "El pretérito pluscuamperfecto de subjuntivo: estructura y alternancia",
++  "id": "grammar.b2.16.01.pluscuamperfecto-subjuntivo-formas",
++  "title": "The Pluperfect Subjunctive: Hubiera and Hubiese + Participle",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "El pretérito pluscuamperfecto de subjuntivo es un tiempo compuesto que expresa una acción pasada anterior a otro momento del pasado, o bien una acción contrafáctica que no llegó a consumarse en la realidad. Se construye mediante el imperfecto de subjuntivo del verbo auxiliar **haber** (*hubiera* o *hubiese*) seguido invariablemente del **participio pasivo** del verbo principal (*cantado, vivido, resuelto*).\n\nAl igual que en las formas simples, la alternancia entre *hubiera* y *hubiese* es gramaticalmente intercambiable en cláusulas subordinadas, predominando *hubiera* en más del noventa por ciento del uso oral y escrito en toda América Latina."
++      "title": "What you know",
++      "content": "You know *hubiera* + a past participle from B1 Unit 35, where it imagines a past that did not happen (*Si hubiera tenido tiempo*). You also know it in the result clause and without *si* from B2 Unit 10 (*Hubiera salido antes, habría llegado*). This lesson puts the form itself in order: all the persons, the two variants *hubiera* and *hubiese*, and the places where you will meet it."
++    },
++    {
++      "type": "text",
++      "title": "Two variants, one meaning",
++      "content": "*Hubiera* and *hubiese* are the two imperfect subjunctive forms of *haber*, with the same *-ra* and *-se* endings as in B2 Unit 15. Each is followed by a past participle, which never changes: *hubiera salido*, *hubiese salido*. The two variants mean exactly the same. In Latin America *hubiera* is by far the commoner; *hubiese* is mostly something you read."
+     },
+     {
+       "type": "table",
+-      "title": "Paradigma del pluscuamperfecto de subjuntivo",
++      "title": "Hubiera and hubiese + participle (salir)",
+       "rows": [
+         [
+-          "yo hubiera / hubiese dicho",
+-          "I had said / would have said"
++          "yo hubiera / hubiese salido",
++          "I had left"
+         ],
+         [
+-          "tú hubieras / hubieses sabido",
+-          "you had known / would have known"
++          "tú hubieras / hubieses salido",
++          "you had left"
+         ],
+         [
+-          "él hubiera / hubiese venido",
+-          "he had come / would have come"
++          "él, ella, usted hubiera / hubiese salido",
++          "he, she, you (formal) had left"
+         ],
+         [
+-          "nosotros hubiéramos / hubiésemos ido",
+-          "we had gone / would have gone"
++          "nosotros hubiéramos / hubiésemos salido",
++          "we had left"
+         ],
+         [
+-          "ustedes hubieran / hubiesen actuado",
+-          "you all had acted / would have acted"
++          "ellos, ellas, ustedes hubieran / hubiesen salido",
++          "they, you all had left"
++        ]
++      ]
++    },
++    {
++      "type": "table",
++      "title": "Irregular participles stay irregular",
++      "rows": [
++        [
++          "hubiera hecho / hubiese hecho",
++          "had done, had made"
+         ],
+         [
+-          "ellos hubieran / hubiesen ganado",
+-          "they had won / would have won"
++          "hubiera dicho / hubiese dicho",
++          "had said"
++        ],
++        [
++          "hubiera visto / hubiese visto",
++          "had seen"
++        ],
++        [
++          "hubiera escrito / hubiese escrito",
++          "had written"
++        ],
++        [
++          "hubiera vuelto / hubiese vuelto",
++          "had returned"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Si hubiéramos salido antes, habríamos llegado a tiempo.",
++          "english": "If we had left earlier, we would have arrived on time."
++        },
++        {
++          "spanish": "Si lo hubiese sabido, te habría llamado.",
++          "english": "If I had known, I would have called you."
++        },
++        {
++          "spanish": "Hubiera dicho la verdad, nadie se habría molestado.",
++          "english": "Had he told the truth, nobody would have been upset."
++        },
++        {
++          "spanish": "No creía que hubieran terminado tan pronto.",
++          "english": "I did not think they had finished so soon."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "El participio permanece siempre invariable en masculino singular (*hubiéramos llegado*, nunca *'hubiéramos llegados'*). En la primera persona plural (*nosotros*), el auxiliar siempre lleva tilde en la vocal temática: *hubiéramos*, *hubiésemos*."
++      "content": "The participle never changes for gender or number: *hubieran terminado*, not *hubieran terminados*. Object pronouns go before *hubiera*: *si lo hubiera sabido*, *si me hubieras avisado*. *Hubiéramos* and *hubiésemos* always carry an accent. After a verb of doubt or feeling in the past, *hubiera* + participle says that the thing happened before: you will practise this in lesson 4."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-16-02-a-gr.json b/content/es-latam/grammar/b2/b2-16-02-a-gr.json
+index 2b1b276a..221cf0b5 100644
+--- a/content/es-latam/grammar/b2/b2-16-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-16-02-a-gr.json
+@@ -1,44 +1,68 @@
+ {
+-  "id": "grammar.b2.16.02.subjuntivo-pluscuamperfecto-ojala",
+-  "title": "Deseos retrospectivos y lamentos pasados con '¡Ojalá!'",
++  "id": "grammar.b2.16.02.deseos-pasados-ojala-quien",
++  "title": "Wishes About the Past: Ojalá Hubiera and ¡Quién Hubiera!",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Cuando la partícula desiderativa **¡Ojalá!** va seguida del pretérito pluscuamperfecto de subjuntivo (*¡Ojalá hubiera sabido!, ¡Ojalá hubiese estado allí!*), expresa un deseo retrospectivo referido al pasado que ya no puede cumplirse. La estructura denota invariablemente un lamento, arrepentimiento o añoranza ante un hecho consumado e irreversible.\n\nEn este uso exclamativo independiente, ambas desinencias (*hubiera* y *hubiese*) son legítimas, manteniendo *hubiera* su primacía en la conversación espontánea y *hubiese* un matiz más melancólico y literario."
++      "title": "What you know",
++      "content": "You know *ojalá* with the present subjunctive from B1 Unit 3, for a wish that can still come true, and *ojalá* with the imperfect subjunctive from B2 Unit 15, for a wish that is not true now. A wish about the past, about something that did not happen, takes the pluperfect subjunctive: *Ojalá hubiera estudiado más* \"I wish I had studied more\". It is a regret: the wish can no longer come true."
+     },
+     {
+       "type": "table",
+-      "title": "Lamentos retrospectivos con ¡Ojalá!",
++      "title": "Three wishes with ojalá",
+       "rows": [
+         [
+-          "¡Ojalá hubiéramos llegado a tiempo!",
+-          "If only we had arrived on time! (regret)"
++          "Ojalá tenga tiempo mañana.",
++          "I hope I have time tomorrow. (it can still happen)"
+         ],
+         [
+-          "¡Ojalá me hubieras dicho la verdad!",
+-          "If only you had told me the truth!"
++          "Ojalá tuviera más tiempo.",
++          "I wish I had more time. (it is not true now)"
+         ],
+         [
+-          "¡Ojalá no hubiese ocurrido ese conflicto!",
+-          "If only that conflict hadn't occurred!"
++          "Ojalá hubiera tenido más tiempo.",
++          "I wish I had had more time. (it did not happen)"
+         ],
+         [
+-          "¡Ojalá hubieran aceptado la propuesta!",
+-          "If only they had accepted the proposal!"
+-        ],
+-        [
+-          "¡Ojalá yo hubiera tenido esa oportunidad!",
+-          "If only I had had that opportunity!"
+-        ],
+-        [
+-          "¡Ojalá hubieses presenciado el concierto!",
+-          "If only you had witnessed the concert!"
++          "Ojalá no hubiera llovido.",
++          "I wish it had not rained."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "¡Quién hubiera…!",
++      "content": "You can also say a past wish with *quién*: *¡Quién hubiera estado allí!* \"If only I had been there!\" Here *quién* stands for \"I\": the speaker wishes it for themselves. This form is less common than *ojalá* in everyday speech, and you will meet it more in writing and in emotional exclamations."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Ojalá hubiéramos salido más temprano.",
++          "english": "I wish we had left earlier."
++        },
++        {
++          "spanish": "Ojalá me hubieras avisado.",
++          "english": "I wish you had told me."
++        },
++        {
++          "spanish": "Ojalá no hubiese dicho eso.",
++          "english": "I wish I had not said that."
++        },
++        {
++          "spanish": "¡Quién hubiera estado allí!",
++          "english": "If only I had been there!"
++        },
++        {
++          "spanish": "¡Quién lo hubiera sabido antes!",
++          "english": "If only I had known it before!"
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Contrasta cuidadosamente los dos tiempos con '¡Ojalá!':\n- *¡Ojalá venga!* (presente) = deseo realizable en el futuro.\n- *¡Ojalá viniera!* (imperfecto) = deseo irrealizable o muy improbable en el presente.\n- *¡Ojalá hubiera venido!* (pluscuamperfecto) = lamento retrospectivo por algo que no ocurrió en el pasado."
++      "content": "Use *hubiera* (or *hubiese*), never *habría*, after *ojalá*: say *Ojalá hubiera venido*, not *Ojalá habría venido*. A wish about the past is always a regret, so it often goes with words like *antes* or *a tiempo*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-16-03-a-gr.json b/content/es-latam/grammar/b2/b2-16-03-a-gr.json
+index 4ca89df6..c663234d 100644
+--- a/content/es-latam/grammar/b2/b2-16-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-16-03-a-gr.json
+@@ -1,44 +1,56 @@
+ {
+-  "id": "grammar.b2.16.03.subjuntivo-pluscuamperfecto-de-haber",
+-  "title": "Estructuras condicionales contrafácticas con 'de haber + participio'",
++  "id": "grammar.b2.16.03.condiciones-irreales-pasado",
++  "title": "Unreal Past Conditions: Three Ways",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En la prosa formal, académica y periodística culta de nivel B2, la subordinada condicional contrafáctica *'si hubiera / hubiese + participio'* se abrevia elegantemente mediante la estructura preposicional **'de haber + participio'**.\n\nEsta construcción de infinitivo compuesto equivale exactamente a una prótasis condicional irreal del pasado (*De haber sabido la verdad = Si hubiera sabido la verdad*), permitiendo una mayor agilidad sintáctica y evitando la repetición del nexo *si* en textos complejos."
++      "title": "What you know",
++      "content": "You know three ways to state a condition that did not happen in the past. You know *hubiera* from B1 Unit 35: *Si lo hubiera sabido, habría venido*. You know the version without *si* from B2 Unit 10: *Hubiera salido antes, habría llegado*. And you know *de haber* + participle from B2 Unit 10: *De haberlo sabido, habría venido*. All three say the same thing; they differ in tone."
+     },
+     {
+       "type": "table",
+-      "title": "Equivalencias sintácticas contrafácticas",
++      "title": "One condition, three forms",
+       "rows": [
+         [
+-          "De haber tenido fondos, habríamos comprado el lote.",
+-          "Had we had funds, we would have bought the lot."
++          "Si hubiera salido antes, habría llegado.",
++          "If I had left earlier, I would have arrived. (the usual form)"
+         ],
+         [
+-          "De haberse aplicado la ley, nada de esto habría ocurrido.",
+-          "Had the law been applied, none of this would have happened."
++          "Hubiera salido antes, habría llegado.",
++          "Had I left earlier, I would have arrived. (no *si*, more emphatic)"
+         ],
+         [
+-          "De haber llegado diez minutos antes, no perdías el tren.",
+-          "Had you arrived ten minutes earlier, you wouldn't have missed it."
+-        ],
+-        [
+-          "De haber consultado a los expertos, el error era evitable.",
+-          "Had the experts been consulted, the error was avoidable."
+-        ],
+-        [
+-          "De habernos avisado, habríamos asistido al debate.",
+-          "Had they warned us, we would have attended the debate."
+-        ],
+-        [
+-          "De haber mediado el diálogo, se habrían evitado sanciones.",
+-          "Had dialogue mediated, sanctions would have been avoided."
++          "De haber salido antes, habría llegado.",
++          "Had I left earlier, I would have arrived. (shorter, more written)"
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "What is new",
++      "content": "*De haber* + participle has no person ending, so it takes its subject from the main clause: *De haber salido antes, habría llegado* is about \"I\", because of *habría*. If the subject is different, say it: *De haber salido tú antes, habríamos llegado*. For the negative, put *no* before *haber*: *De no haber salido tan tarde, habríamos llegado a tiempo*. Pronouns attach to *haber*: *de haberlo sabido*, *de haberme avisado*."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "De haber revisado el puente, no habría ocurrido el derrumbe.",
++          "english": "Had they checked the bridge, the collapse would not have happened."
++        },
++        {
++          "spanish": "De no haber llovido, la fiesta habría sido en el patio.",
++          "english": "Had it not rained, the party would have been in the courtyard."
++        },
++        {
++          "spanish": "De haberme avisado, habría ido contigo.",
++          "english": "Had you told me, I would have gone with you."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Los pronombres clíticos (reflexivos o de objeto) se unen obligatoriamente al final del infinitivo auxiliar *haber*: *de habérselo dicho*, *de habernos enterado*, *de haberse promulgado*. Nunca los coloques intercalados ni antes de la preposición (*'de se haber enterado'* es incorrecto)."
++      "content": "After *de* the verb is always the infinitive *haber*: say *De haber salido*, never *De hubiera salido*. In the other two forms *hubiera* is the verb and it needs a person: *hubiera salido*, *hubieran salido*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-16-04-a-gr.json b/content/es-latam/grammar/b2/b2-16-04-a-gr.json
+index 369bd065..a6285869 100644
+--- a/content/es-latam/grammar/b2/b2-16-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-16-04-a-gr.json
+@@ -1,44 +1,78 @@
+ {
+-  "id": "grammar.b2.16.04.subjuntivo-pluscuamperfecto-alternativas",
+-  "title": "Juicios retrospectivos y alternativas históricas en el debate crítico",
++  "id": "grammar.b2.16.04.juicios-sobre-el-pasado",
++  "title": "Judging the Past: Habría Sido Mejor Que…",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En el análisis histórico, el debate político y la crítica ensayística de nivel B2, el pluscuamperfecto de subjuntivo se utiliza frecuentemente en cláusulas independientes o en correlación con condicionales para evaluar **bifurcaciones históricas y cursos de acción alternativos no adoptados**.\n\nEstructuras fijas como *'más nos hubiera valido + inf'*, *'bien pudiera haber sido'*, *'habría convenido que + subjuntivo'* o *'habríamos debido + inf'* permiten formular juicios de valor ponderados sobre errores u omisiones pasadas, manteniendo una distancia analítica respetuosa y rigurosa."
++      "title": "What you know",
++      "content": "You know the *pretérito perfecto de subjuntivo* from B1 Unit 37, as in Es una lástima que no haya venido, and the imperfect subjunctive after a past verb from B1 Unit 38. Put them together: when the main verb is in the past and the thing you are judging happened before it, the verb after *que* is *hubiera* + participle. *Fue una lástima que no hubiera venido* \"It was a pity that she had not come\"."
+     },
+     {
+       "type": "table",
+-      "title": "Fórmulas de evaluación histórica retrospectiva",
++      "title": "Present or past?",
+       "rows": [
+         [
+-          "Más nos hubiera valido postergar la firma.",
+-          "It would have been far better for us to postpone the signing."
++          "Me sorprende que haya venido.",
++          "It surprises me that she has come. (now: *haya*)"
+         ],
+         [
+-          "Habríamos debido priorizar la inversión social.",
+-          "We ought to have prioritized social investment."
++          "Me sorprendió que hubiera venido.",
++          "It surprised me that she had come. (then: *hubiera*)"
+         ],
+         [
+-          "Bien pudiera haber cambiado el rumbo del país.",
+-          "It very well could have changed the country's direction."
++          "Es una lástima que no hayan avisado.",
++          "It is a pity that they have not warned us."
+         ],
+         [
+-          "Habría convenido que se convocara a elecciones.",
+-          "It would have been advisable for elections to be called."
++          "Fue una lástima que no hubieran avisado.",
++          "It was a pity that they had not warned us."
++        ]
++      ]
++    },
++    {
++      "type": "table",
++      "title": "Three frames for judging the past",
++      "rows": [
++        [
++          "Habría sido mejor que hubiéramos salido antes.",
++          "It would have been better if we had left earlier."
+         ],
+         [
+-          "Habríamos preferido evitar la confrontación bélica.",
+-          "We would have preferred to avoid military confrontation."
++          "Me sorprendió que no hubieran avisado.",
++          "It surprised me that they had not warned us."
+         ],
+         [
+-          "Habría sido deseable que mediaran las potencias.",
+-          "It would have been desirable for powers to mediate."
++          "No creía que hubieran terminado tan pronto.",
++          "I did not think they had finished so soon."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Past judgment or present advice",
++      "content": "The first frame judges something that was not done. For the present or the future the verb is in the imperfect subjunctive: *Sería mejor que saliéramos ahora* \"It would be better if we left now\". Compare it with *Habría sido mejor que hubiéramos salido antes*, which looks back."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Fue una lástima que no hubieras venido a la fiesta.",
++          "english": "It was a pity that you had not come to the party."
++        },
++        {
++          "spanish": "Dudaba que lo hubiesen decidido tan rápido.",
++          "english": "I doubted that they had decided it so fast."
++        },
++        {
++          "spanish": "Habría sido más oportuno que nos hubieran avisado antes.",
++          "english": "It would have been more timely if they had warned us earlier."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "En español formal, la fórmula *'más le hubiera valido / más nos hubiera valido'* utiliza el pluscuamperfecto de subjuntivo como sustituto enfático del condicional compuesto (*'más le habría valido'*), otorgando al reproche o reflexión un tono de sabiduría moral clásica."
++      "content": "Use *hubiera* + participle only when the thing happened before the past verb, or before a moment you are looking back from. If the two things happen at the same time, use the imperfect subjunctive: *No creía que viniera* \"I did not think he would come\", but *No creía que hubiera venido* \"I did not think he had come\"."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-16-05-a-gr.json b/content/es-latam/grammar/b2/b2-16-05-a-gr.json
+index 2cb5958c..51afbad8 100644
+--- a/content/es-latam/grammar/b2/b2-16-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-16-05-a-gr.json
+@@ -1,44 +1,68 @@
+ {
+-  "id": "grammar.b2.16.05.subjuntivo-pluscuamperfecto-literario",
+-  "title": "Matices estilísticos de 'hubiese' en la prosa literaria y ensayística",
++  "id": "grammar.b2.16.05.hubiese-en-textos",
++  "title": "Hubiese in Writing",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Si bien en la lengua oral y el periodismo latinoamericano contemporáneo la forma auxiliar en **-ra** (*hubiera cantado*) es abrumadoramente dominante, en la prosa literaria de autor, el ensayo filosófico y la crónica de alta cultura la variante en **-se** (*hubiese cantado*) conserva un prestigio estilístico singular.\n\nLos grandes escritores hispanoamericanos recurren deliberadamente a *hubiese* por tres motivos retóricos fundamentales:\n1. **Eufonía y prosodia**: evitar la repetición cacofónica de sonidos en *-ra* en frases sucesivas (*'si hubiera querido que saliera'* -> *'si hubiese querido que saliera'*).\n2. **Tono introspectivo y memorialístico**: conferir a la voz narrativa una cadencia íntima, sosegada y poética.\n3. **Distancia ficcional**: enmarcar la acción en un tiempo clásico o legendario, diferenciándolo de la inmediatez del reportaje periodístico."
++      "title": "What you know",
++      "content": "You know the *-ra* and *-se* endings from B2 Unit 15, and you met *hubiese* in the first lesson of this unit. *Hubiese* + participle means exactly the same as *hubiera* + participle in every use you have learned: after *si*, after *ojalá* and after *que*."
+     },
+     {
+       "type": "table",
+-      "title": "Ejemplos de refinamiento estilístico literario",
++      "title": "The same sentence, two forms",
+       "rows": [
+         [
+-          "como si el tiempo se hubiese detenido",
+-          "as if time had stopped (lyrical cadence)"
++          "Si lo hubiera sabido, habría venido.",
++          "If I had known, I would have come."
+         ],
+         [
+-          "de haber sabido que ella hubiese partido",
+-          "had he known that she had departed (euphonic balance)"
++          "Si lo hubiese sabido, habría venido.",
++          "The same."
+         ],
+         [
+-          "aunque nada hubiese cambiado en la estancia",
+-          "even though nothing had changed on the ranch"
++          "Ojalá hubieras venido.",
++          "I wish you had come."
+         ],
+         [
+-          "quienquiera que hubiese pisado ese umbral",
+-          "whoever had stepped across that threshold"
++          "Ojalá hubieses venido.",
++          "The same."
+         ],
+         [
+-          "sin que nadie hubiese advertido su presencia",
+-          "without anyone having noticed his presence"
++          "No creía que hubieran terminado.",
++          "I did not think they had finished."
+         ],
+         [
+-          "cual si una sombra hubiese cubierto el cielo",
+-          "as if a shadow had covered the sky (literary)"
++          "No creía que hubiesen terminado.",
++          "The same."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Which one will you meet?",
++      "content": "In Latin America people say and write *hubiera* almost always. *Hubiese* is the form you will meet in older books, in formal documents and in some careful writing, and a writer may use both in one text. You only need to recognise it, and in this course an answer with either form is accepted. If you decide to write *hubiese*, keep it for the whole text."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Aunque nadie lo hubiese dicho antes, todos lo sabían.",
++          "english": "Although nobody had said it before, everyone knew it."
++        },
++        {
++          "spanish": "Si hubiésemos sabido la verdad, habríamos actuado de otra manera.",
++          "english": "If we had known the truth, we would have acted differently."
++        },
++        {
++          "spanish": "Ojalá hubiese leído ese prólogo antes.",
++          "english": "I wish I had read that preface before."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Al redactar tus propios textos literarios o ensayos académicos en español B2, busca la alternancia deliberada: utiliza *hubiese* cuando una cláusula cercana ya contenga una terminación en *-ra*, mejorando la cadencia rítmica de tu prosa."
++      "content": "Do not read *hubiese* as another tense or a more distant past. It is *hubiera* in a more formal dress. Watch the accent in the *nosotros* form: *hubiésemos*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-15-01.json b/content/es-latam/lessons/b2/b2-15-01.json
+index 9cb04428..8f62691e 100644
+--- a/content/es-latam/lessons/b2/b2-15-01.json
++++ b/content/es-latam/lessons/b2/b2-15-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.15.01",
+-  "title": "Las dos formas del imperfecto de subjuntivo: -ra y -se",
++  "title": "The Imperfect Subjunctive: Stem and Endings",
+   "level": "B2",
+-  "goal": "Master the morphological distinction, historical origins, and equivalence between the -ra and -se forms of the imperfect subjunctive.",
+-  "grammar": "morfología comparada del imperfecto de subjuntivo en -ra y -se",
++  "goal": "Form the imperfect subjunctive from the preterite, with the -ra and -se endings, and use it after a past verb.",
++  "grammar": "The imperfect subjunctive: stem and endings",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Conjugate regular and irregular verbs in both -ra and -se imperfect subjunctive.",
+-        "Understand the historical derivation from Latin pluperfect tenses.",
+-        "Apply correct accentuation in the first-person plural forms."
++        "I can form the imperfect subjunctive from the ellos form of the preterite.",
++        "I can form it for irregular verbs such as dijera, leyera and pidiera.",
++        "I can use the new words for tasks at work."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-15-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can form the imperfect subjunctive from the ellos form of the preterite.",
++        "I can form it for irregular verbs such as dijera, leyera and pidiera.",
++        "I can use the new words for tasks at work."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-15-02.json b/content/es-latam/lessons/b2/b2-15-02.json
+index 70b396a4..52e8e8b3 100644
+--- a/content/es-latam/lessons/b2/b2-15-02.json
++++ b/content/es-latam/lessons/b2/b2-15-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.15.02",
+-  "title": "Contraste de registro estilístico entre -ra y -se",
++  "title": "Two Endings, One Tense: -ra and -se",
+   "level": "B2",
+-  "goal": "Analyze sociolinguistic frequency and stylistic distribution: overwhelming preference for -ra in Latin America versus judicial/protocolar uses of -se.",
+-  "grammar": "distribución de registro y frecuencia dialectal de -ra y -se en el mundo hispánico",
++  "goal": "See that -ra and -se mean the same, and know that -ra is by far the commoner in Latin America.",
++  "grammar": "Using -ra and -se: same meaning, different frequency",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Distinguish natural Latin American spoken standard (-ra) from high-formal written register (-se).",
+-        "Identify -se in judicial statutes, academic prose, and solemn declarations.",
+-        "Choose the appropriate form based on communicative context and genre."
++        "I can tell that -ra and -se are two forms of the same tense with the same meaning.",
++        "I can use -ra when I speak and recognise -se when I read.",
++        "I can use the new words for newspapers and the law."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-15-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can tell that -ra and -se are two forms of the same tense with the same meaning.",
++        "I can use -ra when I speak and recognise -se when I read.",
++        "I can use the new words for newspapers and the law."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-15-03.json b/content/es-latam/lessons/b2/b2-15-03.json
+index 0f103658..abe6fe4f 100644
+--- a/content/es-latam/lessons/b2/b2-15-03.json
++++ b/content/es-latam/lessons/b2/b2-15-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.15.03",
+-  "title": "Fórmulas de cortesía y atenuación con imperfecto de subjuntivo",
++  "title": "Softer Requests: Quisiera, Pudiera, Debiera",
+   "level": "B2",
+-  "goal": "Deploy modal imperfect subjunctive forms (quisiera, debiera, pudiera) in independent clauses to soften requests and express polite deference.",
+-  "grammar": "subjuntivo atenuador de cortesía con verbos modales en cláusulas independientes",
++  "goal": "Review the polite -ra forms quisiera, pudiera and debiera and add quisiera que + imperfect subjunctive.",
++  "grammar": "Polite forms with the imperfect subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate diplomatic requests and inquiries using 'quisiera' and 'pudiera'.",
+-        "Offer mitigated advice or institutional suggestions with 'debiera'.",
+-        "Recognize the ungrammaticality of *-se* in direct independent courtesy formulas."
++        "I can soften a request with quisiera, pudiera and debiera.",
++        "I can ask someone to do something with quisiera que + imperfect subjunctive.",
++        "I can use the new words for offices and forms."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-15-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can soften a request with quisiera, pudiera and debiera.",
++        "I can ask someone to do something with quisiera que + imperfect subjunctive.",
++        "I can use the new words for offices and forms."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-15-04.json b/content/es-latam/lessons/b2/b2-15-04.json
+index dc097a78..7df848be 100644
+--- a/content/es-latam/lessons/b2/b2-15-04.json
++++ b/content/es-latam/lessons/b2/b2-15-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.15.04",
+-  "title": "Hipótesis irreales y deseos presentes con 'como si' y 'ojalá'",
++  "title": "As If and I Wish: Como Si and Ojalá",
+   "level": "B2",
+-  "goal": "Formulate counterfactual present hypotheses and low-probability wishes using 'como si' and 'ojalá' with imperfect subjunctive.",
+-  "grammar": "oraciones comparativas irreales (como si) y desiderativas presentes (ojalá)",
++  "goal": "Compare something to an unreal situation with como si and say an unlikely wish with ojalá, both with the imperfect subjunctive.",
++  "grammar": "Como si and ojalá with the imperfect subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Construct unreal comparisons with 'como si' + imperfect subjunctive.",
+-        "Express present unfulfilled wishes using 'ojalá' + imperfect subjunctive.",
+-        "Avoid indicative or present subjunctive errors following counterfactual triggers."
++        "I can compare something to an unreal situation with como si + imperfect subjunctive.",
++        "I can say a wish that is unlikely now with ojalá + imperfect subjunctive.",
++        "I can use the new words for pretending and joking."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-15-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can compare something to an unreal situation with como si + imperfect subjunctive.",
++        "I can say a wish that is unlikely now with ojalá + imperfect subjunctive.",
++        "I can use the new words for pretending and joking."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-15-05.json b/content/es-latam/lessons/b2/b2-15-05.json
+index a97ab52e..a9b85a19 100644
+--- a/content/es-latam/lessons/b2/b2-15-05.json
++++ b/content/es-latam/lessons/b2/b2-15-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.15.05",
+-  "title": "El uso estilístico de -ra con valor de indicativo en la prosa formal",
++  "title": "Reading the Formal -ra: el que fuera presidente",
+   "level": "B2",
+-  "goal": "Recognize and interpret the stylistic use of the -ra form with past indicative value in journalistic, historiographical, and literary prose.",
+-  "grammar": "uso estilístico etimológico de -ra con valor de pretérito o pluscuamperfecto de indicativo",
++  "goal": "Recognise a -ra form that has the value of a past indicative in formal and journalistic prose.",
++  "grammar": "The formal -ra with the value of a past indicative (recognition)",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Identify the etymological indicative value of -ra ('el que fuera presidente').",
+-        "Differentiate indicative -ra from true subjunctive modal subordinations.",
+-        "Understand why this stylistic feature is strictly restricted to the -ra variant."
++        "I can recognise a -ra form used like a past indicative, as in el que fuera presidente.",
++        "I can tell it from the -ra of a wish, a condition or a request.",
++        "I can use the new words for news and history."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-15-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can recognise a -ra form used like a past indicative, as in el que fuera presidente.",
++        "I can tell it from the -ra of a wish, a condition or a request.",
++        "I can use the new words for news and history."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-15-consolidation.json b/content/es-latam/lessons/b2/b2-15-consolidation.json
+index 93fbe47b..dff9221b 100644
+--- a/content/es-latam/lessons/b2/b2-15-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-15-consolidation.json
+@@ -1,16 +1,18 @@
+ {
+   "id": "lesson.b2.15.consolidation",
+-  "title": "Consolidación: El imperfecto de subjuntivo y Doña Bárbara",
++  "title": "Unit 15 Consolidation: The Imperfect Subjunctive and Doña Bárbara",
+   "level": "B2",
+-  "goal": "Synthesize all aspects of the imperfect subjunctive through classical literary analysis of Rómulo Gallegos's Doña Bárbara.",
+-  "grammar": "síntesis del imperfecto de subjuntivo: alternancia -ra/-se, cortesía, contrafácticos y valor periodístico",
++  "goal": "Review the imperfect subjunctive, polite forms, como si, ojalá and the formal -ra, and read a short text about Rómulo Gallegos and Doña Bárbara.",
++  "grammar": "Review of the imperfect subjunctive: forms, politeness, como si, ojalá and the formal -ra",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Contrast -ra and -se across narrative, legal, and colloquial registers.",
+-        "Deploy polite modal formulas ('quisiera', 'pudiera') in formal dialogue.",
+-        "Analyze literary conflict (civilization vs. barbarism) using nuanced subjunctive structures."
++        "I can form the imperfect subjunctive and use it after a past verb, with -ra or -se.",
++        "I can ask politely with quisiera and say a wish with ojalá.",
++        "I can compare something to an unreal situation with como si.",
++        "I can recognise a -ra form used like a past indicative.",
++        "I can read a short text about Rómulo Gallegos and his novel Doña Bárbara."
+       ]
+     },
+     {
+@@ -38,11 +40,13 @@
+     },
+     {
+       "type": "checklist",
++      "title": "Can you do this?",
+       "items": [
+-        "Conjuga con soltura ambas desinencias (-ra y -se) del imperfecto de subjuntivo.",
+-        "Aplica las fórmulas atenuadas de cortesía con los verbos modales querer, deber y poder.",
+-        "Formula hipótesis contrafácticas con 'como si' y deseos presentes con 'ojalá'.",
+-        "Identifica el valor de indicativo de la desinencia en -ra en textos periodísticos y formales."
++        "I can form the imperfect subjunctive and use it after a past verb, with -ra or -se.",
++        "I can ask politely with quisiera and say a wish with ojalá.",
++        "I can compare something to an unreal situation with como si.",
++        "I can recognise a -ra form used like a past indicative.",
++        "I can read a short text about Rómulo Gallegos and his novel Doña Bárbara."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-16-01.json b/content/es-latam/lessons/b2/b2-16-01.json
+index 1d205f30..1ccc4f04 100644
+--- a/content/es-latam/lessons/b2/b2-16-01.json
++++ b/content/es-latam/lessons/b2/b2-16-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.16.01",
+-  "title": "Morfología del pluscuamperfecto de subjuntivo",
++  "title": "The Pluperfect Subjunctive: Hubiera and Hubiese + Participle",
+   "level": "B2",
+-  "goal": "Master the morphological structure, auxiliary alternation (hubiera/hubiese), and anteriority value of the pluperfect subjunctive.",
+-  "grammar": "morfología del pluscuamperfecto de subjuntivo: haber (hubiera/hubiese) + participio",
++  "goal": "Form the pluperfect subjunctive with hubiera or hubiese and a past participle, in all persons, and see where it is used.",
++  "grammar": "The pluperfect subjunctive: forms",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Conjugate pluperfect subjunctive compound forms with regular and irregular participles.",
+-        "Analyze the anteriority relationship relative to past reference points.",
+-        "Recognize the predominant distribution of 'hubiera' across Latin America."
++        "I can form the pluperfect subjunctive with hubiera or hubiese and a past participle.",
++        "I can use irregular participles and put pronouns before hubiera.",
++        "I can use the new words for slips and chances."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-16-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can form the pluperfect subjunctive with hubiera or hubiese and a past participle.",
++        "I can use irregular participles and put pronouns before hubiera.",
++        "I can use the new words for slips and chances."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-16-02.json b/content/es-latam/lessons/b2/b2-16-02.json
+index 0f6a0154..19447d3e 100644
+--- a/content/es-latam/lessons/b2/b2-16-02.json
++++ b/content/es-latam/lessons/b2/b2-16-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.16.02",
+-  "title": "Deseos retrospectivos y lamentos pasados con '¡Ojalá!'",
++  "title": "Wishes About the Past: Ojalá Hubiera and ¡Quién Hubiera!",
+   "level": "B2",
+-  "goal": "Deploy '¡Ojalá!' followed by pluperfect subjunctive to express retrospective past wishes, regrets, and unfulfilled nostalgic longings.",
+-  "grammar": "oraciones desiderativas retrospectivas independientes con ¡Ojalá! y pluscuamperfecto de subjuntivo",
++  "goal": "Say a wish about the past, something that did not happen, with ojalá or quién + the pluperfect subjunctive.",
++  "grammar": "Past wishes with ojalá and quién + pluperfect subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate retrospective regrets and nostalgic lamentations with '¡Ojalá hubiera/hubiese!'.",
+-        "Distinguish present wishes (imperfect) from unfulfilled past regrets (pluperfect).",
+-        "Evaluate emotional stances of remorse and wistfulness in authentic discourse."
++        "I can say a wish about the past with ojalá + hubiera or hubiese + participle.",
++        "I can tell a wish about now from a wish about the past: ojalá tuviera, ojalá hubiera tenido.",
++        "I can use the new words for longing and regret."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-16-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say a wish about the past with ojalá + hubiera or hubiese + participle.",
++        "I can tell a wish about now from a wish about the past: ojalá tuviera, ojalá hubiera tenido.",
++        "I can use the new words for longing and regret."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-16-03.json b/content/es-latam/lessons/b2/b2-16-03.json
+index aa081d79..c40976fc 100644
+--- a/content/es-latam/lessons/b2/b2-16-03.json
++++ b/content/es-latam/lessons/b2/b2-16-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.16.03",
+-  "title": "Estructuras condicionales contrafácticas con 'de haber + participio'",
++  "title": "Unreal Past Conditions: Three Ways",
+   "level": "B2",
+-  "goal": "Deploy abbreviated counterfactual conditional structures with 'de haber + participio' in formal, academic, and journalistic registers.",
+-  "grammar": "estructuras condicionales contrafácticas implícitas con de haber + participio",
++  "goal": "Review si hubiera, hubiera without si and de haber + participle, and add the negative de no haber.",
++  "grammar": "Three ways to state an unreal past condition",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Transform 'si hubiera + participio' into elegant 'de haber + participio' clauses.",
+-        "Place clitic pronouns correctly attached to the auxiliary infinitive (de habérselo dicho).",
+-        "Interpret counterfactual clauses in formal legal, investigative, and historical reports."
++        "I can say an unreal past condition with si hubiera, de haber or hubiera at the start.",
++        "I can say it in the negative with de no haber and put pronouns on haber.",
++        "I can use the new words for faults and checks."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-16-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say an unreal past condition with si hubiera, de haber or hubiera at the start.",
++        "I can say it in the negative with de no haber and put pronouns on haber.",
++        "I can use the new words for faults and checks."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-16-04.json b/content/es-latam/lessons/b2/b2-16-04.json
+index cd662ef7..baf38929 100644
+--- a/content/es-latam/lessons/b2/b2-16-04.json
++++ b/content/es-latam/lessons/b2/b2-16-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.16.04",
+-  "title": "Juicios retrospectivos y alternativas históricas en el debate crítico",
++  "title": "Judging the Past: Habría Sido Mejor Que…",
+   "level": "B2",
+-  "goal": "Formulate retrospective evaluations, historical alternatives, and counterfactual critique in intellectual essays and political discourse.",
+-  "grammar": "fórmulas modales de evaluación retrospectiva: más hubiera valido, habríamos debido, bien pudiera haber sido",
++  "goal": "Judge the past with habría sido mejor que, me sorprendió que and no creía que, followed by hubiera + participle.",
++  "grammar": "Judging the past with hubiera + participle after que",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate critical retrospective judgments using 'más nos hubiera valido + inf'.",
+-        "Deploy modal periphrases of past duty ('habríamos debido prever').",
+-        "Explore missed historical turning points and branching alternative scenarios."
++        "I can judge the past with habría sido mejor que + hubiera + participle.",
++        "I can say I was surprised, or did not believe, that something had happened.",
++        "I can use the new words for judging a decision."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-16-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can judge the past with habría sido mejor que + hubiera + participle.",
++        "I can say I was surprised, or did not believe, that something had happened.",
++        "I can use the new words for judging a decision."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-16-05.json b/content/es-latam/lessons/b2/b2-16-05.json
+index 6f696205..163042d7 100644
+--- a/content/es-latam/lessons/b2/b2-16-05.json
++++ b/content/es-latam/lessons/b2/b2-16-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.16.05",
+-  "title": "Matices estilísticos de 'hubiese' en la prosa literaria y ensayística",
++  "title": "Hubiese in Writing",
+   "level": "B2",
+-  "goal": "Analyze the stylistic nuances, euphonic cadence, and literary prestige of the 'hubiese' variant in artistic and reflective prose.",
+-  "grammar": "estilística narrativa y eufonía de la variante auxiliar en -se en la prosa culta",
++  "goal": "Recognise hubiese + participle, the -se form, as the same thing as hubiera + participle in books and formal writing.",
++  "grammar": "Hubiese: the -se form in writing (recognition)",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Analyze why authors employ 'hubiese' for introspective and lyrical resonance.",
+-        "Apply 'hubiese' strategically to prevent cacophonic repetition of -ra endings.",
+-        "Recognize stylistic register differences between fast journalism and classical narrative."
++        "I can recognise hubiese + participle as the same as hubiera + participle.",
++        "I can read hubiese in older and more formal writing.",
++        "I can use the new words for books and editions."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-16-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can recognise hubiese + participle as the same as hubiera + participle.",
++        "I can read hubiese in older and more formal writing.",
++        "I can use the new words for books and editions."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-16-consolidation.json b/content/es-latam/lessons/b2/b2-16-consolidation.json
+index 03b5bebc..14189d67 100644
+--- a/content/es-latam/lessons/b2/b2-16-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-16-consolidation.json
+@@ -1,16 +1,18 @@
+ {
+   "id": "lesson.b2.16.consolidation",
+-  "title": "Consolidación: El pluscuamperfecto de subjuntivo e Ifigenia",
++  "title": "Unit 16 Consolidation: The Pluperfect Subjunctive and Ifigenia",
+   "level": "B2",
+-  "goal": "Synthesize all aspects of the pluperfect subjunctive through classical psychological and feminist analysis of Teresa de la Parra's Ifigenia.",
+-  "grammar": "síntesis del pluscuamperfecto de subjuntivo: deseos pasados, de haber + participio y juicio crítico",
++  "goal": "Review the pluperfect subjunctive: forms, past wishes, unreal conditions and judgments, and read a short text about Teresa de la Parra and Ifigenia.",
++  "grammar": "Review of the pluperfect subjunctive: forms, past wishes, de haber and judgments",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Deploy retrospective past wishes and regrets with '¡Ojalá!' and pluperfect subjunctive.",
+-        "Abbreviate counterfactual conditions elegantly with 'de haber + participio'.",
+-        "Analyze literary and social dilemmas (emancipation vs. conventionalism) using nuanced counterfactual prose."
++        "I can use the pluperfect subjunctive in conditions, wishes and judgments about the past.",
++        "I can say that I wish something had happened, with ojalá.",
++        "I can use de haber + participle for a condition without si.",
++        "I can say what would have been better, or what surprised me, about the past.",
++        "I can read a short text about Teresa de la Parra and her novel Ifigenia."
+       ]
+     },
+     {
+@@ -38,11 +40,13 @@
+     },
+     {
+       "type": "checklist",
++      "title": "Can you do this?",
+       "items": [
+-        "Conjuga con fluidez el pluscuamperfecto de subjuntivo en sus dos variantes (hubiera / hubiese).",
+-        "Formula lamentos y anhelos retrospectivos irreversibles mediante '¡Ojalá!'.",
+-        "Utiliza la construcción culta 'de haber + participio' en cláusulas condicionales contrafácticas.",
+-        "Aplica fórmulas de evaluación crítica sobre alternativas históricas ('más nos hubiera valido')."
++        "I can use the pluperfect subjunctive in conditions, wishes and judgments about the past.",
++        "I can say that I wish something had happened, with ojalá.",
++        "I can use de haber + participle for a condition without si.",
++        "I can say what would have been better, or what surprised me, about the past.",
++        "I can read a short text about Teresa de la Parra and her novel Ifigenia."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/stories/classics/b2/b2-15.json b/content/es-latam/stories/classics/b2/b2-15.json
+index ee90d028..8a3ea0a4 100644
+--- a/content/es-latam/stories/classics/b2/b2-15.json
++++ b/content/es-latam/stories/classics/b2/b2-15.json
+@@ -1,88 +1,80 @@
+ {
+   "id": "story.b2.15.gallegos",
+-  "title": "Doña Bárbara: El duelo entre la ley y el llano indómito",
++  "title": "Gallegos y Doña Bárbara",
+   "level": "B2",
+   "lesson": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Adaptación literaria de nivel B2 de la célebre novela de Rómulo Gallegos: el retorno del joven abogado Santos Luzardo a las llanuras venezolanas del Arauca para rescatar la hacienda familiar Altamira, su confrontación moral con la despótica terrateniente Doña Bárbara y la redención de la joven Marisela como símbolo del triunfo de la educación sobre la barbarie.",
+-  "characters": [
+-    "Santos Luzardo",
+-    "Doña Bárbara",
+-    "Marisela",
+-    "Lorenzo Barquero"
+-  ],
++  "summary": "Texto sobre Rómulo Gallegos, escritor venezolano, y sobre su novela Doña Bárbara, que ocurre en los llanos de Venezuela.",
++  "characters": [],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Bajo el sol de fuego que calcinaba las inmensidades del río Arauca, una boga solitaria hendía las aguas terrosas empujada por los pechos sudorosos de recios llaneros. En la popa de la embarcación viajaba un joven de porte erguido y mirada reflexiva: Santos Luzardo. Tras culminar con honores sus estudios de Derecho en la Universidad Central de Caracas, Santos regresaba a las sabanas de Apure resuelto a vender la hacienda Altamira, el predio ganadero heredado de sus ancestros donde las sangrientas disputas familiares habían diezmado a su estirpe. Su plan inicial consistía en liquidar aquellas tierras bravías y marcharse para siempre a Europa; sin embargo, al contemplar la majestad de la llanura y palpar la desolación de su pueblo, una íntima convicción patriótica sacudió su conciencia: no podía abandonar su tierra natal a la tiranía del despojo."
++      "text": "Rómulo Gallegos fue un novelista venezolano. Nació en 1884 y murió en 1969. Gallegos, que fuera presidente de Venezuela en 1948, escribió la novela de la que vamos a hablar en este texto: Doña Bárbara, que se publicó en 1929."
+     },
+     {
+       "type": "narration",
+-      "text": "Altamira agonizaba bajo la sombra de 'El Miedo', la hacienda colindante dominada por una mujer despótica: Doña Bárbara. Conocida como la 'devoradora de hombres' y acusada de dominar la voluntad ajena mediante bebedizos de brujería y la complicidad de jueces venales, la cacica expandía sus dominios corriendo las cercas durante las noches y sobornando a las autoridades distritales. Su corazón, endurecido tras un atroz ultraje padecido en su juventud a manos de piratas fluviales, repudiaba cualquier signo de compasión: Bárbara gobernaba el llano como si las leyes jamás hubieran sido promulgadas y la violencia fuera el único orden concebible."
++      "text": "La presidencia de Gallegos duró menos de un año. Empezó en febrero de 1948, y en noviembre del mismo año un golpe militar lo derrocó. Un golpe militar es el momento en que los militares toman el poder por la fuerza. La novela se había publicado casi veinte años antes de que Gallegos fuera presidente."
+     },
+     {
+       "type": "narration",
+-      "text": "Al instalarse en el viejo caserón de Altamira, Santos Luzardo descubrió el más penoso vestigio de aquella tragedia territorial: su primo Lorenzo Barquero, otrora joven de brillante inteligencia y orador de tribuna, consumía sus días embrutecido por el aguardiente en un mísero bohío palustre. Barquero había sido seducido y arruinado años atrás por Doña Bárbara, quien tras despojarlo de su hacienda La Barquereña lo arrojó al cieno del olvido, dejándole como única compañía a Marisela, la hija nacida de aquel amor funesto. Santos halló a la muchacha descalza, vestida con andrajos sucios y viviendo en un estado de completo abandono montaraz, hablando un lenguaje rudimentario como si perteneciese a la bravía manigua animal."
++      "text": "Doña Bárbara ocurre en los llanos de Venezuela. Los llanos son llanuras, es decir, tierras planas. El título del libro es el nombre de uno de los personajes, pero en este texto nos interesan dos."
+     },
+     {
+       "type": "narration",
+-      "text": "Conmovido por la inocencia desamparada de la joven, Santos decidió asumir el rescate ético de su estirpe. La trasladó a la casona señorial de Altamira y, con infinita paciencia pedagógica, comenzó a educarla. Le enseñó a asear su cuerpo, a peinar sus cabellos dorados, a modular la voz con delicadeza civilizada y a descubrir la dignidad interior que yacía sepultada bajo el barro del monte. A medida que Marisela despertaba a la luz del raciocinio y el lenguaje culto, una transformación deslumbrante operó en ella: la criatura montaraz dio paso a una mujer de sublime belleza espiritual y moral que miraba a Santos con una mezcla enternecedora de veneración y naciente enamoramiento."
++      "text": "Uno es Santos Luzardo, que vuelve de la ciudad a sus tierras del llano. La otra es Doña Bárbara, una mujer poderosa del llano. Santos Luzardo se enfrenta con ella. Eso es todo lo que vamos a decir sobre el contenido del libro."
+     },
+     {
+       "type": "narration",
+-      "text": "El choque inevitable entre Santos Luzardo y Doña Bárbara trascendió el litigio de linderos ganaderos para convertirse en un duelo fundacional entre civilización y barbarie. Cuando la temida terrateniente acudió a Altamira esperando encontrar al típico hacendado prepotente o acobardado al que pudiera doblegar con argucias hechiceras o amenazas de peones armados, quedó desconcertada ante la serenidad inquebrantable del abogado caraqueño. Santos le habló con la autoridad moral del Código Civil, desnudando la ilegitimidad de sus títulos posesorios y exigiéndole el deslinde judicial de los predios. Por primera vez en su vida despótica, Doña Bárbara sintió que su poder se resquebrajaba frente a un hombre incorruptible al que no lograba infundir terror ni concupiscencia."
++      "text": "Muchas veces se lee la novela como un conflicto entre la civilización y la barbarie. Quien la lee así trata el enfrentamiento entre Santos Luzardo y Doña Bárbara como si fuera algo más que un conflicto entre dos personas. Es una manera de leer el libro. La idea de un conflicto entre la civilización y la barbarie describe el libro; no es una escena del libro."
+     },
+     {
+       "type": "narration",
+-      "text": "Al descubrir que Santos tutelaba a su propia hija Marisela y que entre ambos florecía un afecto puro, el odio de Doña Bárbara se tornó en un tormento insoportable. Armada de una carabina, cabalgó hasta las cercanías de la casa dispuesta a liquidar a su rival; sin embargo, al espiar por la ventana y contemplar la sonrisa angelical de Marisela junto a Santos, una insólita piedad materna detuvo su dedo sobre el gatillo. Aquella revelación desgarró su rencor: comprendió que su tiempo de opresión y sangre había fenecido ante la claridad de una nueva aurora civilizatoria."
++      "text": "En este texto no hay ninguna escena de la novela ni ninguna frase del libro: hablamos de la novela, pero no la contamos. Si usted leyera el libro, conocería a estos dos personajes y vería cómo se desarrolla el conflicto entre ellos. Un texto corto sobre un libro no puede ocupar el lugar del libro."
+     },
+     {
+       "type": "narration",
+-      "text": "A la mañana siguiente, las riberas del Arauca despertaron con una noticia asombrosa: Doña Bárbara había desmantelado sus aposentos, cedido formalmente todas sus tierras a su hija legítima Marisela y desaparecido para siempre en los meandros misteriosos del Orinoco, perdiéndose en el horizonte fluvial como una sombra que el viento dispersa. Altamira y El Miedo quedaron unificadas en un solo territorio de trabajo digno y legalidad republicana. En el abrazo final de Santos y Marisela frente a la sabana verdeante, Rómulo Gallegos legó a Venezuela y al continente su más perdurable lección moral: que la barbarie no se vence con violencia recíproca, sino con la fuerza invencible de la justicia, la educación comunitaria y el imperio luminoso de la ley."
++      "text": "Resumamos lo que sabemos. Gallegos nació en 1884, publicó Doña Bárbara en 1929 y fue presidente de Venezuela en 1948, hasta que un golpe militar lo derrocó en noviembre del mismo año. Murió en 1969, y su novela ocurre en los llanos."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál era la intención inicial de Santos Luzardo al emprender el viaje de regreso a la hacienda Altamira?",
++          "question": "According to the text, what happened to Gallegos in November 1948?",
+           "options": [
+-            "Vender las tierras ganaderas heredadas de su familia y trasladarse a vivir definitivamente a Europa.",
+-            "Convertirse en lugarteniente armado de la cacica Doña Bárbara.",
+-            "Fundar una compañía petrolera en las riberas del río Arauca.",
+-            "Establecer un monasterio religioso en medio de la sabana."
++            "Publicó la novela Doña Bárbara.",
++            "Un golpe militar lo derrocó.",
++            "Llegó a ser presidente de Venezuela."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "El párrafo 1 expone que Santos planeaba inicialmente vender Altamira y marcharse a Europa, pero el amor a su tierra y la injusticia reinante le hicieron cambiar de parecer."
++          "correctIndex": 1,
++          "explanation": "The text says that in November 1948 a military coup overthrew Gallegos, who had been president since February of that year."
+         },
+         {
+-          "question": "¿De qué manera interviene Santos Luzardo en la vida de la joven Marisela?",
++          "question": "Where does Doña Bárbara take place, according to the text?",
+           "options": [
+-            "La rescata del abandono selvático en el bohío de su padre alcohólico y la educa pacientemente en el raciocinio, el aseo y el lenguaje digno.",
+-            "La expulsa del territorio acusándola de complicidad con los crímenes de su madre.",
+-            "La envía prisionera a la capital para que sea juzgada por las autoridades judiciales.",
+-            "La obliga a trabajar como peona en las faenas ganaderas más duras de la hacienda."
++            "En las montañas de Venezuela.",
++            "En los llanos de Venezuela.",
++            "En otro país."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "El párrafo 4 detalla cómo Santos traslada a Marisela a la casona y con dedicación pedagógica despierta su dignidad interior y su educación."
++          "correctIndex": 1,
++          "explanation": "The text says that the novel takes place in the llanos of Venezuela, which are plains, that is, flat land."
+         },
+         {
+-          "question": "¿Qué suceso determina la desaparición definitiva de Doña Bárbara de las llanuras del Arauca?",
++          "question": "In the first paragraph, what does \"que fuera presidente de Venezuela en 1948\" mean?",
+           "options": [
+-            "Al ver la inocencia y felicidad de su hija Marisela junto a Santos, desiste de su venganza, cede sus tierras legalmente y desaparece en el río.",
+-            "Es derrotada y apresada tras una sangrienta batalla campal entre peones armados.",
+-            "Es nombrada gobernadora del estado por un decreto presidencial en Caracas.",
+-            "Sufre un naufragio accidental en el río Arauca durante una crecida invernal."
++            "que quería ser presidente de Venezuela",
++            "que tal vez sea presidente de Venezuela",
++            "que había sido presidente de Venezuela"
+           ],
+-          "correctIndex": 0,
+-          "explanation": "Los párrafos 6 y 7 narran que un despertar de piedad materna detiene a Doña Bárbara, quien cede sus posesiones a Marisela y se aleja para siempre en el río."
++          "correctIndex": 2,
++          "explanation": "This is the formal -ra form from the last lesson of the unit, with the value of a past indicative. It means that Gallegos had been president of Venezuela. The next paragraph says that his presidency began in February 1948."
+         }
+       ]
+     }
+   },
+   "author": "Rómulo Gallegos (Venezuela, 1884–1969)",
+   "work": "Doña Bárbara (1929)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Rómulo Gallegos",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "order": 15
+ }
+diff --git a/content/es-latam/stories/classics/b2/b2-16.json b/content/es-latam/stories/classics/b2/b2-16.json
+index 4570a9bb..5107fd9e 100644
+--- a/content/es-latam/stories/classics/b2/b2-16.json
++++ b/content/es-latam/stories/classics/b2/b2-16.json
+@@ -1,89 +1,80 @@
+ {
+   "id": "story.b2.16.parra",
+-  "title": "Ifigenia: El diario íntimo y el sacrificio de una señorita caraqueña",
++  "title": "De la Parra e Ifigenia",
+   "level": "B2",
+   "lesson": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Adaptación literaria de nivel B2 de la célebre novela de Teresa de la Parra: el regreso de la joven e ilustrada María Eugenia Alonso a la conservadora Caracas de los años veinte tras educarse en París, el despojo de su herencia paterna, la asfixia moral impuesta por su abuela y su tía, y su trágica capitulación matrimonial como una moderna Ifigenia sacrificada en el altar de las apariencias.",
+-  "characters": [
+-    "María Eugenia Alonso",
+-    "Abuelita",
+-    "Tía Clara",
+-    "Gabriel Quiroga",
+-    "César Leal"
+-  ],
++  "summary": "Texto sobre Teresa de la Parra, escritora venezolana, y sobre su novela Ifigenia, construida con una carta larga y un diario.",
++  "characters": [],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Al desembarcar en el muelle de La Guaira tras una prolongada y luminosa estancia juvenil en París, María Eugenia Alonso contempló el imponente cerro El Ávila con una mezcla de fascinación estética e íntimo desasosiego. Educada con plena libertad en las academias francesas, acostumbrada a debatir sobre literatura universal, a vestir con la elegancia sobria de los bulevares europeos y a cultivar un intelecto agudo e independiente, la joven de dieciocho años regresaba a su Venezuela natal obligada por el repentino fallecimiento de su padre. En su equipaje traía baúles atestados de novelas de Anatole France, vestidos ligeros de seda y un nutrido fajo de cuartillas en blanco donde proyectaba volcar las confidencias más íntimas de su espíritu: el diario epistolar que enviaría a su inseparable amiga Cristina Iturbe."
++      "text": "Teresa de la Parra fue una escritora venezolana. Nació en 1889 y murió en 1936. En este texto hablamos de una de sus novelas, Ifigenia, que se publicó en 1924. Su segunda novela es Memorias de Mamá Blanca, de 1929, de modo que Ifigenia es la primera."
+     },
+     {
+       "type": "narration",
+-      "text": "Sin embargo, el choque con la realidad caraqueña fue brutal y despiadado. Al instalarse en la sombría casona señorial de su abuela materna, una anciana de devoción monacal y modales intransigentes, María Eugenia descubrió que la prometida fortuna familiar se había esfumado por completo, devorada por la codicia inescrupulosa de su tío Eduardo, quien fungía como administrador legal de los bienes. Despojada de cualquier dote o patrimonio propio, la muchacha quedó reducida a la condición humillante de pariente pobre y dependiente, sometida a la vigilancia asfixiante de su tía Clara, una solterona resignada que consideraba que la mayor virtud de una mujer decente residía en el silencio sumiso, el bordado de manteles de iglesia y la renuncia absoluta a cualquier brillo intelectual."
++      "text": "El título completo de la novela es Ifigenia. Diario de una señorita que escribió porque se fastidiaba. Un diario es un texto que una persona escribe día a día. Quien hubiera leído solo el subtítulo habría sabido que el libro tiene un diario, pero no que también tiene una carta."
+     },
+     {
+       "type": "narration",
+-      "text": "En aquella atmósfera conventual donde los espejos parecían vigilar el pudor y las celosías de madera filtraban las miradas de los vecinos curiosos, los hábitos cosmopolitas de María Eugenia desataron el escándalo social. Su costumbre de asomarse sola al balcón para contemplar el crepúsculo sobre la plaza, su afición por leer a solas en el patio umbroso y su negativa a arrodillarse durante horas interminables en rezos mecánicos fueron juzgados por su familia como pecados de orgullo y descaro. '¡Ojalá te hubieses quedado en un convento de clausura en Europa antes de traer estas ideas subversivas que deshonran a nuestro apellido!', sentenciaba la severa Abuelita con la voz trémula de quien defiende los últimos cimientos de un orden colonial sagrado."
++      "text": "En efecto, la novela se construye con una carta larga, dirigida primero a una amiga llamada Cristina, y con un diario. Una carta es un texto que se escribe para otra persona. La protagonista se llama María Eugenia Alonso. Si usted ya hubiera leído otro libro hecho con cartas y diarios, reconocería enseguida la forma de esta novela."
+     },
+     {
+       "type": "narration",
+-      "text": "En medio de aquella asfixia cotidiana, un destello fugaz de esperanza iluminó el corazón de la protagonista con la aparición de Gabriel Quiroga, un joven diplomático e intelectual de mirada apasionada con quien compartía lecturas afines y el anhelo de una existencia basada en la complicidad espiritual. Entre las páginas de su diario, María Eugenia confesaba con ternura conmovedora que junto a Gabriel sentía que su inteligencia no era un defecto vergonzoso, sino un don fecundo. No obstante, aquel amor estaba condenado de antemano por las férreas convenciones de clase: Gabriel carecía de fortuna material y la familia de María Eugenia no admitiría jamás un enlace nupcial que no garantizara la solvencia económica y la restauración del linaje familiar."
++      "text": "En 1924 la novela ganó un premio para novelistas americanos en París. Ese año es también el año en que se publicó, así que Ifigenia ganó un premio el mismo año en que apareció."
+     },
+     {
+       "type": "narration",
+-      "text": "Fue entonces cuando entró en escena don César Leal, un próspero y autoritario hacendado y alto funcionario gubernamental que personificaba todo lo que María Eugenia repudiaba íntimamente: la prepotencia masculina, el conservadurismo cerril y la convicción machista de que la esposa era una propiedad subordinada que debía acatar sin murmuraciones los mandatos maritales. Presionada sin tregua por el chantaje emocional de su tía, los lamentos de su abuela agonizante y el terror insoportable a verse condenada a la miseria y a la soltería marginada, María Eugenia comprendió con lúcida amargura que su destino ya no le pertenecía."
++      "text": "En este texto no hay ninguna escena de la novela ni ninguna frase del libro. Hablamos del libro y de cómo está hecho, pero no lo contamos. Si hubiéramos contado la historia, este texto sería un resumen de la novela y no un texto sobre ella."
+     },
+     {
+       "type": "narration",
+-      "text": "En una memorable noche de insomnio frente a su diario, la joven trazó la analogía mitológica que otorgaría título a la obra cumbre de Teresa de la Parra: al igual que la doncella griega Ifigenia fue inmolada por su propio padre Agamenón en el altar de los dioses para que los vientos soplaran favorables hacia Troya, ella sería sacrificada por su familia en el altar de las conveniencias burguesas de Caracas. Ningún dios bajaría del cielo para rescatarla de los brazos de César Leal: su inteligencia, su sensibilidad estética y sus ansias de libertad debían ser sepultadas bajo el velo blanco de una boda sin amor."
++      "text": "Quien ya hubiera leído Ifigenia podría seguir con Memorias de Mamá Blanca. Quien no hubiera leído ninguna de las dos novelas podría empezar por la de 1924, que es la primera."
+     },
+     {
+       "type": "narration",
+-      "text": "Al cerrar su diario con la firma definitiva de María Eugenia Alonso, Teresa de la Parra no solo legó a la literatura hispanoamericana una de sus novelas más audaces, irónicas y psicológicamente refinadas, sino que erigió un monumento imperecedero de protesta cívica. Ifigenia desnudó ante el continente las cárceles invisibles que el patriarcado y la hipocresía social construían en torno a la mujer latinoamericana, recordando a las generaciones venideras que no habrá civilización verdadera mientras la dignidad, el talento y el destino libre de una mujer sigan siendo inmolados en nombre de las apariencias."
++      "text": "Resumamos lo que sabemos. La autora nació en 1889 y murió en 1936. Ifigenia es de 1924, la protagonista es María Eugenia Alonso y la novela se construye con una carta y un diario. La segunda novela de la autora es de 1929."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál era la situación económica en la que quedó María Eugenia Alonso al regresar a Caracas tras la muerte de su padre?",
++          "question": "According to the text, what two kinds of writing is the novel built from?",
+           "options": [
+-            "Quedó despojada de su herencia y dote debido al mal manejo y codicia de su tío Eduardo, viviendo como pariente dependiente.",
+-            "Heredó una de las mayores empresas petroleras del país y gran fortuna.",
+-            "Recibió un castillo señorial en los valles del Tuy sin deudas.",
+-            "Fue contratada como embajadora de Venezuela en la capital francesa."
++            "Un poema largo y una carta.",
++            "Una carta larga y un diario.",
++            "Un diario y un periódico."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "El párrafo 2 explica que su fortuna se esfumó por la codicia de su tío Eduardo, dejándola sin dinero y dependiente de su abuela."
++          "correctIndex": 1,
++          "explanation": "The text says that the novel is built from a long letter and a diary."
+         },
+         {
+-          "question": "¿Por qué el amor entre María Eugenia y el joven Gabriel Quiroga resultó inviable dentro de su círculo familiar?",
++          "question": "What happened in 1924, according to the text?",
+           "options": [
+-            "Porque Gabriel carecía de fortuna material y la familia exigía un matrimonio ventajoso que restaurara la posición económica del apellido.",
+-            "Porque Gabriel fue desterrado del país de forma inmediata.",
+-            "Debido a que María Eugenia no compartía gustos intelectuales con él.",
+-            "Porque la ley prohibía el matrimonio entre diplomáticos e intelectuales."
++            "Teresa de la Parra nació.",
++            "Se publicó Memorias de Mamá Blanca.",
++            "La novela ganó un premio para novelistas americanos en París."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "El párrafo 4 expone que la familia rechazaba a Gabriel por carecer de solvencia económica, exigiendo un enlace con alguien acaudalado."
++          "correctIndex": 2,
++          "explanation": "The text says that in 1924 the novel won a prize for American novelists in Paris. The author was born in 1889, and Memorias de Mamá Blanca dates from 1929."
+         },
+         {
+-          "question": "¿Qué simboliza el mito clásico de Ifigenia en la decisión final que toma María Eugenia Alonso?",
++          "question": "According to the text, what would a reader who had read only the subtitle not know?",
+           "options": [
+-            "El sacrificio voluntario y trágico de su libertad e intelecto en el altar del matrimonio por conveniencia y las apariencias burguesas.",
+-            "Su decisión heroica de huir a la selva amazónica para vivir como exploradora.",
+-            "La inauguración de una escuela náutica en el puerto de La Guaira.",
+-            "Su coronación como reina de las fiestas de carnaval de Caracas."
++            "Que el libro tiene un diario.",
++            "Que el libro habla de una señorita.",
++            "Que el libro también tiene una carta."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "Los párrafos 6 y 7 detallan que María Eugenia se compara con Ifigenia porque es sacrificada por las conveniencias familiares al casarse sin amor con César Leal."
++          "correctIndex": 2,
++          "explanation": "The subtitle mentions a diary and a señorita, but not the letter. The text says that someone who had read only the subtitle would know about the diary, but not that the book also has a letter."
+         }
+       ]
+     }
+   },
+   "author": "Teresa de la Parra (Venezuela, 1889–1936)",
+   "work": "Ifigenia (1924)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Teresa de la Parra",
++  "source": "Texto original de Parlour sobre la obra y su autora; no reproduce ni resume escenas del original.",
+   "order": 16
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-15-01-voc.json b/content/es-latam/vocabulary/b2/b2-15-01-voc.json
+index a9b13bb7..c7cce80e 100644
+--- a/content/es-latam/vocabulary/b2/b2-15-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-15-01-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.15.01",
+   "lesson": "b2-15-01",
+-  "title": "Morfología verbal y desinencias del subjuntivo",
+-  "theme": "Léxico de lingüística histórica, desinencias verbales y paradigmas",
++  "title": "Words for tasks at work",
++  "theme": "Asking someone to do something",
+   "words": [
+     {
+-      "lemma": "desinencia",
+-      "translation": "verb ending, inflectional suffix",
++      "lemma": "el encargo",
++      "translation": "task, job given to someone",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "etimológico",
+-      "translation": "etymological",
++      "lemma": "pendiente",
++      "translation": "outstanding, still to be done",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "pluscuamperfecto",
+-      "translation": "pluperfect",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "alternancia",
+-      "translation": "alternation, variation",
+-      "pos": "noun"
++      "lemma": "encargarse de",
++      "translation": "to take charge of, to be responsible for",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "paradigma",
+-      "translation": "inflectional model, paradigm",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "homogéneo",
+-      "translation": "homogeneous",
+-      "pos": "adjective"
++      "lemma": "imponer",
++      "translation": "to impose, to set (a rule or deadline)",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-15-02-voc.json b/content/es-latam/vocabulary/b2/b2-15-02-voc.json
+index cbf09e5a..beede48d 100644
+--- a/content/es-latam/vocabulary/b2/b2-15-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-15-02-voc.json
+@@ -1,37 +1,27 @@
+ {
+   "id": "vocab.b2.15.02",
+   "lesson": "b2-15-02",
+-  "title": "Registros estilísticos y sociolingüística",
+-  "theme": "Léxico de registros comunicativos, formalidad y uso protocolar",
++  "title": "Words for newspapers and the law",
++  "theme": "The press and the courts",
+   "words": [
+     {
+-      "lemma": "coloquial",
+-      "translation": "colloquial, everyday",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "arcaizante",
+-      "translation": "archaizing, archaic in tone",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "protocolar",
+-      "translation": "protocolary, formal",
+-      "pos": "adjective"
++      "lemma": "la prensa",
++      "translation": "the press, newspapers",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "predominio",
+-      "translation": "predominance, prevalence",
++      "lemma": "el titular",
++      "translation": "headline",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "forense",
+-      "translation": "forensic, judicial legal",
+-      "pos": "adjective"
++      "lemma": "la sentencia",
++      "translation": "court ruling, sentence",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "frecuencia",
+-      "translation": "frequency",
++      "lemma": "la revista",
++      "translation": "magazine",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-15-03-voc.json b/content/es-latam/vocabulary/b2/b2-15-03-voc.json
+index c59702db..fedad43b 100644
+--- a/content/es-latam/vocabulary/b2/b2-15-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-15-03-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.15.03",
+   "lesson": "b2-15-03",
+-  "title": "Cortesía pragmática y diplomacia",
+-  "theme": "Léxico de atenuación, deferencia y fórmulas de cortesía",
++  "title": "Words for offices and forms",
++  "theme": "At the counter",
+   "words": [
+     {
+-      "lemma": "cortesía",
+-      "translation": "courtesy, politeness",
++      "lemma": "el trámite",
++      "translation": "procedure, formality",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "atenuación",
+-      "translation": "mitigation, softening of tone",
++      "lemma": "la ventanilla",
++      "translation": "counter window, service desk",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "imperativo",
+-      "translation": "imperative, command",
++      "lemma": "el comprobante",
++      "translation": "receipt, proof of payment",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "petición",
+-      "translation": "request, petition",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "diplomático",
+-      "translation": "diplomatic, tactful",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "deferencia",
+-      "translation": "deference, respectful regard",
+-      "pos": "noun"
++      "lemma": "tramitar",
++      "translation": "to process, to deal with (a document)",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-15-04-voc.json b/content/es-latam/vocabulary/b2/b2-15-04-voc.json
+index 394f9b5b..23d9b23c 100644
+--- a/content/es-latam/vocabulary/b2/b2-15-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-15-04-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.15.04",
+   "lesson": "b2-15-04",
+-  "title": "Hipótesis irreales y conjeturas",
+-  "theme": "Léxico de análisis contrafáctico, simulación y verosimilitud",
++  "title": "Words for pretending and joking",
++  "theme": "Saying it is not true",
+   "words": [
+     {
+-      "lemma": "contrafáctico",
+-      "translation": "counterfactual",
+-      "pos": "adjective"
++      "lemma": "aparentar",
++      "translation": "to pretend, to put on an appearance of",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "simulación",
+-      "translation": "simulation, pretense",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "verosimilitud",
+-      "translation": "verisimilitude, plausibility",
+-      "pos": "noun"
++      "lemma": "disimular",
++      "translation": "to hide (a feeling), to pretend not to feel",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "conjetura",
+-      "translation": "conjecture, reasoned guess",
++      "lemma": "la broma",
++      "translation": "joke",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "desiderativo",
+-      "translation": "desiderative, expressing a wish",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "anáfora",
+-      "translation": "anaphora",
+-      "pos": "noun"
++      "lemma": "exagerar",
++      "translation": "to exaggerate",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-15-05-voc.json b/content/es-latam/vocabulary/b2/b2-15-05-voc.json
+index ecabe5be..62b3120c 100644
+--- a/content/es-latam/vocabulary/b2/b2-15-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-15-05-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.15.05",
+   "lesson": "b2-15-05",
+-  "title": "Recursos estilísticos y prosa periodística",
+-  "theme": "Léxico de crítica estilística, cronística y redacción formal",
++  "title": "Words for news and history",
++  "theme": "Reading a news report",
+   "words": [
+     {
+-      "lemma": "estilístico",
+-      "translation": "stylistic",
+-      "pos": "adjective"
++      "lemma": "derrocar",
++      "translation": "to overthrow",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "pretérito",
+-      "translation": "past tense, preterite",
++      "lemma": "el golpe de Estado",
++      "translation": "coup",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "periodístico",
+-      "translation": "journalistic",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "antedicho",
+-      "translation": "aforementioned, said",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "vestigio",
+-      "translation": "vestige, historical trace",
++      "lemma": "la crónica",
++      "translation": "news report, chronicle",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "remanente",
+-      "translation": "remnant, surviving trace",
+-      "pos": "adjective"
++      "lemma": "el cronista",
++      "translation": "chronicler, news reporter",
++      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-16-01-voc.json b/content/es-latam/vocabulary/b2/b2-16-01-voc.json
+index 3bbc73a7..5a21cc35 100644
+--- a/content/es-latam/vocabulary/b2/b2-16-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-16-01-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.16.01",
+   "lesson": "b2-16-01",
+-  "title": "Morfología del pluscuamperfecto de subjuntivo",
+-  "theme": "Léxico de tiempos compuestos, anterioridad y contrafacticidad",
++  "title": "Words for slips and chances",
++  "theme": "Things that could have gone differently",
+   "words": [
+     {
+-      "lemma": "auxiliar",
+-      "translation": "auxiliary verb, helping verb",
++      "lemma": "la ocasión",
++      "translation": "chance, occasion",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "participio",
+-      "translation": "participle",
++      "lemma": "el descuido",
++      "translation": "oversight, careless slip",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "anterioridad",
+-      "translation": "anteriority, prior occurrence",
++      "lemma": "la multa",
++      "translation": "fine",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "compuesto",
+-      "translation": "compound, composite",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "retrospectivo",
+-      "translation": "retrospective, looking back",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "hipotético",
+-      "translation": "hypothetical",
+-      "pos": "adjective"
++      "lemma": "olvidarse de",
++      "translation": "to forget (about)",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-16-02-voc.json b/content/es-latam/vocabulary/b2/b2-16-02-voc.json
+index db3589cf..d893f5d6 100644
+--- a/content/es-latam/vocabulary/b2/b2-16-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-16-02-voc.json
+@@ -1,37 +1,28 @@
+ {
+   "id": "vocab.b2.16.02",
+   "lesson": "b2-16-02",
+-  "title": "Lamentos y deseos retrospectivos con ojalá",
++  "title": "Words for longing and regret",
++  "theme": "Missing something",
+   "words": [
+     {
+-      "lemma": "lamento",
+-      "translation": "lament, regret",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "nostalgia",
+-      "translation": "nostalgia, longing",
+-      "pos": "noun"
++      "lemma": "añorar",
++      "translation": "to long for, to miss",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "irreversible",
+-      "translation": "irreversible",
+-      "pos": "adjective"
++      "lemma": "echar de menos",
++      "translation": "to miss (someone or something)",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "desiderativo",
+-      "translation": "desiderative, wish-expressing",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "anhelo",
+-      "translation": "yearning, deep longing",
++      "lemma": "el consuelo",
++      "translation": "comfort, consolation",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "remordimiento",
+-      "translation": "remorse, qualm",
+-      "pos": "noun"
++      "lemma": "suspirar",
++      "translation": "to sigh",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-16-03-voc.json b/content/es-latam/vocabulary/b2/b2-16-03-voc.json
+index 9a68fbe6..10a4d98b 100644
+--- a/content/es-latam/vocabulary/b2/b2-16-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-16-03-voc.json
+@@ -1,36 +1,27 @@
+ {
+   "id": "vocab.b2.16.03",
+   "lesson": "b2-16-03",
+-  "title": "Condicionales contrafácticas con infinitivo compuesto",
++  "title": "Words for faults and checks",
++  "theme": "What went wrong",
+   "words": [
+     {
+-      "lemma": "condición",
+-      "translation": "condition, prerequisite",
++      "lemma": "la falla",
++      "translation": "fault, flaw",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "infinitivo",
+-      "translation": "infinitive",
++      "lemma": "la revisión",
++      "translation": "check, inspection",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "abreviado",
+-      "translation": "abbreviated, shortened",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "consecuencia",
+-      "translation": "consequence, outcome",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "peritaje",
+-      "translation": "expert assessment, survey",
++      "lemma": "el derrumbe",
++      "translation": "collapse",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "desenlace",
+-      "translation": "denouement, outcome",
++      "lemma": "la inundación",
++      "translation": "flood",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-16-04-voc.json b/content/es-latam/vocabulary/b2/b2-16-04-voc.json
+index 2c16fc9b..0f62d27d 100644
+--- a/content/es-latam/vocabulary/b2/b2-16-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-16-04-voc.json
+@@ -1,37 +1,28 @@
+ {
+   "id": "vocab.b2.16.04",
+   "lesson": "b2-16-04",
+-  "title": "Bifurcaciones históricas y juicios retrospectivos",
++  "title": "Words for judging a decision",
++  "theme": "Was it a good move?",
+   "words": [
+     {
+-      "lemma": "alternativa",
+-      "translation": "alternative, option",
+-      "pos": "noun"
++      "lemma": "acertado",
++      "translation": "right, wise",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "omisión",
+-      "translation": "omission, failure to act",
+-      "pos": "noun"
++      "lemma": "oportuno",
++      "translation": "timely, well chosen",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "bifurcación",
+-      "translation": "fork, branching point",
++      "lemma": "el acierto",
++      "translation": "good move, right choice",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "reproche",
+-      "translation": "reproach, censure",
++      "lemma": "la imprudencia",
++      "translation": "carelessness, rash act",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "conjeturar",
+-      "translation": "to conjecture, to speculate",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "ponderar",
+-      "translation": "to weigh, to balance",
+-      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-16-05-voc.json b/content/es-latam/vocabulary/b2/b2-16-05-voc.json
+index 2813dc2e..7d9d98dd 100644
+--- a/content/es-latam/vocabulary/b2/b2-16-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-16-05-voc.json
+@@ -1,36 +1,27 @@
+ {
+   "id": "vocab.b2.16.05",
+   "lesson": "b2-16-05",
+-  "title": "Estilo literario y alternancia de desinencias",
++  "title": "Words for books and editions",
++  "theme": "Reading an old book",
+   "words": [
+     {
+-      "lemma": "matiz",
+-      "translation": "nuance, shade of meaning",
++      "lemma": "la edición",
++      "translation": "edition",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "cadencia",
+-      "translation": "cadence, rhythm",
++      "lemma": "el pasaje",
++      "translation": "passage",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "arcaísmo",
+-      "translation": "archaism",
++      "lemma": "el prólogo",
++      "translation": "preface, foreword",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "melodioso",
+-      "translation": "melodious, lyrical",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "ponderado",
+-      "translation": "thoughtful, balanced",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "prosodia",
+-      "translation": "prosody, rhythmic phrasing",
++      "lemma": "el ejemplar",
++      "translation": "copy (of a book)",
+       "pos": "noun"
+     }
+   ]

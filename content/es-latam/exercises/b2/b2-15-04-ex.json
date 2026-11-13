@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "contrafáctico",
-          "counterfactual"
+          "aparentar",
+          "to pretend, to look as if"
         ],
         [
-          "simulación",
-          "pretense / simulation"
+          "disimular",
+          "to hide a feeling"
         ],
         [
-          "conjetura",
-          "reasoned guess"
+          "la broma",
+          "joke"
         ],
         [
-          "desiderativo",
-          "expressing a wish"
+          "exagerar",
+          "to exaggerate"
         ]
       ],
       "teaches": [
@@ -31,57 +31,61 @@
       "id": "b2-15-04.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El testigo declaró ante el juez con evasivas, como si no __ nada de lo ocurrido.",
-      "hint": "saber",
-      "answer": "supiera",
-      "english": "The witness testified before the judge evasively, as if he knew nothing of what had happened.",
+      "sentence": "Habla en serio, pero todos lo escuchan como si __ una broma.",
+      "hint": "ser",
+      "answers": [
+        "fuera",
+        "fuese"
+      ],
+      "english": "He is serious, but everyone listens to him as if it were a joke.",
       "teaches": [
-        "hypothetical-structures"
+        "como-si"
       ]
     },
     {
       "id": "b2-15-04.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué tiempo verbal exige rigurosamente la locución comparativa 'como si' para indicar simultaneidad irreal?",
+      "question": "Luis makes a small problem sound huge. Which sentence describes him?",
       "options": [
-        "El imperfecto de subjuntivo (en -ra o -se).",
-        "El presente de indicativo.",
-        "El futuro simple de indicativo.",
-        "El presente de subjuntivo obligatoriamente."
+        "Exagera: habla como si el problema fuera enorme.",
+        "Exagera: habla como si el problema es enorme.",
+        "Exagera: habla como si el problema sea enorme."
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
-      ]
+        "como-si"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b2-15-04.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "¡Ojalá",
-        "tuviéramos",
-        "la",
-        "certeza",
-        "absoluta",
-        "sobre",
-        "el",
-        "resultado!"
+        "Ojalá",
+        "pudiera",
+        "disimular",
+        "mejor",
+        "cuando",
+        "estoy",
+        "nervioso."
       ],
       "solution": [
-        "¡Ojalá",
-        "tuviéramos",
-        "la",
-        "certeza",
-        "absoluta",
-        "sobre",
-        "el",
-        "resultado!"
+        "Ojalá",
+        "pudiera",
+        "disimular",
+        "mejor",
+        "cuando",
+        "estoy",
+        "nervioso."
       ],
-      "english": "I wish we had absolute certainty about the outcome!",
+      "english": "I wish I could hide it better when I am nervous.",
       "teaches": [
-        "hypothetical-structures"
+        "subjuntivo-deseos"
       ]
     },
     {
@@ -90,33 +94,36 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Mariana",
-          "text": "¿Notaste cómo reaccionó Julián al enterarse de la auditoría externa?"
+          "speaker": "Ana",
+          "text": "Julián parece muy tranquilo hoy, ¿no?"
         },
         {
-          "speaker": "Camilo",
+          "speaker": "Tú",
           "text": "_____"
         }
       ],
       "options": [
-        "Sí, se encogió de hombros y sonrió como si la medida no tuviese ninguna consecuencia para su equipo.",
-        "No conozco al nuevo director de la empresa auditora.",
-        "La auditoría comenzará el próximo lunes a primera hora.",
-        "Julián tiene un automóvil de color rojo oscuro."
+        "Sí, pero solo aparenta: habla como si todo está bien.",
+        "Sí, pero solo aparenta: habla como si todo esté bien.",
+        "Sí, pero solo aparenta: habla como si todo estuviera bien."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "hypothetical-structures"
-      ]
+        "como-si"
+      ],
+      "distractor_skills": {
+        "0": "present-tense",
+        "1": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b2-15-04.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "¡Ojalá encontráramos una vía diplomática que evitara mayores tensiones fronterizas entre ambas naciones!",
-      "english": "I wish we found a diplomatic path that avoided further border tensions between both nations!",
+      "sentence": "Ojalá viviéramos más cerca del mar.",
+      "english": "I wish we lived closer to the sea.",
       "teaches": [
-        "hypothetical-structures"
+        "subjuntivo-deseos"
       ]
     }
   ]
