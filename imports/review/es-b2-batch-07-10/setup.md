@@ -24,3 +24,7 @@ Started 2026-11-13T04:50:37Z from origin/master 4c125864. 2 Sonnet reader(s); es
 - B (Units 9, 10; /home/user/parlour-read-b): agent a83e7e50b0556d09f
 
 Resume a stopped agent with SendMessage to its id; never start a new one.
+
+## 09:01 UTC: both agents stopped at the 5-hour limit (reset 08:40) and were resumed with SendMessage; partial diffs saved as partial-a/b.patch.
+
+Reviewer's pre-read of the texts, to fix after the agents report: b2-08 "Aun cuando el prólogo apareció antes…" (concession with nothing conceded) and "Por eso el lector conoce…" (non sequitur); b2-10 two empty counterfactuals ("Si esa dictadura no hubiera existido…", "Si alguien hubiera leído la novela en 1969…"); b2-07 last paragraph drills dates ("Tan pronto como las recuerdes, habrás entendido…").
