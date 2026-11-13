@@ -57,6 +57,9 @@ CHECKS = {
     # people in challenges (scripts/challenge_people.py; ES B2, 2026-11-13)
     "character-role": "a family member of the course's characters is given another role (colleague, friend…)",
     "character-extra": "a challenge names a person who is not a course character",
+    # ES B2 batches 15-30, 2026-11-13: agents kept padding texts about a work with talk
+    # about the text itself, though the brief forbids it (four batches running)
+    "story-meta": "a classic text talks about itself, the course or its reader instead of the work",
     # options (brief § 6.3)
     "choice-index": "`correct` is not a valid option index",
     "duplicate-options": "two options are the same",
@@ -130,7 +133,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"character-role", "character-extra", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"character-role", "character-extra", "story-meta", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -787,6 +790,12 @@ def story_question_sets(src, course):
     return src.cache[key]
 
 
+# talk about the text, the course or the reader (folded, accent-free); "este libro" is fine
+STORY_META = re.compile(r"\b(este texto|estos textos|otros textos|este curso|este resumen|resumamos|recordemos|"
+                        r"vamos a (?:dar|ver|presentar|empezar)|usted ya (?:conoce|sabe)|el lector|la lectora|"
+                        r"quien (?:lea|conozca) (?:este|estos|esta)|antes de abrir el libro)\b")
+
+
 def check_story(src, course, level, ref, L):
     """Placeholder content in a lesson's story: copied comprehension questions, key words it doesn't use."""
     out, rel = [], f"content/{course}/{ref}"
@@ -801,6 +810,12 @@ def check_story(src, course, level, ref, L):
         want = genders.get(name)
         if want and isinstance(spk, dict) and spk.get("gender") not in (None, want):
             out.append(("story-voice-gender", Path(ref).stem, f"{name} is {want}, voice says {spk.get('gender')}", rel))
+    # B2 and up: B1's one hit is a retelling of Martí's essay ("En este texto, Martí dice")
+    if course.startswith("es-") and story.get("type") == "classic" and level not in ("a1", "a2", "b1"):
+        for p in story.get("paragraphs", []):
+            m = STORY_META.search(fold(p.get("text", ""))) if p.get("lang") != "en" else None
+            if m:
+                out.append(("story-meta", Path(ref).stem, m.group(0), rel))
     if course.startswith("es-"):
         for p in story.get("paragraphs", []):
             sent = perfecto_marker(p.get("text", "")) if p.get("lang") != "en" else None

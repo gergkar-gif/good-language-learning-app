@@ -5,121 +5,166 @@
       "id": "b2-28-consolidation.ex01",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "ordering-markers"
-      ],
-      "question": "Identifica la opción donde el marcador ordenador esté correctamente puntuado en apertura de párrafo:",
+      "question": "Which sentence closes a short talk about a trip?",
       "options": [
-        "En primer término debemos analizar el impacto ambiental.",
-        "En primer término, debemos analizar el impacto ambiental.",
-        "En primer término; debemos analizar el impacto ambiental.",
-        "En primer término: debemos analizar el impacto ambiental."
+        "En resumen, el viaje fue corto pero muy bueno.",
+        "En segundo lugar, el viaje fue corto pero muy bueno.",
+        "A propósito de, el viaje fue corto pero muy bueno."
       ],
-      "correct": 1
+      "correct": 0,
+      "teaches": [
+        "argument-markers"
+      ],
+      "distractor_skills": {
+        "1": "ordering-markers"
+      }
     },
     {
       "id": "b2-28-consolidation.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Hoy tengo mucho trabajo; por __, ¿puedes llamar a mi jefe?",
+      "answer": "cierto",
+      "english": "I have a lot of work today; by the way, can you call my boss?",
       "teaches": [
         "marcadores-digresion"
-      ],
-      "sentence": "Conviene recordar, dicho sea de __, que los plazos de apelación vencen el próximo viernes.",
-      "answer": "paso",
-      "english": "It is worth remembering, by the way, that the appeal deadlines expire next Friday."
+      ]
     },
     {
       "id": "b2-28-consolidation.ex03",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "ordering-markers"
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Quién pone la música en la fiesta?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
       ],
-      "question": "¿Qué marcador indica que se evalúa el estado actual de los hechos antes de continuar?",
       "options": [
-        "En cambio",
-        "Así las cosas",
-        "Sin embargo",
-        "Por consiguiente"
+        "En cuanto a la música, la pongo yo.",
+        "En cuanto la música, la pongo yo.",
+        "En cuanto de la música, la pongo yo."
       ],
-      "correct": 1
+      "correct": 0,
+      "teaches": [
+        "b2-discourse-markers-structuring-sequencing-vocab"
+      ]
     },
     {
       "id": "b2-28-consolidation.ex04",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Por una parte, vivir aquí es cómodo; por __ parte, es caro.",
+      "answer": "otra",
+      "english": "On the one hand, living here is comfortable; on the other hand, it is expensive.",
       "teaches": [
         "ordering-markers"
-      ],
-      "sentence": "Por una parte, la propuesta es atractiva; por __ parte, los riesgos financieros son inasumibles.",
-      "answer": "otra",
-      "english": "On the one hand, the proposal is attractive; on the other hand, the financial risks are unacceptable."
+      ]
     },
     {
       "id": "b2-28-consolidation.ex05",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "argument-markers"
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Ya hablamos del precio."
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
       ],
-      "question": "¿Cuál es el marcador más adecuado para enunciar el fundamento ético irreductible de un ensayo?",
       "options": [
-        "En última instancia",
-        "A propósito",
-        "Por cierto",
-        "En primer lugar"
+        "Pues bien, ahora hablemos del lugar.",
+        "En resumen, ahora hablemos del lugar.",
+        "Dicho sea de paso, ahora hablemos del lugar."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b2-discourse-markers-structuring-sequencing-vocab"
+      ],
+      "distractor_skills": {
+        "1": "argument-markers",
+        "2": "marcadores-digresion"
+      }
     },
     {
       "id": "b2-28-consolidation.ex06",
       "type": "matching",
       "category": "vocabulary",
-      "teaches": [
-        "b2-discourse-markers-structuring-sequencing-vocab"
-      ],
       "pairs": [
         [
-          "preámbulo",
-          "introducción formal o exordio"
+          "por cierto",
+          "by the way"
         ],
         [
-          "soslayar",
-          "eludir o evitar una dificultad"
+          "en cuanto a",
+          "as for"
         ],
         [
-          "dicotomía",
-          "división en dos posturas opuestas"
+          "mientras que",
+          "whereas"
         ],
         [
-          "corolario",
-          "proposición deducida de lo previo"
+          "en suma",
+          "in short"
+        ],
+        [
+          "en tercer lugar",
+          "thirdly"
         ]
+      ],
+      "teaches": [
+        "b2-discourse-markers-structuring-sequencing-vocab"
       ]
     },
     {
       "id": "b2-28-consolidation.ex07",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "argument-markers"
+      "tiles": [
+        "Volviendo",
+        "a",
+        "lo",
+        "que",
+        "decíamos,",
+        "falta",
+        "elegir",
+        "el",
+        "lugar."
       ],
-      "sentence": "En __, podemos afirmar que el congreso alcanzó con éxito todos sus objetivos pedagógicos.",
-      "answer": "suma",
-      "english": "In short, we can state that the conference successfully achieved all its pedagogical objectives."
+      "solution": [
+        "Volviendo",
+        "a",
+        "lo",
+        "que",
+        "decíamos,",
+        "falta",
+        "elegir",
+        "el",
+        "lugar."
+      ],
+      "english": "Going back to what we were saying, we still have to choose the place.",
+      "teaches": [
+        "marcadores-digresion"
+      ]
     },
     {
       "id": "b2-28-consolidation.ex08",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué elemento unifica simbólicamente la resistencia campesina en la obra de Augusto Roa Bastos?",
+      "question": "According to the text, what is Hijo de hombre in Roa Bastos's work?",
       "options": [
-        "Un estandarte militar importado de Madrid.",
-        "El Cristo tallado en guayacán por el leproso Gaspar Mora en el cerro de Itapé.",
-        "Un libro de leyes comerciales del siglo dieciocho.",
-        "Una campana de bronce donada por el párroco."
+        "Su primera novela.",
+        "Su última novela.",
+        "Su único libro."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

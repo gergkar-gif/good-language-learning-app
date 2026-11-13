@@ -3,96 +3,128 @@
   "exercises": [
     {
       "id": "b2-30-01.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "en cambio",
+          "on the other hand"
+        ],
+        [
+          "por el contrario",
+          "on the contrary"
+        ],
+        [
+          "al contrario",
+          "quite the opposite"
+        ],
+        [
+          "ahora bien",
+          "that said"
+        ]
+      ],
       "teaches": [
-        "contrast-markers"
-      ],
-      "question": "¿Qué marcador adversativo introduce un obstáculo superado sin anular la afirmación principal?",
-      "options": [
-        "Sin embargo",
-        "Por consiguiente",
-        "Es decir",
-        "En primer lugar"
-      ],
-      "correct": 0
+        "b2-discourse-markers-contrast-restriction-vocab"
+      ]
     },
     {
       "id": "b2-30-01.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "No es caro; por el __, es muy barato.",
+      "answer": "contrario",
+      "english": "It is not expensive; on the contrary, it is very cheap.",
       "teaches": [
         "contrast-markers"
-      ],
-      "sentence": "El terreno era árido y hostil; no __, los rebeldes resistieron con heroísmo inquebrantable.",
-      "answer": "obstante",
-      "english": "The terrain was arid and hostile; nevertheless, the rebels resisted with unshakeable heroism."
-    },
-    {
-      "id": "b2-30-01.ex03",
-      "type": "matching",
-      "category": "grammar",
-      "teaches": [
-        "contrast-markers"
-      ],
-      "pairs": [
-        [
-          "sin embargo",
-          "objeción o límite sustantivo estándar"
-        ],
-        [
-          "no obstante",
-          "contraste formal de alta prestancia"
-        ],
-        [
-          "con todo",
-          "superación de múltiples dificultades previas"
-        ],
-        [
-          "aun así",
-          "persistencia a pesar de los reveses"
-        ]
       ]
     },
     {
-      "id": "b2-30-01.ex04",
-      "type": "fill-blank",
+      "id": "b2-30-01.ex03",
+      "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence compares two people and finds them different?",
+      "options": [
+        "Mi hermana vive en la ciudad; yo, en cambio, vivo en el campo.",
+        "Mi hermana vive en la ciudad; yo, ahora bien, vivo en el campo.",
+        "Mi hermana vive en la ciudad; yo, por eso, vivo en el campo."
+      ],
+      "correct": 0,
       "teaches": [
         "contrast-markers"
       ],
-      "sentence": "Las fuerzas regulares sufrieron bajas considerables; con __, continuaron el asedio de la ciudadela.",
-      "answer": "todo",
-      "english": "Regular forces suffered considerable casualties; even so, they continued the siege of the citadel."
+      "distractor_skills": {
+        "2": "porque-y-por-eso"
+      }
+    },
+    {
+      "id": "b2-30-01.ex04",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Tiene",
+        "poca",
+        "experiencia;",
+        "no",
+        "obstante,",
+        "hace",
+        "un",
+        "buen",
+        "trabajo."
+      ],
+      "solution": [
+        "Tiene",
+        "poca",
+        "experiencia;",
+        "no",
+        "obstante,",
+        "hace",
+        "un",
+        "buen",
+        "trabajo."
+      ],
+      "english": "He has little experience; nevertheless, he does a good job.",
+      "teaches": [
+        "contrast-markers"
+      ]
     },
     {
       "id": "b2-30-01.ex05",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-discourse-markers-contrast-restriction-vocab"
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Te molesta el ruido de la calle?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____, me gusta."
+        }
       ],
-      "question": "¿Qué sustantivo designa una rivalidad, incompatibilidad u oposición irreconciliable entre doctrinas?",
       "options": [
-        "El antagonismo",
-        "El preámbulo",
-        "La digresión",
-        "El corolario"
+        "Al contrario",
+        "Ahora bien",
+        "Por eso"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "contrast-markers"
+      ],
+      "distractor_skills": {
+        "2": "porque-y-por-eso"
+      }
     },
     {
       "id": "b2-30-01.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la famosa sentencia de Euclides da Cunha que sintetiza la resistencia del hombre del sertão?",
+      "question": "In which years did the war of Canudos happen, according to the text?",
       "options": [
-        "El sertanejo es un soñador ingenuo.",
-        "El sertanejo es, ante todo, un fuerte, modelado por la dureza de la tierra.",
-        "El campesino debe someterse a la voluntad de la capital.",
-        "La caatinga es un paraíso fértil sin dificultades."
+        "En 1896 y 1897.",
+        "En 1866 y 1909.",
+        "En 1902 y 1981."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

@@ -3,96 +3,125 @@
   "exercises": [
     {
       "id": "b2-30-05.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "eso sí",
+          "mind you"
+        ],
+        [
+          "de todos modos",
+          "anyway"
+        ],
+        [
+          "prestar",
+          "to lend"
+        ],
+        [
+          "devolver",
+          "to give back"
+        ]
+      ],
       "teaches": [
-        "contrast-markers"
-      ],
-      "question": "¿Cuál es la función del marcador 'pese a ello' al inicio de una oración?",
-      "options": [
-        "Retomar adversidades previas para enfatizar la superación y constancia del sujeto.",
-        "Anunciar la derrota definitiva e irreversible de un proyecto.",
-        "Aclarar el significado de un término gramatical.",
-        "Pedir silencio en una asamblea deliberativa."
-      ],
-      "correct": 0
+        "b2-discourse-markers-contrast-restriction-vocab"
+      ]
     },
     {
       "id": "b2-30-05.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Te presto el carro; eso __, lo devuelves hoy.",
+      "answer": "sí",
+      "english": "I'll lend you the car; mind you, you bring it back today.",
       "teaches": [
         "contrast-markers"
-      ],
-      "sentence": "Pese a __, las comunidades campesinas retornaron a sus tierras para volver a levantar sus hogares.",
-      "answer": "ello",
-      "english": "Despite this, peasant communities returned to their lands to rebuild their homes once more."
+      ]
     },
     {
       "id": "b2-30-05.ex03",
-      "type": "matching",
+      "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence agrees and adds a condition?",
+      "options": [
+        "Puedes venir; eso sí, trae tu comida.",
+        "Puedes venir; por el contrario, trae tu comida.",
+        "Puedes venir; eso si, trae tu comida."
+      ],
+      "correct": 0,
       "teaches": [
         "contrast-markers"
-      ],
-      "pairs": [
-        [
-          "pese a ello",
-          "reanudación con entereza tras infortunios"
-        ],
-        [
-          "aun con todo",
-          "evaluación ponderada del sufrimiento"
-        ],
-        [
-          "si bien",
-          "concesión serena en modo indicativo"
-        ],
-        [
-          "no obstante ello",
-          "fórmula culta de persistencia activa"
-        ]
       ]
     },
     {
       "id": "b2-30-05.ex04",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "Es",
+        "un",
+        "buen",
+        "plan;",
+        "ahora",
+        "bien,",
+        "necesitamos",
+        "más",
+        "tiempo."
+      ],
+      "solution": [
+        "Es",
+        "un",
+        "buen",
+        "plan;",
+        "ahora",
+        "bien,",
+        "necesitamos",
+        "más",
+        "tiempo."
+      ],
+      "english": "It is a good plan; that said, we need more time.",
       "teaches": [
         "contrast-markers"
-      ],
-      "sentence": "Aun con __ el sufrimiento padecido en la guerra, la cultura popular nordestina conservó su vigor.",
-      "answer": "todo",
-      "english": "Even with all the suffering endured in the war, northeastern popular culture retained its vigor."
+      ]
     },
     {
       "id": "b2-30-05.ex05",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-discourse-markers-contrast-restriction-vocab"
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "Dicen que va a llover el domingo."
+        },
+        {
+          "speaker": "Meg",
+          "text": "Puede ser. _____, voy a ir al parque."
+        }
       ],
-      "question": "¿Qué cualidad humana designa la capacidad de sobreponerse a traumas graves y salir fortalecido?",
       "options": [
-        "La resiliencia",
-        "La apatía",
-        "La digresión",
-        "La vacilación"
+        "De todos modos",
+        "Por eso",
+        "Por el contrario"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "contrast-markers"
+      ],
+      "distractor_skills": {
+        "1": "porque-y-por-eso"
+      }
     },
     {
       "id": "b2-30-05.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es la lección perdurable que 'Los sertones' legó al pensamiento latinoamericano?",
+      "question": "Who led the community of Canudos, according to the text?",
       "options": [
-        "Que las armas de fuego son la única vía para civilizar a las comunidades rurales.",
-        "Una denuncia de la barbarie del progreso impuesto por la fuerza y el rescate de la dignidad del hombre del interior.",
-        "Que los campesinos debían renunciar a su religión para progresar.",
-        "Que la geografía no influye en absoluto en el carácter humano."
+        "Antônio Conselheiro.",
+        "Mario Vargas Llosa.",
+        "Da Cunha."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

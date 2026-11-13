@@ -511,6 +511,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-13 | ES B2 core Units 15–18 (es-latam) | two edit-in-place agents (Sonnet), two units each; A resumed after the 5-hour limit | A 382,383 (both runs), B 371,207 (20 min); ~188k a unit | | 0 errors in all four, 2 suspects accepted, unmet 0 | walked 24/24, all frozen; filler cut from all four texts |
 | 11-13 | ES B2 core Units 19–22 (es-latam) | two edit-in-place agents (Sonnet), two units each; no registry moves | A 296,895 (15 min), B 318,445 (19 min); ~154k a unit | | 0 errors / 0 suspects in all four, unmet 0 | walked 24/24, all frozen; 3 texts rewritten by the reviewer, a participle rule corrected |
 | 11-13 | ES B2 core Units 23–26 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 334,129 (18 min), B 351,819 (19 min); ~171k a unit | | 0 errors in all four, 3 suspects accepted, unmet 0 | walked 24/24, all frozen; 9 challenges in frozen Units 17–18, 26 fixed for character facts |
+| 11-13 | ES B2 core Units 27–30 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 336,404 (19 min), B 328,070 (18 min); ~166k a unit | | 23 errors / 75 suspects → 0 / 5 accepted, unmet 1 kept | walked 24/24, all frozen; both texts about a work rewritten by the reviewer (meta padding); new `story-meta` check finds 43 sentences in 18 frozen texts |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2100,4 +2101,20 @@ The user took the four recommended options:
   wrong family relation in the old texts.
 - Agents shared the session scratchpad and collided once: briefs now give each agent its
   own scratch subfolder.
+
+
+### 2026-11-13: ES B2 core Units 27–30
+
+- **Meta padding in texts about a work, fourth batch running, though the brief forbids
+  it:** both agents' Roa Bastos and Da Cunha texts talked about themselves and the
+  reader. **Scripted:** `story-meta` in check-content (B2+, Spanish classic texts). It
+  also found 43 sentences in 18 texts the reviewer had already frozen: the reviewer's
+  read missed what a regex finds, so the check runs on every text from now on, and the
+  frozen ones are queued for the core close-out.
+- Cost ~166k a unit (×0.97 of 23–26's ~171k). The two retellings against fetched
+  sources (Quiroga, Machado) needed only three small edits; the texts about a work
+  needed full rewrites. With thin facts, a text about a work comes out short (~180–200
+  words) or padded: short is the right outcome.
+- The container restarted after the agents finished and before their diffs were saved;
+  the worktrees survived. Saving each diff the moment its notice arrives stays the rule.
 

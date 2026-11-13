@@ -3,96 +3,137 @@
   "exercises": [
     {
       "id": "b2-29-02.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "reformulation-markers"
-      ],
-      "question": "¿Qué marcador permite corregir un vocablo previo para emplear otro más exacto?",
-      "options": [
-        "Por consiguiente",
-        "Mejor dicho",
-        "En consecuencia",
-        "Habida cuenta de"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "b2-29-02.ex02",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "reformulation-markers"
-      ],
-      "sentence": "No se trata de un simple error burocrático; más __, constituye una negligencia institucional grave.",
-      "answer": "bien",
-      "english": "It is not a mere bureaucratic error; rather, it constitutes serious institutional negligence."
-    },
-    {
-      "id": "b2-29-02.ex03",
       "type": "matching",
-      "category": "grammar",
-      "teaches": [
-        "reformulation-markers"
-      ],
+      "category": "vocabulary",
       "pairs": [
         [
           "mejor dicho",
-          "rectificación espontánea o corrección léxica"
+          "or rather"
         ],
         [
-          "más bien",
-          "matización correctiva tras negación previa"
+          "corregir",
+          "to correct"
         ],
         [
-          "más exactamente",
-          "ajuste de alta precisión conceptual"
+          "equivocarse",
+          "to make a mistake"
         ],
         [
-          "antes bien",
-          "contraposición correctiva formal"
+          "enojado",
+          "angry"
+        ],
+        [
+          "el error",
+          "mistake"
         ]
+      ],
+      "teaches": [
+        "b2-discourse-markers-reformulation-precision-vocab"
+      ]
+    },
+    {
+      "id": "b2-29-02.ex02",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Meg says \"Monday\" and then corrects herself: it was Tuesday. Which sentence does this?",
+      "options": [
+        "Llegamos el lunes; mejor dicho, el martes.",
+        "Llegamos el lunes; es decir, el martes.",
+        "Llegamos el lunes; por cierto, el martes."
+      ],
+      "correct": 0,
+      "teaches": [
+        "reformulation-markers"
+      ],
+      "distractor_skills": {
+        "2": "marcadores-digresion"
+      }
+    },
+    {
+      "id": "b2-29-02.ex03",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "No estoy enojado; más __ estoy cansado.",
+      "answer": "bien",
+      "english": "I am not angry; I am rather tired.",
+      "teaches": [
+        "reformulation-markers"
       ]
     },
     {
       "id": "b2-29-02.ex04",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "Mi",
+        "amiga",
+        "vive",
+        "en",
+        "el",
+        "centro;",
+        "mejor",
+        "dicho,",
+        "cerca",
+        "del",
+        "centro."
+      ],
+      "solution": [
+        "Mi",
+        "amiga",
+        "vive",
+        "en",
+        "el",
+        "centro;",
+        "mejor",
+        "dicho,",
+        "cerca",
+        "del",
+        "centro."
+      ],
+      "english": "My friend lives in the centre; or rather, near the centre.",
       "teaches": [
         "reformulation-markers"
-      ],
-      "sentence": "El informe no concluyó la auditoría; más __, suspendió las actuaciones hasta recibir nuevas pruebas.",
-      "answer": "exactamente",
-      "english": "The report did not conclude the audit; more precisely, it suspended proceedings until receiving new evidence."
+      ]
     },
     {
       "id": "b2-29-02.ex05",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-discourse-markers-reformulation-precision-vocab"
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Es caro el restaurante?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
       ],
-      "question": "¿Cómo se denomina el vocablo que por su similitud formal con otro de lengua extranjera induce a error semántico?",
       "options": [
-        "Falso cognado o falso amigo",
-        "Neologismo fonético",
-        "Cultismo arcaico",
-        "Sufijo apreciativo"
+        "No es caro; más bien es normal.",
+        "No es caro; por cierto, es normal.",
+        "No es caro; en primer lugar, es normal."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "reformulation-markers"
+      ],
+      "distractor_skills": {
+        "1": "marcadores-digresion",
+        "2": "ordering-markers"
+      }
     },
     {
       "id": "b2-29-02.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué metáfora inmortal definió la mirada seductora y enigmática de Capitu?",
+      "question": "According to the text, what could the narrator not rebuild?",
       "options": [
-        "Ojos de relámpago andino",
-        "Ojos de resaca marina",
-        "Ojos de águila serrana",
-        "Ojos de obsidiana volcánica"
+        "El pasado y al hombre que fue.",
+        "Las habitaciones de su infancia.",
+        "Las paredes de la sala principal."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

@@ -3,96 +3,128 @@
   "exercises": [
     {
       "id": "b2-28-04.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "por una parte",
+          "on the one hand"
+        ],
+        [
+          "por otra parte",
+          "on the other hand"
+        ],
+        [
+          "mientras que",
+          "whereas"
+        ],
+        [
+          "en cambio",
+          "by contrast"
+        ],
+        [
+          "sin embargo",
+          "however"
+        ]
+      ],
       "teaches": [
-        "ordering-markers"
-      ],
-      "question": "¿Qué pareja de marcadores distributivos pertenece al registro ensayístico y literario más formal?",
-      "options": [
-        "O sea... es decir",
-        "Ora... ora",
-        "Por lo tanto... en consecuencia",
-        "Así que... de modo que"
-      ],
-      "correct": 1
+        "b2-discourse-markers-structuring-sequencing-vocab"
+      ]
     },
     {
       "id": "b2-28-04.ex02",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence sets the two sides of a point against each other?",
+      "options": [
+        "Por una parte, el curso es interesante; por otra, es muy caro.",
+        "Por una parte, el curso es interesante; por una parte, es muy caro.",
+        "Por otra, el curso es interesante; por una parte, es muy caro."
+      ],
+      "correct": 0,
       "teaches": [
         "ordering-markers"
-      ],
-      "sentence": "Por un lado, la medida estimula el consumo; por __ lado, puede acelerar el ritmo inflacionario.",
-      "answer": "otro",
-      "english": "On the one hand, the measure stimulates consumption; on the other hand, it may accelerate the rate of inflation."
+      ]
     },
     {
       "id": "b2-28-04.ex03",
-      "type": "matching",
+      "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Mis padres prefieren el campo, __ que yo prefiero la ciudad.",
+      "answer": "mientras",
+      "english": "My parents prefer the countryside, whereas I prefer the city.",
       "teaches": [
-        "ordering-markers"
-      ],
-      "pairs": [
-        [
-          "por un lado... por otro",
-          "distribución bimembre analítica"
-        ],
-        [
-          "ya... ya",
-          "alternancia simétrica culta"
-        ],
-        [
-          "bien... bien",
-          "distribución de opciones equivalentes"
-        ],
-        [
-          "ora... ora",
-          "alternancia retórica clásica"
-        ]
+        "b2-discourse-markers-structuring-sequencing-vocab"
       ]
     },
     {
       "id": "b2-28-04.ex04",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "Por",
+        "una",
+        "parte,",
+        "viajar",
+        "es",
+        "caro;",
+        "por",
+        "otra,",
+        "es",
+        "útil."
+      ],
+      "solution": [
+        "Por",
+        "una",
+        "parte,",
+        "viajar",
+        "es",
+        "caro;",
+        "por",
+        "otra,",
+        "es",
+        "útil."
+      ],
+      "english": "On the one hand, travelling is expensive; on the other, it is useful.",
       "teaches": [
         "ordering-markers"
-      ],
-      "sentence": "Ya por timidez, __ por prudencia diplomática, el delegado optó por guardar silencio.",
-      "answer": "ya",
-      "english": "Whether out of shyness or out of diplomatic prudence, the delegate chose to remain silent."
+      ]
     },
     {
       "id": "b2-28-04.ex05",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-discourse-markers-structuring-sequencing-vocab"
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cómo es tu oficina?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
       ],
-      "question": "¿Qué término formal designa la división o bifurcación de un concepto en dos posturas opuestas?",
       "options": [
-        "Dicotomía",
-        "Apostilla",
-        "Preámbulo",
-        "Paréntesis"
+        "Por una parte, es luminosa; por otra, es muy pequeña.",
+        "Por una parte, es luminosa; por una parte, es muy pequeña.",
+        "Mientras que es luminosa; por otra, es muy pequeña."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "ordering-markers"
+      ]
     },
     {
       "id": "b2-28-04.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué dimensión trascendente adquiere la travesía del camión aguatero en la novela?",
+      "question": "Which years does the novel cover, according to the text?",
       "options": [
-        "Una demostración de velocidad automovilística para vender motores.",
-        "Una consagración del sacrificio solidario entre hermanos de infortunio frente a la indiferencia del poder.",
-        "Un simple paseo rutinario sin consecuencias personales.",
-        "Una maniobra de escape cobarde hacia la frontera argentina."
+        "De 1912 a 1936.",
+        "De 1917 a 2005.",
+        "De 1936 a 1960."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

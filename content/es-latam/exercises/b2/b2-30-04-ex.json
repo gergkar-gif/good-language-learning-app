@@ -3,96 +3,115 @@
   "exercises": [
     {
       "id": "b2-30-04.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "por un lado",
+          "on the one hand"
+        ],
+        [
+          "por otro lado",
+          "on the other hand"
+        ],
+        [
+          "la ventaja",
+          "the advantage"
+        ],
+        [
+          "el inconveniente",
+          "the drawback"
+        ]
+      ],
       "teaches": [
-        "contrast-markers"
-      ],
-      "question": "¿Qué marcador permite contraponer de modo simétrico dos realidades geográficas divergentes?",
-      "options": [
-        "En cambio",
-        "Por consiguiente",
-        "En resumen",
-        "De este modo"
-      ],
-      "correct": 0
+        "b2-discourse-markers-contrast-restriction-vocab"
+      ]
     },
     {
       "id": "b2-30-04.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Por un lado, el piso es barato; por __ lado, está lejos del centro.",
+      "answer": "otro",
+      "english": "On the one hand the flat is cheap; on the other, it is far from the centre.",
       "teaches": [
         "contrast-markers"
-      ],
-      "sentence": "El litoral concentraba la riqueza azucarera; en __, el interior sertanejo vivía en la escasez hídrica.",
-      "answer": "cambio",
-      "english": "The coast concentrated sugar wealth; by contrast, the sertanejo interior lived in water scarcity."
-    },
-    {
-      "id": "b2-30-04.ex03",
-      "type": "matching",
-      "category": "grammar",
-      "teaches": [
-        "contrast-markers"
-      ],
-      "pairs": [
-        [
-          "en cambio",
-          "contrapeso simétrico estándar"
-        ],
-        [
-          "en contrapartida",
-          "equilibrio de aspectos divergentes"
-        ],
-        [
-          "por contra",
-          "giro formal de oposición paralela"
-        ],
-        [
-          "mientras que",
-          "confrontación sintáctica directa"
-        ]
       ]
     },
     {
-      "id": "b2-30-04.ex04",
-      "type": "fill-blank",
+      "id": "b2-30-04.ex03",
+      "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence weighs a good point and a bad point of living in the centre?",
+      "options": [
+        "Por un lado, vivir en el centro es cómodo; por otro, es ruidoso.",
+        "Por un lado, vivir en el centro es cómodo; por eso, es ruidoso.",
+        "Por un lado, vivir en el centro es cómodo; por un lado, es ruidoso."
+      ],
+      "correct": 0,
       "teaches": [
         "contrast-markers"
       ],
-      "sentence": "Los terratenientes contaban con influencias políticas; en __, los peones carecían de derechos civiles.",
-      "answer": "contrapartida",
-      "english": "Landowners had political influence; in contrast, laborers lacked civil rights."
+      "distractor_skills": {
+        "1": "porque-y-por-eso"
+      }
+    },
+    {
+      "id": "b2-30-04.ex04",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Por",
+        "una",
+        "parte,",
+        "me",
+        "gusta",
+        "el",
+        "trabajo;",
+        "por",
+        "otra,",
+        "gano",
+        "poco."
+      ],
+      "solution": [
+        "Por",
+        "una",
+        "parte,",
+        "me",
+        "gusta",
+        "el",
+        "trabajo;",
+        "por",
+        "otra,",
+        "gano",
+        "poco."
+      ],
+      "english": "On the one hand I like the job; on the other I earn little.",
+      "teaches": [
+        "contrast-markers"
+      ]
     },
     {
       "id": "b2-30-04.ex05",
-      "type": "multiple-choice",
-      "category": "vocabulary",
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "Por un lado, el piso es barato; en cambio, está lejos del centro.",
+      "english": "On the one hand the flat is cheap; on the other, it is far from the centre.",
       "teaches": [
-        "b2-discourse-markers-contrast-restriction-vocab"
-      ],
-      "question": "¿Qué sustantivo describe la falta de proporción o desequilibrio entre dos partes confrontadas?",
-      "options": [
-        "La asimetría",
-        "El corolario",
-        "La paráfrasis",
-        "El exordio"
-      ],
-      "correct": 0
+        "contrast-markers"
+      ]
     },
     {
       "id": "b2-30-04.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cómo finalizó la resistencia de Canudos tras meses de bombardeos incesantes?",
+      "question": "The text says a book about a war could talk only about battles. What does Da Cunha's book do instead?",
       "options": [
-        "Con la rendición pacífica de los oficiales y el perdón judicial.",
-        "Con cuatro defensores agonizantes combatiendo hasta el último proyectil frente a todo un ejército.",
-        "Con la victoria militar campesina y la independencia de Bahía.",
-        "Con la huida de toda la población hacia los Andes peruanos."
+        "Habla de tres temas: la tierra, su gente y la guerra.",
+        "Habla solo de la comunidad de Canudos.",
+        "Habla solo de los años en que Da Cunha fue periodista."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

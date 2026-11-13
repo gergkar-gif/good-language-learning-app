@@ -5,94 +5,132 @@
       "id": "b2-29-04.ex01",
       "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence condenses a long explanation into one short sentence?",
+      "options": [
+        "La oficina abre a las nueve, cierra a las cinco y no abre los fines de semana. En pocas palabras, solo abre de lunes a viernes.",
+        "La oficina abre a las nueve, cierra a las cinco y no abre los fines de semana. Por cierto, solo abre de lunes a viernes.",
+        "La oficina abre a las nueve, cierra a las cinco y no abre los fines de semana. En primer lugar, solo abre de lunes a viernes."
+      ],
+      "correct": 0,
       "teaches": [
         "reformulation-markers"
       ],
-      "question": "¿Cuál es la utilidad discursiva de la locución 'dicho en otros términos'?",
-      "options": [
-        "Ocultar el significado de las palabras mediante giros crípticos.",
-        "Presentar una paráfrasis condensada que clarifica un argumento complejo.",
-        "Poner fin inmediatamente a una entrevista.",
-        "Insultar sutilmente al interlocutor."
-      ],
-      "correct": 1
+      "distractor_skills": {
+        "1": "marcadores-digresion",
+        "2": "ordering-markers"
+      }
     },
     {
       "id": "b2-29-04.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "__, el plan es barato, rápido y fácil.",
+      "answer": "resumiendo",
+      "english": "To sum up, the plan is cheap, quick and easy.",
       "teaches": [
         "reformulation-markers"
-      ],
-      "sentence": "Dicho en __ términos, la soberanía energética garantiza la estabilidad macroeconómica nacional.",
-      "answer": "otros",
-      "english": "In other words, energy sovereignty guarantees national macroeconomic stability."
+      ]
     },
     {
       "id": "b2-29-04.ex03",
       "type": "matching",
-      "category": "grammar",
-      "teaches": [
-        "reformulation-markers"
-      ],
+      "category": "vocabulary",
       "pairs": [
         [
-          "dicho en otros términos",
-          "paráfrasis formal y sintética"
+          "en pocas palabras",
+          "in a few words"
         ],
         [
-          "en otras palabras",
-          "reexplicación clarificadora estándar"
+          "resumir",
+          "to sum up"
         ],
         [
-          "dicho de otro modo",
-          "reexpresión estilística equilibrada"
+          "la idea principal",
+          "the main idea"
         ],
         [
-          "dicho más sencillamente",
-          "traducción a registro accesible"
+          "la duda",
+          "doubt"
+        ],
+        [
+          "corregir",
+          "to correct"
         ]
+      ],
+      "teaches": [
+        "b2-discourse-markers-reformulation-precision-vocab"
       ]
     },
     {
       "id": "b2-29-04.ex04",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "En",
+        "pocas",
+        "palabras,",
+        "el",
+        "plan",
+        "es",
+        "barato",
+        "y",
+        "fácil."
+      ],
+      "solution": [
+        "En",
+        "pocas",
+        "palabras,",
+        "el",
+        "plan",
+        "es",
+        "barato",
+        "y",
+        "fácil."
+      ],
+      "english": "In a few words, the plan is cheap and easy.",
       "teaches": [
         "reformulation-markers"
-      ],
-      "sentence": "Dicho de __ modo, la modernidad artística exigió una ruptura radical con el pasado.",
-      "answer": "otro",
-      "english": "Put another way, artistic modernity demanded a radical break with the past."
+      ]
     },
     {
       "id": "b2-29-04.ex05",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-discourse-markers-reformulation-precision-vocab"
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Tu explicación fue larga. ¿Cuál es la idea principal?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
       ],
-      "question": "¿Qué término técnico designa la explicación o interpretación amplificativa de un texto?",
       "options": [
-        "La paráfrasis",
-        "El falso cognado",
-        "La salvedad",
-        "El escepticismo"
+        "En pocas palabras, el plan es barato y fácil.",
+        "Por cierto, el plan es barato y fácil.",
+        "En primer lugar, el plan es barato y fácil."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "reformulation-markers"
+      ],
+      "distractor_skills": {
+        "1": "marcadores-digresion",
+        "2": "ordering-markers"
+      }
     },
     {
       "id": "b2-29-04.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Por qué 'Dom Casmurro' se considera una de las cumbres universales de la novela con narrador no confiable?",
+      "question": "Why did the narrator build his house in Engenho Novo?",
       "options": [
-        "Porque el autor olvidó firmar los capítulos finales.",
-        "Porque el relato procede de la memoria de Bento, sin poder verificar el adulterio.",
-        "Porque fue prohibida por los censores del imperio de Pedro II.",
-        "Porque el narrador finge ser un fantasma del siglo dieciséis."
+        "Para reproducir la casa de su infancia.",
+        "Para vivir cerca de sus amigos.",
+        "Para tener un jardín más grande."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

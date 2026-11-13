@@ -3,96 +3,141 @@
   "exercises": [
     {
       "id": "b2-28-02.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "marcadores-digresion"
-      ],
-      "question": "¿Qué marcador permite incorporar un comentario accesorio sin que sea el eje del razonamiento principal?",
-      "options": [
-        "En consecuencia",
-        "Dicho sea de paso",
-        "Por consiguiente",
-        "Habida cuenta de"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "b2-28-02.ex02",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "marcadores-digresion"
-      ],
-      "sentence": "El ministro defendió el presupuesto; por __, anunció una partida especial para educación rural.",
-      "answer": "cierto",
-      "english": "The minister defended the budget; by the way, he announced a special fund for rural education."
-    },
-    {
-      "id": "b2-28-02.ex03",
       "type": "matching",
-      "category": "grammar",
-      "teaches": [
-        "marcadores-digresion"
-      ],
+      "category": "vocabulary",
       "pairs": [
         [
-          "a propósito",
-          "vinculación con asunto conexo"
+          "por cierto",
+          "by the way"
+        ],
+        [
+          "a propósito de",
+          "speaking of"
         ],
         [
           "dicho sea de paso",
-          "comentario incidental o accesorio"
+          "incidentally"
         ],
         [
-          "entre paréntesis",
-          "pausa explícita de aclaración"
+          "volviendo a lo que decíamos",
+          "going back to what we were saying"
         ],
         [
-          "por cierto",
-          "evocación oportuna de un dato"
+          "el informe",
+          "the report"
         ]
+      ],
+      "teaches": [
+        "b2-discourse-markers-structuring-sequencing-vocab"
+      ]
+    },
+    {
+      "id": "b2-28-02.ex02",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Carlos is talking about dinner and suddenly remembers that Ana called. Which sentence adds that as a side remark?",
+      "options": [
+        "Cenamos a las nueve. Por cierto, Ana llamó esta mañana.",
+        "Cenamos a las nueve. En primer lugar, Ana llamó esta mañana.",
+        "Cenamos a las nueve. En resumen, Ana llamó esta mañana."
+      ],
+      "correct": 0,
+      "teaches": [
+        "marcadores-digresion"
+      ],
+      "distractor_skills": {
+        "1": "ordering-markers",
+        "2": "argument-markers"
+      }
+    },
+    {
+      "id": "b2-28-02.ex03",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "A __ de la reunión, ¿a qué hora empieza?",
+      "answer": "propósito",
+      "english": "Speaking of the meeting, what time does it start?",
+      "teaches": [
+        "marcadores-digresion"
       ]
     },
     {
       "id": "b2-28-02.ex04",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "Volviendo",
+        "a",
+        "lo",
+        "que",
+        "decíamos,",
+        "¿quién",
+        "presenta",
+        "el",
+        "informe?"
+      ],
+      "solution": [
+        "Volviendo",
+        "a",
+        "lo",
+        "que",
+        "decíamos,",
+        "¿quién",
+        "presenta",
+        "el",
+        "informe?"
+      ],
+      "english": "Going back to what we were saying, who presents the report?",
       "teaches": [
         "marcadores-digresion"
-      ],
-      "sentence": "A __ de la reforma agraria, varios parlamentarios visitaron las cooperativas del interior.",
-      "answer": "propósito",
-      "english": "Speaking of agrarian reform, several parliamentarians visited the cooperatives in the interior."
+      ]
     },
     {
       "id": "b2-28-02.ex05",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-discourse-markers-structuring-sequencing-vocab"
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Tenemos que decidir quién prepara la cena del sábado."
+        },
+        {
+          "speaker": "Carlos",
+          "text": "Por cierto, ¿ya tienes los boletos?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Sí, ya los tengo."
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
       ],
-      "question": "¿Qué verbo formal expresa la acción de esquivar o eludir una dificultad o tema espinoso?",
       "options": [
-        "Pormenorizar",
-        "Soslayar",
-        "Dilucidar",
-        "Recapitular"
+        "Volviendo a lo que decíamos, ¿quién prepara la cena?",
+        "Dicho sea de paso, ¿quién prepara la cena del sábado?",
+        "En resumen, ¿quién prepara la cena del sábado?"
       ],
-      "correct": 1
+      "correct": 0,
+      "teaches": [
+        "marcadores-digresion"
+      ],
+      "distractor_skills": {
+        "2": "argument-markers"
+      }
     },
     {
       "id": "b2-28-02.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Por qué los campesinos se negaron a colocar el Cristo de Gaspar Mora en el templo parroquial?",
+      "question": "According to the text, when was Hijo de hombre published?",
       "options": [
-        "Porque la estatua era demasiado pesada para transportarla.",
-        "Porque querían que perteneciera al pueblo y permaneciera libre en el cerro.",
-        "Porque el obispo les exigía pagar un tributo de oro.",
-        "Porque preferían venderla a un coleccionista extranjero."
+        "En 1960.",
+        "En 1917.",
+        "En 1936."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

@@ -3,96 +3,125 @@
   "exercises": [
     {
       "id": "b2-28-01.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "ordering-markers"
-      ],
-      "question": "¿Cuál es la función del marcador 'en primer término' en un discurso formal?",
-      "options": [
-        "Concluir definitivamente la exposición tras sopesar los argumentos.",
-        "Introducir el punto de partida o la primera consideración de una serie ordenada.",
-        "Expresar una duda irresoluble sobre los hechos relatados.",
-        "Pedir disculpas por un error involuntario en el texto."
-      ],
-      "correct": 1
-    },
-    {
-      "id": "b2-28-01.ex02",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "ordering-markers"
-      ],
-      "sentence": "En primer lugar, delimitaremos el marco conceptual; en segundo __, examinaremos los datos empíricos.",
-      "answer": "término",
-      "english": "In the first place, we will delimit the conceptual framework; in the second place, we will examine the empirical data."
-    },
-    {
-      "id": "b2-28-01.ex03",
       "type": "matching",
-      "category": "grammar",
-      "teaches": [
-        "ordering-markers"
-      ],
+      "category": "vocabulary",
       "pairs": [
         [
           "en primer lugar",
-          "apertura de serie enumerativa"
+          "firstly"
         ],
         [
-          "acto seguido",
-          "continuación cronológica inmediata"
+          "en segundo lugar",
+          "secondly"
+        ],
+        [
+          "en tercer lugar",
+          "thirdly"
         ],
         [
           "por último",
-          "clausura de la enumeración"
+          "lastly"
         ],
         [
-          "para empezar",
-          "introducción inicial del tema"
+          "a continuación",
+          "next, after that"
         ]
+      ],
+      "teaches": [
+        "b2-discourse-markers-structuring-sequencing-vocab"
+      ]
+    },
+    {
+      "id": "b2-28-01.ex02",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence opens a talk with its first point?",
+      "options": [
+        "En primer lugar, hablaré del precio.",
+        "En primero lugar, hablaré del precio.",
+        "En el primer lugar, hablaré del precio.",
+        "Primer lugar, hablaré del precio."
+      ],
+      "correct": 0,
+      "teaches": [
+        "ordering-markers"
+      ]
+    },
+    {
+      "id": "b2-28-01.ex03",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "En segundo __, hablaré del transporte.",
+      "answer": "lugar",
+      "english": "Secondly, I will talk about transport.",
+      "teaches": [
+        "ordering-markers"
       ]
     },
     {
       "id": "b2-28-01.ex04",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "Por",
+        "último,",
+        "les",
+        "pido",
+        "su",
+        "opinión."
+      ],
+      "solution": [
+        "Por",
+        "último,",
+        "les",
+        "pido",
+        "su",
+        "opinión."
+      ],
+      "english": "Lastly, I ask for your opinions.",
       "teaches": [
         "ordering-markers"
-      ],
-      "sentence": "Por __ parte, la propuesta reduce costos; por otra, genera incertidumbre laboral.",
-      "answer": "una",
-      "english": "On the one hand, the proposal reduces costs; on the other, it creates labor uncertainty."
+      ]
     },
     {
       "id": "b2-28-01.ex05",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-discourse-markers-structuring-sequencing-vocab"
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cómo vas a presentar el proyecto?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Perfecto, así todos entienden el orden."
+        }
       ],
-      "question": "¿Qué sustantivo designa la parte final o etapa de cierre de un período o época histórica?",
       "options": [
-        "El preámbulo",
-        "La postrimería",
-        "El exordio",
-        "La coyuntura"
+        "En primer lugar, explicaré el problema; en segundo lugar, propondré una solución.",
+        "En primer lugar, explicaré el problema; en primer lugar, propondré una solución.",
+        "En segundo lugar, explicaré el problema; en primer lugar, propondré una solución."
       ],
-      "correct": 1
+      "correct": 0,
+      "teaches": [
+        "ordering-markers"
+      ]
     },
     {
       "id": "b2-28-01.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué motivó a Gaspar Mora a aislarse en el monte de Itapé según el relato?",
+      "question": "In what order does the text say it will present its three steps?",
       "options": [
-        "El deseo de escapar de sus deudas bancarias.",
-        "El descubrimiento de que padecía lepra y la voluntad de consagrar su destierro a tallar el dolor de su pueblo.",
-        "Una orden judicial del gobernador militar de la provincia.",
-        "La búsqueda de yacimientos de oro en la sierra."
+        "El autor, la novela y el tema.",
+        "La novela, el autor y el tema.",
+        "El tema, el autor y la novela."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }
