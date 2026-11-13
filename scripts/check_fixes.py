@@ -244,6 +244,17 @@ def main():
               "or rewrite it in a core unit; lookup misses of split verbs and names included):")
         for eid, words in by.items():
             print(f"    {eid}: {', '.join(words)}")
+    # The list is checked against what it ADDS, so errors it leaves in the
+    # unit pass unseen: ES B1 batch 53-63, a reader reported 0 and 25 were
+    # left, found only after applying (2026-11-12). Say what remains.
+    left = sorted(f for f in after if f[0] not in cc.SUSPECTS)
+    if left:
+        print(f"  check-content errors left in {unit} once this list is applied ({len(left)}; "
+              "a list should leave none: write the missing fixes or an extra list):")
+        for check, eid, msg in left[:40]:
+            print(f"    {check} {eid}: {msg[:100]}")
+        if len(left) > 40:
+            print(f"    ... and {len(left) - 40} more")
     print(f"wrote {stem}.auto.json, {stem}.review.json")
 
 

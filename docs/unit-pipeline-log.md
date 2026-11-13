@@ -87,6 +87,29 @@ them unless a step below says otherwise.
   memory.
 - **Cost:** ~145–180k tokens a unit at two units per reader (history and
   civics units read slower than core units).
+- **Productivity, learned on ES B1 (2026-11-11 → 2026-11-13):**
+  - **New content goes to edit-in-place agents, not fix lists.** For screen
+    sections, new items or story rewrites, the agent edits files in its own
+    worktree and does not commit; the reviewer saves `git diff` as a patch,
+    unfreezes the units, `git apply`s it, checks, walks and refreezes. The
+    ES B1 close-out did 6 skills, 3 thin skills and 29 stories this way for
+    237k + 291k. Old → new fix lists stay the method for reading existing units.
+  - **Prepare the next batch during the wait:** its focus file, sources
+    (`fetch_wikisource.py`, Gutenberg) and `reviewer-facts.md` were ready
+    before the readers of the batch before it reported, so the next readers
+    started minutes after.
+  - **Start a batch right after a usage-limit reset:** both readers share the
+    limit; batches started mid-window stopped halfway three times running,
+    one started at the reset did not.
+  - **Short units go four to a reader** (ES B1 Units 73–76, 63 items each).
+  - **A reader's counts are claims.** Rerun check-content and `unmet-words.js`
+    in both courses yourself; `check_fixes.py` now lists the check-content
+    errors a list leaves in its unit (2026-11-13), so sort time shows them.
+  - **Check challenge scenarios against the character facts** as you do items:
+    two batches running invented a fact about a course character.
+  - **Generated-file conflicts on pull:** `scripts/resolve_generated_conflicts.py`.
+  - **Unread tracks can be hidden** from the app while a level ships core
+    first: `HIDDEN_TRACKS` in build-manifest.py (content untouched).
 
 ### Route A: read-first batch (HU A2, 2026-10-14 → 2026-10-15)
 
@@ -265,6 +288,10 @@ not verified:
   app's grader; a lesson with no entry (generated placeholder) fails.
 - `python scripts/check_c1_forms.py <course> <level>` (HU): no C1 formula in screens,
   items, goals or challenges (added 2026-11-11 after the HU B2 pass).
+- Reader library: stories the manifest lists with no unit and not hidden are
+  open to learners but read by no batch (ES B1: 29, with false labels and
+  wrong plots). List them (`content/<course>/stories/manifest.json`: level,
+  no `unit`, no `hidden`) and read them before calling the level done.
 - Not covered by any of this: speaking steps (microphone), spoken
   challenge answers, wrong-answer paths, and a native speaker's eye (the
   user spot-checks).
@@ -476,6 +503,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-12 | ES B1 core 41, 43, 45, 47, 49, 51 | paired read, 3 units/reader; both stopped by the 5-hour limit and resumed | | A 370,764, B 384,297 (resumed notices; ~125k a unit) | 439 proposed (94 / 71 / 74 / 75 / 68 / 57), 1 rejected and rewritten | all six frozen in both courses (B1 26/76); rulebook truncated by the reviewer and restored; walk 36/36 per course |
 | 11-12 | ES B1 core 53, 55, 57, 59, 61, 63 | paired read, 3 units/reader, sources fetched from Wikisource at setup; both stopped by the 5-hour limit and resumed | | A 394,006, B 429,839 (resumed notices; ~137k a unit) | 576 proposed (93 / 92 / 92 / 94 / 91 / 114), 10 rejected and rewritten | all six frozen in both courses (B1 32/76); reader A left 25 check-content errors while reporting 0; walk 36/36 per course |
 | 11-12 | ES B1 core 65, 67, 69, 71, 73, 74, 75, 76 (last core batch) | paired read, 4 units/reader (73–76 are short units, 63 items, no story); no limit stop | | A 481,357 (28 min), B 459,982 (32 min); ~120k a full unit, ~115k a short one | 687 proposed (86 / 78 / 94 / 79 / 90 / 85 / 85 / 90), 0 rejected | all eight frozen in both courses (core 40/40); reader B left 45 unmet hits across the two courses while reporting 0–3; walk 48/48 per course |
+| 11-12 | ES B1 core close-out (6 skills to core screens, 3 thin skills, 29 Reader stories) | two edit-in-place agents (Sonnet), reviewer applies their diff | A 237,046 (11 min), B 290,975 (14 min) | | all eight touched units rechecked, walked 48/48 per course, refrozen; 2 reviewer edits to A, es-latam labels fixed after B |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -1940,4 +1968,21 @@ The user took the four recommended options:
 - **Short units (73–76) carried another generator's defects:** Spanish grammar jargon as
   vocabulary, Spanish writing prompts, one checklist line shared by four units. A focus file for
   a later level should list these up front.
+
+### 2026-11-12/13: ES B1 core close-out (user's decisions)
+
+- **Edit-in-place agents were cheap and clean for new content:** agent A wrote 6 screen
+  sections and 45 items in both courses for 237k with no reformatting, 0 errors, and its
+  recap unit numbers all right. Agent B's 29 story rewrites (291k) were sound in es-es but
+  left the false `author`/`work` in 22 es-latam copies; the reviewer's diff of one pair
+  caught it. **Change:** an agent that edits both courses is told to diff every pair at the
+  end, and the reviewer diffs one pair per file type.
+- **The reviewer's level audit found what eight batches had not:** six B1 grammar skills
+  taught only in the es-latam `latam` track, so es-es never taught them, and 29 unread
+  stories open in the Reader. Both came from listing the level as a whole (skills by
+  `taught_in` outside the core screens; manifest stories with no unit). **Change:** the
+  level checklist above now lists the Reader check; run the `taught_in` listing at the
+  start of a level, not at its end.
+- **Scripted:** `check_fixes.py` prints errors a list leaves; `resolve_generated_conflicts.py`
+  for the Auto-sync conflicts (three in one day).
 
