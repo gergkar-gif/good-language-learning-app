@@ -572,6 +572,11 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
   report in the indicative or with infinitives, or tell it in the present. Two more
   lessons registered a skill their screen did not teach (b1-29-03, b1-32-03). A wrong
   option you lengthen must not bring *nunca, siempre, nadie* or a time word.
+- **Editing both courses yourself (edit-in-place jobs, 2026-11-13):** when you
+  finish, diff every es-es / es-latam pair you touched (`diff <(python3 -m
+  json.tool a) <(python3 -m json.tool b)`): apart from the course variants they
+  must say the same, labels included (`author`, `work`, `source`, `type`).
+  The ES B1 story job left false authors in 22 es-latam copies.
 - **Classic stories:** a story spliced with lesson-template sentences
   (Odiseo buying a ticket at a travellers' office) or given an invented
   ending (Bartleby) is rewritten as an honest outline of the work. A
