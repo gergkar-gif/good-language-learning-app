@@ -26,6 +26,7 @@ that differ between es-es and es-latam (the reviewer reads those, and the
 es-latam stories, after mirroring).
 """
 import datetime
+import os
 import json
 import re
 import subprocess
@@ -103,6 +104,11 @@ def main():
         k, v = a.split("=")
         readers[k.upper()] = [int(x) for x in v.split(",")]
     units = read(ROOT / f"content/{course}/curriculum/units/{level}.json")
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import unit_numbers as un
+    # unit numbers in setup.md and the prompts are the app's (scripts/unit_numbers.py);
+    # the A=/B= arguments stay table positions
+    app = lambda n: un.name(course, level, n - 1, units)
     spanish = course == "es-es"
     single = course.startswith("es") and not spanish   # es-latam alone (B2 has no es-es)
     latam_ids = {u["id"] for u in read(ROOT / f"content/es-latam/curriculum/units/{level}.json") or []} if spanish else set()
@@ -136,7 +142,7 @@ def main():
                 sys.exit(r.stderr)
             story_txt = ", ".join(f"`{s}`" for s in st) or "none"
             hist = hist or u.get("track") in FACT_TRACKS
-            lines.append(f"- `{course} {level} {uid}` ({level.upper()} Unit {n}"
+            lines.append(f"- `{course} {level} {uid}` ({app(n)}"
                          f"{', *' + u['track'] + ' track*' if u.get('track') in FACT_TRACKS else ''}): lessons {' '.join(stems)}, "
                          f"stories {story_txt}. Knowledge sheet: `{w}/prior-{uid}.md`. "
                          f"Fixes file: `{w}/fixes-{uid}.json`. Challenges file: `{w}/challenges-{uid}.json`."
@@ -144,9 +150,9 @@ def main():
                             f" The reading questions of {', '.join(f'`{x}`' for x in cq)} are copies of another "
                             "story's (placeholders): write three new questions for each from its own text, as "
                             "old → new text fixes on the question, its options, `correctIndex` and `explanation`."))
-            desc.append(f"Unit {n} {uid} ({' '.join(stems)}; stories {st})")
+            desc.append(f"{app(n)} {uid} ({' '.join(stems)}; stories {st})")
             if not spanish:
-                table.append(f"| {n} {uid} | {u.get('track', '')} | {counts(course, level, uid)} |")
+                table.append(f"| {app(n)} {uid} | {u.get('track', '')} | {counts(course, level, uid)} |")
                 continue
             table.append(f"| {n} {uid} | {counts('es-es', level, uid)} | "
                          f"{counts('es-latam', level, uid) if uid in latam_ids else 'no es-latam unit'} |")
