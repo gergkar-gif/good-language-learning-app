@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "advertir",
-          "to caution of impending risk"
-        ],
-        [
           "alertar",
-          "to sound the alarm on hazards"
+          "to alert"
         ],
         [
-          "recordar",
-          "to bring to mind an obligation"
+          "el recordatorio",
+          "reminder"
         ],
         [
-          "conminar",
-          "to demand compliance under penalty"
+          "la amenaza",
+          "threat"
+        ],
+        [
+          "cuidarse de",
+          "to watch out for"
         ]
       ],
       "teaches": [
@@ -31,10 +31,13 @@
       "id": "b2-18-03.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El guardaparque nos advirtió que no nos __ del sendero señalizado en la montaña.",
-      "hint": "desviar",
-      "answer": "desviáramos",
-      "english": "The park ranger warned us not to stray from the marked trail on the mountain.",
+      "sentence": "El guía nos advirtió que no __ por el puente.",
+      "hint": "cruzar",
+      "answers": [
+        "cruzáramos",
+        "cruzásemos"
+      ],
+      "english": "The guide warned us not to cross the bridge.",
       "teaches": [
         "reporting-verbs"
       ]
@@ -43,17 +46,19 @@
       "id": "b2-18-03.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué diferencia de significado existe entre 'Advirtió que salían temprano' y 'Advirtió que salieran temprano'?",
+      "question": "Ana said to Luis: «El banco cierra a las tres.» Which sentence reports a reminder of a fact?",
       "options": [
-        "La primera informa sobre un hecho (indicativo); la segunda formula una advertencia o mandato imperativo (subjuntivo).",
-        "La primera expresa una duda existencial y la segunda una certeza matemática.",
-        "La primera se refiere al pasado y la segunda obligatoriamente al siglo diecinueve.",
-        "Ninguna; ambas oraciones son exactamente intercambiables en todos los contextos."
+        "Ana le recordó que el banco cerraba a las tres.",
+        "Ana le recordó que el banco cerrara a las tres.",
+        "Ana le recordó de que el banco cerraba a las tres."
       ],
       "correct": 0,
       "teaches": [
         "reporting-verbs"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect-subjunctive-forms"
+      }
     },
     {
       "id": "b2-18-03.ex04",
@@ -61,31 +66,25 @@
       "category": "grammar",
       "tiles": [
         "Los",
-        "geólogos",
+        "vecinos",
         "alertaron",
         "de",
         "que",
-        "el",
-        "volcán",
-        "podía",
-        "entrar",
-        "en",
-        "erupción."
+        "venía",
+        "una",
+        "tormenta."
       ],
       "solution": [
         "Los",
-        "geólogos",
+        "vecinos",
         "alertaron",
         "de",
         "que",
-        "el",
-        "volcán",
-        "podía",
-        "entrar",
-        "en",
-        "erupción."
+        "venía",
+        "una",
+        "tormenta."
       ],
-      "english": "The geologists warned that the volcano could erupt.",
+      "english": "The neighbours warned that a storm was coming.",
       "teaches": [
         "reporting-verbs"
       ]
@@ -96,31 +95,34 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Alcaldesa",
-          "text": "¿Qué medida cautelar adoptó el comité de emergencia tras el informe sobre la crecida del río?"
+          "speaker": "Meg",
+          "text": "¿Por qué cerraste todas las ventanas?"
         },
         {
-          "speaker": "Director de Protección Civil",
+          "speaker": "Tú",
           "text": "_____"
         }
       ],
+      "hint": "The forecast warned: “There will be a storm tonight.”",
       "options": [
-        "Conminamos a las poblaciones de las riberas bajas a que evacuaran preventivamente hacia zonas altas.",
-        "Los ríos andinos nacen en los deshielos de las cumbres nevadas.",
-        "Compramos nuevos escritorios de madera para la oficina de turismo municipal.",
-        "El agua potable contiene sales minerales disueltas en cantidades moderadas."
+        "El pronóstico advirtió que habría una tormenta esa noche.",
+        "El pronóstico advirtió que hubiera una tormenta esa noche.",
+        "El pronóstico advirtió a que habría una tormenta esa noche."
       ],
       "correct": 0,
       "teaches": [
         "reporting-verbs"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect-subjunctive-forms"
+      }
     },
     {
       "id": "b2-18-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "El tribunal recordó a las partes litigantes que el desacato a la resolución acarrearía severas sanciones penales.",
-      "english": "The court reminded the litigating parties that contempt of the ruling would entail severe criminal penalties.",
+      "sentence": "Ana me recordó que cerrara la puerta con llave.",
+      "english": "Ana reminded me to lock the door.",
       "teaches": [
         "reporting-verbs"
       ]

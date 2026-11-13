@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "exigir",
-          "to demand categorically"
-        ],
-        [
           "suplicar",
-          "to plead earnestly"
+          "to beg"
         ],
         [
-          "prohibición",
-          "statutory ban"
+          "encargar",
+          "to ask someone to take care of"
         ],
         [
-          "instar",
-          "to urge prompt action"
+          "reclamar",
+          "to demand"
+        ],
+        [
+          "el encargo",
+          "errand"
         ]
       ],
       "teaches": [
@@ -31,10 +31,13 @@
       "id": "b2-17-03.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El oficial nos ordenó que no __ la zona acordonada bajo ninguna circunstancia.",
-      "hint": "cruzar",
-      "answer": "cruzáramos",
-      "english": "The officer ordered us not to cross the cordoned-off area under any circumstance.",
+      "sentence": "La profesora nos pidió que __ en silencio.",
+      "hint": "trabajar",
+      "answers": [
+        "trabajáramos",
+        "trabajásemos"
+      ],
+      "english": "The teacher asked us to work in silence.",
       "teaches": [
         "estilo-indirecto-ordenes"
       ]
@@ -43,45 +46,48 @@
       "id": "b2-17-03.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cómo se reporta en pasado la instrucción médica: 'Tome este medicamento cada ocho horas'?",
+      "question": "Luis asked: «¿Puedes cerrar la ventana?» Which sentence reports his request?",
       "options": [
-        "El doctor me indicó que tomara ese medicamento cada ocho horas.",
-        "El doctor me indicó que tomo ese medicamento cada ocho horas.",
-        "El doctor me indicó que tomaré ese medicamento cada ocho horas.",
-        "El doctor me indicó que había tomado ese medicamento cada ocho horas."
+        "Luis me pidió que cerrara la ventana.",
+        "Luis me preguntó si cerraba la ventana.",
+        "Luis me pidió que cerraría la ventana."
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto-ordenes"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "condicional-regular"
+      }
     },
     {
       "id": "b2-17-03.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Nos",
-        "suplicaron",
+        "Ana",
+        "me",
+        "ha",
+        "pedido",
         "que",
-        "guardáramos",
-        "absoluto",
-        "silencio",
-        "durante",
-        "el",
-        "rescate."
+        "te",
+        "llame",
+        "esta",
+        "tarde."
       ],
       "solution": [
-        "Nos",
-        "suplicaron",
+        "Ana",
+        "me",
+        "ha",
+        "pedido",
         "que",
-        "guardáramos",
-        "absoluto",
-        "silencio",
-        "durante",
-        "el",
-        "rescate."
+        "te",
+        "llame",
+        "esta",
+        "tarde."
       ],
-      "english": "They begged us to keep absolute silence during the rescue.",
+      "english": "Ana has asked me to call you this afternoon.",
       "teaches": [
         "estilo-indirecto-ordenes"
       ]
@@ -92,31 +98,35 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Diplomático",
-          "text": "¿Qué resolvió el Consejo de Seguridad con respecto a las hostilidades en la frontera?"
+          "speaker": "Luis",
+          "text": "¿Por qué no abriste la puerta?"
         },
         {
-          "speaker": "Canciller",
+          "speaker": "Tú",
           "text": "_____"
         }
       ],
+      "hint": "The neighbour had told you: “Don’t open the door to anyone.”",
       "options": [
-        "Emitió una resolución vinculante instando a que ambas partes cesaran el fuego de inmediato.",
-        "La sala de conferencias tiene capacidad para doscientas personas.",
-        "Los diplomáticos almuerzan en el restaurante del tercer piso.",
-        "El tratado de paz se firmó sobre papel pergamino en el siglo pasado."
+        "El vecino me dijo que no abriera la puerta a nadie.",
+        "El vecino me dijo que no abría la puerta a nadie.",
+        "El vecino me dijo que no abra la puerta a nadie."
       ],
       "correct": 0,
       "teaches": [
         "estilo-indirecto-ordenes"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b2-17-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "La directora nos exigió que entregáramos las conclusiones periciales antes de que concluyera la semana.",
-      "english": "The director demanded that we submit the expert findings before the week ended.",
+      "sentence": "El médico me pidió que descansara unos días.",
+      "english": "The doctor asked me to rest for a few days.",
       "teaches": [
         "estilo-indirecto-ordenes"
       ]

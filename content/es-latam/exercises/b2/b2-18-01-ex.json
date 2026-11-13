@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "aseverar",
-          "to affirm as factual truth"
+          "señalar",
+          "to point out"
         ],
         [
-          "sostener",
-          "to maintain a defended thesis"
+          "precisar",
+          "to specify"
+        ],
+        [
+          "agregar",
+          "to add"
         ],
         [
           "recalcar",
-          "to stress with special emphasis"
-        ],
-        [
-          "puntualizar",
-          "to clarify specific nuances"
+          "to stress"
         ]
       ],
       "teaches": [
@@ -31,10 +31,13 @@
       "id": "b2-18-01.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "En su informe pericial, la ingeniera __ que los cimientos del puente presentaban fallas graves.",
-      "hint": "aseverar",
-      "answer": "aseveró",
-      "english": "In her expert report, the engineer asserted that the bridge foundations showed serious flaws.",
+      "sentence": "Meg dijo que llegaría tarde y __ que traería el pan.",
+      "hint": "añadir",
+      "answers": [
+        "añadió",
+        "agregó"
+      ],
+      "english": "Meg said she would be late and added that she would bring the bread.",
       "teaches": [
         "reporting-verbs"
       ]
@@ -43,45 +46,47 @@
       "id": "b2-18-01.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué matiz pragmático aporta el verbo 'recalcar' frente al neutro 'decir'?",
+      "question": "Ana said: «No fue mi error.» Which sentence reports her denial?",
       "options": [
-        "Indica que el emisor puso especial énfasis y subrayó deliberadamente ese punto concreto.",
-        "Señala que el hablante tenía dudas sobre la veracidad del mensaje transmitido.",
-        "Indica que el mensaje fue pronunciado en voz muy baja y confidencial.",
-        "Expresa que la afirmación fue desmentida minutos después por los testigos."
+        "Ana negó que fuera su error.",
+        "Ana negó que era su error.",
+        "Ana negó de que fuera su error."
       ],
       "correct": 0,
       "teaches": [
         "reporting-verbs"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect"
+      }
     },
     {
       "id": "b2-18-01.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "El",
-        "canciller",
-        "recalcó",
+        "Ana",
+        "me",
+        "recordó",
         "que",
-        "el",
-        "tratado",
-        "garantizaba",
         "la",
-        "paz."
+        "reunión",
+        "era",
+        "el",
+        "lunes."
       ],
       "solution": [
-        "El",
-        "canciller",
-        "recalcó",
+        "Ana",
+        "me",
+        "recordó",
         "que",
-        "el",
-        "tratado",
-        "garantizaba",
         "la",
-        "paz."
+        "reunión",
+        "era",
+        "el",
+        "lunes."
       ],
-      "english": "The chancellor stressed that the treaty guaranteed peace.",
+      "english": "Ana reminded me that the meeting was on Monday.",
       "teaches": [
         "reporting-verbs"
       ]
@@ -92,31 +97,35 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Periodista",
-          "text": "¿Cómo resumiría la declaración del director del banco central ante la comisión parlamentaria?"
+          "speaker": "Meg",
+          "text": "¿Por qué llegaste temprano a la oficina?"
         },
         {
-          "speaker": "Analista",
+          "speaker": "Tú",
           "text": "_____"
         }
       ],
+      "hint": "Your boss reminded you: “Arrive before nine.”",
       "options": [
-        "Sostuvo que las reservas monetarias eran sólidas, pero puntualizó que la inflación global exigía prudencia fiscal.",
-        "El edificio del banco central tiene diez pisos y una fachada de mármol gris.",
-        "Los banqueros almorzaron en un restaurante tradicional del centro histórico.",
-        "El precio del café bajó en los mercados internacionales durante el verano."
+        "Mi jefe me recordó que llegara antes de las nueve.",
+        "Mi jefe me recordó que llegaba antes de las nueve.",
+        "Mi jefe me recordó que llegue antes de las nueve."
       ],
       "correct": 0,
       "teaches": [
         "reporting-verbs"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b2-18-01.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "La investigadora constató que los datos climáticos confirmaban el retroceso acelerado de los glaciares andinos.",
-      "english": "The researcher verified that the climate data confirmed the accelerated retreat of Andean glaciers.",
+      "sentence": "Luis admitió que se había equivocado de calle.",
+      "english": "Luis admitted that he had gone down the wrong street.",
       "teaches": [
         "reporting-verbs"
       ]
