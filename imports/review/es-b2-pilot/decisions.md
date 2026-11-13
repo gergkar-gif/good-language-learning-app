@@ -55,3 +55,13 @@ Found at setup and decided by the user:
 9. Two new B2 skills for forms Unit 2 teaches and no skill covered:
    `conectores-temporales-narrativos` (*apenas*, *al cabo de*, *conforme*; b2-02-04) and
    `imperfecto-de-cortesia` (*quería pedirle*, *venía a preguntar*; b2-02-05).
+
+## Units 31–36 moves (user, 2026-11-13: "Approve all four")
+
+- `consequence-markers`: b2-31-02 → b2-31-01.
+- `consecutivas-de-tal-manera`: hidden b2-nicaragua-01 → b2-31-02, with 6 new items.
+- `participios-absolutos-narrativos`: hidden b2-argentinaba-03 → b2-35-05, with 6 new items.
+- `voseo-rioplatense-reconocimiento`: hidden b2-argentinaba-02 → b2-34-01, recognition only.
+- "A section in an existing lesson is enough… no new unit needed."
+- Applied in `skills/es.json` and `skills/frozen-es.json`; the moves leave 19 `taught-later`
+  findings on the hidden Nicaragua and Argentina BA units, for the latam pass.
