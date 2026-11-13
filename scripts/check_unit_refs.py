@@ -70,6 +70,12 @@ def main():
             for st in u["stems"]:
                 pos[st] = (li, i + 1)
                 track_of[st] = tr
+    # hidden tracks (HIDDEN_TRACKS; "hidden" in the generated curriculum.json) teach the
+    # learner nothing, so a word met only there is not "first met" there (ES B2, 2026-11-13)
+    cur = ROOT / f"content/{course}/curriculum/curriculum.json"
+    hidden_ids = {u["slug"] for L in (json.loads(cur.read_text(encoding="utf-8")).get("levels", {}) if cur.is_file() else {}).values()
+                  for u in L.get("units", []) if u.get("hidden")}
+    hidden_stems = {st for (lvl, uid), sts in stems_of.items() if uid in hidden_ids for st in sts}
     texts = {}
     # where a word is taught: an italicised form on a grammar screen (the recapped
     # words themselves left out, they teach nothing) or a vocabulary-list lemma. A
@@ -77,12 +83,12 @@ def main():
     # Unit 5 items; its screen is Unit 29, so "*bár* from B1 Unit 9" was wrong).
     for f in glob.glob(str(ROOT / f"content/{course}/grammar/*/*.json")):
         p = pos.get(stem_of(f, pos))
-        if p:
+        if p and stem_of(f, pos) not in hidden_stems:
             text = REF.sub("", Path(f).read_text(encoding="utf-8"))
             texts.setdefault(p, []).append(" | ".join(re.findall(r"\*([^*]+)\*", text)).lower())
     for f in glob.glob(str(ROOT / f"content/{course}/vocabulary/*/*.json")):
         p = pos.get(stem_of(f, pos))
-        if p:
+        if p and stem_of(f, pos) not in hidden_stems:
             words = json.loads(Path(f).read_text(encoding="utf-8")).get("words", [])
             texts.setdefault(p, []).append(" | ".join(w.get("lemma", "") for w in words).lower())
 
