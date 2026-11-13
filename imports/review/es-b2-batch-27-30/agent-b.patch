@@ -1,0 +1,4454 @@
+diff --git a/content/es-latam/exercises/b2/b2-27-01-ex.json b/content/es-latam/exercises/b2/b2-27-01-ex.json
+index 26ef7cf1..befa7d10 100644
+--- a/content/es-latam/exercises/b2/b2-27-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-27-01-ex.json
+@@ -3,96 +3,112 @@
+   "exercises": [
+     {
+       "id": "b2-27-01.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "formal-cause-connectors"
+-      ],
+-      "question": "¿Qué locución prepositiva completa adecuadamente la oración expresando origen causal directo?",
+-      "options": [
+-        "A raíz de las nuevas investigaciones, el tribunal reabrió la causa penal.",
+-        "So pretexto de las nuevas investigaciones, el tribunal reabrió la causa penal.",
+-        "Con miras a las nuevas investigaciones, el tribunal reabrió la causa penal.",
+-        "Al margen de las nuevas investigaciones, el tribunal reabrió la causa penal."
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "a raíz de",
++          "following / as a result of"
++        ],
++        [
++          "con motivo de",
++          "on the occasion of"
++        ],
++        [
++          "en virtud de",
++          "by virtue of / under"
++        ],
++        [
++          "el alcalde",
++          "the mayor"
++        ]
+       ],
+-      "correct": 0
++      "teaches": [
++        "b2-prepositional-regimes-locutions-vocab"
++      ]
+     },
+     {
+       "id": "b2-27-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "A __ del accidente, la ciudad cambió las normas de tráfico.",
++      "answer": "raíz",
++      "english": "Following the accident, the city changed its traffic rules.",
+       "teaches": [
+-        "formal-cause-connectors"
+-      ],
+-      "sentence": "En __ de las potestades conferidas por la Constitución, el ministro promulgó la ley.",
+-      "answer": "virtud",
+-      "english": "By virtue of the powers conferred by the Constitution, the minister promulgated the law."
++        "prepositional-phrases"
++      ]
+     },
+     {
+       "id": "b2-27-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "teaches": [
+-        "formal-cause-connectors"
+-      ],
+-      "question": "¿Cuál de las siguientes frases introduce formalmente un acontecimiento conmemorativo?",
++      "question": "Which sentence says that the mayor can close the street because the law gives him that power?",
+       "options": [
+-        "Con motivo del centenario constitucional, se inauguró el archivo nacional.",
+-        "En pos del centenario constitucional, se inauguró el archivo nacional.",
+-        "A costa del centenario constitucional, se inauguró el archivo nacional.",
+-        "Conforme de centenario constitucional, se inauguró el archivo nacional."
++        "En virtud de la ley, el alcalde puede cerrar la calle.",
++        "A raíz de la ley, el alcalde puede cerrar la calle.",
++        "Con motivo de la ley, el alcalde puede cerrar la calle."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "prepositional-phrases"
++      ]
+     },
+     {
+       "id": "b2-27-01.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "formal-cause-connectors"
++      "tiles": [
++        "En",
++        "virtud",
++        "de",
++        "este",
++        "contrato,",
++        "la",
++        "empresa",
++        "debe",
++        "pagar",
++        "a",
++        "tiempo."
+       ],
+-      "sentence": "A __ de los reclamos sindicales, se instituyó la jornada laboral de ocho horas.",
+-      "answer": "raíz",
+-      "english": "As a direct result of union demands, the eight-hour workday was instituted."
+-    },
+-    {
+-      "id": "b2-27-01.ex05",
+-      "type": "matching",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-prepositional-regimes-locutions-vocab"
++      "solution": [
++        "En",
++        "virtud",
++        "de",
++        "este",
++        "contrato,",
++        "la",
++        "empresa",
++        "debe",
++        "pagar",
++        "a",
++        "tiempo."
+       ],
+-      "pairs": [
+-        [
+-          "a raíz de",
+-          "as a result of / following"
+-        ],
+-        [
+-          "en virtud de",
+-          "by virtue of / pursuant to"
+-        ],
+-        [
+-          "la coyuntura",
+-          "the situational context"
+-        ],
+-        [
+-          "el precepto legal",
+-          "the legal precept / mandate"
+-        ]
++      "english": "Under this contract, the company must pay on time.",
++      "teaches": [
++        "prepositional-phrases"
+       ]
+     },
+     {
+-      "id": "b2-27-01.ex06",
++      "id": "b2-27-01.ex05",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "En 'Anaconda' de Horacio Quiroga, ¿cuál es la causa inmediata que motiva a Lanceolata a convocar el congreso?",
++      "question": "What did the vipers fear most when they thought about men?",
+       "options": [
+-        "La crecida destructiva de las aguas del río Paraná.",
+-        "La instalación del campamento científico humano para extraer veneno.",
+-        "Una rebelión interna de las víboras constrictoras del monte.",
+-        "La sequía extrema que afectó a la fauna del sotobosque."
++        "El machete y el fuego.",
++        "Los perros y los caballos.",
++        "El frío y la lluvia."
+       ],
+-      "correct": 1
++      "correct": 0
++    },
++    {
++      "id": "b2-27-01.ex06",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "Con motivo del aniversario, el museo abrió gratis todo el fin de semana.",
++      "english": "To mark its anniversary, the museum opened free all weekend.",
++      "teaches": [
++        "prepositional-phrases"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-27-02-ex.json b/content/es-latam/exercises/b2/b2-27-02-ex.json
+index b615d9e7..66c84398 100644
+--- a/content/es-latam/exercises/b2/b2-27-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-27-02-ex.json
+@@ -3,96 +3,120 @@
+   "exercises": [
+     {
+       "id": "b2-27-02.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "prepositional-phrases"
+-      ],
+-      "question": "¿Cuál es la expresión canónica recomendada en registro formal para citar conformidad con una norma?",
+-      "options": [
+-        "Los magistrados resolvieron la controversia conforme a derecho.",
+-        "Los magistrados resolvieron la controversia de acuerdo a derecho.",
+-        "Los magistrados resolvieron la controversia con arreglo de derecho.",
+-        "Los magistrados resolvieron la controversia a tenor con derecho."
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "de acuerdo con",
++          "according to"
++        ],
++        [
++          "conforme a",
++          "in line with"
++        ],
++        [
++          "el reglamento",
++          "the rules"
++        ],
++        [
++          "el informe",
++          "the report"
++        ]
+       ],
+-      "correct": 0
++      "teaches": [
++        "b2-prepositional-regimes-locutions-vocab"
++      ]
+     },
+     {
+       "id": "b2-27-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "De acuerdo __ el informe, el número de turistas subió este año.",
++      "answer": "con",
++      "english": "According to the report, the number of tourists rose this year.",
+       "teaches": [
+         "prepositional-phrases"
+-      ],
+-      "sentence": "De acuerdo __ las estadísticas oficiales, la inflación disminuyó de manera sostenida.",
+-      "answer": "con",
+-      "english": "According to official statistics, inflation decreased steadily."
++      ]
+     },
+     {
+       "id": "b2-27-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "teaches": [
+-        "prepositional-phrases"
+-      ],
+-      "question": "¿Qué locución prepositiva denota adecuación al contenido literal de un texto o testimonio?",
++      "question": "Which sentence says that the work was done in line with the rules?",
+       "options": [
+-        "A tenor de las declaraciones de los testigos, no hubo negligencia oficial.",
+-        "En pos de las declaraciones de los testigos, no hubo negligencia oficial.",
+-        "A costa de las declaraciones de los testigos, no hubo negligencia oficial.",
+-        "So pretexto de las declaraciones de los testigos, no hubo negligencia oficial."
++        "El trabajo se hizo conforme al reglamento.",
++        "El trabajo se hizo conforme del reglamento.",
++        "El trabajo se hizo conforme el reglamento."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "prepositional-phrases"
++      ]
+     },
+     {
+       "id": "b2-27-02.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "El",
++        "personal",
++        "trabaja",
++        "conforme",
++        "al",
++        "reglamento",
++        "de",
++        "la",
++        "empresa."
++      ],
++      "solution": [
++        "El",
++        "personal",
++        "trabaja",
++        "conforme",
++        "al",
++        "reglamento",
++        "de",
++        "la",
++        "empresa."
++      ],
++      "english": "The staff work in line with the company's rules.",
+       "teaches": [
+         "prepositional-phrases"
+-      ],
+-      "sentence": "Se liquidaron las compensaciones con __ a los estatutos vigentes de la institución.",
+-      "answer": "arreglo",
+-      "english": "Compensations were settled in compliance with the institution's current statutes."
++      ]
+     },
+     {
+       "id": "b2-27-02.ex05",
+-      "type": "matching",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-prepositional-regimes-locutions-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Carlos",
++          "text": "¿Podemos usar la sala sin pedir permiso?"
++        },
++        {
++          "speaker": "Meg",
++          "text": "No. Hay que pedirlo _____ el reglamento."
++        }
+       ],
+-      "pairs": [
+-        [
+-          "conforme a",
+-          "in accordance with / according to"
+-        ],
+-        [
+-          "la estipulación",
+-          "the contractual stipulation"
+-        ],
+-        [
+-          "supeditar",
+-          "to condition / to make subject to"
+-        ],
+-        [
+-          "acatar",
+-          "to abide by / to comply with"
+-        ]
++      "options": [
++        "conforme a",
++        "conforme de",
++        "conforme por"
++      ],
++      "correct": 0,
++      "teaches": [
++        "prepositional-phrases"
+       ]
+     },
+     {
+       "id": "b2-27-02.ex06",
+-      "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "En el relato de Quiroga, ¿por qué asisten las víboras al congreso convocado por Lanceolata?",
+-      "options": [
+-        "Porque los códigos ancestrales de la selva proscriben querellas durante treguas mayores.",
+-        "Porque deseaban entregarse pacíficamente a los científicos del campamento.",
+-        "Porque el fuego del campamento había destruido todas sus madrigueras.",
+-        "Porque Anaconda las amenazó con expulsarlas del cauce del río."
+-      ],
+-      "correct": 0
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "De acuerdo con los datos, hay más turistas que el año pasado.",
++      "english": "According to the data, there are more tourists than last year.",
++      "teaches": [
++        "prepositional-phrases"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-27-03-ex.json b/content/es-latam/exercises/b2/b2-27-03-ex.json
+index 95574445..f06d50f3 100644
+--- a/content/es-latam/exercises/b2/b2-27-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-27-03-ex.json
+@@ -3,96 +3,123 @@
+   "exercises": [
+     {
+       "id": "b2-27-03.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "purpose-connectors"
+-      ],
+-      "question": "¿Qué locución prepositiva expresa una subordinación o sacrificio noble en favor de un bien superior?",
+-      "options": [
+-        "Renunciaron a privilegios individuales en aras del bienestar colectivo.",
+-        "Renunciaron a privilegios individuales a costa del bienestar colectivo.",
+-        "Renunciaron a privilegios individuales so pretexto del bienestar colectivo.",
+-        "Renunciaron a privilegios individuales al margen del bienestar colectivo."
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "en aras de",
++          "for the sake of"
++        ],
++        [
++          "a costa de",
++          "at the expense of"
++        ],
++        [
++          "ceder",
++          "to give way"
++        ],
++        [
++          "la paz",
++          "peace"
++        ]
+       ],
+-      "correct": 0
++      "teaches": [
++        "b2-prepositional-regimes-locutions-vocab"
++      ]
+     },
+     {
+       "id": "b2-27-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "teaches": [
+-        "purpose-connectors"
+-      ],
+-      "sentence": "No se puede obtener crecimiento económico a __ de los derechos laborales fundamentales.",
++      "sentence": "Terminó el proyecto a __ de su tiempo libre.",
+       "answer": "costa",
+-      "english": "Economic growth cannot be achieved at the expense of fundamental labor rights."
++      "english": "She finished the project at the expense of her free time.",
++      "teaches": [
++        "prepositional-phrases"
++      ]
+     },
+     {
+       "id": "b2-27-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "teaches": [
+-        "purpose-connectors"
+-      ],
+-      "question": "¿Cuál de las siguientes frases expresa una meta planificada a mediano plazo?",
++      "question": "Which sentence says that both sides gave way for the sake of peace?",
+       "options": [
+-        "Diseñaron un plan integral con miras a la descarbonización energética del país.",
+-        "Diseñaron un plan integral a tenor de la descarbonización energética del país.",
+-        "Diseñaron un plan integral so pretexto de la descarbonización energética del país.",
+-        "Diseñaron un plan integral en virtud de la descarbonización energética del país."
++        "Las dos partes cedieron en aras de la paz.",
++        "Las dos partes cedieron a costa de la paz.",
++        "Las dos partes cedieron en aras la paz."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "prepositional-phrases"
++      ]
+     },
+     {
+       "id": "b2-27-03.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "purpose-connectors"
++      "tiles": [
++        "Aprobó",
++        "el",
++        "curso",
++        "a",
++        "costa",
++        "de",
++        "dormir",
++        "muy",
++        "poco."
+       ],
+-      "sentence": "Las organizaciones marcharon unidas en __ de la justicia social y la memoria histórica.",
+-      "answer": "pos",
+-      "english": "The organizations marched united in pursuit of social justice and historical memory."
++      "solution": [
++        "Aprobó",
++        "el",
++        "curso",
++        "a",
++        "costa",
++        "de",
++        "dormir",
++        "muy",
++        "poco."
++      ],
++      "english": "He passed the course at the expense of sleeping very little.",
++      "teaches": [
++        "prepositional-phrases"
++      ]
+     },
+     {
+       "id": "b2-27-03.ex05",
+-      "type": "matching",
+-      "category": "vocabulary",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Carlos",
++          "text": "¿Cómo logró la empresa bajar los precios?"
++        },
++        {
++          "speaker": "Meg",
++          "text": "_____ la calidad."
++        }
++      ],
++      "options": [
++        "A costa de",
++        "En aras de",
++        "Con miras a"
++      ],
++      "correct": 0,
+       "teaches": [
+-        "b2-prepositional-regimes-locutions-vocab"
++        "prepositional-phrases"
+       ],
+-      "pairs": [
+-        [
+-          "en aras de",
+-          "for the sake of / in pursuit of"
+-        ],
+-        [
+-          "a costa de",
+-          "at the expense of / at the cost of"
+-        ],
+-        [
+-          "la abnegación",
+-          "the selflessness / self-sacrifice"
+-        ],
+-        [
+-          "menoscabar",
+-          "to undermine / to impair"
+-        ]
+-      ]
++      "distractor_skills": {
++        "2": "purpose-connectors"
++      }
+     },
+     {
+       "id": "b2-27-03.ex06",
+-      "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "En 'Anaconda', ¿qué advierte la gran constrictora sobre el costo de un ataque precipitado contra los hombres?",
+-      "options": [
+-        "Que derivaría en una represalia humana con desmonte y fuego a costa del hábitat selvático.",
+-        "Que los hombres aprenderían a nadar y conquistarían el fondo del río.",
+-        "Que las víboras venenosas perderían su reputación ante los demás animales.",
+-        "Que el veneno se agotaría para siempre en todas las generaciones futuras."
+-      ],
+-      "correct": 0
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "Renunciaron a sus vacaciones en aras del equipo.",
++      "english": "They gave up their holidays for the sake of the team.",
++      "teaches": [
++        "prepositional-phrases"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-27-04-ex.json b/content/es-latam/exercises/b2/b2-27-04-ex.json
+index d0a6e19b..2698c0d2 100644
+--- a/content/es-latam/exercises/b2/b2-27-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-27-04-ex.json
+@@ -3,96 +3,124 @@
+   "exercises": [
+     {
+       "id": "b2-27-04.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "prepositional-phrases"
+-      ],
+-      "question": "¿Qué locución denuncia de manera explícita un motivo aparente o coartada falaz?",
+-      "options": [
+-        "So pretexto de mantener el orden, clausuraron periódicos independientes.",
+-        "Conforme a mantener el orden, clausuraron periódicos independientes.",
+-        "En aras de mantener el orden, clausuraron periódicos independientes.",
+-        "De acuerdo con mantener el orden, clausuraron periódicos independientes."
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "a juicio de",
++          "in the opinion of"
++        ],
++        [
++          "al margen de",
++          "apart from"
++        ],
++        [
++          "el experto",
++          "the expert"
++        ],
++        [
++          "llevarse bien",
++          "to get on well"
++        ]
+       ],
+-      "correct": 0
++      "teaches": [
++        "b2-prepositional-regimes-locutions-vocab"
++      ]
+     },
+     {
+       "id": "b2-27-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Al __ de la política, todos queremos un barrio más seguro.",
++      "answer": "margen",
++      "english": "Politics aside, we all want a safer neighbourhood.",
+       "teaches": [
+         "prepositional-phrases"
+-      ],
+-      "sentence": "Se sancionó la falta administrativa, sin __ de las acciones penales que procedan.",
+-      "answer": "perjuicio",
+-      "english": "The administrative offense was sanctioned, without prejudice to any criminal actions that may apply."
++      ]
+     },
+     {
+       "id": "b2-27-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "teaches": [
+-        "prepositional-phrases"
+-      ],
+-      "question": "¿Qué opción introduce el criterio pericial de una autoridad consultada?",
++      "question": "Which sentence gives the experts' opinion that the project is too expensive?",
+       "options": [
+-        "A juicio de los constitucionalistas, el decreto transgrede normas superiores.",
+-        "En pos de los constitucionalistas, el decreto transgrede normas superiores.",
+-        "A costa de los constitucionalistas, el decreto transgrede normas superiores.",
+-        "Conforme con los constitucionalistas, el decreto transgrede normas superiores."
++        "A juicio de los expertos, el proyecto es demasiado caro.",
++        "Al margen de los expertos, el proyecto es demasiado caro.",
++        "A juicio los expertos, el proyecto es demasiado caro."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "prepositional-phrases"
++      ]
+     },
+     {
+       "id": "b2-27-04.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "Al",
++        "margen",
++        "de",
++        "las",
++        "diferencias,",
++        "los",
++        "dos",
++        "amigos",
++        "se",
++        "llevan",
++        "bien."
++      ],
++      "solution": [
++        "Al",
++        "margen",
++        "de",
++        "las",
++        "diferencias,",
++        "los",
++        "dos",
++        "amigos",
++        "se",
++        "llevan",
++        "bien."
++      ],
++      "english": "Differences aside, the two friends get on well.",
+       "teaches": [
+         "prepositional-phrases"
+-      ],
+-      "sentence": "Al __ de las discrepancias políticas, la salud pública fue priorizada por todos.",
+-      "answer": "margen",
+-      "english": "Apart from political disagreements, public health was prioritized by everyone."
++      ]
+     },
+     {
+       "id": "b2-27-04.ex05",
+-      "type": "matching",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-prepositional-regimes-locutions-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Carlos",
++          "text": "¿Qué piensas del nuevo horario?"
++        },
++        {
++          "speaker": "Meg",
++          "text": "_____, es mejor que el anterior."
++        }
+       ],
+-      "pairs": [
+-        [
+-          "so pretexto de",
+-          "under the pretext of"
+-        ],
+-        [
+-          "sin perjuicio de",
+-          "without prejudice to / notwithstanding"
+-        ],
+-        [
+-          "la salvedad",
+-          "the proviso / reservation"
+-        ],
+-        [
+-          "el subterfugio",
+-          "the subterfuge / evasion"
+-        ]
++      "options": [
++        "A mi juicio",
++        "A mi margen",
++        "Al margen de mí"
++      ],
++      "correct": 0,
++      "teaches": [
++        "prepositional-phrases"
+       ]
+     },
+     {
+       "id": "b2-27-04.ex06",
+-      "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "En el relato de Quiroga, ¿cómo describe Lanceolata las capturas de serpientes por parte de los científicos?",
+-      "options": [
+-        "Como un secuestro servil so pretexto de investigar sus hábitos zoológicos.",
+-        "Como una colaboración voluntaria para mejorar la medicina del monte.",
+-        "Como una invitación honorable a formar parte de una expedición mundial.",
+-        "Como un tributo religioso exigido por los dioses de la selva."
+-      ],
+-      "correct": 0
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "A juicio de los vecinos, la calle es ahora más segura.",
++      "english": "In the neighbours' opinion, the street is now safer.",
++      "teaches": [
++        "prepositional-phrases"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-27-05-ex.json b/content/es-latam/exercises/b2/b2-27-05-ex.json
+index d25fb6c7..b7912312 100644
+--- a/content/es-latam/exercises/b2/b2-27-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-27-05-ex.json
+@@ -3,96 +3,118 @@
+   "exercises": [
+     {
+       "id": "b2-27-05.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "verbos-regimen-preposicional"
+-      ],
+-      "question": "¿Qué preposición rige el verbo analítico 'estribar' en la prosa culta formal?",
+-      "options": [
+-        "La fortaleza del sistema estriba en la confianza mutua entre ciudadanos.",
+-        "La fortaleza del sistema estriba con la confianza mutua entre ciudadanos.",
+-        "La fortaleza del sistema estriba de la confianza mutua entre ciudadanos.",
+-        "La fortaleza del sistema estriba por la confianza mutua entre ciudadanos."
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "consistir en",
++          "to consist of"
++        ],
++        [
++          "derivar en",
++          "to lead to"
++        ],
++        [
++          "tratarse de",
++          "to be about"
++        ],
++        [
++          "abogar por",
++          "to speak in favour of"
++        ]
+       ],
+-      "correct": 0
++      "teaches": [
++        "b2-prepositional-regimes-locutions-vocab"
++      ]
+     },
+     {
+       "id": "b2-27-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "La discusión derivó __ una pelea.",
++      "answer": "en",
++      "english": "The argument ended in a fight.",
+       "teaches": [
+         "verbos-regimen-preposicional"
+-      ],
+-      "sentence": "Las negociaciones parlamentarias derivaron __ un histórico acuerdo multipartidario.",
+-      "answer": "en",
+-      "english": "The parliamentary negotiations resulted in a historic multi-party agreement."
++      ]
+     },
+     {
+       "id": "b2-27-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "teaches": [
+-        "verbos-regimen-preposicional"
+-      ],
+-      "question": "¿Qué verbo con régimen preposicional significa tener como materia temática un asunto?",
++      "question": "Which sentence says that the job consists of answering calls?",
+       "options": [
+-        "La conferencia versó sobre la historia de la laicidad republicana.",
+-        "La conferencia abogó sobre la historia de la laicidad republicana.",
+-        "La conferencia estribó sobre la historia de la laicidad republicana.",
+-        "La conferencia derivó sobre la historia de la laicidad republicana."
++        "El trabajo consiste en contestar llamadas.",
++        "El trabajo consiste de contestar llamadas.",
++        "El trabajo consiste a contestar llamadas."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "verbos-regimen-preposicional"
++      ]
+     },
+     {
+       "id": "b2-27-05.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "Los",
++        "vecinos",
++        "abogan",
++        "por",
++        "una",
++        "calle",
++        "sin",
++        "carros."
++      ],
++      "solution": [
++        "Los",
++        "vecinos",
++        "abogan",
++        "por",
++        "una",
++        "calle",
++        "sin",
++        "carros."
++      ],
++      "english": "The neighbours are campaigning for a street without cars.",
+       "teaches": [
+         "verbos-regimen-preposicional"
+-      ],
+-      "sentence": "La delegación diplomática abogó __ el respeto al derecho internacional humanitario.",
+-      "answer": "por",
+-      "english": "The diplomatic delegation advocated for respect for international humanitarian law."
++      ]
+     },
+     {
+       "id": "b2-27-05.ex05",
+-      "type": "matching",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-prepositional-regimes-locutions-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Carlos",
++          "text": "¿De qué trata el libro?"
++        },
++        {
++          "speaker": "Meg",
++          "text": "Se _____ un problema entre dos hermanos."
++        }
+       ],
+-      "pairs": [
+-        [
+-          "estribar en",
+-          "to lie in / to consist in"
+-        ],
+-        [
+-          "derivar en",
+-          "to lead to / to result in"
+-        ],
+-        [
+-          "versar sobre",
+-          "to deal with / to be about"
+-        ],
+-        [
+-          "abogar por",
+-          "to advocate for / to champion"
+-        ]
++      "options": [
++        "trata de",
++        "trata en",
++        "trata a"
++      ],
++      "correct": 0,
++      "teaches": [
++        "verbos-regimen-preposicional"
+       ]
+     },
+     {
+       "id": "b2-27-05.ex06",
+-      "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "Al final del relato de Quiroga, ¿en qué concluye Anaconda que estriba la tragedia de las fieras del monte?",
+-      "options": [
+-        "En el implacable avance técnico de una civilización que devora el misterio de la naturaleza.",
+-        "En la traición de las serpientes venenosas que abandonaron la lucha.",
+-        "En la falta de lluvias que debilitó las corrientes de los ríos selváticos.",
+-        "En la incapacidad de comunicarse telepáticamente con los científicos."
+-      ],
+-      "correct": 0
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "La discusión derivó en un problema serio.",
++      "english": "The argument led to a serious problem.",
++      "teaches": [
++        "verbos-regimen-preposicional"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-27-consolidation-ex.json b/content/es-latam/exercises/b2/b2-27-consolidation-ex.json
+index b6df102c..b7b2bbb3 100644
+--- a/content/es-latam/exercises/b2/b2-27-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-27-consolidation-ex.json
+@@ -3,123 +3,140 @@
+   "exercises": [
+     {
+       "id": "b2-27-consolidation.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "formal-cause-connectors"
+-      ],
+-      "question": "¿Qué enunciado integra con precisión normativa la locución causal formal?",
+-      "options": [
+-        "En virtud del dictamen vinculante, el comité procedió a revisar las credenciales.",
+-        "En virtud al dictamen vinculante, el comité procedió a revisar las credenciales.",
+-        "A raíz con el dictamen vinculante, el comité procedió a revisar las credenciales.",
+-        "Conforme de dictamen vinculante, el comité procedió a revisar las credenciales."
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "a raíz de",
++          "following"
++        ],
++        [
++          "conforme a",
++          "in line with"
++        ],
++        [
++          "a costa de",
++          "at the expense of"
++        ],
++        [
++          "abogar por",
++          "to speak in favour of"
++        ]
+       ],
+-      "correct": 0
++      "teaches": [
++        "b2-prepositional-regimes-locutions-vocab"
++      ]
+     },
+     {
+       "id": "b2-27-consolidation.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Con __ de la visita del alcalde, cerraron la plaza.",
++      "answer": "motivo",
++      "english": "Because of the mayor's visit, they closed the square.",
+       "teaches": [
+         "prepositional-phrases"
+-      ],
+-      "sentence": "Se liquidaron los haberes con __ a las ordenanzas vigentes de la administración.",
+-      "answer": "arreglo",
+-      "english": "Salaries were settled in compliance with current administration ordinances."
++      ]
+     },
+     {
+       "id": "b2-27-consolidation.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Todo se hizo __ a la ley.",
++      "answer": "conforme",
++      "english": "Everything was done in line with the law.",
+       "teaches": [
+-        "verbos-regimen-preposicional"
+-      ],
+-      "sentence": "La singularidad del modelo democrático estriba __ la confianza cívica entre sus ciudadanos.",
+-      "answer": "en",
+-      "english": "The uniqueness of the democratic model lies in civic trust among its citizens."
++        "prepositional-phrases"
++      ]
+     },
+     {
+       "id": "b2-27-consolidation.ex04",
+       "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "purpose-connectors"
+-      ],
+-      "question": "¿Qué opción formula un sacrificio legítimo en favor de un bien superior?",
++      "category": "reading",
++      "question": "Why did Cruzada want the culebras to help the vipers?",
+       "options": [
+-        "Ambas partes flexibilizaron sus posturas en aras de asegurar la paz republicana.",
+-        "Ambas partes flexibilizaron sus posturas a costa de asegurar la paz republicana.",
+-        "Ambas partes flexibilizaron sus posturas so pretexto de asegurar la paz republicana.",
+-        "Ambas partes flexibilizaron sus posturas al margen de asegurar la paz republicana."
++        "Porque podían ir a la Casa y ver qué hacía el hombre.",
++        "Porque tenían más veneno y más fuerza que ellas.",
++        "Porque conocían a los hombres desde hacía muchos años."
+       ],
+       "correct": 0
+     },
+     {
+       "id": "b2-27-consolidation.ex05",
+-      "type": "multiple-choice",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "prepositional-phrases"
++      "tiles": [
++        "El",
++        "curso",
++        "consiste",
++        "en",
++        "leer",
++        "y",
++        "escribir",
++        "textos",
++        "cortos."
+       ],
+-      "question": "¿Cuál de las siguientes oraciones utiliza una locución de pretexto de forma sintácticamente intachable?",
+-      "options": [
+-        "So pretexto de seguridad nacional, se suspendieron ilegítimamente las garantías cívicas.",
+-        "So el pretexto de seguridad nacional, se suspendieron ilegítimamente las garantías cívicas.",
+-        "Bajo pretexto a seguridad nacional, se suspendieron ilegítimamente las garantías cívicas.",
+-        "En pretexto de seguridad nacional, se suspendieron ilegítimamente las garantías cívicas."
++      "solution": [
++        "El",
++        "curso",
++        "consiste",
++        "en",
++        "leer",
++        "y",
++        "escribir",
++        "textos",
++        "cortos."
+       ],
+-      "correct": 0
+-    },
+-    {
+-      "id": "b2-27-consolidation.ex06",
+-      "type": "fill-blank",
+-      "category": "grammar",
++      "english": "The course consists of reading and writing short texts.",
+       "teaches": [
+         "verbos-regimen-preposicional"
+-      ],
+-      "sentence": "Los representantes diplomáticos abogaron __ una solución negociada y multilateral.",
+-      "answer": "por",
+-      "english": "The diplomatic representatives advocated for a negotiated, multilateral solution."
++      ]
+     },
+     {
+-      "id": "b2-27-consolidation.ex07",
+-      "type": "matching",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-prepositional-regimes-locutions-vocab"
++      "id": "b2-27-consolidation.ex06",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Carlos",
++          "text": "¿Por qué cerraron el museo el sábado?"
++        },
++        {
++          "speaker": "Meg",
++          "text": "_____ la lluvia, no pudo entrar nadie."
++        }
+       ],
+-      "pairs": [
+-        [
+-          "el precepto",
+-          "the precept / legal mandate"
+-        ],
+-        [
+-          "el subterfugio",
+-          "the subterfuge / evasion"
+-        ],
+-        [
+-          "la salvedad",
+-          "the proviso / reservation"
+-        ],
+-        [
+-          "versar sobre",
+-          "to deal with / to be about"
+-        ]
++      "options": [
++        "A raíz de",
++        "En virtud de",
++        "A costa de"
++      ],
++      "correct": 0,
++      "teaches": [
++        "prepositional-phrases"
+       ]
+     },
+     {
+-      "id": "b2-27-consolidation.ex08",
++      "id": "b2-27-consolidation.ex07",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué síntesis filosófica plantea 'Anaconda' sobre el encuentro entre la selva y la técnica humana?",
++      "question": "What did the men in the Casa plan to do with the vipers, according to the Ñacaniná?",
+       "options": [
+-        "La confrontación trágica entre el instinto primario silvestre y el cálculo dominador de la civilización.",
+-        "La victoria definitiva de los animales que logran erradicar a la especie humana del continente.",
+-        "La domesticación pacífica de todas las especies de serpientes para el trabajo agrícola.",
+-        "La demostración de que el veneno ofídico carece de cualquier aplicación científica útil."
++        "Tenerlas vivas y sacarles el veneno.",
++        "Usar machetes y fuego contra todas ellas.",
++        "Dejarlas libres en otra parte de la selva."
+       ],
+       "correct": 0
++    },
++    {
++      "id": "b2-27-consolidation.ex08",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "A mi juicio, el debate derivó en un acuerdo importante.",
++      "english": "In my opinion, the debate led to an important agreement.",
++      "teaches": [
++        "prepositional-phrases"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-30-01-ex.json b/content/es-latam/exercises/b2/b2-30-01-ex.json
+index d47abef9..355e1a39 100644
+--- a/content/es-latam/exercises/b2/b2-30-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-30-01-ex.json
+@@ -3,96 +3,128 @@
+   "exercises": [
+     {
+       "id": "b2-30-01.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "contrast-markers"
+-      ],
+-      "question": "¿Qué marcador adversativo introduce un obstáculo superado sin anular la afirmación principal?",
+-      "options": [
+-        "Sin embargo",
+-        "Por consiguiente",
+-        "Es decir",
+-        "En primer lugar"
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "en cambio",
++          "on the other hand"
++        ],
++        [
++          "por el contrario",
++          "on the contrary"
++        ],
++        [
++          "al contrario",
++          "quite the opposite"
++        ],
++        [
++          "ahora bien",
++          "that said"
++        ]
+       ],
+-      "correct": 0
++      "teaches": [
++        "b2-discourse-markers-contrast-restriction-vocab"
++      ]
+     },
+     {
+       "id": "b2-30-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "No es caro; por el __, es muy barato.",
++      "answer": "contrario",
++      "english": "It is not expensive; on the contrary, it is very cheap.",
+       "teaches": [
+         "contrast-markers"
+-      ],
+-      "sentence": "El terreno era árido y hostil; no __, los rebeldes resistieron con heroísmo inquebrantable.",
+-      "answer": "obstante",
+-      "english": "The terrain was arid and hostile; nevertheless, the rebels resisted with unshakeable heroism."
++      ]
+     },
+     {
+       "id": "b2-30-01.ex03",
+-      "type": "matching",
++      "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence compares two people and finds them different?",
++      "options": [
++        "Mi hermana vive en la ciudad; yo, en cambio, vivo en el campo.",
++        "Mi hermana vive en la ciudad; yo, ahora bien, vivo en el campo.",
++        "Mi hermana vive en la ciudad; yo, por eso, vivo en el campo."
++      ],
++      "correct": 0,
+       "teaches": [
+         "contrast-markers"
+       ],
+-      "pairs": [
+-        [
+-          "sin embargo",
+-          "objeción o límite sustantivo estándar"
+-        ],
+-        [
+-          "no obstante",
+-          "contraste formal de alta prestancia"
+-        ],
+-        [
+-          "con todo",
+-          "superación de múltiples dificultades previas"
+-        ],
+-        [
+-          "aun así",
+-          "persistencia a pesar de los reveses"
+-        ]
+-      ]
++      "distractor_skills": {
++        "2": "porque-y-por-eso"
++      }
+     },
+     {
+       "id": "b2-30-01.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "Tiene",
++        "poca",
++        "experiencia;",
++        "no",
++        "obstante,",
++        "hace",
++        "un",
++        "buen",
++        "trabajo."
++      ],
++      "solution": [
++        "Tiene",
++        "poca",
++        "experiencia;",
++        "no",
++        "obstante,",
++        "hace",
++        "un",
++        "buen",
++        "trabajo."
++      ],
++      "english": "He has little experience; nevertheless, he does a good job.",
+       "teaches": [
+         "contrast-markers"
+-      ],
+-      "sentence": "Las fuerzas regulares sufrieron bajas considerables; con __, continuaron el asedio de la ciudadela.",
+-      "answer": "todo",
+-      "english": "Regular forces suffered considerable casualties; even so, they continued the siege of the citadel."
++      ]
+     },
+     {
+       "id": "b2-30-01.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-contrast-restriction-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Carlos",
++          "text": "¿Te molesta el ruido de la calle?"
++        },
++        {
++          "speaker": "Meg",
++          "text": "_____, me gusta."
++        }
+       ],
+-      "question": "¿Qué sustantivo designa una rivalidad, incompatibilidad u oposición irreconciliable entre doctrinas?",
+       "options": [
+-        "El antagonismo",
+-        "El preámbulo",
+-        "La digresión",
+-        "El corolario"
++        "Al contrario",
++        "Ahora bien",
++        "Por eso"
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "contrast-markers"
++      ],
++      "distractor_skills": {
++        "2": "porque-y-por-eso"
++      }
+     },
+     {
+       "id": "b2-30-01.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Cuál es la famosa sentencia de Euclides da Cunha que sintetiza la resistencia del hombre del sertão?",
++      "question": "In which years did the war of Canudos happen, according to the text?",
+       "options": [
+-        "El sertanejo es un soñador ingenuo.",
+-        "El sertanejo es, ante todo, un fuerte, modelado por la dureza de la tierra.",
+-        "El campesino debe someterse a la voluntad de la capital.",
+-        "La caatinga es un paraíso fértil sin dificultades."
++        "En 1896 y 1897.",
++        "En 1866 y 1909.",
++        "En 1902 y 1981."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-30-02-ex.json b/content/es-latam/exercises/b2/b2-30-02-ex.json
+index 3bac5c2b..7e373032 100644
+--- a/content/es-latam/exercises/b2/b2-30-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-30-02-ex.json
+@@ -3,96 +3,106 @@
+   "exercises": [
+     {
+       "id": "b2-30-02.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "contrast-markers"
+-      ],
+-      "question": "¿Qué conector sustitutivo formal impone la opción verdadera tras una negación previa categórica?",
+-      "options": [
+-        "Antes bien",
+-        "Por ende",
+-        "O sea",
+-        "Asimismo"
+-      ],
+-      "correct": 0
+-    },
+-    {
+-      "id": "b2-30-02.ex02",
+-      "type": "fill-blank",
+-      "category": "grammar",
+-      "teaches": [
+-        "contrast-markers"
+-      ],
+-      "sentence": "Los sertanejos no capitularon ante el asedio; por el __, combatieron hasta el último cartucho.",
+-      "answer": "contrario",
+-      "english": "The sertanejos did not surrender to the siege; on the contrary, they fought until the last cartridge."
+-    },
+-    {
+-      "id": "b2-30-02.ex03",
+       "type": "matching",
+-      "category": "grammar",
+-      "teaches": [
+-        "contrast-markers"
+-      ],
++      "category": "vocabulary",
+       "pairs": [
+         [
+-          "por el contrario",
+-          "sustitución tajante tras negación"
++          "sino",
++          "but rather"
+         ],
+         [
+-          "al contrario",
+-          "oposición diametral de términos"
++          "en vez de",
++          "instead of"
+         ],
+         [
+-          "antes bien",
+-          "matización correctiva en registro culto"
++          "en lugar de",
++          "in place of"
+         ],
+         [
+-          "muy al contrario",
+-          "refuerzo enfático de la antítesis"
++          "la revista",
++          "the magazine"
+         ]
++      ],
++      "teaches": [
++        "b2-discourse-markers-contrast-restriction-vocab"
+       ]
+     },
+     {
+-      "id": "b2-30-02.ex04",
++      "id": "b2-30-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "No compré el libro, __ la revista.",
++      "answer": "sino",
++      "english": "I did not buy the book, but the magazine.",
+       "teaches": [
+-        "contrast-markers"
+-      ],
+-      "sentence": "No se trataba de una turba fanática; antes __, era un pueblo despojado que defendía su dignidad.",
+-      "answer": "bien",
+-      "english": "It was not a fanatical mob; rather, it was a dispossessed people defending their dignity."
++        "sino-vs-pero"
++      ]
+     },
+     {
+-      "id": "b2-30-02.ex05",
++      "id": "b2-30-02.ex03",
+       "type": "multiple-choice",
+-      "category": "vocabulary",
++      "category": "grammar",
++      "question": "Which sentence says \"Instead of staying at home, I went out\"?",
++      "options": [
++        "En vez de quedarme en casa, salí.",
++        "En vez de me quedé en casa, salí.",
++        "En vez que quedarme en casa, salí."
++      ],
++      "correct": 0,
+       "teaches": [
+-        "b2-discourse-markers-contrast-restriction-vocab"
++        "prepositional-phrases"
++      ]
++    },
++    {
++      "id": "b2-30-02.ex04",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "En",
++        "lugar",
++        "de",
++        "llamar,",
++        "le",
++        "escribí",
++        "un",
++        "mensaje."
+       ],
+-      "question": "¿Qué verbo formal expresa la acción de contradecir, desmentir o combatir con argumentos una afirmación?",
+-      "options": [
+-        "Impugnar",
+-        "Soslayar",
+-        "Pormenorizar",
+-        "Recapitular"
++      "solution": [
++        "En",
++        "lugar",
++        "de",
++        "llamar,",
++        "le",
++        "escribí",
++        "un",
++        "mensaje."
+       ],
+-      "correct": 0
++      "english": "Instead of calling, I wrote him a message.",
++      "teaches": [
++        "prepositional-phrases"
++      ]
++    },
++    {
++      "id": "b2-30-02.ex05",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "No fui al cine, sino al teatro.",
++      "english": "I didn't go to the cinema, but to the theatre.",
++      "teaches": [
++        "sino-vs-pero"
++      ]
+     },
+     {
+       "id": "b2-30-02.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Quién fue el carismático líder espiritual que fundó la ciudadela comunal de Canudos?",
++      "question": "What does the text say a correspondent usually writes?",
+       "options": [
+-        "Virgulino Ferreira Lampião",
+-        "Antônio Conselheiro",
+-        "Tomé de Sousa",
+-        "Domingos Jorge Velho"
++        "Artículos para su periódico.",
++        "Novelas sobre su país.",
++        "Cartas a otros escritores."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-30-03-ex.json b/content/es-latam/exercises/b2/b2-30-03-ex.json
+index 28f12989..d8d160b5 100644
+--- a/content/es-latam/exercises/b2/b2-30-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-30-03-ex.json
+@@ -3,96 +3,124 @@
+   "exercises": [
+     {
+       "id": "b2-30-03.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "contrast-concession-connectors"
+-      ],
+-      "question": "¿Cuál es la función del marcador 'ahora bien' en un razonamiento complejo?",
+-      "options": [
+-        "Anunciar la fecha exacta de un suceso histórico.",
+-        "Introducir una salvedad o advertencia sustantiva sin desestimar la premisa precedente.",
+-        "Cerrar definitivamente un texto literario.",
+-        "Expresar indiferencia total hacia los hechos."
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "aun así",
++          "even so"
++        ],
++        [
++          "con todo",
++          "for all that"
++        ],
++        [
++          "el partido",
++          "the match"
++        ],
++        [
++          "la fiebre",
++          "the fever"
++        ]
+       ],
+-      "correct": 1
++      "teaches": [
++        "b2-discourse-markers-contrast-restriction-vocab"
++      ]
+     },
+     {
+       "id": "b2-30-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Estaba cansado; aun __, salió a correr.",
++      "answer": "así",
++      "english": "He was tired; even so, he went running.",
+       "teaches": [
+-        "contrast-concession-connectors"
+-      ],
+-      "sentence": "La constitución proclamaba la igualdad universal; ahora __, mantuvo la marginación de los libertos.",
+-      "answer": "bien",
+-      "english": "The constitution proclaimed universal equality; now then, it maintained the marginalization of freedmen."
++        "contrast-markers"
++      ]
+     },
+     {
+       "id": "b2-30-03.ex03",
+-      "type": "matching",
++      "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence says that he had a fever but went to work all the same?",
++      "options": [
++        "Tenía fiebre; aun así, fue a trabajar.",
++        "Tenía fiebre; por eso, fue a trabajar.",
++        "Tenía fiebre; aún así, fue a trabajar."
++      ],
++      "correct": 0,
+       "teaches": [
+-        "contrast-concession-connectors"
++        "contrast-markers"
+       ],
+-      "pairs": [
+-        [
+-          "ahora bien",
+-          "introducción de salvedad sustantiva"
+-        ],
+-        [
+-          "eso sí",
+-          "matiz restrictivo ágil en prosa culta"
+-        ],
+-        [
+-          "bien es verdad que",
+-          "concesión preliminar enfática"
+-        ],
+-        [
+-          "si bien",
+-          "concesión factual en modo indicativo"
+-        ]
+-      ]
++      "distractor_skills": {
++        "1": "porque-y-por-eso"
++      }
+     },
+     {
+       "id": "b2-30-03.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "contrast-concession-connectors"
++      "tiles": [
++        "Llovía",
++        "mucho;",
++        "con",
++        "todo,",
++        "el",
++        "partido",
++        "continuó."
++      ],
++      "solution": [
++        "Llovía",
++        "mucho;",
++        "con",
++        "todo,",
++        "el",
++        "partido",
++        "continuó."
+       ],
+-      "sentence": "Aprobaron la ley de abolición en 1888; eso __, sin garantizar tierras ni educación a los campesinos.",
+-      "answer": "sí",
+-      "english": "They approved the abolition law in 1888; mind you, without guaranteeing land or education to peasants."
++      "english": "It was raining hard; even so, the match went on.",
++      "teaches": [
++        "contrast-markers"
++      ]
+     },
+     {
+       "id": "b2-30-03.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-contrast-restriction-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Carlos",
++          "text": "¿Vas al parque con esta lluvia?"
++        },
++        {
++          "speaker": "Meg",
++          "text": "Sí. Llueve mucho; _____, voy."
++        }
+       ],
+-      "question": "¿Qué verbo formal designa la acción de suavizar o graduar un juicio para no ser absolutista?",
+       "options": [
+-        "Matizar",
+-        "Devorar",
+-        "Diezmar",
+-        "Emancipar"
++        "aun así",
++        "por eso",
++        "en cambio"
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "contrast-markers"
++      ],
++      "distractor_skills": {
++        "1": "porque-y-por-eso"
++      }
+     },
+     {
+       "id": "b2-30-03.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Cuántas expediciones militares debió enviar el gobierno brasileño para doblegar Canudos?",
++      "question": "What does the text say about Vargas Llosa's novel and Da Cunha's book?",
+       "options": [
+-        "Una sola expedición de caballería ligera.",
+-        "Cuatro expediciones sucesivas, requiriendo diez mil soldados y artillería pesada en la última.",
+-        "Ninguna, porque los rebeldes se rindieron de inmediato.",
+-        "Doce flotas marítimas de guerra."
++        "Son dos libros diferentes: una novela y un relato.",
++        "Son el mismo libro con dos títulos.",
++        "La novela se publicó antes que el libro de Da Cunha."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-30-04-ex.json b/content/es-latam/exercises/b2/b2-30-04-ex.json
+index d4621bef..271cb2e9 100644
+--- a/content/es-latam/exercises/b2/b2-30-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-30-04-ex.json
+@@ -3,96 +3,115 @@
+   "exercises": [
+     {
+       "id": "b2-30-04.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "contrast-markers"
+-      ],
+-      "question": "¿Qué marcador permite contraponer de modo simétrico dos realidades geográficas divergentes?",
+-      "options": [
+-        "En cambio",
+-        "Por consiguiente",
+-        "En resumen",
+-        "De este modo"
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "por un lado",
++          "on the one hand"
++        ],
++        [
++          "por otro lado",
++          "on the other hand"
++        ],
++        [
++          "la ventaja",
++          "the advantage"
++        ],
++        [
++          "el inconveniente",
++          "the drawback"
++        ]
+       ],
+-      "correct": 0
++      "teaches": [
++        "b2-discourse-markers-contrast-restriction-vocab"
++      ]
+     },
+     {
+       "id": "b2-30-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Por un lado, el piso es barato; por __ lado, está lejos del centro.",
++      "answer": "otro",
++      "english": "On the one hand the flat is cheap; on the other, it is far from the centre.",
+       "teaches": [
+         "contrast-markers"
+-      ],
+-      "sentence": "El litoral concentraba la riqueza azucarera; en __, el interior sertanejo vivía en la escasez hídrica.",
+-      "answer": "cambio",
+-      "english": "The coast concentrated sugar wealth; by contrast, the sertanejo interior lived in water scarcity."
++      ]
+     },
+     {
+       "id": "b2-30-04.ex03",
+-      "type": "matching",
++      "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence weighs a good point and a bad point of living in the centre?",
++      "options": [
++        "Por un lado, vivir en el centro es cómodo; por otro, es ruidoso.",
++        "Por un lado, vivir en el centro es cómodo; por eso, es ruidoso.",
++        "Por un lado, vivir en el centro es cómodo; por un lado, es ruidoso."
++      ],
++      "correct": 0,
+       "teaches": [
+         "contrast-markers"
+       ],
+-      "pairs": [
+-        [
+-          "en cambio",
+-          "contrapeso simétrico estándar"
+-        ],
+-        [
+-          "en contrapartida",
+-          "equilibrio de aspectos divergentes"
+-        ],
+-        [
+-          "por contra",
+-          "giro formal de oposición paralela"
+-        ],
+-        [
+-          "mientras que",
+-          "confrontación sintáctica directa"
+-        ]
+-      ]
++      "distractor_skills": {
++        "1": "porque-y-por-eso"
++      }
+     },
+     {
+       "id": "b2-30-04.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "Por",
++        "una",
++        "parte,",
++        "me",
++        "gusta",
++        "el",
++        "trabajo;",
++        "por",
++        "otra,",
++        "gano",
++        "poco."
++      ],
++      "solution": [
++        "Por",
++        "una",
++        "parte,",
++        "me",
++        "gusta",
++        "el",
++        "trabajo;",
++        "por",
++        "otra,",
++        "gano",
++        "poco."
++      ],
++      "english": "On the one hand I like the job; on the other I earn little.",
+       "teaches": [
+         "contrast-markers"
+-      ],
+-      "sentence": "Los terratenientes contaban con influencias políticas; en __, los peones carecían de derechos civiles.",
+-      "answer": "contrapartida",
+-      "english": "Landowners had political influence; in contrast, laborers lacked civil rights."
++      ]
+     },
+     {
+       "id": "b2-30-04.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "Por un lado, el piso es barato; en cambio, está lejos del centro.",
++      "english": "On the one hand the flat is cheap; on the other, it is far from the centre.",
+       "teaches": [
+-        "b2-discourse-markers-contrast-restriction-vocab"
+-      ],
+-      "question": "¿Qué sustantivo describe la falta de proporción o desequilibrio entre dos partes confrontadas?",
+-      "options": [
+-        "La asimetría",
+-        "El corolario",
+-        "La paráfrasis",
+-        "El exordio"
+-      ],
+-      "correct": 0
++        "contrast-markers"
++      ]
+     },
+     {
+       "id": "b2-30-04.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Cómo finalizó la resistencia de Canudos tras meses de bombardeos incesantes?",
++      "question": "The text says a book about a war could talk only about battles. What does Da Cunha's book do instead?",
+       "options": [
+-        "Con la rendición pacífica de los oficiales y el perdón judicial.",
+-        "Con cuatro defensores agonizantes combatiendo hasta el último proyectil frente a todo un ejército.",
+-        "Con la victoria militar campesina y la independencia de Bahía.",
+-        "Con la huida de toda la población hacia los Andes peruanos."
++        "Habla de tres temas: la tierra, su gente y la guerra.",
++        "Habla solo de la comunidad de Canudos.",
++        "Habla solo de los años en que Da Cunha fue periodista."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-30-05-ex.json b/content/es-latam/exercises/b2/b2-30-05-ex.json
+index b995c4f6..f5d8375f 100644
+--- a/content/es-latam/exercises/b2/b2-30-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-30-05-ex.json
+@@ -3,96 +3,125 @@
+   "exercises": [
+     {
+       "id": "b2-30-05.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "contrast-markers"
+-      ],
+-      "question": "¿Cuál es la función del marcador 'pese a ello' al inicio de una oración?",
+-      "options": [
+-        "Retomar adversidades previas para enfatizar la superación y constancia del sujeto.",
+-        "Anunciar la derrota definitiva e irreversible de un proyecto.",
+-        "Aclarar el significado de un término gramatical.",
+-        "Pedir silencio en una asamblea deliberativa."
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "eso sí",
++          "mind you"
++        ],
++        [
++          "de todos modos",
++          "anyway"
++        ],
++        [
++          "prestar",
++          "to lend"
++        ],
++        [
++          "devolver",
++          "to give back"
++        ]
+       ],
+-      "correct": 0
++      "teaches": [
++        "b2-discourse-markers-contrast-restriction-vocab"
++      ]
+     },
+     {
+       "id": "b2-30-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Te presto el carro; eso __, lo devuelves hoy.",
++      "answer": "sí",
++      "english": "I'll lend you the car; mind you, you bring it back today.",
+       "teaches": [
+         "contrast-markers"
+-      ],
+-      "sentence": "Pese a __, las comunidades campesinas retornaron a sus tierras para volver a levantar sus hogares.",
+-      "answer": "ello",
+-      "english": "Despite this, peasant communities returned to their lands to rebuild their homes once more."
++      ]
+     },
+     {
+       "id": "b2-30-05.ex03",
+-      "type": "matching",
++      "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence agrees and adds a condition?",
++      "options": [
++        "Puedes venir; eso sí, trae tu comida.",
++        "Puedes venir; por el contrario, trae tu comida.",
++        "Puedes venir; eso si, trae tu comida."
++      ],
++      "correct": 0,
+       "teaches": [
+         "contrast-markers"
+-      ],
+-      "pairs": [
+-        [
+-          "pese a ello",
+-          "reanudación con entereza tras infortunios"
+-        ],
+-        [
+-          "aun con todo",
+-          "evaluación ponderada del sufrimiento"
+-        ],
+-        [
+-          "si bien",
+-          "concesión serena en modo indicativo"
+-        ],
+-        [
+-          "no obstante ello",
+-          "fórmula culta de persistencia activa"
+-        ]
+       ]
+     },
+     {
+       "id": "b2-30-05.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "Es",
++        "un",
++        "buen",
++        "plan;",
++        "ahora",
++        "bien,",
++        "necesitamos",
++        "más",
++        "tiempo."
++      ],
++      "solution": [
++        "Es",
++        "un",
++        "buen",
++        "plan;",
++        "ahora",
++        "bien,",
++        "necesitamos",
++        "más",
++        "tiempo."
++      ],
++      "english": "It is a good plan; that said, we need more time.",
+       "teaches": [
+         "contrast-markers"
+-      ],
+-      "sentence": "Aun con __ el sufrimiento padecido en la guerra, la cultura popular nordestina conservó su vigor.",
+-      "answer": "todo",
+-      "english": "Even with all the suffering endured in the war, northeastern popular culture retained its vigor."
++      ]
+     },
+     {
+       "id": "b2-30-05.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-contrast-restriction-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Carlos",
++          "text": "Dicen que va a llover el domingo."
++        },
++        {
++          "speaker": "Meg",
++          "text": "Puede ser. _____, voy a ir al parque."
++        }
+       ],
+-      "question": "¿Qué cualidad humana designa la capacidad de sobreponerse a traumas graves y salir fortalecido?",
+       "options": [
+-        "La resiliencia",
+-        "La apatía",
+-        "La digresión",
+-        "La vacilación"
++        "De todos modos",
++        "Por eso",
++        "Por el contrario"
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "contrast-markers"
++      ],
++      "distractor_skills": {
++        "1": "porque-y-por-eso"
++      }
+     },
+     {
+       "id": "b2-30-05.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Cuál es la lección perdurable que 'Los sertones' legó al pensamiento latinoamericano?",
++      "question": "Who led the community of Canudos, according to the text?",
+       "options": [
+-        "Que las armas de fuego son la única vía para civilizar a las comunidades rurales.",
+-        "Una denuncia de la barbarie del progreso impuesto por la fuerza y el rescate de la dignidad del hombre del interior.",
+-        "Que los campesinos debían renunciar a su religión para progresar.",
+-        "Que la geografía no influye en absoluto en el carácter humano."
++        "Antônio Conselheiro.",
++        "Mario Vargas Llosa.",
++        "Da Cunha."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-30-consolidation-ex.json b/content/es-latam/exercises/b2/b2-30-consolidation-ex.json
+index 4525ec5d..06635649 100644
+--- a/content/es-latam/exercises/b2/b2-30-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-30-consolidation-ex.json
+@@ -3,123 +3,145 @@
+   "exercises": [
+     {
+       "id": "b2-30-consolidation.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "contrast-markers"
+-      ],
+-      "question": "¿Qué marcador adversativo se aísla habitualmente entre comas en prosa formal culta?",
+-      "options": [
+-        "No obstante",
+-        "Por consiguiente",
+-        "Puesto que",
+-        "A fin de que"
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "en cambio",
++          "whereas"
++        ],
++        [
++          "sino",
++          "but rather"
++        ],
++        [
++          "aun así",
++          "even so"
++        ],
++        [
++          "eso sí",
++          "mind you"
++        ]
+       ],
+-      "correct": 0
++      "teaches": [
++        "b2-discourse-markers-contrast-restriction-vocab"
++      ]
+     },
+     {
+       "id": "b2-30-consolidation.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "La casa es bonita. Ahora __, está lejos del centro.",
++      "answer": "bien",
++      "english": "The house is pretty. That said, it is far from the centre.",
+       "teaches": [
+         "contrast-markers"
+-      ],
+-      "sentence": "No buscaron el enriquecimiento egoísta; antes __, consagraron su vida al bienestar comunitario.",
+-      "answer": "bien",
+-      "english": "They did not seek selfish enrichment; rather, they devoted their lives to community well-being."
++      ]
+     },
+     {
+       "id": "b2-30-consolidation.ex03",
+-      "type": "multiple-choice",
++      "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "No quiero té, __ café.",
++      "answer": "sino",
++      "english": "I don't want tea, but coffee.",
+       "teaches": [
+-        "contrast-concession-connectors"
+-      ],
+-      "question": "¿Qué marcador introduce una salvedad de forma elegante y mesurada en el debate ensayístico?",
+-      "options": [
+-        "Ahora bien",
+-        "O sea",
+-        "A saber",
+-        "En primer término"
+-      ],
+-      "correct": 0
++        "sino-vs-pero"
++      ]
+     },
+     {
+       "id": "b2-30-consolidation.ex04",
+-      "type": "fill-blank",
+-      "category": "grammar",
+-      "teaches": [
+-        "contrast-markers"
++      "type": "multiple-choice",
++      "category": "reading",
++      "question": "What did Da Cunha do with what he saw as a correspondent, according to the text?",
++      "options": [
++        "Lo convirtió en un libro.",
++        "Lo contó solo en artículos para su periódico.",
++        "Lo guardó para una novela futura."
+       ],
+-      "sentence": "El ejército poseía artillería de última generación; en __, los sertanejos contaban con el conocimiento del monte.",
+-      "answer": "cambio",
+-      "english": "The army possessed state-of-the-art artillery; in contrast, the sertanejos possessed knowledge of the wilderness."
++      "correct": 0
+     },
+     {
+       "id": "b2-30-consolidation.ex05",
+-      "type": "multiple-choice",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "contrast-markers"
++      "tiles": [
++        "Por",
++        "un",
++        "lado,",
++        "viajar",
++        "es",
++        "caro;",
++        "por",
++        "otro,",
++        "enseña",
++        "mucho."
+       ],
+-      "question": "¿Qué expresión sintetiza adversidades pasadas para enfatizar la entereza presente?",
+-      "options": [
+-        "Pese a ello",
+-        "Por ejemplo",
+-        "A saber",
+-        "En suma"
++      "solution": [
++        "Por",
++        "un",
++        "lado,",
++        "viajar",
++        "es",
++        "caro;",
++        "por",
++        "otro,",
++        "enseña",
++        "mucho."
+       ],
+-      "correct": 0
+-    },
+-    {
+-      "id": "b2-30-consolidation.ex06",
+-      "type": "matching",
+-      "category": "vocabulary",
++      "english": "On the one hand, travelling is expensive; on the other, it teaches a lot.",
+       "teaches": [
+-        "b2-discourse-markers-contrast-restriction-vocab"
+-      ],
+-      "pairs": [
+-        [
+-          "antagonismo",
+-          "rivalidad u oposición frontal"
+-        ],
+-        [
+-          "impugnar",
+-          "combatir o refutar una afirmación"
+-        ],
+-        [
+-          "asimetría",
+-          "desequilibrio o falta de proporción"
+-        ],
+-        [
+-          "resiliencia",
+-          "capacidad de sobreponerse al dolor"
+-        ]
++        "contrast-markers"
+       ]
+     },
+     {
+-      "id": "b2-30-consolidation.ex07",
+-      "type": "fill-blank",
+-      "category": "grammar",
++      "id": "b2-30-consolidation.ex06",
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Carlos",
++          "text": "¿Me prestas el libro?"
++        },
++        {
++          "speaker": "Meg",
++          "text": "Sí. _____ me lo devuelves el lunes."
++        }
++      ],
++      "options": [
++        "Eso sí,",
++        "Por eso,",
++        "Aun así,"
++      ],
++      "correct": 0,
+       "teaches": [
+-        "contrast-concession-connectors"
++        "contrast-markers"
+       ],
+-      "sentence": "Se firmaron acuerdos comerciales preliminares; eso __, sujetos a la ratificación del senado.",
+-      "answer": "sí",
+-      "english": "Preliminary trade agreements were signed; mind you, subject to ratification by the senate."
++      "distractor_skills": {
++        "1": "porque-y-por-eso"
++      }
+     },
+     {
+-      "id": "b2-30-consolidation.ex08",
++      "id": "b2-30-consolidation.ex07",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué valor histórico simboliza la epopeya relatada en 'Los sertones'?",
++      "question": "Which of the two books was published first, according to the text?",
+       "options": [
+-        "La victoria total de la tecnología militar sobre la poesía oral.",
+-        "La dignidad inquebrantable de los pueblos desposeídos frente a la incomprensión de las élites centrales.",
+-        "La necesidad de deforestar todas las selvas tropicales.",
+-        "La superioridad de los ejércitos mercenarios en el combate."
++        "El libro de Da Cunha, en 1902.",
++        "La novela de Vargas Llosa, en 1981.",
++        "Los dos se publicaron el mismo año."
+       ],
+-      "correct": 1
++      "correct": 0
++    },
++    {
++      "id": "b2-30-consolidation.ex08",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "Estaba cansado; con todo, terminó el trabajo.",
++      "english": "He was tired; even so, he finished the work.",
++      "teaches": [
++        "contrast-markers"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-27-01-a-gr.json b/content/es-latam/grammar/b2/b2-27-01-a-gr.json
+index 1c299e3d..2f23205c 100644
+--- a/content/es-latam/grammar/b2/b2-27-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-27-01-a-gr.json
+@@ -1,36 +1,32 @@
+ {
+   "id": "grammar.b2.27.01.locuciones-causa-origen",
+-  "title": "Locuciones prepositivas de causa y origen: a raíz de, en virtud de, con motivo de",
++  "title": "Cause and Occasion",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En la prosa formal, analítica y jurídica del nivel B2, las causas no se limitan a conjunciones simples como *porque* o *ya que*. Las **locuciones prepositivas de causa y origen** permiten precisar con elegancia el fundamento institucional, la coyuntura desencadenante o el marco normativo que origina un acontecimiento.\n\n* **A raíz de**: Señala el origen temporal y causal inmediato de un hecho (equivalente a *como consecuencia directa de* o *a partir de*).\n* **En virtud de**: Expresa la causa formal, la legitimidad jurídica o la potestad en la que se fundamenta una acción (equivalente a *con base en* o *por la fuerza de*).\n* **Con motivo de**: Indica la ocasión o el acontecimiento motivador que propicia un evento (equivalente a *en conmemoración de* o *con ocasión de*)."
++      "content": "You know *debido a* and *a raíz de* from B1 Unit 6: both give a cause and take a noun. Formal Spanish has other phrases like them, and each says what *kind* of cause it is. This lesson sorts three:\n\n• *a raíz de*: an event that set something off. What follows is a reaction (\"following\", \"as a result of\").\n• *con motivo de*: the occasion for something, usually a special event such as an anniversary or a visit (\"on the occasion of\", \"to mark\").\n• *en virtud de*: the rule, right or power that allows or requires an act (\"by virtue of\", \"under\").\n\nAll three are followed by a noun, never by a conjugated verb, and they usually open the sentence, followed by a comma. Remember that *de* + *el* becomes *del*: *a raíz del accidente*."
+     },
+     {
+       "type": "table",
+-      "title": "Usos de locuciones causales y de origen",
++      "title": "Three kinds of cause",
+       "rows": [
+         [
+-          "A raíz de la crisis bancaria, el Parlamento aprobó una estricta regulación financiera.",
+-          "Following the banking crisis, Parliament approved strict financial regulation."
++          "A raíz del accidente, la ciudad cambió las normas de tráfico.",
++          "Following the accident, the city changed its traffic rules."
+         ],
+         [
+-          "En virtud de las atribuciones constitucionales, el presidente promulgó la ley de laicidad.",
+-          "By virtue of constitutional powers, the president promulgated the secularism law."
++          "Con motivo del aniversario, el museo abrió gratis todo el fin de semana.",
++          "To mark its anniversary, the museum opened free all weekend."
+         ],
+         [
+-          "Con motivo del bicentenario de la independencia, se inauguraron parques eólicos en el interior.",
+-          "On the occasion of the bicentennial of independence, wind farms were inaugurated in the interior."
+-        ],
+-        [
+-          "A raíz de los reclamos sindicales, se instituyó la jornada laboral de ocho horas.",
+-          "As a direct result of union demands, the eight-hour workday was instituted."
++          "En virtud de la ley, los empleados tienen derecho a vacaciones pagadas.",
++          "Under the law, employees are entitled to paid holidays."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "*En virtud de* rige siempre sustantivos o sintagmas nominales de carácter abstracto o normativo (*en virtud de la ley*, *en virtud de sus méritos*), mientras que *a raíz de* suele vincularse a hechos fácticos o crisis coyunturales."
++      "content": "Ask what kind of cause you mean: an event that came first (*a raíz de*), a special occasion (*con motivo de*), or a rule or authority (*en virtud de*). If the cause is a whole clause with a verb, use *porque* instead: *porque llovía*, but *a raíz de la lluvia*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-27-02-a-gr.json b/content/es-latam/grammar/b2/b2-27-02-a-gr.json
+index 39d80f2e..5c4b5db9 100644
+--- a/content/es-latam/grammar/b2/b2-27-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-27-02-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+-  "id": "grammar.b2.27.02.locuciones-conformidad-criterio",
+-  "title": "Locuciones prepositivas de conformidad y criterio: conforme a, de acuerdo con, con arreglo a, a tenor de",
++  "id": "grammar.b2.27.02.locuciones-conformidad",
++  "title": "According to and In Line With",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Para estructurar argumentaciones rigurosas, dictámenes institucionales y análisis comparados, el español culto recurre a locuciones que expresan conformidad con una norma, un pacto o una fuente documental autorizada.\n\n* **Conforme a**: Establece adecuación estricta a una norma, directriz o expectativa reglamentaria (*conforme a la ley*, *conforme a derecho*).\n* **De acuerdo con**: Cita una fuente de autoridad o señala consentimiento recíproco (*de acuerdo con los datos*, *de acuerdo con el ministro*).\n* **Con arreglo a**: Enfatiza el cumplimiento metódico y ordenado de un procedimiento prescrito (*con arreglo a las ordenanzas*).\n* **A tenor de**: Introduce una valoración basada en el contenido literal o el espíritu de un texto o testimonio (*a tenor de lo dispuesto*, *a tenor de sus palabras*)."
++      "content": "You know *según* + source from B1 Unit 13, *estar de acuerdo con* from B1 Unit 18 and *conforme* as a time word (\"as\") from B2 Unit 2. This lesson adds two ways to cite or to follow something:\n\n• *de acuerdo con*: \"according to\". It names a source, such as a person, a report or data: *de acuerdo con el informe*. It can replace *según* in most sentences and sounds a little more formal.\n• *conforme a*: \"in line with\". It says that an action follows a rule, a plan or an instruction: *conforme a la ley*, *conforme al reglamento*. It does not report what someone thinks.\n\nSo you choose by what the phrase does: *según* and *de acuerdo con* point to where information comes from; *conforme a* says what an action follows. Remember *a* + *el* becomes *al*."
+     },
+     {
+       "type": "table",
+-      "title": "Modelos de conformidad y criterio normativo",
++      "title": "Source or rule?",
+       "rows": [
+         [
+-          "El divorcio por la sola voluntad de la mujer se tramitó conforme a la legislación civil pionera.",
+-          "Divorce by the sole will of the woman was processed in accordance with pioneering civil legislation."
++          "Según mi jefe, la reunión empieza a las diez.",
++          "According to my boss, the meeting starts at ten."
+         ],
+         [
+-          "De acuerdo con el informe de la universidad, la matriz energética es plenamente renovable.",
+-          "According to the university report, the energy matrix is fully renewable."
++          "De acuerdo con los datos, hay más turistas que el año pasado.",
++          "According to the data, there are more tourists than last year."
+         ],
+         [
+-          "Las compensaciones a los trabajadores se abonaron con arreglo a los estatutos vigentes.",
+-          "Worker compensations were paid in compliance with the current statutes."
++          "Conforme a la ley, todos los empleados deben tener un contrato.",
++          "In line with the law, all employees must have a contract."
+         ],
+         [
+-          "A tenor de los resultados del plebiscito, la ciudadanía rechazó el proyecto autoritario.",
+-          "In light of the plebiscite results, the citizenry rejected the authoritarian project."
++          "Hicimos el pago conforme a lo que decía el contrato.",
++          "We made the payment as the contract said."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Evite la incorrección ultraculta de acuerdo a cuando se refiera a personas o normas en prosa formal; la norma culta panhispánica prefiere invariablemente *de acuerdo con* o *conforme a*."
++      "content": "You will often hear *de acuerdo a*, but careful writing uses *de acuerdo con*, the same *con* as in *estar de acuerdo con*. After *conforme*, the *a* is not optional: *conforme a la ley*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-27-03-a-gr.json b/content/es-latam/grammar/b2/b2-27-03-a-gr.json
+index 91155835..eee167af 100644
+--- a/content/es-latam/grammar/b2/b2-27-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-27-03-a-gr.json
+@@ -1,36 +1,32 @@
+ {
+-  "id": "grammar.b2.27.03.locuciones-finalidad-sacrificio",
+-  "title": "Locuciones prepositivas de finalidad y sacrificio: en aras de, con miras a, a costa de, en pos de",
++  "id": "grammar.b2.27.03.locuciones-finalidad",
++  "title": "Aim and Cost",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "El discurso político, ético y filosófico del Cono Sur emplea con frecuencia locuciones que sopesan el fin perseguido frente al costo humano, social o material requerido para alcanzarlo.\n\n* **En aras de**: Expresa una subordinación deliberada o un sacrificio noble en favor de un bien superior considerado digno de veneración (*en aras de la paz*, *en aras del consenso*).\n* **Con miras a**: Señala una orientación estratégica o un propósito planificado a mediano y largo plazo (*con miras a modernizar el país*).\n* **A costa de**: Expresa perjuicio, merma o sacrificio gravoso asumido para lograr un resultado (*a costa de su propia salud*, *a costa de las libertades*).\n* **En pos de**: Manifiesta un anhelo idealista, una búsqueda perseverante o un movimiento hacia una meta sublime (*en pos de la justicia*)."
++      "content": "You know *con miras a* and *con vistas a* (\"with a view to\") from B2 Unit 12 and *con el fin de* (\"in order to\") from B1 Unit 32. All three look ahead to a goal. This lesson adds two phrases that weigh a goal against what it costs:\n\n• *en aras de*: \"for the sake of\". It names a value that someone gives something up for: *en aras de la paz*, *en aras del equipo*. What follows is something good.\n• *a costa de*: \"at the expense of\". It names what is lost or harmed to get something: *a costa de su salud*, *a costa de dormir poco*.\n\nBoth take a noun, and both can take an infinitive. Remember *de* + *el* becomes *del*. So the three ideas are: *con miras a* is the goal, *en aras de* is the value you serve, and *a costa de* is the price you pay."
+     },
+     {
+       "type": "table",
+-      "title": "Finalidad, estrategia y balance de costos",
++      "title": "The goal, the value and the price",
+       "rows": [
+         [
+-          "Los partidos tradicionales postergaron sus rencillas en aras de la gobernabilidad democrática.",
+-          "Traditional parties postponed their quarrels for the sake of democratic governability."
++          "Amplían la oficina con miras a contratar más personal.",
++          "They are enlarging the office with a view to hiring more staff."
+         ],
+         [
+-          "Se invirtió fuertemente en educación pública con miras a reducir las brechas sociales.",
+-          "Heavy investment was made in public education with a view to reducing social gaps."
++          "Las dos partes cedieron en aras de la paz.",
++          "Both sides gave way for the sake of peace."
+         ],
+         [
+-          "La junta militar intentó imponer estabilidad macroeconómica a costa del terror y la censura.",
+-          "The military junta attempted to impose macroeconomic stability at the cost of terror and censorship."
+-        ],
+-        [
+-          "Las organizaciones de derechos humanos marcharon en pos de la verdad y la memoria colectiva.",
+-          "Human rights organizations marched in pursuit of truth and collective memory."
++          "Esa empresa gana dinero a costa del medio ambiente.",
++          "That company makes money at the expense of the environment."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "*En aras de* exige siempre una noción valorada positivamente como destino del sacrificio (*en aras de la concordia*, jamás en aras de la inflación)."
++      "content": "*En aras de* sounds positive: the aim is something valued, like peace or the team. For what you lose, use *a costa de*. Do not use *en aras de* for something bad: you cannot give something up *en aras de* a problem."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-27-04-a-gr.json b/content/es-latam/grammar/b2/b2-27-04-a-gr.json
+index 21e57b26..a8ea3522 100644
+--- a/content/es-latam/grammar/b2/b2-27-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-27-04-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+-  "id": "grammar.b2.27.04.locuciones-pretexto-salvedad",
+-  "title": "Locuciones prepositivas de pretexto y salvedad: so pretexto de, a juicio de, sin perjuicio de, al margen de",
++  "id": "grammar.b2.27.04.locuciones-criterio",
++  "title": "Opinion and Limits",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Para matizar afirmaciones, denunciar pretextos espurios o formular reservas jurídicas precisas, el registro B2 avanzado se vale de locuciones de delimitación y excepción.\n\n* **So pretexto de**: Denuncia una justificación aparente o falaz utilizada para encubrir la verdadera motivación (*so pretexto de seguridad nacional*).\n* **A juicio de**: Introduce el criterio pericial, doctrinal o subjetivo de una autoridad consultada (*a juicio de los juristas*).\n* **Sin perjuicio de**: Establece una salvedad que preserva intacto otro derecho, disposición o competencia complementaria (*sin perjuicio de las sanciones penales*).\n* **Al margen de**: Delimita el campo de análisis dejando de lado elementos secundarios o periféricos (*al margen de consideraciones partidistas*)."
++      "content": "You know *según* + source from B1 Unit 13 for reporting information. Two more phrases mark where a judgement comes from, or where a statement stops:\n\n• *a juicio de*: \"in the opinion of\". It is followed by a person or a group whose judgement counts: *a juicio de los expertos*. For yourself, use *a mi juicio* (also *a tu juicio*, *a su juicio*). It presents a judgement that someone could disagree with, not a fact that someone reported.\n• *al margen de*: \"apart from\", \"regardless of\", \"outside\". It leaves something aside: *al margen de la política*, *al margen de la ley* (outside the law).\n\nRemember *de* + *el* becomes *del*: *a juicio del director*, *al margen del tema*."
+     },
+     {
+       "type": "table",
+-      "title": "Delimitación, reservas y denuncias argumentativas",
++      "title": "Judgement and limits",
+       "rows": [
+         [
+-          "So pretexto de combatir el caos social, la dictadura suprimió las libertades individuales.",
+-          "Under the pretext of fighting social chaos, the dictatorship suppressed individual liberties."
++          "A juicio de los expertos, el proyecto es demasiado caro.",
++          "In the experts' opinion, the project is too expensive."
+         ],
+         [
+-          "A juicio del comité asesor, el plan de energía eólica superó todas las expectativas.",
+-          "In the advisory committee's opinion, the wind energy plan exceeded all expectations."
++          "A mi juicio, el nuevo horario es mejor que el anterior.",
++          "In my opinion, the new timetable is better than the old one."
+         ],
+         [
+-          "Se promulgó el estatuto laboral, sin perjuicio de futuras mejoras acordadas en paritarias.",
+-          "The labor statute was enacted, without prejudice to future improvements agreed upon in collective bargaining."
++          "Al margen de las diferencias, los dos amigos se llevan bien.",
++          "Differences aside, the two friends get on well."
+         ],
+         [
+-          "Al margen de su filiación política, los ciudadanos acudieron a votar por la defensa republicana.",
+-          "Regardless of their political affiliation, citizens turned out to vote for republican defense."
++          "Trabajaban al margen de la ley.",
++          "They worked outside the law."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "La preposición arcaica *so* se conserva casi exclusivamente fosilizada en locuciones como *so pretexto de* y *so pena de*. No admite intercalar artículos (*so el pretexto* es incorrecto)."
++      "content": "Use *según* for what a source says (a fact, a date, a figure) and *a juicio de* for a judgement (good, bad, too expensive). Both phrases end in *de*, and a person or a noun follows: *a juicio de los expertos*, *al margen de la política*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-27-05-a-gr.json b/content/es-latam/grammar/b2/b2-27-05-a-gr.json
+index 9000b5a8..2dc701be 100644
+--- a/content/es-latam/grammar/b2/b2-27-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-27-05-a-gr.json
+@@ -1,36 +1,35 @@
+ {
+-  "id": "grammar.b2.27.05.regimen-verbos-avanzados",
+-  "title": "Régimen preposicional de verbos analíticos avanzados: estribar en, derivar en, versar sobre, abogar por",
++  "id": "grammar.b2.27.05.verbos-regimen",
++  "title": "Verbs with Fixed Prepositions",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "El dominio del estilo ensayístico y del debate público en América Latina requiere precisión en el régimen preposicional obligatorio que demandan ciertos verbos de alta densidad conceptual. Modificar la preposición altera o destruye el sentido oracional.\n\n* **Estribar en**: Radicar o fundarse esencialmente en algo (*el éxito estriba en el diálogo constante*).\n* **Derivar en**: Desembocar o transformarse en una consecuencia determinada (*la huelga derivó en la caída del gabinete*).\n* **Versar sobre**: Tratar o tener como materia temática un asunto (*el debate versó sobre la despenalización*).\n* **Abogar por**: Defender activamente una causa, principio o derecho colectivo (*Uruguay aboga por el multilateralismo*).\n* **Supeditar a**: Condicionar la validez o ejecución de un acto a una circunstancia previa (*supeditaron la inversión al aval ambiental*)."
++      "content": "You know *acostumbrarse a* from B1 Unit 29 and *confiar en* from B1 Unit 40: many verbs go with a fixed preposition, and it often differs from English. *Consistir en* and *tratar* have also appeared in B1 word lists. Here are four verbs, each with its own preposition:\n\n• *consistir en*: \"to consist of\". English says *of*, Spanish says *en*: *El trabajo consiste en contestar llamadas.*\n• *derivar en*: \"to lead to\", \"to end in\". The result follows: *La discusión derivó en una pelea.*\n• *tratarse de*: \"to be about\", \"to be a matter of\". It is always *se trata de*, third person singular, with no subject: *Se trata de un problema serio.*\n• *abogar por*: \"to speak in favour of\", \"to campaign for\": *Los vecinos abogan por una calle sin carros.*"
+     },
+     {
+-      "type": "table",
+-      "title": "Verbos analíticos y sus regímenes preposicionales",
+-      "rows": [
+-        [
+-          "La singularidad de la democracia uruguaya estriba en la cercanía entre gobernantes y ciudadanos.",
+-          "The uniqueness of Uruguayan democracy lies in the closeness between leaders and citizens."
+-        ],
+-        [
+-          "El debate cívico sobre la regulación del cannabis derivó en un modelo internacional de salud pública.",
+-          "The civic debate on cannabis regulation resulted in an international public health model."
+-        ],
+-        [
+-          "Las sesiones parlamentarias versaron sobre la ampliación de licencias parentales compartidas.",
+-          "Parliamentary sessions dealt with the expansion of shared parental leaves."
+-        ],
+-        [
+-          "Los activistas y juristas abogan por la preservación de los archivos de la memoria histórica.",
+-          "Activists and legal experts advocate for the preservation of historical memory archives."
+-        ]
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "La propuesta deriva de un estudio.",
++          "english": "The proposal comes from a study."
++        },
++        {
++          "spanish": "El estudio derivó en una propuesta.",
++          "english": "The study led to a proposal."
++        },
++        {
++          "spanish": "El libro trata de dos hermanos.",
++          "english": "The book is about two brothers."
++        },
++        {
++          "spanish": "Trato de llegar temprano.",
++          "english": "I try to arrive early."
++        }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Confundir *derivar en* (desembocar en) con *derivar de* (provenir de) es un error frecuente. Observe la dirección: *la propuesta deriva de un estudio técnico* (origen), pero *el desacuerdo derivó en una consulta popular* (resultado)."
++      "content": "Watch the direction of *derivar*: *derivar de* looks back to the origin, *derivar en* looks forward to the result. Also, *tratar de* + infinitive means \"to try to\", while *se trata de* + noun says what something is about. Never say *consiste de*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-30-01-a-gr.json b/content/es-latam/grammar/b2/b2-30-01-a-gr.json
+index bf891221..e1207028 100644
+--- a/content/es-latam/grammar/b2/b2-30-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-30-01-a-gr.json
+@@ -1,36 +1,40 @@
+ {
+-  "id": "grammar.b2.30.01.marcadores-contraste-adversativo",
+-  "title": "Adversative Contrast Discourse Markers",
++  "id": "grammar.b2.30.01.contrast-markers",
++  "title": "Contrast Markers",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores de contraste adversativo introducen una objeción o limitación sustantiva respecto al enunciado anterior, sin llegar a anular su validez fundamental. En el nivel B2 formal, señalan la dialéctica entre premisas contrapuestas."
++      "content": "You know *pero* from A1, *sin embargo* from A2 Unit 28, *no obstante* from B1 Unit 1 and *en cambio* from an A2 Unit 28 word list. All of them set one idea against another. This lesson shows five markers that do different jobs, and how they differ from *pero*.\n\n*Pero* joins two clauses inside one sentence, and no comma follows it. The markers below usually start a new clause, after a full stop or a semicolon, and a comma follows them.\n\n• *en cambio*: two things are compared and found different (\"whereas\", \"on the other hand\"). It can also sit in the middle of the second clause, between commas.\n• *por el contrario*: the opposite of what was just said, or just expected, is true. It often follows a negative.\n• *al contrario*: the same idea. It is also the natural one-word answer in conversation.\n• *no obstante*: \"nevertheless\", a more formal *sin embargo*. It admits a fact and goes on in spite of it.\n• *ahora bien*: \"that said\", \"now then\". It does not say the opposite. It adds a point that limits what you have just accepted."
+     },
+     {
+       "type": "table",
+-      "title": "Marcadores adversativos en el ensayo culto",
++      "title": "Five markers, five jobs",
+       "rows": [
+         [
+-          "Las expediciones contaban con artillería pesada; sin embargo, no lograron quebrar el cerco.",
+-          "The expeditions had heavy artillery; however, they failed to break the siege."
++          "Mi hermana vive en la ciudad; yo, en cambio, vivo en el campo.",
++          "My sister lives in the city; I, on the other hand, live in the country."
+         ],
+         [
+-          "El terreno era árido y hostil; no obstante, los sertanejos resistieron con firmeza sobrehumana.",
+-          "The terrain was arid and hostile; nevertheless, the sertanejos resisted with superhuman firmness."
++          "No es caro; por el contrario, es muy barato.",
++          "It is not expensive; on the contrary, it is very cheap."
+         ],
+         [
+-          "Los rebeldes carecían de municiones modernas; con todo, rechazaron cuatro asaltos consecutivos.",
+-          "The rebels lacked modern ammunition; even so, they repelled four consecutive assaults."
++          "—¿Te molesta el ruido? —Al contrario, me gusta.",
++          "\"Does the noise bother you?\" \"Quite the opposite, I like it.\""
+         ],
+         [
+-          "El ejército sufrió bajas cuantiosas; aun así, el general ordenó mantener la posición.",
+-          "The army suffered heavy casualties; even so, the general ordered the position maintained."
++          "Tiene poca experiencia; no obstante, hace un buen trabajo.",
++          "He has little experience; nevertheless, he does a good job."
++        ],
++        [
++          "El plan es bueno. Ahora bien, cuesta mucho dinero.",
++          "The plan is good. That said, it costs a lot of money."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "'Sin embargo' y 'no obstante' exigen aislamiento ortográfico mediante comas, o bien punto y coma anterior y coma posterior cuando coordinan dos oraciones independientes."
++      "content": "*Pero* is the everyday word: *Es bueno, pero caro.* Use these markers when you want to say what kind of contrast you mean: a comparison (*en cambio*), the opposite (*por el contrario*, *al contrario*), a fact that does not stop you (*no obstante*) or a limit (*ahora bien*)."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-30-02-a-gr.json b/content/es-latam/grammar/b2/b2-30-02-a-gr.json
+index 5be53fdb..13b458e3 100644
+--- a/content/es-latam/grammar/b2/b2-30-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-30-02-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+-  "id": "grammar.b2.30.02.marcadores-contraste-exclusivo",
+-  "title": "Exclusive & Substitutive Contrast Markers",
++  "id": "grammar.b2.30.02.sino-en-vez-de",
++  "title": "Replacing One Thing with Another",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores de contraste exclusivo o sustitutivo refutan categóricamente la primera afirmación para imponer en su lugar la tesis opuesta y verdadera. Exigen que la primera proposición sea explícita o implícitamente negativa."
++      "content": "You know *sino* and *sino que* from B1 Unit 40: after a negative they replace the first idea with another (*No es azul, sino verde*). You also know *no es que… sino que* from B2 Unit 5. This lesson sets *sino* beside two phrases that say \"instead of\" without needing a negative: *en vez de* and *en lugar de*.\n\n• *sino* needs a negative before it: *No compré el libro, sino la revista.* Before a conjugated verb, use *sino que*.\n• *en vez de* and *en lugar de* mean the same. *En lugar de* is a little more formal. No negative is needed, and a noun or an infinitive follows: *En vez de comprar el libro, compré la revista.*\n\nWhen both verbs have the same subject, the first one stays in the infinitive: *en vez de quedarme*, not *en vez de me quedé*."
+     },
+     {
+       "type": "table",
+-      "title": "Marcadores sustitutivos y de exclusión",
++      "title": "Three ways to replace",
+       "rows": [
+         [
+-          "No capitularon ante las tropas regulares; por el contrario, lucharon hasta el último aliento.",
+-          "They did not surrender to regular troops; on the contrary, they fought until the last breath."
++          "No fui al cine, sino al teatro.",
++          "I didn't go to the cinema, but to the theatre."
+         ],
+         [
+-          "El cangaço no fue un mero bandidaje común; al contrario, reflejó el abandono del Estado central.",
+-          "The cangaço was not mere common banditry; on the contrary, it reflected neglect by the central State."
++          "No lo llamé, sino que le escribí un mensaje.",
++          "I didn't call him; I wrote him a message instead."
+         ],
+         [
+-          "No se trataba de una masa fanatizada y ciega; antes bien, era un pueblo desposeído que defendía su tierra.",
+-          "It was not a fanatical and blind mob; rather, it was a dispossessed people defending their land."
++          "En vez de comprar el libro, compré la revista.",
++          "Instead of buying the book, I bought the magazine."
+         ],
+         [
+-          "El conflicto no pacificó el interior; muy al contrario, profundizó las heridas sociales durante décadas.",
+-          "The conflict did not pacify the interior; quite the contrary, it deepened social wounds for decades."
++          "En lugar de llamar, le escribí un mensaje.",
++          "Instead of calling, I wrote him a message."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "'Antes bien' es propio de la prosa ensayística y académica de alto registro. Se utiliza siempre tras una negación categórica previa: 'No pretendía la sumisión; antes bien, reclamaba la libertad'."
++      "content": "*Sino* corrects what you denied, and *pero* only adds an objection: *No es caro, sino barato* is odd, but *No es caro, pero es lejos* is fine. If there is no negative, use *en vez de* or *en lugar de*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-30-03-a-gr.json b/content/es-latam/grammar/b2/b2-30-03-a-gr.json
+index 9840b7d4..bd9a393f 100644
+--- a/content/es-latam/grammar/b2/b2-30-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-30-03-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+-  "id": "grammar.b2.30.03.marcadores-restriccion-concesiva",
+-  "title": "Concessive Restriction Discourse Markers",
++  "id": "grammar.b2.30.03.con-todo-aun-asi",
++  "title": "Even So: con todo, aun así",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores de restricción concesiva aceptan provisionalmente una premisa pero introducen de inmediato una condición, matiz o salvedad que limita su alcance práctico. Permiten mantener un juicio ponderado y objetivo."
++      "content": "You know *aunque* from A2 Unit 28 and *a pesar de que* from B1 Unit 32: they put a difficulty inside the sentence (*Aunque llovía, salimos*). You also know *sin embargo* from A2 Unit 28 and *no obstante* from B1 Unit 1. Two more markers say that something stays true in spite of everything just said:\n\n• *aun así*: \"even so\", \"all the same\". It starts a new clause and points back at the whole previous statement: *Estaba cansado; aun así, salió a correr.* In speech it is the more common of the two.\n• *con todo*: \"even so\", \"for all that\", a little more formal. It also points back at everything said so far.\n\nThe difference from *aunque*: *aunque* sits inside one sentence, before the difficulty. *Aun así* and *con todo* start a new clause, after a semicolon or a full stop, and name the result."
+     },
+     {
+       "type": "table",
+-      "title": "Marcadores de restricción y salvedad",
++      "title": "Even so",
+       "rows": [
+         [
+-          "La república proclamó la igualdad de todos los ciudadanos; ahora bien, mantuvo la exclusión rural.",
+-          "The republic proclaimed equality for all citizens; now then, it maintained rural exclusion."
++          "Estaba cansado; aun así, salió a correr.",
++          "He was tired; even so, he went running."
+         ],
+         [
+-          "El gobierno abolió formalmente la esclavitud; eso sí, sin garantizar tierras ni educación a los libertos.",
+-          "The government formally abolished slavery; mind you, without guaranteeing land or education to freedmen."
++          "Llovía mucho; con todo, el partido continuó.",
++          "It was raining hard; even so, the match went on."
+         ],
+         [
+-          "Bien es verdad que se lograron avances legislativos; con todo, la desigualdad estructural perdura.",
+-          "It is indeed true that legislative progress was achieved; nonetheless, structural inequality endures."
++          "Aunque estaba cansado, salió a correr.",
++          "Although he was tired, he went running."
+         ],
+         [
+-          "La victoria militar fue incontestable; si bien se pagó con un costo ético demoledor para el país.",
+-          "The military victory was undeniable; although it was paid with a devastating ethical cost for the country."
++          "El camino era largo y difícil. Con todo, llegaron a tiempo.",
++          "The road was long and hard. Even so, they arrived on time."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "'Eso sí' introduce una precisión restrictiva en registros ensayísticos ágiles o periodismo culto, marcando un contrapunto que no anula lo elogiado con anterioridad."
++      "content": "In *aun así*, the word *aun* means \"even\" and has no accent. *Aún* with an accent means \"still\" or \"yet\": *aún no ha llegado*. So write *aun así*, not *aún así*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-30-04-a-gr.json b/content/es-latam/grammar/b2/b2-30-04-a-gr.json
+index 0051872f..9aaba4d3 100644
+--- a/content/es-latam/grammar/b2/b2-30-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-30-04-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+-  "id": "grammar.b2.30.04.marcadores-contraposicion-ponderada",
+-  "title": "Counterbalanced Contrastive Discourse Markers",
++  "id": "grammar.b2.30.04.por-un-lado-por-otro",
++  "title": "Two Sides of a Question",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores de contraposición ponderada distribuyen dos elementos simétricos en una relación de contrapeso o balanza, destacando las divergencias entre dos regiones, clases sociales o modelos económicos."
++      "content": "You know *por un lado* as an ordering marker from B1 Unit 23. This lesson uses it as the first half of a pair, to weigh two sides of one question:\n\n• *Por un lado, …; por otro (lado), …*: \"on the one hand … on the other\". Give one side first and the other second. Use it when something has an advantage and a drawback, or when there are two points of view.\n• *Por una parte, …; por otra (parte), …*: the same pair, a little more formal.\n• You can make the second half sharper with *en cambio*: *Por un lado, el piso es barato; en cambio, está lejos del centro.*\n\nPut a comma after each half-opener and a semicolon or a full stop between the halves. The second half needs *otro* or *otra*, never a second *un lado*."
+     },
+     {
+       "type": "table",
+-      "title": "Conectores de contraposición ponderada",
++      "title": "Weighing two sides",
+       "rows": [
+         [
+-          "El litoral nordestino se enriqueció con la caña de azúcar; en cambio, el sertão vivió en la escasez hídrica.",
+-          "The northeastern coast grew rich from sugar cane; in contrast, the sertão lived in water scarcity."
++          "Por un lado, vivir en el centro es cómodo; por otro, es ruidoso.",
++          "On the one hand, living in the centre is convenient; on the other, it is noisy."
+         ],
+         [
+-          "Los hacendados contaban con el favor de los jueces; en contrapartida, los campesinos carecían de títulos.",
+-          "Landowners enjoyed the favor of judges; conversely, peasants lacked land titles."
++          "Por una parte, me gusta el trabajo; por otra, gano poco.",
++          "On the one hand I like the job; on the other I earn little."
+         ],
+         [
+-          "La capital colonial deslumbraba con iglesias doradas; por contra, las aldeas rurales vivían en el abandono.",
+-          "The colonial capital dazzled with gilded churches; conversely, rural villages lived in neglect."
++          "Por un lado, el piso es barato; en cambio, está lejos del centro.",
++          "On the one hand the flat is cheap; on the other, it is far from the centre."
+         ],
+         [
+-          "Unos abogaban por la represión armada implacable; otros, en cambio, exigían una reforma agraria profunda.",
+-          "Some advocated relentless armed repression; others, by contrast, demanded deep agrarian reform."
++          "Por otro lado, el barrio es muy tranquilo.",
++          "Also, the neighbourhood is very quiet."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "'En cambio' puede situarse al principio de la proposición o en posición intermedia entre comas: 'Los campesinos, en cambio, carecían de armas'."
++      "content": "*Por otro lado* can also appear alone, to add a new point (\"besides\", \"also\"), as in the last example. The full pair is for weighing two things against each other."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-30-05-a-gr.json b/content/es-latam/grammar/b2/b2-30-05-a-gr.json
+index 9f2f2e85..d5e11f3c 100644
+--- a/content/es-latam/grammar/b2/b2-30-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-30-05-a-gr.json
+@@ -1,36 +1,32 @@
+ {
+-  "id": "grammar.b2.30.05.marcadores-oposicion-atenuada",
+-  "title": "Attenuated Opposition & Restrictive Markers",
++  "id": "grammar.b2.30.05.eso-si-de-todos-modos",
++  "title": "Softening an Objection",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores de oposición atenuada suavizan la fricción entre enunciados contrarios, subrayando la perseverancia del sujeto a pesar de los obstáculos objetivos. Son habituales en la prosa historiográfica épica."
++      "content": "You know *ahora bien* (\"that said\") from the first lesson of this unit. Here it joins two phrases that soften an opposition instead of cancelling what came before:\n\n• *eso sí*: \"mind you\", \"but only if\". You accept something and add a condition or a limit. It is conversational, and *sí* keeps its accent.\n• *de todos modos* (also *de todas formas*): \"anyway\", \"in any case\". What you say or do stays the same whatever happens.\n• *ahora bien*: more formal than *eso sí*. It raises a point that limits what you accepted.\n\nAll three keep the first idea true. What differs is what they add: *eso sí* adds a condition, *de todos modos* says that nothing changes, and *ahora bien* adds a limit."
+     },
+     {
+       "type": "table",
+-      "title": "Oposición atenuada y resiliencia",
++      "title": "Three ways to soften",
+       "rows": [
+         [
+-          "Pese a ello, las familias campesinas retornaron a sus tierras calcinadas tras la contienda.",
+-          "Despite this, peasant families returned to their scorched lands after the conflict."
++          "Te presto el carro; eso sí, lo devuelves hoy.",
++          "I'll lend you the car; mind you, you bring it back today."
+         ],
+         [
+-          "Aun con todo el sufrimiento padecido, la cultura popular nordestina conservó su vigor.",
+-          "Even with all the suffering endured, northeastern popular culture retained its vigor."
++          "Dicen que va a llover; de todos modos, voy a ir.",
++          "They say it will rain; I'm going anyway."
+         ],
+         [
+-          "Si bien la sequía diezmaba las cosechas, los poetas de cordel cantaban la dignidad de la vida.",
+-          "Although drought decimated harvests, string-ballad poets sang of the dignity of life."
+-        ],
+-        [
+-          "No obstante las derrotas iniciales, el líder cimarrón sostuvo la resistencia durante décadas.",
+-          "Notwithstanding initial defeats, the maroon leader sustained resistance for decades."
++          "Es un buen plan. Ahora bien, cuesta mucho.",
++          "It is a good plan. That said, it costs a lot."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "'Pese a ello' y 'aun con todo' sintetizan anafóricamente toda una serie de infortunios previos para introducir la respuesta de superación o entereza."
++      "content": "Do not mix up *eso sí* with *eso si*: without the accent, *si* means \"if\". *De todos modos* can also close a conversation, like the English \"anyway\"."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-27-01.json b/content/es-latam/lessons/b2/b2-27-01.json
+index 03757308..6094908d 100644
+--- a/content/es-latam/lessons/b2/b2-27-01.json
++++ b/content/es-latam/lessons/b2/b2-27-01.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.27.01",
+-  "title": "Causal & Origin Locutions: a raíz de, en virtud de, con motivo de",
++  "title": "Cause and Occasion: a raíz de, con motivo de, en virtud de",
+   "level": "B2",
++  "goal": "Choose a raíz de, con motivo de or en virtud de according to the kind of cause.",
++  "grammar": "a raíz de, con motivo de, en virtud de",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *a raíz de* for an event that sets something off.",
++        "I can use *con motivo de* for the occasion of an event.",
++        "I can use *en virtud de* for the rule or power behind an act."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-27.json"
+@@ -23,10 +33,37 @@
+         "b2-27-01.ex01",
+         "b2-27-01.ex02",
+         "b2-27-01.ex03",
+-        "b2-27-01.ex04",
+-        "b2-27-01.ex05",
++        "b2-27-01.ex04"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Reading",
++      "ref": "exercises/b2/b2-27-01-ex.json",
++      "exerciseRefs": [
++        "b2-27-01.ex05"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Listening",
++      "ref": "exercises/b2/b2-27-01-ex.json",
++      "exerciseRefs": [
+         "b2-27-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *a raíz de* for an event that sets something off.",
++        "I can use *con motivo de* for the occasion of an event.",
++        "I can use *en virtud de* for the rule or power behind an act."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-27-02.json b/content/es-latam/lessons/b2/b2-27-02.json
+index d7aa8bce..9a08e20a 100644
+--- a/content/es-latam/lessons/b2/b2-27-02.json
++++ b/content/es-latam/lessons/b2/b2-27-02.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.27.02",
+-  "title": "Conformity & Normative Locutions: conforme a, de acuerdo con, con arreglo a",
++  "title": "According to and In Line With: de acuerdo con, conforme a, según",
+   "level": "B2",
++  "goal": "Name a source with de acuerdo con and say that something follows a rule with conforme a.",
++  "grammar": "de acuerdo con, conforme a, según",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *de acuerdo con* and *según* to name a source.",
++        "I can use *conforme a* to say that something follows a rule or a plan.",
++        "I can choose between the three according to what I want to say."
++      ]
++    },
+     {
+       "type": "grammar",
+       "ref": "grammar/b2/b2-27-02-a-gr.json"
+@@ -19,10 +29,37 @@
+         "b2-27-02.ex01",
+         "b2-27-02.ex02",
+         "b2-27-02.ex03",
+-        "b2-27-02.ex04",
+-        "b2-27-02.ex05",
++        "b2-27-02.ex04"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Dialogue",
++      "ref": "exercises/b2/b2-27-02-ex.json",
++      "exerciseRefs": [
++        "b2-27-02.ex05"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Listening",
++      "ref": "exercises/b2/b2-27-02-ex.json",
++      "exerciseRefs": [
+         "b2-27-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *de acuerdo con* and *según* to name a source.",
++        "I can use *conforme a* to say that something follows a rule or a plan.",
++        "I can choose between the three according to what I want to say."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-27-03.json b/content/es-latam/lessons/b2/b2-27-03.json
+index cb1c2ef1..d5c5204f 100644
+--- a/content/es-latam/lessons/b2/b2-27-03.json
++++ b/content/es-latam/lessons/b2/b2-27-03.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.27.03",
+-  "title": "Purpose & Sacrifice Locutions: en aras de, con miras a, a costa de",
++  "title": "Aim and Cost: en aras de, a costa de",
+   "level": "B2",
++  "goal": "Use en aras de for the value someone serves and a costa de for the price paid.",
++  "grammar": "en aras de, a costa de",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *en aras de* for the aim someone gives something up for.",
++        "I can use *a costa de* for what is lost along the way.",
++        "I can tell *en aras de* and *a costa de* from *con miras a*."
++      ]
++    },
+     {
+       "type": "grammar",
+       "ref": "grammar/b2/b2-27-03-a-gr.json"
+@@ -19,10 +29,37 @@
+         "b2-27-03.ex01",
+         "b2-27-03.ex02",
+         "b2-27-03.ex03",
+-        "b2-27-03.ex04",
+-        "b2-27-03.ex05",
++        "b2-27-03.ex04"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Dialogue",
++      "ref": "exercises/b2/b2-27-03-ex.json",
++      "exerciseRefs": [
++        "b2-27-03.ex05"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Listening",
++      "ref": "exercises/b2/b2-27-03-ex.json",
++      "exerciseRefs": [
+         "b2-27-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *en aras de* for the aim someone gives something up for.",
++        "I can use *a costa de* for what is lost along the way.",
++        "I can tell *en aras de* and *a costa de* from *con miras a*."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-27-04.json b/content/es-latam/lessons/b2/b2-27-04.json
+index 70b814c2..75516277 100644
+--- a/content/es-latam/lessons/b2/b2-27-04.json
++++ b/content/es-latam/lessons/b2/b2-27-04.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.27.04",
+-  "title": "Pretext & Restrictive Locutions: so pretexto de, a juicio de, sin perjuicio de",
++  "title": "Opinion and Limits: a juicio de, al margen de",
+   "level": "B2",
++  "goal": "Give someone's judgement with a juicio de and set a topic aside with al margen de.",
++  "grammar": "a juicio de, al margen de",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *a juicio de* to give someone's opinion.",
++        "I can use *al margen de* to set something aside.",
++        "I can tell a judgement (*a juicio de*) from a source (*según*)."
++      ]
++    },
+     {
+       "type": "grammar",
+       "ref": "grammar/b2/b2-27-04-a-gr.json"
+@@ -19,10 +29,37 @@
+         "b2-27-04.ex01",
+         "b2-27-04.ex02",
+         "b2-27-04.ex03",
+-        "b2-27-04.ex04",
+-        "b2-27-04.ex05",
++        "b2-27-04.ex04"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Dialogue",
++      "ref": "exercises/b2/b2-27-04-ex.json",
++      "exerciseRefs": [
++        "b2-27-04.ex05"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Listening",
++      "ref": "exercises/b2/b2-27-04-ex.json",
++      "exerciseRefs": [
+         "b2-27-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *a juicio de* to give someone's opinion.",
++        "I can use *al margen de* to set something aside.",
++        "I can tell a judgement (*a juicio de*) from a source (*según*)."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-27-05.json b/content/es-latam/lessons/b2/b2-27-05.json
+index 27b51f8a..73d40de1 100644
+--- a/content/es-latam/lessons/b2/b2-27-05.json
++++ b/content/es-latam/lessons/b2/b2-27-05.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.27.05",
+-  "title": "Advanced Verb Prepositional Regimes: estribar en, derivar en, versar sobre",
++  "title": "Verbs with Fixed Prepositions: consistir en, derivar en, tratarse de, abogar por",
+   "level": "B2",
++  "goal": "Use consistir en, derivar en, tratarse de and abogar por with their own prepositions.",
++  "grammar": "consistir en, derivar en, tratarse de, abogar por",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *consistir en*, *derivar en*, *tratarse de* and *abogar por* with the right preposition.",
++        "I can tell *derivar en* (result) from *derivar de* (origin).",
++        "I can tell *tratar de* (to try to) from *tratarse de* (to be about)."
++      ]
++    },
+     {
+       "type": "grammar",
+       "ref": "grammar/b2/b2-27-05-a-gr.json"
+@@ -19,10 +29,37 @@
+         "b2-27-05.ex01",
+         "b2-27-05.ex02",
+         "b2-27-05.ex03",
+-        "b2-27-05.ex04",
+-        "b2-27-05.ex05",
++        "b2-27-05.ex04"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Dialogue",
++      "ref": "exercises/b2/b2-27-05-ex.json",
++      "exerciseRefs": [
++        "b2-27-05.ex05"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Listening",
++      "ref": "exercises/b2/b2-27-05-ex.json",
++      "exerciseRefs": [
+         "b2-27-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *consistir en*, *derivar en*, *tratarse de* and *abogar por* with the right preposition.",
++        "I can tell *derivar en* (result) from *derivar de* (origin).",
++        "I can tell *tratar de* (to try to) from *tratarse de* (to be about)."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-27-consolidation.json b/content/es-latam/lessons/b2/b2-27-consolidation.json
+index 5030893b..5b92700d 100644
+--- a/content/es-latam/lessons/b2/b2-27-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-27-consolidation.json
+@@ -1,14 +1,16 @@
+ {
+   "id": "lesson.b2.27.consolidation",
+-  "title": "Consolidation: Advanced Prepositional Regimes & Prepositional Locutions",
++  "title": "Unit Review: Prepositional Phrases and Quiroga",
+   "level": "B2",
++  "goal": "Review the prepositional phrases and the verbs with fixed prepositions through a retelling of the start of Quiroga's Anaconda.",
++  "grammar": "review of the prepositional phrases and verbs with fixed prepositions, and a retelling of Quiroga's Anaconda",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Dominar las locuciones prepositivas de causa, conformidad, finalidad y pretexto en prosa formal B2.",
+-        "Aplicar con precisión los regímenes preposicionales obligatorios de verbos analíticos avanzados.",
+-        "Integrar el léxico especializado de la fundamentación jurídica, la normativa y el ensayo reflexivo."
++        "I can read a short retelling of the start of Horacio Quiroga's Anaconda.",
++        "I can choose the phrase that fits the kind of cause, aim or source.",
++        "I can choose the right preposition for a verb such as *derivar en* or *abogar por*."
+       ]
+     },
+     {
+@@ -30,14 +32,17 @@
+         "b2-27-consolidation.ex08"
+       ]
+     },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
+     {
+       "type": "checklist",
++      "title": "Can you do this?",
+       "items": [
+-        "Distingo con rigor entre 'a raíz de' (hecho desencadenante) y 'en virtud de' (autoridad o potestad legal).",
+-        "Empleo 'conforme a', 'de acuerdo con' y 'con arreglo a' para fundamentar dictámenes y apego a normas.",
+-        "Sopeso fines y sacrificios mediante 'en aras de' (bien noble) y 'a costa de' (perjuicio gravoso).",
+-        "Denuncio justificaciones falaces mediante 'so pretexto de' y formulo salvedades con 'sin perjuicio de'.",
+-        "Domino los regímenes preposicionales de 'estribar en', 'derivar en', 'versar sobre' y 'abogar por'."
++        "I can read a short retelling of the start of Horacio Quiroga's Anaconda.",
++        "I can choose the phrase that fits the kind of cause, aim or source.",
++        "I can choose the right preposition for a verb such as *derivar en* or *abogar por*."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-30-01.json b/content/es-latam/lessons/b2/b2-30-01.json
+index 36efd031..e399ef6f 100644
+--- a/content/es-latam/lessons/b2/b2-30-01.json
++++ b/content/es-latam/lessons/b2/b2-30-01.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.30.01",
+-  "title": "Adversative Contrast: sin embargo, no obstante, con todo",
++  "title": "Contrast Markers: en cambio, por el contrario, al contrario, no obstante, ahora bien",
+   "level": "B2",
++  "goal": "Use en cambio, por el contrario, al contrario, no obstante and ahora bien, and tell them from pero.",
++  "grammar": "en cambio, por el contrario, al contrario, no obstante, ahora bien",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *en cambio* to set two different things side by side.",
++        "I can use *por el contrario* and *al contrario* to say the opposite.",
++        "I can use *no obstante* and *ahora bien* and tell them from *pero*."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-30.json"
+@@ -23,10 +33,37 @@
+         "b2-30-01.ex01",
+         "b2-30-01.ex02",
+         "b2-30-01.ex03",
+-        "b2-30-01.ex04",
+-        "b2-30-01.ex05",
++        "b2-30-01.ex04"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Dialogue",
++      "ref": "exercises/b2/b2-30-01-ex.json",
++      "exerciseRefs": [
++        "b2-30-01.ex05"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Reading",
++      "ref": "exercises/b2/b2-30-01-ex.json",
++      "exerciseRefs": [
+         "b2-30-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *en cambio* to set two different things side by side.",
++        "I can use *por el contrario* and *al contrario* to say the opposite.",
++        "I can use *no obstante* and *ahora bien* and tell them from *pero*."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-30-02.json b/content/es-latam/lessons/b2/b2-30-02.json
+index 4309f924..bdbdc181 100644
+--- a/content/es-latam/lessons/b2/b2-30-02.json
++++ b/content/es-latam/lessons/b2/b2-30-02.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.30.02",
+-  "title": "Exclusive Contrast: por el contrario, al contrario, antes bien",
++  "title": "Replacing One Thing with Another: sino, en vez de, en lugar de",
+   "level": "B2",
++  "goal": "Replace one idea with another using sino, en vez de and en lugar de.",
++  "grammar": "sino, en vez de, en lugar de",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *sino* and *sino que* after a negative to replace an idea.",
++        "I can use *en vez de* and *en lugar de* with a noun or an infinitive.",
++        "I can tell when to use *sino* and when to use *en vez de*."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-30.json"
+@@ -23,10 +33,37 @@
+         "b2-30-02.ex01",
+         "b2-30-02.ex02",
+         "b2-30-02.ex03",
+-        "b2-30-02.ex04",
+-        "b2-30-02.ex05",
++        "b2-30-02.ex04"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Listening",
++      "ref": "exercises/b2/b2-30-02-ex.json",
++      "exerciseRefs": [
++        "b2-30-02.ex05"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Reading",
++      "ref": "exercises/b2/b2-30-02-ex.json",
++      "exerciseRefs": [
+         "b2-30-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *sino* and *sino que* after a negative to replace an idea.",
++        "I can use *en vez de* and *en lugar de* with a noun or an infinitive.",
++        "I can tell when to use *sino* and when to use *en vez de*."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-30-03.json b/content/es-latam/lessons/b2/b2-30-03.json
+index 7b9d226b..1ce732c1 100644
+--- a/content/es-latam/lessons/b2/b2-30-03.json
++++ b/content/es-latam/lessons/b2/b2-30-03.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.30.03",
+-  "title": "Concessive Restriction: ahora bien, eso sí, bien es verdad que",
++  "title": "Even So: con todo, aun así",
+   "level": "B2",
++  "goal": "Say that something stays true in spite of everything just said with con todo and aun así.",
++  "grammar": "con todo, aun así",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *aun así* to say that something happens in spite of a difficulty.",
++        "I can use *con todo* in the same way in a more formal style.",
++        "I can tell *aun así* and *con todo* from *aunque*."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-30.json"
+@@ -23,10 +33,37 @@
+         "b2-30-03.ex01",
+         "b2-30-03.ex02",
+         "b2-30-03.ex03",
+-        "b2-30-03.ex04",
+-        "b2-30-03.ex05",
++        "b2-30-03.ex04"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Dialogue",
++      "ref": "exercises/b2/b2-30-03-ex.json",
++      "exerciseRefs": [
++        "b2-30-03.ex05"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Reading",
++      "ref": "exercises/b2/b2-30-03-ex.json",
++      "exerciseRefs": [
+         "b2-30-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *aun así* to say that something happens in spite of a difficulty.",
++        "I can use *con todo* in the same way in a more formal style.",
++        "I can tell *aun así* and *con todo* from *aunque*."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-30-04.json b/content/es-latam/lessons/b2/b2-30-04.json
+index 4559e6e2..14bafe47 100644
+--- a/content/es-latam/lessons/b2/b2-30-04.json
++++ b/content/es-latam/lessons/b2/b2-30-04.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.30.04",
+-  "title": "Counterbalanced Contrast: en cambio, en contrapartida, por contra",
++  "title": "Two Sides of a Question: por un lado … por otro",
+   "level": "B2",
++  "goal": "Weigh two sides of a question with por un lado … por otro and por una parte … por otra.",
++  "grammar": "por un lado … por otro",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *por un lado … por otro* to weigh an advantage and a drawback.",
++        "I can use *por una parte … por otra* in a more formal style.",
++        "I can use *en cambio* to sharpen the second half."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-30.json"
+@@ -23,10 +33,37 @@
+         "b2-30-04.ex01",
+         "b2-30-04.ex02",
+         "b2-30-04.ex03",
+-        "b2-30-04.ex04",
+-        "b2-30-04.ex05",
++        "b2-30-04.ex04"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Listening",
++      "ref": "exercises/b2/b2-30-04-ex.json",
++      "exerciseRefs": [
++        "b2-30-04.ex05"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Reading",
++      "ref": "exercises/b2/b2-30-04-ex.json",
++      "exerciseRefs": [
+         "b2-30-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *por un lado … por otro* to weigh an advantage and a drawback.",
++        "I can use *por una parte … por otra* in a more formal style.",
++        "I can use *en cambio* to sharpen the second half."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-30-05.json b/content/es-latam/lessons/b2/b2-30-05.json
+index b57a54c0..1f8d80aa 100644
+--- a/content/es-latam/lessons/b2/b2-30-05.json
++++ b/content/es-latam/lessons/b2/b2-30-05.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.30.05",
+-  "title": "Attenuated Opposition: si bien, pese a ello, aun con todo",
++  "title": "Softening an Objection: eso sí, de todos modos, ahora bien",
+   "level": "B2",
++  "goal": "Accept something and soften the objection with eso sí, de todos modos and ahora bien.",
++  "grammar": "eso sí, de todos modos, ahora bien",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *eso sí* to accept something and add a condition.",
++        "I can use *de todos modos* to say that nothing changes.",
++        "I can use *ahora bien* to add a limit to what I accepted."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-30.json"
+@@ -23,10 +33,37 @@
+         "b2-30-05.ex01",
+         "b2-30-05.ex02",
+         "b2-30-05.ex03",
+-        "b2-30-05.ex04",
+-        "b2-30-05.ex05",
++        "b2-30-05.ex04"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Dialogue",
++      "ref": "exercises/b2/b2-30-05-ex.json",
++      "exerciseRefs": [
++        "b2-30-05.ex05"
++      ]
++    },
++    {
++      "type": "exercise-group",
++      "title": "Reading",
++      "ref": "exercises/b2/b2-30-05-ex.json",
++      "exerciseRefs": [
+         "b2-30-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *eso sí* to accept something and add a condition.",
++        "I can use *de todos modos* to say that nothing changes.",
++        "I can use *ahora bien* to add a limit to what I accepted."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-30-consolidation.json b/content/es-latam/lessons/b2/b2-30-consolidation.json
+index 2e10df15..10bb3819 100644
+--- a/content/es-latam/lessons/b2/b2-30-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-30-consolidation.json
+@@ -1,14 +1,16 @@
+ {
+   "id": "lesson.b2.30.consolidation",
+-  "title": "Consolidation: Discourse Markers III: Contrast & Restriction",
++  "title": "Unit Review: Contrast and Restriction, and Da Cunha",
+   "level": "B2",
++  "goal": "Review the contrast and restriction markers through a text about Euclides da Cunha and Los sertones.",
++  "grammar": "review of the contrast and restriction markers, and a text about Euclides da Cunha and Los sertones",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Articular contrastes adversativos y sustitutivos rigurosos en debates académicos formales.",
+-        "Introducir restricciones concesivas y contrapesos equilibrados sin debilitar la tesis.",
+-        "Integrar el léxico especializado de la dialéctica, la controversia y la resiliencia cívica."
++        "I can read a short text about Euclides da Cunha and his book Los sertones.",
++        "I can choose the marker that fits the kind of contrast or limit.",
++        "I can replace one idea with another using *sino* and *en vez de*."
+       ]
+     },
+     {
+@@ -30,14 +32,17 @@
+         "b2-30-consolidation.ex08"
+       ]
+     },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
+     {
+       "type": "checklist",
++      "title": "Can you do this?",
+       "items": [
+-        "Domino los conectores adversativos 'sin embargo', 'no obstante' y 'con todo'.",
+-        "Aplico los sustitutivos 'por el contrario' y 'antes bien' tras negación categórica.",
+-        "Manejo las restricciones concesivas 'ahora bien' y 'eso sí' en redacción de ensayos.",
+-        "Construyo balances comparativos ponderados con 'en cambio' y 'en contrapartida'.",
+-        "Expreso superación ante la adversidad aplicando 'pese a ello' y 'aun con todo'."
++        "I can read a short text about Euclides da Cunha and his book Los sertones.",
++        "I can choose the marker that fits the kind of contrast or limit.",
++        "I can replace one idea with another using *sino* and *en vez de*."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/stories/classics/b2/b2-27.json b/content/es-latam/stories/classics/b2/b2-27.json
+index 8d201f7b..36625ec2 100644
+--- a/content/es-latam/stories/classics/b2/b2-27.json
++++ b/content/es-latam/stories/classics/b2/b2-27.json
+@@ -1,85 +1,91 @@
+ {
+   "id": "story.b2.27.quiroga",
+-  "title": "Anaconda: La rebelión de la selva y el congreso de las víboras",
++  "title": "Anaconda: el Congreso de las Víboras",
+   "level": "B2",
+   "lesson": 1,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Una adaptación literaria de 'Anaconda' (1921), la obra cumbre del escritor uruguayo Horacio Quiroga: en la espesura del Alto Paraná, las serpientes convocan a un congreso de emergencia ante el avance implacable del ser humano con sus expediciones científicas y sueros antiofídicos, debatiendo entre la guerra abierta o la tregua en un conmovedor choque entre instinto, cálculo y destino.",
++  "summary": "Adaptación de los primeros capítulos de Anaconda, de Horacio Quiroga: una yarará descubre que el hombre ha llegado a la Casa, las víboras se reúnen en un congreso y una culebra espía a los hombres.",
+   "characters": [
+-    "Lanceolata (Yarará)",
+-    "Anaconda",
+-    "Cruzada",
+-    "Coralina",
+-    "Los hombres del campamento"
++    "Lanceolada (una yarará, serpiente venenosa)",
++    "Terrífica (serpiente de cascabel)",
++    "Cruzada (víbora de la cruz)",
++    "La Ñacaniná (una culebra, serpiente sin veneno)"
+   ],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En lo más recóndito de la selva misionera, a orillas de las aguas rojizas del Alto Paraná, una inquietud desconocida quebró el silencio milenario de las criaturas rastreras. El hombre, aquel enemigo implacable y bípedo al que la fauna veneraba con pavor reverente, había instalado un campamento científico en el borde mismo de los esteros. No se trataba de cazadores furtivos en pos de pieles o plumas, sino de médicos y naturalistas equipados con carpas de lona blanca, caballos inmunes y recipientes de vidrio destinados a la extracción masiva de veneno para elaborar sueros antiofídicos. A raíz de este avance metódico que amenazaba con aniquilar a las especies autóctonas, Lanceolata —una yarará soberbia de metro y medio, rápida como el rayo y consciente de su estirpe venenosa— convocó con urgencia a todas las familias de reptiles a un congreso solemne en la caverna del peñasco."
++      "text": "Una noche de mucho calor, una víbora llamada Lanceolada salió a cazar. Es una yarará, es decir, una serpiente venenosa, de un metro y medio. Esperó cinco horas sin moverse en un cruce de caminos, pero no pasó ningún animal. Al amanecer decidió acercarse a la Casa, un edificio viejo que llevaba mucho tiempo vacío, porque desde hacía días oía allí ruidos extraños."
+     },
+     {
+       "type": "narration",
+-      "text": "Conforme a los viejos códigos de la selva que proscribían las querellas intestinas durante las treguas mayores, acudieron a la cita las más temibles habitantes del sotobosque: las yararacusús de escamas oscuras, las víboras de la cruz de mirada fría, las pequeñas corales con sus anillos concéntricos brillantes y, finalmente, deslizándose con majestuosa lentitud por entre las lianas, Anaconda, la gigantesca constrictora de diez metros que no poseía veneno pero gobernaba los ríos en virtud de su fuerza muscular descomunal. Las discusiones iniciales versaron sobre la estrategia que debía adoptarse frente a los invasores: mientras Lanceolata abogaba por una ofensiva frontal e inmediata para diezmar a los científicos en sus catres antes del amanecer, Anaconda aconsejó prudencia táctica, advirtiendo que el poder del hombre estribaba en su cerebro coordinado y en sus artificios de fuego contra los cuales la ferocidad ciega resultaba inútil."
++      "text": "De repente, un hombre salió de la Casa y caminó hacia ella. Lanceolada le golpeó una bota con la cabeza, pero él no vio nada en la oscuridad y siguió su camino. La víbora volvió a su cueva, segura de que aquello era solo el comienzo de algo grave."
+     },
+     {
+       "type": "narration",
+-      "text": "'¿Acaso hemos de entregarnos sin combatir en aras de una sumisión indigna?', increpó Lanceolata irguiendo su cuello triangular en señal de desafío. 'So pretexto de investigar nuestras costumbres, esos seres de dos patas nos capturan con horquillas de hierro, encierran a nuestras hermanas en cajones estrechos y nos ordeñan las glándulas como si fuéramos ganado servil. Debemos atacarlos esta misma noche, al margen de cualquier temor supersticioso'. Las víboras venenosas ovacionaron el plan de la yarará, dispuestas a inmolarse si fuera preciso con miras a expulsar a la colonia humana. Anaconda, sin embargo, contempló la asamblea con melancolía filosófica; comprendía que el triunfo efímero de una picadura nocturna derivaría forzosamente en una represalia implacable: el desmonte con fuego y la deforestación total de su hábitat primitivo a costa de la vida de toda la comunidad vegetal y animal."
++      "text": "Al día siguiente, Lanceolada pensó en el peligro para toda su familia. Las víboras temen al hombre por el machete, que revuelve la selva, y por el fuego, que quema el bosque con todas sus cuevas. Esa noche avisó a las demás, y a las dos de la madrugada la mayoría de las especies estaba en una caverna. Allí vive Terrífica, una serpiente de cascabel muy vieja, que presidió el Congreso de las Víboras porque su especie abunda en el país."
+     },
+     {
+       "type": "narration",
+-      "text": "Aquella misma madrugada, la vanguardia reptiliana avanzó silenciosa por los matorrales empapados de rocío, infiltrándose bajo las lonas del campamento dormido. Cruzada y Coralina lograron penetrar en las habitaciones de madera, buscando los tobillos desnudos de los científicos. Pero el hombre, prevenido por la experiencia zoológica, había colocado telas metálicas en las aberturas y lámparas de carburo que iluminaban los senderos. Al sonar la alarma, estallaron los disparos de escopeta y los garrotazos certeros. Lanceolata combatió con desesperada valentía, mordiendo repetidamente las polainas de cuero endurecido de los peones hasta que un impacto fatal le quebró el espinazo. Las pocas serpientes sobrevivientes huyeron despavoridas hacia el río, dejando tras de sí un reguero de desolación que confirmó la profecía de Anaconda."
++      "text": "Terrífica propuso una guerra sin tregua contra el hombre, pero nadie tenía un plan. Cruzada, a la que en el sur llaman víbora de la cruz, dijo que les hacían falta las culebras, sus primas sin veneno. La idea molestó a las demás. Cruzada explicó que alguien debía ir a la Casa para ver qué hacía el hombre, y que las culebras son más ágiles. Propuso a la Ñacaniná, y la asamblea aceptó, aunque de mala gana."
+     },
+     {
+       "type": "narration",
+-      "text": "Al clarear el día, Anaconda decidió presentarse sola ante el campamento en un postrer acto de dignidad soberana, buscando atraer la atención de los hombres para permitir que los restos dispersos del congreso alcanzaran las profundidades inexpugnables del monte. Enredada valientemente en las empalizadas del corral, la gran serpiente asfixió a dos perros de guardia antes de ser acorralada con lazos corredizos y barras de hierro. Los investigadores la contemplaron con asombro reverente, reconociendo en la anatomía colosal de la bestia la belleza sublime de una naturaleza que se negaba a doblegarse ante el imperio de las máquinas y el desmonte industrial."
++      "text": "Cruzada encontró a la Ñacaniná subiendo a un árbol. La culebra aceptó ayudar cuando Cruzada le recordó que se parecía a las víboras venenosas, y que al defenderlas se defendía a sí misma. Escondida bajo el techo de la Casa, escuchó a cuatro hombres sentados a una mesa. Así supo que la Casa era un instituto del Gobierno que preparaba sueros contra el veneno de las víboras, y que los hombres pensaban cazar muchas. Al irse, la descubrieron; se rieron, y uno le lanzó un palo."
+     },
+     {
+       "type": "narration",
+-      "text": "Encerrada en una jaula espaciosa a la espera de su traslado a los laboratorios de Buenos Aires, Anaconda observó por última vez el cauce turbulento del río Paraná y las copas infinitas de la selva virgen donde había reinado libremente. Comprendió entonces que la tragedia de las criaturas del monte no estribaba en la falta de coraje o de veneno letal, sino en la inexorable marcha de una civilización que devoraba el misterio del mundo silvestre en pos del dominio técnico. Y con la mirada fija en el horizonte verde, cerró los ojos con el sosiego aristocrático de los reyes vencidos que conservan intacto su señorío interior."
++      "text": "En la caverna, la Ñacaniná contó lo que había visto. Los hombres querían cazar a las víboras vivas y sacarles el veneno cada veinte días. Las víboras comprendieron entonces que el suero protegería a las personas y a los animales, y que su familia moriría de hambre en la selva. Cruzada se ofreció a empezar la campaña, aunque no tenía ningún plan. La Ñacaniná avisó del perro negro que seguía el rastro de una víbora, y Terrífica dijo que ella se encargaría de él."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál es la causa primordial que motiva a Lanceolata a convocar al congreso de las serpientes?",
++          "question": "Why did Lanceolada go close to the Casa at dawn?",
+           "options": [
+-            "La escasez imprevista de alimento en las orillas del río Paraná.",
+-            "La invasión de científicos humanos que capturan víboras para elaborar sueros antiofídicos.",
+-            "Una disputa territorial ancestral entre las víboras venenosas y las constrictoras.",
+-            "La crecida destructiva de las aguas del río que anegó las madrigueras."
++            "Había oído ruidos extraños allí desde hacía días.",
++            "Quería cazar a los perros de los hombres.",
++            "Terrífica le había pedido que vigilara el edificio."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "El campamento científico representa una amenaza sistemática que extrae veneno y altera el equilibrio de la selva."
++          "correctIndex": 0,
++          "explanation": "The text says that for days she had been hearing strange noises there, so she went to find out."
+         },
+         {
+-          "question": "¿En qué estriba la diferencia fundamental de postura entre Lanceolata y Anaconda?",
++          "question": "What did Cruzada say about the culebras at the Congress?",
+           "options": [
+-            "Lanceolata aboga por un ataque frontal inmediato, mientras Anaconda advierte sobre las fatales consecuencias de la represalia humana.",
+-            "Lanceolata propone aliarse con los hombres, mientras Anaconda desea destruir el campamento con sus músculos.",
+-            "Lanceolata rehúsa combatir por miedo al agua, mientras Anaconda exige cruzar el río a nado.",
+-            "Lanceolata quiere huir a las montañas, mientras Anaconda insiste en esconderse en las carpas humanas."
++            "Eran más ágiles que las víboras y podían ir a mirar la Casa.",
++            "Eran más venenosas que las víboras y debían atacar primero.",
++            "Eran más fuertes que las víboras y debían presidir el Congreso."
+           ],
+           "correctIndex": 0,
+-          "explanation": "Lanceolata representa la agresividad instintiva del veneno, mientras Anaconda aporta una lucidez estratégica que anticipa el desmonte."
++          "explanation": "Cruzada said someone had to go to the Casa and see what the man was doing, and that the culebras are more agile than the vipers."
++        },
++        {
++          "question": "What did the Ñacaniná learn in the Casa?",
++          "options": [
++            "Que los hombres iban a quemar la selva al día siguiente.",
++            "Que los hombres hacían sueros contra el veneno y pensaban cazar víboras.",
++            "Que los hombres querían hacer las paces con las víboras."
++          ],
++          "correctIndex": 1,
++          "explanation": "The Casa was a scientific institute that prepared serums against viper venom, and the men talked about hunting vipers."
+         },
+         {
+-          "question": "¿Qué reflexión final sobre la civilización y la selva encarna el destino de Anaconda al final del relato?",
++          "question": "Why did the vipers fear the men's plan to take their venom?",
+           "options": [
+-            "Que las herramientas humanas son inferiores al poder de las fieras salvajes.",
+-            "Que la modernidad y el avance tecnológico avanzan inexorablemente sobre los misterios de la naturaleza virgen.",
+-            "Que las víboras debieron haber aprendido a hablar para negociar un tratado comercial.",
+-            "Que la selva volverá a recuperar sus límites en pocos días sin dejar rastro del hombre."
++            "Porque los hombres las matarían a todas esa misma noche.",
++            "Porque con el suero las mordeduras ya no harían daño y ellas morirían de hambre.",
++            "Porque las culebras ya no querrían ayudarlas."
+           ],
+           "correctIndex": 1,
+-          "explanation": "Anaconda asume con dignidad aristocrática la derrota ante una civilización técnica que devora el mundo silvestre."
++          "explanation": "The text says the serum would protect people and animals against bites, and the vipers' family would starve in the forest."
+         }
+       ]
+     }
+   },
+   "author": "Horacio Quiroga (Uruguay, 1878–1937)",
+-  "work": "Cuentos de la selva: Anaconda (1921)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir del relato clásico de Horacio Quiroga",
++  "work": "Anaconda (1921)",
++  "source": "Adaptación para estudiantes de nivel B2 del cuento de Horacio Quiroga (dominio público), contrastada con el texto de Wikisource.",
+   "order": 27
+ }
+diff --git a/content/es-latam/stories/classics/b2/b2-30.json b/content/es-latam/stories/classics/b2/b2-30.json
+index df9999f6..da10b241 100644
+--- a/content/es-latam/stories/classics/b2/b2-30.json
++++ b/content/es-latam/stories/classics/b2/b2-30.json
+@@ -1,80 +1,76 @@
+ {
+   "id": "story.b2.30.dacunha",
+-  "title": "Los sertones",
++  "title": "Euclides da Cunha y Los sertones",
+   "level": "B2",
+   "lesson": 1,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Adaptación pedagógica de la monumental obra de Euclides da Cunha: la geografía calcinada del sertão baiano, la figura carismática y mesiánica de Antônio Conselheiro, la fundación de la ciudadela rebelde de Canudos y la trágica resistencia campesina frente al ejército republicano.",
+-  "characters": [
+-    "Euclides da Cunha (corresponsal y testigo científico de la campaña)",
+-    "Antônio Conselheiro (el predicador peregrino y guía espiritual)",
+-    "Pajeú y João Abade (valientes comandantes defensores de Canudos)",
+-    "Soldados del ejército regular y campesinos sertanejos"
+-  ],
++  "summary": "Texto sobre Euclides da Cunha, escritor y periodista brasileño, y sobre su libro Los sertones (Os sertões), el relato de la guerra de Canudos.",
++  "characters": [],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En las profundidades calcinadas del nordeste de Bahía, donde la tierra arcillosa y cuarteada por las sequías parece rechazar la vida bajo el azote implacable del sol tropical, la naturaleza forjó un escenario de belleza agreste y desolación cósmica: la caatinga. En primer término, el ingeniero y periodista militar Euclides da Cunha estructura su investigación dividiendo su magna obra en tres partes dialécticas e inseparables, a saber: la tierra hostil, el hombre modelado por el clima y la lucha fratricida. El sertão semiárido no es una llanura apacible; sin embargo, en medio de aquel laberinto de matorrales espinosos, cactos gigantes y lechos de ríos secos que se evaporan antes de tocar el mar, habita una estirpe humana extraordinaria. Como escribió el autor en una frase que grabó para siempre el alma nacional: 'El sertanejo es, ante todo, un fuerte', un hombre de tez curtida por el viento que se sobrepone con entereza sobrehumana a las inclemencias más despiadadas."
++      "text": "Euclides da Cunha fue un escritor y periodista brasileño. Nació en 1866 y murió en 1909. Su libro Os sertões se publicó en 1902; en español se llama Los sertones. Es el relato de una guerra: la guerra de Canudos, que ocurrió en 1896 y 1897 en el sertão de Bahía, es decir, en el interior de Bahía."
++    },
++    {
++      "type": "narration",
++      "text": "Da Cunha escribió el libro a partir de lo que vio como corresponsal del periódico O Estado de S. Paulo. Un corresponsal suele escribir artículos para su periódico. Da Cunha, en cambio, convirtió lo que vio en un libro."
+     },
+     {
+       "type": "narration",
+-      "text": "Hacia finales del siglo diecinueve, en una región desamparada por el latifundismo oligárquico y por la reciente proclamación de la República de 1889 —a la que los campesinos percibían como un régimen lejano que imponía nuevos impuestos sin otorgar pan ni justicia—, comenzó a peregrinar una figura mesiánica singular: Antônio Vicente Mendes Maciel, conocido por todos como Antônio Conselheiro. Con su túnica azulada deshilachada, su bastón de madera y su mirada llameante de profeta bíblico, el Conselheiro recorría los pueblos reconstruyendo ermitas caídas, bendiciendo cementerios y predicando una fe comunitaria basada en la hermandad, el perdón de los pecados y el desprecio a las autoridades seculares. Por una parte, las jerarquías eclesiásticas y los terratenientes lo denunciaron como un agitador peligroso; por otra, miles de peones rurales desposeídos, campesinos negros recién liberados de la esclavitud y familias hambrientas lo siguieron hasta una hacienda abandonada a orillas del río Vaza-Barris: Canudos."
++      "text": "Un libro sobre una guerra podría hablar solo de batallas. Este, sin embargo, reúne tres temas: la tierra, su gente y la guerra. Quien lo lea encontrará los tres temas juntos."
+     },
+     {
+       "type": "narration",
+-      "text": "En aquel cañón remoto rodeado por cerros de arenisca rojiza, el Conselheiro y sus seguidores fundaron la ciudadela santa de Belo Monte, levantando en pocos años más de cinco mil casas de barro y paja que llegaron a albergar a casi treinta mil almas libres en régimen comunal. Las autoridades republicanas de Río de Janeiro y Salvador interpretaron aquella comunidad autónoma como un foco insurgente monárquico financiado por conspiradores aristócratas; por el contrario, los pobladores de Canudos no pretendían derrocar al gobierno en la capital, sino más bien vivir pacíficamente al abrigo del fanatismo de sus terratenientes y de la violencia de las policías provinciales. No obstante esta vocación defensiva, el gobernador de Bahía envió un destacamento militar para dispersar a los campesinos, desatando una conflagración bélica de proporciones apocalípticas cuando los sertanejos emboscaron y aniquilaron a la tropa gubernamental."
++      "text": "La comunidad de Canudos estaba dirigida por Antônio Conselheiro. Ahora bien, el libro no habla solo de esa comunidad: también habla de la tierra y de su gente."
+     },
+     {
+       "type": "narration",
+-      "text": "Aterrada por el revés militar, la República envió sucesivamente tres expediciones armadas cada vez más numerosas y pertrechadas con cañones Krupp modernos y fusiles de repetición. Ahora bien, la superioridad técnica del ejército regular se estrelló repetidamente contra la genialidad táctica de los guerrilleros sertanejos dirigidos por lugartenientes como Pajeú y João Abade, quienes conocían palmo a palmo las trampas de la caatinga. Los soldados morían de sed y fiebre entre los matorrales sin avistar al enemigo; en contrapartida, los campesinos defendían cada trinchera con una audacia conmovedora. Hizo falta una cuarta expedición colosal de diez mil soldados bajo el mando directo de veteranos generales para sitiar la ciudadela durante meses, transformando el sitio de Canudos en un infierno de bombardeos incesantes donde las casas se derrumbaban ardiendo mientras las mujeres y los niños cantaban letanías religiosas entre las ruinas humeantes."
++      "text": "Mario Vargas Llosa, a quien usted ya conoce por otros textos de este curso, publicó en 1981 la novela La guerra del fin del mundo. Esa novela cuenta la misma guerra y se apoya en Os sertões. Aun así, son dos libros distintos: uno es una novela y el otro es el relato de lo que Da Cunha vio."
+     },
+     {
+       "type": "narration",
+-      "text": "En suma, la caída final de Canudos en octubre de 1897 tras la muerte por disentería del Conselheiro constituyó una de las páginas más dolorosas y vergonzosas de la historia americana. Como atestiguó conmovido Euclides da Cunha, Canudos no se rindió jamás: cuatro defensores moribundos —un anciano ciego, dos hombres jóvenes y un niño descalzo— sostuvieron el fuego hasta el último proyectil frente a miles de soldados perplejos. En última instancia, 'Los sertones' se erige en un monumento literario y sociológico imperecedero que desenmascaró la barbarie del progreso impuesto por la fuerza militar y consagró la dignidad rebelde del hombre del interior profundo. En definitiva, la tragedia de Canudos continúa resonando como una advertencia eterna contra la soberbia de las metrópolis que desprecian el alma y la memoria viva de sus pueblos marginados."
++      "text": "Quien quiera leer sobre la guerra de Canudos puede elegir entre los dos libros: el relato de Da Cunha o la novela de Vargas Llosa. Si usted ya hubiera leído la novela de Vargas Llosa, reconocería en el libro de Da Cunha la misma guerra."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál es la famosa definición que Euclides da Cunha formuló sobre el campesino del nordeste brasileño?",
++          "question": "What did Euclides da Cunha write the book from?",
+           "options": [
+-            "Que es un hombre sumiso y resignado a la esclavitud.",
+-            "Que el sertanejo es, ante todo, un fuerte, modelado con entereza por las adversidades de la tierra.",
+-            "Que es un extranjero sin apego por las tradiciones autóctonas.",
+-            "Que era un soldado profesional retirado de las guerras europeas."
++            "De lo que vio como corresponsal de un periódico.",
++            "De las cartas que le escribió Antônio Conselheiro.",
++            "De la novela de Mario Vargas Llosa."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "La célebre máxima de Euclides da Cunha destaca la entereza física y moral del sertanejo frente a la aridez."
++          "correctIndex": 0,
++          "explanation": "The text says that Da Cunha wrote the book from what he saw as correspondent of the newspaper O Estado de S. Paulo."
+         },
+         {
+-          "question": "¿Quién fue Antônio Conselheiro y qué fundó en el corazón de Bahía?",
++          "question": "Which three subjects does the book join, according to the text?",
+           "options": [
+-            "Un banquero portugués que financió minas de diamantes.",
+-            "Un predicador peregrino carismático que fundó la ciudadela comunitaria de Canudos (Belo Monte).",
+-            "Un oficial de marina que construyó astilleros navales en el río.",
+-            "Un terrateniente azucarero que introdujo máquinas a vapor."
++            "La tierra, su gente y la guerra.",
++            "La política, el periódico y la novela.",
++            "La ciudad, el campo y el mar."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "Antônio Conselheiro lideró un movimiento mesiánico y fundó la comunidad autónoma campesina de Canudos."
++          "correctIndex": 0,
++          "explanation": "The text says that the book joins three subjects: the land, its people and the war."
+         },
+         {
+-          "question": "¿Cómo terminó la resistencia militar de Canudos según el testimonio presencial del autor?",
++          "question": "How is Vargas Llosa's novel related to Os sertões?",
+           "options": [
+-            "Los campesinos firmaron un pacto de paz y se convirtieron en senadores de la república.",
+-            "Canudos resistió hasta el final sin capitular jamás, quedando apenas cuatro defensores combatiendo entre las ruinas.",
+-            "Los defensores huyeron en barcos hacia el continente africano.",
+-            "El ejército republicano se retiró derrotado perdonando a todos los sublevados."
++            "Cuenta la misma guerra y se apoya en el libro de Da Cunha.",
++            "Cuenta otra guerra que ocurrió en 1981.",
++            "Es una traducción al español del libro de Da Cunha."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "Canudos cayó sin rendirse, defendida hasta el último cartucho por cuatro combatientes frente a todo un ejército."
++          "correctIndex": 0,
++          "explanation": "The text says that the novel tells the same war and draws on Os sertões; the two are different books."
+         }
+       ]
+     }
+   },
+   "author": "Euclides da Cunha (Brasil, 1866–1909)",
+-  "work": "Los sertones (1902)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la obra clásica de Euclides da Cunha",
++  "work": "Os sertões (1902)",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "order": 30
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-27-01-voc.json b/content/es-latam/vocabulary/b2/b2-27-01-voc.json
+index 130aa336..c12cdf1c 100644
+--- a/content/es-latam/vocabulary/b2/b2-27-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-27-01-voc.json
+@@ -1,56 +1,36 @@
+ {
+   "id": "vocab.b2.27.01",
+   "lesson": "b2-27-01",
+-  "title": "Causal & Origin Locutions: a raíz de, en virtud de",
++  "title": "Cause and Occasion: a raíz de, con motivo de, en virtud de",
+   "words": [
+     {
+       "lemma": "a raíz de",
+       "translation": "as a result of / following",
+       "pos": "preposition"
+     },
+-    {
+-      "lemma": "en virtud de",
+-      "translation": "by virtue of / pursuant to",
+-      "pos": "preposition"
+-    },
+     {
+       "lemma": "con motivo de",
+-      "translation": "on the occasion of / because of",
++      "translation": "on the occasion of / to mark",
+       "pos": "preposition"
+     },
+     {
+-      "lemma": "propiciar",
+-      "translation": "to foster / to promote",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "desencadenar",
+-      "translation": "to trigger / to unleash",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "precepto",
+-      "translation": "precept / mandate",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "emanar",
+-      "translation": "to emanate / to stem from",
+-      "pos": "verb"
++      "lemma": "en virtud de",
++      "translation": "by virtue of / under",
++      "pos": "preposition"
+     },
+     {
+-      "lemma": "coyuntura",
+-      "translation": "conjuncture / situational context",
++      "lemma": "el aniversario",
++      "translation": "anniversary",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "fundamento",
+-      "translation": "foundation / legal basis",
++      "lemma": "el alcalde",
++      "translation": "mayor",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "atribución",
+-      "translation": "power / authority / attribution",
++      "lemma": "el machete",
++      "translation": "machete",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-27-02-voc.json b/content/es-latam/vocabulary/b2/b2-27-02-voc.json
+index f5361586..193fce04 100644
+--- a/content/es-latam/vocabulary/b2/b2-27-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-27-02-voc.json
+@@ -1,56 +1,26 @@
+ {
+   "id": "vocab.b2.27.02",
+   "lesson": "b2-27-02",
+-  "title": "Conformity & Normative Locutions: conforme a, de acuerdo con",
++  "title": "According to and In Line With: de acuerdo con, conforme a",
+   "words": [
+-    {
+-      "lemma": "conforme a",
+-      "translation": "in accordance with / according to",
+-      "pos": "preposition"
+-    },
+     {
+       "lemma": "de acuerdo con",
+-      "translation": "in accordance with / according to",
++      "translation": "according to / in accordance with",
+       "pos": "preposition"
+     },
+     {
+-      "lemma": "con arreglo a",
+-      "translation": "in compliance with / pursuant to",
+-      "pos": "preposition"
+-    },
+-    {
+-      "lemma": "a tenor de",
+-      "translation": "according to the wording of / in light of",
++      "lemma": "conforme a",
++      "translation": "in line with / in accordance with",
+       "pos": "preposition"
+     },
+     {
+-      "lemma": "estipulación",
+-      "translation": "stipulation / contractual clause",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "disposición",
+-      "translation": "provision / decree / disposition",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "supeditar",
+-      "translation": "to condition / to make subject to",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "acatar",
+-      "translation": "to abide by / to comply with",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "ordenanza",
+-      "translation": "ordinance / municipal regulation",
++      "lemma": "el reglamento",
++      "translation": "rules / regulations",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "dictamen",
+-      "translation": "official opinion / ruling",
++      "lemma": "el informe",
++      "translation": "report",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-27-03-voc.json b/content/es-latam/vocabulary/b2/b2-27-03-voc.json
+index e4766357..8d66fef2 100644
+--- a/content/es-latam/vocabulary/b2/b2-27-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-27-03-voc.json
+@@ -1,56 +1,26 @@
+ {
+   "id": "vocab.b2.27.03",
+   "lesson": "b2-27-03",
+-  "title": "Purpose & Sacrifice Locutions: en aras de, a costa de",
++  "title": "Aim and Cost: en aras de, a costa de",
+   "words": [
+     {
+       "lemma": "en aras de",
+-      "translation": "for the sake of / in pursuit of",
+-      "pos": "preposition"
+-    },
+-    {
+-      "lemma": "con miras a",
+-      "translation": "with a view to / aiming at",
++      "translation": "for the sake of",
+       "pos": "preposition"
+     },
+     {
+       "lemma": "a costa de",
+-      "translation": "at the expense of / at the cost of",
++      "translation": "at the expense of",
+       "pos": "preposition"
+     },
+     {
+-      "lemma": "en pos de",
+-      "translation": "in pursuit of / striving towards",
+-      "pos": "preposition"
+-    },
+-    {
+-      "lemma": "sacrificio",
+-      "translation": "sacrifice",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "abnegación",
+-      "translation": "selflessness / self-sacrifice",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "consecución",
+-      "translation": "attainment / achievement",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "menoscabar",
+-      "translation": "to undermine / to impair",
++      "lemma": "ceder",
++      "translation": "to give way / to give in",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "perjuicio",
+-      "translation": "detriment / harm / prejudice",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "claudicación",
+-      "translation": "giving up / surrendering",
++      "lemma": "la paz",
++      "translation": "peace",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-27-04-voc.json b/content/es-latam/vocabulary/b2/b2-27-04-voc.json
+index feca22c6..46b3d204 100644
+--- a/content/es-latam/vocabulary/b2/b2-27-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-27-04-voc.json
+@@ -1,57 +1,32 @@
+ {
+   "id": "vocab.b2.27.04",
+   "lesson": "b2-27-04",
+-  "title": "Pretext & Restrictive Locutions: so pretexto de, a juicio de",
++  "title": "Opinion and Limits: a juicio de, al margen de",
+   "words": [
+-    {
+-      "lemma": "so pretexto de",
+-      "translation": "under the pretext of",
+-      "pos": "preposition"
+-    },
+     {
+       "lemma": "a juicio de",
+-      "translation": "in the opinion of / according to",
+-      "pos": "preposition"
+-    },
+-    {
+-      "lemma": "sin perjuicio de",
+-      "translation": "without prejudice to / notwithstanding",
++      "translation": "in the opinion of",
+       "pos": "preposition"
+     },
+     {
+       "lemma": "al margen de",
+-      "translation": "apart from / outside of",
++      "translation": "apart from / regardless of / outside",
+       "pos": "preposition"
+     },
+     {
+-      "lemma": "salvedad",
+-      "translation": "proviso / reservation / qualification",
++      "lemma": "el experto",
++      "translation": "expert",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "pretexto",
+-      "translation": "pretext / excuse",
++      "lemma": "el horario",
++      "translation": "timetable",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "subterfugio",
+-      "translation": "subterfuge / evasion",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "soslayar",
+-      "translation": "to bypass / to avoid / to skirt",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "coartada",
+-      "translation": "alibi / pretext",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "arbitrariedad",
+-      "translation": "arbitrariness / abuse of power",
+-      "pos": "noun"
++      "lemma": "llevarse bien",
++      "translation": "to get on well",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-27-05-voc.json b/content/es-latam/vocabulary/b2/b2-27-05-voc.json
+index e0fae336..9b4c706d 100644
+--- a/content/es-latam/vocabulary/b2/b2-27-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-27-05-voc.json
+@@ -1,57 +1,32 @@
+ {
+   "id": "vocab.b2.27.05",
+   "lesson": "b2-27-05",
+-  "title": "Advanced Verb Prepositional Regimes: estribar en, derivar en",
++  "title": "Verbs with Fixed Prepositions: consistir en, derivar en, tratarse de, abogar por",
+   "words": [
+     {
+-      "lemma": "estribar en",
+-      "translation": "to lie in / to consist in",
++      "lemma": "consistir en",
++      "translation": "to consist of",
+       "pos": "verb"
+     },
+     {
+       "lemma": "derivar en",
+-      "translation": "to lead to / to result in",
++      "translation": "to lead to / to end in",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "versar sobre",
+-      "translation": "to deal with / to be about",
++      "lemma": "tratarse de",
++      "translation": "to be about / to be a matter of",
+       "pos": "verb"
+     },
+     {
+       "lemma": "abogar por",
+-      "translation": "to advocate for / to champion",
++      "translation": "to speak in favour of / to campaign for",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "arraigar en",
+-      "translation": "to take root in",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "incurrir en",
+-      "translation": "to incur / to fall into",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "coincidir en",
+-      "translation": "to agree on / to concur in",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "disentir de",
+-      "translation": "to disagree with / to dissent from",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "radicar en",
+-      "translation": "to lie in / to be based on",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "supeditar a",
+-      "translation": "to subordinate to / to condition upon",
+-      "pos": "verb"
++      "lemma": "la pelea",
++      "translation": "fight",
++      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-30-01-voc.json b/content/es-latam/vocabulary/b2/b2-30-01-voc.json
+index 34736b49..f652581d 100644
+--- a/content/es-latam/vocabulary/b2/b2-30-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-30-01-voc.json
+@@ -1,37 +1,32 @@
+ {
+   "id": "vocab.b2.30.01",
+   "lesson": "b2-30-01",
+-  "title": "Adversative Contrast and Dialectical Tension",
++  "title": "Contrast Markers: en cambio, por el contrario, al contrario, ahora bien",
+   "words": [
+     {
+-      "lemma": "antagonismo",
+-      "translation": "antagonism",
+-      "pos": "noun"
++      "lemma": "en cambio",
++      "translation": "on the other hand / whereas",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "irreconciliable",
+-      "translation": "irreconcilable",
+-      "pos": "adjective"
++      "lemma": "por el contrario",
++      "translation": "on the contrary",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "contraponer",
+-      "translation": "to counterpose / contrast",
+-      "pos": "verb"
++      "lemma": "al contrario",
++      "translation": "on the contrary / quite the opposite",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "discrepancia",
+-      "translation": "discrepancy / disagreement",
+-      "pos": "noun"
++      "lemma": "no obstante",
++      "translation": "nevertheless",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "paradoja",
+-      "translation": "paradox",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "contrapunto",
+-      "translation": "counterpoint",
+-      "pos": "noun"
++      "lemma": "ahora bien",
++      "translation": "that said / now then",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-30-02-voc.json b/content/es-latam/vocabulary/b2/b2-30-02-voc.json
+index d03d8bf7..f1fbc6f6 100644
+--- a/content/es-latam/vocabulary/b2/b2-30-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-30-02-voc.json
+@@ -1,37 +1,27 @@
+ {
+   "id": "vocab.b2.30.02",
+   "lesson": "b2-30-02",
+-  "title": "Exclusive Contrast and Theoretical Refutation",
++  "title": "Replacing One Thing with Another: sino, en vez de, en lugar de",
+   "words": [
+     {
+-      "lemma": "refutación",
+-      "translation": "refutation",
+-      "pos": "noun"
++      "lemma": "sino",
++      "translation": "but (rather)",
++      "pos": "conjunction"
+     },
+     {
+-      "lemma": "incompatible",
+-      "translation": "incompatible",
+-      "pos": "adjective"
++      "lemma": "en vez de",
++      "translation": "instead of",
++      "pos": "preposition"
+     },
+     {
+-      "lemma": "desmentir",
+-      "translation": "to belie / refute",
+-      "pos": "verb"
++      "lemma": "en lugar de",
++      "translation": "instead of / in place of",
++      "pos": "preposition"
+     },
+     {
+-      "lemma": "antítesis",
+-      "translation": "antithesis",
++      "lemma": "la revista",
++      "translation": "magazine",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "excluyente",
+-      "translation": "exclusive",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "impugnar",
+-      "translation": "to challenge / contest",
+-      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-30-03-voc.json b/content/es-latam/vocabulary/b2/b2-30-03-voc.json
+index 14b4ded7..81f7cde3 100644
+--- a/content/es-latam/vocabulary/b2/b2-30-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-30-03-voc.json
+@@ -1,37 +1,27 @@
+ {
+   "id": "vocab.b2.30.03",
+   "lesson": "b2-30-03",
+-  "title": "Concessive Restriction and Nuanced Concession",
++  "title": "Even So: con todo, aun así",
+   "words": [
+     {
+-      "lemma": "condicionamiento",
+-      "translation": "conditioning / constraint",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "atenuante",
+-      "translation": "extenuating / mitigating",
+-      "pos": "adjective"
++      "lemma": "con todo",
++      "translation": "even so / for all that",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "matizar",
+-      "translation": "to nuance / qualify",
+-      "pos": "verb"
++      "lemma": "aun así",
++      "translation": "even so / all the same",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "salvedad",
+-      "translation": "caveat / reservation",
++      "lemma": "el partido",
++      "translation": "match / game",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "concesión",
+-      "translation": "concession",
++      "lemma": "la fiebre",
++      "translation": "fever",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "restringir",
+-      "translation": "to restrict / qualify",
+-      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-30-04-voc.json b/content/es-latam/vocabulary/b2/b2-30-04-voc.json
+index c9f35c35..18cd95ba 100644
+--- a/content/es-latam/vocabulary/b2/b2-30-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-30-04-voc.json
+@@ -1,36 +1,31 @@
+ {
+   "id": "vocab.b2.30.04",
+   "lesson": "b2-30-04",
+-  "title": "Counterbalanced Contrast and Symmetry",
++  "title": "Two Sides of a Question: por un lado … por otro",
+   "words": [
+     {
+-      "lemma": "asimetría",
+-      "translation": "asymmetry",
+-      "pos": "noun"
++      "lemma": "por un lado",
++      "translation": "on the one hand",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "compensación",
+-      "translation": "compensation / offset",
+-      "pos": "noun"
++      "lemma": "por otro lado",
++      "translation": "on the other hand",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "equiparar",
+-      "translation": "to equate / compare",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "desequilibrio",
+-      "translation": "imbalance",
++      "lemma": "la ventaja",
++      "translation": "advantage",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "antagónico",
+-      "translation": "antagonistic",
+-      "pos": "adjective"
++      "lemma": "el inconveniente",
++      "translation": "drawback",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "polaridad",
+-      "translation": "polarity",
++      "lemma": "la guerra",
++      "translation": "war",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-30-05-voc.json b/content/es-latam/vocabulary/b2/b2-30-05-voc.json
+index b878c645..06c44d66 100644
+--- a/content/es-latam/vocabulary/b2/b2-30-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-30-05-voc.json
+@@ -1,37 +1,27 @@
+ {
+   "id": "vocab.b2.30.05",
+   "lesson": "b2-30-05",
+-  "title": "Attenuated Opposition and Resilience",
++  "title": "Softening an Objection: eso sí, de todos modos",
+   "words": [
+     {
+-      "lemma": "tenacidad",
+-      "translation": "tenacity",
+-      "pos": "noun"
++      "lemma": "eso sí",
++      "translation": "mind you / but on one condition",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "indómito",
+-      "translation": "untamed / indomitable",
+-      "pos": "adjective"
++      "lemma": "de todos modos",
++      "translation": "anyway / in any case",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "sobreponerse",
+-      "translation": "to overcome / surmount",
++      "lemma": "prestar",
++      "translation": "to lend",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "adversidad",
+-      "translation": "adversity",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "inquebrantable",
+-      "translation": "unshakeable",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "resiliencia",
+-      "translation": "resilience",
+-      "pos": "noun"
++      "lemma": "devolver",
++      "translation": "to give back",
++      "pos": "verb"
+     }
+   ]
+ }

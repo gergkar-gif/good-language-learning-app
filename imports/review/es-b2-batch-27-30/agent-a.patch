@@ -1,0 +1,4175 @@
+diff --git a/content/es-latam/exercises/b2/b2-28-01-ex.json b/content/es-latam/exercises/b2/b2-28-01-ex.json
+index 6b9a2c0b..4818ad95 100644
+--- a/content/es-latam/exercises/b2/b2-28-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-28-01-ex.json
+@@ -3,96 +3,125 @@
+   "exercises": [
+     {
+       "id": "b2-28-01.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "ordering-markers"
+-      ],
+-      "question": "¿Cuál es la función del marcador 'en primer término' en un discurso formal?",
+-      "options": [
+-        "Concluir definitivamente la exposición tras sopesar los argumentos.",
+-        "Introducir el punto de partida o la primera consideración de una serie ordenada.",
+-        "Expresar una duda irresoluble sobre los hechos relatados.",
+-        "Pedir disculpas por un error involuntario en el texto."
+-      ],
+-      "correct": 1
+-    },
+-    {
+-      "id": "b2-28-01.ex02",
+-      "type": "fill-blank",
+-      "category": "grammar",
+-      "teaches": [
+-        "ordering-markers"
+-      ],
+-      "sentence": "En primer lugar, delimitaremos el marco conceptual; en segundo __, examinaremos los datos empíricos.",
+-      "answer": "término",
+-      "english": "In the first place, we will delimit the conceptual framework; in the second place, we will examine the empirical data."
+-    },
+-    {
+-      "id": "b2-28-01.ex03",
+       "type": "matching",
+-      "category": "grammar",
+-      "teaches": [
+-        "ordering-markers"
+-      ],
++      "category": "vocabulary",
+       "pairs": [
+         [
+           "en primer lugar",
+-          "apertura de serie enumerativa"
++          "firstly"
++        ],
++        [
++          "en segundo lugar",
++          "secondly"
+         ],
+         [
+-          "acto seguido",
+-          "continuación cronológica inmediata"
++          "en tercer lugar",
++          "thirdly"
+         ],
+         [
+           "por último",
+-          "clausura de la enumeración"
++          "lastly"
+         ],
+         [
+-          "para empezar",
+-          "introducción inicial del tema"
++          "a continuación",
++          "next, after that"
+         ]
++      ],
++      "teaches": [
++        "b2-discourse-markers-structuring-sequencing-vocab"
+       ]
+     },
+     {
+-      "id": "b2-28-01.ex04",
++      "id": "b2-28-01.ex02",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence opens a talk with its first point?",
++      "options": [
++        "En primer lugar, hablaré del precio.",
++        "En primero lugar, hablaré del precio.",
++        "En el primer lugar, hablaré del precio.",
++        "Primer lugar, hablaré del precio."
++      ],
++      "correct": 0,
++      "teaches": [
++        "ordering-markers"
++      ]
++    },
++    {
++      "id": "b2-28-01.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "En segundo __, hablaré del transporte.",
++      "answer": "lugar",
++      "english": "Secondly, I will talk about transport.",
+       "teaches": [
+         "ordering-markers"
++      ]
++    },
++    {
++      "id": "b2-28-01.ex04",
++      "type": "sentence-builder",
++      "category": "grammar",
++      "tiles": [
++        "Por",
++        "último,",
++        "les",
++        "pido",
++        "su",
++        "opinión."
++      ],
++      "solution": [
++        "Por",
++        "último,",
++        "les",
++        "pido",
++        "su",
++        "opinión."
+       ],
+-      "sentence": "Por __ parte, la propuesta reduce costos; por otra, genera incertidumbre laboral.",
+-      "answer": "una",
+-      "english": "On the one hand, the proposal reduces costs; on the other, it creates labor uncertainty."
++      "english": "Lastly, I ask for your opinions.",
++      "teaches": [
++        "ordering-markers"
++      ]
+     },
+     {
+       "id": "b2-28-01.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-structuring-sequencing-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "¿Cómo vas a presentar el proyecto?"
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        },
++        {
++          "speaker": "Meg",
++          "text": "Perfecto, así todos entienden el orden."
++        }
+       ],
+-      "question": "¿Qué sustantivo designa la parte final o etapa de cierre de un período o época histórica?",
+       "options": [
+-        "El preámbulo",
+-        "La postrimería",
+-        "El exordio",
+-        "La coyuntura"
++        "En primer lugar, explicaré el problema; en segundo lugar, propondré una solución.",
++        "En primer lugar, explicaré el problema; en primer lugar, propondré una solución.",
++        "En segundo lugar, explicaré el problema; en primer lugar, propondré una solución."
+       ],
+-      "correct": 1
++      "correct": 0,
++      "teaches": [
++        "ordering-markers"
++      ]
+     },
+     {
+       "id": "b2-28-01.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué motivó a Gaspar Mora a aislarse en el monte de Itapé según el relato?",
++      "question": "In what order does the text say it will present its three steps?",
+       "options": [
+-        "El deseo de escapar de sus deudas bancarias.",
+-        "El descubrimiento de que padecía lepra y la voluntad de consagrar su destierro a tallar el dolor de su pueblo.",
+-        "Una orden judicial del gobernador militar de la provincia.",
+-        "La búsqueda de yacimientos de oro en la sierra."
++        "El autor, la novela y el tema.",
++        "La novela, el autor y el tema.",
++        "El tema, el autor y la novela."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-28-02-ex.json b/content/es-latam/exercises/b2/b2-28-02-ex.json
+index 9aa2a138..3df09b7d 100644
+--- a/content/es-latam/exercises/b2/b2-28-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-28-02-ex.json
+@@ -3,96 +3,141 @@
+   "exercises": [
+     {
+       "id": "b2-28-02.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "marcadores-digresion"
+-      ],
+-      "question": "¿Qué marcador permite incorporar un comentario accesorio sin que sea el eje del razonamiento principal?",
+-      "options": [
+-        "En consecuencia",
+-        "Dicho sea de paso",
+-        "Por consiguiente",
+-        "Habida cuenta de"
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "por cierto",
++          "by the way"
++        ],
++        [
++          "a propósito de",
++          "speaking of"
++        ],
++        [
++          "dicho sea de paso",
++          "incidentally"
++        ],
++        [
++          "volviendo a lo que decíamos",
++          "going back to what we were saying"
++        ],
++        [
++          "el informe",
++          "the report"
++        ]
+       ],
+-      "correct": 1
++      "teaches": [
++        "b2-discourse-markers-structuring-sequencing-vocab"
++      ]
+     },
+     {
+       "id": "b2-28-02.ex02",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Carlos is talking about dinner and suddenly remembers that Ana called. Which sentence adds that as a side remark?",
++      "options": [
++        "Cenamos a las nueve. Por cierto, Ana llamó esta mañana.",
++        "Cenamos a las nueve. En primer lugar, Ana llamó esta mañana.",
++        "Cenamos a las nueve. En resumen, Ana llamó esta mañana."
++      ],
++      "correct": 0,
+       "teaches": [
+         "marcadores-digresion"
+       ],
+-      "sentence": "El ministro defendió el presupuesto; por __, anunció una partida especial para educación rural.",
+-      "answer": "cierto",
+-      "english": "The minister defended the budget; by the way, he announced a special fund for rural education."
++      "distractor_skills": {
++        "1": "ordering-markers",
++        "2": "argument-markers"
++      }
+     },
+     {
+       "id": "b2-28-02.ex03",
+-      "type": "matching",
++      "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "A __ de la reunión, ¿a qué hora empieza?",
++      "answer": "propósito",
++      "english": "Speaking of the meeting, what time does it start?",
+       "teaches": [
+         "marcadores-digresion"
+-      ],
+-      "pairs": [
+-        [
+-          "a propósito",
+-          "vinculación con asunto conexo"
+-        ],
+-        [
+-          "dicho sea de paso",
+-          "comentario incidental o accesorio"
+-        ],
+-        [
+-          "entre paréntesis",
+-          "pausa explícita de aclaración"
+-        ],
+-        [
+-          "por cierto",
+-          "evocación oportuna de un dato"
+-        ]
+       ]
+     },
+     {
+       "id": "b2-28-02.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "Volviendo",
++        "a",
++        "lo",
++        "que",
++        "decíamos,",
++        "¿quién",
++        "presenta",
++        "el",
++        "informe?"
++      ],
++      "solution": [
++        "Volviendo",
++        "a",
++        "lo",
++        "que",
++        "decíamos,",
++        "¿quién",
++        "presenta",
++        "el",
++        "informe?"
++      ],
++      "english": "Going back to what we were saying, who presents the report?",
+       "teaches": [
+         "marcadores-digresion"
+-      ],
+-      "sentence": "A __ de la reforma agraria, varios parlamentarios visitaron las cooperativas del interior.",
+-      "answer": "propósito",
+-      "english": "Speaking of agrarian reform, several parliamentarians visited the cooperatives in the interior."
++      ]
+     },
+     {
+       "id": "b2-28-02.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-structuring-sequencing-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "Tenemos que decidir quién prepara la cena del sábado."
++        },
++        {
++          "speaker": "Carlos",
++          "text": "Por cierto, ¿ya tienes los boletos?"
++        },
++        {
++          "speaker": "Meg",
++          "text": "Sí, ya los tengo."
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Qué verbo formal expresa la acción de esquivar o eludir una dificultad o tema espinoso?",
+       "options": [
+-        "Pormenorizar",
+-        "Soslayar",
+-        "Dilucidar",
+-        "Recapitular"
++        "Volviendo a lo que decíamos, ¿quién prepara la cena?",
++        "Dicho sea de paso, ¿quién prepara la cena del sábado?",
++        "En resumen, ¿quién prepara la cena del sábado?"
++      ],
++      "correct": 0,
++      "teaches": [
++        "marcadores-digresion"
+       ],
+-      "correct": 1
++      "distractor_skills": {
++        "2": "argument-markers"
++      }
+     },
+     {
+       "id": "b2-28-02.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Por qué los campesinos se negaron a colocar el Cristo de Gaspar Mora en el templo parroquial?",
++      "question": "According to the text, when was Hijo de hombre published?",
+       "options": [
+-        "Porque la estatua era demasiado pesada para transportarla.",
+-        "Porque querían que perteneciera al pueblo y permaneciera libre en el cerro.",
+-        "Porque el obispo les exigía pagar un tributo de oro.",
+-        "Porque preferían venderla a un coleccionista extranjero."
++        "En 1960.",
++        "En 1917.",
++        "En 1936."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-28-03-ex.json b/content/es-latam/exercises/b2/b2-28-03-ex.json
+index 8332cd05..e5065729 100644
+--- a/content/es-latam/exercises/b2/b2-28-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-28-03-ex.json
+@@ -5,94 +5,130 @@
+       "id": "b2-28-03.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "teaches": [
+-        "ordering-markers"
+-      ],
+-      "question": "¿Cuál es la función textual del marcador 'dicho esto'?",
++      "question": "You have just listed the problems and now you want to move on to the solutions. Which sentence does that?",
+       "options": [
+-        "Invalidar retroactivamente todas las afirmaciones anteriores.",
+-        "Asumir lo planteado previamente y pasar al siguiente punto introduciendo una salvedad o contrapunto.",
+-        "Indicar el final abrupto de una conferencia.",
+-        "Citar textualmente a un autor clásico."
++        "Pues bien, ya conocemos los problemas; busquemos soluciones.",
++        "Por cierto, ya conocemos los problemas; busquemos soluciones.",
++        "Dicho sea de paso, ya conocemos los problemas; busquemos soluciones."
++      ],
++      "correct": 0,
++      "teaches": [
++        "b2-discourse-markers-structuring-sequencing-vocab"
+       ],
+-      "correct": 1
++      "distractor_skills": {
++        "1": "marcadores-digresion",
++        "2": "marcadores-digresion"
++      }
+     },
+     {
+       "id": "b2-28-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Por __ que se refiere al transporte, hay un autobús cada hora.",
++      "answer": "lo",
++      "english": "As far as transport is concerned, there is a bus every hour.",
+       "teaches": [
+-        "ordering-markers"
+-      ],
+-      "sentence": "Pues __, analizadas las consecuencias del tratado, procede debatir sus implicancias fiscales.",
+-      "answer": "bien",
+-      "english": "Now then, having analyzed the consequences of the treaty, it is appropriate to debate its fiscal implications."
++        "b2-discourse-markers-structuring-sequencing-vocab"
++      ]
+     },
+     {
+       "id": "b2-28-03.ex03",
+       "type": "matching",
+-      "category": "grammar",
+-      "teaches": [
+-        "ordering-markers"
+-      ],
++      "category": "vocabulary",
+       "pairs": [
+         [
+           "pues bien",
+-          "reanudación o paso al siguiente razonamiento"
++          "well then"
+         ],
+         [
+-          "dicho esto",
+-          "transición con contrapunto matizado"
++          "en cuanto a",
++          "as for"
+         ],
+         [
+-          "así las cosas",
+-          "evaluación del estado de la cuestión"
++          "por lo que se refiere a",
++          "as far as ... is concerned"
+         ],
+         [
+-          "ahora bien",
+-          "introducción de objeción sustantiva"
++          "además",
++          "what is more"
++        ],
++        [
++          "sin embargo",
++          "however"
+         ]
++      ],
++      "teaches": [
++        "b2-discourse-markers-structuring-sequencing-vocab"
+       ]
+     },
+     {
+       "id": "b2-28-03.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "ordering-markers"
++      "tiles": [
++        "Pues",
++        "bien,",
++        "ya",
++        "tenemos",
++        "la",
++        "fecha;",
++        "ahora",
++        "elegimos",
++        "el",
++        "lugar."
++      ],
++      "solution": [
++        "Pues",
++        "bien,",
++        "ya",
++        "tenemos",
++        "la",
++        "fecha;",
++        "ahora",
++        "elegimos",
++        "el",
++        "lugar."
+       ],
+-      "sentence": "Así las __, la asamblea decidió suspender la votación hasta recibir el dictamen pericial.",
+-      "answer": "cosas",
+-      "english": "As things stood, the assembly decided to suspend the vote until receiving the expert opinion."
++      "english": "Well then, we have the date; now we choose the place.",
++      "teaches": [
++        "b2-discourse-markers-structuring-sequencing-vocab"
++      ]
+     },
+     {
+       "id": "b2-28-03.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-structuring-sequencing-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "¿Qué hacemos con la cena del sábado?"
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Qué expresión designa el elemento vertebrador o idea central que une las partes de un discurso?",
+       "options": [
+-        "El hilo conductor",
+-        "El inciso lateral",
+-        "La bifurcación",
+-        "El corolario"
++        "En cuanto a la comida, yo me ocupo; en cuanto a las bebidas, las traes tú.",
++        "En cuanto la comida, yo me ocupo; en cuanto a las bebidas, las traes tú.",
++        "En cuanto a la comida, yo me ocupo; en cuanto de las bebidas, las traes tú."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "b2-discourse-markers-structuring-sequencing-vocab"
++      ]
+     },
+     {
+       "id": "b2-28-03.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿A qué prueba extrema se enfrenta Cristóbal Jara en las arenas del Chaco?",
++      "question": "What is Hijo de hombre about, according to the text?",
+       "options": [
+-        "A defender una fortaleza fluvial desarmado.",
+-        "A conducir un camión cisterna con agua vital bajo fuego enemigo para salvar a un destacamento agonizante.",
+-        "A cruzar nadando el río Paraguay en plena noche.",
+-        "A redactar un armisticio con los comandantes bolivianos."
++        "La lucha entre gobernantes y pueblo oprimido.",
++        "La vida del autor durante sus años de exilio.",
++        "Un viaje del escritor por varios países."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-28-04-ex.json b/content/es-latam/exercises/b2/b2-28-04-ex.json
+index 62f94464..225b9fc2 100644
+--- a/content/es-latam/exercises/b2/b2-28-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-28-04-ex.json
+@@ -3,96 +3,128 @@
+   "exercises": [
+     {
+       "id": "b2-28-04.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "ordering-markers"
+-      ],
+-      "question": "¿Qué pareja de marcadores distributivos pertenece al registro ensayístico y literario más formal?",
+-      "options": [
+-        "O sea... es decir",
+-        "Ora... ora",
+-        "Por lo tanto... en consecuencia",
+-        "Así que... de modo que"
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "por una parte",
++          "on the one hand"
++        ],
++        [
++          "por otra parte",
++          "on the other hand"
++        ],
++        [
++          "mientras que",
++          "whereas"
++        ],
++        [
++          "en cambio",
++          "by contrast"
++        ],
++        [
++          "sin embargo",
++          "however"
++        ]
+       ],
+-      "correct": 1
++      "teaches": [
++        "b2-discourse-markers-structuring-sequencing-vocab"
++      ]
+     },
+     {
+       "id": "b2-28-04.ex02",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence sets the two sides of a point against each other?",
++      "options": [
++        "Por una parte, el curso es interesante; por otra, es muy caro.",
++        "Por una parte, el curso es interesante; por una parte, es muy caro.",
++        "Por otra, el curso es interesante; por una parte, es muy caro."
++      ],
++      "correct": 0,
+       "teaches": [
+         "ordering-markers"
+-      ],
+-      "sentence": "Por un lado, la medida estimula el consumo; por __ lado, puede acelerar el ritmo inflacionario.",
+-      "answer": "otro",
+-      "english": "On the one hand, the measure stimulates consumption; on the other hand, it may accelerate the rate of inflation."
++      ]
+     },
+     {
+       "id": "b2-28-04.ex03",
+-      "type": "matching",
++      "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Mis padres prefieren el campo, __ que yo prefiero la ciudad.",
++      "answer": "mientras",
++      "english": "My parents prefer the countryside, whereas I prefer the city.",
+       "teaches": [
+-        "ordering-markers"
+-      ],
+-      "pairs": [
+-        [
+-          "por un lado... por otro",
+-          "distribución bimembre analítica"
+-        ],
+-        [
+-          "ya... ya",
+-          "alternancia simétrica culta"
+-        ],
+-        [
+-          "bien... bien",
+-          "distribución de opciones equivalentes"
+-        ],
+-        [
+-          "ora... ora",
+-          "alternancia retórica clásica"
+-        ]
++        "b2-discourse-markers-structuring-sequencing-vocab"
+       ]
+     },
+     {
+       "id": "b2-28-04.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "Por",
++        "una",
++        "parte,",
++        "viajar",
++        "es",
++        "caro;",
++        "por",
++        "otra,",
++        "es",
++        "útil."
++      ],
++      "solution": [
++        "Por",
++        "una",
++        "parte,",
++        "viajar",
++        "es",
++        "caro;",
++        "por",
++        "otra,",
++        "es",
++        "útil."
++      ],
++      "english": "On the one hand, travelling is expensive; on the other, it is useful.",
+       "teaches": [
+         "ordering-markers"
+-      ],
+-      "sentence": "Ya por timidez, __ por prudencia diplomática, el delegado optó por guardar silencio.",
+-      "answer": "ya",
+-      "english": "Whether out of shyness or out of diplomatic prudence, the delegate chose to remain silent."
++      ]
+     },
+     {
+       "id": "b2-28-04.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-structuring-sequencing-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "¿Cómo es tu oficina?"
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Qué término formal designa la división o bifurcación de un concepto en dos posturas opuestas?",
+       "options": [
+-        "Dicotomía",
+-        "Apostilla",
+-        "Preámbulo",
+-        "Paréntesis"
++        "Por una parte, es luminosa; por otra, es muy pequeña.",
++        "Por una parte, es luminosa; por una parte, es muy pequeña.",
++        "Mientras que es luminosa; por otra, es muy pequeña."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "ordering-markers"
++      ]
+     },
+     {
+       "id": "b2-28-04.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué dimensión trascendente adquiere la travesía del camión aguatero en la novela?",
++      "question": "Which years does the novel cover, according to the text?",
+       "options": [
+-        "Una demostración de velocidad automovilística para vender motores.",
+-        "Una consagración del sacrificio solidario entre hermanos de infortunio frente a la indiferencia del poder.",
+-        "Un simple paseo rutinario sin consecuencias personales.",
+-        "Una maniobra de escape cobarde hacia la frontera argentina."
++        "De 1912 a 1936.",
++        "De 1917 a 2005.",
++        "De 1936 a 1960."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-28-05-ex.json b/content/es-latam/exercises/b2/b2-28-05-ex.json
+index c1e598de..0a6e4ac0 100644
+--- a/content/es-latam/exercises/b2/b2-28-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-28-05-ex.json
+@@ -3,96 +3,135 @@
+   "exercises": [
+     {
+       "id": "b2-28-05.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "argument-markers"
+-      ],
+-      "question": "¿Qué marcador de cierre connota el principio irreductible o la causa última de una argumentación?",
+-      "options": [
+-        "Para empezar",
+-        "En última instancia",
+-        "A propósito",
+-        "Por cierto"
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "en resumen",
++          "to sum up"
++        ],
++        [
++          "en conclusión",
++          "in conclusion"
++        ],
++        [
++          "en definitiva",
++          "all in all"
++        ],
++        [
++          "en suma",
++          "in short"
++        ],
++        [
++          "por último",
++          "lastly"
++        ]
+       ],
+-      "correct": 1
++      "teaches": [
++        "b2-discourse-markers-structuring-sequencing-vocab"
++      ]
+     },
+     {
+       "id": "b2-28-05.ex02",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence closes a text after three reasons?",
++      "options": [
++        "En definitiva, la ciudad ofrece más oportunidades.",
++        "En primer lugar, la ciudad ofrece más oportunidades.",
++        "Por cierto, la ciudad ofrece más oportunidades."
++      ],
++      "correct": 0,
+       "teaches": [
+         "argument-markers"
+       ],
+-      "sentence": "En __, los resultados del estudio confirman plenamente la hipótesis inicial de los investigadores.",
+-      "answer": "suma",
+-      "english": "In short, the results of the study fully confirm the researchers' initial hypothesis."
++      "distractor_skills": {
++        "1": "ordering-markers",
++        "2": "marcadores-digresion"
++      }
+     },
+     {
+       "id": "b2-28-05.ex03",
+-      "type": "matching",
++      "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "En __, el viaje fue muy bien, aunque costó más de lo previsto.",
++      "answers": [
++        "definitiva",
++        "resumen",
++        "conclusión",
++        "suma"
++      ],
++      "english": "All in all, the trip went very well, although it cost more than planned.",
+       "teaches": [
+         "argument-markers"
+-      ],
+-      "pairs": [
+-        [
+-          "en suma",
+-          "recapitulación sintética condensada"
+-        ],
+-        [
+-          "en definitiva",
+-          "resolución categórica concluyente"
+-        ],
+-        [
+-          "en última instancia",
+-          "fundamento irreductible o causa esencial"
+-        ],
+-        [
+-          "a fin de cuentas",
+-          "balance pragmático del desenlace"
+-        ]
+       ]
+     },
+     {
+       "id": "b2-28-05.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "En",
++        "definitiva,",
++        "el",
++        "viaje",
++        "salió",
++        "muy",
++        "bien."
++      ],
++      "solution": [
++        "En",
++        "definitiva,",
++        "el",
++        "viaje",
++        "salió",
++        "muy",
++        "bien."
++      ],
++      "english": "All in all, the trip went very well.",
+       "teaches": [
+         "argument-markers"
+-      ],
+-      "sentence": "En __, la estabilidad democrática exige el fortalecimiento continuo de las instituciones republicanas.",
+-      "answer": "definitiva",
+-      "english": "Ultimately, democratic stability demands the continuous strengthening of republican institutions."
++      ]
+     },
+     {
+       "id": "b2-28-05.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-structuring-sequencing-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "Entonces, ¿qué piensas del plan?"
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Qué sustantivo formal se refiere a la proposición que se deduce de lo demostrado con anterioridad?",
+       "options": [
+-        "El corolario",
+-        "El exordio",
+-        "El inciso",
+-        "La digresión"
++        "Por un lado es barato y por otro es rápido; en definitiva, me parece una buena idea.",
++        "Por un lado es barato y por otro es rápido; por cierto, me parece una buena idea.",
++        "Por un lado es barato y por otro es rápido; en primer lugar, me parece una buena idea."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "argument-markers"
++      ],
++      "distractor_skills": {
++        "1": "marcadores-digresion",
++        "2": "ordering-markers"
++      }
+     },
+     {
+       "id": "b2-28-05.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Cuál es la lección humanista que Roa Bastos transmite mediante el dolor de su tierra?",
++      "question": "What does the text say about Roa Bastos's life?",
+       "options": [
+-        "Que la resignación absoluta es la única virtud verdadera.",
+-        "Que la dignidad humana se levanta en la solidaridad fraterna compartida por los desposeídos.",
+-        "Que el progreso depende únicamente de la compra de armamentos modernos.",
+-        "Que la memoria histórica debe borrarse para evitar el sufrimiento."
++        "Vivió muchos años en el exilio.",
++        "Murió en 1960, el año de su novela.",
++        "Nació en 1936, el año final de la lucha."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-28-consolidation-ex.json b/content/es-latam/exercises/b2/b2-28-consolidation-ex.json
+index dc702b9c..c89d6517 100644
+--- a/content/es-latam/exercises/b2/b2-28-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-28-consolidation-ex.json
+@@ -5,121 +5,166 @@
+       "id": "b2-28-consolidation.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "teaches": [
+-        "ordering-markers"
+-      ],
+-      "question": "Identifica la opción donde el marcador ordenador esté correctamente puntuado en apertura de párrafo:",
++      "question": "Which sentence closes a short talk about a trip?",
+       "options": [
+-        "En primer término debemos analizar el impacto ambiental.",
+-        "En primer término, debemos analizar el impacto ambiental.",
+-        "En primer término; debemos analizar el impacto ambiental.",
+-        "En primer término: debemos analizar el impacto ambiental."
++        "En resumen, el viaje fue corto pero muy bueno.",
++        "En segundo lugar, el viaje fue corto pero muy bueno.",
++        "A propósito de, el viaje fue corto pero muy bueno."
++      ],
++      "correct": 0,
++      "teaches": [
++        "argument-markers"
+       ],
+-      "correct": 1
++      "distractor_skills": {
++        "1": "ordering-markers"
++      }
+     },
+     {
+       "id": "b2-28-consolidation.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Hoy tengo mucho trabajo; por __, ¿puedes llamar a mi jefe?",
++      "answer": "cierto",
++      "english": "I have a lot of work today; by the way, can you call my boss?",
+       "teaches": [
+         "marcadores-digresion"
+-      ],
+-      "sentence": "Conviene recordar, dicho sea de __, que los plazos de apelación vencen el próximo viernes.",
+-      "answer": "paso",
+-      "english": "It is worth remembering, by the way, that the appeal deadlines expire next Friday."
++      ]
+     },
+     {
+       "id": "b2-28-consolidation.ex03",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "ordering-markers"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "¿Quién pone la música en la fiesta?"
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Qué marcador indica que se evalúa el estado actual de los hechos antes de continuar?",
+       "options": [
+-        "En cambio",
+-        "Así las cosas",
+-        "Sin embargo",
+-        "Por consiguiente"
++        "En cuanto a la música, la pongo yo.",
++        "En cuanto la música, la pongo yo.",
++        "En cuanto de la música, la pongo yo."
+       ],
+-      "correct": 1
++      "correct": 0,
++      "teaches": [
++        "b2-discourse-markers-structuring-sequencing-vocab"
++      ]
+     },
+     {
+       "id": "b2-28-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Por una parte, vivir aquí es cómodo; por __ parte, es caro.",
++      "answer": "otra",
++      "english": "On the one hand, living here is comfortable; on the other hand, it is expensive.",
+       "teaches": [
+         "ordering-markers"
+-      ],
+-      "sentence": "Por una parte, la propuesta es atractiva; por __ parte, los riesgos financieros son inasumibles.",
+-      "answer": "otra",
+-      "english": "On the one hand, the proposal is attractive; on the other hand, the financial risks are unacceptable."
++      ]
+     },
+     {
+       "id": "b2-28-consolidation.ex05",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "argument-markers"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "Ya hablamos del precio."
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Cuál es el marcador más adecuado para enunciar el fundamento ético irreductible de un ensayo?",
+       "options": [
+-        "En última instancia",
+-        "A propósito",
+-        "Por cierto",
+-        "En primer lugar"
++        "Pues bien, ahora hablemos del lugar.",
++        "En resumen, ahora hablemos del lugar.",
++        "Dicho sea de paso, ahora hablemos del lugar."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "b2-discourse-markers-structuring-sequencing-vocab"
++      ],
++      "distractor_skills": {
++        "1": "argument-markers",
++        "2": "marcadores-digresion"
++      }
+     },
+     {
+       "id": "b2-28-consolidation.ex06",
+       "type": "matching",
+       "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-structuring-sequencing-vocab"
+-      ],
+       "pairs": [
+         [
+-          "preámbulo",
+-          "introducción formal o exordio"
++          "por cierto",
++          "by the way"
+         ],
+         [
+-          "soslayar",
+-          "eludir o evitar una dificultad"
++          "en cuanto a",
++          "as for"
+         ],
+         [
+-          "dicotomía",
+-          "división en dos posturas opuestas"
++          "mientras que",
++          "whereas"
+         ],
+         [
+-          "corolario",
+-          "proposición deducida de lo previo"
++          "en suma",
++          "in short"
++        ],
++        [
++          "en tercer lugar",
++          "thirdly"
+         ]
++      ],
++      "teaches": [
++        "b2-discourse-markers-structuring-sequencing-vocab"
+       ]
+     },
+     {
+       "id": "b2-28-consolidation.ex07",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "teaches": [
+-        "argument-markers"
++      "tiles": [
++        "Volviendo",
++        "a",
++        "lo",
++        "que",
++        "decíamos,",
++        "falta",
++        "elegir",
++        "el",
++        "lugar."
+       ],
+-      "sentence": "En __, podemos afirmar que el congreso alcanzó con éxito todos sus objetivos pedagógicos.",
+-      "answer": "suma",
+-      "english": "In short, we can state that the conference successfully achieved all its pedagogical objectives."
++      "solution": [
++        "Volviendo",
++        "a",
++        "lo",
++        "que",
++        "decíamos,",
++        "falta",
++        "elegir",
++        "el",
++        "lugar."
++      ],
++      "english": "Going back to what we were saying, we still have to choose the place.",
++      "teaches": [
++        "marcadores-digresion"
++      ]
+     },
+     {
+       "id": "b2-28-consolidation.ex08",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué elemento unifica simbólicamente la resistencia campesina en la obra de Augusto Roa Bastos?",
++      "question": "According to the text, what is Hijo de hombre in Roa Bastos's work?",
+       "options": [
+-        "Un estandarte militar importado de Madrid.",
+-        "El Cristo tallado en guayacán por el leproso Gaspar Mora en el cerro de Itapé.",
+-        "Un libro de leyes comerciales del siglo dieciocho.",
+-        "Una campana de bronce donada por el párroco."
++        "Su primera novela.",
++        "Su última novela.",
++        "Su único libro."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-29-01-ex.json b/content/es-latam/exercises/b2/b2-29-01-ex.json
+index 0cbf86c7..ffc5e9d7 100644
+--- a/content/es-latam/exercises/b2/b2-29-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-29-01-ex.json
+@@ -3,96 +3,138 @@
+   "exercises": [
+     {
+       "id": "b2-29-01.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "reformulation-markers"
+-      ],
+-      "question": "¿Cuál es la función del marcador 'es decir' en un texto argumentativo formal?",
+-      "options": [
+-        "Contradecir frontalmente la afirmación anterior para anularla.",
+-        "Introducir una explicación o paráfrasis que aclara y precisa lo antedicho.",
+-        "Expresar una duda insuperable sobre los datos presentados.",
+-        "Formular una despedida protocolaria en correspondencia diplomática."
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "en otras palabras",
++          "in other words"
++        ],
++        [
++          "dicho de otro modo",
++          "put another way"
++        ],
++        [
++          "aclarar",
++          "to make clear"
++        ],
++        [
++          "el significado",
++          "meaning"
++        ],
++        [
++          "opcional",
++          "optional"
++        ]
+       ],
+-      "correct": 1
++      "teaches": [
++        "b2-discourse-markers-reformulation-precision-vocab"
++      ]
+     },
+     {
+       "id": "b2-29-01.ex02",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence restates the first idea in other words?",
++      "options": [
++        "La reunión es opcional; en otras palabras, nadie tiene que ir.",
++        "La reunión es opcional; sin embargo, nadie tiene que ir.",
++        "La reunión es opcional; en primer lugar, nadie tiene que ir."
++      ],
++      "correct": 0,
+       "teaches": [
+         "reformulation-markers"
+       ],
+-      "sentence": "El proyecto exige rigor metodológico, __ decir, un control experimental estricto de las variables.",
+-      "answer": "es",
+-      "english": "The project demands methodological rigor, that is to say, strict experimental control of the variables."
++      "distractor_skills": {
++        "1": "contrast-concession-connectors",
++        "2": "ordering-markers"
++      }
+     },
+     {
+       "id": "b2-29-01.ex03",
+-      "type": "matching",
++      "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "El viaje es largo, es __, dura más de diez horas.",
++      "answer": "decir",
++      "english": "The journey is long, that is, it takes more than ten hours.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "pairs": [
+-        [
+-          "es decir",
+-          "aclaración o paráfrasis explicativa"
+-        ],
+-        [
+-          "o sea",
+-          "reexpresión equivalente de uso extendido"
+-        ],
+-        [
+-          "esto es",
+-          "definición precisa en registro formal"
+-        ],
+-        [
+-          "a saber",
+-          "enumeración detallada de elementos anunciados"
+-        ]
+       ]
+     },
+     {
+       "id": "b2-29-01.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "Hoy",
++        "no",
++        "hay",
++        "clase;",
++        "en",
++        "otras",
++        "palabras,",
++        "tenemos",
++        "el",
++        "día",
++        "libre."
++      ],
++      "solution": [
++        "Hoy",
++        "no",
++        "hay",
++        "clase;",
++        "en",
++        "otras",
++        "palabras,",
++        "tenemos",
++        "el",
++        "día",
++        "libre."
++      ],
++      "english": "There is no class today; in other words, we have the day off.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "sentence": "La reforma reconoce tres derechos fundamentales, a __: la educación, la salud y la vivienda.",
+-      "answer": "saber",
+-      "english": "The reform recognizes three fundamental rights, namely: education, healthcare, and housing."
++      ]
+     },
+     {
+       "id": "b2-29-01.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-reformulation-precision-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "¿A qué hora sales mañana?"
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Qué adjetivo califica aquello que no admite duda o equívoco por su total claridad?",
+       "options": [
+-        "Inequívoco",
+-        "Tangencial",
+-        "Ambivalente",
+-        "Subjetivo"
++        "Salgo temprano, o sea, a las seis de la mañana.",
++        "Salgo temprano, por cierto, a las seis de la mañana.",
++        "Salgo temprano, en primer lugar, a las seis de la mañana."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "reformulation-markers"
++      ],
++      "distractor_skills": {
++        "1": "marcadores-digresion",
++        "2": "ordering-markers"
++      }
+     },
+     {
+       "id": "b2-29-01.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Por qué Bento Santiago hizo construir su casa de Engenho Novo idéntica a la de su infancia?",
++      "question": "What does the narrator say casmurro means in his case?",
+       "options": [
+-        "Para ahorrar en planos arquitectónicos.",
+-        "Para revivir con obsesión arqueológica el pasado y los recuerdos de su amor por Capitu.",
+-        "Porque era una ordenanza municipal de Río de Janeiro.",
+-        "Para montar una galería de arte con cuadros de pintores extranjeros."
++        "Un hombre callado y encerrado en sí mismo.",
++        "Un poeta que lee versos en el tren.",
++        "Un noble con una casa muy grande."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-29-02-ex.json b/content/es-latam/exercises/b2/b2-29-02-ex.json
+index ce6db9f6..03860485 100644
+--- a/content/es-latam/exercises/b2/b2-29-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-29-02-ex.json
+@@ -3,96 +3,137 @@
+   "exercises": [
+     {
+       "id": "b2-29-02.ex01",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "reformulation-markers"
+-      ],
+-      "question": "¿Qué marcador permite corregir un vocablo previo para emplear otro más exacto?",
+-      "options": [
+-        "Por consiguiente",
+-        "Mejor dicho",
+-        "En consecuencia",
+-        "Habida cuenta de"
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "mejor dicho",
++          "or rather"
++        ],
++        [
++          "corregir",
++          "to correct"
++        ],
++        [
++          "equivocarse",
++          "to make a mistake"
++        ],
++        [
++          "enojado",
++          "angry"
++        ],
++        [
++          "el error",
++          "mistake"
++        ]
+       ],
+-      "correct": 1
++      "teaches": [
++        "b2-discourse-markers-reformulation-precision-vocab"
++      ]
+     },
+     {
+       "id": "b2-29-02.ex02",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Meg says \"Monday\" and then corrects herself: it was Tuesday. Which sentence does this?",
++      "options": [
++        "Llegamos el lunes; mejor dicho, el martes.",
++        "Llegamos el lunes; es decir, el martes.",
++        "Llegamos el lunes; por cierto, el martes."
++      ],
++      "correct": 0,
+       "teaches": [
+         "reformulation-markers"
+       ],
+-      "sentence": "No se trata de un simple error burocrático; más __, constituye una negligencia institucional grave.",
+-      "answer": "bien",
+-      "english": "It is not a mere bureaucratic error; rather, it constitutes serious institutional negligence."
++      "distractor_skills": {
++        "2": "marcadores-digresion"
++      }
+     },
+     {
+       "id": "b2-29-02.ex03",
+-      "type": "matching",
++      "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "No estoy enojado; más __ estoy cansado.",
++      "answer": "bien",
++      "english": "I am not angry; I am rather tired.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "pairs": [
+-        [
+-          "mejor dicho",
+-          "rectificación espontánea o corrección léxica"
+-        ],
+-        [
+-          "más bien",
+-          "matización correctiva tras negación previa"
+-        ],
+-        [
+-          "más exactamente",
+-          "ajuste de alta precisión conceptual"
+-        ],
+-        [
+-          "antes bien",
+-          "contraposición correctiva formal"
+-        ]
+       ]
+     },
+     {
+       "id": "b2-29-02.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "Mi",
++        "amiga",
++        "vive",
++        "en",
++        "el",
++        "centro;",
++        "mejor",
++        "dicho,",
++        "cerca",
++        "del",
++        "centro."
++      ],
++      "solution": [
++        "Mi",
++        "amiga",
++        "vive",
++        "en",
++        "el",
++        "centro;",
++        "mejor",
++        "dicho,",
++        "cerca",
++        "del",
++        "centro."
++      ],
++      "english": "My friend lives in the centre; or rather, near the centre.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "sentence": "El informe no concluyó la auditoría; más __, suspendió las actuaciones hasta recibir nuevas pruebas.",
+-      "answer": "exactamente",
+-      "english": "The report did not conclude the audit; more precisely, it suspended proceedings until receiving new evidence."
++      ]
+     },
+     {
+       "id": "b2-29-02.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-reformulation-precision-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "¿Es caro el restaurante?"
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Cómo se denomina el vocablo que por su similitud formal con otro de lengua extranjera induce a error semántico?",
+       "options": [
+-        "Falso cognado o falso amigo",
+-        "Neologismo fonético",
+-        "Cultismo arcaico",
+-        "Sufijo apreciativo"
++        "No es caro; más bien es normal.",
++        "No es caro; por cierto, es normal.",
++        "No es caro; en primer lugar, es normal."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "reformulation-markers"
++      ],
++      "distractor_skills": {
++        "1": "marcadores-digresion",
++        "2": "ordering-markers"
++      }
+     },
+     {
+       "id": "b2-29-02.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué metáfora inmortal definió la mirada seductora y enigmática de Capitu?",
++      "question": "According to the text, what could the narrator not rebuild?",
+       "options": [
+-        "Ojos de relámpago andino",
+-        "Ojos de resaca marina",
+-        "Ojos de águila serrana",
+-        "Ojos de obsidiana volcánica"
++        "El pasado y al hombre que fue.",
++        "Las habitaciones de su infancia.",
++        "Las paredes de la sala principal."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-29-03-ex.json b/content/es-latam/exercises/b2/b2-29-03-ex.json
+index 8773e387..8325732a 100644
+--- a/content/es-latam/exercises/b2/b2-29-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-29-03-ex.json
+@@ -5,94 +5,137 @@
+       "id": "b2-29-03.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence says that the doubt does not change the plan?",
++      "options": [
++        "No sé si hará buen tiempo; de todos modos, saldremos.",
++        "No sé si hará buen tiempo; por eso, saldremos.",
++        "No sé si hará buen tiempo; es decir, saldremos."
++      ],
++      "correct": 0,
+       "teaches": [
+         "reformulation-markers"
+       ],
+-      "question": "¿Qué función cumple el marcador 'de todos modos' en un debate formal?",
+-      "options": [
+-        "Introducir una rectificación tajante que modifica el argumento expuesto con anterioridad.",
+-        "Restar trascendencia a objeciones previas para reafirmar la tesis principal con independencia de ellas.",
+-        "Cerrar la argumentación mediante una síntesis ordenada de los puntos principales del debate.",
+-        "Expresar una adhesión entusiasta a la postura defendida por el interlocutor en su turno previo."
+-      ],
+-      "correct": 1
++      "distractor_skills": {
++        "1": "porque-y-por-eso"
++      }
+     },
+     {
+       "id": "b2-29-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Puede que Meg llegue tarde; en __ caso, empezamos a las ocho.",
++      "answers": [
++        "cualquier",
++        "todo"
++      ],
++      "english": "Meg may be late; in any case, we start at eight.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "sentence": "Hubo discrepancias metodológicas; en __ caso, las conclusiones generales siguen siendo válidas.",
+-      "answer": "cualquier",
+-      "english": "There were methodological discrepancies; in any case, the general conclusions remain valid."
++      ]
+     },
+     {
+       "id": "b2-29-03.ex03",
+       "type": "matching",
+-      "category": "grammar",
+-      "teaches": [
+-        "reformulation-markers"
+-      ],
++      "category": "vocabulary",
+       "pairs": [
+         [
+-          "en cualquier caso",
+-          "reafirmación independiente de contingencias"
++          "de todas formas",
++          "anyway"
++        ],
++        [
++          "la duda",
++          "doubt"
+         ],
+         [
+-          "de todos modos",
+-          "relativización de objeciones secundarias"
++          "aclarar",
++          "to make clear"
+         ],
+         [
+-          "de cualquier manera",
+-          "distanciamiento pragmático de reparos"
++          "el significado",
++          "meaning"
+         ],
+         [
+-          "de todas formas",
+-          "reanudación argumentativa con reserva"
++          "equivocarse",
++          "to make a mistake"
+         ]
++      ],
++      "teaches": [
++        "b2-discourse-markers-reformulation-precision-vocab"
+       ]
+     },
+     {
+       "id": "b2-29-03.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "No",
++        "sé",
++        "si",
++        "me",
++        "contestarán;",
++        "de",
++        "todas",
++        "formas,",
++        "voy",
++        "a",
++        "escribir."
++      ],
++      "solution": [
++        "No",
++        "sé",
++        "si",
++        "me",
++        "contestarán;",
++        "de",
++        "todas",
++        "formas,",
++        "voy",
++        "a",
++        "escribir."
++      ],
++      "english": "I do not know if they will answer me; anyway, I am going to write.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "sentence": "Las negociaciones fueron arduas; de __ modos, se alcanzó un preacuerdo satisfactorio.",
+-      "answer": "todos",
+-      "english": "The negotiations were arduous; in any case, a satisfactory preliminary agreement was reached."
++      ]
+     },
+     {
+       "id": "b2-29-03.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-reformulation-precision-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "Dicen que mañana puede llover."
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Qué sustantivo expresa una advertencia, excepción o reserva que limita el alcance de una afirmación?",
+       "options": [
+-        "La salvedad",
+-        "El corolario",
+-        "La sinopsis",
+-        "El arquetipo"
++        "De todos modos, vamos a salir a caminar.",
++        "Por cierto, vamos a salir a caminar.",
++        "Mejor dicho, vamos a salir a caminar."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "reformulation-markers"
++      ],
++      "distractor_skills": {
++        "1": "marcadores-digresion"
++      }
+     },
+     {
+       "id": "b2-29-03.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué acontecimiento trágico detonó la sospecha destructiva de Bento sobre la fidelidad de Capitu?",
++      "question": "What does the narrator's mother decide, according to the text?",
+       "options": [
+-        "El hallazgo de una carta de amor en un baúl secreto.",
+-        "El dolor de Capitu ante el cadáver de Escobar y el parecido de su hijo.",
+-        "La confesión pública del párroco en misa mayor.",
+-        "Una condena judicial por estafa en los tribunales."
++        "Llevar pronto a Bentinho al seminario.",
++        "Prohibir a Bentinho ver a Capitu.",
++        "Hablar con la familia de los vecinos."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-29-04-ex.json b/content/es-latam/exercises/b2/b2-29-04-ex.json
+index d655d370..217a5625 100644
+--- a/content/es-latam/exercises/b2/b2-29-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-29-04-ex.json
+@@ -5,94 +5,132 @@
+       "id": "b2-29-04.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence condenses a long explanation into one short sentence?",
++      "options": [
++        "La oficina abre a las nueve, cierra a las cinco y no abre los fines de semana. En pocas palabras, solo abre de lunes a viernes.",
++        "La oficina abre a las nueve, cierra a las cinco y no abre los fines de semana. Por cierto, solo abre de lunes a viernes.",
++        "La oficina abre a las nueve, cierra a las cinco y no abre los fines de semana. En primer lugar, solo abre de lunes a viernes."
++      ],
++      "correct": 0,
+       "teaches": [
+         "reformulation-markers"
+       ],
+-      "question": "¿Cuál es la utilidad discursiva de la locución 'dicho en otros términos'?",
+-      "options": [
+-        "Ocultar el significado de las palabras mediante giros crípticos.",
+-        "Presentar una paráfrasis condensada que clarifica un argumento complejo.",
+-        "Poner fin inmediatamente a una entrevista.",
+-        "Insultar sutilmente al interlocutor."
+-      ],
+-      "correct": 1
++      "distractor_skills": {
++        "1": "marcadores-digresion",
++        "2": "ordering-markers"
++      }
+     },
+     {
+       "id": "b2-29-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "__, el plan es barato, rápido y fácil.",
++      "answer": "resumiendo",
++      "english": "To sum up, the plan is cheap, quick and easy.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "sentence": "Dicho en __ términos, la soberanía energética garantiza la estabilidad macroeconómica nacional.",
+-      "answer": "otros",
+-      "english": "In other words, energy sovereignty guarantees national macroeconomic stability."
++      ]
+     },
+     {
+       "id": "b2-29-04.ex03",
+       "type": "matching",
+-      "category": "grammar",
+-      "teaches": [
+-        "reformulation-markers"
+-      ],
++      "category": "vocabulary",
+       "pairs": [
+         [
+-          "dicho en otros términos",
+-          "paráfrasis formal y sintética"
++          "en pocas palabras",
++          "in a few words"
+         ],
+         [
+-          "en otras palabras",
+-          "reexplicación clarificadora estándar"
++          "resumir",
++          "to sum up"
+         ],
+         [
+-          "dicho de otro modo",
+-          "reexpresión estilística equilibrada"
++          "la idea principal",
++          "the main idea"
+         ],
+         [
+-          "dicho más sencillamente",
+-          "traducción a registro accesible"
++          "la duda",
++          "doubt"
++        ],
++        [
++          "corregir",
++          "to correct"
+         ]
++      ],
++      "teaches": [
++        "b2-discourse-markers-reformulation-precision-vocab"
+       ]
+     },
+     {
+       "id": "b2-29-04.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "En",
++        "pocas",
++        "palabras,",
++        "el",
++        "plan",
++        "es",
++        "barato",
++        "y",
++        "fácil."
++      ],
++      "solution": [
++        "En",
++        "pocas",
++        "palabras,",
++        "el",
++        "plan",
++        "es",
++        "barato",
++        "y",
++        "fácil."
++      ],
++      "english": "In a few words, the plan is cheap and easy.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "sentence": "Dicho de __ modo, la modernidad artística exigió una ruptura radical con el pasado.",
+-      "answer": "otro",
+-      "english": "Put another way, artistic modernity demanded a radical break with the past."
++      ]
+     },
+     {
+       "id": "b2-29-04.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-reformulation-precision-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "Tu explicación fue larga. ¿Cuál es la idea principal?"
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Qué término técnico designa la explicación o interpretación amplificativa de un texto?",
+       "options": [
+-        "La paráfrasis",
+-        "El falso cognado",
+-        "La salvedad",
+-        "El escepticismo"
++        "En pocas palabras, el plan es barato y fácil.",
++        "Por cierto, el plan es barato y fácil.",
++        "En primer lugar, el plan es barato y fácil."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "reformulation-markers"
++      ],
++      "distractor_skills": {
++        "1": "marcadores-digresion",
++        "2": "ordering-markers"
++      }
+     },
+     {
+       "id": "b2-29-04.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Por qué 'Dom Casmurro' se considera una de las cumbres universales de la novela con narrador no confiable?",
++      "question": "Why did the narrator build his house in Engenho Novo?",
+       "options": [
+-        "Porque el autor olvidó firmar los capítulos finales.",
+-        "Porque el relato procede de la memoria de Bento, sin poder verificar el adulterio.",
+-        "Porque fue prohibida por los censores del imperio de Pedro II.",
+-        "Porque el narrador finge ser un fantasma del siglo dieciséis."
++        "Para reproducir la casa de su infancia.",
++        "Para vivir cerca de sus amigos.",
++        "Para tener un jardín más grande."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-29-05-ex.json b/content/es-latam/exercises/b2/b2-29-05-ex.json
+index 754e19e9..bc7be1d7 100644
+--- a/content/es-latam/exercises/b2/b2-29-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-29-05-ex.json
+@@ -5,94 +5,133 @@
+       "id": "b2-29-05.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence introduces one example of the general statement?",
++      "options": [
++        "Hay muchas formas de ahorrar. Por ejemplo, puedes cocinar en casa.",
++        "Hay muchas formas de ahorrar. En resumen, puedes cocinar en casa.",
++        "Hay muchas formas de ahorrar. Mejor dicho, puedes cocinar en casa."
++      ],
++      "correct": 0,
+       "teaches": [
+         "reformulation-markers"
+       ],
+-      "question": "¿Qué locución formal introduce un caso particular para demostrar una regla abstracta?",
+-      "options": [
+-        "En resumen",
+-        "A modo de ilustración",
+-        "Por consiguiente",
+-        "Sin perjuicio de"
+-      ],
+-      "correct": 1
++      "distractor_skills": {
++        "1": "argument-markers"
++      }
+     },
+     {
+       "id": "b2-29-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Me gustan las frutas __ la manzana y la pera.",
++      "answer": "como",
++      "english": "I like fruit such as apples and pears.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "sentence": "Por poner un __ ilustrativo, analicemos la rápida expansión del ferrocarril paulista en el siglo XIX.",
+-      "answer": "caso",
+-      "english": "To cite an illustrative case, let us analyze the rapid expansion of the Paulista railway in the 19th century."
++      ]
+     },
+     {
+       "id": "b2-29-05.ex03",
+       "type": "matching",
+-      "category": "grammar",
+-      "teaches": [
+-        "reformulation-markers"
+-      ],
++      "category": "vocabulary",
+       "pairs": [
+         [
+-          "a modo de ilustración",
+-          "presentación de ejemplo clarificador"
++          "en concreto",
++          "specifically"
+         ],
+         [
+-          "por poner un caso",
+-          "selección de caso concreto ilustrativo"
++          "así",
++          "for instance"
+         ],
+         [
+-          "verbigracia",
+-          "cultismo ensayístico clásico"
++          "el ejemplo",
++          "example"
+         ],
+         [
+-          "pongamos por caso",
+-          "planteamiento de hipótesis demostrativa"
++          "el caso",
++          "case"
++        ],
++        [
++          "la duda",
++          "doubt"
+         ]
++      ],
++      "teaches": [
++        "b2-discourse-markers-reformulation-precision-vocab"
+       ]
+     },
+     {
+       "id": "b2-29-05.ex04",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "Necesito",
++        "ayuda",
++        "con",
++        "un",
++        "documento;",
++        "en",
++        "concreto,",
++        "con",
++        "el",
++        "pasaporte."
++      ],
++      "solution": [
++        "Necesito",
++        "ayuda",
++        "con",
++        "un",
++        "documento;",
++        "en",
++        "concreto,",
++        "con",
++        "el",
++        "pasaporte."
++      ],
++      "english": "I need help with a document; specifically, with the passport.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "sentence": "Muchos vocablos aparentan igualdad; __, el portugués 'exquisito' significa raro y no sabroso.",
+-      "answer": "verbigracia",
+-      "english": "Many words appear identical; for instance, Portuguese 'exquisito' means strange and not delicious."
++      ]
+     },
+     {
+       "id": "b2-29-05.ex05",
+-      "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-reformulation-precision-vocab"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "¿De qué quieres hablar en la reunión?"
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Qué sustantivo designa un modelo ejemplar que sirve de pauta o norma suprema en una disciplina?",
+       "options": [
+-        "El paradigma",
+-        "El exordio",
+-        "La paráfrasis",
+-        "La digresión"
++        "Quiero hablar del transporte; en concreto, del autobús.",
++        "Quiero hablar del transporte; en resumen, del autobús.",
++        "Quiero hablar del transporte; por cierto, del autobús."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "reformulation-markers"
++      ],
++      "distractor_skills": {
++        "1": "argument-markers",
++        "2": "marcadores-digresion"
++      }
+     },
+     {
+       "id": "b2-29-05.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué destino final sufrieron Capitu y su hijo Ezequiel en la obra de Machado de Assis?",
++      "question": "Where does the narrator meet the young man who recites verses?",
+       "options": [
+-        "Permanecieron en Río administrando los bienes de la familia.",
+-        "Fueron desterrados a Europa por Bento Santiago, muriendo Capitu en Suiza en la soledad.",
+-        "Emigraron a Buenos Aires para fundar una compañía de ópera.",
+-        "Huyeron a las minas de oro del interior paulista."
++        "En el tren, cuando volvía de la ciudad.",
++        "En la casa de la calle de Matacavalos.",
++        "En el seminario."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-29-consolidation-ex.json b/content/es-latam/exercises/b2/b2-29-consolidation-ex.json
+index 0d0812e5..059e9169 100644
+--- a/content/es-latam/exercises/b2/b2-29-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-29-consolidation-ex.json
+@@ -5,121 +5,154 @@
+       "id": "b2-29-consolidation.ex01",
+       "type": "multiple-choice",
+       "category": "grammar",
++      "question": "Which sentence restates the first idea in simpler words?",
++      "options": [
++        "La tienda abre a las diez; es decir, no abre antes.",
++        "La tienda abre a las diez; sin embargo, no abre antes.",
++        "La tienda abre a las diez; por cierto, no abre antes."
++      ],
++      "correct": 0,
+       "teaches": [
+         "reformulation-markers"
+       ],
+-      "question": "¿Cuál es la puntuación normativa adecuada para el marcador explicativo 'es decir' en interior de período?",
+-      "options": [
+-        "Debe aislarse entre comas: 'La ley protege, es decir, garantiza los derechos civiles.'",
+-        "No debe llevar ninguna coma alrededor.",
+-        "Debe ir siempre precedido por dos puntos y seguido de punto final.",
+-        "Debe colocarse entre signos de interrogación obligatorios."
+-      ],
+-      "correct": 0
++      "distractor_skills": {
++        "1": "contrast-concession-connectors",
++        "2": "marcadores-digresion"
++      }
+     },
+     {
+       "id": "b2-29-consolidation.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Llegué el lunes; mejor __, el martes.",
++      "answer": "dicho",
++      "english": "I arrived on Monday; or rather, on Tuesday.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "sentence": "No pretendían abolir la tradición; más __, buscaban revitalizarla con nuevas formas expresivas.",
+-      "answer": "bien",
+-      "english": "They did not seek to abolish tradition; rather, they sought to revitalize it with new expressive forms."
++      ]
+     },
+     {
+       "id": "b2-29-consolidation.ex03",
+-      "type": "multiple-choice",
+-      "category": "grammar",
+-      "teaches": [
+-        "reformulation-markers"
++      "type": "dialogue-complete",
++      "category": "dialogue",
++      "prompt": [
++        {
++          "speaker": "Meg",
++          "text": "No sé si va a venir mucha gente."
++        },
++        {
++          "speaker": "Carlos",
++          "text": "_____"
++        }
+       ],
+-      "question": "¿Qué marcador de distanciamiento es el preferido en la prosa académica formal por su sobriedad?",
+       "options": [
+-        "Igual nomás",
+-        "En cualquier caso",
+-        "De una",
+-        "Sea como sea de cualquier forma"
++        "De todas formas, empezamos a las ocho.",
++        "Es decir, empezamos a las ocho.",
++        "Mejor dicho, empezamos a las ocho."
+       ],
+-      "correct": 1
++      "correct": 0,
++      "teaches": [
++        "reformulation-markers"
++      ]
+     },
+     {
+       "id": "b2-29-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
++      "sentence": "Hay muchas ciudades bonitas; __ ejemplo, Lima.",
++      "answer": "por",
++      "english": "There are many beautiful cities; for example, Lima.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "sentence": "Dicho en otros __, la cohesión comunitaria depende de la justicia distributiva.",
+-      "answer": "términos",
+-      "english": "In other words, community cohesion depends on distributive justice."
++      ]
+     },
+     {
+       "id": "b2-29-consolidation.ex05",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "teaches": [
+-        "reformulation-markers"
+-      ],
+-      "question": "¿Qué locución culta introduce un caso representativo en el ensayo humanístico?",
++      "question": "Which sentence closes a talk after two reasons?",
+       "options": [
+-        "A modo de ilustración",
+-        "De sopetón",
+-        "A tontas y a locas",
+-        "A ciencia cierta"
++        "En definitiva, es mejor ir en tren.",
++        "En concreto, es mejor ir en tren.",
++        "Mejor dicho, es mejor ir en tren."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "argument-markers"
++      ],
++      "distractor_skills": {
++        "1": "reformulation-markers",
++        "2": "reformulation-markers"
++      }
+     },
+     {
+       "id": "b2-29-consolidation.ex06",
+       "type": "matching",
+       "category": "vocabulary",
+-      "teaches": [
+-        "b2-discourse-markers-reformulation-precision-vocab"
+-      ],
+       "pairs": [
+         [
+-          "inequívoco",
+-          "claro y libre de toda duda"
++          "en pocas palabras",
++          "in a few words"
++        ],
++        [
++          "en concreto",
++          "specifically"
+         ],
+         [
+-          "falso cognado",
+-          "palabra engañosa por similitud formal"
++          "mejor dicho",
++          "or rather"
+         ],
+         [
+-          "salvedad",
+-          "reserva o advertencia limitativa"
++          "de todos modos",
++          "anyway"
+         ],
+         [
+-          "paradigma",
+-          "modelo teórico o pauta ejemplar"
++          "dicho de otro modo",
++          "put another way"
+         ]
++      ],
++      "teaches": [
++        "b2-discourse-markers-reformulation-precision-vocab"
+       ]
+     },
+     {
+       "id": "b2-29-consolidation.ex07",
+-      "type": "fill-blank",
++      "type": "sentence-builder",
+       "category": "grammar",
++      "tiles": [
++        "En",
++        "cualquier",
++        "caso,",
++        "empezamos",
++        "a",
++        "las",
++        "ocho."
++      ],
++      "solution": [
++        "En",
++        "cualquier",
++        "caso,",
++        "empezamos",
++        "a",
++        "las",
++        "ocho."
++      ],
++      "english": "In any case, we start at eight.",
+       "teaches": [
+         "reformulation-markers"
+-      ],
+-      "sentence": "El dictamen requiere validación técnica, __ es, la firma del colegio de ingenieros.",
+-      "answer": "esto",
+-      "english": "The opinion requires technical validation, that is, the signature of the college of engineers."
++      ]
+     },
+     {
+       "id": "b2-29-consolidation.ex08",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué tema universal aborda la obra 'Dom Casmurro' de Machado de Assis?",
++      "question": "What nickname does the young man give the narrator?",
+       "options": [
+-        "La conquista territorial de las selvas del Amazonas.",
+-        "La naturaleza destructiva de los celos retrospectivos y la falibilidad de la memoria subjetiva.",
+-        "El auge de la minería de esmeraldas en Colombia.",
+-        "La navegación comercial a vapor en el Misisipi."
++        "Dom Casmurro.",
++        "José Dias.",
++        "Bentinho."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-28-01-a-gr.json b/content/es-latam/grammar/b2/b2-28-01-a-gr.json
+index c660c097..420dc070 100644
+--- a/content/es-latam/grammar/b2/b2-28-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-28-01-a-gr.json
+@@ -1,36 +1,53 @@
+ {
+   "id": "grammar.b2.28.01.marcadores-ordenacion",
+-  "title": "Discourse Markers of Ordering & Enumeration",
++  "title": "Putting Ideas in Order",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores de ordenación organizan las partes de un discurso o texto escrito en una secuencia lógica y cronológica. En registros formales de nivel B2, permiten articular conferencias, artículos de opinión y ensayos académicos sin recurrir a enumeraciones elementales."
++      "content": "You know *primero*, *luego*, *después* and *por último* from A1, and *a continuación* from B1 Unit 24. In a talk or an essay you often want something a little more formal that also tells the listener how many points are coming. *En primer lugar* (\"firstly\"), *en segundo lugar* (\"secondly\") and *en tercer lugar* (\"thirdly\") number each point, a bit like the numbers in a list. The series ends with *por último* (\"lastly\"), which you know already, or *en último lugar*."
+     },
+     {
+       "type": "table",
+-      "title": "Marcadores de ordenación en contexto",
++      "title": "A series of three points",
+       "rows": [
+         [
+-          "En primer término, conviene delimitar los antecedentes jurídicos del conflicto.",
+-          "In the first place, it is advisable to define the legal background of the conflict."
++          "En primer lugar, quiero hablar del precio.",
++          "Firstly, I want to talk about the price."
+         ],
+         [
+-          "Acto seguido, analizaremos los efectos socioeconómicos en la población rural.",
+-          "Immediately afterwards, we will analyze the socioeconomic effects on the rural population."
++          "En segundo lugar, hablaré del barrio.",
++          "Secondly, I will talk about the neighbourhood."
+         ],
+         [
+-          "Por una parte, la modernización tecnológica favorece la conectividad regional.",
+-          "On the one hand, technological modernization favors regional connectivity."
++          "En tercer lugar, hablaré del transporte.",
++          "Thirdly, I will talk about transport."
+         ],
+         [
+-          "Por último, examinaremos las recomendaciones de política pública internacional.",
+-          "Lastly, we will examine the recommendations of international public policy."
++          "Por último, les pediré su opinión.",
++          "Lastly, I will ask for your opinions."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "content": "You also know *por un lado* from B1 Unit 23. Use *por un lado … por otro* when you have two points, not a longer list: the first half announces that a second half is coming."
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Por un lado, el piso es barato; por otro, está lejos del centro.",
++          "english": "On the one hand, the flat is cheap; on the other, it is far from the centre."
++        },
++        {
++          "spanish": "En primer lugar, el barrio es tranquilo; en segundo lugar, hay un parque cerca.",
++          "english": "Firstly, the neighbourhood is quiet; secondly, there is a park nearby."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Regla de puntuación: todos los marcadores ordenadores se aíslan mediante comas cuando inician un período o frase: 'En primer término, debemos considerar...', 'Por último, cabe subrayar...'"
++      "content": "These markers open their sentence and are followed by a comma. Stay in one family inside a series (*en primer lugar … en segundo lugar … por último*) and use *por último* only after at least two earlier points. Note *primer*, not *primero*: the short form goes before the masculine noun *lugar*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-28-02-a-gr.json b/content/es-latam/grammar/b2/b2-28-02-a-gr.json
+index fb6ab8a2..521ef4eb 100644
+--- a/content/es-latam/grammar/b2/b2-28-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-28-02-a-gr.json
+@@ -1,36 +1,40 @@
+ {
+   "id": "grammar.b2.28.02.marcadores-digresion",
+-  "title": "Discourse Markers of Digression & Incidental Remarks",
++  "title": "Side Remarks and Coming Back",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores de digresión introducen un comentario lateral, una precisión secundaria o una observación tangencial que se desvía momentáneamente del hilo conductor principal del texto sin que se pierda la cohesión global."
++      "content": "Sometimes you want to add something that is not part of your main line: a detail that has just come to mind, or a comment on the side. Spanish has set phrases that tell the listener \"this is a side remark\", and one that tells them \"now I am back\". *Por cierto* (\"by the way\") brings in a new thought loosely connected to what you were saying. *A propósito* also means \"by the way\", and *a propósito de* + noun means \"speaking of\": the remark is triggered by something just mentioned. *Dicho sea de paso* (\"incidentally\", literally \"said in passing\") fits a short comment, often between commas inside a sentence. To go back, use *volviendo a lo que decíamos* (\"going back to what we were saying\")."
+     },
+     {
+       "type": "table",
+-      "title": "Marcadores de digresión en prosa formal",
++      "title": "Side remarks and the way back",
+       "rows": [
+         [
+-          "El proyecto fue aprobado en mayo; por cierto, con el apoyo de todas las bancadas.",
+-          "The project was approved in May; by the way, with the support of all factions."
++          "Mañana tengo una reunión. Por cierto, ¿tienes el informe?",
++          "I have a meeting tomorrow. By the way, do you have the report?"
+         ],
+         [
+-          "A propósito de la reforma tributaria, los gremios presentaron una contrapropuesta.",
+-          "Speaking of tax reform, the labor unions presented a counterproposal."
++          "A propósito, ¿ya compraste los boletos?",
++          "By the way, have you already bought the tickets?"
+         ],
+         [
+-          "El informe omite, dicho sea de paso, el impacto sobre las comunidades ribereñas.",
+-          "The report omits, by the way, the impact on riverside communities."
++          "A propósito de la reunión, ¿a qué hora empieza?",
++          "Speaking of the meeting, what time does it start?"
+         ],
+         [
+-          "Conviene señalar, entre paréntesis, que la vigencia del tratado expira en 2030.",
+-          "It is worth pointing out, parenthetically, that the treaty expires in 2030."
++          "La oficina, dicho sea de paso, está muy cerca de mi casa.",
++          "The office, incidentally, is very close to my house."
++        ],
++        [
++          "Volviendo a lo que decíamos, ¿quién presenta el informe?",
++          "Going back to what we were saying, who presents the report?"
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Evita el abuso de digresiones en textos ensayísticos: 'dicho sea de paso' debe emplearse de forma mesurada para enriquecer el argumento sin dispersar la atención del lector."
++      "content": "A side remark is short, and you should come back to the main line afterwards. You know *además* from A2 Unit 28: use it, not these phrases, to add a main point. *Volviendo* is the gerund of *volver*, and *decíamos* is the *imperfecto* of *decir* with *nosotros*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-28-03-a-gr.json b/content/es-latam/grammar/b2/b2-28-03-a-gr.json
+index 1d545f76..ff46b297 100644
+--- a/content/es-latam/grammar/b2/b2-28-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-28-03-a-gr.json
+@@ -1,36 +1,32 @@
+ {
+   "id": "grammar.b2.28.03.marcadores-continuidad",
+-  "title": "Discourse Markers of Continuity & Thematic Transition",
++  "title": "Moving On and Picking Up a Topic",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores de continuidad y progresión temática aseguran que el discurso avance fluidamente entre un punto ya establecido y el siguiente razonamiento deductivo o explicativo. Señalan la reanudación del argumento central o una reformulación estratégica."
++      "content": "You know *en cuanto* (\"as soon as\") from A2 Unit 27 and *además* from A2 Unit 28. This lesson adds three phrases that keep a talk moving. *Pues bien* (\"well then\", \"right\") closes what you have just said and moves on to the next step. *En cuanto a* (\"as for\") picks out one topic from several and comments on it. *Por lo que se refiere a* (\"as far as ... is concerned\") does the same job and sounds more formal. With these phrases you can go through a list of topics one by one."
+     },
+     {
+       "type": "table",
+-      "title": "Marcadores de progresión y transición",
++      "title": "Three ways to keep a talk moving",
+       "rows": [
+         [
+-          "Pues bien, examinadas las pruebas periciales, el tribunal absolvió al inculpado.",
+-          "Now then, having examined the expert evidence, the court acquitted the defendant."
++          "Pues bien, ya conocemos el problema; ahora busquemos una solución.",
++          "Well then, we now know the problem; now let us look for a solution."
+         ],
+         [
+-          "Dicho esto, no debemos soslayar las dificultades presupuestarias que persisten.",
+-          "Having said this, we must not sidestep the budgetary difficulties that remain."
++          "En cuanto a la comida, yo me ocupo.",
++          "As for the food, I will take care of it."
+         ],
+         [
+-          "Así las cosas, el parlamento se vio forzado a negociar un texto de consenso.",
+-          "As things stood, parliament was forced to negotiate a consensus text."
+-        ],
+-        [
+-          "Ahora bien, la viabilidad financiera exige un estricto control de gasto público.",
+-          "Now, financial viability demands strict control of public spending."
++          "Por lo que se refiere al transporte, hay un autobús cada hora.",
++          "As far as transport is concerned, there is a bus every hour."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "'Pues bien' y 'así las cosas' exigen coma inmediatamente posterior. Marcan una pausa deliberada en la que el orador o ensayista evalúa el escenario construido antes de dar el siguiente paso."
++      "content": "After *en cuanto a* and *por lo que se refiere a* comes a noun phrase: *en cuanto a la comida*, *en cuanto al transporte* (*a* + *el* = *al*). With a verb, *en cuanto* alone means \"as soon as\" and takes the subjunctive for the future: *En cuanto llegues, llámame*. Do not confuse the two."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-28-04-a-gr.json b/content/es-latam/grammar/b2/b2-28-04-a-gr.json
+index 84a71651..04de473d 100644
+--- a/content/es-latam/grammar/b2/b2-28-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-28-04-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.28.04.marcadores-distribucion",
+-  "title": "Distributive Discourse Markers & Parallel Argumentation",
++  "title": "Two Sides of a Point",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores distributivos estructuran dos o más proposiciones paralelas que se contrastan, complementan o alternan de modo simétrico. Exigen un riguroso equilibrio sintáctico entre los dos miembros coordinados."
++      "content": "You know *por un lado* from B1 Unit 23, *mientras que* from B1 Unit 12 and *sin embargo* from A2 Unit 28. *Por una parte … por otra* is the same pair in a slightly more written form: the first half announces that a second half is coming, and the second half usually brings the contrasting point. Either half can be *por otra*, *por otra parte* or *por otro lado*. *Mientras que* (\"whereas\") sets two facts side by side inside one sentence, without a judgement. It is not *mientras* (\"while\") from A2 Unit 13: the extra *que* gives it the sense of contrast."
+     },
+     {
+       "type": "table",
+-      "title": "Estructuras correlativas distributivas",
++      "title": "Two sides of a point",
+       "rows": [
+         [
+-          "Por una parte, la apertura atrae inversiones; por otra, tensiona el empleo local.",
+-          "On the one hand, openness attracts investments; on the other, it strains local jobs."
++          "Por una parte, el curso es interesante; por otra, es muy caro.",
++          "On the one hand, the course is interesting; on the other, it is very expensive."
+         ],
+         [
+-          "Por un lado, se alaba la agilidad; por otro, se teme la falta de garantías legales.",
+-          "On the one hand, speed is praised; on the other, lack of legal guarantees is feared."
++          "Por una parte, trabajo menos; por otro lado, gano menos.",
++          "On the one hand, I work less; on the other, I earn less."
+         ],
+         [
+-          "Ya por falta de recursos, ya por desidia burocrática, la obra quedó inconclusa.",
+-          "Whether from lack of resources or bureaucratic apathy, the work remained unfinished."
++          "Mis padres prefieren el campo, mientras que yo prefiero la ciudad.",
++          "My parents prefer the countryside, whereas I prefer the city."
+         ],
+         [
+-          "Ora con vehemencia retórica, ora con silencios elocuentes, conmovió al auditorio.",
+-          "Now with rhetorical vehemence, now with eloquent silences, he moved the audience."
++          "En el campo hay silencio; en cambio, en la ciudad hay mucha vida.",
++          "In the countryside there is silence; in the city, by contrast, there is a lot of life."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Correlación estricta: si abres con 'por una parte', debes cerrar con 'por otra' (o 'por otra parte'). Mezclar 'por un lado... por otra parte' se considera descuido estilístico en nivel B2/C1."
++      "content": "Do not open with *por una parte* and then forget the second half: the listener is waiting for it. *Mientras que* needs two different subjects or situations that you compare; the verb after it is an ordinary indicative verb."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-28-05-a-gr.json b/content/es-latam/grammar/b2/b2-28-05-a-gr.json
+index d179c1cd..cb4915ed 100644
+--- a/content/es-latam/grammar/b2/b2-28-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-28-05-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.28.05.marcadores-conclusion",
+-  "title": "Discourse Markers of Synthesis & Conclusion",
++  "title": "Closing a Text",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores de conclusión y recapitulación cierran el razonamiento condensando las premisas desarrolladas. Permiten formular el balance final, la tesis resolutiva o el corolario teórico de una investigación."
++      "content": "You know *en resumen* from B1 Unit 13 and *en conclusión* from B1 Unit 17. Two more closing phrases are *en definitiva* (\"all in all\", \"in the end\") and *en suma* (\"in short\"). They all come at the end of a text and bring together what you said before. *En resumen* repeats the main points briefly. *En conclusión* gives what you conclude. *En definitiva* gives the final judgement after weighing the points. *En suma* gathers everything into one short sentence."
+     },
+     {
+       "type": "table",
+-      "title": "Marcadores de conclusión y balance",
++      "title": "Four ways to close",
+       "rows": [
+         [
+-          "En suma, el programa logró mitigar la deserción escolar en las áreas rurales.",
+-          "In short, the program managed to mitigate school dropout in rural areas."
++          "En resumen, el curso es útil pero caro.",
++          "To sum up, the course is useful but expensive."
+         ],
+         [
+-          "En definitiva, la soberanía reside en la voluntad del pueblo soberano.",
+-          "Ultimately, sovereignty resides in the will of the sovereign people."
++          "En conclusión, recomiendo el curso.",
++          "In conclusion, I recommend the course."
+         ],
+         [
+-          "En última instancia, el éxito de la democracia depende de sus instituciones.",
+-          "In the final analysis, the success of democracy depends on its institutions."
++          "En definitiva, vale la pena, aunque cuesta mucho.",
++          "All in all, it is worth it, although it costs a lot."
+         ],
+         [
+-          "A fin de cuentas, los resultados electorales reflejaron el malestar ciudadano.",
+-          "At the end of the day, the election results reflected civic discontent."
++          "En suma, un buen curso a un precio alto.",
++          "In short, a good course at a high price."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "'En última instancia' denota el fundamento último, aquello que no admite ulterior discusión o reducción; es el marcador preferido en la argumentación filosófica, jurídica y política."
++      "content": "A closing marker needs earlier points to close, so it never opens a text. It takes a comma, and one closing marker at the end is enough."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-29-01-a-gr.json b/content/es-latam/grammar/b2/b2-29-01-a-gr.json
+index 98c8c11f..5c8d0a1d 100644
+--- a/content/es-latam/grammar/b2/b2-29-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-29-01-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.29.01.marcadores-reformulacion-explicativa",
+-  "title": "Explanatory Reformulation Discourse Markers",
++  "title": "Saying It Another Way",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores de reformulación explicativa introducen una aclaración o paráfrasis de lo ya dicho con el propósito de facilitar la comprensión del receptor o precisar un término abstracto. En el nivel B2 formal, se emplean para articular definiciones rigurosas sin caer en repeticiones vacías."
++      "content": "You know *es decir* and *o sea* from B1 Unit 27, where you used them to say an idea again more simply. A reformulation marker says: \"what comes next is the same idea, said another way.\" It does not add a new point; it makes the first one clearer, shorter or more exact. Two more markers do the same job: *en otras palabras* (\"in other words\") and *dicho de otro modo* (\"put another way\"). In all four, the new wording comes after the marker, and a comma (or a semicolon in a longer sentence) separates it from what came before."
+     },
+     {
+       "type": "table",
+-      "title": "Marcadores de reformulación explicativa",
++      "title": "Four ways to restate",
+       "rows": [
+         [
+-          "El tratado consagra la intercomprensión; es decir, la capacidad de comunicarse en lenguas hermanas.",
+-          "The treaty enshrines mutual intelligibility; that is, the ability to communicate in cognate languages."
++          "El viaje es largo; es decir, dura más de diez horas.",
++          "The journey is long; that is, it takes more than ten hours."
+         ],
+         [
+-          "La metrópolis sufre un estrés hídrico severo, o sea, un déficit crítico en sus reservas de agua.",
+-          "The metropolis suffers from severe water stress, that is to say, a critical deficit in its water reserves."
++          "Salgo temprano, o sea, a las seis de la mañana.",
++          "I leave early, I mean at six in the morning."
+         ],
+         [
+-          "Se aplicó el principio de subsidiariedad, esto es, la intervención estatal en auxilio comunal.",
+-          "The principle of subsidiarity was applied, that is, state intervention to assist communities."
++          "La reunión es opcional; en otras palabras, nadie tiene que ir.",
++          "The meeting is optional; in other words, nobody has to go."
+         ],
+         [
+-          "El patrimonio comprende tres vertientes, a saber: la histórica, la ecológica y la lingüística.",
+-          "The heritage comprises three branches, namely: historical, ecological, and linguistic."
++          "Hoy no hay clase; dicho de otro modo, tenemos el día libre.",
++          "There is no class today; put another way, we have the day off."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Puntuación de 'es decir' y 'esto es': se colocan habitualmente entre comas en el interior de una oración, o tras punto y coma cuando abren una proposición explicativa extensa."
++      "content": "Choose by tone. *O sea* is the most spoken; *es decir* works in talk and in writing; *en otras palabras* and *dicho de otro modo* suit a talk or text that has just said something abstract or long. You know *además* from A2 Unit 28: use that, not these four, when the second part adds a new fact."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-29-02-a-gr.json b/content/es-latam/grammar/b2/b2-29-02-a-gr.json
+index 68488f58..3205b535 100644
+--- a/content/es-latam/grammar/b2/b2-29-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-29-02-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.29.02.marcadores-reformulacion-rectificativa",
+-  "title": "Rectifying Reformulation Discourse Markers",
++  "title": "Correcting Yourself",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores rectificativos corrigen, matizan o sustituyen un enunciado previo que el propio emisor juzga inexacto, incompleto o susceptible de equívoco. Permiten ajustar con exactitud quirúrgica la tesis defendida."
++      "content": "Sometimes the second wording does not repeat the first: it replaces it, because you said something wrong or imprecise. *Mejor dicho* (\"or rather\") announces that you are correcting yourself: the first part was not quite right, and the part after the marker is the right one. You know *más bien* (\"rather\") from B2 Unit 1, where it came after *no … sino*. It does not say that the first part was wrong; it says that the second part describes things better, so it sounds softer."
+     },
+     {
+       "type": "table",
+-      "title": "Marcadores de rectificación y precisión",
++      "title": "Replacing and refining",
+       "rows": [
+         [
+-          "No se trata de una asimilación ciega, sino más bien de un proceso de digestión estética.",
+-          "It is not a matter of blind assimilation, but rather a process of aesthetic digestion."
++          "Llegamos el lunes; mejor dicho, el martes.",
++          "We arrived on Monday; or rather, on Tuesday."
+         ],
+         [
+-          "El proyecto no fracasó; mejor dicho, se transformó en una experiencia piloto valiosa.",
+-          "The project did not fail; rather, it became a valuable pilot experience."
++          "Mi amiga vive en el centro; mejor dicho, cerca del centro.",
++          "My friend lives in the centre; or rather, near the centre."
+         ],
+         [
+-          "La obra no es puramente realista; más exactamente, combina costumbrismo con ironía sutil.",
+-          "The work is not purely realistic; more precisely, it combines local color with subtle irony."
++          "No estoy enojado; más bien estoy cansado.",
++          "I am not angry; I am rather tired."
+         ],
+         [
+-          "Los colonos no se aislaron; antes bien, comerciaron activamente con los puertos vecinos.",
+-          "The colonists did not isolate themselves; on the contrary, they traded actively with neighboring ports."
++          "No es un problema; más bien es una oportunidad.",
++          "It is not a problem; it is rather an opportunity."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "'Más bien' suele encabezar el término rectificado tras una negación previa ('no era rencor, más bien perplejidad'), mientras que 'mejor dicho' puede introducir una rectificación espontánea del vocablo empleado."
++      "content": "Use *mejor dicho* when you hear your own mistake and fix it on the spot. Use *más bien* after a negative sentence, to give the better description. Compare *es decir* from B1 Unit 27: it repeats the same idea, while *mejor dicho* changes it."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-29-03-a-gr.json b/content/es-latam/grammar/b2/b2-29-03-a-gr.json
+index 6fb7e7d8..c3936376 100644
+--- a/content/es-latam/grammar/b2/b2-29-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-29-03-a-gr.json
+@@ -1,36 +1,32 @@
+ {
+   "id": "grammar.b2.29.03.marcadores-reformulacion-distanciamiento",
+-  "title": "Distancing Reformulation Discourse Markers",
++  "title": "Brushing Doubts Aside",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores de distanciamiento restan relevancia o validez a las consideraciones previas, reorientando el discurso hacia lo sustancial con independencia de los reparos planteados. Expresan una reserva crítica reflexiva."
++      "content": "Sometimes you mention a doubt or a difficulty and then want to say that it does not change what follows. *De todos modos*, *de todas formas* and *en cualquier caso* (\"anyway\", \"in any case\") do this: they put the doubt aside and go back to what stays true or what you will do. *De todas formas* is the most everyday; *en cualquier caso* sounds a little more careful."
+     },
+     {
+       "type": "table",
+-      "title": "Marcadores de distanciamiento en prosa formal",
++      "title": "The doubt first, then what holds",
+       "rows": [
+         [
+-          "Las cifras son controvertidas; de todos modos, la tendencia demográfica es incuestionable.",
+-          "The figures are disputed; in any case, the demographic trend is unquestionable."
++          "No sé si hará buen tiempo; de todos modos, saldremos.",
++          "I do not know if the weather will be good; anyway, we will go out."
+         ],
+         [
+-          "Persisten dudas sobre el veredicto; en cualquier caso, la sentencia ya es firme.",
+-          "Doubts remain regarding the verdict; in any event, the judgment is already final."
++          "Puede que Meg llegue tarde; en cualquier caso, empezamos a las ocho.",
++          "Meg may be late; in any case, we start at eight."
+         ],
+         [
+-          "El autor incurre en contradicciones; de cualquier manera, su testimonio es insustituible.",
+-          "The author falls into contradictions; anyway, his testimony is irreplaceable."
+-        ],
+-        [
+-          "Hubo retrasos administrativos; de todas formas, el puente fue inaugurado a tiempo.",
+-          "There were administrative delays; regardless, the bridge was inaugurated on time."
++          "No sé si me contestarán; de todas formas, voy a escribir.",
++          "I do not know if they will answer me; anyway, I am going to write."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "En registros académicos y jurídicos se prefiere 'en cualquier caso' o 'de todos modos' frente a la variante más coloquial 'igual' o 'de todas formas'."
++      "content": "The doubt comes before the marker and what holds comes after it. You know *sin embargo* from A2 Unit 28: it sets two facts against each other, while *de todos modos* says that the first one does not change the second. Do not swap them."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-29-04-a-gr.json b/content/es-latam/grammar/b2/b2-29-04-a-gr.json
+index 0dbf77c5..9e3eb950 100644
+--- a/content/es-latam/grammar/b2/b2-29-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-29-04-a-gr.json
+@@ -1,36 +1,32 @@
+ {
+   "id": "grammar.b2.29.04.marcadores-reformulacion-recapitulativa",
+-  "title": "Recapitulative Reformulation Discourse Markers",
++  "title": "Condensing What You Said",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores recapitulativos o de paráfrasis sintética retoman un conjunto complejo de ideas y lo condensan en una formulación más transparente, facilitando la comprensión global de una tesis académica o literaria."
++      "content": "You know *en resumen* and *en definitiva* from B2 Unit 28: they close a whole text. A recap can also come in the middle of a text, after a long explanation, and it condenses what you just said into one short sentence. *En pocas palabras* (\"in a few words\") and *resumiendo* (\"to sum up\", the gerund of *resumir*) are made for that. They promise something shorter than what came before, so the sentence after them is short and clear."
+     },
+     {
+       "type": "table",
+-      "title": "Paráfrasis y reformulación recapitulativa",
++      "title": "Long explanation, short recap",
+       "rows": [
+         [
+-          "Dicho en otros términos, la riqueza industrial paulista financió la experimentación vanguardista.",
+-          "In other words, São Paulo's industrial wealth financed avant-garde experimentation."
++          "La oficina abre a las nueve, cierra a las cinco y no abre los fines de semana. En pocas palabras, solo abre de lunes a viernes.",
++          "The office opens at nine, closes at five and does not open at weekends. In a few words, it only opens from Monday to Friday."
+         ],
+         [
+-          "En otras palabras, la modernidad brasileña devoró la influencia europea para reinventarla.",
+-          "Put differently, Brazilian modernity devoured European influence to reinvent it."
++          "Resumiendo, el plan es barato, rápido y fácil.",
++          "To sum up, the plan is cheap, quick and easy."
+         ],
+         [
+-          "Dicho de otro modo, la bossa nova despojó a la samba de estridencias para volverla íntima.",
+-          "Expressed otherwise, bossa nova stripped samba of stridency to make it intimate."
+-        ],
+-        [
+-          "Dicho más sencillamente, la diplomacia se convirtió en el puente supremo de integración.",
+-          "Put more simply, diplomacy became the ultimate bridge of regional integration."
++          "En definitiva, es una buena idea.",
++          "All in all, it is a good idea."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "'Dicho en otros términos' y 'dicho de otro modo' confieren prestancia al texto argumentativo formal, sustituyendo con elegancia fórmulas trilladas de divulgación elemental."
++      "content": "A restatement (*es decir*, *en otras palabras*) says the same thing in other words. A recap (*en pocas palabras*, *resumiendo*) gathers several things into one. If you have not said several things yet, there is nothing to recap."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-29-05-a-gr.json b/content/es-latam/grammar/b2/b2-29-05-a-gr.json
+index 1dcc6fc2..5f0f2849 100644
+--- a/content/es-latam/grammar/b2/b2-29-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-29-05-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.29.05.marcadores-reformulacion-ejemplificativa",
+-  "title": "Exemplifying Reformulation Discourse Markers",
++  "title": "Giving Examples",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Los marcadores de ejemplificación concretan una afirmación general o concepto teórico mediante un caso particular representativo. En el nivel B2, el escritor recurre a locuciones cultas que realzan la solvencia de su demostración."
++      "content": "You know *por ejemplo* from A2 Unit 30. It gives one example of a general statement. Spanish has three more ways to do the work of an example. *Como* (\"such as\") lists examples inside a sentence, with no comma before the noun. *Así* at the start of a sentence, followed by a comma, introduces a case that shows the point you have just made. *En concreto* (\"specifically\") is different: it does not give one of many, it names the exact thing you mean."
+     },
+     {
+       "type": "table",
+-      "title": "Locuciones de ejemplificación e ilustración",
++      "title": "Examples and the exact point",
+       "rows": [
+         [
+-          "A modo de ilustración, analicemos el impacto del lienzo 'Abaporu' de Tarsila do Amaral.",
+-          "By way of illustration, let us analyze the impact of the canvas 'Abaporu' by Tarsila do Amaral."
++          "Hay muchas formas de ahorrar. Por ejemplo, puedes cocinar en casa.",
++          "There are many ways to save. For example, you can cook at home."
+         ],
+         [
+-          "Por poner un caso representativo, examinemos la trayectoria diplomática de Río Branco.",
+-          "To cite a representative case, let us examine the diplomatic career of Rio Branco."
++          "Me gustan las frutas como la manzana y la pera.",
++          "I like fruit such as apples and pears."
+         ],
+         [
+-          "Muchos vocablos engañan por su fonética; verbigracia, el portugués 'propina' significa propina o soborno según el país.",
+-          "Many words deceive by their sound; for example, Portuguese 'propina' means tip or bribe depending on the country."
++          "Hay muchas formas de ahorrar. Así, puedes comprar menos y cocinar en casa.",
++          "There are many ways to save. For instance, you can buy less and cook at home."
+         ],
+         [
+-          "Pongamos por caso la transición ecológica de las redes de tranvías metropolitanas.",
+-          "Let us take for example the ecological transition of metropolitan tram networks."
++          "Quiero hablar del transporte; en concreto, del autobús.",
++          "I want to talk about transport; specifically, about the bus."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "'Verbigracia' (abreviado a veces 'v. gr.') pertenece al registro culto tradicional de los ensayos filosóficos y jurídicos. En redacciones ensayísticas contemporáneas, 'a modo de ilustración' resulta fluido y sumamente elegante."
++      "content": "This *como* means \"such as\", not \"as\" or \"since\". After *en concreto* comes the one thing you mean, so you do not follow it with a list."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-28-01.json b/content/es-latam/lessons/b2/b2-28-01.json
+index 58202149..ea221ba0 100644
+--- a/content/es-latam/lessons/b2/b2-28-01.json
++++ b/content/es-latam/lessons/b2/b2-28-01.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.28.01",
+-  "title": "Discourse Ordering: en primer término, acto seguido, por último",
++  "title": "Putting Ideas in Order",
+   "level": "B2",
++  "goal": "Order the points of a talk with en primer lugar, en segundo lugar and por último.",
++  "grammar": "Ordering the points of a talk",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can order the points of a talk with en primer lugar, en segundo lugar and por último.",
++        "I can set two points side by side with por un lado and por otro.",
++        "I can use the new words for ordering a talk."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-28.json"
+@@ -27,6 +37,19 @@
+         "b2-28-01.ex05",
+         "b2-28-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can order the points of a talk with en primer lugar, en segundo lugar and por último.",
++        "I can set two points side by side with por un lado and por otro.",
++        "I can use the new words for ordering a talk."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-28-02.json b/content/es-latam/lessons/b2/b2-28-02.json
+index 601ef296..67ece2f1 100644
+--- a/content/es-latam/lessons/b2/b2-28-02.json
++++ b/content/es-latam/lessons/b2/b2-28-02.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.28.02",
+-  "title": "Digression & Remarks: dicho sea de paso, por cierto, a propósito",
++  "title": "Adding a Side Remark",
+   "level": "B2",
++  "goal": "Add a side remark with por cierto, a propósito or dicho sea de paso, and go back to the main line.",
++  "grammar": "Side remarks and coming back",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can add a side remark with por cierto, a propósito (de) and dicho sea de paso.",
++        "I can go back to the main line with volviendo a lo que decíamos.",
++        "I can use the new words for meetings and plans."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-28.json"
+@@ -27,6 +37,19 @@
+         "b2-28-02.ex05",
+         "b2-28-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can add a side remark with por cierto, a propósito (de) and dicho sea de paso.",
++        "I can go back to the main line with volviendo a lo que decíamos.",
++        "I can use the new words for meetings and plans."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-28-03.json b/content/es-latam/lessons/b2/b2-28-03.json
+index 4d33be4d..d53c82ee 100644
+--- a/content/es-latam/lessons/b2/b2-28-03.json
++++ b/content/es-latam/lessons/b2/b2-28-03.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.28.03",
+-  "title": "Continuity & Transition: pues bien, dicho esto, así las cosas",
++  "title": "Moving On and Picking Up a Topic",
+   "level": "B2",
++  "goal": "Move on to the next step with pues bien and pick up a topic with en cuanto a.",
++  "grammar": "Moving on and picking up a topic",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can move on to the next step with pues bien.",
++        "I can pick up one topic with en cuanto a and por lo que se refiere a.",
++        "I can use the new words for plans and parts of a plan."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-28.json"
+@@ -27,6 +37,19 @@
+         "b2-28-03.ex05",
+         "b2-28-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can move on to the next step with pues bien.",
++        "I can pick up one topic with en cuanto a and por lo que se refiere a.",
++        "I can use the new words for plans and parts of a plan."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-28-04.json b/content/es-latam/lessons/b2/b2-28-04.json
+index e3062c4e..34bc3849 100644
+--- a/content/es-latam/lessons/b2/b2-28-04.json
++++ b/content/es-latam/lessons/b2/b2-28-04.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.28.04",
+-  "title": "Distribution & Parallelism: por una parte... por otra, ya... ya",
++  "title": "Two Sides of a Point",
+   "level": "B2",
++  "goal": "Set two sides of a point against each other with por una parte … por otra and mientras que.",
++  "grammar": "Two sides of a point",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can set two sides of a point against each other with por una parte … por otra.",
++        "I can contrast two people or things in one sentence with mientras que.",
++        "I can use the new words for weighing two sides."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-28.json"
+@@ -27,6 +37,19 @@
+         "b2-28-04.ex05",
+         "b2-28-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can set two sides of a point against each other with por una parte … por otra.",
++        "I can contrast two people or things in one sentence with mientras que.",
++        "I can use the new words for weighing two sides."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-28-05.json b/content/es-latam/lessons/b2/b2-28-05.json
+index 3a1ccda0..25db8a41 100644
+--- a/content/es-latam/lessons/b2/b2-28-05.json
++++ b/content/es-latam/lessons/b2/b2-28-05.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.28.05",
+-  "title": "Conclusion & Synthesis: en suma, en definitiva, en última instancia",
++  "title": "Closing a Text",
+   "level": "B2",
++  "goal": "Close a text with en resumen, en conclusión, en definitiva or en suma.",
++  "grammar": "Closing a text",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can close a text with en resumen, en conclusión, en definitiva or en suma.",
++        "I can choose the closing marker that fits what I have said.",
++        "I can use the new words for summing up."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-28.json"
+@@ -27,6 +37,19 @@
+         "b2-28-05.ex05",
+         "b2-28-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can close a text with en resumen, en conclusión, en definitiva or en suma.",
++        "I can choose the closing marker that fits what I have said.",
++        "I can use the new words for summing up."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-28-consolidation.json b/content/es-latam/lessons/b2/b2-28-consolidation.json
+index 49de5f2e..bbf99383 100644
+--- a/content/es-latam/lessons/b2/b2-28-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-28-consolidation.json
+@@ -6,9 +6,10 @@
+     {
+       "type": "goal",
+       "items": [
+-        "Articular textos expositivos y ensayísticos mediante marcadores de ordenación rigurosos.",
+-        "Introducir digresiones y matices contextuales sin quebrantar la cohesión argumentativa.",
+-        "Sintetizar razonamientos complejos aplicando marcadores de conclusión de registro culto B2."
++        "Structure a short talk with ordering, side-remark and closing markers.",
++        "Move on to the next point and pick up one topic from a list.",
++        "Weigh two sides of a question in one sentence.",
++        "Read a short text about Roa Bastos and his novel."
+       ]
+     },
+     {
+@@ -33,11 +34,10 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "Domino los marcadores de apertura, progresión y clausura enumerativa (en primer término, por último).",
+-        "Uso oportunamente marcadores de digresión (dicho sea de paso, por cierto, a propósito).",
+-        "Estructuro transiciones y contrapuntos formales con 'pues bien', 'dicho esto' y 'así las cosas'.",
+-        "Mantengo la correlación exacta en estructuras distributivas (por una parte... por otra, ya... ya).",
+-        "Corono argumentaciones académicas con 'en suma', 'en definitiva' y 'en última instancia'."
++        "I can structure a short talk from a first point to a closing summary.",
++        "I can tell a side remark from a move to the next point.",
++        "I can weigh two sides of a question in one sentence.",
++        "I can read a short text about Roa Bastos and his novel."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-29-01.json b/content/es-latam/lessons/b2/b2-29-01.json
+index b8689cb7..9253f194 100644
+--- a/content/es-latam/lessons/b2/b2-29-01.json
++++ b/content/es-latam/lessons/b2/b2-29-01.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.29.01",
+-  "title": "Explanatory Reformulation: es decir, o sea, esto es, a saber",
++  "title": "Saying It Another Way",
+   "level": "B2",
++  "goal": "Restate an idea with es decir, o sea, en otras palabras and dicho de otro modo.",
++  "grammar": "Restating an idea",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can restate an idea with es decir, o sea, en otras palabras and dicho de otro modo.",
++        "I can choose the restating marker that fits the tone.",
++        "I can use the new words for explaining and making clear."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-29.json"
+@@ -27,6 +37,19 @@
+         "b2-29-01.ex05",
+         "b2-29-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can restate an idea with es decir, o sea, en otras palabras and dicho de otro modo.",
++        "I can choose the restating marker that fits the tone.",
++        "I can use the new words for explaining and making clear."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-29-02.json b/content/es-latam/lessons/b2/b2-29-02.json
+index cba2f38e..1375c2f0 100644
+--- a/content/es-latam/lessons/b2/b2-29-02.json
++++ b/content/es-latam/lessons/b2/b2-29-02.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.29.02",
+-  "title": "Rectifying Reformulation: mejor dicho, más bien, más exactamente",
++  "title": "Correcting Yourself",
+   "level": "B2",
++  "goal": "Correct yourself with mejor dicho and say what something is rather than what it is not with más bien.",
++  "grammar": "Correcting and refining",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can correct myself with mejor dicho.",
++        "I can say what something is rather than what it is not, with más bien.",
++        "I can use the new words for slips of the tongue and corrections."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-29.json"
+@@ -27,6 +37,19 @@
+         "b2-29-02.ex05",
+         "b2-29-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can correct myself with mejor dicho.",
++        "I can say what something is rather than what it is not, with más bien.",
++        "I can use the new words for slips of the tongue and corrections."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-29-03.json b/content/es-latam/lessons/b2/b2-29-03.json
+index 029320d5..f68d308c 100644
+--- a/content/es-latam/lessons/b2/b2-29-03.json
++++ b/content/es-latam/lessons/b2/b2-29-03.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.29.03",
+-  "title": "Distancing Reformulation: de todos modos, en cualquier caso",
++  "title": "Brushing Doubts Aside",
+   "level": "B2",
++  "goal": "Say that a doubt does not change what follows, with de todos modos, de todas formas and en cualquier caso.",
++  "grammar": "Distancing from a doubt",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can say that a doubt does not change what follows, with de todos modos, de todas formas and en cualquier caso.",
++        "I can tell this apart from a contrast with sin embargo.",
++        "I can use the new words for doubts and decisions."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-29.json"
+@@ -27,6 +37,19 @@
+         "b2-29-03.ex05",
+         "b2-29-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say that a doubt does not change what follows, with de todos modos, de todas formas and en cualquier caso.",
++        "I can tell this apart from a contrast with sin embargo.",
++        "I can use the new words for doubts and decisions."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-29-04.json b/content/es-latam/lessons/b2/b2-29-04.json
+index 2b8bf96a..27eb79c3 100644
+--- a/content/es-latam/lessons/b2/b2-29-04.json
++++ b/content/es-latam/lessons/b2/b2-29-04.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.29.04",
+-  "title": "Recapitulative Paraphrase: dicho en otros términos, en otras palabras",
++  "title": "Condensing What You Said",
+   "level": "B2",
++  "goal": "Condense a long explanation into one short sentence with en pocas palabras and resumiendo.",
++  "grammar": "Condensing and recapping",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can condense a long explanation into one short sentence with en pocas palabras and resumiendo.",
++        "I can tell a short recap from a restatement.",
++        "I can use the new words for main ideas and summaries."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-29.json"
+@@ -27,6 +37,19 @@
+         "b2-29-04.ex05",
+         "b2-29-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can condense a long explanation into one short sentence with en pocas palabras and resumiendo.",
++        "I can tell a short recap from a restatement.",
++        "I can use the new words for main ideas and summaries."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-29-05.json b/content/es-latam/lessons/b2/b2-29-05.json
+index 5f18222b..725a52b7 100644
+--- a/content/es-latam/lessons/b2/b2-29-05.json
++++ b/content/es-latam/lessons/b2/b2-29-05.json
+@@ -1,8 +1,18 @@
+ {
+   "id": "lesson.b2.29.05",
+-  "title": "Exemplifying Reformulation: a modo de ilustración, verbigracia",
++  "title": "Giving Examples",
+   "level": "B2",
++  "goal": "Give an example with por ejemplo, así and como, and name the exact point with en concreto.",
++  "grammar": "Examples and the exact point",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can give an example with por ejemplo, así and como.",
++        "I can name the exact point I mean with en concreto.",
++        "I can use the new words for examples and cases."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-29.json"
+@@ -27,6 +37,19 @@
+         "b2-29-05.ex05",
+         "b2-29-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can give an example with por ejemplo, así and como.",
++        "I can name the exact point I mean with en concreto.",
++        "I can use the new words for examples and cases."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-29-consolidation.json b/content/es-latam/lessons/b2/b2-29-consolidation.json
+index 51f8ae25..f3939fb8 100644
+--- a/content/es-latam/lessons/b2/b2-29-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-29-consolidation.json
+@@ -6,9 +6,10 @@
+     {
+       "type": "goal",
+       "items": [
+-        "Manejar con rigor los marcadores de reformulación explicativa, rectificativa y de distanciamiento.",
+-        "Articular paráfrasis sintéticas y ejemplificaciones formales en el ensayo académico de nivel B2.",
+-        "Integrar el léxico especializado de la precisión semántica y la crítica literaria."
++        "Restate an idea, correct yourself and brush a doubt aside.",
++        "Condense a long explanation and give an example.",
++        "Name the exact point you mean.",
++        "Read a short retelling of the opening chapters of Dom Casmurro."
+       ]
+     },
+     {
+@@ -33,11 +34,10 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "Aplico 'es decir', 'o sea' y 'a saber' para clarificar y enumerar con precisión.",
+-        "Corrijo y matizo asertos mediante 'mejor dicho', 'más bien' y 'más exactamente'.",
+-        "Expreso reservas y distanciamiento crítico aplicando 'en cualquier caso' y 'de todos modos'.",
+-        "Formulo síntesis recapitulativas elegantes con 'dicho en otros términos' y 'dicho de otro modo'.",
+-        "Introduzco casos demostrativos con 'a modo de ilustración', 'por poner un caso' y 'verbigracia'."
++        "I can choose between restating an idea, correcting myself and brushing a doubt aside.",
++        "I can condense a long explanation and give an example.",
++        "I can name the exact point I mean.",
++        "I can read a short retelling of the opening chapters of Dom Casmurro by Machado de Assis."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/stories/classics/b2/b2-28.json b/content/es-latam/stories/classics/b2/b2-28.json
+index 6b034f3b..033ad737 100644
+--- a/content/es-latam/stories/classics/b2/b2-28.json
++++ b/content/es-latam/stories/classics/b2/b2-28.json
+@@ -1,80 +1,76 @@
+ {
+   "id": "story.b2.28.roabastos",
+-  "title": "Hijo de hombre",
++  "title": "Roa Bastos y Hijo de hombre",
+   "level": "B2",
+   "lesson": 1,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Adaptación pedagógica inspirada en la cumbre literaria de Augusto Roa Bastos: la leyenda del Cristo tallado por Gaspar Mora en el cerro de Itapé, el sufrimiento secular del pueblo paraguayo y la odisea del aguatero en las arenas sedientas de la Guerra del Chaco.",
+-  "characters": [
+-    "Miguel Vera (narrador y testigo de las luchas de Itapé)",
+-    "Gaspar Mora (el tallista leproso del cerro)",
+-    "Cristóbal Jara (el conductor del camión aguatero)",
+-    "Pobladores, soldados sedientos y campesinos de Itapé"
+-  ],
++  "summary": "Texto sobre Augusto Roa Bastos, escritor paraguayo, y sobre su primera novela, Hijo de hombre.",
++  "characters": [],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En el pueblo campesino de Itapé, recostado sobre las colinas rojas del interior paraguayo, la memoria de las generaciones no se mide por las actas parroquiales ni por los decretos de las autoridades distritales, sino por la presencia enigmática de una imagen sagrada levantada en la cumbre del cerro. En primer término, conviene recordar la figura trágica y luminosa de Gaspar Mora, el artesano y músico del pueblo que, al descubrir en su piel las marcas implacables de la lepra, eligió desterrarse voluntariamente en la espesura del monte para no contaminar a sus semejantes ni ser encerrado en los lazaretos del gobierno. Refugiado en una cueva solitaria entre quebrachos y helechos, Gaspar consagró sus postreros meses de vida terrenal a desbastar un leño inmenso de guayacán con su hacha y sus formones temblorosos. No pretendía esculpir una deidad ajena o celestial; por el contrario, modeló un Cristo de madera con los rasgos atezados, sufrientes y dolientes del campesino guaraní, encarnando el martirio de una estirpe sometida desde siglos atrás a la injusticia y al despojo."
++      "text": "Este texto trata de Augusto Roa Bastos y de su novela Hijo de hombre. Para presentarlos con orden, vamos a dar tres pasos: en primer lugar, el autor; en segundo lugar, la novela; por último, el tema del libro."
++    },
++    {
++      "type": "narration",
++      "text": "En primer lugar, el autor. Augusto Roa Bastos nació en 1917 y murió en 2005. Por un lado, fue un escritor paraguayo; por otro, vivió muchos años en el exilio. Vivir en el exilio significa vivir fuera del propio país."
+     },
+     {
+       "type": "narration",
+-      "text": "Cuando Gaspar falleció en la más absoluta soledad selvática, los humildes peones de Itapé desafiaron las prohibiciones sanitarias de las autoridades comunales y subieron al cerro para rescatar la escultura milagrosa. Por una parte, el cura párroco condenó con severidad aquel culto popular al considerarlo una manifestación herética y profana nacida de manos enfermas; por otra, los campesinos se negaron con indoblegable firmeza a trasladar la imagen al templo formal de la plaza, dejándola entronizada al aire libre sobre la piedra viva de la colina. Dicho sea de paso, aquella veneración marginal no buscaba consuelo ultraterreno, sino afirmar la dignidad del hombre de barro que sobrevive a las peores plagas terrenales. Año tras año, cada Viernes Santo, los habitantes del pueblo ascendían en procesión descalzos cargando la cruz hasta la cima, desafiando a los fusiles de la policía rural y ratificando que el verdadero hijo de hombre no desciende del cielo para premiar la resignación, sino que padece en la tierra junto a los desposeídos."
++      "text": "En segundo lugar, la novela. Hijo de hombre se publicó en 1960. Por cierto, es la primera novela de Roa Bastos: quien quiera leer sus novelas desde la primera debe empezar por este libro."
+     },
+     {
+       "type": "narration",
+-      "text": "Años más tarde, cuando el clarín despiadado de la guerra movilizó a miles de campesinos hacia las arenas ardientes del Gran Chaco para defender las fronteras patrias frente a las divisiones bolivianas, aquel Cristo de Itapé continuó palpitando como un emblema invisible de resistencia colectiva en los pechos de los soldados. Así las cosas, el relato traslada su escenario al cañadón infernal de Boquerón y a los desiertos resecos de arena blanca donde la sed implacable resultaba infinitamente más mortífera que la metralla de las trincheras enemigas. En medio de aquel purgatorio de polvo y metralla emerge la figura gigantesca de Cristóbal Jara, peón hijo de las tierras rebeldes de Itapé, a quien sus oficiales encomiendan una misión suicida: conducir un desvencijado camión cisterna cargado de agua potable a través de picadas selváticas cercadas por el ejército rival para socorrer a un destacamento aislado que agoniza bajo el sol calcinante."
++      "text": "Volviendo a lo que decíamos, falta el último paso: el tema. En cuanto al tema, la novela trata de la lucha entre los gobernantes del Paraguay y su pueblo oprimido. En cuanto al período, esa lucha va de 1912 a 1936. Por un lado están los gobernantes del país; por otro, el pueblo oprimido."
+     },
+     {
+       "type": "narration",
+-      "text": "La travesía del camión cisterna conducido por Cristóbal Jara adquiere las proporciones épicas de un calvario mecánico y espiritual en el que el deber fraterno prevalece sobre el instinto individual de supervivencia. Por un lado, las ráfagas enemigas perforan la chapa del vehículo y los neumáticos estallan contra las raíces rugosas de los quebrachales; por otro, los proyectiles amenazan a cada instante con perforar el tanque de agua, vertiendo sobre la tierra reseca el líquido precioso que representa la vida de cien compatriotas. Cristóbal repara las averías con alambres entre la humareda de los matorrales incendiados y avanza a tientas, empujando la máquina con los hombros ensangrentados cuando el motor se apaga exhausto en los arenales. En este orden de cosas, el viaje no constituye una mera hazaña militar de audacia táctica, sino la consagración de la fraternidad humana, en virtud de la cual el hombre es capaz de sacrificar su existencia entera para calmar la sed de sus hermanos."
++      "text": "Pues bien, quien conozca estos datos sabrá, antes de abrir el libro, de qué país trata la novela, en qué años ocurre la lucha y entre quiénes es."
+     },
+     {
+       "type": "narration",
+-      "text": "En suma, la prodigiosa obra de Augusto Roa Bastos desafía las convenciones cronológicas de la novela realista tradicional para tejer una parábola dolorosa y redentora sobre el destino del Paraguay contemporáneo. En última instancia, tanto el Cristo esculpido por el leproso solitario en los montes de Itapé como el aguatero que entrega su aliento final en las picadas del Chaco encarnan la misma revelación humanista: el ser humano no debe arrodillarse ante deidades indiferentes ni esperar soluciones providenciales del poder opresor. El hombre paraguayo, moldeado en el barro de la adversidad secular, encuentra su única redención posible en la solidaridad fraterna, demostrando que mientras exista un alma dispuesta a compartir el agua y la memoria, la esperanza comunitaria renacerá sobre las cenizas del infortunio histórico."
++      "text": "En resumen, Roa Bastos fue un escritor paraguayo que vivió muchos años en el exilio. Su primera novela, Hijo de hombre, se publicó en 1960 y trata de la lucha entre los gobernantes del Paraguay y su pueblo oprimido, entre 1912 y 1936. En definitiva, el autor y su libro tienen algo en común: Paraguay, el país del escritor y el país del que habla la novela."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Por qué decidió Gaspar Mora refugiarse en el monte para tallar la imagen del Cristo?",
++          "question": "According to the text, what is Hijo de hombre about?",
+           "options": [
+-            "Para ocultar un tesoro robado durante las guerras civiles.",
+-            "Porque padecía lepra y deseaba evitar el contagio y el encierro en un lazareto, consagrando su vida a tallar el dolor de su pueblo.",
+-            "Para huir de una condena judicial por delitos comerciales en Asunción.",
+-            "Porque el párroco del pueblo le encargó una estatua de mármol para la catedral."
++            "La lucha entre los gobernantes del Paraguay y su pueblo oprimido.",
++            "La vida de Roa Bastos en el exilio.",
++            "Un viaje de un escritor por varios países."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "Gaspar Mora eligió el desahucio voluntario en el cerro para aislar su enfermedad y esculpió en guayacán un Cristo con rasgos campesinos."
++          "correctIndex": 0,
++          "explanation": "The text says that the novel is about the struggle between the rulers of Paraguay and its oppressed people."
+         },
+         {
+-          "question": "¿Qué simboliza la travesía del camión aguatero conducido por Cristóbal Jara en la Guerra del Chaco?",
++          "question": "Which years does the novel cover, according to the text?",
+           "options": [
+-            "Una desobediencia militar para enriquecerse vendiendo agua a los enemigos.",
+-            "La superioridad técnica de la industria bélica sobre las fuerzas de la naturaleza.",
+-            "El heroísmo solidario y el sacrificio supremo por aliviar la agonía de sus compañeros de combate.",
+-            "La retirada cobarde de las tropas paraguayas ante el avance boliviano."
++            "De 1912 a 1936.",
++            "De 1917 a 2005.",
++            "De 1936 a 1960."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "Cristóbal Jara desafía el fuego enemigo y la sed extrema para llevar agua a soldados sitiados, personificando la fraternidad."
++          "correctIndex": 0,
++          "explanation": "The text says that the struggle goes from 1912 to 1936."
+         },
+         {
+-          "question": "¿Cuál es la tesis central que transmite la obra respecto al destino humano?",
++          "question": "What does the text say about Roa Bastos's life?",
+           "options": [
+-            "Que la redención no proviene de la resignación pasiva, sino de la solidaridad y el sacrificio compartido entre los oprimidos.",
+-            "Que la sumisión a los dictadores es la única garantía de paz campesina.",
+-            "Que el pueblo paraguayo debe olvidar sus raíces guaraníes para progresar.",
+-            "Que los avances mecánicos sustituirán por completo a los valores morales."
++            "Vivió muchos años en el exilio.",
++            "Vivió siempre en Paraguay.",
++            "Escribió su primera novela en 1936."
+           ],
+           "correctIndex": 0,
+-          "explanation": "Roa Bastos plantea que la dignidad humana estriba en la unión fraterna y el testimonio activo frente a la injusticia histórica."
++          "explanation": "The text says that he lived many years in exile."
+         }
+       ]
+     }
+   },
+   "author": "Augusto Roa Bastos (Paraguay, 1917–2005)",
+   "work": "Hijo de hombre (1960)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Augusto Roa Bastos",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "order": 28
+ }
+diff --git a/content/es-latam/stories/classics/b2/b2-29.json b/content/es-latam/stories/classics/b2/b2-29.json
+index 5d9eb702..1ee03cc3 100644
+--- a/content/es-latam/stories/classics/b2/b2-29.json
++++ b/content/es-latam/stories/classics/b2/b2-29.json
+@@ -5,76 +5,77 @@
+   "lesson": 1,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Adaptación pedagógica de la cumbre de Machado de Assis: la mirada obsesiva de Bento Santiago desde su soledad en Engenho Novo, el recuerdo deslumbrante de Capitu con sus ojos de resaca marina, la amistad quebrantada con Escobar y el abismo insoluble de los celos retrospectivos.",
++  "summary": "Resumen en español de los tres primeros capítulos de Dom Casmurro, la novela de Machado de Assis: el apodo del narrador, el porqué del libro y una tarde de 1857.",
+   "characters": [
+-    "Bento Santiago (Dom Casmurro, el anciano narrador)",
+-    "Capitu (Capitolina, su amor de infancia y esposa)",
+-    "Ezequiel de Souza Escobar (el brillante amigo del seminario)",
+-    "Ezequiel (el hijo marcado por un parecido perturbador)"
++    "El narrador (Bentinho de joven)",
++    "Su madre, doña Glória",
++    "José Dias",
++    "Capitu, la vecina"
+   ],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En la penumbra solitaria de su casona en el barrio carioca de Engenho Novo, un hombre envejecido y huraño a quien los vecinos apodaron con mordacidad 'Dom Casmurro' consagra sus horas postreras a reconstruir minuciosamente los fantasmas de su juventud perdida. Para mitigar el tedio y la melancolía que le devoran el alma, Bento Santiago mandó edificar aquella vivienda reproduciendo de manera idéntica las habitaciones, los corredores y el jardín de su antigua casa de infancia en la calle de Matacavalos. Es decir, el anciano abogado intentó clausurar el tiempo exterior para revivir con obsesión arqueológica los albores de su pasión juvenil por Capitolina, la dulce y enigmática muchacha vecina a quien todos llamaban Capitu. Dicho en otros términos, la memoria no opera aquí como un simple álbum de añoranzas amables, sino más bien como un tribunal sombrío donde un fiscal celoso interroga una y otra vez los silencios del pasado."
++      "text": "El narrador cuenta que una noche volvía de la ciudad a Engenho Novo, el barrio donde vive. En el tren se sentó a su lado un joven del barrio. El joven habló de la luna y de los ministros y terminó recitándole versos. El narrador estaba cansado y cerró los ojos tres o cuatro veces; eso bastó para que el joven dejara de leer y guardara los versos en el bolsillo."
+     },
+     {
+       "type": "narration",
+-      "text": "Desde los primeros juegos infantiles en las cancelas floridas del vecindario, Capitu deslumbraba a cuantos la rodeaban por su extraordinaria madurez psicológica y por un magnetismo singular que Bento jamás logró descifrar por completo. Su amigo José Días solía definir la mirada de la joven mediante una metáfora célebre que habría de atormentar a Bento hasta el fin de sus días: Capitu poseía 'ojos de resaca', esto es, ojos de marea brava que atraían al observador hacia el fondo de un abismo como la resaca del mar en las playas abiertas de Río de Janeiro. Mejor dicho, no se trataba de una belleza convencional o sumisa, sino de una inteligencia viva y disimuladora que desconcertaba al inseguro Bento. Cuando la devota madre de este pretendió internarlo forzosamente en un seminario para cumplir una vieja promesa de ordenación sacerdotal, fue la astucia de Capitu la que urdió las alianzas necesarias para liberarlo de los hábitos sagrados y permitirles contraer matrimonio civil y eclesiástico."
++      "text": "Al día siguiente, el joven habló mal del narrador y acabó dándole un apodo: Dom Casmurro. Los vecinos, a quienes no les gustaban sus costumbres calladas y retiradas, repitieron el apodo. El narrador no se enojó. Según él, no hay que buscar casmurro en los diccionarios: aquí la palabra no tiene el sentido que le dan los libros, sino más bien el de la gente, es decir, el de un hombre callado y encerrado en sí mismo. Dom se añadió por ironía, para darle aires de noble."
+     },
+     {
+       "type": "narration",
+-      "text": "En las aulas austeras del seminario de São José, Bento trabó una amistad entrañable e indivisible con Ezequiel de Souza Escobar, un joven seminarista de mente calculadora, despierta y dotada de un prodigioso sentido práctico para las finanzas y el comercio. Escobar no tardó en abandonar la sotana para consagrarse a los negocios portuarios, casándose poco después con Sancha, la amiga íntima de Capitu, y sellando así un cuadrilátero afectivo de aparente armonía familiar. En cualquier caso, el hogar de Bento y Capitu parecía haber alcanzado la plenitud terrenal cuando, tras largos años de dolorosa e infértil espera, nació por fin su único primogénito, al que bautizaron con el nombre de Ezequiel en honor al entrañable amigo de estudios. De todos modos, la dicha conyugal duró muy poco tiempo, pues la tragedia no tardó en golpear las aguas de la bahía de Guanabara cuando Escobar murió ahogado repentinamente al ser arrastrado por el oleaje traicionero de la playa de São Cristóvão."
++      "text": "En el segundo capítulo, el narrador explica por qué escribe. Vive solo, con un criado, en una casa que mandó construir por un deseo tan particular que le da vergüenza ponerlo por escrito. Quiso reproducir en Engenho Novo la casa donde se crió, en la calle de Matacavalos, o sea, una casa que ya no existe. En la sala principal hay pinturas parecidas a las de antes: por ejemplo, medallones de César, Augusto, Nerón y Masinisa."
+     },
+     {
+       "type": "narration",
+-      "text": "Fue precisamente durante las honras fúnebres de Escobar cuando los cimientos morales de Bento Santiago se desplomaron en una espiral irreversible de sospechas insoportables. Al contemplar el féretro del difunto amigo, Bento advirtió que Capitu no lloraba con el pesar formal de una conocida; por el contrario, clavó en el rostro inerte del cadáver aquellos ojos de resaca marina con una desesperación honda y reprimida que heló la sangre del esposo. A modo de ilustración del abismo mental en que se hundió Bento, cada gesto y cada mirada de su pequeño hijo Ezequiel comenzaron a revelarle un parecido asombroso, milimétrico y monstruoso con las facciones del difunto Escobar. Dicho de otro modo, el padre atormentado ya no veía en el niño a su propia descendencia, sino la prueba viviente de una traición adulterina que mancillaba para siempre el honor de su linaje familiar."
++      "text": "Con esa casa quería recuperar la adolescencia en plena vejez. No lo consiguió; mejor dicho, no pudo reconstruir ni el pasado ni al hombre que fue. En otras palabras, la casa nueva se parece a la de su infancia, pero no le devolvió la juventud. Aun así, vida diferente no quiere decir vida peor."
+     },
+     {
+       "type": "narration",
+-      "text": "En suma, la genialidad imperecedera de Machado de Assis estriba en negar al lector cualquier certeza judicial concluyente sobre la culpabilidad objetiva de Capitu. En definitiva, todo lo que conocemos procede de la voz monologante, amargada y subjetiva de Dom Casmurro, un narrador herido que manipula los recuerdos para justificar el destierro impuesto a su esposa y a su hijo en tierras de Europa y su propio retiro solitario en Engenho Novo. En última instancia, la novela se erige en una cumbre magistral de la literatura universal que dilucida cómo los celos enfermizos son capaces de crear sus propios monstruos imaginarios, dejando suspendida para siempre en la conciencia del lector la pregunta sobre si Capitu engañó verdaderamente a su marido o si fue este quien devoró su propia felicidad en los altares de la desconfianza."
++      "text": "La monotonía acabó por cansarlo y quiso escribir un libro. Pensó en una historia de los suburbios, pero exigía documentos y fechas; dicho de otro modo, un trabajo largo y árido. Entonces le pareció que los bustos pintados en las paredes le decían que tomara la pluma y contara el pasado, ya que ellos no podían devolvérselo."
++    },
++    {
++      "type": "narration",
++      "text": "El tercer capítulo cuenta una tarde de noviembre de 1857. Cuando iba a entrar en la sala, el narrador oyó su nombre y se escondió detrás de la puerta. Su madre hablaba con José Dias, que le preguntó si todavía quería mandar a Bentinho al seminario: según él, había una dificultad, porque Bentinho pasaba mucho tiempo con la hija de los vecinos. La madre no veía nada sospechoso, pues Bentinho tenía apenas quince años y Capitu acababa de cumplir catorce. En cualquier caso, ya era hora de llevarlo al seminario, porque era una promesa."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Por qué Bento Santiago hizo construir su casa de Engenho Novo idéntica a la de su infancia?",
++          "question": "What does the narrator say the word casmurro means in his case?",
+           "options": [
+-            "Para abaratar los costos arquitectónicos de la obra.",
+-            "Para reproducir con obsesión el escenario físico de su amor juvenil y revivir sus recuerdos en soledad.",
+-            "Porque el gobierno municipal le prohibió cambiar el diseño de las fachadas coloniales.",
+-            "Para instalar un museo de pintura moderna en la sala principal."
++            "Un hombre callado y encerrado en sí mismo.",
++            "Un poeta que recita versos en el tren.",
++            "Un noble con una casa muy grande."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "Bento reconstruyó su casa de Matacavalos para encerrarse en la reconstrucción obsesiva de su pasado."
++          "correctIndex": 0,
++          "explanation": "The text says the narrator takes casmurro in the sense people give it: a quiet man closed in on himself."
+         },
+         {
+-          "question": "¿Qué rasgo caracterizaba los ojos de Capitu según la célebre metáfora de la novela?",
++          "question": "Why did the narrator build his house in Engenho Novo?",
+           "options": [
+-            "Eran ojos apagados y ciegos por una enfermedad infantil.",
+-            "Eran ojos de resaca marina, que atraían y sumergían al observador en un abismo de misterio y disimulo.",
+-            "Eran ojos verdes y claros idénticos a los de una emperatriz europea.",
+-            "Eran ojos tristes que lloraban constantemente sin motivo aparente."
++            "Para reproducir la casa donde se crió, que ya no existe.",
++            "Para vivir cerca de sus amigos de la ciudad.",
++            "Para tener más habitaciones que antes."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "La metáfora de los 'ojos de resaca' define la profundidad y el poder de fascinación misterioso de Capitu."
++          "correctIndex": 0,
++          "explanation": "The text says he wanted to reproduce the house where he grew up on Matacavalos street, which no longer exists."
+         },
+         {
+-          "question": "¿Cuál es la singularidad narrativa que convierte a 'Dom Casmurro' en una obra maestra psicológica?",
++          "question": "What does the narrator's mother say at the end of the scene?",
+           "options": [
+-            "Que incluye cartas judiciales certificadas por un tribunal imparcial de Río de Janeiro.",
+-            "Que el narrador es subjetivo y obsesivo, dejando en la incertidumbre al lector sobre si el adulterio fue real o fruto de los celos.",
+-            "Que la historia está contada enteramente desde la perspectiva de Escobar tras su muerte.",
+-            "Que fue escrita originalmente en verso heroico alejandrino."
++            "Que ya es hora de llevar a Bentinho al seminario.",
++            "Que Bentinho no debe ir nunca al seminario.",
++            "Que José Dias tiene razón sobre la vecina."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "Machado de Assis utiliza un narrador en primera persona cuya subjetividad impide verificar con certeza la infidelidad."
++          "correctIndex": 0,
++          "explanation": "The text says that, in any case, it is time to take Bentinho to the seminary, because it is a promise."
+         }
+       ]
+     }
+   },
+   "author": "Machado de Assis (Brasil, 1839–1908)",
+   "work": "Dom Casmurro (1899)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Machado de Assis",
++  "source": "Adaptación en español para estudiantes de nivel B2 de capítulos de la novela de Machado de Assis (dominio público), contrastada con el texto portugués de Project Gutenberg.",
+   "order": 29
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-28-01-voc.json b/content/es-latam/vocabulary/b2/b2-28-01-voc.json
+index 1c2cd84a..2529abd3 100644
+--- a/content/es-latam/vocabulary/b2/b2-28-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-28-01-voc.json
+@@ -1,36 +1,26 @@
+ {
+   "id": "vocab.b2.28.01",
+   "lesson": "b2-28-01",
+-  "title": "Discourse Ordering and Sequencing",
++  "title": "Putting ideas in order",
+   "words": [
+     {
+-      "lemma": "preámbulo",
+-      "translation": "preamble",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "epílogo",
+-      "translation": "epilogue",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "sucinto",
+-      "translation": "succinct",
+-      "pos": "adjective"
++      "lemma": "en primer lugar",
++      "translation": "firstly, in the first place",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "dilucidar",
+-      "translation": "to elucidate",
+-      "pos": "verb"
++      "lemma": "en segundo lugar",
++      "translation": "secondly, in the second place",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "pormenorizar",
+-      "translation": "to detail / itemize",
+-      "pos": "verb"
++      "lemma": "en tercer lugar",
++      "translation": "thirdly, in the third place",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "postrimería",
+-      "translation": "final period / closing stage",
++      "lemma": "el orden",
++      "translation": "order, sequence",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-28-02-voc.json b/content/es-latam/vocabulary/b2/b2-28-02-voc.json
+index ec971ab2..c9c5fbc7 100644
+--- a/content/es-latam/vocabulary/b2/b2-28-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-28-02-voc.json
+@@ -1,36 +1,31 @@
+ {
+   "id": "vocab.b2.28.02",
+   "lesson": "b2-28-02",
+-  "title": "Digression and Incidental Commentary",
++  "title": "Side remarks and meetings",
+   "words": [
+     {
+-      "lemma": "digresión",
+-      "translation": "digression",
+-      "pos": "noun"
++      "lemma": "por cierto",
++      "translation": "by the way",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "paréntesis",
+-      "translation": "parenthesis / interlude",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "inciso",
+-      "translation": "clause / incidental remark",
+-      "pos": "noun"
++      "lemma": "a propósito de",
++      "translation": "speaking of, regarding",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "soslayar",
+-      "translation": "to sidestep / skirt",
+-      "pos": "verb"
++      "lemma": "dicho sea de paso",
++      "translation": "incidentally, said in passing",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "tangencial",
+-      "translation": "tangential",
+-      "pos": "adjective"
++      "lemma": "volviendo a lo que decíamos",
++      "translation": "going back to what we were saying",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "apostilla",
+-      "translation": "marginal note / gloss",
++      "lemma": "el informe",
++      "translation": "report",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-28-03-voc.json b/content/es-latam/vocabulary/b2/b2-28-03-voc.json
+index ce61fb9b..bb874aef 100644
+--- a/content/es-latam/vocabulary/b2/b2-28-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-28-03-voc.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "vocab.b2.28.03",
+   "lesson": "b2-28-03",
+-  "title": "Continuity and Thematic Transition",
++  "title": "Moving on and picking up a topic",
+   "words": [
+     {
+-      "lemma": "hilo conductor",
+-      "translation": "common thread / guiding theme",
+-      "pos": "noun"
++      "lemma": "pues bien",
++      "translation": "well then, right",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "articulación",
+-      "translation": "linkage / structuring",
+-      "pos": "noun"
++      "lemma": "en cuanto a",
++      "translation": "as for",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "hilvanar",
+-      "translation": "to link together / weave",
+-      "pos": "verb"
++      "lemma": "por lo que se refiere a",
++      "translation": "as far as ... is concerned",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "encadenamiento",
+-      "translation": "concatenation / sequencing",
++      "lemma": "la bebida",
++      "translation": "drink",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "transición",
+-      "translation": "transition",
+-      "pos": "noun"
++      "lemma": "oprimido",
++      "translation": "oppressed",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "cohesión",
+-      "translation": "cohesion",
++      "lemma": "el exilio",
++      "translation": "exile",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-28-04-voc.json b/content/es-latam/vocabulary/b2/b2-28-04-voc.json
+index 726a5ad4..9c92122a 100644
+--- a/content/es-latam/vocabulary/b2/b2-28-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-28-04-voc.json
+@@ -1,36 +1,26 @@
+ {
+   "id": "vocab.b2.28.04",
+   "lesson": "b2-28-04",
+-  "title": "Distribution and Parallel Arguments",
++  "title": "Weighing two sides",
+   "words": [
+     {
+-      "lemma": "dicotomía",
+-      "translation": "dichotomy",
+-      "pos": "noun"
++      "lemma": "por una parte",
++      "translation": "on the one hand",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "disyuntiva",
+-      "translation": "dilemma / alternative",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "paralelismo",
+-      "translation": "parallelism",
+-      "pos": "noun"
++      "lemma": "por otra parte",
++      "translation": "on the other hand",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "contrapartida",
+-      "translation": "counterpart / offset",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "bifurcación",
+-      "translation": "branching / bifurcation",
+-      "pos": "noun"
++      "lemma": "mientras que",
++      "translation": "whereas",
++      "pos": "conjunction"
+     },
+     {
+-      "lemma": "antítesis",
+-      "translation": "antithesis",
++      "lemma": "el campo",
++      "translation": "the countryside",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-28-05-voc.json b/content/es-latam/vocabulary/b2/b2-28-05-voc.json
+index 0153de72..7eb8809c 100644
+--- a/content/es-latam/vocabulary/b2/b2-28-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-28-05-voc.json
+@@ -1,36 +1,21 @@
+ {
+   "id": "vocab.b2.28.05",
+   "lesson": "b2-28-05",
+-  "title": "Synthesis and Concluding Evaluation",
++  "title": "Summing up",
+   "words": [
+     {
+-      "lemma": "recapitulación",
+-      "translation": "recapitulation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "corolario",
+-      "translation": "corollary",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "desenlace",
+-      "translation": "outcome / denouement",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "sintetizar",
+-      "translation": "to synthesize",
+-      "pos": "verb"
++      "lemma": "en definitiva",
++      "translation": "all in all, in the end",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "concluyente",
+-      "translation": "conclusive",
+-      "pos": "adjective"
++      "lemma": "en suma",
++      "translation": "in short",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "balance",
+-      "translation": "overall assessment / balance",
++      "lemma": "el resumen",
++      "translation": "summary",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-29-01-voc.json b/content/es-latam/vocabulary/b2/b2-29-01-voc.json
+index e9a306eb..a19fdb81 100644
+--- a/content/es-latam/vocabulary/b2/b2-29-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-29-01-voc.json
+@@ -1,37 +1,32 @@
+ {
+   "id": "vocab.b2.29.01",
+   "lesson": "b2-29-01",
+-  "title": "Explanatory Reformulation and Semantic Precision",
++  "title": "Explaining and making clear",
+   "words": [
+     {
+-      "lemma": "esclarecimiento",
+-      "translation": "clarification",
+-      "pos": "noun"
++      "lemma": "en otras palabras",
++      "translation": "in other words",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "inequívoco",
+-      "translation": "unequivocal",
+-      "pos": "adjective"
++      "lemma": "dicho de otro modo",
++      "translation": "put another way",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "reformular",
+-      "translation": "to reformulate",
++      "lemma": "aclarar",
++      "translation": "to make clear, to clarify",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "semántica",
+-      "translation": "semantics",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "matiz",
+-      "translation": "nuance",
++      "lemma": "el significado",
++      "translation": "meaning",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "pertinente",
+-      "translation": "pertinent / relevant",
+-      "pos": "adjective"
++      "lemma": "encerrado en sí mismo",
++      "translation": "withdrawn, closed in on oneself",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-29-02-voc.json b/content/es-latam/vocabulary/b2/b2-29-02-voc.json
+index 9123ce6c..64a7403d 100644
+--- a/content/es-latam/vocabulary/b2/b2-29-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-29-02-voc.json
+@@ -1,37 +1,27 @@
+ {
+   "id": "vocab.b2.29.02",
+   "lesson": "b2-29-02",
+-  "title": "Rectifying and Corrective Reformulation",
++  "title": "Mistakes and corrections",
+   "words": [
+     {
+-      "lemma": "enmienda",
+-      "translation": "amendment / correction",
+-      "pos": "noun"
++      "lemma": "mejor dicho",
++      "translation": "or rather",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "rectificación",
+-      "translation": "rectification",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "enmendar",
+-      "translation": "to amend / rectify",
++      "lemma": "corregir",
++      "translation": "to correct",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "falso cognado",
+-      "translation": "false cognate",
+-      "pos": "noun"
++      "lemma": "equivocarse",
++      "translation": "to make a mistake",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "aparente",
+-      "translation": "apparent / deceptive",
++      "lemma": "enojado",
++      "translation": "angry",
+       "pos": "adjective"
+-    },
+-    {
+-      "lemma": "precisión",
+-      "translation": "precision / accuracy",
+-      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-29-03-voc.json b/content/es-latam/vocabulary/b2/b2-29-03-voc.json
+index 90a866eb..e4857b05 100644
+--- a/content/es-latam/vocabulary/b2/b2-29-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-29-03-voc.json
+@@ -1,37 +1,27 @@
+ {
+   "id": "vocab.b2.29.03",
+   "lesson": "b2-29-03",
+-  "title": "Distancing Reformulation and Argumentative Reserve",
++  "title": "Doubts and decisions",
+   "words": [
+     {
+-      "lemma": "escepticismo",
+-      "translation": "skepticism",
+-      "pos": "noun"
++      "lemma": "de todos modos",
++      "translation": "anyway, in any case",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "salvedad",
+-      "translation": "caveat / reservation",
+-      "pos": "noun"
++      "lemma": "de todas formas",
++      "translation": "anyway, all the same",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "distanciamiento",
+-      "translation": "distancing / detachment",
+-      "pos": "noun"
++      "lemma": "en cualquier caso",
++      "translation": "in any case",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "cautela",
+-      "translation": "caution / prudence",
++      "lemma": "la duda",
++      "translation": "doubt",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "ponderar",
+-      "translation": "to weigh / ponder",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "relativizar",
+-      "translation": "to relativize / contextualize",
+-      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-29-04-voc.json b/content/es-latam/vocabulary/b2/b2-29-04-voc.json
+index 1fc71d92..f208fc7f 100644
+--- a/content/es-latam/vocabulary/b2/b2-29-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-29-04-voc.json
+@@ -1,37 +1,27 @@
+ {
+   "id": "vocab.b2.29.04",
+   "lesson": "b2-29-04",
+-  "title": "Recapitulative Paraphrase and Synthesis",
++  "title": "Main ideas and summaries",
+   "words": [
+     {
+-      "lemma": "paráfrasis",
+-      "translation": "paraphrase",
+-      "pos": "noun"
++      "lemma": "en pocas palabras",
++      "translation": "in a few words",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "equivalencia",
+-      "translation": "equivalence",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "condensación",
+-      "translation": "condensation / summary",
+-      "pos": "noun"
++      "lemma": "resumiendo",
++      "translation": "to sum up",
++      "pos": "adverb"
+     },
+     {
+-      "lemma": "sinopsis",
+-      "translation": "synopsis",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "compendiar",
+-      "translation": "to abridge / summarize",
++      "lemma": "resumir",
++      "translation": "to sum up, to summarise",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "conciso",
+-      "translation": "concise",
+-      "pos": "adjective"
++      "lemma": "la idea principal",
++      "translation": "the main idea",
++      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-29-05-voc.json b/content/es-latam/vocabulary/b2/b2-29-05-voc.json
+index ac9c3422..6f96e6ca 100644
+--- a/content/es-latam/vocabulary/b2/b2-29-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-29-05-voc.json
+@@ -1,36 +1,26 @@
+ {
+   "id": "vocab.b2.29.05",
+   "lesson": "b2-29-05",
+-  "title": "Exemplification and Case Illustration",
++  "title": "Examples and cases",
+   "words": [
+     {
+-      "lemma": "arquetipo",
+-      "translation": "archetype",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "paradigma",
+-      "translation": "paradigm",
+-      "pos": "noun"
++      "lemma": "en concreto",
++      "translation": "specifically",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "ejemplificar",
+-      "translation": "to exemplify",
+-      "pos": "verb"
++      "lemma": "así",
++      "translation": "for instance, thus",
++      "pos": "adverb"
+     },
+     {
+-      "lemma": "ilustración",
+-      "translation": "illustration / example",
++      "lemma": "el ejemplo",
++      "translation": "example",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "representativo",
+-      "translation": "representative",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "caso testigo",
+-      "translation": "test case / benchmark",
++      "lemma": "el caso",
++      "translation": "case",
+       "pos": "noun"
+     }
+   ]
