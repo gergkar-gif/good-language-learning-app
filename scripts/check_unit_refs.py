@@ -86,6 +86,15 @@ def main():
         if p and stem_of(f, pos) not in hidden_stems:
             text = REF.sub("", Path(f).read_text(encoding="utf-8"))
             texts.setdefault(p, []).append(" | ".join(re.findall(r"\*([^*]+)\*", text)).lower())
+            # table cells teach forms too, without italics (*en cuanto* in A2 Unit 27's table)
+            try:
+                secs = json.loads(text).get("sections", [])
+            except (ValueError, AttributeError):
+                secs = []
+            cells = [str(c) for s in secs if isinstance(s, dict) and s.get("type") == "table"
+                     for row in s.get("rows", []) for c in (row if isinstance(row, list) else [row])]
+            if cells:
+                texts[p].append(" | ".join(cells).lower())
     for f in glob.glob(str(ROOT / f"content/{course}/vocabulary/*/*.json")):
         p = pos.get(stem_of(f, pos))
         if p and stem_of(f, pos) not in hidden_stems:
