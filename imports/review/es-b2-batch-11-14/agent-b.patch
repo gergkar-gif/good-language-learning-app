@@ -1,0 +1,4351 @@
+diff --git a/content/es-latam/exercises/b2/b2-13-01-ex.json b/content/es-latam/exercises/b2/b2-13-01-ex.json
+index 686d63b9..592372b5 100644
+--- a/content/es-latam/exercises/b2/b2-13-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-13-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el postulante",
+-          "applicant, candidate"
++          "amplio",
++          "spacious"
+         ],
+         [
+-          "la idoneidad",
+-          "suitability, fitness"
++          "el ascensor",
++          "lift"
+         ],
+         [
+-          "la convocatoria",
+-          "call for applications"
++          "la mascota",
++          "pet"
+         ],
+         [
+-          "desempeñar",
+-          "to carry out, to discharge"
++          "el estacionamiento",
++          "parking space"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-13-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La comisión necesita redactar un informe que __ fielmente los hallazgos de campo.",
+-      "hint": "reflejar",
+-      "answer": "refleje",
+-      "english": "The commission needs to draft a report that faithfully reflects the field findings.",
++      "sentence": "No hay ningún apartamento aquí que __ ascensor.",
++      "hint": "tener",
++      "answer": "tenga",
++      "english": "There is no flat here that has a lift.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -43,44 +43,45 @@
+       "id": "b2-13-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué enunciado exige modo subjuntivo por tener un antecedente inespecífico o hipotético?",
++      "question": "Which sentence means \"I'm looking for a flat, any flat, that accepts pets\"?",
+       "options": [
+-        "Buscamos a un consultor que conozca la normativa aduanera andina.",
+-        "Contratamos al consultor que conoce la normativa aduanera andina.",
+-        "Trabajamos con el equipo que gestiona los fondos públicos descentralizados."
++        "Busco un apartamento que acepta mascotas.",
++        "Busco un apartamento que acepte mascotas.",
++        "Busco un apartamento que aceptara mascotas."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "relativas-subjuntivo"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "imperfect-subjunctive-forms"
++      }
+     },
+     {
+       "id": "b2-13-01.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Requerimos",
++        "Busco",
+         "un",
+-        "auditor",
++        "apartamento",
+         "que",
+-        "acredite",
+-        "experiencia",
+-        "en",
+-        "proyectos",
+-        "multilaterales."
++        "sea",
++        "amplio",
++        "y",
++        "luminoso."
+       ],
+       "solution": [
+-        "Requerimos",
++        "Busco",
+         "un",
+-        "auditor",
++        "apartamento",
+         "que",
+-        "acredite",
+-        "experiencia",
+-        "en",
+-        "proyectos",
+-        "multilaterales."
++        "sea",
++        "amplio",
++        "y",
++        "luminoso."
+       ],
+-      "english": "We require an auditor who certifies experience in multilateral projects.",
++      "english": "I'm looking for a flat that is spacious and bright.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -91,24 +92,24 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Directora de RRHH",
+-          "text": "Debemos publicar la vacante antes del viernes. ¿Qué perfil propones para liderar el proyecto andino?"
++          "speaker": "Ana",
++          "text": "¿Ya encontraste apartamento?"
+         },
+         {
+-          "speaker": "Coordinador",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Directora de RRHH",
+-          "text": "Me parece un criterio impecable; redactemos la convocatoria con ese requisito."
++          "speaker": "Ana",
++          "text": "¡Qué bien! ¿Cuándo lo vamos a ver?"
+         }
+       ],
+       "options": [
+-        "Sugiero que busquemos a alguien que tenga solvencia técnica y haya coordinado equipos interculturales.",
+-        "El archivo central abre de lunes a viernes a las nueve de la mañana.",
+-        "Los pasajes aéreos a Bogotá fueron adquiridos el mes pasado."
++        "Sí, tengo uno que tenga balcón y ascensor.",
++        "Sí, tengo uno que tener balcón y ascensor.",
++        "Sí, tengo uno que tiene balcón y ascensor."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -117,8 +118,8 @@
+       "id": "b2-13-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Es indispensable seleccionar un postulante que demuestre probada idoneidad moral.",
+-      "english": "It is essential to select an applicant who demonstrates proven moral suitability.",
++      "sentence": "No conozco a nadie que viva en este barrio.",
++      "english": "I don't know anyone who lives in this neighbourhood.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-13-02-ex.json b/content/es-latam/exercises/b2/b2-13-02-ex.json
+index a11466c9..bd62a14b 100644
+--- a/content/es-latam/exercises/b2/b2-13-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-13-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el hallazgo",
+-          "finding, discovery"
++          "el plomero",
++          "plumber"
+         ],
+         [
+-          "el indicio",
+-          "indication, clue, evidence"
++          "arreglar",
++          "to fix"
+         ],
+         [
+-          "corroborar",
+-          "to corroborate, to confirm"
++          "la fuga",
++          "leak"
+         ],
+         [
+-          "categórico",
+-          "categorical, unequivocal"
++          "la herramienta",
++          "tool"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-13-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En los archivos no queda ningún registro que __ la entrega de los fondos.",
+-      "hint": "acreditar",
+-      "answer": "acredite",
+-      "english": "In the archives there remains no record that certifies the delivery of the funds.",
++      "sentence": "No hay ningún plomero que __ venir hoy.",
++      "hint": "poder",
++      "answer": "pueda",
++      "english": "There is no plumber who can come today.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -43,11 +43,11 @@
+       "id": "b2-13-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué opción contiene una oración subordinada adjetiva con antecedente negativo correcto?",
++      "question": "How do you say \"I don't know anyone who can fix this\"?",
+       "options": [
+-        "No encontramos ningún peritaje que respalde la tesis de la defensa.",
+-        "No encontramos ningún peritaje que respalda la tesis de la defensa.",
+-        "No existe prueba alguna que demuestra su culpabilidad penal."
++        "No conozco a nadie que pueda arreglar esto.",
++        "No conozco a nadie que puede arreglar esto.",
++        "Conozco a nadie que pueda arreglar esto."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -60,27 +60,25 @@
+       "category": "grammar",
+       "tiles": [
+         "No",
+-        "hay",
+-        "ninguna",
+-        "cláusula",
++        "conozco",
++        "a",
++        "nadie",
+         "que",
+-        "invalide",
+-        "los",
+-        "acuerdos",
+-        "firmados."
++        "tenga",
++        "esa",
++        "herramienta."
+       ],
+       "solution": [
+         "No",
+-        "hay",
+-        "ninguna",
+-        "cláusula",
++        "conozco",
++        "a",
++        "nadie",
+         "que",
+-        "invalide",
+-        "los",
+-        "acuerdos",
+-        "firmados."
++        "tenga",
++        "esa",
++        "herramienta."
+       ],
+-      "english": "There is no clause that invalidates the signed agreements.",
++      "english": "I don't know anyone who has that tool.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -91,34 +89,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Periodista",
+-          "text": "¿Ha descubierto la fiscalía algún testimonio comprometedor contra la junta?"
++          "speaker": "Ana",
++          "text": "Hay una fuga en la cocina. ¿Conoces a algún plomero?"
+         },
+         {
+-          "speaker": "Portavoz judicial",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Periodista",
+-          "text": "Queda clara entonces la postura oficial respecto a la investigación."
++          "speaker": "Ana",
++          "text": "Entonces voy a buscar uno en internet."
+         }
+       ],
+       "options": [
+-        "Hasta el momento no disponemos de ningún indicio testimonial que vincule a los miembros de la junta.",
+-        "El tribunal supremo sesiona en el palacio de justicia cada martes por la tarde.",
+-        "Los diarios nacionales publicaron reportajes sobre el comercio fluvial."
++        "No, no conozco a ninguno que pueda venir hoy.",
++        "No, no conozco a ninguno que puede venir hoy.",
++        "No, no conozco a ninguno que pudo venir hoy."
+       ],
+       "correct": 0,
+       "teaches": [
+         "relativas-subjuntivo"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "preterite-irregular-stems"
++      }
+     },
+     {
+       "id": "b2-13-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "No existe ningún argumento fáctico que desmienta los hallazgos de la auditoría.",
+-      "english": "There is no factual argument that refutes the audit's findings.",
++      "sentence": "Aquí no hay nadie que sepa arreglar una fuga.",
++      "english": "There is nobody here who knows how to fix a leak.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-13-03-ex.json b/content/es-latam/exercises/b2/b2-13-03-ex.json
+index 786fcbcf..9d1bb3b7 100644
+--- a/content/es-latam/exercises/b2/b2-13-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-13-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la certeza",
+-          "certainty, certitude"
++          "el cargador",
++          "charger"
+         ],
+         [
+-          "el testigo",
+-          "witness"
++          "el enchufe",
++          "socket, plug"
+         ],
+         [
+-          "constatar",
+-          "to verify, to ascertain"
++          "servir",
++          "to be useful, to work"
+         ],
+         [
+-          "fidedigno",
+-          "reliable, trustworthy"
++          "la pantalla",
++          "screen"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-13-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Aquí tengo en mis manos el expediente que __ la procedencia legal de las tierras.",
+-      "hint": "demostrar",
+-      "answer": "demuestra",
+-      "english": "Here in my hands I have the dossier that demonstrates the legal provenance of the lands.",
++      "sentence": "Ya encontré un cargador que __ para mi celular.",
++      "hint": "servir",
++      "answer": "sirve",
++      "english": "I have already found a charger that works for my phone.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -43,46 +43,41 @@
+       "id": "b2-13-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál enunciado afirma con certeza la existencia real de un individuo específico?",
++      "question": "Which sentence says what you needed, without knowing whether it existed?",
+       "options": [
+-        "Trabajo con una analista que domina las finanzas públicas andinas.",
+-        "Busco a una analista que domine las finanzas públicas andinas.",
+-        "Ojalá tengamos una analista que domine las finanzas públicas andinas."
++        "Necesitaba un cargador que sirviera para mi celular.",
++        "Necesitaba un cargador que servía para mi celular.",
++        "Necesitaba un cargador que sirvió para mi celular."
+       ],
+       "correct": 0,
+       "teaches": [
+         "relativas-subjuntivo"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "preterito-indefinido"
++      }
+     },
+     {
+       "id": "b2-13-03.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Contamos",
+-        "con",
+-        "un",
+-        "protocolo",
++        "Ya",
++        "encontré",
++        "el",
++        "enchufe",
+         "que",
+-        "garantiza",
+-        "la",
+-        "cadena",
+-        "de",
+-        "custodia."
++        "necesitaba."
+       ],
+       "solution": [
+-        "Contamos",
+-        "con",
+-        "un",
+-        "protocolo",
++        "Ya",
++        "encontré",
++        "el",
++        "enchufe",
+         "que",
+-        "garantiza",
+-        "la",
+-        "cadena",
+-        "de",
+-        "custodia."
++        "necesitaba."
+       ],
+-      "english": "We count on a protocol that guarantees the chain of custody.",
++      "english": "I already found the socket that I needed.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -93,24 +88,24 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Ministro",
+-          "text": "¿Ya se eligió el consorcio para la infraestructura vial?"
++          "speaker": "Ana",
++          "text": "¿Dónde conseguiste ese cargador?"
+         },
+         {
+-          "speaker": "Viceministro",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Ministro",
+-          "text": "De acuerdo; no adjudicaremos la obra hasta tener garantías plenas."
++          "speaker": "Ana",
++          "text": "Mañana voy a pasar por ahí."
+         }
+       ],
+       "options": [
+-        "Estamos esperando una propuesta que cumpla con las exigencias, ya que la actual no satisface los estándares.",
+-        "La carretera pavimentada conecta la capital con los puertos fluviales del norte.",
+-        "Los camiones de carga circulan principalmente durante el horario nocturno."
++        "Lo compré en una tienda que esté cerca de la oficina.",
++        "Lo compré en una tienda que estar cerca de la oficina.",
++        "Lo compré en una tienda que está cerca de la oficina."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -119,8 +114,8 @@
+       "id": "b2-13-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Conozco personalmente al perito que redactó las conclusiones del caso.",
+-      "english": "I personally know the expert who drafted the conclusions of the case.",
++      "sentence": "Necesitaba un enchufe que estuviera cerca de la ventana.",
++      "english": "I needed a socket that was near the window.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-13-04-ex.json b/content/es-latam/exercises/b2/b2-13-04-ex.json
+index af2fa8f3..d009575c 100644
+--- a/content/es-latam/exercises/b2/b2-13-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-13-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el interlocutor",
+-          "dialogue partner"
++          "confiar en",
++          "to trust"
+         ],
+         [
+-          "el mecanismo",
+-          "framework, mechanism"
++          "el apoyo",
++          "support"
+         ],
+         [
+-          "canalizar",
+-          "to channel, to streamline"
++          "compartir",
++          "to share"
+         ],
+         [
+-          "vinculante",
+-          "binding, enforceable"
++          "el consejo",
++          "advice"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-13-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Se requiere un marco legal mediante el cual se __ los derechos territoriales comunitarios.",
+-      "hint": "proteger",
+-      "answer": "protejan",
+-      "english": "A legal framework is required through which community territorial rights are protected.",
++      "sentence": "No hay nadie en quien __ tanto como en ti.",
++      "hint": "confiar",
++      "answer": "confíe",
++      "english": "There is nobody I trust as much as you.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -43,46 +43,47 @@
+       "id": "b2-13-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la formulación más adecuada en un marco de mediación pacífica?",
++      "question": "Which sentence means \"I need a person I can talk to\"?",
+       "options": [
+-        "Necesitamos una mesa de diálogo en la que participen todos los sectores afectados.",
+-        "Necesitamos una mesa de diálogo en la que participan todos los sectores afectados.",
+-        "No hay ningún canal formal por el cual se tramita la apelación."
++        "Necesito una persona con la que pueda hablar.",
++        "Necesito una persona de la que pueda hablar.",
++        "Necesito una persona con la que puedo hablar."
+       ],
+       "correct": 0,
+       "teaches": [
+         "relativas-subjuntivo"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "relativas-preposicion-el-que"
++      }
+     },
+     {
+       "id": "b2-13-04.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "No",
+-        "hallamos",
+-        "a",
+-        "nadie",
+-        "con",
+-        "quien",
+-        "pudiéramos",
+-        "establecer",
+-        "comunicación",
+-        "segura."
++        "Buscamos",
++        "un",
++        "lugar",
++        "en",
++        "el",
++        "que",
++        "podamos",
++        "compartir",
++        "ideas."
+       ],
+       "solution": [
+-        "No",
+-        "hallamos",
+-        "a",
+-        "nadie",
+-        "con",
+-        "quien",
+-        "pudiéramos",
+-        "establecer",
+-        "comunicación",
+-        "segura."
++        "Buscamos",
++        "un",
++        "lugar",
++        "en",
++        "el",
++        "que",
++        "podamos",
++        "compartir",
++        "ideas."
+       ],
+-      "english": "We found no one with whom we could establish secure communication.",
++      "english": "We are looking for a place where we can share ideas.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -93,34 +94,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Comisionado",
+-          "text": "Las partes reclaman garantías de cumplimiento. ¿Cómo resolvemos esa desconfianza?"
++          "speaker": "Ana",
++          "text": "Hoy casi no hablas. ¿Qué te pasa?"
+         },
+         {
+-          "speaker": "Asesora jurídica",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Comisionado",
+-          "text": "Excelente iniciativa; dotará de legitimidad internacional al proceso."
++          "speaker": "Ana",
++          "text": "Me tienes a mí. Cuéntame todo."
+         }
+       ],
+       "options": [
+-        "Propondré la creación de una veeduría internacional a la que ambas delegaciones rindan cuentas periódicas.",
+-        "Las actas de la reunión anterior fueron archivadas en el servidor digital.",
+-        "El café colombiano se exporta principalmente a través de puertos caribeños."
++        "Es que no tengo a nadie en quien puedo confiar.",
++        "Es que no tengo a nadie en quien pueda confiar.",
++        "Es que no tengo a nadie en quien confiaré."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "relativas-subjuntivo"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-13-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Debemos convenir un protocolo bajo el cual se canalicen las reclamaciones urgentes.",
+-      "english": "We must agree upon a protocol under which urgent claims are channeled.",
++      "sentence": "No encuentro un lugar tranquilo en el que pueda estudiar.",
++      "english": "I can't find a quiet place where I can study.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-13-05-ex.json b/content/es-latam/exercises/b2/b2-13-05-ex.json
+index 832c1069..d1913e68 100644
+--- a/content/es-latam/exercises/b2/b2-13-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-13-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el pliego",
+-          "tender conditions, specifications"
++          "la vacante",
++          "job opening"
+         ],
+         [
+-          "el estatuto",
+-          "by-law, statute"
++          "el sueldo",
++          "salary, pay"
+         ],
+         [
+-          "subsanar",
+-          "to rectify, to remedy"
++          "el turno",
++          "shift"
+         ],
+         [
+-          "taxativo",
+-          "exhaustive, non-negotiable"
++          "el currículum",
++          "CV"
+         ]
+       ],
+       "teaches": [
+@@ -31,58 +31,65 @@
+       "id": "b2-13-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Todo postulante que no __ los errores formales dentro del plazo perderá el derecho a examen.",
+-      "hint": "subsanar",
+-      "answer": "subsane",
+-      "english": "Any applicant who does not remedy formal errors within the deadline will forfeit the right to be examined.",
++      "sentence": "Se busca un candidato que __ inglés y tenga experiencia.",
++      "hint": "hablar",
++      "answer": "hable",
++      "english": "We are looking for a candidate who speaks English and has experience.",
+       "teaches": [
+-        "relative-clauses"
++        "relativas-subjuntivo"
+       ]
+     },
+     {
+       "id": "b2-13-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la redacción estatutaria correcta con relativo generalizador?",
++      "question": "Which sentence says that the company has already hired one particular person?",
+       "options": [
+-        "Cualquier miembro de la junta que incurra en conflicto de intereses deberá abstenerse de votar.",
+-        "Cualquier miembro de la junta que incurre en conflicto de intereses debe abstenerse de votar.",
+-        "Todo aquel que postula a la licitación presentó su propuesta ayer por la tarde."
++        "Contrataron a una candidata que hable inglés y tenga experiencia.",
++        "Contrataron a una candidata que habló inglés y tuvo experiencia.",
++        "Contrataron a una candidata que habla inglés y tiene experiencia."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+-        "relative-clauses"
+-      ]
++        "relativas-subjuntivo"
++      ],
++      "distractor_skills": {
++        "1": "preterito-indefinido"
++      }
+     },
+     {
+       "id": "b2-13-05.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Serán",
+-        "admitidos",
+-        "aquellos",
+-        "candidatos",
++        "Quiero",
++        "un",
++        "trabajo",
+         "que",
+-        "hayan",
+-        "completado",
+-        "el",
+-        "registro."
++        "pague",
++        "bien",
++        "y",
++        "tenga",
++        "un",
++        "buen",
++        "horario."
+       ],
+       "solution": [
+-        "Serán",
+-        "admitidos",
+-        "aquellos",
+-        "candidatos",
++        "Quiero",
++        "un",
++        "trabajo",
+         "que",
+-        "hayan",
+-        "completado",
+-        "el",
+-        "registro."
++        "pague",
++        "bien",
++        "y",
++        "tenga",
++        "un",
++        "buen",
++        "horario."
+       ],
+-      "english": "Those candidates who have completed the registration will be admitted.",
++      "english": "I want a job that pays well and has good hours.",
+       "teaches": [
+-        "relative-clauses"
++        "relativas-subjuntivo"
+       ]
+     },
+     {
+@@ -91,36 +98,39 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Vocal técnico",
+-          "text": "Tenemos postulaciones incompletas. ¿Cómo definimos el criterio en el acta?"
++          "speaker": "Ana",
++          "text": "¿Viste el anuncio de la oficina? ¿Qué piden?"
+         },
+         {
+-          "speaker": "Secretario general",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Vocal técnico",
+-          "text": "Correcto; así garantizamos la igualdad de condiciones entre oferentes."
++          "speaker": "Ana",
++          "text": "Tú hablas inglés. Deberías llamar hoy."
+         }
+       ],
+       "options": [
+-        "El texto del acta debe consignar que todo aquel que no presente las certificaciones originales será descalificado.",
+-        "La sala de reuniones dispone de proyectores multimedia y conexión inalámbrica.",
+-        "El informe anual de gestión financiera se imprimirá en papel reciclado."
++        "Piden a alguien que hable inglés y pueda empezar pronto.",
++        "Piden a alguien que habla inglés y puede empezar pronto.",
++        "Piden a alguien que hablara inglés y pudiera empezar pronto."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "relative-clauses"
+-      ]
++        "relativas-subjuntivo"
++      ],
++      "distractor_skills": {
++        "2": "imperfect-subjunctive-forms"
++      }
+     },
+     {
+       "id": "b2-13-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Quedarán automáticamente excluidos aquellos oferentes que incumplan los requerimientos técnicos mínimos.",
+-      "english": "Those bidders who fail to meet the minimum technical requirements will be automatically excluded.",
++      "sentence": "Buscamos a alguien que sepa trabajar en equipo y pueda empezar el lunes.",
++      "english": "We are looking for someone who knows how to work in a team and can start on Monday.",
+       "teaches": [
+-        "relative-clauses"
++        "relativas-subjuntivo"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-13-consolidation-ex.json b/content/es-latam/exercises/b2/b2-13-consolidation-ex.json
+index beec3ec1..50eca2ee 100644
+--- a/content/es-latam/exercises/b2/b2-13-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-13-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la idoneidad",
+-          "fitness, suitability"
++          "amplio",
++          "spacious"
+         ],
+         [
+-          "el pliego",
+-          "tender conditions, specifications"
++          "el cargador",
++          "charger"
+         ],
+         [
+-          "constatar",
+-          "to verify, to ascertain"
++          "confiar en",
++          "to trust"
+         ],
+         [
+-          "taxativo",
+-          "exhaustive, non-negotiable"
++          "la vacante",
++          "job opening"
+         ]
+       ],
+       "teaches": [
+@@ -31,13 +31,13 @@
+       "id": "b2-13-consolidation.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué el enunciado 'Buscamos una solución que satisfaga a ambas partes' requiere subjuntivo?",
++      "question": "Which sentence means \"There is no one here who speaks English\"?",
+       "options": [
+-        "Porque el antecedente 'una solución' es inespecífico y su existencia real aún no está verificada.",
+-        "Porque el verbo 'buscar' exige siempre infinitivo con cambio de sujeto.",
+-        "Porque se trata de una narración de hechos históricos ya consumados en el pasado."
++        "Aquí no hay nadie que habla inglés.",
++        "Aquí no hay nadie que hable inglés.",
++        "Aquí hay nadie que hable inglés."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -46,10 +46,10 @@
+       "id": "b2-13-consolidation.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "No hubo en el expediente ningún testimonio que __ las denuncias de corrupción.",
+-      "hint": "avalar",
+-      "answer": "avalara",
+-      "english": "There was no testimony in the case file that supported the corruption allegations.",
++      "sentence": "Todavía no encuentro una oficina que __ cerca del centro.",
++      "hint": "estar",
++      "answer": "esté",
++      "english": "I still can't find an office that is near the centre.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -59,48 +59,45 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Cualquiera",
++        "No",
++        "hay",
++        "ningún",
++        "vecino",
+         "que",
+-        "vulnerase",
+-        "el",
+-        "orden",
+-        "constitucional",
+-        "sería",
+-        "llevado",
+-        "a",
+-        "juicio."
++        "tenga",
++        "mascota."
+       ],
+       "solution": [
+-        "Cualquiera",
++        "No",
++        "hay",
++        "ningún",
++        "vecino",
+         "que",
+-        "vulnerase",
+-        "el",
+-        "orden",
+-        "constitucional",
+-        "sería",
+-        "llevado",
+-        "a",
+-        "juicio."
++        "tenga",
++        "mascota."
+       ],
+-      "english": "Anyone who violated the constitutional order would be brought to trial.",
++      "english": "There is no neighbour who has a pet.",
+       "teaches": [
+-        "relative-clauses"
++        "relativas-subjuntivo"
+       ]
+     },
+     {
+       "id": "b2-13-consolidation.ex05",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la diferencia entre 'Tengo un perito que conoce el caso' y 'Busco un perito que conozca el caso'?",
++      "question": "Which sentence means \"I'm looking for a team I can work with\"?",
+       "options": [
+-        "La primera señala a un individuo específico real (indicativo); la segunda postula un perfil buscado (subjuntivo).",
+-        "Ambas frases son intercambiables y expresan exactamente la misma certidumbre empírica.",
+-        "La segunda frase es un error gramatical que debe corregirse con tiempo condicional."
++        "Busco un equipo con el que puedo trabajar.",
++        "Busco un equipo del que pueda trabajar.",
++        "Busco un equipo con el que pueda trabajar."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "relativas-subjuntivo"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "relativas-preposicion-el-que"
++      }
+     },
+     {
+       "id": "b2-13-consolidation.ex06",
+@@ -108,34 +105,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Presidente del tribunal",
+-          "text": "¿Qué dictamen procede con los aspirantes que no acreditaron el título de posgrado?"
++          "speaker": "Ana",
++          "text": "¿Hay alguien en la oficina que sepa cocinar?"
+         },
+         {
+-          "speaker": "Secretaria técnica",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Presidente del tribunal",
+-          "text": "Se aplicará entonces la exclusión sin excepciones."
++          "speaker": "Ana",
++          "text": "Entonces vamos a pedir comida."
+         }
+       ],
+       "options": [
+-        "Conforme al reglamento, todo aquel que no acredite la titulación requerida queda excluido del concurso de méritos.",
+-        "El salón de audiencias fue remodelado con maderas nobles de la cordillera.",
+-        "Los magistrados almuerzan puntualmente a la una de la tarde."
++        "No, no hay nadie que sepa hacerlo.",
++        "No, no hay nadie que sabe hacerlo.",
++        "No, no hay nadie que sabía hacerlo."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "relative-clauses"
+-      ]
++        "relativas-subjuntivo"
++      ],
++      "distractor_skills": {
++        "2": "imperfect"
++      }
+     },
+     {
+       "id": "b2-13-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "No admitiremos ninguna propuesta que comprometa la soberanía ecológica de los páramos.",
+-      "english": "We will not admit any proposal that compromises the ecological sovereignty of the paramos.",
++      "sentence": "Quien busque un libro que cuente la historia de una familia puede empezar por esta novela.",
++      "english": "Anyone who is looking for a book that tells the story of a family can start with this novel.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+@@ -145,32 +145,28 @@
+       "type": "sentence-builder",
+       "category": "writing",
+       "tiles": [
+-        "Conviene",
+-        "establecer",
+-        "un",
+-        "medio",
+-        "por",
+-        "el",
+-        "cual",
+-        "se",
+-        "atiendan",
+-        "las",
+-        "víctimas."
++        "Necesito",
++        "una",
++        "persona",
++        "con",
++        "la",
++        "que",
++        "pueda",
++        "hablar",
++        "español."
+       ],
+       "solution": [
+-        "Conviene",
+-        "establecer",
+-        "un",
+-        "medio",
+-        "por",
+-        "el",
+-        "cual",
+-        "se",
+-        "atiendan",
+-        "las",
+-        "víctimas."
++        "Necesito",
++        "una",
++        "persona",
++        "con",
++        "la",
++        "que",
++        "pueda",
++        "hablar",
++        "español."
+       ],
+-      "english": "It is advisable to establish a means through which the victims are attended to.",
++      "english": "I need a person I can speak Spanish with.",
+       "teaches": [
+         "relativas-subjuntivo"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-14-01-ex.json b/content/es-latam/exercises/b2/b2-14-01-ex.json
+index 4ce49d2b..3e38af4c 100644
+--- a/content/es-latam/exercises/b2/b2-14-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-14-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el precepto",
+-          "rule, precept"
++          "el timbre",
++          "doorbell"
+         ],
+         [
+-          "el imperativo",
+-          "absolute duty, imperative"
++          "el recado",
++          "message"
+         ],
+         [
+-          "acatar",
+-          "to abide by, to comply with"
++          "molestar",
++          "to disturb, to bother"
+         ],
+         [
+-          "inalienable",
+-          "non-transferable, inalienable"
++          "atender",
++          "to answer, to attend to"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-14-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Cualquiera que __ el fallo judicial, deberá ser acatado por todas las partes involucradas.",
+-      "hint": "ser",
+-      "answer": "sea",
+-      "english": "Whatever the judicial ruling may be, it must be abided by by all parties involved.",
++      "sentence": "Quienquiera que __ el timbre, dile que no estoy.",
++      "hint": "tocar",
++      "answer": "toque",
++      "english": "Whoever rings the doorbell, tell them I'm not in.",
+       "teaches": [
+         "relativas-universales-quiera"
+       ]
+@@ -43,13 +43,13 @@
+       "id": "b2-14-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué enunciado formula un principio universal en modo subjuntivo?",
++      "question": "How do you say \"Whatever the answer is, I will accept it\"?",
+       "options": [
+-        "Dondequiera que se cometan injusticias, la comunidad internacional tiene el deber de intervenir.",
+-        "Dondequiera que se cometen injusticias en el pasado, hubo quejas diplomáticas.",
+-        "El tribunal sesionó en el recinto donde los delegados firmaron el acta de paz."
++        "Cualquiera que es la respuesta, la voy a aceptar.",
++        "Cualquiera que sea la respuesta, la voy a aceptar.",
++        "Cualquier que sea la respuesta, la voy a aceptar."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "relativas-universales-quiera"
+       ]
+@@ -59,28 +59,30 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Quienquiera",
++        "Dondequiera",
+         "que",
+-        "viole",
+-        "el",
+-        "tratado",
+-        "responderá",
+-        "ante",
++        "vayas,",
++        "te",
++        "voy",
++        "a",
++        "llamar",
++        "todos",
+         "los",
+-        "tribunales."
++        "días."
+       ],
+       "solution": [
+-        "Quienquiera",
++        "Dondequiera",
+         "que",
+-        "viole",
+-        "el",
+-        "tratado",
+-        "responderá",
+-        "ante",
++        "vayas,",
++        "te",
++        "voy",
++        "a",
++        "llamar",
++        "todos",
+         "los",
+-        "tribunales."
++        "días."
+       ],
+-      "english": "Whoever violates the treaty will answer before the courts.",
++      "english": "Wherever you go, I'm going to call you every day.",
+       "teaches": [
+         "relativas-universales-quiera"
+       ]
+@@ -91,22 +93,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Defensor del pueblo",
+-          "text": "¿Cómo responderá el organismo si surgen presiones políticas durante la misión?"
++          "speaker": "Ana",
++          "text": "No quiero que me molesten hoy."
+         },
+         {
+-          "speaker": "Comisionada",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Defensor del pueblo",
+-          "text": "Esa firmeza garantiza la independencia moral de la delegación."
++          "speaker": "Ana",
++          "text": "Gracias, así puedo trabajar."
+         }
+       ],
+       "options": [
+-        "Dondequiera que vayamos y cualquiera que sea la presión externa, denunciaremos las infracciones.",
+-        "El informe preliminar consta de setenta páginas impresas en papel membretado.",
+-        "Los vuelos hacia las capitales andinas despegan puntualmente al mediodía."
++        "No te preocupes, quienquiera que toque el timbre, yo lo atiendo.",
++        "No te preocupes, quienquiera que toca el timbre, yo lo atiendo.",
++        "No te preocupes, quienquiera toque el timbre, yo lo atiendo."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -117,8 +119,8 @@
+       "id": "b2-14-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Cualquiera que sea el origen del litigio, debemos privilegiar el diálogo civilizado.",
+-      "english": "Whatever the origin of the litigation may be, we must prioritize civilized dialogue.",
++      "sentence": "Cualquiera que llegue temprano puede entrar por esta puerta.",
++      "english": "Anyone who arrives early can come in through this door.",
+       "teaches": [
+         "relativas-universales-quiera"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-14-02-ex.json b/content/es-latam/exercises/b2/b2-14-02-ex.json
+index a085f7dc..277ef59a 100644
+--- a/content/es-latam/exercises/b2/b2-14-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-14-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el escollo",
+-          "stumbling block, obstacle"
++          "la prisa",
++          "hurry"
+         ],
+         [
+-          "el empeño",
+-          "effort, determination"
++          "el cansancio",
++          "tiredness"
+         ],
+         [
+-          "obstaculizar",
+-          "to hinder, to obstruct"
++          "ahorrar",
++          "to save (money)"
+         ],
+         [
+-          "infructuoso",
+-          "fruitless, futile"
++          "gastar",
++          "to spend (money)"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-14-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Por muy difícil que __ la negociación, la delegación no abandonará la mesa de concertación.",
+-      "hint": "parecer",
+-      "answer": "parezca",
+-      "english": "However difficult the negotiation may seem, the delegation will not abandon the agreement table.",
++      "sentence": "Por mucha prisa que __, no vas a llegar antes.",
++      "hint": "tener",
++      "answer": "tengas",
++      "english": "However much of a hurry you are in, you won't get there earlier.",
+       "teaches": [
+         "concesivas-por-mas-que"
+       ]
+@@ -43,13 +43,13 @@
+       "id": "b2-14-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la formulación concesiva intensiva más adecuada para expresar un obstáculo ineficaz futuro?",
++      "question": "Which sentence means \"However much money you save, that trip is expensive\"?",
+       "options": [
+-        "Por más que intenten descalificar los testimonios, la verdad histórica saldrá a la luz.",
+-        "Por más que intentaban ayer descalificar los testimonios, nadie los oyó.",
+-        "A pesar de que no vinieron la semana pasada a la audiencia preliminar."
++        "Por más dinero que ahorras, ese viaje es caro.",
++        "Por más dinero ahorres, ese viaje es caro.",
++        "Por más dinero que ahorres, ese viaje es caro."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "concesivas-por-mas-que"
+       ]
+@@ -60,27 +60,31 @@
+       "category": "grammar",
+       "tiles": [
+         "Por",
+-        "mucho",
++        "muchos",
++        "años",
+         "que",
+-        "presionen,",
+-        "la",
+-        "comisión",
+-        "mantendrá",
+-        "su",
+-        "independencia."
++        "pasen,",
++        "no",
++        "voy",
++        "a",
++        "olvidar",
++        "este",
++        "viaje."
+       ],
+       "solution": [
+         "Por",
+-        "mucho",
++        "muchos",
++        "años",
+         "que",
+-        "presionen,",
+-        "la",
+-        "comisión",
+-        "mantendrá",
+-        "su",
+-        "independencia."
++        "pasen,",
++        "no",
++        "voy",
++        "a",
++        "olvidar",
++        "este",
++        "viaje."
+       ],
+-      "english": "However much they pressure, the commission will maintain its independence.",
++      "english": "However many years go by, I'm not going to forget this trip.",
+       "teaches": [
+         "concesivas-por-mas-que"
+       ]
+@@ -91,24 +95,24 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Ministra",
+-          "text": "Los sectores conservadores anuncian demandas contra el decreto ambiental. ¿Nos retractamos?"
++          "speaker": "Ana",
++          "text": "Quiero ir a la playa este verano, pero todo es caro."
+         },
+         {
+-          "speaker": "Director jurídico",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Ministra",
+-          "text": "Totalmente de acuerdo; defenderemos la constitucionalidad del decreto."
++          "speaker": "Ana",
++          "text": "Tienes razón. Voy a buscar algo más barato."
+         }
+       ],
+       "options": [
+-        "De ningún modo; por más recursos legales que interpongan, la protección de las selvas prevalecerá.",
+-        "El presupuesto general de la nación fue aprobado en sesión extraordinaria.",
+-        "Los edificios ministeriales cuentan con vigilancia privada en los accesos peatonales."
++        "Por más que ahorras, ese viaje va a seguir siendo caro.",
++        "Por más que ahorres, ese viaje va a seguir siendo caro.",
++        "Por más ahorres, ese viaje va a seguir siendo caro."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "concesivas-por-mas-que"
+       ]
+@@ -117,10 +121,10 @@
+       "id": "b2-14-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Por muy intrincado que sea el camino, persistiremos en la búsqueda de la verdad.",
+-      "english": "However intricate the path may be, we will persist in the search for truth.",
++      "sentence": "Cualquiera que sea el precio, voy a comprar el boleto.",
++      "english": "Whatever the price is, I'm going to buy the ticket.",
+       "teaches": [
+-        "concesivas-por-mas-que"
++        "relativas-universales-quiera"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-14-03-ex.json b/content/es-latam/exercises/b2/b2-14-03-ex.json
+index 21f76064..1e5c6241 100644
+--- a/content/es-latam/exercises/b2/b2-14-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-14-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el veredicto",
+-          "verdict, decision"
++          "el chisme",
++          "piece of gossip"
+         ],
+         [
+-          "la determinación",
+-          "resolve, determination"
++          "criticar",
++          "to criticise"
+         ],
+         [
+-          "dirimir",
+-          "to settle, to resolve"
++          "opinar",
++          "to have an opinion, to think"
+         ],
+         [
+-          "inquebrantable",
+-          "unwavering, unbreakable"
++          "apoyar",
++          "to support"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,9 @@
+       "id": "b2-14-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Pase lo que __ en las elecciones, la política de restitución de tierras no se suspenderá.",
+-      "hint": "pasar",
+-      "answer": "pase",
+-      "english": "Whatever happens in the elections, the land restitution policy will not be suspended.",
++      "sentence": "Venga __ venga, la puerta va a estar abierta.",
++      "answer": "quien",
++      "english": "Whoever comes, the door will be open.",
+       "teaches": [
+         "reduplicated-subjunctive"
+       ]
+@@ -43,11 +42,11 @@
+       "id": "b2-14-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué estructura reduplicada expresa resolución incondicional de forma idiomática?",
++      "question": "Which sentence means \"Whatever your answer is, I'll respect it\"?",
+       "options": [
+-        "Cueste lo que cueste, garantizaremos la seguridad de los defensores de derechos humanos.",
+-        "Cuesta lo que cuesta, garantizamos ayer la seguridad de todos los delegados.",
+-        "Si costara mucho dinero, abandonaríamos el proyecto inmediatamente."
++        "Sea cual sea tu respuesta, la voy a respetar.",
++        "Sea cual es tu respuesta, la voy a respetar.",
++        "Sea cual sean tu respuesta, la voy a respetar."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -59,30 +58,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Diga",
+-        "lo",
+-        "que",
+-        "diga",
+-        "el",
+-        "portavoz,",
++        "Llame",
++        "quien",
++        "llame,",
++        "no",
++        "abras",
+         "la",
+-        "comunidad",
+-        "exigirá",
+-        "justicia."
++        "puerta."
+       ],
+       "solution": [
+-        "Diga",
+-        "lo",
+-        "que",
+-        "diga",
+-        "el",
+-        "portavoz,",
++        "Llame",
++        "quien",
++        "llame,",
++        "no",
++        "abras",
+         "la",
+-        "comunidad",
+-        "exigirá",
+-        "justicia."
++        "puerta."
+       ],
+-      "english": "Whatever the spokesperson says, the community will demand justice.",
++      "english": "Whoever calls, don't open the door.",
+       "teaches": [
+         "reduplicated-subjunctive"
+       ]
+@@ -93,24 +86,24 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Corresponsal",
+-          "text": "¿Habrá cambios en la política de memoria histórica tras el relevo ministerial?"
++          "speaker": "Ana",
++          "text": "Todos hablan mal de mi plan. ¿Qué hago?"
+         },
+         {
+-          "speaker": "Portavoz oficial",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Corresponsal",
+-          "text": "Un mensaje de tranquilidad para las asociaciones de víctimas."
++          "speaker": "Ana",
++          "text": "Tienes razón, es mi decisión."
+         }
+       ],
+       "options": [
+-        "Venga quien venga al ministerio, el compromiso estatal con el esclarecimiento de la verdad es innegociable.",
+-        "Las salas de prensa cuentan con conexión de alta velocidad y micrófonos inalámbricos.",
+-        "El archivo fotográfico fue digitalizado por técnicos del archivo general."
++        "Opinan lo que opinan, tú decides.",
++        "Opinen lo que opinan, tú decides.",
++        "Opinen lo que opinen, tú decides."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "reduplicated-subjunctive"
+       ]
+@@ -119,8 +112,8 @@
+       "id": "b2-14-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Haga lo que haga el consorcio minero, la consulta previa con los pueblos originarios es obligatoria.",
+-      "english": "Whatever the mining consortium does, prior consultation with indigenous peoples is mandatory.",
++      "sentence": "Sea cual sea el resultado, vamos a aceptarlo.",
++      "english": "Whatever the result is, we're going to accept it.",
+       "teaches": [
+         "reduplicated-subjunctive"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-14-04-ex.json b/content/es-latam/exercises/b2/b2-14-04-ex.json
+index 7875defb..12ca97fc 100644
+--- a/content/es-latam/exercises/b2/b2-14-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-14-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el amparo",
+-          "protection, constitutional relief"
++          "repartir",
++          "to hand out, to share out"
+         ],
+         [
+-          "la titularidad",
+-          "ownership, legal title"
++          "aprovechar",
++          "to make use of"
+         ],
+         [
+-          "abarcar",
+-          "to cover, to encompass"
++          "el invitado",
++          "guest"
+         ],
+         [
+-          "omnicomprensivo",
+-          "all-encompassing"
++          "regalar",
++          "to give (as a gift)"
+         ]
+       ],
+       "teaches": [
+@@ -31,28 +31,31 @@
+       "id": "b2-14-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El fondo de reparación asistirá a cuantos __ afectados por el despojo forzado de tierras.",
+-      "hint": "resultar",
+-      "answer": "resulten",
+-      "english": "The reparation fund will assist all those who turn out to be affected by the forced dispossession of lands.",
++      "sentence": "Invita a cuantos amigos __.",
++      "hint": "querer",
++      "answer": "quieras",
++      "english": "Invite as many friends as you like.",
+       "teaches": [
+-        "relativas-universales-quiera"
++        "relativas-subjuntivo"
+       ]
+     },
+     {
+       "id": "b2-14-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué oración establece una norma universal abstracta con cuantificador relativo?",
++      "question": "Which sentence is about a group that is real, people who really came?",
+       "options": [
+-        "Se garantizará el derecho a la salud a cuantos habiten en los territorios colectivos.",
+-        "Se atendió ayer en el hospital a cuantos llegaron heridos del combate.",
+-        "Los médicos visitaron las veredas donde viven las familias campesinas."
++        "Todos los que vengan recibieron un regalo.",
++        "Todos los que vinieron recibieron un regalo.",
++        "Todos los que vienen recibieron un regalo."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+-        "relativas-universales-quiera"
+-      ]
++        "relativas-subjuntivo"
++      ],
++      "distractor_skills": {
++        "2": "present-tense"
++      }
+     },
+     {
+       "id": "b2-14-04.ex04",
+@@ -62,25 +65,23 @@
+         "Todo",
+         "aquel",
+         "que",
+-        "acredite",
+-        "desplazamiento",
+-        "recibirá",
+-        "asistencia",
+-        "humanitaria."
++        "quiera",
++        "ayudar",
++        "es",
++        "bienvenido."
+       ],
+       "solution": [
+         "Todo",
+         "aquel",
+         "que",
+-        "acredite",
+-        "desplazamiento",
+-        "recibirá",
+-        "asistencia",
+-        "humanitaria."
++        "quiera",
++        "ayudar",
++        "es",
++        "bienvenido."
+       ],
+-      "english": "Anyone who proves displacement will receive humanitarian assistance.",
++      "english": "Anyone who wants to help is welcome.",
+       "teaches": [
+-        "relativas-universales-quiera"
++        "relativas-subjuntivo"
+       ]
+     },
+     {
+@@ -89,36 +90,36 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Líder comunitaria",
+-          "text": "¿Quiénes tendrán derecho a participar en las asambleas del consejo comunitario?"
++          "speaker": "Ana",
++          "text": "¿Quién puede venir a la fiesta?"
+         },
+         {
+-          "speaker": "Abogado étnico",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Líder comunitaria",
+-          "text": "Así aseguramos la legitimidad de las decisiones de autogobierno."
++          "speaker": "Ana",
++          "text": "¡Genial! Voy a invitar a mis primos."
+         }
+       ],
+       "options": [
+-        "Cuantos pertenezcan al censo ancestral y reconozcan las autoridades tradicionales tendrán voz y voto.",
+-        "El salón comunal dispone de sillas plásticas y pizarra acrílica para las reuniones.",
+-        "Los barcos de carga atracan dos veces por semana en el muelle fluvial."
++        "Todo aquel que quiera venir es bienvenido.",
++        "Todo aquel quien quiera venir es bienvenido.",
++        "Todo lo que quiera venir es bienvenido."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "relativas-universales-quiera"
++        "relative-clauses"
+       ]
+     },
+     {
+       "id": "b2-14-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La ley amparará a cuantas familias campesinas hayan sido víctimas del despojo.",
+-      "english": "The law will protect all peasant families that have been victims of dispossession.",
++      "sentence": "Cuenta todo lo que sepas sobre este tema.",
++      "english": "Tell everything you know about this subject.",
+       "teaches": [
+-        "relativas-universales-quiera"
++        "relativas-subjuntivo"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-14-05-ex.json b/content/es-latam/exercises/b2/b2-14-05-ex.json
+index 533e0e0c..2ccc30dd 100644
+--- a/content/es-latam/exercises/b2/b2-14-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-14-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la jurisprudencia",
+-          "case law, jurisprudence"
++          "el formulario",
++          "form (to fill in)"
+         ],
+         [
+-          "la ponderación",
+-          "balancing of rights, proportionality test"
++          "estimado",
++          "dear (in a letter)"
+         ],
+         [
+-          "vulnerar",
+-          "to violate, to infringe"
++          "atentamente",
++          "yours sincerely"
+         ],
+         [
+-          "imprescriptible",
+-          "not subject to statute of limitations"
++          "rogar",
++          "to request, to ask (formal)"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-14-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Cualquier decreto que __ derechos inalienables será declarado inexequible por la Corte Constitucional.",
+-      "hint": "vulnerar",
+-      "answer": "vulnere",
+-      "english": "Any decree that infringes inalienable rights will be declared unconstitutional by the Constitutional Court.",
++      "sentence": "Todo aquel que __ participar deberá llenar el formulario.",
++      "hint": "desear",
++      "answer": "desee",
++      "english": "Anyone who wishes to take part must fill in the form.",
+       "teaches": [
+         "formal-register"
+       ]
+@@ -43,11 +43,11 @@
+       "id": "b2-14-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la formulación jurisprudencial más rigurosa para establecer la nulidad de un acto arbitrario?",
++      "question": "Which sentence would you find in an official notice?",
+       "options": [
+-        "Cualquier disposición administrativa que contradiga los tratados de derechos humanos carece de validez jurídica.",
+-        "Cualquier disposición administrativa que contradijo los tratados el año pasado no tuvo consecuencias.",
+-        "El tribunal analizó un decreto firmado durante la emergencia económica."
++        "Todo aquel que desee entrar deberá mostrar su boleto.",
++        "Oye, si quieres entrar, muestra tu boleto.",
++        "Todo aquel que desee entrar debes mostrar su boleto."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -59,28 +59,34 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Los",
+-        "crímenes",
+-        "que",
+-        "constituyan",
+-        "lesa",
+-        "humanidad",
+-        "son",
+-        "absolutamente",
+-        "imprescriptibles."
++        "Se",
++        "ruega",
++        "a",
++        "los",
++        "vecinos",
++        "no",
++        "hacer",
++        "ruido",
++        "después",
++        "de",
++        "las",
++        "diez."
+       ],
+       "solution": [
+-        "Los",
+-        "crímenes",
+-        "que",
+-        "constituyan",
+-        "lesa",
+-        "humanidad",
+-        "son",
+-        "absolutamente",
+-        "imprescriptibles."
++        "Se",
++        "ruega",
++        "a",
++        "los",
++        "vecinos",
++        "no",
++        "hacer",
++        "ruido",
++        "después",
++        "de",
++        "las",
++        "diez."
+       ],
+-      "english": "Crimes that constitute crimes against humanity are absolutely imprescriptible.",
++      "english": "Neighbours are kindly asked not to make noise after ten.",
+       "teaches": [
+         "formal-register"
+       ]
+@@ -91,24 +97,24 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Magistrada ponente",
+-          "text": "¿Cómo debe redactarse el principio rector de la sentencia de tutela?"
++          "speaker": "Ana",
++          "text": "Tengo que escribir un aviso para el edificio. ¿Cómo lo empiezo?"
+         },
+         {
+-          "speaker": "Secretario judicial",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Magistrada ponente",
+-          "text": "Excelente formulación; recoge el canon constitucional universal."
++          "speaker": "Ana",
++          "text": "Perfecto, así suena más formal."
+         }
+       ],
+       "options": [
+-        "Se dejará sentado que todo acto estatal que desatienda la dignidad intrínseca de la persona es nulo de pleno derecho.",
+-        "Las resoluciones judiciales se publican diariamente en la secretaría del tribunal.",
+-        "La biblioteca de la corte custodia ejemplares de constituciones latinoamericanas."
++        "Empieza con «Hola, chicos:» y termina con «Un abrazo,».",
++        "Empieza con «Estimados vecinos:» y termina con «Atentamente,».",
++        "Empieza con «Estimados vecinos:» y termina con «Un abrazo,»."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "formal-register"
+       ]
+@@ -117,8 +123,8 @@
+       "id": "b2-14-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El bloque de constitucionalidad ampara a cuantas personas se encuentren bajo la jurisdicción nacional.",
+-      "english": "The constitutional block protects all persons found under national jurisdiction.",
++      "sentence": "Cualquier persona que llegue tarde no podrá entrar.",
++      "english": "Anyone who arrives late will not be able to come in.",
+       "teaches": [
+         "formal-register"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-14-consolidation-ex.json b/content/es-latam/exercises/b2/b2-14-consolidation-ex.json
+index d9acf5be..0de9a099 100644
+--- a/content/es-latam/exercises/b2/b2-14-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-14-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el imperativo",
+-          "categorical duty, imperative"
++          "el recado",
++          "message"
+         ],
+         [
+-          "el escollo",
+-          "obstacle, stumbling block"
++          "la prisa",
++          "hurry"
+         ],
+         [
+-          "el amparo",
+-          "constitutional protection"
++          "repartir",
++          "to hand out"
+         ],
+         [
+-          "inquebrantable",
+-          "unbreakable, unwavering"
++          "el formulario",
++          "form (to fill in)"
+         ]
+       ],
+       "teaches": [
+@@ -31,13 +31,13 @@
+       "id": "b2-14-consolidation.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué la estructura 'Cualquiera que sea el resultado' exige modo subjuntivo?",
++      "question": "Which sentence means \"Whoever calls, I won't answer\"?",
+       "options": [
+-        "Porque 'cualquiera que' introduce una relatividad universal o concesiva ante un resultado aún no verificado empíricamente.",
+-        "Porque el verbo 'ser' carece de conjugación en modo indicativo tras sustantivos.",
+-        "Porque las oraciones de relativo siempre se construyen en pretérito perfecto."
++        "Quienquiera que llama, no lo voy a atender.",
++        "Quienquiera llame, no lo voy a atender.",
++        "Quienquiera que llame, no lo voy a atender."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "relativas-universales-quiera"
+       ]
+@@ -46,10 +46,10 @@
+       "id": "b2-14-consolidation.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Por más recursos que __ los monopolios, la soberanía territorial de los pueblos originarios es inalienable.",
+-      "hint": "invertir",
+-      "answer": "inviertan",
+-      "english": "However many resources monopolies invest, the territorial sovereignty of indigenous peoples is inalienable.",
++      "sentence": "Por mucho que __, no vas a convencerlo.",
++      "hint": "insistir",
++      "answer": "insistas",
++      "english": "However much you insist, you won't convince him.",
+       "teaches": [
+         "concesivas-por-mas-que"
+       ]
+@@ -59,30 +59,28 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Pase",
+-        "lo",
+-        "que",
+-        "pase,",
+-        "la",
+-        "comisión",
+-        "publicará",
+-        "su",
+-        "informe",
+-        "final."
++        "Llegue",
++        "quien",
++        "llegue,",
++        "vamos",
++        "a",
++        "empezar",
++        "a",
++        "las",
++        "ocho."
+       ],
+       "solution": [
+-        "Pase",
+-        "lo",
+-        "que",
+-        "pase,",
+-        "la",
+-        "comisión",
+-        "publicará",
+-        "su",
+-        "informe",
+-        "final."
++        "Llegue",
++        "quien",
++        "llegue,",
++        "vamos",
++        "a",
++        "empezar",
++        "a",
++        "las",
++        "ocho."
+       ],
+-      "english": "Whatever happens, the commission will publish its final report.",
++      "english": "Whoever arrives, we are going to start at eight.",
+       "teaches": [
+         "reduplicated-subjunctive"
+       ]
+@@ -91,15 +89,15 @@
+       "id": "b2-14-consolidation.ex05",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué diferencia existe entre 'Ayudaremos a cuantos soliciten amparo' y 'Ayudamos a cuantos solicitaron amparo'?",
++      "question": "Which sentence could appear in a notice in a shared kitchen?",
+       "options": [
+-        "La primera formula una regla abstracta prospectiva (subjuntivo); la segunda describe una acción empírica realizada en el pasado (indicativo).",
+-        "Ambas expresan una hipótesis irreal sobre el presente sin distinción de significado.",
+-        "La primera es un uso incorrecto que debe sustituirse por el tiempo futuro de indicativo."
++        "Se ruega a todo aquel que utilice la cocina dejarla limpia.",
++        "Si usas la cocina, deja todo limpio, por favor.",
++        "Se ruega a todo aquel que utilice la cocina que la dejas limpia."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "relativas-universales-quiera"
++        "formal-register"
+       ]
+     },
+     {
+@@ -108,36 +106,36 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Observador internacional",
+-          "text": "¿Qué garantía tienen los líderes sociales amenazados en las zonas rurales?"
++          "speaker": "Ana",
++          "text": "Estoy nerviosa. No sé qué va a pasar mañana."
+         },
+         {
+-          "speaker": "Procuradora",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Observador internacional",
+-          "text": "Esa es la postura categórica que demandan los estándares internacionales."
++          "speaker": "Ana",
++          "text": "Gracias, eso me ayuda."
+         }
+       ],
+       "options": [
+-        "Dondequiera que se encuentren y cueste lo que cueste, el Estado tiene el deber ineludible de salvaguardar sus vidas.",
+-        "Los vehículos de transporte rural operan con combustibles convencionales.",
+-        "La capital departamental cuenta con hoteles para los visitantes diplomáticos."
++        "Pasa lo que pase, te voy a ayudar.",
++        "Pase lo que pase, te voy a ayudar.",
++        "Pase lo que pasa, te voy a ayudar."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+-        "relativas-universales-quiera"
++        "reduplicated-subjunctive"
+       ]
+     },
+     {
+       "id": "b2-14-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Cualquier ley que menoscabe la consulta previa con las comunidades será declarada inconstitucional.",
+-      "english": "Any law that undermines prior consultation with communities will be declared unconstitutional.",
++      "sentence": "Cualquiera que lea este libro aprenderá algo nuevo.",
++      "english": "Anyone who reads this book will learn something new.",
+       "teaches": [
+-        "formal-register"
++        "relativas-universales-quiera"
+       ]
+     },
+     {
+@@ -145,34 +143,30 @@
+       "type": "sentence-builder",
+       "category": "writing",
+       "tiles": [
+-        "Por",
+-        "muy",
+-        "ardua",
+-        "que",
+-        "sea",
+-        "la",
+-        "tarea,",
+-        "construiremos",
+-        "una",
+-        "paz",
+-        "duradera."
++        "Se",
++        "ruega",
++        "a",
++        "quienes",
++        "lleguen",
++        "tarde",
++        "esperar",
++        "su",
++        "turno."
+       ],
+       "solution": [
+-        "Por",
+-        "muy",
+-        "ardua",
+-        "que",
+-        "sea",
+-        "la",
+-        "tarea,",
+-        "construiremos",
+-        "una",
+-        "paz",
+-        "duradera."
++        "Se",
++        "ruega",
++        "a",
++        "quienes",
++        "lleguen",
++        "tarde",
++        "esperar",
++        "su",
++        "turno."
+       ],
+-      "english": "However arduous the task may be, we will build an enduring peace.",
++      "english": "Those who arrive late are asked to wait their turn.",
+       "teaches": [
+-        "concesivas-por-mas-que"
++        "formal-register"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/grammar/b2/b2-13-01-a-gr.json b/content/es-latam/grammar/b2/b2-13-01-a-gr.json
+index e8272207..8bdcbb35 100644
+--- a/content/es-latam/grammar/b2/b2-13-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-13-01-a-gr.json
+@@ -1,33 +1,64 @@
+ {
+   "id": "grammar.b2.13.01.relativas-antecedente-inespecifico",
+-  "title": "Oraciones relativas con antecedente no específico o hipotético",
++  "title": "Looking for Something That May Not Exist",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "El subjuntivo en la caracterización de entidades no identificadas",
+-      "content": "En español B2, cuando el antecedente de una oración de relativo es una entidad indeterminada, desconocida o hipotética cuya existencia real no se presupone en el mundo del emisor, el verbo subordinado adopta obligatoriamente el modo subjuntivo ('Buscamos un investigador que tenga experiencia en bioética', 'Se requiere una plataforma que procese datos en tiempo real')."
++      "title": "The rule",
++      "content": "You know relative clauses with *que* from B1 Unit 5 and the present subjunctive from A2 Unit 27. Now put them together. English uses the same verb in both cases: \"I'm looking for a flat that has a balcony\" can mean any flat at all, or one you already know about. Spanish makes you choose. If you cannot point at the thing, because you are only looking for it, hoping for it or not sure it exists, the verb after *que* goes into the subjunctive. If the thing is real and you know it, the verb stays in the indicative."
+     },
+     {
+       "type": "table",
+-      "title": "Estructuras de relativo con antecedente inespecífico",
++      "title": "Real, or not found yet?",
+       "rows": [
+         [
+-          "Necesitamos un perito...",
+-          "...que comprenda la legislación ambiental."
++          "Busco un apartamento que tenga balcón.",
++          "I'm looking for a flat with a balcony (any flat; I don't know if there is one)."
+         ],
+         [
+-          "Buscan una solución...",
+-          "...que minimice el impacto fiscal negativo."
++          "Tengo un apartamento que tiene balcón.",
++          "I have a flat that has a balcony (a real flat)."
+         ],
+         [
+-          "Contratarán a alguien...",
+-          "...que hable varios idiomas indígenas andinos."
++          "Necesito una persona que hable inglés.",
++          "I need someone who speaks English (whoever it turns out to be)."
+         ],
+         [
+-          "Diseñaremos un plan...",
+-          "...que articule a los ministerios involucrados."
++          "Conozco a una persona que habla inglés.",
++          "I know someone who speaks English (a real person)."
+         ]
+       ]
++    },
++    {
++      "type": "text",
++      "title": "Nothing there to point at",
++      "content": "A negative sentence says that the thing does not exist, so there is nothing real for *que* to describe. That also takes the subjunctive: *No hay nadie que sepa la respuesta* means \"There is nobody who knows the answer\". You know *nadie*, *nada* and *ningún* from A2 Unit 31; the next lesson gives them more room."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Busco a alguien que me ayude.",
++          "english": "I'm looking for someone to help me."
++        },
++        {
++          "spanish": "Encontré a alguien que me ayuda.",
++          "english": "I found someone who helps me."
++        },
++        {
++          "spanish": "No hay nadie que sepa la respuesta.",
++          "english": "There is nobody who knows the answer."
++        },
++        {
++          "spanish": "No tengo ningún libro que explique eso.",
++          "english": "I don't have any book that explains that."
++        }
++      ]
++    },
++    {
++      "type": "tip",
++      "content": "Ask yourself one question: can I point at it? If you can name it, see it or hold it, use the indicative. If it is only wanted, needed or imagined, or if you say it does not exist, use the subjunctive. English gives you no clue, so the decision is yours. You know the personal *a* from A1 Unit 24; keep it before a person: *Busco a alguien que…*, *No conozco a nadie que…*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-13-02-a-gr.json b/content/es-latam/grammar/b2/b2-13-02-a-gr.json
+index 13e597ff..eb502366 100644
+--- a/content/es-latam/grammar/b2/b2-13-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-13-02-a-gr.json
+@@ -1,33 +1,69 @@
+ {
+   "id": "grammar.b2.13.02.relativas-antecedente-negativo",
+-  "title": "Oraciones relativas con antecedente negativo o inexistente",
++  "title": "Nobody, Nothing, No Such Thing",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Subjuntivo ante la negación explícita de la existencia",
+-      "content": "Cuando la cláusula principal niega la existencia del antecedente mediante cuantificadores negativos ('nadie', 'nada', 'ninguno/a', 'ningún lugar', 'en modo alguno'), la cláusula adjetiva subordinada exige invariablemente el modo subjuntivo ('No hay nadie que pueda impugnar el resultado', 'No encontramos ningún documento que avale esa pretensión')."
++      "title": "What you know",
++      "content": "In the last lesson you met *No hay nadie que sepa la respuesta*: when a sentence says that something does not exist, the verb after *que* is in the subjunctive. This lesson works through the negative words and adds questions."
++    },
++    {
++      "type": "text",
++      "title": "Negative words before que",
++      "content": "The word before *que* can be *nadie* \"nobody\", *nada* \"nothing\", *ningún* or *ninguna* with a noun \"not a single\", or *ninguno* on its own. All of them say \"there is none\", so the verb after *que* is in the subjunctive."
+     },
+     {
+       "type": "table",
+-      "title": "Antecedentes negativos y subordinadas en subjuntivo",
++      "title": "Nobody, nothing, not one",
+       "rows": [
+         [
+-          "No hay nadie...",
+-          "...que conozca los pormenores del contrato."
++          "No hay nadie que pueda ayudarnos.",
++          "There is nobody who can help us."
+         ],
+         [
+-          "No existe ningún indicio...",
+-          "...que justifique una investigación penal."
++          "No hay nada aquí que me guste.",
++          "There is nothing here that I like."
+         ],
+         [
+-          "No encontramos nada...",
+-          "...que contradiga el testimonio oficial."
++          "No conozco ningún restaurante que abra los lunes.",
++          "I don't know any restaurant that opens on Mondays."
+         ],
+         [
+-          "No queda lugar alguno...",
+-          "...adonde podamos recurrir en apelación."
++          "No tengo ninguna amiga que viva cerca.",
++          "I don't have a single friend who lives nearby."
+         ]
+       ]
++    },
++    {
++      "type": "text",
++      "title": "Questions",
++      "content": "A question asks whether something exists, so the speaker does not know yet: *¿Hay alguien que sepa arreglar esto?* takes the subjunctive. If the speaker is sure that such a person exists, the indicative comes back: *Hay alguien que sabe arreglarlo*."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "¿Conoces a alguien que sepa cocinar?",
++          "english": "Do you know anyone who can cook?"
++        },
++        {
++          "spanish": "Sí, conozco a alguien que sabe cocinar muy bien.",
++          "english": "Yes, I know someone who cooks very well."
++        },
++        {
++          "spanish": "No hay ningún libro aquí que me interese.",
++          "english": "There is no book here that interests me."
++        },
++        {
++          "spanish": "¿Hay algún plomero que pueda venir hoy?",
++          "english": "Is there a plumber who can come today?"
++        }
++      ]
++    },
++    {
++      "type": "tip",
++      "content": "A negative verb does not always bring the subjunctive: the thing described must be the one that does not exist. *No me gusta la casa que compraste* describes a real house, so it takes the indicative. Compare *No hay ninguna casa que me guste*, where there is no such house."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-13-03-a-gr.json b/content/es-latam/grammar/b2/b2-13-03-a-gr.json
+index 003d8d64..dfd03669 100644
+--- a/content/es-latam/grammar/b2/b2-13-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-13-03-a-gr.json
+@@ -1,33 +1,64 @@
+ {
+   "id": "grammar.b2.13.03.relativas-modo-indicativo-subjuntivo",
+-  "title": "Contraste de modo en relativas: Indicativo (específico) vs Subjuntivo (inespecífico)",
++  "title": "Real or Only Wanted?",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "La alternancia modal como marcador de identificación epistémica",
+-      "content": "La elección entre indicativo y subjuntivo en oraciones adjetivas no depende meramente del verbo principal, sino de si el hablante tiene en mente un referente concreto e individualizado en el mundo real (indicativo) o si busca, postula o desconoce al individuo que cumple esas propiedades (subjuntivo)."
++      "title": "What you know",
++      "content": "From the first lesson of this unit you know the basic contrast: *Busco un apartamento que tenga balcón* for a flat you have not found, and *Tengo un apartamento que tiene balcón* for a real one. This lesson adds two things: a small clue in the word before the noun, and the same contrast in the past."
+     },
+     {
+       "type": "table",
+-      "title": "Contraste modal según la especificidad del referente",
++      "title": "Same frame, two meanings",
+       "rows": [
+         [
+-          "Conozco a un perito que habla quechua.",
+-          "Referente concreto y verificado (indicativo)"
++          "Busco a la chica que habla inglés.",
++          "I'm looking for the girl who speaks English (I know who she is)."
+         ],
+         [
+-          "Busco a un perito que hable quechua.",
+-          "Perfil abstracto o desconocido (subjuntivo)"
++          "Busco una chica que hable inglés.",
++          "I'm looking for a girl who speaks English (any girl)."
+         ],
+         [
+-          "Tengo un informe que explica el déficit.",
+-          "Documento en mano ya existente (indicativo)"
++          "Necesitaba un cargador que sirviera para mi celular.",
++          "I needed a charger that would work for my phone (I didn't know if there was one)."
+         ],
+         [
+-          "Necesito un informe que explique el déficit.",
+-          "Requerimiento hipotético formulado (subjuntivo)"
++          "Encontré un cargador que servía para mi celular.",
++          "I found a charger that worked for my phone (a real one)."
+         ]
+       ]
++    },
++    {
++      "type": "text",
++      "title": "The article, and the past",
++      "content": "First, the word before the noun is a clue. *El*, *la*, *los* and *las* usually point at something known, so the indicative follows. *Un* and *una* often go with something open, so the subjunctive follows. It is only a clue: *Conozco a una chica que habla inglés* has *una* and is still a real person. Second, in the past the subjunctive moves to the imperfect subjunctive. You know the *-ra* forms from B1 Unit 4: *Necesitaba un cargador que sirviera*. Once you have found the thing, the indicative returns: *Encontré uno que servía*."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Necesito un cargador que sirva.",
++          "english": "I need a charger that works (any that works)."
++        },
++        {
++          "spanish": "Tengo un cargador que sirve.",
++          "english": "I have a charger that works (this one)."
++        },
++        {
++          "spanish": "Busco la tienda que está cerca de la oficina.",
++          "english": "I'm looking for the shop that is near the office (I know which one)."
++        },
++        {
++          "spanish": "Busco una tienda que esté cerca de la oficina.",
++          "english": "I'm looking for a shop that is near the office (any shop)."
++        }
++      ]
++    },
++    {
++      "type": "tip",
++      "content": "When English gives you no clue, trust the meaning: do I know which one it is? If yes, indicative. If any one will do, or I do not know whether it exists, subjunctive. In the past, the same two choices become imperfect subjunctive (*sirviera*) and imperfect indicative (*servía*)."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-13-04-a-gr.json b/content/es-latam/grammar/b2/b2-13-04-a-gr.json
+index 0661a1d9..d6c467cb 100644
+--- a/content/es-latam/grammar/b2/b2-13-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-13-04-a-gr.json
+@@ -1,33 +1,64 @@
+ {
+   "id": "grammar.b2.13.04.relativas-preposicionales-subjuntivo",
+-  "title": "Oraciones relativas con preposición y modo subjuntivo",
++  "title": "A Person to Talk To",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Sintaxis de relativos preposicionales con antecedentes hipotéticos",
+-      "content": "Las oraciones relativas precedidas de preposición ('a quien', 'con el cual', 'en la que', 'por el que') también seleccionan subjuntivo cuando su antecedente es inespecífico, negativo o prospectivo. Estas estructuras son fundamentales en el discurso institucional y diplomático para definir canales, mediadores o condiciones operativas ideales."
++      "title": "What you know",
++      "content": "You know *quien* from B1 Unit 5 and *el que* / *la que* after a preposition from B1 Unit 20 (*la persona con la que hablé*). You also know that the verb after *que* takes the subjunctive when the thing is only wished for or does not exist. Nothing changes when a preposition comes first: the mood still depends on whether the thing is real."
++    },
++    {
++      "type": "text",
++      "title": "The preposition goes first",
++      "content": "English likes to put the preposition at the end: \"a person I can talk to\". Spanish never does. The preposition comes before the relative word: *una persona con la que pueda hablar*. For people you can use *quien* (plural *quienes*); for people or things you can use *el que*, *la que*, *los que*, *las que*."
+     },
+     {
+       "type": "table",
+-      "title": "Estructuras relativas con preposición",
++      "title": "Preposition + relative + subjunctive",
+       "rows": [
+         [
+-          "con quien / con el que",
+-          "Buscamos un líder con quien se pueda pactar la tregua."
++          "Necesito a alguien con quien pueda hablar.",
++          "I need someone I can talk to."
+         ],
+         [
+-          "mediante el cual / por el cual",
+-          "Urge un mecanismo por el cual se diriman disputas."
++          "Busco una persona en la que pueda confiar.",
++          "I'm looking for a person I can trust."
+         ],
+         [
+-          "a quien / a los que",
+-          "No encontramos a nadie a quien confiarle el archivo."
++          "Queremos un lugar en el que podamos descansar.",
++          "We want a place where we can rest."
+         ],
+         [
+-          "en donde / en el que",
+-          "Diseñarán un espacio en el que converjan ambas partes."
++          "No hay nadie a quien pueda preguntar.",
++          "There is nobody I can ask."
+         ]
+       ]
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Tengo una amiga con la que puedo hablar de todo.",
++          "english": "I have a friend I can talk to about everything (a real friend)."
++        },
++        {
++          "spanish": "Necesito una amiga con la que pueda hablar de todo.",
++          "english": "I need a friend I can talk to about everything (I don't have one yet)."
++        },
++        {
++          "spanish": "Buscamos un lugar donde podamos trabajar.",
++          "english": "We are looking for a place where we can work."
++        },
++        {
++          "spanish": "No hay nadie en quien confíe tanto como en ti.",
++          "english": "There is nobody I trust as much as you."
++        }
++      ]
++    },
++    {
++      "type": "tip",
++      "content": "The preposition belongs to the verb inside the relative clause: *hablar con*, *confiar en*, *preguntar a*. Ask which preposition that verb needs, and put it before *quien* or *el que*. For places, *donde* often replaces *en el que*: *un lugar donde podamos descansar*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-13-05-a-gr.json b/content/es-latam/grammar/b2/b2-13-05-a-gr.json
+index 898c7762..314986f1 100644
+--- a/content/es-latam/grammar/b2/b2-13-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-13-05-a-gr.json
+@@ -1,33 +1,64 @@
+ {
+   "id": "grammar.b2.13.05.relativas-criterios-institucionales",
+-  "title": "Relativas generalizadoras y criterios de idoneidad institucional",
++  "title": "Job Ads and Requirements",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "El subjuntivo en pliegos, estatutos y normas generales",
+-      "content": "En textos normativos, convocatorias públicas y códigos deontológicos, las oraciones relativas encabezadas por cuantificadores distributivos o universales ('todo aquel que', 'cualquier persona que', 'quienesquiera que', 'aquel postulante que') emplean sistemáticamente el subjuntivo para establecer una norma abstracta aplicable a cualquier sujeto futuro que reúna tales condiciones."
++      "title": "What you know",
++      "content": "A job ad describes a person the company does not know yet. That is the situation from the first lesson of this unit: the person may not exist, so the verb after *que* goes into the subjunctive. *Buscamos a alguien que hable inglés* means \"We are looking for someone who speaks English\", whoever that turns out to be."
+     },
+     {
+       "type": "table",
+-      "title": "Cláusulas generalizadoras en textos estatutarios",
++      "title": "The language of ads",
+       "rows": [
+         [
+-          "Cualquier aspirante que...",
+-          "...que falsee sus datos será descalificado."
++          "Buscamos a alguien que hable inglés.",
++          "We are looking for someone who speaks English."
+         ],
+         [
+-          "Todo aquel que...",
+-          "...que aspire a la vocalía debe carecer de sanciones."
++          "Se necesita una persona que tenga experiencia.",
++          "A person with experience is needed. (*Se necesita* uses the impersonal *se*; you know *se* from B1 Unit 6.)"
+         ],
+         [
+-          "Quienquiera que...",
+-          "...que asuma la dirección deberá rendir fianza."
++          "Se busca un candidato que pueda empezar pronto.",
++          "We are looking for a candidate who can start soon."
+         ],
+         [
+-          "Aquellas empresas que...",
+-          "...que no acrediten solvencia quedarán excluidas."
++          "Quiero un trabajo que pague bien.",
++          "I want a job that pays well. (A job seeker uses the same pattern.)"
+         ]
+       ]
++    },
++    {
++      "type": "text",
++      "title": "Several requirements, and the person hired",
++      "content": "A list of requirements repeats the subjunctive and says *que* only once: *una persona que hable inglés, tenga experiencia y pueda trabajar los sábados*. When the ad is over and you talk about the person who got the job, the indicative returns, because now the person is real: *Contrataron a una candidata que habla inglés*."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Buscamos a alguien que sepa trabajar en equipo.",
++          "english": "We are looking for someone who knows how to work in a team."
++        },
++        {
++          "spanish": "Quiero un trabajo que pague bien y tenga un buen horario.",
++          "english": "I want a job that pays well and has good hours."
++        },
++        {
++          "spanish": "Contrataron a una candidata que habla inglés y tiene mucha experiencia.",
++          "english": "They hired a candidate who speaks English and has a lot of experience."
++        },
++        {
++          "spanish": "Todavía no hay ningún candidato que tenga todos los requisitos.",
++          "english": "There is still no candidate who has all the requirements."
++        }
++      ]
++    },
++    {
++      "type": "tip",
++      "content": "A list headed *Requisitos:* often uses plain infinitives (*hablar inglés, tener experiencia*), because it names the requirement in general. A sentence that describes the person you are looking for uses *que* + subjunctive."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-14-01-a-gr.json b/content/es-latam/grammar/b2/b2-14-01-a-gr.json
+index 077a09cf..9252893e 100644
+--- a/content/es-latam/grammar/b2/b2-14-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-14-01-a-gr.json
+@@ -1,33 +1,64 @@
+ {
+   "id": "grammar.b2.14.01.relativas-universales-quiera",
+-  "title": "Oraciones relativas universales con indefinidos en -quiera",
++  "title": "Whoever, Whichever, Wherever",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Universalidad y modo subjuntivo con pronombres y adverbios compuestos",
+-      "content": "Los indefinidos y relativos compuestos con '-quiera' ('quienquiera que', 'cualquiera que', 'dondequiera que', 'comoquiera que', 'cuandoquiera que') introducen cláusulas relativas o concesivas de alcance universal. Al proyectar una regla o principio que no depende de las circunstancias contingentes de un individuo o lugar concreto, seleccionan obligatoriamente el modo subjuntivo ('Dondequiera que vayas, debes acatar la ley', 'Cualquiera que sea el desenlace, mantendremos la postura')."
++      "title": "What you know",
++      "content": "In B2 Unit 13 you used *que* + subjunctive for a person or thing you cannot point at. Now the speaker does not care which one it is. *Cualquiera que* means \"whichever\" or \"anyone who\", *quienquiera que* means \"whoever\" and *dondequiera que* means \"wherever\". All three take the subjunctive, because the answer is left open: it could be anyone, anywhere. You know the shorter *pase lo que pase* from B2 Unit 8, with *venga quien venga* and *estés donde estés* beside it; these forms say the same kind of thing in a different shape."
+     },
+     {
+       "type": "table",
+-      "title": "Relativos universales y construcciones subordinadas",
++      "title": "Three new words",
+       "rows": [
+         [
+-          "quienquiera que",
+-          "Quienquiera que asuma la presidencia respetará los pactos."
++          "Cualquiera que llegue temprano puede entrar.",
++          "Anyone who arrives early can come in."
+         ],
+         [
+-          "cualquiera que",
+-          "Cualquiera que sea el costo político, diremos la verdad."
++          "Quienquiera que llame, dile que no estoy.",
++          "Whoever calls, tell them I'm not in."
+         ],
+         [
+-          "dondequiera que",
+-          "Dondequiera que se vulneren derechos, habrá resistencia cívica."
++          "Dondequiera que vayas, te voy a llamar.",
++          "Wherever you go, I'm going to call you."
+         ],
+         [
+-          "comoquiera que",
+-          "Comoquiera que se interprete la norma, el espíritu es claro."
++          "Cualquiera que sea la respuesta, la acepto.",
++          "Whatever the answer is, I accept it."
+         ]
+       ]
++    },
++    {
++      "type": "text",
++      "title": "How to use them",
++      "content": "*Cualquiera* is a pronoun: it stands alone or comes before *que*. Before a noun it becomes *cualquier*: *cualquier persona que llegue*. *Quienquiera* and *dondequiera* are each one word. After all of them comes *que* and the subjunctive. *Cualquiera que sea…* is the usual way to say \"whatever … is\"."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Cualquier persona que llegue tarde tiene que esperar.",
++          "english": "Anyone who arrives late has to wait."
++        },
++        {
++          "spanish": "Quienquiera que haya llamado, no dejó ningún recado.",
++          "english": "Whoever called, left no message."
++        },
++        {
++          "spanish": "Dondequiera que estés, piensa en nosotros.",
++          "english": "Wherever you are, think of us."
++        },
++        {
++          "spanish": "Cualquier cosa que necesites, dímelo.",
++          "english": "Anything you need, tell me."
++        }
++      ]
++    },
++    {
++      "type": "tip",
++      "content": "The subjunctive says \"it does not matter which\". When you talk about a real, known person, use an ordinary relative with the indicative: *La persona que llamó dejó un recado*. Never write *cualquier que*: *cualquiera* loses its final *-a* only before a noun."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-14-02-a-gr.json b/content/es-latam/grammar/b2/b2-14-02-a-gr.json
+index 0188bd30..f89a115a 100644
+--- a/content/es-latam/grammar/b2/b2-14-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-14-02-a-gr.json
+@@ -1,33 +1,64 @@
+ {
+   "id": "grammar.b2.14.02.concesivas-intensivas-por-mas-que",
+-  "title": "Oraciones concesivas intensivas con por más que y por mucho que",
++  "title": "However Much, However Hard",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Gradación concesiva y selección modal",
+-      "content": "Las estructuras concesivas intensivas ('por más que', 'por mucho que', 'por muy + adjetivo + que', 'por más + sustantivo + que') cuantifican al máximo el grado de un obstáculo para manifestar que resulta ineficaz para impedir la acción principal. Cuando el obstáculo es hipotético, futuro o irrelevante para el hablante, rige subjuntivo ('Por más que intenten intimidarnos, no cederemos'); cuando alude a un hecho real constatado en el presente o pasado, puede admitir indicativo ('Por más que se esforzó, no aprobó')."
++      "title": "What you know",
++      "content": "You know *por más que*, *por mucho que* and *por muy… que* from B2 Unit 8. They mean \"no matter how much\" and take the subjunctive when the amount is open. This lesson adds one small thing, *por más* or *por mucho* + noun + *que*, and compares these patterns with the relatives of this unit."
+     },
+     {
+       "type": "table",
+-      "title": "Estructuras concesivas intensivas y alternancia modal",
++      "title": "New: a noun between por and que",
+       "rows": [
+         [
+-          "por más que + subjuntivo",
+-          "Por más que insistan, no modificaremos los estatutos."
++          "Por mucha prisa que tengas, no vas a llegar antes.",
++          "However much of a hurry you are in, you won't get there earlier."
+         ],
+         [
+-          "por muy + adjetivo + que",
+-          "Por muy complejo que sea el reto, encontraremos una salida."
++          "Por más dinero que ahorres, ese viaje es caro.",
++          "However much money you save, that trip is expensive."
+         ],
+         [
+-          "por mucho que + indicativo",
+-          "Por mucho que protestaron, la ley fue ratificada ayer."
++          "Por muchos años que pasen, no voy a olvidar este viaje.",
++          "However many years go by, I won't forget this trip."
+         ],
+         [
+-          "por más dinero que + subjuntivo",
+-          "Por más recursos que ofrezcan, la dignidad no está en venta."
++          "Por más cansancio que sienta, voy a terminar hoy.",
++          "However tired I feel, I'm going to finish today."
+         ]
+       ]
++    },
++    {
++      "type": "text",
++      "title": "Agreement, and the difference from cualquiera que",
++      "content": "With *mucho* the noun decides the ending: *mucha prisa*, *muchos años*. *Más* never changes: *por más dinero*, *por más cosas*. These patterns answer the question \"how much?\": the amount makes no difference. *Cualquiera que* answers \"which one?\": the choice makes no difference. Both take the subjunctive."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Por mucha hambre que tengas, espera a los demás.",
++          "english": "However hungry you are, wait for the others."
++        },
++        {
++          "spanish": "Cualquiera que sea el precio, voy a comprar el boleto.",
++          "english": "Whatever the price is, I'm going to buy the ticket."
++        },
++        {
++          "spanish": "Por más que ahorres, ese viaje sigue siendo caro.",
++          "english": "However much you save, that trip is still expensive."
++        },
++        {
++          "spanish": "Por mucha prisa que tenía, llegó tarde.",
++          "english": "However much of a hurry he was in, he arrived late. (It really happened: indicative.)"
++        }
++      ]
++    },
++    {
++      "type": "tip",
++      "content": "As in B2 Unit 8, use the indicative when the effort or the amount really happened (*Por mucha prisa que tenía*), and the subjunctive when you look ahead or speak in general (*Por mucha prisa que tengas*)."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-14-03-a-gr.json b/content/es-latam/grammar/b2/b2-14-03-a-gr.json
+index 84185fba..f63a4b06 100644
+--- a/content/es-latam/grammar/b2/b2-14-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-14-03-a-gr.json
+@@ -1,33 +1,64 @@
+ {
+   "id": "grammar.b2.14.03.subjuntivo-reduplicado-indiferencia",
+-  "title": "Estructuras reduplicadas de subjuntivo e indiferencia retórica",
++  "title": "Whoever It Is, Whatever It Is",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "El esquema de reduplicación disyuntiva en nivel B2",
+-      "content": "Las fórmulas reduplicadas con subjuntivo ('haga lo que haga', 'diga lo que diga', 'pase lo que pase', 'sea como sea', 'venga quien venga') combinan la misma forma verbal en subjuntivo antes y después de un relativo o conector disyuntivo. Estas locuciones expresan que la determinación o el principio rector del sujeto permanecerá inalterable frente a cualquier contingencia o curso de acción que adopten terceros."
++      "title": "What you know",
++      "content": "You know *pase lo que pase* and *diga lo que diga* from B2 Unit 8, and the others like them (*venga quien venga*, *estés donde estés*). The verb is said twice, around a relative word, to say that it makes no difference. This lesson adds three frames with *ser* that match the relatives of this unit."
+     },
+     {
+       "type": "table",
+-      "title": "Fórmulas reduplicadas de subjuntivo de alta frecuencia",
++      "title": "The repeated verb with ser",
+       "rows": [
+         [
+-          "diga lo que diga",
+-          "Diga lo que diga la oposición, mantendremos el compromiso social."
++          "Sea quien sea, no le abras la puerta.",
++          "Whoever it is, don't open the door to them. (Like *quienquiera que sea*.)"
+         ],
+         [
+-          "haga lo que haga",
+-          "Haga lo que haga el acusado, las pruebas son concluyentes."
++          "Sea cual sea tu respuesta, la voy a respetar.",
++          "Whatever your answer is, I'll respect it. (Like *cualquiera que sea*.)"
+         ],
+         [
+-          "cueste lo que cueste",
+-          "Cueste lo que cueste, restituiremos las tierras a las víctimas."
++          "Sea lo que sea, dímelo.",
++          "Whatever it is, tell me."
+         ],
+         [
+-          "sea como fuere / sea",
+-          "Sea como sea, el acuerdo firmado debe ser respetado."
++          "Sean cuales sean las razones, la decisión es tuya.",
++          "Whatever the reasons are, the decision is yours."
+         ]
+       ]
++    },
++    {
++      "type": "text",
++      "title": "Singular and plural",
++      "content": "*Sea cual sea* agrees with the thing you are talking about: *sea cual sea la razón*, *sean cuales sean las razones*. With a different verb the pattern is the one you know: *Llame quien llame, no abras la puerta*. The repeated form is short and firm, so you hear it a lot in speech; *cualquiera que sea* is longer and more common in writing."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Llame quien llame, no abras la puerta.",
++          "english": "Whoever calls, don't open the door."
++        },
++        {
++          "spanish": "Sea cual sea el resultado, vamos a aceptarlo.",
++          "english": "Whatever the result is, we're going to accept it."
++        },
++        {
++          "spanish": "Opinen lo que opinen, tú decides.",
++          "english": "Whatever they think, you decide."
++        },
++        {
++          "spanish": "Vaya donde vaya, siempre llama a su madre.",
++          "english": "Wherever she goes, she always calls her mother."
++        }
++      ]
++    },
++    {
++      "type": "tip",
++      "content": "The two verbs must match: *sea cual sea*, never *sea cual es*. In *sea cual sea* the first *sea* is the subjunctive of *ser*, and it must agree with the noun: *sean cuales sean* for a plural."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-14-04-a-gr.json b/content/es-latam/grammar/b2/b2-14-04-a-gr.json
+index 316d153f..9d5ee02a 100644
+--- a/content/es-latam/grammar/b2/b2-14-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-14-04-a-gr.json
+@@ -1,33 +1,64 @@
+ {
+   "id": "grammar.b2.14.04.cuantificadores-universales-cuanto",
+-  "title": "Cuantificadores relativos universales: cuanto, todo aquel que y todo lo que",
++  "title": "Everything That, Everyone Who",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Sintaxis de la cuantificación distributiva universal en textos normativos",
+-      "content": "Los relativos cuantitativos universales ('cuanto/a/os/as', 'todo cuanto', 'todo aquel que', 'todo lo que') abarcan la totalidad de una clase o colectivo. Cuando refieren a un conjunto fáctico ya determinado, seleccionan indicativo ('Agradecemos a cuantos colaboraron'); cuando establecen una regla abstracta, condicional o hipotética aplicable a futuros beneficiarios o afectados, exigen de forma rigurosa el subjuntivo ('Se indemnizará a cuantos acrediten daños directos')."
++      "title": "What you know",
++      "content": "You know *lo que* from B1 Unit 20 and *que* + subjunctive from B2 Unit 13. Put them after *todo* and you can say \"everything that\" and \"everyone who\". The same rule applies as always: if the group or the amount is real and you can list it, use the indicative; if it is open, use the subjunctive."
+     },
+     {
+       "type": "table",
+-      "title": "Cuantificadores universales y alternancia modal",
++      "title": "Real or open?",
+       "rows": [
+         [
+-          "cuantos + subjuntivo",
+-          "Se brindará amparo a cuantos huyan de la violencia armada."
++          "Todo lo que dijo es verdad.",
++          "Everything he said is true. (It was said: indicative.)"
+         ],
+         [
+-          "todo cuanto + indicativo",
+-          "Consignamos en el informe todo cuanto vimos durante la visita."
++          "Come todo lo que quieras.",
++          "Eat as much as you want. (The amount is open: subjunctive.)"
+         ],
+         [
+-          "todo aquel que + subjuntivo",
+-          "Todo aquel que reclame tierras ancestrales será escuchado."
++          "Todos los que llegaron temprano recibieron un regalo.",
++          "Everyone who arrived early received a gift. (A real group: indicative.)"
+         ],
+         [
+-          "cuanta ayuda + subjuntivo",
+-          "Movilizaremos cuanta ayuda humanitaria sea necesaria."
++          "Todo aquel que quiera ayudar es bienvenido.",
++          "Anyone who wants to help is welcome. (An open group: subjunctive.)"
+         ]
+       ]
++    },
++    {
++      "type": "text",
++      "title": "Which one to use",
++      "content": "*Todo lo que* is for things and *todos los que* for people in everyday speech. *Todo aquel que* is for people and sounds more formal: you find it in rules and notices. *Cuanto*, *cuantos* and *cuantas* are a formal way to say the same: *Comparte cuanto sepas*, *Invita a cuantos amigos quieras*. You know *cuanto* from *cuanto más… más* in B1 Unit 2; here it stands for \"as much as\" or \"as many as\"."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Todo aquel que quiera ayudar es bienvenido.",
++          "english": "Anyone who wants to help is welcome."
++        },
++        {
++          "spanish": "Cuenta todo lo que sepas.",
++          "english": "Tell everything you know."
++        },
++        {
++          "spanish": "Todos los que llegaron temprano recibieron un regalo.",
++          "english": "Everyone who arrived early received a gift."
++        },
++        {
++          "spanish": "Invita a cuantos amigos quieras.",
++          "english": "Invite as many friends as you like."
++        }
++      ]
++    },
++    {
++      "type": "tip",
++      "content": "English \"everyone who\" and \"everything that\" never show a mood, so ask whether the group is real. Facts and past events take the indicative; offers, rules and permissions about the future take the subjunctive."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-14-05-a-gr.json b/content/es-latam/grammar/b2/b2-14-05-a-gr.json
+index e12c017d..b5906a53 100644
+--- a/content/es-latam/grammar/b2/b2-14-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-14-05-a-gr.json
+@@ -1,33 +1,64 @@
+ {
+   "id": "grammar.b2.14.05.generalizaciones-eticas-juridicas",
+-  "title": "Generalizaciones categóricas en el discurso jurídico y ético",
++  "title": "Formal Written Spanish",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "El estilo sentencioso y la formulación de principios constitucionales",
+-      "content": "En la prosa jurídica de alto nivel (sentencias de cortes constitucionales, tratados de derecho internacional humanitario, manifiestos ciudadanos), las oraciones relativas universales e indefinidas se articulan con verbos modales de obligación ('debe', 'habrá de') y formas de subjuntivo para enunciar principios categóricos inmunes al arbitrio de coyunturas políticas temporales."
++      "title": "What you know",
++      "content": "The relatives of this unit are at home in notices, rules and official letters: *Todo aquel que desee participar deberá llenar el formulario*. Formal Spanish is mostly a set of habits you already know, used together: *se* for rules (*se* from B1 Unit 6), the future for what people must do (the future from A2 Unit 19), and the open \"anyone who\" with the subjunctive from this unit."
+     },
+     {
+       "type": "table",
+-      "title": "Fórmulas de generalización en jurisprudencia de derechos humanos",
++      "title": "Everyday and formal",
+       "rows": [
+         [
+-          "Toda norma que vulnerare...",
+-          "Toda norma que vulnere la dignidad humana carece de validez."
++          "Si quieres participar, tienes que llenar el formulario.",
++          "Todo aquel que desee participar deberá llenar el formulario. (Anyone who wishes to take part must fill in the form.)"
+         ],
+         [
+-          "Cualquier acto que lesione...",
+-          "Cualquier acto que lesione derechos fundamentales debe ser anulado."
++          "Por favor, no hagan ruido después de las diez.",
++          "Se ruega a los vecinos no hacer ruido después de las diez. (Neighbours are kindly asked not to make noise after ten.)"
+         ],
+         [
+-          "Los crímenes que constituyan...",
+-          "Los crímenes que constituyan lesa humanidad son imprescriptibles."
++          "Si llegas tarde, no puedes entrar.",
++          "Cualquier persona que llegue tarde no podrá entrar. (Anyone who arrives late will not be able to come in.)"
+         ],
+         [
+-          "El Estado amparará a quien...",
+-          "El Estado amparará a quien denuncie violaciones de derechos."
++          "Un abrazo,",
++          "Atentamente, (Yours sincerely,)"
+         ]
+       ]
++    },
++    {
++      "type": "text",
++      "title": "Four habits of formal writing",
++      "content": "First, a notice speaks to everybody, so it avoids *tú* and uses *todo aquel que*, *quienes* or *cualquier persona que* with the subjunctive. Second, it states rules with the future (*deberá*, *podrá*) or with *se* (*se ruega*). Third, it prefers the more careful word (*desear* instead of *querer*, *rogar* instead of *pedir*). Fourth, letters open and close with set phrases: *Estimados vecinos:* at the start, *Atentamente,* at the end."
++    },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Todo aquel que desee participar deberá llenar el formulario.",
++          "english": "Anyone who wishes to take part must fill in the form."
++        },
++        {
++          "spanish": "Cualquier persona que llegue tarde no podrá entrar.",
++          "english": "Anyone who arrives late will not be able to come in."
++        },
++        {
++          "spanish": "Estimados vecinos: se ruega no dejar bolsas en la puerta.",
++          "english": "Dear neighbours: please do not leave bags at the door."
++        },
++        {
++          "spanish": "Quienes deseen más información pueden llamar a la oficina.",
++          "english": "Those who would like more information can call the office."
++        }
++      ]
++    },
++    {
++      "type": "tip",
++      "content": "Formal does not mean difficult. It means impersonal and polite, with set phrases. Mixing the two is the mistake to avoid: do not write *Todo aquel que desee entrar debes mostrar tu boleto*, because *todo aquel* needs *deberá* and *su*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-13-01.json b/content/es-latam/lessons/b2/b2-13-01.json
+index 05acb244..c0450aa7 100644
+--- a/content/es-latam/lessons/b2/b2-13-01.json
++++ b/content/es-latam/lessons/b2/b2-13-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.13.01",
+-  "title": "Búsqueda de perfiles y antecedentes inespecíficos",
++  "title": "Looking for Something That May Not Exist",
+   "level": "B2",
+-  "goal": "Master the use of the subjunctive in relative clauses describing non-specific or hypothetical entities.",
+-  "grammar": "oraciones de relativo con antecedente inespecífico o hipotético en subjuntivo",
++  "goal": "Describe something you are looking for but have not found, using que + subjunctive.",
++  "grammar": "Relative clauses with an unknown antecedent + subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Identify when an antecedent lacks real-world specificity.",
+-        "Formulate professional requirements and job profiles using the subjunctive.",
+-        "Distinguish between hypothetical candidates and known individuals."
++        "I can describe something I am looking for but have not found, using que + subjunctive.",
++        "I can tell a real thing (indicative) from a wished-for one (subjunctive).",
++        "I can say that nobody fits a description."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-13-01.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can describe something I am looking for but have not found, using que + subjunctive.",
++        "I can tell a real thing (indicative) from a wished-for one (subjunctive).",
++        "I can say that nobody fits a description."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-13-02.json b/content/es-latam/lessons/b2/b2-13-02.json
+index ba4f1d5a..ae413100 100644
+--- a/content/es-latam/lessons/b2/b2-13-02.json
++++ b/content/es-latam/lessons/b2/b2-13-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.13.02",
+-  "title": "Antecedentes negativos e inexistencia categórica",
++  "title": "Nobody, Nothing, No Such Thing",
+   "level": "B2",
+-  "goal": "Express non-existence, absence, and refutation using negative antecedents with subjunctive relative clauses.",
+-  "grammar": "oraciones de relativo con antecedentes negativos (nadie, nada, ninguno) y modo subjuntivo",
++  "goal": "Say that nobody or nothing fits a description, and ask whether such a person or thing exists.",
++  "grammar": "Relative clauses with a negative antecedent + subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Construct relative sentences with 'nadie', 'nada', and 'ninguno'.",
+-        "Articulate rigorous refutations and audit statements in professional contexts.",
+-        "Distinguish affirmative specificity from negative non-existence."
++        "I can say that nobody or nothing fits a description, using nadie, nada or ningún + que + subjunctive.",
++        "I can ask whether someone or something exists, with a subjunctive after que.",
++        "I can use the new words for repairs and tools."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-13-02.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say that nobody or nothing fits a description, using nadie, nada or ningún + que + subjunctive.",
++        "I can ask whether someone or something exists, with a subjunctive after que.",
++        "I can use the new words for repairs and tools."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-13-03.json b/content/es-latam/lessons/b2/b2-13-03.json
+index ea9e3256..5e707a61 100644
+--- a/content/es-latam/lessons/b2/b2-13-03.json
++++ b/content/es-latam/lessons/b2/b2-13-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.13.03",
+-  "title": "Alternancia modal: Lo concreto frente a lo hipotético",
++  "title": "Real or Only Wanted?",
+   "level": "B2",
+-  "goal": "Master the nuanced contrast between indicative (specific real entities) and subjunctive (hypothetical, searched entities) in relative clauses.",
+-  "grammar": "contraste de modo indicativo y subjuntivo en oraciones de relativo según la especificidad del antecedente",
++  "goal": "Choose between indicative and subjunctive after que by asking whether the thing is real, also in the past.",
++  "grammar": "Mood contrast in relative clauses: indicative or subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Distinguish between specific concrete entities and idealized search criteria.",
+-        "Use indicative to assert verified facts and subjunctive to formulate expectations.",
+-        "Navigate nuanced register shifts in legal and journalistic prose."
++        "I can choose between indicative and subjunctive after que by asking whether the thing is real.",
++        "I can say what I needed in the past, using the imperfect subjunctive.",
++        "I can use the new words for chargers and sockets."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-13-03.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can choose between indicative and subjunctive after que by asking whether the thing is real.",
++        "I can say what I needed in the past, using the imperfect subjunctive.",
++        "I can use the new words for chargers and sockets."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-13-04.json b/content/es-latam/lessons/b2/b2-13-04.json
+index ffd71093..fabf6043 100644
+--- a/content/es-latam/lessons/b2/b2-13-04.json
++++ b/content/es-latam/lessons/b2/b2-13-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.13.04",
+-  "title": "Relativas preposicionales y canales institucionales",
++  "title": "A Person to Talk To",
+   "level": "B2",
+-  "goal": "Construct complex prepositional relative clauses with subjunctive to establish prospective procedures and institutional channels.",
+-  "grammar": "relativas preposicionales complejas (con quien, mediante el cual, en el que) con subjuntivo",
++  "goal": "Put a preposition before the relative word and keep the subjunctive: una persona con la que pueda hablar.",
++  "grammar": "Preposition + relative + subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Deploy prepositions with relative pronouns ('mediante el cual', 'con quien', 'en el que').",
+-        "Specify non-existent or idealized mechanisms in institutional debate.",
+-        "Enhance syntactical variety and formal cohesion."
++        "I can ask for a person or place with a preposition + relative + subjunctive.",
++        "I can choose between quien and el que after a preposition.",
++        "I can use the new words for trust and support."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-13-04.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can ask for a person or place with a preposition + relative + subjunctive.",
++        "I can choose between quien and el que after a preposition.",
++        "I can use the new words for trust and support."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-13-05.json b/content/es-latam/lessons/b2/b2-13-05.json
+index 5518140a..20d70e2c 100644
+--- a/content/es-latam/lessons/b2/b2-13-05.json
++++ b/content/es-latam/lessons/b2/b2-13-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.13.05",
+-  "title": "Criterios institucionales y cláusulas generalizadoras",
++  "title": "Job Ads and Requirements",
+   "level": "B2",
+-  "goal": "Apply the subjunctive in generalizing relative clauses ('cualquiera que', 'todo aquel que') within institutional statutes and regulatory texts.",
+-  "grammar": "relativas generalizadoras y distributivas en textos normativos con modo subjuntivo",
++  "goal": "Read and write a job ad with que + subjunctive: Buscamos a alguien que hable inglés.",
++  "grammar": "Job ads and requirements with que + subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Draft statutory rules and tender requirements with precision.",
+-        "Master distributive antecedents ('todo aquel que', 'cualquier persona que').",
+-        "Synthesize formal rights, obligations, and disqualification criteria."
++        "I can read and write a job ad with que + subjunctive.",
++        "I can say what I want from a job, using que + subjunctive.",
++        "I can use the new words for job ads."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-13-05.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can read and write a job ad with que + subjunctive.",
++        "I can say what I want from a job, using que + subjunctive.",
++        "I can use the new words for job ads."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-13-consolidation.json b/content/es-latam/lessons/b2/b2-13-consolidation.json
+index 58244c69..a372d1ea 100644
+--- a/content/es-latam/lessons/b2/b2-13-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-13-consolidation.json
+@@ -1,16 +1,17 @@
+ {
+   "id": "lesson.b2.13.consolidation",
+-  "title": "Consolidación: Criterios, perfiles y la búsqueda de horizontes",
++  "title": "Unit 13 Consolidation: Looking for Something You Have Not Found",
+   "level": "B2",
+-  "goal": "Consolidate upper-intermediate mastery of relative clauses with unidentified, negative, and generalizing antecedents in institutional and literary registers.",
+-  "grammar": "repaso integral de oraciones de relativo en subjuntivo con antecedentes hipotéticos, negativos y estatutarios",
++  "goal": "Review relative clauses with an unknown or non-existent antecedent, and read a short text about García Márquez and Cien años de soledad.",
++  "grammar": "Review of relative clauses + subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Synthesize indicative vs subjunctive selection in relative clauses with full confidence.",
+-        "Formulate categorical denials and institutional prerequisites using negative and generalizing pronouns.",
+-        "Analyze literary and legal excerpts reflecting hypothetical criteria and human searches."
++        "I can describe what I am looking for with que + subjunctive and tell it from a real thing.",
++        "I can say that nobody or nothing fits a description, and ask whether it exists.",
++        "I can put a preposition before the relative word and keep the subjunctive.",
++        "I can read a short text about García Márquez and Cien años de soledad."
+       ]
+     },
+     {
+@@ -38,11 +39,12 @@
+     },
+     {
+       "type": "checklist",
++      "title": "Can you do this?",
+       "items": [
+-        "Diferencio con precisión entre antecedentes específicos (indicativo) e hipotéticos (subjuntivo).",
+-        "Uso el subjuntivo ante antecedentes negativos como 'nadie', 'nada' o 'ningún'.",
+-        "Construyo relativas preposicionales formales ('en el cual', 'con quien').",
+-        "Redacto cláusulas generalizadoras y estatutarias ('cualquiera que', 'todo aquel que')."
++        "I can describe what I am looking for with que + subjunctive and tell it from a real thing.",
++        "I can say that nobody or nothing fits a description, and ask whether it exists.",
++        "I can put a preposition before the relative word and keep the subjunctive.",
++        "I can read a short text about García Márquez and Cien años de soledad."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-14-01.json b/content/es-latam/lessons/b2/b2-14-01.json
+index f5cd43e2..d42fa3c8 100644
+--- a/content/es-latam/lessons/b2/b2-14-01.json
++++ b/content/es-latam/lessons/b2/b2-14-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.14.01",
+-  "title": "Relativas universales con indefinidos en -quiera",
++  "title": "Whoever, Whichever, Wherever",
+   "level": "B2",
+-  "goal": "Master the use of universal and concessive relative pronouns in -quiera with subjunctive to state categorical principles.",
+-  "grammar": "oraciones relativas y concesivas universales: quienquiera que, cualquiera que, dondequiera que con subjuntivo",
++  "goal": "Say whoever, whichever and wherever with cualquiera que, quienquiera que and dondequiera que + subjunctive.",
++  "grammar": "Universal relatives: cualquiera que, quienquiera que, dondequiera que",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate universal ethical principles using 'quienquiera que' and 'cualquiera que'.",
+-        "Express spatial and modal universality with 'dondequiera que' and 'comoquiera que'.",
+-        "Deploy categorical duty vocabulary (precepto, imperativo, acatar)."
++        "I can say whoever, whichever and wherever with quienquiera que, cualquiera que and dondequiera que.",
++        "I can use the subjunctive after these words, because the choice is open.",
++        "I can use the new words for the door and messages."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-14-01.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say whoever, whichever and wherever with quienquiera que, cualquiera que and dondequiera que.",
++        "I can use the subjunctive after these words, because the choice is open.",
++        "I can use the new words for the door and messages."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-14-02.json b/content/es-latam/lessons/b2/b2-14-02.json
+index 31b500bd..4116d163 100644
+--- a/content/es-latam/lessons/b2/b2-14-02.json
++++ b/content/es-latam/lessons/b2/b2-14-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.14.02",
+-  "title": "Concesivas intensivas con por más que y por muy",
++  "title": "However Much, However Hard",
+   "level": "B2",
+-  "goal": "Deploy intensive concessive structures ('por más que', 'por mucho que', 'por muy + adj + que') with subjunctive in debate and policy analysis.",
+-  "grammar": "oraciones concesivas intensivas y de gradación extrema con modo subjuntivo e indicativo",
++  "goal": "Review por más que and por mucho que, add a noun between por and que, and compare them with cualquiera que.",
++  "grammar": "Concessive por más / por mucho + noun + que, compared with cualquiera que",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Construct gradient concessives with 'por muy + adjetivo + que'.",
+-        "Differentiate indicative vs subjunctive in 'por más que' according to reality status.",
+-        "Articulate firm counter-arguments against political and procedural pressure."
++        "I can say however much, however many with por más or por mucho + noun + que + subjunctive.",
++        "I can tell por más que (how much) from cualquiera que (which one).",
++        "I can use the new words for hurry, tiredness and saving."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-14-02.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say however much, however many with por más or por mucho + noun + que + subjunctive.",
++        "I can tell por más que (how much) from cualquiera que (which one).",
++        "I can use the new words for hurry, tiredness and saving."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-14-03.json b/content/es-latam/lessons/b2/b2-14-03.json
+index 6bd56422..25c4215c 100644
+--- a/content/es-latam/lessons/b2/b2-14-03.json
++++ b/content/es-latam/lessons/b2/b2-14-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.14.03",
+-  "title": "Subjuntivo reduplicado y fórmulas de indiferencia retórica",
++  "title": "Whoever It Is, Whatever It Is",
+   "level": "B2",
+-  "goal": "Master reduplicated subjunctive structures of indifference ('haga lo que haga', 'cueste lo que cueste') in asserting unwavering principles.",
+-  "grammar": "estructuras reduplicadas con subjuntivo: pase lo que pase, diga lo que diga, sea como sea",
++  "goal": "Review the repeated subjunctive and add sea quien sea and sea cual sea.",
++  "grammar": "Repeated subjunctive with ser: sea quien sea, sea cual sea",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate resolute stances with 'cueste lo que cueste' and 'pase lo que pase'.",
+-        "Neutralize counter-arguments using 'diga lo que diga' and 'sea como sea'.",
+-        "Deploy firmness and commitment vocabulary in political discourse."
++        "I can say sea quien sea, sea cual sea and sea lo que sea for whoever and whatever it is.",
++        "I can repeat a subjunctive verb around a relative word to say it makes no difference.",
++        "I can use the new words for opinions."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-14-03.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say sea quien sea, sea cual sea and sea lo que sea for whoever and whatever it is.",
++        "I can repeat a subjunctive verb around a relative word to say it makes no difference.",
++        "I can use the new words for opinions."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-14-04.json b/content/es-latam/lessons/b2/b2-14-04.json
+index c0ae198e..c03e053d 100644
+--- a/content/es-latam/lessons/b2/b2-14-04.json
++++ b/content/es-latam/lessons/b2/b2-14-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.14.04",
+-  "title": "Cuantificadores relativos universales: cuanto y todo aquel que",
++  "title": "Everything That, Everyone Who",
+   "level": "B2",
+-  "goal": "Master the use of universal quantifiers ('cuanto', 'todo aquel que', 'todo cuanto') in formulating inclusive legal and constitutional frameworks.",
+-  "grammar": "cuantificadores relativos universales (cuanto/a/os/as, todo aquel que) en subjuntivo e indicativo",
++  "goal": "Use todo lo que, todo aquel que and cuanto, with the indicative for real groups and the subjunctive for open ones.",
++  "grammar": "todo lo que, todo aquel que and cuanto with indicative or subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate inclusive statutory rights using 'cuantos' and 'todo aquel que'.",
+-        "Distinguish factual past assertions (indicative) from general legal entitlements (subjunctive).",
+-        "Synthesize community rights vocabulary (amparo, titularidad, beneficiario)."
++        "I can say everything that and everyone who with todo lo que, todos los que and todo aquel que.",
++        "I can choose between indicative (a real group) and subjunctive (an open one).",
++        "I can use the new words for sharing and offering."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-14-04.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say everything that and everyone who with todo lo que, todos los que and todo aquel que.",
++        "I can choose between indicative (a real group) and subjunctive (an open one).",
++        "I can use the new words for sharing and offering."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-14-05.json b/content/es-latam/lessons/b2/b2-14-05.json
+index 561f5c12..285d5622 100644
+--- a/content/es-latam/lessons/b2/b2-14-05.json
++++ b/content/es-latam/lessons/b2/b2-14-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.14.05",
+-  "title": "Generalizaciones éticas y mandatos constitucionales",
++  "title": "Formal Written Spanish",
+   "level": "B2",
+-  "goal": "Apply universal relative clauses and generalizing subjunctive structures to formulate binding constitutional and human rights principles.",
+-  "grammar": "generalizaciones categóricas y sentenciosas en el discurso jurídico y constitucional",
++  "goal": "Recognise and write the formal Spanish of notices, rules and official letters: Todo aquel que desee participar deberá…",
++  "grammar": "Formal register: notices, rules and letters",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate binding constitutional imperatives with relative clauses in subjunctive.",
+-        "Analyze universal human rights norms using formal jurisprudence terminology.",
+-        "Synthesize philosophical generalizations in institutional debate."
++        "I can read and write short notices with todo aquel que, cualquier persona que and se ruega.",
++        "I can tell formal Spanish from everyday Spanish.",
++        "I can use the new words for notices and letters."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-14-05.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can read and write short notices with todo aquel que, cualquier persona que and se ruega.",
++        "I can tell formal Spanish from everyday Spanish.",
++        "I can use the new words for notices and letters."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-14-consolidation.json b/content/es-latam/lessons/b2/b2-14-consolidation.json
+index 679c9557..b9ab192f 100644
+--- a/content/es-latam/lessons/b2/b2-14-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-14-consolidation.json
+@@ -1,16 +1,17 @@
+ {
+   "id": "lesson.b2.14.consolidation",
+-  "title": "Consolidación: Universalidad, principios inmutables y la selva devoradora",
++  "title": "Unit 14 Consolidation: Whoever, Whatever, Wherever",
+   "level": "B2",
+-  "goal": "Consolidate upper-intermediate mastery of universal relatives, intensive concessives, and reduplicated subjunctive structures in philosophical and classical literary discourse.",
+-  "grammar": "repaso integral de relativas universales (-quiera), concesivas de gradación extrema y fórmulas de determinación",
++  "goal": "Review the universal relatives, however much and whatever it is, and formal Spanish, and read a short text about Rivera and La vorágine.",
++  "grammar": "Review of universal relatives and formal register",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Synthesize universal relatives ('cualquiera que', 'quienquiera que', 'dondequiera que').",
+-        "Deploy intensive concessives ('por más que', 'por muy + adj + que') in high-level argumentation.",
+-        "Analyze literary and humanitarian themes using categorical ethical frameworks."
++        "I can say that it makes no difference who, which or where, in several ways.",
++        "I can say however much and whatever it is with por más que and a repeated subjunctive.",
++        "I can read and write short notices in formal Spanish.",
++        "I can read a short text about José Eustasio Rivera and La vorágine."
+       ]
+     },
+     {
+@@ -38,11 +39,12 @@
+     },
+     {
+       "type": "checklist",
++      "title": "Can you do this?",
+       "items": [
+-        "Formulo principios categóricos con pronombres en '-quiera' y subjuntivo.",
+-        "Utilizo estructuras concesivas intensivas ('por más que', 'por mucho que').",
+-        "Manejo las fórmulas reduplicadas de resolución ('cueste lo que cueste', 'pase lo que pase').",
+-        "Aplico cuantificadores universales ('cuanto', 'todo aquel que') en contextos normativos."
++        "I can say that it makes no difference who, which or where, in several ways.",
++        "I can say however much and whatever it is with por más que and a repeated subjunctive.",
++        "I can read and write short notices in formal Spanish.",
++        "I can read a short text about José Eustasio Rivera and La vorágine."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/stories/classics/b2/b2-13.json b/content/es-latam/stories/classics/b2/b2-13.json
+index 1f7e94fe..b1dcd3d2 100644
+--- a/content/es-latam/stories/classics/b2/b2-13.json
++++ b/content/es-latam/stories/classics/b2/b2-13.json
+@@ -1,84 +1,76 @@
+ {
+   "id": "story.b2.13.garciamarquez",
+-  "title": "Cien años de soledad",
++  "title": "García Márquez y Cien años de soledad",
+   "level": "B2",
+   "lesson": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Adaptación literaria de nivel B2 de Cien años de soledad de Gabriel García Márquez: la mítica fundación de Macondo por José Arcadio Buendía y Úrsula Iguarán, la llegada periódica de los gitanos con los inventos de Melquíades y la búsqueda incesante de un horizonte que desentrañara los enigmas del cosmos y la soledad humana.",
+-  "characters": [
+-    "José Arcadio Buendía",
+-    "Úrsula Iguarán",
+-    "Melquíades",
+-    "Aureliano Buendía"
+-  ],
++  "summary": "Texto sobre Gabriel García Márquez, escritor colombiano, y sobre su novela Cien años de soledad, una de las más conocidas del realismo mágico.",
++  "characters": [],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Muchos años después, frente al pelotón de fusilamiento, el coronel Aureliano Buendía había de recordar aquella remota tarde en que su padre lo llevó a conocer el hielo. Macondo era entonces una aldea de veinte casas de barro y cañabrava, construidas a la orilla de un río de aguas diáfanas que se precipitaban por un lecho de piedras pulidas, blancas y enormes como huevos prehistóricos. El mundo era tan reciente que muchas cosas carecían de nombre, y para mencionarlas había que señalarlas con el dedo. En aquella planicie aislada por pantanos impenetrables y serranías abruptas, el patriarca José Arcadio Buendía soñaba con fundar una civilización ilustrada que no dependiera de los errores del pasado y en la que ningún habitante fuera despojado de su dignidad ni de su sosiego terrenal."
++      "text": "Gabriel García Márquez fue un escritor colombiano. Nació en 1927 y murió en 2014. En 1982 recibió el Premio Nobel de Literatura. En este texto vamos a hablar de una de sus novelas más conocidas, Cien años de soledad, que se publicó en 1967."
+     },
+     {
+       "type": "narration",
+-      "text": "Todos los años, por el mes de marzo, una familia de gitanos desarrapados plantaba su carpa cerca de la aldea, y con un gran alboroto de pitos y timbales daba a conocer los nuevos inventos. Primero llevaron el imán. Un gitano corpulento, de barba montaraz y manos de gorrión, que se presentó con el nombre de Melquíades, hizo una truculenta demostración pública de lo que él mismo llamaba la octava maravilla de los alquimistas de Macedonia. Fue de casa en casa arrastrando dos lingotes metálicos, y todo el mundo se espantó al ver que los calderos, las pailas, las tenazas y los anafes se caían de su sitio, y las maderas crujían por la desesperación de los clavos y los tornillos que pugnaban por desenclavarse. José Arcadio Buendía, cuya desaforada imaginación iba siempre más lejos que el ingenio de la naturaleza, creyó que era posible servirse de aquella invención para desentrañar el oro de la tierra profunda."
++      "text": "La novela cuenta la historia de varias generaciones de la familia Buendía. Una generación es el grupo de personas de una familia que tienen más o menos la misma edad: por ejemplo, los abuelos, los padres o los hijos. Esta familia vive en Macondo, un pueblo que el autor inventó. Macondo es, entonces, un lugar que el lector conoce solo a través de las palabras del autor."
+     },
+     {
+       "type": "narration",
+-      "text": "Úrsula Iguarán, su juiciosa y tenaz consorte, no pudo evitar que su marido trocara los ahorros familiares por aquellos hierros imantados que solo sirvieron para desenterrar una armadura del siglo quince con los huesos de un guerrero español en su interior. Poco después, los gitanos volvieron con un catalejo y una lupa gigantesca, divulgando que los sabios de Ámsterdam habían concebido un artefacto mediante el cual se pudiera concentrar el poder solar como arma bélica. Fascinado por las posibilidades científicas de la óptica, José Arcadio Buendía se encerró durante meses en un rincón sombrío del patio, experimentando con rayos solares sobre su propio cuerpo y sobre pieles secas de ganado, convencido de que hallaría una fórmula matemática que transformara a Macondo en el epicentro de la sabiduría universal."
++      "text": "Cien años de soledad es una de las novelas más conocidas del realismo mágico. En el realismo mágico, las cosas extraordinarias se cuentan de la misma manera que las cosas normales de todos los días. En ese estilo, lo extraordinario no se presenta como algo raro, sino como una parte más de la vida. Quien busque una novela que cuente así lo extraordinario encontrará un buen ejemplo en este libro."
+     },
+     {
+       "type": "narration",
+-      "text": "Cuando los gitanos trajeron finalmente el bloque de hielo, guardado en un cofre de madera forrado de paja en medio del calor tórrido de la ciénaga, José Arcadio Buendía pagó cinco reales para que sus hijos palparan aquel prodigio transparente. Al apoyar la palma sobre la superficie helada, declaró con el corazón henchido de júbilo que aquel era el diamante más grande de la tierra. Aquella curiosidad desmedida, no obstante, derivó con los años en una obsesión solitaria. Buscó con desesperación una ruta marítima que comunicara a la aldea con el resto del mundo civilizado, convencido de que la península de la Guajira o el mar Caribe debían encontrarse a pocas jornadas de marcha. Guiando a un puñado de hombres decididos a través de ciénagas humeantes y bosques tupidos donde no penetraba la luz del cielo, solo halló, encallado entre orquídeas y enredaderas a doce kilómetros de la costa, el esqueleto carcomido de un galeón español coronado de laureles."
++      "text": "Para quien no conozca el realismo mágico, esta novela puede ser una buena introducción. Como la historia sigue a una familia durante varias generaciones, conviene leer con atención y sin prisa. Quien tenga paciencia podrá seguir a cada persona de la familia y ver cómo pasa el tiempo de una generación a otra."
+     },
+     {
+       "type": "narration",
+-      "text": "Aquel hallazgo del galeón extraviado en la maleza confirmó ante sus ojos la dimensión circular y fantástica de su destino. Melquíades regresó años más tarde envejecido y sabio, portando pergaminos cifrados en sánscrito que predecían la historia entera de la estirpe Buendía con cien años de antelación. En aquel laboratorio atestado de probetas, alambiques y mercurio hirviente, José Arcadio Buendía comenzó a perder los límites entre la vigilia y la quimera. Conversaba largamente con el fantasma de Prudencio Aguilar, el rival a quien había atravesado la garganta con una lanza en su juventud remota y cuya sombra errante buscaba consuelo en la casa familiar lavándose las heridas con agua de albahaca."
++      "text": "En este texto no hay ninguna escena de la novela ni ninguna frase del libro. Hablamos del libro, pero no lo contamos. Quien quiera saber qué pasa en Macondo tiene que leer la novela, porque ningún texto corto puede ocupar su lugar."
+     },
+     {
+       "type": "narration",
+-      "text": "La lucidez del patriarca se quebró de manera definitiva una madrugada de marzo en que descubrió que el tiempo no avanzaba en línea recta, sino que daba vueltas en redondo sobre sí mismo. Atado por su familia al tronco de un corpulento castaño en el patio central para evitar que destrozara los enseres domésticos, José Arcadio Buendía permaneció durante años en un diálogo silencioso con las lluvias y los pájaros, balbuceando frases en un latín impecable que nadie comprendía. Su tragedia condensó la parábola de toda una estirpe condenada a cien años de soledad: una familia titánica que buscó incansablemente el saber y la justicia en un territorio mágico donde la realidad más cruda y el ensueño más prodigioso caminaban entrelazados."
++      "text": "Hay otro dato que conviene recordar. La novela se publicó en 1967, es decir, quince años antes de que el autor recibiera el Premio Nobel de Literatura. Quien busque más textos sobre García Márquez puede leer los otros textos de este curso sobre su obra."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Por qué fascinaban a José Arcadio Buendía los inventos que traían los gitanos de Melquíades a Macondo?",
++          "question": "According to the text, what does Cien años de soledad tell?",
+           "options": [
+-            "Porque creía que a través de ellos encontraría claves científicas y riquezas para situar a Macondo en el centro del conocimiento universal.",
+-            "Porque deseaba comercializarlos en las ciudades costeras del Caribe para enriquecerse rápidamente.",
+-            "Porque pretendía organizar un ejército regular para conquistar las tierras del interior andino.",
+-            "Porque era incapaz de trabajar en la agricultura y prefería entretener a los niños del pueblo."
++            "La historia de varias generaciones de la familia Buendía.",
++            "La vida de García Márquez en Colombia.",
++            "La historia de un pueblo real de Colombia."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El texto resalta la desaforada imaginación de José Arcadio Buendía y su afán por emplear los inventos para descubrir riquezas y conectar a Macondo con la ciencia y la sabiduría universal."
++          "explanation": "The text says that the novel tells the story of several generations of the Buendía family."
+         },
+         {
+-          "question": "¿Qué descubrieron José Arcadio Buendía y sus acompañantes durante la expedición en busca de una salida al mar?",
++          "question": "What is Macondo, according to the text?",
+           "options": [
+-            "El esqueleto carcomido de un antiguo galeón español encallado en medio de la densa selva.",
+-            "Un puerto mercantil próspero habitado por comerciantes extranjeros.",
+-            "Una mina inagotable de oro y diamantes custodiada por tribus originarias.",
+-            "El campamento abandonado de los alquimistas holandeses."
++            "El nombre de la familia Buendía.",
++            "Un pueblo que el autor inventó.",
++            "El título de otra novela del autor."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "El párrafo 4 describe que tras cruzar selvas tupidas hallaron, a doce kilómetros de la costa entre orquídeas y maleza, el esqueleto carcomido de un galeón español."
++          "correctIndex": 1,
++          "explanation": "The text says that the Buendía family lives in Macondo, a town the author invented."
+         },
+         {
+-          "question": "¿Cuál es el sentido simbólico del destino final de José Arcadio Buendía atado al castaño?",
++          "question": "What happens in magical realism, according to the text?",
+           "options": [
+-            "Refleja la caída en la obsesión solitaria y la concepción circular del tiempo que marcaría a toda la estirpe de Macondo.",
+-            "Demuestra que los habitantes del pueblo se rebelaron contra su autoridad fundacional.",
+-            "Evidencia que fue castigado por las autoridades coloniales debido a sus experimentos de alquimia.",
+-            "Indica que decidió voluntariamente convertirse en monje eremita."
++            "Las cosas extraordinarias se cuentan como las cosas normales.",
++            "Las cosas extraordinarias no aparecen en la historia.",
++            "Los libros no se pueden leer con atención."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El último párrafo ilustra cómo su locura, el descubrimiento de que el tiempo gira en redondo y su encierro bajo el castaño simbolizan la soledad trágica y circular de la familia Buendía."
++          "explanation": "The text says that in magical realism extraordinary things are told in the same way as ordinary, everyday things."
+         }
+       ]
+     }
+   },
+   "author": "Gabriel García Márquez (Colombia, 1927–2014)",
+   "work": "Cien años de soledad (1967)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Gabriel García Márquez",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "order": 13
+ }
+diff --git a/content/es-latam/stories/classics/b2/b2-14.json b/content/es-latam/stories/classics/b2/b2-14.json
+index c8976f8e..b095a515 100644
+--- a/content/es-latam/stories/classics/b2/b2-14.json
++++ b/content/es-latam/stories/classics/b2/b2-14.json
+@@ -1,84 +1,79 @@
+ {
+   "id": "story.b2.14.rivera",
+-  "title": "La vorágine",
++  "title": "Rivera y La vorágine",
+   "level": "B2",
+   "lesson": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Adaptación literaria de nivel B2 de La vorágine de José Eustasio Rivera: la fuga novelesca de Arturo Cova y Alicia hacia los Llanos del Orinoco, el descenso dantesco a la selva amazónica y la denuncia implacable del holocausto cauchero en las barracas de la Casa Arana.",
++  "summary": "Texto sobre José Eustasio Rivera, escritor colombiano, y sobre su novela La vorágine, que se apoya en crímenes reales contra los trabajadores del caucho.",
+   "characters": [
+     "Arturo Cova",
+-    "Alicia",
+-    "Clemente Silva",
+-    "La Selva"
++    "Alicia"
+   ],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "'Antes de que me hubiera apasionado por mujer alguna, jugué mi corazón al azar y me lo ganó la violencia'. Con esta confesión desgarradora y lapidaria abre Arturo Cova, poeta bogotano de temperamento arrebatado e inestable, el manuscrito en el que consignó su descenso a los infiernos del mundo amazónico. Acompañado por Alicia, una joven de buena familia que huyó con él para eludir un matrimonio impuesto por las convenciones asfixiantes de la sociedad andina, Cova galopó durante semanas a través de las inmensas planicies de los Llanos del Casanare. Bajo un horizonte infinito donde el cielo y la hierba brava se fundían en tempestades eléctricas, los amantes creyeron hallar un refugio heroico y salvaje; sin embargo, aquel espejismo pastoril apenas constituyó el preludio de una pesadilla mucho más honda y colosal."
++      "text": "José Eustasio Rivera fue un escritor colombiano. Nació en 1888 y murió en 1928, en Nueva York. En este texto vamos a hablar de una novela suya, La vorágine, que se publicó en 1924. No vamos a contar la novela, sino a presentarla: quien busque un resumen de todo lo que pasa en ella no lo va a encontrar aquí."
+     },
+     {
+       "type": "narration",
+-      "text": "La traición de hacendados inescrupulosos y la desaparición de Alicia empujaron al poeta a traspasar el límite donde terminan los llanos abiertos y comienza la maraña impenetrable de la selva tropical. Al internarse en el territorio tenebroso de los ríos Vichada, Guaviare y Amazonas, la naturaleza dejó de ser el idílico paisaje contemplado por los románticos para transformarse en una entidad viva, devoradora y trágica: una catedral vegetal atestada de miasmas fétidos, lianas parasitarias, fiebres palúdicas y una perpetua semipenumbra donde los árboles gigantescos libraban una lucha despiadada por alcanzar una rendija de sol. Dondequiera que fijaran la mirada los extraviados expedicionarios, la selva proclamaba su soberanía hostil sobre la debilidad humana."
++      "text": "El narrador de la novela es, casi todo el tiempo, Arturo Cova, un poeta. Cova huye de Bogotá con Alicia y viaja primero a los llanos de Casanare. Después entra en la selva. Todo esto ocurre en la época del auge del caucho. Un auge es un momento en que una actividad crece mucho."
+     },
+     {
+       "type": "narration",
+-      "text": "Allí, en el corazón verde del continente, Cova descubrió un horror infinitamente más atroz que las alimañas o las ciénagas ponzoñosas: la explotación salvaje de la fiebre del caucho. Empresas transnacionales y capataces desalmados habían instaurado en las cuencas del Putumayo y del Caquetá un régimen siniestro de esclavitud moderna. Miles de indígenas huitotos, boras y ocainas eran cazados en sus malocas ancestrales, encadenados y obligados bajo tortura a sangrar los troncos de las siringuillas para extraer el 'oro blanco' que alimentaba la voracidad industrial de Europa y Norteamérica. Quienquiera que no entregara la cuota semanal de látex era azotado sin piedad, mutilado en el cepo o condenado a morir de hambre en las barracas del exterminio."
++      "text": "La novela se apoya en crímenes reales contra los trabajadores del caucho, en la región del Putumayo. Aunque es una novela, y no un informe, muchos lectores conocieron esos crímenes gracias a ella. Es un caso en que un libro de ficción dio a conocer un problema real a muchos lectores."
+     },
+     {
+       "type": "narration",
+-      "text": "En medio de aquella vorágine de degradación moral emergió la figura conmovedora de Don Clemente Silva, un viejo cauchero mestizo de paso cansino y mirada noble que recorría los ríos amazónicos desde hacía dieciséis años. Don Clemente no buscaba riquezas ni látex; buscaba incansablemente los huesos de su hijo Luciano, asesinado en las trochas del caucho, para darles cristiana sepultura en su tierra natal. Guiado por ese amor paternal inquebrantable, el anciano conocía cada meandro de río, cada sendero secreto de siringal y cada engaño de los enganchadores de peones, encarnando la dignidad moral y la memoria herida de un pueblo sojuzgado por la codicia desmedida."
++      "text": "Todo aquel que abra el libro seguirá a un poeta que sale de Bogotá, que pasa por los llanos y que llega a la selva. Cualquiera que quiera entender el fondo de la historia puede buscar información sobre el caucho y sobre el Putumayo, porque la novela se apoya en esa realidad."
+     },
+     {
+       "type": "narration",
+-      "text": "Conmovido por el testimonio de Don Clemente y enloquecido por la sed de justicia y venganza, Arturo Cova transformó su pluma lírica en un instrumento de acusación inapelable. En las páginas febriles de su diario denunció los crímenes de lesa humanidad perpetrados por la infame Casa Arana, documentando los nombres de los verdugos, los abusos contra las mujeres nativas y el despoblamiento sistemático de cuencas fluviales enteras. Comprendió con lúcida amargura que, por más que la civilización urbana presumiera de progreso y refinamiento en los salones de las capitales, sus cimientos materiales reposaban sobre la sangre inocente derramada en las tinieblas de la manigua."
++      "text": "Quienquiera que lea la novela hoy puede preguntarse qué parte pertenece a la ficción y qué parte a la realidad. Lo que sí sabemos es que el autor tomó como base crímenes que ocurrieron de verdad. El viaje de la novela es el mismo dondequiera que se lea: de Bogotá a los llanos y de los llanos a la selva."
+     },
+     {
+       "type": "narration",
+-      "text": "El desenlace de la epopeya condensó el destino trágico de quienes osaron desafiar a la selva amazónica sin dominar sus misterios sagrados. Tras rescatar a Alicia y a su pequeño hijo recién nacido en un campamento abandonado, Cova y su mermado grupo de fugitivos se internaron desesperadamente en las profundidades del bosque fluvial para eludir a sus perseguidores. Meses después, un cónsul colombiano enviado a la frontera fluvial remitió un telegrama escueto y desolador al ministerio en Bogotá que selló para siempre la memoria literaria de América Latina: 'Los buscó inútilmente el cónsul. ¡Ni rastro de ellos! ¡Los devoró la selva!'. La gran novela de José Eustasio Rivera pervivió así como un grito universal de denuncia y una advertencia eterna sobre los abismos a los que conduce la ambición ciega del hombre."
++      "text": "Un dato más: entre la publicación de la novela, en 1924, y la muerte del autor, en 1928, pasaron solo cuatro años. Cualquiera que sea la opinión de cada lector sobre el libro, los datos son los mismos: una novela de 1924, un poeta que huye de Bogotá y crímenes reales como base."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Qué motivó inicialmente la huida de Arturo Cova y Alicia hacia los Llanos del Casanare?",
++          "question": "Who narrates most of La vorágine, according to the text?",
+           "options": [
+-            "El deseo de eludir una boda concertada por la familia de Alicia y romper con las asfixiantes convenciones sociales andinas.",
+-            "Una misión militar oficial encomendada por el gobierno para vigilar la frontera con Venezuela.",
+-            "La búsqueda deliberada de yacimientos de caucho para enriquecerse con el comercio internacional.",
+-            "Una invitación para fundar una colonia científica en las cabeceras del río Orinoco."
++            "Alicia, que sale de Bogotá con Cova.",
++            "Arturo Cova, un poeta.",
++            "José Eustasio Rivera, que habla de sí mismo."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "El párrafo 1 relata que Alicia huyó con Cova para evitar un matrimonio impuesto por su familia según las normas asfixiantes de la sociedad andina."
++          "correctIndex": 1,
++          "explanation": "The text says that the narrator of the novel is, almost all the time, Arturo Cova, a poet."
+         },
+         {
+-          "question": "¿Cuál es la misión fundamental que impulsa a Don Clemente Silva en la selva amazónica?",
++          "question": "What real events does the novel draw on, according to the text?",
+           "options": [
+-            "Buscar incansablemente los restos mortales de su hijo Luciano para darles sepultura digna.",
+-            "Acumular toneladas de caucho para comprar una hacienda ganadera en los llanos.",
+-            "Construir un aserradero industrial en las márgenes del río Putumayo.",
+-            "Guiar a los ejércitos coloniales hacia las ciudades perdidas del Dorado."
++            "La vida de Rivera en Nueva York.",
++            "Crímenes reales contra los trabajadores del caucho.",
++            "La historia de una familia de Bogotá."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "El párrafo 4 explica que el viejo cauchero llevaba dieciséis años recorriendo los ríos para encontrar los huesos de su hijo asesinado."
++          "correctIndex": 1,
++          "explanation": "The text says that the novel draws on real crimes against the rubber workers in the Putumayo region."
+         },
+         {
+-          "question": "¿Qué denuncia de orden histórico y social encierra la obra *La vorágine* de José Eustasio Rivera?",
++          "question": "What does the text say many readers learned from the novel?",
+           "options": [
+-            "Denuncia el régimen de esclavitud, tortura y exterminio sistemático sufrido por los pueblos indígenas durante la fiebre del caucho.",
+-            "Critica la falta de caminos pavimentados entre Bogotá y las capitales de provincia.",
+-            "Sostiene que la selva amazónica debía ser talada por completo para el desarrollo agropecuario.",
+-            "Advierte que la poesía lírica carece de valor frente a los tratados de comercio marítimo."
++            "Conocieron esos crímenes contra los trabajadores del caucho.",
++            "Aprendieron a escribir poesía.",
++            "Supieron cómo viajar a Casanare."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El párrafo 3 y 5 detallan que la novela expone el régimen atroz de esclavitud y las atrocidades de la Casa Arana contra los indígenas amazónicos."
++          "explanation": "The text says that many readers learned about those crimes thanks to the novel."
+         }
+       ]
+     }
+   },
+   "author": "José Eustasio Rivera (Colombia, 1888–1928)",
+   "work": "La vorágine (1924)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de José Eustasio Rivera",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "order": 14
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-13-01-voc.json b/content/es-latam/vocabulary/b2/b2-13-01-voc.json
+index 8024a4f2..a0c5e6c5 100644
+--- a/content/es-latam/vocabulary/b2/b2-13-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-13-01-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.13.01",
+   "lesson": "b2-13-01",
+-  "title": "Búsqueda de perfiles y requisitos profesionales",
+-  "theme": "Criterios de selección, convocatorias laborales y competencias requeridas",
++  "title": "Words for looking for a flat",
++  "theme": "A flat, a lift and a pet",
+   "words": [
+     {
+-      "lemma": "postulante",
+-      "translation": "applicant, candidate",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "requisito",
+-      "translation": "requirement, prerequisite",
+-      "pos": "noun"
++      "lemma": "amplio",
++      "translation": "spacious",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "competencia",
+-      "translation": "competence, skill",
++      "lemma": "el ascensor",
++      "translation": "lift",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "idoneidad",
+-      "translation": "suitability, fitness",
++      "lemma": "la mascota",
++      "translation": "pet",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "convocatoria",
+-      "translation": "call for applications, open competition",
++      "lemma": "el estacionamiento",
++      "translation": "parking space",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "desempeñar",
+-      "translation": "to carry out, to discharge",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "acreditar",
+-      "translation": "to certify, to prove credentials",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "riguroso",
+-      "translation": "rigorous, strict",
+-      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-13-02-voc.json b/content/es-latam/vocabulary/b2/b2-13-02-voc.json
+index 279a5a84..a85a4478 100644
+--- a/content/es-latam/vocabulary/b2/b2-13-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-13-02-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.13.02",
+   "lesson": "b2-13-02",
+-  "title": "Verificación empírica y ausencia de antecedentes",
+-  "theme": "Léxico de auditoría, refutación categórica y comprobación fáctica",
++  "title": "Words for repairs",
++  "theme": "A leak, a plumber and tools",
+   "words": [
+     {
+-      "lemma": "inexistencia",
+-      "translation": "non-existence",
++      "lemma": "el plomero",
++      "translation": "plumber",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "hallazgo",
+-      "translation": "finding, discovery",
+-      "pos": "noun"
++      "lemma": "arreglar",
++      "translation": "to fix",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "indicio",
+-      "translation": "indication, clue, evidence",
++      "lemma": "la fuga",
++      "translation": "leak",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "vacío",
+-      "translation": "void, gap, loophole",
++      "lemma": "la herramienta",
++      "translation": "tool",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "corroborar",
+-      "translation": "to corroborate, to confirm",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "desmentir",
+-      "translation": "to deny, to refute",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "infundado",
+-      "translation": "unfounded, baseless",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "categórico",
+-      "translation": "categorical, unequivocal",
+-      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-13-03-voc.json b/content/es-latam/vocabulary/b2/b2-13-03-voc.json
+index 62737e91..81984fa8 100644
+--- a/content/es-latam/vocabulary/b2/b2-13-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-13-03-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.13.03",
+   "lesson": "b2-13-03",
+-  "title": "Identificación de fuentes y entidades concretas",
+-  "theme": "Léxico de peritaje, contrastación epistémica y certidumbre factual",
++  "title": "Words for chargers and sockets",
++  "theme": "Things that work or do not work",
+   "words": [
+     {
+-      "lemma": "fuente",
+-      "translation": "source, informant",
++      "lemma": "el cargador",
++      "translation": "charger",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "entidad",
+-      "translation": "entity, agency",
++      "lemma": "el enchufe",
++      "translation": "socket, plug",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "testigo",
+-      "translation": "witness",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "certeza",
+-      "translation": "certainty, certitude",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "constatar",
+-      "translation": "to verify, to ascertain",
++      "lemma": "servir",
++      "translation": "to be useful, to work (for a purpose)",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "individualizar",
+-      "translation": "to single out, to individualize",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "fidedigno",
+-      "translation": "reliable, trustworthy",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "concreto",
+-      "translation": "concrete, specific",
+-      "pos": "adjective"
++      "lemma": "la pantalla",
++      "translation": "screen",
++      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-13-04-voc.json b/content/es-latam/vocabulary/b2/b2-13-04-voc.json
+index 23976bab..27e11aad 100644
+--- a/content/es-latam/vocabulary/b2/b2-13-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-13-04-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.13.04",
+   "lesson": "b2-13-04",
+-  "title": "Instrumentos normativos y canales de interlocución",
+-  "theme": "Mecanismos institucionales, vías de mediación y recursos legales",
++  "title": "Words for trust and support",
++  "theme": "Someone to talk to",
+   "words": [
+     {
+-      "lemma": "interlocutor",
+-      "translation": "interlocutor, dialogue partner",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "mecanismo",
+-      "translation": "mechanism, framework",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "vía",
+-      "translation": "avenue, channel, pathway",
+-      "pos": "noun"
++      "lemma": "confiar en",
++      "translation": "to trust",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "instancia",
+-      "translation": "authority, body, forum",
++      "lemma": "el apoyo",
++      "translation": "support",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "recurrir",
+-      "translation": "to resort to, to appeal",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "canalizar",
+-      "translation": "to channel, to streamline",
++      "lemma": "compartir",
++      "translation": "to share",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "vinculante",
+-      "translation": "binding, enforceable",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "viable",
+-      "translation": "viable, workable",
+-      "pos": "adjective"
++      "lemma": "el consejo",
++      "translation": "advice",
++      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-13-05-voc.json b/content/es-latam/vocabulary/b2/b2-13-05-voc.json
+index 6dbddd31..2022987c 100644
+--- a/content/es-latam/vocabulary/b2/b2-13-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-13-05-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.13.05",
+   "lesson": "b2-13-05",
+-  "title": "Criterios institucionales y cláusulas estatutarias",
+-  "theme": "Léxico de estatutos, convocatorias públicas y pliegos de condiciones",
++  "title": "Words for job ads",
++  "theme": "Jobs, pay and schedules",
+   "words": [
+     {
+-      "lemma": "postulación",
+-      "translation": "application, candidacy",
++      "lemma": "la vacante",
++      "translation": "job opening",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "pliego",
+-      "translation": "specifications sheet, tender conditions",
++      "lemma": "el sueldo",
++      "translation": "salary, pay",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "estatuto",
+-      "translation": "statute, by-law",
++      "lemma": "el turno",
++      "translation": "shift",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "baremo",
+-      "translation": "scoring scale, grading scale",
++      "lemma": "el currículum",
++      "translation": "CV",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "incurrir",
+-      "translation": "to incur, to fall into",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "subsanar",
+-      "translation": "to rectify, to remedy",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "taxativo",
+-      "translation": "exhaustive, imperative, non-negotiable",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "excluyente",
+-      "translation": "exclusive, disqualifying",
+-      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-14-01-voc.json b/content/es-latam/vocabulary/b2/b2-14-01-voc.json
+index 59b854f1..1ec3786c 100644
+--- a/content/es-latam/vocabulary/b2/b2-14-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-14-01-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.14.01",
+   "lesson": "b2-14-01",
+-  "title": "Principios universales y mandatos éticos",
+-  "theme": "Léxico de deontología, universalidad y preceptos inmutables",
++  "title": "Words for the door and messages",
++  "theme": "Who is at the door?",
+   "words": [
+     {
+-      "lemma": "precepto",
+-      "translation": "precept, rule, command",
++      "lemma": "el timbre",
++      "translation": "doorbell",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "imperativo",
+-      "translation": "imperative, absolute duty",
++      "lemma": "el recado",
++      "translation": "message (left for someone)",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "contingencia",
+-      "translation": "contingency, uncertainty",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "universalidad",
+-      "translation": "universality",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "prescribir",
+-      "translation": "to prescribe, to lay down",
++      "lemma": "molestar",
++      "translation": "to disturb, to bother",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "acatar",
+-      "translation": "to comply with, to abide by",
++      "lemma": "atender",
++      "translation": "to answer, to attend to",
+       "pos": "verb"
+-    },
+-    {
+-      "lemma": "categórico",
+-      "translation": "categorical, unconditional",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "inalienable",
+-      "translation": "inalienable, non-transferable",
+-      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-14-02-voc.json b/content/es-latam/vocabulary/b2/b2-14-02-voc.json
+index 424d5ca5..763ffd9a 100644
+--- a/content/es-latam/vocabulary/b2/b2-14-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-14-02-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.14.02",
+   "lesson": "b2-14-02",
+-  "title": "Obstáculos insalvables y persistencia argumentativa",
+-  "theme": "Léxico de tenacidad, factores adversos e ineficacia de obstáculos",
++  "title": "Words for hurry, tiredness and saving",
++  "theme": "However much you try",
+   "words": [
+     {
+-      "lemma": "empeño",
+-      "translation": "determination, endeavor, effort",
++      "lemma": "la prisa",
++      "translation": "hurry",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "escollo",
+-      "translation": "pitfall, stumbling block",
++      "lemma": "el cansancio",
++      "translation": "tiredness",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "adversidad",
+-      "translation": "adversity, hardship",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "resistencia",
+-      "translation": "resistance, endurance",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "obstaculizar",
+-      "translation": "to hinder, to obstruct",
++      "lemma": "ahorrar",
++      "translation": "to save (money)",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "persistir",
+-      "translation": "to persist, to endure",
++      "lemma": "gastar",
++      "translation": "to spend (money)",
+       "pos": "verb"
+-    },
+-    {
+-      "lemma": "infructuoso",
+-      "translation": "fruitless, futile",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "recalcitrante",
+-      "translation": "recalcitrant, stubborn",
+-      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-14-03-voc.json b/content/es-latam/vocabulary/b2/b2-14-03-voc.json
+index f893fb18..858bd3b6 100644
+--- a/content/es-latam/vocabulary/b2/b2-14-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-14-03-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.14.03",
+   "lesson": "b2-14-03",
+-  "title": "Indiferencia retórica y determinación inquebrantable",
+-  "theme": "Léxico de resolución ética, firmeza cívica y neutralización de alternativas",
++  "title": "Words for opinions",
++  "theme": "Whatever people say",
+   "words": [
+     {
+-      "lemma": "determinación",
+-      "translation": "determination, resolve",
++      "lemma": "el chisme",
++      "translation": "piece of gossip",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "resolución",
+-      "translation": "resolution, steadfastness",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "veredicto",
+-      "translation": "verdict, judicial decision",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "inquebrantable",
+-      "translation": "unwavering, unbreakable",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "dirimir",
+-      "translation": "to resolve, to settle a dispute",
++      "lemma": "criticar",
++      "translation": "to criticise",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "asumir",
+-      "translation": "to assume, to take on",
++      "lemma": "opinar",
++      "translation": "to have an opinion, to think",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "inmutable",
+-      "translation": "immutable, unchangeable",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "inexorable",
+-      "translation": "inexorable, relentless",
+-      "pos": "adjective"
++      "lemma": "apoyar",
++      "translation": "to support",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-14-04-voc.json b/content/es-latam/vocabulary/b2/b2-14-04-voc.json
+index 59c6ef4d..69a41d63 100644
+--- a/content/es-latam/vocabulary/b2/b2-14-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-14-04-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.14.04",
+   "lesson": "b2-14-04",
+-  "title": "Cuantificación universal y colectividades jurídicas",
+-  "theme": "Léxico de representatividad, colectivos amparados y cuantificación legal",
++  "title": "Words for sharing and offering",
++  "theme": "Giving things to everyone",
+   "words": [
+     {
+-      "lemma": "colectividad",
+-      "translation": "collectivity, community group",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "amparo",
+-      "translation": "protection, constitutional relief",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "titularidad",
+-      "translation": "ownership, legal title",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "beneficiario",
+-      "translation": "beneficiary",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "acoger",
+-      "translation": "to welcome, to grant shelter/protection",
++      "lemma": "repartir",
++      "translation": "to hand out, to share out",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "abarcar",
+-      "translation": "to encompass, to cover",
++      "lemma": "aprovechar",
++      "translation": "to make use of, to take advantage of",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "omnicomprensivo",
+-      "translation": "all-encompassing, overarching",
+-      "pos": "adjective"
++      "lemma": "el invitado",
++      "translation": "guest",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "vinculado",
+-      "translation": "linked, bound",
+-      "pos": "adjective"
++      "lemma": "regalar",
++      "translation": "to give (as a gift)",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-14-05-voc.json b/content/es-latam/vocabulary/b2/b2-14-05-voc.json
+index 80282435..812261ad 100644
+--- a/content/es-latam/vocabulary/b2/b2-14-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-14-05-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.14.05",
+   "lesson": "b2-14-05",
+-  "title": "Generalizaciones éticas y mandatos constitucionales",
+-  "theme": "Léxico de jurisprudencia constitucional, derechos humanos y dignidad",
++  "title": "Words for notices and letters",
++  "theme": "Formal written Spanish",
+   "words": [
+     {
+-      "lemma": "jurisprudencia",
+-      "translation": "jurisprudence, case law",
++      "lemma": "el formulario",
++      "translation": "form (to fill in)",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "bloque",
+-      "translation": "constitutional block, body of law",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "ponderación",
+-      "translation": "proportionality test, balancing of rights",
+-      "pos": "noun"
++      "lemma": "estimado",
++      "translation": "dear (at the start of a letter)",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "intangibilidad",
+-      "translation": "intangibility, inviolability",
+-      "pos": "noun"
++      "lemma": "atentamente",
++      "translation": "yours sincerely",
++      "pos": "adverb"
+     },
+     {
+-      "lemma": "vulnerar",
+-      "translation": "to infringe, to violate",
++      "lemma": "rogar",
++      "translation": "to request, to ask (formal)",
+       "pos": "verb"
+-    },
+-    {
+-      "lemma": "amparar",
+-      "translation": "to protect, to grant constitutional shelter",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "imprescriptible",
+-      "translation": "imprescriptible, not subject to statute of limitations",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "vinculante",
+-      "translation": "binding, compulsory",
+-      "pos": "adjective"
+     }
+   ]
+ }
