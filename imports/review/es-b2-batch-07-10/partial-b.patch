@@ -1,0 +1,4381 @@
+diff --git a/content/es-latam/exercises/b2/b2-09-01-ex.json b/content/es-latam/exercises/b2/b2-09-01-ex.json
+index f70c5a4a..583f5de0 100644
+--- a/content/es-latam/exercises/b2/b2-09-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-09-01-ex.json
+@@ -15,12 +15,16 @@
+           "unlikely, far-fetched"
+         ],
+         [
+-          "vislumbrar",
+-          "to glimpse, foresee"
++          "factible",
++          "feasible, achievable"
+         ],
+         [
+           "la viabilidad",
+           "viability, feasibility"
++        ],
++        [
++          "vislumbrar",
++          "to glimpse, to foresee"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +35,31 @@
+       "id": "b2-09-01.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la estructura gramatical normativa para plantear un escenario hipotético potencial en presente?",
++      "question": "Which sentence correctly imagines a cheaper rent that is unlikely to happen?",
+       "options": [
+-        "Si la comisión tuviera facultades legales, sancionaría a las empresas infractoras.",
+-        "Si la comisión tendría facultades legales, sancionaría a las empresas infractoras.",
+-        "Si la comisión tendrá facultades legales, sancionara a las empresas infractoras."
++        "Si el alquiler fuera más barato, nos mudaríamos a ese barrio.",
++        "Si el alquiler sería más barato, nos mudaríamos a ese barrio.",
++        "Si el alquiler es más barato, nos mudaríamos a ese barrio."
+       ],
+       "correct": 0,
+       "teaches": [
+         "hypothetical-structures"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "present-tense"
++      }
+     },
+     {
+       "id": "b2-09-01.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Si el gobierno __ incentivos fiscales a las energías limpias, la matriz energética se transformaría con rapidez.",
+-      "hint": "ofrecer - imperfecto de subjuntivo",
+-      "answer": "ofreciera",
+-      "english": "If the government offered tax incentives to clean energy, the energy matrix would transform quickly.",
++      "sentence": "Si la ciudad __ más parques, la gente viviría mejor.",
++      "hint": "tener",
++      "answers": [
++        "tuviera",
++        "tuviese"
++      ],
++      "english": "If the city had more parks, people would live better.",
+       "teaches": [
+         "hypothetical-structures"
+       ]
+@@ -60,48 +70,66 @@
+       "category": "grammar",
+       "tiles": [
+         "Si",
+-        "pudiera",
+-        "elegir",
+-        "viviría",
+-        "en",
++        "pudiéramos",
++        "vislumbrar",
+         "el",
+-        "sur"
++        "futuro,",
++        "tomaríamos",
++        "mejores",
++        "decisiones."
+       ],
+       "solution": [
+         "Si",
+-        "pudiera",
+-        "elegir",
+-        "viviría",
+-        "en",
++        "pudiéramos",
++        "vislumbrar",
+         "el",
+-        "sur"
++        "futuro,",
++        "tomaríamos",
++        "mejores",
++        "decisiones."
+       ],
+-      "english": "If I could choose I would live in the south.",
++      "english": "If we could foresee the future, we would make better decisions.",
+       "teaches": [
+         "hypothetical-structures"
+       ]
+     },
+     {
+       "id": "b2-09-01.ex05",
+-      "type": "multiple-choice",
++      "type": "dialogue-complete",
+       "category": "dialogue",
+-      "question": "¿Qué réplica formal utiliza con precisión la condición estricta en una reunión diplomática?",
++      "prompt": [
++        {
++          "speaker": "Ana",
++          "text": "¿Crees que la empresa abrirá una oficina en Lima?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        },
++        {
++          "speaker": "Ana",
++          "text": "Ojalá, sería una gran oportunidad."
++        }
++      ],
+       "options": [
+-        "—Respaldaremos la propuesta siempre que la contraparte garantice la neutralidad de las aguas territoriales.",
+-        "—Respaldaremos la propuesta si la contraparte garantizaría la neutralidad mañana.",
+-        "—A menos que respaldamos la propuesta, no habrá firmado ningún tratado."
++        "Es poco probable, pero si abriera una, yo pediría trabajar allí.",
++        "Es poco probable, pero si abriría una, yo pediría trabajar allí.",
++        "Es poco probable, pero si abre una, yo pediría trabajar allí."
+       ],
+       "correct": 0,
+       "teaches": [
+         "hypothetical-structures"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "present-tense"
++      }
+     },
+     {
+       "id": "b2-09-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Si el parlamento aprobara el presupuesto extraordinario, el ministerio construiría tres hospitales.",
+-      "english": "If parliament approved the extraordinary budget, the ministry would build three hospitals.",
++      "sentence": "Si viviéramos más cerca del trabajo, llegaríamos a casa más temprano.",
++      "english": "If we lived closer to work, we would get home earlier.",
+       "teaches": [
+         "hypothetical-structures"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-09-02-ex.json b/content/es-latam/exercises/b2/b2-09-02-ex.json
+index 5da7c756..dc7a3c28 100644
+--- a/content/es-latam/exercises/b2/b2-09-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-09-02-ex.json
+@@ -6,21 +6,25 @@
+       "type": "matching",
+       "category": "vocabulary",
+       "pairs": [
+-        [
+-          "la elocuencia",
+-          "eloquence"
+-        ],
+         [
+           "solemne",
+           "solemn"
+         ],
+         [
+           "atenuar",
+-          "to mitigate, attenuate"
++          "to soften, to tone down"
+         ],
+         [
+           "la deferencia",
+           "deference, courtesy"
++        ],
++        [
++          "comedido",
++          "measured, restrained"
++        ],
++        [
++          "sugerir",
++          "to suggest"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +35,32 @@
+       "id": "b2-09-02.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la función comunicativa de la forma 'quisiera' frente a 'quiero' en una solicitud formal?",
++      "question": "You want to ask your manager for a favour and sound polite. Which sentence works?",
+       "options": [
+-        "Atenúa la imposición directa mediante una fórmula de cortesía y deferencia diplomática.",
+-        "Indica que el deseo ya se cumplió plenamente durante la semana pasada.",
+-        "Expresa una orden militar obligatoria sin derecho a réplica."
++        "Quisiera pedirle un favor.",
++        "Quise pedirle un favor.",
++        "Querré pedirle un favor."
+       ],
+       "correct": 0,
+       "teaches": [
+         "apodosis-condicional-literaria"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "preterito-indefinido",
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-09-02.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Si las circunstancias lo permitieran, el ministro __ presentar personalmente las conclusiones.",
+-      "hint": "preferir - condicional simple",
+-      "answer": "preferiría",
+-      "english": "If circumstances permitted it, the minister would prefer to personally present the conclusions.",
++      "sentence": "Si no tuviera tanto trabajo, __ acompañarlos al concierto.",
++      "hint": "querer, I",
++      "answers": [
++        "quisiera",
++        "querría"
++      ],
++      "english": "If I did not have so much work, I would like to go with you to the concert.",
+       "teaches": [
+         "apodosis-condicional-literaria"
+       ]
+@@ -59,37 +70,52 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Quisiera",
+-        "solicitar",
+-        "una",
+-        "reunión",
+-        "con",
+-        "el",
+-        "director"
++        "Con",
++        "tanto",
++        "trabajo,",
++        "Ana",
++        "debiera",
++        "descansar",
++        "un",
++        "poco."
+       ],
+       "solution": [
+-        "Quisiera",
+-        "solicitar",
+-        "una",
+-        "reunión",
+-        "con",
+-        "el",
+-        "director"
++        "Con",
++        "tanto",
++        "trabajo,",
++        "Ana",
++        "debiera",
++        "descansar",
++        "un",
++        "poco."
+       ],
+-      "english": "I would like to request a meeting with the director.",
++      "english": "With so much work, Ana should rest a little.",
+       "teaches": [
+         "apodosis-condicional-literaria"
+       ]
+     },
+     {
+       "id": "b2-09-02.ex05",
+-      "type": "multiple-choice",
++      "type": "dialogue-complete",
+       "category": "dialogue",
+-      "question": "¿Qué réplica formal utiliza con precisión la condición estricta en una reunión diplomática?",
++      "prompt": [
++        {
++          "speaker": "Empleado",
++          "text": "Buenos días. ¿En qué puedo ayudarle?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        },
++        {
++          "speaker": "Empleado",
++          "text": "Claro, un momento, por favor."
++        }
++      ],
+       "options": [
+-        "—Respaldaremos la propuesta siempre que la contraparte garantice la neutralidad de las aguas territoriales.",
+-        "—Respaldaremos la propuesta si la contraparte garantizaría la neutralidad mañana.",
+-        "—A menos que respaldamos la propuesta, no habrá firmado ningún tratado."
++        "Quisiera cambiar mi reserva para el viernes.",
++        "Quisiera que cambiar mi reserva para el viernes.",
++        "Quisiéramos cambiar mi reserva para el viernes."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -100,8 +126,8 @@
+       "id": "b2-09-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Quisiéramos expresar nuestro más sincero agradecimiento a la delegación anfitriona.",
+-      "english": "We would like to express our most sincere gratitude to the host delegation.",
++      "sentence": "Quisiéramos reservar una mesa para cuatro personas.",
++      "english": "We would like to book a table for four.",
+       "teaches": [
+         "apodosis-condicional-literaria"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-09-03-ex.json b/content/es-latam/exercises/b2/b2-09-03-ex.json
+index 100c7035..dce81c24 100644
+--- a/content/es-latam/exercises/b2/b2-09-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-09-03-ex.json
+@@ -8,19 +8,23 @@
+       "pairs": [
+         [
+           "el protocolo",
+-          "protocol"
++          "protocol, formal procedure"
+         ],
+         [
+           "afable",
+-          "affable, genial"
++          "friendly, kind"
+         ],
+         [
+           "rubricar",
+-          "to sign, endorse"
++          "to sign, to endorse"
+         ],
+         [
+-          "la prerrogativa",
+-          "prerogative, privilege"
++          "la audiencia",
++          "formal hearing, audience"
++        ],
++        [
++          "prudente",
++          "cautious, sensible"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +35,27 @@
+       "id": "b2-09-03.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la fórmula más adecuada para solicitar un favor formal en correspondencia institucional?",
++      "question": "Which sentence is the most polite way to ask a colleague to send you the report today?",
+       "options": [
+-        "Le agradecería enormemente si pudiera facilitarnos la documentación pertinente a la brevedad.",
+-        "Tienes que darme todos los documentos mañana mismo porque los necesito urgente.",
+-        "Si me das los papeles ahora, no te pongo una multa."
++        "Le agradecería que me enviara el informe hoy.",
++        "Le agradecería que me envía el informe hoy.",
++        "Le agradecería que me enviar el informe hoy."
+       ],
+       "correct": 0,
+       "teaches": [
+         "polite-softening"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-09-03.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Si la junta directiva tuviera a bien __ la sesión, los peritos presentarían los balances.",
+-      "hint": "reanudar - infinitivo",
+-      "answer": "reanudar",
+-      "english": "If the board of directors would be so kind as to resume the session, the experts would present the balance sheets.",
++      "sentence": "Si fuera tan amable de __ aquí, lo recibirán enseguida.",
++      "answer": "esperar",
++      "english": "If you would be so kind as to wait here, they will see you right away.",
+       "teaches": [
+         "polite-softening"
+       ]
+@@ -59,47 +65,65 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Si",
+-        "fuera",
+-        "tan",
+-        "amable",
+-        "firme",
+-        "aquí"
++        "Le",
++        "agradecería",
++        "que",
++        "me",
++        "explicara",
++        "el",
++        "protocolo."
+       ],
+       "solution": [
+-        "Si",
+-        "fuera",
+-        "tan",
+-        "amable",
+-        "firme",
+-        "aquí"
++        "Le",
++        "agradecería",
++        "que",
++        "me",
++        "explicara",
++        "el",
++        "protocolo."
+       ],
+-      "english": "If you would be so kind sign here.",
++      "english": "I would be grateful if you explained the protocol to me.",
+       "teaches": [
+         "polite-softening"
+       ]
+     },
+     {
+       "id": "b2-09-03.ex05",
+-      "type": "multiple-choice",
++      "type": "dialogue-complete",
+       "category": "dialogue",
+-      "question": "¿Qué réplica formal utiliza con precisión la condición estricta en una reunión diplomática?",
++      "prompt": [
++        {
++          "speaker": "Jefa",
++          "text": "¿Podemos hablar del presupuesto hoy?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        },
++        {
++          "speaker": "Jefa",
++          "text": "De acuerdo, entonces nos vemos mañana."
++        }
++      ],
+       "options": [
+-        "—Respaldaremos la propuesta siempre que la contraparte garantice la neutralidad de las aguas territoriales.",
+-        "—Respaldaremos la propuesta si la contraparte garantizaría la neutralidad mañana.",
+-        "—A menos que respaldamos la propuesta, no habrá firmado ningún tratado."
++        "Sería mejor que habláramos mañana, si le parece bien.",
++        "Sería mejor que hablamos mañana, si le parece bien.",
++        "Sería mejor que hablar mañana, si le parece bien."
+       ],
+       "correct": 0,
+       "teaches": [
+         "polite-softening"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-09-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Si fuera tan amable de aguardar en la sala contigua, el embajador lo atenderá de inmediato.",
+-      "english": "If you would be so kind as to wait in the adjacent room, the ambassador will attend to you immediately.",
++      "sentence": "Si tuviera un momento, me gustaría hacerle una pregunta.",
++      "english": "If you had a moment, I would like to ask you a question.",
+       "teaches": [
+         "polite-softening"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-09-04-ex.json b/content/es-latam/exercises/b2/b2-09-04-ex.json
+index 53a4e7d5..0af7e18e 100644
+--- a/content/es-latam/exercises/b2/b2-09-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-09-04-ex.json
+@@ -7,20 +7,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el laudo",
+-          "arbitration award, ruling"
++          "la cláusula",
++          "clause, term of a contract"
+         ],
+         [
+           "vinculante",
+-          "binding (legal)"
++          "binding"
+         ],
+         [
+-          "la cláusula",
+-          "clause, stipulation"
++          "acatar",
++          "to abide by, to comply with"
++        ],
++        [
++          "estipular",
++          "to stipulate, to lay down"
+         ],
+         [
+           "rescindir",
+-          "to rescind, terminate"
++          "to cancel (a contract)"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +35,29 @@
+       "id": "b2-09-04.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la interpretación jurídica exacta de 'El contrato entrará en vigor a condición de que se ratifique el tratado'?",
++      "question": "Which sentence says that they will sign only if the other side respects the deadline?",
+       "options": [
+-        "La ratificación del tratado es un requisito previo indispensable para que el contrato surta efectos.",
+-        "El contrato ya está vigente y no importa si el tratado se ratifica o se rechaza.",
+-        "El tratado quedará anulado en cuanto se firme el contrato privado."
++        "Firmaremos el contrato siempre que respeten el plazo.",
++        "Firmaremos el contrato siempre que respetarán el plazo.",
++        "Firmaremos el contrato siempre que respetarían el plazo."
+       ],
+       "correct": 0,
+       "teaches": [
+         "conditional-conjunctions"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "futuro-simple",
++        "2": "condicional-regular"
++      }
+     },
+     {
+       "id": "b2-09-04.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Respaldaremos la candidatura de la coalición siempre que sus diputados __ las reformas ambientales.",
+-      "hint": "apoyar - presente de subjuntivo",
+-      "answer": "apoyen",
+-      "english": "We will back the coalition's candidacy provided that its deputies support the environmental reforms.",
++      "sentence": "La empresa podrá rescindir el contrato siempre que __ con un mes de antelación.",
++      "hint": "avisar",
++      "answer": "avise",
++      "english": "The company may cancel the contract provided that it gives notice a month in advance.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+@@ -59,47 +67,72 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Firmaremos",
+-        "siempre",
++        "Aceptaremos",
++        "con",
++        "tal",
++        "de",
+         "que",
+-        "respeten",
++        "ambas",
++        "partes",
++        "acaten",
+         "la",
+-        "soberanía"
++        "cláusula."
+       ],
+       "solution": [
+-        "Firmaremos",
+-        "siempre",
++        "Aceptaremos",
++        "con",
++        "tal",
++        "de",
+         "que",
+-        "respeten",
++        "ambas",
++        "partes",
++        "acaten",
+         "la",
+-        "soberanía"
++        "cláusula."
+       ],
+-      "english": "We will sign provided that they respect the sovereignty.",
++      "english": "We will accept as long as both sides abide by the clause.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+     },
+     {
+       "id": "b2-09-04.ex05",
+-      "type": "multiple-choice",
++      "type": "dialogue-complete",
+       "category": "dialogue",
+-      "question": "¿Qué réplica formal utiliza con precisión la condición estricta en una reunión diplomática?",
++      "prompt": [
++        {
++          "speaker": "Ana",
++          "text": "¿Vas a aceptar el puesto en Lima?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        },
++        {
++          "speaker": "Ana",
++          "text": "Es una buena condición, ¿no?"
++        }
++      ],
+       "options": [
+-        "—Respaldaremos la propuesta siempre que la contraparte garantice la neutralidad de las aguas territoriales.",
+-        "—Respaldaremos la propuesta si la contraparte garantizaría la neutralidad mañana.",
+-        "—A menos que respaldamos la propuesta, no habrá firmado ningún tratado."
++        "Sí, a condición de que me permitan visitar a mi familia.",
++        "Sí, a condición de que me permiten visitar a mi familia.",
++        "Sí, a condición de que me permitirán visitar a mi familia."
+       ],
+       "correct": 0,
+       "teaches": [
+         "conditional-conjunctions"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense",
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-09-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El sindicato desconvocará el paro general siempre que la patronal restituya a los trabajadores cesanteados.",
+-      "english": "The union will call off the general strike provided that management reinstates the laid-off workers.",
++      "sentence": "Firmaremos el contrato siempre que nos den más tiempo.",
++      "english": "We will sign the contract provided that they give us more time.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-09-05-ex.json b/content/es-latam/exercises/b2/b2-09-05-ex.json
+index 329e1aca..36c71aa9 100644
+--- a/content/es-latam/exercises/b2/b2-09-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-09-05-ex.json
+@@ -10,17 +10,21 @@
+           "la salvedad",
+           "proviso, exception"
+         ],
++        [
++          "la excepción",
++          "exception"
++        ],
+         [
+           "subsanar",
+-          "to remedy, rectify"
++          "to put right, to remedy"
+         ],
+         [
+           "ineludible",
+-          "unavoidable, inescapable"
++          "unavoidable"
+         ],
+         [
+           "la acreditación",
+-          "accreditation, credentials"
++          "pass, credentials"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +35,29 @@
+       "id": "b2-09-05.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la función semántica de 'a menos que' en la frase 'El acto se celebrará en la plaza a menos que llueva'?",
++      "question": "Which sentence says that the party will be held in the courtyard unless it rains?",
+       "options": [
+-        "Señala a la lluvia como el único obstáculo que cancelaría la celebración del acto al aire libre.",
+-        "Informa que el acto fue suspendido por orden policial desde la semana pasada.",
+-        "Garantiza que lloverá torrencialmente durante toda la ceremonia."
++        "La fiesta se hará en el patio a menos que llueva.",
++        "La fiesta se hará en el patio a menos que llueve.",
++        "La fiesta se hará en el patio a menos que lloverá."
+       ],
+       "correct": 0,
+       "teaches": [
+         "conditional-conjunctions"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense",
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-09-05.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El tribunal anulará la concesión marítima a no ser que los operadores __ las multas ecológicas.",
+-      "hint": "abonar - presente de subjuntivo",
+-      "answer": "abonen",
+-      "english": "The court will annul the maritime concession unless the operators pay the ecological fines.",
++      "sentence": "Nadie puede entrar al edificio salvo que __ una acreditación.",
++      "hint": "tener",
++      "answer": "tenga",
++      "english": "No one can enter the building unless they have a pass.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+@@ -59,49 +67,70 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "No",
+-        "habrá",
+-        "acuerdo",
++        "Saldremos",
++        "a",
++        "las",
++        "ocho",
+         "a",
+-        "menos",
++        "no",
++        "ser",
+         "que",
+-        "cedan"
++        "llueva."
+       ],
+       "solution": [
+-        "No",
+-        "habrá",
+-        "acuerdo",
++        "Saldremos",
+         "a",
+-        "menos",
++        "las",
++        "ocho",
++        "a",
++        "no",
++        "ser",
+         "que",
+-        "cedan"
++        "llueva."
+       ],
+-      "english": "There will be no agreement unless they yield.",
++      "english": "We will leave at eight unless it rains.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+     },
+     {
+       "id": "b2-09-05.ex05",
+-      "type": "multiple-choice",
++      "type": "dialogue-complete",
+       "category": "dialogue",
+-      "question": "¿Qué réplica formal utiliza con precisión la condición estricta en una reunión diplomática?",
++      "prompt": [
++        {
++          "speaker": "Marta",
++          "text": "¿Vendrás mañana a la reunión?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        },
++        {
++          "speaker": "Marta",
++          "text": "Entonces avísame si no puedes."
++        }
++      ],
+       "options": [
+-        "—Respaldaremos la propuesta siempre que la contraparte garantice la neutralidad de las aguas territoriales.",
+-        "—Respaldaremos la propuesta si la contraparte garantizaría la neutralidad mañana.",
+-        "—A menos que respaldamos la propuesta, no habrá firmado ningún tratado."
++        "Sí, salvo que tenga que viajar.",
++        "Sí, salvo que tengo que viajar.",
++        "Sí, salvo que tendré que viajar."
+       ],
+       "correct": 0,
+       "teaches": [
+         "conditional-conjunctions"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense",
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-09-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El proyecto minero será clausurado definitivamente a menos que la empresa remedie los vertidos tóxicos.",
+-      "english": "The mining project will be closed definitively unless the company remediates the toxic spills.",
++      "sentence": "Iremos al parque a menos que llueva.",
++      "english": "We will go to the park unless it rains.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-09-consolidation-ex.json b/content/es-latam/exercises/b2/b2-09-consolidation-ex.json
+index 5c48df36..02ee7828 100644
+--- a/content/es-latam/exercises/b2/b2-09-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-09-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "inverosímil",
+-          "unlikely, far-fetched"
++          "factible",
++          "feasible, achievable"
+         ],
+         [
+-          "el laudo",
+-          "arbitration award, ruling"
++          "el protocolo",
++          "protocol, formal procedure"
+         ],
+         [
+-          "vinculante",
+-          "binding (legal)"
++          "la cláusula",
++          "clause, term of a contract"
+         ],
+         [
+-          "ineludible",
+-          "unavoidable, inescapable"
++          "la excepción",
++          "exception"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +31,31 @@
+       "id": "b2-09-consolidation.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿En cuál de las siguientes oraciones la correlación condicional hipotética es correcta?",
++      "question": "Which sentence correctly imagines taking a year off?",
+       "options": [
+-        "Si la diplomacia internacional actuara con celeridad, se evitaría la escalada bélica.",
+-        "Si la diplomacia internacional actuaría con celeridad, se evitaría la escalada bélica.",
+-        "Si la diplomacia internacional actuará con celeridad, se evitaría la escalada bélica."
++        "Si pudiera tomarme un año libre, viajaría por todo el continente.",
++        "Si podría tomarme un año libre, viajaría por todo el continente.",
++        "Si pudiera tomarme un año libre, viajaré por todo el continente."
+       ],
+       "correct": 0,
+       "teaches": [
+         "hypothetical-structures"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-09-consolidation.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Le agradeceríamos infinitamente si __ a bien revisar el borrador del acuerdo de paz.",
+-      "hint": "tener - imperfecto subjuntivo",
+-      "answer": "tuviera",
+-      "english": "We would be infinitely grateful if you would be so kind as to review the draft of the peace agreement.",
++      "sentence": "Le agradecería que me __ la fecha de la reunión.",
++      "hint": "confirmar",
++      "answers": [
++        "confirmara",
++        "confirmase"
++      ],
++      "english": "I would be grateful if you confirmed the date of the meeting to me.",
+       "teaches": [
+         "polite-softening"
+       ]
+@@ -58,10 +64,10 @@
+       "id": "b2-09-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La empresa minera suspenderá los trabajos a condición de que las comunidades __ el bloqueo vial.",
+-      "hint": "levantar - presente subjuntivo",
+-      "answer": "levanten",
+-      "english": "The mining company will suspend operations on condition that the communities lift the road blockade.",
++      "sentence": "Te presto el carro con tal de que lo __ antes de la noche.",
++      "hint": "devolver, you (informal)",
++      "answer": "devuelvas",
++      "english": "I will lend you the car as long as you bring it back before night.",
+       "teaches": [
+         "conditional-conjunctions"
+       ]
+@@ -71,37 +77,39 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "No",
+-        "habrá",
+-        "acuerdo",
+-        "a",
+-        "menos",
+-        "que",
+-        "cedan"
++        "Si",
++        "pudiera",
++        "elegir,",
++        "quisiera",
++        "leer",
++        "todos",
++        "los",
++        "cuentos."
+       ],
+       "solution": [
+-        "No",
+-        "habrá",
+-        "acuerdo",
+-        "a",
+-        "menos",
+-        "que",
+-        "cedan"
++        "Si",
++        "pudiera",
++        "elegir,",
++        "quisiera",
++        "leer",
++        "todos",
++        "los",
++        "cuentos."
+       ],
+-      "english": "There will be no agreement unless they yield.",
++      "english": "If I could choose, I would like to read all the stories.",
+       "teaches": [
+-        "conditional-conjunctions"
++        "apodosis-condicional-literaria"
+       ]
+     },
+     {
+       "id": "b2-09-consolidation.ex06",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué valor estilístico aporta el uso de 'quisiéramos' frente a 'queremos' en una declaración pública?",
++      "question": "In which sentence can the conditional be replaced by the -ra form with the same meaning?",
+       "options": [
+-        "Aporta modestia y cortesía diplomática, mitigando la contundencia de la demanda.",
+-        "Indica que el deseo fue cancelado por falta de presupuesto institucional.",
+-        "Señala una obligación militar impuesta por un tribunal penal internacional."
++        "Querría hablar con usted un momento.",
++        "Viajaría por todo el continente.",
++        "Compraría una casa en el sur."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -112,25 +120,34 @@
+       "id": "b2-09-consolidation.ex07",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "En el cuento de Isabel Allende, ¿por qué el Coronel decide recurrir a las palabras de Belisa Crepusculario?",
++      "question": "According to the text, in which year did Cuentos de Eva Luna appear?",
+       "options": [
+-        "Porque busca conquistar la presidencia de la república mediante la persuasión cívica en lugar de las armas.",
+-        "Porque planea descifrar un mapa secreto del tesoro de los antiguos conquistadores.",
+-        "Porque quiere redactar un código penal implacable contra los desertores de su ejército."
++        "Salió en 1989.",
++        "Salió en 1987.",
++        "Salió en 1982."
+       ],
+-      "correct": 0,
+-      "teaches": [
+-        "hypothetical-structures"
+-      ]
++      "correct": 0
+     },
+     {
+       "id": "b2-09-consolidation.ex08",
++      "type": "multiple-choice",
++      "category": "reading",
++      "question": "According to the text, who tells the stories of the book?",
++      "options": [
++        "Eva Luna, la narradora de una novela anterior.",
++        "Un narrador sin nombre que no aparece en el libro.",
++        "Un lector que empieza por la primera novela."
++      ],
++      "correct": 0
++    },
++    {
++      "id": "b2-09-consolidation.ex09",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Si las naciones protegieran sus reservas naturales con firmeza, la biosfera planetaria no correría peligro.",
+-      "english": "If nations protected their nature reserves firmly, the planetary biosphere would not be in danger.",
++      "sentence": "Saldremos temprano a menos que llueva mucho.",
++      "english": "We will leave early unless it rains a lot.",
+       "teaches": [
+-        "hypothetical-structures"
++        "conditional-conjunctions"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-10-01-ex.json b/content/es-latam/exercises/b2/b2-10-01-ex.json
+index 0841fcb3..fecba53c 100644
+--- a/content/es-latam/exercises/b2/b2-10-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-10-01-ex.json
+@@ -8,19 +8,23 @@
+       "pairs": [
+         [
+           "la encrucijada",
+-          "crossroads, turning point"
++          "crossroads, difficult choice"
+         ],
+         [
+-          "el desenlace",
+-          "outcome, denouement"
++          "el punto de inflexión",
++          "turning point"
+         ],
+         [
+-          "irreversible",
+-          "irreversible"
++          "en retrospectiva",
++          "in hindsight"
+         ],
+         [
+-          "la coyuntura",
+-          "circumstance, juncture"
++          "desencadenar",
++          "to set off, to trigger"
++        ],
++        [
++          "la secuela",
++          "consequence, aftermath"
+         ]
+       ],
+       "teaches": [
+@@ -29,27 +33,30 @@
+     },
+     {
+       "id": "b2-10-01.ex02",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
+-      "sentence": "Si la cancillería __ las alertas diplomáticas, no se habría desatado la crisis fronteriza.",
+-      "hint": "haber atendido",
+-      "answer": "hubiera atendido",
+-      "english": "If the foreign ministry had heeded the diplomatic alerts, the border crisis would not have broken out.",
++      "question": "Which sentence says what would have happened if the rain had not come?",
++      "options": [
++        "Si no hubiera llovido, habríamos ido al lago.",
++        "Si no habría llovido, habríamos ido al lago.",
++        "Si no hubiera llovido, habremos ido al lago."
++      ],
++      "correct": 0,
+       "teaches": [
+         "pluscuamperfecto-subjuntivo-si"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "futuro-perfecto"
++      }
+     },
+     {
+       "id": "b2-10-01.ex03",
+-      "type": "multiple-choice",
++      "type": "fill-blank",
+       "category": "grammar",
+-      "question": "¿Cuál es la formulación canónica para una hipótesis contrafáctica irreal referida exclusivamente al pasado?",
+-      "options": [
+-        "Si + pluscuamperfecto de subjuntivo en la condición y condicional compuesto en la consecuencia.",
+-        "Si + condicional compuesto en la condición y pluscuamperfecto de indicativo en la consecuencia.",
+-        "Si + pretérito indefinido en la condición y condicional simple en la consecuencia."
+-      ],
+-      "correct": 0,
++      "sentence": "Si __ salido antes, habríamos llegado a tiempo.",
++      "hint": "haber, we",
++      "answer": "hubiéramos",
++      "english": "If we had left earlier, we would have arrived on time.",
+       "teaches": [
+         "pluscuamperfecto-subjuntivo-si"
+       ]
+@@ -60,27 +67,29 @@
+       "category": "grammar",
+       "tiles": [
+         "Si",
+-        "hubiéramos",
+-        "previsto",
+-        "la",
+-        "crisis,",
++        "no",
++        "hubiera",
++        "sido",
++        "por",
++        "el",
++        "mapa,",
++        "nos",
+         "habríamos",
+-        "tomado",
+-        "medidas",
+-        "inmediatas."
++        "perdido."
+       ],
+       "solution": [
+         "Si",
+-        "hubiéramos",
+-        "previsto",
+-        "la",
+-        "crisis,",
++        "no",
++        "hubiera",
++        "sido",
++        "por",
++        "el",
++        "mapa,",
++        "nos",
+         "habríamos",
+-        "tomado",
+-        "medidas",
+-        "inmediatas."
++        "perdido."
+       ],
+-      "english": "If we had foreseen the crisis, we would have taken immediate measures.",
++      "english": "If it had not been for the map, we would have got lost.",
+       "teaches": [
+         "pluscuamperfecto-subjuntivo-si"
+       ]
+@@ -91,22 +100,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Historiadora",
+-          "text": "¿Cree usted que la guerra civil de 1891 pudo evitarse?"
++          "speaker": "Ana",
++          "text": "¿Llegaste a tiempo al aeropuerto?"
+         },
+         {
+-          "speaker": "Profesor",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Historiadora",
+-          "text": "En efecto, la intransigencia mutua precipitó un desenlace irreparable."
++          "speaker": "Ana",
++          "text": "Qué suerte tuviste."
+         }
+       ],
+       "options": [
+-        "Si el presidente Balmaceda hubiera pactado con el parlamento, el país se habría evitado un baño de sangre.",
+-        "El puerto comercial de Valparaíso exportaba trigo hacia California en barcos veleros.",
+-        "Los tratados internacionales se firman siempre en ceremonias solemnes de estado."
++        "Sí, pero si no hubiera sido por un amigo, habría perdido el vuelo.",
++        "Sí, pero si no habría sido por un amigo, habría perdido el vuelo.",
++        "Sí, pero si no hubiera sido para un amigo, habría perdido el vuelo."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -117,11 +126,11 @@
+       "id": "b2-10-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Si las partes hubiesen negociado de buena fe, el desenlace habría sido pacífico.",
+-      "english": "If the parties had negotiated in good faith, the outcome would have been peaceful.",
++      "sentence": "Si hubiéramos salido más temprano, habríamos llegado antes del concierto.",
++      "english": "If we had left earlier, we would have arrived before the concert.",
+       "teaches": [
+         "pluscuamperfecto-subjuntivo-si"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-10-02-ex.json b/content/es-latam/exercises/b2/b2-10-02-ex.json
+index 7e872f2f..a3cc43cc 100644
+--- a/content/es-latam/exercises/b2/b2-10-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-10-02-ex.json
+@@ -11,16 +11,20 @@
+           "mistake, blunder"
+         ],
+         [
+-          "soslayar",
+-          "to sidestep, to bypass"
++          "la imprevisión",
++          "lack of foresight"
+         ],
+         [
+-          "el menoscabo",
+-          "detriment, impairment"
++          "imprudente",
++          "rash, careless"
+         ],
+         [
+           "la rectificación",
+-          "rectification, correction"
++          "correction"
++        ],
++        [
++          "soslayar",
++          "to sidestep, to avoid"
+         ]
+       ],
+       "teaches": [
+@@ -29,27 +33,27 @@
+     },
+     {
+       "id": "b2-10-02.ex02",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
+-      "sentence": "Si el comité hubiera analizado los datos con rigor, no se __ cometido semejante desacierto.",
+-      "hint": "haber - pluscuamperfecto de subjuntivo",
+-      "answer": "hubiera",
+-      "english": "If the committee had analyzed the data rigorously, such a blunder would not have been made.",
++      "question": "Which sentence correctly says \"If I had known, I would have come\"?",
++      "options": [
++        "Si lo hubiera sabido, hubiera venido.",
++        "Si lo habría sabido, habría venido.",
++        "Si lo hubiera sabido, hubiera venir."
++      ],
++      "correct": 0,
+       "teaches": [
+         "apodosis-condicional-literaria"
+       ]
+     },
+     {
+       "id": "b2-10-02.ex03",
+-      "type": "multiple-choice",
++      "type": "fill-blank",
+       "category": "grammar",
+-      "question": "¿Por qué es admisible decir 'Si me hubieras avisado, te hubiera acompañado' en español formal?",
+-      "options": [
+-        "Porque el pluscuamperfecto de subjuntivo en '-ra' puede alternar con el condicional compuesto en la apódosis.",
+-        "Porque la conjunción 'si' exige obligatoriamente subjuntivo en ambas cláusulas de la oración.",
+-        "Porque en las oraciones subordinadas condicionales nunca se admite el modo indicativo."
+-      ],
+-      "correct": 0,
++      "sentence": "Si hubiéramos salido antes, hubiéramos __ a tiempo.",
++      "hint": "llegar",
++      "answer": "llegado",
++      "english": "If we had left earlier, we would have arrived on time.",
+       "teaches": [
+         "apodosis-condicional-literaria"
+       ]
+@@ -59,30 +63,28 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Con",
+-        "más",
+-        "prudencia,",
+-        "el",
+-        "equipo",
+-        "se",
++        "Si",
++        "me",
++        "hubieras",
++        "avisado,",
++        "te",
+         "hubiera",
+-        "ahorrado",
+-        "este",
+-        "fracaso."
++        "acompañado",
++        "al",
++        "médico."
+       ],
+       "solution": [
+-        "Con",
+-        "más",
+-        "prudencia,",
+-        "el",
+-        "equipo",
+-        "se",
++        "Si",
++        "me",
++        "hubieras",
++        "avisado,",
++        "te",
+         "hubiera",
+-        "ahorrado",
+-        "este",
+-        "fracaso."
++        "acompañado",
++        "al",
++        "médico."
+       ],
+-      "english": "With more prudence, the team would have spared themselves this failure.",
++      "english": "If you had told me, I would have gone with you to the doctor.",
+       "teaches": [
+         "apodosis-condicional-literaria"
+       ]
+@@ -93,22 +95,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Auditor",
+-          "text": "¿Qué impacto tuvo la falta de supervisión contable en la filial?"
++          "speaker": "Ana",
++          "text": "Me dijeron que cambiaron la hora de la reunión."
+         },
+         {
+-          "speaker": "Contralora",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Auditor",
+-          "text": "Una lección costosa que exige protocolos de auditoría permanentes."
++          "speaker": "Ana",
++          "text": "Sí, nadie avisó a todos."
+         }
+       ],
+       "options": [
+-        "Si la gerencia hubiera revisado los balances semestrales, el fraude se hubiera detectado en su fase inicial.",
+-        "Las oficinas centrales cuentan con estacionamiento subterráneo para los empleados.",
+-        "Los contratos de arrendamiento comercial suelen firmarse por tres años renovables."
++        "Si lo hubiera sabido, hubiera llegado más temprano.",
++        "Si lo habría sabido, hubiera llegado más temprano.",
++        "Si lo hubiera sabido, hubiera llegando más temprano."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -119,11 +121,11 @@
+       "id": "b2-10-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "De haber mediado mayor prudencia, no se hubiera producido este lamentable menoscabo.",
+-      "english": "Had greater prudence intervened, this regrettable impairment would not have occurred.",
++      "sentence": "Si hubiéramos tenido más tiempo, hubiéramos visitado el museo.",
++      "english": "If we had had more time, we would have visited the museum.",
+       "teaches": [
+         "apodosis-condicional-literaria"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-10-03-ex.json b/content/es-latam/exercises/b2/b2-10-03-ex.json
+index c7cf4281..6bd20f6f 100644
+--- a/content/es-latam/exercises/b2/b2-10-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-10-03-ex.json
+@@ -8,19 +8,23 @@
+       "pairs": [
+         [
+           "el remordimiento",
+-          "remorse, regret"
++          "remorse, pang of conscience"
+         ],
+         [
+-          "la negligencia",
+-          "negligence"
++          "el reproche",
++          "reproach, criticism"
+         ],
+         [
+           "desaprovechar",
+-          "to waste, to squander"
++          "to waste, to miss (a chance)"
+         ],
+         [
+           "la amargura",
+           "bitterness"
++        ],
++        [
++          "lamentar",
++          "to regret, to be sorry about"
+         ]
+       ],
+       "teaches": [
+@@ -29,27 +33,29 @@
+     },
+     {
+       "id": "b2-10-03.ex02",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
+-      "sentence": "¡Si al menos nos __ la verdad a tiempo, habríamos protegido a los damnificados!",
+-      "hint": "haber dicho",
+-      "answer": "hubieras dicho",
+-      "english": "If at least you had told us the truth in time, we would have protected the victims!",
++      "question": "Which sentence says that you should have called earlier but did not?",
++      "options": [
++        "Debería haber llamado antes.",
++        "Debería llamar antes.",
++        "Debería llamado antes."
++      ],
++      "correct": 0,
+       "teaches": [
+         "regrets-reproaches"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "deber-vs-tener-que"
++      }
+     },
+     {
+       "id": "b2-10-03.ex03",
+-      "type": "multiple-choice",
++      "type": "fill-blank",
+       "category": "grammar",
+-      "question": "¿Qué matiz pragmático aporta 'Habrías debido avisar' frente a 'Debiste avisar'?",
+-      "options": [
+-        "Atenúa cortésmente el reproche mediante el condicional compuesto.",
+-        "Indica una obligación futura que aún no se ha cumplido.",
+-        "Expresa una orden militar obligatoria sin derecho a réplica."
+-      ],
+-      "correct": 0,
++      "sentence": "Tendrías que __ avisado antes de cambiar la hora.",
++      "answer": "haber",
++      "english": "You should have warned us before changing the time.",
+       "teaches": [
+         "regrets-reproaches"
+       ]
+@@ -59,28 +65,26 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Habría",
+-        "sido",
+-        "preferible",
++        "Tendríamos",
+         "que",
+-        "hubiéramos",
+-        "esperado",
+-        "el",
+-        "informe",
+-        "final."
++        "haber",
++        "reservado",
++        "la",
++        "mesa",
++        "con",
++        "tiempo."
+       ],
+       "solution": [
+-        "Habría",
+-        "sido",
+-        "preferible",
++        "Tendríamos",
+         "que",
+-        "hubiéramos",
+-        "esperado",
+-        "el",
+-        "informe",
+-        "final."
++        "haber",
++        "reservado",
++        "la",
++        "mesa",
++        "con",
++        "tiempo."
+       ],
+-      "english": "It would have been preferable for us to have waited for the final report.",
++      "english": "We should have booked the table in advance.",
+       "teaches": [
+         "regrets-reproaches"
+       ]
+@@ -91,22 +95,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Diputado",
+-          "text": "El saldo presupuestario de la obra pública fue un verdadero desastre."
++          "speaker": "Ana",
++          "text": "¿Te arrepientes de algo?"
+         },
+         {
+-          "speaker": "Ministra",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Diputado",
+-          "text": "Reconocer ese error es el primer paso para corregir el rumbo institucional."
++          "speaker": "Ana",
++          "text": "Todos tenemos algo así."
+         }
+       ],
+       "options": [
+-        "Reconozco que habríamos debido fiscalizar las licitaciones con mayor rigor desde el primer momento.",
+-        "El cemento portland es el material más utilizado en la construcción de puentes carreteros.",
+-        "La biblioteca del congreso nacional atesora colecciones de leyes coloniales."
++        "Me arrepiento de no haber viajado más cuando era joven.",
++        "Me arrepiento no haber viajado más cuando era joven.",
++        "Me arrepiento de no haber viajar más cuando era joven."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -117,11 +121,11 @@
+       "id": "b2-10-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "¡Si al menos hubiesen verificado los antecedentes, no lamentaríamos este engaño!",
+-      "english": "If at least they had verified the background, we would not be lamenting this deception!",
++      "sentence": "Deberías haber avisado antes de cambiar la hora.",
++      "english": "You should have warned us before changing the time.",
+       "teaches": [
+         "regrets-reproaches"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-10-04-ex.json b/content/es-latam/exercises/b2/b2-10-04-ex.json
+index d3bd702a..8bf49713 100644
+--- a/content/es-latam/exercises/b2/b2-10-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-10-04-ex.json
+@@ -7,20 +7,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el atenuante",
+-          "mitigating factor"
++          "previsible",
++          "foreseeable, predictable"
++        ],
++        [
++          "la omisión",
++          "omission, failure to act"
+         ],
+         [
+           "el detonante",
+           "trigger, spark"
+         ],
+         [
+-          "la omisión",
+-          "omission, failure to act"
++          "ponderar",
++          "to weigh up, to consider carefully"
+         ],
+         [
+-          "ponderar",
+-          "to weigh, to consider carefully"
++          "dilucidar",
++          "to clear up, to work out"
+         ]
+       ],
+       "teaches": [
+@@ -29,27 +33,29 @@
+     },
+     {
+       "id": "b2-10-04.ex02",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
+-      "sentence": "De __ mediado una oportuna advertencia, el desastre aéreo se habría evitado por completo.",
+-      "hint": "to have",
+-      "answer": "haber",
+-      "english": "Had a timely warning intervened, the air disaster would have been completely avoided.",
++      "question": "Which sentence says without si that if we had known, we would not have signed?",
++      "options": [
++        "De haberlo sabido, no habríamos firmado.",
++        "De hubiéramos sabido, no habríamos firmado.",
++        "De haberlo sabido, no firmaremos."
++      ],
++      "correct": 0,
+       "teaches": [
+         "implicit-conditionals"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-10-04.ex03",
+-      "type": "multiple-choice",
++      "type": "fill-blank",
+       "category": "grammar",
+-      "question": "¿A qué proposición condicional equivale exactamente la frase 'De haber conocido los términos...'?",
+-      "options": [
+-        "A 'Si hubiera conocido los términos...'",
+-        "A 'Dado que conocí los términos...'",
+-        "A 'A pesar de que conozca los términos...'"
+-      ],
+-      "correct": 0,
++      "sentence": "De __ necesario, te llamo mañana.",
++      "answer": "ser",
++      "english": "If necessary, I will call you tomorrow.",
+       "teaches": [
+         "implicit-conditionals"
+       ]
+@@ -59,28 +65,20 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "De",
+-        "haber",
+-        "previsto",
+-        "la",
+-        "contingencia,",
+-        "no",
+-        "habríamos",
+-        "sufrido",
+-        "pérdidas."
++        "Estudiando",
++        "más,",
++        "aprobarías",
++        "el",
++        "examen."
+       ],
+       "solution": [
+-        "De",
+-        "haber",
+-        "previsto",
+-        "la",
+-        "contingencia,",
+-        "no",
+-        "habríamos",
+-        "sufrido",
+-        "pérdidas."
++        "Estudiando",
++        "más,",
++        "aprobarías",
++        "el",
++        "examen."
+       ],
+-      "english": "Had we foreseen the contingency, we would not have suffered losses.",
++      "english": "If you studied more, you would pass the exam.",
+       "teaches": [
+         "implicit-conditionals"
+       ]
+@@ -91,22 +89,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Fiscal",
+-          "text": "¿Pudo la junta directiva impedir la quiebra fraudulenta de la entidad bancaria?"
++          "speaker": "Ana",
++          "text": "¿Vas a ir a la reunión del lunes?"
+         },
+         {
+-          "speaker": "Perito judicial",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Fiscal",
+-          "text": "Esa negligencia inexcusable compromete directamente su responsabilidad penal."
++          "speaker": "Ana",
++          "text": "Entonces te mando un resumen."
+         }
+       ],
+       "options": [
+-        "De haber actuado con la debida diligencia frente a los informes contables, el daño patrimonial habría sido mínimo.",
+-        "El edificio principal del banco fue inaugurado por el gobernador en el año 1975.",
+-        "Las tasas de interés de los créditos hipotecarios varían según la inflación anual."
++        "De tener tiempo, iría, pero tengo mucho trabajo.",
++        "De tuviera tiempo, iría, pero tengo mucho trabajo.",
++        "Tener tiempo, iría, pero tengo mucho trabajo."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -117,11 +115,11 @@
+       "id": "b2-10-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "De haber ponderado los atenuantes, la corte no habría impuesto esa condena.",
+-      "english": "Had it weighed the mitigating factors, the court would not have imposed that sentence.",
++      "sentence": "De haberlo sabido, habríamos venido antes.",
++      "english": "Had we known, we would have come earlier.",
+       "teaches": [
+         "implicit-conditionals"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-10-05-ex.json b/content/es-latam/exercises/b2/b2-10-05-ex.json
+index 0aa1a85d..1004fdc6 100644
+--- a/content/es-latam/exercises/b2/b2-10-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-10-05-ex.json
+@@ -8,19 +8,23 @@
+       "pairs": [
+         [
+           "la disyuntiva",
+-          "dilemma, fork in the road"
++          "dilemma, choice between two options"
+         ],
+         [
+-          "ineludible",
+-          "inescapable, unavoidable"
++          "el sesgo",
++          "bias, slant"
+         ],
+         [
+           "desentrañar",
+-          "to unravel, to figure out"
++          "to unravel, to work out"
+         ],
+         [
+           "el espejismo",
+           "mirage, illusion"
++        ],
++        [
++          "concluyente",
++          "conclusive, decisive"
+         ]
+       ],
+       "teaches": [
+@@ -29,27 +33,30 @@
+     },
+     {
+       "id": "b2-10-05.ex02",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
+-      "sentence": "Aun cuando __ intentado frenar la insurrección, las fuerzas armadas no habrían podido contener la cólera popular.",
+-      "hint": "haber",
+-      "answer": "hubieran",
+-      "english": "Even if they had tried to curb the insurrection, the armed forces would not have been able to contain popular anger.",
++      "question": "Which sentence says without si that if you had arrived earlier, you would have seen the start?",
++      "options": [
++        "Hubiera llegado antes, habría visto el principio.",
++        "Hubiera llegar antes, habría visto el principio.",
++        "Había llegado antes, habría visto el principio."
++      ],
++      "correct": 0,
+       "teaches": [
+         "inversiones-condicionales-de-haber"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "pluscuamperfecto"
++      }
+     },
+     {
+       "id": "b2-10-05.ex03",
+-      "type": "multiple-choice",
++      "type": "fill-blank",
+       "category": "grammar",
+-      "question": "¿Qué valor discursivo transmite 'Aun cuando hubiésemos ganado, nada habría cambiado'?",
+-      "options": [
+-        "Concesión contrafáctica que resalta la futilidad o ineficacia de la condición frente al desenlace.",
+-        "Certeza absoluta sobre un acontecimiento que ocurrirá en el porvenir.",
+-        "Duda existencial sobre hechos que están sucediendo en el presente."
+-      ],
+-      "correct": 0,
++      "sentence": "Aun cuando __ salido antes, no habríamos llegado a tiempo.",
++      "hint": "haber, we",
++      "answer": "hubiéramos",
++      "english": "Even if we had left earlier, we would not have arrived on time.",
+       "teaches": [
+         "inversiones-condicionales-de-haber"
+       ]
+@@ -59,28 +66,28 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Aun",
+-        "cuando",
+-        "hubiéramos",
+-        "cedido,",
++        "Aunque",
++        "hubiera",
++        "estudiado",
++        "toda",
+         "la",
+-        "ruptura",
++        "noche,",
++        "no",
+         "habría",
+-        "sido",
+-        "inevitable."
++        "aprobado."
+       ],
+       "solution": [
+-        "Aun",
+-        "cuando",
+-        "hubiéramos",
+-        "cedido,",
++        "Aunque",
++        "hubiera",
++        "estudiado",
++        "toda",
+         "la",
+-        "ruptura",
++        "noche,",
++        "no",
+         "habría",
+-        "sido",
+-        "inevitable."
++        "aprobado."
+       ],
+-      "english": "Even if we had yielded, the rupture would have been inevitable.",
++      "english": "Even if I had studied all night, I would not have passed.",
+       "teaches": [
+         "inversiones-condicionales-de-haber"
+       ]
+@@ -91,22 +98,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Filósofo",
+-          "text": "¿Cree usted en el determinismo histórico ciego o en el libre albedrío de los pueblos?"
++          "speaker": "Ana",
++          "text": "Perdimos el tren por cinco minutos."
+         },
+         {
+-          "speaker": "Sociólogo",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Filósofo",
+-          "text": "Una distinción capital para no caer en el derrotismo cínico."
++          "speaker": "Ana",
++          "text": "Es verdad, fue una lástima."
+         }
+       ],
+       "options": [
+-        "Aun cuando ciertas fuerzas estructurales condicionen la época, si los ciudadanos hubiesen carecido de voluntad moral, ningún avance social se habría consolidado.",
+-        "Los tratados de sociología se organizan por capítulos temáticos e índices alfabéticos.",
+-        "El debate parlamentario concluyó a las tres de la madrugada tras una votación unánime."
++        "Hubiéramos salido antes, habríamos llegado a tiempo.",
++        "Hubiéramos salidos antes, habríamos llegado a tiempo.",
++        "Hubiéramos salido antes, habríamos llegamos a tiempo."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -117,11 +124,11 @@
+       "id": "b2-10-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Aun cuando hubiésemos intervenido con presteza, el resultado habría sido idéntico.",
+-      "english": "Even if we had intervened promptly, the outcome would have been identical.",
++      "sentence": "Hubiera sabido la verdad, habría actuado de otra manera.",
++      "english": "Had I known the truth, I would have acted differently.",
+       "teaches": [
+         "inversiones-condicionales-de-haber"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-10-consolidation-ex.json b/content/es-latam/exercises/b2/b2-10-consolidation-ex.json
+index 68f1614d..9b017693 100644
+--- a/content/es-latam/exercises/b2/b2-10-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-10-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la encrucijada",
+-          "crossroads, turning point"
++          "la secuela",
++          "consequence, aftermath"
+         ],
+         [
+-          "el desenlace",
+-          "outcome, denouement"
+-        ],
+-        [
+-          "el desacierto",
+-          "mistake, blunder"
++          "la imprevisión",
++          "lack of foresight"
+         ],
+         [
+           "el detonante",
+           "trigger, spark"
++        ],
++        [
++          "el espejismo",
++          "mirage, illusion"
+         ]
+       ],
+       "teaches": [
+@@ -31,104 +31,100 @@
+       "id": "b2-10-consolidation.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál de las siguientes construcciones ejemplifica una apódosis estilística culta con pluscuamperfecto de subjuntivo?",
++      "question": "Which sentence correctly imagines a different past for the bridge?",
+       "options": [
+-        "Si el gobierno hubiera escuchado al pueblo, se hubiera evitado el levantamiento.",
+-        "Si el gobierno escucharía al pueblo, se evitaría el levantamiento social.",
+-        "Si el gobierno haya escuchado al pueblo, se habrá evitado el levantamiento."
++        "Si hubiéramos cerrado el puente antes, habríamos evitado el accidente.",
++        "Si habríamos cerrado el puente antes, habríamos evitado el accidente.",
++        "Si cerráramos el puente antes, habríamos evitado el accidente."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "apodosis-condicional-literaria"
+-      ]
++        "pluscuamperfecto-subjuntivo-si"
++      ],
++      "distractor_skills": {
++        "2": "hypothetical-structures"
++      }
+     },
+     {
+       "id": "b2-10-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿A qué equivale semánticamente la locución 'De haber actuado con prudencia...'?",
++      "question": "Which sentence expresses regret about not having studied more?",
+       "options": [
+-        "A una condición irreal en el pasado: 'Si hubiéramos actuado con prudencia...'",
+-        "A una justificación causal consumada: 'Porque actuamos con prudencia...'",
+-        "A una hipótesis de futuro contingente: 'Siempre que actuemos con prudencia...'"
++        "Me arrepiento de no haber estudiado más.",
++        "Me arrepiento no haber estudiado más.",
++        "Me arrepiento de no haber estudiando más."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "implicit-conditionals"
++        "regrets-reproaches"
+       ]
+     },
+     {
+       "id": "b2-10-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "¡Si al menos __ consultado a los expertos, no habríamos incurrido en semejante negligencia!",
+-      "hint": "haber",
+-      "answer": "hubiéramos",
+-      "english": "If at least we had consulted the experts, we would not have incurred such negligence!",
++      "sentence": "De __ sabido la verdad, habrían decidido otra cosa.",
++      "answer": "haber",
++      "english": "Had they known the truth, they would have decided something else.",
+       "teaches": [
+-        "regrets-reproaches"
++        "implicit-conditionals"
+       ]
+     },
+     {
+       "id": "b2-10-consolidation.ex05",
+-      "type": "sentence-order",
++      "type": "sentence-builder",
+       "category": "grammar",
+-      "sentences": [
+-        "El país enfrentaba una encrucijada política de consecuencias irreversibles. [The country faced a political crossroads of irreversible consequences.]",
+-        "Si los líderes hubieran pactado con sensatez, la confrontación armada no se habría desencadenado. [If leaders had agreed sensibly, armed confrontation would not have been triggered.]",
+-        "De haber mediado mayor prudencia internacional, el saldo humanitario hubiera sido menor. [Had greater international prudence intervened, the humanitarian toll would have been smaller.]",
+-        "Aun cuando ambas facciones hubiesen firmado la tregua, las heridas tardaron décadas en cicatrizar. [Even if both factions had signed the truce, the wounds took decades to heal.]"
++      "tiles": [
++        "Aunque",
++        "hubiéramos",
++        "llegado",
++        "antes,",
++        "no",
++        "habríamos",
++        "visto",
++        "el",
++        "principio."
+       ],
+       "solution": [
+-        0,
+-        1,
+-        2,
+-        3
++        "Aunque",
++        "hubiéramos",
++        "llegado",
++        "antes,",
++        "no",
++        "habríamos",
++        "visto",
++        "el",
++        "principio."
+       ],
++      "english": "Even if we had arrived earlier, we would not have seen the start.",
+       "teaches": [
+-        "pluscuamperfecto-subjuntivo-si",
+-        "apodosis-condicional-literaria",
+-        "implicit-conditionals",
+         "inversiones-condicionales-de-haber"
+       ]
+     },
+     {
+       "id": "b2-10-consolidation.ex06",
+-      "type": "dialogue-complete",
+-      "category": "dialogue",
+-      "prompt": [
+-        {
+-          "speaker": "Crítico",
+-          "text": "¿Cómo juzga la trayectoria vital del protagonista de Conversación en La Catedral?"
+-        },
+-        {
+-          "speaker": "Profesor",
+-          "text": "_____"
+-        },
+-        {
+-          "speaker": "Crítico",
+-          "text": "Una lúcida radiografía de la parálisis moral ante el autoritarismo."
+-        }
+-      ],
++      "type": "multiple-choice",
++      "category": "reading",
++      "question": "According to the text, where do Santiago Zavala and Ambrosio talk?",
+       "options": [
+-        "Santiago Zavala personifica el tormento contrafáctico: si no hubiera roto con su familia ni hubiera abandonado sus ideales, su destino habría sido diametralmente opuesto.",
+-        "Los diarios de la tarde se vendían en los quioscos de la plaza San Martín por veinte centavos.",
+-        "El clima invernal de la capital peruana se caracteriza por una persistente garúa marina."
++        "En un lugar de Lima llamado La Catedral.",
++        "En un café de Arequipa llamado La Crónica.",
++        "En una plaza de Lima llamada San Martín."
+       ],
+-      "correct": 0,
+-      "teaches": [
+-        "pluscuamperfecto-subjuntivo-si"
+-      ]
++      "correct": 0
+     },
+     {
+       "id": "b2-10-consolidation.ex07",
+-      "type": "dictation",
+-      "category": "listening",
+-      "sentence": "De haber sabido el precio de sus concesiones, jamás habrían claudicado.",
+-      "english": "Had they known the price of their concessions, they would never have yielded.",
+-      "teaches": [
+-        "implicit-conditionals"
+-      ]
++      "type": "multiple-choice",
++      "category": "reading",
++      "question": "According to the text, what does the novel show?",
++      "options": [
++        "El Perú de la época de Manuel Odría.",
++        "El Perú de los años posteriores a 1969.",
++        "El Perú de antes de la llegada de Odría al poder."
++      ],
++      "correct": 0
+     },
+     {
+       "id": "b2-10-consolidation.ex08",
+@@ -136,13 +132,31 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Redacta una reflexión contrafáctica sobre una decisión histórica empleando la fórmula 'Si + pluscuamperfecto de subjuntivo, condicional compuesto' o 'De haber + participio'.",
+-          "answer": "De haber sabido las consecuencias institucionales de aquel decreto, los legisladores habrían rechazado la propuesta por unanimidad."
++          "prompt": "Say what would have happened if you had left earlier, using si + the pluperfect subjunctive.",
++          "answer": "Si hubiera salido antes, habría llegado a tiempo."
++        },
++        {
++          "prompt": "Say that you regret not having studied more.",
++          "answer": "Me arrepiento de no haber estudiado más."
++        },
++        {
++          "prompt": "Say the same idea as \"Si lo hubiera sabido, habría venido\" without si.",
++          "answer": "De haberlo sabido, habría venido."
+         }
+       ],
+       "teaches": [
+-        "pluscuamperfecto-subjuntivo-si"
++        "b2-conditionals-counterfactuals-regrets-vocab"
++      ]
++    },
++    {
++      "id": "b2-10-consolidation.ex09",
++      "type": "dictation",
++      "category": "listening",
++      "sentence": "Hubiera estudiado más, habría aprobado el examen.",
++      "english": "Had I studied more, I would have passed the exam.",
++      "teaches": [
++        "inversiones-condicionales-de-haber"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-09-01-a-gr.json b/content/es-latam/grammar/b2/b2-09-01-a-gr.json
+index 02fce149..527a81ef 100644
+--- a/content/es-latam/grammar/b2/b2-09-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-09-01-a-gr.json
+@@ -1,55 +1,73 @@
+ {
+   "id": "grammar.b2.09.01.condicionales-potenciales",
+-  "title": "Oraciones condicionales potenciales: si con imperfecto de subjuntivo",
++  "title": "Imagining the Unlikely: Si + Imperfect Subjunctive",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Marco teórico y selección modal",
+-      "content": "El segundo período condicional formula hipótesis referidas al presente o al futuro percibidas como inverosímiles, imaginarias o contrarias a la realidad actual. La prótasis exige IMPERFECTO DE SUBJUNTIVO (tanto en '-ra' como en '-se'), mientras que la apódosis se construye normalmente con CONDICIONAL SIMPLE ('Si tuviéramos mayores recursos, invertiríamos en investigación'). En el español estándar culto, nunca se emplea el condicional en la cláusula con 'si' (*Si tendría dinero... es un error estigmatizado)."
++      "title": "Open or imagined?",
++      "content": "You know *si* with the present from B1 Unit 8: *Si llueve, nos quedamos en casa* treats the rain as a real possibility. You also know from B1 Unit 4 that *si* + the imperfect subjunctive + the conditional pictures something unlikely, imaginary or contrary to the facts: *Si tuviera tiempo, viajaría más*. At B2 the skill is choosing between the two on purpose. With the present, the condition is open: it may well happen. With the imperfect subjunctive you keep it at a distance: you think it is unlikely, or you are only playing with the idea. The imperfect subjunctive here does not refer to the past: *Si ganara mañana…* is about tomorrow."
+     },
+     {
+       "type": "table",
+-      "title": "Distribución sintáctica y correlaciones",
++      "title": "Open or imagined",
+       "rows": [
+         [
+-          "si + IMPERFECTO SUBJUNTIVO + CONDICIONAL SIMPLE",
+-          "Hipótesis potencial presente/futura: 'Si pudiera viajar, iría a los tepuyes'"
++          "Si llueve mañana, nos quedaremos en casa.",
++          "If it rains tomorrow, we will stay at home. (open)"
+         ],
+         [
+-          "variante en -ra / -se",
+-          "Equivalencia estilística en la prótasis: 'Si tuviera / tuviese tiempo, leería'"
++          "Si lloviera mañana, nos quedaríamos en casa.",
++          "If it were to rain tomorrow, we would stay at home. (unlikely, or just imagined)"
+         ],
+         [
+-          "prótasis pospuesta",
+-          "Inversión de orden sintáctico: 'Invertiríamos en educación si tuviéramos superávit'"
++          "Si tengo tiempo, te llamo.",
++          "If I have time, I will call you. (it may well happen)"
+         ],
+         [
+-          "imposibilidad presente",
+-          "Contrafáctico actual: 'Si supiera la respuesta ahora mismo, te la diría'"
++          "Si tuviera tiempo, te llamaría.",
++          "If I had time, I would call you. (I probably do not)"
++        ]
++      ]
++    },
++    {
++      "type": "table",
++      "title": "The pattern",
++      "rows": [
++        [
++          "si + imperfect subjunctive, conditional",
++          "Si tuviera tiempo, leería más."
++        ],
++        [
++          "-ra or -se form in the si clause",
++          "Si tuviera tiempo = Si tuviese tiempo."
++        ],
++        [
++          "the si clause can come second",
++          "Viviríamos en el campo si pudiéramos elegir."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos de aplicación",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Si el parlamento aprobara el presupuesto extraordinario, el ministerio construiría tres hospitales.",
+-          "english": "If parliament approved the extraordinary budget, the ministry would build three hospitals."
++          "spanish": "Si el gobierno ofreciera ayuda, muchas familias podrían comprar su casa.",
++          "english": "If the government offered help, many families could buy their home."
+         },
+         {
+-          "spanish": "Si los ciudadanos participaran con mayor entusiasmo en los comicios, la democracia se fortalecería.",
+-          "english": "If citizens participated with greater enthusiasm in the elections, democracy would grow stronger."
++          "spanish": "Si mañana nevara en la ciudad, cerrarían las escuelas.",
++          "english": "If it snowed in the city tomorrow, they would close the schools."
+         },
+         {
+-          "spanish": "Viajaríamos a la selva del Darién si las condiciones de seguridad fronteriza fueran óptimas.",
+-          "english": "We would travel to the Darién jungle if border security conditions were optimal."
++          "spanish": "Viviríamos en el campo si pudiéramos elegir.",
++          "english": "We would live in the countryside if we could choose."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Evita el uso del condicional en la cláusula subordinada introducida por 'si' (*si tendría dinero). Utiliza siempre el imperfecto de subjuntivo (tuviera/tuviese)."
++      "content": "Put the conditional only in the main clause, never after *si*: *Si tendría dinero* is wrong, so say *Si tuviera dinero*. The *-ra* and *-se* forms are interchangeable here, but *-ra* is the one you will hear most. This unit stays with the present and the future."
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-09-02-a-gr.json b/content/es-latam/grammar/b2/b2-09-02-a-gr.json
+index 01a45e04..bc47da17 100644
+--- a/content/es-latam/grammar/b2/b2-09-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-09-02-a-gr.json
+@@ -1,55 +1,59 @@
+ {
+   "id": "grammar.b2.09.02.apodosis-literaria",
+-  "title": "Alternancia estilística en la apódosis condicional",
++  "title": "The -ra Form in Place of the Conditional",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Marco teórico y selección modal",
+-      "content": "En el español literario y formal, ciertos verbos modales y de voluntad (querer, deber, poder, haber) admiten la forma en '-ra' del imperfecto de subjuntivo en la apódosis como sustituto elegante del condicional simple ('Quisiera manifestar mi acuerdo' = 'Querría manifestar'; 'Debieras considerar su propuesta' = 'Deberías considerar'). Asimismo, en el registro literario clásico se documenta el uso de '-ra' en la apódosis de oraciones hipotéticas ('Si tuviera alas, volara hacia ti'), rasgo arcaizante de gran valor expresivo."
++      "title": "What quisiera really is",
++      "content": "You know *¿Podría traerme la cuenta?* and *Me gustaría…* from A2 Unit 26, where the conditional softens a request, and you know *quisiera* from B1 Unit 35 as a form of the imperfect subjunctive. *Quisiera* \"I would like\" is that *-ra* form doing the work of a conditional, so it is not a separate tense. Spanish allows this with three verbs: *querer*, *poder* and *deber*. The meaning is the same as *querría*, *podría* and *debería*, and the *-ra* form sounds a little more formal or more polished. The conditional is still the normal form in every register, and *quisiera* is by far the commonest of the three."
+     },
+     {
+       "type": "table",
+-      "title": "Distribución sintáctica y correlaciones",
++      "title": "Three verbs, two forms",
+       "rows": [
+         [
+-          "quisiera / querría",
+-          "Expresión atenuada de deseo: 'Quisiera solicitar una audiencia formal'"
++          "quisiera = querría",
++          "I would like (to), I would want"
+         ],
+         [
+-          "debieras / deberías",
+-          "Consejo u obligación moral atenuada: 'Debieras reflexionar antes de firmar'"
++          "pudiera = podría",
++          "I could, it might be (so)"
+         ],
+         [
+-          "pudiera / podría",
+-          "Capacidad o permiso de cortesía: '¿Pudiera usted confirmarme la fecha?'"
++          "debiera = debería",
++          "I should, he/she/you should"
+         ],
+         [
+-          "-ra en apódosis literaria",
+-          "Uso retórico selecto: 'Si me obligaran, prefiriera el destierro'"
++          "quisiéramos = querríamos",
++          "we would like (to)"
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos de aplicación",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Quisiéramos expresar nuestro más sincero agradecimiento a la delegación anfitriona.",
+-          "english": "We would like to express our most sincere gratitude to the host delegation."
++          "spanish": "Si pudiera elegir, quisiera vivir cerca del mar.",
++          "english": "If I could choose, I would like to live near the sea."
+         },
+         {
+-          "spanish": "Si mediara la buena voluntad de ambas partes, pudiera alcanzarse un acuerdo preliminar esta misma tarde.",
+-          "english": "If goodwill mediated between both sides, a preliminary agreement could be reached this very afternoon."
++          "spanish": "—¿Vendrá Marta a la fiesta? —Pudiera ser.",
++          "english": "\"Will Marta come to the party?\" \"She might.\""
+         },
+         {
+-          "spanish": "Debieras considerar las repercusiones a largo plazo antes de adoptar una decisión irrevocable.",
+-          "english": "You should consider the long-term repercussions before adopting an irrevocable decision."
++          "spanish": "Ana trabaja demasiado y debiera descansar un poco.",
++          "english": "Ana works too much and should rest a little."
++        },
++        {
++          "spanish": "Quisiéramos reservar una mesa para cuatro personas.",
++          "english": "We would like to book a table for four."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Evita el uso del condicional en la cláusula subordinada introducida por 'si' (*si tendría dinero). Utiliza siempre el imperfecto de subjuntivo (tuviera/tuviese)."
++      "content": "Keep to these three verbs, and to the *-ra* form: *quisiese* does not replace the conditional in this way. For every other verb the conditional is the normal result clause: say *Si tuviera tiempo, viajaría*, not *Si tuviera tiempo, viajara*. Older literary texts sometimes use *-ra* there, so you may recognise it, but do not copy it."
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-09-03-a-gr.json b/content/es-latam/grammar/b2/b2-09-03-a-gr.json
+index d1c94278..6d419136 100644
+--- a/content/es-latam/grammar/b2/b2-09-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-09-03-a-gr.json
+@@ -1,55 +1,59 @@
+ {
+   "id": "grammar.b2.09.03.cortesia-condicional",
+-  "title": "Fórmulas de cortesía y atenuación condicional",
++  "title": "Polite Requests with Si and the Imperfect Subjunctive",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Marco teórico y selección modal",
+-      "content": "La subordinación condicional desempeña un papel crucial en la pragmática de la cortesía en nivel B2. Estructuras como 'Si fuera tan amable de...', 'Si tuviera a bien...', o 'Le agradecería si pudiera...' sirven para distanciar el acto de habla de la exigencia imperativa, reduciendo la amenaza a la imagen pública del interlocutor en contextos institucionales, comerciales o protocolares."
++      "title": "Putting a request at a distance",
++      "content": "You know *¿Podría ayudarme?* and *Me gustaría…* from A2 Unit 26, where the conditional softens a request. At B2 you add a more formal step. A request wrapped in *si* + the imperfect subjunctive is not a real condition: it puts the request at a distance, so the other person can say no without awkwardness. A conditional verb such as *agradecería* or *sería* can also be followed by *que* + the imperfect subjunctive, the same pair of tenses you know from *si tuviera…, viajaría* in B1 Unit 4. All of these use *usted* forms."
+     },
+     {
+       "type": "table",
+-      "title": "Distribución sintáctica y correlaciones",
++      "title": "Four polite patterns",
+       "rows": [
+         [
+-          "si fuera tan amable de + INF",
+-          "Fórmula de petición distinguida: 'Si fuera tan amable de remitirnos la copia'"
++          "Si fuera tan amable de + infinitive",
++          "If you would be so kind as to…"
+         ],
+         [
+-          "si tuviera a bien + INF",
+-          "Máximo registro protocolar: 'Si el tribunal tuviera a bien conceder audiencia'"
++          "Si tuviera un momento, …",
++          "If you had a moment, …"
+         ],
+         [
+-          "agradecería que + SUBJUNTIVO",
+-          "Expresión diplomática de deseo: 'Le agradecería que confirmara su asistencia'"
++          "Le agradecería que + imperfect subjunctive",
++          "I would be grateful if you …"
+         ],
+         [
+-          "sería conveniente que + SUBJ.",
+-          "Sugerencia despersonalizada: 'Sería conveniente que revisáramos las cláusulas'"
++          "Sería mejor que + imperfect subjunctive",
++          "It would be better if we …"
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos de aplicación",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Si fuera tan amable de aguardar en la sala contigua, el embajador lo atenderá de inmediato.",
+-          "english": "If you would be so kind as to wait in the adjacent room, the ambassador will attend to you immediately."
++          "spanish": "Si fuera tan amable de esperar un momento, el director lo recibirá enseguida.",
++          "english": "If you would be so kind as to wait a moment, the director will see you right away."
+         },
+         {
+-          "spanish": "Le agradeceríamos infinitamente si tuviera a bien rubricar las actas notariales correspondientes.",
+-          "english": "We would be infinitely grateful if you would be so kind as to sign the corresponding notarial minutes."
++          "spanish": "Si tuviera un momento, me gustaría hacerle una pregunta.",
++          "english": "If you had a moment, I would like to ask you a question."
+         },
+         {
+-          "spanish": "Sería sumamente aconsejable que la comisión revisara los anexos técnicos antes de la votación final.",
+-          "english": "It would be highly advisable for the commission to review the technical annexes before the final vote."
++          "spanish": "Le agradecería que me enviara el contrato antes del viernes.",
++          "english": "I would be grateful if you sent me the contract before Friday."
++        },
++        {
++          "spanish": "Sería mejor que lo habláramos mañana.",
++          "english": "It would be better if we talked about it tomorrow."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Evita el uso del condicional en la cláusula subordinada introducida por 'si' (*si tendría dinero). Utiliza siempre el imperfecto de subjuntivo (tuviera/tuviese)."
++      "content": "After *tan amable de* the verb is an infinitive. After *que* it is in the imperfect subjunctive: *que me enviara*, not *que me envía*. Compare a real condition such as *Si no le importa, abro la ventana*: with the present, you will simply do it unless the other person objects."
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-09-04-a-gr.json b/content/es-latam/grammar/b2/b2-09-04-a-gr.json
+index 26a7e616..35a9d9bd 100644
+--- a/content/es-latam/grammar/b2/b2-09-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-09-04-a-gr.json
+@@ -1,55 +1,63 @@
+ {
+   "id": "grammar.b2.09.04.condicionales-estrictas",
+-  "title": "Condicionales estrictas con siempre que y con tal de que",
++  "title": "Setting Terms: Siempre Que, Con Tal de Que, A Condición de Que",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Marco teórico y selección modal",
+-      "content": "Para expresar un requisito sine qua non o una condición indispensable de cumplimiento forzoso, el español dispone de locuciones condicionales restrictivas que exigen siempre el modo SUBJUNTIVO: 'siempre que', 'con tal de que', 'a condición de que', 'a poco que' y 'en caso de que'. Estas locuciones no admiten indicativo en función condicional ('Apoyaremos la candidatura siempre que respete el programa' = solo si lo respeta)."
++      "title": "A condition that must be met",
++      "content": "You know *con tal de que* \"as long as\" from B1 Unit 21 and *siempre que* \"provided that\" from B2 Unit 7. They introduce a condition that must be met before the main clause holds, and the verb that follows is always in the subjunctive: the condition looks ahead and is not yet a fact. After a present or future main verb you use the present subjunctive; after a conditional or past main verb you use the imperfect subjunctive. New here is *a condición de que* \"on condition that\", a more formal way to set terms. Do not confuse the condition with the other meaning of *siempre que* from B2 Unit 7: with the indicative it means \"every time that\" (*Siempre que viaja, llama a su madre*)."
+     },
+     {
+       "type": "table",
+-      "title": "Distribución sintáctica y correlaciones",
++      "title": "Ways to set a condition",
+       "rows": [
+         [
+-          "siempre que + SUBJUNTIVO",
+-          "Condición necesaria indispensable: 'Firmaremos siempre que nos garanticen autonomía'"
++          "siempre que + subjunctive",
++          "provided that"
+         ],
+         [
+-          "con tal de que + SUBJUNTIVO",
+-          "Disposición a ceder con un límite: 'Aceptará el puesto con tal de que no viaje'"
++          "con tal de que + subjunctive",
++          "as long as (I can accept it if…)"
+         ],
+         [
+-          "a condición de que + SUBJ.",
+-          "Registro contractual formal: 'Se otorga el crédito a condición de que auditen los fondos'"
++          "a condición de que + subjunctive",
++          "on condition that (formal)"
+         ],
+         [
+-          "en caso de que + SUBJUNTIVO",
+-          "Contingencia eventual prevista: 'En caso de que surjan dudas, consulte al letrado'"
++          "con tal de / a condición de + infinitive",
++          "same subject in both clauses, as in B2 Unit 4"
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos de aplicación",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "El sindicato desconvocará el paro general siempre que la patronal restituya a los trabajadores cesanteados.",
+-          "english": "The union will call off the general strike provided that management reinstates the laid-off workers."
++          "spanish": "Firmaremos el contrato siempre que nos den más tiempo.",
++          "english": "We will sign the contract provided that they give us more time."
+         },
+         {
+-          "spanish": "El banco otorgará el financiamiento a condición de que los socios aporten garantías hipotecarias sólidas.",
+-          "english": "The bank will grant the financing on condition that the partners provide solid mortgage collateral."
++          "spanish": "Acepto el trabajo con tal de que me dejen trabajar desde casa.",
++          "english": "I accept the job as long as they let me work from home."
+         },
+         {
+-          "spanish": "Aceptaremos la mediación de un árbitro internacional con tal de que ambas partes acaten el laudo final.",
+-          "english": "We will accept the mediation of an international arbitrator as long as both sides abide by the final award."
++          "spanish": "El banco dará el crédito a condición de que presentemos todos los documentos.",
++          "english": "The bank will give the loan on condition that we present all the documents."
++        },
++        {
++          "spanish": "Iría a cualquier parte con tal de viajar con ustedes.",
++          "english": "I would go anywhere as long as I travel with you."
++        },
++        {
++          "spanish": "Dijeron que firmarían siempre que les diéramos más tiempo.",
++          "english": "They said they would sign provided that we gave them more time."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Evita el uso del condicional en la cláusula subordinada introducida por 'si' (*si tendría dinero). Utiliza siempre el imperfecto de subjuntivo (tuviera/tuviese)."
++      "content": "Never put the future or the conditional after these conjunctions: say *siempre que respeten el plazo*, not *siempre que respetarán el plazo*, even when the main verb is in the future."
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-09-05-a-gr.json b/content/es-latam/grammar/b2/b2-09-05-a-gr.json
+index 5bceebd1..25870b0e 100644
+--- a/content/es-latam/grammar/b2/b2-09-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-09-05-a-gr.json
+@@ -1,55 +1,63 @@
+ {
+   "id": "grammar.b2.09.05.condicionales-excluyentes",
+-  "title": "Condicionales de exclusión con a menos que y salvo que",
++  "title": "Naming the Exception: A Menos Que, A No Ser Que, Salvo Que",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Marco teórico y selección modal",
+-      "content": "Las locuciones condicionales negativas o de excepción ('a menos que', 'a no ser que', 'salvo que', 'excepto que') introducen la única circunstancia que impediría el cumplimiento de la oración principal. Todas ellas rigen obligatoriamente el modo SUBJUNTIVO en español ('Iremos a la manifestación a menos que llueva a cántaros'). La fórmula paralela 'salvo si' o 'excepto si', en cambio, se construye con INDICATIVO ('No salgo de casa salvo si es urgente')."
++      "title": "The one thing that would change it",
++      "content": "You know *a menos que* \"unless\" from B1 Unit 21. This lesson adds two phrases with the same meaning, *a no ser que* and *salvo que* (*salvo que* is slightly more written). They name the only circumstance that would stop the main clause from holding, so the main clause says what happens if that exception does not occur: *Iremos al parque a menos que llueva* means \"we will go, unless it rains\". All three are followed by the subjunctive, because the exception has not happened yet. After a present or future main verb use the present subjunctive; after a conditional or past main verb use the imperfect subjunctive."
+     },
+     {
+       "type": "table",
+-      "title": "Distribución sintáctica y correlaciones",
++      "title": "Three ways to say \"unless\"",
+       "rows": [
+         [
+-          "a menos que + SUBJUNTIVO",
+-          "Única circunstancia impeditiva: 'La huelga continuará a menos que negocien'"
++          "a menos que + subjunctive",
++          "unless (the usual phrase)"
+         ],
+         [
+-          "a no ser que + SUBJUNTIVO",
+-          "Variante formal enfática: 'No habrá comicios a no ser que cese la violencia'"
++          "a no ser que + subjunctive",
++          "unless (a little more emphatic)"
+         ],
+         [
+-          "salvo que / excepto que + SUBJ.",
+-          "Excepción formal: 'Se prohíbe el acceso salvo que cuente con acreditación'"
++          "salvo que + subjunctive",
++          "unless, except if (written, formal)"
+         ],
+         [
+-          "salvo si + INDICATIVO",
+-          "Contraste con 'si': 'No firmaremos nada salvo si el texto es idéntico'"
++          "salvo si + indicative",
++          "except if (the same idea, built like si)"
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos de aplicación",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "El proyecto minero será clausurado definitivamente a menos que la empresa remedie los vertidos tóxicos.",
+-          "english": "The mining project will be closed definitively unless the company remediates the toxic spills."
++          "spanish": "Iremos al parque a menos que llueva.",
++          "english": "We will go to the park unless it rains."
+         },
+         {
+-          "spanish": "Las fronteras permanecerán cerradas a no ser que los organismos sanitarios certifiquen el control del brote.",
+-          "english": "Borders will remain closed unless health agencies certify the control of the outbreak."
++          "spanish": "No saldremos a no ser que mejore el tiempo.",
++          "english": "We will not go out unless the weather improves."
+         },
+         {
+-          "spanish": "Nadie podrá ingresar al archivo confidencial del ministerio salvo que posea autorización judicial escrita.",
+-          "english": "No one will be able to enter the ministry's confidential archive unless they possess written judicial authorization."
++          "spanish": "Nadie puede entrar al archivo salvo que tenga permiso.",
++          "english": "No one can enter the archive unless they have permission."
++        },
++        {
++          "spanish": "Dijo que vendría a menos que tuviera trabajo.",
++          "english": "She said she would come unless she had work."
++        },
++        {
++          "spanish": "Salgo temprano, salvo si hay mucho trabajo.",
++          "english": "I leave early, except if there is a lot of work."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Evita el uso del condicional en la cláusula subordinada introducida por 'si' (*si tendría dinero). Utiliza siempre el imperfecto de subjuntivo (tuviera/tuviese)."
++      "content": "Never use the indicative after *a menos que*, *a no ser que* or *salvo que*: *a menos que llueva*, not *a menos que llueve*. Only *salvo si* works like the *si* you already know, with the indicative."
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-10-01-a-gr.json b/content/es-latam/grammar/b2/b2-10-01-a-gr.json
+index 1cf84c4a..0890d94b 100644
+--- a/content/es-latam/grammar/b2/b2-10-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-10-01-a-gr.json
+@@ -1,51 +1,55 @@
+ {
+   "id": "grammar.b2.10.01.condicional-tercer-tipo",
+-  "title": "Períodos condicionales irreales en el pasado (Tercer condicional)",
++  "title": "What Would Have Happened: Past Counterfactuals",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Estructura del tercer condicional contrafáctico",
+-      "content": "El tercer condicional expresa hipótesis imposibles o no verificadas situadas íntegramente en el pasado. Se construye canónicamente mediante la fórmula: 'Si + pluscuamperfecto de subjuntivo (prótasis), condicional compuesto (apódosis)'. Por ejemplo: 'Si el gobierno hubiera escuchado las advertencias de los expertos, se habría evitado el colapso financiero'."
++      "title": "Reasoning about a past that did not happen",
++      "content": "You know *si hubiera tenido* from B1 Unit 35: *si* + *hubiera* + past participle imagines a past that did not happen, and *habría* + past participle says what would have followed. At B2 you use it to reason about causes and turning points, so three details matter. First, either clause can come first. Second, negatives are common in both clauses: *Si no hubiera llovido, habríamos ido al lago* tells you that it rained and that we did not go. Third, *si no hubiera sido por* + noun means \"if it had not been for\": it names the one thing that made the difference."
+     },
+     {
+       "type": "table",
+-      "title": "Esquema temporal y modal del contrafáctico",
++      "title": "Reading a past counterfactual",
+       "rows": [
+         [
+-          "Prótasis (condición no cumplida)",
+-          "'Si hubieras / hubieses llegado antes...'"
++          "Si hubiera salido antes, habría llegado a tiempo.",
++          "If I had left earlier, I would have arrived on time. (I did not leave earlier, and I was late.)"
+         ],
+         [
+-          "Apódosis canónica (resultado irreal)",
+-          "'...habríamos alcanzado el tren'"
++          "Habría llegado a tiempo si hubiera salido antes.",
++          "The same meaning with the result clause first."
+         ],
+         [
+-          "Alternativa de apódosis (registro culto)",
+-          "'...hubiéramos alcanzado el tren'"
++          "Si no hubiera llovido, habríamos ido al lago.",
++          "If it had not rained, we would have gone to the lake. (It rained, so we did not go.)"
++        ],
++        [
++          "Si no hubiera sido por tu ayuda, no habría terminado.",
++          "If it had not been for your help, I would not have finished."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el análisis histórico e interpersonal",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Si los líderes de la oposición hubiesen firmado el acuerdo de paz en 1948, el país se habría ahorrado décadas de conflicto armado.",
+-          "english": "If the opposition leaders had signed the peace agreement in 1948, the country would have saved decades of armed conflict."
++          "spanish": "Si hubiéramos salido más temprano, habríamos llegado antes del concierto.",
++          "english": "If we had left earlier, we would have arrived before the concert."
+         },
+         {
+-          "spanish": "Si hubiéramos contado con financiamiento oportuno, el documental se habría estrenado el año pasado.",
+-          "english": "If we had had timely financing, the documentary would have premiered last year."
++          "spanish": "El proyecto habría terminado a tiempo si el equipo hubiera tenido más ayuda.",
++          "english": "The project would have finished on time if the team had had more help."
+         },
+         {
+-          "spanish": "En retrospectiva, si no se hubiera producido aquella huelga general, los derechos laborales no se habrían consagrado tan pronto.",
+-          "english": "In retrospect, if that general strike had not occurred, labor rights would not have been enshrined so soon."
++          "spanish": "Si no hubiera sido por el mapa, nos habríamos perdido en la montaña.",
++          "english": "If it had not been for the map, we would have got lost in the mountains."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Tanto la forma en '-ra' ('hubiera sabido') como en '-se' ('hubiese sabido') son perfectamente correctas en la prótasis. Sin embargo, en la apódosis nunca se debe utilizar condicional simple ('habría') si la consecuencia pertenece enteramente al pasado."
++      "content": "*Habría* never goes after *si*: say *Si hubiera salido*, not *Si habría salido*. Each half of the sentence looks at the past: the next lesson shows a second form for the result clause."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-10-02-a-gr.json b/content/es-latam/grammar/b2/b2-10-02-a-gr.json
+index 7769a951..6ff84407 100644
+--- a/content/es-latam/grammar/b2/b2-10-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-10-02-a-gr.json
+@@ -1,51 +1,55 @@
+ {
+   "id": "grammar.b2.10.02.pluscuamperfecto-apodosis",
+-  "title": "El pluscuamperfecto de subjuntivo en la apódosis",
++  "title": "Habría or Hubiera? Two Forms in the Result",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Uso literario y formal de 'hubiera' en la consecuencia",
+-      "content": "En el español literario, periodístico y formal de América Latina, es sumamente frecuente sustituir el condicional compuesto ('habría sido') por el pluscuamperfecto de subjuntivo en la apódosis ('hubiera sido' o 'hubiese sido'): 'Si hubieras venido ayer, te hubieras enterado de la noticia'. Este uso es plenamente normativo y aporta fluidez estilística."
++      "title": "A second form for the result",
++      "content": "You know *quisiera* from B2 Unit 9, where *quisiera*, *pudiera* and *debiera* stand in for *querría*, *podría* and *debería*: the *-ra* form of the imperfect subjunctive doing the work of a conditional, for three verbs only. In the past the same idea is much wider. In the result clause of a past counterfactual, *hubiera* + past participle can replace *habría* + past participle, and this works with every verb. So *Si hubiera salido antes, habría llegado* and *Si hubiera salido antes, hubiera llegado* mean the same. The second is common in speech and writing across Latin America; the first is the form you can always use. Only the result clause may change: the *si* clause keeps *hubiera* + participle."
+     },
+     {
+       "type": "table",
+-      "title": "Correspondencia de formas en la apódosis",
++      "title": "Two forms, one meaning",
+       "rows": [
+         [
+-          "Forma canónica",
+-          "'Si hubiéramos sabido el plan, habríamos intervenido'"
++          "Si lo hubiera sabido, habría venido.",
++          "If I had known, I would have come."
+         ],
+         [
+-          "Forma estilística con 'hubiera'",
+-          "'Si hubiéramos sabido el plan, hubiéramos intervenido'"
++          "Si lo hubiera sabido, hubiera venido.",
++          "The same meaning: hubiera in both clauses."
+         ],
+         [
+-          "Variante regional culta",
+-          "'Si hubiésemos sabido el plan, hubiésemos intervenido'"
++          "Si lo habría sabido, …",
++          "Wrong: the conditional never goes after si."
++        ],
++        [
++          "quisiera, pudiera, debiera",
++          "Only three verbs allow the plain -ra form (B2 Unit 9); with hubiera + participle every verb does."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en editoriales y ensayo",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "De haber actuado con templanza, el ministro se hubiera ahorrado semejante humillación parlamentaria.",
+-          "english": "Had he acted with restraint, the minister would have spared himself such parliamentary humiliation."
++          "spanish": "Si me hubieras avisado, te hubiera acompañado al médico.",
++          "english": "If you had told me, I would have gone with you to the doctor."
+         },
+         {
+-          "spanish": "Si no hubiera mediado la corte suprema, el proceso electoral hubiera terminado en desacato generalizado.",
+-          "english": "If the supreme court had not mediated, the electoral process would have ended in widespread defiance."
++          "spanish": "Si hubiéramos tenido más tiempo, hubiéramos visitado el museo.",
++          "english": "If we had had more time, we would have visited the museum."
+         },
+         {
+-          "spanish": "Cualquier observador imparcial hubiera llegado a la misma conclusión.",
+-          "english": "Any impartial observer would have reached the same conclusion."
++          "spanish": "Si hubieras estudiado más, habrías aprobado.",
++          "english": "If you had studied more, you would have passed."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Recuerda que la sustitución inversa es estrictamente incorrecta: nunca se debe colocar el condicional en la prótasis introducida por 'si' (*'Si habríamos sabido...'* es un error gramatical grave)."
++      "content": "The second *hubiera* is a result, so it can never follow *si*, and it still needs a past participle: *hubiera venido*, not *hubiera venir*. With simple verbs, keep the conditional: say *Si tuviera tiempo, viajaría*, not *viajara*."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-10-03-a-gr.json b/content/es-latam/grammar/b2/b2-10-03-a-gr.json
+index 6b090a59..7afa141a 100644
+--- a/content/es-latam/grammar/b2/b2-10-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-10-03-a-gr.json
+@@ -1,51 +1,59 @@
+ {
+   "id": "grammar.b2.10.03.lamento-reproche",
+-  "title": "Fórmulas de lamento, queja y reproche en el pasado",
++  "title": "I Should Have: Regrets and Reproaches",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Estructuras para expresar arrepentimiento y censura moral",
+-      "content": "Para formular reproches o lamentar conductas pasadas irrevocables, el español recurre a perífrasis modales compuestas y oraciones exclamativas independientes con subjuntivo: '¡Si al menos me hubieras consultado!', 'Deberías / Habrías debido advertirme a tiempo', 'Habría sido preferible que no firmaras ese documento'."
++      "title": "Looking back with a modal",
++      "content": "You know *deber* and *tener que* from B1 Unit 4: *Deberías llamarla* is advice about now. To look back at the past, keep the modal in the conditional and add *haber* + past participle: *Deberías haber llamado* means \"you should have called\" (and you did not). Said about yourself it is a regret, said about someone else it is a reproach. *Tendría que haber* works the same way. For a plain regret, use *me arrepiento de* + infinitive; with a past action the infinitive is *haber* + participle: *Me arrepiento de haber dicho eso*."
+     },
+     {
+       "type": "table",
+-      "title": "Fórmulas canónicas de reproche y lamento",
++      "title": "Four ways to look back",
+       "rows": [
+         [
+-          "Exclamativa con 'si al menos'",
+-          "'¡Si al menos hubieras respondido mis llamadas!' (lamento/reproche)"
++          "Debería haber llamado.",
++          "I should have called. (regret)"
+         ],
+         [
+-          "Obligación moral no cumplida",
+-          "'Debiste haber / Deberías haber informado a la junta' (censura)"
++          "Deberías haber llamado.",
++          "You should have called. (reproach)"
+         ],
+         [
+-          "Preferencia irreal en el pasado",
+-          "'Habría sido mejor que aplazáramos la votación' (autocrítica)"
++          "Tendríamos que haber reservado.",
++          "We should have booked."
++        ],
++        [
++          "Me arrepiento de no haber estudiado más.",
++          "I regret not having studied more."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el diálogo formal e interpersonal",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "¡Si tan solo hubiéramos invertido en tecnología preventiva antes del siniestro!",
+-          "english": "If only we had invested in preventive technology before the accident!"
++          "spanish": "Debería haber salido más temprano; ahora llegamos tarde.",
++          "english": "I should have left earlier; now we are late."
++        },
++        {
++          "spanish": "Deberías haber avisado antes de cambiar la hora.",
++          "english": "You should have warned us before changing the time."
+         },
+         {
+-          "spanish": "Habría sido conveniente que presentaras la renuncia antes de que estallara el escándalo.",
+-          "english": "It would have been advisable for you to submit your resignation before the scandal erupted."
++          "spanish": "Tendríamos que haber reservado la mesa con tiempo.",
++          "english": "We should have booked the table in advance."
+         },
+         {
+-          "spanish": "Los ciudadanos reclamaron que el ministerio debió haber coordinado las evacuaciones con mayor celeridad.",
+-          "english": "Citizens complained that the ministry should have coordinated evacuations with greater swiftness."
++          "spanish": "Me arrepiento de haber dicho eso.",
++          "english": "I regret having said that."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "'Deberías haber + participio' atenúa el reproche mediante la cortesía del condicional, mientras que 'debiste haber + participio' manifiesta una recriminación directa, categórica y sin matices atenuantes."
++      "content": "Compare *Deberías llamar* (advice: you should call, now) with *Deberías haber llamado* (a reproach: you did not). Only *haber* carries the past: the modal stays *debería* or *tendría que*, and the participle never changes: *haber llamado*."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-10-04-a-gr.json b/content/es-latam/grammar/b2/b2-10-04-a-gr.json
+index 216aad33..375872ec 100644
+--- a/content/es-latam/grammar/b2/b2-10-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-10-04-a-gr.json
+@@ -1,51 +1,55 @@
+ {
+   "id": "grammar.b2.10.04.condicionales-implicitas",
+-  "title": "Estructuras condicionales implícitas con participio y gerundio",
++  "title": "Conditions Without Si",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Condiciones tácitas sin la conjunción 'si'",
+-      "content": "En la prosa analítica, jurídica e historiográfica, es común condensar períodos condicionales mediante construcciones no personales: 'De haber + participio', 'Habiendo + participio' o participios absolutos: 'De haber sabido las cláusulas ocultas, no habríamos firmado el tratado'."
++      "title": "Shorter ways to say \"if\"",
++      "content": "You know *si* + the imperfect subjunctive from B1 Unit 4 and *si* + the pluperfect subjunctive from B1 Unit 35. A condition does not always need *si*. Spanish can state it with *de* + infinitive, or with a gerund, which is shorter and sounds more written. With *de* + infinitive the main clause shows the time: *De tener tiempo, iría contigo* means *Si tuviera tiempo, iría contigo*, and *De haberlo sabido, habría venido* means *Si lo hubiera sabido, habría venido*. A real condition works too: *De ser necesario, te llamo* means *Si es necesario, te llamo*. A gerund can also carry the condition: *Estudiando más, aprobarías* means *Si estudiaras más, aprobarías*."
+     },
+     {
+       "type": "table",
+-      "title": "Mecanismos de condensación condicional en el pasado",
++      "title": "Four patterns",
+       "rows": [
+         [
+-          "'De haber + participio'",
+-          "'De haber previsto la tormenta, habríamos cancelado el zarpe' (= Si hubiéramos previsto)"
++          "De tener tiempo, iría contigo.",
++          "If I had time, I would go with you. (= Si tuviera tiempo…)"
+         ],
+         [
+-          "'Habiendo + participio'",
+-          "'Habiendo contado con aval bancario, la empresa no hubiera quebrado' (= Si hubiera contado)"
++          "De haberlo sabido, habría venido.",
++          "Had I known, I would have come. (= Si lo hubiera sabido…)"
+         ],
+         [
+-          "Participio absoluto",
+-          "'Aclarada la disputa a tiempo, se habrían evitado los tribunales' (= Si se hubiera aclarado)"
++          "De no llegar a tiempo, te llamaré.",
++          "If I do not arrive in time, I will call you. (= Si no llego a tiempo…)"
++        ],
++        [
++          "Estudiando más, aprobarías.",
++          "If you studied more, you would pass. (= Si estudiaras más…)"
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en informes técnicos y jurídicos",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "De haber mediado una supervisión adecuada, las omisiones contables se habrían detectado de inmediato.",
+-          "english": "Had adequate supervision intervened, the accounting omissions would have been detected immediately."
++          "spanish": "De ser necesario, te llamo mañana.",
++          "english": "If necessary, I will call you tomorrow."
+         },
+         {
+-          "spanish": "Habiendo ponderado todos los agravantes, el tribunal habría dictado una sentencia más severa.",
+-          "english": "Having weighed all aggravating factors, the court would have handed down a harsher sentence."
++          "spanish": "De haber previsto el problema, habríamos cambiado el plan.",
++          "english": "Had we foreseen the problem, we would have changed the plan."
+         },
+         {
+-          "spanish": "De no haberse divulgado las grabaciones secretas, el gabinete habría concluido su mandato sin sobresaltos.",
+-          "english": "Had the secret recordings not been disclosed, the cabinet would have finished its mandate without upheaval."
++          "spanish": "Hablando con calma, todos se entenderían mejor.",
++          "english": "If everyone spoke calmly, they would understand each other better."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "La locución 'de haber + participio' exige identidad o correlación lógica estricta de sujeto con la apódosis, salvo cuando se emplea en fórmulas impersonales universales ('De haberse sabido la verdad...')."
++      "content": "The *de* or gerund phrase comes first, followed by a comma. After *de* the verb is always an infinitive: *De haberlo sabido*, never *De hubiera sabido*. The pronoun attaches to the infinitive: *haberlo*. A gerund condition normally shares its subject with the main clause: you study, and you pass."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-10-05-a-gr.json b/content/es-latam/grammar/b2/b2-10-05-a-gr.json
+index 168670ea..164dceb4 100644
+--- a/content/es-latam/grammar/b2/b2-10-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-10-05-a-gr.json
+@@ -1,51 +1,55 @@
+ {
+   "id": "grammar.b2.10.05.inversiones-condicionales",
+-  "title": "Construcciones concesivo-condicionales e inversión retórica",
++  "title": "Hubiera Without Si, and Even If in the Past",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Inversión retórica y combinación concesiva en el pasado",
+-      "content": "En la prosa ensayística y literaria, las condiciones contrafácticas adoptan giros de inversión sintáctica ('Hubiérase evitado semejante tragedia si...') y fórmulas concesivas hipotéticas ('Aun cuando hubiésemos intervenido, el desenlace habría sido idéntico'). Estos esquemas enfatizan la inevitabilidad o futilidad de una acción alternativa frente a fuerzas históricas mayores."
++      "title": "Two more uses of hubiera",
++      "content": "You know *si hubiera tenido* from B1 Unit 35, and *aun cuando* + subjunctive from B2 Unit 8. This lesson adds two ways to use the pluperfect subjunctive. First, you can drop *si* and put *hubiera* + past participle at the start of the sentence: *Hubiera salido antes, habría llegado*. It means the same as the sentence with *si*, and it sounds more emphatic. Second, *aun cuando* or *aunque* + *hubiera* + participle says \"even if … had …\": the result would have been the same: *Aun cuando hubiéramos salido antes, no habríamos llegado*."
+     },
+     {
+       "type": "table",
+-      "title": "Esquemas avanzados de retórica contrafáctica",
++      "title": "Two patterns",
+       "rows": [
+         [
+-          "Inversión literaria ('hubiérase')",
+-          "'Hubiérase evitado la guerra de haber existido voluntad civil'"
++          "Hubiera salido antes, habría llegado.",
++          "Had I left earlier, I would have arrived. (= Si hubiera salido antes…)"
+         ],
+         [
+-          "Concesiva contrafáctica ('aun cuando')",
+-          "'Aun cuando hubieran ganado las elecciones, la crisis económica habría estallado'"
++          "Hubiéramos salido antes, habríamos llegado.",
++          "Had we left earlier, we would have arrived."
+         ],
+         [
+-          "Alternativa enfática ('así hubiera...')",
+-          "'No habría cambiado de parecer así hubieran insistido mil veces'"
++          "Aun cuando hubiéramos salido antes, no habríamos llegado.",
++          "Even if we had left earlier, we would not have arrived."
++        ],
++        [
++          "Aunque hubiera estudiado toda la noche, no habría aprobado.",
++          "Even if I had studied all night, I would not have passed."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el ensayo filosófico e historiográfico",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Aun cuando los diplomáticos hubiesen redactado un armisticio perfecto, las tensiones de fondo habrían dinamitado la paz.",
+-          "english": "Even if diplomats had drafted a perfect armistice, the underlying tensions would have detonated the peace."
++          "spanish": "Hubiera sabido la verdad, habría actuado de otra manera.",
++          "english": "Had I known the truth, I would have acted differently."
+         },
+         {
+-          "spanish": "Hubiérase pensado que la prosperidad salitrera traería estabilidad perpétua, pero resultó ser un mero espejismo.",
+-          "english": "One would have thought that nitrate prosperity would bring perpetual stability, but it turned out to be a mere mirage."
++          "spanish": "Hubiéramos salido antes, habríamos llegado a tiempo.",
++          "english": "Had we left earlier, we would have arrived on time."
+         },
+         {
+-          "spanish": "No habríamos claudicado en nuestros principios éticos así nos hubiesen ofrecido todas las riquezas del ministerio.",
+-          "english": "We would not have yielded in our ethical principles even if they had offered us all the riches of the ministry."
++          "spanish": "Aun cuando hubiéramos salido antes, no habríamos llegado a tiempo.",
++          "english": "Even if we had left earlier, we would not have arrived on time."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "La forma enclítica 'hubiérase + participio' es un cultismo propio de la lengua escrita más refinada. No debe abusarse de ella en la comunicación oral estándar, donde 'se habría pensado' o 'se hubiera pensado' resulta natural."
++      "content": "Only *hubiera* + participle can start a sentence without *si*, and only with a comma before the result. After *aun cuando* and *aunque* keep the pluperfect subjunctive in the first clause and the conditional perfect (or *hubiera* + participle) in the result."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-09-01.json b/content/es-latam/lessons/b2/b2-09-01.json
+index 9f3bc979..b2fc476f 100644
+--- a/content/es-latam/lessons/b2/b2-09-01.json
++++ b/content/es-latam/lessons/b2/b2-09-01.json
+@@ -1,24 +1,24 @@
+ {
+   "id": "lesson.b2.09.01",
+-  "title": "Si tuviera la oportunidad: hipótesis presente y futura",
++  "title": "Imagining the Unlikely: Si + Imperfect Subjunctive",
+   "level": "B2",
+-  "goal": "Construct second conditional structures (si + imperfecto de subjuntivo + condicional simple) to hypothesize about unlikely or counterfactual present/future scenarios.",
+-  "grammar": "Oraciones condicionales potenciales: si con imperfecto de subjuntivo",
++  "goal": "Use si with the imperfect subjunctive and the conditional to imagine unlikely situations in the present and the future.",
++  "grammar": "Imagined situations with si",
+   "sections": [
+     {
+       "type": "intro",
+-      "title": "Unit 9: Conditionals I — Lesson 1",
++      "title": "Unit 9: Potential Scenarios",
+       "body": [
+-        "Welcome to lesson 1 of Unit 9 (Conditionals I: Potential Scenarios). Mastering hypothetical conditionals enables you to explore alternatives, negotiate terms, and calibrate diplomatic courtesy.",
+-        "In this lesson, we study si tuviera la oportunidad: hipótesis presente y futura, establishing rigorous command of imperfect subjunctive and conditional correlatives."
++        "At B2 you can talk about things that are not real: what you would do if things were different, what you will do on certain terms, and what could stop you.",
++        "This unit covers imagined situations in the present and the future, softer forms for requests, and conditions and exceptions with the subjunctive. It ends with a short text about the Chilean writer Isabel Allende and her book Cuentos de Eva Luna."
+       ]
+     },
+     {
+       "type": "goal",
+       "items": [
+-        "Construct second conditional structures (si + imperfecto de subjuntivo + condicional simple) to hypothesize about unlikely or counterfactual present/future scenarios.",
+-        "Master the syntax of condicionales-imperfecto-subjuntivo.",
+-        "Incorporate advanced negotiation vocabulary (la hipótesis, inverosímil)."
++        "I can use si with the imperfect subjunctive and the conditional to imagine an unlikely situation.",
++        "I can tell an open condition (si and the present) from an imagined one (si and the imperfect subjunctive).",
++        "I can use the new words for hypotheses and feasibility."
+       ]
+     },
+     {
+@@ -59,6 +59,19 @@
+       "exerciseRefs": [
+         "b2-09-01.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use si with the imperfect subjunctive and the conditional to imagine an unlikely situation.",
++        "I can tell an open condition (si and the present) from an imagined one (si and the imperfect subjunctive).",
++        "I can use the new words for hypotheses and feasibility."
++      ]
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-09-02.json b/content/es-latam/lessons/b2/b2-09-02.json
+index 9eb826b7..ad7acc54 100644
+--- a/content/es-latam/lessons/b2/b2-09-02.json
++++ b/content/es-latam/lessons/b2/b2-09-02.json
+@@ -1,24 +1,16 @@
+ {
+   "id": "lesson.b2.09.02",
+-  "title": "Quisiera o querría: alternancias de la apódosis en prosa formal",
++  "title": "Quisiera or Querría? A Softer Result Clause",
+   "level": "B2",
+-  "goal": "Deploy stylistic variations in the conditional apodosis (substituting conditional simple with -ra forms in modal verbs) in high register literature and journalism.",
+-  "grammar": "Alternancia estilística en la apódosis condicional",
++  "goal": "Use quisiera, pudiera and debiera as softer forms of querría, podría and debería, and know that the conditional stays the normal form.",
++  "grammar": "The -ra form in place of the conditional",
+   "sections": [
+-    {
+-      "type": "intro",
+-      "title": "Unit 9: Conditionals I — Lesson 2",
+-      "body": [
+-        "Welcome to lesson 2 of Unit 9 (Conditionals I: Potential Scenarios). Mastering hypothetical conditionals enables you to explore alternatives, negotiate terms, and calibrate diplomatic courtesy.",
+-        "In this lesson, we study quisiera o querría: alternancias de la apódosis en prosa formal, establishing rigorous command of imperfect subjunctive and conditional correlatives."
+-      ]
+-    },
+     {
+       "type": "goal",
+       "items": [
+-        "Deploy stylistic variations in the conditional apodosis (substituting conditional simple with -ra forms in modal verbs) in high register literature and journalism.",
+-        "Master the syntax of apodosis-condicional-literaria.",
+-        "Incorporate advanced negotiation vocabulary (la elocuencia, solemne)."
++        "I can use quisiera, pudiera and debiera as softer forms of querría, podría and debería.",
++        "I can use the conditional for every other verb in the result clause.",
++        "I can use the new words for formal and measured speech."
+       ]
+     },
+     {
+@@ -59,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-09-02.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use quisiera, pudiera and debiera as softer forms of querría, podría and debería.",
++        "I can use the conditional for every other verb in the result clause.",
++        "I can use the new words for formal and measured speech."
++      ]
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-09-03.json b/content/es-latam/lessons/b2/b2-09-03.json
+index d9817bdf..45992542 100644
+--- a/content/es-latam/lessons/b2/b2-09-03.json
++++ b/content/es-latam/lessons/b2/b2-09-03.json
+@@ -1,24 +1,16 @@
+ {
+   "id": "lesson.b2.09.03",
+-  "title": "Si fuera tan amable: cortesía y mitigación pragmática",
++  "title": "If You Would Be So Kind: Polite Requests",
+   "level": "B2",
+-  "goal": "Employ hypothetical conditionals as pragmatic mitigating devices to formulate diplomatic requests, negotiations, and gentle refusals.",
+-  "grammar": "Fórmulas de cortesía y atenuación condicional",
++  "goal": "Make polite requests and suggestions with si fuera tan amable de, le agradecería que and sería mejor que.",
++  "grammar": "Polite requests with si and the imperfect subjunctive",
+   "sections": [
+-    {
+-      "type": "intro",
+-      "title": "Unit 9: Conditionals I — Lesson 3",
+-      "body": [
+-        "Welcome to lesson 3 of Unit 9 (Conditionals I: Potential Scenarios). Mastering hypothetical conditionals enables you to explore alternatives, negotiate terms, and calibrate diplomatic courtesy.",
+-        "In this lesson, we study si fuera tan amable: cortesía y mitigación pragmática, establishing rigorous command of imperfect subjunctive and conditional correlatives."
+-      ]
+-    },
+     {
+       "type": "goal",
+       "items": [
+-        "Employ hypothetical conditionals as pragmatic mitigating devices to formulate diplomatic requests, negotiations, and gentle refusals.",
+-        "Master the syntax of cortesia-atenuacion-condicional.",
+-        "Incorporate advanced negotiation vocabulary (el protocolo, afable)."
++        "I can make a polite request with si fuera tan amable de and le agradecería que.",
++        "I can soften a suggestion with sería mejor que and the imperfect subjunctive.",
++        "I can use the new words for protocol and courtesy."
+       ]
+     },
+     {
+@@ -59,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-09-03.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can make a polite request with si fuera tan amable de and le agradecería que.",
++        "I can soften a suggestion with sería mejor que and the imperfect subjunctive.",
++        "I can use the new words for protocol and courtesy."
++      ]
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-09-04.json b/content/es-latam/lessons/b2/b2-09-04.json
+index 06d730a2..727b7448 100644
+--- a/content/es-latam/lessons/b2/b2-09-04.json
++++ b/content/es-latam/lessons/b2/b2-09-04.json
+@@ -1,24 +1,16 @@
+ {
+   "id": "lesson.b2.09.04",
+-  "title": "Siempre que se cumpla el acuerdo: condicionales estrictas",
++  "title": "On One Condition: Siempre Que and Con Tal de Que",
+   "level": "B2",
+-  "goal": "Utilize strict conditional conjunctions ('siempre que', 'con tal de que', 'a condición de que') followed by the subjunctive to articulate legal and contractual prerequisites.",
+-  "grammar": "Condicionales estrictas con siempre que y con tal de que",
++  "goal": "Set the terms of an agreement with siempre que, con tal de que and a condición de que plus the subjunctive.",
++  "grammar": "Strict conditions with the subjunctive",
+   "sections": [
+-    {
+-      "type": "intro",
+-      "title": "Unit 9: Conditionals I — Lesson 4",
+-      "body": [
+-        "Welcome to lesson 4 of Unit 9 (Conditionals I: Potential Scenarios). Mastering hypothetical conditionals enables you to explore alternatives, negotiate terms, and calibrate diplomatic courtesy.",
+-        "In this lesson, we study siempre que se cumpla el acuerdo: condicionales estrictas, establishing rigorous command of imperfect subjunctive and conditional correlatives."
+-      ]
+-    },
+     {
+       "type": "goal",
+       "items": [
+-        "Utilize strict conditional conjunctions ('siempre que', 'con tal de que', 'a condición de que') followed by the subjunctive to articulate legal and contractual prerequisites.",
+-        "Master the syntax of condicionales-restrictivas-siempre-que.",
+-        "Incorporate advanced negotiation vocabulary (el laudo, vinculante)."
++        "I can set a condition with siempre que, con tal de que and a condición de que.",
++        "I can use the infinitive after con tal de and a condición de when both clauses share a subject.",
++        "I can use the new words for contracts and terms."
+       ]
+     },
+     {
+@@ -59,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-09-04.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can set a condition with siempre que, con tal de que and a condición de que.",
++        "I can use the infinitive after con tal de and a condición de when both clauses share a subject.",
++        "I can use the new words for contracts and terms."
++      ]
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-09-05.json b/content/es-latam/lessons/b2/b2-09-05.json
+index 7b2dbfb9..2569f6d8 100644
+--- a/content/es-latam/lessons/b2/b2-09-05.json
++++ b/content/es-latam/lessons/b2/b2-09-05.json
+@@ -1,24 +1,16 @@
+ {
+   "id": "lesson.b2.09.05",
+-  "title": "A menos que intervenga la justicia: condicionales excluyentes",
++  "title": "Unless: A Menos Que, A No Ser Que and Salvo Que",
+   "level": "B2",
+-  "goal": "Formulate negative exclusive conditional clauses with 'a menos que', 'a no ser que', and 'salvo que' followed by the subjunctive to set exceptions and caveats.",
+-  "grammar": "Condicionales de exclusión con a menos que y salvo que",
++  "goal": "Name the one exception that would change the outcome with a menos que, a no ser que and salvo que plus the subjunctive.",
++  "grammar": "Exceptions with the subjunctive",
+   "sections": [
+-    {
+-      "type": "intro",
+-      "title": "Unit 9: Conditionals I — Lesson 5",
+-      "body": [
+-        "Welcome to lesson 5 of Unit 9 (Conditionals I: Potential Scenarios). Mastering hypothetical conditionals enables you to explore alternatives, negotiate terms, and calibrate diplomatic courtesy.",
+-        "In this lesson, we study a menos que intervenga la justicia: condicionales excluyentes, establishing rigorous command of imperfect subjunctive and conditional correlatives."
+-      ]
+-    },
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate negative exclusive conditional clauses with 'a menos que', 'a no ser que', and 'salvo que' followed by the subjunctive to set exceptions and caveats.",
+-        "Master the syntax of condicionales-excluyentes-a-menos-que.",
+-        "Incorporate advanced negotiation vocabulary (la salvedad, impeditivo)."
++        "I can name the one exception that would change the outcome with a menos que, a no ser que and salvo que.",
++        "I can use the subjunctive after these three phrases.",
++        "I can use the new words for exceptions and credentials."
+       ]
+     },
+     {
+@@ -59,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-09-05.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can name the one exception that would change the outcome with a menos que, a no ser que and salvo que.",
++        "I can use the subjunctive after these three phrases.",
++        "I can use the new words for exceptions and credentials."
++      ]
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-09-consolidation.json b/content/es-latam/lessons/b2/b2-09-consolidation.json
+index f1663341..5b07093b 100644
+--- a/content/es-latam/lessons/b2/b2-09-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-09-consolidation.json
+@@ -1,18 +1,17 @@
+ {
+   "id": "lesson.b2.09.consolidation",
+-  "title": "Unit 9 Consolidation: Conditionals I & Potential Scenarios",
++  "title": "Unit 9 Consolidation",
+   "level": "B2",
+-  "goal": "Consolidate hypothetical conditionals, polite mitigations, strict prerequisites, and analyze Isabel Allende's 'Dos palabras'.",
+-  "grammar": "síntesis de oraciones condicionales potenciales, cortesía y requisitos estrictos",
++  "goal": "Review imagined situations, the -ra form of quisiera, polite requests, conditions and exceptions, and read a text about Isabel Allende and Cuentos de Eva Luna.",
++  "grammar": "Review: potential scenarios, conditions and exceptions",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Deploy the second conditional (si + imperfecto subjuntivo + condicional simple) effortlessly across speech and writing.",
+-        "Utilize stylistic variants in the apodosis (quisiera, debiera, pudiera) in high-register prose.",
+-        "Formulate strict contractual conditions with 'siempre que', 'con tal de que', and 'a condición de que'.",
+-        "Set definitive negative exceptions with 'a menos que' and 'salvo que'.",
+-        "Analyze the emancipatory power of words and persuasion in Isabel Allende's masterpiece."
++        "Review si with the imperfect subjunctive and the conditional for imagined situations.",
++        "Review quisiera, pudiera and debiera and the polite requests with si.",
++        "Review siempre que, con tal de que, a menos que and salvo que.",
++        "Read a text about the writer Isabel Allende and her book Cuentos de Eva Luna."
+       ]
+     },
+     {
+@@ -35,16 +34,17 @@
+         "b2-09-consolidation.ex05",
+         "b2-09-consolidation.ex06",
+         "b2-09-consolidation.ex07",
+-        "b2-09-consolidation.ex08"
++        "b2-09-consolidation.ex08",
++        "b2-09-consolidation.ex09"
+       ]
+     },
+     {
+       "type": "checklist",
+       "items": [
+-        "I can form potential conditionals using 'si' with the imperfect subjunctive and conditional.",
+-        "I can use 'quisiera' and 'debiera' to soften statements and requests politely.",
+-        "I can state mandatory conditions using 'siempre que' with the subjunctive.",
+-        "I can express exceptions using 'a menos que' with the subjunctive."
++        "I can imagine an unlikely present or future situation with si and the imperfect subjunctive.",
++        "I can use quisiera, pudiera and debiera and make polite requests with si and le agradecería que.",
++        "I can state a condition with siempre que, con tal de que and a condición de que, and an exception with a menos que and salvo que.",
++        "I can read a short text about Isabel Allende and her book Cuentos de Eva Luna."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-10-01.json b/content/es-latam/lessons/b2/b2-10-01.json
+index b6880bb6..e930cfa6 100644
+--- a/content/es-latam/lessons/b2/b2-10-01.json
++++ b/content/es-latam/lessons/b2/b2-10-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.10.01",
+-  "title": "Períodos condicionales irreales en el pasado",
++  "title": "What Would Have Happened: Past Counterfactuals",
+   "level": "B2",
+-  "goal": "Master third conditional counterfactual sentences (si + pluperfect subjunctive, compound conditional) to analyze past historical turning points.",
+-  "grammar": "el tercer condicional contrafáctico: si + pluscuamperfecto de subjuntivo + condicional compuesto",
++  "goal": "Use si with hubiera and the past participle, and habría with the past participle, to reason about a past that did not happen.",
++  "grammar": "Past counterfactuals with si hubiera",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate third conditional sentences referring to unfulfilled past events.",
+-        "Distinguish the role of the pluperfect subjunctive in protasis vs compound conditional in apodosis.",
+-        "Deploy historical analysis vocabulary (encrucijada, desenlace, punto de inflexión, coyuntura)."
++        "I can use si hubiera and habría with a past participle to say what would have happened.",
++        "I can put the result clause first, and use si no hubiera sido por to name what made the difference.",
++        "I can use the new words for causes and turning points."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-10-01.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use si hubiera and habría with a past participle to say what would have happened.",
++        "I can put the result clause first, and use si no hubiera sido por to name what made the difference.",
++        "I can use the new words for causes and turning points."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-10-02.json b/content/es-latam/lessons/b2/b2-10-02.json
+index d42ad2b1..dde9f7e8 100644
+--- a/content/es-latam/lessons/b2/b2-10-02.json
++++ b/content/es-latam/lessons/b2/b2-10-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.10.02",
+-  "title": "El pluscuamperfecto de subjuntivo en la apódosis",
++  "title": "Habría or Hubiera? Two Forms in the Result",
+   "level": "B2",
+-  "goal": "Employ the pluperfect subjunctive in the apodosis (hubiera hecho) as a stylistic alternative to the compound conditional in formal prose.",
+-  "grammar": "alternancia estilística entre condicional compuesto y pluscuamperfecto de subjuntivo en la apódosis",
++  "goal": "Use hubiera with the past participle as a common alternative to habría with the past participle in the result clause.",
++  "grammar": "Hubiera in place of habría in the result",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Recognize and produce 'hubiera + participle' in conditional main clauses.",
+-        "Differentiate between acceptable literary variation and grammatical errors.",
+-        "Deploy terminology of retrospective critique (desacierto, menoscabo, imprevisión, rectificación)."
++        "I can use hubiera and a past participle in place of habría in the result clause of a past counterfactual.",
++        "I can tell which clause may take hubiera in place of the conditional, and which may not.",
++        "I can use the new words for mistakes and corrections."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-10-02.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use hubiera and a past participle in place of habría in the result clause of a past counterfactual.",
++        "I can tell which clause may take hubiera in place of the conditional, and which may not.",
++        "I can use the new words for mistakes and corrections."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-10-03.json b/content/es-latam/lessons/b2/b2-10-03.json
+index cb295c33..ab9f5272 100644
+--- a/content/es-latam/lessons/b2/b2-10-03.json
++++ b/content/es-latam/lessons/b2/b2-10-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.10.03",
+-  "title": "Fórmulas de lamento, queja y reproche en el pasado",
++  "title": "I Should Have: Regrets and Reproaches",
+   "level": "B2",
+-  "goal": "Formulate past regrets, moral reproaches, and retrospective critiques using modal periphrases and exclamatory clauses.",
+-  "grammar": "estructuras de reproche y lamento: ¡si al menos hubieras...!, deberías haber + participio",
++  "goal": "Say what you or someone else should have done with debería haber and tendría que haber, and name a regret with me arrepiento de.",
++  "grammar": "Regrets and reproaches about the past",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate exclamatory conditional regrets with 'si tan solo' / 'si al menos'.",
+-        "Express calibrated reproaches with modal periphrases ('deberías haber...', 'habría sido preferible que...').",
+-        "Deploy emotional and ethical vocabulary of regret (remordimiento, negligencia, saldo, amargura)."
++        "I can say what I or someone else should have done with debería haber and tendría que haber.",
++        "I can name a regret with me arrepiento de.",
++        "I can use the new words for regret and blame."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-10-03.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say what I or someone else should have done with debería haber and tendría que haber.",
++        "I can name a regret with me arrepiento de.",
++        "I can use the new words for regret and blame."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-10-04.json b/content/es-latam/lessons/b2/b2-10-04.json
+index 57b3ae6d..360d25b8 100644
+--- a/content/es-latam/lessons/b2/b2-10-04.json
++++ b/content/es-latam/lessons/b2/b2-10-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.10.04",
+-  "title": "Estructuras condicionales implícitas con participio y gerundio",
++  "title": "Conditions Without Si: De + Infinitive and the Gerund",
+   "level": "B2",
+-  "goal": "Construct implicit counterfactual conditions using 'de haber + participle' and absolute clauses in formal analytical registers.",
+-  "grammar": "condicionales implícitas de pasado: de haber + participio, habiendo + participio",
++  "goal": "Say a condition without si, with de and an infinitive or with a gerund.",
++  "grammar": "Conditions without si",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Condense conditional periods using 'de haber + participle'.",
+-        "Interpret and produce absolute participle constructions with hypothetical past meaning.",
+-        "Deploy analytical prose terminology (atenuante, detonante, omisión, ponderar, contingencia)."
++        "I can say a condition without si with de and an infinitive, in the present and the past.",
++        "I can say a condition with a gerund when the subject is the same.",
++        "I can use the new words for causes and foresight."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-10-04.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say a condition without si with de and an infinitive, in the present and the past.",
++        "I can say a condition with a gerund when the subject is the same.",
++        "I can use the new words for causes and foresight."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-10-05.json b/content/es-latam/lessons/b2/b2-10-05.json
+index 523e48d4..d087d681 100644
+--- a/content/es-latam/lessons/b2/b2-10-05.json
++++ b/content/es-latam/lessons/b2/b2-10-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.10.05",
+-  "title": "Construcciones concesivo-condicionales e inversión retórica",
++  "title": "Even If and Inversion: Hubiera Without Si",
+   "level": "B2",
+-  "goal": "Master advanced concessive-conditional schemes ('aun cuando hubiéramos...') and rhetorical inversion in historical and philosophical essays.",
+-  "grammar": "concesivas hipotéticas de pasado e inversiones retóricas: aun cuando hubiera + participio",
++  "goal": "Drop si and begin with hubiera, and say \"even if\" about the past with aun cuando or aunque and hubiera.",
++  "grammar": "Inversion and concession with hubiera",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Deploy past concessive conditionals ('aun cuando hubiera...') to argue inevitability.",
+-        "Analyze literary rhetorical inversions in historical counterfactual texts.",
+-        "Use sophisticated philosophical vocabulary (disyuntiva, sesgo, ineludible, espejismo)."
++        "I can drop si and begin a past counterfactual with hubiera and a past participle.",
++        "I can say \"even if\" about the past with aun cuando or aunque and hubiera.",
++        "I can use the new words for dilemmas and conclusions."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-10-05.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can drop si and begin a past counterfactual with hubiera and a past participle.",
++        "I can say \"even if\" about the past with aun cuando or aunque and hubiera.",
++        "I can use the new words for dilemmas and conclusions."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-10-consolidation.json b/content/es-latam/lessons/b2/b2-10-consolidation.json
+index 193c6531..e40eff50 100644
+--- a/content/es-latam/lessons/b2/b2-10-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-10-consolidation.json
+@@ -1,17 +1,17 @@
+ {
+   "id": "lesson.b2.10.consolidation",
+-  "title": "Unit 10 Consolidation: Counterfactuals & Regrets",
++  "title": "Unit 10 Consolidation",
+   "level": "B2",
+-  "goal": "Consolidate past counterfactual conditionals, pluperfect subjunctive in apodosis, modal reproaches, and implicit conditions through literary analysis.",
+-  "grammar": "síntesis de períodos contrafácticos de pasado, reproches retrospectivos, condiciones implícitas con participio y concesivas hipotéticas",
++  "goal": "Review past counterfactuals, hubiera in the result, regrets and reproaches, conditions without si and hubiera without si, and read a text about Mario Vargas Llosa and Conversación en La Catedral.",
++  "grammar": "Review: counterfactuals and regrets",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Construct complex counterfactual sentences relating past decisions to alternative outcomes.",
+-        "Utilize the pluperfect subjunctive ('hubiera...') in literary apodoses.",
+-        "Condense conditions using 'de haber + participle' in formal analytical writing.",
+-        "Analyze literary turning points in Vargas Llosa's 'Conversación en La Catedral'."
++        "Review si hubiera and habría for a past that did not happen.",
++        "Review hubiera in the result clause, regrets and reproaches, and conditions without si.",
++        "Review hubiera without si and aun cuando hubiera.",
++        "Read a text about the writer Mario Vargas Llosa and his novel Conversación en La Catedral."
+       ]
+     },
+     {
+@@ -34,17 +34,18 @@
+         "b2-10-consolidation.ex05",
+         "b2-10-consolidation.ex06",
+         "b2-10-consolidation.ex07",
+-        "b2-10-consolidation.ex08"
++        "b2-10-consolidation.ex08",
++        "b2-10-consolidation.ex09"
+       ]
+     },
+     {
+       "type": "checklist",
+       "items": [
+-        "I can formulate third conditional sentences analyzing past unfulfilled events.",
+-        "I can alternate compound conditional with pluperfect subjunctive in formal apodoses.",
+-        "I can express past regrets and reproaches with '¡si al menos...!' and 'deberías haber...'.",
+-        "I can condense hypothetical conditions using 'de haber + participle'."
++        "I can say what would have happened with si hubiera and habría or hubiera and a past participle.",
++        "I can express a regret or a reproach with debería haber, tendría que haber and me arrepiento de.",
++        "I can state a condition without si with de and an infinitive or a gerund, and with hubiera at the start.",
++        "I can read a short text about Mario Vargas Llosa and his novel Conversación en La Catedral."
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/stories/classics/b2/b2-09.json b/content/es-latam/stories/classics/b2/b2-09.json
+index 184f801a..5516f621 100644
+--- a/content/es-latam/stories/classics/b2/b2-09.json
++++ b/content/es-latam/stories/classics/b2/b2-09.json
+@@ -1,84 +1,78 @@
+ {
+   "id": "story.b2.09.allende",
+-  "title": "Isabel Allende: Dos palabras",
++  "title": "Isabel Allende y Cuentos de Eva Luna",
+   "level": "B2",
+-  "lesson": 6,
++  "lesson": 5,
++  "order": 9,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "characters": [
+-    "Belisa Crepusculario",
+-    "El Coronel",
+-    "El Mulato"
+-  ],
+-  "summary": "Adaptación pedagógica para nivel B2 del célebre relato de Isabel Allende: el poder emancipador del lenguaje, la persuasión política frente a la violencia y el hechizo de dos palabras secretas.",
++  "characters": [],
++  "summary": "Texto sobre Isabel Allende, la escritora chilena, y su libro Cuentos de Eva Luna, con algunas maneras de imaginar cómo se puede leer.",
+   "author": "Isabel Allende (Chile, 1942–)",
+   "work": "Cuentos de Eva Luna (1989)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir del cuento clásico de Isabel Allende",
++  "source": "Texto original de Parlour sobre la obra y su autora; no reproduce ni resume cuentos del original.",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Belisa Crepusculario había nacido en una familia tan mísera que ni siquiera poseía nombres para bautizar a sus hijos. Creció en una región inhóspita y desértica donde las sequías periódicas diezmaban aldeas enteras, obligando a los sobrevivientes a enterrar a sus muertos bajo montículos de arena salitrosa antes de huir hacia el sur. Comprendiendo que si se quedaba en aquel páramo el hambre terminaría por consumirla, la joven emprendió una marcha titánica a través de la llanura. En el curso de su travesía errante descubrió por pura casualidad una hoja de periódico arrastrada por el viento; al preguntar a un transeúnte qué significaban aquellos signos negros trazados sobre el papel, descubrió con asombro reverente que las palabras servían para comunicar pensamientos, sanar nostalgias y transformar la realidad."
++      "text": "Isabel Allende es una escritora chilena. Nació en 1942 y publicó su primera novela, La casa de los espíritus, en 1982. Este texto no cuenta su vida: habla de uno de sus libros, Cuentos de Eva Luna, y de las distintas maneras en que se puede leer."
+     },
+     {
+       "type": "narration",
+-      "text": "A partir de ese instante luminoso, Belisa eligió su propio destino y su nombre: se autodenominó Belisa Crepusculario, pagó a un cura de aldea veinte pesos para que le enseñara a leer y escribir el diccionario entero, y luego arrojó el pesado libro a una hoguera para no limitar su imaginación a vocablos domesticados. Se dedicó a un oficio insólito y ambulante: vender palabras. Viajaba de feria en feria instalando una carpa de lienzo donde expendía versos de amor por cinco centavos, redactaba cartas de pésame para viudas inconsolables, inventaba insultos elegantes para enemigos jurados y mejoraba discursos para alcaldes municipales. Por cada cincuenta centavos que un cliente gastaba, Belisa le obsequiaba una palabra secreta de uso exclusivo para protegerlo contra la melancolía."
++      "text": "Cuentos de Eva Luna salió en 1989. Es una colección de cuentos, es decir, de historias breves que cada lector puede leer por separado. Los cuenta Eva Luna, la narradora de una novela anterior de la autora, titulada Eva Luna (1987). Por eso una misma voz acompaña al lector de principio a fin."
+     },
+     {
+       "type": "narration",
+-      "text": "Una tarde de bochorno sofocante, mientras atendía a los campesinos bajo el toldo polvoriento, una partida de jinetes armados irrumpió al galope en la plaza. Al frente de la tropa cabalgaba el Mulato, un gigante taciturno con una cicatriz en la mejilla que servía como lugarteniente del hombre más temido y sanguinario de la república: el Coronel. Sin darle explicaciones, el Mulato ató a Belisa sobre una mula y la condujo a través de cañadas pedregosas hasta un campamento guerrillero oculto en las estribaciones de la sierra, donde las fogatas ardían entre rifles amontonados y caballos sudorosos."
++      "text": "¿Qué pasaría si un lector empezara por este libro? Seguramente no tendría ningún problema, porque un cuento suele ser un texto completo. Pero si ya conociera la novela de 1987, volvería a encontrar a la narradora y querría saber qué otras historias puede contar."
+     },
+     {
+       "type": "narration",
+-      "text": "Allí, sentado sobre un cajón de municiones, se encontraba el Coronel. Era un veterano de guerras civiles interminables cuya sola mención helaba la sangre de los campesinos; sin embargo, al mirarlo a los ojos, Belisa descubrió en su semblante curtido una fatiga infinita y una desolada tristeza. El guerrillero le confesó su anhelo más íntimo: estaba hastiado de cabalgar en la penumbra sembrando el terror, de comer carne cruda y de huir de las tropas gubernamentales. Quería convertirse en presidente legítimo de la república, pero anhelaba ser elegido por el voto libre y entusiasta de los ciudadanos, no mediante el pánico de las bayonetas. Para lograr semejante prodigio civil necesitaba un discurso cautivador que conmoviera los corazones de la nación, y sabía que solo ella poseía el don de redactarlo."
++      "text": "Hay lectores a quienes les gusta seguir el orden en que se publicaron los libros. Con tal de que tengan tiempo, podrían empezar por La casa de los espíritus, de 1982, seguir con Eva Luna, de 1987, y terminar con Cuentos de Eva Luna, de 1989. Así leerían los tres libros en el mismo orden en que aparecieron."
+     },
+     {
+       "type": "narration",
+-      "text": "Durante toda la noche, alumbrada por la llama temblorosa de un candil, Belisa seleccionó las palabras con una paciencia orfebre. Descartó los giros altisonantes que sonaban a demagogia barata, desechó las promesas vacías que desgastan la confianza popular y eligió vocablos cálidos, justos y luminosos capaces de despertar la esperanza en un pueblo golpeado por la violencia. Al amanecer, leyó el texto tres veces al Coronel para que lo memorizara, pues el caudillo no sabía leer. Antes de marcharse del campamento, Belisa se inclinó hacia su oído y le susurró dos palabras secretas que le correspondían como regalo irrevocable. En cuanto escuchó aquellas dos sílabas, el Coronel sintió que un perfume embriagador le recorría la piel, transformando para siempre su espíritu."
++      "text": "Otros prefieren una lectura más libre. Abrirían el libro en cualquier página y seguirían leyendo, a menos que un cuento les aburriera. Esa es una ventaja de las colecciones: si un texto no gusta, casi siempre se puede pasar al siguiente."
+     },
+     {
+       "type": "narration",
+-      "text": "Acompañado por el Mulato y sus jinetes desarmados, el Coronel recorrió pueblos, haciendas y capitales de provincia pronunciando el discurso compuesto por Belisa. El efecto de su mensaje fue fulminante: campesinos, comerciantes y mujeres lloraban de emoción al escucharlo prometer justicia, escuelas y concordia civil, mientras que los opositores políticos quedaban desarmados ante la belleza inapelable de sus argumentos. La victoria electoral era segura; sin embargo, a medida que crecía su gloria civil, el Coronel languidecía en silencio. No dormía, vagaba como un sonámbulo por los cuarteles y repetía entre susurros las dos palabras secretas de la mujer, hechizado por una obsesión que ninguna ambición de poder podía aplacar."
++      "text": "Una novela pide muchas horas seguidas. Un libro de cuentos, en cambio, se adapta mejor a una vida con poco tiempo: si solo tuviéramos diez minutos al día, podríamos leer un cuento corto cada noche. Si alguien quisiera leer a Allende sin prisa, podría hacerlo así."
+     },
+     {
+       "type": "narration",
+-      "text": "Desesperado al ver que su jefe perdía el juicio y el apetito por culpa de un encantamiento invisible, el Mulato rastreó los caminos polvorientos hasta encontrar nuevamente a Belisa en una feria del interior. La arrastró hasta la presencia del caudillo para exigirle que le devolviera sus palabras o lo liberara del embrujo. Pero cuando el fiero guerrillero y la vendedora de palabras se miraron frente a frente en la penumbra del campamento, todo reproche se disolvió en el aire. El Coronel avanzó hacia ella con paso tembloroso y le tomó la mano con ternura infinita, comprendiendo que el poder supremo en este mundo no reside en el mando de los ejércitos, sino en la invencible capacidad de amar."
++      "text": "En resumen, Isabel Allende, nacida en 1942, publicó La casa de los espíritus en 1982 y Cuentos de Eva Luna en 1989. Cómo se lee ese libro depende de cada lector: lo importante es que la lectura se pueda disfrutar."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿De qué manera descubre Belisa Crepusculario el valor de las palabras durante su juventud?",
++          "question": "According to the text, who tells the stories in Cuentos de Eva Luna?",
+           "options": [
+-            "Al hallar una hoja de periódico arrastrada por el viento durante su huida del desierto natal.",
+-            "Al recibir como herencia una biblioteca jurídica en la capital de la provincia.",
+-            "Al ser educada en un convento religioso de monjas de clausura en la costa.",
+-            "Al trabajar como secretaria en el despacho municipal de un juez de paz."
++            "Eva Luna, la narradora de una novela anterior de Allende.",
++            "Un narrador que no aparece en ningún otro libro de Allende.",
++            "Los lectores, que escriben sus propias historias."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El párrafo 1 relata que Belisa descubrió el poder de la escritura al encontrar un periódico llevado por el viento mientras huía de la sequía."
++          "explanation": "The text says that Eva Luna, the narrator of an earlier novel by Allende, tells the stories, so one voice goes through the whole book."
+         },
+         {
+-          "question": "¿Por qué el Coronel acude a los servicios de Belisa a pesar de su fama de temible guerrillero?",
++          "question": "In which order of publication does the text suggest reading the three books?",
+           "options": [
+-            "Porque desea ganar la presidencia mediante el voto y el entusiasmo popular en lugar del terror militar.",
+-            "Porque necesita falsificar títulos de propiedad para adueñarse de las haciendas del norte.",
+-            "Porque planea redactar una declaración de guerra formal contra las potencias vecinas.",
+-            "Porque busca escribir una autobiografía secreta para venderla a editoriales extranjeras."
++            "La casa de los espíritus, Eva Luna y Cuentos de Eva Luna.",
++            "Cuentos de Eva Luna, Eva Luna y La casa de los espíritus.",
++            "Eva Luna, La casa de los espíritus y Cuentos de Eva Luna."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El párrafo 4 explica que el Coronel estaba cansado de la violencia y deseaba ser elegido presidente legítimo por la voluntad del pueblo."
++          "explanation": "The text gives the years 1982, 1987 and 1989: first La casa de los espíritus, then Eva Luna, then Cuentos de Eva Luna."
+         },
+         {
+-          "question": "¿Cuál es la causa del profundo desasosiego que consume al Coronel durante su exitosa campaña electoral?",
++          "question": "What does the text say is an advantage of a collection of stories?",
+           "options": [
+-            "El hechizo amoroso e íntimo provocado por las dos palabras secretas que Belisa le susurró al oído.",
+-            "El temor constante a sufrir un atentado organizado por su lugarteniente, el Mulato.",
+-            "La pérdida del discurso original que había olvidado copiar en sus libretas de campaña.",
+-            "La oposición frontal de los tribunales electorales que impugnaban su candidatura."
++            "Si un texto no gusta, casi siempre se puede pasar al siguiente.",
++            "Se puede leer en una sola sesión de muchas horas.",
++            "Hay que haber leído antes la novela para entenderla."
+           ],
+           "correctIndex": 0,
+-          "explanation": "Los párrafos 5 y 6 detallan que el Coronel quedó prendado y obsesionado por las dos palabras que Belisa le regaló, revelando la fuerza del amor."
++          "explanation": "The text says that in a collection, if one text does not appeal to you, you can almost always move on to the next."
+         }
+       ]
+     }
+diff --git a/content/es-latam/stories/classics/b2/b2-10.json b/content/es-latam/stories/classics/b2/b2-10.json
+index de0ae4ff..427ca832 100644
+--- a/content/es-latam/stories/classics/b2/b2-10.json
++++ b/content/es-latam/stories/classics/b2/b2-10.json
+@@ -1,86 +1,80 @@
+ {
+   "id": "story.b2.10.vargasllosa",
+-  "title": "Mario Vargas Llosa: Conversación en La Catedral",
++  "title": "Mario Vargas Llosa y Conversación en La Catedral",
+   "level": "B2",
+-  "lesson": 6,
++  "lesson": 5,
++  "order": 10,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "characters": [
+-    "Santiago Zavala",
+-    "Ambrosio",
+-    "Don Fermín Zavala"
+-  ],
+-  "summary": "Adaptación pedagógica para nivel B2 de la célebre novela de Mario Vargas Llosa: el desencanto existencial, las encrucijadas éticas bajo la dictadura de Odría y la célebre interrogante sobre el destino peruano.",
+-  "author": "Mario Vargas Llosa (Perú, 1936–)",
++  "characters": [],
++  "summary": "Texto sobre Mario Vargas Llosa, el escritor peruano, y su novela Conversación en La Catedral, con algunas preguntas imaginarias sobre cómo leerla.",
++  "author": "Mario Vargas Llosa (Perú, 1936–2025)",
+   "work": "Conversación en La Catedral (1969)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Mario Vargas Llosa",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Desde la puerta de 'La Crónica', Santiago Zavala contempla la avenida Tacna sin amor: automóviles, edificios desiguales y descoloridos, esqueletos de carteles luminosos flotando en el humo de la garúa limeña. Al contemplar ese gris plomizo que cubre la ciudad como una mortaja de humedad marina, una pregunta recurrente y punzante vuelve a morderle la conciencia como un reproche antiguo: ¿en qué momento se había jodido el Perú? Los lustrabotas voceaban los titulares de la tarde, los empleados públicos apuraban el paso con sus cartapacios raídos bajo el brazo, y Zavalita pensaba que si la república no hubiera caído bajo la bota autoritaria del general Odría en los años cincuenta, tal vez su generación no habría quedado desprovista de ideales y asfixiada en el desencanto más amargo."
++      "text": "Mario Vargas Llosa fue un escritor peruano. Nació en Arequipa en 1936 y murió en Lima el 13 de abril de 2025. En 2010 recibió el Premio Nobel de Literatura. Este texto habla de una de sus novelas, Conversación en La Catedral, publicada en 1969, y de la forma de leerla."
+     },
+     {
+       "type": "narration",
+-      "text": "Aquella misma tarde, el azar lo conduce hasta la perrera municipal para rescatar a su perro Batuque, atrapado en una redada callejera. En ese recinto desolado, entre aullidos desesperados y hedor a barro salobre, Santiago reconoce con estupor a un anciano chofer negro que arrastra una carretilla de madera: Ambrosio, el antiguo sirviente de confianza de su padre, don Fermín Zavala. Sintiendo el impacto visceral de un pasado que creía sepultado bajo toneladas de indiferencia, Santiago invita a Ambrosio a refugiarse en 'La Catedral', una cantina destartalada y miserable cercana al río Rímac, donde los parroquianos consumen cerveza tibia y aguardiente barato entre mesas de pino grasiento y zumbido constante de moscas."
++      "text": "La novela parte de un encuentro. Santiago Zavala se reúne con Ambrosio, que antes había sido el chofer de su padre, y los dos conversan durante horas en un bar de Lima llamado La Catedral. El título del libro, Conversación en La Catedral, recoge el nombre de ese bar."
+     },
+     {
+       "type": "narration",
+-      "text": "Frente a dos botellas espumosas, comienza un diálogo torrencial de cuatro horas que teje de modo implacable las vidas de ambos hombres. En retrospectiva, Santiago comprende que su propia biografía constituye una cadena interminable de encrucijadas perdidas. Si no se hubiera rebelado contra la hipocresía burguesa de su hogar para ingresar a la rebelde Universidad de San Marcos, jamás habría conocido el fervor clandestino del grupo comunista Cahuide. Sin embargo, aquella rebeldía juvenil terminó truncada en un calabozo de la Seguridad Pública: si don Fermín no hubiera intervenido con sus poderosas influencias ministeriales para liberarlo, Santiago habría compartido el destierro con sus compañeros de militancia. Al descubrir que su padre lo había salvado sacrificando el honor de los otros, el joven rompió con su familia para siempre, condenándose a una vida gris como oscuro redactor de noticias locales."
++      "text": "Pero el libro no se limita a esa charla. A través de ella, y de muchas voces y tiempos mezclados, la novela muestra el Perú de la dictadura militar de Manuel Odría, que va de 1948 a 1956. Si esa dictadura no hubiera existido, la novela no habría podido mostrarla."
+     },
+     {
+       "type": "narration",
+-      "text": "Ambrosio escucha las preguntas ansiosas de Santiago con una mezcla de gratitud servil y pavor contenido. El chofer había sido testigo y ejecutor de los secretos más inconfesables del régimen dictatorial encabezado en las sombras por el siniestro Cayo Bermúdez, el implacable director de Gobierno que manejaba el espionaje, la delación y la tortura en las cloacas del poder. Si don Fermín Zavala no hubiera necesitado mantener sus negocios a flote mediante complicidades secretas con la tiranía, jamás se habría hundido en una ciénaga de corrupción moral que acabó por destruir a toda su familia. A través de las revelaciones entrecortadas de Ambrosio, Santiago desentraña que de haber exigido transparencia a tiempo, los crímenes que mancharon su estirpe no se habrían consumado en la más absoluta impunidad."
++      "text": "Muchos lectores de hoy no vivieron aquellos años. Si alguien hubiera leído la novela en 1969, la habría leído trece años después del final de esa dictadura. De haber vivido en aquella época, un lector de hoy quizá habría leído el libro de otra manera."
+     },
+     {
+       "type": "narration",
+-      "text": "La atmósfera sofocante de 'La Catedral' adquiere el dramatismo de una catarsis trágica cuando surge la figura espectral de la Musa, una figura turbia del bajo mundo cuyo chantaje amenazaba con destapar las aberraciones íntimas de la oligarquía limeña. Ambrosio baja los ojos, aprieta los puños contra el vaso de cristal y sugiere con voz quebrada que cometió un acto atroz para proteger la dignidad de su patrón. Santiago siente que la cerveza se transforma en hiel en su garganta: si Ambrosio no le hubiera revelado aquella verdad abominable en aquel bar de mala muerte, él habría podido continuar refugiado en su apacible mediocridad cotidiana sin cargar con el peso intolerable de la culpa paterna."
++      "text": "Como la novela mezcla voces y tiempos, conviene leerla con calma. Leyendo unas páginas cada día, el lector puede seguir mejor a cada persona. Aunque alguien solo hubiera leído la conversación entre los dos hombres, habría entendido que el libro habla de un país y de una época, y no solo de dos personas."
+     },
+     {
+       "type": "narration",
+-      "text": "La conversación concluye cuando las luces de la cantina comienzan a parpadear y los mozos recogen las sillas sobre las mesas vacías. Al despedirse en la niebla helada de la orilla del río, Santiago sabe que ninguna rectificación en el presente puede revocar las decisiones del pasado. De haber elegido la abogacía honorable que su padre deseaba para él, tal vez habría triunfado en los círculos aristocráticos; de haber mantenido su militancia clandestina con valentía irreductible, tal vez habría transformado la sociedad o muerto en una celda del penal del Frontón. Pero eligió el camino intermedio de la renuncia silenciosa, transformándose en un espectador escéptico de la tragedia nacional."
++      "text": "Algún lector podría pensar al terminar: «Debería haber empezado antes». Se arrepentiría de no haber abierto el libro mucho antes. Pero también puede mirar hacia delante: de tener tiempo, podría volver a la novela una segunda vez y leerla con más calma."
+     },
+     {
+       "type": "narration",
+-      "text": "Caminando de regreso hacia su modesto departamento bajo la garúa incesante, Santiago comprende que la encrucijada del Perú no fue fruto de una fatalidad cósmica irresistible, sino la suma acumulada de cobardías individuales, silencios cómplices e ilusiones traicionadas. Si los hombres libres hubiesen alzado la voz con intransigente decencia cuando la dictadura comenzó a corromper los tribunales y las conciencias, la patria no habría extraviado su rumbo moral. La obra maestra de Vargas Llosa se consagra así como una implacable indagación contrafáctica sobre la responsabilidad ética frente a la corrupción del poder."
++      "text": "En resumen, Mario Vargas Llosa, nacido en Arequipa en 1936, ganó el Premio Nobel en 2010 y publicó Conversación en La Catedral en 1969. En esa novela, una conversación en un bar de Lima sirve para mostrar el Perú de Odría."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Qué interrogante fundamental atormenta a Santiago Zavala al inicio de su jornada en Lima?",
++          "question": "According to the text, where do Santiago Zavala and Ambrosio talk for hours?",
+           "options": [
+-            "En qué momento preciso el Perú se desvió de su rumbo histórico y se hundió en la degradación moral.",
+-            "Por qué el periódico 'La Crónica' decidió trasladar su sede editorial a la ciudad de Arequipa.",
+-            "Cuándo se fundaron las primeras logias clandestinas de estudiantes en la Universidad de San Marcos.",
+-            "Cómo organizar una campaña de recolección de fondos para modernizar la perrera municipal."
++            "En un bar de Lima llamado La Catedral.",
++            "En la casa del padre de Santiago, en Arequipa.",
++            "En la oficina de un periódico de Lima."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El párrafo 1 expone la célebre pregunta que atormenta a Zavalita mientras contempla la avenida Tacna bajo la garúa: '¿en qué momento se había jodido el Perú?'."
++          "explanation": "The text says that Santiago and Ambrosio talk for hours in a bar in Lima called La Catedral."
+         },
+         {
+-          "question": "¿Cuál fue el motivo de la ruptura definitiva entre Santiago y su padre, don Fermín Zavala?",
++          "question": "Which period of Peruvian history does the text say the novel shows?",
+           "options": [
+-            "El descubrimiento de que su padre usó influencias con la dictadura para liberarlo de prisión sacrificando a sus camaradas.",
+-            "La decisión de su padre de desheredarlo debido a su matrimonio con una artista de teatro extranjera.",
+-            "La venta forzosa de la hacienda familiar para cancelar deudas adquiridas en el hipódromo de Lima.",
+-            "La negativa de Santiago a matricularse en la escuela militar para iniciar una carrera en la infantería."
++            "La dictadura militar de Manuel Odría, de 1948 a 1956.",
++            "Los años posteriores a la publicación de la novela, en 1969.",
++            "El periodo en que Vargas Llosa recibió el Premio Nobel."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El párrafo 3 narra que don Fermín utilizó sus conexiones ministeriales para liberar a Santiago de la cárcel, lo que provocó que el joven rompiera con su familia al no tolerar semejante complicidad."
++          "explanation": "The text says that, through the conversation and many voices and times, the novel shows Peru under the military dictatorship of Manuel Odría (1948–1956)."
+         },
+         {
+-          "question": "¿A qué conclusión ética llega Santiago Zavala tras su prolongado diálogo con Ambrosio en 'La Catedral'?",
++          "question": "What does the text suggest to a reader who finds the many voices and times hard to follow?",
+           "options": [
+-            "Que la descomposición moral del país obedeció a la cobardía individual y al silencio cómplice ante la tiranía, no a un destino ciego.",
+-            "Que la única solución viable para la república radica en la reinstauración indefinida del gobierno militar.",
+-            "Que las fortunas creadas bajo regímenes autoritarios deben ser expropiadas de inmediato por decreto legislativo.",
+-            "Que la memoria histórica debe borrarse por completo para inaugurar una etapa de prosperidad comercial."
++            "Leer la novela con calma, unas páginas cada día.",
++            "Leer solo el final y dejar el resto.",
++            "Leer primero otras novelas del mismo autor."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El párrafo 7 destaca que la crisis peruana no provino del azar, sino de la renuncia ética, las complicidades y la falta de coraje moral de los ciudadanos frente al poder corrupto."
++          "explanation": "The text says that, because the novel mixes voices and times, it is best to read it calmly, a few pages each day."
+         }
+       ]
+     }
+   }
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-09-01-voc.json b/content/es-latam/vocabulary/b2/b2-09-01-voc.json
+index f4083095..03caf740 100644
+--- a/content/es-latam/vocabulary/b2/b2-09-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-09-01-voc.json
+@@ -1,8 +1,8 @@
+ {
+   "id": "vocab.b2.09.01",
+   "lesson": "b2-09-01",
+-  "title": "Escenarios hipotéticos, conjeturas y proyectos",
+-  "theme": "Escenarios hipotéticos y negociación",
++  "title": "Words for hypotheses and feasibility",
++  "theme": "Potential scenarios",
+   "words": [
+     {
+       "lemma": "la hipótesis",
+@@ -14,35 +14,20 @@
+       "translation": "unlikely, far-fetched",
+       "pos": "adjective"
+     },
+-    {
+-      "lemma": "vislumbrar",
+-      "translation": "to glimpse, foresee",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "el supuesto",
+-      "translation": "assumption, premise",
+-      "pos": "noun"
+-    },
+     {
+       "lemma": "factible",
+       "translation": "feasible, achievable",
+       "pos": "adjective"
+     },
+-    {
+-      "lemma": "conjeturar",
+-      "translation": "to conjecture, speculate",
+-      "pos": "verb"
+-    },
+     {
+       "lemma": "la viabilidad",
+       "translation": "viability, feasibility",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "utópico",
+-      "translation": "utopian",
+-      "pos": "adjective"
++      "lemma": "vislumbrar",
++      "translation": "to glimpse, to foresee",
++      "pos": "verb"
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-09-02-voc.json b/content/es-latam/vocabulary/b2/b2-09-02-voc.json
+index 49cc2afb..8d97ad57 100644
+--- a/content/es-latam/vocabulary/b2/b2-09-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-09-02-voc.json
+@@ -1,14 +1,9 @@
+ {
+   "id": "vocab.b2.09.02",
+   "lesson": "b2-09-02",
+-  "title": "Registro solemne, elocuencia y matices estilísticos",
+-  "theme": "Escenarios hipotéticos y negociación",
++  "title": "Words for formal, measured speech",
++  "theme": "Potential scenarios",
+   "words": [
+-    {
+-      "lemma": "la elocuencia",
+-      "translation": "eloquence",
+-      "pos": "noun"
+-    },
+     {
+       "lemma": "solemne",
+       "translation": "solemn",
+@@ -16,7 +11,7 @@
+     },
+     {
+       "lemma": "atenuar",
+-      "translation": "to mitigate, attenuate",
++      "translation": "to soften, to tone down",
+       "pos": "verb"
+     },
+     {
+@@ -26,23 +21,13 @@
+     },
+     {
+       "lemma": "comedido",
+-      "translation": "measured, discreet",
++      "translation": "measured, restrained",
+       "pos": "adjective"
+     },
+     {
+       "lemma": "sugerir",
+       "translation": "to suggest",
+       "pos": "verb"
+-    },
+-    {
+-      "lemma": "elocuente",
+-      "translation": "eloquent",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "matizar",
+-      "translation": "to nuance, qualify",
+-      "pos": "verb"
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-09-03-voc.json b/content/es-latam/vocabulary/b2/b2-09-03-voc.json
+index 07fc83a8..141eb7c1 100644
+--- a/content/es-latam/vocabulary/b2/b2-09-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-09-03-voc.json
+@@ -1,47 +1,32 @@
+ {
+   "id": "vocab.b2.09.03",
+   "lesson": "b2-09-03",
+-  "title": "Diplomacia, protocolo y negociación",
+-  "theme": "Escenarios hipotéticos y negociación",
++  "title": "Words for protocol and courtesy",
++  "theme": "Potential scenarios",
+   "words": [
+     {
+       "lemma": "el protocolo",
+-      "translation": "protocol",
++      "translation": "protocol, formal procedure",
+       "pos": "noun"
+     },
+     {
+       "lemma": "afable",
+-      "translation": "affable, genial",
++      "translation": "friendly, kind",
+       "pos": "adjective"
+     },
+     {
+       "lemma": "rubricar",
+-      "translation": "to sign, endorse",
++      "translation": "to sign, to endorse",
+       "pos": "verb"
+     },
+     {
+       "lemma": "la audiencia",
+-      "translation": "audience, formal hearing",
++      "translation": "formal hearing, audience",
+       "pos": "noun"
+     },
+     {
+       "lemma": "prudente",
+-      "translation": "prudent, cautious",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "conciliar",
+-      "translation": "to reconcile, harmonize",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "la prerrogativa",
+-      "translation": "prerogative, privilege",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "conciliador",
+-      "translation": "conciliatory",
++      "translation": "cautious, sensible",
+       "pos": "adjective"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-09-04-voc.json b/content/es-latam/vocabulary/b2/b2-09-04-voc.json
+index 810e44b2..6dc49c05 100644
+--- a/content/es-latam/vocabulary/b2/b2-09-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-09-04-voc.json
+@@ -1,47 +1,32 @@
+ {
+   "id": "vocab.b2.09.04",
+   "lesson": "b2-09-04",
+-  "title": "Contratos, prerrequisitos y cláusulas",
+-  "theme": "Escenarios hipotéticos y negociación",
++  "title": "Words for contracts and terms",
++  "theme": "Potential scenarios",
+   "words": [
+     {
+-      "lemma": "el laudo",
+-      "translation": "arbitration award, ruling",
++      "lemma": "la cláusula",
++      "translation": "clause, term of a contract",
+       "pos": "noun"
+     },
+     {
+       "lemma": "vinculante",
+-      "translation": "binding (legal)",
++      "translation": "binding",
+       "pos": "adjective"
+     },
+     {
+       "lemma": "acatar",
+-      "translation": "to abide by, comply with",
++      "translation": "to abide by, to comply with",
+       "pos": "verb"
+     },
+-    {
+-      "lemma": "la cláusula",
+-      "translation": "clause, stipulation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "condicionado",
+-      "translation": "conditioned, conditional",
+-      "pos": "adjective"
+-    },
+     {
+       "lemma": "estipular",
+-      "translation": "to stipulate",
++      "translation": "to stipulate, to lay down",
+       "pos": "verb"
+     },
+-    {
+-      "lemma": "la contraprestación",
+-      "translation": "consideration, compensation",
+-      "pos": "noun"
+-    },
+     {
+       "lemma": "rescindir",
+-      "translation": "to rescind, terminate",
++      "translation": "to cancel (a contract)",
+       "pos": "verb"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-09-05-voc.json b/content/es-latam/vocabulary/b2/b2-09-05-voc.json
+index d44e4495..ce2d87ff 100644
+--- a/content/es-latam/vocabulary/b2/b2-09-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-09-05-voc.json
+@@ -1,8 +1,8 @@
+ {
+   "id": "vocab.b2.09.05",
+   "lesson": "b2-09-05",
+-  "title": "Excepciones, cláusulas de salvaguarda y exclusiones",
+-  "theme": "Escenarios hipotéticos y negociación",
++  "title": "Words for exceptions and credentials",
++  "theme": "Potential scenarios",
+   "words": [
+     {
+       "lemma": "la salvedad",
+@@ -10,39 +10,24 @@
+       "pos": "noun"
+     },
+     {
+-      "lemma": "impeditivo",
+-      "translation": "impeditive, obstructive",
+-      "pos": "adjective"
++      "lemma": "la excepción",
++      "translation": "exception",
++      "pos": "noun"
+     },
+     {
+       "lemma": "subsanar",
+-      "translation": "to remedy, rectify",
++      "translation": "to put right, to remedy",
+       "pos": "verb"
+     },
+-    {
+-      "lemma": "la excepción",
+-      "translation": "exception",
+-      "pos": "noun"
+-    },
+     {
+       "lemma": "ineludible",
+-      "translation": "unavoidable, inescapable",
++      "translation": "unavoidable",
+       "pos": "adjective"
+     },
+-    {
+-      "lemma": "prescindir",
+-      "translation": "to dispense with",
+-      "pos": "verb"
+-    },
+     {
+       "lemma": "la acreditación",
+-      "translation": "accreditation, credentials",
++      "translation": "pass, credentials",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "revocable",
+-      "translation": "revocable",
+-      "pos": "adjective"
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-10-01-voc.json b/content/es-latam/vocabulary/b2/b2-10-01-voc.json
+index 38823dee..e9d0093f 100644
+--- a/content/es-latam/vocabulary/b2/b2-10-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-10-01-voc.json
+@@ -1,48 +1,33 @@
+ {
+   "id": "vocab.b2.10.01",
+   "lesson": "b2-10-01",
+-  "title": "Encrucijadas, desenlaces y decisiones históricas",
+-  "theme": "Vocabulario de puntos de inflexión y análisis contrafáctico",
++  "title": "Words for causes and turning points",
++  "theme": "Counterfactuals and regrets",
+   "words": [
+     {
+       "lemma": "la encrucijada",
+-      "translation": "crossroads, turning point",
++      "translation": "crossroads, difficult choice",
+       "pos": "noun"
+     },
+-    {
+-      "lemma": "el desenlace",
+-      "translation": "outcome, denouement",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "irreversible",
+-      "translation": "irreversible",
+-      "pos": "adjective"
+-    },
+     {
+       "lemma": "el punto de inflexión",
+-      "translation": "inflection point, watershed moment",
++      "translation": "turning point",
+       "pos": "noun"
+     },
+     {
+       "lemma": "en retrospectiva",
+-      "translation": "in retrospect, with hindsight",
+-      "pos": "adverb"
+-    },
+-    {
+-      "lemma": "la coyuntura",
+-      "translation": "circumstance, juncture",
+-      "pos": "noun"
++      "translation": "in hindsight",
++      "pos": "expression"
+     },
+     {
+       "lemma": "desencadenar",
+-      "translation": "to trigger, to unleash",
++      "translation": "to set off, to trigger",
+       "pos": "verb"
+     },
+     {
+       "lemma": "la secuela",
+-      "translation": "aftermath, consequence",
++      "translation": "consequence, aftermath",
+       "pos": "noun"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-10-02-voc.json b/content/es-latam/vocabulary/b2/b2-10-02-voc.json
+index 3064a25c..2c8a3d77 100644
+--- a/content/es-latam/vocabulary/b2/b2-10-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-10-02-voc.json
+@@ -1,8 +1,8 @@
+ {
+   "id": "vocab.b2.10.02",
+   "lesson": "b2-10-02",
+-  "title": "Evaluación retrospectiva y rectificación institucional",
+-  "theme": "Vocabulario de revisión crítica, enmienda y desaciertos",
++  "title": "Words for mistakes and corrections",
++  "theme": "Counterfactuals and regrets",
+   "words": [
+     {
+       "lemma": "el desacierto",
+@@ -10,39 +10,24 @@
+       "pos": "noun"
+     },
+     {
+-      "lemma": "soslayar",
+-      "translation": "to sidestep, to bypass",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "el menoscabo",
+-      "translation": "detriment, impairment",
++      "lemma": "la imprevisión",
++      "translation": "lack of foresight",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "la rectificación",
+-      "translation": "rectification, correction",
+-      "pos": "noun"
++      "lemma": "imprudente",
++      "translation": "rash, careless",
++      "pos": "adjective"
+     },
+     {
+-      "lemma": "la imprevisión",
+-      "translation": "lack of foresight, negligence",
++      "lemma": "la rectificación",
++      "translation": "correction",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "prescindir",
+-      "translation": "to do without, to dispense with",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "reivindicar",
+-      "translation": "to vindicate, to claim rights",
++      "lemma": "soslayar",
++      "translation": "to sidestep, to avoid",
+       "pos": "verb"
+-    },
+-    {
+-      "lemma": "imprudente",
+-      "translation": "imprudent, rash",
+-      "pos": "adjective"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-10-03-voc.json b/content/es-latam/vocabulary/b2/b2-10-03-voc.json
+index 0997d78a..2f84a84a 100644
+--- a/content/es-latam/vocabulary/b2/b2-10-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-10-03-voc.json
+@@ -1,37 +1,22 @@
+ {
+   "id": "vocab.b2.10.03",
+   "lesson": "b2-10-03",
+-  "title": "Remordimientos, reproches y quejas formales",
+-  "theme": "Vocabulario de lamento afectivo y responsabilidad retrospectiva",
++  "title": "Words for regret and blame",
++  "theme": "Counterfactuals and regrets",
+   "words": [
+     {
+       "lemma": "el remordimiento",
+-      "translation": "remorse, regret",
++      "translation": "remorse, pang of conscience",
+       "pos": "noun"
+     },
+     {
+       "lemma": "el reproche",
+-      "translation": "reproach, blame",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "la negligencia",
+-      "translation": "negligence",
++      "translation": "reproach, criticism",
+       "pos": "noun"
+     },
+     {
+       "lemma": "desaprovechar",
+-      "translation": "to waste, to squander",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "el saldo",
+-      "translation": "balance, end result",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "reclamar",
+-      "translation": "to claim, to demand",
++      "translation": "to waste, to miss (a chance)",
+       "pos": "verb"
+     },
+     {
+@@ -41,8 +26,8 @@
+     },
+     {
+       "lemma": "lamentar",
+-      "translation": "to regret, to lament",
++      "translation": "to regret, to be sorry about",
+       "pos": "verb"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-10-04-voc.json b/content/es-latam/vocabulary/b2/b2-10-04-voc.json
+index 722cc299..92c89b63 100644
+--- a/content/es-latam/vocabulary/b2/b2-10-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-10-04-voc.json
+@@ -1,48 +1,33 @@
+ {
+   "id": "vocab.b2.10.04",
+   "lesson": "b2-10-04",
+-  "title": "Condiciones tácitas y análisis de contingencias",
+-  "theme": "Vocabulario de atenuantes, agravantes y ponderación causal",
++  "title": "Words for causes and foresight",
++  "theme": "Counterfactuals and regrets",
+   "words": [
+-    {
+-      "lemma": "el atenuante",
+-      "translation": "mitigating factor, extenuating circumstance",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "el detonante",
+-      "translation": "trigger, spark",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "la omisión",
+-      "translation": "omission, failure to act",
+-      "pos": "noun"
+-    },
+     {
+       "lemma": "previsible",
+       "translation": "foreseeable, predictable",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "el agravante",
+-      "translation": "aggravating factor",
++      "lemma": "la omisión",
++      "translation": "omission, failure to act",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "dilucidar",
+-      "translation": "to elucidate, to clarify",
+-      "pos": "verb"
++      "lemma": "el detonante",
++      "translation": "trigger, spark",
++      "pos": "noun"
+     },
+     {
+       "lemma": "ponderar",
+-      "translation": "to weigh, to consider carefully",
++      "translation": "to weigh up, to consider carefully",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la contingencia",
+-      "translation": "contingency, unforeseen event",
+-      "pos": "noun"
++      "lemma": "dilucidar",
++      "translation": "to clear up, to work out",
++      "pos": "verb"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-10-05-voc.json b/content/es-latam/vocabulary/b2/b2-10-05-voc.json
+index ef7ce675..4bbbce8f 100644
+--- a/content/es-latam/vocabulary/b2/b2-10-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-10-05-voc.json
+@@ -1,12 +1,12 @@
+ {
+   "id": "vocab.b2.10.05",
+   "lesson": "b2-10-05",
+-  "title": "Rhetórica histórica, disyuntivas y fatalidad",
+-  "theme": "Vocabulario de determinismo histórico, sesgo y fatalidad",
++  "title": "Words for dilemmas and conclusions",
++  "theme": "Counterfactuals and regrets",
+   "words": [
+     {
+       "lemma": "la disyuntiva",
+-      "translation": "dilemma, fork in the road",
++      "translation": "dilemma, choice between two options",
+       "pos": "noun"
+     },
+     {
+@@ -14,26 +14,11 @@
+       "translation": "bias, slant",
+       "pos": "noun"
+     },
+-    {
+-      "lemma": "la postrimería",
+-      "translation": "later stage, waning period",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "ineludible",
+-      "translation": "inescapable, unavoidable",
+-      "pos": "adjective"
+-    },
+     {
+       "lemma": "desentrañar",
+-      "translation": "to unravel, to figure out",
++      "translation": "to unravel, to work out",
+       "pos": "verb"
+     },
+-    {
+-      "lemma": "la fatalidad",
+-      "translation": "fatality, inexorable fate",
+-      "pos": "noun"
+-    },
+     {
+       "lemma": "el espejismo",
+       "translation": "mirage, illusion",
+@@ -45,4 +30,4 @@
+       "pos": "adjective"
+     }
+   ]
+-}
++}
+\ No newline at end of file
