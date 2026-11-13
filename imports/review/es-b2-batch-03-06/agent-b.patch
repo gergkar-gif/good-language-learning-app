@@ -1,0 +1,4413 @@
+diff --git a/content/es-latam/exercises/b2/b2-04-01-ex.json b/content/es-latam/exercises/b2/b2-04-01-ex.json
+index 5b6b989a..a38057de 100644
+--- a/content/es-latam/exercises/b2/b2-04-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-04-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "instar",
+-          "to urge, to press"
++          "exigir",
++          "to demand, to require"
+         ],
+         [
+-          "acatar",
+-          "to comply with, to abide by"
++          "insistir en",
++          "to insist on"
+         ],
+         [
+-          "el desacato",
+-          "contempt, non-compliance"
++          "obligar a",
++          "to force, to oblige"
+         ],
+         [
+-          "la prerrogativa",
+-          "prerogative, privilege"
++          "el reglamento",
++          "rules, regulations"
+         ]
+       ],
+       "teaches": [
+@@ -31,27 +31,33 @@
+       "id": "b2-04-01.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué modo verbal rige obligatoriamente el verbo principal en 'El consejo directivo exige que los gerentes _____ el plan de reestructuración'?",
++      "question": "Which sentence says that the boss demands that everyone arrive on time?",
+       "options": [
+-        "Subjuntivo (acaten), porque denota mandato e influencia sobre la conducta ajena.",
+-        "Indicativo (acatan), porque afirma un hecho factual comprobado.",
+-        "Condicional (acatarían), porque plantea una hipótesis lejana."
++        "La jefa exige que todos lleguen a tiempo.",
++        "La jefa exige que todos llegan a tiempo.",
++        "La jefa exige que todos llegen a tiempo."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-influence"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-04-01.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La defensora del pueblo instó a que las autoridades __ de inmediato a los detenidos.",
+-      "hint": "liberar - imperfect subjunctive",
+-      "answer": "liberaran",
+-      "english": "The ombudsperson urged the authorities to immediately release the detainees.",
++      "sentence": "El director ordenó que nosotros __ el informe antes del viernes.",
++      "hint": "entregar, we, imperfect subjunctive",
++      "answers": [
++        "entregáramos",
++        "entregásemos"
++      ],
++      "english": "The director ordered us to hand in the report before Friday.",
+       "teaches": [
+-        "subjunctive-influence"
++        "correlacion-temporal-subjuntivo"
+       ]
+     },
+     {
+@@ -59,24 +65,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Exigen",
++        "Los",
++        "vecinos",
++        "exigen",
+         "que",
+-        "se",
+-        "respete",
+-        "el",
+-        "orden",
+-        "constitucional."
++        "bajemos",
++        "la",
++        "música."
+       ],
+       "solution": [
+-        "Exigen",
++        "Los",
++        "vecinos",
++        "exigen",
+         "que",
+-        "se",
+-        "respete",
+-        "el",
+-        "orden",
+-        "constitucional."
++        "bajemos",
++        "la",
++        "música."
+       ],
+-      "english": "They demand that the constitutional order be respected.",
++      "english": "The neighbours demand that we turn the music down.",
+       "teaches": [
+         "subjunctive-influence"
+       ]
+@@ -87,34 +93,38 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Mediador",
+-          "text": "¿Cuál es la postura irrenunciable del sindicato en esta huelga?"
++          "speaker": "Ana",
++          "text": "¿Por qué saliste tan tarde de la oficina ayer?"
+         },
+         {
+-          "speaker": "Portavoz obrero",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Mediador",
+-          "text": "Trasladaremos esa petición a la mesa de negociaciones patronal."
++          "speaker": "Ana",
++          "text": "Entiendo, es mucho trabajo."
+         }
+       ],
+       "options": [
+-        "Exigimos que la empresa restablezca de inmediato los salarios y garantice la seguridad laboral.",
+-        "La fábrica fue construida a mediados del siglo pasado junto a la línea férrea.",
+-        "El café con leche cuesta dos dólares en la cafetería de la planta."
++        "Porque la jefa exigió que termináramos el informe.",
++        "Porque la jefa exigió que terminábamos el informe.",
++        "Porque la jefa exigió que terminaremos el informe."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-influence"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "imperfect",
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-04-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El juez ordenó que las partes acataran la sentencia sin dilaciones indebidas.",
+-      "english": "The judge ordered the parties to comply with the sentence without undue delay.",
++      "sentence": "El director insistió en que todos cumpliéramos el reglamento.",
++      "english": "The director insisted that we should all follow the rules.",
+       "teaches": [
+         "subjunctive-influence"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-04-02-ex.json b/content/es-latam/exercises/b2/b2-04-02-ex.json
+index 761ca1b8..9d81f3dc 100644
+--- a/content/es-latam/exercises/b2/b2-04-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-04-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "inadmisible",
+-          "unacceptable, inadmissible"
++          "razonable",
++          "reasonable"
+         ],
+         [
+-          "pertinente",
+-          "pertinent, relevant"
++          "inaceptable",
++          "unacceptable"
+         ],
+         [
+-          "censurable",
+-          "blameworthy, censurable"
++          "ridículo",
++          "ridiculous"
+         ],
+         [
+-          "convenir",
+-          "to be advisable, to suit"
++          "comprensible",
++          "understandable"
+         ]
+       ],
+       "teaches": [
+@@ -31,27 +31,33 @@
+       "id": "b2-04-02.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué modo exige la matriz 'Es inadmisible que'?",
++      "question": "Which sentence says that it is unfair that they have changed the schedule?",
+       "options": [
+-        "Subjuntivo, porque formula una valoración ética subjetiva.",
+-        "Indicativo, porque describe una regla matemática comprobada.",
+-        "Futuro simple, porque pospone el juicio para el próximo año."
++        "Es injusto que hayan cambiado el horario.",
++        "Es injusto que han cambiado el horario.",
++        "Es injusto que hayan cambiando el horario."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-value-judgments"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "preterito-perfecto"
++      }
+     },
+     {
+       "id": "b2-04-02.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Es indispensable que la comisión __ un informe detallado sobre el impacto ecológico.",
+-      "hint": "presentar",
+-      "answer": "presente",
+-      "english": "It is indispensable that the commission submit a detailed report on the ecological impact.",
++      "sentence": "Era normal que nosotros __ cansados después del viaje.",
++      "hint": "estar, we, imperfect subjunctive",
++      "answers": [
++        "estuviéramos",
++        "estuviésemos"
++      ],
++      "english": "It was normal that we were tired after the trip.",
+       "teaches": [
+-        "subjunctive-value-judgments"
++        "correlacion-temporal-subjuntivo"
+       ]
+     },
+     {
+@@ -60,25 +66,27 @@
+       "category": "grammar",
+       "tiles": [
+         "Es",
+-        "insólito",
++        "razonable",
+         "que",
+-        "nadie",
+-        "haya",
+-        "denunciado",
++        "pidan",
++        "más",
++        "tiempo",
++        "para",
+         "el",
+-        "fraude."
++        "proyecto."
+       ],
+       "solution": [
+         "Es",
+-        "insólito",
++        "razonable",
+         "que",
+-        "nadie",
+-        "haya",
+-        "denunciado",
++        "pidan",
++        "más",
++        "tiempo",
++        "para",
+         "el",
+-        "fraude."
++        "proyecto."
+       ],
+-      "english": "It is unheard of that no one reported the fraud.",
++      "english": "It is reasonable that they ask for more time for the project.",
+       "teaches": [
+         "subjunctive-value-judgments"
+       ]
+@@ -89,34 +97,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Editorialista",
+-          "text": "¿Qué opinión le merece la negativa de los funcionarios a declarar?"
++          "speaker": "Ana",
++          "text": "Dicen que van a cerrar la biblioteca los sábados. ¿Qué opinas?"
+         },
+         {
+-          "speaker": "Jurista",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Editorialista",
+-          "text": "Coincido plenamente; socava la confianza en las instituciones."
++          "speaker": "Ana",
++          "text": "Estoy de acuerdo."
+         }
+       ],
+       "options": [
+-        "Es sumamente censurable que servidores públicos eludan la rendición de cuentas ante la ciudadanía.",
+-        "El palacio de gobierno tiene una fachada renacentista con seis balcones de hierro forjado.",
+-        "Los funcionarios públicos cobran sus salarios el último día hábil de cada mes."
++        "Es inaceptable que cierren la biblioteca los sábados.",
++        "Es inaceptable que cierran la biblioteca los sábados.",
++        "Es inaceptable que cerrar la biblioteca los sábados."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-value-judgments"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-04-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Conviene que todos los actores políticos antepongan el bienestar colectivo a sus intereses partidistas.",
+-      "english": "It is advisable that all political actors prioritize the collective well-being over their partisan interests.",
++      "sentence": "Es normal que los jóvenes quieran más libertad, pero conviene que hablen con sus padres.",
++      "english": "It is normal that young people want more freedom, but it is a good idea for them to talk to their parents.",
+       "teaches": [
+         "subjunctive-value-judgments"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-04-03-ex.json b/content/es-latam/exercises/b2/b2-04-03-ex.json
+index 9e70ccc9..6bdb46fa 100644
+--- a/content/es-latam/exercises/b2/b2-04-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-04-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "indignar",
+-          "to outrage, to anger"
++          "alegrar",
++          "to please, to make glad"
+         ],
+         [
+-          "reconfortar",
+-          "to comfort, to hearten"
++          "lamentar",
++          "to regret, to be sorry about"
+         ],
+         [
+-          "el pesar",
+-          "sorrow, grief"
++          "sorprender",
++          "to surprise"
+         ],
+         [
+-          "desconcertar",
+-          "to baffle, to disconcert"
++          "agradecer",
++          "to be grateful for"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +31,29 @@
+       "id": "b2-04-03.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué se utiliza el subjuntivo en 'A los vecinos les alarma que aumente la criminalidad'?",
++      "question": "Which sentence says that you are sorry that they cannot come?",
+       "options": [
+-        "Porque la oración expresa la reacción afectiva o emocional ante el fenómeno.",
+-        "Porque los vecinos no están seguros de si la criminalidad existe.",
+-        "Porque describe una orden que los vecinos impartieron a la policía."
++        "Lamento que no puedan venir.",
++        "Lamento que no pueden venir.",
++        "Lamento que no podrán venir."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-emotion"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense",
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-04-03.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Nos reconforta que la juventud __ con tanta energía en la defensa de los derechos humanos.",
+-      "hint": "participar",
+-      "answer": "participe",
+-      "english": "It heartens us that youth participate with such energy in the defense of human rights.",
++      "sentence": "Me sorprende que Carmen no __ todavía.",
++      "hint": "llegar, she, present subjunctive",
++      "answer": "llegue",
++      "english": "It surprises me that Carmen hasn't arrived yet.",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+@@ -59,24 +63,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Me",
+-        "indigna",
++        "Nos",
++        "alegra",
+         "que",
+         "hayan",
+-        "ocultado",
+-        "la",
+-        "verdad."
++        "encontrado",
++        "una",
++        "solución."
+       ],
+       "solution": [
+-        "Me",
+-        "indigna",
++        "Nos",
++        "alegra",
+         "que",
+         "hayan",
+-        "ocultado",
+-        "la",
+-        "verdad."
++        "encontrado",
++        "una",
++        "solución."
+       ],
+-      "english": "It outrages me that they hid the truth.",
++      "english": "We are glad that they have found a solution.",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+@@ -87,34 +91,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Activista",
+-          "text": "¿Cómo ha reaccionado la sociedad civil ante el nuevo recorte presupuestario?"
++          "speaker": "Ana",
++          "text": "Mañana empiezo en un trabajo nuevo."
+         },
+         {
+-          "speaker": "Abogada",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Activista",
+-          "text": "Por esa razón han convocado a una marcha multitudinaria."
++          "speaker": "Ana",
++          "text": "Gracias, estoy un poco nerviosa."
+         }
+       ],
+       "options": [
+-        "A todo el gremio docente le indigna que se desmantelen las escuelas públicas de las zonas rurales.",
+-        "El año fiscal comienza el primero de enero en todo el territorio de la república.",
+-        "Los edificios escolares se pintan habitualmente durante las vacaciones de verano."
++        "Me alegra que por fin tengas un trabajo nuevo.",
++        "Me alegra que por fin tienes un trabajo nuevo.",
++        "Me alegra que por fin tener un trabajo nuevo."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-emotion"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-04-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La comunidad entera lamentó profundamente que el histórico teatro fuera demolido.",
+-      "english": "The entire community deeply lamented that the historic theater was demolished.",
++      "sentence": "Lamentamos que el viaje no haya salido como queríamos.",
++      "english": "We are sorry that the trip did not turn out as we wanted.",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-04-04-ex.json b/content/es-latam/exercises/b2/b2-04-04-ex.json
+index 50f08ccb..5e492cb2 100644
+--- a/content/es-latam/exercises/b2/b2-04-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-04-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "anhelar",
+-          "to yearn for, to crave"
++          "pretender",
++          "to intend, to aim to"
+         ],
+         [
+-          "eludir",
+-          "to avoid, to elude"
++          "intentar",
++          "to try, to attempt"
+         ],
+         [
+-          "desistir",
+-          "to desist, to give up"
++          "negarse a",
++          "to refuse to"
+         ],
+         [
+-          "la aspiración",
+-          "aspiration, ambition"
++          "renunciar a",
++          "to give up, to renounce"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +31,28 @@
+       "id": "b2-04-04.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál de las siguientes frases es correcta según la regla de correferencia de sujetos?",
++      "question": "Which sentence means \"I'm glad to be here\"?",
+       "options": [
+-        "El candidato pretende asumir el cargo de forma transparente.",
+-        "El candidato pretende que él asuma el cargo de forma transparente.",
+-        "El candidato pretende que asumiría el cargo de forma transparente."
++        "Me alegra estar aquí.",
++        "Me alegra que esté aquí.",
++        "Me alegra de estar aquí."
+       ],
+       "correct": 0,
+       "teaches": [
+         "infinitive-vs-que-subjunctive"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "subjunctive-emotion"
++      }
+     },
+     {
+       "id": "b2-04-04.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Los diplomáticos procuraron __ el conflicto armado mediante el diálogo directo.",
+-      "hint": "evitar - same subject",
+-      "answer": "evitar",
+-      "english": "The diplomats tried to avoid armed conflict through direct dialogue.",
++      "sentence": "Ana se negó a __ el contrato sin leerlo.",
++      "hint": "to sign",
++      "answer": "firmar",
++      "english": "Ana refused to sign the contract without reading it.",
+       "teaches": [
+         "infinitive-vs-que-subjunctive"
+       ]
+@@ -59,26 +62,22 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Anhelan",
++        "Mi",
++        "jefa",
++        "pretende",
+         "que",
+-        "la",
+-        "justicia",
+-        "prevalezca",
+-        "en",
+-        "el",
+-        "país."
++        "terminemos",
++        "hoy."
+       ],
+       "solution": [
+-        "Anhelan",
++        "Mi",
++        "jefa",
++        "pretende",
+         "que",
+-        "la",
+-        "justicia",
+-        "prevalezca",
+-        "en",
+-        "el",
+-        "país."
++        "terminemos",
++        "hoy."
+       ],
+-      "english": "They yearn for justice to prevail in the country.",
++      "english": "My boss expects us to finish today.",
+       "teaches": [
+         "infinitive-vs-que-subjunctive"
+       ]
+@@ -89,22 +88,22 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Ministra",
+-          "text": "¿Cuál es la pretensión última de su delegación en la cumbre?"
++          "speaker": "Ana",
++          "text": "¿Y tu hermano? ¿Sigue con el proyecto?"
+         },
+         {
+-          "speaker": "Embajador",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Ministra",
+-          "text": "Es una aspiración compartida por toda la comunidad internacional."
++          "speaker": "Ana",
++          "text": "Qué pena, trabajaba muy bien."
+         }
+       ],
+       "options": [
+-        "Pretendemos consolidar un tratado vinculante que proteja la biodiversidad marina.",
+-        "La sala de conferencias tiene capacidad para ochocientos representantes acreditados.",
+-        "Los vuelos diplomáticos salieron ayer por la tarde desde Ginebra."
++        "No, renunció a participar porque tenía mucho trabajo.",
++        "No, renunció a que participa porque tenía mucho trabajo.",
++        "No, renunció a participando porque tenía mucho trabajo."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -115,8 +114,8 @@
+       "id": "b2-04-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Desistió de presentar la apelación porque comprendió la inutilidad de su empeño.",
+-      "english": "He gave up on presenting the appeal because he understood the futility of his endeavor.",
++      "sentence": "Intenté trabajar en casa, pero mi jefa prefiere que vayamos a la oficina.",
++      "english": "I tried to work at home, but my boss prefers us to go to the office.",
+       "teaches": [
+         "infinitive-vs-que-subjunctive"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-04-05-ex.json b/content/es-latam/exercises/b2/b2-04-05-ex.json
+index 500fb52f..d50e0de6 100644
+--- a/content/es-latam/exercises/b2/b2-04-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-04-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el dictamen",
+-          "formal ruling, legal opinion"
++          "conveniente",
++          "advisable, convenient"
+         ],
+         [
+-          "dirimir",
+-          "to settle, to resolve (dispute)"
++          "la sugerencia",
++          "suggestion"
+         ],
+         [
+-          "la cautela",
+-          "caution, prudence"
++          "el visitante",
++          "visitor"
+         ],
+         [
+-          "la concordia",
+-          "harmony, concord"
++          "el aviso",
++          "notice, warning"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +31,29 @@
+       "id": "b2-04-05.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué tiempo verbal exige 'Sería conveniente que' en una recomendación diplomática formal?",
++      "question": "Which sentence is the politest way to suggest that the employees arrive earlier?",
+       "options": [
+-        "Pretérito imperfecto de subjuntivo (dialogaran), por correlación temporal con el condicional.",
+-        "Presente de indicativo (dialogan), porque describe una reunión en curso.",
+-        "Futuro simple (dialogarán), porque la reunión se celebrará el mes entrante."
++        "Sería conveniente que los empleados llegaran más temprano.",
++        "Sería conveniente que los empleados llegan más temprano.",
++        "Sería conveniente que los empleados llegarían más temprano."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-influence"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense",
++        "2": "condicional-regular"
++      }
+     },
+     {
+       "id": "b2-04-05.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Se sugiere que los delegados __ el texto final antes de someterlo a votación.",
+-      "hint": "revisar",
+-      "answer": "revisen",
+-      "english": "It is suggested that the delegates review the final text before submitting it to a vote.",
++      "sentence": "Se recomienda que los visitantes __ el aviso antes de entrar.",
++      "hint": "leer, they, present subjunctive",
++      "answer": "lean",
++      "english": "Visitors are recommended to read the notice before entering.",
+       "teaches": [
+         "subjunctive-influence"
+       ]
+@@ -59,26 +63,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Se",
+-        "recomienda",
++        "Sería",
++        "conveniente",
+         "que",
+-        "actúen",
++        "hablaras",
+         "con",
+-        "la",
+-        "máxima",
+-        "cautela."
++        "tu",
++        "jefa."
+       ],
+       "solution": [
+-        "Se",
+-        "recomienda",
++        "Sería",
++        "conveniente",
+         "que",
+-        "actúen",
++        "hablaras",
+         "con",
+-        "la",
+-        "máxima",
+-        "cautela."
++        "tu",
++        "jefa."
+       ],
+-      "english": "It is recommended that they act with utmost caution.",
++      "english": "It would be advisable for you to talk to your boss.",
+       "teaches": [
+         "subjunctive-influence"
+       ]
+@@ -89,34 +91,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Embajadora",
+-          "text": "¿Cuál es la recomendación del mediador ante el estancamiento de las negociaciones de paz?"
++          "speaker": "Visitante",
++          "text": "¿Qué nos recomienda para la visita de mañana?"
+         },
+         {
+-          "speaker": "Consejero",
++          "speaker": "Guía",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Embajadora",
+-          "text": "Es la única vía sensata para evitar una ruptura definitiva."
++          "speaker": "Visitante",
++          "text": "Perfecto, muchas gracias."
+         }
+       ],
+       "options": [
+-        "Sugiere que las delegaciones declaren una tregua temporal y establezcan mesas técnicas de trabajo.",
+-        "El edificio de las Naciones Unidas en Nueva York fue inaugurado en octubre de 1952.",
+-        "Los pasaportes diplomáticos se expiden con tapas de color negro o granate."
++        "Se recomienda que lleguen temprano y que traigan agua.",
++        "Se recomienda que llegan temprano y que traen agua.",
++        "Se recomienda que llegar temprano y traer agua."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-influence"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-04-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Sería aconsejable que ambas naciones dirimieran su diferendo limítrofe ante la corte de La Haya.",
+-      "english": "It would be advisable that both nations settle their border dispute before the court in The Hague.",
++      "sentence": "Convendría que revisáramos la sugerencia antes de la reunión.",
++      "english": "It would be a good idea for us to check the suggestion before the meeting.",
+       "teaches": [
+         "subjunctive-influence"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-04-consolidation-ex.json b/content/es-latam/exercises/b2/b2-04-consolidation-ex.json
+index 6cdee6ad..152e702d 100644
+--- a/content/es-latam/exercises/b2/b2-04-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-04-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "acatar",
+-          "to comply with, to abide by"
++          "exigir",
++          "to demand, to require"
+         ],
+         [
+-          "inadmisible",
++          "inaceptable",
+           "unacceptable"
+         ],
+         [
+-          "reconfortar",
+-          "to comfort, to hearten"
++          "negarse a",
++          "to refuse to"
+         ],
+         [
+-          "eludir",
+-          "to avoid, to elude"
++          "la sugerencia",
++          "suggestion"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-04-consolidation.ex02",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "Según el texto sobre 'La muerte de Artemio Cruz', ¿qué técnica narrativa innovadora utiliza Carlos Fuentes para explorar la psicología del protagonista?",
++      "question": "According to the text, how is the novel La muerte de Artemio Cruz told?",
+       "options": [
+-        "Una polifonía en tres personas gramaticales (yo, tú, él) que intercalan el presente de la agonía, el futuro profético y el pasado biográfico.",
+-        "Un monólogo en verso alejandrino rimado de estilo barroco virreinal.",
+-        "Una recopilación de cartas ficticias dirigidas a autoridades del imperio español."
++        "Con tres voces que son el mismo hombre.",
++        "Con una sola voz que cuenta todo en orden.",
++        "Con las cartas que escribe el protagonista."
+       ],
+       "correct": 0
+     },
+@@ -43,27 +43,31 @@
+       "id": "b2-04-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "En la frase 'Conviene que el parlamento apruebe la reforma tributaria sin demoras', ¿qué tipo de estructura gramatical se presenta?",
++      "question": "Which sentence says that the writer wanted the reader to follow the story carefully?",
+       "options": [
+-        "Una matriz impersonal de juicio de conveniencia que rige modo subjuntivo en la subordinada.",
+-        "Una oración condicional irreal que exige imperfecto de subjuntivo.",
+-        "Una afirmación factual objetiva que debería redactarse en modo indicativo."
++        "Fuentes quería que el lector siguiera la historia con atención.",
++        "Fuentes quería que el lector sigue la historia con atención.",
++        "Fuentes quería que el lector seguía la historia con atención."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "subjunctive-value-judgments"
+-      ]
++        "subjunctive-influence"
++      ],
++      "distractor_skills": {
++        "1": "present-tense",
++        "2": "imperfect"
++      }
+     },
+     {
+       "id": "b2-04-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "A los ciudadanos les indigna que los gobernantes __ los reclamos de la comunidad.",
+-      "hint": "desoír",
+-      "answer": "desoigan",
+-      "english": "It outrages citizens that rulers turn a deaf ear to community grievances.",
++      "sentence": "Es importante que el lector __ atención a las voces.",
++      "hint": "poner, he or she, present subjunctive",
++      "answer": "ponga",
++      "english": "It is important that the reader pays attention to the voices.",
+       "teaches": [
+-        "subjunctive-emotion"
++        "subjunctive-value-judgments"
+       ]
+     },
+     {
+@@ -71,10 +75,10 @@
+       "type": "sentence-order",
+       "category": "grammar",
+       "sentences": [
+-        "La asamblea ciudadana exige que se transparenten las cuentas públicas. [The citizen assembly demands that public accounts be made transparent.]",
+-        "Es inadmisible que las autoridades ignoren los dictámenes vinculantes de la corte. [It is inadmissible that authorities ignore the binding rulings of the court.]",
+-        "A los defensores de derechos humanos les indigna que persista la impunidad. [It outrages human rights defenders that impunity persists.]",
+-        "Se recomienda que ambas partes firmen un acuerdo de concordia cívica. [It is recommended that both parties sign a civic concord agreement.]"
++        "Carlos Fuentes nació en 1928. [Carlos Fuentes was born in 1928.]",
++        "Era hijo de un diplomático y creció en varios países. [He was the son of a diplomat and grew up in several countries.]",
++        "La muerte de Artemio Cruz se publicó en 1962. [La muerte de Artemio Cruz came out in 1962.]",
++        "Fuentes murió en 2012 en la Ciudad de México. [Fuentes died in 2012 in Mexico City.]"
+       ],
+       "solution": [
+         0,
+@@ -83,8 +87,7 @@
+         3
+       ],
+       "teaches": [
+-        "subjunctive-influence",
+-        "subjunctive-value-judgments"
++        "secuencia-narrativa"
+       ]
+     },
+     {
+@@ -93,34 +96,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Diputado",
+-          "text": "¿Cuál es la recomendación del comité de ética parlamentario?"
++          "speaker": "Profesora",
++          "text": "¿Qué debe hacer alguien que empieza esta novela?"
+         },
+         {
+-          "speaker": "Presidente del comité",
++          "speaker": "Estudiante",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Diputado",
+-          "text": "Acataremos el dictamen en la sesión plenaria de mañana."
++          "speaker": "Profesora",
++          "text": "Exacto, así se entiende mejor."
+         }
+       ],
+       "options": [
+-        "Se recomienda que el legislador involucrado sea suspendido de sus funciones hasta esclarecer los hechos.",
+-        "El congreso nacional fue construido por ingenieros franceses en el siglo diecinueve.",
+-        "Los diarios de debates se publican en papel membretado oficial."
++        "Conviene que lea con calma y que ponga atención a cada voz.",
++        "Conviene que lee con calma y que pone atención a cada voz.",
++        "Conviene que leer con calma y poner atención a cada voz."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "subjunctive-influence"
+-      ]
++        "subjunctive-value-judgments"
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-04-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Es indispensable que la fiscalía investigue a fondo para que no prevalezca la impunidad.",
+-      "english": "It is essential that the prosecution investigate thoroughly so that impunity does not prevail.",
++      "sentence": "Es importante que el lector ponga atención a quién habla en cada momento.",
++      "english": "It is important that the reader pays attention to who is speaking at each moment.",
+       "teaches": [
+         "subjunctive-value-judgments"
+       ]
+@@ -131,13 +137,51 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Escribe una demanda institucional formal utilizando el verbo 'exigir que' con subjuntivo y el término 'acatar'.",
+-          "answer": "La sociedad civil exige que las corporaciones acaten las normativas medioambientales vigentes."
++          "prompt": "Tell a friend that you want him or her to arrive early, using querer que.",
++          "answer": "Quiero que llegues temprano."
++        },
++        {
++          "prompt": "Say that you yourself want to arrive early.",
++          "answer": "Quiero llegar temprano."
++        },
++        {
++          "prompt": "Recommend politely that the visitors read the notice, using se recomienda que.",
++          "answer": "Se recomienda que los visitantes lean el aviso."
+         }
+       ],
+       "teaches": [
+-        "subjunctive-influence"
++        "infinitive-vs-que-subjunctive"
+       ]
++    },
++    {
++      "id": "b2-04-consolidation.ex09",
++      "type": "multiple-choice",
++      "category": "reading",
++      "question": "According to the text, who is Artemio Cruz?",
++      "options": [
++        "Un hombre mayor y rico que está muriendo.",
++        "Un joven escritor que viaja por varios países.",
++        "Un diplomático que cuenta la historia de su hijo."
++      ],
++      "correct": 0
++    },
++    {
++      "id": "b2-04-consolidation.ex10",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence says that I want to read the novel myself?",
++      "options": [
++        "Quiero leer la novela.",
++        "Quiero que lea la novela.",
++        "Quiero a leer la novela."
++      ],
++      "correct": 0,
++      "teaches": [
++        "infinitive-vs-que-subjunctive"
++      ],
++      "distractor_skills": {
++        "1": "subjuntivo-deseos"
++      }
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-06-01-ex.json b/content/es-latam/exercises/b2/b2-06-01-ex.json
+index 0952d1c0..69e55220 100644
+--- a/content/es-latam/exercises/b2/b2-06-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-06-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "inquietar",
+-          "to worry, to disquiet"
++          "preocupar",
++          "to worry"
+         ],
+         [
+-          "la consternación",
+-          "consternation, dismay"
++          "asustar",
++          "to frighten"
+         ],
+         [
+-          "el desasosiego",
+-          "unease, restlessness"
++          "fastidiar",
++          "to annoy"
+         ],
+         [
+-          "desolador",
+-          "devastating, bleak"
++          "entristecer",
++          "to make sad"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +31,29 @@
+       "id": "b2-06-01.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué el verbo subordinado va en subjuntivo en 'A las comunidades les preocupa que el río se contamine'?",
++      "question": "Which sentence says that it worries us that the price keeps going up?",
+       "options": [
+-        "Porque la proposición subordinada es el sujeto de un verbo de afección psicológica que evalúa emocionalmente el evento.",
+-        "Porque el río no existe en la realidad empírica.",
+-        "Porque 'preocupar' es un verbo de habla que exige estilo indirecto."
++        "Nos preocupa que el precio siga subiendo.",
++        "Nos preocupan que el precio siga subiendo.",
++        "Nos preocupa que el precio sigue subiendo."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-emotion"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "gustar",
++        "2": "present-tense"
++      }
+     },
+     {
+       "id": "b2-06-01.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "A los defensores de derechos humanos les desconcierta que la fiscalía __ los expedientes.",
+-      "hint": "archivar",
+-      "answer": "archive",
+-      "english": "It bewilders human rights defenders that the prosecution archives the files.",
++      "sentence": "A mi vecina le molesta que los niños __ en la calle.",
++      "hint": "jugar, they, present subjunctive",
++      "answer": "jueguen",
++      "english": "It bothers my neighbour that the children play in the street.",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+@@ -59,26 +63,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Nos",
+-        "indigna",
++        "Me",
++        "fastidia",
+         "que",
+-        "se",
+-        "tolere",
+-        "la",
+-        "impunidad",
+-        "sistemática."
++        "nadie",
++        "conteste",
++        "mis",
++        "mensajes."
+       ],
+       "solution": [
+-        "Nos",
+-        "indigna",
++        "Me",
++        "fastidia",
+         "que",
+-        "se",
+-        "tolere",
+-        "la",
+-        "impunidad",
+-        "sistemática."
++        "nadie",
++        "conteste",
++        "mis",
++        "mensajes."
+       ],
+-      "english": "It outrages us that systematic impunity is tolerated.",
++      "english": "It annoys me that nobody answers my messages.",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+@@ -89,34 +91,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Sociólogo",
+-          "text": "¿Cuál es la reacción general de la ciudadanía ante los recientes recortes en el presupuesto educativo?"
++          "speaker": "Ana",
++          "text": "¿Qué te preocupa de la reunión de mañana?"
+         },
+         {
+-          "speaker": "Líder estudiantil",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Sociólogo",
+-          "text": "Es una reacción enteramente comprensible ante la merma de oportunidades."
++          "speaker": "Ana",
++          "text": "Yo creo que todo va a salir bien."
+         }
+       ],
+       "options": [
+-        "A las familias les inquieta profundamente que las universidades públicas pierdan recursos esenciales para la investigación.",
+-        "El campus universitario fue diseñado a mediados del siglo pasado por arquitectos modernistas.",
+-        "Los exámenes de admisión se celebran anualmente en el mes de noviembre."
++        "Me preocupa que los clientes no entiendan el plan.",
++        "Me preocupa que los clientes no entienden el plan.",
++        "Me preocupa que los clientes no entender el plan."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-emotion"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-06-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Nos asombra que las autoridades no hayan tomado medidas preventivas frente a la emergencia climática.",
+-      "english": "It astounds us that authorities have not taken preventive measures in the face of the climate emergency.",
++      "sentence": "Me encanta que mis amigos vengan a cenar, pero me molesta cocinar solo.",
++      "english": "I love it that my friends come to dinner, but it bothers me to cook alone.",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-06-02-ex.json b/content/es-latam/exercises/b2/b2-06-02-ex.json
+index 6cab39a7..15360c5d 100644
+--- a/content/es-latam/exercises/b2/b2-06-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-06-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "lamentar",
+-          "to regret, to lament"
++          "temer",
++          "to fear"
+         ],
+         [
+-          "deplorar",
+-          "to deplore, to lament deeply"
++          "consolar",
++          "to comfort"
+         ],
+         [
+-          "la aflicción",
+-          "affliction, grief"
++          "el pésame",
++          "condolences"
+         ],
+         [
+-          "el desagravio",
+-          "redress, apology, vindication"
++          "apenado",
++          "sorry, saddened"
+         ]
+       ],
+       "teaches": [
+@@ -31,27 +31,33 @@
+       "id": "b2-06-02.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿En cuál de las siguientes oraciones 'sentir que' rige modo subjuntivo?",
++      "question": "Which sentence means \"I'm sorry that you are ill\"?",
+       "options": [
+-        "Siento mucho que hayas tenido que pasar por esa amarga experiencia.",
+-        "Siento que alguien me está observando desde la ventana.",
+-        "Sentí que el temblor sacudía levemente el suelo."
++        "Siento que estés enfermo.",
++        "Siento que estás enfermo.",
++        "Siento de que estés enfermo."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-emotion"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-06-02.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Deploramos profundamente que las partes en conflicto no __ el cese al fuego humanitario.",
+-      "hint": "respetar",
+-      "answer": "respeten",
+-      "english": "We deeply deplore that the parties in conflict do not respect the humanitarian ceasefire.",
++      "sentence": "Temíamos que el tren __ tarde.",
++      "hint": "llegar, imperfect subjunctive",
++      "answers": [
++        "llegara",
++        "llegase"
++      ],
++      "english": "We were afraid that the train would arrive late.",
+       "teaches": [
+-        "subjunctive-emotion"
++        "correlacion-temporal-subjuntivo"
+       ]
+     },
+     {
+@@ -61,24 +67,26 @@
+       "tiles": [
+         "Lamentamos",
+         "que",
+-        "las",
+-        "familias",
++        "no",
+         "hayan",
+-        "sufrido",
+-        "tanto",
+-        "dolor."
++        "podido",
++        "venir",
++        "a",
++        "la",
++        "cena."
+       ],
+       "solution": [
+         "Lamentamos",
+         "que",
+-        "las",
+-        "familias",
++        "no",
+         "hayan",
+-        "sufrido",
+-        "tanto",
+-        "dolor."
++        "podido",
++        "venir",
++        "a",
++        "la",
++        "cena."
+       ],
+-      "english": "We regret that the families have suffered so much pain.",
++      "english": "We are sorry that they have not been able to come to the dinner.",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+@@ -89,34 +97,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Portavoz de la Cruz Roja",
+-          "text": "¿Cuál es la postura oficial del organismo tras el colapso del puente fronterizo?"
++          "speaker": "Ana",
++          "text": "Mi amiga está muy apenada y quiero consolarla. ¿Qué hago?"
+         },
+         {
+-          "speaker": "Delegada regional",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Portavoz de la Cruz Roja",
+-          "text": "Iniciaremos de inmediato el puente aéreo para suministrar medicinas."
++          "speaker": "Ana",
++          "text": "Tienes razón, voy a llamarla."
+         }
+       ],
+       "options": [
+-        "Lamentamos profundamente que las comunidades ribereñas hayan quedado incomunicadas y exigimos un corredor seguro.",
+-        "El puente fue construido en hormigón armado durante la administración anterior.",
+-        "Las lanchas de motor consumen combustible diésel para su desplazamiento."
++        "Es mejor que la escuches con calma.",
++        "Es mejor que la escuchas con calma.",
++        "Es mejor que la escuchar con calma."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "subjunctive-emotion"
+-      ]
++        "subjunctive-value-judgments"
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-06-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Nos alegra que los acuerdos de reconciliación hayan devuelto la tranquilidad a los pobladores.",
+-      "english": "We are glad that the reconciliation agreements have returned peace of mind to the townspeople.",
++      "sentence": "Les damos el pésame y sentimos que estén tan apenados.",
++      "english": "We offer you our condolences and we are sorry that you are so saddened.",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-06-03-ex.json b/content/es-latam/exercises/b2/b2-06-03-ex.json
+index 0571dbf0..e2f32cac 100644
+--- a/content/es-latam/exercises/b2/b2-06-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-06-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "inaudito",
+-          "unheard of, unprecedented"
++          "menos mal",
++          "thank goodness"
+         ],
+         [
+-          "desgarrador",
+-          "heartbreaking, harrowing"
++          "la barbaridad",
++          "outrage, awful thing"
+         ],
+         [
+-          "el oprobio",
+-          "opprobrium, disgrace"
++          "el susto",
++          "fright, scare"
+         ],
+         [
+-          "vergonzoso",
+-          "shameful, disgraceful"
++          "horrible",
++          "horrible"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +31,28 @@
+       "id": "b2-06-03.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál de las siguientes expresiones exclamativas exige MODO INDICATIVO en lugar de subjuntivo?",
++      "question": "Which sentence says \"What a shame that you can't come!\"?",
+       "options": [
+-        "¡Menos mal que...!",
+-        "¡Qué lástima que...!",
+-        "¡Es una vergüenza que...!"
++        "¡Qué pena que no puedas venir!",
++        "¡Qué pena que no puedes venir!",
++        "¡Qué pena que no poder venir!"
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-emotion"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-06-03.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "¡Qué indignante que los responsables __ impunes ante la justicia!",
+-      "hint": "quedar",
+-      "answer": "queden",
+-      "english": "How outrageous that the culprits remain unpunished before justice!",
++      "sentence": "¡Qué bien que ustedes __ a la fiesta!",
++      "hint": "venir, they, present subjunctive",
++      "answer": "vengan",
++      "english": "How good that you are coming to the party!",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+@@ -60,25 +63,21 @@
+       "category": "grammar",
+       "tiles": [
+         "¡Qué",
+-        "tristeza",
++        "horrible",
+         "que",
+-        "hayan",
+-        "destruido",
+-        "ese",
+-        "patrimonio",
+-        "histórico!"
++        "haya",
++        "pasado",
++        "esto!"
+       ],
+       "solution": [
+         "¡Qué",
+-        "tristeza",
++        "horrible",
+         "que",
+-        "hayan",
+-        "destruido",
+-        "ese",
+-        "patrimonio",
+-        "histórico!"
++        "haya",
++        "pasado",
++        "esto!"
+       ],
+-      "english": "What a sadness that they have destroyed that historical heritage!",
++      "english": "How horrible that this has happened!",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+@@ -89,34 +88,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Ciudadana indignada",
+-          "text": "¿Viste cómo concluyó la audiencia preliminar del caso de corrupción?"
++          "speaker": "Ana",
++          "text": "Dicen que van a cerrar el cine del barrio."
+         },
+         {
+-          "speaker": "Abogado",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Ciudadana indignada",
+-          "text": "Es un auténtico insulto a la decencia cívica."
++          "speaker": "Ana",
++          "text": "Sí, a mí también me da pena."
+         }
+       ],
+       "options": [
+-        "¡Es un verdadero oprobio que los jueces desestimen pruebas tan contundentes sin justificación alguna!",
+-        "La audiencia comenzó a las nueve y media de la mañana en la sala tres.",
+-        "El código penal fue reformado por última vez hace cinco años."
++        "¡Qué barbaridad que cierren el cine del barrio!",
++        "¡Qué barbaridad que cierran el cine del barrio!",
++        "¡Qué barbaridad que cerrar el cine del barrio!"
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-emotion"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-06-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "¡Menos mal que los vecinos rescataron a tiempo los documentos históricos de la inundación!",
+-      "english": "Thank goodness the neighbors rescued the historical documents from the flood in time!",
++      "sentence": "¡Menos mal que nadie se hizo daño, qué susto!",
++      "english": "Thank goodness nobody got hurt, what a scare!",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-06-04-ex.json b/content/es-latam/exercises/b2/b2-06-04-ex.json
+index 8fa9b841..24d168f4 100644
+--- a/content/es-latam/exercises/b2/b2-06-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-06-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el precedente",
+-          "precedent"
++          "el hecho",
++          "fact"
+         ],
+         [
+-          "minimizar",
+-          "to downplay, to minimize"
++          "el retraso",
++          "delay"
+         ],
+         [
+-          "legitimar",
+-          "to legitimize"
++          "significar",
++          "to mean"
+         ],
+         [
+-          "conllevar",
+-          "to entail, to imply"
++          "disculpar",
++          "to excuse, to forgive"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +31,28 @@
+       "id": "b2-06-04.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué la locución tematizadora 'el hecho de que' rige habitualmente modo subjuntivo en español formal?",
++      "question": "Which sentence says \"The fact that the train is late bothers me\"?",
+       "options": [
+-        "Porque tematiza una información ya conocida para convertirla en objeto de evaluación, sin carácter asertivo primario.",
+-        "Porque expresa un deseo imposible en el futuro.",
+-        "Porque es un marcador temporal que equivale a 'antes de que'."
++        "El hecho de que el tren llegue con retraso me molesta.",
++        "El hecho que el tren llegue con retraso me molesta.",
++        "El hecho de que el tren llegue con retraso me molestan."
+       ],
+       "correct": 0,
+       "teaches": [
+         "el-hecho-de-que-subjuntivo"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "gustar"
++      }
+     },
+     {
+       "id": "b2-06-04.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El hecho de que la economía __ no significa que los salarios hayan recuperado su poder adquisitivo.",
+-      "hint": "crecer",
+-      "answer": "crezca",
+-      "english": "The fact that the economy grows does not mean that wages have recovered their purchasing power.",
++      "sentence": "El hecho de que ella __ tarde no la disculpa.",
++      "hint": "llegar, she, present subjunctive",
++      "answer": "llegue",
++      "english": "The fact that she arrives late does not excuse her.",
+       "teaches": [
+         "el-hecho-de-que-subjuntivo"
+       ]
+@@ -64,11 +67,12 @@
+         "de",
+         "que",
+         "hayan",
+-        "firmado",
++        "ganado",
+         "no",
+-        "garantiza",
+-        "la",
+-        "paz."
++        "significa",
++        "que",
++        "tengan",
++        "razón."
+       ],
+       "solution": [
+         "El",
+@@ -76,13 +80,14 @@
+         "de",
+         "que",
+         "hayan",
+-        "firmado",
++        "ganado",
+         "no",
+-        "garantiza",
+-        "la",
+-        "paz."
++        "significa",
++        "que",
++        "tengan",
++        "razón."
+       ],
+-      "english": "The fact that they have signed does not guarantee peace.",
++      "english": "The fact that they have won does not mean that they are right.",
+       "teaches": [
+         "el-hecho-de-que-subjuntivo"
+       ]
+@@ -93,34 +98,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Periodista",
+-          "text": "¿No considera usted que el aumento de exportaciones convalida la política del ministerio?"
++          "speaker": "Ana",
++          "text": "¿Qué es lo que más te molesta de Luis?"
+         },
+         {
+-          "speaker": "Economista crítica",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Periodista",
+-          "text": "Es una advertencia muy pertinente sobre la concentración de la riqueza."
++          "speaker": "Ana",
++          "text": "Entonces habla con él, seguro que te entiende."
+         }
+       ],
+       "options": [
+-        "El hecho de que las exportaciones aumenten no significa en absoluto que los beneficios se distribuyan equitativamente entre los trabajadores.",
+-        "Los puertos marítimos cuentan con silos de almacenamiento de grano.",
+-        "La tasa de cambio oficial se publica diariamente en el portal del banco central."
++        "El hecho de que no avise de su retraso me molesta mucho.",
++        "El hecho que no avise de su retraso me molesta mucho.",
++        "El hecho de que no avise de su retraso me molestan mucho."
+       ],
+       "correct": 0,
+       "teaches": [
+         "el-hecho-de-que-subjuntivo"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "gustar"
++      }
+     },
+     {
+       "id": "b2-06-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El hecho de que no haya habido denuncias previas no minimiza la gravedad de lo sucedido.",
+-      "english": "The fact that there have been no previous complaints does not downplay the gravity of what happened.",
++      "sentence": "El hecho de que lloviera no cambió nuestros planes.",
++      "english": "The fact that it rained did not change our plans.",
+       "teaches": [
+         "el-hecho-de-que-subjuntivo"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-06-05-ex.json b/content/es-latam/exercises/b2/b2-06-05-ex.json
+index 77b5e0d9..a355ad73 100644
+--- a/content/es-latam/exercises/b2/b2-06-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-06-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la vejación",
+-          "mistreatment, harassment"
++          "la desigualdad",
++          "inequality"
+         ],
+         [
+-          "conculcar",
+-          "to infringe, to violate rights"
++          "la pobreza",
++          "poverty"
+         ],
+         [
+-          "el desamparo",
+-          "helplessness, abandonment"
++          "el desempleo",
++          "unemployment"
+         ],
+         [
+-          "el atropello",
+-          "abuse of power, outrage"
++          "la contaminación",
++          "pollution"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +31,28 @@
+       "id": "b2-06-05.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué combinación modal refleja mayor corrección en un comunicado de derechos humanos?",
++      "question": "Which sentence reacts to the news that many young people cannot find work?",
+       "options": [
+-        "Nos indigna que se conculquen los derechos fundamentales; el hecho de que ocurra en democracia agrava la situación.",
+-        "Nos indigna que se conculcan los derechos fundamentales; el hecho de que ocurre en democracia agrava la situación.",
+-        "Nos indignamos de que se conculquen los derechos; el hecho de que ocurriría es un problema."
++        "Es una pena que muchos jóvenes no encuentren trabajo.",
++        "Es una pena que muchos jóvenes no encuentran trabajo.",
++        "Es una pena que muchos jóvenes no encontrar trabajo."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "subjunctive-emotion"
+-      ]
++        "subjunctive-value-judgments"
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-06-05.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Deploramos que las fuerzas estatales __ la autonomía de las comunidades campesinas.",
+-      "hint": "vulnerar",
+-      "answer": "vulneren",
+-      "english": "We deplore that state forces violate the autonomy of peasant communities.",
++      "sentence": "Me preocupa que la contaminación __ la salud de los niños.",
++      "hint": "afectar, present subjunctive",
++      "answer": "afecte",
++      "english": "It worries me that pollution affects children's health.",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+@@ -59,30 +62,28 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "El",
+-        "hecho",
+-        "de",
++        "Nos",
++        "molesta",
+         "que",
+-        "callen",
+-        "no",
+-        "borra",
+-        "el",
+-        "atropello."
++        "los",
++        "precios",
++        "suban",
++        "cada",
++        "mes."
+       ],
+       "solution": [
+-        "El",
+-        "hecho",
+-        "de",
++        "Nos",
++        "molesta",
+         "que",
+-        "callen",
+-        "no",
+-        "borra",
+-        "el",
+-        "atropello."
++        "los",
++        "precios",
++        "suban",
++        "cada",
++        "mes."
+       ],
+-      "english": "The fact that they stay silent does not erase the abuse of power.",
++      "english": "It bothers us that prices go up every month.",
+       "teaches": [
+-        "el-hecho-de-que-subjuntivo"
++        "subjunctive-emotion"
+       ]
+     },
+     {
+@@ -91,34 +92,38 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Periodista internacional",
+-          "text": "¿Cómo califica el informe anual de derechos humanos la respuesta estatal ante la protesta social?"
++          "speaker": "Ana",
++          "text": "Leí que hay más desempleo este año. ¿Qué piensas?"
+         },
+         {
+-          "speaker": "Relatora especial",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Periodista internacional",
+-          "text": "Un llamado urgente a la comunidad jurídica internacional."
++          "speaker": "Ana",
++          "text": "Yo también lo pienso."
+         }
+       ],
+       "options": [
+-        "Nos consterna que se criminalice la disidencia pacífica y repudiamos que se conculquen las garantías constitucionales más elementales.",
+-        "El informe se distribuye en formato PDF de acceso abierto en internet.",
+-        "La sede central del tribunal de arbitraje se encuentra en La Haya."
++        "Me preocupa que no haya más ayuda para las familias.",
++        "Me preocupa que no hay más ayuda para las familias.",
++        "Me preocupan que no haya más ayuda para las familias."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-emotion"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "hay",
++        "2": "gustar"
++      }
+     },
+     {
+       "id": "b2-06-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "¡Es un flagrante atropello que las víctimas del despojo no hayan recibido ninguna reparación moral!",
+-      "english": "It is a flagrant outrage that the victims of dispossession have not received any moral reparation!",
++      "sentence": "Hay mucha desigualdad y me preocupa que la pobreza siga creciendo.",
++      "english": "There is a lot of inequality and it worries me that poverty keeps growing.",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-06-consolidation-ex.json b/content/es-latam/exercises/b2/b2-06-consolidation-ex.json
+index 6bf11a41..d527c0a3 100644
+--- a/content/es-latam/exercises/b2/b2-06-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-06-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "inquietar",
+-          "to worry, to disquiet"
++          "preocupar",
++          "to worry"
+         ],
+         [
+-          "deplorar",
+-          "to deplore, to lament deeply"
++          "temer",
++          "to fear"
+         ],
+         [
+-          "inaudito",
+-          "unheard of, unprecedented"
++          "menos mal",
++          "thank goodness"
+         ],
+         [
+-          "conculcar",
+-          "to violate, to infringe rights"
++          "el hecho",
++          "fact"
+         ]
+       ],
+       "teaches": [
+@@ -30,43 +30,47 @@
+     {
+       "id": "b2-06-consolidation.ex02",
+       "type": "multiple-choice",
+-      "category": "grammar",
+-      "question": "¿En cuál de las siguientes opciones se utiliza incorrectamente el modo verbal?",
++      "category": "reading",
++      "question": "According to the text, when was Las venas abiertas de América Latina published?",
+       "options": [
+-        "¡Menos mal que llegues a tiempo para la reunión!",
+-        "Nos indigna que se toleren semejantes abusos institucionales.",
+-        "El hecho de que hayan ganado no significa que tengan la razón."
++        "En 1971.",
++        "En 1940.",
++        "En 2015."
+       ],
+-      "correct": 0,
+-      "teaches": [
+-        "subjunctive-emotion"
+-      ]
++      "correct": 0
+     },
+     {
+       "id": "b2-06-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cómo se comporta la concordancia del verbo de afección psíquica cuando el sujeto sintáctico es una proposición introducida por 'que'?",
++      "question": "Which sentence says \"It worries me that they ban books\"?",
+       "options": [
+-        "Se conjuga en tercera persona singular (nos preocupa que...), sin importar el número de personas afectadas.",
+-        "Debe concordar en plural si el pronombre de objeto indirecto es 'nos' o 'les'.",
+-        "Adopta forma impersonal con el pronombre 'se' obligatoriamente."
++        "Me preocupa que prohíban libros.",
++        "Me preocupan que prohíban libros.",
++        "Me preocupa que prohíben libros."
+       ],
+       "correct": 0,
+       "teaches": [
+         "subjunctive-emotion"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "gustar",
++        "2": "present-tense"
++      }
+     },
+     {
+       "id": "b2-06-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "A los ciudadanos les asombra que el gobierno __ los informes técnicos sobre el impacto ambiental.",
+-      "hint": "desoír",
+-      "answer": "desoiga",
+-      "english": "It astounds citizens that the government ignores technical reports on environmental impact.",
++      "sentence": "El hecho de que el libro se __ en varios países no cambia lo que dice.",
++      "hint": "prohibir, imperfect subjunctive",
++      "answers": [
++        "prohibiera",
++        "prohibiese"
++      ],
++      "english": "The fact that the book was banned in several countries does not change what it says.",
+       "teaches": [
+-        "subjunctive-emotion"
++        "el-hecho-de-que-subjuntivo"
+       ]
+     },
+     {
+@@ -74,10 +78,10 @@
+       "type": "sentence-order",
+       "category": "grammar",
+       "sentences": [
+-        "A la sociedad civil le indigna que persista la opacidad en las instituciones públicas. [Civil society is outraged that opacity persists in public institutions.]",
+-        "Lamentamos profundamente que el desastre natural haya dejado a tantas familias sin hogar. [We deeply regret that the natural disaster left so many families homeless.]",
+-        "¡Es un flagrante atropello que se vulnere la libertad de expresión de los periodistas! [It is a flagrant outrage that journalists' freedom of expression is violated!]",
+-        "El hecho de que el país sea pródigo en recursos no garantiza una distribución equitativa. [The fact that the country is bountiful in resources does not guarantee equitable distribution.]"
++        "Eduardo Galeano nació en Montevideo en 1940. [Eduardo Galeano was born in Montevideo in 1940.]",
++        "Las venas abiertas de América Latina se publicó en 1971. [Las venas abiertas de América Latina was published in 1971.]",
++        "En los años setenta, varias dictaduras militares prohibieron el libro. [In the 1970s, several military dictatorships banned the book.]",
++        "Galeano murió en Montevideo en 2015. [Galeano died in Montevideo in 2015.]"
+       ],
+       "solution": [
+         0,
+@@ -86,8 +90,7 @@
+         3
+       ],
+       "teaches": [
+-        "subjunctive-emotion",
+-        "el-hecho-de-que-subjuntivo"
++        "secuencia-narrativa"
+       ]
+     },
+     {
+@@ -96,34 +99,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Historiador",
+-          "text": "¿Por qué la obra de Eduardo Galeano sigue despertando tanta conmoción ética más de medio siglo después?"
++          "speaker": "Profesor",
++          "text": "¿Qué hay que recordar al leer este libro?"
+         },
+         {
+-          "speaker": "Ensayista",
++          "speaker": "Estudiante",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Historiador",
+-          "text": "Una prosa que transforma la herida de la historia en esperanza insumisa."
++          "speaker": "Profesor",
++          "text": "Exacto, otros autores pueden pensar otra cosa."
+         }
+       ],
+       "options": [
+-        "Porque al lector le conmueve que Galeano haya rescatado la memoria viva de los despojados con una vehemencia moral inquebrantable.",
+-        "Porque las minas de plata de Potosí se encuentran a más de cuatro mil metros sobre el nivel del mar.",
+-        "Porque las ediciones de bolsillo del libro suelen encuadernarse en tapa blanda."
++        "Es importante que recordemos que es la visión de Galeano.",
++        "Es importante que recordamos que es la visión de Galeano.",
++        "Es importante que recordar que es la visión de Galeano."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "subjunctive-emotion"
+-      ]
++        "subjunctive-value-judgments"
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     },
+     {
+       "id": "b2-06-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Deploramos que las advertencias de los científicos hayan sido minimizadas durante tanto tiempo.",
+-      "english": "We deplore that scientists' warnings have been downplayed for so long.",
++      "sentence": "Es posible que a un lector nuevo le sorprenda que el libro se lea como un reportaje.",
++      "english": "A new reader may be surprised that the book reads like a news report.",
+       "teaches": [
+         "subjunctive-emotion"
+       ]
+@@ -134,14 +140,51 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Escribe una frase de indignación cívica combinando un verbo de afección psicológica y la construcción 'el hecho de que' con subjuntivo.",
+-          "answer": "Nos indigna que las autoridades toleren la impunidad; el hecho de que no investiguen los atropellos agrava la crisis."
++          "prompt": "Say that it bothers you that your neighbours make noise at night, using me molesta que.",
++          "answer": "Me molesta que mis vecinos hagan ruido por la noche."
++        },
++        {
++          "prompt": "Say \"What a shame that you can't come!\".",
++          "answer": "¡Qué pena que no puedas venir!"
++        },
++        {
++          "prompt": "Say that the fact that he arrives late bothers you, starting with el hecho de que.",
++          "answer": "El hecho de que llegue tarde me molesta."
+         }
+       ],
+       "teaches": [
+-        "subjunctive-emotion",
+         "el-hecho-de-que-subjuntivo"
+       ]
++    },
++    {
++      "id": "b2-06-consolidation.ex09",
++      "type": "multiple-choice",
++      "category": "reading",
++      "question": "Why does the text say it is a good idea to read the book critically?",
++      "options": [
++        "Porque es la visión de Galeano, no la única posible.",
++        "Porque el libro tiene muchos errores en las fechas.",
++        "Porque el libro está escrito en un estilo muy técnico."
++      ],
++      "correct": 0
++    },
++    {
++      "id": "b2-06-consolidation.ex10",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence says \"I'm afraid they will arrive late\"?",
++      "options": [
++        "Temo que lleguen tarde.",
++        "Temo que llegan tarde.",
++        "Temo que llegar tarde."
++      ],
++      "correct": 0,
++      "teaches": [
++        "subjunctive-emotion"
++      ],
++      "distractor_skills": {
++        "1": "present-tense"
++      }
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-04-01-a-gr.json b/content/es-latam/grammar/b2/b2-04-01-a-gr.json
+index 2f50eadd..dea42657 100644
+--- a/content/es-latam/grammar/b2/b2-04-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-04-01-a-gr.json
+@@ -1,51 +1,81 @@
+ {
+   "id": "grammar.b2.04.01.subjuntivo-influencia",
+-  "title": "El subjuntivo en oraciones sustantivas de influencia",
++  "title": "Making Other People Act",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Verbos de voluntad y mandato",
+-      "content": "Los verbos que implican influir sobre la conducta de otra persona (mandar, prohibir, exigir, instar, solicitar, pedir, impedir) exigen de modo categórico el verbo subordinado en modo subjuntivo cuando hay cambio de sujeto: 'El comité exige que los delegados presenten credenciales'."
++      "title": "The pattern you already know",
++      "content": "You know the subjunctive after *aconsejar que* from B1 Unit 4 (*Te recomiendo que hables con tu profesor*) and after reported orders such as *prohibir* from B1 Unit 38 (*Nos prohibió que saliéramos de noche*). The logic is the same for every verb of influence: the main verb tries to get someone else to act, so the action after *que* has not happened yet and goes in the subjunctive. At B2 you use the whole range, from gentle to strong."
+     },
+     {
+       "type": "table",
+-      "title": "Matices de influencia en registro formal",
++      "title": "From gentle to strong",
+       "rows": [
+         [
+-          "Mandato estricto",
+-          "'Exigir / Ordenar que + subjuntivo': 'La ley exige que se respeten los plazos procesales'"
++          "pedir que, aconsejar que, recomendar que",
++          "ask, advise, recommend (you know these)"
+         ],
+         [
+-          "Exhortación formal",
+-          "'Instar a que / Exhortar a que + subjuntivo': 'La cancillería insta a que las partes reanuden el diálogo'"
++          "permitir que, dejar que",
++          "allow, let"
+         ],
+         [
+-          "Oposición e impedimento",
+-          "'Impedir / Prohibir que + subjuntivo': 'El bloqueo impidió que llegaran los suministros médicos'"
++          "prohibir que, impedir que",
++          "forbid, prevent"
++        ],
++        [
++          "insistir en que",
++          "insist that (note the *en*)"
++        ],
++        [
++          "ordenar que, exigir que",
++          "order, demand"
++        ]
++      ]
++    },
++    {
++      "type": "text",
++      "title": "Which tense?",
++      "content": "As you saw in B1 Unit 38, the tense follows the main verb. A present main verb takes the present subjunctive; a past main verb takes the imperfect subjunctive. You know both the *-ra* and the *-se* forms from B1 Unit 4."
++    },
++    {
++      "type": "table",
++      "title": "The same demand in two tenses",
++      "rows": [
++        [
++          "La jefa exige que lleguemos a las nueve.",
++          "The boss demands that we arrive at nine."
++        ],
++        [
++          "La jefa exigió que llegáramos a las nueve.",
++          "The boss demanded that we arrive at nine."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el discurso institucional",
+       "items": [
+         {
+-          "spanish": "El presidente del tribunal ordenó que se desalojara la sala de audiencias.",
+-          "english": "The court president ordered that the courtroom be cleared."
++          "spanish": "El director prohibió que usáramos el celular durante la reunión.",
++          "english": "The director forbade us to use our phones during the meeting."
++        },
++        {
++          "spanish": "Mis padres no permitían que volviéramos tarde a casa.",
++          "english": "My parents did not allow us to come home late."
+         },
+         {
+-          "spanish": "La comisión internacional insta a que los gobiernos garanticen la libertad de prensa.",
+-          "english": "The international commission urges governments to guarantee freedom of the press."
++          "spanish": "El mal tiempo impidió que el avión saliera a la hora.",
++          "english": "The bad weather stopped the plane from leaving on time."
+         },
+         {
+-          "spanish": "Las normas sanitarias impiden que los pasajeros aborden sin la documentación requerida.",
+-          "english": "Health regulations prevent passengers from boarding without the required documentation."
++          "spanish": "Los vecinos insistieron en que cenáramos con ellos.",
++          "english": "The neighbours insisted that we have dinner with them."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Con verbos como 'prohibir', 'permitir' o 'aconsejar', cuando el destinatario aparece como pronombre indirecto, el español culto permite alternar entre subjuntivo e infinitivo: 'Les aconsejó que guardaran calma' o 'Les aconsejó guardar calma'."
++      "content": "There are always two people: the one who demands and the one who has to act. *Insistir* needs *en*: *insistir en que*. When the person who demands and the person who acts are the same, Spanish uses an infinitive instead (Lesson 4 of this unit)."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-04-02-a-gr.json b/content/es-latam/grammar/b2/b2-04-02-a-gr.json
+index 516cc1ca..8596fd63 100644
+--- a/content/es-latam/grammar/b2/b2-04-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-04-02-a-gr.json
+@@ -1,51 +1,67 @@
+ {
+   "id": "grammar.b2.04.02.juicios-valor-subjuntivo",
+-  "title": "Juicios de valor y matrices impersonales evaluativas",
++  "title": "Saying What Is Fair, Normal or Strange",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Valoración moral y conveniencia",
+-      "content": "Las oraciones impersonales con el verbo 'ser' y un adjetivo o sustantivo de valoración (es indispensable, es insólito, es inadmisible, es una vergüenza, conviene que) seleccionan obligatoriamente modo subjuntivo en la proposición subordinada porque no informan de un hecho objetivo, sino que emiten un juicio sobre él."
++      "title": "Judging, not announcing",
++      "content": "You know *importante*, *necesario* and *lástima* from A2 Unit 27: *es importante que*, *es necesario que*, *es mejor que* and *es una lástima que* all take the subjunctive. An expression that gives your opinion about something takes *que* + subjunctive, even when the thing is real: you are judging it, not announcing it. At B2 you add a wider range of judgments, and you use them with other tenses."
+     },
+     {
+       "type": "table",
+-      "title": "Matrices axiológicas comunes",
++      "title": "More judgments that take the subjunctive",
+       "rows": [
+         [
+-          "Necesidad y conveniencia",
+-          "'Es imprescindible que', 'Es indispensable que', 'Conviene que': 'Es indispensable que se investigue a fondo'"
++          "conviene que, es mejor que",
++          "Conviene que hablemos con la jefa."
+         ],
+         [
+-          "Juicio ético o desaprobación",
+-          "'Es inadmisible que', 'Es censurable que', 'Es una lástima que': 'Es inadmisible que se desvíen fondos públicos'"
++          "es justo / es injusto / es razonable que",
++          "Es razonable que pidan más tiempo."
+         ],
+         [
+-          "Extrañeza y sorpresa",
+-          "'Es insólito que', 'Es inaudito que', 'Resulta curioso que': 'Es insólito que nadie advirtiera el fraude'"
++          "es lógico / es normal / es comprensible que",
++          "Es normal que estés cansado."
++        ],
++        [
++          "es inaceptable / es ridículo que",
++          "Es inaceptable que nadie avise a los vecinos."
++        ],
++        [
++          "es raro / es increíble que",
++          "Es raro que no conteste el teléfono."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Past events",
++      "content": "You know *haya* from B1 Unit 37: use *haya* + participle for something that has already happened, and the imperfect subjunctive when the judgment is about the past."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el ensayo crítico",
+       "items": [
+         {
+-          "spanish": "Es inadmisible que persista la opacidad en las contrataciones estatales.",
+-          "english": "It is inadmissible that lack of transparency persists in state contracting."
++          "spanish": "Es injusto que hayan cambiado el horario sin avisar.",
++          "english": "It is unfair that they have changed the schedule without warning."
++        },
++        {
++          "spanish": "Era lógico que los clientes quisieran una respuesta rápida.",
++          "english": "It was logical that the customers wanted a quick answer."
+         },
+         {
+-          "spanish": "Conviene que el cuerpo diplomático actúe con prudencia antes de emitir comunicados.",
+-          "english": "It is advisable that the diplomatic corps act with prudence before issuing statements."
++          "spanish": "Es ridículo que tengamos que esperar tanto.",
++          "english": "It is ridiculous that we have to wait so long."
+         },
+         {
+-          "spanish": "Resulta insólito que los legisladores ignoren la jurisprudencia de la corte suprema.",
+-          "english": "It is unheard of that legislators ignore the supreme court's case law."
++          "spanish": "Es razonable que pidan más tiempo para el proyecto.",
++          "english": "It is reasonable that they ask for more time for the project."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Contrasta: 'Es seguro que viene' (certeza -> indicativo) frente a 'Es natural que venga' (juicio de valor -> subjuntivo)."
++      "content": "Compare a fact with a judgment. *Es verdad que los precios suben* states a fact, so it takes the indicative. *Es injusto que los precios suban* gives an opinion about the same fact, so it takes the subjunctive."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-04-03-a-gr.json b/content/es-latam/grammar/b2/b2-04-03-a-gr.json
+index ef641124..fe9edd13 100644
+--- a/content/es-latam/grammar/b2/b2-04-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-04-03-a-gr.json
+@@ -1,51 +1,54 @@
+ {
+   "id": "grammar.b2.04.03.reaccion-afectiva-subjuntivo",
+-  "title": "Subjuntivo en proposiciones de reacción afectiva",
++  "title": "Reacting to News",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Verbos de emoción psicológica y postura subjetiva",
+-      "content": "Los verbos y construcciones que expresan la reacción anímica del emisor ante un hecho ajeno (me alegra que, me indigna que, lamento que, nos alarma que, me reconforta que) seleccionan invariable y obligatoriamente el modo subjuntivo, incluso cuando el hecho aludido es completamente real y verificado en la realidad: 'Me alegra que hayas venido' (el interlocutor vino, pero la cláusula verbaliza la emoción, no el hecho)."
++      "title": "A feeling, then the subjunctive",
++      "content": "You know *alegrar*, *molestar* and *sorprender* from A2 Unit 27: a feeling about something takes *que* + subjunctive (*Me alegra que estés aquí*). The thing you react to may be perfectly real, but you are reacting to it, not announcing it. This lesson only widens the range of reactions you can use. Unit 6 comes back to feelings in detail."
+     },
+     {
+       "type": "table",
+-      "title": "Estructuras de afección anímica",
++      "title": "Three reactions for B2",
+       "rows": [
+         [
+-          "Pronombre indirecto + verbo + que + SUBJ",
+-          "'Me indigna que los monopolios fijen los precios a su antojo'"
++          "Me alegra que...",
++          "I'm glad that..."
+         ],
+         [
+-          "Verbo transitivo sujeto + que + SUBJ",
+-          "'Lamento profundamente que hayamos llegado a esta encrucijada'"
++          "Lamento que...",
++          "I'm sorry that..."
+         ],
+         [
+-          "Sustantivos de sentimiento + de que + SUBJ",
+-          "'Tengo la esperanza de que la diplomacia prospere', 'Siento el pesar de que partan'"
++          "Me sorprende que...",
++          "It surprises me that..."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el debate público",
+       "items": [
+         {
+-          "spanish": "A la ciudadanía le indigna que los casos de corrupción queden impunes.",
+-          "english": "Citizens are outraged that corruption cases go unpunished."
++          "spanish": "Me alegra que por fin tengas un trabajo nuevo.",
++          "english": "I'm glad that you finally have a new job."
+         },
+         {
+-          "spanish": "Nos reconforta que las comunidades hayan encontrado formas de resistencia comunal.",
+-          "english": "It heartens us that communities have found forms of communal resistance."
++          "spanish": "Lamento que no puedan venir a la cena.",
++          "english": "I'm sorry that you cannot come to the dinner."
+         },
+         {
+-          "spanish": "La comunidad científica lamenta que se reduzcan los fondos para la investigación.",
+-          "english": "The scientific community laments that funding for research is being cut."
++          "spanish": "Me sorprende que Carmen no haya llegado todavía.",
++          "english": "It surprises me that Carmen hasn't arrived yet."
++        },
++        {
++          "spanish": "Nos alegra que hayan encontrado una solución.",
++          "english": "We are glad that they have found a solution."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Recuerda: el subjuntivo no solo expresa irrealidad o duda; en contextos afectivos expresa la postura valorativa del hablante frente a un hecho conocido ('factividad emotiva')."
++      "content": "You know *haya* from B1 Unit 37 for a finished event: *Me sorprende que hayas venido*. After a past reaction, the imperfect: *Me alegró que vinieras*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-04-04-a-gr.json b/content/es-latam/grammar/b2/b2-04-04-a-gr.json
+index e3325907..71cf6e1f 100644
+--- a/content/es-latam/grammar/b2/b2-04-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-04-04-a-gr.json
+@@ -1,51 +1,63 @@
+ {
+   "id": "grammar.b2.04.04.infinitivo-vs-subjuntivo",
+-  "title": "Infinitivo frente a subjuntivo: Correferencia del sujeto",
++  "title": "One Person or Two?",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "La regla de identidad de sujetos",
+-      "content": "Con verbos de voluntad, deseo, juicio y emoción, la norma culta del español exige el INFINITIVO cuando el sujeto del verbo principal coincide con el sujeto del verbo subordinado (correferencia). El SUBJUNTIVO solo se emplea cuando los sujetos son distintos (disjunción referencial)."
++      "title": "The rule",
++      "content": "English uses the same shape for *I want to leave* and *I want you to leave*. Spanish uses two different patterns, and the choice depends on who does the second action. You know *querer* and *preferir* from A2 Unit 27, with an infinitive or with *que* + subjunctive (*Quiero comer* / *Quiero que comas*). It works the same way for every kind of verb in this unit: influence, value judgments and feelings."
++    },
++    {
++      "type": "text",
++      "title": "Same subject or different subject?",
++      "content": "If the person who wants, feels or judges is also the person who acts, use an infinitive. If the second action belongs to someone else, use *que* + subjunctive."
+     },
+     {
+       "type": "table",
+-      "title": "Contraste de correferencia",
++      "title": "One person or two?",
+       "rows": [
+         [
+-          "Mismo sujeto -> INFINITIVO",
+-          "'El testigo pretende declarar ante el juez' (él pretende + él declara; NUNCA 'pretende que él declare')"
++          "Quiero salir. / Quiero que salgas.",
++          "I want to leave. / I want you to leave."
+         ],
+         [
+-          "Sujetos distintos -> SUBJUNTIVO",
+-          "'El abogado pretende que el testigo declare' (el abogado pretende + el testigo declara)"
++          "Prefiero cenar en casa. / Prefiero que cenemos en casa.",
++          "I prefer to have dinner at home. / I prefer that we have dinner at home."
+         ],
+         [
+-          "Con matrices impersonales genéricas",
+-          "'Conviene analizar los datos' (sentido general, sin sujeto específico) vs 'Conviene que el perito analice los datos' (sujeto explícito)"
++          "Me alegra estar aquí. / Me alegra que estés aquí.",
++          "I'm glad to be here. / I'm glad you are here."
++        ],
++        [
++          "Es importante llegar a tiempo. / Es importante que llegues a tiempo.",
++          "It is important to arrive on time. / It is important that you arrive on time."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos normativos",
+       "items": [
+         {
+-          "spanish": "Anhelamos alcanzar la paz en toda la región fronteriza.",
+-          "english": "We yearn to achieve peace across the entire border region."
++          "spanish": "Mi jefa espera terminar hoy.",
++          "english": "My boss hopes to finish today."
++        },
++        {
++          "spanish": "Mi jefa espera que terminemos hoy.",
++          "english": "My boss hopes that we finish today."
+         },
+         {
+-          "spanish": "Anhelamos que las futuras generaciones vivan sin violencia.",
+-          "english": "We yearn for future generations to live without violence."
++          "spanish": "Ana se negó a firmar el contrato sin leerlo.",
++          "english": "Ana refused to sign the contract without reading it."
+         },
+         {
+-          "spanish": "Procuró eludir las preguntas comprometedoras de los periodistas.",
+-          "english": "He tried to avoid the compromising questions of the journalists."
++          "spanish": "Mi hermano pretende que le prestemos el carro.",
++          "english": "My brother expects us to lend him the car."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Evita el calco del inglés con 'que yo': en español no se dice 'Espero que yo apruebe', sino 'Espero aprobar'."
++      "content": "English often hides the second person (*I want him to come*), so ask yourself who does the second action. Same person as the first verb: infinitive. New person: *que* + subjunctive. Verbs like *permitir*, *prohibir*, *aconsejar* and *pedir* are the one place where you may choose, because the other person is named by *me*, *te*, *le*, *nos* or *les*: *Te aconsejo descansar* and *Te aconsejo que descanses* are both correct."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-04-05-a-gr.json b/content/es-latam/grammar/b2/b2-04-05-a-gr.json
+index 4ffe05b0..d62233e5 100644
+--- a/content/es-latam/grammar/b2/b2-04-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-04-05-a-gr.json
+@@ -1,51 +1,63 @@
+ {
+   "id": "grammar.b2.04.05.recomendacion-diplomatica",
+-  "title": "Fórmulas de recomendación institucional y diplomática",
++  "title": "Polite and Formal Recommendations",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Atenuar el mandato en el plano internacional",
+-      "content": "En la redacción de dictámenes, resoluciones de organismos multilaterales y despachos diplomáticos B2, las órdenes no se formulan de manera imperativa directa. Se emplean estructuras de recomendación atenuada con pasiva refleja ('se sugiere que', 'se insta a que', 'se recomienda que') gobernando siempre modo subjuntivo."
++      "title": "Recommending without giving orders",
++      "content": "In notices, emails and official advice nobody says *Haz esto*. You recommend. You know impersonal *se* from B1 Unit 6, *convendría* from B1 Unit 4, the conditional for advice from A2 Unit 26 and the imperfect subjunctive from B1 Unit 4. Put them together and you get the polite formulas of everyday B2: *se* + verb + *que* + subjunctive, or the conditional + *que* + imperfect subjunctive."
+     },
+     {
+       "type": "table",
+-      "title": "Fórmulas diplomáticas de recomendación",
++      "title": "Two ways to recommend",
+       "rows": [
+         [
+-          "Se recomienda que + SUBJ",
+-          "'Se recomienda que las comisiones técnicas elaboren una hoja de ruta'"
++          "Se recomienda que + present subjunctive",
++          "Se recomienda que los visitantes lleguen temprano."
+         ],
+         [
+-          "Se sugiere que + SUBJ",
+-          "'Se sugiere que el informe sea revisado por expertos independientes'"
++          "Se sugiere que + present subjunctive",
++          "Se sugiere que traigan agua."
+         ],
+         [
+-          "Sería aconsejable que + SUBJ IMPERF",
+-          "'Sería aconsejable que las delegaciones aplazaran la votación hasta alcanzar consenso'"
++          "Sería conveniente que + imperfect subjunctive",
++          "Sería conveniente que habláramos con la jefa."
++        ],
++        [
++          "Convendría que + imperfect subjunctive",
++          "Convendría que revisáramos la sugerencia."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Why the conditional?",
++      "content": "The conditional makes the advice softer and more polite. Compare *Es conveniente que revisen el aviso* (direct) with *Sería conveniente que revisaran el aviso* (polite). With the conditional, the verb after *que* is always in the imperfect subjunctive."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el derecho internacional",
+       "items": [
+         {
+-          "spanish": "El panel de expertos sugiere que se establezca una moratoria sobre la explotación minera.",
+-          "english": "The expert panel suggests that a moratorium on mining exploitation be established."
++          "spanish": "Se recomienda que los visitantes lean el aviso antes de entrar.",
++          "english": "Visitors are recommended to read the notice before entering."
++        },
++        {
++          "spanish": "Se sugiere que cada persona traiga su propia botella de agua.",
++          "english": "Each person is advised to bring their own bottle of water."
+         },
+         {
+-          "spanish": "Sería conveniente que los signatarios ratificaran el protocolo antes de fin de año.",
+-          "english": "It would be advisable that signatories ratify the protocol before the end of the year."
++          "spanish": "Sería conveniente que usted hablara con la jefa hoy.",
++          "english": "It would be advisable for you to speak to the boss today."
+         },
+         {
+-          "spanish": "Se insta a las partes involucradas a que diriman sus diferencias pacíficamente.",
+-          "english": "The involved parties are urged to settle their differences peacefully."
++          "spanish": "Convendría que revisáramos la sugerencia antes de la reunión.",
++          "english": "It would be a good idea for us to check the suggestion before the meeting."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Observa la concordancia de tiempos: con condicional en la matriz ('sería aconsejable que...'), la norma exige pretérito imperfecto de subjuntivo ('ratificaran', 'establecieran')."
++      "content": "To name the people you are advising, add *a* + group: *Se recomienda a los visitantes que lleguen temprano*. To advise in general, with no one in particular, use an infinitive: *Se recomienda llegar temprano*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-06-01-a-gr.json b/content/es-latam/grammar/b2/b2-06-01-a-gr.json
+index 8d2b9bb0..66a33d64 100644
+--- a/content/es-latam/grammar/b2/b2-06-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-06-01-a-gr.json
+@@ -1,55 +1,59 @@
+ {
+   "id": "grammar.b2.06.01.afeccion-psicologica",
+-  "title": "Subjuntivo con verbos de afección psicológica tipo gustar",
++  "title": "More Verbs That Work Like Gustar",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Estructura sintáctica con experimentador dativo",
+-      "content": "Los verbos de afección psicológica o reacción emotiva (inquietar, preocupar, molestar, indignar, asombrar, desconcertar, entristecer) funcionan sintácticamente con un pronombre de objeto indirecto (el experimentador o experimentador afectivo: 'me', 'te', 'le', 'nos', 'les') y una proposición sustantiva sujeto introducida por 'que'. En el nivel B2, esta proposición subordinada exige obligatoriamente modo subjuntivo, ya que el hablante no afirma el hecho de manera neutra, sino que lo filtra a través de su impacto anímico: 'A los ciudadanos les indigna que los gobernantes ignoren sus reclamos'."
++      "title": "Same pattern, more verbs",
++      "content": "You know *gustar* from A1 Unit 22: the thing you like is the subject, and the pronoun *me*, *te*, *le*, *nos* or *les* shows who feels it. You know *molestar* from A2 Unit 27 and *sorprender* from B2 Unit 4: when the thing that affects you is what someone else does, the clause after *que* is in the subjunctive (*Me sorprende que vengas*). Here you add more verbs of the same type."
+     },
+     {
+       "type": "table",
+-      "title": "Estructura de la reacción afectiva",
++      "title": "Verbs of feeling that work like gustar",
+       "rows": [
+         [
+-          "Pronombre dativo + Verbo de afección + que + SUBJUNTIVO",
+-          "'Me inquieta que persista la polarización política'"
++          "Me molesta que... / Me fastidia que...",
++          "It bothers me that... / It annoys me that..."
+         ],
+         [
+-          "Con intensificación",
+-          "'A la comunidad internacional le desconcierta que no se respeten los tratados'"
++          "Nos preocupa que... / Le asusta que...",
++          "It worries us that... / It frightens him or her that..."
+         ],
+         [
+-          "Contraste con indicativo (causales)",
+-          "Compárese con 'Me enojé porque llegaron tarde' (causal factual) frente a 'Me enoja que lleguen tarde' (sustantiva sujeto evaluativa)"
+-        ],
+-        [
+-          "Con infinitivo (sin cambio de experimentador)",
+-          "'Me asombra descubrir la verdad' (mismo sujeto/experimentador)"
++          "Les encanta que... / Me entristece que...",
++          "They love it that... / It makes me sad that..."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "The verb stays singular",
++      "content": "The clause after *que* is the subject, so the verb is always third person singular, even when the pronoun is *nos* or *les*: *Nos preocupa que*, not *Nos preocupan que*. A plural noun is different, because then the noun is the subject: *Me preocupan los precios*."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el ensayo social",
+       "items": [
+         {
+-          "spanish": "Nos preocupa profundamente que la desigualdad económica continúe ensanchándose en la región.",
+-          "english": "It deeply concerns us that economic inequality continues widening in the region."
++          "spanish": "Me molesta que mis vecinos hagan ruido por la noche.",
++          "english": "It bothers me that my neighbours make noise at night."
++        },
++        {
++          "spanish": "Nos preocupa que el precio siga subiendo.",
++          "english": "It worries us that the price keeps going up."
+         },
+         {
+-          "spanish": "A los historiadores les asombra que la memoria colectiva haya resistido a décadas de censura.",
+-          "english": "It astounds historians that collective memory has resisted decades of censorship."
++          "spanish": "Les encanta que los visitantes se queden a cenar.",
++          "english": "They love it that the visitors stay for dinner."
+         },
+         {
+-          "spanish": "Les indigna que las corporaciones evadan sus responsabilidades medioambientales sin consecuencias.",
+-          "english": "It outrages them that corporations evade their environmental responsibilities without consequences."
++          "spanish": "Me fastidió que nadie avisara.",
++          "english": "It annoyed me that nobody warned us."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Recuerda que el verbo de afección concuerda en singular (tercera persona) cuando el sujeto es una oración subordinada: 'Me indigna que hagan X' (nunca '*Me indignan que hagan X*')."
++      "content": "As in *Quiero comer* from B2 Unit 4, the same person gets an infinitive: *Me molesta esperar* (I am the one waiting), but *Me molesta que esperes* (you are the one waiting). For a finished event use *haya* from B1 Unit 37 with a participle (*Me preocupa que no hayan llamado*), and after a past verb the imperfect subjunctive, as in *Quería que vinieras* from B1 Unit 38 (*Me molestó que llegaran tarde*)."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-06-02-a-gr.json b/content/es-latam/grammar/b2/b2-06-02-a-gr.json
+index 28e5fed7..ba2173c5 100644
+--- a/content/es-latam/grammar/b2/b2-06-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-06-02-a-gr.json
+@@ -1,55 +1,64 @@
+ {
+-  "id": "grammar.b2.06.02.empatia-pesar-subjuntivo",
+-  "title": "Subjuntivo con verbos de sentimiento, empatía y pesar",
++  "id": "grammar.b2.06.02.sentimiento-pesar",
++  "title": "Sorry, Sad or Afraid",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Verbos de afección directa y expresión de condolencias",
+-      "content": "A diferencia de los verbos con dativo, los verbos de sentimiento donde el sujeto gramatical es quien experimenta la emoción (lamentar, sentir, deplorar, alegrarse de, dolerse de) también rigen obligatoriamente subjuntivo cuando su complemento oracional tiene un sujeto diferente: 'Lamentamos que la catástrofe haya causado tantas pérdidas'. Si no hay cambio de sujeto, se utiliza infinitivo: 'Lamentamos no poder asistir'."
++      "title": "The person who feels is the subject",
++      "content": "In Lesson 1 the feeling was the subject and the person was the indirect object (*me molesta*). With *sentir*, *lamentar* and *temer* it is the other way round: the person who feels is the subject, so the verb changes with the person (*siento*, *lamentamos*, *temen*). You know *sentir* from A2 Unit 27 and *lamentar* from B2 Unit 4. The clause after *que* is still in the subjunctive when it has a different subject."
+     },
+     {
+       "type": "table",
+-      "title": "Verbos y locuciones de pesar y solidaridad",
++      "title": "Three verbs of feeling",
+       "rows": [
+         [
+-          "lamentar / sentir que + SUBJUNTIVO",
+-          "'Sentimos que hayan tenido que atravesar una situación tan dolorosa'"
++          "Siento que... / Lamento que...",
++          "I'm sorry that... / I regret that..."
+         ],
+         [
+-          "deplorar que + SUBJUNTIVO",
+-          "'La comunidad internacional deplora que se violen los derechos fundamentales'"
++          "Temo que...",
++          "I'm afraid that..."
+         ],
+         [
+-          "alegrarse de que + SUBJUNTIVO",
+-          "'Nos alegramos de que las familias se hayan reencontrado sanas y salvas'"
+-        ],
+-        [
+-          "solidarizarse con que + SUBJUNTIVO",
+-          "'Nos solidarizamos con que los trabajadores reclamen un salario digno'"
++          "Siento / Lamento / Temo + infinitive",
++          "Same person on both verbs: Lamento llegar tarde (I am the one arriving late)."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Same person or a different one?",
++      "content": "You know *Quiero comer* and *Quiero que comas* from B2 Unit 4: the same rule applies here. *Lamento llegar tarde* (I am late) but *Lamento que llegues tarde* (you are late)."
++    },
++    {
++      "type": "text",
++      "title": "Careful with sentir que",
++      "content": "*Sentir que* has two meanings. When you are sorry, it takes the subjunctive: *Siento que estés enfermo* (I'm sorry you are ill). When it means 'I feel that' or 'I have the impression that', it takes the indicative: *Siento que algo no está bien*."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el registro diplomático y humanitario",
+       "items": [
+         {
+-          "spanish": "El comité humanitario lamenta que los convoyes de alimentos no hayan podido acceder a la zona de conflicto.",
+-          "english": "The humanitarian committee regrets that food convoys have not been able to access the conflict zone."
++          "spanish": "Siento que tengas que trabajar este fin de semana.",
++          "english": "I'm sorry that you have to work this weekend."
++        },
++        {
++          "spanish": "Lamentamos que no hayan podido venir.",
++          "english": "We are sorry that they have not been able to come."
+         },
+         {
+-          "spanish": "Deploramos que la violencia empañe los esfuerzos de pacificación comunitaria.",
+-          "english": "We deplore that violence tarnishes community pacification efforts."
++          "spanish": "Temo que la reunión termine muy tarde.",
++          "english": "I'm afraid that the meeting will finish very late."
+         },
+         {
+-          "spanish": "Nos conmueve que tantas personas anónimas hayan donado víveres para los damnificados.",
+-          "english": "It moves us that so many anonymous individuals have donated provisions for the victims."
++          "spanish": "Temíamos que el tren llegara tarde.",
++          "english": "We were afraid that the train would arrive late."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "No confundas 'sentir que' en sentido de 'lamentar' (que rige subjuntivo: 'Siento que estés enfermo') con 'sentir que' como percepción física o mental (que rige indicativo: 'Siento que el ambiente está tenso')."
++      "content": "To offer condolences after a death, say *Mi más sentido pésame* or *Les doy el pésame*. For something smaller, *Lo siento mucho* is enough."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-06-03-a-gr.json b/content/es-latam/grammar/b2/b2-06-03-a-gr.json
+index 30ea4aad..2c86e7db 100644
+--- a/content/es-latam/grammar/b2/b2-06-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-06-03-a-gr.json
+@@ -1,55 +1,54 @@
+ {
+-  "id": "grammar.b2.06.03.exclamativas-evaluativas",
+-  "title": "Estructuras exclamativas y matrices afectivas con subjuntivo",
++  "id": "grammar.b2.06.03.exclamaciones",
++  "title": "Reacting with Exclamations",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Construcciones ponderativas y exclamativas con 'que'",
+-      "content": "Las expresiones de valoración afectiva enfática adoptan a menudo la forma exclamativa en el discurso apasionado o editorial: '¡Qué lástima que + subjuntivo!', '¡Es una vergüenza que + subjuntivo!', '¡Qué tristeza que + subjuntivo!'. Al tratarse de juicios de valor afectivo sobre una situación presupuesta, el verbo subordinado se formula obligatoriamente en subjuntivo. Por el contrario, la fórmula de alivio '¡Menos mal que...!' rige indicativo, porque asevera con gratitud la consumación real y positiva de un hecho: '¡Menos mal que no llovió!'."
++      "title": "Exclamation + subjunctive",
++      "content": "The fastest way to react is an exclamation. You know *alegría* from A2 Unit 27, as in *¡Qué alegría que vengas a la fiesta!*. The pattern is *¡Qué* + a word for the feeling + *que* + subjunctive! There is no verb of feeling: the exclamation carries the feeling, and the clause after *que* is the thing you react to."
+     },
+     {
+       "type": "table",
+-      "title": "Contraste en exclamativas evaluativas",
++      "title": "Common exclamations",
+       "rows": [
+         [
+-          "¡Qué pena / lástima que + SUBJUNTIVO!",
+-          "'¡Qué lástima que hayan cancelado el concierto de gala!'"
++          "¡Qué pena que... ! / ¡Qué lástima que... !",
++          "What a shame that... ! / What a pity that... !"
+         ],
+         [
+-          "¡Es una vergüenza / un escándalo que + SUBJUNTIVO!",
+-          "'¡Es una vergüenza que los fondos públicos se despilfarren de ese modo!'"
++          "¡Qué bien que... ! / ¡Qué bueno que... !",
++          "How good that... ! (¡Qué bueno que! is very common in Latin America)"
+         ],
+         [
+-          "¡Qué bueno / maravilloso que + SUBJUNTIVO!",
+-          "'¡Qué bueno que la verdad haya salido a la luz!'"
+-        ],
+-        [
+-          "¡Menos mal que + INDICATIVO! (alivio/gratitud)",
+-          "'¡Menos mal que el médico llegó a tiempo y controló la crisis!'"
++          "¡Qué horrible que... ! / ¡Qué barbaridad que... !",
++          "How horrible that... ! / How outrageous that... !"
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el ensayo de opinión",
+       "items": [
+         {
+-          "spanish": "¡Qué desgarrador que tantas familias continúen buscando a sus seres queridos sin respuesta estatal!",
+-          "english": "How heartbreaking that so many families continue searching for their loved ones without a state response!"
++          "spanish": "¡Qué pena que no puedas venir!",
++          "english": "What a shame that you can't come!"
++        },
++        {
++          "spanish": "¡Qué bueno que te guste el regalo!",
++          "english": "How good that you like the present!"
+         },
+         {
+-          "spanish": "¡Es inaudito que una nación con semejante fertilidad agrícola sufra desnutrición infantil!",
+-          "english": "It is unheard of that a nation with such agricultural fertility suffers infant malnutrition!"
++          "spanish": "¡Qué bien que hayan llegado a tiempo!",
++          "english": "How good that they have arrived on time!"
+         },
+         {
+-          "spanish": "¡Menos mal que la sociedad civil se organizó con rapidez para brindar socorro a los afectados!",
+-          "english": "Thank goodness civil society organized quickly to provide relief to those affected!"
++          "spanish": "¡Qué barbaridad que cerraran el cine del barrio!",
++          "english": "How outrageous that they closed the neighbourhood cinema!"
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Acuérdate de la excepción notable: 'Menos mal que' siempre va con indicativo en español culto ('Menos mal que estás aquí', nunca '*Menos mal que estés aquí*')."
++      "content": "*¡Menos mal que...!* ('Thank goodness that...') is the exception. It expresses relief that something good did happen, so it takes the indicative: *¡Menos mal que llegaste a tiempo!*. Compare *¡Qué bien que hayas llegado a tiempo!*, which uses the subjunctive."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-06-04-a-gr.json b/content/es-latam/grammar/b2/b2-06-04-a-gr.json
+index 607ace23..8d00ba4c 100644
+--- a/content/es-latam/grammar/b2/b2-06-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-06-04-a-gr.json
+@@ -1,55 +1,63 @@
+ {
+   "id": "grammar.b2.06.04.el-hecho-de-que",
+-  "title": "Subjuntivo e indicativo con 'el hecho de que'",
++  "title": "The Fact That...",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Tematización de hechos reales y selección modal",
+-      "content": "La fórmula 'el hecho de que' es el recurso formal por excelencia para tematizar un hecho conocido (colocarlo como sujeto o punto de partida de la oración) y someterlo a comentario, evaluación axiológica o juicio causal: 'El hecho de que las partes dialoguen es una señal esperanzadora'. En el español formal contemporáneo, 'el hecho de que' rige predominantemente SUBJUNTIVO cuando la proposición introduce un hecho que se da por consabido, no para informarlo de nuevo, sino para evaluarlo: 'El hecho de que el acusado se negara a declarar no prueba su culpabilidad'."
++      "title": "Fact first, comment after",
++      "content": "You know *molestar* from A2 Unit 27: a feeling about something takes the subjunctive. Sometimes you want to start the sentence with the fact itself and comment on it afterwards. Spanish uses *el hecho de que* ('the fact that'): *El hecho de que llegue tarde me molesta*. Both people already know the fact, so you are not announcing it, you are commenting on it. That is why the verb after *que* is in the subjunctive."
+     },
+     {
+       "type": "table",
+-      "title": "Selección modal con 'el hecho de que'",
++      "title": "El hecho de que + subjunctive",
+       "rows": [
+         [
+-          "el hecho de que + SUBJUNTIVO (norma culta general)",
+-          "Tematización evaluativa de un hecho admitido: 'El hecho de que hayan ganado no justifica la soberbia'"
++          "El hecho de que llegue tarde me molesta.",
++          "The fact that he arrives late bothers me."
+         ],
+         [
+-          "el hecho de que + INDICATIVO (énfasis factual enfático)",
+-          "Invocación apodíctica de un dato incuestionable: 'El hecho de que todos somos iguales ante la ley...'"
++          "El hecho de que hayan ganado no es una excusa.",
++          "The fact that they have won is not an excuse."
+         ],
+         [
+-          "Negación de la relevancia",
+-          "'El hecho de que no responda no significa que esté de acuerdo' (subjuntivo obligatorio)"
++          "El hecho de que lloviera no cambió nuestros planes.",
++          "The fact that it rained did not change our plans."
+         ],
+         [
+-          "Función como sujeto preverbal",
+-          "'El hecho de que persista la pobreza nos interpela a todos'"
++          "Me molesta el hecho de que llegue tarde.",
++          "I am bothered by the fact that he arrives late."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Agreement and tense",
++      "content": "The comment agrees with *el hecho*, which is singular: *El hecho de que lleguen tarde me molesta*, not *me molestan*. You can also deny a consequence: *El hecho de que sea tarde no significa que no puedas llamar*. After a past verb you use the imperfect subjunctive, as in *Quería que vinieras* from B1 Unit 38: *llegara*, *lloviera*."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el ensayo crítico",
+       "items": [
+         {
+-          "spanish": "El hecho de que el país cuente con abundantes recursos hídricos no garantiza el acceso equitativo al agua potable.",
+-          "english": "The fact that the country has abundant water resources does not guarantee equitable access to drinking water."
++          "spanish": "El hecho de que el tren llegue con retraso me molesta.",
++          "english": "The fact that the train arrives late bothers me."
++        },
++        {
++          "spanish": "El hecho de que ella llegue tarde no la disculpa.",
++          "english": "The fact that she arrives late does not excuse her."
+         },
+         {
+-          "spanish": "El hecho de que hayan firmado la paz no borra el dolor de las víctimas ni agota la necesidad de justicia.",
+-          "english": "The fact that they have signed peace does not erase the pain of the victims nor exhaust the need for justice."
++          "spanish": "El hecho de que hayan ganado no significa que tengan razón.",
++          "english": "The fact that they have won does not mean that they are right."
+         },
+         {
+-          "spanish": "Que se minimice la crisis no mitiga su extrema gravedad económica.",
+-          "english": "That the crisis is minimized does not mitigate its extreme economic gravity."
++          "spanish": "El hecho de que lloviera no cambió nuestros planes.",
++          "english": "The fact that it rained did not change our plans."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "En la prosa académica B2, anteponer 'El hecho de que + subjuntivo' al inicio del párrafo permite resumir elegantemente el argumento anterior antes de refutarlo o complementarlo."
++      "content": "Always write *el hecho de que*, with *de*: *el hecho que* is a common mistake. You may sometimes read the indicative after it, when the writer wants to stress that the fact is true. At B2, use the subjunctive when you are commenting on a fact."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-06-05-a-gr.json b/content/es-latam/grammar/b2/b2-06-05-a-gr.json
+index 1397f756..f938d80e 100644
+--- a/content/es-latam/grammar/b2/b2-06-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-06-05-a-gr.json
+@@ -1,33 +1,58 @@
+ {
+-  "id": "grammar.b2.06.05.integracion-retorica-afectiva",
+-  "title": "Integración discursiva: Reacción afectiva, vehemencia ética y evaluación en el manifiesto social",
++  "id": "grammar.b2.06.05.noticias",
++  "title": "Reacting to News and Social Problems",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Síntesis de posicionamiento ético y afectivo",
+-      "content": "La redacción de manifiestos cívicos, editoriales periodísticos y declaraciones de derechos humanos de nivel B2 moviliza toda la gama de estructuras afectivas: verbos de afección psíquica para expresar desasosiego ('nos indigna que'), fórmulas de pesar para manifestar duelo ('deploramos que'), exclamaciones valorativas para conmover a la audiencia ('¡es un atropello que!') y nominalizaciones tematizadoras ('el hecho de que persista el oprobio'). Esta síntesis otorga a la prosa un poderoso vigor moral sin perder el rigor sintáctico."
++      "title": "Fact first, reaction second",
++      "content": "Lessons 1 to 4 gave you four ways to react: verbs that work like *gustar* (*me preocupa que*), verbs with the person as subject (*lamento que*), exclamations (*¡Qué pena que!*) and *el hecho de que*. When you talk about news or a social problem you usually need both parts: first the fact, in the indicative, and then your reaction, in the subjunctive. You know *gustar* from A1 Unit 22 and *molestar* from A2 Unit 27."
++    },
++    {
++      "type": "table",
++      "title": "Fact + reaction",
++      "rows": [
++        [
++          "Hay mucho desempleo y me preocupa que no haya más ayuda.",
++          "There is a lot of unemployment and it worries me that there is no more help."
++        ],
++        [
++          "La pobreza sigue creciendo. Lamento que nadie haga nada.",
++          "Poverty keeps growing. I'm sorry that nobody does anything."
++        ],
++        [
++          "¡Qué pena que tantas personas no tengan trabajo!",
++          "What a shame that so many people don't have a job!"
++        ],
++        [
++          "El hecho de que haya tanta desigualdad nos preocupa.",
++          "The fact that there is so much inequality worries us."
++        ]
++      ]
+     },
+     {
+       "type": "examples",
+-      "title": "Modelos sintácticos en el manifiesto cívico",
+       "items": [
+         {
+-          "spanish": "A la ciudadanía consciente le duele que se conculquen las libertades públicas más elementales.",
+-          "english": "It pains the conscious citizenry that the most elementary civil liberties are infringed."
++          "spanish": "Me preocupa que la contaminación afecte la salud de los niños.",
++          "english": "It worries me that pollution affects children's health."
++        },
++        {
++          "spanish": "Es una pena que muchos jóvenes no encuentren trabajo.",
++          "english": "It's a pity that many young people can't find work."
+         },
+         {
+-          "spanish": "¡Qué paradoja desgarradora que quienes defienden el territorio sean criminalizados!",
+-          "english": "What a heartbreaking paradox that those who defend the territory are criminalized!"
++          "spanish": "Nos molesta que los precios suban cada mes.",
++          "english": "It bothers us that prices go up every month."
+         },
+         {
+-          "spanish": "El hecho de que las autoridades guarden silencio no neutraliza el clamor popular de desagravio.",
+-          "english": "The fact that authorities keep silent does not neutralize the popular clamor for redress."
++          "spanish": "¡Qué injusto que unos tengan tanto y otros tan poco!",
++          "english": "How unfair that some have so much and others so little!"
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Para dotar de sobriedad a la indignación vehemente, intercala oraciones nominales con adjetivos cultos: 'Flagrante atropello a la soberanía popular', 'Inadmisible vejación contra la dignidad humana'."
++      "content": "The fact is in the indicative because you are telling it (*Hay mucho desempleo*); your reaction takes the subjunctive. If you name the problem with a noun, you need no *que*: *Me preocupa la contaminación*, or with a plural noun, *Me preocupan los precios*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-04-01.json b/content/es-latam/lessons/b2/b2-04-01.json
+index c1fb47bb..7e6b80ce 100644
+--- a/content/es-latam/lessons/b2/b2-04-01.json
++++ b/content/es-latam/lessons/b2/b2-04-01.json
+@@ -1,24 +1,24 @@
+ {
+   "id": "lesson.b2.04.01",
+-  "title": "Influence, Commands & Institutional Demands",
++  "title": "Asking, Telling and Demanding",
+   "level": "B2",
+-  "goal": "Master the subjunctive in noun clauses governed by verbs of influence, command, prohibition, and civic demand.",
+-  "grammar": "el subjuntivo en proposiciones subordinadas de influencia y mandato",
++  "goal": "Ask, tell or forbid others to do things with verbs of influence and the subjunctive.",
++  "grammar": "Verbs of influence + subjunctive",
+   "sections": [
+     {
+       "type": "intro",
+       "title": "Unit 4: Influence, Will & Value Judgments",
+       "body": [
+-        "Welcome to Unit 4: Influence, Will & Value Judgments. At B2, advanced communication requires navigating power relations, institutional authority, and moral critique with precision.",
+-        "In this unit, inspired by Carlos Fuentes' monumental post-revolutionary novel 'La muerte de Artemio Cruz', you will master the syntax of will and command, impersonal value judgments, affective stance, and the boundary between subjunctive and infinitive coreference."
++        "At B2 you do more than state facts: you tell people what to do, say what is fair or strange, and react to what others do. This unit is about the subjunctive in those situations.",
++        "You will practise verbs of influence, value judgments, reactions, the choice between an infinitive and que + subjunctive, and polite recommendations. The unit ends with a short text about the Mexican writer Carlos Fuentes and his novel La muerte de Artemio Cruz."
+       ]
+     },
+     {
+       "type": "goal",
+       "items": [
+-        "Construct formal institutional demands with exigir, ordenar, and instar a que.",
+-        "Govern past and present subjunctive sequences after verbs of influence.",
+-        "Deploy civic and legal vocabulary (acatar, prerrogativa, desacato, imperativo)."
++        "I can ask, tell or forbid others to do things with exigir que, ordenar que, prohibir que and permitir que.",
++        "I can match the present or the imperfect subjunctive to the tense of the main verb.",
++        "I can use the new words for demands and rules."
+       ]
+     },
+     {
+@@ -59,6 +59,19 @@
+       "exerciseRefs": [
+         "b2-04-01.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can ask, tell or forbid others to do things with exigir que, ordenar que, prohibir que and permitir que.",
++        "I can match the present or the imperfect subjunctive to the tense of the main verb.",
++        "I can use the new words for demands and rules."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-04-02.json b/content/es-latam/lessons/b2/b2-04-02.json
+index f64fdf63..f2b589a4 100644
+--- a/content/es-latam/lessons/b2/b2-04-02.json
++++ b/content/es-latam/lessons/b2/b2-04-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.04.02",
+-  "title": "Value Judgments & Impersonal Matrices",
++  "title": "Saying What Is Fair, Normal or Strange",
+   "level": "B2",
+-  "goal": "Formulate sophisticated moral evaluations, policy judgments, and institutional critiques using impersonal matrices with the subjunctive.",
+-  "grammar": "el subjuntivo en oraciones impersonales axiológicas y juicios de valor",
++  "goal": "Give value judgments about facts and events with impersonal expressions and the subjunctive.",
++  "grammar": "Value judgments + subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Govern the subjunctive after evaluative matrices (es inadmisible que, conviene que).",
+-        "Articulate civic and editorial critiques with ethical nuance.",
+-        "Deploy evaluation vocabulary (censurable, pertinente, indispensable, gravedad)."
++        "I can say what is fair, normal, reasonable or unacceptable with es injusto que, es lógico que and similar expressions.",
++        "I can comment on a finished event with a value judgment and haya + participle.",
++        "I can use the new words for judging things."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-04-02.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say what is fair, normal, reasonable or unacceptable with es injusto que, es lógico que and similar expressions.",
++        "I can comment on a finished event with a value judgment and haya + participle.",
++        "I can use the new words for judging things."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-04-03.json b/content/es-latam/lessons/b2/b2-04-03.json
+index 2620be7a..923d66e8 100644
+--- a/content/es-latam/lessons/b2/b2-04-03.json
++++ b/content/es-latam/lessons/b2/b2-04-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.04.03",
+-  "title": "Emotional Reactions & Affective Stance",
++  "title": "Reacting to News",
+   "level": "B2",
+-  "goal": "Express personal, civic, and moral reactions using affective matrix verbs that govern the subjunctive.",
+-  "grammar": "el subjuntivo en construcciones de afección psicológica y emotiva",
++  "goal": "React to what other people do or say with me alegra que, lamento que and me sorprende que.",
++  "grammar": "Reactions + subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Govern the subjunctive after emotional affect matrices (me indigna que, lamento que).",
+-        "Express empathy, grief, and moral outrage in formal debate.",
+-        "Master affective vocabulary (reconfortar, desconcertar, regocijo, pesar)."
++        "I can react to news with me alegra que, lamento que and me sorprende que.",
++        "I can use the subjunctive after a reaction, even when the news is a fact.",
++        "I can use the new words for reacting."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-04-03.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can react to news with me alegra que, lamento que and me sorprende que.",
++        "I can use the subjunctive after a reaction, even when the news is a fact.",
++        "I can use the new words for reacting."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-04-04.json b/content/es-latam/lessons/b2/b2-04-04.json
+index fae5aa84..a292e332 100644
+--- a/content/es-latam/lessons/b2/b2-04-04.json
++++ b/content/es-latam/lessons/b2/b2-04-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.04.04",
+-  "title": "Infinitive vs Subjunctive with Coreference",
++  "title": "One Person or Two?",
+   "level": "B2",
+-  "goal": "Select accurately between the infinitive and subjunctive based on subject coreference and reference disjunction.",
+-  "grammar": "el régimen de infinitivo frente al subjuntivo por correferencia del sujeto",
++  "goal": "Choose between an infinitive and que + subjunctive by asking who does the second action.",
++  "grammar": "Infinitive or que + subjunctive",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Apply the rule of subject coreference to avoid ungrammatical subjunctive calques.",
+-        "Contrast personal and impersonal uses with evaluative and volitive matrix verbs.",
+-        "Deploy vocabulary of desire, striving, and desistance (anhelar, eludir, desistir)."
++        "I can choose between an infinitive and que + subjunctive by asking who does the second action.",
++        "I can say what I want or feel about my own actions and about someone else's.",
++        "I can use the new words for intending and refusing."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-04-04.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can choose between an infinitive and que + subjunctive by asking who does the second action.",
++        "I can say what I want or feel about my own actions and about someone else's.",
++        "I can use the new words for intending and refusing."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-04-05.json b/content/es-latam/lessons/b2/b2-04-05.json
+index 692a6ffe..82aba4ba 100644
+--- a/content/es-latam/lessons/b2/b2-04-05.json
++++ b/content/es-latam/lessons/b2/b2-04-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.04.05",
+-  "title": "Diplomatic Recommendations & Tactical Politeness",
++  "title": "Polite and Formal Recommendations",
+   "level": "B2",
+-  "goal": "Formulate high-register institutional recommendations and multilateral diplomatic proposals using attenuated subjunctive structures.",
+-  "grammar": "estructuras atenuadas de recomendación diplomática e institucional",
++  "goal": "Recommend things politely with se recomienda que and sería conveniente que.",
++  "grammar": "Polite recommendations",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Employ impersonal passive formulas (se sugiere que, se insta a que) in official communication.",
+-        "Maintain sequence of tenses between conditional matrices and imperfect subjunctive.",
+-        "Deploy diplomatic negotiation terminology (dirimir, dictamen, cautela, consenso)."
++        "I can recommend politely with se recomienda que and se sugiere que.",
++        "I can soften a recommendation with sería conveniente que and the imperfect subjunctive.",
++        "I can use the new words for recommending."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-04-05.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can recommend politely with se recomienda que and se sugiere que.",
++        "I can soften a recommendation with sería conveniente que and the imperfect subjunctive.",
++        "I can use the new words for recommending."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-04-consolidation.json b/content/es-latam/lessons/b2/b2-04-consolidation.json
+index 1b7e0590..ce307fd9 100644
+--- a/content/es-latam/lessons/b2/b2-04-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-04-consolidation.json
+@@ -2,16 +2,15 @@
+   "id": "lesson.b2.04.consolidation",
+   "title": "Unit 4 Consolidation",
+   "level": "B2",
+-  "goal": "Consolidate the subjunctive in noun clauses of influence, impersonal value judgments, affective stance, and coreference rules.",
+-  "grammar": "síntesis de estructuras de voluntad, influencia y juicios axiológicos",
++  "goal": "Review verbs of influence, value judgments, reactions, the infinitive or que + subjunctive and polite recommendations, and read a text about Carlos Fuentes.",
++  "grammar": "Review: influence, will and value judgments",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate binding civic demands and multilateral recommendations.",
+-        "Govern the subjunctive after evaluative and emotional matrix verbs.",
+-        "Apply the coreference rule between infinitive and subjunctive accurately.",
+-        "Analyze literary excerpts from Carlos Fuentes' 'La muerte de Artemio Cruz'."
++        "Review the subjunctive after verbs of influence, value judgments and reactions.",
++        "Review the choice between an infinitive and que + subjunctive, and polite recommendations.",
++        "Read a text about the writer Carlos Fuentes and his novel La muerte de Artemio Cruz."
+       ]
+     },
+     {
+@@ -34,16 +33,18 @@
+         "b2-04-consolidation.ex05",
+         "b2-04-consolidation.ex06",
+         "b2-04-consolidation.ex07",
+-        "b2-04-consolidation.ex08"
++        "b2-04-consolidation.ex08",
++        "b2-04-consolidation.ex09",
++        "b2-04-consolidation.ex10"
+       ]
+     },
+     {
+       "type": "checklist",
+       "items": [
+-        "I can use the subjunctive with verbs of influence, command, and urging (exigir, instar).",
+-        "I can formulate ethical critiques using impersonal matrices (es inadmisible que).",
+-        "I can express emotional outrage, empathy, and comfort using affective verbs.",
+-        "I can correctly select between the infinitive and subjunctive based on subject coreference."
++        "I can ask, advise or recommend that someone do something with que + subjunctive.",
++        "I can give a value judgment or a reaction with que + subjunctive.",
++        "I can decide between an infinitive and que + subjunctive when I speak.",
++        "I can read a short text about a writer and his novel."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-06-01.json b/content/es-latam/lessons/b2/b2-06-01.json
+index e3912e87..dcb204ac 100644
+--- a/content/es-latam/lessons/b2/b2-06-01.json
++++ b/content/es-latam/lessons/b2/b2-06-01.json
+@@ -1,24 +1,24 @@
+ {
+   "id": "lesson.b2.06.01",
+-  "title": "Verbos de afección psicológica con experimentador dativo",
++  "title": "More Verbs That Work Like Gustar",
+   "level": "B2",
+-  "goal": "Express psychological concern, bewilderment, and outrage using gustar-type affective verbs with dative experiencers and subjunctive complements.",
+-  "grammar": "el régimen de subjuntivo en oraciones sustantivas sujeto con verbos de afección psicológica",
++  "goal": "Say what bothers, worries or delights you with verbs like gustar and que + subjunctive.",
++  "grammar": "Verbs like gustar + que + subjunctive",
+   "sections": [
+     {
+       "type": "intro",
+       "title": "Unit 6: Emotional Reactions & Affective Stance",
+       "body": [
+-        "Welcome to Unit 6 of Spanish B2 Core: Emotional Reactions & Affective Stance. Mastering adult, high-level Spanish requires moving beyond simple statements of fact to articulate emotional impact, ethical indignation, and empathetic solidarity.",
+-        "In this first lesson, we explore psychological affective verbs like 'inquietar', 'preocupar', and 'indignar', examining their dative syntactic architecture and subjunctive governance."
++        "At B2 you do more than state facts: you say how things affect you. This unit is about reacting to what other people do, to news and to social problems, and about the subjunctive that follows.",
++        "You will practise verbs that work like gustar, verbs such as sentir, lamentar and temer, exclamations, and el hecho de que. The unit ends with a short text about the Uruguayan writer Eduardo Galeano and his book Las venas abiertas de América Latina."
+       ]
+     },
+     {
+       "type": "goal",
+       "items": [
+-        "Structure affective sentences with dative pronouns (me, te, le, nos, les) and third-person singular verbs.",
+-        "Trigger subjunctive complements expressing emotional reaction (inquietar, indignar, desconcertar).",
+-        "Deploy sophisticated psychological vocabulary (desasosiego, consternación, estupor)."
++        "I can say what bothers, worries or delights me with me molesta que, me preocupa que and me encanta que.",
++        "I can keep the verb singular when the que clause is the subject.",
++        "I can use the new words for worries and annoyances."
+       ]
+     },
+     {
+@@ -59,6 +59,19 @@
+       "exerciseRefs": [
+         "b2-06-01.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say what bothers, worries or delights me with me molesta que, me preocupa que and me encanta que.",
++        "I can keep the verb singular when the que clause is the subject.",
++        "I can use the new words for worries and annoyances."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-06-02.json b/content/es-latam/lessons/b2/b2-06-02.json
+index 0c2879c2..c9d26389 100644
+--- a/content/es-latam/lessons/b2/b2-06-02.json
++++ b/content/es-latam/lessons/b2/b2-06-02.json
+@@ -1,24 +1,24 @@
+ {
+   "id": "lesson.b2.06.02",
+-  "title": "Empatía, pesar, solidaridad y disculpa",
++  "title": "Sorry, Sad or Afraid",
+   "level": "B2",
+-  "goal": "Express diplomatic empathy, humanitarian grief, and ethical solidarity using verbs of feeling with subjunctive complements (lamentar, deplorar, dolerse de).",
+-  "grammar": "el modo subjuntivo con verbos de sentimiento, empatía y aflicción",
++  "goal": "Say that you are sorry, sad or afraid about what others do with sentir, lamentar and temer.",
++  "grammar": "sentir, lamentar and temer + subjunctive",
+   "sections": [
+     {
+       "type": "intro",
+-      "title": "Empathy, Grief & Humanitarian Solidarity",
++      "title": "Unit 6, Lesson 2: Sorry, Sad or Afraid",
+       "body": [
+-        "Expressing empathy, ethical grief, and solidarity is an indispensable component of mature social interaction and diplomatic discourse.",
+-        "In this lesson, we study verbs of regret and emotion ('lamentar', 'deplorar', 'alegrarse de'), analyzing modal selection and subject coreference."
++        "In Lesson 1 the feeling was the subject of the verb (me molesta). In this lesson the person who feels is the subject: siento, lamentamos, temen.",
++        "You will practise sentir, lamentar and temer with que + subjunctive, the difference between sentir que 'to be sorry' and 'to feel that', and the way to offer sympathy."
+       ]
+     },
+     {
+       "type": "goal",
+       "items": [
+-        "Distinguish between emotive 'sentir que' (+ subj) and cognitive/perceptive 'sentir que' (+ ind).",
+-        "Express formal condolences and humanitarian solidarity in diplomatic letters.",
+-        "Deploy compassionate and consoling lexical items (desagravio, aflicción, conmocionado)."
++        "I can say that I am sorry or afraid about what others do with siento que, lamento que and temo que.",
++        "I can tell sentir que 'to be sorry' from sentir que 'to feel that'.",
++        "I can use the new words for sympathy and fear."
+       ]
+     },
+     {
+@@ -59,6 +59,19 @@
+       "exerciseRefs": [
+         "b2-06-02.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can say that I am sorry or afraid about what others do with siento que, lamento que and temo que.",
++        "I can tell sentir que 'to be sorry' from sentir que 'to feel that'.",
++        "I can use the new words for sympathy and fear."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-06-03.json b/content/es-latam/lessons/b2/b2-06-03.json
+index 3085b1fb..3144c520 100644
+--- a/content/es-latam/lessons/b2/b2-06-03.json
++++ b/content/es-latam/lessons/b2/b2-06-03.json
+@@ -1,24 +1,24 @@
+ {
+   "id": "lesson.b2.06.03",
+-  "title": "Exclamaciones evaluativas y matrices afectivas",
++  "title": "Reacting with Exclamations",
+   "level": "B2",
+-  "goal": "Express strong evaluative indignation, grief, and relief using affective exclamatory patterns with subjunctive and indicative contrasts.",
+-  "grammar": "construcciones exclamativas afectivas ('¡Qué lástima que!', '¡Es una vergüenza que!') y la excepción de '¡Menos mal que!'",
++  "goal": "React quickly to news with exclamations such as ¡Qué pena que...! and ¡Qué bien que...!",
++  "grammar": "Exclamations + subjunctive",
+   "sections": [
+     {
+       "type": "intro",
+-      "title": "Evaluative Exclamations & Affective Stance",
++      "title": "Unit 6, Lesson 3: Reacting with Exclamations",
+       "body": [
+-        "When discourse demands passion, moral evaluation, or dramatic relief, exclamatory syntax provides the necessary rhetorical punch.",
+-        "In this lesson, we study evaluative exclamation frames like '¡Qué lástima que...!' and '¡Es un oprobio que...!', mastering the modal contrast with '¡Menos mal que...!'."
++        "An exclamation is the quickest way to react. There is no verb of feeling: the exclamation carries the feeling, and the clause after que is what you react to.",
++        "You will practise ¡Qué pena que...!, ¡Qué bien que...! and ¡Qué bueno que...! with the subjunctive, and ¡Menos mal que...! with the indicative."
+       ]
+     },
+     {
+       "type": "goal",
+       "items": [
+-        "Master exclamatory evaluation frames with obligatory subjunctive complements.",
+-        "Identify the indicative relief exception in '¡Menos mal que...!'.",
+-        "Incorporate vehement rhetorical vocabulary (inaudito, oprobio, desgarrador, clamoroso)."
++        "I can react to news with ¡Qué pena que...!, ¡Qué bien que...! and ¡Qué bueno que...!",
++        "I can say ¡Menos mal que...! with the indicative to show relief.",
++        "I can use the new words for exclamations."
+       ]
+     },
+     {
+@@ -59,6 +59,19 @@
+       "exerciseRefs": [
+         "b2-06-03.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can react to news with ¡Qué pena que...!, ¡Qué bien que...! and ¡Qué bueno que...!",
++        "I can say ¡Menos mal que...! with the indicative to show relief.",
++        "I can use the new words for exclamations."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-06-04.json b/content/es-latam/lessons/b2/b2-06-04.json
+index cabbe9fd..f5abe0fd 100644
+--- a/content/es-latam/lessons/b2/b2-06-04.json
++++ b/content/es-latam/lessons/b2/b2-06-04.json
+@@ -1,24 +1,24 @@
+ {
+   "id": "lesson.b2.06.04",
+-  "title": "La construcción 'El hecho de que...'",
++  "title": "The Fact That...",
+   "level": "B2",
+-  "goal": "Master discursive topic-framing and evaluation of known facts using the nominalized structure 'el hecho de que' with the subjunctive.",
+-  "grammar": "el modo subjuntivo con la locución tematizadora 'el hecho de que' en la prosa ensayística",
++  "goal": "Start a sentence with the fact and then comment on it, using el hecho de que + subjunctive.",
++  "grammar": "El hecho de que + subjunctive",
+   "sections": [
+     {
+       "type": "intro",
+-      "title": "Discursive Thematization: 'El hecho de que...'",
++      "title": "Unit 6, Lesson 4: The Fact That...",
+       "body": [
+-        "Advanced essay writing frequently requires summarizing a known reality to scrutinize its implications.",
+-        "In this lesson, we study the nominalized topic-setting construction 'el hecho de que', examining why the subjunctive is standard in formal evaluation."
++        "Sometimes you want to start with the fact itself and comment on it afterwards. Spanish does this with el hecho de que.",
++        "You will practise el hecho de que + subjunctive, the agreement of the comment and the way to say that a fact does not mean something."
+       ]
+     },
+     {
+       "type": "goal",
+       "items": [
+-        "Thematize pre-existing premises in academic essays using 'el hecho de que' + subjunctive.",
+-        "Formulate counter-arguments denying logical consequence ('el hecho de que X no implica Y').",
+-        "Incorporate analytical essay vocabulary (conllevar, minimizar, legitimar, precedente)."
++        "I can start a sentence with el hecho de que + subjunctive and then comment on the fact.",
++        "I can say that a fact does not mean something, with el hecho de que... no significa que...",
++        "I can use the new words for facts and consequences."
+       ]
+     },
+     {
+@@ -59,6 +59,19 @@
+       "exerciseRefs": [
+         "b2-06-04.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can start a sentence with el hecho de que + subjunctive and then comment on the fact.",
++        "I can say that a fact does not mean something, with el hecho de que... no significa que...",
++        "I can use the new words for facts and consequences."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-06-05.json b/content/es-latam/lessons/b2/b2-06-05.json
+index 93f72f28..fd20d1e7 100644
+--- a/content/es-latam/lessons/b2/b2-06-05.json
++++ b/content/es-latam/lessons/b2/b2-06-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.06.05",
+-  "title": "Indignación moral, diplomacia humanitaria y retórica afectiva",
++  "title": "Reacting to News and Social Problems",
+   "level": "B2",
+-  "goal": "Synthesize psychological affect, ethical grief, evaluative exclamations, and topic-thematization in civic manifestos and human rights advocacy.",
+-  "grammar": "integración de posicionamiento ético, retórica de indignación y valoración axiológica",
++  "goal": "Put your reactions together to talk about news and social problems.",
++  "grammar": "Fact + reaction",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Combine affective verbs and evaluative exclamations in powerful advocacy prose.",
+-        "Deploy human rights legal terminology (conculcar, vejación, atropello, flagrante).",
+-        "Maintain grammatical coherence across multi-clause ethical critiques."
++        "I can talk about news and social problems by giving the fact first and my reaction second.",
++        "I can choose between me preocupa que..., lamento que..., ¡Qué pena que...! and el hecho de que...",
++        "I can use the new words for social problems."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-06-05.ex05"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can talk about news and social problems by giving the fact first and my reaction second.",
++        "I can choose between me preocupa que..., lamento que..., ¡Qué pena que...! and el hecho de que...",
++        "I can use the new words for social problems."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-06-consolidation.json b/content/es-latam/lessons/b2/b2-06-consolidation.json
+index 8703d8d4..61874fff 100644
+--- a/content/es-latam/lessons/b2/b2-06-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-06-consolidation.json
+@@ -2,17 +2,15 @@
+   "id": "lesson.b2.06.consolidation",
+   "title": "Unit 6 Consolidation",
+   "level": "B2",
+-  "goal": "Consolidate affective stance, psychological concern, diplomatic empathy, evaluative exclamations, and topic-thematization with 'el hecho de que'.",
+-  "grammar": "síntesis de afección psicológica, empatía, exclamativas afectivas y la construcción 'el hecho de que'",
++  "goal": "Review verbs like gustar, sentir and temer, exclamations and el hecho de que, and read a text about Eduardo Galeano.",
++  "grammar": "Review: emotional reactions",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Govern subjunctive complements after dative affective verbs (inquietar, preocupar, indignar).",
+-        "Express humanitarian condolences with verbs of feeling (lamentar, deplorar, dolerse).",
+-        "Construct evaluative exclamations ('¡Qué lástima que!') and contrast with '¡Menos mal que!'.",
+-        "Thematize pre-existing facts with 'el hecho de que' + subjunctive in essays.",
+-        "Analyze literary excerpts from Eduardo Galeano's 'Las venas abiertas de América Latina'."
++        "Review verbs that work like gustar, and sentir, lamentar and temer, with que + subjunctive.",
++        "Review exclamations and el hecho de que + subjunctive.",
++        "Read a text about the writer Eduardo Galeano and his book Las venas abiertas de América Latina."
+       ]
+     },
+     {
+@@ -35,16 +33,18 @@
+         "b2-06-consolidation.ex05",
+         "b2-06-consolidation.ex06",
+         "b2-06-consolidation.ex07",
+-        "b2-06-consolidation.ex08"
++        "b2-06-consolidation.ex08",
++        "b2-06-consolidation.ex09",
++        "b2-06-consolidation.ex10"
+       ]
+     },
+     {
+       "type": "checklist",
+       "items": [
+-        "I can use psychological affect verbs with dative pronouns and subjunctive subject clauses.",
+-        "I can express grief and diplomatic empathy using 'lamentar que' and 'deplorar que'.",
+-        "I can formulate evaluative exclamations and apply the indicative exception of 'menos mal que'.",
+-        "I can use 'el hecho de que' with the subjunctive to thematize and critique known realities."
++        "I can say what bothers or worries me, and that I am sorry or afraid, with que + subjunctive.",
++        "I can react to news with an exclamation such as ¡Qué pena que...!",
++        "I can start a sentence with el hecho de que + subjunctive.",
++        "I can read a short text about a writer and his book."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/stories/classics/b2/b2-04.json b/content/es-latam/stories/classics/b2/b2-04.json
+index 58452db2..3bf86f48 100644
+--- a/content/es-latam/stories/classics/b2/b2-04.json
++++ b/content/es-latam/stories/classics/b2/b2-04.json
+@@ -1,90 +1,76 @@
+ {
+   "id": "story.b2.04.fuentes",
+-  "title": "Carlos Fuentes: Voluntad, poder y la agonía de Artemio Cruz",
++  "title": "Carlos Fuentes y las tres voces de Artemio Cruz",
+   "level": "B2",
+   "lesson": 5,
+   "order": 4,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "characters": [
+-    "Artemio Cruz",
+-    "Catalina Bernal",
+-    "Teresa Cruz",
+-    "Gonzalo Bernal",
+-    "Don Gamaliel Bernal",
+-    "Padre Páez"
+-  ],
+-  "summary": "Adaptación pedagógica para nivel B2 de la obra cumbre de Carlos Fuentes: el examen de conciencia en el lecho de muerte de Artemio Cruz, reconstructor de su vida entre las batallas revolucionarias y la traición moral.",
+-  "author": "Carlos Fuentes (México, 1928–2012)",
++  "characters": [],
++  "summary": "Texto sobre Carlos Fuentes, novelista y ensayista mexicano, y sobre su novela La muerte de Artemio Cruz, un libro contado con tres voces y con saltos en el tiempo.",
++  "author": "Carlos Fuentes (1928–2012)",
+   "work": "La muerte de Artemio Cruz (1962)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Carlos Fuentes",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Postrado en su lujoso dormitorio de las Lomas de Chapultepec en la Ciudad de México, Artemio Cruz contempla con amargura los últimos latidos de su cuerpo quebrantado. Con más de setenta años de edad, el magnate de las finanzas y la prensa escrita apenas puede gobernar su respiración entre máscaras de oxígeno, sondas médicas y el rumor sordo de los aparatos clínicos. A los pies de la cama, su esposa Catalina y su hija Teresa observan su agonía con miradas tensas, fingiendo un piadoso desconsuelo mientras aguardan con impaciencia el momento en que el moribundo revele la ubicación de su testamento definitivo. Artemio percibe su desprecio y se complace en mantener el secreto de sus bienes bajo siete llaves."
+-    },
+-    {
+-      "type": "narration",
+-      "text": "En ese umbral suspendido entre el dolor punzante y la anestesia, su conciencia se disocia. El anciano indefenso del presente se transforma en el joven combatiente de la Revolución mexicana que cabalgó por los valles del norte arrastrado por la marea de la pólvora y la esperanza insurgente. Recuerda con sobrecogedora nitidez aquel mediodía de mayo de 1919 en que fue hecho prisionero por las tropas villistas en el cuartel de Perales. Encerrado en una celda húmeda junto a Gonzalo Bernal, un joven idealista de refinada familia poblana, Artemio comprendió la regla suprema de la contienda: en un país en llamas, o se sobrevive a cualquier precio o se termina abonando la tierra con los huesos."
++      "text": "Carlos Fuentes fue un novelista y ensayista mexicano. Escribió novelas y también ensayos, es decir, textos en los que un autor piensa sobre un tema y da su opinión. Nació en 1928 y murió en 2012 en la Ciudad de México. Era hijo de un diplomático y creció en varios países. En este texto vamos a hablar de una de sus novelas."
+     },
+     {
+       "type": "narration",
+-      "text": "Gonzalo Bernal rechazó cualquier claudicación y marchó al paredón de fusilamiento con la cabeza alta, fiel a la pureza de sus convicciones revolucionarias. Artemio, en cambio, eligió la vida. Sabiendo que los carceleros buscaban pactos de conveniencia, negoció su libertad delatando posiciones y prometiendo lealtades efímeras. Mientras el estampido de los fusiles segaba la vida de su compañero en el patio de armas, Artemio escapaba amparado por la noche, llevando grabado en la memoria el nombre de la acaudalada familia Bernal y la dirección de su señorial hacienda en Puebla."
++      "text": "La muerte de Artemio Cruz se publicó en 1962. El protagonista es un hombre mayor, rico y poderoso que está muriendo. Mientras se acerca el final, Artemio Cruz recuerda su vida: los años de la Revolución mexicana y, después, el poder que tuvo más tarde. Es una novela sobre una vida larga y sobre el poder."
+     },
+     {
+       "type": "narration",
+-      "text": "Finalizada la guerra armada, el joven veterano se presentó ante don Gamaliel Bernal, el anciano patriarca terrateniente arruinado por los préstamos y la violencia agraria. Haciéndose pasar por el leal camarada que acompañó a Gonzalo hasta su último suspiro, Artemio ofreció protección política y capital a cambio de tierras y respetabilidad social. Para consolidar su ascenso irresistible, exigió la mano de Catalina, la hermosa hermana del difunto. Aquel matrimonio, concebido como una transacción despiadada de supervivencia mutua, se transformó a lo largo de las décadas en un infierno de rencores callados, caricias forzadas y silencios punzantes que jamás lograron sanar."
++      "text": "La novela tiene una forma muy especial. No cuenta la vida en orden, porque salta de un momento a otro en el tiempo. Además, cambia entre tres voces: yo, tú y él. Las tres voces son el mismo hombre, Artemio Cruz. Por eso el lector no siempre sabe en qué momento de la vida está, y a veces conviene leer un párrafo dos veces."
+     },
+     {
+       "type": "narration",
+-      "text": "Desde aquella plataforma de poder rural, Artemio Cruz tejió una red colosal de influencias en la capital de la República. Comprendió antes que nadie que la epopeya armada de los campesinos descalzos había sido domesticada por burócratas trajeados y empresarios audaces. Invirtió en minas de azufre, financió campañas de diputados sumisos y adquirió periódicos para dictar la opinión pública nacional. Cada paso en su encumbramiento exigió el sacrificio metódico de un escrúpulo: traicionar a antiguos compañeros de armas, reprimir huelgas obreras y despojar a pequeños propietarios mediante juicios amañados en los tribunales."
++      "text": "Con esa forma, Fuentes quería que el lector siguiera la vida de Artemio Cruz desde tres lados y no en línea recta. Por eso es importante que el lector preste atención a quién habla en cada momento. Quien quiere entender la historia debe leer con atención y no tener prisa."
+     },
+     {
+       "type": "narration",
+-      "text": "Sin embargo, el triunfo material resultó una victoria pírrica. Ahora, mientras el sacerdote Páez susurra salmos en latín junto a su almohada instándolo al arrepentimiento sacramental, Artemio Cruz comprende el precio exorbitante de su existencia. No solo había sepultado sus ideales de juventud; también había destruido toda posibilidad de afecto genuino. Su único hijo varón, Lorenzo, a quien había enviado a España como emisario de su orgullo, había muerto en el frente del Ebro combatiendo por la República, víctima voluntaria de la misma sed de dignidad que el padre había sofocado en sí mismo."
++      "text": "Para leer esta novela, conviene tener paciencia. Es mejor no querer entenderlo todo en la primera página. Muchos lectores prefieren que una historia vaya de principio a fin, pero aquí conviene que el lector acepte los saltos en el tiempo y que escuche cada voz con calma."
+     },
+     {
+       "type": "narration",
+-      "text": "El corazón de Artemio comienza a fallar de manera irreversible. Las voces de la alcoba se disuelven en un zumbido metálico mientras los recuerdos de los doce días más decisivos de su vida desfilan ante sus pupilas vidriosas. Fue soldado, traidor, hacendado, legislador y magnate; impuso su voluntad de hierro sobre hombres y leyes. Sin embargo, al desvanecerse en la tiniebla final, el vencedor de la historia nacional comprende que la muerte es la única fuerza soberana a la que no puede comprar con cheques ni doblegar con amenazas, dejándolo reducido a un cuerpo anónimo y desamparado frente al juicio de la eternidad."
++      "text": "Fuentes murió en 2012. Quien quiere conocer su obra puede empezar por esta novela. Antes de empezar, es buena idea que el lector recuerde que el protagonista es siempre el mismo hombre, aunque la voz cambie. Así es más fácil seguir la historia de principio a fin."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Qué actitud adoptan la esposa e hija de Artemio Cruz ante el lecho de agonía del magnate?",
++          "question": "According to the text, how is the novel La muerte de Artemio Cruz told?",
+           "options": [
+-            "Muestran una devoción conmovedora rezando juntas para obtener su pronta curación médica.",
+-            "Aparentan un dolor formal mientras vigilan con codicia cualquier indicio sobre el paradero del testamento.",
+-            "Le recriminan abiertamente haber donado todas las haciendas poblanas a los campesinos sin tierra.",
+-            "Intentan llamar a los líderes sindicales de la capital para que rindan homenaje público a su trayectoria."
++            "Con tres voces (yo, tú y él) que son el mismo hombre.",
++            "Con una sola voz que cuenta la vida en orden.",
++            "Con las voces de tres hombres distintos."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "Catalina y Teresa fingen compasión en la alcoba, pero su interés primordial radica en averiguar el contenido y la ubicación del testamento de Artemio."
++          "correctIndex": 0,
++          "explanation": "The text says that the novel changes between three voices, yo, tú and él, and that all three are the same man, Artemio Cruz."
+         },
+         {
+-          "question": "¿Qué dilema moral crucial separa la suerte de Gonzalo Bernal de la de Artemio Cruz en la prisión militar de Perales?",
++          "question": "What does Artemio Cruz do while he is dying, according to the text?",
+           "options": [
+-            "Gonzalo asume con entereza el pelotón de fusilamiento por sus ideales, mientras Artemio negocia su salvación a costa de pactos y delaciones.",
+-            "Artemio se ofrece como rehén voluntario para permitir que Gonzalo escape hacia la frontera norte.",
+-            "Ambos deciden sortear a los dados quién asumirá el mando supremo de las tropas insurgentes en Puebla.",
+-            "Gonzalo traiciona la causa revolucionaria convirtiéndose en banquero privado de las autoridades villistas."
++            "Recuerda su vida, desde la Revolución hasta su poder.",
++            "Escribe un ensayo sobre su propia vida.",
++            "Viaja por varios países como diplomático."
+           ],
+           "correctIndex": 0,
+-          "explanation": "Gonzalo Bernal prefiere morir con dignidad ante el paredón, mientras Artemio opta pragmáticamente por sobrevivir traicionando principios y lealtades."
++          "explanation": "The text says that he remembers his life, from the years of the Mexican Revolution to the power he had later."
+         },
+         {
+-          "question": "¿Cuál es la amarga reflexión que embarga a Artemio Cruz al contemplar el balance definitivo de su vida?",
++          "question": "What does the text say is a good idea for a reader of this novel?",
+           "options": [
+-            "Lamenta no haber invertido mayores caudales en la industria cinematográfica internacional.",
+-            "Reconoce con desesperación que sus negocios mineros cayeron en la bancarrota por culpa de la prensa.",
+-            "Descubre que su ilimitado poder material y sus traiciones metódicas lo despojaron de afecto y de toda redención humana.",
+-            "Siente orgullo absoluto por haber mantenido intacta la fraternidad con todos sus camaradas campesinos."
++            "Tener paciencia y no entenderlo todo en la primera página.",
++            "Leer solo la primera página de cada capítulo.",
++            "Empezar a leer por el final del libro."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "En su agonía, comprende que el éxito económico y político fue una victoria vacía que le costó el amor de su familia, la pérdida de su hijo Lorenzo y su propia dignidad."
++          "correctIndex": 0,
++          "explanation": "The text says that it is better to be patient and not to try to understand everything on the first page."
+         }
+       ]
+     }
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/content/es-latam/stories/classics/b2/b2-06.json b/content/es-latam/stories/classics/b2/b2-06.json
+index e5dc0e22..0ab0f5bb 100644
+--- a/content/es-latam/stories/classics/b2/b2-06.json
++++ b/content/es-latam/stories/classics/b2/b2-06.json
+@@ -1,87 +1,76 @@
+ {
+   "id": "story.b2.06.galeano",
+-  "title": "Eduardo Galeano: Indignación moral y las venas abiertas de la memoria",
++  "title": "Eduardo Galeano y Las venas abiertas de América Latina",
+   "level": "B2",
+   "lesson": 5,
+   "order": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "characters": [
+-    "Diego Huallpa",
+-    "Los mitayos andinos",
+-    "El cronista Eduardo Galeano"
+-  ],
+-  "summary": "Adaptación pedagógica para nivel B2 de la obra de Eduardo Galeano: la historia del cerro de Potosí, el esplendor de la plata colonial a costa del sacrificio indígena y la reivindicación de la memoria continental.",
++  "characters": [],
++  "summary": "Texto sobre Eduardo Galeano, periodista y escritor uruguayo, y sobre su libro Las venas abiertas de América Latina, que presenta la historia de la explotación económica de la región según su autor.",
+   "author": "Eduardo Galeano (Uruguay, 1940–2015)",
+   "work": "Las venas abiertas de América Latina (1971)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de las crónicas clásicas de Eduardo Galeano",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume pasajes del original.",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En el corazón helado de los Andes bolivianos, a más de cuatro mil metros de altitud sobre el nivel del mar, se yergue el Cerro Rico de Potosí como un gigantesco monumento a la codicia humana. Cuenta la crónica que en 1545 un pastor quechua llamado Diego Huallpa encendió una fogata para protegerse del frío implacable de la noche mientras buscaba una llama perdida en las faldas de la montaña. Al amanecer, al remover las brasas apagadas entre las rocas calcinadas, descubrió con asombro que la tierra había rezumado brillantes hilos blancos de plata pura fundida por el fuego. Aquel destello fortuito abrió la herida más profunda y deslumbrante de la historia del continente americano."
+-    },
+-    {
+-      "type": "narration",
+-      "text": "La noticia del fabuloso hallazgo corrió como reguero de pólvora por los virreinatos y cruzó los océanos en las carabelas imperiales. En cuestión de pocas décadas, aquella altiplanicie desolada y azotada por vientos gélidos vio surgir una urbe frenética que rivalizaba en población y opulencia con las grandes metrópolis europeas como Londres o París. Potosí se colmó de palacios señoriales con balcones de caoba tallada, veintiséis iglesias con retablos recubiertos de oro fino y salones de juego donde los hidalgos españoles apostaban barras de mineral y fortunas enteras con el desdén propio de reyes efímeros. Se decía con exageración legendaria que incluso las herraduras de los caballos se forjaban con plata virgen."
++      "text": "Eduardo Galeano fue un periodista y escritor uruguayo. Nació en Montevideo en 1940 y murió en la misma ciudad en 2015. En este texto vamos a hablar de uno de sus libros, Las venas abiertas de América Latina, que se publicó en 1971."
+     },
+     {
+       "type": "narration",
+-      "text": "No obstante, detrás de aquel teatro de derroches cortesanos y procesiones barrocas se ocultaba una maquinaria de exterminio implacable. Para extraer el codiciado metal de las entrañas de la montaña, las autoridades coloniales instauraron el régimen forzoso de la mita. Cada año, millares de indígenas procedentes de todas las comarcas del altiplano eran arrancados de sus comunidades agrícolas y arreados hacia las bocaminas como rebaños sumisos. Las familias acompañaban a los conscriptos con cánticos fúnebres de despedida, sabiendo que muy pocos regresarían con vida de las profundidades del cerro."
++      "text": "Según Galeano, este libro cuenta la historia de la explotación económica de América Latina. La historia empieza con la conquista de los españoles y los portugueses y continúa después en el tiempo. Es una historia larga, que empieza hace siglos. Galeano habla de la plata, del azúcar, del caucho, del petróleo y de otras riquezas que salieron de la región."
+     },
+     {
+       "type": "narration",
+-      "text": "En las galerías subterráneas, el trabajo constituía una antesala del infierno. Los mitayos descendían por precarias escalas de cuero trenzado hasta socavones asfixiantes donde la temperatura superaba los cuarenta grados a causa del vapor mineral. Allí permanecían recluidos durante días enteros picando la roca a la vacilante luz de velas de sebo, respirando un polvo tóxico cargado de sílice que destruía sus pulmones en pocos meses. Cuando por fin cargaban sobre sus espaldas pesados sacos de mineral y subían a la superficie gélida, el choque térmico y la neumoconiosis segaban sus vidas sin remedio. Galeano calculó que millones de trabajadores perdieron la existencia alimentando aquel horno insaciable."
++      "text": "Es importante recordar que esta es la visión de Galeano, es decir, su manera de explicar la historia. Otros autores pueden pensar de otra manera. Por eso conviene leer el libro con espíritu crítico y comparar sus ideas con las de otros libros. Una buena lectura empieza con preguntas: ¿quién habla y qué quiere decir?"
+     },
+     {
+       "type": "narration",
+-      "text": "La paradoja económica resultó tan desoladora como el sacrificio humano. La plata que brotaba en caudales inagotables de Potosí no sirvió para cimentar el desarrollo productivo ni la modernización duradera de las tierras de donde procedía, ni tampoco enriqueció a la corona española que la administraba con miopía mercantil. Los lingotes viajaban custodiados en galeones hacia Sevilla solo para ser transferidos de inmediato a los banqueros de Flandes, Génova y Alemania, financiando las deudas de guerras imperiales ajenas y alimentando el despegue manufacturero del norte de Europa. Potosí exportaba la riqueza y se quedaba con los despojos."
++      "text": "Galeano era periodista, y el libro tiene el estilo de un periodista. Está escrito para un público amplio, no solo para los especialistas. Es posible que a un lector nuevo le sorprenda que un libro sobre historia y economía se lea casi como un reportaje."
+     },
+     {
+       "type": "narration",
+-      "text": "Con el transcurso de los siglos, los ricos filones de plata se fueron agotando y el espejismo de la abundancia se derrumbó como un castillo de naipes. La opulenta Villa Imperial de Potosí se transformó gradualmente en una ciudad melancólica de templos desiertos, fachadas desmoronadas y cerros agujereados por miles de socavones abandonados. El testimonio de Galeano no busca despertar una compasión estéril ante las ruinas del pasado, sino denunciar cómo la lógica de la expoliación colonial continuó operando bajo nuevos disfraces: con el estaño, el caucho, el petróleo y los monocultivos agrícolas que siguieron desangrando las venas del continente."
++      "text": "En los años setenta, varias dictaduras militares de América del Sur prohibieron el libro. El hecho de que lo prohibieran no cambia lo que dice el libro. A mí me parece una pena que se prohíba un libro, y nos molesta que algunos lectores no puedan conocer una obra por decisión de otros."
+     },
+     {
+       "type": "narration",
+-      "text": "A través de su prosa ardiente y comprometida, Eduardo Galeano nos lega un mandato imperecedero de justicia y memoria. La dignidad de América Latina reside en su capacidad para rescatar del olvido a las víctimas de la historia y convertir el dolor heredado en una fuerza viva de transformación social. Recordar la epopeya trágica de Potosí no es un ejercicio de amargura impotente, sino un acto soberano de conciencia: la certidumbre irrevocable de que los pueblos que conocen a fondo las causas de su expoliación son los únicos capaces de escribir con manos libres las páginas de su propio porvenir."
++      "text": "Para quien quiere conocer la historia de América Latina, este libro puede ser un punto de partida. Me encanta que un texto de historia pueda leerse con interés, pero me preocupa que algunos lectores acepten todo sin pensar. Conviene que el lector pregunte, compare y piense por sí mismo. El hecho de que el libro presente esa visión no significa que sea la única explicación posible."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿De qué manera fortuita descubrió el pastor Diego Huallpa las vetas argentíferas de Potosí en 1545?",
++          "question": "According to the text, what does Las venas abiertas de América Latina tell?",
+           "options": [
+-            "Al hallar lingotes labrados enterrados en un antiguo templo ceremonial incaico.",
+-            "Al observar hilos de plata derretidos entre las piedras tras encender una fogata para combatir el frío nocturno.",
+-            "Al ser guiado por misioneros jesuitas que cartografiaban los ríos subterráneos del altiplano.",
+-            "Al excavar cimientos para construir un corral de llamas en la cumbre del cerro."
++            "La historia de la explotación económica de América Latina.",
++            "La vida de Galeano en la ciudad de Montevideo.",
++            "La historia de las dictaduras militares de los años setenta."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "Diego Huallpa prendió fuego para calentarse y al amanecer vio que el calor había fundido la plata de las rocas, dejando ver hebras relucientes del metal."
++          "correctIndex": 0,
++          "explanation": "The text says that, according to Galeano, the book tells the history of the economic exploitation of Latin America, starting with the conquest."
+         },
+         {
+-          "question": "¿Cuáles eran las condiciones extremas a las que debían enfrentarse los mitayos indígenas en los socavones mineros?",
++          "question": "What happened to the book in the 1970s, according to the text?",
+           "options": [
+-            "Horarios estrictos de oficina con remuneraciones pagadas en moneda extranjera.",
+-            "Temperaturas asfixiantes en galerías profundas, polvo tóxico, escalas precarias y severo choque térmico al salir.",
+-            "Uso obligatorio de cascos neumáticos y ventiladores de vapor importados desde Sevilla.",
+-            "Jornadas voluntarias de extracción con permisos regulares para retornar a sus labores agrícolas familiares."
++            "Varias dictaduras militares de América del Sur lo prohibieron.",
++            "Se convirtió en una película muy conocida en Montevideo.",
++            "El gobierno de Uruguay le dio un premio a Galeano."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "Los mitayos trabajaban en socavones calientes y mal ventilados, inhalando polvo nocivo y sufriendo cambios bruscos de temperatura que mermaban gravemente su salud."
++          "correctIndex": 0,
++          "explanation": "The text says that in the 1970s several military dictatorships in South America banned the book."
+         },
+         {
+-          "question": "¿Cuál es la paradoja económica fundamental que expone Eduardo Galeano sobre el destino de la plata americana?",
++          "question": "Why does the text say it is a good idea to read the book critically?",
+           "options": [
+-            "Que la plata nunca llegó a desembarcarse en Europa porque fue interceptada íntegramente por corsarios en alta mar.",
+-            "Que el metal sirvió para fundar universidades agrícolas que erradicaron la pobreza en los Andes.",
+-            "Que enriqueció a banqueros de otras naciones europeas para saldar deudas de la Corona, dejando en Potosí solo despojo y ruina.",
+-            "Que las comunidades indígenas compraron las acciones de las minas convirtiéndose en los principales hacendados coloniales."
++            "Porque es la visión de Galeano, no la única posible.",
++            "Porque el libro tiene muchos errores en las fechas.",
++            "Porque el libro está escrito en un estilo muy técnico."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "Galeano subraya que la riqueza extraída a costa de tantas vidas financió el desarrollo de banqueros y economías del norte europeo, mientras el territorio de origen quedó en la desolación."
++          "correctIndex": 0,
++          "explanation": "The text says that the book shows Galeano's view of history and that other authors may explain it differently."
+         }
+       ]
+     }
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/content/es-latam/vocabulary/b2/b2-04-01-voc.json b/content/es-latam/vocabulary/b2/b2-04-01-voc.json
+index 4f3dbd9d..e9ef4a11 100644
+--- a/content/es-latam/vocabulary/b2/b2-04-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-04-01-voc.json
+@@ -1,8 +1,8 @@
+ {
+   "id": "vocab.b2.04.01",
+   "lesson": "b2-04-01",
+-  "title": "Voluntad, imposición y demandas cívicas",
+-  "theme": "Verbos de influencia, coerción y petición formal",
++  "title": "Words for demands and rules",
++  "theme": "Verbs of influence",
+   "words": [
+     {
+       "lemma": "exigir",
+@@ -10,39 +10,19 @@
+       "pos": "verb"
+     },
+     {
+-      "lemma": "el requerimiento",
+-      "translation": "requirement, formal demand",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "instar",
+-      "translation": "to urge, to press",
++      "lemma": "insistir en",
++      "translation": "to insist on",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la prerrogativa",
+-      "translation": "prerogative, privilege",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "acatar",
+-      "translation": "to comply with, to abide by",
++      "lemma": "obligar a",
++      "translation": "to force, to oblige",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "imperativo",
+-      "translation": "imperative, urgent",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "el desacato",
+-      "translation": "contempt, non-compliance",
++      "lemma": "el reglamento",
++      "translation": "rules, regulations",
+       "pos": "noun"
+-    },
+-    {
+-      "lemma": "estipular",
+-      "translation": "to stipulate",
+-      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-04-02-voc.json b/content/es-latam/vocabulary/b2/b2-04-02-voc.json
+index 903082fd..76ae95f9 100644
+--- a/content/es-latam/vocabulary/b2/b2-04-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-04-02-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.04.02",
+   "lesson": "b2-04-02",
+-  "title": "Evaluación ética y juicios de valor",
+-  "theme": "Matrices axiológicas y valoración institucional",
++  "title": "Words for judging things",
++  "theme": "Value judgments",
+   "words": [
+     {
+-      "lemma": "convenir",
+-      "translation": "to be advisable, to suit",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "indispensable",
+-      "translation": "indispensable, essential",
++      "lemma": "razonable",
++      "translation": "reasonable",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "inadmisible",
+-      "translation": "unacceptable, inadmissible",
++      "lemma": "inaceptable",
++      "translation": "unacceptable",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "el juicio",
+-      "translation": "judgment, trial, sanity",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "legítimo",
+-      "translation": "legitimate, lawful",
++      "lemma": "ridículo",
++      "translation": "ridiculous",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "censurable",
+-      "translation": "blameworthy, censurable",
++      "lemma": "comprensible",
++      "translation": "understandable",
+       "pos": "adjective"
+-    },
+-    {
+-      "lemma": "pertinente",
+-      "translation": "pertinent, relevant",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "la gravedad",
+-      "translation": "seriousness, gravity",
+-      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-04-03-voc.json b/content/es-latam/vocabulary/b2/b2-04-03-voc.json
+index 610e9553..98d8723b 100644
+--- a/content/es-latam/vocabulary/b2/b2-04-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-04-03-voc.json
+@@ -1,47 +1,27 @@
+ {
+   "id": "vocab.b2.04.03",
+   "lesson": "b2-04-03",
+-  "title": "Subjetividad y postura afectiva",
+-  "theme": "Verbos de afección, indignación y complacencia",
++  "title": "Words for reacting",
++  "theme": "Feelings about what others do",
+   "words": [
+     {
+-      "lemma": "indignar",
+-      "translation": "to outrage, to anger",
++      "lemma": "alegrar",
++      "translation": "to please, to make glad",
+       "pos": "verb"
+     },
+     {
+       "lemma": "lamentar",
+-      "translation": "to regret, to lament",
++      "translation": "to regret, to be sorry about",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "alarmar",
+-      "translation": "to alarm",
++      "lemma": "sorprender",
++      "translation": "to surprise",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la indignación",
+-      "translation": "outrage, indignation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "el regocijo",
+-      "translation": "joy, rejoicing",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "reconfortar",
+-      "translation": "to comfort, to hearten",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "el pesar",
+-      "translation": "sorrow, grief",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "desconcertar",
+-      "translation": "to baffle, to disconcert",
++      "lemma": "agradecer",
++      "translation": "to be grateful for",
+       "pos": "verb"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-04-04-voc.json b/content/es-latam/vocabulary/b2/b2-04-04-voc.json
+index e186d237..f5e8aacd 100644
+--- a/content/es-latam/vocabulary/b2/b2-04-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-04-04-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.04.04",
+   "lesson": "b2-04-04",
+-  "title": "Correferencia, agencia y propósito",
+-  "theme": "Sintaxis de infinitivo frente a subordinación plena",
++  "title": "Words for intending and refusing",
++  "theme": "Same subject or different subject",
+   "words": [
+     {
+-      "lemma": "la pretensión",
+-      "translation": "aspiration, claim, intention",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "anhelar",
+-      "translation": "to yearn for, to crave",
++      "lemma": "pretender",
++      "translation": "to intend, to aim to (not 'to pretend')",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la aspiración",
+-      "translation": "aspiration, ambition",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "eludir",
+-      "translation": "to avoid, to elude",
++      "lemma": "intentar",
++      "translation": "to try, to attempt",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "procurar",
+-      "translation": "to try to, to ensure",
++      "lemma": "negarse a",
++      "translation": "to refuse to",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la renuncia",
+-      "translation": "resignation, waiver",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "desistir",
+-      "translation": "to desist, to give up",
++      "lemma": "renunciar a",
++      "translation": "to give up, to renounce",
+       "pos": "verb"
+-    },
+-    {
+-      "lemma": "el propósito",
+-      "translation": "purpose, resolution",
+-      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-04-05-voc.json b/content/es-latam/vocabulary/b2/b2-04-05-voc.json
+index 633457e3..f016f4d0 100644
+--- a/content/es-latam/vocabulary/b2/b2-04-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-04-05-voc.json
+@@ -1,47 +1,27 @@
+ {
+   "id": "vocab.b2.04.05",
+   "lesson": "b2-04-05",
+-  "title": "Diplomacia y formulación de recomendaciones",
+-  "theme": "Léxico de mediación, consenso y sugerencias formales",
++  "title": "Words for recommending",
++  "theme": "Polite recommendations",
+   "words": [
+     {
+-      "lemma": "sugerir",
+-      "translation": "to suggest",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "el dictamen",
+-      "translation": "formal opinion, ruling",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "el consenso",
+-      "translation": "consensus",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "aconsejable",
+-      "translation": "advisable",
++      "lemma": "conveniente",
++      "translation": "advisable, convenient",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "la cautela",
+-      "translation": "caution, prudence",
++      "lemma": "la sugerencia",
++      "translation": "suggestion",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "dirimir",
+-      "translation": "to settle, to resolve (a dispute)",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "la mediación",
+-      "translation": "mediation",
++      "lemma": "el visitante",
++      "translation": "visitor",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "la concordia",
+-      "translation": "harmony, concord",
++      "lemma": "el aviso",
++      "translation": "notice, warning",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-06-01-voc.json b/content/es-latam/vocabulary/b2/b2-06-01-voc.json
+index ff11d92b..9d8d9792 100644
+--- a/content/es-latam/vocabulary/b2/b2-06-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-06-01-voc.json
+@@ -1,48 +1,28 @@
+ {
+   "id": "vocab.b2.06.01",
+   "lesson": "b2-06-01",
+-  "title": "Afección psicológica e inquietud",
+-  "theme": "Verbos de afección psíquica y estados anímicos",
++  "title": "Words for worries and annoyances",
++  "theme": "Verbs of feeling like gustar",
+   "words": [
+     {
+-      "lemma": "inquietar",
+-      "translation": "to worry, to disquiet",
++      "lemma": "preocupar",
++      "translation": "to worry",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la consternación",
+-      "translation": "consternation, dismay",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "desconcertar",
+-      "translation": "to disconcert, to bewilder",
++      "lemma": "asustar",
++      "translation": "to frighten",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "el desasosiego",
+-      "translation": "unease, restlessness",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "asombrar",
+-      "translation": "to astonish, to amaze",
++      "lemma": "fastidiar",
++      "translation": "to annoy",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "el estupor",
+-      "translation": "stupor, astonishment",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "indignar",
+-      "translation": "to outrage, to anger",
++      "lemma": "entristecer",
++      "translation": "to make sad",
+       "pos": "verb"
+-    },
+-    {
+-      "lemma": "desolador",
+-      "translation": "devastating, bleak",
+-      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-06-02-voc.json b/content/es-latam/vocabulary/b2/b2-06-02-voc.json
+index 013c2df5..6d48c134 100644
+--- a/content/es-latam/vocabulary/b2/b2-06-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-06-02-voc.json
+@@ -1,22 +1,17 @@
+ {
+   "id": "vocab.b2.06.02",
+   "lesson": "b2-06-02",
+-  "title": "Empatía, compasión y solidaridad",
+-  "theme": "Expresiones de aflicción, duelo, solidaridad y disculpa",
++  "title": "Words for sympathy and fear",
++  "theme": "Verbs of feeling with a subject",
+   "words": [
+     {
+-      "lemma": "lamentar",
+-      "translation": "to regret, to lament",
++      "lemma": "temer",
++      "translation": "to fear",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la solidaridad",
+-      "translation": "solidarity",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "conmoverse",
+-      "translation": "to be moved/touched",
++      "lemma": "consolar",
++      "translation": "to comfort",
+       "pos": "verb"
+     },
+     {
+@@ -25,24 +20,9 @@
+       "pos": "noun"
+     },
+     {
+-      "lemma": "solidarizarse",
+-      "translation": "to stand in solidarity",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "la aflicción",
+-      "translation": "affliction, grief",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "deplorar",
+-      "translation": "to deplore, to lament deeply",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "el desagravio",
+-      "translation": "redress, apology, vindication",
+-      "pos": "noun"
++      "lemma": "apenado",
++      "translation": "sorry, saddened",
++      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-06-03-voc.json b/content/es-latam/vocabulary/b2/b2-06-03-voc.json
+index f86db8d1..63352def 100644
+--- a/content/es-latam/vocabulary/b2/b2-06-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-06-03-voc.json
+@@ -1,47 +1,27 @@
+ {
+   "id": "vocab.b2.06.03",
+   "lesson": "b2-06-03",
+-  "title": "Valoración exclamativa y vehemencia",
+-  "theme": "Estructuras exclamativas, desahogo emotivo y juicio axiológico",
++  "title": "Words for exclamations",
++  "theme": "Exclamations of feeling",
+   "words": [
+     {
+-      "lemma": "inaudito",
+-      "translation": "unheard of, unprecedented",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "la indignación",
+-      "translation": "indignation, outrage",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "vergonzoso",
+-      "translation": "shameful, disgraceful",
+-      "pos": "adjective"
++      "lemma": "menos mal",
++      "translation": "thank goodness",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "la paradoja",
+-      "translation": "paradox",
++      "lemma": "la barbaridad",
++      "translation": "outrage, awful thing",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "clamoroso",
+-      "translation": "clamorous, resounding",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "desgarrador",
+-      "translation": "heartbreaking, harrowing",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "el oprobio",
+-      "translation": "opprobrium, disgrace",
++      "lemma": "el susto",
++      "translation": "fright, scare",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "inaudible",
+-      "translation": "inaudible",
++      "lemma": "horrible",
++      "translation": "horrible",
+       "pos": "adjective"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-06-04-voc.json b/content/es-latam/vocabulary/b2/b2-06-04-voc.json
+index c88d4c8e..bc0f4b2d 100644
+--- a/content/es-latam/vocabulary/b2/b2-06-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-06-04-voc.json
+@@ -1,47 +1,27 @@
+ {
+   "id": "vocab.b2.06.04",
+   "lesson": "b2-06-04",
+-  "title": "Nominalización y tematización discursiva",
+-  "theme": "Evaluación de hechos conocidos y estructuras tematizadoras",
++  "title": "Words for facts and consequences",
++  "theme": "The fact that",
+   "words": [
+     {
+-      "lemma": "el precedente",
+-      "translation": "precedent",
++      "lemma": "el hecho",
++      "translation": "fact",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "minimizar",
+-      "translation": "to downplay, to minimize",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "legitimar",
+-      "translation": "to legitimize",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "el síntoma",
+-      "translation": "symptom, sign",
++      "lemma": "el retraso",
++      "translation": "delay",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "agravar",
+-      "translation": "to aggravate, to worsen",
++      "lemma": "significar",
++      "translation": "to mean",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "la gravedad",
+-      "translation": "gravity, seriousness",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "el agravio",
+-      "translation": "offense, grievance",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "conllevar",
+-      "translation": "to entail, to imply",
++      "lemma": "disculpar",
++      "translation": "to excuse, to forgive",
+       "pos": "verb"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-06-05-voc.json b/content/es-latam/vocabulary/b2/b2-06-05-voc.json
+index a00dda66..bb7e7ac2 100644
+--- a/content/es-latam/vocabulary/b2/b2-06-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-06-05-voc.json
+@@ -1,47 +1,27 @@
+ {
+   "id": "vocab.b2.06.05",
+   "lesson": "b2-06-05",
+-  "title": "Ética pública y diplomacia humanitaria",
+-  "theme": "Denuncia de abusos, mediación humanitaria e indignación cívica",
++  "title": "Words for social problems",
++  "theme": "News and social problems",
+   "words": [
+     {
+-      "lemma": "intolerable",
+-      "translation": "intolerable, unbearable",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "la vejación",
+-      "translation": "harassment, mistreatment, vexation",
++      "lemma": "la desigualdad",
++      "translation": "inequality",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "conculcar",
+-      "translation": "to infringe, to violate (rights)",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "el desamparo",
+-      "translation": "helplessness, abandonment",
++      "lemma": "la pobreza",
++      "translation": "poverty",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "la indignidad",
+-      "translation": "indignity, unworthiness",
++      "lemma": "el desempleo",
++      "translation": "unemployment",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "repudiar",
+-      "translation": "to repudiate, to condemn",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "flagrante",
+-      "translation": "flagrant, blatant",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "el atropello",
+-      "translation": "abuse of power, outrage",
++      "lemma": "la contaminación",
++      "translation": "pollution",
+       "pos": "noun"
+     }
+   ]
