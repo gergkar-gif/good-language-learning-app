@@ -43,6 +43,7 @@ if hasattr(sys.stderr, "reconfigure"):
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import course_variants  # noqa: E402
+import challenge_people  # noqa: E402
 LEGACY_COURSES = {"hu", "es-es", "es-latam"}
 LEVELS = ["a1", "a2", "b1", "b2", "c1", "c2"]
 CHOICE = ("multiple-choice", "dialogue-complete", "listening-choice")
@@ -53,6 +54,9 @@ LENGTH_RATIO = 1.3          # brief § 6.3 rule 4
 LENGTH_MIN_DIFF = 4         # characters; keeps "sí"/"no"-sized options out of it
 
 CHECKS = {
+    # people in challenges (scripts/challenge_people.py; ES B2, 2026-11-13)
+    "character-role": "a family member of the course's characters is given another role (colleague, friend…)",
+    "character-extra": "a challenge names a person who is not a course character",
     # options (brief § 6.3)
     "choice-index": "`correct` is not a valid option index",
     "duplicate-options": "two options are the same",
@@ -126,7 +130,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"character-role", "character-extra", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -853,6 +857,12 @@ def check_unit(src, course, level, unit, shape):
                     where = order.get(screen.get(sk.get("taught_in")))
                     if where is not None and stem in order and where > order[stem]:
                         out.append(("taught-later", eid, f"{slug} is taught at {sk['taught_in']}", ex_rel))
+
+        ch_rel = f"content/{course}/curriculum/challenges.json"
+        ch_entry = ((src.read(ch_rel) or {}).get("challenges") or {}).get(stem)
+        if ch_entry:
+            for check, cid, msg in challenge_people.findings(course, {stem: ch_entry}):
+                out.append((check, cid, msg, ch_rel))
 
         lesson_rel = f"content/{course}/lessons/{level}/{stem}.json"
         lesson = src.read(lesson_rel)

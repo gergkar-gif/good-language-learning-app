@@ -328,6 +328,7 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
 
 ### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
 
+- **People in challenges (2026-11-13):** Ana and Andreas are Carlos's siblings, Kaylee and Lauren Meg's sisters: never a colleague, friend or classmate. Other people stay unnamed (*mi compañera*, *un vecino*) unless they are in the unit's own story. `check-content` flags `character-role` and `character-extra` (`scripts/challenge_people.py`, reading `content/es-latam/characters/characters.md`).
 - **B2 (es-latam only; user, 2026-11-13):** screens, lesson titles, goals and
   question stems are in English (the generator wrote academic Spanish); unit texts
   on works still in copyright are original texts *about* the author and the work

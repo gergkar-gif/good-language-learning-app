@@ -659,8 +659,8 @@
    ]
   },
   "a2/giving-instructions-directions": {
-   "frozen": "2026-10-21",
-   "reason": "es A2 batch 19-24: read by Sonnet, fixes filtered by Claude, mirrored (2026-10-21) | refrozen: Daniela is in Chile after a2-20: Ana or Kaylee instead (2026-10-21)",
+   "frozen": "2026-11-13",
+   "reason": "es A2 batch 19-24: read by Sonnet, fixes filtered by Claude, mirrored (2026-10-21) | refrozen: Daniela is in Chile after a2-20: Ana or Kaylee instead (2026-10-21); refrozen 2026-11-13: Challenges: Ana and Kaylee are family in the stories, not friends (2026-11-13, scripts/challenge_people.py)",
    "accepted": [
     {
      "check": "vocab-unused",
@@ -1024,9 +1024,34 @@
    ]
   },
   "a2/vosotros": {
-   "frozen": "2026-10-22",
-   "reason": "es A2 read-through batch 31-33 (ROADMAP 153): read, fixed, mirrored, challenges written",
+   "frozen": "2026-11-13",
+   "reason": "es A2 read-through batch 31-33 (ROADMAP 153): read, fixed, mirrored, challenges written; refrozen 2026-11-13: Accepted: Javier is introduced in the scenarios as Lucía's friend (new character check, 2026-11-13)",
    "accepted": [
+    {
+     "check": "character-extra",
+     "id": "a2-vosotrospeninsular-01:challenge",
+     "why": "Javier is Lucía's friend, introduced in the scenario"
+    },
+    {
+     "check": "character-extra",
+     "id": "a2-vosotrospeninsular-02:challenge",
+     "why": "Javier is Lucía's friend, introduced in the scenario"
+    },
+    {
+     "check": "character-extra",
+     "id": "a2-vosotrospeninsular-03:challenge",
+     "why": "Javier is Lucía's friend, introduced in the scenario"
+    },
+    {
+     "check": "character-extra",
+     "id": "a2-vosotrospeninsular-04:challenge",
+     "why": "Javier is Lucía's friend, introduced in the scenario"
+    },
+    {
+     "check": "character-extra",
+     "id": "a2-vosotrospeninsular-consolidation:challenge",
+     "why": "Javier is Lucía's friend, introduced in the scenario"
+    },
     {
      "check": "vocab-unused",
      "id": "a2-vosotrospeninsular-01",

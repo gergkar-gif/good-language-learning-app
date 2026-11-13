@@ -679,8 +679,8 @@
    ]
   },
   "a2/giving-instructions-directions": {
-   "frozen": "2026-10-21",
-   "reason": "es A2 batch 19-24: read by Sonnet, fixes filtered by Claude, mirrored (2026-10-21) | refrozen: Daniela is in Chile after a2-20: Ana or Kaylee instead (2026-10-21)",
+   "frozen": "2026-11-13",
+   "reason": "es A2 batch 19-24: read by Sonnet, fixes filtered by Claude, mirrored (2026-10-21) | refrozen: Daniela is in Chile after a2-20: Ana or Kaylee instead (2026-10-21); refrozen 2026-11-13: Challenges: Ana and Kaylee are family in the stories, not friends (2026-11-13, scripts/challenge_people.py)",
    "accepted": [
     {
      "check": "vocab-unused",
@@ -1614,8 +1614,14 @@
   },
   "b2/reported-speech-past-frames": {
    "frozen": "2026-11-13",
-   "reason": "ES B2 batch 15-18 (2026-11-13): edit-in-place agent B, reviewer read and edits, English screens, text about the work; walked 6/6 (imports/review/es-b2-batch-15-18/); refrozen 2026-11-13: Challenges reworded: Ana is Carlos's sister in the B1 stories, not a colleague; unnamed colleagues and classmates instead (2026-11-13); b2-18-05 lists el dueño",
-   "accepted": []
+   "reason": "ES B2 batch 15-18 (2026-11-13): edit-in-place agent B, reviewer read and edits, English screens, text about the work; walked 6/6 (imports/review/es-b2-batch-15-18/); refrozen 2026-11-13: Challenges reworded: Ana is Carlos's sister in the B1 stories, not a colleague; unnamed colleagues and classmates instead (2026-11-13); b2-18-05 lists el dueño; refrozen 2026-11-13: Accepted: Luis is a character in a story the learner continues (new character check, 2026-11-13)",
+   "accepted": [
+    {
+     "check": "character-extra",
+     "id": "b2-17-05:challenge",
+     "why": "Luis is a character in a short story the learner continues, not a course character"
+    }
+   ]
   },
   "b2/rhetorical-reporting-verbs": {
    "frozen": "2026-11-13",
