@@ -10,3 +10,4 @@
 | Baldomero Lillo, Chilean, 1867–1923; *Sub terra* (1904), stories of the coal miners of Lota; "El chiflón del diablo" is one of them | true; **public domain, source text in `sources/lillo-el-chiflon-del-diablo-es.txt` (Wikisource, original 1904 spelling)**: Unit 22 is a retelling checked against it | es.wikisource.org |
 
 *Raza de bronce* is public domain but no source text is reachable: a text about the work.
+| "El pozo" is read by critics as a metaphor of the whole war ("cruel metáfora de la guerra") | true, given as a critics' reading | lostiempos.com (node 375018) |

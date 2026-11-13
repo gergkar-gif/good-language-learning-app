@@ -7,20 +7,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "omisión",
-          "deliberate withholding"
+          "el alcalde",
+          "mayor"
         ],
         [
-          "vetar",
-          "to officially veto"
+          "construir",
+          "to build"
         ],
         [
-          "demoler",
-          "to tear down structurally"
+          "el edificio",
+          "building"
         ],
         [
-          "tácito",
-          "implied without words"
+          "el puente",
+          "bridge"
+        ],
+        [
+          "el director",
+          "director"
         ]
       ],
       "teaches": [
@@ -31,10 +35,9 @@
       "id": "b2-19-03.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Por orden judicial se __ los pabellones en ruinas del viejo penal.",
-      "hint": "demoler",
-      "answer": "demolieron",
-      "english": "By court order the ruined wings of the old penitentiary were demolished.",
+      "sentence": "Los resultados __ publicaron ayer.",
+      "answer": "se",
+      "english": "The results were published yesterday.",
       "teaches": [
         "pasiva-refleja"
       ]
@@ -43,43 +46,45 @@
       "id": "b2-19-03.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Por qué la oración '??Se cancelaron los vuelos por la aerolínea' resulta forzada o anómala en español culto?",
+      "question": "The mayor built the bridge. Which sentence says this and names the mayor?",
       "options": [
-        "Porque la pasiva refleja rechaza típicamente complementos agentes explícitos con 'por'; se prefiere la pasiva perifrástica.",
-        "Porque los vuelos no pueden ser cancelados por entidades jurídicas.",
-        "Porque el verbo cancelar solo puede usarse en voz activa.",
-        "Porque la preposición 'por' únicamente indica causa climática."
+        "El puente se construyó por el alcalde.",
+        "El puente fue construido para el alcalde.",
+        "El puente fue construido por el alcalde."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "pasiva-refleja"
-      ]
+        "se-pasivo-vs-impersonal"
+      ],
+      "distractor_skills": {
+        "1": "por-vs-para"
+      }
     },
     {
       "id": "b2-19-03.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Se",
-        "suspendieron",
-        "las",
-        "garantías",
-        "constitucionales",
-        "durante",
+        "Los",
+        "resultados",
+        "se",
+        "publicaron",
+        "ayer",
+        "por",
         "la",
-        "crisis."
+        "tarde."
       ],
       "solution": [
-        "Se",
-        "suspendieron",
-        "las",
-        "garantías",
-        "constitucionales",
-        "durante",
+        "Los",
+        "resultados",
+        "se",
+        "publicaron",
+        "ayer",
+        "por",
         "la",
-        "crisis."
+        "tarde."
       ],
-      "english": "Constitutional guarantees were suspended during the crisis.",
+      "english": "The results were published yesterday afternoon.",
       "teaches": [
         "pasiva-refleja"
       ]
@@ -90,33 +95,32 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Ministro",
-          "text": "¿Qué medida se adoptó respecto a las obras inconclusas?"
+          "speaker": "Ana",
+          "text": "¿Quién firmó el acuerdo?"
         },
         {
-          "speaker": "Director",
-          "text": "Tras la auditoría, _____ rescindir todos los contratos lesivos."
+          "speaker": "Tú",
+          "text": "_____"
         }
       ],
       "options": [
-        "se determinó",
-        "se determinaron",
-        "se determinan a",
-        "determinaron por"
+        "El acuerdo se firmó por el director.",
+        "El acuerdo fue firmado por el director.",
+        "El acuerdo fue firmado el director."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "pasiva-refleja"
+        "se-pasivo-vs-impersonal"
       ]
     },
     {
       "id": "b2-19-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Se desestimaron las impugnaciones por falta de pruebas concluyentes.",
-      "english": "The challenges were dismissed for lack of conclusive evidence.",
+      "sentence": "El edificio fue construido por una empresa pequeña.",
+      "english": "The building was built by a small company.",
       "teaches": [
-        "pasiva-refleja"
+        "se-pasivo-vs-impersonal"
       ]
     }
   ]

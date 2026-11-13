@@ -7,20 +7,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "promulgar",
-          "to officially enact laws"
+          "el acuerdo",
+          "agreement"
         ],
         [
-          "damnificado",
-          "disaster victim"
+          "atender",
+          "to serve"
         ],
         [
-          "demoler",
-          "to tear down structures"
+          "el alcalde",
+          "mayor"
         ],
         [
-          "vinculante",
-          "legally binding mandate"
+          "alquilar",
+          "to rent out"
+        ],
+        [
+          "olvidarse",
+          "to forget by accident"
         ]
       ],
       "teaches": [
@@ -29,70 +33,84 @@
     },
     {
       "id": "b2-19-consolidation.ex02",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "En el internado militar se __ normas implacables de disciplina y silencio.",
-      "hint": "imponer",
-      "answer": "imponían",
-      "english": "In the military boarding school relentless rules of discipline and silence were imposed.",
+      "question": "Which sentence says \"The novel was published in 1963\"?",
+      "options": [
+        "La novela se publicaron en 1963.",
+        "La novela se publicó en 1963.",
+        "La novela se publicará en 1963."
+      ],
+      "correct": 1,
       "teaches": [
-        "se-pasivo-vs-impersonal"
-      ]
+        "pasiva-refleja"
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b2-19-consolidation.ex03",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "En la novela La ciudad y los perros, ¿qué función cumple la impersonalidad en el código de honor de los cadetes?",
-      "options": [
-        "Refleja una ley tribal no escrita donde 'se delata' o 'se calla' bajo amenaza de castigo colectivo.",
-        "Demuestra que los cadetes desconocían el idioma castellano formal.",
-        "Indica que el colegio carecía de autoridades y reglamentos oficiales.",
-        "Demuestra que todos los estudiantes eran pacíficos y amables."
-      ],
-      "correct": 0,
+      "sentence": "Después de las ocho no se __ a los clientes.",
+      "hint": "atender, present",
+      "answer": "atiende",
+      "english": "After eight o'clock, customers are not served.",
       "teaches": [
         "se-pasivo-vs-impersonal"
       ]
     },
     {
       "id": "b2-19-consolidation.ex04",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Tras el robo del examen de química, se __ con rigor a todos los cadetes sospechosos.",
-      "hint": "interrogar",
-      "answer": "interrogó",
-      "english": "After the theft of the chemistry exam, all suspected cadets were rigorously interrogated.",
+      "tiles": [
+        "En",
+        "el",
+        "aviso",
+        "se",
+        "ruega",
+        "no",
+        "fumar",
+        "en",
+        "la",
+        "entrada."
+      ],
+      "solution": [
+        "En",
+        "el",
+        "aviso",
+        "se",
+        "ruega",
+        "no",
+        "fumar",
+        "en",
+        "la",
+        "entrada."
+      ],
+      "english": "The notice asks people not to smoke at the entrance.",
       "teaches": [
-        "se-pasivo-vs-impersonal"
+        "se-impersonal"
       ]
     },
     {
       "id": "b2-19-consolidation.ex05",
-      "type": "sentence-builder",
+      "type": "multiple-choice",
       "category": "grammar",
-      "tiles": [
-        "Se",
-        "establecieron",
-        "sanciones",
-        "severas",
-        "para",
-        "los",
-        "infractores."
+      "question": "Which sentence has an impersonal se, with no subject at all?",
+      "options": [
+        "Se firmaron los acuerdos.",
+        "Aquí se trabaja mucho.",
+        "Se me cayó el vaso."
       ],
-      "solution": [
-        "Se",
-        "establecieron",
-        "sanciones",
-        "severas",
-        "para",
-        "los",
-        "infractores."
-      ],
-      "english": "Severe penalties were established for violators.",
+      "correct": 1,
       "teaches": [
         "se-pasivo-vs-impersonal"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "pasiva-refleja"
+      }
     },
     {
       "id": "b2-19-consolidation.ex06",
@@ -100,31 +118,30 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Teniente Gamboa",
-          "text": "¿Se sabe con certeza quién disparó el fusil durante las maniobras?"
+          "speaker": "Ana",
+          "text": "¿Dónde compro boletos para el concierto?"
         },
         {
-          "speaker": "Cadete Alberto",
-          "text": "Mi teniente, entre los cadetes _____ la verdad por miedo a represalias."
+          "speaker": "Tú",
+          "text": "_____"
         }
       ],
       "options": [
-        "se oculta",
-        "se ocultan a",
-        "ocultan de",
-        "se ocultaban a"
+        "Se vende los boletos por internet.",
+        "Se vendieron los boletos por internet.",
+        "Se venden los boletos por internet."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "se-pasivo-vs-impersonal"
+        "pasiva-refleja"
       ]
     },
     {
       "id": "b2-19-consolidation.ex07",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Se archivó el expediente disciplinario para salvar el prestigio de la institución.",
-      "english": "The disciplinary file was shelved to save the institution's prestige.",
+      "sentence": "Aquí se alquilan departamentos y se venden casas.",
+      "english": "Flats are rented and houses are sold here.",
       "teaches": [
         "se-pasivo-vs-impersonal"
       ]
@@ -133,14 +150,13 @@
       "id": "b2-19-consolidation.ex08",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál es la regla fundamental para elegir entre 'se atendió a las víctimas' y 'se atendieron los reclamos'?",
+      "question": "Why does \"Se atendió a los clientes\" have a singular verb, but \"Se atendieron las llamadas\" a plural one?",
       "options": [
-        "Con personas introducidas por 'a' va en singular impersonal; con cosas sin preposición va en plural como pasiva refleja.",
-        "Las personas siempre exigen verbo en plural y las cosas siempre en singular.",
-        "Ambas frases deben llevar el verbo obligatoriamente en plural.",
-        "La preposición 'a' solo se usa con sujetos inanimados."
+        "The customers are one group, so the verb is singular, but the calls are many.",
+        "The customers are people marked with a, so they are an object, but the calls are the subject.",
+        "The first sentence is in the past tense and the second one is not."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "se-pasivo-vs-impersonal"
       ]

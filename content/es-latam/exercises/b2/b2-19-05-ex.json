@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "ambigüedad",
-          "double meaning"
+          "abrazarse",
+          "to hug each other"
         ],
         [
-          "reciprocidad",
-          "mutual exchange"
+          "olvidarse",
+          "to forget by accident"
         ],
         [
-          "difundir",
-          "to spread news widely"
+          "perderse",
+          "to go missing"
         ],
         [
-          "equívoco",
-          "easily misunderstood"
+          "caerse",
+          "to fall, to drop"
         ]
       ],
       "teaches": [
@@ -31,10 +31,10 @@
       "id": "b2-19-05.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Durante la madrugada se __ los informes confidenciales en las redes.",
-      "hint": "filtrar",
-      "answer": "filtraron",
-      "english": "During the early morning the confidential reports were leaked on social networks.",
+      "sentence": "Perdón, se me __ el vaso.",
+      "hint": "caer, past",
+      "answer": "cayó",
+      "english": "Sorry, I dropped the glass.",
       "teaches": [
         "desambiguacion-valores-se"
       ]
@@ -43,17 +43,20 @@
       "id": "b2-19-05.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "En la frase 'Los senadores se respetan', ¿cuál es la interpretación más habitual según la pragmática?",
+      "question": "In which sentence does se mean \"each other\"?",
       "options": [
-        "Recíproca: los senadores se respetan mutuamente entre sí.",
-        "Pasiva refleja: los senadores son respetados por la ciudadanía.",
-        "Impersonal absoluta: se respeta a todo el senado.",
-        "Reflexiva estricta: cada senador se respeta solo a sí mismo."
+        "Se abren las puertas a las nueve.",
+        "Los amigos se abrazan al llegar.",
+        "Aquí se vive tranquilo."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "desambiguacion-valores-se"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "pasiva-refleja",
+        "2": "se-impersonal"
+      }
     },
     {
       "id": "b2-19-05.ex04",
@@ -61,25 +64,25 @@
       "category": "grammar",
       "tiles": [
         "Se",
-        "esclarecieron",
-        "los",
-        "hechos",
-        "tras",
-        "una",
-        "exhaustiva",
-        "indagación."
+        "me",
+        "perdieron",
+        "las",
+        "llaves",
+        "en",
+        "la",
+        "calle."
       ],
       "solution": [
         "Se",
-        "esclarecieron",
-        "los",
-        "hechos",
-        "tras",
-        "una",
-        "exhaustiva",
-        "indagación."
+        "me",
+        "perdieron",
+        "las",
+        "llaves",
+        "en",
+        "la",
+        "calle."
       ],
-      "english": "The facts were clarified after an exhaustive inquiry.",
+      "english": "I lost my keys in the street.",
       "teaches": [
         "desambiguacion-valores-se"
       ]
@@ -90,19 +93,18 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Investigador",
-          "text": "¿Qué ocurrió cuando colapsó el servidor bancario?"
+          "speaker": "Ana",
+          "text": "¿Qué pasó con tu celular?"
         },
         {
-          "speaker": "Perito",
-          "text": "Afortunadamente _____ copias de seguridad de todas las transacciones."
+          "speaker": "Tú",
+          "text": "_____"
         }
       ],
       "options": [
-        "se habían generado",
-        "se había generado a",
-        "habían generado a",
-        "se generaban con"
+        "Se me cayó al suelo.",
+        "Se me cayeron al suelo.",
+        "Me cayó al suelo."
       ],
       "correct": 0,
       "teaches": [
@@ -113,8 +115,8 @@
       "id": "b2-19-05.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Se descubrieron valiosos manuscritos coloniales en el archivo histórico.",
-      "english": "Valuable colonial manuscripts were discovered in the historical archive.",
+      "sentence": "Se nos olvidó el boleto en casa.",
+      "english": "We forgot the ticket at home.",
       "teaches": [
         "desambiguacion-valores-se"
       ]
