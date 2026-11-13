@@ -17,6 +17,13 @@ later than the one claimed, or when the word appears nowhere. Matching is by
 text, so a recap of a form rather than a word (*adjuk hozzá* for the
 imperative taught in A2 Unit 10, *kapcsolataimat* for plural possessed nouns)
 can be a false positive: read each hit.
+
+--labels reads "<level> Unit N" as the app numbers units: per track (the Nth
+core unit, the label curriculum.json gives it; build-manifest.py counts per
+track), resolved in the track of the screen's own unit, or the level's only
+track. Without it, N is the position in the level's unit table (the older
+convention: HU B1/B2 and some ES B1 recaps). Spanish B2 uses --labels
+(2026-11-13); the two conventions agree only for levels with one track.
 Exit 1 when anything is reported.
 """
 import glob
@@ -45,17 +52,24 @@ def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     bare = "--bare" in sys.argv
-    args = [a for a in sys.argv if a != "--bare"]
+    labels = "--labels" in sys.argv
+    args = [a for a in sys.argv if a not in ("--bare", "--labels")]
     course, level, only = args[1], args[2].lower(), set(args[3:])
-    pos, stems_of = {}, {}
+    pos, stems_of, track_of, by_label, label_of = {}, {}, {}, {}, {}
     for li, lvl in enumerate(ORDER):
         p = ROOT / f"content/{course}/curriculum/units/{lvl}.json"
         if not p.exists():
             continue
+        count = {}
         for i, u in enumerate(json.loads(p.read_text(encoding="utf-8"))):
             stems_of[(lvl, u["id"])] = u["stems"]
+            tr = u.get("track")
+            count[tr] = count.get(tr, 0) + 1
+            by_label[(li, tr, count[tr])] = i + 1
+            label_of[(li, i + 1)] = count[tr]
             for st in u["stems"]:
                 pos[st] = (li, i + 1)
+                track_of[st] = tr
     texts = {}
     # where a word is taught: an italicised form on a grammar screen (the recapped
     # words themselves left out, they teach nothing) or a vocabulary-list lemma. A
@@ -88,9 +102,19 @@ def main():
             if len(word) < 3 or word.startswith("-"):
                 continue
             claim = (ORDER.index(m.group(2).lower()), int(m.group(3)))
+            if labels:
+                tracks = {tr for (li, tr, _) in by_label if li == claim[0]}
+                own = track_of.get(stem_of(f, pos))
+                tr = own if own in tracks else (next(iter(tracks)) if len(tracks) == 1 else own)
+                if (claim[0], tr, claim[1]) not in by_label:
+                    print(f"{Path(f).name}: *{word}* claimed from {m.group(2)} Unit {m.group(3)}: no such unit in track {tr}")
+                    hits += 1
+                    continue
+                claim = (claim[0], by_label[(claim[0], tr, claim[1])])
             seen = first(word)
             if seen is None or seen > claim:
-                where = "nowhere" if seen is None else f"{ORDER[seen[0]].upper()} Unit {seen[1]}"
+                n = (label_of[seen] if labels else seen[1]) if seen else None
+                where = "nowhere" if seen is None else f"{ORDER[seen[0]].upper()} Unit {n}"
                 print(f"{Path(f).name}: *{word}* claimed from {m.group(2)} Unit {m.group(3)}, first appears {where}")
                 hits += 1
         # a recap with no italicised word can't be checked (HU B2 pilot: both
