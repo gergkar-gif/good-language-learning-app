@@ -1,0 +1,2017 @@
+diff --git a/content/es-latam/exercises/b2/b2-01-01-ex.json b/content/es-latam/exercises/b2/b2-01-01-ex.json
+index 3ef51b74..177bdcd7 100644
+--- a/content/es-latam/exercises/b2/b2-01-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-01-01-ex.json
+@@ -15,8 +15,8 @@
+           "emphasis"
+         ],
+         [
+-          "destacar",
+-          "to highlight"
++          "enfatizar",
++          "to emphasise"
+         ],
+         [
+           "el trasfondo",
+@@ -31,11 +31,11 @@
+       "id": "b2-01-01.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál de las siguientes oraciones utiliza una estructura hendida para focalizar el motivo principal?",
++      "question": "Which sentence is a cleft sentence that puts the spotlight on the reason for his resignation?",
+       "options": [
+-        "Lo que realmente motivó su renuncia fue la falta de transparencia.",
+-        "Él renunció porque no había suficiente transparencia en el equipo.",
+-        "A causa de la falta de transparencia, decidió renunciar."
++        "Lo que motivó su renuncia fue la falta de transparencia.",
++        "El problema de su renuncia radicaba en la falta de transparencia.",
++        "Renunció porque había poca transparencia en el equipo."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -46,10 +46,9 @@
+       "id": "b2-01-01.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Lo que conviene __ en este análisis es la coherencia de los datos.",
+-      "hint": "to highlight",
+-      "answer": "destacar",
+-      "english": "What is worth highlighting in this analysis is the consistency of the data.",
++      "sentence": "Fueron los vecinos los ____ llamaron a la policía.",
++      "answer": "que",
++      "english": "It was the neighbours who called the police.",
+       "teaches": [
+         "oraciones-hendidas-enfasis"
+       ]
+@@ -88,24 +87,23 @@
+     {
+       "id": "b2-01-01.ex05",
+       "type": "fill-blank",
+-      "category": "grammar",
+-      "sentence": "Fue precisamente en el Congreso __ se debatió la ley fundamental.",
+-      "hint": "where",
+-      "answer": "donde",
+-      "english": "It was precisely in Congress where the fundamental law was debated.",
++      "category": "vocabulary",
++      "sentence": "Fue ____ en ese momento cuando comprendió el peligro.",
++      "answer": "precisamente",
++      "english": "It was precisely at that moment that she understood the danger.",
+       "teaches": [
+-        "oraciones-hendidas-enfasis"
++        "b2-nuance-precision-emphasis-vocab"
+       ]
+     },
+     {
+       "id": "b2-01-01.ex06",
+       "type": "listening-choice",
+       "category": "listening",
+-      "sentence": "Lo que intentamos demostrar es que existe un matiz crucial entre ambas posturas.",
++      "sentence": "Lo que más destacó la profesora fue el papel crucial del equipo.",
+       "options": [
+-        "What we are trying to show is that a crucial nuance exists between both positions.",
+-        "We do not understand the differences between the two positions.",
+-        "Both positions are completely identical in every respect."
++        "What the teacher highlighted most was the crucial role of the team.",
++        "What the team highlighted most was the teacher's crucial role.",
++        "The teacher said that the team played the least important role."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -119,7 +117,7 @@
+       "prompt": [
+         {
+           "speaker": "Valeria",
+-          "text": "¿Qué te pareció la exposición del profesor sobre la crisis?"
++          "text": "¿Quién propuso cambiar el horario de la reunión?"
+         },
+         {
+           "speaker": "Tú",
+@@ -127,13 +125,13 @@
+         },
+         {
+           "speaker": "Valeria",
+-          "text": "Totalmente de acuerdo, ese detalle cambió toda la perspectiva."
++          "text": "Entonces hablaré con él antes de la reunión."
+         }
+       ],
+       "options": [
+-        "Lo que me pareció más valioso fue cómo explicó el trasfondo histórico.",
+-        "El profesor habló durante dos horas seguidas sin parar.",
+-        "No recuerdo exactamente a qué hora terminó la conferencia."
++        "Fue Mateo quien propuso cambiarlo.",
++        "Fue en la oficina donde propusieron cambiarlo.",
++        "Fue en marzo cuando propusieron cambiarlo."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -146,17 +144,20 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Formulate a statement emphasizing what really matters in this negotiation using 'Lo que realmente importa...'",
+-          "answer": "Lo que realmente importa es alcanzar un acuerdo sostenible."
++          "prompt": "Say that what really matters is reaching a fair agreement. Start with 'Lo que más importa'.",
++          "answer": "Lo que más importa es alcanzar un acuerdo justo."
+         },
+         {
+-          "prompt": "Emphasize who led the initiative using 'Fue... quien...'",
+-          "answer": "Fue la comisión directiva quien impulsó el diálogo."
++          "prompt": "Say that it was the director who started the dialogue. Start with 'Fue'.",
++          "answer": "Fue la directora quien empezó el diálogo."
++        },
++        {
++          "prompt": "Say that what the teacher wanted to emphasise was the background. Start with 'Lo que'.",
++          "answer": "Lo que la profesora quiso enfatizar fue el trasfondo."
+         }
+       ],
+       "teaches": [
+-        "oraciones-hendidas-enfasis",
+-        "b2-nuance-precision-emphasis-vocab"
++        "oraciones-hendidas-enfasis"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-01-02-ex.json b/content/es-latam/exercises/b2/b2-01-02-ex.json
+index 8450ad37..b936df9c 100644
+--- a/content/es-latam/exercises/b2/b2-01-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-01-02-ex.json
+@@ -11,16 +11,16 @@
+           "frankly"
+         ],
+         [
+-          "en rigor",
+-          "strictly speaking"
+-        ],
+-        [
+-          "rotundamente",
+-          "categorically, flatly"
++          "deliberadamente",
++          "deliberately"
+         ],
+         [
+           "indudablemente",
+           "undoubtedly"
++        ],
++        [
++          "en rigor",
++          "strictly speaking"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-01-02.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué adverbio expresa un rechazo categórico y absoluto?",
++      "question": "You want to say 'Frankly, I did not like the film.' Which sentence says it?",
+       "options": [
+-        "Rotundamente",
+-        "Apenas",
+-        "Propiamente"
++        "Francamente, no me gustó la película.",
++        "Afortunadamente, no me gustó la película.",
++        "Indudablemente, no me gustó la película."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -44,12 +44,15 @@
+     },
+     {
+       "id": "b2-01-02.ex03",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
+-      "sentence": "En __, no podemos calificar este resultado como un fracaso total.",
+-      "hint": "strictness",
+-      "answer": "rigor",
+-      "english": "Strictly speaking, we cannot describe this result as a complete failure.",
++      "question": "Which sentence has the commas in the right places?",
++      "options": [
++        "El proyecto, lamentablemente, no tiene presupuesto.",
++        "El proyecto lamentablemente, no tiene presupuesto.",
++        "El proyecto, lamentablemente no tiene presupuesto."
++      ],
++      "correct": 0,
+       "teaches": [
+         "stance-adverbs"
+       ]
+@@ -59,26 +62,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "El",
+-        "ministro",
+-        "rechazó",
+-        "rotundamente",
+-        "las",
+-        "acusaciones",
+-        "de",
+-        "corrupción."
++        "Lamentablemente,",
++        "el",
++        "proyecto",
++        "apenas",
++        "cambió",
++        "este",
++        "año."
+       ],
+       "solution": [
+-        "El",
+-        "ministro",
+-        "rechazó",
+-        "rotundamente",
+-        "las",
+-        "acusaciones",
+-        "de",
+-        "corrupción."
++        "Lamentablemente,",
++        "el",
++        "proyecto",
++        "apenas",
++        "cambió",
++        "este",
++        "año."
+       ],
+-      "english": "The minister flatly rejected the corruption accusations.",
++      "english": "Unfortunately, the project barely changed this year.",
+       "teaches": [
+         "stance-adverbs"
+       ]
+@@ -86,13 +87,15 @@
+     {
+       "id": "b2-01-02.ex05",
+       "type": "fill-blank",
+-      "category": "grammar",
+-      "sentence": "Las condiciones de vida han mejorado __ en la última década.",
+-      "hint": "notable",
+-      "answer": "notablemente",
+-      "english": "Living conditions have remarkably improved over the last decade.",
++      "category": "vocabulary",
++      "sentence": "El ministro rechazó ____ la acusación.",
++      "answers": [
++        "rotundamente",
++        "categóricamente"
++      ],
++      "english": "The minister flatly rejected the accusation.",
+       "teaches": [
+-        "stance-adverbs"
++        "b2-nuance-precision-emphasis-vocab"
+       ]
+     },
+     {
+@@ -101,26 +104,26 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Sebastián",
+-          "text": "¿Crees que ya podemos dar por terminado el proyecto?"
++          "speaker": "Valeria",
++          "text": "¿Ya podemos llamar ley a esa propuesta?"
+         },
+         {
+           "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Sebastián",
+-          "text": "Tienes razón, faltan las revisiones finales."
++          "speaker": "Valeria",
++          "text": "Entonces falta todavía la votación final."
+         }
+       ],
+       "options": [
+-        "En rigor, todavía queda pendiente la auditoría externa.",
+-        "Ayer almorzamos en el centro con todo el equipo.",
+-        "A lo mejor el próximo año compramos computadoras nuevas."
++        "En rigor, todavía no es una ley propiamente dicha.",
++        "Esa propuesta la presentó el senador de ese distrito.",
++        "El debate duró más de tres horas."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "stance-adverbs"
++        "b2-nuance-precision-emphasis-vocab"
+       ]
+     },
+     {
+@@ -129,18 +132,43 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Express your candid opinion about a policy using 'Francamente...'",
+-          "answer": "Francamente, considero que la medida llega con demasiado retraso."
++          "prompt": "Give your frank opinion that the measure comes too late. Start with 'Francamente'.",
++          "answer": "Francamente, creo que la medida llega demasiado tarde."
+         },
+         {
+-          "prompt": "Qualify a technical concept using 'En rigor...'",
+-          "answer": "En rigor, el documento requiere una ratificación parlamentaria."
++          "prompt": "Say that, strictly speaking, the document is not final yet. Start with 'En rigor'.",
++          "answer": "En rigor, el documento todavía no es definitivo."
+         }
+       ],
+       "teaches": [
+-        "stance-adverbs",
++        "stance-adverbs"
++      ]
++    },
++    {
++      "id": "b2-01-02.ex08",
++      "type": "fill-blank",
++      "category": "vocabulary",
++      "sentence": "Te agradezco ____ tu ayuda con el proyecto.",
++      "answer": "sinceramente",
++      "english": "I sincerely thank you for your help with the project.",
++      "teaches": [
+         "b2-nuance-precision-emphasis-vocab"
+       ]
++    },
++    {
++      "id": "b2-01-02.ex09",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "En realidad, la situación mejoró notablemente el año pasado.",
++      "options": [
++        "Actually, the situation improved remarkably last year.",
++        "Unfortunately, the situation barely improved last year.",
++        "Frankly, the situation got much worse last year."
++      ],
++      "correct": 0,
++      "teaches": [
++        "stance-adverbs"
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-01-03-ex.json b/content/es-latam/exercises/b2/b2-01-03-ex.json
+index cf867b23..6656f6e8 100644
+--- a/content/es-latam/exercises/b2/b2-01-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-01-03-ex.json
+@@ -15,8 +15,8 @@
+           "paramount, essential"
+         ],
+         [
+-          "prevalecer",
+-          "to prevail"
++          "el giro",
++          "turn, shift"
+         ],
+         [
+           "insólito",
+@@ -31,11 +31,11 @@
+       "id": "b2-01-03.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál de las siguientes oraciones presenta una anteposición enfática con inversión del sujeto?",
++      "question": "Which sentence puts the adjective first for emphasis, with the subject after the verb?",
+       "options": [
+-        "Decisiva fue la intervención del cuerpo diplomático.",
+-        "La intervención del cuerpo diplomático fue decisiva.",
+-        "El cuerpo diplomático intervino de forma muy decisiva."
++        "Concluyentes fueron las pruebas presentadas.",
++        "Las pruebas presentadas fueron concluyentes.",
++        "Concluyentes las pruebas presentadas fueron."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -46,10 +46,12 @@
+       "id": "b2-01-03.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "De suma importancia __ las conclusiones del último congreso científico.",
+-      "hint": "ser",
+-      "answer": "fueron",
+-      "english": "Of utmost importance were the conclusions of the latest scientific congress.",
++      "sentence": "De gran importancia ____ las conclusiones del estudio.",
++      "answers": [
++        "fueron",
++        "resultaron"
++      ],
++      "english": "The conclusions of the study were of great importance.",
+       "teaches": [
+         "inversion-enfasis-fronting"
+       ]
+@@ -78,7 +80,7 @@
+         "aquella",
+         "región."
+       ],
+-      "english": "Unprecedented was the political turn in that region.",
++      "english": "Unusual was the political turn in that region.",
+       "teaches": [
+         "inversion-enfasis-fronting"
+       ]
+@@ -90,7 +92,7 @@
+       "prompt": [
+         {
+           "speaker": "Camila",
+-          "text": "¿Por qué le dieron tanta cobertura al informe de auditoría?"
++          "text": "¿Dónde comenzó la protesta?"
+         },
+         {
+           "speaker": "Tú",
+@@ -98,13 +100,13 @@
+         },
+         {
+           "speaker": "Camila",
+-          "text": "Por eso todo el gabinete estuvo presente en la lectura."
++          "text": "Claro, por eso había tanta gente en la plaza."
+         }
+       ],
+       "options": [
+-        "Concluyentes fueron las pruebas presentadas por la fiscalía.",
+-        "Ayer compramos varios periódicos en la esquina.",
+-        "El informe tenía más de quinientas páginas en total."
++        "En la plaza central comenzó la protesta.",
++        "Con mucha energía comenzó la protesta.",
++        "Muy temprano comenzó la protesta."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -117,17 +119,46 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Transform 'El papel de los docentes fue fundamental' using emphatic fronting",
+-          "answer": "Fundamental fue el papel de los docentes en todo el proceso."
++          "prompt": "Put the adjective first: 'El papel de los profesores fue fundamental'. Start with 'Fundamental'.",
++          "answer": "Fundamental fue el papel de los profesores en todo el proceso."
+         },
+         {
+-          "prompt": "State a key finding using 'De enorme relevancia...'",
+-          "answer": "De enorme relevancia resultaron las conclusiones del estudio."
++          "prompt": "Say that a simple idea lies beneath the whole plan. Start with 'Bajo todo el plan'.",
++          "answer": "Bajo todo el plan subyace una idea sencilla."
+         }
+       ],
+       "teaches": [
+-        "inversion-enfasis-fronting",
+-        "b2-nuance-precision-emphasis-vocab"
++        "inversion-enfasis-fronting"
++      ]
++    },
++    {
++      "id": "b2-01-03.ex07",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence puts the phrase 'under that premise' first, with the subject after the verb?",
++      "options": [
++        "Bajo esa premisa trabajaron los investigadores.",
++        "Los investigadores trabajaron bajo esa premisa.",
++        "Bajo esa premisa los investigadores trabajaron."
++      ],
++      "correct": 0,
++      "teaches": [
++        "inversion-enfasis-fronting"
++      ]
++    },
++    {
++      "id": "b2-01-03.ex08",
++      "type": "listening-choice",
++      "category": "listening",
++      "sentence": "Al final prevaleció la opinión de Ana.",
++      "options": [
++        "In the end Ana's opinion prevailed.",
++        "In the end Ana changed her opinion.",
++        "In the end nobody gave an opinion."
++      ],
++      "correct": 0,
++      "teaches": [
++        "inversion-enfasis-fronting"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-01-04-ex.json b/content/es-latam/exercises/b2/b2-01-04-ex.json
+index 828c87fb..14a99bb2 100644
+--- a/content/es-latam/exercises/b2/b2-01-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-01-04-ex.json
+@@ -31,11 +31,11 @@
+       "id": "b2-01-04.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la forma correcta cuando el segundo término introduce un verbo conjugado?",
++      "question": "Which sentence corrects a wrong assumption with a contrastive cleft?",
+       "options": [
+-        "No desestimaron la queja, sino que abrieron una investigación de inmediato.",
+-        "No desestimaron la queja, sino abrieron una investigación de inmediato.",
+-        "No desestimaron la queja, pero que abrieron una investigación de inmediato."
++        "No fue la suerte, sino la constancia lo que aseguró el éxito.",
++        "No fue la suerte, pero la constancia lo que aseguró el éxito.",
++        "No fue la suerte, sino que la constancia lo que aseguró el éxito."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -46,10 +46,9 @@
+       "id": "b2-01-04.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "No buscamos eludir el problema, __ enfrentarlo con absoluta franqueza.",
+-      "hint": "but rather",
++      "sentence": "No queremos soslayar el problema, ____ resolverlo.",
+       "answer": "sino",
+-      "english": "We do not seek to evade the problem, but rather to face it with absolute frankness.",
++      "english": "We do not want to sidestep the problem, but to solve it.",
+       "teaches": [
+         "sino-vs-pero"
+       ]
+@@ -61,44 +60,49 @@
+       "tiles": [
+         "No",
+         "fue",
+-        "el",
+-        "miedo,",
++        "la",
++        "distancia,",
+         "sino",
+         "la",
+-        "prudencia",
++        "falta",
++        "de",
++        "tiempo",
+         "lo",
+         "que",
+-        "guió",
+-        "sus",
+-        "pasos."
++        "nos",
++        "separó."
+       ],
+       "solution": [
+         "No",
+         "fue",
+-        "el",
+-        "miedo,",
++        "la",
++        "distancia,",
+         "sino",
+         "la",
+-        "prudencia",
++        "falta",
++        "de",
++        "tiempo",
+         "lo",
+         "que",
+-        "guió",
+-        "sus",
+-        "pasos."
++        "nos",
++        "separó."
+       ],
+-      "english": "It was not fear, but prudence that guided their steps.",
++      "english": "It was not the distance but the lack of time that separated us.",
+       "teaches": [
+         "sino-vs-pero"
+       ]
+     },
+     {
+       "id": "b2-01-04.ex05",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
+-      "sentence": "No rechazaron el plan inicial, sino __ exigieron ciertas garantías adicionales.",
+-      "hint": "that",
+-      "answer": "que",
+-      "english": "They did not reject the initial plan, but rather demanded certain additional guarantees.",
++      "question": "Which sentence is correct?",
++      "options": [
++        "No rechazaron el plan, sino que pidieron más tiempo.",
++        "No rechazaron el plan, sino pidieron más tiempo.",
++        "No rechazaron el plan, pero que pidieron más tiempo."
++      ],
++      "correct": 0,
+       "teaches": [
+         "sino-vs-pero"
+       ]
+@@ -110,7 +114,7 @@
+       "prompt": [
+         {
+           "speaker": "Mateo",
+-          "text": "¿Afirmaron los directivos que los resultados fueron un fracaso?"
++          "text": "¿Aceptaron los jefes la crítica?"
+         },
+         {
+           "speaker": "Tú",
+@@ -118,13 +122,13 @@
+         },
+         {
+           "speaker": "Mateo",
+-          "text": "Ah, entiendo, fue un ajuste de expectativas."
++          "text": "Entiendo: hubo una discrepancia, no un acuerdo."
+         }
+       ],
+       "options": [
+-        "No dijeron que fue un fracaso, sino que las metas eran demasiado ambiciosas.",
+-        "Los directivos se fueron a almorzar antes de terminar la sesión.",
+-        "Mañana vamos a revisar las cifras con el contador."
++        "No la aceptaron, sino que la refutaron con datos nuevos.",
++        "No la aceptaron, sino la refutaron con datos nuevos.",
++        "No la aceptaron, pero que la refutaron con datos nuevos."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -137,16 +141,52 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Contrast two causes using 'No fue... sino...'",
++          "prompt": "Contrast two causes: not the lack of resources but the lack of coordination. Start with 'No fue'.",
+           "answer": "No fue la falta de recursos, sino la falta de coordinación lo que retrasó la obra."
+         },
+         {
+-          "prompt": "Correct a misinterpretation using 'sino que...'",
+-          "answer": "El ponente no criticó el modelo, sino que propuso actualizar sus variables."
++          "prompt": "Say that the boss did not criticise the model but proposed updating it. Use 'sino que'.",
++          "answer": "El jefe no criticó el modelo, sino que propuso actualizarlo."
+         }
+       ],
+       "teaches": [
+-        "sino-vs-pero",
++        "sino-vs-pero"
++      ]
++    },
++    {
++      "id": "b2-01-04.ex08",
++      "type": "fill-blank",
++      "category": "vocabulary",
++      "sentence": "No es un problema, sino ____ una oportunidad.",
++      "answer": "más bien",
++      "english": "It is not a problem, but rather an opportunity.",
++      "teaches": [
++        "b2-nuance-precision-emphasis-vocab"
++      ]
++    },
++    {
++      "id": "b2-01-04.ex09",
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "antagónico",
++          "antagonistic, opposing"
++        ],
++        [
++          "la sutileza",
++          "subtlety"
++        ],
++        [
++          "contraponer",
++          "to contrast, to set against"
++        ],
++        [
++          "más bien",
++          "rather, instead"
++        ]
++      ],
++      "teaches": [
+         "b2-nuance-precision-emphasis-vocab"
+       ]
+     }
+diff --git a/content/es-latam/exercises/b2/b2-01-05-ex.json b/content/es-latam/exercises/b2/b2-01-05-ex.json
+index b66e1ec3..f898f002 100644
+--- a/content/es-latam/exercises/b2/b2-01-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-01-05-ex.json
+@@ -15,12 +15,12 @@
+           "enigma, puzzle"
+         ],
+         [
+-          "perplejo",
+-          "perplexed"
++          "el laberinto",
++          "labyrinth, maze"
+         ],
+         [
+-          "vislumbrar",
+-          "to glimpse, to discern"
++          "perplejo",
++          "perplexed"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-01-05.ex02",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "Según el relato, ¿cuál era la verdadera naturaleza de la obra de Ts'ui Pên?",
++      "question": "According to the text, what does the title of the story talk about?",
+       "options": [
+-        "El libro y el laberinto eran un solo y mismo objeto infinito sobre el tiempo.",
+-        "Ts'ui Pên había abandonado la novela para construir un laberinto de piedra.",
+-        "El manuscrito era un diario militar sin ningún valor literario ni filosófico."
++        "Un jardín donde los senderos se dividen una y otra vez.",
++        "Un jardín de Buenos Aires donde el autor vivió de niño.",
++        "Un sendero que lleva directamente a la salida del laberinto."
+       ],
+       "correct": 0
+     },
+@@ -43,11 +43,11 @@
+       "id": "b2-01-05.ex03",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Cómo concebía el tiempo el antepasado de Yu Tsun según Albert?",
++      "question": "According to the text, what is the key idea of the story?",
+       "options": [
+-        "Como una red infinita de tiempos divergentes y paralelos que se bifurcan.",
+-        "Como una línea recta implacable que marcha hacia un único final.",
+-        "Como una ilusión óptica sin ninguna trascendencia para el ser humano."
++        "Existen muchos futuros posibles al mismo tiempo.",
++        "Un autor debe elegir un solo camino para su historia.",
++        "El tiempo pasa en una sola dirección y no cambia."
+       ],
+       "correct": 0
+     },
+@@ -55,10 +55,9 @@
+       "id": "b2-01-05.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Lo que realmente conmovió al protagonista __ la lucidez con la que Albert explicaba el laberinto.",
+-      "hint": "ser",
+-      "answer": "fue",
+-      "english": "What truly moved the protagonist was the lucidity with which Albert explained the labyrinth.",
++      "sentence": "Lo que hace único este cuento ____ la idea del tiempo como un jardín.",
++      "answer": "es",
++      "english": "What makes this story unique is the idea of time as a garden.",
+       "teaches": [
+         "oraciones-hendidas-enfasis"
+       ]
+@@ -68,26 +67,30 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Decisiva",
+-        "resultó",
++        "Insólita",
++        "resulta",
+         "la",
+-        "conversación",
+-        "para",
+-        "desentrañar",
+-        "aquel",
+-        "enigma."
++        "imagen",
++        "de",
++        "un",
++        "laberinto",
++        "hecho",
++        "de",
++        "tiempo."
+       ],
+       "solution": [
+-        "Decisiva",
+-        "resultó",
++        "Insólita",
++        "resulta",
+         "la",
+-        "conversación",
+-        "para",
+-        "desentrañar",
+-        "aquel",
+-        "enigma."
++        "imagen",
++        "de",
++        "un",
++        "laberinto",
++        "hecho",
++        "de",
++        "tiempo."
+       ],
+-      "english": "Decisive was the conversation in unravelling that enigma.",
++      "english": "Unusual is the image of a labyrinth made of time.",
+       "teaches": [
+         "inversion-enfasis-fronting"
+       ]
+@@ -96,10 +99,9 @@
+       "id": "b2-01-05.ex06",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "No perseguía la gloria militar, __ comprender la naturaleza del tiempo.",
+-      "hint": "but rather",
++      "sentence": "Lo que hace único el cuento no es la intriga, ____ la idea del tiempo.",
+       "answer": "sino",
+-      "english": "He did not seek military glory, but rather to understand the nature of time.",
++      "english": "What makes the story unique is not the plot but the idea of time.",
+       "teaches": [
+         "sino-vs-pero"
+       ]
+@@ -111,7 +113,7 @@
+       "prompt": [
+         {
+           "speaker": "Profesora",
+-          "text": "¿Qué función cumple la estructura 'No fue... sino...' en el clímax del relato?"
++          "text": "¿Qué hace único este cuento: la intriga o la idea del tiempo?"
+         },
+         {
+           "speaker": "Tú",
+@@ -119,13 +121,13 @@
+         },
+         {
+           "speaker": "Profesora",
+-          "text": "Exacto, concentra la atención en la tesis filosófica central."
++          "text": "Exacto. Esa idea es el centro del texto."
+         }
+       ],
+       "options": [
+-        "Permite corregir una falsa interpretación y destacar que el laberinto es temporal, no físico.",
+-        "Sirve para indicar que los personajes cambiaron de lugar geográfico.",
+-        "Indica que el narrador se equivocó de interlocutor al llegar a la estación."
++        "No es la intriga, sino la idea del tiempo lo que lo hace único.",
++        "No es la intriga, pero la idea del tiempo lo que lo hace único.",
++        "No es la intriga, sino que la idea del tiempo lo que lo hace único."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -138,17 +140,41 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Summarize the core philosophical revelation of the story using a cleft sentence",
+-          "answer": "Lo que Ts'ui Pên descubrió fue que el tiempo se bifurca perpetuamente."
++          "prompt": "Say when the story appeared (1941). Start with 'Fue en'.",
++          "answer": "Fue en 1941 cuando apareció el cuento."
+         },
+         {
+-          "prompt": "Contrast the nature of the labyrinth using 'no... sino'",
+-          "answer": "El laberinto no era un dédalo de arbustos, sino una novela infinita."
++          "prompt": "Say that the story is about many possible futures, not one. Use 'no ... sino'.",
++          "answer": "El cuento no habla de un único futuro, sino de muchos futuros posibles."
+         }
+       ],
+       "teaches": [
+-        "oraciones-hendidas-enfasis",
+-        "sino-vs-pero",
++        "b2-nuance-precision-emphasis-vocab"
++      ]
++    },
++    {
++      "id": "b2-01-05.ex09",
++      "type": "matching",
++      "category": "vocabulary",
++      "pairs": [
++        [
++          "la conjetura",
++          "conjecture, guess"
++        ],
++        [
++          "el indicio",
++          "clue, indication"
++        ],
++        [
++          "vislumbrar",
++          "to glimpse, to discern"
++        ],
++        [
++          "la resolución",
++          "resolution, outcome"
++        ]
++      ],
++      "teaches": [
+         "b2-nuance-precision-emphasis-vocab"
+       ]
+     }
+diff --git a/content/es-latam/exercises/b2/b2-01-consolidation-ex.json b/content/es-latam/exercises/b2/b2-01-consolidation-ex.json
+index 53682726..30837c6a 100644
+--- a/content/es-latam/exercises/b2/b2-01-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-01-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el trasfondo",
+-          "background, subtext"
++          "el hincapié",
++          "emphasis"
+         ],
+         [
+           "prevalecer",
+           "to prevail"
+         ],
+         [
+-          "soslayar",
+-          "to bypass, to evade"
++          "la discrepancia",
++          "discrepancy"
+         ],
+         [
+-          "vislumbrar",
+-          "to glimpse, to discern"
++          "el laberinto",
++          "labyrinth, maze"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,9 @@
+       "id": "b2-01-consolidation.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Lo que verdaderamente nos interesa __ profundizar en las causas estructurales.",
+-      "hint": "ser",
++      "sentence": "Lo que más nos interesa ____ entender las causas del problema.",
+       "answer": "es",
+-      "english": "What truly interests us is to delve deeper into the structural causes.",
++      "english": "What interests us most is understanding the causes of the problem.",
+       "teaches": [
+         "oraciones-hendidas-enfasis"
+       ]
+@@ -43,11 +42,11 @@
+       "id": "b2-01-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la opción que califica rigurosamente un término técnico?",
++      "question": "Which sentence uses 'en realidad' to correct what someone assumed?",
+       "options": [
+-        "En rigor, el tratado todavía no ha entrado en vigor.",
+-        "Apenas el tratado entre en vigor, avisaremos.",
+-        "Francamente, el tratado es muy largo de leer."
++        "En realidad, el museo no cierra los lunes, sino los martes.",
++        "El museo, lamentablemente, cierra los lunes.",
++        "Precisamente por eso, el museo cierra los lunes."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -59,26 +58,28 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Primordial",
++        "Decisiva",
+         "resultó",
+-        "el",
+-        "respaldo",
++        "la",
++        "ayuda",
+         "de",
+-        "las",
+-        "comunidades",
+-        "locales."
++        "los",
++        "vecinos",
++        "del",
++        "barrio."
+       ],
+       "solution": [
+-        "Primordial",
++        "Decisiva",
+         "resultó",
+-        "el",
+-        "respaldo",
++        "la",
++        "ayuda",
+         "de",
+-        "las",
+-        "comunidades",
+-        "locales."
++        "los",
++        "vecinos",
++        "del",
++        "barrio."
+       ],
+-      "english": "Paramount was the backing of the local communities.",
++      "english": "Decisive was the help of the neighbours of the district.",
+       "teaches": [
+         "inversion-enfasis-fronting"
+       ]
+@@ -87,10 +88,9 @@
+       "id": "b2-01-consolidation.ex05",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "No fue la suerte, __ la constancia lo que aseguró el éxito.",
+-      "hint": "but rather",
++      "sentence": "No fue el calor, ____ la falta de agua lo que nos hizo volver a casa.",
+       "answer": "sino",
+-      "english": "It was not luck, but perseverance that ensured success.",
++      "english": "It was not the heat but the lack of water that made us go home.",
+       "teaches": [
+         "sino-vs-pero"
+       ]
+@@ -99,23 +99,35 @@
+       "id": "b2-01-consolidation.ex06",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "No ocultaron los errores, sino __ presentaron un plan de remediación inmediato.",
+-      "hint": "that",
++      "sentence": "No cancelaron el viaje, sino ____ lo cambiaron de fecha.",
+       "answer": "que",
+-      "english": "They did not hide the mistakes, but rather presented an immediate remediation plan.",
++      "english": "They did not cancel the trip; they changed its date.",
+       "teaches": [
+         "sino-vs-pero"
+       ]
+     },
+     {
+       "id": "b2-01-consolidation.ex07",
+-      "type": "multiple-choice",
++      "type": "dialogue-complete",
+       "category": "dialogue",
+-      "question": "En un debate formal sobre políticas públicas, ¿cómo responderías para centrar el debate en lo esencial?",
++      "prompt": [
++        {
++          "speaker": "Sebastián",
++          "text": "¿Cuándo te dieron la noticia del cambio?"
++        },
++        {
++          "speaker": "Tú",
++          "text": "_____"
++        },
++        {
++          "speaker": "Sebastián",
++          "text": "Entonces ya hace tiempo que lo sabes."
++        }
++      ],
+       "options": [
+-        "Lo que no debemos soslayar es la sostenibilidad fiscal a largo plazo.",
+-        "Creo que todos deberíamos irnos a descansar porque ya es tarde.",
+-        "Ayer leí en las noticias que llovió mucho en el sur."
++        "Fue en marzo cuando me lo dijeron.",
++        "Fue Ana quien me lo dijo.",
++        "Fue en la oficina donde me lo dijeron."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -128,13 +140,19 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "State an argument emphasizing the real root of an issue using cleft focus and 'sino'",
+-          "answer": "Lo que debemos atender no son los síntomas, sino las causas fundamentales."
++          "prompt": "State the real root of a problem: not the symptoms but the causes. Start with 'Lo que debemos resolver'.",
++          "answer": "Lo que debemos resolver no son los síntomas, sino las causas."
++        },
++        {
++          "prompt": "Say that, unfortunately, you cannot come. Start with 'Lamentablemente'.",
++          "answer": "Lamentablemente, no puedo venir."
++        },
++        {
++          "prompt": "Put the adjective first: 'La respuesta fue clara'. Start with 'Clara'.",
++          "answer": "Clara fue la respuesta de la directora."
+         }
+       ],
+       "teaches": [
+-        "oraciones-hendidas-enfasis",
+-        "sino-vs-pero",
+         "b2-nuance-precision-emphasis-vocab"
+       ]
+     }
+diff --git a/content/es-latam/grammar/b2/b2-01-01-a-gr.json b/content/es-latam/grammar/b2/b2-01-01-a-gr.json
+index 758732f7..615cecd0 100644
+--- a/content/es-latam/grammar/b2/b2-01-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-01-01-a-gr.json
+@@ -1,43 +1,51 @@
+ {
+   "id": "grammar.b2.01.01.oraciones-hendidas",
+-  "title": "Las oraciones hendidas: lo que... es",
++  "title": "Cleft Sentences: One Idea in the Spotlight",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "¿Qué son las oraciones hendidas?",
+-      "content": "Las oraciones hendidas (cleft sentences) dividen una proposición en dos partes mediante una perífrasis de relativo y el verbo 'ser' para destacar un elemento específico: 'Lo que realmente importa es su actitud'."
+-    },
+-    {
+-      "type": "text",
+-      "title": "Mecanismo y concordancia",
+-      "content": "En el español culto latinoamericano, cuando el elemento focalizado es plural, el verbo 'ser' tiende a concordar con el predicado en registro formal: 'Lo que necesitamos son soluciones concretas'."
++      "title": "Putting one piece in the spotlight",
++      "content": "A cleft sentence splits one idea into two halves joined by *ser*, so that the piece you want to stress lands in the spotlight. Compare *Me sorprendió su serenidad* with *Lo que me sorprendió fue su serenidad*: both say the same thing, but the second makes the calmness the news. You know the building blocks: *lo que* ('what') from B1 Unit 20, and *lo importante* and *lo mejor* from B1 Unit 40."
+     },
+     {
+       "type": "table",
+-      "title": "Estructuras hendidas comunes",
++      "title": "Three ways to build a cleft sentence",
+       "rows": [
+         [
+-          "Lo que + verbo + es/fue...",
+-          "Focaliza una acción o idea abstracta: 'Lo que dijo fue revelador'"
++          "Lo que + verb + ser + focus",
++          "Spotlights an idea, a thing or an action: 'Lo que dijo fue revelador'"
+         ],
+         [
+-          "Es/Fue... quien/el que...",
+-          "Focaliza al sujeto o agente: 'Fue Mariana la que redactó el informe'"
++          "Fue / Es + person + quien / la que / el que",
++          "Spotlights who did it: 'Fue Mariana la que escribió el informe'"
+         ],
+         [
+-          "Es/Fue... cuando/donde...",
+-          "Focaliza tiempo o lugar: 'Fue en Lima donde se conocieron'"
++          "Fue / Es + place or time + donde / cuando",
++          "Spotlights where or when: 'Fue en Lima donde se conocieron'"
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Details to get right",
++      "content": "The tense of *ser* follows the time of the other verb: *Lo que dijo fue revelador* (past), *Lo que importa es la actitud* (present). The spotlighted piece keeps its preposition: *Fue con Ana con quien hablé*. When the spotlighted piece is plural, careful writing makes *ser* agree with it: *Lo que necesitamos son soluciones concretas*, *Fueron los vecinos quienes llamaron*. In everyday speech you will also hear the singular *es* after a plural."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en contexto",
++      "title": "Examples in context",
+       "items": [
+         {
+           "spanish": "Lo que más nos sorprendió fue su serenidad.",
+           "english": "What surprised us most was his calmness."
+         },
++        {
++          "spanish": "Fue Mariana quien escribió el informe.",
++          "english": "It was Mariana who wrote the report."
++        },
++        {
++          "spanish": "Fue en Lima donde se conocieron.",
++          "english": "It was in Lima that they met."
++        },
+         {
+           "spanish": "Fue precisamente en ese momento cuando comprendió el peligro.",
+           "english": "It was precisely at that moment that she understood the danger."
+@@ -50,7 +58,7 @@
+     },
+     {
+       "type": "tip",
+-      "content": "Evita el queísmo en oraciones hendidas temporales o locativas: en español culto se dice 'Fue allí donde ocurrió' o 'Fue en 1990 cuando nació', no 'Fue allí que' ni 'Fue en 1990 que'."
++      "content": "A cleft sentence is a spotlight: use it for the one idea you want the listener to remember, not in every sentence. In conversation many speakers, especially in Latin America, put *que* where this lesson uses *cuando* or *donde* (*Fue en 1990 que nació*). In careful writing, stay with *cuando* for time and *donde* for place."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-01-02-a-gr.json b/content/es-latam/grammar/b2/b2-01-02-a-gr.json
+index 795c051f..d10122b8 100644
+--- a/content/es-latam/grammar/b2/b2-01-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-01-02-a-gr.json
+@@ -1,55 +1,88 @@
+ {
+   "id": "grammar.b2.01.02.adverbios-intensificadores",
+-  "title": "Adverbios de matiz y precisión discursiva",
++  "title": "Adverbs that Show Your Attitude",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "El papel de los adverbios modales en B2",
+-      "content": "A nivel B2, los adverbios no solo modifican al verbo; actúan sobre toda la oración como modificadores oracionales o marcadores de actitud epistémica: 'Francamente, no me convence la propuesta' o 'En rigor, no se trata de un fenómeno nuevo'."
++      "title": "Stance and focus adverbs",
++      "content": "Most adverbs tell you how something happens: *Habló lentamente*. A stance adverb steps outside the action and comments on the whole sentence: how frank, sure or glad the speaker is. *Francamente, no me convence la propuesta* means 'I will be frank: the proposal does not convince me', not 'it does not convince me frankly'. A focus adverb such as *precisamente*, which you met in the last lesson, points at the word after it and means 'exactly that'."
+     },
+     {
+       "type": "table",
+-      "title": "Adverbios de matiz y precisión",
++      "title": "Common stance and focus adverbs",
+       "rows": [
+         [
+-          "Propiamente dicho",
+-          "Aclara si un término se aplica con exactitud: 'No es una ley propiamente dicha'"
++          "francamente, sinceramente",
++          "frankly, honestly: you are direct about your opinion"
+         ],
+         [
+-          "En rigor",
+-          "Introduce una delimitación formal o técnica: 'En rigor, la fecha límite expiró ayer'"
++          "afortunadamente, lamentablemente",
++          "fortunately, unfortunately: your feeling about a fact"
+         ],
+         [
+-          "Rotundamente",
+-          "Expresa convicción o rechazo categórico: 'Negó rotundamente las acusaciones'"
++          "indudablemente",
++          "undoubtedly: you are sure"
+         ],
+         [
+-          "Notablemente",
+-          "Indica un grado visible de intensidad o cambio: 'Las condiciones mejoraron notablemente'"
++          "en realidad",
++          "actually, in fact: you correct what someone expected or assumed"
++        ],
++        [
++          "en rigor",
++          "strictly speaking: you give the exact, technical truth"
++        ],
++        [
++          "propiamente dicho",
++          "strictly so-called, in the true sense: it follows the noun"
++        ],
++        [
++          "precisamente",
++          "precisely, exactly: it points at the word after it"
++        ],
++        [
++          "apenas",
++          "barely, only just: it limits an amount"
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Where they go, and the commas",
++      "content": "A stance adverb can open the sentence, sit in the middle or close it, and a comma marks each edge: *Lamentablemente, no hay presupuesto.* / *El proyecto, lamentablemente, no tiene presupuesto.* / *No hay presupuesto, lamentablemente.* Right after the verb with no commas, the same word usually describes how something was done: *Ana me habló sinceramente* means 'Ana spoke to me honestly'. *Rotundamente*, *notablemente* and *deliberadamente* usually describe the action: *Rechazó rotundamente la acusación*. *Precisamente* and *apenas* take no commas, because they sit right in front of the word they point at."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en prosa formal",
++      "title": "Examples in context",
+       "items": [
+         {
+-          "spanish": "En rigor, el problema radica en la distribución de los recursos.",
+-          "english": "Strictly speaking, the problem lies in the distribution of resources."
++          "spanish": "Francamente, no me convence la propuesta.",
++          "english": "Frankly, the proposal does not convince me."
++        },
++        {
++          "spanish": "El proyecto, lamentablemente, no tiene presupuesto este año.",
++          "english": "The project, unfortunately, has no budget this year."
++        },
++        {
++          "spanish": "En realidad, no fue un error, sino una decisión.",
++          "english": "Actually, it was not a mistake but a decision."
++        },
++        {
++          "spanish": "En rigor, la fecha límite venció ayer.",
++          "english": "Strictly speaking, the deadline expired yesterday."
+         },
+         {
+-          "spanish": "El informe desmiente rotundamente cualquier irregularidad.",
+-          "english": "The report flatly refutes any irregularity."
++          "spanish": "No es una ciudad propiamente dicha, sino un pueblo grande.",
++          "english": "It is not a city in the true sense, but a big town."
+         },
+         {
+-          "spanish": "Aquella medida influyó notablemente en el desarrollo posterior.",
+-          "english": "That measure notably influenced subsequent development."
++          "spanish": "El ministro rechazó rotundamente la acusación.",
++          "english": "The minister flatly rejected the accusation."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Los modificadores oracionales como 'francamente', 'indudablemente' o 'en rigor' van aislados entre comas cuando inician o se intercalan en la oración: 'El acuerdo, en rigor, aún no tiene validez legal'."
++      "content": "Try the comma test: if you can pause and put commas round the adverb, it is commenting on the whole sentence. Use one stance adverb per sentence; two in a row sound heavy."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-01-03-a-gr.json b/content/es-latam/grammar/b2/b2-01-03-a-gr.json
+index c81f07fe..dc56732d 100644
+--- a/content/es-latam/grammar/b2/b2-01-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-01-03-a-gr.json
+@@ -1,33 +1,38 @@
+ {
+   "id": "grammar.b2.01.03.inversion-enfasis",
+-  "title": "La anteposición enfática y la inversión verbo-sujeto",
++  "title": "Fronting: Emphasis First",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "¿En qué consiste la anteposición enfática?",
+-      "content": "En la prosa formal y académica, colocar un adjetivo o complemento circunstancial al principio de la oración crea relieve informativo y fuerza la inversión del sujeto: 'Crucial fue la intervención del mediador' en lugar de 'La intervención del mediador fue crucial'."
++      "title": "Moving the stressed piece to the front",
++      "content": "In normal order the subject comes first: *La intervención del mediador fue crucial*. To stress the quality, move it to the front. The subject then usually moves behind the verb: *Crucial fue la intervención del mediador*. You know *ser* from A1 Unit 1 and *resultar* from B1 Unit 15, both followed by an adjective; fronting only changes where the words stand. English does the same in formal writing ('Crucial was the mediator's intervention')."
+     },
+     {
+       "type": "table",
+-      "title": "Patrones de anteposición y relieve",
++      "title": "What can go first",
+       "rows": [
+         [
+-          "Adjetivo antepuesto + ser + sujeto",
+-          "Enfatiza la cualidad: 'Incalculable fue el daño sufrido'"
++          "Adjective + ser / resultar + subject",
++          "Spotlights a quality: 'Incalculable fue el daño sufrido'"
+         ],
+         [
+-          "Complemento adverbial + verbo + sujeto",
+-          "Enfatiza las circunstancias: 'En aquella ciudad comenzó la rebelión'"
++          "Place or time phrase + verb + subject",
++          "Spotlights the setting: 'En aquella ciudad comenzó la rebelión'"
+         ],
+         [
+-          "Objeto directo focalizado sin reduplicación",
+-          "Enfoca el objeto como tema exclusivo: 'Tres cartas escribió el autor aquel día'"
++          "De + noun phrase + ser + subject",
++          "Spotlights a quality of the subject: 'De gran importancia fueron los hallazgos'"
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Two rules to keep",
++      "content": "The verb and the adjective agree with the subject that comes after them: *Decisiva fue la intervención*, *Decisivos fueron los resultados*, *Decisivas fueron las pruebas* (not *fue las pruebas*). And the subject stays behind the verb: *Decisiva la intervención fue* sounds unnatural."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el discurso formal",
++      "title": "Examples in context",
+       "items": [
+         {
+           "spanish": "Primordial resultó el acuerdo firmado entre ambos países.",
+@@ -40,12 +45,20 @@
+         {
+           "spanish": "De enorme relevancia son los hallazgos recientes.",
+           "english": "Of immense relevance are the recent findings."
++        },
++        {
++          "spanish": "Insólito resultó el giro político en aquella región.",
++          "english": "Unusual was the political turn in that region."
++        },
++        {
++          "spanish": "En aquella ciudad comenzó la rebelión.",
++          "english": "In that city the rebellion began."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "La inversión enfática debe usarse con moderación para marcar momentos culminantes en un argumento o narración. Si se sobreutiliza, el texto puede sonar recargado o artificial."
++      "content": "Fronting works as a climax: use it once in a paragraph, at the moment you want to stress. If every sentence starts with its adjective, the text sounds heavy and artificial."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-01-04-a-gr.json b/content/es-latam/grammar/b2/b2-01-04-a-gr.json
+index 1c75da1b..836424f8 100644
+--- a/content/es-latam/grammar/b2/b2-01-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-01-04-a-gr.json
+@@ -1,56 +1,60 @@
+ {
+   "id": "grammar.b2.01.04.enfasis-contrastivo-sino",
+-  "title": "Foco contrastivo: no... sino (que)",
++  "title": "No ... sino for Emphasis",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Estructuras contrastivas de corrección",
+-      "content": "Para refutar un supuesto previo y sustituirlo por el verdadero elemento focalizado, el español emplea la correlación 'no... sino': 'No fue el cansancio, sino la falta de tiempo lo que nos impidió viajar'."
+-    },
+-    {
+-      "type": "text",
+-      "title": "Sino frente a sino que",
+-      "content": "Cuando el segundo elemento contiene un verbo conjugado, se requiere obligatoriamente 'sino que': 'No se desentendieron del problema, sino que propusieron una reforma estructural'."
++      "title": "What you already know",
++      "content": "You know *sino* from B1 Unit 40 ('but' after a negative) and *sino que* from B1 Unit 40 (before a conjugated verb): *No quiero té, sino café*; *No rechazaron la propuesta, sino que pidieron más detalles*. You also know *no solo* from B1 Unit 40. This lesson uses them to correct an assumption and spotlight the right answer."
+     },
+     {
+       "type": "table",
+-      "title": "Variaciones de corrección y matiz",
++      "title": "Three emphatic moves",
+       "rows": [
+         [
+-          "No solo... sino también...",
+-          "Adición enfática: 'No solo analizó las causas, sino también las consecuencias'"
++          "No fue X, sino Y lo que ...",
++          "Contrastive cleft: 'No fue la suerte, sino la constancia lo que aseguró el éxito'"
+         ],
+         [
+-          "No... sino más bien...",
+-          "Matiz atenuado: 'No es un error grave, sino más bien una imprecisión'"
++          "No fue X quien ..., sino Y",
++          "Corrects who did it: 'No fue Ana quien llamó, sino su hermano'"
+         ],
+         [
+-          "No fue X quien/el que...",
+-          "Cleft contrastiva: 'No fue el gobierno, sino las comunidades quienes actuaron'"
++          "No es X, sino más bien Y",
++          "A softer correction, 'rather': 'No es un fracaso, sino más bien una lección'"
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Why it works",
++      "content": "The first half names the wrong answer and the second half spotlights the right one; the *lo que* clause from lesson 1 comes last and closes the sentence. *Más bien* does not say 'wrong'; it says 'better described as', so it suits a polite disagreement. Remember the spelling: *sino* in one word means 'but'; *si no* in two words opens a condition: *Si no vienes hoy, no te veré*."
++    },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en el debate argumentativo",
++      "title": "Examples in context",
+       "items": [
+         {
+-          "spanish": "El objetivo no es soslayar el conflicto, sino resolverlo de raíz.",
+-          "english": "The objective is not to sidestep the conflict, but to resolve it at its root."
++          "spanish": "No fue la suerte, sino la constancia lo que aseguró el éxito.",
++          "english": "It was not luck but perseverance that ensured success."
++        },
++        {
++          "spanish": "No fue Ana quien llamó, sino su hermano.",
++          "english": "It was not Ana who called, but her brother."
+         },
+         {
+-          "spanish": "No fue la casualidad, sino años de disciplina lo que le dio el triunfo.",
+-          "english": "It was not chance, but years of discipline that brought him triumph."
++          "spanish": "No es un fracaso, sino más bien una lección.",
++          "english": "It is not a failure, but rather a lesson."
+         },
+         {
+-          "spanish": "No rechazaron la propuesta, sino que solicitaron mayores precisiones.",
+-          "english": "They did not reject the proposal, but rather requested greater clarification."
++          "spanish": "No rechazaron la propuesta, sino que pidieron más detalles.",
++          "english": "They did not reject the proposal; they asked for more details."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "No confundas 'sino' (conjunción adversativa) con 'si no' (condicional negativa). 'Sino' sustituye o añade; 'si no' introduce una hipótesis negativa: 'No quiero té, sino café' frente a 'Si no vienes hoy, no te veré'."
++      "content": "In a debate, correct the claim, not the person: *No fue la distancia, sino la falta de tiempo lo que nos separó* names a cause, so the tone stays neutral."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-01-05-a-gr.json b/content/es-latam/grammar/b2/b2-01-05-a-gr.json
+index fbb44d6b..41974aff 100644
+--- a/content/es-latam/grammar/b2/b2-01-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-01-05-a-gr.json
+@@ -1,47 +1,51 @@
+ {
+   "id": "grammar.b2.01.05.sintesis-enfasis",
+-  "title": "Síntesis del relieve discursivo en la prosa literaria",
++  "title": "Putting the Three Tools Together",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "La alternancia estilística en la narración",
+-      "content": "Los grandes prosistas hispanoamericanos combinan oraciones hendidas ('lo que realmente guiaba sus pasos era...'), anteposiciones enfáticas ('decisiva resultó aquella explicación') y estructuras contrastivas ('no creía en un tiempo uniforme, sino en una red infinita') para crear ritmo, tensión dramática y profundidad filosófica."
++      "title": "One tool for each job",
++      "content": "You know this unit's three emphasis tools: cleft sentences (lesson 1), fronting (lesson 3) and contrastive *no ... sino* (lesson 4). When you write about a book or an author, give each tool its own job: a cleft sentence names the key idea, fronting stresses a quality at the high point, and *no ... sino* corrects an obvious first reading. Used well, they give a text rhythm."
+     },
+     {
+       "type": "table",
+-      "title": "Integración de recursos enfáticos",
++      "title": "The tools in the text about Borges",
+       "rows": [
+         [
+-          "Oración hendida",
+-          "Lo que casi nadie comprende es que el libro y el laberinto son lo mismo."
++          "Cleft sentence",
++          "Lo que hace único este cuento es la idea del tiempo."
+         ],
+         [
+-          "Inversión de predicado",
+-          "Decisiva resultó aquella conversación para revelar el secreto."
++          "Fronting",
++          "Insólita resulta la imagen de un laberinto hecho de tiempo."
+         ],
+         [
+-          "Foco contrastivo",
+-          "No buscaba el poder terrenal, sino la inmortalidad literaria."
++          "Contrast with no ... sino",
++          "No existe un único futuro, sino muchos futuros posibles."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Modelos literarios de B2",
++      "title": "More examples",
+       "items": [
+         {
+-          "spanish": "Fue en el silencio del estudio donde vislumbró la verdad.",
+-          "english": "It was in the silence of the study where he glimpsed the truth."
++          "spanish": "Fue en 1941 cuando apareció el cuento por primera vez.",
++          "english": "It was in 1941 that the story first appeared."
+         },
+         {
+-          "spanish": "No era el cansancio, sino una honda perplejidad lo que nublaba su mente.",
+-          "english": "It was not fatigue, but deep perplexity that clouded his mind."
++          "spanish": "De esa imagen viene el título del cuento.",
++          "english": "From that image comes the title of the story."
++        },
++        {
++          "spanish": "Lo que hace único este cuento no es la intriga, sino la idea del tiempo.",
++          "english": "What makes this story unique is not the plot but the idea of time."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Al redactar ensayos o narraciones complejas, varía la estructura sintáctica: alterna oraciones de orden canónico (sujeto-verbo-objeto) con oraciones hendidas o invertidas para destacar giros argumentales."
++      "content": "Vary your sentences: alternate plain order (subject, verb, object) with a cleft or a fronted phrase. Two emphatic structures in a paragraph shape the reading; one in every sentence tires the reader."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-01-01.json b/content/es-latam/lessons/b2/b2-01-01.json
+index 6c7b82f4..2254453c 100644
+--- a/content/es-latam/lessons/b2/b2-01-01.json
++++ b/content/es-latam/lessons/b2/b2-01-01.json
+@@ -3,23 +3,23 @@
+   "title": "Focus & Cleft Structures",
+   "level": "B2",
+   "goal": "Use cleft sentences with 'lo que' and 'fue... quien/donde' to emphasize specific information in complex speech.",
+-  "grammar": "oraciones hendidas",
++  "grammar": "cleft sentences",
+   "sections": [
+     {
+       "type": "intro",
+       "title": "Unit 1: Nuance, Precision & Emphasis",
+       "body": [
+-        "Welcome to Spanish B2 Core. At this level, communicative competence expands from reporting facts to shaping perspective, controlling emphasis, and crafting nuanced arguments.",
+-        "In this first unit, you will master the rhetorical tools that sophisticated speakers use to direct attention: cleft sentences ('lo que realmente importa es...'), adverbial intensifiers ('propiamente dicho', 'en rigor'), fronting and inversion, and contrastive focus with 'no... sino'."
++        "Welcome to Spanish B2 Core. At this level you move from reporting facts to shaping perspective, controlling emphasis and building nuanced arguments.",
++        "In this first unit you will learn the tools that skilled speakers use to direct attention: cleft sentences ('lo que realmente importa es...'), stance and focus adverbs ('francamente', 'en rigor'), fronting with inversion, and contrastive focus with 'no ... sino'."
+       ]
+     },
+     {
+       "type": "goal",
+       "items": [
+-        "Identify and construct cleft sentences using 'lo que es/fue'.",
+-        "Emphasize agents, locations, and timeframes with focused 'ser'.",
+-        "Use B2 vocabulary to discuss nuances and underlying motives.",
+-        "Maintain correct agreement between cleft clauses and plural predicates."
++        "Build cleft sentences with 'lo que' and 'ser' to spotlight an idea.",
++        "Spotlight a person, a place or a time with 'fue ... quien / donde / cuando'.",
++        "Choose the cleft sentence that answers the question I was asked.",
++        "Use the lesson's words to talk about emphasis and background."
+       ]
+     },
+     {
+@@ -76,10 +76,10 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can identify and construct cleft sentences using 'lo que es/fue'.",
+-        "I can emphasize agents, locations, and timeframes with focused 'ser'.",
+-        "I can use B2 vocabulary to discuss nuances and underlying motives.",
+-        "I can maintain correct agreement between cleft clauses and plural predicates."
++        "I can build cleft sentences with 'lo que' and 'ser' to spotlight an idea.",
++        "I can spotlight a person, a place or a time with 'fue ... quien / donde / cuando'.",
++        "I can choose the cleft sentence that answers the question I was asked.",
++        "I can use the lesson's words to talk about emphasis and background."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-01-02.json b/content/es-latam/lessons/b2/b2-01-02.json
+index 94454cce..3ded0ace 100644
+--- a/content/es-latam/lessons/b2/b2-01-02.json
++++ b/content/es-latam/lessons/b2/b2-01-02.json
+@@ -1,17 +1,17 @@
+ {
+   "id": "lesson.b2.01.02",
+-  "title": "Adverbial Intensifiers & Nuance",
++  "title": "Stance & Focus Adverbs",
+   "level": "B2",
+   "goal": "Qualify assertions and express stance using sentence-level adverbs like 'francamente', 'en rigor', and 'rotundamente'.",
+-  "grammar": "adverbios de matiz",
++  "grammar": "stance and focus adverbs",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Use sentence-level adverbs to calibrate certainty and epistemic stance.",
+-        "Differentiate between technical qualification ('en rigor') and candid stance ('francamente').",
+-        "Punctuate sentence adverbs accurately with commas.",
+-        "Apply targeted vocabulary for formal debate and assessment."
++        "Use stance adverbs such as 'francamente' and 'lamentablemente' to show my attitude to a whole sentence.",
++        "Tell a stance adverb, set off by commas, from an adverb that describes the action.",
++        "Place a stance adverb at the start, in the middle or at the end with the right commas.",
++        "Be exact with 'en rigor', 'en realidad' and 'propiamente dicho'."
+       ]
+     },
+     {
+@@ -35,7 +35,8 @@
+         "b2-01-02.ex02",
+         "b2-01-02.ex03",
+         "b2-01-02.ex04",
+-        "b2-01-02.ex05"
++        "b2-01-02.ex05",
++        "b2-01-02.ex08"
+       ]
+     },
+     {
+@@ -60,10 +61,10 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can use sentence-level adverbs to calibrate certainty and epistemic stance.",
+-        "I can differentiate between technical qualification ('en rigor') and candid stance ('francamente').",
+-        "I can punctuate sentence adverbs accurately with commas.",
+-        "I can apply targeted vocabulary for formal debate and assessment."
++        "I can use stance adverbs such as 'francamente' and 'lamentablemente' to show my attitude to a whole sentence.",
++        "I can tell a stance adverb, set off by commas, from an adverb that describes the action.",
++        "I can place a stance adverb at the start, in the middle or at the end with the right commas.",
++        "I can be exact with 'en rigor', 'en realidad' and 'propiamente dicho'."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-01-03.json b/content/es-latam/lessons/b2/b2-01-03.json
+index 4516ba41..1cd227df 100644
+--- a/content/es-latam/lessons/b2/b2-01-03.json
++++ b/content/es-latam/lessons/b2/b2-01-03.json
+@@ -1,17 +1,17 @@
+ {
+   "id": "lesson.b2.01.03",
+-  "title": "Emphatic Inversion & Fronting",
++  "title": "Fronting & Inversion",
+   "level": "B2",
+   "goal": "Employ emphatic word order fronting and subject-verb inversion to add rhetorical weight to key adjectives and clauses.",
+-  "grammar": "inversión enfática",
++  "grammar": "fronting and inversion",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Recognize and construct fronted emphatic structures with verb-subject inversion.",
+-        "Apply fronting to highlight adjectives of evaluation ('crucial fue', 'insólito resultó').",
+-        "Maintain subject-verb agreement when the inverted subject is plural.",
+-        "Integrate formal academic vocabulary into persuasive rhetoric."
++        "Put an adjective first and the subject after the verb to stress a quality.",
++        "Front a place or time phrase and put the subject after the verb.",
++        "Make the verb agree with a plural subject that comes after it.",
++        "Use evaluative words such as 'primordial', 'insólito' and 'concluyente' in emphatic sentences."
+       ]
+     },
+     {
+@@ -34,7 +34,8 @@
+         "b2-01-03.ex01",
+         "b2-01-03.ex02",
+         "b2-01-03.ex03",
+-        "b2-01-03.ex04"
++        "b2-01-03.ex04",
++        "b2-01-03.ex07"
+       ]
+     },
+     {
+@@ -59,10 +60,10 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can recognize and construct fronted emphatic structures with verb-subject inversion.",
+-        "I can apply fronting to highlight adjectives of evaluation ('crucial fue', 'insólito resultó').",
+-        "I can maintain subject-verb agreement when the inverted subject is plural.",
+-        "I can integrate formal academic vocabulary into persuasive rhetoric."
++        "I can put an adjective first and the subject after the verb to stress a quality.",
++        "I can front a place or time phrase and put the subject after the verb.",
++        "I can make the verb agree with a plural subject that comes after it.",
++        "I can use evaluative words such as 'primordial', 'insólito' and 'concluyente' in emphatic sentences."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-01-04.json b/content/es-latam/lessons/b2/b2-01-04.json
+index 48a3895d..1ec01198 100644
+--- a/content/es-latam/lessons/b2/b2-01-04.json
++++ b/content/es-latam/lessons/b2/b2-01-04.json
+@@ -1,17 +1,17 @@
+ {
+   "id": "lesson.b2.01.04",
+-  "title": "Contrastive Focus with 'No... Sino'",
++  "title": "Contrastive Focus with No ... Sino",
+   "level": "B2",
+   "goal": "Refute misconceptions and articulate contrastive focus using 'no... sino' and 'sino que' in formal argumentative prose.",
+-  "grammar": "foco contrastivo",
++  "grammar": "contrastive no ... sino",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Refute assertions and specify correct alternatives with 'no... sino'.",
+-        "Distinguish syntactically between 'sino' (phrase) and 'sino que' (finite clause).",
+-        "Construct contrastive cleft sentences ('no fue X sino Y lo que...').",
+-        "Use precise vocabulary for academic debate and critique."
++        "Correct an assumption with 'no ... sino' and give the right alternative.",
++        "Choose between 'sino' and 'sino que' when I correct something.",
++        "Build contrastive cleft sentences such as 'No fue X, sino Y lo que ...'.",
++        "Soften a correction with 'sino más bien'."
+       ]
+     },
+     {
+@@ -32,10 +32,12 @@
+       "ref": "exercises/b2/b2-01-04-ex.json",
+       "exerciseRefs": [
+         "b2-01-04.ex01",
++        "b2-01-04.ex09",
+         "b2-01-04.ex02",
+         "b2-01-04.ex03",
+         "b2-01-04.ex04",
+-        "b2-01-04.ex05"
++        "b2-01-04.ex05",
++        "b2-01-04.ex08"
+       ]
+     },
+     {
+@@ -60,10 +62,10 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can refute assertions and specify correct alternatives with 'no... sino'.",
+-        "I can distinguish syntactically between 'sino' (phrase) and 'sino que' (finite clause).",
+-        "I can construct contrastive cleft sentences ('no fue X sino Y lo que...').",
+-        "I can use precise vocabulary for academic debate and critique."
++        "I can correct an assumption with 'no ... sino' and give the right alternative.",
++        "I can choose between 'sino' and 'sino que' when I correct something.",
++        "I can build contrastive cleft sentences such as 'No fue X, sino Y lo que ...'.",
++        "I can soften a correction with 'sino más bien'."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-01-05.json b/content/es-latam/lessons/b2/b2-01-05.json
+index ba79c398..ec9c588d 100644
+--- a/content/es-latam/lessons/b2/b2-01-05.json
++++ b/content/es-latam/lessons/b2/b2-01-05.json
+@@ -1,17 +1,17 @@
+ {
+   "id": "lesson.b2.01.05",
+-  "title": "Narrative Nuance & Synthesis",
++  "title": "Reading and Synthesis: Borges",
+   "level": "B2",
+-  "goal": "Read and analyze nuanced literary prose, integrating cleft sentences, inversion, and contrastive focus.",
+-  "grammar": "síntesis de relieve discursivo",
++  "goal": "Read an original text about Borges and combine cleft sentences, fronting and contrastive 'no ... sino' in a short commentary.",
++  "grammar": "synthesis of emphasis",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Analyze an adapted classic narrative by Jorge Luis Borges for nuanced syntactic emphasis.",
+-        "Combine cleft sentences, fronted adjectives, and contrastive 'sino' in analytical commentary.",
+-        "Express philosophical and abstract conjectures with B2 precision.",
+-        "Synthesize the unit's vocabulary and rhetorical structures."
++        "Read a short text about a writer and his best-known story and answer questions about it.",
++        "Spot cleft sentences, fronting and 'no ... sino' in a text.",
++        "Combine the unit's three emphasis tools in a short commentary on a book.",
++        "Use words for stories of mystery and time, such as 'laberinto', 'enigma' and 'bifurcación'."
+       ]
+     },
+     {
+@@ -36,6 +36,7 @@
+       "ref": "exercises/b2/b2-01-05-ex.json",
+       "exerciseRefs": [
+         "b2-01-05.ex01",
++        "b2-01-05.ex09",
+         "b2-01-05.ex02",
+         "b2-01-05.ex03",
+         "b2-01-05.ex04",
+@@ -65,10 +66,10 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can analyze an adapted classic narrative by Jorge Luis Borges for nuanced syntactic emphasis.",
+-        "I can combine cleft sentences, fronted adjectives, and contrastive 'sino' in analytical commentary.",
+-        "I can express philosophical and abstract conjectures with B2 precision.",
+-        "I can synthesize the unit's vocabulary and rhetorical structures."
++        "I can read a short text about a writer and his best-known story and answer questions about it.",
++        "I can spot cleft sentences, fronting and 'no ... sino' in a text.",
++        "I can combine the unit's three emphasis tools in a short commentary on a book.",
++        "I can use words for stories of mystery and time, such as 'laberinto', 'enigma' and 'bifurcación'."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-01-consolidation.json b/content/es-latam/lessons/b2/b2-01-consolidation.json
+index dde81bba..754c1a2f 100644
+--- a/content/es-latam/lessons/b2/b2-01-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-01-consolidation.json
+@@ -3,15 +3,15 @@
+   "title": "Unit 1 Consolidation",
+   "level": "B2",
+   "goal": "Consolidate cleft sentences, emphatic word order, adverbial intensifiers, and contrastive focus.",
+-  "grammar": "matices y énfasis",
++  "grammar": "emphasis and nuance",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Consolidate cleft sentences with 'lo que' and focused 'ser'.",
+-        "Employ sentence-level adverbs ('en rigor', 'rotundamente') with precision.",
+-        "Apply fronting and subject-verb inversion in rhetorical evaluation.",
+-        "Construct refined contrastive arguments using 'no... sino (que)'."
++        "Use cleft sentences with 'lo que' and 'fue ... quien / donde / cuando'.",
++        "Use stance adverbs with the right commas.",
++        "Put an adjective or a phrase first and the subject after the verb.",
++        "Correct and refine an idea with 'no ... sino' and 'sino que'."
+       ]
+     },
+     {
+@@ -36,10 +36,10 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can consolidate cleft sentences with 'lo que' and focused 'ser'.",
+-        "I can employ sentence-level adverbs ('en rigor', 'rotundamente') with precision.",
+-        "I can apply fronting and subject-verb inversion in rhetorical evaluation.",
+-        "I can construct refined contrastive arguments using 'no... sino (que)'."
++        "I can use cleft sentences with 'lo que' and 'fue ... quien / donde / cuando'.",
++        "I can use stance adverbs with the right commas.",
++        "I can put an adjective or a phrase first and the subject after the verb.",
++        "I can correct and refine an idea with 'no ... sino' and 'sino que'."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/stories/classics/b2/b2-01.json b/content/es-latam/stories/classics/b2/b2-01.json
+index c74caf1f..94e0a8ac 100644
+--- a/content/es-latam/stories/classics/b2/b2-01.json
++++ b/content/es-latam/stories/classics/b2/b2-01.json
+@@ -1,85 +1,81 @@
+ {
+   "id": "story.b2.01",
+-  "title": "El jardín de senderos que se bifurcan",
++  "title": "Borges y el jardín de los caminos que se dividen",
+   "level": "B2",
+   "lesson": 5,
+   "order": 1,
+   "type": "classic",
+   "estimatedMinutes": 7,
+-  "characters": [
+-    "Dr. Yu Tsun",
+-    "Stephen Albert",
+-    "Capitán Richard Madden"
+-  ],
+-  "summary": "Adaptación pedagógica para nivel B2 del célebre relato metafísico y de espionaje de Jorge Luis Borges sobre el tiempo, el laberinto y el destino.",
++  "characters": [],
++  "summary": "Un texto sobre Jorge Luis Borges y su cuento «El jardín de senderos que se bifurcan»: quién fue el autor, de qué trata la obra en términos generales y por qué se sigue leyendo.",
+   "author": "Jorge Luis Borges (Argentina, 1899–1986)",
+   "work": "Ficciones: El jardín de senderos que se bifurcan (1941)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir del texto clásico de Jorge Luis Borges",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En 1916, durante la Primera Guerra Mundial, el doctor Yu Tsun —un antiguo catedrático de origen chino que operaba en secreto para el servicio de espionaje alemán en Inglaterra— se encontraba acorralado. Su compañero Viktor Runeberg acababa de ser capturado por el implacable capitán británico Richard Madden, quien ahora seguía sus propios pasos. Yu Tsun custodiaba una información militar decisiva: el emplazamiento exacto del nuevo parque de artillería británico en el frente del Somme, situado en la ciudad francesa de Albert. Sin telégrafo ni emisarios y sabiendo que sería atrapado en cuestión de horas, concibió un plan desesperado para transmitir el nombre de la ciudad a su jefe en Berlín."
++      "text": "Jorge Luis Borges nació en Buenos Aires en 1899 y murió en Ginebra en 1986. Fue un escritor argentino: escribió cuentos, ensayos y poemas, y sus libros se han traducido a muchos idiomas. Hoy muchos lectores lo consideran uno de los autores más importantes de la literatura en español."
+     },
+     {
+       "type": "narration",
+-      "text": "Hojeando la guía telefónica de la comarca, dio con la única persona capaz de servirle de clave: Stephen Albert, un erudito que vivía en una apartada casa de campo en la aldea de Ashgrove. El plan de Yu Tsun era trágico pero infalible: mataría a aquel desconocido para que la prensa londinense publicara la noticia de su asesinato. Al leer el titular con el apellido de la víctima en los diarios ingleses, su jefe militar en Alemania comprendería de inmediato el enigma y ordenaría el bombardeo de la ciudad de Albert. Con una pistola en el bolsillo y la angustia de los minutos contados, Yu Tsun tomó el tren hacia Ashgrove bajo una llovizna implacable."
++      "text": "Uno de sus cuentos más conocidos se titula «El jardín de senderos que se bifurcan». Fue en 1941 cuando apareció por primera vez, en un libro con el mismo título. Tres años después, ese libro pasó a formar parte de «Ficciones», publicado en 1944."
+     },
+     {
+       "type": "narration",
+-      "text": "Al llegar al portón de hierro de la mansión, Yu Tsun fue recibido por el anciano con una serenidad asombrosa. Lejos de tratarlo como a un intruso, Stephen Albert lo acogió como a un interlocutor largamente esperado. Por una coincidencia casi inverosímil del destino, el británico era un sinólogo eminente que había consagrado décadas a descifrar el legado de Ts'ui Pên, ilustre antepasado del propio Yu Tsun que había renunciado al poder imperial para construir un laberinto y escribir una novela."
++      "text": "A primera vista, es un cuento de espías. La historia ocurre en Inglaterra, durante la Primera Guerra Mundial, y su protagonista es un profesor chino que trabaja para Alemania. Este hombre debe enviar una sola palabra secreta. No contaremos aquí cómo lo intenta. Es una historia de secretos, de peligro y de tensión, pero también de ideas."
+     },
+     {
+       "type": "narration",
+-      "text": "—Casi todos creían que su antepasado había fracasado al dejar dos proyectos inconclusos y caóticos —explicó Albert mientras desplegaba viejos manuscritos de caligrafía china sobre la mesa de caoba—. Nadie comprendía que el libro y el laberinto eran un solo y mismo objeto. En todas las ficciones habituales, cuando un hombre se enfrenta a diversas alternativas, opta por una y desecha las otras; en la de Ts'ui Pên, opta simultáneamente por todas. Crea así diversos porvenires, diversos tiempos que a su vez proliferan y se bifurcan."
++      "text": "Lo que hace único este cuento no es la intriga de espionaje, sino la idea que aparece dentro de ella: el tiempo como un jardín de caminos que se dividen. Según esa idea, el futuro no es un solo camino. Cada decisión abre varios caminos posibles, y todos existen al mismo tiempo."
+     },
+     {
+       "type": "narration",
+-      "text": "Yu Tsun escuchaba fascinado aquella explicación que resolvía el enigma de su linaje. Ts'ui Pên no concebía el tiempo como una línea uniforme y absoluta, sino como una red infinita de tiempos divergentes y paralelos. —En la mayoría de esos tiempos —susurró Albert mirándolo fijamente—, nosotros no existimos; en otros, usted es mi amigo y yo su discípulo; en este, por desgracia, el destino nos ha colocado en bandos opuestos. En aquel instante de deslumbramiento intelectual, Yu Tsun sintió por el sabio una veneración y un cariño profundos."
++      "text": "De esa imagen viene el título del cuento. Un sendero es un camino estrecho, y bifurcarse significa dividirse en dos. Así, el título habla de un jardín donde los caminos se dividen una y otra vez, como en un laberinto. El título, por tanto, ya anuncia el tema del cuento."
+     },
+     {
+       "type": "narration",
+-      "text": "De pronto, al mirar hacia el sendero del jardín, Yu Tsun vio una figura conocida: el capitán Madden corría ya hacia la casa para capturarlo. El tiempo de la contemplación filosófica había concluido; la maquinaria implacable de la guerra volvía a cerrarse sobre ellos. Desgarrado por el remordimiento pero compelido por la necesidad de cumplir su misión antes de ser arrestado, Yu Tsun sacó el revólver y disparó a quemarropa contra la espalda de Albert."
++      "text": "Todavía hoy, el cuento sigue atrayendo a muchos lectores. Insólita resulta, para muchos, la imagen de un laberinto hecho de tiempo. Quizá lo que más fascina es imaginar que no existe un único futuro, sino muchos futuros posibles a la vez."
+     },
+     {
+       "type": "narration",
+-      "text": "Madden irrumpió instantes después y desarmó al espía. Días más tarde, en la celda de una prisión militar donde esperaba la horca, Yu Tsun supo que su estratagema había triunfado: los diarios británicos informaron ampliamente sobre el insólito asesinato de Stephen Albert, y el cuartel general en Berlín descifró la clave y bombardeó la ciudadela enemiga. Sin embargo, ninguna victoria militar podía calmar su tormento. Encerrado en la soledad de su celda, el vencedor solo sentía una innumerable contrición y un cansancio que ninguna recompensa terrenal podría aliviar jamás."
++      "text": "Por eso, leer este cuento es una invitación a pensar. ¿Qué pasaría si eligiéramos otro camino mañana? Esa pregunta no pertenece solo a la literatura, sino también a la vida diaria. Para disfrutar de él, no hace falta ser experto, sino tener curiosidad."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Por qué el doctor Yu Tsun decide buscar y asesinar precisamente a Stephen Albert?",
++          "question": "¿Cuándo apareció por primera vez «El jardín de senderos que se bifurcan»?",
+           "options": [
+-            "Porque Albert era un espía británico que había delatado a Viktor Runeberg.",
+-            "Para que la prensa publicara el apellido de la víctima y su jefe en Berlín descifrara el nombre de la ciudad militar que debían atacar.",
+-            "Porque Albert poseía los planos militares originales de las defensas británicas en el Somme.",
+-            "Para robar los manuscritos antiguos de su antepasado imperial y venderlos en el mercado negro."
++            "En 1899, cuando nació Borges.",
++            "En 1941, en un libro con el mismo título.",
++            "En 1944, dentro de «Ficciones».",
++            "En 1986, después de la muerte del autor."
+           ],
+           "correctIndex": 1,
+-          "explanation": "Yu Tsun ideó un código público: al asesinar a un hombre llamado Albert, los periódicos británicos publicarían su nombre, señalando a Alemania que la ciudad objetivo era Albert."
++          "explanation": "El texto dice que el cuento apareció por primera vez en 1941 y que tres años después el libro pasó a formar parte de «Ficciones»."
+         },
+         {
+-          "question": "¿Cuál es la fascinante revelación hermenéutica que Stephen Albert desvela al doctor Yu Tsun en Ashgrove?",
++          "question": "Según el texto, ¿qué hace único este cuento?",
+           "options": [
+-            "Que Ts'ui Pên concibió un tratado de artillería militar codificado para guiar las tropas durante la Gran Guerra.",
+-            "Que el laberinto infinito y la novela supuestamente caótica de su antepasado constituyen una sola y misma realidad metafísica sobre el tiempo bifurcado.",
+-            "Que el jardín botánico de la mansión oculta los planos arquitectónicos de una fortaleza imperial en China.",
+-            "Que la dinastía de Ts'ui Pên había sido despojada de sus tierras por una orden judicial secreta de las autoridades coloniales."
++            "La intriga de espionaje.",
++            "La idea del tiempo como un jardín de caminos que se dividen.",
++            "El lugar donde ocurre la historia: Buenos Aires.",
++            "La vida del autor en Ginebra."
+           ],
+           "correctIndex": 1,
+-          "explanation": "Albert descifra el magno enigma de Ts'ui Pên demostrando que el libro laberíntico encarna en sí mismo el laberinto: un laberinto en el tiempo donde todas las posibilidades coexisten."
++          "explanation": "El texto afirma que lo que hace único el cuento no es la intriga de espionaje, sino la idea del tiempo como un jardín de caminos que se dividen."
+         },
+         {
+-          "question": "¿Qué trágico contrapunto dramático sella el destino de Yu Tsun al término del relato?",
++          "question": "¿Qué idea del futuro presenta el texto?",
+           "options": [
+-            "Que logra escapar hacia Sudamérica pero pierde todos los manuscritos en el naufragio del barco.",
+-            "Que descubre que el capitán Madden y Stephen Albert eran en secreto la misma persona.",
+-            "Que a pesar de haber culminado con éxito su misión bélica, queda sumido en una pena y un remordimiento infinitos por haber sacrificado al sabio que lo admiraba.",
+-            "Que es indultado por el tribunal militar británico a cambio de traducir los textos antiguos de Ts'ui Pên."
++            "Que el futuro es un solo camino.",
++            "Que existen muchos futuros posibles a la vez.",
++            "Que el futuro depende del país donde vivimos.",
++            "Que el futuro no se puede imaginar."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "Borges remata el cuento con la amarga victoria del espía: triunfó militarmente al enviar el mensaje, pero a costa de una culpa y un dolor irreparables."
++          "correctIndex": 1,
++          "explanation": "Según el texto, cada decisión abre varios caminos posibles y todos existen al mismo tiempo."
+         }
+       ]
+     }
+diff --git a/content/es-latam/vocabulary/b2/b2-01-01-voc.json b/content/es-latam/vocabulary/b2/b2-01-01-voc.json
+index a7825d90..8291c4c8 100644
+--- a/content/es-latam/vocabulary/b2/b2-01-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-01-01-voc.json
+@@ -1,8 +1,8 @@
+ {
+   "id": "vocab.b2.01.01",
+   "lesson": "b2-01-01",
+-  "title": "Estructuras de énfasis y foco",
+-  "theme": "Matices y precisión argumentativa",
++  "title": "Words for emphasis and focus",
++  "theme": "Nuance and precision in argument",
+   "words": [
+     {
+       "lemma": "el matiz",
+@@ -26,7 +26,7 @@
+     },
+     {
+       "lemma": "enfatizar",
+-      "translation": "to emphasize",
++      "translation": "to emphasise",
+       "pos": "verb"
+     },
+     {
+diff --git a/content/es-latam/vocabulary/b2/b2-01-02-voc.json b/content/es-latam/vocabulary/b2/b2-01-02-voc.json
+index d1401779..53b9d827 100644
+--- a/content/es-latam/vocabulary/b2/b2-01-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-01-02-voc.json
+@@ -1,8 +1,8 @@
+ {
+   "id": "vocab.b2.01.02",
+   "lesson": "b2-01-02",
+-  "title": "Adverbios de matiz y precisión",
+-  "theme": "Matices y precisión argumentativa",
++  "title": "Words for stance and focus",
++  "theme": "Nuance and precision in argument",
+   "words": [
+     {
+       "lemma": "francamente",
+@@ -43,6 +43,26 @@
+       "lemma": "deliberadamente",
+       "translation": "deliberately",
+       "pos": "adverb"
++    },
++    {
++      "lemma": "sinceramente",
++      "translation": "honestly, sincerely",
++      "pos": "adverb"
++    },
++    {
++      "lemma": "afortunadamente",
++      "translation": "fortunately",
++      "pos": "adverb"
++    },
++    {
++      "lemma": "lamentablemente",
++      "translation": "unfortunately",
++      "pos": "adverb"
++    },
++    {
++      "lemma": "en realidad",
++      "translation": "actually, in fact",
++      "pos": "expression"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-01-03-voc.json b/content/es-latam/vocabulary/b2/b2-01-03-voc.json
+index b5ae16f9..b3657fa5 100644
+--- a/content/es-latam/vocabulary/b2/b2-01-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-01-03-voc.json
+@@ -1,8 +1,8 @@
+ {
+   "id": "vocab.b2.01.03",
+   "lesson": "b2-01-03",
+-  "title": "Inversión y relieve discursivo",
+-  "theme": "Matices y precisión argumentativa",
++  "title": "Words for fronting and evaluation",
++  "theme": "Nuance and precision in argument",
+   "words": [
+     {
+       "lemma": "la relevancia",
+diff --git a/content/es-latam/vocabulary/b2/b2-01-04-voc.json b/content/es-latam/vocabulary/b2/b2-01-04-voc.json
+index 9ca4af85..b167dbcc 100644
+--- a/content/es-latam/vocabulary/b2/b2-01-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-01-04-voc.json
+@@ -1,8 +1,8 @@
+ {
+   "id": "vocab.b2.01.04",
+   "lesson": "b2-01-04",
+-  "title": "Contraste y refutación",
+-  "theme": "Matices y precisión argumentativa",
++  "title": "Words for contrast and refutation",
++  "theme": "Nuance and precision in argument",
+   "words": [
+     {
+       "lemma": "la discrepancia",
+diff --git a/content/es-latam/vocabulary/b2/b2-01-05-voc.json b/content/es-latam/vocabulary/b2/b2-01-05-voc.json
+index 2ee1c1a5..9b8f0902 100644
+--- a/content/es-latam/vocabulary/b2/b2-01-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-01-05-voc.json
+@@ -1,8 +1,8 @@
+ {
+   "id": "vocab.b2.01.05",
+   "lesson": "b2-01-05",
+-  "title": "Vocabulario de la narración filosófica",
+-  "theme": "Matices y precisión argumentativa",
++  "title": "Words for a story about time",
++  "theme": "Nuance and precision in argument",
+   "words": [
+     {
+       "lemma": "la bifurcación",

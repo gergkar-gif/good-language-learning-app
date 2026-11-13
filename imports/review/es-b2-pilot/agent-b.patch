@@ -1,0 +1,2069 @@
+diff --git a/content/es-latam/exercises/b2/b2-02-01-ex.json b/content/es-latam/exercises/b2/b2-02-01-ex.json
+index cd6d00d7..29657290 100644
+--- a/content/es-latam/exercises/b2/b2-02-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-02-01-ex.json
+@@ -11,16 +11,16 @@
+           "gloom, half-light"
+         ],
+         [
+-          "el vestigio",
+-          "vestige, trace"
++          "el murmullo",
++          "murmur"
+         ],
+         [
+           "la quietud",
+-          "stillness, silence"
++          "stillness, calm"
+         ],
+         [
+           "desvanecerse",
+-          "to fade away, to vanish"
++          "to fade away"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-02-01.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué función cumple el imperfecto en 'La niebla cubría el camino cuando sonaron las campanas'?",
++      "question": "Which sentence gives the scene first and then the event that breaks into it?",
+       "options": [
+-        "Establece el trasfondo escénico sobre el cual ocurre el evento puntual.",
+-        "Indica una acción completada que interrumpe a otra.",
+-        "Expresa una orden o mandato atenuado en el pasado."
++        "Rosa dormía cuando sonó el teléfono.",
++        "Rosa durmió cuando sonaba el teléfono.",
++        "Rosa dormía cuando sonaba el teléfono."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -46,10 +46,10 @@
+       "id": "b2-02-01.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "El reloj de la sala marcaba las doce cuando alguien __ con violencia a la puerta.",
+-      "hint": "llamar",
+-      "answer": "llamó",
+-      "english": "The living room clock was striking twelve when someone knocked violently on the door.",
++      "sentence": "Hacía mucho frío y la calle estaba vacía cuando Marta __ del café.",
++      "hint": "salir",
++      "answer": "salió",
++      "english": "It was very cold and the street was empty when Marta left the café.",
+       "teaches": [
+         "preterite-vs-imperfect"
+       ]
+@@ -59,24 +59,28 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "La",
+-        "penumbra",
+-        "envolvía",
+-        "el",
+-        "valle",
++        "Era",
++        "de",
++        "noche",
++        "y",
++        "llovía",
+         "cuando",
+-        "partieron."
++        "sonó",
++        "el",
++        "teléfono."
+       ],
+       "solution": [
+-        "La",
+-        "penumbra",
+-        "envolvía",
+-        "el",
+-        "valle",
++        "Era",
++        "de",
++        "noche",
++        "y",
++        "llovía",
+         "cuando",
+-        "partieron."
++        "sonó",
++        "el",
++        "teléfono."
+       ],
+-      "english": "The gloom enveloped the valley when they departed.",
++      "english": "It was night and it was raining when the phone rang.",
+       "teaches": [
+         "preterite-vs-imperfect"
+       ]
+@@ -87,34 +91,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Narrador A",
+-          "text": "¿Cómo recuerdas la atmósfera de esa noche en Comala?"
++          "speaker": "Tomás",
++          "text": "¿Qué pasó anoche en tu calle?"
+         },
+         {
+-          "speaker": "Narrador B",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Narrador A",
+-          "text": "Y en ese instante decisivo se produjo el encuentro."
++          "speaker": "Tomás",
++          "text": "¡Qué miedo! ¿Y saliste a ver?"
+         }
+       ],
+       "options": [
+-        "Reinaba un silencio absoluto y las sombras se alargaban por los muros.",
+-        "Ayer compramos dos pasajes para viajar en autobús.",
+-        "Mañana terminará la reconstrucción del viejo campanario."
++        "Estaba en la cocina y, de pronto, oí un ruido extraño.",
++        "Estaba en la cocina y, de pronto, oía un ruido extraño.",
++        "Estoy en la cocina y, de pronto, oí un ruido extraño."
+       ],
+       "correct": 0,
+       "teaches": [
+         "preterite-vs-imperfect"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "present-tense"
++      }
+     },
+     {
+       "id": "b2-02-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El viento soplaba sin descanso y los murmullos se apagaban en la distancia.",
+-      "english": "The wind blew ceaselessly and the murmurs died away in the distance.",
++      "sentence": "Amanecía y no se oía ningún murmullo cuando abrió la ventana.",
++      "english": "Day was breaking and no murmur could be heard when she opened the window.",
+       "teaches": [
+         "preterite-vs-imperfect"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-02-02-ex.json b/content/es-latam/exercises/b2/b2-02-02-ex.json
+index c3f41e86..78a24f98 100644
+--- a/content/es-latam/exercises/b2/b2-02-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-02-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el trasfondo",
+-          "background, subtext"
++          "el acontecimiento",
++          "event, happening"
+         ],
+         [
+-          "acontecer",
+-          "to happen, to take place"
++          "el trasfondo",
++          "background, underlying story"
+         ],
+         [
+           "preceder",
+-          "to precede"
++          "to come before"
+         ],
+         [
+           "desentrañar",
+-          "to unravel, to figure out"
++          "to work out, to unravel"
+         ]
+       ],
+       "teaches": [
+@@ -31,25 +31,29 @@
+       "id": "b2-02-02.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué se utiliza el pluscuamperfecto en 'Pedro comprendió que su hermano ya había tomado la decisión'?",
++      "question": "Which sentence says that when Luis arrived, his sister had already left?",
+       "options": [
+-        "Porque la decisión se tomó antes del momento en que Pedro lo comprendió.",
+-        "Porque describe una acción habitual que se repetía con frecuencia.",
+-        "Porque expresa una hipótesis probable en el momento presente."
++        "Cuando Luis llegó, su hermana ya se había ido.",
++        "Cuando Luis llegó, su hermana ya se ha ido.",
++        "Cuando Luis llegó, su hermana ya se iba."
+       ],
+       "correct": 0,
+       "teaches": [
+         "pluscuamperfecto"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "preterito-perfecto",
++        "2": "imperfect"
++      }
+     },
+     {
+       "id": "b2-02-02.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Cuando los rescatistas alcanzaron la cumbre, la tormenta ya __ por completo el sendero.",
+-      "hint": "borrar",
+-      "answer": "había borrado",
+-      "english": "When the rescuers reached the summit, the storm had already completely erased the trail.",
++      "sentence": "Cuando llegué a la estación, mi hermano ya __ los boletos.",
++      "hint": "comprar",
++      "answer": "había comprado",
++      "english": "When I got to the station, my brother had already bought the tickets.",
+       "teaches": [
+         "pluscuamperfecto"
+       ]
+@@ -59,26 +63,30 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Él",
++        "Cuando",
++        "abrió",
++        "la",
++        "carta,",
++        "ya",
++        "sabía",
++        "lo",
++        "que",
+         "había",
+-        "previsto",
+-        "aquel",
+-        "desenlace",
+-        "muchos",
+-        "años",
+-        "atrás."
++        "pasado."
+       ],
+       "solution": [
+-        "Él",
++        "Cuando",
++        "abrió",
++        "la",
++        "carta,",
++        "ya",
++        "sabía",
++        "lo",
++        "que",
+         "había",
+-        "previsto",
+-        "aquel",
+-        "desenlace",
+-        "muchos",
+-        "años",
+-        "atrás."
++        "pasado."
+       ],
+-      "english": "He had foreseen that outcome many years ago.",
++      "english": "When she opened the letter, she already knew what had happened.",
+       "teaches": [
+         "pluscuamperfecto"
+       ]
+@@ -89,34 +97,38 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Investigador",
+-          "text": "¿Cuándo descubrieron los documentos confidenciales?"
++          "speaker": "Sara",
++          "text": "¿Por qué estabas tan nervioso en la reunión?"
+         },
+         {
+-          "speaker": "Archivista",
++          "speaker": "Luis",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Investigador",
+-          "text": "Eso explica por qué nadie los encontró durante la auditoría anterior."
++          "speaker": "Sara",
++          "text": "Ahora lo entiendo."
+         }
+       ],
+       "options": [
+-        "Al revisar el sótano nos percatamos de que alguien los había ocultado allí.",
+-        "Comenzaremos la clasificación formal el mes entrante.",
+-        "Los archivistas siempre trabajan con guantes de algodón blanco."
++        "Porque nunca había hablado delante de tanta gente.",
++        "Porque nunca hablé delante de tanta gente.",
++        "Porque nunca hablaré delante de tanta gente."
+       ],
+       "correct": 0,
+       "teaches": [
+         "pluscuamperfecto"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "preterito-indefinido",
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-02-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Nadie sospechaba que el anciano ya había dejado escritas todas sus memorias.",
+-      "english": "No one suspected that the old man had already left all his memoirs written.",
++      "sentence": "En la nieve había unas huellas que alguien había dejado esa mañana.",
++      "english": "In the snow there were some footprints that someone had left that morning.",
+       "teaches": [
+         "pluscuamperfecto"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-02-03-ex.json b/content/es-latam/exercises/b2/b2-02-03-ex.json
+index b41be0f1..59391293 100644
+--- a/content/es-latam/exercises/b2/b2-02-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-02-03-ex.json
+@@ -20,7 +20,7 @@
+         ],
+         [
+           "flaquear",
+-          "to falter, to weaken"
++          "to weaken, to falter"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-02-03.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué matiz adquiere el verbo en 'La abogada no quiso firmar aquel documento fraudulento'?",
++      "question": "Which sentence says that the manager refused to answer?",
+       "options": [
+-        "Se negó explícitamente a firmarlo (rechazo enérgico y puntual).",
+-        "Simplemente tenía la vaga intención de no firmarlo.",
+-        "No tenía la capacidad física ni legal de estampar su firma."
++        "El gerente no quiso responder.",
++        "El gerente no quería responder.",
++        "El gerente no pudo responder."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -46,10 +46,10 @@
+       "id": "b2-02-03.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Tras largas horas de deliberación, el jurado por fin __ llegar a un veredicto unánime.",
+-      "hint": "poder - managed to",
+-      "answer": "pudo",
+-      "english": "After long hours of deliberation, the jury finally managed to reach a unanimous verdict.",
++      "sentence": "Después de mucho esfuerzo, por fin __ abrir la puerta.",
++      "hint": "poder, I",
++      "answer": "pude",
++      "english": "After a lot of effort, I finally managed to open the door.",
+       "teaches": [
+         "verbos-cambio-significado-pasado"
+       ]
+@@ -59,28 +59,26 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Fue",
+-        "en",
+-        "el",
+-        "aeropuerto",
+-        "donde",
+-        "conoció",
+-        "a",
+-        "su",
+-        "socio."
++        "Supimos",
++        "la",
++        "noticia",
++        "cuando",
++        "ya",
++        "era",
++        "muy",
++        "tarde."
+       ],
+       "solution": [
+-        "Fue",
+-        "en",
+-        "el",
+-        "aeropuerto",
+-        "donde",
+-        "conoció",
+-        "a",
+-        "su",
+-        "socio."
++        "Supimos",
++        "la",
++        "noticia",
++        "cuando",
++        "ya",
++        "era",
++        "muy",
++        "tarde."
+       ],
+-      "english": "It was at the airport where he met his partner for the first time.",
++      "english": "We found out the news when it was already very late.",
+       "teaches": [
+         "verbos-cambio-significado-pasado"
+       ]
+@@ -91,34 +89,37 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Periodista",
+-          "text": "¿Cuándo se enteraron del dictamen de la corte?"
++          "speaker": "Ana",
++          "text": "¿Cuándo te enteraste de que Paco se mudaba?"
+         },
+         {
+-          "speaker": "Portavoz",
++          "speaker": "Tú",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Periodista",
+-          "text": "Comprendo, fue una noticia inesperada para todo el país."
++          "speaker": "Ana",
++          "text": "Qué sorpresa, ¿no?"
+         }
+       ],
+       "options": [
+-        "Lo supimos esta misma mañana a través de un comunicado oficial.",
+-        "Sabíamos perfectamente que el derecho procesal es muy complejo.",
+-        "El tribunal suele reunirse los martes por la tarde."
++        "Lo supe ayer, cuando me llamó una amiga.",
++        "Lo sabía ayer, cuando me llamó una amiga.",
++        "Lo he sabido ayer, cuando me llamó una amiga."
+       ],
+       "correct": 0,
+       "teaches": [
+         "verbos-cambio-significado-pasado"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "preterito-perfecto"
++      }
+     },
+     {
+       "id": "b2-02-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Aunque la presión era insostenible, el diplomático no quiso ceder ni un milímetro.",
+-      "english": "Although the pressure was untenable, the diplomat refused to yield a single millimeter.",
++      "sentence": "Con mucho empeño, por fin pudimos terminar el trabajo.",
++      "english": "With a lot of determination, we finally managed to finish the work.",
+       "teaches": [
+         "verbos-cambio-significado-pasado"
+       ]
+diff --git a/content/es-latam/exercises/b2/b2-02-04-ex.json b/content/es-latam/exercises/b2/b2-02-04-ex.json
+index c3dfd9ce..95bc634a 100644
+--- a/content/es-latam/exercises/b2/b2-02-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-02-04-ex.json
+@@ -12,15 +12,15 @@
+         ],
+         [
+           "el sobresalto",
+-          "startle, shock"
++          "start, fright"
+         ],
+         [
+           "paulatino",
+-          "gradual, step-by-step"
++          "gradual, slow"
+         ],
+         [
+-          "precipitar",
+-          "to trigger, to accelerate"
++          "al cabo de",
++          "after (a length of time)"
+         ]
+       ],
+       "teaches": [
+@@ -31,27 +31,30 @@
+       "id": "b2-02-04.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué conector denota inmediatez rigurosa en el pasado en '_____ escuchó los pasos, apagó la vela'?",
++      "question": "Which sentence says that the lights went out as soon as the storm began?",
+       "options": [
+-        "Apenas",
+-        "A medida que",
+-        "Al cabo de"
++        "Apenas empezó la tormenta, se fue la luz.",
++        "A medida que empezaba la tormenta, se fue la luz.",
++        "Al cabo de la tormenta, se fue la luz."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "cuando-mientras"
+-      ]
++        "secuencia-narrativa"
++      ],
++      "distractor_skills": {
++        "1": "cuanto-mas-tanto-mas"
++      }
+     },
+     {
+       "id": "b2-02-04.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Conforme __ las tropas hacia el norte, el aprovisionamiento se hacía más difícil.",
+-      "hint": "avanzar",
+-      "answer": "avanzaban",
+-      "english": "As the troops advanced toward the north, provisioning grew more difficult.",
++      "sentence": "A medida que __ las horas, la plaza se quedaba más tranquila.",
++      "hint": "pasar",
++      "answer": "pasaban",
++      "english": "As the hours went by, the square became calmer.",
+       "teaches": [
+-        "cuando-mientras"
++        "cuanto-mas-tanto-mas"
+       ]
+     },
+     {
+@@ -59,28 +62,30 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "No",
+-        "bien",
+-        "sonó",
+-        "la",
+-        "alarma,",
+-        "desalojaron",
++        "Apenas",
++        "llegó",
++        "a",
++        "casa,",
++        "se",
++        "durmió",
++        "en",
+         "el",
+-        "edificio."
++        "sofá."
+       ],
+       "solution": [
+-        "No",
+-        "bien",
+-        "sonó",
+-        "la",
+-        "alarma,",
+-        "desalojaron",
++        "Apenas",
++        "llegó",
++        "a",
++        "casa,",
++        "se",
++        "durmió",
++        "en",
+         "el",
+-        "edificio."
++        "sofá."
+       ],
+-      "english": "No sooner did the alarm sound than they evacuated the building.",
++      "english": "As soon as he got home, he fell asleep on the sofa.",
+       "teaches": [
+-        "cuando-mientras"
++        "secuencia-narrativa"
+       ]
+     },
+     {
+@@ -89,36 +94,39 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Testigo A",
+-          "text": "¿En qué momento exacto se desató el pánico en la estación?"
++          "speaker": "Ana",
++          "text": "¿Qué hiciste cuando llegaron tus amigos?"
+         },
+         {
+-          "speaker": "Testigo B",
++          "speaker": "Luis",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Testigo A",
+-          "text": "Fue una reacción en cadena verdaderamente aterradora."
++          "speaker": "Ana",
++          "text": "Qué buena idea."
+         }
+       ],
+       "options": [
+-        "Apenas se escuchó el estruendo subterráneo, la gente corrió hacia las salidas.",
+-        "El metro de la ciudad cuenta con doce líneas principales en funcionamiento.",
+-        "Siempre compramos el billete mensual para viajar con descuento."
++        "En cuanto llegaron, les preparé algo de comer.",
++        "En cuanto lleguen, les preparé algo de comer.",
++        "En cuanto llegarán, les preparé algo de comer."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "cuando-mientras"
+-      ]
++        "cuando-subjuntivo"
++      ],
++      "distractor_skills": {
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-02-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Al cabo de intensas negociaciones que duraron toda la noche, firmaron el acuerdo.",
+-      "english": "After intense negotiations that lasted all night, they signed the agreement.",
++      "sentence": "Conforme pasaban los días, el miedo se desvanecía poco a poco.",
++      "english": "As the days went by, the fear faded little by little.",
+       "teaches": [
+-        "cuando-mientras"
++        "cuanto-mas-tanto-mas"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-02-05-ex.json b/content/es-latam/exercises/b2/b2-02-05-ex.json
+index ee591150..58199cad 100644
+--- a/content/es-latam/exercises/b2/b2-02-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-02-05-ex.json
+@@ -7,20 +7,28 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la deferencia",
+-          "deference, respect"
++          "el escritor",
++          "writer"
+         ],
+         [
+-          "el conato",
+-          "attempt, slight outbreak"
++          "el cuento",
++          "short story"
+         ],
+         [
+-          "titubear",
+-          "to hesitate, to waver"
++          "el fotógrafo",
++          "photographer"
+         ],
+         [
+-          "la sutileza",
+-          "subtlety"
++          "el siglo",
++          "century"
++        ],
++        [
++          "el fragmento",
++          "fragment, short piece"
++        ],
++        [
++          "muerto",
++          "dead (person)"
+         ]
+       ],
+       "teaches": [
+@@ -31,27 +39,31 @@
+       "id": "b2-02-05.ex02",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué valor pragmático tiene el imperfecto en 'Disculpe, señorita, venía a preguntar por las becas de posgrado'?",
++      "question": "Which sentence politely asks, right now, for an appointment with the doctor?",
+       "options": [
+-        "Atenuación cortés que suaviza una petición en el presente.",
+-        "Descripción objetiva de una caminata completada en el pasado.",
+-        "Acción habitual repetida diariamente durante varios años."
++        "Quería pedirle una cita con el doctor.",
++        "Quise pedirle una cita con el doctor.",
++        "Querré pedirle una cita con el doctor."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "preterite-vs-imperfect"
+-      ]
++        "polite-softening"
++      ],
++      "distractor_skills": {
++        "1": "verbos-cambio-significado-pasado",
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-02-05.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Buenas tardes, profesor; __ hablar con usted sobre la corrección del ensayo.",
+-      "hint": "querer - polite imperfect",
+-      "answer": "quería",
+-      "english": "Good afternoon, professor; I wanted to speak with you about the essay correction.",
++      "sentence": "Buenas tardes, __ a preguntar por el horario del museo.",
++      "hint": "venir, polite imperfect",
++      "answer": "venía",
++      "english": "Good afternoon, I have come to ask about the museum's opening hours.",
+       "teaches": [
+-        "preterite-vs-imperfect"
++        "polite-softening"
+       ]
+     },
+     {
+@@ -59,28 +71,28 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Por",
+-        "poco",
+-        "perdía",
+-        "el",
+-        "tren",
+-        "de",
+-        "las",
+-        "ocho."
++        "Quería",
++        "pedirle",
++        "un",
++        "favor,",
++        "si",
++        "no",
++        "le",
++        "molesta."
+       ],
+       "solution": [
+-        "Por",
+-        "poco",
+-        "perdía",
+-        "el",
+-        "tren",
+-        "de",
+-        "las",
+-        "ocho."
++        "Quería",
++        "pedirle",
++        "un",
++        "favor,",
++        "si",
++        "no",
++        "le",
++        "molesta."
+       ],
+-      "english": "I almost missed the eight o'clock train.",
++      "english": "I wanted to ask you a favour, if you don't mind.",
+       "teaches": [
+-        "preterite-vs-imperfect"
++        "polite-softening"
+       ]
+     },
+     {
+@@ -89,36 +101,40 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Secretaria",
+-          "text": "Bienvenido al consulado. ¿En qué le puedo colaborar?"
++          "speaker": "Empleada",
++          "text": "Buenas tardes. ¿En qué puedo ayudarle?"
+         },
+         {
+-          "speaker": "Ciudadano",
++          "speaker": "Cliente",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Secretaria",
+-          "text": "Con mucho gusto, tome asiento mientras reviso el expediente."
++          "speaker": "Empleada",
++          "text": "Claro, un momento, por favor."
+         }
+       ],
+       "options": [
+-        "Venía a consultar los requisitos para la renovación del pasaporte.",
+-        "El año pasado renové la cédula en mi ciudad natal.",
+-        "Los pasaportes caducan invariablemente cada cinco o diez años."
++        "Disculpe, venía a preguntar por el horario del tren.",
++        "Disculpe, vendré a preguntar por el horario del tren.",
++        "Disculpe, había venido a preguntar por el horario del tren."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "preterite-vs-imperfect"
+-      ]
++        "polite-softening"
++      ],
++      "distractor_skills": {
++        "1": "futuro-simple",
++        "2": "pluscuamperfecto"
++      }
+     },
+     {
+       "id": "b2-02-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Titubeó unos segundos porque no pretendía incomodar a los miembros del comité.",
+-      "english": "He hesitated a few seconds because he did not intend to inconvenience the committee members.",
++      "sentence": "Buenas noches, llamaba para preguntar si todavía hay mesa.",
++      "english": "Good evening, I'm calling to ask if there is still a table.",
+       "teaches": [
+-        "preterite-vs-imperfect"
++        "polite-softening"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b2/b2-02-consolidation-ex.json b/content/es-latam/exercises/b2/b2-02-consolidation-ex.json
+index 55858eb9..7f00f650 100644
+--- a/content/es-latam/exercises/b2/b2-02-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-02-consolidation-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la penumbra",
+-          "gloom, half-light"
++          "el murmullo",
++          "murmur"
+         ],
+         [
+-          "el desenlace",
+-          "outcome, ending"
++          "el acontecimiento",
++          "event, happening"
+         ],
+         [
+-          "súbitamente",
+-          "suddenly"
++          "rehusar",
++          "to refuse"
+         ],
+         [
+-          "el conato",
+-          "attempt, slight outbreak"
++          "al cabo de",
++          "after (a length of time)"
+         ]
+       ],
+       "teaches": [
+@@ -31,11 +31,11 @@
+       "id": "b2-02-consolidation.ex02",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "Según el texto sobre Comala, ¿qué descubre el narrador poco después de llegar al pueblo?",
++      "question": "According to the text, what is the novel Pedro Páramo about?",
+       "options": [
+-        "Que su padre, Pedro Páramo, ya había muerto hace muchos años y el pueblo está habitado por ánimas.",
+-        "Que su madre todavía lo esperaba con vida en la casa parroquial.",
+-        "Que el pueblo estaba prosperando gracias a la minería y el comercio fluvial."
++        "Un joven va a Comala a buscar a su padre y encuentra un pueblo de muertos.",
++        "Un fotógrafo viaja por Jalisco y muestra sus fotografías a los vecinos.",
++        "Un escritor vuelve a su pueblo para publicar su primer libro de cuentos."
+       ],
+       "correct": 0
+     },
+@@ -43,28 +43,27 @@
+       "id": "b2-02-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "En la frase 'Supimos la noticia cuando ya todos se habían marchado', ¿qué expresan respectivamente 'supimos' y 'habían marchado'?",
++      "question": "Which sentence means \"I met Clara when I had already heard a lot about her\"?",
+       "options": [
+-        "'Supimos' marca enterarse en ese momento puntual; 'habían marchado' marca una acción previa completada.",
+-        "'Supimos' describe una acción habitual; 'habían marchado' indica una acción que casi ocurrió.",
+-        "Ambos verbos expresan acciones simultáneas en el presente de la narración."
++        "Conocí a Clara cuando ya había oído mucho de ella.",
++        "Conocía a Clara cuando ya había oído mucho de ella.",
++        "Conocí a Clara cuando ya oía mucho de ella."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "verbos-cambio-significado-pasado",
+-        "pluscuamperfecto"
++        "verbos-cambio-significado-pasado"
+       ]
+     },
+     {
+       "id": "b2-02-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "No bien __ el último acorde, la sala entera se puso de pie con entusiasmo.",
+-      "hint": "sonar",
+-      "answer": "sonó",
+-      "english": "No sooner did the final chord sound than the entire hall rose to its feet enthusiastically.",
++      "sentence": "En cuanto __ el último tren, la estación se quedó vacía.",
++      "hint": "salir",
++      "answer": "salió",
++      "english": "As soon as the last train left, the station was left empty.",
+       "teaches": [
+-        "cuando-mientras"
++        "secuencia-narrativa"
+       ]
+     },
+     {
+@@ -72,10 +71,10 @@
+       "type": "sentence-order",
+       "category": "grammar",
+       "sentences": [
+-        "Amanecía cuando el forastero divisó las primeras casas del pueblo. [It was dawning when the stranger caught sight of the village's first houses.]",
+-        "Apenas cruzó el umbral, advirtió que la casa había permanecido cerrada durante años. [Barely had he crossed the threshold when he noticed that the house had remained closed for years.]",
+-        "El guía no quiso acompañarlo más allá del cementerio abandonado. [The guide refused to accompany him beyond the abandoned cemetery.]",
+-        "Al cabo de varias horas de búsqueda infructuosa, decidió retirarse. [After several hours of fruitless search, he decided to withdraw.]"
++        "Rulfo nació en 1917 en el estado de Jalisco. [Rulfo was born in 1917 in the state of Jalisco.]",
++        "En 1953 apareció su libro de cuentos El llano en llamas. [In 1953 his book of stories El llano en llamas came out.]",
++        "Dos años después publicó la novela Pedro Páramo. [Two years later he published the novel Pedro Páramo.]",
++        "Murió en 1986 en la Ciudad de México. [He died in 1986 in Mexico City.]"
+       ],
+       "solution": [
+         0,
+@@ -84,8 +83,7 @@
+         3
+       ],
+       "teaches": [
+-        "preterite-vs-imperfect",
+-        "cuando-mientras"
++        "secuencia-narrativa"
+       ]
+     },
+     {
+@@ -94,36 +92,36 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Profesor",
+-          "text": "¿Por qué es tan impactante la prosa de Juan Rulfo en 'Pedro Páramo'?"
++          "speaker": "Profesora",
++          "text": "¿Por qué es tan importante esa novela de Rulfo?"
+         },
+         {
+           "speaker": "Estudiante",
+           "text": "_____"
+         },
+         {
+-          "speaker": "Profesor",
+-          "text": "Exacto: la ambigüedad temporal es la esencia de su estética."
++          "speaker": "Profesora",
++          "text": "Exacto, y por eso se sigue leyendo hoy."
+         }
+       ],
+       "options": [
+-        "Porque disolvió las fronteras temporales usando el imperfecto y el pluscuamperfecto para suspender el tiempo.",
+-        "Porque describe con mucho detalle las leyes mercantiles del México virreinal.",
+-        "Porque todos los capítulos están redactados exclusivamente en presente de indicativo."
++        "Porque muchos escritores de América Latina aprendieron de ella.",
++        "Porque Rulfo publicó veinte novelas en pocos años, una cada año.",
++        "Porque cuenta toda la vida de Rulfo en orden, año por año."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "preterite-vs-imperfect"
++        "b2-narrative-time-aspect-vocab"
+       ]
+     },
+     {
+       "id": "b2-02-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "El viento soplaba entre las ruinas y nadie supo jamás qué destino tuvieron aquellos pobladores.",
+-      "english": "The wind blew among the ruins and no one ever found out what destiny those inhabitants met.",
++      "sentence": "Cuando murió, Rulfo había publicado muy poco, pero su obra ya se leía en muchos países.",
++      "english": "When he died, Rulfo had published very little, but his work was already being read in many countries.",
+       "teaches": [
+-        "verbos-cambio-significado-pasado"
++        "pluscuamperfecto"
+       ]
+     },
+     {
+@@ -132,14 +130,33 @@
+       "category": "writing",
+       "template": [
+         {
+-          "prompt": "Escribe una frase narrativa que contemple una acción en primer plano (indefinido) sobre un fondo sensorial (imperfecto), usando el conector 'apenas'.",
+-          "answer": "Apenas oscureció, un frío intenso invadió las habitaciones desoladas de la hacienda."
++          "prompt": "Set the scene: say what time it was and what the weather was like.",
++          "answer": "Era de noche y hacía mucho frío."
++        },
++        {
++          "prompt": "Say what happened as soon as you arrived home, using apenas.",
++          "answer": "Apenas llegué a casa, sonó el teléfono."
++        },
++        {
++          "prompt": "Say what you had already done before that, using the pluperfect.",
++          "answer": "Ya había cenado con mi hermana."
+         }
+       ],
+       "teaches": [
+-        "preterite-vs-imperfect",
+-        "cuando-mientras"
++        "b2-narrative-time-aspect-vocab"
+       ]
++    },
++    {
++      "id": "b2-02-consolidation.ex09",
++      "type": "multiple-choice",
++      "category": "reading",
++      "question": "According to the text, what did Rulfo do besides writing?",
++      "options": [
++        "Fue fotógrafo, y sus fotografías se mostraron en exposiciones.",
++        "Fue médico, y trabajó muchos años en un hospital de Jalisco.",
++        "Fue profesor, y dio clases de literatura en una escuela de Jalisco."
++      ],
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-02-01-a-gr.json b/content/es-latam/grammar/b2/b2-02-01-a-gr.json
+index a2646f02..95c9f8a0 100644
+--- a/content/es-latam/grammar/b2/b2-02-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-02-01-a-gr.json
+@@ -1,51 +1,59 @@
+ {
+   "id": "grammar.b2.02.01.indefinido-imperfecto",
+-  "title": "Aspecto narrativo: Indefinido frente a Imperfecto",
++  "title": "Events and Background in a Story",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Primer plano frente a trasfondo",
+-      "content": "En la prosa narrativa de nivel B2, el pretérito indefinido (perfecto simple) y el pretérito imperfecto no solo distinguen acciones puntuales de habituales, sino que articulan la estructura informativa del relato: el indefinido impulsa los acontecimientos en primer plano (foreground), mientras que el imperfecto despliega el trasfondo escénico, sensorial y psicológico (background)."
++      "title": "Two jobs for two tenses",
++      "content": "You know the *indefinido* from A2 Unit 11, the *imperfecto* from A2 Unit 21 and the contrast between them from A2 Unit 22. At B2 that contrast becomes a storytelling tool. The *indefinido* looks at an action as finished, a closed block, so a chain of *indefinido* verbs forms the plot: first this happened, then that. The *imperfecto* looks at an action from the inside, with no start or end in view, so it suits whatever was already there when the events happened: the time, the weather, a feeling, what someone was doing. Take the *imperfecto* lines out of a story and the plot still moves, but it feels bare."
+     },
+     {
+       "type": "table",
+-      "title": "Funciones aspectuales en el relato literario",
++      "title": "Plot and scenery",
+       "rows": [
+         [
+-          "Indefinido (Perfectivo)",
+-          "Acciones delimitadas, sucesión cronológica, giros argumentales: 'El forastero cruzó el umbral y cerró la puerta'"
++          "Llegó, abrió la carta y se sentó.",
++          "Indefinido: three events, one after the other. Each one pushes the plot forward."
+         ],
+         [
+-          "Imperfecto (Imperfectivo)",
+-          "Circunstancias concomitantes, estados anímicos, descripciones sensoriales: 'La lluvia golpeaba los cristales y nadie decía una palabra'"
++          "Era de noche y llovía mucho.",
++          "Imperfecto: the time and the weather. Nothing happens; the scene is set."
+         ],
+         [
+-          "Imperfecto de ruptura / narrativo",
+-          "Uso estilístico que focaliza el desarrollo de un evento clave como cuadro vivo: 'Apenas sonó el disparo, la multitud corría despavorida'"
++          "Estaba cansado y no tenía hambre.",
++          "Imperfecto: how someone felt. It is a state, not an event."
++        ],
++        [
++          "Leía cuando sonó el teléfono.",
++          "Both together: an action in progress (imperfecto) and the event that breaks into it (indefinido)."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en prosa narrativa",
++      "title": "In a story",
+       "items": [
+         {
+-          "spanish": "Amanecía cuando el arriero divisó las primeras casas del pueblo.",
+-          "english": "It was dawning when the muleteer caught sight of the village's first houses."
++          "spanish": "Llovía cuando salimos de la estación.",
++          "english": "It was raining when we left the station."
++        },
++        {
++          "spanish": "Era de noche y hacía frío cuando llegó el tren.",
++          "english": "It was night and it was cold when the train arrived."
+         },
+         {
+-          "spanish": "El viento soplaba con furia; súbitamente se quebró la rama centenaria.",
+-          "english": "The wind was blowing furiously; suddenly the ancient branch snapped."
++          "spanish": "Mientras todos dormían, ella escribió una carta.",
++          "english": "While everyone was asleep, she wrote a letter."
+         },
+         {
+-          "spanish": "Mientras los demás dormían, él meditaba sobre su incierto destino.",
+-          "english": "While the others slept, he pondered his uncertain fate."
++          "spanish": "Estaba cansada, pero abrió la puerta y entró.",
++          "english": "She was tired, but she opened the door and went in."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Presta atención al efecto de perspectiva: el cambio del imperfecto al indefinido produce un golpe de efecto narrativo ('hacía frío, caía la tarde... y de pronto llegó la carta')."
++      "content": "A quick test: if the next question could be \"and then what happened?\", use the *indefinido*. If it could be \"what was it like?\" or \"what was going on?\", use the *imperfecto*. A scene can have several *imperfecto* verbs in a row and then one *indefinido* verb that breaks in."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-02-02-a-gr.json b/content/es-latam/grammar/b2/b2-02-02-a-gr.json
+index 4d65e4f8..b9560a32 100644
+--- a/content/es-latam/grammar/b2/b2-02-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-02-02-a-gr.json
+@@ -1,51 +1,51 @@
+ {
+   "id": "grammar.b2.02.02.pluscuamperfecto",
+-  "title": "El pluscuamperfecto en la retrospección narrativa",
++  "title": "Going Further Back",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "El tiempo del pasado anterior al pasado",
+-      "content": "El pretérito pluscuamperfecto de indicativo (había + participio) sitúa una acción como consumada con anterioridad a otro punto de referencia en el pasado. En la literatura y el periodismo narrativo, es la herramienta fundamental para construir analepsis (flashbacks), revelar antecedentes ocultos y dotar a la historia de espesor cronológico."
++      "title": "A step behind the story",
++      "content": "You know the *pluscuamperfecto* from B1 Unit 1: *había* plus a past participle, for something that had already happened before another moment in the past. In a story it does a special job. The story has its own \"now\", told with the *indefinido* and the *imperfecto*. The *pluscuamperfecto* steps behind that \"now\" to explain it: what had happened earlier and why things were the way they were."
+     },
+     {
+       "type": "table",
+-      "title": "Usos y matices discursivos",
++      "title": "What a step back can do",
+       "rows": [
+         [
+-          "Retrospección causal",
+-          "Explica la causa previa de una situación presente en el relato: 'Estaba exhausto porque había caminado toda la noche'"
++          "Estaba cansada porque no había dormido.",
++          "It explains the story's present: the cause lies one step further back."
+         ],
+         [
+-          "Acontecimiento preliminar",
+-          "Marca un hecho completado antes de un hito: 'Para cuando llegó la ayuda, el fuego ya se había extinguido'"
++          "Cuando llegué, ya se había ido.",
++          "It shows something that was already finished before an event of the story."
+         ],
+         [
+-          "Alineación temporal con 'ya' y 'apenas'",
+-          "Destaca inmediatez o culminación previa: 'Apenas se habían sentado cuando irrumpió la noticia'"
++          "Nunca había visto un mar así.",
++          "It tells what the person had, or had not, experienced before this moment of the story."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos literarios",
++      "title": "In a story",
+       "items": [
+         {
+-          "spanish": "Muchos años antes, su abuelo le había advertido sobre los peligros del páramo.",
+-          "english": "Many years before, his grandfather had warned him about the dangers of the wasteland."
++          "spanish": "Cuando llegó la ayuda, el fuego ya se había apagado.",
++          "english": "When help arrived, the fire had already gone out."
+         },
+         {
+-          "spanish": "Todo lo que creía seguro se había desmoronado en cuestión de semanas.",
+-          "english": "Everything he believed secure had crumbled in a matter of weeks."
++          "spanish": "Mi abuelo me había contado esa historia años antes, pero solo la recordé aquella noche.",
++          "english": "My grandfather had told me that story years before, but I only remembered it that night."
+         },
+         {
+-          "spanish": "Cuando regresó a la casa natal, sus moradores ya habían partido para siempre.",
+-          "english": "When he returned to his childhood home, its dwellers had already departed forever."
++          "spanish": "Estaba nervioso porque nunca había hablado en público.",
++          "english": "He was nervous because he had never spoken in public."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "En textos narrativos elaborados, no es necesario mantener el pluscuamperfecto en cada verbo de un flashback largo: una vez establecido el marco con el pluscuamperfecto, la narración interna suele continuar en indefinido."
++      "content": "In a longer flashback you do not need *había* in every sentence. Use the *pluscuamperfecto* to step back, then carry on in the *indefinido* and the *imperfecto*, and return to the *pluscuamperfecto* only if you need another step back: *Había salido de su pueblo a los veinte años. Primero trabajó en un hotel y después abrió una tienda.*"
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-02-03-a-gr.json b/content/es-latam/grammar/b2/b2-02-03-a-gr.json
+index 60b970f7..41e526c9 100644
+--- a/content/es-latam/grammar/b2/b2-02-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-02-03-a-gr.json
+@@ -1,59 +1,63 @@
+ {
+   "id": "grammar.b2.02.03.verbos-cambio-significado",
+-  "title": "Verbos con cambio de significado según el aspecto",
++  "title": "Verbs That Change Meaning in the Past",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Aspecto léxico y tiempo verbal",
+-      "content": "Ciertos verbos en español expresan un estado mental o volitivo continuo cuando se conjugan en pretérito imperfecto, pero denotan un acontecimiento puntual, el inicio de un estado o el resultado de un esfuerzo cuando se conjugan en pretérito indefinido."
++      "title": "A state or an event?",
++      "content": "You know *saber* and *conocer* from A1 Unit 24, and *querer* and *poder* from A1 Unit 10. These four verbs usually name a state: you know someone, you want something, you are able to do something. In the *imperfecto* they keep that meaning. In the *indefinido* the action becomes a single event with a clear start or end, so the meaning shifts: the moment the state began, an attempt, a refusal or a success. English often needs a different verb for each."
+     },
+     {
+       "type": "table",
+-      "title": "Pares contrastivos fundamentales",
++      "title": "Same verb, two tenses",
+       "rows": [
+         [
+-          "Conocer",
+-          "Imperfecto: 'Conocía la ciudad' (tenía conocimiento previo). Indefinido: 'Conoció al autor' (se encontró con él por primera vez)."
++          "Conocía a Marta. / Conocí a Marta.",
++          "I knew Marta. / I met Marta (for the first time)."
+         ],
+         [
+-          "Saber",
+-          "Imperfecto: 'Sabía la verdad' (poseía la información). Indefinido: 'Supo la verdad' (se enteró en ese instante preciso)."
++          "Sabía la verdad. / Supe la verdad.",
++          "I knew the truth. / I found out the truth."
+         ],
+         [
+-          "Querer",
+-          "Imperfecto: 'Quería marcharse' (tenía el deseo o intención). Indefinido: 'Quiso abrir la puerta' (hizo el intento deliberado)."
++          "Quería salir. / Quise salir.",
++          "I wanted to leave. / I tried to leave."
+         ],
+         [
+-          "No querer",
+-          "Imperfecto: 'No quería hablar' (no tenía ganas). Indefinido: 'No quiso firmar' (se negó rotundamente / rechazó hacerlo)."
++          "No quería ir. / No quise ir.",
++          "I did not want to go. / I refused to go."
+         ],
+         [
+-          "Poder",
+-          "Imperfecto: 'Podía escapar' (tenía la capacidad o permiso). Indefinido: 'Pudo escapar' (lo intentó y lo logró con éxito)."
++          "Podía salir. / Pude salir.",
++          "I was able to leave. / I managed to leave."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en contexto",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Ayer supimos que el director había presentado su renuncia.",
+-          "english": "Yesterday we found out that the director had tendered his resignation."
++          "spanish": "Conocí a Lucía en una fiesta; antes no sabía ni su nombre.",
++          "english": "I met Lucía at a party; before that I did not even know her name."
+         },
+         {
+-          "spanish": "El testigo no quiso declarar ante el magistrado.",
+-          "english": "The witness refused to testify before the magistrate."
++          "spanish": "Supimos que había ganado cuando nos llamó su madre.",
++          "english": "We found out he had won when his mother called us."
+         },
+         {
+-          "spanish": "A pesar de la tormenta, los montañistas pudieron alcanzar el refugio.",
+-          "english": "Despite the storm, the mountaineers managed to reach the shelter."
++          "spanish": "La jefa no quiso firmar el contrato.",
++          "english": "The boss refused to sign the contract."
++        },
++        {
++          "spanish": "Teníamos poco tiempo, pero pudimos llegar a tiempo.",
++          "english": "We had little time, but we managed to arrive in time."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "En la traducción al inglés, estos contrastes a menudo requieren verbos totalmente distintos: 'sabía' (knew) vs 'supo' (found out); 'no quiso' (refused); 'pudo' (managed to / succeeded in)."
++      "content": "Do not translate by tense alone: ask whether something happened (an event) or whether you describe how things were (a state). In the negative, *no quise* is a refusal, while *no pude* means you tried and did not manage. *No quería* and *no podía* keep the plain state: you did not feel like it, or you were not able to."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-02-04-a-gr.json b/content/es-latam/grammar/b2/b2-02-04-a-gr.json
+index a6bf9075..21c40c4c 100644
+--- a/content/es-latam/grammar/b2/b2-02-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-02-04-a-gr.json
+@@ -1,55 +1,63 @@
+ {
+   "id": "grammar.b2.02.04.conectores-temporales",
+-  "title": "Conectores temporales en el relato pasado",
++  "title": "Time Connectors in a Story",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Articular la secuencia y el ritmo",
+-      "content": "Para estructurar un relato complejo, el nivel B2 exige ir más allá de 'entonces' y 'después'. Los conectores temporales avanzados permiten graduar la velocidad narrativa, marcar inmediatez vertiginosa o señalar progresiones simultáneas y paulatinas."
++      "title": "Setting the speed of a story",
++      "content": "You know *cuando* and *mientras* from A2 Unit 13, *en cuanto* with the subjunctive from A2 Unit 27 and *a medida que* from B1 Unit 2. In a story, connectors also set the speed. *Apenas* and *en cuanto* make the second event follow the first at once. *Al cabo de* skips a stretch of time. *A medida que* and *conforme* show two things changing together, little by little. In a story about the past, all of them take the indicative."
+     },
+     {
+       "type": "table",
+-      "title": "Conectores narrativos en el pasado",
++      "title": "Fast, skipped and gradual",
+       "rows": [
+         [
+-          "Inmediatez estricta",
+-          "'Apenas / No bien + verbo': marcan que la segunda acción ocurre instantáneamente tras la primera ('Apenas asomó el sol, emprendieron la marcha')"
++          "Apenas sonó la alarma, salimos.",
++          "Apenas: \"as soon as\", when a second clause follows. The second event comes at once. On its own, apenas can also mean \"barely\": Apenas dormí, \"I hardly slept\"."
+         ],
+         [
+-          "Simultaneidad progresiva",
+-          "'A medida que / Conforme + verbo': expresan evolución paralela ('Conforme avanzaba la noche, el frío se volvía más intenso')"
++          "En cuanto llegó, llamó a su madre.",
++          "En cuanto: also \"as soon as\", with the preterite when both events are past."
+         ],
+         [
+-          "Posterioridad culminativa",
+-          "'Al cabo de / Al cabo de unos días': sitúan la culminación tras un lapso medido ('Al cabo de tres meses de búsqueda, hallaron el manuscrito')"
++          "Al cabo de dos horas, nos fuimos.",
++          "Al cabo de + a length of time: \"after\". The time in between is skipped."
+         ],
+         [
+-          "Ruptura súbita",
+-          "'De improviso / Súbitamente': introducen giros inesperados que rompen la quietud del relato"
++          "A medida que subíamos, hacía más frío.",
++          "A medida que: \"as\", with the imperfecto. The cold grew while they climbed."
++        ],
++        [
++          "Conforme pasaban los días, se sentía mejor.",
++          "Conforme: \"as\", used like a medida que."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos en prosa",
++      "title": "In a story",
+       "items": [
+         {
+-          "spanish": "No bien hubo terminado de hablar, un aplauso ensordecedor llenó el auditorio.",
+-          "english": "No sooner had he finished speaking than deafening applause filled the auditorium."
++          "spanish": "Apenas salí de casa, empezó a llover.",
++          "english": "As soon as I left the house, it started to rain."
++        },
++        {
++          "spanish": "Al cabo de unos minutos, el niño dejó de llorar.",
++          "english": "After a few minutes, the child stopped crying."
+         },
+         {
+-          "spanish": "A medida que ascendían por la quebrada, el aire escaseaba.",
+-          "english": "As they ascended through the gorge, the air grew thinner."
++          "spanish": "A medida que caía la noche, las calles se quedaban vacías.",
++          "english": "As night fell, the streets emptied."
+         },
+         {
+-          "spanish": "Al cabo de varias horas de incertidumbre, se restablecieron las comunicaciones.",
+-          "english": "After several hours of uncertainty, communications were restored."
++          "spanish": "En cuanto llegamos al hotel, nos dormimos.",
++          "english": "As soon as we got to the hotel, we fell asleep."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Recuerda que en el pasado todos estos conectores rigen modo indicativo, a diferencia de los contextos de prospección o futuro ('en cuanto llegue', subjuntivo)."
++      "content": "Compare the future with the past. Looking ahead, *en cuanto* takes the subjunctive (A2 Unit 27): *en cuanto llegue* means \"as soon as I arrive\". In a story about the past it takes the indicative: *en cuanto llegué* means \"as soon as I arrived\"."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-02-05-a-gr.json b/content/es-latam/grammar/b2/b2-02-05-a-gr.json
+index 04be55e0..834633c0 100644
+--- a/content/es-latam/grammar/b2/b2-02-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-02-05-a-gr.json
+@@ -1,55 +1,59 @@
+ {
+   "id": "grammar.b2.02.05.imperfecto-discursivo",
+-  "title": "Usos estilísticos y pragmáticos del imperfecto",
++  "title": "The Polite Imperfect",
+   "sections": [
+     {
+       "type": "text",
+-      "title": "Más allá de la descripción",
+-      "content": "En el registro formal y literario B2, el imperfecto adquiere funciones pragmáticas muy refinadas: atenúa peticiones con delicadeza, describe acciones inminentes que casi ocurrieron y sustituye al condicional en el habla coloquial o enfática."
++      "title": "A past tense for a present wish",
++      "content": "You know how to soften a request with the *condicional* from A2 Unit 26: *¿Podría cambiar mi habitación?*, *Me gustaría pedir agua.* Spanish has one more polite form: the *imperfecto*. When you say *Quería pedirle un favor*, you do not mean that you wanted it in the past. You want it now, but the past tense keeps the wish at a polite distance, as if it were not pressing the other person. It is common in shops, offices and on the phone, with the verbs of wanting, coming, calling and wondering."
+     },
+     {
+       "type": "table",
+-      "title": "Usos especiales del imperfecto",
++      "title": "Polite imperfect",
+       "rows": [
+         [
+-          "Imperfecto de cortesía",
+-          "Atenúa la aserción en el presente para no sonar impositivo: 'Quería consultarle sobre el proyecto' (en lugar de 'quiero')"
++          "Quería pedirle un favor.",
++          "\"I wanted to ask you a favour\": you ask now."
+         ],
+         [
+-          "Imperfecto de conato",
+-          "Acción inminente que estuvo a punto de consumarse pero se frustró: 'Por poco me caía por la escalera'"
++          "Venía a preguntar por el horario.",
++          "\"I have come to ask about the timetable\": you are standing there now."
+         ],
+         [
+-          "Imperfecto de apertura lúdica / ficcional",
+-          "Establece las reglas de una fantasía o hipótesis compartida: 'Yo era el pirata y tú me rescatabas'"
++          "Llamaba para confirmar la cita.",
++          "\"I'm calling to confirm the appointment\": the call is happening now."
+         ],
+         [
+-          "Imperfecto de contracautela / plan previsto",
+-          "Verifica un acuerdo previo en el presente: '¿A qué hora salía el vuelo mañana?'"
++          "Me preguntaba si usted podía ayudarme.",
++          "\"I was wondering if you could help me\": a request, not a story."
+         ]
+       ]
+     },
+     {
+       "type": "examples",
+-      "title": "Ejemplos pragmáticos",
++      "title": "In real situations",
+       "items": [
+         {
+-          "spanish": "Buenas tardes, venía a pedirle una prórroga para la entrega del informe.",
+-          "english": "Good afternoon, I was coming to ask you for an extension on the report submission."
++          "spanish": "Buenas tardes, quería pedirle una cita con el doctor.",
++          "english": "Good afternoon, I would like to ask you for an appointment with the doctor."
+         },
+         {
+-          "spanish": "¡Cuidado! Casi volcaba el automóvil en la curva.",
+-          "english": "Careful! The car almost overturned on the curve."
++          "spanish": "Disculpe, venía a preguntar por el horario de los trenes.",
++          "english": "Excuse me, I have come to ask about the train timetable."
+         },
+         {
+-          "spanish": "¿No era que ustedes se mudaban la próxima semana?",
+-          "english": "Wasn't it the case that you were moving next week?"
++          "spanish": "Hola, Marta, llamaba para preguntarte si puedes venir mañana.",
++          "english": "Hi, Marta, I'm calling to ask if you can come tomorrow."
++        },
++        {
++          "spanish": "Me preguntaba si usted podría ayudarme con esto.",
++          "english": "I was wondering if you could help me with this."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "El imperfecto de cortesía ('venía a', 'quería', 'pensaba') es de uso universal en América Latina para interactuar con superioridad jerárquica o en oficinas públicas sin sonar tajante."
++      "content": "The meaning is present, so only the situation tells you it is not a real past: a person standing at the counter who says *Venía a preguntar…* is asking now. The polite imperfect is used across the Spanish-speaking world, and only for your own wish or request: it does not soften what other people want."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-02-01.json b/content/es-latam/lessons/b2/b2-02-01.json
+index 45cba924..678b0e2d 100644
+--- a/content/es-latam/lessons/b2/b2-02-01.json
++++ b/content/es-latam/lessons/b2/b2-02-01.json
+@@ -1,24 +1,24 @@
+ {
+   "id": "lesson.b2.02.01",
+-  "title": "Narrative Time: Indefinido vs Imperfecto",
++  "title": "Events and Background in a Story",
+   "level": "B2",
+-  "goal": "Master the contrast between preterite and imperfect to structure foreground events and atmospheric background in literary narration.",
+-  "grammar": "contraste aspectual entre indefinido e imperfecto en la narración",
++  "goal": "Tell a past story with the preterite for the events and the imperfect for the scene around them.",
++  "grammar": "Events and background in the past",
+   "sections": [
+     {
+       "type": "intro",
+-      "title": "Unit 2: Narrative Time & Aspect",
++      "title": "Unit 2: Narrative Time and Aspect",
+       "body": [
+-        "Welcome to Unit 2: Narrative Time & Aspect. At the B2 level, narrating in the past transcends merely listing past actions. It involves mastering aspectual perspective—the art of controlling how an audience perceives the duration, inception, background, and culmination of events.",
+-        "In this unit, inspired by the haunting, fractured narratives of Mexican master Juan Rulfo (Pedro Páramo, El llano en llamas), you will explore the subtle boundary between indefinido and imperfecto, delve into the temporal layers of the pluscuamperfecto, and uncover how certain verbs transform their core meaning when shifted across past tenses."
++        "At B2 you tell stories, not just single facts in the past. This unit is about how the past tenses build a story: which verbs move the plot forward, which ones paint the scene, and how to go further back in time.",
++        "You will practise the preterite and the imperfect together, the pluperfect, a few verbs that change meaning in the past, time connectors for stories and the imperfect as a polite form. The unit ends with a short text about the Mexican writer Juan Rulfo and his novel Pedro Páramo."
+       ]
+     },
+     {
+       "type": "goal",
+       "items": [
+-        "Distinguish foreground narrative action from background scene setting.",
+-        "Use B2 narrative vocabulary to establish mood, atmosphere, and sensory texture.",
+-        "Apply aspectual shifts to create narrative suspense and emotional pacing."
++        "I can use the preterite for the events of a story and the imperfect for the scene around them.",
++        "I can tell which verb in a story moves the plot and which one describes.",
++        "I can use the new words for scenery and atmosphere."
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b2/b2-02-02.json b/content/es-latam/lessons/b2/b2-02-02.json
+index 88df1fb5..9308b2a5 100644
+--- a/content/es-latam/lessons/b2/b2-02-02.json
++++ b/content/es-latam/lessons/b2/b2-02-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.02.02",
+-  "title": "Temporal Depth: The Pluperfect",
++  "title": "Going Further Back: The Pluperfect",
+   "level": "B2",
+-  "goal": "Construct multi-layered chronological narratives using the pluperfect indicative to integrate flashbacks, past causes, and retrospective revelations.",
+-  "grammar": "el pretérito pluscuamperfecto en la retrospección narrativa",
++  "goal": "Use the pluperfect to step back from the main line of a story and explain what had happened before.",
++  "grammar": "The pluperfect in a story",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Signal anteriority in past narration with the pluperfect indicative.",
+-        "Incorporate retrospective flashbacks (analepsis) into complex prose.",
+-        "Master B2 vocabulary of memory, prehistory, and causal antecedents."
++        "I can use the pluperfect to say what had already happened before a moment in a story.",
++        "I can give the earlier cause of a situation in a story.",
++        "I can use the new words for events and what came before."
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b2/b2-02-03.json b/content/es-latam/lessons/b2/b2-02-03.json
+index 95a33838..26669740 100644
+--- a/content/es-latam/lessons/b2/b2-02-03.json
++++ b/content/es-latam/lessons/b2/b2-02-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.02.03",
+-  "title": "Aspectual Meaning Shifts in Past Verbs",
++  "title": "Verbs That Change Meaning in the Past",
+   "level": "B2",
+-  "goal": "Master the aspect-driven semantic transformations of verbs like conocer, saber, querer, and poder between preterite and imperfect.",
+-  "grammar": "cambio de significado de verbos de estado y voluntad en el pasado",
++  "goal": "Use conocer, saber, querer and poder in the preterite to say that you met, found out, tried, refused or managed.",
++  "grammar": "Verbs that change meaning in the past",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Distinguish between continuous mental states and punctual cognitive events.",
+-        "Accurately employ saber (knew vs found out) and conocer (knew vs met).",
+-        "Express refusal (no quiso) and successful achievement (pudo) with precision."
++        "I can use conocí, supe, quise and pude for meeting, finding out, trying and managing.",
++        "I can say that someone refused to do something with no quiso.",
++        "I can use the new words for choices and results."
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b2/b2-02-04.json b/content/es-latam/lessons/b2/b2-02-04.json
+index 293580fe..25a9eb4d 100644
+--- a/content/es-latam/lessons/b2/b2-02-04.json
++++ b/content/es-latam/lessons/b2/b2-02-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.02.04",
+-  "title": "Temporal Connectors in Narrative",
++  "title": "Time Connectors in a Story",
+   "level": "B2",
+-  "goal": "Control narrative pacing, instantaneity, and progressive parallel actions using advanced temporal connectors in the past.",
+-  "grammar": "conectores temporales y estructuración del ritmo narrativo",
++  "goal": "Control the speed of a story in the past with apenas, en cuanto, al cabo de, a medida que and conforme.",
++  "grammar": "Time connectors in a story",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Structure chronological sequences with barely and no sooner (apenas, no bien).",
+-        "Express progressive parallel developments with a medida que and conforme.",
+-        "Calibrate narrative timing and dramatic pauses in literary prose."
++        "I can make one event follow another at once with apenas and en cuanto.",
++        "I can skip a stretch of time with al cabo de and show gradual change with a medida que and conforme.",
++        "I can use the new words for timing in a story."
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b2/b2-02-05.json b/content/es-latam/lessons/b2/b2-02-05.json
+index 343a1439..9197291e 100644
+--- a/content/es-latam/lessons/b2/b2-02-05.json
++++ b/content/es-latam/lessons/b2/b2-02-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.02.05",
+-  "title": "Pragmatic Imperfect: Politeness & Nuance",
++  "title": "The Polite Imperfect",
+   "level": "B2",
+-  "goal": "Employ the imperfect of politeness, imminent action, and planning to navigate high-register interpersonal exchanges in Latin America.",
+-  "grammar": "usos pragmáticos, corteses y estilísticos del imperfecto",
++  "goal": "Make a polite request or enquiry with the imperfect: quería pedirle, venía a preguntar, llamaba para.",
++  "grammar": "The imperfect as a polite form",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Soften requests and inquiries with the imperfect of politeness (imperfecto de cortesía).",
+-        "Narrate close-call events that almost occurred with conative imperfect (por poco me caía).",
+-        "Master B2 vocabulary of deference, tact, and subtle intention."
++        "I can make a polite request now with quería, venía a and llamaba para.",
++        "I can tell a polite imperfect from a real past.",
++        "I can use the new words for polite requests and for talking about writers and books."
+       ]
+     },
+     {
+diff --git a/content/es-latam/lessons/b2/b2-02-consolidation.json b/content/es-latam/lessons/b2/b2-02-consolidation.json
+index 2344a8b5..80ece467 100644
+--- a/content/es-latam/lessons/b2/b2-02-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-02-consolidation.json
+@@ -2,16 +2,15 @@
+   "id": "lesson.b2.02.consolidation",
+   "title": "Unit 2 Consolidation",
+   "level": "B2",
+-  "goal": "Consolidate narrative aspect (indefinido vs imperfecto), the pluperfect in flashbacks, aspectual verb shifts, and advanced temporal connectors.",
+-  "grammar": "síntesis de tiempo y aspecto narrativo en el relato",
++  "goal": "Review events and background, the pluperfect, verbs that change meaning, time connectors and the polite imperfect, and read a text about Juan Rulfo.",
++  "grammar": "Review: tenses in a story",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Synthesize narrative pacing using the contrast of preterite and imperfect.",
+-        "Deploy the pluperfect to build multi-layered retrospective depths.",
+-        "Accurately master aspectual verb shifts and nuanced temporal conjunctions.",
+-        "Analyze literary excerpts from Juan Rulfo's Comala cycle."
++        "Review the preterite and the imperfect in a story, the pluperfect and the verbs that change meaning in the past.",
++        "Review the time connectors and the polite imperfect.",
++        "Read a text in the past about the writer Juan Rulfo and his novel Pedro Páramo."
+       ]
+     },
+     {
+@@ -34,16 +33,17 @@
+         "b2-02-consolidation.ex05",
+         "b2-02-consolidation.ex06",
+         "b2-02-consolidation.ex07",
+-        "b2-02-consolidation.ex08"
++        "b2-02-consolidation.ex08",
++        "b2-02-consolidation.ex09"
+       ]
+     },
+     {
+       "type": "checklist",
+       "items": [
+-        "I can contrast the preterite and imperfect to structure foreground and background in stories.",
+-        "I can use the pluperfect indicative to integrate flashbacks and retrospective revelations.",
+-        "I can employ saber, conocer, querer, and poder with their exact aspectual meanings in the past.",
+-        "I can control the rhythm and suspense of narrative prose with temporal connectors."
++        "I can tell a short story in the past with the events, the scene and what had happened before in the right tenses.",
++        "I can say that I met, found out, tried or managed something with conocí, supe, quise and pude.",
++        "I can control the speed of a story with time connectors.",
++        "I can read a short text in the past about a writer and his book."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/stories/classics/b2/b2-02.json b/content/es-latam/stories/classics/b2/b2-02.json
+index 31904027..39f0461b 100644
+--- a/content/es-latam/stories/classics/b2/b2-02.json
++++ b/content/es-latam/stories/classics/b2/b2-02.json
+@@ -1,89 +1,79 @@
+ {
+   "id": "story.b2.02.rulfo",
+-  "title": "Juan Rulfo: Los murmullos de Comala y el tiempo suspendido",
++  "title": "Juan Rulfo y las voces de Comala",
+   "level": "B2",
+   "lesson": 5,
+   "order": 2,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "characters": [
+-    "Juan Preciado",
+-    "Dolores Preciado",
+-    "Abundio Martínez",
+-    "Eduviges Dyada",
+-    "Pedro Páramo"
+-  ],
+-  "summary": "Adaptación pedagógica para nivel B2 de la obra maestra de Juan Rulfo: el viaje fantasmal de Juan Preciado a una Comala desierta en busca de su padre, donde las almas atrapadas susurran entre las piedras.",
++  "characters": [],
++  "summary": "Texto sobre Juan Rulfo, el escritor mexicano que publicó muy poco, y sobre su novela Pedro Páramo, una historia contada con fragmentos y voces.",
+   "author": "Juan Rulfo (México, 1917–1986)",
+   "work": "Pedro Páramo (1955)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Juan Rulfo",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Vine a Comala porque me dijeron que acá vivía mi padre, un tal Pedro Páramo. Mi madre me lo había dicho en su lecho de muerte, mientras las campanas de Colima doblaban a la distancia y sus manos frías se aferraban a las mías. Me pidió que no fuera a pedirle nada, sino a cobrarle el olvido en que nos había tenido, el abandono amargo de toda una vida. Yo le prometí que así lo haría, pues en aquel instante de despedida uno se encuentra en un plan de prometerlo todo. No pensé en cumplir la promesa de inmediato, pero pronto la cabeza se me llenó de ilusiones y empecé a forjar un mundo alrededor de la figura de aquel hombre poderoso del que tanto había oído hablar."
+-    },
+-    {
+-      "type": "narration",
+-      "text": "El calor era sofocante cuando comencé a descender por la cuesta de Los Encuentros. Traía los ojos ardientes por el polvo y la garganta seca. El paisaje parecía calcinado por un fuego invisible que emanaba de la misma tierra. En una curva pedregosa me topé con un arriero silencioso que guiaba una pequeña hilera de burros cargados de leña. Su rostro curtido por la intemperie no revelaba emoción alguna. Al preguntarle si conocía a Pedro Páramo, detuvo el paso, me miró fijamente con ojos cenicientos y respondió con voz apagada: «Pedro Páramo fue un rencor vivo. Era el dueño absoluto de estas tierras, pero murió hace ya muchos años»."
++      "text": "Juan Rulfo nació en 1917 en el estado de Jalisco, en el oeste de México. En aquel tiempo el país vivía todavía los años de la Revolución. Fue un escritor que publicó muy poco, pero esas pocas páginas tuvieron mucha influencia en la literatura en español. Hoy muchos lectores lo consideran uno de los grandes autores del siglo veinte."
+     },
+     {
+       "type": "narration",
+-      "text": "Continuamos el descenso en silencio hasta vislumbrar el pueblo en el fondo del valle. Comala parecía una cuenca vacía sobre la cual pesaba una quietud aplastante. No se oía el ladrido de un perro ni el canto de un gallo; las casas se sucedían con puertas desvencijadas y tejados hundidos bajo el sol plomizo. El arriero, que dijo llamarse Abundio Martínez, me señaló una casona en una esquina polvorienta y me aseguró que allí vivía doña Eduviges Dyada, antigua amiga de mi madre, quien sin duda me ofrecería hospedaje. Cuando di media vuelta para agradecerle el favor, el hombre y sus bestias se habían esfumado en el aire tembloroso del mediodía."
++      "text": "En 1953 apareció su primer libro, El llano en llamas, una colección de cuentos. Con él, los lectores conocieron una voz nueva en la narrativa mexicana. Dos años después, en 1955, Rulfo publicó la novela Pedro Páramo. Cuando salió el libro, el autor ya había publicado sus cuentos y todavía tenía menos de cuarenta años."
+     },
+     {
+       "type": "narration",
+-      "text": "Entré en la casa señalada, cuya puerta de madera colgaba de un solo gozne. Los cuartos interiores estaban en penumbra, atiborrados de muebles viejos, baúles desfondados y espejos deslustrados por la humedad. Una mujer de pasos incorpóreos y mirada bondadosa apareció entre las sombras y me llamó por mi nombre antes de que yo pudiera pronunciar palabra alguna. Eduviges Dyada me explicó con naturalidad que mi madre le había avisado aquella misma mañana que yo llegaría. Cuando le respondí, atónito y con el pulso acelerado, que mi madre había fallecido semanas atrás en un hospital lejano, la mujer apenas sonrió con resignación melancólica: «En este pueblo, muchacho, las noticias de los difuntos viajan más rápido que los pasos de los vivos»."
++      "text": "En aquellos años Rulfo no solo escribía: también era fotógrafo. Sus fotografías de paisajes, pueblos y personas de México se mostraron más tarde en muchas exposiciones."
+     },
+     {
+       "type": "narration",
+-      "text": "Llegada la noche, el reposo fue imposible. La habitación asignada estaba impregnada de un olor rancio a azufre y tierra seca. A través de las hendiduras del adobe y por debajo de las baldosas agrietadas comenzaron a filtrarse voces tenues: oraciones interrumpidas, lamentos de mujeres desoladas y ecos de disputas añejas. Eran los habitantes de Comala que jamás habían podido descansar en paz. La hacienda de la Media Luna, feudo implacable desde donde Pedro Páramo despojó a sus vecinos y gobernó a sangre y fuego, había arrastrado a la comunidad entera a una vorágine de pecado y condena tras la muerte de Susana San Juan, la única mujer a la que el terrateniente amó de verdad."
++      "text": "La novela cuenta el viaje de un joven, Juan Preciado, a un pueblo llamado Comala. Va a buscar a su padre, Pedro Páramo, pero allí encuentra un pueblo de muertos, lleno de voces. Allí no hay una sola voz que lo explique todo: hablan muchas voces distintas. Rulfo no contó la historia en orden: construyó el libro con fragmentos cortos, y el lector tiene que reunir las piezas poco a poco."
+     },
+     {
+       "type": "narration",
+-      "text": "Al romper el alba, busqué a Eduviges para comprender el origen de semejante pesadilla. Fue entonces cuando otra voz errante me reveló una verdad aún más aterradora: doña Eduviges también había muerto años atrás, incapaz de soportar la culpa de un antiguo remordimiento. Asimismo, aquel arriero llamado Abundio Martínez que me había conducido por la cuesta era el mismo que, enloquecido por la miseria y el dolor, había apuñalado a Pedro Páramo al borde del camino antes de expirar él mismo en un calabozo olvidado. Todo encuentro en Comala no era sino una ilusión tejida por espectros."
++      "text": "La forma de la novela era distinta de la de muchas novelas de su época. Hoy Pedro Páramo es una de las novelas más importantes del siglo veinte en español, y muchos escritores latinoamericanos que llegaron después aprendieron de ella a contar una historia con voces y fragmentos."
+     },
+     {
+       "type": "narration",
+-      "text": "Salí a la calle desierta, ahogado por una atmósfera densa que me impedía respirar. El viento soplaba entre las ruinas del templo y arrastraba miles de susurros que brotaban de las tumbas y las piedras calientes. Comprendí con amarga lucidez que Comala no era un pueblo geográfico, sino un purgatorio suspendido en la eternidad donde el tiempo había perdido sus límites. Mi llegada no representaba el inicio de una búsqueda filial ni el cobro de una deuda terrenal, sino la consumación de mi propio destino: quedar atrapado para siempre entre las sombras que poblaban el reino de Pedro Páramo."
++      "text": "Rulfo murió en 1986 en la Ciudad de México. Cuando murió, había publicado muy poco, pero su obra ya se leía en muchos países. Con pocas páginas, dejó una huella muy grande en la literatura de América Latina, y su nombre sigue siendo uno de los más importantes de México."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál es el motivo fundamental por el que Juan Preciado emprende su viaje hacia Comala?",
++          "question": "According to the text, what did Rulfo publish in 1953?",
+           "options": [
+-            "Para asumir la administración legal de la hacienda algodonera de la Media Luna.",
+-            "Para cumplir la promesa hecha a su madre moribunda de exigirle a Pedro Páramo una reparación por su abandono.",
+-            "Para trabajar como arriero transportando mercancías junto a Abundio Martínez.",
+-            "Para investigar un antiguo crimen pasional cometido en el templo parroquial de Colima."
++            "Una colección de cuentos titulada El llano en llamas.",
++            "La novela Pedro Páramo.",
++            "Un libro de fotografías de Jalisco.",
++            "Un estudio sobre la literatura mexicana."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "Juan Preciado viaja impelido por la promesa que le dio a su madre, Dolores, en su lecho de muerte: buscar a su padre y cobrarle el olvido en que los dejó."
++          "correctIndex": 0,
++          "explanation": "The text says that his first book, El llano en llamas, a collection of short stories, appeared in 1953. Pedro Páramo came two years later."
+         },
+         {
+-          "question": "¿Qué desconcertante revelación recibe Juan Preciado respecto a los habitantes con quienes conversa en Comala?",
++          "question": "Why does the reader of Pedro Páramo have to put the pieces together?",
+           "options": [
+-            "Descubre que tanto el arriero Abundio como doña Eduviges son en realidad espectros de personas fallecidas hace tiempo.",
+-            "Comprueba que los vecinos se habían disfrazado de muertos para ahuyentar a los recaudadores de impuestos.",
+-            "Se entera de que Eduviges Dyada era la hermana secreta de Pedro Páramo y heredera universal de sus tierras.",
+-            "Descubre que el pueblo fue evacuado recientemente debido a una epidemia contagiosa de fiebre amarilla."
++            "Porque Rulfo no contó la historia en orden, sino con fragmentos cortos y voces.",
++            "Porque al libro le faltan algunas páginas.",
++            "Porque Rulfo escribió la novela en dos idiomas.",
++            "Porque la historia empieza cuando Juan Preciado era niño."
+           ],
+           "correctIndex": 0,
+-          "explanation": "A lo largo de la narración se descubre que todos los personajes con los que interactúa —el arriero Abundio Martínez y doña Eduviges Dyada— ya han muerto años atrás."
++          "explanation": "The text says that Rulfo did not tell the story in order: he built the book from short fragments and many voices."
+         },
+         {
+-          "question": "¿Qué significado simbólico y trágico adquieren finalmente los murmullos de Comala?",
++          "question": "What does Juan Preciado find in Comala, according to the text?",
+           "options": [
+-            "Representan un código militar clandestino utilizado por los soldados rebeldes durante la contienda civil.",
+-            "Son ruidos acústicos provocados por las corrientes subterráneas de agua que cruzan el valle.",
+-            "Encarnan el purgatorio colectivo de un pueblo atrapado en el tiempo y castigado por la tiranía de Pedro Páramo.",
+-            "Simbolizan las plegarias de júbilo con las que los aldeanos celebraban las bodas de Susana San Juan."
++            "Un pueblo de muertos, lleno de voces.",
++            "Una ciudad moderna con muchas exposiciones.",
++            "Una casa vacía donde vive su madre.",
++            "Un pueblo tranquilo donde su padre lo espera."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "Los murmullos son las almas en pena de los antiguos habitantes de Comala, condenados a un purgatorio eterno bajo la sombra del despojo y la venganza de Pedro Páramo."
++          "correctIndex": 0,
++          "explanation": "The text says that he goes to look for his father, Pedro Páramo, and finds a village of the dead, full of voices."
+         }
+       ]
+     }
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/content/es-latam/vocabulary/b2/b2-02-01-voc.json b/content/es-latam/vocabulary/b2/b2-02-01-voc.json
+index 9bb1001b..9a54c6b2 100644
+--- a/content/es-latam/vocabulary/b2/b2-02-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-02-01-voc.json
+@@ -1,14 +1,9 @@
+ {
+   "id": "vocab.b2.02.01",
+   "lesson": "b2-02-01",
+-  "title": "El tiempo del relato y la atmósfera",
+-  "theme": "Narrativa literaria y matices aspectuales",
++  "title": "Words for scenery and atmosphere",
++  "theme": "Narrative time and aspect",
+   "words": [
+-    {
+-      "lemma": "el relato",
+-      "translation": "tale, account, story",
+-      "pos": "noun"
+-    },
+     {
+       "lemma": "la penumbra",
+       "translation": "gloom, half-light",
+@@ -16,33 +11,23 @@
+     },
+     {
+       "lemma": "el murmullo",
+-      "translation": "murmur, whisper",
++      "translation": "murmur",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "estremecer",
+-      "translation": "to shudder, to shake",
+-      "pos": "verb"
++      "lemma": "la quietud",
++      "translation": "stillness, calm",
++      "pos": "noun"
+     },
+     {
+       "lemma": "desvanecerse",
+-      "translation": "to fade away, to vanish",
++      "translation": "to fade away",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "el vestigio",
+-      "translation": "vestige, trace",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "remoto",
+-      "translation": "remote, distant",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "la quietud",
+-      "translation": "stillness, stillness of night",
+-      "pos": "noun"
++      "lemma": "amanecer",
++      "translation": "to dawn, to get light",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-02-02-voc.json b/content/es-latam/vocabulary/b2/b2-02-02-voc.json
+index 242400d0..d81679c5 100644
+--- a/content/es-latam/vocabulary/b2/b2-02-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-02-02-voc.json
+@@ -1,48 +1,33 @@
+ {
+   "id": "vocab.b2.02.02",
+   "lesson": "b2-02-02",
+-  "title": "Retrospección y memoria",
+-  "theme": "Profundidad temporal y planos narrativos",
++  "title": "Words for what came before",
++  "theme": "Narrative time and aspect",
+   "words": [
+     {
+-      "lemma": "el trasfondo",
+-      "translation": "background, subtext",
++      "lemma": "el acontecimiento",
++      "translation": "event, happening",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "acontecer",
+-      "translation": "to happen, to take place",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "preceder",
+-      "translation": "to precede",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "la evocación",
+-      "translation": "evocation, reminiscence",
++      "lemma": "el trasfondo",
++      "translation": "background, underlying story",
+       "pos": "noun"
+     },
+-    {
+-      "lemma": "retrospectivo",
+-      "translation": "retrospective",
+-      "pos": "adjective"
+-    },
+     {
+       "lemma": "la huella",
+-      "translation": "footprint, imprint, trace",
++      "translation": "footprint, trace",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "desentrañar",
+-      "translation": "to unravel, to figure out",
++      "lemma": "preceder",
++      "translation": "to come before",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "pretérito",
+-      "translation": "past, bygone",
+-      "pos": "adjective"
++      "lemma": "desentrañar",
++      "translation": "to work out, to unravel",
++      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-02-03-voc.json b/content/es-latam/vocabulary/b2/b2-02-03-voc.json
+index 07f6aa4b..ce4cf9f2 100644
+--- a/content/es-latam/vocabulary/b2/b2-02-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-02-03-voc.json
+@@ -1,8 +1,8 @@
+ {
+   "id": "vocab.b2.02.03",
+   "lesson": "b2-02-03",
+-  "title": "Verbos modales y cognitivos en el pasado",
+-  "theme": "Significado aspectual de verbos de conocimiento y voluntad",
++  "title": "Words for choices and results",
++  "theme": "Narrative time and aspect",
+   "words": [
+     {
+       "lemma": "el dilema",
+@@ -10,13 +10,13 @@
+       "pos": "noun"
+     },
+     {
+-      "lemma": "la resolución",
+-      "translation": "resolution, decision",
++      "lemma": "el desenlace",
++      "translation": "outcome, ending",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "el desenlace",
+-      "translation": "outcome, ending",
++      "lemma": "el empeño",
++      "translation": "determination, effort",
+       "pos": "noun"
+     },
+     {
+@@ -24,25 +24,10 @@
+       "translation": "to refuse",
+       "pos": "verb"
+     },
+-    {
+-      "lemma": "la lucidez",
+-      "translation": "lucidity, clarity of mind",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "el empeño",
+-      "translation": "determination, endeavor",
+-      "pos": "noun"
+-    },
+     {
+       "lemma": "flaquear",
+-      "translation": "to falter, to weaken",
++      "translation": "to weaken, to falter",
+       "pos": "verb"
+-    },
+-    {
+-      "lemma": "concluyente",
+-      "translation": "conclusive",
+-      "pos": "adjective"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-02-04-voc.json b/content/es-latam/vocabulary/b2/b2-02-04-voc.json
+index eff27809..a3663219 100644
+--- a/content/es-latam/vocabulary/b2/b2-02-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-02-04-voc.json
+@@ -1,48 +1,38 @@
+ {
+   "id": "vocab.b2.02.04",
+   "lesson": "b2-02-04",
+-  "title": "Conectores y transiciones temporales",
+-  "theme": "Sintaxis temporal y ritmo de la narración",
++  "title": "Words for timing in a story",
++  "theme": "Narrative time and aspect",
+   "words": [
+     {
+       "lemma": "apenas",
+-      "translation": "barely, as soon as",
+-      "pos": "conjunction"
+-    },
+-    {
+-      "lemma": "súbitamente",
+-      "translation": "suddenly",
+-      "pos": "adverb"
+-    },
+-    {
+-      "lemma": "de improviso",
+-      "translation": "unexpectedly, out of the blue",
++      "translation": "as soon as; barely",
+       "pos": "adverb"
+     },
+     {
+       "lemma": "conforme",
+-      "translation": "as, in proportion as",
++      "translation": "as, while (little by little)",
+       "pos": "conjunction"
+     },
+     {
+-      "lemma": "el intervalo",
+-      "translation": "interval",
+-      "pos": "noun"
++      "lemma": "al cabo de",
++      "translation": "after (a length of time)",
++      "pos": "expression"
++    },
++    {
++      "lemma": "súbitamente",
++      "translation": "suddenly",
++      "pos": "adverb"
+     },
+     {
+       "lemma": "el sobresalto",
+-      "translation": "startle, shock",
++      "translation": "start, fright",
+       "pos": "noun"
+     },
+     {
+       "lemma": "paulatino",
+-      "translation": "gradual, step-by-step",
++      "translation": "gradual, slow",
+       "pos": "adjective"
+-    },
+-    {
+-      "lemma": "precipitar",
+-      "translation": "to trigger, to accelerate",
+-      "pos": "verb"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-02-05-voc.json b/content/es-latam/vocabulary/b2/b2-02-05-voc.json
+index 5272cfbe..32ddc5d9 100644
+--- a/content/es-latam/vocabulary/b2/b2-02-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-02-05-voc.json
+@@ -1,48 +1,43 @@
+ {
+   "id": "vocab.b2.02.05",
+   "lesson": "b2-02-05",
+-  "title": "Matices discursivos y cortesía",
+-  "theme": "Usos pragmáticos y estilísticos del pasado",
++  "title": "Words for polite requests and for the Rulfo text",
++  "theme": "Narrative time and aspect",
+   "words": [
+     {
+-      "lemma": "pretender",
+-      "translation": "to intend, to claim",
++      "lemma": "disculpar",
++      "translation": "to excuse, to forgive",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "titubear",
+-      "translation": "to hesitate, to waver",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "la deferencia",
+-      "translation": "deference, respect",
++      "lemma": "el escritor",
++      "translation": "writer",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "el conato",
+-      "translation": "attempt, slight outbreak",
++      "lemma": "el cuento",
++      "translation": "short story",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "inminente",
+-      "translation": "imminent",
+-      "pos": "adjective"
++      "lemma": "el fotógrafo",
++      "translation": "photographer",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "rozar",
+-      "translation": "to graze, to border on",
+-      "pos": "verb"
++      "lemma": "el siglo",
++      "translation": "century",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "aplacar",
+-      "translation": "to soothe, to appease",
+-      "pos": "verb"
++      "lemma": "el fragmento",
++      "translation": "fragment, short piece",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "la sutileza",
+-      "translation": "subtlety",
+-      "pos": "noun"
++      "lemma": "muerto",
++      "translation": "dead (person)",
++      "pos": "adjective"
+     }
+   ]
+ }
