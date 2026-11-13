@@ -1,0 +1,3836 @@
+diff --git a/content/es-latam/exercises/b2/b2-23-01-ex.json b/content/es-latam/exercises/b2/b2-23-01-ex.json
+index e712edda..c1baa605 100644
+--- a/content/es-latam/exercises/b2/b2-23-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-23-01-ex.json
+@@ -11,19 +11,27 @@
+       "pairs": [
+         [
+           "echarse a",
+-          "to burst into / to suddenly begin doing"
++          "to burst into, to suddenly start doing"
+         ],
+         [
+           "súbito",
+-          "sudden / unexpected"
++          "sudden"
++        ],
++        [
++          "llanto",
++          "crying, weeping"
+         ],
+         [
+           "carcajada",
+-          "loud laugh / guffaw"
++          "burst of laughter"
++        ],
++        [
++          "estampida",
++          "stampede"
+         ],
+         [
+           "arrebato",
+-          "outburst / fit of emotion"
++          "outburst, fit"
+         ]
+       ]
+     },
+@@ -34,9 +42,10 @@
+       "teaches": [
+         "inceptive-periphrases"
+       ],
+-      "sentence": "Al ver aparecer a su hermano sano y salvo, la joven se __ a llorar de emoción.",
+-      "answer": "echó",
+-      "english": "Upon seeing her brother appear safe and sound, the young woman burst into tears of emotion."
++      "sentence": "Al ver la cara de Luis, nos __ a reír.",
++      "answer": "echamos",
++      "english": "On seeing Luis's face, we burst out laughing.",
++      "hint": "echarse, we"
+     },
+     {
+       "id": "b2-23-01.ex03",
+@@ -45,14 +54,14 @@
+       "teaches": [
+         "inceptive-periphrases"
+       ],
+-      "question": "¿Qué matiz semántico distingue a la perífrasis 'echarse a + infinitivo' de otras formas de comienzo?",
++      "question": "Which sentence is correct?",
+       "options": [
+-        "Expresa el inicio súbito, involuntario o impulsivo de emociones intensas o movimientos bruscos.",
+-        "Indica la planificación pausada y reflexiva de una tesis doctoral académica.",
+-        "Describe la culminación definitiva y formal de un contrato comercial firmado.",
+-        "Señala una acción habitual que ocurre todos los domingos por la mañana."
++        "Al oír el ruido, los caballos se echó a correr.",
++        "Al oír el ruido, los caballos se echaron a correr.",
++        "Al oír el ruido, los caballos se echaron correr.",
++        "Al oír el ruido, los caballos se echaron de correr."
+       ],
+-      "correct": 0
++      "correct": 1
+     },
+     {
+       "id": "b2-23-01.ex04",
+@@ -63,27 +72,27 @@
+       ],
+       "tiles": [
+         "Los",
+-        "caballos",
++        "niños",
+         "se",
+         "echaron",
+         "a",
+         "correr",
+         "por",
+         "el",
+-        "valle."
++        "parque."
+       ],
+       "solution": [
+         "Los",
+-        "caballos",
++        "niños",
+         "se",
+         "echaron",
+         "a",
+         "correr",
+         "por",
+         "el",
+-        "valle."
++        "parque."
+       ],
+-      "english": "The horses broke into a run across the valley."
++      "english": "The children broke into a run through the park."
+     },
+     {
+       "id": "b2-23-01.ex05",
+@@ -94,21 +103,21 @@
+       ],
+       "prompt": [
+         {
+-          "speaker": "Guardaparques",
+-          "text": "¿Qué ocurrió cuando los turistas avistaron al puma andino en el sendero?"
++          "speaker": "Marta",
++          "text": "¿Qué hizo Ana cuando vio a su hermano en la puerta?"
+         },
+         {
+-          "speaker": "Guía",
+-          "text": "Fue un susto tremendo: un grupo se quedó inmóvil y el resto..."
++          "speaker": "Luis",
++          "text": "Después de tantos años sin verlo..."
+         }
+       ],
+       "options": [
+-        "se echó a correr en estampida hacia el refugio de montaña.",
+-        "se puso a calcular las coordenadas astronómicas del satélite.",
+-        "volvió a terminar la redacción del manual de senderismo.",
+-        "rompió a cocinar una cazuela caliente para todos los guardas."
++        "se echó llorar de alegría.",
++        "se echaron a llorar de alegría.",
++        "se echó a llorar de alegría.",
++        "se echó a lloró de alegría."
+       ],
+-      "correct": 0
++      "correct": 2
+     },
+     {
+       "id": "b2-23-01.ex06",
+@@ -117,8 +126,8 @@
+       "teaches": [
+         "inceptive-periphrases"
+       ],
+-      "sentence": "Apenas escuchó la sirena del muelle, el marinero se echó a correr sin dudarlo un segundo.",
+-      "english": "As soon as he heard the dock siren, the sailor broke into a run without hesitating a second."
++      "sentence": "Cuando sonó el teléfono, la niña se echó a correr.",
++      "english": "When the telephone rang, the girl broke into a run."
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-23-02-ex.json b/content/es-latam/exercises/b2/b2-23-02-ex.json
+index 7af6eeee..9ad84b84 100644
+--- a/content/es-latam/exercises/b2/b2-23-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-23-02-ex.json
+@@ -11,19 +11,27 @@
+       "pairs": [
+         [
+           "ponerse a",
+-          "to set about / to start doing deliberately"
++          "to set about, to start doing"
+         ],
+         [
+-          "diligencia",
+-          "diligence / prompt dispatch"
++          "tarea",
++          "task, piece of work"
++        ],
++        [
++          "faena",
++          "chore, job"
+         ],
+         [
+           "tesón",
+-          "tenacity / perseverance"
++          "determination, persistence"
+         ],
+         [
+-          "faena",
+-          "labor task / toil"
++          "deliberado",
++          "deliberate, on purpose"
++        ],
++        [
++          "emprender",
++          "to undertake, to set out to do"
+         ]
+       ]
+     },
+@@ -34,9 +42,10 @@
+       "teaches": [
+         "inceptive-periphrases"
+       ],
+-      "sentence": "Sin demorarse ni un minuto, los técnicos se __ a reparar el generador eólico.",
+-      "answer": "pusieron",
+-      "english": "Without delaying a single minute, the technicians set about repairing the wind generator."
++      "sentence": "Después de comer, nos __ a lavar los platos.",
++      "answer": "pusimos",
++      "english": "After eating, we set about washing the dishes.",
++      "hint": "ponerse, we"
+     },
+     {
+       "id": "b2-23-02.ex03",
+@@ -45,14 +54,14 @@
+       "teaches": [
+         "inceptive-periphrases"
+       ],
+-      "question": "¿En cuál de los siguientes casos es más natural emplear 'ponerse a + infinitivo'?",
++      "question": "Which sentence is correct?",
+       "options": [
+-        "Para expresar la decisión deliberada de emprender una tarea laboriosa o intelectual.",
+-        "Para denotar el pánico súbito que provoca una estampida en la oscuridad.",
+-        "Para indicar que una acción se repite exactamente tres veces consecutivas.",
+-        "Para marcar la conclusión irrevocable de una obra arquitectónica centenaria."
++        "Después de comer, Carlos se echó a estudiar.",
++        "Después de comer, Carlos se puso estudiar.",
++        "Después de comer, Carlos se puso a estudiar.",
++        "Después de comer, Carlos se puso de estudiar."
+       ],
+-      "correct": 0
++      "correct": 2
+     },
+     {
+       "id": "b2-23-02.ex04",
+@@ -62,28 +71,26 @@
+         "inceptive-periphrases"
+       ],
+       "tiles": [
+-        "El",
+-        "ingeniero",
++        "Mis",
++        "amigos",
+         "se",
+-        "puso",
++        "pusieron",
+         "a",
+-        "redactar",
+-        "el",
+-        "informe",
+-        "técnico."
++        "preparar",
++        "la",
++        "cena."
+       ],
+       "solution": [
+-        "El",
+-        "ingeniero",
++        "Mis",
++        "amigos",
+         "se",
+-        "puso",
++        "pusieron",
+         "a",
+-        "redactar",
+-        "el",
+-        "informe",
+-        "técnico."
++        "preparar",
++        "la",
++        "cena."
+       ],
+-      "english": "The engineer set about drafting the technical report."
++      "english": "My friends set about preparing dinner."
+     },
+     {
+       "id": "b2-23-02.ex05",
+@@ -94,21 +101,21 @@
+       ],
+       "prompt": [
+         {
+-          "speaker": "Jefa de turno",
+-          "text": "¿Cuándo comenzaremos la inspección de los transformadores eléctricos?"
++          "speaker": "Jefa",
++          "text": "¿Qué hicieron cuando llegaron los resultados?"
+         },
+         {
+-          "speaker": "Electricista",
+-          "text": "Apenas terminemos de calibrar los multímetros..."
++          "speaker": "Técnico",
++          "text": "Enseguida..."
+         }
+       ],
+       "options": [
+-        "nos pondremos a revisar el cableado principal de la subestación.",
+-        "nos echaremos a llorar de angustia frente al tablero central.",
+-        "romperemos a cantar baladas folclóricas en la sala de mando.",
+-        "volveremos a olvidar las herramientas en el taller de soldadura."
++        "me pusimos a revisarlos.",
++        "nos pusimos revisarlos.",
++        "nos pusimos a revisamos.",
++        "nos pusimos a revisarlos."
+       ],
+-      "correct": 0
++      "correct": 3
+     },
+     {
+       "id": "b2-23-02.ex06",
+@@ -117,8 +124,8 @@
+       "teaches": [
+         "inceptive-periphrases"
+       ],
+-      "sentence": "Con notable tesón, la astrónoma se puso a verificar cada fotografía captada por el telescopio.",
+-      "english": "With notable tenacity, the astronomer set about verifying every photograph captured by the telescope."
++      "sentence": "Cuando llegó la nieve, los niños se pusieron a jugar en la calle.",
++      "english": "When the snow came, the children started to play in the street."
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-23-03-ex.json b/content/es-latam/exercises/b2/b2-23-03-ex.json
+index 0478ef96..9f460430 100644
+--- a/content/es-latam/exercises/b2/b2-23-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-23-03-ex.json
+@@ -11,19 +11,27 @@
+       "pairs": [
+         [
+           "romper a",
+-          "to break into / to burst out doing"
++          "to burst out (crying, laughing, applauding)"
+         ],
+         [
+           "estallido",
+-          "outbreak / burst"
++          "outburst, explosion"
+         ],
+         [
+-          "fragor",
+-          "clamor / roaring noise"
++          "aguacero",
++          "downpour"
+         ],
+         [
+-          "aguacero",
+-          "downpour / sudden heavy rain"
++          "júbilo",
++          "joy, jubilation"
++        ],
++        [
++          "clamor",
++          "outcry, roar of voices"
++        ],
++        [
++          "trueno",
++          "thunder"
+         ]
+       ]
+     },
+@@ -34,9 +42,10 @@
+       "teaches": [
+         "inceptive-periphrases"
+       ],
+-      "sentence": "De improviso, el cielo plomizo de la cordillera rompió a __ granizo sobre el campamento.",
+-      "answer": "descargar",
+-      "english": "Suddenly, the leaden sky of the mountain range broke into dumping hail on the camp."
++      "sentence": "Cuando terminó la canción, los niños __ a aplaudir.",
++      "answer": "rompieron",
++      "english": "When the song ended, the children burst into applause.",
++      "hint": "romper"
+     },
+     {
+       "id": "b2-23-03.ex03",
+@@ -45,14 +54,14 @@
+       "teaches": [
+         "inceptive-periphrases"
+       ],
+-      "question": "¿Qué efecto expresivo singular aporta la perífrasis 'romper a + infinitivo'?",
++      "question": "Which sentence describes a girl who suddenly starts to cry after a long silence?",
+       "options": [
+-        "Transmite la fractura abrupta y ruidosa de un estado de contención o silencio previo.",
+-        "Señala una acción continuada que se desarrolla con extrema lentitud durante décadas.",
+-        "Indica una duda vacilante entre dos opciones culinarias de la comida campesina.",
+-        "Expresa una orden jerárquica militar dictada formalmente por escrito."
++        "Después de un largo silencio, la niña se rompió a llorar.",
++        "Después de un largo silencio, la niña rompió llorar.",
++        "Después de un largo silencio, la niña rompió a llorar.",
++        "Después de un largo silencio, la niña rompió de llorar."
+       ],
+-      "correct": 0
++      "correct": 2
+     },
+     {
+       "id": "b2-23-03.ex04",
+@@ -62,26 +71,28 @@
+         "inceptive-periphrases"
+       ],
+       "tiles": [
+-        "El",
++        "Al",
++        "final",
++        "del",
++        "concierto,",
++        "el",
+         "público",
+         "rompió",
+         "a",
+-        "aplaudir",
+-        "con",
+-        "auténtico",
+-        "júbilo."
++        "aplaudir."
+       ],
+       "solution": [
+-        "El",
++        "Al",
++        "final",
++        "del",
++        "concierto,",
++        "el",
+         "público",
+         "rompió",
+         "a",
+-        "aplaudir",
+-        "con",
+-        "auténtico",
+-        "júbilo."
++        "aplaudir."
+       ],
+-      "english": "The audience broke into applause with genuine joy."
++      "english": "At the end of the concert, the audience burst into applause."
+     },
+     {
+       "id": "b2-23-03.ex05",
+@@ -92,21 +103,21 @@
+       ],
+       "prompt": [
+         {
+-          "speaker": "Cocinero del barco",
+-          "text": "¿En qué momento exacto debemos echar los mariscos a la cazuela?"
++          "speaker": "Marta",
++          "text": "¿Qué pasó cuando terminó la última canción?"
+         },
+         {
+-          "speaker": "Capitán",
+-          "text": "Espera un momento más; tienes que añadirlos justo cuando el caldo..."
++          "speaker": "Luis",
++          "text": "Hubo un momento de silencio y, de pronto, todos..."
+         }
+       ],
+       "options": [
+-        "rompa a hervir vigorosamente en el fogón.",
+-        "se eche a llorar de frío por el viento.",
+-        "se ponga a pensar en la navegación del canal.",
+-        "vuelva a enfriarse bajo la escarcha marina."
++        "rompió a aplaudir.",
++        "rompieron aplaudir.",
++        "rompieron a aplaudir.",
++        "se rompieron a aplaudir."
+       ],
+-      "correct": 0
++      "correct": 2
+     },
+     {
+       "id": "b2-23-03.ex06",
+@@ -115,8 +126,8 @@
+       "teaches": [
+         "inceptive-periphrases"
+       ],
+-      "sentence": "Al confirmarse el hallazgo de la veta mineral, los trabajadores rompieron a vitorear con júbilo.",
+-      "english": "Upon confirmation of the mineral vein discovery, the workers broke into cheering with jubilation."
++      "sentence": "Hacia la tarde, rompió a llover con fuerza.",
++      "english": "Towards evening, it suddenly began to pour."
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-23-04-ex.json b/content/es-latam/exercises/b2/b2-23-04-ex.json
+index fa730f4e..7b5061e1 100644
+--- a/content/es-latam/exercises/b2/b2-23-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-23-04-ex.json
+@@ -11,19 +11,27 @@
+       "pairs": [
+         [
+           "volver a",
+-          "to do again / to repeat an action"
+-        ],
+-        [
+-          "reiteración",
+-          "reiteration / repetition"
++          "to do again"
+         ],
+         [
+           "reanudar",
+-          "to resume / to pick up again"
++          "to resume, to start again"
+         ],
+         [
+           "tentativa",
+-          "attempt / try"
++          "attempt"
++        ],
++        [
++          "insistencia",
++          "insistence, persistence"
++        ],
++        [
++          "repetición",
++          "repetition"
++        ],
++        [
++          "recaída",
++          "relapse, setback"
+         ]
+       ]
+     },
+@@ -34,9 +42,10 @@
+       "teaches": [
+         "volver-a-infinitivo"
+       ],
+-      "sentence": "Tras el temporal en el estrecho, los veleros volvieron a __ rumbo hacia el cabo de Hornos.",
+-      "answer": "fijar",
+-      "english": "After the storm in the strait, the sailboats once again set course toward Cape Horn."
++      "sentence": "Ayer llovió, y hoy __ a llover.",
++      "answer": "volvió",
++      "english": "It rained yesterday, and today it has rained again.",
++      "hint": "volver"
+     },
+     {
+       "id": "b2-23-04.ex03",
+@@ -45,14 +54,17 @@
+       "teaches": [
+         "volver-a-infinitivo"
+       ],
+-      "question": "¿Qué valor adquiere la perífrasis 'volver a + infinitivo' cuando va precedida de negación tajante?",
++      "question": "Which sentence means the same as *Llamó otra vez*?",
+       "options": [
+-        "Expresa la promesa o resolución terminante de no repetir jamás una acción en el futuro.",
+-        "Denota que la acción se ejecutará con el doble de rapidez en el próximo intento.",
+-        "Indica una duda gramatical sobre el tiempo verbal correcto del participio.",
+-        "Señala que la acción ya fue realizada exitosamente por un agente anónimo."
++        "Volvió llamar.",
++        "Volvió a llamar.",
++        "Volvió de llamar.",
++        "Dejó de llamar."
+       ],
+-      "correct": 0
++      "correct": 1,
++      "distractor_skills": {
++        "3": "dejar-de-infinitivo"
++      }
+     },
+     {
+       "id": "b2-23-04.ex04",
+@@ -62,28 +74,28 @@
+         "volver-a-infinitivo"
+       ],
+       "tiles": [
+-        "Los",
+-        "científicos",
+-        "volvieron",
++        "Ella",
++        "no",
++        "volvió",
+         "a",
+-        "medir",
+-        "el",
+-        "grosor",
+-        "del",
+-        "glaciar."
++        "llamar",
++        "después",
++        "de",
++        "la",
++        "reunión."
+       ],
+       "solution": [
+-        "Los",
+-        "científicos",
+-        "volvieron",
++        "Ella",
++        "no",
++        "volvió",
+         "a",
+-        "medir",
+-        "el",
+-        "grosor",
+-        "del",
+-        "glaciar."
++        "llamar",
++        "después",
++        "de",
++        "la",
++        "reunión."
+       ],
+-      "english": "The scientists measured the thickness of the glacier once again."
++      "english": "She did not call again after the meeting."
+     },
+     {
+       "id": "b2-23-04.ex05",
+@@ -94,21 +106,21 @@
+       ],
+       "prompt": [
+         {
+-          "speaker": "Periodista",
+-          "text": "¿Habrá nuevas expediciones arqueológicas al desierto de Atacama este verano?"
++          "speaker": "Jefa",
++          "text": "Es la segunda vez esta semana que llega tarde."
+         },
+         {
+-          "speaker": "Director del museo",
+-          "text": "Por supuesto, nuestro equipo multidisciplinario..."
++          "speaker": "Empleado",
++          "text": "Lo siento mucho. Le prometo que no..."
+         }
+       ],
+       "options": [
+-        "volverá a excavar el sitio ceremonial de los geoglifos milenarios.",
+-        "se echará a reír frente a las cerámicas prehispánicas encontradas.",
+-        "romperá a llorar sin motivo antes de partir hacia el salar.",
+-        "pasará a cancelar de inmediato toda investigación científica regional."
++        "volverás a llegar tarde.",
++        "volveré a llegar tarde.",
++        "volveré llegar tarde.",
++        "volveré a llegué tarde."
+       ],
+-      "correct": 0
++      "correct": 1
+     },
+     {
+       "id": "b2-23-04.ex06",
+@@ -117,8 +129,8 @@
+       "teaches": [
+         "volver-a-infinitivo"
+       ],
+-      "sentence": "El práctico de canales aseguró que volvería a inspeccionar la carta náutica antes de zarpar.",
+-      "english": "The channel pilot assured that he would inspect the nautical chart once again before setting sail."
++      "sentence": "Después de la tormenta, el sol volvió a salir.",
++      "english": "After the storm, the sun came out again."
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-23-05-ex.json b/content/es-latam/exercises/b2/b2-23-05-ex.json
+index ca7db727..ce9d5998 100644
+--- a/content/es-latam/exercises/b2/b2-23-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-23-05-ex.json
+@@ -11,19 +11,27 @@
+       "pairs": [
+         [
+           "pasar a",
+-          "to move on to / to proceed to do"
++          "to move on to (doing)"
+         ],
+         [
+           "transición",
+-          "transition"
++          "transition, change from one stage to the next"
+         ],
+         [
+-          "subsecuente",
+-          "subsequent / following"
++          "secuencia",
++          "sequence, order of steps"
+         ],
+         [
+-          "renglón",
+-          "line of topic / item"
++          "fase",
++          "phase, stage"
++        ],
++        [
++          "proceder",
++          "to proceed, to go ahead"
++        ],
++        [
++          "exponer",
++          "to set out, to present"
+         ]
+       ]
+     },
+@@ -34,9 +42,10 @@
+       "teaches": [
+         "perifrasis-pasar-a"
+       ],
+-      "sentence": "Habiendo concluido el balance financiero, pasemos a __ el plan de inversión sustentable.",
+-      "answer": "examinar",
+-      "english": "Having concluded the financial balance, let us move on to examining the sustainable investment plan."
++      "sentence": "Terminó el primer ejercicio y __ a hacer el segundo.",
++      "answer": "pasó",
++      "english": "She finished the first exercise and moved on to the second.",
++      "hint": "pasar"
+     },
+     {
+       "id": "b2-23-05.ex03",
+@@ -45,14 +54,14 @@
+       "teaches": [
+         "perifrasis-pasar-a"
+       ],
+-      "question": "¿En qué contexto discursivo es especialmente idónea la perífrasis 'pasar a + infinitivo'?",
++      "question": "Which sentence means \"After the break, we moved on to talk about the trip\"?",
+       "options": [
+-        "En discursos formales, asambleas o informes para ordenar la transición lógica entre temas.",
+-        "En fábulas infantiles para imitar el ladrido repentino de un perro asustado.",
+-        "En mensajes informales de texto para comunicar un chiste entre amigos íntimos.",
+-        "En descripciones poéticas para destacar la blancura inmóvil de las cumbres nevadas."
++        "Después del descanso, pasamos hablar del viaje.",
++        "Después del descanso, pasaron a hablar del viaje.",
++        "Después del descanso, pasamos de hablar del viaje.",
++        "Después del descanso, pasamos a hablar del viaje."
+       ],
+-      "correct": 0
++      "correct": 3
+     },
+     {
+       "id": "b2-23-05.ex04",
+@@ -62,28 +71,22 @@
+         "perifrasis-pasar-a"
+       ],
+       "tiles": [
+-        "La",
+-        "comisión",
+-        "pasó",
++        "Ahora",
++        "pasemos",
+         "a",
+-        "debatir",
+-        "el",
+-        "proyecto",
+-        "de",
+-        "ley."
++        "ver",
++        "los",
++        "resultados."
+       ],
+       "solution": [
+-        "La",
+-        "comisión",
+-        "pasó",
++        "Ahora",
++        "pasemos",
+         "a",
+-        "debatir",
+-        "el",
+-        "proyecto",
+-        "de",
+-        "ley."
++        "ver",
++        "los",
++        "resultados."
+       ],
+-      "english": "The commission moved on to debating the draft bill."
++      "english": "Now let us move on to the results."
+     },
+     {
+       "id": "b2-23-05.ex05",
+@@ -94,21 +97,21 @@
+       ],
+       "prompt": [
+         {
+-          "speaker": "Presidente de la mesa",
+-          "text": "Si no hay más observaciones sobre el primer punto de la orden del día..."
++          "speaker": "Ana",
++          "text": "Ya terminamos la primera parte del informe. ¿Qué sigue?"
+         },
+         {
+-          "speaker": "Secretaria",
+-          "text": "Exactamente, señor presidente, ya podemos..."
++          "speaker": "Luis",
++          "text": "Ahora..."
+         }
+       ],
+       "options": [
+-        "pasar a discutir la asignación presupuestaria para las escuelas rurales.",
+-        "echarnos a temblar de pánico ante la votación electrónica unánime.",
+-        "ponernos a cantar melodías folclóricas en medio del hemiciclo parlamentario.",
+-        "romper a llorar colectivamente frente a los periodistas congregados."
++        "pasemos leer la segunda parte.",
++        "pasemos de leer la segunda parte.",
++        "pasemos a leyendo la segunda parte.",
++        "pasemos a leer la segunda parte."
+       ],
+-      "correct": 0
++      "correct": 3
+     },
+     {
+       "id": "b2-23-05.ex06",
+@@ -117,8 +120,8 @@
+       "teaches": [
+         "perifrasis-pasar-a"
+       ],
+-      "sentence": "A continuación, pasaremos a detallar las características del complejo eólico de Magallanes.",
+-      "english": "Next, we will proceed to detail the features of the Magallanes wind energy complex."
++      "sentence": "Después de la reunión, el director pasó a explicar el nuevo plan.",
++      "english": "After the meeting, the director went on to explain the new plan."
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-23-consolidation-ex.json b/content/es-latam/exercises/b2/b2-23-consolidation-ex.json
+index 04766e8b..6e897e9e 100644
+--- a/content/es-latam/exercises/b2/b2-23-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-23-consolidation-ex.json
+@@ -11,19 +11,23 @@
+       "pairs": [
+         [
+           "echarse a",
+-          "to burst into / to suddenly begin doing"
++          "to burst into (a sudden reaction)"
+         ],
+         [
+           "ponerse a",
+-          "to set about / to start doing deliberately"
++          "to set about, to start doing"
+         ],
+         [
+           "romper a",
+-          "to break into / to burst out doing"
++          "to burst out (sound, tears, rain)"
+         ],
+         [
+           "volver a",
+-          "to do again / to repeat an action"
++          "to do again"
++        ],
++        [
++          "pasar a",
++          "to move on to (doing)"
+         ]
+       ]
+     },
+@@ -34,9 +38,10 @@
+       "teaches": [
+         "inceptive-periphrases"
+       ],
+-      "sentence": "Cuando el perro del barco ladró furioso, el marinero se __ a temblar por el frío y el susto.",
+-      "answer": "echó",
+-      "english": "When the ship's dog barked furiously, the sailor broke into shivering from the cold and fright."
++      "sentence": "Cuando se abrió la puerta, los perros se __ a correr.",
++      "answer": "echaron",
++      "english": "When the door opened, the dogs broke into a run.",
++      "hint": "echarse"
+     },
+     {
+       "id": "b2-23-consolidation.ex03",
+@@ -45,14 +50,14 @@
+       "teaches": [
+         "inceptive-periphrases"
+       ],
+-      "question": "¿Qué oración refleja un uso genuino de iniciación deliberada de una tarea?",
++      "question": "Which verb does NOT fit in *Al oír la noticia, todos ___ a llorar*?",
+       "options": [
+-        "Al clarear el día, los buzos se pusieron a revisar las redes de pesca en el canal.",
+-        "Al amanecer, la llovizna se echó a redactar un soneto barroco en las rocas.",
+-        "Los vientos del cabo se volvieron a reír de las decisiones tomadas por el piloto.",
+-        "El motor del barco rompió a estudiar matemáticas en la sala de máquinas."
++        "se echaron",
++        "se pusieron",
++        "pasaron",
++        "rompieron"
+       ],
+-      "correct": 0
++      "correct": 2
+     },
+     {
+       "id": "b2-23-consolidation.ex04",
+@@ -62,26 +67,26 @@
+         "inceptive-periphrases"
+       ],
+       "tiles": [
+-        "La",
+-        "multitud",
+-        "rompió",
++        "Cuando",
++        "terminó",
++        "la",
++        "película,",
++        "todos",
++        "rompieron",
+         "a",
+-        "cantar",
+-        "el",
+-        "himno",
+-        "nacional."
++        "aplaudir."
+       ],
+       "solution": [
+-        "La",
+-        "multitud",
+-        "rompió",
++        "Cuando",
++        "terminó",
++        "la",
++        "película,",
++        "todos",
++        "rompieron",
+         "a",
+-        "cantar",
+-        "el",
+-        "himno",
+-        "nacional."
++        "aplaudir."
+       ],
+-      "english": "The crowd broke into singing the national anthem."
++      "english": "When the film ended, everyone burst into applause."
+     },
+     {
+       "id": "b2-23-consolidation.ex05",
+@@ -90,9 +95,10 @@
+       "teaches": [
+         "volver-a-infinitivo"
+       ],
+-      "sentence": "A pesar de las adversidades, la tripulación volvió a __ el mástil averiado de la balandra.",
+-      "answer": "levantar",
+-      "english": "Despite the adversities, the crew raised the sloop's damaged mast once again."
++      "sentence": "Perdón por el error; te prometo que no __ a equivocarme.",
++      "answer": "volveré",
++      "english": "Sorry for the mistake; I promise I will not make a mistake again.",
++      "hint": "volver, I"
+     },
+     {
+       "id": "b2-23-consolidation.ex06",
+@@ -101,14 +107,18 @@
+       "teaches": [
+         "perifrasis-pasar-a"
+       ],
+-      "question": "¿Cuál es la función textual distintiva de 'pasar a + infinitivo' en exposiciones formales?",
++      "question": "Which sentence moves from the first topic to the second?",
+       "options": [
+-        "Articular la transición deliberada y metódica de un punto de la agenda al siguiente.",
+-        "Describir la sorpresa incontrolable de un navegante ante una ballena jorobada.",
+-        "Indicar que una acción se repite periódicamente todos los fines de semana.",
+-        "Expresar una duda existencial sobre el significado de un vocablo náutico antiguo."
++        "Ya vimos el pasado; ahora dejemos de hablar del futuro.",
++        "Ya vimos el pasado; ahora pasemos hablar del futuro.",
++        "Ya vimos el pasado; ahora volvamos a hablar del pasado.",
++        "Ya vimos el pasado; ahora pasemos a hablar del futuro."
+       ],
+-      "correct": 0
++      "correct": 3,
++      "distractor_skills": {
++        "0": "dejar-de-infinitivo",
++        "2": "volver-a-infinitivo"
++      }
+     },
+     {
+       "id": "b2-23-consolidation.ex07",
+@@ -119,21 +129,21 @@
+       ],
+       "prompt": [
+         {
+-          "speaker": "Viejo patrón de goleta",
+-          "text": "¿Crees que algún día el vapor reemplazará por completo la navegación a vela en el cabo?"
++          "speaker": "Marta",
++          "text": "¿Todavía te escribe tu amigo?"
+         },
+         {
+-          "speaker": "Joven marinero",
+-          "text": "Los tiempos cambian, pero mientras existan estas tempestades..."
++          "speaker": "Luis",
++          "text": "No, desde nuestra discusión no..."
+         }
+       ],
+       "options": [
+-        "volveremos a necesitar el coraje indómito de los navegantes del sur.",
+-        "nos echaremos a cantar tonadas alegres en la cumbre de los témpanos.",
+-        "nos pondremos a olvidar el rumbo en medio de la calma chicha.",
+-        "romperemos a comprar boletos de ferrocarril a través del océano."
++        "volvieron a escribirme.",
++        "volvió escribirme.",
++        "volvió a escribirme.",
++        "volvió de escribirme."
+       ],
+-      "correct": 0
++      "correct": 2
+     },
+     {
+       "id": "b2-23-consolidation.ex08",
+@@ -142,8 +152,8 @@
+       "teaches": [
+         "perifrasis-pasar-a"
+       ],
+-      "sentence": "Concluido el rescate de la tripulación, las autoridades pasaron a investigar las causas del naufragio.",
+-      "english": "The crew's rescue concluded, the authorities moved on to investigating the causes of the shipwreck."
++      "sentence": "Cuando terminó el primer tema, el profesor pasó a explicar el segundo.",
++      "english": "When the first topic ended, the teacher went on to explain the second."
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-25-01-ex.json b/content/es-latam/exercises/b2/b2-25-01-ex.json
+index 96ab4399..ccc7d144 100644
+--- a/content/es-latam/exercises/b2/b2-25-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-25-01-ex.json
+@@ -8,14 +8,17 @@
+       "teaches": [
+         "dejar-de-infinitivo"
+       ],
+-      "question": "¿Qué valor aspectual aporta la perífrasis 'dejar de + infinitivo' en la oración: 'El capataz dejó de exigir faenas nocturnas tras la tormenta'?",
++      "question": "Which sentence means \"It stopped raining\"?",
+       "options": [
+-        "Indica el inicio repentino e impulsivo de una nueva obligación laboral.",
+-        "Señala la cesación o interrupción definitiva de una conducta previa.",
+-        "Expresa la reiteración insistente de una orden a lo largo de la semana.",
+-        "Denota una acción que se encuentra en pleno desarrollo progresivo."
++        "Dejó a llover.",
++        "Dejó de llover.",
++        "Empezó a llover.",
++        "Dejó de llovió."
+       ],
+-      "correct": 1
++      "correct": 1,
++      "distractor_skills": {
++        "2": "perifrasis-verbales"
++      }
+     },
+     {
+       "id": "b2-25-01.ex02",
+@@ -24,9 +27,10 @@
+       "teaches": [
+         "dejar-de-infinitivo"
+       ],
+-      "sentence": "Cuando comprendió los peligros del lodazal pampeano, el joven arriero __ de cabalgar a oscuras.",
+-      "answer": "dejo",
+-      "english": "When he understood the dangers of the pampas quagmire, the young cattle drover stopped riding in the dark."
++      "sentence": "Cuando llegó el frío, el capataz __ de salir a caballo por la noche.",
++      "answer": "dejó",
++      "english": "When the cold came, the foreman stopped going out on horseback at night.",
++      "hint": "dejar"
+     },
+     {
+       "id": "b2-25-01.ex03",
+@@ -35,14 +39,14 @@
+       "teaches": [
+         "dejar-de-infinitivo"
+       ],
+-      "question": "¿Cuál es el sentido de la construcción negativa ponderativa 'no dejar de + infinitivo' en: 'Los peones no dejaron de admirar la destreza de Don Segundo'?",
++      "question": "Which sentence means \"Be sure to tell the foreman\"?",
+       "options": [
+-        "Equivale a una prohibición tajante impuesta por las autoridades de la estancia.",
+-        "Enfatiza la persistencia continua y la certeza indiscutible de su admiración.",
+-        "Sugiere que los peones olvidaron rápidamente las hazañas del veterano resero.",
+-        "Expresa que la admiración se interrumpió debido a desacuerdos técnicos."
++        "No dejas de avisar al capataz.",
++        "Deja de avisar al capataz.",
++        "No dejes de avisar al capataz.",
++        "No dejes avisar al capataz."
+       ],
+-      "correct": 1
++      "correct": 2
+     },
+     {
+       "id": "b2-25-01.ex04",
+@@ -51,9 +55,10 @@
+       "teaches": [
+         "dejar-de-infinitivo"
+       ],
+-      "sentence": "Aunque el viaje por las pampas sea extenuante, no __ de avisarnos cuando lleguen a la posta.",
++      "sentence": "Aunque el viaje sea largo, no __ de avisarnos cuando lleguen a la estancia.",
+       "answer": "dejen",
+-      "english": "Even though the journey across the pampas may be exhausting, do not fail to let us know when you reach the staging post."
++      "english": "Even if the journey is long, be sure to tell us when you reach the ranch.",
++      "hint": "dejar, ustedes"
+     },
+     {
+       "id": "b2-25-01.ex05",
+@@ -64,20 +69,28 @@
+       ],
+       "pairs": [
+         [
+-          "el cese",
+-          "the cessation / stopping"
++          "dejar de",
++          "to stop doing"
++        ],
++        [
++          "resero",
++          "cattle drover"
++        ],
++        [
++          "estancia",
++          "cattle ranch"
+         ],
+         [
+-          "el desistimiento",
+-          "the relinquishment / withdrawal"
++          "tropa",
++          "herd of cattle on the move"
+         ],
+         [
+-          "la claudicación",
+-          "the capitulation / giving in"
++          "capataz",
++          "foreman"
+         ],
+         [
+-          "el desapego",
+-          "the detachment / letting go"
++          "mayordomo",
++          "manager of a ranch"
+         ]
+       ]
+     },
+@@ -85,12 +98,11 @@
+       "id": "b2-25-01.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "Según el relato de Ricardo Güiraldes, ¿por qué Fabio Cáceres decide abandonar su pueblo natal?",
++      "question": "In the text, what happened with Don Fabio Cáceres's visits as time went by?",
+       "options": [
+-        "Porque cometió un delito grave y huye de la justicia local.",
+-        "Porque busca seguir los pasos de Don Segundo para aprender el oficio y la dignidad del gaucho.",
+-        "Porque sus tías le exigieron viajar a la capital para estudiar abogacía.",
+-        "Porque la sequía destruyó por completo las haciendas de su familia."
++        "Empezó a visitar al chico todos los días.",
++        "Dejó de venir con frecuencia.",
++        "Se fue a vivir con las tías."
+       ],
+       "correct": 1
+     }
+diff --git a/content/es-latam/exercises/b2/b2-25-02-ex.json b/content/es-latam/exercises/b2/b2-25-02-ex.json
+index 00da67a2..304f4beb 100644
+--- a/content/es-latam/exercises/b2/b2-25-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-25-02-ex.json
+@@ -8,14 +8,14 @@
+       "teaches": [
+         "perifrasis-verbales"
+       ],
+-      "question": "¿Cuál es la diferencia fundamental entre 'acabar de + infinitivo' y 'acabar por + infinitivo'?",
++      "question": "Which sentence means \"He has just left\"?",
+       "options": [
+-        "'Acabar de' expresa pasado inmediato reciente, mientras 'acabar por' denota desenlace final tras demoras o vacilaciones.",
+-        "'Acabar de' exige subjuntivo en todas sus formas, mientras 'acabar por' solo admite indicativo.",
+-        "'Acabar por' se utiliza únicamente para el clima, mientras 'acabar de' se aplica a personas.",
+-        "Ambas perífrasis son sinónimas y completamente intercambiables sin variar el matiz temporal."
++        "Acaba salir.",
++        "Acabó de salir.",
++        "Acaba de salir.",
++        "Acaba a salir."
+       ],
+-      "correct": 0
++      "correct": 2
+     },
+     {
+       "id": "b2-25-02.ex02",
+@@ -24,25 +24,26 @@
+       "teaches": [
+         "perifrasis-verbales"
+       ],
+-      "sentence": "El jinete mensajero __ de desmontar en la pulpería trayendo noticias frescas de la estancia vecina.",
++      "sentence": "Mira, el mayordomo __ de llegar.",
+       "answer": "acaba",
+-      "english": "The courier horseman has just dismounted at the pulpería bringing fresh news from the neighboring ranch."
++      "english": "Look, the manager has just arrived.",
++      "hint": "acabar"
+     },
+     {
+       "id": "b2-25-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+       "teaches": [
+-        "terminar-por-infinitivo"
++        "perifrasis-verbales"
+       ],
+-      "question": "¿Qué expresa la perífrasis en: 'Tras resistirse durante semanas, los estancieros acabaron por aceptar el nuevo acuerdo tarifario'?",
++      "question": "Which sentence means \"I had just left when it started to rain\"?",
+       "options": [
+-        "Que el acuerdo fue rechazado definitivamente por ambas partes.",
+-        "Que la decisión se tomó de inmediato sin debate ni resistencia previa.",
+-        "Que se llegó a ese resultado como resolución forzosa tras un prolongado conflicto.",
+-        "Que el acuerdo acaba de firmarse hace escasos segundos frente al juez."
++        "Acabé de salir cuando empezó a llover.",
++        "Acabo de salir cuando empezó a llover.",
++        "Acababa salir cuando empezó a llover.",
++        "Acababa de salir cuando empezó a llover."
+       ],
+-      "correct": 2
++      "correct": 3
+     },
+     {
+       "id": "b2-25-02.ex04",
+@@ -51,9 +52,10 @@
+       "teaches": [
+         "perifrasis-verbales"
+       ],
+-      "sentence": "Hacía frío en la madrugada y el fogón del vivac acababa __ apagarse cuando ensillaron los caballos.",
+-      "answer": "de",
+-      "english": "It was cold at dawn and the bivouac fire had just gone out when they saddled the horses."
++      "sentence": "Nosotros __ de encender el fuego cuando llegó el capataz.",
++      "answer": "acabábamos",
++      "english": "We had just lit the fire when the foreman arrived.",
++      "hint": "acabar, nosotros"
+     },
+     {
+       "id": "b2-25-02.ex05",
+@@ -64,20 +66,28 @@
+       ],
+       "pairs": [
+         [
+-          "la culminación",
+-          "the culmination / completion"
++          "acabar de",
++          "to have just (done something)"
++        ],
++        [
++          "reciente",
++          "recent"
++        ],
++        [
++          "desenlace",
++          "ending, outcome"
+         ],
+         [
+-          "el desenlace",
+-          "the outcome / unraveling"
++          "remate",
++          "finishing touch"
+         ],
+         [
+-          "la desembocadura",
+-          "the eventual ending / outlet"
++          "culminación",
++          "high point, completion"
+         ],
+         [
+-          "el remate",
+-          "the finishing touch / conclusion"
++          "resolución",
++          "decision, solution"
+         ]
+       ]
+     },
+@@ -88,14 +98,14 @@
+       "teaches": [
+         "perifrasis-verbales"
+       ],
+-      "question": "¿Por qué es agramatical la oración: *'Los reseros acabaron de llegar hace cuatro años a la estancia'*?",
++      "question": "Which sentence means \"She finished writing the letter\"?",
+       "options": [
+-        "Porque 'acabar de' expresa inmediatez retrospectiva y no tolera complementos temporales lejanos.",
+-        "Porque el verbo 'llegar' no puede funcionar como infinitivo principal.",
+-        "Porque falta la preposición 'por' antes del complemento de tiempo.",
+-        "Porque los sujetos colectivos como 'reseros' exigen el verbo en singular."
++        "Acaba de escribir la carta.",
++        "Acababa de escribir la carta.",
++        "Acabó de escribir la carta.",
++        "Acabo de escribir la carta."
+       ],
+-      "correct": 0
++      "correct": 2
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-25-03-ex.json b/content/es-latam/exercises/b2/b2-25-03-ex.json
+index 46e4d37d..3e815d8d 100644
+--- a/content/es-latam/exercises/b2/b2-25-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-25-03-ex.json
+@@ -8,14 +8,17 @@
+       "teaches": [
+         "terminar-por-infinitivo"
+       ],
+-      "question": "¿Qué matiz aspectual distingue a 'terminar + gerundio' en: 'Aquel joven rebelde terminó convirtiéndose en el más leal capataz'?",
++      "question": "Which sentence means \"After many doubts, she ended up accepting the job\"?",
+       "options": [
+-        "Subraya el estado o condición resultante en que desembocó un proceso prolongado.",
+-        "Señala que la acción de convertirse fue fugaz e instantánea.",
+-        "Indica que el sujeto dejó de ser capataz voluntariamente.",
+-        "Expresa una orden perentoria dada por el dueño de la hacienda."
++        "Después de muchas dudas, terminó a aceptar el trabajo.",
++        "Después de muchas dudas, acabó de aceptar el trabajo.",
++        "Después de muchas dudas, terminó por aceptar el trabajo.",
++        "Después de muchas dudas, terminó por aceptó el trabajo."
+       ],
+-      "correct": 0
++      "correct": 2,
++      "distractor_skills": {
++        "1": "perifrasis-verbales"
++      }
+     },
+     {
+       "id": "b2-25-03.ex02",
+@@ -24,9 +27,10 @@
+       "teaches": [
+         "terminar-por-infinitivo"
+       ],
+-      "sentence": "Después de cruzar tres ríos crecidos, la tropa de novillos __ por calmarse en las lomas secas.",
+-      "answer": "termino",
+-      "english": "After crossing three flooded rivers, the herd of steers finally calmed down on the dry hills."
++      "sentence": "Después de mucho tiempo, mis amigos __ por aceptar el plan.",
++      "answer": "terminaron",
++      "english": "After a long time, my friends ended up accepting the plan.",
++      "hint": "terminar, ellos"
+     },
+     {
+       "id": "b2-25-03.ex03",
+@@ -35,14 +39,17 @@
+       "teaches": [
+         "terminar-por-infinitivo"
+       ],
+-      "question": "¿En cuál de las siguientes opciones se utiliza 'terminar por + infinitivo' con valor de desenlace forzoso o resignado?",
++      "question": "Which sentence means \"The manager finally let him stay\"?",
+       "options": [
+-        "Terminamos de cenar a las ocho en el comedor principal.",
+-        "El potro chúcaro terminó por doblegar su resistencia ante la destreza del domador.",
+-        "Los peones terminan sus tareas cotidianas antes del crepúsculo.",
+-        "El contrato terminó ayer sin que mediara renovación alguna."
++        "El mayordomo acabó de dejarlo quedarse.",
++        "El mayordomo acabó en dejarlo quedarse.",
++        "El mayordomo acabó dejarlo quedarse.",
++        "El mayordomo acabó por dejarlo quedarse."
+       ],
+-      "correct": 1
++      "correct": 3,
++      "distractor_skills": {
++        "0": "perifrasis-verbales"
++      }
+     },
+     {
+       "id": "b2-25-03.ex04",
+@@ -51,9 +58,10 @@
+       "teaches": [
+         "terminar-por-infinitivo"
+       ],
+-      "sentence": "Si continúas galopando sin herraduras por las piedras, terminarás __ a tu caballo favorito.",
+-      "answer": "lastimando",
+-      "english": "If you keep galloping without horseshoes across the stones, you will end up injuring your favorite horse."
++      "sentence": "Si sigues así, tú __ por cansarte.",
++      "answer": "acabarás",
++      "english": "If you go on like this, you will end up getting tired.",
++      "hint": "acabar, tú"
+     },
+     {
+       "id": "b2-25-03.ex05",
+@@ -64,20 +72,28 @@
+       ],
+       "pairs": [
+         [
+-          "la resignación",
+-          "the resignation / acceptance"
++          "terminar por",
++          "to end up doing"
+         ],
+         [
+-          "la inevitabilidad",
+-          "the inevitability"
++          "acabar por",
++          "to end up doing"
+         ],
+         [
+-          "el corolario",
+-          "the corollary / natural result"
++          "resignación",
++          "resignation, acceptance"
+         ],
+         [
+-          "la decantación",
+-          "the gradual settling / clarifying"
++          "secuela",
++          "aftermath"
++        ],
++        [
++          "saldo",
++          "outcome, net result"
++        ],
++        [
++          "fatalidad",
++          "bad luck, unavoidable fate"
+         ]
+       ]
+     },
+@@ -85,14 +101,13 @@
+       "id": "b2-25-03.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Cómo logra Fabio Cáceres superar los momentos de extenuación durante los arreos de ganado?",
++      "question": "In the text, how did the manager of the ranch react when the boy asked for work?",
+       "options": [
+-        "Amenazando a los novillos con su facón para acelerar la marcha.",
+-        "Encontrando en la mirada serena e imperturbable de Don Segundo la fuerza para sostenerse en la montura.",
+-        "Regresando de inmediato a San Antonio de Areco para descansar en su rancho.",
+-        "Exigiendo que otros peones asuman la responsabilidad del arreo."
++        "Le dijo que volviera al pueblo con las tías.",
++        "Le ofreció un sueldo completo y una casa.",
++        "Dijo que no tenía trabajo, pero lo dejó quedarse."
+       ],
+-      "correct": 1
++      "correct": 2
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-25-04-ex.json b/content/es-latam/exercises/b2/b2-25-04-ex.json
+index 03d2ef85..db0a1f66 100644
+--- a/content/es-latam/exercises/b2/b2-25-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-25-04-ex.json
+@@ -8,14 +8,17 @@
+       "teaches": [
+         "perifrasis-llegar-a-infinitivo"
+       ],
+-      "question": "¿Qué valor expresa la perífrasis 'llegar a + infinitivo' en: 'Con disciplina espartana, Fabio llegó a dominar el arte del arreo'?",
++      "question": "Which sentence means \"With time, she came to speak four languages\"?",
+       "options": [
+-        "Indica una obligación impuesta por las leyes civiles de la provincia.",
+-        "Expresa la consecución de un hito culminante tras un proceso gradual de aprendizaje.",
+-        "Señala la interrupción definitiva del oficio de resero.",
+-        "Denota un desplazamiento físico hacia un lugar geográfico específico."
++        "Con el tiempo, llegó hablar cuatro idiomas.",
++        "Con el tiempo, dejó de hablar cuatro idiomas.",
++        "Con el tiempo, llegó a hablar cuatro idiomas.",
++        "Con el tiempo, llegó a hablado cuatro idiomas."
+       ],
+-      "correct": 1
++      "correct": 2,
++      "distractor_skills": {
++        "1": "dejar-de-infinitivo"
++      }
+     },
+     {
+       "id": "b2-25-04.ex02",
+@@ -24,9 +27,10 @@
+       "teaches": [
+         "perifrasis-llegar-a-infinitivo"
+       ],
+-      "sentence": "Nadie en la pulpería imaginaba que aquel muchacho huérfano __ a ser el dueño de tan ricas estancias.",
+-      "answer": "llegaria",
+-      "english": "Nobody at the tavern imagined that that orphaned boy would come to be the owner of such rich ranches."
++      "sentence": "Si __ a llover, cancelamos el viaje.",
++      "answer": "llega",
++      "english": "If it happens to rain, we cancel the trip.",
++      "hint": "llegar"
+     },
+     {
+       "id": "b2-25-04.ex03",
+@@ -35,14 +39,17 @@
+       "teaches": [
+         "perifrasis-llegar-a-infinitivo"
+       ],
+-      "question": "¿Cuál es la función de 'llegar a + infinitivo' en una prótasis condicional como: 'Si llega a helar esta noche, encenderemos fogatas en el huerto'?",
++      "question": "Which sentence means \"He even shouted at the foreman\"?",
+       "options": [
+-        "Pondera una contingencia eventual como una posibilidad remota o crucial para la toma de medidas.",
+-        "Afirma con total certeza matemática que la helada ya se ha producido.",
+-        "Expresa un mandato imperativo dirigido al capataz de la hacienda.",
+-        "Indica el cese definitivo de las bajas temperaturas invernales."
++        "Llegó gritarle al capataz.",
++        "Dejó de gritarle al capataz.",
++        "Llegó en gritarle al capataz.",
++        "Llegó a gritarle al capataz."
+       ],
+-      "correct": 0
++      "correct": 3,
++      "distractor_skills": {
++        "1": "dejar-de-infinitivo"
++      }
+     },
+     {
+       "id": "b2-25-04.ex04",
+@@ -51,9 +58,12 @@
+       "teaches": [
+         "perifrasis-llegar-a-infinitivo"
+       ],
+-      "sentence": "La obra cumbre de Güiraldes llegó a __ como una de las cumbres de la literatura hispánica.",
+-      "answer": "consagrarse",
+-      "english": "Güiraldes's masterpiece came to be consecrated as one of the peaks of Hispanic literature."
++      "sentence": "Mi amigo no __ a entender la explicación.",
++      "answers": [
++        "llegó",
++        "llegaba"
++      ],
++      "english": "My friend did not manage to understand the explanation."
+     },
+     {
+       "id": "b2-25-04.ex05",
+@@ -64,20 +74,28 @@
+       ],
+       "pairs": [
+         [
+-          "el apogeo",
+-          "the apogee / height / peak"
++          "llegar a",
++          "to get as far as doing, to come to do"
++        ],
++        [
++          "hito",
++          "milestone"
+         ],
+         [
+-          "la consagración",
+-          "the ultimate recognition / consecration"
++          "apogeo",
++          "peak, height"
+         ],
+         [
+-          "el hito",
+-          "the milestone / landmark"
++          "cumbre",
++          "summit, high point"
+         ],
+         [
+-          "la plenitud",
+-          "the fullness / peak state"
++          "consecución",
++          "achievement"
++        ],
++        [
++          "plenitud",
++          "full strength, prime"
+         ]
+       ]
+     },
+@@ -88,14 +106,14 @@
+       "teaches": [
+         "perifrasis-llegar-a-infinitivo"
+       ],
+-      "question": "¿En cuál de las siguientes frases 'llegar a + infinitivo' denota un límite extremo o insólito de conducta?",
++      "question": "Which sentence is correct?",
+       "options": [
+-        "Llegamos a la estancia antes de que cayera la noche.",
+-        "En su cólera desmedida, el patrón llegó a negarle el jornal pactado al peón.",
+-        "El tren llega a destino a las cuatro en punto de la tarde.",
+-        "Llegaron a un acuerdo pacífico tras varias semanas de diálogo."
++        "Si llega a nevar esta noche, no saldremos.",
++        "Si llega nevar esta noche, no saldremos.",
++        "Si llega de nevar esta noche, no saldremos.",
++        "Si llega a nevado esta noche, no saldremos."
+       ],
+-      "correct": 1
++      "correct": 0
+     }
+   ]
+ }
+diff --git a/content/es-latam/exercises/b2/b2-25-05-ex.json b/content/es-latam/exercises/b2/b2-25-05-ex.json
+index 4567184e..b12cec47 100644
+--- a/content/es-latam/exercises/b2/b2-25-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-25-05-ex.json
+@@ -8,14 +8,14 @@
+       "teaches": [
+         "perifrasis-dar-por-participio"
+       ],
+-      "question": "¿Qué actitud epistémica expresa 'dar por sentado' en: 'No des por sentado que el cruce del río será fácil'?",
++      "question": "Which sentence means \"They gave the cows up for lost\"?",
+       "options": [
+-        "Asumir algo como un hecho indudable y obvio sin haberlo comprobado plenamente.",
+-        "Confirmar mediante pruebas periciales que un documento es completamente falso.",
+-        "Ordenar formalmente la detención judicial de un sospechoso.",
+-        "Expresar tristeza y desánimo ante una pérdida económica irreparable."
++        "Dieron por perdido las vacas.",
++        "Dieron perdidas las vacas.",
++        "Dieron por perder las vacas.",
++        "Dieron por perdidas las vacas."
+       ],
+-      "correct": 0
++      "correct": 3
+     },
+     {
+       "id": "b2-25-05.ex02",
+@@ -24,9 +24,10 @@
+       "teaches": [
+         "perifrasis-dar-por-participio"
+       ],
+-      "sentence": "El juez de paz dio por __ el inventario de las tierras tras revisar detenidamente las escrituras.",
+-      "answer": "concluido",
+-      "english": "The justice of the peace considered the land inventory concluded after carefully reviewing the title deeds."
++      "sentence": "El juez dio por __ el caso.",
++      "answer": "terminado",
++      "english": "The judge declared the case closed.",
++      "hint": "terminar"
+     },
+     {
+       "id": "b2-25-05.ex03",
+@@ -35,14 +36,14 @@
+       "teaches": [
+         "perifrasis-dar-por-participio"
+       ],
+-      "question": "¿Cómo concuerda el participio en la perífrasis 'dar por + participio'?",
++      "question": "Which sentence means \"He took it for granted that we would win\"?",
+       "options": [
+-        "Permanece siempre invariable en masculino singular sin excepción alguna.",
+-        "Concuerda obligatoriamente en género y número con el complemento directo de la oración.",
+-        "Concuerda exclusivamente con el sujeto gramatical de la cláusula principal.",
+-        "Adopta únicamente formas irregulares derivadas del latín clásico."
++        "Daba sentado que ganaríamos.",
++        "Daba por sentados que ganaríamos.",
++        "Daba por sentado que ganaríamos.",
++        "Daba por sentado de que ganaríamos."
+       ],
+-      "correct": 1
++      "correct": 2
+     },
+     {
+       "id": "b2-25-05.ex04",
+@@ -51,9 +52,9 @@
+       "teaches": [
+         "perifrasis-dar-por-participio"
+       ],
+-      "sentence": "Tras buscar sin descanso por los bañados, los peones dieron por __ a las vacas extraviadas.",
++      "sentence": "Después de buscar todo el día, dieron por __ las llaves.",
+       "answer": "perdidas",
+-      "english": "After searching relentlessly through the marshes, the ranch hands considered the lost cows as gone."
++      "english": "After looking for them all day, they gave the keys up for lost."
+     },
+     {
+       "id": "b2-25-05.ex05",
+@@ -64,20 +65,28 @@
+       ],
+       "pairs": [
+         [
+-          "la presuposición",
+-          "the presupposition / assumption"
++          "dar por",
++          "to take as, to consider (finished, lost, certain)"
++        ],
++        [
++          "clausura",
++          "closing, end"
++        ],
++        [
++          "veredicto",
++          "verdict"
+         ],
+         [
+-          "la clausura",
+-          "the closure / definitive shutting"
++          "conclusión",
++          "conclusion"
+         ],
+         [
+-          "el veredicto",
+-          "the verdict / formal ruling"
++          "presuposición",
++          "assumption"
+         ],
+         [
+-          "la constatación",
+-          "the verification / factual confirmation"
++          "constatación",
++          "confirmation"
+         ]
+       ]
+     },
+@@ -85,12 +94,11 @@
+       "id": "b2-25-05.ex06",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "En el desenlace de la novela, ¿por qué Don Segundo Sombra decide marcharse de la estancia de Fabio?",
++      "question": "How did the young man react to the news in the letter?",
+       "options": [
+-        "Porque tuvo un enfrentamiento violento con el nuevo administrador de los campos.",
+-        "Porque considera que su tutela terminó y su condición de gaucho libre le impide apegarse a los bienes materiales.",
+-        "Porque las autoridades de la provincia le confiscaron sus caballos de tiro.",
+-        "Porque Fabio le pidió explícitamente que se fuera para poder gobernar su herencia sin testigos."
++        "Se alegró y se fue a vivir al pueblo.",
++        "Se enojó y se imaginó rechazando la herencia.",
++        "Volvió enseguida a la casa de sus tías."
+       ],
+       "correct": 1
+     }
+diff --git a/content/es-latam/exercises/b2/b2-25-consolidation-ex.json b/content/es-latam/exercises/b2/b2-25-consolidation-ex.json
+index 7abf6991..0f82c5a2 100644
+--- a/content/es-latam/exercises/b2/b2-25-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-25-consolidation-ex.json
+@@ -6,15 +6,13 @@
+       "type": "multiple-choice",
+       "category": "grammar",
+       "teaches": [
+-        "dejar-de-infinitivo",
+-        "perifrasis-verbales"
++        "dejar-de-infinitivo"
+       ],
+-      "question": "¿Qué pareja de perífrasis completa adecuadamente la oración: 'El estanciero __ de desconfiar apenas el resero __ de entregar intacto todo el ganado'?",
++      "question": "Which sentence means \"It did not stop raining all night\"?",
+       "options": [
+-        "dejó / acabó de",
+-        "rompió a / se puso a",
+-        "echó a / anduvo por",
+-        "dio por / siguió de"
++        "No dejó de llover en toda la noche.",
++        "Dejó de llover en toda la noche.",
++        "No dejó llover en toda la noche."
+       ],
+       "correct": 0
+     },
+@@ -23,53 +21,57 @@
+       "type": "fill-blank",
+       "category": "grammar",
+       "teaches": [
+-        "terminar-por-infinitivo"
++        "perifrasis-verbales"
+       ],
+-      "sentence": "Aunque al principio dudaba de sus dotes de arriero, el joven terminó __ ganarse el respeto de todos.",
+-      "answer": "por",
+-      "english": "Although at first he doubted his skills as a cattle drover, the young man finally earned everyone's respect."
++      "sentence": "Cuando llamaste, yo __ de salir de casa.",
++      "answer": "acababa",
++      "english": "When you called, I had just left the house.",
++      "hint": "acabar"
+     },
+     {
+       "id": "b2-25-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+       "teaches": [
+-        "perifrasis-llegar-a-infinitivo",
+-        "perifrasis-dar-por-participio"
++        "terminar-por-infinitivo"
+       ],
+-      "question": "¿Qué expresa la secuencia: 'Nadie pensó que llegaría a heredar las tierras, pero el juez dio por concluidas las disputas familiares'?",
++      "question": "Which sentence means \"After many arguments, they ended up accepting the plan\"?",
+       "options": [
+-        "Un hito culminante e insólito seguido de una resolución judicial que zanja definitivamente un proceso.",
+-        "Una prohibición legal que impide el acceso a la propiedad privada en la provincia.",
+-        "Un cese momentáneo de hostilidades que se reanudará en la próxima primavera.",
+-        "Una hipótesis fantástica sin base documental en el archivo de la estancia."
++        "Después de muchas discusiones, terminaron de aceptar el plan.",
++        "Después de muchas discusiones, terminaron por aceptar el plan.",
++        "Después de muchas discusiones, terminaron en aceptar el plan.",
++        "Después de muchas discusiones, terminaron por aceptando el plan."
+       ],
+-      "correct": 0
++      "correct": 1,
++      "distractor_skills": {
++        "0": "perifrasis-verbales"
++      }
+     },
+     {
+       "id": "b2-25-consolidation.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+       "teaches": [
+-        "perifrasis-dar-por-participio"
++        "perifrasis-llegar-a-infinitivo"
+       ],
+-      "sentence": "No des por __ que el viaje por las estepas patagónicas resultará exento de contratiempos.",
+-      "answer": "hecho",
+-      "english": "Do not take for granted that the journey across the Patagonian steppes will be free of setbacks."
++      "sentence": "Estaba tan cansado que __ a dormirse en la silla.",
++      "answer": "llegó",
++      "english": "He was so tired that he even fell asleep on the chair.",
++      "hint": "llegar, he"
+     },
+     {
+       "id": "b2-25-consolidation.ex05",
+       "type": "multiple-choice",
+       "category": "grammar",
+       "teaches": [
+-        "dejar-de-infinitivo"
++        "perifrasis-dar-por-participio"
+       ],
+-      "question": "¿Cuál es la interpretación correcta de: 'El viento pampeano no dejó de soplar durante tres días consecutivos'?",
++      "question": "Which sentence means \"She took it for granted that you knew\"?",
+       "options": [
+-        "El viento sopló de manera ininterrumpida y persistente durante todo ese período.",
+-        "El viento se detuvo de repente a la primera hora del amanecer.",
+-        "Hizo tanto calor que el viento apenas se sintió en las copas de los ombúes.",
+-        "El viento sopló solamente de forma intermitente durante unos breves instantes."
++        "Daba por hecho que lo sabías.",
++        "Daba por hecha que lo sabías.",
++        "Daba hecho que lo sabías.",
++        "Daba por hecho de que lo sabías."
+       ],
+       "correct": 0
+     },
+@@ -78,11 +80,12 @@
+       "type": "fill-blank",
+       "category": "grammar",
+       "teaches": [
+-        "perifrasis-verbales"
++        "perifrasis-dar-por-participio"
+       ],
+-      "sentence": "Los peones acababan de encender el fogón cuando el trueno __ a retumbar en el horizonte pampeano.",
+-      "answer": "comenzo",
+-      "english": "The ranch hands had just lit the campfire when thunder began to rumble on the pampas horizon."
++      "sentence": "El equipo dio por __ la reunión a las seis.",
++      "answer": "terminada",
++      "english": "The team declared the meeting over at six.",
++      "hint": "terminar"
+     },
+     {
+       "id": "b2-25-consolidation.ex07",
+@@ -93,20 +96,24 @@
+       ],
+       "pairs": [
+         [
+-          "el cese definitivo",
+-          "the definitive cessation"
++          "dejar de",
++          "to stop doing"
+         ],
+         [
+-          "la culminación del proceso",
+-          "the culmination of the process"
++          "acabar de",
++          "to have just done"
+         ],
+         [
+-          "el desenlace forzoso",
+-          "the inevitable outcome"
++          "terminar por",
++          "to end up doing"
+         ],
+         [
+-          "el logro del hito",
+-          "the achievement of the milestone"
++          "llegar a",
++          "to get as far as doing"
++        ],
++        [
++          "dar por",
++          "to take as (finished, lost, certain)"
+         ]
+       ]
+     },
+@@ -114,14 +121,13 @@
+       "id": "b2-25-consolidation.ex08",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Cuál es el mensaje filosófico que Don Segundo Sombra transmite a Fabio Cáceres antes de su partida final?",
++      "question": "How long did Don Segundo stay in the countryside before he decided to leave?",
+       "options": [
+-        "Que la libertad interior y la rectitud moral no dependen de las posesiones materiales que se administren.",
+-        "Que un verdadero gaucho debe renegar de cualquier instrucción escolar o documento legal.",
+-        "Que la única forma de felicidad consiste en abandonar la patria y viajar hacia tierras lejanas.",
+-        "Que el poder económico es el único instrumento legítimo para imponer justicia en las pampas."
++        "Un año.",
++        "Tres años.",
++        "Cinco años."
+       ],
+-      "correct": 0
++      "correct": 1
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-23-01-a-gr.json b/content/es-latam/grammar/b2/b2-23-01-a-gr.json
+index ab8ae9d9..46899cae 100644
+--- a/content/es-latam/grammar/b2/b2-23-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-23-01-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.23.01.perifrasis-echarse-a",
+-  "title": "Perífrasis inceptivas: Echarse a + infinitivo",
++  "title": "Echarse a: Bursting Into an Action",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis aspectual inceptiva *echarse a + infinitivo* focaliza el inicio abrupto, súbito e impulsivo de una acción o estado. Se combina primordialmente con verbos de reacciones emocionales incontrolables (*echarse a llorar*, *echarse a reír*, *echarse a temblar*) o con acciones físicas que denotan huida o movimiento impulsivo (*echarse a correr*, *echarse a volar*). No admite verbos que impliquen planificación minuciosa ni procesos deliberados prolongados."
++      "content": "You know *empezar a* + infinitive from A2 Unit 28 and *ponerse a* + infinitive from A2 Unit 32. *Echarse a* + infinitive also means \"to start doing something\", but only when the start is a sudden reaction: nobody plans it, it just bursts out. It is used mainly with a few verbs of feeling and movement, such as *llorar* (to cry), *reír* (to laugh) and *correr* (to run).\n\n*Echarse* is reflexive, so the pronoun and the verb change with the subject (*me eché*, *se echó*, *nos echamos*). The infinitive after *a* never changes."
+     },
+     {
+       "type": "table",
+-      "title": "Usos representativos de Echarse a + infinitivo",
++      "title": "echarse a + infinitive",
+       "rows": [
+         [
+-          "Al recibir la conmovedora noticia, la madre se echó a llorar de alivio.",
+-          "Upon receiving the moving news, the mother burst out crying with relief."
++          "Al oír la noticia, se echó a llorar.",
++          "On hearing the news, she burst into tears."
+         ],
+         [
+-          "Apenas escuchó la alarma en el muelle, el guardia se echó a correr hacia la dársena.",
+-          "As soon as he heard the alarm on the dock, the guard broke into a run toward the slipway."
++          "Todos nos echamos a reír al mismo tiempo.",
++          "We all burst out laughing at the same time."
+         ],
+         [
+-          "Toda la asamblea se echó a reír ante la ocurrencia del anciano marinero.",
+-          "The entire assembly burst into laughter at the old sailor's witty remark."
++          "Cuando vio al perro, el niño se echó a correr.",
++          "When he saw the dog, the boy broke into a run."
+         ],
+         [
+-          "Al sentir el temblor en las restingas, los petreles se echaron a volar desorientados.",
+-          "Feeling the tremor on the reefs, the petrels took to flight disoriented."
++          "Los caballos se echaron a correr por el campo.",
++          "The horses broke into a run across the field."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "*Echarse a* se reserva para impulsos espontáneos. Para tareas intelectuales o actividades laborales voluntarias debe utilizarse *ponerse a* (*se puso a redactar*, nunca *se echó a redactar*)."
++      "content": "Use *echarse a* only for a sudden reaction. A planned task needs *ponerse a* or *empezar a*: *Se puso a estudiar* is natural, *Se echó a estudiar* is not. A reaction can use either verb (*se echó a llorar* and *se puso a llorar* are both correct), but *echarse a* sounds more sudden."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-23-02-a-gr.json b/content/es-latam/grammar/b2/b2-23-02-a-gr.json
+index fa2c3e03..2b1ac60e 100644
+--- a/content/es-latam/grammar/b2/b2-23-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-23-02-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.23.02.perifrasis-ponerse-a",
+-  "title": "Perífrasis inceptivas: Ponerse a + infinitivo",
++  "title": "Ponerse a: Setting About Something",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis *ponerse a + infinitivo* expresa la iniciación deliberada, voluntaria y activa de una acción o labor por parte del sujeto. A diferencia de *echarse a*, denota disposición consciente y compromiso personal con una tarea (*ponerse a trabajar*, *ponerse a estudiar*, *ponerse a escribir*). Asimismo, en tercera persona puede combinarse con fenómenos meteorológicos cuando se presentan de modo inesperado (*se puso a llover*, *se puso a nevar*)."
++      "content": "You know *ponerse a* + infinitive from A2 Unit 32 (*se puso a llover*, *me puse a limpiar la casa*). It is the most flexible of the \"start\" phrases, so this lesson recaps it and adds only one thing: how it differs from *echarse a*, which you met in the last lesson.\n\n*Ponerse a* works with a planned task (*se puso a trabajar*), with a sudden reaction (*se puso a llorar*) and with weather (*se puso a nevar*). *Echarse a* works only with the reaction."
+     },
+     {
+       "type": "table",
+-      "title": "Usos de Ponerse a: labor voluntaria y fenómeno meteorológico",
++      "title": "Which verb fits?",
+       "rows": [
+         [
+-          "Tras el sismo, la brigada minera se puso a despejar los accesos derrumbados.",
+-          "After the tremor, the mining crew set about clearing the collapsed access tunnels."
++          "Después de cenar, me puse a escribir el informe.",
++          "A planned task: only ponerse a works."
+         ],
+         [
+-          "Sin perder un minuto más, la geóloga se puso a examinar las muestras de cuarzo.",
+-          "Without wasting another minute, the geologist set to work examining the quartz samples."
++          "Al ver la foto, se puso a llorar. / Al ver la foto, se echó a llorar.",
++          "A sudden reaction: both work; echarse a sounds more sudden."
+         ],
+         [
+-          "Hacia la medianoche, se puso a nevar copiosamente sobre los ventisqueros de Magallanes.",
+-          "Toward midnight, it began to snow heavily over the glaciers of Magallanes."
++          "De repente se puso a nevar.",
++          "Weather: ponerse a works; echarse a is not used."
+         ],
+         [
+-          "Al clarear el día, los ingenieros se pusieron a revisar el generador eólico.",
+-          "At daybreak, the engineers set about inspecting the wind generator."
++          "Los técnicos se pusieron a revisar el motor.",
++          "A job that people choose to start: only ponerse a works."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "*Ponerse a* requiere concentración activa y esfuerzo del agente. En contextos impersonales meteorológicos resalta el comienzo imprevisto de la precipitación."
++      "content": "Do not mix up *ponerse a* + infinitive with *ponerse* + adjective. You know *ponerse* + adjective from B2 Unit 22: *Se puso triste* means she became sad, but *Se puso a llorar* means she started to cry. The little word *a* and an infinitive after it make the difference."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-23-03-a-gr.json b/content/es-latam/grammar/b2/b2-23-03-a-gr.json
+index 0f061f36..882f94c0 100644
+--- a/content/es-latam/grammar/b2/b2-23-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-23-03-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.23.03.perifrasis-romper-a",
+-  "title": "Perífrasis inceptivas: Romper a + infinitivo",
++  "title": "Romper a: Breaking Into Sound and Tears",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis inceptiva *romper a + infinitivo* denota el comienzo repentino, ruidoso, violento o desbordante de una acción que quiebra un estado previo de quietud o contención. Se utiliza con un repertorio selecto de verbos que denotan expresiones vocales intensas (*romper a cantar*, *romper a gritar*, *romper a aplaudir*), fenómenos naturales tempestuosos (*romper a llover*, *romper a granizar*) o procesos de ebullición (*romper a hervir*)."
++      "content": "You know *empezar a*, *ponerse a* and *echarse a* + infinitive. *Romper a* + infinitive is a fourth way to say that something suddenly starts, and it has a special picture: the start breaks a silence or a calm. It is used with sounds and feelings that burst out, such as *llorar* (to cry), *reír* (to laugh), *gritar* (to shout), *aplaudir* (to applaud) and *llover* (to rain).\n\nUnlike *echarse*, *romper* is not reflexive, so there is no *se*. You meet it mostly in stories and news reports, usually in the preterite."
+     },
+     {
+       "type": "table",
+-      "title": "Quiebre de contención con Romper a + infinitivo",
++      "title": "romper a + infinitive",
+       "rows": [
+         [
+-          "Al concluir la sinfonía, el auditorio rompió a aplaudir con fervor unánime.",
+-          "Upon the symphony's conclusion, the audience broke into enthusiastic, unanimous applause."
++          "Al terminar el concierto, el público rompió a aplaudir.",
++          "When the concert ended, the audience burst into applause."
+         ],
+         [
+-          "Cuando el agua salada rompa a hervir, agregue las hierbas medicinales de la cordillera.",
+-          "When the salt water comes to a rolling boil, add the mountain medicinal herbs."
++          "Después de un largo silencio, la niña rompió a llorar.",
++          "After a long silence, the girl burst into tears."
+         ],
+         [
+-          "Tras horas de silencio ominoso, las nubes del cabo rompieron a descargar granizo.",
+-          "After hours of ominous silence, the clouds over the cape broke into dumping hail."
++          "Cuando se abrieron las puertas, los niños rompieron a gritar de alegría.",
++          "When the doors opened, the children broke into shouts of joy."
+         ],
+         [
+-          "Al confirmarse el hallazgo de la veta mineral, los trabajadores rompieron a vitorear con júbilo.",
+-          "Upon confirmation of the mineral vein discovery, the workers broke into cheering with jubilation."
++          "Hacia la tarde, rompió a llover con fuerza.",
++          "Towards evening, it suddenly started to pour."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "*Romper a* aporta gran dramatismo y plasticidad sensorial al relato, presupone que la tensión acumulada se desata de golpe con energía sonora o física."
++      "content": "Use *romper a* only with sounds, feelings and rain. For a planned task it is wrong (*Rompió a estudiar* does not exist), and for movement *echarse a correr* is the natural choice. Do not add *se*: *Se rompió a llorar* is not Spanish."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-23-04-a-gr.json b/content/es-latam/grammar/b2/b2-23-04-a-gr.json
+index 87114d72..3e66e8ae 100644
+--- a/content/es-latam/grammar/b2/b2-23-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-23-04-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.23.04.perifrasis-volver-a",
+-  "title": "Perífrasis iterativas: Volver a + infinitivo",
++  "title": "Volver a: Doing It Again",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis *volver a + infinitivo* es la construcción paradigmática en español para denotar la reiteración, la reanudación o la repetición de un evento que ya había acaecido con anterioridad. Equivale al adverbio 'nuevamente' o al prefijo 're-', pero posee una flexibilidad sintáctica y un vigor discursivo muy superiores. En contextos negativos (*no volver a + inf*), adquiere un valor prohibitivo o de resolución tajante de no reincidencia en una conducta."
++      "content": "You know *volver a* + infinitive \"to do again\" from A2 Unit 28 (*Volví a ver esa película*, *Nunca vuelvas a hacer eso*). This lesson adds three things.\n\n1. It works in every tense: *volvió a llamar*, *ha vuelto a llover*, *volveré a intentarlo*.\n2. With *no*, it means \"not ... again\": *No volvió a llamar* means she did not call again after that.\n3. It says the same as the adverbs *otra vez* and *de nuevo*: *Llamó otra vez* = *Volvió a llamar*."
+     },
+     {
+       "type": "table",
+-      "title": "Reiteración y cese definitivo con Volver a",
++      "title": "volver a + infinitive",
+       "rows": [
+         [
+-          "El observatorio volvió a calibrar sus espejos ópticos tras el vendaval andino.",
+-          "The observatory recalibrated its optical mirrors once again after the Andean gale."
++          "Volvió a llover por la tarde.",
++          "It rained again in the afternoon."
+         ],
+         [
+-          "Las comunidades han vuelto a sembrar semillas ancestrales en las terrazas de cultivo.",
+-          "The communities have resumed sowing ancestral seeds on the agricultural terraces."
++          "Hemos vuelto a hablar con el director.",
++          "We have spoken to the director again."
+         ],
+         [
+-          "El práctico juró que no volvería a navegar ese canal sin remolcador de apoyo.",
+-          "The pilot swore he would not navigate that channel again without a tugboat escort."
++          "No volveré a llegar tarde.",
++          "I will not be late again."
+         ],
+         [
+-          "Los científicos volvieron a medir el grosor del manto de hielo en el glaciar Grey.",
+-          "The scientists measured the thickness of the ice sheet on Glacier Grey once again."
++          "Ella no volvió a llamar.",
++          "She did not call again."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Con la negación *no volver a + inf* se formula una promesa firme de cese (*no volveré a cometer esa imprudencia*), de gran uso en registros orales y testimoniales."
++      "content": "Do not confuse *volver a* + infinitive with *volver a* + place, which means \"to go back to\": *Volvió a casa* is not \"he did it again\". Object pronouns go before *volver* or on the end of the infinitive: *Lo volví a leer* = *Volví a leerlo*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-23-05-a-gr.json b/content/es-latam/grammar/b2/b2-23-05-a-gr.json
+index 25b635e6..74f47f03 100644
+--- a/content/es-latam/grammar/b2/b2-23-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-23-05-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.23.05.perifrasis-pasar-a",
+-  "title": "Perífrasis secuenciales: Pasar a + infinitivo",
++  "title": "Pasar a: Moving On to the Next Step",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis *pasar a + infinitivo* expresa la transición ordenada de una etapa a la siguiente en un proceso discursivo, administrativo o biográfico. En textos formales, exposiciones académicas y crónicas históricas, señala que el expositor o el sujeto deja atrás un tema previo para iniciar el tratamiento de un nuevo punto (*pasemos a examinar los resultados*, *pasó a ocupar la gerencia*). Denota secuencia lógica, jerarquía metódica y avance programado."
++      "content": "You know *empezar a* + infinitive from A2 Unit 28. *Pasar a* + infinitive also starts an action, but it adds an idea that *empezar a* does not have: something came before, and now you move on to the next step. It does not mean \"to pass\".\n\nYou hear it in talks and meetings (*Ahora pasemos a ver los resultados*), and it also describes a change of role or situation (*pasó a dirigir la oficina*, \"went on to run the office\"). With *ser* it means \"went on to be\": *pasó a ser* the director."
+     },
+     {
+       "type": "table",
+-      "title": "Transición discursiva y progresión con Pasar a",
++      "title": "pasar a + infinitive",
+       "rows": [
+         [
+-          "Habiendo presentado el marco geológico, pasemos a analizar la ley mineral del yacimiento.",
+-          "Having presented the geological framework, let us move on to analyzing the ore grade of the deposit."
++          "Ahora pasemos a ver los resultados.",
++          "Now let us move on to the results."
+         ],
+         [
+-          "En 1971, la histórica mina de Chuquicamata pasó a ser administrada por el Estado chileno.",
+-          "In 1971, the historic Chuquicamata mine passed to being managed by the Chilean State."
++          "Terminó el primer ejercicio y pasó a hacer el segundo.",
++          "She finished the first exercise and moved on to the second."
+         ],
+         [
+-          "Acto seguido, la comisión técnica pasará a redactar las conclusiones del informe ambiental.",
+-          "Immediately afterward, the technical commission will proceed to draft the conclusions of the environmental report."
++          "Después de varios años, pasó a dirigir la oficina.",
++          "After several years, he went on to run the office."
+         ],
+         [
+-          "A continuación, pasaremos a detallar las características del complejo eólico de Magallanes.",
+-          "Next, we will proceed to detail the features of the Magallanes wind energy complex."
++          "Después de la cena, pasamos a hablar del viaje.",
++          "After dinner, we moved on to talk about the trip."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "*Pasar a + infinitivo* funciona como un engranaje discursivo indispensable en ponencias, defensas de tesis y actas oficiales para articular la transición temática con elegancia formal."
++      "content": "*Pasar a* needs a first step to move on from. If nothing came before, use *empezar a*: *Empecé a estudiar español hace un año*, not *Pasé a estudiar*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-25-01-a-gr.json b/content/es-latam/grammar/b2/b2-25-01-a-gr.json
+index 505918ac..dac5b225 100644
+--- a/content/es-latam/grammar/b2/b2-25-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-25-01-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.25.01.dejar-de",
+-  "title": "Perífrasis terminativas: Dejar de + infinitivo",
++  "title": "Dejar de: Things That Stop",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis aspectual *dejar de + infinitivo* señala la cesación, interrupción o abandono voluntario de una acción previa o de un hábito arraigado. En contraste con *parar de* (que suele denotar una pausa momentánea o física), *dejar de* suele proyectarse sobre la descontinuación duradera de una conducta o estado. En contextos negativos (*no dejar de + infinitivo*), adquiere un valor ponderativo de persistencia enfática o recomendación encarecida."
++      "content": "You know *dejar de* + infinitive from B1 Unit 12 (*Dejé de fumar hace dos años*), and you also met *no dejar de* in the sense of \"keep on doing\" (*No dejo de cocinar en casa*). This lesson adds two things.\n\nFirst, *dejar de* is not only for habits: it also says that something happening comes to an end (*Dejó de llover*). Second, *no dejar de* has a second meaning in advice and instructions: \"be sure to\" or \"do not fail to\". You use it in negative commands (A2 Unit 24): *No dejes de llamarme*, *No dejen de avisarnos*."
+     },
+     {
+       "type": "table",
+-      "title": "Usos y contrastes de Dejar de + infinitivo",
++      "title": "dejar de + infinitive",
+       "rows": [
+         [
+-          "Al escuchar los relatos del viejo capataz, el muchacho dejó de contemplar la ciudad como su único porvenir.",
+-          "Upon hearing the old foreman's tales, the young man stopped regarding the city as his only future."
++          "Don Fabio dejó de venir con frecuencia.",
++          "Don Fabio stopped coming often."
+         ],
+         [
+-          "Los pobladores de la estancia no dejaron de admirar la serenidad estoica de Don Segundo.",
+-          "The ranch dwellers did not cease to admire Don Segundo's stoic serenity."
++          "Dejó de llover y salimos.",
++          "It stopped raining and we went out."
+         ],
+         [
+-          "Tras semanas de lluvia incesante en los bañados, el arroyo pampeano dejó de amenazar las empalizadas.",
+-          "After weeks of relentless rain in the marshes, the pampas stream stopped threatening the fences."
++          "No dejó de hablar en toda la tarde.",
++          "He kept on talking all afternoon."
+         ],
+         [
+-          "No dejen de avisarnos apenas el arreo cruce el vado del río Areco.",
+-          "Do not fail to let us know as soon as the cattle drive crosses the Areco river ford."
++          "No dejes de llamarme cuando llegues.",
++          "Be sure to call me when you arrive."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Recuerda que la combinación negativa *no dejar de + infinitivo* es muy frecuente en cartas y discursos formales para formular recomendaciones apremiantes: *No deje de consultar las fuentes notariales antes de emitir el veredicto*."
++      "content": "Read *no dejar de* by its sentence. In a statement about the past or the present it means \"keep on\" (*No dejó de llover*). In a command it means \"be sure to\" (*No dejes de ir*). It never means \"not stop\" in a command, so *No dejes de llamarme* is a request to call."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-25-02-a-gr.json b/content/es-latam/grammar/b2/b2-25-02-a-gr.json
+index ccd9bbf2..7ad9118e 100644
+--- a/content/es-latam/grammar/b2/b2-25-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-25-02-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.25.02.acabar-de-por",
+-  "title": "Perífrasis de término: Acabar de vs. Acabar por + infinitivo",
++  "title": "Acabar de: Just Done",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "El verbo auxiliar *acabar* participa en dos perífrasis aspectuales de significado claramente diferenciado. *Acabar de + infinitivo* expresa pasado inmediato retrospectivo: ubica la finalización de un proceso en un instante apenas anterior al momento de referencia (*acaba de llegar* = hace un instante que llegó). Por su parte, *acabar por + infinitivo* enfatiza la resolución final o el desenlace forzoso alcanzado tras demoras, obstáculos o vacilaciones (*acabó por aceptar el acuerdo*)."
++      "content": "You know *acabar de* + infinitive from A2 Unit 32: *Acabo de llegar* (\"I have just arrived\") and *Acababa de salir cuando me llamaste*. This lesson adds what the tense does.\n\nWith the present, *acaba de* means \"has just\": *Acaba de llegar*. With the imperfect, *acababa de* means \"had just\" and sets the scene before something else happens, which is how stories use it: *Acababa de salir cuando empezó a llover*. In the preterite the meaning changes: *Acabó de comer* means \"He finished eating\", not \"he has just eaten\"."
+     },
+     {
+       "type": "table",
+-      "title": "Contraste entre Acabar de y Acabar por",
++      "title": "acabar de + infinitive",
+       "rows": [
+         [
+-          "El mensajero acaba de desmontar frente a la pulpería trayendo noticias urgentes.",
+-          "The courier horseman has just dismounted in front of the tavern bringing urgent news."
++          "Acabo de hablar con el capataz.",
++          "I have just spoken to the foreman."
+         ],
+         [
+-          "Después de resistirse toda la tarde, el potro chúcaro acabó por obedecer las riendas.",
+-          "After resisting all afternoon, the wild colt finally obeyed the reins."
++          "El mayordomo acaba de salir.",
++          "The manager has just left."
+         ],
+         [
+-          "Hacía frío en la madrugada y el fogón acababa de apagarse cuando ensillaron los fletes.",
+-          "It was cold at dawn and the fire had just gone out when they saddled the horses."
++          "Acababa de salir cuando empezó a llover.",
++          "I had just left when it started to rain."
+         ],
+         [
+-          "Los estancieros acabaron por acordar una tarifa común tras arduas deliberaciones.",
+-          "The ranch owners finally agreed on a common rate after arduous deliberations."
++          "Acabó de ensillar el caballo y salió.",
++          "He finished saddling the horse and left."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Evita combinar *acabar de + infinitivo* en valor de pasado inmediato con complementos temporales lejanos (*acabó de llegar hace cinco años* es agramatical; se debe usar el pretérito simple *llegó hace cinco años*)."
++      "content": "*Acabar de* means \"just\" only in the present and the imperfect. With a time far in the past, use the preterite of the main verb: not *acaba de llegar hace cinco años*, but *llegó hace cinco años*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-25-03-a-gr.json b/content/es-latam/grammar/b2/b2-25-03-a-gr.json
+index 392a9057..9a6a14ff 100644
+--- a/content/es-latam/grammar/b2/b2-25-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-25-03-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.25.03.terminar-por-gerundio",
+-  "title": "Desenlace gradual: Terminar por + infinitivo y Terminar + gerundio",
++  "title": "Terminar por and Acabar por: Ending Up",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Tanto *terminar por + infinitivo* como *terminar + gerundio* expresan la fase conclusiva de una serie de acontecimientos prolongados, con frecuencia subrayando un corolario imprevisto o sobrevenido a regañadientes. Mientras *terminar por + infinitivo* focaliza la decisión o el hecho resolutivo final (*terminó por comprender*), *terminar + gerundio* resalta el estado o la actividad en que devino el sujeto (*terminó viviendo en la soledad de los médanos*)."
++      "content": "*Terminar por* + infinitive and *acabar por* + infinitive mean the same thing: \"to end up doing something\" or \"to finally do it\". They describe the last step of a process, often after doubts, delays or resistance, and the result is often not what was planned. You know *acabar de* from A2 Unit 32, but *acabar por* is a different phrase, so watch the last word: *de* looks back at something just done, *por* points to where a process finally arrives.\n\nBoth verbs can be conjugated in any tense (*terminó por aceptar*, *acabaremos por entender*). After *por* the verb is always an infinitive."
+     },
+     {
+       "type": "table",
+-      "title": "Construcciones de culminación con Terminar",
++      "title": "terminar por / acabar por + infinitive",
+       "rows": [
+         [
+-          "Agotado por la travesía, el jinete terminó por dormirse sobre el lomo de su caballo.",
+-          "Exhausted by the journey, the horseman finally fell asleep on the back of his horse."
++          "Después de dudar mucho, terminó por aceptar el trabajo.",
++          "After doubting a lot, she ended up accepting the job."
+         ],
+         [
+-          "Aquel peón rebelde terminó convirtiéndose en el capataz más respetado de la comarca.",
+-          "That rebellious farmhand ended up becoming the most respected foreman in the region."
++          "El mayordomo acabó por dejarlo quedarse.",
++          "The manager finally let him stay."
+         ],
+         [
+-          "Las tensiones entre los puesteros terminaron resolviéndose mediante el diálogo campero.",
+-          "The tensions among the outstation workers ended up being resolved through rural dialogue."
++          "Si sigues así, acabarás por cansarte.",
++          "If you go on like this, you will end up getting tired."
+         ],
+         [
+-          "Si continúas cabalgando de noche por el pantano, terminarás perdiendo el sendero.",
+-          "If you keep riding at night through the marsh, you will end up losing the path."
++          "No terminó por entender la explicación.",
++          "He never did come to understand the explanation."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "En muchos contextos narrativos, *terminar por + infinitivo* y *acabar por + infinitivo* son prácticamente equivalentes en su valor de resolución tras resistencia o dilación."
++      "content": "Use these phrases when there is a process behind the result. For a simple event with no story before it, use the plain verb: say *Compró el carro*, not *Terminó por comprar el carro*, unless something happened first, such as a long search."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-25-04-a-gr.json b/content/es-latam/grammar/b2/b2-25-04-a-gr.json
+index 781e8097..178d451b 100644
+--- a/content/es-latam/grammar/b2/b2-25-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-25-04-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.25.04.llegar-a-infinitivo",
+-  "title": "Alcance de hitos: Llegar a + infinitivo",
++  "title": "Llegar a: Getting as Far as",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La perífrasis aspectual *llegar a + infinitivo* expresa la consecución o alcance de un límite máximo, un hito culminante o un resultado extraordinario obtenido tras un proceso gradual de desarrollo (*llegó a ser el maestro indiscutido*). En oraciones condicionales o hipotéticas, adopta un valor eventual ponderativo que evalúa la posibilidad remota de que un hecho insólito ocurra en la realidad (*si llega a suceder, actuaremos de inmediato*)."
++      "content": "You know *llegar a ser* from B1 Unit 39 and B2 Unit 22: the high point of a long road (*llegó a ser patrón*). *Llegar a* + any infinitive works in the same way. It says that someone gets as far as doing something, often after a long process or against the odds.\n\nIt has three main uses.\n1. A result reached after time or effort: *Llegó a hablar cuatro idiomas*.\n2. An extreme, like \"even\" or \"went so far as to\": *Llegó a gritarle al capataz*.\n3. In *si* clauses, \"if it happens to\": *Si llega a llover, cancelamos el viaje*. After *si* the verb stays in the present."
+     },
+     {
+       "type": "table",
+-      "title": "Valores de Llegar a + infinitivo",
++      "title": "llegar a + infinitive",
+       "rows": [
+         [
+-          "Con paciencia y rigor espartano, Fabio llegó a dominar el difícil oficio de resero.",
+-          "With patience and Spartan rigor, Fabio came to master the difficult craft of cattle drover."
++          "Con el tiempo, llegó a hablar cuatro idiomas.",
++          "With time, she came to speak four languages."
+         ],
+         [
+-          "Nadie en el pueblo imaginaba que aquel muchacho huérfano llegaría a heredar las ricas tierras.",
+-          "Nobody in town imagined that that orphaned boy would come to inherit the rich lands."
++          "Estaba tan enojado que llegó a gritarle al capataz.",
++          "He was so angry that he even shouted at the foreman."
+         ],
+         [
+-          "Si la helada pampeana llega a extenderse hasta el amanecer, peligrarán los sembradíos.",
+-          "If the pampas frost happens to extend until dawn, the early crops will be endangered."
++          "Si llega a llover, cancelamos el viaje.",
++          "If it happens to rain, we cancel the trip."
+         ],
+         [
+-          "La novela gauchesca de Güiraldes llegó a consagrarse como una obra maestra continental.",
+-          "Güiraldes's gauchesque novel came to be consecrated as a continental masterpiece."
++          "No llegó a entender la explicación.",
++          "He never got as far as understanding the explanation."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "En construcciones enfáticas, *llegar a + infinitivo* puede ponderar extremos de conducta insólita: *En su enojo desmedido, llegó a negarle el saludo* ('In his excessive anger, he even went so far as to deny him a greeting')."
++      "content": "*Llegar a* + a place is a different verb use you know from A1: *Llegó a la estancia* means he arrived at the ranch. When an infinitive follows *a*, you have the periphrasis, and the idea is a point reached, not a place."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b2/b2-25-05-a-gr.json b/content/es-latam/grammar/b2/b2-25-05-a-gr.json
+index b9e3c97f..08f368e3 100644
+--- a/content/es-latam/grammar/b2/b2-25-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-25-05-a-gr.json
+@@ -1,36 +1,36 @@
+ {
+   "id": "grammar.b2.25.05.dar-por-participio",
+-  "title": "Juicios resultativos: Dar por + participio / adjetivo",
++  "title": "Dar por: Taking Something as Settled",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La construcción *dar por + participio* (o adjetivo) es una perífrasis resultativa de actitud epistémica en la que el sujeto considera una situación definitivamente zanjada, concluida o asumida. El participio o adjetivo concuerda obligatoriamente en género y número con el complemento directo. Entre las colocaciones de nivel B2 más arraigadas figuran *dar por sentado* (asumir como obvio), *dar por hecho* (dar por seguro por anticipado), *dar por concluido* (clausurar un procedimiento) y *dar por perdido* (asumir la pérdida irreparable)."
++      "content": "*Dar por* + participle (or adjective) means to treat something as finished, lost or certain, whether or not it really is: *Dieron por perdida la cosecha* (\"They gave up the harvest for lost\"). It is a judgement that someone makes. You have met *dar por hecho* as a phrase in B2 Unit 5; here you see how the whole pattern is built.\n\nThe participle agrees with the thing that follows, in gender and number, just as it does after *estar* (B2 Unit 20): *dio por terminado el caso*, *dio por terminadas las pruebas*. With *que* the participle does not change: *Doy por hecho que vendrá*."
+     },
+     {
+       "type": "table",
+-      "title": "Colocaciones clave con Dar por",
++      "title": "dar por + participle",
+       "rows": [
+         [
+-          "El juez de paz dio por concluido el inventario judicial tras revisar las escrituras.",
+-          "The justice of the peace considered the judicial inventory concluded after reviewing the deeds."
++          "El juez dio por terminado el caso.",
++          "The judge declared the case closed."
+         ],
+         [
+-          "No des por sentado que el viaje por la Patagonia austral estará exento de contratiempos.",
+-          "Do not take for granted that the trip through southern Patagonia will be free of setbacks."
++          "Dieron por perdidas las vacas.",
++          "They gave the cows up for lost."
+         ],
+         [
+-          "Tras días de rastreo en el monte, los gauchos dieron por perdidas las terneras.",
+-          "After days of tracking in the scrubland, the gauchos considered the calves lost."
++          "Doy por hecho que vendrá mañana.",
++          "I take it for granted that he will come tomorrow."
+         ],
+         [
+-          "El capataz dio por superada la emergencia en cuanto el terraplén contuvo el arroyo.",
+-          "The foreman considered the emergency over as soon as the embankment held back the creek."
++          "Daba por sentado que ganaríamos.",
++          "He took it for granted that we would win."
+         ]
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Ten presente la concordancia de género y número: *dio por terminadas las negociaciones* (femenino plural), *dio por cancelado el contrato* (masculino singular)."
++      "content": "*Dar por* is not the same as *estar*. *Está perdida* says the cows are lost; *Las dieron por perdidas* says people decided they were lost, and they may have been wrong: *Lo dieron por muerto, pero estaba vivo*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-23-01.json b/content/es-latam/lessons/b2/b2-23-01.json
+index f0a5ecb8..af75904b 100644
+--- a/content/es-latam/lessons/b2/b2-23-01.json
++++ b/content/es-latam/lessons/b2/b2-23-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.23.01",
+-  "title": "Perífrasis inceptivas: Echarse a",
++  "title": "Echarse a: Bursting Into an Action",
+   "level": "B2",
+-  "goal": "Dominar el uso de la perífrasis 'echarse a + infinitivo' para expresar el inicio súbito e impulsivo de emociones intensas o movimientos corporales.",
+-  "grammar": "perífrasis inceptivas con echarse a y reacciones súbitas involuntarias",
++  "goal": "Use echarse a + infinitive to say that someone suddenly starts crying, laughing or running.",
++  "grammar": "echarse a + infinitive: a sudden reaction",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Identificar el valor aspectual inceptivo e involuntario de echarse a.",
+-        "Diferenciar echarse a de ponerse a según la deliberación del sujeto.",
+-        "Aplicar la construcción en narraciones dramáticas y testimonios orales."
++        "I can use *echarse a* + infinitive for a sudden reaction such as crying, laughing or running.",
++        "I can tell a sudden reaction (*echarse a*) from a planned task (*ponerse a*).",
++        "I can use the new words for outbursts and sudden movements."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-23-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *echarse a* + infinitive for a sudden reaction such as crying, laughing or running.",
++        "I can tell a sudden reaction (*echarse a*) from a planned task (*ponerse a*).",
++        "I can use the new words for outbursts and sudden movements."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-23-02.json b/content/es-latam/lessons/b2/b2-23-02.json
+index 62acd1f3..3042fc38 100644
+--- a/content/es-latam/lessons/b2/b2-23-02.json
++++ b/content/es-latam/lessons/b2/b2-23-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.23.02",
+-  "title": "Perífrasis inceptivas: Ponerse a",
++  "title": "Ponerse a: Setting About Something",
+   "level": "B2",
+-  "goal": "Utilizar con precisión la perífrasis 'ponerse a + infinitivo' para describir la iniciación consciente, voluntaria y dedicada de labores, tareas y estudios.",
+-  "grammar": "perífrasis inceptivas con ponerse a y disposición voluntaria del sujeto",
++  "goal": "Recap ponerse a + infinitive and use it for tasks that echarse a cannot describe.",
++  "grammar": "ponerse a + infinitive: tasks, reactions and weather",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Comprender el matiz de esfuerzo y compromiso activo inherente a ponerse a.",
+-        "Distinguir el uso meteorológico de ponerse a en tercera persona.",
+-        "Emplear la estructura en informes técnicos y crónicas profesionales."
++        "I can use *ponerse a* + infinitive to say that someone sets about a task, a reaction or a change in the weather.",
++        "I can tell when *ponerse a* works and *echarse a* does not.",
++        "I can use the new words for tasks and effort."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-23-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *ponerse a* + infinitive to say that someone sets about a task, a reaction or a change in the weather.",
++        "I can tell when *ponerse a* works and *echarse a* does not.",
++        "I can use the new words for tasks and effort."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-23-03.json b/content/es-latam/lessons/b2/b2-23-03.json
+index 8f228dd9..859d0c99 100644
+--- a/content/es-latam/lessons/b2/b2-23-03.json
++++ b/content/es-latam/lessons/b2/b2-23-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.23.03",
+-  "title": "Perífrasis inceptivas: Romper a",
++  "title": "Romper a: Breaking Into Sound and Tears",
+   "level": "B2",
+-  "goal": "Aprender el empleo estético y dramático de 'romper a + infinitivo' para expresar la eclosión ruidosa y repentina de sonidos, emociones contenidas o fenómenos climáticos.",
+-  "grammar": "perífrasis inceptivas con romper a y quiebre de tensión o silencio",
++  "goal": "Use romper a + infinitive for the moment when sound, tears or rain break a silence.",
++  "grammar": "romper a + infinitive: sounds and feelings that burst out",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Reconocer los verbos de sonido, clima y ebullición que seleccionan romper a.",
+-        "Apreciar la carga de fractura de silencio y emoción acumulada en el relato.",
+-        "Incorporar romper a en la prosa literaria y periodística culta."
++        "I can use *romper a* + infinitive for sounds, tears and rain that burst out.",
++        "I can choose between *romper a*, *echarse a* and *ponerse a*.",
++        "I can use the new words for sudden noise and joy."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-23-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *romper a* + infinitive for sounds, tears and rain that burst out.",
++        "I can choose between *romper a*, *echarse a* and *ponerse a*.",
++        "I can use the new words for sudden noise and joy."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-23-04.json b/content/es-latam/lessons/b2/b2-23-04.json
+index e9b3b154..b0a16807 100644
+--- a/content/es-latam/lessons/b2/b2-23-04.json
++++ b/content/es-latam/lessons/b2/b2-23-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.23.04",
+-  "title": "Perífrasis iterativas: Volver a",
++  "title": "Volver a: Doing It Again",
+   "level": "B2",
+-  "goal": "Dominar la perífrasis 'volver a + infinitivo' para denotar repetición, reanudación y compromisos de cese definitivo en enunciados negativos.",
+-  "grammar": "perífrasis iterativas con volver a y reanudación o cese reiterativo",
++  "goal": "Use volver a + infinitive in any tense, and no volver a for \"not again\".",
++  "grammar": "volver a + infinitive: doing something again",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Articular la reiteración de acciones en diversos tiempos y modos verbales.",
+-        "Manejar la fuerza prohibitiva o resolutiva de no volver a + infinitivo.",
+-        "Comparar volver a con adverbios de repetición en el ensayo formal."
++        "I can use *volver a* + infinitive to say that something happens again.",
++        "I can use *no volver a* + infinitive for \"not ... again\".",
++        "I can use the new words for repeating and starting again."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-23-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *volver a* + infinitive to say that something happens again.",
++        "I can use *no volver a* + infinitive for \"not ... again\".",
++        "I can use the new words for repeating and starting again."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-23-05.json b/content/es-latam/lessons/b2/b2-23-05.json
+index b6eab1c0..36fead20 100644
+--- a/content/es-latam/lessons/b2/b2-23-05.json
++++ b/content/es-latam/lessons/b2/b2-23-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.23.05",
+-  "title": "Perífrasis secuenciales: Pasar a",
++  "title": "Pasar a: Moving On to the Next Step",
+   "level": "B2",
+-  "goal": "Utilizar 'pasar a + infinitivo' como marcador de transición discursiva y progresión metódica en exposiciones formales, actas e informes técnicos.",
+-  "grammar": "perífrasis secuenciales con pasar a y estructuración discursiva formal",
++  "goal": "Use pasar a + infinitive to move on to the next step.",
++  "grammar": "pasar a + infinitive: moving on",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Estructurar presentaciones orales y ensayos mediante transiciones ordenadas.",
+-        "Describir cambios de funciones y ascensos en biografías profesionales.",
+-        "Garantizar la cohesión secuencial entre apartados temáticos."
++        "I can use *pasar a* + infinitive to move on to the next step of a talk, a task or a career.",
++        "I can tell *pasar a* from *empezar a*.",
++        "I can use the new words for stages and sequences."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-23-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *pasar a* + infinitive to move on to the next step of a talk, a task or a career.",
++        "I can tell *pasar a* from *empezar a*.",
++        "I can use the new words for stages and sequences."
++      ]
+     }
+   ]
+ }
+diff --git a/content/es-latam/lessons/b2/b2-23-consolidation.json b/content/es-latam/lessons/b2/b2-23-consolidation.json
+index 4c0c1f4f..0198882c 100644
+--- a/content/es-latam/lessons/b2/b2-23-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-23-consolidation.json
+@@ -1,16 +1,17 @@
+ {
+   "id": "lesson.b2.23.consolidation",
+-  "title": "Consolidación B2: Perífrasis aspectuales y Cabo de Hornos de Francisco Coloane",
++  "title": "Unit 23 Review: Starting, Repeating and Moving On",
+   "level": "B2",
+-  "goal": "Sintetizar el dominio de las perífrasis aspectuales de inicio, esfuerzo, estallido, repetición y transición a través de Francisco Coloane.",
+-  "grammar": "síntesis del paradigma de perífrasis aspectuales y adaptación de Cabo de Hornos",
++  "goal": "Review echarse a, ponerse a, romper a, volver a and pasar a, and read a short text about Francisco Coloane and his book Cabo de Hornos.",
++  "grammar": "inceptive, iterative and sequential periphrases, and a text about Coloane",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Integrar con flexibilidad echarse a, ponerse a, romper a, volver a y pasar a.",
+-        "Reconocer las sutiles fronteras semánticas entre espontaneidad y deliberación.",
+-        "Consolidar el léxico de esfuerzo, persistencia y dinamismo narrativo austral."
++        "I can tell the sudden starts (*echarse a*, *ponerse a*, *romper a*) apart and choose the right one.",
++        "I can use *volver a* for \"again\" and *no volver a* for \"not again\".",
++        "I can use *pasar a* to move on to the next step.",
++        "I can read a short text about Francisco Coloane and his book Cabo de Hornos."
+       ]
+     },
+     {
+@@ -39,11 +40,10 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "Distingo entre impulsos involuntarios (echarse a) e inicios deliberados (ponerse a).",
+-        "Domino el uso de romper a para describir quiebres sonoros y fenómenos meteorológicos.",
+-        "Utilizo volver a con enunciados negativos para formular resoluciones firmes de cese.",
+-        "Aplico pasar a para jerarquizar temas y ordenar la transición en el discurso formal.",
+-        "Aprecio la estética marina y el dramatismo humano en la narrativa de Francisco Coloane."
++        "I can tell the sudden starts (*echarse a*, *ponerse a*, *romper a*) apart and choose the right one.",
++        "I can use *volver a* for \"again\" and *no volver a* for \"not again\".",
++        "I can use *pasar a* to move on to the next step.",
++        "I can read a short text about Francisco Coloane and his book Cabo de Hornos."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b2/b2-25-01.json b/content/es-latam/lessons/b2/b2-25-01.json
+index 4fcf9483..5de26e71 100644
+--- a/content/es-latam/lessons/b2/b2-25-01.json
++++ b/content/es-latam/lessons/b2/b2-25-01.json
+@@ -1,8 +1,16 @@
+ {
+   "id": "lesson.b2.25.01",
+-  "title": "La cesación y la pausa: Dejar de + infinitivo",
++  "title": "Dejar de: Things That Stop",
+   "level": "B2",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *dejar de* + infinitive for things that stop and *no dejes de* for \"be sure to\".",
++        "I can tell *no dejar de* \"keep on\" from *no dejar de* \"be sure to\".",
++        "I can use the new words for life on a ranch."
++      ]
++    },
+     {
+       "type": "story",
+       "ref": "stories/classics/b2/b2-25.json"
+@@ -27,6 +35,21 @@
+         "b2-25-01.ex05",
+         "b2-25-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *dejar de* + infinitive for things that stop and *no dejes de* for \"be sure to\".",
++        "I can tell *no dejar de* \"keep on\" from *no dejar de* \"be sure to\".",
++        "I can use the new words for life on a ranch."
++      ]
+     }
+-  ]
++  ],
++  "goal": "Use dejar de + infinitive for things that stop, and no dejes de for \"be sure to\".",
++  "grammar": "dejar de + infinitive: stopping, and no dejar de"
+ }
+diff --git a/content/es-latam/lessons/b2/b2-25-02.json b/content/es-latam/lessons/b2/b2-25-02.json
+index 3f353511..1e6f9b1c 100644
+--- a/content/es-latam/lessons/b2/b2-25-02.json
++++ b/content/es-latam/lessons/b2/b2-25-02.json
+@@ -1,8 +1,16 @@
+ {
+   "id": "lesson.b2.25.02",
+-  "title": "Del desenlace inmediato al término forzoso: Acabar de vs. Acabar por",
++  "title": "Acabar de: Just Done",
+   "level": "B2",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *acabar de* for what has just happened and *acababa de* for the scene behind a story.",
++        "I can tell *acaba de* \"has just\" from *acabó de* \"finished\".",
++        "I can use the new words for endings and recent events."
++      ]
++    },
+     {
+       "type": "grammar",
+       "ref": "grammar/b2/b2-25-02-a-gr.json"
+@@ -23,6 +31,21 @@
+         "b2-25-02.ex05",
+         "b2-25-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *acabar de* for what has just happened and *acababa de* for the scene behind a story.",
++        "I can tell *acaba de* \"has just\" from *acabó de* \"finished\".",
++        "I can use the new words for endings and recent events."
++      ]
+     }
+-  ]
++  ],
++  "goal": "Use acabar de + infinitive for what has just happened, and acababa de for the scene in a story.",
++  "grammar": "acabar de + infinitive: just done"
+ }
+diff --git a/content/es-latam/lessons/b2/b2-25-03.json b/content/es-latam/lessons/b2/b2-25-03.json
+index d7754593..10ce28ff 100644
+--- a/content/es-latam/lessons/b2/b2-25-03.json
++++ b/content/es-latam/lessons/b2/b2-25-03.json
+@@ -1,8 +1,16 @@
+ {
+   "id": "lesson.b2.25.03",
+-  "title": "La culminación del proceso: Terminar por + infinitivo y Terminar + gerundio",
++  "title": "Terminar por and Acabar por: Ending Up",
+   "level": "B2",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *terminar por* and *acabar por* + infinitive for what happens in the end.",
++        "I can tell *acabar por* \"end up\" from *acabar de* \"have just\".",
++        "I can use the new words for outcomes."
++      ]
++    },
+     {
+       "type": "grammar",
+       "ref": "grammar/b2/b2-25-03-a-gr.json"
+@@ -23,6 +31,21 @@
+         "b2-25-03.ex05",
+         "b2-25-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *terminar por* and *acabar por* + infinitive for what happens in the end.",
++        "I can tell *acabar por* \"end up\" from *acabar de* \"have just\".",
++        "I can use the new words for outcomes."
++      ]
+     }
+-  ]
++  ],
++  "goal": "Use terminar por and acabar por + infinitive for what happens in the end.",
++  "grammar": "terminar por and acabar por + infinitive"
+ }
+diff --git a/content/es-latam/lessons/b2/b2-25-04.json b/content/es-latam/lessons/b2/b2-25-04.json
+index 9df41239..f8d4b598 100644
+--- a/content/es-latam/lessons/b2/b2-25-04.json
++++ b/content/es-latam/lessons/b2/b2-25-04.json
+@@ -1,8 +1,16 @@
+ {
+   "id": "lesson.b2.25.04",
+-  "title": "El alcance de hitos y límites extremos: Llegar a + infinitivo",
++  "title": "Llegar a: Getting as Far as",
+   "level": "B2",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *llegar a* + infinitive for getting as far as doing something.",
++        "I can use *llegar a* for an extreme (\"even\") and for \"if it happens to\".",
++        "I can use the new words for milestones and peaks."
++      ]
++    },
+     {
+       "type": "grammar",
+       "ref": "grammar/b2/b2-25-04-a-gr.json"
+@@ -23,6 +31,21 @@
+         "b2-25-04.ex05",
+         "b2-25-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *llegar a* + infinitive for getting as far as doing something.",
++        "I can use *llegar a* for an extreme (\"even\") and for \"if it happens to\".",
++        "I can use the new words for milestones and peaks."
++      ]
+     }
+-  ]
++  ],
++  "goal": "Use llegar a + infinitive for a result reached, an extreme, and \"if it happens to\".",
++  "grammar": "llegar a + infinitive: reaching a point"
+ }
+diff --git a/content/es-latam/lessons/b2/b2-25-05.json b/content/es-latam/lessons/b2/b2-25-05.json
+index fc9ca4c9..aff345a2 100644
+--- a/content/es-latam/lessons/b2/b2-25-05.json
++++ b/content/es-latam/lessons/b2/b2-25-05.json
+@@ -1,8 +1,16 @@
+ {
+   "id": "lesson.b2.25.05",
+-  "title": "Veredictos y estados concluidos: Dar por + participio",
++  "title": "Dar por: Taking Something as Settled",
+   "level": "B2",
+   "sections": [
++    {
++      "type": "goal",
++      "items": [
++        "I can use *dar por* + participle to treat something as finished, lost or certain.",
++        "I can make the participle agree: *dio por terminadas las pruebas*.",
++        "I can use the new words for verdicts and conclusions."
++      ]
++    },
+     {
+       "type": "grammar",
+       "ref": "grammar/b2/b2-25-05-a-gr.json"
+@@ -23,6 +31,21 @@
+         "b2-25-05.ex05",
+         "b2-25-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use *dar por* + participle to treat something as finished, lost or certain.",
++        "I can make the participle agree: *dio por terminadas las pruebas*.",
++        "I can use the new words for verdicts and conclusions."
++      ]
+     }
+-  ]
++  ],
++  "goal": "Use dar por + participle to treat something as finished, lost or certain.",
++  "grammar": "dar por + participle: a judgement of the result"
+ }
+diff --git a/content/es-latam/lessons/b2/b2-25-consolidation.json b/content/es-latam/lessons/b2/b2-25-consolidation.json
+index f76d6f16..558e251e 100644
+--- a/content/es-latam/lessons/b2/b2-25-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-25-consolidation.json
+@@ -1,14 +1,15 @@
+ {
+   "id": "lesson.b2.25.consolidation",
+-  "title": "Consolidación: Perífrasis de término y resultado",
++  "title": "Unit 25 Review: Stopping, Ending and Reaching",
+   "level": "B2",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Dominar con precisión las perífrasis de fase terminativa y resultativa (dejar de, acabar de/por, terminar por, llegar a, dar por).",
+-        "Diferenciar matices aspectuales de inmediatez retrospectiva, culminación forzada y alcance de hitos.",
+-        "Integrar el vocabulario avanzado sobre transiciones, desenlaces y juicios concluidos en prosa formal."
++        "I can choose between *dejar de*, *acabar de*, *terminar por*, *llegar a* and *dar por*.",
++        "I can tell what has just happened from what happens in the end.",
++        "I can make the participle agree after *dar por*.",
++        "I can read a short retelling of Don Segundo Sombra by Ricardo Güiraldes."
+       ]
+     },
+     {
+@@ -33,12 +34,13 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "Distingo con soltura entre 'acabar de + infinitivo' (pasado inmediato) y 'acabar por + infinitivo' (desenlace final).",
+-        "Utilizo 'dejar de + infinitivo' tanto para la interrupción de hábitos como en fórmulas ponderativas negativas ('no dejar de').",
+-        "Empleo 'llegar a + infinitivo' para expresar hitos culminantes y contingencias hipotéticas relevantes.",
+-        "Aplico la concordancia de género y número en colocaciones con 'dar por + participio' ('dar por sentado/hecho/concluido').",
+-        "Analizo textos literarios gauchescos apreciando los valores aspectuales de cambio y término."
++        "I can choose between *dejar de*, *acabar de*, *terminar por*, *llegar a* and *dar por*.",
++        "I can tell what has just happened from what happens in the end.",
++        "I can make the participle agree after *dar por*.",
++        "I can read a short retelling of Don Segundo Sombra by Ricardo Güiraldes."
+       ]
+     }
+-  ]
++  ],
++  "goal": "Review dejar de, acabar de, terminar por, llegar a and dar por.",
++  "grammar": "terminative and resultative periphrases"
+ }
+diff --git a/content/es-latam/stories/classics/b2/b2-23.json b/content/es-latam/stories/classics/b2/b2-23.json
+index be2ab755..88828086 100644
+--- a/content/es-latam/stories/classics/b2/b2-23.json
++++ b/content/es-latam/stories/classics/b2/b2-23.json
+@@ -1,84 +1,82 @@
+ {
+   "id": "story.b2.23.coloane",
+-  "title": "Cabo de Hornos: La tempestad y el coraje en los confines del mar",
++  "title": "Francisco Coloane y Cabo de Hornos",
+   "level": "B2",
+-  "lesson": 1,
++  "lesson": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Una adaptación literaria de 'Cabo de Hornos' (1941), la célebre obra del narrador chileno Francisco Coloane: la travesía de una modesta balandra lobera en medio de las tempestades antárticas, las rompientes traicioneras de las islas Wollaston, el temple de los navegantes australes y la comunión trágica y heroica entre el ser humano y la bravura indómita de los mares del fin del mundo.",
+-  "characters": [
+-    "Patrón de la balandra Don Pascual",
+-    "Joven marinero fueguino Manuel",
+-    "Arponero y lobero curtido Pedro",
+-    "Anciano práctico de canales Don Juan"
+-  ],
++  "summary": "Un texto sobre el escritor chileno Francisco Coloane y su libro de cuentos Cabo de Hornos (1941): quién fue el autor, qué tipo de libro es y cómo se puede leer.",
++  "characters": [],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En el confín más meridional y temible del planeta habitado, donde el océano Atlántico y el océano Pacífico se estrellan en un torbellino perpetuo de corrientes heladas, vientos huracanados y rompientes asesinas, se alza el legendario promontorio del cabo de Hornos. Durante siglos, las olas ciclópeas de más de veinte metros que barren las islas Wollaston y el archipiélago de Tierra del Fuego devoraron centenares de veleros, goletas y clíperes que intentaban cruzar de un océano a otro, sembrando los fondos marinos de maderos astillados y osamentas de navegantes. En esa geografía implacable de sal, piedra y nieve, los hombres que se aventuraban por los canales no eran héroes de mármol, sino cazadores de lobos marinos, buscadores de pepitas de oro y pescadores silenciosos cuya única riqueza consistía en su temple indomable y en su respeto reverente por el mar."
++      "text": "Francisco Coloane fue un escritor chileno. Nació en 1910 en Quemchi, en la isla de Chiloé, y murió en 2002. Entre sus libros está Cabo de Hornos, que se publicó en 1941."
+     },
+     {
+       "type": "narration",
+-      "text": "En la penumbra grisácea del amanecer austral, la pequeña balandra lobera *San Pedro* cabeceaba violentamente al abrigo precario de una caleta rocosa en la isla Navarino. El veterano patrón don Pascual, hombre de pocas palabras cuya piel cobriza parecía curtida por la salmuera y el viento helado, examinaba con mirada grave el horizonte sur, donde un denso telón de nubes plomizas avanzaba tapando las cumbres escarpadas. A bordo, el joven marinero fueguino Manuel y el arponero Pedro aseguraban los cabos, trincaban las barricas de grasa y alistaban los arpones para la cacería de lobos finos en las restingas exteriores. Al advertir el cambio de viento, don Pascual no dudó: ordenó levar anclas y la tripulación se puso a trabajar de inmediato con fría precisión, sabiendo que el invierno antártico no perdonaba vacilaciones."
++      "text": "Cabo de Hornos no es una novela, sino una colección de cuentos. Una novela suele contar una sola historia larga; en cambio, una colección reúne varios textos, y cada texto cuenta su propia historia. Por eso, quien lee este libro no tiene que seguir una sola trama de principio a fin. Si usted ya hubiera leído otro libro de cuentos, ahora reconocería enseguida esta forma."
+     },
+     {
+       "type": "narration",
+-      "text": "Al salir a mar abierto rumbo a la roca del Cabo, el viento suroeste sopló de golpe con la furia de un látigo de hielo. Las olas descomunales rompieron a estrellarse sobre la cubierta de proa, inundando las escotillas y haciendo gemir la arboladura de roble como si fuera a partirse en dos. En medio del fragor ensordecedor de la marejada, cuando un golpe de mar estuvo a punto de barrer al timonel por la borda, el viejo Pedro se echó a reír con una mezcla salvaje de desesperación y orgullo marinero, gritando que el cabo estaba cobrando su diezmo de sangre. Don Pascual, aferrado firmemente a la caña del timón con los nudillos blancos de tensión, mantuvo el rumbo contra viento y marea, buscando desesperadamente el paso angosto entre los farallones de piedra negra donde las olas reventaban en nubes de espuma blanca."
++      "text": "Los cuentos del libro tratan del extremo sur de Chile. Hablan de tres cosas: el mar, los canales y las personas que trabajan allí. Quien no conoce esa región la descubre mientras lee, porque el libro la presenta a través de esos tres temas."
+     },
+     {
+       "type": "narration",
+-      "text": "Hacia el mediodía, un silencio repentino y fantasmal envolvió la embarcación: la balandra había penetrado en una caleta escondida entre los acantilados verticales de la roca viva, un refugio milagroso donde anidaban miles de lobos marinos de dos pelos. Sobre las piedras resbaladizas cubiertas de algas y guano, los animales bramaban con ferocidad territorial ante la llegada de los intrusos. Sin perder un instante, sabiendo que la calma chicha del ojo del temporal era fugaz, los hombres saltaron a las rocas y se pusieron a faenar con rapidez febril. La sangre caliente de los lobos teñía las pozas de agua marina mientras el viento del suroeste volvía a arreciar en las alturas de los peñones, anunciando la segunda embestida del temporal con ráfagas que superaban los ciento veinte kilómetros por hora."
++      "text": "La forma del libro permite una lectura tranquila. Una persona puede ponerse a leer un cuento por la noche, terminarlo y dejar el resto para otro día. Cuando termina un cuento, puede pasar a leer el siguiente o puede cerrar el libro y descansar. En una colección de cuentos, esa libertad es normal, porque cada cuento es un texto aparte."
+     },
+     {
+       "type": "narration",
+-      "text": "Con las bodegas cargadas hasta el límite con cueros salados y manteca valiosa, la *San Pedro* tuvo que enfrentar el retorno a través del tempestuoso mar de Drake. Fue una noche de angustia infinita donde el barco crujió en cada embate de las olas y los hombres, empapados hasta los huesos y temblando de fatiga, achicaban el agua de la sentina balde a balde sin permitirse un instante de descanso. En los momentos más oscuros, cuando la muerte parecía rozar el casco con sus dedos congelados, Manuel comprendió la lección que ningún libro podía enseñar: en los canales australes, el ser humano no conquista la naturaleza mediante la soberbia técnica, sino aprendiendo a doblegar su propio miedo para convivir con la inmensidad aterradora del mar."
+-    },
+-    {
+-      "type": "narration",
+-      "text": "Cuando las primeras luces del alba recortaron la silueta protectora de los montes Dientes de Navarino y la balandra fondeó por fin en aguas mansas de Puerto Toro, los tripulantes contemplaron a la distancia la silueta negra y lejana del cabo de Hornos perdiéndose entre la neblina. Con *Cabo de Hornos*, Francisco Coloane legó a la literatura universal una de las epopeyas marinas más conmovedoras y verdaderas jamás escritas: un homenaje imperecedero a aquellos seres curtidos que, en los confines desolados del mundo, demostraron que el espíritu humano es capaz de desafiar las tormentas más feroces con tal de preservar su libertad, su sustento y su inquebrantable dignidad frente al abismo oceánico."
++      "text": "También se puede volver a leer un cuento que ya se conoce. Quien lo lee otra vez ya sabe cómo termina, y por eso puede fijarse más en otras cosas: en el lugar donde ocurre la historia, en las personas que aparecen o en las palabras que el autor eligió. Si usted vuelve a leer un cuento del libro, puede comparar la primera lectura con la segunda y notar qué cambia."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Qué escenario geográfico y marino sirve de marco a la narración de Francisco Coloane en 'Cabo de Hornos'?",
++          "question": "Where was Francisco Coloane born?",
+           "options": [
+-            "El archipiélago fueguino, las islas Wollaston y el mar de Drake en el confín meridional de Chile.",
+-            "Las playas cálidas de arena blanca del mar Caribe frente a las costas de Cartagena.",
+-            "Un oasis de palmeras datileras situado en medio del desierto del Sahara septentrional.",
+-            "Las orillas pantanosas del río Amazonas en la frontera selvática entre Perú y Brasil."
++            "En Quemchi, en la isla de Chiloé.",
++            "En Santiago, la capital de Chile.",
++            "En una isla del extremo sur de Chile."
+           ],
+           "correctIndex": 0,
+-          "explanation": "La obra transcurre en las peligrosas y gélidas aguas del cabo de Hornos y Tierra del Fuego."
++          "explanation": "The text says that Coloane was born in 1910 in Quemchi, on the island of Chiloé."
+         },
+         {
+-          "question": "¿A qué arriesgada actividad productiva se dedicaba la tripulación de la balandra 'San Pedro'?",
++          "question": "What kind of book is Cabo de Hornos?",
+           "options": [
+-            "A la cacería de lobos marinos finos en las rompientes rocosas para comerciar cueros y grasa.",
+-            "Al cultivo intensivo de flores tropicales ornamentales para exportar a Europa en barricas.",
+-            "Al transporte exclusivo de libros de filosofía clásica entre los puertos del mar Báltico.",
+-            "A la búsqueda de restos de naves espaciales caídas en las selvas de Centroamérica."
++            "Una novela larga con una sola historia.",
++            "Una colección de cuentos.",
++            "Un libro de poemas sobre el mar."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "Los loberos australes cazaban lobos marinos en las restingas para extraer pieles y grasa valiosa."
++          "correctIndex": 1,
++          "explanation": "The text says that it is not a novel but a collection of stories, and that each story tells its own tale."
+         },
+         {
+-          "question": "¿Qué lección fundamental aprende el joven marinero Manuel durante la travesía en medio del temporal?",
++          "question": "What are the stories of the book about?",
+           "options": [
+-            "Que el ser humano no vence al mar con soberbia, sino venciendo su propio miedo y respetando la fuerza indómita de la naturaleza.",
+-            "Que la navegación a vela debe prohibirse de inmediato para usar únicamente botes de remo.",
+-            "Que los marineros nunca deben mirar hacia el sur porque los farallones reflejan mala suerte.",
+-            "Que el oro es el único valor por el que vale la pena arriesgar la vida en los canales."
++            "La vida de los escritores chilenos.",
++            "Los viajes de un solo marinero por el mundo.",
++            "El mar, los canales y las personas que trabajan en el extremo sur de Chile."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "Manuel aprende la sabiduría marinera austral basada en la humildad, el coraje y el respeto al océano."
++          "correctIndex": 2,
++          "explanation": "The text says that the stories deal with the sea, the channels and the people who work in the far south of Chile."
++        },
++        {
++          "question": "According to the text, what can a reader do after finishing one story?",
++          "options": [
++            "Debe seguir leyendo hasta el final del libro.",
++            "Puede pasar a leer el siguiente o cerrar el libro y descansar.",
++            "Tiene que volver a leer el primer cuento."
++          ],
++          "correctIndex": 1,
++          "explanation": "The text says that a reader can move on to the next story or close the book and rest, because each story is a separate text."
+         }
+       ]
+     }
+   },
+   "author": "Francisco Coloane (Chile, 1910–2002)",
+   "work": "Cabo de Hornos (1941)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de los relatos clásicos de Francisco Coloane",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "order": 23
+ }
+diff --git a/content/es-latam/stories/classics/b2/b2-25.json b/content/es-latam/stories/classics/b2/b2-25.json
+index 17ae7ded..b214c6be 100644
+--- a/content/es-latam/stories/classics/b2/b2-25.json
++++ b/content/es-latam/stories/classics/b2/b2-25.json
+@@ -1,80 +1,95 @@
+ {
+   "id": "story.b2.25.guiraldes",
+-  "title": "Don Segundo Sombra: La iniciación en las pampas y el adiós al resero",
++  "title": "Don Segundo Sombra",
+   "level": "B2",
+   "lesson": 1,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Una adaptación literaria de 'Don Segundo Sombra' (1926), la clásica novela gauchesca de Ricardo Güiraldes: el muchacho huérfano Fabio Cáceres abandona la rutina del pueblo para seguir al mítico resero, forjándose como jinete a través de arreos y domas en la inmensidad pampeana, hasta enfrentar el dilema de una herencia imprevista y comprender que la verdadera libertad reside en el desapego interior.",
++  "summary": "Adaptación de la novela de Ricardo Güiraldes: un muchacho se escapa de su pueblo, sigue a los reseros y a Don Segundo Sombra, y al final se despide de él.",
+   "characters": [
+-    "Fabio Cáceres",
++    "El muchacho (Fabio Cáceres)",
+     "Don Segundo Sombra",
+-    "Capataz de estancia",
+-    "Escribano de la capital"
++    "Burgos",
++    "Don Leandro Galván"
+   ],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En el pueblo de San Antonio de Areco, la modorra provinciana parecía adormecer las voluntades y condenar las vidas a una rutina opaca y sin sorpresas. Fabio Cáceres, un muchacho criado entre tías severas que nunca le revelaron con claridad su origen ni su porvenir, vagaba por las orillas del río buscando un sentido que la estrechez del caserío le negaba sistemáticamente. Se sentía un huérfano del alma, un guacho arrojado a las márgenes del mundo adulto, hasta la noche memorable en que una figura descomunal emergió del claroscuro de la calle polvorienta. Silencioso, montado sobre un caballo zaino de porte altivo y envuelto en un poncho que desafiaba la penumbra, cruzó ante sus ojos Don Segundo Sombra. No era un paisano común; en su silueta descansaba toda la serenidad insondable, la dignidad callada y la independencia montaraz de las pampas abiertas."
++      "text": "Don Segundo Sombra es una novela de Ricardo Güiraldes en la que un muchacho de catorce años cuenta su propia historia. Vivía en un pueblo con dos mujeres a las que llamaba sus tías, y en esa casa se sentía encerrado. Don Fabio Cáceres lo visitaba a veces, pero con el tiempo dejó de venir con frecuencia. El chico pasaba los días en la calle y junto al río, donde pescaba."
+     },
+     {
+       "type": "narration",
+-      "text": "Aquel encuentro fulminante transformó la existencia del muchacho. A partir de esa noche, Fabio dejó de contemplar las tabernas de mala muerte y el tedio pueblerino como su única fatalidad. Decidió abandonar el pueblo para seguir los pasos del viejo resero, resuelto a aprender los misterios de la tierra, la conducción de las tropas de ganado y el código caballeresco de la hombría gaucha. Don Segundo, parco en palabras pero generoso en saberes prácticos, aceptó la compañía del muchacho sin falsas promesas. Durante años de aprendizaje rudo y fraterno, Fabio no dejó de asombrarse ante la destreza incomparable de su maestro, quien dominaba con igual naturalidad el lazo, el cuchillo facón, la doma de potros chúcaros y el consuelo sobrio junto al fogón cuando el cansancio amenazaba con doblegar el ánimo de los peones."
++      "text": "Una tarde, de vuelta del río, asustó sin querer a un caballo. El jinete, un hombre grande con poncho, calmó al animal y se alejó. Al muchacho aquella figura le pareció más una sombra que una persona, y quiso irse del pueblo. Poco después, en la tienda donde vendía sus pescados, el dueño dijo que quizás era Don Segundo Sombra. Entonces llegó el propio Don Segundo, que buscaba trabajo."
+     },
+     {
+       "type": "narration",
+-      "text": "La vida del arreo fue una forja implacable bajo soles abrasadores, heladas blanquecinas y tormentas pampeanas que convertían los campos en inmensos lodazales. En más de una ocasión, tras jornadas extenuantes arreando novillos ariscos que intentaban desbandarse entre las lagunas y los pajonales, el joven sintió que sus fuerzas desfallecían sin remedio. Sin embargo, antes de claudicar, acababa por encontrar en la mirada imperturbable de Don Segundo la fuerza para sostenerse en la montura. El muchacho terminó comprendiendo que el verdadero gaucho no es aquel que desafía a la naturaleza con violencia vana, sino el que sabe adaptarse a su rigor y respetar sus silencios. Fabio llegó a convertirse en un jinete respetado por veteranos troperos, capaz de cruzar vados turbulentos y velar el sueño de las haciendas bajo la inmensidad estrellada del cielo austral."
++      "text": "Otro cliente, Burgos, lo provocó con bromas pesadas, pero Don Segundo no se enojó. Al salir, Burgos lo atacó con un cuchillo. Don Segundo esquivó el golpe, el cuchillo se rompió contra la pared y él le devolvió los pedazos con toda tranquilidad. El muchacho, que le había advertido del peligro, lo miraba con simpatía."
+     },
+     {
+       "type": "narration",
+-      "text": "Pero el destino reservaba una prueba aún más intrincada para el joven resero. Tras años de nomadismo libre y sacrificado, llegó a la posta una carta formal enviada por un escribano de la capital. El viejo estanciero Don Fabio, a quien el muchacho había servido en su infancia sin sospechar el secreto de su sangre, acababa de morir dejándolo como único y universal heredero de una inmensa fortuna en campos y cabezas de ganado. La noticia cayó como un rayo en el campamento. De la noche a la mañana, el paisano desposeído se transformaba en señor de estancias, atrapado entre las obligaciones jurídicas, los libros contables y la vestimenta refinada de la sociedad letrada."
++      "text": "Esa noche las tías lo castigaron por llegar tarde. Él decidió escaparse y, antes del amanecer, salió a caballo hacia la estancia de Galván, adonde sabía que iría Don Segundo. El mayordomo le dijo que no tenía trabajo, pero lo dejó quedarse. Al día siguiente llegó Don Segundo para domar yeguas, y a los quince días las yeguas ya estaban mansas."
+     },
+     {
+       "type": "narration",
+-      "text": "Fabio se rebeló íntimamente contra semejante mutación impuesta. Estuvo a punto de repudiar los títulos de propiedad, pues temía que el lujo y los alambrados acabaran por destruir la libertad conquistada en el camino. No obstante, Don Segundo le habló con la honda filosofía que da el desapego: ser libre no depende de poseer poco o mucho, sino de mantener intacta la propia rectitud interior sin dejar que las cosas materiales gobiernen el espíritu. El maestro dio por concluida su tutela formal: el discípulo ya era un hombre cabal, preparado para defender su honor en cualquier terreno. La despedida final ocurrió en lo alto de una loma al atardecer. Fabio observó cómo la figura de Don Segundo Sombra se empequeñecía lentamente en el horizonte ilimitado de la pampa, recortándose contra el ocaso como una sombra tutelar que jamás dejaría de guiar su sendero interior."
++      "text": "Después el patrón preparó una tropa de quinientos animales para llevarla al sur. El muchacho sabía que en el pueblo conocían su paradero y temía que lo obligaran a volver, así que pidió ir con los reseros. El capataz consiguió que lo llevaran con medio sueldo. Salieron de madrugada. Durante unos cinco años vivió como resero, y Don Segundo se convirtió en su padrino."
++    },
++    {
++      "type": "narration",
++      "text": "Más tarde, durante otro viaje con la tropa, un compañero le entregó una carta de Don Leandro Galván. La carta decía que su padre, Fabio Cáceres, había muerto y que Don Leandro sería su tutor hasta la mayoría de edad. Sintió rabia y se imaginó rechazando la herencia, pero Don Segundo le dijo que lo acompañaba."
++    },
++    {
++      "type": "narration",
++      "text": "Al final, el joven Fabio recibió su campo y llegó a ser patrón. Los consejos de su tutor y de su padrino lo convencieron, y terminó por quedarse; lo que más pesó fue que Don Segundo aceptó quedarse también. Pasaron tres años, hasta que Don Segundo decidió irse. Los dos cabalgaron hasta una loma y se despidieron casi sin palabras. Fabio lo vio alejarse hasta que desapareció."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Qué representa la figura de Don Segundo Sombra para el joven Fabio al inicio del relato?",
++          "question": "How did Burgos's attack on Don Segundo end?",
++          "options": [
++            "El cuchillo de Burgos se rompió contra la pared y Don Segundo le devolvió los pedazos.",
++            "Don Segundo se enojó mucho y se fue de la tienda sin hablar.",
++            "El muchacho detuvo a Burgos y le quitó el cuchillo."
++          ],
++          "correctIndex": 0,
++          "explanation": "The text says that Don Segundo dodged the blow, the knife broke against the wall and he calmly gave the pieces back."
++        },
++        {
++          "question": "Why did the boy ask to go with the herd?",
+           "options": [
+-            "Un capataz autoritario que lo obliga a trabajar en la estancia familiar.",
+-            "Un ideal de serenidad, dignidad y libertad que lo rescata de la rutina opaca del pueblo.",
+-            "Un pariente lejano que le trae noticias sobre la herencia de sus tierras.",
+-            "Un forastero peligroso al que las autoridades intentan capturar en las tabernas."
++            "Porque el patrón le ofreció un sueldo completo.",
++            "Porque sabía que en el pueblo conocían su paradero y temía tener que volver.",
++            "Porque quería buscar a su padre en el sur."
+           ],
+           "correctIndex": 1,
+-          "explanation": "Don Segundo encarna para Fabio la dignidad, la calma estoica y la libertad que el pueblo provinciano le negaba."
++          "explanation": "The text says that he knew people in the town knew where he was and he was afraid they would make him go back."
+         },
+         {
+-          "question": "¿Cuál es la enseñanza central que Don Segundo transmite a Fabio respecto a la condición de gaucho?",
++          "question": "What did the letter from Don Leandro Galván say?",
+           "options": [
+-            "Que el verdadero gaucho debe acumular riquezas para comprar sus propias parcelas.",
+-            "Que la hombría se demuestra derrotando a otros paisanos en duelos a cuchillo.",
+-            "Que el valor reside en adaptarse al rigor natural y conservar la rectitud interior con desapego.",
+-            "Que la vida nómada es insostenible frente al avance definitivo de los alambrados."
++            "Que Don Segundo iba a quedarse en el campo.",
++            "Que sus tías querían que el muchacho volviera al pueblo.",
++            "Que su padre había muerto y que Don Leandro sería su tutor."
+           ],
+           "correctIndex": 2,
+-          "explanation": "Don Segundo le enseña que la libertad y el honor residen en la fuerza moral interior y el desapego de lo material."
++          "explanation": "The text says that the letter told him that his father, Fabio Cáceres, had died and that Don Leandro would be his tutor until he came of age."
+         },
+         {
+-          "question": "¿Qué dilema ético experimenta Fabio al descubrir que es el heredero de una gran fortuna?",
++          "question": "How does the story end for Fabio and Don Segundo?",
+           "options": [
+-            "Teme que la propiedad y las exigencias de la vida acomodada destruyan su libertad conquistada.",
+-            "Duda entre repartir el dinero entre los peones o construir un nuevo pueblo junto al río.",
+-            "Planea vender todas las estancias para marcharse a vivir como forastero en Europa.",
+-            "Sospecha que Don Segundo lo engañó para quedarse con una parte sustancial del ganado."
++            "Don Segundo se fue y Fabio lo vio alejarse desde una loma.",
++            "Fabio se fue con Don Segundo a otro país.",
++            "Don Segundo se quedó a vivir en la casa de Fabio."
+           ],
+           "correctIndex": 0,
+-          "explanation": "Fabio teme que la condición de propietario y los lazos de la vida letrada anulen la libertad espiritual conquistada como resero."
++          "explanation": "The text says that after three years Don Segundo decided to leave, they rode to a hill, and Fabio watched him go until he disappeared."
+         }
+       ]
+     }
+   },
+   "author": "Ricardo Güiraldes (Argentina, 1886–1927)",
+   "work": "Don Segundo Sombra (1926)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Ricardo Güiraldes",
++  "source": "Adaptación para estudiantes de nivel B2 de la novela de Ricardo Güiraldes (dominio público), contrastada con el texto de Wikisource.",
+   "order": 25
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-23-01-voc.json b/content/es-latam/vocabulary/b2/b2-23-01-voc.json
+index 4e73a769..50981292 100644
+--- a/content/es-latam/vocabulary/b2/b2-23-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-23-01-voc.json
+@@ -5,52 +5,32 @@
+   "words": [
+     {
+       "lemma": "echarse a",
+-      "translation": "to burst into / to suddenly begin doing",
++      "translation": "to burst into, to suddenly start doing",
+       "pos": "verb"
+     },
+     {
+       "lemma": "súbito",
+-      "translation": "sudden / unexpected",
++      "translation": "sudden",
+       "pos": "adjective"
+     },
+     {
+       "lemma": "llanto",
+-      "translation": "weeping / crying",
++      "translation": "crying, weeping",
+       "pos": "noun"
+     },
+     {
+       "lemma": "carcajada",
+-      "translation": "loud laugh / guffaw",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "temblor",
+-      "translation": "tremor / trembling",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "pánico",
+-      "translation": "panic",
++      "translation": "burst of laughter",
+       "pos": "noun"
+     },
+     {
+       "lemma": "estampida",
+-      "translation": "stampede / sudden rush",
++      "translation": "stampede",
+       "pos": "noun"
+     },
+     {
+       "lemma": "arrebato",
+-      "translation": "outburst / fit of emotion",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "huida",
+-      "translation": "flight / escape",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "desbandada",
+-      "translation": "scatter / disorderly dispersion",
++      "translation": "outburst, fit",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-23-02-voc.json b/content/es-latam/vocabulary/b2/b2-23-02-voc.json
+index 0d003fd3..b5da2e1f 100644
+--- a/content/es-latam/vocabulary/b2/b2-23-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-23-02-voc.json
+@@ -5,53 +5,33 @@
+   "words": [
+     {
+       "lemma": "ponerse a",
+-      "translation": "to set about / to start doing deliberately",
++      "translation": "to set about, to start doing",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "diligencia",
+-      "translation": "diligence / prompt dispatch",
++      "lemma": "tarea",
++      "translation": "task, piece of work",
++      "pos": "noun"
++    },
++    {
++      "lemma": "faena",
++      "translation": "chore, job",
+       "pos": "noun"
+     },
+     {
+       "lemma": "tesón",
+-      "translation": "tenacity / perseverance",
++      "translation": "determination, persistence",
+       "pos": "noun"
+     },
+     {
+       "lemma": "deliberado",
+-      "translation": "deliberate / intentional",
++      "translation": "deliberate, on purpose",
+       "pos": "adjective"
+     },
+     {
+       "lemma": "emprender",
+-      "translation": "to undertake / to embark upon",
++      "translation": "to undertake, to set out to do",
+       "pos": "verb"
+-    },
+-    {
+-      "lemma": "redacción",
+-      "translation": "drafting / composition",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "faena",
+-      "translation": "toil / chore / labor task",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "esmero",
+-      "translation": "meticulous care / dedication",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "tarea",
+-      "translation": "task / undertaking",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "afán",
+-      "translation": "eagerness / earnest endeavor",
+-      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-23-03-voc.json b/content/es-latam/vocabulary/b2/b2-23-03-voc.json
+index ae4cf5b1..c3d55a4a 100644
+--- a/content/es-latam/vocabulary/b2/b2-23-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-23-03-voc.json
+@@ -5,52 +5,32 @@
+   "words": [
+     {
+       "lemma": "romper a",
+-      "translation": "to break into / to burst out doing",
++      "translation": "to burst out (crying, laughing, applauding)",
+       "pos": "verb"
+     },
+     {
+       "lemma": "estallido",
+-      "translation": "outbreak / explosion / burst",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "brote",
+-      "translation": "outbreak / sprout / emergence",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "fragor",
+-      "translation": "clamor / din / roaring noise",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "clamor",
+-      "translation": "clamor / loud outcry",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "júbilo",
+-      "translation": "exultant joy / jubilation",
++      "translation": "outburst, explosion",
+       "pos": "noun"
+     },
+     {
+       "lemma": "aguacero",
+-      "translation": "downpour / sudden heavy rain",
++      "translation": "downpour",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "llamarada",
+-      "translation": "sudden blaze / flare-up",
++      "lemma": "júbilo",
++      "translation": "joy, jubilation",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "eclosión",
+-      "translation": "flowering / blossoming / emergence",
++      "lemma": "clamor",
++      "translation": "outcry, roar of voices",
+       "pos": "noun"
+     },
+     {
+       "lemma": "trueno",
+-      "translation": "thunderclap / peal of thunder",
++      "translation": "thunder",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-23-04-voc.json b/content/es-latam/vocabulary/b2/b2-23-04-voc.json
+index d9acae7b..d8a0e85c 100644
+--- a/content/es-latam/vocabulary/b2/b2-23-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-23-04-voc.json
+@@ -5,42 +5,22 @@
+   "words": [
+     {
+       "lemma": "volver a",
+-      "translation": "to do again / to repeat an action",
++      "translation": "to do again",
+       "pos": "verb"
+     },
+-    {
+-      "lemma": "reiteración",
+-      "translation": "reiteration / repetition",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "reincidencia",
+-      "translation": "relapse / recurrence",
+-      "pos": "noun"
+-    },
+     {
+       "lemma": "reanudar",
+-      "translation": "to resume / to pick up again",
++      "translation": "to resume, to start again",
+       "pos": "verb"
+     },
+-    {
+-      "lemma": "recaída",
+-      "translation": "relapse / setback",
+-      "pos": "noun"
+-    },
+     {
+       "lemma": "tentativa",
+-      "translation": "attempt / try",
++      "translation": "attempt",
+       "pos": "noun"
+     },
+     {
+       "lemma": "insistencia",
+-      "translation": "insistence / persistence",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "resurgimiento",
+-      "translation": "resurgence / revival",
++      "translation": "insistence, persistence",
+       "pos": "noun"
+     },
+     {
+@@ -49,9 +29,9 @@
+       "pos": "noun"
+     },
+     {
+-      "lemma": "revalidar",
+-      "translation": "to revalidate / to confirm again",
+-      "pos": "verb"
++      "lemma": "recaída",
++      "translation": "relapse, setback",
++      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-23-05-voc.json b/content/es-latam/vocabulary/b2/b2-23-05-voc.json
+index bc3b10e7..a3c1daea 100644
+--- a/content/es-latam/vocabulary/b2/b2-23-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-23-05-voc.json
+@@ -5,53 +5,33 @@
+   "words": [
+     {
+       "lemma": "pasar a",
+-      "translation": "to move on to / to proceed to do",
++      "translation": "to move on to (doing)",
+       "pos": "verb"
+     },
+     {
+       "lemma": "transición",
+-      "translation": "transition",
++      "translation": "transition, change from one stage to the next",
+       "pos": "noun"
+     },
+     {
+       "lemma": "secuencia",
+-      "translation": "sequence",
++      "translation": "sequence, order of steps",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "consecutivo",
+-      "translation": "consecutive / sequential",
+-      "pos": "adjective"
++      "lemma": "fase",
++      "translation": "phase, stage",
++      "pos": "noun"
+     },
+     {
+       "lemma": "proceder",
+-      "translation": "to proceed / to carry on",
++      "translation": "to proceed, to go ahead",
+       "pos": "verb"
+     },
+     {
+       "lemma": "exponer",
+-      "translation": "to state / to lay out / to expound",
++      "translation": "to set out, to present",
+       "pos": "verb"
+-    },
+-    {
+-      "lemma": "traspaso",
+-      "translation": "transfer / handover",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "subsecuente",
+-      "translation": "subsequent / following",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "renglón",
+-      "translation": "item / line of topic / entry",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "fase",
+-      "translation": "phase / stage",
+-      "pos": "noun"
+     }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b2/b2-25-01-voc.json b/content/es-latam/vocabulary/b2/b2-25-01-voc.json
+index a62820e9..2cff3c5b 100644
+--- a/content/es-latam/vocabulary/b2/b2-25-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-25-01-voc.json
+@@ -1,56 +1,36 @@
+ {
+   "id": "vocab.b2.25.01",
+   "lesson": "b2-25-01",
+-  "title": "Terminative Periphrasis: Dejar de + Infinitivo",
++  "title": "Terminative Periphrasis: Dejar de + Infinitive",
+   "words": [
+     {
+-      "lemma": "cese",
+-      "translation": "cessation / stopping",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "interrupción",
+-      "translation": "interruption / pause",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "desistimiento",
+-      "translation": "relinquishment / withdrawal",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "renuncia",
+-      "translation": "resignation / giving up",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "desapego",
+-      "translation": "detachment / letting go",
+-      "pos": "noun"
++      "lemma": "dejar de",
++      "translation": "to stop doing",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "abandono",
+-      "translation": "abandonment / giving up",
++      "lemma": "resero",
++      "translation": "cattle drover",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "ruptura",
+-      "translation": "rupture / severance",
++      "lemma": "estancia",
++      "translation": "cattle ranch",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "pausa",
+-      "translation": "pause / hiatus",
++      "lemma": "tropa",
++      "translation": "herd of cattle on the move",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "claudicación",
+-      "translation": "giving in / capitulation",
++      "lemma": "capataz",
++      "translation": "foreman",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "freno",
+-      "translation": "brake / curb / restraint",
++      "lemma": "mayordomo",
++      "translation": "manager of a ranch",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-25-02-voc.json b/content/es-latam/vocabulary/b2/b2-25-02-voc.json
+index 10b11a38..ad95d939 100644
+--- a/content/es-latam/vocabulary/b2/b2-25-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-25-02-voc.json
+@@ -1,56 +1,36 @@
+ {
+   "id": "vocab.b2.25.02",
+   "lesson": "b2-25-02",
+-  "title": "Periphrases of Completion: Acabar de vs. Acabar por",
++  "title": "Periphrases of Completion: Acabar de",
+   "words": [
+     {
+-      "lemma": "culminación",
+-      "translation": "culmination / completion",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "remate",
+-      "translation": "finishing touch / conclusion",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "desenlace",
+-      "translation": "outcome / unraveling",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "desembocadura",
+-      "translation": "mouth / outlet / eventual ending",
+-      "pos": "noun"
++      "lemma": "acabar de",
++      "translation": "to have just (done something)",
++      "pos": "verb"
+     },
+     {
+       "lemma": "reciente",
+-      "translation": "recent / newly done",
++      "translation": "recent",
+       "pos": "adjective"
+     },
+     {
+-      "lemma": "resolución",
+-      "translation": "resolution / determination",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "finiquito",
+-      "translation": "settlement / definitive ending",
++      "lemma": "desenlace",
++      "translation": "ending, outcome",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "postrimería",
+-      "translation": "latter days / final phase",
++      "lemma": "remate",
++      "translation": "finishing touch",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "consumación",
+-      "translation": "consummation / fulfillment",
++      "lemma": "culminación",
++      "translation": "high point, completion",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "epílogo",
+-      "translation": "epilogue / closing event",
++      "lemma": "resolución",
++      "translation": "decision, solution",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-25-03-voc.json b/content/es-latam/vocabulary/b2/b2-25-03-voc.json
+index 9daf9461..abc80d37 100644
+--- a/content/es-latam/vocabulary/b2/b2-25-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-25-03-voc.json
+@@ -1,56 +1,36 @@
+ {
+   "id": "vocab.b2.25.03",
+   "lesson": "b2-25-03",
+-  "title": "Eventual Culmination: Terminar por + Infinitivo & Terminar + Gerundio",
++  "title": "Eventual Culmination: Terminar por and Acabar por",
+   "words": [
+     {
+-      "lemma": "resignación",
+-      "translation": "resignation / acceptance",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "inevitabilidad",
+-      "translation": "inevitability",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "desfecho",
+-      "translation": "final outcome / resolution",
+-      "pos": "noun"
++      "lemma": "terminar por",
++      "translation": "to end up doing",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "decantación",
+-      "translation": "gradual settling / clarifying",
+-      "pos": "noun"
++      "lemma": "acabar por",
++      "translation": "to end up doing",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "corolario",
+-      "translation": "corollary / natural result",
++      "lemma": "resignación",
++      "translation": "resignation, acceptance",
+       "pos": "noun"
+     },
+     {
+       "lemma": "secuela",
+-      "translation": "aftermath / sequel",
++      "translation": "aftermath",
+       "pos": "noun"
+     },
+     {
+       "lemma": "saldo",
+-      "translation": "balance / net outcome",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "derivación",
+-      "translation": "derivation / offshoot",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "desahogo",
+-      "translation": "relief / emotional release",
++      "translation": "outcome, net result",
+       "pos": "noun"
+     },
+     {
+       "lemma": "fatalidad",
+-      "translation": "fatality / unavoidable destiny",
++      "translation": "bad luck, unavoidable fate",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-25-04-voc.json b/content/es-latam/vocabulary/b2/b2-25-04-voc.json
+index 7814e123..4eacdf79 100644
+--- a/content/es-latam/vocabulary/b2/b2-25-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-25-04-voc.json
+@@ -1,56 +1,36 @@
+ {
+   "id": "vocab.b2.25.04",
+   "lesson": "b2-25-04",
+-  "title": "Attainment & Extremes: Llegar a + Infinitivo",
++  "title": "Attainment and Extremes: Llegar a + Infinitive",
+   "words": [
+     {
+-      "lemma": "hito",
+-      "translation": "milestone / landmark",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "apogeo",
+-      "translation": "apogee / height / peak",
+-      "pos": "noun"
++      "lemma": "llegar a",
++      "translation": "to get as far as doing, to come to do",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "consagración",
+-      "translation": "consecration / ultimate recognition",
++      "lemma": "hito",
++      "translation": "milestone",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "alcance",
+-      "translation": "reach / scope / achievement",
++      "lemma": "apogeo",
++      "translation": "peak, height",
+       "pos": "noun"
+     },
+     {
+       "lemma": "cumbre",
+-      "translation": "summit / pinnacle",
++      "translation": "summit, high point",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "maduración",
+-      "translation": "maturation / ripening",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "culmen",
+-      "translation": "culmination / highest point",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "trascendencia",
+-      "translation": "transcendence / profound significance",
++      "lemma": "consecución",
++      "translation": "achievement",
+       "pos": "noun"
+     },
+     {
+       "lemma": "plenitud",
+-      "translation": "fullness / peak state",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "consecución",
+-      "translation": "attainment / achievement",
++      "translation": "full strength, prime",
+       "pos": "noun"
+     }
+   ]
+diff --git a/content/es-latam/vocabulary/b2/b2-25-05-voc.json b/content/es-latam/vocabulary/b2/b2-25-05-voc.json
+index caf69895..12c3ce34 100644
+--- a/content/es-latam/vocabulary/b2/b2-25-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-25-05-voc.json
+@@ -1,56 +1,36 @@
+ {
+   "id": "vocab.b2.25.05",
+   "lesson": "b2-25-05",
+-  "title": "Resultative Judgments: Dar por + Participio",
++  "title": "Resultative Judgements: Dar por + Participle",
+   "words": [
+     {
+-      "lemma": "presuposición",
+-      "translation": "presupposition / assumption",
+-      "pos": "noun"
++      "lemma": "dar por",
++      "translation": "to take as, to consider (finished, lost, certain)",
++      "pos": "verb"
+     },
+     {
+       "lemma": "clausura",
+-      "translation": "closure / definitive shutting",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "estipulación",
+-      "translation": "stipulation / contractual term",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "asentimiento",
+-      "translation": "assent / agreement",
++      "translation": "closing, end",
+       "pos": "noun"
+     },
+     {
+       "lemma": "veredicto",
+-      "translation": "verdict / formal ruling",
++      "translation": "verdict",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "liquidación",
+-      "translation": "settlement / liquidation",
++      "lemma": "conclusión",
++      "translation": "conclusion",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "desestimación",
+-      "translation": "dismissal / rejection",
++      "lemma": "presuposición",
++      "translation": "assumption",
+       "pos": "noun"
+     },
+     {
+       "lemma": "constatación",
+-      "translation": "verification / factual confirmation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "firmeza",
+-      "translation": "firmness / finality (legal)",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "conclusión",
+-      "translation": "conclusion / ending",
++      "translation": "confirmation",
+       "pos": "noun"
+     }
+   ]
