@@ -509,6 +509,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-13 | ES B2 core Units 7–10 (es-latam) | two edit-in-place agents (Sonnet), two units each; both resumed after the 5-hour limit | A 325,030, B 324,492 (both runs); ~163k a unit | | 0 errors in all four, 2 suspects accepted; 4 unmet words the agents missed fixed | walked 24/24, all frozen; ~10 reviewer edits |
 | 11-13 | ES B2 core Units 11–14 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 381,736 (19 min), B 287,277 (15 min); ~167k a unit | | 0 errors in all four, 2 suspects accepted, unmet 0 | walked 24/24, all frozen; 6 reviewer edits |
 | 11-13 | ES B2 core Units 15–18 (es-latam) | two edit-in-place agents (Sonnet), two units each; A resumed after the 5-hour limit | A 382,383 (both runs), B 371,207 (20 min); ~188k a unit | | 0 errors in all four, 2 suspects accepted, unmet 0 | walked 24/24, all frozen; filler cut from all four texts |
+| 11-13 | ES B2 core Units 19–22 (es-latam) | two edit-in-place agents (Sonnet), two units each; no registry moves | A 296,895 (15 min), B 318,445 (19 min); ~154k a unit | | 0 errors / 0 suspects in all four, unmet 0 | walked 24/24, all frozen; 3 texts rewritten by the reviewer, a participle rule corrected |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2069,4 +2070,18 @@ The user took the four recommended options:
   in unread texts); to check with the level checklist.
 - **Running the next batch during the review** (19–22 launched at 14:15 while 15–16 was
   reviewed) kept both agent slots busy right after the limit reset.
+
+### 2026-11-13: ES B2 core Units 19–22
+
+- **A rule added to the template mid-pass does not reach briefs already assembled.**
+  The no-meta-commentary rule (from Units 15–18) missed this batch's briefs; all three
+  "about" texts came back as lectures on themselves. **Change:** when the template
+  changes, append the new lines to every brief already written for a batch not yet
+  launched (done for 23–26).
+- **First public-domain retelling checked against a fetched source** (Lillo, Wikisource):
+  the agent removed five inventions of the old generator; the reviewer's name check
+  against the source took two greps. Wikisource search (`index.php?search=…&fulltext=1`)
+  finds titles the guessed page name misses; chaptered works fetch as `<Title>/<chapter>`.
+- **Grammar claims still need the reviewer's knowledge:** the double-participle rule was
+  stated too strictly; the agent flagged it as unchecked (RAE pages refuse the fetch).
 
