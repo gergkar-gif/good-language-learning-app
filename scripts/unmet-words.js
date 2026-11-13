@@ -233,6 +233,14 @@ function targetTexts(e) {
         }
         return cache.get(w);
     };
+    // Cognate allowance (user, 2026-11-13): from B2 a transparent English cognate
+    // (*crisis*, *modelo*, *militar*) counts as met. The list is built by
+    // scripts/build_cognates.py and read by the reviewer for false friends.
+    const cog = readJson('imports/dictionary/cognates-es.json') || {};
+    const cognates = Lang.code() === 'hu' ? new Set() : new Set((cog.lemmas || []).map(lower));
+    const cognateFrom = LEVELS.indexOf(cog.from_level || 'b2');
+    const detail = args.includes('--detail');
+    const glossOf = w => { try { return (Lexicon.lookup(w).readings || []).filter(r => !r.compoundParts).map(r => ({ lemma: r.lemma, pos: r.pos, gloss: r.gloss || r.translation || r.english || r.meaning })); } catch (e) { return []; } };
     const stemAt = [...order.keys()];
     const metBy = (w, pos) => firstAt.has(w) && firstAt.get(w) <= pos;
     // English words: the course's vocabulary translations (a gloss in quotes, *"old"*).
@@ -393,7 +401,9 @@ function targetTexts(e) {
                     const at = Math.min(...cands.map(c => firstAt.has(c) ? firstAt.get(c) : Infinity));
                     if (at <= pos) continue;
                     if (lemmas.some(l => own.has(l))) continue;
-                    found.push({ stem, id: e.id, word: w, first: at === Infinity ? null : stemAt[at] });
+                    if (LEVELS.indexOf(level) >= cognateFrom && cands.some(c => cognates.has(c))) continue;
+                    found.push(Object.assign({ stem, id: e.id, word: w, first: at === Infinity ? null : stemAt[at] },
+                        detail ? { readings: glossOf(w) } : {}));
                 }
             }
         }
