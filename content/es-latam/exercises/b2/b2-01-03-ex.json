@@ -15,8 +15,8 @@
           "paramount, essential"
         ],
         [
-          "prevalecer",
-          "to prevail"
+          "el giro",
+          "turn, shift"
         ],
         [
           "insólito",
@@ -31,11 +31,11 @@
       "id": "b2-01-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál de las siguientes oraciones presenta una anteposición enfática con inversión del sujeto?",
+      "question": "Which sentence puts the adjective first for emphasis, with the subject after the verb?",
       "options": [
-        "Decisiva fue la intervención del cuerpo diplomático.",
-        "La intervención del cuerpo diplomático fue decisiva.",
-        "El cuerpo diplomático intervino de forma muy decisiva."
+        "Concluyentes fueron las pruebas presentadas.",
+        "Las pruebas presentadas fueron concluyentes.",
+        "Concluyentes las pruebas presentadas fueron."
       ],
       "correct": 0,
       "teaches": [
@@ -46,10 +46,12 @@
       "id": "b2-01-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "De suma importancia __ las conclusiones del último congreso científico.",
-      "hint": "ser",
-      "answer": "fueron",
-      "english": "Of utmost importance were the conclusions of the latest scientific congress.",
+      "sentence": "De gran importancia ____ las conclusiones del estudio.",
+      "answers": [
+        "fueron",
+        "resultaron"
+      ],
+      "english": "The conclusions of the study were of great importance.",
       "teaches": [
         "inversion-enfasis-fronting"
       ]
@@ -78,7 +80,7 @@
         "aquella",
         "región."
       ],
-      "english": "Unprecedented was the political turn in that region.",
+      "english": "Unusual was the political turn in that region.",
       "teaches": [
         "inversion-enfasis-fronting"
       ]
@@ -90,7 +92,7 @@
       "prompt": [
         {
           "speaker": "Camila",
-          "text": "¿Por qué le dieron tanta cobertura al informe de auditoría?"
+          "text": "¿Dónde comenzó la protesta?"
         },
         {
           "speaker": "Tú",
@@ -98,13 +100,13 @@
         },
         {
           "speaker": "Camila",
-          "text": "Por eso todo el gabinete estuvo presente en la lectura."
+          "text": "Claro, por eso había tanta gente en la plaza."
         }
       ],
       "options": [
-        "Concluyentes fueron las pruebas presentadas por la fiscalía.",
-        "Ayer compramos varios periódicos en la esquina.",
-        "El informe tenía más de quinientas páginas en total."
+        "En la plaza central comenzó la protesta.",
+        "Con mucha energía comenzó la protesta.",
+        "Muy temprano comenzó la protesta."
       ],
       "correct": 0,
       "teaches": [
@@ -117,17 +119,46 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Transform 'El papel de los docentes fue fundamental' using emphatic fronting",
-          "answer": "Fundamental fue el papel de los docentes en todo el proceso."
+          "prompt": "Put the adjective first: 'El papel de los profesores fue fundamental'. Start with 'Fundamental'.",
+          "answer": "Fundamental fue el papel de los profesores en todo el proceso."
         },
         {
-          "prompt": "State a key finding using 'De enorme relevancia...'",
-          "answer": "De enorme relevancia resultaron las conclusiones del estudio."
+          "prompt": "Say that a simple idea lies beneath the whole plan. Start with 'Bajo todo el plan'.",
+          "answer": "Bajo todo el plan subyace una idea sencilla."
         }
       ],
       "teaches": [
-        "inversion-enfasis-fronting",
-        "b2-nuance-precision-emphasis-vocab"
+        "inversion-enfasis-fronting"
+      ]
+    },
+    {
+      "id": "b2-01-03.ex07",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence puts the phrase 'under that premise' first, with the subject after the verb?",
+      "options": [
+        "Bajo esa premisa trabajaron los investigadores.",
+        "Los investigadores trabajaron bajo esa premisa.",
+        "Bajo esa premisa los investigadores trabajaron."
+      ],
+      "correct": 0,
+      "teaches": [
+        "inversion-enfasis-fronting"
+      ]
+    },
+    {
+      "id": "b2-01-03.ex08",
+      "type": "listening-choice",
+      "category": "listening",
+      "sentence": "Al final prevaleció la opinión de Ana.",
+      "options": [
+        "In the end Ana's opinion prevailed.",
+        "In the end Ana changed her opinion.",
+        "In the end nobody gave an opinion."
+      ],
+      "correct": 0,
+      "teaches": [
+        "inversion-enfasis-fronting"
       ]
     }
   ]

@@ -11,16 +11,16 @@
           "frankly"
         ],
         [
-          "en rigor",
-          "strictly speaking"
-        ],
-        [
-          "rotundamente",
-          "categorically, flatly"
+          "deliberadamente",
+          "deliberately"
         ],
         [
           "indudablemente",
           "undoubtedly"
+        ],
+        [
+          "en rigor",
+          "strictly speaking"
         ]
       ],
       "teaches": [
@@ -31,11 +31,11 @@
       "id": "b2-01-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué adverbio expresa un rechazo categórico y absoluto?",
+      "question": "You want to say 'Frankly, I did not like the film.' Which sentence says it?",
       "options": [
-        "Rotundamente",
-        "Apenas",
-        "Propiamente"
+        "Francamente, no me gustó la película.",
+        "Afortunadamente, no me gustó la película.",
+        "Indudablemente, no me gustó la película."
       ],
       "correct": 0,
       "teaches": [
@@ -44,12 +44,15 @@
     },
     {
       "id": "b2-01-02.ex03",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "En __, no podemos calificar este resultado como un fracaso total.",
-      "hint": "strictness",
-      "answer": "rigor",
-      "english": "Strictly speaking, we cannot describe this result as a complete failure.",
+      "question": "Which sentence has the commas in the right places?",
+      "options": [
+        "El proyecto, lamentablemente, no tiene presupuesto.",
+        "El proyecto lamentablemente, no tiene presupuesto.",
+        "El proyecto, lamentablemente no tiene presupuesto."
+      ],
+      "correct": 0,
       "teaches": [
         "stance-adverbs"
       ]
@@ -59,26 +62,24 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "El",
-        "ministro",
-        "rechazó",
-        "rotundamente",
-        "las",
-        "acusaciones",
-        "de",
-        "corrupción."
+        "Lamentablemente,",
+        "el",
+        "proyecto",
+        "apenas",
+        "cambió",
+        "este",
+        "año."
       ],
       "solution": [
-        "El",
-        "ministro",
-        "rechazó",
-        "rotundamente",
-        "las",
-        "acusaciones",
-        "de",
-        "corrupción."
+        "Lamentablemente,",
+        "el",
+        "proyecto",
+        "apenas",
+        "cambió",
+        "este",
+        "año."
       ],
-      "english": "The minister flatly rejected the corruption accusations.",
+      "english": "Unfortunately, the project barely changed this year.",
       "teaches": [
         "stance-adverbs"
       ]
@@ -86,13 +87,15 @@
     {
       "id": "b2-01-02.ex05",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Las condiciones de vida han mejorado __ en la última década.",
-      "hint": "notable",
-      "answer": "notablemente",
-      "english": "Living conditions have remarkably improved over the last decade.",
+      "category": "vocabulary",
+      "sentence": "El ministro rechazó ____ la acusación.",
+      "answers": [
+        "rotundamente",
+        "categóricamente"
+      ],
+      "english": "The minister flatly rejected the accusation.",
       "teaches": [
-        "stance-adverbs"
+        "b2-nuance-precision-emphasis-vocab"
       ]
     },
     {
@@ -101,26 +104,26 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Sebastián",
-          "text": "¿Crees que ya podemos dar por terminado el proyecto?"
+          "speaker": "Valeria",
+          "text": "¿Ya podemos llamar ley a esa propuesta?"
         },
         {
           "speaker": "Tú",
           "text": "_____"
         },
         {
-          "speaker": "Sebastián",
-          "text": "Tienes razón, faltan las revisiones finales."
+          "speaker": "Valeria",
+          "text": "Entonces falta todavía la votación final."
         }
       ],
       "options": [
-        "En rigor, todavía queda pendiente la auditoría externa.",
-        "Ayer almorzamos en el centro con todo el equipo.",
-        "A lo mejor el próximo año compramos computadoras nuevas."
+        "En rigor, todavía no es una ley propiamente dicha.",
+        "Esa propuesta la presentó el senador de ese distrito.",
+        "El debate duró más de tres horas."
       ],
       "correct": 0,
       "teaches": [
-        "stance-adverbs"
+        "b2-nuance-precision-emphasis-vocab"
       ]
     },
     {
@@ -129,17 +132,42 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Express your candid opinion about a policy using 'Francamente...'",
-          "answer": "Francamente, considero que la medida llega con demasiado retraso."
+          "prompt": "Give your frank opinion that the measure comes too late. Start with 'Francamente'.",
+          "answer": "Francamente, creo que la medida llega demasiado tarde."
         },
         {
-          "prompt": "Qualify a technical concept using 'En rigor...'",
-          "answer": "En rigor, el documento requiere una ratificación parlamentaria."
+          "prompt": "Say that, strictly speaking, the document is not final yet. Start with 'En rigor'.",
+          "answer": "En rigor, el documento todavía no es definitivo."
         }
       ],
       "teaches": [
-        "stance-adverbs",
+        "stance-adverbs"
+      ]
+    },
+    {
+      "id": "b2-01-02.ex08",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "sentence": "Te agradezco ____ tu ayuda con el proyecto.",
+      "answer": "sinceramente",
+      "english": "I sincerely thank you for your help with the project.",
+      "teaches": [
         "b2-nuance-precision-emphasis-vocab"
+      ]
+    },
+    {
+      "id": "b2-01-02.ex09",
+      "type": "listening-choice",
+      "category": "listening",
+      "sentence": "En realidad, la situación mejoró notablemente el año pasado.",
+      "options": [
+        "Actually, the situation improved remarkably last year.",
+        "Unfortunately, the situation barely improved last year.",
+        "Frankly, the situation got much worse last year."
+      ],
+      "correct": 0,
+      "teaches": [
+        "stance-adverbs"
       ]
     }
   ]

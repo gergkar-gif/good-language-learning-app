@@ -15,8 +15,8 @@
           "emphasis"
         ],
         [
-          "destacar",
-          "to highlight"
+          "enfatizar",
+          "to emphasise"
         ],
         [
           "el trasfondo",
@@ -31,11 +31,11 @@
       "id": "b2-01-01.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál de las siguientes oraciones utiliza una estructura hendida para focalizar el motivo principal?",
+      "question": "Which sentence is a cleft sentence that puts the spotlight on the reason for his resignation?",
       "options": [
-        "Lo que realmente motivó su renuncia fue la falta de transparencia.",
-        "Él renunció porque no había suficiente transparencia en el equipo.",
-        "A causa de la falta de transparencia, decidió renunciar."
+        "Lo que motivó su renuncia fue la falta de transparencia.",
+        "El problema de su renuncia radicaba en la falta de transparencia.",
+        "Renunció porque había poca transparencia en el equipo."
       ],
       "correct": 0,
       "teaches": [
@@ -46,10 +46,9 @@
       "id": "b2-01-01.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Lo que conviene __ en este análisis es la coherencia de los datos.",
-      "hint": "to highlight",
-      "answer": "destacar",
-      "english": "What is worth highlighting in this analysis is the consistency of the data.",
+      "sentence": "Fueron los vecinos los ____ llamaron a la policía.",
+      "answer": "que",
+      "english": "It was the neighbours who called the police.",
       "teaches": [
         "oraciones-hendidas-enfasis"
       ]
@@ -88,24 +87,23 @@
     {
       "id": "b2-01-01.ex05",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Fue precisamente en el Congreso __ se debatió la ley fundamental.",
-      "hint": "where",
-      "answer": "donde",
-      "english": "It was precisely in Congress where the fundamental law was debated.",
+      "category": "vocabulary",
+      "sentence": "Fue ____ en ese momento cuando comprendió el peligro.",
+      "answer": "precisamente",
+      "english": "It was precisely at that moment that she understood the danger.",
       "teaches": [
-        "oraciones-hendidas-enfasis"
+        "b2-nuance-precision-emphasis-vocab"
       ]
     },
     {
       "id": "b2-01-01.ex06",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Lo que intentamos demostrar es que existe un matiz crucial entre ambas posturas.",
+      "sentence": "Lo que más destacó la profesora fue el papel crucial del equipo.",
       "options": [
-        "What we are trying to show is that a crucial nuance exists between both positions.",
-        "We do not understand the differences between the two positions.",
-        "Both positions are completely identical in every respect."
+        "What the teacher highlighted most was the crucial role of the team.",
+        "What the team highlighted most was the teacher's crucial role.",
+        "The teacher said that the team played the least important role."
       ],
       "correct": 0,
       "teaches": [
@@ -119,7 +117,7 @@
       "prompt": [
         {
           "speaker": "Valeria",
-          "text": "¿Qué te pareció la exposición del profesor sobre la crisis?"
+          "text": "¿Quién propuso cambiar el horario de la reunión?"
         },
         {
           "speaker": "Tú",
@@ -127,13 +125,13 @@
         },
         {
           "speaker": "Valeria",
-          "text": "Totalmente de acuerdo, ese detalle cambió toda la perspectiva."
+          "text": "Entonces hablaré con él antes de la reunión."
         }
       ],
       "options": [
-        "Lo que me pareció más valioso fue cómo explicó el trasfondo histórico.",
-        "El profesor habló durante dos horas seguidas sin parar.",
-        "No recuerdo exactamente a qué hora terminó la conferencia."
+        "Fue Mateo quien propuso cambiarlo.",
+        "Fue en la oficina donde propusieron cambiarlo.",
+        "Fue en marzo cuando propusieron cambiarlo."
       ],
       "correct": 0,
       "teaches": [
@@ -146,17 +144,20 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Formulate a statement emphasizing what really matters in this negotiation using 'Lo que realmente importa...'",
-          "answer": "Lo que realmente importa es alcanzar un acuerdo sostenible."
+          "prompt": "Say that what really matters is reaching a fair agreement. Start with 'Lo que más importa'.",
+          "answer": "Lo que más importa es alcanzar un acuerdo justo."
         },
         {
-          "prompt": "Emphasize who led the initiative using 'Fue... quien...'",
-          "answer": "Fue la comisión directiva quien impulsó el diálogo."
+          "prompt": "Say that it was the director who started the dialogue. Start with 'Fue'.",
+          "answer": "Fue la directora quien empezó el diálogo."
+        },
+        {
+          "prompt": "Say that what the teacher wanted to emphasise was the background. Start with 'Lo que'.",
+          "answer": "Lo que la profesora quiso enfatizar fue el trasfondo."
         }
       ],
       "teaches": [
-        "oraciones-hendidas-enfasis",
-        "b2-nuance-precision-emphasis-vocab"
+        "oraciones-hendidas-enfasis"
       ]
     }
   ]

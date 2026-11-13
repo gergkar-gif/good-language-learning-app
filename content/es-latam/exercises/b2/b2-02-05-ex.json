@@ -7,20 +7,28 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "la deferencia",
-          "deference, respect"
+          "el escritor",
+          "writer"
         ],
         [
-          "el conato",
-          "attempt, slight outbreak"
+          "el cuento",
+          "short story"
         ],
         [
-          "titubear",
-          "to hesitate, to waver"
+          "el fotógrafo",
+          "photographer"
         ],
         [
-          "la sutileza",
-          "subtlety"
+          "el siglo",
+          "century"
+        ],
+        [
+          "el fragmento",
+          "fragment, short piece"
+        ],
+        [
+          "muerto",
+          "dead (person)"
         ]
       ],
       "teaches": [
@@ -31,27 +39,31 @@
       "id": "b2-02-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué valor pragmático tiene el imperfecto en 'Disculpe, señorita, venía a preguntar por las becas de posgrado'?",
+      "question": "Which sentence politely asks, right now, for an appointment with the doctor?",
       "options": [
-        "Atenuación cortés que suaviza una petición en el presente.",
-        "Descripción objetiva de una caminata completada en el pasado.",
-        "Acción habitual repetida diariamente durante varios años."
+        "Quería pedirle una cita con el doctor.",
+        "Quise pedirle una cita con el doctor.",
+        "Querré pedirle una cita con el doctor."
       ],
       "correct": 0,
       "teaches": [
-        "preterite-vs-imperfect"
-      ]
+        "polite-softening"
+      ],
+      "distractor_skills": {
+        "1": "verbos-cambio-significado-pasado",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b2-02-05.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Buenas tardes, profesor; __ hablar con usted sobre la corrección del ensayo.",
-      "hint": "querer - polite imperfect",
-      "answer": "quería",
-      "english": "Good afternoon, professor; I wanted to speak with you about the essay correction.",
+      "sentence": "Buenas tardes, __ a preguntar por el horario del museo.",
+      "hint": "venir, polite imperfect",
+      "answer": "venía",
+      "english": "Good afternoon, I have come to ask about the museum's opening hours.",
       "teaches": [
-        "preterite-vs-imperfect"
+        "polite-softening"
       ]
     },
     {
@@ -59,28 +71,28 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Por",
-        "poco",
-        "perdía",
-        "el",
-        "tren",
-        "de",
-        "las",
-        "ocho."
+        "Quería",
+        "pedirle",
+        "un",
+        "favor,",
+        "si",
+        "no",
+        "le",
+        "molesta."
       ],
       "solution": [
-        "Por",
-        "poco",
-        "perdía",
-        "el",
-        "tren",
-        "de",
-        "las",
-        "ocho."
+        "Quería",
+        "pedirle",
+        "un",
+        "favor,",
+        "si",
+        "no",
+        "le",
+        "molesta."
       ],
-      "english": "I almost missed the eight o'clock train.",
+      "english": "I wanted to ask you a favour, if you don't mind.",
       "teaches": [
-        "preterite-vs-imperfect"
+        "polite-softening"
       ]
     },
     {
@@ -89,36 +101,40 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Secretaria",
-          "text": "Bienvenido al consulado. ¿En qué le puedo colaborar?"
+          "speaker": "Empleada",
+          "text": "Buenas tardes. ¿En qué puedo ayudarle?"
         },
         {
-          "speaker": "Ciudadano",
+          "speaker": "Cliente",
           "text": "_____"
         },
         {
-          "speaker": "Secretaria",
-          "text": "Con mucho gusto, tome asiento mientras reviso el expediente."
+          "speaker": "Empleada",
+          "text": "Claro, un momento, por favor."
         }
       ],
       "options": [
-        "Venía a consultar los requisitos para la renovación del pasaporte.",
-        "El año pasado renové la cédula en mi ciudad natal.",
-        "Los pasaportes caducan invariablemente cada cinco o diez años."
+        "Disculpe, venía a preguntar por el horario del tren.",
+        "Disculpe, vendré a preguntar por el horario del tren.",
+        "Disculpe, había venido a preguntar por el horario del tren."
       ],
       "correct": 0,
       "teaches": [
-        "preterite-vs-imperfect"
-      ]
+        "polite-softening"
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "pluscuamperfecto"
+      }
     },
     {
       "id": "b2-02-05.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Titubeó unos segundos porque no pretendía incomodar a los miembros del comité.",
-      "english": "He hesitated a few seconds because he did not intend to inconvenience the committee members.",
+      "sentence": "Buenas noches, llamaba para preguntar si todavía hay mesa.",
+      "english": "Good evening, I'm calling to ask if there is still a table.",
       "teaches": [
-        "preterite-vs-imperfect"
+        "polite-softening"
       ]
     }
   ]

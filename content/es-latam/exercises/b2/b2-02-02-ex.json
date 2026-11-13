@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el trasfondo",
-          "background, subtext"
+          "el acontecimiento",
+          "event, happening"
         ],
         [
-          "acontecer",
-          "to happen, to take place"
+          "el trasfondo",
+          "background, underlying story"
         ],
         [
           "preceder",
-          "to precede"
+          "to come before"
         ],
         [
           "desentrañar",
-          "to unravel, to figure out"
+          "to work out, to unravel"
         ]
       ],
       "teaches": [
@@ -31,25 +31,29 @@
       "id": "b2-02-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Por qué se utiliza el pluscuamperfecto en 'Pedro comprendió que su hermano ya había tomado la decisión'?",
+      "question": "Which sentence says that when Luis arrived, his sister had already left?",
       "options": [
-        "Porque la decisión se tomó antes del momento en que Pedro lo comprendió.",
-        "Porque describe una acción habitual que se repetía con frecuencia.",
-        "Porque expresa una hipótesis probable en el momento presente."
+        "Cuando Luis llegó, su hermana ya se había ido.",
+        "Cuando Luis llegó, su hermana ya se ha ido.",
+        "Cuando Luis llegó, su hermana ya se iba."
       ],
       "correct": 0,
       "teaches": [
         "pluscuamperfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-perfecto",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b2-02-02.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Cuando los rescatistas alcanzaron la cumbre, la tormenta ya __ por completo el sendero.",
-      "hint": "borrar",
-      "answer": "había borrado",
-      "english": "When the rescuers reached the summit, the storm had already completely erased the trail.",
+      "sentence": "Cuando llegué a la estación, mi hermano ya __ los boletos.",
+      "hint": "comprar",
+      "answer": "había comprado",
+      "english": "When I got to the station, my brother had already bought the tickets.",
       "teaches": [
         "pluscuamperfecto"
       ]
@@ -59,26 +63,30 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Él",
+        "Cuando",
+        "abrió",
+        "la",
+        "carta,",
+        "ya",
+        "sabía",
+        "lo",
+        "que",
         "había",
-        "previsto",
-        "aquel",
-        "desenlace",
-        "muchos",
-        "años",
-        "atrás."
+        "pasado."
       ],
       "solution": [
-        "Él",
+        "Cuando",
+        "abrió",
+        "la",
+        "carta,",
+        "ya",
+        "sabía",
+        "lo",
+        "que",
         "había",
-        "previsto",
-        "aquel",
-        "desenlace",
-        "muchos",
-        "años",
-        "atrás."
+        "pasado."
       ],
-      "english": "He had foreseen that outcome many years ago.",
+      "english": "When she opened the letter, she already knew what had happened.",
       "teaches": [
         "pluscuamperfecto"
       ]
@@ -89,34 +97,38 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Investigador",
-          "text": "¿Cuándo descubrieron los documentos confidenciales?"
+          "speaker": "Sara",
+          "text": "¿Por qué estabas tan nervioso en la reunión?"
         },
         {
-          "speaker": "Archivista",
+          "speaker": "Luis",
           "text": "_____"
         },
         {
-          "speaker": "Investigador",
-          "text": "Eso explica por qué nadie los encontró durante la auditoría anterior."
+          "speaker": "Sara",
+          "text": "Ahora lo entiendo."
         }
       ],
       "options": [
-        "Al revisar el sótano nos percatamos de que alguien los había ocultado allí.",
-        "Comenzaremos la clasificación formal el mes entrante.",
-        "Los archivistas siempre trabajan con guantes de algodón blanco."
+        "Porque nunca había hablado delante de tanta gente.",
+        "Porque nunca hablé delante de tanta gente.",
+        "Porque nunca hablaré delante de tanta gente."
       ],
       "correct": 0,
       "teaches": [
         "pluscuamperfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b2-02-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Nadie sospechaba que el anciano ya había dejado escritas todas sus memorias.",
-      "english": "No one suspected that the old man had already left all his memoirs written.",
+      "sentence": "En la nieve había unas huellas que alguien había dejado esa mañana.",
+      "english": "In the snow there were some footprints that someone had left that morning.",
       "teaches": [
         "pluscuamperfecto"
       ]

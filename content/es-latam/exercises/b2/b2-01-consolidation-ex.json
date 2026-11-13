@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el trasfondo",
-          "background, subtext"
+          "el hincapié",
+          "emphasis"
         ],
         [
           "prevalecer",
           "to prevail"
         ],
         [
-          "soslayar",
-          "to bypass, to evade"
+          "la discrepancia",
+          "discrepancy"
         ],
         [
-          "vislumbrar",
-          "to glimpse, to discern"
+          "el laberinto",
+          "labyrinth, maze"
         ]
       ],
       "teaches": [
@@ -31,10 +31,9 @@
       "id": "b2-01-consolidation.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Lo que verdaderamente nos interesa __ profundizar en las causas estructurales.",
-      "hint": "ser",
+      "sentence": "Lo que más nos interesa ____ entender las causas del problema.",
       "answer": "es",
-      "english": "What truly interests us is to delve deeper into the structural causes.",
+      "english": "What interests us most is understanding the causes of the problem.",
       "teaches": [
         "oraciones-hendidas-enfasis"
       ]
@@ -43,11 +42,11 @@
       "id": "b2-01-consolidation.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál es la opción que califica rigurosamente un término técnico?",
+      "question": "Which sentence uses 'en realidad' to correct what someone assumed?",
       "options": [
-        "En rigor, el tratado todavía no ha entrado en vigor.",
-        "Apenas el tratado entre en vigor, avisaremos.",
-        "Francamente, el tratado es muy largo de leer."
+        "En realidad, el museo no cierra los lunes, sino los martes.",
+        "El museo, lamentablemente, cierra los lunes.",
+        "Precisamente por eso, el museo cierra los lunes."
       ],
       "correct": 0,
       "teaches": [
@@ -59,26 +58,28 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Primordial",
+        "Decisiva",
         "resultó",
-        "el",
-        "respaldo",
+        "la",
+        "ayuda",
         "de",
-        "las",
-        "comunidades",
-        "locales."
+        "los",
+        "vecinos",
+        "del",
+        "barrio."
       ],
       "solution": [
-        "Primordial",
+        "Decisiva",
         "resultó",
-        "el",
-        "respaldo",
+        "la",
+        "ayuda",
         "de",
-        "las",
-        "comunidades",
-        "locales."
+        "los",
+        "vecinos",
+        "del",
+        "barrio."
       ],
-      "english": "Paramount was the backing of the local communities.",
+      "english": "Decisive was the help of the neighbours of the district.",
       "teaches": [
         "inversion-enfasis-fronting"
       ]
@@ -87,10 +88,9 @@
       "id": "b2-01-consolidation.ex05",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "No fue la suerte, __ la constancia lo que aseguró el éxito.",
-      "hint": "but rather",
+      "sentence": "No fue el calor, ____ la falta de agua lo que nos hizo volver a casa.",
       "answer": "sino",
-      "english": "It was not luck, but perseverance that ensured success.",
+      "english": "It was not the heat but the lack of water that made us go home.",
       "teaches": [
         "sino-vs-pero"
       ]
@@ -99,23 +99,35 @@
       "id": "b2-01-consolidation.ex06",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "No ocultaron los errores, sino __ presentaron un plan de remediación inmediato.",
-      "hint": "that",
+      "sentence": "No cancelaron el viaje, sino ____ lo cambiaron de fecha.",
       "answer": "que",
-      "english": "They did not hide the mistakes, but rather presented an immediate remediation plan.",
+      "english": "They did not cancel the trip; they changed its date.",
       "teaches": [
         "sino-vs-pero"
       ]
     },
     {
       "id": "b2-01-consolidation.ex07",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "En un debate formal sobre políticas públicas, ¿cómo responderías para centrar el debate en lo esencial?",
+      "prompt": [
+        {
+          "speaker": "Sebastián",
+          "text": "¿Cuándo te dieron la noticia del cambio?"
+        },
+        {
+          "speaker": "Tú",
+          "text": "_____"
+        },
+        {
+          "speaker": "Sebastián",
+          "text": "Entonces ya hace tiempo que lo sabes."
+        }
+      ],
       "options": [
-        "Lo que no debemos soslayar es la sostenibilidad fiscal a largo plazo.",
-        "Creo que todos deberíamos irnos a descansar porque ya es tarde.",
-        "Ayer leí en las noticias que llovió mucho en el sur."
+        "Fue en marzo cuando me lo dijeron.",
+        "Fue Ana quien me lo dijo.",
+        "Fue en la oficina donde me lo dijeron."
       ],
       "correct": 0,
       "teaches": [
@@ -128,13 +140,19 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "State an argument emphasizing the real root of an issue using cleft focus and 'sino'",
-          "answer": "Lo que debemos atender no son los síntomas, sino las causas fundamentales."
+          "prompt": "State the real root of a problem: not the symptoms but the causes. Start with 'Lo que debemos resolver'.",
+          "answer": "Lo que debemos resolver no son los síntomas, sino las causas."
+        },
+        {
+          "prompt": "Say that, unfortunately, you cannot come. Start with 'Lamentablemente'.",
+          "answer": "Lamentablemente, no puedo venir."
+        },
+        {
+          "prompt": "Put the adjective first: 'La respuesta fue clara'. Start with 'Clara'.",
+          "answer": "Clara fue la respuesta de la directora."
         }
       ],
       "teaches": [
-        "oraciones-hendidas-enfasis",
-        "sino-vs-pero",
         "b2-nuance-precision-emphasis-vocab"
       ]
     }
