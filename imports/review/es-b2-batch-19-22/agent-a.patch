@@ -1,0 +1,4427 @@
+diff --git a/content/es-latam/exercises/b2/b2-19-01-ex.json b/content/es-latam/exercises/b2/b2-19-01-ex.json
+index dc7d88a2..b30679a6 100644
+--- a/content/es-latam/exercises/b2/b2-19-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-19-01-ex.json
+@@ -7,20 +7,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "acuerdo",
+-          "bilateral signed pact"
++          "el acuerdo",
++          "agreement"
+         ],
+         [
+-          "estipulación",
+-          "contractual clause"
++          "firmar",
++          "to sign"
+         ],
+         [
+-          "promulgar",
+-          "to officially enact"
++          "publicar",
++          "to publish"
+         ],
+         [
+-          "concordante",
+-          "grammatically matching in number"
++          "la regla",
++          "rule"
++        ],
++        [
++          "anunciar",
++          "to announce"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,10 @@
+       "id": "b2-19-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Ayer se __ los acuerdos de cooperación binacional en el palacio de gobierno.",
+-      "hint": "firmar",
++      "sentence": "Ayer se __ los acuerdos en la oficina.",
++      "hint": "firmar, past",
+       "answer": "firmaron",
+-      "english": "Yesterday the binational cooperation agreements were signed in the government palace.",
++      "english": "The agreements were signed in the office yesterday.",
+       "teaches": [
+         "pasiva-refleja"
+       ]
+@@ -43,43 +47,45 @@
+       "id": "b2-19-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué es incorrecto decir '*Se aprobó los decretos supremos' en español formal?",
++      "question": "Which sentence says \"The new rules were published\"?",
+       "options": [
+-        "Porque 'los decretos supremos' es el sujeto paciente plural y exige verbo en plural: 'se aprobaron'.",
+-        "Porque el pronombre 'se' solo puede utilizarse con verbos intransitivos.",
+-        "Porque los decretos deben llevar obligatoriamente la preposición 'a'.",
+-        "Porque el verbo aprobar no admite construcciones pasivas en ningún caso."
++        "Se publicaron las reglas nuevas.",
++        "Se publicó las reglas nuevas.",
++        "Se publicarán las reglas nuevas."
+       ],
+       "correct": 0,
+       "teaches": [
+         "pasiva-refleja"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "futuro-simple"
++      }
+     },
+     {
+       "id": "b2-19-01.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Se",
+-        "publicaron",
+-        "los",
+-        "resultados",
+-        "oficiales",
+-        "del",
+-        "censo",
+-        "nacional."
++        "Aquí",
++        "se",
++        "pueden",
++        "comprar",
++        "boletos",
++        "para",
++        "el",
++        "concierto."
+       ],
+       "solution": [
+-        "Se",
+-        "publicaron",
+-        "los",
+-        "resultados",
+-        "oficiales",
+-        "del",
+-        "censo",
+-        "nacional."
++        "Aquí",
++        "se",
++        "pueden",
++        "comprar",
++        "boletos",
++        "para",
++        "el",
++        "concierto."
+       ],
+-      "english": "The official results of the national census were published.",
++      "english": "You can buy tickets for the concert here.",
+       "teaches": [
+         "pasiva-refleja"
+       ]
+@@ -90,21 +96,20 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Periodista",
+-          "text": "¿Qué decisiones se tomaron en el congreso extraordinario de ministros?"
++          "speaker": "Ana",
++          "text": "¿Qué se vende en esa tienda?"
+         },
+         {
+-          "speaker": "Portavoz",
+-          "text": "Durante la sesión, _____ las nuevas directrices de inversión pública."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "se consensuaron",
+-        "se consensuó",
+-        "consensuaron a",
+-        "se consensuaban a"
++        "Se vende libros y cuadernos.",
++        "Se vendieron libros y cuadernos.",
++        "Se venden libros y cuadernos."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "pasiva-refleja"
+       ]
+@@ -113,11 +118,11 @@
+       "id": "b2-19-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Se redactaron minuciosamente todas las cláusulas del tratado comercial.",
+-      "english": "All clauses of the trade treaty were meticulously drafted.",
++      "sentence": "Se anunciaron los resultados en la reunión.",
++      "english": "The results were announced at the meeting.",
+       "teaches": [
+         "pasiva-refleja"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-19-02-ex.json b/content/es-latam/exercises/b2/b2-19-02-ex.json
+index e0cf2b21..15fbd7aa 100644
+--- a/content/es-latam/exercises/b2/b2-19-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-19-02-ex.json
+@@ -7,20 +7,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "damnificado",
+-          "disaster victim"
++          "el responsable",
++          "person in charge"
+         ],
+         [
+-          "postulante",
+-          "exam candidate"
++          "atender",
++          "to serve"
+         ],
+         [
+-          "atender",
+-          "to give formal care to"
++          "el cliente",
++          "customer"
+         ],
+         [
+-          "condecorar",
+-          "to award medal or honor"
++          "el vecino",
++          "neighbour"
++        ],
++        [
++          "invitar",
++          "to invite"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,10 @@
+       "id": "b2-19-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En el hospital militar se __ a los soldados heridos durante el operativo.",
+-      "hint": "atender",
+-      "answer": "atendió",
+-      "english": "In the military hospital the wounded soldiers were cared for during the operation.",
++      "sentence": "En ese barrio se __ muy bien.",
++      "hint": "vivir, present",
++      "answer": "vive",
++      "english": "People live very well in that neighbourhood.",
+       "teaches": [
+         "se-pasivo-vs-impersonal"
+       ]
+@@ -43,14 +47,13 @@
+       "id": "b2-19-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la diferencia sintáctica entre 'Se condecoró a los médicos' y 'Se construyeron los hospitales'?",
++      "question": "Which sentence says \"They are looking for the people in charge\"?",
+       "options": [
+-        "La primera es impersonal con 'a' (verbo singular); la segunda es pasiva refleja con sujeto paciente plural.",
+-        "Ambas son pasivas analíticas con complemento agente implícito.",
+-        "La primera tiene sujeto paciente plural y la segunda es puramente reflexiva.",
+-        "No hay diferencia sintáctica alguna, ambas son intercambiables en plural."
++        "Se buscan a los responsables.",
++        "Se busca a los responsables.",
++        "Se busca los responsables."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "se-pasivo-vs-impersonal"
+       ]
+@@ -61,25 +64,25 @@
+       "category": "grammar",
+       "tiles": [
+         "Se",
+-        "premió",
++        "atendió",
+         "a",
++        "todos",
+         "los",
+-        "mejores",
+-        "escritores",
+-        "del",
+-        "certamen."
++        "clientes",
++        "muy",
++        "rápido."
+       ],
+       "solution": [
+         "Se",
+-        "premió",
++        "atendió",
+         "a",
++        "todos",
+         "los",
+-        "mejores",
+-        "escritores",
+-        "del",
+-        "certamen."
++        "clientes",
++        "muy",
++        "rápido."
+       ],
+-      "english": "The best writers of the contest were awarded.",
++      "english": "All the customers were served very quickly.",
+       "teaches": [
+         "se-pasivo-vs-impersonal"
+       ]
+@@ -90,19 +93,18 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Fiscal",
+-          "text": "¿Cómo procedió la policía tras la denuncia por estafa financiera?"
++          "speaker": "Ana",
++          "text": "¿Se vive bien en tu barrio?"
+         },
+         {
+-          "speaker": "Abogada",
+-          "text": "Inmediatamente _____ a los principales directivos de la entidad."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "se interrogó",
+-        "se interrogaron",
+-        "se interrogan a",
+-        "interrogaron de"
++        "Sí, se vive muy bien y los vecinos son amables.",
++        "Sí, se viven muy bien y los vecinos son amables.",
++        "Sí, vive muy bien y los vecinos son amables."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -113,11 +115,11 @@
+       "id": "b2-19-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Se protegió a los testigos protegidos durante todo el juicio oral.",
+-      "english": "The protected witnesses were protected throughout the oral trial.",
++      "sentence": "Se invitó a los vecinos a la reunión.",
++      "english": "The neighbours were invited to the meeting.",
+       "teaches": [
+         "se-pasivo-vs-impersonal"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-19-03-ex.json b/content/es-latam/exercises/b2/b2-19-03-ex.json
+index a626b2aa..39599946 100644
+--- a/content/es-latam/exercises/b2/b2-19-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-19-03-ex.json
+@@ -7,20 +7,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "omisión",
+-          "deliberate withholding"
++          "el alcalde",
++          "mayor"
+         ],
+         [
+-          "vetar",
+-          "to officially veto"
++          "construir",
++          "to build"
+         ],
+         [
+-          "demoler",
+-          "to tear down structurally"
++          "el edificio",
++          "building"
+         ],
+         [
+-          "tácito",
+-          "implied without words"
++          "el puente",
++          "bridge"
++        ],
++        [
++          "el director",
++          "director"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,9 @@
+       "id": "b2-19-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Por orden judicial se __ los pabellones en ruinas del viejo penal.",
+-      "hint": "demoler",
+-      "answer": "demolieron",
+-      "english": "By court order the ruined wings of the old penitentiary were demolished.",
++      "sentence": "Los resultados __ publicaron ayer.",
++      "answer": "se",
++      "english": "The results were published yesterday.",
+       "teaches": [
+         "pasiva-refleja"
+       ]
+@@ -43,43 +46,45 @@
+       "id": "b2-19-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué la oración '??Se cancelaron los vuelos por la aerolínea' resulta forzada o anómala en español culto?",
++      "question": "The mayor built the bridge. Which sentence says this and names the mayor?",
+       "options": [
+-        "Porque la pasiva refleja rechaza típicamente complementos agentes explícitos con 'por'; se prefiere la pasiva perifrástica.",
+-        "Porque los vuelos no pueden ser cancelados por entidades jurídicas.",
+-        "Porque el verbo cancelar solo puede usarse en voz activa.",
+-        "Porque la preposición 'por' únicamente indica causa climática."
++        "El puente se construyó por el alcalde.",
++        "El puente fue construido para el alcalde.",
++        "El puente fue construido por el alcalde."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+-        "pasiva-refleja"
+-      ]
++        "se-pasivo-vs-impersonal"
++      ],
++      "distractor_skills": {
++        "1": "por-vs-para"
++      }
+     },
+     {
+       "id": "b2-19-03.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Se",
+-        "suspendieron",
+-        "las",
+-        "garantías",
+-        "constitucionales",
+-        "durante",
++        "Los",
++        "resultados",
++        "se",
++        "publicaron",
++        "ayer",
++        "por",
+         "la",
+-        "crisis."
++        "tarde."
+       ],
+       "solution": [
+-        "Se",
+-        "suspendieron",
+-        "las",
+-        "garantías",
+-        "constitucionales",
+-        "durante",
++        "Los",
++        "resultados",
++        "se",
++        "publicaron",
++        "ayer",
++        "por",
+         "la",
+-        "crisis."
++        "tarde."
+       ],
+-      "english": "Constitutional guarantees were suspended during the crisis.",
++      "english": "The results were published yesterday afternoon.",
+       "teaches": [
+         "pasiva-refleja"
+       ]
+@@ -90,34 +95,33 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Ministro",
+-          "text": "¿Qué medida se adoptó respecto a las obras inconclusas?"
++          "speaker": "Ana",
++          "text": "¿Quién firmó el acuerdo?"
+         },
+         {
+-          "speaker": "Director",
+-          "text": "Tras la auditoría, _____ rescindir todos los contratos lesivos."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "se determinó",
+-        "se determinaron",
+-        "se determinan a",
+-        "determinaron por"
++        "El acuerdo se firmó por el director.",
++        "El acuerdo fue firmado por el director.",
++        "El acuerdo fue firmado el director."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+-        "pasiva-refleja"
++        "se-pasivo-vs-impersonal"
+       ]
+     },
+     {
+       "id": "b2-19-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Se desestimaron las impugnaciones por falta de pruebas concluyentes.",
+-      "english": "The challenges were dismissed for lack of conclusive evidence.",
++      "sentence": "El edificio fue construido por una empresa pequeña.",
++      "english": "The building was built by a small company.",
+       "teaches": [
+-        "pasiva-refleja"
++        "se-pasivo-vs-impersonal"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-19-04-ex.json b/content/es-latam/exercises/b2/b2-19-04-ex.json
+index 45a3e45b..4e06b4a1 100644
+--- a/content/es-latam/exercises/b2/b2-19-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-19-04-ex.json
+@@ -7,20 +7,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "decreto",
+-          "official executive mandate"
++          "prohibir",
++          "to forbid"
+         ],
+         [
+-          "resolución",
+-          "formal administrative order"
++          "alquilar",
++          "to rent out"
+         ],
+         [
+-          "notificar",
+-          "to formally serve legal notice"
++          "rogar",
++          "to request"
+         ],
+         [
+-          "fehaciente",
+-          "irrefutably proven"
++          "el aviso",
++          "notice"
++        ],
++        [
++          "el silencio",
++          "silence"
+         ]
+       ],
+       "teaches": [
+@@ -31,24 +35,23 @@
+       "id": "b2-19-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En el artículo segundo se __ la creación de la reserva ecológica nacional.",
+-      "hint": "disponer",
+-      "answer": "dispone",
+-      "english": "In article second the creation of the national ecological reserve is decreed.",
++      "sentence": "Se __ departamentos en el centro.",
++      "hint": "alquilar, present",
++      "answer": "alquilan",
++      "english": "Flats for rent in the centre.",
+       "teaches": [
+-        "se-impersonal"
++        "pasiva-refleja"
+       ]
+     },
+     {
+       "id": "b2-19-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué efecto pragmático produce la fórmula 'Se hace saber a las partes' en los documentos notariales?",
++      "question": "Which notice means \"Smoking is not allowed\"?",
+       "options": [
+-        "Confiere autoridad formal despersonalizada e imparcialidad legal emanada de la institución.",
+-        "Indica que el notario desconoce la identidad de los demandantes.",
+-        "Expresa una opinión meramente subjetiva y provisional.",
+-        "Obliga a suspender de inmediato el procedimiento administrativo."
++        "Se prohíbe fumar.",
++        "Se prohíben fumar.",
++        "Se prohibió fumar."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -61,25 +64,27 @@
+       "category": "grammar",
+       "tiles": [
+         "Se",
+-        "ordena",
+-        "la",
+-        "inmediata",
+-        "ejecución",
++        "ruega",
++        "no",
++        "hacer",
++        "ruido",
++        "después",
+         "de",
+-        "la",
+-        "sentencia."
++        "las",
++        "diez."
+       ],
+       "solution": [
+         "Se",
+-        "ordena",
+-        "la",
+-        "inmediata",
+-        "ejecución",
++        "ruega",
++        "no",
++        "hacer",
++        "ruido",
++        "después",
+         "de",
+-        "la",
+-        "sentencia."
++        "las",
++        "diez."
+       ],
+-      "english": "The immediate execution of the ruling is ordered.",
++      "english": "Please do not make noise after ten.",
+       "teaches": [
+         "se-impersonal"
+       ]
+@@ -90,21 +95,20 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Secretario",
+-          "text": "¿En qué términos quedó redactado el dictamen final?"
++          "speaker": "Ana",
++          "text": "¿Qué dice el aviso de la puerta?"
+         },
+         {
+-          "speaker": "Relator",
+-          "text": "En el considerando primero _____ que las partes cumplieron los plazos."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "se deja constancia de",
+-        "se dejan constancia a",
+-        "deja constancia de que",
+-        "se dejaron de"
++        "Dice que se ruegan silencio.",
++        "Dice que ruega silencio.",
++        "Dice que se ruega silencio."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "se-impersonal"
+       ]
+@@ -113,11 +117,11 @@
+       "id": "b2-19-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Se resuelve declarar infundada la apelación presentada por la defensa.",
+-      "english": "It is resolved to declare unfounded the appeal filed by the defense.",
++      "sentence": "Se alquilan departamentos cerca de la estación.",
++      "english": "Flats for rent near the station.",
+       "teaches": [
+-        "se-impersonal"
++        "pasiva-refleja"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-19-05-ex.json b/content/es-latam/exercises/b2/b2-19-05-ex.json
+index 1e23fdf6..ebb9acbc 100644
+--- a/content/es-latam/exercises/b2/b2-19-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-19-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "ambigüedad",
+-          "double meaning"
++          "abrazarse",
++          "to hug each other"
+         ],
+         [
+-          "reciprocidad",
+-          "mutual exchange"
++          "olvidarse",
++          "to forget by accident"
+         ],
+         [
+-          "difundir",
+-          "to spread news widely"
++          "perderse",
++          "to go missing"
+         ],
+         [
+-          "equívoco",
+-          "easily misunderstood"
++          "caerse",
++          "to fall, to drop"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-19-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Durante la madrugada se __ los informes confidenciales en las redes.",
+-      "hint": "filtrar",
+-      "answer": "filtraron",
+-      "english": "During the early morning the confidential reports were leaked on social networks.",
++      "sentence": "Perdón, se me __ el vaso.",
++      "hint": "caer, past",
++      "answer": "cayó",
++      "english": "Sorry, I dropped the glass.",
+       "teaches": [
+         "desambiguacion-valores-se"
+       ]
+@@ -43,17 +43,20 @@
+       "id": "b2-19-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "En la frase 'Los senadores se respetan', ¿cuál es la interpretación más habitual según la pragmática?",
++      "question": "In which sentence does se mean \"each other\"?",
+       "options": [
+-        "Recíproca: los senadores se respetan mutuamente entre sí.",
+-        "Pasiva refleja: los senadores son respetados por la ciudadanía.",
+-        "Impersonal absoluta: se respeta a todo el senado.",
+-        "Reflexiva estricta: cada senador se respeta solo a sí mismo."
++        "Se abren las puertas a las nueve.",
++        "Los amigos se abrazan al llegar.",
++        "Aquí se vive tranquilo."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "desambiguacion-valores-se"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "pasiva-refleja",
++        "2": "se-impersonal"
++      }
+     },
+     {
+       "id": "b2-19-05.ex04",
+@@ -61,25 +64,25 @@
+       "category": "grammar",
+       "tiles": [
+         "Se",
+-        "esclarecieron",
+-        "los",
+-        "hechos",
+-        "tras",
+-        "una",
+-        "exhaustiva",
+-        "indagación."
++        "me",
++        "perdieron",
++        "las",
++        "llaves",
++        "en",
++        "la",
++        "calle."
+       ],
+       "solution": [
+         "Se",
+-        "esclarecieron",
+-        "los",
+-        "hechos",
+-        "tras",
+-        "una",
+-        "exhaustiva",
+-        "indagación."
++        "me",
++        "perdieron",
++        "las",
++        "llaves",
++        "en",
++        "la",
++        "calle."
+       ],
+-      "english": "The facts were clarified after an exhaustive inquiry.",
++      "english": "I lost my keys in the street.",
+       "teaches": [
+         "desambiguacion-valores-se"
+       ]
+@@ -90,19 +93,18 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Investigador",
+-          "text": "¿Qué ocurrió cuando colapsó el servidor bancario?"
++          "speaker": "Ana",
++          "text": "¿Qué pasó con tu celular?"
+         },
+         {
+-          "speaker": "Perito",
+-          "text": "Afortunadamente _____ copias de seguridad de todas las transacciones."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "se habían generado",
+-        "se había generado a",
+-        "habían generado a",
+-        "se generaban con"
++        "Se me cayó al suelo.",
++        "Se me cayeron al suelo.",
++        "Me cayó al suelo."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -113,11 +115,11 @@
+       "id": "b2-19-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Se descubrieron valiosos manuscritos coloniales en el archivo histórico.",
+-      "english": "Valuable colonial manuscripts were discovered in the historical archive.",
++      "sentence": "Se nos olvidó el boleto en casa.",
++      "english": "We forgot the ticket at home.",
+       "teaches": [
+         "desambiguacion-valores-se"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-19-consolidation-ex.json b/content/es-latam/exercises/b2/b2-19-consolidation-ex.json
+index e8436a7d..32707e1f 100644
+--- a/content/es-latam/exercises/b2/b2-19-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-19-consolidation-ex.json
+@@ -7,20 +7,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "promulgar",
+-          "to officially enact laws"
++          "el acuerdo",
++          "agreement"
+         ],
+         [
+-          "damnificado",
+-          "disaster victim"
++          "atender",
++          "to serve"
+         ],
+         [
+-          "demoler",
+-          "to tear down structures"
++          "el alcalde",
++          "mayor"
+         ],
+         [
+-          "vinculante",
+-          "legally binding mandate"
++          "alquilar",
++          "to rent out"
++        ],
++        [
++          "olvidarse",
++          "to forget by accident"
+         ]
+       ],
+       "teaches": [
+@@ -29,102 +33,115 @@
+     },
+     {
+       "id": "b2-19-consolidation.ex02",
+-      "type": "fill-blank",
+-      "category": "grammar",
+-      "sentence": "En el internado militar se __ normas implacables de disciplina y silencio.",
+-      "hint": "imponer",
+-      "answer": "imponían",
+-      "english": "In the military boarding school relentless rules of discipline and silence were imposed.",
+-      "teaches": [
+-        "se-pasivo-vs-impersonal"
+-      ]
+-    },
+-    {
+-      "id": "b2-19-consolidation.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "En la novela La ciudad y los perros, ¿qué función cumple la impersonalidad en el código de honor de los cadetes?",
++      "question": "Which sentence says \"The novel was published in 1963\"?",
+       "options": [
+-        "Refleja una ley tribal no escrita donde 'se delata' o 'se calla' bajo amenaza de castigo colectivo.",
+-        "Demuestra que los cadetes desconocían el idioma castellano formal.",
+-        "Indica que el colegio carecía de autoridades y reglamentos oficiales.",
+-        "Demuestra que todos los estudiantes eran pacíficos y amables."
++        "La novela se publicaron en 1963.",
++        "La novela se publicó en 1963.",
++        "La novela se publicará en 1963."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+-        "se-pasivo-vs-impersonal"
+-      ]
++        "pasiva-refleja"
++      ],
++      "distractor_skills": {
++        "2": "futuro-simple"
++      }
+     },
+     {
+-      "id": "b2-19-consolidation.ex04",
++      "id": "b2-19-consolidation.ex03",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Tras el robo del examen de química, se __ con rigor a todos los cadetes sospechosos.",
+-      "hint": "interrogar",
+-      "answer": "interrogó",
+-      "english": "After the theft of the chemistry exam, all suspected cadets were rigorously interrogated.",
++      "sentence": "Después de las ocho no se __ a los clientes.",
++      "hint": "atender, present",
++      "answer": "atiende",
++      "english": "After eight o'clock, customers are not served.",
+       "teaches": [
+         "se-pasivo-vs-impersonal"
+       ]
+     },
+     {
+-      "id": "b2-19-consolidation.ex05",
++      "id": "b2-19-consolidation.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Se",
+-        "establecieron",
+-        "sanciones",
+-        "severas",
+-        "para",
+-        "los",
+-        "infractores."
++        "En",
++        "el",
++        "aviso",
++        "se",
++        "ruega",
++        "no",
++        "fumar",
++        "en",
++        "la",
++        "entrada."
+       ],
+       "solution": [
+-        "Se",
+-        "establecieron",
+-        "sanciones",
+-        "severas",
+-        "para",
+-        "los",
+-        "infractores."
++        "En",
++        "el",
++        "aviso",
++        "se",
++        "ruega",
++        "no",
++        "fumar",
++        "en",
++        "la",
++        "entrada."
+       ],
+-      "english": "Severe penalties were established for violators.",
++      "english": "The notice asks people not to smoke at the entrance.",
+       "teaches": [
+-        "se-pasivo-vs-impersonal"
++        "se-impersonal"
+       ]
+     },
++    {
++      "id": "b2-19-consolidation.ex05",
++      "type": "multiple-choice",
++      "category": "grammar",
++      "question": "Which sentence has an impersonal se, with no subject at all?",
++      "options": [
++        "Se firmaron los acuerdos.",
++        "Aquí se trabaja mucho.",
++        "Se me cayó el vaso."
++      ],
++      "correct": 1,
++      "teaches": [
++        "se-pasivo-vs-impersonal"
++      ],
++      "distractor_skills": {
++        "0": "pasiva-refleja"
++      }
++    },
+     {
+       "id": "b2-19-consolidation.ex06",
+       "type": "dialogue-complete",
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Teniente Gamboa",
+-          "text": "¿Se sabe con certeza quién disparó el fusil durante las maniobras?"
++          "speaker": "Ana",
++          "text": "¿Dónde compro boletos para el concierto?"
+         },
+         {
+-          "speaker": "Cadete Alberto",
+-          "text": "Mi teniente, entre los cadetes _____ la verdad por miedo a represalias."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "se oculta",
+-        "se ocultan a",
+-        "ocultan de",
+-        "se ocultaban a"
++        "Se vende los boletos por internet.",
++        "Se vendieron los boletos por internet.",
++        "Se venden los boletos por internet."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+-        "se-pasivo-vs-impersonal"
++        "pasiva-refleja"
+       ]
+     },
+     {
+       "id": "b2-19-consolidation.ex07",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Se archivó el expediente disciplinario para salvar el prestigio de la institución.",
+-      "english": "The disciplinary file was shelved to save the institution's prestige.",
++      "sentence": "Aquí se alquilan departamentos y se venden casas.",
++      "english": "Flats are rented and houses are sold here.",
+       "teaches": [
+         "se-pasivo-vs-impersonal"
+       ]
+@@ -133,17 +150,16 @@
+       "id": "b2-19-consolidation.ex08",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la regla fundamental para elegir entre 'se atendió a las víctimas' y 'se atendieron los reclamos'?",
++      "question": "Why does \"Se atendió a los clientes\" have a singular verb, but \"Se atendieron las llamadas\" a plural one?",
+       "options": [
+-        "Con personas introducidas por 'a' va en singular impersonal; con cosas sin preposición va en plural como pasiva refleja.",
+-        "Las personas siempre exigen verbo en plural y las cosas siempre en singular.",
+-        "Ambas frases deben llevar el verbo obligatoriamente en plural.",
+-        "La preposición 'a' solo se usa con sujetos inanimados."
++        "The customers are one group, so the verb is singular, but the calls are many.",
++        "The customers are people marked with a, so they are an object, but the calls are the subject.",
++        "The first sentence is in the past tense and the second one is not."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "se-pasivo-vs-impersonal"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-21-01-ex.json b/content/es-latam/exercises/b2/b2-21-01-ex.json
+index a665c523..486e46cb 100644
+--- a/content/es-latam/exercises/b2/b2-21-01-ex.json
++++ b/content/es-latam/exercises/b2/b2-21-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "enunciador",
+-          "speaker or producer of utterance"
++          "robar",
++          "to steal"
+         ],
+         [
+-          "colectividad",
+-          "community or collective body"
++          "el rumor",
++          "rumour"
+         ],
+         [
+-          "trasfondo",
+-          "background or underlying context"
++          "renunciar",
++          "to resign"
+         ],
+         [
+-          "anonimato",
+-          "state of remaining unnamed"
++          "la bicicleta",
++          "bicycle"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-21-01.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En situaciones de emergencia institucional, __ no puede perder la serenidad.",
+-      "hint": "one",
+-      "answer": "uno",
+-      "english": "In institutional emergency situations, one cannot lose serenity.",
++      "sentence": "Ayer me __ la bicicleta.",
++      "hint": "robar, past",
++      "answer": "robaron",
++      "english": "Somebody stole my bicycle yesterday.",
+       "teaches": [
+         "impersonal-tercera-plural-uno"
+       ]
+@@ -43,41 +43,45 @@
+       "id": "b2-21-01.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué efecto comunicativo produce la tercera persona del plural en 'Comentan que renegociarán el contrato'?",
++      "question": "Which sentence says \"They say it will rain tomorrow\"?",
+       "options": [
+-        "Atribuye el rumor a una fuente indeterminada eludiendo la responsabilidad del hablante.",
+-        "Señala a tres negociadores específicos que firmaron el documento público.",
+-        "Expresa una orden perentoria dirigida a los directores de la empresa.",
+-        "Describe un hecho pasado consumado que no admite rectificación alguna."
++        "Dicen de que mañana va a llover.",
++        "Dijeron que mañana va a llover.",
++        "Dicen que mañana va a llover."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "impersonal-tercera-plural-uno"
+-      ]
++      ],
++      "distractor_skills": {
++        "1": "preterito-indefinido"
++      }
+     },
+     {
+       "id": "b2-21-01.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Dicen",
+-        "que",
+-        "la",
+-        "comisión",
+-        "arribará",
+-        "esta",
+-        "tarde."
++        "Uno",
++        "nunca",
++        "sabe",
++        "qué",
++        "va",
++        "a",
++        "pasar",
++        "mañana."
+       ],
+       "solution": [
+-        "Dicen",
+-        "que",
+-        "la",
+-        "comisión",
+-        "arribará",
+-        "esta",
+-        "tarde."
++        "Uno",
++        "nunca",
++        "sabe",
++        "qué",
++        "va",
++        "a",
++        "pasar",
++        "mañana."
+       ],
+-      "english": "They say that the committee will arrive this afternoon.",
++      "english": "You never know what is going to happen tomorrow.",
+       "teaches": [
+         "impersonal-tercera-plural-uno"
+       ]
+@@ -88,34 +92,36 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Periodista",
+-          "text": "¿Quién filtró las conclusiones preliminares del informe pericial?"
++          "speaker": "Ana",
++          "text": "¿Es difícil vivir lejos de la familia?"
+         },
+         {
+-          "speaker": "Vocero",
+-          "text": "En los pasillos _____ que provino de un asesor externo independiente."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "comentan",
+-        "comenta uno",
+-        "están comentado",
+-        "se comente"
++        "Sí, uno piensan mucho en su familia.",
++        "Sí, uno piensa mucho en su familia.",
++        "Sí, uno pensó mucho en su familia."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "impersonal-tercera-plural-uno"
+-      ]
++      ],
++      "distractor_skills": {
++        "2": "preterito-indefinido"
++      }
+     },
+     {
+       "id": "b2-21-01.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Tocan a la puerta a horas imprevistas durante la madrugada.",
+-      "english": "Someone is knocking at the door at unforeseen hours during dawn.",
++      "sentence": "Hay un rumor: dicen que el director renuncia mañana.",
++      "english": "There is a rumour: they say the director is resigning tomorrow.",
+       "teaches": [
+         "impersonal-tercera-plural-uno"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-21-02-ex.json b/content/es-latam/exercises/b2/b2-21-02-ex.json
+index 549e81c5..0066d2e4 100644
+--- a/content/es-latam/exercises/b2/b2-21-02-ex.json
++++ b/content/es-latam/exercises/b2/b2-21-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "destinatario",
+-          "recipient of official notice"
++          "extrañar",
++          "to miss"
+         ],
+         [
+-          "normativa",
+-          "regulatory body of rules"
++          "mudarse",
++          "to move house"
+         ],
+         [
+-          "protocolo",
+-          "established formal procedure"
++          "cuidar",
++          "to look after"
+         ],
+         [
+-          "tramitación",
+-          "administrative processing"
++          "la salud",
++          "health"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-21-02.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En la sesión extraordinaria se __ a los peritos extranjeros con deferencia.",
+-      "hint": "was received",
+-      "answer": "recibió",
+-      "english": "In the extraordinary session, foreign experts were received with deference.",
++      "sentence": "Cuando se __ cansado, se trabaja peor.",
++      "hint": "estar, present",
++      "answer": "está",
++      "english": "When you are tired, you work worse.",
+       "teaches": [
+         "se-impersonal"
+       ]
+@@ -43,12 +43,11 @@
+       "id": "b2-21-02.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué es agramatical en la norma culta decir '*Se condecoraron a las maestras ilustres'?",
++      "question": "Which sentence says \"When you are young, you learn quickly\"?",
+       "options": [
+-        "Porque al haber preposición 'a' de persona, el sintagma es objeto directo y el verbo impersonal debe ir en singular.",
+-        "Porque las maestras no pueden recibir condecoraciones estatales sin previa ley del congreso.",
+-        "Porque el verbo condecorar exige conjugarse siempre en tiempo presente de subjuntivo.",
+-        "Porque falta añadir un complemento agente obligatorio introducido por la preposición por."
++        "Cuando se es joven, se aprende rápido.",
++        "Cuando se son jóvenes, se aprende rápido.",
++        "Cuando se es joven, se aprenden rápido."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -60,28 +59,34 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Se",
+-        "atendió",
++        "Cuando",
++        "uno",
++        "se",
++        "muda",
+         "a",
+-        "los",
+-        "damnificados",
+-        "en",
+-        "el",
+-        "hospital."
++        "otra",
++        "ciudad,",
++        "extraña",
++        "a",
++        "su",
++        "familia."
+       ],
+       "solution": [
+-        "Se",
+-        "atendió",
++        "Cuando",
++        "uno",
++        "se",
++        "muda",
++        "a",
++        "otra",
++        "ciudad,",
++        "extraña",
+         "a",
+-        "los",
+-        "damnificados",
+-        "en",
+-        "el",
+-        "hospital."
++        "su",
++        "familia."
+       ],
+-      "english": "The victims were assisted in the hospital.",
++      "english": "When you move to another city, you miss your family.",
+       "teaches": [
+-        "se-impersonal"
++        "impersonal-tercera-plural-uno"
+       ]
+     },
+     {
+@@ -90,34 +95,33 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Abogada",
+-          "text": "¿Cómo procedió el tribunal con los testigos convocados?"
++          "speaker": "Ana",
++          "text": "¿Es fácil vivir lejos de casa?"
+         },
+         {
+-          "speaker": "Secretario",
+-          "text": "Durante la mañana _____ a cada testigo en audiencia reservada."
++          "speaker": "Tú",
++          "text": "No mucho. _____"
+         }
+       ],
+       "options": [
+-        "se interrogó",
+-        "se interrogaron",
+-        "fueron interrogado",
+-        "se interroga a"
++        "Cuando se está lejos, se extrañan a la familia.",
++        "Cuando están lejos, se extraña a la familia.",
++        "Cuando se está lejos, se extraña a la familia."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+-        "se-impersonal"
++        "se-pasivo-vs-impersonal"
+       ]
+     },
+     {
+       "id": "b2-21-02.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Se convocó a los ministros para evaluar la emergencia climática.",
+-      "english": "The ministers were summoned to evaluate the climate emergency.",
++      "sentence": "Uno tiene que cuidar su salud.",
++      "english": "You have to look after your health.",
+       "teaches": [
+-        "se-impersonal"
++        "impersonal-tercera-plural-uno"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-21-03-ex.json b/content/es-latam/exercises/b2/b2-21-03-ex.json
+index f39e4f04..7e987442 100644
+--- a/content/es-latam/exercises/b2/b2-21-03-ex.json
++++ b/content/es-latam/exercises/b2/b2-21-03-ex.json
+@@ -7,20 +7,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "promulgación",
+-          "official enactment of statute"
++          "la subida",
++          "rise"
+         ],
+         [
+-          "erradicación",
+-          "complete removal or destruction"
++          "la llegada",
++          "arrival"
+         ],
+         [
+-          "subsanación",
+-          "formal correction of flaws"
++          "el cambio",
++          "change"
+         ],
+         [
+-          "adjudicación",
+-          "official granting of contract"
++          "el crecimiento",
++          "growth"
++        ],
++        [
++          "el aumento",
++          "increase"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +35,10 @@
+       "id": "b2-21-03.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La __ del decreto supremo restableció la calma en los mercados financieros.",
+-      "hint": "enactment",
+-      "answer": "promulgación",
+-      "english": "The enactment of the supreme decree restored calm in the financial markets.",
++      "sentence": "La __ de los precios preocupa a las familias.",
++      "hint": "subir, noun",
++      "answer": "subida",
++      "english": "The rise in prices worries families.",
+       "teaches": [
+         "nominalizacion-despersonalizacion"
+       ]
+@@ -43,14 +47,13 @@
+       "id": "b2-21-03.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la principal ventaja estilística de la nominalización en el ensayo académico?",
++      "question": "Which sentence says \"The arrival of the train was announced at eight\"?",
+       "options": [
+-        "Permite condensar procesos complejos despersonalizando al agente y otorgando densidad teórica.",
+-        "Multiplica el número de páginas de un manuscrito sin necesidad de aportar datos empíricos.",
+-        "Sustituye la necesidad de consultar bibliografía de autores contemporáneos.",
+-        "Garantiza que el texto pueda traducirse automáticamente a lenguas germánicas."
++        "Se anunció la llegó del tren a las ocho.",
++        "Se anunció la llegada del tren a las ocho.",
++        "Se anunció el llegada del tren a las ocho."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "nominalizacion-despersonalizacion"
+       ]
+@@ -60,26 +63,24 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "La",
+-        "desestimación",
+-        "del",
+-        "recurso",
+-        "cerró",
+-        "el",
+-        "litigio",
+-        "judicial."
++        "El",
++        "cambio",
++        "de",
++        "horario",
++        "sorprendió",
++        "a",
++        "todos."
+       ],
+       "solution": [
+-        "La",
+-        "desestimación",
+-        "del",
+-        "recurso",
+-        "cerró",
+-        "el",
+-        "litigio",
+-        "judicial."
++        "El",
++        "cambio",
++        "de",
++        "horario",
++        "sorprendió",
++        "a",
++        "todos."
+       ],
+-      "english": "The dismissal of the appeal closed the legal litigation.",
++      "english": "The change of schedule surprised everyone.",
+       "teaches": [
+         "nominalizacion-despersonalizacion"
+       ]
+@@ -90,19 +91,18 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Auditor",
+-          "text": "¿Por qué demoró tanto el desembolso de los fondos de inversión?"
++          "speaker": "Ana",
++          "text": "¿Por qué hay tanto tráfico?"
+         },
+         {
+-          "speaker": "Gerenta",
+-          "text": "La _____ de las observaciones contables tomó más de tres meses."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "subsanación",
+-        "subsanar",
+-        "subsanado",
+-        "subsana"
++        "Por el crecimiento de la ciudad.",
++        "Por el crecimiento la ciudad.",
++        "Por la crecimiento de la ciudad."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -113,11 +113,11 @@
+       "id": "b2-21-03.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "La reestructuración de la deuda pública facilitó nuevos créditos multilaterales.",
+-      "english": "The restructuring of public debt facilitated new multilateral credits.",
++      "sentence": "El aumento de los precios preocupa a muchas personas.",
++      "english": "The increase in prices worries many people.",
+       "teaches": [
+         "nominalizacion-despersonalizacion"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-21-04-ex.json b/content/es-latam/exercises/b2/b2-21-04-ex.json
+index da4ed0b0..185be594 100644
+--- a/content/es-latam/exercises/b2/b2-21-04-ex.json
++++ b/content/es-latam/exercises/b2/b2-21-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "incumbir",
+-          "to fall upon as formal duty"
++          "hacer falta",
++          "to be necessary"
+         ],
+         [
+-          "atañer",
+-          "to concern or have relevance to"
++          "bastar",
++          "to be enough"
+         ],
+         [
+-          "constar",
+-          "to be recorded as verified fact"
++          "urgir",
++          "to be urgent"
+         ],
+         [
+-          "imperar",
+-          "to reign or prevail as condition"
++          "arreglar",
++          "to fix"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-21-04.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Consta en actas que los comisionados __ por unanimidad a favor del dictamen.",
+-      "hint": "voted",
+-      "answer": "votaron",
+-      "english": "It is recorded in minutes that the commissioners voted unanimously in favor of the report.",
++      "sentence": "Hace falta que nosotros __ más temprano.",
++      "hint": "llegar, present subjunctive",
++      "answer": "lleguemos",
++      "english": "We need to arrive earlier.",
+       "teaches": [
+         "subjunctive-value-judgments"
+       ]
+@@ -43,43 +43,46 @@
+       "id": "b2-21-04.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Por qué la matriz impersonal 'Urge que...' rige obligatoriamente modo subjuntivo?",
++      "question": "Which sentence says \"It is enough that you call\"?",
+       "options": [
+-        "Porque introduce una directriz, mandato o necesidad institucional apremiante que aún no se consuma.",
+-        "Porque describe una acción que ya ocurrió en el pasado bajo supervisión judicial.",
+-        "Porque expresa una duda subjetiva sobre la existencia de los funcionarios encargados.",
+-        "Porque el verbo urgir solo existe en lengua española en tiempos compuestos."
++        "Basta con que llamas.",
++        "Basta con que llamaste.",
++        "Basta con que llames."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "subjunctive-value-judgments"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "present-tense",
++        "1": "preterito-indefinido"
++      }
+     },
+     {
+       "id": "b2-21-04.ex04",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Conviene",
++        "Urge",
+         "que",
+-        "el",
+-        "directorio",
+-        "revise",
+-        "el",
+-        "balance",
+-        "anual."
++        "arreglen",
++        "la",
++        "puerta",
++        "de",
++        "la",
++        "oficina."
+       ],
+       "solution": [
+-        "Conviene",
++        "Urge",
+         "que",
+-        "el",
+-        "directorio",
+-        "revise",
+-        "el",
+-        "balance",
+-        "anual."
++        "arreglen",
++        "la",
++        "puerta",
++        "de",
++        "la",
++        "oficina."
+       ],
+-      "english": "It is advisable that the board review the annual balance sheet.",
++      "english": "It is urgent that they fix the office door.",
+       "teaches": [
+         "subjunctive-value-judgments"
+       ]
+@@ -90,34 +93,36 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Senador",
+-          "text": "¿A qué institución le corresponde fiscalizar estos comicios?"
++          "speaker": "Ana",
++          "text": "¿Qué hace falta para la fiesta?"
+         },
+         {
+-          "speaker": "Jurista",
+-          "text": "Incumbe al órgano electoral autónomo _____ las garantías del proceso."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "precautelar",
+-        "precautela",
+-        "precautelaran",
+-        "precautelando"
++        "Hace falta que cada uno trae algo de comer.",
++        "Hace falta que cada uno traiga algo de comer.",
++        "Hace falta que cada uno traer algo de comer."
+       ],
+-      "correct": 0,
++      "correct": 1,
+       "teaches": [
+         "subjunctive-value-judgments"
+-      ]
++      ],
++      "distractor_skills": {
++        "0": "present-tense"
++      }
+     },
+     {
+       "id": "b2-21-04.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Urge que se tomen medidas cautelares para proteger el patrimonio arqueológico.",
+-      "english": "It is urgent that precautionary measures be taken to protect archaeological heritage.",
++      "sentence": "Basta con que nos llames un día antes.",
++      "english": "It is enough that you call us a day before.",
+       "teaches": [
+         "subjunctive-value-judgments"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-21-05-ex.json b/content/es-latam/exercises/b2/b2-21-05-ex.json
+index 2003853b..c6fef7dd 100644
+--- a/content/es-latam/exercises/b2/b2-21-05-ex.json
++++ b/content/es-latam/exercises/b2/b2-21-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "atenuación",
+-          "hedging or discursive softening"
++          "convenir",
++          "to be advisable"
+         ],
+         [
+-          "presunción",
+-          "assumption based on probability"
++          "funcionar",
++          "to work"
+         ],
+         [
+-          "inferencia",
+-          "logical deduction from data"
++          "el plan",
++          "plan"
+         ],
+         [
+-          "cautela",
+-          "prudence and analytical care"
++          "revisar",
++          "to check"
+         ]
+       ],
+       "teaches": [
+@@ -31,10 +31,10 @@
+       "id": "b2-21-05.ex02",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "A la luz de los antecedentes periciales, __ inferir una tendencia favorable.",
+-      "hint": "one might",
+-      "answer": "cabría",
+-      "english": "In light of forensic background events, one might infer a favorable trend.",
++      "sentence": "Según __, la reunión empieza a las tres.",
++      "hint": "parecer, present",
++      "answer": "parece",
++      "english": "Apparently, the meeting starts at three.",
+       "teaches": [
+         "hedging"
+       ]
+@@ -43,12 +43,11 @@
+       "id": "b2-21-05.ex03",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Qué función cumple el condicional de modestia en 'Cabría presumir que las partes concertaron un armisticio'?",
++      "question": "Which sentence softens the claim \"The plan does not work\"?",
+       "options": [
+-        "Atenúa la aserción expresando cautela epistémica para modular la responsabilidad del analista.",
+-        "Expresa un reproche furioso por la falta de información disponible en el frente.",
+-        "Obliga a los embajadores a firmar el tratado antes del anochecer.",
+-        "Indica una certeza incontrovertible que no tolera ninguna objeción metodológica."
++        "Podría decirse que el plan no funciona del todo.",
++        "El plan no funciona.",
++        "Podría decirse que el plan no funcione del todo."
+       ],
+       "correct": 0,
+       "teaches": [
+@@ -60,26 +59,26 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "De",
+-        "las",
+-        "cifras",
+-        "parece",
+-        "desprenderse",
+-        "un",
+-        "crecimiento",
+-        "constante."
++        "Tal",
++        "vez",
++        "convendría",
++        "revisar",
++        "el",
++        "horario",
++        "con",
++        "calma."
+       ],
+       "solution": [
+-        "De",
+-        "las",
+-        "cifras",
+-        "parece",
+-        "desprenderse",
+-        "un",
+-        "crecimiento",
+-        "constante."
++        "Tal",
++        "vez",
++        "convendría",
++        "revisar",
++        "el",
++        "horario",
++        "con",
++        "calma."
+       ],
+-      "english": "From the figures a steady growth seems to emerge.",
++      "english": "Perhaps it would be a good idea to check the schedule calmly.",
+       "teaches": [
+         "hedging"
+       ]
+@@ -90,21 +89,20 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Diplomática",
+-          "text": "¿Es posible afirmar que el acuerdo comercial entrará en vigencia pronto?"
++          "speaker": "Ana",
++          "text": "¿Va a funcionar el plan?"
+         },
+         {
+-          "speaker": "Canciller",
+-          "text": "Resulta prudente matizar; _____ que aún quedan anexos técnicos por dirimir."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "se presumiría",
+-        "se presume a",
+-        "presumiéndose",
+-        "es presumir"
++        "Parece que el plan funcione bien.",
++        "Parece el plan que funciona bien.",
++        "Parece que el plan funciona bien."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+         "hedging"
+       ]
+@@ -113,11 +111,11 @@
+       "id": "b2-21-05.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Cabría conjeturar que las reformas tributarias tendrán un efecto distributivo equilibrado.",
+-      "english": "One might conjecture that tax reforms will have a balanced distributive effect.",
++      "sentence": "Al parecer, el director no puede venir hoy.",
++      "english": "Apparently, the director cannot come today.",
+       "teaches": [
+         "hedging"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/exercises/b2/b2-21-consolidation-ex.json b/content/es-latam/exercises/b2/b2-21-consolidation-ex.json
+index 1266713f..2caff667 100644
+--- a/content/es-latam/exercises/b2/b2-21-consolidation-ex.json
++++ b/content/es-latam/exercises/b2/b2-21-consolidation-ex.json
+@@ -7,20 +7,24 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "plausibilidad",
+-          "quality of being credible"
++          "robar",
++          "to steal"
+         ],
+         [
+-          "desestimación",
+-          "formal rejection of lawsuit"
++          "extrañar",
++          "to miss"
+         ],
+         [
+-          "subsanación",
+-          "remedying of legal flaws"
++          "la subida",
++          "rise"
+         ],
+         [
+-          "aserto",
+-          "affirmative proposition or claim"
++          "urgir",
++          "to be urgent"
++        ],
++        [
++          "convenir",
++          "to be advisable"
+         ]
+       ],
+       "teaches": [
+@@ -29,28 +33,30 @@
+     },
+     {
+       "id": "b2-21-con.ex02",
+-      "type": "fill-blank",
++      "type": "multiple-choice",
+       "category": "grammar",
+-      "sentence": "En la cumbre internacional se __ a las delegaciones con honores de estado.",
+-      "hint": "entertained",
+-      "answer": "agasajó",
+-      "english": "At the international summit, the delegations were entertained with state honors.",
++      "question": "Which sentence says \"They stole my phone\"?",
++      "options": [
++        "Robaron me el celular.",
++        "Me robaban el celular.",
++        "Me robaron el celular."
++      ],
++      "correct": 2,
+       "teaches": [
+-        "se-impersonal"
+-      ]
++        "impersonal-tercera-plural-uno"
++      ],
++      "distractor_skills": {
++        "1": "imperfect"
++      }
+     },
+     {
+       "id": "b2-21-con.ex03",
+-      "type": "multiple-choice",
++      "type": "fill-blank",
+       "category": "grammar",
+-      "question": "¿Cuál de las siguientes transformaciones nominalizadas aporta mayor concisión formal?",
+-      "options": [
+-        "La promulgación de la ley minera aceleró las inversiones productivas.",
+-        "El hecho de que promulgaran la ley minera causó que se invirtiera más.",
+-        "Cuando el parlamento promulgó la ley, las inversiones comenzaron a subir.",
+-        "Promulgar leyes es algo que el parlamento siempre hace con mucha rapidez."
+-      ],
+-      "correct": 0,
++      "sentence": "El __ de las reglas sorprendió a los clientes.",
++      "hint": "cambiar, noun",
++      "answer": "cambio",
++      "english": "The change of the rules surprised the customers.",
+       "teaches": [
+         "nominalizacion-despersonalizacion"
+       ]
+@@ -60,30 +66,28 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Se",
+-        "procedió",
+-        "a",
+-        "la",
+-        "revisión",
+-        "de",
+-        "las",
+-        "actas",
+-        "oficiales."
++        "Basta",
++        "con",
++        "que",
++        "me",
++        "llames",
++        "un",
++        "día",
++        "antes."
+       ],
+       "solution": [
+-        "Se",
+-        "procedió",
+-        "a",
+-        "la",
+-        "revisión",
+-        "de",
+-        "las",
+-        "actas",
+-        "oficiales."
++        "Basta",
++        "con",
++        "que",
++        "me",
++        "llames",
++        "un",
++        "día",
++        "antes."
+       ],
+-      "english": "They proceeded to the review of the official minutes.",
++      "english": "It is enough that you call me a day before.",
+       "teaches": [
+-        "nominalizacion-despersonalizacion"
++        "subjunctive-value-judgments"
+       ]
+     },
+     {
+@@ -92,63 +96,63 @@
+       "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Ministro",
+-          "text": "¿Consta en el expediente la ratificación del protocolo?"
++          "speaker": "Ana",
++          "text": "¿Va a funcionar el plan?"
+         },
+         {
+-          "speaker": "Secretaria",
+-          "text": "Sí, señor ministro; _____ fehacientemente que fue depositado a tiempo."
++          "speaker": "Tú",
++          "text": "_____"
+         }
+       ],
+       "options": [
+-        "consta",
+-        "conste",
+-        "constara",
+-        "esté constando"
++        "Parece que sí, pero tal vez convenía revisarlo.",
++        "Parece que sí, pero tal vez convendría revisarla.",
++        "Parece que sí, pero tal vez convendría revisarlo."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+-        "subjunctive-value-judgments"
+-      ]
++        "hedging"
++      ],
++      "distractor_skills": {
++        "0": "imperfect"
++      }
+     },
+     {
+       "id": "b2-21-con.ex06",
+       "type": "dictation",
+       "category": "listening",
+-      "sentence": "Cabría inferir que las reformas institucionales fortalecerán la transparencia pública.",
+-      "english": "One might infer that institutional reforms will strengthen public transparency.",
++      "sentence": "Dicen que mañana habrá una reunión importante.",
++      "english": "They say there will be an important meeting tomorrow.",
+       "teaches": [
+-        "hedging"
++        "impersonal-tercera-plural-uno"
+       ]
+     },
+     {
+       "id": "b2-21-con.ex07",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué valor confiere la despersonalización y el distanciamiento enunciativo a la prosa ensayística?",
++      "question": "According to the text, what kind of book is Sangre de mestizos?",
+       "options": [
+-        "Permite fundamentar las conclusiones en la consistencia de los argumentos y las pruebas objetivas.",
+-        "Oculta la identidad del autor para evitar responsabilidades civiles ante los tribunales.",
+-        "Garantiza que el texto sea aceptado sin revisión por las editoriales universitarias.",
+-        "Aumenta la longitud de los párrafos para cumplir con normas de extensión académica."
++        "Una novela sobre un viaje largo.",
++        "Un libro de cuentos.",
++        "Un libro de poemas."
+       ],
+-      "correct": 0
++      "correct": 1
+     },
+     {
+       "id": "b2-21-con.ex08",
+       "type": "multiple-choice",
+       "category": "grammar",
+-      "question": "¿Cuál es la combinatoria sintáctica idónea para expresar distanciamiento en un dictamen pericial?",
++      "question": "Which sentence includes the speaker in the group?",
+       "options": [
+-        "Amalgamar impersonales terciopersonales, nominalizaciones desagentivadas y condicionales de atenuación.",
+-        "Utilizar exclusivamente la primera persona del singular acompañada de adjetivos superlativos.",
+-        "Redactar oraciones imperativas directas dirigidas a la autoridad judicial.",
+-        "Evitar el uso de verbos transitivos en todo el cuerpo del documento."
++        "Dicen que se aprende con la experiencia.",
++        "Aprenden con la experiencia.",
++        "Uno aprende con la experiencia."
+       ],
+-      "correct": 0,
++      "correct": 2,
+       "teaches": [
+-        "nominalizacion-despersonalizacion"
++        "impersonal-tercera-plural-uno"
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-19-01-a-gr.json b/content/es-latam/grammar/b2/b2-19-01-a-gr.json
+index 1cf7a4ad..bc6bd0d6 100644
+--- a/content/es-latam/grammar/b2/b2-19-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-19-01-a-gr.json
+@@ -1,44 +1,75 @@
+ {
+   "id": "grammar.b2.19.01.pasiva-refleja-concordancia",
+-  "title": "Pasiva refleja básica y concordancia de número",
++  "title": "The Verb Agrees With the Thing",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La **pasiva refleja** se construye con el pronombre **se** y una forma verbal en tercera persona (singular o plural) que concuerda obligatoriamente con el sujeto paciente pospuesto o antepuesto.\n\nA diferencia de las oraciones activas o impersonales, en la pasiva refleja el elemento nominal no funciona como objeto directo sino como auténtico **sujeto sintáctico**: *Se firmó el acuerdo bilateral* (singular) frente a *Se firmaron los acuerdos de paz* (plural)."
++      "title": "Same *se*, same agreement",
++      "content": "You know the passive *se* from B1 Unit 6: *se* plus a verb in the third person says that something is done without saying who does it. The noun after the verb is the subject of the sentence, so the verb agrees with it in number: *Se vende una casa*, but *Se venden casas*. This lesson shows that the agreement holds whenever you have a noun: after two nouns, with the noun in front of the verb, and after *poder* or *deber* plus an infinitive."
+     },
+     {
+       "type": "table",
+-      "title": "Ejemplos de concordancia de número en pasiva refleja",
++      "title": "One thing or several",
+       "rows": [
+         [
+-          "Se firmó el acuerdo bilateral.",
+-          "The bilateral agreement was signed."
++          "Se firmó el acuerdo.",
++          "The agreement was signed."
+         ],
+         [
+-          "Se firmaron los acuerdos de paz.",
+-          "The peace agreements were signed."
++          "Se firmaron los acuerdos.",
++          "The agreements were signed."
+         ],
+         [
+-          "Se clausuró la sesión plenaria.",
+-          "The plenary session was adjourned."
++          "Se publicó la regla.",
++          "The rule was published."
+         ],
+         [
+-          "Se clausuraron las sesiones legislativas.",
+-          "The legislative sessions were adjourned."
++          "Se publicaron las reglas.",
++          "The rules were published."
+         ],
+         [
+-          "Se publicó la resolución ministerial.",
+-          "The ministerial resolution was published."
++          "Se vende una casa.",
++          "A house is for sale."
+         ],
+         [
+-          "Se publicaron los decretos supremos.",
+-          "The supreme decrees were published."
++          "Se venden casas.",
++          "Houses are for sale."
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "With poder, deber and an infinitive",
++      "content": "*Se* goes before the first verb, and that verb agrees with the noun that follows: *Se puede ver el mar*, *Se pueden ver las montañas*. If there is no noun, the verb stays singular: *Se puede entrar*. You know *deber* from B1 Unit 4; it works in the same way."
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Se necesitan dos boletos para entrar.",
++          "english": "Two tickets are needed to get in."
++        },
++        {
++          "spanish": "Aquí se pueden comprar boletos.",
++          "english": "You can buy tickets here."
++        },
++        {
++          "spanish": "Se debe cerrar la puerta.",
++          "english": "The door must be closed."
++        },
++        {
++          "spanish": "Se deben cerrar las ventanas.",
++          "english": "The windows must be closed."
++        },
++        {
++          "spanish": "Los acuerdos se firmaron ayer.",
++          "english": "The agreements were signed yesterday."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "La concordancia en plural es obligatoria cuando el sujeto paciente es plural: decir *'se firmó los acuerdos'* constituye un error de discordancia en el registro formal escrito."
++      "content": "Two or more nouns joined by *y* usually take a plural verb: *Se venden libros y revistas*. The noun can also come first, and the agreement is the same: *Los acuerdos se firmaron ayer*. In fast speech some people say *Se vendió casas*, but careful Spanish agrees: *Se vendieron casas*."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-19-02-a-gr.json b/content/es-latam/grammar/b2/b2-19-02-a-gr.json
+index 9f478f15..eafca0ca 100644
+--- a/content/es-latam/grammar/b2/b2-19-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-19-02-a-gr.json
+@@ -1,44 +1,58 @@
+ {
+-  "id": "grammar.b2.19.02.se-pasivo-vs-impersonal",
+-  "title": "Diferenciación: pasiva refleja vs se impersonal",
++  "id": "grammar.b2.19.02.pasiva-vs-impersonal",
++  "title": "Passive Se or Impersonal Se?",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La distinción entre la **pasiva refleja** y la **oración impersonal con se** radica en la naturaleza del argumento verbal y la presencia de la preposición **a**.\n\nCuando el verbo transitivo se refiere a personas determinadas individualizadas mediante la marca acusativa **a**, la construcción es estrictamente **impersonal** y el verbo permanece invariable en tercera persona del singular: *Se atendió a los damnificados*. En cambio, con entidades inanimadas o cosas sin preposición, opera la pasiva refleja con concordancia plural: *Se atendieron los reclamos*."
++      "title": "Is there a subject?",
++      "content": "You know passive *se* and impersonal *se* from B1 Unit 6: with a noun the verb agrees with it, and with no noun the verb stays singular. The tricky cases are in between. When what follows is a particular person, Spanish adds the personal *a* (you know the personal *a* from A1 Unit 24). Then the person is an object, not a subject, so nothing can agree with it and the verb stays singular. The same happens when the noun comes after a preposition."
+     },
+     {
+       "type": "table",
+-      "title": "Contraste entre impersonal con 'a' y pasiva refleja",
++      "title": "Four patterns",
+       "rows": [
+         [
+-          "Se atendió a los damnificados en el refugio.",
+-          "The disaster victims were assisted at the shelter (impersonal)."
++          "Se venden casas.",
++          "Houses are for sale. (a thing: the verb agrees)"
+         ],
+         [
+-          "Se atendieron las solicitudes de auxilio.",
+-          "The assistance requests were attended to (passive reflex)."
++          "Se vive bien aquí.",
++          "People live well here. (no noun: singular)"
+         ],
+         [
+-          "Se condecoró a las científicas peruanas.",
+-          "The Peruvian female scientists were decorated (impersonal)."
++          "Se busca a los responsables.",
++          "They are looking for the people responsible. (person with a: singular)"
+         ],
+         [
+-          "Se condecoraron los méritos académicos.",
+-          "The academic merits were decorated (passive reflex)."
+-        ],
+-        [
+-          "Se examinó a los postulantes.",
+-          "The applicants were examined (impersonal)."
+-        ],
+-        [
+-          "Se examinaron los expedientes de admisión.",
+-          "The admission files were examined (passive reflex)."
++          "Se habla de los precios.",
++          "People are talking about prices. (noun after a preposition: singular)"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Se atendió a todos los clientes.",
++          "english": "All the customers were served."
++        },
++        {
++          "spanish": "Se atendieron las llamadas.",
++          "english": "The calls were answered."
++        },
++        {
++          "spanish": "Se invitó a los vecinos.",
++          "english": "The neighbours were invited."
++        },
++        {
++          "spanish": "Se trabaja mucho en esta oficina.",
++          "english": "People work a lot in this office."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Con referentes humanos precedidos de 'a', nunca pluralices el verbo (*'se atendieron a los heridos'* es agramatical en la norma culta panhispánica)."
++      "content": "Compare *Se buscan empleados* (a general ad: staff wanted) with *Se busca a los empleados* (they are looking for particular employees). The *a* marks particular people as the object, and that is why the verb stays singular. A plural verb with *a* (*Se buscan a los responsables*) is a common mistake."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-19-03-a-gr.json b/content/es-latam/grammar/b2/b2-19-03-a-gr.json
+index e39f207f..44750572 100644
+--- a/content/es-latam/grammar/b2/b2-19-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-19-03-a-gr.json
+@@ -1,44 +1,54 @@
+ {
+-  "id": "grammar.b2.19.03.pasiva-refleja-restricciones-agente",
+-  "title": "Restricciones de agentividad en la pasiva refleja",
++  "id": "grammar.b2.19.03.agente-pasiva-refleja",
++  "title": "Who Did It? Not With Passive Se",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La pasiva refleja presupone siempre la existencia de un **agente humano tácito** que realiza la acción de forma voluntaria, pero su función discursiva primordial es ocultar o desdibujar a ese agente.\n\nPor esa razón, la pasiva refleja rechaza casi sistemáticamente el **complemento agente explícito** introducido por *por*: construcciones como *'??Se cancelaron los vuelos por la aerolínea'* resultan forzadas o incorrectas. Si se desea explicitar el ejecutor, el español prefiere la voz activa (*La aerolínea canceló los vuelos*) o la pasiva analítica (*Los vuelos fueron cancelados por la aerolínea*)."
++      "title": "Leaving the doer out",
++      "content": "You know the passive with *ser* from B1 Unit 18: *El puente fue construido por el alcalde*, where *por* names who did it. Passive *se* does the opposite: it is there to leave the doer out. So in normal Spanish it does not take *por* plus the doer. You can say *Se construyó el puente*, or *El puente fue construido por el alcalde*, but not *Se construyó el puente por el alcalde*."
+     },
+     {
+       "type": "table",
+-      "title": "Alternativas para expresar u omitir el agente",
++      "title": "What do you want to say?",
+       "rows": [
+         [
+-          "Se demolieron los edificios antiguos.",
+-          "The old buildings were demolished (agent omitted, natural)."
++          "The doer is unknown or does not matter",
++          "Se construyó el puente en 1990."
+         ],
+         [
+-          "Los edificios fueron demolidos por el municipio.",
+-          "The buildings were demolished by the municipality (analytical passive)."
++          "You want to name the doer and keep the passive",
++          "El puente fue construido por el alcalde."
+         ],
+         [
+-          "Se cancelaron las transferencias bancarias.",
+-          "The bank transfers were cancelled (natural agentless passive)."
+-        ],
+-        [
+-          "El banco canceló las transferencias.",
+-          "The bank cancelled the transfers (active voice)."
+-        ],
+-        [
+-          "Se promulgaron tres leyes orgánicas.",
+-          "Three organic laws were promulgated (natural legislative passive)."
+-        ],
+-        [
+-          "El congreso promulgó tres leyes orgánicas.",
+-          "Congress promulgated three organic laws (active voice)."
++          "You want to name the doer and keep it short",
++          "El alcalde construyó el puente."
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Se publicaron los resultados ayer.",
++          "english": "The results were published yesterday."
++        },
++        {
++          "spanish": "Los resultados fueron publicados por la directora.",
++          "english": "The results were published by the director."
++        },
++        {
++          "spanish": "La directora publicó los resultados.",
++          "english": "The director published the results."
++        },
++        {
++          "spanish": "Se compran boletos por internet.",
++          "english": "Tickets are bought online."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Utiliza la pasiva refleja cuando el agente sea irrelevante, obvio, desconocido o cuando busques conferir distancia objetiva al enunciado."
++      "content": "Watch the other *por*. In *Se compran boletos por internet*, *por* means \"over\" or \"by means of\", not \"done by\", so it is fine. The test is simple: if the word after *por* is the person or group who did the action, use *ser* or an active sentence instead of *se*."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-19-04-a-gr.json b/content/es-latam/grammar/b2/b2-19-04-a-gr.json
+index ee8ec996..5b5a8c7e 100644
+--- a/content/es-latam/grammar/b2/b2-19-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-19-04-a-gr.json
+@@ -1,44 +1,67 @@
+ {
+-  "id": "grammar.b2.19.04.se-institucional-juridico",
+-  "title": "El se en el discurso administrativo y legal",
++  "id": "grammar.b2.19.04.se-avisos",
++  "title": "Notices and Instructions",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En el estilo forense, judicial y administrativo, las construcciones con **se** desempeñan un papel central para dotar a las resoluciones, edictos y contratos de un tono de **autoridad despersonalizada e imparcialidad legal**.\n\nFórmulas performativas consagradas como *se resuelve*, *se dispone*, *se ordena* o *se hace constar* transforman la voluntad de magistrados y funcionarios en mandatos objetivos emanados del ordenamiento jurídico del Estado."
++      "title": "Signs, adverts and recipes",
++      "content": "You know notices with *se prohíbe* from A2 Unit 24, and *se busca* and *se requiere* from B1 Unit 6. Notices, adverts and instructions use *se* because they speak to everybody and the doer does not matter. The rule you already know picks the verb: an infinitive or a noun for something uncountable (*silencio*) takes a singular verb, and a plural noun takes a plural verb. What is new here is how many everyday notices follow this pattern, and the polite *Se ruega*, which means \"please\"."
+     },
+     {
+       "type": "table",
+-      "title": "Fórmulas consagradas del registro jurídico-institucional",
++      "title": "Notices you will see",
+       "rows": [
+         [
+-          "Se hace constar que el acusado declaró sin coacción.",
+-          "It is recorded that the defendant testified without coercion."
++          "Se prohíbe fumar.",
++          "Smoking is not allowed."
+         ],
+         [
+-          "Se resuelve otorgar la personería jurídica solicitada.",
+-          "It is resolved to grant the requested legal status."
++          "Se ruega silencio.",
++          "Silence, please."
+         ],
+         [
+-          "Se previene a las partes sobre los plazos procesales.",
+-          "The parties are cautioned regarding procedural deadlines."
++          "Se ruega no tocar.",
++          "Please do not touch."
+         ],
+         [
+-          "Se dispone la publicación inmediata en el diario oficial.",
+-          "Immediate publication in the official gazette is ordered."
++          "Se alquilan departamentos.",
++          "Flats for rent."
+         ],
+         [
+-          "Se ordena la apertura del proceso sancionador.",
+-          "The opening of the sanctioning process is ordered."
++          "Se necesitan vendedores.",
++          "Sales staff wanted."
+         ],
+         [
+-          "Se deja constancia en el acta notarial.",
+-          "It is placed on record in the notarial act."
++          "Se vende casa.",
++          "House for sale."
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "In context",
++      "items": [
++        {
++          "spanish": "Se admiten perros pequeños.",
++          "english": "Small dogs are allowed."
++        },
++        {
++          "spanish": "Se recomienda llegar temprano.",
++          "english": "Arriving early is recommended."
++        },
++        {
++          "spanish": "Se pelan las papas y se cortan en trozos.",
++          "english": "The potatoes are peeled and cut into pieces."
++        },
++        {
++          "spanish": "Se agrega un poco de sal.",
++          "english": "A little salt is added."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Observa que tras *se dispone* o *se resuelve* puede seguir una proposición sustantiva con *que + subjuntivo* o una cláusula de infinitivo según el carácter preceptivo de la norma."
++      "content": "A notice written as a command, such as *Guarde silencio*, speaks to you; you know *usted* commands from A2 Unit 23. A notice with *se* states a rule for everybody, so it sounds more formal and less personal. In a recipe the verb agrees with the ingredient: *se agrega sal*, *se agregan las papas*."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-19-05-a-gr.json b/content/es-latam/grammar/b2/b2-19-05-a-gr.json
+index 74679652..d4a62b4c 100644
+--- a/content/es-latam/grammar/b2/b2-19-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-19-05-a-gr.json
+@@ -1,44 +1,63 @@
+ {
+-  "id": "grammar.b2.19.05.desambiguacion-valores-se",
+-  "title": "Desambiguación pragmática de las funciones de se",
++  "id": "grammar.b2.19.05.valores-de-se",
++  "title": "Which Se Is It?",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "El pronombre **se** en español es altamente polisémico: puede desempeñar funciones reflexivas (*se cuida*), recíprocas (*se saludan*), incoativas/pronominales (*se durmió*) o pasivo-impersonales (*se vende*).\n\nPara desambiguar oraciones potencialmente confusas con sujetos plurales animados (*Los ministros se respetan*), el contexto pragmático y el uso de marcadores explícitos (*mutuamente*, *el uno al otro*) resultan decisivos para distinguir la reciprocidad de la voz pasiva."
++      "title": "Five jobs for one word",
++      "content": "You know *se* in several jobs: reflexive *se* from A1 (*Ana se lava*), *se lo* from A2 Unit 25, and passive and impersonal *se* from B1 Unit 6. The same two letters also mean \"each other\", and they can say that something happened to you by accident. To decide which one you have, ask who does what to whom, and look at the words around *se*."
+     },
+     {
+       "type": "table",
+-      "title": "Desambiguación de los distintos valores sintácticos de 'se'",
++      "title": "Five kinds of se",
+       "rows": [
+         [
+-          "Los ministros se saludaron cordialmente.",
+-          "The ministers greeted each other (reciprocal reading)."
++          "Reflexive: a person does it to themselves",
++          "Ana se lava las manos. (Ana washes her hands.)"
+         ],
+         [
+-          "Se vendieron todos los boletos del concierto.",
+-          "All concert tickets were sold (reflexive passive reading)."
++          "Reciprocal: two or more people do it to each other",
++          "Los amigos se abrazan. (The friends hug each other.)"
+         ],
+         [
+-          "El candidato se preparó meticulosamente para el debate.",
+-          "The candidate prepared himself meticulously (reflexive reading)."
++          "Passive: a thing, no doer",
++          "Se abren las puertas a las nueve. (The doors open at nine.)"
+         ],
+         [
+-          "Se vive con tranquilidad en este valle andino.",
+-          "One lives peacefully in this Andean valley (impersonal reading)."
++          "Impersonal: nobody in particular, no noun",
++          "Aquí se vive tranquilo. (People live quietly here.)"
+         ],
+         [
+-          "El tratado se ratificó por unanimidad.",
+-          "The treaty was ratified unanimously (reflexive passive reading)."
+-        ],
+-        [
+-          "Los líderes se comprometieron ante la ciudadanía.",
+-          "The leaders committed themselves before the citizenry (pronominal reading)."
++          "Accidental: se + me, te, le, nos + verb",
++          "Se me cayó el vaso. (I dropped the glass; it slipped.)"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "title": "Same words, different jobs",
++      "items": [
++        {
++          "spanish": "Se ven todos los días.",
++          "english": "They see each other every day."
++        },
++        {
++          "spanish": "Se ven las montañas desde aquí.",
++          "english": "The mountains can be seen from here."
++        },
++        {
++          "spanish": "Se me perdieron las llaves.",
++          "english": "I lost my keys."
++        },
++        {
++          "spanish": "Se nos olvidó el boleto.",
++          "english": "We forgot the ticket."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Cuando el sujeto es inanimado plural, la interpretación pasiva refleja es la predominante; con sujetos humanos plurales, la interpretación por defecto suele ser la recíproca."
++      "content": "Accidental *se* has a clue: *me*, *te*, *le*, *nos* or *les* comes right after it, and the verb agrees with the thing, not the person: *Se me cayó el vaso*, *Se me cayeron los vasos*. With a plural subject that is a person, reflexive and reciprocal can look identical (*Se saludan*). Words such as *mutuamente* (\"each other\") or *a sí mismos* (\"themselves\") remove the doubt."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-21-01-a-gr.json b/content/es-latam/grammar/b2/b2-21-01-a-gr.json
+index 207a0210..ab0870d1 100644
+--- a/content/es-latam/grammar/b2/b2-21-01-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-21-01-a-gr.json
+@@ -1,36 +1,62 @@
+ {
+-  "id": "grammar.b2.21.01.impersonal-tercera-plural-uno",
+-  "title": "La tercera persona del plural impersonal y el pronombre indefinido uno",
++  "id": "grammar.b2.21.01.tercera-plural-uno",
++  "title": "They Say, One Knows",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En el registro formal y periodístico del español de América, existen diversas estrategias para desdibujar al agente de la acción cuando este es desconocido, irrelevante o se desea mantener en el anonimato. La tercera persona del plural sin sujeto expreso (*dicen que*, *comentan que*, *llaman a la puerta*) atribuye la acción a un colectivo indeterminado, mientras que el pronombre indefinido *uno / una* generaliza la experiencia humana proyectándola desde una perspectiva subjetiva pero compartible."
++      "title": "Two ways to hide who",
++      "content": "You know *se dice que* from B2 Unit 18 and impersonal *se* from B1 Unit 6. Spanish has two more ways to talk about people without naming them. The first is a verb in the third person plural with no subject: *Dicen que va a llover*, *Me robaron la bicicleta*. It means \"some people\", and you do not know who, or do not want to say. It never includes the speaker. The second is *uno* (or *una*, when a woman speaks), which means \"a person\" and does include the speaker: *Uno nunca sabe*."
+     },
+     {
+       "type": "table",
+-      "title": "Estrategias de impersonalidad y generalización",
++      "title": "Three patterns",
+       "rows": [
+         [
+-          "Dicen que la delegación llegará mañana al mediodía.",
+-          "They say that the delegation will arrive tomorrow at noon."
++          "Dicen que el director renuncia.",
++          "They say the director is resigning. (a rumour)"
+         ],
+         [
+-          "Tocan a la puerta a horas intempestivas.",
+-          "Someone is knocking at the door at unearthly hours."
++          "Me robaron la bicicleta.",
++          "Somebody stole my bicycle. (an unknown doer)"
+         ],
+         [
+-          "Cuando uno asume un cargo público, debe esperar escrutinio.",
+-          "When one assumes public office, one must expect scrutiny."
++          "Llaman a la puerta.",
++          "Someone is at the door. (a doer you cannot see)"
+         ],
+         [
+-          "En situaciones de crisis, una no sabe qué decisión tomar.",
+-          "In crisis situations, one (fem.) does not know what decision to take."
++          "Uno nunca sabe.",
++          "You never know. (including me)"
++        ],
++        [
++          "Una aprende con el tiempo.",
++          "You learn with time. (a woman speaking)"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Dicen que mañana va a llover.",
++          "english": "They say it is going to rain tomorrow."
++        },
++        {
++          "spanish": "Aquí no dejan entrar a nadie.",
++          "english": "They do not let anybody in here."
++        },
++        {
++          "spanish": "Uno aprende con la práctica.",
++          "english": "You learn with practice."
++        },
++        {
++          "spanish": "Cuando uno viaja mucho, extraña su casa.",
++          "english": "When you travel a lot, you miss your home."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "En la prosa académica estricta se prefiere la pasiva refleja o las nominalizaciones frente a *uno*, ya que este último conserva cierta cercanía conversacional. En América Latina, *uno* concuerda siempre en tercera persona singular con el verbo."
++      "content": "The verb must be plural: *Dicen que…* means \"they say\", while *Dice que…* means \"he or she says\". With *uno* the verb is singular and the possessive is *su*, because *uno* is a third-person word: *Uno cuida su salud*. Use *dicen* for rumours and news you pass on, and *uno* for a general truth that also applies to you."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-21-02-a-gr.json b/content/es-latam/grammar/b2/b2-21-02-a-gr.json
+index 129a6631..974e8905 100644
+--- a/content/es-latam/grammar/b2/b2-21-02-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-21-02-a-gr.json
+@@ -1,36 +1,59 @@
+ {
+-  "id": "grammar.b2.21.02.se-impersonal-avanzado",
+-  "title": "El se impersonal avanzado y sus contrastes con la pasiva refleja",
++  "id": "grammar.b2.21.02.se-plural-uno",
++  "title": "Se, They or One?",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La partícula *se* permite construir oraciones estrictamente impersonales (sin sujeto gramatical alguno) tanto con verbos intransitivos (*se vive bien aquí*, *se trabaja hasta tarde*) como con verbos transitivos que llevan objeto directo de persona introducido por la preposición *a* (*se convocó a los ministros*, *se premió a las científicas*). Esta estructura se distingue tajantemente de la pasiva refleja (*se aprobaron las leyes*), donde el sintagma nominal concuerda en número con el verbo."
++      "title": "Which one do I need?",
++      "content": "You know passive and impersonal *se* from B2 Unit 19: the verb agrees with a thing and stays singular with no noun or with personal *a*. Now you have three ways to speak about people without naming them, and each one says something different. *Se* is neutral: it is nobody in particular, and fits rules and general facts. A plural verb points to other people, never to you. *Uno* includes you. Choosing well means asking one question: who do I want to be part of this?"
+     },
+     {
+       "type": "table",
+-      "title": "Contraste: Se impersonal vs Pasiva refleja",
++      "title": "Same idea, three choices",
+       "rows": [
+         [
+-          "Se atendió a los damnificados con prontitud.",
+-          "The victims were assisted promptly (impersonal se + prep a)."
++          "Se vive bien aquí.",
++          "People live well here. (a general statement)"
+         ],
+         [
+-          "Se premió a las mejores investigadoras del país.",
+-          "The best female researchers in the country were awarded."
++          "Aquí viven bien.",
++          "The people here live well. (other people)"
+         ],
+         [
+-          "Se firmaron los tratados de cooperación bilateral.",
+-          "The bilateral cooperation treaties were signed (passive se + plural)."
+-        ],
+-        [
+-          "Se debate con serenidad en el consejo directivo.",
+-          "There is serene debate in the executive board (intransitive impersonal)."
++          "Uno vive bien aquí.",
++          "You live well here, and I do too. (including me)"
+         ]
+       ]
+     },
++    {
++      "type": "text",
++      "title": "Se, ser and estar",
++      "content": "Impersonal *se* also works with *ser* and *estar* plus an adjective. The adjective stays in the masculine singular: *Cuando se es joven, se aprende rápido*. *Cuando se está cansado, se trabaja peor*. This is new in this lesson. With *uno* you can say the same thing: *Cuando uno está cansado, trabaja peor*."
++    },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Cuando se es joven, se aprende rápido.",
++          "english": "When you are young, you learn quickly."
++        },
++        {
++          "spanish": "Cuando se está lejos, se extraña a la familia.",
++          "english": "When you are far away, you miss your family."
++        },
++        {
++          "spanish": "Cuando uno se muda a otra ciudad, extraña a su familia.",
++          "english": "When you move to another city, you miss your family."
++        },
++        {
++          "spanish": "Me robaron el celular en el autobús.",
++          "english": "Somebody stole my phone on the bus."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Si el objeto es de persona y lleva preposición *a*, el verbo permanece rigurosamente en singular: *se entrevistó a los diplomáticos* (nunca *se entrevistaron a los diplomáticos*)."
++      "content": "Use the plural, not *se*, when someone did something to you: *Me robaron el celular*. And use *se* for rules, as in the notices of B2 Unit 19, because they apply to everybody. If you want to say that you feel something yourself, *uno* sounds more personal: *Uno se cansa*."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-21-03-a-gr.json b/content/es-latam/grammar/b2/b2-21-03-a-gr.json
+index 5d391ae3..dcfd2db7 100644
+--- a/content/es-latam/grammar/b2/b2-21-03-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-21-03-a-gr.json
+@@ -1,36 +1,84 @@
+ {
+-  "id": "grammar.b2.21.03.nominalizacion-despersonalizacion",
+-  "title": "La nominalización como recurso de despersonalización y concisión",
++  "id": "grammar.b2.21.03.nominalizacion",
++  "title": "Turning an Action Into a Noun",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "La nominalización consiste en transformar un verbo o una cláusula entera en un sintagma nominal (*promulgar la ley* -> *la promulgación de la ley*; *destruir los bosques* -> *la destrucción de los bosques*). En el ensayo, los informes jurídicos y los editoriales periodísticos, este mecanismo permite omitir por completo a los causantes de una acción, condensar información densa y dotar al texto de un tono desapasionado y analítico."
++      "title": "From verb to noun",
++      "content": "A verb tells you that something happens: *Los precios subieron*. A noun made from the verb turns the action into a thing: *la subida de los precios*. You can then use it as the subject of a new sentence and say nothing about who did it: *La subida de los precios preocupa a las familias*. Spanish has a few regular endings for these nouns, and the old subject or object of the verb follows with *de*."
+     },
+     {
+       "type": "table",
+-      "title": "Transformación de cláusulas verbales en sintagmas nominalizados",
++      "title": "Verb clause and noun phrase",
+       "rows": [
+         [
+-          "El gobierno promulgó el decreto de emergencia.",
+-          "La promulgación del decreto de emergencia calmó los mercados."
++          "Los precios subieron.",
++          "la subida de los precios"
+         ],
+         [
+-          "La empresa reestructuró sus pasivos financieros.",
+-          "La reestructuración de los pasivos financieros facilitó el crédito."
++          "El tren llegó.",
++          "la llegada del tren"
+         ],
+         [
+-          "El tribunal desestimó la demanda por vicios formales.",
+-          "La desestimación de la demanda por vicios formales cerró el caso."
++          "La ciudad creció.",
++          "el crecimiento de la ciudad"
+         ],
+         [
+-          "Las brigadas erradicaron la plaga agrícola.",
+-          "La erradicación de la plaga agrícola garantizó la exportación."
++          "Cambiaron las reglas.",
++          "el cambio de las reglas"
++        ],
++        [
++          "Decidieron cerrar la tienda.",
++          "la decisión de cerrar la tienda"
++        ]
++      ]
++    },
++    {
++      "type": "table",
++      "title": "Common endings",
++      "rows": [
++        [
++          "-ida, -ada: llegar, salir, subir",
++          "la llegada, la salida, la subida"
++        ],
++        [
++          "-miento: crecer, mover",
++          "el crecimiento, el movimiento"
++        ],
++        [
++          "-ción, -sión: decidir, organizar",
++          "la decisión, la organización"
++        ],
++        [
++          "-o: aumentar, cambiar",
++          "el aumento, el cambio"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "La subida de los precios preocupa a muchas familias.",
++          "english": "The rise in prices worries many families."
++        },
++        {
++          "spanish": "El aumento del tráfico molesta a los vecinos.",
++          "english": "The increase in traffic bothers the neighbours."
++        },
++        {
++          "spanish": "La llegada del tren se anunció a las ocho.",
++          "english": "The arrival of the train was announced at eight."
++        },
++        {
++          "spanish": "El cambio de horario sorprendió a todos.",
++          "english": "The change of schedule surprised everyone."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "Aunque la nominalización aporta rigor y distancia enunciativa, el abuso excesivo de sustantivos abstractos encadenados puede entorpecer la fluidez del texto. Combínala armónicamente con verbos precisos."
++      "content": "The noun keeps the idea of the verb but drops the doer. *Decidieron cerrar la tienda* says that someone decided; *la decisión de cerrar la tienda* does not. The gender comes with the ending: *la* subida, *el* aumento. In everyday talk the verb is often simpler, so use these nouns when a short, neutral sentence helps."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-21-04-a-gr.json b/content/es-latam/grammar/b2/b2-21-04-a-gr.json
+index 83ed506d..44b6b91b 100644
+--- a/content/es-latam/grammar/b2/b2-21-04-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-21-04-a-gr.json
+@@ -1,36 +1,66 @@
+ {
+-  "id": "grammar.b2.21.04.verbos-impersonales-evaluativos",
+-  "title": "Verbos impersonales evaluativos y de necesidad institucional",
++  "id": "grammar.b2.21.04.hace-falta-basta-urge",
++  "title": "Needed, Enough, Urgent",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Ciertos verbos terciopersonales actúan en construcciones impersonales para señalar necesidad, pertinencia, incumbencia o constatación fáctica. Verbos como *convenir*, *urgir*, *constar*, *atañer* e *incumbir* rigen oraciones subordinadas que seleccionan indicativo o subjuntivo según la naturaleza semántica de la matriz: certeza fáctica (*consta que + indicativo*) frente a valoración o directriz institucional (*conviene que / urge que + subjuntivo*)."
++      "title": "Three more expressions",
++      "content": "You know the subjunctive after value judgments such as *es importante que* from A2 Unit 27, and *conviene que* and *es mejor que* from B2 Unit 4. You also know that when the subject does not change, Spanish prefers the infinitive (B2 Unit 4). Three more expressions work in the same way: *hace falta que* \"it is necessary that\", *basta con que* \"it is enough that\" and *urge que* \"it is urgent that\". They are all followed by the subjunctive when there is a new subject."
+     },
+     {
+       "type": "table",
+-      "title": "Matrices impersonales de evaluación y selección de modo",
++      "title": "Subjunctive or infinitive",
+       "rows": [
+         [
+-          "Conviene que el directorio evalúe el informe técnico.",
+-          "It is advisable that the board evaluate the technical report (subj)."
++          "Hace falta que lleguemos temprano.",
++          "We need to arrive early. (new subject: subjunctive)"
+         ],
+         [
+-          "Urge que se tomen medidas cautelares en la frontera.",
+-          "It is urgent that precautionary measures be taken at the border (subj)."
++          "Hace falta llegar temprano.",
++          "Arriving early is necessary. (no new subject: infinitive)"
+         ],
+         [
+-          "Consta en actas que los comisionados votaron a favor.",
+-          "It is recorded in minutes that the commissioners voted in favor (ind)."
++          "Basta con que llames.",
++          "It is enough that you call. (subjunctive)"
+         ],
+         [
+-          "Incumbe a las autoridades velar por la transparencia.",
+-          "It is incumbent upon the authorities to safeguard transparency (inf)."
++          "Basta con llamar.",
++          "It is enough to call. (infinitive)"
++        ],
++        [
++          "Urge que lo arreglen.",
++          "It is urgent that they fix it. (subjunctive)"
++        ],
++        [
++          "Urge arreglarlo.",
++          "Fixing it is urgent. (infinitive)"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Hace falta que cada uno traiga algo de comer.",
++          "english": "Everyone needs to bring something to eat."
++        },
++        {
++          "spanish": "Basta con que nos avises un día antes.",
++          "english": "It is enough that you let us know a day before."
++        },
++        {
++          "spanish": "Urge que arreglen la puerta de la oficina.",
++          "english": "It is urgent that they fix the office door."
++        },
++        {
++          "spanish": "Hace falta un plan nuevo.",
++          "english": "A new plan is needed."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "*Consta que* expresa evidencia probada e incontrovertible, por lo que exige modo indicativo. En cambio, *urge que* y *conviene que* conllevan una directriz o deseo institucional, exigiendo invariablemente subjuntivo."
++      "content": "*Hacer falta* also works with a noun: *Hace falta tiempo*, *Hacen falta más sillas*. The verb agrees with the noun, as it does with *gustar*. With *que* it stays singular: *Hace falta que…*. Do not use the indicative after these three expressions, even when the thing is real: you are judging it, not announcing it."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/grammar/b2/b2-21-05-a-gr.json b/content/es-latam/grammar/b2/b2-21-05-a-gr.json
+index 5b6afb87..6c030b75 100644
+--- a/content/es-latam/grammar/b2/b2-21-05-a-gr.json
++++ b/content/es-latam/grammar/b2/b2-21-05-a-gr.json
+@@ -1,36 +1,58 @@
+ {
+-  "id": "grammar.b2.21.05.distanciamiento-epistemico-atenuacion",
+-  "title": "Distanciamiento epistémico y fórmulas de atenuación asertiva",
++  "id": "grammar.b2.21.05.hedging",
++  "title": "Softening What You Say",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "En la redacción diplomática, pericial y académica avanzada, la aserción tajante se sustituye a menudo por fórmulas de atenuación o *hedging*. Estas estructuras permiten al autor modular su grado de compromiso con la verdad de una afirmación, manifestando cautela metodológica o cortesía discursiva mediante el condicional simple (*cabría inferir*, *se presumiría*), la pasiva de percepción (*parece desprenderse*) o adverbios de aproximación modal (*presumiblemente*, *en principio*)."
++      "title": "Hedging: saying less than you could",
++      "content": "When you are not sure, or do not want to sound too direct, you hedge: you soften a claim. You already have several tools. You know *se dice que* and *al parecer* from B2 Unit 18, *por lo visto*, *tal vez* and *seguramente* from B2 Unit 3, and *me parece que* from B1 Unit 7. This lesson adds four more: *parece que* + indicative, *según parece*, the conditional *podría decirse que*, and *tal vez convendría* for a gentle suggestion."
+     },
+     {
+       "type": "table",
+-      "title": "Fórmulas de atenuación epistémica en la prosa crítica",
++      "title": "Four ways to soften",
+       "rows": [
+         [
+-          "Cabría inferir que las partes alcanzaron un principio de acuerdo.",
+-          "One might infer that the parties reached an agreement in principle."
++          "Parece que el plan no funciona.",
++          "It seems the plan is not working. (an impression)"
+         ],
+         [
+-          "De los datos disponibles parece desprenderse una tendencia positiva.",
+-          "From the available data a positive trend seems to emerge."
++          "Según parece, la reunión empieza a las tres.",
++          "Apparently the meeting starts at three. (as far as one can tell)"
+         ],
+         [
+-          "Se presumiría que los desembolsos se realizaron conforme a ley.",
+-          "It would be presumed that the disbursements were made according to law."
++          "Podría decirse que el plan no funciona del todo.",
++          "One could say the plan does not entirely work. (a possibility, not a fact)"
+         ],
+         [
+-          "Resulta razonable suponer que habrá ajustes presupuestarios.",
+-          "It is reasonable to assume that there will be budgetary adjustments."
++          "Tal vez convendría revisar el horario.",
++          "Perhaps it would be a good idea to check the schedule. (a suggestion)"
+         ]
+       ]
+     },
++    {
++      "type": "examples",
++      "items": [
++        {
++          "spanish": "Parece que va a llover toda la tarde.",
++          "english": "It looks like it will rain all afternoon."
++        },
++        {
++          "spanish": "Según parece, el director no puede venir hoy.",
++          "english": "Apparently the director cannot come today."
++        },
++        {
++          "spanish": "Podría decirse que fue un buen año para la empresa.",
++          "english": "One could say it was a good year for the company."
++        },
++        {
++          "spanish": "Tal vez convendría hablar con la jefa antes de decidir.",
++          "english": "Perhaps it would be a good idea to talk to the boss before deciding."
++        }
++      ]
++    },
+     {
+       "type": "tip",
+-      "content": "El uso del condicional de modestia (*cabría señalar*, *valdría la pena matizar*) es el estándar de oro en las reseñas académicas y ensayos latinoamericanos de nivel C1/B2 superior para polemizar con elegancia sin confrontación directa."
++      "content": "Compare: *El plan no funciona* (blunt), *Parece que el plan no funciona* (an impression), *Podría decirse que el plan no funciona del todo* (very careful). One hedge is enough: more than one sounds heavy. Affirmative *parece que* takes the indicative; *no parece que* takes the subjunctive, as *no creo que* does (B1 Unit 7): *No parece que sea fácil*."
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-19-01.json b/content/es-latam/lessons/b2/b2-19-01.json
+index 2bd305a7..db6ca673 100644
+--- a/content/es-latam/lessons/b2/b2-19-01.json
++++ b/content/es-latam/lessons/b2/b2-19-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.19.01",
+-  "title": "Pasiva refleja básica y concordancia de número",
++  "title": "Passive Se: The Verb Agrees With the Thing",
+   "level": "B2",
+-  "goal": "Master basic passive reflex constructions with 'se' and ensure strict subject-verb number agreement with postposed plural patients.",
+-  "grammar": "pasiva refleja básica y concordancia estricta de número con el sujeto paciente",
++  "goal": "Use passive se with a singular or plural noun and make the verb agree with it.",
++  "grammar": "Passive se and agreement with the noun",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate passive reflex sentences with 'se' and third-person verbs.",
+-        "Ensure mandatory plural agreement when the passive subject is plural (se firmaron los acuerdos).",
+-        "Differentiate passive patients from direct objects."
++        "I can make the verb agree with the noun after passive se.",
++        "I can use se with poder or deber and an infinitive.",
++        "I can use the new words for agreements, rules and announcements."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-19-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can make the verb agree with the noun after passive se.",
++        "I can use se with poder or deber and an infinitive.",
++        "I can use the new words for agreements, rules and announcements."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-19-02.json b/content/es-latam/lessons/b2/b2-19-02.json
+index 1971df59..eb636098 100644
+--- a/content/es-latam/lessons/b2/b2-19-02.json
++++ b/content/es-latam/lessons/b2/b2-19-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.19.02",
+-  "title": "Pasiva refleja frente a impersonal con se",
++  "title": "Passive Se or Impersonal Se?",
+   "level": "B2",
+-  "goal": "Distinguish reflexive passives with plural inanimate subjects from strictly impersonal 'se' clauses introducing animate patients with 'a'.",
+-  "grammar": "distinción entre pasiva refleja e impersonalidad sintáctica con se y marca de acusativo 'a'",
++  "goal": "Tell passive se, which agrees with a thing, from impersonal se, which stays singular.",
++  "grammar": "Passive se, impersonal se and personal a",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Apply invariant singular verb agreement in impersonal clauses with personal 'a' (se atendió a las víctimas).",
+-        "Contrast inanimate reflexive passives with human impersonal structures.",
+-        "Avoid erroneous pluralization in impersonal human clauses (*se atendieron a las víctimas)."
++        "I can tell passive se, which agrees with a thing, from impersonal se, which stays singular.",
++        "I can keep the verb singular when a particular person follows with personal a.",
++        "I can use the new words for people in charge, customers and neighbours."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-19-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can tell passive se, which agrees with a thing, from impersonal se, which stays singular.",
++        "I can keep the verb singular when a particular person follows with personal a.",
++        "I can use the new words for people in charge, customers and neighbours."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-19-03.json b/content/es-latam/lessons/b2/b2-19-03.json
+index 6bc883b6..a5802236 100644
+--- a/content/es-latam/lessons/b2/b2-19-03.json
++++ b/content/es-latam/lessons/b2/b2-19-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.19.03",
+-  "title": "Restricciones de agentividad en la pasiva refleja",
++  "title": "Who Did It? Not With Passive Se",
+   "level": "B2",
+-  "goal": "Examine semantic agency constraints and agent omission in reflexive passive clauses versus analytical passives.",
+-  "grammar": "restricciones de agentividad implícita y omisión del complemento agente en la pasiva refleja",
++  "goal": "Leave the doer out with passive se, or name the doer with a ser passive or an active sentence.",
++  "grammar": "No doer with por after passive se",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Recognize why reflexive passives reject overt agent complements with 'por'.",
+-        "Select between reflexive passives (agentless) and analytical passives (overt agent).",
+-        "Deploy natural journalistic and institutional prose without awkward agent phrases."
++        "I can leave out who did it when I use passive se.",
++        "I can name who did it with a ser passive and por, or with an active sentence.",
++        "I can use the new words for buildings, bridges and the people who build them."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-19-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can leave out who did it when I use passive se.",
++        "I can name who did it with a ser passive and por, or with an active sentence.",
++        "I can use the new words for buildings, bridges and the people who build them."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-19-04.json b/content/es-latam/lessons/b2/b2-19-04.json
+index 0a744576..8752f756 100644
+--- a/content/es-latam/lessons/b2/b2-19-04.json
++++ b/content/es-latam/lessons/b2/b2-19-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.19.04",
+-  "title": "El se en el discurso administrativo y legal",
++  "title": "Notices and Instructions With Se",
+   "level": "B2",
+-  "goal": "Deploy the impersonal and reflexive 'se' in decrees, judicial rulings, minutes, and administrative edicts.",
+-  "grammar": "uso de la pasiva refleja e impersonal en registros jurídicos, administrativos y notariales",
++  "goal": "Read and write short notices, adverts and instructions with se.",
++  "grammar": "Se in notices and instructions",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Formulate performative legal resolutions using 'se dispone', 'se resuelve', and 'se notifica'.",
+-        "Confer formal institutional objectivity to executive decrees and official communiqués.",
+-        "Structure solemn legislative clauses adhering to legal drafting house style."
++        "I can read and write short notices and instructions with se.",
++        "I can choose a singular or plural verb in a notice by looking at what follows.",
++        "I can use the new words for notices, rent and silence."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-19-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can read and write short notices and instructions with se.",
++        "I can choose a singular or plural verb in a notice by looking at what follows.",
++        "I can use the new words for notices, rent and silence."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-19-05.json b/content/es-latam/lessons/b2/b2-19-05.json
+index 7ab460be..39d49509 100644
+--- a/content/es-latam/lessons/b2/b2-19-05.json
++++ b/content/es-latam/lessons/b2/b2-19-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.19.05",
+-  "title": "Desambiguación pragmática de las funciones de se",
++  "title": "Which Se Is It?",
+   "level": "B2",
+-  "goal": "Disambiguate among reflexive, reciprocal, inchoative, and passive meanings of the multi-functional pronoun 'se'.",
+-  "grammar": "desambiguación contextual y pragmática de los valores reflexivo, recíproco y pasivo de se",
++  "goal": "Tell reflexive, reciprocal, passive, impersonal and accidental se apart.",
++  "grammar": "The values of se",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Distinguish reciprocal interpretations from passive reflexives in plural animated contexts.",
+-        "Differentiate pronominal aspectual nuances from true passive structures.",
+-        "Analyze ambiguous sentences and restructure them for crystal-clear clarity."
++        "I can tell reflexive, reciprocal, passive, impersonal and accidental se apart.",
++        "I can say that something happened to me by accident with se me.",
++        "I can use the new words for hugging, forgetting, losing and dropping things."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-19-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can tell reflexive, reciprocal, passive, impersonal and accidental se apart.",
++        "I can say that something happened to me by accident with se me.",
++        "I can use the new words for hugging, forgetting, losing and dropping things."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-19-consolidation.json b/content/es-latam/lessons/b2/b2-19-consolidation.json
+index b6531b47..4458e3e9 100644
+--- a/content/es-latam/lessons/b2/b2-19-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-19-consolidation.json
+@@ -1,16 +1,17 @@
+ {
+   "id": "lesson.b2.19.consolidation",
+-  "title": "Consolidación B2: Pasiva refleja e impersonalidad en La ciudad y los perros",
++  "title": "Unit 19 Consolidation: Se in Notices, News and a Novel",
+   "level": "B2",
+-  "goal": "Synthesize reflexive passive and impersonal 'se' structures through Mario Vargas Llosa's military academy masterpiece La ciudad y los perros.",
+-  "grammar": "síntesis de voz pasiva refleja, impersonalidad con se y adaptación de La ciudad y los perros",
++  "goal": "Review passive se, impersonal se and the other values of se, and read a short text about Vargas Llosa and La ciudad y los perros.",
++  "grammar": "Review of passive se and impersonal se",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Master the distinction between plural reflexive passives and singular animate impersonals.",
+-        "Deploy institutional and journalistic 'se' constructions with stylistic precision.",
+-        "Analyze institutional authoritarianism, omertà, and social hypocrisy in Vargas Llosa's novel."
++        "I can make the verb agree with the noun after passive se, and keep it singular with no noun or with personal a.",
++        "I can leave out who did it with se, and name the doer with ser and por.",
++        "I can tell the five values of se apart.",
++        "I can read a short text about Vargas Llosa and La ciudad y los perros."
+       ]
+     },
+     {
+@@ -38,12 +39,13 @@
+     },
+     {
+       "type": "checklist",
++      "title": "Can you do this?",
+       "items": [
+-        "Aplico la concordancia de número en la pasiva refleja con sujetos pacientes plurales.",
+-        "Mantengo el verbo en singular cuando el objeto humano lleva la preposición 'a'.",
+-        "Evito la inclusión forzada de complementos agentes con 'por' en pasivas reflejas.",
+-        "Desambiguo con soltura los distintos valores pragmáticos del pronombre 'se'."
++        "I can make the verb agree with the noun after passive se, and keep it singular with no noun or with personal a.",
++        "I can leave out who did it with se, and name the doer with ser and por.",
++        "I can tell the five values of se apart.",
++        "I can read a short text about Vargas Llosa and La ciudad y los perros."
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-21-01.json b/content/es-latam/lessons/b2/b2-21-01.json
+index ddfc4520..748377fa 100644
+--- a/content/es-latam/lessons/b2/b2-21-01.json
++++ b/content/es-latam/lessons/b2/b2-21-01.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.21.01",
+-  "title": "La tercera persona impersonal y el indefinido uno",
++  "title": "They Say, One Knows",
+   "level": "B2",
+-  "goal": "Master third-person plural impersonals and indefinite 'uno' to obscure agency and formulate shared human principles.",
+-  "grammar": "tercera persona plural impersonal y pronombre indefinido uno",
++  "goal": "Talk about unnamed people with a plural verb and talk about people in general with uno.",
++  "grammar": "Third-person plural impersonals and uno",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Deploy plural third-person verbs without explicit subject to communicate rumors or general talk.",
+-        "Utilize indefinite 'uno' to project generalized experience in thoughtful discourse.",
+-        "Avoid conversational 'uno' in strict academic prose favoring nominalizations."
++        "I can use a plural verb with no subject for rumours and for unknown doers.",
++        "I can use uno or una for a general truth that includes me.",
++        "I can use the new words for rumours, stealing and resigning."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-21-01.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use a plural verb with no subject for rumours and for unknown doers.",
++        "I can use uno or una for a general truth that includes me.",
++        "I can use the new words for rumours, stealing and resigning."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-21-02.json b/content/es-latam/lessons/b2/b2-21-02.json
+index f0847a3a..d4fa2a41 100644
+--- a/content/es-latam/lessons/b2/b2-21-02.json
++++ b/content/es-latam/lessons/b2/b2-21-02.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.21.02",
+-  "title": "El se impersonal avanzado y la gestión institucional",
++  "title": "Se, They or One?",
+   "level": "B2",
+-  "goal": "Deploy advanced impersonal 'se' with intransitive verbs and transitive verbs taking personal 'a', distinguishing it from reflexive passive.",
+-  "grammar": "se impersonal con intransitivos y objeto de persona con a frente a pasiva refleja",
++  "goal": "Choose between se, a plural verb and uno, and use impersonal se with ser and estar.",
++  "grammar": "Choosing among impersonal forms",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Construct impersonal 'se' with personal 'a' and invariable singular verb.",
+-        "Differentiate impersonal 'se' from agreement-requiring reflexive passive.",
+-        "Master impersonal formulas in administrative notices and institutional summaries."
++        "I can choose between se, a plural verb and uno to say who is part of the statement.",
++        "I can use impersonal se with ser or estar and an adjective.",
++        "I can use the new words for moving away, missing people and looking after yourself."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-21-02.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can choose between se, a plural verb and uno to say who is part of the statement.",
++        "I can use impersonal se with ser or estar and an adjective.",
++        "I can use the new words for moving away, missing people and looking after yourself."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-21-03.json b/content/es-latam/lessons/b2/b2-21-03.json
+index f5538619..fe338ae5 100644
+--- a/content/es-latam/lessons/b2/b2-21-03.json
++++ b/content/es-latam/lessons/b2/b2-21-03.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.21.03",
+-  "title": "La nominalización y la concisión ensayística",
++  "title": "Turning an Action Into a Noun",
+   "level": "B2",
+-  "goal": "Deploy syntactic nominalization to transform verbal clauses into dense noun phrases, omitting agents and heightening formality.",
+-  "grammar": "nominalización desagentivadora y condensación informativa en la prosa ensayística",
++  "goal": "Turn a verb clause into a noun phrase to leave the doer out.",
++  "grammar": "Nominalisation to leave out the doer",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Transform verbal clauses into abstract nouns ending in -ción and -miento.",
+-        "Omit circumstantial human agents to achieve objective scientific tone.",
+-        "Balance nominal density to prevent stylistic opacity in formal critique."
++        "I can turn a verb clause into a noun phrase, as in la subida de los precios.",
++        "I can use the endings -ida, -miento, -ción and -o to form nouns from verbs.",
++        "I can use the new words for rises, arrivals, changes and growth."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-21-03.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can turn a verb clause into a noun phrase, as in la subida de los precios.",
++        "I can use the endings -ida, -miento, -ción and -o to form nouns from verbs.",
++        "I can use the new words for rises, arrivals, changes and growth."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-21-04.json b/content/es-latam/lessons/b2/b2-21-04.json
+index 0927cf71..82faff54 100644
+--- a/content/es-latam/lessons/b2/b2-21-04.json
++++ b/content/es-latam/lessons/b2/b2-21-04.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.21.04",
+-  "title": "Verbos de necesidad y evaluación institucional",
++  "title": "Needed, Enough, Urgent",
+   "level": "B2",
+-  "goal": "Deploy impersonal evaluative and necessity verbs (convenir, urgir, constar, atañer, incumbir) with appropriate mood selection.",
+-  "grammar": "verbos terciopersonales de valoración y necesidad: alternancia indicativo y subjuntivo",
++  "goal": "Use hace falta que, basta con que and urge que with the subjunctive, or the infinitive when the subject does not change.",
++  "grammar": "Hace falta que, basta con que, urge que",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Select indicative mood after factive certainty matrices like 'consta que'.",
+-        "Enforce subjunctive mood after institutional directives like 'urge que' and 'conviene que'.",
+-        "Delimit administrative jurisdictions using 'atañer a' and 'incumbir a'."
++        "I can use hace falta que, basta con que and urge que with the subjunctive.",
++        "I can use the infinitive after them when the subject does not change.",
++        "I can use the new words for needs, fixing things and urgent matters."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-21-04.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can use hace falta que, basta con que and urge que with the subjunctive.",
++        "I can use the infinitive after them when the subject does not change.",
++        "I can use the new words for needs, fixing things and urgent matters."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-21-05.json b/content/es-latam/lessons/b2/b2-21-05.json
+index 0fcaa4b3..db3b36c5 100644
+--- a/content/es-latam/lessons/b2/b2-21-05.json
++++ b/content/es-latam/lessons/b2/b2-21-05.json
+@@ -1,16 +1,16 @@
+ {
+   "id": "lesson.b2.21.05",
+-  "title": "Atenuación epistémica y cautela diplomática",
++  "title": "Softening What You Say",
+   "level": "B2",
+-  "goal": "Master hedging devices, epistemic conditional formulas, and perception passives for nuanced academic and diplomatic analysis.",
+-  "grammar": "fórmulas de atenuación asertiva, condicional de modestia y distanciamiento epistémico",
++  "goal": "Soften a claim with parece que, según parece, podría decirse que and tal vez convendría.",
++  "grammar": "Hedging",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Apply the conditional of modesty (cabría inferir, se presumiría) to modulate claims.",
+-        "Employ perception passives like 'parece desprenderse' in data analysis.",
+-        "Express methodological caution and respectful disagreement without polemical confrontation."
++        "I can soften a claim with parece que, según parece or podría decirse que.",
++        "I can make a gentle suggestion with tal vez convendría.",
++        "I can use the new words for plans, checking and what is advisable."
+       ]
+     },
+     {
+@@ -51,6 +51,19 @@
+       "exerciseRefs": [
+         "b2-21-05.ex06"
+       ]
++    },
++    {
++      "type": "srs",
++      "title": "Add to Review"
++    },
++    {
++      "type": "checklist",
++      "title": "Can you do this?",
++      "items": [
++        "I can soften a claim with parece que, según parece or podría decirse que.",
++        "I can make a gentle suggestion with tal vez convendría.",
++        "I can use the new words for plans, checking and what is advisable."
++      ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/lessons/b2/b2-21-consolidation.json b/content/es-latam/lessons/b2/b2-21-consolidation.json
+index f8d6da98..76de46c6 100644
+--- a/content/es-latam/lessons/b2/b2-21-consolidation.json
++++ b/content/es-latam/lessons/b2/b2-21-consolidation.json
+@@ -1,16 +1,17 @@
+ {
+   "id": "lesson.b2.21.consolidation",
+-  "title": "Consolidación B2: Impersonalidad y El pozo de Augusto Céspedes",
++  "title": "Unit 21 Consolidation: They Say, One Knows and Softer Claims",
+   "level": "B2",
+-  "goal": "Synthesize syntactic impersonality, nominalization, and epistemic hedging through Augusto Céspedes's Chaco War masterpiece El pozo.",
+-  "grammar": "síntesis de impersonalidad sintáctica, nominalización y adaptación de Sangre de mestizos",
++  "goal": "Review plural impersonals, uno, nominalisation, hace falta que and hedging, and read a short text about Céspedes and El pozo.",
++  "grammar": "Review of impersonality and hedging",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Master impersonal 'se' and third-person plural generalizations in formal registers.",
+-        "Deploy nominalizations and evaluative impersonal matrices with correct mood selection.",
+-        "Analyze the fraternal awakening and existential tragedy of the Chaco War in Bolivian literature."
++        "I can use a plural verb, se or uno to speak about unnamed people.",
++        "I can turn a verb clause into a noun phrase to leave the doer out.",
++        "I can use hace falta que, basta con que and urge que, and soften a claim with parece que.",
++        "I can read a short text about Céspedes and El pozo."
+       ]
+     },
+     {
+@@ -38,13 +39,13 @@
+     },
+     {
+       "type": "checklist",
++      "title": "Can you do this?",
+       "items": [
+-        "Utilizo adecuadamente la tercera persona plural impersonal y el indefinido 'uno'.",
+-        "Construyo oraciones impersonales con 'se' distinguiéndolas de la pasiva refleja.",
+-        "Aplico nominalizaciones precisas para despersonalizar textos analíticos.",
+-        "Selecciono el modo verbal correcto tras verbos impersonales como 'constar' y 'urgir'.",
+-        "Modulo mis afirmaciones con fórmulas de atenuación epistémica en condicional."
++        "I can use a plural verb, se or uno to speak about unnamed people.",
++        "I can turn a verb clause into a noun phrase to leave the doer out.",
++        "I can use hace falta que, basta con que and urge que, and soften a claim with parece que.",
++        "I can read a short text about Céspedes and El pozo."
+       ]
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/stories/classics/b2/b2-19.json b/content/es-latam/stories/classics/b2/b2-19.json
+index c4b29e30..950a320d 100644
+--- a/content/es-latam/stories/classics/b2/b2-19.json
++++ b/content/es-latam/stories/classics/b2/b2-19.json
+@@ -1,85 +1,76 @@
+ {
+   "id": "story.b2.19.vargasllosa",
+-  "title": "La ciudad y los perros: El código de silencio en el Leoncio Prado",
++  "title": "Vargas Llosa y La ciudad y los perros",
+   "level": "B2",
+   "lesson": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Adaptación literaria de la célebre novela de Mario Vargas Llosa: la disciplina militar asfixiante del Colegio Militar Leoncio Prado en Lima, el robo clandestino de un examen de química por 'el Círculo', la delación desesperada del Esclavo, el misterioso disparo mortal en las maniobras y el silencio corporativo impuesto por los oficiales para salvaguardar el prestigio institucional.",
+-  "characters": [
+-    "Cadete Alberto Fernández ('el Poeta')",
+-    "Cadete Jaguar",
+-    "Cadete Ricardo Arana ('el Esclavo')",
+-    "Teniente Gamboa",
+-    "Coronel director"
+-  ],
++  "summary": "Texto sobre Mario Vargas Llosa, escritor peruano, y sobre su primera novela, La ciudad y los perros, publicada en 1963.",
++  "characters": [],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Bajo el cielo encapotado y plomizo de Lima, donde la niebla húmeda se confunde con el salitre del océano Pacífico, el Colegio Militar Leoncio Prado se alzaba en el distrito de La Perla como un microcosmos brutal de toda la sociedad peruana. Tras sus altos muros de ladrillo y rejas de hierro, centenares de adolescentes procedentes de las clases aristocráticas de Miraflores, las barriadas pobres del Rímac y las provincias andinas convivían sometidos a una disciplina militar implacable. En aquel recinto carcelario, se aprendía rápidamente que la debilidad no se perdonaba: los alumnos del último año bautizaban cruelmente a los recién llegados como 'perros', imponiéndoles ritos de sumisión, novatadas violentas y castigos humillantes diseñados para forjar una masculinidad tosca y despiadada."
++      "text": "Mario Vargas Llosa fue un escritor peruano. Nació en Arequipa en 1936 y murió en Lima el 13 de abril de 2025. En 2010 recibió el Premio Nobel de Literatura. En este texto vamos a hablar de su primera novela, La ciudad y los perros, que se publicó en 1963."
+     },
+     {
+       "type": "narration",
+-      "text": "Para sobrevivir a los abusos y burlar el estricto reglamento interno, se organizaban cofradías clandestinas regidas por códigos implacables. La más temida de ellas era 'el Círculo', una banda secreta capitaneada por el Jaguar, un cadete silencioso, atlético y de mirada gélida que dominaba los dormitorios mediante la ley de los puños. Una noche fría y neblinosa, se ejecutó una audaz operación prohibida: el Círculo rompió el cristal de un ventanal del laboratorio y se sustrajo el examen oficial de química que se aplicaría al día siguiente. Sin embargo, al descubrirse el vidrio astillado, las autoridades militares reaccionaron con indignación draconiana: se suspendieron de inmediato las salidas de fin de semana para toda la sección y se decretó un encierro indefinido hasta que apareciera el culpable."
++      "text": "La novela se desarrolla entre los cadetes del colegio militar Leoncio Prado, en Lima. Un cadete es un joven que estudia en una escuela militar. Vargas Llosa estudió en ese colegio cuando era adolescente."
+     },
+     {
+       "type": "narration",
+-      "text": "El confinamiento prolongado resultó devastador para Ricardo Arana, apodado con desprecio 'el Esclavo' por su carácter tímido, su fragilidad física y su incapacidad visceral para responder a los golpes. Desesperado por obtener el pase de salida que le permitiría visitar a Teresa, una vecina de barrio a quien amaba en secreto desde la infancia, el Esclavo tomó una decisión trágica y suicida: acudió al despacho de los oficiales y denunció en secreto a Cava, el cadete serrano que había ejecutado materialmente el robo del examen. Pocas horas después, Cava fue degradado en público ante el batallón formado y expulsado del colegio en medio de la ignominia general. En el cuartel, la delación representaba el pecado supremo: se juró venganza inmediata en los pasillos nocturnos."
++      "text": "La ciudad y los perros ganó el premio Biblioteca Breve en 1962, un año antes de su publicación. Eso significa que el premio se concedió antes de que los lectores pudieran comprar el libro. Cuando la novela se publicó, en 1963, ya tenía ese premio. Un premio literario es un reconocimiento que se da a un libro o a un autor."
+     },
+     {
+       "type": "narration",
+-      "text": "La venganza no tardó en consumarse con frialdad letal. Durante unos ejercicios tácticos con fusiles y munición real en el descampado pedregoso de la pampa de Amancayes, una detonación imprevista retumbó en medio de la humareda de los disparos. El Esclavo cayó desplomado sobre el polvo con una herida de bala en la cabeza. Los partes médicos iniciales determinaron que se trataba de un accidente fortuito provocado por la propia negligencia del cadete al tropezar con su arma. No obstante, el cadete Alberto Fernández, conocido como 'el Poeta' por redactar cartas de amor y novelitas eróticas a cambio de cigarrillos, sabía que el Esclavo jamás se habría disparado a sí mismo: se sospechaba con certeza moral que el Jaguar había aprovechado el fragor del combate simulado para liquidar al delator."
++      "text": "También se cuenta que las autoridades del colegio quemaron ejemplares de la novela. Fíjese en la forma de esa frase: dice lo que se cuenta, pero no dice quién lo cuenta. En español, el verbo con se permite dejar fuera a la persona que hace o dice algo. Por eso, esa información debe leerse como una historia que se cuenta, no como un dato seguro."
+     },
+     {
+       "type": "narration",
+-      "text": "Consumido por el remordimiento y el horror, Alberto acudió ante el teniente Gamboa, el único oficial recto y riguroso que creía en la justicia militar más allá de los favoritismos. Conmovido por el testimonio del cadete, Gamboa inició una exhaustiva investigación interna y encerró al Jaguar en el calabozo preventivo. Pero cuando las pesquisas amenazaron con desvelar ante la opinión pública que en el prestigioso colegio militar se traficaba alcohol, se jugaba a los dados y se cometían asesinatos por venganza, la jerarquía superior intervino con contundencia. El coronel director ordenó archivar de inmediato el sumario: se alegó que no existían pruebas concluyentes y que el prestigio sagrado del ejército no podía ser mancillado por los rumores de unos muchachos indisciplinados."
++      "text": "En este texto no se cuenta la historia de la novela y no se cita ninguna frase del libro. Se habla del libro y de su autor, pero no se resumen sus páginas. Si usted hubiera leído solo este texto, todavía no conocería la novela, porque este texto no la cuenta. Quien quiera conocer la novela tiene que leerla."
+     },
+     {
+       "type": "narration",
+-      "text": "Para silenciar definitivamente el escándalo, se amenazó a Alberto con revelar ante su familia las cartas pornográficas que él mismo había escrito, obligándolo a retractarse y firmar su silencio cómplice. Por su parte, el honesto teniente Gamboa fue sancionado con un traslado forzoso a una guarnición remota en las punas heladas de la sierra sur. Al finalizar el año lectivo, los cadetes se graduaron y se dispersaron por la inmensa urbe de Lima como si nada hubiera ocurrido. El Jaguar regresó a su barrio prometiendo redimirse, mientras Alberto se preparaba para viajar a estudiar al extranjero, olvidando las pesadillas del internado. La novela de Vargas Llosa denunciaba así cómo las instituciones autoritarias imponen el silencio colectivo para encubrir la violencia, dejando a los individuos atrapados en una telaraña de hipocresía social."
++      "text": "Las fechas ayudan a ordenar los hechos. La novela se publicó en 1963 y el Premio Nobel se concedió en 2010: entre una fecha y otra pasaron cuarenta y siete años. En otro texto de este curso se habla de otra novela de Vargas Llosa."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Por qué Ricardo Arana, 'el Esclavo', decidió romper el código de silencio y delatar el robo del examen?",
++          "question": "According to the text, when was La ciudad y los perros published?",
+           "options": [
+-            "Porque estaba desesperado por salir de franco el fin de semana para visitar a su amada Teresa.",
+-            "Porque el coronel le prometió un ascenso inmediato al rango de brigadier mayor.",
+-            "Porque deseaba expulsar a su enemigo el Jaguar para asumir el mando del Círculo.",
+-            "Porque los oficiales lo descubrieron con las copias del examen bajo su almohada."
++            "En 1962.",
++            "En 1963.",
++            "En 2010."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "El Esclavo estaba confinado indefinidamente y delató a Cava para conseguir el pase de salida y ver a Teresa."
++          "correctIndex": 1,
++          "explanation": "The text says that the novel was published in 1963. In 1962 it won the Biblioteca Breve prize, and 2010 is the year of the Nobel Prize."
+         },
+         {
+-          "question": "¿Cómo reaccionaron las altas autoridades del colegio militar ante la investigación iniciada por el teniente Gamboa?",
++          "question": "What does the text say about the school's authorities?",
+           "options": [
+-            "Archivaron el caso para salvaguardar el prestigio del ejército y castigaron a Gamboa trasladándolo a la sierra.",
+-            "Felicitaron a Gamboa públicamente y llevaron al Jaguar a un consejo de guerra televisado.",
+-            "Cerraron el colegio militar de forma definitiva demoliendo sus instalaciones.",
+-            "Nombraron a Alberto como nuevo director administrativo del colegio."
++            "Se cuenta que quemaron ejemplares de la novela.",
++            "Ganaron el premio Biblioteca Breve en 1962.",
++            "Estudiaron allí de adolescentes."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El coronel archivó el sumario para proteger la imagen institucional y sancionó al teniente Gamboa enviándolo a una guarnición remota."
++          "explanation": "The text says it is told (se cuenta) that the authorities of the school burned copies of the novel."
+         },
+         {
+-          "question": "¿Qué representa el Colegio Militar Leoncio Prado en la novela de Mario Vargas Llosa?",
++          "question": "Among whom does the novel take place, according to the text?",
+           "options": [
+-            "Un microcosmos de la sociedad peruana donde chocan distintas clases sociales bajo un régimen autoritario.",
+-            "Una academia deportiva de verano donde solo se practicaba natación competitiva.",
+-            "Un internado religioso fundado exclusivamente para la formación de futuros sacerdotes.",
+-            "Una colonia agrícola extranjera situada en las selvas de la frontera oriental."
++            "Entre los cadetes de un colegio militar de Lima.",
++            "Entre los estudiantes de una universidad de Arequipa.",
++            "Entre los lectores del premio Biblioteca Breve."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El colegio funciona como metáfora de la sociedad peruana, donde conviven jóvenes de todas las clases bajo violencia y jerarquía institucional."
++          "explanation": "The text says that the novel takes place among the cadets of the Leoncio Prado military school in Lima."
+         }
+       ]
+     }
+   },
+-  "author": "Mario Vargas Llosa (Perú, 1936–)",
++  "author": "Mario Vargas Llosa (Perú, 1936–2025)",
+   "work": "La ciudad y los perros (1963)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir de la novela clásica de Mario Vargas Llosa",
++  "source": "Texto original de Parlour sobre la obra y su autor; no reproduce ni resume escenas del original.",
+   "order": 19
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/stories/classics/b2/b2-21.json b/content/es-latam/stories/classics/b2/b2-21.json
+index 5a69d839..c26306cf 100644
+--- a/content/es-latam/stories/classics/b2/b2-21.json
++++ b/content/es-latam/stories/classics/b2/b2-21.json
+@@ -1,84 +1,76 @@
+ {
+   "id": "story.b2.21.cespedes",
+-  "title": "El pozo en el infierno verde: Voces y agonía en el Chaco Boreal",
++  "title": "Céspedes y El pozo",
+   "level": "B2",
+   "lesson": 6,
+   "type": "classic",
+   "estimatedMinutes": 8,
+-  "summary": "Una adaptación literaria de 'El pozo', relato cumbre del libro 'Sangre de mestizos' (1936) del maestro boliviano Augusto Céspedes: un pelotón de soldados excava obsesivamente un pozo en la aridez implacable del Chaco durante la guerra con Paraguay, descubriendo en el fondo de la tierra la desolación, la fraternidad de la sed y el despertar de una nueva conciencia nacional.",
+-  "characters": [
+-    "Suboficial narrador Miguel Navarro",
+-    "Soldado quechua Pedraza",
+-    "Zapador potosino Chacón",
+-    "Capitán de regimiento"
+-  ],
++  "summary": "Texto sobre Augusto Céspedes, escritor y periodista boliviano, sobre su libro Sangre de mestizos y sobre el cuento El pozo.",
++  "characters": [],
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En el corazón calcinado del Chaco Boreal, donde la línea del horizonte se disuelve en una reverberación asfixiante de polvo y salitrales secos, el calor no es una circunstancia atmosférica: es una condena corpórea implacable. En el verano de 1933, nuestro destacamento de zapadores del ejército boliviano recibió una orden terminante que sonaba a delirio o a milagro: excavar un pozo en medio del matorral espinoso, en un punto ciego donde la sed diezmaba a los regimientos con mayor ferocidad que las ametralladoras del ejército paraguayo. Entre las ramas espinosas del quebracho y los cactus achatados, el polvo blancuzco flotaba en el aire inmóvil como ceniza volcánica, adhiriéndose a las gargantas secas y a los labios agrietados de los soldados."
++      "text": "Augusto Céspedes fue un escritor y periodista boliviano. Nació en 1904 y murió en 1997. En este texto vamos a hablar de su vida, de uno de sus libros y de un cuento de ese libro."
+     },
+     {
+       "type": "narration",
+-      "text": "Durante semanas interminables que parecían fundirse en un solo mediodía perpetuo, el barreno y la pala se convirtieron en nuestras únicas armas. El soldado Pedraza, un campesino quechua de las laderas de Tarata que jamás había visto una llanura sin cerros, hundía el pico con una furia mecánica en la tierra compacta y arcillosa. Cada palada extraída era devuelta a la superficie con sogas de cuero desgastadas por el zapador Chacón, un minero potosino acostumbrado a la noche fría de los socavones de estaño que ahora sudaba a borbotones a cincuenta grados a la sombra. A medida que el túnel vertical descendía metro a metro hacia las entrañas de la tierra, la atmósfera en el fondo se volvía espesa, tibia y pegajosa como la respiración de un animal subterráneo."
++      "text": "Céspedes luchó en la guerra del Chaco, la guerra entre Bolivia y Paraguay que se desarrolló entre 1932 y 1935. Su participación en esa guerra es un dato de su vida. Otro dato es su trabajo como periodista. Los dos datos ayudan a presentar al autor. Las dos fechas de la guerra, 1932 y 1935, sirven para situar el libro en el tiempo."
+     },
+     {
+       "type": "narration",
+-      "text": "Diez metros, veinte metros, treinta metros. Al alcanzar los cuarenta metros de profundidad en aquel cilindro oscuro, la obsesión colectiva por el agua adquirió dimensiones místicas y desgarradoras. Nadie hablaba ya de la patria, ni de los discursos patrioteros de los políticos de La Paz, ni del petróleo invisible que decían que dormía bajo el subsuelo. Toda la existencia de cincuenta hombres se reducía al anhelo desesperado de una gota de humedad, a una mancha de barro fresco que anunciara la llegada de la napa freática. Cuando un soldado bajaba amarrado a la cuerda, los que aguardaban arriba escrutaban con ojos afiebrados el fondo del abismo, aguardando el grito salvador que trajera la resurrección."
++      "text": "Sangre de mestizos se publicó en 1936 y es su libro de cuentos sobre la guerra del Chaco. Un cuento es una historia corta, y un libro de cuentos reúne varias historias cortas. La publicación del libro llegó un año después del final de la guerra."
+     },
+     {
+       "type": "narration",
+-      "text": "Sin embargo, el fondo del pozo devolvía invariablemente el mismo veredicto despiadado: polvo seco, arena calcinada, tierra estéril y sorda que se desgranaba entre los dedos como harina caliente. En el fondo de aquel tubo de sombras, los soldados experimentaban un vértigo inverso: el cielo del Chaco se reducía a un diminuto círculo de luz lejana y cruel, tan inaccesible como la lluvia que se negaba a caer sobre los matorrales. Fue en ese confinamiento subterráneo donde el minero potosino y el campesino cochabambino comprendieron, sin necesidad de proclamas académicas, que compartían una misma condición de desamparo frente a una oficialidad lejana y a unas oligarquías que los habían arrojado a matarse entre hermanos desposeídos."
++      "text": "El pozo es el cuento más conocido de Sangre de mestizos. Se trata de soldados que cavan, desesperados por la sed, para buscar agua en el Chaco. Eso es todo lo que se dice aquí sobre el cuento: en este texto no se cuenta ninguna escena, no se cita ninguna frase y no se dice cómo termina."
+     },
+     {
+       "type": "narration",
+-      "text": "A mediados de julio, cuando la profundidad del pozo superaba los cuarenta y cinco metros y el agua continuaba siendo una quimera esquiva, sonó la alarma en la trinchera exterior: una patrulla enemiga avanzaba entre los algarrobales. El pozo que debía salvar nuestras vidas con su frescura líquida se transformó entonces en una fosa de combate. En torno a su boca de arcilla reseca se libró una escaramuza violenta y ciega. Al caer la tarde, con varios compañeros caídos sobre la tierra removida, el silencio retornó al matorral. El pozo yacía abierto como una gigantesca herida en la costra del desierto, mudo testigo de una tragedia absurda."
++      "text": "Fíjese en la forma de algunas frases. Con «Se dice que…» o «Dicen que…», el español presenta una información sin decir quién la da. Por eso, una frase como «Se dice que El pozo es el cuento más conocido del libro» no permite saber quién lo dice. En cambio, el año del libro, 1936, es un dato que se puede comprobar."
+     },
+     {
+       "type": "narration",
+-      "text": "Años más tarde, al recordar aquel infierno verde, comprendimos que en el fondo de ese pozo sin agua no hallamos manantiales subterráneos, pero desenterramos algo más hondo y duradero: la conciencia compartida de una nación mestiza e indígena que, unida por el dolor de la sed y el barro, decidió no volver a agachar la cabeza ante sus antiguos verdugos. En la memoria indeleble de los sobrevivientes, la imagen de aquel pozo seco perdura como el testimonio supremo de una fraternidad forjada en la desolación más absoluta."
++      "text": "Podría decirse que este texto es solo una puerta de entrada: da unos datos sobre el autor y sobre el cuento, pero no cuenta el cuento. Tal vez convendría leer el cuento antes de sacar conclusiones, porque uno no conoce una historia solo con los datos que se dan sobre ella. Quien quiera conocer El pozo tiene que leerlo."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál era la misión primordial asignada al destacamento de zapadores en el relato 'El pozo' de Augusto Céspedes?",
++          "question": "According to the text, when was Sangre de mestizos published?",
+           "options": [
+-            "Excavar desesperadamente un pozo en el Chaco en busca de agua para salvar a las tropas de la sed implacable.",
+-            "Construir un puente colgante sobre las aguas caudalosas del río Pilcomayo.",
+-            "Tender una línea de telégrafo que comunicara el frente con el palacio presidencial de La Paz.",
+-            "Desactivar las minas terrestres sembradas por la aviación enemiga en las serranías."
++            "En 1936.",
++            "En 1935.",
++            "En 1904."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El relato narra la agónica odisea de un pelotón que cava un pozo profundo en el desierto para hallar agua."
++          "explanation": "The text says that the book was published in 1936, one year after the end of the war. 1935 is the year the war ended, and 1904 is the year Céspedes was born."
+         },
+         {
+-          "question": "¿Qué revelación social experimentan los soldados de distintas regiones en el fondo del pozo?",
++          "question": "What does the text say about the war of the Chaco?",
+           "options": [
+-            "Descubren su fraternidad como mestizos e indígenas desamparados frente al abandono de las élites oligárquicas.",
+-            "Deciden desertar del ejército para fundar una compañía comercial en territorio argentino.",
+-            "Comprueban que el subsuelo del Chaco está repleto de lingotes de plata colonial.",
+-            "Se enfrentan entre sí por disputas regionales entre quechuas y aymaras."
++            "Fue entre Bolivia y Chile, de 1932 a 1935.",
++            "Fue entre Bolivia y Paraguay, de 1932 a 1935.",
++            "Fue entre Bolivia y Paraguay, de 1936 a 1939."
+           ],
+-          "correctIndex": 0,
+-          "explanation": "El sufrimiento compartido de la sed derriba los prejuicios regionales y despierta la conciencia nacional boliviana."
++          "correctIndex": 1,
++          "explanation": "The text says that it was the war between Bolivia and Paraguay, and that it took place between 1932 and 1935."
+         },
+         {
+-          "question": "¿En qué se transforma trágicamente el pozo al aproximarse una patrulla enemiga?",
++          "question": "What does the text say about the story El pozo?",
+           "options": [
+-            "En una trinchera defensiva y fosa de combate donde varios soldados pierden la vida.",
+-            "En un refugio subterráneo donde los combatientes organizan un banquete de despedida.",
+-            "En una trampa de agua que ahoga por accidente a los exploradores adversarios.",
+-            "En un depósito secreto para almacenar armamento pesado de artillería."
++            "Es el cuento más conocido del libro.",
++            "Es el único cuento del libro.",
++            "Es el cuento que cuenta cómo terminó la guerra."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El pozo seco se convierte en escenario de combate y fosa para los combatientes caídos en la escaramuza."
++          "explanation": "The text says that El pozo is the best-known story of Sangre de mestizos. It does not say how the story ends."
+         }
+       ]
+     }
+   },
+   "author": "Augusto Céspedes (Bolivia, 1904–1997)",
+   "work": "Sangre de mestizos: El pozo (1936)",
+-  "source": "Adaptado para estudiantes de nivel B2 a partir del relato clásico de Augusto Céspedes",
++  "source": "Texto original de Parlour sobre el autor y su obra; no reproduce ni resume escenas del original.",
+   "order": 21
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-19-01-voc.json b/content/es-latam/vocabulary/b2/b2-19-01-voc.json
+index 1ac0e4dc..c6a5de99 100644
+--- a/content/es-latam/vocabulary/b2/b2-19-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-19-01-voc.json
+@@ -1,38 +1,33 @@
+ {
+   "id": "vocab.b2.19.01",
+   "lesson": "b2-19-01",
+-  "title": "La concordancia en la pasiva refleja",
+-  "theme": "the passive with se and formal impersonality",
++  "title": "Agreements and announcements",
++  "theme": "Passive se and agreement",
+   "words": [
+     {
+-      "lemma": "acuerdo",
+-      "translation": "agreement / formal treaty",
++      "lemma": "el acuerdo",
++      "translation": "agreement",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "estipulación",
+-      "translation": "stipulation / contractual term",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "promulgar",
+-      "translation": "to promulgate / to enact officially",
++      "lemma": "firmar",
++      "translation": "to sign",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "disponer",
+-      "translation": "to dispose / to decree",
++      "lemma": "publicar",
++      "translation": "to publish",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "concordante",
+-      "translation": "concordant / in grammatical agreement",
+-      "pos": "adjective"
++      "lemma": "la regla",
++      "translation": "rule",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "paciente",
+-      "translation": "patient / receiver of action in passive",
+-      "pos": "adjective"
++      "lemma": "anunciar",
++      "translation": "to announce",
++      "pos": "verb"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-19-02-voc.json b/content/es-latam/vocabulary/b2/b2-19-02-voc.json
+index 1af5b466..b70d0173 100644
+--- a/content/es-latam/vocabulary/b2/b2-19-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-19-02-voc.json
+@@ -1,38 +1,33 @@
+ {
+   "id": "vocab.b2.19.02",
+   "lesson": "b2-19-02",
+-  "title": "Pasiva refleja frente a impersonal con se",
+-  "theme": "the passive with se and formal impersonality",
++  "title": "People and service",
++  "theme": "Passive se and impersonal se",
+   "words": [
+     {
+-      "lemma": "damnificado",
+-      "translation": "victim / casualty / affected person",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "postulante",
+-      "translation": "applicant / candidate",
++      "lemma": "el responsable",
++      "translation": "person in charge, person responsible",
+       "pos": "noun"
+     },
+     {
+       "lemma": "atender",
+-      "translation": "to assist / to attend to",
++      "translation": "to serve, to attend to",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "condecorar",
+-      "translation": "to decorate / to award honors to",
+-      "pos": "verb"
++      "lemma": "el cliente",
++      "translation": "customer",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "indiferenciado",
+-      "translation": "undifferentiated / generalized",
+-      "pos": "adjective"
++      "lemma": "el vecino",
++      "translation": "neighbour",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "animado",
+-      "translation": "animate / human referent",
+-      "pos": "adjective"
++      "lemma": "invitar",
++      "translation": "to invite",
++      "pos": "verb"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-19-03-voc.json b/content/es-latam/vocabulary/b2/b2-19-03-voc.json
+index a0cde510..d387284c 100644
+--- a/content/es-latam/vocabulary/b2/b2-19-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-19-03-voc.json
+@@ -1,38 +1,33 @@
+ {
+   "id": "vocab.b2.19.03",
+   "lesson": "b2-19-03",
+-  "title": "Agentividad implícita y restricciones de agente",
+-  "theme": "the passive with se and formal impersonality",
++  "title": "Buildings and who builds them",
++  "theme": "Passive se and the doer",
+   "words": [
+     {
+-      "lemma": "agente",
+-      "translation": "agent / initiator of action",
++      "lemma": "el alcalde",
++      "translation": "mayor",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "omisión",
+-      "translation": "omission / deliberate withholding",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "vetar",
+-      "translation": "to veto / to prohibit officially",
++      "lemma": "construir",
++      "translation": "to build",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "demoler",
+-      "translation": "to demolish / to tear down",
+-      "pos": "verb"
++      "lemma": "el edificio",
++      "translation": "building",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "incompatible",
+-      "translation": "incompatible / grammatically discordant",
+-      "pos": "adjective"
++      "lemma": "el puente",
++      "translation": "bridge",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "tácito",
+-      "translation": "tacit / implicit",
+-      "pos": "adjective"
++      "lemma": "el director",
++      "translation": "director, head",
++      "pos": "noun"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-19-04-voc.json b/content/es-latam/vocabulary/b2/b2-19-04-voc.json
+index 18241a8c..26f31276 100644
+--- a/content/es-latam/vocabulary/b2/b2-19-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-19-04-voc.json
+@@ -1,38 +1,33 @@
+ {
+   "id": "vocab.b2.19.04",
+   "lesson": "b2-19-04",
+-  "title": "El se institucional y jurídico",
+-  "theme": "the passive with se and formal impersonality",
++  "title": "Notices and adverts",
++  "theme": "Se in notices and instructions",
+   "words": [
+     {
+-      "lemma": "decreto",
+-      "translation": "decree / executive order",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "resolución",
+-      "translation": "resolution / judicial ruling",
+-      "pos": "noun"
++      "lemma": "prohibir",
++      "translation": "to forbid, to ban",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "notificar",
+-      "translation": "to serve notice / to notify formally",
++      "lemma": "alquilar",
++      "translation": "to rent, to rent out",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "sancionar",
+-      "translation": "to enact / to sanction legally",
++      "lemma": "rogar",
++      "translation": "to ask, to request",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "vinculante",
+-      "translation": "binding / legally enforceable",
+-      "pos": "adjective"
++      "lemma": "el aviso",
++      "translation": "notice, advert",
++      "pos": "noun"
+     },
+     {
+-      "lemma": "fehaciente",
+-      "translation": "irrefutable / providing authentic proof",
+-      "pos": "adjective"
++      "lemma": "el silencio",
++      "translation": "silence",
++      "pos": "noun"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-19-05-voc.json b/content/es-latam/vocabulary/b2/b2-19-05-voc.json
+index 9006125a..3ce43912 100644
+--- a/content/es-latam/vocabulary/b2/b2-19-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-19-05-voc.json
+@@ -1,38 +1,28 @@
+ {
+   "id": "vocab.b2.19.05",
+   "lesson": "b2-19-05",
+-  "title": "Desambiguación de los valores de se",
+-  "theme": "the passive with se and formal impersonality",
++  "title": "Doing things to each other, losing things",
++  "theme": "The values of se",
+   "words": [
+     {
+-      "lemma": "ambigüedad",
+-      "translation": "ambiguity / dual interpretation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "reciprocidad",
+-      "translation": "reciprocity / mutual action",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "difundir",
+-      "translation": "to broadcast / to disseminate widely",
++      "lemma": "abrazarse",
++      "translation": "to hug each other",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "interceptar",
+-      "translation": "to intercept / to stop mid-transit",
++      "lemma": "olvidarse",
++      "translation": "to forget (by accident)",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "equívoco",
+-      "translation": "misleading / ambiguous",
+-      "pos": "adjective"
++      "lemma": "perderse",
++      "translation": "to get lost, to go missing",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "reflejo",
+-      "translation": "reflexive / mirrored",
+-      "pos": "adjective"
++      "lemma": "caerse",
++      "translation": "to fall, to drop",
++      "pos": "verb"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-21-01-voc.json b/content/es-latam/vocabulary/b2/b2-21-01-voc.json
+index a029f324..41f6aab9 100644
+--- a/content/es-latam/vocabulary/b2/b2-21-01-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-21-01-voc.json
+@@ -1,52 +1,28 @@
+ {
+   "id": "vocab.b2.21.01",
+   "lesson": "b2-21-01",
+-  "title": "La impersonalidad y la generalización enunciativa",
++  "title": "Rumours and things that happen to you",
++  "theme": "Third-person plural and uno",
+   "words": [
+     {
+-      "lemma": "enunciador",
+-      "translation": "speaker / enunciator",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "colectividad",
+-      "translation": "community / collectivity",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "trasfondo",
+-      "translation": "background / underlying context",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "anonimato",
+-      "translation": "anonymity",
+-      "pos": "noun"
++      "lemma": "robar",
++      "translation": "to steal",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "distanciamiento",
+-      "translation": "distancing / detachment",
++      "lemma": "el rumor",
++      "translation": "rumour",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "indefinido",
+-      "translation": "indefinite / unspecified",
+-      "pos": "adjective"
+-    },
+-    {
+-      "lemma": "desdibujar",
+-      "translation": "to blur / obscure",
++      "lemma": "renunciar",
++      "translation": "to resign, to quit",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "rumor",
+-      "translation": "rumor / hearsay",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "generalización",
+-      "translation": "generalization",
++      "lemma": "la bicicleta",
++      "translation": "bicycle",
+       "pos": "noun"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-21-02-voc.json b/content/es-latam/vocabulary/b2/b2-21-02-voc.json
+index 18cb878f..9775e0e0 100644
+--- a/content/es-latam/vocabulary/b2/b2-21-02-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-21-02-voc.json
+@@ -1,52 +1,28 @@
+ {
+   "id": "vocab.b2.21.02",
+   "lesson": "b2-21-02",
+-  "title": "El 'se' impersonal y la gestión institucional",
++  "title": "Life far from home",
++  "theme": "Choosing se, a plural verb or uno",
+   "words": [
+     {
+-      "lemma": "intransitividad",
+-      "translation": "intransitivity",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "destinatario",
+-      "translation": "recipient / addressee",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "delegación",
+-      "translation": "delegation / branch",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "convocatoria",
+-      "translation": "official call / notice",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "estatuto",
+-      "translation": "statute / bylaw",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "normativa",
+-      "translation": "regulations / rules",
+-      "pos": "noun"
++      "lemma": "extrañar",
++      "translation": "to miss",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "protocolo",
+-      "translation": "protocol / procedure",
+-      "pos": "noun"
++      "lemma": "mudarse",
++      "translation": "to move house",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "despersonalizar",
+-      "translation": "to depersonalize",
++      "lemma": "cuidar",
++      "translation": "to look after",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "tramitación",
+-      "translation": "processing / procedure",
++      "lemma": "la salud",
++      "translation": "health",
+       "pos": "noun"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-21-03-voc.json b/content/es-latam/vocabulary/b2/b2-21-03-voc.json
+index 86ebbd65..52340caf 100644
+--- a/content/es-latam/vocabulary/b2/b2-21-03-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-21-03-voc.json
+@@ -1,52 +1,33 @@
+ {
+   "id": "vocab.b2.21.03",
+   "lesson": "b2-21-03",
+-  "title": "La nominalización y la concisión ensayística",
++  "title": "Changes and events as nouns",
++  "theme": "Nominalisation",
+   "words": [
+     {
+-      "lemma": "nominalización",
+-      "translation": "nominalization",
++      "lemma": "la subida",
++      "translation": "rise, increase",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "promulgación",
+-      "translation": "enactment / promulgation",
++      "lemma": "la llegada",
++      "translation": "arrival",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "erradicación",
+-      "translation": "eradication",
++      "lemma": "el cambio",
++      "translation": "change",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "desestimación",
+-      "translation": "dismissal / rejection",
++      "lemma": "el crecimiento",
++      "translation": "growth",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "subsanación",
+-      "translation": "remedying / correction",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "reestructuración",
+-      "translation": "restructuring",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "viabilidad",
+-      "translation": "viability / feasibility",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "implementación",
+-      "translation": "implementation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "adjudicación",
+-      "translation": "allocation / awarding",
++      "lemma": "el aumento",
++      "translation": "increase",
+       "pos": "noun"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-21-04-voc.json b/content/es-latam/vocabulary/b2/b2-21-04-voc.json
+index 29635697..274a573a 100644
+--- a/content/es-latam/vocabulary/b2/b2-21-04-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-21-04-voc.json
+@@ -1,52 +1,28 @@
+ {
+   "id": "vocab.b2.21.04",
+   "lesson": "b2-21-04",
+-  "title": "Verbos de necesidad y evaluación institucional",
++  "title": "Needs and urgent things",
++  "theme": "Needed, enough, urgent",
+   "words": [
+     {
+-      "lemma": "incumbir",
+-      "translation": "to fall on / be the duty of",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "atañer",
+-      "translation": "to concern / relate to",
+-      "pos": "verb"
+-    },
+-    {
+-      "lemma": "constar",
+-      "translation": "to be registered / be clear",
+-      "pos": "verb"
++      "lemma": "hacer falta",
++      "translation": "to be necessary, to be needed",
++      "pos": "expression"
+     },
+     {
+-      "lemma": "competer",
+-      "translation": "to be within one's remit",
++      "lemma": "bastar",
++      "translation": "to be enough",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "convenir",
+-      "translation": "to be advisable / suit",
++      "lemma": "urgir",
++      "translation": "to be urgent",
+       "pos": "verb"
+     },
+     {
+-      "lemma": "imperar",
+-      "translation": "to prevail / reign",
++      "lemma": "arreglar",
++      "translation": "to fix",
+       "pos": "verb"
+-    },
+-    {
+-      "lemma": "urgencia",
+-      "translation": "urgency / emergency",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "pertinencia",
+-      "translation": "relevance / appropriateness",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "procedencia",
+-      "translation": "origin / admissibility",
+-      "pos": "noun"
+     }
+   ]
+-}
++}
+\ No newline at end of file
+diff --git a/content/es-latam/vocabulary/b2/b2-21-05-voc.json b/content/es-latam/vocabulary/b2/b2-21-05-voc.json
+index 28d262b5..a6ea6dd2 100644
+--- a/content/es-latam/vocabulary/b2/b2-21-05-voc.json
++++ b/content/es-latam/vocabulary/b2/b2-21-05-voc.json
+@@ -1,52 +1,28 @@
+ {
+   "id": "vocab.b2.21.05",
+   "lesson": "b2-21-05",
+-  "title": "Atenuación epistémica y cautela diplomática",
++  "title": "Plans and careful suggestions",
++  "theme": "Hedging",
+   "words": [
+     {
+-      "lemma": "atenuación",
+-      "translation": "hedging / attenuation",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "presunción",
+-      "translation": "presumption / assumption",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "inferencia",
+-      "translation": "inference / deduction",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "conjetura",
+-      "translation": "conjecture / guess",
+-      "pos": "noun"
++      "lemma": "convenir",
++      "translation": "to be advisable, to suit",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "cautela",
+-      "translation": "caution / prudence",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "plausibilidad",
+-      "translation": "plausibility",
+-      "pos": "noun"
++      "lemma": "funcionar",
++      "translation": "to work",
++      "pos": "verb"
+     },
+     {
+-      "lemma": "escepticismo",
+-      "translation": "skepticism",
++      "lemma": "el plan",
++      "translation": "plan",
+       "pos": "noun"
+     },
+     {
+-      "lemma": "aserto",
+-      "translation": "assertion / claim",
+-      "pos": "noun"
+-    },
+-    {
+-      "lemma": "matiz",
+-      "translation": "nuance / shade",
+-      "pos": "noun"
++      "lemma": "revisar",
++      "translation": "to check, to review",
++      "pos": "verb"
+     }
+   ]
+-}
++}
+\ No newline at end of file
