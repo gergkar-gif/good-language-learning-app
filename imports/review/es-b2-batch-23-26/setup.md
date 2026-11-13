@@ -17,3 +17,10 @@ Started 2026-11-13T14:38:14Z from origin/master ff925927. 2 Sonnet reader(s); es
 ## Walk (with `python scripts/dev-server.py 8131` running)
 
     node scripts/walk_lessons.js es-latam b2 --jobs 4 --only b2-23-01 b2-23-02 b2-23-03 b2-23-04 b2-23-05 b2-23-consolidation b2-25-01 b2-25-02 b2-25-03 b2-25-04 b2-25-05 b2-25-consolidation b2-24-01 b2-24-02 b2-24-03 b2-24-04 b2-24-05 b2-24-consolidation b2-26-01 b2-26-02 b2-26-03 b2-26-04 b2-26-05 b2-26-consolidation
+
+## Agents (edit-in-place, Sonnet), started 14:38 UTC
+
+- A (Units 23, 25; /home/user/parlour-read-a): agent a6430cfda6d107141
+- B (Units 24, 26; /home/user/parlour-read-b): agent ad74440efe1137293
+
+Resume a stopped agent with SendMessage to its id; never start a new one.
