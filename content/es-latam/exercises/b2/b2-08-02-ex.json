@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el contratiempo",
-          "setback, mishap"
+          "la ventaja",
+          "advantage"
         ],
         [
-          "inquebrantable",
-          "unshakeable"
+          "el inconveniente",
+          "drawback"
         ],
         [
-          "sobreponerse",
-          "to overcome, recover"
+          "la propuesta",
+          "proposal"
         ],
         [
-          "infructuoso",
-          "fruitless, unsuccessful"
+          "el presupuesto",
+          "budget"
         ]
       ],
       "teaches": [
@@ -31,27 +31,30 @@
       "id": "b2-08-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál es la opción correcta para un informe institucional formal que introduce un hecho fáctico constatado?",
+      "question": "You are writing a formal report. Which sentence correctly grants that the budget is high?",
       "options": [
-        "Si bien las medidas fiscales redujeron la recaudación, se evitó la recesión en el primer trimestre.",
-        "Si bien las medidas fiscales reduzcan la recaudación, se evitó la recesión en el primer trimestre.",
-        "Si bien las medidas fiscales hayan reducido la recaudación ayer, se evitaba la recesión."
+        "Si bien el presupuesto es alto, la propuesta ofrece grandes ventajas.",
+        "Si bien el presupuesto sea alto, la propuesta ofrece grandes ventajas.",
+        "Si bien que el presupuesto es alto, la propuesta ofrece grandes ventajas."
       ],
       "correct": 0,
       "teaches": [
-        "a-pesar-de"
-      ]
+        "concesivas-si-bien"
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b2-08-02.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Pese a que la oposición __ el debate con objeciones procesales, el pleno ratificó la reforma.",
-      "hint": "dilatar - pretérito indefinido indicativo",
-      "answer": "dilató",
-      "english": "Despite the opposition delaying the debate with procedural objections, the plenary ratified the reform.",
+      "sentence": "Si bien los resultados __ buenos, todavía hay problemas.",
+      "hint": "ser, they",
+      "answer": "son",
+      "english": "Although the results are good, there are still problems.",
       "teaches": [
-        "a-pesar-de"
+        "concesivas-si-bien"
       ]
     },
     {
@@ -59,51 +62,74 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "A",
-        "pesar",
-        "de",
-        "que",
-        "llovió",
-        "acudieron",
-        "todos"
+        "Esta",
+        "ciudad,",
+        "si",
+        "bien",
+        "es",
+        "pequeña,",
+        "tiene",
+        "mucha",
+        "vida",
+        "cultural."
       ],
       "solution": [
-        "A",
-        "pesar",
-        "de",
-        "que",
-        "llovió",
-        "acudieron",
-        "todos"
+        "Esta",
+        "ciudad,",
+        "si",
+        "bien",
+        "es",
+        "pequeña,",
+        "tiene",
+        "mucha",
+        "vida",
+        "cultural."
       ],
-      "english": "In spite of the fact that it rained everyone attended.",
+      "english": "This city, although it is small, has a lot of cultural life.",
       "teaches": [
-        "a-pesar-de"
+        "concesivas-si-bien"
       ]
     },
     {
       "id": "b2-08-02.ex05",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "¿Qué réplica demuestra un manejo formal y riguroso de la concesión en una negociación?",
+      "prompt": [
+        {
+          "speaker": "Jefa",
+          "text": "¿Qué opina de la propuesta?"
+        },
+        {
+          "speaker": "Tú",
+          "text": "_____"
+        },
+        {
+          "speaker": "Jefa",
+          "text": "Gracias, vamos a estudiarla."
+        }
+      ],
       "options": [
-        "—A pesar de que sus argumentos son plausibles, no podemos transigir en las cláusulas de seguridad.",
-        "—A pesar de que sus argumentos son plausibles, no transigimos en nada ayer.",
-        "—Aunque usted tiene razón mañana, cancelaremos el contrato hoy mismo."
+        "Si bien es cara, creo que ofrece más ventajas que inconvenientes.",
+        "Si bien sea cara, creo que ofrece más ventajas que inconvenientes.",
+        "Si bien era cara, creo que ofrece más ventajas que inconvenientes."
       ],
       "correct": 0,
       "teaches": [
-        "a-pesar-de"
-      ]
+        "concesivas-si-bien"
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b2-08-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "A pesar de que los indicadores macroeconómicos sugerían cautela, la banca privada expandió el crédito.",
-      "english": "Although macroeconomic indicators suggested caution, the private banking sector expanded credit.",
+      "sentence": "Si bien el proyecto es caro, ofrece muchas ventajas.",
+      "english": "Although the project is expensive, it offers many advantages.",
       "teaches": [
-        "a-pesar-de"
+        "concesivas-si-bien"
       ]
     }
   ]

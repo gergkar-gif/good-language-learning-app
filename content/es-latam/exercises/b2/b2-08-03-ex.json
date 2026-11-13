@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el empeño",
-          "effort, endeavor"
+          "insistir",
+          "to insist"
         ],
         [
-          "claudicar",
-          "to give up, yield"
+          "gritar",
+          "to shout"
         ],
         [
-          "inflexible",
-          "inflexible"
+          "rendirse",
+          "to give up"
         ],
         [
-          "desistir",
-          "to desist, give up"
+          "el esfuerzo",
+          "effort"
         ]
       ],
       "teaches": [
@@ -31,25 +31,29 @@
       "id": "b2-08-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál es el valor expresivo de la frase 'Por muy diplomático que seas, la contraparte rechazará la oferta'?",
+      "question": "Which sentence says \"However much you shout, nobody will hear you\"?",
       "options": [
-        "Concede el grado máximo imaginable de diplomacia como incapaz de alterar el rechazo previsto.",
-        "Aconseja al interlocutor ser grosero y agresivo durante la sesión.",
-        "Informa que el interlocutor no tiene ninguna experiencia diplomática previa."
+        "Por más que grites, nadie te va a oír.",
+        "Por más que gritaras, nadie te va a oír.",
+        "Por más que gritarás, nadie te va a oír."
       ],
       "correct": 0,
       "teaches": [
         "concesivas-por-mas-que"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect-subjunctive-forms",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b2-08-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Por más que el fiscal __ convencer al jurado con discursos elocuentes, faltaron pruebas periciales concluyentes.",
-      "hint": "intentar - pretérito indefinido",
-      "answer": "intentó",
-      "english": "No matter how hard the prosecutor tried to convince the jury with eloquent speeches, conclusive expert evidence was lacking.",
+      "sentence": "Por muy difícil que __, voy a intentarlo.",
+      "hint": "ser, it",
+      "answer": "sea",
+      "english": "However difficult it is, I'm going to try.",
       "teaches": [
         "concesivas-por-mas-que"
       ]
@@ -62,44 +66,69 @@
         "Por",
         "más",
         "que",
-        "insistan",
+        "insistas,",
         "no",
-        "cederemos"
+        "voy",
+        "a",
+        "cambiar",
+        "de",
+        "idea."
       ],
       "solution": [
         "Por",
         "más",
         "que",
-        "insistan",
+        "insistas,",
         "no",
-        "cederemos"
+        "voy",
+        "a",
+        "cambiar",
+        "de",
+        "idea."
       ],
-      "english": "No matter how much they insist we will not yield.",
+      "english": "However much you insist, I'm not going to change my mind.",
       "teaches": [
         "concesivas-por-mas-que"
       ]
     },
     {
       "id": "b2-08-03.ex05",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "¿Qué réplica demuestra un manejo formal y riguroso de la concesión en una negociación?",
+      "prompt": [
+        {
+          "speaker": "Ana",
+          "text": "¿Y si le pedimos otra vez que venga?"
+        },
+        {
+          "speaker": "Tú",
+          "text": "_____"
+        },
+        {
+          "speaker": "Ana",
+          "text": "Entonces vamos sin él."
+        }
+      ],
       "options": [
-        "—A pesar de que sus argumentos son plausibles, no podemos transigir en las cláusulas de seguridad.",
-        "—A pesar de que sus argumentos son plausibles, no transigimos en nada ayer.",
-        "—Aunque usted tiene razón mañana, cancelaremos el contrato hoy mismo."
+        "Por más que se lo pidamos, no va a venir.",
+        "Por más que se lo pidiéramos, no va a venir.",
+        "Por más que se lo pedirá, no va a venir."
       ],
       "correct": 0,
       "teaches": [
         "concesivas-por-mas-que"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect-subjunctive-forms",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b2-08-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Por más que los abogados de la corporación apelaran el fallo, la corte suprema mantuvo la sanción ambiental.",
-      "english": "No matter how much the corporation's lawyers appealed the ruling, the supreme court upheld the environmental penalty.",
+      "sentence": "Por mucho que cueste, vamos a terminar el proyecto.",
+      "english": "However much it costs, we're going to finish the project.",
       "teaches": [
         "concesivas-por-mas-que"
       ]

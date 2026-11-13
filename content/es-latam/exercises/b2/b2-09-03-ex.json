@@ -8,19 +8,23 @@
       "pairs": [
         [
           "el protocolo",
-          "protocol"
+          "protocol, formal procedure"
         ],
         [
           "afable",
-          "affable, genial"
+          "friendly, kind"
         ],
         [
           "rubricar",
-          "to sign, endorse"
+          "to sign, to endorse"
         ],
         [
-          "la prerrogativa",
-          "prerogative, privilege"
+          "la audiencia",
+          "formal hearing, audience"
+        ],
+        [
+          "prudente",
+          "cautious, sensible"
         ]
       ],
       "teaches": [
@@ -31,25 +35,27 @@
       "id": "b2-09-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál es la fórmula más adecuada para solicitar un favor formal en correspondencia institucional?",
+      "question": "Which sentence is the most polite way to ask a colleague to send you the report today?",
       "options": [
-        "Le agradecería enormemente si pudiera facilitarnos la documentación pertinente a la brevedad.",
-        "Tienes que darme todos los documentos mañana mismo porque los necesito urgente.",
-        "Si me das los papeles ahora, no te pongo una multa."
+        "Le agradecería que me enviara el informe hoy.",
+        "Le agradecería que me envía el informe hoy.",
+        "Le agradecería que me enviar el informe hoy."
       ],
       "correct": 0,
       "teaches": [
         "polite-softening"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b2-09-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Si la junta directiva tuviera a bien __ la sesión, los peritos presentarían los balances.",
-      "hint": "reanudar - infinitivo",
-      "answer": "reanudar",
-      "english": "If the board of directors would be so kind as to resume the session, the experts would present the balance sheets.",
+      "sentence": "Si fuera tan amable de __ aquí, lo recibirán enseguida.",
+      "answer": "esperar",
+      "english": "If you would be so kind as to wait here, they will see you right away.",
       "teaches": [
         "polite-softening"
       ]
@@ -59,47 +65,65 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Si",
-        "fuera",
-        "tan",
-        "amable",
-        "firme",
-        "aquí"
+        "Le",
+        "agradecería",
+        "que",
+        "me",
+        "explicara",
+        "el",
+        "protocolo."
       ],
       "solution": [
-        "Si",
-        "fuera",
-        "tan",
-        "amable",
-        "firme",
-        "aquí"
+        "Le",
+        "agradecería",
+        "que",
+        "me",
+        "explicara",
+        "el",
+        "protocolo."
       ],
-      "english": "If you would be so kind sign here.",
+      "english": "I would be grateful if you explained the protocol to me.",
       "teaches": [
         "polite-softening"
       ]
     },
     {
       "id": "b2-09-03.ex05",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "¿Qué réplica formal utiliza con precisión la condición estricta en una reunión diplomática?",
+      "prompt": [
+        {
+          "speaker": "Jefa",
+          "text": "¿Podemos hablar del presupuesto hoy?"
+        },
+        {
+          "speaker": "Tú",
+          "text": "_____"
+        },
+        {
+          "speaker": "Jefa",
+          "text": "De acuerdo, entonces nos vemos mañana."
+        }
+      ],
       "options": [
-        "—Respaldaremos la propuesta siempre que la contraparte garantice la neutralidad de las aguas territoriales.",
-        "—Respaldaremos la propuesta si la contraparte garantizaría la neutralidad mañana.",
-        "—A menos que respaldamos la propuesta, no habrá firmado ningún tratado."
+        "Sería mejor que habláramos mañana, si le parece bien.",
+        "Sería mejor que hablamos mañana, si le parece bien.",
+        "Sería mejor que hablar mañana, si le parece bien."
       ],
       "correct": 0,
       "teaches": [
         "polite-softening"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b2-09-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Si fuera tan amable de aguardar en la sala contigua, el embajador lo atenderá de inmediato.",
-      "english": "If you would be so kind as to wait in the adjacent room, the ambassador will attend to you immediately.",
+      "sentence": "Si tuviera un momento, me gustaría hacerle una pregunta.",
+      "english": "If you had a moment, I would like to ask you a question.",
       "teaches": [
         "polite-softening"
       ]

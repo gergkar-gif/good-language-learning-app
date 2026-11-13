@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "la anterioridad",
-          "anteriority, precedence"
+          "apagar",
+          "to switch off"
         ],
         [
-          "la posterioridad",
-          "posteriority"
+          "despedirse",
+          "to say goodbye"
         ],
         [
-          "cautelar",
-          "precautionary"
+          "apurarse",
+          "to hurry"
         ],
         [
-          "el desenlace",
-          "outcome, ending"
+          "alcanzar",
+          "to catch up with"
         ]
       ],
       "teaches": [
@@ -31,25 +31,32 @@
       "id": "b2-07-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál es la regla modal invariable para la locución temporal 'antes de que'?",
+      "question": "Which sentence tells someone to close the window before it starts to rain?",
       "options": [
-        "Rige obligatoriamente el modo subjuntivo tanto en contextos de presente, pasado como futuro.",
-        "Rige siempre el modo indicativo cuando el verbo principal está en pasado.",
-        "Solo puede combinarse con formas verbales no personales como el gerundio."
+        "Cierra la ventana antes de que empiece a llover.",
+        "Cierra la ventana antes de que empieza a llover.",
+        "Cierra la ventana antes de empezar a llover."
       ],
       "correct": 0,
       "teaches": [
         "antes-despues-de-que"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "antes-despues-infinitive"
+      }
     },
     {
       "id": "b2-07-05.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El médico suministró el calmante antes de que el dolor se __ insoportable.",
-      "hint": "hacer - pretérito imperfecto de subjuntivo",
-      "answer": "hiciera",
-      "english": "The doctor administered the painkiller before the pain became unbearable.",
+      "sentence": "Me despedí de todos antes de que __ el tren.",
+      "hint": "salir, it",
+      "answers": [
+        "saliera",
+        "saliese"
+      ],
+      "english": "I said goodbye to everyone before the train left.",
       "teaches": [
         "antes-despues-de-que"
       ]
@@ -59,52 +66,87 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Salieron",
-        "antes",
+        "Hablamos",
+        "después",
         "de",
         "que",
-        "empezara",
+        "termine",
         "la",
-        "lluvia"
+        "reunión."
       ],
       "solution": [
-        "Salieron",
-        "antes",
+        "Hablamos",
+        "después",
         "de",
         "que",
-        "empezara",
+        "termine",
         "la",
-        "lluvia"
+        "reunión."
       ],
-      "english": "They left before the rain started.",
+      "english": "We'll talk after the meeting ends.",
       "teaches": [
         "antes-despues-de-que"
       ]
     },
     {
       "id": "b2-07-05.ex05",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "¿Qué réplica formal utiliza adecuadamente la subordinación temporal prospectiva en una reunión de trabajo?",
+      "prompt": [
+        {
+          "speaker": "Ana",
+          "text": "¿Cuándo hablaron del proyecto?"
+        },
+        {
+          "speaker": "Tú",
+          "text": "_____"
+        },
+        {
+          "speaker": "Ana",
+          "text": "Ya veo."
+        }
+      ],
       "options": [
-        "—En cuanto recibamos la confirmación oficial del ministerio, procederemos a rubricar el contrato.",
-        "—En cuanto recibimos la confirmación oficial, firmaremos mañana el contrato.",
-        "—Antes de que llegan los auditores debemos ordenar todos los comprobantes de gastos."
+        "Hablamos después de que terminó la reunión.",
+        "Hablamos después de que termine la reunión.",
+        "Hablamos después de que terminará la reunión."
       ],
       "correct": 0,
       "teaches": [
         "antes-despues-de-que"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b2-07-05.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "El coronel guardó la carta en el bolsillo antes de que su esposa pudiera verla.",
-      "english": "The colonel put the letter in his pocket before his wife could see it.",
+      "sentence": "Llegamos a la estación antes de que saliera el tren.",
+      "english": "We got to the station before the train left.",
       "teaches": [
         "antes-despues-de-que"
       ]
+    },
+    {
+      "id": "b2-07-05.ex07",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence means \"Before I leave, I switch off the light\"?",
+      "options": [
+        "Antes de salir, apago la luz.",
+        "Antes de que salga, apago la luz.",
+        "Antes de que salgo, apago la luz."
+      ],
+      "correct": 0,
+      "teaches": [
+        "antes-despues-de-que"
+      ],
+      "distractor_skills": {
+        "2": "present-tense"
+      }
     }
   ]
 }

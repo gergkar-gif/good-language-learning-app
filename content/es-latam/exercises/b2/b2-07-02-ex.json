@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "la prórroga",
-          "extension, postponement"
+          "la espera",
+          "wait"
         ],
         [
-          "la caducidad",
-          "expiration, nullity"
+          "aguantar",
+          "to hold out"
         ],
         [
-          "prescribir",
-          "to expire (statute of limitations)"
+          "el plazo",
+          "time limit"
         ],
         [
-          "el término",
-          "deadline, end point"
+          "vencer",
+          "to expire"
         ]
       ],
       "teaches": [
@@ -31,25 +31,28 @@
       "id": "b2-07-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál es la opción correcta para una disposición legal sobre un mandato futuro?",
+      "question": "Which sentence says \"I won't pay until they deliver my order\"?",
       "options": [
-        "El comité sesionará hasta que se alcance un acuerdo unánime.",
-        "El comité sesionará hasta que se alcanzó un acuerdo unánime.",
-        "El comité sesionará hasta que se alcanza un acuerdo unánime."
+        "No pago hasta que me entreguen el pedido.",
+        "No pago hasta que me entregaron el pedido.",
+        "No pago cuando me entreguen el pedido."
       ],
       "correct": 0,
       "teaches": [
         "cuando-subjuntivo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "b2-07-02.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "No revelaremos las conclusiones preliminares hasta que el tribunal las __ formalmente.",
-      "hint": "autorizar - presente subjuntivo",
-      "answer": "autorice",
-      "english": "We will not reveal the preliminary findings until the court formally authorizes them.",
+      "sentence": "Me quedo en la oficina hasta que mi jefa __ el informe.",
+      "hint": "revisar, she",
+      "answer": "revise",
+      "english": "I'll stay at the office until my boss reviews the report.",
       "teaches": [
         "cuando-subjuntivo"
       ]
@@ -59,52 +62,92 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Esperaremos",
-        "aquí",
+        "Voy",
+        "a",
+        "aguantar",
+        "la",
+        "espera",
         "hasta",
         "que",
         "llegue",
-        "la",
-        "orden"
+        "el",
+        "tren."
       ],
       "solution": [
-        "Esperaremos",
-        "aquí",
+        "Voy",
+        "a",
+        "aguantar",
+        "la",
+        "espera",
         "hasta",
         "que",
         "llegue",
-        "la",
-        "orden"
+        "el",
+        "tren."
       ],
-      "english": "We will wait here until the order arrives.",
+      "english": "I'm going to put up with the wait until the train arrives.",
       "teaches": [
         "cuando-subjuntivo"
       ]
     },
     {
       "id": "b2-07-02.ex05",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "¿Qué réplica formal utiliza adecuadamente la subordinación temporal prospectiva en una reunión de trabajo?",
+      "prompt": [
+        {
+          "speaker": "Ana",
+          "text": "¿Qué pasa con la entrega?"
+        },
+        {
+          "speaker": "Tú",
+          "text": "_____"
+        },
+        {
+          "speaker": "Ana",
+          "text": "Entonces mejor esperamos."
+        }
+      ],
       "options": [
-        "—En cuanto recibamos la confirmación oficial del ministerio, procederemos a rubricar el contrato.",
-        "—En cuanto recibimos la confirmación oficial, firmaremos mañana el contrato.",
-        "—Antes de que llegan los auditores debemos ordenar todos los comprobantes de gastos."
+        "Va a demorar hasta que llegue el pedido.",
+        "Va a demorar hasta que llegó el pedido.",
+        "Va a demorar cuando llegue el pedido."
       ],
       "correct": 0,
       "teaches": [
         "cuando-subjuntivo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "b2-07-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Todo acusado es inocente hasta que se demuestre lo contrario mediante sentencia firme.",
-      "english": "Every defendant is innocent until the contrary is proven through a final judgment.",
+      "sentence": "No me voy hasta que no me paguen.",
+      "english": "I'm not leaving until they pay me.",
       "teaches": [
         "cuando-subjuntivo"
       ]
+    },
+    {
+      "id": "b2-07-02.ex07",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence tells what happened last night?",
+      "options": [
+        "Esperamos hasta que llegó el último tren.",
+        "Esperamos hasta que llegue el último tren.",
+        "Esperamos hasta que llegará el último tren."
+      ],
+      "correct": 0,
+      "teaches": [
+        "cuando-subjuntivo"
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     }
   ]
 }

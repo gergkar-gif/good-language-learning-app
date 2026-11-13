@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "la prospección",
-          "prospection, future planning"
+          "la fecha límite",
+          "deadline"
         ],
         [
-          "la contingencia",
-          "contingency"
+          "aplazar",
+          "to postpone"
         ],
         [
-          "el plazo perentorio",
-          "strict deadline"
+          "entregar",
+          "to hand in"
         ],
         [
-          "el cronograma",
-          "schedule, timeline"
+          "de inmediato",
+          "immediately"
         ]
       ],
       "teaches": [
@@ -31,25 +31,28 @@
       "id": "b2-07-01.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Por qué la oración 'En cuanto lleguen los inspectores comenzará la auditoría' utiliza el modo subjuntivo?",
+      "question": "Which sentence is about something that has already happened?",
       "options": [
-        "Porque la llegada de los inspectores es un evento futuro proyectado y aún no consumado.",
-        "Porque describe una costumbre del pasado que se repite anualmente.",
-        "Porque el verbo principal expresa una orden militar irrevocable."
+        "En cuanto llegó el jefe, empezamos la reunión.",
+        "En cuanto llegue el jefe, empezamos la reunión.",
+        "En cuanto llegará el jefe, empezamos la reunión."
       ],
       "correct": 0,
       "teaches": [
         "cuando-subjuntivo"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b2-07-01.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Tan pronto como la comisión __ el informe, procederemos con la votación.",
-      "hint": "terminar - presente de subjuntivo",
-      "answer": "termine",
-      "english": "As soon as the commission finishes the report, we will proceed with the vote.",
+      "sentence": "Apenas __ los resultados, te los mando.",
+      "hint": "tener, I",
+      "answer": "tenga",
+      "english": "As soon as I have the results, I'll send them to you.",
       "teaches": [
         "cuando-subjuntivo"
       ]
@@ -59,47 +62,70 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "En",
-        "cuanto",
-        "llegue",
-        "el",
-        "tren",
-        "partiremos"
+        "Tan",
+        "pronto",
+        "como",
+        "termine",
+        "la",
+        "cita,",
+        "te",
+        "llamo",
+        "enseguida."
       ],
       "solution": [
-        "En",
-        "cuanto",
-        "llegue",
-        "el",
-        "tren",
-        "partiremos"
+        "Tan",
+        "pronto",
+        "como",
+        "termine",
+        "la",
+        "cita,",
+        "te",
+        "llamo",
+        "enseguida."
       ],
-      "english": "As soon as the train arrives we will depart.",
+      "english": "As soon as the appointment ends, I'll call you right away.",
       "teaches": [
         "cuando-subjuntivo"
       ]
     },
     {
       "id": "b2-07-01.ex05",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "¿Qué réplica formal utiliza adecuadamente la subordinación temporal prospectiva en una reunión de trabajo?",
+      "prompt": [
+        {
+          "speaker": "Ana",
+          "text": "¿Cuándo vas a mandar el informe?"
+        },
+        {
+          "speaker": "Tú",
+          "text": "_____"
+        },
+        {
+          "speaker": "Ana",
+          "text": "Perfecto, lo espero."
+        }
+      ],
       "options": [
-        "—En cuanto recibamos la confirmación oficial del ministerio, procederemos a rubricar el contrato.",
-        "—En cuanto recibimos la confirmación oficial, firmaremos mañana el contrato.",
-        "—Antes de que llegan los auditores debemos ordenar todos los comprobantes de gastos."
+        "Te lo mando en cuanto lo termine.",
+        "Te lo mando en cuanto lo terminé.",
+        "Te lo mando en cuanto lo terminaba."
       ],
       "correct": 0,
       "teaches": [
         "cuando-subjuntivo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b2-07-01.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Tan pronto como se publiquen los resultados oficiales, la junta emitirá una declaración pública.",
-      "english": "As soon as the official results are published, the board will issue a public statement.",
+      "sentence": "En cuanto lleguemos a casa, te mando un mensaje.",
+      "english": "As soon as we get home, I'll send you a message.",
       "teaches": [
         "cuando-subjuntivo"
       ]

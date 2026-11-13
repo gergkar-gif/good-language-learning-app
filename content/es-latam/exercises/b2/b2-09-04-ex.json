@@ -7,20 +7,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el laudo",
-          "arbitration award, ruling"
+          "la cláusula",
+          "clause, term of a contract"
         ],
         [
           "vinculante",
-          "binding (legal)"
+          "binding"
         ],
         [
-          "la cláusula",
-          "clause, stipulation"
+          "acatar",
+          "to abide by, to comply with"
+        ],
+        [
+          "estipular",
+          "to stipulate, to lay down"
         ],
         [
           "rescindir",
-          "to rescind, terminate"
+          "to cancel (a contract)"
         ]
       ],
       "teaches": [
@@ -31,25 +35,29 @@
       "id": "b2-09-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál es la interpretación jurídica exacta de 'El contrato entrará en vigor a condición de que se ratifique el tratado'?",
+      "question": "Which sentence says that they will sign only if the other side respects the deadline?",
       "options": [
-        "La ratificación del tratado es un requisito previo indispensable para que el contrato surta efectos.",
-        "El contrato ya está vigente y no importa si el tratado se ratifica o se rechaza.",
-        "El tratado quedará anulado en cuanto se firme el contrato privado."
+        "Firmaremos el contrato siempre que respeten el plazo.",
+        "Firmaremos el contrato siempre que respetarán el plazo.",
+        "Firmaremos el contrato siempre que respetarían el plazo."
       ],
       "correct": 0,
       "teaches": [
         "conditional-conjunctions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "condicional-regular"
+      }
     },
     {
       "id": "b2-09-04.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Respaldaremos la candidatura de la coalición siempre que sus diputados __ las reformas ambientales.",
-      "hint": "apoyar - presente de subjuntivo",
-      "answer": "apoyen",
-      "english": "We will back the coalition's candidacy provided that its deputies support the environmental reforms.",
+      "sentence": "La empresa podrá rescindir el contrato siempre que __ con un mes de antelación.",
+      "hint": "avisar",
+      "answer": "avise",
+      "english": "The company may cancel the contract provided that it gives notice a month in advance.",
       "teaches": [
         "conditional-conjunctions"
       ]
@@ -59,47 +67,74 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Firmaremos",
-        "siempre",
+        "Aceptaremos",
+        "con",
+        "tal",
+        "de",
         "que",
-        "respeten",
+        "las",
+        "dos",
+        "partes",
+        "acaten",
         "la",
-        "soberanía"
+        "cláusula."
       ],
       "solution": [
-        "Firmaremos",
-        "siempre",
+        "Aceptaremos",
+        "con",
+        "tal",
+        "de",
         "que",
-        "respeten",
+        "las",
+        "dos",
+        "partes",
+        "acaten",
         "la",
-        "soberanía"
+        "cláusula."
       ],
-      "english": "We will sign provided that they respect the sovereignty.",
+      "english": "We will accept as long as both sides abide by the clause.",
       "teaches": [
         "conditional-conjunctions"
       ]
     },
     {
       "id": "b2-09-04.ex05",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "¿Qué réplica formal utiliza con precisión la condición estricta en una reunión diplomática?",
+      "prompt": [
+        {
+          "speaker": "Ana",
+          "text": "¿Vas a aceptar el puesto en Lima?"
+        },
+        {
+          "speaker": "Tú",
+          "text": "_____"
+        },
+        {
+          "speaker": "Ana",
+          "text": "Es una buena condición, ¿no?"
+        }
+      ],
       "options": [
-        "—Respaldaremos la propuesta siempre que la contraparte garantice la neutralidad de las aguas territoriales.",
-        "—Respaldaremos la propuesta si la contraparte garantizaría la neutralidad mañana.",
-        "—A menos que respaldamos la propuesta, no habrá firmado ningún tratado."
+        "Sí, a condición de que me permitan visitar a mi familia.",
+        "Sí, a condición de que me permiten visitar a mi familia.",
+        "Sí, a condición de que me permitirán visitar a mi familia."
       ],
       "correct": 0,
       "teaches": [
         "conditional-conjunctions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b2-09-04.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "El sindicato desconvocará el paro general siempre que la patronal restituya a los trabajadores cesanteados.",
-      "english": "The union will call off the general strike provided that management reinstates the laid-off workers.",
+      "sentence": "Firmaremos el contrato siempre que nos den más tiempo.",
+      "english": "We will sign the contract provided that they give us more time.",
       "teaches": [
         "conditional-conjunctions"
       ]

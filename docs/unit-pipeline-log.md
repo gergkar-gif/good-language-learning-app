@@ -506,6 +506,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-12 | ES B1 core close-out (6 skills to core screens, 3 thin skills, 29 Reader stories) | two edit-in-place agents (Sonnet), reviewer applies their diff | A 237,046 (11 min), B 290,975 (14 min) | | all eight touched units rechecked, walked 48/48 per course, refrozen; 2 reviewer edits to A, es-latam labels fixed after B |
 | 11-13 | ES B2 pilot, core Units 1 and 2 (es-latam only) | two edit-in-place agents (Sonnet), one unit each; reviewer applies diffs | A 292,498 (14 min), B 304,407 (14 min); ~300k a unit | | 0 errors after, unmet 140 → 0; screens rewritten in English, two texts replaced | walked 12/12, both frozen; 5 reviewer edits + 4 items for two new skills |
 | 11-13 | ES B2 core Units 3–6 (es-latam) | two edit-in-place agents (Sonnet), two units each, paired by topic | A 375,044 (19 min), B 339,242 (18 min); ~180k a unit | | 0 errors / 0 suspects after in all four, unmet 357 → 0 | walked 24/24, all frozen; 5 reviewer edits |
+| 11-13 | ES B2 core Units 7–10 (es-latam) | two edit-in-place agents (Sonnet), two units each; both resumed after the 5-hour limit | A 325,030, B 324,492 (both runs); ~163k a unit | | 0 errors in all four, 2 suspects accepted; 4 unmet words the agents missed fixed | walked 24/24, all frozen; ~10 reviewer edits |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2026,4 +2027,18 @@ The user took the four recommended options:
   every text, screen tip and challenge target.
 - **Registry decisions asked ahead:** the six moves for Units 7–10 were signed off while
   this batch ran, so the next one starts without a stop.
+
+### 2026-11-13: ES B2 core Units 7–10
+
+- **Both agents hit the 5-hour limit mid-batch** (launched 04:51, two batches already
+  run in that window). Saving each worktree's diff before resuming, then SendMessage
+  after the reset, lost nothing. Start a batch right after a reset when possible.
+- **Agents' unmet counts are claims:** both said 0; the reviewer's run found 4 real
+  hits (*ambas*, *sur*, *posteriores*, *computadora*, the last in no list at all). The
+  agents ran the check before their last edits. Rerun it after applying, always.
+- **Grammar-to-order prose:** texts written to show a unit's forms produce sentences
+  that are grammatical and empty (tautological counterfactuals, a concession with
+  nothing conceded). The brief now says: every sentence must say something true about
+  the work or its reading; drop a form rather than force it.
+- ~163k a unit at two units per agent, the same as Units 3–6.
 

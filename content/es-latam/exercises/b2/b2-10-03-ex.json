@@ -8,19 +8,23 @@
       "pairs": [
         [
           "el remordimiento",
-          "remorse, regret"
+          "remorse, pang of conscience"
         ],
         [
-          "la negligencia",
-          "negligence"
+          "el reproche",
+          "reproach, criticism"
         ],
         [
           "desaprovechar",
-          "to waste, to squander"
+          "to waste, to miss (a chance)"
         ],
         [
           "la amargura",
           "bitterness"
+        ],
+        [
+          "lamentar",
+          "to regret, to be sorry about"
         ]
       ],
       "teaches": [
@@ -29,27 +33,29 @@
     },
     {
       "id": "b2-10-03.ex02",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "¡Si al menos nos __ la verdad a tiempo, habríamos protegido a los damnificados!",
-      "hint": "haber dicho",
-      "answer": "hubieras dicho",
-      "english": "If at least you had told us the truth in time, we would have protected the victims!",
+      "question": "Which sentence says that you should have called earlier but did not?",
+      "options": [
+        "Debería haber llamado antes.",
+        "Debería llamar antes.",
+        "Debería llamado antes."
+      ],
+      "correct": 0,
       "teaches": [
         "regrets-reproaches"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "deber-vs-tener-que"
+      }
     },
     {
       "id": "b2-10-03.ex03",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "¿Qué matiz pragmático aporta 'Habrías debido avisar' frente a 'Debiste avisar'?",
-      "options": [
-        "Atenúa cortésmente el reproche mediante el condicional compuesto.",
-        "Indica una obligación futura que aún no se ha cumplido.",
-        "Expresa una orden militar obligatoria sin derecho a réplica."
-      ],
-      "correct": 0,
+      "sentence": "Tendrías que __ avisado antes de cambiar la hora.",
+      "answer": "haber",
+      "english": "You should have warned us before changing the time.",
       "teaches": [
         "regrets-reproaches"
       ]
@@ -59,28 +65,26 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Habría",
-        "sido",
-        "preferible",
+        "Tendríamos",
         "que",
-        "hubiéramos",
-        "esperado",
-        "el",
-        "informe",
-        "final."
+        "haber",
+        "reservado",
+        "la",
+        "mesa",
+        "con",
+        "tiempo."
       ],
       "solution": [
-        "Habría",
-        "sido",
-        "preferible",
+        "Tendríamos",
         "que",
-        "hubiéramos",
-        "esperado",
-        "el",
-        "informe",
-        "final."
+        "haber",
+        "reservado",
+        "la",
+        "mesa",
+        "con",
+        "tiempo."
       ],
-      "english": "It would have been preferable for us to have waited for the final report.",
+      "english": "We should have booked the table in advance.",
       "teaches": [
         "regrets-reproaches"
       ]
@@ -91,22 +95,22 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Diputado",
-          "text": "El saldo presupuestario de la obra pública fue un verdadero desastre."
+          "speaker": "Ana",
+          "text": "¿Te arrepientes de algo?"
         },
         {
-          "speaker": "Ministra",
+          "speaker": "Tú",
           "text": "_____"
         },
         {
-          "speaker": "Diputado",
-          "text": "Reconocer ese error es el primer paso para corregir el rumbo institucional."
+          "speaker": "Ana",
+          "text": "Todos tenemos algo así."
         }
       ],
       "options": [
-        "Reconozco que habríamos debido fiscalizar las licitaciones con mayor rigor desde el primer momento.",
-        "El cemento portland es el material más utilizado en la construcción de puentes carreteros.",
-        "La biblioteca del congreso nacional atesora colecciones de leyes coloniales."
+        "Me arrepiento de no haber viajado más cuando era joven.",
+        "Me arrepiento no haber viajado más cuando era joven.",
+        "Me arrepiento de no viajé más cuando era joven."
       ],
       "correct": 0,
       "teaches": [
@@ -117,8 +121,8 @@
       "id": "b2-10-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "¡Si al menos hubiesen verificado los antecedentes, no lamentaríamos este engaño!",
-      "english": "If at least they had verified the background, we would not be lamenting this deception!",
+      "sentence": "Deberías haber avisado antes de cambiar la hora.",
+      "english": "You should have warned us before changing the time.",
       "teaches": [
         "regrets-reproaches"
       ]
