@@ -38,3 +38,13 @@ Found at setup and decided by the user:
    `taught_in` moved to the core lesson that teaches or drills it (a screen
    written where none exists), brought to the user for sign-off with its batch
    (`skills/frozen-es.json` entry). Pilot: `stance-adverbs` → b2-01-02.
+
+## Answers to the reviewer's report (user, 2026-11-13)
+
+5. **Unit numbers: one rule for all languages, logical and consistent within the
+   app.** The app numbers units per track (build-manifest.py), so every "Unit N"
+   in content is the number the app shows. Existing recaps written by table
+   position (all HU, part of ES B1) are renumbered by script.
+6. **Copyright: make the texts safe** (confirms decision 2 for all 27).
+7. **New units may be added** where a skill has no core home (*de tal manera
+   que*, absolute participles) and a section in an existing unit doesn't fit.
