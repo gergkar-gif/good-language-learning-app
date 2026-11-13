@@ -8,19 +8,23 @@
       "pairs": [
         [
           "la dispensa",
-          "dispensation, exemption"
+          "exemption"
         ],
         [
           "eximir",
-          "to exempt, to excuse"
-        ],
-        [
-          "la causal",
-          "legal cause, grounds"
+          "to exempt"
         ],
         [
           "la fuerza mayor",
-          "force majeure, act of God"
+          "circumstances beyond anyone's control"
+        ],
+        [
+          "el imprevisto",
+          "unexpected event"
+        ],
+        [
+          "incurrir",
+          "to fall into, to incur"
         ]
       ],
       "teaches": [
@@ -31,10 +35,10 @@
       "id": "b2-11-04.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La exportación de granos quedará prohibida a menos que las empresas __ el abastecimiento del mercado interno.",
-      "hint": "garantizar - presente subjuntivo",
-      "answer": "garanticen",
-      "english": "Grain export will be prohibited unless companies guarantee supply to the domestic market.",
+      "sentence": "Iremos a la playa a no ser que __ mañana.",
+      "hint": "llover",
+      "answer": "llueva",
+      "english": "We will go to the beach unless it rains tomorrow.",
       "teaches": [
         "conditional-conjunctions"
       ]
@@ -43,16 +47,20 @@
       "id": "b2-11-04.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿A qué formulación equivale exactamente 'No suspenderemos el desalojo a no ser que medie una orden judicial'?",
+      "question": "Which sentence means the same as \"No saldremos a menos que mejore el tiempo\"?",
       "options": [
-        "A 'No suspenderemos el desalojo si no media una orden judicial'.",
-        "A 'Suspenderemos el desalojo aunque medie una orden judicial'.",
-        "A 'Suspenderemos el desalojo porque medió una orden judicial'."
+        "No saldremos aunque mejore el tiempo.",
+        "No saldremos si no mejora el tiempo.",
+        "No saldremos porque mejora el tiempo."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "conditional-conjunctions"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "concesivas-aunque",
+        "2": "por-que-y-porque"
+      }
     },
     {
       "id": "b2-11-04.ex04",
@@ -60,29 +68,29 @@
       "category": "grammar",
       "tiles": [
         "No",
-        "habrá",
-        "acuerdo",
+        "cambiaremos",
+        "la",
+        "fecha",
         "a",
         "menos",
         "que",
-        "cedan",
-        "en",
-        "sus",
-        "demandas."
+        "haya",
+        "un",
+        "imprevisto."
       ],
       "solution": [
         "No",
-        "habrá",
-        "acuerdo",
+        "cambiaremos",
+        "la",
+        "fecha",
         "a",
         "menos",
         "que",
-        "cedan",
-        "en",
-        "sus",
-        "demandas."
+        "haya",
+        "un",
+        "imprevisto."
       ],
-      "english": "There will be no agreement unless they yield on their demands.",
+      "english": "We will not change the date unless something unexpected happens.",
       "teaches": [
         "conditional-conjunctions"
       ]
@@ -93,34 +101,38 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Comisario",
-          "text": "¿Bajo qué circunstancias se autorizaría el desembarco de la tripulación en cuarentena?"
+          "speaker": "Ana",
+          "text": "¿Sales a las seis hoy?"
         },
         {
-          "speaker": "Inspectora sanitaria",
+          "speaker": "Tú",
           "text": "_____"
         },
         {
-          "speaker": "Comisario",
-          "text": "De acuerdo; el buque permanecerá fondeado en la bahía hasta nuevo aviso."
+          "speaker": "Ana",
+          "text": "Entonces te espero."
         }
       ],
       "options": [
-        "Nadie podrá descender a tierra firme a menos que los médicos certifiquen la ausencia total de síntomas infecciosos.",
-        "Las gaviotas anidan en los acantilados rocosos durante los meses de primavera.",
-        "El puerto deportivo ofrece amarres seguros para yates de recreo."
+        "Sí, salgo a las seis, salvo que hay mucho trabajo.",
+        "Sí, salgo a las seis, salvo si haya mucho trabajo.",
+        "Sí, salgo a las seis, salvo si hay mucho trabajo."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "conditional-conjunctions"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "present-tense",
+        "1": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b2-11-04.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "No modificaremos el contrato a no ser que intervenga una causal de fuerza mayor.",
-      "english": "We will not modify the contract unless a force majeure event intervenes.",
+      "sentence": "Todos pagarán la entrada, a menos que tengan una dispensa.",
+      "english": "Everyone will pay the entrance fee unless they have an exemption.",
       "teaches": [
         "conditional-conjunctions"
       ]

@@ -1502,6 +1502,17 @@
    "reason": "ES B2 batch 3-6 (2026-11-13): edit-in-place agents, reviewer read and edits, English screens, text about the work; walked 6/6 (imports/review/es-b2-batch-03-06/)",
    "accepted": []
   },
+  "b2/mixed-restrictive-conditionals": {
+   "frozen": "2026-11-13",
+   "reason": "ES B2 batch 11-14 (2026-11-13): edit-in-place agents, reviewer read and edits, English screens, text about the work; walked 6/6 (imports/review/es-b2-batch-11-14/)",
+   "accepted": [
+    {
+     "check": "answers-alternatives",
+     "id": "b2-11-02.ex02",
+     "why": "habría and hubiera are the same slot (hubiera for habría, B2 Unit 10)"
+    }
+   ]
+  },
   "b2/narrative-time-aspect": {
    "frozen": "2026-11-13",
    "reason": "ES B2 pilot (2026-11-13): edit-in-place agent B, reviewer read and edits, English screens, Rulfo text about the work, two new skills (user sign-off); walked 6/6 (imports/review/es-b2-pilot/)",
@@ -1523,9 +1534,30 @@
     }
    ]
   },
+  "b2/purpose-clauses": {
+   "frozen": "2026-11-13",
+   "reason": "ES B2 batch 11-14 (2026-11-13): edit-in-place agents, reviewer read and edits, English screens, text about the work; walked 6/6 (imports/review/es-b2-batch-11-14/)",
+   "accepted": [
+    {
+     "check": "answers-alternatives",
+     "id": "b2-12-03.ex02",
+     "why": "con miras a and con vistas a are synonyms"
+    }
+   ]
+  },
+  "b2/relatives-unknown-antecedents": {
+   "frozen": "2026-11-13",
+   "reason": "ES B2 batch 11-14 (2026-11-13): edit-in-place agents, reviewer read and edits, English screens, text about the work; walked 6/6 (imports/review/es-b2-batch-11-14/)",
+   "accepted": []
+  },
   "b2/temporal-clauses-future": {
    "frozen": "2026-11-13",
    "reason": "ES B2 batch 7-10 (2026-11-13): edit-in-place agents (resumed after the usage limit), reviewer read and edits, English screens, text about the work; walked 6/6 (imports/review/es-b2-batch-07-10/)",
+   "accepted": []
+  },
+  "b2/universal-indefinite-relatives": {
+   "frozen": "2026-11-13",
+   "reason": "ES B2 batch 11-14 (2026-11-13): edit-in-place agents, reviewer read and edits, English screens, text about the work; walked 6/6 (imports/review/es-b2-batch-11-14/)",
    "accepted": []
   }
  },

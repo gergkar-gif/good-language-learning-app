@@ -7,20 +7,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el móvil",
-          "motive, driving reason"
+          "proponerse",
+          "to set out to, to resolve"
         ],
         [
-          "la coartada",
-          "alibi, pretext"
+          "el empeño",
+          "determination, effort"
         ],
         [
-          "dilucidar",
-          "to elucidate, to clarify"
+          "esmerarse",
+          "to take great care"
         ],
         [
-          "la teleología",
-          "doctrine of purpose, teleology"
+          "el anhelo",
+          "longing, deep wish"
+        ],
+        [
+          "la voluntad",
+          "will, willingness"
         ]
       ],
       "teaches": [
@@ -31,10 +35,13 @@
       "id": "b2-12-05.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Castel afirmó que pintó aquella ventanita al solo efecto de que María Iribarne __ su mensaje secreto.",
-      "hint": "descifrar - imperfecto subjuntivo",
-      "answer": "descifrara",
-      "english": "Castel stated that he painted that little window for the sole purpose of María Iribarne deciphering his secret message.",
+      "sentence": "Si pudiera, ayudaría a mi hermana para que ella no __ sola.",
+      "hint": "estar",
+      "answers": [
+        "estuviera",
+        "estuviese"
+      ],
+      "english": "If I could, I would help my sister so that she would not be alone.",
       "teaches": [
         "subjuntivo-de-finalidad-para-que"
       ]
@@ -43,44 +50,54 @@
       "id": "b2-12-05.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué matiz expresa la locución 'al solo efecto de' frente al conector estándar 'para'?",
+      "question": "Which sentence means \"If I had time, I would help so that they would finish sooner\"?",
       "options": [
-        "Enfatiza la exclusividad absoluta del propósito, descartando cualquier otra motivación colateral.",
-        "Indica una consecuencia no deseada provocada por un descuido fortuito.",
-        "Expresa una condición matemática aplicable únicamente a magnitudes físicas."
+        "Si tuviera tiempo, ayudaría para que terminan antes.",
+        "Si tuviera tiempo, ayudaría para que terminaran antes.",
+        "Si tuviera tiempo, ayudaría para que terminarían antes."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "subjuntivo-de-finalidad-para-que"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "present-tense",
+        "2": "condicional-regular"
+      }
     },
     {
       "id": "b2-12-05.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Pintó",
-        "el",
-        "cuadro",
+        "Si",
+        "pudiera,",
+        "lo",
+        "haría",
         "para",
         "que",
-        "alguien",
-        "comprendiera",
-        "su",
-        "soledad."
+        "mis",
+        "hijos",
+        "estudiaran",
+        "en",
+        "otra",
+        "ciudad."
       ],
       "solution": [
-        "Pintó",
-        "el",
-        "cuadro",
+        "Si",
+        "pudiera,",
+        "lo",
+        "haría",
         "para",
         "que",
-        "alguien",
-        "comprendiera",
-        "su",
-        "soledad."
+        "mis",
+        "hijos",
+        "estudiaran",
+        "en",
+        "otra",
+        "ciudad."
       ],
-      "english": "He painted the picture so that someone would understand his loneliness.",
+      "english": "If I could, I would do it so that my children could study in another city.",
       "teaches": [
         "subjuntivo-de-finalidad-para-que"
       ]
@@ -91,34 +108,38 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Crítico literario",
-          "text": "¿Cuál era la verdadera finalidad de Castel al escribir su confesión desde la cárcel?"
+          "speaker": "Ana",
+          "text": "¿Por qué no dijiste nada en la reunión?"
         },
         {
-          "speaker": "Profesora",
+          "speaker": "Tú",
           "text": "_____"
         },
         {
-          "speaker": "Crítico literario",
-          "text": "Una trágica búsqueda de justificación ante un mundo que juzga impenetrable."
+          "speaker": "Ana",
+          "text": "Entiendo."
         }
       ],
       "options": [
-        "Escribió su relato al solo fin de que al menos una persona entendiera los móviles de su crimen y la desesperación de su alma.",
-        "Los talleres de encuadernación de Buenos Aires utilizaban cuero vacuno repujado.",
-        "El tranvía de la plaza San Martín circulaba cada quince minutos durante los días laborables."
+        "Si hubiera hablado, lo habría hecho para que me entendieron.",
+        "Si hubiera hablado, lo habría hecho para que me entendieran.",
+        "Si hubiera hablado, lo habría hecho para que me entienden."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "subjuntivo-de-finalidad-para-que"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "preterito-indefinido",
+        "2": "present-tense"
+      }
     },
     {
       "id": "b2-12-05.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Actuó de esa manera al solo fin de que se conociera la verdad oculta.",
-      "english": "He acted in that manner for the sole purpose that the hidden truth be known.",
+      "sentence": "Si tuviera más dinero, compraría libros para que los niños leyeran más.",
+      "english": "If I had more money, I would buy books so that the children would read more.",
       "teaches": [
         "subjuntivo-de-finalidad-para-que"
       ]

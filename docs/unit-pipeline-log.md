@@ -507,6 +507,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-13 | ES B2 pilot, core Units 1 and 2 (es-latam only) | two edit-in-place agents (Sonnet), one unit each; reviewer applies diffs | A 292,498 (14 min), B 304,407 (14 min); ~300k a unit | | 0 errors after, unmet 140 → 0; screens rewritten in English, two texts replaced | walked 12/12, both frozen; 5 reviewer edits + 4 items for two new skills |
 | 11-13 | ES B2 core Units 3–6 (es-latam) | two edit-in-place agents (Sonnet), two units each, paired by topic | A 375,044 (19 min), B 339,242 (18 min); ~180k a unit | | 0 errors / 0 suspects after in all four, unmet 357 → 0 | walked 24/24, all frozen; 5 reviewer edits |
 | 11-13 | ES B2 core Units 7–10 (es-latam) | two edit-in-place agents (Sonnet), two units each; both resumed after the 5-hour limit | A 325,030, B 324,492 (both runs); ~163k a unit | | 0 errors in all four, 2 suspects accepted; 4 unmet words the agents missed fixed | walked 24/24, all frozen; ~10 reviewer edits |
+| 11-13 | ES B2 core Units 11–14 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 381,736 (19 min), B 287,277 (15 min); ~167k a unit | | 0 errors in all four, 2 suspects accepted, unmet 0 | walked 24/24, all frozen; 6 reviewer edits |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2041,4 +2042,17 @@ The user took the four recommended options:
   nothing conceded). The brief now says: every sentence must say something true about
   the work or its reading; drop a form rather than force it.
 - ~163k a unit at two units per agent, the same as Units 3–6.
+
+### 2026-11-13: ES B2 core Units 11–14
+
+- **The "no empty sentence" rule did not hold for one agent:** A's Benedetti text had
+  three counterfactuals that restate facts, though the brief forbade them, and A listed
+  them itself as "logically safe". A unit whose grammar is a sentence type
+  (conditionals, purpose) invites this. **Change:** the brief now gives one good and one
+  bad example of the unit's form used about a book.
+- **`check_unit_refs.py` now reads table cells and skips hidden units:** false
+  positives fell from 51 to 24 in ES B1, from 35 to 13 in HU B2, and 2 to 0 in ES B2.
+- **Agents report the unmet count after their last edit now** (brief rule from Units
+  7–10): both batches' counts matched the reviewer's rerun.
+- ~167k a unit, as before. Batch started right after a limit reset: no stop.
 

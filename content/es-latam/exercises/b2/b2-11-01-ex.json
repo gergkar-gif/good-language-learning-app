@@ -7,20 +7,24 @@
       "category": "vocabulary",
       "pairs": [
         [
+          "el rumbo",
+          "course, direction"
+        ],
+        [
           "el requisito",
-          "requirement, prerequisite"
+          "requirement"
         ],
         [
           "el escollo",
-          "stumbling block, hurdle"
-        ],
-        [
-          "indispensable",
-          "indispensable, essential"
+          "stumbling block, obstacle"
         ],
         [
           "la cláusula",
-          "clause, stipulation"
+          "clause (in a contract)"
+        ],
+        [
+          "condicionar",
+          "to shape, to make depend on"
         ]
       ],
       "teaches": [
@@ -31,10 +35,10 @@
       "id": "b2-11-01.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Si la empresa no hubiera diversificado sus inversiones en 2018, hoy __ al borde de la bancarrota.",
-      "hint": "estar - condicional simple",
-      "answer": "estaría",
-      "english": "If the company had not diversified its investments in 2018, today it would be on the brink of bankruptcy.",
+      "sentence": "Si hubiera estudiado medicina, ahora __ médica.",
+      "hint": "ser",
+      "answer": "sería",
+      "english": "If I had studied medicine, I would be a doctor now.",
       "teaches": [
         "mixed-conditionals"
       ]
@@ -43,16 +47,20 @@
       "id": "b2-11-01.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Por qué se utiliza condicional simple en 'Si hubieras nacido en el siglo XIX, hoy no disfrutarías de estos derechos'?",
+      "question": "Which sentence means \"If I had accepted the job, I would live in Lima now\"?",
       "options": [
-        "Porque la prótasis alude a un hecho pasado no verificado y la apódosis a una consecuencia en el presente del hablante.",
-        "Porque en las oraciones condicionales mixtas nunca se admiten formas del modo subjuntivo.",
-        "Porque el verbo 'disfrutar' solo admite desinencias de condicional simple en registros literarios."
+        "Si hubiera aceptado el trabajo, ahora habría vivido en Lima.",
+        "Si hubiera aceptado el trabajo, ahora viviría en Lima.",
+        "Si aceptara el trabajo, ahora viviría en Lima."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "mixed-conditionals"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "pluscuamperfecto-subjuntivo-si",
+        "2": "hypothetical-structures"
+      }
     },
     {
       "id": "b2-11-01.ex04",
@@ -60,27 +68,31 @@
       "category": "grammar",
       "tiles": [
         "Si",
-        "hubiéramos",
-        "firmado",
-        "el",
-        "acuerdo,",
-        "hoy",
-        "tendríamos",
-        "mayores",
-        "beneficios."
+        "no",
+        "hubiera",
+        "aceptado",
+        "aquel",
+        "empleo,",
+        "mi",
+        "vida",
+        "tendría",
+        "otro",
+        "rumbo."
       ],
       "solution": [
         "Si",
-        "hubiéramos",
-        "firmado",
-        "el",
-        "acuerdo,",
-        "hoy",
-        "tendríamos",
-        "mayores",
-        "beneficios."
+        "no",
+        "hubiera",
+        "aceptado",
+        "aquel",
+        "empleo,",
+        "mi",
+        "vida",
+        "tendría",
+        "otro",
+        "rumbo."
       ],
-      "english": "If we had signed the agreement, today we would have greater benefits.",
+      "english": "If I had not accepted that job, my life would have a different course.",
       "teaches": [
         "mixed-conditionals"
       ]
@@ -91,34 +103,37 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Analista",
-          "text": "¿Qué consecuencias tuvo la postergación de la reforma energética aprobada en 2015?"
+          "speaker": "Ana",
+          "text": "¿Y por qué no trabajas en el banco?"
         },
         {
-          "speaker": "Consultora",
+          "speaker": "Tú",
           "text": "_____"
         },
         {
-          "speaker": "Analista",
-          "text": "Esa miopía estratégica nos ata a combustibles fósiles sumamente costosos."
+          "speaker": "Ana",
+          "text": "Todavía puedes buscar otro puesto."
         }
       ],
       "options": [
-        "Si el congreso hubiera aprobado la ley en su momento, el país contaría hoy con una matriz eléctrica enteramente limpia.",
-        "Las turbinas eólicas generan energía mecánica a través de la fuerza del viento costero.",
-        "El precio del barril de petróleo crudo fluctúa según las tensiones geopolíticas globales."
+        "Si cumplo todos los requisitos, ahora trabajaría allí.",
+        "Si hubiera cumplido todos los requisitos, ahora habría trabajado allí.",
+        "Si hubiera cumplido todos los requisitos, ahora trabajaría allí."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "mixed-conditionals"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "pluscuamperfecto-subjuntivo-si"
+      }
     },
     {
       "id": "b2-11-01.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Si hubiésemos tomado esa decisión a tiempo, hoy no enfrentaríamos esta crisis.",
-      "english": "If we had made that decision in time, today we would not be facing this crisis.",
+      "sentence": "Si hubiéramos comprado esa casa, ahora viviríamos en el centro.",
+      "english": "If we had bought that house, we would live in the centre now.",
       "teaches": [
         "mixed-conditionals"
       ]

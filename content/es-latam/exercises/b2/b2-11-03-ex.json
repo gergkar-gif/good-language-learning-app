@@ -8,15 +8,19 @@
       "pairs": [
         [
           "pactar",
-          "to agree upon, to covenant"
+          "to agree on"
         ],
         [
           "la contrapartida",
-          "counterpart, quid pro quo"
+          "something in return"
+        ],
+        [
+          "la fianza",
+          "deposit"
         ],
         [
           "la salvaguarda",
-          "safeguard, protection"
+          "safeguard"
         ],
         [
           "vinculante",
@@ -31,10 +35,10 @@
       "id": "b2-11-03.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La delegación suscribirá el protocolo ambiental a condición de que los países industrializados __ fondos de mitigación.",
-      "hint": "aportar - presente subjuntivo",
-      "answer": "aporten",
-      "english": "The delegation will sign the environmental protocol on the condition that industrialized nations provide mitigation funds.",
+      "sentence": "El dueño devolverá la fianza siempre y cuando __ el apartamento limpio.",
+      "hint": "dejar",
+      "answer": "dejemos",
+      "english": "The owner will return the deposit as long as we leave the flat clean.",
       "teaches": [
         "conditional-conjunctions"
       ]
@@ -43,44 +47,54 @@
       "id": "b2-11-03.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué modo verbal exigen obligatoriamente las locuciones 'con tal de que' y 'a condición de que'?",
+      "question": "Which sentence means \"I will lend you the car as long as you bring it back before six\"?",
       "options": [
-        "Modo subjuntivo siempre, tanto en pasado como en presente.",
-        "Modo indicativo si la acción se considera segura o evidente.",
-        "Modo infinitivo compuesto únicamente."
+        "Te presto el carro siempre y cuando lo devuelves antes de las seis.",
+        "Te presto el carro siempre y cuando lo devuelvas antes de las seis.",
+        "Te presto el carro siempre y cuando lo devolverás antes de las seis."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "conditional-conjunctions"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "present-tense",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b2-11-03.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Aceptaremos",
+        "Firmaremos",
         "el",
-        "trato",
+        "contrato",
         "con",
-        "tal",
+        "la",
+        "condición",
         "de",
         "que",
-        "haya",
-        "garantías."
+        "nos",
+        "den",
+        "más",
+        "tiempo."
       ],
       "solution": [
-        "Aceptaremos",
+        "Firmaremos",
         "el",
-        "trato",
+        "contrato",
         "con",
-        "tal",
+        "la",
+        "condición",
         "de",
         "que",
-        "haya",
-        "garantías."
+        "nos",
+        "den",
+        "más",
+        "tiempo."
       ],
-      "english": "We will accept the deal provided that there are guarantees.",
+      "english": "We will sign the contract on the condition that they give us more time.",
       "teaches": [
         "conditional-conjunctions"
       ]
@@ -91,34 +105,37 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Ministro",
-          "text": "¿Bajo qué condiciones apoyará su bancada el presupuesto general del Estado?"
+          "speaker": "Ana",
+          "text": "¿Vas a firmar el contrato con la empresa?"
         },
         {
-          "speaker": "Portavoz parlamentario",
+          "speaker": "Tú",
           "text": "_____"
         },
         {
-          "speaker": "Ministro",
-          "text": "Tomamos nota de esa exigencia irrenunciable para incorporarla al articulado."
+          "speaker": "Ana",
+          "text": "Entonces espera su respuesta."
         }
       ],
       "options": [
-        "Daremos nuestra anuencia siempre y cuando se congelen las tarifas de servicios básicos para los sectores vulnerables.",
-        "El edificio del senado cuenta con alfombras rojas en las escalinatas principales.",
-        "Las sesiones legislativas ordinarias comienzan a las diez de la mañana los días martes."
+        "Sí, a condición de que me aumentan el sueldo.",
+        "Sí, a condición de me aumenten el sueldo.",
+        "Sí, a condición de que me aumenten el sueldo."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "conditional-conjunctions"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "present-tense"
+      }
     },
     {
       "id": "b2-11-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Suscribiremos el acuerdo a condición de que se establezcan salvaguardas claras.",
-      "english": "We will sign the agreement on the condition that clear safeguards are established.",
+      "sentence": "Aceptaremos el acuerdo con tal de que haya una contrapartida.",
+      "english": "We will accept the agreement as long as there is something in return.",
       "teaches": [
         "conditional-conjunctions"
       ]
