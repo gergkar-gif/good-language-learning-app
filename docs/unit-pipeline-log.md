@@ -515,6 +515,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-14 | ES B2 core Units 31–36 (es-latam) | two edit-in-place agents (Sonnet), **three units each**, both stopped by the 5-hour limit at once and resumed | A 295,492 (resumed run only), B 310,080; ~100k a unit | | 57 errors / 172 suspects → 0 / 6 accepted, unmet 0 | walked 36/36, all frozen; B2 core 36/36; texts about the work 108–195 words |
 | 11-14 | HU C1 core Units 1–8 (first C1 batch, no pilot) | read-first, two Sonnet readers, **four units each** (Units 2–8 half-size, 52 items), B stopped once by the 5-hour limit | A 363,583 (17 min), B 353,181 (15 min); ~90k a unit | 737 applied | 50 errors / 100 suspects → 0 / 40 accepted (38 `vocab-unused` stems), unmet 79 → 18 lookup misses | walked 48/48, all frozen; 5 registry moves signed off; 28 retired tags retagged |
 | 11-14 | HU C1 core Units 9–16 | read-first, two Sonnet readers, four units each, extras via `stage_extras.py` | A 383,237 (20 min), B 422,476 (21 min); ~100k a unit | 898 applied | 66 errors / 80 suspects → 0 / 40 accepted (`vocab-unused`), unmet 68 → 31 lookup misses | walked 48/48, all frozen (C1 16/72); 175 retired tags retagged |
+| 11-14 | HU C1 core Units 17–24 | four units each; both readers stopped by the 5-hour limit and resumed after the reset | resumed runs only: A 376,461, B 364,720 (~90k a unit, a floor) | 864 applied | 65 errors / 113 suspects → 0 / 40 accepted, unmet 119 → 52 lookup misses | walked 48/48, all frozen (C1 24/72); c1-22-01 gained the epistemic past modals |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2174,4 +2175,16 @@ The user took the four recommended options:
   Hungarian with these phrasings before batch 17–24.
 - **Present-day facts moved in 2026** (ICC withdrawal reversed 27 May; 16th and 17th amendments).
   Search each present-day legal claim, as § Best practices says; no item was wrong this time.
+
+### 2026-11-14: HU C1 core Units 17–24
+
+- **The usage limit stopped both readers within minutes of each other**, as in HU B2 culture
+  58–64: they share it. Saving the partial files (one reader had a finished unit) and resuming
+  after the reset lost nothing. Launching batch 25–32 the moment both readers of 17–24 reported,
+  and reviewing 17–24 while it ran, kept both slots busy.
+- **answer/answers schema rejects, a second batch running:** scripted in `check_fixes.py`.
+- **A reader with no follow-up round leaves ~70 unmet words:** listing them by script
+  (`add_vocab_words.py`) costs the reviewer less than a reader round when the slots are busy.
+- **Readers' glosses of technical ideas need the same check as facts:** Church's thesis was
+  glossed as a tautology.
 
