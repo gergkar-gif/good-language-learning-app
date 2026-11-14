@@ -133,6 +133,16 @@ const Speech = (function () {
         // pattern (a touch longer consonant) that breaks the exact match with the
         // English word without changing the vowel sound.
         s = s.replace(/\bmind\b/g, 'minnd').replace(/\bMind\b/g, 'Minnd');
+        // English-homograph fix: Hungarian 'de' ("but"), said on its own (a
+        // grammar table cell, a vocabulary word), falls into English's
+        // open-syllable rule for bare two-letter words ("he", "we", "be")
+        // and gets read with a long /iː/ ("dee") instead of the short
+        // Hungarian /ɛ/ it actually has. Scoped to Hungarian: 'de' is one of
+        // the most common Spanish and French words ("of"/"from") and reads
+        // correctly there, so this must not touch any other course.
+        if ((typeof Lang !== 'undefined') && Lang.code().split('-')[0] === 'hu') {
+            s = s.replace(/\bde\b/g, 'deh').replace(/\bDe\b/g, 'Deh');
+        }
         return s;
     }
 
