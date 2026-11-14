@@ -65,3 +65,13 @@ Found at setup and decided by the user:
 - "A section in an existing lesson is enough… no new unit needed."
 - Applied in `skills/es.json` and `skills/frozen-es.json`; the moves leave 19 `taught-later`
   findings on the hidden Nicaragua and Argentina BA units, for the latam pass.
+
+## After the core batches (user, 2026-11-14)
+
+- Forms with no skill of their own (*es que*, *aun a riesgo de* / *así* + subjunctive, *como* +
+  subjunctive warnings): "these skills are ok": they stay tagged with the nearest skill.
+- "merge nominalization": `nominalization` merged into `nominalizacion-despersonalizacion`
+  (b2-21-03); its aliases and the slug kept as aliases; 5 items in b2-35-01 / 35-consolidation
+  retagged (each checked: all test a nominalised form); Unit 35 relocked and refrozen.
+- Unchecked regional word lists in 34-02: "thats ok".
+- Grammar items attributing things to unnamed readers: "fix these things about readers".
