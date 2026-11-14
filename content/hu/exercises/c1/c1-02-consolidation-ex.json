@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik szerkezet képvisel balra ágazó igeneves tömörítést?",
+      "question": "Which phrase puts the participle clause before the noun?",
       "options": [
         "A szakértők által kidolgozott, nyilvánosságra hozott jelentés.",
         "A jelentés, amelyet a szakértők hoztak nyilvánosságra a konferencián.",
-        "A jelentés azért jelent meg, mert a szakértők kidolgozták a kutatás során."
+        "A jelentés azért jelent meg, mert a szakértők kidolgozták."
       ],
       "correct": 0,
       "teaches": [
@@ -22,15 +22,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen funkciót lát el a 'tekintetbe véve' kifejezés?",
+      "question": "What does *tekintetbe véve* do in a sentence?",
       "options": [
-        "Körülményhatározói hátteret és mérlegelést fejez ki.",
-        "Időbeli tiltást fejez ki.",
-        "Feltételes tagadást jelent."
+        "It gives the background to be considered before the main claim.",
+        "It states the purpose of the action in the main clause.",
+        "It says that the action happened at the same time."
       ],
       "correct": 0,
       "teaches": [
-        "b2-temporal-framing"
+        "participle-actions"
       ]
     },
     {
@@ -67,17 +67,16 @@
     {
       "id": "c1-02-consolidation-4",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "recall",
       "sentence": "A reformok végrehajtása a költségvetés _____ történik.",
-      "hint": "as a function of",
-      "english": "The execution of reforms takes place as a function of the budget.",
+      "hint": "depending on",
+      "english": "The execution of reforms takes place depending on the budget.",
       "teaches": [
-        "c1-syntactic-compression-vocab"
+        "b2-relational-compounds"
       ],
       "answers": [
-        "függvényében",
-        "függvényeként"
+        "függvényében"
       ]
     },
     {
@@ -86,11 +85,13 @@
       "category": "vocabulary",
       "stage": "recall",
       "sentence": "A bizottság elnöke egy mind ez idáig példa _____ sikerről számolt be.",
-      "hint": "unprecedented / nélkül + -i",
-      "answer": "nélküli",
+      "hint": "unprecedented (adjective)",
       "english": "The committee president reported an unprecedented success.",
       "teaches": [
         "c1-syntactic-compression-vocab"
+      ],
+      "answers": [
+        "nélküli"
       ]
     },
     {
@@ -98,12 +99,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A szerzők a helyzet súlyát felismer_____ változtatták meg a koncepciót.",
-      "hint": "recognizing / adverbial participle",
-      "answer": "ve",
+      "sentence": "A szerzők a helyzet súlyát _____ változtatták meg a koncepciót.",
+      "hint": "felismer, adverbial participle",
       "english": "Recognizing the gravity of the situation, the authors changed the concept.",
       "teaches": [
-        "b2-temporal-framing"
+        "participle-actions"
+      ],
+      "answers": [
+        "felismerve"
       ]
     },
     {
@@ -126,9 +129,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A kérdés alapos tisztázásának _____ értékelték az eredményeket.",
+      "sentence": "A kérdés teljes tisztázásának _____ értékelték az eredményeket.",
       "hint": "in light of",
-      "english": "In light of the thorough clarification of the issue, they evaluated the results.",
+      "english": "In light of the full clarification of the issue, they evaluated the results.",
       "teaches": [
         "nominalization"
       ],
@@ -142,11 +145,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a fő stilisztikai előnye a balra ágazó melléknévi igenévnek?",
+      "question": "What is the main stylistic advantage of a participle before the noun?",
       "options": [
-        "Kerüli a nehézkes vonatkozó mellékmondatok halmozását, és tömöríti a gondolatot.",
-        "Kizárólag a beszélt nyelvi, közvetlen stílusban használatos.",
-        "Lehetővé teszi az összes igei vonzat elhagyását."
+        "It avoids a pile of heavy relative clauses and condenses the thought.",
+        "It is used only in relaxed, spoken and informal everyday style.",
+        "It allows every verb complement to be left out."
       ],
       "correct": 0,
       "teaches": [
@@ -180,7 +183,7 @@
         "szabadságát",
         "tükrözi."
       ],
-      "english": "The rhythm of the Hungarian sentence reflects the internal freedom of thought.",
+      "english": "The rhythm of the Hungarian sentence reflects the inner freedom of thought.",
       "teaches": [
         "nominalization"
       ]
@@ -193,7 +196,7 @@
       "template": [
         {
           "prompt": "Write a compressed sentence about an economic decision using 'által elfogadott'.",
-          "answer": "A kormány által elfogadott gazdasági intézkedések stabilizálták a piacot."
+          "answer": "A kormány által elfogadott intézkedések megnyugtatták a piacot."
         }
       ],
       "teaches": [
@@ -208,11 +211,11 @@
       "template": [
         {
           "prompt": "Write an elevated statement with 'tekintetbe véve'.",
-          "answer": "A történelmi előzményeket tekintetbe véve a megegyezés történelmi jelentőségű."
+          "answer": "A történelmi helyzetet tekintetbe véve a megegyezés jelentős volt."
         }
       ],
       "teaches": [
-        "b2-temporal-framing"
+        "participle-actions"
       ]
     }
   ]

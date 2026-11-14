@@ -8,13 +8,13 @@
       "stage": "recognize",
       "question": "Mit fejez ki a 'kétélű fegyver' metafora?",
       "options": [
-        "Olyan eszközt, amely egyszerre hordoz jelentős előnyöket és súlyos kockázatokat.",
-        "Olyan érvet, amely megdönthetetlen bizonyítékként szolgál a vitában.",
-        "Olyan intézkedést, amely kizárólag rövid távon fejt ki kedvező hatást."
+        "Olyan eszközt, amely előnyt és kockázatot is hordoz.",
+        "Olyan érvet, amely megdönthetetlen bizonyíték.",
+        "Olyan intézkedést, amely csak rövid távon hasznos."
       ],
       "correct": 0,
       "teaches": [
-        "c1-idiomatic-compounding"
+        "metaphor"
       ]
     },
     {
@@ -25,8 +25,8 @@
       "question": "Melyik kifejezés testesíti meg az erkölcsi szilárdságot és érettséget?",
       "options": [
         "A felelősségtudat és a szilárd erkölcsi tartás.",
-        "A pillanatnyi taktikai előnyök gyors kihasználása.",
-        "A vélemények rugalmas igazítása az elvárásokhoz."
+        "A pillanatnyi haszon és a gyors, könnyű alku.",
+        "Az, hogy a véleményem a többséggel együtt változik."
       ],
       "correct": 0,
       "teaches": [
@@ -70,7 +70,7 @@
       "category": "vocabulary",
       "stage": "recall",
       "sentence": "A tárgyalások eredménye valódi _____ bizonyult a diplomáciai kapcsolatokban.",
-      "hint": "watershed / vízválasztó + -nak",
+      "hint": "watershed (turning point), dative",
       "answer": "vízválasztónak",
       "english": "The result of the negotiations proved to be a genuine watershed in diplomatic relations.",
       "teaches": [
@@ -83,7 +83,7 @@
       "category": "vocabulary",
       "stage": "recall",
       "sentence": "A tudósoknak nem szabad elveszíteniük a józan _____ a kutatás során.",
-      "hint": "sense of reality / valóságérzék + -üket",
+      "hint": "sense of reality (their, object)",
       "answer": "valóságérzéküket",
       "english": "Scientists must not lose their sober sense of reality during research.",
       "teaches": [
@@ -96,7 +96,7 @@
       "category": "grammar",
       "stage": "recall",
       "sentence": "A két kultúra közötti párbeszéd tartós _____ vert a népek között.",
-      "hint": "bridge / híd + -at",
+      "hint": "bridge, object of the verb",
       "answer": "hidat",
       "english": "Dialogue between the two cultures built an enduring bridge between the peoples.",
       "teaches": [
@@ -108,10 +108,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A túlzott szigort alkalmazó rendszer végül veszélyes _____ futott.",
-      "hint": "ran aground / zátony + -ra",
+      "sentence": "A túl szigorú rendszer végül _____ futott.",
+      "hint": "run aground (ship), direction (onto)",
       "answer": "zátonyra",
-      "english": "The system applying excessive severity eventually ran aground dangerously.",
+      "english": "The too strict system eventually ran aground.",
       "teaches": [
         "metaphor"
       ]
@@ -119,14 +119,17 @@
     {
       "id": "c1-06-consolidation-8",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "context",
-      "sentence": "Pilinszky szikár stílusa minden felesleges sallangot _____ a lényegről.",
-      "hint": "stripped away / lehánt, past 3sg",
-      "answer": "lehántott",
-      "english": "Pilinszky's austere style stripped away all superfluous frills from the essence.",
+      "sentence": "A szikár stílus minden felesleges szót _____.",
+      "hint": "leave out, past 3sg",
+      "english": "The austere style left out every superfluous word.",
       "teaches": [
-        "sag-seg-nouns"
+        "c1-metaphor-idiom-vocab"
+      ],
+      "answers": [
+        "elhagyott",
+        "kihagyott"
       ]
     },
     {
@@ -136,9 +139,9 @@
       "stage": "context",
       "question": "Hogyan kapcsolódik a szikár próza a mély jelentéssűrítéshez?",
       "options": [
-        "A díszek elhagyásával a megmaradó szavak rendkívüli gondolati és érzelmi súlyt kapnak.",
-        "A tömör kifejezésmód elsősorban a szöveg könnyebb megjegyezhetőségét célozza.",
-        "A minimalista próza kizárólag a filozófiai szakkifejezések helyettesítésére szolgál."
+        "A díszek elhagyása után a szavak nagyobb súlyt kapnak.",
+        "A rövid szöveget könnyebb megjegyezni, ezért írnak így.",
+        "A rövid próza a szavakat hasonlatokkal váltja fel."
       ],
       "correct": 0,
       "teaches": [
@@ -148,7 +151,7 @@
     {
       "id": "c1-06-consolidation-10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
@@ -174,7 +177,7 @@
       ],
       "english": "Pure moral backbone is the chief intellectual cornerstone of society.",
       "teaches": [
-        "sag-seg-nouns"
+        "c1-metaphor-idiom-vocab"
       ]
     },
     {
@@ -189,7 +192,7 @@
         }
       ],
       "teaches": [
-        "c1-idiomatic-compounding"
+        "c1-metaphor-idiom-vocab"
       ]
     },
     {
@@ -204,7 +207,7 @@
         }
       ],
       "teaches": [
-        "sag-seg-nouns"
+        "c1-metaphor-idiom-vocab"
       ]
     }
   ]

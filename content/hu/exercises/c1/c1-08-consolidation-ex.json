@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik szerkezet helyettesíti szabályosan a passzívumot hivatalos magyar szövegben?",
+      "question": "Melyik fordulat nem nevezi meg hivatalos szövegben, ki cselekedett?",
       "options": [
-        "a főnév + -ra/-re került fordulat",
-        "a folyamatos melléknévi igenevek halmozása",
-        "a személyes névmások kötelező kitétele"
+        "a -ásra/-ésre került fordulat",
+        "sok jelző egymás után",
+        "az 'én' és a 'mi' gyakori használata"
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Mit fejez ki a 'jogalap hiányában' fordulat?",
+      "question": "Mit jelent a 'jogalap hiányában'?",
       "options": [
-        "Azt, hogy a döntésnek nincs törvényes támasza vagy felhatalmazása.",
-        "Azt, hogy a peres felek nem rendelkeznek meghatalmazott jogi képviselővel.",
-        "Azt, hogy a benyújtott keresetlevél nem felel meg a formai követelményeknek."
+        "Azt, hogy a döntésnek nincs törvényes alapja.",
+        "Azt, hogy a felek nem hoztak ügyvédet.",
+        "Azt, hogy a kérelem nem a megfelelő formában érkezett."
       ],
       "correct": 0,
       "teaches": [
@@ -84,15 +84,14 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A közpénzekkel gazdálkodó intézmények számára az _____ alapvető jogállami követelmény.",
+      "sentence": "Az állami pénzzel dolgozó intézmények számára az _____ alapvető követelmény.",
       "hint": "transparency",
       "english": "For institutions managing public funds transparency is a fundamental rule-of-law requirement.",
       "teaches": [
         "c1-passive-avoidance-vocab"
       ],
       "answers": [
-        "átláthatóság",
-        "transzparencia"
+        "átláthatóság"
       ]
     },
     {
@@ -113,7 +112,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A döntéshozatal során a hatóság nem lépheti túl törvényes _____ jogkörét.",
+      "sentence": "A hatóság a döntésnél nem mehet túl törvényes _____ jogkörén.",
       "hint": "discretionary",
       "english": "During decision making the authority cannot exceed its statutory discretionary power.",
       "teaches": [
@@ -128,8 +127,8 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A felülvizsgálat során kétséget kizáróan megállapítást _____, hogy a tisztviselő jogszerűen járt el.",
-      "hint": "gained / was established / nyer, past 3sg",
+      "sentence": "A felülvizsgálat során megállapítást _____, hogy a tisztviselő helyesen járt el.",
+      "hint": "gain, past 3sg",
       "answer": "nyert",
       "english": "During the review it was established beyond doubt that the official acted lawfully.",
       "teaches": [
@@ -143,9 +142,9 @@
       "stage": "context",
       "question": "Melyik mondat képvisel hibátlan hivatali tömörítést?",
       "options": [
-        "A hatáskör-átruházás jogszerűségének kivizsgálását követően intézkedésre került sor.",
-        "A jogszabályi hierarchia áttekintése után a bíróság elrendelte a szakértői bizonyítást.",
-        "A felügyeleti szerv megállapította, hogy az eljárási kötelezettség a kérelmezőt terheli."
+        "A hatáskör-átruházás kivizsgálását követően intézkedésre került sor.",
+        "A bíróság megnézte a jogszabályokat, majd szakértőt rendelt ki.",
+        "A felügyeleti szerv megállapította, hogy a kérelmezőt terheli a kötelezettség."
       ],
       "correct": 0,
       "teaches": [
@@ -155,14 +154,14 @@
     {
       "id": "c1-08-consolidation-10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
         "közigazgatási",
         "határozatok",
         "bírósági",
-        "kontrollja",
+        "felülvizsgálata",
         "a",
         "jogállam",
         "alapja."
@@ -172,14 +171,14 @@
         "közigazgatási",
         "határozatok",
         "bírósági",
-        "kontrollja",
+        "felülvizsgálata",
         "a",
         "jogállam",
         "alapja."
       ],
-      "english": "Judicial control of administrative decisions is the foundation of the rule of law.",
+      "english": "Court review of administrative decisions is the basis of the rule of law.",
       "teaches": [
-        "c1-administrative-remedy"
+        "c1-passive-avoidance-vocab"
       ]
     },
     {
@@ -204,12 +203,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on administrative ethics inspired by Mikszáth.",
+          "prompt": "Formulate a concluding thought on fair administration.",
           "answer": "A közigazgatás valódi hivatása a polgárok pártatlan és átlátható szolgálata, amelyben a protekciónak és a magánérdeknek helye nincs."
         }
       ],
       "teaches": [
-        "c1-civic-transparency"
+        "c1-passive-avoidance-vocab"
       ]
     }
   ]

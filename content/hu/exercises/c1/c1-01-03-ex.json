@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What does 'csakhogy' typically introduce in a philosophical critique?",
+      "question": "What does 'csakhogy' typically introduce in a critique?",
       "options": [
         "a critical snag or fatal flaw in the argument",
-        "an irrelevant historical date",
-        "an agreement with the opponent"
+        "an irrelevant historical date added for decoration",
+        "full agreement with the opponent's main point"
       ],
       "correct": 0,
       "teaches": [
@@ -22,7 +22,7 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Which adjective characterizes an argument that sounds superficially pious but is actually deceptive?",
+      "question": "Which adjective describes an argument that sounds honest but is really deceptive?",
       "options": [
         "álságos",
         "megalapozott",
@@ -69,15 +69,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A hagyományos elmélet a stabilitást hangsúlyozza; _____ a modern megközelítés a dinamikus változást tekinti alapnak.",
+      "sentence": "A hagyományos elmélet a stabilitást hangsúlyozza; _____ a modern megközelítés a változást tekinti alapnak.",
       "hint": "in contrast to this",
-      "english": "The traditional theory emphasizes stability; in contrast to this, the modern approach considers dynamic change as foundational.",
+      "english": "The traditional theory emphasizes stability; in contrast, the modern approach takes change as its basis.",
       "teaches": [
         "rhetorical-argument"
       ],
       "answers": [
         "ezzel szemben",
-        "ezzel ellentétben"
+        "ezzel ellentétben",
+        "ellenben",
+        "viszont"
       ]
     },
     {
@@ -85,12 +87,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az elmélet logikailag kikezdhetetlennek tűnt, _____ az empirikus adatok hamar megcáfolták.",
-      "hint": "except that / the trouble was that",
-      "answer": "csakhogy",
-      "english": "The theory seemed logically unassailable, except that empirical data soon refuted it.",
+      "sentence": "Az elmélet hibátlannak tűnt, _____ az új adatok hamar megcáfolták.",
+      "hint": "except that / the snag is that",
+      "english": "The theory seemed flawless, except that new data soon refuted it.",
       "teaches": [
         "rhetorical-argument"
+      ],
+      "answers": [
+        "csakhogy",
+        "de",
+        "azonban"
       ]
     },
     {
@@ -98,11 +104,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Where does 'ezzel szemben' naturally sit in a contrasting periodic sentence?",
+      "question": "Which sentence sets two opposite views side by side?",
       "options": [
-        "At the beginning of the contrastive clause, setting up the opposing thesis.",
-        "Exclusively at the very end of the paragraph.",
-        "Only after the verb, attached to an adjective."
+        "A régi iskola a hagyományra épít; ezzel szemben az új iskola a változásra.",
+        "A régi iskola a hagyományra épít; ezért az új iskola a változásra.",
+        "A régi iskola a hagyományra épít; tehát az új iskola a változásra."
       ],
       "correct": 0,
       "teaches": [
@@ -114,9 +120,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A dogmatikus gondolkodás merev szabályokat követ; a kritikai szellem _____ folytonosan rákérdez az alapokra.",
+      "sentence": "A merev gondolkodás szabályokat követ; a kritikus szellem _____ mindig megkérdezi az okokat.",
       "hint": "on the other hand / however",
-      "english": "Dogmatic thinking follows rigid rules; the critical mind, on the other hand, constantly interrogates the fundamentals.",
+      "english": "Rigid thinking follows rules; the critical mind, on the other hand, always asks for the reasons.",
       "teaches": [
         "rhetorical-argument"
       ],
@@ -133,28 +139,28 @@
       "tiles": [
         "A",
         "terv",
-        "ígéretesnek",
+        "jónak",
         "látszott,",
         "csakhogy",
         "senki",
         "sem",
         "vállalta",
         "a",
-        "kivitelezést."
+        "munkát."
       ],
       "solution": [
         "A",
         "terv",
-        "ígéretesnek",
+        "jónak",
         "látszott,",
         "csakhogy",
         "senki",
         "sem",
         "vállalta",
         "a",
-        "kivitelezést."
+        "munkát."
       ],
-      "english": "The plan appeared promising, except that no one undertook its implementation.",
+      "english": "The plan seemed good, except that no one took on the work.",
       "teaches": [
         "rhetorical-argument"
       ]
@@ -164,11 +170,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "practice",
-      "question": "What rhetorical purpose does an antithesis serve in Babits' essayistic style?",
+      "question": "What does an antithesis do in an argument?",
       "options": [
-        "It sharpens the boundary between ethical duty and political opportunism.",
-        "It avoids taking any firm stance on controversial issues.",
-        "It shortens sentences so that readers read faster."
+        "It sets two opposite views side by side so that the difference is clear.",
+        "It joins two similar views so that nobody can see any difference.",
+        "It hides the writer's own position behind a long list of details."
       ],
       "correct": 0,
       "teaches": [
@@ -180,12 +186,15 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A bíráló cikk pontról pontra _____ a politikai pamfletben rejlő tudatos csúsztatásokat.",
-      "hint": "unmasked / leleplez, past 3sg",
-      "answer": "leleplezte",
-      "english": "The review article unmasked point by point the conscious spin inherent in the political pamphlet.",
+      "sentence": "A cikk pontról pontra _____ a vita hamis érveit.",
+      "hint": "leleplez, past 3sg, definite",
+      "english": "The article exposed the false arguments of the debate point by point.",
       "teaches": [
         "c1-argument-cohesion-vocab"
+      ],
+      "answers": [
+        "leleplezte",
+        "megcáfolta"
       ]
     },
     {
@@ -196,17 +205,17 @@
       "prompt": [
         {
           "speaker": "Bíráló",
-          "text": "Úgy tűnik, a szerző logikai következtetései levonhatók a premisszákból."
+          "text": "Úgy tűnik, a szerző következtetései logikusak."
         },
         {
           "speaker": "Recenzens",
-          "text": "Igen, a levezetés formálisan helytálló, _____ maga a kiinduló premissza hamis."
+          "text": "Igen, a gondolatmenet helytálló, _____ maga a kiinduló premissza hamis."
         }
       ],
       "options": [
         "csakhogy",
-        "tehát",
-        "mintegy"
+        "következésképpen",
+        "ráadásul"
       ],
       "correct": 0,
       "teaches": [
@@ -225,13 +234,13 @@
         },
         {
           "speaker": "Vitapartner",
-          "text": "Az egyik a külső determinációt vallja; a másik _____ az emberi szabadság feltétlenségét hirdeti."
+          "text": "Az egyik a külső okokat tartja fontosnak; a másik _____ az emberi szabadságot hirdeti."
         }
       ],
       "options": [
         "ellenben",
         "hiszen",
-        "ugyebár"
+        "következésképpen"
       ],
       "correct": 0,
       "teaches": [
@@ -246,7 +255,7 @@
       "template": [
         {
           "prompt": "Write an antithesis setting up two opposing approaches using 'Ezzel szemben'.",
-          "answer": "A korábbi vezetés halogatta a döntést; ezzel szemben az új elnökség azonnali intézkedéseket hozott."
+          "answer": "A régi vezetés sokáig várt; ezzel szemben az új vezetés azonnal döntött."
         }
       ],
       "teaches": [
@@ -261,7 +270,7 @@
       "template": [
         {
           "prompt": "Formulate a rebuttal using 'csakhogy' to point out a fundamental flaw.",
-          "answer": "Az érvelés első pillantásra meggyőző, csakhogy alapvető ténybeli tévedésekre épül."
+          "answer": "Az érvelés elsőre meggyőző, csakhogy hibás adatokra épül."
         }
       ],
       "teaches": [
@@ -273,7 +282,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Which connective expresses a decisive counter-argument pointing out an unforeseen reality barrier?",
+      "question": "Which word fits: *Szép terv, … senki sem vállalja.*?",
       "options": [
         "csakhogy",
         "ugyanis",
@@ -289,12 +298,14 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "check",
-      "sentence": "Az esszéíró célja nem a kompromisszumkeresés volt, hanem a mélyben rejlő elvi _____ felmutatása.",
-      "hint": "contradictions / ellentmondás + -ok",
-      "answer": "ellentmondások",
-      "english": "The essayist's aim was not to seek compromise, but to reveal the profound principled contradictions beneath the surface.",
+      "sentence": "A cikk célja az volt, hogy megmutassa az érvelés belső _____.",
+      "hint": "ellentmondás, plural, possessed by the argument",
+      "english": "The aim of the article was to show the internal contradictions of the argument.",
       "teaches": [
         "c1-argument-cohesion-vocab"
+      ],
+      "answers": [
+        "ellentmondásait"
       ]
     }
   ]

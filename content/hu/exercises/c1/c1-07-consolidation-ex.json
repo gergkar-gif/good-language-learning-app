@@ -6,7 +6,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik végződés fejez ki kötelező érvényű normatív melléknévi igenevet?",
+      "question": "Melyik végződés mutatja, hogy valamit meg kell tenni, mint a 'végrehajtandó' szóban?",
       "options": [
         "-andó / -endő",
         "-hatatlan / -hetetlen",
@@ -15,17 +15,20 @@
       "correct": 0,
       "teaches": [
         "future-participle-ando"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "verbal-adjectives-hatatlan-hetetlen"
+      }
     },
     {
       "id": "c1-07-consolidation-2",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen igét használ a jogi szaknyelv a kötelezettség alanyának kifejezésére?",
+      "question": "Melyik fordulat azt jelenti, hogy valakinek kötelessége van?",
       "options": [
         "terheli a kötelezettség",
-        "illeti a jogosultság",
+        "illeti meg a jogosultság",
         "gyakorolja a jogot"
       ],
       "correct": 0,
@@ -70,7 +73,7 @@
       "category": "vocabulary",
       "stage": "recall",
       "sentence": "A bíróság döntése mindenki számára kötelező és haladéktalanul _____.",
-      "hint": "to be executed / végrehajt + -andó",
+      "hint": "to be executed",
       "answer": "végrehajtandó",
       "english": "The court's decision is binding and to be executed without delay for everyone.",
       "teaches": [
@@ -102,8 +105,7 @@
         "felteve-hogy-kiveve-ha"
       ],
       "answers": [
-        "kizárólag",
-        "csakis"
+        "kizárólag"
       ]
     },
     {
@@ -112,7 +114,7 @@
       "category": "grammar",
       "stage": "context",
       "sentence": "A döntéshozatal a bíróság kizárólagos _____ tartozik.",
-      "hint": "jurisdiction / hatáskör + -ébe",
+      "hint": "jurisdiction, 3sg possessive, 'into'",
       "answer": "hatáskörébe",
       "english": "Decision making falls within the exclusive jurisdiction of the court.",
       "teaches": [
@@ -124,12 +126,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Eötvös szerint az állam nem válhat korlátlanná, mert a fékek hiánya _____ vezet.",
-      "hint": "to tyranny / önkényuralom + -hoz",
+      "sentence": "A szöveg szerint az állam nem válhat korlátlanná, mert a fékek hiánya _____ vezet.",
+      "hint": "tyranny, 'to'",
       "answer": "önkényuralomhoz",
       "english": "According to Eötvös the state cannot become limitless, because the lack of checks leads to tyranny.",
       "teaches": [
-        "c1-constitutional-discourse"
+        "verb-government-hoz-hez"
       ]
     },
     {
@@ -139,9 +141,9 @@
       "stage": "context",
       "question": "Melyik megfogalmazás alkalmaz helyesen megszorító jogi feltételt?",
       "options": [
-        "A kérelem teljesíthető, kivéve, ha az ügyfél nem fizeti meg az eljárási illetéket.",
-        "A szerződés érvényes, feltéve, hogy a bíróság jóváhagyta a vitatott záradékot.",
-        "Az eljárás lezárul, annak ellenére, hogy a határozatot kézbesítették a feleknek."
+        "A kérelem rendben van, kivéve, ha az ügyfél nem fizeti meg az illetéket.",
+        "A szerződés érvényes, feltéve, hogy a bíróság jóváhagyta a szöveget.",
+        "Az eljárás lezárul, annak ellenére, hogy a felek megkapták a döntést."
       ],
       "correct": 0,
       "teaches": [
@@ -151,7 +153,7 @@
     {
       "id": "c1-07-consolidation-10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
@@ -181,7 +183,7 @@
       ],
       "english": "The foundation of the rule of law is the institutional limitation of power and individual dignity.",
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-legal-language-vocab"
       ]
     },
     {
@@ -196,7 +198,7 @@
         }
       ],
       "teaches": [
-        "future-participle-ando"
+        "c1-legal-language-vocab"
       ]
     },
     {
@@ -206,12 +208,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical reflection on Baron Eötvös's constitutional thought.",
-          "answer": "Báró Eötvös József állambölcselete bebizonyította, hogy a törvényes fékek és egyensúlyok rendszere nélkül még a népfelség is a zsarnokság eszközévé válhat."
+          "prompt": "Write what the text says about the limits of state power.",
+          "answer": "A szöveg szerint a törvényes fékek nélkül az állam hatalma önkényuralomhoz vezet."
         }
       ],
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-legal-language-vocab"
       ]
     }
   ]

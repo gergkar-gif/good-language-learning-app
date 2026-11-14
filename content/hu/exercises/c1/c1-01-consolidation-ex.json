@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik mondat fejezi ki a legpontosabban a megalapozott elméleti engedményt?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Jóllehet a hipotézis vitatott, mindazonáltal számos empirikus megfigyelés támasztja alá.",
-        "Mindazonáltal a hipotézis vitatott, jóllehet számos empirikus megfigyelés támasztja alá.",
-        "Mivelhogy a hipotézis vitatott, mindazonáltal számos empirikus megfigyelés támasztja alá."
+        "Jóllehet a hipotézis vitatott, mégis sok adat szól mellette.",
+        "Mivel a hipotézis vitatott, mégis sok adat szól mellette.",
+        "Ezért a hipotézis vitatott, mégis sok adat szól mellette."
       ],
       "correct": 0,
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ]
     },
     {
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen funkciót tölt be a 'nemhogy... de még... is' szerkezet?",
+      "question": "What does *nemhogy … de még … is* express?",
       "options": [
-        "Skaláris fokozást fejez ki egy elmaradt várakozás és egy meglepő túlteljesítés között.",
-        "Kizárólag egyszerű időbeli egymásutániságot jelöl.",
-        "Két dolog teljes azonosságát hangsúlyozza."
+        "The first thing did not happen, and something even worse or stronger did.",
+        "The first thing happened, and then the second thing followed it in time.",
+        "The two things are exactly the same and cannot be told apart."
       ],
       "correct": 0,
       "teaches": [
@@ -69,12 +69,14 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A szerző nem vett részt a politikai csatározásokban, mert elutasított minden elvtelen _____.",
-      "hint": "compromise / megalkuvás + -t",
-      "answer": "megalkuvást",
-      "english": "The author did not participate in political battles because he rejected all unprincipled compromise.",
+      "sentence": "A szerző nem vett részt a vitában, mert elutasított minden elvtelen _____.",
+      "hint": "megalkuvás, noun (compromise)",
+      "english": "The author did not take part in the debate because he rejected all unprincipled compromise.",
       "teaches": [
         "c1-argument-cohesion-vocab"
+      ],
+      "answers": [
+        "megalkuvást"
       ]
     },
     {
@@ -82,12 +84,14 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Babits esszéje az európai kultúra válságáról szóló legfontosabb szellemi _____.",
-      "hint": "polemical treatise / manifesto",
-      "answer": "vitairat",
-      "english": "Babits' essay is the most important intellectual polemical treatise on the crisis of European culture.",
+      "sentence": "Ha az írástudó a pártérdeket szolgálja, azt mondjuk: ez az írástudók _____.",
+      "hint": "árulás, noun, possessed by the clerks",
+      "english": "If the intellectual serves party interest, we say: this is the treason of the clerks.",
       "teaches": [
         "c1-argument-cohesion-vocab"
+      ],
+      "answers": [
+        "árulása"
       ]
     },
     {
@@ -95,10 +99,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A professzor _____ elismerte a hibáját, de még a tanítványait hibáztatta a félreértésért.",
-      "hint": "far from having / let alone",
+      "sentence": "A professzor _____ elismerte a hibáját, de még a diákokra is haragudott.",
+      "hint": "far from having",
       "answer": "nemhogy",
-      "english": "Far from having acknowledged his error, the professor even blamed his students for the misunderstanding.",
+      "english": "Far from admitting his mistake, the professor was even angry with the students.",
       "teaches": [
         "egyreszt-masreszt"
       ]
@@ -108,15 +112,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A kísérlet első pillantásra sikeresnek bizonyult; _____, a részletes mérések kimutatták az eljárás hibáit.",
+      "sentence": "A kísérlet első pillantásra sikeresnek látszott; _____ a pontos mérések hibákat mutattak.",
       "hint": "in contrast to this",
-      "english": "The experiment proved successful at first glance; in contrast to this, detailed measurements revealed the errors of the procedure.",
+      "english": "The experiment seemed successful at first glance; in contrast, the exact measurements showed errors.",
       "teaches": [
         "rhetorical-argument"
       ],
       "answers": [
         "ezzel szemben",
-        "ezzel ellentétben"
+        "ezzel ellentétben",
+        "ellenben",
+        "viszont"
       ]
     },
     {
@@ -124,12 +130,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A könyvtári források hiányosak voltak; _____ dacára a kutatócsoport rekonstruálta a szöveget.",
-      "hint": "in spite of all these things / mindez + -ek",
-      "answer": "mindezek",
-      "english": "Library sources were deficient; in spite of all these things, the research group reconstructed the text.",
+      "sentence": "Az adatok hiányosak voltak; _____ dacára a kutatók befejezték a munkát.",
+      "hint": "mindez, plural (all these)",
+      "english": "The data were incomplete; in spite of all this, the researchers finished the work.",
       "teaches": [
-        "epistemic-hedging"
+        "concessive-postpositions"
+      ],
+      "answers": [
+        "mindezek"
       ]
     },
     {
@@ -137,11 +145,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Hogyan értékelhető a 'csakhogy' használata a tudományos kritikában?",
+      "question": "What does *csakhogy* do in an argument?",
       "options": [
-        "Rámutat arra a döntő elvi vagy gyakorlati hibára, amely megdönti az ellenfél tézisét.",
-        "Egyszerűen az 'és' kötőszó szinonimája a formális stílusban.",
-        "Csak mellékmondatban fejezhet ki megengedést."
+        "It points to the snag that breaks the other side's claim.",
+        "It is just a formal way of saying 'and', with no contrast.",
+        "It can only open a clause that gives a reason for something."
       ],
       "correct": 0,
       "teaches": [
@@ -157,10 +165,10 @@
         "Mindebből",
         "következően",
         "az",
-        "értelmiség",
-        "nem",
-        "adhatja",
-        "fel",
+        "értelmiségnek",
+        "meg",
+        "kell",
+        "védenie",
         "a",
         "függetlenségét."
       ],
@@ -168,16 +176,16 @@
         "Mindebből",
         "következően",
         "az",
-        "értelmiség",
-        "nem",
-        "adhatja",
-        "fel",
+        "értelmiségnek",
+        "meg",
+        "kell",
+        "védenie",
         "a",
         "függetlenségét."
       ],
-      "english": "Consequently from all this, the intelligentsia cannot give up its independence.",
+      "english": "It follows from all this that the intelligentsia must defend its independence.",
       "teaches": [
-        "epistemic-hedging"
+        "additive-connectors"
       ]
     },
     {
@@ -187,7 +195,7 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a complex C1 periodic sentence summarizing the duty of an intellectual using 'Jóllehet' and 'mindazonáltal'.",
+          "prompt": "Write a long sentence summarizing the duty of an intellectual using 'Jóllehet' and 'mindazonáltal'.",
           "answer": "Jóllehet a pillanatnyi érdekek mást diktálnak, az írástudó mindazonáltal az egyetemes igazság mellett kötelezi el magát."
         }
       ],
@@ -203,7 +211,7 @@
       "template": [
         {
           "prompt": "Formulate a strong conclusion using 'Ennek fényében'.",
-          "answer": "Ennek fényében világossá válik, hogy a szellemi autonómia védelme nem luxus, hanem morális alapkövetelmény."
+          "answer": "Ennek fényében világos, hogy a szellem függetlenségének védelme nem luxus, hanem alapvető kötelesség."
         }
       ],
       "teaches": [

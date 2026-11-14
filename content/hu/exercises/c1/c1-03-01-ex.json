@@ -4,17 +4,17 @@
     {
       "id": "c1-03-01-introduce-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "introduce",
-      "question": "Mire szolgálnak az evidencialitási jelölők a tudományos stílusban?",
+      "question": "What do evidential markers do in academic style?",
       "options": [
-        "A közölt információ forrásának és megbízhatóságának pontos megjelölésére.",
-        "A szerző személyes érzelmi felindultságának kifejezésére.",
-        "A retorikai kérdések kötelező lezárására."
+        "They show where the information comes from and how reliable it is.",
+        "They show how strongly the author feels about the topic.",
+        "They mark where one section ends and the next one begins."
       ],
       "correct": 0,
       "teaches": [
-        "c1-hedging-evidentials-vocab"
+        "evidentials"
       ]
     },
     {
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A korabeli dokumentumok _____ szerint a döntés már hónapokkal korábban megszületett.",
-      "hint": "testimony / tanúság + -a",
-      "answer": "tanúsága",
-      "english": "According to the testimony of contemporary documents, the decision had been made months earlier.",
+      "sentence": "A korabeli dokumentumok _____ szerint a döntést már hónapokkal korábban meghozták.",
+      "hint": "testimony, noun (possessed)",
+      "english": "According to the testimony of contemporary documents, the decision had already been made months earlier.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "tanúsága"
       ]
     },
     {
@@ -62,15 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A kézirat _____ évszázadokon át egy kolostor könyvtárában rejtőzött.",
+      "sentence": "A kézirat _____ évszázadokon át egy kolostor könyvtárában volt.",
       "hint": "allegedly",
-      "english": "Allegedly, the manuscript hid in a monastery library for centuries.",
+      "english": "Allegedly, the manuscript was in a monastery library for centuries.",
       "teaches": [
         "evidentials"
       ],
       "answers": [
-        "állítólag",
-        "úgy hírlik"
+        "állítólag"
       ]
     },
     {
@@ -115,17 +116,17 @@
       "prompt": [
         {
           "speaker": "Kutató",
-          "text": "Biztosak lehetünk ebben a történelmi adatban?"
+          "text": "Biztosak lehetünk ebben az adatban?"
         },
         {
           "speaker": "Professzor",
-          "text": "Igen, a levéltári források _____, az esemény pontos dátuma vitathatatlan."
+          "text": "Igen, a levéltári források _____, az esemény pontos dátuma biztos."
         }
       ],
       "options": [
         "tanúsága szerint",
         "tanúságával",
-        "tanúságát tekintve"
+        "tanúsága helyett"
       ],
       "correct": 0,
       "teaches": [
@@ -140,7 +141,7 @@
       "template": [
         {
           "prompt": "Write a sentence attributing a claim to primary sources using 'A források tanúsága szerint'.",
-          "answer": "A források tanúsága szerint a két tudós már korábban levelezett egymással."
+          "answer": "A források tanúsága szerint a két tudós már korábban ismerte egymást."
         }
       ],
       "teaches": [
@@ -152,10 +153,10 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés fejezi ki a legmagasabb tudományos megbízhatóságot?",
+      "question": "Which phrase gives the most reliable basis for a claim?",
       "options": [
-        "A primer források filológiai vizsgálata alapján",
-        "A szóbeli visszaemlékezések bizonytalan utalásai szerint",
+        "az elsődleges források alapján",
+        "egy régi, bizonytalan visszaemlékezés szerint",
         "Állítólag így történt régen"
       ],
       "correct": 0,

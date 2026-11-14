@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik mondat fejez ki elegáns tudományos kételkedést?",
+      "question": "Which sentence expresses careful scholarly doubt?",
       "options": [
-        "Aligha feltételezhető, hogy a modell minden körülmények között érvényes marad.",
-        "A modell kizárólag a szerző téves feltevéseire támaszkodik.",
-        "Minden kétséget kizáróan bebizonyosodott, hogy az elmélet helytálló."
+        "Aligha feltételezhető, hogy a modell mindig érvényes marad.",
+        "A modell csak a szerző téves feltevéseire épül.",
+        "Minden kétséget kizáróan igaz, hogy az elmélet helyes."
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen funkciót tölt be a 'források tanúsága szerint' fordulat?",
+      "question": "What does 'a források tanúsága szerint' do?",
       "options": [
-        "A közölt adat dokumentáris megalapozottságát és hatókörét jelöli meg.",
-        "Csupán egy szóismétlést küszöböl ki.",
-        "Feltételes kívánságot fejez ki."
+        "It shows which documents the stated fact is based on.",
+        "It only avoids repeating the same word in the text.",
+        "It expresses a wish that depends on a condition."
       ],
       "correct": 0,
       "teaches": [
@@ -102,11 +102,13 @@
       "category": "grammar",
       "stage": "recall",
       "sentence": "Nem _____ ki, hogy a dokumentumok egy része megsemmisült a háborúban.",
-      "hint": "cannot be ruled out / zár + -ható",
-      "answer": "zárható",
+      "hint": "zár, 'can be'-form",
       "english": "It cannot be ruled out that part of the documents was destroyed in the war.",
       "teaches": [
         "epistemic-hedging"
+      ],
+      "answers": [
+        "zárható"
       ]
     },
     {
@@ -130,12 +132,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A korabeli levelezések _____ szerint a két gondolkodó nem értett egyet.",
-      "hint": "testimony / tanúság + -a",
-      "answer": "tanúsága",
-      "english": "According to the testimony of contemporary correspondences, the two thinkers did not agree.",
+      "sentence": "A korabeli levelek _____ szerint a két gondolkodó nem értett egyet.",
+      "hint": "testimony, noun (possessed)",
+      "english": "According to the testimony of contemporary letters, the two thinkers did not agree.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "tanúsága"
       ]
     },
     {
@@ -143,11 +147,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a különbség a 'bizonyára' és az 'aligha' között?",
+      "question": "What is the difference between *minden bizonnyal* and *aligha*?",
       "options": [
-        "A 'bizonyára' magas valószínűséget, az 'aligha' kifejezetten alacsony valószínűséget jelez.",
-        "A 'bizonyára' alacsony valószínűséget, az 'aligha' kifejezetten magas valószínűséget jelez.",
-        "A 'bizonyára' szubjektív feltételezést, az 'aligha' objektív ténybeli bizonyosságot fejez ki."
+        "The first one signals high probability, the second one very low probability",
+        "The first one signals low probability, the second one very high probability",
+        "One is only a guess, the other is a proven fact"
       ],
       "correct": 0,
       "teaches": [
@@ -205,7 +209,7 @@
       "template": [
         {
           "prompt": "Formulate a cautious evidentiary remark using 'A források tanúsága szerint'.",
-          "answer": "A források tanúsága szerint a kézirat eredetisége mindeddig vitatott maradt."
+          "answer": "A források tanúsága szerint a kéziratot két különböző személy írta."
         }
       ],
       "teaches": [

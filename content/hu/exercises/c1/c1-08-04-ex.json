@@ -9,8 +9,8 @@
       "question": "Mit kérhet a polgár a bíróságtól közigazgatási perben?",
       "options": [
         "A jogsértő határozat megsemmisítését vagy megváltoztatását.",
-        "A közigazgatási eljárási illetékek teljes és visszamenőleges eltörlését.",
-        "Az eljáró köztisztviselő azonnali fegyelmi felelősségre vonását."
+        "Az eljárási illetékek teljes és azonnali eltörlését.",
+        "A hivatalnok azonnali és végleges elbocsátását."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A bíróság megállapította a jogsértést, a határozatot hatályon kívül helyezte, és a hatóságot új _____ kötelezte.",
-      "hint": "to proceeding / eljárás + -ra",
+      "sentence": "A bíróság a határozatot hatályon kívül helyezte, és a hatóságot új _____ kötelezte.",
+      "hint": "proceeding, 'to' (for)",
       "answer": "eljárásra",
       "english": "The court established the infringement, set aside the resolution, and ordered the authority to conduct a new proceeding.",
       "teaches": [
-        "c1-administrative-remedy"
+        "verb-government-ra-re"
       ]
     },
     {
@@ -60,13 +60,13 @@
     {
       "id": "c1-08-04-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "sentence": "A hatóság a döntés során túllépte törvényes _____ jogkörét.",
       "hint": "discretionary",
       "english": "In the decision the authority exceeded its statutory discretionary power.",
       "teaches": [
-        "c1-administrative-remedy"
+        "c1-passive-avoidance-vocab"
       ],
       "answers": [
         "mérlegelési"
@@ -75,33 +75,31 @@
     {
       "id": "c1-08-04-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
-        "közigazgatási",
-        "bíráskodás",
+        "bírósági",
+        "felülvizsgálat",
         "a",
-        "polgári",
-        "jogvédelem",
-        "legfőbb",
-        "intézményi",
-        "bástyája."
+        "polgárok",
+        "jogainak",
+        "védelmét",
+        "szolgálja."
       ],
       "solution": [
         "A",
-        "közigazgatási",
-        "bíráskodás",
+        "bírósági",
+        "felülvizsgálat",
         "a",
-        "polgári",
-        "jogvédelem",
-        "legfőbb",
-        "intézményi",
-        "bástyája."
+        "polgárok",
+        "jogainak",
+        "védelmét",
+        "szolgálja."
       ],
-      "english": "Administrative adjudication is the chief institutional bastion of civil legal protection.",
+      "english": "Court review serves to protect citizens' rights.",
       "teaches": [
-        "c1-administrative-remedy"
+        "c1-passive-avoidance-vocab"
       ]
     },
     {
@@ -112,10 +110,10 @@
       "prompt": [
         {
           "speaker": "Ügyvéd",
-          "text": "Hogyan reagált a törvényszék a hatóság önkényes bírságára?"
+          "text": "Hogyan döntött a bíróság a hatóság határozatáról?"
         },
         {
-          "speaker": "Alperes",
+          "speaker": "Ügyfél",
           "text": "A bíróság a határozatot teljes egészében _____ helyezte."
         }
       ],
@@ -126,7 +124,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "c1-administrative-remedy"
+        "c1-passive-avoidance-vocab"
       ]
     },
     {
@@ -136,12 +134,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Draft a formal claim in an administrative lawsuit requesting annulment.",
-          "answer": "Kérem a Tisztelt Bíróságot, hogy az alperes jogszabálysértő határozatát semmisítse meg, és kötelezze az alperest a perköltségek viselésére."
+          "prompt": "Draft a short formal claim asking the court to annul an administrative decision.",
+          "answer": "Kérem a bíróságot, hogy a hatóság jogsértő határozatát helyezze hatályon kívül, és kötelezze új eljárásra."
         }
       ],
       "teaches": [
-        "c1-administrative-remedy"
+        "c1-passive-avoidance-vocab"
       ]
     },
     {
@@ -151,9 +149,9 @@
       "stage": "check",
       "question": "Melyik állítás foglalja össze legpontosabban a mérlegelési jogkör bírósági felülvizsgálatát?",
       "options": [
-        "A bíróság vizsgálja, hogy a hatóság a tényeket feltárta-e, és a mérlegelés nem volt-e önkényes vagy iratellenes.",
-        "A bíróság a jogalkotói szándékot értékeli a közigazgatási bírság mértékének megállapításakor.",
-        "A bíróság kizárólag a határidők megtartását ellenőrzi, a döntés érdemi indokait nem vizsgálhatja."
+        "Azt, hogy a hatóság döntése nem volt-e önkényes.",
+        "Azt, hogy a határidőt betartották-e, a döntés okát nem.",
+        "Azt, hogy a hatóság hány embert hallgatott meg."
       ],
       "correct": 0,
       "teaches": [

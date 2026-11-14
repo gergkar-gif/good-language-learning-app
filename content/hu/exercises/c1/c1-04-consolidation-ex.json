@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik fordulat vezeti be a legpontosabban a taktikai engedményt?",
+      "question": "Which opening grants a point before a refutation?",
       "options": [
         "Bármennyire is vonzónak tűnik az elképzelés...",
-        "Jóllehet a szakmai konszenzus teljes mértékben hiányzik...",
-        "Mivel az elképzelés eleve kudarcra van ítélve..."
+        "Mivel az elképzelés vonzónak tűnik...",
+        "Ezért az elképzelés vonzónak tűnik..."
       ],
       "correct": 0,
       "teaches": [
-        "rhetorical-argument"
+        "concessive-indefinites"
       ]
     },
     {
@@ -22,15 +22,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen hatást ér el az 'épp ellenkezőleg' kifejezés?",
+      "question": "What does *épp ellenkezőleg* do?",
       "options": [
-        "Gyökeresen megfordítja az ellenfél által felállított tézist.",
-        "Kiegyensúlyozott kompromisszumot teremt a vitázó felek álláspontjai között.",
-        "Enyhe bizonytalanságot fejez ki az elhangzott érvek súlyával kapcsolatban."
+        "It reverses the thesis that the opponent has set up.",
+        "It creates a balanced compromise between the two sides.",
+        "It expresses slight uncertainty about the force of the arguments."
       ],
       "correct": 0,
       "teaches": [
-        "b2-contrastive-topic"
+        "discourse-particles"
       ]
     },
     {
@@ -69,9 +69,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A reformok elindítása mostanra halaszthatatlan, _____ feladattá vált.",
+      "sentence": "A reformok ügye mostanra _____ feladattá vált.",
       "hint": "unpostponable",
-      "english": "Starting the reforms has by now become an unpostponable task.",
+      "english": "The matter of the reforms has by now become an urgent task that cannot be put off.",
       "teaches": [
         "c1-polemics-refutation-vocab"
       ],
@@ -85,12 +85,14 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A bírálók által felhozott elmélet nyilvánvaló belső _____ torkollik.",
-      "hint": "self-contradiction / önellentmondás + -ba",
-      "answer": "önellentmondásba",
-      "english": "The theory adduced by critics runs into an obvious internal self-contradiction.",
+      "sentence": "A bírálók elmélete nyilvánvaló belső _____ torkollik.",
+      "hint": "önellentmondás, noun, 'into'",
+      "english": "The critics' theory ends in an obvious internal self-contradiction.",
       "teaches": [
         "c1-polemics-refutation-vocab"
+      ],
+      "answers": [
+        "önellentmondásba"
       ]
     },
     {
@@ -100,14 +102,13 @@
       "stage": "recall",
       "sentence": "A helyzet _____ volt olyan egyszerű, mint ahogyan a hivatalos jelentések állították.",
       "hint": "by no means",
-      "english": "The situation was by no means as simple as official reports claimed.",
+      "english": "The situation was by no means as simple as the official reports claimed.",
       "teaches": [
-        "b2-contrastive-topic"
+        "discourse-particles"
       ],
       "answers": [
         "korántsem",
-        "egyáltalán nem",
-        "koránt"
+        "egyáltalán nem"
       ]
     },
     {
@@ -132,7 +133,7 @@
       "hint": "I wonder",
       "english": "Can it indeed rightly be claimed that society is prepared for the changes?",
       "teaches": [
-        "rhetorical-argument"
+        "rhetorical-questions"
       ],
       "answers": [
         "Vajon"
@@ -143,11 +144,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a reductio ad absurdum legfontosabb lépése?",
+      "question": "What is the most important step in a reductio ad absurdum?",
       "options": [
-        "Az ellenfél premisszájából kiindulva logikailag képtelen következményt levezetni.",
-        "Az ellenfél személyes hitelességét kétségbe vonni korábbi nyilatkozatai alapján.",
-        "A vitapartner figyelmét elterelni a lényeges érvekről érzelmi kérdésekre."
+        "Starting from the opponent's claim and deriving an absurd consequence.",
+        "Doubting the opponent's credibility because of his earlier words.",
+        "Steering the partner's attention away from the main arguments."
       ],
       "correct": 0,
       "teaches": [
@@ -161,27 +162,27 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "történelmi",
         "tisztánlátás",
-        "megköveteli",
+        "és",
         "az",
         "önámítás",
-        "kérlelhetetlen",
-        "elvetését."
+        "nem",
+        "fér",
+        "össze."
       ],
       "solution": [
         "A",
-        "történelmi",
         "tisztánlátás",
-        "megköveteli",
+        "és",
         "az",
         "önámítás",
-        "kérlelhetetlen",
-        "elvetését."
+        "nem",
+        "fér",
+        "össze."
       ],
-      "english": "Historical clarity of vision demands the relentless rejection of self-delusion.",
+      "english": "Clear sight and self-delusion do not go together.",
       "teaches": [
-        "b2-contrastive-topic"
+        "essay-oratory-style"
       ]
     },
     {
@@ -192,7 +193,7 @@
       "template": [
         {
           "prompt": "Write a tactical refutation using 'Bármennyire is... mégis...'.",
-          "answer": "Bármennyire is csábító a gyors siker, a hosszú távú kockázatok mégis elfogadhatatlanok."
+          "answer": "Bármennyire is vonzó a gyors siker, a hosszú távú kockázatok mégis elfogadhatatlanok."
         }
       ],
       "teaches": [

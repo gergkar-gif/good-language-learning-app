@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért használ a hivatali stílus személytelen megfogalmazásokat?",
+      "question": "Miért személytelen a hivatali nyelv?",
       "options": [
-        "Hogy a döntés objektív, intézményi jellegét hangsúlyozza az egyéni szimpátia helyett.",
-        "Hogy a jogszabályi hierarchia formai követelményeit teljesítse a bíróság előtt.",
-        "Hogy az ügyfelek számára lerövidítse a jogorvoslati határidők számítását."
+        "Hogy a döntés a hivatal döntése legyen, ne egy emberé.",
+        "Hogy az ügyfelek hamarabb megkapják a választ.",
+        "Hogy a jogszabályok formai követelményei teljesüljenek."
       ],
       "correct": 0,
       "teaches": [
@@ -22,8 +22,8 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A bizonyítási eljárás lefolytatása során kétséget kizáróan megállapítást _____, hogy jogsértés nem történt.",
-      "hint": "gained / was established / nyer, past 3sg",
+      "sentence": "A vizsgálat során megállapítást _____, hogy a kérelem hiányos volt.",
+      "hint": "gain, past 3sg",
       "answer": "nyert",
       "english": "During the conduct of the evidentiary procedure it was established beyond doubt that no infringement occurred.",
       "teaches": [
@@ -62,14 +62,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A kérelem érdemi elbírálása _____ hiányában nem volt lehetséges.",
-      "hint": "legal basis",
-      "english": "Substantive adjudication of the application was not possible in the absence of a legal basis.",
+      "sentence": "A 2026. március 3-i levelére _____ közöljük, hogy a kérelem hiányos.",
+      "hint": "reference (with)",
+      "english": "With reference to your letter of 3 March 2026, we inform you that the application is incomplete.",
       "teaches": [
         "official-register"
       ],
       "answers": [
-        "jogalap"
+        "hivatkozással",
+        "hivatkozva"
       ]
     },
     {
@@ -112,22 +113,26 @@
       "prompt": [
         {
           "speaker": "Ügyfél",
-          "text": "Miért nem vették nyilvántartásba a beadványomat?"
+          "text": "Mit kell még tennem a kérelemmel?"
         },
         {
           "speaker": "Ügyintéző",
-          "text": "Mivel az illeték megfizetésének hiányában a kérelem elutasításra _____."
+          "text": "_____ a kérelmet aláírva visszaküldeni."
         }
       ],
       "options": [
-        "talált",
-        "fordult",
-        "mutatott"
+        "Szíveskedjék",
+        "Szíveskedik",
+        "Szíveskedni"
       ],
       "correct": 0,
       "teaches": [
         "official-register"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "c1-08-03-production-7",
@@ -137,7 +142,7 @@
       "template": [
         {
           "prompt": "Write a formal administrative sentence rejecting a request for lack of legal grounds.",
-          "answer": "Értesítjük, hogy kérelme jogalap hiányában elutasításra került, a döntéssel szemben önálló jogorvoslatnak helye nincs."
+          "answer": "A kérelem jogalap hiányában elutasításra került."
         }
       ],
       "teaches": [
@@ -151,9 +156,9 @@
       "stage": "check",
       "question": "Melyik hivatali közlés felel meg a legmagasabb szintű személytelen stílusnak?",
       "options": [
-        "A benyújtott dokumentumok alapján megállapítást nyert, hogy a feltételek nem teljesültek, ezért az eljárás megszüntetésre került.",
-        "A hatóság megállapította a kérelem megalapozottságát, de a határidő leteltére hivatkozva elutasította.",
-        "A jogszabályi keretek felülvizsgálata indokolttá teszi az érdemi elbírálás ideiglenes felfüggesztését."
+        "A dokumentumok alapján megállapítást nyert, hogy a feltételek nincsenek meg.",
+        "A hatóság a dokumentumok alapján megállapította, hogy a feltételek nincsenek meg.",
+        "A hivatalnok a dokumentumok alapján úgy döntött, hogy a feltételek nincsenek meg."
       ],
       "correct": 0,
       "teaches": [

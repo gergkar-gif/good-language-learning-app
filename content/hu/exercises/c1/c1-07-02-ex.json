@@ -9,8 +9,8 @@
       "question": "Melyik kifejezés jelöli a jogi kötelezettség fennállását?",
       "options": [
         "terheli a kötelezettség",
-        "megilleti a jogosultság",
-        "átruházza a hatáskört"
+        "illeti meg a jogosultság",
+        "hatályát veszti"
       ],
       "correct": 0,
       "teaches": [
@@ -22,7 +22,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szerződő fél súlyos szerződésszegés esetén azonnali hatályú felmondásra _____.",
+      "sentence": "A szerződő fél súlyos hiba esetén azonnali felmondásra _____.",
       "hint": "entitled",
       "english": "The contracting party is entitled to immediate termination in case of gross breach of contract.",
       "teaches": [
@@ -80,7 +80,8 @@
       "tiles": [
         "Minden",
         "állampolgárt",
-        "megillet",
+        "illeti",
+        "meg",
         "a",
         "tisztességes",
         "eljáráshoz",
@@ -91,7 +92,8 @@
       "solution": [
         "Minden",
         "állampolgárt",
-        "megillet",
+        "illeti",
+        "meg",
         "a",
         "tisztességes",
         "eljáráshoz",
@@ -99,7 +101,7 @@
         "alapvető",
         "jog."
       ],
-      "english": "Every citizen is entitled to the fundamental right to fair proceedings.",
+      "english": "Every citizen is entitled to the fundamental right to a fair procedure.",
       "teaches": [
         "formal-obligation"
       ]
@@ -112,11 +114,11 @@
       "prompt": [
         {
           "speaker": "Ügyfél",
-          "text": "Van még lehetőségem vitatni az elmarasztaló határozatot?"
+          "text": "Van még lehetőségem vitatni a határozatot?"
         },
         {
           "speaker": "Ügyvéd",
-          "text": "Igen, a törvény értelmében tizenöt napon belül jogorvoslat _____ meg."
+          "text": "Igen, a határidőn belül Önt jogorvoslati jog _____ meg."
         }
       ],
       "options": [
@@ -136,8 +138,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a formal contractual clause defining a duty and entitlement.",
-          "answer": "A vevő a vételár megfizetésére köteles, míg a dolog birtokba vételére a teljesítést követően válik jogosulttá."
+          "prompt": "Write a formal contractual clause defining a duty and an entitlement.",
+          "answer": "A bérlő a bér megfizetésére köteles, a bérbeadó pedig a szerződés felmondására jogosult."
         }
       ],
       "teaches": [
@@ -149,11 +151,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik megfogalmazás felel meg a szabatos jogi stílusnak?",
+      "question": "Melyik mondat mondja ki, hogy a szerződés megszűnik, ha a felek nem értenek egyet?",
       "options": [
-        "A szerződés a felek kölcsönös megegyezése hiányában harminc nap elteltével hatályát veszti.",
-        "A szerződés teljesítése a gazdasági körülmények alakulásától függően határozatlan ideig szünetel.",
-        "A szerződés felmondása esetén a felek elszámolási vitáikat bíróságon kívül rendezik."
+        "A szerződés harminc nap után hatályát veszti, ha a felek nem értenek egyet.",
+        "A szerződés határozatlan ideig tovább él, ha a felek nem értenek egyet.",
+        "A szerződés harminc nap után hatályát veszti, ha a felek egyetértenek."
       ],
       "correct": 0,
       "teaches": [
