@@ -800,6 +800,13 @@ STORY_META = re.compile(r"\b(este texto|estos textos|otros textos|este curso|est
                         r"quien (?:lea|conozca) (?:este|estos|esta)|antes de abrir el libro)\b")
 
 
+# Hungarian (folded): talk about the text, the course or its reader (HU C1 core 9-16, 2026-11-14: "Az olvasó számára",
+# "Az olvasó azt veheti észre", "a tanuló, aki ... kutatja", "a szöveg szerint" inside the story itself)
+# "a tanulók" (school stories), "ez a szöveg" (a preamble) and level names (a story about learning) are real content in B2
+STORY_META_HU = re.compile(r"\b(az olvaso(?:k)? (?:szamara|azt|ugy|is|most|itt)|az olvasonak|a mai olvaso|"
+                           r"a szoveg szerint|ebben a szovegben|a lecke|ebben a leckeben|a kurzus|ebben a kurzusban|a magyar nyelv legmagasabb)\b")
+
+
 def check_story(src, course, level, ref, L):
     """Placeholder content in a lesson's story: copied comprehension questions, key words it doesn't use."""
     out, rel = [], f"content/{course}/{ref}"
@@ -818,6 +825,11 @@ def check_story(src, course, level, ref, L):
     if course.startswith("es-") and story.get("type") == "classic" and level not in ("a1", "a2", "b1"):
         for p in story.get("paragraphs", []):
             m = STORY_META.search(fold(p.get("text", ""))) if p.get("lang") != "en" else None
+            if m:
+                out.append(("story-meta", Path(ref).stem, m.group(0), rel))
+    if course == "hu" and story.get("type") in ("classic", "classics", "world") and level not in ("a1", "a2", "b1"):
+        for p in story.get("paragraphs", []):
+            m = STORY_META_HU.search(fold(p.get("text", ""))) if p.get("lang") != "en" else None
             if m:
                 out.append(("story-meta", Path(ref).stem, m.group(0), rel))
     if course.startswith("es-"):
