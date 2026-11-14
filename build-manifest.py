@@ -209,6 +209,8 @@ LEVEL_TRACKS = {
             {"id": "core", "title": "Core Spanish"},
             {"id": "cultura", "title": "Cultura y Ciudadanía",
              "description": "The history, institutions and culture behind the CCSE citizenship exam."},
+        ],        "b2": [
+            {"id": "core", "title": "Core Spanish"},
         ],
     },
     "hu": {
