@@ -146,7 +146,7 @@ them unless a step below says otherwise.
    Words to list go through `python scripts/add_vocab_words.py <course>
    <level> <words.txt> <out.json>` (`stem | lemma | translation | pos`
    per line), then `apply_replacements.py` and `build_word_lesson_index.py`.
-3. **Merge and apply:** `python scripts/merge_fixes.py <batch>/merged.json
+3. **Merge and apply** (a batch with readers' extra lists: `python scripts/stage_extras.py <batch>` first, then merge its `base-*` and `staged-extra-*` files as two stages, 2026-11-14): `python scripts/merge_fixes.py <batch>/merged.json
    <each .auto.json and filtered .review.json and extra-*.review.json>`
    (refuses when two readers fixed one item differently), then `python
    scripts/apply_replacements.py <batch>/merged.json`. Spanish: mirror
@@ -513,6 +513,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-13 | ES B2 core Units 23–26 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 334,129 (18 min), B 351,819 (19 min); ~171k a unit | | 0 errors in all four, 3 suspects accepted, unmet 0 | walked 24/24, all frozen; 9 challenges in frozen Units 17–18, 26 fixed for character facts |
 | 11-13 | ES B2 core Units 27–30 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 336,404 (19 min), B 328,070 (18 min); ~166k a unit | | 23 errors / 75 suspects → 0 / 5 accepted, unmet 1 kept | walked 24/24, all frozen; both texts about a work rewritten by the reviewer (meta padding); new `story-meta` check finds 43 sentences in 18 frozen texts |
 | 11-14 | ES B2 core Units 31–36 (es-latam) | two edit-in-place agents (Sonnet), **three units each**, both stopped by the 5-hour limit at once and resumed | A 295,492 (resumed run only), B 310,080; ~100k a unit | | 57 errors / 172 suspects → 0 / 6 accepted, unmet 0 | walked 36/36, all frozen; B2 core 36/36; texts about the work 108–195 words |
+| 11-14 | HU C1 core Units 1–8 (first C1 batch, no pilot) | read-first, two Sonnet readers, **four units each** (Units 2–8 half-size, 52 items), B stopped once by the 5-hour limit | A 363,583 (17 min), B 353,181 (15 min); ~90k a unit | 737 applied | 50 errors / 100 suspects → 0 / 40 accepted (38 `vocab-unused` stems), unmet 79 → 18 lookup misses | walked 48/48, all frozen; 5 registry moves signed off; 28 retired tags retagged |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2134,4 +2135,28 @@ The user took the four recommended options:
   not the habit. Widened again; the reviewer's read still has to look for talk about the course.
 - Both agents hit the usage limit within minutes of launch: launching right after a reset
   (done for earlier batches) was skipped this time.
+
+### 2026-11-14: HU C1 core Units 1–8 (first C1 batch)
+
+- **Four short units per reader, no pilot, cost ~90k a unit** against ~117–148k for HU B2
+  core at three. The C1 generator's defects are the B2 ones (B2 forms re-presented as new,
+  taste stems, "C1" labels, inflated titles), so the B2 focus file carried over with the
+  C1 rule inverted. The B2 pilot step was not needed.
+- **The hidden culture track left five C1 skills untaught in core.** A level whose second
+  track is hidden needs a registry pass before its first batch. Compare each `taught_in`
+  with `HIDDEN_TRACKS`: the knowledge sheet lists such skills, but nothing failed on them.
+  Two more were registered on the wrong lesson (`epistemic-hedging`, `rhetorical-questions`).
+  Readers found these. Asking the user mid-batch, while the readers still had the units in
+  context, cost one follow-up each.
+- **Extra lists that carry only the changed fields silently undo reviewed fixes:** 19
+  items reverted to generator text, found only because `lock_tags.py` refused 5 retired
+  tags. **Scripted:** `scripts/stage_extras.py <batch>` builds the two stages and folds
+  each base fix's fields under its extra. Use it instead of the hand filter in route A
+  step 3 whenever a batch has extra lists.
+- **Readers leave "(check)" in learner-facing text** (4 screens, 1 story) and put "a szöveg
+  szerint" inside a story. A reader's "check" belongs in the report, not the file. The
+  rulebook § 6b C1 paragraph now says so. Grep the review lists for `(check` before
+  merging.
+- **`vocab-unused` is a C1-wide question, not a batch one:** 899 suspects across C1, 38 stems
+  accepted here and put to the user (keep as SRS-only words or prune).
 
