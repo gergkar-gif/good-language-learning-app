@@ -3,69 +3,130 @@
   "exercises": [
     {
       "id": "b2-33-05.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "ojalá hubiera",
+          "I wish I had"
+        ],
+        [
+          "de haberlo sabido",
+          "had I known"
+        ],
+        [
+          "debería haber",
+          "I should have"
+        ],
+        [
+          "arrepentirse",
+          "to regret"
+        ]
+      ],
       "teaches": [
-        "counterfactual-wishes"
-      ],
-      "question": "¿Qué tiempo verbal exige 'ojalá' para manifestar una lamentación contrafáctica sobre el pasado?",
-      "options": [
-        "Presente de indicativo",
-        "Pluscuamperfecto de subjuntivo",
-        "Futuro simple",
-        "Condicional simple"
-      ],
-      "correct": 1
+        "b2-complex-conditionals-vocab"
+      ]
     },
     {
       "id": "b2-33-05.ex02",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "counterfactual-wishes"
+      "question": "Which sentence is correct?",
+      "options": [
+        "De haberlo sabido, habría venido.",
+        "De lo haber sabido, habría venido.",
+        "De haberlo sabido, vendré."
       ],
-      "sentence": "¡Quién __ desandar el tiempo y evitar aquel desacuerdo fundacional entre las dos repúblicas!",
-      "answer": "pudiera",
-      "english": "Would that one could retrace time and avert that foundational disagreement between the two republics!"
+      "correct": 0,
+      "teaches": [
+        "implicit-conditionals"
+      ]
     },
     {
       "id": "b2-33-05.ex03",
-      "type": "matching",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-complex-conditionals-vocab"
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Ojalá no lo __ dicho.",
+      "answers": [
+        "hubiera",
+        "hubiese"
       ],
-      "pairs": [
-        [
-          "quién pudiera",
-          "would that one could"
-        ],
-        [
-          "ojalá hubiera",
-          "if only there had been"
-        ],
-        [
-          "añoranza",
-          "yearning"
-        ],
-        [
-          "quimera",
-          "chimera"
-        ]
+      "english": "I wish I had not said it.",
+      "teaches": [
+        "counterfactual-wishes"
       ]
     },
     {
       "id": "b2-33-05.ex04",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "De __ sabido, habríamos cambiado el plan.",
+      "answer": "haberlo",
+      "english": "Had we known, we would have changed the plan.",
+      "teaches": [
+        "implicit-conditionals"
+      ]
+    },
+    {
+      "id": "b2-33-05.ex05",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence is a regret about yourself?",
+      "options": [
+        "Debería haber llamado.",
+        "Debería llamar.",
+        "Deberías haber llamado."
+      ],
+      "correct": 0,
+      "teaches": [
+        "regrets-reproaches"
+      ],
+      "distractor_skills": {
+        "1": "deber-vs-tener-que"
+      }
+    },
+    {
+      "id": "b2-33-05.ex06",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "estudiado",
+        "Ojalá",
+        "hubiera",
+        "más."
+      ],
+      "solution": [
+        "Ojalá",
+        "hubiera",
+        "estudiado",
+        "más."
+      ],
+      "english": "I wish I had studied more.",
+      "teaches": [
+        "counterfactual-wishes"
+      ]
+    },
+    {
+      "id": "b2-33-05.ex07",
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "De haberlo sabido, habría venido.",
+      "english": "Had I known, I would have come.",
+      "teaches": [
+        "implicit-conditionals"
+      ]
+    },
+    {
+      "id": "b2-33-05.ex08",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es el postulado central de la 'contranovela' teorizada por Morelli en 'Rayuela'?",
+      "question": "Who was born in Ixelles, in Brussels, according to the text?",
       "options": [
-        "Imitar fielmente la estructura del melodrama decimonónico.",
-        "Demoler las fórmulas burguesas gastadas del lenguaje para activar al lector como cocreador cómplice.",
-        "Escribir exclusivamente manuales técnicos de gramática normativa.",
-        "Prohibir la traducción de novelas extranjeras a América Latina."
+        "El autor de Rayuela.",
+        "Horacio Oliveira.",
+        "La Maga."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

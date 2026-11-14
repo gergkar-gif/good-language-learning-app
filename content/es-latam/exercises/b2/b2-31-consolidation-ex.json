@@ -5,57 +5,130 @@
       "id": "b2-31-consolidation.ex01",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "consequence-markers"
-      ],
-      "question": "Elige la oración que respeta el régimen verbal normativo de 'de ahí que':",
+      "question": "Which sentence is correct?",
       "options": [
-        "El temporal derribó los postes, de ahí que la ciudad quedó a oscuras.",
-        "El temporal derribó los postes, de ahí que la ciudad quedara a oscuras.",
-        "El temporal derribó los postes, de ahí que la ciudad quedará a oscuras.",
-        "El temporal derribó los postes, de ahí que la ciudad queda a oscuras."
+        "Hacía tanto frío que cerraron la escuela.",
+        "Hacía tan frío como cerraron la escuela.",
+        "Hacía tan frío de ahí que cerraron la escuela."
       ],
-      "correct": 1
+      "correct": 0,
+      "teaches": [
+        "consecutivas-de-tal-manera"
+      ]
     },
     {
       "id": "b2-31-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which marker gives a reason that is already known?",
+      "options": [
+        "Dado que",
+        "Por consiguiente",
+        "Así que"
+      ],
+      "correct": 0,
       "teaches": [
         "formal-cause-connectors"
       ],
-      "question": "¿Cuál de los siguientes marcadores causales complejos encabeza una premisa comprobada en registro formal?",
-      "options": [
-        "Dado que",
-        "Conque",
-        "Así que",
-        "O sea"
-      ],
-      "correct": 0
+      "distractor_skills": {
+        "1": "consequence-markers",
+        "2": "consequence-markers"
+      }
     },
     {
       "id": "b2-31-consolidation.ex03",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "No hay entradas; en __, la función se cancela.",
+      "answer": "consecuencia",
+      "english": "There are no tickets; as a result, the show is cancelled.",
       "teaches": [
         "consequence-markers"
-      ],
-      "sentence": "La premisa mayor y la menor son ciertas; en __, la conclusión resulta incontrovertible.",
-      "answer": "consecuencia",
-      "english": "The major premise and the minor premise are true; in consequence, the conclusion is incontrovertible."
+      ]
     },
     {
       "id": "b2-31-consolidation.ex04",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Es una ciudad muy cara; de ahí que muchos jóvenes __ con sus padres.",
+      "answer": "vivan",
+      "english": "It is a very expensive city; hence many young people live with their parents.",
+      "teaches": [
+        "consequence-markers"
+      ]
+    },
+    {
+      "id": "b2-31-consolidation.ex05",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "volví",
+        "Como",
+        "a",
+        "pie.",
+        "no",
+        "dinero,",
+        "tenía"
+      ],
+      "solution": [
+        "Como",
+        "no",
+        "tenía",
+        "dinero,",
+        "volví",
+        "a",
+        "pie."
+      ],
+      "english": "As I had no money, I walked back.",
+      "teaches": [
+        "formal-cause-connectors"
+      ]
+    },
+    {
+      "id": "b2-31-consolidation.ex06",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Por qué no viniste ayer?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____ tenía mucho trabajo."
+        }
+      ],
+      "options": [
+        "Es que",
+        "Así pues",
+        "Tan"
+      ],
+      "correct": 0,
+      "teaches": [
+        "formal-cause-connectors"
+      ]
+    },
+    {
+      "id": "b2-31-consolidation.ex07",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cuál es el rasgo central de la novela 'La hora de la estrella' de Clarice Lispector?",
+      "question": "What does the text say Rodrigo S.M. does?",
       "options": [
-        "La narración de batallas navales en el Atlántico.",
-        "La indagación existencial sobre la mecanógrafa Macabéa mediada por las dudas del narrador Rodrigo S.M.",
-        "Un manual técnico sobre la industria textil en Río de Janeiro.",
-        "Una crónica policial sobre contrabandistas de diamantes."
+        "Cuenta la historia de Macabéa.",
+        "Publica el libro en 1977.",
+        "Vive en Alagoas."
       ],
-      "correct": 1
+      "correct": 0
+    },
+    {
+      "id": "b2-31-consolidation.ex08",
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "Estaba tan cansada que se durmió en el tren.",
+      "english": "She was so tired that she fell asleep on the train.",
+      "teaches": [
+        "consecutivas-de-tal-manera"
+      ]
     }
   ]
 }

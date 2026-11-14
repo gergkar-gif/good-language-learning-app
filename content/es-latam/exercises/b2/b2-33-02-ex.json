@@ -3,67 +3,143 @@
   "exercises": [
     {
       "id": "b2-33-02.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "conditional-conjunctions"
-      ],
-      "question": "¿Cuál de las siguientes locuciones de salvedad condicional nunca admite el modo indicativo?",
-      "options": [
-        "Salvo que",
-        "A menos que",
-        "Excepto que",
-        "Siempre que"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "b2-33-02.ex02",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "conditional-conjunctions"
-      ],
-      "sentence": "Las tarifas preferenciales no se aplicarán, a menos que la empresa __ el origen regional de sus insumos.",
-      "answer": "demuestre",
-      "english": "Preferential tariffs will not apply, unless the enterprise proves the regional origin of its inputs."
-    },
-    {
-      "id": "b2-33-02.ex03",
       "type": "matching",
       "category": "vocabulary",
-      "teaches": [
-        "b2-complex-conditionals-vocab"
-      ],
       "pairs": [
         [
-          "a menos que",
+          "salvo que",
           "unless"
         ],
         [
-          "salvo que",
-          "except that"
+          "excepto si",
+          "except if"
         ],
         [
-          "salvedad",
-          "qualification"
+          "a no ser que",
+          "unless"
         ],
         [
-          "eximente",
-          "exemption"
+          "permiso",
+          "permission"
         ]
+      ],
+      "teaches": [
+        "b2-complex-conditionals-vocab"
+      ]
+    },
+    {
+      "id": "b2-33-02.ex02",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence is correct?",
+      "options": [
+        "El museo abre todos los días, excepto si hay una fiesta.",
+        "El museo abre todos los días, excepto si haya una fiesta.",
+        "El museo abre todos los días, excepto si habrá una fiesta."
+      ],
+      "correct": 0,
+      "teaches": [
+        "conditional-conjunctions"
+      ]
+    },
+    {
+      "id": "b2-33-02.ex03",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Iremos al campo a no ser que __.",
+      "answer": "llueva",
+      "english": "We will go to the countryside unless it rains.",
+      "hint": "llover",
+      "teaches": [
+        "conditional-conjunctions"
       ]
     },
     {
       "id": "b2-33-02.ex04",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué representa la figura de Lucía, 'La Maga', en contraste con Oliveira en 'Rayuela'?",
+      "category": "grammar",
+      "question": "Which sentence is correct?",
       "options": [
-        "Una sabiduría intuitiva, poética y directa que desafía los pedantes silogismos de Horacio.",
-        "Una profesora de lógica aristotélica en la Sorbona.",
-        "Una agente de aduanas que vigila a los inmigrantes sudamericanos.",
-        "Una médica cirujana en un hospital público de París."
+        "Dijo que vendría a menos que tuviera trabajo.",
+        "Dijo que vendría a menos que tiene trabajo.",
+        "Dijo que vendría a menos que tenga trabajo."
+      ],
+      "correct": 0,
+      "teaches": [
+        "conditional-conjunctions"
+      ]
+    },
+    {
+      "id": "b2-33-02.ex05",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "entra,",
+        "Nadie",
+        "salvo",
+        "que",
+        "tenga",
+        "permiso."
+      ],
+      "solution": [
+        "Nadie",
+        "entra,",
+        "salvo",
+        "que",
+        "tenga",
+        "permiso."
+      ],
+      "english": "Nobody comes in, unless they have permission.",
+      "teaches": [
+        "conditional-conjunctions"
+      ]
+    },
+    {
+      "id": "b2-33-02.ex06",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Vamos a la playa el domingo?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Sí, _____ haga mal tiempo."
+        }
+      ],
+      "options": [
+        "a no ser que",
+        "como si",
+        "puesto que"
+      ],
+      "correct": 0,
+      "teaches": [
+        "conditional-conjunctions"
+      ],
+      "distractor_skills": {
+        "1": "como-si"
+      }
+    },
+    {
+      "id": "b2-33-02.ex07",
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "No saldremos a no ser que mejore el tiempo.",
+      "english": "We will not go out unless the weather improves.",
+      "teaches": [
+        "conditional-conjunctions"
+      ]
+    },
+    {
+      "id": "b2-33-02.ex08",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "What happens to the chapters of the third part if the book is read in order?",
+      "options": [
+        "Se quedan fuera.",
+        "Se leen primero.",
+        "Se mezclan."
       ],
       "correct": 0
     }

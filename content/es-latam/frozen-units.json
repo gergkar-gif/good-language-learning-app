@@ -1455,10 +1455,42 @@
     }
    ]
   },
+  "b2/advanced-concessives": {
+   "frozen": "2026-11-14",
+   "reason": "ES B2 read-through batch 31-36 (2026-11-14)",
+   "accepted": [
+    {
+     "check": "answer-in-prompt",
+     "id": "b2-32-03.ex03",
+     "why": "a reduplicated formula (pase lo que pase) repeats its verb by definition"
+    },
+    {
+     "check": "answer-in-prompt",
+     "id": "b2-32-03.ex04",
+     "why": "a reduplicated formula (costara lo que costara) repeats its verb by definition"
+    },
+    {
+     "check": "answer-in-prompt",
+     "id": "b2-32-consolidation.ex04",
+     "why": "a reduplicated formula (cueste lo que cueste) repeats its verb by definition"
+    }
+   ]
+  },
   "b2/analytical-resultative-passives": {
    "frozen": "2026-11-13",
    "reason": "ES B2 batch 19-22 (2026-11-13): edit-in-place agent B, reviewer read and edits (double participles corrected, Arguedas text rewritten, Lillo retelling checked against Wikisource); walked 6/6 (imports/review/es-b2-batch-19-22/); refrozen 2026-11-13: story-meta cleanup: talk about the text and invented reader claims cut (2026-11-13)",
    "accepted": []
+  },
+  "b2/complex-conditionals": {
+   "frozen": "2026-11-14",
+   "reason": "ES B2 read-through batch 31-36 (2026-11-14)",
+   "accepted": [
+    {
+     "check": "answers-alternatives",
+     "id": "b2-33-03.ex03",
+     "why": "salió and ha salido both fit"
+    }
+   ]
   },
   "b2/concession-counter-argument": {
    "frozen": "2026-11-13",
@@ -1484,6 +1516,17 @@
      "check": "answers-alternatives",
      "id": "b2-09-02.ex03",
      "why": "quisiera and querría are both right for 'I would like'"
+    }
+   ]
+  },
+  "b2/discourse-markers-consequence-causality": {
+   "frozen": "2026-11-14",
+   "reason": "ES B2 read-through batch 31-36 (2026-11-14)",
+   "accepted": [
+    {
+     "check": "answers-alternatives",
+     "id": "b2-31-03.ex03",
+     "why": "dado que, puesto que and ya que all fit"
     }
    ]
   },

@@ -3,69 +3,148 @@
   "exercises": [
     {
       "id": "b2-33-01.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "conditional-conjunctions"
-      ],
-      "question": "¿Qué modo verbal exige de forma invariable la locución 'a condición de que' en la subordinada?",
-      "options": [
-        "Modo indicativo exclusivamente",
-        "Modo subjuntivo",
-        "Infinitivo simple únicamente",
-        "Modo imperativo"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "b2-33-01.ex02",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "conditional-conjunctions"
-      ],
-      "sentence": "Suscribiremos el tratado comercial a condición de que se __ las cláusulas arancelarias acordadas.",
-      "answer": "respeten",
-      "english": "We will sign the trade treaty on condition that the agreed tariff clauses are respected."
-    },
-    {
-      "id": "b2-33-01.ex03",
       "type": "matching",
       "category": "vocabulary",
-      "teaches": [
-        "b2-complex-conditionals-vocab"
-      ],
       "pairs": [
+        [
+          "siempre y cuando",
+          "provided that"
+        ],
+        [
+          "solo si",
+          "only if"
+        ],
         [
           "a condición de que",
           "on condition that"
         ],
         [
-          "con tal de que",
-          "provided that"
-        ],
-        [
-          "estipulación",
-          "stipulation"
-        ],
-        [
-          "vinculante",
-          "binding"
+          "devolver",
+          "to give back"
         ]
+      ],
+      "teaches": [
+        "b2-complex-conditionals-vocab"
+      ]
+    },
+    {
+      "id": "b2-33-01.ex02",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence is correct?",
+      "options": [
+        "Te presto el carro siempre y cuando lo devuelvas antes de las seis.",
+        "Te presto el carro siempre y cuando lo devuelves antes de las seis.",
+        "Te presto el carro siempre y cuando lo devolverás antes de las seis."
+      ],
+      "correct": 0,
+      "teaches": [
+        "conditional-conjunctions"
+      ]
+    },
+    {
+      "id": "b2-33-01.ex03",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Te presto el carro solo si lo __ antes de las seis.",
+      "answer": "devuelves",
+      "english": "I will lend you the car only if you give it back before six.",
+      "hint": "devolver, tú",
+      "teaches": [
+        "si-clauses"
       ]
     },
     {
       "id": "b2-33-01.ex04",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Aceptaría el trabajo solo si me __ bien.",
+      "answers": [
+        "pagaran",
+        "pagasen"
+      ],
+      "english": "I would accept the job only if they paid me well.",
+      "teaches": [
+        "si-clauses"
+      ]
+    },
+    {
+      "id": "b2-33-01.ex05",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "den",
+        "cuando",
+        "más",
+        "nos",
+        "siempre",
+        "Firmaremos",
+        "y",
+        "tiempo."
+      ],
+      "solution": [
+        "Firmaremos",
+        "siempre",
+        "y",
+        "cuando",
+        "nos",
+        "den",
+        "más",
+        "tiempo."
+      ],
+      "english": "We will sign provided that they give us more time.",
+      "teaches": [
+        "conditional-conjunctions"
+      ]
+    },
+    {
+      "id": "b2-33-01.ex06",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Puedo usar tu bicicleta?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Sí, _____ la cuides."
+        }
+      ],
+      "options": [
+        "siempre y cuando",
+        "solo si",
+        "a pesar de que"
+      ],
+      "correct": 0,
+      "teaches": [
+        "conditional-conjunctions"
+      ],
+      "distractor_skills": {
+        "2": "a-pesar-de"
+      }
+    },
+    {
+      "id": "b2-33-01.ex07",
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "Solo si me lo pides, te ayudo.",
+      "english": "Only if you ask me, will I help you.",
+      "teaches": [
+        "si-clauses"
+      ]
+    },
+    {
+      "id": "b2-33-01.ex08",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "En 'Rayuela' de Julio Cortázar, ¿qué actitud muestra Horacio Oliveira frente a las certezas burguesas?",
+      "question": "In which city was Cortázar's novel Rayuela partly set, according to the text?",
       "options": [
-        "Aceptación sumisa de las normas sociales parisinas.",
-        "Escepticismo radical e hiperlucidez racional que le impiden entregarse a la vida espontánea.",
-        "Entusiasmo comercial por enriquecerse en la banca.",
-        "Devoción religiosa a los dogmas escolásticos tradicionales."
+        "En París.",
+        "En Montevideo.",
+        "En Lima."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

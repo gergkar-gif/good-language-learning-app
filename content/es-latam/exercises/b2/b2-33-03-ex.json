@@ -3,69 +3,144 @@
   "exercises": [
     {
       "id": "b2-33-03.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "fiebre",
+          "fever"
+        ],
+        [
+          "contestar",
+          "to answer"
+        ],
+        [
+          "ocupado",
+          "busy"
+        ],
+        [
+          "de ser verdad",
+          "if it is true"
+        ]
+      ],
       "teaches": [
-        "implicit-conditionals"
-      ],
-      "question": "¿A qué estructura oracional equivale exactamente la fórmula 'De haber mediado arbitraje'?",
-      "options": [
-        "Si hubiera mediado arbitraje",
-        "Cuando mediare arbitraje",
-        "Aunque medió arbitraje",
-        "Puesto que medió arbitraje"
-      ],
-      "correct": 0
+        "b2-complex-conditionals-vocab"
+      ]
     },
     {
       "id": "b2-33-03.ex02",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "implicit-conditionals"
+      "question": "Which sentence draws a conclusion from something accepted as true?",
+      "options": [
+        "Si no contesta, estará ocupado.",
+        "Si no contestara, estaría ocupado.",
+        "Si no conteste, estará ocupado."
       ],
-      "sentence": "De no __ advertido las discrepancias a tiempo, los ministros habrían firmado un acuerdo lesivo.",
-      "answer": "haber",
-      "english": "Had they not noticed the discrepancies in time, the ministers would have signed a harmful agreement."
+      "correct": 0,
+      "teaches": [
+        "si-clauses"
+      ],
+      "distractor_skills": {
+        "1": "hypothetical-structures"
+      }
     },
     {
       "id": "b2-33-03.ex03",
-      "type": "matching",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-complex-conditionals-vocab"
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Si ya __, llegará pronto.",
+      "answers": [
+        "salió",
+        "ha salido"
       ],
-      "pairs": [
-        [
-          "de haber mediado",
-          "had there been mediation"
-        ],
-        [
-          "actuando así",
-          "by acting thus"
-        ],
-        [
-          "corolario",
-          "corollary"
-        ],
-        [
-          "conjeturar",
-          "to conjecture"
-        ]
+      "english": "If he has already left, he will arrive soon.",
+      "hint": "salir, él",
+      "teaches": [
+        "si-clauses"
       ]
     },
     {
       "id": "b2-33-03.ex04",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "De __ posible, te llamo esta noche.",
+      "answer": "ser",
+      "english": "If it is possible, I will call you tonight.",
+      "teaches": [
+        "implicit-conditionals"
+      ]
+    },
+    {
+      "id": "b2-33-03.ex05",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "dices,",
+        "lo",
+        "Si",
+        "verdad.",
+        "tú",
+        "será"
+      ],
+      "solution": [
+        "Si",
+        "tú",
+        "lo",
+        "dices,",
+        "será",
+        "verdad."
+      ],
+      "english": "If you say so, it will be true.",
+      "teaches": [
+        "si-clauses"
+      ]
+    },
+    {
+      "id": "b2-33-03.ex06",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "Mi compañera no contesta el teléfono."
+        },
+        {
+          "speaker": "Meg",
+          "text": "Si no contesta, _____ ocupada."
+        }
+      ],
+      "options": [
+        "estará",
+        "estuviera",
+        "esté"
+      ],
+      "correct": 0,
+      "teaches": [
+        "si-clauses"
+      ]
+    },
+    {
+      "id": "b2-33-03.ex07",
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "Si tiene fiebre, tiene que ir al médico.",
+      "english": "If he has a fever, he has to go to the doctor.",
+      "teaches": [
+        "si-clauses"
+      ]
+    },
+    {
+      "id": "b2-33-03.ex08",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué acontecimiento trágico desencadena la ruptura entre Oliveira y La Maga en París?",
+      "question": "Where does Horacio Oliveira live, according to the text?",
       "options": [
-        "El robo de un manuscrito en el Barrio Latino.",
-        "La muerte del pequeño Rocamadour en la buhardilla.",
-        "La quiebra de una galería de arte moderno.",
-        "Un duelo a espada en las orillas del Sena."
+        "En París.",
+        "En Montevideo.",
+        "En Brasil."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

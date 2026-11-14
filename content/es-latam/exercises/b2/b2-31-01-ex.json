@@ -3,69 +3,146 @@
   "exercises": [
     {
       "id": "b2-31-01.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "consequence-markers"
-      ],
-      "question": "¿Qué marcador consecutivo formal exige obligatoriamente el modo subjuntivo en la cláusula que introduce?",
-      "options": [
-        "Por consiguiente",
-        "Por ende",
-        "De ahí que",
-        "En consecuencia"
-      ],
-      "correct": 2
-    },
-    {
-      "id": "b2-31-01.ex02",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "consequence-markers"
-      ],
-      "sentence": "Las pruebas documentales no eran contundentes, de ahí que el magistrado __ la absolución del reo.",
-      "answer": "decretara",
-      "english": "The documentary evidence was not conclusive, which is why the magistrate ordered the defendant's acquittal."
-    },
-    {
-      "id": "b2-31-01.ex03",
       "type": "matching",
       "category": "vocabulary",
-      "teaches": [
-        "b2-discourse-markers-consequence-causality-vocab"
-      ],
       "pairs": [
+        [
+          "por lo tanto",
+          "therefore"
+        ],
         [
           "por consiguiente",
           "consequently"
         ],
         [
-          "por ende",
-          "therefore / hence"
+          "en consecuencia",
+          "as a result"
         ],
         [
-          "corolario",
-          "corollary"
-        ],
-        [
-          "axiomático",
-          "axiomatic"
+          "de modo que",
+          "so, which means that"
         ]
+      ],
+      "teaches": [
+        "b2-discourse-markers-consequence-causality-vocab"
+      ]
+    },
+    {
+      "id": "b2-31-01.ex02",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which marker completes the sentence? El museo estaba cerrado; ___, no pudimos entrar.",
+      "options": [
+        "por lo tanto",
+        "puesto que",
+        "a pesar de"
+      ],
+      "correct": 0,
+      "teaches": [
+        "consequence-markers"
+      ],
+      "distractor_skills": {
+        "1": "formal-cause-connectors",
+        "2": "a-pesar-de"
+      }
+    },
+    {
+      "id": "b2-31-01.ex03",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "La tienda estaba cerrada; por __, no pudimos comprar nada.",
+      "answer": "consiguiente",
+      "english": "The shop was closed; consequently, we could not buy anything.",
+      "teaches": [
+        "consequence-markers"
       ]
     },
     {
       "id": "b2-31-01.ex04",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "ventas",
+        "oficina.",
+        "cerrará",
+        "consecuencia,",
+        "en",
+        "empresa",
+        "bajaron;",
+        "la",
+        "Las",
+        "una"
+      ],
+      "solution": [
+        "Las",
+        "ventas",
+        "bajaron;",
+        "en",
+        "consecuencia,",
+        "la",
+        "empresa",
+        "cerrará",
+        "una",
+        "oficina."
+      ],
+      "english": "Sales fell; as a result, the company will close an office.",
+      "teaches": [
+        "consequence-markers"
+      ]
+    },
+    {
+      "id": "b2-31-01.ex05",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "Perdí el último autobús."
+        },
+        {
+          "speaker": "Meg",
+          "text": "¿Y qué hiciste?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "No había otro, _____ volví a pie."
+        }
+      ],
+      "options": [
+        "así que",
+        "aunque",
+        "porque"
+      ],
+      "correct": 0,
+      "teaches": [
+        "consequence-markers"
+      ],
+      "distractor_skills": {
+        "1": "concesivas-aunque",
+        "2": "porque-y-por-eso"
+      }
+    },
+    {
+      "id": "b2-31-01.ex06",
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "No había nadie en casa, de modo que dejé una nota.",
+      "english": "There was nobody at home, so I left a note.",
+      "teaches": [
+        "consequence-markers"
+      ]
+    },
+    {
+      "id": "b2-31-01.ex07",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cómo se puntúan generalmente marcadores oracionales como 'por consiguiente' o 'por ende' cuando inician una cláusula?",
+      "question": "Where did Lispector's family emigrate to when she was a baby?",
       "options": [
-        "Van siempre unidos con un guion corto.",
-        "Van seguidos de una coma obligatoria que los separa del resto de la oración.",
-        "Nunca llevan signos de puntuación cercanos.",
-        "Se escriben siempre entre signos de interrogación."
+        "A Recife.",
+        "A Alagoas.",
+        "A Chechelnik."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

@@ -3,67 +3,133 @@
   "exercises": [
     {
       "id": "b2-31-04.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "así pues",
+          "so, then"
+        ],
+        [
+          "entonces",
+          "so, then (in conversation)"
+        ],
+        [
+          "de ahí que",
+          "that is why, hence"
+        ],
+        [
+          "tráfico",
+          "traffic"
+        ]
+      ],
       "teaches": [
-        "consequence-markers"
-      ],
-      "question": "En la máxima filosófica clásica 'Pienso, luego existo', ¿qué valor gramatical asume la palabra 'luego'?",
-      "options": [
-        "Adverbio de tiempo cronológico posterior.",
-        "Conector ilativo-deductivo equivalente a 'por lo tanto'.",
-        "Interjección exclamativa de asombro.",
-        "Preposición de lugar equivalente a 'detrás de'."
-      ],
-      "correct": 1
+        "b2-discourse-markers-consequence-causality-vocab"
+      ]
     },
     {
       "id": "b2-31-04.ex02",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence is correct?",
+      "options": [
+        "Hay mucho tráfico; de ahí que mucha gente vaya en bicicleta.",
+        "Hay mucho tráfico; de ahí que mucha gente va en bicicleta.",
+        "Hay mucho tráfico; por eso mucha gente vaya en bicicleta."
+      ],
+      "correct": 0,
       "teaches": [
         "consequence-markers"
-      ],
-      "sentence": "Las pruebas experimentales arrojaron resultados idénticos; por __, la hipótesis quedó validada.",
-      "answer": "tanto",
-      "english": "The experimental tests yielded identical results; therefore, the hypothesis was validated."
+      ]
     },
     {
       "id": "b2-31-04.ex03",
-      "type": "matching",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-discourse-markers-consequence-causality-vocab"
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "La película era muy larga; de ahí que muchos se __ antes del final.",
+      "answers": [
+        "fueran",
+        "fuesen"
       ],
-      "pairs": [
-        [
-          "por tanto",
-          "therefore"
-        ],
-        [
-          "silogismo",
-          "syllogism"
-        ],
-        [
-          "postulado",
-          "postulate"
-        ],
-        [
-          "concluyente",
-          "conclusive"
-        ]
+      "english": "The film was very long; that is why many people left before the end.",
+      "teaches": [
+        "consequence-markers"
       ]
     },
     {
       "id": "b2-31-04.ex04",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "No queda pan en casa."
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____ compramos arroz."
+        }
+      ],
+      "options": [
+        "Entonces",
+        "Aunque",
+        "De ahí que"
+      ],
+      "correct": 0,
+      "teaches": [
+        "consequence-markers"
+      ]
+    },
+    {
+      "id": "b2-31-04.ex05",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "buscamos",
+        "otra",
+        "pues,",
+        "plan",
+        "así",
+        "solución.",
+        "El",
+        "es",
+        "caro;"
+      ],
+      "solution": [
+        "El",
+        "plan",
+        "es",
+        "caro;",
+        "así",
+        "pues,",
+        "buscamos",
+        "otra",
+        "solución."
+      ],
+      "english": "The plan is expensive; so, we are looking for another solution.",
+      "teaches": [
+        "consequence-markers"
+      ]
+    },
+    {
+      "id": "b2-31-04.ex06",
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "Hay mucho ruido; de ahí que muchos vecinos quieran mudarse.",
+      "english": "There is a lot of noise; that is why many neighbours want to move.",
+      "teaches": [
+        "consequence-markers"
+      ]
+    },
+    {
+      "id": "b2-31-04.ex07",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué distingue a la ilación lógica de la simple sucesión cronológica de sucesos?",
+      "question": "Why is Rodrigo S.M. not the same person as the author, according to the text?",
       "options": [
-        "La ilación establece que el segundo juicio se deduce necesariamente del primero por razonamiento.",
-        "La ilación indica que ambos hechos ocurrieron en continentes diferentes.",
-        "La ilación niega que exista cualquier causa física.",
-        "La ilación solo se utiliza en la poesía renacentista."
+        "Porque es un personaje de la novela.",
+        "Porque es un amigo de Macabéa.",
+        "Porque nació en Ucrania."
       ],
       "correct": 0
     }

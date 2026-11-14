@@ -3,67 +3,153 @@
   "exercises": [
     {
       "id": "b2-31-03.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "formal-cause-connectors"
-      ],
-      "question": "¿Cuál de las siguientes locuciones causales complejas pertenece de manera eminente al lenguaje jurídico y administrativo formal?",
-      "options": [
-        "Es que",
-        "Toda vez que",
-        "Porque sí",
-        "Como que"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "b2-31-03.ex02",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "formal-cause-connectors"
-      ],
-      "sentence": "__ que el tiempo apremia, procederemos a la votación formal del dictamen.",
-      "answer": "Visto",
-      "english": "Seeing that time is pressing, we will proceed to the formal vote on the report."
-    },
-    {
-      "id": "b2-31-03.ex03",
       "type": "matching",
       "category": "vocabulary",
-      "teaches": [
-        "b2-discourse-markers-consequence-causality-vocab"
-      ],
       "pairs": [
+        [
+          "ya que",
+          "since"
+        ],
+        [
+          "puesto que",
+          "since, seeing that"
+        ],
         [
           "dado que",
           "given that"
         ],
         [
-          "toda vez que",
-          "inasmuch as"
-        ],
-        [
-          "etiología",
-          "causation"
-        ],
-        [
-          "subyacer",
-          "to underlie"
+          "como",
+          "since (at the start)"
         ]
+      ],
+      "teaches": [
+        "b2-discourse-markers-consequence-causality-vocab"
+      ]
+    },
+    {
+      "id": "b2-31-03.ex02",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which marker completes the sentence? Volví a llamar ___ nadie contestó.",
+      "options": [
+        "puesto que",
+        "por lo tanto",
+        "de modo que"
+      ],
+      "correct": 0,
+      "teaches": [
+        "formal-cause-connectors"
+      ],
+      "distractor_skills": {
+        "1": "consequence-markers",
+        "2": "consequence-markers"
+      }
+    },
+    {
+      "id": "b2-31-03.ex03",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "__ que el museo cierra a las cinco, tenemos que salir ya.",
+      "answers": [
+        "Dado",
+        "Puesto",
+        "Ya"
+      ],
+      "english": "Since the museum closes at five, we have to leave now.",
+      "teaches": [
+        "formal-cause-connectors"
       ]
     },
     {
       "id": "b2-31-03.ex04",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué posición suelen ocupar en el periodo oracional locuciones como 'dado que' o 'visto que' en textos analíticos?",
+      "category": "grammar",
+      "question": "Which sentence gives a reason correctly?",
       "options": [
-        "Se sitúan frecuentemente al inicio para encuadrar la premisa que legitima la aserción principal.",
-        "Solo pueden colocarse como palabra final de un párrafo.",
-        "Se insertan únicamente dentro del predicado nominal.",
-        "Deben acompañar siempre a un gerundio compuesto."
+        "Como no tenía dinero, no compré el libro.",
+        "No compré el libro como no tenía dinero.",
+        "Como no tenía dinero, de modo que no compré el libro."
+      ],
+      "correct": 0,
+      "teaches": [
+        "formal-cause-connectors"
+      ]
+    },
+    {
+      "id": "b2-31-03.ex05",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Dado",
+        "llamar.",
+        "que",
+        "a",
+        "volvimos",
+        "nadie",
+        "respondió,"
+      ],
+      "solution": [
+        "Dado",
+        "que",
+        "nadie",
+        "respondió,",
+        "volvimos",
+        "a",
+        "llamar."
+      ],
+      "english": "Since nobody answered, we called again.",
+      "teaches": [
+        "formal-cause-connectors"
+      ]
+    },
+    {
+      "id": "b2-31-03.ex06",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "Voy a pedir otro café."
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____ vas a la barra, pídeme un té."
+        }
+      ],
+      "options": [
+        "Ya que",
+        "Por eso",
+        "Sin embargo"
+      ],
+      "correct": 0,
+      "teaches": [
+        "formal-cause-connectors"
+      ],
+      "distractor_skills": {
+        "1": "porque-y-por-eso",
+        "2": "contrast-concession-connectors"
+      }
+    },
+    {
+      "id": "b2-31-03.ex07",
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "Como llovía mucho, nos quedamos en casa.",
+      "english": "As it was raining a lot, we stayed at home.",
+      "teaches": [
+        "formal-cause-connectors"
+      ]
+    },
+    {
+      "id": "b2-31-03.ex08",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Which city does Macabéa go to, according to the text?",
+      "options": [
+        "A Río.",
+        "A Recife.",
+        "A Alagoas."
       ],
       "correct": 0
     }
