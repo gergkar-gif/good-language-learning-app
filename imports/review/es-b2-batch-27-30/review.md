@@ -60,3 +60,12 @@ refreeze the units; list: `python scripts/check-content.py es-latam b2 | grep st
 
 - Nothing to decide in this batch. Items in 28-03 (*pues bien, en cuanto a, por lo que
   se refiere a*) carry the unit vocabulary skill: those markers have no grammar skill.
+
+## Follow-up the same night: frozen texts cleaned
+
+The `story-meta` list was worked through at once instead of waiting for the close-out,
+while the batch 31–36 agents ran (and then sat out a usage limit). The check was widened
+(*un lector*, *cada lector*, *muchos/algunos lectores*, *muchos críticos*, *quien hubiera
+leído*, *quienquiera que lea*), which added 16 sentences in Units 1–10, 18 and 21. All
+cut or rewritten as facts; 22 units refrozen; walk 132/132. Kept on purpose: none (the
+Rulfo "pieces" line was rephrased without the reader).

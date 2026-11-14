@@ -792,7 +792,8 @@ def story_question_sets(src, course):
 
 # talk about the text, the course or the reader (folded, accent-free); "este libro" is fine
 STORY_META = re.compile(r"\b(este texto|estos textos|otros textos|este curso|este resumen|resumamos|recordemos|"
-                        r"vamos a (?:dar|ver|presentar|empezar)|usted ya (?:conoce|sabe)|el lector|la lectora|"
+                        r"vamos a (?:dar|ver|presentar|empezar|hablar|contar)|usted ya (?:conoce|sabe)|el lector|la lectora|un lector|cada lector|muchos lectores|algunos lectores|muchos criticos|"
+                        r"quien (?:ya )?(?:hubiera|haya) leido|quienquiera que lea|"
                         r"quien (?:lea|conozca) (?:este|estos|esta)|antes de abrir el libro)\b")
 
 
