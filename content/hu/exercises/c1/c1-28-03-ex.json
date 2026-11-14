@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'modális váltás' (modal shift) a fenntartható közlekedéspolitikában?",
+      "question": "Mit jelent a 'modális váltás'?",
       "options": [
-        "A személy- és teherforgalom tudatos átterelését a környezetszennyező közúti és légi szállításból a környezetkímélő vasúti és vízi közlekedésbe.",
-        "Az elektromos autók töltőállomásainak kötelező telepítését a belvárosban.",
-        "A tömegközlekedési jegyárak differenciálását csúcsidőben."
+        "A forgalom áttérése a közútról a vasútra.",
+        "Az elektromos autók töltőállomásainak építése.",
+        "A jegyárak emelése a hétvégén."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szennyező kamionforgalommal szemben a _____ a kötöttpályás szállítás harmadannyi energiát fogyaszt.",
-      "hint": "valóság + -ban",
-      "english": "Contrary to polluting truck traffic, in reality fixed-track transport consumes one third the energy.",
+      "sentence": "A kamionforgalommal _____ a vasút kevesebb energiát fogyaszt.",
+      "hint": "contrary to",
+      "english": "In contrast with truck traffic, rail consumes less energy.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
       "answers": [
-        "valóságban"
+        "szemben",
+        "ellentétben"
       ]
     },
     {
@@ -64,15 +65,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A villamosított vasút nemhogy nem környezetszennyező, hanem éppen klímabarát _____ bizonyult.",
-      "hint": "megoldás + -nak",
-      "english": "Electrified rail is far from polluting; on the contrary, it proved to be a climate-friendly solution.",
+      "sentence": "A busz a városon belül gyors, a vonat _____ a távolsági utakon.",
+      "hint": "however",
+      "english": "The bus is fast inside the city; the train, however, on long-distance journeys.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
       "answers": [
-        "megoldásnak",
-        "alternatívának"
+        "viszont",
+        "azonban",
+        "ellenben"
       ]
     },
     {
@@ -81,28 +83,32 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "közúti",
-        "lobbival",
-        "szemben",
+        "Míg",
         "a",
-        "vasút",
+        "kamion",
         "a",
-        "jövő",
-        "záloga."
+        "közúton",
+        "halad,",
+        "addig",
+        "a",
+        "tehervonat",
+        "a",
+        "síneken."
       ],
       "solution": [
-        "A",
-        "közúti",
-        "lobbival",
-        "szemben",
+        "Míg",
         "a",
-        "vasút",
+        "kamion",
         "a",
-        "jövő",
-        "záloga."
+        "közúton",
+        "halad,",
+        "addig",
+        "a",
+        "tehervonat",
+        "a",
+        "síneken."
       ],
-      "english": "Against the road lobby rail is the pledge of the future.",
+      "english": "While the truck runs on the road, the freight train runs on rails.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -115,21 +121,21 @@
       "prompt": [
         {
           "speaker": "Zöld aktivista",
-          "text": "Megoldást jelent-e az új autópályasávok építése a közlekedési dugókra?"
+          "text": "Miért jobb a vasút a teherszállításra?"
         },
         {
           "speaker": "Közgazdász",
-          "text": "Nem; az aszfaltozással szemben a valóságban nemhogy nem csökken a forgalom, hanem éppen a vasúti modális váltás hozhat _____ enyhülést."
+          "text": "_____ a kamion sok üzemanyagot fogyaszt, addig a vonat kevesebbet."
         },
         {
           "speaker": "Zöld aktivista",
-          "text": "Ezért kell a forrásokat a vasútba fektetni."
+          "text": "Akkor érdemes a vasútba fektetni."
         }
       ],
       "options": [
-        "valódi",
-        "valódian",
-        "valódinak"
+        "Míg",
+        "Mivel",
+        "Ha"
       ],
       "correct": 0,
       "teaches": [
@@ -143,8 +149,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence arguing for a modal shift to rail using 'A közúttal szemben a valóságban'.",
-          "answer": "A folyamatos autópálya-bővítéssel szemben a valóságban a vasúti korszerűsítés nemhogy nem elavult, hanem éppen a modális váltás és a klímasemlegesség egyetlen járható útja."
+          "prompt": "Write one sentence that contrasts two ways of travelling, with *viszont*, *szemben* or *míg … addig*.",
+          "answer": "A busz a városon belül gyors, a vonat viszont a távolsági utakon."
         }
       ],
       "teaches": [
@@ -156,11 +162,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kötőszószerkezet állítja szembe a vasút és a közút fenntarthatóságát a leghatásosabban?",
+      "question": "Melyik mondat fejez ki ellentétet?",
       "options": [
-        "A közúti környezetszennyezéssel szemben a valóságban nemhogy nem... hanem éppen",
-        "mivel az autópályák bővítése automatikusan megszünteti a torlódásokat",
-        "anélkül hogy figyelembe vennénk a vasúti pályakapacitások szűkösségét"
+        "A busz a városon belül gyors, a vonat viszont a távolsági utakon.",
+        "A busz a városon belül gyors, a vonat ezért a távolsági utakon.",
+        "A busz a városon belül gyors, a vonat tehát a távolsági utakon."
       ],
       "correct": 0,
       "teaches": [

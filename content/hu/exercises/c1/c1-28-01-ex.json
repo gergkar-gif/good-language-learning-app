@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent az 'intermodális csomópont' a korszerű közlekedésföldrajzban?",
+      "question": "Mit jelent az 'intermodális csomópont'?",
       "options": [
-        "Olyan közlekedési állomást vagy terminált, ahol a különböző közlekedési módok (vasút, közút, kerékpár, vízi út) közvetlenül és akadálymentesen kapcsolódnak egymáshoz.",
-        "Olyan autópálya-csomópontot, ahol a különböző gyorsforgalmi utak többszintű kereszteződésekkel és lehajtókkal kapcsolódnak a városhálózathoz.",
-        "Olyan zárt vasúti teherpályaudvart, ahol a konténerek átrakodását és vámkezelését végzik a nemzetközi határállomásokon."
+        "Olyan állomás, ahol többféle közlekedési eszköz kapcsolódik.",
+        "Olyan állomás, ahol csak egyféle vonat áll meg.",
+        "Olyan útkereszteződés, ahol lámpa van."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A vasútvonalakat _____ optimálisan kell integrálni az európai folyosókba.",
-      "hint": "logisztika + -ilag",
-      "english": "Railway lines must be logistically optimally integrated into European corridors.",
+      "sentence": "A vonal kapacitását reggel _____ kihasználják.",
+      "hint": "fully",
+      "english": "In the morning the line's capacity is used to the full.",
       "teaches": [
         "scalar-adverbs"
       ],
       "answers": [
-        "logisztikailag"
+        "teljes mértékben",
+        "teljesen"
       ]
     },
     {
@@ -64,15 +65,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A menetrendet hálózatilag _____ módon dolgozták ki az átszállások megkönnyítésére.",
-      "hint": "synchronized",
-      "english": "The timetable was elaborated in a network-wise synchronized manner to facilitate transfers.",
+      "sentence": "A járatok _____ jól csatlakoznak a fővonalakhoz.",
+      "hint": "outstandingly",
+      "english": "The services connect outstandingly well to the main lines.",
       "teaches": [
         "scalar-adverbs"
       ],
       "answers": [
-        "összehangolt",
-        "szinkronizált"
+        "kiemelkedően",
+        "nagyon"
       ]
     },
     {
@@ -81,28 +82,22 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "vasút",
-        "logisztikailag",
-        "optimálisan",
-        "szolgálja",
-        "ki",
-        "az",
-        "ipari",
-        "parkokat."
+        "Délután",
+        "a",
+        "vonal",
+        "csak",
+        "részben",
+        "kihasznált."
       ],
       "solution": [
-        "A",
-        "vasút",
-        "logisztikailag",
-        "optimálisan",
-        "szolgálja",
-        "ki",
-        "az",
-        "ipari",
-        "parkokat."
+        "Délután",
+        "a",
+        "vonal",
+        "csak",
+        "részben",
+        "kihasznált."
       ],
-      "english": "The railway logistically optimally serves the industrial parks.",
+      "english": "In the afternoon the line is only partly used.",
       "teaches": [
         "scalar-adverbs"
       ]
@@ -115,21 +110,21 @@
       "prompt": [
         {
           "speaker": "Közlekedésmérnök",
-          "text": "Hogyan csökkenthetjük az agglomerációs ingázás menetidejét?"
+          "text": "Mennyire használják ki a vonalat délután?"
         },
         {
           "speaker": "Tervező",
-          "text": "Csak akkor, ha hálózatilag _____ ütemes menetrendet és intermodális csomópontokat létesítünk."
+          "text": "Délután a vonal csak _____ kihasznált."
         },
         {
           "speaker": "Közlekedésmérnök",
-          "text": "Akkor erre alapozzuk az új vasútfejlesztési tervet."
+          "text": "Akkor több járatot nem indítunk."
         }
       ],
       "options": [
-        "összehangolt",
-        "összehangoltan",
-        "összehangolás"
+        "részben",
+        "nagyon",
+        "kiemelkedően"
       ],
       "correct": 0,
       "teaches": [
@@ -143,8 +138,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence evaluating transport efficiency using an infrastructural adverbial.",
-          "answer": "Az új törzshálózati fejlesztés logisztikailag optimálisan, a menetrendi szinkront hálózatilag összehangoltan biztosítva növeli a vasúti áruszállítás átbocsátóképességét."
+          "prompt": "Write one sentence about how far a line is used, with a degree adverb (*teljes mértékben*, *részben*, *alig*).",
+          "answer": "A vonal kapacitását reggel teljes mértékben kihasználják."
         }
       ],
       "teaches": [
@@ -156,11 +151,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozói kifejezés méri a logisztikai hálózat működését a legszakszerűbben?",
+      "question": "Melyik mondat mondja azt, hogy a csatlakozás nagyon jó?",
       "options": [
-        "logisztikailag optimálisan",
-        "kizárólag a csúcsidőszakokra méretezett járatkövetéssel",
-        "a hálózati kapcsolatokat mellőző pontszerű fejlesztésekkel"
+        "A csatlakozás kiemelkedően jó.",
+        "A csatlakozás alig jó.",
+        "A csatlakozás részben jó."
       ],
       "correct": 0,
       "teaches": [

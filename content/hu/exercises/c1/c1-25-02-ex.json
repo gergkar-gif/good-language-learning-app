@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi történik a jogforrási hierarchiában, ha egy miniszteri rendelet ütközik egy parlamenti törvénnyel?",
+      "question": "Mi történik, ha egy rendelet a törvénybe ütközik?",
       "options": [
-        "A törvény magasabb rendű jogforrás, így a miniszteri rendelet érvénytelen vagy megsemmisítendő.",
-        "A miniszteri rendelet lex specialisként automatikusan felülírja a törvényi rendelkezést.",
-        "A két jogszabály egyenrangúnak minősül, és a hatóság szabadon mérlegelhet közöttük."
+        "A törvény magasabb rendű, ezért a rendelet érvénytelen lehet.",
+        "A rendelet erősebb a törvénynél, ezért a törvény érvénytelen.",
+        "A két szabály egyenrangú, ezért mindkettő érvényes."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A parlamentből _____ felhatalmazás képezi a kormányrendelet jogalapját.",
-      "hint": "eredeztet, past participle",
-      "answer": "eredeztetett",
-      "english": "The authorization derived from parliament forms the legal ground of the government decree.",
+      "sentence": "A kormány csak az Alaptörvényből _____ hatáskörben járhat el.",
+      "hint": "levezet, past participle",
+      "english": "The government may act only within a competence derived from the Fundamental Law.",
       "teaches": [
         "participial-clauses"
+      ],
+      "answers": [
+        "levezetett",
+        "származó",
+        "eredő"
       ]
     },
     {
@@ -62,10 +66,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az Alaptörvénynek _____ rendeletet az Alkotmánybíróság haladéktalanul megsemmisítette.",
+      "sentence": "A törvénynek _____ rendelet nem módosíthatja a törvényt.",
       "hint": "alárendel, past participle",
       "answer": "alárendelt",
-      "english": "The decree subordinated to the Fundamental Law was immediately struck down by the Constitutional Court.",
+      "english": "A decree subordinated to the statute cannot amend the statute.",
       "teaches": [
         "participial-clauses"
       ]
@@ -77,25 +81,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "törvénynek",
-        "alárendelt",
-        "rendelet",
-        "nem",
-        "szűkítheti",
-        "az",
-        "alapjogokat."
+        "törvénnyel",
+        "ütköző",
+        "rendeletet",
+        "a",
+        "bíróság",
+        "megsemmisíti."
       ],
       "solution": [
         "A",
-        "törvénynek",
-        "alárendelt",
-        "rendelet",
-        "nem",
-        "szűkítheti",
-        "az",
-        "alapjogokat."
+        "törvénnyel",
+        "ütköző",
+        "rendeletet",
+        "a",
+        "bíróság",
+        "megsemmisíti."
       ],
-      "english": "A decree subordinated to a statute cannot narrow fundamental rights.",
+      "english": "The court annuls a decree that conflicts with the statute.",
       "teaches": [
         "participial-clauses"
       ]
@@ -108,21 +110,21 @@
       "prompt": [
         {
           "speaker": "Kutató",
-          "text": "Alkalmazhatja a hatóság ezt az új miniszteri utasítást a polgárokkal szemben?"
+          "text": "Alkalmazhatja a hatóság ezt az új utasítást?"
         },
         {
           "speaker": "Ügyvéd",
-          "text": "Semmiképpen; a törvénynek szigorúan _____ rendelet nem írhat elő új kötelezettséget."
+          "text": "Nem, mert a törvénnyel _____ utasítás érvénytelen."
         },
         {
           "speaker": "Kutató",
-          "text": "Akkor bírósági felülvizsgálatot kezdeményezünk."
+          "text": "Akkor bírósághoz fordulunk."
         }
       ],
       "options": [
-        "alárendelt",
-        "alárendelve",
-        "alárendelő"
+        "ütköző",
+        "ütközve",
+        "ütközik"
       ],
       "correct": 0,
       "teaches": [
@@ -136,8 +138,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating the subordination of a decree to a higher statute using a participial structure.",
-          "answer": "A parlamenti törvénynek szigorúan alárendelt miniszteri rendelet nem tartalmazhat olyan korlátozásokat, amelyek túllépik az anyagi jogi felhatalmazás kereteit."
+          "prompt": "Write one sentence about a decree, using a participle before the noun (*a törvénynek alárendelt*, *a törvénybe ütköző*).",
+          "answer": "A törvénybe ütköző rendelet érvénytelen."
         }
       ],
       "teaches": [
@@ -149,11 +151,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fejezi ki a jogforrások egymás alá rendeltségét a legpontosabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "a törvénynek hierarchikusan alárendelt rendelet",
-        "a törvénnyel azonos szinten álló autonóm rendelet",
-        "a törvény felett álló szuprematív rendelet"
+        "A törvénynek alárendelt rendelet nem változtathatja meg a törvényt.",
+        "A törvénynek alárendelve rendelet nem változtathatja meg a törvényt.",
+        "A törvénynek alárendelt rendelet nem változtathatja meg a törvények."
       ],
       "correct": 0,
       "teaches": [

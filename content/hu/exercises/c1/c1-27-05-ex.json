@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan jött rá Semmelweis Ignác a gyermekágyi láz valódi kórbonctani eredetére?",
+      "question": "Mit jelent a 'halálozási arány'?",
       "options": [
-        "Kolletschka törvényszéki orvosprofesszor boncolási sebfertőzésben bekövetkezett halálát elemezve rájött, hogy a kórbonctani részecskék véráramba kerülése azonos a gyermekágyi lázzal.",
-        "A bécsi szülészeti klinikák közötti eltérő szellőztetési technikák és fűtési rendszerek több évre visszamenő műszaki felméréséből.",
-        "A szülő nők étrendjének és a csecsemők születési súlyának részletes biokémiai és laboratóriumi vizsgálatából a klinika laborjában."
+        "Az, hogy a betegek hány százaléka hal meg.",
+        "Az, hogy a betegek hány napot töltenek a kórházban.",
+        "Az, hogy az orvosok hány beteget kezelnek."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Semmelweis felfedezése orvostörténetileg _____ módon írta át a fertőzésekről vallott nézeteket.",
-      "hint": "epoch-making",
-      "english": "Semmelweis's discovery in an epoch-making manner rewrote views held on infections.",
+      "sentence": "A kézmosás bevezetése után a halálozás _____ csökkent.",
+      "hint": "considerably",
+      "english": "After handwashing was introduced, mortality fell considerably.",
       "teaches": [
         "scalar-adverbs"
       ],
       "answers": [
-        "korszakalkotó"
+        "számottevően",
+        "drasztikusan",
+        "jelentősen"
       ]
     },
     {
@@ -64,12 +66,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A klórmeszes kézmosás a halálozást drámaian _____ mentette meg életek ezreit.",
-      "hint": "visszaszorít, adverbial participle",
-      "answer": "visszaszorítva",
-      "english": "Chlorinated lime handwashing suppressing mortality dramatically saved thousands of lives.",
+      "sentence": "A kórházban a lázas betegek száma _____ a felére csökkent.",
+      "hint": "almost",
+      "english": "In the hospital the number of feverish patients fell by almost half.",
       "teaches": [
         "scalar-adverbs"
+      ],
+      "answers": [
+        "csaknem"
       ]
     },
     {
@@ -78,22 +82,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Semmelweis",
-        "felfedezése",
-        "felbecsülhetetlen",
-        "életmentő",
-        "jelentőséggel",
-        "bírt."
+        "A",
+        "halálozás",
+        "a",
+        "kézmosás",
+        "után",
+        "drasztikusan",
+        "csökkent."
       ],
       "solution": [
-        "Semmelweis",
-        "felfedezése",
-        "felbecsülhetetlen",
-        "életmentő",
-        "jelentőséggel",
-        "bírt."
+        "A",
+        "halálozás",
+        "a",
+        "kézmosás",
+        "után",
+        "drasztikusan",
+        "csökkent."
       ],
-      "english": "Semmelweis's discovery had inestimable life-saving significance.",
+      "english": "After handwashing, mortality fell drastically.",
       "teaches": [
         "scalar-adverbs"
       ]
@@ -103,11 +109,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "context",
-      "question": "Miért utasította el a korabeli orvosi tekintélyelvű hierarchia Semmelweis tanait?",
+      "question": "Mit rendelt el Semmelweis a bécsi klinikán?",
       "options": [
-        "Mert nem akarták elismerni, hogy a tisztelt orvosok és professzorok mosatlan kezükkel maguk okozták a páciensek halálát.",
-        "Mert a klórmész beszerzése túlságosan megterhelte volna a bécsi egyetem költségvetését.",
-        "Mert a statisztikai módszertant még nem fogadták el hiteles tudományos bizonyítékként."
+        "Hogy az orvosok klórmeszes oldattal mossanak kezet.",
+        "Hogy a szülő nők több időt töltsenek a kórházban.",
+        "Hogy a boncolásokat másik épületben tartsák."
       ],
       "correct": 0,
       "teaches": [
@@ -121,8 +127,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a reflection on Semmelweis's legacy using a scalar breakthrough adverbial.",
-          "answer": "Semmelweis Ignác orvostörténetileg korszakalkotó módon, a mortalitást drámaian visszaszorítva fektette le a modern fertőtlenítés és járványtan alapjait, felbecsülhetetlen életmentő jelentőséggel gazdagítva az emberiséget."
+          "prompt": "Write one sentence about a change, with a degree adverb (*számottevően*, *drasztikusan*, *csaknem*).",
+          "answer": "A halálozás a kézmosás után számottevően csökkent."
         }
       ],
       "teaches": [
@@ -134,11 +140,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés kalibrálja a tudományos áttörés nagyságát a leghatásosabban?",
+      "question": "Melyik mondat mondja azt, hogy a változás nagy volt?",
       "options": [
-        "orvostörténetileg korszakalkotó módon",
-        "a hagyományos eljárások apróbb korrekciójával",
-        "a kollégák egyetértését keresve"
+        "A halálozás drasztikusan csökkent.",
+        "A halálozás alig csökkent.",
+        "A halálozás részben csökkent."
       ],
       "correct": 0,
       "teaches": [

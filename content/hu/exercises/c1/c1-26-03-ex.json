@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a jogi következménye annak, ha egy lap sajtópert veszít valótlan állítás miatt?",
+      "question": "Mit jelent a 'helyreigazítás'?",
       "options": [
-        "A bíróság helyreigazítás közzétételére és sérelemdíj fizetésére kötelezi a szerkesztőséget.",
-        "A lap kiadóját automatikusan felszámolás alá vonják és vagyonát zárolják.",
-        "Az újságíró kamarai tagságát azonnal és véglegesen visszavonják."
+        "A lap nyilvánosan kijavítja azt, ami nem volt igaz.",
+        "A lap még egyszer megírja ugyanazt a hírt.",
+        "A lap megvédi a cikkét a bíróság előtt."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A híreszteléssel szemben a _____ a minisztérium nem hozott ilyen döntést.",
-      "hint": "valóság + -ban",
-      "answer": "valóságban",
-      "english": "Contrary to rumors, in reality the ministry made no such decision.",
+      "sentence": "A híreszteléssel _____ a hivatal nem hozott ilyen döntést.",
+      "hint": "contrary to",
+      "english": "Contrary to the rumour, the office made no such decision.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "szemben",
+        "ellentétben"
       ]
     },
     {
@@ -62,9 +65,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az állítás nemhogy nem felel meg a tényeknek, hanem éppen _____ bizonyult igaznak.",
-      "hint": "on the contrary",
-      "english": "The claim is far from matching facts; on the contrary, the opposite proved true.",
+      "sentence": "A vád nem igaz, hanem éppen _____: rágalomnak bizonyult.",
+      "hint": "the opposite",
+      "english": "The accusation is not true; quite the opposite, it proved to be slander.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
@@ -83,20 +86,22 @@
         "szemben",
         "a",
         "valóságban",
-        "minden",
+        "csak",
+        "néhány",
         "irat",
-        "hozzáférhető."
+        "elérhető."
       ],
       "solution": [
         "Ezzel",
         "szemben",
         "a",
         "valóságban",
-        "minden",
+        "csak",
+        "néhány",
         "irat",
-        "hozzáférhető."
+        "elérhető."
       ],
-      "english": "In contrast with this in reality all documents are accessible.",
+      "english": "In contrast, in reality only a few documents are available.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -109,21 +114,21 @@
       "prompt": [
         {
           "speaker": "Riporter",
-          "text": "Hogyan válaszol az ellenzéki politikus a kormányzati sajtó vádjaira?"
+          "text": "Mit mond az ügyvéd a vádról?"
         },
         {
           "speaker": "Jogtanácsos",
-          "text": "A vád nemhogy nem igaz, hanem éppen _____ cáfolható a számlákkal."
+          "text": "A vád nem igaz, hanem éppen _____: a számlák mást mutatnak."
         },
         {
           "speaker": "Riporter",
-          "text": "Akkor sajtópert indítanak a rágalmazók ellen."
+          "text": "Akkor ezt meg kell írnunk."
         }
       ],
       "options": [
         "ellenkezőleg",
-        "ellenkezője",
-        "ellenkezőnek"
+        "ellenkező",
+        "ellentétben"
       ],
       "correct": 0,
       "teaches": [
@@ -137,8 +142,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence debunking a disinformation narrative using 'Ezzel szemben a valóságban'.",
-          "answer": "A kormánymédia által terjesztett álhírrel szemben a valóságban a nemzetközi jelentések nemhogy dicsérnék a reformot, hanem súlyos aggályokat fogalmaznak meg."
+          "prompt": "Write one sentence that contrasts a claim with the facts, with *ezzel szemben a valóságban* or *éppen ellenkezőleg*.",
+          "answer": "A hír szerint minden irat nyilvános, ezzel szemben a valóságban csak néhány elérhető."
         }
       ],
       "teaches": [
@@ -150,11 +155,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kötőszószerkezet fejezi ki a leghatározottabb retorikai cáfolatot?",
+      "question": "Melyik szó illik a mondatba? Az újság azt írta, hogy minden irat nyilvános. _____ a valóságban csak néhány irat elérhető.",
       "options": [
-        "nemhogy nem igaz, hanem éppen ellenkezőleg",
-        "noha bizonyos részleteiben vitatható",
-        "tekintet nélkül a felmerülő ellentmondásokra"
+        "Ezzel szemben",
+        "Ebből következően",
+        "Továbbá"
       ],
       "correct": 0,
       "teaches": [

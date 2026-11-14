@@ -6,32 +6,40 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik kifejezés minősíti szakszerűen a műtárgyak szerzéstörténetének kutatását?",
+      "question": "Melyik mondat jelenti ezt: 'From a legal point of view the purchase is in order'?",
       "options": [
-        "provenienciáját tekintve igazoltan",
-        "a történeti kontextus vizsgálata nélkül, csupán a műtárgyak anyagi értékére hagyatkozva",
-        "a restaurátori beavatkozásokat eltitkolva, a látványosságra törekedve"
+        "Jogi szempontból rendben van a vásárlás.",
+        "Jogi szempontra rendben van a vásárlás.",
+        "Jogi szempontnál rendben van a vásárlás."
       ],
       "correct": 0,
       "teaches": [
         "evaluative-stance"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "nal-nel"
+      }
     },
     {
       "id": "c1-29-consolidation-2",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel fejezhetjük ki a műemléki rétegek tiszteletét a legszakszerűbben?",
+      "question": "Melyik kifejezés jelenti ezt: 'the wall that was protected from decay'?",
       "options": [
-        "a történeti rétegzettséget tiszteletben tartó és a kordokumentumokat megőrző eljárás",
-        "a későbbi korok beépítéseit elbontó, stiláris tisztaságra törekvő gyakorlat",
-        "a hiányzó részletek szabadon kitalált formákkal való kiegészítése"
+        "a pusztulástól megóvott fal",
+        "a pusztulástól megóvó fal",
+        "a pusztulástól megóvva fal"
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-participle",
+        "2": "participle-actions"
+      }
     },
     {
       "id": "c1-29-consolidation-3",
@@ -41,23 +49,23 @@
       "pairs": [
         [
           "proveniencia",
-          "a műkincs eredettörténete"
+          "a tárgy eredete"
         ],
         [
-          "anasztilózis",
-          "leomlott eredeti kövek pontos visszaépítése"
+          "restitúció",
+          "az elvett tárgy visszaadása"
         ],
         [
           "pastiche",
-          "történeti hűség nélküli stílusutánzat"
+          "régi stílust utánzó, nem eredeti építmény"
         ],
         [
           "kánonképzés",
-          "kulturális értékek beemelése a kollektív emlékezetbe"
+          "a mértékadó művek kiválasztása"
         ],
         [
           "közkincs",
-          "a nemzet közös szellemi vagyona"
+          "az egész nemzet közös értéke"
         ]
       ],
       "teaches": [
@@ -69,12 +77,14 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A műemlékvédelemben a leomlott eredeti kövek visszaépítését _____ nevezik.",
-      "hint": "anasztilózis + -nak",
-      "answer": "anasztilózisnak",
-      "english": "In monument protection the reassembly of fallen original stones is called anastylosis.",
+      "sentence": "Az eredeti kövek visszahelyezésének eljárását _____ nevezik.",
+      "hint": "anasztilózis, name of the procedure",
+      "english": "The procedure of putting the original stones back is called anastylosis.",
       "teaches": [
         "c1-museums-monuments-vocab"
+      ],
+      "answers": [
+        "anasztilózisnak"
       ]
     },
     {
@@ -82,9 +92,8 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A modern vasbeton magra húzott gipszstílusutánzat a _____ építészet.",
-      "hint": "stylistic imitation",
-      "english": "Plaster stylistic imitation drawn over a modern reinforced concrete core is pastiche architecture.",
+      "sentence": "Az eredeti anyag nélküli, régi stílust utánzó építmény: _____.",
+      "english": "A building without original material that imitates an old style: pastiche.",
       "teaches": [
         "c1-museums-monuments-vocab"
       ],
@@ -97,12 +106,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A restaurálást restaurátori szempontból _____ kell végrehajtani.",
-      "hint": "reverzibilis + -en",
-      "answer": "reverzibilisen",
-      "english": "Restoration must be executed reversibly from a conservator's perspective.",
+      "sentence": "Jogi _____ rendben van az ajándék, az eredetét tekintve viszont még sok a kérdés.",
+      "hint": "szempont, viewpoint",
+      "english": "From a legal point of view the gift is in order, but as for its origin many questions remain.",
       "teaches": [
         "evaluative-stance"
+      ],
+      "answers": [
+        "szempontból"
       ]
     },
     {
@@ -110,12 +121,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A díszletekkel szemben a valóságban a romok valódi történeti _____ hordoznak.",
-      "hint": "tanúságtétel + -t",
-      "answer": "tanúságtételt",
-      "english": "In contrast with decors in reality ruins carry genuine historical testimony.",
+      "sentence": "A másolattal _____ az eredeti kő a kor tanúja.",
+      "hint": "against, in contrast",
+      "english": "As against the copy, the original stone is a witness of its time.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "szemben",
+        "ellentétben"
       ]
     },
     {
@@ -123,9 +137,8 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Az emlékhelyeket abból a célból létesítik, _____ ébren tartsák a történelmi emlékezetet.",
-      "hint": "abból a célból … ___",
-      "english": "Memorial sites are established with the goal that they keep historical memory awake.",
+      "sentence": "Emlékművet állítanak abból a célból, _____ a következő nemzedék is emlékezzen.",
+      "english": "A monument is put up so that the next generation also remembers.",
       "teaches": [
         "formal-purpose"
       ],
@@ -138,11 +151,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a funkciója a pastiche-ellenes ellentétes szerkezeteknek a műemlékvédelmi vitában?",
+      "question": "Mit mond a 'mindazonáltal' a mondatban: 'A másolat szép, mindazonáltal nem hiteles'?",
       "options": [
-        "A vasbeton vázas díszletépítés leleplezése a valódi anyagi és történeti hitelesség védelmében.",
-        "A költséghatékony építési technikák népszerűsítése a műemlékvédelemmel szemben.",
-        "A turisták igényeinek kiszolgálása a történeti kutatások háttérbe szorításával."
+        "Elismeri a szépséget, de hozzáteszi: a másolat mégsem hiteles.",
+        "Azt mondja, hogy a másolat azért hiteles, mert szép.",
+        "Azt mondja, hogy a másolat azért nem hiteles, mert szép."
       ],
       "correct": 0,
       "teaches": [
@@ -156,23 +169,25 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "múzeum",
+        "nyitva",
+        "tartás",
+        "számottevően",
+        "megnövelte",
         "a",
-        "nemzet",
-        "eleven",
-        "öntudatának",
-        "kútfeje."
+        "látogatók",
+        "számát."
       ],
       "solution": [
         "A",
-        "múzeum",
+        "nyitva",
+        "tartás",
+        "számottevően",
+        "megnövelte",
         "a",
-        "nemzet",
-        "eleven",
-        "öntudatának",
-        "kútfeje."
+        "látogatók",
+        "számát."
       ],
-      "english": "The museum is the springhead of the nation's living consciousness.",
+      "english": "Opening hours markedly increased the number of visitors.",
       "teaches": [
         "scalar-adverbs"
       ]
@@ -184,8 +199,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of monumental authenticity contrasting authentic ruins with pastiche decors.",
-          "answer": "A vasbeton vázra húzott historizáló díszletekkel szemben a valóságban a felelős műemlékvédelem az autenticitást és a történeti rétegek tiszteletét tekinti a nemzeti emlékezet legfőbb zálogának."
+          "prompt": "Write two short sentences: praise a copy, then add a reservation with *mindazonáltal* and contrast it with the original.",
+          "answer": "A másolat látványos, mindazonáltal az eredeti kőfalat nem pótolja. A másolattal szemben az eredeti kő a kor tanúja."
         }
       ],
       "teaches": [
@@ -199,8 +214,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize Pulszky Ferenc's museum philosophy using a scalar evaluative adverbial.",
-          "answer": "Pulszky Ferenc művelődéstörténetileg felbecsülhetetlen mértékben bizonyította be, hogy a múzeumok nem a múlt elzárt temetői, hanem a polgári öntudatot és szellemi szabadságot éltető közkincsek."
+          "prompt": "Write one sentence that says what a public museum gave to the citizens, with a scalar adverb.",
+          "answer": "A nyilvános múzeum felbecsülhetetlen mértékben gazdagította a polgárok életét."
         }
       ],
       "teaches": [

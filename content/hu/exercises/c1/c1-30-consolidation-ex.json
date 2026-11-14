@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik kifejezés elemzi szakszerűen a Kárpát-medence geopolitikai helyzetét?",
+      "question": "Melyik mondat jelenti ezt: 'The rivalry of the great powers markedly narrowed the room for manoeuvre'?",
       "options": [
-        "geopolitikailag determinált módon",
-        "a regionális konfliktusokat figyelmen kívül hagyva, passzív semlegességet hirdetve",
-        "a nagyhatalmi nyomásgyakorlást pusztán gazdasági kérdésként kezelve"
+        "A nagyhatalmak versenye számottevően szűkítette a mozgásteret.",
+        "A nagyhatalmak versenye számottevő szűkítette a mozgásteret.",
+        "A nagyhatalmak versenye számottevőbben szűkítette a mozgásteret."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel fejezhetjük ki a nyugati típusú társadalomfejlődés sajátosságait?",
+      "question": "Melyik kifejezés jelenti ezt: 'institutions that protect autonomy'?",
       "options": [
-        "a szerződéses szabadságjogokat és a joguralmat meghonosító intézményi modell",
-        "a feudális előjogokat fenntartó rendi alkotmányosság",
-        "az állami bürokrácia korlátlan tekintélyére épülő felvilágosult abszolutizmus"
+        "az autonómiát védő intézmények",
+        "az autonómiát védve intézmények",
+        "az autonómiát védeni intézmények"
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "participle-actions",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "c1-30-consolidation-3",
@@ -41,23 +45,23 @@
       "pairs": [
         [
           "ütközőzóna",
-          "nagyhatalmak közötti elválasztó térség"
+          "két hatalom közötti, őket elválasztó terület"
         ],
         [
           "joguralom",
-          "a hatalmat korlátozó szerződéses jogrend"
+          "a hatalmat is kötő jogrend"
         ],
         [
           "megosztott szuverenitás",
-          "hatáskörök közös gyakorlása a nemzetközi térben"
+          "néhány kérdésben közös döntés"
         ],
         [
           "kollektív védelem",
-          "a NATO 5. cikkelyén alapuló biztonsági garancia"
+          "a szövetségesek közös védekezése"
         ],
         [
           "Komp-ország",
-          "Kelet és Nyugat között ingadozó Magyarország"
+          "Ady képe: Magyarország mint komp két part között"
         ]
       ],
       "teaches": [
@@ -69,15 +73,14 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A nagyhatalmak által egymás között kialakított befolyási övezet az _____.",
-      "hint": "sphere of influence",
-      "english": "The zone of influence established by great powers among themselves is the sphere of influence.",
+      "sentence": "A nagyhatalmak befolyása alatt álló területet _____ nevezzük.",
+      "hint": "érdekszféra, name of the area",
+      "english": "The area under the influence of great powers is called a sphere of influence.",
       "teaches": [
         "c1-east-west-geopolitics-vocab"
       ],
       "answers": [
-        "érdekszféra",
-        "befolyási övezet"
+        "érdekszférának"
       ]
     },
     {
@@ -85,14 +88,14 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A hatáskörök közös európai gyakorlását _____ szuverenitásnak hívjuk.",
-      "hint": "pooled",
-      "english": "The joint European exercise of competencies is called pooled (shared) sovereignty.",
+      "sentence": "Annak elérését, hogy a támadó ne merjen támadni, _____ nevezik.",
+      "hint": "elrettentés, name of the aim",
+      "english": "Making an attacker not dare to attack is called deterrence.",
       "teaches": [
         "c1-east-west-geopolitics-vocab"
       ],
       "answers": [
-        "megosztott"
+        "elrettentésnek"
       ]
     },
     {
@@ -100,15 +103,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A térség államai geopolitikailag _____ módon váltak ütközőzónává.",
-      "hint": "determined",
-      "english": "States of the region in a geopolitically determined manner became buffer zones.",
+      "sentence": "A nagyhatalom közelsége _____ korlátozta az ország döntéseit.",
+      "english": "The proximity of the great power markedly limited the country's decisions.",
       "teaches": [
         "scalar-adverbs"
       ],
       "answers": [
-        "determinált",
-        "meghatározott"
+        "számottevően",
+        "drasztikusan",
+        "jelentősen",
+        "nagymértékben"
       ]
     },
     {
@@ -116,12 +120,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A dacos elszigetelődéssel szemben a valóságban a szövetség ad valódi _____.",
-      "hint": "cselekvőképesség + -et",
-      "answer": "cselekvőképességet",
-      "english": "In contrast with defiant isolation in reality the alliance grants genuine capacity to act.",
+      "sentence": "Egyesek gyengítőnek tartják a szövetséget, _____ mások erősítőnek.",
+      "english": "Some consider the alliance weakening, while others consider it strengthening.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "míg",
+        "viszont",
+        "ezzel szemben"
       ]
     },
     {
@@ -129,9 +136,8 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A védelmet abból a célból fejlesztik, _____ hatékonyan elrettentsék az agressziót.",
-      "hint": "abból a célból … ___",
-      "english": "Defense is upgraded with the goal that they effectively deter aggression.",
+      "sentence": "A szövetségesek azzal a céllal gyakorolnak együtt, _____ megbízhatóan működjön a közös védelem.",
+      "english": "The allies exercise together with the aim that the common defense works reliably.",
       "teaches": [
         "formal-purpose"
       ],
@@ -144,11 +150,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a funkciója a megosztott szuverenitást védő ellentétes szerkezeteknek?",
+      "question": "Mit mond az 'ezzel szemben' a mondatban: 'Egyesek szerint gyengíti az államot; ezzel szemben mások szerint erősíti'?",
       "options": [
-        "Annak bizonyítása, hogy az elszigetelődés nem szuverenitást, hanem végzetes geopolitikai kiszolgáltatottságot eredményez.",
-        "A fegyverkezési verseny gazdasági hatásainak elemzése a tagállamok költségvetésében.",
-        "A regionális együttműködés felváltása kétoldalú protekcionista megállapodásokkal."
+        "A második nézet az első ellentéte.",
+        "A második nézet az első oka.",
+        "A második nézet az első eredménye."
       ],
       "correct": 0,
       "teaches": [
@@ -161,24 +167,24 @@
       "category": "grammar",
       "stage": "produce",
       "tiles": [
-        "Komp-ország",
-        "megváltása",
+        "A",
+        "híd",
+        "megépítése",
+        "alapjaiban",
+        "megváltoztatta",
         "a",
-        "nyugati",
-        "polgári",
-        "műveltségben",
-        "rejlik."
+        "forgalmat."
       ],
       "solution": [
-        "Komp-ország",
-        "megváltása",
+        "A",
+        "híd",
+        "megépítése",
+        "alapjaiban",
+        "megváltoztatta",
         "a",
-        "nyugati",
-        "polgári",
-        "műveltségben",
-        "rejlik."
+        "forgalmat."
       ],
-      "english": "Ferry-country's salvation lies in Western civil culture.",
+      "english": "Building the bridge fundamentally changed the traffic.",
       "teaches": [
         "scalar-adverbs"
       ]
@@ -190,8 +196,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of collective defense contrasting isolation with alliance loyalty.",
-          "answer": "A dacos elszigetelődéssel szemben a valóságban a NATO-hűség és a megosztott szuverenitás avégből nélkülözhetetlen, hogy Magyarország megőrizze biztonságát a nagyhatalmi agresszióval szemben."
+          "prompt": "Write two sentences on a disputed question: one view with *szerint*, the opposite view with *ezzel szemben*.",
+          "answer": "Egyesek szerint a közös döntéshozatal korlátozza a szuverenitást. Ezzel szemben mások szerint növeli a cselekvőképességet."
         }
       ],
       "teaches": [
@@ -205,8 +211,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize Ady Endre's prophetic message using a scalar evaluative adverbial.",
-          "answer": "Ady Endre látnoki erővel felbecsülhetetlen mértékben, a nemzeti önáltatást alapjaiban szétzúzva bizonyította be, hogy Magyarország csakis a nyugati polgári értékek kikötőjében őrizheti meg szabadságát."
+          "prompt": "Write one sentence about how a neighbouring great power limits a country, with a scalar adverb.",
+          "answer": "A nagyhatalom közelsége számottevően szűkítette az ország mozgásterét."
         }
       ],
       "teaches": [

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'megosztott szuverenitás' (pooled sovereignty) az Európai Unióban?",
+      "question": "Mit jelent a 'megosztott szuverenitás'?",
       "options": [
-        "Azt, hogy a tagállamok bizonyos hatásköröket önkéntesen, közös demokratikus intézmények révén gyakorolnak, így sokkal hatékonyabban védik érdekeiket a globális térben.",
-        "Azt, hogy a nemzetállamok lemondanak a saját törvényhozásukról a szövetségi parlament javára.",
-        "Azt, hogy a döntéshozatal kizárólag egyetlen központi kormány kezében összpontosul."
+        "Az államok bizonyos döntéseket közös intézményekben hoznak meg.",
+        "Egy állam területe két országra oszlik.",
+        "Egy állam minden döntését egy másik állam hozza meg."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szuverenitási szólamokkal szemben a valóságban a teljes bezárkózás gazdasági _____ vezet.",
-      "hint": "kiszolgáltatottság + -hoz",
-      "answer": "kiszolgáltatottsághoz",
-      "english": "In contrast with sovereignist slogans in reality complete closing leads to economic vulnerability.",
+      "sentence": "Egyfelől korlátozza a döntési szabadságot, _____ növeli a közös cselekvőképességet.",
+      "english": "On the one hand it limits freedom of decision, on the other it increases the common capacity to act.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "másfelől",
+        "ugyanakkor",
+        "másrészt",
+        "viszont"
       ]
     },
     {
@@ -38,19 +42,19 @@
       "pairs": [
         [
           "megosztott szuverenitás",
-          "hatáskörök közös gyakorlása a hatékony cselekvésért"
-        ],
-        [
-          "szupranacionális intézmény",
-          "nemzetek feletti döntéshozó fórum"
+          "néhány kérdésben közös döntés"
         ],
         [
           "szubszidiaritás",
-          "a döntések polgárokhoz legközelebbi meghozatalának elve"
+          "a döntést ott hozzák, ahol a legközelebb van a polgárokhoz"
+        ],
+        [
+          "nemzeti önrendelkezés",
+          "a nemzet joga a saját sorsáról dönteni"
         ],
         [
           "kölcsönös függés",
-          "államok egymásra utaltsága a modern gazdaságban"
+          "az államok egymásra utaltsága"
         ]
       ],
       "teaches": [
@@ -62,14 +66,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az integráció nemhogy nem gyengíti a nemzetet, _____ éppen megvédi a nagyhatalmi zsarolástól.",
-      "hint": "nemhogy nem … ___",
-      "english": "Integration is far from weakening the nation; on the contrary, it protects it from great power blackmail.",
+      "sentence": "Egyesek gyengítőnek tartják a közös döntéshozatalt. Ezzel _____ mások erősítőnek tartják.",
+      "english": "Some consider common decision-making weakening. In contrast, others consider it strengthening.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
       "answers": [
-        "hanem"
+        "szemben",
+        "ellentétben"
       ]
     },
     {
@@ -78,26 +82,28 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "megosztott",
-        "szuverenitás",
-        "valódi",
-        "cselekvőképességet",
-        "biztosít",
+        "Egyfelől",
+        "korlátozza",
         "a",
-        "világban."
+        "döntési",
+        "szabadságot,",
+        "másfelől",
+        "növeli",
+        "a",
+        "cselekvőképességet."
       ],
       "solution": [
-        "A",
-        "megosztott",
-        "szuverenitás",
-        "valódi",
-        "cselekvőképességet",
-        "biztosít",
+        "Egyfelől",
+        "korlátozza",
         "a",
-        "világban."
+        "döntési",
+        "szabadságot,",
+        "másfelől",
+        "növeli",
+        "a",
+        "cselekvőképességet."
       ],
-      "english": "Pooled sovereignty secures genuine capacity to act in the world.",
+      "english": "On the one hand it limits freedom of decision, on the other it increases the capacity to act.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -110,26 +116,29 @@
       "prompt": [
         {
           "speaker": "Politológus",
-          "text": "Megőrizhető-e az abszolút nemzetállami szuverenitás a globális pénzpiacok korában?"
+          "text": "A közös döntéshozatal erősíti vagy gyengíti egy állam szuverenitását?"
         },
         {
-          "speaker": "Európa-jogász",
-          "text": "Nem, mert a bezárkózó nacionalizmussal szemben a valóságban a közös intézmények _____ erőt jelentenek."
+          "speaker": "Jogász",
+          "text": "Erről megoszlanak a vélemények: egyesek szerint gyengíti, _____ mások szerint erősíti."
         },
         {
           "speaker": "Politológus",
-          "text": "Aki egyedül marad, az a keleti autokráciák martalékává válik."
+          "text": "Akkor a kérdés valóban vitatott."
         }
       ],
       "options": [
-        "többszörös",
-        "többszörösen",
-        "többszörösség"
+        "ezzel szemben",
+        "ennek ellenére",
+        "ezért"
       ],
       "correct": 0,
       "teaches": [
         "contrastive-discourse-markers"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "concessive-postpositions"
+      }
     },
     {
       "id": "c1-30-03-production-7",
@@ -138,8 +147,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critique of sovereignist isolation using an adversative connector.",
-          "answer": "A dacos elszigetelődéssel szemben a valóságban a megosztott szuverenitás és a közös európai intézményrendszer nemhogy nem veszélyezteti a nemzeti létet, hanem a globális versenyképesség egyetlen garanciája."
+          "prompt": "Write one balanced sentence about a disputed question with *egyfelől … másfelől* and *mindazonáltal*.",
+          "answer": "A közös döntéshozatal egyfelől korlátozza a döntési szabadságot, másfelől növeli a cselekvőképességet; erről a szakemberek mindazonáltal máig vitatkoznak."
         }
       ],
       "teaches": [
@@ -151,11 +160,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik ellentétes szerkezet bizonyítja a szuverenitás megosztásának szükségességét a legvilágosabban?",
+      "question": "Melyik mondat jelenti ezt: 'According to some it weakens the state; according to others it strengthens it'?",
       "options": [
-        "az elszigetelődéssel szemben a valóságban... nemhogy nem gyengít, hanem éppen megsokszorozza a cselekvőképességet",
-        "a szuverenitás feltétlen védelme bármiféle nemzetközi együttműködéssel szemben elsőbbséget élvez",
-        "a szövetségi tagság elkerülhetetlenül a nemzeti függetlenség teljes elvesztéséhez vezet"
+        "Egyesek szerint gyengíti az államot, mások szerint viszont erősíti.",
+        "Egyesek szerint gyengíti az államot, mások szerint ezért erősíti.",
+        "Egyesek szerint gyengíti az államot, mások szerint ennek ellenére erősíti."
       ],
       "correct": 0,
       "teaches": [

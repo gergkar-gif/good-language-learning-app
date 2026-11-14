@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi képezi az Észak-atlanti Szerződés 5. cikkelyének lényegét?",
+      "question": "Mit jelent a 'kollektív védelem'?",
       "options": [
-        "A kollektív védelem elvét, miszerint bármely tagállam elleni fegyveres támadás az egész szövetség elleni támadásnak minősül, és közös katonai fellépést von maga után.",
-        "A tagállamok hadseregeinek kötelező összeolvasztását egyetlen központi parancsnokság alá.",
-        "A tagállamok közötti automatikus fegyverkereskedelmi mentességet."
+        "Egy szövetség tagjai közösen védik egymást a támadástól.",
+        "Egy állam minden támadás ellen egyedül védekezik.",
+        "Egy ország a szomszédjaitól katonai segítséget vásárol."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A védelmi képességeket abból a _____ modernizálják, hogy hatékonyan elrettentsék a támadókat.",
-      "hint": "cél + -ból",
-      "answer": "célból",
-      "english": "Defense capabilities are modernized with the goal of effectively deterring attackers.",
+      "sentence": "A szövetség tagjai azzal a céllal vállalnak közös védelmet, _____ egyik tag se maradjon egyedül.",
+      "english": "The members of the alliance undertake common defense with the aim that no member stays alone.",
       "teaches": [
         "formal-purpose"
+      ],
+      "answers": [
+        "hogy"
       ]
     },
     {
@@ -38,19 +39,19 @@
       "pairs": [
         [
           "kollektív védelem",
-          "egy mindenkiért, mindenki egyért elv a védelemben"
+          "a szövetségesek közös védekezése"
         ],
         [
           "elrettentés",
-          "a támadás kockázatainak elviselhetetlenné tétele"
+          "annak elérése, hogy a támadó ne merjen támadni"
         ],
         [
           "szövetségi hűség",
-          "a közös szerződések és értékek megbízható tisztelete"
+          "a szövetségi kötelezettségek betartása"
         ],
         [
           "biztonsági garancia",
-          "a katonai szövetségesek által nyújtott védelem"
+          "ígéret arra, hogy a szövetséges megvédi az országot"
         ]
       ],
       "teaches": [
@@ -62,14 +63,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Avégből kell betartani a kötelezettségeket, _____ a szövetségesek bizalma megmaradjon.",
-      "hint": "avégből … ___",
-      "english": "Obligations must be respected to the end that allies' trust remain.",
+      "sentence": "Közösen gyakorolnak, _____ a támadó azt higgye, hogy gyenge a szövetség.",
+      "english": "They train together so that an attacker does not think the alliance is weak.",
       "teaches": [
         "formal-purpose"
       ],
       "answers": [
-        "hogy"
+        "nehogy"
       ]
     },
     {
@@ -79,23 +79,35 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "kollektív",
-        "védelem",
+        "szövetség",
+        "tagjai",
+        "azzal",
         "a",
-        "biztonság",
-        "legfőbb",
-        "alapköve."
+        "céllal",
+        "védik",
+        "egymást,",
+        "hogy",
+        "senki",
+        "se",
+        "maradjon",
+        "egyedül."
       ],
       "solution": [
         "A",
-        "kollektív",
-        "védelem",
+        "szövetség",
+        "tagjai",
+        "azzal",
         "a",
-        "biztonság",
-        "legfőbb",
-        "alapköve."
+        "céllal",
+        "védik",
+        "egymást,",
+        "hogy",
+        "senki",
+        "se",
+        "maradjon",
+        "egyedül."
       ],
-      "english": "Collective defense is the primary cornerstone of security.",
+      "english": "The members of the alliance defend each other with the aim that nobody stays alone.",
       "teaches": [
         "formal-purpose"
       ]
@@ -108,26 +120,30 @@
       "prompt": [
         {
           "speaker": "Katonai attasé",
-          "text": "Megengedheti-e magának egy határállam a szövetségesi megbízhatóság relativizálását?"
+          "text": "Miért tartja be egy ország a szövetségi kötelezettségeit?"
         },
         {
           "speaker": "Biztonsági szakértő",
-          "text": "Sohasem, hiszen abból a célból tartozunk a NATO-hoz, _____ elkerüljük az ütközőzónák sorsát."
+          "text": "Azért, hogy a szövetségesek bizalma _____."
         },
         {
           "speaker": "Katonai attasé",
-          "text": "A hűtlenség katasztrófát hoz a kis népekre."
+          "text": "Értem: a bizalom a szövetség alapja."
         }
       ],
       "options": [
-        "hogy",
-        "ha",
-        "mert"
+        "megmaradjon",
+        "megmarad",
+        "megmaradna"
       ],
       "correct": 0,
       "teaches": [
         "formal-purpose"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "c1-30-04-production-7",
@@ -136,8 +152,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating alliance commitments using a teleological modal structure.",
-          "answer": "Magyarországnak avégből kell hűséges és megbízható NATO-szövetségesnek maradnia, hogy a háborús válságok korában szilárdan élvezze a kollektív védelem sérthetetlen garanciáit."
+          "prompt": "Write one sentence about why allies exercise together, with *azzal a céllal, hogy*.",
+          "answer": "A szövetségesek azzal a céllal gyakorolnak együtt, hogy megbízhatóan működjön a közös védelem."
         }
       ],
       "teaches": [
@@ -149,16 +165,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fogalmazza meg a szövetségi hűség célját a legpontosabban?",
+      "question": "Melyik mondat jelenti ezt: 'The allies defend each other so that nobody stays alone'?",
       "options": [
-        "avégből kell fenntartani a szövetségi hűséget, hogy megőrizzük a kollektív védelmet",
-        "azért érdemes fegyverkezni, mert a hadiipar munkahelyeket teremt",
-        "abból a megfontolásból kötünk egyezményeket, hogy elkerüljük a védelmi kiadásokat"
+        "A szövetségesek azzal a céllal védik egymást, hogy senki se maradjon egyedül.",
+        "A szövetségesek azzal a céllal védik egymást, hogy senki se maradni egyedül.",
+        "A szövetségesek azzal a céllal védik egymást, hogy senki se maradt egyedül."
       ],
       "correct": 0,
       "teaches": [
         "formal-purpose"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni"
+      }
     }
   ]
 }

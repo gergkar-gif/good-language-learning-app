@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan határozza meg Jan Assmann a 'kulturális emlékezet' fogalmát?",
+      "question": "Mit jelent a 'kánonképzés'?",
       "options": [
-        "Azon szövegek, rítusok, emlékhelyek és műalkotások intézményesült összességeként, amelyek fenntartják a társadalom közös identitását évszázadokon át.",
-        "A mindenkori kormányok által hozott rendeletek hivatalos archívumaként.",
-        "A nemzeti ünnepeken kötelezően elhangzó protokolláris beszédek gyűjteményeként."
+        "Annak kiválasztása, hogy mely művek legyenek mértékadók.",
+        "A régi művek másolása új tankönyvekbe.",
+        "A könyvtárak nyitvatartási idejének megállapítása."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az emlékhelyeket abból a _____ létesítik, hogy fenntartsák a kollektív emlékezetet.",
-      "hint": "cél + -ból",
-      "answer": "célból",
-      "english": "Memorial sites are established with the goal of maintaining collective memory.",
+      "sentence": "Emlékhelyet állítanak abból a célból, _____ ne felejtsük el a múltat.",
+      "english": "A memorial is put up so that we do not forget the past.",
       "teaches": [
         "formal-purpose"
+      ],
+      "answers": [
+        "hogy"
       ]
     },
     {
@@ -38,19 +39,19 @@
       "pairs": [
         [
           "kánonképzés",
-          "művek mértékadóvá emelése az oktatásban és közbeszédben"
+          "a mértékadó művek kiválasztása"
         ],
         [
           "szimbolikus tér",
-          "politikai reprezentációra és emlékezésre szolgáló köztér"
+          "tér, amely egy közösség emlékeit jelképezi"
         ],
         [
           "emlékezetpolitika",
-          "a múlt állami szintű tudatos formálása"
+          "az állam szerepe abban, mire emlékezzünk"
         ],
         [
           "nemzeti panteon",
-          "a történelem legnagyobbnak ítélt alakjainak köre"
+          "a nemzet nagy alakjainak emlékhelye"
         ]
       ],
       "teaches": [
@@ -62,14 +63,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Avégből kell kutatni a múltat, _____ elkerüljük az önfelmentő történelmi mítoszokat.",
-      "hint": "avégből … ___",
-      "english": "The past must be researched to the end that we avoid self-exculpatory historical myths.",
+      "sentence": "Zárva tartjuk a termet, _____ a látogatók kárt tegyenek a falban.",
+      "english": "We keep the room closed so that visitors do not damage the wall.",
       "teaches": [
         "formal-purpose"
       ],
       "answers": [
-        "hogy"
+        "nehogy"
       ]
     },
     {
@@ -79,25 +79,25 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "szimbolikus",
-        "tereket",
-        "a",
-        "hatalmi",
-        "legitimáció",
-        "céljából",
-        "formálják."
+        "kánont",
+        "azért",
+        "tanítják,",
+        "hogy",
+        "közös",
+        "alapunk",
+        "legyen."
       ],
       "solution": [
         "A",
-        "szimbolikus",
-        "tereket",
-        "a",
-        "hatalmi",
-        "legitimáció",
-        "céljából",
-        "formálják."
+        "kánont",
+        "azért",
+        "tanítják,",
+        "hogy",
+        "közös",
+        "alapunk",
+        "legyen."
       ],
-      "english": "Symbolic spaces are shaped for the goal of power legitimation.",
+      "english": "The canon is taught so that we have a common ground.",
       "teaches": [
         "formal-purpose"
       ]
@@ -110,15 +110,15 @@
       "prompt": [
         {
           "speaker": "Kultúraszociológus",
-          "text": "Miért olyan hevesek a kánonviták a tankönyvek és irodalmi antológiák körül?"
+          "text": "Miért vitatkoznak annyit a tankönyvek szerzői?"
         },
         {
           "speaker": "Irodalomtörténész",
-          "text": "Mert avégből zajlik a harc a szerzők beválogatásáért, _____ a hatalom meghatározhassa a jövő generációk világképét."
+          "text": "Abból a célból válogatják a szerzőket, _____ a következő nemzedék ugyanazt olvassa."
         },
         {
           "speaker": "Kultúraszociológus",
-          "text": "A kánon tehát sohasem ártatlan esztétikai lista, hanem hatalmi kérdés."
+          "text": "A kánon tehát nem csak ízlés kérdése, hanem hatalmi kérdés."
         }
       ],
       "options": [
@@ -129,7 +129,11 @@
       "correct": 0,
       "teaches": [
         "formal-purpose"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ha-clause",
+        "2": "mert-because"
+      }
     },
     {
       "id": "c1-29-04-production-7",
@@ -138,8 +142,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating cultural memory preservation using a teleological modal structure.",
-          "answer": "Az államnak abból a célból kell támogatnia a független közgyűjteményeket, hogy a nemzeti kánon ne politikai jelszavakká silányuljon, hanem a szellemi szabadság eleven forrása maradjon."
+          "prompt": "Write one sentence that says why a state supports public collections, with *abból a célból, hogy*.",
+          "answer": "Az állam abból a célból támogatja a közgyűjteményeket, hogy mindenki megismerhesse a közös múltat."
         }
       ],
       "teaches": [
@@ -151,11 +155,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik modális célszerkezet ragadja meg a kánonképzés teleológiáját a legpontosabban?",
+      "question": "Melyik mondat jelenti ezt: 'A monument is put up so that we do not forget the price of freedom'?",
       "options": [
-        "avégből kell ápolni a közös kánont, hogy a társadalmi integráció megmaradjon",
-        "azért érdemes múzeumba járni, mert kellemes időtöltést nyújt",
-        "abból a célból tanítanak történelmet, hogy a diákok jó jegyeket szerezzenek"
+        "Emlékművet állítanak abból a célból, hogy ne felejtsük el a szabadság árát.",
+        "Emlékművet állítanak abból a célból, hogy nem felejtjük el a szabadság árát.",
+        "Emlékművet állítanak abból a célból, hogy ne felejtjük el a szabadság árát."
       ],
       "correct": 0,
       "teaches": [

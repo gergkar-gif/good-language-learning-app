@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért tekintik a történészek a rendszerváltás legsúlyosabb mulasztásának az ügynökakták titkosítását?",
+      "question": "Mit jelent a 'levéltári nyilvánosság'?",
       "options": [
-        "Mert a nyilvánosság elzárása megakadályozta a valódi erkölcsi katarzist, és évtizedekre kiszolgáltatta a politikai elitet a zsarolhatóságnak.",
-        "Mert a jogi kárpótlási eljárások adminisztratív költségei meghaladták a költségvetési kereteket.",
-        "Mert a nemzetközi emberi jogi egyezmények megtiltották a személyes adatok digitális feldolgozását."
+        "A kutatók és a polgárok megnézhetik a levéltár iratait.",
+        "A levéltár iratait csak a kormány olvashatja el.",
+        "A levéltár iratait minden évben megsemmisítik."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A levéltárakat abból a _____ kell megnyitni, hogy a társadalom megtisztuljon a múlt terheitől.",
-      "hint": "cél + -ból",
-      "english": "Archives must be opened with the goal that society be cleansed of the past's burdens.",
+      "sentence": "Megnyitják a levéltárat annak érdekében, _____ a kutatók megismerjék a múltat.",
+      "english": "The archive is opened so that researchers can come to know the past.",
       "teaches": [
         "formal-purpose"
       ],
       "answers": [
-        "célból"
+        "hogy"
       ]
     },
     {
@@ -40,19 +39,19 @@
       "pairs": [
         [
           "igazságtétel",
-          "a diktatúra bűneinek és felelőseinek jogi és morális feltárása"
-        ],
-        [
-          "történelmi katarzis",
-          "felszabadító lelki megkönnyebbülés az igazság kimondása révén"
-        ],
-        [
-          "ügynökakták",
-          "a kommunista állambiztonság besúgói jelentései"
+          "a múlt bűneinek feltárása és megítélése"
         ],
         [
           "múltfeldolgozás",
-          "a társadalmi traumák kibeszélése és beépítése a tudatba"
+          "a közösség munkája azon, hogy megértse a múltját"
+        ],
+        [
+          "megbékélés",
+          "a viszály vége a felek között"
+        ],
+        [
+          "kárpótlás",
+          "pénz vagy más jóvátétel a sérelemért"
         ]
       ],
       "teaches": [
@@ -64,14 +63,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Avégből kell kimondani a tényeket, _____ a jövő nemzedékek ne éljenek mérgező hazugságban.",
-      "hint": "avégből … ___",
-      "english": "Facts must be stated to the end that future generations not live in poisonous lies.",
+      "sentence": "Kimondjuk az igazságot, _____ a hazugság váljon közös emlékké.",
+      "english": "We state the truth so that the lie does not become a shared memory.",
       "teaches": [
         "formal-purpose"
       ],
       "answers": [
-        "hogy"
+        "nehogy"
       ]
     },
     {
@@ -80,26 +78,34 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "történelmi",
-        "katarzis",
-        "az",
-        "erkölcsi",
-        "megújulás",
-        "nélkülözhetetlen",
-        "feltétele."
+        "Annak",
+        "érdekében",
+        "nyitják",
+        "meg",
+        "a",
+        "levéltárat,",
+        "hogy",
+        "a",
+        "kutatók",
+        "megismerjék",
+        "a",
+        "múltat."
       ],
       "solution": [
-        "A",
-        "történelmi",
-        "katarzis",
-        "az",
-        "erkölcsi",
-        "megújulás",
-        "nélkülözhetetlen",
-        "feltétele."
+        "Annak",
+        "érdekében",
+        "nyitják",
+        "meg",
+        "a",
+        "levéltárat,",
+        "hogy",
+        "a",
+        "kutatók",
+        "megismerjék",
+        "a",
+        "múltat."
       ],
-      "english": "Historical catharsis is the indispensable condition of moral renewal.",
+      "english": "The archive is opened so that researchers can come to know the past.",
       "teaches": [
         "formal-purpose"
       ]
@@ -112,26 +118,30 @@
       "prompt": [
         {
           "speaker": "Történész",
-          "text": "Miért halogatja a politika a kommunista állambiztonsági iratok teljes nyilvánosságát?"
+          "text": "Miért fontos a levéltári nyilvánosság?"
         },
         {
           "speaker": "Jogvédő",
-          "text": "Mert avégből tartják zárolva a dokumentumokat, _____ megvédjék a múltbeli hálózatokat az elszámoltatástól."
+          "text": "Azért, hogy a polgárok is _____ a múltat."
         },
         {
           "speaker": "Történész",
-          "text": "De katarzis nélkül a társadalom sohasem gyógyul meg."
+          "text": "Ebben egyetértünk, bár a részletekről még vitatkozunk."
         }
       ],
       "options": [
-        "hogy",
-        "mivel",
-        "ámbár"
+        "megismerjék",
+        "megismerik",
+        "megismernék"
       ],
       "correct": 0,
       "teaches": [
         "formal-purpose"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "c1-31-04-production-7",
@@ -140,8 +150,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating historical catharsis using a teleological modal structure.",
-          "answer": "A nemzetnek abból a célból kell végrehajtania a teljes körű levéltári nyitást és az igazságtételt, hogy a történelmi katarzis révén megszabaduljon a zsarolhatóság és az elhallgatás évtizedes mételyétől."
+          "prompt": "Write one sentence about why working through the past matters, with *annak érdekében, hogy* or *azért, hogy*.",
+          "answer": "A múltfeldolgozás azért fontos, hogy a közösség megértse a saját történetét."
         }
       ],
       "teaches": [
@@ -153,16 +163,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik modális célszerkezet fejezi ki a történelmi szembenézés kötelességét a legpontosabban?",
+      "question": "Melyik mondat jelenti ezt: 'The archive is opened so that researchers can come to know the past'?",
       "options": [
-        "avégből kell feltárni az igazságot, hogy a nemzet eljusson a morális katarzishoz",
-        "a levéltári anyagok kutathatóságát adminisztratív szempontból vizsgálva",
-        "az évfordulós ünnepségeken elhangzó beszédek formális protokollja szerint"
+        "Annak érdekében nyitják meg a levéltárat, hogy a kutatók megismerjék a múltat.",
+        "Annak érdekében nyitják meg a levéltárat, a kutatók megismerjék a múltat.",
+        "Annak érdekében nyitják meg a levéltárat, hogy a kutatók megismerni a múltat."
       ],
       "correct": 0,
       "teaches": [
         "formal-purpose"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     }
   ]
 }

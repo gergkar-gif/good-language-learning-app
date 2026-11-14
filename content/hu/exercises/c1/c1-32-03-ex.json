@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért nevezte Sólyom László az emberi méltóságot 'anyajognak'?",
+      "question": "Mit jelent az 'elidegeníthetetlen' jog?",
       "options": [
-        "Mert olyan oszthatatlan és elidegeníthetetlen alapérték, amelyből minden nevesített szabadságjog és személyiségi jog levezethető, és amely soha nem korlátozható.",
-        "Mert a családtámogatási ellátások és az anyasági segélyek folyósításának legfőbb alkotmányos és pénzügyi jogalapját képezi.",
-        "Mert a szülői felügyeleti jogok és a gyámhatósági eljárások polgári jogi szabályozásának kötelező alapelve a családjogban."
+        "Olyan jog, amelyről nem lehet lemondani, és nem lehet elvenni.",
+        "Olyan jog, amelyet bárki eladhat a másiknak, ha jó árat kap.",
+        "Olyan jog, amelyet a törvény hoz létre, és az vissza is vonhat."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A testület az élethez való jogot abszolút _____ kizárta a mérlegelhető jogok köréből.",
-      "hint": "mód + -on",
-      "english": "The body excluded the right to life from balanced rights in an absolute manner.",
+      "sentence": "Erkölcsi _____ is fontos az emberi méltóság védelme.",
+      "hint": "ok, reason",
+      "english": "For moral reasons too the protection of human dignity is important.",
       "teaches": [
         "evaluative-stance"
       ],
       "answers": [
-        "módon"
+        "okból",
+        "szempontból"
       ]
     },
     {
@@ -40,19 +41,19 @@
       "pairs": [
         [
           "emberi méltóság",
-          "az emberi személyiség abszolút, sérthetetlen lényege"
+          "minden ember értéke, amelyet nem lehet elvenni"
         ],
         [
           "anyajog",
-          "olyan gyökérjog, amelyből az összes többi szabadságjog sarjad"
+          "az a jog, amelyből más jogok erednek"
         ],
         [
-          "elidegeníthetetlen",
-          "át nem ruházható és meg nem vonható természetes jog"
+          "oszthatatlan",
+          "nem darabolható részekre"
         ],
         [
-          "halálbüntetés eltörlése",
-          "a 23/1990. AB határozat történelmi döntése a méltóság védelmében"
+          "személyiségi jog",
+          "az ember személyét védő jog"
         ]
       ],
       "teaches": [
@@ -64,14 +65,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az emberi méltóság érinthetetlenül _____ az állami hatalom abszolút korlátját jelenti.",
-      "hint": "fennáll + -va",
-      "english": "Standing inviolably human dignity represents the absolute limit of state power.",
+      "sentence": "A méltóság tiszteletétől _____ döntött így a bíró.",
+      "hint": "vezérel, 'guided by'",
+      "english": "Guided by respect for dignity, the judge decided so.",
       "teaches": [
         "evaluative-stance"
       ],
       "answers": [
-        "fennállva"
+        "vezérelve"
       ]
     },
     {
@@ -80,26 +81,26 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
+        "Erkölcsi",
+        "okból",
+        "is",
+        "fontos",
+        "az",
         "emberi",
         "méltóság",
-        "érinthetetlenül",
-        "minden",
-        "alapjog",
-        "abszolút",
-        "forrása."
+        "védelme."
       ],
       "solution": [
-        "Az",
+        "Erkölcsi",
+        "okból",
+        "is",
+        "fontos",
+        "az",
         "emberi",
         "méltóság",
-        "érinthetetlenül",
-        "minden",
-        "alapjog",
-        "abszolút",
-        "forrása."
+        "védelme."
       ],
-      "english": "Human dignity is inviolably the absolute source of all fundamental rights.",
+      "english": "For moral reasons too the protection of human dignity is important.",
       "teaches": [
         "evaluative-stance"
       ]
@@ -111,27 +112,31 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Büntetőjogász",
-          "text": "Hogyan indokolta Sólyom László a halálbüntetés feltétlen eltörlését?"
+          "speaker": "Jogtudós",
+          "text": "Miért tartja fontosnak a bíró az emberi méltóságot?"
         },
         {
           "speaker": "Alkotmánybíró",
-          "text": "Úgy, hogy az emberi élet és a méltóság elválaszthatatlan egységet képez, amelyet az állam _____ sem vehet el."
+          "text": "A méltóság tiszteletétől _____ dönt így."
         },
         {
-          "speaker": "Büntetőjogász",
-          "text": "Az ember soha nem válhat puszta büntetőjogi eszközzé."
+          "speaker": "Jogtudós",
+          "text": "Akkor a méltóság a döntés kiindulópontja."
         }
       ],
       "options": [
-        "semmilyen indokkal",
-        "semmilyen indokot",
-        "semmilyen indokra"
+        "vezérelve",
+        "vezérelt",
+        "vezérlő"
       ],
       "correct": 0,
       "teaches": [
         "evaluative-stance"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-participle-adjective",
+        "2": "present-participle"
+      }
     },
     {
       "id": "c1-32-03-production-7",
@@ -140,8 +145,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a philosophical assertion of human dignity using a modal adverbial.",
-          "answer": "Az emberi méltóság mint oszthatatlan anyajog abszolút módon kizárja az egyén eszközzé silányítását, érinthetetlenül fennállva a demokratikus jogrend legvégső fundamentumaként."
+          "prompt": "Write one sentence about why human dignity matters, with *erkölcsi okból* or *…tól/-től vezérelve*.",
+          "answer": "Erkölcsi okból is fontos az emberi méltóság védelme, és a bíró is ezt tartja szem előtt."
         }
       ],
       "teaches": [
@@ -153,16 +158,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés rögzíti az emberi méltóság abszolút jellegét a leghatározottabban?",
+      "question": "Melyik mondat jelenti ezt: 'For moral reasons too the protection of dignity is important'?",
       "options": [
-        "érinthetetlenül fennállva",
-        "a politikai konszenzus függvényeként értelmezve",
-        "a törvényhozó mindenkori mérlegelési jogkörébe utalva"
+        "Erkölcsi okból is fontos a méltóság védelme.",
+        "Erkölcsi okra is fontos a méltóság védelme.",
+        "Erkölcsi oknál is fontos a méltóság védelme."
       ],
       "correct": 0,
       "teaches": [
         "evaluative-stance"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "nal-nel"
+      }
     }
   ]
 }

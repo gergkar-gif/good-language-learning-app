@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a különbség a párhuzamos indokolás és a különvélemény között az Alkotmánybíróságon?",
+      "question": "Mit jelent a 'különvélemény'?",
       "options": [
-        "A párhuzamos indokolást író bíró egyetért a rendelkező résszel de más indokokkal támasztja alá, míg a különvéleményt megfogalmazó bíró a döntés lényegével és eredményével sem ért egyet.",
-        "A párhuzamos indokolás kizárólag a kisebbségben maradt bírák közös álláspontját rögzíti, míg a különvéleményt az elnök fogalmazza meg.",
-        "A különvélemény azonnal megsemmisíti a testületi döntést, míg a párhuzamos indokolás kötelező a törvényhozóra."
+        "Egy bíró írásban kifejti, hogy nem ért egyet a döntéssel.",
+        "A testület elnöke egyedül hozza meg a döntést.",
+        "A döntés végrehajtásának új határideje."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A bírák abból a fundamentumból _____ ki, hogy a visszaható hatály tilalma kógens norma.",
-      "hint": "indul, past 3pl",
-      "english": "The judges proceeded from the foundation that the prohibition of retroactivity is a mandatory norm.",
+      "sentence": "A rendelkezés visszaható hatálya _____ semmis.",
+      "english": "The provision is void because of its retroactive effect.",
       "teaches": [
         "causal-postpositions"
       ],
       "answers": [
-        "indultak"
+        "miatt",
+        "következtében"
       ]
     },
     {
@@ -39,20 +39,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "rendelkező rész",
-          "a bírósági határozat kötelező erejű döntése és jogkövetkezménye"
+          "precedens",
+          "korábbi döntés, amelyre a későbbi döntések hivatkoznak"
         ],
         [
-          "párhuzamos indokolás",
-          "egyetértés a döntéssel, eltérő elvi levezetéssel kiegészítve"
+          "indokolás",
+          "a döntés okainak leírása"
+        ],
+        [
+          "rendelkező rész",
+          "a határozat lényege: mit mond ki a testület"
         ],
         [
           "különvélemény",
-          "a kisebbségben maradt bíró ellenvéleménye a döntés egészével szemben"
-        ],
-        [
-          "visszaható hatály tilalma",
-          "törvény nem büntethet olyan cselekményt, amely elkövetésekor nem volt bűn"
+          "az a bíró véleménye, aki nem ért egyet"
         ]
       ],
       "teaches": [
@@ -64,16 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "_____ hogy a jogértelmezési gyakorlat köti a bíróságokat, a precedens megdönthetetlen.",
-      "hint": "inasmuch as",
-      "english": "Inasmuch as the interpretive practice binds courts, the precedent is unshakeable.",
+      "sentence": "A döntés indokolása nem megfelelő, _____ a bíróság felülvizsgálta.",
+      "english": "The reasoning of the decision is not adequate, therefore the court reviewed it.",
       "teaches": [
         "causal-postpositions"
       ],
       "answers": [
-        "Lévén",
-        "Minthogy",
-        "Mivel"
+        "emiatt",
+        "ezért"
       ]
     },
     {
@@ -83,27 +81,21 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "különvélemény",
-        "annak",
-        "következtében",
-        "született,",
-        "hogy",
-        "sérült",
-        "a",
-        "jogbiztonság."
+        "rendelkezés",
+        "visszaható",
+        "hatálya",
+        "miatt",
+        "semmis."
       ],
       "solution": [
         "A",
-        "különvélemény",
-        "annak",
-        "következtében",
-        "született,",
-        "hogy",
-        "sérült",
-        "a",
-        "jogbiztonság."
+        "rendelkezés",
+        "visszaható",
+        "hatálya",
+        "miatt",
+        "semmis."
       ],
-      "english": "The dissenting opinion was born as a consequence of legal certainty being violated.",
+      "english": "Because of its retroactive effect the provision is void.",
       "teaches": [
         "causal-postpositions"
       ]
@@ -116,26 +108,30 @@
       "prompt": [
         {
           "speaker": "Kutató",
-          "text": "Miért van óriási súlya az Alkotmánybíróság határozatai indokolásának?"
+          "text": "Miért vizsgálta meg újra az ügyet a testület?"
         },
         {
           "speaker": "Professzor",
-          "text": "Mert abból a tényből kiindulva, hogy a ratio decidendi köti a bírói kart, az indokolás szabja meg a jövőbeli _____."
+          "text": "A korábbi döntés hibás indokolása _____ újra megvizsgálták."
         },
         {
           "speaker": "Kutató",
-          "text": "Így válik a bíróság a jogrendszer élő őrévé."
+          "text": "Értem: az indokolásnak is helyesnek kell lennie."
         }
       ],
       "options": [
-        "joggyakorlatot",
-        "joggyakorlat",
-        "joggyakorlathoz"
+        "miatt",
+        "mellett",
+        "szerint"
       ],
       "correct": 0,
       "teaches": [
         "causal-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "postpositions-basic",
+        "2": "evidentials"
+      }
     },
     {
       "id": "c1-32-04-production-7",
@@ -144,8 +140,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a judicial sentence deducing precedent using a complex causal connective.",
-          "answer": "A testület, abból a fundamentumból kiindulva, hogy a visszaható hatály tilalma a jogállamiság elválaszthatatlan eleme, annak következtében semmisítette meg a passzust, hogy az sértette a szerzett jogokat."
+          "prompt": "Write one sentence that gives the cause of a decision, with *miatt* or *következtében*.",
+          "answer": "A rendelkezés visszaható hatálya miatt a testület megsemmisítette azt."
         }
       ],
       "teaches": [
@@ -157,16 +153,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kötőszói szerkezet fejez ki logikai oksági következtetést az ítélkezésben?",
+      "question": "Melyik mondat jelenti ezt: 'Because of its retroactive effect the provision is void'?",
       "options": [
-        "abból a fundamentumból kiindulva, hogy...",
-        "az eljárási határidők naptári számítását rögzítve",
-        "a bírósági alkalmazottak adminisztratív beosztása szerint"
+        "A rendelkezés visszaható hatálya miatt semmis.",
+        "A rendelkezés visszaható hatálya mellett semmis.",
+        "A rendelkezés visszaható hatálya szerint semmis."
       ],
       "correct": 0,
       "teaches": [
         "causal-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "postpositions-basic",
+        "2": "evidentials"
+      }
     }
   ]
 }

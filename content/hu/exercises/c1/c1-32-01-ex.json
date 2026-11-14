@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi az alkotmányossági utólagos normakontroll lényege?",
+      "question": "Mit jelent az 'utólagos normakontroll'?",
       "options": [
-        "A már kihirdetett és hatályba lépett jogszabályok alaptörvény-ellenességének vizsgálata és szükség esetén megsemmisítése.",
-        "A törvényjavaslatok kihirdetést megelőző kötelező elnöki felülvizsgálata.",
-        "A jogerős bírósági ítéletek elleni rendkívüli perújítási eljárások lebonyolítása."
+        "A már hatályos jogszabály alkotmányosságának vizsgálata.",
+        "A törvényjavaslat vizsgálata még a kihirdetés előtt.",
+        "A bírósági ítélet felülvizsgálata egy új perben."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A testület a vitatott passzust alkotmányjogi szempontból _____ megsemmisítette az alaptörvény-ellenes rendelkezést.",
-      "hint": "vizsgál + -va",
-      "english": "Examining the contested clause from a constitutional law perspective the body annulled the unconstitutional provision.",
+      "sentence": "A testület jogbiztonsági _____ megsemmisítette a rendelkezést.",
+      "hint": "ok, reason",
+      "english": "For reasons of legal certainty the body annulled the provision.",
       "teaches": [
         "evaluative-stance"
       ],
       "answers": [
-        "vizsgálva"
+        "okból"
       ]
     },
     {
@@ -40,19 +40,19 @@
       "pairs": [
         [
           "előzetes normakontroll",
-          "jogszabály kihirdetés előtti alkotmányossági vizsgálata"
+          "a jogszabály vizsgálata a kihirdetés előtt"
         ],
         [
           "utólagos normakontroll",
-          "már hatályos jogszabály felülvizsgálata és megsemmisítése"
+          "a már hatályos jogszabály vizsgálata"
+        ],
+        [
+          "megsemmisítés",
+          "a jogszabály érvénytelenné tétele"
         ],
         [
           "jogbiztonság elve",
-          "a kiszámítható és egyértelmű jogalkotás alapkövetelménye"
-        ],
-        [
-          "hatásköri túllépés",
-          "az intézmény törvényes jogkörein kívüli önkényes cselekvés"
+          "az emberek számíthatnak a jog következetességére"
         ]
       ],
       "teaches": [
@@ -64,14 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A bíróság anyagi jogi alapon _____ semmisnek mondta ki a rendeletet.",
-      "hint": "eljár + -va",
-      "english": "Proceeding on substantive legal grounds the court declared the decree void.",
+      "sentence": "Alkotmányossági _____ vizsgálták meg a törvényt.",
+      "hint": "szempont, viewpoint",
+      "english": "They examined the law from the constitutional point of view.",
       "teaches": [
         "evaluative-stance"
       ],
       "answers": [
-        "eljárva"
+        "szempontból"
       ]
     },
     {
@@ -80,26 +80,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "Alkotmánybíróság",
-        "anyagi",
-        "jogi",
-        "alapon",
+        "A",
+        "testület",
+        "jogbiztonsági",
+        "okból",
         "megsemmisítette",
         "a",
-        "törvényt."
+        "rendelkezést."
       ],
       "solution": [
-        "Az",
-        "Alkotmánybíróság",
-        "anyagi",
-        "jogi",
-        "alapon",
+        "A",
+        "testület",
+        "jogbiztonsági",
+        "okból",
         "megsemmisítette",
         "a",
-        "törvényt."
+        "rendelkezést."
       ],
-      "english": "The Constitutional Court annulled the statute on substantive legal grounds.",
+      "english": "For reasons of legal certainty the body annulled the provision.",
       "teaches": [
         "evaluative-stance"
       ]
@@ -112,26 +110,30 @@
       "prompt": [
         {
           "speaker": "Jogtudós",
-          "text": "Miért olyan lényeges az absztrakt utólagos normakontroll a jogállamban?"
+          "text": "Miért semmisítette meg a testület a rendelkezést?"
         },
         {
           "speaker": "Alkotmánybíró",
-          "text": "Mert alkotmányjogi szempontból vizsgálva ez garantálja, hogy a parlamenti többség ne hozhasson _____ törvényeket."
+          "text": "Jogbiztonsági _____, mert az emberek nem tudhatták előre, mit várhatnak."
         },
         {
           "speaker": "Jogtudós",
-          "text": "Ez a fékek és egyensúlyok legfőbb fundamentuma."
+          "text": "Értem: a jognak kiszámíthatónak kell lennie."
         }
       ],
       "options": [
-        "alaptörvény-ellenes",
-        "alaptörvény-ellenesen",
-        "alaptörvény-ellenesség"
+        "okból",
+        "okra",
+        "oknál"
       ],
       "correct": 0,
       "teaches": [
         "evaluative-stance"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "nal-nel"
+      }
     },
     {
       "id": "c1-32-01-production-7",
@@ -140,8 +142,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating constitutional review using an evaluative adverbial.",
-          "answer": "Az Alkotmánybíróság a vitatott törvényt alkotmányjogi szempontból vizsgálva, anyagi jogi alapon megsemmisítette, a jogbiztonság elvét védve a törvényhozói túlterjeszkedéssel szemben."
+          "prompt": "Write one sentence that gives the reason for annulling a rule, with *jogbiztonsági okból*.",
+          "answer": "A testület jogbiztonsági okból megsemmisítette a rendelkezést, mert az emberek nem tudhatták előre, mit várhatnak."
         }
       ],
       "teaches": [
@@ -153,16 +155,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozói szerkezet fejezi ki a legpontosabban a bírósági normakontrollt?",
+      "question": "Melyik mondat jelenti ezt: 'They examined the law from the constitutional point of view'?",
       "options": [
-        "alkotmányjogi szempontból vizsgálva",
-        "a törvényszövegek nyelvtani szerkezetét elemezve",
-        "a politikai pártok sajtónyilatkozatait szemlézve"
+        "Alkotmányossági szempontból vizsgálták meg a törvényt.",
+        "Alkotmányossági szempontra vizsgálták meg a törvényt.",
+        "Alkotmányossági szempontnál vizsgálták meg a törvényt."
       ],
       "correct": 0,
       "teaches": [
         "evaluative-stance"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "nal-nel"
+      }
     }
   ]
 }

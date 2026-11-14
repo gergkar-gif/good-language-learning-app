@@ -6,32 +6,40 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik kifejezés elemzi szakszerűen a kollektív félelmek hatását a társadalomra?",
+      "question": "Melyik mondat jelenti ezt: 'Guided by fear, a community makes wrong decisions'?",
       "options": [
-        "pszichopolitikailag kódolt hisztérikus reakciókkal",
-        "a közvélemény pillanatnyi bizonytalanságát regisztrálva",
-        "a tömegtájékoztatás híreire adott felszínes érzelmi válaszokkal"
+        "Félelemtől vezérelve a közösség téves döntéseket hoz.",
+        "Félelemtől vezérelt a közösség téves döntéseket hoz.",
+        "Félelemtől vezérlő a közösség téves döntéseket hoz."
       ],
       "correct": 0,
       "teaches": [
         "evaluative-stance"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-participle-adjective",
+        "2": "present-participle"
+      }
     },
     {
       "id": "c1-31-consolidation-2",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel leplezhetjük le az önfelmentő nemzeti narratívákat a legpontosabban?",
+      "question": "Melyik kifejezés jelenti ezt: 'a story that puts the responsibility on someone else'?",
       "options": [
-        "a belső cinkosságot elhallgató és a felelősséget kizárólag külső erőkre hárító mítoszok",
-        "a levéltári dokumentumok formai hitelességét vizsgáló filológiai tanulmányok",
-        "a történelmi tankönyvek fejezeteit időrendben áttekintő összefoglalások"
+        "a felelősséget másra hárító történet",
+        "a felelősséget másra hárítva történet",
+        "a felelősséget másra hárítani történet"
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "participle-actions",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "c1-31-consolidation-3",
@@ -41,23 +49,23 @@
       "pairs": [
         [
           "politikai hisztéria",
-          "a realitásérzék elvesztése fenyegetettség hatására"
+          "a valóságérzék elvesztése félelem hatására"
         ],
         [
-          "morális önfelmentés",
-          "saját történelmi bűneink eltagadása"
+          "bűnbakképzés",
+          "a hibát olyasvalakire tolni, aki nem hibás"
         ],
         [
           "igazságtétel",
-          "a diktatúrák bűneinek nyilvános feltárása"
+          "a múlt bűneinek feltárása és megítélése"
         ],
         [
-          "katarzis",
-          "felszabadító erkölcsi megtisztulás az igazság által"
+          "megbékélés",
+          "a viszály vége a felek között"
         ],
         [
           "kisállami nyomorúság",
-          "Bibó diagnózisa a régió kóros beidegződéseiről"
+          "a kis államok bizonytalan, félelemmel teli helyzete"
         ]
       ],
       "teaches": [
@@ -69,14 +77,13 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A bűnök elismerése révén bekövetkező erkölcsi megtisztulás a történelmi _____.",
-      "hint": "catharsis",
-      "english": "Moral purification occurring through acknowledging sins is historical catharsis.",
+      "sentence": "A múlt iratait őrző intézmény: a _____.",
+      "english": "The institution that keeps the records of the past: the archive.",
       "teaches": [
         "c1-historical-trauma-vocab"
       ],
       "answers": [
-        "katarzis"
+        "levéltár"
       ]
     },
     {
@@ -84,15 +91,14 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A tényekkel való illúziómentes szembenézés a politikai _____.",
-      "hint": "realism",
-      "english": "Illusion-free confrontation with facts is political realism.",
+      "sentence": "A felelősség átadását másnak _____ nevezzük.",
+      "hint": "felelősséghárítás, name of the act",
+      "english": "Passing responsibility on to someone else is called deflection of responsibility.",
       "teaches": [
         "c1-historical-trauma-vocab"
       ],
       "answers": [
-        "realizmus",
-        "racionalitás"
+        "felelősséghárításnak"
       ]
     },
     {
@@ -100,14 +106,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A múltat metatörténetileg _____ nyilvánvalóvá válik a félelmek romboló ereje.",
-      "hint": "vizsgál + -va",
-      "english": "Examining the past metahistorically the destructive power of fears becomes evident.",
+      "sentence": "A vezetők gazdasági _____ döntöttek így, nem félelemből.",
+      "hint": "ok, reason",
+      "english": "The leaders decided so for economic reasons, not out of fear.",
       "teaches": [
         "evaluative-stance"
       ],
       "answers": [
-        "vizsgálva"
+        "okból"
       ]
     },
     {
@@ -115,14 +121,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A hisztériával szemben a valóságban a józanság a túlélés valódi _____.",
-      "hint": "zálog + -a",
-      "english": "In contrast with hysteria in reality sobriety is the true guarantee of survival.",
+      "sentence": "_____ egyesek bűnbakot keresnek, mások a tényeket vizsgálják.",
+      "english": "While some look for a scapegoat, others examine the facts.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
       "answers": [
-        "záloga"
+        "míg",
+        "Míg"
       ]
     },
     {
@@ -130,9 +136,8 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Az aktákat abból a célból kell megnyitni, _____ felszámoljuk a zsarolhatóságot.",
-      "hint": "abból a célból … ___",
-      "english": "Files must be opened with the goal that we liquidate blackmailability.",
+      "sentence": "Annak érdekében nyitják meg a levéltárat, _____ a kutatók megismerjék a múltat.",
+      "english": "The archive is opened so that researchers can come to know the past.",
       "teaches": [
         "formal-purpose"
       ],
@@ -145,11 +150,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a funkciója a counter-hysteria ellentétes szerkezeteknek Bibó gondolatrendszerében?",
+      "question": "Mit mond az 'ahelyett, hogy' a mondatban: 'Ahelyett, hogy bűnbakot keresnének, megvizsgálják a tényeket'?",
       "options": [
-        "Annak igazolása, hogy a múlttal való őszinte szembenézés nem a nemzet gyengítése, hanem az erkölcsi gyógyulás záloga.",
-        "A parlamenti képviselők felszólalási idejének adminisztratív korlátozása.",
-        "A sajtóban megjelenő publicisztikák stilisztikai egyszerűsítése."
+        "Azt, hogy a tények vizsgálata a bűnbakkeresés helyett történik.",
+        "Azt, hogy a bűnbakkeresés a tények vizsgálata miatt történik.",
+        "Azt, hogy a tények vizsgálata a bűnbakkeresés után történik."
       ],
       "correct": 0,
       "teaches": [
@@ -163,25 +168,23 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "szabadság",
-        "ott",
-        "kezdődik",
-        "ahol",
-        "megszűnik",
+        "félelem",
+        "alapjaiban",
+        "megváltoztatja",
         "a",
-        "félelem."
+        "közösség",
+        "látásmódját."
       ],
       "solution": [
         "A",
-        "szabadság",
-        "ott",
-        "kezdődik",
-        "ahol",
-        "megszűnik",
+        "félelem",
+        "alapjaiban",
+        "megváltoztatja",
         "a",
-        "félelem."
+        "közösség",
+        "látásmódját."
       ],
-      "english": "Freedom begins where fear ends.",
+      "english": "Fear fundamentally changes the community's way of seeing.",
       "teaches": [
         "scalar-adverbs"
       ]
@@ -193,8 +196,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of national victimhood narratives using a participial construction.",
-          "answer": "A nemzetet kizárólag ártatlan áldozatként feltüntető és a totalitárius rezsimekkel való belső cinkosságot elhallgató történelemszemlélet megbénítja a társadalom erkölcsi fejlődését."
+          "prompt": "Write two sentences: a participle before the noun about a story, and a contrast with *míg* or *ahelyett, hogy*.",
+          "answer": "A felelősséget másra hárító történetek kényelmesek. Ahelyett, hogy bűnbakot keresnének, megvizsgálják a tényeket."
         }
       ],
       "teaches": [
@@ -208,8 +211,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize István Bibó's diagnostic political realism using a scalar evaluative adverbial.",
-          "answer": "Bibó István eszmetörténetileg felbecsülhetetlen mértékben, a nemzeti patológiákat alapjaiban leleplezve bizonyította be, hogy a félelem nélküli jogállami demokrácia a nemzeti felemelkedés egyetlen szilárd fundamentuma."
+          "prompt": "Write one sentence about what fear does to a community, with a scalar adverb.",
+          "answer": "A félelem számottevően torzítja a valóságérzéket."
         }
       ],
       "teaches": [

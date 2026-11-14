@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit értett Sólyom László a 'láthatatlan alkotmány' fogalma alatt?",
+      "question": "Mit jelent a 'láthatatlan alkotmány' Sólyom László használatában?",
       "options": [
-        "Az írott Alkotmány mögött húzódó, a bíróság által kibontott koherens jogelvek, alapjogi mércék és erkölcsi értékek szerves rendszerét, amely állandóságot biztosít a politikai hullámverésekkel szemben.",
-        "A nemzetközi emberi jogi egyezmények azon záradékait, amelyeket a parlament még nem cikkelyezett be a hazai jogrendbe, de kötelezőek.",
-        "Az Alkotmánybíróság elnöke által kiadott belső eljárási útmutatókat és a határozathozatal technikai ügyrendjét szabályozó normákat."
+        "Az írott szövegen túli alapelvek és értékek rendszere.",
+        "Egy titkos alkotmány, amelyet nem hirdettek ki.",
+        "Az alkotmány szövegének rövidített változata."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Amennyiben a jogalkotó korlátozza az autonómiát, _____ az intézményvédelem elve kötelezi a bíróságot a beavatkozásra.",
-      "hint": "amennyiben … ___",
-      "english": "Insofar as the legislature restricts autonomy, so the principle of institutional protection obliges the court to intervene.",
+      "sentence": "A törvényhozónak előbb meg kellett _____ kérdeznie a szakértőket.",
+      "english": "The legislator should first have asked the experts.",
       "teaches": [
         "past-conditional-volna"
       ],
       "answers": [
-        "úgy"
+        "volna"
       ]
     },
     {
@@ -40,19 +39,19 @@
       "pairs": [
         [
           "láthatatlan alkotmány",
-          "az írott alaptörvény mögötti elvi, erkölcsi koherencia rendszere"
+          "az írott szövegen túli alapelvek rendszere"
         ],
         [
           "alkotmányos koherencia",
-          "a jogrendszer belső logikai és elvi ellentmondásmentessége"
+          "a szabályok és elvek összhangja"
         ],
         [
-          "intézményvédelem",
-          "az alapjogok érvényesülését biztosító szervezeti garanciák fenntartása"
+          "értékrendszer",
+          "az értékek rendezett rendszere"
         ],
         [
-          "bírói aktivizmus",
-          "a bíróság bátor szerepvállalása az alapjogok kibontásában"
+          "jogállamisági klauzula",
+          "az alkotmány szabálya, amely a jogállamot rögzíti"
         ]
       ],
       "teaches": [
@@ -64,14 +63,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Hacsak a bírói kar nem védi az alapelveket, a jogállamiság puszta _____ válik.",
-      "hint": "formaság + -gá",
-      "english": "Unless the judiciary defends foundational principles, the rule of law turns into mere formality.",
+      "sentence": "A bírónak az alapelveket is figyelembe kellett volna _____.",
+      "hint": "vesz, inflected infinitive (he)",
+      "english": "The judge should have taken the principles into account too.",
       "teaches": [
         "past-conditional-volna"
       ],
       "answers": [
-        "formasággá"
+        "vennie"
       ]
     },
     {
@@ -80,30 +79,38 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Amennyiben",
+        "Ha",
         "a",
-        "jogállamisági",
-        "klauzula",
-        "érvényesül,",
-        "úgy",
-        "biztosított",
+        "szabály",
+        "nem",
+        "lett",
+        "volna",
+        "világos,",
+        "a",
+        "bíró",
         "az",
-        "alkotmányos",
-        "koherencia."
+        "alapelvekből",
+        "indult",
+        "volna",
+        "ki."
       ],
       "solution": [
-        "Amennyiben",
+        "Ha",
         "a",
-        "jogállamisági",
-        "klauzula",
-        "érvényesül,",
-        "úgy",
-        "biztosított",
+        "szabály",
+        "nem",
+        "lett",
+        "volna",
+        "világos,",
+        "a",
+        "bíró",
         "az",
-        "alkotmányos",
-        "koherencia."
+        "alapelvekből",
+        "indult",
+        "volna",
+        "ki."
       ],
-      "english": "Insofar as the rule of law clause prevails, so constitutional coherence is ensured.",
+      "english": "If the rule had not been clear, the judge would have started from the principles.",
       "teaches": [
         "past-conditional-volna"
       ]
@@ -115,22 +122,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Egyetemi hallgató",
-          "text": "Hogyan óvhatja meg a bíróság a demokráciát a populista jogalkotástól?"
+          "speaker": "Jogtudós",
+          "text": "Mit tett volna a bíró, ha nem lett volna írott szabály?"
         },
         {
-          "speaker": "Sólyom László",
-          "text": "Amennyiben a bírák hűek maradnak a láthatatlan alkotmány elveihez, úgy az alapjogok bástyái _____ fognak állni."
+          "speaker": "Alkotmánybíró",
+          "text": "Ha nem _____ írott szabály, az alapelvekből indult volna ki."
         },
         {
-          "speaker": "Egyetemi hallgató",
-          "text": "Ez a joguralom legmélyebb garanciája."
+          "speaker": "Jogtudós",
+          "text": "Tehát az alapelvek pótolták volna a hiányzó szöveget."
         }
       ],
       "options": [
-        "rendületlenül",
-        "rendületlen",
-        "rendületlenség"
+        "lett volna",
+        "volt volna",
+        "lenne volna"
       ],
       "correct": 0,
       "teaches": [
@@ -144,8 +151,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a deductive sentence explaining the invisible constitution doctrine.",
-          "answer": "Amennyiben az alkotmány szövege nem meríti ki a szabadságjogok teljes mélységét, úgy a bíróságnak a láthatatlan alkotmány szerves koherenciájára támaszkodva kell megőriznie a jogállamiság szubsztanciáját."
+          "prompt": "Write one sentence about what a judge would have done if there had been no written rule, with *ha … volna, … volna*.",
+          "answer": "Ha nem lett volna írott szabály, a bíró az alapelvekből indult volna ki."
         }
       ],
       "teaches": [
@@ -157,16 +164,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik mondatszerkezet valósítja meg a hipotetikus-deduktív alkotmányelméleti érvelést?",
+      "question": "Melyik mondat jelenti ezt: 'If the rule had not been clear, the judge would have started from the principles'?",
       "options": [
-        "amennyiben a jogalkotó mellőzi a garanciákat, úgy a láthatatlan alkotmány mércéi lépnek elő védőbástyaként",
-        "a törvényszövegek nyelvtani helyességét ellenőrző szakértői bizottság előtt",
-        "a parlamenti képviselők politikai nyilatkozatait összesítő sajtóközleményben"
+        "Ha a szabály nem lett volna világos, a bíró az alapelvekből indult volna ki.",
+        "Ha a szabály nem lett volna világos, a bíró az alapelvekből indul ki.",
+        "Ha a szabály nem lett volna világos, a bíró az alapelvekből indult ki."
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "past-tense-indefinite"
+      }
     }
   ]
 }

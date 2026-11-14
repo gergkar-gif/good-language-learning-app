@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik szerkezet fejez ki szigorú epidemiológiai és kórtani okságot?",
+      "question": "Melyik kifejezés mondja meg a fertőzés okát?",
       "options": [
-        "kóroktanilag igazoltan",
-        "a tünetek véletlenszerű egybeesése alapján",
-        "a kezelőorvos pillanatnyi benyomásaira támaszkodva"
+        "a kezek érintkezése következtében",
+        "a kezek érintkezése ellenére",
+        "a kezek érintkezése helyett"
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel jellemezhetünk egy életmentő orvosi beavatkozást?",
+      "question": "Melyik szerkezet helyes?",
       "options": [
-        "a kórházi fertőzéseket megelőző és a mortalitást radikálisan visszaszorító eljárás",
-        "a kórtermek adminisztratív nyilvántartását korszerűsítő intézkedés",
-        "a tüneti kezelésekre szorítkozó hagyományos terápia"
+        "a fertőzést megelőző szabály",
+        "a fertőzést megelőzve szabály",
+        "a fertőzést megelőzés szabály"
       ],
       "correct": 0,
       "teaches": [
@@ -57,7 +57,7 @@
         ],
         [
           "anyák megmentője",
-          "Semmelweis Ignác orvostörténeti epitheton ornansa"
+          "Semmelweis Ignác közismert jelzője"
         ]
       ],
       "teaches": [
@@ -69,42 +69,38 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A fertőzéseket vegyszerekkel megelőző eljárások összefoglaló neve az _____.",
+      "sentence": "Kórokozók elpusztítása fertőtlenítéssel: ez az _____.",
       "hint": "antisepsis",
-      "english": "The collective name of procedures preventing infections with chemicals is antisepsis.",
+      "english": "Destroying pathogens by disinfection: this is antisepsis.",
       "teaches": [
         "c1-epidemiology-vocab"
       ],
-      "answers": [
-        "antiszepszis"
-      ]
+      "answer": "antiszepszis"
     },
     {
       "id": "c1-27-consolidation-5",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Az orvosi etika alapköve, a 'mindenekelőtt ne árts' latinul a primum non _____.",
-      "hint": "do no harm",
-      "english": "The cornerstone of medical ethics, 'first, do no harm' in Latin is primum non nocere.",
+      "sentence": "A 'primum non _____' elv az orvosi etika alapja.",
+      "hint": "Latin: to harm",
+      "english": "The 'primum non nocere' principle is the basis of medical ethics.",
       "teaches": [
         "c1-epidemiology-vocab"
       ],
-      "answers": [
-        "nocere"
-      ]
+      "answer": "nocere"
     },
     {
       "id": "c1-27-consolidation-6",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A fertőzés útját kóroktanilag _____ adatokkal támasztotta alá a vizsgálat.",
-      "hint": "igazol, past participle",
-      "answer": "igazolt",
-      "english": "The investigation substantiated the path of infection with etiologically confirmed data.",
+      "sentence": "A kórokozókat _____ oldat fertőtlenítette a kezet.",
+      "hint": "elpusztít, present participle",
+      "answer": "elpusztító",
+      "english": "The solution that kills pathogens disinfected the hands.",
       "teaches": [
-        "causal-postpositions"
+        "participial-clauses"
       ]
     },
     {
@@ -112,12 +108,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A miazmatikus tévedéssel szemben a _____ a mikrobák okozzák a kórt.",
-      "hint": "valóság + -ban",
-      "answer": "valóságban",
-      "english": "Contrary to the miasmatic error, in reality microbes cause the illness.",
+      "sentence": "A miazma-elmélettel _____ a számok a kezekre mutattak.",
+      "hint": "contrary to",
+      "english": "Contrary to the miasma theory, the numbers pointed to the hands.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "szemben",
+        "ellentétben"
       ]
     },
     {
@@ -125,14 +124,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Semmelweis tanítása orvostörténetileg _____ módon bizonyult igaznak.",
-      "hint": "epoch-making",
-      "english": "Semmelweis's teaching proved true in a historically epoch-making manner.",
+      "sentence": "A betegek biztonsága a kórházban _____ javult.",
+      "hint": "considerably",
+      "english": "The safety of the patients in the hospital improved considerably.",
       "teaches": [
         "scalar-adverbs"
       ],
       "answers": [
-        "korszakalkotó"
+        "számottevően",
+        "drasztikusan",
+        "jelentősen"
       ]
     },
     {
@@ -140,11 +141,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Hogyan működik az ellentétező érvelés az orvosi tévhitek leleplezésében?",
+      "question": "Melyik mondat állítja szembe a hiedelmet a számokkal?",
       "options": [
-        "A tekintélyelvű dogmákat szembesíti a statisztikailag cáfolhatatlan kísérleti adatokkal.",
-        "Felsorolja a hagyományos orvosi elméletek szimbolikus és kulturális értékeit.",
-        "A betegek szubjektív panaszait tekinti a kórlefolyás egyetlen mérvadó alapjának."
+        "A miazma-elmélet szerint a rossz levegő okozza a kórt; ezzel szemben a számok a kezekre mutattak.",
+        "A miazma-elmélet szerint a rossz levegő okozza a kórt; ezért a számok a kezekre mutattak.",
+        "A miazma-elmélet szerint a rossz levegő okozza a kórt; ráadásul a számok a kezekre mutattak."
       ],
       "correct": 0,
       "teaches": [
@@ -159,26 +160,20 @@
       "tiles": [
         "A",
         "betegbiztonság",
-        "és",
-        "a",
-        "higiénia",
         "az",
-        "orvoslás",
-        "legfőbb",
-        "törvényei."
+        "orvos",
+        "legfontosabb",
+        "kötelessége."
       ],
       "solution": [
         "A",
         "betegbiztonság",
-        "és",
-        "a",
-        "higiénia",
         "az",
-        "orvoslás",
-        "legfőbb",
-        "törvényei."
+        "orvos",
+        "legfontosabb",
+        "kötelessége."
       ],
-      "english": "Patient safety and hygiene are the supreme laws of medicine.",
+      "english": "Patient safety is the doctor's most important duty.",
       "teaches": [
         "formal-obligation"
       ]
@@ -190,8 +185,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a statement on Semmelweis's antiseptic doctrine using an epidemiological adverbial.",
-          "answer": "Semmelweis Ignác kóroktanilag igazoltan és epidemiológiailag alátámasztott módon bizonyította be, hogy a klórmeszes kézmosás azonnal és radikálisan megszünteti a halálos kórházi fertőzéseket."
+          "prompt": "Write one sentence about the cause of an illness, with *következtében* or *miatt*.",
+          "answer": "A fertőzés következtében sok anya megbetegedett."
         }
       ],
       "teaches": [
@@ -205,8 +200,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical reflection on the bioethical responsibility of physicians.",
-          "answer": "Az orvosnak a 'primum non nocere' etikai imperatívusza alapján feltétlenül a betegbiztonságot kell szolgálnia, és semmilyen tekintélyelvű dogma vagy intézményi kényelem kedvéért nem kockáztathatja páciensei életét."
+          "prompt": "Write one sentence about a duty of a doctor, with *köteles*.",
+          "answer": "Az orvos köteles beismerni a hibáját."
         }
       ],
       "teaches": [

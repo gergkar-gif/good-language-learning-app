@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan fogalmazza meg Bibó István a kelet-európai kisállamok alapproblémáját?",
+      "question": "Mit jelent a 'kórtünet'?",
       "options": [
-        "A megsemmisülési félelemből fakadó politikai hisztériaként, amely a demokratikus fejlődés helyett autoriter tévutakra kényszeríti a nemzeteket.",
-        "A gazdasági elmaradottságból és a külkereskedelmi mérleghiányból adódó strukturális függőségként.",
-        "A nemzetiségi területek etnikai határvonalainak hiányából fakadó határvitákként."
+        "Olyan jel, amely betegségre vagy bajra utal.",
+        "Olyan gyógyszer, amely megszünteti a betegséget.",
+        "Olyan orvosi vizsgálat, amelyet évente elvégeznek."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Bibó esszéi eszmetörténetileg _____ mértékben járultak hozzá a magyar demokrácia elméletéhez.",
-      "hint": "inestimable",
-      "english": "Bibó's essays to an inestimable degree in intellectual history contributed to Hungarian democratic theory.",
+      "sentence": "A félelem _____ torzítja a közösség valóságérzékét.",
+      "english": "Fear markedly distorts the community's sense of reality.",
       "teaches": [
         "scalar-adverbs"
       ],
       "answers": [
-        "felbecsülhetetlen"
+        "számottevően",
+        "drasztikusan",
+        "alapjaiban",
+        "jelentősen"
       ]
     },
     {
@@ -40,19 +42,19 @@
       "pairs": [
         [
           "kisállami nyomorúság",
-          "a fenyegetettségből fakadó patologikus politikai működés"
+          "a kis államok bizonytalan, félelemmel teli helyzete"
         ],
         [
-          "erkölcsi tanúságtétel",
-          "hűség az igazsághoz a diktatúra idején is"
+          "polgári bátorság",
+          "az állampolgár bátorsága kimondani az igazat"
+        ],
+        [
+          "kórtünet",
+          "jel, amely bajra utal"
         ],
         [
           "nemzethalál-vízió",
-          "a magyarság eltűnésétől rettegő romantikus toposz"
-        ],
-        [
-          "demokratikus józanság",
-          "a jogállami normák megalkuvás nélküli védelme"
+          "a félelem, hogy a nemzet eltűnik"
         ]
       ],
       "teaches": [
@@ -64,14 +66,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Bibó a nemzeti hisztériát alapjaiban _____ bizonyította be a szabadság fontosságát.",
-      "hint": "leleplez + -ve",
-      "english": "Fundamentally unmasking national hysteria Bibó proved the importance of freedom.",
+      "sentence": "A közösség reakciója _____ eltúlzott volt.",
+      "hint": "szembeötlő, adverb",
+      "english": "The community's reaction was strikingly exaggerated.",
       "teaches": [
         "scalar-adverbs"
       ],
       "answers": [
-        "leleplezve"
+        "szembeötlően",
+        "feltűnően",
+        "drasztikusan"
       ]
     },
     {
@@ -81,25 +85,21 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "szabadság",
-        "ott",
-        "kezdődik",
-        "ahol",
-        "megszűnik",
+        "félelem",
+        "számottevően",
+        "torzítja",
         "a",
-        "félelem."
+        "valóságérzéket."
       ],
       "solution": [
         "A",
-        "szabadság",
-        "ott",
-        "kezdődik",
-        "ahol",
-        "megszűnik",
+        "félelem",
+        "számottevően",
+        "torzítja",
         "a",
-        "félelem."
+        "valóságérzéket."
       ],
-      "english": "Freedom begins where fear ends.",
+      "english": "Fear markedly distorts the sense of reality.",
       "teaches": [
         "scalar-adverbs"
       ]
@@ -109,11 +109,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "context",
-      "question": "Milyen orvosságot ajánl Bibó a politikai hisztéria leküzdésére?",
+      "question": "A szöveg szerint melyik évben írta Bibó István a tanulmányát?",
       "options": [
-        "A tényekkel való bátor szembenézést, a jogállami intézmények tiszteletét és a polgári szabadságjogok félelemmentes gyakorlását.",
-        "A nemzeti gazdaság teljes elszigetelését a külső világpiaci hatásoktól.",
-        "A hagyományos rendi előjogok és tekintélyelvű hierarchiák restaurációját."
+        "1946-ban.",
+        "1956-ban.",
+        "1938-ban."
       ],
       "correct": 0,
       "teaches": [
@@ -127,8 +127,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a reflection on István Bibó's political philosophy using a scalar evaluative adverbial.",
-          "answer": "Bibó István eszmetörténetileg felbecsülhetetlen mértékben, a kisállami hisztériát alapjaiban leleplezve mutatta meg, hogy a nemzeti megmaradás egyetlen garanciája a joguralom és a félelemmentes szabadság."
+          "prompt": "Write one sentence about what fear does to a community, with a scalar adverb.",
+          "answer": "A félelem alapjaiban megváltoztatja, hogyan látja a közösség a saját helyzetét."
         }
       ],
       "teaches": [
@@ -140,11 +140,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozói kifejezés méltatja Bibó munkásságát a legméltóbb elméleti regiszterben?",
+      "question": "Melyik mondat jelenti ezt: 'Fear markedly distorts the sense of reality'?",
       "options": [
-        "eszmetörténetileg felbecsülhetetlen mértékben",
-        "a politikai eseményeket publicisztikai stílusban kommentálva",
-        "az elméleti fogalmakat filozófiai tankönyvekből idézve"
+        "A félelem számottevően torzítja a valóságérzéket.",
+        "A félelem számottevő torzítja a valóságérzéket.",
+        "A félelem számottevőn torzítja a valóságérzéket."
       ],
       "correct": 0,
       "teaches": [

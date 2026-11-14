@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'forráskritika' a professzionális újságírásban?",
+      "question": "Mit jelent a 'forráskritika'?",
       "options": [
-        "A felhasznált információk, adatok és tanúvallomások eredetének, megbízhatóságának és motívumainak szigorú ellenőrzését.",
-        "Azt, hogy a szerkesztőség kizárólag a hivatalos kormányzati hírügynökség közleményeit veszi át.",
-        "Azt, hogy az érintett feleknek elegendő a lap megjelenése után reagálniuk a vádakra."
+        "Annak ellenőrzése, hogy a forrás megbízható-e.",
+        "Annak ellenőrzése, hogy hányan olvassák a cikket.",
+        "Annak eldöntése, hogy melyik cikk kerüljön az első oldalra."
       ],
       "correct": 0,
       "teaches": [
@@ -65,12 +65,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A vizsgálóbizottság jelentése kétséget _____ módon tárta fel az összeférhetetlenséget.",
-      "hint": "kizár, present participle",
-      "answer": "bizonyossággal",
-      "english": "The investigation proved the forged nature of the document with incontrovertible certainty.",
+      "sentence": "A hivatal cáfolta a hírt, ezért az _____ hamis.",
+      "hint": "provably",
+      "english": "The office denied the news, so it is false beyond doubt.",
       "teaches": [
         "epistemic-hedging"
+      ],
+      "answers": [
+        "igazolhatóan",
+        "kétséget kizáróan"
       ]
     },
     {
@@ -79,26 +82,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "riport",
-        "igazolhatóan",
-        "valós",
-        "adatokra",
-        "építette",
-        "fel",
-        "érvelését."
+        "Nem",
+        "zárható",
+        "ki,",
+        "hogy",
+        "a",
+        "hír",
+        "hamis."
       ],
       "solution": [
-        "A",
-        "riport",
-        "igazolhatóan",
-        "valós",
-        "adatokra",
-        "építette",
-        "fel",
-        "érvelését."
+        "Nem",
+        "zárható",
+        "ki,",
+        "hogy",
+        "a",
+        "hír",
+        "hamis."
       ],
-      "english": "The report built its argumentation on verifiably real data.",
+      "english": "It cannot be ruled out that the news is false.",
       "teaches": [
         "epistemic-hedging"
       ]
@@ -111,21 +112,20 @@
       "prompt": [
         {
           "speaker": "Főszerkesztő",
-          "text": "Közölhetjük-e ezt a szenzációs értesülést a címlapon?"
+          "text": "Megírhatjuk a hírt a címlapra?"
         },
         {
           "speaker": "Tényellenőr",
-          "text": "Semmiképp; a hír még nem nyert _____ megerősítést két független forrásból."
+          "text": "Még nem; a hír _____ hamis, de a forrás még nem erősítette meg."
         },
         {
           "speaker": "Főszerkesztő",
-          "text": "Akkor elhalasztjuk a publikálást a hitelesítésig."
+          "text": "Akkor várunk a megerősítésre."
         }
       ],
       "options": [
-        "kétséget kizáró",
-        "kétséget kizáróan",
-        "kétséget kizárónak"
+        "feltehetőleg",
+        "kétséget kizáróan"
       ],
       "correct": 0,
       "teaches": [
@@ -139,8 +139,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating the factual verification of a news story using an epistemic truth adverbial.",
-          "answer": "A független tényellenőrök megdönthetetlen bizonyossággal mutatták ki, hogy a közösségi médiában keringő állítás igazolhatóan manipulált felvételeken alapult."
+          "prompt": "Write one sentence about a news item whose source is not confirmed, with *feltehetőleg* or *nem zárható ki, hogy*.",
+          "answer": "A hír feltehetőleg hamis, de nem zárható ki, hogy van benne igazság."
         }
       ],
       "teaches": [
@@ -152,11 +152,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozó fejez ki megdönthetetlen valóságtartalmat a legmagasabb bizonyossággal?",
+      "question": "Melyik mondat mond biztosat?",
       "options": [
-        "megdönthetetlen bizonyossággal",
-        "valószínűsíthető feltételezésekre támaszkodva",
-        "a közvetett jelekből óvatosan kikövetkeztetve"
+        "A hír kétséget kizáróan hamis.",
+        "A hír feltehetőleg hamis.",
+        "Nem zárható ki, hogy a hír hamis."
       ],
       "correct": 0,
       "teaches": [

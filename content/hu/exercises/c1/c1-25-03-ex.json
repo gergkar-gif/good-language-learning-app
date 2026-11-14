@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mely kérdések tartoznak a 'kizárólagos törvényhozási tárgykörbe'?",
+      "question": "Mit jelent a 'kizárólagos tárgykör'?",
       "options": [
-        "Az alapvető jogok korlátozása és az államszervezet alapvető intézményeinek létrehozása.",
-        "A közigazgatási szervek napi működését szabályozó belső ügyrendek jóváhagyása.",
-        "Az önkormányzati vagyonkezelés technikai végrehajtási szabályai."
+        "Olyan kérdés, amelyet csak törvény szabályozhat.",
+        "Olyan kérdés, amelyet a kormány rendelettel is szabályozhat.",
+        "Olyan kérdés, amelyről a bíróság nem dönthet."
       ],
       "correct": 0,
       "teaches": [
@@ -20,17 +20,18 @@
     {
       "id": "c1-25-03-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A kormány _____ törvényi felhatalmazás alapján szabhat ki kötelezettséget.",
-      "hint": "solely",
-      "english": "The government may impose obligations solely on the basis of statutory authorization.",
+      "sentence": "A kormány _____ törvényi felhatalmazás alapján alkothat rendeletet.",
+      "hint": "only",
+      "english": "The government may issue a decree only on the basis of statutory authorization.",
       "teaches": [
-        "contrastive-discourse-markers"
+        "c1-separation-of-powers-vocab"
       ],
       "answers": [
         "kizárólag",
-        "csakis"
+        "csakis",
+        "csak"
       ]
     },
     {
@@ -65,12 +66,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A miniszter a hatásköri korlátokat nem _____ járt el a rendelet megalkotásakor.",
-      "hint": "túllép, adverbial participle",
-      "answer": "túllépve",
-      "english": "The minister acted without exceeding limits of competence when drafting the decree.",
+      "sentence": "A parlament törvényt alkot, a kormány _____ végrehajtja azt.",
+      "hint": "however",
+      "english": "Parliament makes the law; the government, however, carries it out.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "viszont",
+        "azonban",
+        "ellenben"
       ]
     },
     {
@@ -79,26 +84,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Kizárólag",
-        "törvényi",
-        "úton",
-        "lehet",
-        "korlátozni",
-        "az",
-        "állampolgárok",
-        "szabadságát."
+        "Míg",
+        "a",
+        "parlament",
+        "törvényt",
+        "alkot,",
+        "addig",
+        "a",
+        "bíróság",
+        "alkalmazza",
+        "azt."
       ],
       "solution": [
-        "Kizárólag",
-        "törvényi",
-        "úton",
-        "lehet",
-        "korlátozni",
-        "az",
-        "állampolgárok",
-        "szabadságát."
+        "Míg",
+        "a",
+        "parlament",
+        "törvényt",
+        "alkot,",
+        "addig",
+        "a",
+        "bíróság",
+        "alkalmazza",
+        "azt."
       ],
-      "english": "Citizens' freedom can solely be restricted through statutory channels.",
+      "english": "While parliament makes the law, the court applies it.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -111,25 +120,25 @@
       "prompt": [
         {
           "speaker": "Képviselő",
-          "text": "Szabályozhatja-e a minisztérium ezt az új adónemet egyszerű rendeletben?"
+          "text": "Dönthet a kormány egyedül az új adóról?"
         },
         {
           "speaker": "Jogtudós",
-          "text": "Nem; adót kivetni _____ törvényi felhatalmazás alapján lehetséges, a rendeleti bevezetés jogellenes."
+          "text": "Nem; adóról _____ törvény alapján lehet dönteni."
         },
         {
           "speaker": "Képviselő",
-          "text": "Akkor megtámadjuk a rendeletet az Alkotmánybíróságon."
+          "text": "Akkor a parlament dönt."
         }
       ],
       "options": [
         "kizárólag",
-        "kizárólagosnak",
-        "kizárólagosságban"
+        "kizárólagos",
+        "kizárólagra"
       ],
       "correct": 0,
       "teaches": [
-        "contrastive-discourse-markers"
+        "c1-separation-of-powers-vocab"
       ]
     },
     {
@@ -139,8 +148,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence defining the limits of executive power using 'kizárólag törvényi felhatalmazás alapján'.",
-          "answer": "A közigazgatási hatóságok kizárólag törvényi felhatalmazás alapján, a jogállami hatásköri korlátokat szigorúan tiszteletben tartva avatkozhatnak be az állampolgárok jogaiba."
+          "prompt": "Write one sentence that contrasts what parliament does with what the government does, with *viszont* or *míg … addig*.",
+          "answer": "Míg a parlament törvényt alkot, addig a kormány végrehajtja azt."
         }
       ],
       "teaches": [
@@ -152,11 +161,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés szab szigorú határt a kormányzati beavatkozásnak a jogállamban?",
+      "question": "Melyik mondat fejez ki ellentétet?",
       "options": [
-        "kizárólag törvényi felhatalmazás alapján",
-        "diszkrecionális mérlegelési jogkörben eljárva",
-        "célszerűségi és gazdaságossági megfontolásokból"
+        "A parlament törvényt alkot, a kormány viszont a végrehajtásért felel.",
+        "A parlament törvényt alkot, a kormány ezért a végrehajtásért felel.",
+        "A parlament törvényt alkot, a kormány tehát a végrehajtásért felel."
       ],
       "correct": 0,
       "teaches": [

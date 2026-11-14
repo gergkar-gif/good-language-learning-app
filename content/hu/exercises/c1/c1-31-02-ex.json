@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit értünk 'morális önfelmentés' alatt a modern történetírásban?",
+      "question": "Mit jelent a 'bűnbakképzés'?",
       "options": [
-        "Azon törekvést, amellyel egy társadalom eltagadja saját történelmi felelősségét és bűneit, és minden katasztrófáért kizárólag külső nagyhatalmakat vagy bűnbakokat tesz felelőssé.",
-        "A nemzetközi bíróságok által háborús bűnösöknek biztosított eljárási kegyelmet vagy büntetéscsökkentést az együttműködésért cserébe.",
-        "A nemzetközi szerződésekben rögzített diplomáciai immunitást, amely mentesíti a diplomatákat a helyi büntetőjogi felelősségre vonás alól."
+        "Valaki másra hárítjuk a felelősséget, aki nem hibás.",
+        "A bűnöző megbüntetése a bíróságon.",
+        "A hibák nyílt beismerése a közösség előtt."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A történelmi felelősséget külső hatalmakra _____ elméletek megakadályozzák a valódi megbékélést.",
-      "hint": "hárít + -ó",
-      "english": "Theories deflecting historical responsibility onto external powers prevent genuine reconciliation.",
+      "sentence": "A bűnbakot _____ közösség nem néz szembe a saját hibáival.",
+      "hint": "keres, present participle",
+      "english": "A community that looks for a scapegoat does not face its own mistakes.",
       "teaches": [
         "participial-clauses"
       ],
       "answers": [
-        "hárító"
+        "kereső"
       ]
     },
     {
@@ -39,20 +39,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "áldozati narratíva",
-          "a nemzet tévedhetetlenségét és szenvedését hirdető dogma"
+          "bűnbakképzés",
+          "a hibát olyasvalakire tolni, aki nem hibás"
         ],
         [
-          "morális önfelmentés",
-          "saját bűnök elfedése külső kényszerekre hivatkozva"
+          "felelősséghárítás",
+          "a felelősség átadása másnak"
         ],
         [
-          "belső cinkosság",
-          "együttműködés totalitárius hatalmakkal a lakosság részéről"
+          "öncsalás",
+          "amikor valaki saját magát csapja be"
         ],
         [
           "morális tisztánlátás",
-          "a tények bátor, illúziómentes beismerése"
+          "a tények bátor beismerése"
         ]
       ],
       "teaches": [
@@ -64,9 +64,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A belső kollaborációt szisztematikusan _____ mítoszok meghamisítják a múltat.",
-      "hint": "elhallgat + -ó",
-      "english": "Myths systematically concealing internal collaboration falsify the past.",
+      "sentence": "Az igazságot _____ mítoszok akadályozzák a megbékélést.",
+      "hint": "elhallgat, present participle",
+      "english": "Myths that keep the truth silent obstruct reconciliation.",
       "teaches": [
         "participial-clauses"
       ],
@@ -80,24 +80,28 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "önfelmentő",
-        "mítoszok",
-        "gátolják",
-        "a",
-        "nemzeti",
-        "katarzist."
+        "A",
+        "felelősséget",
+        "másra",
+        "hárító",
+        "történet",
+        "kényelmes,",
+        "de",
+        "nem",
+        "teljes."
       ],
       "solution": [
-        "Az",
-        "önfelmentő",
-        "mítoszok",
-        "gátolják",
-        "a",
-        "nemzeti",
-        "katarzist."
+        "A",
+        "felelősséget",
+        "másra",
+        "hárító",
+        "történet",
+        "kényelmes,",
+        "de",
+        "nem",
+        "teljes."
       ],
-      "english": "Self-exculpating myths obstruct national catharsis.",
+      "english": "A story that puts the responsibility on someone else is comfortable but not complete.",
       "teaches": [
         "participial-clauses"
       ]
@@ -110,26 +114,30 @@
       "prompt": [
         {
           "speaker": "Kutató",
-          "text": "Mi a legnagyobb veszélye a Szabadság téri német megszállási emlékmű szimbolikájának?"
+          "text": "Miért vitatott, hogyan emlékezzünk a múltra?"
         },
         {
-          "speaker": "Eszmetörténész",
-          "text": "Az, hogy a magyar államgépezet aktív közreműködését _____ és Magyarországot ártatlan áldozatként jeleníti meg."
+          "speaker": "Történész",
+          "text": "Mert a felelősséget másra _____ történetek kényelmesek, de nem mindig teljesek."
         },
         {
           "speaker": "Kutató",
-          "text": "Ez a felelősséghárítás iskolapéldája."
+          "text": "Akkor mindig több oldalról kell megnézni a dolgot."
         }
       ],
       "options": [
-        "eltakarja",
-        "eltakar",
-        "eltakarva"
+        "hárító",
+        "hárított",
+        "hárítva"
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-participle-adjective",
+        "2": "participle-actions"
+      }
     },
     {
       "id": "c1-31-02-production-7",
@@ -138,8 +146,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critique of victimhood narratives using a complex participial structure.",
-          "answer": "A nemzetet kizárólag passzív áldozatként láttató és a belső cinkosságot elfedő emlékezetpolitikai narratívák megfosztják a társadalmat a történelmi felnőtté válás és a morális tisztánlátás esélyétől."
+          "prompt": "Write one sentence about stories that put the blame on someone else, with a participle before the noun.",
+          "answer": "A felelősséget másra hárító történetek kényelmesek, de megnehezítik a szembenézést."
         }
       ],
       "teaches": [
@@ -151,16 +159,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet leplezi le az önfelmentő történelemszemléletet a legpontosabban?",
+      "question": "Melyik kifejezés jelenti ezt: 'a community that looks for a scapegoat'?",
       "options": [
-        "a belső cinkosságot szisztematikusan elhallgató és a felelősséget külső erőkre hárító",
-        "a levéltári forrásokat pusztán kronologikusan regisztráló",
-        "a politikai eseményeket külső szemlélőként tudósító"
+        "a bűnbakot kereső közösség",
+        "a bűnbakot keresve közösség",
+        "a bűnbakot keresni közösség"
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "participle-actions",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     }
   ]
 }

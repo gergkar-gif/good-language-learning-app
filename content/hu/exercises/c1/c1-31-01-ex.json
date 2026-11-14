@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevezett Bibó István 'politikai hisztériának' a közép-európai térségben?",
+      "question": "Mit jelent a 'politikai hisztéria' Bibó István kifejezésében?",
       "options": [
-        "Azt a kóros lélektani állapotot, amikor egy nemzet valós vagy képzelt félelmei miatt elveszíti a realitásérzékét, és demokratikus reformok helyett tekintélyelvű illúziókba menekül.",
-        "A gazdasági válságok idején fellépő átmeneti inflációs pánikot és tőzsdei bizonytalanságot.",
-        "A nemzetközi szövetségi szerződések felbontását kísérő diplomáciai feszültséget."
+        "Egy közösség eltorzult reakciója a félelemre: elveszíti a valóságérzékét.",
+        "Gyors gazdasági válság, amelyben az árak és a bérek hirtelen esnek.",
+        "Két ország vitája arról, hogy melyikük kapja meg a vitatott területet."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A térség tragédiáit metatörténetileg _____ a kollektív félelmek mechanizmusa tárul fel.",
-      "hint": "vizsgál + -va",
-      "english": "Examining metahistorically the tragedies of the region the mechanism of collective fears is revealed.",
+      "sentence": "Félelemtől _____ a közösség könnyen téves döntéseket hoz.",
+      "hint": "vezérel, 'guided by'",
+      "english": "Guided by fear, a community easily makes wrong decisions.",
       "teaches": [
         "evaluative-stance"
       ],
       "answers": [
-        "vizsgálva"
+        "vezérelve"
       ]
     },
     {
@@ -40,19 +40,19 @@
       "pairs": [
         [
           "politikai hisztéria",
-          "a realitásérzék elvesztése kollektív félelmek hatására"
+          "a valóságérzék elvesztése félelem hatására"
         ],
         [
           "megsemmisülési félelem",
-          "a nemzet eltűnésétől való egzisztenciális rettegés"
+          "rettegés attól, hogy a nemzet eltűnik"
         ],
         [
           "tévút",
-          "téves történelmi irányválasztás"
+          "téves irány a történelemben"
         ],
         [
-          "metatörténelem",
-          "a történelmi folyamatok mélyebb törvényszerűségeinek vizsgálata"
+          "történelmi trauma",
+          "régi sérülés, amely a közösségben tovább él"
         ]
       ],
       "teaches": [
@@ -64,14 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A hatalom pszichopolitikailag _____ módon használja fel a történelmi sérelmeket.",
-      "hint": "kódol + -t",
-      "english": "Power utilizes historical grievances in a psychopolitically encoded manner.",
+      "sentence": "Nem meggyőződésből, hanem politikai _____ döntöttek így.",
+      "hint": "ok, reason",
+      "english": "They decided so not out of conviction but for political reasons.",
       "teaches": [
         "evaluative-stance"
       ],
       "answers": [
-        "kódolt"
+        "okból"
       ]
     },
     {
@@ -80,24 +80,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "nemzet",
-        "metatörténetileg",
-        "vizsgálva",
-        "traumatikus",
-        "tévutakra",
-        "tévedt."
+        "Félelemtől",
+        "vezérelve",
+        "a",
+        "közösség",
+        "téves",
+        "döntéseket",
+        "hoz."
       ],
       "solution": [
-        "A",
-        "nemzet",
-        "metatörténetileg",
-        "vizsgálva",
-        "traumatikus",
-        "tévutakra",
-        "tévedt."
+        "Félelemtől",
+        "vezérelve",
+        "a",
+        "közösség",
+        "téves",
+        "döntéseket",
+        "hoz."
       ],
-      "english": "Examined metahistorically the nation strayed onto traumatic false paths.",
+      "english": "Guided by fear, the community makes wrong decisions.",
       "teaches": [
         "evaluative-stance"
       ]
@@ -110,26 +110,30 @@
       "prompt": [
         {
           "speaker": "Filozófus",
-          "text": "Miért olyan nehéz a nemzeti traumák higgadt feldolgozása Közép-Európában?"
+          "text": "Miért nehéz higgadtan beszélni a nemzeti traumákról?"
         },
         {
           "speaker": "Történész",
-          "text": "Mert metatörténetileg vizsgálva a politikai hisztéria _____ teszi az őszinte szembenézést."
+          "text": "Mert a közösség félelemtől _____ gyakran elveszíti a valóságérzékét."
         },
         {
           "speaker": "Filozófus",
-          "text": "A félelem eltorzítja a nemzet erkölcsi látását."
+          "text": "Akkor a félelem tényleg eltorzítja a látásmódot."
         }
       ],
       "options": [
-        "lehetetlenné",
-        "lehetetlennek",
-        "lehetetlenül"
+        "vezérelve",
+        "vezérelt",
+        "vezérlő"
       ],
       "correct": 0,
       "teaches": [
         "evaluative-stance"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-participle-adjective",
+        "2": "present-participle"
+      }
     },
     {
       "id": "c1-31-01-production-7",
@@ -138,8 +142,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence analyzing historical trauma using a metahistorical adverbial.",
-          "answer": "A közép-európai államok fejlődését metatörténetileg vizsgálva nyilvánvalóvá válik, hogy a megsemmisülési félelem pszichopolitikailag kódolt hisztériához és autoriter kísértésekhez vezetett."
+          "prompt": "Write one sentence about a community that acts out of fear, with *félelemtől vezérelve*.",
+          "answer": "Félelemtől vezérelve a közösség téves döntéseket hozhat, és elveszítheti a valóságérzékét."
         }
       ],
       "teaches": [
@@ -151,16 +155,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozó fejezi ki a történelmi traumák lélektani hátterét a legszakszerűbben?",
+      "question": "Melyik mondat jelenti ezt: 'They decided so for political reasons'?",
       "options": [
-        "pszichopolitikailag kódoltan",
-        "történelmi traumákról általánosságban megemlékezve",
-        "a múltbeli konfliktusokat leíró jelleggel összefoglalva"
+        "Politikai okból döntöttek így.",
+        "Politikai okra döntöttek így.",
+        "Politikai oknál döntöttek így."
       ],
       "correct": 0,
       "teaches": [
         "evaluative-stance"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "nal-nel"
+      }
     }
   ]
 }

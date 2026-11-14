@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevez Julien Benda és Márai Sándor az 'írástudók árulásának' (la trahison des clercs)?",
+      "question": "Mit jelent az 'öncenzúra'?",
       "options": [
-        "Azt a tragikus jelenséget, amikor a szellemi elit képviselői az egyetemes igazság és erkölcs védelme helyett a politikai hatalom szolgálatába szegődnek.",
-        "Azt, amikor az írók feladják a szépirodalmat és kizárólag ponyvaregényeket írnak pénzért.",
-        "A tudományos akadémiák közötti nemzetközi szerzői jogi viták elfajulását."
+        "Az író maga korlátozza azt, amit leír.",
+        "A cenzúrahivatal betiltja a könyvet.",
+        "Az író minden szövegét megmutatja a kiadónak."
       ],
       "correct": 0,
       "teaches": [
@@ -22,15 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A tudósító szakmailag _____ módon tárta fel az igazságot a fenyegetések ellenére.",
-      "hint": "irreproachably / impeccable",
-      "english": "The correspondent revealed the truth in a professionally irreproachable manner despite threats.",
+      "sentence": "A tudósító szakmailag _____ dolgozott a fenyegetések ellenére.",
+      "hint": "irreproachably",
+      "english": "The correspondent worked in a professionally irreproachable way despite the threats.",
       "teaches": [
         "scalar-adverbs"
       ],
       "answers": [
-        "feddhetetlen",
-        "kifogástalan"
+        "feddhetetlenül",
+        "kifogástalanul"
       ]
     },
     {
@@ -65,12 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A legszigorúbb erkölcsi mércével _____ az újságíró nem szolgálhat ki hazug propagandát.",
+      "sentence": "A legszigorúbb mércével _____ ez a cikk nem tisztességes.",
       "hint": "mér, adverbial participle",
       "answer": "mérve",
-      "english": "Measured by the strictest moral standard the journalist cannot serve lying propaganda.",
+      "english": "Measured by the strictest standard, this article is not honest.",
       "teaches": [
-        "scalar-adverbs"
+        "participle-actions"
       ]
     },
     {
@@ -79,24 +79,26 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Márai",
-        "Sándor",
-        "megőrizte",
-        "szellemi",
-        "függetlenségét",
-        "az",
-        "emigrációban."
+        "A",
+        "riporter",
+        "szakmailag",
+        "feddhetetlenül",
+        "dolgozott",
+        "a",
+        "fenyegetések",
+        "ellenére."
       ],
       "solution": [
-        "Márai",
-        "Sándor",
-        "megőrizte",
-        "szellemi",
-        "függetlenségét",
-        "az",
-        "emigrációban."
+        "A",
+        "riporter",
+        "szakmailag",
+        "feddhetetlenül",
+        "dolgozott",
+        "a",
+        "fenyegetések",
+        "ellenére."
       ],
-      "english": "Sándor Márai preserved his intellectual independence in emigration.",
+      "english": "The reporter worked in a professionally irreproachable way despite the threats.",
       "teaches": [
         "scalar-adverbs"
       ]
@@ -106,11 +108,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "context",
-      "question": "Miért döntött úgy Márai Sándor 1948-ban, hogy elhagyja Magyarországot?",
+      "question": "Mikor hagyta el Márai Sándor Magyarországot?",
       "options": [
-        "Mert a totalitárius kommunista diktatúrában a sajtó és a szellem szabadsága megszűnt, és nem akart cinkossá válni a szavak megmérgezésében.",
-        "Mert a nyugati könyvkiadók sokkal magasabb honoráriumot ajánlottak a kézirataiért.",
-        "Mert úgy vélte, hogy a háború utáni újjáépítésben a művészeknek nincs semmilyen feladatuk."
+        "1948-ban.",
+        "1943-ban.",
+        "1956-ban."
       ],
       "correct": 0,
       "teaches": [
@@ -124,8 +126,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a reflection on Márai Sándor's warning about language corruption using 'szakmailag feddhetetlenül'.",
-          "answer": "Márai Sándor tanítása szerint az írástudónak a legnehezebb időkben is szakmailag feddhetetlenül kell védenie az anyanyelv tisztaságát és az erkölcsi igazságot a totalitárius nyelvrontással szemben."
+          "prompt": "Write one sentence that judges a text or a person's conduct with a degree adverb (*szakmailag feddhetetlenül*, *erkölcsileg mélységesen aggályos*).",
+          "answer": "A cikk erkölcsileg mélységesen aggályos."
         }
       ],
       "teaches": [
@@ -137,11 +139,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés kalibrálja a morális és szakmai integritást a legemelkedettebb stílusban?",
+      "question": "Melyik mondat mondja azt, hogy a riporter kifogástalanul dolgozott?",
       "options": [
-        "a legszigorúbb erkölcsi mércével mérve",
-        "a szerkesztőségi szokásokhoz igazodva",
-        "a politikai elvárásokat finoman kiegyensúlyozva"
+        "A riporter szakmailag feddhetetlenül dolgozott.",
+        "A riporter szakmailag aggályosan dolgozott.",
+        "A riporter szakmailag alig dolgozott."
       ],
       "correct": 0,
       "teaches": [

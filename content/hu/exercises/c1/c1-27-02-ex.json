@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért alkalmazott Semmelweis Ignác klórmeszes oldatot a sima szappanos kézmosás helyett?",
+      "question": "Mit jelent az 'antiszepszis'?",
       "options": [
-        "Mert felismerte, hogy a boncolás után a kézen maradó láthatatlan szag és cadaver-részecskék csak a klórmész erős oxidáló, csíraölő hatásával tüntethetők el.",
-        "Mert a bécsi közkórház belső szabályzata a költséghatékonyabb vegyszerek beszerzését írta elő a klinikai osztályokon.",
-        "Mert úgy vélte, hogy a klórmész fehér színe megnyugtatja a szülészeten vajúdó anyákat és javítja a műtők higiénés hangulatát."
+        "Eljárás a kórokozók elpusztítására.",
+        "Eljárás a fájdalom csökkentésére.",
+        "Eljárás a betegek szállítására."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A mortalitást radikálisan _____ eljárás történelmi áttörést hozott.",
-      "hint": "visszaszorít, present participle",
-      "answer": "visszaszorító",
-      "english": "The procedure radically suppressing mortality brought a historic breakthrough.",
+      "sentence": "A halálozást _____ eljárás áttörést hozott.",
+      "hint": "reduce, present participle",
+      "english": "The procedure that reduced mortality brought a breakthrough.",
       "teaches": [
         "participial-clauses"
+      ],
+      "answers": [
+        "csökkentő",
+        "visszaszorító"
       ]
     },
     {
@@ -62,10 +65,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A kötelező fertőtlenítést _____ rendeletet a klinika igazgatója ellenállással fogadta.",
+      "sentence": "A kézmosást _____ szabályt az orvosok betartották.",
       "hint": "előír, present participle",
       "answer": "előíró",
-      "english": "The decree prescribing mandatory disinfection was met with resistance by the clinic director.",
+      "english": "The doctors followed the rule that prescribes handwashing.",
       "teaches": [
         "participial-clauses"
       ]
@@ -77,7 +80,6 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "klórmeszes",
         "kézmosást",
         "előíró",
         "szabály",
@@ -88,7 +90,6 @@
       ],
       "solution": [
         "A",
-        "klórmeszes",
         "kézmosást",
         "előíró",
         "szabály",
@@ -97,7 +98,7 @@
         "anyák",
         "életét."
       ],
-      "english": "The rule prescribing chlorinated lime handwashing saved the mothers' lives.",
+      "english": "The rule that prescribes handwashing saved the mothers' lives.",
       "teaches": [
         "participial-clauses"
       ]
@@ -110,21 +111,21 @@
       "prompt": [
         {
           "speaker": "Főorvos",
-          "text": "Miért van szükség erre a kellemetlen szagú klórmeszes mosakodásra?"
+          "text": "Miért kell kezet mosni?"
         },
         {
-          "speaker": "Semmelweis",
-          "text": "Mert a bonctermi mérget _____ klóros oldat nélkül a betegágyakhoz lépni egyet jelent a gyilkossággal."
+          "speaker": "Orvos",
+          "text": "Mert a fertőzést _____ szabály életeket ment."
         },
         {
           "speaker": "Főorvos",
-          "text": "Akkor kötelezővé tesszük minden orvostanhallgatónak."
+          "text": "Akkor minden orvosnak be kell tartania."
         }
       ],
       "options": [
-        "elpusztító",
-        "elpusztítva",
-        "elpusztítás"
+        "megelőző",
+        "megelőzve",
+        "megelőzés"
       ],
       "correct": 0,
       "teaches": [
@@ -138,8 +139,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence detailing an antiseptic intervention using a participial modifier.",
-          "answer": "A Semmelweis által bevezetett, a boncolás utáni klórmeszes kézmosást kógens módon előíró profilaktikus eljárás minimálisra csökkentette a kórtermi halálozást."
+          "prompt": "Write one sentence about a rule or measure, using a participle before the noun (*előíró*, *megelőző*, *elpusztító*).",
+          "answer": "A fertőzést megelőző szabály életeket ment."
         }
       ],
       "teaches": [
@@ -151,11 +152,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet írja le a profilaktikus orvosi beavatkozást a legszakszerűbben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "a kórbonctani anyagokat elpusztító és fertőzést megelőző eljárás",
-        "a tünetek megjelenése után adott általános lázcsillapítás",
-        "a kórtermek rendszeres szellőztetésére szorítkozó higiénia"
+        "A kórokozókat elpusztító oldat fertőtlenítette a kezet.",
+        "A kórokozókat elpusztítva oldat fertőtlenítette a kezet.",
+        "A kórokozókat elpusztított oldat fertőtlenítette a kezet."
       ],
       "correct": 0,
       "teaches": [

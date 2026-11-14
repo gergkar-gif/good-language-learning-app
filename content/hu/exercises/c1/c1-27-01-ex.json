@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'kóroktan' (etiológia) az orvostudományban?",
+      "question": "Mit jelent a 'kóroktan'?",
       "options": [
-        "A betegségek kialakulásának közvetlen és közvetett okait, valamint kórokozóit kutató tudományágat.",
-        "A betegek származási helyének statisztikai nyilvántartása.",
-        "A gyógynövények hagyományos népi elnevezéseinek gyűjtése."
+        "A betegségek okait kutató tudomány.",
+        "A gyógyszerek árának ellenőrzése.",
+        "A kórházi ágyak számának nyilvántartása."
       ],
       "correct": 0,
       "teaches": [
@@ -22,15 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A fertőzés forrását _____ alátámasztott adatokkal azonosították az orvosok.",
-      "hint": "epidemiologically",
-      "english": "Doctors identified the source of infection with epidemiologically substantiated data.",
+      "sentence": "A kezek érintkezése _____ a kórokozó eljutott a beteghez.",
+      "hint": "as a result of",
+      "english": "As a result of the contact of hands, the pathogen reached the patient.",
       "teaches": [
         "causal-postpositions"
       ],
       "answers": [
-        "epidemiológiailag",
-        "járványtanilag"
+        "következtében",
+        "révén"
       ]
     },
     {
@@ -65,15 +65,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A kutatóknak sikerült okságilag _____ módon bizonyítaniuk a kórokozó szerepét.",
-      "hint": "demonstrably",
-      "english": "Researchers succeeded in demonstrably proving the role of the pathogen in a causal manner.",
+      "sentence": "A fertőzés _____ magas volt a halálozás.",
+      "hint": "because of",
+      "english": "Because of the infection, mortality was high.",
       "teaches": [
         "causal-postpositions"
       ],
       "answers": [
-        "kimutatható",
-        "igazolható"
+        "miatt",
+        "következtében"
       ]
     },
     {
@@ -83,27 +83,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "fertőzés",
-        "útja",
-        "kóroktanilag",
-        "igazoltan",
-        "a",
-        "kezeken",
-        "keresztül",
-        "vezetett."
+        "kórokozók",
+        "átvitele",
+        "következtében",
+        "sok",
+        "anya",
+        "megbetegedett."
       ],
       "solution": [
         "A",
-        "fertőzés",
-        "útja",
-        "kóroktanilag",
-        "igazoltan",
-        "a",
-        "kezeken",
-        "keresztül",
-        "vezetett."
+        "kórokozók",
+        "átvitele",
+        "következtében",
+        "sok",
+        "anya",
+        "megbetegedett."
       ],
-      "english": "The path of infection etiologically confirmed led through the hands.",
+      "english": "As a result of the transfer of pathogens, many mothers fell ill.",
       "teaches": [
         "causal-postpositions"
       ]
@@ -115,22 +111,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Klinikai orvos",
-          "text": "Hogyan bizonyíthatjuk az új vírus szerepét a tüdőgyulladásban?"
+          "speaker": "Orvos",
+          "text": "A kezek nem voltak tiszták a boncolás után."
         },
         {
-          "speaker": "Epidemiológus",
-          "text": "Csak akkor, ha kóroktanilag igazoltan és _____ alátámasztott módon kimutatjuk az összefüggést."
+          "speaker": "Kolléga",
+          "text": "_____ sok anya megbetegedett."
         },
         {
-          "speaker": "Klinikai orvos",
-          "text": "Akkor kontrollcsoportos vizsgálatot indítunk."
+          "speaker": "Orvos",
+          "text": "Akkor kezet kell mosni."
         }
       ],
       "options": [
-        "epidemiológiailag",
-        "epidemiológiai",
-        "epidemiológiával"
+        "Emiatt",
+        "Ennek ellenére",
+        "Ezzel szemben"
       ],
       "correct": 0,
       "teaches": [
@@ -144,8 +140,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating an etiologic discovery using an epidemiological adverbial.",
-          "answer": "Semmelweis Ignác kóroktanilag igazoltan és epidemiológiailag alátámasztott statisztikai adatokkal mutatta ki a kórbonctani anyag közvetlen átvitelét a gyermekágyi láz eseteiben."
+          "prompt": "Write one sentence about the cause of an illness, with *miatt*, *emiatt* or *következtében*.",
+          "answer": "A kezek érintkezése következtében a kórokozó eljutott a beteghez."
         }
       ],
       "teaches": [
@@ -157,11 +153,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozói szerkezet jelöli az orvosi ok-okozati viszonyt a legszakszerűbben?",
+      "question": "Melyik mondat mondja meg a megbetegedés okát?",
       "options": [
-        "kóroktanilag igazoltan",
-        "hagyományos népi megfigyelésekre hagyatkozva",
-        "a tekintélyes professzorok személyes tekintélye nyomán"
+        "A fertőzés következtében sok anya megbetegedett.",
+        "A fertőzés ellenére sok anya megbetegedett.",
+        "A fertőzés után sok anya megbetegedett."
       ],
       "correct": 0,
       "teaches": [

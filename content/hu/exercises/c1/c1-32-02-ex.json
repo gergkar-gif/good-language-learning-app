@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mikor tekinthető alkotmányosnak egy alapjog korlátozása a szükségesség-arányossági teszt szerint?",
+      "question": "Mit jelent az 'alapjogi kollízió'?",
       "options": [
-        "Kizárólag akkor, ha egy másik alapjog vagy alkotmányos érték védelmében elkerülhetetlen, legitim célt szolgál, és a cél elérésére alkalmas legenyhébb eszközt alkalmazza anélkül, hogy a jog lényeges tartalmát sértené.",
-        "Bármikor, amikor a mindenkori parlamenti többség a gazdasági növekedés gyorsítása vagy a költségvetési egyensúly biztosítása érdekében törvényt hoz.",
-        "Minden olyan esetben, amikor a közigazgatási hatóságok hatékonyságának növelése érdekében a rendőrség vagy a minisztérium ezt indokoltnak ítéli."
+        "Két alapjog ütközik egymással egy ügyben.",
+        "Egy alapjogot a parlament egyhangúan elfogad.",
+        "Két bíróság ugyanabban az ügyben dönt."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A testület a versengő alapjogokat mérlegre _____ állapította meg az aránytalanságot.",
-      "hint": "tesz + -ve",
-      "english": "Putting competing fundamental rights onto the scale the body established the disproportionality.",
+      "sentence": "Az arányosságot _____ teszt azt kérdezi, hogy elég enyhe-e a korlátozás.",
+      "hint": "vizsgál, present participle",
+      "english": "The test that examines proportionality asks whether the limitation is mild enough.",
       "teaches": [
         "participial-clauses"
       ],
       "answers": [
-        "téve"
+        "vizsgáló"
       ]
     },
     {
@@ -39,20 +39,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "alapjogi kollízió",
-          "két vagy több alapvető szabadságjog egymással való ütközése"
-        ],
-        [
           "arányossági teszt",
-          "a jogkorlátozás szükségességét és mértékét vizsgáló bírósági mérce"
+          "annak vizsgálata, hogy a korlátozás arányos-e"
         ],
         [
           "lényeges tartalom",
-          "az alapjog elvonhatatlan magva, amely soha nem korlátozható"
+          "az alapjog magva, amely nem korlátozható"
         ],
         [
           "legenyhébb eszköz elve",
-          "a célt legkisebb jogi sérelemmel megvalósító intézkedés követelménye"
+          "a cél elérése a legkisebb korlátozással"
+        ],
+        [
+          "legitim cél",
+          "olyan cél, amelyet az alkotmány elfogad"
         ]
       ],
       "teaches": [
@@ -64,14 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A bírák a legenyhébb eszköz elvét _____ korlátozták az állami beavatkozást.",
-      "hint": "érvényesít + -ve",
-      "english": "Enforcing the principle of the least restrictive means the judges restricted state intervention.",
+      "sentence": "Az alkotmány által _____ jog nem korlátozható önkényesen.",
+      "hint": "véd, past participle",
+      "english": "A right protected by the constitution cannot be limited arbitrarily.",
       "teaches": [
         "participial-clauses"
       ],
       "answers": [
-        "érvényesítve"
+        "védett"
       ]
     },
     {
@@ -81,29 +81,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "bíróság",
-        "az",
-        "arányossági",
-        "tesztet",
-        "alkalmazva",
-        "bírálta",
-        "felül",
-        "a",
-        "korlátozást."
+        "jogot",
+        "korlátozó",
+        "törvénynek",
+        "arányosnak",
+        "kell",
+        "lennie."
       ],
       "solution": [
         "A",
-        "bíróság",
-        "az",
-        "arányossági",
-        "tesztet",
-        "alkalmazva",
-        "bírálta",
-        "felül",
-        "a",
-        "korlátozást."
+        "jogot",
+        "korlátozó",
+        "törvénynek",
+        "arányosnak",
+        "kell",
+        "lennie."
       ],
-      "english": "Applying the proportionality test the court reviewed the restriction.",
+      "english": "A law that limits a right must be proportionate.",
       "teaches": [
         "participial-clauses"
       ]
@@ -116,26 +110,30 @@
       "prompt": [
         {
           "speaker": "Ügyvéd",
-          "text": "Hogyan oldható fel a sajtószabadság és a személyiségi jogok ütközése?"
+          "text": "Mikor alaptörvény-ellenes egy korlátozás?"
         },
         {
           "speaker": "Alkotmányjogász",
-          "text": "A két alapjogot gondosan mérlegre _____ a testület a közérdekű viták elsőbbségét hangsúlyozza."
+          "text": "Egy lényeges tartalmat _____ korlátozás mindig alaptörvény-ellenes."
         },
         {
           "speaker": "Ügyvéd",
-          "text": "De a személy emberi méltósága nem sérülhet."
+          "text": "Értem: a jog magvához nem lehet nyúlni."
         }
       ],
       "options": [
-        "téve",
-        "tenni",
-        "tett"
+        "sértő",
+        "sértett",
+        "sértve"
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-participle-adjective",
+        "2": "participle-actions"
+      }
     },
     {
       "id": "c1-32-02-production-7",
@@ -144,8 +142,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a constitutional analysis of fundamental rights collision using a participial clause.",
-          "answer": "Az egymással ütköző szabadságjogokat mérlegre téve és a legenyhébb eszköz elvét érvényesítve a bíróság megállapította, hogy a törvényhozó túllépte az arányos korlátozás alkotmányos kereteit."
+          "prompt": "Write one sentence about a limitation that harms the essential content of a right, with a participle before the noun.",
+          "answer": "A jog lényeges tartalmát sértő korlátozás alaptörvény-ellenes."
         }
       ],
       "teaches": [
@@ -157,16 +155,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fogalmazza meg az arányossági vizsgálatot szakszerű melléknévi igeneves formában?",
+      "question": "Melyik kifejezés jelenti ezt: 'a law that limits a right'?",
       "options": [
-        "a versengő alapjogokat gondosan mérlegre téve és a lényeges tartalmat védelmezve",
-        "a jogszabályok formai érvényességét ellenőrizve",
-        "a közvélemény pillanatnyi elvárásait figyelembe véve"
+        "a jogot korlátozó törvény",
+        "a jogot korlátozva törvény",
+        "a jogot korlátozni törvény"
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "participle-actions",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     }
   ]
 }

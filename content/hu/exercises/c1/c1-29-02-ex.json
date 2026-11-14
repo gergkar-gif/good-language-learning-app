@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi az 'anasztilózis' lényege az építészeti műemlékvédelemben?",
+      "question": "Mit jelent az 'anasztilózis'?",
       "options": [
-        "A leomlott, de eredetileg összetartozó építészeti elemek és kőtöredékek pontos visszahelyezése eredeti helyükre.",
-        "Az épület hiányzó részeinek modern vasbeton szerkezetekkel történő kiegészítése.",
-        "A műemlék teljes átépítése a legkorábbi feltételezett stílusirányzat szerint."
+        "A régi kövek visszahelyezése az eredeti helyükre.",
+        "A hiányzó falak pótlása új betonnal.",
+        "Az egész épület lebontása és újjáépítése."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A történeti korszakok rétegzettségét _____ tartó rekonstrukció megőrzi az épület hitelességét.",
-      "hint": "tisztelet + -ben",
-      "answer": "tiszteletben",
-      "english": "Reconstruction respecting the stratification of historical eras preserves authenticity.",
+      "sentence": "A történeti rétegeket tiszteletben _____ felújítás megőrzi az épület hitelességét.",
+      "hint": "tart, present participle",
+      "english": "A restoration that respects the historical layers keeps the building's authenticity.",
       "teaches": [
         "participial-clauses"
+      ],
+      "answers": [
+        "tartó"
       ]
     },
     {
@@ -38,19 +40,19 @@
       "pairs": [
         [
           "anasztilózis",
-          "leomlott eredeti kövek visszaépítése"
+          "az eredeti kövek visszahelyezése"
         ],
         [
           "Velencei Charta",
-          "a műemlékvédelem nemzetközi etikai alapdokumentuma"
+          "a műemlékvédelem nemzetközi szabályai"
         ],
         [
           "történeti rétegzettség",
-          "az évszázadok során egymásra rakódott építési fázisok"
+          "az évszázadok alatt egymásra épült részek"
         ],
         [
           "kordokumentum",
-          "a történelem valós tanúságát hordozó épületrész"
+          "olyan épületrész, amely megmutatja, milyen volt a kor"
         ]
       ],
       "teaches": [
@@ -62,12 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A leomlott oszlopokat anasztilózissal _____ szakemberek kerülték a hipotetikus pótlást.",
-      "hint": "helyreállít, present participle",
-      "answer": "helyreállító",
-      "english": "Experts restoring fallen columns through anastylosis avoided hypothetical substitution.",
+      "sentence": "A pusztulástól _____ falat a látogatók is megnézhetik.",
+      "hint": "megóv, past participle",
+      "english": "Visitors can also look at the wall that was protected from decay.",
       "teaches": [
         "participial-clauses"
+      ],
+      "answers": [
+        "megóvott"
       ]
     },
     {
@@ -76,26 +80,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "rétegeket",
-        "tiszteletben",
-        "tartó",
-        "felújítás",
-        "óvja",
-        "a",
-        "múltat."
+        "Az",
+        "eredeti",
+        "köveket",
+        "visszahelyező",
+        "eljárás",
+        "neve",
+        "anasztilózis."
       ],
       "solution": [
-        "A",
-        "rétegeket",
-        "tiszteletben",
-        "tartó",
-        "felújítás",
-        "óvja",
-        "a",
-        "múltat."
+        "Az",
+        "eredeti",
+        "köveket",
+        "visszahelyező",
+        "eljárás",
+        "neve",
+        "anasztilózis."
       ],
-      "english": "Restoration respecting the layers protects the past.",
+      "english": "The procedure that puts the original stones back is called anastylosis.",
       "teaches": [
         "participial-clauses"
       ]
@@ -108,26 +110,30 @@
       "prompt": [
         {
           "speaker": "Építészettörténész",
-          "text": "Hogyan nyúljunk a gótikus templom barokk oltárához és toronysisakjához?"
+          "text": "Mit tegyünk a gótikus templom barokk oltárával?"
         },
         {
           "speaker": "Műemlékes",
-          "text": "Kizárólag a későbbi korok hozzáépítéseit kordokumentumként _____ és tisztelő szemlélettel."
+          "text": "Maradjon a helyén: a későbbi korok munkáját is _____ szemlélet ezt kívánja."
         },
         {
           "speaker": "Építészettörténész",
-          "text": "Így kerülhetjük el a tizenkilencedik századi purizmus hibáit."
+          "text": "Akkor a templom a saját történetét mutatja meg."
         }
       ],
       "options": [
         "megőrző",
-        "megőrizve",
-        "megőrzés"
+        "megőrzött",
+        "megőrizve"
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-participle-adjective",
+        "2": "participle-actions"
+      }
     },
     {
       "id": "c1-29-02-production-7",
@@ -136,8 +142,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence detailing monument preservation ethics using a participial construction.",
-          "answer": "A történeti rétegeket tiszteletben tartó és az elpusztult részleteket analógiás másolatok helyett anasztilózissal megőrző építészet a Velencei Charta legszebb szellemiségét követi."
+          "prompt": "Write one sentence about a restorer, with a participle before the noun.",
+          "answer": "A későbbi korok hozzáépítéseit is megőrző restaurátor a Velencei Chartát követi."
         }
       ],
       "teaches": [
@@ -149,16 +155,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet írja le a műemléki hitelesség tiszteletét a legszakszerűbben?",
+      "question": "Melyik kifejezés jelenti ezt: 'a restoration that respects the layers'?",
       "options": [
-        "a történeti rétegzettséget tiszteletben tartó és a kordokumentumokat megőrző",
-        "a későbbi korok hozzáépítéseit kíméletlenül elbontó, purista",
-        "a hiányzó részleteket analógiák alapján szabadon kiegészítő"
+        "a rétegeket tiszteletben tartó felújítás",
+        "a rétegeket tiszteletben tartva felújítás",
+        "a rétegeket tiszteletben tartani felújítás"
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "participle-actions",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     }
   ]
 }

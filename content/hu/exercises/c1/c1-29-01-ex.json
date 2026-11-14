@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'reverzibilitás' alapelve a modern restaurálásban?",
+      "question": "Mit jelent a 'proveniencia'?",
       "options": [
-        "Azt, hogy minden restaurátori beavatkozásnak és kiegészítésnek utólag, az eredeti műtárgy károsítása nélkül eltávolíthatónak kell lennie.",
-        "Azt, hogy a műtárgyat az eredeti állapotát megelőző, feltételezett formájára kell átalakítani.",
-        "Azt, hogy a restaurálás során kizárólag a műtárgy készítésének korából származó anyagok használhatók."
+        "A tárgy eredete és a korábbi tulajdonosai.",
+        "A tárgy mai ára és az eladó neve.",
+        "A tárgy mérete és a készítés ideje."
       ],
       "correct": 0,
       "teaches": [
@@ -22,15 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A gyűjtemény szerzéstörténetét provenienciáját tekintve _____ dokumentumok igazolják.",
-      "hint": "verified",
-      "english": "Documents verified regarding provenance substantiate the acquisition history.",
+      "sentence": "Restaurátori _____ ez a beavatkozás reverzibilis.",
+      "hint": "szempont, viewpoint",
+      "english": "From a conservator's point of view this intervention is reversible.",
       "teaches": [
         "evaluative-stance"
       ],
       "answers": [
-        "igazolt",
-        "hitelesített"
+        "szempontból"
       ]
     },
     {
@@ -41,19 +40,19 @@
       "pairs": [
         [
           "proveniencia",
-          "a műtárgy eredetének és tulajdonosainak láncolata"
+          "a tárgy eredete és tulajdonosainak sora"
         ],
         [
           "restitúció",
-          "jogtalanul elvett műkincsek visszaszolgáltatása"
+          "az elvett tárgy visszaadása a tulajdonosnak"
         ],
         [
           "állagmegóvás",
-          "a fizikai romlás megakadályozása"
+          "a tárgy állapotának védelme"
         ],
         [
           "közgyűjtemény",
-          "tudományos állami múzeumi raktár"
+          "az állam vagy a város gyűjteménye"
         ]
       ],
       "teaches": [
@@ -65,15 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A szakértők muzeológiailag _____ módon tárták fel a leletanyagot.",
-      "hint": "authentic",
-      "english": "Experts uncovered the artifacts in a museologically authentic manner.",
+      "sentence": "A kép provenienciáját _____ minden dokumentum hiteles.",
+      "hint": "tekint, 'as for'",
+      "english": "As for the picture's provenance, every document is authentic.",
       "teaches": [
         "evaluative-stance"
       ],
       "answers": [
-        "hiteles",
-        "megalapozott"
+        "tekintve"
       ]
     },
     {
@@ -82,28 +80,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "beavatkozás",
-        "restaurátori",
+        "Jogi",
         "szempontból",
-        "reverzibilisen",
-        "mentette",
-        "meg",
+        "rendben",
+        "van",
         "a",
-        "kódexet."
+        "vásárlás,",
+        "etikai",
+        "szempontból",
+        "viszont",
+        "kérdéses."
       ],
       "solution": [
-        "A",
-        "beavatkozás",
-        "restaurátori",
+        "Jogi",
         "szempontból",
-        "reverzibilisen",
-        "mentette",
-        "meg",
+        "rendben",
+        "van",
         "a",
-        "kódexet."
+        "vásárlás,",
+        "etikai",
+        "szempontból",
+        "viszont",
+        "kérdéses."
       ],
-      "english": "The intervention reversibly from a conservator's perspective saved the codex.",
+      "english": "From a legal point of view the purchase is in order, but from an ethical one it is questionable.",
       "teaches": [
         "evaluative-stance"
       ]
@@ -116,26 +116,30 @@
       "prompt": [
         {
           "speaker": "Kurátor",
-          "text": "Hogyan dokumentáljuk az új régészeti leletanyag restaurálását?"
+          "text": "Elfogadhatjuk ezt az ajándékot a gyűjteménynek?"
         },
         {
-          "speaker": "Főrestaurátor",
-          "text": "Kizárólag úgy, hogy minden kiegészítés restaurátori szempontból _____ és azonosítható maradjon."
+          "speaker": "Jogász",
+          "text": "Jogi _____ igen, de az eredetét még meg kell vizsgálnunk."
         },
         {
           "speaker": "Kurátor",
-          "text": "Ez a nemzetközi műtárgyvédelmi etika alapja."
+          "text": "Rendben, akkor várjuk a vizsgálat eredményét."
         }
       ],
       "options": [
-        "reverzibilis",
-        "reverzibilisen",
-        "reverzibilitás"
+        "szempontból",
+        "szempontra",
+        "szempontnál"
       ],
       "correct": 0,
       "teaches": [
         "evaluative-stance"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "nal-nel"
+      }
     },
     {
       "id": "c1-29-01-production-7",
@@ -144,8 +148,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating museological conservation ethics using an authenticity adverbial.",
-          "answer": "A közgyűjtemények feladata a vitatott műkincsek provenienciáját tekintve igazolt kutatása és az állagmegóvás restaurátori szempontból reverzibilis megvalósítása."
+          "prompt": "Write one sentence that judges a restoration from a conservator's viewpoint and asks about the object's origin.",
+          "answer": "Restaurátori szempontból a javítás reverzibilis, a tárgy provenienciáját tekintve viszont még sok a kérdés."
         }
       ],
       "teaches": [
@@ -157,16 +161,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozói szerkezet minősíti a műtárgyvédelmi kutatást a legmagasabb szakmai szinten?",
+      "question": "Melyik mondat jelenti ezt: 'As for its origin, the document is authentic'?",
       "options": [
-        "provenienciáját tekintve igazoltan",
-        "a történeti környezettől elvonatkoztatva, pusztán esztétikai szempontok alapján",
-        "kizárólag a piaci érték növelését szem előtt tartó felületi beavatkozásokkal"
+        "Az eredetét tekintve a dokumentum hiteles.",
+        "Az eredetét tekinteni a dokumentum hiteles.",
+        "Az eredetét tekintő a dokumentum hiteles."
       ],
       "correct": 0,
       "teaches": [
         "evaluative-stance"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "present-participle"
+      }
     }
   ]
 }

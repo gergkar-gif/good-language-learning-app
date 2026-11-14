@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevez az építészetelmélet 'pastiche' (kulisszaépítészet) jelenségnek?",
+      "question": "Mit jelent a 'pastiche'?",
       "options": [
-        "A történeti korszakok stílusjegyeinek felületes másolását modern anyagokon (pl. vasbetonon), amely a hitelesség látszatát kelti, de nélkülözi a történeti anyag valódiságát.",
-        "A megrongálódott műemlék épületek romjainak modern üveg- és acélszerkezetekkel való megóvását és funkcióváltó kortárs átépítését.",
-        "A régészeti ásatások során feltárt eredeti falfelületek és kőfaragványok szigorúan tudományos módszerekkel történő helyszíni konzerválását."
+        "Egy régi stílus utánzása, amely nem eredeti.",
+        "Egy régi épület eredeti, megőrzött fala.",
+        "Egy új épület terve, amelyet még nem építettek meg."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A gipszdíszletekkel szemben a valóságban a valódi műemlék _____ tanúságtételt hordoz.",
-      "hint": "authentic",
-      "english": "In contrast with plaster decors in reality an authentic monument carries genuine testimony.",
+      "sentence": "A díszletekkel _____ a romok hiteles kordokumentumok.",
+      "hint": "against, in contrast",
+      "english": "As against stage sets, ruins are authentic documents of their time.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
       "answers": [
-        "hiteles",
-        "valódi",
-        "eredeti"
+        "szemben",
+        "ellentétben"
       ]
     },
     {
@@ -42,19 +41,19 @@
       "pairs": [
         [
           "pastiche",
-          "stílusutánzat, elméleti mélység nélküli díszlet"
+          "régi stílust utánzó, nem eredeti építmény"
         ],
         [
           "kulisszaépítészet",
-          "modern szerkezetre húzott historizáló álhomlokzat"
+          "szép homlokzat, amely mögött nincs régi épület"
         ],
         [
           "hamis kontinuitás",
-          "a történelmi tragédiák és törések elfedése másolatokkal"
+          "úgy látszik, mintha a múlt nem szakadt volna meg"
         ],
         [
           "traumanyom",
-          "a háborús pusztítás mementójaként megmaradt sérülés"
+          "a háború nyoma egy épületen"
         ]
       ],
       "teaches": [
@@ -66,14 +65,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A másolatok építése nemhogy nem őrzi a múltat, _____ éppen elhazudja a történelem töréseit.",
-      "hint": "nemhogy nem … ___",
-      "english": "Building replicas is far from preserving the past; on the contrary, it lies away history's ruptures.",
+      "sentence": "A másolat szép. Ezzel _____ az eredeti kő a kor tanúja.",
+      "hint": "in contrast",
+      "english": "The copy is beautiful. In contrast, the original stone is a witness of its time.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
       "answers": [
-        "hanem"
+        "szemben",
+        "ellentétben"
       ]
     },
     {
@@ -83,25 +83,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "pastiche",
-        "díszlet",
-        "eltörli",
+        "díszletekkel",
+        "szemben",
         "a",
-        "történelem",
-        "valós",
-        "traumanyomait."
+        "romok",
+        "hiteles",
+        "kordokumentumok."
       ],
       "solution": [
         "A",
-        "pastiche",
-        "díszlet",
-        "eltörli",
+        "díszletekkel",
+        "szemben",
         "a",
-        "történelem",
-        "valós",
-        "traumanyomait."
+        "romok",
+        "hiteles",
+        "kordokumentumok."
       ],
-      "english": "The pastiche decor erases the real trauma traces of history.",
+      "english": "As against stage sets, ruins are authentic documents of their time.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -114,26 +112,30 @@
       "prompt": [
         {
           "speaker": "Urbanista",
-          "text": "Miért bírálják a nemzetközi szakemberek a háború előtti minisztériumi paloták visszaépítését a Várban?"
+          "text": "Miért bírálják a szakemberek a betonra épített, régi stílust utánzó házakat?"
         },
         {
           "speaker": "Kritikus",
-          "text": "Mert a vasbeton magra húzott historizáló díszletekkel szemben a valóságban ez nem más, mint történelemhamisító _____."
+          "text": "Mert a hiteles _____ szemben ezek csak díszletek."
         },
         {
           "speaker": "Urbanista",
-          "text": "Ami elhiteti a látogatóval, mintha a huszadik század tragédiái meg sem történtek volna."
+          "text": "Értem: a díszlet eltakarja a múlt nyomait."
         }
       ],
       "options": [
-        "pastiche",
-        "pastiche-ként",
-        "pastiche-nak"
+        "romokkal",
+        "romoknak",
+        "romokat"
       ],
       "correct": 0,
       "teaches": [
         "contrastive-discourse-markers"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "verb-government-nak-nek",
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "c1-29-03-production-7",
@@ -142,8 +144,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critique of scenic facadism using an adversative connector.",
-          "answer": "A vasbeton vázra húzott historizáló homlokzatokkal szemben a valóságban a hiteles műemlékvédelem megőrzi az idő rétegeit, és elutasítja a hamis kontinuitást sugalló pastiche díszleteket."
+          "prompt": "Write one sentence that praises a copy and then adds a reservation with *mindazonáltal*.",
+          "answer": "A másolat szép, mindazonáltal nem helyettesítheti az eredeti kőfalat."
         }
       ],
       "teaches": [
@@ -155,16 +157,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik ellentétes szerkezet leplezi le a történetietlen rekonstrukciókat a leghatásosabban?",
+      "question": "Melyik mondat jelenti ezt: 'As against the copy, the original stone is a witness of its time'?",
       "options": [
-        "a historizáló díszletekkel szemben a valóságban... nemhogy nem hiteles, hanem éppen meghamisítja a múltat",
-        "a történeti épületek modern gipszmásolatai tökéletesen pótolják az elpusztult eredetit",
-        "a díszletépítészet elengedhetetlen eszköze a nemzeti múlt felidézésének"
+        "A másolattal szemben az eredeti kő a kor tanúja.",
+        "A másolatnak szemben az eredeti kő a kor tanúja.",
+        "A másolatot szemben az eredeti kő a kor tanúja."
       ],
       "correct": 0,
       "teaches": [
         "contrastive-discourse-markers"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "verb-government-nak-nek",
+        "2": "how-the-accusative-t-works"
+      }
     }
   ]
 }

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit ír elő az orvoslásban a klasszikus 'primum non nocere' (mindenekelőtt ne árts) elv?",
+      "question": "Mit jelent a 'betegbiztonság'?",
       "options": [
-        "Azt a legfőbb bioetikai követelményt, hogy az orvos semmilyen beavatkozással vagy mulasztással nem okozhat nagyobb kárt a betegnek, mint maga a betegség.",
-        "Azt a szabályt, hogy az orvos csak hozzátartozók jelenlétében vizsgálhatja a pácienst.",
-        "Azt az elvárást, hogy a kezelési költségeket előre egyeztetni kell a biztosítóval."
+        "A betegek védelme a felesleges veszélytől.",
+        "A beteg joga a kórház választásához.",
+        "A kórház épületének őrzése."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A gyógyítónak erkölcsi kötelessége _____ a beteg életének védelmét minden más szempont elé helyezni.",
-      "hint": "would be / conditional copula",
-      "english": "It would be the moral duty of the healer to place the protection of patient life before all other aspects.",
+      "sentence": "Az orvosi etika szerint az orvos _____ beismerni a hibáját.",
+      "hint": "adjective: is obliged",
+      "english": "According to the medical ethics the doctor is obliged to admit his mistake.",
       "teaches": [
         "formal-obligation"
       ],
-      "answers": [
-        "volna",
-        "lenne"
-      ]
+      "answer": "köteles"
     },
     {
       "id": "c1-27-04-controlled-3",
@@ -65,12 +62,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A sebész semmilyen körülmények között nem _____ ki a pácienst fertőzésveszélynek.",
-      "hint": "tesz, potential 3sg def",
+      "sentence": "A sebész nem _____ ki a pácienst fertőzésveszélynek.",
+      "hint": "tesz, may, he/she, definite object",
       "answer": "teheti",
-      "english": "The surgeon under no circumstances must expose the patient to risk of infection.",
+      "english": "The surgeon may not expose the patient to the risk of infection.",
       "teaches": [
-        "formal-obligation"
+        "potential-hat-het"
       ]
     },
     {
@@ -79,28 +76,22 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "orvos",
-        "nem",
-        "áldozhatja",
-        "fel",
+        "A",
+        "kórház",
+        "köteles",
+        "garantálni",
         "a",
-        "betegbiztonságot",
-        "a",
-        "tekintélyért."
+        "betegbiztonságot."
       ],
       "solution": [
-        "Az",
-        "orvos",
-        "nem",
-        "áldozhatja",
-        "fel",
+        "A",
+        "kórház",
+        "köteles",
+        "garantálni",
         "a",
-        "betegbiztonságot",
-        "a",
-        "tekintélyért."
+        "betegbiztonságot."
       ],
-      "english": "The physician cannot sacrifice patient safety for prestige.",
+      "english": "The hospital is obliged to guarantee patient safety.",
       "teaches": [
         "formal-obligation"
       ]
@@ -113,15 +104,15 @@
       "prompt": [
         {
           "speaker": "Kutatóorvos",
-          "text": "Eltussolhatjuk-e a kórházi fertőzési adatokat a hírnév megőrzése érdekében?"
+          "text": "Mondjuk el a betegeknek a fertőzési adatokat?"
         },
         {
           "speaker": "Klinikaigazgató",
-          "text": "Semmiképp; a szakmai etika értelmében a vezetés nem _____ el a valós adatokat az érintettek elől."
+          "text": "Igen, a vezetés nem _____ el a valós adatokat az érintettek elől."
         },
         {
           "speaker": "Kutatóorvos",
-          "text": "A transzparencia a betegbiztonság alapja."
+          "text": "A nyílt tájékoztatás a betegbiztonság alapja."
         }
       ],
       "options": [
@@ -131,7 +122,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "potential-hat-het"
       ]
     },
     {
@@ -141,8 +132,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence articulating a physician's bioethical duty using a modal structure.",
-          "answer": "Az orvosnak szakmai esküje és lelkiismerete parancsára feltétlenül védelmeznie kell a páciens életét, és nem teheti ki a beteget semmilyen elkerülhető fertőzésveszélynek."
+          "prompt": "Write one sentence about a duty of a doctor, with *köteles* or *nem teheti ki*.",
+          "answer": "Az orvos köteles beismerni a hibáját."
         }
       ],
       "teaches": [
@@ -154,11 +145,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik modális forma fejez ki feltétlen orvosetikai kötelezettséget?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "köteles garantálni a betegbiztonságot",
-        "mérlegelheti a fertőtlenítés szükségességét",
-        "célszerűnek tarthatja az óvintézkedések betartását"
+        "Az orvos köteles beismerni a hibáját.",
+        "Az orvos köteles beismerni a hibájának.",
+        "Az orvosok köteles beismerni a hibájukat."
       ],
       "correct": 0,
       "teaches": [

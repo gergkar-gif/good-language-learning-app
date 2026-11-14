@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'kógens norma' a jogtudományban?",
+      "question": "Mit jelent a 'kógens norma'?",
       "options": [
-        "Olyan kötelező érvényű jogi szabályt, amelytől a felek akarata vagy alsóbb jogszabály nem térhet el.",
-        "Olyan szabályt, amelytől a felek közös megegyezéssel szabadon eltérhetnek.",
-        "Kizárólag az eljárási formaságokra vonatkozó technikai iránymutatást."
+        "Olyan szabály, amelytől nem lehet eltérni.",
+        "Olyan szabály, amelytől a felek megegyezéssel eltérhetnek.",
+        "Olyan szabály, amely csak ajánlás, nem kötelező."
       ],
       "correct": 0,
       "teaches": [
@@ -22,17 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az alkotmánybíráknak _____ módon kell alkalmazniuk a törvény szellemét.",
-      "hint": "peremptorily",
-      "english": "Constitutional judges must apply the spirit of the law in a peremptory manner.",
+      "sentence": "A törvény szerint az állam _____ védeni az alapjogokat.",
+      "hint": "adjective: is obliged",
+      "english": "By law the state is obliged to protect fundamental rights.",
       "teaches": [
         "formal-obligation"
       ],
-      "answers": [
-        "kógens",
-        "kényszerítő",
-        "kötelező"
-      ]
+      "answer": "köteles"
     },
     {
       "id": "c1-25-01-controlled-3",
@@ -67,11 +63,14 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "A parlamentnek törvényi _____ kell biztosítania a bíróságok költségvetését.",
-      "hint": "kötelezettség + -ként",
-      "answer": "kötelezettségként",
-      "english": "Parliament must secure the budget of courts as a statutory obligation.",
+      "hint": "obligation (noun), in the role of",
+      "english": "Parliament must secure the budget of the courts as a statutory obligation.",
       "teaches": [
-        "formal-obligation"
+        "essive-formal-kent"
+      ],
+      "answers": [
+        "kötelezettségként",
+        "kötelességként"
       ]
     },
     {
@@ -81,27 +80,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "törvény",
+        "bíróságok",
+        "kötelesek",
+        "betartani",
+        "a",
         "kógens",
-        "módon",
-        "szabja",
-        "meg",
-        "az",
-        "eljárási",
-        "határidőket."
+        "normákat."
       ],
       "solution": [
         "A",
-        "törvény",
+        "bíróságok",
+        "kötelesek",
+        "betartani",
+        "a",
         "kógens",
-        "módon",
-        "szabja",
-        "meg",
-        "az",
-        "eljárási",
-        "határidőket."
+        "normákat."
       ],
-      "english": "The law peremptorily sets procedural deadlines.",
+      "english": "The courts are obliged to observe the cogent norms.",
       "teaches": [
         "formal-obligation"
       ]
@@ -114,21 +109,21 @@
       "prompt": [
         {
           "speaker": "Jogász",
-          "text": "Hogyan ítéli meg a minisztérium új utasítását jogállami szempontból?"
+          "text": "Mit ír elő ez a szabály a hatóságnak?"
         },
         {
           "speaker": "Professzor",
-          "text": "A rendelet _____ módon ütközik a törvényi hierarchiával, ezért jogilag tarthatatlan."
+          "text": "A hatóság _____ megindítani az eljárást."
         },
         {
           "speaker": "Jogász",
-          "text": "Akkor kezdeményezzük az azonnali felülvizsgálatot."
+          "text": "Köszönöm, ez világos."
         }
       ],
       "options": [
-        "kógens",
-        "kógensen",
-        "kógensnek"
+        "köteles",
+        "kötelesek",
+        "kötelező"
       ],
       "correct": 0,
       "teaches": [
@@ -142,8 +137,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating an evaluation of statutory obligation using a juridical adverbial.",
-          "answer": "Az államnak alkotmányos kötelességként, kógens módon kell szavatolnia a bíróságok függetlenségét és a polgárok alapvető jogorvoslati jogát."
+          "prompt": "Write one sentence about what the state must do, with *köteles* (obliged).",
+          "answer": "Az állam köteles védeni az alapjogokat."
         }
       ],
       "teaches": [
@@ -155,11 +150,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés fejez ki kényszerítő, eltérést nem engedő jogi kötöttséget?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "kógens módon / törvényi kötelezettségként",
-        "diszpozitív jelleggel / méltányossági alapon",
-        "szubszidiárius jelleggel / mérlegelési jogkörben"
+        "A felek kötelesek betartani a kógens normát.",
+        "A felek köteles betartani a kógens normát.",
+        "A felek kötelesek betartanak a kógens normát."
       ],
       "correct": 0,
       "teaches": [

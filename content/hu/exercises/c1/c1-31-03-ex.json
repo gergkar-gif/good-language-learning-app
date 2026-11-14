@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan fogalmazza meg Bibó István a szabadság lényegét híres tételében?",
+      "question": "Mit jelent a 'politikai realizmus'?",
       "options": [
-        "'A szabadság ott kezdődik, ahol megszűnik a félelem.'",
-        "'A szabadság a nemzetállami szuverenitás feltétel nélküli érvényesítése más népek felett.'",
-        "'A szabadság a gazdasági önellátás és a nemzetközi kötelezettségek elutasítása.'"
+        "A tények és a korlátok nyugodt, illúziók nélküli elfogadása.",
+        "Olyan politika, amely a legerősebb szomszédot követi.",
+        "Olyan politika, amely a legvalószínűbb jövőt jósolja meg."
       ],
       "correct": 0,
       "teaches": [
@@ -22,15 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A hisztérikus félelmekkel szemben a valóságban a politikai _____ nyújt védelmet.",
-      "hint": "realism",
-      "english": "In contrast with hysterical fears in reality political realism provides protection.",
+      "sentence": "Ahelyett, _____ bűnbakot keresnének, megvizsgálják a tényeket.",
+      "english": "Instead of looking for a scapegoat, they examine the facts.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
       "answers": [
-        "realizmus",
-        "racionalitás"
+        "hogy"
       ]
     },
     {
@@ -41,19 +39,19 @@
       "pairs": [
         [
           "politikai realizmus",
-          "a tények és korlátok illúziómentes elfogadása"
+          "a tények nyugodt elfogadása"
         ],
         [
           "intézményi józanság",
-          "a fékek és ellensúlyok higgadt működtetése"
+          "a szabályok higgadt betartása"
         ],
         [
           "összeesküvés-elmélet",
-          "komplex krízisek leegyszerűsítése gonosz háttérerőkre"
+          "egyszerű magyarázat nagy bajokra: valaki titokban irányítja őket"
         ],
         [
           "félelemmentesség",
-          "a demokratikus szabadság alapfeltétele Bibó szerint"
+          "az állapot, amikor az emberek nem félnek"
         ]
       ],
       "teaches": [
@@ -65,9 +63,8 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A tényekkel való szembenézés nemhogy nem gyengeség, _____ éppen a nemzeti nagyság bizonyítéka.",
-      "hint": "nemhogy nem … ___",
-      "english": "Confronting facts is far from weakness; on the contrary, it is proof of national greatness.",
+      "sentence": "Nem félelem, _____ tények alapján kell dönteni.",
+      "english": "One must decide on facts, not on fear.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
@@ -81,26 +78,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "politikai",
-        "realizmus",
-        "legyőzi",
+        "Ahelyett,",
+        "hogy",
+        "bűnbakot",
+        "keresnének,",
+        "megvizsgálják",
         "a",
-        "kollektív",
-        "hisztéria",
-        "démonait."
+        "tényeket."
       ],
       "solution": [
-        "A",
-        "politikai",
-        "realizmus",
-        "legyőzi",
+        "Ahelyett,",
+        "hogy",
+        "bűnbakot",
+        "keresnének,",
+        "megvizsgálják",
         "a",
-        "kollektív",
-        "hisztéria",
-        "démonait."
+        "tényeket."
       ],
-      "english": "Political realism overcomes the demons of collective hysteria.",
+      "english": "Instead of looking for a scapegoat, they examine the facts.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -113,26 +108,30 @@
       "prompt": [
         {
           "speaker": "Szociológus",
-          "text": "Hogyan fékezhető meg a politikai táborok hisztérikus radikalizálódása?"
+          "text": "Mit tesz egy közösség, ha megijed?"
         },
         {
           "speaker": "Politológus",
-          "text": "Csakis úgy, ha az összeesküvés-elméletekkel szemben a valóságban a demokratikus _____ teszünk hitet."
+          "text": "A félelem hatására egyesek bűnbakot keresnek, _____ mások a tényeket vizsgálják."
         },
         {
           "speaker": "Szociológus",
-          "text": "Ez az egyetlen gát a tekintélyelvű zülléssel szemben."
+          "text": "Értem: ugyanarra a helyzetre kétféleképpen reagálnak."
         }
       ],
       "options": [
-        "realizmus mellett",
-        "realizmusban",
-        "realizmussal"
+        "míg",
+        "mert",
+        "hogy"
       ],
       "correct": 0,
       "teaches": [
         "contrastive-discourse-markers"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "mert-because",
+        "2": "hogy-clauses"
+      }
     },
     {
       "id": "c1-31-03-production-7",
@@ -141,8 +140,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a defense of political realism using an adversative connector.",
-          "answer": "A demagóg hisztériakeltéssel szemben a valóságban a bibói politikai realizmus nemhogy nem gyávaság, hanem a demokratikus intézmények és az emberi méltóság megőrzésének legfőbb fundamentuma."
+          "prompt": "Write one sentence that contrasts two reactions to fear, with *míg* or *ahelyett, hogy*.",
+          "answer": "Míg egyesek félelmükben bűnbakot keresnek, mások a tényeket vizsgálják meg."
         }
       ],
       "teaches": [
@@ -154,16 +153,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik ellentétes szerkezet bizonyítja a bibói realizmus felsőbbrendűségét a leghatásosabban?",
+      "question": "Melyik mondat jelenti ezt: 'Instead of looking for a scapegoat, they examine the facts'?",
       "options": [
-        "a hisztérikus félelmekkel szemben a valóságban... nemhogy nem gyengeség, hanem a gyógyulás feltétele",
-        "a parlamenti frakciók közötti pillanatnyi pártpolitikai kompromisszumokban",
-        "a közvélemény-kutatások által jelzett pillanatnyi választói hangulatban"
+        "Ahelyett, hogy bűnbakot keresnének, megvizsgálják a tényeket.",
+        "Azért, hogy bűnbakot keresnének, megvizsgálják a tényeket.",
+        "Ahelyett, hogy bűnbakot keresnének, megvizsgálni a tényeket."
       ],
       "correct": 0,
       "teaches": [
         "contrastive-discourse-markers"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     }
   ]
 }

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik kifejezés fejez ki megdönthetetlen tényszerű igazságot a sajtóelemzésben?",
+      "question": "Melyik kifejezés mond biztosat?",
       "options": [
-        "megdönthetetlen bizonyossággal",
-        "valószínűsíthetően a körülmények egybeesése folytán",
-        "névtelen források megerősítetlen állításaira támaszkodva"
+        "kétséget kizáróan",
+        "feltehetőleg",
+        "nem zárható ki, hogy"
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel leplezhetjük le a manipulatív sajtóhíreket?",
+      "question": "Melyik szerkezet írja le a manipulatív cikket?",
       "options": [
-        "a tényeket szándékosan elferdítő",
-        "a napilapok gazdasági rovatában rendszeresen megjelenő",
-        "a független hírügynökségek által ellenőrzött és jóváhagyott"
+        "a tényeket eltorzító cikk",
+        "a tényeket bemutató cikk",
+        "a tényekről szóló cikk"
       ],
       "correct": 0,
       "teaches": [
@@ -69,25 +69,23 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A tények szándékos eltorzításával operáló sajtótevékenység a _____.",
+      "sentence": "Szándékosan terjesztett, félrevezető információ: ez a _____.",
       "hint": "disinformation",
-      "english": "Press activity operating with intentional distortion of facts is disinformation.",
+      "english": "Deliberately spread, misleading information: this is disinformation.",
       "teaches": [
         "c1-press-freedom-vocab"
       ],
-      "answers": [
-        "dezinformáció"
-      ]
+      "answer": "dezinformáció"
     },
     {
       "id": "c1-26-consolidation-5",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Az értelmiség elvtelen politikai behódolását az írástudók _____ nevezik.",
-      "hint": "árulás + -ának",
-      "answer": "árulásának",
-      "english": "The unprincipled political submission of intellectuals is called the treason of the intellectuals.",
+      "sentence": "Ha az író maga korlátozza, amit leír, az _____.",
+      "hint": "self-censorship",
+      "answer": "öncenzúra",
+      "english": "If a writer limits what he writes himself, that is self-censorship.",
       "teaches": [
         "c1-press-freedom-vocab"
       ]
@@ -97,10 +95,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A vizsgálat megdönthetetlen _____ cáfolta meg a valótlan vádakat.",
-      "hint": "bizonyosság + -val",
-      "answer": "bizonyossággal",
-      "english": "The investigation refuted untrue accusations with incontrovertible certainty.",
+      "sentence": "Nem _____ ki, hogy a hír hamis.",
+      "hint": "zár, can (-hat/-het)",
+      "answer": "zárható",
+      "english": "It cannot be ruled out that the news is false.",
       "teaches": [
         "epistemic-hedging"
       ]
@@ -110,12 +108,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A kormányszóvivő állításával szemben a _____ a költségvetés hiánya nőtt.",
-      "hint": "valóság + -ban",
-      "answer": "valóságban",
-      "english": "Contrary to the government spokesperson's claim, in reality the budget deficit increased.",
+      "sentence": "Az állítással _____ a valóságban csak néhány irat elérhető.",
+      "hint": "contrary to",
+      "english": "Contrary to the claim, in reality only a few documents are available.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "szemben",
+        "ellentétben"
       ]
     },
     {
@@ -123,15 +124,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A tudósító szakmailag _____ módon végezte feltáró munkáját.",
-      "hint": "irreproachably / impeccable",
-      "english": "The correspondent performed investigative work in a professionally irreproachable manner.",
+      "sentence": "A szerkesztő szakmailag _____ döntött.",
+      "hint": "irreproachably",
+      "english": "The editor decided in a professionally irreproachable way.",
       "teaches": [
         "scalar-adverbs"
       ],
       "answers": [
-        "feddhetetlen",
-        "kifogástalan"
+        "feddhetetlenül",
+        "kifogástalanul"
       ]
     },
     {
@@ -139,11 +140,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a funkciója a 'nemhogy nem... hanem éppen ellenkezőleg' szerkezetnek a vitában?",
+      "question": "Mit fejez ki az 'éppen ellenkezőleg'?",
       "options": [
-        "Radikális ellentétezéssel mutat rá a hamis narratíva és a cáfoló valóság közötti teljes szakadékra.",
-        "Enyhíti a retorikai feszültséget egy finom diplomáciai gesztussal.",
-        "Kizárólag stilisztikai díszítőelemként szolgál a mondat ritmusának fokozására."
+        "Azt, hogy a valóság a vád ellentéte.",
+        "Azt, hogy a vád csak részben igaz.",
+        "Azt, hogy a vád pontos."
       ],
       "correct": 0,
       "teaches": [
@@ -153,7 +154,7 @@
     {
       "id": "c1-26-consolidation-10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
@@ -175,7 +176,7 @@
       ],
       "english": "The free public sphere is the indispensable protective shield of democracy.",
       "teaches": [
-        "evaluative-stance"
+        "c1-press-freedom-vocab"
       ]
     },
     {
@@ -185,8 +186,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a statement debunking media distortion using an adversative connector.",
-          "answer": "A propagandamédia állításaival szemben a valóságban a független források igazolhatóan cáfolták a koholt vádakat, megdönthetetlen bizonyossággal állítva helyre az igazságot."
+          "prompt": "Write one sentence that contrasts a claim with the facts, with *ezzel szemben a valóságban*.",
+          "answer": "A hír szerint minden irat nyilvános, ezzel szemben a valóságban csak néhány elérhető."
         }
       ],
       "teaches": [
@@ -200,8 +201,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical reflection on Márai Sándor's defense of language and free press.",
-          "answer": "Márai Sándor naplójában világossá tette: a szabad sajtó megfojtása a nyelv megmérgezéséhez és a szellemi élet pusztulásához vezet, ezért a legszigorúbb erkölcsi mércével mérve kell őriznünk a független szót."
+          "prompt": "Write one sentence that judges a journalist's conduct with a degree adverb.",
+          "answer": "A riporter szakmailag feddhetetlenül dolgozott."
         }
       ],
       "teaches": [
