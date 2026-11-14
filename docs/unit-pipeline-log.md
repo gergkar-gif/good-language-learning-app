@@ -514,6 +514,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-13 | ES B2 core Units 27–30 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 336,404 (19 min), B 328,070 (18 min); ~166k a unit | | 23 errors / 75 suspects → 0 / 5 accepted, unmet 1 kept | walked 24/24, all frozen; both texts about a work rewritten by the reviewer (meta padding); new `story-meta` check finds 43 sentences in 18 frozen texts |
 | 11-14 | ES B2 core Units 31–36 (es-latam) | two edit-in-place agents (Sonnet), **three units each**, both stopped by the 5-hour limit at once and resumed | A 295,492 (resumed run only), B 310,080; ~100k a unit | | 57 errors / 172 suspects → 0 / 6 accepted, unmet 0 | walked 36/36, all frozen; B2 core 36/36; texts about the work 108–195 words |
 | 11-14 | HU C1 core Units 1–8 (first C1 batch, no pilot) | read-first, two Sonnet readers, **four units each** (Units 2–8 half-size, 52 items), B stopped once by the 5-hour limit | A 363,583 (17 min), B 353,181 (15 min); ~90k a unit | 737 applied | 50 errors / 100 suspects → 0 / 40 accepted (38 `vocab-unused` stems), unmet 79 → 18 lookup misses | walked 48/48, all frozen; 5 registry moves signed off; 28 retired tags retagged |
+| 11-14 | HU C1 core Units 9–16 | read-first, two Sonnet readers, four units each, extras via `stage_extras.py` | A 383,237 (20 min), B 422,476 (21 min); ~100k a unit | 898 applied | 66 errors / 80 suspects → 0 / 40 accepted (`vocab-unused`), unmet 68 → 31 lookup misses | walked 48/48, all frozen (C1 16/72); 175 retired tags retagged |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2159,4 +2160,18 @@ The user took the four recommended options:
   merging.
 - **`vocab-unused` is a C1-wide question, not a batch one:** 899 suspects across C1, 38 stems
   accepted here and put to the user (keep as SRS-only words or prune).
+
+### 2026-11-14: HU C1 core Units 9–16
+
+- **The focus rule "repeat every field in an extra" held:** `stage_extras.py` carried nothing
+  (batch 1–8: 19 items). The script stays as the guard.
+- **Readers send nearly everything to review** (A 427 of 449, B 432 of 441), because almost every
+  fix touches Hungarian text. Printing only the Hungarian-bearing fields (exercise sets, screen
+  and story text; lesson-file English skipped) kept the read to about 650 items. The reviewer's
+  own changes were 25 in 890, mostly facts, meta phrases and recaps, not grammar.
+- **Meta phrases keep coming back in story rewrites** ("Az olvasó számára", "Az olvasó azt
+  veheti észre"), as in ES B2. The `story-meta` check is Spanish-only. **Next:** extend it to
+  Hungarian with these phrasings before batch 17–24.
+- **Present-day facts moved in 2026** (ICC withdrawal reversed 27 May; 16th and 17th amendments).
+  Search each present-day legal claim, as § Best practices says; no item was wrong this time.
 
