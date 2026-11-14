@@ -60,6 +60,8 @@ CHECKS = {
     # ES B2 batches 15-30, 2026-11-13: agents kept padding texts about a work with talk
     # about the text itself, though the brief forbids it (four batches running)
     "story-meta": "a classic text talks about itself, the course or its reader instead of the work",
+    # ES B2, 2026-11-14: "Fuentes quería que el lector…", "Algunos lectores señalaron…" in items
+    "item-reader": "an item or challenge (B2+, Spanish) says what unnamed readers or critics think or do",
     # options (brief § 6.3)
     "choice-index": "`correct` is not a valid option index",
     "duplicate-options": "two options are the same",
@@ -133,7 +135,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"character-role", "character-extra", "story-meta", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"character-role", "character-extra", "story-meta", "item-reader", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -790,6 +792,7 @@ def story_question_sets(src, course):
     return src.cache[key]
 
 
+ITEM_READER = re.compile(r"\b(?:el|un|una|los|unos|algunos|muchos|cada|todos los) (?:lector|lectores|lectora|lectoras|criticos)\b|\bquer[ií]a que el lector\b")
 # talk about the text, the course or the reader (folded, accent-free); "este libro" is fine
 STORY_META = re.compile(r"\b(este texto|estos textos|otros textos|este curso|este resumen|resumamos|recordemos|"
                         r"vamos a (?:dar|ver|presentar|empezar|hablar|contar)|usted ya (?:conoce|sabe)|el lector|la lectora|un lector|cada lector|muchos lectores|algunos lectores|muchos criticos|"
@@ -853,6 +856,10 @@ def check_unit(src, course, level, unit, shape):
             eid = e.get("id")
             for check, msg in check_exercise(e, course, lang):
                 out.append((check, eid, msg, ex_rel))
+            if course in ("es-es", "es-latam") and level not in ("a1", "a2", "b1"):
+                hit = next((t for t in texts(e) if ITEM_READER.search(fold(t))), None)
+                if hit:
+                    out.append(("item-reader", eid, hit[:60], ex_rel))
             if course in ("es-es", "es-latam"):
                 found = [w for t in texts(e) for w in course_variants.find(t, course)]
                 if found:
