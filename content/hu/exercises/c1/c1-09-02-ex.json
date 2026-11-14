@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'tájékozott beleegyezés' alapelve a gyógyászatban?",
+      "question": "Mit jelent a 'tájékozott beleegyezés'?",
       "options": [
-        "A beteg önrendelkező jogát arra, hogy a kockázatok teljes megismerése után döntsön a kezelésről.",
-        "Az orvosi beavatkozások költségvetési fedezetének előzetes hatósági jóváhagyását.",
-        "A hozzátartozók kizárólagos döntési jogát a cselekvőképes beteg ellátásáról."
+        "A beteg döntése a kezelésről, miután megismerte a kockázatokat.",
+        "Az állam előzetes jóváhagyása minden orvosi beavatkozáshoz.",
+        "A család döntése a beteg helyett, ha a beteg nem akarja."
       ],
       "correct": 0,
       "teaches": [
@@ -20,14 +20,14 @@
     {
       "id": "c1-09-02-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A kezelőorvos részéről az adott helyzetben általában _____ gondosság elmulasztása műhibának minősül.",
-      "hint": "expected / elvár + -ható",
+      "sentence": "Az orvostól _____ gondosság elmulasztása hibának számít.",
+      "hint": "expected, reasonable to demand",
       "answer": "elvárható",
-      "english": "Failure to provide due care generally expected of the treating physician in the given situation qualifies as malpractice.",
+      "english": "Failing to show the care that can be expected of a doctor counts as a mistake.",
       "teaches": [
-        "epistemic-modality"
+        "c1-bioethics-vocab"
       ]
     },
     {
@@ -62,16 +62,18 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Bár a terápia sikere _____ valószínű, a mellékhatások aránytalan terhet rónának a betegre.",
-      "hint": "highly",
-      "english": "Although the success of therapy is highly likely, side effects would impose a disproportionate burden on the patient.",
+      "sentence": "Bár a terápia _____ sikeres lesz, a mellékhatások komoly terhet jelentenek a betegnek.",
+      "hint": "very likely",
+      "english": "Although the therapy will in all likelihood be successful, the side effects are a serious burden for the patient.",
       "teaches": [
-        "epistemic-modality"
+        "epistemic-hedging"
       ],
       "answers": [
-        "felettébb",
-        "rendkívül",
-        "igen"
+        "minden bizonnyal",
+        "valószínűleg",
+        "feltehetőleg",
+        "vélhetően",
+        "biztosan"
       ]
     },
     {
@@ -81,27 +83,27 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "beteg",
-        "emberi",
-        "méltósága",
-        "minden",
-        "technológiai",
-        "szempontot",
-        "megelőz."
+        "kezelés",
+        "feltehetőleg",
+        "meghosszabbítja",
+        "az",
+        "életet,",
+        "de",
+        "kockázatos."
       ],
       "solution": [
         "A",
-        "beteg",
-        "emberi",
-        "méltósága",
-        "minden",
-        "technológiai",
-        "szempontot",
-        "megelőz."
+        "kezelés",
+        "feltehetőleg",
+        "meghosszabbítja",
+        "az",
+        "életet,",
+        "de",
+        "kockázatos."
       ],
-      "english": "The human dignity of the patient precedes every technological consideration.",
+      "english": "The treatment will presumably prolong life, but it is risky.",
       "teaches": [
-        "epistemic-modality"
+        "epistemic-hedging"
       ]
     },
     {
@@ -111,22 +113,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Kutatóorvos",
-          "text": "Alkalmazhatjuk-e a kísérleti szert sürgős esetben beleegyezés nélkül?"
+          "speaker": "Orvos",
+          "text": "A kezelés sikere biztos?"
         },
         {
           "speaker": "Etikai tanácsadó",
-          "text": "Nem, a tájékozott beleegyezés mellőzhetetlen etikai _____ képez."
+          "text": "Nem, csak _____ sikeres, és a beteg beleegyezése így is kötelező."
         }
       ],
       "options": [
-        "kötelességet",
-        "mérlegelést",
-        "lehetőséget"
+        "feltehetőleg",
+        "kötelezően",
+        "szükségszerűen"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-modality"
+        "c1-bioethics-vocab"
       ]
     },
     {
@@ -136,12 +138,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Contrast moral duty and medical probability in one sentence.",
-          "answer": "Bár az operáció statisztikailag nagy valószínűséggel sikeres lenne, a beteg kifejezett visszautasítása esetén az orvosi etika tiltja a kényszerkezelést."
+          "prompt": "Write one sentence that contrasts what is probable with what is a duty.",
+          "answer": "A kezelés feltehetőleg sikeres lesz, de a beteg beleegyezése nélkül az orvosnak nem szabad elvégeznie."
         }
       ],
       "teaches": [
-        "epistemic-modality"
+        "epistemic-hedging"
       ]
     },
     {
@@ -149,15 +151,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik állítás fogalmazza meg helyesen a deontikus kötelezettség abszolút primátusát?",
+      "question": "Melyik mondatban a legbiztosabb a beszélő?",
       "options": [
-        "A beteg autonómiájának tiszteletben tartása olyan abszolút etikai kötelesség, amely felülírja a puszta statisztikai valószínűségeket.",
-        "A kezelőorvos szakmai belátása minden körülmények között felülbírálhatja a páciens előzetes nyilatkozatát.",
-        "A bioetikai alapelvek érvényesülése a kórházi osztály kapacitásának és felszereltségének függvénye."
+        "A kezelés minden bizonnyal segít a betegen.",
+        "A kezelés feltehetőleg segít a betegen.",
+        "A kezelés talán segít a betegen."
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-modality"
+        "epistemic-hedging"
       ]
     }
   ]

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a transzformátor-architektúra kulcsfontosságú újítása?",
+      "question": "What is the key idea of the transformer architecture?",
       "options": [
-        "Az önfigyelem (self-attention) mechanizmusa, amely lehetővé teszi a kontextus párhuzamos feldolgozását szekvenciális lépések nélkül.",
-        "A visszacsatolt neurális hálózatok azon elve, amely szigorúan csak időbeli sorrendben képes szavakat elemezni.",
-        "A döntési fák olyan többdimenziós hierarchiája, amely előre megadott nyelvtani szabályok szerint működik."
+        "A modell az egész szöveget egyszerre nézi, és figyel a fontos szavakra.",
+        "A modell a szavakat egymás után olvassa, egy szót egyszerre.",
+        "A modell előre megadott nyelvtani szabályok szerint dolgozik."
       ],
       "correct": 0,
       "teaches": [
@@ -22,15 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "_____ a tanulási adathalmaz sokszínűségét, a nagy nyelvi modell képes megragadni a finom stilisztikai árnyalatokat.",
-      "hint": "Assuming",
-      "english": "Assuming the diversity of the training dataset, the large language model can capture subtle stylistic nuances.",
+      "sentence": "_____ a modell méretét, a tanítás nagyon hosszú.",
+      "hint": "to take into account, adverbial participle",
+      "english": "Taking the size of the model into account, the training is very long.",
       "teaches": [
         "participle-actions"
       ],
       "answers": [
-        "Feltételezvén",
-        "Feltételezve"
+        "Figyelembe véve",
+        "Számításba véve"
       ]
     },
     {
@@ -41,19 +41,19 @@
       "pairs": [
         [
           "látens tér",
-          "többdimenziós reprezentáció"
+          "latent space"
         ],
         [
           "beágyazás",
-          "szavak numerikus vektora"
+          "embedding"
         ],
         [
           "finomhangolás",
-          "célfeladatra való igazítás"
+          "fine-tuning"
         ],
         [
           "paraméterszám",
-          "a modell belső súlyai"
+          "parameter count"
         ]
       ],
       "teaches": [
@@ -65,10 +65,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Minden szempontot figyelembe _____, a transzformátorok forradalmasították a természetes nyelvfeldolgozást.",
-      "hint": "taking",
-      "answer": "véve",
-      "english": "Taking all aspects into account, transformers revolutionized natural language processing.",
+      "sentence": "_____ a költségektől, a modell nagyon jó.",
+      "hint": "eltekint, adverbial participle",
+      "answer": "Eltekintve",
+      "english": "Disregarding the costs, the model is very good.",
       "teaches": [
         "participle-actions"
       ]
@@ -84,11 +84,11 @@
         "révén",
         "a",
         "modell",
-        "párhuzamosan",
-        "értékeli",
-        "a",
-        "kontextuális",
-        "összefüggéseket."
+        "az",
+        "egész",
+        "mondatot",
+        "egyszerre",
+        "látja."
       ],
       "solution": [
         "A",
@@ -96,15 +96,15 @@
         "révén",
         "a",
         "modell",
-        "párhuzamosan",
-        "értékeli",
-        "a",
-        "kontextuális",
-        "összefüggéseket."
+        "az",
+        "egész",
+        "mondatot",
+        "egyszerre",
+        "látja."
       ],
-      "english": "Via the attention mechanism the model evaluates contextual relationships in parallel.",
+      "english": "Through the attention mechanism the model sees the whole sentence at once.",
       "teaches": [
-        "participle-actions"
+        "postpositions-altal-reven"
       ]
     },
     {
@@ -115,21 +115,20 @@
       "prompt": [
         {
           "speaker": "MI-mérnök",
-          "text": "Hogyan javíthatjuk a nyelvi modell szakmai pontosságát?"
+          "text": "Hogyan lehet jobbá tenni a modellt jogi szövegeken?"
         },
         {
           "speaker": "Architekt",
-          "text": "Célzott jogi vagy orvosi szövegeken végzett domain-specifikus _____ révén."
+          "text": "Jogi szövegeken végzett _____ révén."
         }
       ],
       "options": [
         "finomhangolás",
-        "törlés",
-        "áramtalanítás"
+        "paraméterszám"
       ],
       "correct": 0,
       "teaches": [
-        "participle-actions"
+        "c1-artificial-intelligence-vocab"
       ]
     },
     {
@@ -139,12 +138,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write an analytical sentence using a hypothetical participle to explain model scaling.",
-          "answer": "Feltételezvén a hardveres infrastruktúra exponenciális fejlődését, a milliárdos paraméterszámú modellek hamarosan valós idejű multimodális szintézist valósíthatnak meg."
+          "prompt": "Write a sentence with a participle about the size of a model.",
+          "answer": "Figyelembe véve a paraméterszámot, a tanítás hosszú és drága."
         }
       ],
       "teaches": [
-        "participle-actions"
+        "c1-artificial-intelligence-vocab"
       ]
     },
     {
@@ -152,11 +151,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés fejez ki feltételes/feltevést tartalmazó participiális szerkezetet?",
+      "question": "Which participle means 'taking into account'?",
       "options": [
-        "Feltételezvén a paraméterek stabilitását",
-        "A paraméterek stabilitásának hiányában",
-        "Mivel a paraméterek stabilak voltak"
+        "Figyelembe véve",
+        "Eltekintve ettől",
+        "Összevetve ezt"
       ],
       "correct": 0,
       "teaches": [

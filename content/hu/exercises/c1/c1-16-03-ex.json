@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'közérdekű adat' fogalma a magyar jogrendben?",
+      "question": "What is *közérdekű adat* (data of public interest)?",
       "options": [
-        "Az állami vagy helyi önkormányzati feladatot ellátó szervek kezelésében lévő, a tevékenységükre vagy közpénzekre vonatkozó nyilvános adatot.",
-        "A magánvállalatok által kifejlesztett egyedi szoftverek és gyártási eljárások szigorúan védett iparjogvédelmi adatait.",
-        "A bírósági tárgyalásokon részt vevő vádlottak és tanúk védett személyes adatait és orvosi kórtörténetét."
+        "Nyilvános adat arról, mire költ pénzt az állam vagy az önkormányzat.",
+        "Egy cég titkos adata a saját termékeiről és az árairól.",
+        "Egy beteg személyes adata, amelyet az orvos kezel a kórházban."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A közbeszerzési eljárások átláthatósági hiányosságai sürgős _____ szorulnak.",
-      "hint": "remedy / orvoslás + -ra",
+      "sentence": "A hibák sürgős _____ szorulnak.",
+      "hint": "remedy",
       "answer": "orvoslásra",
-      "english": "The transparency deficiencies of public procurement procedures require urgent remedy.",
+      "english": "The errors need urgent remedy.",
       "teaches": [
-        "agentless-constructions"
+        "verb-government-ra-re"
       ]
     },
     {
@@ -38,19 +38,19 @@
       "pairs": [
         [
           "számvevőszék",
-          "közpénzek ellenőrző szerve"
+          "state audit office"
         ],
         [
-          "ombudsman",
-          "alapjogok védője"
+          "alapvető jogok biztosa",
+          "commissioner for fundamental rights"
         ],
         [
           "közérdekű adat",
-          "nyilvános állami információ"
+          "data of public interest"
         ],
         [
           "közpénzfelhasználás",
-          "adóbevételek elköltése"
+          "use of public funds"
         ]
       ],
       "teaches": [
@@ -62,12 +62,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A jogállami normák érvényesülése szempontjából kulcsfontosságú a kérdés: milyen garanciák _____ a jövőben?",
-      "hint": "to be built in / beépít + -endők",
-      "answer": "beépítendők",
-      "english": "From the standpoint of rule-of-law norms, the question is key: what guarantees are to be built in for the future?",
+      "sentence": "Mielőtt döntenek, ez a kérdés még _____.",
+      "hint": "tisztáz, to clarify; 'is to be …'",
+      "answer": "tisztázandó",
+      "english": "Before they decide, this question is still to be clarified.",
       "teaches": [
-        "agentless-constructions"
+        "future-participle-ando"
       ]
     },
     {
@@ -77,27 +77,21 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "közérdekű",
-        "adatok",
-        "megismerésének",
-        "joga",
-        "minden",
-        "állampolgárt",
-        "megillet."
+        "hibák",
+        "alapos",
+        "kivizsgálásra",
+        "szorulnak."
       ],
       "solution": [
         "A",
-        "közérdekű",
-        "adatok",
-        "megismerésének",
-        "joga",
-        "minden",
-        "állampolgárt",
-        "megillet."
+        "hibák",
+        "alapos",
+        "kivizsgálásra",
+        "szorulnak."
       ],
-      "english": "The right of access to data of public interest belongs to every citizen.",
+      "english": "The errors need a thorough investigation.",
       "teaches": [
-        "agentless-constructions"
+        "verb-government-ra-re"
       ]
     },
     {
@@ -108,21 +102,20 @@
       "prompt": [
         {
           "speaker": "Oknyomozó",
-          "text": "Miért nem adják ki a kért szerződéseket?"
+          "text": "Miért fontos a közérdekű adat?"
         },
         {
           "speaker": "Hivatalnok",
-          "text": "A dokumentumok állításuk szerint még belső döntéselőkészítési szakaszban vannak, így nem _____."
+          "text": "Mert megmutatja, hogyan használják fel a _____."
         }
       ],
       "options": [
-        "kiadhatók",
-        "elfeledhetők",
-        "lemásolhatók"
+        "közpénzt",
+        "magánpénzt"
       ],
       "correct": 0,
       "teaches": [
-        "agentless-constructions"
+        "c1-public-sphere-vocab"
       ]
     },
     {
@@ -132,12 +125,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a formal sentence using a passive periphrasis (-andó/-endő or szorul) on public spending.",
-          "answer": "A gyanús közbeszerzési túlárazások haladéktalan kivizsgálásra szorulnak, és a felelősök megnevezése elkerülhetetlen feladatként hárul az ellenőrző hatóságokra."
+          "prompt": "Write a formal sentence with *szorul* about public spending.",
+          "answer": "A közpénzek elköltése alapos kivizsgálásra szorul."
         }
       ],
       "teaches": [
-        "agentless-constructions"
+        "c1-public-sphere-vocab"
       ]
     },
     {
@@ -145,7 +138,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés fejez ki passzív jellegű, modális kényszert hordozó körülírást?",
+      "question": "Which phrase says that something needs clarification?",
       "options": [
         "tisztázásra szorul",
         "tisztázták a dolgot",
@@ -153,7 +146,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "agentless-constructions"
+        "verb-government-ra-re"
       ]
     }
   ]

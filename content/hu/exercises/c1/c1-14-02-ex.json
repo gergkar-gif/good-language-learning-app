@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért jelent technológiai kihívást az időjárásfüggő megújulók (nap- és szélenergia) hálózati integrációja?",
+      "question": "Why are *időjárásfüggő megújulók* (solar and wind power) a challenge for the grid?",
       "options": [
-        "Mert a termelés ingadozása nem követi a fogyasztási igényeket, így gyors reagálású kiegyenlítő kapacitásokat igényel.",
-        "Mert a megújuló energiaforrások feszültségszintje nem illeszthető a meglévő távvezetékekhez.",
-        "Mert az európai uniós jogszabályok kizárólag a fosszilis alapterhelést ismerik el zöldnek."
+        "A termelésük változik, de a fogyasztók igénye máskor nagy.",
+        "A termelésük állandó, ezért a hálózatnak nincs dolga vele.",
+        "A termelésük drága, ezért a fogyasztók nem használják."
       ],
       "correct": 0,
       "teaches": [
@@ -20,14 +20,14 @@
     {
       "id": "c1-14-02-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A napenergia-termelés hirtelen megugrása komoly _____ feladatot ró a magyar villamosenergia-rendszer irányítójára.",
-      "hint": "grid balancing / hálózatkiegyenlítés + -i",
-      "answer": "hálózatkiegyenlítési",
-      "english": "The sudden surge in solar power generation imposes a serious grid balancing task on the Hungarian power grid operator.",
+      "sentence": "A rendszerirányító feladata a _____: egyensúlyban tartja a termelést és a fogyasztást.",
+      "hint": "grid balancing",
+      "answer": "hálózatkiegyenlítés",
+      "english": "The system operator's task is grid balancing: it keeps production and consumption in balance.",
       "teaches": [
-        "c1-energy-transition-clauses"
+        "c1-energy-transition-vocab"
       ]
     },
     {
@@ -38,19 +38,19 @@
       "pairs": [
         [
           "karbontalanítás",
-          "kibocsátáscsökkentés"
+          "decarbonization"
         ],
         [
           "energiamix",
-          "energiaforrások megoszlása"
+          "energy mix"
         ],
         [
           "rendszerirányító",
-          "villamosenergia-hálózat felügyelője"
+          "system operator"
         ],
         [
           "energiatárolás",
-          "akkumulátoros tartalékképzés"
+          "energy storage"
         ]
       ],
       "teaches": [
@@ -60,14 +60,14 @@
     {
       "id": "c1-14-02-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A klímasemlegességi célok eléréséhez elengedhetetlen a fosszilis energiahordozók kivezetése és az _____ zöldítése.",
-      "hint": "energy mix",
-      "answer": "energiamix",
-      "english": "To achieve climate neutrality targets, phasing out fossil fuels and greening the energy mix are indispensable.",
+      "sentence": "Napos délben sok az áram, este kevés: ezért kell az _____.",
+      "hint": "storing energy",
+      "answer": "energiatárolás",
+      "english": "At sunny noon there is a lot of power, in the evening little: that is why energy storage is needed.",
       "teaches": [
-        "c1-energy-transition-clauses"
+        "c1-energy-transition-vocab"
       ]
     },
     {
@@ -76,28 +76,32 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "akkumulátoros",
-        "tárolók",
-        "elengedhetetlenek",
+        "Amennyiben",
+        "sok",
         "a",
-        "hálózati",
-        "rugalmasság",
-        "biztosításához."
+        "napenergia,",
+        "úgy",
+        "a",
+        "tárolók",
+        "még",
+        "fontosabbak",
+        "lesznek."
       ],
       "solution": [
-        "Az",
-        "akkumulátoros",
-        "tárolók",
-        "elengedhetetlenek",
+        "Amennyiben",
+        "sok",
         "a",
-        "hálózati",
-        "rugalmasság",
-        "biztosításához."
+        "napenergia,",
+        "úgy",
+        "a",
+        "tárolók",
+        "még",
+        "fontosabbak",
+        "lesznek."
       ],
-      "english": "Battery storage units are indispensable for ensuring grid flexibility.",
+      "english": "If there is a lot of solar energy, storage units will be even more important.",
       "teaches": [
-        "c1-energy-transition-clauses"
+        "ha-clause"
       ]
     },
     {
@@ -108,21 +112,20 @@
       "prompt": [
         {
           "speaker": "Energetikus",
-          "text": "Hogyan kezelhető a déli órákban fellépő hatalmas áramtermelési csúcs?"
+          "text": "Mi a rendszerirányító dolga?"
         },
         {
           "speaker": "Mérnök",
-          "text": "Ipari méretű tárolókkal és a dinamikus fogyasztói _____ ösztönzésével."
+          "text": "Az, hogy a termelés és a fogyasztás mindig _____ legyen."
         }
       ],
       "options": [
-        "kereslet",
-        "szabályozás",
-        "termelés"
+        "egyenlő",
+        "nagyobb"
       ],
       "correct": 0,
       "teaches": [
-        "c1-energy-transition-clauses"
+        "c1-energy-transition-vocab"
       ]
     },
     {
@@ -132,28 +135,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence analyzing grid balancing challenges with intermittent renewables.",
-          "answer": "Az időjárásfüggő megújulók robbanásszerű integrációja a villamosenergia-hálózatba rugalmassági deficitet idéz elő, amit csak korszerű energiatárolási és hálózatkiegyenlítő rendszerekkel lehet orvosolni."
+          "prompt": "Write a sentence about solar power with *amennyiben … úgy …*.",
+          "answer": "Amennyiben sok napenergia érkezik a hálózatba, úgy a tárolók segítenek."
         }
       ],
       "teaches": [
-        "c1-energy-transition-clauses"
+        "c1-energy-transition-vocab"
       ]
     },
     {
       "id": "c1-14-02-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mit takar a 'villamosenergia-rendszerirányító' (TSO / MAVIR) feladatköre?",
+      "question": "What does the *rendszerirányító* (system operator) do?",
       "options": [
-        "A termelés és a fogyasztás másodpercről másodpercre történő egyensúlyban tartását és a hálózati frekvencia biztosítását.",
-        "A villamosenergia-piacon értékesített áram tőzsdei árfolyamának és hatósági tarifáinak napi szintű meghatározását.",
-        "Az elavult széntüzelésű erőművek hatósági bezárását és a lakossági napelemek műszaki engedélyezését."
+        "Egyensúlyban tartja a termelést és a fogyasztást.",
+        "Minden nap ő mondja meg az áram árát a tőzsdén.",
+        "Bezárja a régi erőműveket, és újakat épít helyettük."
       ],
       "correct": 0,
       "teaches": [
-        "c1-energy-transition-clauses"
+        "c1-energy-transition-vocab"
       ]
     }
   ]

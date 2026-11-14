@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'reziliencia' az ökológiai rendszerekben?",
+      "question": "What does *reziliencia* (resilience) mean?",
       "options": [
-        "A természetes rendszerek azon képességét, hogy külső zavarok vagy sokkok után helyreállítsák működési egyensúlyukat.",
-        "A biológiai sokféleség csökkenésének matematikai mértékegységét.",
-        "A talajban található ásványi anyagok koncentrációjának szintjét."
+        "A rendszer baj után is helyre tud állni.",
+        "Az állatok számának mérése egy területen.",
+        "A víz mennyisége a folyóban egy évben."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A monokultúrás mezőgazdasági művelés súlyos mértékben hozzájárult a talaj termőképességének _____.",
-      "hint": "degradation / degradáció + -jához",
-      "answer": "degradációjához",
-      "english": "Monoculture agricultural cultivation contributed heavily to the degradation of soil fertility.",
+      "sentence": "A nagy út átmegy az erdőn, nagy kárt _____ a természetnek.",
+      "hint": "okoz, adverbial participle",
+      "answer": "okozva",
+      "english": "The big road goes through the forest, causing great damage to nature.",
       "teaches": [
-        "c1-ecological-system-dynamics"
+        "participle-actions"
       ]
     },
     {
@@ -38,19 +38,19 @@
       "pairs": [
         [
           "biodiverzitás",
-          "fajgazdagság"
+          "biodiversity"
         ],
         [
           "élőhelyfragmentáció",
-          "természetes területek széttagolódása"
+          "habitat fragmentation"
         ],
         [
           "vízvisszatartás",
-          "tájban való nedvességmegőrzés"
+          "water retention"
         ],
         [
           "özönfaj",
-          "agresszíven terjedő jövevényfaj"
+          "invasive species"
         ]
       ],
       "teaches": [
@@ -60,18 +60,15 @@
     {
       "id": "c1-14-01-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A folyók gátak közé szorítása drasztikusan lecsökkentette az ártéri erdők _____ képességét.",
+      "sentence": "A mocsár a vizet nem engedi el: ez a _____.",
       "hint": "water retention",
-      "english": "Confining rivers between dykes drastically reduced the water retention capacity of floodplain forests.",
+      "english": "The marsh does not let the water go: this is water retention.",
       "teaches": [
-        "c1-ecological-system-dynamics"
+        "c1-energy-transition-vocab"
       ],
-      "answers": [
-        "vízvisszatartó",
-        "vízmegtartó"
-      ]
+      "answer": "vízvisszatartás"
     },
     {
       "id": "c1-14-01-practice-5",
@@ -79,30 +76,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "természetes",
-        "élőhelyek",
-        "megóvása",
-        "alapfeltétele",
+        "Vizet",
+        "adva",
         "a",
-        "Kárpát-medence",
-        "ökológiai",
-        "stabilitásának."
+        "tájnak,",
+        "a",
+        "mocsár",
+        "védi",
+        "az",
+        "erdőt."
       ],
       "solution": [
-        "A",
-        "természetes",
-        "élőhelyek",
-        "megóvása",
-        "alapfeltétele",
+        "Vizet",
+        "adva",
         "a",
-        "Kárpát-medence",
-        "ökológiai",
-        "stabilitásának."
+        "tájnak,",
+        "a",
+        "mocsár",
+        "védi",
+        "az",
+        "erdőt."
       ],
-      "english": "Preserving natural habitats is the prerequisite of the Carpathian Basin's ecological stability.",
+      "english": "Giving water to the landscape, the marsh protects the forest.",
       "teaches": [
-        "c1-ecological-system-dynamics"
+        "participle-actions"
       ]
     },
     {
@@ -113,21 +110,20 @@
       "prompt": [
         {
           "speaker": "Ökológus",
-          "text": "Hogyan védekezhetünk a szélsőséges aszályok pusztítása ellen?"
+          "text": "Mit jelent a vízvisszatartás?"
         },
         {
           "speaker": "Hidrológus",
-          "text": "A víz gyors elvezetése helyett a táji szintű _____ stratégiáját kell alkalmaznunk."
+          "text": "Azt, hogy a víz nem folyik el gyorsan, hanem a tájban _____."
         }
       ],
       "options": [
-        "vízvisszatartás",
-        "vízelvezetés",
-        "gátépítés"
+        "marad",
+        "változik"
       ],
       "correct": 0,
       "teaches": [
-        "c1-ecological-system-dynamics"
+        "c1-energy-transition-vocab"
       ]
     },
     {
@@ -137,28 +133,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write an environmental statement linking habitat fragmentation to biodiversity loss.",
-          "answer": "Az intenzív infrastruktúra-fejlesztés okozta élőhelyfragmentáció elszigeteli a vadállomány populációit, felgyorsítva a genetikai leromlást és a helyi biodiverzitás csökkenését."
+          "prompt": "Write a sentence about habitat fragmentation with a participle.",
+          "answer": "Az utak keresztül mennek az erdőn, nagy kárt okozva az állatoknak."
         }
       ],
       "teaches": [
-        "c1-ecological-system-dynamics"
+        "c1-energy-transition-vocab"
       ]
     },
     {
       "id": "c1-14-01-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik állítás írja le helyesen az ökoszisztéma-szolgáltatások fogalmát?",
+      "question": "What are *ökoszisztéma-szolgáltatások* (ecosystem services)?",
       "options": [
-        "A természet által a társadalom számára biztosított ingyenes javak és funkciók összessége (pl. tiszta ivóvíz, beporzás, szén-dioxid-megkötés).",
-        "A természetvédelmi hatóságok által a szennyező ipari létesítményekre kiszabott kötelező bírságok és adók összessége.",
-        "Az állami erdőgazdaságok által a faipari kitermelésből és a vadászati jogokból realizált éves költségvetési bevétel."
+        "Amit a természet ingyen ad az embernek: tiszta víz, tiszta levegő.",
+        "Amit az állam fizet a természetvédőknek minden évben.",
+        "Amit az erdőgazdaság a boltokban árul az embereknek."
       ],
       "correct": 0,
       "teaches": [
-        "c1-ecological-system-dynamics"
+        "c1-energy-transition-vocab"
       ]
     }
   ]

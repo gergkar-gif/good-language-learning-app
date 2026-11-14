@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelentett Márai Sándor számára 'az adott szó szentsége'?",
+      "question": "A szöveg szerint mit jelent az 'adott szó szentsége'?",
       "options": [
-        "A személyes becsületen és kölcsönös bizalmon alapuló megkérdőjelezhetetlen morális kötelezettséget.",
-        "A formális jogszabályok előírásaihoz való puszta, kényszerű alkalmazkodást.",
-        "Az üzleti haszon maximalizálását célzó retorikai fordulatot."
+        "Azt, hogy az ember akkor is betartja az ígéretét, ha nem kényszerítik.",
+        "Azt, hogy az ember pontosan követi a törvény betűjét, mert kényszerítik.",
+        "Azt, hogy az ember ügyes beszéddel növeli az üzleti hasznát."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-10-05-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "Márai szerint a szerződéses hűség nem puszta jogi formalizmus, hanem a polgári _____ legmélyebb erkölcsi alapköve.",
-      "hint": "ethos",
-      "english": "According to Márai contractual fidelity is not mere legal formalism, but the deepest moral cornerstone of bourgeois ethos.",
+      "sentence": "A szöveg szerint a szerződéses hűség nem puszta jogi formalizmus, hanem a polgári _____ alapja.",
+      "hint": "a way of life and values",
+      "english": "According to the text, contractual fidelity is not mere legal formalism but the basis of the bourgeois ethos.",
       "teaches": [
-        "c1-eu-harmonization"
+        "c1-contracts-negotiation-vocab"
       ],
       "answers": [
         "ethosz",
@@ -65,11 +65,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "practice",
-      "question": "Miért tekintette Márai a szerződés betartását a civilizáció mércéjének?",
+      "question": "Mit bizonyít a szöveg szerint a szerződéses hűség?",
       "options": [
-        "Mert a szerződéses hűség bizonyítja, hogy az ember képes tisztelni mások szabadságát és ura saját ösztöneinek.",
-        "Mert az állami bürokrácia és a kényszerítő hatósági jogalkotás elsőbbségét hirdette a polgárokkal szemben.",
-        "Mert kizárólag a vagyonos társadalmi rétegek gazdasági biztonságának megőrzését szolgálta."
+        "Hogy az ember tiszteli mások szabadságát, és ura az ösztöneinek.",
+        "Hogy az állam hatalma nagyobb, mint a polgárok szabadsága.",
+        "Hogy a vagyonos emberek biztonságát védeni kell a többiekkel szemben."
       ],
       "correct": 0
     },
@@ -80,31 +80,31 @@
       "stage": "practice",
       "tiles": [
         "A",
+        "szöveg",
+        "szerint",
+        "a",
         "szabad",
         "társadalom",
         "alapja",
         "az",
         "adott",
-        "szó",
-        "és",
-        "a",
-        "becsület."
+        "szó."
       ],
       "solution": [
         "A",
+        "szöveg",
+        "szerint",
+        "a",
         "szabad",
         "társadalom",
         "alapja",
         "az",
         "adott",
-        "szó",
-        "és",
-        "a",
-        "becsület."
+        "szó."
       ],
-      "english": "The foundation of free society is the given word and honor.",
+      "english": "According to the text, the basis of a free society is the given word.",
       "teaches": [
-        "c1-eu-harmonization"
+        "evidentials"
       ]
     },
     {
@@ -114,29 +114,26 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize Sándor Márai's philosophy of contractual morality.",
-          "answer": "Márai felfogásában a szerződéses hűség a polgári civilizáció gerince: az a képesség, hogy az ember külső kényszer nélkül, önbecsülésből és a másik iránti tiszteletből tartja be ígéreteit."
+          "prompt": "Say in one sentence what the text says about the given word.",
+          "answer": "A szöveg szerint az adott szó szentsége azt jelenti, hogy az ember akkor is betartja az ígéretét, ha nem kényszerítik."
         }
       ],
       "teaches": [
-        "c1-eu-harmonization"
+        "evidentials"
       ]
     },
     {
       "id": "c1-10-05-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "reading",
       "stage": "check",
-      "question": "Melyik állítás foglalja össze legméltóbban Márai polgári tanítását?",
+      "question": "Melyik állítás adja vissza helyesen a szöveg gondolatát?",
       "options": [
-        "Az igazi jogállamiság fundamentuma a polgárok személyes becsületében és az ígéretek megtartásában gyökerezik.",
-        "A polgári társadalom stabilitását kizárólag a büntetőjogi szankciók szigorúsága képes fenntartani.",
-        "A jogi normák betartása merőben alaki kérdés, amely független a személyes erkölcsi meggyőződéstől."
+        "A szöveg szerint a jogállam az emberek jellemén és az ígéretek betartásán is múlik.",
+        "A szöveg szerint a társadalmat a szigorú büntetések és a rendőrség tartják egyben.",
+        "A szöveg szerint a törvények betartása külső dolog, amely nem érinti az embert."
       ],
-      "correct": 0,
-      "teaches": [
-        "c1-eu-harmonization"
-      ]
+      "correct": 0
     }
   ]
 }

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért van kiemelt szerepe a forráskritikának az oknyomozó újságírásban?",
+      "question": "Why is *forráskritika* (source checking) important in investigative journalism?",
       "options": [
-        "Mert garantálja, hogy a közzétett állítások hiteles, többszörösen ellenőrzött tényeken alapuljanak, kizárva a manipulációt.",
-        "Mert biztosítja a szerkesztőség számára az állami hirdetésekből és szponzori támogatásokból származó bevételeket.",
-        "Mert felgyorsítja a hírközlést azáltal, hogy feleslegessé teszi az információk időigényes háttérellenőrzését."
+        "Mert a közölt állítások többszörösen ellenőrzött tényeken alapulnak.",
+        "Mert így a szerkesztőség több hirdetési bevételt kap.",
+        "Mert így gyorsabban lehet hírt közölni ellenőrzés nélkül."
       ],
       "correct": 0,
       "teaches": [
@@ -38,19 +38,19 @@
       "pairs": [
         [
           "forráskritika",
-          "információk ellenőrzése"
+          "source checking"
         ],
         [
           "kiszivárogtatás",
-          "bizalmas adatok átadása"
+          "leak"
         ],
         [
           "közérdekű bejelentő",
-          "visszaélést feltáró személy"
+          "whistleblower"
         ],
         [
           "cáfolat",
-          "állítás hivatalos visszautasítása"
+          "denial"
         ]
       ],
       "teaches": [
@@ -62,12 +62,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Minden jel _____ a szerződést versenyeztetés nélkül ítélték oda az egyetlen pályázónak.",
+      "sentence": "Minden jel _____ hiba történt a pénzek elosztásakor.",
       "hint": "according to",
-      "answer": "szerint",
-      "english": "By all indications, the contract was awarded without competition to the single bidder.",
+      "english": "By all indications, a mistake occurred when the funds were distributed.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "szerint",
+        "alapján"
       ]
     },
     {
@@ -76,28 +79,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "független",
-        "sajtó",
-        "elsődleges",
-        "kötelessége",
+        "Információink",
+        "szerint",
         "a",
-        "hatalom",
-        "elszámoltathatóságának",
-        "biztosítása."
+        "döntést",
+        "már",
+        "előbb",
+        "meghozták."
       ],
       "solution": [
-        "A",
-        "független",
-        "sajtó",
-        "elsődleges",
-        "kötelessége",
+        "Információink",
+        "szerint",
         "a",
-        "hatalom",
-        "elszámoltathatóságának",
-        "biztosítása."
+        "döntést",
+        "már",
+        "előbb",
+        "meghozták."
       ],
-      "english": "The primary duty of the independent press is ensuring the accountability of power.",
+      "english": "According to our information, the decision had been made earlier.",
       "teaches": [
         "evidentials"
       ]
@@ -110,21 +109,20 @@
       "prompt": [
         {
           "speaker": "Főszerkesztő",
-          "text": "Lehozhatjuk a holnapi címlapon a botrányt?"
+          "text": "Írjuk meg a hírt holnap?"
         },
         {
-          "speaker": "Rovetvezető",
-          "text": "Csak akkor, ha legalább két független forrásból származó bizonyítékkal tudjuk _____ a tényeket."
+          "speaker": "Rovatvezető",
+          "text": "Csak akkor, ha két független forrással tudjuk _____ a tényeket."
         }
       ],
       "options": [
         "igazolni",
-        "tagadni",
-        "törölni"
+        "tagadni"
       ],
       "correct": 0,
       "teaches": [
-        "evidentials"
+        "c1-public-sphere-vocab"
       ]
     },
     {
@@ -134,12 +132,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write an investigative lead paragraph using epistemic distancing markers.",
-          "answer": "Információink szerint a gyanús offshore tranzakciókra állítólag egy olyan tanácsadó cég közbeiktatásával került sor, amely minden jel szerint szoros szálakkal kötődik a döntéshozókhoz."
+          "prompt": "Write a news sentence that uses *állítólag*.",
+          "answer": "A cég állítólag tudott a hibáról, a vezetője azonban cáfolta ezt."
         }
       ],
       "teaches": [
-        "evidentials"
+        "c1-public-sphere-vocab"
       ]
     },
     {
@@ -147,7 +145,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés szolgál episztemikus távolságtartásra újságírói szövegben?",
+      "question": "Which phrase names the source and keeps a distance from the claim?",
       "options": [
         "tudomásunk szerint",
         "egyértelműen és vitathatatlanul",

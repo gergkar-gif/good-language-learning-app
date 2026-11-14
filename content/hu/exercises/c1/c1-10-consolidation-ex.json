@@ -4,33 +4,33 @@
     {
       "id": "c1-10-consolidation-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recognize",
       "question": "Melyik záradék biztosítja, hogy egy pont érvénytelensége ne rontsa le a teljes szerződést?",
       "options": [
-        "részleges érvénytelenségi záradék",
-        "székhely-áthelyezési záradék",
-        "titoktartási kötelezettségvállalás"
+        "érvénytelenségi záradék",
+        "titoktartási záradék",
+        "kötbérre vonatkozó záradék"
       ],
       "correct": 0,
       "teaches": [
-        "official-register"
+        "c1-contracts-negotiation-vocab"
       ]
     },
     {
       "id": "c1-10-consolidation-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recognize",
-      "question": "Milyen jogi következménnyel jár a 'vis maior' esemény?",
+      "question": "Mi a vis maior következménye?",
       "options": [
-        "Mentesíti a felet a késedelmi felelősség és kártérítés alól elháríthatatlan külső ok miatt.",
-        "A szerződéses kötelezettségek automatikus átszállását eredményezi a biztosítóintézetre.",
-        "A teljesítés azonnali felfüggesztése mellett kötelezi a feleket új szerződés kötésére."
+        "A fél mentesül a felelősség alól, ha bizonyítja a külső okot.",
+        "A fél ilyenkor kétszeres kötbért fizet a másiknak.",
+        "A fél kénytelen azonnal új szerződést kötni a másikkal."
       ],
       "correct": 0,
       "teaches": [
-        "c1-liability-exemption"
+        "c1-contracts-negotiation-vocab"
       ]
     },
     {
@@ -95,7 +95,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A felek jogvitáikat elsődlegesen békés tárgyalások _____ kísérlik meg rendezni.",
+      "sentence": "A felek a vitás kérdéseket tárgyalások _____ rendezik.",
       "hint": "via / by means of",
       "answer": "útján",
       "english": "The parties attempt to settle their legal disputes primarily via peaceful negotiations.",
@@ -106,14 +106,14 @@
     {
       "id": "c1-10-consolidation-7",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "context",
-      "sentence": "A cég kizárólag volumenkedvezmény biztosítása esetén mutat _____ a szerződéskötésre.",
-      "hint": "willingness / hajlandóság + -ot",
+      "sentence": "A cég akkor mutat _____ a szerződés megkötésére, ha engedményt kap.",
+      "hint": "willingness (object)",
       "answer": "hajlandóságot",
-      "english": "The company shows willingness to contract solely in case of granting volume discount.",
+      "english": "The company shows willingness to conclude the contract if it gets a concession.",
       "teaches": [
-        "diplomatic-softening"
+        "c1-contracts-negotiation-vocab"
       ]
     },
     {
@@ -121,12 +121,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A jogszabály tiltja a szándékos károkozásért való felelősség előzetes _____.",
-      "hint": "exclusion / kizárás + -át",
-      "answer": "kizárását",
-      "english": "Statutory law prohibits prior exclusion of liability for intentional harm.",
+      "sentence": "A fél mentesül a felelősség _____, ha vis maior okozta a kárt.",
+      "hint": "from under",
+      "answer": "alól",
+      "english": "The party is released from liability if force majeure caused the damage.",
       "teaches": [
-        "c1-liability-exemption"
+        "official-register"
       ]
     },
     {
@@ -134,11 +134,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Melyik állítás fogalmaz meg diplomáciai tárgyalási finomítást (hedging)?",
+      "question": "Melyik mondat kéri udvariasan a feltételek módosítását?",
       "options": [
-        "Bár az ajánlat érdekes, jelenlegi formájában kizárólag a szállítási feltételek átdolgozása esetén tudjuk elfogadni.",
-        "A felajánlott konstrukció elfogadhatósága függ a versenytársak piaci áraitól.",
-        "A feltételek módosítása nélkül is készek vagyunk az azonnali szerződéskötésre."
+        "Bár az ajánlat érdekes, a szállítási feltételeket át kellene gondolnunk.",
+        "A feltételek így elfogadhatatlanok, ezért nem tárgyalunk.",
+        "A feltételek módosítása nélkül is készek vagyunk az azonnali aláírásra."
       ],
       "correct": 0,
       "teaches": [
@@ -152,31 +152,31 @@
       "stage": "produce",
       "tiles": [
         "A",
+        "szöveg",
+        "szerint",
+        "a",
         "szerződéses",
         "hűség",
         "az",
         "emberi",
         "méltóság",
-        "és",
-        "a",
-        "becsület",
         "próbája."
       ],
       "solution": [
         "A",
+        "szöveg",
+        "szerint",
+        "a",
         "szerződéses",
         "hűség",
         "az",
         "emberi",
         "méltóság",
-        "és",
-        "a",
-        "becsület",
         "próbája."
       ],
-      "english": "Contractual fidelity is the test of human dignity and honor.",
+      "english": "According to the text, contractual fidelity is the test of human dignity.",
       "teaches": [
-        "c1-eu-harmonization"
+        "evidentials"
       ]
     },
     {
@@ -186,8 +186,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Draft a formal contractual severability clause in Hungarian.",
-          "answer": "Amennyiben a jelen szerződés bármely rendelkezése érvénytelennek bizonyulna, az nem érinti a fennmaradó rendelkezések érvényességét és hatályát."
+          "prompt": "Write a severability clause: one invalid point does not make the others invalid.",
+          "answer": "Ha a szerződés egyik pontja érvénytelen, ez nem érinti a többi pont érvényességét."
         }
       ],
       "teaches": [
@@ -201,12 +201,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize Sándor Márai's view on contracts and civic responsibility.",
-          "answer": "Márai szerint a polgári társadalom nem a paragrafusok rideg szigorán, hanem az adott szó szentségén és az egyén belső erkölcsi mércéjén nyugszik."
+          "prompt": "Say in one sentence what the text says about contracts and the given word.",
+          "answer": "A szöveg szerint a polgári társadalom az adott szó szentségén és a belső erkölcsi mércén nyugszik."
         }
       ],
       "teaches": [
-        "c1-eu-harmonization"
+        "evidentials"
       ]
     }
   ]

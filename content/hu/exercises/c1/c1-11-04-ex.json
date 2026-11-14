@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan válik egy nemzetközi egyezmény a magyar jog részévé?",
+      "question": "Hogyan lesz egy nemzetközi szerződés a magyar jog része?",
       "options": [
-        "Kihirdetéssel, azaz a parlament által hozott törvénybe iktatással.",
-        "A külügyminiszter kötetlen szóbeli nyilatkozatával a nemzetközi sajtóban.",
-        "A miniszterelnök által kiadott belső közigazgatási utasítással."
+        "Kihirdetik: törvényben vagy kormányrendeletben.",
+        "A külügyminiszter szóban bejelenti a sajtóban.",
+        "A miniszterelnök belső utasítást ad ki róla."
       ],
       "correct": 0,
       "teaches": [
@@ -22,10 +22,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az Alkotmánybíróság megsemmisíti azt a hazai törvényt, amely nemzetközi szerződésbe _____.",
+      "sentence": "Az Alkotmánybíróság vizsgálhatja azt a hazai törvényt, amely nemzetközi szerződésbe _____.",
       "hint": "collides",
       "answer": "ütközik",
-      "english": "The Constitutional Court annuls domestic acts that conflict with international treaties.",
+      "english": "The Constitutional Court can examine a domestic law that conflicts with an international treaty.",
       "teaches": [
         "c1-international-treaty-framing"
       ]
@@ -63,11 +63,11 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "A jogalkotó köteles biztosítani a belső jog és a vállalt nemzetközi kötelezettségek teljes _____.",
-      "hint": "harmony / összhang + -ját",
+      "hint": "harmony, object",
       "answer": "összhangját",
       "english": "The legislator is obligated to ensure full harmony between domestic law and assumed international obligations.",
       "teaches": [
-        "c1-international-treaty-framing"
+        "acc-poss"
       ]
     },
     {
@@ -77,31 +77,31 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "nemzetközi",
-        "emberi",
-        "jogi",
-        "egyezmények",
+        "bíróságnak",
         "a",
         "hazai",
-        "törvények",
-        "felett",
-        "állnak."
+        "jogot",
+        "az",
+        "egyezménnyel",
+        "összhangban",
+        "kell",
+        "értelmeznie."
       ],
       "solution": [
         "A",
-        "nemzetközi",
-        "emberi",
-        "jogi",
-        "egyezmények",
+        "bíróságnak",
         "a",
         "hazai",
-        "törvények",
-        "felett",
-        "állnak."
+        "jogot",
+        "az",
+        "egyezménnyel",
+        "összhangban",
+        "kell",
+        "értelmeznie."
       ],
-      "english": "International human rights conventions stand above domestic statutes.",
+      "english": "The court must interpret domestic law in harmony with the convention.",
       "teaches": [
-        "c1-international-treaty-framing"
+        "inflected-infinitives"
       ]
     },
     {
@@ -112,22 +112,26 @@
       "prompt": [
         {
           "speaker": "Ügyvéd",
-          "text": "Hivatkozhatunk-e a strasbourgi bíróság gyakorlatára a magyar perben?"
+          "text": "Számít a strasbourgi bíróság gyakorlata a magyar perben?"
         },
         {
           "speaker": "Bíró",
-          "text": "Igen, a bíróságok kötelesek a hazai jogot az Emberi Jogok Európai Egyezményével _____ értelmezni."
+          "text": "Igen, a hazai jogot az Egyezménnyel _____ kell értelmezni."
         }
       ],
       "options": [
         "összhangban",
-        "ellentétben",
-        "eltérésben"
+        "összhangba",
+        "összhangra"
       ],
       "correct": 0,
       "teaches": [
-        "c1-international-treaty-framing"
-      ]
+        "ban-ben-in"
+      ],
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "ra-re"
+      }
     },
     {
       "id": "c1-11-04-production-7",
@@ -136,28 +140,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Explain the hierarchy between domestic statutes and international treaties in Hungary.",
-          "answer": "A kihirdetett nemzetközi szerződések a hazai jogforrási hierarchiában a törvények felett állnak; a velük ütköző magyar jogszabályokat az Alkotmánybíróság megsemmisíti."
+          "prompt": "Explain in one sentence how a treaty becomes part of Hungarian law.",
+          "answer": "A nemzetközi szerződés kihirdetéssel válik a magyar jog részévé, és a hazai jogot a vállalt kötelezettségekkel összhangban kell értelmezni."
         }
       ],
       "teaches": [
-        "c1-international-treaty-framing"
+        "valik-verb"
       ]
     },
     {
       "id": "c1-11-04-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mi a jogkövetkezménye annak, ha a strasbourgi bíróság jogsértést állapít meg egy ügyben?",
+      "question": "Mi a jogkövetkezménye annak, ha a strasbourgi bíróság jogsértést állapít meg?",
       "options": [
-        "A magyar állam kártérítést köteles fizetni, és szükség esetén felül kell vizsgálni a hazai eljárást.",
-        "A strasbourgi ítélet automatikusan és visszamenőlegesen megsemmisíti a magyar törvényt.",
-        "Az eljáró magyar bírákat azonnali hatállyal felfüggesztik a tisztségükből."
+        "Az állam kártérítést fizet, és szükség esetén újra vizsgálja az ügyet.",
+        "A strasbourgi ítélet magától megsemmisíti a magyar törvényt, és újat ír.",
+        "A magyar bírák azonnal elveszítik az állásukat, és újakat neveznek ki."
       ],
       "correct": 0,
       "teaches": [
-        "c1-international-treaty-framing"
+        "c1-human-rights-law-vocab"
       ]
     }
   ]

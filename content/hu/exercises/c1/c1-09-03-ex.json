@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevezünk 'morális csapdahelyzetnek' a bioetikában?",
+      "question": "Mit nevezünk 'morális csapdahelyzetnek'?",
       "options": [
-        "Olyan kényszerhelyzetet, ahol minden lehetséges döntés valamilyen alapvető erkölcsi értéket sért.",
-        "Az orvosi hiba gyanúja miatt indult etikai fegyelmi vizsgálatot.",
-        "A klinikai kísérletek engedélyezési eljárásának elhúzódását."
+        "Olyan helyzetet, ahol minden döntés árt valakinek, de dönteni kell.",
+        "Olyan helyzetet, ahol az orvos hibázik, és vizsgálat indul ellene.",
+        "Olyan helyzetet, ahol a kórház nem kap engedélyt egy új gyógyszerre."
       ],
       "correct": 0,
       "teaches": [
@@ -20,14 +20,14 @@
     {
       "id": "c1-09-03-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A járvány idején az orvosoknak feloldhatatlan érték-_____ kellett meghozniuk a lélegeztetőgépek elosztásáról szóló döntést.",
-      "hint": "conflict / konfliktus + -ban",
-      "answer": "konfliktusban",
-      "english": "During the epidemic physicians had to make decisions on the allocation of ventilators in an insoluble conflict of values.",
+      "sentence": "Az orvos _____ van: a beteg életét és a beteg akaratát nem tudja egyszerre védeni.",
+      "hint": "conflict of values",
+      "answer": "értékkonfliktusban",
+      "english": "The doctor is in a conflict of values: he cannot protect the patient's life and the patient's will at the same time.",
       "teaches": [
-        "c1-ethical-quandaries"
+        "c1-bioethics-vocab"
       ]
     },
     {
@@ -60,14 +60,17 @@
     {
       "id": "c1-09-03-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Katasztrófahelyzetben a triage eljárás a két rossz közül a _____ választás kényszerét jelenti.",
-      "hint": "lesser / kis, comparative + -ik",
-      "answer": "kisebbik",
-      "english": "In disaster situations the triage procedure represents the compulsion of choosing the lesser of two evils.",
+      "sentence": "Katasztrófahelyzetben az orvosnak gyakran a két rossz közül a _____ kell választania.",
+      "hint": "smaller, of the two",
+      "english": "In a disaster the doctor often has to choose the lesser of two evils.",
       "teaches": [
-        "c1-ethical-quandaries"
+        "c1-bioethics-vocab"
+      ],
+      "answers": [
+        "kisebbiket",
+        "kisebbet"
       ]
     },
     {
@@ -76,32 +79,32 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "élet",
-        "mentése",
-        "és",
-        "a",
-        "szenvedés",
-        "csillapítása",
-        "néha",
-        "ütközik",
-        "egymással."
+        "Bármelyik",
+        "döntést",
+        "hozza",
+        "is",
+        "az",
+        "orvos,",
+        "erkölcsi",
+        "terhet",
+        "vesz",
+        "magára."
       ],
       "solution": [
-        "Az",
-        "élet",
-        "mentése",
-        "és",
-        "a",
-        "szenvedés",
-        "csillapítása",
-        "néha",
-        "ütközik",
-        "egymással."
+        "Bármelyik",
+        "döntést",
+        "hozza",
+        "is",
+        "az",
+        "orvos,",
+        "erkölcsi",
+        "terhet",
+        "vesz",
+        "magára."
       ],
-      "english": "Saving life and alleviating suffering sometimes collide with each other.",
+      "english": "Whichever decision the doctor makes, he takes on a moral burden.",
       "teaches": [
-        "c1-ethical-quandaries"
+        "concessive-indefinites"
       ]
     },
     {
@@ -112,21 +115,21 @@
       "prompt": [
         {
           "speaker": "Főorvos",
-          "text": "Hogyan döntsünk az egyetlen szabad intenzív ágy sorsáról?"
+          "text": "Hogyan döntsünk az egyetlen szabad ágyról?"
         },
         {
           "speaker": "Etikai felelős",
-          "text": "Kizárólag az objektív orvosi esélyek és az előzetes protokoll alapján, kizárva minden szubjektív _____."
+          "text": "Bármelyik beteget választjuk _____, valakitől elvesszük az esélyt."
         }
       ],
       "options": [
-        "részrehajlást",
-        "együttérzést",
-        "vélekedést"
+        "is",
+        "se",
+        "ugyan"
       ],
       "correct": 0,
       "teaches": [
-        "c1-ethical-quandaries"
+        "concessive-indefinites"
       ]
     },
     {
@@ -136,28 +139,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Describe the ethical dilemma of medical triage during resource scarcity.",
-          "answer": "Extrém erőforrás-szűkösség esetén a triage kényszere feloldhatatlan morális dilemmát teremt: az orvosnak az esélyek alapján kell döntenie anélkül, hogy az emberi élet abszolút értékét relativizálná."
+          "prompt": "Describe the dilemma of choosing who gets the only free bed.",
+          "answer": "Ha egyetlen szabad ágy van, bármelyik beteget választja is az orvos, valaki ellátás nélkül marad, és ez lelkiismereti konfliktust jelent."
         }
       ],
       "teaches": [
-        "c1-ethical-quandaries"
+        "concessive-indefinites"
       ]
     },
     {
       "id": "c1-09-03-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik elv nyújt iránymutatást a bioetikai csapdahelyzetek kezelésében?",
+      "question": "Mi segít az orvosnak egy nehéz döntésben?",
       "options": [
-        "Az előre rögzített, átlátható és diszkriminációmentes szakmai protokollok alkalmazása.",
-        "A szubjektív orvosi intuíció kizárólagos érvényesítése a döntési pillanatban.",
-        "A jogi felelősség áthárítása a sürgősségi ellátást igénybe vevő hozzátartozókra."
+        "Előre megállapított, mindenkire egyformán érvényes szabályok.",
+        "Az orvos pillanatnyi érzése, előre megállapított szabályok nélkül.",
+        "A döntés átadása a hozzátartozóknak, a kórház helyett."
       ],
       "correct": 0,
       "teaches": [
-        "c1-ethical-quandaries"
+        "c1-bioethics-vocab"
       ]
     }
   ]

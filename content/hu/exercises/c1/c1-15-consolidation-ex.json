@@ -6,27 +6,31 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel fejezhetünk ki kivételt vagy korlátozást egy állításban?",
+      "question": "Which phrase states an exception?",
       "options": [
-        "kivéve ha",
-        "minél... annál",
-        "jóllehet... mégis"
+        "kivéve, ha",
+        "minél … annál",
+        "egyrészt … másrészt"
       ],
       "correct": 0,
       "teaches": [
         "felteve-hogy-kiveve-ha"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "correlative-minel-annal",
+        "2": "egyreszt-masreszt"
+      }
     },
     {
       "id": "c1-15-consolidation-2",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen funkciót töltenek be a '-ván/-vén' végű participiumok az akadémiai szövegekben?",
+      "question": "Which participle means 'disregarding'?",
       "options": [
-        "Hipotetikus feltételeket vagy ok-okozati körülményeket sűrítenek elegáns szintaktikai formába.",
-        "Múltbeli befejezett cselekvések passzív vagy szenvedő értelmét fejezik ki az igei állítmányban.",
-        "Jövőbeli elvégzendő kötelességeket vagy szigorú adminisztratív elvárásokat rögzítenek a mondatban."
+        "Eltekintve",
+        "Figyelembe véve",
+        "Összevetve ezt"
       ],
       "correct": 0,
       "teaches": [
@@ -41,23 +45,23 @@
       "pairs": [
         [
           "gradiens-csökkentés",
-          "veszteség minimalizálása"
+          "gradient descent"
         ],
         [
           "látens tér",
-          "többdimenziós reprezentáció"
+          "latent space"
         ],
         [
           "heurisztika",
-          "gyakorlati egyszerűsítés"
+          "heuristic"
         ],
         [
-          "aligha vitathatóan",
-          "kétségtelenül, bizonyosan"
+          "feketedoboz-jelenség",
+          "black-box problem"
         ],
         [
           "nevezetesen",
-          "tudniillik, pontosabban"
+          "namely"
         ]
       ],
       "teaches": [
@@ -69,10 +73,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A modell képtelen volt általánosítani, mert a tanító adatokon súlyos _____ lépett fel.",
+      "sentence": "A modell nem tud új adatokon dolgozni, mert súlyos _____ lépett fel.",
       "hint": "overfitting",
       "answer": "túlilleszkedés",
-      "english": "The model was unable to generalize because severe overfitting occurred on the training data.",
+      "english": "The model cannot work on new data, because severe overfitting occurred.",
       "teaches": [
         "c1-artificial-intelligence-vocab"
       ]
@@ -82,10 +86,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A modern transzformátorok alapja a szövegek többdimenziós vektortérbe történő _____ helyezése.",
-      "hint": "embedding / beágyazás + -a",
-      "answer": "beágyazása",
-      "english": "The foundation of modern transformers is embedding texts into multidimensional vector space.",
+      "sentence": "A nagy nyelvi modell tanítása után jön a _____: a modellt egy feladatra tanítjuk tovább.",
+      "hint": "fine-tuning",
+      "answer": "finomhangolás",
+      "english": "After the training of the large language model comes fine-tuning: we train the model further for one task.",
       "teaches": [
         "c1-artificial-intelligence-vocab"
       ]
@@ -93,18 +97,18 @@
     {
       "id": "c1-15-consolidation-6",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A tanulás zökkenőmentes volt, _____ annyiban, hogy az adatbázis tisztítása sokáig tartott.",
-      "hint": "merely",
-      "english": "The learning was smooth, merely to the extent that cleaning the database took a long time.",
+      "sentence": "A tanulás jó volt, _____ annyi volt a gond, hogy sok adat kellett hozzá.",
+      "hint": "only",
+      "english": "The training was good; the only problem was that it needed a lot of data.",
       "teaches": [
-        "felteve-hogy-kiveve-ha"
+        "c1-artificial-intelligence-vocab"
       ],
       "answers": [
         "mindössze",
-        "pusztán",
-        "csupán"
+        "csupán",
+        "pusztán"
       ]
     },
     {
@@ -112,15 +116,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "_____ a gépi modellek exponenciális növekedését, az energiafogyasztás drasztikusan meg fog nőni.",
-      "hint": "Assuming",
-      "english": "Assuming the exponential growth of machine models, energy consumption will increase drastically.",
+      "sentence": "_____ az ismeretlen adatokat, a modell sokszor téved.",
+      "hint": "to take into account, adverbial participle",
+      "english": "Taking the unknown data into account, the model is often wrong.",
       "teaches": [
         "participle-actions"
       ],
       "answers": [
-        "Feltételezvén",
-        "Feltételezve"
+        "Figyelembe véve",
+        "Számításba véve"
       ]
     },
     {
@@ -128,10 +132,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minél nagyobb a tanító adathalmaz mérete, _____ pontosabbak az algoritmus predikciói.",
-      "hint": "minél … ___",
+      "sentence": "Minél nagyobb a tanító adathalmaz, _____ pontosabb a modell.",
+      "hint": "the more … the (correlative)",
       "answer": "annál",
-      "english": "The larger the size of the training dataset, the more accurate the algorithm's predictions are.",
+      "english": "The larger the training dataset, the more accurate the model.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -139,18 +143,15 @@
     {
       "id": "c1-15-consolidation-9",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "reading",
       "stage": "context",
-      "question": "Hogyan értékelte Neumann János az idegrendszer hibatűrését?",
+      "question": "A szöveg szerint mit gondolt Neumann az agyról?",
       "options": [
-        "Felismerte, hogy a biológiai agy sztochasztikus működése dacára képes megőrizni globális stabilitását.",
-        "Azt feltételezte, hogy az emberi agy szigorúan determinisztikus Boole-algebrát valósít meg.",
-        "Úgy érvelt, hogy a mesterséges áramkörök hibatűrése eleve felülmúlja az élő neuronhálózatokét."
+        "Szerinte az agy lassú, de sok dolgot csinál egyszerre.",
+        "Szerinte az agy gyors a számolásban, a gép pedig lassú.",
+        "Szerinte az agy digitális jeleket használ, analógot nem."
       ],
-      "correct": 0,
-      "teaches": [
-        "c1-adv-nominal-appositive-structures"
-      ]
+      "correct": 0
     },
     {
       "id": "c1-15-consolidation-10",
@@ -159,31 +160,19 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "mesterséges",
-        "intelligencia",
-        "fejlődése",
-        "aligha",
-        "vitathatóan",
-        "új",
-        "társadalmi",
-        "paradigmát",
-        "teremt."
+        "modell",
+        "vélhetően",
+        "túlilleszkedett."
       ],
       "solution": [
         "A",
-        "mesterséges",
-        "intelligencia",
-        "fejlődése",
-        "aligha",
-        "vitathatóan",
-        "új",
-        "társadalmi",
-        "paradigmát",
-        "teremt."
+        "modell",
+        "vélhetően",
+        "túlilleszkedett."
       ],
-      "english": "The advancement of artificial intelligence indisputably creates a new social paradigm.",
+      "english": "The model has presumably overfitted.",
       "teaches": [
-        "epistemic-modality"
+        "epistemic-hedging"
       ]
     },
     {
@@ -193,12 +182,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of black-box AI in institutional governance.",
-          "answer": "A feketedoboz-jelenség az intézményi döntéshozatalban aligha vitathatóan veszélyezteti a demokratikus elszámoltathatóságot, kivéve ha kötelező magyarázhatósági és emberi felülbírálati garanciákat építünk be a rendszerbe."
+          "prompt": "Write a sentence about a black-box model with *kivéve, ha*.",
+          "answer": "A modellben nem bízunk, kivéve, ha meg tudjuk magyarázni a döntéseit."
         }
       ],
       "teaches": [
-        "felteve-hogy-kiveve-ha"
+        "c1-artificial-intelligence-vocab"
       ]
     },
     {
@@ -208,12 +197,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a reflection on John von Neumann's computational legacy.",
-          "answer": "Neumann János 'A számítógép és az agy' című műve mindmáig eleven tanúságtétel amellett, hogy a technológiai innováció legmélyebb forrása a biológiai komplexitás alázatos tanulmányozása."
+          "prompt": "Write one sentence about what the text says on the brain and the computer.",
+          "answer": "A szöveg szerint az agy lassabb, mint a gép, de sok dolgot csinál egyszerre."
         }
       ],
       "teaches": [
-        "c1-adv-nominal-appositive-structures"
+        "c1-artificial-intelligence-vocab"
       ]
     }
   ]

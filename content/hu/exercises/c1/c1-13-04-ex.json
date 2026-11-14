@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miben különbözik a 'maginfláció' a főmutatóként közzétett fogyasztói árindextől?",
+      "question": "What is *maginfláció* (core inflation)?",
       "options": [
-        "Kiszűri a hektikusan ingadozó élelmiszer- és energiaárak közvetlen hatását, feltárva a fundamentális trendeket.",
-        "Kizárólag az ipari termelői árak havi bázisú változását összegzi a szolgáltatások nélkül.",
-        "A hatósági árszabályozás alá eső termékek árváltozását tükrözi a szabadpiaci termékekkel szemben."
+        "Az infláció az élelmiszerek és az energia ára nélkül.",
+        "Az infláció csak az élelmiszerek és a ruhák árával.",
+        "Az infláció a szolgáltatások és az energia ára nélkül."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A jegybank legfőbb kihívása az inflációs várakózások tartós _____ volt az ár-bér spirál elkerülése végett.",
-      "hint": "anchoring / lehorgonyzás + -a",
+      "sentence": "A jegybank legfontosabb célja a várakozások _____.",
+      "hint": "lehorgonyzás, anchoring, 3sg possessive",
       "answer": "lehorgonyzása",
-      "english": "The central bank's greatest challenge was the durable anchoring of inflation expectations to avoid a price-wage spiral.",
+      "english": "The central bank's most important aim is the anchoring of expectations.",
       "teaches": [
-        "c1-inflationary-expectations"
+        "3rd-person-possessive"
       ]
     },
     {
@@ -45,8 +45,8 @@
           "price-wage spiral"
         ],
         [
-          "dezinfláció",
-          "disinflation"
+          "keresleti nyomás",
+          "demand-pull pressure"
         ],
         [
           "költségoldali sokk",
@@ -60,14 +60,14 @@
     {
       "id": "c1-13-04-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A vállalatok agresszív év eleji _____ jelentős mértékben késleltette az infláció mérséklődését.",
-      "hint": "repricing / átárazás + -a",
-      "answer": "átárazása",
-      "english": "The aggressive early-year repricing by enterprises significantly delayed the easing of inflation.",
+      "sentence": "Az év eleji _____ miatt az árak gyorsan nőttek.",
+      "hint": "repricing",
+      "answer": "átárazás",
+      "english": "Because of the repricing at the start of the year, prices rose quickly.",
       "teaches": [
-        "c1-inflationary-expectations"
+        "c1-macroeconomics-vocab"
       ]
     },
     {
@@ -77,29 +77,27 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "dezinfláció",
-        "ütemét",
-        "a",
-        "nyersanyagárak",
-        "csökkenése",
+        "bérek",
+        "nőnek,",
+        "ami",
+        "az",
+        "árakat",
         "is",
-        "érdemben",
-        "támogatta."
+        "növeli."
       ],
       "solution": [
         "A",
-        "dezinfláció",
-        "ütemét",
-        "a",
-        "nyersanyagárak",
-        "csökkenése",
+        "bérek",
+        "nőnek,",
+        "ami",
+        "az",
+        "árakat",
         "is",
-        "érdemben",
-        "támogatta."
+        "növeli."
       ],
-      "english": "The pace of disinflation was also substantially supported by falling commodity prices.",
+      "english": "Wages rise, which also raises prices.",
       "teaches": [
-        "c1-inflationary-expectations"
+        "relative-clauses-aki-ami-amely"
       ]
     },
     {
@@ -110,21 +108,20 @@
       "prompt": [
         {
           "speaker": "Elemző",
-          "text": "Fennáll-e még a veszélye egy újabb inflációs hullámnak?"
+          "text": "Az árak már nem nőnek olyan gyorsan."
         },
         {
           "speaker": "Közgazdász",
-          "text": "Amennyiben a bérnövekedés üteme elszakad a termelékenységtől, kialakulhat az _____ spirál."
+          "text": "Igen, ez a _____: az infláció lassabb, de az árak még nőnek."
         }
       ],
       "options": [
-        "ár-bér",
-        "likviditási",
-        "árfolyam-"
+        "dezinfláció",
+        "defláció"
       ],
       "correct": 0,
       "teaches": [
-        "c1-inflationary-expectations"
+        "c1-macroeconomics-vocab"
       ]
     },
     {
@@ -134,28 +131,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Explain the concept of core inflation in analytical prose.",
-          "answer": "A maginfláció mutatója a szezonális és volatilis tételek kiszűrésével képet ad a gazdaság belső, fundamentális árdinamikájáról, segítve a jegybanki kamatdöntések megalapozását."
+          "prompt": "Explain core inflation (*maginfláció*) in one sentence.",
+          "answer": "A maginfláció az élelmiszerek és az energia ára nélkül mutatja az árak változását."
         }
       ],
       "teaches": [
-        "c1-inflationary-expectations"
+        "c1-macroeconomics-vocab"
       ]
     },
     {
       "id": "c1-13-04-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mit jelent a dezinfláció a gazdasági nyelvben?",
+      "question": "What is a *költségoldali sokk* (cost-push shock)?",
       "options": [
-        "Az infláció rátájának lassulását és az áremelkedési ütem mérséklődését.",
-        "Az árak általános és folyamatos csökkenését (deflációt).",
-        "A pénzforgalom azonnali leállását."
+        "A cégek költsége hirtelen nő, ezért az árak is nőnek.",
+        "Az emberek hirtelen többet vesznek, ezért az árak nőnek.",
+        "A kormány hirtelen kisebb adót kér, ezért az árak nőnek."
       ],
       "correct": 0,
       "teaches": [
-        "c1-inflationary-expectations"
+        "c1-macroeconomics-vocab"
       ]
     }
   ]

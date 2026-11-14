@@ -6,31 +6,35 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen kötőszóval fejezhetünk ki kifinomult ellentétes megengedést?",
+      "question": "Which phrase grants a point?",
       "options": [
-        "mindazonáltal / annak dacára, hogy",
-        "azért, hogy / abból a célból",
-        "amikor / mihelyt"
+        "annak ellenére, hogy",
+        "abból a célból, hogy",
+        "abban az esetben, ha"
       ],
       "correct": 0,
       "teaches": [
         "concessive-annak-ellenere"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "azert-hogy-purpose",
+        "2": "ha-clause"
+      }
     },
     {
       "id": "c1-16-consolidation-2",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Mit fejez ki a '-andó/-endő' participium az adminisztratív vagy jogi stílusban?",
+      "question": "What does the form *tisztázandó* express?",
       "options": [
-        "Szükségszerűséget, elvégzendő kötelességet vagy szigorú elvárást.",
-        "Egyidejűleg lezajló folyamatos cselekvést vagy tartós állapotot.",
-        "Feltételes módban megfogalmazott szubjektív kívánságot."
+        "Azt, hogy valamit még meg kell tenni.",
+        "Azt, hogy valamit már megtettek.",
+        "Azt, hogy valaki szeretne valamit tenni."
       ],
       "correct": 0,
       "teaches": [
-        "agentless-constructions"
+        "future-participle-ando"
       ]
     },
     {
@@ -41,23 +45,23 @@
       "pairs": [
         [
           "deliberatív demokrácia",
-          "racionális párbeszédre épülő rend"
+          "deliberative democracy"
         ],
         [
           "retorikai keretezés",
-          "értelmezési keret tudatos kialakítása"
+          "framing"
         ],
         [
           "közérdekű adat",
-          "nyilvános állami információ"
+          "data of public interest"
         ],
         [
           "állítólag",
-          "feltételezett, nem megerősített"
+          "allegedly"
         ],
         [
           "politikai hisztéria",
-          "félelmen alapuló társadalmi reakció"
+          "political hysteria"
         ]
       ],
       "teaches": [
@@ -69,10 +73,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A vitában a demagóg fél klasszikus érvelési _____ esett, amikor személyében támadta ellenfelét.",
-      "hint": "fallacy / hiba + -ba",
-      "answer": "hibába",
-      "english": "In the debate the demagogic party committed a classic argumentative fallacy when attacking his opponent personally.",
+      "sentence": "A vitában a személyes támadás nem érv: ez klasszikus érvelési _____.",
+      "hint": "fallacy",
+      "answer": "hiba",
+      "english": "In a debate a personal attack is not an argument: it is a classic fallacy.",
       "teaches": [
         "c1-public-sphere-vocab"
       ]
@@ -82,10 +86,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Bibó szerint a kelet-európai politika legnagyobb rákfenéje a félelem és a hamis _____ eluralkodása.",
+      "sentence": "A szöveg szerint a félelem és a hamis _____ torzítja a közéletet.",
       "hint": "realism",
       "answer": "realizmus",
-      "english": "According to Bibó, the greatest cancer of Eastern European politics is the prevalence of fear and false realism.",
+      "english": "According to the text, fear and false realism distort public life.",
       "teaches": [
         "c1-public-sphere-vocab"
       ]
@@ -95,10 +99,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A vádak súlyosak, _____ dacára, hogy a vádlott mindent tagadott a bíróság előtt.",
-      "hint": "az + -nak",
-      "answer": "annak",
-      "english": "The charges are severe, in spite of the fact that the defendant denied everything before the court.",
+      "sentence": "_____ ellenére, hogy a vita heves volt, az érvek számítottak.",
+      "hint": "that (the pronoun before *ellenére*)",
+      "answer": "Annak",
+      "english": "Although the debate was heated, the arguments counted.",
       "teaches": [
         "concessive-annak-ellenere"
       ]
@@ -108,12 +112,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A feltárt visszaélések haladéktalan kivizsgálásra _____ az igazságszolgáltatásban.",
-      "hint": "require / szorul + -nak",
+      "sentence": "A hibák kivizsgálásra _____.",
+      "hint": "szorul, 3pl",
       "answer": "szorulnak",
-      "english": "The uncovered malpractices require immediate investigation in the justice system.",
+      "english": "The errors need investigation.",
       "teaches": [
-        "agentless-constructions"
+        "verb-government-ra-re"
       ]
     },
     {
@@ -121,12 +125,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minden jel _____ a kiszivárogtatott dokumentumok hitelesek.",
+      "sentence": "Minden jel _____ a dokumentumok hitelesek.",
       "hint": "according to",
-      "answer": "szerint",
-      "english": "By all indications, the leaked documents are authentic.",
+      "english": "By all indications, the documents are authentic.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "szerint",
+        "alapján"
       ]
     },
     {
@@ -134,11 +141,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mit fejez ki a 'Vajon mi másra utalhatna...' szerkezet egy politikai vitában?",
+      "question": "What does a rhetorical question do?",
       "options": [
-        "Egy költői, deliberatív kérdést, amely logikailag egyetlen elkerülhetetlen következtetésre vezeti rá a hallgatót.",
-        "Egy nyitott és pártatlan érdeklődést, amely a vitapartner véleményét kéri ki további érvek megfontolására.",
-        "Egy bizonytalan beismerést, amellyel a szónok saját felkészületlenségét és tévedéseit mentegeti."
+        "A hallgatót egy következtetés felé vezeti.",
+        "Nyitott kérdést tesz fel a vitapartnernek.",
+        "A szónok bizonytalanságát mutatja."
       ],
       "correct": 0,
       "teaches": [
@@ -152,27 +159,25 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "szabad",
-        "nyilvánosság",
-        "a",
-        "jogállami",
-        "demokrácia",
-        "legfőbb",
-        "védőbástyája."
+        "javaslat",
+        "nem",
+        "hibátlan,",
+        "mindazonáltal",
+        "fontos",
+        "előrelépés."
       ],
       "solution": [
         "A",
-        "szabad",
-        "nyilvánosság",
-        "a",
-        "jogállami",
-        "demokrácia",
-        "legfőbb",
-        "védőbástyája."
+        "javaslat",
+        "nem",
+        "hibátlan,",
+        "mindazonáltal",
+        "fontos",
+        "előrelépés."
       ],
-      "english": "The free public sphere is the foremost bastion of constitutional democracy.",
+      "english": "The proposal is not flawless, nevertheless it is an important step forward.",
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ]
     },
     {
@@ -182,12 +187,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a synthesized reflection on István Bibó's political diagnostic.",
-          "answer": "Bibó István diagnózisa mindmáig időszerű figyelmeztetés: a politikai hisztéria és a félelem kultúrája elsorvasztja a szabad nyilvánosságot, amelynek helyreállítása megköveteli az állampolgári autonómiát és az erkölcsi bátorságot."
+          "prompt": "Write one sentence about what the text says on fear and public life.",
+          "answer": "A szöveg szerint a félelem és a hamis realizmus torzítja a közéletet."
         }
       ],
       "teaches": [
-        "participle-actions"
+        "c1-public-sphere-vocab"
       ]
     },
     {
@@ -197,12 +202,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a statement on freedom of information and public accountability.",
-          "answer": "A közpénzek elköltésének átláthatósága és a közérdekű adatok szabad megismerhetősége olyan alapjog, amely nem szorulhat háttérbe semmilyen politikai hatalmi érdekkel szemben."
+          "prompt": "Write a sentence about public spending with *szorul*.",
+          "answer": "A közpénzek elköltésének átláthatósága fontos, a hibák kivizsgálásra szorulnak."
         }
       ],
       "teaches": [
-        "agentless-constructions"
+        "c1-public-sphere-vocab"
       ]
     }
   ]

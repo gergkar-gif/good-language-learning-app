@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit rögzít az 'érvénytelenségi záradék' (severability clause) egy szerződésben?",
+      "question": "Mit mond ki az 'érvénytelenségi záradék'?",
       "options": [
-        "Hogy egyetlen pont érvénytelensége nem teszi érvénytelenné az egész szerződést.",
-        "Hogy a szerződés bármely kikötésének vitatása a teljes megállapodás automatikus megszűnését vonja maga után.",
-        "Hogy a felek lemondanak a bírósági jogérvényesítés lehetőségéről jogvita esetén."
+        "Ha egy pont érvénytelen, a szerződés többi része érvényes marad.",
+        "Ha egy pont vitatott, az egész szerződés azonnal megszűnik.",
+        "Ha vita van, a felek nem mehetnek bíróságra."
       ],
       "correct": 0,
       "teaches": [
@@ -22,10 +22,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szerződő felek kölcsönösen és egybehangzóan _____ az alábbi feltételekben.",
-      "hint": "agree / megállapodik + -nak",
+      "sentence": "A szerződő felek kölcsönösen _____ a vételár összegében.",
+      "hint": "to agree, 3pl",
       "answer": "megállapodnak",
-      "english": "The contracting parties mutually and concurrently agree on the following conditions.",
+      "english": "The contracting parties mutually agree on the amount of the purchase price.",
       "teaches": [
         "official-register"
       ]
@@ -63,7 +63,7 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "A jelen szerződés mellékletei annak elválaszthatatlan részét _____.",
-      "hint": "form / képez + -ik",
+      "hint": "to form, 3pl, definite",
       "answer": "képezik",
       "english": "The annexes of the present contract form an inseparable part thereof.",
       "teaches": [
@@ -78,9 +78,9 @@
       "tiles": [
         "A",
         "felek",
-        "jogvitáikat",
-        "elsődlegesen",
-        "békés",
+        "a",
+        "vitás",
+        "kérdéseket",
         "tárgyalások",
         "útján",
         "rendezik."
@@ -88,14 +88,14 @@
       "solution": [
         "A",
         "felek",
-        "jogvitáikat",
-        "elsődlegesen",
-        "békés",
+        "a",
+        "vitás",
+        "kérdéseket",
         "tárgyalások",
         "útján",
         "rendezik."
       ],
-      "english": "The parties settle their legal disputes primarily through peaceful negotiations.",
+      "english": "The parties settle the disputed questions through negotiations.",
       "teaches": [
         "official-register"
       ]
@@ -108,21 +108,21 @@
       "prompt": [
         {
           "speaker": "Jogtanácsos",
-          "text": "Mikor tekinthető a megrendelés teljesítettnek?"
+          "text": "Mikor tekinthető teljesítettnek a megrendelés?"
         },
         {
           "speaker": "Projektvezető",
-          "text": "Kizárólag az átadás-átvételi jegyzőkönyv mindkét fél általi _____ után."
+          "text": "Az átadás-átvételi jegyzőkönyv mindkét fél _____ után."
         }
       ],
       "options": [
         "aláírása",
-        "visszavonása",
-        "módosítása"
+        "aláírás",
+        "aláírni"
       ],
       "correct": 0,
       "teaches": [
-        "official-register"
+        "3rd-person-possessive"
       ]
     },
     {
@@ -132,8 +132,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a formal contractual clause defining a binding obligation.",
-          "answer": "A vállalkozó kifejezett kötelezettséget vállal arra, hogy a munkálatokat a műszaki leírásnak megfelelően, határidőre elvégzi."
+          "prompt": "Write a formal clause: the contractor undertakes a binding obligation.",
+          "answer": "A vállalkozó kötelezettséget vállal arra, hogy a munkát a szerződésnek megfelelően, határidőre elvégzi."
         }
       ],
       "teaches": [
@@ -145,11 +145,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik mondat alkalmaz szabályos jogi megfogalmazást szerződéskötéskor?",
+      "question": "Melyik mondat illik egy szerződésbe?",
       "options": [
-        "A szerződés a felek cégszerű aláírásának napján lép hatályba.",
-        "A szerződés érvényességét a felek kötetlen szóbeli megállapodása is teljeskörűen megalapozza.",
-        "A megállapodás joghatásai kizárólag a hatósági jóváhagyást követő adóévben állnak be."
+        "A szerződés a felek aláírásának napján lép hatályba.",
+        "A szerződés akkor lép hatályba, ha az egyik fél úgy érzi.",
+        "A szerződés hatályba lépéséről a felek majd valamikor megegyeznek."
       ],
       "correct": 0,
       "teaches": [

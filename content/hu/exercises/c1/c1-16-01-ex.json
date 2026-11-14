@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'deliberatív demokrácia' fogalma a politikatudományban?",
+      "question": "What is *deliberatív demokrácia* (deliberative democracy)?",
       "options": [
-        "Olyan döntéshozatali modellt, amelyben a politikai döntések érvényességét a polgárok közötti racionális, egyenlő és nyílt vita adja.",
-        "A közvetlen népszavazásokra épülő modellt, amely előzetes nyilvános vita nélkül, kizárólag a többségi szavazatok arányára támaszkodik.",
-        "A technokrata szakértői kormányzást, amelyben a döntések zárt szakmai testületekben születnek a választók bevonása nélkül."
+        "A döntést a polgárok nyílt vitája készíti elő, jó érvekkel.",
+        "A döntést a polgárok népszavazáson hozzák meg vita nélkül.",
+        "A szakértők döntenek zárt ajtók mögött, a polgárok nélkül."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A politikai polarizáció rendkívül mély, _____ a kompromisszumos megoldás nem lehetetlen.",
+      "sentence": "A vita heves volt, _____ a felek meghallgatták egymást.",
       "hint": "nevertheless",
-      "english": "Political polarization is extremely deep, nevertheless a compromise solution is not impossible.",
+      "english": "The debate was heated, nevertheless the parties listened to each other.",
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ],
       "answers": [
         "mindazonáltal",
-        "mindamellett",
-        "ennek ellenére"
+        "ennek ellenére",
+        "mégis"
       ]
     },
     {
@@ -42,19 +42,19 @@
       "pairs": [
         [
           "konszenzuskeresés",
-          "közös megegyezés célja"
+          "consensus seeking"
         ],
         [
           "racionális diskurzus",
-          "észérveken alapuló párbeszéd"
+          "rational discourse"
         ],
         [
           "érvelési hiba",
-          "logikai tévedés a vitában"
+          "fallacy"
         ],
         [
           "elszámoltathatóság",
-          "hatalom felelősségre vonhatósága"
+          "accountability"
         ]
       ],
       "teaches": [
@@ -66,12 +66,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "_____ dacára, hogy a részvétel alacsony volt, a konzultáció eredménye tanulságosnak bizonyult.",
-      "hint": "az + -nak",
-      "answer": "Annak",
-      "english": "In spite of the fact that participation was low, the outcome of the consultation proved instructive.",
+      "sentence": "Annak _____, hogy a részvétel alacsony volt, a konzultáció hasznos volt.",
+      "hint": "despite",
+      "english": "Although participation was low, the consultation was useful.",
       "teaches": [
         "concessive-annak-ellenere"
+      ],
+      "answers": [
+        "ellenére",
+        "dacára"
       ]
     },
     {
@@ -81,31 +84,29 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "demokratikus",
-        "nyilvánosság",
-        "alapfeltétele",
+        "vita",
+        "heves",
+        "volt,",
+        "mindazonáltal",
         "a",
-        "vélemények",
-        "szabad",
-        "és",
-        "egyenlő",
-        "ütköztetése."
+        "felek",
+        "meghallgatták",
+        "egymást."
       ],
       "solution": [
         "A",
-        "demokratikus",
-        "nyilvánosság",
-        "alapfeltétele",
+        "vita",
+        "heves",
+        "volt,",
+        "mindazonáltal",
         "a",
-        "vélemények",
-        "szabad",
-        "és",
-        "egyenlő",
-        "ütköztetése."
+        "felek",
+        "meghallgatták",
+        "egymást."
       ],
-      "english": "The precondition of the democratic public sphere is the free and equal clash of opinions.",
+      "english": "The debate was heated, nevertheless the parties listened to each other.",
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ]
     },
     {
@@ -116,21 +117,20 @@
       "prompt": [
         {
           "speaker": "Politológus",
-          "text": "Hogyan mérhető a társadalmi vita minősége egy modern államban?"
+          "text": "Mitől jó egy közéleti vita?"
         },
         {
           "speaker": "Szociológus",
-          "text": "Nem a hangos jelszavak száma, hanem a résztvevők közötti érvelési _____ és kölcsönös tisztelet alapján."
+          "text": "A jó vita alapja a jó érvek és a kölcsönös _____."
         }
       ],
       "options": [
-        "fegyelem",
-        "zavar",
-        "ellentét"
+        "tisztelet",
+        "félelem"
       ],
       "correct": 0,
       "teaches": [
-        "concessive-annak-ellenere"
+        "c1-public-sphere-vocab"
       ]
     },
     {
@@ -140,12 +140,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a concessive sentence on deliberative democracy.",
-          "answer": "Ámbár a társadalmi egyeztetések lefolytatása jelentős időbeli és anyagi ráfordítást követel meg, mindazonáltal a döntések tartós legitimitása kárpótolja a döntéshozókat."
+          "prompt": "Write a sentence about a public debate with *mindazonáltal*.",
+          "answer": "A vita heves volt, mindazonáltal a felek közös megoldást találtak."
         }
       ],
       "teaches": [
-        "concessive-annak-ellenere"
+        "c1-public-sphere-vocab"
       ]
     },
     {
@@ -153,15 +153,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik mondat alkalmaz helyesen megengedő kötőszót emelkedett politikai szövegben?",
+      "question": "Which word means 'nevertheless'?",
       "options": [
-        "A tárgyalások megfeneklettek, mindazonáltal a felek nyitottak maradtak a közvetítésre.",
-        "A tárgyalások megfeneklettek, miközben a felek nyitottak maradtak a közvetítésre.",
-        "A tárgyalások megfeneklettek, miután a felek nyitottak maradtak a közvetítésre."
+        "mindazonáltal",
+        "következésképpen",
+        "ennélfogva"
       ],
       "correct": 0,
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ]
     }
   ]

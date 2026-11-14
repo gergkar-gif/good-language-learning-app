@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Melyik szerv képezi a gazdasági társaság legfőbb döntéshozó testületét?",
+      "question": "Melyik a társaság legfőbb szerve?",
       "options": [
-        "A részvényesek vagy tagok közgyűlése.",
-        "A felügyelőbizottság elnöke és a könyvvizsgáló közösen.",
-        "Az operatív irányításért felelős ügyvezető igazgatóság."
+        "A tulajdonosok közgyűlése.",
+        "A felügyelőbizottság elnöke egyedül.",
+        "Az igazgatóság titkára és az egyik alkalmazott."
       ],
       "correct": 0,
       "teaches": [
@@ -20,14 +20,14 @@
     {
       "id": "c1-10-04-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A vezető tisztségviselő köteles eljárása során a társaság és a hitelezők érdekeit szem előtt tartani a jogszabályi _____ szellemében.",
+      "sentence": "A vezető tisztségviselő köteles eljárni a jogszabályi _____ szellemében.",
       "hint": "compliance",
       "answer": "megfelelés",
-      "english": "In his conduct the executive officer is obligated to keep the interests of the company and creditors in mind in the spirit of statutory compliance.",
+      "english": "The executive officer must act in the spirit of statutory compliance.",
       "teaches": [
-        "c1-corporate-governance"
+        "c1-contracts-negotiation-vocab"
       ]
     },
     {
@@ -60,14 +60,14 @@
     {
       "id": "c1-10-04-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A közgyűlés kizárólagos hatáskörébe tartozik a társasági _____ módosítása.",
+      "sentence": "A közgyűlés hatáskörébe tartozik a társasági _____ módosítása.",
       "hint": "articles of association",
       "answer": "szerződés",
-      "english": "Modification of the articles of association falls within the exclusive competence of the general meeting.",
+      "english": "Changing the articles of association falls within the competence of the general meeting.",
       "teaches": [
-        "c1-corporate-governance"
+        "c1-contracts-negotiation-vocab"
       ]
     },
     {
@@ -97,7 +97,7 @@
       ],
       "english": "The executive officer is liable for damages caused.",
       "teaches": [
-        "c1-corporate-governance"
+        "verb-government-ert"
       ]
     },
     {
@@ -108,21 +108,21 @@
       "prompt": [
         {
           "speaker": "Részvényes",
-          "text": "Hány százalék szükséges az alapszabály módosításához?"
+          "text": "Ki dönt a társasági szerződés módosításáról?"
         },
         {
           "speaker": "Társasági jogász",
-          "text": "A törvény értelmében háromnegyedes _____ többség szükséges."
+          "text": "A közgyűlés dönt _____."
         }
       ],
       "options": [
-        "szavazati",
-        "személyi",
-        "időbeli"
+        "róla",
+        "neki",
+        "vele"
       ],
       "correct": 0,
       "teaches": [
-        "c1-corporate-governance"
+        "verb-government-rol-rel"
       ]
     },
     {
@@ -132,28 +132,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Draft a formal corporate resolution approving an annual financial report.",
-          "answer": "A Közgyűlés egyhangúlag elfogadja a társaság előző üzleti évről szóló számviteli beszámolóját és adózott eredményének felosztását."
+          "prompt": "Write a formal resolution that approves the company's financial report.",
+          "answer": "A közgyűlés elfogadja a társaság múlt évi pénzügyi beszámolóját."
         }
       ],
       "teaches": [
-        "c1-corporate-governance"
+        "official-register"
       ]
     },
     {
       "id": "c1-10-04-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Milyen kötelezettség terheli a vezető tisztségviselőt összeférhetetlenség esetén?",
+      "question": "Mit kell tennie az igazgatónak, ha a döntés a saját érdekét is érinti?",
       "options": [
-        "Köteles bejelenteni az érdekeltségét, és tartózkodni az érintett döntéshozatalban való részvételtől.",
-        "Kizárólag a pénzügyi beszámoló éves elfogadásakor köteles utólag tájékoztatni a tulajdonosokat.",
-        "Köteles azonnali hatállyal lemondani minden vezetői és munkavállalói tisztségéről."
+        "Be kell jelentenie az érdekeltségét, és nem vehet részt a döntésben.",
+        "Titokban kell tartania az érdekeltségét, és részt kell vennie a döntésben.",
+        "Az érdekeltségét a következő évi beszámolóban kell megemlítenie."
       ],
       "correct": 0,
       "teaches": [
-        "c1-corporate-governance"
+        "c1-contracts-negotiation-vocab"
       ]
     }
   ]

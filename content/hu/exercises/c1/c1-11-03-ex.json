@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent az 'egyetemes joghatóság' (universal jurisdiction) elve a büntetőjogban?",
+      "question": "Mit jelent az 'egyetemes joghatóság'?",
       "options": [
-        "Bármely állam bírósága felelősségre vonhatja a legsúlyosabb nemzetközi bűntettek elkövetőit a tett helyétől függetlenül.",
-        "Kizárólag az elkövetés helye szerinti állam bírósága járhat el a nemzetközi bűncselekményekben.",
-        "A felelősségre vonás joga automatikusan átszáll a sértett állampolgársága szerinti hatóságra."
+        "Egy ország bírósága akkor is dönthet, ha máshol történt a bűncselekmény.",
+        "Az az ország dönt az ügyben, ahol a bűncselekmény történt.",
+        "Az az ország dönt az ügyben, amelynek állampolgára a sértett."
       ],
       "correct": 0,
       "teaches": [
@@ -22,15 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A nemzetközi jog szerint a háborús bűncselekmények el nem _____ tettek, így bármikor büntethetők.",
-      "hint": "imprescriptible / elévül + -ő",
-      "english": "Under international law war crimes are imprescriptible acts, thus punishable at any time.",
+      "sentence": "A háborús bűncselekmények el nem _____ tettek, ezért évek múlva is felelősségre lehet vonni az elkövetőket.",
+      "hint": "to lapse (participle)",
+      "english": "War crimes are acts that never lapse, so the perpetrators can be held to account even years later.",
       "teaches": [
-        "c1-universal-jurisdiction"
+        "present-participle"
       ],
       "answers": [
-        "évülő",
-        "elévülő"
+        "évülő"
       ]
     },
     {
@@ -65,12 +64,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A polgári lakosság elleni szándékos támadás a nemzetközi humanitárius jog legsúlyosabb _____ valósítja meg.",
-      "hint": "violation / sérelem + -ét",
-      "answer": "sérelmét",
-      "english": "Deliberate attack against the civilian population constitutes the gravest violation of international humanitarian law.",
+      "sentence": "A polgári lakosság elleni támadás háborús _____ minősül.",
+      "hint": "crime",
+      "answer": "bűncselekménynek",
+      "english": "An attack on the civilian population counts as a war crime.",
       "teaches": [
-        "c1-universal-jurisdiction"
+        "verb-government-nak-nek"
       ]
     },
     {
@@ -81,30 +80,24 @@
       "tiles": [
         "A",
         "háborús",
-        "bűnösök",
+        "bűncselekmények",
+        "elkövetőit",
         "felelősségre",
-        "vonása",
-        "nemzetközi",
-        "erkölcsi",
-        "és",
-        "jogi",
-        "kötelesség."
+        "kell",
+        "vonni."
       ],
       "solution": [
         "A",
         "háborús",
-        "bűnösök",
+        "bűncselekmények",
+        "elkövetőit",
         "felelősségre",
-        "vonása",
-        "nemzetközi",
-        "erkölcsi",
-        "és",
-        "jogi",
-        "kötelesség."
+        "kell",
+        "vonni."
       ],
-      "english": "Prosecution of war criminals is an international moral and legal duty.",
+      "english": "The perpetrators of war crimes must be held to account.",
       "teaches": [
-        "c1-universal-jurisdiction"
+        "kell-infinitive"
       ]
     },
     {
@@ -115,21 +108,21 @@
       "prompt": [
         {
           "speaker": "Ügyész",
-          "text": "Hivatkozhat-e a vádlott parancsteljesítésre a mészárlás igazolásakor?"
+          "text": "Elég, ha a katona azt mondja: parancsot kaptam?"
         },
         {
           "speaker": "Bíró",
-          "text": "Nem, a nyilvánvalóan jogellenes parancs végrehajtása nem menti fel az egyéni _____ alól."
+          "text": "Nem, a parancs nem szünteti meg az egyéni _____."
         }
       ],
       "options": [
-        "felelősség",
-        "hatáskör",
-        "joghatóság"
+        "felelősséget",
+        "hatáskört",
+        "joghatóságot"
       ],
       "correct": 0,
       "teaches": [
-        "c1-universal-jurisdiction"
+        "c1-human-rights-law-vocab"
       ]
     },
     {
@@ -144,23 +137,23 @@
         }
       ],
       "teaches": [
-        "c1-universal-jurisdiction"
+        "present-participle"
       ]
     },
     {
       "id": "c1-11-03-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik bíróság gyakorol állandó nemzetközi büntető joghatóságot a legsúlyosabb atrocitások felett?",
+      "question": "Melyik bíróság foglalkozik a legsúlyosabb nemzetközi bűntettekkel?",
       "options": [
-        "A hágai Nemzetközi Büntetőbíróság (ICC).",
-        "Az Európai Unió Bírósága (EUB) Luxembourgban.",
+        "A Nemzetközi Büntetőbíróság.",
+        "Az Európai Unió Bírósága Luxembourgban.",
         "A Nemzetközi Tengerjogi Törvényszék Hamburgban."
       ],
       "correct": 0,
       "teaches": [
-        "c1-universal-jurisdiction"
+        "c1-human-rights-law-vocab"
       ]
     }
   ]

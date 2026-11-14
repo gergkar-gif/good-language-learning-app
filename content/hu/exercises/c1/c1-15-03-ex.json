@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a lényege a 'feketedoboz-jelenségnek' (black box) a mesterséges intelligenciában?",
+      "question": "What is the *feketedoboz-jelenség* (black-box problem)?",
       "options": [
-        "Bár a bemenet és a kimenet ismert, a modell belső döntési logikája az emberi elme számára közvetlenül átláthatatlan.",
-        "Hogy a rendszer futás közben folyamatosan zárolja a számítási memóriát az illetéktelen külső hozzáférések ellen.",
-        "Bár a belső súlyok és paraméterek ismertek, a rendszer képtelen új bemenetekre értelmezhető válaszokat adni."
+        "Látjuk, mi megy be és mi jön ki, de a belsejét nem értjük.",
+        "A modell belsejét ismerjük, de a válaszai rosszak.",
+        "A rendszer lezárja a memóriát az idegen hozzáférés ellen."
       ],
       "correct": 0,
       "teaches": [
@@ -22,10 +22,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Minél komplexebbé válik az algoritmus, _____ égetőbb kérdéssé válik a döntések magyarázhatósága.",
-      "hint": "minél … ___",
+      "sentence": "Minél nagyobb a modell, _____ nehezebb megérteni.",
+      "hint": "the more … the (correlative)",
       "answer": "annál",
-      "english": "The more complex the algorithm becomes, the more pressing the explainability of decisions becomes.",
+      "english": "The bigger the model, the harder it is to understand.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -38,19 +38,19 @@
       "pairs": [
         [
           "heurisztika",
-          "gyakorlati egyszerűsítő szabály"
+          "heuristic"
         ],
         [
           "episztemológia",
-          "ismeretelmélet"
+          "epistemology"
         ],
         [
           "magyarázhatóság",
-          "modell belső logikájának feltárhatósága"
+          "explainability"
         ],
         [
-          "szimbolikus MI",
-          "szabályalapú logikai rendszer"
+          "szimbolikus mesterséges intelligencia",
+          "symbolic AI"
         ]
       ],
       "teaches": [
@@ -62,12 +62,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A jelenlegi gépi tanulás nem annyira valódi megértésen, mint _____ statisztikai mintafelismerésen alapul.",
+      "sentence": "A modell jó eredménye nem annyira a szabályokon, mint _____ az adatokon múlik.",
       "hint": "rather",
       "answer": "inkább",
-      "english": "Current machine learning is based not so much on genuine understanding as rather on statistical pattern recognition.",
+      "english": "The good result of the model depends not so much on the rules as rather on the data.",
       "teaches": [
-        "correlative-minel-annal"
+        "inkabb-mint"
       ]
     },
     {
@@ -76,26 +76,26 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "magyarázható",
-        "mesterséges",
-        "intelligencia",
+        "Minél",
+        "több",
+        "az",
+        "adat,",
+        "annál",
+        "jobb",
         "a",
-        "bizalom",
-        "elengedhetetlen",
-        "előfeltétele."
+        "modell."
       ],
       "solution": [
-        "A",
-        "magyarázható",
-        "mesterséges",
-        "intelligencia",
+        "Minél",
+        "több",
+        "az",
+        "adat,",
+        "annál",
+        "jobb",
         "a",
-        "bizalom",
-        "elengedhetetlen",
-        "előfeltétele."
+        "modell."
       ],
-      "english": "Explainable artificial intelligence is the indispensable prerequisite of trust.",
+      "english": "The more data, the better the model.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -108,22 +108,24 @@
       "prompt": [
         {
           "speaker": "Filozófus",
-          "text": "Képes-e egy nagy nyelvi modell valódi fogalmi megértésre?"
+          "text": "Mit számít többet a modellnél?"
         },
         {
-          "speaker": "Kognitív kutató",
-          "text": "Nem annyira intencionalitásról van szó, mint inkább a nyelvi statisztikák virtuóz szintű _____."
+          "speaker": "Kutató",
+          "text": "Nem annyira az adatok mennyisége, mint _____ a minőségük."
         }
       ],
       "options": [
-        "tükrözéséről",
-        "eltitkolásáról",
-        "letöltéséről"
+        "inkább",
+        "annál"
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
-      ]
+        "inkabb-mint"
+      ],
+      "distractor_skills": {
+        "1": "correlative-minel-annal"
+      }
     },
     {
       "id": "c1-15-03-production-7",
@@ -132,12 +134,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a comparative correlative sentence comparing symbolic AI and neural networks.",
-          "answer": "Minél inkább a merev szimbolikus szabályok helyett az adaptív konnekcionista hálózatokra támaszkodunk, annál inkább háttérbe szorul a deduktív bizonyíthatóság a statisztikai valószínűség javára."
+          "prompt": "Write a sentence with *minél … annál* about data and the model.",
+          "answer": "Minél jobb az adat, annál jobb a modell."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "c1-artificial-intelligence-vocab"
       ]
     },
     {
@@ -145,16 +147,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kötőszópár fejez ki arányos összehasonlítást?",
+      "question": "Which pair means 'the more … the more'?",
       "options": [
-        "minél... annál",
-        "noha... mégis",
-        "jóllehet... mindamellett"
+        "minél … annál",
+        "noha … mégis",
+        "egyrészt … másrészt"
       ],
       "correct": 0,
       "teaches": [
         "correlative-minel-annal"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "contrastive-discourse-markers",
+        "2": "egyreszt-masreszt"
+      }
     }
   ]
 }

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen körülmény minősül 'vis maior'-nak a polgári jogban?",
+      "question": "Milyen körülmény minősül 'vis maior'-nak?",
       "options": [
-        "Külső, előre nem látható és elháríthatatlan esemény (pl. természeti katasztrófa, háború).",
-        "A gazdasági társaság belső szervezetében felmerülő működési vagy likviditási nehézség.",
-        "A szerződő felek közötti előre kalkulálható piaci áringadozás vagy keresletcsökkenés."
+        "Külső, előre nem látható és elháríthatatlan esemény, például árvíz.",
+        "A cég saját hibájából kialakult pénzügyi nehézség.",
+        "A piaci árak ismert, szokásos változása a szerződés alatt."
       ],
       "correct": 0,
       "teaches": [
@@ -27,7 +27,7 @@
       "answer": "mentesül",
       "english": "The breaching party is exempted from damage liability if the damage was caused by force majeure.",
       "teaches": [
-        "c1-liability-exemption"
+        "official-register"
       ]
     },
     {
@@ -62,12 +62,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A jogszabály tiltja a szándékos károkozásért vagy emberi élet kioltásáért való felelősség előzetes _____.",
-      "hint": "exclusion / kizárás + -át",
-      "answer": "kizárását",
-      "english": "Statutory law prohibits prior exclusion of liability for intentional harm or loss of human life.",
+      "sentence": "A szerződésben nem lehet előre kizárni a szándékos károkozásért való _____.",
+      "hint": "liability (object)",
+      "answer": "felelősséget",
+      "english": "In a contract one cannot exclude in advance liability for intentional harm.",
       "teaches": [
-        "c1-liability-exemption"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -76,32 +76,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "késedelem",
-        "idejére",
+        "Késedelem",
+        "esetén",
         "a",
         "megrendelő",
-        "napi",
-        "kötbér",
-        "fizetésére",
-        "tarthat",
-        "igényt."
+        "kötbért",
+        "kérhet."
       ],
       "solution": [
-        "A",
-        "késedelem",
-        "idejére",
+        "Késedelem",
+        "esetén",
         "a",
         "megrendelő",
-        "napi",
-        "kötbér",
-        "fizetésére",
-        "tarthat",
-        "igényt."
+        "kötbért",
+        "kérhet."
       ],
-      "english": "For the duration of delay the customer may claim payment of daily liquidated damages.",
+      "english": "In case of delay the customer may demand a penalty.",
       "teaches": [
-        "c1-liability-exemption"
+        "potential-hat-het"
       ]
     },
     {
@@ -112,21 +104,21 @@
       "prompt": [
         {
           "speaker": "Kivitelező",
-          "text": "Felelőssé tehetők vagyunk-e a viharkár miatti csúszásért?"
+          "text": "Mi felelünk azért, hogy a vihar miatt késik a munka?"
         },
         {
           "speaker": "Ügyvéd",
-          "text": "Nem, mert a természeti csapás dokumentált elháríthatatlan külső _____ minősül."
+          "text": "Nem, mert a természeti csapás elháríthatatlan külső _____ számít."
         }
       ],
       "options": [
         "akadálynak",
-        "kötelezettségnek",
-        "érdeknek"
+        "akadály",
+        "akadályt"
       ],
       "correct": 0,
       "teaches": [
-        "c1-liability-exemption"
+        "verb-government-nak-nek"
       ]
     },
     {
@@ -141,23 +133,23 @@
         }
       ],
       "teaches": [
-        "c1-liability-exemption"
+        "official-register"
       ]
     },
     {
       "id": "c1-10-03-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik felelősségkizáró kikötés tekinthető jogilag semmisnek a magyar Ptk. szerint?",
+      "question": "Melyik kikötés nem érvényes a magyar polgári jog szerint?",
       "options": [
-        "A szándékos károkozásért vagy a testi épség megsértéséért való felelősséget kizáró kikötés.",
-        "A hibás teljesítés esetén fizetendő kötbér mértékét korlátozó kikötés.",
-        "A vis maior események bejelentésének határidejét rögzítő eljárási szabály."
+        "Az, amely előre kizárja a szándékos károkozásért való felelősséget.",
+        "Az, amely a kötbér összegét egy meghatározott összegig korlátozza.",
+        "Az, amely határidőt szab a vis maior esemény jelzésére."
       ],
       "correct": 0,
       "teaches": [
-        "c1-liability-exemption"
+        "c1-contracts-negotiation-vocab"
       ]
     }
   ]

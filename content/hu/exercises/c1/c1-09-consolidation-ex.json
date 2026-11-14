@@ -10,7 +10,7 @@
       "options": [
         "kötelessége lett volna megtenni",
         "joga van felülvizsgálni a döntést",
-        "szándékában áll előterjeszteni a javaslatot"
+        "szándékában áll megvizsgálni az esetet"
       ],
       "correct": 0,
       "teaches": [
@@ -20,17 +20,17 @@
     {
       "id": "c1-09-consolidation-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recognize",
       "question": "Mit jelent a 'tájékozott beleegyezés' elve?",
       "options": [
-        "A beteg önrendelkező jogát a kockázatok teljes megismerésén alapuló döntésre.",
-        "A kezelés kötelező végrehajtását tiltakozás ellenére is.",
-        "Az orvos felmentését minden felelősség alól."
+        "A beteg a kockázatok ismeretében dönt a kezelésről.",
+        "A kezelés kötelező végrehajtása tiltakozás ellenére is.",
+        "Az orvos felmentése minden felelősség alól."
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-modality"
+        "c1-bioethics-vocab"
       ]
     },
     {
@@ -101,7 +101,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "Ha a döntéshozók körültekintőbbek lettek volna, a mulasztás elkerülhető _____ volna.",
+      "sentence": "Ha a döntéshozók jobban odafigyeltek volna, a mulasztás elkerülhető _____ volna.",
       "hint": "would have been / lenni, past part",
       "answer": "lett",
       "english": "If decision-makers had been more circumspect the omission would have been avoidable.",
@@ -114,46 +114,41 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Az orvos részéről az adott helyzetben elvárható gondosság elmulasztása súlyos műhibának _____ meg.",
-      "hint": "qualifies",
-      "english": "Failure to provide due care expected of the doctor in the given situation qualifies as severe malpractice.",
+      "sentence": "Az orvos részéről az elvárható gondosság elmulasztása súlyos hibának _____.",
+      "hint": "counts as",
+      "english": "Failing to show the care expected of the doctor counts as a serious mistake.",
       "teaches": [
-        "epistemic-modality"
+        "verb-government-nak-nek"
       ],
-      "answers": [
-        "minősül",
-        "felel"
-      ]
+      "answer": "minősül"
     },
     {
       "id": "c1-09-consolidation-8",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "context",
-      "sentence": "Németh László szerint az orvos nem válhat biológiai technikussá; a teljes ember _____ gondozója.",
-      "hint": "holistic",
-      "english": "According to László Németh the doctor cannot become a biological technician; he is the holistic caretaker of the whole person.",
+      "sentence": "A szöveg szerint az orvosi _____ nem a szabályok rideg betartása, hanem teljes figyelem a beteg iránt.",
+      "hint": "ethos",
+      "english": "According to the text, the healer's ethos is not cold rule-following but complete devotion.",
       "teaches": [
-        "c1-biomedical-discourse"
+        "c1-bioethics-vocab"
       ],
-      "answers": [
-        "holisztikus"
-      ]
+      "answer": "etosz"
     },
     {
       "id": "c1-09-consolidation-9",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "context",
-      "question": "Melyik állítás fogalmazza meg helyesen a bioetikai dilemmák természetét?",
+      "question": "Melyik állítás igaz a bioetikai dilemmákról?",
       "options": [
-        "Erőforrás-szűkösség idején a döntéshozó gyakran kényszerül két rossz közül a kisebbik választására.",
-        "A klinikai protokollok alkalmazása kizárólag a jogi perek elkerülését célozza.",
-        "Az orvosetikai kérdések megoldása minden esetben a bíróságok kizárólagos feladata."
+        "Erőforrás-szűkösség idején az orvosnak gyakran két rossz közül kell választania.",
+        "Erőforrás-szűkösség idején az orvos döntése nem jár erkölcsi teherrel.",
+        "Erőforrás-szűkösség idején az orvosnak nincs lehetősége választani."
       ],
       "correct": 0,
       "teaches": [
-        "c1-ethical-quandaries"
+        "c1-bioethics-vocab"
       ]
     },
     {
@@ -163,29 +158,27 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "beteg",
-        "önrendelkezési",
+        "betegnek",
         "joga",
-        "minden",
-        "orvosi",
-        "beavatkozás",
-        "elidegeníthetetlen",
-        "feltétele."
+        "van",
+        "visszautasítani",
+        "az",
+        "életfenntartó",
+        "kezelést."
       ],
       "solution": [
         "A",
-        "beteg",
-        "önrendelkezési",
+        "betegnek",
         "joga",
-        "minden",
-        "orvosi",
-        "beavatkozás",
-        "elidegeníthetetlen",
-        "feltétele."
+        "van",
+        "visszautasítani",
+        "az",
+        "életfenntartó",
+        "kezelést."
       ],
-      "english": "Patient self-determination is the inalienable condition of every medical intervention.",
+      "english": "The patient has the right to refuse life-sustaining treatment.",
       "teaches": [
-        "c1-patient-autonomy"
+        "building-the-infinitive-the-suffix-ni"
       ]
     },
     {
@@ -195,8 +188,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Draft a retrospective ethical critique of a clinical trial failure.",
-          "answer": "Amennyiben a klinika maradéktalanul betartotta volna a tájékoztatási kötelezettséget, elkerülhető lett volna a páciensek jogainak súlyos sérelme."
+          "prompt": "Write one sentence: what would have been avoided if the hospital had told the patient in time?",
+          "answer": "Ha a kórház időben szólt volna a betegnek, a baj elkerülhető lett volna."
         }
       ],
       "teaches": [
@@ -210,12 +203,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize the core message of Németh László's 'A minőség forradalma'.",
-          "answer": "A gyógyítás nem csupán technológiai beavatkozás, hanem a legmagasabb rendű etikai és emberi felelősségvállalás a másik ember méltóságáért."
+          "prompt": "Say in one sentence what the text about Németh László says about the doctor's work.",
+          "answer": "A szöveg szerint a gyógyítás nem csupán technikai feladat, hanem felelősség az egész emberért."
         }
       ],
       "teaches": [
-        "c1-biomedical-discourse"
+        "evidentials"
       ]
     }
   ]

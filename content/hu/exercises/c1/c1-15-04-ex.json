@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a kockázata az automatizált adatalapú döntéshozatalnak a közszférában?",
+      "question": "What is a risk of automated decisions in administration?",
       "options": [
-        "A történelmi adatokban rejlő társadalmi torzítások (bias) intézményesülése és a jogorvoslat nehézkessége.",
-        "Az adatközpontok energiafogyasztásának hirtelen megnövekedése és a hálózati szerverek túlterhelődése.",
-        "A köztisztviselők szakmai döntési jogkörének szétaprózódása az önkormányzati hivatalok között."
+        "A régi adatok torzítása a döntésekben is megmarad.",
+        "Az irodák számítógépei túl sok áramot használnak.",
+        "A hivatalnokok mindenhol ugyanazt a döntést hozzák."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A prediktív pontozási rendszerek alkalmazása _____ mélyreható átláthatósági kihívásokat vet fel a közigazgatásban.",
-      "hint": "indisputably",
-      "english": "The application of predictive scoring systems indisputably raises profound transparency challenges in public administration.",
+      "sentence": "A pontozási rendszer _____ a régi adatok torzítását is megtanulja.",
+      "hint": "presumably",
+      "english": "The scoring system presumably also learns the bias of the old data.",
       "teaches": [
-        "epistemic-modality"
+        "epistemic-hedging"
       ],
       "answers": [
-        "aligha vitathatóan",
-        "vitathatatlanul",
-        "kétségtelenül"
+        "vélhetően",
+        "feltehetőleg",
+        "minden bizonnyal",
+        "valószínűleg"
       ]
     },
     {
@@ -42,19 +43,19 @@
       "pairs": [
         [
           "prediktív elemzés",
-          "jövőbeli események valószínűségi becslése"
+          "predictive analytics"
         ],
         [
           "kockázatértékelés",
-          "veszélyek felmérése"
+          "risk assessment"
         ],
         [
           "pontozási rendszer",
-          "profilozáson alapuló rangsorolás"
+          "scoring system"
         ],
         [
           "felügyeleti mechanizmus",
-          "külső ellenőrző apparátus"
+          "oversight mechanism"
         ]
       ],
       "teaches": [
@@ -66,17 +67,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az algoritmus döntése _____ a régebbi demográfiai mintákból eredő egyenlőtlenségeket tükrözi.",
-      "hint": "presumably",
-      "english": "The algorithm's decision presumably reflects inequalities stemming from older demographic patterns.",
+      "sentence": "_____ szigorúbb ellenőrzésre lesz szükség.",
+      "hint": "in all likelihood",
+      "english": "In all likelihood stricter oversight will be needed.",
       "teaches": [
-        "epistemic-modality"
+        "epistemic-hedging"
       ],
       "answers": [
-        "vélhetően",
-        "feltehetően",
-        "vélhetőleg",
-        "valószínűleg"
+        "Minden bizonnyal",
+        "Vélhetően",
+        "Feltehetőleg",
+        "Valószínűleg"
       ]
     },
     {
@@ -86,29 +87,25 @@
       "stage": "practice",
       "tiles": [
         "Az",
-        "automatizált",
-        "döntéshozatal",
-        "nem",
-        "helyettesítheti",
+        "algoritmus",
+        "vélhetően",
         "a",
-        "felelős",
-        "emberi",
-        "mérlegelést."
+        "korábbi",
+        "adatokból",
+        "tanul."
       ],
       "solution": [
         "Az",
-        "automatizált",
-        "döntéshozatal",
-        "nem",
-        "helyettesítheti",
+        "algoritmus",
+        "vélhetően",
         "a",
-        "felelős",
-        "emberi",
-        "mérlegelést."
+        "korábbi",
+        "adatokból",
+        "tanul."
       ],
-      "english": "Automated decision-making cannot replace responsible human deliberation.",
+      "english": "The algorithm presumably learns from earlier data.",
       "teaches": [
-        "epistemic-modality"
+        "epistemic-hedging"
       ]
     },
     {
@@ -119,21 +116,20 @@
       "prompt": [
         {
           "speaker": "Jogvédő",
-          "text": "Hogyan garantálható az állampolgárok védelme az algoritmusokkal szemben?"
+          "text": "Hogyan lehet megvédeni az embereket az algoritmus hibáitól?"
         },
         {
-          "speaker": "Közigazgatási szakértő",
-          "text": "Kötelező emberi felülvizsgálattal és független etikai _____ létrehozásával."
+          "speaker": "Szakértő",
+          "text": "Emberi felülvizsgálattal és egy _____ mechanizmussal."
         }
       ],
       "options": [
-        "audit",
-        "félrevezetés",
-        "titkosítás"
+        "felügyeleti",
+        "pontozási"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-modality"
+        "c1-artificial-intelligence-vocab"
       ]
     },
     {
@@ -143,12 +139,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using an epistemic probability adverbial to evaluate algorithmic governance.",
-          "answer": "A gépi predikciók kritikátlan elfogadása minden bizonnyal erodálja a jogállami garanciákat, amennyiben az érintettek nem kapnak részletes és érthető indoklást a döntések hátteréről."
+          "prompt": "Write a sentence with a probability adverb about automated decisions.",
+          "answer": "Az automatizált döntések vélhetően gyorsak, de minden bizonnyal ellenőrizni kell őket."
         }
       ],
       "teaches": [
-        "epistemic-modality"
+        "c1-artificial-intelligence-vocab"
       ]
     },
     {
@@ -156,15 +152,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik modális határozószó fejezi ki a legnagyobb mértékű bizonyosságot?",
+      "question": "Which adverb means 'presumably'?",
       "options": [
-        "aligha vitathatóan",
-        "esetleg",
-        "tán"
+        "vélhetően",
+        "biztosan",
+        "gyakran"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-modality"
+        "epistemic-hedging"
       ]
     }
   ]

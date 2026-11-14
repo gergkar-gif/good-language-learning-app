@@ -6,7 +6,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik mondat alkalmazza helyesen a C1 kötőmódos megengedő szerkezetet?",
+      "question": "Melyik mondat jelenti ezt: 'Whatever threat the regime may use, the citizens stay firm'?",
       "options": [
         "Bármilyen fenyegetéssel éljen is a hatalom, az állampolgárok szilárdak maradnak.",
         "Bármilyen fenyegetéssel él a hatalom, az állampolgárok szilárdak voltak.",
@@ -70,7 +70,7 @@
       "category": "vocabulary",
       "stage": "recall",
       "sentence": "A bíró ellenvéleményét írásban rögzített _____ fejtette ki a nyilvánosság előtt.",
-      "hint": "dissent / különvélemény + -ben",
+      "hint": "dissenting opinion, in it",
       "answer": "különvéleményben",
       "english": "The judge expounded his dissent before the public in a written dissenting opinion.",
       "teaches": [
@@ -82,10 +82,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A diktatúra faji törvényei a természetjog szempontjából törvényes _____ minősültek.",
-      "hint": "injustice / jogtalanság + -nak",
+      "sentence": "A természetjog szempontjából az olyan törvény, amely elviselhetetlen igazságtalanságot hoz, törvényes _____ minősül.",
+      "hint": "injustice",
       "answer": "jogtalanságnak",
-      "english": "The dictatorship's racial laws qualified from a natural law perspective as statutory injustice.",
+      "english": "From the point of view of natural law an intolerably unjust law counts as statutory injustice.",
       "teaches": [
         "c1-civic-resistance-vocab"
       ]
@@ -95,9 +95,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "Történjék _____, az alapvető emberi jogok csorbítatlanul fennmaradnak.",
+      "sentence": "Történjék _____, az emberi jogok nem szűnnek meg.",
       "hint": "whatever",
-      "english": "Whatever may happen, fundamental human rights endure unimpaired.",
+      "english": "Happen what may, human rights do not cease to exist.",
       "teaches": [
         "concessive-indefinites"
       ],
@@ -112,7 +112,7 @@
       "category": "grammar",
       "stage": "context",
       "sentence": "A tisztviselők mélységes morális _____ vezérelve tagadták meg az együttműködést.",
-      "hint": "conviction / meggyőződés + -től",
+      "hint": "conviction",
       "answer": "meggyőződéstől",
       "english": "Guided by profound moral conviction, the officials refused collaboration.",
       "teaches": [
@@ -122,30 +122,30 @@
     {
       "id": "c1-12-consolidation-8",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "context",
-      "sentence": "A parlament által hozott jogszabály formailag legális volt, ám súlyos demokratikus _____ szenvedett.",
-      "hint": "deficit / deficit + -ben",
-      "answer": "deficitben",
-      "english": "The statute enacted by parliament was formally legal, but suffered from severe democratic deficit.",
+      "sentence": "A jogszabály legális volt, de a lakosság nem fogadta el: hiányzott belőle a _____.",
+      "hint": "legitimacy",
+      "answer": "legitimitás",
+      "english": "The law was legal, but the population did not accept it: it lacked legitimacy.",
       "teaches": [
-        "c1-legitimacy-vs-legality"
+        "c1-civic-resistance-vocab"
       ]
     },
     {
       "id": "c1-12-consolidation-9",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "context",
-      "question": "Hogyan foglalható össze a legalitás és a legitimitás viszonya?",
+      "question": "Mi a legitimitás?",
       "options": [
-        "A formális legalitás önmagában nem garantálja az erkölcsi és társadalmi legitimitást.",
-        "A törvényes legalitás és a társadalmi legitimitás minden jogrendszerben azonos fogalmak.",
-        "A demokratikus legitimitás kizárólag a választások lebonyolításának formaságain múlik."
+        "Az, hogy az emberek elfogadják a hatalmat és a döntéseit.",
+        "Az, hogy a hatalom betartja a törvényeket és ellenőrzi őket.",
+        "Az, hogy a döntéseket gyorsan és hatékonyan hozzák meg."
       ],
       "correct": 0,
       "teaches": [
-        "c1-legitimacy-vs-legality"
+        "c1-civic-resistance-vocab"
       ]
     },
     {
@@ -154,30 +154,30 @@
       "category": "grammar",
       "stage": "produce",
       "tiles": [
-        "A",
-        "szankciók",
-        "vállalása",
-        "igazolja",
+        "Konrád",
+        "szerint",
         "a",
-        "polgári",
-        "engedetlenség",
-        "erkölcsi",
-        "hitelét."
+        "szabadság",
+        "a",
+        "polgárok",
+        "mindennapi",
+        "cselekvésének",
+        "eredménye."
       ],
       "solution": [
-        "A",
-        "szankciók",
-        "vállalása",
-        "igazolja",
+        "Konrád",
+        "szerint",
         "a",
-        "polgári",
-        "engedetlenség",
-        "erkölcsi",
-        "hitelét."
+        "szabadság",
+        "a",
+        "polgárok",
+        "mindennapi",
+        "cselekvésének",
+        "eredménye."
       ],
-      "english": "Acceptance of sanctions confirms the moral credibility of civil disobedience.",
+      "english": "According to Konrád, freedom is the result of the everyday action of citizens.",
       "teaches": [
-        "c1-dissent-deliberation"
+        "evidentials"
       ]
     },
     {
@@ -187,12 +187,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize György Konrád's concept of antipolitics in relation to citizen autonomy.",
-          "answer": "Konrád szerint az antipolitika a civil társadalom autonómiájának védelme az állam túlterjeszkedésével szemben: a belső szabadság és az emberi méltóság megőrzése békés, erőszakmentes ellenállással."
+          "prompt": "Say in one sentence what the text says antipolitics is.",
+          "answer": "A szöveg szerint az antipolitika a civil társadalom saját védelme az államhatalommal szemben."
         }
       ],
       "teaches": [
-        "c1-dissent-deliberation"
+        "evidentials"
       ]
     },
     {
@@ -202,8 +202,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on the ethics of democratic resistance.",
-          "answer": "Amikor az államhatalom kiüresíti a jogállamiság alapjait, a lelkiismereti alapon álló, szankciókat nyíltan vállaló polgári engedetlenség nem a rend megbontását, hanem a jog valódi szellemének megőrzését szolgálja."
+          "prompt": "Write one sentence that gives the ground of a refusal. Use *lelkiismereti okból* or *meggyőződésétől vezérelve*.",
+          "answer": "A tisztviselő lelkiismereti okból megtagadta az együttműködést, és vállalta a következményeket."
         }
       ],
       "teaches": [

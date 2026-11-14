@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi az Országos Atomenergia Hivatal (OAH) legfőbb közjogi feladata?",
+      "question": "What is the main task of the Hungarian Atomic Energy Authority (OAH)?",
       "options": [
-        "A nukleáris létesítmények és a radioaktív anyagok biztonságos alkalmazásának független hatósági felügyelete.",
-        "A villamosenergia-nagykereskedelmi piac áringadozásainak hatósági korlátozása.",
-        "A megújuló energiaforrások támogatási rendszerének pénzügyi koordinációja."
+        "Hatóságként ellenőrzi az atomenergia biztonságos használatát.",
+        "Eladja az atomerőműben termelt áramot a háztartásoknak.",
+        "Az állam helyett ő fizeti ki az atomerőmű építési költségeit."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A nagy aktivitású radioaktív hulladékok elhelyezésére végleges _____ geológiai tároló létesítése szükséges.",
-      "hint": "deep / mélység + -i",
-      "answer": "mélységi",
-      "english": "For the disposal of high-level radioactive waste the establishment of a deep geological repository is required.",
+      "sentence": "A kiégett fűtőelemet hosszú ideig kell tárolni, például egy _____ geológiai tárolóban.",
+      "hint": "mélység, depth, adjective",
+      "english": "Spent fuel must be stored for a long time, for example in a deep geological repository.",
       "teaches": [
-        "c1-nuclear-governance"
+        "i-adjectives"
+      ],
+      "answers": [
+        "mélységi",
+        "mély"
       ]
     },
     {
@@ -38,19 +41,19 @@
       "pairs": [
         [
           "üzemidő-hosszabbítás",
-          "reaktor engedélyének meghosszabbítása"
+          "lifetime extension"
         ],
         [
           "kiégett fűtőelem",
-          "elhasznált radioaktív üzemanyag"
+          "spent fuel assembly"
         ],
         [
           "alapterhelés",
-          "folyamatosan biztosított áramtermelés"
+          "baseload"
         ],
         [
           "leszerelés",
-          "leállított atomerőmű elbontása"
+          "decommissioning"
         ]
       ],
       "teaches": [
@@ -60,14 +63,14 @@
     {
       "id": "c1-14-04-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A nukleáris energia zéró kibocsátású _____ biztosít, megkönnyítve a fosszilis kapacitások kiváltását.",
-      "hint": "baseload / alapterhelés + -t",
-      "answer": "alapterhelést",
-      "english": "Nuclear energy provides zero-emission baseload, facilitating the replacement of fossil capacities.",
+      "sentence": "Az atomerőmű éjjel-nappal egyenletesen termel áramot: ez az _____.",
+      "hint": "baseload",
+      "answer": "alapterhelés",
+      "english": "The nuclear plant produces power evenly day and night: this is the baseload.",
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-energy-transition-vocab"
       ]
     },
     {
@@ -76,30 +79,28 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "nukleáris",
-        "biztonság",
-        "garanciái",
-        "nem",
-        "lehetnek",
-        "politikai",
-        "alku",
-        "tárgyai."
+        "Az",
+        "üzemidő-hosszabbítást",
+        "az",
+        "Országos",
+        "Atomenergia",
+        "Hivatal",
+        "vizsgálja",
+        "meg."
       ],
       "solution": [
-        "A",
-        "nukleáris",
-        "biztonság",
-        "garanciái",
-        "nem",
-        "lehetnek",
-        "politikai",
-        "alku",
-        "tárgyai."
+        "Az",
+        "üzemidő-hosszabbítást",
+        "az",
+        "Országos",
+        "Atomenergia",
+        "Hivatal",
+        "vizsgálja",
+        "meg."
       ],
-      "english": "Guarantees of nuclear safety cannot be objects of political bargaining.",
+      "english": "The lifetime extension is examined by the Hungarian Atomic Energy Authority.",
       "teaches": [
-        "c1-nuclear-governance"
+        "prefix-word-order"
       ]
     },
     {
@@ -110,22 +111,26 @@
       "prompt": [
         {
           "speaker": "Környezetvédő",
-          "text": "Hogyan oldható meg a kiégett fűtőelemek évszázadokon át tartó biztonságos tárolása?"
+          "text": "Hol lehet biztonságosan tárolni a kiégett fűtőelemet?"
         },
         {
           "speaker": "Geológus",
-          "text": "Tektonikailag stabil kőzetformációkban kialakított mélységi geológiai _____ révén."
+          "text": "Egy mélységi geológiai _____."
         }
       ],
       "options": [
-        "tároló",
-        "létesítmény",
-        "akna"
+        "tárolóban",
+        "tárolóba",
+        "tárolóból"
       ],
       "correct": 0,
       "teaches": [
-        "c1-nuclear-governance"
-      ]
+        "ban-ben-in"
+      ],
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "elative-bol-bel"
+      }
     },
     {
       "id": "c1-14-04-production-7",
@@ -134,28 +139,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a regulatory sentence affirming the primacy of nuclear safety in licensing.",
-          "answer": "Az Országos Atomenergia Hivatal kizárólag abban az esetben engedélyezi az üzemidő-hosszabbítást, amennyiben a reaktorblokkok minden nemzetközi nukleáris biztonsági és sugárvédelmi követelménynek maradéktalanul eleget tesznek."
+          "prompt": "Write a sentence about nuclear safety and economic considerations.",
+          "answer": "A nukleáris biztonság fontosabb a gazdasági szempontoknál."
         }
       ],
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-energy-transition-vocab"
       ]
     },
     {
       "id": "c1-14-04-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mit jelent az 'alapterhelés' (baseload) funkciója a villamosenergia-rendszerben?",
+      "question": "What is *alapterhelés* (baseload)?",
       "options": [
-        "A rendszer azon folyamatos, stabil áramszintjét, amely napszaktól és időjárástól függetlenül szünetmentesen rendelkezésre áll.",
-        "A csúcsidőszakokban hirtelen fellépő extra fogyasztási igényt, amelyet gyors indítású gázturbinákkal fedeznek.",
-        "A megújuló energiaforrások időjárásfüggő ingadozása miatt fellépő tartalék áramszükségletet."
+        "Az az áram, amelyre a rendszernek mindig szüksége van.",
+        "Az az áram, amelyet csak a hideg téli napokon használnak.",
+        "Az az áram, amelyet a háztartások maguk termelnek."
       ],
       "correct": 0,
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-energy-transition-vocab"
       ]
     }
   ]

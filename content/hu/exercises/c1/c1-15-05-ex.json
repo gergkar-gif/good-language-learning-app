@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen alapvető különbséget állapított meg Neumann János a számítógép és az agy között?",
+      "question": "What is *kibernetika* (cybernetics)?",
       "options": [
-        "A gép nagy sebességű soros számításokat végez nagy számtani pontossággal, míg az agy lassabb idegsejtekkel, de masszív párhuzamosítással és hibatűréssel dolgozik.",
-        "A gép analóg és intuitív asszociációkkal alkot új mintázatokat, míg az agy merev bináris aritmetikával és mechanikus soros logikával dolgozik.",
-        "A gép az érzelmi intelligencia révén alkalmazkodik a környezethez, míg az emberi elme pusztán tárolt memóriacímek mechanikus lehívására képes."
+        "Az irányítás és a kommunikáció tudománya gépekben és állatokban.",
+        "A számítógépek gyártása és eladása a nagy boltokban.",
+        "Az állatok betegségeinek gyógyítása sok gép segítségével."
       ],
       "correct": 0,
       "teaches": [
@@ -20,17 +20,17 @@
     {
       "id": "c1-15-05-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "Neumann feltárta az alapvető különbséget, _____ a digitális pontosság és a biológiai hibatűrés ellentétét.",
-      "hint": "specifically",
-      "english": "Neumann revealed the fundamental difference, specifically the contrast between digital precision and biological fault-tolerance.",
+      "sentence": "Két különbséget látunk, _____ a sebességet és a pontosságot.",
+      "hint": "namely",
+      "english": "We see two differences, namely speed and accuracy.",
       "teaches": [
-        "c1-adv-nominal-appositive-structures"
+        "c1-artificial-intelligence-vocab"
       ],
       "answers": [
         "mégpedig",
-        "tudniillik"
+        "nevezetesen"
       ]
     },
     {
@@ -41,19 +41,19 @@
       "pairs": [
         [
           "automataelmélet",
-          "önműködő gépek matematikai modellje"
+          "automata theory"
         ],
         [
           "kibernetika",
-          "rendszerek vezérlés- és kommunikációelmélete"
+          "cybernetics"
         ],
         [
           "sztochasztikus folyamat",
-          "valószínűségi alapú működés"
+          "stochastic process"
         ],
         [
           "architektúra",
-          "számítógép hardveres és logikai felépítése"
+          "computer architecture"
         ]
       ],
       "teaches": [
@@ -65,11 +65,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "practice",
-      "question": "Mit jelentett Neumann híres felismerése, miszerint 'az agy nyelve nem a matematika nyelve'?",
+      "question": "A szöveg szerint miben különbözik az agy a számítógéptől?",
       "options": [
-        "Hogy az idegrendszer nem merev formális logikai szimbólumokkal, hanem statisztikai és analóg jellegű ingerületi mintázatokkal reprezentálja a világot.",
-        "Hogy az emberi gondolkodás az anyanyelv fogalmi kategóriáira támaszkodik, eltérően a biokémiai folyamatok közvetlen mechanizmusaitól.",
-        "Hogy az elme a formális matematikai axiómák logikai lépéseivel hoz döntéseket, felülírva a spontán ingerületi mintázatok bizonytalanságát."
+        "Lassú, de sok folyamat fut benne egyszerre.",
+        "Gyors, és a számolásban nagyon pontos.",
+        "Lassú, és egy lépést tesz egy időben."
       ],
       "correct": 0
     },
@@ -80,27 +80,29 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "neumann-i",
-        "architektúra",
-        "mindmáig",
+        "gép",
+        "egy",
+        "dologban",
+        "erős,",
+        "nevezetesen",
         "a",
-        "digitális",
-        "számítástechnika",
-        "alapköve."
+        "pontos",
+        "számolásban."
       ],
       "solution": [
         "A",
-        "neumann-i",
-        "architektúra",
-        "mindmáig",
+        "gép",
+        "egy",
+        "dologban",
+        "erős,",
+        "nevezetesen",
         "a",
-        "digitális",
-        "számítástechnika",
-        "alapköve."
+        "pontos",
+        "számolásban."
       ],
-      "english": "The von Neumann architecture remains to this day the cornerstone of digital computing.",
+      "english": "The machine is strong in one thing, namely exact calculation.",
       "teaches": [
-        "c1-adv-nominal-appositive-structures"
+        "basic-hungarian-word-order"
       ]
     },
     {
@@ -110,29 +112,26 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize John von Neumann's cybernetic thesis using an explanatory appositive.",
-          "answer": "Neumann János zseniális felismerése, tudniillik hogy a biológiai idegrendszer sztochasztikus hibatűrése alapvetően felülmúlja a soros elektronikus gépek merev precizitását, megvetette a modern neurális hálózatok elméleti fundamentumát."
+          "prompt": "Write a sentence about the computer and the brain with *mégpedig*.",
+          "answer": "A gép és az agy különbözik, mégpedig abban, hogy az agy egyszerre sok dolgot csinál."
         }
       ],
       "teaches": [
-        "c1-adv-nominal-appositive-structures"
+        "c1-artificial-intelligence-vocab"
       ]
     },
     {
       "id": "c1-15-05-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "reading",
       "stage": "check",
-      "question": "Melyik mondat alkalmaz helyesen pontosító értelmező szerkezetet?",
+      "question": "A szöveg szerint mikor adták ki *A számítógép és az agy* című könyvet?",
       "options": [
-        "Megismertük az algoritmus legnagyobb korlátját, nevezetesen az ellenőrizhetetlen feketedoboz-jelenséget.",
-        "Megismertük az algoritmus legnagyobb korlátját, minthogy ellenőrizhetetlen feketedoboz-jelenség.",
-        "Megismertük az algoritmus legnagyobb korlátját, bár ellenőrizhetetlen feketedoboz-jelenség."
+        "Neumann halála után, 1958-ban.",
+        "Neumann életében, 1950-ben.",
+        "Neumann halála előtt két évvel."
       ],
-      "correct": 0,
-      "teaches": [
-        "c1-adv-nominal-appositive-structures"
-      ]
+      "correct": 0
     }
   ]
 }

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit értett Németh László 'a minőség forradalma' alatt?",
+      "question": "A szöveg szerint mit jelent 'a minőség forradalma'?",
       "options": [
-        "A belső erkölcsi és intellektuális igényesség primátusát a tömegtermeléssel és felületességgel szemben.",
-        "A technológiai eszközök kizárólagos alkalmazását a diagnosztikai eljárásokban.",
-        "A szakszervezeti érdekérvényesítés radikális reformját az egészségügyi ágazatban."
+        "Belső erkölcsi változást: minden munkát a legmagasabb mérce szerint végezni.",
+        "Politikai mozgalmat, amely a kórházak vezetését akarja átvenni.",
+        "Új orvosi műszereket, amelyek gyorsabban gyógyítanak."
       ],
       "correct": 0,
       "teaches": [
@@ -20,17 +20,15 @@
     {
       "id": "c1-09-05-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "Németh László szerint az orvos nem válhat biológiai technikussá; kötelessége a teljes ember _____ vizsgálata.",
-      "hint": "holistic",
-      "english": "According to László Németh the physician must not become a biological technician; it is his duty to examine the whole person holistically.",
+      "sentence": "A szöveg szerint az orvosi munkában a _____ szemlélet fontos: az egész embert nézi, nem csak a betegséget.",
+      "hint": "whole-person (adjective)",
+      "english": "According to the text, the holistic view matters in medical work: it looks at the whole person, not only at the illness.",
       "teaches": [
-        "c1-biomedical-discourse"
+        "c1-bioethics-vocab"
       ],
-      "answers": [
-        "holisztikus"
-      ]
+      "answer": "holisztikus"
     },
     {
       "id": "c1-09-05-controlled-3",
@@ -64,11 +62,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "practice",
-      "question": "Miért jelentett óriási előnyt Németh László számára orvosi végzettsége írói munkásságában?",
+      "question": "Mi óvta meg Némethet az üres elméletektől?",
       "options": [
-        "Mert közvetlen kapcsolatban tartotta a valósággal, a test törvényeivel és az emberi esendőséggel.",
-        "Mert lehetővé tette számára a politikai ideológiák elméleti megfogalmazását.",
-        "Mert kizárólag a természettudományos pozitivizmus nyelvén szólalt meg írásaiban."
+        "A betegséggel és a szegénységgel való mindennapi találkozás.",
+        "A politikai pártokban és a minisztériumban végzett munka.",
+        "A külföldi egyetemeken töltött hosszú évek tanulmányai."
       ],
       "correct": 0
     },
@@ -79,31 +77,31 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "technológiai",
-        "fejlődés",
+        "szöveg",
+        "szerint",
+        "a",
+        "technika",
         "nem",
         "pótolhatja",
         "az",
-        "orvosi",
-        "részvétet",
-        "és",
+        "emberi",
         "figyelmet."
       ],
       "solution": [
         "A",
-        "technológiai",
-        "fejlődés",
+        "szöveg",
+        "szerint",
+        "a",
+        "technika",
         "nem",
         "pótolhatja",
         "az",
-        "orvosi",
-        "részvétet",
-        "és",
+        "emberi",
         "figyelmet."
       ],
-      "english": "Technological advancement cannot replace medical empathy and attentiveness.",
+      "english": "According to the text, technology cannot replace human attention.",
       "teaches": [
-        "c1-biomedical-discourse"
+        "evidentials"
       ]
     },
     {
@@ -113,29 +111,26 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize Németh László's view of the medical vocation.",
-          "answer": "Németh László értelmezésében a gyógyítás nem gépies biológiai beavatkozás, hanem mély etikai szolgálat, ahol a tudományos precizitás a szenvedő ember iránti feltétlen felelősségvállalással párosul."
+          "prompt": "Say in one sentence what the text says about the doctor's work.",
+          "answer": "A szöveg szerint a gyógyítás nem pusztán technikai feladat, hanem felelősség az egész emberért."
         }
       ],
       "teaches": [
-        "c1-biomedical-discourse"
+        "evidentials"
       ]
     },
     {
       "id": "c1-09-05-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "reading",
       "stage": "check",
-      "question": "Melyik megállapítás fejezi ki legpontosabban Németh orvosetikai örökségét?",
+      "question": "Melyik mondat adja vissza helyesen a szöveg gondolatát?",
       "options": [
-        "A tudomány valódi értéke a kiszolgáltatott ember iránti odaadásban és a megalkuvás nélküli minőségben rejlik.",
-        "Az orvostudomány legfőbb célja a hatékonyság maximalizálása a személyes kapcsolat rovására is.",
-        "A modern technika felmenti a társadalmat a szolidaritás erkölcsi kötelezettsége alól."
+        "A szöveg szerint a tudomány nagysága abban látszik, hogy segít a gyengéknek.",
+        "A szöveg szerint a tudomány nagysága abban látszik, hogy gyors és olcsó.",
+        "A szöveg szerint a tudomány nagysága abban látszik, hogy sok új műszere van."
       ],
-      "correct": 0,
-      "teaches": [
-        "c1-biomedical-discourse"
-      ]
+      "correct": 0
     }
   ]
 }

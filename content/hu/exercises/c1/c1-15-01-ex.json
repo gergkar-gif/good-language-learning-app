@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'túlilleszkedés' (overfitting) a gépi tanulásban?",
+      "question": "What is *túlilleszkedés* (overfitting)?",
       "options": [
-        "Amikor a modell túlságosan rögzíti a tanító adatok zaját, így képtelen általánosítani új adatokon.",
-        "Amikor túl kicsi a számítógép memóriája a program futtatásához.",
-        "Amikor az algoritmus hibátlanul működik minden elképzelhető helyzetben."
+        "A modell csak a tanító adatokat tudja, újakat nem.",
+        "A számítógép memóriája túl kicsi a programhoz.",
+        "A program minden helyzetben hibátlanul működik."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A neurális háló képes általánosítani az ismeretlen mintákon, _____ a tanító adathalmaz túlzottan elfogult.",
-      "hint": "except if",
-      "answer": "kivéve ha",
-      "english": "The neural network is able to generalize on unseen patterns, except if the training dataset is overly biased.",
+      "sentence": "A modell jól működik, _____ az új adatok nagyon mások.",
+      "hint": "unless",
+      "english": "The model works well, unless the new data are very different.",
       "teaches": [
         "felteve-hogy-kiveve-ha"
+      ],
+      "answers": [
+        "kivéve, ha",
+        "kivéve ha"
       ]
     },
     {
@@ -38,19 +41,19 @@
       "pairs": [
         [
           "veszteségfüggvény",
-          "a hiba számszerűsítése"
+          "loss function"
         ],
         [
           "gradiens-csökkentés",
-          "optimalizációs algoritmus"
+          "gradient descent"
         ],
         [
           "tanító adathalmaz",
-          "bemeneti minta tanuláshoz"
+          "training dataset"
         ],
         [
           "regularizáció",
-          "túlilleszkedés megelőzése"
+          "regularization"
         ]
       ],
       "teaches": [
@@ -60,18 +63,18 @@
     {
       "id": "c1-15-01-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A tanulás elméletileg befejezettnek tekinthető, _____ annyiban, hogy a hibaérték egy minimális küszöb alatt marad.",
-      "hint": "merely",
-      "english": "The learning can theoretically be considered complete, merely to the extent that the error remains below a minimum threshold.",
+      "sentence": "A modell _____ annyiban korlátozott, hogy sok adat kell hozzá.",
+      "hint": "only",
+      "english": "The model is limited only in that it needs a lot of data.",
       "teaches": [
-        "felteve-hogy-kiveve-ha"
+        "c1-artificial-intelligence-vocab"
       ],
       "answers": [
         "mindössze",
-        "pusztán",
-        "csupán"
+        "csupán",
+        "pusztán"
       ]
     },
     {
@@ -81,29 +84,31 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "gradiens-csökkentés",
-        "során",
+        "modell",
+        "stabil",
+        "marad,",
+        "kivéve,",
+        "ha",
+        "váratlan",
+        "zaj",
+        "van",
         "az",
-        "algoritmus",
-        "lépésről",
-        "lépésre",
-        "minimalizálja",
-        "a",
-        "veszteségfüggvényt."
+        "adatokban."
       ],
       "solution": [
         "A",
-        "gradiens-csökkentés",
-        "során",
+        "modell",
+        "stabil",
+        "marad,",
+        "kivéve,",
+        "ha",
+        "váratlan",
+        "zaj",
+        "van",
         "az",
-        "algoritmus",
-        "lépésről",
-        "lépésre",
-        "minimalizálja",
-        "a",
-        "veszteségfüggvényt."
+        "adatokban."
       ],
-      "english": "During gradient descent the algorithm minimizes the loss function step by step.",
+      "english": "The model stays stable unless there is unexpected noise in the data.",
       "teaches": [
         "felteve-hogy-kiveve-ha"
       ]
@@ -116,21 +121,20 @@
       "prompt": [
         {
           "speaker": "Adattudós",
-          "text": "Miért téveszt a modellünk az éles környezetben?"
+          "text": "Miért nem működik jól a modell az új adatokon?"
         },
         {
           "speaker": "Kutató",
-          "text": "Valószínűleg túlilleszkedett, _____ nem alkalmaztunk megfelelő regularizációs eljárást a tanulás során."
+          "text": "Valószínűleg túlilleszkedett, _____ nem használtunk regularizációt."
         }
       ],
       "options": [
         "mivel",
-        "bár",
-        "pedig"
+        "noha"
       ],
       "correct": 0,
       "teaches": [
-        "felteve-hogy-kiveve-ha"
+        "c1-artificial-intelligence-vocab"
       ]
     },
     {
@@ -140,12 +144,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a restrictive sentence describing machine learning convergence conditions.",
-          "answer": "A gépi tanulási folyamat garantáltan konvergál az optimális megoldáshoz, kivéve ha a tanulási ráta túl magas, vagy a veszteségfüggvény több lokális minimummal rendelkezik."
+          "prompt": "Write a sentence about when a model fails, with *kivéve, ha*.",
+          "answer": "A modell jól tanul, kivéve, ha túl kevés az adat."
         }
       ],
       "teaches": [
-        "felteve-hogy-kiveve-ha"
+        "c1-artificial-intelligence-vocab"
       ]
     },
     {
@@ -153,11 +157,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik mondat alkalmaz helyesen kivételt kifejező szerkezetet?",
+      "question": "Which sentence states an exception?",
       "options": [
-        "A modell megbízható predikciót garantál, kivéve ha a bemeneti adatok mintázata drasztikusan módosul.",
-        "A modell megbízható predikciót garantál, miközben a bemeneti adatok mintázata módosul.",
-        "A modell megbízható predikciót garantál, hogy a bemeneti adatok mintázata módosuljon."
+        "A modell jól működik, kivéve, ha az adatok mások.",
+        "A modell jól működik, mivel az adatok mások.",
+        "A modell jól működik, és az adatok mások."
       ],
       "correct": 0,
       "teaches": [

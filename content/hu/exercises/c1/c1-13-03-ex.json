@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent az 'elsődleges egyenleg' (primary balance) a költségvetési gazdálkodásban?",
+      "question": "What is the *elsődleges egyenleg* (primary balance)?",
       "options": [
-        "A költségvetés kamatfizetések nélkül számított bevételeinek és kiadásainak egyenlegét.",
-        "A központi alrendszer önkormányzati támogatásokkal korrigált pénzforgalmi egyenlegét.",
-        "A bruttó államadósság finanszírozási költségeit fedező devizatartalék összegét."
+        "A bevételek és a kiadások különbsége a kamatok nélkül.",
+        "A bevételek és a kiadások különbsége a kamatokkal együtt.",
+        "Az állam adósságának és a GDP-nek az aránya."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A megnövekedett államadósság kamatterhei jelentősen beszűkítették a kormányzat költségvetési _____.",
-      "hint": "room for maneuver / mozgástér + -ét",
+      "sentence": "A nagy kamatteher szűkíti a kormány költségvetési _____.",
+      "hint": "mozgástér, room for manoeuvre",
       "answer": "mozgásterét",
-      "english": "The interest burdens of increased public debt significantly narrowed the government's fiscal room for maneuver.",
+      "english": "The large interest burden narrows the government's fiscal room for manoeuvre.",
       "teaches": [
-        "c1-fiscal-counterbalancing"
+        "acc-poss"
       ]
     },
     {
@@ -60,13 +60,13 @@
     {
       "id": "c1-13-03-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A gazdaság lehűlése idején alkalmazott _____ fiskális politika célja a kereslet fenntartása.",
+      "sentence": "Amikor a gazdaság nem nő, az _____ költségvetési politika növeli a kiadásokat.",
       "hint": "counter-cyclical",
-      "english": "The goal of counter-cyclical fiscal policy applied during economic slowdown is maintaining demand.",
+      "english": "When the economy is not growing, counter-cyclical fiscal policy increases spending.",
       "teaches": [
-        "c1-fiscal-counterbalancing"
+        "c1-macroeconomics-vocab"
       ],
       "answers": [
         "anticiklikus",
@@ -79,28 +79,32 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "tartós",
-        "fiskális",
-        "konszolidáció",
-        "elengedhetetlen",
+        "Amennyiben",
         "a",
-        "hitelminősítés",
-        "javításához."
+        "hiány",
+        "kicsi,",
+        "úgy",
+        "az",
+        "adósság",
+        "is",
+        "kisebb",
+        "lesz."
       ],
       "solution": [
-        "A",
-        "tartós",
-        "fiskális",
-        "konszolidáció",
-        "elengedhetetlen",
+        "Amennyiben",
         "a",
-        "hitelminősítés",
-        "javításához."
+        "hiány",
+        "kicsi,",
+        "úgy",
+        "az",
+        "adósság",
+        "is",
+        "kisebb",
+        "lesz."
       ],
-      "english": "Sustained fiscal consolidation is indispensable to improving credit ratings.",
+      "english": "If the deficit is small, the debt will also be smaller.",
       "teaches": [
-        "c1-fiscal-counterbalancing"
+        "ha-clause"
       ]
     },
     {
@@ -111,21 +115,20 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Hogyan kívánja a kormány lefaragni a költségvetési hiányt?"
+          "text": "Mi szűkíti a kormány mozgásterét?"
         },
         {
           "speaker": "Pénzügyminiszter",
-          "text": "A kiadási prioritások felülvizsgálatával és a fegyelmezett _____ megvalósításával."
+          "text": "A nagy _____, mert sok pénzt kell fizetnünk a hitelek után."
         }
       ],
       "options": [
-        "konszolidáció",
-        "expanzió",
-        "átszervezés"
+        "kamatteher",
+        "konjunktúra"
       ],
       "correct": 0,
       "teaches": [
-        "c1-fiscal-counterbalancing"
+        "c1-macroeconomics-vocab"
       ]
     },
     {
@@ -135,28 +138,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating the imperative of fiscal debt reduction.",
-          "answer": "Az államadósság-ráta csökkenő pályára állítása elengedhetetlen a pénzügyi szuverenitás és a nemzetközi befektetői bizalom megőrzése érdekében."
+          "prompt": "Write a sentence about the deficit with *amennyiben … úgy …*.",
+          "answer": "Amennyiben a költségvetési hiány kicsi, úgy az államadósság-ráta is kisebb lesz."
         }
       ],
       "teaches": [
-        "c1-fiscal-counterbalancing"
+        "c1-macroeconomics-vocab"
       ]
     },
     {
       "id": "c1-13-03-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mi az alkotmányos adósságfék (debt brake) célja?",
+      "question": "What does the *adósságfék* (debt brake) do?",
       "options": [
-        "Annak jogi biztosítása, hogy az államadósság a GDP arányában évről évre mérséklődjön.",
-        "A kereskedelmi banki hitelkamatok felső határának törvényi rögzítése válság idején.",
-        "A gazdasági szereplők közötti készpénzforgalom fokozatos korlátozása az adóbevételekért."
+        "Az alaptörvény korlátozza, mekkora lehet az államadósság.",
+        "A jegybank megmondja, mekkora hitelt adhat a kormánynak.",
+        "A kormány minden évben csökkenti az adók mértékét."
       ],
       "correct": 0,
       "teaches": [
-        "c1-fiscal-counterbalancing"
+        "c1-macroeconomics-vocab"
       ]
     }
   ]

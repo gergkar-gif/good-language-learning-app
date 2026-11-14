@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a jegybanki kamatfolyosó (interest rate corridor) feladata?",
+      "question": "What is the *kamatfolyosó* (interest rate corridor)?",
       "options": [
-        "A bankközi egynapos kamatok ingadozásának keretek közé szorítása az alapkamat körül.",
-        "A lakossági fogyasztási hitelek kamatplafonjának kötelező rögzítése.",
-        "A kereskedelmi bankok devizakötelezettségeinek közvetlen állami garantálása."
+        "A jegybank alsó és felső határt szab a bankok közötti kamatnak.",
+        "A jegybank megmondja, mennyi legyen a lakáshitel kamata minden bankban.",
+        "A jegybank kifizeti minden bank adósságát az állam helyett."
       ],
       "correct": 0,
       "teaches": [
@@ -20,14 +20,14 @@
     {
       "id": "c1-13-02-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A Monetáris Tanács az inflációs kockázatok mérséklése céljából határozott monetáris _____ mellett kötelezte el magát.",
+      "sentence": "A jegybank magas kamatot akar, ezért a monetáris _____ mellett döntött.",
       "hint": "tightening",
       "answer": "szigorítás",
-      "english": "The Monetary Council committed itself to resolute monetary tightening to mitigate inflation risks.",
+      "english": "The central bank wants a high rate, so it decided in favour of monetary tightening.",
       "teaches": [
-        "c1-monetary-tightening-clauses"
+        "c1-macroeconomics-vocab"
       ]
     },
     {
@@ -45,12 +45,12 @@
           "interest rate corridor"
         ],
         [
-          "hozamgörbe",
-          "yield curve"
+          "transzmissziós mechanizmus",
+          "transmission mechanism"
         ],
         [
-          "előretekintő iránymutatás",
-          "forward guidance"
+          "hitelkondíció",
+          "credit condition"
         ]
       ],
       "teaches": [
@@ -62,12 +62,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A jegybank a szigorú kamatkörnyezet fenntartásával kívánja biztosítani az árstabilitást és a pénzügyi piacok _____.",
-      "hint": "stability / stabilitás + -át",
-      "answer": "stabilitását",
-      "english": "The central bank intends to ensure price stability and financial market stability by maintaining a restrictive rate environment.",
+      "sentence": "Az árstabilitás megőrzése _____ a jegybank szinten tartotta az alapkamatot.",
+      "hint": "for the sake of",
+      "english": "To preserve price stability, the central bank kept the base rate unchanged.",
       "teaches": [
-        "c1-monetary-tightening-clauses"
+        "formal-purpose"
+      ],
+      "answers": [
+        "érdekében",
+        "céljából"
       ]
     },
     {
@@ -76,30 +79,32 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "transzmissziós",
-        "csatornák",
-        "akadálytalan",
-        "működése",
-        "nélkülözhetetlen",
+        "Noha",
         "az",
         "infláció",
-        "letöréséhez."
+        "lassul,",
+        "a",
+        "jegybank",
+        "szinten",
+        "tartja",
+        "az",
+        "alapkamatot."
       ],
       "solution": [
-        "A",
-        "transzmissziós",
-        "csatornák",
-        "akadálytalan",
-        "működése",
-        "nélkülözhetetlen",
+        "Noha",
         "az",
         "infláció",
-        "letöréséhez."
+        "lassul,",
+        "a",
+        "jegybank",
+        "szinten",
+        "tartja",
+        "az",
+        "alapkamatot."
       ],
-      "english": "Unimpeded functioning of transmission channels is indispensable to bringing down inflation.",
+      "english": "Although inflation is slowing, the central bank keeps the base rate unchanged.",
       "teaches": [
-        "c1-monetary-tightening-clauses"
+        "contrastive-discourse-markers"
       ]
     },
     {
@@ -110,21 +115,20 @@
       "prompt": [
         {
           "speaker": "Kötvénykereskedő",
-          "text": "Milyen irányú elmozdulásra számít a jövő heti jegybanki ülésen?"
+          "text": "Mit vár a jövő heti ülésen?"
         },
         {
           "speaker": "Portfóliókezelő",
-          "text": "Az óvatos kommunikáció alapján a jegybank folytatja az adatvezérelt _____ ciklust."
+          "text": "Az infláció lassul, ezért a jegybank folytatja _____ ciklust."
         }
       ],
       "options": [
-        "enyhítési",
-        "szigorítási",
-        "várakozási"
+        "az enyhítési",
+        "a szigorítási"
       ],
       "correct": 0,
       "teaches": [
-        "c1-monetary-tightening-clauses"
+        "c1-macroeconomics-vocab"
       ]
     },
     {
@@ -134,28 +138,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a central bank rate-decision sentence using 'kamatfolyosó' and 'transzmisszió'.",
-          "answer": "A Monetáris Tanács a kamatfolyosó szimmetrikus szűkítésével javította a monetáris transzmisszió hatékonyságát, miközben fenntartotta a szigorú restriktív irányvonalat."
+          "prompt": "Write a sentence about a rate decision with *érdekében*.",
+          "answer": "Az árstabilitás megőrzése érdekében a jegybank szinten tartotta az irányadó kamatot."
         }
       ],
       "teaches": [
-        "c1-monetary-tightening-clauses"
+        "c1-macroeconomics-vocab"
       ]
     },
     {
       "id": "c1-13-02-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mit fejez ki a 'reálkamat-környezet' fogalma?",
+      "question": "What does the *reálkamat* (real interest rate) show?",
       "options": [
-        "A nominális kamatláb és a várható inflációs ráta közötti különbséget.",
-        "A bankok által felszámított számlavezetési díjat.",
-        "A tőzsdei részvények napi árfolyamát."
+        "A kamat és az infláció közötti különbség.",
+        "A bank havi díja az ügyfél számlájáért.",
+        "A részvények ára a tőzsdén egy napon."
       ],
       "correct": 0,
       "teaches": [
-        "c1-monetary-tightening-clauses"
+        "c1-macroeconomics-vocab"
       ]
     }
   ]

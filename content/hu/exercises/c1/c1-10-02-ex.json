@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan utasít el egy professzionális üzleti tárgyaló egy előnytelen ajánlatot?",
+      "question": "Hogyan utasítja el az ajánlatot egy udvarias tárgyaló?",
       "options": [
-        "Diplomatikusan jelezve a nyitottságot az észszerűbb módosítások iránt.",
-        "A szerződéses feltételek kategorikus és indoklás nélküli elutasításával.",
-        "Az üzleti tárgyalások egyoldalú megszakításával és azonnali jogi lépések kilátásba helyezésével."
+        "Nem fogadja el, de megmondja, milyen változtatás után tárgyalna.",
+        "Egy szóval elutasítja, és azonnal megszakítja a tárgyalást.",
+        "Nem válaszol, és másnap új ajánlatot küld."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Cégünk hajlandó lenne engedményt tenni az árban, _____ a megrendelt mennyiség eléri a tízezer darabot.",
+      "sentence": "Cégünk kész lenne engedményt tenni az árban, _____ a megrendelt mennyiség eléri a tízezer darabot.",
       "hint": "provided that",
       "english": "Our firm would be willing to make a price concession, provided that the ordered quantity reaches ten thousand units.",
       "teaches": [
-        "diplomatic-softening"
+        "felteve-hogy-kiveve-ha"
       ],
       "answers": [
         "feltéve hogy",
+        "feltéve, hogy",
         "amennyiben",
         "ha"
       ]
@@ -67,17 +68,17 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "A tárgyalások a vitás pontok miatt sajnos _____ jutottak.",
-      "hint": "to deadlock / holtpont + -ra",
+      "hint": "deadlock",
       "answer": "holtpontra",
       "english": "Due to contested points the negotiations unfortunately reached a deadlock.",
       "teaches": [
-        "diplomatic-softening"
+        "ra-re"
       ]
     },
     {
       "id": "c1-10-02-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -103,7 +104,7 @@
       ],
       "english": "Long-term cooperation requires flexibility on the part of both parties.",
       "teaches": [
-        "diplomatic-softening"
+        "c1-contracts-negotiation-vocab"
       ]
     },
     {
@@ -114,25 +115,21 @@
       "prompt": [
         {
           "speaker": "Beszállító",
-          "text": "Elfogadható-e Önöknek a harmincnapos késedelmi sáv?"
+          "text": "Elfogadják a harmincnapos határidőt?"
         },
         {
           "speaker": "Beszerzési igazgató",
-          "text": "Ez a feltétel nem képezheti tárgyalási _____ a gyártási ütemterv miatt."
-        },
-        {
-          "speaker": "Beszállító",
-          "text": "Értem, akkor vizsgáljuk meg az alternatív szállítási útvonalakat."
+          "text": "Ez a feltétel jelenlegi formájában nem képezheti tárgyalási _____."
         }
       ],
       "options": [
         "alapunkat",
-        "tárgyunkat",
-        "keretünket"
+        "alapunk",
+        "alapunkra"
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -142,8 +139,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a diplomatic counter-offer in commercial negotiation Hungarian.",
-          "answer": "Nagyra értékeljük ajánlatukat, mindazonáltal a vételár tekintetében kizárólag volumenkedvezmény biztosítása esetén áll módunkban szerződést kötni."
+          "prompt": "Write a diplomatic counter-offer: thank for the offer, then name one condition.",
+          "answer": "Köszönöm az ajánlatukat, mindazonáltal csak akkor tudunk szerződést kötni, ha engedményt adnak a vételárból."
         }
       ],
       "teaches": [
@@ -155,11 +152,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik megfogalmazás alkalmaz sikeres üzleti tárgyalási finomítást (hedging)?",
+      "question": "Melyik mondat udvarias, de nem zárja be a tárgyalást?",
       "options": [
-        "Bár a felajánlott konstrukció figyelemreméltó, megfontolandónak tartanánk a garanciális időszak kibővítését a szerződéskötés előtt.",
-        "A felajánlott konstrukció jelenlegi formájában kizárólag a szállítási határidők drasztikus csökkentése mellett fogadható el.",
-        "A megküldött tervezet pénzügyi feltételei messzemenően meghaladják az elfogadható kockázati küszöböt."
+        "Bár az ajánlat figyelemre méltó, szívesen megbeszélnénk a fizetési feltételeket.",
+        "Az ajánlat elfogadhatatlan, és a tárgyalást ezzel lezártnak tekintjük.",
+        "Az ajánlat jó, ezért nem akarunk semmit sem megbeszélni."
       ],
       "correct": 0,
       "teaches": [

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit fejez ki a 'megelőzhető lett volna' fordulat?",
+      "question": "Mit jelent az, hogy 'megelőzhető lett volna'?",
       "options": [
-        "Egy múltbeli, elmaradt cselekvés miatt bekövetkezett esemény elkerülhetőségét.",
-        "Egy jelenbeli tényállás feltételes, óvatos megerősítését.",
-        "Egy jövőbeli esemény bekövetkezésének nagy fokú valószínűségét."
+        "A múltban egy elmaradt lépés miatt nem sikerült megelőzni a bajt.",
+        "A jelenben még meg lehet előzni a bajt, ha gyorsan döntenek.",
+        "A baj megelőzése senkinek sem volt a kötelessége a kórházban."
       ],
       "correct": 0,
       "teaches": [
@@ -22,10 +22,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Ha a döntéshozók körültekintőbben jártak volna el, a tragédia teljes mértékben elkerülhető _____ volna.",
-      "hint": "would have been / lenni, past part",
+      "sentence": "Ha a döntéshozók másként döntöttek volna, a baj elkerülhető _____ volna.",
+      "hint": "to be, past",
       "answer": "lett",
-      "english": "If the decision-makers had acted with greater circumspection, the tragedy would have been completely avoidable.",
+      "english": "If the decision-makers had decided differently, the harm would have been avoidable.",
       "teaches": [
         "past-conditional-volna"
       ]
@@ -62,12 +62,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A kórháznak kutya _____ lett volna azonnal értesíteni a hozzátartozókat.",
-      "hint": "duty / kötelesség + -e",
-      "answer": "kötelessége",
-      "english": "The hospital would have had the strict duty to notify the relatives immediately.",
+      "sentence": "A kórháznak első _____ lett volna azonnal értesíteni a hozzátartozókat.",
+      "hint": "duty",
+      "english": "The hospital's first duty would have been to notify the relatives at once.",
       "teaches": [
         "past-conditional-volna"
+      ],
+      "answers": [
+        "kötelessége",
+        "feladata"
       ]
     },
     {
@@ -76,26 +79,28 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Visszatekintve",
+        "Az",
+        "orvosnak",
+        "azonnal",
+        "szólnia",
+        "kellett",
+        "volna",
         "a",
-        "súlyos",
-        "etikai",
-        "mulasztás",
-        "egyértelműen",
-        "bebizonyosodott."
+        "betegnek."
       ],
       "solution": [
-        "Visszatekintve",
+        "Az",
+        "orvosnak",
+        "azonnal",
+        "szólnia",
+        "kellett",
+        "volna",
         "a",
-        "súlyos",
-        "etikai",
-        "mulasztás",
-        "egyértelműen",
-        "bebizonyosodott."
+        "betegnek."
       ],
-      "english": "In retrospect the severe ethical omission was unequivocally proven.",
+      "english": "The doctor should have told the patient at once.",
       "teaches": [
-        "past-conditional-volna"
+        "kellett-volna"
       ]
     },
     {
@@ -106,17 +111,17 @@
       "prompt": [
         {
           "speaker": "Bioetikus",
-          "text": "Hárítható-e a felelősség a váratlan körülményekre?"
+          "text": "Csak a véletlen a hibás abban, ami történt?"
         },
         {
           "speaker": "Bizottsági elnök",
-          "text": "Nem, mert a kockázat ismeretében más döntést _____ volna hozniuk."
+          "text": "Nem, mert a kockázat ismeretében az orvosnak más döntést kellett _____ hoznia."
         }
       ],
       "options": [
-        "kellett",
-        "lehetett",
-        "szabadott"
+        "volna",
+        "lenne",
+        "lesz"
       ],
       "correct": 0,
       "teaches": [
@@ -130,8 +135,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a retrospective ethical critique using 'ha... lett volna'.",
-          "answer": "Ha a klinikai vizsgálatot független etikai bizottság felügyelte volna, a súlyos mellékhatások megelőzhetők lettek volna."
+          "prompt": "Write one sentence: what would have been avoided if the hospital had informed the patient in time? Start with *Ha …*.",
+          "answer": "Ha a kórház időben tájékoztatta volna a beteget, a baj elkerülhető lett volna."
         }
       ],
       "teaches": [
@@ -143,11 +148,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik mondat fejez ki többlépcsős múltbeli ellenkező tényállású következtetést?",
+      "question": "Melyik mondat mondja azt, hogy a baj elkerülhető lett volna?",
       "options": [
-        "Amennyiben a klinika időben felállította volna a diagnózist, elkerülhető lett volna, hogy a beteg állapota visszafordíthatatlanná váljon.",
-        "Amennyiben a beteg állapota stabilizálódik, az orvoscsoport megkezdi a tervezett rehabilitációt.",
-        "Bár a kezelés azonnali eredményt hozott, a hosszú távú gyógyuláshoz további kontrollvizsgálatok szükségesek."
+        "Ha a klinika időben megállapította volna a diagnózist, elkerülhető lett volna a baj.",
+        "Ha a klinika időben megállapítja a diagnózist, elkerülhető a baj.",
+        "Mivel a klinika időben megállapította a diagnózist, elkerülhető volt a baj."
       ],
       "correct": 0,
       "teaches": [

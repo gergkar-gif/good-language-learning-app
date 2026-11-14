@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit fejez ki a 'bázishatás' (base effect) a makrogazdasági statisztikában?",
+      "question": "What does *bázishatás* (base effect) mean?",
       "options": [
-        "Az előző évi viszonyítási időszak rendkívüli szintjének torzító hatását az aktuális növekedési indexre.",
-        "A nominális és reálbérnövekedés közötti statisztikai rés arányát.",
-        "A bruttó hazai termék szezonális és naptárhatással korrigált változását."
+        "Ha tavaly kicsi volt a szám, idén nagyobbnak látszik a növekedés.",
+        "Ha a bérek nőnek, az emberek többet költenek a boltban.",
+        "Ha az árak nőnek, az emberek kevesebbet vesznek a boltban."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A bruttó hazai termék bővülése a várakozásokat felülmúlva elérte a három _____ növekedést.",
-      "hint": "percent / százalék + -os",
-      "answer": "százalékos",
-      "english": "The expansion of gross domestic product reached a three percent growth, surpassing expectations.",
+      "sentence": "A bruttó hazai termék a várakozásokat _____ három százalékkal nőtt.",
+      "hint": "felülmúl, to exceed, adverbial participle",
+      "english": "Exceeding expectations, gross domestic product grew by three percent.",
       "teaches": [
-        "c1-macroeconomic-indicators"
+        "participle-actions"
+      ],
+      "answers": [
+        "felülmúlva"
       ]
     },
     {
@@ -62,12 +64,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A szezonális hatásoktól megtisztított adatok szerint az ipari kibocsátás enyhén _____.",
-      "hint": "stagnated / stagnál + -t",
+      "sentence": "A mostani adatok szerint a termelés nem nőtt és nem csökkent: _____.",
+      "hint": "stagnál, past 3sg",
       "answer": "stagnált",
-      "english": "According to data adjusted for seasonal effects, industrial output slightly stagnated.",
+      "english": "According to the latest figures, production neither grew nor fell: it stagnated.",
       "teaches": [
-        "c1-macroeconomic-indicators"
+        "past-tense-indefinite"
       ]
     },
     {
@@ -76,26 +78,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "reálbér-növekedés",
-        "fokozatosan",
-        "helyreállítja",
+        "Kiszűrve",
         "a",
-        "háztartások",
-        "vásárlóerejét."
+        "bázishatást,",
+        "a",
+        "termelés",
+        "stagnál."
       ],
       "solution": [
-        "A",
-        "reálbér-növekedés",
-        "fokozatosan",
-        "helyreállítja",
+        "Kiszűrve",
         "a",
-        "háztartások",
-        "vásárlóerejét."
+        "bázishatást,",
+        "a",
+        "termelés",
+        "stagnál."
       ],
-      "english": "Real wage growth gradually restores household purchasing power.",
+      "english": "Filtering out the base effect, production stagnates.",
       "teaches": [
-        "c1-macroeconomic-indicators"
+        "participle-actions"
       ]
     },
     {
@@ -106,21 +106,21 @@
       "prompt": [
         {
           "speaker": "Elemző",
-          "text": "Hogyan értékeli a második negyedéves GDP-adatokat?"
+          "text": "Mit mutatnak a mostani számok?"
         },
         {
           "speaker": "Közgazdász",
-          "text": "A technikai recesszió után végre a mérsékelt _____ jeleit tapasztaljuk."
+          "text": "A recesszió után végre a _____ jeleit látjuk."
         }
       ],
       "options": [
-        "növekedés",
-        "stagnálás",
-        "visszaesés"
+        "konjunktúra",
+        "bázishatás",
+        "kibocsátási rés"
       ],
       "correct": 0,
       "teaches": [
-        "c1-macroeconomic-indicators"
+        "c1-macroeconomics-vocab"
       ]
     },
     {
@@ -130,12 +130,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write an opening sentence for an economic report using 'összevetve a megelőző időszakkal'.",
-          "answer": "Összevetve a megelőző negyedévvel, a magyar gazdaság teljesítménye enyhe emelkedést mutat, ám a beruházások dinamikája továbbra is visszafogott marad."
+          "prompt": "Write a sentence for an economic report with a participle: compare this year with last year (*összevetve a tavalyi évvel*).",
+          "answer": "Összevetve a tavalyi évvel, a gazdaság enyhén nőtt."
         }
       ],
       "teaches": [
-        "c1-macroeconomic-indicators"
+        "c1-macroeconomics-vocab"
       ]
     },
     {
@@ -143,15 +143,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fejezi ki a legválasztékosabban a várakozások túlszárnyalását?",
+      "question": "Which phrase says that the result was better than the forecast?",
       "options": [
-        "az elemzői konszenzust felülmúlva",
-        "sokkal jobb lett mint gondolták",
-        "túl jó lett a vártnál"
+        "a várakozásokat felülmúlva",
+        "a várakozásoktól elmaradva",
+        "a várakozások nélkül"
       ],
       "correct": 0,
       "teaches": [
-        "c1-macroeconomic-indicators"
+        "participle-actions"
       ]
     }
   ]

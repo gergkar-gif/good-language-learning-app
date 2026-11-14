@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'zöldrefestés' (greenwashing) fogalma a pénzügyi piacokon?",
+      "question": "What is *zöldrefestés* (greenwashing)?",
       "options": [
-        "Olyan megtévesztő marketinggyakorlatot, amely egy vállalatot környezetbarátnak tüntet fel anélkül, hogy valós ökológiai intézkedéseket tenne.",
-        "A környezetvédelmi hatóságok által kibocsátott hivatalos zöld minősítési eljárást.",
-        "A karbonsemleges vállalatok kötelező éves pénzügyi auditálási folyamatát."
+        "A cég zöldnek mondja magát, de valójában nem tesz semmit a természetért.",
+        "A cég az épületeit zöldre festi, hogy szebbek legyenek az utcán.",
+        "A cég pénzt ad az állami erdőknek a törvény szerint, évente."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A beruházás minősítésekor kötelezően alkalmazni kell a 'jelentős károkozás _____' (DNSH) szigorú elvét.",
-      "hint": "avoidance / elkerülés + -ének",
+      "sentence": "A zöld projekt nem tehet jelentős kárt: ez a jelentős károkozás _____ elve.",
+      "hint": "elkerülés, avoidance; the possessor of *elve*",
       "answer": "elkerülésének",
-      "english": "When evaluating the investment, the strict principle of 'Do No Significant Harm' (DNSH) must be applied.",
+      "english": "A green project must not do significant harm: this is the principle of avoiding significant harm.",
       "teaches": [
-        "c1-green-taxonomy-criteria"
+        "dative-possessor"
       ]
     },
     {
@@ -38,19 +38,19 @@
       "pairs": [
         [
           "taxonómia-rendelet",
-          "zöld gazdasági tevékenységek uniós osztályozása"
+          "EU Taxonomy Regulation"
         ],
         [
           "zöldrefestés",
-          "félrevezető környezeti állítások"
+          "greenwashing"
         ],
         [
           "zöldkötvény",
-          "klímacélokat finanszírozó értékpapír"
+          "green bond"
         ],
         [
           "karbonlábnyom",
-          "üvegházhatású gázkibocsátás mértéke"
+          "carbon footprint"
         ]
       ],
       "teaches": [
@@ -60,14 +60,14 @@
     {
       "id": "c1-14-03-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Az MNB által meghirdetett zöld tőkekövetelmény-kedvezmény a környezetileg fenntartható _____ ösztönzi.",
-      "hint": "lending / hitelezés + -t",
-      "answer": "hitelezést",
-      "english": "The green capital requirement discount announced by the MNB incentivizes environmentally sustainable lending.",
+      "sentence": "A _____ megmutatja, mennyi szén-dioxid kerül a levegőbe egy termék miatt.",
+      "hint": "carbon footprint",
+      "answer": "karbonlábnyom",
+      "english": "The carbon footprint shows how much carbon dioxide is produced because of a product.",
       "teaches": [
-        "c1-green-taxonomy-criteria"
+        "c1-energy-transition-vocab"
       ]
     },
     {
@@ -76,28 +76,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "fenntarthatósági",
-        "jelentéstétel",
-        "kötelezővé",
-        "vált",
-        "a",
+        "Egyes",
         "nagyvállalatok",
-        "számára."
+        "kötelesek",
+        "fenntarthatósági",
+        "jelentést",
+        "készíteni."
       ],
       "solution": [
-        "A",
-        "fenntarthatósági",
-        "jelentéstétel",
-        "kötelezővé",
-        "vált",
-        "a",
+        "Egyes",
         "nagyvállalatok",
-        "számára."
+        "kötelesek",
+        "fenntarthatósági",
+        "jelentést",
+        "készíteni."
       ],
-      "english": "Sustainability reporting has become mandatory for large corporations.",
+      "english": "Some large companies are obliged to prepare a sustainability report.",
       "teaches": [
-        "c1-green-taxonomy-criteria"
+        "formal-obligation"
       ]
     },
     {
@@ -108,11 +104,11 @@
       "prompt": [
         {
           "speaker": "Befektető",
-          "text": "Hogyan bizonyosodhatok meg arról, hogy a kötvénykibocsátó valóban zöld projektet finanszíroz?"
+          "text": "Honnan tudom, hogy a projekt tényleg zöld?"
         },
         {
           "speaker": "Bankár",
-          "text": "A független szakértői vélemény és az uniós _____ való megfelelés vizsgálatával."
+          "text": "Meg kell nézni, hogy megfelel-e az uniós _____."
         }
       ],
       "options": [
@@ -122,8 +118,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "c1-green-taxonomy-criteria"
-      ]
+        "verb-government-nak-nek"
+      ],
+      "distractor_skills": {
+        "1": "hoz-suffix",
+        "2": "val-vel"
+      }
     },
     {
       "id": "c1-14-03-production-7",
@@ -132,28 +132,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence defining the DNSH principle in sustainable corporate finance.",
-          "answer": "Az uniós taxonómia értelmében egy gazdasági tevékenység csak akkor minősül fenntarthatónak, ha érdemben hozzájárul a klímacélokhoz, miközben nem sérti a jelentős károkozás elkerülésének elvét más környezeti célok tekintetében."
+          "prompt": "Write a sentence about greenwashing.",
+          "answer": "A zöldrefestés megtéveszti a befektetőket, mert a cég zöldnek mondja magát."
         }
       ],
       "teaches": [
-        "c1-green-taxonomy-criteria"
+        "c1-energy-transition-vocab"
       ]
     },
     {
       "id": "c1-14-03-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mi az ESG-szempontok (Environmental, Social, Governance) lényege a vállalatértékelésben?",
+      "question": "What does ESG stand for in judging a company?",
       "options": [
-        "A pénzügyi mutatókon túlmenően a környezeti lábnyom, a társadalmi felelősség és az átlátható cégvezetés együttes vizsgálata.",
-        "A multinacionális vállalatok nemzetközi adóoptimalizálásának és offshore pénzmozgásainak szigorú könyvvizsgálata.",
-        "A munkavállalói elégedettség és a belső vállalati képzési programok hatékonyságának rendszeres mérése."
+        "A környezet, a társadalmi felelősség és a cég vezetése együtt.",
+        "A cég éves adója, a cég hitele és a cég tőzsdei ára.",
+        "A cég dolgozóinak száma, fizetése és szabadsága."
       ],
       "correct": 0,
       "teaches": [
-        "c1-green-taxonomy-criteria"
+        "c1-energy-transition-vocab"
       ]
     }
   ]

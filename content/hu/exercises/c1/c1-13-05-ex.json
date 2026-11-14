@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a lényege Kornai 'puha költségvetési korlát' (soft budget constraint) elméletének?",
+      "question": "What is Kornai's *puha költségvetési korlát* (soft budget constraint)?",
       "options": [
-        "Az állam automatikusan megmenti a veszteséges vállalatokat, ami felelőtlen gazdálkodáshoz és krónikus hiányhoz vezet.",
-        "A vállalatok rugalmas bérezési rendszert vezetnek be a fluktuáció csökkentése érdekében.",
-        "A központi tervezés kizárólag a könnyűipari ágazatokban engedélyezi a piaci ármechanizmust."
+        "Az állam kisegíti a veszteséges vállalatot.",
+        "Az állam bezárja a veszteséges vállalatot.",
+        "A vállalat maga fizeti ki a veszteségét."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Kornai szerint a szocialista vállalatok csillapíthatatlan beruházási éhsége a kemény költségvetési korlát _____ fakadt.",
-      "hint": "absence / hiány + -ából",
-      "answer": "hiányából",
-      "english": "According to Kornai, the insatiable investment hunger of socialist enterprises stemmed from the absence of a hard budget constraint.",
+      "sentence": "Kornai szerint a hiány a puha költségvetési korlátból _____.",
+      "hint": "to stem from",
+      "english": "According to Kornai, shortage stems from the soft budget constraint.",
       "teaches": [
-        "c1-growth-model-synthesis"
+        "verb-government-bol-bol"
+      ],
+      "answers": [
+        "fakad",
+        "fakadt"
       ]
     },
     {
@@ -38,19 +41,19 @@
       "pairs": [
         [
           "puha költségvetési korlát",
-          "állami kisegítés miatti felelőtlenség"
+          "soft budget constraint"
         ],
         [
           "hiánygazdaság",
-          "krónikus áruhiányon alapuló rendszer"
-        ],
-        [
-          "bürokratikus koordináció",
-          "központi tervezői irányítás"
+          "economy of shortage"
         ],
         [
           "fizetési mérleg",
-          "nemzetközi tranzakciók összessége"
+          "balance of payments"
+        ],
+        [
+          "bürokratikus koordináció",
+          "bureaucratic coordination"
         ]
       ],
       "teaches": [
@@ -62,11 +65,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "practice",
-      "question": "Miért tekintette Kornai a hiányt immanens rendszerhibának?",
+      "question": "A szöveg szerint mi okozza a hiányt?",
       "options": [
-        "Mert a paternalista állami kimentés kiiktatja a csőd kockázatát, így a vállalatok korlátlanul halmozzák fel az erőforrásokat.",
-        "Mert a gazdaságpolitika a belső fogyasztást részesítette előnyben a nehézipari beruházásokkal szemben.",
-        "Mert a nemzetközi kereskedelmi embargók ellehetetlenítették a mezőgazdasági termelést."
+        "Az állam kisegíti a veszteséges vállalatokat.",
+        "A vállalatok nem akarnak gépeket felhalmozni.",
+        "A boltok túl magas árakat kérnek a termékekért."
       ],
       "correct": 0
     },
@@ -80,28 +83,30 @@
         "puha",
         "költségvetési",
         "korlát",
-        "felszámolása",
+        "miatt",
         "a",
-        "piaci",
-        "átmenet",
-        "alapfeltétele",
-        "volt."
+        "vállalat",
+        "nem",
+        "fél",
+        "a",
+        "csődtől."
       ],
       "solution": [
         "A",
         "puha",
         "költségvetési",
         "korlát",
-        "felszámolása",
+        "miatt",
         "a",
-        "piaci",
-        "átmenet",
-        "alapfeltétele",
-        "volt."
+        "vállalat",
+        "nem",
+        "fél",
+        "a",
+        "csődtől."
       ],
-      "english": "Eliminating the soft budget constraint was the prerequisite of market transition.",
+      "english": "Because of the soft budget constraint the firm does not fear bankruptcy.",
       "teaches": [
-        "c1-growth-model-synthesis"
+        "basic-hungarian-word-order"
       ]
     },
     {
@@ -111,28 +116,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Summarize János Kornai's analysis of the soft budget constraint.",
-          "answer": "Kornai kimutatta, hogy ha a vállalatokat az állam felmenti a csőd kockázata alól, megszakad a pénzügyi fegyelem, ami csillapíthatatlan erőforrás-felhalmozáshoz és krónikus hiánygazdasághoz vezet."
+          "prompt": "Summarize Kornai's idea of the soft budget constraint in one sentence.",
+          "answer": "Kornai szerint az állam kisegíti a veszteséges vállalatokat, ezért hiány van."
         }
       ],
       "teaches": [
-        "c1-growth-model-synthesis"
+        "c1-macroeconomics-vocab"
       ]
     },
     {
       "id": "c1-13-05-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Milyen hatással van a puha költségvetési korlát az allokációs hatékonyságra?",
+      "question": "What does the soft budget constraint do to *allokációs hatékonyság* (allocative efficiency)?",
       "options": [
-        "Drasztikusan rontja, mivel a források nem a versenyképes, hanem a politikai alkukban erős szereplőkhöz vándorolnak.",
-        "Csak átmenetileg fékezi a termelékenység növekedését a konjunktúra időszakában.",
-        "Kiegyenlíti a technológiai különbségeket a fejlett és elmaradott iparágak között."
+        "Rosszabbá teszi, mert a pénz nem a legjobb vállalatokhoz kerül.",
+        "Jobbá teszi, mert a vállalatok jobban figyelnek a költségeikre.",
+        "Nem változtat rajta, mert az állam semmit sem támogat."
       ],
       "correct": 0,
       "teaches": [
-        "c1-growth-model-synthesis"
+        "c1-macroeconomics-vocab"
       ]
     }
   ]

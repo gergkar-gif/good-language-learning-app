@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen jog illeti meg a gyógyíthatatlan beteget a magyar egészségügyi törvény szerint?",
+      "question": "Mit tehet a halálosan beteg ember a magyar törvény szerint?",
       "options": [
-        "A kezelés visszautasításának joga szigorú formai feltételek mellett.",
-        "A terápia költségeinek teljes és azonnali megtérítése az egészségbiztosító által.",
-        "A gyógyszerek hatósági árazásának bírósági felülvizsgálata."
+        "Szigorú feltételek mellett nemet mondhat az életfenntartó kezelésre.",
+        "Szigorú feltételek mellett kérheti az orvostól, hogy segítsen meghalni.",
+        "Szigorú feltételek mellett kérhet a kórháztól minden kezelést."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A beteg emberi méltóságának része a méltóságteljes _____ való jog a gyógyíthatatlan betegség végső stádiumában.",
-      "hint": "to death / halál + -hoz",
+      "sentence": "Sokan a méltóságteljes _____ való jogról beszélnek az élet végén.",
+      "hint": "death",
       "answer": "halálhoz",
-      "english": "Part of the patient's human dignity is the right to a dignified death in the terminal stage of incurable illness.",
+      "english": "Many people speak of a right to a dignified death at the end of life.",
       "teaches": [
-        "c1-patient-autonomy"
+        "verb-government-hoz-hez"
       ]
     },
     {
@@ -62,12 +62,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A terminális állapotban lévő beteg előzetes jognyilatkozatban, úgynevezett élő _____ rendelkezhet a kezelések elutasításáról.",
-      "hint": "will / végrendelet + -ben",
+      "sentence": "A beteg előre leírja az akaratát egy úgynevezett élő _____.",
+      "hint": "will (document), in",
       "answer": "végrendeletben",
-      "english": "A patient in terminal condition may dispose of the refusal of treatments in an advance declaration, a so-called living will.",
+      "english": "The patient writes down his wishes in advance in a so-called living will.",
       "teaches": [
-        "c1-patient-autonomy"
+        "ban-ben-in"
       ]
     },
     {
@@ -77,27 +77,25 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "szenvedés",
-        "enyhítése",
-        "a",
         "palliatív",
-        "orvoslás",
-        "legfőbb",
-        "küldetése."
+        "ellátás",
+        "célja",
+        "a",
+        "szenvedés",
+        "enyhítése."
       ],
       "solution": [
         "A",
-        "szenvedés",
-        "enyhítése",
-        "a",
         "palliatív",
-        "orvoslás",
-        "legfőbb",
-        "küldetése."
+        "ellátás",
+        "célja",
+        "a",
+        "szenvedés",
+        "enyhítése."
       ],
-      "english": "Alleviation of suffering is the chief mission of palliative medicine.",
+      "english": "The aim of palliative care is to ease suffering.",
       "teaches": [
-        "c1-patient-autonomy"
+        "nominalization"
       ]
     },
     {
@@ -108,22 +106,26 @@
       "prompt": [
         {
           "speaker": "Jogász",
-          "text": "Hogyan egyeztethető össze az élethez való jog a beteg akaratával?"
+          "text": "Mit jelent az önrendelkezési jog?"
         },
         {
           "speaker": "Etikus",
-          "text": "Az élet szentsége nem jelenthet kötelezettséget a kilátástalan és emberhez méltatlan _____ elviselésére."
+          "text": "Azt, hogy a betegnek joga van _____ a kezelést."
         }
       ],
       "options": [
-        "szenvedés",
-        "beavatkozás",
-        "állapot"
+        "visszautasítani",
+        "visszautasít",
+        "visszautasítás"
       ],
       "correct": 0,
       "teaches": [
-        "c1-patient-autonomy"
-      ]
+        "building-the-infinitive-the-suffix-ni"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "nominalization"
+      }
     },
     {
       "id": "c1-09-04-production-7",
@@ -132,28 +134,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a position on the boundary between life preservation and dignified death.",
-          "answer": "Az orvosi hivatás feladata az élet védelme, de a gyógyítás nem válhat terápiás túlbuzgósággá; a beteg önrendelkező döntése a méltóságteljes elmúlásról tiszteletben tartandó."
+          "prompt": "Say in one sentence when a patient may refuse treatment.",
+          "answer": "A halálos beteg szigorú feltételek mellett nemet mondhat az életfenntartó kezelésre, mert joga van dönteni a saját életéről."
         }
       ],
       "teaches": [
-        "c1-patient-autonomy"
+        "nominalization"
       ]
     },
     {
       "id": "c1-09-04-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mi képezi a palliatív terápia legfontosabb etikai célját?",
+      "question": "Mi a palliatív ellátás célja?",
       "options": [
-        "A fájdalomcsillapítás, a tüneti enyhítés és a pszichológiai támogatás biztosítása a beteg méltóságának megőrzésével.",
-        "A kuratív gyógyító terápiák fenntartása a beteg kifejezett akarata ellenére is.",
-        "A hozzátartozók terheinek csökkentése a beteg intézményi elszigetelése révén."
+        "A szenvedésenyhítés és a beteg méltóságának megőrzése az élet végén.",
+        "A betegség gyógyítása a beteg akarata ellenére is, bármi áron.",
+        "A beteg és a család elválasztása a kórházban."
       ],
       "correct": 0,
       "teaches": [
-        "c1-patient-autonomy"
+        "c1-bioethics-vocab"
       ]
     }
   ]
