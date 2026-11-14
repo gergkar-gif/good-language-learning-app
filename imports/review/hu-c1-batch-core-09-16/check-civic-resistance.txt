@@ -1,0 +1,26 @@
+108 fixes: 3 auto, 101 to review, 4 rejected
+  rejected #35 (c1-12-02-check-8): brings length-giveaway: 48 vs 36 characters :: content/hu/exercises/c1/c1-12-02-ex.json: c1-12-02-check-8 set question, options, correct
+  rejected #49 (c1-12-03-practice-4): schema: {'id': 'c1-12-03-practice-4', 'type': 'fill-blank', 'category': 'vocabulary', 'stage': 'practice', 'sentence': 'A törvények összessége, amelyeket a törvényhozó  :: content/hu/exercises/c1/c1-12-03-ex.json: c1-12-03-practice-4 set sentence, hint, answer, english, category, teaches
+  rejected #98 (c1-12-consolidation-2): brings length-giveaway: 69 vs 48 characters :: content/hu/exercises/c1/c1-12-consolidation-ex.json: c1-12-consolidation-2 set question, options, correct, category, teaches
+  rejected #104 (c1-12-consolidation-9): brings length-giveaway: 57 vs 42 characters :: content/hu/exercises/c1/c1-12-consolidation-ex.json: c1-12-consolidation-9 set question, options, correct, category, teaches
+  new findings no fix names by id (give text fixes an "id"; check these by hand):
+    vocab-unused c1-12-03: természetjog
+    vocab-unused c1-12-04: demokratikus deficit
+    vocab-unused c1-12-05: deliberatív
+  unmet words the fixes bring (15; list each on the first lesson using it, or rewrite it in a core unit; lookup misses of split verbs and names included):
+    c1-12-01-dialogue-6: bomlik
+    c1-12-02-dialogue-6: vehetek
+    c1-12-03-check-8: hasznosságát
+    c1-12-03-dialogue-6: jogilag
+    c1-12-03-practice-4: összessége
+    c1-12-04-check-8: legitim, legitimmé
+    c1-12-04-introduce-1: másképp
+    c1-12-05-check-7: felfüggesztheti, fűzhet, indíthat, leírhatja
+    c1-12-05-practice-5: önvédelme
+    c1-12-consolidation-11: önvédelme
+    c1-12-consolidation-5: elviselhetetlenül
+  check-content errors left in civic-resistance once this list is applied (3; a list should leave none: write the missing fixes or an extra list):
+    length-giveaway c1-12-02-check-8: 48 vs 36 characters
+    length-giveaway c1-12-consolidation-2: 69 vs 48 characters
+    length-giveaway c1-12-consolidation-9: 57 vs 42 characters
+wrote imports/review/hu-c1-batch-core-09-16/fixes-civic-resistance.auto.json, imports/review/hu-c1-batch-core-09-16/fixes-civic-resistance.review.json

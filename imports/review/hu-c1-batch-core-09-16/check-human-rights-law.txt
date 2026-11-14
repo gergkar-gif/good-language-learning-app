@@ -1,0 +1,23 @@
+121 fixes: 3 auto, 116 to review, 2 rejected
+  rejected #79 (c1-11-04-check-8): brings length-giveaway: 91 vs 66 characters :: content/hu/exercises/c1/c1-11-04-ex.json: c1-11-04-check-8 set question, options, correct, category, teaches
+  rejected #115 (c1-11-consolidation-7): schema: {'id': 'c1-11-consolidation-7', 'type': 'fill-blank', 'category': 'grammar', 'stage': 'context', 'sentence': 'A nemzetközi szerződés kihirdetéssel válik a magya :: content/hu/exercises/c1/c1-11-consolidation-ex.json: c1-11-consolidation-7 set sentence, hint, answer, english, category, teaches
+  new findings no fix names by id (give text fixes an "id"; check these by hand):
+    vocab-unused c1-11-03: nemzetközi humanitárius jog
+    vocab-unused c1-11-04: nemzetközi jogi kötelezettség
+  unmet words the fixes bring (22; list each on the first lesson using it, or rewrite it in a core unit; lookup misses of split verbs and names included):
+    c1-11-01-introduce-1: gyakorolhatja
+    c1-11-02-check-8: gyakorolhatja
+    c1-11-02-introduce-1: magánszemélyek
+    c1-11-03-check-8: hágai
+    c1-11-03-dialogue-6: cselekedett, mentesít, törvénytelen
+    c1-11-03-introduce-1: eljárhat, elkövették
+    c1-11-04-check-8: elbocsátják
+    c1-11-04-controlled-2: megvizsgálhatja
+    c1-11-05-controlled-2: menthetetlenül
+    c1-11-consolidation-1: ajánlások
+    c1-11-consolidation-12: elhallgatása, vállalása
+    c1-11-consolidation-5: vállalását
+    c1-11-consolidation-9: békeidőben, büntethetők, elkövetve, elévülnek, tekinthetők, évülnek
+  check-content errors left in human-rights-law once this list is applied (1; a list should leave none: write the missing fixes or an extra list):
+    length-giveaway c1-11-04-check-8: 91 vs 66 characters
+wrote imports/review/hu-c1-batch-core-09-16/fixes-human-rights-law.auto.json, imports/review/hu-c1-batch-core-09-16/fixes-human-rights-law.review.json
