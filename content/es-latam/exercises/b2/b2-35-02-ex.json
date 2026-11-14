@@ -3,69 +3,122 @@
   "exercises": [
     {
       "id": "b2-35-02.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "estimar",
+          "to estimate"
+        ],
+        [
+          "la cifra",
+          "figure"
+        ],
+        [
+          "la medida",
+          "measure"
+        ],
+        [
+          "la fuente",
+          "source"
+        ]
+      ],
       "teaches": [
-        "nominalizacion-despersonalizacion"
-      ],
-      "question": "¿Cuál de las siguientes construcciones ejemplifica el distanciamiento e impersonalidad en la crónica de opinión?",
-      "options": [
-        "A mí me parece que los ministros son todos unos incompetentes.",
-        "Cabe colegir de los antecedentes recabados que la resolución ministerial carecía de aval técnico.",
-        "Yo creo firmemente que se equivocaron.",
-        "Nosotros los periodistas no entendemos nada de economía."
-      ],
-      "correct": 1
+        "b2-formal-registers-vocab"
+      ]
     },
     {
       "id": "b2-35-02.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Se ____ que la obra costará dos millones.",
+      "answer": "estima",
+      "english": "It is estimated that the work will cost two million.",
       "teaches": [
-        "nominalizacion-despersonalizacion"
-      ],
-      "sentence": "Conviene __ que ninguna autoridad gubernamental desmintió los testimonios documentados.",
-      "answer": "puntualizar",
-      "english": "It is worth pointing out that no governmental authority denied the documented testimonies."
+        "pasiva-refleja"
+      ]
     },
     {
       "id": "b2-35-02.ex03",
-      "type": "matching",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-formal-registers-vocab"
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "How does a news report say, without naming anyone, that a law was passed?",
+      "options": [
+        "Se aprobó la nueva ley.",
+        "Se aprobaron la nueva ley.",
+        "Se aprobó a la nueva ley."
       ],
-      "pairs": [
-        [
-          "cabe colegir",
-          "it can be gathered / deduced"
-        ],
-        [
-          "deontológico",
-          "ethical / related to professional duties"
-        ],
-        [
-          "fehaciente",
-          "reliable / irrefutable"
-        ],
-        [
-          "distanciamiento",
-          "distancing / objectivity"
-        ]
+      "correct": 0,
+      "teaches": [
+        "se-pasivo-vs-impersonal"
       ]
     },
     {
       "id": "b2-35-02.ex04",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Se espera que el ministro ____ mañana.",
+      "answer": "llegue",
+      "english": "The minister is expected to arrive tomorrow.",
+      "teaches": [
+        "subjuntivo-deseos"
+      ]
+    },
+    {
+      "id": "b2-35-02.ex05",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Según",
+        "fuentes",
+        "oficiales,",
+        "el",
+        "gobierno",
+        "anunciará",
+        "nuevas",
+        "medidas."
+      ],
+      "solution": [
+        "Según",
+        "fuentes",
+        "oficiales,",
+        "el",
+        "gobierno",
+        "anunciará",
+        "nuevas",
+        "medidas."
+      ],
+      "english": "According to official sources, the government will announce new measures.",
+      "teaches": [
+        "pasiva-refleja"
+      ]
+    },
+    {
+      "id": "b2-35-02.ex06",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence is the most impersonal, as in a news report?",
+      "options": [
+        "Se cree que la crisis termina pronto.",
+        "Yo creo que la crisis termina pronto.",
+        "El periodista cree que la crisis termina pronto."
+      ],
+      "correct": 0,
+      "teaches": [
+        "pasiva-refleja"
+      ]
+    },
+    {
+      "id": "b2-35-02.ex07",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué rol cumple el trompo mágico ('zumbayllu') en el patio del colegio de Abancay?",
+      "question": "How old is Ernesto, the narrator of Los ríos profundos?",
       "options": [
-        "Genera apuestas clandestinas entre los profesores.",
-        "Suspende las reyertas violentas entre los internos y conecta a Ernesto con la música cósmica andina.",
-        "Sirve de proyectil para romper las ventanas del internado.",
-        "Es un regalo traído directamente de una feria en París."
+        "Catorce años.",
+        "Quince años.",
+        "Doce años."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

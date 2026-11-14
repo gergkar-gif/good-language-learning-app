@@ -5,67 +5,113 @@
       "id": "b2-34-05.ex01",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "formal-register"
-      ],
-      "question": "¿Qué rasgo caracteriza la adecuación a un registro formal o académico en el nivel B2?",
+      "question": "You write to a bank about your account. Which opening is right?",
       "options": [
-        "El abuso de modismos callejeros y frases incompletas",
-        "La subordinación sintáctica rigurosa, el léxico preciso y la ausencia de coloquialismos no marcados",
-        "El empleo exclusivo del modo imperativo directo",
-        "La eliminación de cualquier conector lógico u organizador textual"
+        "Buenos días, señor. Le escribo para pedirle información.",
+        "Hola, ¿qué tal? Te escribo para pedirte información.",
+        "Buenos días, señor. Te escribo para pedirle información."
       ],
-      "correct": 1
+      "correct": 0,
+      "teaches": [
+        "sociolinguistica-tratamiento-cortesia"
+      ]
     },
     {
       "id": "b2-34-05.ex02",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "formal-register"
+      "question": "A friend texts you. Which reply fits?",
+      "options": [
+        "Hola, ¿qué tal? Te escribo mañana.",
+        "Buenos días, ¿cómo está usted? Le escribiré mañana.",
+        "Estimado señor, le escribiré mañana."
       ],
-      "sentence": "El tribunal resolvió __ los títulos universitarios extranjeros conforme al convenio multilateral vigente.",
-      "answer": "homologar",
-      "english": "The court decided to validate foreign university degrees pursuant to the multilateral agreement in force."
+      "correct": 0,
+      "teaches": [
+        "sociolinguistica-tratamiento-cortesia"
+      ]
     },
     {
       "id": "b2-34-05.ex03",
-      "type": "matching",
+      "type": "fill-blank",
       "category": "vocabulary",
+      "sentence": "Con un desconocido uso un ____ formal.",
+      "answer": "registro",
+      "english": "With a stranger I use a formal register.",
       "teaches": [
         "b2-dialect-variation-register-vocab"
-      ],
-      "pairs": [
-        [
-          "homologar",
-          "to validate / accredit officially"
-        ],
-        [
-          "diastrático",
-          "socially or register-based variable"
-        ],
-        [
-          "coloquialismo",
-          "colloquial expression"
-        ],
-        [
-          "solemne",
-          "solemn / formal"
-        ]
       ]
     },
     {
       "id": "b2-34-05.ex04",
-      "type": "multiple-choice",
-      "question": "¿Cuál es la trascendencia de la 'balada' narrativa de Scorza dentro de la literatura hispanoamericana contemporánea?",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Perdón, ¿me ____ su número, por favor?",
+      "answer": "daría",
+      "english": "Excuse me, would you give me your number, please?",
+      "teaches": [
+        "polite-softening"
+      ]
+    },
+    {
+      "id": "b2-34-05.ex05",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Que",
+        "tenga",
+        "un",
+        "buen",
+        "día."
+      ],
+      "solution": [
+        "Que",
+        "tenga",
+        "un",
+        "buen",
+        "día."
+      ],
+      "english": "Have a good day.",
+      "teaches": [
+        "subjuntivo-deseos"
+      ]
+    },
+    {
+      "id": "b2-34-05.ex06",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cómo se llama usted?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____ Carlos."
+        }
+      ],
       "options": [
-        "Constituye una crónica lírica testimonial que devuelve la voz y dignidad a las luchas campesinas de los Andes.",
-        "Fue una apología de la modernización tecnológica y la gran minería extractiva.",
-        "Fue una recopilación de canciones románticas para guitarra acústica.",
-        "Un tratado de geografía física sin personajes humanos."
+        "Me llamo",
+        "Te llamas",
+        "Se llama"
       ],
       "correct": 0,
-      "category": "reading"
+      "teaches": [
+        "sociolinguistica-tratamiento-cortesia"
+      ],
+      "hint": "Carlos answers about himself."
+    },
+    {
+      "id": "b2-34-05.ex07",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "What do the comuneros of Rancas fight against, according to the text?",
+      "options": [
+        "Una empresa minera.",
+        "Una editorial grande.",
+        "Una escuela grande."
+      ],
+      "correct": 0
     }
   ]
 }

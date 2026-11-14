@@ -512,6 +512,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-13 | ES B2 core Units 19–22 (es-latam) | two edit-in-place agents (Sonnet), two units each; no registry moves | A 296,895 (15 min), B 318,445 (19 min); ~154k a unit | | 0 errors / 0 suspects in all four, unmet 0 | walked 24/24, all frozen; 3 texts rewritten by the reviewer, a participle rule corrected |
 | 11-13 | ES B2 core Units 23–26 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 334,129 (18 min), B 351,819 (19 min); ~171k a unit | | 0 errors in all four, 3 suspects accepted, unmet 0 | walked 24/24, all frozen; 9 challenges in frozen Units 17–18, 26 fixed for character facts |
 | 11-13 | ES B2 core Units 27–30 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 336,404 (19 min), B 328,070 (18 min); ~166k a unit | | 23 errors / 75 suspects → 0 / 5 accepted, unmet 1 kept | walked 24/24, all frozen; both texts about a work rewritten by the reviewer (meta padding); new `story-meta` check finds 43 sentences in 18 frozen texts |
+| 11-14 | ES B2 core Units 31–36 (es-latam) | two edit-in-place agents (Sonnet), **three units each**, both stopped by the 5-hour limit at once and resumed | A 295,492 (resumed run only), B 310,080; ~100k a unit | | 57 errors / 172 suspects → 0 / 6 accepted, unmet 0 | walked 36/36, all frozen; B2 core 36/36; texts about the work 108–195 words |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2117,4 +2118,20 @@ The user took the four recommended options:
   words) or padded: short is the right outcome.
 - The container restarted after the agents finished and before their diffs were saved;
   the worktrees survived. Saving each diff the moment its notice arrives stays the rule.
+
+
+### 2026-11-14: ES B2 core Units 31–36
+
+- **Three units per agent cost ~100k a unit against ~166k at two** (the resumed runs only, so
+  a floor), with the same check results. The agents generated each unit from a script rather
+  than editing items one by one, which kept them fast; it also means every item is new and
+  the reviewer's read is the only read.
+- **The brief carried a false premise** (J. M. Arguedas "presented in Unit 21"): the agent
+  checked the file and refused it. Facts I put in a brief about the course itself need the same
+  check as facts about the world. **Change:** cross-references in unit notes are grepped
+  before the brief goes out.
+- `story-meta` missed "se presentó en la Unidad 1 de B2": a regex catches the phrasings seen,
+  not the habit. Widened again; the reviewer's read still has to look for talk about the course.
+- Both agents hit the usage limit within minutes of launch: launching right after a reset
+  (done for earlier batches) was skipped this time.
 

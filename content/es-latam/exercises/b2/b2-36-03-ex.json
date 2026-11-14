@@ -3,69 +3,120 @@
   "exercises": [
     {
       "id": "b2-36-03.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "sentence": "En ____, el plan merece la pena.",
+      "answer": "suma",
+      "english": "In short, the plan is worthwhile.",
       "teaches": [
-        "essay-style"
-      ],
-      "question": "¿Qué conector metadiscursivo es idóneo para introducir un nuevo eje temático en la arquitectura del ensayo?",
-      "options": [
-        "Cambiando de tema de golpe",
-        "Por lo que atañe a",
-        "Pues resulta que",
-        "Y dale con que"
-      ],
-      "correct": 1
+        "b2-own-voice-synthesis-vocab"
+      ]
     },
     {
       "id": "b2-36-03.ex02",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "essay-style"
+      "question": "Which phrase moves an essay on to its next part?",
+      "options": [
+        "Llegados a este punto, conviene hablar del tiempo.",
+        "Es decir, conviene hablar del tiempo.",
+        "No obstante, conviene hablar del tiempo."
       ],
-      "sentence": "A la __ de estas consideraciones, la cooperación científica interregional adquiere rango prioritario.",
-      "answer": "luz",
-      "english": "In light of these considerations, interregional scientific cooperation acquires priority status."
+      "correct": 0,
+      "teaches": [
+        "reformulation-markers"
+      ],
+      "distractor_skills": {
+        "2": "contrast-markers"
+      }
     },
     {
       "id": "b2-36-03.ex03",
-      "type": "matching",
-      "category": "vocabulary",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Cómo termino el último párrafo?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Con una frase breve: ___________, el plan merece la pena."
+        }
+      ],
+      "options": [
+        "En suma",
+        "Es decir",
+        "Ahora bien"
+      ],
+      "correct": 0,
       "teaches": [
         "b2-own-voice-synthesis-vocab"
       ],
-      "pairs": [
-        [
-          "a la luz de",
-          "in light of"
-        ],
-        [
-          "por lo que atañe a",
-          "as far as ... is concerned"
-        ],
-        [
-          "en consonancia con",
-          "in consonance with / in accordance with"
-        ],
-        [
-          "macroestructura",
-          "macrostructure / overall textual architecture"
-        ]
-      ]
+      "hint": "Meg advises Carlos on closing the paragraph.",
+      "distractor_skills": {
+        "2": "contrast-markers"
+      }
     },
     {
       "id": "b2-36-03.ex04",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué visión sobrecogedora experimenta Borges al recostarse en la oscuridad del sótano de la calle Garay?",
+      "category": "grammar",
+      "question": "Which sentence draws a consequence?",
       "options": [
-        "La aparición de un fantasma colonial que le exige dinero.",
-        "La visión del Aleph: un punto resplandeciente donde coexisten todos los lugares del universo simultáneamente sin confundirse.",
-        "Un túnel secreto que conduce al puerto de Buenos Aires.",
-        "Un espejo roto que refleja únicamente su propio rostro envejecido."
+        "El plan es barato; por lo tanto, es una buena idea.",
+        "El plan es barato; no obstante, es una buena idea.",
+        "El plan es barato; es decir, es una buena idea."
       ],
-      "correct": 1
+      "correct": 0,
+      "teaches": [
+        "consequence-markers"
+      ],
+      "distractor_skills": {
+        "1": "contrast-markers",
+        "2": "reformulation-markers"
+      }
+    },
+    {
+      "id": "b2-36-03.ex05",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "En",
+        "cuanto",
+        "al",
+        "precio,",
+        "el",
+        "plan",
+        "es",
+        "caro."
+      ],
+      "solution": [
+        "En",
+        "cuanto",
+        "al",
+        "precio,",
+        "el",
+        "plan",
+        "es",
+        "caro."
+      ],
+      "english": "As for the price, the plan is expensive.",
+      "teaches": [
+        "marcadores-digresion"
+      ]
+    },
+    {
+      "id": "b2-36-03.ex06",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Where is the Aleph, according to Daneri?",
+      "options": [
+        "En el sótano de su casa.",
+        "En el jardín de su casa.",
+        "En la biblioteca de Buenos Aires."
+      ],
+      "correct": 0
     }
   ]
 }

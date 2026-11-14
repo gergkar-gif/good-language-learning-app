@@ -3,69 +3,112 @@
   "exercises": [
     {
       "id": "b2-35-03.ex01",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Si bien es ____ que el plan es caro, ofrece muchas ventajas.",
+      "answer": "cierto",
+      "english": "It is true that the plan is expensive, but it offers many advantages.",
       "teaches": [
-        "contrast-markers"
-      ],
-      "question": "¿Qué función cumple el conector 'antes bien' en un debate dialéctico riguroso?",
-      "options": [
-        "Introduce una duda irrelevante.",
-        "Introduce una rectificación correctiva que intensifica la afirmación contraria previa.",
-        "Marca el cierre definitivo de la sesión sin posibilidad de réplica.",
-        "Indica que la acción ocurrió cronológicamente antes del mediodía."
-      ],
-      "correct": 1
+        "concesivas-si-bien"
+      ]
     },
     {
       "id": "b2-35-03.ex02",
-      "type": "fill-blank",
-      "category": "grammar",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "El plan es bueno."
+        },
+        {
+          "speaker": "Meg",
+          "text": "Sí. _____, cuesta mucho dinero."
+        }
+      ],
+      "options": [
+        "Ahora bien",
+        "Por eso",
+        "Es decir"
+      ],
+      "correct": 0,
       "teaches": [
         "contrast-markers"
       ],
-      "sentence": "La gran minería genera ingresos fiscales; en __, compromete de forma irreversible las fuentes hídricas.",
-      "answer": "contrapartida",
-      "english": "Large-scale mining generates fiscal revenues; on the other hand, it irreversibly compromises water sources."
+      "hint": "Meg adds a limit to what Carlos said.",
+      "distractor_skills": {
+        "1": "consequence-markers"
+      }
     },
     {
       "id": "b2-35-03.ex03",
-      "type": "matching",
-      "category": "vocabulary",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Cabe",
+        "señalar",
+        "que",
+        "el",
+        "plan",
+        "no",
+        "está",
+        "aprobado."
+      ],
+      "solution": [
+        "Cabe",
+        "señalar",
+        "que",
+        "el",
+        "plan",
+        "no",
+        "está",
+        "aprobado."
+      ],
+      "english": "It is worth noting that the plan is not approved.",
       "teaches": [
         "b2-formal-registers-vocab"
-      ],
-      "pairs": [
-        [
-          "antes bien",
-          "rather / on the contrary"
-        ],
-        [
-          "en contrapartida",
-          "in contrast / on the other hand"
-        ],
-        [
-          "refutación",
-          "rebuttal / refutation"
-        ],
-        [
-          "antítesis",
-          "antithesis / opposing idea"
-        ]
       ]
     },
     {
       "id": "b2-35-03.ex04",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "sentence": "Cabe ____ que el plan todavía no está aprobado.",
+      "answer": "señalar",
+      "english": "It is worth noting that the plan is not yet approved.",
+      "teaches": [
+        "b2-formal-registers-vocab"
+      ]
+    },
+    {
+      "id": "b2-35-03.ex05",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence grants a point and then limits it?",
+      "options": [
+        "Si bien es cierto que el plan es caro, ofrece muchas ventajas.",
+        "Si bien es cierto que el plan es caro, por eso ofrece ventajas.",
+        "Si bien es cierto que el plan es caro, cuesta mucho dinero."
+      ],
+      "correct": 0,
+      "teaches": [
+        "concesivas-si-bien"
+      ],
+      "distractor_skills": {
+        "1": "consequence-markers"
+      }
+    },
+    {
+      "id": "b2-35-03.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Por qué se sublevan las chicheras lideradas por doña Felipa en 'Los ríos profundos'?",
+      "question": "What is the language of many peoples of the Andes that appears in the novel?",
       "options": [
-        "Para exigir la bajada de aranceles al aguardiente importado.",
-        "Para recuperar la sal acaparada por comerciantes y repartirla entre los campesinos hambrientos.",
-        "Para proclamar la independencia de la ciudad de Abancay.",
-        "Para impedir la construcción de una nueva iglesia diocesana."
+        "El quechua.",
+        "El inglés.",
+        "El latín."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

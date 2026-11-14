@@ -3,69 +3,106 @@
   "exercises": [
     {
       "id": "b2-34-04.ex01",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Le ruego que ____ aquí, por favor.",
+      "answer": "firme",
+      "english": "I ask you to sign here, please.",
       "teaches": [
-        "polite-softening"
-      ],
-      "question": "¿Cuál de las siguientes formulaciones constituye un acto de habla directivo indirecto en correspondencia formal?",
-      "options": [
-        "¡Manden los documentos ya mismo!",
-        "Mucho le estimaríamos que tuviera a bien remitirnos los antecedentes periciales.",
-        "Ustedes no han hecho nada de lo acordado.",
-        "¿Por qué no trabajan más rápido?"
-      ],
-      "correct": 1
+        "subjunctive-influence"
+      ]
     },
     {
       "id": "b2-34-04.ex02",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "polite-softening"
+      "question": "A clerk tells you to wait, very formally. Which sentence does she say?",
+      "options": [
+        "Sírvase esperar un momento.",
+        "Sírvase espere un momento.",
+        "Sírvase esperando un momento."
       ],
-      "sentence": "¿Tendría la __ de visar los certificados consulares antes del cierre de ventanilla?",
-      "answer": "gentileza",
-      "english": "Would you have the kindness to endorse the consular certificates before the window closes?"
+      "correct": 0,
+      "teaches": [
+        "imperativo-formal-usted"
+      ]
     },
     {
       "id": "b2-34-04.ex03",
-      "type": "matching",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-dialect-variation-register-vocab"
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence is a polite request in writing?",
+      "options": [
+        "Le agradecería que me enviara el documento.",
+        "Le agradezco que me envía el documento.",
+        "Le agradecería que me enviaría el documento."
       ],
-      "pairs": [
-        [
-          "tener a bien",
-          "to kindly agree to / see fit to"
-        ],
-        [
-          "visar",
-          "to endorse / officially stamp"
-        ],
-        [
-          "remitir",
-          "to remit / forward"
-        ],
-        [
-          "peticionario",
-          "petitioner / applicant"
-        ]
+      "correct": 0,
+      "teaches": [
+        "imperfect-subjunctive-forms"
       ]
     },
     {
       "id": "b2-34-04.ex04",
-      "type": "multiple-choice",
-      "question": "¿Qué suerte corre la resistencia indígena comunitaria en el desenlace dramático de 'Redoble por Rancas'?",
-      "options": [
-        "Los comuneros triunfan y expulsan a la corporación minera pacíficamente.",
-        "La rebelión comunera es masacrada violentamente por las fuerzas policiales, inmortalizándose en el canto épico de Scorza.",
-        "Los comuneros deciden vender voluntariamente sus tierras para trasladarse a Europa.",
-        "Se firma un pacto de caballeros sin derramamiento de sangre."
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "Buenos días. ¿Qué debo hacer?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____ firmar el formulario."
+        }
       ],
-      "correct": 1,
-      "category": "reading"
+      "options": [
+        "Sírvase",
+        "Firma",
+        "Sirviéndose"
+      ],
+      "correct": 0,
+      "teaches": [
+        "imperativo-formal-usted"
+      ],
+      "distractor_skills": {
+        "1": "imperativo-afirmativo"
+      }
+    },
+    {
+      "id": "b2-34-04.ex05",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Le",
+        "ruego",
+        "que",
+        "espere",
+        "aquí."
+      ],
+      "solution": [
+        "Le",
+        "ruego",
+        "que",
+        "espere",
+        "aquí."
+      ],
+      "english": "I ask you to wait here.",
+      "teaches": [
+        "subjunctive-influence"
+      ]
+    },
+    {
+      "id": "b2-34-04.ex06",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "What did the mining company put up on the community's land?",
+      "options": [
+        "Un cerco.",
+        "Un puente.",
+        "Una escuela."
+      ],
+      "correct": 0
     }
   ]
 }

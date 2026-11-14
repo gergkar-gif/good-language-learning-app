@@ -5,67 +5,105 @@
       "id": "b2-34-03.ex01",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "hedging"
-      ],
-      "question": "¿Qué función cumple el condicional de modestia en la frase 'Nos permitiríamos discrepar de las conclusiones periciales'?",
+      "question": "You ask a stranger on the street for the time. Which question is the gentlest?",
       "options": [
-        "Expresar una orden militar tajante",
-        "Atenuar pragmáticamente la discrepancia para preservar la cortesía institucional",
-        "Indicar duda sobre la existencia física del tribunal",
-        "Demostrar sumisión absoluta sin derecho a réplica"
+        "Quería preguntarle la hora, por favor.",
+        "Necesito que me diga la hora ya.",
+        "Quiero que me digas la hora ya."
       ],
-      "correct": 1
+      "correct": 0,
+      "teaches": [
+        "imperfecto-de-cortesia"
+      ]
     },
     {
       "id": "b2-34-03.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Perdón, ¿le ____ cerrar la ventana?",
+      "answer": "importaría",
+      "english": "Excuse me, would you mind closing the window?",
       "teaches": [
-        "hedging"
-      ],
-      "sentence": "Cabría __ que los informes censales no cuantifican con rigor los movimientos pendulares transfronterizos.",
-      "answer": "advertir",
-      "english": "It might be noted that census reports do not rigorously quantify cross-border commuting."
+        "polite-softening"
+      ]
     },
     {
       "id": "b2-34-03.ex03",
-      "type": "matching",
-      "category": "vocabulary",
-      "teaches": [
-        "b2-dialect-variation-register-vocab"
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence politely disagrees?",
+      "options": [
+        "Entiendo, pero me parece que no tiene razón.",
+        "Está claro que usted no tiene razón.",
+        "Usted no tiene razón, señor, y punto."
       ],
-      "pairs": [
-        [
-          "atenuación",
-          "mitigation / pragmatic softening"
-        ],
-        [
-          "epistémico",
-          "epistemic / related to knowledge certainty"
-        ],
-        [
-          "asertividad",
-          "assertiveness / force of claim"
-        ],
-        [
-          "cautela",
-          "caution / circumspection"
-        ]
+      "correct": 0,
+      "teaches": [
+        "giving-opinions"
       ]
     },
     {
       "id": "b2-34-03.ex04",
-      "type": "multiple-choice",
-      "question": "¿Cuál es el tono predominante en la narrativa de Manuel Scorza al registrar las vicisitudes del pueblo de Rancas?",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Buenas tardes. ____ pedirle un favor."
+        },
+        {
+          "speaker": "Carlos",
+          "text": "Claro, dígame."
+        }
+      ],
       "options": [
-        "Un realismo mítico-poético cargado de denuncia social frente a la impunidad del poder feudal y minero",
-        "Una sátira cómica ligera ambientada en la Lima colonial",
-        "Un manual estadístico desprovisto de emoción humana",
-        "Una novela policial clásica de detectives privados"
+        "Quería",
+        "Quiero",
+        "Querré"
       ],
       "correct": 0,
-      "category": "reading"
+      "teaches": [
+        "imperfecto-de-cortesia"
+      ],
+      "hint": "Meg speaks to Carlos politely.",
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
+    },
+    {
+      "id": "b2-34-03.ex05",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Yo",
+        "diría",
+        "que",
+        "está",
+        "equivocado."
+      ],
+      "solution": [
+        "Yo",
+        "diría",
+        "que",
+        "está",
+        "equivocado."
+      ],
+      "english": "I would say that you are mistaken.",
+      "teaches": [
+        "hedging"
+      ]
+    },
+    {
+      "id": "b2-34-03.ex06",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Where was Redoble por Rancas published?",
+      "options": [
+        "En Barcelona.",
+        "En Lima.",
+        "En Madrid."
+      ],
+      "correct": 0
     }
   ]
 }
