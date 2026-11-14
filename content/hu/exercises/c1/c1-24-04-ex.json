@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a lényegi különbség az 'alapkutatás' és az 'alkalmazott kutatás' között?",
+      "question": "Mi az 'alapkutatás'?",
       "options": [
-        "Az alapkutatást a tiszta szellemi kíváncsiság és a természet mély törvényeinek megismerése vezérli közvetlen haszon nélkül, míg az alkalmazott kutatás konkrét gyakorlati célokat szolgál.",
-        "Az alapkutatás a humántudományok elméleti vitáira összpontosít, míg az alkalmazott kutatás a természettudományok műszaki kísérleteit végzi el.",
-        "Az alapkutatást nemzetközi magánvállalatok finanszírozzák piaci megrendelések alapján, míg az alkalmazott kutatás állami költségvetésből valósul meg."
+        "Kutatás az új tudásért, közvetlen haszon nélkül.",
+        "Kutatás, amely egy konkrét terméket fejleszt ki.",
+        "Kutatás, amelyet csak magáncégek végeznek."
       ],
       "correct": 0,
       "teaches": [
@@ -23,11 +23,15 @@
       "category": "grammar",
       "stage": "controlled",
       "sentence": "A betegség biológiai okainak feltárása _____ nemzetközi kutatócsoport alakult.",
-      "hint": "for the purpose of / cél + -jából",
-      "answer": "céljából",
+      "hint": "for the purpose of",
       "english": "For the purpose of uncovering the biological causes of the disease an international research group was formed.",
       "teaches": [
         "formal-purpose"
+      ],
+      "answers": [
+        "céljából",
+        "végett",
+        "érdekében"
       ]
     },
     {
@@ -62,9 +66,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A törvényszerűségek egzakt tisztázása _____ új mérési módszert vezettek be.",
+      "sentence": "A jobb terápiák kidolgozása _____ indítottak vizsgálatot.",
       "hint": "with a view to",
-      "english": "With a view to the exact clarification of regularities they introduced a new measurement method.",
+      "english": "They started a study in order to develop better therapies.",
       "teaches": [
         "formal-purpose"
       ],
@@ -82,7 +86,7 @@
       "tiles": [
         "Az",
         "igazság",
-        "kiderítése",
+        "megértése",
         "érdekében",
         "végeztek",
         "új",
@@ -91,13 +95,13 @@
       "solution": [
         "Az",
         "igazság",
-        "kiderítése",
+        "megértése",
         "érdekében",
         "végeztek",
         "új",
         "kísérleteket."
       ],
-      "english": "In the interest of finding out the truth they conducted new experiments.",
+      "english": "In the interest of understanding the truth they conducted new experiments.",
       "teaches": [
         "formal-purpose"
       ]
@@ -110,11 +114,11 @@
       "prompt": [
         {
           "speaker": "Kutató",
-          "text": "Miért kérünk állami támogatást erre az elméleti projektre?"
+          "text": "Miért kérünk támogatást az alapkutatáshoz?"
         },
         {
           "speaker": "Intézetigazgató",
-          "text": "A kvantumfizikai alapok megértése _____ kell forrást biztosítanunk a laboratóriumnak."
+          "text": "A természet törvényeinek megértése _____ kell forrást biztosítanunk a laboratóriumnak."
         }
       ],
       "options": [
@@ -134,8 +138,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating a scientific research objective using 'céljából' or 'végett'.",
-          "answer": "A sejtek molekuláris öregedési mechanizmusának megértése céljából a kutatók interdiszciplináris genetikai vizsgálatokat indítottak a hatékonyabb terápiák kidolgozása végett."
+          "prompt": "Write one sentence that gives a research aim with 'céljából' or 'végett'.",
+          "answer": "A betegség okainak megértése céljából a kutatók új vizsgálatot indítottak."
         }
       ],
       "teaches": [
@@ -147,11 +151,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik névutó fejez ki tudományos célt és intenciót formális stílusban?",
+      "question": "Melyik mondat jelenti ezt: 'To understand the effect they started a new study'?",
       "options": [
-        "céljából / végett / érdekében",
-        "nélkül / helyett",
-        "mögött / előtt"
+        "A hatás megértése végett új vizsgálatot indítottak.",
+        "A hatás megértése helyett új vizsgálatot indítottak.",
+        "A hatás megértése ellenére új vizsgálatot indítottak."
       ],
       "correct": 0,
       "teaches": [

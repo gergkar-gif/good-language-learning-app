@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'bérletörés' folyamata a munkaerőpiacon?",
+      "question": "Mit jelent a 'bérletörés'?",
       "options": [
-        "A bérek mesterséges alacsonyan tartását olcsóbb munkaerő bevonásával vagy az érdekvédelmi jogok csorbításával.",
-        "A készpénzes kifizetések papírpénzeinek elszakadását.",
-        "A fizetésemelések automatikus havi átutalását."
+        "A bérek tudatos leszorítása.",
+        "A bérek automatikus emelése.",
+        "A fizetések havi átutalása."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A törvényi védelem leépítése kiszolgáltatottságot _____, évtizedekre visszavetette a munkavállalói érdekérvényesítést.",
-      "hint": "spawning / szül + -ve",
-      "answer": "szülve",
-      "english": "The dismantling of statutory protection spawning vulnerability set back worker interest assertion for decades.",
+      "sentence": "A cég alvállalkozókra bízta a munkát, kiszolgáltatottságot _____ a dolgozók között.",
+      "hint": "szül, to breed",
+      "english": "The company handed the work to subcontractors, breeding vulnerability among the workers.",
       "teaches": [
-        "participial-clauses"
+        "participle-actions"
+      ],
+      "answers": [
+        "szülve",
+        "teremtve",
+        "okozva"
       ]
     },
     {
@@ -62,12 +66,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A vállalat felszámolta a cafeteria-juttatásokat, súlyos jövedelemkiesést _____ a többgyermekes családoknak.",
-      "hint": "causing / okoz + -va",
+      "sentence": "A cég megszüntette a túlórákat, bérletörést _____ a gyári munkásoknak.",
+      "hint": "okoz, to cause",
       "answer": "okozva",
-      "english": "The company abolished fringe benefits, causing severe income loss to families with multiple children.",
+      "english": "The company abolished overtime, causing wage suppression for the factory workers.",
       "teaches": [
-        "participial-clauses"
+        "participle-actions"
       ]
     },
     {
@@ -77,27 +81,31 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "sztrájkjog",
-        "korlátozása",
+        "cég",
+        "leépítette",
+        "a",
+        "műszakokat,",
         "létbizonytalanságot",
         "teremtve",
-        "gyengíti",
         "a",
-        "dolgozókat."
+        "dolgozók",
+        "között."
       ],
       "solution": [
         "A",
-        "sztrájkjog",
-        "korlátozása",
+        "cég",
+        "leépítette",
+        "a",
+        "műszakokat,",
         "létbizonytalanságot",
         "teremtve",
-        "gyengíti",
         "a",
-        "dolgozókat."
+        "dolgozók",
+        "között."
       ],
-      "english": "The restriction of strike rights, creating existential insecurity, weakens workers.",
+      "english": "The company cut the shifts, creating insecurity among the workers.",
       "teaches": [
-        "participial-clauses"
+        "participle-actions"
       ]
     },
     {
@@ -108,21 +116,21 @@
       "prompt": [
         {
           "speaker": "Szakszervezeti vezető",
-          "text": "Miért nem emelkednek a hazai gyári bérek?"
+          "text": "Miért nem emelkednek a gyári bérek?"
         },
         {
           "speaker": "Elemző",
-          "text": "A túlóratörvény lazítása elvette a dolgozók alkupozícióját, tartós bérletörést _____."
+          "text": "A cég leépítette a műszakokat, tartós bérletörést _____."
         }
       ],
       "options": [
-        "eredményezve",
-        "eredményezni",
-        "eredményezésével"
+        "okozva",
+        "okozni",
+        "okozó"
       ],
       "correct": 0,
       "teaches": [
-        "participial-clauses"
+        "participle-actions"
       ]
     },
     {
@@ -132,12 +140,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence diagnosing labor exploitation using a causal participle (-va/-ve).",
-          "answer": "A munkáltatók a rugalmasság jelszavával szétverték a kollektív védelmet, mélységes létbizonytalanságot teremtve és bérletörést okozva a legkiszolgáltatottabb gyári munkások körében."
+          "prompt": "Write one sentence with a -va/-ve participle that names a result (okozva, teremtve or szülve).",
+          "answer": "A cég leépítette a műszakokat, létbizonytalanságot teremtve a dolgozók között."
         }
       ],
       "teaches": [
-        "participial-clauses"
+        "participle-actions"
       ]
     },
     {
@@ -145,15 +153,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik igeneves szerkezet fejez ki társadalmi következményt és ok-okozati láncolatot?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "kiszolgáltatottságot szülve / bérletörést okozva",
-        "a termelést leállítva / sztrájkba lépve",
-        "békés megegyezést remélve / kompromisszumot keresve"
+        "A vezetés befagyasztotta a béreket, kiszolgáltatottságot szülve a munkásoknak.",
+        "A vezetés befagyasztotta a béreket, kiszolgáltatottságot szülni a munkásoknak.",
+        "A vezetés befagyasztotta a béreket, kiszolgáltatottságot szülő a munkásoknak."
       ],
       "correct": 0,
       "teaches": [
-        "participial-clauses"
+        "participle-actions"
       ]
     }
   ]

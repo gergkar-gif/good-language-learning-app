@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevez a szociológia 'prekariátusnak' a munka világában?",
+      "question": "Mi a prekariátus?",
       "options": [
-        "A létbizonytalanságban élő, határozott idejű, kiszolgáltatott szerződésekkel foglalkoztatott dolgozói réteget.",
-        "A legmagasabb fizetéssel rendelkező banki vezetőket.",
-        "A nyugdíjas korú művészek önkéntes szövetségét."
+        "Bizonytalan állásban élő dolgozók rétege.",
+        "A legjobban fizetett vezetők csoportja.",
+        "A nyugdíjas munkások szakszervezete."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Jóllehet a gyárak termelése csúcsot döntött, _____ a szalagmunkások bére alig emelkedett.",
+      "sentence": "Jóllehet a gyárak termelése nőtt, _____ a munkások bére alig emelkedett.",
       "hint": "nonetheless",
-      "english": "Even though factory output broke records, nonetheless the wage of assembly workers barely rose.",
+      "english": "Even though factory output grew, nonetheless the workers' pay hardly rose.",
       "teaches": [
         "concessive-annak-ellenere"
       ],
       "answers": [
         "mindamellett",
         "mindazonáltal",
-        "ennek ellenére"
+        "ennek ellenére",
+        "ugyanakkor"
       ]
     },
     {
@@ -42,19 +43,19 @@
       "pairs": [
         [
           "prekariátus",
-          "létbizonytalanságban élő kiszolgáltatott munkavállalók"
+          "bizonytalan állásban élő dolgozók"
         ],
         [
           "reindusztrializáció",
-          "az ipar gazdasági súlyának újbóli növelése"
+          "az ipar súlyának újbóli növelése"
         ],
         [
           "technológiai munkanélküliség",
-          "gépesítés és automatizáció miatti állásvesztés"
+          "a gépek miatti állásvesztés"
         ],
         [
           "szerkezeti munkanélküliség",
-          "a meglévő képzettség és a munkaerő-kereslet eltérése"
+          "a képzettség és az állások nem illenek össze"
         ]
       ],
       "teaches": [
@@ -66,15 +67,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Noha a kormány teljes foglalkoztatást hirdet, _____ a reálkeresetek értéke erodálódott.",
+      "sentence": "Noha a gazdaság növekszik, _____ a munkások bére csökkent.",
       "hint": "at the same time",
-      "english": "While the government proclaims full employment, at the same time the value of real earnings eroded.",
+      "english": "Although the economy is growing, at the same time the workers' pay has fallen.",
       "teaches": [
         "concessive-annak-ellenere"
       ],
       "answers": [
         "ugyanakkor",
-        "egyidejűleg",
+        "mindamellett",
         "ezzel párhuzamosan"
       ]
     },
@@ -90,8 +91,10 @@
         "termelés,",
         "mindamellett",
         "a",
-        "bérfeszültség",
-        "mélyül."
+        "munkások",
+        "bére",
+        "alig",
+        "emelkedik."
       ],
       "solution": [
         "Jóllehet",
@@ -100,10 +103,12 @@
         "termelés,",
         "mindamellett",
         "a",
-        "bérfeszültség",
-        "mélyül."
+        "munkások",
+        "bére",
+        "alig",
+        "emelkedik."
       ],
-      "english": "Even though production grows, nonetheless wage tension deepens.",
+      "english": "Even though production is growing, nonetheless the workers' pay is hardly rising.",
       "teaches": [
         "concessive-annak-ellenere"
       ]
@@ -116,11 +121,11 @@
       "prompt": [
         {
           "speaker": "Közgazdász",
-          "text": "Hozott-e valódi jólétet a hazai iparosítási hullám?"
+          "text": "Hozott-e jólétet a gyárak építése?"
         },
         {
           "speaker": "Munkaügyi kutató",
-          "text": "Jóllehet nőttek a beruházások, _____ a dolgozói kiszolgáltatottság mérséklődött volna."
+          "text": "Jóllehet nőttek a beruházások, _____."
         },
         {
           "speaker": "Közgazdász",
@@ -128,9 +133,9 @@
         }
       ],
       "options": [
-        "mégsem mondható, hogy",
-        "holott mondható, hogy",
-        "ugyanakkor mondható, hogy"
+        "mégsem emelkedtek a bérek",
+        "ezért emelkedtek a bérek",
+        "holott emelkedtek a bérek"
       ],
       "correct": 0,
       "teaches": [
@@ -144,8 +149,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence weighing industrial production against worker vulnerability using 'Jóllehet... mindamellett'.",
-          "answer": "Jóllehet az autóipari óriásberuházások felpörgették az exportot, mindamellett a munkások alacsony bérezése és a fokozódó kizsigerelés mély társadalmi elégedetlenséget szül."
+          "prompt": "Write one sentence with 'Jóllehet … mindamellett': production is growing, but pay is hardly rising.",
+          "answer": "Jóllehet a gyárak termelése nő, mindamellett a munkások bére alig emelkedik."
         }
       ],
       "teaches": [
@@ -157,11 +162,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kötőszói szerkezet fejez ki cizellált gazdasági ellentételezést és megengedést?",
+      "question": "Melyik mondat jelenti ezt: 'Although production is growing, wages are hardly rising'?",
       "options": [
-        "Jóllehet... mindamellett / Noha... ugyanakkor",
-        "Ezért és emiatt",
-        "Sem... sem..."
+        "Noha nő a termelés, a bérek alig emelkednek.",
+        "Mivel nő a termelés, a bérek alig emelkednek.",
+        "Noha nő a termelés, ezért a bérek alig emelkednek."
       ],
       "correct": 0,
       "teaches": [

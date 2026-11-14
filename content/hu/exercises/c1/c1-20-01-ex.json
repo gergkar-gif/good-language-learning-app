@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevez a környezettudomány 'antropogén hatásnak'?",
+      "question": "Mit jelent az *antropogén hatás*?",
       "options": [
-        "Az emberi gazdasági és ipari tevékenység által kiváltott környezeti változásokat.",
-        "A meteoritok becsapódása által okozott krátereket.",
-        "A madarak vándorlási útvonalának természetes változását."
+        "Az ember okozta változás a természetben.",
+        "A természet saját, ember nélküli változása.",
+        "Az állatok vándorlása okozta változás."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szélsőséges hőhullámok _____ a kukoricatermés jelentős része megsemmisült.",
-      "hint": "as a result of / következte + -ben",
-      "answer": "következtében",
-      "english": "As a result of extreme heatwaves significant part of the maize crop was destroyed.",
+      "sentence": "A hosszú aszály _____ a termés nagy része tönkrement.",
+      "hint": "as a result of",
+      "english": "As a result of the long drought, most of the harvest was ruined.",
       "teaches": [
         "causal-postpositions"
+      ],
+      "answers": [
+        "következtében",
+        "folytán",
+        "nyomán",
+        "eredményeként"
       ]
     },
     {
@@ -38,19 +43,19 @@
       "pairs": [
         [
           "ökológiai sérülékenység",
-          "egy élőhely érzékenysége a külső zavarokra"
+          "a természet könnyen megsérül"
         ],
         [
           "talajvízszint-süllyedés",
-          "a föld alatti vízkészlet mélyebbre húzódása"
+          "a talajvíz egyre mélyebben van"
         ],
         [
           "elsivatagosodás",
-          "a talaj terméketlenné válása a szárazság miatt"
+          "a termékeny föld száraz pusztává válik"
         ],
         [
           "aszálykár",
-          "a hosszas csapadékhiány okozta gazdasági veszteség"
+          "a szárazság okozta veszteség"
         ]
       ],
       "teaches": [
@@ -62,9 +67,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A több évtizedes erdőirtás _____ a domboldalak talaja erodálódott.",
+      "sentence": "A sok erdőirtás _____ a dombok talaját elvitte a víz.",
       "hint": "in the wake of",
-      "english": "In the wake of decades of deforestation the soil of hillsides eroded.",
+      "english": "In the wake of much deforestation, the water carried the soil of the hills away.",
       "teaches": [
         "causal-postpositions"
       ],
@@ -83,24 +88,22 @@
       "tiles": [
         "A",
         "csapadékhiány",
-        "folytán",
+        "következtében",
         "a",
         "tavak",
-        "vízszintje",
-        "kritikusra",
-        "csökkent."
+        "vize",
+        "eltűnt."
       ],
       "solution": [
         "A",
         "csapadékhiány",
-        "folytán",
+        "következtében",
         "a",
         "tavak",
-        "vízszintje",
-        "kritikusra",
-        "csökkent."
+        "vize",
+        "eltűnt."
       ],
-      "english": "Owing to the lack of precipitation the water level of lakes decreased to critical.",
+      "english": "As a result of the lack of rain, the water of the lakes disappeared.",
       "teaches": [
         "causal-postpositions"
       ]
@@ -113,11 +116,11 @@
       "prompt": [
         {
           "speaker": "Hidrológus",
-          "text": "Mi idézte elő az Alföld legsúlyosabb vízhiányát?"
+          "text": "Miért maradt szárazon az Alföld?"
         },
         {
           "speaker": "Klímaszakértő",
-          "text": "A belvízelvezető csatornák túlbuzgó kiépítése _____, a talajvíz nem tudott pótlódni."
+          "text": "A túl sok csatorna kiépítése _____ a talajvíz nem tudott visszatérni."
         }
       ],
       "options": [
@@ -137,8 +140,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence diagnosing environmental desiccation using 'következtében' or 'lecsapódásaként'.",
-          "answer": "A Duna-Tisza közi talajvíz drasztikus megcsappanása következtében az őshonos vizes élőhelyek végleges megsemmisülése fenyeget."
+          "prompt": "Write one sentence about a drought with *következtében*, *folytán* or *nyomán*.",
+          "answer": "A hosszú aszály következtében a talajvíz egyre mélyebben van."
         }
       ],
       "teaches": [
@@ -150,11 +153,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik névutó fejez ki formális ökológiai ok-okozati összefüggést?",
+      "question": "Melyik mondat mondja meg az okot?",
       "options": [
-        "következtében",
-        "ellenére",
-        "helyett"
+        "A szárazság következtében kiszáradtak a kutak.",
+        "A szárazság ellenére kiszáradtak a kutak.",
+        "A szárazság helyett kiszáradtak a kutak."
       ],
       "correct": 0,
       "teaches": [

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi volt az ősi magyar 'fokgazdálkodás' lényege a folyószabályozások előtt?",
+      "question": "Mi volt a *fokgazdálkodás*?",
       "options": [
-        "A folyó áradásának kivezetése a természetes fokokon át az ártérbe, biztosítva a halászatot, a legelőket és a víz tárolását.",
-        "A folyók lebetonozása és gátak közé szorítása a gyorsabb hajózásért.",
-        "A halak szigorú exportálása a bécsi udvar számára."
+        "Az áradás vizét a fokokon át az ártérre vezették.",
+        "A folyókat betonfalak közé szorították a gyors hajózásért.",
+        "A halakat külföldre szállították, hogy több pénzt kapjanak."
       ],
       "correct": 0,
       "teaches": [
@@ -22,10 +22,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Ha a 19. században nem _____ le a mocsarakat, ma több ivóvízünk lenne.",
-      "hint": "had not drained / lecsapol, conditional past 3pl",
-      "answer": "csapolták volna",
-      "english": "If in the 19th century they had not drained the marshes, today we would have more drinking water.",
+      "sentence": "Ha a 19. században kevesebb mocsarat csapoltak _____, ma több ivóvizünk lenne.",
+      "hint": "would have",
+      "answer": "volna",
+      "english": "If in the 19th century they had drained fewer marshes, we would have more drinking water today.",
       "teaches": [
         "past-conditional-volna"
       ]
@@ -62,10 +62,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Ha rugalmasabb tájhasználatot választottak volna, elkerülhető _____ a homokhátság félsivatagosodása.",
-      "hint": "would have been / lesz, conditional past 3sg",
-      "answer": "lett volna",
-      "english": "If they had chosen more flexible land use, the semi-desertification of the sand ridge would have been avoidable.",
+      "sentence": "Ha vizet tartottak volna vissza a tájban, kevesebb aszálykár _____ volna.",
+      "hint": "lesz, past 3rd person",
+      "answer": "lett",
+      "english": "If they had retained water in the landscape, there would have been less drought damage.",
       "teaches": [
         "past-conditional-volna"
       ]
@@ -79,23 +79,29 @@
         "Ha",
         "vizet",
         "tartottak",
-        "volna,",
+        "volna",
+        "vissza,",
+        "ma",
         "nem",
-        "pusztulna",
-        "a",
-        "természet."
+        "száradna",
+        "ki",
+        "az",
+        "Alföld."
       ],
       "solution": [
         "Ha",
         "vizet",
         "tartottak",
-        "volna,",
+        "volna",
+        "vissza,",
+        "ma",
         "nem",
-        "pusztulna",
-        "a",
-        "természet."
+        "száradna",
+        "ki",
+        "az",
+        "Alföld."
       ],
-      "english": "If they had retained water, nature would not be perishing.",
+      "english": "If they had retained water, the Great Plain would not be drying out today.",
       "teaches": [
         "past-conditional-volna"
       ]
@@ -108,22 +114,25 @@
       "prompt": [
         {
           "speaker": "Történész",
-          "text": "Hiba volt Vásárhelyi Pál koncepciója a Tisza szabályozására?"
+          "text": "Miért száradt ki ennyire az Alföld?"
         },
         {
-          "speaker": "Vízügyi mérnök",
-          "text": "Ha a korabeli mérnökök számoltak volna a klímaváltozással, más stratégiát _____."
+          "speaker": "Mérnök",
+          "text": "Ha a mérnökök vizet tartottak volna vissza a tájban, ma nem _____ ki ennyire."
         }
       ],
       "options": [
-        "választottak volna",
-        "választanak",
-        "választottak"
+        "száradna",
+        "szárad",
+        "száradt"
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "c1-20-04-production-7",
@@ -132,8 +141,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a counterfactual sentence evaluating past river engineering using 'ha... volna'.",
-          "answer": "Ha a tizenkilencedik századi vízrendezés során nem a víz mielőbbi levezetésére törekedtek volna, a mai Alföld nem küzdene ilyen drámai talajvízvesztéssel."
+          "prompt": "Write one sentence: what would be different today if they had not squeezed the rivers between dikes?",
+          "answer": "Ha a folyókat nem szorították volna gátak közé, ma kevesebb lenne az aszály."
         }
       ],
       "teaches": [
@@ -145,11 +154,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik igealak fejez ki múltbeli ellenfaktikus (meg nem valósult) feltételt?",
+      "question": "Melyik mondat mondja, hogy a múltban nem tartottak vissza vizet?",
       "options": [
-        "nem szabályozták volna",
-        "nem fognak szabályozni",
-        "amint megkezdik a munkát"
+        "Ha vizet tartottak volna vissza, kevesebb lett volna az aszály.",
+        "Ha vizet tartanak vissza, kevesebb lesz az aszály.",
+        "Ha vizet tartottak vissza, kevesebb lett az aszály."
       ],
       "correct": 0,
       "teaches": [

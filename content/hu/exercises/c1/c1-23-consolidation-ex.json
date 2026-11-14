@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik mondat alkalmaz magas szintű geometriai-térbeli határozót?",
+      "question": "Melyik mondat jelenti ezt: 'Branching out from the centre, the avenues reach the outer districts'?",
       "options": [
-        "Az Andrássy út hossztengelyében elnyúlva köti össze a pesti belvárost a Városligettel.",
-        "A turisták leültek a padra a parkban kávézni.",
-        "Mivel szép volt az idő, kimentek a Dunapartra sétálni."
+        "A sugárutak a központból szétágazva érik el a külső kerületeket.",
+        "A sugárutak a központból szétágazni érik el a külső kerületeket.",
+        "A sugárutak a központból szétágazó érik el a külső kerületeket."
       ],
       "correct": 0,
       "teaches": [
-        "b2-spatial-postpositions"
+        "participle-actions"
       ]
     },
     {
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik kifejezés testesíti meg az ékes építészeti minőségjelzői igenevet?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Zsolnay-kerámiával gazdagon díszített és boltívesen kiképzett homlokzat",
-        "a kőműves gyorsan felépítette a téglafalat",
-        "amikor megnyílt az új múzeum kapuja"
+        "A boltívesen kiképzett kapualj szép.",
+        "A boltívesen kiképezve kapualj szép.",
+        "A boltívesen kiképzendő kapualj szép."
       ],
       "correct": 0,
       "teaches": [
@@ -84,10 +84,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A homlokzatok vakolatának pusztulását és leomlását építészeti _____ nevezzük.",
-      "hint": "erosion / erózió + -nak",
+      "sentence": "A homlokzatok lassú pusztulását építészeti _____ nevezzük.",
+      "hint": "erosion",
       "answer": "eróziónak",
-      "english": "The decay and falling off of facade plaster is called architectural erosion.",
+      "english": "The slow decay of facades is called architectural erosion.",
       "teaches": [
         "c1-urban-preservation-vocab"
       ]
@@ -97,10 +97,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A bérházak udvarai _____ kiképzett kő boltívekkel támasztják alá a folyosókat.",
-      "hint": "vaultedly / boltíves + -en",
+      "sentence": "A bérházak kapualjai _____ kiképzettek.",
+      "hint": "boltíves, adverb",
       "answer": "boltívesen",
-      "english": "Courtyards of apartment houses support balconies with vaultedly formed stone arches.",
+      "english": "The gateways of the apartment houses are vaulted.",
       "teaches": [
         "participial-clauses"
       ]
@@ -110,10 +110,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Míg a Várnegyed csendes, _____ a pesti belváros zsúfoltan és fojtogatóan lüktet.",
+      "sentence": "Míg a Várnegyed csendes, _____ a pesti utcák hangosak.",
       "hint": "míg … ___",
       "answer": "addig",
-      "english": "While the Castle District is quiet, meanwhile the Pest downtown pulsates crowdedly and stiflingly.",
+      "english": "While the Castle District is quiet, the streets of Pest are loud.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -123,9 +123,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Vitán _____ áll, hogy a történelmi örökség védelme nemzetstratégiai feladat.",
+      "sentence": "Vitán _____ áll, hogy az Andrássy út a főváros ismert sugárútja.",
       "hint": "beyond",
-      "english": "It is beyond dispute that the protection of historical heritage is a national strategic task.",
+      "english": "It is beyond dispute that Andrássy Avenue is a well-known avenue of the capital.",
       "teaches": [
         "evaluative-stance"
       ],
@@ -138,11 +138,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a funkciója a 'Vitán felül áll, hogy...' szerkezetnek az építészeti kritikában?",
+      "question": "Mire jó ez a szerkezet: 'Vitán felül áll, hogy …'?",
       "options": [
-        "Egy esztétikai vagy örökségvédelmi álláspont autoritatív, megkérdőjelezhetetlen megalapozása.",
-        "Elnézést kérés az olvasótól a véleménykülönbségek miatt.",
-        "A cikk szerzőjének teljes közömbössége a téma iránt."
+        "Erős ítéletet mond ki, vita nélkül.",
+        "Elnézést kér a vélemény-különbség miatt.",
+        "Azt mondja, hogy a téma nem érdekes."
       ],
       "correct": 0,
       "teaches": [
@@ -155,26 +155,22 @@
       "category": "grammar",
       "stage": "produce",
       "tiles": [
-        "A",
-        "történelmi",
-        "városkép",
-        "a",
-        "nemzet",
-        "legszebb",
-        "közös",
-        "öröksége."
+        "Joggal",
+        "kifogásolható",
+        "az",
+        "engedély",
+        "nélküli",
+        "építés."
       ],
       "solution": [
-        "A",
-        "történelmi",
-        "városkép",
-        "a",
-        "nemzet",
-        "legszebb",
-        "közös",
-        "öröksége."
+        "Joggal",
+        "kifogásolható",
+        "az",
+        "engedély",
+        "nélküli",
+        "építés."
       ],
-      "english": "The historic townscape is the nation's most beautiful common heritage.",
+      "english": "Building without permission can rightly be objected to.",
       "teaches": [
         "evaluative-stance"
       ]
@@ -186,8 +182,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence diagnosing urban architectural degradation using an aesthetic evaluative clause.",
-          "answer": "Vitán felül áll, hogy a pesti bérházak homlokzati eróziója és az óriásplakátok vizuális környezetszennyezése súlyos városképi tájsebet ejt a világörökségi panorámán."
+          "prompt": "Write one sentence with 'Vitán felül áll, hogy …' about old facades.",
+          "answer": "Vitán felül áll, hogy a gazdagon díszített homlokzatok szépek."
         }
       ],
       "teaches": [
@@ -201,8 +197,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on Szerb Antal's Budapest guide and the spirit of the city.",
-          "answer": "Szerb Antal kalauza örök érvényű lecke arra, hogy Budapest igazi nagyszerűsége a budai hegyvidéki múlt és a pesti polgári lüktetés páratlanul harmonikus kettősségében rejlik."
+          "prompt": "Write one sentence with 'zsúfoltan' or 'fojtogatóan' about a crowded street or tram.",
+          "answer": "Csúcsidőben a belvárosi villamosok zsúfoltan közlekednek."
         }
       ],
       "teaches": [

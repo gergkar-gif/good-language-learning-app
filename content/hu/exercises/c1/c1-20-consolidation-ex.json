@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik mondat alkalmaz helyes környezeti ok-okozati névutót formális stílusban?",
+      "question": "Melyik mondat mondja meg az okot?",
       "options": [
-        "A talajvíz mélyülése következtében és a folyamatos aszály folytán az őshonos növényvilág elsorvadt.",
-        "A növények a folyó mellett pihentek békésen a napsütésben.",
-        "Mivel szép volt az idő, kimentek a természetbe túrázni."
+        "Az erdőirtás nyomán elhordta a víz a talajt.",
+        "Az erdőirtás ellenére elhordta a víz a talajt.",
+        "Az erdőirtás helyett elhordta a víz a talajt."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel fejezhetünk ki degradált környezeti állapotot plasztikusan?",
+      "question": "Melyik mondat mondja, hogy a mocsarak száraz állapotban fekszenek?",
       "options": [
-        "a lápok lecsapolva, a talaj kizsigerelve és kiszáradva hever",
-        "a gazdák vidáman dalolnak a szántóföldön",
-        "miután megvásárolták az új traktort a boltban"
+        "A mocsarak lecsapolva fekszenek.",
+        "A mocsarak lecsapolni fekszenek.",
+        "A mocsarak lecsapolás fekszenek."
       ],
       "correct": 0,
       "teaches": [
         "participle-actions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "nominalization"
+      }
     },
     {
       "id": "c1-20-consolidation-3",
@@ -69,26 +73,23 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A Duna-Tisza közi homokhátság legveszélyesebb folyamata a gyors ütemű _____.",
+      "sentence": "Az Alföld egyes részein a termékeny föld száraz pusztává válik: ez az _____ .",
       "hint": "desertification",
-      "english": "The most dangerous process of the sand ridge between Danube and Tisza is rapid desertification.",
+      "english": "On some parts of the Great Plain fertile land turns into dry steppe: this is desertification.",
       "teaches": [
         "c1-drying-alfold-vocab"
       ],
-      "answers": [
-        "elsivatagosodás",
-        "sivatagosodás"
-      ]
+      "answer": "elsivatagosodás"
     },
     {
       "id": "c1-20-consolidation-5",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A folyók gátak közé szorítása helyett ma a tájba illeszkedő _____ kellene előtérbe helyezni.",
-      "hint": "water retention / vízvisszatartás + -t",
-      "answer": "vízvisszatartást",
-      "english": "Instead of confining rivers between dikes today landscape-conforming water retention should be prioritized.",
+      "sentence": "A folyók gátak közé szorítása helyett a vizet a tájban kellene tartani: ez a _____ .",
+      "hint": "water retention",
+      "answer": "vízvisszatartás",
+      "english": "Instead of squeezing rivers between dikes, water should be kept in the landscape: this is water retention.",
       "teaches": [
         "c1-drying-alfold-vocab"
       ]
@@ -98,12 +99,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A fenntarthatatlan talajhasználat _____ a homoktalaj termőképessége végzetesen leromlott.",
-      "hint": "as a result of / következte + -ben",
-      "answer": "következtében",
-      "english": "As a result of unsustainable soil use the fertility of sandy soil deteriorated fatally.",
+      "sentence": "A folyók szabályozása _____ az Alföld vízháztartása megváltozott.",
+      "hint": "as a result of",
+      "english": "As a result of river regulation, the water balance of the Great Plain changed.",
       "teaches": [
         "causal-postpositions"
+      ],
+      "answers": [
+        "következtében",
+        "folytán",
+        "nyomán",
+        "eredményeként"
       ]
     },
     {
@@ -127,12 +133,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Ha nem vezették volna el a belvizeket, ma nem apadna ilyen _____ a kútjaink vize.",
-      "hint": "perilously / vészes + -en",
-      "answer": "vészesen",
-      "english": "If they had not drained inland waters, today the water in our wells would not be dwindling so perilously.",
+      "sentence": "Ha vizet tartottak volna vissza a tájban, ma nem csökkenne ilyen _____ a kutak vize.",
+      "hint": "alarmingly",
+      "english": "If they had retained water in the landscape, the water in the wells would not be falling so alarmingly today.",
       "teaches": [
         "scalar-adverbs"
+      ],
+      "answers": [
+        "vészesen",
+        "drasztikusan"
       ]
     },
     {
@@ -140,11 +149,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a szerepe az ellenfaktikus 'Ha... lett volna' szerkezeteknek a tájtörténeti elemzésekben?",
+      "question": "Melyik mondat mondja, hogy a múltban nem tettek meg valamit?",
       "options": [
-        "Lehetővé teszi a 19. századi mérnöki döntések és a korabeli alternatívák objektív kritikai felülvizsgálatát.",
-        "Kifejezi a beszélő teljes érdektelenségét a folyók iránt.",
-        "Elnézést kér az árvízkárosultaktól a károkért."
+        "Ha kevesebb mocsarat csapoltak volna le, ma több ivóvizünk lenne.",
+        "Ha kevesebb mocsarat csapolnak le, több ivóvizünk lesz.",
+        "Ha kevesebb mocsarat csapoltak le, több ivóvizünk lett."
       ],
       "correct": 0,
       "teaches": [
@@ -158,25 +167,23 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "tájban",
-        "tartott",
-        "víz",
-        "a",
-        "jövő",
-        "legdrágább",
-        "kincse."
+        "talajvíz",
+        "szintje",
+        "vészesen",
+        "csökken",
+        "az",
+        "Alföldön."
       ],
       "solution": [
         "A",
-        "tájban",
-        "tartott",
-        "víz",
-        "a",
-        "jövő",
-        "legdrágább",
-        "kincse."
+        "talajvíz",
+        "szintje",
+        "vészesen",
+        "csökken",
+        "az",
+        "Alföldön."
       ],
-      "english": "Water retained in the landscape is the most precious treasure of the future.",
+      "english": "The groundwater level is falling alarmingly on the Great Plain.",
       "teaches": [
         "scalar-adverbs"
       ]
@@ -188,8 +195,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a diagnostic sentence about the ecological crisis of the Great Plain using a causal chain postposition.",
-          "answer": "A gátrendszerek kiépítése és a túlzott csatornázás folytán a Kárpát-medence természetes vízháztartása felborult, elmélyítve a nyári aszályok pusztító hatását."
+          "prompt": "Write one sentence about the Great Plain with *következtében*, *folytán* or *nyomán*.",
+          "answer": "A folyók szabályozása nyomán az Alföld vízháztartása megváltozott."
         }
       ],
       "teaches": [
@@ -203,8 +210,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on Kaán Károly's conservation philosophy.",
-          "answer": "Kaán Károly öröksége arra int bennünket, hogy a természet védelme nem csupán esztétikai kötelesség, hanem a magyar nemzet megmaradásának elemi ökológiai feltétele."
+          "prompt": "Write one sentence about water on the Great Plain with an adverb of speed or permanence.",
+          "answer": "Az Alföld talajának vízkészlete fokozatosan csökkent."
         }
       ],
       "teaches": [

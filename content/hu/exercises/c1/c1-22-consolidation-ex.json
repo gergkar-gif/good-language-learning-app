@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik mondat alkalmaz spekulatív jövőbeli modális szerkezetet a technológiáról?",
+      "question": "Melyik mondat jelenti ezt: 'It may well be that machines will write many texts'?",
       "options": [
-        "Könnyen meglehet, hogy a generatív algoritmusok alapjaiban írják újra az emberi kogníciót.",
-        "A diákok leültek a számítógépek elé a tanteremben.",
-        "Mivel szép volt az idő, kikapcsolták az összes képernyőt."
+        "Könnyen meglehet, hogy a gépek sok szöveget írnak.",
+        "Biztos, hogy a gépek sok szöveget írnak.",
+        "Nem kell, hogy a gépek sok szöveget írjanak."
       ],
       "correct": 0,
       "teaches": [
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A kis nyelvek gépi perifériára szorulását és elfelejtődését _____ nevezzük.",
-      "hint": "digital language extinction / digitális nyelvkihalás + -nak",
+      "sentence": "Amikor egy kis nyelv eltűnik a digitális eszközökből, ezt _____ nevezzük.",
+      "hint": "digital language extinction",
       "answer": "digitális nyelvkihalásnak",
-      "english": "The marginalization and forgetting of small languages in machine domains is called digital language extinction.",
+      "english": "When a small language disappears from digital devices, we call it digital language extinction.",
       "teaches": [
         "c1-computational-linguistics-vocab"
       ]
@@ -90,8 +90,7 @@
       ],
       "answers": [
         "tanítókorpusz",
-        "tanító korpusz",
-        "tréningkorpusz"
+        "tanító korpusz"
       ]
     },
     {
@@ -100,11 +99,14 @@
       "category": "grammar",
       "stage": "recall",
       "sentence": "A mesterséges intelligencia _____ forradalmasítja az emberi kommunikációt.",
-      "hint": "undoubtedly / kétségtelen + -ül",
-      "answer": "kétségtelenül",
+      "hint": "undoubtedly",
       "english": "Artificial intelligence undoubtedly revolutionizes human communication.",
       "teaches": [
         "epistemic-hedging"
+      ],
+      "answers": [
+        "kétségtelenül",
+        "vitathatatlanul"
       ]
     },
     {
@@ -113,11 +115,11 @@
       "category": "grammar",
       "stage": "context",
       "sentence": "Ha nem építenénk magyar modellt, anyanyelvünk digitális perifériára _____.",
-      "hint": "would be relegated / szorul + -na",
+      "hint": "szorul, 3sg",
       "answer": "szorulna",
       "english": "If we did not build a Hungarian model, our mother tongue would be relegated to the digital periphery.",
       "teaches": [
-        "past-conditional-volna"
+        "hypothetical-ha-conditional"
       ]
     },
     {
@@ -125,16 +127,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A ritka anyanyelvi kifejezések _____ ütemben kopnak ki az internetes beszédből.",
-      "hint": "at an alarming",
-      "english": "Rare mother-tongue expressions wear off from internet speech at an alarming rate.",
+      "sentence": "A régi szavak _____ kopnak ki az internetes beszédből.",
+      "hint": "gradually",
+      "english": "Old words wear out of internet speech gradually.",
       "teaches": [
         "scalar-adverbs"
       ],
       "answers": [
-        "aggasztó",
-        "riasztó",
-        "nyugtalanító"
+        "fokozatosan",
+        "észrevétlenül"
       ]
     },
     {
@@ -142,11 +143,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Hogyan mondja egy jó magyar szakszöveg az angol „the data is processed” típusú mondatot?",
+      "question": "Melyik a természetes magyar megfelelője ennek: 'the data is processed'?",
       "options": [
-        "Cselekvő igével: a rendszer feldolgozza az adatokat.",
-        "Lesz + -va/-ve szerkezettel: az adatok fel lesznek dolgozva.",
-        "Által-szerkezettel: az adatok a rendszer által feldolgozásra kerülnek."
+        "A rendszer feldolgozza az adatokat.",
+        "Az adatok fel lesznek dolgozva.",
+        "Az adatok a rendszer által feldolgozásra kerülnek."
       ],
       "correct": 0,
       "teaches": [
@@ -159,28 +160,24 @@
       "category": "grammar",
       "stage": "produce",
       "tiles": [
-        "A",
-        "magyar",
-        "nyelv",
+        "Nem",
+        "kizárt,",
+        "hogy",
         "a",
-        "jövő",
-        "legdrágább",
-        "szellemi",
-        "öröksége."
+        "gép",
+        "hibázik."
       ],
       "solution": [
-        "A",
-        "magyar",
-        "nyelv",
+        "Nem",
+        "kizárt,",
+        "hogy",
         "a",
-        "jövő",
-        "legdrágább",
-        "szellemi",
-        "öröksége."
+        "gép",
+        "hibázik."
       ],
-      "english": "The Hungarian language is the future's most precious intellectual heritage.",
+      "english": "It is not out of the question that the machine makes a mistake.",
       "teaches": [
-        "conclusive-markers"
+        "epistemic-modality"
       ]
     },
     {
@@ -190,12 +187,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a diagnostic sentence about digital language extinction using a counterfactual conditional.",
-          "answer": "Ha a magyar társadalom nem fektetne be tudatosan a hazai természetesnyelv-feldolgozásba, anyanyelvünk a digitális nyelvkihalás sorsára jutna a globális techcégek világában."
+          "prompt": "Write one sentence with 'Ha nem …-nánk/-nénk' about Hungarian and machines.",
+          "answer": "Ha nem gyűjtenénk magyar szövegeket, a gépek nem értenék a nyelvünket."
         }
       ],
       "teaches": [
-        "past-conditional-volna"
+        "hypothetical-ha-conditional"
       ]
     },
     {
@@ -205,12 +202,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on Karinthy's Faremidó and the preservation of humanistic culture.",
-          "answer": "Karinthy Frigyes faremidói látomása ma arra figyelmeztet bennünket, hogy a technológiai fejlődés közepette kötelességünk megóvni anyanyelvünk érzelmi gazdagságát a rideg gépi elsivárosodással szemben."
+          "prompt": "Write one sentence with 'feltehetőleg' or 'valószínűleg' about the future of Hungarian.",
+          "answer": "A magyar nyelv feltehetőleg a jövőben is élő nyelv marad."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "epistemic-hedging"
       ]
     }
   ]

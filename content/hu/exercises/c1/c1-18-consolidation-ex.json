@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik mondat alkalmaz helyes adversative-concessive szerkezetet?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Jóllehet a technológia gyorsan fejlődik, mindazonáltal a jogi szabályozás évtizedes lemaradásban van.",
-        "Mivel a technológia fejlődik, azért nem csinálunk semmit.",
-        "Hogy a technológia fejlődjön, ahhoz sok pénz kell."
+        "Jóllehet a technológia gyorsan fejlődik, mindazonáltal a szabályozás lemaradt.",
+        "Jóllehet a technológia gyorsan fejlődik, ezért a szabályozás lemaradt.",
+        "Jóllehet a technológia gyorsan fejlődik, mert a szabályozás lemaradt."
       ],
       "correct": 0,
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ]
     },
     {
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel fejezhetünk ki rendszerszintű elengedhetetlen szükségszerűséget?",
+      "question": "Melyik mondat mondja ki, hogy valami mindenképpen szükséges?",
       "options": [
-        "Elengedhetetlen biztosítani a kritikus infrastruktúrák redundáns áramellátását.",
-        "Esetleg érdemes volna megfontolni a helyi áramhálózatok időszakos korszerűsítését.",
-        "Nem feltétlenül indokolt újabb forrásokat fordítani a tartalék energiarendszerekre."
+        "Elengedhetetlen tartalék áramforrásokat biztosítani a kórházaknak.",
+        "Érdemes lehet tartalék áramforrásokat biztosítani a kórházaknak.",
+        "Talán lesznek tartalék áramforrások a kórházakban."
       ],
       "correct": 0,
       "teaches": [
@@ -41,23 +41,23 @@
       "pairs": [
         [
           "digitális szuverenitás",
-          "önálló technológiai önrendelkezés"
+          "az állam maga dönt az adatairól"
         ],
         [
           "SCADA-rendszer",
-          "ipari vezérlőhálózat"
+          "az ipari gépeket irányító rendszer"
         ],
         [
           "posztkvantum-titkosítás",
-          "kvantumbiztos kriptográfia"
+          "a kvantumszámítógépnek is ellenálló titkosítás"
         ],
         [
-          "megfigyelési kapitalizmus",
-          "viselkedési adatok profitcélú kizsákmányolása"
+          "profilalkotás",
+          "adatokból készített leírás egy emberről"
         ],
         [
           "kibernetikai automata",
-          "szabályvezérelt számítási gépezet"
+          "szabályok szerint működő gép"
         ]
       ],
       "teaches": [
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A modern villamosenergia-hálózat biztonságához elengedhetetlen a robusztus _____ felépítése.",
-      "hint": "redundant architecture",
-      "answer": "redundáns architektúra",
-      "english": "For the security of modern electrical power grid, building a robust redundant architecture is indispensable.",
+      "sentence": "A villamosenergia-hálózat biztonságához tartalék elemekkel megerősített _____ kell.",
+      "hint": "structure",
+      "answer": "architektúra",
+      "english": "The power grid needs a structure strengthened with reserve parts for its safety.",
       "teaches": [
         "c1-digital-sovereignty-vocab"
       ]
@@ -82,27 +82,24 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A kvantumszámítógépek megjelenése miatt a szakértők sürgetik a _____ bevezetését.",
-      "hint": "post-quantum cryptography",
-      "english": "Due to the emergence of quantum computers, experts urge the introduction of post-quantum cryptography.",
+      "sentence": "A bankok a kvantumszámítógép miatt új _____ bevezetését tervezik.",
+      "hint": "post-quantum encryption",
+      "english": "Because of the quantum computer, the banks plan to introduce new post-quantum encryption.",
       "teaches": [
         "c1-digital-sovereignty-vocab"
       ],
-      "answers": [
-        "posztkvantum-titkosítás",
-        "posztkvantum-kriptográfia"
-      ]
+      "answer": "posztkvantum-titkosítás"
     },
     {
       "id": "c1-18-consolidation-6",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "_____ a kényelem csábító, mindazonáltal a magánszféra feladása visszafordíthatatlan károkat okoz.",
-      "hint": "Although",
-      "english": "Although convenience is tempting, nevertheless relinquishing privacy causes irreversible damage.",
+      "sentence": "_____ a kényelem csábító, mindazonáltal a magánszféra feladása nagy kockázat.",
+      "hint": "although",
+      "english": "Although convenience is tempting, nevertheless giving up privacy is a great risk.",
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ],
       "answers": [
         "Jóllehet",
@@ -116,32 +113,28 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A kiberbűnözés elleni védekezés, _____ nemzetbiztonsági prioritássá vált.",
+      "sentence": "A kiberbűnözés elleni védekezés, _____, mára állami feladat lett.",
       "hint": "beyond dispute",
-      "english": "Defending against cybercrime, beyond dispute, has become a national security priority.",
+      "english": "Defence against cybercrime, beyond dispute, has become a task of the state.",
       "teaches": [
-        "epistemic-hedging"
+        "evaluative-stance"
       ],
-      "answers": [
-        "vitán felül állóan",
-        "vitathatatlanul",
-        "kétségbevonhatatlanul"
-      ]
+      "answer": "vitán felül"
     },
     {
       "id": "c1-18-consolidation-8",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A kulcscsere biztonsága _____ alakul, mekkora az entrópia.",
-      "hint": "depending on whether",
-      "english": "The security of key exchange shapes depending on whether how large the entropy is.",
+      "sentence": "A kulcsváltás gyakorisága _____ alakul, hogy mekkora a kockázat.",
+      "hint": "depending on",
+      "english": "How often the key is changed depends on how great the risk is.",
       "teaches": [
-        "formal-obligation"
+        "b2-cataphoric-clauses"
       ],
       "answers": [
-        "annak függvényében, hogy",
-        "attól függően, hogy"
+        "annak függvényében",
+        "attól függően"
       ]
     },
     {
@@ -149,11 +142,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Hogyan működik a 'nem annyira X, mint inkább Y' fókuszos kiemelés egy érvelésben?",
+      "question": "Melyik mondat mondja, hogy a felelősség az emberé, nem a gépé?",
       "options": [
-        "Egymással szembeállít két tényezőt, visszaszorítva a felszínes magyarázatot és a lényegi okra irányítva a figyelmet.",
-        "Egyenrangú fontosságúnak nyilvánít két állítást, elkerülve a választást a felmerülő magyarázatok között.",
-        "Időbeli sorrendbe állítja az eseményeket, kiemelve a korábbi cselekvés elsőbbségét a későbbivel szemben."
+        "Nem annyira a gép, mint inkább az ember felelős a döntésért.",
+        "A gép és az ember egyformán felelős a döntésért.",
+        "Nem az ember, hanem a gép felelős a döntésért."
       ],
       "correct": 0,
       "teaches": [
@@ -185,7 +178,7 @@
         "szándék",
         "dönt."
       ],
-      "english": "Not the technology, but human intent decides.",
+      "english": "Not the technology but human intent decides.",
       "teaches": [
         "b2-cleft-identification"
       ]
@@ -197,12 +190,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write an argument evaluating the balance between state security and personal privacy in cyberspace.",
-          "answer": "Jóllehet a kritikus infrastruktúrák védelme határozott állami fellépést igényel, mindazonáltal elengedhetetlen biztosítani a polgárok magánszférájának és digitális önrendelkezésének védelmét."
+          "prompt": "Write one sentence with *Jóllehet … mindazonáltal …* about the state and privacy.",
+          "answer": "Jóllehet a kritikus infrastruktúra védelme állami feladat, mindazonáltal elengedhetetlen a magánszféra védelme is."
         }
       ],
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ]
     },
     {
@@ -212,8 +205,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on Kalmár László's cybernetic legacy.",
-          "answer": "Nem annyira a gépek intelligenciája, mint inkább az ember etikai felelősségvállalása jelenti a huszonegyedik század legnagyobb civilizációs próbatételét."
+          "prompt": "Write one sentence with *nem annyira … mint inkább …* about thinking machines.",
+          "answer": "Nem annyira a gépek sebessége, mint inkább az ember szándéka a lényeges kérdés a gondolkodó gépeknél."
         }
       ],
       "teaches": [

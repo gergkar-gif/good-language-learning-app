@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik mondat fejez ki formális gazdasági megengedést és ellentételezést?",
+      "question": "Melyik mondat jelenti ezt: 'Although output grew, wages hardly rose'?",
       "options": [
-        "Jóllehet a gyárak termelése felpörgött, mindamellett a munkások reálbére érzékelhetően csökkent.",
-        "A munkások bementek a gyárkapun és felvették a védőruhát.",
-        "Mivel szép volt a reggel, mindenki vidáman kezdte a műszakot."
+        "Jóllehet nőtt a termelés, mindamellett a bérek alig emelkedtek.",
+        "Mivel nőtt a termelés, ezért a bérek alig emelkedtek.",
+        "Jóllehet nőtt a termelés, ezért a bérek alig emelkedtek."
       ],
       "correct": 0,
       "teaches": [
@@ -25,7 +25,7 @@
       "question": "Melyik mondat mondja el, mi történt, anélkül hogy megnevezné, ki tette?",
       "options": [
         "Tavaly háromszáz dolgozót bocsátottak el.",
-        "Tavaly a vezetőség háromszáz dolgozót bocsátott el.",
+        "Tavaly a cég háromszáz dolgozót bocsátott el.",
         "Tavaly háromszáz dolgozó bocsátott el."
       ],
       "correct": 0,
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A modern gazdaság bizonytalan munkaszerződésekkel sújtott rétegét _____ nevezzük.",
-      "hint": "precariat / prekariátus + -nak",
+      "sentence": "A bizonytalan állásban élő dolgozók rétegét _____ nevezzük.",
+      "hint": "precariat",
       "answer": "prekariátusnak",
-      "english": "The stratum of modern economy stricken by precarious work contracts is called precariat.",
+      "english": "The layer of workers in insecure jobs is called the precariat.",
       "teaches": [
         "c1-labour-economics-vocab"
       ]
@@ -82,9 +82,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A tisztességes fizetés garantálása a munkajogban eltérést nem engedő, _____ kell legyen.",
+      "sentence": "Olyan szabály, amelytől nem lehet eltérni: ez a _____.",
       "hint": "mandatory rule",
-      "english": "Guaranteeing a fair wage must be a non-derogable, mandatory rule in labor law.",
+      "english": "A rule you cannot depart from: this is the mandatory rule.",
       "teaches": [
         "c1-labour-economics-vocab"
       ],
@@ -97,12 +97,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A vezetőség az alacsony bérekkel létbizonytalanságot _____, megtörte az ellenállást.",
-      "hint": "creating / teremt + -ve",
-      "answer": "teremtve",
-      "english": "Management, creating existential insecurity with low wages, broke resistance.",
+      "sentence": "A cég csak rövid szerződéseket kötött, létbizonytalanságot _____ a dolgozók között.",
+      "hint": "teremt, to create, adverbial participle",
+      "english": "The company signed only short contracts, creating insecurity among the workers.",
       "teaches": [
         "participial-clauses"
+      ],
+      "answers": [
+        "teremtve",
+        "okozva",
+        "szülve"
       ]
     },
     {
@@ -110,12 +114,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A dolgozók vásárlóereje _____ megcsappant a legutóbbi megélhetési krízisben.",
-      "hint": "drastically / drasztikus + -an",
-      "answer": "drasztikusan",
-      "english": "The purchasing power of workers dwindled drastically in the latest cost-of-living crisis.",
+      "sentence": "A dolgozók vásárlóereje _____ csökkent a drágulás idején.",
+      "hint": "drastically",
+      "english": "The workers' purchasing power fell drastically at the time of rising prices.",
       "teaches": [
         "scalar-adverbs"
+      ],
+      "answers": [
+        "drasztikusan",
+        "számottevően"
       ]
     },
     {
@@ -123,16 +130,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Az állam köteles _____ a munkavállalói érdekképviseletek függetlenségét.",
-      "hint": "guarantee",
-      "english": "The state is obligated to guarantee the independence of employee interest representations.",
+      "sentence": "A munkáltató köteles _____ a biztonságos munkahelyet.",
+      "hint": "ensure",
+      "english": "The employer is obliged to ensure a safe workplace.",
       "teaches": [
         "formal-obligation"
       ],
       "answers": [
-        "garantálni",
         "biztosítani",
-        "szavatolni"
+        "garantálni"
       ]
     },
     {
@@ -140,11 +146,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Hogyan hat egy munkahelyi körlevélben ez a mondat: „A túlórák kifizetésre kerültek.”?",
+      "question": "Milyen hangulatú ez a mondat: 'A túlórák kifizetésre kerültek.'?",
       "options": [
         "Hivatalos és nehézkes; egyszerűbben: kifizették a túlórákat.",
-        "Bizalmas, baráti hangvételű.",
-        "Nyelvtanilag hibás, így nem írhatnánk le."
+        "Baráti és könnyed; így beszélnek a barátok egymással.",
+        "Hibás; magyarul ilyen mondatot nem lehet mondani."
       ],
       "correct": 0,
       "teaches": [
@@ -158,23 +164,21 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "munka",
-        "méltósága",
-        "minden",
-        "demokrácia",
-        "legfőbb",
-        "alapköve."
+        "munkáltató",
+        "köteles",
+        "kifizetni",
+        "a",
+        "túlórákat."
       ],
       "solution": [
         "A",
-        "munka",
-        "méltósága",
-        "minden",
-        "demokrácia",
-        "legfőbb",
-        "alapköve."
+        "munkáltató",
+        "köteles",
+        "kifizetni",
+        "a",
+        "túlórákat."
       ],
-      "english": "The dignity of labor is the foremost cornerstone of every democracy.",
+      "english": "The employer is obliged to pay the overtime.",
       "teaches": [
         "formal-obligation"
       ]
@@ -186,8 +190,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a diagnostic sentence about the modern precariat using an economic concessive structure.",
-          "answer": "Jóllehet a gazdasági mutatók teljes foglalkoztatottságot jeleznek, mindamellett a prekariátus körében tapasztalható alacsony bérek és kiszolgáltatottság súlyos társadalmi feszültséget generálnak."
+          "prompt": "Write one sentence about the precariat with 'noha … ugyanakkor'.",
+          "answer": "Noha a gyár nyereséges, ugyanakkor a dolgozók bizonytalan szerződést kapnak."
         }
       ],
       "teaches": [
@@ -201,8 +205,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on labor dignity and collective bargaining rights.",
-          "answer": "A munkavállalók elidegeníthetetlen joga a tisztességes, inflációt követő bérezés és a kollektív alku szabadsága, amelyet a jogállamnak kógens garanciákkal kötelessége védeni."
+          "prompt": "Write one sentence with 'köteles' about a worker's right.",
+          "answer": "A munkáltató köteles tiszteletben tartani a dolgozók jogait."
         }
       ],
       "teaches": [

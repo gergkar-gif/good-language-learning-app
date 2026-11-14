@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért jelent egzisztenciális 'kvantumfenyegetést' a kvantumszámítógép az aszimmetrikus titkosításra?",
+      "question": "Mit jelent a *végpontok közötti titkosítás*?",
       "options": [
-        "Mert a Shor-algoritmus segítségével a kvantumszámítógépek percek alatt képesek feltörni az RSA- és elliptikus görbe alapú kulcscserét.",
-        "Mert a kvantumszámítógépek fizikai mágnesként vonzzák magukhoz az internetkábeleket.",
-        "Mert a kvantumszámítógépek túl sok villanyáramot fogyasztanak a bankfiókokban."
+        "Csak a küldő és a fogadó tudja elolvasni az üzenetet.",
+        "Az üzenetet a szolgáltató is el tudja olvasni.",
+        "Az üzenet a végén automatikusan törlődik."
       ],
       "correct": 0,
       "teaches": [
@@ -22,15 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A védelem hatékonysága _____ alakul, mikor kezdődik meg a posztkvantum-titkosításra való átállás.",
-      "hint": "depending on whether",
-      "english": "The effectiveness of defence shapes depending on whether when the transition to post-quantum encryption begins.",
+      "sentence": "A védelem erőssége _____ változik, hogy milyen hosszú a kulcs.",
+      "hint": "depending on",
+      "english": "The strength of the protection varies depending on how long the key is.",
       "teaches": [
-        "formal-obligation"
+        "b2-cataphoric-clauses"
       ],
       "answers": [
-        "annak függvényében, hogy",
-        "attól függően, hogy"
+        "annak függvényében",
+        "attól függően"
       ]
     },
     {
@@ -41,19 +41,19 @@
       "pairs": [
         [
           "végpontok közötti titkosítás",
-          "csak a küldő és a fogadó látja a nyers adatot"
-        ],
-        [
-          "posztkvantum-titkosítás",
-          "kvantumszámítógépeknek is ellenálló algoritmusok"
-        ],
-        [
-          "zéró tudású bizonyítás",
-          "információ igazolása a titok felfedése nélkül"
+          "csak a küldő és a fogadó látja az üzenetet"
         ],
         [
           "entrópia",
-          "kriptográfiai véletlenszerűség mértéke"
+          "a véletlenszerűség mértéke egy kulcsban"
+        ],
+        [
+          "zéró tudású bizonyítás",
+          "igazolás, amely nem fedi fel a titkot"
+        ],
+        [
+          "brute force támadás",
+          "az összes lehetséges kulcs kipróbálása"
         ]
       ],
       "teaches": [
@@ -65,15 +65,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A rendszer sérülékenysége _____ nő vagy csökken, hogy a hálózat milyen gyakran frissíti a biztonsági kulcsokat.",
+      "sentence": "_____, hogy mikor készül el a kvantumszámítógép, kell kicserélni a titkosítást.",
       "hint": "depending on",
-      "english": "The vulnerability of the system increases or decreases depending on how often the network updates security keys.",
+      "english": "Depending on when the quantum computer is finished, the encryption has to be replaced.",
       "teaches": [
-        "formal-obligation"
+        "b2-cataphoric-clauses"
       ],
       "answers": [
-        "attól függően",
-        "annak függvényében"
+        "Attól függően",
+        "Annak függvényében"
       ]
     },
     {
@@ -91,7 +91,7 @@
         "milyen",
         "erős",
         "a",
-        "kriptográfia."
+        "titkosítás."
       ],
       "solution": [
         "A",
@@ -103,11 +103,11 @@
         "milyen",
         "erős",
         "a",
-        "kriptográfia."
+        "titkosítás."
       ],
-      "english": "Security varies depending on how strong the cryptography is.",
+      "english": "Security varies depending on how strong the encryption is.",
       "teaches": [
-        "formal-obligation"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -118,21 +118,21 @@
       "prompt": [
         {
           "speaker": "Kriptográfus",
-          "text": "Mikor kell leváltanunk a jelenlegi nyilvános kulcsú infrastruktúrát?"
+          "text": "Mikor cseréljük le a jelenlegi titkosítást?"
         },
         {
           "speaker": "Biztonsági igazgató",
-          "text": "Annak függvényében, hogy mikorra várható a működőképes kriptográfiai _____ megjelenése."
+          "text": "Annak függvényében, hogy mikorra készül el az első működő _____ ."
         }
       ],
       "options": [
-        "kvantumszámítógépek",
-        "analóg telefonok",
-        "mechanikus írógépek"
+        "kvantumszámítógép",
+        "szuperszámítógép",
+        "adatközpont"
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "c1-digital-sovereignty-vocab"
       ]
     },
     {
@@ -142,12 +142,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a technical proposition about encryption using 'annak függvényében, hogy'.",
-          "answer": "Egy kiberrendszer ellenálló képessége annak függvényében mérhető, hogy a titkosítási kulcsok mekkora entrópiát biztosítanak a külső behatolási kísérletekkel szemben."
+          "prompt": "Write one sentence with *annak függvényében, hogy* about the security of a key.",
+          "answer": "A kulcs biztonsága annak függvényében változik, hogy milyen hosszú."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -155,15 +155,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fejez ki funkcionális kölcsönös függőséget és strukturális feltételességet?",
+      "question": "Melyik mondat mondja, hogy a biztonság a kulcs hosszától függ?",
       "options": [
-        "annak függvényében, hogy",
-        "annak ellenére, hogy",
-        "anélkül, hogy"
+        "A biztonság annak függvényében változik, hogy milyen hosszú a kulcs.",
+        "A biztonság annak ellenére változik, hogy milyen hosszú a kulcs.",
+        "A biztonság anélkül változik, hogy milyen hosszú a kulcs."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "b2-cataphoric-clauses"
       ]
     }
   ]

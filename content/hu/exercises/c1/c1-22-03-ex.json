@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit értünk 'algoritmikus torzítás' (algorithmic bias) alatt a mesterséges intelligenciában?",
+      "question": "Mi az 'algoritmikus torzítás'?",
       "options": [
-        "Azt a jelenséget, amikor a modell a tanítóadatokban meglévő emberi előítéleteket, sztereotípiákat és egyenlőtlenségeket tükrözi és felerősíti.",
-        "A monitorok képernyőjének fizikai deformálódását.",
-        "A billentyűzet gombjainak beragadását."
+        "A gép előítéletet vesz át.",
+        "A számítógép lassú működése.",
+        "A gép nem kapcsol be."
       ],
       "correct": 0,
       "teaches": [
@@ -23,11 +23,14 @@
       "category": "grammar",
       "stage": "controlled",
       "sentence": "A digitális nyelvtechnológia fejlődése _____ forradalmasítja a fordítói szakmát.",
-      "hint": "undoubtedly / kétségtelen + -ül",
-      "answer": "kétségtelenül",
+      "hint": "undoubtedly",
       "english": "The development of digital language technology undoubtedly revolutionizes the translation profession.",
       "teaches": [
         "epistemic-hedging"
+      ],
+      "answers": [
+        "kétségtelenül",
+        "vitathatatlanul"
       ]
     },
     {
@@ -63,11 +66,14 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "A szintetikus szövegek tömeges terjedése _____ átalakítja az irodalmi művek befogadását.",
-      "hint": "plausibly / vélhető + -en",
-      "answer": "vélhetően",
+      "hint": "probably",
       "english": "The mass spread of synthetic texts plausibly transforms the reception of literary works.",
       "teaches": [
         "epistemic-hedging"
+      ],
+      "answers": [
+        "vélhetően",
+        "feltehetőleg"
       ]
     },
     {
@@ -112,7 +118,7 @@
         },
         {
           "speaker": "Informatikus",
-          "text": "A rímeket és formákat vitathatatlanul tökéletesen leutánozza, ám a valódi emberi fájdalom kifejezése _____ elérhetetlen marad számára."
+          "text": "A rímeket vitathatatlanul jól utánozza, ám a valódi emberi fájdalom kifejezése _____ nem sikerül neki."
         }
       ],
       "options": [
@@ -132,8 +138,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence forecasting technological impact on literature using an epistemic probability adverbial.",
-          "answer": "A mesterséges intelligencia vitathatatlanul képes kifinomult stilisztikai bravúrokra, ám az autentikus emberi létélményből fakadó költői mélység feltehetőleg megismételhetetlen marad a kód számára."
+          "prompt": "Write one sentence about a computer and poetry with an adverb such as 'feltehetőleg' or 'vitathatatlanul'.",
+          "answer": "A gép vitathatatlanul jól utánozza a verseket, de a költői mélység feltehetőleg emberi marad."
         }
       ],
       "teaches": [
@@ -145,11 +151,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozószó fejez ki magas fokú bizonyosságot és tudományos állásfoglalást?",
+      "question": "Melyik mondat fejez ki teljes bizonyosságot?",
       "options": [
-        "kétségtelenül / vitathatatlanul",
-        "esetleg talán",
-        "majdnem és alig"
+        "A gép kétségtelenül jól fordít.",
+        "A gép talán jól fordít.",
+        "A gép valószínűleg jól fordít."
       ],
       "correct": 0,
       "teaches": [

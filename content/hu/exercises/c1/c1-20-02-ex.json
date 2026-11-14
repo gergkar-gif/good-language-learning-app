@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent az 'elszikesedés' jelensége a mezőgazdaságban?",
+      "question": "Mit jelent az *elszikesedés*?",
       "options": [
-        "A talaj felső rétegének káros mértékű sófelhalmozódását, ami gátolja a növények fejlődését.",
-        "A szénsavas ásványvizek palackozásának folyamatát.",
-        "A búza aratásának leggyorsabb modern gépi módszerét."
+        "A talajban sok só gyűlik össze, és a növények nehezen nőnek.",
+        "A talajban sok víz gyűlik össze, és a növények gyorsan nőnek.",
+        "A talajból kevés vizet szívnak fel a gyökerek."
       ],
       "correct": 0,
       "teaches": [
@@ -22,10 +22,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A láprétek teljesen _____, a fák elszáradva merednek az ég felé.",
-      "hint": "drained / lecsapol + -va",
+      "sentence": "A mocsarak _____, a rétek felszántva fekszenek az egykori ártéren.",
+      "hint": "drained",
       "answer": "lecsapolva",
-      "english": "The moor meadows completely drained, the trees parched stare toward the sky.",
+      "english": "The marshes drained, the meadows ploughed, lie on the former floodplain.",
       "teaches": [
         "participle-actions"
       ]
@@ -38,19 +38,19 @@
       "pairs": [
         [
           "elszikesedés",
-          "káros sók felhalmozódása a termőrétegben"
+          "a talaj megsósodik"
         ],
         [
           "tájseb",
-          "a természetes környezet mély, mesterséges sérülése"
+          "a tájon hagyott mély, látható sérülés"
         ],
         [
           "mocsárlecsapolás",
-          "vizes élőhelyek felszámolása szántóföldszerzésért"
+          "a mocsár vizének elvezetése, hogy szántó legyen"
         ],
         [
-          "monokultúra",
-          "egyetlen növényfaj kizárólagos, kiterjedt termesztése"
+          "monokultúrás művelés",
+          "egyetlen növény termesztése nagy területen"
         ]
       ],
       "teaches": [
@@ -62,10 +62,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A folyómeder szűk betonfalak közé _____ vezeti el az éltető áradást.",
-      "hint": "squeezed / szorít + -va",
+      "sentence": "A folyó betonfalak közé _____ folyik a városon át.",
+      "hint": "szorít (to squeeze), 'having been …'",
       "answer": "szorítva",
-      "english": "The riverbed squeezed between narrow concrete walls carries away the life-giving flood.",
+      "english": "The river flows squeezed between concrete walls through the town.",
       "teaches": [
         "participle-actions"
       ]
@@ -95,7 +95,7 @@
         "az",
         "Alföldön."
       ],
-      "english": "The earth exhausted and dried out lies on the Great Plain.",
+      "english": "The land lies exhausted and dried out on the Great Plain.",
       "teaches": [
         "participle-actions"
       ]
@@ -108,7 +108,7 @@
       "prompt": [
         {
           "speaker": "Ökológus",
-          "text": "Hogyan néz ki ma a történelmi Nagysárrét területe?"
+          "text": "Hogyan néz ki ma a régi mocsarak területe?"
         },
         {
           "speaker": "Földrajztudós",
@@ -123,7 +123,11 @@
       "correct": 0,
       "teaches": [
         "participle-actions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "past-participle-adjective"
+      }
     },
     {
       "id": "c1-20-02-production-7",
@@ -132,8 +136,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Describe a parched or degraded landscape using a participial state expression (-va/-ve).",
-          "answer": "A homokhátság egykor gazdag mocsarai lecsapolva, a fenyvesek elszáradva tanúskodnak a fenntarthatatlan tájátalakítás következményeiről."
+          "prompt": "Describe a dry or damaged landscape with a *-va/-ve* participle.",
+          "answer": "A talaj kiszáradva fekszik a nyári napon, a fák pedig elszáradva állnak."
         }
       ],
       "teaches": [
@@ -145,16 +149,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik mondatrész fejez ki állapotot leíró igeneves szerkezetet?",
+      "question": "Melyik mondat mondja, hogy a talaj száraz állapotban fekszik?",
       "options": [
-        "kizsigerelve és kiszáradva hever",
-        "amikor a gazda kimegy a mezőre",
-        "hogy több gabonát tudjon eladni"
+        "A talaj kiszáradva fekszik.",
+        "A talaj kiszáradni fekszik.",
+        "A talaj kiszáradás fekszik."
       ],
       "correct": 0,
       "teaches": [
         "participle-actions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "nominalization"
+      }
     }
   ]
 }

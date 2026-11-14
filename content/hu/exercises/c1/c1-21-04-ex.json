@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent az 'inflációs erózió' a bérek tekintetében?",
+      "question": "Mit jelent az 'inflációs erózió'?",
       "options": [
-        "A pénzromlás és áremelkedés miatti folyamatos vásárlóerő-csökkenést, amely a névleges fizetésemelést is felemészti.",
-        "A bankjegyek fizikai kopását és elhasználódását.",
-        "A külföldi devizák átváltásának költségeit."
+        "Az árak miatt a bér egyre kevesebbet ér.",
+        "A bankjegyek fizikai elhasználódása.",
+        "A külföldi pénz drága átváltása."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A gyári dolgozók reálbére _____ csökkent az elmúlt két év rekordinflációja nyomán.",
-      "hint": "drastically / drasztikus + -an",
-      "answer": "drasztikusan",
-      "english": "The real wage of factory workers decreased drastically in the wake of the record inflation of the past two years.",
+      "sentence": "A gyári munkások bére _____ csökkent a drágulás miatt.",
+      "hint": "drastically",
+      "english": "The factory workers' pay fell drastically because of rising prices.",
       "teaches": [
         "scalar-adverbs"
+      ],
+      "answers": [
+        "drasztikusan",
+        "számottevően",
+        "szembeötlően"
       ]
     },
     {
@@ -62,12 +66,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A menedzserek juttatásai _____ meghaladják az üzemi átlagbért.",
-      "hint": "flagrantly / kirívó + -an",
-      "answer": "kirívóan",
-      "english": "Managers' benefits flagrantly exceed the plant average wage.",
+      "sentence": "A vezetők fizetése _____ magasabb a munkások fizetésénél.",
+      "hint": "flagrantly",
+      "english": "The managers' pay is flagrantly higher than the workers' pay.",
       "teaches": [
         "scalar-adverbs"
+      ],
+      "answers": [
+        "kirívóan",
+        "számottevően"
       ]
     },
     {
@@ -106,11 +113,11 @@
       "prompt": [
         {
           "speaker": "Gazdasági újságíró",
-          "text": "Hogyan alakult a bérfelzárkózás Ausztriához képest?"
+          "text": "Emelkedtek a bérek?"
         },
         {
           "speaker": "Közgazdász",
-          "text": "A magyar bérszínvonal sajnálatos módon csak _____ mértékben közeledett a bécsihez."
+          "text": "Csak _____ mértékben emelkedtek, a drágulás elvitte az emelést."
         }
       ],
       "options": [
@@ -130,8 +137,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence analyzing wage polarization using a scalar disparity adverb.",
-          "answer": "Az elmúlt évek brutális élelmiszer-inflációja következtében a kétkezi munkások reálkeresete drasztikusan megcsappant, tovább tágítva a kirívóan mély társadalmi ollót."
+          "prompt": "Write one sentence about falling pay with a scalar adverb (drasztikusan, számottevően or kirívóan).",
+          "answer": "A munkások bére drasztikusan csökkent a drágulás miatt."
         }
       ],
       "teaches": [
@@ -143,11 +150,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozószó fejez ki kirívó, extrém mértékű vagy nagyságrendi béraránytalanságot?",
+      "question": "Melyik szó illik a mondatba? A munkások bére _____ csökkent.",
       "options": [
-        "kirívóan / drasztikusan",
-        "együttműködve",
-        "időben érkezve"
+        "drasztikusan",
+        "drasztikus",
+        "drasztikussá"
       ],
       "correct": 0,
       "teaches": [

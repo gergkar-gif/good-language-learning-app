@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevezünk Shoshana Zuboff elmélete nyomán 'megfigyelési kapitalizmusnak' (surveillance capitalism)?",
+      "question": "Mit jelent a *profilalkotás*?",
       "options": [
-        "Azt a gazdasági logikát, amely az emberi élményeket ingyenes nyersanyagként zsákmányolja ki viselkedési adatokká formálva és azokat piacra dobva.",
-        "A munkahelyi számítógépes szoftverek azon funkcióját, amely a dolgozók napi munkaidejét és billentyűleütéseit rögzíti a vezetőség számára.",
-        "A pénzügyi felügyeleti hatóságok azon rendszerét, amely a banki csalások és a pénzmosás kiszűrésére figyeli a gyanús átutalásokat."
+        "Egy ember adataiból készített leírás az ember szokásairól.",
+        "Egy ember adatainak teljes törlése az internetről.",
+        "Egy ember arcának lefényképezése az utcán."
       ],
       "correct": 0,
       "teaches": [
@@ -22,17 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A tömeges adatgyűjtés, _____ sérti a polgárok információs önrendelkezési jogát.",
+      "sentence": "A tömeges adatgyűjtés, _____, sérti a magánszférát.",
       "hint": "beyond dispute",
-      "english": "Mass data collection, beyond dispute, violates citizens' right to informational self-determination.",
+      "english": "Mass data collection, beyond dispute, violates privacy.",
       "teaches": [
-        "epistemic-hedging"
+        "evaluative-stance"
       ],
-      "answers": [
-        "vitán felül állóan",
-        "vitathatatlanul",
-        "kétségbevonhatatlanul"
-      ]
+      "answer": "vitán felül"
     },
     {
       "id": "c1-18-03-controlled-3",
@@ -42,19 +38,19 @@
       "pairs": [
         [
           "arcfelismerő technológia",
-          "képmáson alapuló biometrikus nyomkövetés"
+          "az arcról ismeri fel az embert"
         ],
         [
           "digitális lábnyom",
-          "online aktivitás során hagyott adathalmaz"
+          "az adatok, amelyeket az interneten hagyunk"
         ],
         [
           "profilalkotás",
-          "viselkedési adatok automatizált kiértékelése"
+          "adatokból készített leírás egy emberről"
         ],
         [
           "magánszféra védelme",
-          "az egyén intimszférájának alkotmányos védelme"
+          "a magánélet védelme"
         ]
       ],
       "teaches": [
@@ -66,17 +62,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A közterületi kamerarendszerek kiterjesztése, _____ normalizálja az állandó megfigyeltség érzetét.",
+      "sentence": "A kamerarendszerek, _____, egyre több városban működnek.",
       "hint": "worryingly",
-      "english": "The extension of public surveillance camera networks, worryingly, normalizes the feeling of constant observation.",
+      "english": "Camera systems, worryingly, work in more and more cities.",
       "teaches": [
-        "epistemic-hedging"
+        "evaluative-stance"
       ],
-      "answers": [
-        "aggodalomra okot adóan",
-        "aggasztóan",
-        "nyugtalanítóan"
-      ]
+      "answer": "aggasztó módon"
     },
     {
       "id": "c1-18-03-practice-5",
@@ -84,30 +76,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "technológia,",
+        "Az",
+        "algoritmusok,",
         "vitán",
-        "felül",
-        "állóan,",
+        "felül,",
         "új",
         "etikai",
-        "dilemmákat",
-        "teremt."
+        "kérdéseket",
+        "vetnek",
+        "fel."
       ],
       "solution": [
-        "A",
-        "technológia,",
+        "Az",
+        "algoritmusok,",
         "vitán",
-        "felül",
-        "állóan,",
+        "felül,",
         "új",
         "etikai",
-        "dilemmákat",
-        "teremt."
+        "kérdéseket",
+        "vetnek",
+        "fel."
       ],
-      "english": "The technology, beyond dispute, creates new ethical dilemmas.",
+      "english": "Algorithms, beyond dispute, raise new ethical questions.",
       "teaches": [
-        "epistemic-hedging"
+        "evaluative-stance"
       ]
     },
     {
@@ -118,21 +110,21 @@
       "prompt": [
         {
           "speaker": "Jogvédő",
-          "text": "Hogyan hathat a közterületi arcfelismerés a gyülekezési jogra?"
+          "text": "Miért veszélyes az arcfelismerés a tüntetőkre nézve?"
         },
         {
           "speaker": "Alkotmányjogász",
-          "text": "A technológia elterjedése, vitán felül állóan, dermesztő hatást gyakorolhat a szabad polgári _____."
+          "text": "Mert aggasztó módon bárkit azonosíthat, és ez visszatartja az embereket a _____ ."
         }
       ],
       "options": [
-        "véleménynyilvánításra",
-        "vásárlási kedvre",
-        "időjárás-előrejelzésre"
+        "tüntetéstől",
+        "vásárlástól",
+        "sportolástól"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "c1-digital-sovereignty-vocab"
       ]
     },
     {
@@ -142,12 +134,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical sentence about facial recognition systems using 'vitán felül állóan'.",
-          "answer": "A közterületi arcfelismerés alkalmazása, vitán felül állóan, aránytalanul korlátozza a polgárok gyülekezési és magánéleti szabadságát."
+          "prompt": "Write one sentence about privacy with *vitán felül* between commas.",
+          "answer": "A digitális lábnyom, vitán felül, a magánszféra védelmét is nehezíti."
         }
       ],
       "teaches": [
-        "epistemic-hedging"
+        "evaluative-stance"
       ]
     },
     {
@@ -155,15 +147,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozói kifejezés szolgál az állítás bizonyosságának és megkérdőjelezhetetlenségének nyomatékosítására?",
+      "question": "Melyik kifejezés mondja ki, hogy a szerző szerint a helyzet rossz?",
       "options": [
-        "vitán felül állóan",
-        "esetleg talán",
-        "elvileg elhanyagolhatóan"
+        "aggasztó módon",
+        "érdekes módon",
+        "természetesen"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "evaluative-stance"
       ]
     }
   ]

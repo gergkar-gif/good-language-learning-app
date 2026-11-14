@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mely létesítmények minősülnek 'kritikus infrastruktúrának' egy modern társadalomban?",
+      "question": "Mi a *kritikus infrastruktúra*?",
       "options": [
-        "Azok a hálózatok és rendszerek (pl. áramhálózat, ivóvízellátás, kórházak, vasút), amelyek kiesése megbénítja a társadalom és gazdaság működését.",
-        "Azok a szabadidős és turisztikai létesítmények, amelyek elsősorban a lakosság hétvégi kikapcsolódását és szórakozását szolgálják.",
-        "A nemzetközi divatcégek és kereskedelmi plázák azon hálózatai, amelyek a szezonális fogyasztási cikkek forgalmazásáért felelősek."
+        "Az a rendszer, amely nélkül a társadalom nem működik, például az áramhálózat.",
+        "Az a rendszer, amelyet csak a hadsereg használ, például a rádióhálózat.",
+        "Az a rendszer, amelyet a lakosság szórakozásra használ, például a mozik."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A kibertámadások elhárításához _____ az ipari hálózatok folyamatos felügyeletét.",
-      "hint": "indispensable to ensure",
-      "english": "For repelling cyber attacks it is indispensable to ensure continuous monitoring of industrial networks.",
+      "sentence": "A kórházakban _____ biztosítani az áramellátást.",
+      "hint": "indispensable",
+      "english": "In hospitals it is indispensable to ensure the power supply.",
       "teaches": [
         "formal-obligation"
       ],
       "answers": [
-        "elengedhetetlen biztosítani",
-        "nélkülözhetetlen biztosítani",
-        "elengedhetetlen szavatolni"
+        "elengedhetetlen",
+        "nélkülözhetetlen",
+        "célszerű",
+        "szükséges"
       ]
     },
     {
@@ -42,19 +43,19 @@
       "pairs": [
         [
           "SCADA-rendszer",
-          "ipari folyamatirányító és adatgyűjtő hálózat"
+          "az ipari gépeket irányító rendszer"
         ],
         [
           "üzemfolytonosság",
-          "megszakítás nélküli működés képessége"
+          "a működés megszakítás nélkül folytatódik"
         ],
         [
           "redundáns architektúra",
-          "tartalék elemekkel megerősített megbízható felépítés"
+          "tartalék elemekkel megerősített felépítés"
         ],
         [
           "villamosenergia-hálózat",
-          "az áramellátás stratégiai gerince"
+          "az áramellátás hálózata"
         ]
       ],
       "teaches": [
@@ -66,16 +67,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az áramkimaradások megelőzése érdekében _____ a vészhelyzeti tartalékrendszereket.",
-      "hint": "advisable to establish",
-      "english": "In order to prevent blackouts it is advisable to establish emergency reserve systems.",
+      "sentence": "A hosszú áramszünet elkerülése érdekében _____ tartalék rendszereket kiépíteni.",
+      "hint": "advisable",
+      "english": "To avoid a long power cut it is advisable to build reserve systems.",
       "teaches": [
         "formal-obligation"
       ],
       "answers": [
-        "célszerű kiépíteni",
-        "tanácsos kiépíteni",
-        "célszerű létrehozni"
+        "célszerű",
+        "tanácsos",
+        "indokolt"
       ]
     },
     {
@@ -84,24 +85,22 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Elengedhetetlen",
-        "felkészíteni",
+        "A",
+        "mérnököknek",
+        "elengedhetetlen",
+        "felkészülniük",
         "a",
-        "szervezeteket",
-        "a",
-        "kiberfizikai",
-        "incidensekre."
+        "támadásokra."
       ],
       "solution": [
-        "Elengedhetetlen",
-        "felkészíteni",
+        "A",
+        "mérnököknek",
+        "elengedhetetlen",
+        "felkészülniük",
         "a",
-        "szervezeteket",
-        "a",
-        "kiberfizikai",
-        "incidensekre."
+        "támadásokra."
       ],
-      "english": "It is indispensable to prepare organizations for cyber-physical incidents.",
+      "english": "It is indispensable for the engineers to prepare for attacks.",
       "teaches": [
         "formal-obligation"
       ]
@@ -114,17 +113,17 @@
       "prompt": [
         {
           "speaker": "Hálózatüzemeltető",
-          "text": "Hogyan védhetjük ki a transzformátorok távoli leállítását?"
+          "text": "Mit tegyünk, hogy a támadók ne tudják leállítani a transzformátorokat?"
         },
         {
           "speaker": "Biztonsági mérnök",
-          "text": "Elengedhetetlen _____ az ipari vezérlőhálózatokat a publikus felhőszolgáltatásoktól."
+          "text": "Elengedhetetlen _____ a transzformátorok vezérlését az internettől."
         }
       ],
       "options": [
-        "fizikailag leválasztani",
-        "összekapcsolni",
-        "feloldani"
+        "elzárni",
+        "bekapcsolni",
+        "megnyitni"
       ],
       "correct": 0,
       "teaches": [
@@ -138,8 +137,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence on critical infrastructure protection using 'elengedhetetlen garantálni'.",
-          "answer": "A villamosenergia-hálózat kiberbiztonsága kapcsán elengedhetetlen garantálni az ipari vezérlőrendszerek azonnali és megbízható redundanciáját."
+          "prompt": "Write one sentence about protecting the power grid with *elengedhetetlen* and an infinitive.",
+          "answer": "A villamosenergia-hálózat védelméhez elengedhetetlen tartalék rendszereket kiépíteni."
         }
       ],
       "teaches": [
@@ -151,11 +150,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés fejez ki személytelen, rendszerszintű kötelezettséget főnévi igenévvel?",
+      "question": "Melyik mondat mondja ki, hogy valami mindenképpen szükséges?",
       "options": [
-        "elengedhetetlen biztosítani",
-        "talán láttuk már",
-        "amikor megcsináltuk"
+        "Elengedhetetlen tartalék rendszereket kiépíteni.",
+        "Érdemes lehet tartalék rendszereket kiépíteni.",
+        "Talán kiépítettek tartalék rendszereket."
       ],
       "correct": 0,
       "teaches": [

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit vizsgál a 'természetesnyelv-feldolgozás' (NLP) az informatikában?",
+      "question": "Mi a 'természetesnyelv-feldolgozás'?",
       "options": [
-        "Azt, hogy a számítógépes algoritmusok hogyan képesek elemezni, értelmezni és generálni az emberi beszélt vagy írott nyelvet.",
-        "A virágok és növények természetes növekedési ritmusát a mezőgazdaságban.",
-        "A televíziós hírolvasók beszédhibáinak orvosi kezelését."
+        "Az emberi nyelv gépi feldolgozása.",
+        "A növények természetes növekedése.",
+        "A gyerekek iskolai nyelvtanulása."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Könnyen _____, hogy a nagy nyelvmodellek teljesen átalakítják az oktatás jövőjét.",
+      "sentence": "Könnyen _____, hogy a nyelvmodellek átalakítják az iskolákat.",
       "hint": "very possible",
-      "english": "It is very possible that large language models completely transform the future of education.",
+      "english": "It is very possible that language models will transform schools.",
       "teaches": [
         "epistemic-modality"
       ],
       "answers": [
         "meglehet",
-        "lehet",
-        "előfordulhat"
+        "lehet"
       ]
     },
     {
@@ -42,19 +41,19 @@
       "pairs": [
         [
           "természetesnyelv-feldolgozás",
-          "az emberi nyelv gépi értelmezésének és előállításának tudománya"
+          "az emberi nyelv gépi értelmezése"
         ],
         [
           "algoritmikus gondolkodás",
-          "lépésről lépésre haladó, logikai kódon alapuló problémamegoldás"
+          "lépésről lépésre haladó problémamegoldás"
         ],
         [
           "szemantikai hálózat",
-          "fogalmak és jelentések közötti összefüggések adatbázisa"
+          "a fogalmak és jelentések kapcsolata"
         ],
         [
           "ontológiai határ",
-          "a létezés és lényegi minőség filozófiai válaszfala"
+          "a létezés filozófiai határa"
         ]
       ],
       "teaches": [
@@ -66,12 +65,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Aligha képzelhető el, hogy a technológiai robbanás ne _____ alapvetően a gondolkodásunkat.",
-      "hint": "alter / változtat + -ná meg (megváltoztat)",
-      "answer": "változtatná meg",
-      "english": "It is hardly conceivable that the technological explosion would not fundamentally alter our thinking.",
+      "sentence": "Aligha képzelhető el, hogy a gépek ne _____ meg a munkánkat.",
+      "hint": "változtat, 3pl",
+      "english": "It is hardly conceivable that machines would not change our work.",
       "teaches": [
         "epistemic-modality"
+      ],
+      "answers": [
+        "változtassák",
+        "változtatnák"
       ]
     },
     {
@@ -111,18 +113,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Kognitív kutató",
-          "text": "Valóban gondolkodik a mesterséges intelligencia?"
+          "speaker": "Informatikus",
+          "text": "Miért maradt a hiba a programban?"
         },
         {
           "speaker": "Nyelvész",
-          "text": "Könnyen meglehet, hogy csupán statisztikai mintázatokat ismer fel, ám számolni kell azzal, hogy az eredmény mégis megdöbbentően _____."
+          "text": "Valakinek tudnia _____ a hibáról, de senki nem szólt."
         }
       ],
       "options": [
-        "emberszerű",
-        "emberszerűen",
-        "emberszerűség"
+        "kellett",
+        "kell",
+        "kellene"
       ],
       "correct": 0,
       "teaches": [
@@ -136,8 +138,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a speculative futurist sentence about artificial intelligence using 'Könnyen meglehet, hogy...'.",
-          "answer": "Könnyen meglehet, hogy a generatív algoritmusok pár évtizeden belül szervesen beépülnek a mindennapi nyelvhasználatba, alapjaiban formálva át a humán kreativitás hagyományos fogalmát."
+          "prompt": "Write one sentence with 'Könnyen meglehet, hogy …' about machines and texts.",
+          "answer": "Könnyen meglehet, hogy a gépek hamarosan sok szöveget írnak helyettünk."
         }
       ],
       "teaches": [
@@ -145,15 +147,65 @@
       ]
     },
     {
+      "id": "c1-22-01-practice-9",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "question": "Melyik mondat jelenti ezt: 'Somebody must have known about the error'?",
+      "options": [
+        "Valakinek tudnia kellett a hibáról.",
+        "Valakinek tudnia kell a hibáról.",
+        "Valakinek tudnia kellene a hibáról."
+      ],
+      "correct": 0,
+      "teaches": [
+        "epistemic-modality"
+      ]
+    },
+    {
+      "id": "c1-22-01-practice-10",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "sentence": "A levél nem érkezett meg: _____ a postán.",
+      "hint": "elvész, might have, 3sg",
+      "english": "The letter did not arrive: it may have got lost in the post.",
+      "answers": [
+        "elveszhetett"
+      ],
+      "teaches": [
+        "epistemic-modality"
+      ]
+    },
+    {
+      "id": "c1-22-01-practice-11",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "question": "Melyik mondat jelenti ezt: 'The letter may have got lost' (we do not know)?",
+      "options": [
+        "Elveszhetett a levél.",
+        "Elveszhetett volna a levél.",
+        "Elveszett a levél."
+      ],
+      "correct": 0,
+      "teaches": [
+        "epistemic-modality"
+      ],
+      "distractor_skills": {
+        "1": "past-conditional-volna"
+      }
+    },
+    {
       "id": "c1-22-01-check-8",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fejez ki emelkedett jövőbeli spekulatív feltételezést?",
+      "question": "Melyik mondat jelenti ezt: 'It is not out of the question that the program makes mistakes'?",
       "options": [
-        "Könnyen meglehet, hogy... / Aligha képzelhető el, hogy ne...",
-        "Minden kétséget kizáróan bizonyított, hogy...",
-        "Megszokott tényként kezelik, hogy..."
+        "Nem kizárt, hogy a program hibázik.",
+        "Biztos, hogy a program hibázik.",
+        "Nem kell, hogy a program hibázzon."
       ],
       "correct": 0,
       "teaches": [

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'falszifikálhatóság' Karl Popper tudományfilozófiájában?",
+      "question": "Mi a 'falszifikálhatóság'?",
       "options": [
-        "Azt a kritériumot, hogy egy tudományos elméletnek elvileg cáfolhatónak kell lennie tapasztalati adatok vagy kísérletek által.",
-        "Azt a követelményt, hogy egy elméletet közvetlen érzéki tapasztalatokból levezetve, induktív módszerekkel kell igazolni.",
-        "Azt az elvet, hogy egy tudományos hipotézisnek összhangban kell állnia a társadalom többségének vallási meggyőződésével."
+        "Az elméletet elvileg meg lehet cáfolni.",
+        "Az elméletet a tudósok gyakran idézik.",
+        "Az elméletet egy hosszú könyvben írták."
       ],
       "correct": 0,
       "teaches": [
@@ -20,14 +20,14 @@
     {
       "id": "c1-24-01-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A felállított tézis _____ megalapozott kísérleti adatokon nyugszik.",
-      "hint": "methodologically / módszertani + -lag",
+      "sentence": "A tézis _____ megalapozott kísérleti adatokon nyugszik.",
+      "hint": "methodologically",
       "answer": "módszertanilag",
-      "english": "The established thesis rests on methodologically well-founded experimental data.",
+      "english": "The thesis rests on methodologically well-founded experimental data.",
       "teaches": [
-        "epistemic-hedging"
+        "c1-academic-autonomy-vocab"
       ]
     },
     {
@@ -60,20 +60,20 @@
     {
       "id": "c1-24-01-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "sentence": "A hipotézist _____ igazolt mérésekkel kell bizonyítani a bírálóbizottság előtt.",
-      "hint": "empirically / empirikus + -an",
+      "hint": "empirically",
       "answer": "empirikusan",
       "english": "The hypothesis must be proven with empirically confirmed measurements before the review committee.",
       "teaches": [
-        "epistemic-hedging"
+        "c1-academic-autonomy-vocab"
       ]
     },
     {
       "id": "c1-24-01-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -95,7 +95,7 @@
       ],
       "english": "Researchers systematically analyzed the experimental results.",
       "teaches": [
-        "epistemic-hedging"
+        "c1-academic-autonomy-vocab"
       ]
     },
     {
@@ -106,7 +106,7 @@
       "prompt": [
         {
           "speaker": "Tudományfilozófus",
-          "text": "Mikor tekinthetünk egy elméletet valóban tudományosnak?"
+          "text": "Mikor jó egy elmélet?"
         },
         {
           "speaker": "Kutatóprofesszor",
@@ -114,28 +114,28 @@
         }
       ],
       "options": [
-        "alátámasztott",
-        "alátámasztandó",
-        "alátámasztva"
+        "igazolt",
+        "igazolandó",
+        "igazolva"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "past-participle-adjective"
       ]
     },
     {
       "id": "c1-24-01-production-7",
       "type": "structured-writing",
-      "category": "writing",
+      "category": "vocabulary",
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating an evaluation of research validity using a methodological adverbial.",
-          "answer": "A kutatócsoport módszertanilag kifogástalan eljárással, szisztematikusan dokumentált laboratóriumi kísérletekkel cáfolta a korábbi biokémiai dogmákat."
+          "prompt": "Write one sentence that judges a study with an adverb (módszertanilag, szisztematikusan or empirikusan).",
+          "answer": "A kutatócsoport módszertanilag kifogástalanul végezte el a kísérleteket."
         }
       ],
       "teaches": [
-        "epistemic-hedging"
+        "c1-academic-autonomy-vocab"
       ]
     },
     {
@@ -143,15 +143,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés testesíti meg az empirikus kutatásformálás emelkedett határozói alakját?",
+      "question": "Melyik szó illik a mondatba? A kutatók az adatokat _____ elemezték.",
       "options": [
-        "módszertanilag megalapozottan",
-        "hirtelen felkiáltva",
-        "lassan sétálva"
+        "szisztematikusan",
+        "szisztematikus",
+        "szisztematikussá"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "an-en-adverb"
       ]
     }
   ]

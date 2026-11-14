@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevez a modern tudomány 'replikációs válságnak' (replication crisis)?",
+      "question": "Mit jelent a 'replikációs válság'?",
       "options": [
-        "Azt a riasztó jelenséget, hogy számos rangos folyóiratban megjelent kísérlet eredményeit független kutatók nem tudják megismételni.",
-        "A fiatal kutatók külföldi egyetemekre való elvándorlása miatt fellépő súlyos kutatói létszámhiányt a hazai intézetekben.",
-        "A tudományos folyóiratok előfizetési díjainak drasztikus növekedése miatt kialakuló könyvtári hozzáférési nehézségeket."
+        "Mások nem kapják meg ugyanazt az eredményt.",
+        "A kutatók külföldre mennek dolgozni.",
+        "A folyóiratok drágák lesznek."
       ],
       "correct": 0,
       "teaches": [
@@ -22,10 +22,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Míg a modell csupán spekulatív feltételezés volt, _____ a mérések vitathatatlan bizonyítékot szolgáltattak.",
+      "sentence": "Míg a modell csupán elméleti feltevés volt, _____ a mérések bizonyítékot adtak.",
       "hint": "míg … ___",
       "answer": "addig",
-      "english": "While the model was merely a speculative assumption, meanwhile measurements provided indisputable evidence.",
+      "english": "While the model was merely a theoretical assumption, the measurements gave evidence.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -62,9 +62,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az elmélet tetszetős volt, ezzel _____ a valóságban a kísérlet kudarcot vallott.",
+      "sentence": "Az elmélet tetszetős volt, ezzel _____ a kísérlet nem sikerült.",
       "hint": "in contrast",
-      "english": "The theory was attractive, in contrast with this in reality the experiment failed.",
+      "english": "The theory was attractive; in contrast with this, the experiment did not succeed.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
@@ -110,15 +110,15 @@
       "prompt": [
         {
           "speaker": "Biokémikus",
-          "text": "Elfogadhatjuk-e az új felfedezést kontrollcsoport nélkül?"
+          "text": "Elfogadjuk az eredményt kontrollcsoport nélkül?"
         },
         {
           "speaker": "Kutatóintézeti vezető",
-          "text": "Semmiképp; míg a spekuláció ingyenes, addig a tudományos igazság szigorú kontrollt _____."
+          "text": "Semmiképp; míg a spekuláció olcsó, addig a tudományos igazság ellenőrzést _____."
         },
         {
           "speaker": "Biokémikus",
-          "text": "Akkor megismételjük a vaktesztet."
+          "text": "Akkor mérjünk újra."
         }
       ],
       "options": [
@@ -138,8 +138,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence contrasting theoretical speculation with empirical verification using 'Míg... addig...'.",
-          "answer": "Míg a korábbi elmélet pusztán spekulatív premisszákra épült, addig az új kutatás szisztematikusan kontrollált kísérletekkel szolgáltatott megdönthetetlen empirikus bizonyítékot."
+          "prompt": "Write one sentence with 'Míg … addig …' that contrasts speculation with evidence.",
+          "answer": "Míg az elmélet csak feltevés volt, addig az új mérések bizonyítékot adtak."
         }
       ],
       "teaches": [
@@ -151,11 +151,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kötőszószerkezet fejez ki tudományos állítások közötti szigorú ellentétezést?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Míg a spekuláció... addig a kísérlet",
-        "Ezért tehát örömmel",
-        "Nemcsak szép, hanem hasznos is"
+        "Míg az elmélet szép, addig a mérés más eredményt ad.",
+        "Míg az elmélet szép, ezért a mérés más eredményt ad.",
+        "Mivel az elmélet szép, addig a mérés más eredményt ad."
       ],
       "correct": 0,
       "teaches": [

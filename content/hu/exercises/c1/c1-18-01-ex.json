@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'digitális szuverenitás' (digital sovereignty) fogalma?",
+      "question": "Mit jelent az, hogy *digitális szuverenitás*?",
       "options": [
-        "Egy állam vagy közösség képességét arra, hogy maga rendelkezzék digitális adatai, technológiai infrastruktúrája és szoftveres rendszerei felett.",
-        "A nemzetközi technológiai vállalatok szabad piacra lépését és a határokon átnyúló digitális szolgáltatások deregulációját.",
-        "A nemzetközi távközlési hálózatok fizikai adatátviteli sebességének és a számítógépes chipek kapacitásának műszaki szabványosítását."
+        "Az állam maga dönt az adatairól és a rendszereiről.",
+        "Az állam minden adatot külföldi cégekre bíz.",
+        "Az állam a polgárok adatait nyilvánosan közzéteszi."
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "_____ a felhőszolgáltatók gyors skálázhatóságot ígérnek, mindazonáltal a stratégiai adatok feletti ellenőrzés elvesztése végzetes lehet.",
-      "hint": "Although",
-      "english": "Although cloud providers promise rapid scalability, nevertheless the loss of control over strategic data can be fatal.",
+      "sentence": "_____ a felhőszolgáltatás kényelmes, mindazonáltal az állami adatok védelme fontosabb.",
+      "hint": "although",
+      "english": "Although the cloud service is convenient, nevertheless protecting the state's data is more important.",
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ],
       "answers": [
         "Jóllehet",
@@ -43,19 +43,19 @@
       "pairs": [
         [
           "adatgyarmatosítás",
-          "technológiai monopóliumok adatelvonása"
+          "külső cégek gyűjtik egy ország adatait"
         ],
         [
           "adatlokalizáció",
-          "szerverek kötelező országon belüli elhelyezése"
+          "az adatokat az országon belül tárolják"
         ],
         [
           "szuperszámítógép",
-          "kiemelkedő tudományos számítási kapacitás"
+          "nagyon nagy teljesítményű számítógép"
         ],
         [
           "technológiai kitettség",
-          "külső beszállítóktól való sebezhető függés"
+          "függés külső technológiától"
         ]
       ],
       "teaches": [
@@ -67,11 +67,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Ámbár a szoftverlicencek megvásárlása rövid távon olcsóbb, _____ garantálja a nemzeti informatikai önrendelkezést.",
+      "sentence": "Ámbár a saját adatközpont drága, _____ mondhatunk le róla.",
       "hint": "still",
-      "english": "Although purchasing software licenses is cheaper in the short term, it still does not guarantee national IT self-determination.",
+      "english": "Although our own data centre is expensive, we still cannot give it up.",
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ],
       "answers": [
         "mégsem",
@@ -85,29 +85,29 @@
       "stage": "practice",
       "tiles": [
         "Jóllehet",
-        "az",
-        "innováció",
-        "gyorsul,",
+        "a",
+        "felhő",
+        "kényelmes,",
         "mindazonáltal",
         "a",
-        "kibertér",
-        "szabályozatlan",
-        "maradt."
+        "saját",
+        "adatközpont",
+        "biztonságosabb."
       ],
       "solution": [
         "Jóllehet",
-        "az",
-        "innováció",
-        "gyorsul,",
+        "a",
+        "felhő",
+        "kényelmes,",
         "mindazonáltal",
         "a",
-        "kibertér",
-        "szabályozatlan",
-        "maradt."
+        "saját",
+        "adatközpont",
+        "biztonságosabb."
       ],
-      "english": "Although innovation is accelerating, nevertheless cyberspace has remained unregulated.",
+      "english": "Although the cloud is convenient, nevertheless our own data centre is safer.",
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ]
     },
     {
@@ -118,21 +118,21 @@
       "prompt": [
         {
           "speaker": "Miniszteri biztos",
-          "text": "Megbízhatunk a globális felhőszolgáltatók biztonsági ígéreteiben?"
+          "text": "Megbízhatunk a külföldi felhőszolgáltatókban?"
         },
         {
-          "speaker": "Kiberbiztonsági szakértő",
-          "text": "Jóllehet a titkosításuk fejlett, mindazonáltal az állami adatvagyont saját nemzeti _____ kell tartanunk."
+          "speaker": "Szakértő",
+          "text": "Jóllehet a szolgáltatásuk jó, mindazonáltal az állami adatokat saját _____ kell tartanunk."
         }
       ],
       "options": [
         "adatközpontokban",
-        "közösségi oldalakon",
-        "nyilvános fórumokon"
+        "külföldi felhőszolgáltatóknál",
+        "magánszemélyek számítógépein"
       ],
       "correct": 0,
       "teaches": [
-        "concessive-annak-ellenere"
+        "c1-digital-sovereignty-vocab"
       ]
     },
     {
@@ -142,12 +142,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write an argument in defense of digital sovereignty using the 'jóllehet... mindazonáltal' structure.",
-          "answer": "Jóllehet a globális technológiai platformok jelentős kényelmet biztosítanak, mindazonáltal az állami adatvagyon védelme elengedhetetlenné teszi a szuverén digitális infrastruktúra kiépítését."
+          "prompt": "Write one sentence about cloud services with *Jóllehet … mindazonáltal …*.",
+          "answer": "Jóllehet a felhőszolgáltatás kényelmes, mindazonáltal az állami adatok védelme fontosabb."
         }
       ],
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ]
     },
     {
@@ -155,15 +155,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik páros kötőszó fejez ki emelkedett megengedő-szembeállító (adversative-concessive) viszonyt?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "jóllehet... mindazonáltal",
-        "ezért... mert",
-        "holott... mintha"
+        "Jóllehet a felhő kényelmes, mindazonáltal kockázatos.",
+        "Jóllehet a felhő kényelmes, ezért kockázatos.",
+        "Jóllehet a felhő kényelmes, mert kockázatos."
       ],
       "correct": 0,
       "teaches": [
-        "concessive-annak-ellenere"
+        "contrastive-discourse-markers"
       ]
     }
   ]

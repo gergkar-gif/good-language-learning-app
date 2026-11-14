@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Kiket nevezett a történeti szociológia 'úri középosztálynak' a két háború közötti Magyarországon?",
+      "question": "Mit jelent az *agrárproletariátus*?",
       "options": [
-        "A birtokaikat vesztett, állami hivatalokban és a katonaságban menedéket kereső, feudális értékrendet őrző elitet.",
-        "A gyorsan meggazdagodott ipari nagyvállalkozókat és bankárokat, akik modern polgári életmódot folytattak.",
-        "A földdel rendelkező gazdag paraszti réteget, amely a falusi önkormányzatok irányítását tartotta a kezében."
+        "Föld nélküli falusi bérmunkások rétege.",
+        "Nagy földbirtokkal rendelkező családok rétege.",
+        "A faluban élő tanárok és orvosok rétege."
       ],
       "correct": 0,
       "teaches": [
@@ -22,10 +22,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A jobbágyrendszer felszámolását _____ a magyar társadalom még évtizedekig hordozta a rendi reflexeket.",
-      "hint": "having experienced / megél + -ve",
-      "answer": "megélve",
-      "english": "Having experienced the abolition of the serf system, Hungarian society still bore estate reflexes for decades.",
+      "sentence": "A földet felosztva az állam _____ a falusi társadalmat.",
+      "hint": "átalakít, past, definite",
+      "answer": "átalakította",
+      "english": "Having divided the land, the state transformed village society.",
       "teaches": [
         "participle-actions"
       ]
@@ -38,19 +38,19 @@
       "pairs": [
         [
           "dzsentri réteg",
-          "elszegényedett nemesi hivatalnokréteg"
+          "nemesi származású, de vagyont vesztett réteg"
         ],
         [
           "agrárproletariátus",
-          "földtelen falusi bérmunkások tömege"
+          "föld nélküli falusi bérmunkások"
         ],
         [
           "birtokstruktúra",
-          "a termőföld megoszlása a gazdaságban"
+          "a föld megoszlása a gazdaságok között"
         ],
         [
           "feudális csökevény",
-          "a rendi korszakból visszamaradt merev szokás"
+          "a régi rendi korból megmaradt szokás"
         ]
       ],
       "teaches": [
@@ -62,16 +62,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A vagyont elveszítve a gentry családok az állami apparátusba menekültek a _____ elől.",
-      "hint": "declassing",
-      "english": "Having lost their wealth the gentry families fled into the state apparatus to escape declassing.",
+      "sentence": "A feudális kötelékeket _____ a társadalom elindult a polgárosodás útján.",
+      "hint": "megszüntet (to abolish), 'having …'",
+      "english": "Having abolished the feudal ties, society set out on the path of embourgeoisement.",
       "teaches": [
         "participle-actions"
       ],
-      "answers": [
-        "deklasszálódás",
-        "lecsúszás"
-      ]
+      "answer": "megszüntetve"
     },
     {
       "id": "c1-19-02-practice-5",
@@ -81,7 +78,7 @@
       "tiles": [
         "A",
         "földet",
-        "felosztván",
+        "felosztva",
         "az",
         "állam",
         "átalakította",
@@ -92,7 +89,7 @@
       "solution": [
         "A",
         "földet",
-        "felosztván",
+        "felosztva",
         "az",
         "állam",
         "átalakította",
@@ -100,7 +97,7 @@
         "falusi",
         "társadalmat."
       ],
-      "english": "Having divided the land, the state restructured village society.",
+      "english": "Having divided the land, the state transformed village society.",
       "teaches": [
         "participle-actions"
       ]
@@ -113,22 +110,26 @@
       "prompt": [
         {
           "speaker": "Történész",
-          "text": "Hogyan maradhatott fenn a rendi szemlélet a tőkés átalakulás után is?"
+          "text": "Mit tettek az elszegényedett nemesek?"
         },
         {
           "speaker": "Kutató",
-          "text": "A polgárosodást félig elvégezve a gazdasági tőke nem párosult valódi politikai _____."
+          "text": "_____ a földjüket, állami hivatalba mentek."
         }
       ],
       "options": [
-        "demokráciával",
-        "demokráciához",
-        "demokráciát"
+        "Eladva",
+        "Eladni",
+        "Eladás"
       ],
       "correct": 0,
       "teaches": [
         "participle-actions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "nominalization"
+      }
     },
     {
       "id": "c1-19-02-production-7",
@@ -137,8 +138,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a historical sentence on social transformation using an anterior participle in '-va/-ve' or '-ván/-vén'.",
-          "answer": "A kiegyezést követően a nemzeti szuverenitás részleges garanciáit elnyervén a magyar vezető réteg mégsem tudta felszámolni az agrárproletariátus nyomorúságát."
+          "prompt": "Write one sentence about history with a *-va/-ve* participle.",
+          "answer": "Eladva a földjüket, sok család a városba költözött."
         }
       ],
       "teaches": [
@@ -150,16 +151,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik igeneves szerkezet fejez ki emelkedett előidejű lezárt cselekvést?",
+      "question": "Melyik mondat jelenti ezt: 'Having sold the land, they moved to the town'?",
       "options": [
-        "felszámolván",
-        "felszámolni",
-        "felszámoláskor"
+        "A földet eladva a városba költöztek.",
+        "A földet eladni a városba költöztek.",
+        "A földet eladás a városba költöztek."
       ],
       "correct": 0,
       "teaches": [
         "participle-actions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "nominalization"
+      }
     }
   ]
 }

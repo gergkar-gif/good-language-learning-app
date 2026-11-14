@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevez a szociolingvisztika 'digitális nyelvkihalásnak'?",
+      "question": "Mit jelent a 'digitális nyelvkihalás'?",
       "options": [
-        "Azt a folyamatot, amikor egy nyelv használata visszaszorul vagy lehetetlenné válik a digitális szoftverekben, asszisztensekben és mesterséges intelligenciákban.",
-        "A régi internetes fórumok szervereinek lekapcsolását.",
-        "A számítógépek klaviatúrájáról az ékezetes betűk lekopását."
+        "A nyelv eltűnik a digitális eszközökből.",
+        "Az internet egy napig nem működik.",
+        "A betűk eltűnnek a billentyűzetről."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Ha a magyar kutatók nem fejlesztenének önálló modelleket, nyelvünk a digitális perifériára _____ a globális szférában.",
-      "hint": "would be relegated / szorul + -na",
+      "sentence": "Ha nem fejlesztenénk magyar modelleket, nyelvünk a háttérbe _____.",
+      "hint": "szorul, 3sg",
       "answer": "szorulna",
-      "english": "If Hungarian researchers did not develop independent models, our language would be relegated to the digital periphery in global space.",
+      "english": "If we did not develop Hungarian models, our language would be pushed into the background.",
       "teaches": [
-        "past-conditional-volna"
+        "hypothetical-ha-conditional"
       ]
     },
     {
@@ -62,10 +62,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Ha nem fektettünk volna a mesterséges intelligenciába, elkerülhetetlen _____ a nemzeti kultúra elszürkülése.",
-      "hint": "would have been / lesz, conditional past 3sg",
+      "sentence": "Ha időben elkezdtük volna a munkát, a modell már tavaly kész _____.",
+      "hint": "lesz, 3sg",
       "answer": "lett volna",
-      "english": "If we had not invested into artificial intelligence, the graying of national culture would have been unavoidable.",
+      "english": "If we had started the work in time, the model would have been ready last year.",
       "teaches": [
         "past-conditional-volna"
       ]
@@ -97,7 +97,7 @@
       ],
       "english": "If we did not develop, our language would become invisible on the network.",
       "teaches": [
-        "past-conditional-volna"
+        "hypothetical-ha-conditional"
       ]
     },
     {
@@ -108,21 +108,21 @@
       "prompt": [
         {
           "speaker": "Nyelvpolitikai szakértő",
-          "text": "Miért kockázatos kizárólag amerikai mesterséges intelligenciát használni?"
+          "text": "Miért kell magyar modell?"
         },
         {
           "speaker": "Számítógépes nyelvész",
-          "text": "Ha nem építenénk saját modellt, kultúránk amerikai szemszögből _____."
+          "text": "Ha nem építenénk saját modellt, a gép nem _____ jól magyarul."
         }
       ],
       "options": [
-        "értelmeződne",
-        "értelmeződött",
-        "értelmeződni"
+        "tudna",
+        "tudott",
+        "tudni"
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "hypothetical-ha-conditional"
       ]
     },
     {
@@ -132,12 +132,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a counterfactual sentence warning against digital language extinction using 'Ha nem... volna'.",
-          "answer": "Ha a magyar állam nem támogatná kiemelten a hazai nagy nyelvmodellek fejlesztését, anyanyelvünk belátható időn belül a digitális láthatatlanság és a funkcióvesztés sorsára jutna."
+          "prompt": "Write one counterfactual sentence with 'Ha nem … volna' about collecting Hungarian texts.",
+          "answer": "Ha nem gyűjtöttünk volna magyar szövegeket, a gépek ma nem értenék a nyelvünket."
         }
       ],
       "teaches": [
-        "past-conditional-volna"
+        "mixed-conditionals"
       ]
     },
     {
@@ -145,15 +145,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fejez ki hipotetikus ellenfaktikus állásfoglalást a nyelvi túlélésről?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Ha nem építenénk modellt, anyanyelvünk digitális perifériára szorulna.",
-        "Mivel nem fejlesztünk modellt, a nyelvhasználat lassan átalakul.",
-        "A nyelvi modellek elterjedése közvetlenül veszélyezteti a kis nyelveket."
+        "Ha nem építenénk modellt, anyanyelvünk háttérbe szorulna.",
+        "Ha nem építenénk modellt, anyanyelvünk háttérbe szorul volna.",
+        "Ha nem építünk modellt, anyanyelvünk háttérbe szorulna."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "hypothetical-ha-conditional"
       ]
     }
   ]

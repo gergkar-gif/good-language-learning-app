@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevez a szociológia 'halmozott hátránynak' (cumulative disadvantage)?",
+      "question": "Mit jelent a *halmozott hátrány*?",
       "options": [
-        "Amikor az anyagi szegénység, az alacsony iskolázottság, a rossz lakáskörülmények és a földrajzi elszigeteltség együttesen sújtja az egyént.",
-        "Azt az átmeneti jövedelemkiesést, amelyet a munkahelyváltás vagy a szezonális munkanélküliség okoz egy családban.",
-        "A nagyvárosi értelmiségi rétegek azon nehézségét, hogy a túlkínálat miatt nehezebben találnak szakterületüknek megfelelő állást."
+        "A szegénység és a rossz lakás együtt sújtja ugyanazt az embert.",
+        "Átmeneti jövedelemkiesés, amelyet a munkahelyváltás okoz.",
+        "A nagyvárosi értelmiség nehézsége az álláskeresésben."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A mélyszegénységben élő családok gyermekeinek _____ töredéke tanulhat tovább érettségit adó iskolában.",
+      "sentence": "A szegény falvakban _____ néhány diák jut be az egyetemre.",
       "hint": "merely",
-      "english": "Merely a fraction of children in families living in deep poverty can study further in a school granting matura.",
+      "english": "In the poor villages merely a few students get into university.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
       "answers": [
         "mindössze",
-        "csupán",
-        "pusztán"
+        "csupán"
       ]
     },
     {
@@ -42,7 +41,7 @@
       "pairs": [
         [
           "anyagi depriváció",
-          "az alapvető javak nélkülözése"
+          "az alapvető dolgok hiánya"
         ],
         [
           "szegénységi küszöb",
@@ -54,7 +53,7 @@
         ],
         [
           "társadalmi kirekesztődés",
-          "a társadalmi fősodorból való kényszerű kiszorulás"
+          "az emberek kiszorulnak a társadalomból"
         ]
       ],
       "teaches": [
@@ -66,17 +65,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A segélyezés _____ az akut krízis enyhítésére elég, a kitöréshez nem nyújt eszközt.",
-      "hint": "purely",
-      "english": "Welfare is purely enough for easing acute crisis; it provides no tool for breakout.",
+      "sentence": "A segély _____ az első nehézséget enyhíti, a kitörést nem segíti.",
+      "hint": "only",
+      "english": "The aid eases only the first difficulty; it does not help people to break out.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
       "answers": [
-        "pusztán csak",
-        "csupán csak",
-        "pusztán",
-        "csupán"
+        "csupán",
+        "mindössze"
       ]
     },
     {
@@ -85,26 +82,26 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Mindössze",
-        "kevés",
-        "család",
-        "képes",
-        "kitörni",
+        "Ezekben",
         "a",
-        "szegénységi",
-        "csapdából."
+        "falvakban",
+        "mindössze",
+        "néhány",
+        "ember",
+        "jut",
+        "diplomához."
       ],
       "solution": [
-        "Mindössze",
-        "kevés",
-        "család",
-        "képes",
-        "kitörni",
+        "Ezekben",
         "a",
-        "szegénységi",
-        "csapdából."
+        "falvakban",
+        "mindössze",
+        "néhány",
+        "ember",
+        "jut",
+        "diplomához."
       ],
-      "english": "Merely few families are able to break out of the poverty trap.",
+      "english": "In these villages merely a few people get a degree.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -117,21 +114,21 @@
       "prompt": [
         {
           "speaker": "Szociális munkás",
-          "text": "Hányan jutnak ki a szegregátumok világából?"
+          "text": "Miért nehéz kitörni a szegénységből?"
         },
         {
           "speaker": "Településvezető",
-          "text": "Mindössze a fiatalok elenyésző része, pusztán azok, akik korai ösztöndíjat és mentort _____."
+          "text": "Mert a családokat egyszerre sújtja több baj: ez a halmozott _____ ."
         }
       ],
       "options": [
-        "kapnak",
-        "kap",
-        "kapott"
+        "hátrány",
+        "olló",
+        "küszöb"
       ],
       "correct": 0,
       "teaches": [
-        "contrastive-discourse-markers"
+        "c1-social-stratification-vocab"
       ]
     },
     {
@@ -141,8 +138,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a sentence about educational inequality using 'mindössze' and 'pusztán'.",
-          "answer": "A szegregált iskolákból mindössze elenyésző számú diák jut be az egyetemekre, pusztán a kivételes családi támogatás képes ellensúlyozni a rendszer hibáit."
+          "prompt": "Write one sentence with *mindössze* or *csupán* about a village.",
+          "answer": "A faluban csupán egy orvos rendel, és az is csak hetente kétszer."
         }
       ],
       "teaches": [
@@ -154,11 +151,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés szolgál a mennyiségi korlátozottság hangsúlyos kifejezésére?",
+      "question": "Melyik mondat mondja, hogy nagyon kevés diák jut be az egyetemre?",
       "options": [
-        "pusztán csak",
-        "rendkívül bőségesen",
-        "határtalanul"
+        "Mindössze néhány diák jut be az egyetemre.",
+        "Szinte minden diák bejut az egyetemre.",
+        "Sok diák jut be az egyetemre."
       ],
       "correct": 0,
       "teaches": [
