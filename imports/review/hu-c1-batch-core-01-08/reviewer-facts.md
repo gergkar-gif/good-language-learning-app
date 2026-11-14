@@ -15,7 +15,9 @@ All eight unit texts are generator essays *about* an author, filed with the auth
 | c1-05-orkeny | *Egyperces novellák*, "használati utasítás" | true (the book opens with a *Használati utasítás*) | known |
 | c1-06-pilinszky | *Szög és olaj* essays; Simone Weil's influence; attention as prayer | true (Weil's idea, paraphrased; not a quote) | known; not checked online |
 | c1-07-eotvos | *A XIX. század uralkodó eszméinek befolyása az államra*, written in emigration (Munich) after 1848; liberty, equality, nationality | true (vol. 1 1851, vol. 2 1854) | known |
-| c1-08-mikszath | *A Noszty fiú esete Tóth Marival*; Noszty Feri hussar lieutenant; Tóth Mihály back from America, his daughter's dowry | true | known |
+| c1-08-mikszath | *A Noszty fiú esete Tóth Marival* (1908); Noszty Feri; Tóth Mihály's daughter's dowry saves the family | true | Britannica; Gutenberg 57578/57579 |
+| c1-08-mikszath | Tóth Mihály "Amerikából hazatért" | **not confirmed** (my note said true from memory; a search found only a passing "American equality" mention): reader B's removal stands | Gutenberg 57579 search |
+| c1-05 lessons | Örkény's *Gondolatok a pincében* | not found in any Örkény bibliography searched: reader B's removal stands | search 2026-11-14 |
 | c1-08-mikszath | "a vármegye teljes adminisztratív gépezete mozgásba lendül, hogy segítse a tervet" | overstated as the novel's plot; say "the text" or soften to the gentry's network helping | doubtful, not verified |
 | c1-08-mikszath | *vármegye* | historical, stays | rule (megye since 2026-10-01 for the present only) |
 
