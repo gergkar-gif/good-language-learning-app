@@ -1,0 +1,26 @@
+added 3 null for the other of answer/answers in fixes-academic-autonomy.json
+114 fixes: 52 auto, 59 to review, 3 rejected
+  rejected #15 (c1-24-01-introduce-1): brings tell-absolute: mindenki :: content/hu/exercises/c1/c1-24-01-ex.json: c1-24-01-introduce-1 set question, options, correct
+  rejected #90 (c1-24-05-reading-4): brings length-giveaway: 50 vs 37 characters :: content/hu/exercises/c1/c1-24-05-ex.json: c1-24-05-reading-4 set question, options, correct
+  rejected #105 (c1-24-consolidation-2): brings adjacent-repeat: Melyik mondat helyes? :: content/hu/exercises/c1/c1-24-consolidation-ex.json: c1-24-consolidation-2 set teaches, question, options, correct
+  new findings no fix names by id (give text fixes an "id"; check these by hand):
+    vocab-unused c1-24-01: hipotézis-felállítás
+    vocab-unused c1-24-02: kísérleti elrendezés
+    vocab-unused c1-24-04: szellemi kíváncsiság
+  unmet words the fixes bring (18; list each on the first lesson using it, or rewrite it in a core unit; lookup misses of split verbs and names included):
+    c1-24-01-check-8: szisztematikus, szisztematikussá
+    c1-24-01-dialogue-6: igazolandó, igazolva
+    c1-24-02-check-8: felállítani, felállító
+    c1-24-02-controlled-2: megfigyelt
+    c1-24-02-dialogue-6: feltáró
+    c1-24-02-introduce-1: gyűjtőmunkája, megváltozása
+    c1-24-02-production-7: tervezve
+    c1-24-05-introduce-1: kinevezést, professzori, tagságot
+    c1-24-consolidation-2: alátámasztó, felállítani, felállító
+    c1-24-consolidation-9: elmondja
+  check-content errors left in academic-autonomy once this list is applied (4; a list should leave none: write the missing fixes or an extra list):
+    adjacent-repeat c1-24-consolidation-2: Melyik mondat helyes?
+    length-giveaway c1-24-05-reading-4: 50 vs 37 characters
+    tell-absolute c1-24-01-introduce-1: mindenki
+    tell-absolute c1-24-05-reading-4: Mindig
+wrote imports/review/hu-c1-batch-core-17-24/fixes-academic-autonomy.auto.json, imports/review/hu-c1-batch-core-17-24/fixes-academic-autonomy.review.json
