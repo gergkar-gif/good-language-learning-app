@@ -167,6 +167,22 @@ def main():
         fixed_raw = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
         fix_path.write_text(fixed_raw, encoding="utf-8")
         print(f"rewrote {n_pr} dialogue prompt(s) from 'Speaker: text / …' to turns in {fix_path.name}")
+    # A fill-blank takes `answer` or `answers`, never both; readers set one and
+    # leave the item's other in place (HU C1 core 9-16: 5 fixes, 17-24: 3), which
+    # the schema rejects. Setting one field means dropping the other, so add the
+    # null for it when the fix leaves it out (an explicit value is kept).
+    data, n_ans = json.loads(fixed_raw), 0
+    for f in data:
+        s = f.get("set") if isinstance(f, dict) else None
+        if isinstance(s, dict):
+            for one, other in (("answer", "answers"), ("answers", "answer")):
+                if s.get(one) is not None and other not in s:
+                    s[other] = None
+                    n_ans += 1
+    if n_ans:
+        fixed_raw = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
+        fix_path.write_text(fixed_raw, encoding="utf-8")
+        print(f"added {n_ans} null for the other of answer/answers in {fix_path.name}")
     fixes = [ar.norm(f) for f in json.loads(fixed_raw)]
     texts, errors = ar.apply(fixes)
     rejected = {n: e for n, e in errors.items()}
