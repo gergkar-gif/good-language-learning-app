@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan fogalmazta meg Polányi Mihály a hallgatólagos tudás alapelvét?",
+      "question": "Mit jelent a *hallgatólagos tudás*?",
       "options": [
-        "'Többet tudunk, mint amennyit el tudunk mondani': a tudás jelentős része kimondhatatlan, tapasztalati és személyes meggyőződésen alapul.",
-        "A tudomány minden állítása matematikai egyenletekkel maradéktalanul leírható.",
-        "A tudás kizárólag a formálisan kódolható, empirikusan ellenőrzött adatok összességéből áll."
+        "Olyan tudás, amelyet használunk, de nem tudunk teljesen szavakba önteni.",
+        "Olyan tudás, amelyet a tudósok titokban tartanak egymás előtt.",
+        "Olyan tudás, amelyet a tanár az órán hangosan elmond a diákoknak."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A tudós a hallgatólagos tudásra _____ ismerte fel az elméleti anomáliát.",
-      "hint": "támaszkodik + -va",
-      "answer": "támaszkodva",
-      "english": "Relying on tacit knowledge the scientist recognized the theoretical anomaly.",
+      "sentence": "A kutató _____ hallgatólagos tudásra támaszkodott, amikor észrevette az eltérést.",
+      "hint": "presumably",
+      "english": "The researcher presumably relied on tacit knowledge when he noticed the deviation.",
       "teaches": [
         "epistemic-hedging"
+      ],
+      "answers": [
+        "feltehetőleg",
+        "valószínűleg"
       ]
     },
     {
@@ -38,19 +41,19 @@
       "pairs": [
         [
           "hallgatólagos tudás",
-          "a megfogalmazhatatlan, gyakorlati tapasztalatban rejlő előtudás"
+          "tacit knowledge"
         ],
         [
           "személyes tudás",
-          "a megismerő alany aktív elköteleződésén alapuló igazság"
+          "personal knowledge"
         ],
         [
           "episztemológia",
-          "a tudás természetét és határait kutató filozófiai ág"
+          "epistemology"
         ],
         [
-          "heurisztikus erő",
-          "az új összefüggések felfedezését segítő szellemi lendület"
+          "tudományos felfedezés",
+          "scientific discovery"
         ]
       ],
       "teaches": [
@@ -62,15 +65,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A hipotézis episztemikusan _____ módon vezet el a valóság mélyebb megértéséhez.",
-      "hint": "grounded",
-      "english": "The hypothesis leads to a deeper understanding of reality in an epistemologically grounded manner.",
+      "sentence": "A felfedezés _____ bizonnyal hosszú gyakorlat eredménye.",
+      "hint": "in all probability",
+      "english": "The discovery is in all probability the result of long practice.",
       "teaches": [
         "epistemic-hedging"
       ],
       "answers": [
-        "megalapozott",
-        "alátámasztott"
+        "minden"
       ]
     },
     {
@@ -79,28 +81,28 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
+        "Nem",
+        "zárható",
+        "ki,",
+        "hogy",
+        "a",
         "kutató",
         "hallgatólagos",
         "tudásra",
-        "támaszkodva",
-        "jutott",
-        "el",
-        "a",
-        "felfedezéshez."
+        "támaszkodott."
       ],
       "solution": [
-        "A",
+        "Nem",
+        "zárható",
+        "ki,",
+        "hogy",
+        "a",
         "kutató",
         "hallgatólagos",
         "tudásra",
-        "támaszkodva",
-        "jutott",
-        "el",
-        "a",
-        "felfedezéshez."
+        "támaszkodott."
       ],
-      "english": "Relying on tacit knowledge the researcher arrived at the discovery.",
+      "english": "It cannot be ruled out that the researcher relied on tacit knowledge.",
       "teaches": [
         "epistemic-hedging"
       ]
@@ -113,21 +115,20 @@
       "prompt": [
         {
           "speaker": "Fizikus",
-          "text": "Lehetséges-e a tudományos felfedezést puszta algoritmusokkal helyettesíteni?"
+          "text": "Biztos, hogy a felfedezés intuícióból született?"
         },
         {
-          "speaker": "Tudományfilozófus",
-          "text": "Polányi szerint kizárt, hiszen a tudós személyes elköteleződése és hallgatólagos _____ nélkül nincs valódi intuíció."
+          "speaker": "Filozófus",
+          "text": "Nem biztos, de _____ így történt."
         },
         {
           "speaker": "Fizikus",
-          "text": "A megismerés mindig emberi aktus marad."
+          "text": "Akkor érdemes megnézni a jegyzeteit."
         }
       ],
       "options": [
-        "tudása",
-        "tudását",
-        "tudásával"
+        "feltehetőleg",
+        "kétségtelenül"
       ],
       "correct": 0,
       "teaches": [
@@ -141,8 +142,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write an epistemological sentence about tacit knowledge using an evaluative adverbial.",
-          "answer": "A tudományos kutató a hallgatólagos tudás gazdag rétegeire támaszkodva és episztemikusan megalapozott módon képes megragadni azokat az összefüggéseket, amelyek formális algoritmusokkal kifejezhetetlenek."
+          "prompt": "Write one sentence about a discovery, with *nem zárható ki, hogy*.",
+          "answer": "Nem zárható ki, hogy a tudós hallgatólagos tudásra támaszkodott."
         }
       ],
       "teaches": [
@@ -154,11 +155,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozói kifejezés elemzi a megismerés rejtett lélektanát a legszakszerűbben?",
+      "question": "Melyik mondat fejez ki bizonytalanságot?",
       "options": [
-        "hallgatólagos tudásra támaszkodva",
-        "pusztán a felhalmozott mérési adatokra hagyatkozva",
-        "amikor a kutatás mechanikus módszertani szabályokat követ"
+        "A felfedezés feltehetőleg hallgatólagos tudásból született.",
+        "A felfedezés kétségtelenül hallgatólagos tudásból született.",
+        "A felfedezés bizonyosan hallgatólagos tudásból született."
       ],
       "correct": 0,
       "teaches": [

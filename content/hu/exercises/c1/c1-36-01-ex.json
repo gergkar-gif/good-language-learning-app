@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'passzív ellenállás' Deák Ferenc jogfilozófiájában?",
+      "question": "Mit jelent a *passzív ellenállás*?",
       "options": [
-        "A törvénytelen, önkényuralmi rendeletekkel való bárminemű együttműködés békés, jogi elvű megtagadását.",
-        "Fegyveres felkelés szervezését idegen hatalmak segítségével.",
-        "Az állami adminisztráció feltétel nélküli kiszolgálását a békés fejlődés reményében."
+        "Erőszak nélkül nem hajtják végre a törvénytelen rendeleteket.",
+        "Fegyveres felkelést szerveznek a hatalom ellen idegen segítséggel.",
+        "A hatalom minden rendeletét szó nélkül végrehajtják az irodákban."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az alkotmányos jogfolytonosság elvéből _____ minden oktrojált rendelet érvénytelen.",
-      "hint": "kiindul + -va",
-      "answer": "kiindulva",
-      "english": "Proceeding from the principle of constitutional continuity every octroyed decree is void.",
+      "sentence": "A törvénytelen rendeletet nem _____ végre.",
+      "hint": "hajt (to carry), 3pl past definite",
+      "english": "The unlawful decree was not carried out.",
       "teaches": [
-        "evaluative-stance"
+        "agentless-constructions"
+      ],
+      "answers": [
+        "hajtották"
       ]
     },
     {
@@ -37,20 +39,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "alkotmányos jogfolytonosság",
-          "a nemzet történelmi és jogi alaptörvényeinek töretlen érvényessége"
+          "passzív ellenállás",
+          "passive resistance"
         ],
         [
-          "passzív ellenállás",
-          "a törvénytelen hatalommal való együttműködés elvi megtagadása"
+          "alkotmányos jogfolytonosság",
+          "constitutional continuity"
         ],
         [
           "oktrojált rendelet",
-          "a népképviselet hozzájárulása nélkül, felülről ráerőszakolt jogszabály"
+          "imposed decree"
         ],
         [
-          "közjogi integritás",
-          "az alkotmányos rend elvi és intézményi csorbíthatatlansága"
+          "önkényuralom",
+          "arbitrary rule"
         ]
       ],
       "teaches": [
@@ -62,12 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A jogtudósok közjogilag _____ bizonyították be az önkényuralom törvénytelenségét.",
-      "hint": "megalapozott + -an",
-      "answer": "megalapozottan",
-      "english": "The jurists soundly proved the illegitimacy of autocratic rule in constitutional law.",
+      "sentence": "Az adót nem _____ be, de fegyvert sem fogtak.",
+      "hint": "fizet, 3pl past definite",
+      "english": "The tax was not paid, but no weapons were taken up either.",
       "teaches": [
-        "evaluative-stance"
+        "agentless-constructions"
+      ],
+      "answers": [
+        "fizették"
       ]
     },
     {
@@ -76,28 +80,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Közjogilag",
-        "megalapozottan",
-        "az",
-        "alkotmányos",
-        "jogfolytonosság",
+        "A",
+        "törvénytelen",
+        "rendeleteket",
         "nem",
-        "enged",
-        "kompromisszumot."
+        "hajtották",
+        "végre."
       ],
       "solution": [
-        "Közjogilag",
-        "megalapozottan",
-        "az",
-        "alkotmányos",
-        "jogfolytonosság",
+        "A",
+        "törvénytelen",
+        "rendeleteket",
         "nem",
-        "enged",
-        "kompromisszumot."
+        "hajtották",
+        "végre."
       ],
-      "english": "Soundly based in constitutional law constitutional continuity allows no compromise.",
+      "english": "The unlawful decrees were not carried out.",
       "teaches": [
-        "evaluative-stance"
+        "agentless-constructions"
       ]
     },
     {
@@ -108,26 +108,30 @@
       "prompt": [
         {
           "speaker": "Jogtörténész",
-          "text": "Hogyan kényszerítette ki Deák Ferenc a jogállami rendezést?"
+          "text": "Mit jelentett a passzív ellenállás a gyakorlatban?"
         },
         {
           "speaker": "Kutató",
-          "text": "Úgy, hogy a nemzet az alkotmányos jogfolytonosság elvéből _____ megtagadta az adófizetést és a hivatalviselést."
+          "text": "Azt, hogy a rendeletet nem _____ végre, de fegyvert sem fogtak."
         },
         {
           "speaker": "Jogtörténész",
-          "text": "A jog ereje győzött a nyers erőszak felett."
+          "text": "Tehát erőszak nélkül tiltakoztak."
         }
       ],
       "options": [
-        "kiindulva",
-        "kiindulni",
-        "kiindulás"
+        "hajtották",
+        "hajtják",
+        "hajtani"
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
-      ]
+        "agentless-constructions"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "c1-36-01-production-7",
@@ -136,12 +140,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence articulating constitutional resistance using an evaluative adverbial.",
-          "answer": "Közjogilag megalapozottan és az alkotmányos jogfolytonosság elvéből szigorúan kiindulva a nemzet elutasította a bécsi önkényuralom oktrojált dekrétumait, mert a hatalom önkénye soha nem írhatja felül a törvényes szabadságjogokat."
+          "prompt": "Write one sentence about passive resistance, saying what was not done.",
+          "answer": "A törvénytelen rendeletet nem hajtották végre."
         }
       ],
       "teaches": [
-        "evaluative-stance"
+        "agentless-constructions"
       ]
     },
     {
@@ -149,15 +153,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés fejezi ki legpontosabban a deáki jogfolytonosság érvrendszerét?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "az alkotmányos jogfolytonosság elvéből szigorúan kiindulva",
-        "a felmerülő hatósági rendeletekhez pragmatikusan alkalmazkodva",
-        "amikor az elégedetlenség kizárólag a magánszférára korlátozódik"
+        "A rendeletet nem hajtották végre.",
+        "A rendeletet nem hajtottak végre.",
+        "A rendelet nem hajtották végre."
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "agentless-constructions"
       ]
     }
   ]

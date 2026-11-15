@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'cselekvő állampolgárság' a polgári humanizmus szellemében?",
+      "question": "Mit jelent a *cselekvő állampolgárság*?",
       "options": [
-        "A közügyekben való tudatos, felelős részvételt, a közösség szabadságának és jogainak aktív védelmét.",
-        "A központi kormányzati döntések formális, adminisztratív végrehajtását.",
-        "Az állampolgárok kizárólagos adófizetői szerepét a közéleti részvétel kizárásával."
+        "A polgár részt vesz a közügyekben, és védi a közösség jogait.",
+        "A polgár csak adót fizet, a közügyekbe nem szól bele.",
+        "A polgár a döntéseket a kormányra bízza, és nem figyeli őket."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Nemcsak a törvényeket kell megalkotni, _____ a jogállami kultúrát is meg kell honosítani a társadalomban.",
-      "hint": "nemcsak … ___",
-      "answer": "hanem",
-      "english": "Not only must laws be created, but the rule-of-law culture must also be rooted in society.",
+      "sentence": "Nemcsak a törvényeket kell megalkotni, _____ be is kell tartani őket.",
+      "hint": "nemcsak … (second part)",
+      "english": "Laws must not only be made but also kept.",
       "teaches": [
-        "evaluative-stance"
+        "nem-csak-hanem"
+      ],
+      "answers": [
+        "hanem"
       ]
     },
     {
@@ -38,19 +40,19 @@
       "pairs": [
         [
           "polgári humanizmus",
-          "az emberi méltóságot és a közjót a közélet középpontjába állító eszme"
+          "civic humanism"
         ],
         [
           "cselekvő állampolgárság",
-          "a társadalmi szolidaritásra és felelősségre épülő aktív polgári szerep"
+          "active citizenship"
         ],
         [
           "köztársasági eszme",
-          "a népszuverenitáson és a fékek és egyensúlyok rendszerén alapuló államforma"
+          "republican ideal"
         ],
         [
           "szellemi örökség",
-          "a történelmi elődök szabadságeszméinek élő, továbbadandó hagyománya"
+          "intellectual heritage"
         ]
       ],
       "teaches": [
@@ -62,12 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "_____ mértékben erősödik a civil társadalom, olyan mértékben szorul vissza a korrupció és az elnyomás.",
-      "hint": "___ … olyan",
-      "answer": "Amilyen",
-      "english": "To the extent that civil society strengthens, to that extent corruption and oppression recede.",
+      "sentence": "_____ a törvény védi a polgárokat, másrészt a polgároknak is tenniük kell a közösségért.",
+      "hint": "on the one hand",
+      "english": "On the one hand the law protects the citizens, on the other hand the citizens must also do something for the community.",
       "teaches": [
-        "evaluative-stance"
+        "egyreszt-masreszt"
+      ],
+      "answers": [
+        "Egyrészt"
       ]
     },
     {
@@ -99,9 +103,9 @@
         "kell",
         "védeni."
       ],
-      "english": "Not only must freedom be won, but it must also be defended.",
+      "english": "Freedom must not only be won but also defended.",
       "teaches": [
-        "evaluative-stance"
+        "nem-csak-hanem"
       ]
     },
     {
@@ -111,26 +115,26 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Közéleti esszéíró",
-          "text": "Hogyan tartható fenn a deáki és bibói örökség a 21. században?"
+          "speaker": "Esszéíró",
+          "text": "Mit jelent a közös felelősség?"
         },
         {
           "speaker": "Jogfilozófus",
-          "text": "Úgy, hogy nemcsak a történelmi emlékezetet ápoljuk, hanem a cselekvő állampolgárság révén mindennap újra _____ a jogállamot."
+          "text": "Egyrészt a törvény védi a polgárokat, _____ a polgároknak is tenniük kell a közösségért."
         },
         {
-          "speaker": "Közéleti esszéíró",
-          "text": "Ez a köztársaság egyetlen igazi védelme."
+          "speaker": "Esszéíró",
+          "text": "Ez kétoldalú kötelezettség."
         }
       ],
       "options": [
-        "megteremtjük",
-        "megteremtünk",
-        "megteremtenénk"
+        "másrészt",
+        "hanem",
+        "mert"
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "egyreszt-masreszt"
       ]
     },
     {
@@ -140,12 +144,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a synthetic manifesto sentence using correlative grammar formulating democratic renewal.",
-          "answer": "Nemcsak az alkotmányos fékek és egyensúlyok rendszerét kell visszavonhatatlanul helyreállítanunk, hanem a kölcsönös szolidaritáson és emberi méltóságon alapuló cselekvő állampolgárságot is a magyar politikai kultúra szívévé kell tennünk."
+          "prompt": "Write one sentence about civic responsibility, with *nemcsak … hanem*.",
+          "answer": "Nemcsak jogaink vannak, hanem kötelességeink is."
         }
       ],
       "teaches": [
-        "evaluative-stance"
+        "nem-csak-hanem"
       ]
     },
     {
@@ -153,15 +157,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik korrelatív szerkezet fogalmaz meg emelkedett demokratikus megújulást?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Nemcsak az intézményeket kell újjáépítenünk, hanem a polgári szabadságtudatot is újra kell teremtenünk",
-        "Az intézmények működése megfelelt a hatályos eljárásjogi szabályoknak",
-        "Ha szükségesnek mutatkozik, áttekintjük a felmerülő eljárási kérdéseket"
+        "Nemcsak a törvényt kell tisztelni, hanem a polgárok jogait is.",
+        "Nemcsak a törvényt kell tisztelni, hanem a polgárok jogait sem.",
+        "Nemcsak a törvényt kell tisztelni, mert a polgárok jogait is."
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "nem-csak-hanem"
       ]
     }
   ]

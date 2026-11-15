@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen prófétai figyelmeztetést fogalmazott meg Neumann János 'Túlélhetjük-e a technikát?' című esszéjében?",
+      "question": "Mit jelent a *felelősségvállalás*?",
       "options": [
-        "A technológiai fejlődés exponenciális sebessége hamarosan meghaladja a korábbi politikai intézmények kereteit, így a túlélés egyetlen záloga az emberiség morális érettsége és az együttműködés lesz.",
-        "Azt, hogy a számítógépes processzorok miniatürizálása hamarosan eléri az atomi méretek fizikai korlátait, leállítva a technikai fejlődést.",
-        "Azt, hogy a legújabb technológiai fejlesztéseket szigorú állami felügyelet alá kell helyezni, elsősorban a védelmi ipar érdekeit szolgálva."
+        "Az ember elismeri, hogy a tetteiért ő felel.",
+        "Az ember átadja a döntést egy másik embernek.",
+        "Az ember megtagadja a választ egy kérdésre."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Ahogyan növekszik a mesterséges intelligencia ereje, _____ válik fontosabbá a humánus etika.",
-      "hint": "ahogyan … ___",
-      "answer": "úgy",
-      "english": "As the power of artificial intelligence grows, so does humane ethics become more important.",
+      "sentence": "A gép úgy válaszol, _____ értené a kérdést.",
+      "hint": "as if",
+      "english": "The machine answers as if it understood the question.",
       "teaches": [
-        "evaluative-stance"
+        "mintha"
+      ],
+      "answers": [
+        "mintha"
       ]
     },
     {
@@ -37,20 +39,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Neumann János",
-          "a digitális számítógép és a modern játékelmélet atyja"
+          "játékelmélet",
+          "game theory"
         ],
         [
-          "technológiai szingularitás",
-          "a technikai fejlődés visszafordíthatatlan, robbanásszerű pontja"
-        ],
-        [
-          "A számológép és az agy",
-          "Neumann utolsó műve az elme és a számítógép párhuzamairól"
+          "exponenciális fejlődés",
+          "exponential growth"
         ],
         [
           "emberi túlélés",
-          "a civilizáció megmaradásának erkölcsi imperatívusza"
+          "human survival"
+        ],
+        [
+          "felelősségvállalás",
+          "taking responsibility"
         ]
       ],
       "teaches": [
@@ -62,12 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Amennyire kitágul a gépi kapacitás, _____ elengedhetetlen a humánus kontroll.",
-      "hint": "amennyire … ___",
-      "answer": "annyira",
-      "english": "As much as machine capacity expands, so much is humane control indispensable.",
+      "sentence": "Minél erősebb a technika, _____ nagyobb a felelősség.",
+      "hint": "minél … (correlative word)",
+      "english": "The stronger the technology, the greater the responsibility.",
       "teaches": [
-        "evaluative-stance"
+        "correlative-minel-annal"
+      ],
+      "answers": [
+        "annál"
       ]
     },
     {
@@ -76,32 +80,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Ahogyan",
-        "fejlődik",
-        "a",
-        "technika,",
+        "A",
+        "program",
         "úgy",
-        "sokszorozódik",
-        "meg",
-        "az",
-        "emberi",
-        "felelősség."
+        "dolgozik,",
+        "mintha",
+        "gondolkodna."
       ],
       "solution": [
-        "Ahogyan",
-        "fejlődik",
-        "a",
-        "technika,",
+        "A",
+        "program",
         "úgy",
-        "sokszorozódik",
-        "meg",
-        "az",
-        "emberi",
-        "felelősség."
+        "dolgozik,",
+        "mintha",
+        "gondolkodna."
       ],
-      "english": "As technology develops, so human responsibility multiplies.",
+      "english": "The program works as if it were thinking.",
       "teaches": [
-        "evaluative-stance"
+        "mintha"
       ]
     },
     {
@@ -112,25 +108,25 @@
       "prompt": [
         {
           "speaker": "Kiberfilozófus",
-          "text": "Hogyan értékelhető Neumann technológiai hagyatéka ma?"
+          "text": "Gondolkodik a gép?"
         },
         {
           "speaker": "Professzor",
-          "text": "Úgy, hogy ahogyan ő előre látta a gépek hatalmát, úgy kell ma is védenünk az emberi méltóság etikai _____."
+          "text": "Nem, csak úgy tűnik, _____ gondolkodna."
         },
         {
           "speaker": "Kiberfilozófus",
-          "text": "A technika az embert szolgálja, nem az ember a technikát."
+          "text": "Akkor érdemes óvatosan fogalmazni."
         }
       ],
       "options": [
-        "korlátait",
-        "korlátai",
-        "korlátainak"
+        "mintha",
+        "mert",
+        "ha"
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "mintha"
       ]
     },
     {
@@ -140,12 +136,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write an evaluative synthesis of technological progress using correlative syntax.",
-          "answer": "Ahogyan a digitális számítástechnika és a mesterséges intelligencia exponenciálisan kitágítja az emberi hatalom határait, úgy sokszorozódik meg a civilizáció felelőssége azért, hogy az innováció az egyetemes humánumot és ne a pusztítást szolgálja."
+          "prompt": "Write one sentence about a machine, with *mintha*.",
+          "answer": "A program úgy beszél, mintha értené a kérdéseket."
         }
       ],
       "teaches": [
-        "evaluative-stance"
+        "mintha"
       ]
     },
     {
@@ -153,15 +149,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik páros szerkezet fogalmazza meg a technológiai felelősséget a legpontosabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "ahogyan növekszik a számítási kapacitás, úgy válik mind sürgetőbbé az etikai korlátok megvonása",
-        "amikor az ipar kizárólag a gazdasági megtérülés szempontjait veszi figyelembe",
-        "ha a technológiai fejlesztések függetlenednek a társadalmi konszenzustól"
+        "A program úgy beszél, mintha gondolkodna.",
+        "A program úgy beszél, mintha gondolkodik.",
+        "A program úgy beszél, mint gondolkodna."
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "mintha"
       ]
     }
   ]

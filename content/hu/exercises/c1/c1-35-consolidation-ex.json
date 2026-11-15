@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik kifejezés elemzi a kiberrendszerek belső logikáját a legszakszerűbben?",
+      "question": "Melyik mondat fejez ki lehetőséget?",
       "options": [
-        "kibernetikailag modellezve",
-        "a digitális folyamatokat pusztán technikai eszközként értelmezve",
-        "amikor a felhasználó kizárólag az operációs rendszer felületét vizsgálja"
+        "Könnyen meglehet, hogy a zaj megzavarta a jelet.",
+        "A zaj megzavarta a jelet, ezt a mérés mutatta.",
+        "A zaj nem zavarta meg a jelet, ez biztos."
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "epistemic-modality"
       ]
     },
     {
@@ -22,16 +22,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel leplezhető le az algoritmikus determinizmus a leghitelesebben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "a felhasználói szokásokat szisztematikusan profilozva és az autonómiát korlátozva",
-        "a digitális szolgáltatásokat ingyenes kényelmi funkcióként leírva",
-        "amikor az elemzés kizárólag a hardveres megbízhatóságra koncentrál"
+        "Az adatainkat gyűjtő cég profilt készít rólunk.",
+        "Az adatainkat gyűjteni cég profilt készít rólunk.",
+        "Az adatainkat gyűjtés cég profilt készít rólunk."
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "nominalization"
+      }
     },
     {
       "id": "c1-35-consolidation-3",
@@ -41,19 +45,19 @@
       "pairs": [
         [
           "információs entrópia",
-          "a rendszerben rejlő bizonytalanság és információtartalom mértéke"
+          "information entropy"
         ],
         [
-          "megfigyelési kapitalizmus",
-          "a személyes viselkedési adatok profitcélú totális kisajátítása"
+          "felhasználói profilozás",
+          "user profiling"
         ],
         [
           "információs önrendelkezés",
-          "a személyes adatok feletti kizárólagos egyéni rendelkezési jog"
+          "informational self-determination"
         ],
         [
           "Neumann János",
-          "a modern számítógép-architektúra és kiber-etika megteremtője"
+          "John von Neumann"
         ]
       ],
       "teaches": [
@@ -65,9 +69,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A polgárok magánszférájának védelme az információs _____ elidegeníthetetlen része.",
+      "sentence": "Az információs _____ azt jelenti, hogy mindenki maga dönt a személyes adatairól.",
       "hint": "self-determination",
-      "english": "Defense of citizens' privacy is an inalienable part of informational self-determination.",
+      "english": "Informational self-determination means that everybody decides about his or her own personal data.",
       "teaches": [
         "c1-digital-ethics-vocab"
       ],
@@ -80,12 +84,14 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A technológia exponenciális fejlődése etikai _____ követel az emberiségtől.",
-      "hint": "korlát + -okat",
-      "answer": "korlátokat",
-      "english": "Exponential development of technology demands ethical boundaries from humanity.",
+      "sentence": "A törvény etikai _____ szab a technológiának.",
+      "hint": "korlát, plural accusative",
+      "english": "The law sets ethical limits to technology.",
       "teaches": [
         "c1-digital-ethics-vocab"
+      ],
+      "answers": [
+        "korlátokat"
       ]
     },
     {
@@ -93,12 +99,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A folyamatokat kibernetikailag _____ minimalizálható az entrópia.",
-      "hint": "modellez + -ve",
-      "answer": "modellezve",
-      "english": "Modeling processes cybernetically entropy can be minimized.",
+      "sentence": "A zaj miatt könnyen _____, hogy hiba került az üzenetbe.",
+      "hint": "may (be possible)",
+      "english": "Because of the noise, it may well be that an error got into the message.",
       "teaches": [
-        "evaluative-stance"
+        "epistemic-modality"
+      ],
+      "answers": [
+        "meglehet"
       ]
     },
     {
@@ -106,12 +114,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Az államnak kötelessége _____ a polgárok kommunikációjának titkosságát.",
-      "hint": "garantál + -nia",
-      "answer": "garantálnia",
-      "english": "The state has a duty to guarantee the secrecy of citizens' communication.",
+      "sentence": "A törvény előírja, hogy a cég _____ az adatokat.",
+      "hint": "töröl, subjunctive 3sg definite",
+      "english": "The law requires the company to delete the data.",
       "teaches": [
-        "formal-obligation"
+        "hogy-jon-jen"
+      ],
+      "answers": [
+        "törölje"
       ]
     },
     {
@@ -119,28 +129,30 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Ahogyan terjed a technológia hatalma, _____ növekszik az etikai felelősség.",
-      "hint": "ahogyan … ___",
-      "answer": "úgy",
-      "english": "As the power of technology spreads, so does ethical responsibility grow.",
+      "sentence": "Minél nagyobb a gép ereje, _____ fontosabb az etikai ellenőrzés.",
+      "hint": "minél … (correlative word)",
+      "english": "The greater the power of the machine, the more important ethical oversight is.",
       "teaches": [
-        "evaluative-stance"
+        "correlative-minel-annal"
+      ],
+      "answers": [
+        "annál"
       ]
     },
     {
       "id": "c1-35-consolidation-9",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "context",
-      "question": "Mi Neumann János szerint a technológiai fejlődés legfőbb erkölcsi tanulsága?",
+      "question": "Mit jelent a *kibernetikai visszacsatolás*?",
       "options": [
-        "A technika gyorsulása miatt az emberiség túlélése nem a gépek hatalmán, hanem a szabadság és az erkölcs intézményes védelmén múlik.",
-        "A technológiai innováció automatikusan megoldja a társadalmi konfliktusokat.",
-        "A tudományos kutatásokat kizárólag a gazdasági növekedésnek kell alárendelni."
+        "A rendszer a saját eredményéből tanul, és ehhez igazítja a működését.",
+        "A rendszer az eredményeit törli, és újrakezdi a számítást.",
+        "A rendszer az adatait elküldi egy másik rendszernek."
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "c1-digital-ethics-vocab"
       ]
     },
     {
@@ -150,27 +162,25 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "digitális",
-        "magánszféra",
-        "védelme",
-        "az",
-        "emberi",
-        "méltóság",
-        "alapja."
+        "felhasználó",
+        "szokásait",
+        "követő",
+        "program",
+        "profilt",
+        "készít."
       ],
       "solution": [
         "A",
-        "digitális",
-        "magánszféra",
-        "védelme",
-        "az",
-        "emberi",
-        "méltóság",
-        "alapja."
+        "felhasználó",
+        "szokásait",
+        "követő",
+        "program",
+        "profilt",
+        "készít."
       ],
-      "english": "Defense of digital privacy is the basis of human dignity.",
+      "english": "The program that tracks the user's habits makes a profile.",
       "teaches": [
-        "formal-obligation"
+        "participial-clauses"
       ]
     },
     {
@@ -180,8 +190,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of surveillance capitalism using a participial clause.",
-          "answer": "A digitális óriásvállalatok a polgárok minden rezdülését szisztematikusan profilozva és a viselkedési többletet kisajátítva olyan algoritmikus determinizmust kényszerítenek a társadalomra, amely aláássa a demokratikus önrendelkezést."
+          "prompt": "Write one sentence about a program, with a participle before the noun.",
+          "answer": "Az adatainkat gyűjtő program profilt készít rólunk."
         }
       ],
       "teaches": [
@@ -195,12 +205,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize John von Neumann's technological vision using correlative syntax.",
-          "answer": "Ahogyan a számítástechnika és az algoritmusok exponenciálisan átalakítják az emberi civilizációt, úgy bizonyosodik be Neumann jóslata: a túlélés záloga az emberi méltóság és a szabadság megingathatatlan védelmében rejlik."
+          "prompt": "Write one sentence about a machine, with *mintha*.",
+          "answer": "A gép úgy válaszol, mintha értené a kérdést."
         }
       ],
       "teaches": [
-        "evaluative-stance"
+        "mintha"
       ]
     }
   ]

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a poétikai többértelműség (poliszémia) a modernista lírában?",
+      "question": "Mit jelent a *polifónia* egy műben?",
       "options": [
-        "Azt a jelenséget, amikor egy költői kép vagy kifejezés egyszerre több egymással összefüggő, olykor feszültségben álló jelentést hordoz anélkül, hogy egyetlen definícióra szűkíthető lenne.",
-        "A hagyományos versformák formai kereteinek lazítását és a rímtelen szabadversek előtérbe kerülését a modern költészetben.",
-        "Az archaikus és idegen szavak túlzott alkalmazását a szövegben, amely szándékosan megnehezíti a vers ritmusának követését."
+        "Több önálló hang vagy nézőpont szól egyszerre a műben.",
+        "Egyetlen hang mondja végig a művet, változatlan hangnemben.",
+        "A mű minden sora ugyanazzal a szóval kezdődik el."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szerző a motívumokat finoman egymásra _____ hozta létre a mű polifonikus mélységét.",
-      "hint": "rétegez + -ve",
-      "english": "Delicately layering motifs on top of one another the author created the work's polyphonic depth.",
+      "sentence": "A költő a motívumokat egymásra _____ verset írt.",
+      "hint": "rétegez, present participle",
+      "english": "The poet wrote a poem that layers the motifs on top of one another.",
       "teaches": [
         "participial-clauses"
       ],
       "answers": [
-        "rétegezve"
+        "rétegező"
       ]
     },
     {
@@ -40,19 +40,19 @@
       "pairs": [
         [
           "polifónia",
-          "különböző önálló szólamok és nézőpontok egyidejű jelenléte a műben"
+          "polyphony"
         ],
         [
-          "poétikai többértelműség",
-          "egymásnak feszülő jelentések harmonikus együttélése"
+          "ambivalencia",
+          "ambivalence"
         ],
         [
           "szemantikai feszültség",
-          "az ellentétes fogalmak által gerjesztett költői energia"
+          "semantic tension"
         ],
         [
           "motívumháló",
-          "a művön végigvonuló visszatérő gondolati elemek szövedéke"
+          "network of motifs"
         ]
       ],
       "teaches": [
@@ -64,14 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A belső ambivalenciát felszínre _____ a mű elkerüli a didaktikus leegyszerűsítést.",
-      "hint": "hoz + -va",
-      "english": "Bringing internal ambivalence to the surface the work avoids didactic simplification.",
+      "sentence": "Az egymásnak ellentmondó jelentéseket _____ vers ambivalens.",
+      "hint": "hordoz, present participle",
+      "english": "A poem that carries meanings contradicting one another is ambivalent.",
       "teaches": [
-        "participial-clauses"
+        "present-participle"
       ],
       "answers": [
-        "hozva"
+        "hordozó"
       ]
     },
     {
@@ -81,25 +81,27 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "szerző",
+        "feszültséget",
+        "fenntartó",
+        "kép",
+        "kettős",
+        "jelentést",
+        "ad",
         "a",
-        "motívumokat",
-        "rétegezve",
-        "polifonikus",
-        "rezonanciát",
-        "teremtett."
+        "versnek."
       ],
       "solution": [
         "A",
-        "szerző",
+        "feszültséget",
+        "fenntartó",
+        "kép",
+        "kettős",
+        "jelentést",
+        "ad",
         "a",
-        "motívumokat",
-        "rétegezve",
-        "polifonikus",
-        "rezonanciát",
-        "teremtett."
+        "versnek."
       ],
-      "english": "Layering the motifs the author created polyphonic resonance.",
+      "english": "The image that keeps up the tension gives the poem a double meaning.",
       "teaches": [
         "participial-clauses"
       ]
@@ -111,27 +113,31 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Kritikus",
-          "text": "Mi teszi Babits líráját olyan utánozhatatlanul gazdaggá?"
+          "speaker": "Diák",
+          "text": "Milyen a vers hangja?"
         },
         {
-          "speaker": "Egyetemi oktató",
-          "text": "Az, hogy az antik és keresztény mítoszokat egymásra _____ páratlan polifonikus mélységet teremt."
+          "speaker": "Tanár",
+          "text": "Nem egy hang van benne, hanem több: az egymással _____ hangok kettős jelentést adnak a versnek."
         },
         {
-          "speaker": "Kritikus",
-          "text": "A szövegi rezonanciák szinte végtelenek."
+          "speaker": "Diák",
+          "text": "Értem, ezért nehéz egyszerűen összefoglalni."
         }
       ],
       "options": [
-        "rétegezve",
-        "rétegezni",
-        "rétegezett"
+        "feleselő",
+        "felesel",
+        "feleselni"
       ],
       "correct": 0,
       "teaches": [
-        "participial-clauses"
-      ]
+        "present-participle"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "c1-33-02-production-7",
@@ -140,8 +146,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of textual polyphony using a participial clause.",
-          "answer": "A szerző a különböző filozófiai nézőpontokat egymással dialógusba léptetve és a motívumokat szervesen rétegezve olyan polifonikus rezonanciát hoz létre, amely a modern ember egzisztenciális vívódásait tükrözi."
+          "prompt": "Write one sentence about a poem, with a participle before the noun.",
+          "answer": "A hangokat egymásba fonó vers több jelentést hordoz."
         }
       ],
       "teaches": [
@@ -153,16 +159,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik mondat alkalmaz helyesen melléknévi igeneves szerkezetet a többszólamúság kifejezésére?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "a költői hangokat egymásba fonva és a többértelműséget fenntartva mély rezonanciát kelt",
-        "a verssorok szótagszámát szabályosan kimérve",
-        "a kötet fejezeteit külön-külön értékelve"
+        "A feszültséget fenntartó kép kettős jelentést ad.",
+        "A feszültséget fenntartani kép kettős jelentést ad.",
+        "A feszültséget fenntartás kép kettős jelentést ad."
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "nominalization"
+      }
     }
   ]
 }

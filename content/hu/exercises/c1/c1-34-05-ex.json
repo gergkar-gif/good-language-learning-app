@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan működik 'a tudomány köztársasága' Polányi Mihály elméletében?",
+      "question": "Mit jelent a *spontán rend*?",
       "options": [
-        "A tudósok autonóm, decentralizált közösségeként, akik a spontán rend és a kölcsönös szakmai kontroll révén szabadon koordinálják kutatásaikat minden központi állami parancs nélkül.",
-        "Egy államilag hierarchizált akadémiai hálózatként, amely a minisztériumi tervek alapján működik.",
-        "Egy központilag irányított kutatóintézetként, amely kizárólag a közvetlen ipari hasznot tekinti célnak."
+        "Rend, amely parancsok nélkül, az emberek egymáshoz igazodásából alakul ki.",
+        "Rend, amelyet a hatóság előre megtervez, és mindenkinek előír.",
+        "Rend, amely csak papíron létezik, a valóságban nem működik."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Amennyiben a kormányzat megvonja az autonómiát, _____ a tudományos felfedezés motorja áll le.",
-      "hint": "amennyiben … ___",
-      "answer": "úgy",
-      "english": "Insofar as the government withdraws autonomy, so the engine of scientific discovery stalls.",
+      "sentence": "_____, hogy a kutatók szabadon választhatnak témát, a kutatás fejlődik.",
+      "hint": "conditional conjunction",
+      "english": "Provided that researchers can choose their topics freely, research advances.",
       "teaches": [
-        "past-conditional-volna"
+        "felteve-hogy-kiveve-ha"
+      ],
+      "answers": [
+        "Feltéve"
       ]
     },
     {
@@ -37,20 +39,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "A tudomány köztársasága",
-          "Polányi koncepciója a független kutatók önigazgató szövetségéről"
+          "tudományos önigazgatás",
+          "academic self-governance"
         ],
         [
           "spontán rend",
-          "a kutatók decentralizált, kölcsönös szakmai koordinációja"
-        ],
-        [
-          "tervezett tudomány",
-          "a kutatási irányok felülről vezényelt, kudarcra ítélt totalitárius modellje"
+          "spontaneous order"
         ],
         [
           "alapkutatás",
-          "a közvetlen hasznot nem kereső, a valóság megértésére irányuló tiszta tudomány"
+          "basic research"
+        ],
+        [
+          "kölcsönös alkalmazkodás",
+          "mutual adjustment"
         ]
       ],
       "teaches": [
@@ -62,12 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Hacsak a kutatók nem szabadok, az egész innovációs rendszer _____ fut.",
-      "hint": "zátony + -ra",
-      "answer": "zátonyra",
-      "english": "Unless researchers are free, the entire innovation system runs aground.",
+      "sentence": "A tudósok szabadon dolgoznak, kivéve, _____ a hatóság megtiltja.",
+      "hint": "conjunction (if)",
+      "english": "The scientists work freely, unless the authority forbids it.",
       "teaches": [
-        "past-conditional-volna"
+        "felteve-hogy-kiveve-ha"
+      ],
+      "answers": [
+        "ha"
       ]
     },
     {
@@ -76,30 +80,28 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Amennyiben",
+        "Feltéve,",
+        "hogy",
         "a",
         "kutatás",
         "szabad,",
-        "úgy",
-        "virágzik",
         "a",
-        "tudományos",
-        "haladás."
+        "tudomány",
+        "fejlődik."
       ],
       "solution": [
-        "Amennyiben",
+        "Feltéve,",
+        "hogy",
         "a",
         "kutatás",
         "szabad,",
-        "úgy",
-        "virágzik",
         "a",
-        "tudományos",
-        "haladás."
+        "tudomány",
+        "fejlődik."
       ],
-      "english": "Insofar as research is free, so scientific progress flourishes.",
+      "english": "Provided that research is free, science advances.",
       "teaches": [
-        "past-conditional-volna"
+        "felteve-hogy-kiveve-ha"
       ]
     },
     {
@@ -110,25 +112,25 @@
       "prompt": [
         {
           "speaker": "Kutató",
-          "text": "Miért nem lehet a tudományos felfedezést ötéves tervekkel előre megjósolni?"
+          "text": "Szabadon dolgozhatnak a kutatók?"
         },
         {
-          "speaker": "Polányi-kutató",
-          "text": "Mivel a felfedezések lényege a kiszámíthatatlanság, amennyiben a bürokrácia parancsol, úgy megsemmisül a kutatás heurisztikus _____."
+          "speaker": "Jogász",
+          "text": "Igen, _____, ha a törvény mást mond."
         },
         {
           "speaker": "Kutató",
-          "text": "A szabadság a tudomány legfőbb termelőereje."
+          "text": "Értem, akkor a törvényt is meg kell nézni."
         }
       ],
       "options": [
-        "ereje",
-        "erejét",
-        "erejével"
+        "kivéve",
+        "feltéve",
+        "mivel"
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "felteve-hogy-kiveve-ha"
       ]
     },
     {
@@ -138,12 +140,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a deductive defense of academic freedom using hypothetical syntax.",
-          "answer": "Amennyiben a politikai hatalom centralizált bürokratikus parancsokkal kényszeríti rá akaratát az akadémiai szférára, úgy a tudomány köztársaságának spontán rendje felbomlik, és a nemzet menthetetlenül lemarad a globális fejlődésben."
+          "prompt": "Write one sentence about the freedom of research, with *feltéve, hogy* or *kivéve, ha*.",
+          "answer": "A kutatás fejlődik, feltéve, hogy a kutatók szabadon dolgozhatnak."
         }
       ],
       "teaches": [
-        "past-conditional-volna"
+        "felteve-hogy-kiveve-ha"
       ]
     },
     {
@@ -151,15 +153,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik mondatszerkezet dedukálja a tudományos szabadság szükségességét?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "amennyiben korlátozzák az önigazgatást, úgy a tudományos felfedezés heurisztikus ereje elvész",
-        "amikor a kutatóintézetek a minisztériumi határidők betartására törekszenek",
-        "ha az intézményi hierarchia felülírja a kutatók szakmai önállóságát"
+        "A tudósok szabadon dolgoznak, kivéve, ha a hatóság megtiltja.",
+        "A tudósok szabadon dolgoznak, kivéve, hogy a hatóság megtiltja.",
+        "A tudósok szabadon dolgoznak, feltéve, ha a hatóság megtiltja."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "felteve-hogy-kiveve-ha"
       ]
     }
   ]

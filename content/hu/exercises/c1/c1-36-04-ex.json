@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi volt Kossuth Lajos Cassandra-levelének legfőbb figyelmeztetése 1867-ben?",
+      "question": "Mi a *Cassandra-levél*?",
       "options": [
-        "Hogy Magyarország a sorsát egy pusztulásra ítélt soknemzetiségű birodalomhoz köti, ami elkerülhetetlen történelmi katasztrófához vezet.",
-        "Hogy a közös hadügy és pénzügy fenntartása azonnal államcsődhöz vezet.",
-        "Hogy a kiegyezés kizárja a magyar ipar modernizációjának lehetőségét."
+        "Kossuth Lajos 1867-es levele, amely a kiegyezés veszélyeire figyelmeztetett.",
+        "Deák Ferenc 1865-ös húsvéti cikke, amely a közjogi vitáról szólt.",
+        "Eötvös József törvénye a népoktatásról, amelyet 1868-ban fogadtak el."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Deák döntése sokkal _____ a nemzet gazdasági megmaradását, semmint a meddő ellenállást szolgálta.",
-      "hint": "sokkal … ___",
-      "answer": "inkább",
-      "english": "Deák's decision served the nation's economic survival much rather than sterile resistance.",
+      "sentence": "Deák hívei szerint a kiegyezés megoldást hozott; Kossuth _____ a veszélyeire figyelmeztetett.",
+      "hint": "but (contrast)",
+      "english": "According to Deák's supporters the Compromise brought a solution; Kossuth, however, warned of its dangers.",
       "teaches": [
-        "scalar-adverbs"
+        "adversative-contrast"
+      ],
+      "answers": [
+        "viszont",
+        "azonban"
       ]
     },
     {
@@ -38,19 +41,19 @@
       "pairs": [
         [
           "Cassandra-levél",
-          "Kossuth látnoki inteleme a Monarchiához kötött nemzeti sors veszélyeiről"
+          "Cassandra Letter"
         ],
         [
           "pragmatikus reálpolitika",
-          "a megvalósítható lehetőségekre épülő, kompromisszumkész cselekvés"
+          "pragmatic realpolitik"
         ],
         [
           "nemzeti szuverenitás",
-          "az állam független, külső beavatkozástól mentes önrendelkezése"
+          "national sovereignty"
         ],
         [
-          "elvi integritás",
-          "a meggyőződésekhez és az alaptörvényekhez való feltétlen hűség"
+          "közjogi vita",
+          "constitutional dispute"
         ]
       ],
       "teaches": [
@@ -62,12 +65,18 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A történelmi felelősséget lényegesen _____ mérlegelve mindkét politikus nagysága kirajzolódik.",
-      "hint": "mély + -ebben",
-      "answer": "mélyebben",
-      "english": "Weighing historical responsibility substantially more deeply, the greatness of both statesmen emerges.",
+      "sentence": "_____ a kiegyezés után gyorsan fejlődött a gazdaság, sokan vitatták a kiegyezést.",
+      "hint": "although",
+      "english": "Although the economy developed quickly after the Compromise, many disputed the Compromise.",
       "teaches": [
-        "scalar-adverbs"
+        "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "Noha",
+        "Jóllehet",
+        "Bár",
+        "Habár",
+        "Ámbár"
       ]
     },
     {
@@ -76,34 +85,28 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "kiegyezés",
-        "sokkal",
-        "inkább",
+        "Deák",
+        "hívei",
+        "elfogadták",
         "a",
-        "polgári",
-        "fejlődést,",
-        "semmint",
-        "a",
-        "megalkuvást",
-        "szolgálta."
+        "kiegyezést,",
+        "Kossuth",
+        "viszont",
+        "figyelmeztetett."
       ],
       "solution": [
-        "A",
-        "kiegyezés",
-        "sokkal",
-        "inkább",
+        "Deák",
+        "hívei",
+        "elfogadták",
         "a",
-        "polgári",
-        "fejlődést,",
-        "semmint",
-        "a",
-        "megalkuvást",
-        "szolgálta."
+        "kiegyezést,",
+        "Kossuth",
+        "viszont",
+        "figyelmeztetett."
       ],
-      "english": "The Compromise served civic development much rather than compromise.",
+      "english": "Deák's supporters accepted the Compromise, Kossuth, however, warned.",
       "teaches": [
-        "scalar-adverbs"
+        "adversative-contrast"
       ]
     },
     {
@@ -113,26 +116,26 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Egyetemi oktató",
-          "text": "Igaza volt Kossuthnak vagy Deáknak a kiegyezés vitájában?"
+          "speaker": "Oktató",
+          "text": "Hogyan ítélték meg a kiegyezést a kortársak?"
         },
         {
           "speaker": "Doktorandusz",
-          "text": "Deák a jelent mentette meg a gazdasági felvirágzással, Kossuth viszont lényegesen _____ távlatban látta a birodalom összeomlását."
+          "text": "Megoszlottak a vélemények: Deák hívei elfogadták, Kossuth _____ elutasította."
         },
         {
-          "speaker": "Egyetemi oktató",
-          "text": "Ez a magyar történelem legtragikusabb dilemmája."
+          "speaker": "Oktató",
+          "text": "Ezért máig vitatott kérdés."
         }
       ],
       "options": [
-        "hosszabb",
-        "hosszabban",
-        "hosszút"
+        "viszont",
+        "mert",
+        "hogy"
       ],
       "correct": 0,
       "teaches": [
-        "scalar-adverbs"
+        "adversative-contrast"
       ]
     },
     {
@@ -142,12 +145,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence balancing compromise and integrity using a scalar comparative adverbial.",
-          "answer": "A kiegyezés közjogi művét sokkal inkább a nemzet reális túlélését és polgárosodását szolgáló kompromisszumnak, mintsem elvtelen árulásnak kell tekintenünk, jóllehet Kossuth intelmei lényegesen mélyebb történelmi aggodalmakat fogalmaztak meg."
+          "prompt": "Write one sentence that contrasts two views of the Compromise, with *viszont* or *noha*.",
+          "answer": "Deák hívei elfogadták a kiegyezést, Kossuth viszont elutasította."
         }
       ],
       "teaches": [
-        "scalar-adverbs"
+        "adversative-contrast"
       ]
     },
     {
@@ -155,15 +158,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik mondat alkalmaz skálaszerű összehasonlító határozói szerkezetet?",
+      "question": "Melyik szó fejezi ki az ellentétet? Deák hívei elfogadták a kiegyezést, Kossuth _____ elutasította.",
       "options": [
-        "sokkal inkább a polgári felvirágzást, semmint a behódolást választva",
-        "a történelmi eseményeket pusztán gazdasági sikerként értékelve",
-        "a politikai vitákat felesleges elméleti akadékoskodásnak tekintve"
+        "viszont",
+        "ezért",
+        "mert"
       ],
       "correct": 0,
       "teaches": [
-        "scalar-adverbs"
+        "adversative-contrast"
       ]
     }
   ]

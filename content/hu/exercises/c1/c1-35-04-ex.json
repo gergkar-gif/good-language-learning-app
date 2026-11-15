@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen alapvető különbséget tárt fel Neumann János a számítógép és az emberi agy működése között?",
+      "question": "Mit jelent a *számítási kapacitás*?",
       "options": [
-        "A számítógép pontos digitális aritmetikát használ nagy sebességgel, míg az agy alacsony pontosságú, analóg és statisztikai jelzésekkel, párhuzamosan és elképesztő energiahatékonysággal gondolkodik.",
-        "A számítógép analóg és asszociatív ingerületi mintázatokkal dolgozik, míg az emberi elme a determinisztikus bináris logikai kapuk lépéseit követi.",
-        "A számítógép intuitív és érzelmi döntéshozatalra képes, míg az emberi agy működése a mechanikus analitikus számológépek elveit tükrözi."
+        "Azt, hogy mennyi számítást végezhet el egy gép.",
+        "Azt, hogy mennyi áramot használ egy gép.",
+        "Azt, hogy hány ember használ egy gépet."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az agy sokkal rugalmasabban _____ a hibákhoz, mint a digitális áramkörök.",
-      "hint": "alkalmazkodik, past",
-      "answer": "alkalmazkodott",
-      "english": "The brain adapted much more flexibly to errors than digital circuits.",
+      "sentence": "Az agy _____ rugalmasabban reagál a váratlan helyzetekre, mint a számítógép.",
+      "hint": "much",
+      "english": "The brain reacts much more flexibly to unexpected situations than the computer.",
       "teaches": [
-        "scalar-adverbs"
+        "comparative-bb"
+      ],
+      "answers": [
+        "sokkal",
+        "jóval"
       ]
     },
     {
@@ -37,20 +40,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Neumann-architektúra",
-          "a tárolt programú digitális számítógép klasszikus felépítése"
+          "számítási kapacitás",
+          "computing capacity"
         ],
         [
-          "analóg és digitális agy",
-          "Neumann összehasonlítása az idegrendszer és a gépek működéséről"
-        ],
-        [
-          "szemantikai megértés",
-          "a jelek mögötti valódi tartalom és jelentés felfogása"
+          "gépi tanulás",
+          "machine learning"
         ],
         [
           "neurális plaszticitás",
-          "az agysejtek képessége a tanulás útján való átrendeződésre"
+          "neural plasticity"
+        ],
+        [
+          "emberi egyediség",
+          "human uniqueness"
         ]
       ],
       "teaches": [
@@ -62,12 +65,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A mesterséges intelligencia lényegesen gyorsabban _____ adatokat, mint az ember.",
-      "hint": "feldolgoz, present 3sg",
-      "answer": "dolgoz fel",
-      "english": "Artificial intelligence processes data substantially faster than humans.",
+      "sentence": "A számítógép a számolásban gyorsabb, _____ az agy.",
+      "hint": "than",
+      "english": "The computer is faster at calculating than the brain.",
       "teaches": [
-        "scalar-adverbs"
+        "comparative-bb"
+      ],
+      "answers": [
+        "mint"
       ]
     },
     {
@@ -77,27 +82,27 @@
       "stage": "practice",
       "tiles": [
         "Az",
-        "emberi",
-        "elme",
-        "sokkal",
-        "mélyebb",
-        "szemantikai",
-        "megértést",
-        "tanúsít."
+        "agy",
+        "a",
+        "számítógéphez",
+        "képest",
+        "kevesebb",
+        "energiát",
+        "használ."
       ],
       "solution": [
         "Az",
-        "emberi",
-        "elme",
-        "sokkal",
-        "mélyebb",
-        "szemantikai",
-        "megértést",
-        "tanúsít."
+        "agy",
+        "a",
+        "számítógéphez",
+        "képest",
+        "kevesebb",
+        "energiát",
+        "használ."
       ],
-      "english": "The human mind demonstrates much deeper semantic understanding.",
+      "english": "Compared with the computer, the brain uses less energy.",
       "teaches": [
-        "scalar-adverbs"
+        "kepest"
       ]
     },
     {
@@ -107,26 +112,26 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Kognitív kutató",
-          "text": "Képes lesz-e a számítógép valaha valódi tudatra ébredni?"
+          "speaker": "Kutató",
+          "text": "Miben különbözik az agy a számítógéptől?"
         },
         {
           "speaker": "Neumann-kutató",
-          "text": "Neumann szerint a gép szintaktikailag dolgozza fel a jeleket, míg az ember felülmúlhatatlanul mélyebb morális és érzelmi _____ rendelkezik."
+          "text": "A számítógéphez _____ az agy lassabb, de egyszerre sok műveletet végez."
         },
         {
-          "speaker": "Kognitív kutató",
-          "text": "Ezért az emberi felelősség nem ruházható át a gépekre."
+          "speaker": "Kutató",
+          "text": "Tehát a két rendszer másképp dolgozik."
         }
       ],
       "options": [
-        "tudással",
-        "tudás",
-        "tudást"
+        "képest",
+        "mint",
+        "szerint"
       ],
       "correct": 0,
       "teaches": [
-        "scalar-adverbs"
+        "kepest"
       ]
     },
     {
@@ -136,12 +141,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a comparative analysis of human vs. machine intelligence using a scalar comparative adverbial.",
-          "answer": "Bár a modern szuperszámítógépek felülmúlhatatlanul gyorsabbak az adatok puszta kalkulációjában, az emberi elme a neurális plaszticitás révén sokkal rugalmasabban adaptálódik a komplex etikai helyzetekhez és lényegesen mélyebb szemantikai megértést tanúsít."
+          "prompt": "Write one sentence that compares the brain and the computer, with *-hoz képest*.",
+          "answer": "A számítógéphez képest az agy lassabban számol, de rugalmasabban gondolkodik."
         }
       ],
       "teaches": [
-        "scalar-adverbs"
+        "kepest"
       ]
     },
     {
@@ -149,15 +154,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik fokozó hasonlító határozói forma állítja szembe az elmét és a gépet a legpontosabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "lényegesen mélyebb szemantikai megértést tanúsítva",
-        "a memóriaműveleteket pusztán mechanikus sorrendben végrehajtva",
-        "a statisztikai hibákat kizárólag determinisztikus módon korrigálva"
+        "A számítógéphez képest az agy lassabb.",
+        "A számítógép képest az agy lassabb.",
+        "A számítógéptől képest az agy lassabb."
       ],
       "correct": 0,
       "teaches": [
-        "scalar-adverbs"
+        "kepest"
       ]
     }
   ]

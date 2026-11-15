@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi Karl Popper demarkációs kritériumának lényege a tudományosság meghatározásában?",
+      "question": "Mit jelent a *cáfolhatóság* Popper szerint?",
       "options": [
-        "Egy elmélet csak akkor tekinthető tudományosnak, ha elvileg cáfolható (falszifikálható), vagyis megfogalmazható olyan lehetséges empirikus tapasztalat, amely megdöntheti.",
-        "Az, hogy egy elmélet hipotéziseit sikerül-e minél több megismételt kísérlettel és empirikus adattal megbízhatóan igazolni.",
-        "Az, hogy az elmélet tételei szigorúan levezethetők-e a formális logika bevett axiómáiból és matematikai alapelveiből."
+        "Egy elméletről elvileg ki lehet mutatni, hogy téves.",
+        "Egy elmélet annál jobb, minél többen hisznek benne.",
+        "Egy elmélet akkor igaz, ha a tudósok egyhangúlag elfogadják."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A hipotézist kísérleti cáfolatnak _____ a kutatók igazolták annak érvényességét.",
-      "hint": "kitesz + -ve",
-      "answer": "kitéve",
-      "english": "Subjecting the hypothesis to experimental falsification researchers confirmed its validity.",
+      "sentence": "A kutatók az elméletet kísérleti cáfolatnak _____ keresik a hibákat.",
+      "hint": "kitesz, adverbial participle",
+      "english": "Subjecting the theory to experimental refutation, the researchers look for mistakes.",
       "teaches": [
-        "participial-clauses"
+        "participle-actions"
+      ],
+      "answers": [
+        "kitéve"
       ]
     },
     {
@@ -37,20 +39,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "falszifikáció",
-          "az elmélet tapasztalati cáfolatának kísérlete"
-        ],
-        [
           "cáfolhatóság",
-          "a tudományosság alapkövetelménye: elvi megdönthetőség"
+          "falsifiability"
         ],
         [
           "fallibilizmus",
-          "annak beismerése, hogy minden tudásunk esendő és korrigálható"
+          "fallibilism"
         ],
         [
           "demarkációs vonal",
-          "a valódi tudomány és a dogmatikus áltudomány közötti határ"
+          "demarcation line"
+        ],
+        [
+          "dogmatizmus",
+          "dogmatism"
         ]
       ],
       "teaches": [
@@ -62,12 +64,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A dogmatikus feltevéseket elszántan _____ a kutatók megőrizték a módszertani szigort.",
-      "hint": "elutasít + -va",
-      "answer": "elutasítva",
-      "english": "Rejecting dogmatic assumptions determinedly researchers preserved methodological rigor.",
+      "sentence": "A tévedést _____ a tudós megőrzi a hitelét.",
+      "hint": "beismer, adverbial participle",
+      "english": "By admitting the mistake, the scientist keeps his credibility.",
       "teaches": [
-        "participial-clauses"
+        "participle-actions"
+      ],
+      "answers": [
+        "beismerve",
+        "elismerve"
       ]
     },
     {
@@ -77,27 +82,29 @@
       "stage": "practice",
       "tiles": [
         "A",
+        "cáfolhatatlan",
+        "állításokat",
+        "elutasítva",
+        "a",
         "tudomány",
-        "az",
-        "elméleteket",
-        "cáfolatnak",
-        "kitéve",
-        "halad",
-        "előre."
+        "elválik",
+        "a",
+        "dogmától."
       ],
       "solution": [
         "A",
+        "cáfolhatatlan",
+        "állításokat",
+        "elutasítva",
+        "a",
         "tudomány",
-        "az",
-        "elméleteket",
-        "cáfolatnak",
-        "kitéve",
-        "halad",
-        "előre."
+        "elválik",
+        "a",
+        "dogmától."
       ],
-      "english": "Subjecting theories to falsification science advances forward.",
+      "english": "Rejecting claims that cannot be refuted, science separates itself from dogma.",
       "teaches": [
-        "participial-clauses"
+        "participle-actions"
       ]
     },
     {
@@ -108,26 +115,30 @@
       "prompt": [
         {
           "speaker": "Biológus",
-          "text": "Miért nem tekinthető tudományosnak a kreacionizmus?"
+          "text": "Miért kell egy elméletet újra és újra próbára tenni?"
         },
         {
           "speaker": "Filozófus",
-          "text": "Mert nem teszi ki magát a cáfolatnak: a cáfolhatóság követelményét _____ dogmává merevedik."
+          "text": "A jó tudós a hibát _____, és így tanul belőle."
         },
         {
           "speaker": "Biológus",
-          "text": "A tudomány éppen a tévedés lehetőségétől tudomány."
+          "text": "Értem, a hibából is lehet tudást nyerni."
         }
       ],
       "options": [
-        "megkerülve",
-        "megkerülni",
-        "megkerülését"
+        "beismerve",
+        "beismerni",
+        "beismerés"
       ],
       "correct": 0,
       "teaches": [
-        "participial-clauses"
-      ]
+        "participle-actions"
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "nominalization"
+      }
     },
     {
       "id": "c1-34-02-production-7",
@@ -136,12 +147,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence analyzing scientific falsification using a participial clause.",
-          "answer": "A kutatók az új hipotéziseket szisztematikus kísérleti cáfolatnak kitéve és a módszertani fallibilizmus elvét érvényesítve választják el a valódi tudományos eredményeket a dogmatikus áltudománytól."
+          "prompt": "Write one sentence about how a scientist treats a theory, with a *-va/-ve* participle.",
+          "answer": "Az elméletet cáfolatnak kitéve a tudós ellenőrzi, hogy igaz-e."
         }
       ],
       "teaches": [
-        "participial-clauses"
+        "participle-actions"
       ]
     },
     {
@@ -149,16 +160,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fogalmazza meg a tudományos cáfolhatóságot a legszakszerűbben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "az elméleteket kísérleti cáfolatnak kitéve és a tévedhetetlenséget elutasítva",
-        "pusztán a látszólagos megerősítő tényekre hagyatkozva",
-        "amikor a vizsgálat kerüli a kényelmetlen anomáliákat"
+        "A hibát elismerve a kutató újra elvégzi a kísérletet.",
+        "A hibát elismerni a kutató újra elvégzi a kísérletet.",
+        "A hiba elismerve a kutató újra elvégzi a kísérletet."
       ],
       "correct": 0,
       "teaches": [
-        "participial-clauses"
-      ]
+        "participle-actions"
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni"
+      }
     }
   ]
 }

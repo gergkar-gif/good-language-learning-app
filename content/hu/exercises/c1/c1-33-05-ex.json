@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan fogta fel Babits Mihály az európai irodalom lényegét főművében?",
+      "question": "Mit jelent a *szellemi kontinuitás*?",
       "options": [
-        "Egyetlen élő, szerves szellemi egységként, amelyben minden nemzet irodalma egy közös humanista örökség és folytonos párbeszéd része.",
-        "A nemzeti irodalmak egymástól elszigetelt, független fejlődéstörténeteként.",
-        "A világirodalmi művek kronológiai bibliográfiájaként."
+        "Az eszmék és értékek folytonossága egyik korszakból a másikba.",
+        "A szellemi munka egyszeri, megismételhetetlen pillanata.",
+        "Az iskolai tanulmányok és vizsgák rendszere egy országban."
       ],
       "correct": 0,
       "teaches": [
@@ -20,16 +20,17 @@
     {
       "id": "c1-33-05-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "Ahogyan az antikvitás megteremtette a formát, _____ teljesedett ki a reneszánsz szellemisége.",
-      "hint": "ahogyan … ___",
-      "english": "As antiquity created the form, so was the spirit of the Renaissance fulfilled.",
+      "sentence": "Ahogyan a régi költők tanultak a görögöktől, _____ tanultak a későbbiek a régiektől.",
+      "hint": "ahogyan … (correlative word)",
+      "english": "As the old poets learned from the Greeks, so the later ones learned from the old.",
       "teaches": [
-        "evaluative-stance"
+        "c1-literary-modernism-vocab"
       ],
       "answers": [
-        "úgy"
+        "úgy",
+        "akként"
       ]
     },
     {
@@ -39,20 +40,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Az európai irodalom története",
-          "Babits monumentális, antifasiszta humanista kánonszintézise"
+          "szerves egység",
+          "organic unity"
         ],
         [
-          "szerves egység",
-          "a kultúrák elválaszthatatlan belső összefonódása"
+          "kánonszintézis",
+          "canon synthesis"
         ],
         [
           "szellemi kontinuitás",
-          "az emberi értékek töretlen áthagyományozódása a korszakokon át"
+          "intellectual continuity"
         ],
         [
-          "szellemi világpolgárság",
-          "nyitottság az egyetemes kultúra minden kincsére a nemzeti gyökerekből kiindulva"
+          "közös emlékezet",
+          "shared memory"
         ]
       ],
       "teaches": [
@@ -64,14 +65,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Amennyire terjed a barbárság, _____ sürgetőbb a humanista kánon védelme.",
-      "hint": "amennyire … ___",
-      "english": "As much as barbarism spreads, so much more urgent is the defense of the humanist canon.",
+      "sentence": "Minél jobban ismerjük a hagyományt, _____ mélyebben értjük a verset.",
+      "hint": "minél … (correlative word)",
+      "english": "The better we know the tradition, the more deeply we understand the poem.",
       "teaches": [
-        "evaluative-stance"
+        "correlative-minel-annal"
       ],
       "answers": [
-        "annyira"
+        "annál"
       ]
     },
     {
@@ -80,32 +81,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Ahogyan",
-        "az",
-        "európai",
-        "szellem",
-        "egységes,",
-        "úgy",
-        "marad",
-        "fenn",
+        "Minél",
+        "több",
+        "fordítás",
+        "készül,",
+        "annál",
+        "ismertebb",
+        "lesz",
         "a",
-        "kultúra."
+        "mű."
       ],
       "solution": [
-        "Ahogyan",
-        "az",
-        "európai",
-        "szellem",
-        "egységes,",
-        "úgy",
-        "marad",
-        "fenn",
+        "Minél",
+        "több",
+        "fordítás",
+        "készül,",
+        "annál",
+        "ismertebb",
+        "lesz",
         "a",
-        "kultúra."
+        "mű."
       ],
-      "english": "As the European spirit is unified, so does culture endure.",
+      "english": "The more translations are made, the better known the work becomes.",
       "teaches": [
-        "evaluative-stance"
+        "correlative-minel-annal"
       ]
     },
     {
@@ -115,26 +114,26 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Egyetemi professzor",
-          "text": "Mi Babits irodalomtörténetének legidőszerűbb üzenete ma?"
+          "speaker": "Professzor",
+          "text": "Hogyan kapcsolódik egymáshoz az európai irodalom?"
         },
         {
           "speaker": "Doktorandusz",
-          "text": "Az, hogy ahogyan a múltban a barbárság pusztított, úgy kell ma is őriznünk a szellemi kontinuitás _____."
+          "text": "Ahogyan a folyók a tengerbe ömlenek, _____ egyesül minden nemzeti irodalom a közös kánonban."
         },
         {
-          "speaker": "Egyetemi professzor",
-          "text": "A kultúra a legfőbb védőpajzsunk az elbutulással szemben."
+          "speaker": "Professzor",
+          "text": "Ez szép hasonlat."
         }
       ],
       "options": [
-        "fényét",
-        "fénye",
-        "fényének"
+        "úgy",
+        "mint",
+        "hogy"
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "c1-literary-modernism-vocab"
       ]
     },
     {
@@ -144,12 +143,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a synthesis of the European literary canon using evaluative correlative syntax.",
-          "answer": "Ahogyan az antikvitás és a reneszánsz megteremtette a polgári szabadság és a forma harmóniáját, úgy bizonyítja Babits Mihály remekműve, hogy a nemzeti kultúra kizárólag az egyetemes európai kánon szerves részeként töltheti be hivatását."
+          "prompt": "Write one sentence about European literature with *ahogyan … úgy*.",
+          "answer": "Ahogyan a folyók a tengerbe ömlenek, úgy egyesül minden nemzeti irodalom a közös kánonban."
         }
       ],
       "teaches": [
-        "evaluative-stance"
+        "c1-literary-modernism-vocab"
       ]
     },
     {
@@ -157,15 +156,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik páros szerkezet valósítja meg a világirodalmi kánonszintézis kifejezését?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "ahogyan Homérosz és Dante kijelölte a szellem útját, úgy fogja össze a mű az európai kontinuitást",
-        "amikor az olvasó kronológiai sorrendben halad a könyvtári katalógusban",
-        "ha az irodalmi műveket pusztán nyelvtani példatárként forgatjuk"
+        "Minél többet olvasunk, annál jobban értjük a verset.",
+        "Minél többet olvasunk, annyira jobban értjük a verset.",
+        "Minél többet olvasunk, minél jobban értjük a verset."
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "correlative-minel-annal"
       ]
     }
   ]

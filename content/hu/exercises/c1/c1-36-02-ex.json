@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért tekintette Eötvös József a népoktatást a jogállam legfontosabb alapjának?",
+      "question": "Mit jelent a *hatalommegosztás*?",
       "options": [
-        "Mert úgy vallotta: a szabadságjogokkal csak a kiművelt, önállóan gondolkodni képes és jogaival tisztában lévő polgárság tud felelősen élni.",
-        "Mert a közoktatás központosításával akarta erősíteni a bürokratikus államhatalmat.",
-        "Mert a népoktatást kizárólag a gazdasági adóbevételek növelése érdekében támogatta."
+        "A törvényhozás, a végrehajtás és a bíráskodás külön intézményeké.",
+        "A parlament minden ügyben egyedül dönt, mások nem szólhatnak bele.",
+        "Az államfő a hatalmat átadja a legidősebb tisztviselőnek."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A jogtiprással való együttműködést következetesen _____ polgárok megroppantották az önkényuralmat.",
-      "hint": "megtagad + -ó",
-      "answer": "megtagadó",
-      "english": "Citizens consistently refusing cooperation with rights violations broke the autocracy.",
+      "sentence": "Aki szabad, annak van _____.",
+      "hint": "szabad, abstract noun",
+      "english": "He who is free has freedom.",
       "teaches": [
-        "participial-clauses"
+        "sag-seg-nouns"
+      ],
+      "answers": [
+        "szabadsága",
+        "szabadság"
       ]
     },
     {
@@ -38,19 +41,19 @@
       "pairs": [
         [
           "hatalommegosztás",
-          "a törvényhozó, végrehajtó és bírói hatalom kölcsönös ellenőrzése"
+          "separation of powers"
         ],
         [
           "népoktatás",
-          "az államilag finanszírozott, kötelező és felekezetsemleges közoktatás"
+          "public education"
         ],
         [
           "lelkiismereti szabadság",
-          "a vallási és világnézeti meggyőződés szabad gyakorlása"
+          "freedom of conscience"
         ],
         [
           "jogegyenlőség",
-          "minden polgár azonos jogi státusza a törvény előtt kiváltságok nélkül"
+          "equality before the law"
         ]
       ],
       "teaches": [
@@ -62,12 +65,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A műveltséget a szabadság zálogának _____ Eötvös József megalkotta a modern népoktatási törvényt.",
-      "hint": "tekint + -ő",
-      "answer": "tekintő",
-      "english": "Regarding culture as the pledge of freedom, József Eötvös created modern public education.",
+      "sentence": "A lelkiismereti _____ azt jelenti, hogy mindenki a saját hite szerint élhet.",
+      "hint": "szabad, abstract noun",
+      "english": "Freedom of conscience means that everybody may live according to his or her own faith.",
       "teaches": [
-        "participial-clauses"
+        "sag-seg-nouns"
+      ],
+      "answers": [
+        "szabadság"
       ]
     },
     {
@@ -77,29 +82,31 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "feudális",
-        "kiváltságokat",
-        "felszámoló",
-        "törvények",
-        "megalapozták",
+        "jogegyenlőség",
+        "azt",
+        "jelenti,",
+        "hogy",
         "a",
-        "modern",
-        "jogállamot."
+        "törvény",
+        "mindenkire",
+        "egyformán",
+        "vonatkozik."
       ],
       "solution": [
         "A",
-        "feudális",
-        "kiváltságokat",
-        "felszámoló",
-        "törvények",
-        "megalapozták",
+        "jogegyenlőség",
+        "azt",
+        "jelenti,",
+        "hogy",
         "a",
-        "modern",
-        "jogállamot."
+        "törvény",
+        "mindenkire",
+        "egyformán",
+        "vonatkozik."
       ],
-      "english": "The laws dismantling feudal privileges laid the foundation of the modern rule of law.",
+      "english": "Equality before the law means that the law applies to everybody in the same way.",
       "teaches": [
-        "participial-clauses"
+        "sag-seg-nouns"
       ]
     },
     {
@@ -110,26 +117,29 @@
       "prompt": [
         {
           "speaker": "Történész",
-          "text": "Hogyan kapcsolódik össze a deáki ellenállás és az eötvösi intézményépítés?"
+          "text": "Mit jelent a lelkiismereti szabadság?"
         },
         {
-          "speaker": "Filozófus",
-          "text": "A jogtiprást passzív ellenállással megtagadó társadalom után Eötvös a szabadságot törvényi _____ védő intézményeket hozott létre."
+          "speaker": "Tanár",
+          "text": "Azt, hogy senki sem _____ másokat a saját hitére."
         },
         {
           "speaker": "Történész",
-          "text": "Ez a magyar liberalizmus aranykora."
+          "text": "Ez a vallásszabadság alapja."
         }
       ],
       "options": [
-        "garanciákkal",
-        "garanciákat",
-        "garanciáknak"
+        "kényszeríthet",
+        "kényszeríthetik",
+        "kényszeríteni"
       ],
       "correct": 0,
       "teaches": [
-        "participial-clauses"
-      ]
+        "potential-hat-het"
+      ],
+      "distractor_skills": {
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "c1-36-02-production-7",
@@ -138,12 +148,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence with a complex participial clause analyzing civic resistance.",
-          "answer": "A törvénytelen központosítást és az önkényuralmi zsarolást következetesen megtagadó és elveihez tántoríthatatlanul ragaszkodó polgárság nélkülözhetetlen erkölcsi alapot teremtett a jogállami intézmények újjáépítéséhez."
+          "prompt": "Write one sentence about a right, with a noun in *-ság/-ség*.",
+          "answer": "A jogegyenlőség azt jelenti, hogy a törvény mindenkire egyformán vonatkozik."
         }
       ],
       "teaches": [
-        "participial-clauses"
+        "sag-seg-nouns"
       ]
     },
     {
@@ -151,16 +161,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik mondatszerkezet valósít meg emelkedett participiális kifejezést?",
+      "question": "Melyik szó illik a mondatba? A törvény előtt mindenki egyenlő: ez a _____ elve.",
       "options": [
-        "A hatalommal való megalkuvást elutasító és az autonómiát védelmező polgárok",
-        "A törvényhozás mereven ragaszkodott a korábbi privilégiumokhoz",
-        "Amikor a társadalmi reformok elmaradása miatt passzivitásba vonult a közvélemény"
+        "jogegyenlőség",
+        "jogegyenlő",
+        "jogegyenlően"
       ],
       "correct": 0,
       "teaches": [
-        "participial-clauses"
-      ]
+        "sag-seg-nouns"
+      ],
+      "distractor_skills": {
+        "2": "an-en-adverb"
+      }
     }
   ]
 }

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik határozói kifejezés formulázza a rejtett megismerés természetét a legszakszerűbben?",
+      "question": "Melyik mondat fejez ki bizonytalanságot?",
       "options": [
-        "hallgatólagos tudásra támaszkodva",
-        "a megfigyeléseket pusztán mechanikus szabályok szerint rögzítve",
-        "amikor a kutató kizárólag a számszerűsíthető adatokra koncentrál"
+        "Nem zárható ki, hogy a kutató tévedett.",
+        "A kutató tévedett, ahogy az adatok mutatják.",
+        "A kutató tévedett, és ez bizonyos."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel fejezhető ki a tudományos cáfolhatóság metodológiája a leghitelesebben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "az elméleteket könyörtelen kísérleti cáfolatnak kitéve és a fallibilizmus elvét tiszteletben tartva",
-        "a felmerülő anomáliákat a meglévő elmélethez igazítva",
-        "amikor a vizsgálat kizárólag az igazoló tények gyűjtésére szorítkozik"
+        "Az elméletet cáfolatnak kitéve a tudós megvizsgálja, igaz-e.",
+        "Az elméletet cáfolatnak kitenni a tudós megvizsgálja, igaz-e.",
+        "Az elmélet cáfolatnak kitéve a tudós megvizsgálja, igaz-e."
       ],
       "correct": 0,
       "teaches": [
-        "participial-clauses"
-      ]
+        "participle-actions"
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "c1-34-consolidation-3",
@@ -65,9 +68,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Minden tudásunk esendő és felülvizsgálatra szorul a módszertani _____ szerint.",
+      "sentence": "A _____ szerint minden tudásunk tévedhet, ezért mindig felül kell vizsgálni.",
       "hint": "fallibilism",
-      "english": "All our knowledge is fallible and subject to revision according to methodological fallibilism.",
+      "english": "According to fallibilism, all our knowledge can be wrong, so it must always be re-examined.",
       "teaches": [
         "c1-philosophy-of-science-vocab"
       ],
@@ -80,9 +83,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A tudósok közössége központi parancsok nélkül, _____ rendben koordinálja munkáját.",
+      "sentence": "A tudósok közössége parancsok nélkül, _____ rendben dolgozik együtt.",
       "hint": "spontaneous",
-      "english": "The community of scientists coordinates its work in spontaneous order without central commands.",
+      "english": "The community of scientists works together in a spontaneous order, without commands.",
       "teaches": [
         "c1-philosophy-of-science-vocab"
       ],
@@ -95,12 +98,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A hipotézist szisztematikus cáfolatnak _____ választjuk el a tudományt a dogmáktól.",
-      "hint": "kitesz + -ve",
-      "answer": "kitéve",
-      "english": "Subjecting the hypothesis to systematic falsification we separate science from dogmas.",
+      "sentence": "Az elméletet cáfolatnak _____ a tudós megvizsgálja, igaz-e.",
+      "hint": "kitesz, adverbial participle",
+      "english": "Subjecting the theory to refutation, the scientist examines whether it is true.",
       "teaches": [
-        "participial-clauses"
+        "participle-actions"
+      ],
+      "answers": [
+        "kitéve"
       ]
     },
     {
@@ -109,11 +114,13 @@
       "category": "grammar",
       "stage": "context",
       "sentence": "A kutatónak etikai _____ az igazsághoz ragaszkodnia a politikai nyomással szemben.",
-      "hint": "kötelesség + -e",
-      "answer": "kötelessége",
-      "english": "It is the researcher's ethical duty to adhere to truth against political pressure.",
+      "hint": "kötelesség, 3sg possessive",
+      "english": "It is the researcher's ethical duty to stay with the truth against political pressure.",
       "teaches": [
         "formal-obligation"
+      ],
+      "answers": [
+        "kötelessége"
       ]
     },
     {
@@ -121,28 +128,30 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Amennyiben megfosztják a tudományt a szabadságtól, _____ elvész a felfedezés heurisztikus ereje.",
-      "hint": "amennyiben … ___",
-      "answer": "úgy",
-      "english": "Insofar as science is deprived of freedom, so the heuristic power of discovery is lost.",
+      "sentence": "A tudomány fejlődik, _____, hogy a kutatók szabadon dolgozhatnak.",
+      "hint": "conditional conjunction",
+      "english": "Science advances, provided that researchers can work freely.",
       "teaches": [
-        "past-conditional-volna"
+        "felteve-hogy-kiveve-ha"
+      ],
+      "answers": [
+        "feltéve"
       ]
     },
     {
       "id": "c1-34-consolidation-9",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "context",
-      "question": "Mi Polányi szerint a tudomány köztársaságának legfőbb gazdasági és társadalmi tanulsága?",
+      "question": "Mit jelent az, hogy *normál tudomány*?",
       "options": [
-        "A központi bürokratikus tervezés képtelen a felfedezések vezérlésére, így a társadalmi haladás záloga az autonóm önszerveződés és a szabadság.",
-        "A felfedezések üteme kizárólag a ráfordított pénzügyi támogatás nagyságától függ.",
-        "A tudományos kutatásokat a közvetlen piaci igények alapján kell megszervezni."
+        "A kutatás a meglévő paradigma keretei között folyik.",
+        "A kutatás olyan témákkal foglalkozik, amelyeket a diákok ismernek.",
+        "A kutatás hivatalos engedély nélkül, titokban folyik."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "c1-philosophy-of-science-vocab"
       ]
     },
     {
@@ -152,29 +161,31 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "tudományos",
-        "kutatás",
-        "szabadsága",
+        "kutatók",
+        "szabadon",
+        "választanak",
+        "témát,",
+        "kivéve,",
+        "ha",
         "a",
-        "modern",
-        "társadalom",
-        "legfőbb",
-        "értéke."
+        "törvény",
+        "tiltja."
       ],
       "solution": [
         "A",
-        "tudományos",
-        "kutatás",
-        "szabadsága",
+        "kutatók",
+        "szabadon",
+        "választanak",
+        "témát,",
+        "kivéve,",
+        "ha",
         "a",
-        "modern",
-        "társadalom",
-        "legfőbb",
-        "értéke."
+        "törvény",
+        "tiltja."
       ],
-      "english": "Freedom of scientific research is the paramount value of modern society.",
+      "english": "The researchers choose their topics freely, unless the law forbids it.",
       "teaches": [
-        "past-conditional-volna"
+        "felteve-hogy-kiveve-ha"
       ]
     },
     {
@@ -184,12 +195,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of scientific fallibilism using a participial clause.",
-          "answer": "A kutatók a felállított elméleteket szigorú empirikus cáfolatnak kitéve és a módszertani fallibilizmus elvét érvényesítve garantálják, hogy a tudomány mentes maradjon a politikai és ideológiai dogmáktól."
+          "prompt": "Write one sentence about a scientist who checks a theory, with a *-va/-ve* participle.",
+          "answer": "A hibát beismerve a kutató újra ellenőrzi az elméletet."
         }
       ],
       "teaches": [
-        "participial-clauses"
+        "participle-actions"
       ]
     },
     {
@@ -199,12 +210,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize the Republic of Science doctrine using hypothetical and deductive syntax.",
-          "answer": "Amennyiben az állam tiszteletben tartja a kutatás autonómiáját, úgy a tudósok köztársasága a spontán koordináció révén olyan heurisztikus erőt és innovációt teremt, amely az egész nemzet felemelkedését szolgálja."
+          "prompt": "Write one sentence about the freedom of research, with *feltéve, hogy* or *kivéve, ha*.",
+          "answer": "A tudomány szabadon fejlődik, feltéve, hogy a kutatók maguk választhatnak témát."
         }
       ],
       "teaches": [
-        "past-conditional-volna"
+        "felteve-hogy-kiveve-ha"
       ]
     }
   ]

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi az 'információs önrendelkezési jog' lényege az alkotmányjogban?",
+      "question": "Mit jelent az *információs önrendelkezés*?",
       "options": [
-        "Minden ember elidegeníthetetlen joga arra, hogy maga döntsön személyes adatainak kiszolgáltatásáról, kezeléséről és felhasználásáról az állami és piaci szereplőkkel szemben.",
-        "A rászoruló polgárok azon alanyi jogát, hogy az állam ingyenes szélessávú internet-hozzáférést és digitális eszközöket biztosítson számukra.",
-        "A piaci vállalatok törvényes felhatalmazását arra, hogy a fogyasztói szokásokról gyűjtött statisztikákat szabadon értékesítsék harmadik feleknek."
+        "Mindenki maga dönthet arról, mi történik a személyes adataival.",
+        "Mindenki köteles megadni a személyes adatait az államnak.",
+        "Mindenki szabadon eladhatja más emberek személyes adatait."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A jogállamnak alkotmányos _____ megvédeni a polgárok digitális magánszféráját.",
-      "hint": "kötelesség + -e",
-      "answer": "kötelessége",
-      "english": "It is the constitutional duty of the rule of law to protect citizens' digital privacy.",
+      "sentence": "A törvény azt írja elő, hogy a cég _____ az adatokat.",
+      "hint": "töröl, subjunctive 3sg definite",
+      "english": "The law requires the company to delete the data.",
       "teaches": [
-        "formal-obligation"
+        "hogy-jon-jen"
+      ],
+      "answers": [
+        "törölje"
       ]
     },
     {
@@ -38,19 +40,19 @@
       "pairs": [
         [
           "információs önrendelkezés",
-          "a személyes adatok feletti kizárólagos rendelkezés joga"
+          "informational self-determination"
+        ],
+        [
+          "adatszuverenitás",
+          "data sovereignty"
         ],
         [
           "kriptográfiai védelem",
-          "a kommunikáció titkosítása a lehallgatás ellen"
+          "encryption"
         ],
         [
           "algoritmikus elszámoltathatóság",
-          "a gépi döntéshozatal átláthatósága és számonkérhetősége"
-        ],
-        [
-          "digitális alkotmányosság",
-          "az alapjogok érvényesítése a virtuális térben"
+          "algorithmic accountability"
         ]
       ],
       "teaches": [
@@ -62,12 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Megalkuvást nem ismerve kell _____ az etikai normák érvényesülését a technológiában.",
-      "hint": "kikényszerít + -eni",
-      "answer": "kikényszeríteni",
-      "english": "Without compromise one must enforce ethical norms in technology.",
+      "sentence": "Az ügyfél kéri, hogy a cég ne _____ több adatot róla.",
+      "hint": "gyűjt, subjunctive 3sg indefinite",
+      "english": "The customer asks that the company collect no more data about him or her.",
       "teaches": [
-        "formal-obligation"
+        "hogy-jon-jen"
+      ],
+      "answers": [
+        "gyűjtsön"
       ]
     },
     {
@@ -76,28 +80,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "demokráciának",
-        "kötelessége",
-        "védeni",
+        "Az",
+        "ügyfél",
+        "kéri,",
+        "hogy",
         "a",
-        "polgárok",
-        "digitális",
-        "szabadságát."
+        "cég",
+        "törölje",
+        "az",
+        "adatait."
       ],
       "solution": [
-        "A",
-        "demokráciának",
-        "kötelessége",
-        "védeni",
+        "Az",
+        "ügyfél",
+        "kéri,",
+        "hogy",
         "a",
-        "polgárok",
-        "digitális",
-        "szabadságát."
+        "cég",
+        "törölje",
+        "az",
+        "adatait."
       ],
-      "english": "Democracy has a duty to defend citizens' digital freedom.",
+      "english": "The customer asks that the company delete his or her data.",
       "teaches": [
-        "formal-obligation"
+        "reported-commands"
       ]
     },
     {
@@ -108,26 +114,30 @@
       "prompt": [
         {
           "speaker": "Jogvédő",
-          "text": "Hogyan korlátozható a mesterséges intelligencia túlhatalma?"
+          "text": "Mit kér a felhasználó a cégtől?"
         },
         {
-          "speaker": "Informatikai etikus",
-          "text": "Úgy, hogy kötelességünk szigorú törvényi korlátokat szabni, és nem engedhető meg a polgárok megfigyelése megfelelő bírói _____ nélkül."
+          "speaker": "Etikus",
+          "text": "Azt kéri, hogy a cég _____ az adatait."
         },
         {
           "speaker": "Jogvédő",
-          "text": "Az emberi méltóság a digitális korban is érinthetetlen."
+          "text": "Ez érthető kérés."
         }
       ],
       "options": [
-        "kontroll",
-        "kontrollt",
-        "kontrollal"
+        "törölje",
+        "törli",
+        "törölni"
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
-      ]
+        "reported-commands"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "c1-35-03-production-7",
@@ -136,12 +146,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence declaring the duty of digital privacy using a deontic modal.",
-          "answer": "A modern jogállamnak alkotmányos kötelessége garantálni a polgárok információs önrendelkezését, és megalkuvást nem ismerve kell kikényszerítenie a technológiai cégektől és állami szervektől a privátszféra szentségének tiszteletben tartását."
+          "prompt": "Write one sentence about a request to a company, with *kéri, hogy* or *előírja, hogy*.",
+          "answer": "A felhasználó kéri, hogy a cég ne adja tovább az adatait."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "reported-commands"
       ]
     },
     {
@@ -149,16 +159,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik deontikus szerkezet fogalmazza meg a digitális etika követelményét a leghatározottabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "kötelessége garantálni az önrendelkezést",
-        "célszerű lenne a felhasználási feltételeket rugalmasan kezelni",
-        "az adatvédelmi előírásokat a piaci igényekhez célszerű igazítani"
+        "A törvény előírja, hogy az állam védje a polgárok adatait.",
+        "A törvény előírja, hogy az állam védi a polgárok adatait.",
+        "A törvény előírja, hogy az állam védeni a polgárok adatait."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
-      ]
+        "reported-commands"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     }
   ]
 }

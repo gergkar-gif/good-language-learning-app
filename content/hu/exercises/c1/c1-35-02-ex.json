@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevez Shoshana Zuboff 'megfigyelési kapitalizmusnak'?",
+      "question": "Mit jelent a *felhasználói profilozás*?",
       "options": [
-        "Azt a gazdasági rendszert, amely az emberi viselkedést és személyes tapasztalatot ingyenes nyersanyagként sajátítja ki, hogy viselkedési többletet állítson elő és prediktív algoritmusokkal manipulálja a döntéseinket.",
-        "A banki tranzakciók és digitális pénzmozgások állami felügyeletének azon rendszerét, amely a terrorfinanszírozás, pénzmosás és adócsalás megelőzésére szolgál a pénzügyi szektorban.",
-        "Az ipari gyártósorok, összeszerelő üzemek és logisztikai raktárak olyan automatizálását és gépesítését, amely a munkaerő kiváltásával csökkenti a vállalatok termelési költségeit."
+        "Egy cég a felhasználó szokásaiból képet készít róla.",
+        "Egy cég a felhasználó nevét törli az adatbázisból.",
+        "Egy cég a felhasználó jelszavát megváltoztatja a rendszerben."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A digitális szokásokat szisztematikusan _____ a rendszerek előre látják a reakcióinkat.",
-      "hint": "profiloz + -va",
-      "answer": "profilozva",
-      "english": "Systematically profiling digital habits systems foresee our reactions.",
+      "sentence": "A felhasználók szokásait _____ program profilt készít róluk.",
+      "hint": "követ, present participle",
+      "english": "A program that tracks users' habits makes a profile of them.",
       "teaches": [
         "participial-clauses"
+      ],
+      "answers": [
+        "követő"
       ]
     },
     {
@@ -38,19 +40,19 @@
       "pairs": [
         [
           "algoritmikus determinizmus",
-          "a szabad akarat felváltása a gépi döntéshozatal korlátaival"
+          "algorithmic determinism"
         ],
         [
-          "megfigyelési kapitalizmus",
-          "az emberi adatok haszonszerzési célú totális kizsákmányolása"
+          "felhasználói profilozás",
+          "user profiling"
         ],
         [
-          "viselkedési többlet",
-          "a működéshez nem szükséges, megfigyelésre használt adatfölösleg"
+          "digitális lábnyom",
+          "digital footprint"
         ],
         [
           "prediktív analitika",
-          "a jövőbeli emberi cselekvések valószínűségi kiszámítása"
+          "predictive analytics"
         ]
       ],
       "teaches": [
@@ -62,12 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A magánszférát kíméletlenül _____ a digitális platformok aláássák a demokráciát.",
-      "hint": "felszámol + -va",
-      "answer": "felszámolva",
-      "english": "Ruthlessly eroding privacy digital platforms undermine democracy.",
+      "sentence": "A platform által _____ adatok alapján a cég előre jelzi a vásárlásainkat.",
+      "hint": "gyűjt, past participle",
+      "english": "On the basis of the data collected by the platform, the company predicts our purchases.",
       "teaches": [
-        "participial-clauses"
+        "past-participle-adjective"
+      ],
+      "answers": [
+        "gyűjtött"
       ]
     },
     {
@@ -76,26 +80,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "platformok",
-        "az",
-        "adatokat",
-        "profilozva",
-        "manipulálják",
-        "a",
-        "társadalmat."
+        "Az",
+        "adatainkat",
+        "gyűjtő",
+        "cég",
+        "profilt",
+        "készít",
+        "rólunk."
       ],
       "solution": [
-        "A",
-        "platformok",
-        "az",
-        "adatokat",
-        "profilozva",
-        "manipulálják",
-        "a",
-        "társadalmat."
+        "Az",
+        "adatainkat",
+        "gyűjtő",
+        "cég",
+        "profilt",
+        "készít",
+        "rólunk."
       ],
-      "english": "Profiling data platforms manipulate society.",
+      "english": "The company that collects our data makes a profile of us.",
       "teaches": [
         "participial-clauses"
       ]
@@ -108,26 +110,30 @@
       "prompt": [
         {
           "speaker": "Szociológus",
-          "text": "Hogyan hat a közösségi média az egyéni autonómiára?"
+          "text": "Miért veszélyes az adatgyűjtés?"
         },
         {
           "speaker": "Médiaetikus",
-          "text": "Úgy, hogy a felhasználói viselkedést szüntelenül monitorozva és prediktív buborékokba _____ megfosztja az embert a valódi választás szabadságától."
+          "text": "Az adatokat _____ cég profilt készít rólunk."
         },
         {
           "speaker": "Szociológus",
-          "text": "Ez a modern rabság legkifinomultabb formája."
+          "text": "Értem, ezért fontos tudni, ki gyűjti az adatainkat."
         }
       ],
       "options": [
-        "zárva",
-        "zárni",
-        "zárást"
+        "gyűjtő",
+        "gyűjt",
+        "gyűjteni"
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "c1-35-02-production-7",
@@ -136,8 +142,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critique of algorithmic determinism using a participial clause.",
-          "answer": "A digitális óriásvállalatok a felhasználók minden rezdülését szisztematikusan profilozva és az egyéni autonómiát algoritmikus determinizmus alá hajtva olyan megfigyelési kapitalizmust hoztak létre, amely felszámolja a polgári szabadság alapjait."
+          "prompt": "Write one sentence about a company and our data, with a participle before the noun.",
+          "answer": "Az adatainkat gyűjtő cég sokat tud rólunk."
         }
       ],
       "teaches": [
@@ -149,16 +155,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet leplezi le az algoritmikus kontrollt a legpontosabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "a digitális lábnyomokat szisztematikusan profilozva és az autonómiát korlátozva",
-        "a digitális felületeket pusztán technikai eszközként értelmezve",
-        "amikor a felhasználók önként osztanak meg személyes adatokat"
+        "A szokásainkat követő program profilt készít.",
+        "A szokásainkat követni program profilt készít.",
+        "A szokásainkat követés program profilt készít."
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "nominalization"
+      }
     }
   ]
 }

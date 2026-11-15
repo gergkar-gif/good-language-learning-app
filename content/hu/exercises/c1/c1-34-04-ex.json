@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevez Thomas Kuhn 'paradigmaváltásnak' a tudománytörténetben?",
+      "question": "Mit jelent az, hogy *paradigmaváltás*?",
       "options": [
-        "Azt a forradalmi folyamatot, amikor a felhalmozódó anomáliák hatására a korábbi uralkodó elméleti és módszertani keret összeomlik, és egy új, összemérhetetlen világkép lép a helyébe.",
-        "A tudományos ismeretek fokozatos, kumulatív felhalmozódását a meglévő elméleti és módszertani keretek fenntartása mellett.",
-        "A laboratóriumi mérőeszközök és kísérleti berendezések technológiai korszerűsítésének rendszeres, ciklikus megújulását."
+        "A tudomány alapfeltevései és fogalmai gyökeresen megváltoznak.",
+        "A kutatók új laboratóriumba költöznek át a városban.",
+        "Egy kísérletet többször megismételnek, és ugyanazt kapják."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az új elmélet radikálisabban _____ át a világképet, mint a korábbi hipotézisek.",
-      "hint": "formál, past",
-      "answer": "formálta",
-      "english": "The new theory transformed the worldview more radically than previous hypotheses.",
+      "sentence": "Az anomáliák száma _____ nőtt, mielőtt az új elmélet megjelent.",
+      "hint": "drastically",
+      "english": "The number of anomalies grew drastically before the new theory appeared.",
       "teaches": [
         "scalar-adverbs"
+      ],
+      "answers": [
+        "drasztikusan",
+        "számottevően",
+        "jelentősen"
       ]
     },
     {
@@ -38,19 +42,19 @@
       "pairs": [
         [
           "paradigmaváltás",
-          "az uralkodó tudományos világkép gyökeres megváltozása"
+          "paradigm shift"
         ],
         [
           "normál tudomány",
-          "a meglévő paradigma keretein belüli rutinszerű kutatómunka"
+          "normal science"
         ],
         [
           "anomália",
-          "a jelenlegi elmélet által megmagyarázhatatlan kísérleti jelenség"
+          "anomaly"
         ],
         [
           "összemérhetetlenség",
-          "a versengő paradigmák közös fogalmi mérce nélküli eltérése"
+          "incommensurability"
         ]
       ],
       "teaches": [
@@ -62,12 +66,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A kvantumfizika sokkal átfogóbban _____ a mikrovilágot, mint a newtoni modell.",
-      "hint": "magyaráz, past",
-      "answer": "magyarázta",
-      "english": "Quantum physics explained the microworld much more comprehensively than the Newtonian model.",
+      "sentence": "Az új elmélet _____ magyarázza az anomáliákat, mint a régi.",
+      "hint": "átfogó (comprehensive), comparative adverb",
+      "english": "The new theory explains the anomalies more comprehensively than the old one.",
       "teaches": [
-        "scalar-adverbs"
+        "comparative-bb"
+      ],
+      "answers": [
+        "átfogóbban"
       ]
     },
     {
@@ -76,26 +82,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "új",
-        "paradigma",
-        "radikálisabban",
-        "szakított",
-        "a",
-        "múlt",
-        "dogmáival."
+        "A",
+        "kísérlet",
+        "eredménye",
+        "szembeötlően",
+        "különbözik",
+        "az",
+        "előrejelzéstől."
       ],
       "solution": [
-        "Az",
-        "új",
-        "paradigma",
-        "radikálisabban",
-        "szakított",
-        "a",
-        "múlt",
-        "dogmáival."
+        "A",
+        "kísérlet",
+        "eredménye",
+        "szembeötlően",
+        "különbözik",
+        "az",
+        "előrejelzéstől."
       ],
-      "english": "The new paradigm broke more radically with the dogmas of the past.",
+      "english": "The experiment's result differs strikingly from the prediction.",
       "teaches": [
         "scalar-adverbs"
       ]
@@ -108,26 +112,29 @@
       "prompt": [
         {
           "speaker": "Fizikatörténész",
-          "text": "Hogyan értékelhető a relativitáselmélet hatása a modern ember gondolkodására?"
+          "text": "Hogyan változott a fizika az új elmélettel?"
         },
         {
           "speaker": "Filozófus",
-          "text": "Úgy, hogy felülmúlhatatlanul forradalmasítva a fogalmi kereteket, sokkal mélyebbre hatolt a kozmosz titkaiba, mint bármely korábbi _____."
+          "text": "Az új elmélet _____ megváltoztatta a fogalmakat."
         },
         {
           "speaker": "Fizikatörténész",
-          "text": "Ez volt a huszadik század legnagyobb episztemológiai fordulata."
+          "text": "Akkor ez tényleg paradigmaváltás volt."
         }
       ],
       "options": [
-        "elmélet",
-        "elméletet",
-        "elmélettel"
+        "számottevően",
+        "számottevő",
+        "számottevőbb"
       ],
       "correct": 0,
       "teaches": [
         "scalar-adverbs"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "comparative-bb"
+      }
     },
     {
       "id": "c1-34-04-production-7",
@@ -136,8 +143,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a comparative analysis of a paradigm shift using a scalar comparative adverbial.",
-          "answer": "Az új tudományos paradigma sokkal átfogóbban szintetizálva a felhalmozódott anomáliákat és radikálisabban szakítva a mechanisztikus világképpel, felülmúlhatatlanul forradalmasította a modern fizika fogalmi alapjait."
+          "prompt": "Write one sentence about how strongly a new paradigm changed science, with a degree adverb.",
+          "answer": "Az új paradigma számottevően megváltoztatta a tudomány fogalmait."
         }
       ],
       "teaches": [
@@ -149,16 +156,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik fokozó hasonlító határozói forma írja le a tudományos forradalmat a legpontosabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "radikálisabban szakítva a dogmákkal",
-        "a meglévő feltevéseket csak részlegesen módosítva a kísérletek során",
-        "a korábbi elméleti keretet fenntartva a felmerülő anomáliák ellenére"
+        "Az új elmélet átfogóbban magyarázza a jelenségeket, mint a régi.",
+        "Az új elmélet átfogó magyarázza a jelenségeket, mint a régi.",
+        "Az új elmélet átfogóan magyarázza a jelenségeket, mint a régi."
       ],
       "correct": 0,
       "teaches": [
-        "scalar-adverbs"
-      ]
+        "comparative-bb"
+      ],
+      "distractor_skills": {
+        "2": "an-en-adverb"
+      }
     }
   ]
 }

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért a független szakmai lektorálás (peer review) a modern tudomány legfőbb minőségi garanciája?",
+      "question": "Mit jelent az *adatintegritás*?",
       "options": [
-        "Mert biztosítja, hogy egy kutatási eredményt a szakterület független szakértői anonim módon, szigorú módszertani és etikai szempontok alapján ellenőrizzenek a publikálás előtt.",
-        "Mert adminisztratív módon elősegíti, hogy a közlemények a folyóirat szerkesztőbizottságának tematikus prioritásaihoz igazodjanak.",
-        "Mert biztosítja, hogy minden benyújtott kézirat azonnal megjelenhessen anélkül, hogy vitába keveredne a meglévő elméletekkel."
+        "Az adatok hitelesek, és senki nem változtatta meg őket.",
+        "Az adatok szépen rendezve vannak egy nagy táblázatban.",
+        "Az adatok minden kutató számára ingyen elérhetők a hálón."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A tudósnak etikai _____ a tényekhez ragaszkodni, még ha kellemetlenek is.",
-      "hint": "kötelesség + -e",
-      "answer": "kötelessége",
-      "english": "It is the scientist's ethical duty to stick to facts even if they are uncomfortable.",
+      "sentence": "A kutató _____ beismerni, ha az adatok nem igazolják az elméletét.",
+      "hint": "obliged (adjective)",
+      "english": "The researcher is obliged to admit it if the data do not confirm his theory.",
       "teaches": [
         "formal-obligation"
+      ],
+      "answers": [
+        "köteles",
+        "kénytelen"
       ]
     },
     {
@@ -37,20 +40,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "episztemikus szigor",
-          "a bizonyítási eljárások megalkuvás nélküli pontossága"
-        ],
-        [
           "adatintegritás",
-          "a mérési eredmények torzítatlan és hiteles megőrzése"
+          "data integrity"
         ],
         [
           "szakmai lektorálás",
-          "a kéziratok független tudományos szakértői ellenőrzése"
+          "peer review"
         ],
         [
-          "tudományos objektivitás",
-          "mentesség minden személyes vagy politikai elfogultságtól"
+          "kutatási etika",
+          "research ethics"
+        ],
+        [
+          "eredmények hamisítása",
+          "falsification of results"
         ]
       ],
       "teaches": [
@@ -62,12 +65,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Megalkuvást nem ismerve kell _____ az adatok tisztasága felett.",
-      "hint": "őrködik + -ni",
-      "answer": "őrködni",
-      "english": "Without compromise one must watch over the purity of data.",
+      "sentence": "Az adatokat nem _____ meghamisítani.",
+      "hint": "allowed (adjective)",
+      "english": "The data must not be falsified.",
       "teaches": [
-        "formal-obligation"
+        "szabad-infinitive"
+      ],
+      "answers": [
+        "szabad"
       ]
     },
     {
@@ -77,25 +82,29 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "kutatónak",
-        "kötelessége",
-        "megvédeni",
+        "folyóirat",
+        "kénytelen",
+        "visszavonni",
         "a",
-        "tudományos",
-        "igazság",
-        "tisztaságát."
+        "cikket,",
+        "ha",
+        "az",
+        "adatok",
+        "hamisak."
       ],
       "solution": [
         "A",
-        "kutatónak",
-        "kötelessége",
-        "megvédeni",
+        "folyóirat",
+        "kénytelen",
+        "visszavonni",
         "a",
-        "tudományos",
-        "igazság",
-        "tisztaságát."
+        "cikket,",
+        "ha",
+        "az",
+        "adatok",
+        "hamisak."
       ],
-      "english": "It is the duty of the researcher to defend the purity of scientific truth.",
+      "english": "The journal is forced to withdraw the article if the data are false.",
       "teaches": [
         "formal-obligation"
       ]
@@ -107,27 +116,31 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Kutatóintézet vezetője",
-          "text": "Mit kell tennünk, ha a minisztérium a politikai elvárásokhoz igazított eredményeket kér?"
+          "speaker": "Intézetvezető",
+          "text": "Mit tegyünk, ha a megrendelő másféle eredményt vár?"
         },
         {
-          "speaker": "Akadémikus",
-          "text": "Alkotmányos kötelességünk megtagadni a manipulációt, és megalkuvást nem ismerve kiállni az adatok _____ mellett."
+          "speaker": "Kutató",
+          "text": "Az eredményeket nem szabad a megrendelőhöz _____."
         },
         {
-          "speaker": "Kutatóintézet vezetője",
-          "text": "A tudomány hitele mindennél fontosabb."
+          "speaker": "Intézetvezető",
+          "text": "Rendben, akkor megírom neki a valódi eredményeket."
         }
       ],
       "options": [
-        "integritása",
-        "integritását",
-        "integritásával"
+        "igazítani",
+        "igazít",
+        "igazítva"
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
-      ]
+        "szabad-infinitive"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "participle-actions"
+      }
     },
     {
       "id": "c1-34-03-production-7",
@@ -136,8 +149,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write an ethical declaration of scientific objectivity using a deontic modal.",
-          "answer": "A tudományos kutatóknak erkölcsi kötelességük ragaszkodni az episztemikus szigorhoz és a tényekhez, és megalkuvást nem ismerve kell megvédeniük az adatintegritást minden külső politikai és gazdasági nyomással szemben."
+          "prompt": "Write one sentence about a researcher's duty, with *köteles* or *kötelessége*.",
+          "answer": "A kutató köteles a valódi adatokat közölni."
         }
       ],
       "teaches": [
@@ -149,15 +162,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik deontikus szerkezet fogalmazza meg a kutatói felelősséget a leghatározottabban?",
+      "question": "Melyik mondat tilt valamit?",
       "options": [
-        "kötelessége ragaszkodni a tényekhez",
-        "célszerű lenne a vitás kérdéseket későbbre halasztani",
-        "érdemes a kényelmetlen anomáliákat figyelmen kívül hagyni"
+        "Az adatokat nem szabad meghamisítani.",
+        "Az adatokat lehet gyorsan ellenőrizni.",
+        "Az adatokat kell gyorsan ellenőrizni."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "szabad-infinitive"
       ]
     }
   ]

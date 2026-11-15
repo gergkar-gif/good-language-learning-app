@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik kifejezés elemzi a legszakszerűbben a költői szimbólumok jelentésrétegeit?",
+      "question": "Melyik kifejezés mondja meg, milyen szempontból olvassuk a verset?",
       "options": [
         "hermeneutikai szempontból vizsgálva",
-        "a verseskötetek formai kötészetét és tipográfiáját dicsérve",
-        "a verssorok rímképleteit mechanikusan lajstromozva"
+        "a lapokat egyenként megszámolva",
+        "a könyvet a polcra visszatéve"
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel mutatható fel a szövegi polifónia és többértelműség a leghitelesebben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "a motívumokat szervesen rétegezve és a belső ambivalenciát felszínre hozva",
-        "a drámai dialógusok hosszát stopperórával mérve",
-        "a regényfejezetek oldalszámát egyenletesen elosztva"
+        "A jelentést megnyitó kép több értelmezést enged.",
+        "A jelentést megnyitani kép több értelmezést enged.",
+        "A jelentést megnyitás kép több értelmezést enged."
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "nominalization"
+      }
     },
     {
       "id": "c1-33-consolidation-3",
@@ -81,9 +85,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Az európai irodalom nem elszigetelt művek halmaza, hanem egyetlen élő és _____ egység.",
+      "sentence": "Az európai irodalom nem több különálló irodalom, hanem egyetlen élő és _____ egység.",
       "hint": "organic",
-      "english": "European literature is not a heap of isolated works but a single living and organic unity.",
+      "english": "European literature is not several separate literatures but a single living and organic unity.",
       "teaches": [
         "c1-literary-modernism-vocab"
       ],
@@ -97,11 +101,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A vers képeit szemiotikailag _____ a mélyebb rétegek tárulnak fel.",
-      "hint": "dekódol + -va",
-      "english": "Decoding the poem's images semiotically deeper strata are revealed.",
+      "sentence": "A vers képeit szemiotikailag _____ a jelentésrétegeket is megtaláljuk.",
+      "hint": "dekódol, adverbial participle",
+      "english": "Decoding the poem's images semiotically, we also find the layers of meaning.",
       "teaches": [
-        "evaluative-stance"
+        "participle-actions"
       ],
       "answers": [
         "dekódolva"
@@ -125,32 +129,33 @@
     {
       "id": "c1-33-consolidation-8",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "context",
-      "sentence": "Ahogyan az antikvitás megteremtette az eszményt, _____ őrzi a kánon az örök értékeket.",
-      "hint": "ahogyan … ___",
-      "english": "As antiquity created the ideal, so does the canon preserve eternal values.",
+      "sentence": "Ahogyan az olvasó változik, _____ változik a vers jelentése is.",
+      "hint": "ahogyan … (correlative word)",
+      "english": "As the reader changes, so does the poem's meaning too.",
       "teaches": [
-        "evaluative-stance"
+        "c1-literary-modernism-vocab"
       ],
       "answers": [
-        "úgy"
+        "úgy",
+        "akként"
       ]
     },
     {
       "id": "c1-33-consolidation-9",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "context",
-      "question": "Mi Babits szerint az irodalmi kánon legfőbb hivatása válságos történelmi korszakokban?",
+      "question": "Mit jelent az, hogy az európai irodalom *szerves egység*?",
       "options": [
-        "A szellemi kontinuitás megőrzése és az egyetemes humánum felmutatása a politikai barbarizmussal és gyűlöletkeltéssel szemben.",
-        "A nemzeti könyvkiadók gazdasági nyereségének maximalizálása.",
-        "A klasszikus művek nyelvezetének leegyszerűsítése a tömegigények szerint."
+        "A részei egymással összefüggenek, mint egy élő test részei.",
+        "A részei ugyanabban az évben jelentek meg ugyanannál a kiadónál.",
+        "A részei ugyanazon a nyelven íródtak, ugyanazon a vidéken."
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "c1-literary-modernism-vocab"
       ]
     },
     {
@@ -190,8 +195,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of poetic polyphony using a participial clause.",
-          "answer": "A költő a különböző kulturális és bibliai motívumokat egymásra rétegezve olyan polifonikus rezonanciát kelt a szövegben, amely megnyitja a művet a végtelen hermeneutikai értelmezés előtt."
+          "prompt": "Write one sentence about a poem, with a participle before the noun.",
+          "answer": "A feszültséget fenntartó kép több értelmezést enged."
         }
       ],
       "teaches": [
@@ -205,12 +210,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize Babits's vision of European literature using evaluative correlative syntax.",
-          "answer": "Ahogyan az európai kultúra évezredeken átívelő kontinuitása táplálja a nemzeti öntudatot, úgy bizonyítja Babits szintézise, hogy az egyetemes humánum védelme a magyar irodalom legnemesebb hivatása."
+          "prompt": "Write one sentence about European literature with *ahogyan … úgy*.",
+          "answer": "Ahogyan a folyók a tengerbe ömlenek, úgy egyesül minden nemzeti irodalom az európai kánonban."
         }
       ],
       "teaches": [
-        "evaluative-stance"
+        "c1-literary-modernism-vocab"
       ]
     }
   ]

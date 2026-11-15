@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent az 'írástudók árulása' (Julien Benda és Babits szellemében)?",
+      "question": "Mit jelent az *írástudók árulása* kifejezés?",
       "options": [
-        "Azt a morális züllést, amikor az értelmiségiek és művészek feladják az egyetemes igazság és humánum védelmét, és behódolnak a nacionalista vagy totalitárius politikai hatalomnak.",
-        "A könyvkiadói szerződések felbontását és a szerzői jogi díjak jogosulatlan visszatartását a kereskedelmi kiadók részéről.",
-        "A tudományos és irodalmi plágium gyanújába keveredett publikációk visszavonását és a szerzői etikai normák megsértését."
+        "Az értelmiségiek nem szólnak az igazságról, pedig kötelességük volna.",
+        "A kiadók felbontják a szerződést a szerzőkkel, és nem fizetnek.",
+        "Az írók másolják egymás műveit, és nem jelölik meg a forrást."
       ],
       "correct": 0,
       "teaches": [
@@ -22,9 +22,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az alkotónak erkölcsi _____ a szellem tisztaságát védeni a totalitárius tébollyal szemben.",
-      "hint": "kötelesség + -e",
-      "english": "It is the moral duty of the creator to defend the purity of the spirit against totalitarian madness.",
+      "sentence": "Az alkotónak erkölcsi _____ kiállni az igazság mellett.",
+      "hint": "kötelesség, 3sg possessive",
+      "english": "It is the creator's moral duty to stand up for the truth.",
       "teaches": [
         "formal-obligation"
       ],
@@ -40,19 +40,19 @@
       "pairs": [
         [
           "esztétikai humanizmus",
-          "a művészet és a morál elválaszthatatlan egységébe vetett hit"
+          "aesthetic humanism"
         ],
         [
           "erkölcsi imperatívusz",
-          "belső, feltétlen etikai parancs a jó cselekvésére"
+          "moral imperative"
         ],
         [
           "egyetemes humánum",
-          "az emberi méltóság és szabadság határokon átívelő eszméje"
+          "universal humanity"
         ],
         [
-          "a szellem védelme",
-          "a kultúra autonómiájának megóvása a politikai önkénytől"
+          "morális autonómia",
+          "moral autonomy"
         ]
       ],
       "teaches": [
@@ -64,14 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Megalkuvást nem ismerve kell _____ a kultúra egyetemes értékei mellett.",
-      "hint": "kiáll + -ni",
-      "english": "Without compromise one must stand up for the universal values of culture.",
+      "sentence": "A költő _____ hűnek maradni a saját meggyőződéséhez.",
+      "hint": "obliged (adjective)",
+      "english": "The poet is obliged to stay true to his or her own conviction.",
       "teaches": [
         "formal-obligation"
       ],
       "answers": [
-        "kiállni"
+        "köteles"
       ]
     },
     {
@@ -83,23 +83,21 @@
         "Az",
         "írástudónak",
         "kötelessége",
-        "megvédeni",
-        "az",
-        "egyetemes",
-        "humánum",
-        "eszméjét."
+        "szólni,",
+        "ha",
+        "igazságtalanság",
+        "történik."
       ],
       "solution": [
         "Az",
         "írástudónak",
         "kötelessége",
-        "megvédeni",
-        "az",
-        "egyetemes",
-        "humánum",
-        "eszméjét."
+        "szólni,",
+        "ha",
+        "igazságtalanság",
+        "történik."
       ],
-      "english": "It is the duty of the intellectual to defend the idea of universal humanism.",
+      "english": "It is the intellectual's duty to speak up when an injustice happens.",
       "teaches": [
         "formal-obligation"
       ]
@@ -111,27 +109,31 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Filozófus",
-          "text": "Mi Babits 'Jónás könyve' című művének legfőbb erkölcsi tanítása?"
+          "speaker": "Hallgató",
+          "text": "Mit vár a közösség a költőtől?"
         },
         {
-          "speaker": "Irodalomtörténész",
-          "text": "Az, hogy a prófétának, a költőnek kötelessége hirdetnie az igazságot, mert 'vétkesek közt cinkos, aki _____ '."
+          "speaker": "Tanár",
+          "text": "Az írónak nem csak joga, hanem kötelessége is _____ az igazságról."
         },
         {
-          "speaker": "Filozófus",
-          "text": "A hallgatás maga a bűnrészesség."
+          "speaker": "Hallgató",
+          "text": "Értem, ez nagy felelősség."
         }
       ],
       "options": [
-        "néma",
-        "némán",
-        "némaság"
+        "beszélni",
+        "beszél",
+        "beszéljen"
       ],
       "correct": 0,
       "teaches": [
         "formal-obligation"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "hogy-jon-jen"
+      }
     },
     {
       "id": "c1-33-03-production-7",
@@ -140,8 +142,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a philosophical assertion of the writer's duty using a deontic modal structure.",
-          "answer": "Az írástudónak morális kötelessége ellenállni a barbár politikai ideológiák csábításának, és megalkuvást nem ismerve kell őrködnie az egyetemes humánum és az esztétikai autonómia megmaradása felett."
+          "prompt": "Write one sentence about a writer's duty, with *kötelessége* or *köteles*.",
+          "answer": "Az írónak kötelessége kiállni az emberi méltóság mellett."
         }
       ],
       "teaches": [
@@ -153,11 +155,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik deontikus szerkezet fejezi ki a szellemi ember erkölcsi felelősségét a legerőteljesebben?",
+      "question": "Melyik mondat fejez ki kötelességet?",
       "options": [
-        "kötelessége a szellem őrének lenni",
-        "a kulturális rendezvények látogatottságát adminisztratív eszközökkel növelve",
-        "az irodalmi estek jegybevételét megemelve"
+        "A költő köteles hűnek maradni az igazsághoz.",
+        "A költő képes hűnek maradni az igazsághoz.",
+        "A költő szeret hűnek maradni az igazsághoz."
       ],
       "correct": 0,
       "teaches": [

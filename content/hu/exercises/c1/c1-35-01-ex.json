@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent az információs entrópia Shannon elméletében?",
+      "question": "Mit mér az *információs entrópia*?",
       "options": [
-        "Egy üzenet vagy rendszer bizonytalanságának és információtartalmának mértékét: minél nagyobb az entrópia, annál nagyobb a kiszámíthatatlanság.",
-        "A processzorok és integrált áramkörök maximális fizikai órajelét és a mikrochipek másodpercenkénti számítási kapacitását.",
-        "A digitális telekommunikációs kábelek fizikai adatátviteli sebességét és sávszélességét a hálózati csomópontok között."
+        "Azt, hogy mennyire bizonytalan egy üzenet tartalma előre.",
+        "Azt, hogy mennyibe kerül egy üzenet elküldése.",
+        "Azt, hogy milyen gyorsan halad egy üzenet a kábelben."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A biológiai folyamatokat kibernetikailag _____ világossá válik az idegrendszer kódolási mechanizmusa.",
-      "hint": "modellez + -ve",
-      "answer": "modellezve",
-      "english": "Modeling biological processes cybernetically the nervous system's coding mechanism becomes clear.",
+      "sentence": "Könnyen _____, hogy a zaj miatt hiba került az üzenetbe.",
+      "hint": "may (be possible)",
+      "english": "It may well be that an error got into the message because of noise.",
       "teaches": [
-        "evaluative-stance"
+        "epistemic-modality"
+      ],
+      "answers": [
+        "meglehet"
       ]
     },
     {
@@ -38,19 +40,19 @@
       "pairs": [
         [
           "információs entrópia",
-          "a rendszer bizonytalanságának és információtartalmának mértéke"
+          "information entropy"
         ],
         [
           "kibernetikai visszacsatolás",
-          "az önszabályozó rendszerek működését vezérlő hurok"
-        ],
-        [
-          "algoritmikus komplexitás",
-          "a számítási feladat megoldásához szükséges lépések száma"
+          "cybernetic feedback loop"
         ],
         [
           "zaj és redundancia",
-          "az átviteli csatorna hibái és a biztonsági jeltöbblet"
+          "noise and redundancy"
+        ],
+        [
+          "információelmélet",
+          "information theory"
         ]
       ],
       "teaches": [
@@ -62,12 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az adatokat információelméleti szempontból _____ új törvényszerűségek mutathatók ki.",
-      "hint": "vizsgál + -va",
-      "answer": "vizsgálva",
-      "english": "Examining the data from an information theory perspective new regularities can be shown.",
+      "sentence": "Nem _____, hogy az adatok egy része elveszett az átvitel közben.",
+      "hint": "impossible (adjective)",
+      "english": "It is not impossible that part of the data was lost in transmission.",
       "teaches": [
-        "evaluative-stance"
+        "epistemic-modality"
+      ],
+      "answers": [
+        "kizárt"
       ]
     },
     {
@@ -77,27 +81,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "folyamatokat",
-        "kibernetikailag",
-        "modellezve",
-        "minimalizálható",
-        "az",
-        "információs",
-        "zaj."
+        "jelben",
+        "zaj",
+        "kellett,",
+        "hogy",
+        "legyen."
       ],
       "solution": [
         "A",
-        "folyamatokat",
-        "kibernetikailag",
-        "modellezve",
-        "minimalizálható",
-        "az",
-        "információs",
-        "zaj."
+        "jelben",
+        "zaj",
+        "kellett,",
+        "hogy",
+        "legyen."
       ],
-      "english": "Modeling processes cybernetically information noise can be minimized.",
+      "english": "There must have been noise in the signal.",
       "teaches": [
-        "evaluative-stance"
+        "epistemic-modality"
       ]
     },
     {
@@ -108,26 +108,30 @@
       "prompt": [
         {
           "speaker": "Adattudós",
-          "text": "Hogyan képes a mesterséges intelligencia felismerni az emberi hangot?"
+          "text": "Miért nem érte el az üzenet a címzettet?"
         },
         {
           "speaker": "Kibernetikus",
-          "text": "Úgy, hogy algoritmikusan leképezve a hanghullámokat csökkenti a rendszerben lévő _____."
+          "text": "Könnyen meglehet, hogy a zaj _____ a jelet."
         },
         {
           "speaker": "Adattudós",
-          "text": "Ez a valószínűségi modellezés diadala."
+          "text": "Akkor érdemes újra elküldeni."
         }
       ],
       "options": [
-        "entrópiát",
-        "entrópia",
-        "entrópiának"
+        "megzavarta",
+        "megzavarni",
+        "megzavarva"
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
-      ]
+        "epistemic-modality"
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "participle-actions"
+      }
     },
     {
       "id": "c1-35-01-production-7",
@@ -136,12 +140,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence analyzing digital systems using a cybernetic evaluative adverbial.",
-          "answer": "Az emberi agy és a számítógépek működését kibernetikailag modellezve és információelméleti szempontból vizsgálva nyilvánvalóvá válik, hogy mindkét struktúra a valószínűségi statisztika és az entrópia törvényeit követi."
+          "prompt": "Write one sentence about what may have gone wrong in a message, with *nem kizárt, hogy*.",
+          "answer": "Nem kizárt, hogy a zaj miatt hiba került az üzenetbe."
         }
       ],
       "teaches": [
-        "evaluative-stance"
+        "epistemic-modality"
       ]
     },
     {
@@ -149,15 +153,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozói kifejezés fogalmazza meg a digitális információelméletet a legszakszerűbben?",
+      "question": "Melyik mondat fejez ki lehetőséget?",
       "options": [
-        "információelméleti szempontból vizsgálva",
-        "a számítási folyamatokat kizárólag hardveres szintre korlátozva",
-        "amikor az adatfeldolgozás figyelmen kívül hagyja a statisztikai zajt"
+        "Nem kizárt, hogy a zaj megzavarta a jelet.",
+        "A zaj megzavarta a jelet, ezt a mérés mutatta.",
+        "A zaj nem zavarta meg a jelet, ez biztos."
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "epistemic-modality"
       ]
     }
   ]

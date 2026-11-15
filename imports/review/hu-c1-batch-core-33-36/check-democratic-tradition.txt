@@ -1,0 +1,25 @@
+127 fixes: 52 auto, 69 to review, 6 rejected
+  rejected #66 (c1-36-01-introduce-1): brings length-giveaway: 75 vs 52 characters :: content/hu/exercises/c1/c1-36-01-ex.json: c1-36-01-introduce-1 set question, options, correct
+  rejected #87 (c1-36-03-dialogue-6): brings length-giveaway: 10 vs 6 characters :: content/hu/exercises/c1/c1-36-03-ex.json: c1-36-03-dialogue-6 set prompt, options, correct, teaches, category
+  rejected #106 (c1-36-consolidation-1): brings consolidation-copy: copy of c1-36-01-check-8 :: content/hu/exercises/c1/c1-36-consolidation-ex.json: c1-36-consolidation-1 set question, options, correct, teaches, category
+  rejected #107 (c1-36-consolidation-2): brings consolidation-copy: copy of c1-36-03-check-8 :: content/hu/exercises/c1/c1-36-consolidation-ex.json: c1-36-consolidation-2 set question, options, correct, teaches, category
+  rejected #109 (c1-36-consolidation-5): brings consolidation-copy: copy of c1-36-02-practice-4 :: content/hu/exercises/c1/c1-36-consolidation-ex.json: c1-36-consolidation-5 set sentence, hint, answer, answers, english, teaches, category
+  rejected #110 (c1-36-consolidation-6): brings consolidation-copy: copy of c1-36-01-controlled-2 :: content/hu/exercises/c1/c1-36-consolidation-ex.json: c1-36-consolidation-6 set sentence, hint, answer, answers, english, teaches, category
+  new findings no fix names by id (give text fixes an "id"; check these by hand):
+    vocab-unused c1-36-01: közjogi integritás
+    vocab-unused c1-36-01: megtagad
+    vocab-unused c1-36-03: kölcsönös elismerés
+    vocab-unused c1-36-03: szabadságszerető ember
+    vocab-unused c1-36-04: elvi integritás
+    vocab-unused c1-36-04: nemzeti önrendelkezés
+    vocab-unused c1-36-04: történelmi távlat
+    vocab-unused c1-36-05: demokratikus megújulás
+  unmet words the fixes bring (6; list each on the first lesson using it, or rewrite it in a core unit; lookup misses of split verbs and names included):
+    c1-36-02-introduce-1: legidősebb, szólhatnak
+    c1-36-03-introduce-1: félelmetes
+    c1-36-04-introduce-1: ös
+    c1-36-consolidation-9: eltörölheti, megváltoztathatja
+  check-content errors left in democratic-tradition once this list is applied (2; a list should leave none: write the missing fixes or an extra list):
+    length-giveaway c1-36-01-introduce-1: 75 vs 52 characters
+    length-giveaway c1-36-03-dialogue-6: 10 vs 6 characters
+wrote imports/review/hu-c1-batch-core-33-36/fixes-democratic-tradition.auto.json, imports/review/hu-c1-batch-core-33-36/fixes-democratic-tradition.review.json
