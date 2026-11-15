@@ -516,6 +516,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-14 | HU C1 core Units 1–8 (first C1 batch, no pilot) | read-first, two Sonnet readers, **four units each** (Units 2–8 half-size, 52 items), B stopped once by the 5-hour limit | A 363,583 (17 min), B 353,181 (15 min); ~90k a unit | 737 applied | 50 errors / 100 suspects → 0 / 40 accepted (38 `vocab-unused` stems), unmet 79 → 18 lookup misses | walked 48/48, all frozen; 5 registry moves signed off; 28 retired tags retagged |
 | 11-14 | HU C1 core Units 9–16 | read-first, two Sonnet readers, four units each, extras via `stage_extras.py` | A 383,237 (20 min), B 422,476 (21 min); ~100k a unit | 898 applied | 66 errors / 80 suspects → 0 / 40 accepted (`vocab-unused`), unmet 68 → 31 lookup misses | walked 48/48, all frozen (C1 16/72); 175 retired tags retagged |
 | 11-14 | HU C1 core Units 17–24 | four units each; both readers stopped by the 5-hour limit and resumed after the reset | resumed runs only: A 376,461, B 364,720 (~90k a unit, a floor) | 864 applied | 65 errors / 113 suspects → 0 / 40 accepted, unmet 119 → 52 lookup misses | walked 48/48, all frozen (C1 24/72); c1-22-01 gained the epistemic past modals |
+| 11-15 | HU C1 core Units 25–32 | four units each, launched during the 17–24 review | A 396,766 (20 min), B 425,374 (22 min); ~100k a unit | 958 applied | 57 errors / 110 suspects → 0 / 40 accepted, unmet 154 → 70 lookup misses | walked 48/48, all frozen (C1 32/72) |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2187,4 +2188,16 @@ The user took the four recommended options:
   (`add_vocab_words.py`) costs the reviewer less than a reader round when the slots are busy.
 - **Readers' glosses of technical ideas need the same check as facts:** Church's thesis was
   glossed as a tautology.
+
+### 2026-11-15: HU C1 core Units 25–32
+
+- **Every unit text carried invented quotations in the author's voice** (eight of eight). The
+  readers rewrote them because the focus file named the risk; the reviewer's own read had
+  found only Deák's and Bibó's for the next batch. Name the habit in the focus file for every
+  C1 batch: it is the generator's default.
+- **A government error spread through a whole unit** (*a törvénnyel ütköző rendelet*, 10
+  places): fixing it in the review lists means editing only `new`/`set`, never `old`. A blanket
+  string replace on a fix list breaks its `old` texts; regenerate the lists and filter.
+- **Recaps that name the unit of a skill's title, not of the word** came back for the third
+  batch (*céljából*, *szembeötlően*): now in the rulebook.
 
