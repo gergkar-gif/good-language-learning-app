@@ -517,6 +517,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-14 | HU C1 core Units 9–16 | read-first, two Sonnet readers, four units each, extras via `stage_extras.py` | A 383,237 (20 min), B 422,476 (21 min); ~100k a unit | 898 applied | 66 errors / 80 suspects → 0 / 40 accepted (`vocab-unused`), unmet 68 → 31 lookup misses | walked 48/48, all frozen (C1 16/72); 175 retired tags retagged |
 | 11-14 | HU C1 core Units 17–24 | four units each; both readers stopped by the 5-hour limit and resumed after the reset | resumed runs only: A 376,461, B 364,720 (~90k a unit, a floor) | 864 applied | 65 errors / 113 suspects → 0 / 40 accepted, unmet 119 → 52 lookup misses | walked 48/48, all frozen (C1 24/72); c1-22-01 gained the epistemic past modals |
 | 11-15 | HU C1 core Units 25–32 | four units each, launched during the 17–24 review | A 396,766 (20 min), B 425,374 (22 min); ~100k a unit | 958 applied | 57 errors / 110 suspects → 0 / 40 accepted, unmet 154 → 70 lookup misses | walked 48/48, all frozen (C1 32/72) |
+| 11-15 | HU C1 core Units 33–36 | one reader, four units, launched during the 25–32 review | A 394,174 (one follow-up, one usage-limit stop); ~99k a unit | 505 applied | 40 errors / 49 suspects → 0 / 20 accepted, unmet → none | walked 24/24, all frozen (C1 36/72, core 36/36) |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2188,6 +2189,17 @@ The user took the four recommended options:
   (`add_vocab_words.py`) costs the reviewer less than a reader round when the slots are busy.
 - **Readers' glosses of technical ideas need the same check as facts:** Church's thesis was
   glossed as a tautology.
+
+### 2026-11-15: HU C1 core Units 33–36
+
+- **The invented-quotation habit held in all four texts** (dialogue paragraphs with the author
+  as speaker). Naming it in the focus file worked again: the reader removed every one.
+- **The *szembeötlően* recap came back a fourth time**, in the reader's own screen text,
+  although the rulebook names it. `check_unit_refs.py` already catches it (first appearance
+  c1-21-04) after applying; the reviewer caught it earlier by reading. No new script.
+- **Cut the check-content tail at nothing.** The reviewer read the last 15 lines of
+  check-content and missed three units' `vocab-unused` suspects until `freeze_unit.py`
+  refused. Build the accept list from the full output per unit, by script.
 
 ### 2026-11-15: HU C1 core Units 25–32
 
