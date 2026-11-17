@@ -248,7 +248,7 @@ const PolishMorphology = (function () {
         return String(word)
             .toLowerCase()
             .trim()
-            .replace(/^[«„"'\s]+|[»"'.,!?;:\s]+$/g, '');
+            .replace(/^[«„"'()\[\]¿¡—–…\s]+|[»"'.,!?;:()\[\]—–…\s]+$/g, '');
     }
 
     /**
@@ -649,27 +649,46 @@ const PolishMorphology = (function () {
     /**
      * Main Reader / Lexicon runtime lookup entry point
      */
-    function lookup(word, dict, wordIndex, verbIndex) {
+    function lookup(word, dictOrCtx, wordIndex, verbIndex) {
         const cleanKey = cleanPolishWord(word);
         if (!cleanKey) return { word: word, readings: [] };
 
+        let d = dictOrCtx || {};
+        let wi = wordIndex || {};
+        let vi = verbIndex || {};
+        let freq = null;
+        if (dictOrCtx && (
+            typeof dictOrCtx.normalise === 'function' ||
+            (!wordIndex && !verbIndex && typeof dictOrCtx.dictionary === 'object' && dictOrCtx.dictionary !== null && !('en' in dictOrCtx.dictionary) && !Array.isArray(dictOrCtx.dictionary))
+        )) {
+            d = dictOrCtx.dictionary || {};
+            wi = dictOrCtx.wordIndex || {};
+            vi = dictOrCtx.verbIndex || {};
+            freq = dictOrCtx.frequency || null;
+        }
+
         const readings = [];
         const seenReadings = new Set();
-        const d = dict || {};
-        const wi = wordIndex || {};
-        const vi = verbIndex || {};
 
-        function addReading(lemma, pos, analysis, translation) {
-            const tr = translation || (d[lemma] && d[lemma].en) || '';
-            const key = lemma + '|' + (pos || '') + '|' + (analysis || '');
+        function addReading(lemma, pos, analysis, translation, gender) {
+            if (!lemma) return;
+            const entry = d[lemma];
+            const tr = (translation !== undefined && translation !== null && translation !== '')
+                ? translation
+                : ((entry && (entry.en || entry.translation)) || '');
+            const resolvedPos = pos || (entry && (entry.pos || entry.type)) || 'unknown';
+            const resolvedGender = gender || (entry && entry.gender) || undefined;
+            const key = lemma + '|' + resolvedPos + '|' + (analysis || '');
             if (!seenReadings.has(key)) {
                 seenReadings.add(key);
-                readings.push({
+                const reading = {
                     lemma: lemma,
-                    pos: pos || 'unknown',
+                    pos: resolvedPos,
                     analysis: analysis || '',
                     translation: tr
-                });
+                };
+                if (resolvedGender) reading.gender = resolvedGender;
+                readings.push(reading);
             }
         }
 
@@ -681,15 +700,19 @@ const PolishMorphology = (function () {
 
         // 2. Exact match in dictionary
         if (d[cleanKey]) {
-            addReading(cleanKey, d[cleanKey].type, '', d[cleanKey].en);
+            addReading(cleanKey, d[cleanKey].pos || d[cleanKey].type, '', d[cleanKey].en || d[cleanKey].translation, d[cleanKey].gender);
         }
 
         // 3. Precomputed word-index match
         if (wi[cleanKey]) {
             const entries = Array.isArray(wi[cleanKey]) ? wi[cleanKey] : [wi[cleanKey]];
             entries.forEach(e => {
-                const ana = [e.case, e.number, e.gender].filter(Boolean).join(' ');
-                addReading(e.lemma, e.pos, ana);
+                if (typeof e === 'string') {
+                    addReading(e, null, 'indexed form');
+                } else if (e && e.lemma) {
+                    const ana = [e.case, e.number, e.gender].filter(Boolean).join(' ');
+                    addReading(e.lemma, e.pos, ana, e.en, e.gender);
+                }
             });
         }
 
@@ -697,8 +720,12 @@ const PolishMorphology = (function () {
         if (vi[cleanKey]) {
             const entries = Array.isArray(vi[cleanKey]) ? vi[cleanKey] : [vi[cleanKey]];
             entries.forEach(e => {
-                const ana = [e.tense, e.person, e.number, e.gender].filter(Boolean).join(' ');
-                addReading(e.lemma, 'verb', ana);
+                if (typeof e === 'string') {
+                    addReading(e, 'verb', 'verb form');
+                } else if (e && e.lemma) {
+                    const ana = [e.tense, e.person, e.number, e.gender].filter(Boolean).join(' ');
+                    addReading(e.lemma, 'verb', ana, e.en, e.gender);
+                }
             });
         }
 
@@ -721,8 +748,17 @@ const PolishMorphology = (function () {
             nMatches.forEach(n => addReading(n.lemma, n.pos, n.analysis));
         }
 
-        // Sort by quality: definitions first
-        readings.sort((a, b) => Boolean(b.translation) - Boolean(a.translation));
+        // Sort by quality: definitions first, then frequency rank
+        readings.sort((a, b) => {
+            const hasDiff = Boolean(b.translation) - Boolean(a.translation);
+            if (hasDiff !== 0) return hasDiff;
+            if (freq && typeof freq.get === 'function') {
+                const ra = freq.get(String(a.lemma).toLowerCase()) || 1e9;
+                const rb = freq.get(String(b.lemma).toLowerCase()) || 1e9;
+                if (ra !== rb) return ra - rb;
+            }
+            return 0;
+        });
 
         return { word: word, readings: readings };
     }

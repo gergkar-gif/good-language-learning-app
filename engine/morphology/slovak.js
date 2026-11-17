@@ -491,184 +491,207 @@ const SlovakMorphology = (function () {
         };
     }
 
-    // Lookup helper for Lexicon
-    function lookup(word, dict) {
-        if (!word) return null;
-        const lower = word.trim().toLowerCase();
+    // Lookup helper for Lexicon (supports both lookup(word, ctx) and legacy lookup(word, dict))
+    function lookup(word, dictOrCtx) {
+        if (!word) return { word: word || '', found: false, readings: [] };
+        const lower = String(word)
+            .trim()
+            .toLowerCase()
+            .replace(/^[«„"'()\[\]¿¡—–….,!?;:\s]+|[»"'.,!?;:()\[\]—–…\s]+$/g, '');
+        if (!lower) return { word: word, found: false, readings: [] };
 
-        // Direct dictionary hit
-        if (dict && dict[lower]) {
-            return {
-                found: true,
-                source: 'direct',
-                readings: [{ lemma: lower, ...dict[lower] }]
-            };
+        let dict = dictOrCtx || {};
+        let wordIndex = {};
+        let verbIndex = {};
+        let freq = null;
+        if (dictOrCtx && (
+            typeof dictOrCtx.normalise === 'function' ||
+            (typeof dictOrCtx.dictionary === 'object' && dictOrCtx.dictionary !== null && !('en' in dictOrCtx.dictionary) && !Array.isArray(dictOrCtx.dictionary))
+        )) {
+            dict = dictOrCtx.dictionary || {};
+            wordIndex = dictOrCtx.wordIndex || {};
+            verbIndex = dictOrCtx.verbIndex || {};
+            freq = dictOrCtx.frequency || null;
         }
 
-        // Contraction hit
+        const readings = [];
+        const seen = new Set();
+        let firstSource = null;
+
+        function markSource(src) {
+            if (!firstSource) firstSource = src;
+        }
+
+        function addReading(lemma, pos, analysis, translation, gender) {
+            if (!lemma) return;
+            const entry = dict && dict[lemma];
+            const resolvedPos = pos || (entry && (entry.pos || entry.type)) || 'unknown';
+            const tr = (translation !== undefined && translation !== null && translation !== '')
+                ? translation
+                : ((entry && (entry.en || entry.translation)) || '');
+            const resolvedGender = gender || (entry && entry.gender) || undefined;
+            const key = lemma + '|' + resolvedPos + '|' + (analysis || '');
+            if (!seen.has(key)) {
+                seen.add(key);
+                const reading = {
+                    lemma: lemma,
+                    pos: resolvedPos,
+                    translation: tr,
+                    analysis: analysis || '',
+                    type: resolvedPos,
+                    en: tr
+                };
+                if (resolvedGender) reading.gender = resolvedGender;
+                readings.push(reading);
+            }
+        }
+
+        // 1. Direct dictionary hit
+        if (dict && dict[lower]) {
+            markSource('direct');
+            addReading(lower, dict[lower].pos || dict[lower].type, '', dict[lower].en || dict[lower].translation, dict[lower].gender);
+        }
+
+        // 2. Contraction hit
         if (CONTRACTIONS[lower]) {
             const c = CONTRACTIONS[lower];
-            return {
-                found: true,
-                source: 'contraction',
-                readings: [{
-                    lemma: c.lemma,
-                    translation: c.translation,
-                    analysis: c.analysis,
-                    type: c.pos
-                }]
-            };
+            markSource('contraction');
+            addReading(c.lemma, c.pos, c.analysis, c.translation);
         }
 
-        // Irregular verb hit
+        // 3. Irregular verb hit
         for (const [vlemma, vdata] of Object.entries(IRREGULAR_VERBS)) {
             if (vdata.forms && vdata.forms[lower]) {
                 const dictEntry = (dict && dict[vlemma]) || {};
-                return {
-                    found: true,
-                    source: 'irregular_verb',
-                    readings: [{
-                        lemma: vlemma,
-                        translation: dictEntry.en || `to ${vlemma}`,
-                        analysis: vdata.forms[lower],
-                        type: 'verb'
-                    }]
-                };
+                markSource('irregular_verb');
+                addReading(vlemma, 'verb', vdata.forms[lower], dictEntry.en || `to ${vlemma}`, dictEntry.gender);
             }
         }
 
-        // Fleeting vowel / stem alternation map
+        // 4. Fleeting vowel / stem alternation map
         if (FLEETING_VOWELS_MAP[lower]) {
             const lemma = FLEETING_VOWELS_MAP[lower];
             const dictEntry = (dict && dict[lemma]) || {};
-            return {
-                found: true,
-                source: 'alternation',
-                readings: [{
-                    lemma: lemma,
-                    translation: dictEntry.en || lemma,
-                    type: dictEntry.type || 'noun',
-                    analysis: 'stem alternation (fleeting vowel e/o/ie or diphthong ô:o)'
-                }]
-            };
+            markSource('alternation');
+            addReading(lemma, dictEntry.type || 'noun', 'stem alternation (fleeting vowel e/o/ie or diphthong ô:o)', dictEntry.en || lemma, dictEntry.gender);
         }
 
-        // Clitic peeling
-        const clitics = peelClitics(lower);
-        for (const c of clitics) {
-            if (dict && dict[c.stem]) {
-                return {
-                    found: true,
-                    source: 'clitic',
-                    readings: [{
-                        lemma: c.stem,
-                        translation: dict[c.stem].en,
-                        analysis: c.analysis,
-                        type: dict[c.stem].type
-                    }]
-                };
+        // 5. Precomputed word-index match
+        if (wordIndex[lower]) {
+            const entries = Array.isArray(wordIndex[lower]) ? wordIndex[lower] : [wordIndex[lower]];
+            entries.forEach(e => {
+                if (typeof e === 'string') {
+                    markSource('word_index');
+                    addReading(e, null, 'indexed form');
+                } else if (e && e.lemma) {
+                    markSource('word_index');
+                    const ana = [e.case, e.number, e.gender].filter(Boolean).join(' ');
+                    addReading(e.lemma, e.pos, ana, e.en, e.gender);
+                }
+            });
+        }
+
+        // 6. Precomputed verb-index match
+        if (verbIndex[lower]) {
+            const entries = Array.isArray(verbIndex[lower]) ? verbIndex[lower] : [verbIndex[lower]];
+            entries.forEach(e => {
+                if (typeof e === 'string') {
+                    markSource('verb_index');
+                    addReading(e, 'verb', 'verb form');
+                } else if (e && e.lemma) {
+                    markSource('verb_index');
+                    const ana = [e.tense, e.person, e.number, e.gender].filter(Boolean).join(' ');
+                    addReading(e.lemma, 'verb', ana, e.en, e.gender);
+                }
+            });
+        }
+
+        // 7. Clitic peeling
+        if (!readings.length) {
+            const clitics = peelClitics(lower);
+            for (const c of clitics) {
+                if (dict && dict[c.stem]) {
+                    markSource('clitic');
+                    addReading(c.stem, dict[c.stem].type, c.analysis, dict[c.stem].en, dict[c.stem].gender);
+                }
             }
         }
 
-        // Past tense reconstruction
-        const pastReconstructed = reconstructInfinitiveFromPast(lower);
-        for (const cand of pastReconstructed) {
-            if (dict && dict[cand]) {
-                return {
-                    found: true,
-                    source: 'past_participle',
-                    readings: [{
-                        lemma: cand,
-                        translation: dict[cand].en,
-                        type: 'verb',
-                        analysis: 'past tense form'
-                    }]
-                };
+        // 8. Past tense reconstruction
+        if (!readings.length) {
+            const pastReconstructed = reconstructInfinitiveFromPast(lower);
+            for (const cand of pastReconstructed) {
+                if (dict && dict[cand]) {
+                    markSource('past_participle');
+                    addReading(cand, 'verb', 'past tense form', dict[cand].en, dict[cand].gender);
+                }
             }
         }
 
-        // Declension stem stripping with vowel quantity alternations
-        for (const sfx of DECLENSION_SUFFIXES) {
-            if (lower.length > sfx.length + 2 && lower.endsWith(sfx)) {
-                const stem = lower.slice(0, -sfx.length);
-                const stemVariants = [stem];
+        // 9. Declension stem stripping with vowel quantity alternations
+        if (!readings.length) {
+            for (const sfx of DECLENSION_SUFFIXES) {
+                if (lower.length > sfx.length + 2 && lower.endsWith(sfx)) {
+                    const stem = lower.slice(0, -sfx.length);
+                    const stemVariants = [stem];
 
-                // Check stem alternations (e.g. o -> ô, e -> ie)
-                if (stem.includes('o')) {
-                    stemVariants.push(stem.replace(/o/g, 'ô'));
-                }
-                if (stem.includes('e')) {
-                    stemVariants.push(stem.replace(/e/g, 'ie'));
-                }
-
-                for (const svar of stemVariants) {
-                    // Try bare root (masculine noun / short form)
-                    if (dict && dict[svar]) {
-                        return {
-                            found: true,
-                            source: 'declension',
-                            readings: [{
-                                lemma: svar,
-                                translation: dict[svar].en,
-                                type: dict[svar].type,
-                                analysis: `inflected form (-${sfx})`
-                            }]
-                        };
+                    if (stem.includes('o')) {
+                        stemVariants.push(stem.replace(/o/g, 'ô'));
                     }
-                    // Try with standard noun endings (-a, -o, -e)
-                    for (const baseEnd of ['a', 'o', 'e', 'ť']) {
-                        const candidate = svar + baseEnd;
-                        if (dict && dict[candidate]) {
-                            return {
-                                found: true,
-                                source: 'declension',
-                                readings: [{
-                                    lemma: candidate,
-                                    translation: dict[candidate].en,
-                                    type: dict[candidate].type,
-                                    analysis: `inflected form (-${sfx})`
-                                }]
-                            };
+                    if (stem.includes('e')) {
+                        stemVariants.push(stem.replace(/e/g, 'ie'));
+                    }
+
+                    for (const svar of stemVariants) {
+                        if (dict && dict[svar]) {
+                            markSource('declension');
+                            addReading(svar, dict[svar].type, `inflected form (-${sfx})`, dict[svar].en, dict[svar].gender);
+                        }
+                        for (const baseEnd of ['a', 'o', 'e', 'ť']) {
+                            const candidate = svar + baseEnd;
+                            if (dict && dict[candidate]) {
+                                markSource('declension');
+                                addReading(candidate, dict[candidate].type, `inflected form (-${sfx})`, dict[candidate].en, dict[candidate].gender);
+                            }
+                        }
+                        for (const adjEnd of ['ý', 'í', 'y']) {
+                            const candidate = svar + adjEnd;
+                            if (dict && dict[candidate]) {
+                                markSource('adjective_declension');
+                                addReading(candidate, 'adjective', `adjective case ending (-${sfx})`, dict[candidate].en, dict[candidate].gender);
+                            }
                         }
                     }
-                    // Try adjective ending -ý / -í / -y
-                    for (const adjEnd of ['ý', 'í', 'y']) {
-                        const candidate = svar + adjEnd;
-                        if (dict && dict[candidate]) {
-                            return {
-                                found: true,
-                                source: 'adjective_declension',
-                                readings: [{
-                                    lemma: candidate,
-                                    translation: dict[candidate].en,
-                                    type: 'adjective',
-                                    analysis: `adjective case ending (-${sfx})`
-                                }]
-                            };
-                        }
-                    }
+                    if (readings.length) break;
                 }
             }
         }
 
-        // Verbal prefix stripping
-        const stripped = stripVerbalPrefixes(lower);
-        for (const item of stripped) {
-            if (dict && dict[item.stem]) {
-                return {
-                    found: true,
-                    source: 'prefixed_verb',
-                    readings: [{
-                        lemma: item.stem,
-                        translation: dict[item.stem].en,
-                        type: 'verb',
-                        analysis: `prefixed form (${item.prefix}- + ${item.stem})`
-                    }]
-                };
+        // 10. Verbal prefix stripping
+        if (!readings.length) {
+            const stripped = stripVerbalPrefixes(lower);
+            for (const item of stripped) {
+                if (dict && dict[item.stem]) {
+                    markSource('prefixed_verb');
+                    addReading(item.stem, 'verb', `prefixed form (${item.prefix}- + ${item.stem})`, dict[item.stem].en, dict[item.stem].gender);
+                }
             }
         }
 
-        return { found: false, word: lower };
+        readings.sort((a, b) => {
+            const hasDiff = Boolean(b.translation) - Boolean(a.translation);
+            if (hasDiff !== 0) return hasDiff;
+            if (freq && typeof freq.get === 'function') {
+                const ra = freq.get(String(a.lemma).toLowerCase()) || 1e9;
+                const rb = freq.get(String(b.lemma).toLowerCase()) || 1e9;
+                if (ra !== rb) return ra - rb;
+            }
+            return 0;
+        });
+
+        const res = { word: word, found: readings.length > 0, readings: readings };
+        if (firstSource) res.source = firstSource;
+        return res;
     }
 
     return {
@@ -686,6 +709,14 @@ const SlovakMorphology = (function () {
 // Export globally and for CommonJS tests
 if (typeof window !== 'undefined') {
     window.SlovakMorphology = SlovakMorphology;
+}
+if (typeof globalThis !== 'undefined') {
+    globalThis.SlovakMorphology = SlovakMorphology;
+    if (globalThis.Lexicon && typeof globalThis.Lexicon.registerMorphology === 'function') {
+        globalThis.Lexicon.registerMorphology('sk', SlovakMorphology);
+    }
+} else if (typeof Lexicon !== 'undefined' && typeof Lexicon.registerMorphology === 'function') {
+    Lexicon.registerMorphology('sk', SlovakMorphology);
 }
 if (typeof global !== 'undefined') {
     global.SlovakMorphology = SlovakMorphology;

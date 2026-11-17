@@ -412,186 +412,208 @@ const CzechMorphology = (function () {
         };
     }
 
-    // Lookup helper for Lexicon
-    function lookup(word, dict) {
-        if (!word) return null;
-        const lower = word.trim().toLowerCase();
+    // Lookup helper for Lexicon (supports both lookup(word, ctx) and legacy lookup(word, dict))
+    function lookup(word, dictOrCtx) {
+        if (!word) return { word: word || '', found: false, readings: [] };
+        const lower = String(word)
+            .trim()
+            .toLowerCase()
+            .replace(/^[«„"'()\[\]¿¡—–….,!?;:\s]+|[»"'.,!?;:()\[\]—–…\s]+$/g, '');
+        if (!lower) return { word: word, found: false, readings: [] };
 
-        // Direct dictionary hit
-        if (dict && dict[lower]) {
-            return {
-                found: true,
-                source: 'direct',
-                readings: [{ lemma: lower, ...dict[lower] }]
-            };
+        let dict = dictOrCtx || {};
+        let wordIndex = {};
+        let verbIndex = {};
+        let freq = null;
+        if (dictOrCtx && (
+            typeof dictOrCtx.normalise === 'function' ||
+            (typeof dictOrCtx.dictionary === 'object' && dictOrCtx.dictionary !== null && !('en' in dictOrCtx.dictionary) && !Array.isArray(dictOrCtx.dictionary))
+        )) {
+            dict = dictOrCtx.dictionary || {};
+            wordIndex = dictOrCtx.wordIndex || {};
+            verbIndex = dictOrCtx.verbIndex || {};
+            freq = dictOrCtx.frequency || null;
         }
 
-        // Contraction hit
+        const readings = [];
+        const seen = new Set();
+        let firstSource = null;
+
+        function markSource(src) {
+            if (!firstSource) firstSource = src;
+        }
+
+        function addReading(lemma, pos, analysis, translation, gender) {
+            if (!lemma) return;
+            const entry = dict && dict[lemma];
+            const resolvedPos = pos || (entry && (entry.pos || entry.type)) || 'unknown';
+            const tr = (translation !== undefined && translation !== null && translation !== '')
+                ? translation
+                : ((entry && (entry.en || entry.translation)) || '');
+            const resolvedGender = gender || (entry && entry.gender) || undefined;
+            const key = lemma + '|' + resolvedPos + '|' + (analysis || '');
+            if (!seen.has(key)) {
+                seen.add(key);
+                const reading = {
+                    lemma: lemma,
+                    pos: resolvedPos,
+                    translation: tr,
+                    analysis: analysis || '',
+                    type: resolvedPos,
+                    en: tr
+                };
+                if (resolvedGender) reading.gender = resolvedGender;
+                readings.push(reading);
+            }
+        }
+
+        // 1. Direct dictionary hit
+        if (dict && dict[lower]) {
+            markSource('direct');
+            addReading(lower, dict[lower].pos || dict[lower].type, '', dict[lower].en || dict[lower].translation, dict[lower].gender);
+        }
+
+        // 2. Contraction hit
         if (CONTRACTIONS[lower]) {
             const c = CONTRACTIONS[lower];
-            return {
-                found: true,
-                source: 'contraction',
-                readings: [{
-                    lemma: c.lemma,
-                    translation: c.translation,
-                    analysis: c.analysis,
-                    type: c.pos
-                }]
-            };
+            markSource('contraction');
+            addReading(c.lemma, c.pos, c.analysis, c.translation);
         }
 
-        // Irregular verb hit
+        // 3. Irregular verb hit
         for (const [vlemma, vdata] of Object.entries(IRREGULAR_VERBS)) {
             if (vdata.forms && vdata.forms[lower]) {
                 const dictEntry = (dict && dict[vlemma]) || {};
-                return {
-                    found: true,
-                    source: 'irregular_verb',
-                    readings: [{
-                        lemma: vlemma,
-                        translation: dictEntry.en || 'to ' + vlemma,
-                        analysis: vdata.forms[lower],
-                        type: 'verb'
-                    }]
-                };
+                markSource('irregular_verb');
+                addReading(vlemma, 'verb', vdata.forms[lower], dictEntry.en || ('to ' + vlemma), dictEntry.gender);
             }
         }
 
-        // Fleeting-e / vowel alternation hit
+        // 4. Fleeting-e / vowel alternation hit
         if (FLEETING_E_MAP[lower]) {
             const mappedLemma = FLEETING_E_MAP[lower];
             if (dict && dict[mappedLemma]) {
-                return {
-                    found: true,
-                    source: 'alternation',
-                    readings: [{
-                        lemma: mappedLemma,
-                        ...dict[mappedLemma],
-                        analysis: `inflected form of ${mappedLemma}`
-                    }]
-                };
+                markSource('alternation');
+                addReading(mappedLemma, null, `inflected form of ${mappedLemma}`);
             }
         }
 
-        // Clitic peeling lookup
-        const peeled = peelClitics(lower);
-        for (const item of peeled) {
-            if (dict && dict[item.stem]) {
-                return {
-                    found: true,
-                    source: 'clitic_peeled',
-                    readings: [{
-                        lemma: item.stem,
-                        ...dict[item.stem],
-                        analysis: item.analysis
-                    }]
-                };
+        // 5. Precomputed word-index match
+        if (wordIndex[lower]) {
+            const entries = Array.isArray(wordIndex[lower]) ? wordIndex[lower] : [wordIndex[lower]];
+            entries.forEach(e => {
+                if (typeof e === 'string') {
+                    markSource('word_index');
+                    addReading(e, null, 'indexed form');
+                } else if (e && e.lemma) {
+                    markSource('word_index');
+                    const ana = [e.case, e.number, e.gender].filter(Boolean).join(' ');
+                    addReading(e.lemma, e.pos, ana, e.en, e.gender);
+                }
+            });
+        }
+
+        // 6. Precomputed verb-index match
+        if (verbIndex[lower]) {
+            const entries = Array.isArray(verbIndex[lower]) ? verbIndex[lower] : [verbIndex[lower]];
+            entries.forEach(e => {
+                if (typeof e === 'string') {
+                    markSource('verb_index');
+                    addReading(e, 'verb', 'verb form');
+                } else if (e && e.lemma) {
+                    markSource('verb_index');
+                    const ana = [e.tense, e.person, e.number, e.gender].filter(Boolean).join(' ');
+                    addReading(e.lemma, 'verb', ana, e.en, e.gender);
+                }
+            });
+        }
+
+        // 7. Clitic peeling & past participle reconstruction fallback
+        if (!readings.length) {
+            const peeled = peelClitics(lower);
+            for (const item of peeled) {
+                if (dict && dict[item.stem]) {
+                    markSource('clitic_peeled');
+                    addReading(item.stem, null, item.analysis);
+                }
+                const infs = reconstructInfinitiveFromPast(item.stem);
+                for (const inf of infs) {
+                    if (dict && dict[inf]) {
+                        markSource('past_participle');
+                        addReading(inf, 'verb', item.analysis);
+                    }
+                }
             }
-            // Try past participle reconstruct from peeled stem
-            const infs = reconstructInfinitiveFromPast(item.stem);
-            for (const inf of infs) {
+        }
+
+        // 8. Past participle directly: dělal -> dělat
+        if (!readings.length) {
+            const infCandidates = reconstructInfinitiveFromPast(lower);
+            for (const inf of infCandidates) {
                 if (dict && dict[inf]) {
-                    return {
-                        found: true,
-                        source: 'past_participle',
-                        readings: [{
-                            lemma: inf,
-                            ...dict[inf],
-                            analysis: item.analysis
-                        }]
-                    };
+                    markSource('past_participle');
+                    addReading(inf, 'verb', `past participle of ${inf}`);
                 }
             }
         }
 
-        // Past participle directly: dělal -> dělat
-        const infCandidates = reconstructInfinitiveFromPast(lower);
-        for (const inf of infCandidates) {
-            if (dict && dict[inf]) {
-                return {
-                    found: true,
-                    source: 'past_participle',
-                    readings: [{
-                        lemma: inf,
-                        ...dict[inf],
-                        analysis: `past participle of ${inf}`
-                    }]
-                };
-            }
-        }
+        // 9. Nominal & adjectival declension suffix stripping with unpalatalization
+        if (!readings.length) {
+            for (const suf of DECLENSION_SUFFIXES) {
+                if (lower.length > suf.length + 2 && lower.endsWith(suf)) {
+                    const rawStem = lower.slice(0, -suf.length);
+                    const stemVariants = unpalatalize(rawStem);
 
-        // Nominal & adjectival declension suffix stripping with unpalatalization
-        for (const suf of DECLENSION_SUFFIXES) {
-            if (lower.length > suf.length + 2 && lower.endsWith(suf)) {
-                const rawStem = lower.slice(0, -suf.length);
-                const stemVariants = unpalatalize(rawStem);
-
-                for (const st of stemVariants) {
-                    // Try bare stem (e.g. hrad, student, muž)
-                    if (dict && dict[st]) {
-                        return {
-                            found: true,
-                            source: 'declension_stem',
-                            readings: [{
-                                lemma: st,
-                                ...dict[st],
-                                analysis: `inflected case form of ${st}`
-                            }]
-                        };
-                    }
-                    // Try nominative feminine -a, neuter -o/-e
-                    for (const nomEnd of ['a', 'o', 'e', 'í', 'ý']) {
-                        const candidate = st + nomEnd;
-                        if (dict && dict[candidate]) {
-                            return {
-                                found: true,
-                                source: 'declension_candidate',
-                                readings: [{
-                                    lemma: candidate,
-                                    ...dict[candidate],
-                                    analysis: `inflected form of ${candidate}`
-                                }]
-                            };
+                    for (const st of stemVariants) {
+                        if (dict && dict[st]) {
+                            markSource('declension_stem');
+                            addReading(st, null, `inflected case form of ${st}`);
+                        }
+                        for (const nomEnd of ['a', 'o', 'e', 'í', 'ý']) {
+                            const candidate = st + nomEnd;
+                            if (dict && dict[candidate]) {
+                                markSource('declension_candidate');
+                                addReading(candidate, null, `inflected form of ${candidate}`);
+                            }
+                        }
+                        for (const alt of STEM_ALTERNATIONS) {
+                            const altStem = st.replace(alt.from, alt.to);
+                            if (altStem !== st && dict && dict[altStem]) {
+                                markSource('declension_alternation');
+                                addReading(altStem, null, `inflected form of ${altStem}`);
+                            }
                         }
                     }
-
-                    // Try stem vowel quantity alternation (ů -> o, etc.)
-                    for (const alt of STEM_ALTERNATIONS) {
-                        const altStem = st.replace(alt.from, alt.to);
-                        if (altStem !== st && dict && dict[altStem]) {
-                            return {
-                                found: true,
-                                source: 'declension_alternation',
-                                readings: [{
-                                    lemma: altStem,
-                                    ...dict[altStem],
-                                    analysis: `inflected form of ${altStem}`
-                                }]
-                            };
-                        }
-                    }
+                    if (readings.length) break;
                 }
             }
         }
 
-        // Verbal prefix stripping for aspect partner lookup
-        const prefixStems = stripVerbalPrefixes(lower);
-        for (const item of prefixStems) {
-            if (dict && dict[item.stem]) {
-                return {
-                    found: true,
-                    source: 'prefixed_verb',
-                    readings: [{
-                        lemma: item.stem,
-                        ...dict[item.stem],
-                        analysis: `prefixed form (${item.prefix}-) of ${item.stem}`
-                    }]
-                };
+        // 10. Verbal prefix stripping for aspect partner lookup
+        if (!readings.length) {
+            const prefixStems = stripVerbalPrefixes(lower);
+            for (const item of prefixStems) {
+                if (dict && dict[item.stem]) {
+                    markSource('prefixed_verb');
+                    addReading(item.stem, null, `prefixed form (${item.prefix}-) of ${item.stem}`);
+                }
             }
         }
 
-        return null;
+        readings.sort((a, b) => {
+            const hasDiff = Boolean(b.translation) - Boolean(a.translation);
+            if (hasDiff !== 0) return hasDiff;
+            if (freq && typeof freq.get === 'function') {
+                const ra = freq.get(String(a.lemma).toLowerCase()) || 1e9;
+                const rb = freq.get(String(b.lemma).toLowerCase()) || 1e9;
+                if (ra !== rb) return ra - rb;
+            }
+            return 0;
+        });
+
+        const res = { word: word, found: readings.length > 0, readings: readings };
+        if (firstSource) res.source = firstSource;
+        return res;
     }
 
     return {
