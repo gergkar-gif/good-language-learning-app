@@ -2,25 +2,80 @@
   "videos": [
     {
       "id": "pl-nauka-krakow-wawel",
-      "title": "Kraków i Zamek Królewski na Wawelu: Historia i legendy",
-      "source": "Historia bez cenzury / Polski przewodnik",
-      "youtubeId": "krakow_wawel_pl",
+      "title": "WAWEL — Serce Polski. Historia zamku, który przeżył wszystko",
+      "source": "Ślady Przeszłości",
+      "youtubeId": "NxpWGWtYLFY",
       "level": "B1",
-      "duration": "7:15",
+      "duration": "32:10",
       "topic": "Historia i kultura Polski",
       "origin": "Polska",
-      "description": "Opowieść o dawnej stolicy Polski, królach rezydujących na wzgórzu wawelskim i słynnym Smoku Wawelskim.",
+      "description": "Opowieść o tysiącletniej historii wzgórza wawelskiego w Krakowie: dawnej siedzibie królów Polski, katedrze i słynnym Smoku Wawelskim.",
       "questions": [
         {
           "id": "v1",
-          "prompt": "Gdzie rezydowali dawni królowie Polski w Krakowie?",
+          "question": "Gdzie przez wieki rezydowali królowie Polski w Krakowie?",
           "options": [
-            "Na wzgórzu wawelskim",
-            "W Sukiennicach na Rynku",
+            "W Sukiennicach na Rynku Głównym",
+            "Na wzgórzu wawelskim na Zamku Królewskim",
             "W Kopalni Soli w Wieliczce",
-            "W Pałacu Kultury"
+            "W Pałacu Kultury i Nauki"
           ],
-          "answer": "Na wzgórzu wawelskim"
+          "answerIndex": 1,
+          "explanation": "Przez stulecia Zamek Królewski na Wawelu był politycznym i duchowym centrum Królestwa Polskiego."
+        },
+        {
+          "id": "v2",
+          "question": "Która budowla na Wawelu była miejscem koronacji i pochówku polskich monarchów?",
+          "options": [
+            "Ratusz Miejski",
+            "Barbakan Krakowski",
+            "Katedra Wawelska",
+            "Brama Floriańska"
+          ],
+          "answerIndex": 2,
+          "explanation": "Katedra na Wawelu jest tradycyjnym miejscem koronacji oraz spoczynku królów i wybitnych Polaków."
+        }
+      ],
+      "cloze": [
+        {
+          "text": "Zamek Królewski na Wawelu wznosi się na wapiennym [wzgórzu] nad rzeką Wisłą.",
+          "english": "Wawel Royal Castle rises on a limestone hill above the Vistula River.",
+          "options": ["jeziorem", "wzgórzu", "moście", "rynku"],
+          "note": "na + miejscownik (locative): 'na wzgórzu' answers 'gdzie?' (where?)."
+        },
+        {
+          "text": "Przez wiele stuleci Kraków był oficjalną [stolicą] Polski.",
+          "english": "For many centuries Kraków was the official capital of Poland.",
+          "options": ["granicą", "stolicą", "dzielnicą", "prowincją"],
+          "note": "być + narzędnik (instrumental): 'być stolicą' requires the instrumental case."
+        },
+        {
+          "text": "Wawel przetrwał liczne [wojny], pożary i burzliwe przemiany historyczne.",
+          "english": "Wawel survived numerous wars, fires, and turbulent historical changes.",
+          "options": ["wakacje", "lekkie burze", "wojny", "koncerty"]
+        },
+        {
+          "text": "Według znanej legendy w jaskini pod zamkiem mieszkał [smok].",
+          "english": "According to the famous legend, a dragon lived in a cave beneath the castle.",
+          "options": ["król", "rycerz", "smok", "kupiec"]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Wzgórze Wawelskie od ponad tysiąca lat zajmuje wyjątkowe miejsce w historii i kulturze Polski.",
+          "english": "Wawel Hill has held a unique place in the history and culture of Poland for over a thousand years."
+        },
+        {
+          "text": "Położony nad zakolem Wisły zamek był rezydencją piastowskich i jagiellońskich monarchów oraz świadkiem najświetniejszych chwil dawnej Rzeczypospolitej.",
+          "english": "Located above a bend of the Vistula River, the castle was the residence of Piast and Jagiellonian monarchs and a witness to the brightest moments of the old Polish-Lithuanian Commonwealth."
+        },
+        {
+          "text": "Obok renesansowego dziedzińca wznosi się Katedra Wawelska, w której koronowano władców i bito w słynny Dzwon Zygmunt.",
+          "english": "Next to the Renaissance courtyard stands Wawel Cathedral, where rulers were crowned and the famous Sigismund Bell was rung."
+        },
+        {
+          "text": "Dziś kompleks wawelski jest jednym z najważniejszych muzeów i symboli narodowych Polski.",
+          "english": "Today the Wawel complex is one of Poland's most important museums and national symbols."
         }
       ]
     }

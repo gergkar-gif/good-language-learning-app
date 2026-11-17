@@ -2,23 +2,79 @@
   "videos": [
     {
       "id": "sk-vid-01-tatry",
-      "title": "Objavte Vysoké Tatry a slovenskú prírodu",
+      "title": "Vysoké Tatry — skryté poklady a najkrajšie miesta",
+      "source": "FocusSK",
+      "youtubeId": "oW1TXZ8kqBQ",
       "level": "A2",
+      "duration": "8:45",
+      "topic": "Príroda a cestovanie na Slovensku",
       "origin": "Slovensko",
-      "youtubeId": "tatry_slovensko_a2",
-      "duration": 180,
-      "captions": [
+      "description": "Cestopisný sprievodca po Vysokých Tatrách: Štrbské pleso, Popradské pleso, Hrebienok a vysokohorské štíty Slovenska.",
+      "questions": [
         {
-          "start": 0,
-          "end": 6,
-          "text": "Vysoké Tatry sú najvyšším pohorím na Slovensku.",
-          "translation": "The High Tatras are the highest mountain range in Slovakia."
+          "id": "v1",
+          "question": "Aké horské jazerá nazývané 'plesá' sú typické pre Vysoké Tatry?",
+          "options": [
+            "Umelo vykopané rybníky v nížinách",
+            "Ľadovcové jazerá v vysokohorských dolinách",
+            "Termálne pramene pri Dunaji",
+            "Morské zátoky na pobreží"
+          ],
+          "answerIndex": 1,
+          "explanation": "Tatranské plesá sú horské jazerá ľadovcového pôvodu, medzi najznámejšie patrí Štrbské a Popradské pleso."
         },
         {
-          "start": 7,
-          "end": 14,
-          "text": "Každý rok sem prichádzajú tisíce turistov z celého sveta.",
-          "translation": "Every year thousands of tourists from all over the world come here."
+          "id": "v2",
+          "question": "Prečo prichádzajú turisti do Vysokých Tatier v každom ročnom období?",
+          "options": [
+            "Kvôli pešej turistike v lete a zimným športom na snehu",
+            "Kvôli teplému morskému kúpaniu po celý rok",
+            "Pretože v horách vôbec neprší ani nesneží",
+            "Aby navštívili len nákupné centrá"
+          ],
+          "answerIndex": 0,
+          "explanation": "Tatry ponúkajú turistické chodníky a chaty v lete a lyžiarske svahy v zime."
+        }
+      ],
+      "cloze": [
+        {
+          "text": "Vysoké Tatry sú najvyšším [pohorím] na celom Slovensku.",
+          "english": "The High Tatras are the highest mountain range in all of Slovakia.",
+          "options": ["ostrovom", "pohorím", "mestom", "údolím"],
+          "note": "inštrumentál: 'sú najvyšším pohorím' uses instrumental endings -ým -ím after 'byť'."
+        },
+        {
+          "text": "Každý rok sem prichádzajú tisíce [turistov] z celého sveta.",
+          "english": "Every year thousands of tourists from all over the world come here.",
+          "options": ["turistov", "rybárov", "lekárov", "študentov"]
+        },
+        {
+          "text": "Prechádzka okolo Štrbského [plesa] patrí medzi najobľúbenejšie trasy.",
+          "english": "A walk around Štrbské pleso is among the most popular routes.",
+          "options": ["mosta", "lesa", "plesa", "hradu"]
+        },
+        {
+          "text": "V zimných mesiacoch pokrýva horské doliny hrubá vrstva [snehu].",
+          "english": "In the winter months a thick layer of snow covers the mountain valleys.",
+          "options": ["piesku", "snehu", "dažďa", "trávy"]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Vysoké Tatry sú najvyšším pohorím na Slovensku a často sa im hovorí najmenšie veľhory sveta.",
+          "english": "The High Tatras are the highest mountain range in Slovakia and are often called the smallest alpine mountains in the world."
+        },
+        {
+          "text": "Každý rok sem prichádzajú tisíce turistov z celého sveta obdivovať strmé žulové štíty a krištáľovo čisté ľadovcové plesá.",
+          "english": "Every year thousands of tourists from all over the world come here to admire steep granite peaks and crystal-clear glacial tarns."
+        },
+        {
+          "text": "Medzi najnavštevovanejšie miesta patrí Štrbské pleso, Tatranská Lomnica, Hrebienok a vysokohorské chaty prístupné po značených chodníkoch.",
+          "english": "Among the most visited places are Štrbské pleso, Tatranská Lomnica, Hrebienok, and alpine huts accessible along marked trails."
+        },
+        {
+          "text": "Národný park zároveň chráni vzácne druhy zvierat, ako sú tatranský kamzík a svišť.",
+          "english": "At the same time, the national park protects rare animal species such as the Tatra chamois and marmot."
         }
       ]
     }

@@ -40,16 +40,31 @@
       "questions": [
         {
           "id": "q1",
-          "prompt": "Co si Marek objednává k jídlu?",
-          "promptEn": "What does Marek order to eat?",
+          "type": "listening-mc",
+          "question": "Co si Marek objednává k jídlu?",
           "options": [
-            "Dva kousky teplého jablečného závinu se zmrzlinou",
             "Kousek tvarohového koláče",
             "Dva čokoládové croissanty",
+            "Dva kousky teplého jablečného závinu se zmrzlinou",
             "Pouze černý čaj s citronem"
           ],
-          "answerIndex": 0,
-          "explanation": "Marek says: 'Dám si velkou kávu s mlékem a dva kousky teplého jablečného závinu' and agrees to have it with vanilla ice cream."
+          "correct": 2,
+          "evidence": "Dám si velkou kávu s mlékem a dva kousky teplého jablečného závinu.",
+          "explanation": "Marek si objednává dva kousky teplého jablečného závinu a souhlasí s vanilkovou zmrzlinou."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "Jaký nápoj si Marek dává?",
+          "options": [
+            "Velkou kávu s mlékem",
+            "Zelený čaj",
+            "Pomerančový džus",
+            "Malou černou kávu"
+          ],
+          "correct": 0,
+          "evidence": "Dám si velkou kávu s mlékem...",
+          "explanation": "Marek výslovně žádá velkou kávu s mlékem."
         }
       ]
     }

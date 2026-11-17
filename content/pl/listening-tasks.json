@@ -40,16 +40,31 @@
       "questions": [
         {
           "id": "q1",
-          "prompt": "Co zamawia Marek do jedzenia?",
-          "promptEn": "What does Marek order to eat?",
+          "type": "listening-mc",
+          "question": "Co zamawia Marek do jedzenia?",
           "options": [
-            "Dwa kawałki ciepłej szarlotki z lodami",
             "Kawałek sernika na zimno",
+            "Dwa kawałki ciepłej szarlotki z lodami",
             "Dwa rogaliki z czekoladą",
             "Tylko herbatę z cytryną"
           ],
-          "answer": "Dwa kawałki ciepłej szarlotki z lodami",
-          "explanation": "Marek mówi: Poproszę dwa kawałki szarlotki na ciepło, i zgadza się na lody waniliowe."
+          "correct": 1,
+          "evidence": "Poproszę dużą białą kawę i dwa kawałki szarlotki na ciepło. ... Tak, z lodami będzie wyśmienita.",
+          "explanation": "Marek zamawia dwa kawałki szarlotki na ciepło i zgadza się na lody waniliowe."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "Jaką kawę wybiera Marek?",
+          "options": [
+            "Dużą białą kawę",
+            "Małą czarną bez cukru",
+            "Espresso z cytryną",
+            "Kawę mrożoną"
+          ],
+          "correct": 0,
+          "evidence": "Poproszę dużą białą kawę i dwa kawałki szarlotki na ciepło.",
+          "explanation": "Marek prosi o dużą białą kawę (kawę z mlekiem)."
         }
       ]
     }

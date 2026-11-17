@@ -2,25 +2,80 @@
   "videos": [
     {
       "id": "cs-praha-karluv-most",
-      "title": "Praha a Karlův most: Historie a legendy",
-      "source": "Česká televize / Toulavá kamera",
-      "youtubeId": "praha_karluv_most_cs",
+      "title": "Karlův most: Jak to bylo doopravdy?",
+      "source": "Exploring",
+      "youtubeId": "yG2CVpfHrnk",
       "level": "B1",
-      "duration": "6:45",
+      "duration": "9:15",
       "topic": "Historie a kultura České republiky",
       "origin": "Česká republika",
-      "description": "Příběh o založení Karlova mostu císařem Karlem IV. a slavných sochách lemujících most.",
+      "description": "Příběh o založení Karlova mostu císařem Karlem IV., středověké stavbě přes Vltavu a slavných sochách lemujících most.",
       "questions": [
         {
           "id": "v1",
-          "prompt": "Kdo založil Karlův most v Praze?",
+          "question": "Kdo nechal ve 14. století postavit kamenný most přes Vltavu, dnešní Karlův most?",
           "options": [
-            "Karel IV.",
             "Rudolf II.",
+            "Karel IV.",
             "Jan Hus",
             "Václav Havel"
           ],
-          "answer": "Karel IV."
+          "answerIndex": 1,
+          "explanation": "Základní kámen mostu položil v roce 1357 český král a římský císař Karel IV."
+        },
+        {
+          "id": "v2",
+          "question": "Jak se jmenoval předchozí kamenný most, který v Praze zničila povodeň v roce 1342?",
+          "options": [
+            "Juditin most",
+            "Mánesův most",
+            "Štefánikův most",
+            "Vyšehradský most"
+          ],
+          "answerIndex": 0,
+          "explanation": "Karlův most nahradil starší románský Juditin most stržený velkou povodní."
+        }
+      ],
+      "cloze": [
+        {
+          "text": "Karlův most spojuje Staré Město s Malou Stranou přes řeku [Vltavu].",
+          "english": "Charles Bridge connects the Old Town with Lesser Town across the Vltava River.",
+          "options": ["Labe", "Vltavu", "Moravu", "Ohři"],
+          "note": "přes + akuzativ: 'přes řeku Vltavu' uses the accusative singular feminine ending -u."
+        },
+        {
+          "text": "Po obou stranách mostu stojí celkem třicet barokních [soch].",
+          "english": "Along both sides of the bridge stand a total of thirty Baroque statues.",
+          "options": ["domů", "soch", "mostů", "stromů"],
+          "note": "genitiv plurálu: After numerals 5 and above ('třicet'), Czech uses the genitive plural ('soch' from socha)."
+        },
+        {
+          "text": "Stavbu mostu řídil slavný architekt Petr [Parléř].",
+          "english": "Construction of the bridge was directed by the famous architect Petr Parléř.",
+          "options": ["Novák", "Dvořák", "Parléř", "Smetana"]
+        },
+        {
+          "text": "Dnes je most vyhrazen výhradně pro [pěší] návštěvníky.",
+          "english": "Today the bridge is reserved exclusively for pedestrians.",
+          "options": ["auta", "tramvaje", "pěší", "vlaky"]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Karlův most patří k nejstarším a nejznámějším památkám Prahy i celé střední Evropy.",
+          "english": "Charles Bridge is among the oldest and best-known monuments of Prague and all of Central Europe."
+        },
+        {
+          "text": "Když velká povodeň v roce 1342 strhla původní Juditin most, rozhodl se panovník Karel IV. vybudovat mnohem pevnější kamennou spojnici mezi oběma břehy Vltavy.",
+          "english": "When a major flood in 1342 washed away the original Judith Bridge, ruler Charles IV decided to build a far sturdier stone link between both banks of the Vltava."
+        },
+        {
+          "text": "V průběhu staletí přibyly na zábradlí mostu slavné pískovcové sochy a obě konce dnes zdobí gotické mostecké věže.",
+          "english": "Over the centuries famous sandstone statues were added along the bridge's parapet, and both ends are today adorned by Gothic bridge towers."
+        },
+        {
+          "text": "Každý den přes něj procházejí tisíce lidí, aby si vychutnali jedinečný výhled na Pražský hrad.",
+          "english": "Every day thousands of people walk across it to enjoy the unique view of Prague Castle."
         }
       ]
     }
