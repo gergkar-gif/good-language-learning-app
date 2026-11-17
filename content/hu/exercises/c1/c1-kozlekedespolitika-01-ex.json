@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'lassújel' a vasúti közlekedésben?",
+      "question": "Mit jelent a *lassújel* a vasúti közlekedésben?",
       "options": [
-        "A pálya műszaki romlása, sínhibák vagy elhasználódás miatt elrendelt kényszerű sebességkorlátozást egy adott szakaszon.",
-        "A vasútállomások körzetében a gyalogosforgalom védelmében előírt kötelező, állandó megállási tilalmat.",
-        "A mozdonyvezetők pihenőidejét rögzítő digitális menetíró készülék által kiadott hangjelzést a fülkében."
+        "A vonat érkezését jelző hangszórós bemondást az állomáson.",
+        "A pálya állapota miatt elrendelt ideiglenes sebességkorlátozást.",
+        "A mozdonyvezető pihenőidejét szabályozó menetrendi előírást."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "c1-railway-decay-vocab"
       ]
@@ -22,12 +22,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szakértők a vasúti infrastruktúra _____ lepusztulásaként értékelték az állapotokat.",
-      "hint": "dramatic",
-      "answer": "drámai",
-      "english": "Experts evaluated the conditions as the dramatic decay of railway infrastructure.",
+      "sentence": "A bírálók _____ a pályák karbantartására kevés pénz jutott.",
+      "answer": "szerint",
+      "english": "According to the critics, little money went to track maintenance.",
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -38,19 +37,19 @@
       "pairs": [
         [
           "lassújel",
-          "pályahiba miatti kényszerű sebességcsökkentés"
+          "ideiglenes sebességkorlátozás a pálya állapota miatt"
         ],
         [
-          "járműpark elöregedése",
-          "évtizedes mozdonyok és vagonok kopása"
+          "járműpark",
+          "egy vállalat összes vasúti járműve"
         ],
         [
-          "menetrendszerűség összeomlása",
-          "a vonatok kiszámíthatatlan, tömeges késése"
+          "menetrendszerűség",
+          "az, hogy a vonatok a menetrend szerint közlekednek"
         ],
         [
           "pályaromlás",
-          "sínek és alépítmények fizikai tönkremenetele"
+          "a vágány műszaki állapotának romlása"
         ]
       ],
       "teaches": [
@@ -62,12 +61,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A menetrendszerűség szisztematikus _____ miatt az ingázók feladták a vasúti utazást.",
-      "hint": "collapse / összeomlás + -a",
-      "answer": "összeomlása",
-      "english": "Due to the systematic collapse of timetable reliability commuters gave up train travel.",
+      "sentence": "A bírálók szerint megszaporodtak a késések; a kormány indoklása szerint _____ a fővonalak felújítása folytatódott.",
+      "hint": "but, on the other hand",
+      "answers": [
+        "viszont",
+        "azonban"
+      ],
+      "english": "According to the critics delays became more frequent; according to the government's reasoning, however, the renovation of the main lines continued.",
       "teaches": [
-        "framing-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -77,27 +79,29 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "vasúti",
-        "pályák",
-        "karbantartásának",
-        "elmaradása",
-        "veszélyes",
-        "lassújeleket",
-        "szült."
+        "szakértők",
+        "szerint",
+        "a",
+        "lassújelek",
+        "miatt",
+        "megszaporodtak",
+        "a",
+        "késések."
       ],
       "solution": [
         "A",
-        "vasúti",
-        "pályák",
-        "karbantartásának",
-        "elmaradása",
-        "veszélyes",
-        "lassújeleket",
-        "szült."
+        "szakértők",
+        "szerint",
+        "a",
+        "lassújelek",
+        "miatt",
+        "megszaporodtak",
+        "a",
+        "késések."
       ],
-      "english": "The neglect of railway track maintenance gave birth to dangerous speed restrictions.",
+      "english": "According to the experts, delays became more frequent because of the speed restrictions.",
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -107,26 +111,26 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Ingázó utas",
-          "text": "Miért késik minden nap legalább negyven percet a reggeli vonat?"
+          "speaker": "Tanár",
+          "text": "Mit mondtak a bírálók a pályák állapotáról?"
         },
         {
-          "speaker": "Vasúti dolgozó",
-          "text": "A menetrendszerűség szisztematikus _____ küzdünk a mozdonyok meghibásodása és a rossz pálya miatt."
+          "speaker": "Diák",
+          "text": "A bírálók _____ a karbantartásra kevés pénz jutott."
         },
         {
-          "speaker": "Ingázó utas",
-          "text": "Így lassan lehetetlen időben beérni a munkahelyre."
+          "speaker": "Tanár",
+          "text": "És a kormány indoklása?"
         }
       ],
       "options": [
-        "összeomlásával",
-        "javulásával",
-        "ünneplésével"
+        "szerinte",
+        "szerintem",
+        "szerint"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -136,12 +140,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence diagnosing railway infrastructure decay using a crisis framing marker.",
-          "answer": "A vasúti infrastruktúra drámai lepusztulása és a forráskivonások nyomán a magyar vasúthálózat a menetrendszerűség szisztematikus összeomlásával szembesül nap mint nap."
+          "prompt": "Write one or two sentences in Hungarian about what the experts said about delays, naming the source.",
+          "answer": "A szakértők szerint a lassújelek miatt megszaporodtak a késések, és a menetrendszerűség romlott."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "c1-railway-decay-vocab"
       ]
     },
     {
@@ -149,15 +153,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés írja le a vasúti műszaki krízist a legpontosabb publicisztikai regiszterben?",
+      "question": "Melyik mondat tulajdonítja a véleményt valakinek?",
       "options": [
-        "a vasúti infrastruktúra drámai lepusztulása",
-        "kicsit meleg van a kocsikban",
-        "túl sok állomás van a vonalon"
+        "A bírálók szerint a pályákra kevés pénz jutott.",
+        "A pályákra kevés pénz jutott, ez a helyzet magától értetődő volt.",
+        "A pályákra egyértelműen kevés pénz jutott a MÁV-nak."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     }
   ]

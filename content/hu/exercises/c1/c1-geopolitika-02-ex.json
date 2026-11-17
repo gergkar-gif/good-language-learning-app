@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért tekintik a nemzetközi szakértők súlyos biztonsági kockázatnak a Paks II beruházást?",
+      "question": "Mit jelent az *ellátásbiztonság* az energiapolitikában?",
       "options": [
-        "Mert nyilvános versenytárgyalás nélkül, orosz állami hitelből és a Roszatom kizárólagos technológiájával valósul meg, évtizedekre Moszkvához láncolva az energiaellátást.",
-        "Mert az európai uniós klímavédelmi szabályok tiltják az atomerőművek kapacitásbővítését a tagállamokban.",
-        "Mert a beruházás kizárólag a szomszédos országok villamosenergia-igényeinek fedezését szolgálná."
+        "Azt, hogy az energia ára minden évben változatlan marad.",
+        "Azt, hogy az országnak folyamatosan elegendő energiája van.",
+        "Azt, hogy az erőműveket csak állami cég üzemeltetheti."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "c1-pendulum-politics-vocab"
       ]
@@ -22,10 +22,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az államnak kötelessége _____ a nemzeti energiaellátás valós függetlenségét.",
-      "hint": "guarantee / infinitive",
-      "answer": "garantálni",
-      "english": "The state has a duty to guarantee real independence of national energy supply.",
+      "sentence": "Az uniós szabályok szerint a tagállam _____ bejelenteni az állami támogatást.",
+      "hint": "obliged (adjective)",
+      "answer": "köteles",
+      "english": "According to the EU rules, a member state is obliged to notify state aid.",
       "teaches": [
         "formal-obligation"
       ]
@@ -37,20 +37,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Paks II",
-          "orosz hitelből épülő új nukleáris blokkok"
+          "atomerőmű",
+          "létesítmény, amely atomenergiából állít elő áramot"
         ],
         [
-          "orosz gázfüggőség",
-          "egyoldalú kitettség a Gazprom szállításaival szemben"
+          "földgáz",
+          "fűtésre és iparra használt éghető gáz"
         ],
         [
-          "forrásdiverzifikáció",
-          "több független energetikai beszállító bevonása"
+          "függőség",
+          "az, hogy valaki egy másik félre van utalva"
         ],
         [
-          "szerződéstitkosítás",
-          "a hitel- és beruházási feltételek elzárása a nyilvánosság elől"
+          "szankció",
+          "büntető jellegű gazdasági vagy politikai intézkedés"
         ]
       ],
       "teaches": [
@@ -62,10 +62,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A nemzet szuverenitása nem _____ ki a keleti autokráciák zsarolási potenciáljának.",
-      "hint": "cannot be surrendered / szolgáltat + -ható",
-      "answer": "szolgáltatható",
-      "english": "The nation's sovereignty cannot be surrendered to the blackmail leverage of Eastern autocracies.",
+      "sentence": "A tagállamok _____ voltak bejelenteni a támogatást az Európai Bizottságnak.",
+      "hint": "obliged, plural",
+      "answer": "kötelesek",
+      "english": "The member states were obliged to notify the aid to the European Commission.",
       "teaches": [
         "formal-obligation"
       ]
@@ -76,26 +76,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "államnak",
-        "kötelessége",
-        "felszámolni",
-        "az",
-        "egyoldalú",
-        "energetikai",
-        "kitettséget."
+        "A",
+        "tagállamok",
+        "kötelesek",
+        "voltak",
+        "bejelenteni",
+        "a",
+        "támogatást."
       ],
       "solution": [
-        "Az",
-        "államnak",
-        "kötelessége",
-        "felszámolni",
-        "az",
-        "egyoldalú",
-        "energetikai",
-        "kitettséget."
+        "A",
+        "tagállamok",
+        "kötelesek",
+        "voltak",
+        "bejelenteni",
+        "a",
+        "támogatást."
       ],
-      "english": "The state has a duty to liquidate unilateral energy exposure.",
+      "english": "The member states were obliged to notify the aid.",
       "teaches": [
         "formal-obligation"
       ]
@@ -107,24 +105,24 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Energiapolitikus",
-          "text": "Hogyan számolhatjuk fel az ország krónikus orosz gázfüggőségét?"
+          "speaker": "Tanár",
+          "text": "Mit írnak elő az uniós szabályok az állami támogatásról?"
         },
         {
-          "speaker": "Zöld szakértő",
-          "text": "Csakis úgy, ha felismerjük: a döntéshozóknak kötelező _____ az LNG-terminálokat és a megújuló forrásokat."
+          "speaker": "Diák",
+          "text": "A tagállam _____ bejelenteni az állami támogatást."
         },
         {
-          "speaker": "Energiapolitikus",
-          "text": "A monopóliumok fenntartása közvetlen nemzetbiztonsági kockázat."
+          "speaker": "Tanár",
+          "text": "És mit mondott a kormány indoklása a szerződésről?"
         }
       ],
       "options": [
-        "támogatniuk",
-        "korlátozniuk",
-        "elvetniük"
+        "kötelesek",
+        "kötelesség",
+        "köteles"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "formal-obligation"
       ]
@@ -136,12 +134,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating energy diversification obligations using a deontic modal structure.",
-          "answer": "Az államnak kötelessége felszámolni az egyoldalú orosz gáz- és atomfüggőséget, és nem szolgáltathatja ki a nemzeti szuverenitást Moszkva geopolitikai zsarolásának."
+          "prompt": "Write one or two sentences in Hungarian about what the government's reasoning and the critics said about the Paks II project.",
+          "answer": "A kormány indoklása szerint a beruházás az ország hosszú távú energiaellátását szolgálta. A bírálók szerint viszont az energetikai függés nő."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "c1-pendulum-politics-vocab"
       ]
     },
     {
@@ -149,11 +147,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik modális szerkezet rögzíti az energiabiztonsági kötelességet a leghatározottabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "az államnak kötelessége garantálni a diverzifikációt",
-        "az energiapiac folyamatait célszerű a piaci szereplők belátására bízni",
-        "a megújuló energiaforrások fejlesztése másodlagos prioritást élvez a költségvetésben"
+        "A tagállamok kötelesek voltak bejelenteni a támogatást.",
+        "A tagállamok köteles voltak bejelenteni a támogatást.",
+        "A tagállamok kötelesek volt bejelenteni a támogatást."
       ],
       "correct": 0,
       "teaches": [

@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel diagnosztizálhatjuk a vasúti közlekedés műszaki hanyatlását?",
+      "question": "Melyik mondat nevezi meg, hogy ki mondta a véleményt?",
       "options": [
-        "a vasúti infrastruktúra drámai lepusztulása",
-        "hogyha késik a kalauz reggel",
-        "amikor lefestik a peron padjait"
+        "A lassújelek miatt természetesen nőttek a késések.",
+        "A szakértők szerint a lassújelek miatt nőttek a késések.",
+        "A késések nőttek, és ez egyértelmű volt."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik modális kifejezés rögzíti az állampolgárok közlekedési jogát a legszigorúbban?",
+      "question": "Melyik kifejezés jelent kényszert?",
       "options": [
-        "kötelessége garantálni az eljutási alapjogot",
-        "szabadon nézelődhet a vonat ablakából",
-        "bármikor sétálhat egyet a mezőn"
+        "kénytelen volt",
+        "hajlandó volt",
+        "képes volt"
       ],
       "correct": 0,
       "teaches": [
@@ -41,23 +41,23 @@
       "pairs": [
         [
           "lassújel",
-          "pályahiba miatti kényszerű sebességkorlátozás"
+          "a pálya állapota miatti ideiglenes lassítás"
         ],
         [
-          "mellékvonal-bezárás",
-          "kisvasúti vonalak forgalmának leállítása"
+          "mellékvonal",
+          "kis forgalmú, másodlagos vasútvonal"
         ],
         [
-          "autópálya-koncesszió",
-          "gyorsforgalmi utak 35 éves magánkezelése"
+          "koncesszió",
+          "közfeladat átadása hosszú időre"
         ],
         [
-          "Budapest–Belgrád vasútvonal",
-          "kínai hitelből épülő titkosított teherfolyosó"
+          "megtérülés",
+          "a befektetés visszatérése a bevételekből"
         ],
         [
-          "vármegyebérlet",
-          "államilag támogatott olcsó tömegközlekedési bérlet"
+          "bérlet",
+          "többször használható, időre szóló jegy"
         ]
       ],
       "teaches": [
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A vasúti pályahiba miatt elrendelt sebességkorlátozást _____ hívjuk.",
-      "hint": "speed restriction / lassújel + -nek",
-      "answer": "lassújelnek",
-      "english": "The speed restriction ordered due to track defect is called a speed restriction (lassújel).",
+      "sentence": "A vonat helyett közlekedő autóbusz neve _____.",
+      "hint": "replacement bus",
+      "answer": "pótlóbusz",
+      "english": "The bus that runs instead of the train is called a rail-replacement bus.",
       "teaches": [
         "c1-railway-decay-vocab"
       ]
@@ -80,14 +80,14 @@
     {
       "id": "c1-kozlekedespolitika-consolidation-5",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "recall",
-      "sentence": "A gyorsforgalmi úthálózat 35 évre történt kiszervezése az autópálya-_____.",
-      "hint": "concession",
-      "answer": "koncesszió",
-      "english": "The outsourcing of the expressway network for 35 years is the motorway concession.",
+      "sentence": "Az állam a rendelkezésre állási díjat azért fizette, hogy az utak használhatók _____.",
+      "hint": "be (subjunctive, plural)",
+      "answer": "legyenek",
+      "english": "The state paid the availability fee so that the roads would be usable.",
       "teaches": [
-        "c1-railway-decay-vocab"
+        "hogy-jon-jen"
       ]
     },
     {
@@ -95,15 +95,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "Az államnak kötelessége _____ szavatolni a kistelepülések vasúti elérhetőségét.",
-      "hint": "would be",
-      "english": "It would be the state's duty to guarantee railway accessibility of small settlements.",
+      "sentence": "A kormány indoklása _____ a pályák állapota miatt szüneteltették a forgalmat.",
+      "answer": "szerint",
+      "english": "According to the government's reasoning, service was suspended because of the condition of the tracks.",
       "teaches": [
-        "formal-obligation"
-      ],
-      "answers": [
-        "volna",
-        "lenne"
+        "evidentials"
       ]
     },
     {
@@ -111,10 +107,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minél több pénzt visz el az autópálya-koncesszió, _____ kevesebb jut a vasúti pályákra.",
-      "hint": "minél … ___",
+      "sentence": "Minél több a megálló, _____ lassabb az utazás.",
       "answer": "annál",
-      "english": "The more money the highway concession takes, the less goes to railway tracks.",
+      "english": "The more stops there are, the slower the journey.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -124,15 +119,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Végső soron _____ a kötöttpályás zöld közlekedés stratégiai prioritása.",
-      "hint": "indispensable",
-      "english": "Ultimately the strategic priority of fixed-track green transport is indispensable.",
+      "sentence": "Annak _____, hogy sok vita volt, az építés megkezdődött.",
+      "hint": "despite (postposition)",
+      "answer": "ellenére",
+      "english": "Although there was much dispute, construction began.",
       "teaches": [
-        "conclusive-markers"
-      ],
-      "answers": [
-        "elengedhetetlen",
-        "nélkülözhetetlen"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -140,15 +132,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a funkciója a 'Minél... annál...' arányossági szerkezetnek a közlekedési források elemzésében?",
+      "question": "Mi a *szerint* szerepe egy történeti szövegben?",
       "options": [
-        "Az autópályákra fordított magántőke-kifizetések és a vasúti pályaromlás közötti közvetlen összefüggést bizonyítja.",
-        "Időbeli sorrendbe állítja az infrastrukturális beruházásokat, kizárva a forráselvonások közötti kauzális kapcsolatot.",
-        "Megkérdőjelezi a hivatalos statisztikai adatok hitelességét a költségvetési zárszámadás részletes vizsgálata során."
+        "Jelzi, hogy az állítás biztosan igaz.",
+        "Jelzi, hogy az állítás későbbi időre vonatkozik.",
+        "Megnevezi, ki állította az adott véleményt."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "correlative-minel-annal"
+        "evidentials"
       ]
     },
     {
@@ -158,25 +150,33 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "kötöttpályás",
-        "közlekedés",
+        "szakértők",
+        "azt",
+        "mondták,",
+        "hogy",
         "a",
-        "nemzetgazdaság",
-        "nélkülözhetetlen",
-        "motorja."
+        "pályák",
+        "felújítására",
+        "is",
+        "szükség",
+        "van."
       ],
       "solution": [
         "A",
-        "kötöttpályás",
-        "közlekedés",
+        "szakértők",
+        "azt",
+        "mondták,",
+        "hogy",
         "a",
-        "nemzetgazdaság",
-        "nélkülözhetetlen",
-        "motorja."
+        "pályák",
+        "felújítására",
+        "is",
+        "szükség",
+        "van."
       ],
-      "english": "Fixed-track transport is the indispensable motor of national economy.",
+      "english": "The experts said that the renovation of the tracks was also needed.",
       "teaches": [
-        "conclusive-markers"
+        "reported-speech-statements"
       ]
     },
     {
@@ -186,12 +186,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical diagnosis of public transport underfunding using a crisis framing marker.",
-          "answer": "A vasúti infrastruktúra drámai lepusztulása és a járműpark elöregedése a menetrendszerűség szisztematikus összeomlásához vezetett a magyar vasúthálózaton."
+          "prompt": "Write two sentences in Hungarian about the motorway concession: what the critics said and what the government's reasoning said, naming each source.",
+          "answer": "A bírálók szerint minél hosszabb a szerződés, annál nehezebb módosítani. A kormány indoklása szerint a megoldás biztosítja az utak fenntartását."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "c1-railway-decay-vocab"
       ]
     },
     {
@@ -201,12 +201,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on sustainable public mobility and railway modernization.",
-          "answer": "Végső soron elengedhetetlen a vasúti közlekedés tömeges modernizációja, a mozdonyok cseréje és az eljutási alapjog biztosítása az ország fenntartható, zöld jövője érdekében."
+          "prompt": "Write one or two sentences in Hungarian about the election of 12 April 2026.",
+          "answer": "2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett, és Orbán Viktor még aznap este elismerte a vereséget."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-railway-decay-vocab"
       ]
     }
   ]

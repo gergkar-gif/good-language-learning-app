@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel diagnosztizálhatjuk a keleti orientációváltás külpolitikai következményeit?",
+      "question": "Melyik mondat nevezi meg, hogy ki mondta a véleményt?",
       "options": [
-        "a taktikai hintapolitika következtében / a keleti nyitás doktrínája nyomán",
-        "a diplomáciai érintkezés rutinszerű folytatása / az adminisztratív egyeztetések lefolytatása révén",
-        "a kölcsönös látogatások alkalmával / az általános kereskedelmi egyezmények keretében"
+        "A kormány indoklása szerint a szerződés az ellátásbiztonságot szolgálta.",
+        "A szerződés természetesen az ellátásbiztonságot szolgálta.",
+        "A szerződés az ellátásbiztonságot szolgálta, ez egyértelmű volt."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -22,13 +22,13 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik modális kifejezés rögzíti az energetikai függetlenség kötelességét a legszigorúbban?",
+      "question": "Melyik kifejezés ír elő kötelességet?",
       "options": [
-        "az államnak kötelessége garantálni a diverzifikációt",
-        "a piaci folyamatok alakulását a nemzetközi energiaárak ingadozása határozza meg",
-        "a beszerzési források bővítése kizárólag a magánvállalatok üzleti mérlegelésének tárgya"
+        "hajlandó bejelenteni",
+        "képes bejelenteni",
+        "köteles bejelenteni"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "formal-obligation"
       ]
@@ -40,24 +40,24 @@
       "stage": "recognize",
       "pairs": [
         [
-          "hintapolitika",
-          "keleti és nyugati tömb közötti opportunista ingadozás"
+          "vétó",
+          "a döntés megakadályozásának joga"
         ],
         [
-          "Paks II",
-          "orosz állami hitelből épülő nukleáris beruházás"
+          "atomerőmű",
+          "atomenergiából áramot termelő létesítmény"
         ],
         [
-          "vétódiplomácia",
-          "közös döntések blokkolása befagyasztott pénzek zsarolására"
+          "exportpiac",
+          "ország, ahová a termékeket eladják"
         ],
         [
-          "adósságcsapda",
-          "titkosított kínai hitelek révén kialakuló politikai függés"
+          "akkumulátorgyár",
+          "akkumulátorokat készítő üzem"
         ],
         [
-          "mag-Európa",
-          "a szoros integrációt megvalósító belső európai mag"
+          "szuverenitás",
+          "egy állam önálló döntési joga"
         ]
       ],
       "teaches": [
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A nyugati és keleti szövetségi tömbök közötti ingadozó taktikázást _____ nevezzük.",
-      "hint": "pendulum politics / hintapolitika + -nak",
-      "answer": "hintapolitikának",
-      "english": "Opportunistic oscillation between Western and Eastern alliance blocs is called pendulum politics.",
+      "sentence": "Az a jog, amellyel egy tagállam megakadályozhat egy döntést: a _____.",
+      "hint": "veto",
+      "answer": "vétó",
+      "english": "The right by which a member state can block a decision is the veto.",
       "teaches": [
         "c1-pendulum-politics-vocab"
       ]
@@ -82,10 +82,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A kínai hitelek révén kialakuló stratégiai kiszolgáltatottság az _____ diplomácia.",
-      "hint": "debt trap",
-      "answer": "adósságcsapda",
-      "english": "Strategic vulnerability unfolding via Chinese loans is debt-trap diplomacy.",
+      "sentence": "A döntéshez minden tagállam egyetértése kell: ez az _____.",
+      "hint": "unanimity",
+      "answer": "egyhangúság",
+      "english": "A decision needs the agreement of every member state: this is unanimity.",
       "teaches": [
         "c1-pendulum-politics-vocab"
       ]
@@ -95,15 +95,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "Az államnak kötelessége _____ a nemzeti energiaforrások valódi diverzifikációját.",
-      "hint": "guarantee / szavatol + -nia",
-      "english": "The state has a duty to guarantee real diversification of national energy sources.",
+      "sentence": "A bírálók _____ a függőség Oroszországtól nő.",
+      "answer": "szerint",
+      "english": "According to the critics, the dependence on Russia grows.",
       "teaches": [
-        "formal-obligation"
-      ],
-      "answers": [
-        "szavatolnia",
-        "garantálnia"
+        "evidentials"
       ]
     },
     {
@@ -111,10 +107,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minél többször vétóz a kormányzat, _____ mélyebb diplomáciai elszigetelődésbe süllyed.",
-      "hint": "minél … ___",
+      "sentence": "Minél kevesebb a vitás kérdés, _____ könnyebb a megállapodás.",
       "answer": "annál",
-      "english": "The more times the government vetoes, the deeper diplomatic isolation it sinks into.",
+      "english": "The fewer the disputed questions, the easier the agreement.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -124,15 +119,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Végső soron _____ a nyugati demokratikus értékek megingathatatlan védelme.",
-      "hint": "indispensable",
-      "english": "Ultimately unwavering defense of Western democratic values is indispensable.",
+      "sentence": "Annak _____, hogy sok vita volt, az építkezés megkezdődött.",
+      "hint": "despite (postposition)",
+      "answer": "ellenére",
+      "english": "Although there was much dispute, construction began.",
       "teaches": [
-        "conclusive-markers"
-      ],
-      "answers": [
-        "elengedhetetlen",
-        "nélkülözhetetlen"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -140,15 +132,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a szerepe az episztemikus kifejezéseknek az adósságcsapda leleplezésében?",
+      "question": "Mi a *szerint* szerepe egy történeti szövegben?",
       "options": [
-        "Objektív elemzői súlyt adnak annak kimondására, hogy a gazdasági kolonizáció valós nemzetbiztonsági veszélyt jelent.",
-        "Enyhítik a politikai felelősséget a beruházások gazdasági megtérülésének hiányáért.",
-        "Kizárólag a műszaki kivitelezés időbeli ütemezését írják le semleges stílusban."
+        "Jelzi, hogy az állítás biztosan igaz.",
+        "Jelzi, hogy az állítás későbbi időre vonatkozik.",
+        "Megnevezi, ki állította az adott véleményt."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "epistemic-hedging"
+        "evidentials"
       ]
     },
     {
@@ -158,29 +150,29 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "magyar",
-        "jövő",
+        "kormány",
+        "indoklása",
+        "szerint",
         "a",
-        "mag-Európához",
-        "való",
-        "tartozásban",
-        "teljesedhet",
-        "ki."
+        "szerződés",
+        "az",
+        "ellátásbiztonságot",
+        "szolgálta."
       ],
       "solution": [
         "A",
-        "magyar",
-        "jövő",
+        "kormány",
+        "indoklása",
+        "szerint",
         "a",
-        "mag-Európához",
-        "való",
-        "tartozásban",
-        "teljesedhet",
-        "ki."
+        "szerződés",
+        "az",
+        "ellátásbiztonságot",
+        "szolgálta."
       ],
-      "english": "Hungarian future can be fulfilled in belonging to core Europe.",
+      "english": "According to the government's reasoning, the contract served security of supply.",
       "teaches": [
-        "conclusive-markers"
+        "evidentials"
       ]
     },
     {
@@ -190,12 +182,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical diagnosis of veto diplomacy using a proportional correlative.",
-          "answer": "Minél inkább zsarolási eszközként használja a kormányzat a vétódiplomáciát az uniós fórumokon, annál inkább erodálódik Magyarország szavahihetősége, és annál mélyebb nemzetközi elszigetelődésbe taszítja a nemzetet."
+          "prompt": "Write two sentences in Hungarian about the Paks II project: what the government's reasoning said and what the critics said, naming each source.",
+          "answer": "A kormány indoklása szerint a beruházás az ország hosszú távú energiaellátását szolgálta. A bírálók szerint viszont az energetikai függés nő."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "c1-pendulum-politics-vocab"
       ]
     },
     {
@@ -205,12 +197,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding manifesto on Hungary's Western integration and future.",
-          "answer": "Végső soron elengedhetetlen felismerni: mindent egybevetve Magyarország megmaradása, jóléte és szabadsága kizárólag a mag-Európa demokratikus és jogállami közösségéhez való hűséges tartozásban garantálható."
+          "prompt": "Write one or two sentences in Hungarian about the election of 12 April 2026.",
+          "answer": "2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett, és Orbán Viktor még aznap este elismerte a vereséget."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-pendulum-politics-vocab"
       ]
     }
   ]

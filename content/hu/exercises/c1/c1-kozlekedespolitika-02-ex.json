@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért bírálták szakértők a vasúti mellékvonalak 'forgalomszüneteltetését'?",
+      "question": "Mit jelentett a *forgalomszüneteltetés* a hivatalos nyelvhasználatban?",
       "options": [
-        "Mert a buszos pótlás lassabb, kényelmetlenebb, nem alkalmas kerékpárok szállítására, és a vidéki kistelepülések elszigetelődését okozza.",
-        "Mert a pótlóbuszok üzemeltetési költségei meghaladták a regionális kötöttpályás közlekedésre elkülönített költségvetési keretet.",
-        "Mert az autóbuszok üzemanyag-fogyasztása és károsanyag-kibocsátása kedvezőtlenebb volt a korszerűbb dízel motorvonatok adatainál."
+        "Azt, hogy egy vonalon a vonatok csak teherszállításra használhatók.",
+        "Azt, hogy egy vonalon a jegyek egy hónapig ingyenesek lesznek.",
+        "Azt, hogy egy vonalon ideiglenesen nem közlekednek vonatok."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "c1-railway-decay-vocab"
       ]
@@ -22,15 +22,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az államnak kötelessége _____ garantálni a kistelepülések eljutási alapjogát.",
-      "hint": "would be",
-      "english": "It would be the state's duty to guarantee the fundamental right of small settlements to mobility.",
+      "sentence": "A társaság köteles _____ üzemeltetni a megrendelt vonatokat.",
+      "answer": "volt",
+      "english": "The company was obliged to operate the trains that had been ordered.",
       "teaches": [
         "formal-obligation"
-      ],
-      "answers": [
-        "volna",
-        "lenne"
       ]
     },
     {
@@ -40,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "mellékvonal-bezárás",
-          "helyi érdekű vasútvonalak megszüntetése"
+          "mellékvonal",
+          "kisebb forgalmú vasútvonal a fővonalak mellett"
         ],
         [
-          "vonathelyettesítő busz",
-          "vonatok helyett indított pótlójárat"
+          "pótlóbusz",
+          "vonat helyett közlekedő autóbusz"
         ],
         [
-          "eljutási alapjog",
-          "a közösségi közlekedéshez való alkotmányos jog"
+          "elszigetelődés",
+          "a település kapcsolatának gyengülése a külvilággal"
         ],
         [
-          "mobilitási szegénység",
-          "a közlekedési lehetőségektől való elzártság állapota"
+          "önkormányzat",
+          "a település helyi választott vezetése"
         ]
       ],
       "teaches": [
@@ -65,10 +61,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A közlekedési minisztérium nem _____ el a vidéki lakosságot a tisztes eljutástól.",
-      "hint": "must not cut off / vág + -hatja",
-      "answer": "vághatja",
-      "english": "The transport ministry must not cut rural population off from decent mobility.",
+      "sentence": "A MÁV indoklása szerint a járműhiány miatt a társaság _____ volt felfüggeszteni a forgalmat.",
+      "hint": "forced (adjective)",
+      "answer": "kénytelen",
+      "english": "According to MÁV's reasoning, the company was forced to suspend the service because of a shortage of trains.",
       "teaches": [
         "formal-obligation"
       ]
@@ -80,25 +76,27 @@
       "stage": "practice",
       "tiles": [
         "Az",
-        "államnak",
-        "garantálnia",
-        "kell",
-        "az",
-        "eljutási",
-        "alapjogot",
-        "mindenkinek."
+        "önkormányzatok",
+        "szerint",
+        "a",
+        "lakosok",
+        "kénytelenek",
+        "voltak",
+        "buszra",
+        "szállni."
       ],
       "solution": [
         "Az",
-        "államnak",
-        "garantálnia",
-        "kell",
-        "az",
-        "eljutási",
-        "alapjogot",
-        "mindenkinek."
+        "önkormányzatok",
+        "szerint",
+        "a",
+        "lakosok",
+        "kénytelenek",
+        "voltak",
+        "buszra",
+        "szállni."
       ],
-      "english": "The state must guarantee the fundamental right to mobility for everyone.",
+      "english": "According to the local governments, the residents were forced to take a bus.",
       "teaches": [
         "formal-obligation"
       ]
@@ -110,24 +108,24 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Polgármester",
-          "text": "Hogyan jutnak be a gyerekeink a gimnáziumba, ha bezárják a helyi vasutat?"
+          "speaker": "Tanár",
+          "text": "Mit írt elő a közszolgáltatási szerződés a társaságnak?"
         },
         {
-          "speaker": "Közlekedési szakértő",
-          "text": "Az állam nem _____ meg a falvakat a kötöttpályás kapcsolattól, ez sérti az eljutási alapjogot."
+          "speaker": "Diák",
+          "text": "A társaság _____ üzemeltetni a megrendelt vonatokat."
         },
         {
-          "speaker": "Polgármester",
-          "text": "Petíciót indítunk a vonal megmaradásáért."
+          "speaker": "Tanár",
+          "text": "És mit mondott a kormány indoklása a felfüggesztésről?"
         }
       ],
       "options": [
-        "foszthatja",
-        "védheti",
-        "kérheti"
+        "kötelesek voltak",
+        "köteles volt",
+        "kötelesség volt"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "formal-obligation"
       ]
@@ -139,12 +137,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating citizens' public mobility rights using a deontic modal structure.",
-          "answer": "Az államnak kötelessége szavatolni a kistérségi polgárok eljutási alapjogát, és nem szüntetheti meg a helyi vasútvonalakat a területi kohézió és az egyenlő esélyek védelmében."
+          "prompt": "Write one or two sentences in Hungarian about what the local governments said about the residents of the villages, naming the source.",
+          "answer": "Az önkormányzatok szerint a vidéki lakosok kénytelenek voltak buszra szállni, és nehezebben jutottak el az iskolába."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "c1-railway-decay-vocab"
       ]
     },
     {
@@ -152,13 +150,13 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik modális kifejezés írja elő az állami mobilitási garanciát a legszigorúbban?",
+      "question": "Melyik kifejezés jelenti, hogy valakinek nem volt más választása?",
       "options": [
-        "kötelessége garantálni az eljutási alapjogot",
-        "talán egyszer elküldhetne egy autót",
-        "jó lenne ha nem sétálnának annyit"
+        "hajlandó volt",
+        "szabad volt",
+        "kénytelen volt"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "formal-obligation"
       ]

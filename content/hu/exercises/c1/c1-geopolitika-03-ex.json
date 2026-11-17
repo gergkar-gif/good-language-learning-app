@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan működött a 'tranzakcionális vétódiplomácia' a magyar kormány gyakorlatában?",
+      "question": "Mit jelent a *vétó*?",
       "options": [
-        "A közös uniós döntések és szankciós csomagok megvétózásával zsarolta a tagállamokat, hogy elérje a jogállamisági korrupció miatt befagyasztott források feloldását.",
-        "A közös európai költségvetés önkéntes növelésével próbált kedvezőbb döntési pozíciókat szerezni.",
-        "A döntéshozatal teljes átláthatóságát és a közvetlen állampolgári szavazás bevezetését szorgalmazta."
+        "Azt a jogot, amellyel egy szereplő megakadályozhat egy döntést.",
+        "Azt a kötelezettséget, hogy minden döntést jegyzőkönyvezni kell.",
+        "Azt a szabályt, hogy a döntés csak írásban fogadható el."
       ],
       "correct": 0,
       "teaches": [
@@ -22,10 +22,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Minél gyakrabban él a kormányzat a vétózsarolással, _____ inkább elszigetelődik az Európai Unióban.",
-      "hint": "minél … ___",
+      "sentence": "Minél több tagállamnak kell egyetértenie, _____ nehezebb az egyhangú döntés.",
       "answer": "annál",
-      "english": "The more frequently the government resorts to veto blackmail, the more it is isolated in the EU.",
+      "english": "The more member states have to agree, the harder a unanimous decision is.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -37,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "vétódiplomácia",
-          "közös döntések megakasztása egyéni haszonszerzésért"
+          "egyhangúság",
+          "az, hogy a döntéshez mindenki egyetértése kell"
         ],
         [
-          "tranzakcionális politika",
-          "értékek feláldozása azonnali anyagi előnyökért"
+          "csúcstalálkozó",
+          "a vezetők találkozója fontos döntésekre"
         ],
         [
-          "jogállamisági kondicionalitás",
-          "uniós pénzek megvonása a demokratikus normák megsértése miatt"
+          "kompromisszum",
+          "megállapodás, amelyben mindkét fél enged"
         ],
         [
-          "forrásbefagyasztás",
-          "a kohéziós alapok kifizetésének leállítása"
+          "befagyasztás",
+          "a pénz kifizetésének felfüggesztése"
         ]
       ],
       "teaches": [
@@ -62,10 +61,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Amilyen mértékben növekszik a zsarolási potenciál fitogtatása, olyan _____ erodálódik a szövetségesek bizalma.",
-      "hint": "proportion / arány + -ban",
-      "answer": "arányban",
-      "english": "In proportion as flaunting blackmail leverage increases, to that extent allies' trust erodes.",
+      "sentence": "Minél kevesebb a vitás kérdés, annál _____ a megállapodás.",
+      "hint": "easy, comparative",
+      "answers": [
+        "könnyebb",
+        "egyszerűbb"
+      ],
+      "english": "The fewer the disputed questions, the easier the agreement.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -78,24 +80,26 @@
       "tiles": [
         "Minél",
         "több",
-        "a",
-        "vétó,",
+        "tagállam",
+        "van,",
         "annál",
-        "mélyebb",
+        "nehezebb",
         "az",
-        "elszigeteltség."
+        "egyhangú",
+        "döntés."
       ],
       "solution": [
         "Minél",
         "több",
-        "a",
-        "vétó,",
+        "tagállam",
+        "van,",
         "annál",
-        "mélyebb",
+        "nehezebb",
         "az",
-        "elszigeteltség."
+        "egyhangú",
+        "döntés."
       ],
-      "english": "The more the vetoes, the deeper the isolation.",
+      "english": "The more member states there are, the harder a unanimous decision is.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -107,24 +111,24 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Brüsszeli tudósító",
-          "text": "Meddig tartható fenn a magyar vétózsarolás az Európai Tanácsban?"
+          "speaker": "Tanár",
+          "text": "Miért nehéz egyhangú döntést hozni az Európai Unióban?"
         },
         {
-          "speaker": "Uniós diplomata",
-          "text": "Nem sokáig: minél többször blokkolja Budapest a közös biztonsági döntéseket, _____ inkább felgyorsul az egyhangúsági szabály felszámolása."
+          "speaker": "Diák",
+          "text": "Mert minél több tagállamnak kell egyetértenie, _____ nehezebb a megállapodás."
         },
         {
-          "speaker": "Brüsszeli tudósító",
-          "text": "Ami a magyar érdekérvényesítés végső vereségét jelentené."
+          "speaker": "Tanár",
+          "text": "És mit mondtak a bírálók a feltételrendszerről?"
         }
       ],
       "options": [
+        "olyan",
         "annál",
-        "akkor",
-        "ezért"
+        "akkor"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -136,12 +140,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence analyzing veto diplomacy using 'Minél... annál...'.",
-          "answer": "Minél gyakrabban alkalmazza a kormányzat a tranzakcionális vétódiplomáciát a befagyasztott források feloldására, annál mélyebb bizalmi válságot idéz elő, és annál inkább elszigetelődik az európai partnerek körében."
+          "prompt": "Write a sentence in Hungarian with minél … annál … about the number of member states and a decision.",
+          "answer": "Minél több tagállam vesz részt a döntésben, annál nehezebb az egyhangúság, és annál hosszabb lehet a vita az uniós forrásokról."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "c1-pendulum-politics-vocab"
       ]
     },
     {
@@ -149,13 +153,13 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik arányossági szerkezet ragadja meg a vétópolitika elszigetelő hatását a legpontosabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Minél gátlástalanabbul vétóz a kormányzat... annál mélyebb diplomáciai elszigetelődésbe süllyed",
-        "Jóllehet a diplomáciai tárgyalások elhúzódnak, a felek végül kompromisszumra jutnak",
-        "Mivel a szankciós csomagok elfogadása kötelező, a döntéshozatal rutinszerűen zajlik"
+        "Minél kevesebb a vita, minél könnyebb a megállapodás.",
+        "Annál kevesebb a vita, minél könnyebb a megállapodás.",
+        "Minél kevesebb a vita, annál könnyebb a megállapodás."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "correlative-minel-annal"
       ]

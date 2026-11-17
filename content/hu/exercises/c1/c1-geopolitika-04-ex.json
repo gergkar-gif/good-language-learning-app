@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevez a nemzetközi szakirodalom 'adósságcsapda-diplomáciának' a kínai hitelek kapcsán?",
+      "question": "Mit jelent az *akkumulátorgyár*?",
       "options": [
-        "Olyan gigantikus, titkosított feltételű infrastrukturális hitelek nyújtását, amelyek piaci megtérülése kétséges, s a visszafizetés elmaradásakor a hitelező politikai és stratégiai engedményeket kényszerít ki.",
-        "A nemzetközi fejlesztési bankok által nyújtott, szigorú gazdasági reformokhoz és antikorrupciós feltételekhez kötött, kedvezményes kamatozású többoldalú pénzügyi mentőcsomagokat.",
-        "A feltörekvő gazdaságok számára folyósított, vissza nem térítendő nemzetközi humanitárius és egészségügyi segélyprogramokat, valamint a multilaterális adósságelengedési megállapodásokat."
+        "Olyan üzemet, amely elektromos járművekhez és más eszközökhöz készít akkumulátort.",
+        "Olyan üzemet, amely hagyományos benzinmotorok alkatrészeit gyártja.",
+        "Olyan raktárt, amely a használt elemeket gyűjti össze."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Kétségkívül _____ a titkosított megahitelek nemzetgazdasági kockázata.",
-      "hint": "demonstrated / bebizonyosodik + -ott",
-      "answer": "bebizonyosodott",
-      "english": "Undoubtedly the national economic risk of classified mega-loans has been demonstrated.",
+      "sentence": "Annak _____, hogy aggályok merültek fel, az építkezés tovább haladt.",
+      "hint": "despite (postposition)",
+      "answer": "ellenére",
+      "english": "Although concerns were raised, construction went on.",
       "teaches": [
-        "epistemic-hedging"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -37,20 +37,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "adósságcsapda",
-          "kölcsönök visszafizetési kényszere révén kialakuló politikai függés"
+          "befektető",
+          "aki pénzt fektet egy vállalkozásba"
         ],
         [
-          "akkumulátorgyár",
-          "víz- és energiaintenzív távol-keleti vegyipari üzem"
+          "vízfelhasználás",
+          "egy üzem által elhasznált víz mennyisége"
         ],
         [
-          "titkosított hitel",
-          "a közvélemény elől elzárt államközi hitelszerződés"
+          "környezetvédő",
+          "aki a természet védelméért lép fel"
         ],
         [
-          "ipari kolonizáció",
-          "egy ország alárendelése külső birodalmi ipari érdekeknek"
+          "aggály",
+          "kétség vagy félelem egy dologgal kapcsolatban"
         ]
       ],
       "teaches": [
@@ -62,12 +62,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Aligha vitatható, hogy az akkumulátorgyárak vízigénye veszélyezteti az alföldi _____.",
-      "hint": "water aquifers / vízbázis + -t",
-      "answer": "vízbázist",
-      "english": "It can hardly be disputed that the water demand of battery plants endangers lowland water aquifers.",
+      "sentence": "Annak ellenére, _____ a kormány indoklása szerint új munkahelyek jöttek létre, a helyi lakosok aggályokat említettek.",
+      "answer": "hogy",
+      "english": "Although, according to the government's reasoning, new jobs were created, the local residents mentioned concerns.",
       "teaches": [
-        "epistemic-hedging"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -76,24 +75,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Kétségkívül",
-        "bebizonyosodott",
+        "Annak",
+        "ellenére,",
+        "hogy",
+        "aggályok",
+        "voltak,",
         "az",
-        "adósságcsapda-diplomácia",
-        "súlyos",
-        "veszélye."
+        "építkezés",
+        "tovább",
+        "haladt."
       ],
       "solution": [
-        "Kétségkívül",
-        "bebizonyosodott",
+        "Annak",
+        "ellenére,",
+        "hogy",
+        "aggályok",
+        "voltak,",
         "az",
-        "adósságcsapda-diplomácia",
-        "súlyos",
-        "veszélye."
+        "építkezés",
+        "tovább",
+        "haladt."
       ],
-      "english": "Undoubtedly the severe danger of debt-trap diplomacy has been demonstrated.",
+      "english": "Although there were concerns, construction went on.",
       "teaches": [
-        "epistemic-hedging"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -103,26 +108,26 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Környezetvédő",
-          "text": "Hogyan egyeztethető össze a debreceni gigagyár a klímavédelmi célokkal?"
+          "speaker": "Tanár",
+          "text": "Folytatódott az építkezés, pedig voltak aggályok?"
         },
         {
-          "speaker": "Közgazdász",
-          "text": "Semmiképp: minden jel szerint az energiaintenzív iparosítás feláldozza a jövő nemzedékek ivóvízkészletét egy idegen birodalom gazdasági _____ érdekében."
+          "speaker": "Diák",
+          "text": "Igen, annak _____, hogy a helyi lakosok aggályokat fogalmaztak meg, az építkezés tovább haladt."
         },
         {
-          "speaker": "Környezetvédő",
-          "text": "Ez a nemzeti szuverenitás legsúlyosabb kiárusítása."
+          "speaker": "Tanár",
+          "text": "Mit mondott a kormány indoklása?"
         }
       ],
       "options": [
-        "hídfőállása",
-        "érdekszférája",
-        "kirendeltsége"
+        "miatt",
+        "ellenére",
+        "óta"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "epistemic-hedging"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -132,12 +137,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of Chinese economic expansion using an epistemic stance marker.",
-          "answer": "Kétségkívül bebizonyosodott, hogy a titkosított feltételű kínai hitelek és a környezetromboló akkumulátorgyárak az adósságcsapda-diplomácia csapdájába hajtják Magyarországot, meggyengítve gazdasági önrendelkezését."
+          "prompt": "Write two sentences in Hungarian about the battery plant: what the government's reasoning said and what the local residents said.",
+          "answer": "A kormány indoklása szerint a beruházások új munkahelyeket teremtenek. A helyi lakosok szerint viszont a vízfelhasználás aggasztó."
         }
       ],
       "teaches": [
-        "epistemic-hedging"
+        "c1-pendulum-politics-vocab"
       ]
     },
     {
@@ -145,15 +150,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik episztemikus kifejezés értékeli a külföldi eladósodást a leghitelesebben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "aligha vitatható az adósságcsapda kockázata",
-        "a beruházás pénzügyi kockázatai egyelőre tisztázatlanok a nyilvánosság számára",
-        "a hitelszerződés műszaki paraméterei megfelelnek a szokásos nemzetközi elvárásoknak"
+        "Annak ellenére, hogy aggályok voltak, az építkezés folytatódott.",
+        "Annak ellenére, aggályok voltak, az építkezés folytatódott.",
+        "Annak ellenére, hogy aggályok voltak, hogy az építkezés folytatódott."
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "concessive-annak-ellenere"
       ]
     }
   ]

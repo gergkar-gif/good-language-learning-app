@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért bírálták élesen a Budapest–Belgrád vasútvonal újjáépítését a független közlekedési szakértők?",
+      "question": "Mit jelent a *megtérülés* egy beruházásnál?",
       "options": [
-        "Mert gigantikus, titkosított kínai hitelből valósul meg, elkerüli a nagyobb hazai városokat, a megtérülése évszázadokig tarthat, s főként a kínai teherárut szolgálja ki a magyar utasok helyett.",
-        "Mert a beruházás elsősorban a regionális elővárosi ingázást támogatja, háttérbe szorítva az észak–déli tranzit teherfuvarozás igényeit.",
-        "Mert a pálya korszerűsítése után sem engedélyezik a villamos mozdonyok közlekedését a magas áramfogyasztási költségek miatt."
+        "Azt, hogy a befektetett összeg idővel visszatér a bevételekből.",
+        "Azt, hogy a beruházást egy másik városba helyezik át.",
+        "Azt, hogy az építkezés befejezése után a pályát lebontják."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szakértők szerint a kínai hitelből finanszírozott gigaprojekt gazdaságilag _____ megtérülhetetlen.",
-      "hint": "manifestly",
-      "english": "According to experts the megaproject financed from Chinese loans is manifestly economically unviable.",
+      "sentence": "Annak _____, hogy a megtérülés vitatott volt, az építés megkezdődött.",
+      "hint": "despite (postposition)",
+      "answer": "ellenére",
+      "english": "Although the return was disputed, construction began.",
       "teaches": [
-        "epistemic-hedging"
-      ],
-      "answers": [
-        "nyilvánvalóan",
-        "egyértelműen",
-        "kétségkívül"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -41,20 +37,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Budapest–Belgrád vasútvonal",
-          "több mint ezer milliárdos kínai vasútberuházás"
+          "hitel",
+          "kölcsön, amelyet vissza kell fizetni"
         ],
         [
-          "kínai hitel",
-          "államadósságot növelő külföldi kölcsön"
+          "titkosítás",
+          "adatok kizárása a nyilvánosságból"
         ],
         [
-          "szerződések titkosítása",
-          "közérdekű adatok elzárása a nyilvánosság elől"
+          "teherfolyosó",
+          "az áruszállítás fő útvonala több országon át"
         ],
         [
-          "adásságcsapda-diplomácia",
-          "gazdasági függést kialakító nagyhatalmi hitelezés"
+          "elővárosi",
+          "a nagyváros körüli településeket érintő"
         ]
       ],
       "teaches": [
@@ -66,12 +62,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A beruházás vélelmezhetően a kínai geopolitikai _____ szolgálja a magyar utasok helyett.",
-      "hint": "interests / érdek + -eit",
-      "answer": "érdekeit",
-      "english": "The investment presumptively serves Chinese geopolitical interests instead of Hungarian passengers.",
+      "sentence": "Annak ellenére, _____ a költségekről kevés adat volt nyilvános, a két oldal vitatkozott a megtérülésről.",
+      "answer": "hogy",
+      "english": "Although little data on the costs was public, the two sides argued about the return.",
       "teaches": [
-        "epistemic-hedging"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -80,28 +75,32 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "Budapest–Belgrád",
-        "projekt",
-        "nyilvánvalóan",
-        "gazdaságtalan",
+        "Annak",
+        "ellenére,",
+        "hogy",
         "a",
-        "magyar",
-        "utasoknak."
+        "megtérülés",
+        "vitatott",
+        "volt,",
+        "az",
+        "építés",
+        "megkezdődött."
       ],
       "solution": [
-        "A",
-        "Budapest–Belgrád",
-        "projekt",
-        "nyilvánvalóan",
-        "gazdaságtalan",
+        "Annak",
+        "ellenére,",
+        "hogy",
         "a",
-        "magyar",
-        "utasoknak."
+        "megtérülés",
+        "vitatott",
+        "volt,",
+        "az",
+        "építés",
+        "megkezdődött."
       ],
-      "english": "The Budapest–Belgrade project is manifestly uneconomical for Hungarian passengers.",
+      "english": "Although the return was disputed, construction began.",
       "teaches": [
-        "epistemic-hedging"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -111,26 +110,26 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Közlekedésmérnök",
-          "text": "Hoz-e érdemi javulást a magyar ingázóknak a Belgrád-vonal felújítása?"
+          "speaker": "Tanár",
+          "text": "Megkezdődött az építés, pedig vitatott volt a megtérülés?"
         },
         {
-          "speaker": "Elemző",
-          "text": "Aligha; a projekt gazdaságilag nyilvánvalóan _____ a hazai személyszállítás szempontjából."
+          "speaker": "Diák",
+          "text": "Igen, annak _____, hogy vitatott volt, megkezdődött."
         },
         {
-          "speaker": "Közlekedésmérnök",
-          "text": "Közben pedig leállították az agglomerációs HÉV-fejlesztéseket."
+          "speaker": "Tanár",
+          "text": "Mit mondtak a bírálók?"
         }
       ],
       "options": [
-        "megtérülhetetlen",
-        "gyors",
-        "olcsó"
+        "ellenére",
+        "miatt",
+        "óta"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -140,12 +139,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence critiquing infrastructure megaprojects using an epistemic stance marker.",
-          "answer": "A kínai hitelből finanszírozott és titkosított Budapest–Belgrád gigaprojekt gazdaságilag nyilvánvalóan megtérülhetetlen, s joggal tekinthető kockázatos geopolitikai adósságcsapdának."
+          "prompt": "Write two sentences in Hungarian about the Budapest–Belgrade line: what the government's reasoning said and what the critics said.",
+          "answer": "A kormány indoklása szerint a vonal része a teherfolyosónak. A bírálók szerint viszont a megtérülés bizonytalan."
         }
       ],
       "teaches": [
-        "epistemic-hedging"
+        "c1-railway-decay-vocab"
       ]
     },
     {
@@ -153,15 +152,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik episztemikus kifejezés mond ki gazdasági megalapozatlanságot a legmagasabb bizonyossággal?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "gazdaságilag nyilvánvalóan megtérülhetetlen",
-        "talán nem a legolcsóbb ötlet volt",
-        "majd meglátjuk kétszáz év múlva"
+        "Annak ellenére, vitatott volt, megkezdődött.",
+        "Annak ellenére, hogy vitatott volt, megkezdődött.",
+        "Annak ellenére, hogy vitatott volt, hogy megkezdődött."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "epistemic-hedging"
+        "concessive-annak-ellenere"
       ]
     }
   ]

@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan működik a Petőfi Kulturális Ügynökség (PKÜ) megaintézményi modellje?",
+      "question": "Mit jelent a *kormánybiztos*?",
       "options": [
-        "A korábban autonóm szakmai kuratóriumok által elosztott irodalmi és művészeti forrásokat egyetlen központi holdingba vonja össze, felülről irányított vezetéssel.",
-        "A kulturális források elosztását megosztja a regionális önkormányzatok és a helyi művészeti egyesületek kuratóriumai között.",
-        "A nemzetközi könyvvásárok és külföldi színházi vendégjátékok szakmai és logisztikai koordinációját végzi önálló ügynökségként."
+        "Az Országgyűlés által választott bírót, aki a költségvetés szabályosságát vizsgálja.",
+        "A pályázók által választott képviselőt, aki a támogatások kifizetését ellenőrzi.",
+        "A kormány által megbízott személyt, aki egy külön feladat irányítását végzi."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "c1-cultural-policy-vocab"
       ]
@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A művészek nem _____ alá a szakmai függetlenségüket az állami pénzosztóknak.",
-      "hint": "must not subordinate / rendel + -hetik",
-      "answer": "rendelhetik",
-      "english": "Artists must not subordinate their professional independence to state money distributors.",
+      "sentence": "A bírálók szerint a szakmai testületeknek _____ volna dönteniük a támogatásokról.",
+      "hint": "had to (past)",
+      "answer": "kellett",
+      "english": "According to the critics, professional bodies should have decided about the funding.",
       "teaches": [
-        "formal-obligation"
+        "kellett-volna"
       ]
     },
     {
@@ -37,20 +37,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "kulturális holding",
-          "több ágazatot egyetlen cégformába tömörítő megaintézmény"
+          "ügynökség",
+          "központi szervezet, amely programokat és intézményeket fog össze"
         ],
         [
-          "forráskoncentráció",
-          "a költségvetési pénzek központi csatornába terelése"
+          "szakmai testület",
+          "a szakterület képviselőiből álló döntéshozó csoport"
         ],
         [
-          "bürokratikus vízfej",
-          "túlméretezett adminisztratív irányítás"
+          "főigazgató",
+          "egy nagy intézmény első számú vezetője"
         ],
         [
-          "alkotói autonómia",
-          "a művész szabadsága a hatalmi beavatkozástól"
+          "elbírálás",
+          "a pályázatok értékelése és a döntés"
         ]
       ],
       "teaches": [
@@ -62,12 +62,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az alkotóknak kötelességük _____ az esztétikai autonómiát a klientúraépítéssel szemben.",
-      "hint": "defend / megvéd + -eni",
-      "answer": "megvédeni",
-      "english": "Creators have a duty to defend aesthetic autonomy against clientele building.",
+      "sentence": "A bírálók szerint a pályázatokat nyilvánosan kellett _____ elbírálni.",
+      "hint": "would (past counterfactual)",
+      "answer": "volna",
+      "english": "According to the critics, the applications should have been judged in public.",
       "teaches": [
-        "formal-obligation"
+        "kellett-volna"
       ]
     },
     {
@@ -77,25 +77,29 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "művészet",
-        "nem",
-        "rendelhető",
-        "alá",
-        "pártpolitikai",
-        "elvárásoknak."
+        "bírálók",
+        "szerint",
+        "a",
+        "szakmai",
+        "testületeknek",
+        "kellett",
+        "volna",
+        "dönteniük."
       ],
       "solution": [
         "A",
-        "művészet",
-        "nem",
-        "rendelhető",
-        "alá",
-        "pártpolitikai",
-        "elvárásoknak."
+        "bírálók",
+        "szerint",
+        "a",
+        "szakmai",
+        "testületeknek",
+        "kellett",
+        "volna",
+        "dönteniük."
       ],
-      "english": "Art cannot be subordinated to party political expectations.",
+      "english": "According to the critics, professional bodies should have decided.",
       "teaches": [
-        "formal-obligation"
+        "kellett-volna"
       ]
     },
     {
@@ -105,26 +109,26 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Folyóirat-szerkesztő",
-          "text": "Hogyan éljük túl a PKÜ által diktált forrásmegvonásokat?"
+          "speaker": "Tanár",
+          "text": "Valójában az ügynökség vezetése döntött a támogatásokról. Mit mondtak erről a bírálók?"
         },
         {
-          "speaker": "Író",
-          "text": "Csak úgy, ha nem hódolunk be: a művészet nem _____ alá politikai igazodásnak a túlélési pénzekért cserébe."
+          "speaker": "Diák",
+          "text": "Szerintük a szakmai testületeknek _____ dönteniük."
         },
         {
-          "speaker": "Folyóirat-szerkesztő",
-          "text": "Akkor a független olvasóközönség támogatására kell építenünk."
+          "speaker": "Tanár",
+          "text": "És a PKÜ megítélése?"
         }
       ],
       "options": [
-        "rendelhető",
-        "felejthető",
-        "építhető"
+        "kellett volt",
+        "kellett volna",
+        "kellett lesz"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "formal-obligation"
+        "kellett-volna"
       ]
     },
     {
@@ -134,12 +138,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating artistic autonomy using a deontic modal structure.",
-          "answer": "A művészek nem rendelhetik alá alkotói szabadságukat a központosított kulturális holdingok ideológiai elvárásainak, és kötelességük megőrizni a független kritikai szellemet."
+          "prompt": "Write one or two sentences in Hungarian about what the critics said should have happened with the funding decisions of the agency.",
+          "answer": "A bírálók szerint a szakmai testületeknek kellett volna dönteniük a támogatásokról, és a pályázatokat nyilvánosan kellett volna elbírálni."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "c1-cultural-policy-vocab"
       ]
     },
     {
@@ -147,15 +151,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik modális kifejezés fogalmazza meg az autonómia védelmét a legkategorikusabban?",
+      "question": "Melyik mondat fejez ki bírálatot arról, ami nem történt meg?",
       "options": [
-        "a művészet nem rendelhető alá politikai lojalitásnak",
-        "esetleg kérhetnének egy kis plusz pénzt",
-        "talán nem ártana barátkozni a miniszterrel"
+        "A testületeknek kellett volna dönteniük.",
+        "A testületek döntöttek a támogatásokról.",
+        "A testületek talán döntenek a támogatásokról."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "kellett-volna"
       ]
     }
   ]

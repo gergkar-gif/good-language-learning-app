@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen jogállást és privilégiumokat biztosított a 2011-es Alaptörvény az MMA-nak?",
+      "question": "Mit jelent a *köztestület*?",
       "options": [
-        "Köztestületi rangot, alkotmányos szintű védelmet, tízmilliárdos költségvetést és kiemelt delegálási jogot az NKA kuratóriumaiba.",
-        "A civil egyesületi forma fenntartását állami költségvetési juttatások és delegálási jogok nélkül a művészeti életben.",
-        "A kortárs művészeti kiállítások minősítési és engedélyezési jogkörét a szaktárca közvetlen szakmai felügyelete mellett."
+        "Olyan céget, amelynek minden tagja a kormány tisztségviselője.",
+        "Törvény által létrehozott, önkormányzati elven működő testületet.",
+        "Olyan társulatot, amely csak állami színházban játszhat."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "c1-cultural-policy-vocab"
       ]
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Kétségkívül _____ az intézményi paritás felborulása és a források politikai elosztása.",
-      "hint": "demonstrated / bebizonyosodik + -ott",
-      "answer": "bebizonyosodott",
-      "english": "Undoubtedly the overturning of institutional parity and political distribution of funds has been demonstrated.",
+      "sentence": "Az MMA tagjai szerint a testület a művészek képviseletét szolgálta; a bírálók szerint _____ túl nagy befolyáshoz jutott.",
+      "hint": "but, on the other hand",
+      "answers": [
+        "viszont",
+        "azonban"
+      ],
+      "english": "According to the members of the MMA, the body served the representation of artists; according to the critics, however, it gained too much influence.",
       "teaches": [
-        "epistemic-hedging"
+        "adversative-contrast"
       ]
     },
     {
@@ -37,20 +40,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "testületi paritás",
-          "a szakmai szervezetek és az állam egyenlő arányú döntéshozatala"
+          "köztestület",
+          "törvény által létrehozott, önkormányzati testület"
         ],
         [
-          "NKA",
-          "Nemzeti Kulturális Alap, a támogatások fő pályázati forrása"
+          "delegálás",
+          "tagok kijelölése egy testületbe"
         ],
         [
-          "MMA",
-          "Magyar Művészeti Akadémia, alkotmányos kiváltságos köztestület"
+          "képviselet",
+          "egy csoport érdekeinek megjelenítése"
         ],
         [
-          "művészeti életjáradék",
-          "kiemelt alkotóknak járó rendszeres állami juttatás"
+          "befolyás",
+          "hatás mások döntéseire"
         ]
       ],
       "teaches": [
@@ -62,12 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Aligha vitatható, hogy a paritás megszűnése a szakmai döntéshozatal _____ jelentette.",
-      "hint": "end / vég + -ét",
-      "answer": "végét",
-      "english": "It can hardly be disputed that the end of parity meant the end of professional decision-making.",
+      "sentence": "Az Alaptörvény 2011-ben említette az MMA-t. A bírálók _____ azt mondták, hogy a támogatása aránytalanul nagy volt.",
+      "hint": "however",
+      "answer": "azonban",
+      "english": "The Fundamental Law mentioned the MMA in 2011. The critics, however, said that its funding was disproportionately large.",
       "teaches": [
-        "epistemic-hedging"
+        "adversative-contrast"
       ]
     },
     {
@@ -76,26 +79,32 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Kétségkívül",
-        "bebizonyosodott",
-        "a",
-        "testületi",
-        "paritás",
-        "teljes",
-        "felszámolása."
+        "A",
+        "bírálók",
+        "szerint",
+        "viszont",
+        "az",
+        "akadémia",
+        "túl",
+        "nagy",
+        "befolyáshoz",
+        "jutott."
       ],
       "solution": [
-        "Kétségkívül",
-        "bebizonyosodott",
-        "a",
-        "testületi",
-        "paritás",
-        "teljes",
-        "felszámolása."
+        "A",
+        "bírálók",
+        "szerint",
+        "viszont",
+        "az",
+        "akadémia",
+        "túl",
+        "nagy",
+        "befolyáshoz",
+        "jutott."
       ],
-      "english": "Undoubtedly the complete elimination of institutional parity has been demonstrated.",
+      "english": "According to the critics, however, the academy gained too much influence.",
       "teaches": [
-        "epistemic-hedging"
+        "adversative-contrast"
       ]
     },
     {
@@ -105,26 +114,26 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Képzőművész",
-          "text": "Miért nem pályáznak már a fiatal független művészek az NKA kollégiumainál?"
+          "speaker": "Tanár",
+          "text": "Mit mondtak a Magyar Művészeti Akadémia tagjai a testületről?"
         },
         {
-          "speaker": "Művészettörténész",
-          "text": "Mert minden jel szerint a testületi paritás felszámolása óta az MMA-delegáltak szavazata _____ minden lényegi támogatást."
+          "speaker": "Diák",
+          "text": "Szerintük a testület a művészek képviseletét szolgálta. A bírálók _____ azt mondták, hogy túl nagy befolyáshoz jutott."
         },
         {
-          "speaker": "Képzőművész",
-          "text": "Így a tehetség helyett a politikai igazodás dönt."
+          "speaker": "Tanár",
+          "text": "Mi volt a Nemzeti Kulturális Alap szerepe?"
         }
       ],
       "options": [
-        "eldönt",
-        "elfed",
-        "kérdez"
+        "viszont",
+        "mert",
+        "tehát"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "adversative-contrast"
       ]
     },
     {
@@ -134,12 +143,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of institutional cultural capture using an epistemic stance marker.",
-          "answer": "Kétségkívül bebizonyosodott, hogy az MMA alaptörvényi kiváltságai és az NKA paritásos struktúrájának felszámolása eltorzította az esztétikai versenyt, megfosztva a független szcénát az autonóm forrásoktól."
+          "prompt": "Write two sentences in Hungarian about the MMA: what its members said and what the critics said.",
+          "answer": "Az MMA tagjai szerint a testület a művészek képviseletét szolgálta. A bírálók szerint viszont túl nagy befolyáshoz jutott."
         }
       ],
       "teaches": [
-        "epistemic-hedging"
+        "c1-cultural-policy-vocab"
       ]
     },
     {
@@ -147,15 +156,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik episztemikus kifejezés értékeli a paritás felszámolását a legmagasabb elemzői szinten?",
+      "question": "Melyik kifejezés állítja szembe a második forrás véleményét az elsőével?",
       "options": [
-        "aligha vitatható az autonómia felszámolása",
-        "úgy néz ki talán nincs pénz",
-        "lehet hogy valaki elvitte a kulcsot"
+        "ennek következtében",
+        "ugyanis",
+        "ezzel szemben"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "epistemic-hedging"
+        "adversative-contrast"
       ]
     }
   ]

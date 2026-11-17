@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit értünk 'hintapolitika' alatt a magyar diplomáciatörténetben és jelenkorban?",
+      "question": "Mit jelent a *Keleti Nyitás* a magyar külpolitikában?",
       "options": [
-        "Két egymással szembenálló nagyhatalmi tömb (Nyugat és Kelet) közötti taktikai egyensúlyozást és opportunista ingadozást, amely feladja az elvi elköteleződést.",
-        "A visegrádi négyek szövetségi rendszerének megerősítését a nyugat-európai magállamokkal szemben.",
-        "A globális kereskedelmi egyezmények következetes elutasítását az önellátó gazdaságpolitika érdekében."
+        "Az ország keleti határán létrehozott új határátkelőhelyek építési programját.",
+        "Egy keleti országban megrendezett nemzetközi kulturális fesztivált.",
+        "A kormány külpolitikai irányát, amely a keleti országokkal bővítette a kapcsolatokat."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "c1-pendulum-politics-vocab"
       ]
@@ -22,12 +22,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A keleti nyitás doktrínája _____ az ország stratégiai partnerségre lépett tekintélyelvű rezsimekkel.",
-      "hint": "in the wake of / following",
-      "answer": "nyomán",
-      "english": "In the wake of the Eastern Opening doctrine the country entered into strategic partnership with authoritarian regimes.",
+      "sentence": "A kormány indoklása _____ a válság után új exportpiacokra is szükség volt.",
+      "answer": "szerint",
+      "english": "According to the government's reasoning, new export markets were also needed after the crisis.",
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -37,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
+          "külpolitika",
+          "az állam kapcsolatai más államokkal"
+        ],
+        [
+          "exportpiac",
+          "ország, ahová a termékeket eladják"
+        ],
+        [
+          "tagállam",
+          "egy szövetség vagy unió tagja"
+        ],
+        [
           "hintapolitika",
-          "két rivális szövetség közötti opportunista egyensúlyozás"
-        ],
-        [
-          "Keleti Nyitás",
-          "orientációváltás az ázsiai és posztszovjet államok felé"
-        ],
-        [
-          "konnektivitás",
-          "a gazdasági semlegesség és blokkmentesség kormányzati jelszava"
-        ],
-        [
-          "szavahihetőség",
-          "a szövetségesi megbízhatóság nemzetközi tőkéje"
+          "elemzők kifejezése a két irány közötti ingadozásra"
         ]
       ],
       "teaches": [
@@ -62,15 +61,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A taktikai hintapolitika _____ felbomlott a közép-európai V4-es szövetség.",
-      "hint": "as a consequence / következte + -ében",
-      "english": "As a consequence of tactical pendulum politics Central European V4 alliance dissolved.",
-      "teaches": [
-        "framing-markers"
-      ],
+      "sentence": "A kormány indoklása szerint új piacokra volt szükség; a bírálók szerint _____ a nyugati kapcsolatok terhelődtek.",
+      "hint": "but, on the other hand",
       "answers": [
-        "következtében",
-        "eredményeként"
+        "viszont",
+        "azonban"
+      ],
+      "english": "According to the government's reasoning new markets were needed; according to the critics, however, the western relations were strained.",
+      "teaches": [
+        "adversative-contrast"
       ]
     },
     {
@@ -80,23 +79,29 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "hintapolitika",
-        "aláássa",
-        "Magyarország",
-        "nemzetközi",
-        "szavahihetőségét."
+        "bírálók",
+        "szerint",
+        "a",
+        "politika",
+        "terhelte",
+        "a",
+        "nyugati",
+        "kapcsolatokat."
       ],
       "solution": [
         "A",
-        "hintapolitika",
-        "aláássa",
-        "Magyarország",
-        "nemzetközi",
-        "szavahihetőségét."
+        "bírálók",
+        "szerint",
+        "a",
+        "politika",
+        "terhelte",
+        "a",
+        "nyugati",
+        "kapcsolatokat."
       ],
-      "english": "Pendulum politics undermines Hungary's international credibility.",
+      "english": "According to the critics, the policy strained the western relations.",
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -106,26 +111,26 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Külpolitikai elemző",
-          "text": "Hogyan ítélik meg Washingtonban és Brüsszelben a magyar gazdasági semlegesség doktrínáját?"
+          "speaker": "Tanár",
+          "text": "Ki mondta, hogy új exportpiacokra volt szükség?"
         },
         {
-          "speaker": "Diplomata",
-          "text": "Úgy, hogy a keleti nyitás doktrínája _____ Magyarország eltávolodott az euroatlanti értékrendtől."
+          "speaker": "Diák",
+          "text": "A kormány indoklása _____ a válság után új piacokra volt szükség."
         },
         {
-          "speaker": "Külpolitikai elemző",
-          "text": "Ez a folyamat a legmélyebb diplomáciai elszigetelődéshez vezetett."
+          "speaker": "Tanár",
+          "text": "És mit mondtak a bírálók?"
         }
       ],
       "options": [
-        "nyomán",
-        "ellenére",
-        "mentén"
+        "szerinte",
+        "szerint",
+        "szerintem"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -135,12 +140,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical diagnosis of pendulum politics using a discourse framing marker.",
-          "answer": "A taktikai hintapolitika következtében és a keleti nyitás doktrínája nyomán Magyarország felélte szövetségesi hitelét a transzatlanti közösségben, és végzetesen elszigetelődött Európában."
+          "prompt": "Write two sentences in Hungarian about the Opening to the East: what the government's reasoning said and what the critics said.",
+          "answer": "A kormány indoklása szerint új exportpiacokra is szükség volt. A bírálók szerint viszont a politika terhelte a nyugati kapcsolatokat."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "c1-pendulum-politics-vocab"
       ]
     },
     {
@@ -148,15 +153,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés diagnosztizálja a külpolitikai fordulatot a leghitelesebben?",
+      "question": "Melyik mondat tulajdonítja az állítást a kormánynak?",
       "options": [
-        "a taktikai hintapolitika következtében / a keleti nyitás doktrínája nyomán",
-        "a kereskedelmi kapcsolatok rutinjellegű fenntartása / a diplomáciai protokoll betartása mellett",
-        "a regionális gazdasági együttműködés keretében / a szomszédságpolitika koordinációja során"
+        "A kormány indoklása szerint új piacokra volt szükség.",
+        "Új piacokra volt szükség, ez a helyzet magától értetődő volt.",
+        "Új piacokra egyértelműen szükség volt a válság után."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     }
   ]

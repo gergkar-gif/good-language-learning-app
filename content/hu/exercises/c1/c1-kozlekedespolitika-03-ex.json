@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen kötelezettséget vállalt a magyar állam a 35 éves autópálya-koncessziós szerződésben?",
+      "question": "Mit jelent a *koncesszió* közigazgatási szövegben?",
       "options": [
-        "Évente több százmilliárd forint 'rendelkezésre állási díjat' fizet a magánkonzorciumnak az autópályák fenntartásáért és bővítéséért, garantálva a magántőke profitját.",
-        "Azt, hogy a koncessziós időszak alatt az állam a matricabevételek egy meghatározott hányadát közvetlenül átengedi a konzorcium fejlesztési alapjába.",
-        "Azt, hogy a gyorsforgalmi úthálózat kijelölt szakaszain csökkentett úthasználati díjat vezet be a nemzetközi tranzitfuvarozók számára."
+        "Hosszú időre szóló szerződést, amellyel az állam közfeladatot bíz egy magáncégre.",
+        "Rövid határidejű szerződést, amellyel egy cég irodát bérel egy állami hivatalban.",
+        "Olyan adót, amelyet minden autós évente egyszer fizet be az államnak."
       ],
       "correct": 0,
       "teaches": [
@@ -22,10 +22,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Minél több pénzt visz el az autópálya-koncesszió, _____ kevesebb jut a vasúti járműpark megújítására.",
-      "hint": "minél … ___",
+      "sentence": "Minél hosszabb a szerződés, _____ hosszabb ideig köti az államot.",
       "answer": "annál",
-      "english": "The more money the highway concession takes, the less goes to rolling stock renewal.",
+      "english": "The longer the contract, the longer it binds the state.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -37,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "autópálya-koncesszió",
-          "gyorsforgalmi utak 35 éves magánüzemeltetése"
+          "koncesszió",
+          "közfeladat hosszú távú átadása egy cégnek"
         ],
         [
           "rendelkezésre állási díj",
-          "az állam által a koncesszornak fizetett fix díj"
+          "az állam fizetése a használható utakért"
         ],
         [
-          "magántőke-alap",
-          "a tulajdonosok kilétét elrejtő pénzügyi alap"
+          "üzemeltetés",
+          "egy létesítmény működtetése és karbantartása"
         ],
         [
-          "forrásátszivattyúzás",
-          "közpénzek magánzsebekbe való átcsatornázása"
+          "átláthatóság",
+          "az, hogy a szerződés adatai nyilvánosak és ellenőrizhetők"
         ]
       ],
       "teaches": [
@@ -62,10 +61,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Amilyen mértékben növekszik a koncessziós kifizetés, olyan _____ csökken a vasútbiztonsági költségvetés.",
-      "hint": "proportion / arány + -ban",
-      "answer": "arányban",
-      "english": "In proportion as concession payout increases, to that extent railway safety budget decreases.",
+      "sentence": "Minél több pénzt köt le egy szerződés, annál _____ a költségvetés mozgástere.",
+      "hint": "small, comparative",
+      "answers": [
+        "kisebb",
+        "szűkebb"
+      ],
+      "english": "The more money a contract ties up, the smaller the budget's room for manoeuvre.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -77,29 +79,29 @@
       "stage": "practice",
       "tiles": [
         "Minél",
-        "drágább",
+        "hosszabb",
         "a",
-        "koncesszió,",
+        "koncessziós",
+        "időszak,",
         "annál",
-        "kevesebb",
-        "forrás",
-        "jut",
+        "nehezebb",
+        "módosítani",
         "a",
-        "vasútra."
+        "feltételeket."
       ],
       "solution": [
         "Minél",
-        "drágább",
+        "hosszabb",
         "a",
-        "koncesszió,",
+        "koncessziós",
+        "időszak,",
         "annál",
-        "kevesebb",
-        "forrás",
-        "jut",
+        "nehezebb",
+        "módosítani",
         "a",
-        "vasútra."
+        "feltételeket."
       ],
-      "english": "The more expensive the concession, the fewer funds go to the railway.",
+      "english": "The longer the concession period, the harder it is to change the conditions.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -111,24 +113,24 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Közgazdász",
-          "text": "Miért nincs pénz a MÁV leromlott mozdonyainak cseréjére?"
+          "speaker": "Tanár",
+          "text": "Miért vitatták a bírálók a hosszú szerződést?"
         },
         {
-          "speaker": "Elemző",
-          "text": "Mert minél több forrást köt le a 35 éves autópálya-szerződés, _____ kevesebb mozgástere marad a költségvetésnek a vasútra."
+          "speaker": "Diák",
+          "text": "Szerintük minél hosszabb a szerződés, _____ nehezebb módosítani."
         },
         {
-          "speaker": "Közgazdász",
-          "text": "Ez a közpénzek aránytalan és káros elosztása."
+          "speaker": "Tanár",
+          "text": "És mit mondott a kormány indoklása?"
         }
       ],
       "options": [
+        "olyan",
         "annál",
-        "mindig",
-        "soha"
+        "akkor"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -140,12 +142,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence analyzing infrastructure funding distortion using 'Minél... annál...'.",
-          "answer": "Minél több százmilliárd forintot fizet ki az állam a 35 éves autópálya-koncesszió rendelkezésre állási díjaira, annál kevesebb forrás marad a MÁV elöregedett járműparkjának megújítására."
+          "prompt": "Write a sentence in Hungarian with minél … annál … about a long contract and the budget.",
+          "answer": "Minél hosszabb a szerződés, annál tovább köti az államot, és annál kisebb a költségvetés mozgástere."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "c1-railway-decay-vocab"
       ]
     },
     {
@@ -153,13 +155,13 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet írja le az aszfaltkoncesszió és a vasúti forráskivonás arányosságát a legpontosabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Minél több forrást von el a koncesszió... annál kevesebb jut a vasútra",
-        "Ha sok az autó, gyorsan megyünk",
-        "Szépek az új pihenőhelyek az út mentén"
+        "Minél hosszabb a szerződés, minél hosszabb ideig köt.",
+        "Annál hosszabb a szerződés, minél hosszabb ideig köt.",
+        "Minél hosszabb a szerződés, annál hosszabb ideig köt."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "correlative-minel-annal"
       ]
