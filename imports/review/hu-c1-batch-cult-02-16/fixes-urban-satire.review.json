@@ -1,0 +1,673 @@
+[
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-01-ex.json",
+  "old": "Mert a kabarék kizárólag a hivatalos állami propagandát népszerűsítették.",
+  "new": "Mert a kabarék a hivatalos állami propagandát népszerűsítették.",
+  "why": "tell-absolute: kizárólag only in a wrong option",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-01-ex.json",
+  "id": "c1-pestiironia-01-check-7",
+  "set": {
+   "question": "Mi jellemezte a pesti viccet?",
+   "options": [
+    "Fanyar poénokkal, gyorsan reagált a napi politikára.",
+    "Pátoszos nemzeti romantikával reagált a napi politikára.",
+    "Vidéki néphagyományokat és tájszólásokat ápolt a napi politika helyett."
+   ],
+   "teaches": [
+    "c1-urban-satire-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "taste/overstated stem and two-fault wrong options; options now match the story (fanyar poén, quick reaction) and each breaks one thing; tag follows what a wrong answer shows",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-pestiironia-01-voc.json",
+  "old": "    {\n      \"lemma\": \"szájhagyomány\",\n      \"translation\": \"oral tradition\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "new": "    {\n      \"lemma\": \"szájhagyomány\",\n      \"translation\": \"oral tradition\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"nevetségessé válás\",\n      \"translation\": \"becoming a laughing-stock\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "why": "dialogue-5 uses nevetségessé válás",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-01-kavicsok.json",
+  "old": "szovjet megszállást és rákosista elnyomást",
+  "new": "szovjet megszállást és a Rákosi-korszak elnyomását",
+  "why": "loaded label megszállás used as neutral; rákosista not in the dictionary",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-01-kavicsok.json",
+  "old": "amit semmilyen tank és titkosrendőrség sem tudott elhallgattatni",
+  "new": "amit a hatalom eszközei sem tudtak teljesen elhallgattatni",
+  "why": "overclaim: jokes were not beyond the reach of the regimes",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-01-kavicsok.json",
+  "old": "egyetlen fanyar, szellemes poénnal törölték el a hazugságok birodalmát. Ha délelőtt történt valamilyen politikai botrány, délre már az egész Nagykörút a legújabb viccen nevetett.",
+  "new": "egyetlen fanyar, szellemes poénnal gúnyolták ki a hazugságokat. A mondás szerint, ha délelőtt történt valamilyen politikai botrány, délre már a Nagykörúton a legújabb viccen nevettek.",
+  "why": "overclaim (a joke wiped out the empire of lies) and anecdote not hedged",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-01-kavicsok.json",
+  "old": "Megtanította a pesti embert arra, hogy nem kell félni attól, aki nevetséges; és amíg nevetni tudunk, addig a lelkünk mélyén szabadok maradunk.",
+  "new": "Sokak számára azt jelentette, hogy nem kell félni attól, aki nevetséges, és hogy a nevetés a belső szabadság egyik formája lehet.",
+  "why": "maxim in \"we\" voice, glorifying; softened",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-02-ex.json",
+  "id": "c1-pestiironia-02-practice-2",
+  "set": {
+   "hint": "exaggerated sketching (noun)",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint named the ending (hint-suffix); the blank tests the possessed form",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-02-ex.json",
+  "id": "c1-pestiironia-02-dialogue-5",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Olvasó",
+     "text": "Haragudtak a Nyugat írói Karinthy paródiái miatt?"
+    },
+    {
+     "speaker": "Irodalmár",
+     "text": "Nem feltétlenül: sokan szakmai _____, ha Karinthy megparodizálta őket."
+    }
+   ],
+   "options": [
+    "elismerésnek tartották",
+    "elismeréssel tartották",
+    "elismerést tartották"
+   ],
+   "correct": 0,
+   "teaches": [
+    "verb-government-nak-nek"
+   ]
+  },
+  "why": "claim \"all took it as the highest recognition\" is not established: hedged (sokan); unmet megsértődtek removed; the item tests tart + -nak/-nek",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-02-ex.json",
+  "id": "c1-pestiironia-02-check-7",
+  "set": {
+   "options": [
+    "A modern magyar irodalmi stílusparódia (Így írtok ti).",
+    "A romantikus történelmi dráma és a nemzeti eposz műfaja.",
+    "A népies hangú balladaköltészet és a falusi életkép."
+   ],
+   "teaches": [
+    "c1-urban-satire-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length-giveaway 54 vs 39; unmet szimbolista/vallásos removed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-pestiironia-02-a-gr.json",
+  "old": "\"Humorban nem ismerek tréfát...\",",
+  "new": "\"A humor komoly dolog...\",",
+  "why": "quotation unconfirmed; replaced by a paraphrase",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-pestiironia-02-voc.json",
+  "old": "    {\n      \"lemma\": \"intellektuális játék\",\n      \"translation\": \"intellectual game\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "new": "    {\n      \"lemma\": \"intellektuális játék\",\n      \"translation\": \"intellectual game\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"paródia\",\n      \"translation\": \"parody\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"manír\",\n      \"translation\": \"mannerism\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"butaság\",\n      \"translation\": \"stupidity\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"ellenszer\",\n      \"translation\": \"antidote\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "why": "words used in the story, builder and items of this lesson",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-02-karinthy.json",
+  "old": "egy zseniális, fáradt szemű férfi ült, akit Karinthy Frigyesnek hívtak",
+  "new": "egy író ült, akit Karinthy Frigyesnek hívtak",
+  "why": "invented detail (tired eyes)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-02-karinthy.json",
+  "old": "Karinthy nem gúnyolta ki a kortárs írókat: szerette őket, de oly tökéletesen utánozta",
+  "new": "Karinthy nem rosszindulatúan gúnyolta ki a kortárs írókat, hanem oly tökéletesen utánozta",
+  "why": "mind-reading (he loved them) removed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-02-karinthy.json",
+  "old": "Karinthy vallotta: a humor a legkomolyabb dolog a világon. Nem a komolyság ellentéte – a komolyság ellentéte a butaság és a merevség. A humor az a képesség,",
+  "new": "Karinthy felfogása szerint a humor nagyon komoly dolog. Nem a komolyság ellentéte: a komolyság ellentéte inkább a butaság és a merevség. Ebben a felfogásban a humor az a képesség,",
+  "why": "paraphrase of his stance, attributed, no quotation",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-03-ex.json",
+  "id": "c1-pestiironia-03-practice-2",
+  "set": {
+   "sentence": "Egyes kutatók szerint a hatalom a kabaré _____ bízott, mert a feszültséget ellenőrzött keretek között akarta kiengedni.",
+   "hint": "safety-valve function (noun)",
+   "answers": [
+    "szelepfunkciójában"
+   ],
+   "english": "According to some researchers, the authorities trusted in the cabaret's safety-valve function, because they wanted to release tension within controlled limits.",
+   "teaches": [
+    "ban-ben-in"
+   ],
+   "category": "grammar",
+   "answer": null
+  },
+  "why": "disputed matter (safety valve vs undermining) was settled one way (\"the mockery actually undermined the regime\"); hint named the ending",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-03-ex.json",
+  "id": "c1-pestiironia-03-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "szatíra",
+    "éles",
+    "tükröt",
+    "tartott",
+    "a",
+    "hatalom",
+    "elé."
+   ],
+   "solution": [
+    "A",
+    "szatíra",
+    "éles",
+    "tükröt",
+    "tartott",
+    "a",
+    "hatalom",
+    "elé."
+   ],
+   "english": "Satire held up a sharp mirror to power."
+  },
+  "why": "\"mortal wound on the authority of dictatorship\" settles the dispute; the story now names it",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-03-ex.json",
+  "id": "c1-pestiironia-03-dialogue-5",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Néző",
+     "text": "Hogyan engedhették meg Hofinak ezeket a bátor kiszólásokat?"
+    },
+    {
+     "speaker": "Kritikus",
+     "text": "Egyes elemzők szerint a kabaréműsor felülről engedélyezett biztonsági szelepként működött, és _____."
+    }
+   ],
+   "options": [
+    "kordában tartotta a feszültséget",
+    "kordára tartotta a feszültséget",
+    "kordából tartotta a feszültséget"
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-urban-satire-vocab"
+   ]
+  },
+  "why": "mind-reading (\"the party leadership believed\") attributed to analysts; tense agreed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-03-ex.json",
+  "old": "Hofi Géza szókimondó humora a nemzet kollektív terápiája és lelkiismerete volt.",
+  "new": "Hofi Géza szókimondó humora sok néző számára felszabadító volt.",
+  "why": "sample answer overclaims (the nation's therapy and conscience)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-03-ex.json",
+  "id": "c1-pestiironia-03-check-7",
+  "set": {
+   "question": "Mire használta a pesti kabaré a humort?",
+   "options": [
+    "A közélet bírálatára: a hatalom gyarlóságait nevetségessé tette.",
+    "A kormányzati rendeletek tréfás hanglejtéssel való felolvasására.",
+    "Az arisztokratikus szalonhumor szabályainak követésére."
+   ],
+   "teaches": [
+    "c1-urban-satire-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length-giveaway 88 vs 59; \"historical mission\" stem is a taste stem",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-pestiironia-03-voc.json",
+  "old": "    {\n      \"lemma\": \"szókimondó\",\n      \"translation\": \"outspoken, forthright\",\n      \"pos\": \"adjective\"\n    }\n  ]\n}",
+  "new": "    {\n      \"lemma\": \"szókimondó\",\n      \"translation\": \"outspoken, forthright\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"kordában tart\",\n      \"translation\": \"to keep in check\",\n      \"pos\": \"verb\"\n    }\n  ]\n}",
+  "why": "dialogue-5 uses kordában tart",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-03-kabare.json",
+  "old": "Amikor Nagy Endre a huszadik század elején felállt a pesti színpadra, és elegáns szmokingban, közvetlen hangon beszélni kezdett a közönséghez a napi politika botrányairól, megszületett a magyar politikai kabaré. A kabaré nem cirkuszi bohózat volt: a város legműveltebb értelmisége gyűlt össze esténként,",
+  "new": "Nagy Endrét a magyar kabaré megalapítójaként tartják számon: a huszadik század elején a pesti színpadon közvetlen hangon beszélt a közönséghez a napi politika ügyeiről. A kabaré nem cirkuszi bohózat volt: sok művelt pesti gyűlt össze esténként,",
+  "why": "embellishment (tuxedo), \"was born\" and \"most cultured intelligentsia\" overstated",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-03-kabare.json",
+  "old": "egy zseniális színész, Hofi Géza vitte tovább ezt a lángot. A Mikroszkóp Színpad deszkáin estéről estére kimondta azt, amit az emberek otthon, lehúzott redőnyök mögött suttogtak. Karikírozta a pártfunkcionáriusok ostobaságát, a tervgazdaság csődjét és a kisemberek mindennapi nyomorúságát.",
+  "new": "egy népszerű színész, Hofi Géza vitte tovább ezt a hagyományt. Fellépett a Mikroszkóp Színpadon is, és sokak szerint kimondta azt, amit az emberek addig csak otthon, a barátaik között mertek megjegyezni. Gúnyolta a hivatalnokok és a pártfunkcionáriusok világát, a hiánygazdaság és a mindennapi élet nehézségeit.",
+  "why": "judgements (\"stupidity\", \"bankruptcy of the planned economy\") and unverified stage detail removed",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-03-kabare.json",
+  "old": "A hatalom hiába próbálta biztonsági szelepként használni: Hofi nevetése halálos sebet ejtett a rendszer tekintélyén. Amikor egy nép már nevetni tud az elnyomóin, az elnyomók hatalma erkölcsileg véget ért.",
+  "new": "A kutatók vitatják, hogy az ilyen megtűrt humor aláásta-e a rendszert, vagy biztonsági szelepként inkább kiengedte a feszültséget és stabilizálta azt.",
+  "why": "disputed matter named in one line (reviewer fact)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-04-ex.json",
+  "id": "c1-pestiironia-04-practice-2",
+  "set": {
+   "hint": "allusion (plural, object)",
+   "teaches": [
+    "acc-poss"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint named the ending; the blank tests the accusative of a possessed plural",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-04-ex.json",
+  "id": "c1-pestiironia-04-dialogue-5",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Cenzor",
+     "text": "Nem találok a szövegben nyílt rendszerellenes mondatot."
+    },
+    {
+     "speaker": "Szerkesztő",
+     "text": "Nincs is benne, hiszen a darab papíron csak a _____ szólt."
+    }
+   ],
+   "options": [
+    "török időkről",
+    "török időkben",
+    "török időkre"
+   ],
+   "correct": 0,
+   "teaches": [
+    "verb-government-rol-rel"
+   ]
+  },
+  "why": "tell word kizárólag; unmet tizenhatodik; the item tests szól + -ról/-ről",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-04-ex.json",
+  "id": "c1-pestiironia-04-check-7",
+  "set": {
+   "options": [
+    "A hivatalosan nem megjelenhető írások és hírek terjesztését.",
+    "A pártsajtó hivatalos híreinek ingyenes továbbterjesztését.",
+    "Az állami kiadók könyveinek terjesztését a könyvesboltokban."
+   ],
+   "teaches": [
+    "c1-urban-satire-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length-giveaway 79 vs 60; absurd wrong options (fashion magazine photocopying); unmet words",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-pestiironia-04-voc.json",
+  "old": "    {\n      \"lemma\": \"felforgató\",\n      \"translation\": \"subversive\",\n      \"pos\": \"adjective\"\n    }\n  ]\n}",
+  "new": "    {\n      \"lemma\": \"felforgató\",\n      \"translation\": \"subversive\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"allegória\",\n      \"translation\": \"allegory\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "why": "allegória used in introduce-1",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-04-szamizdat.json",
+  "old": "A diktatúra évtizedeiben a magyar irodalom és színház különleges titkos társasággá vált. A cenzorok ott ültek minden szerkesztőségben és színházi premieren, ceruzával a kézben keresve a felforgató gondolatokat. Az írók azonban kifejlesztették a védekezés legkifinomultabb eszközét:",
+  "new": "A diktatúra évtizedeiben a magyar irodalomban és színházban elterjedt a célzások nyelve. A hatalom ellenőrizte, mi jelenhet meg és mi kerülhet színpadra, és a szerkesztők, színházigazgatók gyakran maguk is cenzorként dolgoztak, ceruzával a kézben keresve a felforgató gondolatokat. Az írók azonban kifejlesztették a védekezés egyik legkifinomultabb eszközét:",
+  "why": "\"censors sat in every editorial office and premiere\" overstated (Kádár era: control, self-censorship); fact to check",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-04-szamizdat.json",
+  "old": "minden néző pontosan tudta, hogy a darab valójában az 1956 utáni szovjet megszállásról szól.",
+  "new": "sok néző úgy értette, hogy a darab a saját korára, az 1956 utáni szovjet megszállásra is utal.",
+  "why": "generalisation (every viewer knew exactly); loaded label megszállás",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-04-szamizdat.json",
+  "old": "Azok pedig, akik nem akartak metaforák mögé rejtőzni, a föld alá mentek. Írógépekkel, indigóval és titkos stencilekkel sokszorosították a szamizdat folyóiratokat – a Beszélőt és a Hírmondót. A szabad gondolatot nem lehetett börtönbe zárni: a humor és a bátorság fegyverével felvértezve utat talált a szabadság hajnala felé.",
+  "new": "Egyesek nem akartak célzások mögé rejtőzni, ők szamizdatban publikáltak. Írógépekkel, indigóval és stencilekkel sokszorosították a folyóiratokat, például a Beszélőt (1981-től) és a Hírmondót (1983-tól). Ezek kis példányszámban terjedtek, de olyan hangokat is megszólaltattak, amelyek a hivatalos lapokban nem jelenhettek meg.",
+  "why": "purple ending (\"dawn of freedom\") removed; dates added (reviewer: Beszélő 1981, Hírmondó 1983)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-05-ex.json",
+  "id": "c1-pestiironia-05-introduce-1",
+  "set": {
+   "question": "Mit mondanak sokan a mémek és a pesti vicc kapcsolatáról?",
+   "options": [
+    "Hogy a mémek a pesti vicc gyors, gúnyos reflexióját viszik tovább.",
+    "Hogy a mémek a pesti vicc ellentétei, mert csak képből állnak.",
+    "Hogy a mémek a pesti viccet kereskedelmi reklámmal váltották fel."
+   ]
+  },
+  "why": "tell word kizárólag in two wrong options; length 99 vs 61; continuity presented as settled",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-05-ex.json",
+  "id": "c1-pestiironia-05-practice-2",
+  "set": {
+   "hint": "virus (in the role of)",
+   "teaches": [
+    "essive-formal-kent"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint named the ending; the blank tests the -ként form",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-05-ex.json",
+  "id": "c1-pestiironia-05-dialogue-5",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Elemző",
+     "text": "Képesek a mémek valódi politikai hatást elérni?"
+    },
+    {
+     "speaker": "Médiakutató",
+     "text": "Sokak szerint igen: a szatirikus humor az elnyomó narratívák ellen ma az egyik _____."
+    }
+   ],
+   "teaches": [
+    "c1-urban-satire-vocab"
+   ]
+  },
+  "why": "\"Kétségtelenül\" overclaims; the effect of memes is argued",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-05-ex.json",
+  "id": "c1-pestiironia-05-check-7",
+  "set": {
+   "question": "Mi köti össze a pesti viccet és a mémeket?",
+   "options": [
+    "A gyors, gúnyos válasz a közélet eseményeire.",
+    "Az, hogy mindkettőt az állam rendelte meg és támogatta.",
+    "Az, hogy mindkettő a kávéházak asztalainál terjed."
+   ],
+   "teaches": [
+    "c1-urban-satire-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "wrong options absurd, stem presupposes continuity",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-pestiironia-05-voc.json",
+  "old": "    {\n      \"lemma\": \"folytonosság\",\n      \"translation\": \"continuity\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "new": "    {\n      \"lemma\": \"folytonosság\",\n      \"translation\": \"continuity\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"mémkultúra\",\n      \"translation\": \"meme culture\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tekintélyromboló\",\n      \"translation\": \"authority-undermining\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"narratíva\",\n      \"translation\": \"narrative\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "why": "words used in builder and dialogue",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-05-memek.json",
+  "old": "Ám a magyar szellem ismét rácáfolt a borúlátókra: a városi szatíra nem halt meg, hanem átköltözött",
+  "new": "Ám a városi szatíra nem halt meg, hanem – sokak szerint – átköltözött",
+  "why": "national-spirit rhetoric",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-05-memek.json",
+  "old": "Ma az internetes mém a pesti vicc legtermészetesebb örököse. Ha a parlamentben valamilyen képtelen törvényt szavaznak meg, vagy egy közszereplő nevetséges nyilatkozatot tesz,",
+  "new": "Sokak szerint az internetes mém a pesti vicc mai örököse. Ha a parlamentben vitatott törvényt szavaznak meg, vagy egy közszereplő feltűnő nyilatkozatot tesz,",
+  "why": "judges parliament and a public figure (reviewer); present-day claim, check 2026",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-05-memek.json",
+  "old": "Percek múlva mémek tízezrei árasztják el a képernyőket",
+  "new": "Percek múlva gyakran mémek százai jelennek meg a képernyőkön",
+  "why": "hyperbole",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-05-memek.json",
+  "old": "A forma változott, de a lényeg változatlan maradt: a nevetés ma is a polgári függetlenség, a józan ész és a közösségi szolidaritás legfőbb biztosítéka. A mémkultúra bizonyítja, hogy a magyar nyelv és a pesti szellem a digitális korszakban is megőrzi kimeríthetetlen életerejét és szabadságszeretetét.",
+  "new": "A forma változott: sokak szerint a nevetés ma is a közösségi összetartozás és a hatalommal szembeni kritikus távolságtartás egyik eszköze. Hogy a mémek mennyire folytatják a pesti vicc hagyományát, azt a kutatók vitatják.",
+  "why": "national-romantic closing and settled claim replaced by a hedge and a one-line dispute",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-consolidation-ex.json",
+  "id": "c1-pestiironia-consolidation-1",
+  "set": {
+   "options": [
+    "A szellemi önvédelem és a belső függetlenség egyik eszköze volt.",
+    "A pártvezetés utasításainak kötelező továbbadása volt.",
+    "A hatalom hivatalos hírközlésének egyik csatornája volt."
+   ],
+   "teaches": [
+    "c1-urban-satire-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "absurd wrong options, unmet words, \"legfőbb\" overstated",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-consolidation-ex.json",
+  "id": "c1-pestiironia-consolidation-2",
+  "set": {
+   "question": "Mit jelent az 'ezópusi nyelv' a magyar irodalomtörténetben?",
+   "options": [
+    "Rejtett, allegorikus írásmódot, amellyel a cenzúrát kijátszották.",
+    "A barokk egyházi költészet képi világát.",
+    "A színészek közti súgás nyelvét a színfalak mögött."
+   ],
+   "teaches": [
+    "c1-urban-satire-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "wrong term aizopusi; length-giveaway 83 vs 60",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-consolidation-ex.json",
+  "id": "c1-pestiironia-consolidation-3",
+  "set": {
+   "pairs": [
+    [
+     "pesti vicc",
+     "Budapest joke"
+    ],
+    [
+     "stílusparódia",
+     "stylistic parody"
+    ],
+    [
+     "szelepfunkció",
+     "safety valve function"
+    ],
+    [
+     "ezópusi nyelv",
+     "Aesopian language"
+    ],
+    [
+     "internetes mém",
+     "internet meme"
+    ]
+   ]
+  },
+  "why": "wrong term aizopusi",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-consolidation-ex.json",
+  "id": "c1-pestiironia-consolidation-4",
+  "set": {
+   "sentence": "Karinthy Így írtok ti című kötete _____ gyűjteménye.",
+   "hint": "style parody, plural",
+   "english": "Karinthy's volume That's How You Write is a collection of style parodies.",
+   "teaches": [
+    "c1-urban-satire-vocab"
+   ],
+   "answers": [
+    "stílusparódiák",
+    "paródiák"
+   ],
+   "answer": null
+  },
+  "why": "hint gave the answer; \"legkiemelkedőbb\" is a taste claim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-consolidation-ex.json",
+  "id": "c1-pestiironia-consolidation-5",
+  "set": {
+   "hint": "stage asides (plural, 'with his')",
+   "teaches": [
+    "plural-possessive"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint named the ending",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-consolidation-ex.json",
+  "id": "c1-pestiironia-consolidation-6",
+  "set": {
+   "teaches": [
+    "building-the-infinitive-the-suffix-ni"
+   ],
+   "category": "grammar"
+  },
+  "why": "the blank is an infinitive",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-consolidation-ex.json",
+  "id": "c1-pestiironia-consolidation-7",
+  "set": {
+   "hint": "allusions (plural, 'its')",
+   "teaches": [
+    "plural-possessive"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint named the ending",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-consolidation-ex.json",
+  "id": "c1-pestiironia-consolidation-8",
+  "set": {
+   "hint": "virus (in the role of)",
+   "teaches": [
+    "essive-formal-kent"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint named the ending",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-consolidation-ex.json",
+  "id": "c1-pestiironia-consolidation-9",
+  "set": {
+   "question": "Mit mutat a pesti vicc története a humor és a szabadság kapcsolatáról?",
+   "options": [
+    "A nevetés nyomás alatt is megőrizhet némi belső függetlenséget.",
+    "A humor a szabad, demokratikus időkben tudott csak virágozni.",
+    "A viccek a győztes forradalmak utáni ünneplésen hangzottak el."
+   ],
+   "teaches": [
+    "c1-urban-satire-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "the wrong option \"sign of stabilisation\" is a position researchers hold; \"semmilyen elnyomás\" overclaims",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-consolidation-ex.json",
+  "old": "Míg Hofi a színpadról formálta a nemzet lelkiismeretét, ma a mémek decentralizáltan dekonstruálják a hatalom gőgjét.",
+  "new": "Míg Hofi a színpadról gúnyolta a hatalmat, ma a mémek a közösségi médiában teszik ugyanezt.",
+  "why": "sample answer: unmet words, \"conscience of the nation\"",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-04-ex.json",
+  "old": "ion\": \"Mit jelentett az 'aizopusi nyelv' a cenzúra korszak",
+  "new": "ion\": \"Mit jelentett az 'ezópusi nyelv' a cenzúra korszak",
+  "why": "wrong word: ezópusi nyelv (reviewer)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-04-ex.json",
+  "old": ": [\n        [\n          \"aizopusi nyelv\",\n          \"Aesop",
+  "new": ": [\n        [\n          \"ezópusi nyelv\",\n          \"Aesop",
+  "why": "wrong word: ezópusi nyelv (reviewer)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-pestiironia-04-ex.json",
+  "old": "\n          \"answer\": \"Az aizopusi nyelv révén a szerző és ",
+  "new": "\n          \"answer\": \"Az ezópusi nyelv révén a szerző és ",
+  "why": "wrong word: ezópusi nyelv (reviewer)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-pestiironia-04-voc.json",
+  "old": " [\n    {\n      \"lemma\": \"aizopusi nyelv\",\n      \"translati",
+  "new": " [\n    {\n      \"lemma\": \"ezópusi nyelv\",\n      \"translati",
+  "why": "wrong word: ezópusi nyelv (reviewer)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-pestiironia-04-a-gr.json",
+  "old": "rian writers often used *aizopusi nyelv* (Aesopian languag",
+  "new": "rian writers often used *ezópusi nyelv* (Aesopian languag",
+  "why": "wrong word: ezópusi nyelv (reviewer)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-pestiironia-04-szamizdat.json",
+  "old": "finomultabb eszközét: az aizopusi nyelvet.\"\n    },\n    {\n ",
+  "new": "finomultabb eszközét: az ezópusi nyelvet.\"\n    },\n    {\n ",
+  "why": "wrong word: ezópusi nyelv (reviewer)",
+  "kind": "hungarian"
+ }
+]

@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "Mi volt a központi vita Széchenyi és Kossuth között a reformkorban?",
       "options": [
-        "A lassú, szerves gazdasági reformok és a gyors, politikai érdekegyesítés és függetlenség útja közötti választás.",
-        "Hogy a Lánchíd építési költségeit elsősorban a nemesi birtokokra kivetett rendkívüli hozzájárulásból fedezzék-e.",
-        "Hogy a magyar nyelv hivatalossá tétele előtt meg kell-e követelni a latin nyelv kötelező ismeretét a parlamentben."
+        "A lassú, szerves gazdasági reform és a gyorsabb politikai szabadság útja közötti választás.",
+        "Hogy a magyar országgyűlés a pozsonyi helyett inkább a bécsi udvarban üljön össze.",
+        "Hogy a magyar nyelv hivatalossá tétele előtt a latin nyelv ismeretét kötelezővé kell-e tenni."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-vitakultura-01-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Kossuth legfőbb történelmi érdeme az _____ elvének kidolgozása és megvalósítása volt.",
+      "sentence": "Kossuth a reformkorban az _____ elvét hirdette.",
       "hint": "unification of interests",
-      "english": "Kossuth's chief historical merit was the elaboration and realization of the principle of unification of interests.",
+      "english": "In the Reform Era Kossuth proclaimed the principle of the unification of interests.",
       "teaches": [
-        "c1-parliamentary-debate"
+        "c1-public-debate-vocab"
       ],
       "answers": [
         "érdekegyesítés"
@@ -62,33 +62,35 @@
     {
       "id": "c1-vitakultura-01-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "Széchenyi",
         "és",
         "Kossuth",
         "vitája",
-        "meghatározta",
+        "fontos",
+        "kérdéseket",
+        "vetett",
+        "fel",
         "a",
-        "modern",
-        "Magyarország",
-        "sorsát."
+        "reformkorban."
       ],
       "solution": [
         "Széchenyi",
         "és",
         "Kossuth",
         "vitája",
-        "meghatározta",
+        "fontos",
+        "kérdéseket",
+        "vetett",
+        "fel",
         "a",
-        "modern",
-        "Magyarország",
-        "sorsát."
+        "reformkorban."
       ],
-      "english": "The debate between Széchenyi and Kossuth determined the destiny of modern Hungary.",
+      "english": "The debate between Széchenyi and Kossuth raised important questions in the Reform Era.",
       "teaches": [
-        "c1-parliamentary-debate"
+        "c1-public-debate-vocab"
       ]
     },
     {
@@ -99,22 +101,25 @@
       "prompt": [
         {
           "speaker": "Történész",
-          "text": "Ellenségek voltak-e valójában Széchenyi és Kossuth?"
+          "text": "Miben különbözött Széchenyi és Kossuth elképzelése?"
         },
         {
           "speaker": "Professzor",
-          "text": "Nem, csupán a _____."
+          "text": "Széchenyi a lassú gazdasági megerősödésben hitt, Kossuth viszont a gyorsabb politikai _____ tartotta fontosnak."
         }
       ],
       "options": [
-        "módszerekben különböztek",
-        "módszerekben különbözött",
-        "módszerekre különböztek"
+        "szabadságot",
+        "szabadságnak",
+        "szabadságban"
       ],
       "correct": 0,
       "teaches": [
-        "c1-parliamentary-debate"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "c1-vitakultura-01-production-6",
@@ -128,23 +133,23 @@
         }
       ],
       "teaches": [
-        "c1-parliamentary-debate"
+        "c1-public-debate-vocab"
       ]
     },
     {
       "id": "c1-vitakultura-01-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik állítás foglalja össze legpontosabban Széchenyi reformkori stratégiáját?",
+      "question": "Melyik állítás igaz Széchenyi reformkori elképzeléséről?",
       "options": [
-        "A békés, szerves fejlődés, az intézményteremtés és az erkölcsi pallérozódás elsőbbsége.",
-        "A Habsburg-házzal való azonnali szakítás és a fegyveres nemzeti felkelés kirobbantása.",
-        "A rendi kiváltságok és a jobbágyok jogfosztottságának változatlan fenntartása a jövőben."
+        "A szerves fejlődés, az intézményteremtés és az erkölcsi erősödés elsőbbsége.",
+        "A Habsburg-házzal való azonnali szakítás és a fegyveres felkelés.",
+        "A rendi kiváltságok és a jobbágyok jogfosztottságának változatlan fenntartása."
       ],
       "correct": 0,
       "teaches": [
-        "c1-parliamentary-debate"
+        "c1-public-debate-vocab"
       ]
     }
   ]

@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "Mi az 'elővigyázatosság elve' (precautionary principle) a bioetikában?",
       "options": [
-        "Ha egy beavatkozás súlyos vagy visszafordíthatatlan károkat okozhat, a bizonyosság hiánya nem indok a védelem elhalasztására.",
-        "A klinikai vizsgálatokat kizárólag számítógépes szimulációkkal kell helyettesíteni.",
-        "Minden orvosi beavatkozás engedélyezését a piaci profitkilátásoktól kell függővé tenni."
+        "Ha súlyos kár lehetséges, a bizonyosság hiánya nem ok a védekezés halogatására.",
+        "A kísérleteket számítógépes szimulációkkal kell helyettesíteni.",
+        "Az orvosi beavatkozások engedélyezését a piaci haszontól kell függővé tenni."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-tudomanyelmelet-05-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A biológiai kutatások legfőbb korlátja az emberi _____ feltétlen tiszteletben tartása.",
+      "sentence": "A bioetikai vitákban gyakran hivatkoznak az emberi _____ tiszteletben tartására.",
       "hint": "dignity",
-      "english": "The chief limit of biological research is the unconditional respect of human dignity.",
+      "english": "In bioethical debates people often refer to respecting human dignity.",
       "teaches": [
-        "c1-scientific-paradigm-discourse"
+        "c1-paradigm-shifts-vocab"
       ],
       "answers": [
         "méltóság"
@@ -62,7 +62,7 @@
     {
       "id": "c1-tudomanyelmelet-05-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "Nem",
@@ -84,7 +84,7 @@
       ],
       "english": "Not everything is permissible that is technically feasible.",
       "teaches": [
-        "c1-scientific-paradigm-discourse"
+        "c1-paradigm-shifts-vocab"
       ]
     },
     {
@@ -99,7 +99,7 @@
         },
         {
           "speaker": "Bioetikus",
-          "text": "Nem, amíg fennállnak a beláthatatlan és _____."
+          "text": "Sok bioetikus szerint nem, amíg fennállnak a beláthatatlan és _____."
         }
       ],
       "options": [
@@ -109,8 +109,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "c1-scientific-paradigm-discourse"
-      ]
+        "plural-nouns-k"
+      ],
+      "distractor_skills": {
+        "2": "val-vel"
+      }
     },
     {
       "id": "c1-tudomanyelmelet-05-production-6",
@@ -120,27 +123,27 @@
       "template": [
         {
           "prompt": "Write a bioethical warning about technological intervention.",
-          "answer": "A technológiai haladás nem válhat az emberi méltóság felszámolásának eszközévé."
+          "answer": "Sok bioetikus szerint a technológiai haladás nem válhat az emberi méltóság felszámolásának eszközévé."
         }
       ],
       "teaches": [
-        "c1-scientific-paradigm-discourse"
+        "c1-paradigm-shifts-vocab"
       ]
     },
     {
       "id": "c1-tudomanyelmelet-05-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik fogalom áll a kortárs bioetikai viták középpontjában?",
+      "question": "Mit kérdez a szöveg az emberi méltóságról?",
       "options": [
-        "Az emberi méltóság védelme és az elővigyázatosság elve.",
-        "A kutatási infrastruktúra műszaki szabványai.",
-        "A laboratóriumi vegyszerek tárolási protokollja."
+        "Azt, hogy sérthetetlen határ-e, vagy csak korlát.",
+        "Azt, hogy hány országban védik a törvények.",
+        "Azt, hogy mennyibe kerül az orvosi ellátás."
       ],
       "correct": 0,
       "teaches": [
-        "c1-scientific-paradigm-discourse"
+        "c1-paradigm-shifts-vocab"
       ]
     }
   ]

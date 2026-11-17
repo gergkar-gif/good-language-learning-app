@@ -8,9 +8,9 @@
       "stage": "practice",
       "question": "Mit állít a nyelvi relativizmus mérsékelt (gyenge) változata?",
       "options": [
-        "A nyelvtan és a szókincs finoman irányítja a beszélők figyelmét és észlelési szokásait.",
+        "A nyelvtani kategóriák finoman irányíthatják a beszélők figyelmét.",
         "A nyelv merev börtönként határozza meg, hogy miről vagyunk képesek gondolkodni.",
-        "A különböző nyelveket beszélők soha nem érthetik meg egymás gondolatait."
+        "A különböző nyelveket beszélők nem érthetik meg egymás gondolatait."
       ],
       "correct": 0,
       "teaches": [
@@ -23,7 +23,7 @@
       "category": "vocabulary",
       "stage": "practice",
       "sentence": "A magyar nyelvben az _____ rendkívül gazdag rendszere pontosan jelzi a cselekvés irányát és eredményét.",
-      "hint": "igekötő + -k",
+      "hint": "preverb, plural",
       "answer": "igekötők",
       "english": "In the Hungarian language, the extremely rich system of verbal prefixes indicates precisely the direction and result of the action.",
       "teaches": [
@@ -49,47 +49,47 @@
     {
       "id": "c1-nyelvfilozofia-03.ex04",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "question": "Milyen szerepet játszanak az igekötők a magyar eseményszemléletben?",
       "options": [
-        "Kódolják a cselekvés határát, teljességét és finom aspektuális árnyalatait.",
-        "Kizárólag az igeidők (jelen, múlt, jövő) formai megkülönböztetésére szolgálnak.",
-        "Csupán a mondat hangsúlyviszonyait jelölik, jelentésbeli többlet nélkül."
+        "Jelzik a cselekvés irányát, határát és eredményét.",
+        "Az igeidők (jelen, múlt, jövő) megkülönböztetésére szolgálnak.",
+        "A mondat hangsúlyviszonyait jelölik, jelentésbeli többlet nélkül."
       ],
       "correct": 0,
       "teaches": [
-        "c1-linguistic-relativity"
+        "c1-language-worldview-vocab"
       ]
     },
     {
       "id": "c1-nyelvfilozofia-03.ex05",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
         "nyelvtani",
         "szerkezet",
-        "befolyásolja",
+        "befolyásolhatja",
         "a",
         "valóság",
-        "megismerésének",
+        "észlelésének",
         "módját."
       ],
       "solution": [
         "A",
         "nyelvtani",
         "szerkezet",
-        "befolyásolja",
+        "befolyásolhatja",
         "a",
         "valóság",
-        "megismerésének",
+        "észlelésének",
         "módját."
       ],
-      "english": "The grammatical structure influences the way reality is known.",
+      "english": "The grammatical structure may influence the way reality is perceived.",
       "teaches": [
-        "c1-linguistic-relativity"
+        "c1-language-worldview-vocab"
       ]
     },
     {
@@ -135,18 +135,22 @@
         },
         {
           "speaker": "Kognitív kutató",
-          "text": "Nem él más fizikai világban, de az események befejezettségére _____."
+          "text": "Nem él más fizikai világban, de egyes kutatók szerint az események befejezettségére jobban _____."
         }
       ],
       "options": [
-        "sokkal éberebben figyel",
-        "sokkal éberebben figyelne",
-        "sokkal éberebben figyelnie"
+        "figyel",
+        "figyelne",
+        "figyelnie"
       ],
       "correct": 0,
       "teaches": [
-        "c1-linguistic-relativity"
-      ]
+        "present-tense-routine-language"
+      ],
+      "distractor_skills": {
+        "1": "nek-conditional",
+        "2": "inflected-infinitives"
+      }
     },
     {
       "id": "c1-nyelvfilozofia-03.ex08",
@@ -156,11 +160,11 @@
       "template": [
         {
           "prompt": "Write a critical evaluation in Hungarian about the Sapir-Whorf hypothesis.",
-          "answer": "Bár a nyelvi determinizmus túlzó állítás, az anyanyelv nyelvtani szerkezete kétségkívül alakítja kognitív fókuszunkat."
+          "answer": "Bár a nyelvi determinizmus túlzó állítás, az anyanyelv nyelvtani szerkezete valószínűleg befolyásolja, mire figyelünk."
         }
       ],
       "teaches": [
-        "c1-linguistic-relativity"
+        "c1-language-worldview-vocab"
       ]
     }
   ]

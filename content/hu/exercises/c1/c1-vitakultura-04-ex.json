@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi tette a röpiratot oly hatékony fegyverré a magyar történelemben?",
+      "question": "Mi tette a röpiratot hatékony fegyverré a magyar történelemben?",
       "options": [
-        "A gyors terjeszthetőség, a közvetlen hangvétel és a cenzúra kikerülésének képessége.",
+        "Gyorsan terjedt, közvetlen hangú volt, és kikerülhette a cenzúrát.",
         "A tudományos akadémiák hivatalos jóváhagyása.",
-        "A kizárólag egyetemi könyvtárakban való hozzáférhetőség."
+        "Az, hogy csak az egyetemi könyvtárakban volt hozzáférhető."
       ],
       "correct": 0,
       "teaches": [
@@ -23,11 +23,13 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "A cikk megjelenése hatalmas társadalmi _____ váltott ki országszerte.",
-      "hint": "visszhang + -ot",
-      "answer": "visszhangot",
+      "hint": "echo, object",
       "english": "The publication of the article triggered enormous public resonance nationwide.",
       "teaches": [
-        "essay-oratory-style"
+        "how-the-accusative-t-works"
+      ],
+      "answers": [
+        "visszhangot"
       ]
     },
     {
@@ -60,7 +62,7 @@
     {
       "id": "c1-vitakultura-04-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -68,9 +70,10 @@
         "a",
         "szellemi",
         "szabadság",
-        "legfontosabb",
+        "egyik",
+        "fontos",
         "védőbástyája",
-        "maradt."
+        "volt."
       ],
       "solution": [
         "A",
@@ -78,13 +81,14 @@
         "a",
         "szellemi",
         "szabadság",
-        "legfontosabb",
+        "egyik",
+        "fontos",
         "védőbástyája",
-        "maradt."
+        "volt."
       ],
-      "english": "The press remained the most important bastion of intellectual freedom.",
+      "english": "The press was one of the important bastions of intellectual freedom.",
       "teaches": [
-        "essay-oratory-style"
+        "c1-public-debate-vocab"
       ]
     },
     {
@@ -99,7 +103,7 @@
         },
         {
           "speaker": "Publicista",
-          "text": "Egyáltalán nem, az elveink mellett a jelenlegi helyzetben elengedhetetlen a _____."
+          "text": "Egyáltalán nem, az elveink mellett a mostani helyzetben elengedhetetlen a _____."
         }
       ],
       "options": [
@@ -109,8 +113,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "essay-oratory-style"
-      ]
+        "c1-public-debate-vocab"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "val-vel"
+      }
     },
     {
       "id": "c1-vitakultura-04-production-6",
@@ -124,23 +132,23 @@
         }
       ],
       "teaches": [
-        "essay-oratory-style"
+        "c1-public-debate-vocab"
       ]
     },
     {
       "id": "c1-vitakultura-04-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik állítás jellemzi a klasszikus magyar tollharcok hagyományát?",
+      "question": "Mit emel ki a szöveg a hírlapírás hagyományában?",
       "options": [
-        "A szellemes érvelés, a nyelvi gazdagság és a társadalmi felelősségvállalás egysége.",
-        "A felek közötti merev elzárkózás a kompromisszumtól.",
-        "A hivatali álláspontok kritika nélküli adaptálása."
+        "A szellemes polémiát, a bátor leleplezést és az érvek tisztaságát.",
+        "A felek közötti merev elzárkózást a kompromisszumtól.",
+        "A hivatali álláspontok kritika nélküli átvételét."
       ],
       "correct": 0,
       "teaches": [
-        "essay-oratory-style"
+        "c1-public-debate-vocab"
       ]
     }
   ]

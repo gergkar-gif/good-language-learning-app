@@ -8,8 +8,8 @@
       "stage": "introduce",
       "question": "Milyen veszélyt jelentenek a 'véleménybuborékok' a társadalmi vitára?",
       "options": [
-        "Elszigetelik a polgárokat, meggátolják a valódi párbeszédet és felerősítik a polarizációt.",
-        "Kizárólag szakmai elemzésekre korlátozzák az információáramlást.",
+        "Elszigetelhetik a polgárokat, és nehezebbé tehetik a párbeszédet.",
+        "Az információáramlást szakmai elemzésekre korlátozzák.",
         "Minden tartalmat a felhasználók engedélye nélkül törölnek."
       ],
       "correct": 0,
@@ -20,13 +20,13 @@
     {
       "id": "c1-vitakultura-05-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "sentence": "A demokratikus jövő kulcsa az érdemi és felelős társadalmi _____ helyreállítása.",
       "hint": "dialogue",
       "english": "The key to a democratic future is the restoration of meaningful and responsible social dialogue.",
       "teaches": [
-        "c1-parliamentary-debate"
+        "c1-public-debate-vocab"
       ],
       "answers": [
         "párbeszéd",
@@ -63,7 +63,7 @@
     {
       "id": "c1-vitakultura-05-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -87,7 +87,7 @@
       ],
       "english": "The essence of democracy is dialogue based on mutual respect.",
       "teaches": [
-        "c1-parliamentary-debate"
+        "c1-public-debate-vocab"
       ]
     },
     {
@@ -102,18 +102,22 @@
         },
         {
           "speaker": "Szociológus",
-          "text": "Leginkább nyitott vitákkal és a források ellenőrzését segítő _____."
+          "text": "Sokak szerint nyitott vitákkal és a források ellenőrzését segítő _____."
         }
       ],
       "options": [
-        "tudatos médiatudatossággal",
-        "tudatos médiatudatosságot",
-        "tudatos médiatudatosságra"
+        "médiaoktatással",
+        "médiaoktatást",
+        "médiaoktatásra"
       ],
       "correct": 0,
       "teaches": [
-        "c1-parliamentary-debate"
-      ]
+        "val-vel"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "ra-re"
+      }
     },
     {
       "id": "c1-vitakultura-05-production-6",
@@ -123,27 +127,27 @@
       "template": [
         {
           "prompt": "Write a critical thought on algorithmic polarization.",
-          "answer": "Az algoritmusok által vezérelt polarizáció megbénítja a közös megoldások keresését."
+          "answer": "Sokak szerint az algoritmusok által felerősített polarizáció megnehezíti a közös megoldások keresését."
         }
       ],
       "teaches": [
-        "c1-parliamentary-debate"
+        "c1-public-debate-vocab"
       ]
     },
     {
       "id": "c1-vitakultura-05-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mi szükséges a deliberatív demokrácia működéséhez a digitális korban?",
+      "question": "Mit tart a szöveg fontosnak a vitakultúra megújításában?",
       "options": [
-        "A racionális érvelés, a forráskritika és a nyitott társadalmi párbeszéd.",
-        "A viták adminisztratív korlátozása az intézményi stabilitás érdekében.",
-        "Az egyéni véleménynyilvánítás hatósági felügyelete a fórumokon."
+        "A felelős, érvelő emberi szót és a másik meghallgatását.",
+        "Az algoritmusok által felerősített indulatokat és zajt.",
+        "A saját előítéleteink visszhangjának hangos ismétlését."
       ],
       "correct": 0,
       "teaches": [
-        "c1-parliamentary-debate"
+        "c1-public-debate-vocab"
       ]
     }
   ]

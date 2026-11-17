@@ -8,7 +8,7 @@
       "stage": "introduce",
       "question": "Milyen alapelvre építette Deák Ferenc a tárgyalási stratégiáját Béccsel szemben?",
       "options": [
-        "A magyar jogfolytonosság és az 1848-as alkotmányosság megingathatatlan elvére.",
+        "A magyar jogfolytonosság elvére.",
         "Az azonnali fegyveres háború elvére.",
         "A birodalomhoz való feltétel nélküli csatlakozásra."
       ],
@@ -20,14 +20,16 @@
     {
       "id": "c1-vitakultura-02-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Deák híres mondása szerint a nemzet nem adhatja fel a törvényes _____ alapját.",
-      "hint": "jogalap + -ját",
-      "answer": "jogalapját",
-      "english": "According to Deák's famous saying, the nation cannot surrender its lawful legal basis.",
+      "sentence": "Deák érvelésének alapja az volt, hogy a magyar alkotmány törvényes _____ továbbra is érvényes.",
+      "hint": "legal basis, its",
+      "english": "The basis of Deák's argument was that the legal basis of the Hungarian constitution remains valid.",
       "teaches": [
-        "c1-parliamentary-debate"
+        "c1-public-debate-vocab"
+      ],
+      "answers": [
+        "jogalapja"
       ]
     },
     {
@@ -60,7 +62,7 @@
     {
       "id": "c1-vitakultura-02-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -84,7 +86,7 @@
       ],
       "english": "The law must not be sacrificed for momentary convenience.",
       "teaches": [
-        "c1-parliamentary-debate"
+        "c1-public-debate-vocab"
       ]
     },
     {
@@ -95,11 +97,11 @@
       "prompt": [
         {
           "speaker": "Diplomata",
-          "text": "Hogyan győzhette le egy jogász a Habsburg hadsereget?"
+          "text": "Hogyan lehet fegyver nélkül védeni egy alkotmányt?"
         },
         {
           "speaker": "Történész",
-          "text": "Úgy, hogy a fegyveres harc helyett a _____ választotta."
+          "text": "Deák ezt úgy tette, hogy a fegyveres harc helyett a _____ választotta."
         }
       ],
       "options": [
@@ -109,8 +111,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "c1-parliamentary-debate"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "distractor_skills": {
+        "1": "val-vel"
+      }
     },
     {
       "id": "c1-vitakultura-02-production-6",
@@ -120,27 +125,27 @@
       "template": [
         {
           "prompt": "Write a statement in Deák's spirit on legal continuity.",
-          "answer": "A jog feladása a nemzet halálát jelentené, ezért a törvényességből nem engedhetünk."
+          "answer": "A jogfolytonosság elve szerint az alkotmány 1848 után sem szűnt meg létezni."
         }
       ],
       "teaches": [
-        "c1-parliamentary-debate"
+        "c1-public-debate-vocab"
       ]
     },
     {
       "id": "c1-vitakultura-02-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mi volt az 1867-es kiegyezés történelmi jelentősége?",
+      "question": "Mi volt az 1867-es kiegyezés?",
       "options": [
-        "Visszaállította az alkotmányos rendet és megnyitotta a modern polgári fejlődés korszakát.",
-        "Magyarország elvesztette minden önrendelkezését.",
-        "Megszüntette a magyar országgyűlést."
+        "Megállapodás, amely a Monarchián belül visszaadta a magyar alkotmányos rendet.",
+        "Magyarország elvesztette minden önrendelkezését a birodalomban.",
+        "A kiegyezés megszüntette a magyar országgyűlést és a törvényeket."
       ],
       "correct": 0,
       "teaches": [
-        "c1-parliamentary-debate"
+        "c1-public-debate-vocab"
       ]
     }
   ]

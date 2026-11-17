@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "Mi az a 'Neumann-architektúra' a számítástechnikában?",
       "options": [
-        "A tárolt programú számítógép alapelve, ahol a program és az adat ugyanabban a memóriában helyezkedik el.",
-        "A mikroprocesszorok félvezető rétegeinek fizikai elrendezési terve.",
-        "Az analóg számítógépek huzalozott áramköreinek kapcsolási rendszere."
+        "A program és az adatok közös tárolására épülő számítógép-felépítés.",
+        "A processzor alkatrészeinek fizikai elrendezési terve.",
+        "A régi, huzalozott áramkörű gépek kapcsolási rendszere."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-tudomanyelmelet-03-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Neumann játékelmélete forradalmasította a modern közgazdaságtant és a stratégiai _____ folyamatát.",
+      "sentence": "Neumann játékelmélete nagy hatással volt a közgazdaságtanra és a stratégiai _____ elemzésére.",
       "hint": "decision-making",
-      "english": "Neumann's game theory revolutionized modern economics and the process of strategic decision-making.",
+      "english": "Neumann's game theory had a great influence on economics and on the analysis of strategic decision-making.",
       "teaches": [
-        "epistemic-hedging"
+        "c1-paradigm-shifts-vocab"
       ],
       "answers": [
         "döntéshozatal",
@@ -63,31 +63,29 @@
     {
       "id": "c1-tudomanyelmelet-03-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "Neumann",
-        "megalapozta",
         "a",
         "modern",
-        "digitális",
-        "korszak",
-        "matematikai",
-        "alapjait."
+        "számítástechnika",
+        "egyik",
+        "úttörője",
+        "volt."
       ],
       "solution": [
         "Neumann",
-        "megalapozta",
         "a",
         "modern",
-        "digitális",
-        "korszak",
-        "matematikai",
-        "alapjait."
+        "számítástechnika",
+        "egyik",
+        "úttörője",
+        "volt."
       ],
-      "english": "Neumann established the mathematical foundations of the modern digital era.",
+      "english": "Neumann was one of the pioneers of modern computing.",
       "teaches": [
-        "epistemic-hedging"
+        "c1-paradigm-shifts-vocab"
       ]
     },
     {
@@ -102,7 +100,7 @@
         },
         {
           "speaker": "Filozófus",
-          "text": "Kizárólag nyers _____, de az intuíció és a bölcsesség terén aligha."
+          "text": "Talán a nyers _____, de az intuíció és a bölcsesség terén aligha."
         }
       ],
       "options": [
@@ -112,8 +110,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
-      ]
+        "ban-ben-in"
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "c1-tudomanyelmelet-03-production-6",
@@ -122,28 +124,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a reflection on von Neumann's visionary warning about technological acceleration.",
-          "answer": "Neumann felismerte, hogy a technológiai fejlődés sebessége túllépheti az emberiség erkölcsi alkalmazkodóképességét."
+          "prompt": "Write a sentence about what Ulam recalled von Neumann saying on technological acceleration.",
+          "answer": "Ulam visszaemlékezése szerint Neumann arról beszélt, hogy a technológia gyorsulása alapvetően megváltoztathatja az emberi életet."
         }
       ],
       "teaches": [
-        "epistemic-hedging"
+        "c1-paradigm-shifts-vocab"
       ]
     },
     {
       "id": "c1-tudomanyelmelet-03-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
       "question": "Melyik tudományterület megalapozása NEM köthető közvetlenül Neumann Jánoshoz?",
       "options": [
-        "A freudi pszichoanalízis.",
+        "A pszichoanalízis.",
         "A játékelmélet.",
         "A digitális számítógépek architektúrája."
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "c1-paradigm-shifts-vocab"
       ]
     }
   ]

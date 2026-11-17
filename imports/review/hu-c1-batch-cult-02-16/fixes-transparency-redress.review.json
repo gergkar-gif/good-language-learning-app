@@ -1,0 +1,564 @@
+[
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-01-ex.json",
+  "id": "c1-kozszolgalat-01-introduce-1",
+  "set": {
+   "options": [
+    "A közfeladatot ellátó szervek működésére és a közpénzekre vonatkozó adat.",
+    "A gazdasági társaságok belső üzleti titkai és pénzügyi tervei.",
+    "A magánszemélyek védett személyes és egészségügyi adatai."
+   ]
+  },
+  "why": "length-giveaway 83 vs 62",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-01-ex.json",
+  "id": "c1-kozszolgalat-01-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "közpénzek",
+    "felhasználásáról",
+    "a",
+    "nyilvánosságnak",
+    "is",
+    "számot",
+    "kell",
+    "adni."
+   ],
+   "solution": [
+    "A",
+    "közpénzek",
+    "felhasználásáról",
+    "a",
+    "nyilvánosságnak",
+    "is",
+    "számot",
+    "kell",
+    "adni."
+   ],
+   "english": "The public must also be given an account of how public funds are used.",
+   "teaches": [
+    "c1-transparency-redress-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"minden forintjával nyilvánosan\" overclaims: the law has exceptions (trade secrets, decision preparation)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-01-ex.json",
+  "old": "Közpénzek felhasználása esetén a közérdekű adatok nyilvánossága megelőzi a magánérdekeket; a törvény értelmében a közpénzre vonatkozó adatok nem minősíthetők üzleti titokká.",
+  "new": "Közpénzek felhasználása esetén a közérdekű adatok nyilvánossága fontos érdek; a törvény szerint a közpénzek felhasználására vonatkozó adatok főszabály szerint nem tagadhatók meg üzleti titokra hivatkozva.",
+  "why": "overclaim: exceptions exist; law paraphrased, check wording",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-kozszolgalat-01-a-gr.json",
+  "old": "\"A közpénzek felhasználása nyilvános és ellenőrizendő...\"",
+  "new": "\"A közpénzek felhasználása nyilvános és ellenőrizhető...\"",
+  "why": "ellenőrizendő reads like an editorial marker; ellenőrizhető is the plain word",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-kozszolgalat-01-voc.json",
+  "old": "    {\n      \"lemma\": \"adatvédelmi hatóság\",\n      \"translation\": \"data protection authority (NAIH)\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "new": "    {\n      \"lemma\": \"adatvédelmi hatóság\",\n      \"translation\": \"data protection authority (NAIH)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"közfeladat\",\n      \"translation\": \"public task, task of a public body\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "why": "közfeladat used in introduce-1",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kozszolgalat-01-adatigenyles.json",
+  "old": "Amikor egy minisztérium megtagadja a válaszadást, a bíróságok sorra kötelezik az intézményeket a titkolt adatok haladéktalan kiadására.",
+  "new": "A törvény főszabály szerint tizenöt napos határidőt szab a válaszadásra. Amikor egy minisztérium megtagadja a válaszadást, a bíróságok gyakran kötelezik az intézményeket az adatok kiadására.",
+  "why": "reviewer: \"sorra\" generalisation; the 15-day rule is stated in the lesson but not in the segment (a challenge uses it); present-day law, check",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kozszolgalat-01-adatigenyles.json",
+  "old": "a nyilvánosság a korrupció legfőbb ellenszere",
+  "new": "sokak szerint a nyilvánosság a korrupció elleni küzdelem egyik fontos eszköze",
+  "why": "opinion stated as fact",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-02-ex.json",
+  "id": "c1-kozszolgalat-02-controlled-2",
+  "set": {
+   "hint": "irregularities (plural, object)",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint named the ending; the blank tests the accusative plural; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-02-ex.json",
+  "id": "c1-kozszolgalat-02-practice-4",
+  "set": {
+   "tiles": [
+    "Az",
+    "ombudsmani",
+    "jelentés",
+    "erkölcsi",
+    "tekintélye",
+    "változásra",
+    "ösztönözheti",
+    "a",
+    "hatóságokat."
+   ],
+   "solution": [
+    "Az",
+    "ombudsmani",
+    "jelentés",
+    "erkölcsi",
+    "tekintélye",
+    "változásra",
+    "ösztönözheti",
+    "a",
+    "hatóságokat."
+   ],
+   "english": "The moral authority of an ombudsman report can encourage the authorities to change.",
+   "teaches": [
+    "c1-transparency-redress-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"változásra kényszeríti\" contradicts the lesson (the ombudsman has no coercive power)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-02-ex.json",
+  "old": "A nyilvánosság ereje és a tények megkérdőjelezhetetlen feltárása olyan politikai és társadalmi nyomást teremt",
+  "new": "A nyilvánosság ereje és a tények pontos feltárása olyan nyomást teremthet",
+  "why": "\"unassailable\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-02-ex.json",
+  "id": "c1-kozszolgalat-02-check-6",
+  "set": {
+   "options": [
+    "Bárki, aki úgy érzi, hogy egy hatóság sérti az alapvető jogait.",
+    "Az érintett hatóság felettes szerve, magánszemély nem.",
+    "Azok a szervezetek, amelyek állami feladatot látnak el."
+   ],
+   "teaches": [
+    "c1-transparency-redress-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length-giveaway 94 vs 60; tell Kizárólag; eligibility rules are present-day law, check",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kozszolgalat-02-ombudsman.json",
+  "old": "a polgári jogvédelem nélkülözhetetlen bástyájává vált",
+  "new": "a polgári jogvédelem fontos intézményévé vált",
+  "why": "\"indispensable bastion\" evaluative",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kozszolgalat-02-ombudsman.json",
+  "old": "jelentései és nyilvános ajánlásai hatalmas erkölcsi súllyal bírnak. Feltárta a gyermekotthonok állapotát, a fogvatartottak helyzetét és a kórházi ellátás anomáliáit, kényszerítve a döntéshozókat a hibák kijavítására.",
+  "new": "jelentései és nyilvános ajánlásai erkölcsi súllyal bírnak. Vizsgálta például a gyermekotthonok állapotát, a fogvatartottak helyzetét és a kórházi ellátás problémáit, és ajánlásokat tett a hibák kijavítására.",
+  "why": "\"kényszerítve\" contradicted the previous sentence (no coercive power); report topics kept unspecific (reviewer)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-03-ex.json",
+  "id": "c1-kozszolgalat-03-introduce-1",
+  "set": {
+   "options": [
+    "Védelmet a megtorlással és a hátrányos megkülönböztetéssel szemben.",
+    "Azonnali anyagi jutalmat és automatikus előléptetést.",
+    "Mentességet minden büntetőjogi felelősség alól."
+   ]
+  },
+  "why": "length-giveaway 91 vs 59",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-03-ex.json",
+  "id": "c1-kozszolgalat-03-controlled-2",
+  "set": {
+   "sentence": "A jogszabály tiltja a bejelentővel szemben alkalmazott munkahelyi _____.",
+   "hint": "retaliation (object)",
+   "english": "The law prohibits workplace retaliation against the whistleblower.",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "category": "grammar"
+  },
+  "why": "\"szigorúan bünteti ... bármilyen jellegű\" overclaim; hint named the ending",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-03-ex.json",
+  "id": "c1-kozszolgalat-03-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "bejelentők",
+    "védelme",
+    "a",
+    "korrupció",
+    "elleni",
+    "küzdelem",
+    "egyik",
+    "fontos",
+    "feltétele."
+   ],
+   "solution": [
+    "A",
+    "bejelentők",
+    "védelme",
+    "a",
+    "korrupció",
+    "elleni",
+    "küzdelem",
+    "egyik",
+    "fontos",
+    "feltétele."
+   ],
+   "english": "Protecting whistleblowers is one important condition of the fight against corruption.",
+   "teaches": [
+    "c1-transparency-redress-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"legfőbb feltétele\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-03-ex.json",
+  "id": "c1-kozszolgalat-03-check-6",
+  "set": {
+   "question": "Miért hasznos a belső bejelentő rendszer a visszaélések megelőzésében?",
+   "options": [
+    "Mert a visszaélések nehezebben maradhatnak titokban.",
+    "Mert szükségtelenné teszi az állami nyomozóhatóságok munkáját.",
+    "Mert a bejelentők pénzbeli jutalmat kapnak a feljelentésért."
+   ],
+   "teaches": [
+    "c1-transparency-redress-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length-giveaway 102 vs 71",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-kozszolgalat-03-a-gr.json",
+  "old": "\"Belső visszaélés-bejelentési csatorna működtetése minden intézményben...\"",
+  "new": "\"Belső visszaélés-bejelentési csatorna működtetése a nagyobb intézményekben...\"",
+  "why": "\"minden intézményben\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kozszolgalat-03-bejelentovedelem.json",
+  "old": "A névtelenséget biztosító bejelentővédelmi rendszerek",
+  "new": "A bejelentő személyazonosságát védő bejelentési rendszerek",
+  "why": "anonymity is not guaranteed by law (confidentiality is); present-day law, check",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-04-ex.json",
+  "id": "c1-kozszolgalat-04-check-6",
+  "set": {
+   "question": "Mi jelent biztonsági kihívást a digitális államigazgatásban?"
+  },
+  "why": "\"legnagyobb\" taste stem",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-04-ex.json",
+  "id": "c1-kozszolgalat-04-controlled-3",
+  "set": {
+   "pairs": [
+    [
+     "elektronikus közigazgatás",
+     "e-administration"
+    ],
+    [
+     "Ügyfélkapu+",
+     "Client Gate+ portal"
+    ],
+    [
+     "adatbiztonság",
+     "data security"
+    ],
+    [
+     "digitális szakadék",
+     "digital divide"
+    ]
+   ]
+  },
+  "why": "Ügyfélkapu was retired on 16 January 2025; the current name is Ügyfélkapu+ (reviewer; check)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-kozszolgalat-04-a-gr.json",
+  "old": "\"A hivatali ügyintézés digitalizációja az Ügyfélkapun keresztül...\"",
+  "new": "\"A hivatali ügyintézés digitalizációja az Ügyfélkapu+ segítségével...\"",
+  "why": "current name",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-kozszolgalat-04-a-gr.json",
+  "old": "\"Digitális állampolgárság és biometrikus hitelesítés...\"",
+  "new": "\"Digitális állampolgárság és elektronikus azonosítás...\"",
+  "why": "biometric authentication is not confirmed for the DÁP",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-kozszolgalat-04-voc.json",
+  "old": "\"lemma\": \"Ügyfélkapu\",",
+  "new": "\"lemma\": \"Ügyfélkapu+\",",
+  "why": "current name",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-kozszolgalat-04-voc.json",
+  "old": "    {\n      \"lemma\": \"hitelesítés\",\n      \"translation\": \"authentication, certification\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "new": "    {\n      \"lemma\": \"hitelesítés\",\n      \"translation\": \"authentication, certification\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"esélyegyenlőség\",\n      \"translation\": \"equal opportunity\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "why": "esélyegyenlőségi used in production-5",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kozszolgalat-04-digitaliskozigazgatas.json",
+  "old": "Az Ügyfélkapu és az új Digitális Állampolgárság Program révén ma már az adóbevallástól az útlevél-igénylésig szinte minden intézhető egy okostelefonról.",
+  "new": "Az Ügyfélkapu (amelyet 2025 januárjában az Ügyfélkapu+ váltott fel) és a Digitális Állampolgárság Program révén ma már számos ügy intézhető okostelefonról.",
+  "why": "Ügyfélkapu retired 16 Jan 2025; \"szinte minden\" and passport application by phone not confirmed (reviewer); present-day, check 2026",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kozszolgalat-04-digitaliskozigazgatas.json",
+  "old": "És mi történik azokkal a százezrekkel, akik a digitális szakadék túlsó oldalán rekedtek – az idősekkel és a szegény kistelepülések lakóival? A valódi modern közigazgatás nem hagyhatja magára azokat, akiknek a képernyő nem kaput, hanem falat jelent.",
+  "new": "És mi történik azokkal, akik a digitális szakadék túlsó oldalán rekedhetnek – például egyes idősekkel és kistelepülések lakóival? A szakértők szerint a közigazgatásnak meg kell őriznie a személyes ügyintézés lehetőségét is azok számára, akiknek a képernyő nem kaput, hanem falat jelent.",
+  "why": "unsupported figure \"százezrek\"; normative claim attributed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-05-ex.json",
+  "id": "c1-kozszolgalat-05-introduce-1",
+  "set": {
+   "question": "Milyen szerepet vállalnak a civil szervezetek a demokráciában?",
+   "options": [
+    "Sok civil szervezet a közpénzek és a hatalom független ellenőrzését vállalja.",
+    "Közvetlen törvényhozói hatalmat gyakorolnak a minisztériumok felett.",
+    "Döntőbíróként járnak el a gazdasági társaságok közötti jogvitákban."
+   ]
+  },
+  "why": "typo \"watchodog\"; \"ellenőrzést végeznek\" stated for all organisations",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-05-ex.json",
+  "id": "c1-kozszolgalat-05-controlled-2",
+  "set": {
+   "hint": "corruption (adjective)",
+   "teaches": [
+    "having-s"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint named the ending; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-05-ex.json",
+  "id": "c1-kozszolgalat-05-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "hatalom",
+    "társadalmi",
+    "ellenőrzése",
+    "a",
+    "polgárok",
+    "joga",
+    "is."
+   ],
+   "solution": [
+    "A",
+    "hatalom",
+    "társadalmi",
+    "ellenőrzése",
+    "a",
+    "polgárok",
+    "joga",
+    "is."
+   ],
+   "english": "Public oversight of power is also a right of citizens.",
+   "teaches": [
+    "c1-transparency-redress-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "superlative claim (legelidegeníthetetlenebb joga) as fact",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-05-ex.json",
+  "id": "c1-kozszolgalat-05-check-6",
+  "set": {
+   "question": "Mit vár el a pártatlanság elve a köztisztviselőtől?",
+   "options": [
+    "Törvényes, a politikai érdekektől független eljárást.",
+    "A felettes politikai vezetők elvárásainak feltétel nélküli végrehajtását.",
+    "A hatósági eljárások jövedelmezőségének maximalizálását."
+   ],
+   "teaches": [
+    "c1-transparency-redress-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"legfőbb erkölcsi mérce\" taste stem",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-kozszolgalat-05-voc.json",
+  "old": "    {\n      \"lemma\": \"hivatásetika\",\n      \"translation\": \"professional ethics\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "new": "    {\n      \"lemma\": \"hivatásetika\",\n      \"translation\": \"professional ethics\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szakmaiság\",\n      \"translation\": \"professionalism\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "why": "szakmaiság used in production-5",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kozszolgalat-05-civilszervezetek.json",
+  "old": "évtizedek óta küzdenek a közpénzek átláthatóságáért és a korrupció visszaszorításáért.",
+  "new": "régóta dolgoznak a közpénzek átláthatóságáért és a korrupció visszaszorításáért.",
+  "why": "\"évtizedek óta\" does not fit K-Monitor (founded 2007)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kozszolgalat-05-civilszervezetek.json",
+  "old": "Az általuk fejlesztett adatbázisok, közbeszerzési elemzések és bírósági perek ezerszeresen bizonyították, hogy az államhatalom ellenőrzése nem nemzetellenes tevékenység, hanem a legnemesebb hazafias kötelesség. A jövő közigazgatása csak akkor lehet sikeres, ha a hivatali elit nem ellenségként, hanem partnerként tekint a civil polgárokra: olyan közszolgálatot építve, amely a pártatlanság, a professzionalizmus és a megkérdőjelezhetetlen tisztesség talaján áll.",
+  "new": "Munkájuk része adatbázisok fejlesztése, közbeszerzési elemzések készítése és bírósági perek indítása. A civil szervezetek szerint a közszolgálat pártatlanságát és szakmaiságát az is erősíti, ha a hivatalok partnerként tekintenek a civil polgárokra. Hogy ez a viszony milyen, arról a kormányok és a civil szervezetek véleménye gyakran eltér.",
+  "why": "political judgement in a present-day dispute (\"nem nemzetellenes, hanem hazafias kötelesség\"; \"hivatali elit ... ellenségként\") removed (reviewer); attributed; present-day, check 2026",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-consolidation-ex.json",
+  "id": "c1-kozszolgalat-consolidation-1",
+  "set": {
+   "options": [
+    "A közfeladatot ellátó szervek működésére és a közpénzekre vonatkozó adat.",
+    "A piaci cégek belső termelési adatai és üzleti számításai.",
+    "A magánszemélyek adóbevallása és más személyes adatai."
+   ],
+   "teaches": [
+    "c1-transparency-redress-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length-giveaway 95 vs 50",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-consolidation-ex.json",
+  "id": "c1-kozszolgalat-consolidation-3",
+  "set": {
+   "pairs": [
+    [
+     "közérdekű adat",
+     "public interest data"
+    ],
+    [
+     "ombudsman",
+     "fundamental rights commissioner"
+    ],
+    [
+     "közérdekű bejelentő",
+     "whistleblower"
+    ],
+    [
+     "Ügyfélkapu+",
+     "Client Gate+ portal"
+    ],
+    [
+     "közbeszerzés",
+     "public procurement"
+    ]
+   ]
+  },
+  "why": "current name Ügyfélkapu+",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-consolidation-ex.json",
+  "id": "c1-kozszolgalat-consolidation-4",
+  "set": {
+   "hint": "retaliation (with)",
+   "teaches": [
+    "val-vel"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint named the ending; the blank tests -val/-vel",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-consolidation-ex.json",
+  "id": "c1-kozszolgalat-consolidation-5",
+  "set": {
+   "sentence": "A közbeszerzések független társadalmi ellenőrzése a _____ kockázatok csökkentésének egyik eszköze.",
+   "hint": "corruption (adjective)",
+   "english": "Independent public oversight of public procurement is one means of reducing corruption risks.",
+   "teaches": [
+    "having-s"
+   ],
+   "category": "grammar"
+  },
+  "why": "\"leghatékonyabb ellenszere\" overclaim; hint named the ending",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-consolidation-ex.json",
+  "id": "c1-kozszolgalat-consolidation-6",
+  "set": {
+   "hint": "secret, the one invoked (noun)",
+   "teaches": [
+    "verb-government-ra-re"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint named the ending; the blank tests hivatkozik + -ra",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-consolidation-ex.json",
+  "id": "c1-kozszolgalat-consolidation-9",
+  "set": {
+   "question": "Mit tesznek a civil szervezetek az államigazgatás körül?",
+   "options": [
+    "Sok civil szervezet függetlenül ellenőrzi a közpénzek felhasználását.",
+    "A civil szervezetek a hatósági határozatokat maguk hozzák meg.",
+    "A civil szervezetek a parlamenti bizottságok tagjait választják."
+   ],
+   "teaches": [
+    "c1-transparency-redress-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "tell kizárólag; taste stem \"legmélyebben\"; metaphor \"immune system\" as fact",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-consolidation-ex.json",
+  "old": "a bátor munkavállalók védelme a tiszta közélet nélkülözhetetlen feltétele.",
+  "new": "a bejelentők védelme a tiszta közélet egyik fontos feltétele.",
+  "why": "sample answer overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-kozszolgalat-consolidation-ex.json",
+  "old": "Az átlátható állam nem fenyegetés a hatalom számára, hanem a polgári bizalom és a hosszú távú társadalmi stabilitás legbiztosabb alapköve.",
+  "new": "Sokak szerint az átláthatóság erősítheti a polgárok bizalmát az államban.",
+  "why": "sample answer: political overclaim",
+  "kind": "hungarian"
+ }
+]

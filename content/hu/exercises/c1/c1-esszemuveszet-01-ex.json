@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért tekintik Pázmány Pétert a magyar próza megalapozójának?",
+      "question": "Miért tekintik sokan Pázmány Pétert a magyar próza egyik megalapozójának?",
       "options": [
-        "Mert a barokk retorikát ötvözte a népnyelv eleven kifejezőerejével, megteremtve az érvelő prózát.",
-        "Mert a latin nyelvű humanista filológia szigorú szabályait vezette be a költészetbe.",
-        "Mert a reformáció teológiai vitáiban kizárólag a száraz tényközlésre szorítkozott."
+        "Mert a barokk retorikát a népnyelv eleven kifejezőerejével ötvözte.",
+        "Mert a latin humanista filológia szabályait vezette be a költészetbe.",
+        "Mert a teológiai vitákban száraz tényközlésre szorítkozott."
       ],
       "correct": 0,
       "teaches": [
@@ -23,11 +23,11 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "Pázmány szónoklatai az áradó barokk pátosz és a szigorú logikai fegyelem remekbe szabott _____ alkotják.",
-      "hint": "synthesis / szintézis + -ét",
+      "hint": "synthesis, its (object)",
       "answer": "szintézisét",
       "english": "Pázmány's speeches constitute a masterfully crafted synthesis of overflowing baroque pathos and strict logical discipline.",
       "teaches": [
-        "essay-oratory-style"
+        "acc-poss"
       ]
     },
     {
@@ -60,31 +60,33 @@
     {
       "id": "c1-esszemuveszet-01-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "Pázmány",
-        "megteremtette",
+        "szerepe",
+        "fontos",
+        "volt",
         "a",
         "magyar",
         "érvelő",
         "próza",
-        "klasszikus",
-        "alapjait."
+        "kialakulásában."
       ],
       "solution": [
         "Pázmány",
-        "megteremtette",
+        "szerepe",
+        "fontos",
+        "volt",
         "a",
         "magyar",
         "érvelő",
         "próza",
-        "klasszikus",
-        "alapjait."
+        "kialakulásában."
       ],
-      "english": "Pázmány established the classical foundations of Hungarian argumentative prose.",
+      "english": "Pázmány's role was important in the formation of Hungarian argumentative prose.",
       "teaches": [
-        "essay-oratory-style"
+        "c1-hungarian-essay-vocab"
       ]
     },
     {
@@ -95,22 +97,25 @@
       "prompt": [
         {
           "speaker": "Irodalomtörténész",
-          "text": "Hogyan hat Pázmány stílusa a mai esszéírásra?"
+          "text": "Mivel hatott Pázmány a későbbi magyar prózára?"
         },
         {
           "speaker": "Professzor",
-          "text": "_____, amelyhez minden későbbi retorikai törekvés mérhető."
+          "text": "Sokak szerint ő _____ a magyar érvelő próza alapjait."
         }
       ],
       "options": [
-        "A mai napig a legmagasabb mérce",
-        "Csupán elavult, merev szabályrendszer",
-        "Felesleges, barokkos külsőség"
+        "tette le",
+        "tenné le",
+        "tegye le"
       ],
       "correct": 0,
       "teaches": [
-        "essay-oratory-style"
-      ]
+        "definite-past"
+      ],
+      "distractor_skills": {
+        "1": "nek-conditional"
+      }
     },
     {
       "id": "c1-esszemuveszet-01-production-6",
@@ -120,17 +125,17 @@
       "template": [
         {
           "prompt": "Write a sentence evaluating Pázmány's prose style.",
-          "answer": "Pázmány szónoki művészete a magyar nyelv kifejezőerejének örök érvényű bizonyítéka."
+          "answer": "Pázmány szónoki művészete jól mutatja a magyar nyelv kifejezőerejét."
         }
       ],
       "teaches": [
-        "essay-oratory-style"
+        "c1-hungarian-essay-vocab"
       ]
     },
     {
       "id": "c1-esszemuveszet-01-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
       "question": "Melyik jellemző NEM igaz Pázmány Péter prózájára?",
       "options": [
@@ -140,7 +145,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "essay-oratory-style"
+        "c1-hungarian-essay-vocab"
       ]
     }
   ]

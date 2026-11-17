@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "Mit jelent a 'hallgatólagos tudás' (tacit knowledge) Polányi Mihály elméletében?",
       "options": [
-        "Azt a nem verbalizálható, tapasztalati és intuitív tudást, amely minden cselekvésünk és megismerésünk alapja.",
-        "A formális logikai levezetések zárt és szigorúan ellenőrizhető szabályrendszerét.",
-        "A tudományos közleményekben explicit módon közzétett mérési adatokat."
+        "Azt a tudást, amelyet nem tudunk teljesen szavakkal kifejezni.",
+        "A logikai levezetések zárt, szigorúan ellenőrizhető szabályrendszerét.",
+        "A tudományos cikkekben nyíltan közölt mérési adatokat."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-tudomanyelmelet-01-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "sentence": "Polányi szerint a tudományos megismerés elválaszthatatlan a kutató személyes erkölcsi és intellektuális _____.",
-      "hint": "elköteleződés + -étől",
+      "hint": "commitment, its, from",
       "english": "According to Polanyi, scientific cognition is inseparable from the researcher's personal moral and intellectual commitment.",
       "teaches": [
-        "c1-scientific-paradigm-discourse"
+        "c1-paradigm-shifts-vocab"
       ],
       "answers": [
         "elköteleződésétől"
@@ -62,7 +62,7 @@
     {
       "id": "c1-tudomanyelmelet-01-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "Többet",
@@ -86,7 +86,7 @@
       ],
       "english": "We know more than we can express with words.",
       "teaches": [
-        "c1-scientific-paradigm-discourse"
+        "c1-paradigm-shifts-vocab"
       ]
     },
     {
@@ -97,22 +97,26 @@
       "prompt": [
         {
           "speaker": "Hallgató",
-          "text": "Helyettesítheti a mesterséges intelligencia a kutatói intuíciót?"
+          "text": "Mi mást igényel a felfedezés a szabálykövetésen túl?"
         },
         {
           "speaker": "Professzor",
-          "text": "Aligha, hiszen a valódi felfedezések alapvető forrása a személyes _____ marad."
+          "text": "Polányi szerint a kutató személyes _____ is szükséges hozzá."
         }
       ],
       "options": [
-        "hallgatólagos tudás",
-        "hallgatólagos tudásnak",
-        "hallgatólagos tudásból"
+        "elköteleződése",
+        "elköteleződését",
+        "elköteleződésében"
       ],
       "correct": 0,
       "teaches": [
-        "c1-scientific-paradigm-discourse"
-      ]
+        "3rd-person-possessive"
+      ],
+      "distractor_skills": {
+        "1": "acc-poss",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "c1-tudomanyelmelet-01-production-6",
@@ -122,27 +126,27 @@
       "template": [
         {
           "prompt": "Write an epistemological assertion summarizing Polanyi's view.",
-          "answer": "A tudományos objektivitás nem a személytelenségben, hanem a tudósközösség morális elköteleződésében gyökerezik."
+          "answer": "Polányi szerint a tudományos objektivitás nem a személytelenségben, hanem a tudósközösség elköteleződésében gyökerezik."
         }
       ],
       "teaches": [
-        "c1-scientific-paradigm-discourse"
+        "c1-paradigm-shifts-vocab"
       ]
     },
     {
       "id": "c1-tudomanyelmelet-01-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik állítás tükrözi Polányi Mihály ismeretelméletét?",
+      "question": "Mit hangsúlyozott Polányi Mihály?",
       "options": [
-        "Minden tudás személyes tudás, amely a gyakorlati mesterségbeli készségeken alapul.",
-        "A tudomány kizárólag mechanikus adatgyűjtésből áll.",
-        "A szubjektív tapasztalatnak semmi helye nincs a laboratóriumban."
+        "A tudományban a személyes készség és elköteleződés is szerepet játszik.",
+        "A tudomány személytelen adatok mechanikus összessége.",
+        "A laboratóriumban a személyes tapasztalatnak nincs helye."
       ],
       "correct": 0,
       "teaches": [
-        "c1-scientific-paradigm-discourse"
+        "c1-paradigm-shifts-vocab"
       ]
     }
   ]

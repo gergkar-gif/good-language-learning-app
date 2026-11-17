@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan alkalmazkodik a magyar nyelv a globális digitális korszakhoz?",
+      "question": "Hogyan kerülnek az új digitális fogalmak a magyar nyelvbe?",
       "options": [
-        "Saját téri logikájával és metaforikus kiterjesztéseivel szervesen asszimilálja az új fogalmakat.",
-        "Elhagyja a magyar szavakat és csak angolul beszél.",
-        "Megtiltja az internet használatát."
+        "Gyakran a meglévő ragokkal és igekötőkkel: 'felmegyünk a netre'.",
+        "Új ragokat alkotnak hozzájuk, a régi ragokat nem használják.",
+        "Az idegen szavakat a törvény tiltja, ezért nem kerülnek be."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-metaforak-05-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "sentence": "A magyar nyelv nem merev leltár, hanem szüntelenül fejlődő élő _____.",
       "hint": "organism",
       "english": "The Hungarian language is not a rigid inventory, but a ceaselessly developing living organism.",
       "teaches": [
-        "metaphor"
+        "c1-hungarian-metaphors-vocab"
       ],
       "answers": [
         "szervezet"
@@ -62,29 +62,39 @@
     {
       "id": "c1-metaforak-05-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
         "magyar",
         "nyelv",
-        "kimeríthetetlen",
-        "teremtő",
-        "erővel",
-        "bír."
+        "új",
+        "szavakat",
+        "és",
+        "új",
+        "képeket",
+        "is",
+        "létre",
+        "tud",
+        "hozni."
       ],
       "solution": [
         "A",
         "magyar",
         "nyelv",
-        "kimeríthetetlen",
-        "teremtő",
-        "erővel",
-        "bír."
+        "új",
+        "szavakat",
+        "és",
+        "új",
+        "képeket",
+        "is",
+        "létre",
+        "tud",
+        "hozni."
       ],
-      "english": "The Hungarian language possesses inexhaustible creative power.",
+      "english": "The Hungarian language can also create new words and new images.",
       "teaches": [
-        "metaphor"
+        "c1-hungarian-metaphors-vocab"
       ]
     },
     {
@@ -99,7 +109,7 @@
         },
         {
           "speaker": "Kutató",
-          "text": "Csak akkor, ha passzívan tűrjük, nem pedig mint élő szervezetet, folyamatosan és _____."
+          "text": "Egyes nyelvészek szerint csak akkor, ha nem tűrjük passzívan a változást, hanem a nyelvet folyamatosan és _____."
         }
       ],
       "options": [
@@ -109,8 +119,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "metaphor"
-      ]
+        "definite-vs-indefinite-conjugation"
+      ],
+      "distractor_skills": {
+        "1": "nek-conditional",
+        "2": "participle-actions"
+      }
     },
     {
       "id": "c1-metaforak-05-production-6",
@@ -120,27 +134,27 @@
       "template": [
         {
           "prompt": "Write a visionary thought about the creative power of the Hungarian language.",
-          "answer": "A magyar nyelv gazdag metaforavilága a szellem szabadságának és a jövőbe vetett hitnek az örök záloga."
+          "answer": "A magyar nyelv metaforái az új fogalmakat is be tudják fogadni."
         }
       ],
       "teaches": [
-        "metaphor"
+        "c1-hungarian-metaphors-vocab"
       ]
     },
     {
       "id": "c1-metaforak-05-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mi biztosítja a magyar nyelv metaforikus vitalitását a jövőben?",
+      "question": "Mit mutatnak a 'felmegyünk a netre' típusú kifejezések?",
       "options": [
-        "A hagyományok tisztelete és a nyitott, kreatív megújulási képesség szerves egysége.",
-        "Az idegen szavak szigorú törvényi tilalma és a nyelvi változások hatósági büntetése.",
-        "A történelmi szókészlet merev megőrzése és minden új technikai kifejezés elutasítása."
+        "Hogy az új fogalmak a meglévő ragokkal és igekötőkkel fejezhetők ki.",
+        "Hogy az új fogalmakhoz új nyelvtani esetek szükségesek.",
+        "Hogy a digitális fogalmak nem fejezhetők ki magyarul."
       ],
       "correct": 0,
       "teaches": [
-        "metaphor"
+        "c1-hungarian-metaphors-vocab"
       ]
     }
   ]

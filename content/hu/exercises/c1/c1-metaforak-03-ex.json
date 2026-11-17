@@ -6,9 +6,9 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit szimbolizál a 'tiszta forrás' fogalma Bartók Béla és a magyar kultúra szótárában?",
+      "question": "Mit fejez ki a 'tiszta forrás' képe Bartók Béla nyomán?",
       "options": [
-        "A romlatlan, ősi gyökerekből táplálkozó tiszta szellemi és művészi értéket.",
+        "Az eredeti, városi hatásoktól mentes népi hagyományhoz való visszatérést.",
         "A hegyi forrásvizek ipari palackozását és kereskedelmi értékesítését.",
         "A modern nagyvárosi kabarék szórakoztató és könnyed zenei világát."
       ],
@@ -23,11 +23,11 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "A művészetnek vissza kell térnie az eredeti szellemi _____ ahhoz, hogy megújuljon.",
-      "hint": "headwaters / forrásvidék + -hez",
+      "hint": "headwaters, source region (noun)",
       "answer": "forrásvidékhez",
       "english": "Art must return to the original intellectual headwaters in order to be renewed.",
       "teaches": [
-        "c1-cultural-semiotics"
+        "hoz-suffix"
       ]
     },
     {
@@ -60,7 +60,7 @@
     {
       "id": "c1-metaforak-03-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -84,7 +84,7 @@
       ],
       "english": "The deep roots of culture live in the traditions of the homeland.",
       "teaches": [
-        "c1-cultural-semiotics"
+        "c1-hungarian-metaphors-vocab"
       ]
     },
     {
@@ -95,11 +95,11 @@
       "prompt": [
         {
           "speaker": "Kultúrakutató",
-          "text": "Hogyan jellemezné a jelenlegi kulturális válságot?"
+          "text": "Hogyan jellemezne egy kulturális válságot?"
         },
         {
           "speaker": "Író",
-          "text": "Leginkább úgy, mint a nemzeti hagyományoktól elszakadó, aggasztó _____."
+          "text": "Leginkább úgy, mint a hagyományoktól elszakadó, aggasztó _____."
         }
       ],
       "options": [
@@ -109,8 +109,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "c1-cultural-semiotics"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "distractor_skills": {
+        "1": "hoz-suffix",
+        "2": "val-vel"
+      }
     },
     {
       "id": "c1-metaforak-03-production-6",
@@ -120,27 +124,27 @@
       "template": [
         {
           "prompt": "Write a sentence using the metaphor of 'forrás' or 'gyökérzet'.",
-          "answer": "Az anyanyelv gazdagsága az a kimeríthetetlen forrás, amelyből a nemzet szellemi élete táplálkozik."
+          "answer": "Az anyanyelv az a forrás, amelyből sok író a képeit meríti."
         }
       ],
       "teaches": [
-        "c1-cultural-semiotics"
+        "c1-hungarian-metaphors-vocab"
       ]
     },
     {
       "id": "c1-metaforak-03-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik metafora kapcsolódik a szülőföld iránti ragaszkodáshoz?",
+      "question": "Mit jelent a 'rög' a magyar irodalmi képekben?",
       "options": [
-        "A röghöz kötöttség és a szülőföld rögének szeretete.",
-        "A szélkakas szeszélyes forgása az égi szélben.",
-        "A vándormadarak őszi elköltözése idegen tájakra."
+        "A szülőföld iránti nehéz hűséget.",
+        "A szellemi megújulás utáni vágyat.",
+        "A romlatlan népi kultúra gyökerét."
       ],
       "correct": 0,
       "teaches": [
-        "c1-cultural-semiotics"
+        "c1-hungarian-metaphors-vocab"
       ]
     }
   ]

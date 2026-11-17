@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A nemzet évszázadokon át a szellemi és fizikai _____ vívta történelmi harcát.",
-      "hint": "survival / megmaradás + -ért",
+      "sentence": "A nemzeti hagyomány szerint a nemzet évszázadokon át a szellemi és fizikai _____ vívta történelmi harcát.",
+      "hint": "survival (purpose: for)",
       "answer": "megmaradásért",
-      "english": "For centuries, the nation fought its historic battle for intellectual and physical survival.",
+      "english": "According to the national tradition, for centuries the nation fought its historic battle for intellectual and physical survival.",
       "teaches": [
-        "c1-cultural-semiotics"
+        "verb-government-ert"
       ]
     },
     {
@@ -60,33 +60,35 @@
     {
       "id": "c1-metaforak-04-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
         "magyar",
-        "történelem",
+        "történelmi",
+        "emlékezetben",
+        "fontos",
         "a",
         "megmaradásért",
         "folytatott",
-        "szüntelen",
         "küzdelem",
-        "volt."
+        "képe."
       ],
       "solution": [
         "A",
         "magyar",
-        "történelem",
+        "történelmi",
+        "emlékezetben",
+        "fontos",
         "a",
         "megmaradásért",
         "folytatott",
-        "szüntelen",
         "küzdelem",
-        "volt."
+        "képe."
       ],
-      "english": "Hungarian history was a ceaseless struggle for survival.",
+      "english": "In Hungarian historical memory, the image of the struggle for survival is important.",
       "teaches": [
-        "c1-cultural-semiotics"
+        "c1-hungarian-metaphors-vocab"
       ]
     },
     {
@@ -97,11 +99,11 @@
       "prompt": [
         {
           "speaker": "Történész",
-          "text": "Hogyan hat a végvár metaforája a mai gondolkodásra?"
+          "text": "Hogyan hat a végvár metaforája a gondolkodásra?"
         },
         {
           "speaker": "Szociológus",
-          "text": "Erősíti az identitást, ám a külvilággal szemben túlzott _____."
+          "text": "Egyes szerzők szerint erősítheti az identitást, ám a külvilággal szemben túlzott _____."
         }
       ],
       "options": [
@@ -111,8 +113,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "c1-cultural-semiotics"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "distractor_skills": {
+        "1": "val-vel",
+        "2": "ra-re"
+      }
     },
     {
       "id": "c1-metaforak-04-production-6",
@@ -122,19 +128,19 @@
       "template": [
         {
           "prompt": "Write a critical evaluation of the 'védőbástya' historical concept.",
-          "answer": "A védőbástya metaforája az önfeláldozó történelmi felelősségvállalás és az európai hivatástudat jelképe."
+          "answer": "A védőbástya metaforája a nemzeti hagyományban az önfeláldozás és az európai hivatástudat jelképe."
         }
       ],
       "teaches": [
-        "c1-cultural-semiotics"
+        "c1-hungarian-metaphors-vocab"
       ]
     },
     {
       "id": "c1-metaforak-04-check-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik költemény rögzítette legmélyebben a 'balsors' metaforáját a nemzeti emlékezetben?",
+      "question": "Melyik költeményhez kötődik a 'balsors' képe?",
       "options": [
         "Kölcsey Ferenc Himnusza.",
         "Arany János Toldija.",
@@ -142,7 +148,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "c1-cultural-semiotics"
+        "c1-hungarian-metaphors-vocab"
       ]
     }
   ]

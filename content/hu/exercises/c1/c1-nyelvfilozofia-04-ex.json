@@ -8,9 +8,9 @@
       "stage": "practice",
       "question": "Hogyan működnek a fogalmi metaforák a kognitív nyelvészet szerint?",
       "options": [
-        "A konkrét fizikai és téri tapasztalatokat vetítik rá az elvont lelki és szellemi fogalmakra.",
-        "Önkényes nyelvtani szabályokként szabályozzák az igeragozást.",
-        "Csupán az archaikus népmesékben fennmaradt stilisztikai fordulatok."
+        "A konkrét téri tapasztalatokat vetítik rá az elvont fogalmakra.",
+        "Olyan szabályok, amelyek az igék ragozását szabályozzák.",
+        "Csak régi népmesékben megmaradt, szép fordulatok."
       ],
       "correct": 0,
       "teaches": [
@@ -36,30 +36,30 @@
     {
       "id": "c1-nyelvfilozofia-04.ex03",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "sentence": "Amikor egy nehéz tárgyaláson végre megállapodunk, a magyar szólás szerint _____ jutunk.",
-      "hint": "dűlő + -re",
+      "hint": "dűlő, where to",
       "answer": "dűlőre",
-      "english": "When in a difficult negotiation we finally agree, according to the Hungarian idiom we reach a resolution.",
+      "english": "When in a difficult negotiation we finally agree, according to the Hungarian idiom we come to terms.",
       "teaches": [
-        "metaphor"
+        "c1-language-worldview-vocab"
       ]
     },
     {
       "id": "c1-nyelvfilozofia-04.ex04",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "question": "Melyik kifejezés szemlélteti a felszínmetaforát a társadalmi szerepekben?",
+      "question": "Mit jelent a „rajta van a sor” kifejezés?",
       "options": [
-        "rajta van a sor",
-        "beleéli magát a szerepbe",
-        "kiesik a ritmusból"
+        "Ő következik.",
+        "Ő hagyja el a termet.",
+        "Ő veszti el a munkáját."
       ],
       "correct": 0,
       "teaches": [
-        "metaphor"
+        "c1-language-worldview-vocab"
       ]
     },
     {
@@ -87,7 +87,7 @@
       ],
       "english": "We interpret abstract concepts by means of spatial experiences.",
       "teaches": [
-        "metaphor"
+        "postpositions-altal-reven"
       ]
     },
     {
@@ -124,16 +124,16 @@
     {
       "id": "c1-nyelvfilozofia-04.ex07",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "grammar",
       "stage": "dialogue",
       "prompt": [
         {
           "speaker": "Diák",
-          "text": "Miért mondjuk, hogy 'bízom benned', miért a belső esetet használjuk?"
+          "text": "Miért mondjuk, hogy „bízom benned”, és nem azt, hogy „bízom rajtad”?"
         },
         {
           "speaker": "Tanár",
-          "text": "Mert a másik embert metaforikusan egy _____, a szívünkbe fogadjuk be."
+          "text": "Egy értelmezés szerint azért, mert a másik embert átvitt értelemben egy _____, a szívünkbe fogadjuk be."
         }
       ],
       "options": [
@@ -143,8 +143,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "metaphor"
-      ]
+        "movement-with-ba-be"
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "ra-re"
+      }
     },
     {
       "id": "c1-nyelvfilozofia-04.ex08",
@@ -158,7 +162,7 @@
         }
       ],
       "teaches": [
-        "metaphor"
+        "c1-language-worldview-vocab"
       ]
     }
   ]
