@@ -24,3 +24,12 @@ claim | verdict | source
 - all dated items in facts files match the record as known (Fundamental Law 18/25 April 2011, AB 11→15, actio popularis end 2012, Fourth Amendment March 2013, state of danger 11 March / 30 March / 18 June 2020, 4 Nov 2020, May 2022; retirement age 70→62, C-286/12 Nov 2012, Baka v Hungary 2016; seats 2014 133, 2018 133, 2022 135; EP 12 Sept 2018; conditionality 2021/Apr 2022/Dec 2022; Dec 2023 release; Népszabadság 8 Oct 2016; KESMA 28 Nov 2018, decree 229/2018; Klubrádió off air 14 Feb 2021; Dull dismissed 22 July 2020, Telex 2 Oct 2020) | sure
 - Dull joined Telex as co-editor-in-chief: announced 25 January 2021 | sure | telex.hu 2021-01-25
 - Sovereignty Protection Act Dec 2023, Office from Feb 2024; Commission infringement Feb 2024, referral decided Oct 2024 (action filed Dec 2024); AG Kokott opinion 12 Feb 2026 finds breaches; no judgment yet | sure | curia.europa.eu cp260016
+
+## Round 2 (Units 31–36): reference dates prepared before the agents report (to verify their texts against)
+- House of Terror (Terror Háza) opened 24 Feb 2002; German-occupation memorial, Szabadság tér, erected July 2014 (protests, the counter "living memorial") | standard record; check exact days if a text gives them
+- Lex CEU April 2017; CEU's US-accredited programmes moved to Vienna from autumn 2019 (announced Dec 2018); CJEU found the law in breach of EU law 6 Oct 2020 (C-66/18) | standard record
+- MTA research institutes separated July 2019 into the Eötvös Loránd Research Network (ELKH), renamed HUN-REN in 2023 | standard record
+- NAT 2020 (new National Core Curriculum, adopted Jan/Feb 2020) | standard record
+- NGO transparency law (foreign-funded organisations) 2017, CJEU breach June 2020 (C-78/18), repealed 2021; "Stop Soros" law 2018 | standard record
+- Pegasus Project revelations July 2021; Kósa Lajos confirmed the purchase on 4 Nov 2021; NAIH report Jan 2022 found no unlawful use | standard record
+- Judiciary: OBH president Handó Tünde 2012–2019; OBT–OBH conflict 2018–19; Kúria president Varga Zs. András from 1 Jan 2021; judicial reform for the recovery-fund milestones adopted May 2023 | standard record
