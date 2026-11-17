@@ -58,9 +58,22 @@ POS_MAP = {
     "num": "numeral",
     "numeral": "numeral",
     "interj": "interjection",
+    "intj": "interjection",
+    "interjection": "interjection",
     "proper noun": "proper noun",
     "name": "proper noun",
     "particle": "particle"
+}
+
+FORM_RE = re.compile(
+    r'^(?:(?:first|second|third)-person\s+(?:singular|plural|indicative|subjunctive|imperative|present|past|future|conditional)|(?:singular|plural) of|inflection of|past participle of|present participle of|gerund of|(?:masculine|feminine|neuter) (?:plural|singular) of|alternative (?:form|spelling|letter-case form) of|obsolete (?:form|spelling) of|archaic (?:form|spelling) of|dated (?:form|spelling) of|misspelling of|contraction of|abbreviation of|initialism of|the name of the latin script letter)\b',
+    re.I
+)
+DEPRIORITISE_TAGS = {'obsolete', 'archaic', 'dated', 'rare', 'poetic', 'heraldry', 'dialectal', 'misspelling', 'colloquial'}
+NOISE_FORM_TAGS = {'table-tags', 'inflection-template', 'class', 'auxiliary', 'alternative', 'archaic', 'obsolete', 'dated', 'dialectal', 'rare', 'Middle'}
+POS_PRIORITY = {
+    'preposition': 1, 'conjunction': 1, 'pronoun': 2, 'determiner': 2, 'particle': 2,
+    'interjection': 3, 'adverb': 4, 'verb': 5, 'noun': 6, 'adjective': 7, 'numeral': 8
 }
 
 # Priority Polish verbs catalog (100+ most frequent and pedagogically essential verbs)
@@ -385,6 +398,7 @@ def process_all():
     VERBS_DIR.mkdir(parents=True, exist_ok=True)
 
     dictionary = {}
+    lemma_candidates = defaultdict(lambda: defaultdict(lambda: {"senses": [], "gender": None, "aspect": None, "deprioritised": True}))
     word_index = defaultdict(list)
     verb_index = defaultdict(list)
     verb_data = defaultdict(lambda: {"forms": defaultdict(dict), "aspect": "imperfective"})
@@ -411,53 +425,70 @@ def process_all():
                     item_tags = set(item.get("tags", []))
 
                     # Dictionary headword glosses
-                    if word and mapped_pos in POS_MAP and 'form-of' not in item_tags:
+                    if word and pos in POS_MAP and 'form-of' not in item_tags:
                         gender = "m" if "masculine" in item_tags else "f" if "feminine" in item_tags else "n" if "neuter" in item_tags else None
                         aspect = "perfective" if "perfective" in item_tags else "imperfective" if "imperfective" in item_tags else None
-                        
-                        glosses = []
-                        for s in senses:
-                            if 'form-of' in set(s.get("tags", [])):
-                                continue
-                            for g in s.get("glosses", []):
-                                cg = clean_gloss(g)
-                                if cg and len(cg) >= 2 and cg not in glosses:
-                                    glosses.append(cg)
-                                    if len(glosses) >= 3:
-                                        break
-                            if len(glosses) >= 3:
-                                break
+                        cand = lemma_candidates[word][mapped_pos]
+                        if gender and not cand["gender"]:
+                            cand["gender"] = gender
+                        if aspect and not cand["aspect"]:
+                            cand["aspect"] = aspect
 
-                        if glosses and (word not in dictionary or len(dictionary[word].get("en", "")) < len(", ".join(glosses))):
-                            entry = {
-                                "en": ", ".join(glosses),
-                                "type": mapped_pos
-                            }
-                            if gender:
-                                entry["gender"] = gender
-                            if aspect:
-                                entry["aspect"] = aspect
-                            dictionary[word] = entry
+                        for s in senses:
+                            stags = set(s.get("tags", []))
+                            if 'form-of' in stags or 'misspelling' in stags:
+                                continue
+                            gloss_list = s.get("glosses", [])
+                            if not gloss_list:
+                                continue
+                            g = gloss_list[-1]
+                            if FORM_RE.search(g):
+                                continue
+                            cg = clean_gloss(g)
+                            if cg and len(cg) >= 1 and cg not in cand["senses"]:
+                                cand["senses"].append(cg)
+                                if not ((item_tags | stags) & DEPRIORITISE_TAGS):
+                                    cand["deprioritised"] = False
 
                     # Process forms
                     forms = item.get("forms", [])
                     for fi in forms:
                         form = fi.get("form", "").strip().lower()
                         ftags = set(fi.get("tags", []))
-                        if not form or form == word:
+                        if not form or form == word or ' ' in form or '-' in form or '(' in form or not any(ch.isalpha() for ch in form) or (ftags & NOISE_FORM_TAGS):
                             continue
 
                         if mapped_pos == "verb":
-                            if "present" in ftags and "indicative" in ftags:
+                            tense = (
+                                "presente" if "present" in ftags else
+                                "przeszly" if "past" in ftags else
+                                "przyszly" if "future" in ftags else
+                                "przypuszczajacy" if "conditional" in ftags else
+                                "rozkazujacy" if "imperative" in ftags else
+                                "participle" if "participle" in ftags else
+                                "gerund" if "noun-from-verb" in ftags else None
+                            )
+                            if tense:
+                                person = "1" if "first-person" in ftags else "2" if "second-person" in ftags else "3" if "third-person" in ftags else None
+                                number = "singular" if "singular" in ftags else "plural" if "plural" in ftags else None
+                                gender = "m" if "masculine" in ftags else "f" if "feminine" in ftags else "n" if "neuter" in ftags else "vir" if "virile" in ftags else "nonvir" if "nonvirile" in ftags else None
+                                entry = {"lemma": word, "tense": tense}
+                                if person and number:
+                                    entry["person"] = f"{person}{'s' if number == 'singular' else 'p'}"
+                                elif number:
+                                    entry["number"] = number
+                                if gender:
+                                    entry["gender"] = gender
+                                if entry not in verb_index[form]:
+                                    verb_index[form].append(entry)
+
+                            if "present" in ftags and "imperative" not in ftags:
                                 if "first-person" in ftags and "singular" in ftags:
                                     verb_data[word]["forms"]["indicativo.presente"]["ja"] = form
-                                    verb_index[form].append({"lemma": word, "tense": "presente", "person": "1s"})
                                 elif "second-person" in ftags and "singular" in ftags:
                                     verb_data[word]["forms"]["indicativo.presente"]["ty"] = form
-                                    verb_index[form].append({"lemma": word, "tense": "presente", "person": "2s"})
                                 elif "third-person" in ftags and "singular" in ftags:
                                     verb_data[word]["forms"]["indicativo.presente"]["on"] = form
-                                    verb_index[form].append({"lemma": word, "tense": "presente", "person": "3s"})
                         elif mapped_pos in ("noun", "adjective"):
                             case = None
                             for c in ["nominative", "genitive", "dative", "accusative", "instrumental", "locative", "vocative"]:
@@ -466,10 +497,25 @@ def process_all():
                                     break
                             number = "singular" if "singular" in ftags else "plural" if "plural" in ftags else None
                             if case:
-                                word_index[form].append({"lemma": word, "pos": mapped_pos, "case": case, "number": number})
+                                entry = {"lemma": word, "pos": mapped_pos, "case": case, "number": number}
+                                if entry not in word_index[form]:
+                                    word_index[form].append(entry)
 
         except Exception as e:
             print(f"Error while parsing Kaikki: {e}")
+
+    for word, pos_entries in lemma_candidates.items():
+        valid_pos = {p: info for p, info in pos_entries.items() if info["senses"]}
+        if not valid_pos:
+            continue
+        best_pos = min(valid_pos.keys(), key=lambda p: (1 if valid_pos[p]["deprioritised"] else 0, POS_PRIORITY.get(p, 99)))
+        info = valid_pos[best_pos]
+        entry = {"en": ", ".join(info["senses"][:3]), "type": best_pos}
+        if info["gender"]:
+            entry["gender"] = info["gender"]
+        if info["aspect"]:
+            entry["aspect"] = info["aspect"]
+        dictionary[word] = entry
 
     # Fallback foundational dictionary if Kaikki was unavailable or incomplete
     FOUNDATIONAL_DICT = {
@@ -536,7 +582,8 @@ def process_all():
         "dziękuję": {"en": "thank you", "type": "particle"},
         "przepraszam": {"en": "excuse me, I am sorry", "type": "particle"},
         "tak": {"en": "yes", "type": "particle"},
-        "nie": {"en": "no, not", "type": "particle"}
+        "nie": {"en": "no, not", "type": "particle"},
+        "i": {"en": "and", "type": "conjunction"}
     }
 
     for k, v in FOUNDATIONAL_DICT.items():
@@ -558,22 +605,29 @@ def process_all():
     with open(DICT_OUTPUT, "w", encoding="utf-8") as f:
         json.dump(dictionary, f, ensure_ascii=False, indent=2)
 
-    # Save word-index (filter to top 40k frequent lemmas to keep bundle under 10 MB for mobile)
+    # Save word-index (filter to top 40k frequent lemmas present in dictionary)
     freq_set = set(freq_list[:40000]) if freq_list else set(dictionary.keys())
     filtered_word_index = {}
     for form, entries in word_index.items():
-        kept = [e for e in entries if e.get("lemma") in freq_set]
+        kept = [e for e in entries if e.get("lemma") in freq_set and e.get("lemma") in dictionary]
         if kept:
-            filtered_word_index[form] = kept
+            filtered_word_index[form] = kept[:4]
 
     print(f"Writing {len(filtered_word_index):,} word index forms to {WORD_INDEX_OUTPUT} ...")
     with open(WORD_INDEX_OUTPUT, "w", encoding="utf-8") as f:
         json.dump(filtered_word_index, f, ensure_ascii=False, separators=(',', ':'))
 
-    # Save verb-index
-    print(f"Writing verb index to {VERB_INDEX_OUTPUT} ...")
+    # Filter & save verb-index
+    verb_freq_set = (set(freq_list[:40000]) | set(PRIORITY_VERBS)) if freq_list else set(dictionary.keys())
+    filtered_verb_index = {}
+    for form, entries in verb_index.items():
+        kept = [e for e in entries if e.get("lemma") in verb_freq_set and e.get("lemma") in dictionary]
+        if kept:
+            filtered_verb_index[form] = kept[:4]
+
+    print(f"Writing {len(filtered_verb_index):,} verb index forms to {VERB_INDEX_OUTPUT} ...")
     with open(VERB_INDEX_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(dict(verb_index), f, ensure_ascii=False, separators=(',', ':'))
+        json.dump(filtered_verb_index, f, ensure_ascii=False, separators=(',', ':'))
 
     # Save frequency list
     if not freq_list:
@@ -581,6 +635,10 @@ def process_all():
     print(f"Writing frequency ranking to {FREQUENCY_OUTPUT} ...")
     with open(FREQUENCY_OUTPUT, "w", encoding="utf-8") as f:
         json.dump(freq_list[:50000], f, ensure_ascii=False, separators=(',', ':'))
+
+    if "--indexes-only" in sys.argv:
+        print("Skipping verb files generation (--indexes-only).")
+        return
 
     # Generate top verbs files
     saved_verbs = []

@@ -51,12 +51,13 @@ require('../engine/morphology/slovak.js');
         assert(miss && Array.isArray(miss.readings) && miss.readings.length === 0, `${lang} miss must return readings: []`);
     }
 
-    // 2. Full Lexicon.load() + lookup() across fr, pl, cs, sk real indexes
+    // 2. Full Lexicon.load() + lookup() across fr, it, pl, cs, sk real indexes
     for (const [lang, words] of [
         ['fr', ['parler', 'parlais', 'chocolats']],
-        ['pl', ['pójść', 'gratisy', 'czytałem', 'domu.']],
+        ['it', ['parlare', 'parlato', 'a', 'ti', 'anno']],
+        ['pl', ['pójść', 'gratisy', 'czytałem', 'domu.', 'mówię', 'ja', 'i']],
         ['cs', ['dělat', 'dělám', 'hrady.']],
-        ['sk', ['cestovať', 'cestujem', 'mesta.']]
+        ['sk', ['cestovať', 'cestujem', 'mesta.', 'august', 'nie', 'áno']]
     ]) {
         currentLang = lang;
         await Lexicon.load();

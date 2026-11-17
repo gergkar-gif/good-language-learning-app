@@ -19,6 +19,7 @@ import gzip
 import json
 import os
 import re
+import sys
 import urllib.request
 from collections import defaultdict
 from pathlib import Path
@@ -58,6 +59,8 @@ POS_MAP = {
     "num": "numeral",
     "numeral": "numeral",
     "interj": "interjection",
+    "intj": "interjection",
+    "interjection": "interjection",
     "proper noun": "proper noun",
     "name": "proper noun",
     "particle": "particle"
@@ -90,15 +93,15 @@ def download():
         print(f"Using cached {KAIKKI_FILE}")
 
 FORM_RE = re.compile(
-    r'^(?:(?:first|second|third)-person|(?:singular|plural) of|inflection of|past participle of|present participle of|gerund of|feminine (?:plural|singular) of|masculine plural of|alternative (?:form|spelling) of|obsolete (?:form|spelling) of)\b',
+    r'^(?:(?:first|second|third)-person\s+(?:singular|plural|indicative|subjunctive|imperative|present|past|future|conditional)|(?:singular|plural) of|inflection of|past participle of|present participle of|gerund of|feminine (?:plural|singular) of|masculine plural of|alternative (?:form|spelling|letter-case form) of|honorific alternative letter-case form of|letter-case form of|obsolete (?:form|spelling) of|archaic (?:form|spelling) of|dated (?:form|spelling) of|misspelling of|contraction of|abbreviation of|initialism of|the name of the latin script letter)\b',
     re.I
 )
-DEPRIORITISE_TAGS = {'obsolete', 'archaic', 'dated', 'rare', 'poetic', 'heraldry', 'dialectal'}
+DEPRIORITISE_TAGS = {'obsolete', 'archaic', 'dated', 'rare', 'poetic', 'heraldry', 'dialectal', 'misspelling', 'colloquial'}
 HERALDRY_RE = re.compile(r'\b(?:per pale|divided into two equal parts vertically|fess|chevron|tincture|coat of arms)\b', re.I)
 
 POS_PRIORITY = {
-    'verb': 1, 'noun': 2, 'adjective': 3, 'adverb': 4, 'preposition': 5,
-    'conjunction': 6, 'pronoun': 7, 'determiner': 8, 'article': 9, 'numeral': 10, 'interjection': 11
+    'preposition': 1, 'conjunction': 1, 'article': 1, 'pronoun': 2, 'determiner': 2,
+    'interjection': 3, 'adverb': 4, 'verb': 5, 'noun': 6, 'adjective': 7, 'numeral': 8
 }
 
 GLOSS_OVERRIDES = {
@@ -151,7 +154,18 @@ GLOSS_OVERRIDES = {
     'lasciare': {'en': 'to leave, to let', 'type': 'verb', 'gender': None},
     'chiedere': {'en': 'to ask', 'type': 'verb', 'gender': None},
     'capire': {'en': 'to understand', 'type': 'verb', 'gender': None},
-    'partire': {'en': 'to leave, to depart', 'type': 'verb', 'gender': None}
+    'partire': {'en': 'to leave, to depart', 'type': 'verb', 'gender': None},
+    'i': {'en': 'the (masculine plural)', 'type': 'article', 'gender': 'm'},
+    'lo': {'en': 'the; him, it', 'type': 'article', 'gender': 'm'},
+    'la': {'en': 'the; her, it', 'type': 'article', 'gender': 'f'},
+    'le': {'en': 'the (fem. pl.); them, to her', 'type': 'article', 'gender': 'f'},
+    'li': {'en': 'them (masculine)', 'type': 'pronoun', 'gender': 'm'},
+    'mi': {'en': 'me, to me, myself', 'type': 'pronoun', 'gender': None},
+    'ti': {'en': 'you, to you, yourself', 'type': 'pronoun', 'gender': None},
+    'si': {'en': 'oneself, himself, herself', 'type': 'pronoun', 'gender': None},
+    'ci': {'en': 'us, to us; there', 'type': 'pronoun', 'gender': None},
+    'vi': {'en': 'you (plural), to you; there', 'type': 'pronoun', 'gender': None},
+    'ne': {'en': 'of it, of them, some; from here', 'type': 'pronoun', 'gender': None}
 }
 
 def clean_gloss(text):
@@ -301,7 +315,7 @@ def process_all():
 
                 for s in senses:
                     stags = set(s.get("tags", []))
-                    if 'form-of' in stags:
+                    if 'form-of' in stags or 'misspelling' in stags:
                         continue
                     gloss_list = s.get("glosses", [])
                     if not gloss_list:
@@ -311,7 +325,7 @@ def process_all():
                     if FORM_RE.search(g):
                         continue
                     c = clean_gloss(g)
-                    if c and len(c) >= 2 and c not in cand["senses"]:
+                    if c and len(c) >= 1 and c not in cand["senses"]:
                         cand["senses"].append(c)
                         is_dep = bool((item_tags | stags) & DEPRIORITISE_TAGS)
                         if not is_dep:
@@ -322,7 +336,7 @@ def process_all():
             for form_info in forms:
                 form = form_info.get("form", "").strip().lower()
                 form_tags = form_info.get("tags", [])
-                if not form or form == word:
+                if not form or form == word or ' ' in form or '-' in form or 'table-tags' in form_tags or 'inflection-template' in form_tags:
                     continue
 
                 if mapped_pos == "verb":
@@ -364,6 +378,8 @@ def process_all():
 
                     clean_form = strip_internal_accents(form)
                     is_nonstandard = any(t in form_tags for t in ["archaic", "obsolete", "dialectal", "regional", "poetic", "literary", "rare"])
+                    if is_nonstandard:
+                        continue
 
                     if mood and tense and person and number:
                         p_key = f"{person}-{number}"
@@ -373,31 +389,25 @@ def process_all():
                             "tense": tense,
                             "person": p_key
                         }
-                        if entry not in verb_index[form]:
-                            verb_index[form].append(entry)
-                        if clean_form != form and entry not in verb_index[clean_form]:
+                        if entry not in verb_index[clean_form]:
                             verb_index[clean_form].append(entry)
 
                         # Track for standalone verb conjugation tables
                         prn = "io" if p_key == "1-singular" else "tu" if p_key == "2-singular" else "lui" if p_key == "3-singular" else "noi" if p_key == "1-plural" else "voi" if p_key == "2-plural" else "loro"
-                        if not is_nonstandard and prn not in verb_data[word]["forms"][f"{mood}.{tense}"]:
+                        if prn not in verb_data[word]["forms"][f"{mood}.{tense}"]:
                             verb_data[word]["forms"][f"{mood}.{tense}"][prn] = clean_form
 
                     elif "participle" in form_tags and "past" in form_tags:
                         entry = {"lemma": word, "mood": "participle", "tense": "past"}
-                        if entry not in verb_index[form]:
-                            verb_index[form].append(entry)
-                        if clean_form != form and entry not in verb_index[clean_form]:
+                        if entry not in verb_index[clean_form]:
                             verb_index[clean_form].append(entry)
-                        if not is_nonstandard and not verb_data[word]["participioPassato"]:
+                        if not verb_data[word]["participioPassato"]:
                             verb_data[word]["participioPassato"] = clean_form
                     elif "gerund" in form_tags:
                         entry = {"lemma": word, "mood": "gerund"}
-                        if entry not in verb_index[form]:
-                            verb_index[form].append(entry)
-                        if clean_form != form and entry not in verb_index[clean_form]:
+                        if entry not in verb_index[clean_form]:
                             verb_index[clean_form].append(entry)
-                        if not is_nonstandard and not verb_data[word]["gerundio"]:
+                        if not verb_data[word]["gerundio"]:
                             verb_data[word]["gerundio"] = clean_form
 
                 elif mapped_pos in ("noun", "adjective"):
@@ -409,13 +419,12 @@ def process_all():
                     if number_str:
                         entry["number"] = number_str
                     clean_form = strip_internal_accents(form)
-                    if entry not in word_index[form]:
-                        word_index[form].append(entry)
-                    if clean_form != form and entry not in word_index[clean_form]:
+                    if entry not in word_index[clean_form]:
                         word_index[clean_form].append(entry)
 
     # Core Italian grammar tokens guarantee
     CORE_TOKENS = {
+        "i": {"en": "the (masculine plural)", "type": "article", "gender": "m"},
         "del": {"en": "of the, some (masculine)", "type": "contraction", "gender": "m"},
         "dello": {"en": "of the, some (masculine before z/s+cons)", "type": "contraction", "gender": "m"},
         "della": {"en": "of the, some (feminine)", "type": "contraction", "gender": "f"},
@@ -539,18 +548,6 @@ def process_all():
         json.dump(dictionary, f, ensure_ascii=False, separators=(',', ':'))
     print(f"Saved {DICT_OUTPUT.stat().st_size:,} bytes")
 
-    print(f"Saving word-index with {len(word_index):,} inflected forms to {WORD_INDEX_OUTPUT} ...")
-    with open(WORD_INDEX_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(word_index, f, ensure_ascii=False, separators=(',', ':'))
-
-    print(f"Saving verb-index with {len(verb_index):,} forms to {VERB_INDEX_OUTPUT} ...")
-    with open(VERB_INDEX_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(verb_index, f, ensure_ascii=False, separators=(',', ':'))
-
-    print(f"Saving frequency ranking with {len(freq_list):,} lemmas to {FREQUENCY_OUTPUT} ...")
-    with open(FREQUENCY_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(freq_list, f, ensure_ascii=False, separators=(',', ':'))
-
     # Build top verbs for Verbs driller (imports/verbs/it/*.json)
     PRIORITY_VERBS = [
         "essere", "avere", "andare", "fare", "potere", "volere", "dovere", "venire",
@@ -564,6 +561,42 @@ def process_all():
         "piacere", "sembrare", "diventare", "rimanere", "restare", "morire", "nascere",
         "passare", "tornare", "entrare", "salire", "scendere", "camminare", "correre"
     ]
+
+    # Compact verb-index to verbs attested anywhere in the 50k frequency list + core verbs
+    freq_set_50k = set(freq_list) if freq_list else set(dictionary.keys())
+    attested_verbs = set(ESSERE_VERBS) | set(PRIORITY_VERBS) | (freq_set_50k & set(dictionary.keys()))
+    for form, entries in verb_index.items():
+        if form in freq_set_50k:
+            for e in entries:
+                attested_verbs.add(e["lemma"])
+    compact_verb_index = {}
+    for form, entries in verb_index.items():
+        kept = [e for e in entries if e["lemma"] in attested_verbs and e["lemma"] in dictionary]
+        if kept:
+            compact_verb_index[form] = kept[:4]
+
+    # Keep all clean noun/adjective inflected forms whose lemma is in dictionary
+    compact_word_index = {}
+    for form, entries in word_index.items():
+        kept = [e for e in entries if e["lemma"] in dictionary]
+        if kept:
+            compact_word_index[form] = kept[:4]
+
+    print(f"Saving word-index with {len(compact_word_index):,} inflected forms to {WORD_INDEX_OUTPUT} ...")
+    with open(WORD_INDEX_OUTPUT, "w", encoding="utf-8") as f:
+        json.dump(compact_word_index, f, ensure_ascii=False, separators=(',', ':'))
+
+    print(f"Saving verb-index with {len(compact_verb_index):,} forms to {VERB_INDEX_OUTPUT} ...")
+    with open(VERB_INDEX_OUTPUT, "w", encoding="utf-8") as f:
+        json.dump(compact_verb_index, f, ensure_ascii=False, separators=(',', ':'))
+
+    print(f"Saving frequency ranking with {len(freq_list):,} lemmas to {FREQUENCY_OUTPUT} ...")
+    with open(FREQUENCY_OUTPUT, "w", encoding="utf-8") as f:
+        json.dump(freq_list, f, ensure_ascii=False, separators=(',', ':'))
+
+    if "--indexes-only" in sys.argv:
+        print("Skipping verb files generation (--indexes-only).")
+        return
 
     # Add other top verbs present in frequency list
     for w in freq_list:
