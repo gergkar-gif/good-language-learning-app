@@ -335,12 +335,20 @@ const Verbs = (function () {
         _state.currentVerbIndex = 0;
     }
 
+    function _ensureValidTense() {
+        var tenses = _getTenseOptions();
+        if (tenses && tenses.length && !tenses.some(function (t) { return t.value === _state.tense; })) {
+            _state.tense = tenses[0].value;
+        }
+    }
+
     /**
      * One-time initialisation.
      * Loads the verb list and renders the Drills tab.
      */
     function init() {
         _loadedLang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        _ensureValidTense();
         _rebuildVerbList();
 
         // Load first verb but do NOT render — avoid racing with user interactions.
@@ -362,11 +370,8 @@ const Verbs = (function () {
         var langChanged = _loadedLang !== lang;
         if (langChanged) {
             _loadedLang = lang;
-            var tenses = _getTenseOptions();
-            if (tenses && tenses.length && !tenses.some(function (t) { return t.value === _state.tense; })) {
-                _state.tense = tenses[0].value;
-            }
         }
+        _ensureValidTense();
         if (options && options.mode) {
             _state.mode = options.mode;
         }

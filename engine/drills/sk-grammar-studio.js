@@ -403,10 +403,16 @@ const SkGrammarStudio = (function () {
         }
     }
 
-    function render(containerId) {
-        const root = document.getElementById(containerId);
+    function render(container, options) {
+        const root = (typeof container === 'string') ? document.getElementById(container) : container;
         if (!root) return;
         _container = root;
+        if (options && options.tab) {
+            _activeTab = options.tab;
+            _currentIndex = 0;
+            _score = 0;
+            _answered = false;
+        }
         _renderShell();
     }
 
