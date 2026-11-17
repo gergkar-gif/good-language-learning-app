@@ -1,0 +1,198 @@
+import sys
+sys.path.insert(0,'/home/user/parlour-read-a/.scratch')
+from lib import *
+from u31_texts import T
+V='c1-historical-revisionism-vocab'
+MM='miutan-mielott'; EV='evidentials'; PP='past-participle-adjective'; AC='adversative-contrast'; IQ='indirect-questions'
+P='c1-emlekezetpolitika-'
+def I(n,k): return f'{P}{n}-{k}'
+
+U=dict(stem='emlekezetpolitika',uid='historical-revisionism',unit_no=31,
+ unit_title_en='Memory Politics and Commemoration, 2010–2026',vocab_slug=V,
+ intro=["Between 2010 and 2026 public memory in Hungary was a subject of political decisions and debate: memorials, museums, anniversaries and the way the twentieth century was described. Each step was welcomed by some and criticised by others, and historians disagreed about several of them.",
+        "In five short accounts you follow these events year by year, name who judged them how, and practise the forms a neutral history needs: the order of events, attribution, participles, contrast and open questions. The period ends with the parliamentary election of 12 April 2026."])
+L=[]
+# ---------------- 01
+L.append(dict(
+ title_en='The Occupation Memorial and the Year of Remembrance, 2010–2014',
+ story_title='Az Alaptörvény Nemzeti Hitvallása és a Szabadság téri emlékmű, 2010–2014',
+ summary='2010 és 2014 között az Országgyűlés és a kormány emlékezetpolitikai döntéseket hozott; a kormány és a bírálói eltérően ítélték meg a Szabadság téri emlékművet.',
+ text=T[1], gid='time-clauses-sequence', gtitle='Recap: The Order of Events', grammar_line='Recap: the order of events with miután and mielőtt',
+ how="You know *miután* and *mielőtt* from B1 Unit 1 (*Miután megérkeztünk, elmentünk sétálni*): *miután* introduces the event that happened first, *mielőtt* the event that happened second. In a history they fix the order of dated events: *Miután megkezdődött az építés, tiltakozások kezdődtek.* Both verbs stay in the past tense and a comma separates the clauses. New in this lesson is the vocabulary of memory politics.",
+ example='Miután megkezdődött az építés, tiltakozások kezdődtek.',
+ rows=[("Miután az Országgyűlés elfogadta az Alaptörvényt, a Nemzeti Hitvallás hatályba lépett.","After the National Assembly adopted the Fundamental Law, the National Avowal came into force."),
+       ("Mielőtt a deportálások megkezdődtek, a német csapatok megszállták az országot.","Before the deportations began, German troops occupied the country."),
+       ("Miután az emlékmű elkészült, civilek személyes tárgyakat helyeztek el előtte.","After the memorial was finished, civilians placed personal objects in front of it.")],
+ goals=["I can put the events around the memorial on Szabadság tér in 2014 in order with *miután* and *mielőtt* (*emlékmű, megszállás, áldozat*).",
+        "I can say how the government and its critics judged the memorial.",
+        "I can state what the National Avowal of the Fundamental Law said about 1944 and 1990."],
+ vocab=[("emlékezetpolitika","politics of memory (how the state and politicians treat the shared past)","noun"),
+        ("emlékmű","monument, memorial","noun"),
+        ("megszállás","occupation (by foreign troops)","noun"),
+        ("áldozat","victim","noun"),
+        ("felelősség","responsibility","noun"),
+        ("deportálás","deportation","noun")],
+ ex=[
+  mc(I('01','introduce-1'),'vocabulary','introduce','Mit jelent az emlékezetpolitika szó?',
+     ["A közös múlt bemutatása emlékművekben, múzeumokban és ünnepeken.","A levéltári források őrzésének és rendezésének szabályai.","Az iskolai történelemórák számának szabályozása."],0,V),
+  fb(I('01','controlled-2'),'grammar','controlled',"_____ 2014 júliusában megkezdődött az emlékmű építése a Szabadság téren, tiltakozások kezdődtek.","After the construction of the memorial began on Szabadság tér in July 2014, protests began.",MM,["Miután","Amint"]),
+  mt(I('01','controlled-3'),'controlled',[("emlékmű","köztérre állított alkotás, amely egy eseményre emlékeztet"),("megszállás","idegen haderő uralma egy ország felett"),("áldozat","aki egy esemény miatt életét vagy javait vesztette"),("felelősség","a tettek következményeinek vállalása")],V),
+  fb(I('01','practice-4'),'grammar','practice',"_____ az emlékmű elkészült, civilek személyes tárgyakat és fényképeket helyeztek el előtte.","After the memorial was finished, civilians placed personal objects and photographs in front of it.",MM,["Miután","Amint"]),
+  sb(I('01','practice-5'),'grammar','practice',["Mielőtt","a","deportálások","megkezdődtek,","a","német","csapatok","megszállták","az","országot."],"Before the deportations began, German troops occupied the country.",MM),
+  dl(I('01','dialogue-6'),'dialogue','dialogue',[("Kérdező","Mikor kezdődtek a tiltakozások a Szabadság téri emlékmű ellen?"),("Válaszadó","_____ 2014 júliusában megkezdődött az építés, tiltakozások kezdődtek.")],["Miután","Mielőtt","Ahelyett, hogy"],0,MM),
+  sw(I('01','production-7'),'production',"Write two sentences about the memorial on Szabadság tér: one with *miután* saying what followed the start of construction, one saying what civilians did after the memorial was finished.","Miután 2014 júliusában megkezdődött az építés, tiltakozások kezdődtek. Miután az emlékmű elkészült, civilek személyes tárgyakat helyeztek el előtte.",V),
+  mc(I('01','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["Miután az emlékmű elkészült, civilek tárgyakat helyeztek el előtte.","Az emlékmű elkészült miután, civilek tárgyakat helyeztek el előtte.","Miután az emlékmű elkészült volna, civilek tárgyakat helyeztek el előtte."],0,MM)]))
+# ---------------- 02
+L.append(dict(
+ title_en='The House of Terror Museum and Its Critics, 2002–2026',
+ story_title='A Terror Háza Múzeum és a róla folyó vita, 2002–2026',
+ summary='A Terror Háza Múzeum 2002-ben nyílt meg Budapesten; a védői és a bírálói eltérően ítélték meg a kiállítást.',
+ text=T[2], gid='attribution-szerint', gtitle='Recap: Attributing a Judgement', grammar_line='Recap: attributing a judgement with szerint',
+ how="You know *szerint* from B1 Unit 13 (*a hírek szerint*, *a rendőrség szerint*): it names who says something. A history of a disputed institution needs it for every judgement: *a múzeum védői szerint*, *a bírálók szerint*, *több történész szerint*. *szerint* stands after the noun and takes no ending, and the verb stays in the past: *A bírálók szerint a hangsúly a kommunista korszakon volt.* New in this lesson is the vocabulary of museums and dictatorships.",
+ example='A múzeum védői szerint a kiállítás két diktatúra áldozatainak adott emléket.',
+ rows=[("A múzeum védői szerint a kiállítás két diktatúra áldozatainak adott emléket.","According to the museum's defenders, the exhibition commemorated the victims of two dictatorships."),
+       ("A bírálók szerint a hangsúly a kommunista korszakon volt.","According to the critics, the emphasis was on the communist period."),
+       ("Több történész szerint a magyar hatóságok szerepe kevesebb figyelmet kapott.","According to several historians, the role of the Hungarian authorities received less attention.")],
+ goals=["I can say when and where the House of Terror Museum opened and what its exhibition covered (*közalapítvány, főigazgató, diktatúra*).",
+        "I can name the source of each judgement of the museum with *szerint*.",
+        "I can state what the museum's defenders and its critics said."],
+ vocab=[("közalapítvány","public foundation","noun"),
+        ("főigazgató","director-general","noun"),
+        ("diktatúra","dictatorship","noun"),
+        ("nyilas","Arrow Cross (member of the Hungarian fascist party, 1944–1945)","noun"),
+        ("fogda","holding cell","noun"),
+        ("hangsúly","emphasis","noun"),
+        ("összemos","to blur together","verb")],
+ ex=[
+  mc(I('02','introduce-1'),'vocabulary','introduce','Mit jelent a közalapítvány szó?',
+     ["Olyan alapítvány, amelyet az állam alapított.","Olyan egyesület, amelynek bárki tagja lehet.","Olyan társaság, amely szétosztja a nyereségét."],0,V),
+  fb(I('02','controlled-2'),'grammar','controlled',"A múzeum védői _____ a kiállítás két diktatúra áldozatainak adott emléket.","According to the museum's defenders, the exhibition commemorated the victims of two dictatorships.",EV,"szerint"),
+  mt(I('02','controlled-3'),'controlled',[("közalapítvány","az állam által alapított alapítvány"),("főigazgató","egy nagy intézmény vezetője"),("fogda","kisebb zárt helyiség, amelyben fogvatartottakat tartanak"),("hangsúly","az, amire egy bemutatásban a legnagyobb figyelem irányul")],V),
+  fb(I('02','practice-4'),'grammar','practice',"A bírálók _____ a magyar hatóságok szerepe kevesebb figyelmet kapott a nyilas időszakban.","According to the critics, the role of the Hungarian authorities received less attention in the Arrow Cross period.",EV,"szerint"),
+  sb(I('02','practice-5'),'grammar','practice',["Több","történész","szerint","a","hangsúly","a","kommunista","korszakon","volt."],"According to several historians, the emphasis was on the communist period.",EV),
+  dl(I('02','dialogue-6'),'dialogue','dialogue',[("Kérdező","Hogyan értékelték a kiállítást a történészek?"),("Válaszadó","Több történész _____ a két rendszer egymás mellé állítása összemosta a különbségeket.")],["szerint","helyett","mellett"],0,EV),
+  sw(I('02','production-7'),'production',"Write two sentences: give the opening date of the House of Terror Museum, and say how its defenders and its critics judged the exhibition, naming the source of each view.","A Terror Háza Múzeum 2002. február 24-én nyílt meg Budapesten. A múzeum védői szerint a kiállítás két diktatúra áldozatainak adott emléket, a bírálók szerint viszont a hangsúly a kommunista korszakon volt.",V),
+  mc(I('02','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["A bírálók szerint a hangsúly a kommunista korszakon volt.","A bírálók szerinte a hangsúly a kommunista korszakon volt.","A bírálók a hangsúly szerint a kommunista korszakon volt."],0,EV,ds={1:'inflected-postpositions'})]))
+# ---------------- 03
+L.append(dict(
+ title_en='Remembering 1956, 1989–2018',
+ story_title='Az 1956-os forradalom emlékezete, 1989–2018',
+ summary='Az 1956-os forradalom emlékezetéről 1989 után történészek és politikusok vitatkoztak; 2018-ban áthelyezték Nagy Imre szobrát.',
+ text=T[3], gid='participle-adjectives-history', gtitle='Recap: Past Participles as Adjectives', grammar_line='Recap: past participles as adjectives',
+ how="You know *elkészített* from B1 Unit 2 (*az elkészített étel*): the third-person past form in *-t/-tt* can stand before a noun and describe it by what was done to it. In a history it packs an earlier event into the noun phrase: *a kivégzett miniszterelnök*, *az áthelyezett szobor*. The participle stands before the noun and takes no ending; only the noun takes case endings: *a kivégzett miniszterelnököt*. New in this lesson is the vocabulary of 1956.",
+ example='A kivégzett miniszterelnököt 1989-ben újratemették.',
+ rows=[("A kivégzett miniszterelnököt 1989-ben újratemették.","The executed prime minister was reburied in 1989."),
+       ("Az áthelyezett szobor új helye a Jászai Mari tér lett.","The relocated statue's new place became Jászai Mari tér."),
+       ("A felavatott emlékművet a bírálók vitatták.","The critics disputed the memorial that had been unveiled.")],
+ goals=["I can give the main dates of the revolution of 1956 and of the reburial of Nagy Imre (*forradalom, szabadságharc, újratemetés*).",
+        "I can describe a person or a monument by what happened to them, with a participle such as *kivégzett* or *áthelyezett*.",
+        "I can state how the government and its critics judged the move of the statue in 2018."],
+ vocab=[("szabadságharc","war of independence","noun"),
+        ("miniszterelnök","prime minister","noun"),
+        ("kivégez","to execute","verb"),
+        ("újratemet","to rebury","verb"),
+        ("évforduló","anniversary","noun"),
+        ("munkástanács","workers' council","noun"),
+        ("többpártrendszer","multi-party system","noun"),
+        ("áthelyez","to relocate, to move","verb")],
+ ex=[
+  mc(I('03','introduce-1'),'vocabulary','introduce','Mit jelent a munkástanács szó?',
+     ["Dolgozók által választott testület, amely egy üzem vagy város ügyeit intézi.","A kormány által kinevezett hivatal, amely a bérekről dönt.","Olyan bizottság, amely a munkaidő beosztását határozza meg."],0,V),
+  fb(I('03','controlled-2'),'grammar','controlled',"A _____ miniszterelnököt 1989. június 16-án újratemették.","The executed prime minister was reburied on 16 June 1989.",PP,"kivégzett",hint="kivégez (to execute), as an adjective before a noun"),
+  mt(I('03','controlled-3'),'controlled',[("szabadságharc","fegyveres küzdelem a szabadságért"),("miniszterelnök","a kormány vezetője"),("évforduló","egy esemény évenként visszatérő napja"),("többpártrendszer","olyan rendszer, amelyben több párt indulhat a választáson")],V),
+  fb(I('03','practice-4'),'grammar','practice',"Az _____ szobor új helye a Jászai Mari tér lett.","The relocated statue's new place became Jászai Mari tér.",PP,"áthelyezett",hint="áthelyez (to relocate), as an adjective before a noun"),
+  sb(I('03','practice-5'),'grammar','practice',["A","kivégzett","miniszterelnököt","1989-ben","újratemették."],"The executed prime minister was reburied in 1989.",PP),
+  dl(I('03','dialogue-6'),'dialogue','dialogue',[("Kérdező","Melyik szoborról vitatkoztak a bírálók és a kormány?"),("Válaszadó","Az _____ Nagy Imre-szoborról.")],["áthelyezett","áthelyezték","áthelyezni"],0,PP),
+  sw(I('03','production-7'),'production',"Write two sentences about Nagy Imre: say when he was executed and when the executed prime minister was reburied.","Nagy Imre miniszterelnököt 1958. június 16-án kivégezték. A kivégzett miniszterelnököt 1989. június 16-án újratemették.",V),
+  mc(I('03','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["A kivégzett miniszterelnököt 1989-ben újratemették.","A kivégzettet miniszterelnököt 1989-ben újratemették.","A miniszterelnököt kivégzett 1989-ben újratemették."],0,PP)]))
+# ---------------- 04
+L.append(dict(
+ title_en='The Horthy Era and the Debates about It, 1920–2026',
+ story_title='A Horthy-korszak megítélése a vitákban, 2012–2026',
+ summary='Horthy Miklós kormányzósága 1920 és 1944 között tartott; 2012 után a történészek és a politikusok vitatkoztak az értékeléséről és az emlékműveiről.',
+ text=T[4], gid='contrast-viszont', gtitle='Recap: Setting Views Against Each Other', grammar_line='Recap: contrast with viszont, azonban and ezzel szemben',
+ how="You know *viszont*, *azonban* and *ezzel szemben* from B1 Unit 11: they set a second statement against the first. In a history of a dispute they put the two sides next to each other without taking one: *Horthy támogatói szerint konszolidációt hozott, a bírálók szerint viszont felelős volt.* *viszont* and *azonban* usually stand after the first word or phrase of their clause; *ezzel szemben* usually opens it. New in this lesson is the vocabulary of the Horthy era.",
+ example='A támogatók szerint konszolidációt hozott, a bírálók szerint viszont felelős volt.',
+ rows=[("Horthy támogatói szerint megőrizte az államiságot, a bírálók szerint viszont felelősséget viselt.","According to Horthy's supporters he preserved statehood; according to the critics, however, he bore responsibility."),
+       ("A deportálások megkezdődtek, 1944 nyarán azonban leállították őket.","The deportations began, but they were stopped in the summer of 1944."),
+       ("A támogatók szerint konszolidációt hozott. Ezzel szemben a bírálók szerint felelős volt a törvényekért.","According to the supporters he brought consolidation. In contrast, according to the critics he was responsible for the laws.")],
+ goals=["I can give the main dates of Horthy's governorship, from 1920 to 1944 (*kormányzó, fegyverszünet, lemondás*).",
+        "I can set the views of Horthy's supporters and critics against each other with *viszont* and *ezzel szemben*.",
+        "I can say what historians disputed about the Horthy era."],
+ vocab=[("kormányzó","regent, governor","noun"),
+        ("numerus clausus","numerus clausus (the law of 1920 limiting university admission)","expression"),
+        ("zsidóellenes","anti-Jewish","adjective"),
+        ("fegyverszünet","armistice","noun"),
+        ("lemondás","resignation","noun"),
+        ("konszolidáció","consolidation","noun"),
+        ("mellszobor","bust","noun"),
+        ("jelkép","symbol","noun")],
+ ex=[
+  mc(I('04','introduce-1'),'vocabulary','introduce','Mit jelent a fegyverszünet szó?',
+     ["A felek megállapodása a harc befejezéséről.","A fegyverek gyártásának állami szabályozása.","A katonák hivatalos szabadnapjainak rendje."],0,V),
+  fb(I('04','controlled-2'),'grammar','controlled',"Horthy támogatói szerint a kormányzó a konszolidáció jelképe volt, a bírálók szerint _____ felelősséget viselt a zsidóellenes törvényekért.","According to Horthy's supporters the regent was a symbol of consolidation; according to the critics, however, he bore responsibility for the anti-Jewish laws.",AC,["viszont","azonban"]),
+  mt(I('04','controlled-3'),'controlled',[("kormányzó","az állam vezetője 1920 és 1944 között"),("mellszobor","egy ember fejét és vállát ábrázoló szobor"),("numerus clausus","az 1920-as törvény, amely korlátozta az egyetemi felvételt"),("lemondás","a tisztségről való önkéntes vagy kikényszerített távozás")],V),
+  fb(I('04','practice-4'),'grammar','practice',"A támogatók szerint Horthy megőrizte az államiságot. _____ a bírálók szerint felelős volt a zsidóellenes törvényekért.","According to the supporters Horthy preserved statehood. In contrast, according to the critics he was responsible for the anti-Jewish laws.",AC,["Ezzel szemben","Viszont","Azonban"]),
+  sb(I('04','practice-5'),'grammar','practice',["A","bírálók","szerint","viszont","Horthy","felelősséget","viselt","a","zsidóellenes","törvényekért."],"According to the critics, however, Horthy bore responsibility for the anti-Jewish laws.",AC),
+  dl(I('04','dialogue-6'),'dialogue','dialogue',[("Kérdező","Hogyan ítélték meg Horthyt a támogatók és a bírálók?"),("Válaszadó","A támogatók szerint konszolidációt hozott. _____ a bírálók szerint felelős volt a törvényekért.")],["Ezzel szemben","Ennek következtében","Miután"],0,AC),
+  sw(I('04','production-7'),'production',"Write two sentences: say how Horthy's supporters and how his critics judged him, and set the two views against each other with *viszont*.","Horthy támogatói szerint a kormányzó a konszolidáció és az államiság megőrzésének jelképe volt. A bírálók szerint viszont felelősséget viselt a zsidóellenes törvényekért.",V),
+  mc(I('04','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["A támogatók szerint konszolidációt hozott, a bírálók szerint viszont felelős volt.","A támogatók szerint konszolidációt hozott, a bírálók viszont szerint felelős volt.","A támogatók szerint konszolidációt hozott, a bírálók szerint vagyis felelős volt."],0,AC)]))
+# ---------------- 05
+L.append(dict(
+ title_en='Open Questions of Memory Politics and the 2026 Election',
+ story_title='Az emlékezetpolitika nyitott kérdései és a 2026-os választás',
+ summary='A 2010 utáni emlékezetpolitikai viták három kérdése nyitva maradt; 2026 áprilisában választást tartottak, májusban új kormány alakult.',
+ text=T[5], gid='indirect-questions-open', gtitle='Recap: Open Questions', grammar_line='Recap: indirect questions with -e and question words',
+ how="You know *-e* from B1 Unit 13 (*A riporter azt kérdezte, hogy megérkezett-e a segély*): in an embedded yes/no question the verb takes *-e*, and a question word is embedded directly (*azt kérdezte, hogy mikor kezdődik a sajtótájékoztató*). In a history this states a question that was still open: *Vitatott volt, hogy kell-e a két diktatúrát egy kiállításon bemutatni.* The verb stays in the past, and the narrator does not answer the question. New in this lesson is the vocabulary of election results.",
+ example='Vitatott volt, hogy kell-e a két diktatúrát egy kiállításon bemutatni.',
+ rows=[("Vitatott volt, hogy kell-e a két diktatúrát egy kiállításon bemutatni.","It was disputed whether the two dictatorships should be shown in one exhibition."),
+       ("A történészek azon vitatkoztak, hogy mekkora volt Horthy személyes felelőssége.","The historians argued about how great Horthy's personal responsibility was."),
+       ("Vitatott volt, hogy a hatóságok felelősek voltak-e a deportálásokért.","It was disputed whether the authorities were responsible for the deportations.")],
+ goals=["I can state the open questions of memory politics before the election of 2026 (*vitatott, mérték, nyitott kérdés*).",
+        "I can report an open question with *-e* or with a question word.",
+        "I can give the result of the election of 12 April 2026 and the election of the prime minister on 9 May (*mandátum, vereség, Országgyűlés*)."],
+ vocab=[("mérték","extent, degree","noun"),
+        ("vitatott","disputed, contested","adjective"),
+        ("nyitott kérdés","open question","expression"),
+        ("mandátum","seat (in parliament), mandate","noun"),
+        ("vereség","defeat","noun"),
+        ("Országgyűlés","National Assembly (Parliament)","noun")],
+ ex=[
+  mc(I('05','introduce-1'),'vocabulary','introduce','Mit jelent a mandátum szó?',
+     ["A megválasztott képviselő helye az Országgyűlésben.","A parlament által elfogadott törvény hivatalos szövege.","A választás előtti időszak a szavazásig."],0,V),
+  fb(I('05','controlled-2'),'grammar','controlled',"Vitatott volt, hogy _____ a két diktatúrát egy kiállításon belül bemutatni.","It was disputed whether the two dictatorships should be shown within one exhibition.",IQ,"kell-e"),
+  mt(I('05','controlled-3'),'controlled',[("mérték","az, hogy valami milyen nagy vagy milyen fokú"),("vitatott","olyan, amiről többen különbözőképpen gondolkodnak"),("nyitott kérdés","olyan kérdés, amelyre még nincs közös válasz"),("vereség","a választáson elszenvedett kudarc")],V),
+  fb(I('05','practice-4'),'grammar','practice',"Vitatott volt, hogy a magyar hatóságok _____ mértékben viseltek felelősséget a deportálásokért.","It was disputed to what extent the Hungarian authorities bore responsibility for the deportations.",IQ,"milyen"),
+  sb(I('05','practice-5'),'grammar','practice',["A","történészek","azon","vitatkoztak,","hogy","mekkora","volt","Horthy","személyes","felelőssége."],"The historians argued about how great Horthy's personal responsibility was.",IQ),
+  dl(I('05','dialogue-6'),'dialogue','dialogue',[("Kérdező","Mi volt az egyik nyitott kérdés az emlékezetpolitikában?"),("Válaszadó","Vitatott volt, hogy a hatóságok felelősek _____ az 1944-es deportálásokért.")],["voltak-e","volt-e","voltak hogy"],0,IQ),
+  sw(I('05','production-7'),'production',"Write two sentences about the open questions of memory politics: one with an embedded yes/no question with *-e*, one with a question word.","Vitatott volt, hogy kell-e a két diktatúrát egy kiállításon bemutatni. A történészek azon vitatkoztak, hogy mekkora volt Horthy személyes felelőssége.",V),
+  mc(I('05','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["Vitatott volt, hogy kell-e a két diktatúrát egy kiállításon bemutatni.","Vitatott volt, hogy kell a két diktatúrát egy kiállításon bemutatni-e.","Vitatott volt, hogy a két diktatúrát egy kiállításon bemutatni kell."],0,IQ)]))
+U['lessons']=L
+# ---------------- consolidation
+C='c1-emlekezetpolitika-consolidation-'
+U['consol']=dict(grammar_line='Review: order of events, attribution, participles, contrast and open questions',
+ goals=["I can summarise the main episodes of memory politics between 2010 and 2026, with years and sources.",
+        "I can put events in order, attribute judgements, set views against each other and state open questions.",
+        "I can give the result of the election of 12 April 2026 and the election of the prime minister on 9 May with dates."],
+ ex=[
+  mc(C+'1','grammar','recognize','Which sentence says that Nagy Imre was reburied after he had been executed?',
+     ["Miután Nagy Imrét kivégezték, 1989-ben újratemették.","Mielőtt Nagy Imrét kivégezték, 1989-ben újratemették.","Miután Nagy Imrét kivégezték, 1989-ben újratemetni."],0,MM),
+  mc(C+'2','grammar','recognize','Melyik mondat nevezi meg a vélemény forrását?',
+     ["A bírálók szerint a hangsúly a kommunista korszakon volt.","A bírálók a hangsúly szerint a kommunista korszakon volt.","A bírálók szerint, hogy a hangsúly a kommunista korszakon volt."],0,EV),
+  mt(C+'3','recognize',[("emlékmű","köztérre állított alkotás, amely egy eseményre emlékeztet"),("közalapítvány","az állam által alapított alapítvány"),("munkástanács","dolgozók által választott testület"),("kormányzó","az állam vezetője 1920 és 1944 között"),("mandátum","a megválasztott képviselő helye az Országgyűlésben")],V),
+  fb(C+'4','vocabulary','recall',"A Terror Háza Múzeumot _____ működtette.","A public foundation ran the House of Terror Museum.",V,"közalapítvány"),
+  fb(C+'5','vocabulary','recall',"1938 és 1941 között _____ törvényeket fogadtak el.","Between 1938 and 1941 anti-Jewish laws were adopted.",V,"zsidóellenes"),
+  fb(C+'6','grammar','recall',"_____ a német csapatok megszállták az országot, megkezdődtek a deportálások.","After German troops occupied the country, the deportations began.",MM,["Miután","Amint"]),
+  fb(C+'7','grammar','context',"A kormány _____ az emlékmű a megszállás áldozataira emlékezett.","According to the government, the memorial commemorated the victims of the occupation.",EV,"szerint"),
+  fb(C+'8','grammar','context',"A kormány szerint az emlékmű az áldozatokra emlékezett, a bírálók szerint _____ elfedte a magyar hatóságok felelősségét.","According to the government the memorial commemorated the victims; according to the critics, however, it concealed the responsibility of the Hungarian authorities.",AC,["viszont","azonban"]),
+  mc(C+'9','grammar','context',"Melyik szó illik a mondatba? '2014-ben a _____ emlékmű ellen tiltakoztak.'",["felállított","felállít","felállítani"],0,PP),
+  sb(C+'10','grammar','produce',["A","történészek","között","is","vitatott","volt,","hogy","helyes-e","a","két","diktatúrát","egy","kiállításon","bemutatni."],"Among the historians it was also disputed whether it was right to show the two dictatorships in one exhibition.",IQ),
+  sw(C+'11','production',"Write two sentences about the memorial on Szabadság tér: say what followed the start of construction in July 2014, and how the government and its critics judged the memorial.","Miután 2014 júliusában megkezdődött az építés, tiltakozások kezdődtek. A kormány szerint az emlékmű a megszállás áldozataira emlékezett, a bírálók szerint viszont elfedte a magyar hatóságok felelősségét.",V),
+  sw(C+'12','production',"Write two sentences about the elections of 2026: give the result of 12 April and the election of the prime minister on 9 May.","2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett. 2026. május 9-én az Országgyűlés Magyar Pétert választotta miniszterelnökké.",V)])
+if __name__=='__main__':
+    build_unit(U)

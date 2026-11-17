@@ -1,0 +1,193 @@
+import sys
+sys.path.insert(0,'/home/user/parlour-read-a/.scratch')
+from lib import *
+from u33_texts import T
+V='c1-literary-canon-vocab'
+EV='evidentials'; KP='kepest'; PP='past-participle-adjective'; MG='mig-egyidejuseg'; IQ='indirect-questions'
+P='c1-irodalmielet-'
+def I(n,k): return f'{P}{n}-{k}'
+
+U=dict(stem='irodalmielet',uid='literary-canon',unit_no=33,
+ unit_title_en='The Literary Canon in Schools and Public Life, 2012–2026',vocab_slug=V,
+ intro=["Between 2012 and 2026 the question of which authors and works the schools teach, who publishes them and who supports literary life was a subject of political decisions and public debate. Each step was welcomed by some and criticised by others.",
+        "In five short accounts you follow these events year by year, name who judged them how, and practise the forms a neutral history needs: attribution, comparison, participles, contrast within a sentence and open questions. The period ends with the parliamentary election of 12 April 2026."])
+L=[]
+# ---------------- 01
+L.append(dict(
+ title_en='The National Core Curriculum of 2012 and 2020',
+ story_title='A Nemzeti alaptanterv és az irodalmi tananyag, 2012–2020',
+ summary='2012-ben és 2020-ban a kormány új Nemzeti alaptantervet fogadott el; az irodalmi tananyag összetételéről a kormány és a bírálói eltérően vélekedtek.',
+ text=T[1], gid='discourse-curriculum-attribution', gtitle='Recap: Attributing a Judgement', grammar_line='Recap: attributing a judgement with szerint',
+ how="You know *szerint* from B1 Unit 13 (*a hírek szerint*, *a rendőrség szerint*): it names who says something. A history of a disputed curriculum needs it for every judgement: *a kormány szerint*, *a bírálók szerint*, *írók és tanárok szerint*. *szerint* stands after the noun and takes no ending, and the verb stays in the past: *A kormány szerint a tanterv az irodalmi örökség átadását szolgálta.* New in this lesson is the vocabulary of the curriculum.",
+ example='A kormány szerint a tanterv a magyar irodalmi örökség átadását szolgálta.',
+ rows=[("A kormány szerint a tanterv a magyar irodalmi örökség átadását szolgálta.","According to the government, the curriculum served the transmission of the Hungarian literary heritage."),
+       ("Írók, tanárok és tanári szervezetek szerint a kortárs szerzők háttérbe szorultak.","According to writers, teachers and teachers' organisations, contemporary authors were pushed into the background."),
+       ("Wass Albert és Nyirő József politikai szerepe a bírálók szerint kifogásolható volt.","According to the critics, the political role of Wass Albert and Nyirő József was objectionable.")],
+ goals=["I can describe the National Core Curriculum of 2012 and 2020 and its reading lists, with the dates (*kánon, alaptanterv, kötelező olvasmány*).",
+        "I can name the source of each judgement of the curriculum with *szerint*.",
+        "I can state what the government and its critics said about contemporary authors in the curriculum."],
+ vocab=[("kánon","canon (the works a culture treats as a common basis)","noun"),
+        ("alaptanterv","core curriculum","noun"),
+        ("tananyag","teaching material, curriculum content","noun"),
+        ("kötelező olvasmány","set reading","expression"),
+        ("kormányrendelet","government decree","noun"),
+        ("kortárs","contemporary","adjective"),
+        ("örökség","heritage","noun"),
+        ("kifogásolható","objectionable","adjective")],
+ ex=[
+  mc(I('01','introduce-1'),'vocabulary','introduce','Mit jelent a kánon szó az irodalomban?',
+     ["Azoknak a műveknek a köre, amelyeket mindenkinek tanítanak.","Egy író valamennyi művének időrendi jegyzéke és kiadása.","Egy irodalmi díj odaítélésének szabályai és feltételei."],0,V),
+  fb(I('01','controlled-2'),'grammar','controlled',"A kormány _____ a tanterv a magyar irodalmi örökség átadását szolgálta.","According to the government, the curriculum served the transmission of the Hungarian literary heritage.",EV,"szerint"),
+  mt(I('01','controlled-3'),'controlled',[("kánon","azoknak a műveknek a köre, amelyeket közös alapként tanítanak"),("kötelező olvasmány","az a mű, amelyet minden tanulónak el kell olvasnia"),("tananyag","az, amit az iskolában tanítanak"),("kormányrendelet","a kormány által kiadott jogszabály")],V),
+  fb(I('01','practice-4'),'grammar','practice',"Írók, tanárok és tanári szervezetek _____ a kortárs szerzők háttérbe szorultak.","According to writers, teachers and teachers' organisations, contemporary authors were pushed into the background.",EV,"szerint"),
+  sb(I('01','practice-5'),'grammar','practice',["Wass","Albert","és","Nyirő","József","politikai","szerepe","a","bírálók","szerint","kifogásolható","volt."],"According to the critics, the political role of Wass Albert and Nyirő József was objectionable.",EV),
+  dl(I('01','dialogue-6'),'dialogue','dialogue',[("Kérdező","Hogyan ítélték meg a kortárs szerzők helyzetét az új tantervben?"),("Válaszadó","Írók és tanárok _____ a kortárs szerzők háttérbe szorultak.")],["szerint","helyett","mellett"],0,EV),
+  sw(I('01','production-7'),'production',"Write two sentences about the National Core Curriculum of 2020: give the date of its publication, and say how its critics and the government judged it, naming the source of each view.","2020. január 31-én megjelent az új Nemzeti alaptanterv. Írók, tanárok és tanári szervezetek szerint a kortárs szerzők háttérbe szorultak, a kormány szerint viszont a tanterv a magyar irodalmi örökség átadását szolgálta.",V),
+  mc(I('01','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["A kormány szerint a tanterv az örökség átadását szolgálta.","A kormány szerinte a tanterv az örökség átadását szolgálta.","A kormány a tanterv szerint az örökség átadását szolgálta."],0,EV,ds={1:'inflected-postpositions'})]))
+# ---------------- 02
+L.append(dict(
+ title_en='State Textbook Supply, 2011–2020',
+ story_title='Az állami tankönyvellátás, 2011–2020',
+ summary='2011 után a tankönyvellátás szabályai megváltoztak: az iskolák hivatalos jegyzékből választottak; a kormány és a bírálói eltérően ítélték meg a rendszert.',
+ text=T[2], gid='comparison-kepest-textbooks', gtitle='Recap: Comparing with képest', grammar_line='Recap: comparison with -hoz képest',
+ how="You know *képest* from B1 Unit 2 (*a régi énemhez képest*): the noun before it takes *-hoz/-hez/-höz*, and the phrase sets one state against another. In a history it names the earlier state a change is measured against, and the source of the claim stays in the sentence: *A bírálók szerint a korábbi rendszerhez képest szűkült a választék.* New in this lesson is the vocabulary of textbooks and publishing.",
+ example='A bírálók szerint a korábbi rendszerhez képest szűkült a választék.',
+ rows=[("A bírálók szerint a korábbi rendszerhez képest szűkült a tanárok választási lehetősége.","According to the critics, compared with the earlier system the teachers' freedom of choice narrowed."),
+       ("A korábbi szabályokhoz képest nagyobb szerepet kapott az állami kiadó.","Compared with the earlier rules, the state publisher got a larger role."),
+       ("A magánkiadók piaca a korábbi állapothoz képest összezsugorodott.","Compared with the earlier situation, the market of the private publishers shrank.")],
+ goals=["I can describe how the supply of textbooks changed after 2011, with the dates (*tankönyvjegyzék, kiadó, választék*).",
+        "I can measure a change against an earlier state with *-hoz képest*.",
+        "I can state what the government and its critics said about the new system."],
+ vocab=[("tankönyvjegyzék","official list of approved textbooks","noun"),
+        ("kiadó","publisher","noun"),
+        ("magánkiadó","private publisher","noun"),
+        ("választék","range of choice, selection","noun"),
+        ("köznevelés","public education","noun")],
+ ex=[
+  mc(I('02','introduce-1'),'vocabulary','introduce','Mit jelent a tankönyvjegyzék szó?',
+     ["Az iskolákban használható tankönyvek hivatalos listája.","A tankönyvek árának éves emelése az iskolákban.","Egy tankönyv fejezeteinek jegyzéke a könyv elején."],0,V),
+  fb(I('02','controlled-2'),'grammar','controlled',"A korábbi _____ képest szűkült a tanárok választási lehetősége.","Compared with the earlier system, the teachers' freedom of choice narrowed.",KP,"rendszerhez",hint="rendszer (system), the thing compared with"),
+  mt(I('02','controlled-3'),'controlled',[("tankönyvjegyzék","az iskolákban használható tankönyvek hivatalos listája"),("kiadó","vállalkozás, amely könyveket jelentet meg"),("választék","az, amiből választani lehet"),("magánkiadó","magántulajdonban lévő könyvkiadó")],V),
+  fb(I('02','practice-4'),'grammar','practice',"A korábbi szabályokhoz _____, a bírálók szerint szűkült a választék.","Compared with the earlier rules, according to the critics the range of choice narrowed.",KP,"képest"),
+  sb(I('02','practice-5'),'grammar','practice',["A","bírálók","szerint","a","korábbi","rendszerhez","képest","szűkült","a","választék."],"According to the critics, compared with the earlier system the range of choice narrowed.",KP),
+  dl(I('02','dialogue-6'),'dialogue','dialogue',[("Kérdező","Mi változott a tanárok választási lehetőségében a bírálók szerint?"),("Válaszadó","A korábbi rendszerhez _____ szűkült.")],["képest","mint","helyett"],0,KP),
+  sw(I('02','production-7'),'production',"Write two sentences about the textbooks: give the year of the law on public education, and say what the critics said compared with the earlier system.","2011-ben az Országgyűlés elfogadta a nemzeti köznevelésről szóló törvényt. A bírálók szerint a korábbi rendszerhez képest szűkült a tanárok és az iskolák választási lehetősége.",V),
+  mc(I('02','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["A korábbi szabályokhoz képest szűkült a választék.","A korábbi szabályok képest szűkült a választék.","A korábbi szabályokra képest szűkült a választék."],0,KP)]))
+# ---------------- 03
+L.append(dict(
+ title_en='Literary Institutions and State Funding, 2011–2019',
+ story_title='Az irodalmi intézmények és az állami támogatás, 2011–2019',
+ summary='2011-ben törvény köztestületté tette a Magyar Művészeti Akadémiát; 2019-ben új főigazgatót neveztek ki a Petőfi Irodalmi Múzeum élére; a támogatások elosztásának megítélése vitatott volt.',
+ text=T[3], gid='participle-adjectives-institutions', gtitle='Recap: Past Participles as Adjectives', grammar_line='Recap: past participles as adjectives',
+ how="You know *elkészített* from B1 Unit 2 (*az elkészített étel*): the third-person past form in *-t/-tt* can stand before a noun and describe it by what was done to it. In a history it packs an earlier event into the noun phrase: *a kinevezett főigazgató*, *az elfogadott törvény*, *a támogatott szerző*. The participle stands before the noun and takes no ending; only the noun takes case endings. New in this lesson is the vocabulary of literary institutions.",
+ example='A kinevezett főigazgató Demeter Szilárd volt.',
+ rows=[("A kinevezett főigazgató Demeter Szilárd volt.","The appointed director-general was Demeter Szilárd."),
+       ("Az elfogadott törvény köztestületté tette az akadémiát.","The adopted law made the academy a public body."),
+       ("A bírálók szerint a támogatott szerzők köre a kormányhoz közel állókra szűkült.","According to the critics, the circle of the supported authors narrowed to those close to the government.")],
+ goals=["I can describe the Hungarian Academy of Arts and the Petőfi Literary Museum in the years 2011 to 2019 (*akadémia, köztestület, főigazgató*).",
+        "I can describe a person or a law by what happened to it, with a participle such as *kinevezett* or *elfogadott*.",
+        "I can state how the critics judged the distribution of support."],
+ vocab=[("akadémia","academy","noun"),
+        ("köztestület","public body","noun"),
+        ("támogatás","support, grant","noun"),
+        ("díj","prize, award","noun"),
+        ("kinevez","to appoint","verb"),
+        ("főigazgató","director-general","noun"),
+        ],
+ ex=[
+  mc(I('03','introduce-1'),'vocabulary','introduce','Mit jelent a köztestület szó?',
+     ["Törvény által létrehozott, tagokkal működő szervezet.","Magánszemélyek cége, amely nyereségre törekszik.","Egy város vezetőinek ideiglenes bizottsága."],0,V),
+  fb(I('03','controlled-2'),'grammar','controlled',"A _____ vezetők és a támogatott szerzők köre a bírálók szerint a kormányhoz közel állókra szűkült.","According to the critics, the circle of the appointed leaders and the supported authors narrowed to those close to the government.",PP,"kinevezett",hint="kinevez (to appoint), as an adjective before a noun"),
+  mt(I('03','controlled-3'),'controlled',[("akadémia","tudósokat vagy művészeket tömörítő intézmény"),("köztestület","törvény által létrehozott, tagokkal működő szervezet"),("támogatás","pénzbeli segítség egy célra"),("díj","elismerésként odaítélt jutalom")],V),
+  fb(I('03','practice-4'),'grammar','practice',"Az _____ törvény köztestületté tette az akadémiát.","The adopted law made the academy a public body.",PP,"elfogadott",hint="elfogad (to adopt), as an adjective before a noun"),
+  sb(I('03','practice-5'),'grammar','practice',["A","bírálók","szerint","a","támogatott","szerzők","köre","a","kormányhoz","közel","állókra","szűkült."],"According to the critics, the circle of the supported authors narrowed to those close to the government.",PP),
+  dl(I('03','dialogue-6'),'dialogue','dialogue',[("Kérdező","Ki lett a Petőfi Irodalmi Múzeum főigazgatója 2019-ben?"),("Válaszadó","A _____ főigazgató Demeter Szilárd volt.")],["kinevezett","kinevezték","kinevezni"],0,PP),
+  sw(I('03','production-7'),'production',"Write two sentences: say who was appointed director-general of the Petőfi Literary Museum in 2019, and what the critics said about the appointed leaders and the supported authors.","A Petőfi Irodalmi Múzeum főigazgatójává 2019-ben Demeter Szilárdot nevezték ki. A bírálók szerint a kinevezett vezetők és a támogatott szerzők köre a kormányhoz közel állókra szűkült.",V),
+  mc(I('03','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["A kinevezett főigazgató Demeter Szilárd volt.","A kinevezettet főigazgató Demeter Szilárd volt.","A főigazgató kinevezett Demeter Szilárd volt."],0,PP)]))
+# ---------------- 04
+L.append(dict(
+ title_en='State and Independent Literary Life',
+ story_title='Állami és független intézmények az irodalmi életben',
+ summary='Az irodalmi életben állami és független intézmények működtek egymás mellett; 2020 elején írók és tanárok nyilatkozatban bírálták az irodalmi tananyag összetételét.',
+ text=T[4], gid='contrast-mig', gtitle='Recap: Contrast within a Sentence with míg', grammar_line='Recap: contrast within one sentence with míg',
+ how="You know *míg* from B1 Citizenship Unit 2 (*Míg a rómaiak Pannóniában uralkodtak, a medence keleti részén más népek éltek*): the clause names one thing, and the other clause sets another beside it. In a history of institutions it sets two bodies side by side without a judgement: *Míg a Magyar Művészeti Akadémia köztestület volt, a Szépírók Társasága önkéntes tagságú íróegyesületként működött.* Both clauses stay in the past tense, and a comma separates them. New in this lesson is the vocabulary of literary life.",
+ example='Míg a Magyar Művészeti Akadémia köztestület volt, a Szépírók Társasága önkéntes íróegyesület volt.',
+ rows=[("Míg a Magyar Művészeti Akadémia köztestület volt, a Szépírók Társasága önkéntes íróegyesület volt.","While the Hungarian Academy of Arts was a public body, the Writers' Society was a voluntary association of writers."),
+       ("A Jelenkor magánkiadóként jelentette meg szerzőit, míg a Petőfi Irodalmi Múzeum állami intézmény volt.","The Jelenkor published its authors as a private publisher, while the Petőfi Literary Museum was a state institution."),
+       ("Míg a szocialista korszakban a kiadók állami tulajdonban voltak, 1989 után magánkiadók is alakultak.","While publishers were state-owned in the socialist period, private publishers also appeared after 1989.")],
+ goals=["I can compare state and independent literary institutions in the 2010s (*íróegyesület, magánkiadó, független*).",
+        "I can set two facts side by side within one sentence with *míg*.",
+        "I can say what writers and teachers stated about the curriculum in early 2020."],
+ vocab=[("íróegyesület","writers' association","noun"),
+        ("magánkiadó","private publisher","noun"),
+        ("független","independent","adjective"),
+        ("önkéntes","voluntary","adjective"),
+        ("nyilatkozat","statement, declaration","noun"),
+        ],
+ ex=[
+  mc(I('04','introduce-1'),'vocabulary','introduce','Mit jelent az íróegyesület szó?',
+     ["Írók önkéntes tagságú szervezete.","Egy író összes műveinek gyűjteménye.","Az az épület, ahol az írók laknak."],0,V),
+  fb(I('04','controlled-2'),'grammar','controlled',"_____ a Magyar Művészeti Akadémia köztestület volt, a Szépírók Társasága önkéntes tagságú íróegyesületként működött.","While the Hungarian Academy of Arts was a public body, the Writers' Society worked as a voluntary association of writers.",MG,"Míg"),
+  mt(I('04','controlled-3'),'controlled',[("íróegyesület","írók önkéntes tagságú szervezete"),("magánkiadó","magántulajdonban lévő könyvkiadó"),("független","olyan, amely nem függ az államtól"),("nyilatkozat","hivatalosan közölt vélemény vagy álláspont")],V),
+  fb(I('04','practice-4'),'grammar','practice',"A Jelenkor és a Kalligram magánkiadóként jelentette meg szerzőit, _____ a Petőfi Irodalmi Múzeum állami intézmény volt.","The Jelenkor and the Kalligram published their authors as private publishers, while the Petőfi Literary Museum was a state institution.",MG,["míg","miközben"]),
+  sb(I('04','practice-5'),'grammar','practice',["Míg","a","szocialista","korszakban","a","kiadók","állami","tulajdonban","voltak,","1989","után","magánkiadók","is","alakultak."],"While publishers were state-owned in the socialist period, private publishers also appeared after 1989.",MG),
+  dl(I('04','dialogue-6'),'dialogue','dialogue',[("Kérdező","Miben különbözött a két szervezet?"),("Válaszadó","_____ a Magyar Művészeti Akadémia köztestület volt, a Szépírók Társasága önkéntes íróegyesület volt.")],["Míg","Mivel","Hogy"],0,MG),
+  sw(I('04','production-7'),'production',"Write two sentences with *míg*: compare the Writers' Society with the Hungarian Academy of Arts, and the publishers before and after 1989.","Míg a Magyar Művészeti Akadémia köztestület volt, a Szépírók Társasága önkéntes tagságú íróegyesületként működött. Míg a szocialista korszakban a kiadók állami tulajdonban voltak, 1989 után magánkiadók is alakultak.",V),
+  mc(I('04','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["Míg a kiadók állami tulajdonban voltak, 1989 után magánkiadók is alakultak.","A kiadók állami tulajdonban voltak míg, 1989 után magánkiadók is alakultak.","Míg a kiadók állami tulajdonban lesznek, 1989 után magánkiadók is alakultak."],0,MG)]))
+# ---------------- 05
+L.append(dict(
+ title_en='Open Questions of the Canon Debate and the 2026 Election',
+ story_title='Az irodalmi kánonvita nyitott kérdései és a 2026-os választás',
+ summary='Az irodalmi kánonvita három kérdése nyitva maradt; 2025-ben magyar író kapta az irodalmi Nobel-díjat, 2026 áprilisában választást tartottak, májusban új kormány alakult.',
+ text=T[5], gid='indirect-questions-canon', gtitle='Recap: Open Questions', grammar_line='Recap: indirect questions with -e and question words',
+ how="You know *-e* from B1 Unit 13 (*A riporter azt kérdezte, hogy megérkezett-e a segély*): in an embedded yes/no question the verb takes *-e*, and a question word is embedded directly (*azt kérdezte, hogy mikor kezdődik a sajtótájékoztató*). In a history this states a question that was still open: *Vitatott volt, hogy kell-e kötelező szerzők listáját előírni.* The narrator does not answer the question. New in this lesson is the vocabulary of reading lists.",
+ example='Vitatott volt, hogy kell-e kötelező szerzők listáját előírni.',
+ rows=[("Vitatott volt, hogy kell-e kötelező szerzők listáját előírni.","It was disputed whether a list of compulsory authors should be prescribed."),
+       ("Vitatott volt, hogy milyen szerepet kapjanak a kortárs szerzők.","It was disputed what role contemporary authors should get."),
+       ("Vitatott volt, hogy a tanár szabadon választhat-e a szerzők közül.","It was disputed whether the teacher could freely choose among the authors.")],
+ goals=["I can state the open questions of the canon debate before the election of 2026 (*jegyzék, szaktanár, előír*).",
+        "I can state an open question of the canon debate with *-e* or with a question word.",
+        "I can name the author who received the Nobel Prize in Literature in 2025 and give the result of the election of 12 April 2026 (*Nobel-díj, mandátum*)."],
+ vocab=[("jegyzék","list, register","noun"),
+        ("szaktanár","subject teacher","noun"),
+        ("előír","to prescribe","verb"),
+        ("Nobel-díj","Nobel Prize","noun"),
+        ("mandátum","seat (in parliament), mandate","noun")],
+ ex=[
+  mc(I('05','introduce-1'),'vocabulary','introduce','Mit jelent a jegyzék szó?',
+     ["Szerzők vagy művek sorba rendezett névsora.","Egy könyv utolsó fejezete a történet után.","Egy intézmény éves jelentése a működéséről."],0,V),
+  fb(I('05','controlled-2'),'grammar','controlled',"Vitatott volt, hogy _____ egyáltalán kötelező szerzők listáját előírni.","It was disputed whether a list of compulsory authors should be prescribed at all.",IQ,"kell-e"),
+  mt(I('05','controlled-3'),'controlled',[("jegyzék","szerzők vagy művek sorba rendezett névsora"),("szaktanár","egy tantárgyat tanító tanár"),("előír","kötelezően megszab"),("Nobel-díj","Alfred Nobel végakarata alapján odaítélt nemzetközi díj"),("mandátum","a megválasztott képviselő helye az Országgyűlésben")],V),
+  fb(I('05','practice-4'),'grammar','practice',"Vitatott volt, hogy _____ szerepet kapjanak a kortárs szerzők.","It was disputed what role contemporary authors should get.",IQ,"milyen"),
+  sb(I('05','practice-5'),'grammar','practice',["Vitatott","volt,","hogy","ki","állítsa","össze","az","iskolai","kötelező","olvasmányok","jegyzékét."],"It was disputed who should draw up the list of compulsory readings in schools.",IQ),
+  dl(I('05','dialogue-6'),'dialogue','dialogue',[("Kérdező","Mi volt az egyik nyitott kérdés a kánonvitában?"),("Válaszadó","Vitatott volt, hogy _____ állítsa össze a kötelező olvasmányok jegyzékét.")],["ki","kit","kinek"],0,IQ),
+  sw(I('05','production-7'),'production',"Write two sentences about the open questions of the canon debate: one with an embedded yes/no question with *-e*, one with a question word.","Vitatott volt, hogy kell-e kötelező szerzők listáját előírni. Vitatott volt, hogy milyen szerepet kapjanak a kortárs szerzők.",V),
+  mc(I('05','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["Vitatott volt, hogy kell-e kötelező szerzők listáját előírni.","Vitatott volt, hogy kell kötelező szerzők listáját előírni-e.","Vitatott volt, hogy kötelező szerzők listáját előírni kell."],0,IQ)]))
+U['lessons']=L
+C='c1-irodalmielet-consolidation-'
+U['consol']=dict(grammar_line='Review: attribution, comparison, participles, contrast within a sentence and open questions',
+ goals=["I can summarise the main episodes of the debate about the literary canon between 2012 and 2026, with years and sources.",
+        "I can attribute judgements, compare with an earlier state, describe with participles, set facts side by side and state open questions.",
+        "I can give the Nobel Prize of 2025 and the election results of 2026 with dates."],
+ ex=[
+  mc(C+'1','grammar','recognize','Melyik mondat nevezi meg a vélemény forrását?',
+     ["A kormány szerint a tanterv az örökség átadását szolgálta.","A kormány a tanterv szerint az örökség átadását szolgálta.","A kormány szerint, hogy a tanterv az örökség átadását szolgálta."],0,EV),
+  mc(C+'2','grammar','recognize','Which sentence compares the new system with the earlier one?',
+     ["A korábbi rendszerhez képest szűkült a választék.","A korábbi rendszer képest szűkült a választék.","A korábbi rendszerre képest szűkült a választék."],0,KP),
+  mt(C+'3','recognize',[("kánon","azoknak a műveknek a köre, amelyeket közös alapként tanítanak"),("tankönyvjegyzék","az iskolákban használható tankönyvek hivatalos listája"),("köztestület","törvény által létrehozott, tagokkal működő szervezet"),("íróegyesület","írók önkéntes tagságú szervezete"),("jegyzék","szerzők vagy művek sorba rendezett névsora")],V),
+  fb(C+'4','vocabulary','recall',"A Nemzeti alaptanterv olyan _____, amely az iskolai tananyag kereteit határozza meg.","The National Core Curriculum is a government decree that defines the framework of the school curriculum.",V,"kormányrendelet"),
+  fb(C+'5','vocabulary','recall',"A Magyar Művészeti Akadémia _____ volt.","The Hungarian Academy of Arts was a public body.",V,"köztestület"),
+  fb(C+'6','grammar','recall',"A 2020 januárjában _____ tanterv fokozatosan lépett életbe.","The curriculum that appeared in January 2020 came into force gradually.",PP,"megjelent",hint="megjelenik (to appear), as an adjective before a noun"),
+  fb(C+'7','grammar','context',"Az akadémia állami támogatást kapott, _____ a Szépírók Társasága önkéntes tagságú egyesület volt.","The academy received state support, while the Writers' Society was a voluntary association.",MG,["míg","miközben"]),
+  fb(C+'8','grammar','context',"Vitatott volt, hogy a tanár szabadon _____ a szerzők közül.","It was disputed whether the teacher could freely choose among the authors.",IQ,"választhat-e"),
+  mc(C+'9','grammar','context',"Melyik szó illik a mondatba? 'Vitatott volt, hogy _____ szerepet kapjanak a kortárs szerzők.'",["milyen","miért","mikor"],0,IQ),
+  sb(C+'10','grammar','produce',["A","bírálók","szerint","a","tanárok","választási","lehetősége","szűkült."],"According to the critics, the teachers' freedom of choice narrowed.",EV),
+  sw(C+'11','production',"Write two sentences: say that the government adopted a new National Core Curriculum in 2012 and from when it came into force gradually.","2012-ben a kormány új Nemzeti alaptantervet fogadott el. Az új tanterv 2013-tól fokozatosan lépett életbe.",V),
+  sw(C+'12','production',"Write two sentences about 2025 and 2026: say who received the Nobel Prize in Literature in 2025, and give the result of the election of 12 April 2026.","2025 októberében Krasznahorkai László kapta az irodalmi Nobel-díjat. 2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett.",V)])
+if __name__=='__main__':
+    build_unit(U)

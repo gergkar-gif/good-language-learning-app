@@ -1,0 +1,191 @@
+import sys
+sys.path.insert(0,'/home/user/parlour-read-a/.scratch')
+from lib import *
+from u32_texts import T
+V='c1-judicial-independence-vocab'
+FO='formal-obligation'; NO='nominalization'; CA='concessive-annak-ellenere'; TF='b2-temporal-framing'; RS='reported-speech-statements'
+P='c1-biroifuggetlenseg-'
+def I(n,k): return f'{P}{n}-{k}'
+
+U=dict(stem='biroifuggetlenseg',uid='judicial-independence',unit_no=32,
+ unit_title_en='The Judiciary and the Rule of Law, 2011–2026',vocab_slug=V,
+ intro=["Between 2011 and 2026 the organisation of the Hungarian courts changed several times: new judicial laws, a new central office, a council of judges and European procedures on the rule of law. Each step was welcomed by some and criticised by others, in Hungary and abroad.",
+        "In five short accounts you follow these events year by year, name who judged them how, and practise the forms a neutral history needs: obligation in the past, nouns for procedures, concession, time frames and reported statements. The period ends with the parliamentary election of 12 April 2026."])
+L=[]
+# ---------------- 01
+L.append(dict(
+ title_en='New Judicial Laws and the Retirement Age, 2011–2016',
+ story_title='Az új igazságügyi törvények és a bírák nyugdíjkorhatára, 2011–2016',
+ summary='2011-ben az Országgyűlés új igazságügyi törvényeket fogadott el, és csökkentette a bírák nyugdíjkorhatárát; a kormány és a bírálói eltérően ítélték meg a szabályt, az Európai Unió Bírósága pedig 2012-ben döntött az ügyben.',
+ text=T[1], gid='modal-deontic-obligation-past', gtitle='Recap: Obligation in the Past', grammar_line='Recap: obligation in the past with köteles volt and kénytelen volt',
+ how="You know *köteles* and *kénytelen* from B1 Unit 10: they say that a rule or a circumstance required someone to do something. In a history they describe what a rule required at the time, so the verb *volt* follows them: *a bírák kötelesek voltak nyugdíjba vonulni*. With a plural subject *köteles* takes the plural ending: *a bírák kötelesek voltak*. New in this lesson is the vocabulary of the courts.",
+ example='A hatvankettedik életévüket betöltött bírák kötelesek voltak nyugdíjba vonulni.',
+ rows=[("A hatvankettedik életévüket betöltött bírák kötelesek voltak nyugdíjba vonulni.","Judges who had reached the age of sixty-two were obliged to retire."),
+       ("A Legfelsőbb Bíróság elnökének megbízatása megszűnt, ezért kénytelen volt elhagyni a hivatalát.","The mandate of the president of the Supreme Court ended, so he had to leave his office."),
+       ("A korhatárt elérő bíró köteles volt nyugdíjba vonulni.","A judge who reached the age limit was obliged to retire.")],
+ goals=["I can describe what the judicial laws of 2011 required from judges and how the retirement age was judged (*Kúria, nyugdíjkorhatár, megbízatás*).",
+        "I can say that a rule required something in the past with *köteles volt* and *kénytelen volt*.",
+        "I can name the courts that ruled on the matter, with the year of each ruling."],
+ vocab=[("Kúria","Kúria (the supreme court of Hungary since 2012)","noun"),
+        ("nyugdíjkorhatár","retirement age","noun"),
+        ("megbízatás","mandate, term of office","noun"),
+        ("elmozdíthatatlanság","irremovability (of judges)","noun"),
+        ("nyugdíjba vonul","to retire","expression"),
+        ("bíró","judge","noun")],
+ ex=[
+  mc(I('01','introduce-1'),'vocabulary','introduce','Mit jelent a nyugdíjkorhatár szó?',
+     ["Az a kor, amelynél már nyugdíjba vonul valaki.","Az összeg, amelyet a nyugdíjasok havonta kapnak.","Az az idő, amelyet valaki állásban tölt."],0,V),
+  fb(I('01','controlled-2'),'grammar','controlled',"A hatvankettedik életévüket betöltött bírák _____ voltak nyugdíjba vonulni.","Judges who had reached the age of sixty-two were obliged to retire.",FO,["kötelesek","kénytelenek"]),
+  mt(I('01','controlled-3'),'controlled',[("nyugdíjkorhatár","az életkor, amely után nyugdíjba kell vonulni"),("megbízatás","egy tisztség betöltésének joga és ideje"),("elmozdíthatatlanság","az elv, hogy a bírót csak törvényes okból lehet felmenteni"),("Kúria","a legfelsőbb bíróság Magyarországon")],V),
+  fb(I('01','practice-4'),'grammar','practice',"A kormány indoklása szerint a korhatár a közszolgálat általános korhatárához igazodott, ezért a bírák is _____ voltak nyugdíjba vonulni.","According to the government's reasoning the age limit followed the general age limit of the civil service, so judges, too, were obliged to retire.",FO,["kötelesek","kénytelenek"]),
+  sb(I('01','practice-5'),'grammar','practice',["A","bírák","kötelesek","voltak","hatvankét","évesen","nyugdíjba","vonulni."],"Judges were obliged to retire at the age of sixty-two.",FO),
+  dl(I('01','dialogue-6'),'dialogue','dialogue',[("Kérdező","Mit írt elő a szabály a bíráknak 2012-től?"),("Válaszadó","A hatvankét évet betöltött bírák _____ nyugdíjba vonulni.")],["kötelesek voltak","köteles volt","kötelező voltak"],0,FO),
+  sw(I('01','production-7'),'production',"Write two sentences about the retirement age of judges: say what the rule required from 2012, and how the government and its critics judged it.","A hatvankettedik életévüket betöltött bírák kötelesek voltak nyugdíjba vonulni. A kormány indoklása szerint a korhatár a közszolgálat általános korhatárához igazodott, a bírálók szerint viszont a szabály sértette a bírák elmozdíthatatlanságának elvét.",V),
+  mc(I('01','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["A bírák kötelesek voltak nyugdíjba vonulni.","A bírák köteles voltak nyugdíjba vonulni.","A bírák kötelesek nyugdíjba vonulni voltak."],0,FO)]))
+# ---------------- 02
+L.append(dict(
+ title_en='The National Judicial Office and Its President, 2012–2013',
+ story_title='Az Országos Bírósági Hivatal és elnöke, 2012–2013',
+ summary='2012-től az Országos Bírósági Hivatal intézte a bíróságok központi igazgatását; az elnök hatásköréről a Velencei Bizottság, az Alkotmánybíróság és a kormány eltérően nyilatkozott.',
+ text=T[2], gid='nominalization-procedures', gtitle='Recap: Verbal Nouns in -ás/-és', grammar_line='Recap: verbal nouns in -ás/-és',
+ how="You know *-ás* and *-és* from B1 Unit 16 (*olvas → olvasás*, *pihen → pihenés*): the ending turns a verb into a noun for the action. Reports and histories use these nouns to name a procedure: *igazgat → igazgatás*, *kinevez → kinevezés*, *áthelyez → áthelyezés*. The noun takes the endings of the sentence: *a bíróságok igazgatását* (object), *a kinevezés előtt* (before a postposition). New in this lesson is the vocabulary of court administration.",
+ example='Az Országos Bírósági Hivatal a bíróságok központi igazgatását intézte.',
+ rows=[("Az Országos Bírósági Hivatal a bíróságok központi igazgatását intézte.","The National Judicial Office handled the central administration of the courts."),
+       ("A kinevezés előtt az OBH elnöke javaslatot tett.","Before the appointment, the president of the Office made a proposal."),
+       ("A Velencei Bizottság bírálta a módosítást.","The Venice Commission criticised the amendment.")],
+ goals=["I can describe the powers of the National Judicial Office and its president in 2012 and 2013, with the dates (*jogkör, kinevezés, ügyáthelyezés*).",
+        "I can name a procedure with a noun in *-ás/-és*, such as *igazgatás*, *kinevezés* or *módosítás*.",
+        "I can say what the Venice Commission and the Constitutional Court did."],
+ vocab=[("jogkör","power, competence (of an office)","noun"),
+        ("igazgatás","administration","noun"),
+        ("kinevezés","appointment","noun"),
+        ("ügyáthelyezés","transfer of a case","noun"),
+        ("módosítás","amendment","noun"),
+        ("megsemmisít","to annul","verb")],
+ ex=[
+  mc(I('02','introduce-1'),'vocabulary','introduce','Mit jelent a jogkör szó?',
+     ["A döntések köre, amelyet a törvény egy hivatalra bíz.","A törvények ismeretének hivatalos vizsgája.","Az a helyiség, ahol a bíróság tárgyal."],0,V),
+  fb(I('02','controlled-2'),'grammar','controlled',"Az Országos Bírósági Hivatal a bíróságok központi _____ intézte.","The National Judicial Office handled the central administration of the courts.",NO,"igazgatását",hint="igazgat (to administer), noun for the action, object"),
+  mt(I('02','controlled-3'),'controlled',[("jogkör","a döntések köre, amelyet a törvény egy hivatalra bíz"),("kinevezés","valakinek egy tisztségre való kijelölése"),("ügyáthelyezés","egy ügy átvitele másik bírósághoz"),("megsemmisít","egy szabályt érvénytelenné nyilvánít")],V),
+  fb(I('02','practice-4'),'grammar','practice',"A _____ előtt az OBH elnöke javaslatot tett.","Before the appointment, the president of the Office made a proposal.",NO,"kinevezés",hint="kinevez (to appoint), noun for the action"),
+  sb(I('02','practice-5'),'grammar','practice',["Az","Alkotmánybíróság","2012","júliusában","megsemmisítette","az","ügyáthelyezési","jogkört."],"In July 2012 the Constitutional Court annulled the power of case transfer.",NO),
+  dl(I('02','dialogue-6'),'dialogue','dialogue',[("Kérdező","Mit mondott ki az Alkotmánybíróság 2012 júliusában?"),("Válaszadó","Kimondta az ügyáthelyezési jogkör _____.")],["megsemmisítését","megsemmisít","megsemmisíteni"],0,NO),
+  sw(I('02','production-7'),'production',"Write two sentences: say who made the proposal for the appointment of judges, and what the Constitutional Court did to the power of case transfer in July 2012.","A bírák kinevezésére az OBH elnöke tett javaslatot. 2012 júliusában az Alkotmánybíróság megsemmisítette az elnök ügyáthelyezési jogkörét.",V),
+  mc(I('02','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["A Velencei Bizottság a módosítást bírálta.","A Velencei Bizottság a módosít bírálta.","A Velencei Bizottság a módosítás bírálta."],0,NO)]))
+# ---------------- 03
+L.append(dict(
+ title_en='The National Judicial Council and the Administrative Courts, 2012–2019',
+ story_title='Az Országos Bírói Tanács és a közigazgatási bíróságok, 2012–2019',
+ summary='Az Országos Bírói Tanács 2012-től felügyelte az OBH elnökét; 2018-ban határozataiban szabálysértéseket állapított meg, 2019-ben pedig az Országgyűlés hatályon kívül helyezte a közigazgatási bíróságokról szóló törvényt.',
+ text=T[3], gid='concession-annak-ellenere', gtitle='Recap: Concession with annak ellenére, hogy', grammar_line='Recap: concession with annak ellenére, hogy',
+ how="You know *annak ellenére, hogy* from B1 Unit 5 (*annak ellenére, hogy sokat veszekedünk*): the clause names a fact that does not prevent the main clause. In a history it sets what a procedure provided for against what happened: *Annak ellenére, hogy a bírói testületek rangsorolták a pályázókat, az elnök több pályázatot eredménytelennek nyilvánított.* The frame can also follow the main clause. New in this lesson is the vocabulary of judicial self-government.",
+ example='Annak ellenére, hogy a bírói testületek rangsorolták a pályázókat, az elnök több pályázatot eredménytelennek nyilvánított.',
+ rows=[("Annak ellenére, hogy a bírói testületek rangsorolták a pályázókat, az elnök több pályázatot eredménytelennek nyilvánított.","Although the judicial bodies had ranked the applicants, the president declared several applications unsuccessful."),
+       ("Az elnök több pályázatot eredménytelennek nyilvánított, annak ellenére, hogy a bírói testületek rangsoroltak.","The president declared several applications unsuccessful, although the judicial bodies had ranked them."),
+       ("Annak ellenére, hogy az OBT megállapította a szabályok megsértését, az elnök tevékenységének megítélése vitatott volt.","Although the Council found that the rules had been broken, the assessment of the president's conduct was disputed.")],
+ goals=["I can describe the work of the National Judicial Council and the dispute over applications for court leadership (*pályázat, rangsorol, önigazgatás*).",
+        "I can set what a procedure provided for against what happened with *annak ellenére, hogy*.",
+        "I can say what happened to the law on administrative courts in 2018 and 2019."],
+ vocab=[("pályázat","application (for a post)","noun"),
+        ("rangsorol","to rank","verb"),
+        ("eredménytelen","unsuccessful, without result","adjective"),
+        ("önigazgatás","self-government","noun"),
+        ("határozat","resolution, decision","noun"),
+        ("szabály","rule","noun")],
+ ex=[
+  mc(I('03','introduce-1'),'vocabulary','introduce','Mit jelent a pályázat szó egy állás esetében?',
+     ["Írásos anyag, amellyel valaki egy állásra jelentkezik.","A munkaszerződés hivatalos szövege és mellékletei.","Az állás fizetésének pontos összege és formája."],0,V),
+  fb(I('03','controlled-2'),'grammar','controlled',"Annak _____, hogy a bírói testületek rangsorolták a pályázókat, az elnök több pályázatot eredménytelennek nyilvánított.","Although the judicial bodies had ranked the applicants, the president declared several applications unsuccessful.",CA,"ellenére"),
+  mt(I('03','controlled-3'),'controlled',[("pályázat","írásos anyag egy állás elnyerésére"),("rangsorol","értékelés alapján sorrendbe állít"),("eredménytelen","olyan, amely nem vezetett eredményre"),("önigazgatás","a közösség saját ügyeinek maga általi intézése")],V),
+  fb(I('03','practice-4'),'grammar','practice',"Az elnök több pályázatot eredménytelennek nyilvánított, annak _____, hogy a bírói testületek rangsorolták a pályázókat.","The president declared several applications unsuccessful, although the judicial bodies had ranked the applicants.",CA,"ellenére"),
+  sb(I('03','practice-5'),'grammar','practice',["Annak","ellenére,","hogy","az","OBT","megállapította","a","szabályok","megsértését,","az","elnök","megítélése","vitatott","volt."],"Although the Council found that the rules had been broken, the assessment of the president was disputed.",CA),
+  dl(I('03','dialogue-6'),'dialogue','dialogue',[("Kérdező","Mit tett az elnök, miután a bírói testületek rangsorolták a pályázókat?"),("Válaszadó","Annak _____, hogy rangsoroltak, több pályázatot eredménytelennek nyilvánított.")],["ellenére","következtében","érdekében"],0,CA),
+  sw(I('03','production-7'),'production',"Write two sentences about the applications for court leadership: say what the president did although the judicial bodies had ranked the applicants, and what the National Judicial Council found in 2018.","Annak ellenére, hogy a bírói testületek rangsorolták a pályázókat, az elnök több pályázatot eredménytelennek nyilvánított. 2018-ban az OBT több határozatában megállapította, hogy az OBH elnöke megsértette a szabályokat.",V),
+  mc(I('03','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["Annak ellenére, hogy rangsorolták a pályázókat, az elnök eredménytelennek nyilvánította a pályázatot.","Ellenére, hogy rangsorolták a pályázókat, az elnök eredménytelennek nyilvánította a pályázatot.","Annak ellenére, rangsorolták a pályázókat, az elnök eredménytelennek nyilvánította a pályázatot."],0,CA)]))
+# ---------------- 04
+L.append(dict(
+ title_en='European Rule-of-Law Procedures, 2018–2023',
+ story_title='Az uniós jogállamisági eljárások, 2018–2023',
+ summary='2018 és 2023 között az Európai Unió intézményei több eljárást folytattak Magyarországgal szemben a jogállamiság és a bírói függetlenség kérdésében; a magyar kormány eltérően ítélte meg ezeket.',
+ text=T[4], gid='temporal-framing-processes', gtitle='Recap: Time Frames', grammar_line='Recap: time frames with során and folyamán',
+ how="You know *során* and *folyamán* from B2 Unit 22 (*a vizsgálat során*, *az elmúlt évek folyamán*): they place an event inside a process or a period. They follow the noun in its plain form. In a history they tie each event to its occasion: *A feltételességi eljárás során a Tanács a források egy részének felfüggesztéséről döntött.* *2022 folyamán az Európai Bizottság megindította a feltételességi eljárást.* New in this lesson is the vocabulary of European procedures.",
+ example='A feltételességi eljárás során a Tanács a források egy részének felfüggesztéséről döntött.',
+ rows=[("A feltételességi eljárás során a Tanács a források egy részének felfüggesztéséről döntött.","During the conditionality procedure the Council decided to suspend part of the funds."),
+       ("2022 folyamán az Európai Bizottság megindította a feltételességi eljárást.","In the course of 2022 the European Commission started the conditionality procedure."),
+       ("A hetedik cikk szerinti eljárás során a Tanács többször meghallgatta Magyarországot.","During the procedure under Article 7 the Council heard Hungary several times.")],
+ goals=["I can describe the European procedures of 2018 to 2023 on the rule of law, with their dates (*határozat, feltételességi eljárás, felfüggeszt*).",
+        "I can place an event inside a procedure or a year with *során* and *folyamán*.",
+        "I can say how the Hungarian government judged the procedure under Article 7."],
+ vocab=[("jogállamiság","rule of law","noun"),
+        ("határozat","resolution, decision","noun"),
+        ("feltételességi eljárás","conditionality procedure","expression"),
+        ("felfüggeszt","to suspend","verb"),
+        ("forrás","funds, source of money","noun"),
+        ("meghallgatás","hearing","noun")],
+ ex=[
+  mc(I('04','introduce-1'),'vocabulary','introduce','Mit jelent a jogállamiság szó?',
+     ["Az állam működését jogszabályok és független bíróságok korlátozzák.","Az állam kizárólagos joga arra, hogy a bűnözőket elítélje.","Az államigazgatás egységes irányítása egyetlen miniszter által."],0,V),
+  fb(I('04','controlled-2'),'grammar','controlled',"2022 _____ az Európai Bizottság megindította a feltételességi eljárást.","In the course of 2022 the European Commission started the conditionality procedure.",TF,["folyamán","során"]),
+  mt(I('04','controlled-3'),'controlled',[("határozat","egy testület hivatalos döntése"),("forrás","támogatásként folyósított pénzösszeg"),("felfüggeszt","ideiglenesen leállít"),("meghallgatás","egy testület előtt tartott szóbeli kikérdezés")],V),
+  fb(I('04','practice-4'),'grammar','practice',"A hetedik cikk szerinti eljárás _____ a Tanács többször meghallgatta Magyarországot.","During the procedure under Article 7 the Council heard Hungary several times.",TF,["során","folyamán"]),
+  sb(I('04','practice-5'),'grammar','practice',["A","feltételességi","eljárás","során","a","Tanács","a","források","egy","részének","felfüggesztéséről","döntött."],"During the conditionality procedure the Council decided to suspend part of the funds.",TF),
+  dl(I('04','dialogue-6'),'dialogue','dialogue',[("Kérdező","Mikor döntött a Tanács a források egy részének felfüggesztéséről?"),("Válaszadó","A feltételességi eljárás _____, 2022 decemberében.")],["során","óta","előtt"],0,TF),
+  sw(I('04','production-7'),'production',"Write two sentences about 2022: say what the Commission did in the course of the year, and what the Council decided during the procedure in December.","2022 folyamán az Európai Bizottság megindította a feltételességi eljárást. A feltételességi eljárás során a Tanács 2022 decemberében a források egy részének felfüggesztéséről döntött.",V),
+  mc(I('04','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["Az eljárás során a Tanács többször meghallgatta Magyarországot.","Az eljárást során a Tanács többször meghallgatta Magyarországot.","Az eljárás a Tanács során többször meghallgatta Magyarországot."],0,TF)]))
+# ---------------- 05
+L.append(dict(
+ title_en='The Judicial Reforms of 2023 and the 2026 Election',
+ story_title='A 2023-as bírósági módosítások és a 2026-os választás',
+ summary='2023-ban az Országgyűlés módosította a bíróságokra vonatkozó törvényeket; 2026 áprilisában választást tartottak, májusban új kormány alakult.',
+ text=T[5], gid='reported-speech-statements-close', gtitle='Recap: Reporting What Someone Stated', grammar_line='Recap: reporting what someone stated with azt mondta, hogy',
+ how="You know *azt mondta, hogy* from B1 Unit 13 (*azt mondta / jelentette ki / közölte, hogy…*): a *hogy* clause gives what someone said. In a history it keeps each side's claim apart from the narrator's voice: *A kormány azt közölte, hogy a módosítások az uniós feltételek teljesítését szolgálták.* The reporting verb is in the past and the clause keeps its own tense. New in this lesson is the vocabulary of the amendments and of the election.",
+ example='A kormány azt közölte, hogy a módosítások az uniós feltételek teljesítését szolgálták.',
+ rows=[("A kormány azt közölte, hogy a módosítások az uniós feltételek teljesítését szolgálták.","The government stated that the amendments served the fulfilment of the Union's conditions."),
+       ("A Bizottság azt állapította meg, hogy a bírói függetlenséggel kapcsolatos feltételek teljesültek.","The Commission found that the conditions concerning judicial independence had been fulfilled."),
+       ("A bírálók azt mondták, hogy a módosítások hatása még nem volt egyértelmű.","The critics said that the effect of the amendments was not yet clear.")],
+ goals=["I can report what the government and the Commission stated about the amendments of 2023 (*módosítás, teljesül, felszabadít*).",
+        "I can report a statement with *azt közölte, hogy* and *azt állapította meg, hogy*.",
+        "I can give the dated events of 2026: the election of 12 April, the election of the prime minister on 9 May and the amendment of July."],
+ vocab=[("módosítás","amendment","noun"),
+        ("teljesül","to be fulfilled","verb"),
+        ("felszabadít","to release (funds)","verb"),
+        ("megtámad","to challenge (before a court)","verb"),
+        ("feltétel","condition","noun")],
+ ex=[
+  mc(I('05','introduce-1'),'vocabulary','introduce','Mit jelent a megtámad szó egy szabály esetében?',
+     ["Bírósághoz fordul, mert a szabályt hibásnak tartja.","Az Országgyűlésben elsőként benyújtja a szabályt.","Az újságokban leírja a szabály teljes szövegét."],0,V),
+  fb(I('05','controlled-2'),'grammar','controlled',"A kormány _____ közölte, hogy a módosítások az uniós feltételek teljesítését szolgálták.","The government stated that the amendments served the fulfilment of the Union's conditions.",RS,"azt"),
+  mt(I('05','controlled-3'),'controlled',[("módosítás","egy meglévő szöveg megváltoztatása"),("felszabadít","egy zárolt összeget újra hozzáférhetővé tesz"),("megtámad","bírósághoz fordul egy szabály ellen"),("teljesül","megvalósul, amit előírtak")],V),
+  fb(I('05','practice-4'),'grammar','practice',"A Bizottság azt állapította meg, _____ a bírói függetlenséggel kapcsolatos feltételek teljesültek.","The Commission found that the conditions concerning judicial independence had been fulfilled.",RS,"hogy"),
+  sb(I('05','practice-5'),'grammar','practice',["A","kormány","azt","közölte,","hogy","a","módosítások","az","uniós","feltételek","teljesítését","szolgálták."],"The government stated that the amendments served the fulfilment of the Union's conditions.",RS),
+  dl(I('05','dialogue-6'),'dialogue','dialogue',[("Kérdező","Mit mondott a kormány a módosításokról?"),("Válaszadó","A kormány azt _____, hogy a módosítások az uniós feltételeket szolgálták.")],["közölte","közölni","közlés"],0,RS),
+  sw(I('05','production-7'),'production',"Write two sentences: report what the government stated about the amendments of 2023, and what the Commission found in December 2023.","A kormány azt közölte, hogy a módosítások az uniós feltételek teljesítését szolgálták. A Bizottság 2023 decemberében azt állapította meg, hogy a bírói függetlenséggel kapcsolatos feltételek teljesültek.",V),
+  mc(I('05','check-8'),'grammar','check','Melyik mondat helyes?',
+     ["A Bizottság azt állapította meg, hogy a feltételek teljesültek.","A Bizottság azt állapította meg, a feltételek teljesültek.","A Bizottság azt hogy állapította meg, a feltételek teljesültek."],0,RS)]))
+U['lessons']=L
+C='c1-biroifuggetlenseg-consolidation-'
+U['consol']=dict(grammar_line='Review: obligation, nouns for procedures, concession, time frames and reported statements',
+ goals=["I can summarise the changes to the courts and the European procedures between 2011 and 2026, with years and sources.",
+        "I can state obligations in the past, name procedures, set a fact against an expectation, place events in a procedure and report statements.",
+        "I can date the change of government in 2026 and the later amendment of the Fundamental Law."],
+ ex=[
+  mc(C+'1','grammar','recognize','Which sentence says that judges were obliged to retire after the age limit?',
+     ["A bírák a korhatár elérése után kötelesek voltak nyugdíjba vonulni.","A bírák a korhatár elérése után köteles voltak nyugdíjba vonulni.","A bírák a korhatár elérése után kötelesek nyugdíjba vonulni voltak."],0,FO),
+  mc(C+'2','grammar','recognize','Which word is the noun for the action of appointing?',
+     ["kinevezés","kinevez","kinevezni"],0,NO),
+  mt(C+'3','recognize',[("Kúria","a legfelsőbb bíróság Magyarországon"),("jogkör","a döntések köre, amelyet a törvény egy hivatalra bíz"),("pályázat","írásos anyag egy állás elnyerésére"),("jogállamiság","az állam működését jogszabályok korlátozzák"),("megtámad","bírósághoz fordul egy szabály ellen")],V),
+  fb(C+'4','vocabulary','recall',"2018-ban az Európai Parlament határozata szerint a _____ és az alapjogok helyzete aggályos volt.","According to the resolution of the European Parliament of 2018, the state of the rule of law and of fundamental rights was a cause for concern.",V,"jogállamiság"),
+  fb(C+'5','vocabulary','recall',"2012-ben a Legfelsőbb Bíróság helyébe a _____ lépett.","In 2012 the Kúria took the place of the Supreme Court.",V,"Kúria"),
+  fb(C+'6','grammar','recall',"A bírák a korhatár elérése után _____ voltak nyugdíjba vonulni.","After reaching the age limit, judges were obliged to retire.",FO,["kötelesek","kénytelenek"]),
+  fb(C+'7','grammar','context',"A Velencei Bizottság 2013 júniusában bírálta az Alaptörvény negyedik _____.","In June 2013 the Venice Commission criticised the fourth amendment of the Fundamental Law.",NO,"módosítását",hint="módosít (to amend), noun for the action, object"),
+  fb(C+'8','grammar','context',"_____ ellenére, hogy a bírói testületek rangsorolták a pályázókat, az elnök több pályázatot eredménytelennek nyilvánított.","Although the judicial bodies had ranked the applicants, the president declared several applications unsuccessful.",CA,"Annak"),
+  mc(C+'9','grammar','context',"Melyik szó illik a mondatba? 'A feltételességi eljárás _____ a Tanács a források egy részének felfüggesztéséről döntött.'",["során","óta","szerint"],0,TF),
+  sb(C+'10','grammar','produce',["A","Bizottság","2023","decemberében","azt","állapította","meg,","hogy","a","feltételek","teljesültek."],"In December 2023 the Commission found that the conditions had been fulfilled.",RS),
+  sw(C+'11','production',"Write two sentences about the judicial laws of 2011: say that the Assembly adopted them, and how the government and its critics judged the retirement age.","2011-ben az Országgyűlés új törvényeket fogadott el a bíróságokról. A kormány indoklása szerint a korhatár a közszolgálat általános korhatárához igazodott, a bírálók szerint viszont sértette a bírák elmozdíthatatlanságának elvét.",V),
+  sw(C+'12','production',"Write two sentences about the elections of 2026: give the result of 12 April and the election of the prime minister on 9 May.","2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett. 2026. május 9-én az Országgyűlés Magyar Pétert választotta miniszterelnökké.",V)])
+if __name__=='__main__':
+    build_unit(U)

@@ -10,3 +10,4 @@ Round 2 started 2026-11-17T20:12:51Z from 993f2fbd.
 - A: historical-revisionism, judicial-independence, literary-canon
 - B: mta-ceu, pegasus-scandal, civil-society
 - Round 2 B (mta-ceu, pegasus-scandal, civil-society): done
+- Round 2 A (historical-revisionism, judicial-independence, literary-canon): done
