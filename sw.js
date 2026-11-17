@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-11-14-de-tts-fix';
+const CACHE_VERSION = 'v2026-11-17-multilang-audit';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -27,12 +27,18 @@ const PRECACHE_ASSETS = [
     'imports/verbs/verb-list.js',
     'imports/verbs/fr/verb-list-fr.js',
     'imports/verbs/it/verb-list-it.js',
+    'imports/verbs/pl/verb-list-pl.js',
+    'imports/verbs/cs/verb-list-cs.js',
+    'imports/verbs/sk/verb-list-sk.js',
     'engine/lang.js',
     'engine/xp.js',
     'engine/morphology/hungarian.js',
     'engine/morphology/spanish.js',
     'engine/morphology/french.js',
     'engine/morphology/italian.js',
+    'engine/morphology/polish.js',
+    'engine/morphology/czech.js',
+    'engine/morphology/slovak.js',
     'engine/lexicon.js',
     'engine/gloss-ai.js',
     'engine/srs.js',
@@ -76,8 +82,12 @@ const PRECACHE_ASSETS = [
     'engine/drills/hu-verb-studio.js',
     'engine/drills/fr-grammar-studio.js',
     'engine/drills/it-grammar-studio.js',
+    'engine/drills/pl-grammar-studio.js',
+    'engine/drills/cs-grammar-studio.js',
+    'engine/drills/sk-grammar-studio.js',
     'engine/drills/es-grammar-studio.js',
     'engine/ccse-exam.js',
+    'engine/cefr-exam.js',
     'engine/workshop.js',
     'engine/exercise-audio.js',
     'engine/lessons.js',

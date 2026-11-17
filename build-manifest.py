@@ -141,7 +141,12 @@ LEVEL_META = {
 CURRICULUM_META = {
     "es-latam": {"id": "curriculum.spanish-latam.dele-a1-c1", "title": "Spanish (Latin America) — DELE aligned"},
     "es-es": {"id": "curriculum.spanish-spain.dele-a1-c1", "title": "Spanish (Spain) — DELE aligned"},
-    "hu": {"id": "curriculum.hungarian.a1-c1", "title": "Hungarian"}
+    "hu": {"id": "curriculum.hungarian.a1-c1", "title": "Hungarian"},
+    "fr": {"id": "curriculum.french.a1-c1", "title": "Français — Cadre européen commun"},
+    "it": {"id": "curriculum.italian.a1-c1", "title": "Italiano — Quadro comune europeo"},
+    "pl": {"id": "curriculum.polish.a1-c1", "title": "Język polski — Poziomy A1–C1"},
+    "cs": {"id": "curriculum.czech.a1-c1", "title": "Čeština — Společný evropský referenční rámec"},
+    "sk": {"id": "curriculum.slovak.a1-c1", "title": "Slovenčina — Spoločný európsky referenčný rámec"}
 }
 
 # Level -> Unit -> Lesson. A level's unit titles, ordering, and lesson-stem
@@ -463,6 +468,12 @@ FREQUENCY_SOURCES = {
            ROOT / "imports" / "dictionary" / "french-en.json"),
     "it": (ROOT / "content" / "it" / "indexes" / "frequency.json",
            ROOT / "imports" / "dictionary" / "italian-en.json"),
+    "pl": (ROOT / "content" / "pl" / "indexes" / "frequency.json",
+           ROOT / "imports" / "dictionary" / "polish-en.json"),
+    "cs": (ROOT / "content" / "cs" / "indexes" / "frequency.json",
+           ROOT / "imports" / "dictionary" / "czech-en.json"),
+    "sk": (ROOT / "content" / "sk" / "indexes" / "frequency.json",
+           ROOT / "imports" / "dictionary" / "slovak-en.json"),
 }
 
 # The dictionary's first sense for a handful of very common Spanish words is

@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "language": "cs",
+  "challenges": {
+    "a1-01": {
+      "tier": "tier1",
+      "level": "A1",
+      "title": "Komunikační výzva: Pozdravy a představování",
+      "scenario": "Seznamujete se s novým kolegou na konferenci v Praze.",
+      "prompt": "Zdvořile pozdravte, řekněte své jméno a odkud pocházíte.",
+      "cues": [
+        "Pozdrav (Dobrý den / Těší mě)",
+        "Jméno (Jmenuji se...)",
+        "Původ (Jsem z... / Pocházím z...)"
+      ],
+      "target": "Dobrý den, jmenuji se Martin a pocházím z Kanady.",
+      "english": "Good day, my name is Martin and I come from Canada.",
+      "canDo": "I can greet someone and introduce myself."
+    },
+    "a1-restaurant": {
+      "tier": "tier1",
+      "level": "A1",
+      "title": "Komunikační výzva: Objednávka v kavárně",
+      "scenario": "Sedíte v tradiční kavárně v centru Brna.",
+      "prompt": "Zdvořile si objednejte kávu s mlékem, jablečný závin a požádejte o účet.",
+      "cues": [
+        "Objednávka (Dám si kávu s mlékem a jablečný závin, prosím)",
+        "Placení (Zaplatím, prosím / Děkuji moc)"
+      ],
+      "target": "Dobrý den, dám si kávu s mlékem a jablečný závin, prosím.",
+      "english": "Good day, I will have a coffee with milk and an apple strudel, please.",
+      "canDo": "I can order simple meals and drinks."
+    },
+    "a2-directions": {
+      "tier": "tier2",
+      "level": "A2",
+      "title": "Komunikační výzva: Ptáme se na cestu",
+      "scenario": "Hledáte hlavní vlakové nádraží v centru Prahy.",
+      "prompt": "Zdvořile oslovte kolemjdoucího, zeptejte se kde je nádraží a jestli je to daleko pěšky.",
+      "cues": [
+        "Zdvořilé oslovení (Promiňte, prosím)",
+        "Směr (Kde je hlavní vlakové nádraží?)",
+        "Vzdálenost (Je to odtud daleko pěšky?)"
+      ],
+      "target": "Promiňte, kde je vlakové nádraží? Je to daleko pěšky?",
+      "english": "Excuse me, where is the train station? Is it far on foot?",
+      "canDo": "I can ask for and follow simple directions in town."
+    }
+  }
+}

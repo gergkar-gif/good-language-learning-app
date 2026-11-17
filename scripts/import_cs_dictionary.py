@@ -454,7 +454,7 @@ def process_all():
     # Save frequency index
     print(f"Saving frequency rankings to {FREQUENCY_OUTPUT}...")
     with open(FREQUENCY_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(freq_rank, f, ensure_ascii=False)
+        json.dump(freq_list, f, ensure_ascii=False)
 
     # Filter & compact word index to frequent words
     print("Compacting word-index.json...")

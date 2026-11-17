@@ -50,6 +50,9 @@ function normaliseWhisperLang(lang) {
     if (clean.startsWith('de')) return 'de';
     if (clean.startsWith('it')) return 'it';
     if (clean.startsWith('pt')) return 'pt';
+    if (clean.startsWith('pl')) return 'pl';
+    if (clean.startsWith('cs')) return 'cs';
+    if (clean.startsWith('sk')) return 'sk';
     return clean.split(/[-_]/)[0];
 }
 
@@ -60,7 +63,10 @@ const DEFAULT_LANGUAGE_PRIMERS = {
     hu: 'Tiszta magyar kiejtés és helyesírás: hogy vagy, hol laksz, köszönöm szépen, jó napot kívánok.',
     es: 'Pronunciación en español claro y estándar: hola, buenos días, cómo estás, dónde vives, muchas gracias.',
     fr: "Prononciation française claire et standard : bonjour, comment allez-vous, où habitez-vous, merci beaucoup, s'il vous plaît.",
-    it: 'Pronuncia italiana chiara e standard: buongiorno, come stai, dove abiti, molte grazie, per favore.'
+    it: 'Pronuncia italiana chiara e standard: buongiorno, come stai, dove abiti, molte grazie, per favore.',
+    pl: 'Wyraźna polska wymowa i pisownia: dzień dobry, jak się masz, gdzie mieszkasz, dziękuję bardzo, proszę.',
+    cs: 'Čistá česká výslovnost a pravopis: dobrý den, jak se máš, kde bydlíš, děkuji mnohokrát, prosím.',
+    sk: 'Čistá slovenská výslovnosť a pravopis: dobrý deň, ako sa máš, kde bývaš, ďakujem veľmi pekne, prosím.'
 };
 
 function buildInitialPrompt(targetLang, hint) {

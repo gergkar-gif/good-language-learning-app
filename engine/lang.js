@@ -54,7 +54,8 @@ const Lang = (function () {
         fr:         'French',
         it:         'Italian',
         pl:         'Polish',
-        cs:         'Czech'
+        cs:         'Czech',
+        sk:         'Slovak'
     };
 
     // Courses with real content behind them — what the language picker
