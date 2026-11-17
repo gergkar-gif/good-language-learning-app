@@ -4,7 +4,7 @@ The one document to read before generating course content for Parlour: a new lan
 
 Tags follow [skill-tagging-spec.md](skill-tagging-spec.md); this brief only summarises them. Where this brief and an older doc disagree, this brief wins. Where this brief and a validator disagree, stop and report it.
 
-**Scope.** Content only: unit tables, skills, grammar screens, vocabulary, stories, lessons, exercises, wiring. Audio recordings, dictionary import, morphology and `engine/` changes are separate work.
+**Scope.** Content only: unit tables, skills, grammar screens, vocabulary, stories, lessons, exercises, wiring. Audio recordings, dictionary import, morphology, Workshop studios/exams and `engine/` setup for pre-lesson courses follow [new-language-scaffolding.md](new-language-scaffolding.md).
 
 **Before you start.** Read § 1–§ 8, then the language appendix (§ 9). For a new language, write its appendix first (§ 9.3).
 
