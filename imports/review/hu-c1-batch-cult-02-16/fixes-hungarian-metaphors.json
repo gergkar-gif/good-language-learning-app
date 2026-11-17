@@ -1,0 +1,973 @@
+[
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-01-ex.json",
+  "id": "c1-metaforak-01-introduce-1",
+  "set": {
+   "question": "Mire példa a 'kétségbe esik' a magyar nyelvben?",
+   "options": [
+    "Arra, hogy egy téri rag elvont állapotot is ki tud fejezni.",
+    "Arra, hogy a magyarban a ragok a földrajzi távolságot mérik.",
+    "Arra, hogy a határozószók és a melléknevek ugyanazt jelentik."
+   ]
+  },
+  "why": "stem presupposed a strong claim (\"structures abstract thought\"); wrong options used unmet grammar terms (határozószók)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-01-ex.json",
+  "id": "c1-metaforak-01-practice-2",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag metaphor tests no metaphor form: the blank is an idiom verb (vocabulary)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-01-ex.json",
+  "id": "c1-metaforak-01-practice-4",
+  "set": {
+   "tiles": [
+    "Sokak",
+    "szerint",
+    "a",
+    "magyar",
+    "nyelv",
+    "téri",
+    "képei",
+    "az",
+    "elvont",
+    "kifejezésekben",
+    "is",
+    "megjelennek."
+   ],
+   "solution": [
+    "Sokak",
+    "szerint",
+    "a",
+    "magyar",
+    "nyelv",
+    "téri",
+    "képei",
+    "az",
+    "elvont",
+    "kifejezésekben",
+    "is",
+    "megjelennek."
+   ],
+   "english": "According to many, the spatial images of Hungarian also appear in abstract expressions.",
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"the spatial logic permeates abstract thought\" is a strong relativist claim as fact (reviewer)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-01-ex.json",
+  "id": "c1-metaforak-01-dialogue-5",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Nyelvész",
+     "text": "Miért mondjuk, hogy 'bízom benned' és nem azt, hogy 'bízom hozzád'?"
+    },
+    {
+     "speaker": "Kutató",
+     "text": "Egy értelmezés szerint a bizalom térbeli kép: a másikat képletesen a saját személyiségünk _____."
+    }
+   ],
+   "teaches": [
+    "movement-with-ba-be"
+   ],
+   "distractor_skills": {
+    "1": "ra-re",
+    "2": "hoz-suffix"
+   }
+  },
+  "why": "folk etymology presented as fact: hedged (\"egy értelmezés szerint\"); unmet konténer removed; item tests -be vs -re/-hez",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-01-ex.json",
+  "id": "c1-metaforak-01-production-6",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ]
+  },
+  "why": "open writing takes the unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-01-ex.json",
+  "id": "c1-metaforak-01-check-7",
+  "set": {
+   "question": "Mit mutat a 'kétségbe esik' a ragok használatáról?",
+   "options": [
+    "Hogy a téri ragok elvont dolgokra is használhatók.",
+    "Hogy a téri ragokat a magyarban már nem használják.",
+    "Hogy a téri ragok a cselekvés idejét jelölik."
+   ],
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length-giveaway 90 vs 55; absurd wrong options (\"nincsenek helyhatározó ragok\")",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-01.json",
+  "old": "  \"goal\": [\n    \"I can analyze how Hungarian's three-way directional cases (*honnan? hol? hová?*) structure abstract thought.\",\n    \"I can evaluate spatial containment metaphors in mental and emotional domains.\",\n    \"I can navigate complex spatial metaphors in academic and philosophical Hungarian.\"",
+  "new": "  \"goal\": [\n    \"I can explain how Hungarian endings of place (honnan? hol? hová?) also appear in figurative expressions.\",\n    \"I can explain kétségbe esik and észhez tér as spatial images.\",\n    \"I can say that researchers dispute how far such images shape thought.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-01.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze how Hungarian's three-way directional cases (*honnan? hol? hová?*) structure abstract thought.\",\n        \"I can evaluate spatial containment metaphors in mental and emotional domains.\",\n        \"I can navigate complex spatial metaphors in academic and philosophical Hungarian.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain how Hungarian endings of place (honnan? hol? hová?) also appear in figurative expressions.\",\n        \"I can explain kétségbe esik and észhez tér as spatial images.\",\n        \"I can say that researchers dispute how far such images shape thought.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-01.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze how Hungarian's three-way directional cases (*honnan? hol? hová?*) structure abstract thought.\",\n        \"I can evaluate spatial containment metaphors in mental and emotional domains.\",\n        \"I can navigate complex spatial metaphors in academic and philosophical Hungarian.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain how Hungarian endings of place (honnan? hol? hová?) also appear in figurative expressions.\",\n        \"I can explain kétségbe esik and észhez tér as spatial images.\",\n        \"I can say that researchers dispute how far such images shape thought.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-metaforak-01-a-gr.json",
+  "old": "applied across internal (*-ból, -ban, -ba*), surface (*-ról, -on, -ra*), and adessive (*-tól, -nál, -hoz*) domains serves as the universal template for abstract thought.",
+  "new": "applied across internal (*-ból, -ban, -ba*), surface (*-ról, -on, -ra*) and 'near' (*-tól, -nál, -hoz*) endings gives a template for many abstract expressions.",
+  "why": "\"adessive\" for all three and \"universal template for abstract thought\" overclaim",
+  "kind": "english"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-metaforak-01-a-gr.json",
+  "old": "When we despair, we fall into a dark container (*kétségbe esünk*); when we trust someone, we admit them inside ourselves (*bízunk benne*); when working on a project, we bear the load on a surface (*dolgozunk rajta*).",
+  "new": "One way to read these expressions: despair is a container we fall into (*kétségbe esünk*), trust is something placed inside someone (*bízunk benne*), and work is a load carried on a surface (*dolgozunk rajta*). These are illustrations, not proof.",
+  "why": "illustrative readings presented as fact (reviewer)",
+  "kind": "english"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-metaforak-01-ter.json",
+  "old": "egy elképesztő építészeti csoda tárul fel előtte. A magyar nyelvtan ugyanis nem szabályok mechanikus halmaza, hanem a fizikai tér tökéletes leképezése a szellem világában.",
+  "new": "szabályos, jól áttekinthető rendszert lát. A ragok sokszor a fizikai tér viszonyait követik: valaki valahol van, valahonnan jön vagy valahová megy.",
+  "why": "\"tökéletes leképezése\" overstated (reviewer)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-metaforak-01-ter.json",
+  "old": "A hármas tagozódás – honnan, hol és hová – láthatatlan iránytűként vezeti a gondolkodást. Amikor szomorúak vagyunk, nem egyszerűen rossz kedvünk van: 'kétségbe esünk', vagyis egy mély, zárt tartály fenekére zuhanunk. Amikor megnyugszunk, 'észhez térünk', vagyis visszatalálunk a gondolat otthonos helyére. Ha egy problémán töprengünk, egy láthatatlan felszínen hordozzuk a terhet: 'dolgozunk rajta'.",
+  "new": "A hármas tagozódás – honnan, hol és hová – az elvont kifejezésekben is felismerhető. Ha valaki 'belemerül a munkába', a munka olyan tér, amelybe belép; ha 'kiábrándul valamiből', az illúzió olyan hely, amelyből kilép; ha pedig 'rátalál a megoldásra', a keresés olyan mozgás, amely célba ér. Ezek az olvasatok szemléltetik, hogyan értelmezhetők a ragok téri képként.",
+  "why": "segment repeated language-worldview 04 almost word for word (kétségbe esünk, észhez térünk, dolgozunk rajta): new examples; claims are illustrations",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-metaforak-01-ter.json",
+  "old": "Ez a páratlan téri logika azt eredményezi, hogy a magyarul beszélő ember elméje ösztönösen három dimenzióban látja a legelvontabb filozófiai és erkölcsi viszonyokat is. A nyelv nem elszakad a valóságtól: a test és a tér konkrét tapasztalatát emeli a magasba.",
+  "new": "Egyes kutatók szerint a téri képek az elvont viszonyok megértését is segítik; hogy ez mennyire igaz, azt a kutatók vitatják. Annyi biztos, hogy az ilyen kifejezések a test és a tér konkrét tapasztalatából indulnak ki.",
+  "why": "\"ösztönösen három dimenzióban\" unverifiable strong relativist claim (reviewer): hedged, dispute named",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-02-ex.json",
+  "id": "c1-metaforak-02-practice-2",
+  "set": {
+   "teaches": [
+    "kell-infinitive"
+   ],
+   "category": "grammar"
+  },
+  "why": "the blank is the infinitive after kell"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-02-ex.json",
+  "id": "c1-metaforak-02-practice-4",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "metadata: retired or wrong tag; follows what a wrong answer shows"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-02-ex.json",
+  "id": "c1-metaforak-02-dialogue-5",
+  "set": {
+   "teaches": [
+    "acc-poss"
+   ],
+   "distractor_skills": {
+    "1": "movement-with-ba-be",
+    "2": "hoz-suffix"
+   }
+  },
+  "why": "the item tests the accusative of a possessed noun; wrong options are real -be and -hoz forms"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-02-ex.json",
+  "id": "c1-metaforak-02-production-6",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "writing"
+  },
+  "why": "metadata: retired or wrong tag; follows what a wrong answer shows"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-02-ex.json",
+  "id": "c1-metaforak-02-check-7",
+  "set": {
+   "question": "Mi a szomatikus metaforák lényege?",
+   "options": [
+    "A testi tapasztalat képei elvont gondolatokat tesznek érthetővé.",
+    "A testrészek nevét orvosi szövegben használják átvitt értelemben.",
+    "A testrészek nevei az idegen szavak közé tartoznak a magyarban."
+   ],
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length-giveaway 97 vs 57; tell semmi; absurd wrong options",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-02.json",
+  "old": "  \"goal\": [\n    \"I can analyze somatic idioms (*fej, szív, kéz, láb, szem*) in Hungarian world modeling.\",\n    \"I can evaluate embodied cognition (*testesülés*) in expressions of emotion and intellect.\",\n    \"I can deploy high-register somatic idiomatic expressions with nuance.\"",
+  "new": "  \"goal\": [\n    \"I can explain idioms with fej, szív, kéz and láb, such as fejét töri and szívére vesz.\",\n    \"I can say that cognitive linguists link concepts to bodily experience.\",\n    \"I can use szem előtt tart and kézbe vesz in a formal sentence.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-02.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze somatic idioms (*fej, szív, kéz, láb, szem*) in Hungarian world modeling.\",\n        \"I can evaluate embodied cognition (*testesülés*) in expressions of emotion and intellect.\",\n        \"I can deploy high-register somatic idiomatic expressions with nuance.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain idioms with fej, szív, kéz and láb, such as fejét töri and szívére vesz.\",\n        \"I can say that cognitive linguists link concepts to bodily experience.\",\n        \"I can use szem előtt tart and kézbe vesz in a formal sentence.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-02.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze somatic idioms (*fej, szív, kéz, láb, szem*) in Hungarian world modeling.\",\n        \"I can evaluate embodied cognition (*testesülés*) in expressions of emotion and intellect.\",\n        \"I can deploy high-register somatic idiomatic expressions with nuance.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain idioms with fej, szív, kéz and láb, such as fejét töri and szívére vesz.\",\n        \"I can say that cognitive linguists link concepts to bodily experience.\",\n        \"I can use szem előtt tart and kézbe vesz in a formal sentence.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-metaforak-02-a-gr.json",
+  "old": "Cognitive linguistics demonstrates that human concepts originate in bodily experience (*testesülés*). Hungarian features hundreds of idioms based on anatomy:",
+  "new": "Cognitive linguists argue that many concepts originate in bodily experience (*testesülés*). Hungarian has many idioms based on the body:",
+  "why": "\"demonstrates\", \"hundreds\" overstated",
+  "kind": "english"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-metaforak-02-voc.json",
+  "old": "    {\n      \"lemma\": \"érzéki megalapozottság\",\n      \"translation\": \"sensory groundedness\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "new": "    {\n      \"lemma\": \"érzéki megalapozottság\",\n      \"translation\": \"sensory groundedness\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"köztudat\",\n      \"translation\": \"public awareness, common knowledge\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "why": "köztudat used in introduce-1",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-03-ex.json",
+  "id": "c1-metaforak-03-introduce-1",
+  "set": {
+   "question": "Mit fejez ki a 'tiszta forrás' képe Bartók Béla nyomán?",
+   "options": [
+    "Az eredeti, városi hatásoktól mentes népi hagyományhoz való visszatérést.",
+    "A hegyi forrásvizek ipari palackozását és kereskedelmi értékesítését.",
+    "A modern nagyvárosi kabarék szórakoztató és könnyed zenei világát."
+   ]
+  },
+  "why": "stem \"Bartók szótárában\" vague; right option made concrete",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-03-ex.json",
+  "id": "c1-metaforak-03-practice-2",
+  "set": {
+   "hint": "headwaters, source region (noun)",
+   "teaches": [
+    "hoz-suffix"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint named the ending and the base; retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-03-ex.json",
+  "id": "c1-metaforak-03-practice-4",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "metadata: retired or wrong tag; follows what a wrong answer shows"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-03-ex.json",
+  "id": "c1-metaforak-03-dialogue-5",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kultúrakutató",
+     "text": "Hogyan jellemezne egy kulturális válságot?"
+    },
+    {
+     "speaker": "Író",
+     "text": "Leginkább úgy, mint a hagyományoktól elszakadó, aggasztó _____."
+    }
+   ],
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "distractor_skills": {
+    "1": "hoz-suffix",
+    "2": "val-vel"
+   }
+  },
+  "why": "the stem judged the present-day culture (\"jelenlegi kulturális válság\"); the item tests the accusative",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-03-ex.json",
+  "id": "c1-metaforak-03-production-6",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "writing"
+  },
+  "why": "metadata: retired or wrong tag; follows what a wrong answer shows"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-03-ex.json",
+  "old": "Az anyanyelv gazdagsága az a kimeríthetetlen forrás, amelyből a nemzet szellemi élete táplálkozik.",
+  "new": "Az anyanyelv az a forrás, amelyből sok író a képeit meríti.",
+  "why": "sample answer: national-romantic overclaim, unmet words",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-03-ex.json",
+  "id": "c1-metaforak-03-check-7",
+  "set": {
+   "question": "Mit jelent a 'rög' a magyar irodalmi képekben?",
+   "options": [
+    "A szülőföld iránti nehéz hűséget.",
+    "A szellemi megújulás utáni vágyat.",
+    "A romlatlan népi kultúra gyökerét."
+   ],
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "answer repeated the stem (szülőföld); wrong options absurd; unmet words",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-03.json",
+  "old": "  \"goal\": [\n    \"I can analyze how the Hungarian landscape (*a puszta, a rög, a Duna*) informs cultural semiotics.\",\n    \"I can evaluate metaphors of light, shadow, thirst, and drought in moral and political literature.\",\n    \"I can use evocative nature-based idioms in high-register literary analysis.\"",
+  "new": "  \"goal\": [\n    \"I can explain what the rög, the puszta and the tiszta forrás mean in Hungarian cultural images.\",\n    \"I can use words such as forrásvidék, gyökérzet and elsivatagosodás for cultural images.\",\n    \"I can name a poet or composer linked with each image.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-03.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze how the Hungarian landscape (*a puszta, a rög, a Duna*) informs cultural semiotics.\",\n        \"I can evaluate metaphors of light, shadow, thirst, and drought in moral and political literature.\",\n        \"I can use evocative nature-based idioms in high-register literary analysis.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the rög, the puszta and the tiszta forrás mean in Hungarian cultural images.\",\n        \"I can use words such as forrásvidék, gyökérzet and elsivatagosodás for cultural images.\",\n        \"I can name a poet or composer linked with each image.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-03.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze how the Hungarian landscape (*a puszta, a rög, a Duna*) informs cultural semiotics.\",\n        \"I can evaluate metaphors of light, shadow, thirst, and drought in moral and political literature.\",\n        \"I can use evocative nature-based idioms in high-register literary analysis.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the rög, the puszta and the tiszta forrás mean in Hungarian cultural images.\",\n        \"I can use words such as forrásvidék, gyökérzet and elsivatagosodás for cultural images.\",\n        \"I can name a poet or composer linked with each image.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-metaforak-03-termeszet.json",
+  "old": "A magyar irodalom kezdetei óta elválaszthatatlan a tájtól, amelyben megszületett.",
+  "new": "Sok magyar író számára fontos szerepe van a tájnak, amelyben alkotott.",
+  "why": "overclaim: inseparable since the beginnings",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-metaforak-03-termeszet.json",
+  "old": "A 'rög' a szülőföldhöz kötődés nehéz hűségét jelenti, a 'szomjúság' a szellemi megújulás utáni vágyat,",
+  "new": "A 'rög' gyakran a szülőföldhöz kötődés nehéz hűségét jelenti, a 'szomjúság' pedig a szellemi megújulás utáni vágyat,",
+  "why": "generalisation of an image to a fixed meaning",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-metaforak-03-termeszet.json",
+  "old": "Ez a tájszemantika ma is eleven a magyar nyelvben. Amikor a kultúra válságáról beszélünk, ösztönösen az 'elsivatagosodás' képét idézzük fel; és amikor a megújulásról álmodunk, a 'tavasz' és a 'virágzás' örök természeti metaforáiba kapaszkodunk.",
+  "new": "A kultúra válságáról szólva gyakran az 'elsivatagosodás' vagy a 'szellemi aszály' képe tűnik fel; a megújulásról szólva pedig a 'tavasz' és a 'virágzás' természeti képei.",
+  "why": "\"ösztönösen\" and \"örök\" unverifiable",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-04-ex.json",
+  "id": "c1-metaforak-04-practice-2",
+  "set": {
+   "sentence": "A nemzeti hagyomány szerint a nemzet évszázadokon át a szellemi és fizikai _____ vívta történelmi harcát.",
+   "hint": "survival (purpose: for)",
+   "english": "According to the national tradition, for centuries the nation fought its historic battle for intellectual and physical survival.",
+   "teaches": [
+    "verb-government-ert"
+   ],
+   "category": "grammar"
+  },
+  "why": "national narrative stated as fact; hint named the ending; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-04-ex.json",
+  "id": "c1-metaforak-04-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "magyar",
+    "történelmi",
+    "emlékezetben",
+    "fontos",
+    "a",
+    "megmaradásért",
+    "folytatott",
+    "küzdelem",
+    "képe."
+   ],
+   "solution": [
+    "A",
+    "magyar",
+    "történelmi",
+    "emlékezetben",
+    "fontos",
+    "a",
+    "megmaradásért",
+    "folytatott",
+    "küzdelem",
+    "képe."
+   ],
+   "english": "In Hungarian historical memory, the image of the struggle for survival is important.",
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"Hungarian history was a ceaseless struggle\" is a national narrative stated as fact",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-04-ex.json",
+  "id": "c1-metaforak-04-dialogue-5",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Történész",
+     "text": "Hogyan hat a végvár metaforája a gondolkodásra?"
+    },
+    {
+     "speaker": "Szociológus",
+     "text": "Egyes szerzők szerint erősítheti az identitást, ám a külvilággal szemben túlzott _____."
+    }
+   ],
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "distractor_skills": {
+    "1": "val-vel",
+    "2": "ra-re"
+   }
+  },
+  "why": "present-day judgement (\"mai gondolkodás\") hedged and attributed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-04-ex.json",
+  "old": "A védőbástya metaforája az önfeláldozó történelmi felelősségvállalás és az európai hivatástudat jelképe.",
+  "new": "A védőbástya metaforája a nemzeti hagyományban az önfeláldozás és az európai hivatástudat jelképe.",
+  "why": "sample answer: attributed to the tradition",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-04-ex.json",
+  "id": "c1-metaforak-04-production-6",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "writing"
+  },
+  "why": "metadata: retired or wrong tag; follows what a wrong answer shows"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-04-ex.json",
+  "id": "c1-metaforak-04-check-7",
+  "set": {
+   "question": "Melyik költeményhez kötődik a 'balsors' képe?"
+  },
+  "why": "taste stem \"legmélyebben rögzítette\"",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-04-ex.json",
+  "id": "c1-metaforak-04-check-7",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "metadata: retired or wrong tag; follows what a wrong answer shows"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-04.json",
+  "old": "  \"goal\": [\n    \"I can analyze central historical metaphors (*végvár, balsors, védőbástya, megmaradás*).\",\n    \"I can evaluate how historical memory and national trauma are metaphorically encoded.\",\n    \"I can debate the psychological impact of the 'border fortress' mentality in modern Hungary.\"",
+  "new": "  \"goal\": [\n    \"I can explain végvár, védőbástya and balsors as images of the national tradition.\",\n    \"I can say that these images belong to a national narrative.\",\n    \"I can say that researchers and critics disagree about how these images shape attitudes.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze central historical metaphors (*végvár, balsors, védőbástya, megmaradás*).\",\n        \"I can evaluate how historical memory and national trauma are metaphorically encoded.\",\n        \"I can debate the psychological impact of the 'border fortress' mentality in modern Hungary.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain végvár, védőbástya and balsors as images of the national tradition.\",\n        \"I can say that these images belong to a national narrative.\",\n        \"I can say that researchers and critics disagree about how these images shape attitudes.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze central historical metaphors (*végvár, balsors, védőbástya, megmaradás*).\",\n        \"I can evaluate how historical memory and national trauma are metaphorically encoded.\",\n        \"I can debate the psychological impact of the 'border fortress' mentality in modern Hungary.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain végvár, védőbástya and balsors as images of the national tradition.\",\n        \"I can say that these images belong to a national narrative.\",\n        \"I can say that researchers and critics disagree about how these images shape attitudes.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-metaforak-04-a-gr.json",
+  "old": "position Hungary as an outpost sacrificing itself for Europe",
+  "new": "present, in the national tradition, Hungary as an outpost sacrificing itself for Europe",
+  "why": "national narrative attributed (reviewer)",
+  "kind": "english"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-metaforak-04-a-gr.json",
+  "old": "form the existential twin-pillars of Hungarian historiography.",
+  "new": "are recurring images in the Hungarian national self-image.",
+  "why": "overclaim",
+  "kind": "english"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-metaforak-04-a-gr.json",
+  "old": "\"Balsors akit régen tép...\",",
+  "new": "\"A balsors képe a Himnuszban...\",",
+  "why": "quotation from memory: replaced by a paraphrase",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-metaforak-04-a-gr.json",
+  "old": "\"Ill fate who torn it for long... (Hymn quotation)\"",
+  "new": "\"The image of ill fate in the Hymn...\"",
+  "why": "quotation replaced",
+  "kind": "english"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-metaforak-04-tortenelem.json",
+  "old": "Kevés nép történelmi öntudatát határozták meg oly mélyen a védekező metaforák, mint a magyarét. A tatárjárástól a török hódoltságon át a két világháborúig a magyar sors szinte megszakítás nélküli küzdelem volt a megmaradásért egy veszélyes birodalmi ütközőzónában.",
+  "new": "A magyar történelmi önképnek jellemzője a védekező metaforák gyakorisága. A nemzeti elbeszélés a tatárjárástól a török hódoltságon át a két világháborúig szinte megszakítás nélküli küzdelemnek látja a magyar történelmet a megmaradásért.",
+  "why": "superlative (\"few peoples\") and national narrative stated as fact: attributed (reviewer)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-metaforak-04-tortenelem.json",
+  "old": "nemzeti hivatástudattá vált. A magyarok úgy érezték, saját testükkel és vérükkel védelmezik a nyugati keresztény civilizációt a keleti hódítókkal szemben – még akkor is, ha Európa gyakran hálátlannak bizonyult e véráldozatért. Kölcsey Ferenc Himnuszában ez a tragikus érzés a 'balsors' fenséges költői képévé nemesült.",
+  "new": "a nemzeti hagyományban hivatástudattá vált. A nemzeti hagyomány szerint a magyarok saját testükkel és vérükkel védelmezték a nyugati kereszténységet a keleti hódítókkal szemben, Európa pedig hálátlannak bizonyult e véráldozatért. Kölcsey Ferenc Himnuszában (1823) a 'balsors' képe jelenik meg.",
+  "why": "\"Európa hálátlan\" attributed (reviewer); evaluative nemesült removed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-metaforak-04-tortenelem.json",
+  "old": "Ez a 'végvári mentalitás' kettős örökséget hagyott hátra. Egyfelől páratlan szívósságot és életerőt adott a nemzetnek a túléléshez; másfelől a gyanakvás és a magányosság érzését táplálta egy olyan világban, ahol az összefogás és a nyitottság a valódi jövő záloga.",
+  "new": "Ez a 'végvári mentalitás' elemzők szerint kettős örökséget hagyott hátra. Egyfelől a kitartás és a szívósság képét erősítette; másfelől a kritikusok szerint a magányosság és a gyanakvás érzését is táplálhatta.",
+  "why": "political judgement (openness is \"the real guarantee of the future\") removed; attributed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-05-ex.json",
+  "id": "c1-metaforak-05-introduce-1",
+  "set": {
+   "question": "Hogyan kerülnek az új digitális fogalmak a magyar nyelvbe?",
+   "options": [
+    "Gyakran a meglévő ragokkal és igekötőkkel: 'felmegyünk a netre'.",
+    "Új ragokat alkotnak hozzájuk, a régi ragokat nem használják.",
+    "Az idegen szavakat a törvény tiltja, ezért nem kerülnek be."
+   ]
+  },
+  "why": "length-giveaway 96 vs 50; absurd wrong options",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-05-ex.json",
+  "id": "c1-metaforak-05-practice-2",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag; the blank is a noun"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-05-ex.json",
+  "id": "c1-metaforak-05-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "magyar",
+    "nyelv",
+    "új",
+    "szavakat",
+    "és",
+    "új",
+    "képeket",
+    "is",
+    "létre",
+    "tud",
+    "hozni."
+   ],
+   "solution": [
+    "A",
+    "magyar",
+    "nyelv",
+    "új",
+    "szavakat",
+    "és",
+    "új",
+    "képeket",
+    "is",
+    "létre",
+    "tud",
+    "hozni."
+   ],
+   "english": "The Hungarian language can also create new words and new images.",
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"inexhaustible creative power\" is glorifying; unmet kimeríthetetlen",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-05-ex.json",
+  "id": "c1-metaforak-05-dialogue-5",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Nyelvész",
+     "text": "Fenyegeti-e a globális digitalizáció a magyar nyelvet?"
+    },
+    {
+     "speaker": "Kutató",
+     "text": "Egyes nézetek szerint csak akkor, ha passzívan tűrjük, nem pedig mint élő szervezetet, folyamatosan és _____."
+    }
+   ],
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "distractor_skills": {
+    "1": "nek-conditional",
+    "2": "participle-actions"
+   }
+  },
+  "why": "a contested view stated as fact; the item tests the finite verb (wrong options are a real conditional and a real -va form)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-05-ex.json",
+  "id": "c1-metaforak-05-production-6",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ]
+  },
+  "why": "open writing takes the unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-05-ex.json",
+  "old": "A magyar nyelv gazdag metaforavilága a szellem szabadságának és a jövőbe vetett hitnek az örök záloga.",
+  "new": "A magyar nyelv metaforái az új fogalmakat is be tudják fogadni.",
+  "why": "sample answer: glorifying",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-05-ex.json",
+  "id": "c1-metaforak-05-check-7",
+  "set": {
+   "question": "Mit mutatnak a 'felmegyünk a netre' típusú kifejezések?",
+   "options": [
+    "Hogy az új fogalmak a meglévő ragokkal és igekötőkkel fejezhetők ki.",
+    "Hogy az új fogalmakhoz új nyelvtani esetek szükségesek.",
+    "Hogy a digitális fogalmak nem fejezhetők ki magyarul."
+   ],
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "taste stem; two-fault absurd wrong options",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-05.json",
+  "old": "  \"goal\": [\n    \"I can analyze how international and technological metaphors adapt into Hungarian syntax.\",\n    \"I can evaluate linguistic globalization vs. indigenous metaphoric renewal.\",\n    \"I can debate the future vitality of Hungarian metaphorical thinking.\"",
+  "new": "  \"goal\": [\n    \"I can explain how new digital words fit into Hungarian with existing endings and preverbs.\",\n    \"I can use words such as nyelvi megújulás and digitális tér.\",\n    \"I can say in simple terms that a language changes with the world.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-05.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze how international and technological metaphors adapt into Hungarian syntax.\",\n        \"I can evaluate linguistic globalization vs. indigenous metaphoric renewal.\",\n        \"I can debate the future vitality of Hungarian metaphorical thinking.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain how new digital words fit into Hungarian with existing endings and preverbs.\",\n        \"I can use words such as nyelvi megújulás and digitális tér.\",\n        \"I can say in simple terms that a language changes with the world.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-05.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze how international and technological metaphors adapt into Hungarian syntax.\",\n        \"I can evaluate linguistic globalization vs. indigenous metaphoric renewal.\",\n        \"I can debate the future vitality of Hungarian metaphorical thinking.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain how new digital words fit into Hungarian with existing endings and preverbs.\",\n        \"I can use words such as nyelvi megújulás and digitális tér.\",\n        \"I can say in simple terms that a language changes with the world.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-metaforak-05-a-gr.json",
+  "old": "Hungarian has survived through centuries by assimilating foreign concepts and reclothing them in native metaphorical garb. Just as the 19th-century *nyelvújítás* created thousands of enduring words,",
+  "new": "Hungarian has taken in foreign concepts over the centuries and fitted them into native patterns. Just as the language reform (*nyelvújítás*) of the late 18th and early 19th centuries created thousands of new words, many of which survive,",
+  "why": "\"has survived by\" overclaim; nyelvújítás dated wrongly as 19th century only",
+  "kind": "english"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-metaforak-05-a-gr.json",
+  "old": "proving that Hungarian remains a dynamic, living organism (*élő szervezet*).",
+  "new": "showing how new concepts can fit into the existing case system; the image of language as a living organism (*élő szervezet*) is a metaphor too.",
+  "why": "\"proving\" overclaim",
+  "kind": "english"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-metaforak-05-voc.json",
+  "old": "    {\n      \"lemma\": \"jövőkép\",\n      \"translation\": \"vision of the future\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "new": "    {\n      \"lemma\": \"jövőkép\",\n      \"translation\": \"vision of the future\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"leltár\",\n      \"translation\": \"inventory\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "why": "leltár used in practice-2",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-metaforak-05-jovo.json",
+  "old": "A magyar nyelv életereje mindig abban a csodálatos képességében rejlett, hogy nem bezárkózott a múltba, hanem magába szívta a világ újdonságait, és saját képére formálta azokat. Amikor a reformkorban Kazinczy és társai tízezer új szót alkottak,",
+  "new": "A magyar nyelv fennmaradásához hozzájárult, hogy nem zárkózott be a múltba, hanem átvette a világ újdonságait, és saját mintái szerint formálta azokat. Amikor a nyelvújítás korában Kazinczy és társai mintegy tízezer új szót alkottak,",
+  "why": "\"csodálatos\", \"mindig\"; nyelvújítás dated (reviewer: mostly before the reform era; figure rounded)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-metaforak-05-jovo.json",
+  "old": "új metaforák milliárdjait hozza létre. És a magyar nyelvtan ma is játszi könnyedséggel öltözteti ezeket saját téri és igekötős ruhájába:",
+  "new": "új metaforákat hoz létre. És a magyar nyelvtan gyakran saját téri és igekötős mintáiba illeszti ezeket:",
+  "why": "hyperbole (billions of metaphors)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-metaforak-05-jovo.json",
+  "old": "A metafora ugyanis a szellem szabadságának örök bizonyítéka. Amíg képesek vagyunk a világot költészetté, a gondolatot képpé, és a tapasztalatot anyanyelvi bölcsességgé formálni, addig a magyar nyelv nemcsak fennmarad, hanem a jövő embere számára is az otthon és a teremtő erő legszebb világa marad.",
+  "new": "A metafora segít abban, hogy a nyelv új tapasztalatokat is ki tudjon fejezni. Hogy a magyar nyelv jövője mennyire lesz alkotó és nyitott, azt a nyelvhasználók döntik el; a nyelvészek vitatják, hogy a globális angol hatás inkább gazdagítja vagy inkább veszélyezteti.",
+  "why": "national-romantic closing and future prediction as fact; present-day claim, check 2026",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "id": "c1-metaforak-consolidation-1",
+  "set": {
+   "question": "Hogyan jelenhet meg a hármas esetrendszer az elvont kifejezésekben?",
+   "options": [
+    "A téri irányok képe átkerül a lelki és fogalmi viszonyokra.",
+    "A ragok a fizikai távolság pontos mértékét adják meg.",
+    "A ragok az igék idejét jelölik elvont szövegekben."
+   ],
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length-giveaway 91 vs 49; tell Kizárólag; absurd wrong options",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "id": "c1-metaforak-consolidation-2",
+  "set": {
+   "options": [
+    "A hagyomány szerint a nemzet a Nyugatot védte önfeláldozóan.",
+    "A nyitott határok és a szabad kereskedelem előnyeinek dicséretét.",
+    "A tengeri kikötők és erődök műszaki felépítésének leírását."
+   ],
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "national narrative attributed; unmet words; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "id": "c1-metaforak-consolidation-4",
+  "set": {
+   "hint": "hand (direction: into)"
+  },
+  "why": "hint named the ending",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "id": "c1-metaforak-consolidation-5",
+  "set": {
+   "sentence": "A nemzeti hagyomány szerint a nemzet évszázadokon át a fizikai és lelki _____ vívta történelmi harcát.",
+   "hint": "survival (purpose: for)",
+   "english": "According to the national tradition, for centuries the nation fought its historic battle for physical and spiritual survival.",
+   "teaches": [
+    "verb-government-ert"
+   ],
+   "category": "grammar"
+  },
+  "why": "national narrative stated as fact; hint named the ending",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "id": "c1-metaforak-consolidation-6",
+  "set": {
+   "hint": "moral backbone (plural \"their\")",
+   "teaches": [
+    "acc-poss"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint named the ending; the blank is a possessed accusative",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "id": "c1-metaforak-consolidation-7",
+  "set": {
+   "teaches": [
+    "kell-infinitive"
+   ],
+   "category": "grammar"
+  },
+  "why": "the blank is the infinitive after kell"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "id": "c1-metaforak-consolidation-8",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "tag follows what a wrong answer shows"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "id": "c1-metaforak-consolidation-9",
+  "set": {
+   "question": "Mit mutatnak a testi és téri kifejezések a nyelvről?",
+   "options": [
+    "Hogy a konkrét testi és téri tapasztalat elvont jelentéseket hordozhat.",
+    "Hogy a magyar a látható tárgyakat is csak átvitt szavakkal nevezi meg.",
+    "Hogy a szavak ritmusa a matematikai törvényeket követi."
+   ],
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "taste stem (\"legfőbb metafizikai ereje\"); unmet words",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "id": "c1-metaforak-consolidation-10",
+  "set": {
+   "tiles": [
+    "A",
+    "metaforák",
+    "új",
+    "jelentéseket",
+    "hoznak",
+    "létre",
+    "a",
+    "nyelvben."
+   ],
+   "solution": [
+    "A",
+    "metaforák",
+    "új",
+    "jelentéseket",
+    "hoznak",
+    "létre",
+    "a",
+    "nyelvben."
+   ],
+   "english": "Metaphors create new meanings in the language.",
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "glorifying sentence replaced; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "id": "c1-metaforak-consolidation-11",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ]
+  },
+  "why": "retired tag; open writing takes the unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "old": "A magyar nyelv metaforavilága bizonyítja, hogy az anyanyelv a valóság legmélyebb és legszebb megismerési formája.",
+  "new": "A magyar nyelv metaforái a testi és téri tapasztalatból indulnak ki, és elvont gondolatokat tesznek érthetővé.",
+  "why": "sample answer: overclaim, unmet words",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "id": "c1-metaforak-consolidation-12",
+  "set": {
+   "teaches": [
+    "c1-hungarian-metaphors-vocab"
+   ]
+  },
+  "why": "retired tag; open writing takes the unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-metaforak-consolidation-ex.json",
+  "old": "Amíg a magyar szellem alkotóan őrzi anyanyelvének metaforikus gazdagságát, addig jövője megingathatatlan.",
+  "new": "Hogy a magyar metaforák milyen új képekkel gazdagodnak, azt a nyelvhasználók alakítják.",
+  "why": "sample answer: prediction as fact",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-consolidation.json",
+  "old": "  \"goal\": [\n    \"I can analyze spatial, somatic, environmental, and historical metaphors in Hungarian.\",\n    \"I can evaluate how conceptual metaphors embody cultural worldview and identity.\",\n    \"I can discuss linguistic evolution and metaphorical assimilation in the digital era.\"",
+  "new": "  \"goal\": [\n    \"I can explain spatial, bodily, landscape and historical images in Hungarian.\",\n    \"I can say how an image such as rög or végvár carries a cultural meaning.\",\n    \"I can say how new digital words fit into Hungarian.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-consolidation.json",
+  "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can analyze spatial, somatic, environmental, and historical metaphors in Hungarian.\",\n        \"I can evaluate how conceptual metaphors embody cultural worldview and identity.\",\n        \"I can discuss linguistic evolution and metaphorical assimilation in the digital era.\"",
+  "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can explain spatial, bodily, landscape and historical images in Hungarian.\",\n        \"I can say how an image such as rög or végvár carries a cultural meaning.\",\n        \"I can say how new digital words fit into Hungarian.\"",
+  "why": "goal line: plain can-do"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-metaforak-consolidation.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze spatial, somatic, environmental, and historical metaphors in Hungarian.\",\n        \"I can evaluate how conceptual metaphors embody cultural worldview and identity.\",\n        \"I can discuss linguistic evolution and metaphorical assimilation in the digital era.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain spatial, bodily, landscape and historical images in Hungarian.\",\n        \"I can say how an image such as rög or végvár carries a cultural meaning.\",\n        \"I can say how new digital words fit into Hungarian.\"",
+  "why": "goal line: plain can-do"
+ }
+]
