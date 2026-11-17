@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen történelmi lépést tett az Országos Bírói Tanács (OBT) az OBH elnökével szemben?",
+      "question": "Mit jelent a pályázat szó egy állás esetében?",
       "options": [
-        "Hivatalosan megállapította az elnök sorozatos törvénysértéseit, és alkotmányos jogával élve kezdeményezte annak parlamenti felmentését.",
-        "Azonnali sztrájkot hirdetett az ország valamennyi bíróságán.",
-        "Kérvényezte az igazságügyi minisztérium felügyeletének kiterjesztését."
+        "Írásos anyag, amellyel valaki egy állásra jelentkezik.",
+        "A munkaszerződés hivatalos szövege és mellékletei.",
+        "Az állás fizetésének pontos összege és formája."
       ],
       "correct": 0,
       "teaches": [
@@ -22,13 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A bírói kar képviselőinek alkotmányos _____ volt ellenállni a törvénytelen nyomásgyakorlásnak.",
-      "hint": "duty / kötelesség + -e",
-      "answer": "kötelessége",
-      "english": "It was the constitutional duty of the representatives of the judiciary to resist unlawful pressure.",
+      "sentence": "Annak _____, hogy a bírói testületek rangsorolták a pályázókat, az elnök több pályázatot eredménytelennek nyilvánított.",
+      "english": "Although the judicial bodies had ranked the applicants, the president declared several applications unsuccessful.",
       "teaches": [
-        "formal-obligation"
-      ]
+        "concessive-annak-ellenere"
+      ],
+      "answer": "ellenére"
     },
     {
       "id": "c1-biroifuggetlenseg-03-controlled-3",
@@ -37,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Országos Bírói Tanács",
-          "a bírák által választott független felügyeleti testület"
+          "pályázat",
+          "írásos anyag egy állás elnyerésére"
         ],
         [
-          "testületi ellenállás",
-          "a bírói közösség bátor kiállása az igazgatási önkénnyel szemben"
+          "rangsorol",
+          "értékelés alapján sorrendbe állít"
         ],
         [
-          "felügyeleti jogkör",
-          "a bírósági igazgatás törvényességét ellenőrző hatáskör"
+          "eredménytelen",
+          "olyan, amely nem vezetett eredményre"
         ],
         [
-          "törvénysértés megállapítása",
-          "a hivatali visszaélések hivatalos testületi elmarasztalása"
+          "önigazgatás",
+          "a közösség saját ügyeinek maga általi intézése"
         ]
       ],
       "teaches": [
@@ -62,13 +61,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Megalkuvást nem ismerve kell _____ az ítélkezés pártatlansága felett.",
-      "hint": "to watch over / őrköd + -ni",
-      "answer": "őrködni",
-      "english": "Without compromise one must watch over the impartiality of adjudication.",
+      "sentence": "Az elnök több pályázatot eredménytelennek nyilvánított, annak _____, hogy a bírói testületek rangsorolták a pályázókat.",
+      "english": "The president declared several applications unsuccessful, although the judicial bodies had ranked the applicants.",
       "teaches": [
-        "formal-obligation"
-      ]
+        "concessive-annak-ellenere"
+      ],
+      "answer": "ellenére"
     },
     {
       "id": "c1-biroifuggetlenseg-03-practice-5",
@@ -76,28 +74,40 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "bíráknak",
-        "kötelessége",
-        "védeni",
+        "Annak",
+        "ellenére,",
+        "hogy",
+        "az",
+        "OBT",
+        "megállapította",
         "a",
-        "bírósági",
-        "autonómia",
-        "integritását."
+        "szabályok",
+        "megsértését,",
+        "az",
+        "elnök",
+        "megítélése",
+        "vitatott",
+        "volt."
       ],
       "solution": [
-        "A",
-        "bíráknak",
-        "kötelessége",
-        "védeni",
+        "Annak",
+        "ellenére,",
+        "hogy",
+        "az",
+        "OBT",
+        "megállapította",
         "a",
-        "bírósági",
-        "autonómia",
-        "integritását."
+        "szabályok",
+        "megsértését,",
+        "az",
+        "elnök",
+        "megítélése",
+        "vitatott",
+        "volt."
       ],
-      "english": "It is the duty of judges to defend the integrity of judicial autonomy.",
+      "english": "Although the Council found that the rules had been broken, the assessment of the president was disputed.",
       "teaches": [
-        "formal-obligation"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -107,26 +117,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Joghallgató",
-          "text": "Hogyan tudott ellenállni a maroknyi OBT-tag a hatalmas politikai ellenszélben?"
+          "speaker": "Kérdező",
+          "text": "Mit tett az elnök, miután a bírói testületek rangsorolták a pályázókat?"
         },
         {
-          "speaker": "OBT-tag",
-          "text": "Úgy, hogy felismertük: alkotmányos kötelességünk megalkuvást nem ismerve kiállni a bírói _____ mellett."
-        },
-        {
-          "speaker": "Joghallgató",
-          "text": "Ez a történeti bátorság példája a jövő generációknak."
+          "speaker": "Válaszadó",
+          "text": "Annak _____, hogy rangsoroltak, több pályázatot eredménytelennek nyilvánított."
         }
       ],
       "options": [
-        "függetlenség",
-        "hierarchia",
-        "közigazgatás"
+        "érdekében",
+        "következtében",
+        "ellenére"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "formal-obligation"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -136,12 +142,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating the ethical duty of judicial integrity using a deontic modal.",
-          "answer": "A független bírói kar tagjainak alkotmányos kötelessége ellenállni minden külső politikai beavatkozásnak, és megalkuvást nem ismerve kell őrködniük az ítélkezés pártatlansága és az emberi jogok védelme felett."
+          "prompt": "Write two sentences about the applications for court leadership: say what the president did although the judicial bodies had ranked the applicants, and what the National Judicial Council found in 2018.",
+          "answer": "Annak ellenére, hogy a bírói testületek rangsorolták a pályázókat, az elnök több pályázatot eredménytelennek nyilvánított. 2018-ban az OBT több határozatában megállapította, hogy az OBH elnöke megsértette a szabályokat."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "c1-judicial-independence-vocab"
       ]
     },
     {
@@ -149,15 +155,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fogalmazza meg a bírói hivatás deontikus követelményét a leghatározottabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "kötelessége ellenállni a nyomásnak",
-        "javasolt a hatásköri szabályok körültekintő mérlegelése",
-        "lehetőség van az igazgatási döntések szakmai észrevételezésére"
+        "Annak ellenére, hogy rangsorolták a pályázókat, az elnök eredménytelennek nyilvánította a pályázatot.",
+        "Annak ellenére, rangsorolták a pályázókat, az elnök eredménytelennek nyilvánította a pályázatot.",
+        "Ellenére, hogy rangsorolták a pályázókat, az elnök eredménytelennek nyilvánította a pályázatot."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "concessive-annak-ellenere"
       ]
     }
   ]

@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen szakmai bírálat érte a Terror Háza Múzeum kiállítási koncepcióját a történészek részéről?",
+      "question": "Mit jelent a közalapítvány szó?",
       "options": [
-        "Hogy a nyilas uralom és a holokauszt magyar felelősségét aránytalanul lekicsinyli, s a két diktatúra összemosásával felmenti a társadalmat a belső bűnrészesség alól.",
-        "Hogy a kiállítás túlságosan elméleti és száraz forrásokra épül a multimédiás élmények helyett.",
-        "Hogy kizárólag a rendszerváltás utáni politikai perek dokumentációját mutatja be."
+        "Olyan egyesület, amelynek bárki tagja lehet.",
+        "Olyan társaság, amely szétosztja a nyereségét.",
+        "Olyan alapítvány, amelyet az állam alapított."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "c1-historical-revisionism-vocab"
       ]
@@ -22,13 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A kutatóknak kötelességük _____ a szigorú forráskritikához a politikai nyomással szemben.",
-      "hint": "adhere / ragaszkodik, inf 3pl",
-      "answer": "ragaszkodniuk",
-      "english": "Researchers have a duty to adhere to strict source criticism against political pressure.",
+      "sentence": "A múzeum védői _____ a kiállítás két diktatúra áldozatainak adott emléket.",
+      "english": "According to the museum's defenders, the exhibition commemorated the victims of two dictatorships.",
       "teaches": [
-        "formal-obligation"
-      ]
+        "evidentials"
+      ],
+      "answer": "szerint"
     },
     {
       "id": "c1-emlekezetpolitika-02-controlled-3",
@@ -37,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Terror Háza",
-          "az Andrássy út 60. alatti állami emlékhely"
+          "közalapítvány",
+          "az állam által alapított alapítvány"
         ],
         [
-          "összemosás",
-          "különböző történelmi bűnök téves egyenlőségjele"
+          "főigazgató",
+          "egy nagy intézmény vezetője"
         ],
         [
-          "muzeológiai manipuláció",
-          "érzelmi díszletek alkalmazása a tények tárgyilagos elemzése helyett"
+          "fogda",
+          "kisebb zárt helyiség, amelyben fogvatartottakat tartanak"
         ],
         [
-          "intellektuális tisztesség",
-          "az igazság megalkuvás nélküli képviselete"
+          "hangsúly",
+          "az, amire egy bemutatásban a legnagyobb figyelem irányul"
         ]
       ],
       "teaches": [
@@ -62,13 +61,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Nem _____ meg a történelmi tények politikai célú elhallgatása és eltorzítása.",
-      "hint": "cannot be permitted / enged + -hető",
-      "answer": "engedhető",
-      "english": "Concealment and distortion of historical facts for political goals cannot be permitted.",
+      "sentence": "A bírálók _____ a magyar hatóságok szerepe kevesebb figyelmet kapott a nyilas időszakban.",
+      "english": "According to the critics, the role of the Hungarian authorities received less attention in the Arrow Cross period.",
       "teaches": [
-        "formal-obligation"
-      ]
+        "evidentials"
+      ],
+      "answer": "szerint"
     },
     {
       "id": "c1-emlekezetpolitika-02-practice-5",
@@ -76,26 +74,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "történészeknek",
-        "kötelességük",
-        "megvédeni",
+        "Több",
+        "történész",
+        "szerint",
         "a",
-        "tudományos",
-        "autonómiát."
+        "hangsúly",
+        "a",
+        "kommunista",
+        "korszakon",
+        "volt."
       ],
       "solution": [
-        "A",
-        "történészeknek",
-        "kötelességük",
-        "megvédeni",
+        "Több",
+        "történész",
+        "szerint",
         "a",
-        "tudományos",
-        "autonómiát."
+        "hangsúly",
+        "a",
+        "kommunista",
+        "korszakon",
+        "volt."
       ],
-      "english": "Historians have a duty to defend scientific autonomy.",
+      "english": "According to several historians, the emphasis was on the communist period.",
       "teaches": [
-        "formal-obligation"
+        "evidentials"
       ]
     },
     {
@@ -105,26 +107,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Egyetemi hallgató",
-          "text": "Hogyan kell bemutatni a huszadik századi diktatúrák történetét a múzeumokban?"
+          "speaker": "Kérdező",
+          "text": "Hogyan értékelték a kiállítást a történészek?"
         },
         {
-          "speaker": "Professzor",
-          "text": "Kizárólag úgy, hogy a szakembereknek kötelező _____ a propaganda hatásvadászatát és a tényekre építeni."
-        },
-        {
-          "speaker": "Egyetemi hallgató",
-          "text": "Ez a tudományos etika elemi parancsa."
+          "speaker": "Válaszadó",
+          "text": "Több történész _____ a két rendszer egymás mellé állítása összemosta a különbségeket."
         }
       ],
       "options": [
-        "elutasítaniuk",
-        "támogatniuk",
-        "másolniuk"
+        "helyett",
+        "szerint",
+        "mellett"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "formal-obligation"
+        "evidentials"
       ]
     },
     {
@@ -134,12 +132,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating the historian's duty using a deontic modal structure.",
-          "answer": "A történészeknek kötelességük megőrizni az intellektuális tisztességet, és nem engedhető meg, hogy a múzeumok a diktatúrák összemosásával az állami önfelmentés eszközeivé váljanak."
+          "prompt": "Write two sentences: give the opening date of the House of Terror Museum, and say how its defenders and its critics judged the exhibition, naming the source of each view.",
+          "answer": "A Terror Háza Múzeum 2002. február 24-én nyílt meg Budapesten. A múzeum védői szerint a kiállítás két diktatúra áldozatainak adott emléket, a bírálók szerint viszont a hangsúly a kommunista korszakon volt."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "c1-historical-revisionism-vocab"
       ]
     },
     {
@@ -147,16 +145,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik modális kifejezés írja elő a történész felelősségét a legkategorikusabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "a történettudománynak kötelessége ragaszkodni az igazsághoz",
-        "a történészeknek célszerű megfontolniuk a kutatási témák időbeli kiterjesztését",
-        "az intézményeknek joguk van módosítani a kiállítások nyitvatartási rendjét"
+        "A bírálók szerinte a hangsúly a kommunista korszakon volt.",
+        "A bírálók szerint a hangsúly a kommunista korszakon volt.",
+        "A bírálók a hangsúly szerint a kommunista korszakon volt."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "formal-obligation"
-      ]
+        "evidentials"
+      ],
+      "distractor_skills": {
+        "0": "inflected-postpositions"
+      }
     }
   ]
 }

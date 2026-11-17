@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik kifejezés diagnosztizálja a tantervi indoktrinációt a legpontosabban?",
+      "question": "Melyik mondat nevezi meg a vélemény forrását?",
       "options": [
-        "az állami indoktrináció szisztematikus kísérleteként értékelve / a kánon átideologizálásaként aposztrofálva",
-        "a tantervi struktúra rutinszerű felülvizsgálata / a tananyag korszerűsítésének részeként",
-        "a klasszikus szerzők kiadásának támogatása / a könyvtári állomány folyamatos bővítése révén"
+        "A kormány a tanterv szerint az örökség átadását szolgálta.",
+        "A kormány szerint, hogy a tanterv az örökség átadását szolgálta.",
+        "A kormány szerint a tanterv az örökség átadását szolgálta."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -22,15 +22,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel leplezhető le az állami tankönyvmonopólium a leghitelesebben?",
+      "question": "Which sentence compares the new system with the earlier one?",
       "options": [
-        "a kiadást önkényesen centralizálva és a tananyagot pedagógiailag igénytelen módon homogenizálva",
-        "a tankönyvellátás logisztikai költségeit csökkentve és a terjesztési pontokat koordinálva",
-        "a digitális tananyagok hozzáférhetőségét javítva és a tanári kézikönyveket egységesítve"
+        "A korábbi rendszer képest szűkült a választék.",
+        "A korábbi rendszerhez képest szűkült a választék.",
+        "A korábbi rendszerre képest szűkült a választék."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "evaluative-stance"
+        "kepest"
       ]
     },
     {
@@ -40,20 +40,24 @@
       "stage": "recognize",
       "pairs": [
         [
-          "Nemzeti Alaptanterv",
-          "az állami ideológiát ráerőltető kötelező tantervi szabályozás"
+          "kánon",
+          "azoknak a műveknek a köre, amelyeket közös alapként tanítanak"
         ],
         [
-          "tankönyv-monopólium",
-          "a tankönyvkiadás kizárólagos államosítása a választás elfojtásával"
+          "tankönyvjegyzék",
+          "az iskolákban használható tankönyvek hivatalos listája"
         ],
         [
-          "Szépírók Társasága",
-          "a független és autonóm magyar alkotók szolidaritási szervezete"
+          "köztestület",
+          "törvény által létrehozott, tagokkal működő szervezet"
         ],
         [
-          "kánonpluralizmus",
-          "a szabad és sokszínű irodalmi értékek megdönthetetlen elve"
+          "íróegyesület",
+          "írók önkéntes tagságú szervezete"
+        ],
+        [
+          "jegyzék",
+          "szerzők vagy művek sorba rendezett névsora"
         ]
       ],
       "teaches": [
@@ -65,54 +69,51 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A független lapok fenntartásához elengedhetetlenné vált az olvasói _____.",
-      "hint": "crowdfunding",
-      "answer": "közösségi finanszírozás",
-      "english": "For maintaining independent journals reader crowdfunding became indispensable.",
+      "sentence": "A Nemzeti alaptanterv olyan _____, amely az iskolai tananyag kereteit határozza meg.",
+      "english": "The National Core Curriculum is a government decree that defines the framework of the school curriculum.",
       "teaches": [
         "c1-literary-canon-vocab"
-      ]
+      ],
+      "answer": "kormányrendelet"
     },
     {
       "id": "c1-irodalmielet-consolidation-5",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Az autonóm irodalom lényege a korlátozhatatlan művészi _____.",
-      "hint": "sovereignty",
-      "english": "The essence of autonomous literature is unlimitable artistic sovereignty.",
+      "sentence": "A Magyar Művészeti Akadémia _____ volt.",
+      "english": "The Hungarian Academy of Arts was a public body.",
       "teaches": [
         "c1-literary-canon-vocab"
       ],
-      "answers": [
-        "szuverenitás",
-        "önállóság"
-      ]
+      "answer": "köztestület"
     },
     {
       "id": "c1-irodalmielet-consolidation-6",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A tantervet politikai indoktrinációként _____ a szakma egységesen tiltakozott.",
-      "hint": "evaluating / értékel + -ve",
-      "answer": "értékelve",
-      "english": "Evaluating the curriculum as political indoctrination the profession protested unitedly.",
+      "sentence": "A 2020 januárjában _____ tanterv fokozatosan lépett életbe.",
+      "hint": "megjelenik (to appear), as an adjective before a noun",
+      "english": "The curriculum that appeared in January 2020 came into force gradually.",
       "teaches": [
-        "framing-markers"
-      ]
+        "past-participle-adjective"
+      ],
+      "answer": "megjelent"
     },
     {
       "id": "c1-irodalmielet-consolidation-7",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minél agresszívabb a hatalmi kultúrharc, _____ szorosabb a független alkotók szolidaritása.",
-      "hint": "minél … ___",
-      "answer": "annál",
-      "english": "The more aggressive the power culture war, the tighter the solidarity of independent creators.",
+      "sentence": "Az akadémia állami támogatást kapott, _____ a Szépírók Társasága önkéntes tagságú egyesület volt.",
+      "english": "The academy received state support, while the Writers' Society was a voluntary association.",
       "teaches": [
-        "correlative-minel-annal"
+        "mig-egyidejuseg"
+      ],
+      "answers": [
+        "míg",
+        "miközben"
       ]
     },
     {
@@ -120,31 +121,27 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A kánonok sokszínűsége értelemszerűen _____ a szabad kultúrában.",
-      "hint": "inescapable",
-      "english": "The diversity of canons is naturally inescapable in free culture.",
+      "sentence": "Vitatott volt, hogy a tanár szabadon _____ a szerzők közül.",
+      "english": "It was disputed whether the teacher could freely choose among the authors.",
       "teaches": [
-        "conclusive-markers"
+        "indirect-questions"
       ],
-      "answers": [
-        "kikerülhetetlen",
-        "elkerülhetetlen"
-      ]
+      "answer": "választhat-e"
     },
     {
       "id": "c1-irodalmielet-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi az írók erkölcsi kötelessége a politikai klientúrával és a feketelistákkal szemben?",
+      "question": "Melyik szó illik a mondatba? 'Vitatott volt, hogy _____ szerepet kapjanak a kortárs szerzők.'",
       "options": [
-        "A művészi integritás megőrzése, a megalázó hatalmi megrendelések elutasítása és a szolidaritás a megbélyegzett kollégákkal.",
-        "A hivatalos iránymutatások passzív tudomásulvétele a botrányok elkerülése céljából.",
-        "A szakmai viták teljes felfüggesztése az állami támogatások megőrzése érdekében."
+        "miért",
+        "milyen",
+        "mikor"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "formal-obligation"
+        "indirect-questions"
       ]
     },
     {
@@ -154,27 +151,27 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "szabad",
-        "irodalom",
-        "értékei",
-        "fundamentálisan",
-        "megdönthetetlenek",
-        "minden",
-        "korban."
+        "bírálók",
+        "szerint",
+        "a",
+        "tanárok",
+        "választási",
+        "lehetősége",
+        "szűkült."
       ],
       "solution": [
         "A",
-        "szabad",
-        "irodalom",
-        "értékei",
-        "fundamentálisan",
-        "megdönthetetlenek",
-        "minden",
-        "korban."
+        "bírálók",
+        "szerint",
+        "a",
+        "tanárok",
+        "választási",
+        "lehetősége",
+        "szűkült."
       ],
-      "english": "The values of free literature are fundamentally unshakeable in every era.",
+      "english": "According to the critics, the teachers' freedom of choice narrowed.",
       "teaches": [
-        "conclusive-markers"
+        "evidentials"
       ]
     },
     {
@@ -184,12 +181,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of cultural polarization using a proportional correlative structure.",
-          "answer": "Minél agresszívabban próbálja a hatalom politikai klientúrára cserélni a független alkotókat, annál mélyebbé válik a kulturális polarizáció és annál elszántabbá válik a civil társadalom szolidaritása a szabad irodalom mellett."
+          "prompt": "Write two sentences: say that the government adopted a new National Core Curriculum in 2012 and from when it came into force gradually.",
+          "answer": "2012-ben a kormány új Nemzeti alaptantervet fogadott el. Az új tanterv 2013-tól fokozatosan lépett életbe."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "c1-literary-canon-vocab"
       ]
     },
     {
@@ -199,12 +196,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize the triumph of literary autonomy using an evaluative conclusive particle.",
-          "answer": "A kánonok pluralizmusa és a szellemi szuverenitás értelemszerűen kikerülhetetlen és fundamentálisan megdönthetetlen, hiszen a politikai önkény múlandó, de a szabad kultúra és az esztétikai minőség remekművei örökké fennmaradnak."
+          "prompt": "Write two sentences about 2025 and 2026: say who received the Nobel Prize in Literature in 2025, and give the result of the election of 12 April 2026.",
+          "answer": "2025 októberében Krasznahorkai László kapta az irodalmi Nobel-díjat. 2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-literary-canon-vocab"
       ]
     }
   ]

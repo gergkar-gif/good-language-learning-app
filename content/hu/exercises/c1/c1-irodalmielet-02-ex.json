@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen következményekkel járt a tankönyvpiac államosítása és az egyentankönyvek bevezetése?",
+      "question": "Mit jelent a tankönyvjegyzék szó?",
       "options": [
-        "Megszűnt a tanárok szabad tankönyvválasztási joga, a független kiadók tönkrementek, és az oktatás minősége az ideológiailag vezérelt kötelező könyvek miatt drasztikusan leromlott.",
-        "Jelentősen csökkent a tankönyvek előállítási költsége anélkül, hogy a szakmai minőség változott volna.",
-        "A független kiadók állami támogatással bővíthették a választható tankönyvek kínálatát."
+        "A tankönyvek árának éves emelése az iskolákban.",
+        "Egy tankönyv fejezeteinek jegyzéke a könyv elején.",
+        "Az iskolákban használható tankönyvek hivatalos listája."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "c1-literary-canon-vocab"
       ]
@@ -22,13 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A kiadást önkényesen _____ a kormányzat megszüntette a szakmai műhelyek sokszínűségét.",
-      "hint": "centralizing / centralizál + -va",
-      "answer": "centralizálva",
-      "english": "Centralizing publishing arbitrarily the government eliminated the diversity of professional workshops.",
+      "sentence": "A korábbi _____ képest szűkült a tanárok választási lehetősége.",
+      "hint": "rendszer (system), the thing compared with",
+      "english": "Compared with the earlier system, the teachers' freedom of choice narrowed.",
       "teaches": [
-        "evaluative-stance"
-      ]
+        "kepest"
+      ],
+      "answer": "rendszerhez"
     },
     {
       "id": "c1-irodalmielet-02-controlled-3",
@@ -37,20 +37,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "tankönyv-monopólium",
-          "a tankönyvkiadás kizárólagos állami ellenőrzése"
+          "tankönyvjegyzék",
+          "az iskolákban használható tankönyvek hivatalos listája"
         ],
         [
-          "egyentankönyv",
-          "minden iskolára kötelezően ráerőltetett, egységesített tananyag"
+          "kiadó",
+          "vállalkozás, amely könyveket jelentet meg"
         ],
         [
-          "választási szabadság",
-          "a pedagógus joga a legmegfelelőbb tankönyv kiválasztására"
+          "választék",
+          "az, amiből választani lehet"
         ],
         [
-          "pedagógiai regresszió",
-          "visszaesés a korszerű oktatási módszerekben az önkény miatt"
+          "magánkiadó",
+          "magántulajdonban lévő könyvkiadó"
         ]
       ],
       "teaches": [
@@ -62,13 +62,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A tananyagot pedagógiailag igénytelen módon _____ súlyos minőségromlást idéztek elő.",
-      "hint": "homogenizing / homogenizál + -va",
-      "answer": "homogenizálva",
-      "english": "Homogenizing curriculum in a pedagogically shoddy manner they caused severe quality degradation.",
+      "sentence": "A korábbi szabályokhoz _____, a bírálók szerint szűkült a választék.",
+      "english": "Compared with the earlier rules, according to the critics the range of choice narrowed.",
       "teaches": [
-        "evaluative-stance"
-      ]
+        "kepest"
+      ],
+      "answer": "képest"
     },
     {
       "id": "c1-irodalmielet-02-practice-5",
@@ -76,30 +75,32 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "állam",
+        "A",
+        "bírálók",
+        "szerint",
         "a",
-        "tankönyvpiacot",
-        "erőszakosan",
-        "államosítva",
-        "felszámolta",
+        "korábbi",
+        "rendszerhez",
+        "képest",
+        "szűkült",
         "a",
-        "versenyt."
+        "választék."
       ],
       "solution": [
-        "Az",
-        "állam",
+        "A",
+        "bírálók",
+        "szerint",
         "a",
-        "tankönyvpiacot",
-        "erőszakosan",
-        "államosítva",
-        "felszámolta",
+        "korábbi",
+        "rendszerhez",
+        "képest",
+        "szűkült",
         "a",
-        "versenyt."
+        "választék."
       ],
-      "english": "Nationalizing the textbook market aggressively the state abolished competition.",
+      "english": "According to the critics, compared with the earlier system the range of choice narrowed.",
       "teaches": [
-        "evaluative-stance"
+        "kepest"
       ]
     },
     {
@@ -109,26 +110,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Gimnáziumi igazgató",
-          "text": "Hogyan küzdenek a tanárok az egyentankönyvek szegényes színvonala ellen?"
+          "speaker": "Kérdező",
+          "text": "Mi változott a tanárok választási lehetőségében a bírálók szerint?"
         },
         {
-          "speaker": "Munkaközösség-vezető",
-          "text": "Úgy, hogy a tananyagot önálló segédanyagokkal kiegészítve megőrzik a tanítás szakmai _____."
-        },
-        {
-          "speaker": "Gimnáziumi igazgató",
-          "text": "A tanári kreativitást nem lehet államosítani."
+          "speaker": "Válaszadó",
+          "text": "A korábbi rendszerhez _____ szűkült."
         }
       ],
       "options": [
-        "méltóságát",
-        "kereteit",
-        "menetét"
+        "képest",
+        "helyett",
+        "mint"
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "kepest"
       ]
     },
     {
@@ -138,12 +135,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of the textbook monopoly using an evaluative adverbial.",
-          "answer": "A tankönyvpiacot önkényesen centralizálva és a kiadói versenyt erőszakosan felszámolva a hatalom olyan egyentankönyveket kényszerített az iskolákra, amelyek mély pedagógiai regresszióhoz és az oktatás színvonalának romlásához vezettek."
+          "prompt": "Write two sentences about the textbooks: give the year of the law on public education, and say what the critics said compared with the earlier system.",
+          "answer": "2011-ben az Országgyűlés elfogadta a nemzeti köznevelésről szóló törvényt. A bírálók szerint a korábbi rendszerhez képest szűkült a tanárok és az iskolák választási lehetősége."
         }
       ],
       "teaches": [
-        "evaluative-stance"
+        "c1-literary-canon-vocab"
       ]
     },
     {
@@ -151,15 +148,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet leplezi le a tankönyv-monopólium romboló hatását a leghitelesebben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "a kiadást önkényesen centralizálva / pedagógiailag igénytelen módon homogenizálva a tananyagot",
-        "a logisztikai láncot hatékonyan átszervezve / a könyvtári beszerzéseket elektronikusan rögzítve",
-        "a tantárgyi követelményeket egységes keretbe foglalva / az év végi vizsgákat koordinálva"
+        "A korábbi szabályok képest szűkült a választék.",
+        "A korábbi szabályokhoz képest szűkült a választék.",
+        "A korábbi szabályokra képest szűkült a választék."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "evaluative-stance"
+        "kepest"
       ]
     }
   ]

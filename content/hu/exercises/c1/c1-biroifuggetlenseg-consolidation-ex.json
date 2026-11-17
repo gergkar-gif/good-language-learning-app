@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik kifejezés diagnosztizálja szakszerűen a bíróságok politikai alávetését?",
+      "question": "Which sentence says that judges were obliged to retire after the age limit?",
       "options": [
-        "intézményi szintű politikai beavatkozásként értékelve",
-        "az eljárásjogi határidők technikai módosításaként bemutatva",
-        "a bírósági igazgatás rutinszerű átszervezéseként leírva"
+        "A bírák a korhatár elérése után kötelesek nyugdíjba vonulni voltak.",
+        "A bírák a korhatár elérése után köteles voltak nyugdíjba vonulni.",
+        "A bírák a korhatár elérése után kötelesek voltak nyugdíjba vonulni."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "framing-markers"
+        "formal-obligation"
       ]
     },
     {
@@ -22,15 +22,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel leplezhető le az igazgatási hatalomkoncentráció a leghitelesebben?",
+      "question": "Which word is the noun for the action of appointing?",
       "options": [
-        "a pályázatokat önkényesen érvénytelenítve és rendszerszinten centralizálva a jogköröket",
-        "a költségvetési támogatásokat rendszeresen biztosítva",
-        "a bírósági épületek felújítását koordinálva"
+        "kinevezés",
+        "kinevezni",
+        "kinevez"
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "nominalization"
       ]
     },
     {
@@ -40,20 +40,24 @@
       "stage": "recognize",
       "pairs": [
         [
-          "kényszernyugdíjazás",
-          "a bírói vezetés 2011-es azonnali, politikai célú eltávolítása"
+          "Kúria",
+          "a legfelsőbb bíróság Magyarországon"
         ],
         [
-          "Országos Bírósági Hivatal",
-          "az egyszemélyi adminisztratív centralizáció intézménye"
+          "jogkör",
+          "a döntések köre, amelyet a törvény egy hivatalra bíz"
         ],
         [
-          "Országos Bírói Tanács",
-          "a bírák által választott független ellenőrző testület"
+          "pályázat",
+          "írásos anyag egy állás elnyerésére"
         ],
         [
-          "jogállamisági mechanizmus",
-          "uniós pénzügyi szankció a bírói függetlenség védelmében"
+          "jogállamiság",
+          "az állam működését jogszabályok korlátozzák"
+        ],
+        [
+          "megtámad",
+          "bírósághoz fordul egy szabály ellen"
         ]
       ],
       "teaches": [
@@ -65,38 +69,38 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A bíróságok igazgatását az OBH elnöki _____ jellemezte az elmúlt évtizedben.",
-      "hint": "power concentration / hatalomkoncentráció + -ja",
-      "answer": "hatalomkoncentrációja",
-      "english": "Court governance was characterized by the power concentration of the OBH president over the past decade.",
+      "sentence": "2018-ban az Európai Parlament határozata szerint a _____ és az alapjogok helyzete aggályos volt.",
+      "english": "According to the resolution of the European Parliament of 2018, the state of the rule of law and of fundamental rights was a cause for concern.",
       "teaches": [
         "c1-judicial-independence-vocab"
-      ]
+      ],
+      "answer": "jogállamiság"
     },
     {
       "id": "c1-biroifuggetlenseg-consolidation-5",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A bírói kar tagjainak etikai _____ védelmezése minden körülmények között elengedhetetlen.",
-      "hint": "integrity / integritás + -ának",
-      "answer": "integritásának",
-      "english": "Defending the ethical integrity of members of the judiciary is indispensable under all circumstances.",
+      "sentence": "2012-ben a Legfelsőbb Bíróság helyébe a _____ lépett.",
+      "english": "In 2012 the Kúria took the place of the Supreme Court.",
       "teaches": [
         "c1-judicial-independence-vocab"
-      ]
+      ],
+      "answer": "Kúria"
     },
     {
       "id": "c1-biroifuggetlenseg-consolidation-6",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A reformot intézményi beavatkozásként _____ marasztalta el a nemzetközi bíróság.",
-      "hint": "evaluating / értékel + -ve",
-      "answer": "értékelve",
-      "english": "Evaluating the reform as institutional intervention the international court condemned it.",
+      "sentence": "A bírák a korhatár elérése után _____ voltak nyugdíjba vonulni.",
+      "english": "After reaching the age limit, judges were obliged to retire.",
       "teaches": [
-        "framing-markers"
+        "formal-obligation"
+      ],
+      "answers": [
+        "kötelesek",
+        "kénytelenek"
       ]
     },
     {
@@ -104,46 +108,40 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minél jobban sérül a jogbiztonság, _____ szigorúbb forrásbefagyasztást rendel el az Unió.",
-      "hint": "minél … ___",
-      "english": "The more legal certainty is damaged, the stricter freezing of funds the Union orders.",
+      "sentence": "A Velencei Bizottság 2013 júniusában bírálta az Alaptörvény negyedik _____.",
+      "hint": "módosít (to amend), noun for the action, object",
+      "english": "In June 2013 the Venice Commission criticised the fourth amendment of the Fundamental Law.",
       "teaches": [
-        "correlative-minel-annal"
+        "nominalization"
       ],
-      "answers": [
-        "annál"
-      ]
+      "answer": "módosítását"
     },
     {
       "id": "c1-biroifuggetlenseg-consolidation-8",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A fékek és egyensúlyok rendszere értelemszerűen _____ a demokráciában.",
-      "hint": "indispensable",
-      "english": "The system of checks and balances is naturally indispensable in a democracy.",
+      "sentence": "_____ ellenére, hogy a bírói testületek rangsorolták a pályázókat, az elnök több pályázatot eredménytelennek nyilvánított.",
+      "english": "Although the judicial bodies had ranked the applicants, the president declared several applications unsuccessful.",
       "teaches": [
-        "conclusive-markers"
+        "concessive-annak-ellenere"
       ],
-      "answers": [
-        "elengedhetetlen",
-        "nélkülözhetetlen"
-      ]
+      "answer": "Annak"
     },
     {
       "id": "c1-biroifuggetlenseg-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a deontikus etikai kötelességek lényege az OBT bíráinak magatartásában?",
+      "question": "Melyik szó illik a mondatba? 'A feltételességi eljárás _____ a Tanács a források egy részének felfüggesztéséről döntött.'",
       "options": [
-        "A bírói eskü megingathatatlan védelme és a törvénysértések nyílt kimondása a hatalmi nyomással és propagandával szemben.",
-        "A kormányrendeletek automatikus végrehajtása kérdések nélkül.",
-        "A vitás kérdések zárt ajtók mögötti, kompromisszumos elsimítása."
+        "óta",
+        "során",
+        "szerint"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "formal-obligation"
+        "b2-temporal-framing"
       ]
     },
     {
@@ -153,27 +151,33 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "bírói",
-        "függetlenség",
-        "védelme",
-        "fundamentálisan",
-        "megkövetelt",
-        "minden",
-        "demokráciában."
+        "Bizottság",
+        "2023",
+        "decemberében",
+        "azt",
+        "állapította",
+        "meg,",
+        "hogy",
+        "a",
+        "feltételek",
+        "teljesültek."
       ],
       "solution": [
         "A",
-        "bírói",
-        "függetlenség",
-        "védelme",
-        "fundamentálisan",
-        "megkövetelt",
-        "minden",
-        "demokráciában."
+        "Bizottság",
+        "2023",
+        "decemberében",
+        "azt",
+        "állapította",
+        "meg,",
+        "hogy",
+        "a",
+        "feltételek",
+        "teljesültek."
       ],
-      "english": "The defense of judicial independence is fundamentally required in every democracy.",
+      "english": "In December 2023 the Commission found that the conditions had been fulfilled.",
       "teaches": [
-        "conclusive-markers"
+        "reported-speech-statements"
       ]
     },
     {
@@ -183,12 +187,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of judicial backsliding using a proportional correlative structure.",
-          "answer": "Minél nyíltabban próbálta meg a politikai hatalom felszámolni a bírói önigazgatást, annál határozottabbá vált a hazai bírói testületek ellenállása és a szupranacionális uniós intézmények szankciós fellépése."
+          "prompt": "Write two sentences about the judicial laws of 2011: say that the Assembly adopted them, and how the government and its critics judged the retirement age.",
+          "answer": "2011-ben az Országgyűlés új törvényeket fogadott el a bíróságokról. A kormány indoklása szerint a korhatár a közszolgálat általános korhatárához igazodott, a bírálók szerint viszont sértette a bírák elmozdíthatatlanságának elvét."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "c1-judicial-independence-vocab"
       ]
     },
     {
@@ -198,12 +202,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize the historical lesson of the judicial crisis using a conclusive evaluative particle.",
-          "answer": "A fékek és egyensúlyok intézményi helyreállítása értelemszerűen elengedhetetlen és fundamentálisan megkövetelt ahhoz, hogy az igazságszolgáltatás mentes maradjon a mindenkori politikai önkénytől."
+          "prompt": "Write two sentences about the elections of 2026: give the result of 12 April and the election of the prime minister on 9 May.",
+          "answer": "2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett. 2026. május 9-én az Országgyűlés Magyar Pétert választotta miniszterelnökké."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-judicial-independence-vocab"
       ]
     }
   ]

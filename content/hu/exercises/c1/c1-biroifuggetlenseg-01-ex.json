@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért jelentett súlyos jogállami jogsértést a bírák kötelező nyugdíjkorhatárának 62 évre szállítása 2011-ben?",
+      "question": "Mit jelent a nyugdíjkorhatár szó?",
       "options": [
-        "Mert célzottan lefejezte a bíróságok független vezetését, megsértve a bírói elmozdíthatatlanság alapelvét és az uniós antidiszkriminációs jogot.",
-        "Mert a döntés automatikusan megszüntette az ügyészség szervezeti autonómiáját.",
-        "Mert kizárólag a büntetőügyekben eljáró bírákra vonatkozott, a polgári bírákra nem."
+        "Az összeg, amelyet a nyugdíjasok havonta kapnak.",
+        "Az az idő, amelyet valaki állásban tölt.",
+        "Az a kor, amelynél már nyugdíjba vonul valaki."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "c1-judicial-independence-vocab"
       ]
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A lépést politikai beavatkozásként _____ a luxembourgi bíróság elmarasztalta a tagállamot.",
-      "hint": "evaluating / értékel + -ve",
-      "answer": "értékelve",
-      "english": "Evaluating the step as a political intervention the Luxembourg court condemned the member state.",
+      "sentence": "A hatvankettedik életévüket betöltött bírák _____ voltak nyugdíjba vonulni.",
+      "english": "Judges who had reached the age of sixty-two were obliged to retire.",
       "teaches": [
-        "framing-markers"
+        "formal-obligation"
+      ],
+      "answers": [
+        "kötelesek",
+        "kénytelenek"
       ]
     },
     {
@@ -37,20 +39,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "kényszernyugdíjazás",
-          "a bírói kar felső vezetésének drasztikus, azonnali eltávolítása"
+          "nyugdíjkorhatár",
+          "az életkor, amely után nyugdíjba kell vonulni"
         ],
         [
-          "bírói függetlenség",
-          "a bíró mentes minden külső politikai és hivatali utasítástól"
+          "megbízatás",
+          "egy tisztség betöltésének joga és ideje"
         ],
         [
-          "elmozdíthatatlanság elve",
-          "a bíró törvényes mandátuma nem vonható vissza önkényesen"
+          "elmozdíthatatlanság",
+          "az elv, hogy a bírót csak törvényes okból lehet felmenteni"
         ],
         [
-          "hatalmi ágak elválasztása",
-          "a bírói, törvényhozói és végrehajtói hatalom szigorú autonómiája"
+          "Kúria",
+          "a legfelsőbb bíróság Magyarországon"
         ]
       ],
       "teaches": [
@@ -62,12 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A reformot a jogállami normák felrúgásaként _____ ítélte el a szakma.",
-      "hint": "characterizing / aposztrofál + -va",
-      "answer": "aposztrofálva",
-      "english": "Characterizing the reform as an overthrow of rule of law norms the profession condemned it.",
+      "sentence": "A kormány indoklása szerint a korhatár a közszolgálat általános korhatárához igazodott, ezért a bírák is _____ voltak nyugdíjba vonulni.",
+      "english": "According to the government's reasoning the age limit followed the general age limit of the civil service, so judges, too, were obliged to retire.",
       "teaches": [
-        "framing-markers"
+        "formal-obligation"
+      ],
+      "answers": [
+        "kötelesek",
+        "kénytelenek"
       ]
     },
     {
@@ -77,27 +81,27 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "kényszernyugdíjazás",
-        "durván",
-        "sértette",
-        "a",
-        "bírói",
-        "függetlenség",
-        "elvét."
+        "bírák",
+        "kötelesek",
+        "voltak",
+        "hatvankét",
+        "évesen",
+        "nyugdíjba",
+        "vonulni."
       ],
       "solution": [
         "A",
-        "kényszernyugdíjazás",
-        "durván",
-        "sértette",
-        "a",
-        "bírói",
-        "függetlenség",
-        "elvét."
+        "bírák",
+        "kötelesek",
+        "voltak",
+        "hatvankét",
+        "évesen",
+        "nyugdíjba",
+        "vonulni."
       ],
-      "english": "Forced retirement severely violated the principle of judicial independence.",
+      "english": "Judges were obliged to retire at the age of sixty-two.",
       "teaches": [
-        "framing-markers"
+        "formal-obligation"
       ]
     },
     {
@@ -107,26 +111,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Újságíró",
-          "text": "Hogyan értékelték az európai intézmények a magyar bírói reformot?"
+          "speaker": "Kérdező",
+          "text": "Mit írt elő a szabály a bíráknak 2012-től?"
         },
         {
-          "speaker": "Uniós jogász",
-          "text": "Intézményi szintű politikai beavatkozásként _____ a bíróság kimondta a jogsértést."
-        },
-        {
-          "speaker": "Újságíró",
-          "text": "De a bírósági pozíciókat addigra már átvették."
+          "speaker": "Válaszadó",
+          "text": "A hatvankét évet betöltött bírák _____ nyugdíjba vonulni."
         }
       ],
       "options": [
-        "értékelve",
-        "értékelvén",
-        "értékelendő"
+        "kötelesek voltak",
+        "köteles volt",
+        "kötelező voltak"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "formal-obligation"
       ]
     },
     {
@@ -136,12 +136,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critique of the judicial purge using a discourse framing marker.",
-          "answer": "A tapasztalt bírák hirtelen kényszernyugdíjazását a hatalmi ágak elválasztásának durva felrúgásaként aposztrofálva az Európai Bíróság kimondta a bírói függetlenség súlyos és rendszerszintű sérelmét."
+          "prompt": "Write two sentences about the retirement age of judges: say what the rule required from 2012, and how the government and its critics judged it.",
+          "answer": "A hatvankettedik életévüket betöltött bírák kötelesek voltak nyugdíjba vonulni. A kormány indoklása szerint a korhatár a közszolgálat általános korhatárához igazodott, a bírálók szerint viszont a szabály sértette a bírák elmozdíthatatlanságának elvét."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "c1-judicial-independence-vocab"
       ]
     },
     {
@@ -149,15 +149,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés diagnosztizálja a bíróságok politikai alávetését a legpontosabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "intézményi szintű politikai beavatkozásként értékelve",
-        "a bírósági ügyintézés technikai egyszerűsítéseként leírva",
-        "az eljárási határidők rugalmas átalakításaként értékelve"
+        "A bírák köteles voltak nyugdíjba vonulni.",
+        "A bírák kötelesek nyugdíjba vonulni voltak.",
+        "A bírák kötelesek voltak nyugdíjba vonulni."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "framing-markers"
+        "formal-obligation"
       ]
     }
   ]

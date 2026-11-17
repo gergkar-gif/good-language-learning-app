@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan védte meg a Szépírók Társasága és a független szféra az irodalmi autonómiát?",
+      "question": "Mit jelent az íróegyesület szó?",
       "options": [
-        "Alternatív közösségi ösztöndíjakat, független díjakat és olvasói mikrofinanszírozási hálózatokat hozott létre, függetlenítve az alkotókat az állami önkénytől.",
-        "Tárgyalásokat kezdeményezett az állami intézményvezetőkkel a hivatalos kánon közös elfogadásáról.",
-        "Felhívta a tagságot a külföldi emigrációra és a magyarországi publikációk azonnali beszüntetésére."
+        "Írók önkéntes tagságú szervezete.",
+        "Az az épület, ahol az írók laknak.",
+        "Egy író összes műveinek gyűjteménye."
       ],
       "correct": 0,
       "teaches": [
@@ -22,13 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Minél durvább a forrásmegvonás, _____ elszántabbá válik az olvasói közösségi szolidaritás.",
-      "hint": "minél … ___",
-      "answer": "annál",
-      "english": "The harsher the funding cuts, the more determined reader community solidarity becomes.",
+      "sentence": "_____ a Magyar Művészeti Akadémia köztestület volt, a Szépírók Társasága önkéntes tagságú íróegyesületként működött.",
+      "english": "While the Hungarian Academy of Arts was a public body, the Writers' Society worked as a voluntary association of writers.",
       "teaches": [
-        "correlative-minel-annal"
-      ]
+        "mig-egyidejuseg"
+      ],
+      "answer": "Míg"
     },
     {
       "id": "c1-irodalmielet-04-controlled-3",
@@ -37,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Szépírók Társasága",
-          "a demokratikus és autonóm magyar alkotók szakmai egyesülete"
+          "íróegyesület",
+          "írók önkéntes tagságú szervezete"
         ],
         [
-          "közösségi finanszírozás",
-          "az olvasók közvetlen anyagi támogatása a lapok fenntartására"
+          "magánkiadó",
+          "magántulajdonban lévő könyvkiadó"
         ],
         [
-          "szolidaritási háló",
-          "a megbélyegzett művészeket segítő civil összefogás"
+          "független",
+          "olyan, amely nem függ az államtól"
         ],
         [
-          "szellemi szuverenitás",
-          "a hatalomtól és cenzúrától független szabad alkotókedv"
+          "nyilatkozat",
+          "hivatalosan közölt vélemény vagy álláspont"
         ]
       ],
       "teaches": [
@@ -62,12 +61,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Amilyen mértékben szorítják vissza a független kultúrát, _____ mértékben növekszik a civil támogatás.",
-      "hint": "amilyen … ___",
-      "answer": "olyan",
-      "english": "To such an extent as independent culture is suppressed, to that extent civil support grows.",
+      "sentence": "A Jelenkor és a Kalligram magánkiadóként jelentette meg szerzőit, _____ a Petőfi Irodalmi Múzeum állami intézmény volt.",
+      "english": "The Jelenkor and the Kalligram published their authors as private publishers, while the Petőfi Literary Museum was a state institution.",
       "teaches": [
-        "correlative-minel-annal"
+        "mig-egyidejuseg"
+      ],
+      "answers": [
+        "míg",
+        "miközben"
       ]
     },
     {
@@ -76,30 +77,40 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Minél",
-        "nagyobb",
+        "Míg",
         "a",
-        "nyomás,",
-        "annál",
-        "erősebb",
+        "szocialista",
+        "korszakban",
         "a",
-        "szakmai",
-        "szolidaritás."
+        "kiadók",
+        "állami",
+        "tulajdonban",
+        "voltak,",
+        "1989",
+        "után",
+        "magánkiadók",
+        "is",
+        "alakultak."
       ],
       "solution": [
-        "Minél",
-        "nagyobb",
+        "Míg",
         "a",
-        "nyomás,",
-        "annál",
-        "erősebb",
+        "szocialista",
+        "korszakban",
         "a",
-        "szakmai",
-        "szolidaritás."
+        "kiadók",
+        "állami",
+        "tulajdonban",
+        "voltak,",
+        "1989",
+        "után",
+        "magánkiadók",
+        "is",
+        "alakultak."
       ],
-      "english": "The greater the pressure, the stronger the professional solidarity.",
+      "english": "While publishers were state-owned in the socialist period, private publishers also appeared after 1989.",
       "teaches": [
-        "correlative-minel-annal"
+        "mig-egyidejuseg"
       ]
     },
     {
@@ -109,26 +120,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Kiadóvezető",
-          "text": "Hogyan élheti túl a független könyvkiadás a politikai ellenszelet?"
+          "speaker": "Kérdező",
+          "text": "Miben különbözött a két szervezet?"
         },
         {
-          "speaker": "Szerkesztő",
-          "text": "Úgy, hogy minél agresszívabb a hatalom, annál hűségesebben állnak ki az olvasók a minőségi _____ mellett."
-        },
-        {
-          "speaker": "Kiadóvezető",
-          "text": "A polgári öntudat a legfőbb támaszunk."
+          "speaker": "Válaszadó",
+          "text": "_____ a Magyar Művészeti Akadémia köztestület volt, a Szépírók Társasága önkéntes íróegyesület volt."
         }
       ],
       "options": [
-        "irodalom",
-        "szórakozás",
-        "fogyasztás"
+        "Mivel",
+        "Míg",
+        "Hogy"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "correlative-minel-annal"
+        "mig-egyidejuseg"
       ]
     },
     {
@@ -138,12 +145,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a proportional sentence linking political pressure to civil solidarity.",
-          "answer": "Minél kíméletlenebbül próbálja a hatalom politikai klientúrává zülleszteni az irodalmat, annál szilárdabb szolidaritási hálózatot és alternatív nyilvánosságot épít ki a független civil társadalom az alkotói szabadság védelmében."
+          "prompt": "Write two sentences with *míg*: compare the Writers' Society with the Hungarian Academy of Arts, and the publishers before and after 1989.",
+          "answer": "Míg a Magyar Művészeti Akadémia köztestület volt, a Szépírók Társasága önkéntes tagságú íróegyesületként működött. Míg a szocialista korszakban a kiadók állami tulajdonban voltak, 1989 után magánkiadók is alakultak."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "c1-literary-canon-vocab"
       ]
     },
     {
@@ -151,15 +158,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik páros szerkezet fejezi ki a politikai nyomás és az ellenállás arányát a leghitelesebben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "minél gátlástalanabb a politikai térfoglalás, annál erősebbé válik a szolidaritás",
-        "bár a független könyvkiadók helyzete nehéz, az olvasóközönség létszáma állandó marad",
-        "amennyiben a könyvvásárlási szokások változnak, a kiadók az online értékesítésre fókuszálnak"
+        "Míg a kiadók állami tulajdonban lesznek, 1989 után magánkiadók is alakultak.",
+        "A kiadók állami tulajdonban voltak míg, 1989 után magánkiadók is alakultak.",
+        "Míg a kiadók állami tulajdonban voltak, 1989 után magánkiadók is alakultak."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "correlative-minel-annal"
+        "mig-egyidejuseg"
       ]
     }
   ]

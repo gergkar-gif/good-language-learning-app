@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen történelmi tények cáfolják Horthy Miklós kizárólagos 'nemzetmentő' mítoszát?",
+      "question": "Mit jelent a fegyverszünet szó?",
       "options": [
-        "A fehérterror gyilkosságai, a numerus clausus, a zsidótörvények bevezetése, a Don-kanyarba küldött 2. magyar hadsereg pusztulása és a vidéki zsidóság deportálása a magyar csendőrség által.",
-        "Az, hogy a korszak gazdaságpolitikája kizárólag a nehézipari beruházásokra támaszkodott a mezőgazdaság helyett.",
-        "Az, hogy a diplomáciai karban nem alkalmaztak elegendő idegen nyelvet beszélő szakembert."
+        "A fegyverek gyártásának állami szabályozása.",
+        "A felek megállapodása a harc befejezéséről.",
+        "A katonák hivatalos szabadnapjainak rendje."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "c1-historical-revisionism-vocab"
       ]
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Kétségkívül _____ a Horthy-korszak felelőssége a jogfosztó törvények bevezetésében.",
-      "hint": "demonstrated / bebizonyosodik, past 3sg",
-      "answer": "bebizonyosodott",
-      "english": "Undoubtedly the responsibility of the Horthy era in introducing disenfranchising laws has been demonstrated.",
+      "sentence": "Horthy támogatói szerint a kormányzó a konszolidáció jelképe volt, a bírálók szerint _____ felelősséget viselt a zsidóellenes törvényekért.",
+      "english": "According to Horthy's supporters the regent was a symbol of consolidation; according to the critics, however, he bore responsibility for the anti-Jewish laws.",
       "teaches": [
-        "epistemic-hedging"
+        "adversative-contrast"
+      ],
+      "answers": [
+        "viszont",
+        "azonban"
       ]
     },
     {
@@ -37,20 +39,20 @@
       "stage": "controlled",
       "pairs": [
         [
+          "kormányzó",
+          "az állam vezetője 1920 és 1944 között"
+        ],
+        [
+          "mellszobor",
+          "egy ember fejét és vállát ábrázoló szobor"
+        ],
+        [
           "numerus clausus",
-          "a zsidó diákok egyetemi felvételét korlátozó 1920-as törvény"
+          "az 1920-as törvény, amely korlátozta az egyetemi felvételt"
         ],
         [
-          "Horthy-korszak",
-          "a két világháború közötti félfeudális kormányzóság"
-        ],
-        [
-          "tisztára mosás",
-          "a történelmi felelősség elhazudása politikai okokból"
-        ],
-        [
-          "autoriter nosztalgia",
-          "vonzódás a korábbi tekintélyelvű rendszerek külsőségeihez"
+          "lemondás",
+          "a tisztségről való önkéntes vagy kikényszerített távozás"
         ]
       ],
       "teaches": [
@@ -62,12 +64,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Aligha vitatható, hogy a Horthy-szobrok állítása a tekintélyelvű múlt _____ szolgálja.",
-      "hint": "whitewashing / tisztára mosás + -át",
-      "answer": "tisztára mosását",
-      "english": "It can hardly be disputed that erecting Horthy statues serves the whitewashing of the authoritarian past.",
+      "sentence": "A támogatók szerint Horthy megőrizte az államiságot. _____ a bírálók szerint felelős volt a zsidóellenes törvényekért.",
+      "english": "According to the supporters Horthy preserved statehood. In contrast, according to the critics he was responsible for the anti-Jewish laws.",
       "teaches": [
-        "epistemic-hedging"
+        "adversative-contrast"
+      ],
+      "answers": [
+        "Ezzel szemben",
+        "Viszont",
+        "Azonban"
       ]
     },
     {
@@ -76,26 +81,32 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Kétségkívül",
-        "bebizonyosodott",
-        "az",
-        "állami",
-        "bűnrészesség",
+        "A",
+        "bírálók",
+        "szerint",
+        "viszont",
+        "Horthy",
+        "felelősséget",
+        "viselt",
         "a",
-        "deportálásokban."
+        "zsidóellenes",
+        "törvényekért."
       ],
       "solution": [
-        "Kétségkívül",
-        "bebizonyosodott",
-        "az",
-        "állami",
-        "bűnrészesség",
+        "A",
+        "bírálók",
+        "szerint",
+        "viszont",
+        "Horthy",
+        "felelősséget",
+        "viselt",
         "a",
-        "deportálásokban."
+        "zsidóellenes",
+        "törvényekért."
       ],
-      "english": "Undoubtedly state complicity in deportations has been demonstrated.",
+      "english": "According to the critics, however, Horthy bore responsibility for the anti-Jewish laws.",
       "teaches": [
-        "epistemic-hedging"
+        "adversative-contrast"
       ]
     },
     {
@@ -105,26 +116,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Egyetemista",
-          "text": "Miért aggályos a vármegyék és főispánok visszahozatala a közigazgatásba?"
+          "speaker": "Kérdező",
+          "text": "Hogyan ítélték meg Horthyt a támogatók és a bírálók?"
         },
         {
-          "speaker": "Történész",
-          "text": "Mert minden jel szerint ez a Horthy-korszak tekintélyelvű szimbólumrendszerének tudatos _____ jelenti."
-        },
-        {
-          "speaker": "Egyetemista",
-          "text": "A köztársasági hagyomány feladása súlyos visszalépés."
+          "speaker": "Válaszadó",
+          "text": "A támogatók szerint konszolidációt hozott. _____ a bírálók szerint felelős volt a törvényekért."
         }
       ],
       "options": [
-        "restaurációját",
-        "elutasítását",
-        "tárgyilagos kritikáját"
+        "Ezzel szemben",
+        "Miután",
+        "Ennek következtében"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "adversative-contrast"
       ]
     },
     {
@@ -134,12 +141,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of authoritarian rehabilitation using an epistemic stance marker.",
-          "answer": "Kétségkívül bebizonyosodott a levéltári források alapján, hogy a Horthy-korszak bűneinek tisztára mosása és az autoriter nosztalgia szembemegy a modern európai köztársasági jogállamiság alapértékeivel."
+          "prompt": "Write two sentences: say how Horthy's supporters and how his critics judged him, and set the two views against each other with *viszont*.",
+          "answer": "Horthy támogatói szerint a kormányzó a konszolidáció és az államiság megőrzésének jelképe volt. A bírálók szerint viszont felelősséget viselt a zsidóellenes törvényekért."
         }
       ],
       "teaches": [
-        "epistemic-hedging"
+        "c1-historical-revisionism-vocab"
       ]
     },
     {
@@ -147,15 +154,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik episztemikus kifejezés leplezi le a történelmi rehabilitációt a legmeggyőzőbben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "aligha vitatható a felelősség elfedése",
-        "a korabeli sajtóhírek alapján további levéltári elemzés látszik indokoltnak",
-        "az események pontos rekonstrukciója a jövőbeli monográfiák feladata marad"
+        "A támogatók szerint konszolidációt hozott, a bírálók szerint vagyis felelős volt.",
+        "A támogatók szerint konszolidációt hozott, a bírálók viszont szerint felelős volt.",
+        "A támogatók szerint konszolidációt hozott, a bírálók szerint viszont felelős volt."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "epistemic-hedging"
+        "adversative-contrast"
       ]
     }
   ]

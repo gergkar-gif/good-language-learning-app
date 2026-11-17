@@ -11,3 +11,11 @@ User's decision (2026-11-17): Units 25–36 are rewritten as history of 2010 to 
 ## Open
 - **For the user:** the vocabulary skills of these units keep one-sided titles in `skills/hu.json` (`c1-constitutional-breakdown-vocab`, `c1-media-capture-vocab`, `c1-healthcare-crisis-vocab` …); the skill list is frozen, so retitling needs your sign-off.
 - Round 2: Culture Units 31–36 (historical-revisionism, judicial-independence, literary-canon, mta-ceu, pegasus-scandal, civil-society).
+
+# Round 2: Culture Units 31–36 (2026-11-17)
+
+- Agents: A (historical-revisionism, judicial-independence, literary-canon) 434,742 tokens, 27.5 min; B (mta-ceu, pegasus-scandal, civil-society) 400,460, 24.7 min; ~140k a unit. No usage-limit stop. The "no figures unless supplied" note held: neither text carried an unsourced sum or count.
+- All six units 0 errors / 0 suspects, `check_c1_forms` 0 (mta-ceu's *feltéve, hogy* / *kivéve, ha* are known from core Unit 7), 36 challenges, 42 glosses, combined readings restitched with neutral titles.
+- Reviewer's fact changes: Kósa Lajos spoke on 4 Nov 2021 as chair of the defence committee (not "early 2022, National Security Committee chair"); the unconfirmed Jan 2022 committee hearing and "classified until 2070" removed; teachers' civil disobedience from autumn 2022; CEU founding place; the occupation memorial: plan known early 2014, put up July 2014 (not "construction began July 2014, then protests"); Szépírók Társasága founded 2001 (not 1989); case transfer annulled with the transitional provisions at the end of 2012 (45/2012), not July 2012; administrative-courts law dropped in 2019 (month removed). Items, goals and challenges that repeated them rewritten.
+- Unit 25 (frozen) used *Országos Bírói Hivatal*; the office is the *Országos Bírósági Hivatal* (reader A's catch): unfrozen, fixed, refrozen.
+- Walked 42/42 (round 2 and Unit 25); all seven frozen. **The C1 culture track's Units 25–36 are done.**

@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a demokratikus emlékezetkultúra legfontosabb ismérve?",
+      "question": "Mit jelent a mandátum szó?",
       "options": [
-        "A többhangú, kritikai és forrásokon alapuló múltfeldolgozás, amely nem szolgál ki aktuálpolitikai érdekeket, és képes szembenézni a nemzeti bűnökkel és tragédiákkal is.",
-        "Az évfordulós megemlékezések szigorúan központosított állami protokoll szerinti lebonyolítása.",
-        "A történelmi múzeumok látogatottsági adatainak éves statisztikai növelése."
+        "A választás előtti időszak a szavazásig.",
+        "A parlament által elfogadott törvény hivatalos szövege.",
+        "A megválasztott képviselő helye az Országgyűlésben."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "c1-historical-revisionism-vocab"
       ]
@@ -22,16 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Végső soron _____ a bátor szembenézés és a történelmi katarzis megélése.",
-      "hint": "indispensable",
-      "english": "Ultimately brave confrontation and living historical catharsis is indispensable.",
+      "sentence": "Vitatott volt, hogy _____ a két diktatúrát egy kiállításon belül bemutatni.",
+      "english": "It was disputed whether the two dictatorships should be shown within one exhibition.",
       "teaches": [
-        "conclusive-markers"
+        "indirect-questions"
       ],
-      "answers": [
-        "elengedhetetlen",
-        "nélkülözhetetlen"
-      ]
+      "answer": "kell-e"
     },
     {
       "id": "c1-emlekezetpolitika-05-controlled-3",
@@ -40,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "emlékezetkultúra",
-          "a társadalom viszonya saját múltjához és emlékeihez"
+          "mérték",
+          "az, hogy valami milyen nagy vagy milyen fokú"
         ],
         [
-          "történelmi igazság",
-          "levéltári tényeken nyugvó, manipulációmentes valóság"
+          "vitatott",
+          "olyan, amiről többen különbözőképpen gondolkodnak"
         ],
         [
-          "történelmi érettség",
-          "egy nemzet képessége a saját felelősségének beismerésére"
+          "nyitott kérdés",
+          "olyan kérdés, amelyre még nincs közös válasz"
         ],
         [
-          "katarzis",
-          "az igazság kimondása révén bekövetkező morális felszabadulás"
+          "vereség",
+          "a választáson elszenvedett kudarc"
         ]
       ],
       "teaches": [
@@ -65,13 +61,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Mindent egybevetve az őszinte szembenézés a nemzeti megbékélés egyetlen szilárd _____.",
-      "hint": "guarantee / zálog + -a",
-      "answer": "záloga",
-      "english": "All things considered honest confrontation is the sole solid guarantee of national reconciliation.",
+      "sentence": "Vitatott volt, hogy a magyar hatóságok _____ mértékben viseltek felelősséget a deportálásokért.",
+      "english": "It was disputed to what extent the Hungarian authorities bore responsibility for the deportations.",
       "teaches": [
-        "conclusive-markers"
-      ]
+        "indirect-questions"
+      ],
+      "answer": "milyen"
     },
     {
       "id": "c1-emlekezetpolitika-05-practice-5",
@@ -79,26 +74,32 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Végső",
-        "soron",
-        "elengedhetetlen",
-        "a",
-        "történelmi",
-        "igazság",
-        "kimondása."
+        "A",
+        "történészek",
+        "azon",
+        "vitatkoztak,",
+        "hogy",
+        "mekkora",
+        "volt",
+        "Horthy",
+        "személyes",
+        "felelőssége."
       ],
       "solution": [
-        "Végső",
-        "soron",
-        "elengedhetetlen",
-        "a",
-        "történelmi",
-        "igazság",
-        "kimondása."
+        "A",
+        "történészek",
+        "azon",
+        "vitatkoztak,",
+        "hogy",
+        "mekkora",
+        "volt",
+        "Horthy",
+        "személyes",
+        "felelőssége."
       ],
-      "english": "Ultimately stating historical truth is indispensable.",
+      "english": "The historians argued about how great Horthy's personal responsibility was.",
       "teaches": [
-        "conclusive-markers"
+        "indirect-questions"
       ]
     },
     {
@@ -108,26 +109,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Filozófus",
-          "text": "Hogyan érheti el Magyarország a valódi nemzeti megbékélést?"
+          "speaker": "Kérdező",
+          "text": "Mi volt az egyik nyitott kérdés az emlékezetpolitikában?"
         },
         {
-          "speaker": "Történész",
-          "text": "Kizárólag úgy, ha felismerjük: mindent egybevetve az igazság eltagadása újabb tragédiákhoz vezet, míg a tisztánlátás a nemzet igazi _____."
-        },
-        {
-          "speaker": "Filozófus",
-          "text": "Ez Bibó István örök érvényű tanítása."
+          "speaker": "Válaszadó",
+          "text": "Vitatott volt, hogy a hatóságok felelősek _____ az 1944-es deportálásokért."
         }
       ],
       "options": [
-        "záloga",
-        "akadálya",
-        "veszélye"
+        "voltak hogy",
+        "voltak-e",
+        "volt-e"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "conclusive-markers"
+        "indirect-questions"
       ]
     },
     {
@@ -137,12 +134,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a concluding manifesto on historical justice using an evaluative synthesis particle.",
-          "answer": "Végső soron elengedhetetlen a revizionista mítoszok meghaladása és az őszinte szembenézés, hiszen mindent egybevetve a történelmi katarzis és az igazságtétel az érett demokratikus Magyarország egyetlen hiteles záloga."
+          "prompt": "Write two sentences about the open questions of memory politics: one with an embedded yes/no question with *-e*, one with a question word.",
+          "answer": "Vitatott volt, hogy kell-e a két diktatúrát egy kiállításon bemutatni. A történészek azon vitatkoztak, hogy mekkora volt Horthy személyes felelőssége."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-historical-revisionism-vocab"
       ]
     },
     {
@@ -150,15 +147,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szintetizáló szerkezet fogalmazza meg a történelmi igazságtétel szükségességét a legmagasabb szinten?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "végső soron elengedhetetlen a múlttal való szembenézés",
-        "a múzeumi tárlatok korszerűsítése hozzájárulhat a kulturális turizmus élénkítéséhez",
-        "a tudományos viták lefolytatása a szakmai folyóiratok hasábjain a legcélszerűbb"
+        "Vitatott volt, hogy kell a két diktatúrát egy kiállításon bemutatni-e.",
+        "Vitatott volt, hogy a két diktatúrát egy kiállításon bemutatni kell.",
+        "Vitatott volt, hogy kell-e a két diktatúrát egy kiállításon bemutatni."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "conclusive-markers"
+        "indirect-questions"
       ]
     }
   ]

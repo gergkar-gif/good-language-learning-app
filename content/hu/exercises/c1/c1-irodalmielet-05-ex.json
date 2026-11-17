@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért bukik el szükségszerűen minden erőszakos, politikai célú kánonátszabás a történelemben?",
+      "question": "Mit jelent a jegyzék szó?",
       "options": [
-        "Mert az irodalmi értéket nem a hatalmi rendeletek vagy a pénz, hanem az esztétikai minőség és a szabad olvasói közösség teremti meg, így a politikai kegyencek gyorsan feledésbe merülnek.",
-        "Mert az állami támogatásból élő hivatalos szerzők a források szétosztása után azonnal felhagynak az írással és külföldre költöznek.",
-        "Mert a nemzetközi kulturális intézmények automatikusan érvénytelenítik azon államok tankönyveit, amelyekben politikai beavatkozás történt."
+        "Egy könyv utolsó fejezete a történet után.",
+        "Szerzők vagy művek sorba rendezett névsora.",
+        "Egy intézmény éves jelentése a működéséről."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "c1-literary-canon-vocab"
       ]
@@ -22,16 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A kultúra szellemi sokszínűsége értelemszerűen _____ egy szabad társadalomban.",
-      "hint": "inescapable",
-      "english": "The intellectual diversity of culture is naturally inescapable in a free society.",
+      "sentence": "Vitatott volt, hogy _____ egyáltalán kötelező szerzők listáját előírni.",
+      "english": "It was disputed whether a list of compulsory authors should be prescribed at all.",
       "teaches": [
-        "conclusive-markers"
+        "indirect-questions"
       ],
-      "answers": [
-        "kikerülhetetlen",
-        "elkerülhetetlen"
-      ]
+      "answer": "kell-e"
     },
     {
       "id": "c1-irodalmielet-05-controlled-3",
@@ -40,20 +36,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "kánonpluralizmus",
-          "a különböző esztétikai értékek békés és szabad együttélése"
+          "jegyzék",
+          "szerzők vagy művek sorba rendezett névsora"
         ],
         [
-          "művészi szuverenitás",
-          "a szerző függetlensége minden külső ideológiai elvárástól"
+          "szaktanár",
+          "egy tantárgyat tanító tanár"
         ],
         [
-          "esztétikai minőség",
-          "a művészi formanyelv és gondolati mélység valódi rangja"
+          "előír",
+          "kötelezően megszab"
         ],
         [
-          "maradandó érték",
-          "az idő próbáját kiálló, korszakokon átívelő remekmű"
+          "Nobel-díj",
+          "Alfred Nobel végakarata alapján odaítélt nemzetközi díj"
+        ],
+        [
+          "mandátum",
+          "a megválasztott képviselő helye az Országgyűlésben"
         ]
       ],
       "teaches": [
@@ -65,16 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az esztétikai autonómia elsőbbsége fundamentálisan _____ alapigazság.",
-      "hint": "unshakeable",
-      "english": "The primacy of aesthetic autonomy is a fundamentally unshakeable basic truth.",
+      "sentence": "Vitatott volt, hogy _____ szerepet kapjanak a kortárs szerzők.",
+      "english": "It was disputed what role contemporary authors should get.",
       "teaches": [
-        "conclusive-markers"
+        "indirect-questions"
       ],
-      "answers": [
-        "megdönthetetlen",
-        "megkérdőjelezhetetlen"
-      ]
+      "answer": "milyen"
     },
     {
       "id": "c1-irodalmielet-05-practice-5",
@@ -82,28 +78,34 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "kánonok",
-        "sokszínűsége",
-        "értelemszerűen",
-        "kikerülhetetlen",
-        "a",
-        "demokratikus",
-        "kultúrában."
+        "Vitatott",
+        "volt,",
+        "hogy",
+        "ki",
+        "állítsa",
+        "össze",
+        "az",
+        "iskolai",
+        "kötelező",
+        "olvasmányok",
+        "jegyzékét."
       ],
       "solution": [
-        "A",
-        "kánonok",
-        "sokszínűsége",
-        "értelemszerűen",
-        "kikerülhetetlen",
-        "a",
-        "demokratikus",
-        "kultúrában."
+        "Vitatott",
+        "volt,",
+        "hogy",
+        "ki",
+        "állítsa",
+        "össze",
+        "az",
+        "iskolai",
+        "kötelező",
+        "olvasmányok",
+        "jegyzékét."
       ],
-      "english": "The diversity of canons is naturally inescapable in democratic culture.",
+      "english": "It was disputed who should draw up the list of compulsory readings in schools.",
       "teaches": [
-        "conclusive-markers"
+        "indirect-questions"
       ]
     },
     {
@@ -113,26 +115,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Kritikus",
-          "text": "Hogyan foglalható össze a modern irodalmi küzdelmek végső tanulsága?"
+          "speaker": "Kérdező",
+          "text": "Mi volt az egyik nyitott kérdés a kánonvitában?"
         },
         {
-          "speaker": "Író",
-          "text": "Úgy, hogy végső soron elidegeníthetetlen a társadalom joga a szabad és pluralista _____."
-        },
-        {
-          "speaker": "Kritikus",
-          "text": "A hatalom mulandó, a művészet örök."
+          "speaker": "Válaszadó",
+          "text": "Vitatott volt, hogy _____ állítsa össze a kötelező olvasmányok jegyzékét."
         }
       ],
       "options": [
-        "kultúrához",
-        "oktatáshoz",
-        "tájékozódáshoz"
+        "kit",
+        "kinek",
+        "ki"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "conclusive-markers"
+        "indirect-questions"
       ]
     },
     {
@@ -142,12 +140,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a conclusive synthesis on the victory of literary pluralism using an evaluative particle.",
-          "answer": "Az irodalmi kánon pluralizmusa és a művészi szuverenitás értelemszerűen kikerülhetetlen és fundamentálisan megdönthetetlen, hiszen a hatalmi kegyencek elfelejtődnek, de a szellemi szabadság remekművei örökre fennmaradnak."
+          "prompt": "Write two sentences about the open questions of the canon debate: one with an embedded yes/no question with *-e*, one with a question word.",
+          "answer": "Vitatott volt, hogy kell-e kötelező szerzők listáját előírni. Vitatott volt, hogy milyen szerepet kapjanak a kortárs szerzők."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-literary-canon-vocab"
       ]
     },
     {
@@ -155,15 +153,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik konkluzív kifejezés szintetizálja a szabad irodalom jövőjét a legerőteljesebben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "értelemszerűen kikerülhetetlen / fundamentálisan megdönthetetlen / végső soron elidegeníthetetlen",
-        "pillanatnyilag előnyös / technikailag megvalósítható / viszonylag népszerű",
-        "feltételesen támogatandó / pénzügyileg fenntartható / részben elfogadható"
+        "Vitatott volt, hogy kell-e kötelező szerzők listáját előírni.",
+        "Vitatott volt, hogy kell kötelező szerzők listáját előírni-e.",
+        "Vitatott volt, hogy kötelező szerzők listáját előírni kell."
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "indirect-questions"
       ]
     }
   ]
