@@ -582,17 +582,20 @@ def process_all():
         if kept:
             compact_word_index[form] = kept[:4]
 
-    print(f"Saving word-index with {len(compact_word_index):,} inflected forms to {WORD_INDEX_OUTPUT} ...")
-    with open(WORD_INDEX_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(compact_word_index, f, ensure_ascii=False, separators=(',', ':'))
+    if "--verbs-only" not in sys.argv:
+        print(f"Saving word-index with {len(compact_word_index):,} inflected forms to {WORD_INDEX_OUTPUT} ...")
+        with open(WORD_INDEX_OUTPUT, "w", encoding="utf-8") as f:
+            json.dump(compact_word_index, f, ensure_ascii=False, separators=(',', ':'))
 
-    print(f"Saving verb-index with {len(compact_verb_index):,} forms to {VERB_INDEX_OUTPUT} ...")
-    with open(VERB_INDEX_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(compact_verb_index, f, ensure_ascii=False, separators=(',', ':'))
+        print(f"Saving verb-index with {len(compact_verb_index):,} forms to {VERB_INDEX_OUTPUT} ...")
+        with open(VERB_INDEX_OUTPUT, "w", encoding="utf-8") as f:
+            json.dump(compact_verb_index, f, ensure_ascii=False, separators=(',', ':'))
 
-    print(f"Saving frequency ranking with {len(freq_list):,} lemmas to {FREQUENCY_OUTPUT} ...")
-    with open(FREQUENCY_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(freq_list, f, ensure_ascii=False, separators=(',', ':'))
+        print(f"Saving frequency ranking with {len(freq_list):,} lemmas to {FREQUENCY_OUTPUT} ...")
+        with open(FREQUENCY_OUTPUT, "w", encoding="utf-8") as f:
+            json.dump(freq_list, f, ensure_ascii=False, separators=(',', ':'))
+    else:
+        print("Skipping dictionary/index writes (--verbs-only).")
 
     if "--indexes-only" in sys.argv:
         print("Skipping verb files generation (--indexes-only).")
@@ -677,10 +680,30 @@ def process_all():
             elif lemma.endswith("ire"):
                 indicativo["presente"] = { "io": stem+"o", "tu": stem+"i", "lui": stem+"e", "noi": stem+"iamo", "voi": stem+"ite", "loro": stem+"ono" }
 
+        # Italian conditional present always shares exact stem with futuro semplice
+        fut_io = indicativo.get("futuro_semplice", {}).get("io", "")
+        if len(indicativo.get("condizionale_presente", {})) < 6 and fut_io.endswith("ò"):
+            cstem = fut_io[:-1]
+            cond_synth = {
+                "io": cstem + "ei", "tu": cstem + "esti", "lui": cstem + "ebbe",
+                "noi": cstem + "emmo", "voi": cstem + "este", "loro": cstem + "ebbero"
+            }
+            for pk, pv in cond_synth.items():
+                indicativo["condizionale_presente"].setdefault(pk, pv)
+
+        raw_en = "to please, to like" if lemma == "piacere" else (dictionary.get(lemma, {}).get("en") or "")
+        short_en = raw_en.split(";")[0].strip()
+        if len(short_en) > 55:
+            parts = [p.strip() for p in short_en.split(",") if p.strip()]
+            short_en = ", ".join(parts[:2])
+
         verb_file_data = {
             "regular": lemma not in ESSERE_VERBS and not lemma in ("fare", "dare", "stare", "dire", "andare", "potere", "volere", "dovere", "bere", "uscire", "scegliere", "piacere"),
             "infinitivo": lemma,
             "infinitive": lemma,
+            "english": {
+                "infinitivo": short_en or f"to {lemma}"
+            },
             "gerundio": ger,
             "participioPasado": pp,
             "participioPassato": pp,

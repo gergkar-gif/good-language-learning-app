@@ -64,6 +64,20 @@ const VerbsSpeed = (function () {
         return String(text || '').toLowerCase().trim().normalize('NFC');
     }
 
+    function _matchesAnswer(userVal, correctAnswer) {
+        var normUser = _normalise(userVal);
+        if (!normUser) return false;
+        var normCorrect = _normalise(correctAnswer);
+        if (normUser === normCorrect) return true;
+        if (normCorrect.indexOf('/') === -1) return false;
+        var whole = normCorrect.split(/\s*\/\s*/);
+        for (var i = 0; i < whole.length; i++) {
+            if (whole[i] === normUser) return true;
+        }
+        var m = normCorrect.match(/^(.*?)([^\s/])\/([^\s/])$/);
+        return !!(m && (normUser === m[1] + m[2] || normUser === m[1] + m[3]));
+    }
+
     function _getTenseData(verb, tensePath) {
         var parts = tensePath.split('.');
         var data = verb;
@@ -185,21 +199,30 @@ const VerbsSpeed = (function () {
                 if (_phase !== PHASE.PLAYING) return;
 
                 var tenseData = _getTenseData(verb, tensePath);
-                if (!tenseData || !tenseData[person]) {
+                if (!tenseData) {
                     tryLoad();
                     return;
                 }
+                var chosenPerson = person;
+                if (!tenseData[chosenPerson]) {
+                    var validPersons = _persons.filter(function (p) { return Boolean(tenseData[p]); });
+                    if (!validPersons.length) {
+                        tryLoad();
+                        return;
+                    }
+                    chosenPerson = _pickRandom(validPersons);
+                }
 
-                var correctAnswer = tenseData[person];
+                var correctAnswer = tenseData[chosenPerson];
                 _currentAnswer      = correctAnswer;
                 _currentTenseLabel  = tenseLabel;
-                _currentPersonLabel = personLabel;
+                _currentPersonLabel = _getPersonLabel(chosenPerson);
                 _currentTensePath   = tensePath;
-                _currentPersonKey   = person;
+                _currentPersonKey   = chosenPerson;
                 _currentVerbName    = verb.infinitivo || verbName;
                 _currentMeaning     = (verb.english && verb.english.infinitivo) ? verb.english.infinitivo : '';
 
-                _renderQuestion(verb.infinitivo.toUpperCase(), tenseLabel, personLabel, _currentMeaning);
+                _renderQuestion(verb.infinitivo.toUpperCase(), tenseLabel, _currentPersonLabel, _currentMeaning);
             }).catch(function () {
                 tryLoad();
             });
@@ -256,7 +279,7 @@ const VerbsSpeed = (function () {
         var userVal = input.value.trim();
         if (userVal === '') return; // ignore empty
 
-        var isCorrect = _normalise(userVal) === _normalise(_currentAnswer);
+        var isCorrect = _matchesAnswer(userVal, _currentAnswer);
 
         // Record stats
         VerbsStats.record(isCorrect, _currentTenseLabel, _currentPersonLabel);

@@ -70,7 +70,6 @@ var ALL_POLISH_VERBS = [
   "pomagać",
   "pomóc",
   "grać",
-  "grać",
   "podróżować",
   "mieszkać",
   "kosztować",

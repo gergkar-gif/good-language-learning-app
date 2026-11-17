@@ -97,6 +97,7 @@ const ALL_SLOVAK_VERBS = [
     'vracať',
     'vrátiť',
     'vypiť',
+    'vyzerať',
     'vziať',
     'zabiť',
     'zabudnúť',
@@ -117,7 +118,6 @@ const ALL_SLOVAK_VERBS = [
     'ísť',
     'čakať',
     'čítať',
-    'ďakujem',
     'ľúbiť',
     'žiť'
 ];

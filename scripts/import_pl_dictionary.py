@@ -86,7 +86,7 @@ PRIORITY_VERBS = [
     "lubić", "czytać", "przeczytać", "pisać", "napisać", "pić", "wypić", "jeść",
     "zjeść", "spać", "kupować", "kupić", "sprzedawać", "sprzedać", "spotkać", "zaczynać",
     "zacząć", "kończyć", "skończyć", "otwierać", "otworzyć", "zamykać", "zamknąć", "słuchać",
-    "słyszeć", "oglądać", "obejrzeć", "pomagać", "pomóc", "grać", "grać", "podróżować",
+    "słyszeć", "oglądać", "obejrzeć", "pomagać", "pomóc", "grać", "podróżować",
     "mieszkać", "kosztować", "tracić", "stracić", "płacić", "zapłacić", "czuć", "poczuć",
     "dziękować", "podziękować", "przepraszać", "przeprosić", "prosić", "poprosić", "wracać", "wrócić",
     "zostawać", "zostać", "braknąć", "potrzebować", "bać", "cieszyć", "stawać", "stać",
@@ -249,6 +249,19 @@ CANONICAL_VERBS = {
         "indicativo.przyszly": { "ja": "będę pisać", "ty": "będziesz pisać", "on": "będzie pisać", "my": "będziemy pisać", "wy": "będziecie pisać", "oni": "będą pisać" },
         "tryb.przypuszczajacy": { "ja": "pisałbym", "ty": "pisałbyś", "on": "pisałby", "my": "pisalibyśmy", "wy": "pisalibyście", "oni": "pisaliby" },
         "tryb.rozkazujacy": { "ty": "pisz", "my": "piszmy", "wy": "piszcie" }
+    },
+    "stać": {
+        "aspect": "imperfective",
+        "indicativo.presente": { "ja": "stoję", "ty": "stoisz", "on": "stoi", "my": "stoimy", "wy": "stoicie", "oni": "stoją" },
+        "indicativo.przeszly": {
+            "ja_m": "stałem", "ja_f": "stałam", "ty_m": "stałeś", "ty_f": "stałaś",
+            "on": "stał", "ona": "stała", "ono": "stało",
+            "my_vir": "staliśmy", "my_nonvir": "stałyśmy", "wy_vir": "staliście", "wy_nonvir": "stałyście",
+            "oni": "stali", "one": "stały"
+        },
+        "indicativo.przyszly": { "ja": "będę stać", "ty": "będziesz stać", "on": "będzie stać", "my": "będziemy stać", "wy": "będziecie stać", "oni": "będą stać" },
+        "tryb.przypuszczajacy": { "ja": "stałbym", "ty": "stałbyś", "on": "stałby", "my": "stalibyśmy", "wy": "stalibyście", "oni": "staliby" },
+        "tryb.rozkazujacy": { "ty": "stój", "my": "stójmy", "wy": "stójcie" }
     }
 }
 
@@ -307,77 +320,147 @@ def parse_frequency():
                         rank += 1
     return freq_rank, ordered_lemmas
 
-def build_verb_file(lemma, forms_dict, aspect):
-    stem = lemma[:-3] if lemma.endswith("ać") or lemma.endswith("eć") or lemma.endswith("ić") or lemma.endswith("yć") else lemma[:-2]
+PL_VERB_EN_OVERRIDES = {
+    "być": "to be",
+    "mieć": "to have",
+    "móc": "to be able, can",
+    "chcieć": "to want",
+    "wiedzieć": "to know (a fact)",
+    "znać": "to know (person/place)",
+    "mówić": "to speak, to say",
+    "powiedzieć": "to say, to tell",
+    "robić": "to do, to make",
+    "zrobić": "to do, to make",
+    "widzieć": "to see",
+    "zobaczyć": "to see, to catch sight of",
+    "myśleć": "to think",
+    "pomyśleć": "to think, to consider",
+    "bać": "to fear, to be afraid",
+    "cieszyć": "to gladden; to enjoy",
+    "stać": "to stand; to afford",
+    "braknąć": "to lack, to run out",
+}
+
+def clean_verb_en(word, raw_en):
+    if word in PL_VERB_EN_OVERRIDES:
+        return PL_VERB_EN_OVERRIDES[word]
+    if not raw_en:
+        return ""
+    parts = []
+    for p in re.split(r'[;,]', raw_en):
+        p = p.strip()
+        low = p.lower()
+        if not p or low.startswith(('used ', 'synonym of', 'expressing ', 'with ', 'indicates ', 'see ')):
+            continue
+        if p.endswith(')') and '(' not in p:
+            p = p.rstrip(')').strip()
+        if p not in parts:
+            parts.append(p)
+        if len(", ".join(parts)) > 40 or len(parts) >= 2:
+            break
+    return ", ".join(parts) if parts else raw_en.split(",")[0].strip()
+
+def build_verb_file(lemma, forms_dict, aspect, en_gloss=""):
+    base_inf = lemma[:-2] if lemma.endswith("ć") else lemma
+    stem_c = lemma[:-3] if lemma.endswith(("ać", "eć", "ić", "yć")) else lemma[:-2]
 
     # Present regular fallback
-    if lemma.endswith("ać"):
-        pres = { "ja": stem + "am", "ty": stem + "asz", "on": stem + "a", "my": stem + "amy", "wy": stem + "acie", "oni": stem + "ają" }
-    elif lemma.endswith("ować"):
-        pres = { "ja": stem[:-2] + "uję", "ty": stem[:-2] + "ujesz", "on": stem[:-2] + "uje", "my": stem[:-2] + "ujemy", "wy": stem[:-2] + "ujecie", "oni": stem[:-2] + "ują" }
-    elif lemma.endswith("ić") or lemma.endswith("yć"):
-        pres = { "ja": stem + "ę", "ty": stem + "isz" if lemma.endswith("ić") else stem + "ysz", "on": stem + "i" if lemma.endswith("ić") else stem + "y", "my": stem + "imy" if lemma.endswith("ić") else stem + "ymy", "wy": stem + "icie" if lemma.endswith("ić") else stem + "ycie", "oni": stem + "ą" }
+    if lemma.endswith("ować"):
+        o_stem = lemma[:-4]
+        pres = { "ja": o_stem + "uję", "ty": o_stem + "ujesz", "on": o_stem + "uje", "my": o_stem + "ujemy", "wy": o_stem + "ujecie", "oni": o_stem + "ują" }
+    elif lemma.endswith("ać"):
+        pres = { "ja": stem_c + "am", "ty": stem_c + "asz", "on": stem_c + "a", "my": stem_c + "amy", "wy": stem_c + "acie", "oni": stem_c + "ają" }
+    elif lemma.endswith(("ić", "yć")):
+        iv = "i" if lemma.endswith("ić") else "y"
+        pres = { "ja": stem_c + "ę", "ty": stem_c + iv + "sz", "on": stem_c + iv, "my": stem_c + iv + "my", "wy": stem_c + iv + "cie", "oni": stem_c + "ą" }
     else:
-        pres = { "ja": stem + "ę", "ty": stem + "esz", "on": stem + "e", "my": stem + "emy", "wy": stem + "ecie", "oni": stem + "ą" }
+        pres = { "ja": base_inf + "ę", "ty": base_inf + "esz", "on": base_inf + "e", "my": base_inf + "emy", "wy": base_inf + "ecie", "oni": base_inf + "ą" }
 
     # Past regular fallback
+    past_stem = lemma[:-2] if lemma.endswith("ć") else lemma
     past = {
-        "ja_m": stem + "ałem" if lemma.endswith("ać") else stem + "iłem" if lemma.endswith("ić") else stem + "yłem" if lemma.endswith("yć") else stem + "ałem",
-        "ja_f": stem + "ałam" if lemma.endswith("ać") else stem + "iłam" if lemma.endswith("ić") else stem + "yłam" if lemma.endswith("yć") else stem + "ałam",
-        "ty_m": stem + "ałeś" if lemma.endswith("ać") else stem + "iłeś" if lemma.endswith("ić") else stem + "yłeś" if lemma.endswith("yć") else stem + "ałeś",
-        "ty_f": stem + "ałaś" if lemma.endswith("ać") else stem + "iłaś" if lemma.endswith("ić") else stem + "yłaś" if lemma.endswith("yć") else stem + "ałaś",
-        "on": stem + "ał" if lemma.endswith("ać") else stem + "ił" if lemma.endswith("ić") else stem + "ył" if lemma.endswith("yć") else stem + "ał",
-        "ona": stem + "ała" if lemma.endswith("ać") else stem + "iła" if lemma.endswith("ić") else stem + "yła" if lemma.endswith("yć") else stem + "ała",
-        "ono": stem + "ało" if lemma.endswith("ać") else stem + "iło" if lemma.endswith("ić") else stem + "yło" if lemma.endswith("yć") else stem + "ało",
-        "my_vir": stem + "aliśmy" if lemma.endswith("ać") else stem + "iliśmy" if lemma.endswith("ić") else stem + "yliśmy" if lemma.endswith("yć") else stem + "aliśmy",
-        "my_nonvir": stem + "ałyśmy" if lemma.endswith("ać") else stem + "iłyśmy" if lemma.endswith("ić") else stem + "yłyśmy" if lemma.endswith("yć") else stem + "ałyśmy",
-        "wy_vir": stem + "aliście" if lemma.endswith("ać") else stem + "iliście" if lemma.endswith("ić") else stem + "yliście" if lemma.endswith("yć") else stem + "aliście",
-        "wy_nonvir": stem + "ałyście" if lemma.endswith("ać") else stem + "iłyście" if lemma.endswith("ić") else stem + "yłyście" if lemma.endswith("yć") else stem + "ałyście",
-        "oni": stem + "ali" if lemma.endswith("ać") else stem + "ili" if lemma.endswith("ić") else stem + "yli" if lemma.endswith("yć") else stem + "ali",
-        "one": stem + "ały" if lemma.endswith("ać") else stem + "iły" if lemma.endswith("ić") else stem + "yły" if lemma.endswith("yć") else stem + "ały"
+        "ja_m": past_stem + "łem", "ja_f": past_stem + "łam",
+        "ty_m": past_stem + "łeś", "ty_f": past_stem + "łaś",
+        "on": past_stem + "ł", "ona": past_stem + "ła", "ono": past_stem + "ło",
+        "my_vir": (stem_c + "eliśmy" if lemma.endswith("eć") else past_stem[:-1] + "liśmy" if past_stem.endswith(("a", "i", "y")) else past_stem + "liśmy"),
+        "my_nonvir": past_stem + "łyśmy",
+        "wy_vir": (stem_c + "eliście" if lemma.endswith("eć") else past_stem[:-1] + "liście" if past_stem.endswith(("a", "i", "y")) else past_stem + "liście"),
+        "wy_nonvir": past_stem + "łyście",
+        "oni": (stem_c + "eli" if lemma.endswith("eć") else past_stem[:-1] + "li" if past_stem.endswith(("a", "i", "y")) else past_stem + "li"),
+        "one": past_stem + "ły"
     }
 
-    # Future regular
+    parsed_pres = forms_dict.get("indicativo.presente") or pres
+    parsed_past = forms_dict.get("indicativo.przeszly") or past
+    # Merge fallback keys if Kaikki missed any gender/number subkey
+    for pk, pv in past.items():
+        parsed_past.setdefault(pk, pv)
+
+    # Future: perfective uses simple present/future stem; imperfective uses będą + inf
     if aspect == "perfective":
-        fut = pres
+        fut = dict(forms_dict.get("indicativo.przyszly") or parsed_pres)
+        if not forms_dict.get("indicativo.presente"):
+            parsed_pres = fut
     else:
         fut = {
             "ja": f"będę {lemma}", "ty": f"będziesz {lemma}", "on": f"będzie {lemma}",
             "my": f"będziemy {lemma}", "wy": f"będziecie {lemma}", "oni": f"będą {lemma}"
         }
 
-    cond = {
-        "ja": past["on"] + "bym", "ty": past["on"] + "byś", "on": past["on"] + "by",
-        "my": past["oni"] + "byśmy", "wy": past["oni"] + "byście", "oni": past["oni"] + "by"
+    on_p = parsed_past.get("on", past["on"])
+    oni_p = parsed_past.get("oni", past["oni"])
+    reg_cond = {
+        "ja": on_p + "bym", "ty": on_p + "byś", "on": on_p + "by",
+        "my": oni_p + "byśmy", "wy": oni_p + "byście", "oni": oni_p + "by"
     }
+    cond = dict(forms_dict.get("tryb.przypuszczajacy") or reg_cond)
+    for ck, cv in reg_cond.items():
+        cond.setdefault(ck, cv)
 
-    imperative = {
-        "ty": stem + "aj" if lemma.endswith("ać") else stem,
-        "my": stem + "ajmy" if lemma.endswith("ać") else stem + "my",
-        "wy": stem + "ajcie" if lemma.endswith("ać") else stem + "cie"
+    reg_imp = {
+        "ty": stem_c + "aj" if lemma.endswith("ać") else stem_c,
+        "my": stem_c + "ajmy" if lemma.endswith("ać") else stem_c + "my",
+        "wy": stem_c + "ajcie" if lemma.endswith("ać") else stem_c + "cie"
     }
+    imperative = dict(forms_dict.get("tryb.rozkazujacy") or reg_imp)
+    for ik, iv in reg_imp.items():
+        imperative.setdefault(ik, iv)
 
     indicativo = {
-        "presente": forms_dict.get("indicativo.presente", pres),
-        "przeszly": forms_dict.get("indicativo.przeszly", past),
-        "przyszly": forms_dict.get("indicativo.przyszly", fut)
+        "presente": parsed_pres,
+        "przeszly": parsed_past,
+        "przyszly": fut
     }
 
     # Apply canonical overrides
     if lemma in CANONICAL_VERBS:
         c = CANONICAL_VERBS[lemma]
-        indicativo["presente"] = c.get("indicativo.presente", indicativo["presente"])
-        indicativo["przeszly"] = c.get("indicativo.przeszly", indicativo["przeszly"])
-        indicativo["przyszly"] = c.get("indicativo.przyszly", indicativo["przyszly"])
-        cond = c.get("tryb.przypuszczajacy", cond)
-        imperative = c.get("tryb.rozkazujacy", imperative)
+        indicativo["presente"] = dict(c.get("indicativo.presente", indicativo["presente"]))
+        indicativo["przeszly"] = dict(c.get("indicativo.przeszly", indicativo["przeszly"]))
+        indicativo["przyszly"] = dict(c.get("indicativo.przyszly", indicativo["przyszly"]))
+        cond = dict(c.get("tryb.przypuszczajacy", cond))
+        imperative = dict(c.get("tryb.rozkazujacy", imperative))
         aspect = c.get("aspect", aspect)
+
+    # Ensure VerbsTable / VerbsSpeed defaultPersons ('ja', 'ty', 'my', 'wy') exist on przeszly
+    przeszly = indicativo["przeszly"]
+    if "ja" not in przeszly and przeszly.get("ja_m"):
+        przeszly["ja"] = f"{przeszly['ja_m']}/{przeszly['ja_f']}" if przeszly.get("ja_f") else przeszly["ja_m"]
+    if "ty" not in przeszly and przeszly.get("ty_m"):
+        przeszly["ty"] = f"{przeszly['ty_m']}/{przeszly['ty_f']}" if przeszly.get("ty_f") else przeszly["ty_m"]
+    if "my" not in przeszly and przeszly.get("my_vir"):
+        przeszly["my"] = f"{przeszly['my_vir']}/{przeszly['my_nonvir']}" if przeszly.get("my_nonvir") else przeszly["my_vir"]
+    if "wy" not in przeszly and przeszly.get("wy_vir"):
+        przeszly["wy"] = f"{przeszly['wy_vir']}/{przeszly['wy_nonvir']}" if przeszly.get("wy_nonvir") else przeszly["wy_vir"]
 
     return {
         "regular": lemma not in CANONICAL_VERBS,
         "infinitive": lemma,
         "infinitivo": lemma,
         "aspect": aspect,
+        "english": {
+            "infinitivo": clean_verb_en(lemma, en_gloss)
+        },
         "indicativo": indicativo,
         "tryb": {
             "przypuszczajacy": cond,
@@ -397,11 +480,19 @@ def process_all():
     WORD_INDEX_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     VERBS_DIR.mkdir(parents=True, exist_ok=True)
 
+    verbs_only = "--verbs-only" in sys.argv
+    priority_set = set(PRIORITY_VERBS)
+
     dictionary = {}
+    if verbs_only and DICT_OUTPUT.exists():
+        with open(DICT_OUTPUT, "r", encoding="utf-8") as df:
+            dictionary = json.load(df)
+
     lemma_candidates = defaultdict(lambda: defaultdict(lambda: {"senses": [], "gender": None, "aspect": None, "deprioritised": True}))
     word_index = defaultdict(list)
     verb_index = defaultdict(list)
-    verb_data = defaultdict(lambda: {"forms": defaultdict(dict), "aspect": "imperfective"})
+    verb_data = defaultdict(lambda: {"forms": defaultdict(dict), "aspect": None})
+    verb_glosses = {}
 
     # Check if Kaikki file is available
     if KAIKKI_FILE.exists():
@@ -421,11 +512,13 @@ def process_all():
                     word = item.get("word", "").strip().lower()
                     pos = item.get("pos", "")
                     mapped_pos = POS_MAP.get(pos, pos)
+                    if verbs_only and (mapped_pos != "verb" or word not in priority_set):
+                        continue
                     senses = item.get("senses", [])
                     item_tags = set(item.get("tags", []))
 
                     # Dictionary headword glosses
-                    if word and pos in POS_MAP and 'form-of' not in item_tags:
+                    if not verbs_only and word and pos in POS_MAP and 'form-of' not in item_tags:
                         gender = "m" if "masculine" in item_tags else "f" if "feminine" in item_tags else "n" if "neuter" in item_tags else None
                         aspect = "perfective" if "perfective" in item_tags else "imperfective" if "imperfective" in item_tags else None
                         cand = lemma_candidates[word][mapped_pos]
@@ -450,12 +543,117 @@ def process_all():
                                 if not ((item_tags | stags) & DEPRIORITISE_TAGS):
                                     cand["deprioritised"] = False
 
+                    if mapped_pos == "verb" and word in priority_set and word not in verb_glosses and 'form-of' not in item_tags:
+                        for s in senses:
+                            stags = set(s.get("tags", []))
+                            if 'form-of' in stags or 'misspelling' in stags or (stags & DEPRIORITISE_TAGS):
+                                continue
+                            gloss_list = s.get("glosses", [])
+                            if not gloss_list:
+                                continue
+                            g = gloss_list[-1]
+                            if FORM_RE.search(g):
+                                continue
+                            cg = clean_gloss(g)
+                            if cg:
+                                verb_glosses[word] = cg
+                                break
+
                     # Process forms
                     forms = item.get("forms", [])
+                    table_aspect = None
+                    skip_verb_table = False
+                    if mapped_pos == "verb":
+                        for fi in forms:
+                            if "table-tags" in (fi.get("tags") or []):
+                                tf = (fi.get("form") or "").strip().lower()
+                                if tf == "no-table-tags":
+                                    skip_verb_table = True
+                                elif tf in ("imperfective", "perfective"):
+                                    table_aspect = tf
+                                break
+                        if word in priority_set and table_aspect and not verb_data[word]["aspect"]:
+                            verb_data[word]["aspect"] = table_aspect
+
+                    seen_counts = defaultdict(int)
                     for fi in forms:
                         form = fi.get("form", "").strip().lower()
                         ftags = set(fi.get("tags", []))
-                        if not form or form == word or ' ' in form or '-' in form or '(' in form or not any(ch.isalpha() for ch in form) or (ftags & NOISE_FORM_TAGS):
+                        if not form or '-' in form or '(' in form or not any(ch.isalpha() for ch in form) or (ftags & NOISE_FORM_TAGS):
+                            continue
+
+                        if mapped_pos == "verb" and not skip_verb_table and word in priority_set and ' ' not in form and "impersonal" not in ftags and "passive" not in ftags and "participle" not in ftags and "noun-from-verb" not in ftags and "infinitive" not in ftags:
+                            entry_forms = verb_data[word]["forms"]
+                            is_perf_fut = (table_aspect == "perfective" and "future" in ftags)
+                            if ("present" in ftags or is_perf_fut) and "imperative" not in ftags and "conditional" not in ftags and "past" not in ftags:
+                                tkeys = ["indicativo.presente", "indicativo.przyszly"] if is_perf_fut else ["indicativo.presente"]
+                                if "third-person" in ftags:
+                                    p_key = "on" if "singular" in ftags else ("oni" if "plural" in ftags else None)
+                                elif "first-person" in ftags:
+                                    p_key = "ja" if "singular" in ftags else ("my" if "plural" in ftags else None)
+                                elif "second-person" in ftags:
+                                    p_key = "ty" if "singular" in ftags else ("wy" if "plural" in ftags else None)
+                                elif "singular" in ftags:
+                                    seen_counts["pres_sg"] += 1
+                                    p_key = "ja" if seen_counts["pres_sg"] == 1 else ("ty" if seen_counts["pres_sg"] == 2 else None)
+                                elif "plural" in ftags:
+                                    seen_counts["pres_pl"] += 1
+                                    p_key = "my" if seen_counts["pres_pl"] == 1 else ("wy" if seen_counts["pres_pl"] == 2 else None)
+                                else:
+                                    p_key = None
+                                if p_key:
+                                    for tk in tkeys:
+                                        entry_forms[tk].setdefault(p_key, form)
+
+                            elif "past" in ftags and "conditional" not in ftags:
+                                slot = None
+                                if "third-person" in ftags:
+                                    if "singular" in ftags:
+                                        slot = "on" if "masculine" in ftags else ("ona" if "feminine" in ftags else ("ono" if "neuter" in ftags else None))
+                                    elif "plural" in ftags:
+                                        slot = "oni" if "virile" in ftags else ("one" if "nonvirile" in ftags else None)
+                                elif "singular" in ftags:
+                                    g_tag = "m" if "masculine" in ftags else ("f" if "feminine" in ftags else None)
+                                    if g_tag:
+                                        seen_counts[f"past_sg_{g_tag}"] += 1
+                                        idx = seen_counts[f"past_sg_{g_tag}"]
+                                        slot = f"ja_{g_tag}" if idx == 1 else (f"ty_{g_tag}" if idx == 2 else None)
+                                elif "plural" in ftags:
+                                    g_tag = "vir" if "virile" in ftags else ("nonvir" if "nonvirile" in ftags else None)
+                                    if g_tag:
+                                        seen_counts[f"past_pl_{g_tag}"] += 1
+                                        idx = seen_counts[f"past_pl_{g_tag}"]
+                                        slot = f"my_{g_tag}" if idx == 1 else (f"wy_{g_tag}" if idx == 2 else None)
+                                if slot:
+                                    entry_forms["indicativo.przeszly"].setdefault(slot, form)
+
+                            elif "conditional" in ftags:
+                                cslot = None
+                                if "third-person" in ftags:
+                                    if "singular" in ftags and "masculine" in ftags:
+                                        cslot = "on"
+                                    elif "plural" in ftags and "virile" in ftags:
+                                        cslot = "oni"
+                                elif "singular" in ftags and "masculine" in ftags:
+                                    seen_counts["cond_sg"] += 1
+                                    cslot = "ja" if seen_counts["cond_sg"] == 1 else ("ty" if seen_counts["cond_sg"] == 2 else None)
+                                elif "plural" in ftags and "virile" in ftags:
+                                    seen_counts["cond_pl"] += 1
+                                    cslot = "my" if seen_counts["cond_pl"] == 1 else ("wy" if seen_counts["cond_pl"] == 2 else None)
+                                if cslot:
+                                    entry_forms["tryb.przypuszczajacy"].setdefault(cslot, form)
+
+                            elif "imperative" in ftags and "third-person" not in ftags:
+                                islot = None
+                                if "singular" in ftags:
+                                    islot = "ty"
+                                elif "plural" in ftags:
+                                    seen_counts["imp_pl"] += 1
+                                    islot = "my" if seen_counts["imp_pl"] == 1 else ("wy" if seen_counts["imp_pl"] == 2 else None)
+                                if islot:
+                                    entry_forms["tryb.rozkazujacy"].setdefault(islot, form)
+
+                        if verbs_only or form == word or ' ' in form:
                             continue
 
                         if mapped_pos == "verb":
@@ -504,21 +702,22 @@ def process_all():
         except Exception as e:
             print(f"Error while parsing Kaikki: {e}")
 
-    for word, pos_entries in lemma_candidates.items():
-        valid_pos = {p: info for p, info in pos_entries.items() if info["senses"]}
-        if not valid_pos:
-            continue
-        best_pos = min(valid_pos.keys(), key=lambda p: (1 if valid_pos[p]["deprioritised"] else 0, POS_PRIORITY.get(p, 99)))
-        info = valid_pos[best_pos]
-        entry = {"en": ", ".join(info["senses"][:3]), "type": best_pos}
-        if info["gender"]:
-            entry["gender"] = info["gender"]
-        if info["aspect"]:
-            entry["aspect"] = info["aspect"]
-        dictionary[word] = entry
+    if not verbs_only:
+        for word, pos_entries in lemma_candidates.items():
+            valid_pos = {p: info for p, info in pos_entries.items() if info["senses"]}
+            if not valid_pos:
+                continue
+            best_pos = min(valid_pos.keys(), key=lambda p: (1 if valid_pos[p]["deprioritised"] else 0, POS_PRIORITY.get(p, 99)))
+            info = valid_pos[best_pos]
+            entry = {"en": ", ".join(info["senses"][:3]), "type": best_pos}
+            if info["gender"]:
+                entry["gender"] = info["gender"]
+            if info["aspect"]:
+                entry["aspect"] = info["aspect"]
+            dictionary[word] = entry
 
-    # Fallback foundational dictionary if Kaikki was unavailable or incomplete
-    FOUNDATIONAL_DICT = {
+        # Fallback foundational dictionary if Kaikki was unavailable or incomplete
+        FOUNDATIONAL_DICT = {
         "być": {"en": "to be", "type": "verb"},
         "mieć": {"en": "to have", "type": "verb"},
         "móc": {"en": "can, to be able to", "type": "verb"},
@@ -584,57 +783,58 @@ def process_all():
         "tak": {"en": "yes", "type": "particle"},
         "nie": {"en": "no, not", "type": "particle"},
         "i": {"en": "and", "type": "conjunction"}
-    }
+        }
+        for k, v in FOUNDATIONAL_DICT.items():
+            if k not in dictionary:
+                dictionary[k] = v
 
-    for k, v in FOUNDATIONAL_DICT.items():
-        if k not in dictionary:
-            dictionary[k] = v
+        # Additions overlay
+        if ADDITIONS_FILE.exists():
+            try:
+                with open(ADDITIONS_FILE, "r", encoding="utf-8") as f:
+                    adds = json.load(f)
+                    for k, v in adds.items():
+                        dictionary[k.lower()] = v
+            except Exception:
+                pass
 
-    # Additions overlay
-    if ADDITIONS_FILE.exists():
-        try:
-            with open(ADDITIONS_FILE, "r", encoding="utf-8") as f:
-                adds = json.load(f)
-                for k, v in adds.items():
-                    dictionary[k.lower()] = v
-        except Exception:
-            pass
+        # Save dictionary
+        print(f"Writing {len(dictionary):,} entries to {DICT_OUTPUT} ...")
+        with open(DICT_OUTPUT, "w", encoding="utf-8") as f:
+            json.dump(dictionary, f, ensure_ascii=False, indent=2)
 
-    # Save dictionary
-    print(f"Writing {len(dictionary):,} entries to {DICT_OUTPUT} ...")
-    with open(DICT_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(dictionary, f, ensure_ascii=False, indent=2)
+        # Save word-index (filter to top 40k frequent lemmas present in dictionary)
+        freq_set = set(freq_list[:40000]) if freq_list else set(dictionary.keys())
+        filtered_word_index = {}
+        for form, entries in word_index.items():
+            kept = [e for e in entries if e.get("lemma") in freq_set and e.get("lemma") in dictionary]
+            if kept:
+                filtered_word_index[form] = kept[:4]
 
-    # Save word-index (filter to top 40k frequent lemmas present in dictionary)
-    freq_set = set(freq_list[:40000]) if freq_list else set(dictionary.keys())
-    filtered_word_index = {}
-    for form, entries in word_index.items():
-        kept = [e for e in entries if e.get("lemma") in freq_set and e.get("lemma") in dictionary]
-        if kept:
-            filtered_word_index[form] = kept[:4]
+        print(f"Writing {len(filtered_word_index):,} word index forms to {WORD_INDEX_OUTPUT} ...")
+        with open(WORD_INDEX_OUTPUT, "w", encoding="utf-8") as f:
+            json.dump(filtered_word_index, f, ensure_ascii=False, separators=(',', ':'))
 
-    print(f"Writing {len(filtered_word_index):,} word index forms to {WORD_INDEX_OUTPUT} ...")
-    with open(WORD_INDEX_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(filtered_word_index, f, ensure_ascii=False, separators=(',', ':'))
+        # Filter & save verb-index
+        verb_freq_set = (set(freq_list[:40000]) | set(PRIORITY_VERBS)) if freq_list else set(dictionary.keys())
+        filtered_verb_index = {}
+        for form, entries in verb_index.items():
+            kept = [e for e in entries if e.get("lemma") in verb_freq_set and e.get("lemma") in dictionary]
+            if kept:
+                filtered_verb_index[form] = kept[:4]
 
-    # Filter & save verb-index
-    verb_freq_set = (set(freq_list[:40000]) | set(PRIORITY_VERBS)) if freq_list else set(dictionary.keys())
-    filtered_verb_index = {}
-    for form, entries in verb_index.items():
-        kept = [e for e in entries if e.get("lemma") in verb_freq_set and e.get("lemma") in dictionary]
-        if kept:
-            filtered_verb_index[form] = kept[:4]
+        print(f"Writing {len(filtered_verb_index):,} verb index forms to {VERB_INDEX_OUTPUT} ...")
+        with open(VERB_INDEX_OUTPUT, "w", encoding="utf-8") as f:
+            json.dump(filtered_verb_index, f, ensure_ascii=False, separators=(',', ':'))
 
-    print(f"Writing {len(filtered_verb_index):,} verb index forms to {VERB_INDEX_OUTPUT} ...")
-    with open(VERB_INDEX_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(filtered_verb_index, f, ensure_ascii=False, separators=(',', ':'))
-
-    # Save frequency list
-    if not freq_list:
-        freq_list = list(dictionary.keys())
-    print(f"Writing frequency ranking to {FREQUENCY_OUTPUT} ...")
-    with open(FREQUENCY_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(freq_list[:50000], f, ensure_ascii=False, separators=(',', ':'))
+        # Save frequency list
+        if not freq_list:
+            freq_list = list(dictionary.keys())
+        print(f"Writing frequency ranking to {FREQUENCY_OUTPUT} ...")
+        with open(FREQUENCY_OUTPUT, "w", encoding="utf-8") as f:
+            json.dump(freq_list[:50000], f, ensure_ascii=False, separators=(',', ':'))
+    else:
+        print("Skipping dictionary/index writes (--verbs-only).")
 
     if "--indexes-only" in sys.argv:
         print("Skipping verb files generation (--indexes-only).")
@@ -644,9 +844,10 @@ def process_all():
     saved_verbs = []
     print(f"Generating verb files for {len(PRIORITY_VERBS)} Polish verbs...")
     for lemma in PRIORITY_VERBS:
-        v_info = verb_data.get(lemma, {"forms": {}, "aspect": "imperfective"})
-        aspect = "perfective" if (lemma.startswith(("z", "po", "na", "wy", "prze", "u", "od", "do")) and lemma not in ("znać", "żyć")) else "imperfective"
-        verb_file_data = build_verb_file(lemma, v_info["forms"], aspect)
+        v_info = verb_data.get(lemma, {"forms": {}, "aspect": None})
+        aspect = v_info.get("aspect") or ("perfective" if (lemma.startswith(("z", "po", "na", "wy", "prze", "u", "od", "do")) and lemma not in ("znać", "żyć", "pomagać", "podróżować", "potrzebować", "zaczynać", "zamykać", "zostawać", "dziękować", "przepraszać")) else "imperfective")
+        raw_en = verb_glosses.get(lemma) or (dictionary.get(lemma, {}).get("en", ""))
+        verb_file_data = build_verb_file(lemma, v_info["forms"], aspect, raw_en)
         
         v_path = VERBS_DIR / f"{lemma}.json"
         with open(v_path, "w", encoding="utf-8") as f:

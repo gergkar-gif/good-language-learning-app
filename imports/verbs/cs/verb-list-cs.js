@@ -1,6 +1,5 @@
 // Czech Verb Catalog for Verb Practice Driller
 const ALL_CZECH_VERBS = [
-    'bejt',
     'bojovat',
     'brát',
     'bydlet',
@@ -50,7 +49,7 @@ const ALL_CZECH_VERBS = [
     'plavat',
     'podívat',
     'poděkovat',
-    'pomoci',
+    'pokračovat',
     'pomoct',
     'pomyslet',
     'pomáhat',
@@ -68,8 +67,8 @@ const ALL_CZECH_VERBS = [
     'psát',
     'ptát',
     'pít',
-    'pět',
     'představit',
+    'přestat',
     'přečíst',
     'přijet',
     'přijít',
@@ -113,6 +112,7 @@ const ALL_CZECH_VERBS = [
     'znát',
     'ztratit',
     'ztrácet',
+    'získat',
     'zůstat',
     'zůstávat',
     'čekat',

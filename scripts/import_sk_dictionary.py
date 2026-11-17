@@ -81,8 +81,8 @@ POS_PRIORITY = {
 PRIORITY_VERBS = [
     "byť", "mať", "môcť", "chcieť", "vedieť", "poznať", "povedať", "hovoriť",
     "robiť", "urobiť", "vidieť", "uvidieť", "myslieť", "pomyslieť", "ísť", "prísť",
-    "odísť", "ísť", "cestovať", "brať", "vziať", "dávať", "dať", "rozumieť",
-    "porozumieť", "čakať", "počkať", "pýtať", "opýtať", "odpovedať", "odpovedať",
+    "odísť", "cestovať", "brať", "vziať", "dávať", "dať", "rozumieť",
+    "porozumieť", "čakať", "počkať", "pýtať", "opýtať", "odpovedať",
     "hľadať", "nájsť", "pracovať", "učiť", "pamätať", "zabudnúť", "musieť",
     "žiť", "ľúbiť", "milovať", "čítať", "prečítať", "písať", "napísať", "piť", "vypiť", "jesť",
     "zjesť", "spať", "kupovať", "kúpiť", "predávať", "predať", "stretnúť", "začínať",
@@ -365,16 +365,210 @@ def parse_frequency():
                         freq_list.append(word)
     return freq_rank, freq_list
 
-def build_verb_payload(lemma, forms_dict, aspect_found="imperfective"):
-    aspect = aspect_found or "imperfective"
-    pres = forms_dict.get("indicativo.presente", {})
-    past = forms_dict.get("indicativo.minuly", {})
-    fut = forms_dict.get("indicativo.budouci", {})
-    cond = forms_dict.get("podminovaci", {})
-    imperative = forms_dict.get("rozkazovaci", {})
+SK_PREFIX_PAIRS = {
+    "opýtať": ("o", "pýtať", "perfective"),
+    "pomyslieť": ("po", "myslieť", "perfective"),
+    "poprosiť": ("po", "prosiť", "perfective"),
+    "porozumieť": ("po", "rozumieť", "perfective"),
+    "skončiť": ("s", "končiť", "perfective"),
+    "uvidieť": ("u", "vidieť", "perfective"),
+    "vypiť": ("vy", "piť", "perfective"),
+    "zaplatiť": ("za", "platiť", "perfective"),
+    "zavolať": ("za", "volať", "perfective"),
+    "zjesť": ("z", "jesť", "perfective"),
+}
 
-    # Auto-generate compound future for imperfective verbs if missing
-    if aspect == "imperfective" and not fut:
+SK_IRREGULAR_OR_MISSING = {
+    "ležať": {
+        "aspect": "imperfective",
+        "pres": {"ja": "ležím", "ty": "ležíš", "on": "leží", "my": "ležíme", "vy": "ležíte", "oni": "ležia"},
+        "past": {"on": "ležal", "ona": "ležala", "ono": "ležalo", "oni_anim": "ležali"},
+        "imp": {"ty": "lež", "my": "ležme", "vy": "ležte"}
+    },
+    "odpovedať": {
+        "aspect": "imperfective",
+        "pres": {"ja": "odpovedám", "ty": "odpovedáš", "on": "odpovedá", "my": "odpovedáme", "vy": "odpovedáte", "oni": "odpovedajú"},
+        "past": {"on": "odpovedal", "ona": "odpovedala", "ono": "odpovedalo", "oni_anim": "odpovedali"},
+        "imp": {"ty": "odpovedaj", "my": "odpovedajme", "vy": "odpovedajte"}
+    },
+    "pozrieť": {
+        "aspect": "perfective",
+        "pres": {"ja": "pozriem", "ty": "pozrieš", "on": "pozrie", "my": "pozrieme", "vy": "pozriete", "oni": "pozrú"},
+        "past": {"on": "pozrel", "ona": "pozrela", "ono": "pozrelo", "oni_anim": "pozreli"},
+        "imp": {"ty": "pozri", "my": "pozrime", "vy": "pozrite"}
+    },
+    "sadnúť": {
+        "aspect": "perfective",
+        "pres": {"ja": "sadnem", "ty": "sadneš", "on": "sadne", "my": "sadneme", "vy": "sadnete", "oni": "sadnú"},
+        "past": {"on": "sadol", "ona": "sadla", "ono": "sadlo", "oni_anim": "sadli"},
+        "imp": {"ty": "sadni", "my": "sadnime", "vy": "sadnite"}
+    },
+    "cítiť": {
+        "aspect": "imperfective",
+        "pres": {"ja": "cítim", "ty": "cítiš", "on": "cíti", "my": "cítime", "vy": "cítite", "oni": "cítia"},
+        "past": {"on": "cítil", "ona": "cítila", "ono": "cítilo", "oni_anim": "cítili"},
+        "imp": {"ty": "cíť", "my": "cíťme", "vy": "cíťte"}
+    },
+    "prosiť": {
+        "aspect": "imperfective",
+        "pres": {"ja": "prosím", "ty": "prosíš", "on": "prosí", "my": "prosíme", "vy": "prosíte", "oni": "prosia"},
+        "past": {"on": "prosil", "ona": "prosila", "ono": "prosilo", "oni_anim": "prosili"},
+        "imp": {"ty": "pros", "my": "prosme", "vy": "proste"}
+    },
+    "jazdiť": {
+        "aspect": "imperfective",
+        "pres": {"ja": "jazdím", "ty": "jazdíš", "on": "jazdí", "my": "jazdíme", "vy": "jazdíte", "oni": "jazdia"},
+        "past": {"on": "jazdil", "ona": "jazdila", "ono": "jazdilo", "oni_anim": "jazdili"},
+        "imp": {"ty": "jazdi", "my": "jazdime", "vy": "jazdite"}
+    },
+    "ospravedlniť": {
+        "aspect": "perfective",
+        "pres": {"ja": "ospravedlním", "ty": "ospravedlníš", "on": "ospravedlní", "my": "ospravedlníme", "vy": "ospravedlníte", "oni": "ospravedlnia"},
+        "past": {"on": "ospravedlnil", "ona": "ospravedlnila", "ono": "ospravedlnilo", "oni_anim": "ospravedlnili"},
+        "imp": {"ty": "ospravedlň", "my": "ospravedlňme", "vy": "ospravedlňte"}
+    },
+    "stratiť": {
+        "aspect": "perfective",
+        "pres": {"ja": "stratím", "ty": "stratíš", "on": "stratí", "my": "stratíme", "vy": "stratíte", "oni": "stratia"},
+        "past": {"on": "stratil", "ona": "stratila", "ono": "stratilo", "oni_anim": "stratili"},
+        "imp": {"ty": "strať", "my": "straťme", "vy": "straťte"}
+    },
+    "počkať": {"aspect": "perfective"},
+    "poďakovať": {"aspect": "perfective"},
+}
+
+SK_VERB_EN_OVERRIDES = {
+    "byť": "to be",
+    "mať": "to have",
+    "brať": "to take",
+    "stáť": "to stand; to cost",
+    "báť": "to fear, to be afraid",
+    "cítiť": "to feel, to sense",
+    "jazdiť": "to drive, to ride",
+    "kupovať": "to buy",
+    "ležať": "to lie, to recline",
+    "odpovedať": "to answer, to reply",
+    "opýtať": "to ask",
+    "ospravedlniť": "to excuse, to apologize",
+    "otvárať": "to open",
+    "pomyslieť": "to think, to consider",
+    "pomáhať": "to help, to assist",
+    "poprosiť": "to ask politely, to request",
+    "porozumieť": "to understand",
+    "pozrieť": "to look, to check",
+    "počkať": "to wait",
+    "poďakovať": "to thank",
+    "prečítať": "to read through",
+    "prosiť": "to ask, to beg",
+    "sadnúť": "to sit down",
+    "skončiť": "to finish, to end",
+    "stratiť": "to lose",
+    "strácať": "to lose (impf.)",
+    "ukazovať": "to show, to point",
+    "uvidieť": "to see, to catch sight of",
+    "vypiť": "to drink up",
+    "zaplatiť": "to pay",
+    "zatvárať": "to close, to shut",
+    "zavolať": "to call",
+    "začínať": "to begin, to start",
+    "zjesť": "to eat up",
+    "zostávať": "to stay, to remain",
+}
+
+def clean_sk_verb_en(lemma, raw_en):
+    if lemma in SK_VERB_EN_OVERRIDES:
+        return SK_VERB_EN_OVERRIDES[lemma]
+    if not raw_en:
+        return ""
+    parts = []
+    for p in re.split(r'[;,]', raw_en):
+        p = p.strip()
+        low = p.lower()
+        if not p or low.startswith(('used ', 'synonym of', 'expressing ', 'with ', 'see ')):
+            continue
+        if p not in parts:
+            parts.append(p)
+        if len(", ".join(parts)) > 40 or len(parts) >= 2:
+            break
+    return ", ".join(parts) if parts else raw_en.split(",")[0].strip()
+
+def _synth_sk_regular(lemma):
+    """Regular Slovak conjugation fallback for -ovať / -ať / -iť / -ieť."""
+    if lemma.endswith("ovať"):
+        st = lemma[:-4]
+        return (
+            {"ja": st + "ujem", "ty": st + "uješ", "on": st + "uje", "my": st + "ujeme", "vy": st + "ujete", "oni": st + "ujú"},
+            {"on": lemma[:-1] + "l", "ona": lemma[:-1] + "la", "ono": lemma[:-1] + "lo", "oni_anim": lemma[:-1] + "li"},
+            {"ty": st + "uj", "my": st + "ujme", "vy": st + "ujte"},
+        )
+    if lemma.endswith(("ať", "iať")):
+        st = lemma[:-2]
+        # Rhythmic law: short final stem syllable takes -ám/-áš/-á/-áme/-áte; long takes -am/-aš/-a/-ame/-ate
+        prev = st[:-1] if lemma.endswith("ať") else st
+        is_long = any(v in prev[-3:] for v in ("á", "é", "í", "ó", "ú", "ý", "ô", "ŕ", "ĺ", "ia", "ie", "iu"))
+        a_v = "a" if is_long else "á"
+        return (
+            {"ja": st + f"{a_v}m", "ty": st + f"{a_v}š", "on": st + a_v, "my": st + f"{a_v}me", "vy": st + f"{a_v}te", "oni": st + "ajú"},
+            {"on": st + "al", "ona": st + "ala", "ono": st + "alo", "oni_anim": st + "ali"},
+            {"ty": st + "aj", "my": st + "ajme", "vy": st + "ajte"},
+        )
+    if lemma.endswith("iť"):
+        st = lemma[:-2]
+        return (
+            {"ja": st + "ím", "ty": st + "íš", "on": st + "í", "my": st + "íme", "vy": st + "íte", "oni": st + "ia"},
+            {"on": st + "il", "ona": st + "ila", "ono": st + "ilo", "oni_anim": st + "ili"},
+            {"ty": st, "my": st + "me", "vy": st + "te"},
+        )
+    if lemma.endswith("ieť"):
+        st = lemma[:-3]
+        return (
+            {"ja": st + "iem", "ty": st + "ieš", "on": st + "ie", "my": st + "ieme", "vy": st + "iete", "oni": st + "ejú"},
+            {"on": st + "el", "ona": st + "ela", "ono": st + "elo", "oni_anim": st + "eli"},
+            {"ty": st + "ej", "my": st + "ejme", "vy": st + "ejte"},
+        )
+    st = lemma[:-1]
+    return (
+        {"ja": st + "em", "ty": st + "eš", "on": st + "e", "my": st + "eme", "vy": st + "ete", "oni": st + "ú"},
+        {"on": st + "l", "ona": st + "la", "ono": st + "lo", "oni_anim": st + "li"},
+        {"ty": st + "i", "my": st + "ime", "vy": st + "ite"},
+    )
+
+def build_verb_payload(lemma, forms_dict, aspect_found="imperfective", en_gloss=""):
+    aspect = aspect_found or "imperfective"
+    pres = dict(forms_dict.get("indicativo.presente", {}))
+    past = dict(forms_dict.get("indicativo.minuly", {}))
+    fut = dict(forms_dict.get("indicativo.budouci", {}))
+    cond = dict(forms_dict.get("podminovaci", {}))
+    imperative = dict(forms_dict.get("rozkazovaci", {}))
+
+    if lemma in SK_IRREGULAR_OR_MISSING:
+        ov = SK_IRREGULAR_OR_MISSING[lemma]
+        aspect = ov.get("aspect", aspect)
+        if "pres" in ov and not pres:
+            pres = dict(ov["pres"])
+        if "past" in ov and not past:
+            past = dict(ov["past"])
+        if "imp" in ov and not imperative:
+            imperative = dict(ov["imp"])
+
+    # Fill missing forms via regular Slovak patterns when Kaikki lacked entries
+    if not pres or not past or (not imperative and lemma not in ("môcť", "musieť")):
+        reg_p, reg_l, reg_i = _synth_sk_regular(lemma)
+        if not pres:
+            pres = reg_p
+        if not past:
+            past = reg_l
+        else:
+            for k, v in reg_l.items():
+                past.setdefault(k, v)
+        if not imperative and lemma not in ("môcť", "musieť"):
+            imperative = reg_i
+
+    # Synthesize future
+    if aspect == "perfective":
+        if not fut:
+            fut = dict(pres)
+    elif not fut:
         fut = {
             "ja": f"budem {lemma}",
             "ty": f"budeš {lemma}",
@@ -383,8 +577,17 @@ def build_verb_payload(lemma, forms_dict, aspect_found="imperfective"):
             "vy": f"budete {lemma}",
             "oni": f"budú {lemma}"
         }
-    elif aspect == "perfective" and not fut:
-        fut = pres.copy()
+
+    # Synthesize conditional from L-participle
+    if not cond and past.get("on") and past.get("oni_anim"):
+        cond = {
+            "ja": f"{past['on']} by som",
+            "ty": f"{past['on']} by si",
+            "on": f"{past['on']} by",
+            "my": f"{past['oni_anim']} by sme",
+            "vy": f"{past['oni_anim']} by ste",
+            "oni": f"{past['oni_anim']} by"
+        }
 
     indicativo = {
         "presente": pres,
@@ -394,18 +597,36 @@ def build_verb_payload(lemma, forms_dict, aspect_found="imperfective"):
 
     if lemma in CANONICAL_VERBS:
         c = CANONICAL_VERBS[lemma]
-        indicativo["presente"] = c.get("indicativo.presente", indicativo["presente"])
-        indicativo["minuly"] = c.get("indicativo.minuly", indicativo["minuly"])
-        indicativo["budouci"] = c.get("indicativo.budouci", indicativo["budouci"])
-        cond = c.get("podminovaci", cond)
-        imperative = c.get("rozkazovaci", imperative)
+        indicativo["presente"] = dict(c.get("indicativo.presente", indicativo["presente"]))
+        indicativo["minuly"] = dict(c.get("indicativo.minuly", indicativo["minuly"]))
+        indicativo["budouci"] = dict(c.get("indicativo.budouci", indicativo["budouci"]))
+        cond = dict(c.get("podminovaci", cond))
+        imperative = dict(c.get("rozkazovaci", imperative))
         aspect = c.get("aspect", aspect)
+
+    # Populate VerbsTable / VerbsSpeed defaultPersons ('ja', 'ty', 'my', 'vy', 'oni') on minuly
+    minuly = indicativo["minuly"]
+    on_m = minuly.get("on", "")
+    ona_f = minuly.get("ona", "")
+    oni_a = minuly.get("oni_anim") or minuly.get("oni", "")
+    minuly.setdefault("ony_inanim", oni_a)
+    minuly.setdefault("ona_neut", oni_a)
+    if on_m:
+        minuly.setdefault("ja", f"{on_m} som/{ona_f} som" if ona_f and ona_f != on_m else f"{on_m} som")
+        minuly.setdefault("ty", f"{on_m} si/{ona_f} si" if ona_f and ona_f != on_m else f"{on_m} si")
+    if oni_a:
+        minuly.setdefault("my", f"{oni_a} sme")
+        minuly.setdefault("vy", f"{oni_a} ste")
+        minuly.setdefault("oni", oni_a)
 
     return {
         "regular": lemma not in CANONICAL_VERBS,
         "infinitive": lemma,
         "infinitivo": lemma,
         "aspect": aspect,
+        "english": {
+            "infinitivo": clean_sk_verb_en(lemma, en_gloss)
+        },
         "indicativo": indicativo,
         "podminovaci": cond,
         "rozkazovaci": imperative,
@@ -423,11 +644,17 @@ def process_all():
     WORD_INDEX_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     VERBS_DIR.mkdir(parents=True, exist_ok=True)
 
+    verbs_only = "--verbs-only" in sys.argv
     dictionary = {}
+    if verbs_only and DICT_OUTPUT.exists():
+        with open(DICT_OUTPUT, "r", encoding="utf-8") as df:
+            dictionary = json.load(df)
+
     lemma_candidates = defaultdict(lambda: defaultdict(lambda: {"primary": [], "senses": [], "gender": None, "aspect": None, "deprioritised": True}))
     word_index = defaultdict(list)
     verb_index = defaultdict(list)
-    verb_data = defaultdict(lambda: {"forms": defaultdict(dict), "aspect": "imperfective"})
+    verb_data = defaultdict(lambda: {"forms": defaultdict(dict), "aspect": None})
+    verb_glosses = {}
 
     if KAIKKI_FILE.exists():
         print(f"Parsing Kaikki Slovak extract from {KAIKKI_FILE}...")
@@ -446,11 +673,13 @@ def process_all():
                     word = item.get("word", "").strip().lower()
                     pos = item.get("pos", "")
                     mapped_pos = POS_MAP.get(pos, pos)
+                    if verbs_only and mapped_pos != "verb":
+                        continue
                     senses = item.get("senses", [])
                     item_tags = set(item.get("tags", []))
 
                     # Dictionary headwords
-                    if word and pos in POS_MAP and 'form-of' not in item_tags:
+                    if not verbs_only and word and pos in POS_MAP and 'form-of' not in item_tags:
                         gender = "m" if "masculine" in item_tags else "f" if "feminine" in item_tags else "n" if "neuter" in item_tags else None
                         aspect = "perfective" if "perfective" in item_tags else "imperfective" if "imperfective" in item_tags else None
                         cand = lemma_candidates[word][mapped_pos]
@@ -478,8 +707,35 @@ def process_all():
                                     if cg not in cand["primary"]:
                                         cand["primary"].append(cg)
 
+                    if mapped_pos == "verb" and word and word not in verb_glosses and 'form-of' not in item_tags:
+                        for s in senses:
+                            stags = set(s.get("tags", []))
+                            if 'form-of' in stags or 'misspelling' in stags or (stags & DEPRIORITISE_TAGS):
+                                continue
+                            gloss_list = s.get("glosses", [])
+                            if not gloss_list:
+                                continue
+                            g = gloss_list[-1]
+                            if FORM_RE.search(g):
+                                continue
+                            cg = clean_gloss(g)
+                            if cg:
+                                verb_glosses[word] = cg
+                                break
+
                     # Process inflected forms
                     forms = item.get("forms", [])
+                    table_aspect = None
+                    if mapped_pos == "verb":
+                        for fi in forms:
+                            if "table-tags" in (fi.get("tags") or []):
+                                tf = (fi.get("form") or "").strip().lower()
+                                if tf in ("imperfective", "perfective"):
+                                    table_aspect = tf
+                                break
+                        if table_aspect and not verb_data[word]["aspect"]:
+                            verb_data[word]["aspect"] = table_aspect
+
                     for fi in forms:
                         form = fi.get("form", "").strip().lower()
                         ftags = set(fi.get("tags", []))
@@ -487,44 +743,51 @@ def process_all():
                             continue
 
                         if mapped_pos == "verb":
-                            if word not in verb_index[form]:
+                            if not verbs_only and word not in verb_index[form]:
                                 verb_index[form].append(word)
 
+                            if "colloquial" in ftags or "noun-from-verb" in ftags or "passive" in ftags or "participle" in ftags:
+                                continue
+
                             # Extract person/tense forms for verb library
-                            if "present" in ftags and "indicative" in ftags and "imperative" not in ftags:
+                            if "present" in ftags and "indicative" in ftags and "imperative" not in ftags and "past" not in ftags:
+                                pslot = None
                                 if "first-person" in ftags and "singular" in ftags:
-                                    verb_data[word]["forms"]["indicativo.presente"]["ja"] = form
+                                    pslot = "ja"
                                 elif "second-person" in ftags and "singular" in ftags:
-                                    verb_data[word]["forms"]["indicativo.presente"]["ty"] = form
+                                    pslot = "ty"
                                 elif "third-person" in ftags and "singular" in ftags:
-                                    verb_data[word]["forms"]["indicativo.presente"]["on"] = form
+                                    pslot = "on"
                                 elif "first-person" in ftags and "plural" in ftags:
-                                    verb_data[word]["forms"]["indicativo.presente"]["my"] = form
+                                    pslot = "my"
                                 elif "second-person" in ftags and "plural" in ftags:
-                                    verb_data[word]["forms"]["indicativo.presente"]["vy"] = form
+                                    pslot = "vy"
                                 elif "third-person" in ftags and "plural" in ftags:
-                                    verb_data[word]["forms"]["indicativo.presente"]["oni"] = form
+                                    pslot = "oni"
+                                if pslot:
+                                    verb_data[word]["forms"]["indicativo.presente"].setdefault(pslot, form)
 
-                            if ("past" in ftags or "participle" in ftags) and "passive" not in ftags:
-                                if "masculine" in ftags and "singular" in ftags:
-                                    verb_data[word]["forms"]["indicativo.minuly"]["on"] = form
-                                elif "feminine" in ftags and "singular" in ftags:
-                                    verb_data[word]["forms"]["indicativo.minuly"]["ona"] = form
-                                elif "neuter" in ftags and "singular" in ftags:
-                                    verb_data[word]["forms"]["indicativo.minuly"]["ono"] = form
-                                elif "plural" in ftags:
-                                    verb_data[word]["forms"]["indicativo.minuly"]["oni_anim"] = form
-                                    verb_data[word]["forms"]["indicativo.minuly"]["ony_inanim"] = form
+                            # Slovak Kaikki past tags are shifted off-by-one; identify bare L-participle by ending
+                            elif "past" in ftags and "perfect" not in ftags and "conditional" not in ftags:
+                                if form.endswith("la"):
+                                    verb_data[word]["forms"]["indicativo.minuly"].setdefault("ona", form)
+                                elif form.endswith("lo"):
+                                    verb_data[word]["forms"]["indicativo.minuly"].setdefault("ono", form)
+                                elif form.endswith("li"):
+                                    verb_data[word]["forms"]["indicativo.minuly"].setdefault("oni_anim", form)
+                                    verb_data[word]["forms"]["indicativo.minuly"].setdefault("ony_inanim", form)
+                                elif form.endswith("l"):
+                                    verb_data[word]["forms"]["indicativo.minuly"].setdefault("on", form)
 
-                            if "imperative" in ftags:
+                            elif "imperative" in ftags:
                                 if "singular" in ftags and "second-person" in ftags:
-                                    verb_data[word]["forms"]["rozkazovaci"]["ty"] = form
+                                    verb_data[word]["forms"]["rozkazovaci"].setdefault("ty", form)
                                 elif "plural" in ftags and "first-person" in ftags:
-                                    verb_data[word]["forms"]["rozkazovaci"]["my"] = form
+                                    verb_data[word]["forms"]["rozkazovaci"].setdefault("my", form)
                                 elif "plural" in ftags and "second-person" in ftags:
-                                    verb_data[word]["forms"]["rozkazovaci"]["vy"] = form
+                                    verb_data[word]["forms"]["rozkazovaci"].setdefault("vy", form)
 
-                        else:
+                        elif not verbs_only:
                             if word not in word_index[form]:
                                 word_index[form].append(word)
 
@@ -532,21 +795,22 @@ def process_all():
         except Exception as e:
             print(f"Warning: error parsing Kaikki extract: {e}")
 
-    for word, pos_entries in lemma_candidates.items():
-        valid_pos = {p: info for p, info in pos_entries.items() if info["senses"]}
-        if not valid_pos:
-            continue
-        best_pos = min(valid_pos.keys(), key=lambda p: (1 if valid_pos[p]["deprioritised"] else 0, POS_PRIORITY.get(p, 99)))
-        info = valid_pos[best_pos]
-        chosen = info["primary"] or info["senses"]
-        entry = {"en": ", ".join(chosen[:3]), "type": best_pos}
-        if info["gender"]:
-            entry["gender"] = info["gender"]
-        if info["aspect"]:
-            entry["aspect"] = info["aspect"]
-        dictionary[word] = entry
+    if not verbs_only:
+        for word, pos_entries in lemma_candidates.items():
+            valid_pos = {p: info for p, info in pos_entries.items() if info["senses"]}
+            if not valid_pos:
+                continue
+            best_pos = min(valid_pos.keys(), key=lambda p: (1 if valid_pos[p]["deprioritised"] else 0, POS_PRIORITY.get(p, 99)))
+            info = valid_pos[best_pos]
+            chosen = info["primary"] or info["senses"]
+            entry = {"en": ", ".join(chosen[:3]), "type": best_pos}
+            if info["gender"]:
+                entry["gender"] = info["gender"]
+            if info["aspect"]:
+                entry["aspect"] = info["aspect"]
+            dictionary[word] = entry
 
-    FOUNDATIONAL_DICT = {
+        FOUNDATIONAL_DICT = {
         "a": {"en": "and", "type": "conjunction"},
         "i": {"en": "and also, even", "type": "conjunction"},
         "v": {"en": "in, at, inside", "type": "preposition"},
@@ -595,93 +859,107 @@ def process_all():
         "aby": {"en": "so that, in order to", "type": "conjunction"},
         "za": {"en": "behind, beyond; for", "type": "preposition"},
         "no": {"en": "well; but", "type": "particle"}
-    }
-    for k, v in FOUNDATIONAL_DICT.items():
-        if k not in dictionary:
-            dictionary[k] = v
+        }
+        for k, v in FOUNDATIONAL_DICT.items():
+            if k not in dictionary:
+                dictionary[k] = v
 
-    # Incorporate MichMech high-coverage lemmatization dataset
-    if LEMMAS_FILE.exists():
-        print(f"Parsing MichMech lemmatization list from {LEMMAS_FILE}...")
-        try:
-            with open(LEMMAS_FILE, "r", encoding="utf-8", errors="ignore") as f:
-                pair_count = 0
-                for line in f:
-                    parts = line.strip().split("\t")
-                    if len(parts) >= 2:
-                        lemma = parts[0].strip().lower()
-                        form = parts[1].strip().lower()
-                        if form and lemma and form != lemma and ' ' not in form and '-' not in form and form.isalpha():
-                            if lemma in dictionary:
-                                if lemma not in word_index[form]:
-                                    word_index[form].append(lemma)
-                                pair_count += 1
-                print(f"Added {pair_count:,} lemma-token mappings from MichMech.")
-        except Exception as e:
-            print(f"Warning parsing MichMech lemmatization list: {e}")
+        # Incorporate MichMech high-coverage lemmatization dataset
+        if LEMMAS_FILE.exists():
+            print(f"Parsing MichMech lemmatization list from {LEMMAS_FILE}...")
+            try:
+                with open(LEMMAS_FILE, "r", encoding="utf-8", errors="ignore") as f:
+                    pair_count = 0
+                    for line in f:
+                        parts = line.strip().split("\t")
+                        if len(parts) >= 2:
+                            lemma = parts[0].strip().lower()
+                            form = parts[1].strip().lower()
+                            if form and lemma and form != lemma and ' ' not in form and '-' not in form and form.isalpha():
+                                if lemma in dictionary:
+                                    if lemma not in word_index[form]:
+                                        word_index[form].append(lemma)
+                                    pair_count += 1
+                    print(f"Added {pair_count:,} lemma-token mappings from MichMech.")
+            except Exception as e:
+                print(f"Warning parsing MichMech lemmatization list: {e}")
 
-    # Merge additions if present
-    if ADDITIONS_FILE.exists():
-        print(f"Merging additions from {ADDITIONS_FILE}...")
-        with open(ADDITIONS_FILE, "r", encoding="utf-8") as f:
-            additions = json.load(f)
-            for k, v in additions.items():
-                dictionary[k.lower()] = v
+        # Merge additions if present
+        if ADDITIONS_FILE.exists():
+            print(f"Merging additions from {ADDITIONS_FILE}...")
+            with open(ADDITIONS_FILE, "r", encoding="utf-8") as f:
+                additions = json.load(f)
+                for k, v in additions.items():
+                    dictionary[k.lower()] = v
 
-    print(f"Total headwords in dictionary: {len(dictionary):,}")
-    print(f"Saving dictionary to {DICT_OUTPUT}...")
-    with open(DICT_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(dictionary, f, ensure_ascii=False, indent=2)
+        print(f"Total headwords in dictionary: {len(dictionary):,}")
+        print(f"Saving dictionary to {DICT_OUTPUT}...")
+        with open(DICT_OUTPUT, "w", encoding="utf-8") as f:
+            json.dump(dictionary, f, ensure_ascii=False, indent=2)
 
-    # Save frequency index
-    print(f"Saving frequency rankings to {FREQUENCY_OUTPUT}...")
-    with open(FREQUENCY_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(freq_list, f, ensure_ascii=False)
+        # Save frequency index
+        print(f"Saving frequency rankings to {FREQUENCY_OUTPUT}...")
+        with open(FREQUENCY_OUTPUT, "w", encoding="utf-8") as f:
+            json.dump(freq_list, f, ensure_ascii=False)
 
-    # Filter & compact word/verb indexes to lemmas present in dictionary
-    print("Compacting word-index.json and verb-index.json...")
-    top_lemmas_set = (set(freq_list[:40000]) & set(dictionary.keys())) if freq_list else set(dictionary.keys())
-    compact_word_index = {}
-    for form, lemmas in word_index.items():
-        vetted = [l for l in lemmas if l in top_lemmas_set or l in dictionary]
-        if vetted:
-            compact_word_index[form] = vetted[:2]
+        # Filter & compact word/verb indexes to lemmas present in dictionary
+        print("Compacting word-index.json and verb-index.json...")
+        top_lemmas_set = (set(freq_list[:40000]) & set(dictionary.keys())) if freq_list else set(dictionary.keys())
+        compact_word_index = {}
+        for form, lemmas in word_index.items():
+            vetted = [l for l in lemmas if l in top_lemmas_set or l in dictionary]
+            if vetted:
+                compact_word_index[form] = vetted[:2]
 
-    print(f"Saving word-index ({len(compact_word_index):,} forms) to {WORD_INDEX_OUTPUT}...")
-    with open(WORD_INDEX_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(compact_word_index, f, ensure_ascii=False, separators=(',', ':'))
+        print(f"Saving word-index ({len(compact_word_index):,} forms) to {WORD_INDEX_OUTPUT}...")
+        with open(WORD_INDEX_OUTPUT, "w", encoding="utf-8") as f:
+            json.dump(compact_word_index, f, ensure_ascii=False, separators=(',', ':'))
 
-    compact_verb_index = {}
-    verb_filter = top_lemmas_set | set(PRIORITY_VERBS)
-    for form, lemmas in verb_index.items():
-        vetted = [l for l in lemmas if l in verb_filter and l in dictionary]
-        if vetted:
-            compact_verb_index[form] = vetted[:2]
-    print(f"Saving verb-index ({len(compact_verb_index):,} forms) to {VERB_INDEX_OUTPUT}...")
-    with open(VERB_INDEX_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(compact_verb_index, f, ensure_ascii=False, separators=(',', ':'))
+        compact_verb_index = {}
+        verb_filter = top_lemmas_set | set(PRIORITY_VERBS)
+        for form, lemmas in verb_index.items():
+            vetted = [l for l in lemmas if l in verb_filter and l in dictionary]
+            if vetted:
+                compact_verb_index[form] = vetted[:2]
+        print(f"Saving verb-index ({len(compact_verb_index):,} forms) to {VERB_INDEX_OUTPUT}...")
+        with open(VERB_INDEX_OUTPUT, "w", encoding="utf-8") as f:
+            json.dump(compact_verb_index, f, ensure_ascii=False, separators=(',', ':'))
+    else:
+        print("Skipping dictionary/index writes (--verbs-only).")
 
     if "--indexes-only" in sys.argv:
         print("Skipping verb files generation (--indexes-only).")
         return
 
-    # Build verb catalog
+    # Derive prefix-inherited verb tables from Kaikki base / canonical verbs
+    for deriv, (px, base, p_asp) in SK_PREFIX_PAIRS.items():
+        if not verb_data[deriv]["forms"]:
+            src = CANONICAL_VERBS.get(base) or verb_data.get(base, {}).get("forms", {})
+            for tkey in ("indicativo.presente", "indicativo.minuly", "rozkazovaci"):
+                if src.get(tkey):
+                    verb_data[deriv]["forms"][tkey] = {pk: f"{px}{pv}" for pk, pv in src[tkey].items()}
+            verb_data[deriv]["aspect"] = p_asp
+
+    # Build verb catalog (only genuine -ť infinitives)
     print("Generating verb library...")
     all_verbs_set = set(PRIORITY_VERBS)
-    for v in PRIORITY_VERBS:
-        all_verbs_set.add(v)
     for w in freq_list:
         if len(all_verbs_set) >= 120:
             break
-        if w in dictionary and dictionary[w].get("type") == "verb":
+        if w in dictionary and dictionary[w].get("type") == "verb" and w.endswith("ť") and w != "ďakujem":
             all_verbs_set.add(w)
 
     final_verb_list = sorted(list(all_verbs_set))
+    for stale in VERBS_DIR.glob("*.json"):
+        if stale.stem not in all_verbs_set:
+            stale.unlink()
     for vlemma in final_verb_list:
+        raw_en = verb_glosses.get(vlemma) or (dictionary.get(vlemma, {}).get("en", ""))
         v_payload = build_verb_payload(
             vlemma,
             verb_data[vlemma]["forms"],
-            verb_data[vlemma]["aspect"]
+            verb_data[vlemma]["aspect"] or "imperfective",
+            raw_en
         )
         verb_path = VERBS_DIR / f"{vlemma}.json"
         with open(verb_path, "w", encoding="utf-8") as f:

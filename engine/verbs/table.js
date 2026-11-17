@@ -47,6 +47,20 @@ const VerbsTable = (function () {
         return String(text || '').toLowerCase().trim().normalize('NFC');
     }
 
+    function _matchesAnswer(userVal, correctAnswer) {
+        var normUser = _normalise(userVal);
+        if (!normUser) return false;
+        var normCorrect = _normalise(correctAnswer);
+        if (normUser === normCorrect) return true;
+        if (normCorrect.indexOf('/') === -1) return false;
+        var whole = normCorrect.split(/\s*\/\s*/);
+        for (var i = 0; i < whole.length; i++) {
+            if (whole[i] === normUser) return true;
+        }
+        var m = normCorrect.match(/^(.*?)([^\s/])\/([^\s/])$/);
+        return !!(m && (normUser === m[1] + m[2] || normUser === m[1] + m[3]));
+    }
+
     function _getTenseData(verb, tensePath) {
         var parts = tensePath.split('.');
         var data = verb;
@@ -83,9 +97,10 @@ const VerbsTable = (function () {
         for (var i = 0; i < persons.length; i++) {
             var p = persons[i];
             var correct = tenseData[p] || '';
-            var rowAudio = (correct && typeof ParlourTTS !== 'undefined')
+            if (!correct) continue; // omit persons absent in imperative or impersonal tenses
+            var rowAudio = (typeof ParlourTTS !== 'undefined')
                 ? ParlourTTS.button(correct, { type: 'vocabulary', label: 'Listen to ' + correct })
-                : (correct && typeof Speech !== 'undefined' ? Speech.button(correct) : '');
+                : (typeof Speech !== 'undefined' ? Speech.button(correct) : '');
             rows += ''
                 + '<div class="vtable-row">'
                 +   '<label class="vtable-label" for="vtable-' + p + '">' + _getPersonLabel(p) + '</label>'
@@ -95,6 +110,17 @@ const VerbsTable = (function () {
                 +     ' aria-label="' + _getPersonLabel(p) + '">'
                 +   '<span class="vtable-correction hidden" aria-live="polite"></span>'
                 +   rowAudio
+                + '</div>';
+        }
+        if (!rows) {
+            return ''
+                + '<div class="vtable-header">'
+                +   '<div class="vtable-verb">' + _escapeHtml(verb.infinitivo.toUpperCase()) + verbAudio + '</div>'
+                +   (meaning ? '<div class="vtable-meaning">' + _escapeHtml(meaning) + '</div>' : '')
+                + '</div>'
+                + '<div class="vtable-empty">This tense is not available for this verb.</div>'
+                + '<div class="vtable-actions">'
+                +   '<button class="vbtn vbtn-primary" data-action="next">Next Verb</button>'
                 + '</div>';
         }
 
@@ -191,12 +217,9 @@ const VerbsTable = (function () {
             total++;
             var p = input.dataset.person;
             var userVal = input.value;
-            var normalisedUser    = _normalise(userVal);
-            var normalisedCorrect = _normalise(correctAnswer);
-
             input.classList.remove('vtable-correct', 'vtable-wrong');
 
-            if (normalisedUser === normalisedCorrect && userVal.trim() !== '') {
+            if (_matchesAnswer(userVal, correctAnswer)) {
                 input.classList.add('vtable-correct');
                 input.readOnly = true;
                 if (userVal !== correctAnswer.toLowerCase()) {
