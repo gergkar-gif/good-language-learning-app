@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a lényege az Európai Unió 'jogállamisági feltételességi mechanizmusának'?",
+      "question": "Mit jelent az állásfoglalás szó?",
       "options": [
-        "Az EU felfüggesztheti a költségvetési kifizetéseket azon tagállamok számára, ahol a jogállamiság sérelme veszélyezteti az unió pénzügyi érdekeit.",
-        "Az Európai Bizottság közvetlen igazgatás alá vonhatja a tagállami bíróságokat költségvetési csalás gyanúja esetén.",
-        "Az Európai Parlament egyszerű többséggel megvonhatja egy tagállam szavazati jogát a Tanácsban."
+        "Egy testület írásban megfogalmazott álláspontja.",
+        "Egy törvény hivatalos kihirdetése.",
+        "Egy bíróság végleges ítélete egy ügyben."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "_____ soron elengedhetetlen a fékek és ellensúlyok rendszerének teljes körű helyreállítása.",
-      "hint": "ultimately",
-      "english": "Ultimately the full-scale restoration of the system of checks and balances is indispensable.",
+      "sentence": "Az Európai Parlament 2022-es állásfoglalása Magyarországot a választási autokrácia egy formájának nevezte, a kormány _____ elutasította ezt az értékelést.",
+      "english": "The European Parliament's resolution of 2022 called Hungary a form of electoral autocracy, but the government rejected this assessment.",
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ],
-      "answers": [
-        "Végső",
-        "végső"
-      ]
+      "answer": "viszont"
     },
     {
       "id": "c1-alkotmanyjog-05-controlled-3",
@@ -40,20 +36,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "szuper-mérföldkő",
-          "az uniós pénzek feloldásához kötött konkrét jogi feltétel"
+          "jogállamiság",
+          "az államhatalom jogi korlátozottsága"
         ],
         [
-          "forrásbefagyasztás",
-          "uniós kifizetések felfüggesztése"
+          "felfüggesztés",
+          "ideiglenes leállítás"
         ],
         [
-          "Integritás Hatóság",
-          "korrupcióellenes független hatóság"
+          "miniszterelnök",
+          "a kormány vezetője"
         ],
         [
-          "jogállami helyreállítás",
-          "a demokratikus normák visszarendezése"
+          "uniós forrás",
+          "az Európai Unió által folyósított pénzügyi támogatás"
+        ],
+        [
+          "választás",
+          "a képviselők megválasztása szavazással"
         ]
       ],
       "teaches": [
@@ -65,13 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Mindent _____, a bírói autonómia a jogállam legfőbb fundamentuma.",
-      "hint": "taking into account / egybevet, adverbial participle",
-      "answer": "egybevetve",
-      "english": "All in all, judicial autonomy is the supreme foundation of the rule of law.",
+      "sentence": "A kormány szerint az eljárás politikai indíttatású volt, ezzel _____ az Európai Parlament szerint a jogállamiság helyzete aggályos volt.",
+      "english": "According to the government the procedure was politically motivated; in contrast, according to the European Parliament the state of the rule of law was a cause for concern.",
       "teaches": [
-        "conclusive-markers"
-      ]
+        "adversative-contrast"
+      ],
+      "answer": "szemben"
     },
     {
       "id": "c1-alkotmanyjog-05-practice-5",
@@ -79,26 +78,36 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Végső",
-        "soron",
-        "elengedhetetlen",
+        "A",
+        "Tanács",
+        "2022-ben",
+        "felfüggesztésről",
+        "döntött,",
         "a",
-        "törvényuralom",
-        "helyreállítása",
-        "Magyarországon."
+        "Bizottság",
+        "2023-ban",
+        "viszont",
+        "felszabadított",
+        "egy",
+        "részt."
       ],
       "solution": [
-        "Végső",
-        "soron",
-        "elengedhetetlen",
+        "A",
+        "Tanács",
+        "2022-ben",
+        "felfüggesztésről",
+        "döntött,",
         "a",
-        "törvényuralom",
-        "helyreállítása",
-        "Magyarországon."
+        "Bizottság",
+        "2023-ban",
+        "viszont",
+        "felszabadított",
+        "egy",
+        "részt."
       ],
-      "english": "Ultimately the restoration of the rule of law in Hungary is indispensable.",
+      "english": "In 2022 the Council decided on a suspension, but in 2023 the Commission released a part.",
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -108,26 +117,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Egyetemi oktató",
-          "text": "Helyreállítható-e a fékek és ellensúlyok rendszere egyetlen törvénnyel?"
+          "speaker": "Kérdező",
+          "text": "Hogyan értékelte az eljárást a kormány, és hogyan az Európai Parlament?"
         },
         {
-          "speaker": "Alkotmányjogász",
-          "text": "Végső soron _____ a társadalom jogtudatának megújítása és az intézmények átfogó reformja."
-        },
-        {
-          "speaker": "Egyetemi oktató",
-          "text": "A valódi jogállamhoz tehát hosszú távú elkötelezettség kell."
+          "speaker": "Válaszadó",
+          "text": "A kormány szerint politikai indíttatású volt, az Európai Parlament _____ aggályosnak ítélte a jogállamiság helyzetét."
         }
       ],
       "options": [
-        "elengedhetetlen",
-        "felesleges",
-        "ártalmas"
+        "viszont",
+        "mert",
+        "ezért"
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -137,12 +142,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a concluding manifesto on constitutional restoration using 'Végső soron elengedhetetlen'.",
-          "answer": "Végső soron elengedhetetlen az önkényuralmi rendeleti jogalkotás lebontása, a bírói függetlenség garanciális védelme és a fékek és ellensúlyok rendszerének maradéktalan helyreállítása."
+          "prompt": "Write one sentence setting the position of the government against that of the European Parliament on the procedure begun in 2018.",
+          "answer": "A kormány szerint az eljárás politikai indíttatású volt, ezzel szemben az Európai Parlament szerint a jogállamiság helyzete aggályos volt."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -150,15 +155,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet alkalmas jogi szintézis és záró konklúzió megfogalmazására?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Végső soron elengedhetetlen / Mindent egybevetve",
-        "Előreláthatólag megvizsgáljuk / Szükségszerűen felmerülhet",
-        "Részben egyetérthetünk / Esetenként szóba jöhet"
+        "A Tanács 2022-ben felfüggesztésről döntött, a Bizottság 2023-ban viszont felszabadított egy részt.",
+        "A Tanács 2022-ben felfüggesztésről döntött, a Bizottság 2023-ban ezzel felszabadított egy részt.",
+        "A Tanács 2022-ben felfüggesztésről döntött, a Bizottság 2023-ban szemben felszabadított egy részt."
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ]
     }
   ]

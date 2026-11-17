@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi az oka a magyar állami kórházak krónikus, újratermelődő adósságállományának?",
+      "question": "Mit jelent a beszállító szó?",
       "options": [
-        "Az, hogy a Nemzeti Egészségbiztosítási Alapkezelő (NEAK) által fizetett eljárási díjak nem fedezik a gyógyítás, a gyógyszerek és a rezsi valós piaci költségeit.",
-        "Az intézményi menedzsment adminisztratív elszámolási késedelmei és a számlázási szoftverek hibái.",
-        "A betegek által igényelt luxus szolgáltatások és egyágyas kórtermek túlzott aránya."
+        "Aki árut szállít egy intézménynek.",
+        "Aki pénzzel tartozik egy intézménynek.",
+        "Aki az intézmény számláit ellenőrzi."
       ],
       "correct": 0,
       "teaches": [
@@ -22,13 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A kormánynak kötelessége _____ a kórházak valós költségeit fedező finanszírozást biztosítani.",
-      "hint": "would be / lenni, cond 3sg",
-      "answer": "volna",
-      "english": "It would be the government's duty to provide funding covering hospitals' real costs.",
+      "sentence": "A kórházak nem fizették ki a számlákat, és _____ a beszállítók 2013 júniusában tiltakoztak.",
+      "english": "The hospitals did not pay the invoices, and because of this the suppliers protested in June 2013.",
       "teaches": [
-        "formal-obligation"
-      ]
+        "causal-postpositions"
+      ],
+      "answer": "emiatt"
     },
     {
       "id": "c1-egeszsegugy-02-controlled-3",
@@ -37,20 +36,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "kórházi adósságállomány",
-          "kifizetetlen kórházi számlák összessége"
+          "tartozás",
+          "amivel valaki még adós"
         ],
         [
-          "adósságkonszolidáció",
-          "az állam által utólag kifizetett adósságrendezés"
+          "beszállító",
+          "aki árut szállít egy intézménynek"
         ],
         [
-          "beszállítói tartozás",
-          "orvostechnikai cégek felé fennálló elmaradás"
+          "számla",
+          "a vevőnek küldött fizetési felszólítás"
         ],
         [
-          "műtéti várólista",
-          "halasztható beavatkozásokra várakozók névsora"
+          "államtitkár",
+          "a minisztérium egyik vezetője"
+        ],
+        [
+          "fenntartás",
+          "egy intézmény működtetése"
         ]
       ],
       "teaches": [
@@ -62,13 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A minisztérium nem _____ meg a kórházakat az önálló gazdálkodás alapvető feltételeitől.",
-      "hint": "must not deprive / foszt + -hatja (megfoszt)",
-      "answer": "foszthatja",
-      "english": "The ministry must not deprive hospitals of the basic conditions of autonomous management.",
+      "sentence": "A tartozás nőtt, aminek _____ a beszállítók nem kaptak pénzt.",
+      "english": "The debt grew, as a result of which the suppliers did not get paid.",
       "teaches": [
-        "formal-obligation"
-      ]
+        "causal-postpositions"
+      ],
+      "answer": "következtében"
     },
     {
       "id": "c1-egeszsegugy-02-practice-5",
@@ -76,28 +78,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "államnak",
-        "kötelessége",
-        "biztosítani",
-        "a",
+        "A",
         "kórházak",
-        "stabil",
-        "működését."
+        "tartoztak,",
+        "és",
+        "emiatt",
+        "a",
+        "beszállítók",
+        "2013-ban",
+        "tiltakoztak."
       ],
       "solution": [
-        "Az",
-        "államnak",
-        "kötelessége",
-        "biztosítani",
-        "a",
+        "A",
         "kórházak",
-        "stabil",
-        "működését."
+        "tartoztak,",
+        "és",
+        "emiatt",
+        "a",
+        "beszállítók",
+        "2013-ban",
+        "tiltakoztak."
       ],
-      "english": "The state has a duty to secure hospitals' stable operation.",
+      "english": "The hospitals owed money, and because of this the suppliers protested in 2013.",
       "teaches": [
-        "formal-obligation"
+        "causal-postpositions"
       ]
     },
     {
@@ -107,26 +111,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Beszállító",
-          "text": "Már hat hónapja nem fizette ki a kórház az életmentő pacemaker számláit."
+          "speaker": "Kérdező",
+          "text": "Miért tiltakoztak a beszállítók 2013 júniusában?"
         },
         {
-          "speaker": "Orvosigazgató",
-          "text": "Megértem a felháborodást; az állam nem _____ csődbe az orvosi eszközök szállítóit."
-        },
-        {
-          "speaker": "Beszállító",
-          "text": "Kénytelenek leszünk felfüggeszteni a szállítást a konszolidációig."
+          "speaker": "Válaszadó",
+          "text": "A kórházak nem fizettek, _____ a beszállítók tiltakoztak."
         }
       ],
       "options": [
-        "sodorhatja",
-        "hívhatja",
-        "kérheti"
+        "emiatt",
+        "viszont",
+        "ugyanis"
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "causal-postpositions"
       ]
     },
     {
@@ -136,12 +136,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence articulating the state's healthcare obligation using a deontic modal structure.",
-          "answer": "A kormánynak alkotmányos kötelessége szavatolni a kórházak fenntartható költségvetését, és nem kényszerítheti az orvosokat eszközhiányos kompromisszumokra a betegellátás rovására."
+          "prompt": "Write one sentence with emiatt about the suppliers in June 2013.",
+          "answer": "A kórházak tartoztak a beszállítóknak, és emiatt a beszállítók 2013 júniusában tiltakoztak."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "causal-postpositions"
       ]
     },
     {
@@ -149,15 +149,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik modális forma fejezi ki a legpontosabban az állami felelősségvállalás kötelezettségét?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "kötelessége szavatolni",
-        "javaslatot tehet a gazdálkodási keretszámok enyhe módosítására",
-        "vizsgálhatja a beszállítói szerződések formai követelményeit"
+        "A tartozás nőtt, aminek következtében a beszállítók nem kaptak pénzt.",
+        "A tartozás nőtt, aminek következtében miatt a beszállítók nem kaptak pénzt.",
+        "A tartozás nőtt, aminek következtére a beszállítók nem kaptak pénzt."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "causal-postpositions"
       ]
     }
   ]

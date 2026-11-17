@@ -325,6 +325,10 @@ async function walkLesson(browser, opts, stem) {
                 else if (after.gated && after.attempts > 0) res.notes.push(`${here}: needed ${after.attempts + 1} attempts`);
                 const dis = await footer().isDisabled();
                 if (dis) { stuck(`Continue disabled (button "${after.btnText}")`); break; }
+                // A Guide note (engine/guide.js, e.g. 'lesson-tap-word' under a short story) can
+                // sit over the Continue button; a learner closes it with its x first (2026-11-17).
+                const covering = page.locator('.pl-note .pl-note-close');
+                if (await covering.count()) { res.notes.push(`${here}: closed a guide note covering Continue`); await covering.first().click({ timeout: 2000 }).catch(() => {}); }
                 await footer().click({ timeout: 4000 });
             }
             // Wait for the engine to move on (new stepState, or summary).

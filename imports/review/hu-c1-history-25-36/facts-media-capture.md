@@ -48,3 +48,4 @@
 
 ## Definitions in items
 - versenyhatóság examines mergers; Médiatanács (elected by the Assembly) supervises media; kiadó publishes papers | L01 | sure
+- At launch Munk Veronika led the newsroom; Telex appeared in Hungarian and English; Dull joined after his non-compete period | seg 04 | check

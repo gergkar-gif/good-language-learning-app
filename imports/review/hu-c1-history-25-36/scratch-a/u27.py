@@ -1,0 +1,157 @@
+import sys; sys.path.insert(0,'/home/user/parlour-read-a/.scratch')
+from lib import *
+from u27_text import T27
+P='c1-egeszsegugy'
+V='c1-healthcare-crisis-vocab'
+def tbl(rows): return {'type':'table','title':'Patterns in Context','rows':[list(r) for r in rows]}
+def txt(t,c): return {'type':'text','title':t,'content':c}
+L=[]
+L.append(dict(s='01',title="Doctors' Pay and Gratuities, 2010–2021",grammar_name='Recap: comparison with -hoz képest',
+ goals=["I can describe the pay agreement between the government and the Medical Chamber in 2020 and the law of 2021, with dates (*hálapénz, alapbér, béremelés*).",
+        "I can compare two levels of pay with *-hoz/-hez/-höz képest* (*az osztrák fizetésekhez képest*).",
+        "I can say how the government and the Medical Chamber judged the agreement."],
+ gr=dict(title='Recap: Comparing with képest',sections=[
+  txt('How it works',"You know *képest* from B1 Unit 2 (*a régi énemhez képest*): the noun before it takes *-hoz/-hez/-höz*, and the phrase sets one level against another. In a history of pay it names the standard a claim is measured against, and the source of the claim stays in the sentence: *A kamara szerint az osztrák fizetésekhez képest alacsonyak voltak a magyar orvosi fizetések.* New in this lesson is the vocabulary of pay."),
+  txt('Example',"Example: *A korábbi alapbérhez képest 2021-ben jelentősen emelkedett az orvosok bére.*"),
+  tbl([("A kamara szerint az osztrák fizetésekhez képest alacsonyak voltak a magyar orvosi fizetések.","According to the chamber, Hungarian doctors' pay was low compared with Austrian pay."),
+       ("A korábbi alapbérhez képest 2021-ben jelentősen emelkedett az orvosok bére.","Compared with the earlier basic wage, doctors' pay rose significantly in 2021."),
+       ("Az orvosokhoz képest az ápolók bére alacsonyabb volt.","Compared with doctors, nurses' pay was lower.")])]),
+ vocab=[('hálapénz','gratuity (money given by patients)','noun'),('alapbér','basic wage','noun'),('béremelés','pay rise','noun'),('kamara','chamber (professional body)','noun'),('megállapodás','agreement','noun')],
+ ex=[
+  mc(f'{P}-01-introduce-1','introduce','vocabulary',V,'Mit jelent a hálapénz?',
+     ['A beteg által önként adott pénz az ellátásért.','Az állam által fizetett külön pénz az orvosnak.','A kórház által kért díj a betegektől.'],0),
+  fb(f'{P}-01-controlled-2','controlled','grammar','kepest','A kamara szerint az osztrák fizetésekhez _____ alacsonyak voltak a magyar orvosi fizetések.',"According to the chamber, Hungarian doctors' pay was low compared with Austrian pay.",['képest']),
+  mt(f'{P}-01-controlled-3','controlled',V,[('hálapénz','amit a beteg önként ad az orvosnak'),('alapbér','a munkabér alapösszege'),('béremelés','a fizetés növelése'),('kamara','a szakma önkormányzati testülete'),('megállapodás','két fél közös döntése')]),
+  fb(f'{P}-01-practice-4','practice','grammar','kepest','A korábbi _____ képest 2021-ben jelentősen emelkedett az orvosok bére.','Compared with the earlier basic wage, doctors\' pay rose significantly in 2021.',['alapbérhez'],hint='alapbér, goes with képest'),
+  sb(f'{P}-01-practice-5','practice','kepest','A korábbi alapbérhez képest 2021-ben jelentősen emelkedett az orvosok bére.',"Compared with the earlier basic wage, doctors' pay rose significantly in 2021."),
+  dl(f'{P}-01-dialogue-6','kepest',[('Kérdező','Mihez hasonlította a kamara az orvosi fizetéseket?'),('Válaszadó','Az osztrák fizetésekhez _____ alacsonynak tartotta őket.')],['képest','mellett','szerint'],0),
+  sw(f'{P}-01-production-7','production','kepest',"Write one sentence with képest: compare Hungarian doctors' pay with Austrian pay, as the chamber saw it.",'A kamara szerint az osztrák fizetésekhez képest alacsonyak voltak a magyar orvosi fizetések.'),
+  mc(f'{P}-01-check-8','check','grammar','kepest','Melyik mondat helyes?',
+     ['A korábbi alapbérhez képest 2021-ben emelkedett az orvosok bére.','A korábbi alapbér képest 2021-ben emelkedett az orvosok bére.','A korábbi alapbérre képest 2021-ben emelkedett az orvosok bére.'],0,ds={2:'ra-re'}),
+ ]))
+L.append(dict(s='02',title='Hospital Debts and Suppliers, 2012–2023',grammar_name='Recap: cause and result with emiatt and aminek következtében',
+ goals=["I can describe the takeover of hospitals by the state in 2012 and the debts to suppliers in 2013, 2015, 2019 and 2023, with dates (*tartozás, beszállító, számla*).",
+        "I can link a cause and its result with *emiatt* and *aminek következtében* (*a kórházak tartoztak, és emiatt a beszállítók tiltakoztak*).",
+        "I can say what was reported and what was disputed about the debts."],
+ gr=dict(title='Recap: Cause and Result',sections=[
+  txt('How it works',"You know *emiatt* from B1 Unit 16 (*Kevés az eső, és emiatt kevés a víz a tóban*) and the formal *aminek következtében*: both link a whole clause to its result. In a history they connect two dated events without a judgement: *A kórházak tartoztak a beszállítóknak, és emiatt a beszállítók 2013 júniusában tiltakoztak.* *emiatt* begins the second clause; *aminek következtében* follows a comma. New in this lesson is the vocabulary of hospital finance."),
+  txt('Example',"Example: *A tartozás nőtt, aminek következtében a beszállítók nem kaptak pénzt.*"),
+  tbl([("A kórházak tartoztak a beszállítóknak, és emiatt a beszállítók 2013 júniusában tiltakoztak.","The hospitals owed money to the suppliers, and because of this the suppliers protested in June 2013."),
+       ("A tartozás nőtt, aminek következtében a beszállítók nem kaptak pénzt.","The debt grew, as a result of which the suppliers did not get paid."),
+       ("A számlák kifizetetlenek maradtak, és emiatt a beszállítók jelezték a problémát.","The invoices stayed unpaid, and because of this the suppliers reported the problem.")])]),
+ vocab=[('tartozás','debt','noun'),('beszállító','supplier','noun'),('számla','invoice, bill','noun'),('fenntartás','maintenance (running an institution)','noun'),('államtitkár','state secretary','noun')],
+ ex=[
+  mc(f'{P}-02-introduce-1','introduce','vocabulary',V,'Mit jelent a beszállító szó?',
+     ['Aki árut szállít egy intézménynek.','Aki pénzzel tartozik egy intézménynek.','Aki az intézmény számláit ellenőrzi.'],0),
+  fb(f'{P}-02-controlled-2','controlled','grammar','causal-postpositions','A kórházak nem fizették ki a számlákat, és _____ a beszállítók 2013 júniusában tiltakoztak.','The hospitals did not pay the invoices, and because of this the suppliers protested in June 2013.',['emiatt']),
+  mt(f'{P}-02-controlled-3','controlled',V,[('tartozás','amivel valaki még adós'),('beszállító','aki árut szállít egy intézménynek'),('számla','a vevőnek küldött fizetési felszólítás'),('államtitkár','a minisztérium egyik vezetője'),('fenntartás','egy intézmény működtetése')]),
+  fb(f'{P}-02-practice-4','practice','grammar','causal-postpositions','A tartozás nőtt, aminek _____ a beszállítók nem kaptak pénzt.','The debt grew, as a result of which the suppliers did not get paid.',['következtében']),
+  sb(f'{P}-02-practice-5','practice','causal-postpositions','A kórházak tartoztak, és emiatt a beszállítók 2013-ban tiltakoztak.','The hospitals owed money, and because of this the suppliers protested in 2013.'),
+  dl(f'{P}-02-dialogue-6','causal-postpositions',[('Kérdező','Miért tiltakoztak a beszállítók 2013 júniusában?'),('Válaszadó','A kórházak nem fizettek, _____ a beszállítók tiltakoztak.')],['emiatt','viszont','ugyanis'],0),
+  sw(f'{P}-02-production-7','production','causal-postpositions','Write one sentence with emiatt about the suppliers in June 2013.','A kórházak tartoztak a beszállítóknak, és emiatt a beszállítók 2013 júniusában tiltakoztak.'),
+  mc(f'{P}-02-check-8','check','grammar','causal-postpositions','Melyik mondat helyes?',
+     ['A tartozás nőtt, aminek következtében a beszállítók nem kaptak pénzt.','A tartozás nőtt, aminek következtében miatt a beszállítók nem kaptak pénzt.','A tartozás nőtt, aminek következtére a beszállítók nem kaptak pénzt.'],0),
+ ]))
+L.append(dict(s='03',title='Nurses, Wages and Emigration, 2019–2024',grammar_name='Recap: time frames with során and múltával',
+ goals=["I can describe the nurses' protest of 2021, the survey on working abroad and the pay rises announced for 2022–2024, with dates (*ápoló, szakdolgozó, bérkülönbség*).",
+        "I can frame events in time with *során* and *múltával* (*a 2021-es tüntetés során*).",
+        "I can say how the government and the staff organisations judged the pay gap."],
+ gr=dict(title='Recap: Time Frames',sections=[
+  txt('How it works',"You know *során* from B2 Unit 22 (*a vizsgálat során*), *folyamán* and *múltával*: they place an event inside a period or after a lapse of time. They follow the noun in its plain form. In a history they tie each event to its occasion: *A 2021-es tüntetés során az ápolók magasabb béreket követeltek.* *Néhány hónap múltával a kormány béremelést jelentett be.* New in this lesson is the vocabulary of nursing."),
+  txt('Example',"Example: *A 2021-es felmérés során kiderült, hogy több mint ezer ápoló fontolgatta a külföldi munkavállalást.*"),
+  tbl([("A 2021-es tüntetés során az ápolók magasabb béreket követeltek.","During the protest of 2021 the nurses demanded higher pay."),
+       ("A 2021-es felmérés során kiderült, hogy több mint ezer ápoló fontolgatta a külföldi munkavállalást.","The survey of 2021 showed that more than a thousand nurses were considering working abroad."),
+       ("Néhány hónap múltával a kormány béremelést jelentett be.","After a few months the government announced a pay rise.")])]),
+ vocab=[('ápoló','nurse','noun'),('szakdolgozó','health professional (not a doctor)','noun'),('bérkülönbség','pay gap','noun'),('tüntetés','demonstration','noun'),('felmérés','survey','noun'),('elvándorlás','emigration of workers','noun'),('külföldi munkavállalás','working abroad','expression'),('fontolgat','to consider','verb')],
+ ex=[
+  mc(f'{P}-03-introduce-1','introduce','vocabulary',V,'Mit jelent a szakdolgozó szó az egészségügyben?',
+     ['Egészségügyi dolgozó, aki nem orvos.','Az orvosok gyógyszereit szállító cég.','A kórház gazdasági vezetője.'],0),
+  fb(f'{P}-03-controlled-2','controlled','grammar','b2-temporal-framing','A 2021-es tüntetés _____ az ápolók magasabb béreket követeltek.','During the protest of 2021 the nurses demanded higher pay.',['során','folyamán']),
+  mt(f'{P}-03-controlled-3','controlled',V,[('ápoló','aki a betegek ápolásával foglalkozik'),('bérkülönbség','két fizetés közötti különbség'),('tüntetés','a közvélemény előtti nyilvános tiltakozás'),('felmérés','kérdőíves vizsgálat'),('elvándorlás','külföldre költözés munka miatt')]),
+  fb(f'{P}-03-practice-4','practice','grammar','b2-temporal-framing','Néhány hónap _____ a kormány béremelést jelentett be.','After a few months the government announced a pay rise.',['múltával']),
+  sb(f'{P}-03-practice-5','practice','b2-temporal-framing','A 2021-es felmérés során kiderült, hogy több mint ezer ápoló fontolgatta a külföldi munkavállalást.','The survey of 2021 showed that more than a thousand nurses were considering working abroad.'),
+  dl(f'{P}-03-dialogue-6','b2-temporal-framing',[('Kérdező','Mit mutatott a felmérés az ápolók terveiről?'),('Válaszadó','A felmérés _____ kiderült, hogy több mint ezer ápoló külföldi munkát fontolgatott.')],['során','óta','helyett'],0),
+  sw(f'{P}-03-production-7','production','b2-temporal-framing','Write one sentence with során: say what the survey of 2021 showed.','A 2021-es felmérés során kiderült, hogy több mint ezer ápoló fontolgatta a külföldi munkavállalást.'),
+  mc(f'{P}-03-check-8','check','grammar','b2-temporal-framing','Melyik mondat helyes?',
+     ['A 2021-es tüntetés során az ápolók magasabb béreket követeltek.','A 2021-es tüntetésnek során az ápolók magasabb béreket követeltek.','Során a 2021-es tüntetés az ápolók magasabb béreket követeltek.'],0),
+ ]))
+L.append(dict(s='04',title='The Medical Chamber Law of 2023',grammar_name='Recap: indirect questions with -e',
+ goals=["I can describe the law of 28 February 2023 on the Medical Chamber and the reactions to it, with dates (*kötelező tagság, önkéntes, kivételes eljárás*).",
+        "I can report an open question with *hogy … -e* (*vitatott volt, hogy a törvény az orvosokat védte-e*).",
+        "I can say what the state secretary, the chamber's president and the European Commission stated."],
+ gr=dict(title='Recap: Indirect Questions with -e',sections=[
+  txt('How it works',"You know *-e* from B1 Unit 13 (*A riporter azt kérdezte, hogy megérkezett-e a segély*): in an embedded yes/no question the verb takes *-e*. In a history it states a question that was still open: *Vitatott volt, hogy a törvény az orvosokat védte-e.* The verb stays in the past, and the narrator does not answer the question. New in this lesson is the vocabulary of professional bodies."),
+  txt('Example',"Example: *Vitatott volt, hogy a törvény az orvosokat védte-e, vagy a kamarát gyengítette.*"),
+  tbl([("Vitatott volt, hogy a törvény az orvosokat védte-e, vagy a kamarát gyengítette.","It was disputed whether the law protected the doctors or weakened the chamber."),
+       ("A kérdés az volt, hogy a kamara tagjai a kamarában maradnak-e.","The question was whether the chamber's members would stay in the chamber."),
+       ("Az Európai Bizottság azt vizsgálta, hogy a törvény veszélyezteti-e az uniós forrásokat.","The European Commission examined whether the law endangered the EU funds.")])]),
+ vocab=[('kötelező tagság','compulsory membership','expression'),('önkéntes','voluntary','adjective'),('kivételes eljárás','exceptional procedure (a fast parliamentary procedure)','expression'),('etikai eljárás','ethics proceeding','expression'),('veszélyeztet','to endanger','verb'),('törvénymódosítás','amendment of a law','noun')],
+ ex=[
+  mc(f'{P}-04-introduce-1','introduce','vocabulary',V,'Mit jelent az önkéntes tagság?',
+     ['Aki akarja, tag lehet, de nem kötelező.','Aki belép, annak fizetnie kell, mert kötelező.','Aki tag, annak kötelező a hivatása gyakorlása.'],0),
+  fb(f'{P}-04-controlled-2','controlled','grammar','indirect-questions','Vitatott volt, _____ a törvény az orvosokat védte-e, vagy a kamarát gyengítette.','It was disputed whether the law protected the doctors or weakened the chamber.',['hogy']),
+  mt(f'{P}-04-controlled-3','controlled',V,[('kötelező tagság','amelyből nem lehet kilépni'),('törvénymódosítás','egy meglévő törvény megváltoztatása'),('etikai eljárás','a szakmai magatartás vizsgálata'),('veszélyeztet','károsodás veszélyének kitesz'),('kivételes eljárás','gyorsított parlamenti döntéshozatal')]),
+  fb(f'{P}-04-practice-4','practice','grammar','indirect-questions','A kérdés az volt, hogy a kamara tagjai a kamarában maradnak-e, _____ kilépnek.','The question was whether the chamber\'s members would stay in the chamber or leave.',['vagy']),
+  sb(f'{P}-04-practice-5','practice','indirect-questions','Vitatott volt, hogy a törvény az orvosokat védte-e.','It was disputed whether the law protected the doctors.'),
+  dl(f'{P}-04-dialogue-6','indirect-questions',[('Kérdező','Miről szólt a vita 2023-ban?'),('Válaszadó','Arról, hogy a törvény az orvosokat _____ a kamarát gyengítette.')],['védte-e, vagy','védte, vagy-e','védte-e vagy-e'],0),
+  sw(f'{P}-04-production-7','production','indirect-questions','Write one sentence with -e: say what was disputed about the law of 2023.','Vitatott volt, hogy a törvény az orvosokat védte-e, vagy a kamarát gyengítette.'),
+  mc(f'{P}-04-check-8','check','grammar','indirect-questions','Melyik mondat helyes?',
+     ['Vitatott volt, hogy a törvény az orvosokat védte-e.','Vitatott volt, hogy-e a törvény az orvosokat védte.','Vitatott volt, hogy a törvény az orvosokat védte-é.'],0),
+ ]))
+L.append(dict(s='05',title='The Healthy Budapest Programme and the 2026 Election',grammar_name='Recap: concession with ellenére and dacára',
+ goals=["I can describe the Healthy Budapest Programme from 2017 and the delay of the South Buda hospital, with dates (*centrumkórház, korszerűsítés, megvalósítás*).",
+        "I can state a concession with *ellenére* and *dacára* (*a késés ellenére a kormány szerint …*).",
+        "I can report how the government and the critics judged the programme, and the result of the 2026 election."],
+ gr=dict(title='Recap: Concession with ellenére and dacára',sections=[
+  txt('How it works',"You know *ellenére* from B1 Unit 29 (*a nehézségek ellenére*) and *dacára*: both mean 'in spite of' and follow the plain noun. In a history they set a fact against a judgement without choosing: *A késés ellenére a kormány szerint a program a fővárosi ellátás korszerűsítését szolgálta.* The judgement keeps its source. New in this lesson is the vocabulary of hospital building."),
+  txt('Example',"Example: *A halasztás dacára a kormány szerint a program a korszerűsítést szolgálta.*"),
+  tbl([("A késés ellenére a kormány szerint a program a fővárosi ellátás korszerűsítését szolgálta.","In spite of the delay, according to the government the programme served the modernisation of care in the capital."),
+       ("A halasztás dacára a kormány szerint a program a korszerűsítést szolgálta.","In spite of the postponement, according to the government the programme served modernisation."),
+       ("A bírálatok ellenére a kormány kitartott a program mellett.","In spite of the criticism, the government stood by the programme.")])]),
+ vocab=[('centrumkórház','central hospital (a large regional hospital)','noun'),('korszerűsítés','modernisation','noun'),('megvalósítás','implementation','noun'),('költség','cost','noun'),('halaszt','to postpone','verb'),('késés','delay','noun'),('program','programme','noun')],
+ ex=[
+  mc(f'{P}-05-introduce-1','introduce','vocabulary',V,'Mit jelent a korszerűsítés?',
+     ['Valami átalakítása a mai igényekhez.','Valami végleges bezárása.','Valami másik városba költöztetése.'],0),
+  fb(f'{P}-05-controlled-2','controlled','grammar','concessive-postpositions','A késés _____ a kormány szerint a program a fővárosi ellátás korszerűsítését szolgálta.','In spite of the delay, according to the government the programme served the modernisation of care in the capital.',['ellenére','dacára']),
+  mt(f'{P}-05-controlled-3','controlled',V,[('centrumkórház','nagy, több településről fogadó kórház'),('megvalósítás','a terv végrehajtása'),('költség','amibe valami kerül'),('halaszt','későbbi időpontra tesz'),('késés','a tervezettnél későbbi teljesítés')]),
+  fb(f'{P}-05-practice-4','practice','grammar','concessive-postpositions','A halasztás dacára a kormány szerint a program a fővárosi ellátás _____ szolgálta.','In spite of the postponement, according to the government the programme served the modernisation of care in the capital.',['korszerűsítését'],hint='korszerűsítés, object'),
+  sb(f'{P}-05-practice-5','practice','concessive-postpositions','A késés ellenére a kormány szerint a program a korszerűsítést szolgálta.','In spite of the delay, according to the government the programme served modernisation.'),
+  dl(f'{P}-05-dialogue-6','concessive-postpositions',[('Kérdező','Hogyan értékelte a kormány az Egészséges Budapest Programot?'),('Válaszadó','A késés _____ a kormány szerint a program a fővárosi ellátás korszerűsítését szolgálta.')],['ellenére','miatt','helyett'],0),
+  sw(f'{P}-05-production-7','production','concessive-postpositions','Write one sentence with ellenére: give the government\'s view of the programme in spite of the delay.','A késés ellenére a kormány szerint a program a fővárosi ellátás korszerűsítését szolgálta.'),
+  mc(f'{P}-05-check-8','check','grammar','concessive-postpositions','Melyik mondat helyes?',
+     ['A késés ellenére a kormány szerint a program korszerűsítést szolgált.','A késést ellenére a kormány szerint a program korszerűsítést szolgált.','A késés ellenére, hogy a kormány szerint a program korszerűsítést szolgált.'],0),
+ ]))
+CONS=[
+  mc(f'{P}-consolidation-1','recognize','grammar','kepest','Melyik mondat helyes?',
+     ['Az orvosokhoz képest az ápolók bére alacsonyabb volt.','Az orvosok képest az ápolók bére alacsonyabb volt.','Az orvosokra képest az ápolók bére alacsonyabb volt.'],0,ds={2:'ra-re'}),
+  mc(f'{P}-consolidation-2','recognize','grammar','causal-postpositions','Which sentence says that the suppliers protested because the hospitals did not pay?',
+     ['A kórházak nem fizettek, és emiatt a beszállítók tiltakoztak.','A kórházak nem fizettek, és ellenére a beszállítók tiltakoztak.','A kórházak nem fizettek, és emiatt tiltakoztak a beszállítók volt.'],0),
+  mt(f'{P}-consolidation-3','recognize',V,[('hálapénz','amit a beteg önként ad az orvosnak'),('beszállító','aki árut szállít egy intézménynek'),('szakdolgozó','egészségügyi dolgozó, aki nem orvos'),('önkéntes','amit senki sem köteles megtenni'),('centrumkórház','nagy, több településről fogadó kórház')]),
+  fb(f'{P}-consolidation-4','recall','vocabulary',V,'2021-től a _____ adása és elfogadása tilos lett.','From 2021 giving and accepting gratuities became prohibited.',['hálapénz']),
+  fb(f'{P}-consolidation-5','recall','vocabulary',V,'2013 júniusában a kórházak harmincöt fő _____ jelezte, hogy nem vár tovább a kifizetetlen számlákra.','In June 2013 thirty-five main suppliers of the hospitals signalled that they would no longer wait for the unpaid invoices.',['beszállítója']),
+  fb(f'{P}-consolidation-6','context','grammar','b2-temporal-framing','A 2021-es felmérés _____ kiderült, hogy több mint ezer ápoló külföldi munkát fontolgatott.','The survey of 2021 showed that more than a thousand nurses were considering work abroad.',['során','folyamán']),
+  fb(f'{P}-consolidation-7','context','grammar','indirect-questions','Vitatott volt, hogy a törvény az orvosokat védte-e, _____ a kamarát gyengítette.','It was disputed whether the law protected the doctors or weakened the chamber.',['vagy']),
+  fb(f'{P}-consolidation-8','context','grammar','concessive-postpositions','A késés _____ a kormány szerint a program korszerűsítést szolgált.','In spite of the delay, according to the government the programme served modernisation.',['ellenére','dacára']),
+  mc(f'{P}-consolidation-9','context','grammar','concessive-postpositions','Which word completes the sentence? \'A késés _____ a kormány szerint a program korszerűsítést szolgált.\'',
+     ['ellenére','miatt','óta'],0),
+  sb(f'{P}-consolidation-10','produce','indirect-questions','A kérdés az volt, hogy a kamara tagjai a kamarában maradnak-e.','The question was whether the chamber\'s members would stay in the chamber.'),
+  sw(f'{P}-consolidation-11','production',V,'Write two sentences about the pay agreement of 2020: say who agreed and what changed from 1 January 2021.','2020 őszén a kormány és a kamara megállapodott az orvosok béremeléséről. 2021. január 1-jétől jelentősen emelkedett az orvosok bére.'),
+  sw(f'{P}-consolidation-12','production',V,'Write two sentences about the elections of 2026: give the result of 12 April and the election of the prime minister on 9 May.','2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett. 2026. május 9-én az Országgyűlés Magyar Pétert választotta miniszterelnökké.'),
+]
+L.append(dict(s='consolidation',title='Unit 27 Consolidation: Healthcare in Hungary, 2010–2026',grammar_name='Review: comparison, cause, time frames, open questions and concession',
+ goals=["I can summarise the pay agreement of 2020, the hospital debts and the nurses' pay between 2010 and 2026, with years and sources.",
+        "I can compare, link cause and result, frame time, report open questions and concede in a neutral account.",
+        "I can report the Medical Chamber law of 2023, the Healthy Budapest Programme and the 2026 election with dates."],ex=CONS))
+U=dict(stem='egeszsegugy',id='healthcare-crisis',unit_no=27,
+ title='Healthcare in Hungary, 2010–2026',
+ intro=["Between 2010 and 2026 Hungarian healthcare saw state takeover of hospitals, repeated debts to suppliers, a large pay rise for doctors, pay disputes with nurses, a new law on the Medical Chamber and a hospital building programme. Each step was judged differently by the government, professional bodies and critics.",
+        "In five short accounts you follow these events year by year, name who judged them how, and practise the forms a neutral history needs: comparison, cause and result, time frames, open questions and concession. The period ends with the parliamentary election of 12 April 2026."],
+ stories=[
+  dict(file='c1-egeszsegugy-01-halapenz-beremeles-feszultseg',title='Az orvosok bére és a hálapénz, 2010–2021',summary='2020-ban a kormány és a Magyar Orvosi Kamara megállapodott az orvosok béremeléséről; 2021-től a hálapénz tilos lett. A kormány és a kamara eltérően értékelte a megállapodást.',paras=[T27[0]]),
+  dict(file='c1-egeszsegugy-02-korhazi-adossag-beszallitok',title='A kórházi tartozások és a beszállítók, 2012–2023',summary='2012-ben a kórházak állami fenntartásba kerültek; 2013 és 2023 között többször jelentek meg beszámolók a beszállítók felé fennálló tartozásokról.',paras=[T27[1]]),
+  dict(file='c1-egeszsegugy-03-apolo-elvandorlas-berres',title='Az ápolók bére és a külföldi munkavállalás, 2019–2024',summary='2021-ben ápolók tüntettek a magasabb bérekért; a kormány 2022-től béremelést jelentett be, a bérkülönbség megítélése azonban eltérő volt.',paras=[T27[2]]),
+  dict(file='c1-egeszsegugy-04-mok-felszamolasa-retorzio',title='Az orvosi kamara és a 2023-as törvény',summary='2023. február 28-án az Országgyűlés megszüntette az orvosok kötelező kamarai tagságát; az államtitkár, a kamara elnöke és az Európai Bizottság eltérően nyilatkozott.',paras=[T27[3]]),
+  dict(file='c1-egeszsegugy-05-maganegeszsegugy-rekonstrukcio',title='Az Egészséges Budapest Program és a 2026-os választás',summary='2017-ben indult az Egészséges Budapest Program; a dél-budai centrumkórház megnyitása késett. 2026 áprilisában választást tartottak, májusban új kormány alakult.',paras=[T27[4]]),
+ ],lessons=L)
+if __name__=='__main__':
+    write_unit(U)

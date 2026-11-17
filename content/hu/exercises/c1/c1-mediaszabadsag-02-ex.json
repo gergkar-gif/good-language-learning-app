@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan működtek a szerkesztőségi feketelisták az MTVA-ban a kiszivárgott hírek szerint?",
+      "question": "Mit jelent a kiegyensúlyozott tájékoztatás?",
       "options": [
-        "Meghatározták azon civil szakértők, jogvédők és ellenzéki politikusok névsorát, akiket tilos volt megszólaltatni a hírműsorokban.",
-        "Rögzítették a televíziós stábok számára a stúdiókban kötelezően viselendő hivatalos formaruhák színét és szabásmintáját.",
-        "Listázták a nemzetközi hírügynökségektől átvett azon gazdasági jelentéseket, amelyeket előzetes jóváhagyás után lehetett közölni."
+        "Olyan hírközlés, amely több álláspontot is bemutat.",
+        "Olyan hírközlés, amelyért a nézők fizetnek.",
+        "Olyan hírközlés, amely csak a hivatalos közleményeket ismétli."
       ],
       "correct": 0,
       "teaches": [
@@ -22,13 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A közszolgálati adónak nem _____ pártpropaganda közvetítőjeként működnie.",
-      "hint": "szabad + -na",
-      "answer": "szabadna",
-      "english": "The public service channel should not operate as a conduit for party propaganda.",
+      "sentence": "Annak _____, hogy a törvény kiegyensúlyozott tájékoztatást írt elő, a bírálók szerint a hírek a kormány álláspontját részesítették előnyben.",
+      "english": "Although the law required balanced reporting, according to the critics the news favoured the government's position.",
       "teaches": [
-        "formal-obligation"
-      ]
+        "concessive-annak-ellenere"
+      ],
+      "answer": "ellenére"
     },
     {
       "id": "c1-mediaszabadsag-02-controlled-3",
@@ -37,20 +36,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "MTVA",
-          "állami médiumokat működtető vagyonkezelő alap"
+          "közszolgálati média",
+          "az állami költségvetésből működő műsorszolgáltatás"
         ],
         [
-          "szerkesztőségi feketelista",
-          "nemkívánatos megszólalók titkos tiltólistája"
+          "székház",
+          "az az épület, amelyben egy szervezet vezetése dolgozik"
         ],
         [
-          "kormányszócső",
-          "kormányzati érdekeket kritikátlanul szajkózó médium"
+          "frekvencia",
+          "a rádióadás hullámhossza"
         ],
         [
-          "hírhamisítás",
-          "képek és mondatok valótlan összevágása"
+          "követelés",
+          "amit valaki határozottan kér"
+        ],
+        [
+          "szabálysértés",
+          "a szabályok megszegése"
         ]
       ],
       "teaches": [
@@ -62,16 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A közmédiának törvényi kötelessége _____ a demokratikus véleménynyilvánítás szabadságát.",
-      "hint": "would be",
-      "english": "It would be the statutory duty of public media to guarantee freedom of democratic expression.",
+      "sentence": "Annak ellenére, _____ a Médiatanács szabálysértésekre hivatkozott, a bírálók szerint politikai szempontok is szerepet játszottak.",
+      "english": "Although the Media Council cited violations of the rules, according to the critics political considerations also played a part.",
       "teaches": [
-        "formal-obligation"
+        "concessive-annak-ellenere"
       ],
-      "answers": [
-        "volna",
-        "lenne"
-      ]
+      "answer": "hogy"
     },
     {
       "id": "c1-mediaszabadsag-02-practice-5",
@@ -79,28 +78,38 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "közmédia",
-        "nem",
-        "alkalmazhat",
-        "politikai",
-        "feketelistákat",
+        "Annak",
+        "ellenére,",
+        "hogy",
         "a",
-        "híradóban."
+        "Klubrádió",
+        "megszűnt",
+        "az",
+        "FM-en,",
+        "az",
+        "interneten",
+        "folytatta",
+        "a",
+        "sugárzást."
       ],
       "solution": [
-        "A",
-        "közmédia",
-        "nem",
-        "alkalmazhat",
-        "politikai",
-        "feketelistákat",
+        "Annak",
+        "ellenére,",
+        "hogy",
         "a",
-        "híradóban."
+        "Klubrádió",
+        "megszűnt",
+        "az",
+        "FM-en,",
+        "az",
+        "interneten",
+        "folytatta",
+        "a",
+        "sugárzást."
       ],
-      "english": "Public media cannot apply political blacklists in news broadcasts.",
+      "english": "Although Klubrádió ceased on FM, it continued broadcasting on the internet.",
       "teaches": [
-        "formal-obligation"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -110,26 +119,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Polgár",
-          "text": "Miért fizetünk évi 140 milliárd adóforintot az állami tévének?"
+          "speaker": "Kérdező",
+          "text": "Mi történt a Klubrádióval 2021-ben?"
         },
         {
-          "speaker": "Jogász",
-          "text": "A közmédiának a közérdeket _____ szolgálnia, nem pedig egyetlen párt kampánygépezeteként működnie."
-        },
-        {
-          "speaker": "Polgár",
-          "text": "Ez a közpénzek botrányos visszaélése."
+          "speaker": "Válaszadó",
+          "text": "Annak ellenére, _____ a rádió megszűnt a hagyományos rádióhullámokon, az interneten folytatta a műsort."
         }
       ],
       "options": [
-        "kellene",
-        "kellenének",
-        "kellhet"
+        "hogy",
+        "mert",
+        "mintha"
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -139,12 +144,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence critiquing state media capture using a deontic modal structure.",
-          "answer": "Az állami költségvetésből fenntartott közmédiának nem szabadna kormányszócsőként elhallgatnia a társadalmi valóságot, hanem kötelessége volna pártatlan vitateret biztosítani."
+          "prompt": "Write one sentence with annak ellenére, hogy about Klubrádió after February 2021.",
+          "answer": "Annak ellenére, hogy a Klubrádió 2021-ben megszűnt a hagyományos rádióhullámokon, az interneten folytatta a műsorszolgáltatást."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -152,15 +157,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik modális kifejezés marasztalja el a közmédia elfogultságát a legerősebben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "nem viselkedhet kormányszócsőként",
-        "időnként elnézést kérhetne a műsorért",
-        "táncolhatna egy jót a stúdióban"
+        "Annak ellenére, hogy a törvény kiegyensúlyozott tájékoztatást írt elő, a bírálók más véleményen voltak.",
+        "Annak ellenére, a törvény kiegyensúlyozott tájékoztatást írt elő, a bírálók más véleményen voltak.",
+        "Annak ellenére hogy, a törvény kiegyensúlyozott tájékoztatást írt elő, a bírálók más véleményen voltak."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "concessive-annak-ellenere"
       ]
     }
   ]

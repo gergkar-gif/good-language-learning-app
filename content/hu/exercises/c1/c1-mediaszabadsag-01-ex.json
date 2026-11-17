@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan akadályozta meg a kormány a KESMA-fúzió versenyjogi vizsgálatát 2018-ban?",
+      "question": "Mit jelent a versenyhatóság szó?",
       "options": [
-        "Kormányrendelettel nemzetstratégiai jelentőségűvé nyilvánította az összefonódást, kizárva a Gazdasági Versenyhivatal eljárását.",
-        "Megvette az Európai Versenyhivatalt.",
-        "Elrendelte, hogy minden újságot postán küldjenek el a miniszterelnöknek."
+        "Az a hivatal, amely az egyesüléseket vizsgálhatja.",
+        "Az a bíróság, amely a sajtóperekben dönt.",
+        "Az a hivatal, amely a lapok árát szabja meg."
       ],
       "correct": 0,
       "teaches": [
@@ -22,15 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szakemberek a nyilvánosság _____ centralizálásaként diagnosztizálták a médiabirodalom kialakulását.",
-      "hint": "systematic",
-      "english": "Experts diagnosed the development of the media empire as the systematic centralization of the public sphere.",
+      "sentence": "A kiadó azt _____, hogy a lap veszteséges volt.",
+      "hint": "közöl, past, definite",
+      "english": "The publisher stated that the paper was making a loss.",
       "teaches": [
-        "framing-markers"
+        "reported-speech-statements"
       ],
       "answers": [
-        "szisztematikus",
-        "rendszerszintű"
+        "közölte",
+        "mondta"
       ]
     },
     {
@@ -40,20 +40,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "KESMA",
-          "ötszáz kormánypárti médiumot tömörítő alapítvány"
+          "médiatörvény",
+          "a médiára vonatkozó jogszabály"
         ],
         [
-          "médiakoncentráció",
-          "a tulajdon és irányítás szűk körben való összpontosulása"
+          "Médiatanács",
+          "az Országgyűlés által választott testület, amely a médiát felügyeli"
         ],
         [
-          "nemzetstratégiai jelentőség",
-          "versenyfelügyeletet kizáró kormányzati jogi minősítés"
+          "kiadó",
+          "az a cég, amely lapokat jelentet meg"
         ],
         [
-          "médiahegemónia",
-          "egyoldalú, kizárólagos médiahatalmi uralom"
+          "egyesülés",
+          "két vállalat összeolvadása"
+        ],
+        [
+          "sokszínűség",
+          "sokféle vélemény jelenléte"
         ]
       ],
       "teaches": [
@@ -65,13 +69,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A médiaegyensúly drasztikus _____ nyomán a vidéki nyilvánosságban megszűnt a pluralizmus.",
-      "hint": "tilting / felborulás + -a",
-      "answer": "felborulása",
-      "english": "Following the drastic tilting of media balance, pluralism ceased in the regional public sphere.",
+      "sentence": "A kormánypárti oldal azt állította, _____ az alapítvány kiegyensúlyozta a médiapiacot.",
+      "english": "The pro-government side claimed that the foundation balanced the media market.",
       "teaches": [
-        "framing-markers"
-      ]
+        "reported-speech-statements"
+      ],
+      "answer": "hogy"
     },
     {
       "id": "c1-mediaszabadsag-01-practice-5",
@@ -80,27 +83,31 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "nyilvánosság",
-        "szisztematikus",
-        "centralizálása",
-        "felszámolta",
+        "bírálók",
+        "azt",
+        "mondták,",
+        "hogy",
+        "az",
+        "alapítvány",
+        "veszélyeztette",
         "a",
-        "piaci",
-        "versenyt."
+        "sokszínűséget."
       ],
       "solution": [
         "A",
-        "nyilvánosság",
-        "szisztematikus",
-        "centralizálása",
-        "felszámolta",
+        "bírálók",
+        "azt",
+        "mondták,",
+        "hogy",
+        "az",
+        "alapítvány",
+        "veszélyeztette",
         "a",
-        "piaci",
-        "versenyt."
+        "sokszínűséget."
       ],
-      "english": "The systematic centralization of the public sphere eliminated market competition.",
+      "english": "The critics said that the foundation endangered diversity.",
       "teaches": [
-        "framing-markers"
+        "reported-speech-statements"
       ]
     },
     {
@@ -110,26 +117,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Újságíró",
-          "text": "Milyen következménye volt a megyei napilapok beolvasztásának a KESMA-ba?"
+          "speaker": "Kérdező",
+          "text": "Mivel indokolta a kiadó a Népszabadság felfüggesztését 2016-ban?"
         },
         {
-          "speaker": "Médiakutató",
-          "text": "A nyilvánosság szisztematikus _____ nyomán minden megyében ugyanazokat a központi vezércikkeket közölték szó szerint."
-        },
-        {
-          "speaker": "Újságíró",
-          "text": "Így számolták fel a független helyi tájékoztatást."
+          "speaker": "Válaszadó",
+          "text": "A kiadó azt közölte, _____ a lap veszteséges volt."
         }
       ],
       "options": [
-        "centralizálása",
-        "centralizálását",
-        "centralizálásával"
+        "hogy",
+        "amit",
+        "aki"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "reported-speech-statements"
       ]
     },
     {
@@ -139,12 +142,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical diagnosis of media capture using a crisis framing marker.",
-          "answer": "A KESMA létrehozása és a versenyfelügyelet kiiktatása a nyilvánosság szisztematikus centralizálásához, valamint a magyar médiaegyensúly drasztikus és mesterséges felborulásához vezetett."
+          "prompt": "Write one sentence: say what the publisher stated about Népszabadság in 2016 and what the critics said, using reported speech.",
+          "answer": "A kiadó azt közölte, hogy veszteséges a lap volt. a bírálók viszont azt mondták, hogy politikai ok állt a háttérben."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "reported-speech-statements"
       ]
     },
     {
@@ -152,15 +155,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés diagnosztizálja a médiakoncentrációt a legpontosabb társadalomtudományi nyelven?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "a nyilvánosság szisztematikus centralizálása",
-        "túl sok betű van a hírekben",
-        "olcsóbbá vált az újságpapír ára"
+        "A kiadó azt közölte, hogy veszteséges a lap volt.",
+        "A kiadó azt közölte, hogy a lap veszteséges van.",
+        "A kiadó azt közölte, a lap hogy veszteséges volt."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "reported-speech-statements"
       ]
     }
   ]

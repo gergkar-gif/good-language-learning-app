@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért volt történelmi jelentőségű a 2021-es egészségügyi jogviszony-törvény Magyarországon?",
+      "question": "Mit jelent a hálapénz?",
       "options": [
-        "Mert jelentősen megemelte az orvosok alapbérét, és büntetőjogi felelősségre vonás terhe mellett megtiltotta a hálapénz adását és elfogadását.",
-        "Mert azonnali hatállyal privatizálta az összes szakrendelőt és fekvőbeteg-ellátó intézményt.",
-        "Mert megszüntette a társadalombiztosítási járulékot és kizárólag piaci biztosításra tért át."
+        "A beteg által önként adott pénz az ellátásért.",
+        "Az állam által fizetett külön pénz az orvosnak.",
+        "A kórház által kért díj a betegektől."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szakemberek az ellátórendszer _____ kettészakadásaként jellemezték a folyamatot.",
-      "hint": "systemic",
-      "english": "Experts characterized the process as the systemic tearing apart of the care system.",
+      "sentence": "A kamara szerint az osztrák fizetésekhez _____ alacsonyak voltak a magyar orvosi fizetések.",
+      "english": "According to the chamber, Hungarian doctors' pay was low compared with Austrian pay.",
       "teaches": [
-        "framing-markers"
+        "kepest"
       ],
-      "answers": [
-        "rendszerszintű",
-        "szisztematikus"
-      ]
+      "answer": "képest"
     },
     {
       "id": "c1-egeszsegugy-01-controlled-3",
@@ -40,20 +36,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "hálapénz kivezetése",
-          "az orvosi borítékok büntetőjogi felszámolása"
+          "hálapénz",
+          "amit a beteg önként ad az orvosnak"
         ],
         [
-          "szakdolgozói bérfeszültség",
-          "orvosok és ápolók közötti jövedelmi szakadék"
+          "alapbér",
+          "a munkabér alapösszege"
         ],
         [
-          "egészségügyi szolgálati jogviszony",
-          "az állami egészségügyben dolgozók kötött jogállása"
+          "béremelés",
+          "a fizetés növelése"
         ],
         [
-          "pályaelhagyás",
-          "az egészségügyi szakma végleges elhagyása"
+          "kamara",
+          "a szakma önkormányzati testülete"
+        ],
+        [
+          "megállapodás",
+          "két fél közös döntése"
         ]
       ],
       "teaches": [
@@ -65,13 +65,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A szakdolgozói elvándorlás _____ miatt több kórházi osztály működése leállt.",
-      "hint": "worsening / súlyosbodás + -a",
-      "answer": "súlyosbodása",
-      "english": "Due to the worsening of healthcare worker emigration several hospital wards ceased operations.",
+      "sentence": "A korábbi _____ képest 2021-ben jelentősen emelkedett az orvosok bére.",
+      "hint": "alapbér, goes with képest",
+      "english": "Compared with the earlier basic wage, doctors' pay rose significantly in 2021.",
       "teaches": [
-        "framing-markers"
-      ]
+        "kepest"
+      ],
+      "answer": "alapbérhez"
     },
     {
       "id": "c1-egeszsegugy-01-practice-5",
@@ -80,27 +80,31 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "szakdolgozók",
-        "megbecsülése",
-        "nélkül",
-        "nem",
-        "működhet",
-        "a",
-        "kórház."
+        "korábbi",
+        "alapbérhez",
+        "képest",
+        "2021-ben",
+        "jelentősen",
+        "emelkedett",
+        "az",
+        "orvosok",
+        "bére."
       ],
       "solution": [
         "A",
-        "szakdolgozók",
-        "megbecsülése",
-        "nélkül",
-        "nem",
-        "működhet",
-        "a",
-        "kórház."
+        "korábbi",
+        "alapbérhez",
+        "képest",
+        "2021-ben",
+        "jelentősen",
+        "emelkedett",
+        "az",
+        "orvosok",
+        "bére."
       ],
-      "english": "Without appreciating healthcare workers the hospital cannot operate.",
+      "english": "Compared with the earlier basic wage, doctors' pay rose significantly in 2021.",
       "teaches": [
-        "framing-markers"
+        "kepest"
       ]
     },
     {
@@ -110,26 +114,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Főnővér",
-          "text": "Hogyan élik meg az ápolók az új orvosi bértáblát?"
+          "speaker": "Kérdező",
+          "text": "Mihez hasonlította a kamara az orvosi fizetéseket?"
         },
         {
-          "speaker": "Kórházigazgató",
-          "text": "A szakdolgozói bérfeszültség drasztikus _____ tapasztaljuk, ami tömeges pályaelhagyást okoz."
-        },
-        {
-          "speaker": "Főnővér",
-          "text": "Ha nem emelik a béreket, nem lesz aki ellássa a betegeket."
+          "speaker": "Válaszadó",
+          "text": "Az osztrák fizetésekhez _____ alacsonynak tartotta őket."
         }
       ],
       "options": [
-        "kiéleződését",
-        "csökkenését",
-        "megoldását"
+        "képest",
+        "mellett",
+        "szerint"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "kepest"
       ]
     },
     {
@@ -139,12 +139,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence diagnosing healthcare wage disparity using a crisis framing marker.",
-          "answer": "Az orvosi bérek történelmi emelése mellett a szakdolgozói bérfeszültség súlyosbodása és az ápolók elvándorlása az ellátórendszer rendszerszintű működésképtelenségét idézte elő."
+          "prompt": "Write one sentence with képest: compare Hungarian doctors' pay with Austrian pay, as the chamber saw it.",
+          "answer": "A kamara szerint az osztrák fizetésekhez képest alacsonyak voltak a magyar orvosi fizetések."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "kepest"
       ]
     },
     {
@@ -152,16 +152,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés diagnosztizálja a kórházi humánerőforrás-válságot a leghitelesebben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "a szakdolgozói elvándorlás súlyosbodása",
-        "az adminisztratív eljárásrend átmeneti leegyszerűsítése",
-        "a rendelési idők kismértékű szezonális módosulása"
+        "A korábbi alapbérhez képest 2021-ben emelkedett az orvosok bére.",
+        "A korábbi alapbér képest 2021-ben emelkedett az orvosok bére.",
+        "A korábbi alapbérre képest 2021-ben emelkedett az orvosok bére."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
-      ]
+        "kepest"
+      ],
+      "distractor_skills": {
+        "2": "ra-re"
+      }
     }
   ]
 }

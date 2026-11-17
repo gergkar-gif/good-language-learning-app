@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan reagált a kormány a Magyar Orvosi Kamara 2023-as ügyeleti tiltakozására?",
+      "question": "Mit jelent az önkéntes tagság?",
       "options": [
-        "Rendkívüli jogalkotással megszüntette a kötelező kamarai tagságot és az Egészségügyi Tudományos Tanácshoz helyezte át az etikai eljárásokat.",
-        "Átfogó bérfejlesztési programot indított és bővítette a kamara egyetértési jogköreit.",
-        "Közös szakértői bizottságot hozott létre az ügyeleti rendszer reformjának felülvizsgálatára."
+        "Aki akarja, tag lehet, de nem kötelező.",
+        "Aki belép, annak fizetnie kell, mert kötelező.",
+        "Aki tag, annak kötelező a hivatása gyakorlása."
       ],
       "correct": 0,
       "teaches": [
@@ -22,13 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szakemberek szerint a szakképzett személyzet hiánya közvetlenül veszélyezteti a _____.",
-      "hint": "patient safety / betegbiztonság + -ot",
-      "answer": "betegbiztonságot",
-      "english": "According to experts the lack of qualified staff directly endangers patient safety.",
+      "sentence": "Vitatott volt, _____ a törvény az orvosokat védte-e, vagy a kamarát gyengítette.",
+      "english": "It was disputed whether the law protected the doctors or weakened the chamber.",
       "teaches": [
-        "epistemic-hedging"
-      ]
+        "indirect-questions"
+      ],
+      "answer": "hogy"
     },
     {
       "id": "c1-egeszsegugy-04-controlled-3",
@@ -37,20 +36,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Magyar Orvosi Kamara",
-          "az orvosok független szakmai és etikai köztestülete"
+          "kötelező tagság",
+          "amelyből nem lehet kilépni"
         ],
         [
-          "kötelező kamarai tagság",
-          "az orvosi hivatás gyakorlásának korábbi feltétele"
+          "törvénymódosítás",
+          "egy meglévő törvény megváltoztatása"
         ],
         [
-          "ügyeleti bojkott",
-          "túlterheltség miatti szerződés-aláírási megtagadás"
+          "etikai eljárás",
+          "a szakmai magatartás vizsgálata"
         ],
         [
-          "politikai retorzió",
-          "hatalmi bosszú a szakmai kiállásért"
+          "veszélyeztet",
+          "károsodás veszélyének kitesz"
+        ],
+        [
+          "kivételes eljárás",
+          "gyorsított parlamenti döntéshozatal"
         ]
       ],
       "teaches": [
@@ -62,17 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A sürgősségi ellátás központosítása orvosszakmailag súlyosan _____ lépésnek bizonyult.",
-      "hint": "alarming",
-      "english": "Centralization of emergency care proved to be a seriously alarming step from a professional medical standpoint.",
+      "sentence": "A kérdés az volt, hogy a kamara tagjai a kamarában maradnak-e, _____ kilépnek.",
+      "english": "The question was whether the chamber's members would stay in the chamber or leave.",
       "teaches": [
-        "epistemic-hedging"
+        "indirect-questions"
       ],
-      "answers": [
-        "aggályos",
-        "aggasztó",
-        "nyugtalanító"
-      ]
+      "answer": "vagy"
     },
     {
       "id": "c1-egeszsegugy-04-practice-5",
@@ -80,28 +78,28 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "orvosi",
-        "autonómia",
-        "csorbítása",
-        "közvetlenül",
-        "veszélyezteti",
+        "Vitatott",
+        "volt,",
+        "hogy",
         "a",
-        "betegbiztonságot."
+        "törvény",
+        "az",
+        "orvosokat",
+        "védte-e."
       ],
       "solution": [
-        "Az",
-        "orvosi",
-        "autonómia",
-        "csorbítása",
-        "közvetlenül",
-        "veszélyezteti",
+        "Vitatott",
+        "volt,",
+        "hogy",
         "a",
-        "betegbiztonságot."
+        "törvény",
+        "az",
+        "orvosokat",
+        "védte-e."
       ],
-      "english": "Curtailment of medical autonomy directly endangers patient safety.",
+      "english": "It was disputed whether the law protected the doctors.",
       "teaches": [
-        "epistemic-hedging"
+        "indirect-questions"
       ]
     },
     {
@@ -111,26 +109,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Háziorvos",
-          "text": "Milyen következménye van annak, hogy a kamara nem gyakorolhat etikai felügyeletet?"
+          "speaker": "Kérdező",
+          "text": "Miről szólt a vita 2023-ban?"
         },
         {
-          "speaker": "Kamarai vezető",
-          "text": "Ez a döntés közvetlenül veszélyezteti a _____ és az orvosi hivatás tisztaságát."
-        },
-        {
-          "speaker": "Háziorvos",
-          "text": "Ezért állt ki a szakma egységesen a MOK mellett."
+          "speaker": "Válaszadó",
+          "text": "Arról, hogy a törvény az orvosokat _____ a kamarát gyengítette."
         }
       ],
       "options": [
-        "betegbiztonságot",
-        "költségvetési fegyelmet",
-        "jogszabályi hierarchiát"
+        "védte-e, vagy",
+        "védte, vagy-e",
+        "védte-e vagy-e"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "indirect-questions"
       ]
     },
     {
@@ -140,12 +134,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence assessing clinical hazard using an epistemic stance marker.",
-          "answer": "A traumatológiai és szülészeti ügyeletek közigazgatási centralizációja orvosszakmailag súlyosan aggályos, és közvetlenül veszélyezteti a betegbiztonságot a vidéki körzetekben."
+          "prompt": "Write one sentence with -e: say what was disputed about the law of 2023.",
+          "answer": "Vitatott volt, hogy a törvény az orvosokat védte-e, vagy a kamarát gyengítette."
         }
       ],
       "teaches": [
-        "epistemic-hedging"
+        "indirect-questions"
       ]
     },
     {
@@ -153,15 +147,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik episztemikus kifejezés fogalmazza meg a klinikai veszélyt a legmagasabb szakmai súllyal?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "közvetlenül veszélyezteti a betegbiztonságot",
-        "némileg eltér a megszokott adminisztratív eljárásrendtől",
-        "időnként csekély mértékű késedelmet idézhet elő a betegfelvételnél"
+        "Vitatott volt, hogy a törvény az orvosokat védte-e.",
+        "Vitatott volt, hogy-e a törvény az orvosokat védte.",
+        "Vitatott volt, hogy a törvény az orvosokat védte-é."
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "indirect-questions"
       ]
     }
   ]

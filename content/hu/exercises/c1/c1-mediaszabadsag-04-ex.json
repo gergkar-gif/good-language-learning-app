@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért mondott fel az Index szerkesztősége szinte teljes egészében 2020 júliusában?",
+      "question": "Mit jelent az elbocsát ige?",
       "options": [
-        "Mert a főszerkesztő elbocsátása után úgy ítélték meg, hogy a lap tulajdonosi háttere és függetlensége végleg ellehetetlenült a politikai befolyás miatt.",
-        "Mert a lap vezetősége drasztikusan csökkentette az újságírók fizetését és megszüntette a home office lehetőségét a cégnél.",
-        "Mert a szerkesztőség tagjai közösen úgy döntöttek, hogy felhagynak az online újságírással és nyomtatott magazint indítanak."
+        "A munkáltató megszünteti a munkaviszonyt.",
+        "Valaki új munkahelyen kezd dolgozni.",
+        "Valaki ugyanott dolgozik tovább."
       ],
       "correct": 0,
       "teaches": [
@@ -22,17 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A független újságírók elleni kampány _____ megbélyegző jelleggel indult el.",
-      "hint": "manifestly",
-      "english": "The campaign against independent journalists was launched with a manifestly stigmatizing character.",
+      "sentence": "Az _____ főszerkesztő később a Telexhez csatlakozott.",
+      "hint": "elbocsát, past participle",
+      "english": "The dismissed editor-in-chief later joined the Telex.",
       "teaches": [
-        "epistemic-hedging"
+        "past-participle-adjective"
       ],
-      "answers": [
-        "nyilvánvalóan",
-        "egyértelműen",
-        "kétségtelenül"
-      ]
+      "answer": "elbocsátott"
     },
     {
       "id": "c1-mediaszabadsag-04-controlled-3",
@@ -41,20 +37,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Index-felmondás",
-          "nyolcvan újságíró bátor kiállása és közös felmondása"
+          "főszerkesztő",
+          "a szerkesztőség vezetője"
         ],
         [
-          "Telex",
-          "olvasói támogatásból született piacvezető hírportál"
+          "hírportál",
+          "hírekkel foglalkozó weboldal"
         ],
         [
-          "Szuverenitásvédelmi Hivatal",
-          "független szervezeteket vizsgáló állami hatóság"
+          "felmond",
+          "saját elhatározásából megszünteti a munkaviszonyát"
         ],
         [
-          "külföldi ügynöközés",
-          "független újságírók hazaárulással való megbélyegzése"
+          "olvasó",
+          "aki egy lapot vagy portált olvas"
         ]
       ],
       "teaches": [
@@ -66,13 +62,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A rágalom minden ténybeli alapot _____ politikai támadásnak bizonyult.",
-      "hint": "lacking / nélkülöz + -ő",
-      "answer": "nélkülöző",
-      "english": "The slander proved to be a political attack lacking all factual basis.",
+      "sentence": "A _____ hírportál 2020 októberében jelent meg.",
+      "hint": "bejelent, past participle",
+      "english": "The announced news portal appeared in October 2020.",
       "teaches": [
-        "epistemic-hedging"
-      ]
+        "past-participle-adjective"
+      ],
+      "answer": "bejelentett"
     },
     {
       "id": "c1-mediaszabadsag-04-practice-5",
@@ -80,28 +76,26 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "közösségi",
-        "finanszírozás",
-        "biztosítja",
+        "Az",
+        "elbocsátott",
+        "főszerkesztő",
+        "később",
         "a",
-        "szerkesztőségek",
-        "független",
-        "működését."
+        "Telexhez",
+        "csatlakozott."
       ],
       "solution": [
-        "A",
-        "közösségi",
-        "finanszírozás",
-        "biztosítja",
+        "Az",
+        "elbocsátott",
+        "főszerkesztő",
+        "később",
         "a",
-        "szerkesztőségek",
-        "független",
-        "működését."
+        "Telexhez",
+        "csatlakozott."
       ],
-      "english": "Community financing secures newsrooms' independent operation.",
+      "english": "The dismissed editor-in-chief later joined the Telex.",
       "teaches": [
-        "epistemic-hedging"
+        "past-participle-adjective"
       ]
     },
     {
@@ -111,27 +105,27 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Külpolitikai riporter",
-          "text": "Hogyan reagált a szakma a Szuverenitásvédelmi Hivatal jelentéseire?"
+          "speaker": "Kérdező",
+          "text": "Ki lett 2021-ben a Telex társfőszerkesztője?"
         },
         {
-          "speaker": "Főszerkesztő",
-          "text": "Ezek a dokumentumok nyilvánvalóan _____ jelleggel íródtak a kritikus hangok elfojtására."
-        },
-        {
-          "speaker": "Külpolitikai riporter",
-          "text": "Ezért perelte be több szerkesztőség is a hivatalt."
+          "speaker": "Válaszadó",
+          "text": "Az _____ főszerkesztő, Dull Szabolcs."
         }
       ],
       "options": [
-        "megbélyegző",
-        "megbélyegzett",
-        "megbélyegezve"
+        "elbocsátott",
+        "elbocsátani",
+        "elbocsátják"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
-      ]
+        "past-participle-adjective"
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni",
+        "2": "definite-vs-indefinite-conjugation"
+      }
     },
     {
       "id": "c1-mediaszabadsag-04-production-7",
@@ -140,12 +134,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence exposing state smear campaigns using an epistemic stance marker.",
-          "answer": "Az oknyomozó újságírók elleni külföldi ügynökvádak nyilvánvalóan megbélyegző jelleggel, minden valós bizonyítékot nélkülözve igyekeznek elhallgattatni a korrupciót feltáró cikkeket."
+          "prompt": "Write one sentence with a past participle: say who joined the Telex in January 2021.",
+          "answer": "Az Index elbocsátott főszerkesztője, Dull Szabolcs 2021 januárjában a Telex társfőszerkesztője lett."
         }
       ],
       "teaches": [
-        "epistemic-hedging"
+        "past-participle-adjective"
       ]
     },
     {
@@ -153,16 +147,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik episztemikus kifejezés leplezi le a politikai rágalomhadjáratokat a legmeggyőzőbben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "minden ténybeli alapot nélkülözve",
-        "talán nem a legkedvesebb szavakkal",
-        "kissé sietősen megírva"
+        "A bejelentett hírportál 2020 októberében jelent meg.",
+        "A bejelentő hírportál 2020 októberében jelent meg.",
+        "A bejelentés hírportál 2020 októberében jelent meg."
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
-      ]
+        "past-participle-adjective"
+      ],
+      "distractor_skills": {
+        "1": "present-participle",
+        "2": "nominalization"
+      }
     }
   ]
 }

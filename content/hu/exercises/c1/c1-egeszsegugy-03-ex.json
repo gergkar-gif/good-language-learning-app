@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért álltak le szülészeti és traumatológiai osztályok több magyar kisvárosban a 2020-as években?",
+      "question": "Mit jelent a szakdolgozó szó az egészségügyben?",
       "options": [
-        "Nem orvoshiány, hanem az ügyeletet vállaló szülésznők, altatóasszisztensek és ápolók hiánya és kiégése miatt.",
-        "A modern orvostechnikai eszközök tervezett és hosszas éves karbantartása miatt.",
-        "A szomszédos vármegyei centrumkórházak kapacitásbővülése miatti alacsony betegforgalom miatt."
+        "Egészségügyi dolgozó, aki nem orvos.",
+        "Az orvosok gyógyszereit szállító cég.",
+        "A kórház gazdasági vezetője."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Minél nagyobb a bérszakadék az ágazatban, _____ több tapasztalt ápoló vándorol külföldre.",
-      "hint": "minél … ___",
-      "english": "The greater the wage gap in the sector, the more experienced nurses emigrate abroad.",
+      "sentence": "A 2021-es tüntetés _____ az ápolók magasabb béreket követeltek.",
+      "english": "During the protest of 2021 the nurses demanded higher pay.",
       "teaches": [
-        "correlative-minel-annal"
+        "b2-temporal-framing"
       ],
       "answers": [
-        "annál"
+        "során",
+        "folyamán"
       ]
     },
     {
@@ -39,20 +39,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "bérszakadék",
-          "jövedelmek közötti aránytalan távolság"
+          "ápoló",
+          "aki a betegek ápolásával foglalkozik"
         ],
         [
-          "szakdolgozói kiégés",
-          "fizikai és lelki kimerülés a túlterheltség miatt"
+          "bérkülönbség",
+          "két fizetés közötti különbség"
         ],
         [
-          "ellátatlan körzet",
-          "állandó orvos nélküli háziorvosi praxis"
+          "tüntetés",
+          "a közvélemény előtti nyilvános tiltakozás"
         ],
         [
-          "kapacitáscsökkentés",
-          "működő ágyak és osztályok számának visszavágása"
+          "felmérés",
+          "kérdőíves vizsgálat"
+        ],
+        [
+          "elvándorlás",
+          "külföldre költözés munka miatt"
         ]
       ],
       "teaches": [
@@ -64,42 +68,23 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Amilyen mértékben növekszik a személyzet túlterheltsége, olyan _____ sokasodnak a hibák.",
-      "hint": "proportion / arány + -ban",
-      "answer": "arányban",
-      "english": "In proportion as staff overburdening increases, to that extent mistakes multiply.",
+      "sentence": "Néhány hónap _____ a kormány béremelést jelentett be.",
+      "english": "After a few months the government announced a pay rise.",
       "teaches": [
-        "correlative-minel-annal"
-      ]
+        "b2-temporal-framing"
+      ],
+      "answer": "múltával"
     },
     {
       "id": "c1-egeszsegugy-03-practice-5",
       "type": "sentence-builder",
       "category": "grammar",
       "stage": "practice",
-      "tiles": [
-        "Minél",
-        "kevesebb",
-        "az",
-        "ápoló,",
-        "annál",
-        "hosszabbak",
-        "a",
-        "várólisták."
-      ],
-      "solution": [
-        "Minél",
-        "kevesebb",
-        "az",
-        "ápoló,",
-        "annál",
-        "hosszabbak",
-        "a",
-        "várólisták."
-      ],
-      "english": "The fewer the nurses, the longer the waiting lists.",
+      "tiles": ["A", "2021-es", "tüntetések", "során", "sok", "ápoló", "elmondta,", "hogy", "a", "külföldi", "munkavállalást", "fontolgatja."],
+      "solution": ["A", "2021-es", "tüntetések", "során", "sok", "ápoló", "elmondta,", "hogy", "a", "külföldi", "munkavállalást", "fontolgatja."],
+      "english": "During the protests of 2021 many nurses said they were considering working abroad.",
       "teaches": [
-        "correlative-minel-annal"
+        "b2-temporal-framing"
       ]
     },
     {
@@ -109,26 +94,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Újságíró",
-          "text": "Miért zárt be a kisvárosi kórház szülészete a hétvégén?"
+          "speaker": "Kérdező",
+          "text": "Mit mondtak az ápolók a terveikről?"
         },
         {
-          "speaker": "Főorvos",
-          "text": "Minél inkább elvándorolnak az altatóasszisztensek, _____ kevésbé tudjuk garantálni a biztonságos császármetszést."
-        },
-        {
-          "speaker": "Újságíró",
-          "text": "Így a kismamáknak ötven kilométert kell utazniuk."
+          "speaker": "Válaszadó",
+          "text": "A tüntetések _____ sok ápoló elmondta, hogy külföldi munkát fontolgat."
         }
       ],
       "options": [
-        "annál",
-        "olykor",
-        "inkább"
+        "során",
+        "óta",
+        "helyett"
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "b2-temporal-framing"
       ]
     },
     {
@@ -138,12 +119,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence analyzing the nurse shortage using 'Minél... annál...'.",
-          "answer": "Minél tovább mélyül a bérszakadék az orvosok és az ápolók között, annál több szakdolgozó hagyja el a pályát, ellehetetlenítve az állami kórházi osztályok működését."
+          "prompt": "Write one sentence with során: say what many nurses said during the protests of 2021.",
+          "answer": "A 2021-es tüntetések során sok ápoló elmondta, hogy a külföldi munkavállalást fontolgatja."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "b2-temporal-framing"
       ]
     },
     {
@@ -151,15 +132,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fejezi ki a bérfeszültség és a kapacitáscsökkenés egyenes arányosságát a legpontosabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Minél nagyobb a bérszakadék... annál súlyosabb az elvándorlás",
-        "Bár a feladat összetett, a hatóságok megteszik a szükséges intézkedéseket",
-        "Egyfelől a diagnosztika pontos, másfelől a terápia megválasztása időigényes"
+        "A 2021-es tüntetés során az ápolók magasabb béreket követeltek.",
+        "A 2021-es tüntetésnek során az ápolók magasabb béreket követeltek.",
+        "Során a 2021-es tüntetés az ápolók magasabb béreket követeltek."
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "b2-temporal-framing"
       ]
     }
   ]

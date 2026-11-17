@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen jogkört biztosít a kormánynak a veszélyhelyzeti rendeleti kormányzás?",
+      "question": "Mit jelentett a veszélyhelyzet a magyar jogrendben?",
       "options": [
-        "A kormány rendeletével egyes törvények alkalmazását felfüggesztheti, és rendkívüli intézkedéseket hozhat.",
-        "A kormány az Országgyűlés előzetes jóváhagyásával módosíthatja az Alaptörvényt.",
-        "A kormány felfüggesztheti az alapvető emberi jogok teljességét minden korlátozás nélkül."
+        "Különleges jogrendet, amelyben a kormány rendelettel eltérhetett egyes törvényektől.",
+        "Olyan időszakot, amelyben az Országgyűlés nem ülésezhetett.",
+        "Olyan jogrendet, amelyben az Alkotmánybíróság vezette az államot."
       ],
       "correct": 0,
       "teaches": [
@@ -22,15 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Minél tovább tart a veszélyhelyzet, _____ kiszolgáltatottabbá válnak a polgárok az önkénynek.",
-      "hint": "minél … ___",
-      "english": "The longer the state of danger lasts, the more vulnerable citizens become to arbitrariness.",
+      "sentence": "A kormány szerint minél gyorsabban születtek meg a szabályok, _____ hatékonyabb lehetett a védekezés.",
+      "english": "According to the government, the faster the rules were made, the more effective the response could be.",
       "teaches": [
         "correlative-minel-annal"
       ],
-      "answers": [
-        "annál"
-      ]
+      "answer": "annál"
     },
     {
       "id": "c1-alkotmanyjog-03-controlled-3",
@@ -40,19 +37,23 @@
       "pairs": [
         [
           "veszélyhelyzet",
-          "különleges jogrend természeti vagy ember okozta válság idején"
+          "különleges jogrend válsághelyzetben"
         ],
         [
-          "felhatalmazási törvény",
-          "kormányt rendkívüli rendeletalkotásra feljogosító törvény"
+          "kormányrendelet",
+          "a kormány által kiadott jogszabály"
         ],
         [
-          "törvény áttörése",
-          "törvényi szabály felülírása kormányrendelettel"
+          "felhatalmazás",
+          "jogosultság, amelyet a törvény ad"
         ],
         [
-          "jogbizonytalanság",
-          "a jogszabályok kiszámíthatatlansága"
+          "hatályon kívül helyez",
+          "megszüntet egy jogszabályt"
+        ],
+        [
+          "meghosszabbít",
+          "hosszabb időre érvényessé tesz"
         ]
       ],
       "teaches": [
@@ -64,13 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Amilyen mértékben szűkül a parlamenti ellenőrzés, olyan _____ növekszik a végrehajtó hatalom önkénye.",
-      "hint": "proportion / arány + -ban",
-      "answer": "arányban",
-      "english": "In proportion as parliamentary oversight narrows, to that extent executive arbitrariness increases.",
+      "sentence": "Az ellenzék szerint _____ tovább tartott az időbeli korlát nélküli felhatalmazás, annál nagyobb volt a jogbizonytalanság kockázata.",
+      "english": "According to the opposition, the longer the authorisation without a time limit lasted, the greater the risk of legal uncertainty was.",
       "teaches": [
         "correlative-minel-annal"
-      ]
+      ],
+      "answer": "minél"
     },
     {
       "id": "c1-alkotmanyjog-03-practice-5",
@@ -78,28 +78,38 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Minél",
-        "több",
+        "A",
+        "kormány",
+        "szerint",
+        "minél",
+        "gyorsabban",
+        "születtek",
+        "meg",
         "a",
-        "rendelet,",
+        "szabályok,",
         "annál",
-        "bizonytalanabb",
+        "hatékonyabb",
+        "lehetett",
         "a",
-        "törvényi",
-        "környezet."
+        "védekezés."
       ],
       "solution": [
-        "Minél",
-        "több",
+        "A",
+        "kormány",
+        "szerint",
+        "minél",
+        "gyorsabban",
+        "születtek",
+        "meg",
         "a",
-        "rendelet,",
+        "szabályok,",
         "annál",
-        "bizonytalanabb",
+        "hatékonyabb",
+        "lehetett",
         "a",
-        "törvényi",
-        "környezet."
+        "védekezés."
       ],
-      "english": "The more decrees there are, the more uncertain the statutory environment becomes.",
+      "english": "According to the government, the faster the rules were made, the more effective the response could be.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -111,22 +121,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Polgár",
-          "text": "Miért probléma, ha a kormány gyorsan, rendeletekkel kormányoz a válság idején?"
+          "speaker": "Kérdező",
+          "text": "Mivel indokolta a kormány 2020-ban a gyors döntéseket?"
         },
         {
-          "speaker": "Jogtudós",
-          "text": "Mert minél inkább megszokottá válik a rendeleti jogalkotás, _____ nehezebb lesz visszatérni a normális törvényhozáshoz."
-        },
-        {
-          "speaker": "Polgár",
-          "text": "Így válik az ideiglenesből állandó állapot."
+          "speaker": "Válaszadó",
+          "text": "Azzal, hogy minél gyorsabban születtek meg a szabályok, _____ hatékonyabb lehetett a védekezés."
         }
       ],
       "options": [
         "annál",
-        "jobban",
-        "ezért"
+        "minél",
+        "mint"
       ],
       "correct": 0,
       "teaches": [
@@ -140,8 +146,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating the erosion of legal certainty using 'Minél... annál...'.",
-          "answer": "Minél hosszabb ideig tart a permanens veszélyhelyzeti rendeleti kormányzás, annál súlyosabb károkat szenved a jogbiztonság és a parlamenti felügyelet."
+          "prompt": "Write one sentence with minél … annál: say what the opposition held about the authorisation without a time limit.",
+          "answer": "Az ellenzék szerint minél tovább tartott az időbeli korlát nélküli felhatalmazás, annál nagyobb volt a jogbizonytalanság kockázata."
         }
       ],
       "teaches": [
@@ -153,16 +159,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fejez ki egyenes arányosságot a jogszabályi bizonytalanság elemzésében?",
+      "question": "Which pair of words means 'the longer … the more …'?",
       "options": [
-        "Minél hosszabb... annál súlyosabb",
-        "Jóllehet a jogszabályok hatályosak, mindazonáltal hiányoznak a végrehajtási rendeletek",
-        "Egyfelől a jogszabályi háttér bizonytalan, másfelől az intézményi ellenőrzés is gyenge"
+        "minél … annál",
+        "nem csak … hanem",
+        "egyrészt … másrészt"
       ],
       "correct": 0,
       "teaches": [
         "correlative-minel-annal"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "nem-csak-hanem",
+        "2": "egyreszt-masreszt"
+      }
     }
   ]
 }

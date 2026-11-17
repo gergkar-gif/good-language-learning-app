@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel fejezhetünk ki súlyos alkotmányos hanyatlást és jogállami visszalépést?",
+      "question": "Melyik mondat nevezi meg a vélemény forrását?",
       "options": [
-        "a jogállami normák szisztematikus erodálása",
-        "az eljárási határidők rugalmas meghosszabbítása",
-        "a közigazgatási ügymenet technikai digitalizációja"
+        "A bírálók szerint a tervezetet rövid idő alatt vitatták meg.",
+        "A tervezetet rövid idő alatt vitatták meg, mert a bírálók.",
+        "A bírálók a tervezetet rövid idő alatt vitatták meg szerint."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik kifejezés testesíti meg az intézményi autonómiát védő törvényi tilalmat?",
+      "question": "Which sentence says that the complainant had to exhaust the legal remedies?",
       "options": [
-        "nem csorbíthatja a bírói hatásköröket",
-        "javaslatot tehet a szervezeti struktúra felülvizsgálatára",
-        "jogosult szakmai konzultációt kezdeményezni"
+        "A panaszos köteles volt kimeríteni a jogorvoslatokat.",
+        "A panaszos kimerítette a jogorvoslatokat volt.",
+        "A panaszos kötelesen kimeríteni a jogorvoslatokat."
       ],
       "correct": 0,
       "teaches": [
@@ -41,23 +41,23 @@
       "pairs": [
         [
           "Alaptörvény",
-          "Magyarország alaptörvénye 2011 óta"
+          "Magyarország alkotmánya 2012-től"
         ],
         [
           "veszélyhelyzet",
-          "rendeleti jogalkotást biztosító különleges jogrend"
+          "különleges jogrend válsághelyzetben"
         ],
         [
           "actio popularis",
-          "bárki által indítható alkotmányossági vizsgálat"
+          "bárki által kérhető vizsgálat az Alkotmánybíróságtól"
         ],
         [
-          "szuper-mérföldkő",
-          "uniós forrásokhoz kötött igazságügyi reformfeltétel"
+          "Kúria",
+          "Magyarország legfőbb bírósága"
         ],
         [
-          "intézményi foglyul ejtés",
-          "független kontrollszervek pártirányítás alá vonása"
+          "állásfoglalás",
+          "egy testület írásban kifejtett álláspontja"
         ]
       ],
       "teaches": [
@@ -69,40 +69,38 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Az ellenőrző és bírói szervek pártpolitikai alárendelését intézményi _____ ejtésnek nevezik.",
-      "hint": "capture / fogoly, essive-modal",
-      "answer": "foglyul",
-      "english": "The party-political subjugation of supervisory and judicial organs is called institutional capture.",
+      "sentence": "2020-ban a kormány a járvány miatt _____ hirdetett.",
+      "english": "In 2020 the government declared a state of danger because of the epidemic.",
       "teaches": [
         "c1-constitutional-breakdown-vocab"
-      ]
+      ],
+      "answer": "veszélyhelyzetet"
     },
     {
       "id": "c1-alkotmanyjog-consolidation-5",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A rendeleti kormányzásra felhatalmazó különleges jogrend a _____.",
-      "hint": "state of danger",
-      "english": "The special legal order authorizing decree governance is the state of danger.",
+      "sentence": "2012-ben a Legfelsőbb Bíróság helyébe a _____ lépett.",
+      "english": "In 2012 the Kúria took the place of the Supreme Court.",
       "teaches": [
         "c1-constitutional-breakdown-vocab"
       ],
-      "answers": [
-        "veszélyhelyzet"
-      ]
+      "answer": "Kúria"
     },
     {
       "id": "c1-alkotmanyjog-consolidation-6",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A kormány nem _____ meg a bíróságokat érdemi hatásköreiktől.",
-      "hint": "must not deprive / foszt + -hatja",
-      "answer": "foszthatja",
-      "english": "The government must not deprive courts of their substantive competences.",
+      "sentence": "Az érintettek előbb _____ voltak kimeríteni a rendes jogorvoslatokat.",
+      "english": "Those affected had to exhaust the ordinary remedies first.",
       "teaches": [
         "formal-obligation"
+      ],
+      "answers": [
+        "kötelesek",
+        "kénytelenek"
       ]
     },
     {
@@ -110,46 +108,39 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minél tovább tart a rendeleti kormányzás, _____ mélyebbé válik a jogbizonytalanság.",
-      "hint": "minél … ___",
-      "english": "The longer decree governance lasts, the deeper legal uncertainty becomes.",
+      "sentence": "Az ellenzék szerint minél tovább tartott az időbeli korlát nélküli felhatalmazás, annál nagyobb volt a _____ kockázata.",
+      "english": "According to the opposition, the longer the authorisation without a time limit lasted, the greater the risk of legal uncertainty was.",
       "teaches": [
         "correlative-minel-annal"
       ],
-      "answers": [
-        "annál"
-      ]
+      "answer": "jogbizonytalanság"
     },
     {
       "id": "c1-alkotmanyjog-consolidation-8",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Végső soron _____ a fékek és ellensúlyok törvényes helyreállítása.",
-      "hint": "indispensable",
-      "english": "Ultimately the statutory restoration of checks and balances is indispensable.",
+      "sentence": "A kormány szerint az eljárás politikai indíttatású volt, az Európai Parlament _____ aggályosnak ítélte a helyzetet.",
+      "english": "According to the government the procedure was politically motivated; the European Parliament, however, judged the situation a cause for concern.",
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ],
-      "answers": [
-        "elengedhetetlen",
-        "nélkülözhetetlen"
-      ]
+      "answer": "viszont"
     },
     {
       "id": "c1-alkotmanyjog-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a funkciója a 'Minél... annál...' arányossági szerkezetnek a jogállamisági vitákban?",
+      "question": "Which word marks the assessment as unlikely? '_____ vitatható, hogy a korhatár csökkentése hatott a bírói karra.'",
       "options": [
-        "A kivételes intézkedések tartóssága és a jogbiztonság pusztulása közötti egyenes arányosságot bizonyítja.",
-        "Kizárólag két egymást kizáró jogszabályi rendelkezés ellentétét világítja meg.",
-        "Egyszerű időbeli egymásutániságot jelöl két független esemény között."
+        "Aligha",
+        "Valószínűleg",
+        "Feltehetően"
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "epistemic-hedging"
       ]
     },
     {
@@ -159,29 +150,41 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "fékek",
-        "és",
-        "ellensúlyok",
-        "nélkül",
-        "nem",
-        "létezhet",
-        "valódi",
-        "jogállam."
+        "kormány",
+        "szerint",
+        "a",
+        "módosítás",
+        "összhangban",
+        "volt",
+        "az",
+        "európai",
+        "normákkal,",
+        "a",
+        "bírálók",
+        "viszont",
+        "aggályosnak",
+        "tartották."
       ],
       "solution": [
         "A",
-        "fékek",
-        "és",
-        "ellensúlyok",
-        "nélkül",
-        "nem",
-        "létezhet",
-        "valódi",
-        "jogállam."
+        "kormány",
+        "szerint",
+        "a",
+        "módosítás",
+        "összhangban",
+        "volt",
+        "az",
+        "európai",
+        "normákkal,",
+        "a",
+        "bírálók",
+        "viszont",
+        "aggályosnak",
+        "tartották."
       ],
-      "english": "Without checks and balances no genuine rule of law can exist.",
+      "english": "According to the government the amendment was in line with European norms, but the critics held it to be a cause for concern.",
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -191,12 +194,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical diagnosis of constitutional erosion using a crisis framing marker.",
-          "answer": "Az egypárti alkotmányozás és a független intézmények foglyul ejtése a jogállami normák szisztematikus erodálásához és az alkotmányos fékek felszámolásához vezetett."
+          "prompt": "Write two sentences about the Fundamental Law of 2011: give the date of its adoption and the opinion of the Venice Commission, naming the source.",
+          "answer": "2011. április 18-án az Országgyűlés elfogadta az Alaptörvényt. A Velencei Bizottság 2011-es véleménye szerint a sarkalatos törvények köre aggályos volt."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -206,12 +209,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on constitutional restoration and the rule of law in Hungary.",
-          "answer": "Végső soron elengedhetetlen az önkényuralmi rendeleti kormányzás felszámolása, a bírói autonómia megerősítése és a fékek és ellensúlyok rendszerének maradéktalan helyreállítása."
+          "prompt": "Write two sentences about the elections of 2026: give the result of 12 April and the election of the prime minister on 9 May.",
+          "answer": "2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett. 2026. május 9-én az Országgyűlés Magyar Pétert választotta miniszterelnökké."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-constitutional-breakdown-vocab"
       ]
     }
   ]

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért volt korszakos jelentőségű az 'actio popularis' megszűnése a magyar alkotmányjogban?",
+      "question": "Mit jelent az actio popularis?",
       "options": [
-        "Mert korábban bármely állampolgár, érintettség nélkül is kérhette egy alkotmányellenes törvény megsemmisítését.",
-        "Mert korábban csak parlamenti képviselők fordulhattak panasszal az Alkotmánybírósághoz.",
-        "Mert ezzel a bíróságok elveszítették a jogerős ítéletek felülvizsgálatának jogát polgári perekben."
+        "Bárki kérhette egy jogszabály vizsgálatát az Alkotmánybíróságtól.",
+        "Az alkotmánybírák megválasztása az Országgyűlésben.",
+        "A köztársasági elnök joga a törvények aláírására."
       ],
       "correct": 0,
       "teaches": [
@@ -22,13 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A kormányzat nem _____ meg a bíróságot a felülvizsgálati hatásköreitől.",
-      "hint": "must not deprive / foszt + -hatja",
-      "answer": "foszthatja",
-      "english": "The government must not deprive the court of its review competences.",
+      "sentence": "A panaszos köteles _____ kimeríteni a rendes jogorvoslatokat.",
+      "hint": "lenni, third person, past",
+      "english": "The complainant had to exhaust the ordinary legal remedies.",
       "teaches": [
         "formal-obligation"
-      ]
+      ],
+      "answer": "volt"
     },
     {
       "id": "c1-alkotmanyjog-02-controlled-3",
@@ -37,20 +37,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "actio popularis",
-          "bárki által kezdeményezhető normakontroll"
+          "hatáskör",
+          "amit egy szerv jogszerűen elvégezhet"
         ],
         [
-          "költségvetési korlátozás",
-          "pénzügyi törvények felülvizsgálatának tilalma"
+          "jogorvoslat",
+          "lehetőség a döntés megfellebbezésére"
+        ],
+        [
+          "államadósság",
+          "az állam tartozása"
         ],
         [
           "alkotmányjogi panasz",
-          "egyéni jogsérelem miatti beadvány"
-        ],
-        [
-          "hatáskörcsorbítás",
-          "intézményi jogkörök szándékos szűkítése"
+          "az érintett kérelme az Alkotmánybírósághoz"
         ]
       ],
       "teaches": [
@@ -62,12 +62,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A jogállamban az állam köteles _____ a bíróságok teljes függetlenségét.",
-      "hint": "to guarantee / garantál + -ni",
-      "answer": "garantálni",
-      "english": "In the rule of law the state is obligated to guarantee the complete independence of courts.",
+      "sentence": "2012-től az érintett _____ volt előbb minden más jogorvoslatot igénybe venni.",
+      "english": "From 2012 the person concerned had to use every other legal remedy first.",
       "teaches": [
         "formal-obligation"
+      ],
+      "answers": [
+        "kénytelen",
+        "köteles"
       ]
     },
     {
@@ -76,28 +78,28 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "parlament",
-        "nem",
-        "csorbíthatja",
+        "Az",
+        "érintett",
+        "kénytelen",
+        "volt",
+        "előbb",
+        "kimeríteni",
         "a",
-        "bírói",
-        "függetlenség",
-        "intézményi",
-        "garanciáit."
+        "rendes",
+        "jogorvoslatokat."
       ],
       "solution": [
-        "A",
-        "parlament",
-        "nem",
-        "csorbíthatja",
+        "Az",
+        "érintett",
+        "kénytelen",
+        "volt",
+        "előbb",
+        "kimeríteni",
         "a",
-        "bírói",
-        "függetlenség",
-        "intézményi",
-        "garanciáit."
+        "rendes",
+        "jogorvoslatokat."
       ],
-      "english": "Parliament cannot curtail the institutional guarantees of judicial independence.",
+      "english": "The person concerned had to exhaust the ordinary legal remedies first.",
       "teaches": [
         "formal-obligation"
       ]
@@ -110,21 +112,17 @@
       "prompt": [
         {
           "speaker": "Kérdező",
-          "text": "Milyen következménye volt a bíróság hatáskörcsorbításának?"
+          "text": "Mit írt elő a szabály 2012 után annak, aki alkotmányjogi panaszt nyújtott be?"
         },
         {
-          "speaker": "Szakértő",
-          "text": "A parlamenti többség nem _____ volna meg a normakontroll lehetőségét anélkül, hogy sérült volna a jogbiztonság."
-        },
-        {
-          "speaker": "Kérdező",
-          "text": "Ezért vált egyoldalúvá a törvényhozás."
+          "speaker": "Válaszadó",
+          "text": "A panaszos _____ volt kimeríteni a rendes jogorvoslatokat."
         }
       ],
       "options": [
-        "vonhatta",
-        "adhatta",
-        "kérhette"
+        "köteles",
+        "kötelezően",
+        "kötelezés"
       ],
       "correct": 0,
       "teaches": [
@@ -138,8 +136,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating a constitutional prohibition against executive overreach using 'nem csorbíthatja'.",
-          "answer": "A törvényhozó hatalom semmilyen politikai cél érdekében nem csorbíthatja a bíróságok alkotmányos felülvizsgálati jogkörét."
+          "prompt": "Write two sentences about the rules for a constitutional complaint from 2012: say what the complainant had to do first and what happened to the actio popularis.",
+          "answer": "2012-től az érintett köteles volt előbb kimeríteni a rendes jogorvoslatokat, az actio popularis pedig megszűnt."
         }
       ],
       "teaches": [
@@ -151,16 +149,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik modális forma fejez ki alkotmányjogi tilalmat a legszigorúbban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "nem csorbíthatja a hatásköröket",
-        "javasolhatja a hatáskörök felülvizsgálatát",
-        "jogosult átruházni a feladatokat"
+        "Az érintettek kötelesek voltak kimeríteni a jogorvoslatokat.",
+        "Az érintettek köteles voltak kimeríteni a jogorvoslatokat.",
+        "Az érintettek kötelesek voltak kimerítenie a jogorvoslatokat."
       ],
       "correct": 0,
       "teaches": [
         "formal-obligation"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "inflected-infinitives"
+      }
     }
   ]
 }

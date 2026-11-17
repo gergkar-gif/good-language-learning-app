@@ -1,0 +1,157 @@
+import sys; sys.path.insert(0,'/home/user/parlour-read-a/.scratch')
+from lib import *
+from u26_text import T26
+P='c1-mediaszabadsag'
+V='c1-media-capture-vocab'
+def tbl(rows): return {'type':'table','title':'Patterns in Context','rows':[list(r) for r in rows]}
+def txt(t,c): return {'type':'text','title':t,'content':c}
+L=[]
+L.append(dict(s='01',title='Media Regulation and Ownership, 2010–2018',grammar_name='Recap: reporting what someone stated with azt mondta, hogy',
+ goals=["I can describe the media laws of 2010, the closure of Népszabadság in 2016 and the founding of KESMA in 2018, with dates (*médiatörvény, kiadó, egyesülés*).",
+        "I can report what someone stated with *azt közölte, hogy* and *azt mondták, hogy* (*a kiadó azt közölte, hogy a lap veszteséges volt*).",
+        "I can say how the pro-government side and the critics judged the changes in media ownership."],
+ gr=dict(title='Recap: Reporting What Someone Stated',sections=[
+  txt('How it works',"You know *azt mondta, hogy* from B1 Unit 13 (*azt mondta / jelentette ki / közölte, hogy…*): a *hogy* clause gives what someone said. In a history it keeps each side's claim apart from the narrator's voice: *A kiadó azt közölte, hogy veszteséges a lap volt.* The reporting verb is in the past and the clause keeps its own tense. New in this lesson is the vocabulary of media ownership."),
+  txt('Example',"Example: *A bírálók azt mondták, hogy az alapítvány veszélyeztette a sokszínűséget.*"),
+  tbl([("A kiadó azt közölte, hogy veszteséges a lap volt.","The publisher stated that the paper was making a loss."),
+       ("A bírálók azt mondták, hogy az alapítvány veszélyeztette a sokszínűséget.","The critics said that the foundation endangered diversity."),
+       ("A kormánypárti oldal azt állította, hogy az alapítvány kiegyensúlyozta a médiapiacot.","The pro-government side claimed that the foundation balanced the media market.")])]),
+ vocab=[('médiatörvény','media law','noun'),('Médiatanács','Media Council (the body of the media authority)','noun'),('kiadó','publisher','noun'),('egyesülés','merger','noun'),('versenyhatóság','competition authority','noun'),('sokszínűség','diversity','noun'),('kormánypárti','pro-government','adjective'),('vizsgál','to examine','verb'),('felfüggeszt','to suspend','verb')],
+ ex=[
+  mc(f'{P}-01-introduce-1','introduce','vocabulary',V,'Mit jelent a versenyhatóság szó?',
+     ['Az a hivatal, amely az egyesüléseket vizsgálhatja.','Az a bíróság, amely a sajtóperekben dönt.','Az a hivatal, amely a lapok árát szabja meg.'],0),
+  fb(f'{P}-01-controlled-2','controlled','grammar','reported-speech-statements','A kiadó azt _____, hogy a lap veszteséges volt.','The publisher stated that the paper was making a loss.',['közölte','mondta'],hint='közöl, past, definite'),
+  mt(f'{P}-01-controlled-3','controlled',V,[('médiatörvény','a médiára vonatkozó jogszabály'),('Médiatanács','az Országgyűlés által választott testület, amely a médiát felügyeli'),('kiadó','az a cég, amely lapokat jelentet meg'),('egyesülés','két vállalat összeolvadása'),('sokszínűség','sokféle vélemény jelenléte')]),
+  fb(f'{P}-01-practice-4','practice','grammar','reported-speech-statements','A kormánypárti oldal azt állította, _____ az alapítvány kiegyensúlyozta a médiapiacot.','The pro-government side claimed that the foundation balanced the media market.',['hogy']),
+  sb(f'{P}-01-practice-5','practice','reported-speech-statements','A bírálók azt mondták, hogy az alapítvány veszélyeztette a sokszínűséget.','The critics said that the foundation endangered diversity.'),
+  dl(f'{P}-01-dialogue-6','reported-speech-statements',[('Kérdező','Mivel indokolta a kiadó a Népszabadság felfüggesztését 2016-ban?'),('Válaszadó','A kiadó azt közölte, _____ a lap veszteséges volt.')],['hogy','amit','aki'],0),
+  sw(f'{P}-01-production-7','production','reported-speech-statements','Write one sentence: say what the publisher stated about Népszabadság in 2016 and what the critics said, using reported speech.','A kiadó azt közölte, hogy veszteséges a lap volt. a bírálók viszont azt mondták, hogy politikai ok állt a háttérben.'),
+  mc(f'{P}-01-check-8','check','grammar','reported-speech-statements','Melyik mondat helyes?',
+     ['A kiadó azt közölte, hogy veszteséges a lap volt.','A kiadó azt közölte, hogy a lap veszteséges van.','A kiadó azt közölte, a lap hogy veszteséges volt.'],0),
+ ]))
+L.append(dict(s='02',title='Public Media and the Media Council, 2011–2021',grammar_name='Recap: concession with annak ellenére, hogy',
+ goals=["I can describe the public media's set-up in 2011, the events of December 2018 and the Klubrádió decision of 2020–2021, with dates (*közszolgálati média, frekvencia, székház*).",
+        "I can state a concession with *annak ellenére, hogy* (*annak ellenére, hogy a törvény ezt előírta, a bírálók szerint …*).",
+        "I can report how the critics and the Media Council explained these events."],
+ gr=dict(title='Recap: Concession with annak ellenére, hogy',sections=[
+  txt('How it works',"You know *annak ellenére, hogy* from B1 Unit 5 (*annak ellenére, hogy sokat veszekedünk*): the clause names a fact that does not prevent the main clause. In a history it sets what a rule required against what its critics said happened: *Annak ellenére, hogy a törvény kiegyensúlyozott tájékoztatást írt elő, a bírálók szerint a hírek a kormány álláspontját részesítették előnyben.* The judgement stays with its source. New in this lesson is the vocabulary of broadcasting."),
+  txt('Example',"Example: *Annak ellenére, hogy a Klubrádió megszűnt az FM-en, az interneten folytatta a sugárzást.*"),
+  tbl([("Annak ellenére, hogy a törvény kiegyensúlyozott tájékoztatást írt elő, a bírálók szerint a hírek a kormány álláspontját részesítették előnyben.","Although the law required balanced reporting, according to the critics the news favoured the government's position."),
+       ("Annak ellenére, hogy a Médiatanács szabálysértésekre hivatkozott, a bírálók szerint politikai szempontok is szerepet játszottak.","Although the Media Council cited violations of the rules, according to the critics political considerations also played a part."),
+       ("Annak ellenére, hogy a Klubrádió megszűnt az FM-en, az interneten folytatta a sugárzást.","Although Klubrádió ceased on FM, it continued broadcasting on the internet.")])]),
+ vocab=[('közszolgálati média','public service media','expression'),('kiegyensúlyozott','balanced','adjective'),('tájékoztatás','provision of information','noun'),('székház','headquarters (building)','noun'),('frekvencia','frequency','noun'),('követelés','demand','noun'),('szabálysértés','violation of rules','noun')],
+ ex=[
+  mc(f'{P}-02-introduce-1','introduce','vocabulary',V,'Mit jelent a kiegyensúlyozott tájékoztatás?',
+     ['Olyan hírközlés, amely több álláspontot is bemutat.','Olyan hírközlés, amelyért a nézők fizetnek.','Olyan hírközlés, amely csak a hivatalos közleményeket ismétli.'],0),
+  fb(f'{P}-02-controlled-2','controlled','grammar','concessive-annak-ellenere','Annak _____, hogy a törvény kiegyensúlyozott tájékoztatást írt elő, a bírálók szerint a hírek a kormány álláspontját részesítették előnyben.',"Although the law required balanced reporting, according to the critics the news favoured the government's position.",['ellenére']),
+  mt(f'{P}-02-controlled-3','controlled',V,[('közszolgálati média','az állami költségvetésből működő műsorszolgáltatás'),('székház','az az épület, amelyben egy szervezet vezetése dolgozik'),('frekvencia','a rádióadás hullámhossza'),('követelés','amit valaki határozottan kér'),('szabálysértés','a szabályok megszegése')]),
+  fb(f'{P}-02-practice-4','practice','grammar','concessive-annak-ellenere','Annak ellenére, _____ a Médiatanács szabálysértésekre hivatkozott, a bírálók szerint politikai szempontok is szerepet játszottak.','Although the Media Council cited violations of the rules, according to the critics political considerations also played a part.',['hogy']),
+  sb(f'{P}-02-practice-5','practice','concessive-annak-ellenere','Annak ellenére, hogy a Klubrádió megszűnt az FM-en, az interneten folytatta a sugárzást.','Although Klubrádió ceased on FM, it continued broadcasting on the internet.'),
+  dl(f'{P}-02-dialogue-6','concessive-annak-ellenere',[('Kérdező','Mi történt a Klubrádióval 2021-ben?'),('Válaszadó','Annak ellenére, _____ a rádió megszűnt a hagyományos rádióhullámokon, az interneten folytatta a műsort.')],['hogy','mert','mintha'],0),
+  sw(f'{P}-02-production-7','production','concessive-annak-ellenere','Write one sentence with annak ellenére, hogy about Klubrádió after February 2021.','Annak ellenére, hogy a Klubrádió 2021-ben megszűnt a hagyományos rádióhullámokon, az interneten folytatta a műsorszolgáltatást.'),
+  mc(f'{P}-02-check-8','check','grammar','concessive-annak-ellenere','Melyik mondat helyes?',
+     ['Annak ellenére, hogy a törvény kiegyensúlyozott tájékoztatást írt elő, a bírálók más véleményen voltak.','Annak ellenére, a törvény kiegyensúlyozott tájékoztatást írt elő, a bírálók más véleményen voltak.','Annak ellenére hogy, a törvény kiegyensúlyozott tájékoztatást írt elő, a bírálók más véleményen voltak.'],0),
+ ]))
+L.append(dict(s='03',title='State Advertising and Media Transparency, 2010–2025',grammar_name='Recap: verbal nouns in -ás/-és',
+ goals=["I can describe what the European Parliament, the Commission and the EMFA said about state advertising, with years (*állami hirdetés, elosztás, átláthatóság*).",
+        "I can form and use verbal nouns in *-ás/-és* (*az állami hirdetések elosztása, odaítélése*).",
+        "I can report how the government and the critics judged the award of state advertising."],
+ gr=dict(title='Recap: Verbal Nouns in -ás/-és',sections=[
+  txt('How it works',"You know *-ás* and *-és* from B1 Unit 16 (*olvas → olvasás*, *pihen → pihenés*): the ending turns a verb into a noun for the action. Reports and histories use these nouns to name a procedure: *eloszt → elosztás*, *odaítél → odaítélés*. The noun takes the endings of the sentence: *az állami hirdetések elosztását* (object), *az odaítélés* (subject). New in this lesson is the vocabulary of advertising and transparency."),
+  txt('Example',"Example: *Az Európai Parlament 2018-as jelentése aggályosnak nevezte az állami hirdetések elosztását.*"),
+  tbl([("Az Európai Parlament 2018-as jelentése aggályosnak nevezte az állami hirdetések elosztását.","The European Parliament's report of 2018 called the distribution of state advertisements a cause for concern."),
+       ("A bírálók szerint az állami hirdetések odaítélése nem volt átlátható.","According to the critics, the award of state advertisements was not transparent."),
+       ("A rendelet az állami hirdetések átlátható odaítélését írja elő.","The regulation prescribes the transparent award of state advertisements.")])]),
+ vocab=[('állami hirdetés','state advertisement','expression'),('kormányzati kampány','government campaign','expression'),('elosztás','distribution','noun'),('odaítélés','award (of a contract or funds)','noun'),('átláthatóság','transparency','noun'),('jelentés','report','noun'),('médiapiac','media market','noun'),('megkülönböztetésmentes','non-discriminatory','adjective')],
+ ex=[
+  mc(f'{P}-03-introduce-1','introduce','vocabulary',V,'Mit jelent az odaítélés szó?',
+     ['Az, hogy valakinek hivatalosan megadnak valamit.','Az, hogy valakitől hivatalosan elvesznek valamit.','Az, hogy valamiről nyilvánosan vitáznak.'],0),
+  fb(f'{P}-03-controlled-2','controlled','grammar','nominalization','Az Európai Parlament 2018-as jelentése aggályosnak nevezte az állami hirdetések _____.',"The European Parliament's report of 2018 called the distribution of state advertisements a cause for concern.",['elosztását'],hint='elosztani, verbal noun, object'),
+  mt(f'{P}-03-controlled-3','controlled',V,[('kormányzati kampány','az állam által szervezett tájékoztató akció'),('megkülönböztetésmentes','mindenkivel egyformán bánó'),('elosztás','az, hogy valamit szétosztanak'),('átláthatóság','az, hogy mindenki láthatja, hogyan döntöttek'),('médiapiac','a lapok és csatornák versenye')]),
+  fb(f'{P}-03-practice-4','practice','grammar','nominalization','A rendelet az állami hirdetések átlátható _____ írja elő.','The regulation prescribes the transparent award of state advertisements.',['odaítélését'],hint='odaítélni, verbal noun, object'),
+  sb(f'{P}-03-practice-5','practice','nominalization','A bírálók szerint az állami hirdetések odaítélése nem volt átlátható.','According to the critics, the award of state advertisements was not transparent.'),
+  dl(f'{P}-03-dialogue-6','nominalization',[('Kérdező','Mit bírált az Európai Parlament 2018-ban?'),('Válaszadó','Az állami hirdetések _____ nevezte aggályosnak.')],['elosztását','elosztani','elosztása'],0,ds={1:'building-the-infinitive-the-suffix-ni'}),
+  sw(f'{P}-03-production-7','production','nominalization','Write one sentence with a verbal noun: say what the European Parliament found worrying in 2018.','Az Európai Parlament 2018-as jelentése aggályosnak nevezte az állami hirdetések elosztását.'),
+  mc(f'{P}-03-check-8','check','grammar','nominalization','Melyik mondat helyes?',
+     ['A bírálók szerint az állami hirdetések odaítélése nem volt átlátható.','A bírálók szerint az állami hirdetések odaítélni nem volt átlátható.','A bírálók szerint az állami hirdetések odaítéltek nem volt átlátható.'],0,ds={1:'building-the-infinitive-the-suffix-ni',2:'past-tense-indefinite'}),
+ ]))
+L.append(dict(s='04',title='The Index and the Telex, 2020–2021',grammar_name='Recap: past participles as adjectives',
+ goals=["I can describe the events at the Index in July 2020 and the launch of the Telex, with dates (*főszerkesztő, szerkesztőség, hírportál*).",
+        "I can describe a noun by what was done to it with a past participle (*az elbocsátott főszerkesztő, a bejelentett hírportál*).",
+        "I can say how the editorial staff and others judged the dismissal."],
+ gr=dict(title='Recap: Past Participles as Adjectives',sections=[
+  txt('How it works',"You know *elkészített* from B1 Unit 2 (*az elkészített étel*): the participle in *-t/-ott/-ett/-ött* describes a noun by what was done to it. In a history it packs an earlier event into the noun phrase: *az elbocsátott főszerkesztő*, *a bejelentett hírportál*. The participle stands before the noun and takes no ending. New in this lesson is the vocabulary of newsrooms."),
+  txt('Example',"Example: *Az elbocsátott főszerkesztő később a Telexhez csatlakozott.*"),
+  tbl([("Az elbocsátott főszerkesztő később a Telexhez csatlakozott.","The dismissed editor-in-chief later joined the Telex."),
+       ("A bejelentett hírportál 2020 októberében jelent meg.","The announced news portal appeared in October 2020."),
+       ("A felmondott munkatársak új szerkesztőséget szerveztek.","The staff who had resigned organised a new newsroom.")])]),
+ vocab=[('főszerkesztő','editor-in-chief','noun'),('szerkesztőség','editorial staff, newsroom','noun'),('hírportál','news portal','noun'),('elbocsát','to dismiss','verb'),('felmond','to resign, to give notice','verb'),('bejelent','to announce','verb'),('társfőszerkesztő','co-editor-in-chief','noun'),('olvasó','reader','noun'),('munkaviszony','employment relationship','noun')],
+ ex=[
+  mc(f'{P}-04-introduce-1','introduce','vocabulary',V,'Mit jelent az elbocsát ige?',
+     ['A munkáltató megszünteti a munkaviszonyt.','Valaki új munkahelyen kezd dolgozni.','Valaki ugyanott dolgozik tovább.'],0),
+  fb(f'{P}-04-controlled-2','controlled','grammar','past-participle-adjective','Az _____ főszerkesztő később a Telexhez csatlakozott.','The dismissed editor-in-chief later joined the Telex.',['elbocsátott'],hint='elbocsát, past participle'),
+  mt(f'{P}-04-controlled-3','controlled',V,[('főszerkesztő','a szerkesztőség vezetője'),('hírportál','hírekkel foglalkozó weboldal'),('felmond','saját elhatározásából megszünteti a munkaviszonyát'),('olvasó','aki egy lapot vagy portált olvas')]),
+  fb(f'{P}-04-practice-4','practice','grammar','past-participle-adjective','A _____ hírportál 2020 októberében jelent meg.','The announced news portal appeared in October 2020.',['bejelentett'],hint='bejelent, past participle'),
+  sb(f'{P}-04-practice-5','practice','past-participle-adjective','Az elbocsátott főszerkesztő később a Telexhez csatlakozott.','The dismissed editor-in-chief later joined the Telex.'),
+  dl(f'{P}-04-dialogue-6','past-participle-adjective',[('Kérdező','Ki lett 2021-ben a Telex társfőszerkesztője?'),('Válaszadó','Az _____ főszerkesztő, Dull Szabolcs.')],['elbocsátott','elbocsátani','elbocsátják'],0,ds={1:'building-the-infinitive-the-suffix-ni',2:'definite-vs-indefinite-conjugation'}),
+  sw(f'{P}-04-production-7','production','past-participle-adjective','Write one sentence with a past participle: say who joined the Telex in January 2021.','Az Index elbocsátott főszerkesztője, Dull Szabolcs 2021 januárjában a Telex társfőszerkesztője lett.'),
+  mc(f'{P}-04-check-8','check','grammar','past-participle-adjective','Melyik mondat helyes?',
+     ['A bejelentett hírportál 2020 októberében jelent meg.','A bejelentő hírportál 2020 októberében jelent meg.','A bejelentés hírportál 2020 októberében jelent meg.'],0,ds={1:'present-participle',2:'nominalization'}),
+ ]))
+L.append(dict(s='05',title='The Sovereignty Protection Office and the 2026 Election',grammar_name='Recap: contrast with ugyanakkor and mindazonáltal',
+ goals=["I can describe the Sovereignty Protection Office and the European procedures about it, with dates (*szuverenitás, kötelezettségszegési eljárás, főtanácsnok*).",
+        "I can add a contrasting view with *ugyanakkor* and *mindazonáltal* (*a bírálók szerint ugyanakkor …*).",
+        "I can report how the government and the critics judged the office, and the result of the 2026 election."],
+ gr=dict(title='Recap: Adding a Contrasting View',sections=[
+  txt('How it works',"You know *mindazonáltal* and *ugyanakkor* from B2 Unit 16: they add a point that qualifies or contrasts with the one before. In a history they set the second side next to the first: *A kormány szerint a hivatal a külföldi befolyásolás elleni védelmet szolgálta; a bírálók szerint ugyanakkor a független sajtó ellen is felhasználható volt.* The two views stay attributed. New in this lesson is the vocabulary of sovereignty and EU procedures."),
+  txt('Example',"Example: *A kormány szerint a hivatal a védelmet szolgálta, a bírálók szerint ugyanakkor a sajtó ellen is felhasználható volt.*"),
+  tbl([("A kormány szerint a hivatal a külföldi befolyásolás elleni védelmet szolgálta; a bírálók szerint ugyanakkor a független sajtó ellen is felhasználható volt.","According to the government the office served protection against foreign influence; at the same time, according to the critics it could also be used against the independent press."),
+       ("Az Európai Bizottság 2024-ben eljárást indított; mindazonáltal a hivatal 2024 februárjában megkezdte működését.","The European Commission started a procedure in 2024; nevertheless, the office began work in February 2024."),
+       ("A törvényt a kormány a védelem eszközének tekintette, a bírálók ugyanakkor aggályosnak tartották.","The government regarded the law as a means of protection; the critics, on the other hand, considered it a cause for concern.")])]),
+ vocab=[('szuverenitás','sovereignty','noun'),('Szuverenitásvédelmi Hivatal','Sovereignty Protection Office','noun'),('kötelezettségszegési eljárás','infringement procedure','expression'),('főtanácsnok','advocate general','noun'),('befolyásolás','influence (the act of influencing)','noun'),('civil szervezet','non-governmental organisation','expression'),('uniós jog','EU law','expression'),('felhasználható','usable','adjective')],
+ ex=[
+  mc(f'{P}-05-introduce-1','introduce','vocabulary',V,'Mit jelent a kötelezettségszegési eljárás?',
+     ['Eljárás egy tagállam uniós jogi mulasztása miatt.','Eljárás egy bíró választására az Országgyűlésben.','Eljárás egy lap kiadási joga miatt.'],0),
+  fb(f'{P}-05-controlled-2','controlled','grammar','contrastive-discourse-markers','A kormány szerint a hivatal a védelmet szolgálta, a bírálók szerint _____ a független sajtó ellen is felhasználható volt.','According to the government the office served protection; at the same time, according to the critics it could also be used against the independent press.',['ugyanakkor','mindazonáltal']),
+  mt(f'{P}-05-controlled-3','controlled',V,[('szuverenitás','egy állam függetlensége a külső hatalmaktól'),('főtanácsnok','az uniós bíróság tisztségviselője, aki indítványt tesz'),('civil szervezet','nem állami, nem üzleti szervezet'),('uniós jog','az Európai Unió jogrendje')]),
+  fb(f'{P}-05-practice-4','practice','grammar','contrastive-discourse-markers','A bírálók szerint a törvény a sajtó ellen is felhasználható volt, a kormány szerint _____ a külföldi befolyásolás elleni védelmet szolgálta.','According to the critics the law could also be used against the press; at the same time, according to the government it served protection against foreign influence.',['ugyanakkor','mindazonáltal']),
+  sb(f'{P}-05-practice-5','practice','contrastive-discourse-markers','A kormány szerint a hivatal a védelmet szolgálta, a bírálók szerint ugyanakkor a sajtó ellen is felhasználható volt.','According to the government the office served protection; at the same time, according to the critics it could also be used against the press.'),
+  dl(f'{P}-05-dialogue-6','contrastive-discourse-markers',[('Kérdező','Hogyan ítélték meg a Szuverenitásvédelmi Hivatalt?'),('Válaszadó','A kormány szerint a külföldi befolyásolás elleni védelmet szolgálta; a bírálók szerint _____ a független sajtó ellen is felhasználható volt.')],['ugyanakkor','természetesen','hiszen'],0,ds={2:'discourse-particles'}),
+  sw(f'{P}-05-production-7','production','contrastive-discourse-markers','Write one sentence setting the government\'s view of the Sovereignty Protection Office against its critics\' view, with ugyanakkor.','A kormány szerint a hivatal a külföldi befolyásolás elleni védelmet szolgálta, a bírálók szerint ugyanakkor a független sajtó ellen is felhasználható volt.'),
+  mc(f'{P}-05-check-8','check','grammar','contrastive-discourse-markers','Which word can replace ugyanakkor in a sentence without changing its meaning?',
+     ['mindazonáltal','következésképpen','természetesen'],0),
+ ]))
+CONS=[
+  mc(f'{P}-consolidation-1','recognize','grammar','reported-speech-statements','Melyik mondat adja vissza, mit közölt a kiadó?',
+     ['A kiadó azt közölte, hogy veszteséges a lap volt.','A kiadó azt közölte, hogy a lap veszteséges.volt.','A kiadó közölte azt, a lap hogy veszteséges volt.'],0),
+  mc(f'{P}-consolidation-2','recognize','grammar','concessive-annak-ellenere','Which sentence says that the Klubrádió continued on the internet although it ceased on FM?',
+     ['Annak ellenére, hogy megszűnt az FM-en, az interneten folytatta.','Mivel megszűnt az FM-en, az interneten folytatta ellenére.','Annak ellenére, hogy az interneten folytatta, megszűnt volna.'],0),
+  mt(f'{P}-consolidation-3','recognize',V,[('kiadó','az a cég, amely lapokat jelentet meg'),('versenyhatóság','a vállalati egyesüléseket vizsgáló hivatal'),('frekvencia','a rádióadás hullámhossza'),('főszerkesztő','a szerkesztőség vezetője'),('szuverenitás','egy állam függetlensége a külső hatalmaktól')]),
+  fb(f'{P}-consolidation-4','recall','vocabulary',V,'2016-ban a Mediaworks _____ felfüggesztette a Népszabadság megjelenését.','In 2016 the publisher Mediaworks suspended the publication of Népszabadság.',['kiadó']),
+  fb(f'{P}-consolidation-5','recall','vocabulary',V,'Az Országgyűlés által választott _____ döntött a Klubrádió frekvenciájáról.','The Media Council, elected by the National Assembly, decided on Klubrádió\'s frequency.',['Médiatanács']),
+  fb(f'{P}-consolidation-6','recall','grammar','nominalization','A bírálók szerint az állami hirdetések _____ nem volt átlátható.','According to the critics, the award of state advertisements was not transparent.',['odaítélése'],hint='odaítélni, verbal noun, subject'),
+  fb(f'{P}-consolidation-7','context','grammar','past-participle-adjective','Az _____ főszerkesztő a Telexhez csatlakozott.','The dismissed editor-in-chief joined the Telex.',['elbocsátott'],hint='elbocsát, past participle'),
+  fb(f'{P}-consolidation-8','context','grammar','contrastive-discourse-markers','A kormány szerint a törvény a védelmet szolgálta, a bírálók szerint _____ a sajtó ellen is felhasználható volt.','According to the government the law served protection; at the same time, according to the critics it could also be used against the press.',['ugyanakkor','mindazonáltal']),
+  mc(f'{P}-consolidation-9','context','grammar','concessive-annak-ellenere','Which word completes the sentence? \'Annak _____, hogy a törvény kiegyensúlyozott tájékoztatást írt elő, a bírálók más véleményen voltak.\'',
+     ['ellenére','miatt','helyett'],0),
+  sb(f'{P}-consolidation-10','produce','reported-speech-statements','A kormánypárti oldal azt állította, hogy az alapítvány kiegyensúlyozta a médiapiacot.','The pro-government side claimed that the foundation balanced the media market.'),
+  sw(f'{P}-consolidation-11','production',V,'Write two sentences about KESMA in 2018: give the date of the transfer of the outlets and the government decree.','2018. november 28-án a médiumok korábbi tulajdonosai több mint négyszáz lapot, rádiót és televíziót adtak át a KESMA-nak. 2018. december 5-én a kormány rendeletben nemzetstratégiai jelentőségűnek minősítette az egyesülést.'),
+  sw(f'{P}-consolidation-12','production',V,'Write two sentences about the elections of 2026: give the result of 12 April and the election of the prime minister on 9 May.','2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett. 2026. május 9-én az Országgyűlés Magyar Pétert választotta miniszterelnökké.'),
+]
+L.append(dict(s='consolidation',title='Unit 26 Consolidation: Media Ownership and Regulation, 2010–2026',grammar_name='Review: reporting, concession, verbal nouns, participles and contrast',
+ goals=["I can summarise the media laws, the ownership changes and the Index case between 2010 and 2026, with years and sources.",
+        "I can report, concede, name an action with a noun and contrast views on these events.",
+        "I can report the Sovereignty Protection Office, the European procedures and the 2026 election with dates."],ex=CONS))
+U=dict(stem='mediaszabadsag',id='media-capture',unit_no=26,
+ title='Media Ownership and Regulation, 2010–2026',
+ intro=["Between 2010 and 2026 Hungary changed its media laws, the ownership of many news outlets and the rules for state advertising. Some observers saw a rebalancing, others a concentration of media power; the courts of the European Union and several institutions took positions on parts of it.",
+        "In five short accounts you follow these events year by year, name who judged them how, and practise the forms a neutral history needs: reported speech, concession, verbal nouns, participles and contrast. The period ends with the parliamentary election of 12 April 2026."],
+ stories=[
+  dict(file='c1-mediaszabadsag-01-kesma-letrehozasa',title='A médiaszabályozás és a tulajdonosi szerkezet, 2010–2018',summary='2010 és 2018 között új médiatörvények, a Népszabadság megszűnése és a KESMA megalakulása változtatta meg a médiapiacot; a kormánypárti oldal és a bírálók eltérően ítélték meg a változásokat.',paras=[T26[0]]),
+  dict(file='c1-mediaszabadsag-02-mtva-kormanypropaganda',title='A közmédia és a Médiatanács, 2011–2021',summary='2011-től az MTVA végezte a közszolgálati média gyártását; 2018-ban és 2021-ben olyan események történtek, amelyeket a bírálók és a döntéshozók eltérően ítéltek meg.',paras=[T26[1]]),
+  dict(file='c1-mediaszabadsag-03-allami-hirdetesek-fegyvere',title='Az állami hirdetések és az átláthatóság, 2010–2025',summary='2010 után a kormány jelentős összeget költött hirdetésekre; az Európai Parlament, a Bizottság és 2024-től az európai médiaszabadsági rendelet is foglalkozott az elosztással.',paras=[T26[2]]),
+  dict(file='c1-mediaszabadsag-04-index-felmondas-telex',title='Az Index és a Telex, 2020–2021',summary='2020 nyarán az Index főszerkesztőjét elbocsátották, a szerkesztőség tagjai felmondtak, és októberben megjelent a Telex.',paras=[T26[3]]),
+  dict(file='c1-mediaszabadsag-05-fuggetlen-media-jovoje',title='A Szuverenitásvédelmi Hivatal és a 2026-os választás',summary='2023-ban törvény született a Szuverenitásvédelmi Hivatalról, amelyet az Európai Bizottság vitatott; 2026 áprilisában választást tartottak, májusban új kormány alakult.',paras=[T26[4]]),
+ ],lessons=L)
+if __name__=='__main__':
+    write_unit(U)

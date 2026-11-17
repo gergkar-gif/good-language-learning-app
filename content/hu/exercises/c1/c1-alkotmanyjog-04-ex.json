@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent az 'intézményi foglyul ejtés' (state capture / institutional capture)?",
+      "question": "Mit jelent a megbízatás szó?",
       "options": [
-        "Azt a folyamatot, amikor a független ellenőrző és bírói szervek élére a kormánypárthoz lojális szereplőket ültetnek, kiüresítve a kontrollt.",
-        "Azt a törvényi mechanizmust, amellyel a magánvállalatok állami tulajdonba kerülnek csődeljárás során.",
-        "A közintézmények szigorú költségvetési felügyeletét nemzetközi pénzügyi szervezetek által."
+        "Az az időszak, amelyre valakit tisztségre választottak.",
+        "Az a törvény, amely a bírói fizetést szabályozza.",
+        "Az a testület, amely az ítéleteket felülvizsgálja."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A bírói kinevezések politikai megvétózása _____ összeegyeztethetetlen a hatalommegosztással.",
-      "hint": "manifestly / nyilvánvaló + -an",
-      "answer": "nyilvánvalóan",
-      "english": "The political vetoing of judicial appointments is manifestly incompatible with the separation of powers.",
+      "sentence": "A bírálók szerint a szabály _____ gyengítette a bírák függetlenségét.",
+      "english": "According to the critics, the rule probably weakened the independence of judges.",
       "teaches": [
         "epistemic-hedging"
+      ],
+      "answers": [
+        "feltehetőleg",
+        "valószínűleg"
       ]
     },
     {
@@ -37,20 +39,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "intézményi foglyul ejtés",
-          "független szervek pártérdekek alá rendelése"
+          "nyugdíjkorhatár",
+          "az az életkor, amelyben a munkavállaló nyugdíjba megy"
         ],
         [
-          "Országos Bírósági Hivatal",
-          "a bíróságok központi igazgatási szerve"
+          "Kúria",
+          "Magyarország legfőbb bírósága"
         ],
         [
-          "legfőbb ügyész",
-          "a vádhatóság függetlennek szánt vezetője"
+          "Országos Bírói Hivatal",
+          "a bíróságok igazgatását végző szerv"
         ],
         [
-          "pártpolitikai lojalitás",
-          "pártérdekek feltétlen kiszolgálása"
+          "egyenlő bánásmód",
+          "a megkülönböztetés tilalma"
+        ],
+        [
+          "bírói függetlenség",
+          "a bírák függetlensége más hatalmi ágaktól"
         ]
       ],
       "teaches": [
@@ -62,15 +68,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A döntés minden kétséget kizáróan _____ sérelmet okozott a sajtószabadság terén.",
-      "hint": "unconstitutional",
-      "english": "The decision caused an unconstitutional injury beyond all doubt in the field of media freedom.",
+      "sentence": "A korhatár csökkentése _____ hatással volt a bírói kar összetételére.",
+      "english": "The lowering of the age limit probably affected the composition of the judiciary.",
       "teaches": [
         "epistemic-hedging"
       ],
       "answers": [
-        "alaptörvény-ellenes",
-        "alkotmányellenes"
+        "valószínűleg",
+        "feltehetőleg"
       ]
     },
     {
@@ -79,28 +84,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "bírói",
-        "függetlenség",
-        "felszámolása",
-        "nyilvánvalóan",
-        "ellentétes",
-        "az",
-        "európai",
-        "értékekkel."
+        "Aligha",
+        "vitatható,",
+        "hogy",
+        "a",
+        "korhatár",
+        "csökkentése",
+        "több",
+        "bíró",
+        "megbízatását",
+        "megszüntette."
       ],
       "solution": [
-        "A",
-        "bírói",
-        "függetlenség",
-        "felszámolása",
-        "nyilvánvalóan",
-        "ellentétes",
-        "az",
-        "európai",
-        "értékekkel."
+        "Aligha",
+        "vitatható,",
+        "hogy",
+        "a",
+        "korhatár",
+        "csökkentése",
+        "több",
+        "bíró",
+        "megbízatását",
+        "megszüntette."
       ],
-      "english": "The abolition of judicial independence is manifestly contrary to European values.",
+      "english": "It can hardly be disputed that lowering the age limit ended the mandates of several judges.",
       "teaches": [
         "epistemic-hedging"
       ]
@@ -112,22 +119,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Bíró",
-          "text": "Hogyan értékelhető az OBT és az OBH elnöke közötti küzdelem?"
+          "speaker": "Kérdező",
+          "text": "Mennyire biztos, hogy a szabály gyengítette a bírák függetlenségét?"
         },
         {
-          "speaker": "Jogász",
-          "text": "Ez a folyamat minden kétséget kizáróan _____ csorbát ejtett a bíróságok függetlenségén."
-        },
-        {
-          "speaker": "Bíró",
-          "text": "Ezért kértük az Európai Unió Bíróságának állásfoglalását."
+          "speaker": "Válaszadó",
+          "text": "Ez _____ így volt, de a vélemények megoszlottak."
         }
       ],
       "options": [
-        "alaptörvény-ellenes",
-        "indokolható",
-        "összeegyeztethető"
+        "valószínűleg",
+        "kétségtelenül",
+        "természetesen"
       ],
       "correct": 0,
       "teaches": [
@@ -141,8 +144,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating an unconstitutional abuse using an epistemic stance marker.",
-          "answer": "A független felügyeleti intézmények lojalitásalapú feltöltése és a bíróságok kormánypárti ellenőrzése nyilvánvalóan összeegyeztethetetlen a demokratikus jogállam alapelvével."
+          "prompt": "Write two sentences about the retirement age of judges: state the change with its year and then give one hedged assessment of its effect.",
+          "answer": "2012-ben a bírák kötelező nyugdíjkorhatára hetvenről hatvankét évre csökkent, és ez valószínűleg hatással volt a bírói kar összetételére."
         }
       ],
       "teaches": [
@@ -154,11 +157,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik episztemikus kifejezés mond ki jogsértést a legnagyobb bizonyossággal?",
+      "question": "Which sentence presents the effect on the judiciary as probable, but not certain?",
       "options": [
-        "minden kétséget kizáróan alaptörvény-ellenes",
-        "feltételezhetően vitatható a gyakorlatban",
-        "valószínűsíthetően nem felel meg az elvárásoknak"
+        "A korhatár csökkentése valószínűleg hatással volt a bírói kar összetételére.",
+        "A korhatár csökkentése kétségtelenül hatással volt a bírói kar összetételére.",
+        "A korhatár csökkentése aligha volt hatással a bírói kar összetételére."
       ],
       "correct": 0,
       "teaches": [

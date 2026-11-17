@@ -6,31 +6,34 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel diagnosztizálhatjuk az egészségügyi rendszer kettészakadását?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "az ellátórendszer rendszerszintű kettészakadása",
-        "az osztályos eszközök elhasználódása és pótlása",
-        "az orvosi vizitek menetrendjének kismértékű csúszása"
+        "Az orvosokhoz képest az ápolók bére alacsonyabb volt.",
+        "Az orvosok képest az ápolók bére alacsonyabb volt.",
+        "Az orvosokra képest az ápolók bére alacsonyabb volt."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
-      ]
+        "kepest"
+      ],
+      "distractor_skills": {
+        "2": "ra-re"
+      }
     },
     {
       "id": "c1-egeszsegugy-consolidation-2",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik modális kifejezés rögzíti az állami egészségügyi felelősséget a legszigorúbban?",
+      "question": "Which sentence says that the suppliers protested because the hospitals did not pay?",
       "options": [
-        "kötelessége szavatolni a kórházak működését",
-        "javaslatot tehet a kórházi vezetés személyi összetételére",
-        "figyelemmel kísérheti az intézményi beszerzések ütemezését"
+        "A kórházak nem fizettek, és emiatt a beszállítók tiltakoztak.",
+        "A kórházak nem fizettek, és ellenére a beszállítók tiltakoztak.",
+        "A kórházak nem fizettek, és emiatt tiltakoztak a beszállítók volt."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "causal-postpositions"
       ]
     },
     {
@@ -40,24 +43,24 @@
       "stage": "recognize",
       "pairs": [
         [
-          "hálapénz kivezetése",
-          "orvosi borítékok büntetőjogi betiltása"
+          "hálapénz",
+          "amit a beteg önként ad az orvosnak"
         ],
         [
-          "kórházi adósságállomány",
-          "egészségügyi intézmények kifizetetlen számlái"
+          "beszállító",
+          "aki árut szállít egy intézménynek"
         ],
         [
-          "Magyar Orvosi Kamara",
-          "orvosok önálló etikai köztestülete"
+          "szakdolgozó",
+          "egészségügyi dolgozó, aki nem orvos"
         ],
         [
-          "szakdolgozói bérfeszültség",
-          "orvosok és ápolók közötti jövedelmi szakadék"
+          "önkéntes",
+          "amit senki sem köteles megtenni"
         ],
         [
-          "zsebből fizetett ellátás",
-          "állampolgárok által közvetlenül finanszírozott magánorvoslás"
+          "centrumkórház",
+          "nagy, több településről fogadó kórház"
         ]
       ],
       "teaches": [
@@ -69,43 +72,38 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A kifizetetlen kórházi számlák miatt felhalmozódó kötelezettség a kórházi _____.",
-      "hint": "debt volume",
-      "english": "The liability accumulating due to unpaid hospital bills is hospital debt volume.",
+      "sentence": "2021-től a _____ adása és elfogadása tilos lett.",
+      "english": "From 2021 giving and accepting gratuities became prohibited.",
       "teaches": [
         "c1-healthcare-crisis-vocab"
       ],
-      "answers": [
-        "adósságállomány",
-        "adósság"
-      ]
+      "answer": "hálapénz"
     },
     {
       "id": "c1-egeszsegugy-consolidation-5",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Az orvosok független szakmai szervezete a Magyar Orvosi _____.",
-      "hint": "Chamber",
-      "english": "The independent professional organization of doctors is the Hungarian Medical Chamber.",
+      "sentence": "A kórházak több fő _____ is jelezte, hogy nem vár tovább a kifizetetlen számlákra.",
+      "english": "Several of the hospitals' main suppliers signalled that they would no longer wait for the unpaid invoices.",
       "teaches": [
         "c1-healthcare-crisis-vocab"
       ],
-      "answers": [
-        "Kamara"
-      ]
+      "answer": "beszállítója"
     },
     {
       "id": "c1-egeszsegugy-consolidation-6",
       "type": "fill-blank",
       "category": "grammar",
-      "stage": "recall",
-      "sentence": "Az államnak kötelessége _____ szavatolni a kórházak fenntartható költségvetését.",
-      "hint": "would be / lenni, cond 3sg",
-      "answer": "volna",
-      "english": "It would be the state's duty to guarantee a sustainable hospital budget.",
+      "stage": "context",
+      "sentence": "A 2021-es tüntetések _____ sok ápoló elmondta, hogy külföldi munkát fontolgat.",
+      "english": "During the protests of 2021 many nurses said they were considering work abroad.",
       "teaches": [
-        "formal-obligation"
+        "b2-temporal-framing"
+      ],
+      "answers": [
+        "során",
+        "folyamán"
       ]
     },
     {
@@ -113,30 +111,26 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minél nagyobb a bérszakadék, _____ több ápoló hagyja el az állami kórházakat.",
-      "hint": "minél … ___",
-      "english": "The greater the wage gap, the more nurses leave state hospitals.",
+      "sentence": "Vitatott volt, hogy a törvény az orvosokat védte-e, _____ a kamarát gyengítette.",
+      "english": "It was disputed whether the law protected the doctors or weakened the chamber.",
       "teaches": [
-        "correlative-minel-annal"
+        "indirect-questions"
       ],
-      "answers": [
-        "annál"
-      ]
+      "answer": "vagy"
     },
     {
       "id": "c1-egeszsegugy-consolidation-8",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Végső soron _____ az állami ellátórendszer átfogó és radikális rekonstrukciója.",
-      "hint": "unavoidable",
-      "english": "Ultimately comprehensive and radical reconstruction of the state care system is unavoidable.",
+      "sentence": "A késés _____ a kormány szerint a program korszerűsítést szolgált.",
+      "english": "In spite of the delay, according to the government the programme served modernisation.",
       "teaches": [
-        "conclusive-markers"
+        "concessive-postpositions"
       ],
       "answers": [
-        "elkerülhetetlen",
-        "kikerülhetetlen"
+        "ellenére",
+        "dacára"
       ]
     },
     {
@@ -144,15 +138,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a funkciója a 'Minél... annál...' arányossági szerkezetnek az egészségügyi elemzésekben?",
+      "question": "Which word completes the sentence? 'A késés _____ a kormány szerint a program korszerűsítést szolgált.'",
       "options": [
-        "A szakdolgozói bérlemaradás és az osztálybezárások közötti közvetlen ok-okozati összefüggést mutatja be.",
-        "A finanszírozási protokollok adminisztratív jóváhagyásának lépéseit részletezi.",
-        "Az intézményi hierarchia szervezeti szintjeit határozza meg."
+        "ellenére",
+        "miatt",
+        "óta"
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "concessive-postpositions"
       ]
     },
     {
@@ -162,27 +156,33 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "közegészségügy",
+        "kérdés",
+        "az",
+        "volt,",
+        "hogy",
         "a",
-        "társadalmi",
-        "szolidaritás",
-        "és",
-        "igazságosság",
-        "záloga."
+        "kamara",
+        "tagjai",
+        "a",
+        "kamarában",
+        "maradnak-e."
       ],
       "solution": [
         "A",
-        "közegészségügy",
+        "kérdés",
+        "az",
+        "volt,",
+        "hogy",
         "a",
-        "társadalmi",
-        "szolidaritás",
-        "és",
-        "igazságosság",
-        "záloga."
+        "kamara",
+        "tagjai",
+        "a",
+        "kamarában",
+        "maradnak-e."
       ],
-      "english": "Public healthcare is the pledge of social solidarity and justice.",
+      "english": "The question was whether the chamber's members would stay in the chamber.",
       "teaches": [
-        "conclusive-markers"
+        "indirect-questions"
       ]
     },
     {
@@ -192,12 +192,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical diagnosis of healthcare shortages using a crisis framing marker.",
-          "answer": "Az orvosi béremelés féloldalassága miatt a szakdolgozói bérfeszültség drasztikus kiéleződése és a kórházi adósságállomány újratermelődése az ellátórendszer fokozatos kettészakadásához vezetett."
+          "prompt": "Write two sentences about the pay agreement of 2020: say who agreed and what changed from 1 January 2021.",
+          "answer": "2020 őszén a kormány és a kamara megállapodott az orvosok béremeléséről. 2021. január 1-jétől jelentősen emelkedett az orvosok bére."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "c1-healthcare-crisis-vocab"
       ]
     },
     {
@@ -207,12 +207,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on public health reconstruction and the right to healthcare.",
-          "answer": "Végső soron elkerülhetetlen az ápolói munka tisztességes megbecsülése, a kórházak fenntartható finanszírozása és az állami közegészségügy megerősítése az emberi méltóság és a betegbiztonság védelmében."
+          "prompt": "Write two sentences about the elections of 2026: give the result of 12 April and the election of the prime minister on 9 May.",
+          "answer": "2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett. 2026. május 9-én az Országgyűlés Magyar Pétert választotta miniszterelnökké."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-healthcare-crisis-vocab"
       ]
     }
   ]
