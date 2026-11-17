@@ -36,3 +36,32 @@ claim | verdict | source
 - 03: debates in "a Parlament kupolacsarnoka" | **wrong room**: sessions sat in the chamber (*ülésterem*) of the Országház (in use from 1902); obstruction 1889, 1903–04; reading recipes: anecdotal, hedge; duels of the Dualist era: sure as a practice
 - 04: 15 March 1848, Landerer (és Heckenast) press, Nemzeti dal and 12 pont printed without censorship | sure; Nyugat is not a *hírlap*: say "lapok"
 - 05: filter bubbles stated as fact | researchers dispute their size: one line
+
+## urban-satire (Culture Unit 5)
+- 01: the Pest joke "délelőtt botrány, délre az egész Nagykörút nevetett" | anecdote: hedge (*a mondás szerint*)
+- 02: Karinthy, *Így írtok ti* 1912; New York and Hadik cafés | sure; "Karinthy vallotta: a humor a legkomolyabb dolog" is a paraphrase of his known stance (cf. "Humorban nem ismerek tréfát"): keep as *felfogása szerint*, no quotation
+- 03: Nagy Endre founded Hungarian cabaret (1907, Bonbonnière) | sure; "elegáns szmokingban" embellishment; Hofi at the Mikroszkóp Színpad (from 1971) | not confirmed by my search: check
+- 03: "A hatalom hiába próbálta biztonsági szelepként használni: Hofi nevetése halálos sebet ejtett" | **disputed matter settled one way**: whether Kádár-era tolerated satire was a safety valve or undermined the regime is argued; one line
+- 04: "aizopusi nyelv" | **wrong word**: *ezópusi nyelv*; Beszélő (1981), Hírmondó (1983) samizdat | sure
+- 05: "képtelen törvényt szavaznak meg" | judgement of parliament: neutral wording
+
+## hungarian-metaphors (Culture Unit 6)
+- 01: "a fizikai tér tökéletes leképezése", "ösztönösen három dimenzióban látja" | overstated: hedge; content repeats language-worldview segment 04 almost word for word (kétségbe esünk, dolgozunk rajta)
+- 02: **no segment 02 file**; the combined reading holds nothing extra (its paragraphs are segments 01, 03, 04, 05)
+- 03: Petőfi and the puszta; Ady, *A magyar Ugaron* (1905); Bartók's *Cantata profana*, "csak tiszta forrásból" | sure
+- 04: Kölcsey's Himnusz, *balsors* | sure; antemurale idea and "Európa hálátlan" is a national narrative: attribute (*a nemzeti hagyomány szerint*)
+- 05: "a reformkorban Kazinczy és társai tízezer új szót" | imprecise: the language reform (nyelvújítás) mostly preceded the reform era (Kazinczy d. 1831): *a nyelvújítás korában*, *mintegy*
+
+## rule-of-law (Culture Unit 7)
+- 01: Golden Bull, Székesfehérvár 1222, 31 articles, Art. 31 resistance clause | sure; "A törvény felette állt magának a királynak is" interpretive: hedge
+- 02: Werbőczy's Tripartitum 1514 | compiled 1514, printed 1517, never formally sanctioned: say so; the developed Holy Crown doctrine is largely 19th-century legal history (Timon Ákos); "a nemzet" in Werbőczy = the nobility; "jogi személyiség" anachronistic
+- 03: 11 April 1848, Pozsony, Ferdinand V, 31 acts, Batthyány ministry, countersignature | sure; "több millió parasztot emelt szabad, birtokos polgárrá" | **overstated**: only urbarial serfs got their land; the cottars (*zsellérek*) remained landless
+- 04: Constitutional Court from 1990, Sólyom president, death penalty abolished 23/1990 (X. 31.), "láthatatlan alkotmány" (Sólyom's concurring opinion there) | sure
+- 05: sovereignty vs EU rule of law | present-day; "Ez a párbeszéd nem a jogállamiság tagadása" takes a side: remove. Present-day state (2026): the 17th amendment (June–July 2026, new government) reshapes the presidency and the Constitutional Court and is itself before the Court/ombudsman (Aug 2026): no claim about current state | Index 2026-06-22; AB 1387/2026 (VIII. 17.)
+
+## transparency-redress (Culture Unit 8)
+- 01: Fundamental Law Art. VI and the Info Act (2011. évi CXII.) | sure; "a bíróságok sorra kötelezik" generalisation: hedge (*gyakran*)
+- 02: Alapvető Jogok Biztosa (since 2012), Scandinavian origin (Sweden 1809) | sure; the reports listed are typical, keep unspecific
+- 03: whistleblower protection: 2023. évi XXV. törvény (EU Directive 2019/1937) | present-day, check
+- 04: "Az Ügyfélkapu" | **outdated**: retired 16 Jan 2025, now Ügyfélkapu+ and DÁP; "útlevél-igénylés okostelefonról" not confirmed: say *számos ügy* | kormanyhivatalok.hu 2025
+- 05: TI Hungary, K-Monitor, TASZ exist | sure; "ezerszeresen bizonyították, hogy ... nem nemzetellenes tevékenység, hanem a legnemesebb hazafias kötelesség" | **political judgement in a present-day dispute**: remove; "végső soron" (conclusive-markers, never met) allowed in a story only
