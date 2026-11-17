@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevez a médiajog 'dermesztő hatásnak' (chilling effect) a megfigyelések kontextusában?",
+      "question": "Mit jelent a forrásvédelem szó?",
       "options": [
-        "Azt a pszichológiai állapotot és öncenzúrát, amikor a polgárok és informátorok a lehallgatástól és retorziótól való félelmükben nem mernek beszélni a sajtóval vagy bírálni a hatalmat.",
-        "A tényfeltáró cikkek megjelenése után a hatóságok által elrendelt kötelező vagyonosodási vizsgálatok és adóbírságok rendszerét.",
-        "A hírportálok szerkesztőségeit érő túlterheléses támadásokat, amelyek órákra elérhetetlenné teszik a független weboldalakat."
+        "Az újságíró nem köteles elárulni, ki adott neki információt.",
+        "Az újságíró köteles minden forrását nyilvánosságra hozni.",
+        "A rendőrség őrzi az újságíró lakását."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A sajtómunkásnak etikai _____ megvédeni a bizalmas források anonimitását.",
-      "hint": "duty / kötelesség + -e",
-      "answer": "kötelessége",
-      "english": "It is the press worker's ethical duty to protect the anonymity of confidential sources.",
+      "sentence": "A sajtószabadsággal foglalkozó szervezetek szerint a megfigyelés _____ elriasztotta a forrásokat.",
+      "hint": "probably",
+      "english": "According to the organisations dealing with press freedom, the surveillance probably deterred sources.",
       "teaches": [
-        "formal-obligation"
+        "epistemic-hedging"
+      ],
+      "answers": [
+        "feltehetőleg",
+        "valószínűleg"
       ]
     },
     {
@@ -37,20 +40,24 @@
       "stage": "controlled",
       "pairs": [
         [
+          "forrás",
+          "aki vagy ami információt ad egy újságírónak"
+        ],
+        [
+          "sajtószabadság",
+          "a sajtó joga a szabad tájékoztatásra"
+        ],
+        [
           "dermesztő hatás",
-          "a megfigyeléstől való félelem szülte bénultság és öncenzúra"
+          "a félelem, amely visszatart a szólástól"
         ],
         [
-          "forrásvédelem szentsége",
-          "az újságírói informátorok kilétének feltétlen védelme"
+          "nemzetbiztonság",
+          "az állam külső és belső védelme"
         ],
         [
-          "sajtótitok",
-          "a hivatás gyakorlása során megismert adatok kötelező megőrzése"
-        ],
-        [
-          "titkosszolgálati megfélemlítés",
-          "a hatóságok nyomásgyakorlása a kritikus hangok elnémítására"
+          "bizalom",
+          "az, hogy valakire rá merünk bízni valamit"
         ]
       ],
       "teaches": [
@@ -62,15 +69,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Megalkuvást nem ismerve kell _____ a sajtótitok sérthetetlensége mellett.",
-      "hint": "stand",
-      "english": "Without compromise one must stand up for the inviolability of press secrecy.",
+      "sentence": "_____ vitatható, hogy a Bíróság 1996-ban a sajtószabadság alapfeltételének nevezte a forrásvédelmet.",
+      "hint": "hardly",
+      "english": "It can hardly be disputed that in 1996 the Court called source protection a basic condition of press freedom.",
       "teaches": [
-        "formal-obligation"
+        "epistemic-hedging"
       ],
-      "answers": [
-        "kiállni"
-      ]
+      "answer": "Aligha"
     },
     {
       "id": "c1-megfigyeles-03-practice-5",
@@ -79,25 +84,33 @@
       "stage": "practice",
       "tiles": [
         "Az",
-        "újságírónak",
-        "kötelessége",
-        "megvédeni",
+        "érintett",
+        "újságírók",
+        "szerint",
         "a",
-        "forrásai",
-        "biztonságát."
+        "megfigyelés",
+        "valószínűleg",
+        "csökkentette",
+        "a",
+        "források",
+        "bizalmát."
       ],
       "solution": [
         "Az",
-        "újságírónak",
-        "kötelessége",
-        "megvédeni",
+        "érintett",
+        "újságírók",
+        "szerint",
         "a",
-        "forrásai",
-        "biztonságát."
+        "megfigyelés",
+        "valószínűleg",
+        "csökkentette",
+        "a",
+        "források",
+        "bizalmát."
       ],
-      "english": "It is the duty of the journalist to protect the security of their sources.",
+      "english": "According to the journalists concerned, the surveillance probably reduced the sources' trust.",
       "teaches": [
-        "formal-obligation"
+        "epistemic-hedging"
       ]
     },
     {
@@ -107,26 +120,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Tényfeltáró",
-          "text": "Hogyan tarthatjuk meg az informátorok bizalmát a Pegasus-botrány után?"
+          "speaker": "Kérdező",
+          "text": "Hogyan fogalmaztak óvatosan a szervezetek a megfigyelés hatásáról?"
         },
         {
-          "speaker": "Főszerkesztő",
-          "text": "Úgy, hogy kötelességünk a legszigorúbb biztonsági intézkedésekkel garantálni a forrásvédelem _____."
-        },
-        {
-          "speaker": "Tényfeltáró",
-          "text": "A forrásaink védelme a hitelünk alapköve."
+          "speaker": "Válaszadó",
+          "text": "A megfigyelés _____ elriasztotta a forrásokat."
         }
       ],
       "options": [
-        "szentségét",
-        "árát",
-        "méretét"
+        "feltehetőleg",
+        "aligha",
+        "egyértelműen"
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "epistemic-hedging"
       ]
     },
     {
@@ -136,12 +145,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a declaration of journalistic source protection using a deontic modal.",
-          "answer": "A tényfeltáró újságíróknak megalkuvást nem ismerve kötelességük megvédeni az informátorok titkosságát, és nem engedhető meg, hogy a titkosszolgálati lehallgatások dermesztő hatása elhallgattassa a szabad sajtót."
+          "prompt": "Write one sentence with a hedge: say what the organisations dealing with press freedom thought the surveillance probably did to sources.",
+          "answer": "A sajtószabadsággal foglalkozó szervezetek szerint a megfigyelés feltehetőleg elriasztotta a forrásokat attól, hogy újságírókkal beszéljenek."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "epistemic-hedging"
       ]
     },
     {
@@ -149,15 +158,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik deontikus szerkezet fogalmazza meg a forrásvédelem kötelezettségét a leghatározottabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "kötelessége megvédeni az informátorokat",
-        "jó lenne ha az újságírók néha kikapcsolnák a telefonjukat",
-        "a riporterek beszélgethetnek a forrásokkal a kávézóban"
+        "Az újságírók szerint a megfigyelés feltehetőleg elriasztotta a forrásokat.",
+        "Az újságírók szerint a megfigyelés feltehetőleg elriasztott a forrásokat.",
+        "Az újságírók szerint a megfigyelés feltehetőleg elriasztották a forrásokat."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "epistemic-hedging"
       ]
     }
   ]

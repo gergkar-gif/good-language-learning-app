@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Melyek a 'Demokratikus Minimum' legfontosabb sarokkövei?",
+      "question": "Mit jelent az Európai Ügyészség kifejezés?",
       "options": [
-        "A független bíróságok, a sajtószabadság, az arányos választási rendszer és a rendszerszintű korrupció elleni független fellépés.",
-        "A kötelező katonai szolgálat és a külföldi utazások korlátozása.",
-        "Az állami televízió egyeduralmának fenntartása és a magánmédia betiltása."
+        "Az uniós pénzek védelmére létrehozott közös szerv.",
+        "Az uniós tagállamok közös hadserege.",
+        "Az uniós tagállamok közös választási testülete."
       ],
       "correct": 0,
       "teaches": [
@@ -22,13 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Minél jobban átlátható a közpénzek elköltése, _____ kevésbé tud terjedni a korrupció.",
-      "hint": "minél … ___",
-      "answer": "annál",
-      "english": "The more transparent the spending of public funds, the less corruption can spread.",
+      "sentence": "A kormány szerint a visszatartás politikai nyomás volt, a Bizottság _____ a jogállamisági aggályokkal indokolta.",
+      "english": "According to the government the withholding was political pressure; the Commission, however, justified it with rule-of-law concerns.",
       "teaches": [
-        "correlative-minel-annal"
-      ]
+        "adversative-contrast"
+      ],
+      "answer": "viszont"
     },
     {
       "id": "c1-magyarjovo-04-controlled-3",
@@ -37,20 +36,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "demokratikus minimum",
-          "azok az alapvető jogállami normák, amelyekről nem köthető politikai kompromisszum"
+          "Európai Ügyészség",
+          "az uniós pénzek védelmére létrehozott közös szerv"
         ],
         [
-          "fékek és ellensúlyok",
-          "a hatalmi ágak szétválasztásának és kölcsönös kontrolljának rendszere"
+          "jogállamiság",
+          "az, hogy a hatalom is a törvények alatt áll"
         ],
         [
-          "antikorrupciós ügyészség",
-          "a politikai bűncselekményeket a kormánytól függetlenül vizsgáló hatóság"
+          "civil szervezet",
+          "nem állami, önkéntes szervezet"
         ],
         [
-          "arányos választási rendszer",
-          "a leadott szavazatok arányát híven tükröző parlamenti mandátummegosztás"
+          "megfigyelő",
+          "aki egy választást külső szemmel figyel"
+        ],
+        [
+          "uniós forrás",
+          "az Európai Unió által adott pénz"
         ]
       ],
       "teaches": [
@@ -62,13 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "_____ erősebb a civil kontroll, annál szilárdabbak a demokratikus garanciák.",
-      "hint": "___ … annál",
-      "answer": "Minél",
-      "english": "The stronger the civic control, the firmer the democratic guarantees.",
+      "sentence": "Az ellenzék szerint csatlakozni kellett volna az Európai Ügyészséghez, ezzel _____ a kormány nem csatlakozott hozzá.",
+      "english": "According to the opposition Hungary should have joined the European Public Prosecutor's Office; in contrast, the government did not join it.",
       "teaches": [
-        "correlative-minel-annal"
-      ]
+        "adversative-contrast"
+      ],
+      "answer": "szemben"
     },
     {
       "id": "c1-magyarjovo-04-practice-5",
@@ -76,28 +78,46 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Minél",
-        "erősebb",
+        "Az",
+        "EBESZ",
+        "megfigyelői",
+        "szerint",
+        "jól",
+        "megszervezett",
+        "volt",
         "a",
-        "társadalom,",
-        "annál",
-        "gyengébb",
-        "az",
-        "önkényuralom."
+        "választás,",
+        "a",
+        "kormánypárti",
+        "oldal",
+        "viszont",
+        "előnyben",
+        "volt",
+        "a",
+        "médiában."
       ],
       "solution": [
-        "Minél",
-        "erősebb",
+        "Az",
+        "EBESZ",
+        "megfigyelői",
+        "szerint",
+        "jól",
+        "megszervezett",
+        "volt",
         "a",
-        "társadalom,",
-        "annál",
-        "gyengébb",
-        "az",
-        "önkényuralom."
+        "választás,",
+        "a",
+        "kormánypárti",
+        "oldal",
+        "viszont",
+        "előnyben",
+        "volt",
+        "a",
+        "médiában."
       ],
-      "english": "The stronger society is, the weaker autocracy becomes.",
+      "english": "According to the OSCE observers the election was well organised, but the governing side had an advantage in the media.",
       "teaches": [
-        "correlative-minel-annal"
+        "adversative-contrast"
       ]
     },
     {
@@ -107,26 +127,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Jogvédő",
-          "text": "Miért nem elegendő egy egyszerű kormányváltás a jogállam helyreállításához?"
+          "speaker": "Kérdező",
+          "text": "Hogyan értékelte a kormány és a Bizottság az uniós források visszatartását?"
         },
         {
-          "speaker": "Alkotmánybíró",
-          "text": "Mert minél mélyebben beépült az államfoglyul ejtés az intézményekbe, annál nélkülözhetetlenebb a demokratikus minimum alkotmányos _____."
-        },
-        {
-          "speaker": "Jogvédő",
-          "text": "Az alapokat kell újraépíteni, nemcsak a homlokzatot lefesteni."
+          "speaker": "Válaszadó",
+          "text": "A kormány szerint politikai nyomás volt, a Bizottság szerint _____ jogállamisági aggályok indokolták."
         }
       ],
       "options": [
-        "garanciája",
-        "eltörlése",
-        "kifosztása"
+        "viszont",
+        "ugyanis",
+        "tehát"
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "adversative-contrast"
       ]
     },
     {
@@ -136,12 +152,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence formulating the relationship between civic solidarity and democratic renewal using a proportional correlative structure.",
-          "answer": "Minél szélesebb körű konszenzus teremti meg a demokratikus minimum tiszteletben tartását, annál megkérdőjelezhetetlenebbé válik a független igazságszolgáltatás és az alkotmányos fékek rendszere Magyarországon."
+          "prompt": "Write one sentence that sets the government's view of the withholding of EU funds against the Commission's view, with viszont.",
+          "answer": "A kormány szerint a visszatartás politikai nyomásgyakorlás volt, a Bizottság viszont a jogállamisági aggályokkal indokolta."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "adversative-contrast"
       ]
     },
     {
@@ -149,15 +165,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet valósít meg arányos korrelatív összefüggést a C1 szinten?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Minél átláthatóbb a választási rendszer, annál erősebb a polgárok bizalma a parlamentben",
-        "A parlamentben sok képviselő ült és mindannyian szavaztak",
-        "Ha van időnk délután, elolvassuk a napilapokat"
+        "A kormány szerint politikai nyomás volt, a Bizottság viszont jogállamisági aggályokra hivatkozott.",
+        "A kormány szerint politikai nyomás volt, a Bizottság jogállamisági viszont aggályokra hivatkozott.",
+        "A kormány szerint politikai nyomás volt, a Bizottság viszont jogállamisági aggályokra hivatkoztak."
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "adversative-contrast"
       ]
     }
   ]

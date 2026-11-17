@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért jelent súlyos jogállami torzulást a magyarországi lehallgatások miniszteri engedélyezési rendszere?",
+      "question": "Mit jelent az engedélyezés szó?",
       "options": [
-        "Mert nincs független bírói kontroll: a politikai kormányzat tagja (az igazságügyi miniszter vagy államtitkára) egymaga, fellebbezési lehetőség és külső felügyelet nélkül pecsételi le a titkos megfigyeléseket.",
-        "Mert az eljárási illetékek és perköltségek összege aránytalanul meghaladja a nemzetközi egyezményekben rögzített maximális adminisztratív tarifákat a bírósági ügyekben.",
-        "Mert a minisztériumi döntéshozatal bürokratikus lassúsága miatt a nemzetbiztonsági szolgálatok lemaradnak a sürgős nemzetközi terrorvédelmi műveletek azonnali végrehajtásáról."
+        "Az, hogy valaki hivatalosan megadja a jogot valamire.",
+        "Az, hogy valaki hivatalosan megtiltja egy döntés végrehajtását.",
+        "Az, hogy valaki nyilvánosan bírál egy döntést."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A független bírói kontrollt teljesen _____ a kormányzat ellenőrizetlen hatalmat adott a szolgálatoknak.",
-      "hint": "eliminating / kiiktat + -ve",
-      "answer": "kiiktatva",
-      "english": "Completely eliminating independent judicial control the government gave unchecked power to the services.",
+      "sentence": "A szolgálatok _____ voltak engedélyt kérni az igazságügyi minisztertől.",
+      "hint": "plural subject",
+      "english": "The services had to ask the minister of justice for permission.",
       "teaches": [
-        "evaluative-stance"
+        "formal-obligation"
+      ],
+      "answers": [
+        "kötelesek",
+        "kénytelenek"
       ]
     },
     {
@@ -37,20 +40,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "bírói kontroll hiánya",
-          "a megfigyelések feletti független jogi garancia hiánya"
+          "engedélyezés",
+          "a jog hivatalos megadása valamire"
         ],
         [
-          "miniszteri engedélyezés",
-          "a végrehajtó hatalom politikai aláírása a lehallgatásokhoz"
+          "garancia",
+          "biztosíték a visszaélés ellen"
         ],
         [
-          "biankó engedély",
-          "automatikus, érdemi vizsgálat nélküli hatósági jóváhagyás"
+          "magánélet",
+          "ami nem tartozik a nyilvánosságra"
         ],
         [
-          "Völner-ügy",
-          "a megfigyeléseket pecsételő államtitkár korrupciós botránya"
+          "ellenőrzés",
+          "annak vizsgálata, hogy valaki betartja-e a szabályokat"
+        ],
+        [
+          "jogvédő szervezet",
+          "civil szervezet, amely az emberi jogokat védi"
         ]
       ],
       "teaches": [
@@ -62,12 +69,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Futószalagon _____ le az engedélyeket a minisztérium nem ellenőrizte a jogszerűséget.",
-      "hint": "rubber-stamping / pecsétel + -ve",
-      "answer": "pecsételve",
-      "english": "Rubber-stamping authorizations on an assembly line the ministry did not verify legality.",
+      "sentence": "A szolgálat _____ volt a miniszterhez fordulni, ha titokban meg akart figyelni egy magánszemélyt.",
+      "english": "The service had to turn to the minister if it wanted to watch a private person in secret.",
       "teaches": [
-        "evaluative-stance"
+        "formal-obligation"
+      ],
+      "answers": [
+        "kénytelen",
+        "köteles"
       ]
     },
     {
@@ -77,27 +86,29 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "minisztérium",
-        "bírói",
-        "kontroll",
-        "nélkül",
-        "engedélyezte",
-        "a",
-        "lehallgatásokat."
+        "szolgálatok",
+        "kötelesek",
+        "voltak",
+        "engedélyt",
+        "kérni",
+        "az",
+        "igazságügyi",
+        "minisztertől."
       ],
       "solution": [
         "A",
-        "minisztérium",
-        "bírói",
-        "kontroll",
-        "nélkül",
-        "engedélyezte",
-        "a",
-        "lehallgatásokat."
+        "szolgálatok",
+        "kötelesek",
+        "voltak",
+        "engedélyt",
+        "kérni",
+        "az",
+        "igazságügyi",
+        "minisztertől."
       ],
-      "english": "The ministry authorized wiretaps without judicial control.",
+      "english": "The services had to ask the minister of justice for permission.",
       "teaches": [
-        "evaluative-stance"
+        "formal-obligation"
       ]
     },
     {
@@ -107,26 +118,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Ügyvéd",
-          "text": "Hogyan történhetett meg, hogy újságírókat hallgattak le nemzetbiztonsági kockázatra hivatkozva?"
+          "speaker": "Kérdező",
+          "text": "Mit írt elő a szabályozás a szolgálatoknak a titkos megfigyelés előtt?"
         },
         {
-          "speaker": "Vizsgálóbizottsági tag",
-          "text": "Úgy, hogy a minisztérium kérdések nélkül, futószalagon pecsételve adta ki a biankó _____ a titkosszolgálatnak."
-        },
-        {
-          "speaker": "Ügyvéd",
-          "text": "Ez a hatalommal való nyílt visszaélés volt."
+          "speaker": "Válaszadó",
+          "text": "A szolgálatok _____ voltak engedélyt kérni az igazságügyi minisztertől."
         }
       ],
       "options": [
-        "engedélyeket",
-        "könyveket",
-        "leveleket"
+        "kötelesek",
+        "kötelezően",
+        "kötelezés"
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "formal-obligation"
       ]
     },
     {
@@ -136,12 +143,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of ministerial wiretap authorization using an evaluative adverbial.",
-          "answer": "A külső és független bírói kontrollt szándékosan kiiktatva és a titkos megfigyeléseket futószalagon pecsételve le az igazságügyi tárca megfosztotta a polgárokat a jogállami garanciáktól és zöld utat adott a törvénytelen kiberkémkedésnek."
+          "prompt": "Write two sentences: say what the services had to do before a covert surveillance and what the European Court of Human Rights found in 2016.",
+          "answer": "A szolgálatok kötelesek voltak engedélyt kérni az igazságügyi minisztertől. Az Emberi Jogok Európai Bírósága 2016-ban megállapította, hogy a szabályozás nem nyújtott elegendő garanciát a visszaélések ellen."
         }
       ],
       "teaches": [
-        "evaluative-stance"
+        "formal-obligation"
       ]
     },
     {
@@ -149,16 +156,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet leplezi le a miniszteri engedélyezés önkényét a leghitelesebben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "a bírói felügyeletet kiiktatva",
-        "amikor a miniszter új tollal írja alá a papírt az asztalnál",
-        "hogyha a postás délben viszi a leveleket a hivatalba"
+        "A szolgálatok kötelesek voltak engedélyt kérni.",
+        "A szolgálatok köteles voltak engedélyt kérni.",
+        "A szolgálatok kötelesek voltak engedélyt kérnie."
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
-      ]
+        "formal-obligation"
+      ],
+      "distractor_skills": {
+        "2": "inflected-infinitives"
+      }
     }
   ]
 }

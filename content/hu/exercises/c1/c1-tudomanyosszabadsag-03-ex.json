@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért jelentett súlyos csapást az egyetemi autonómiára a KEKVA alapítványi modellváltás?",
+      "question": "Mit jelent a kuratórium szó?",
       "options": [
-        "Mert a választott egyetemi szenátusokat megfosztották döntési jogköreiktől, és az egyetemek vezetését élethosszig kinevezett kormánypárti politikusok és oligarchák kuratóriumainak adták át.",
-        "Mert az egyetemi karok a reform után elsősorban külföldi vendégoktatók és kutatók szerződtetésére fordíthatták a forrásaikat.",
-        "Mert a hallgatói önkormányzatok jogköreit kiterjesztve a diákok vétójogot kaptak az oktatók tudományos kinevezései felett."
+        "Egy alapítvány vagy intézmény vezető testülete.",
+        "Egy egyetem hallgatóinak képviselete.",
+        "Egy minisztérium jogi osztálya."
       ],
       "correct": 0,
       "teaches": [
@@ -22,15 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az egyetemi polgároknak alkotmányos _____ volt ellenállni a szenátusi jogkörök megcsonkításának.",
-      "hint": "kötelesség + -ük",
-      "english": "It was the constitutional duty of university citizens to resist the curtailment of senate powers.",
+      "sentence": "A kormány szerint minél több forrást kapott az egyetem, _____ nagyobb önállósággal működhetett.",
+      "english": "According to the government, the more funding the university received, the more independently it could operate.",
       "teaches": [
-        "formal-obligation"
+        "correlative-minel-annal"
       ],
-      "answers": [
-        "kötelességük"
-      ]
+      "answer": "annál"
     },
     {
       "id": "c1-tudomanyosszabadsag-03-controlled-3",
@@ -39,20 +36,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "KEKVA modellváltás",
-          "az állami egyetemek kiszervezése politikai alapítványokba"
-        ],
-        [
           "kuratórium",
-          "az egyetem felett korlátlan hatalmat kapott, politikusokból álló testület"
+          "egy alapítvány vezető testülete"
         ],
         [
-          "szenátusi autonómia",
-          "az oktatók és diákok demokratikusan választott önkormányzati joga"
+          "szenátus",
+          "az egyetem választott vezető testülete"
         ],
         [
-          "SZFE blokád",
-          "az egyetemi polgárság hősies ellenállása az erőszakos alapítványi átvétellel szemben"
+          "fenntartó",
+          "aki egy intézmény működtetéséért felel"
+        ],
+        [
+          "versenyképesség",
+          "az a képesség, hogy valaki helytáll másokkal szemben"
+        ],
+        [
+          "oktató",
+          "aki egy egyetemen tanít"
         ]
       ],
       "teaches": [
@@ -64,16 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Megalkuvást nem ismerve kell _____ az egyetemi önkormányzatiság elveit.",
-      "hint": "véd + -ni",
-      "english": "Without compromise one must defend the principles of university self-governance.",
+      "sentence": "A kormány szerint _____ stabilabb volt a finanszírozás, annál hosszabb távon tervezhettek az egyetemek.",
+      "english": "According to the government, the more stable the funding was, the longer ahead the universities could plan.",
       "teaches": [
-        "formal-obligation"
+        "correlative-minel-annal"
       ],
-      "answers": [
-        "védeni",
-        "megvédeni"
-      ]
+      "answer": "minél"
     },
     {
       "id": "c1-tudomanyosszabadsag-03-practice-5",
@@ -82,27 +79,39 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "szenátusnak",
-        "kötelessége",
-        "megvédeni",
-        "az",
-        "egyetemi",
-        "autonómia",
-        "jogait."
+        "bírálók",
+        "szerint",
+        "minél",
+        "nagyobb",
+        "lett",
+        "a",
+        "kuratórium",
+        "szerepe,",
+        "annál",
+        "kisebb",
+        "lett",
+        "a",
+        "szenátusé."
       ],
       "solution": [
         "A",
-        "szenátusnak",
-        "kötelessége",
-        "megvédeni",
-        "az",
-        "egyetemi",
-        "autonómia",
-        "jogait."
+        "bírálók",
+        "szerint",
+        "minél",
+        "nagyobb",
+        "lett",
+        "a",
+        "kuratórium",
+        "szerepe,",
+        "annál",
+        "kisebb",
+        "lett",
+        "a",
+        "szenátusé."
       ],
-      "english": "It is the duty of the senate to defend the rights of university autonomy.",
+      "english": "According to the critics, the greater the role of the board became, the smaller that of the senate became.",
       "teaches": [
-        "formal-obligation"
+        "correlative-minel-annal"
       ]
     },
     {
@@ -112,26 +121,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Egyetemi oktató",
-          "text": "Hogyan működhet tovább egy egyetem, ha a kuratórium politikai felügyelőként lép fel?"
+          "speaker": "Kérdező",
+          "text": "Mit állított a kormány a közérdekű vagyonkezelő alapítványról?"
         },
         {
-          "speaker": "Professzor",
-          "text": "Úgy, hogy kötelességünk ragaszkodni a szakmai minőséghez, és nem engedhető meg a politikai elvárásoknak való _____."
-        },
-        {
-          "speaker": "Egyetemi oktató",
-          "text": "A tudás méltósága nem lehet alku tárgya."
+          "speaker": "Válaszadó",
+          "text": "A kormány szerint minél stabilabb volt a forrás, _____ rugalmasabban gazdálkodhattak az egyetemek."
         }
       ],
       "options": [
-        "behódolás",
-        "behódolással",
-        "behódolásra"
+        "annál",
+        "mint",
+        "hogy"
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "correlative-minel-annal"
       ]
     },
     {
@@ -141,12 +146,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a defense of university autonomy using a deontic modal structure.",
-          "answer": "Az egyetemi szenátusoknak és a professzori karnak alkotmányos kötelességük megvédeni az intézményi autonómiát, és megalkuvást nem ismerve kell ellenállniuk a politikai kinevezettek önkényes kuratóriumi hatalomgyakorlásának."
+          "prompt": "Write one sentence with minél … annál: give the critics' view of the role of the board and of the senate.",
+          "answer": "A bírálók szerint minél nagyobb lett a kuratórium szerepe, annál kisebb lett a szenátusé."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "correlative-minel-annal"
       ]
     },
     {
@@ -154,15 +159,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fogalmazza meg a szenátusi önrendelkezés védelmét a leghatározottabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "megalkuvást nem ismerve kell őrizni az önrendelkezést",
-        "a kuratórium üléseinek naptári időpontjait rögzítve",
-        "a kari épületek karbantartási terveit összeállítva"
+        "A kormány szerint minél stabilabb volt a finanszírozás, annál rugalmasabban gazdálkodhattak az egyetemek.",
+        "A kormány szerint minél stabilabb volt a finanszírozás, minél rugalmasabban gazdálkodhattak az egyetemek.",
+        "A kormány szerint annál stabilabb volt a finanszírozás, minél rugalmasabban gazdálkodhattak az egyetemek."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "correlative-minel-annal"
       ]
     }
   ]

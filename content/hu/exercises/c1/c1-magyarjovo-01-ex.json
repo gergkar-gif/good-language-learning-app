@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi váltotta ki a magyar pedagógusok polgári engedetlenségi mozgalmát?",
+      "question": "Mit jelent a sztrájk szó?",
       "options": [
-        "A kormányrendelet, amely adminisztratív eszközökkel gyakorlatilag ellehetetlenítette az érdemi sztrájkjog gyakorlását.",
-        "Az a minisztériumi határozat, amely kötelezővé tette a tanári egyenruha viselését minden állami fenntartású iskolában.",
-        "Az iskolai nyári szünetek időtartamának minimális módosítása az őszi szünet napjainak rovására a tanév rendjében."
+        "Az, hogy a munkavállalók közösen abbahagyják a munkát.",
+        "Az, hogy a munkavállalók együtt új munkahelyet keresnek.",
+        "Az, hogy a munkáltató minden dolgozónak béremelést ad."
       ],
       "correct": 0,
       "teaches": [
@@ -22,17 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A sztrájkjog adminisztratív ellehetetlenítésére _____, a pedagógusok a polgári engedetlenség eszközéhez nyúltak.",
-      "hint": "in response",
-      "english": "In response to the administrative crippling of the right to strike, teachers reached for the tool of civil disobedience.",
+      "sentence": "A szakszervezetek _____ a szabályozás korlátozta a sztrájkjogot.",
+      "english": "According to the unions, the regulation restricted the right to strike.",
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ],
-      "answers": [
-        "válaszul",
-        "válaszként",
-        "reakcióként"
-      ]
+      "answer": "szerint"
     },
     {
       "id": "c1-magyarjovo-01-controlled-3",
@@ -41,20 +36,24 @@
       "stage": "controlled",
       "pairs": [
         [
+          "sztrájk",
+          "a munka közös abbahagyása követelések miatt"
+        ],
+        [
+          "szakszervezet",
+          "a munkavállalók érdekvédelmi szervezete"
+        ],
+        [
+          "elégséges szolgáltatás",
+          "az oktatás minimális mértéke sztrájk esetén"
+        ],
+        [
           "polgári engedetlenség",
-          "a lelkiismereti alapú, békés, nyilvános törvényszegés a jogtalanság leleplezésére"
+          "a szabály nyílt, békés megszegése tiltakozásul"
         ],
         [
-          "élőlánc",
-          "polgárok egymás kezét fogó, fizikai szolidaritást kifejező tiltakozása"
-        ],
-        [
-          "rendkívüli felmentés",
-          "a munkaviszony azonnali, büntető jellegű megszüntetése a hatalom által"
-        ],
-        [
-          "sztrájkjog korlátozása",
-          "a munkabeszüntetés törvényes lehetőségének felszámolása rendeletekkel"
+          "felmentés",
+          "a munkaviszony megszüntetése"
         ]
       ],
       "teaches": [
@@ -66,13 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A jogállamiság szempontjából _____ a pedagógusok elbocsátása a hatalmi megfélemlítés eszköze volt.",
-      "hint": "viewed / néz + -ve",
-      "answer": "nézve",
-      "english": "Viewed from the perspective of the rule of law, dismissing the teachers was a tool of autocratic intimidation.",
+      "sentence": "A kormány _____ a rendelet a diákok oktatásának biztosítását szolgálta.",
+      "english": "According to the government, the decree served to ensure the education of the pupils.",
       "teaches": [
-        "framing-markers"
-      ]
+        "evidentials"
+      ],
+      "answer": "szerint"
     },
     {
       "id": "c1-magyarjovo-01-practice-5",
@@ -81,29 +79,25 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "hatalmi",
-        "megfélemlítésre",
-        "válaszul",
+        "kormány",
+        "szerint",
         "a",
-        "diákok",
-        "szolidaritási",
-        "élőláncot",
-        "alkottak."
+        "státusztörvény",
+        "béremeléssel",
+        "járt."
       ],
       "solution": [
         "A",
-        "hatalmi",
-        "megfélemlítésre",
-        "válaszul",
+        "kormány",
+        "szerint",
         "a",
-        "diákok",
-        "szolidaritási",
-        "élőláncot",
-        "alkottak."
+        "státusztörvény",
+        "béremeléssel",
+        "járt."
       ],
-      "english": "In response to autocratic intimidation, students formed a solidarity human chain.",
+      "english": "According to the government, the status law brought a pay rise.",
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -113,26 +107,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Diákvezető",
-          "text": "Miért álltunk ki a tanáraink mellett az élőláncban?"
+          "speaker": "Kérdező",
+          "text": "Mit mondtak a pedagógusok szakszervezetei a 2022-es rendeletről?"
         },
         {
-          "speaker": "Tanár",
-          "text": "Mert erkölcsi kötelességként megélve az ellenállást, megértettétek, hogy az iskola jövője a ti _____ záloga."
-        },
-        {
-          "speaker": "Diákvezető",
-          "text": "Nem hagyjuk, hogy elhallgattassák a tanárainkat."
+          "speaker": "Válaszadó",
+          "text": "A szakszervezetek _____ a rendelet korlátozta a sztrájkjogot."
         }
       ],
       "options": [
-        "szabadságotok",
-        "gazdagságotok",
-        "kényelmetek"
+        "szerint",
+        "helyett",
+        "óta"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -142,12 +132,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence framing civil disobedience using a discourse marker.",
-          "answer": "A törvényes sztrájkjog szisztematikus felszámolására válaszul és a jogállamiság alapelveiből kiindulva a pedagógusok polgári engedetlensége olyan legitim tiltakozás volt, amely leleplezte a hatalmi önkény megfélemlítő természetét."
+          "prompt": "Write two sentences: say what the unions and what the government said about the decree of 2022, naming the source of each view.",
+          "answer": "A szakszervezetek szerint a rendelet korlátozta a sztrájkjogot. A kormány szerint viszont a diákok oktatásának biztosítását szolgálta."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -155,16 +145,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik diskurzusjelölő keretezi a polgári engedetlenség legitimitását a legszakszerűbben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "A jogállamiság szempontjából nézve és a sztrájkjog kiüresítésére válaszul",
-        "Mivel úgy érezték, hogy nem akarnak dolgozni menni",
-        "Azért, mert az időjárás kedvezett a tüntetésnek"
+        "A szakszervezetek szerint a szabályozás korlátozta a sztrájkjogot.",
+        "A szakszervezetek szerintük a szabályozás korlátozta a sztrájkjogot.",
+        "A szerint szakszervezetek a szabályozás korlátozta a sztrájkjogot."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
-      ]
+        "evidentials"
+      ],
+      "distractor_skills": {
+        "1": "inflected-postpositions"
+      }
     }
   ]
 }

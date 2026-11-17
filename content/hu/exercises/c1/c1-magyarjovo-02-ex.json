@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan próbálta meg a centrális hatalom megtörni a független önkormányzatokat?",
+      "question": "Mit jelent az iparűzési adó kifejezés?",
       "options": [
-        "A hatáskörök elvonásával, a 'szolidaritási adó' drasztikus megemelésével és célzott pénzügyi kivéreztetéssel.",
-        "Új villamosvonalak ingyenes átadásával és többlettámogatásokkal.",
-        "A polgármesterek fizetésének megkétszerezésével."
+        "A vállalkozások által a településnek fizetett helyi adó.",
+        "A magánszemélyek által az államnak fizetett jövedelemadó.",
+        "Egy vasúti jegy ára."
       ],
       "correct": 0,
       "teaches": [
@@ -22,13 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A központi kormány a pénzügyi forrásokat szándékosan _____ próbálta térdre kényszeríteni a független városokat.",
-      "hint": "withdrawing / elvon + -va",
-      "answer": "elvonva",
-      "english": "Deliberately withdrawing financial resources, the central government tried to bring independent cities to their knees.",
+      "sentence": "A kormány kedvezményt adott a vállalkozásoknak, és _____ csökkentek az önkormányzatok bevételei.",
+      "english": "The government gave businesses a reduction, and because of this the revenues of local governments fell.",
       "teaches": [
-        "evaluative-stance"
-      ]
+        "causal-postpositions"
+      ],
+      "answer": "emiatt"
     },
     {
       "id": "c1-magyarjovo-02-controlled-3",
@@ -37,20 +36,28 @@
       "stage": "controlled",
       "pairs": [
         [
-          "önkormányzati autonómia",
-          "a helyi települések független döntéshozatali és gazdálkodási joga"
+          "önkormányzat",
+          "egy település választott vezetése"
         ],
         [
-          "pénzügyi kivéreztetés",
-          "a működéshez szükséges bevételek elvonása politikai céllal"
+          "bevétel",
+          "a beérkező pénz"
         ],
         [
-          "szabad városok szövetsége",
-          "a demokratikus önkormányzatok együttműködése a központosítás ellen"
+          "költségvetés",
+          "a bevételek és kiadások terve"
         ],
         [
-          "közösségi költségvetés",
-          "a lakosság közvetlen döntése a városi források egy részének felhasználásáról"
+          "gépjárműadó",
+          "az autók után fizetett adó"
+        ],
+        [
+          "kedvezmény",
+          "egy fizetési kötelezettség csökkentése"
+        ],
+        [
+          "szolidaritási hozzájárulás",
+          "a gazdagabb települések befizetése az államnak"
         ]
       ],
       "teaches": [
@@ -62,13 +69,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A helyi autonómiát agresszívan _____ a hatalom a tanácsrendszer központosítását állította vissza.",
-      "hint": "dismantling / felszámol + -va",
-      "answer": "felszámolva",
-      "english": "Aggressively dismantling local autonomy, the regime restored the centralization of the council system.",
+      "sentence": "A helyi adó csökkent, aminek _____ az önkormányzatok kevesebb bevételhez jutottak.",
+      "english": "The local tax fell, as a result of which the local governments received less revenue.",
       "teaches": [
-        "evaluative-stance"
-      ]
+        "causal-postpositions"
+      ],
+      "answer": "következtében"
     },
     {
       "id": "c1-magyarjovo-02-practice-5",
@@ -76,30 +82,34 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "forrásokat",
-        "elvonva",
+        "Az",
+        "önkormányzatok",
+        "bevétele",
+        "csökkent,",
+        "és",
+        "emiatt",
+        "kevesebb",
+        "pénz",
+        "jutott",
         "a",
-        "hatalom",
-        "a",
-        "helyi",
-        "demokráciát",
-        "gyengíti."
+        "működésre."
       ],
       "solution": [
-        "A",
-        "forrásokat",
-        "elvonva",
+        "Az",
+        "önkormányzatok",
+        "bevétele",
+        "csökkent,",
+        "és",
+        "emiatt",
+        "kevesebb",
+        "pénz",
+        "jutott",
         "a",
-        "hatalom",
-        "a",
-        "helyi",
-        "demokráciát",
-        "gyengíti."
+        "működésre."
       ],
-      "english": "Withdrawing resources, the regime weakens local democracy.",
+      "english": "The revenue of the local governments fell, and because of this less money was left for running costs.",
       "teaches": [
-        "evaluative-stance"
+        "causal-postpositions"
       ]
     },
     {
@@ -109,26 +119,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Polgármester",
-          "text": "Hogyan működhet a város, ha elvonják a bevételeink jelentős részét?"
+          "speaker": "Kérdező",
+          "text": "Miért csökkentek 2020-ban az önkormányzatok bevételei?"
         },
         {
-          "speaker": "Városfejlesztő",
-          "text": "Úgy, hogy a polgárokat bevonva és a közösségi költségvetést működtetve megvédjük a helyi _____."
-        },
-        {
-          "speaker": "Polgármester",
-          "text": "Az önkormányzatiság nem ajándék, hanem alkotmányos alapjog."
+          "speaker": "Válaszadó",
+          "text": "A kormány kedvezményt adott a vállalkozásoknak, _____ csökkentek a bevételek."
         }
       ],
       "options": [
-        "autonómiát",
-        "központosítást",
-        "fővárost"
+        "emiatt",
+        "viszont",
+        "ugyanis"
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "causal-postpositions"
       ]
     },
     {
@@ -138,12 +144,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical sentence diagnosing municipal centralization using an evaluative adverbial.",
-          "answer": "A pénzügyi forrásokat szándékosan elvonva és a szolidaritási adót politikai fegyverként használva a központi hatalom az önkormányzati autonómia elsorvasztására törekszik, megsértve a szubszidiaritás európai alapelvét."
+          "prompt": "Write one sentence with emiatt: say what followed from the reduction of the local business tax in 2020.",
+          "answer": "A kormány 2020-ban kedvezményt adott a vállalkozásoknak, és emiatt csökkentek az önkormányzatok bevételei."
         }
       ],
       "teaches": [
-        "evaluative-stance"
+        "causal-postpositions"
       ]
     },
     {
@@ -151,15 +157,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozói szerkezet fejezi ki a helyi demokrácia autonómiájának elvét?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "A pénzügyi forrásokat politikai bosszúból szándékosan elvonva",
-        "Amikor a városházán nem égtek a lámpák este",
-        "Minden városban nagyon szép virágokat ültettek a tavaszon"
+        "A helyi adó csökkent, aminek következtében a bevételek csökkentek.",
+        "A helyi adó csökkent, aminek következtében miatt a bevételek csökkentek.",
+        "A helyi adó csökkent, aminek következtére a bevételek csökkentek."
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "causal-postpositions"
       ]
     }
   ]

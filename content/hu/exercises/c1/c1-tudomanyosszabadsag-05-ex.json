@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért tekinthető a tudományos autonómia demokratikus imperatívusznak egy modern társadalomban?",
+      "question": "Mit jelent a mandátum szó?",
       "options": [
-        "Mert a politikai és gazdasági nyomástól mentes, független kutatás és oktatás nélkül a társadalom elveszíti a valóság megismerésének és a kritikai gondolkodásnak a képességét, kiszolgáltatva magát az autoriter propagandának.",
-        "Mert az akadémiai szabadalmakból származó bevételek nagyobb része közvetlenül az egyetemi kutatócsoportok költségvetését gazdagítja az államkincstár helyett.",
-        "Mert az egyetemi tanszékek és a rektori konferencia határozatai közvetlen jogi kötőerővel bírnak a gazdasági és parlamenti döntéshozatalra minden törvényjavaslat esetén."
+        "Egy képviselői hely a parlamentben.",
+        "Egy minisztérium hivatalos levele.",
+        "Egy egyetem tanulmányi szabályzata."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A tudományos kutatás autonómiája értelemszerűen _____ a társadalmi haladáshoz.",
-      "hint": "indispensable",
-      "english": "The autonomy of scientific research is naturally indispensable for social progress.",
+      "sentence": "A kormánypárti oldal szerint az alapítványi modell stabil forrást adott, a bírálók _____ az autonómia csökkenését emelték ki.",
+      "english": "According to the pro-government side the foundation model gave stable funding; the critics, however, stressed the decline of autonomy.",
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ],
-      "answers": [
-        "nélkülözhetetlen",
-        "elengedhetetlen"
-      ]
+      "answer": "viszont"
     },
     {
       "id": "c1-tudomanyosszabadsag-05-controlled-3",
@@ -40,20 +36,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "tudományos szabadság",
-          "a politikai utasításoktól mentes kutatás alkotmányos alapjoga"
+          "választás",
+          "az állampolgárok szavazása képviselőkről"
         ],
         [
-          "tanszabadság",
-          "a professzorok és diákok joga a szabad tanulásra és tanításra"
+          "mandátum",
+          "egy képviselői hely a parlamentben"
         ],
         [
-          "a tudás köztársasága",
-          "az önigazgató és demokratikus nemzetközi tudósközösség eszménye"
+          "kétharmados többség",
+          "a mandátumok kétharmadánál több"
         ],
         [
-          "jövő záloga",
-          "a nemzet felemelkedésének elengedhetetlen garanciája"
+          "miniszterelnök",
+          "a kormány vezetője"
+        ],
+        [
+          "Országgyűlés",
+          "a magyar parlament"
         ]
       ],
       "teaches": [
@@ -65,16 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A kutatói függetlenség prioritása fundamentálisan _____ alapérték.",
-      "hint": "unquestionable",
-      "english": "The priority of researcher independence is a fundamentally unquestionable core value.",
+      "sentence": "A kormány szerint az uniós korlátozás politikai okokból született, ezzel _____ az Európai Bizottság szerint az összeférhetetlenség kockázata indokolta.",
+      "english": "According to the government the EU restriction had political reasons; in contrast, according to the European Commission the risk of conflict of interest justified it.",
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ],
-      "answers": [
-        "megkérdőjelezhetetlen",
-        "vitathatatlan"
-      ]
+      "answer": "szemben"
     },
     {
       "id": "c1-tudomanyosszabadsag-05-practice-5",
@@ -82,26 +78,48 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "tudományos",
-        "szabadság",
-        "értelemszerűen",
-        "nélkülözhetetlen",
-        "minden",
-        "demokráciában."
+        "Az",
+        "Akadémia",
+        "vezetői",
+        "szerint",
+        "sérült",
+        "az",
+        "autonómia,",
+        "a",
+        "kormány",
+        "szerint",
+        "viszont",
+        "erősödött",
+        "a",
+        "kutatás",
+        "és",
+        "a",
+        "gazdaság",
+        "kapcsolata."
       ],
       "solution": [
-        "A",
-        "tudományos",
-        "szabadság",
-        "értelemszerűen",
-        "nélkülözhetetlen",
-        "minden",
-        "demokráciában."
+        "Az",
+        "Akadémia",
+        "vezetői",
+        "szerint",
+        "sérült",
+        "az",
+        "autonómia,",
+        "a",
+        "kormány",
+        "szerint",
+        "viszont",
+        "erősödött",
+        "a",
+        "kutatás",
+        "és",
+        "a",
+        "gazdaság",
+        "kapcsolata."
       ],
-      "english": "Scientific freedom is naturally indispensable in every democracy.",
+      "english": "According to the Academy's leaders autonomy was damaged, but according to the government the link between research and the economy grew stronger.",
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -111,26 +129,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Egyetemi rektor",
-          "text": "Hogyan nyerheti vissza a magyar felsőoktatás az elveszített nemzetközi megbecsülést?"
+          "speaker": "Kérdező",
+          "text": "Hogyan vélekedett az Akadémia vezetése és a kormány az új kutatóhálózatról?"
         },
         {
-          "speaker": "Akadémikus",
-          "text": "Úgy, hogy végső soron elidegeníthetetlen a tanszabadság joga, és fundamentálisan megkérdőjelezhetetlen az intézményi önkormányzatiság _____."
-        },
-        {
-          "speaker": "Egyetemi rektor",
-          "text": "A tudomány szabadsága nem lehet politikai alku tárgya."
+          "speaker": "Válaszadó",
+          "text": "Az Akadémia vezetői szerint sérült az autonómia, a kormány szerint _____ erősödött a kutatás és a gazdaság kapcsolata."
         }
       ],
       "options": [
-        "helyreállítása",
-        "helyreállítását",
-        "helyreállításának"
+        "viszont",
+        "ugyanis",
+        "tehát"
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -140,12 +154,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a conclusive synthesis on the necessity of academic freedom using an evaluative particle.",
-          "answer": "A tudományos szabadság és az egyetemi autonómia értelemszerűen nélkülözhetetlen és fundamentálisan megkérdőjelezhetetlen, hiszen a politikai beavatkozás elsorvasztja az innovációt, de a független kutatás a nemzeti megmaradás egyetlen szilárd fundamentuma."
+          "prompt": "Write one sentence that sets the government's view of the foundation model against the critics' view, with viszont.",
+          "answer": "A kormány szerint az alapítványi modell stabil forrást adott, a bírálók szerint viszont csökkent az egyetemek autonómiája."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -153,15 +167,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik konkluzív kifejezés szintetizálja a tudományos szabadság helyreállítását a legerőteljesebben?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "végső soron elidegeníthetetlen",
-        "a kutatási eredményeket sajtóközleményben ismertetve",
-        "a tanszéki könyvtárak beszerzési keretét megemelve"
+        "A kormány szerint stabil volt a forrás, a bírálók viszont az autonómia csökkenését említették.",
+        "A kormány szerint stabil volt a forrás, a bírálók az viszont autonómia csökkenését említették.",
+        "A kormány szerint stabil volt a forrás, a bírálók viszont az autonómia csökkenését említette."
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ]
     }
   ]

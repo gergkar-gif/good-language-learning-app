@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik diskurzusjelölő keretezi a polgári engedetlenség jogállami legitimitását a leghitelesebben?",
+      "question": "Melyik mondat nevezi meg a vélemény forrását?",
       "options": [
-        "a jogállamiság szempontjából nézve és a sztrájkjog ellehetetlenítésére válaszul",
-        "amikor a tanárok nem akartak bemenni a terembe tanítani",
-        "hogyha valakinek rossz kedve van reggel az iskolában"
+        "A szakszervezetek szerint a szabályozás korlátozta a sztrájkjogot.",
+        "A szabályozás korlátozta a sztrájkjogot, mert a szakszervezetek.",
+        "A szakszervezetek a szabályozás korlátozta a sztrájkjogot szerint."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -22,15 +22,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel bírálható a települések pénzügyi kivéreztetése a legszakszerűbben?",
+      "question": "Which sentence says that the revenue fell because of the tax reduction?",
       "options": [
-        "a pénzügyi forrásokat politikai bosszúból szándékosan elvonva és az autonómiát megsértve",
-        "amikor a polgármester kevesebb pénzt kap a boltban",
-        "ha a városokban lekapcsolják a lámpákat éjfél után"
+        "A helyi adó csökkent, és emiatt csökkentek a bevételek.",
+        "A helyi adó csökkent, és emiatt csökkentették a bevételek.",
+        "A helyi adó csökkent, és emiatt csökkentek a bevételeket."
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "causal-postpositions"
       ]
     },
     {
@@ -40,20 +40,24 @@
       "stage": "recognize",
       "pairs": [
         [
-          "polgári engedetlenség",
-          "lelkiismereti alapú békés kiállás a jogfosztó szabályokkal szemben"
+          "önkormányzat",
+          "egy település választott vezetése"
         ],
         [
-          "önkormányzati autonómia",
-          "a helyi közösségek önrendelkezése a központi elvonások ellenére"
+          "kiemelt beruházás",
+          "egyszerűbb engedélyezésű, fontosnak minősített projekt"
         ],
         [
-          "ökológiai önrendelkezés",
-          "a termőföld és a tiszta ivóvízkészlet védelme az ipari szennyezéstől"
+          "Európai Ügyészség",
+          "az uniós pénzek védelmére létrehozott közös szerv"
         ],
         [
-          "demokratikus minimum",
-          "a fékek és egyensúlyok, a sajtószabadság és a tiszta közélet elengedhetetlen alapelvei"
+          "elégséges szolgáltatás",
+          "az oktatás minimális mértéke sztrájk esetén"
+        ],
+        [
+          "elnökség",
+          "egy testület vezetése"
         ]
       ],
       "teaches": [
@@ -65,71 +69,63 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A polgárok szolidaritásának leglátványosabb formája a budapesti iskolákat körülvevő _____ volt.",
-      "hint": "human chain",
-      "answer": "élőlánc",
-      "english": "The most spectacular form of citizens' solidarity was the human chain surrounding Budapest schools.",
+      "sentence": "A pedagógusok szakszervezetei a bérek emeléséért _____ szerveztek.",
+      "hint": "strike",
+      "english": "The teachers' unions organised strikes for higher pay.",
       "teaches": [
         "c1-civil-society-vocab"
-      ]
+      ],
+      "answer": "sztrájkot"
     },
     {
       "id": "c1-magyarjovo-consolidation-5",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A helyi demokrácia jövőjének záloga a polgárok közvetlen bevonása a közösségi _____ révén.",
-      "hint": "participatory budgeting",
-      "answer": "költségvetés",
-      "english": "The pledge of local democracy's future is involving citizens directly through participatory budgeting.",
+      "sentence": "A nagyobb adóbevételű települések szolidaritási _____ fizettek az állami költségvetésbe.",
+      "english": "The towns with larger tax revenue paid a solidarity contribution into the state budget.",
       "teaches": [
         "c1-civil-society-vocab"
-      ]
+      ],
+      "answer": "hozzájárulást"
     },
     {
       "id": "c1-magyarjovo-consolidation-6",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A sztrájkjog adminisztratív megsemmisítésére _____, a tanárok polgári engedetlenséget hirdettek.",
-      "hint": "in response",
-      "english": "In response to the administrative destruction of the right to strike, teachers announced civil disobedience.",
+      "sentence": "A lakók szerint minél nagyobb egy gyár, annál nagyobb a _____.",
+      "english": "According to the residents, the larger a factory is, the greater its water demand is.",
       "teaches": [
-        "framing-markers"
+        "correlative-minel-annal"
       ],
-      "answers": [
-        "válaszul",
-        "válaszként",
-        "reakcióként"
-      ]
+      "answer": "vízigénye"
     },
     {
       "id": "c1-magyarjovo-consolidation-7",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Az államnak kötelező _____ a lakosság egészséges környezethez való alapjogát.",
-      "hint": "to guarantee / garantál + -nia",
-      "english": "The state is obliged to guarantee the population's fundamental right to a healthy environment.",
+      "sentence": "Az EBESZ megfigyelői szerint a választás jól megszervezett volt, a kormánypárti oldal _____ előnyben volt a médiában.",
+      "english": "According to the OSCE observers the election was well organised, but the governing side had an advantage in the media.",
       "teaches": [
-        "formal-obligation"
+        "adversative-contrast"
       ],
-      "answers": [
-        "garantálnia",
-        "szavatolnia"
-      ]
+      "answer": "viszont"
     },
     {
       "id": "c1-magyarjovo-consolidation-8",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minél szélesebb a civil konszenzus, _____ biztosabb a jogállam megújulása.",
-      "hint": "minél … ___",
-      "answer": "annál",
-      "english": "The wider civic consensus is, the more certain the renewal of the rule of law.",
+      "sentence": "A bírálatok _____ a kormány szerint a magyar politika a nemzeti érdeket szolgálta.",
+      "english": "Despite the criticism, according to the government Hungarian policy served the national interest.",
       "teaches": [
-        "correlative-minel-annal"
+        "concessive-postpositions"
+      ],
+      "answers": [
+        "ellenére",
+        "dacára"
       ]
     },
     {
@@ -137,11 +133,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a Demokratikus Minimum legfőbb intézményi garanciája a korrupcióval szemben?",
+      "question": "Which word fills the gap? 'A kormány szerint minél több gyár épül, _____ több munkahely jön létre.'",
       "options": [
-        "A független ügyészség, az Európai Ügyészséghez való csatlakozás és a bíróságok autonómiája.",
-        "Az államigazgatási hivatalok létszámának csökkentése és a miniszteri fizetések befagyasztása.",
-        "A közbeszerzési eljárások digitális közzététele és az ajánlattételi határidők meghosszabbítása."
+        "annál",
+        "mint",
+        "hogy"
       ],
       "correct": 0,
       "teaches": [
@@ -154,30 +150,46 @@
       "category": "grammar",
       "stage": "produce",
       "tiles": [
-        "Végső",
-        "soron",
+        "A",
+        "kormány",
+        "szerint",
         "a",
-        "szabad",
-        "Magyarország",
-        "az",
-        "európai",
-        "szolidaritásra",
-        "épül."
+        "törvény",
+        "a",
+        "diákok",
+        "oktatásának",
+        "biztosítását",
+        "szolgálta,",
+        "a",
+        "szakszervezetek",
+        "szerint",
+        "viszont",
+        "korlátozta",
+        "a",
+        "sztrájkjogot."
       ],
       "solution": [
-        "Végső",
-        "soron",
+        "A",
+        "kormány",
+        "szerint",
         "a",
-        "szabad",
-        "Magyarország",
-        "az",
-        "európai",
-        "szolidaritásra",
-        "épül."
+        "törvény",
+        "a",
+        "diákok",
+        "oktatásának",
+        "biztosítását",
+        "szolgálta,",
+        "a",
+        "szakszervezetek",
+        "szerint",
+        "viszont",
+        "korlátozta",
+        "a",
+        "sztrájkjogot."
       ],
-      "english": "Ultimately free Hungary is built upon European solidarity.",
+      "english": "According to the government the law served to ensure the education of the pupils, but according to the unions it restricted the right to strike.",
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -187,12 +199,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of ecological defense using a deontic modal structure.",
-          "answer": "Minden felelős társadalomnak és öntudatos polgárnak kötelező megvédenie a nemzeti ivóvízkincset és a termőföldeket a veszélyes ipari beruházásoktól, és az államnak feltétlenül garantálnia kell a közmeghallgatások és környezeti hatástanulmányok nyilvánosságát."
+          "prompt": "Write two sentences about the European Union: give the date when Hungary became a member and what happened in the second half of 2024.",
+          "answer": "Magyarország 2004. május 1-jén lett az Európai Unió tagja. 2024 második felében Magyarország töltötte be az Európai Unió Tanácsának soros elnökségét."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "c1-civil-society-vocab"
       ]
     },
     {
@@ -202,12 +214,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize the entire C1 Discourse Track declaring the European horizon of Hungary using a conclusive particle.",
-          "answer": "Végső soron mindent egybevetve és a civil társadalom rendíthetetlen ellenállását vizsgálva feltartóztathatatlanul bizonyos, hogy a magyar nemzet szabadságszeretete és a demokratikus minimum iránti elkötelezettsége megteremti az európai, szolidáris és büszke köztársaságot."
+          "prompt": "Write two sentences about the elections of 2026: give the result of 12 April and the election of the prime minister on 9 May.",
+          "answer": "2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett. 2026. május 9-én az Országgyűlés Magyar Pétert választotta miniszterelnökké."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-civil-society-vocab"
       ]
     }
   ]

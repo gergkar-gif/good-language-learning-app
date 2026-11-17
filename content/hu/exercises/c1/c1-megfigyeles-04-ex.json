@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan próbálta meg a magyar kormányzat elfedni a Pegasus-vizsgálat eredményeit a parlamentben?",
+      "question": "Mit jelent a határozatképes szó?",
       "options": [
-        "Bojkottálta a bizottsági üléseket, majd a vizsgálat jegyzőkönyveit ötven évre, egészen 2070-ig titkosította a nyilvánosság elől.",
-        "Nyilvános tévévitát rendezett a parlament plenáris ülésén.",
-        "Azonnal felmondta a szerződést az izraeli céggel és kártérítést fizetett."
+        "Egy testület elegendő taggal vesz részt az ülésen.",
+        "Egy testület titokban tartja az ülés anyagát.",
+        "Egy testület szavazás nélkül hoz döntést."
       ],
       "correct": 0,
       "teaches": [
@@ -22,13 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Minél jobban titkolózik a kormányzat, _____ nyilvánvalóbb a politikai felelősség.",
-      "hint": "minél … ___",
-      "answer": "annál",
-      "english": "The more the government conceals, the more obvious political responsibility is.",
+      "sentence": "Annak _____, hogy az ellenzék kezdeményezte az ülést, a bizottság nem volt határozatképes.",
+      "english": "Although the opposition had called the session, the committee did not have a quorum.",
       "teaches": [
-        "correlative-minel-annal"
-      ]
+        "concessive-annak-ellenere"
+      ],
+      "answer": "ellenére"
     },
     {
       "id": "c1-megfigyeles-04-controlled-3",
@@ -38,19 +37,23 @@
       "pairs": [
         [
           "Nemzetbiztonsági Bizottság",
-          "a titkosszolgálatokat ellenőrizni hivatott parlamenti testület"
+          "a parlament testülete, amely a titkosszolgálatokat ellenőrzi"
         ],
         [
-          "50 évre titkosítva",
-          "az iratok elzárása a nyilvánosság elől 2070-ig"
+          "vizsgálóbizottság",
+          "testület, amelyet egy ügy kivizsgálására hoznak létre"
         ],
         [
-          "PEGA-bizottság",
-          "az Európai Parlament kémszoftver-visszaéléseket vizsgáló testülete"
+          "minősít",
+          "titkossá nyilvánít"
         ],
         [
-          "parlamenti eltussolás",
-          "a törvényhozási vizsgálatok szándékos megakadályozása"
+          "ellenzék",
+          "a kormányon kívüli pártok"
+        ],
+        [
+          "ülés",
+          "a testület tagjainak találkozója"
         ]
       ],
       "teaches": [
@@ -62,13 +65,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Amilyen mértékben korlátozzák a nyilvánosságot, _____ mértékben nő a gyanú a visszaélésekre.",
-      "hint": "amilyen … ___",
-      "answer": "olyan",
-      "english": "To such an extent as publicity is restricted, to that extent suspicion of abuses grows.",
+      "sentence": "Annak ellenére, _____ az ülés anyagát titkosították, a vita a nyilvánosságban folytatódott.",
+      "english": "Although the material of the session was classified, the debate continued in public.",
       "teaches": [
-        "correlative-minel-annal"
-      ]
+        "concessive-annak-ellenere"
+      ],
+      "answer": "hogy"
     },
     {
       "id": "c1-megfigyeles-04-practice-5",
@@ -76,30 +78,46 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Minél",
-        "mélyebb",
+        "Annak",
+        "ellenére,",
+        "hogy",
         "a",
-        "titkolózás,",
-        "annál",
-        "súlyosabb",
+        "kormánypárti",
+        "oldal",
+        "szerint",
         "a",
-        "politikai",
-        "válság."
+        "megfigyelések",
+        "törvényesek",
+        "voltak,",
+        "az",
+        "Európai",
+        "Parlament",
+        "vizsgálóbizottságot",
+        "hozott",
+        "létre."
       ],
       "solution": [
-        "Minél",
-        "mélyebb",
+        "Annak",
+        "ellenére,",
+        "hogy",
         "a",
-        "titkolózás,",
-        "annál",
-        "súlyosabb",
+        "kormánypárti",
+        "oldal",
+        "szerint",
         "a",
-        "politikai",
-        "válság."
+        "megfigyelések",
+        "törvényesek",
+        "voltak,",
+        "az",
+        "Európai",
+        "Parlament",
+        "vizsgálóbizottságot",
+        "hozott",
+        "létre."
       ],
-      "english": "The deeper the secrecy, the more severe the political crisis.",
+      "english": "Although according to the governing side the surveillance had been lawful, the European Parliament set up a committee of inquiry.",
       "teaches": [
-        "correlative-minel-annal"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -109,26 +127,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Újságíró",
-          "text": "Miért minősítették a Pegasus-jegyzőkönyveket 2070-ig államtitokká?"
+          "speaker": "Kérdező",
+          "text": "Miért nem tudott ülésezni a bizottság az első alkalommal?"
         },
         {
-          "speaker": "Parlamenti tudósító",
-          "text": "Mert minél tovább tudják elzárni a bizonyítékokat, annál inkább remélik a politikai következmények _____."
-        },
-        {
-          "speaker": "Újságíró",
-          "text": "De a nemzetközi tényfeltárást nem lehet titkosítani."
+          "speaker": "Válaszadó",
+          "text": "Annak ellenére, hogy az ellenzék kezdeményezte az ülést, a bizottság nem volt _____."
         }
       ],
       "options": [
-        "elkerülését",
-        "elkerülésére",
-        "elkerülésében"
+        "határozatképes",
+        "határozatlan",
+        "határozott"
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -138,12 +152,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a proportional sentence mapping secrecy against accountability.",
-          "answer": "Minél agresszívabban próbálta a hatalom ötven évre titkosítani a Pegasus-vizsgálat jegyzőkönyveit, annál nyilvánvalóbbá vált a független nyilvánosság és az európai intézmények előtt a jogsértések súlyossága és a parlamenti felügyelet teljes kudarca."
+          "prompt": "Write one sentence with annak ellenére, hogy: say what happened to the committee although the opposition had called the session.",
+          "answer": "Annak ellenére, hogy az ellenzék kezdeményezte az ülést, a bizottság nem volt határozatképes."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -151,15 +165,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik páros kötőszó fejezi ki a titkolózás és a bűnrészesség összefüggését a legpontosabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "minél mélyebbre titkosítják az iratokat, annál nyilvánvalóbb a visszaélés",
-        "bár bezárták az ajtót, mégis beszélgetnek a folyosón",
-        "ha a képviselők fáradtak, korán hazamennek"
+        "Annak ellenére, hogy az ellenzék kezdeményezte az ülést, a bizottság nem volt határozatképes.",
+        "Annak ellenére, hogy az ellenzék kezdeményezte az ülést, miatt a bizottság nem volt határozatképes.",
+        "Annak ellenére, az ellenzék kezdeményezte az ülést hogy, a bizottság nem volt határozatképes."
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "concessive-annak-ellenere"
       ]
     }
   ]

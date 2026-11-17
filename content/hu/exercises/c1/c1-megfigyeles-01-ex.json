@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért robbantott ki nemzetközi botrányt a Pegasus kémszoftver magyarországi alkalmazása?",
+      "question": "Mit jelent a kémszoftver szó?",
       "options": [
-        "Mert a kormány a terrorizmus elleni katonai kiberfegyvert illegálisan, független tényfeltáró újságírók, médiavezetők, ügyvédek és politikai ellenfelek lehallgatására használta fel.",
-        "Mert a beszerzett kémszoftver technikai hibái miatt hetekre összeomlott a magyar közigazgatás központi informatikai hálózata.",
-        "Mert a kormány a szoftver licenceit engedély nélkül továbbértékesítette harmadik országbeli magánbiztonsági vállalatoknak."
+        "Olyan program, amellyel titokban megfigyelnek egy telefont.",
+        "Olyan program, amellyel gyorsabban lehet üzenetet küldeni.",
+        "Olyan alkalmazás, amellyel fényképet lehet szerkeszteni."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A lehallgatást állami kiberkémkedésként _____ a nemzetközi sajtó azonnali vizsgálatot követelt.",
-      "hint": "evaluating / értékel + -ve",
-      "answer": "értékelve",
-      "english": "Evaluating the wiretapping as state cyber-espionage the international press demanded an immediate investigation.",
+      "sentence": "Az NSO Group azt _____, hogy a programot csak állami szerveknek adja el.",
+      "hint": "közöl, past, definite",
+      "english": "The NSO Group stated that it sells the programme only to state bodies.",
       "teaches": [
-        "framing-markers"
+        "reported-speech-statements"
+      ],
+      "answers": [
+        "közölte",
+        "mondta"
       ]
     },
     {
@@ -37,20 +40,24 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Pegasus kémszoftver",
-          "az izraeli NSO Group katonai fokozatú telefonfeltörő fegyvere"
+          "kémszoftver",
+          "program a titkos megfigyelésre"
         ],
         [
-          "állami kiberkémkedés",
-          "a titkosszolgálatok törvénytelen digitális behatolása a polgárok eszközeibe"
+          "titkosszolgálat",
+          "állami szerv, amely titokban gyűjt információt"
         ],
         [
-          "forrásvédelem sérelme",
-          "az újságírói informátorok leleplezése a lehallgatások által"
+          "tényfeltáró",
+          "olyan, aki rejtett tényeket derít ki"
         ],
         [
-          "tényfeltáró újságíró",
-          "a hatalmi visszaéléseket feltáró független sajtómunkás"
+          "célpont",
+          "akit meg akarnak figyelni"
+        ],
+        [
+          "szerkesztőség",
+          "az újságírók közös munkahelye"
         ]
       ],
       "teaches": [
@@ -62,13 +69,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A megfigyelést a sajtószabadság elleni támadásként _____ a civil szervezetek tiltakoztak.",
-      "hint": "characterizing / aposztrofál + -va",
-      "answer": "aposztrofálva",
-      "english": "Characterizing the surveillance as an attack against press freedom civil organizations protested.",
+      "sentence": "A magyar kormány azt mondta, _____ a titkosszolgálatok a törvényi keretek között működtek.",
+      "english": "The Hungarian government said that the secret services had operated within the legal framework.",
       "teaches": [
-        "framing-markers"
-      ]
+        "reported-speech-statements"
+      ],
+      "answer": "hogy"
     },
     {
       "id": "c1-megfigyeles-01-practice-5",
@@ -76,30 +82,34 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "hatalom",
-        "katonai",
-        "kémszoftvert",
-        "vetett",
-        "be",
-        "az",
-        "újságírók",
-        "ellen."
+        "Az",
+        "Amnesty",
+        "azt",
+        "közölte,",
+        "hogy",
+        "két",
+        "magyar",
+        "újságíró",
+        "telefonján",
+        "nyomokat",
+        "talált."
       ],
       "solution": [
-        "A",
-        "hatalom",
-        "katonai",
-        "kémszoftvert",
-        "vetett",
-        "be",
-        "az",
-        "újságírók",
-        "ellen."
+        "Az",
+        "Amnesty",
+        "azt",
+        "közölte,",
+        "hogy",
+        "két",
+        "magyar",
+        "újságíró",
+        "telefonján",
+        "nyomokat",
+        "talált."
       ],
-      "english": "Power deployed military spyware against journalists.",
+      "english": "Amnesty stated that it had found traces on the phones of two Hungarian journalists.",
       "teaches": [
-        "framing-markers"
+        "reported-speech-statements"
       ]
     },
     {
@@ -109,26 +119,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Médiajogász",
-          "text": "Mi a legsúlyosabb következménye az újságírók Pegasus-megfigyelésének?"
+          "speaker": "Kérdező",
+          "text": "Mit közölt az NSO Group a programról?"
         },
         {
-          "speaker": "Főszerkesztő",
-          "text": "Az, hogy a forrásvédelem durva felrúgásaként eljárva megbénítja a hatalmi korrupciót leleplező _____ munkáját."
-        },
-        {
-          "speaker": "Médiajogász",
-          "text": "Az informátorok többé nem mernek beszélni a sajtóval."
+          "speaker": "Válaszadó",
+          "text": "Az NSO Group azt közölte, _____ a programot csak állami szerveknek adja el."
         }
       ],
       "options": [
-        "tényfeltárók",
-        "festők",
-        "szakácsok"
+        "hogy",
+        "amit",
+        "aki"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "reported-speech-statements"
       ]
     },
     {
@@ -138,12 +144,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical diagnosis of the Pegasus scandal using a discourse marker.",
-          "answer": "A Pegasus kémszoftver független újságírók elleni bevetését az államilag vezényelt illegális kiberkémkedés iskolapéldájaként értékelve a nemzetközi közösség elítélte a magyar titkosszolgálatok jogsértő eljárását."
+          "prompt": "Write two sentences: say what the NSO Group stated and what the Hungarian government said in 2021, using reported speech.",
+          "answer": "Az NSO Group azt közölte, hogy a programot csak állami szerveknek adja el. A magyar kormány azt mondta, hogy a titkosszolgálatok a törvényi keretek között működtek."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "reported-speech-statements"
       ]
     },
     {
@@ -151,15 +157,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés diagnosztizálja a Pegasus-lehallgatásokat a legpontosabban?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "az állami kiberkémkedés botrányaként értékelve",
-        "amikor új szoftvert telepítenek a mobilra az üzletben",
-        "hogyha valaki elfelejti a telefonja pin-kódját"
+        "A kormány azt mondta, hogy a titkosszolgálatok törvényesen működtek.",
+        "A kormány azt mondta, hogy a titkosszolgálatok törvényesen működik.",
+        "A kormány azt mondta, a titkosszolgálatok hogy törvényesen működtek."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "reported-speech-statements"
       ]
     }
   ]

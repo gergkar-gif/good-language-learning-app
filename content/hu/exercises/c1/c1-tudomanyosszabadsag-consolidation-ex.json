@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik kifejezés diagnosztizálja az akadémiai vagyonelvonást a legpontosabban?",
+      "question": "Melyik mondat nevezi meg a vélemény forrását?",
       "options": [
-        "az akadémiai autonómia elleni merényletként értékelve",
-        "a kutatóintézetek műszaki felszereltségét regisztrálva",
-        "a minisztériumi határozatok adminisztratív iktatószámát ellenőrizve"
+        "A kormány szerint a változtatás a hatékonyabb működést szolgálta.",
+        "A változtatás a hatékonyabb működést szolgálta, mert a kormány.",
+        "A kormány a változtatás a hatékonyabb működést szolgálta szerint."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "evidentials"
       ]
     },
     {
@@ -22,15 +22,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel leplezhető le az egyetemek politikai alapítványosítása a leghitelesebben?",
+      "question": "Which sentence says that the university could go on operating provided that an agreement was made?",
       "options": [
-        "a szenátusi jogköröket önkényesen felszámolva és pártpolitikai kuratóriumokat ültetve a vezetésbe",
-        "a diplomaátadó ünnepségek protokollját szigorúan követve",
-        "a hallgatói szállások felújítási költségeit összesítve"
+        "A külföldi egyetem tovább működhetett, feltéve, hogy egyezmény született.",
+        "A külföldi egyetem tovább működhetett, feltéve, hogy egyezmény születtek.",
+        "A külföldi egyetem tovább működhetett, kivéve, hogy egyezmény született."
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
+        "felteve-hogy-kiveve-ha"
       ]
     },
     {
@@ -40,20 +40,24 @@
       "stage": "recognize",
       "pairs": [
         [
-          "MTA kutatóhálózat",
-          "a magyar tudomány 2019-ben elrabolt történelmi hálózata"
+          "kuratórium",
+          "egy alapítvány vezető testülete"
         ],
         [
-          "Lex CEU",
-          "a Közép-európai Egyetemet elüldöző diszkriminatív jogszabály"
+          "akkreditáció",
+          "egy képzés hivatalos elismerése"
         ],
         [
-          "KEKVA modellváltás",
-          "az egyetemek kiszervezése politikusok által uralt alapítványokba"
+          "kötelezettségszegési eljárás",
+          "az Európai Bizottság eljárása egy tagállam ellen"
         ],
         [
-          "Erasmus kizárás",
-          "a hallgatói mobilitás ellehetetlenülése az összeférhetetlenség miatt"
+          "Horizont Európa",
+          "az Európai Unió kutatási támogatási programja"
+        ],
+        [
+          "Magyar Tudományos Akadémia",
+          "a magyar tudósok testülete 1825-től"
         ]
       ],
       "teaches": [
@@ -65,91 +69,76 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A kutatók tömeges elvándorlása a határokon túlra az _____ tragikus következménye.",
-      "hint": "brain drain",
-      "english": "Mass emigration of researchers abroad is the tragic consequence of brain drain.",
+      "sentence": "2017 áprilisában az Európai Bizottság _____ eljárást indított Magyarország ellen.",
+      "hint": "infringement",
+      "english": "In April 2017 the European Commission started infringement proceedings against Hungary.",
       "teaches": [
         "c1-mta-ceu-vocab"
       ],
-      "answers": [
-        "agyelszívás"
-      ]
+      "answer": "kötelezettségszegési"
     },
     {
       "id": "c1-tudomanyosszabadsag-consolidation-5",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A kutatás és oktatás szabadsága a sérthetetlen _____ alapelve.",
-      "hint": "academic freedom",
-      "english": "Freedom of research and teaching is the foundational principle of inviolable academic freedom.",
+      "sentence": "Az alapítványi egyetemek vezető testülete a _____.",
+      "english": "The governing body of the foundation universities is the board of trustees.",
       "teaches": [
         "c1-mta-ceu-vocab"
       ],
-      "answers": [
-        "tanszabadság"
-      ]
+      "answer": "kuratórium"
     },
     {
       "id": "c1-tudomanyosszabadsag-consolidation-6",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A döntést politikai einstandként _____ az akadémikusok tiltakoztak.",
-      "hint": "aposztrofál + -va",
-      "english": "Characterizing the decision as hostile political takeover academics protested.",
+      "sentence": "A szabály minden külföldi egyetemre vonatkozott, _____, ha azok az Európai Gazdasági Térségből érkeztek.",
+      "english": "The rule applied to every foreign university, except if they came from the European Economic Area.",
       "teaches": [
-        "framing-markers"
+        "felteve-hogy-kiveve-ha"
       ],
-      "answers": [
-        "aposztrofálva"
-      ]
+      "answer": "kivéve"
     },
     {
       "id": "c1-tudomanyosszabadsag-consolidation-7",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minél tovább tart az összeférhetetlenség, _____ mélyebb a nemzetközi elszigetelődés.",
-      "hint": "minél … ___",
-      "english": "The longer conflict of interest lasts, the deeper international isolation is.",
+      "sentence": "A bírálók szerint minél nagyobb volt a kuratórium szerepe, annál kisebb volt a _____ szerepe.",
+      "english": "According to the critics, the greater the role of the board was, the smaller the role of the senate was.",
       "teaches": [
         "correlative-minel-annal"
       ],
-      "answers": [
-        "annál"
-      ]
+      "answer": "szenátus"
     },
     {
       "id": "c1-tudomanyosszabadsag-consolidation-8",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A kutatás szabadsága értelemszerűen _____ a demokráciában.",
-      "hint": "indispensable",
-      "english": "Freedom of research is naturally indispensable in a democracy.",
+      "sentence": "A Bizottság összeférhetetlenségi aggályt jelzett, aminek _____ a Tanács határozatot hozott.",
+      "english": "The Commission pointed to a conflict-of-interest concern, as a result of which the Council took a decision.",
       "teaches": [
-        "conclusive-markers"
+        "causal-postpositions"
       ],
-      "answers": [
-        "nélkülözhetetlen",
-        "elengedhetetlen"
-      ]
+      "answer": "következtében"
     },
     {
       "id": "c1-tudomanyosszabadsag-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi az egyetemi szenátusok és oktatók legfőbb etikai kötelessége az alapítványi önkénnyel szemben?",
+      "question": "Which word fills the gap? 'A kormány szerint a modell stabil forrást adott, a bírálók _____ az autonómia csökkenését említették.'",
       "options": [
-        "A tanszabadság megingathatatlan védelme, a professzori autonómia őrzése és a politikai megrendelések elutasítása.",
-        "A kuratórium valamennyi gazdasági döntésének feltétel nélküli jóváhagyása.",
-        "A nemzetközi tudományos publikációk korlátozása hazai folyóiratok javára."
+        "viszont",
+        "ugyanis",
+        "tehát"
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "adversative-contrast"
       ]
     },
     {
@@ -159,27 +148,45 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "tudományos",
-        "szabadság",
-        "fundamentálisan",
-        "megkérdőjelezhetetlen",
-        "minden",
-        "szabad",
-        "országban."
+        "kormány",
+        "szerint",
+        "a",
+        "törvény",
+        "egységes",
+        "szabályozást",
+        "hozott,",
+        "a",
+        "CEU",
+        "vezetése",
+        "szerint",
+        "viszont",
+        "főként",
+        "az",
+        "egyetemet",
+        "érintette."
       ],
       "solution": [
         "A",
-        "tudományos",
-        "szabadság",
-        "fundamentálisan",
-        "megkérdőjelezhetetlen",
-        "minden",
-        "szabad",
-        "országban."
+        "kormány",
+        "szerint",
+        "a",
+        "törvény",
+        "egységes",
+        "szabályozást",
+        "hozott,",
+        "a",
+        "CEU",
+        "vezetése",
+        "szerint",
+        "viszont",
+        "főként",
+        "az",
+        "egyetemet",
+        "érintette."
       ],
-      "english": "Scientific freedom is fundamentally unquestionable in every free country.",
+      "english": "According to the government the law brought uniform regulation, but according to the CEU leadership it mainly concerned the university.",
       "teaches": [
-        "conclusive-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -189,12 +196,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of university isolation using a proportional correlative structure.",
-          "answer": "Minél inkább ragaszkodik a politikai hatalom az egyetemek oligarchikus ellenőrzéséhez, annál elkerülhetetlenebbé válik a nemzetközi források zárolása és annál pusztítóbb agyelszívással kell szembenéznie a nemzetnek."
+          "prompt": "Write two sentences about the Lex CEU: give the date of the adoption of the amendment and the judgment of the Court of Justice of 2020.",
+          "answer": "2017. április 4-én az Országgyűlés elfogadta a felsőoktatási törvény módosítását. Az Európai Unió Bírósága 2020. október 6-án kimondta, hogy a magyar szabályozás nem egyeztethető össze az uniós joggal."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "c1-mta-ceu-vocab"
       ]
     },
     {
@@ -204,12 +211,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Synthesize the necessity of academic restitution using a conclusive evaluative particle.",
-          "answer": "Az akadémiai autonómia és a tanszabadság helyreállítása értelemszerűen nélkülözhetetlen és fundamentálisan megkérdőjelezhetetlen, hiszen a tudás köztársasága nem rab, s a független kutatás a demokratikus Magyarország legfőbb záloga."
+          "prompt": "Write two sentences about the elections of 2026: give the result of 12 April and the election of the prime minister on 9 May.",
+          "answer": "2026. április 12-én a Tisza Párt a 199 mandátumból 141-et szerzett. 2026. május 9-én az Országgyűlés Magyar Pétert választotta miniszterelnökké."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-mta-ceu-vocab"
       ]
     }
   ]
