@@ -112,8 +112,14 @@ for (const lv of Object.values((readJson(`content/${course}/curriculum/curriculu
         if (u.hidden) for (const l of u.lessons || []) hiddenStems.add(String(l.id).replace(/^lesson\./, '').replace(/\./g, '-'));
     }
 }
+// --with-hidden: read a hidden track as if it were shown (reviewing the track before it is
+// unhidden, HU C1 culture 2026-11-17): its lessons count, and their vocabulary lists, which
+// the word index leaves out, are read here. Without it the track's own words always show as unmet.
+const withHidden = args.includes('--with-hidden');
+const hiddenVocab = withHidden ? [...hiddenStems] : [];
+if (withHidden) hiddenStems.clear();
 if (onlyStems && [...onlyStems].some(s => hiddenStems.has(s))) {
-    console.error('unmet-words.js: some of these stems are in a hidden track; its own words are not counted as met');
+    console.error('unmet-words.js: some of these stems are in a hidden track; its own words are not counted as met (pass --with-hidden to review the track)');
 }
 
 // Words met through vocabulary lists: word -> earliest position.
@@ -128,6 +134,16 @@ for (const [lemma, lessonId] of Object.entries(index)) {
     if (!order.has(stem) || hiddenStems.has(stem)) continue;
     meet(lemma, order.get(stem));
     for (const t of tokens(lemma)) meet(t, order.get(stem));
+}
+
+for (const stem of hiddenVocab) {
+    if (!order.has(stem)) continue;
+    const voc = readJson(`content/${course}/vocabulary/${levelOf.get(stem)}/${stem}-voc.json`) || {};
+    for (const w of voc.words || []) {
+        if (!w || !w.lemma) continue;
+        meet(w.lemma, order.get(stem));
+        for (const t of tokens(w.lemma)) meet(t, order.get(stem));
+    }
 }
 
 // Grammar screens per stem: the subject (tables, single italic words) and everything.
