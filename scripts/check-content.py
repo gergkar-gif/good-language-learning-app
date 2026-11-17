@@ -804,7 +804,9 @@ STORY_META = re.compile(r"\b(este texto|estos textos|otros textos|este curso|est
 # "Az olvasó azt veheti észre", "a tanuló, aki ... kutatja", "a szöveg szerint" inside the story itself)
 # "a tanulók" (school stories), "ez a szöveg" (a preamble) and level names (a story about learning) are real content in B2
 STORY_META_HU = re.compile(r"\b(az olvaso(?:k)? (?:szamara|azt|ugy|is|most|itt)|az olvasonak|a mai olvaso|"
-                           r"a szoveg szerint|ebben a szovegben|a lecke|ebben a leckeben|a kurzus|ebben a kurzusban|a magyar nyelv legmagasabb)\b")
+                           r"a szoveg szerint|ebben a szovegben|a lecke|ebben a leckeben|a kurzus|ebben a kurzusban|a magyar nyelv legmagasabb|"
+                           # a reader's doubt written into the text (HU C1 culture 1-8, 2026-11-17)
+                           r"parafrazis, nem idezet|nem szo szerinti idezet|ez a tortenet bizonytalan|de ez a tortenet bizonytalan|ellenorizendo)\b")
 
 
 def check_story(src, course, level, ref, L):

@@ -518,6 +518,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-14 | HU C1 core Units 17–24 | four units each; both readers stopped by the 5-hour limit and resumed after the reset | resumed runs only: A 376,461, B 364,720 (~90k a unit, a floor) | 864 applied | 65 errors / 113 suspects → 0 / 40 accepted, unmet 119 → 52 lookup misses | walked 48/48, all frozen (C1 24/72); c1-22-01 gained the epistemic past modals |
 | 11-15 | HU C1 core Units 25–32 | four units each, launched during the 17–24 review | A 396,766 (20 min), B 425,374 (22 min); ~100k a unit | 958 applied | 57 errors / 110 suspects → 0 / 40 accepted, unmet 154 → 70 lookup misses | walked 48/48, all frozen (C1 32/72) |
 | 11-15 | HU C1 core Units 33–36 | one reader, four units, launched during the 25–32 review | A 394,174 (one follow-up, one usage-limit stop); ~99k a unit | 505 applied | 40 errors / 49 suspects → 0 / 20 accepted, unmet → none | walked 24/24, all frozen (C1 36/72, core 36/36) |
+| 11-17 | HU C1 culture Units 1–8 (first culture batch) | read-first, two Sonnet readers, four units each, reviewer facts sent mid-read | A 399,399 (21 min), B 390,248 (22 min); ~99k a unit | 717 applied | 70 errors / 120 suspects → 0 / 141 accepted (`vocab-unused`); ~400 unmet words left | walked 48/48, all frozen (C1 44/72); 6 retired slugs retagged |
 | 11-11 | HU B2 walk + level checklist | Claude, no agents | | | 0 walk failures (432/432), 0 errors, 0 suspects | ~9 min of walking; check_c1_forms.py added to the checklist |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -2213,3 +2214,9 @@ The user took the four recommended options:
 - **Recaps that name the unit of a skill's title, not of the word** came back for the third
   batch (*céljából*, *szembeötlően*): now in the rulebook.
 
+### 2026-11-17: HU C1 culture Units 1–8 (first culture batch)
+
+- **Four culture units per reader held the C1 core cost** (~99k a unit against ~214k for HU B2 culture at two): the C1 culture units are small (42–52 items, five ~1.5k-character segments).
+- **Sending the reviewer facts mid-read worked:** both readers applied every verified fact (Humboldt's ranking, the 24th-century typo, Ügyfélkapu+, the cottars of 1848) and spent no effort re-checking them.
+- **Readers still wrote their doubts into content** in three places ("a check-worthy figure", "(parafrázis, nem idézet)", "a történet bizonytalan"), despite the focus file. The `(check` grep before merging didn't catch these wordings. **Scripted:** the Hungarian `story-meta` pattern now catches *parafrázis, nem idézet*, *a történet bizonytalan* and *ellenőrizendő* in stories (tested on the readers' texts; 0 hits in frozen HU B1–C1). Screen and item text is still grepped by hand.
+- **Culture readers leave unmet words** (~400 here): readers listed only the words in their own rewrites. A culture batch needs a vocabulary pass before freezing; a dictionary draft by script gets lemmas wrong (*fog* for *fogalom*), so it needs a worker or a lemmatiser.
