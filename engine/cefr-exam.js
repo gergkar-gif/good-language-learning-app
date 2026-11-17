@@ -16,16 +16,147 @@
 const CefrExam = (function () {
     'use strict';
 
+    const EXTRA_UI_STRINGS = {
+        'Escuchando con atención...': { pl: 'Słuchaj uważnie...', cs: 'Pozorně poslouchejte...', sk: 'Pozorne počúvajte...' },
+        'Detener audio': { pl: 'Zatrzymaj nagranie', cs: 'Zastavit zvuk', sk: 'Zastaviť zvuk' },
+        'Pausa entre audiciones': { pl: 'Przerwa między odtworzeniami', cs: 'Pauza mezi poslechy', sk: 'Prestávka medzi počúvaniami' },
+        'Comenzar segunda audición': { pl: 'Rozpocznij drugie odtworzenie', cs: 'Spustit druhý poslech', sk: 'Spustiť druhé počúvanie' },
+        'Audición completada': { pl: 'Odsłuch zakończony', cs: 'Poslech dokončen', sk: 'Počúvanie dokončené' },
+        'Has escuchado los dos pases oficiales. Selecciona tus respuestas y comprueba la tarea.': {
+            pl: 'Wysłuchałeś obu oficjalnych odtworzeń. Zaznacz odpowiedzi i sprawdź zadanie.',
+            cs: 'Vyslechli jste oba oficiální poslechy. Vyberte odpovědi a zkontrolujte úlohu.',
+            sk: 'Vypočuli ste si obe oficiálne prehrania. Vyberte odpovede a skontrolujte úlohu.'
+        },
+        'Repetir segundo pase': { pl: 'Powtórz drugi odsłuch', cs: 'Zopakovat druhý poslech', sk: 'Zopakovať druhé počúvanie' },
+        'Pulsa reproducir cuando estés listo.': { pl: 'Naciśnij odtwórz, gdy będziesz gotowy.', cs: 'Stiskněte přehrát, až budete připraveni.', sk: 'Stlačte prehrať, keď budete pripravení.' },
+        'Pulsa en cada pregunta para escuchar su mensaje correspondiente (hasta 2 pases por mensaje).': {
+            pl: 'Kliknij każde pytanie, aby odsłuchać nagranie (do 2 odtworzeń na komunikat).',
+            cs: 'Klikněte na jednotlivé položky a přehrajte si nahrávku (až 2 poslechy ke každé zprávě).',
+            sk: 'Kliknite na každú otázku a vypočujte si nahrávku (až 2 prehrania ku každej správe).'
+        },
+        'Detectando voz — sigue hablando…': { pl: 'Wykrywanie mowy — mów dalej…', cs: 'Detekce hlasu — mluvte dál…', sk: 'Rozpoznávanie hlasu — hovorte ďalej…' },
+        'No se pudo acceder al micrófono. Puedes redactar tu respuesta oral en el campo de texto.': {
+            pl: 'Brak dostępu do mikrofonu. Możesz wpisać wypowiedź ustną w polu tekstowym.',
+            cs: 'Nepodařilo se získat přístup k mikrofonu. Svou ústní odpověď můžete napsat do textového pole.',
+            sk: 'Nepodarilo sa získať prístup k mikrofónu. Svoju ústnu odpoveď môžete napísať do textového poľa.'
+        },
+        'Detener grabación': { pl: 'Zatrzymaj nagrywanie', cs: 'Zastavit nahrávání', sk: 'Zastaviť nahrávanie' },
+        'Grabando voz... Habla con naturalidad.': { pl: 'Nagrywanie głosu... Mów swobodnie.', cs: 'Nahrávání hlasu... Mluvte přirozeně.', sk: 'Nahrávanie hlasu... Hovorte prirodzene.' },
+        'Iniciar grabación de voz': { pl: 'Rozpocznij nagrywanie głosu', cs: 'Spustit nahrávání hlasu', sk: 'Spustiť nahrávanie hlasu' },
+        'Micrófono listo. Pulsa para comenzar tu producción oral.': {
+            pl: 'Mikrofon gotowy. Naciśnij, aby rozpocząć wypowiedź ustną.',
+            cs: 'Mikrofon připraven. Klikněte pro zahájení ústního projevu.',
+            sk: 'Mikrofón pripravený. Kliknite na začatie ústneho prejavu.'
+        },
+        'Tareas oficiales': { pl: 'Zadania oficjalne', cs: 'Oficiální úlohy', sk: 'Oficiálne úlohy' },
+        'Guía y estrategias': { pl: 'Przewodnik i strategie', cs: 'Průvodce a strategie', sk: 'Sprievodca a stratégie' },
+        'Simulacro completo': { pl: 'Pełny egzamin próbny', cs: 'Celá cvičná zkouška', sk: 'Celá skúšobná skúška' },
+        'Mis resultados': { pl: 'Moje wyniki', cs: 'Moje výsledky', sk: 'Moje výsledky' },
+        'Comprensión de lectura': { pl: 'Rozumienie tekstów pisanych', cs: 'Čtení s porozuměním', sk: 'Čítanie s porozumením' },
+        'Comprensión auditiva': { pl: 'Rozumienie ze słuchu', cs: 'Poslech s porozuměním', sk: 'Počúvanie s porozumením' },
+        'Expresión escrita': { pl: 'Wypowiedź pisemna', cs: 'Psaní', sk: 'Písomný prejav' },
+        'Expresión oral': { pl: 'Wypowiedź ustna', cs: 'Ústní část', sk: 'Ústny prejav' },
+        'tareas': { pl: 'zadania', cs: 'úlohy', sk: 'úlohy' },
+        'No hay tareas disponibles.': { pl: 'Brak dostępnych zadań.', cs: 'Nejsou k dispozici žádné úlohy.', sk: 'Nie sú k dispozícii žiadne úlohy.' },
+        'Pendiente': { pl: 'Do wykonania', cs: 'Nesplněno', sk: 'Nevypracované' },
+        'Comenzar práctica': { pl: 'Rozpocznij ćwiczenie', cs: 'Začít procvičovat', sk: 'Začať precvičovať' },
+        'Volver a tareas': { pl: 'Wróć do zadań', cs: 'Zpět na úlohy', sk: 'Späť na úlohy' },
+        '<span class="cefr-inline-gap-token">[ Hueco $1 ]</span>': {
+            pl: '<span class="cefr-inline-gap-token">[ Luka $1 ]</span>',
+            cs: '<span class="cefr-inline-gap-token">[ Mezera $1 ]</span>',
+            sk: '<span class="cefr-inline-gap-token">[ Medzera $1 ]</span>'
+        },
+        'Texto de lectura': { pl: 'Tekst do czytania', cs: 'Čtený text', sk: 'Text na čítanie' },
+        'Lee el texto con atención antes de responder': { pl: 'Przeczytaj uważnie tekst przed udzieleniem odpowiedzi', cs: 'Před odpovědí si text pozorně přečtěte', sk: 'Pred odpovedaním si text pozorne prečítajte' },
+        'Preguntas de comprensión': { pl: 'Pytania sprawdzające', cs: 'Otázky k porozumění', sk: 'Otázky na porozumenie' },
+        'Selecciona la opción correcta (A, B o C)': { pl: 'Wybierz właściwą odpowiedź (A, B lub C)', cs: 'Vyberte správnou možnost (A, B nebo C)', sk: 'Vyberte správnu možnosť (A, B alebo C)' },
+        'Justificación': { pl: 'Uzasadnienie', cs: 'Odůvodnění', sk: 'Odôvodnenie' },
+        'Texto principal': { pl: 'Tekst główny', cs: 'Hlavní text', sk: 'Hlavný text' },
+        'Selecciona la oración correcta para cada posición': { pl: 'Wybierz właściwe zdanie w miejsce każdej luki', cs: 'Vyberte vhodnou větu pro každou mezeru', sk: 'Vyberte vhodnú vetu pre každú medzeru' },
+        'Selecciona letra': { pl: 'Wybierz literę', cs: 'Vyberte písmeno', sk: 'Vyberte písmeno' },
+        'Correcto': { pl: 'Poprawnie', cs: 'Správně', sk: 'Správne' },
+        'Solución': { pl: 'Rozwiązanie', cs: 'Řešení', sk: 'Riešenie' },
+        'Comprobar tarea': { pl: 'Sprawdź odpowiedzi', cs: 'Zkontrolovat úlohu', sk: 'Skontrolovať úlohu' },
+        'Repetir tarea': { pl: 'Rozwiąż ponownie', cs: 'Zkusit znovu', sk: 'Skúsiť znova' },
+        'Detener reproducción': { pl: 'Zatrzymaj odtwarzanie', cs: 'Zastavit přehrávání', sk: 'Zastaviť prehrávanie' },
+        'Escuchar audio (Pase 1/2)': { pl: 'Odsłuchaj nagranie (1/2)', cs: 'Přehrát nahrávku (1/2)', sk: 'Prehrať nahrávku (1/2)' },
+        'Transcripción': { pl: 'Transkrypcja', cs: 'Přepis nahrávky', sk: 'Prepis nahrávky' },
+        'Transcripción completa de la audición': { pl: 'Pełny zapis nagrania', cs: 'Úplný přepis poslechu', sk: 'Úplný prepis nahrávky' },
+        'Comprobar respuestas': { pl: 'Sprawdź odpowiedzi', cs: 'Zkontrolovat odpovědi', sk: 'Skontrolovať odpovede' },
+        'Repetir audición': { pl: 'Odsłuchaj ponownie', cs: 'Přehrát znovu', sk: 'Prehrať znova' },
+        'Elige opción de redacción': { pl: 'Wybierz temat wypowiedzi', cs: 'Vyberte téma zadání', sk: 'Vyberte tému zadania' },
+        'Instrucciones de la tarea:': { pl: 'Polecenie do zadania:', cs: 'Zadání úlohy:', sk: 'Zadanie úlohy:' },
+        'Palabras:': { pl: 'Liczba słów:', cs: 'Počet slov:', sk: 'Počet slov:' },
+        'Borrador guardado automáticamente': { pl: 'Wersja robocza zapisana automatycznie', cs: 'Koncept automaticky uložen', sk: 'Koncept automaticky uložený' },
+        'Escribe tu redacción aquí...': { pl: 'Napisz tutaj swoją wypowiedź...', cs: 'Sem napište svůj text...', sk: 'Sem napíšte svoj text...' },
+        'Evaluar redacción (Rúbrica CEFR)': { pl: 'Oceń wypowiedź (kryteria CEFR)', cs: 'Vyhodnotit text (kritéria SERR)', sk: 'Vyhodnotiť text (kritériá SERR)' },
+        'puntos': { pl: 'pkt', cs: 'bodů', sk: 'bodov' },
+        'Párrafos y estructuración:': { pl: 'Akapity i kompozycja:', cs: 'Odstavce a struktura:', sk: 'Odseky a štruktúra:' },
+        'Puntos guía y riqueza léxica:': { pl: 'Realizacja punktów i słownictwo:', cs: 'Naplnění zadání a slovní zásoba:', sk: 'Splnenie bodov a slovná zásoba:' },
+        'Transcripción de tu respuesta (puedes revisarla o editarla antes de evaluar):': {
+            pl: 'Transkrypcja Twojej wypowiedzi (możesz ją poprawić przed oceną):',
+            cs: 'Přepis vaší odpovědi (před vyhodnocením jej můžete upravit):',
+            sk: 'Prepis vašej odpovede (pred vyhodnotením ho môžete upraviť):'
+        },
+        'Tu voz se transcribirá aquí en tiempo real...': {
+            pl: 'Twoja wypowiedź pojawi się tutaj lub możesz ją wpisać ręcznie...',
+            cs: 'Váš hlas se zde přepíše v reálném čase...',
+            sk: 'Váš hlas sa tu prepíše v reálnom čase...'
+        },
+        'Escucha tu grabación:': { pl: 'Odsłuchaj swoje nagranie:', cs: 'Poslechněte si svou nahrávku:', sk: 'Vypočujte si svoju nahrávku:' },
+        'Evaluar expresión oral': { pl: 'Oceń wypowiedź ustną', cs: 'Vyhodnotit ústní projev', sk: 'Vyhodnotiť ústny prejav' },
+        'Palabras producidas:': { pl: 'Wypowiedziane słowa:', cs: 'Počet pronesených slov:', sk: 'Počet vyslovených slov:' },
+        'Conectores orales detectados:': { pl: 'Wykryte łączniki dyskursu:', cs: 'Zjištěné konektory:', sk: 'Zistené spojky:' },
+        'Ninguno detectado': { pl: 'Nie wykryto', cs: 'Žádné nezjištěny', sk: 'Žiadne nezistené' },
+        'Guía no disponible.': { pl: 'Przewodnik jest niedostępny.', cs: 'Průvodce není k dispozici.', sk: 'Sprievodca nie je k dispozícii.' },
+        'Guía oficial del examen': { pl: 'Oficjalny przewodnik po egzaminie', cs: 'Oficiální průvodce zkouškou', sk: 'Oficiálny sprievodca skúškou' },
+        'El examen oficial evalúa las cuatro destrezas divididas en dos bloques:': {
+            pl: 'Egzamin oficjalny ocenia cztery sprawności podzielone na dwie części:',
+            cs: 'Oficiální zkouška ověřuje čtyři řečové dovednosti rozdělené do dvou částí:',
+            sk: 'Oficiálna skúška overuje štyri jazykové zručnosti rozdelené do dvoch častí:'
+        },
+        'Bloque 1: Destrezas escritas (50 pts)': { pl: 'Część 1: Sprawności pisemne (50 pkt)', cs: 'Část 1: Písemná zkouška (50 b.)', sk: 'Časť 1: Písomná časť (50 b.)' },
+        'Bloque 2: Destrezas orales (50 pts)': { pl: 'Część 2: Sprawności ustne (50 pkt)', cs: 'Část 2: Ústní a poslechová část (50 b.)', sk: 'Časť 2: Ústna a posluchová časť (50 b.)' },
+        'Apto: Mínimo 30 / 50 pts': { pl: 'Próg zaliczenia: 30 / 50 pkt', cs: 'Minimum ke složení: 30 / 50 b.', sk: 'Minimum na zloženie: 30 / 50 b.' },
+        'Iniciar simulacro completo cronometrado': { pl: 'Rozpocznij pełny egzamin próbny', cs: 'Spustit celou cvičnou zkoušku', sk: 'Spustiť celú skúšobnú skúšku' },
+        'APTO': { pl: 'ZALICZONY', cs: 'USPĚL', sk: 'USPEL' },
+        'EN PROCESO': { pl: 'W TOKU', cs: 'PROBÍHÁ', sk: 'PREBIEHA' },
+        'Lectura': { pl: 'Czytanie', cs: 'Čtení', sk: 'Čítanie' },
+        'Audición': { pl: 'Słuchanie', cs: 'Poslech', sk: 'Počúvanie' },
+        'Escritura': { pl: 'Pisanie', cs: 'Psaní', sk: 'Písanie' },
+        'Oral': { pl: 'Mówienie', cs: 'Mluvení', sk: 'Rozprávanie' },
+        'Tareas realizadas': { pl: 'Ukończone zadania', cs: 'Dokončené úlohy', sk: 'Dokončené úlohy' },
+        'Puntuación media': { pl: 'Średni wynik', cs: 'Průměrné skóre', sk: 'Priemerné skóre' },
+        'Calificación global': { pl: 'Ocena ogólna', cs: 'Celkové hodnocení', sk: 'Celkové hodnotenie' },
+        'Registro detallado de tareas': { pl: 'Szczegółowy rejestr wyników', cs: 'Podrobný přehled výsledků', sk: 'Podrobný prehľad výsledkov' },
+        "Aún no has completado ninguna tarea. Entrena en la pestaña 'Tareas oficiales'.": {
+            pl: "Nie ukończyłeś jeszcze żadnego zadania. Ćwicz w zakładce 'Zadania oficjalne'.",
+            cs: "Zatím jste nedokončili žádnou úlohu. Procvičujte v záložce 'Oficiální úlohy'.",
+            sk: "Zatiaľ ste nedokončili žiadnu úlohu. Precvičujte na karte 'Oficiálne úlohy'."
+        },
+        'Destreza': { pl: 'Sprawność', cs: 'Dovednost', sk: 'Zručnosť' },
+        'Tarea': { pl: 'Zadanie', cs: 'Úloha', sk: 'Úloha' },
+        'Puntos': { pl: 'Punkty', cs: 'Body', sk: 'Body' },
+        'Porcentaje': { pl: 'Wynik %', cs: 'Úspěšnost', sk: 'Úspešnosť' }
+    };
+
     function createModule(config) {
         const _id = config.id;
         const _dataFile = config.dataFile;
         const _storageKey = `parlour_cefr_v1_${_id}`;
-        const _lang = _id.includes('hu') ? 'hu' : (_id.includes('fr') ? 'fr' : (_id.includes('it') ? 'it' : (_id.includes('pl') ? 'pl' : 'es')));
-        function _t(esStr, huStr, frStr, itStr, plStr) {
+        const _lang = _id.startsWith('sk-') ? 'sk'
+            : (_id.startsWith('cs-') ? 'cs'
+            : (_id.startsWith('pl-') ? 'pl'
+            : (_id.startsWith('fr-') ? 'fr'
+            : (_id.startsWith('it-') ? 'it'
+            : (_id.includes('hu') || _id.startsWith('ecl-') ? 'hu' : 'es')))));
+        function _t(esStr, huStr, frStr, itStr, plStr, csStr, skStr) {
             if (_lang === 'hu') return huStr;
             if (_lang === 'fr') return frStr !== undefined ? frStr : esStr;
             if (_lang === 'it') return itStr !== undefined ? itStr : esStr;
-            if (_lang === 'pl') return plStr !== undefined ? plStr : (itStr !== undefined ? itStr : esStr);
+            if (_lang === 'pl') return plStr !== undefined ? plStr : ((EXTRA_UI_STRINGS[esStr] && EXTRA_UI_STRINGS[esStr].pl) || esStr);
+            if (_lang === 'cs') return csStr !== undefined ? csStr : ((EXTRA_UI_STRINGS[esStr] && EXTRA_UI_STRINGS[esStr].cs) || esStr);
+            if (_lang === 'sk') return skStr !== undefined ? skStr : ((EXTRA_UI_STRINGS[esStr] && EXTRA_UI_STRINGS[esStr].sk) || esStr);
             return esStr;
         }
 
@@ -284,10 +415,13 @@ const CefrExam = (function () {
                         `Pase ${_state.listeningPass} de 2: Reproduciendo audio`,
                         `${_state.listeningPass} / 2. meghallgatás: Hang lejátszása`,
                         `Écoute ${_state.listeningPass} sur 2 : Lecture en cours`,
-                        `Ascolto ${_state.listeningPass} di 2: Riproduzione in corso`
+                        `Ascolto ${_state.listeningPass} di 2: Riproduzione in corso`,
+                        `Odtworzenie ${_state.listeningPass} z 2: Odtwarzanie nagrania`,
+                        `Poslech ${_state.listeningPass} ze 2: Přehrávání zvuku`,
+                        `Počúvanie ${_state.listeningPass} z 2: Prehrávanie zvuku`
                     );
                     subText = turn
-                        ? _t(`Voz: ${turn.speaker}`, `Beszélő: ${turn.speaker}`, `Voix : ${turn.speaker}`, `Voce: ${turn.speaker}`)
+                        ? _t(`Voz: ${turn.speaker}`, `Beszélő: ${turn.speaker}`, `Voix : ${turn.speaker}`, `Voce: ${turn.speaker}`, `Głos: ${turn.speaker}`, `Mluvčí: ${turn.speaker}`, `Hovoriaci: ${turn.speaker}`)
                         : _t('Escuchando con atención...', 'Figyelmes hallgatás...', 'Écoute attentive...', 'Ascolto attento...');
                     btnHtml = `
                         <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="audio-pause">${_t('Detener audio', 'Lejátszás szüneteltetése', 'Arrêter l\'audio', 'Ferma audio')}</button>
@@ -299,7 +433,10 @@ const CefrExam = (function () {
                         `La segunda audición comenzará en ${_state.listeningIntermissionCountdown} segundos. Revisa tus opciones.`,
                         `A második meghallgatás ${_state.listeningIntermissionCountdown} másodperc múlva kezdődik. Nézd át a válaszlehetőségeket.`,
                         `La deuxième écoute commencera dans ${_state.listeningIntermissionCountdown} secondes. Relisez vos options.`,
-                        `Il secondo ascolto inizierà tra ${_state.listeningIntermissionCountdown} secondi. Rivedi le opzioni.`
+                        `Il secondo ascolto inizierà tra ${_state.listeningIntermissionCountdown} secondi. Rivedi le opzioni.`,
+                        `Drugie odtworzenie rozpocznie się za ${_state.listeningIntermissionCountdown} s. Sprawdź opcje.`,
+                        `Druhý poslech začne za ${_state.listeningIntermissionCountdown} s. Zkontrolujte své možnosti.`,
+                        `Druhé počúvanie sa začne o ${_state.listeningIntermissionCountdown} s. Skontrolujte si možnosti.`
                     );
                     btnHtml = `
                         <button type="button" class="btn btn-primary cefr-ctrl-btn" data-action="skip-intermission">${_t('Comenzar segunda audición', 'Második meghallgatás indítása', 'Lancer la deuxième écoute', 'Avvia secondo ascolto')}</button>
@@ -321,11 +458,14 @@ const CefrExam = (function () {
                         `Pase ${_state.listeningPass} de 2 preparado`,
                         `${_state.listeningPass} / 2. meghallgatás készen áll`,
                         `Écoute ${_state.listeningPass} sur 2 prête`,
-                        `Ascolto ${_state.listeningPass} di 2 pronto`
+                        `Ascolto ${_state.listeningPass} di 2 pronto`,
+                        `Odtworzenie ${_state.listeningPass} z 2 gotowe`,
+                        `Poslech ${_state.listeningPass} ze 2 připraven`,
+                        `Počúvanie ${_state.listeningPass} z 2 pripravené`
                     );
                     subText = _t('Pulsa reproducir cuando estés listo.', 'Kattints a lejátszásra, amikor készen állsz.', 'Appuyez sur lecture lorsque vous êtes prêt.', 'Premi riproduci quando sei pronto.');
                     btnHtml = `
-                        <button type="button" class="btn btn-primary cefr-ctrl-btn" data-action="audio-play">${_t(`Reproducir pase ${_state.listeningPass}`, `${_state.listeningPass}. meghallgatás lejátszása`, `Écouter le passage ${_state.listeningPass}`, `Riproduci ascolto ${_state.listeningPass}`)}</button>
+                        <button type="button" class="btn btn-primary cefr-ctrl-btn" data-action="audio-play">${_t(`Reproducir pase ${_state.listeningPass}`, `${_state.listeningPass}. meghallgatás lejátszása`, `Écouter le passage ${_state.listeningPass}`, `Riproduci ascolto ${_state.listeningPass}`, `Odtwórz nagranie (${_state.listeningPass}/2)`, `Přehrát poslech ${_state.listeningPass}`, `Prehrať počúvanie ${_state.listeningPass}`)}</button>
                         <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="audio-speed">${_state.listeningSpeed}x</button>
                     `;
                 }
@@ -372,8 +512,8 @@ const CefrExam = (function () {
 
                 el.innerHTML = `
                     <div class="cefr-audio-status-wrap">
-                        <span class="cefr-audio-status-label">${_t(`${tarea.items.length} avisos y mensajes breves`, `${tarea.items.length} rövid hanganyag`, `${tarea.items.length} annonces et messages courts`, `${tarea.items.length} annunci e brevi messaggi`)}</span>
-                        <span class="cefr-audio-status-sub">${isPlaying && activeItem ? _t(`Reproduciendo mensaje ${activeItem.num}...`, `${activeItem.num}. szöveg lejátszása...`, `Lecture du message ${activeItem.num}...`, `Riproduzione messaggio ${activeItem.num}...`) : _t('Pulsa en cada pregunta para escuchar su mensaje correspondiente (hasta 2 pases por mensaje).', 'Kattints az egyes kérdések hangfájljára a meghallgatáshoz (legfeljebb 2 lejátszás kérdésenként).', 'Cliquez sur chaque question pour écouter le message correspondant (jusqu\'à 2 écoutes par message).', 'Clicca su ciascuna domanda per ascoltare il messaggio corrispondente (fino a 2 ascolti per messaggio).')}</span>
+                        <span class="cefr-audio-status-label">${_t(`${tarea.items.length} avisos y mensajes breves`, `${tarea.items.length} rövid hanganyag`, `${tarea.items.length} annonces et messages courts`, `${tarea.items.length} annunci e brevi messaggi`, `${tarea.items.length} krótkie komunikaty`, `${tarea.items.length} krátká hlášení a zprávy`, `${tarea.items.length} krátke oznamy a správy`)}</span>
+                        <span class="cefr-audio-status-sub">${isPlaying && activeItem ? _t(`Reproduciendo mensaje ${activeItem.num}...`, `${activeItem.num}. szöveg lejátszása...`, `Lecture du message ${activeItem.num}...`, `Riproduzione messaggio ${activeItem.num}...`, `Odtwarzanie komunikatu ${activeItem.num}...`, `Přehrávání zprávy ${activeItem.num}...`, `Prehrávanie správy ${activeItem.num}...`) : _t('Pulsa en cada pregunta para escuchar su mensaje correspondiente (hasta 2 pases por mensaje).', 'Kattints az egyes kérdések hangfájljára a meghallgatáshoz (legfeljebb 2 lejátszás kérdésenként).', 'Cliquez sur chaque question pour écouter le message correspondant (jusqu\'à 2 écoutes par message).', 'Clicca su ciascuna domanda per ascoltare il messaggio corrispondente (fino a 2 ascolti per messaggio).')}</span>
                     </div>
                     <div class="cefr-audio-controls">
                         ${isPlaying ? `
@@ -794,7 +934,7 @@ const CefrExam = (function () {
                 return `
                     <div class="cefr-task-card" data-cefr-open-tarea="${_esc(t.id)}">
                         <div class="cefr-task-card-header">
-                            <span class="cefr-task-pill">${_esc(t.title || _t(`Tarea ${t.tareaNum}`, `${t.tareaNum}. feladat`, `Exercice ${t.tareaNum}`, `Prova ${t.tareaNum}`))}</span>
+                            <span class="cefr-task-pill">${_esc(t.title || _t(`Tarea ${t.tareaNum}`, `${t.tareaNum}. feladat`, `Exercice ${t.tareaNum}`, `Prova ${t.tareaNum}`, `Zadanie ${t.tareaNum}`, `Úloha ${t.tareaNum}`, `Úloha ${t.tareaNum}`))}</span>
                             ${badgeHtml}
                         </div>
                         <div class="cefr-task-card-body">
@@ -1030,7 +1170,10 @@ const CefrExam = (function () {
                     `Observa la posición de los ${gapsCount || 6} fragmentos omitidos`,
                     'Figyeld meg a hiányzó mondatok helyét a szövegben',
                     "Observez l'emplacement des phrases manquantes dans le texte",
-                    'Osserva la posizione delle frasi mancanti nel testo'
+                    'Osserva la posizione delle frasi mancanti nel testo',
+                    `Zwróć uwagę na miejsca ${gapsCount || 5} brakujących zdań w tekście`,
+                    `Sledujte pozice ${gapsCount || 5} vynechaných vět v textu`,
+                    `Sledujte pozície ${gapsCount || 5} chýbajúcich viet v texte`
                 );
                 stimulusHtml = `
                     <div class="cefr-passage-editorial-wrap">
@@ -1038,7 +1181,7 @@ const CefrExam = (function () {
                     </div>
 
                     <div class="cefr-gaps-options-pool-wrap">
-                        <h5 class="cefr-gaps-pool-title">${_t(`Opciones de oraciones para los huecos ${optLetterRange}`, `Hiányzó mondatok ${optLetterRange}`, `Phrases proposées pour les lacunes ${optLetterRange}`, `Frasi disponibili per gli spazi ${optLetterRange}`).trim()}</h5>
+                        <h5 class="cefr-gaps-pool-title">${_t(`Opciones de oraciones para los huecos ${optLetterRange}`, `Hiányzó mondatok ${optLetterRange}`, `Phrases proposées pour les lacunes ${optLetterRange}`, `Frasi disponibili per gli spazi ${optLetterRange}`, `Zdania do wyboru do luk ${optLetterRange}`, `Nabídka vět do mezer ${optLetterRange}`, `Ponuka viet do medzier ${optLetterRange}`).trim()}</h5>
                         <div class="cefr-gaps-options-pool">
                             ${(tarea.options || []).map(o => `
                                 <div class="cefr-gap-pool-item">
@@ -1051,7 +1194,7 @@ const CefrExam = (function () {
                 `;
 
                 const gapNumRange = gapsCount ? `(1–${gapsCount})` : '';
-                questionsTitle = _t(`Completar los huecos ${gapNumRange}`, `Hiányzó mondatok beillesztése ${gapNumRange}`, `Compléter les lacunes ${gapNumRange}`, `Completare gli spazi ${gapNumRange}`).trim();
+                questionsTitle = _t(`Completar los huecos ${gapNumRange}`, `Hiányzó mondatok beillesztése ${gapNumRange}`, `Compléter les lacunes ${gapNumRange}`, `Completare gli spazi ${gapNumRange}`, `Uzupełnij luki ${gapNumRange}`, `Doplňte mezery ${gapNumRange}`, `Doplňte medzery ${gapNumRange}`).trim();
                 questionsSubtitle = _t('Selecciona la oración correcta para cada posición', 'Válaszd ki a megfelelő mondatot az egyes helyekre', 'Choisissez la phrase appropriée pour chaque lacune', 'Seleziona la frase corretta per ogni spazio');
                 questionsHtml = `
                     <div class="cefr-gaps-rows-stack">
@@ -1063,7 +1206,7 @@ const CefrExam = (function () {
 
                             return `
                                 <div class="cefr-gap-row-card ${isCorrect ? 'is-correct' : (isWrong ? 'is-wrong' : '')}">
-                                    <span class="cefr-gap-row-label">${_t(`Hueco [___${g.num}___]:`, `[ ${g.num}. ]`, `Lacune ${g.num} :`, `Spazio ${g.num}:`)}</span>
+                                    <span class="cefr-gap-row-label">${_t(`Hueco [___${g.num}___]:`, `[ ${g.num}. ]`, `Lacune ${g.num} :`, `Spazio ${g.num}:`, `Luka ${g.num}:`, `Mezera ${g.num}:`, `Medzera ${g.num}:`)}</span>
                                     <select class="cefr-select" data-gap-qid="${_esc(g.id)}" ${isSubmitted ? 'disabled' : ''}>
                                         <option value="">-- ${_t('Selecciona letra', 'Válassz megoldást', 'Choisir une lettre', 'Scegli lettera')} --</option>
                                         ${(tarea.options || []).map(o => `
@@ -1190,7 +1333,7 @@ const CefrExam = (function () {
                                     <svg class="art icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                         ${isThisPlaying ? '<rect x="6" y="6" width="12" height="12" fill="currentColor"/>' : '<polygon points="7 5 19 12 7 19 7 5" fill="currentColor"/>'}
                                     </svg>
-                                    <span>${isThisPlaying ? _t('Detener reproducción', 'Leállítás', 'Arrêter', 'Ferma riproduzione') : (passes > 0 ? _t(`Repetir audio (${passes}/2 pases)`, `Újrahallgatás (${passes}/2)`, `Réécouter (${passes}/2)`, `Riascolta (${passes}/2)`) : _t('Escuchar audio (Pase 1/2)', 'Meghallgatás (1/2)', 'Écouter (1/2)', 'Ascolta audio (1/2)'))}</span>
+                                    <span>${isThisPlaying ? _t('Detener reproducción', 'Leállítás', 'Arrêter', 'Ferma riproduzione') : (passes > 0 ? _t(`Repetir audio (${passes}/2 pases)`, `Újrahallgatás (${passes}/2)`, `Réécouter (${passes}/2)`, `Riascolta (${passes}/2)`, `Odsłuchaj ponownie (${passes}/2)`, `Přehrát znovu (${passes}/2)`, `Prehrať znova (${passes}/2)`) : _t('Escuchar audio (Pase 1/2)', 'Meghallgatás (1/2)', 'Écouter (1/2)', 'Ascolta audio (1/2)'))}</span>
                                 </button>
                             </div>
 
@@ -1347,16 +1490,16 @@ const CefrExam = (function () {
                     ${_state.writingResult ? `
                         <div class="cefr-writing-results-card">
                             <div class="cefr-res-header">
-                                <h4>${_t(`Informe de evaluación ${lvlTag}`, `${lvlTag} Értékelési jelentés`, `Rapport d'évaluation ${lvlTag}`, `Rapporto di valutazione ${lvlTag}`)}</h4>
+                                <h4>${_t(`Informe de evaluación ${lvlTag}`, `${lvlTag} Értékelési jelentés`, `Rapport d'évaluation ${lvlTag}`, `Rapporto di valutazione ${lvlTag}`, `Raport oceny ${lvlTag}`, `Zpráva o hodnocení ${lvlTag}`, `Správa o hodnotení ${lvlTag}`)}</h4>
                                 <span class="cefr-score-badge">${_state.writingResult.totalScore} / 25 ${_t('puntos', 'pont', 'points', 'punti')}</span>
                             </div>
                             <div class="cefr-rubric-breakdown">
                                 <div class="cefr-rubric-item">
-                                    <span>${_t(`Adecuación y extensión (${_state.writingResult.wordCount} palabras):`, `Tartalmi megfelelés és terjedelem (${_state.writingResult.wordCount} szó):`, `Respect de la consigne et longueur (${_state.writingResult.wordCount} mots) :`, `Adeguatezza e lunghezza (${_state.writingResult.wordCount} parole):`)}</span>
+                                    <span>${_t(`Adecuación y extensión (${_state.writingResult.wordCount} palabras):`, `Tartalmi megfelelés és terjedelem (${_state.writingResult.wordCount} szó):`, `Respect de la consigne et longueur (${_state.writingResult.wordCount} mots) :`, `Adeguatezza e lunghezza (${_state.writingResult.wordCount} parole):`, `Zgodność z tematem i długość (${_state.writingResult.wordCount} słów):`, `Splnění zadání a rozsah (${_state.writingResult.wordCount} slov):`, `Splnenie zadania a rozsah (${_state.writingResult.wordCount} slov):`)}</span>
                                     <strong>${_state.writingResult.criteria.adecuacion} / 7 pts</strong>
                                 </div>
                                 <div class="cefr-rubric-item">
-                                    <span>${_t(`Coherencia y conectores (${_state.writingResult.foundConnectors.length} detectados):`, `Szövegösszefüggés és kötőszavak (${_state.writingResult.foundConnectors.length} észlelve):`, `Cohérence et connecteurs (${_state.writingResult.foundConnectors.length} détectés) :`, `Coerenza e connettivi (${_state.writingResult.foundConnectors.length} rilevati):`)}</span>
+                                    <span>${_t(`Coherencia y conectores (${_state.writingResult.foundConnectors.length} detectados):`, `Szövegösszefüggés és kötőszavak (${_state.writingResult.foundConnectors.length} észlelve):`, `Cohérence et connecteurs (${_state.writingResult.foundConnectors.length} détectés) :`, `Coerenza e connettivi (${_state.writingResult.foundConnectors.length} rilevati):`, `Spójność i łączniki (${_state.writingResult.foundConnectors.length} wykrytych):`, `Návaznost a konektory (${_state.writingResult.foundConnectors.length} zjištěno):`, `Súdržnosť a spojky (${_state.writingResult.foundConnectors.length} zistených):`)}</span>
                                     <strong>${_state.writingResult.criteria.coherencia} / 6 pts</strong>
                                 </div>
                                 <div class="cefr-rubric-item">
@@ -1370,7 +1513,7 @@ const CefrExam = (function () {
                             </div>
                             ${_state.writingResult.foundConnectors.length > 0 ? `
                                 <div class="cefr-detected-connectors">
-                                    <span>${_t(`Conectores ${lvlTag} empleados:`, `Használt ${lvlTag} kötőszavak:`, `Connecteurs ${lvlTag} utilisés :`, `Connettivi ${lvlTag} utilizzati:`)}</span>
+                                    <span>${_t(`Conectores ${lvlTag} empleados:`, `Használt ${lvlTag} kötőszavak:`, `Connecteurs ${lvlTag} utilisés :`, `Connettivi ${lvlTag} utilizzati:`, `Użyte łączniki ${lvlTag}:`, `Použité konektory ${lvlTag}:`, `Použité spojky ${lvlTag}:`)}</span>
                                     <em>${_esc(_state.writingResult.foundConnectors.join(', '))}</em>
                                 </div>
                             ` : ''}
@@ -1431,7 +1574,7 @@ const CefrExam = (function () {
                     ${_state.speakingResult ? `
                         <div class="cefr-speaking-results-card">
                             <div class="cefr-res-header">
-                                <h4>${_t(`Informe oral ${lvlTag}`, `${lvlTag} Szóbeli értékelés`, `Évaluation orale ${lvlTag}`, `Valutazione orale ${lvlTag}`)}</h4>
+                                <h4>${_t(`Informe oral ${lvlTag}`, `${lvlTag} Szóbeli értékelés`, `Évaluation orale ${lvlTag}`, `Valutazione orale ${lvlTag}`, `Ocena wypowiedzi ustnej ${lvlTag}`, `Hodnocení ústního projevu ${lvlTag}`, `Hodnotenie ústneho prejavu ${lvlTag}`)}</h4>
                                 <span class="cefr-score-badge">${_state.speakingResult.totalScore} / 25 ${_t('puntos', 'pont', 'points', 'punti')}</span>
                             </div>
                             <p>${_t('Palabras producidas:', 'Kimondott szavak száma:', 'Mots prononcés :', 'Parole pronunciate:')} <strong>${_state.speakingResult.wordCount}</strong></p>
@@ -1462,7 +1605,7 @@ const CefrExam = (function () {
                     </div>
 
                     <div class="cefr-connectors-section">
-                        <h4>${_t(`Conectores y marcadores del discurso (Nivel ${lvlTag})`, `Kötőszavak és szövegösszekötők (${lvlTag} szint)`, `Connecteurs et articulateurs logiques (Niveau ${lvlTag})`, `Connettivi e segnali discorsivi (Livello ${lvlTag})`)}</h4>
+                        <h4>${_t(`Conectores y marcadores del discurso (Nivel ${lvlTag})`, `Kötőszavak és szövegösszekötők (${lvlTag} szint)`, `Connecteurs et articulateurs logiques (Niveau ${lvlTag})`, `Connettivi e segnali discorsivi (Livello ${lvlTag})`, `Łączniki i wyznaczniki dyskursu (Poziom ${lvlTag})`, `Konektory a spojovací výrazy (Úroveň ${lvlTag})`, `Spojky a spájacie výrazy (Úroveň ${lvlTag})`)}</h4>
                         <div class="cefr-connectors-grid">
                             ${(s.connectors || []).map(cat => `
                                 <div class="cefr-connector-card">
@@ -1482,7 +1625,7 @@ const CefrExam = (function () {
         function _renderMocksTab() {
             const isHu = _id.includes('hu');
             const lvl = (_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : (_id.includes('b2') ? 'B2' : 'B1')));
-            const title = (_data && _data.title) || _t(`Prueba DELE ${lvl}`, `ECL ${lvl} Nyelvvizsga`, `Épreuve DELF ${lvl}`, `Esame CILS ${lvl}`);
+            const title = (_data && _data.title) || _t(`Prueba DELE ${lvl}`, `ECL ${lvl} Nyelvvizsga`, `Épreuve DELF ${lvl}`, `Esame CILS ${lvl}`, `Certyfikat Polski ${lvl}`, `Zkouška CCE ${lvl}`, `Skúška ECL ${lvl}`);
             const rTime = (_data && _data.skills && _data.skills.reading && _data.skills.reading.officialTimeMinutes) || 45;
             const wTime = (_data && _data.skills && _data.skills.writing && _data.skills.writing.officialTimeMinutes) || 45;
             const lTime = (_data && _data.skills && _data.skills.listening && _data.skills.listening.officialTimeMinutes) || 30;
@@ -1528,22 +1671,22 @@ const CefrExam = (function () {
             return `
                 <div class="cefr-mocks-wrapper">
                     <div class="cefr-mock-intro-card">
-                        <h3>${_t(`Simulacro oficial ${_esc(title)} completo (4 Destrezas)`, '', `Examen blanc complet ${_esc(title)} (4 Compétences)`, `Simulazione ufficiale ${_esc(title)} completa (4 Abilità)`)}</h3>
+                        <h3>${_t(`Simulacro oficial ${_esc(title)} completo (4 Destrezas)`, '', `Examen blanc complet ${_esc(title)} (4 Compétences)`, `Simulazione ufficiale ${_esc(title)} completa (4 Abilità)`, `Pełny egzamin próbny ${_esc(title)} (4 Sprawności)`, `Kompletní cvičná zkouška ${_esc(title)} (4 Dovednosti)`, `Kompletná skúšobná skúška ${_esc(title)} (4 Zručnosti)`)}</h3>
                         <p>${_t('El examen oficial evalúa las cuatro destrezas divididas en dos bloques:', '', "L'examen officiel évalue les quatre compétences réparties en deux pôles :", "L'esame ufficiale valuta le quattro abilità linguistiche:")}</p>
                         <div class="cefr-blocks-spec">
                             <div class="cefr-spec-card">
                                 <strong>${_t('Bloque 1: Destrezas escritas (50 pts)', '', 'Pôle 1 : Compétences écrites (50 pts)', 'Parte 1: Abilità scritte (50 pt)')}</strong>
                                 <ul>
-                                    <li>${_t(`Comprensión de lectura (${rTime} min · 25 pts)`, '', `Compréhension des écrits (${rTime} min · 25 pts)`, `Comprensione della lettura (${rTime} min · 25 pt)`)}</li>
-                                    <li>${_t(`Expresión escrita (${wTime} min · 25 pts)`, '', `Production écrite (${wTime} min · 25 pts)`, `Produzione scritta (${wTime} min · 25 pt)`)}</li>
+                                    <li>${_t(`Comprensión de lectura (${rTime} min · 25 pts)`, '', `Compréhension des écrits (${rTime} min · 25 pts)`, `Comprensione della lettura (${rTime} min · 25 pt)`, `Rozumienie tekstów pisanych (${rTime} min · 25 pkt)`, `Čtení s porozuměním (${rTime} min · 25 b.)`, `Čítanie s porozumením (${rTime} min · 25 b.)`)}</li>
+                                    <li>${_t(`Expresión escrita (${wTime} min · 25 pts)`, '', `Production écrite (${wTime} min · 25 pts)`, `Produzione scritta (${wTime} min · 25 pt)`, `Wypowiedź pisemna (${wTime} min · 25 pkt)`, `Psaní (${wTime} min · 25 b.)`, `Písomný prejav (${wTime} min · 25 b.)`)}</li>
                                 </ul>
                                 <span class="cefr-pass-pill">${_t('Apto: Mínimo 30 / 50 pts', '', 'Seuil de réussite : 30 / 50 pts', 'Idoneo: Minimo 30 / 50 pt')}</span>
                             </div>
                             <div class="cefr-spec-card">
                                 <strong>${_t('Bloque 2: Destrezas orales (50 pts)', '', 'Pôle 2 : Compétences orales (50 pts)', 'Parte 2: Abilità orali (50 pt)')}</strong>
                                 <ul>
-                                    <li>${_t(`Comprensión auditiva (${lTime} min · 25 pts)`, '', `Compréhension de l'oral (${lTime} min · 25 pts)`, `Comprensione dell'ascolto (${lTime} min · 25 pt)`)}</li>
-                                    <li>${_t(`Expresión oral (${sTime} min · 25 pts)`, '', `Production orale (${sTime} min · 25 pts)`, `Produzione orale (${sTime} min · 25 pt)`)}</li>
+                                    <li>${_t(`Comprensión auditiva (${lTime} min · 25 pts)`, '', `Compréhension de l'oral (${lTime} min · 25 pts)`, `Comprensione dell'ascolto (${lTime} min · 25 pt)`, `Rozumienie ze słuchu (${lTime} min · 25 pkt)`, `Poslech s porozuměním (${lTime} min · 25 b.)`, `Počúvanie s porozumením (${lTime} min · 25 b.)`)}</li>
+                                    <li>${_t(`Expresión oral (${sTime} min · 25 pts)`, '', `Production orale (${sTime} min · 25 pts)`, `Produzione orale (${sTime} min · 25 pt)`, `Wypowiedź ustna (${sTime} min · 25 pkt)`, `Ústní část (${sTime} min · 25 b.)`, `Ústny prejav (${sTime} min · 25 b.)`)}</li>
                                 </ul>
                                 <span class="cefr-pass-pill">${_t('Apto: Mínimo 30 / 50 pts', '', 'Seuil de réussite : 30 / 50 pts', 'Idoneo: Minimo 30 / 50 pt')}</span>
                             </div>

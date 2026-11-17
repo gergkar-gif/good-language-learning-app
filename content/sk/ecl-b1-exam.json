@@ -39,65 +39,66 @@
         {
           "id": "sk-reading-t2",
           "tareaNum": 2,
-          "type": "multiple-choice",
+          "type": "reading-mc",
           "title": "Časť 2: Porozumenie detailným informáciám v texte",
           "instructions": "Prečítajte si článok o histórii a význame Bratislavského hradu. Pri otázkach 6–10 vyberte správnu možnosť (A, B alebo C).",
           "passage": "Bratislavský hrad: Dominanta hlavného mesta\n\nBratislavský hrad sa týči na skalnatom kopci nad riekou Dunaj a tvorí neodmysliteľnú panorámu mesta. Prvé osídlenie hradného vrchu siaha až do čias Keltov a Rimanov, neskôr tu vzniklo významné slovanské hradisko z obdobia Veľkej Moravy.\n\nNajväčší rozkvet zažil hrad v 18. storočí za vlády cisárovnej Márie Terézie. Bratislava sa stala korunovačným mestom uhorských kráľov a hrad bol prebudovaný na honosné kráľovské sídlo s barokovými záhradami. V roku 1811 však hrad zachvátil obrovský požiar a viac ako 140 rokov stál ako opustená zrúcanina.\n\nRozsiahla obnova hradu sa začala v 50. rokoch 20. storočia pod vedením významných slovenských architektov a pamiatkarov. Dnes v areáli hradu sídli Slovenské národné múzeum a reprezentačné priestory Národnej rady Slovenskej republiky.",
           "questions": [
             {
               "id": "q-6",
-              "num": 6,
-              "prompt": "Kedy zažil Bratislavský hrad najväčší rozkvet?",
+              "question": "6. Kedy zažil Bratislavský hrad svoj najväčší rozkvet ako kráľovské sídlo?",
               "options": [
-                { "letter": "A", "text": "Za vlády Márie Terézie v 18. storočí." },
-                { "letter": "B", "text": "Už v období rímskych légií." },
-                { "letter": "C", "text": "Až po veľkom požiari v roku 1811." }
+                "V 14. storočí za vlády Karola IV.",
+                "V 18. storočí za vlády Márie Terézie.",
+                "Až na konci 20. storočia."
               ],
-              "correct": "A"
+              "correct": 1,
+              "evidence": "Najväčší rozkvet zažil hrad v 18. storočí za vlády cisárovnej Márie Terézie.",
+              "explanation": "V 18. storočí bola Bratislava korunovačným mestom a hrad prestavali na kráľovskú rezidenciu."
             },
             {
               "id": "q-7",
-              "num": 7,
-              "prompt": "Čo sa stalo s hradom v roku 1811?",
+              "question": "7. Aká tragédia postihla hrad v roku 1811?",
               "options": [
-                { "letter": "A", "text": "Vyhorel a zostal na dlhé desaťročia zrúcaninou." },
-                { "letter": "B", "text": "Bol predaný súkromnému zberateľovi umenia." },
-                { "letter": "C", "text": "Bol vyhlásený za múzeum moderného umenia." }
+                "Zničil ho rozsiahly požiar.",
+                "Zbúrali ho kvôli stavbe železnice.",
+                "Zaplavenie riekou Dunaj zničilo všetky záhrady."
               ],
-              "correct": "A"
+              "correct": 0,
+              "evidence": "V roku 1811 však hrad zachvátil obrovský požiar a viac ako 140 rokov stál ako opustená zrúcanina.",
+              "explanation": "Požiar z roku 1811 spôsobil, že hrad zostal vyše storočia v ruinách."
             },
             {
               "id": "q-8",
-              "num": 8,
-              "prompt": "Čo dnes sídli v priestoroch hradu?",
+              "question": "8. Kto sídli v priestoroch Bratislavského hradu dnes?",
               "options": [
-                { "letter": "A", "text": "Slovenské národné múzeum a reprezentačné sály parlamentu." },
-                { "letter": "B", "text": "Ústredná stanica dunajskej lodnej dopravy." },
-                { "letter": "C", "text": "Ubytovňa pre univerzitných študentov." }
+                "Výhradne súkromná hotelová sieť.",
+                "Hlavná autobusová stanica hlavného mesta.",
+                "Slovenské národné múzeum a reprezentačné priestory parlamentu."
               ],
-              "correct": "A"
+              "correct": 2,
+              "evidence": "Dnes v areáli hradu sídli Slovenské národné múzeum a reprezentačné priestory Národnej rady Slovenskej republiky.",
+              "explanation": "Hrad dnes slúži Slovenskému národnému múzeu a reprezentačným účelom."
             },
             {
               "id": "q-9",
-              "num": 9,
-              "prompt": "Aká významná rieka tečie priamo pod hradným kopcom?",
-              "options": [
-                { "letter": "A", "text": "Dunaj." },
-                { "letter": "B", "text": "Váh." },
-                { "letter": "C", "text": "Hron." }
-              ],
-              "correct": "A"
+              "question": "9. Aká významná rieka tečie priamo pod hradným kopcom?",
+              "options": ["Dunaj", "Váh", "Hron"],
+              "correct": 0,
+              "evidence": "Bratislavský hrad sa týči na skalnatom kopci nad riekou Dunaj",
+              "explanation": "Pod hradným kopcom preteká Dunaj."
             },
             {
               "id": "q-10",
-              "num": 10,
-              "prompt": "Kedy sa začala moderná celková obnova hradu?",
+              "question": "10. Kedy sa začala moderná celková obnova hradu?",
               "options": [
-                { "letter": "A", "text": "V 50. rokoch 20. storočia." },
-                { "letter": "B", "text": "Okamžite na druhý deň po požiari." },
-                { "letter": "C", "text": "Až po roku 2010." }
+                "Okamžite na druhý deň po požiari.",
+                "V 50. rokoch 20. storočia.",
+                "Až po roku 2010."
               ],
-              "correct": "A"
+              "correct": 1,
+              "evidence": "Rozsiahla obnova hradu sa začala v 50. rokoch 20. storočia",
+              "explanation": "Rekonštrukcia začala v polovici 20. storočia."
             }
           ]
         }
@@ -112,30 +113,114 @@
         {
           "id": "sk-listening-t1",
           "tareaNum": 1,
-          "title": "Rozhovor: Plány na víkend vo Vysokých Tatrách",
-          "instructions": "Vypočujte si rozhovor dvoch priateľov. Označte pri každom tvrdení, či je pravdivé (Áno), nepravdivé (Nie), alebo v texte nebolo uvedené (Neuvedené).",
-          "audioText": "Peter: Ahoj Zuzana, počul som, že cez víkend cestujete na hory.\nZuzana: Ahoj Peter! Áno, ideme s partiou do Vysokých Tatier. Chceme ísť na túru k Popradskému plesu a na Rysy, ak bude pekné počasie.\nPeter: To znie skvele! Beriete si aj teplé oblečenie? Na horách sa počasie rýchlo mení.\nZuzana: Určite, máme nepremokavé bundy, turistické topánky aj termosky na teplý čaj. Ubytovaní budeme v penzióne v Starom Smokovci.",
-          "items": [
+          "type": "audio-interview",
+          "title": "Časť 1: Rozhovor — Plány na víkend vo Vysokých Tatrách",
+          "instructions": "Vypočujte si dvakrát rozhovor dvoch priateľov. Označte správnu možnosť pre každé tvrdenie.",
+          "previewSeconds": 30,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Peter",
+                "gender": "male",
+                "text": "Ahoj Zuzana, počul som, že cez víkend cestujete na hory."
+              },
+              {
+                "speaker": "Zuzana",
+                "gender": "female",
+                "text": "Ahoj Peter! Áno, ideme s partiou do Vysokých Tatier. Chceme ísť na túru k Popradskému plesu a na Rysy, ak bude pekné počasie."
+              },
+              {
+                "speaker": "Peter",
+                "gender": "male",
+                "text": "To znie skvele! Beriete si aj teplé oblečenie? Na horách sa počasie rýchlo mení."
+              },
+              {
+                "speaker": "Zuzana",
+                "gender": "female",
+                "text": "Určite, máme nepremokavé bundy, turistické topánky aj termosky na teplý čaj. Ubytovaní budeme v penzióne v Starom Smokovci."
+              }
+            ]
+          },
+          "questions": [
             {
               "id": "l-1",
-              "num": 1,
-              "statement": "Zuzana cestuje do Vysokých Tatier úplne sama.",
+              "question": "1. Zuzana cestuje do Vysokých Tatier úplne sama.",
               "options": ["Áno", "Nie", "Neuvedené"],
-              "correct": "Nie"
+              "correct": 1,
+              "evidence": "ideme s partiou do Vysokých Tatier.",
+              "explanation": "Zuzana nejde sama, cestuje so skupinou priateľov (s partiou)."
             },
             {
               "id": "l-2",
-              "num": 2,
-              "statement": "Zuzana plánuje túru k Popradskému plesu.",
+              "question": "2. Zuzana plánuje túru k Popradskému plesu.",
               "options": ["Áno", "Nie", "Neuvedené"],
-              "correct": "Áno"
+              "correct": 0,
+              "evidence": "Chceme ísť na túru k Popradskému plesu a na Rysy",
+              "explanation": "Zuzana výslovne spomína túru k Popradskému plesu."
             },
             {
               "id": "l-3",
-              "num": 3,
-              "statement": "Penzión v Starom Smokovci stál 50 eur na noc.",
+              "question": "3. Penzión v Starom Smokovci stál 50 eur na noc.",
               "options": ["Áno", "Nie", "Neuvedené"],
-              "correct": "Neuvedené"
+              "correct": 2,
+              "evidence": "Ubytovaní budeme v penzióne v Starom Smokovci.",
+              "explanation": "Cena za noc sa v rozhovore nespomína (neuvedené)."
+            }
+          ]
+        },
+        {
+          "id": "sk-listening-t2",
+          "tareaNum": 2,
+          "type": "audio-mc",
+          "title": "Časť 2: Krátke oznamy v meste",
+          "instructions": "Vypočujte si 2 krátke oznamy a vyberte správnu odpoveď.",
+          "previewSeconds": 30,
+          "items": [
+            {
+              "id": "sk-item-1",
+              "num": 1,
+              "situation": "Oznam na železničnej stanici v Bratislave",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Hlásenie",
+                    "gender": "female",
+                    "text": "Vážení cestujúci, rýchlik z Bratislavy do Košíc odchádza z tretieho nástupišťa o pätnástej hodine a dvadsať minút."
+                  }
+                ]
+              },
+              "question": "Kedy a odkiaľ odchádza vlak do Košíc?",
+              "options": [
+                "O 14:20 z prvého nástupišťa",
+                "O 15:20 z tretieho nástupišťa",
+                "O 16:10 zo štvrtého nástupišťa"
+              ],
+              "correct": 1,
+              "evidence": "odchádza z tretieho nástupišťa o pätnástej hodine a dvadsať minút.",
+              "explanation": "Vlak odchádza o 15:20 z nástupišťa číslo tri."
+            },
+            {
+              "id": "sk-item-2",
+              "num": 2,
+              "situation": "Pozvánka na festival v Košiciach",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Organizátorka",
+                    "gender": "female",
+                    "text": "Všetkých milovníkov kníh pozývame túto sobotu na knižný trh na Hlavnej ulici. Podujatie je otvorené od deviatej ráno a vstup je bezplatný."
+                  }
+                ]
+              },
+              "question": "Čo platí pre sobotňajší knižný trh?",
+              "options": [
+                "Začína sa o 9:00 a vstup je zadarmo",
+                "Koná sa v nedeľu večer v múzeu",
+                "Vstupenka stojí desať eur"
+              ],
+              "correct": 0,
+              "evidence": "túto sobotu ... od deviatej ráno a vstup je bezplatný.",
+              "explanation": "Knižný trh je v sobotu od deviatej bez poplatku."
             }
           ]
         }
@@ -150,10 +235,20 @@
         {
           "id": "sk-writing-t1",
           "tareaNum": 1,
-          "title": "Oficiálny e-mail: Žiadosť o informácie o jazykovom kurze",
-          "prompt": "Chcete sa zúčastniť letnej školy slovenského jazyka a kultúry Studia Academica Slovaca na Univerzite Komenského. Napíšte oficiálny e-mail organizátorom kurzu (100–120 slov), v ktorom:\n- sa predstavíte a vysvetlíte, prečo sa chcete učiť po slovensky,\n- sa opýtate na presné termíny a možnosti ubytovania na internáte,\n- zistíte, či je súčasťou kurzu aj kultúrny program a exkurzie po Slovensku.",
+          "title": "Úloha 1: Oficiálny e-mail — Žiadosť o informácie o kurze",
+          "prompt": "Chcete sa zúčastniť letnej školy slovenského jazyka a kultúry Studia Academica Slovaca na Univerzite Komenského.\n\nNapíšte oficiálny e-mail organizátorom kurzu (100–120 slov), v ktorom:\n- sa predstavíte a vysvetlíte, prečo sa chcete učiť po slovensky,\n- sa opýtate na presné termíny a možnosti ubytovania na internáte,\n- zistíte, či je súčasťou kurzu aj kultúrny program a exkurzie po Slovensku.",
           "minWords": 100,
-          "targetWords": 120
+          "maxWords": 120,
+          "targetKeywords": ["vážená", "chcel by som", "pretože", "ďakujem", "s pozdravom"]
+        },
+        {
+          "id": "sk-writing-t2",
+          "tareaNum": 2,
+          "title": "Úloha 2: Neformálna správa priateľovi",
+          "prompt": "Váš slovenský kamarát plánuje navštíviť Vaše mesto. Napíšte mu krátky e-mail (70–90 slov), v ktorom odporučíte dve zaujímavé miesta a navrhnete program na víkend.",
+          "minWords": 70,
+          "maxWords": 90,
+          "targetKeywords": ["ahoj", "odporúčam", "pretože", "víkend", "teším sa"]
         }
       ]
     },
@@ -166,28 +261,53 @@
         {
           "id": "sk-speaking-t1",
           "tareaNum": 1,
-          "title": "Samostatný ústny prejav: Môj voľný čas a záľuby",
-          "prompt": "Hovorte o tom, ako najradšej trávite svoj voľný čas. Popíšte svoje koníčky, športové aktivity a to, či radšej relaxujete doma alebo v prírode."
+          "title": "Úloha 1: Samostatný ústny prejav — Môj voľný čas a záľuby",
+          "prompt": "Hovorte 2–3 minúty o tom, ako najradšej trávite svoj voľný čas.",
+          "bulletPoints": [
+            "Popíšte svoje obľúbené koníčky a športové aktivity.",
+            "Radšej relaxujete doma pri knihe alebo v prírode na horách? Prečo?",
+            "S kým najčastejšie trávite víkendy?"
+          ]
+        },
+        {
+          "id": "sk-speaking-t2",
+          "tareaNum": 2,
+          "title": "Úloha 2: Rozhovor — Hľadanie bytu v Bratislave",
+          "prompt": "Rozprávate sa s majiteľom bytu, ktorý ste našli v inzeráte. Zistite všetky dôležité podmienky prenájmu:",
+          "bulletPoints": [
+            "Opýtajte sa na mesačný nájom vrátane energií.",
+            "Zistite, ako ďaleko je zastávka MHD a či je byt zariadený.",
+            "Dohodnite si presný termín obhliadky."
+          ]
         }
       ]
     }
   },
   "strategies": {
-    "reading": [
-      "Najprv si rýchlo prečítajte celý text, aby ste pochopili hlavnú tému.",
-      "Pri dopĺňaní viet hľadajte zámená a logické spojky (preto, však, navyše), ktoré nadväzujú na predchádzajúcu vetu."
+    "title": "Oficiálny sprievodca skúškou ECL B1 (Slovenčina)",
+    "structure": [
+      {
+        "prueba": "1. Čítanie s porozumením (45 min · 25 bodov)",
+        "tip": "Najprv si rýchlo prečítajte celý text, aby ste pochopili hlavnú tému. Pri dopĺňaní viet hľadajte zámená a logické spojky (preto, však, navyše)."
+      },
+      {
+        "prueba": "2. Počúvanie s porozumením (35 min · 25 bodov)",
+        "tip": "Využite úvodný čas na prečítanie otázok. Pri prvom počúvaní sledujte kontext, pri druhom si overte presné detaily a čísla."
+      },
+      {
+        "prueba": "3. Písomný prejav (60 min · 25 bodov)",
+        "tip": "Dodržiavajte predpísaný rozsah slov (100–120 slov) a formálne oslovenie i pozdrav (Vážená pani / S pozdravom). Čleňte text na odseky."
+      },
+      {
+        "prueba": "4. Ústny prejav (15 min · 25 bodov)",
+        "tip": "Hovorte plynulo a v celých vetách. Nezabudnite svoje odpovede zdôvodniť pomocou spojok pretože, navyše alebo napríklad."
+      }
     ],
-    "listening": [
-      "Využite 30-sekundový úvodný čas na pozorné prečítanie otázok.",
-      "Pri druhom počúvaní si overte detaily a chytáky."
-    ],
-    "writing": [
-      "Dodržiavajte predpísaný počet slov (100–120 slov) a formálnu štruktúru listu (Vážená pani / Vážený pán, S pozdravom).",
-      "Používajte vhodné spojky pre úroveň B1: pretože, napriek tomu, na druhej strane."
-    ],
-    "speaking": [
-      "Hovorte plynulo a zreteľne, nebojte sa opraviť prípadnú drobnú gramatickú chybu.",
-      "Používajte plné vety a zdôvodňujte svoje odpovede."
+    "connectors": [
+      { "category": "Usporiadanie textu", "examples": ["po prvé", "po druhé", "okrem toho", "nakoniec"] },
+      { "category": "Príčina a následok", "examples": ["pretože", "keďže", "z tohto dôvodu", "preto"] },
+      { "category": "Kontrast a ústupok", "examples": ["však", "hoci", "napriek tomu", "na druhej strane"] },
+      { "category": "Vyjadrenie názoru", "examples": ["podľa môjho názoru", "myslím si, že", "domnievam sa", "je dôležité"] }
     ]
   }
 }
