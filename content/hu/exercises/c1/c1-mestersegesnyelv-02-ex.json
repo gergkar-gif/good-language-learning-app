@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan vezet a hangvezérelt eszközök angol túlsúlya a magyar nyelv funkcióvesztéséhez a mindennapokban?",
+      "question": "Hogyan vezethet a hangvezérelt eszközök angol túlsúlya a magyar nyelv funkcióvesztéséhez?",
       "options": [
-        "A fiatalok a technológiai utasításokat megszokásból angolul adják ki, így a magyar fokozatosan kiszorul a modern élet legdinamikusabb tereiből.",
-        "Az intelligens hangszórók hardveres beállításai megakadályozzák az ékezetes karaktereket tartalmazó magyar zeneszámok lejátszását.",
-        "A mikrofonok érzékenysége miatt a készülékek a sztenderd brit és amerikai kiejtéshez képest pontatlanabbul ismerik fel a regionális akcentusokat."
+        "A nyelvészek szerint a magyart nem értő eszközöket a használók angolul kezelik.",
+        "Az intelligens hangszórók beállításai nem engedik lejátszani az ékezetes zenéket.",
+        "A mikrofonok érzékenysége miatt a készülékek a regionális akcentusokat nem ismerik fel."
       ],
       "correct": 0,
       "teaches": [
@@ -20,14 +20,16 @@
     {
       "id": "c1-mestersegesnyelv-02-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A mindenkori kormánynak alkotmányos _____ megóvni a magyar nyelv digitális jelenlétét.",
-      "hint": "duty / kötelesség + -e",
-      "answer": "kötelessége",
-      "english": "The government of the day has a constitutional duty to preserve the Hungarian language's digital presence.",
+      "sentence": "Egyes nyelvészek szerint az államnak _____ megóvni a magyar nyelv digitális jelenlétét.",
+      "hint": "kötelesség, 'duty'",
+      "english": "According to some linguists the state has a duty to protect the digital presence of the Hungarian language.",
       "teaches": [
-        "formal-obligation"
+        "c1-small-language-ai-vocab"
+      ],
+      "answers": [
+        "kötelessége"
       ]
     },
     {
@@ -60,42 +62,50 @@
     {
       "id": "c1-mestersegesnyelv-02-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A jogalkotónak elengedhetetlen _____ az anyanyelvű fejlesztések prioritását.",
-      "hint": "to prescribe / előír + -nia",
-      "answer": "előírnia",
-      "english": "It is indispensable for the legislator to prescribe the priority of mother-tongue developments.",
+      "sentence": "Egyes jogászok szerint a jogalkotónak elengedhetetlen _____ a magyar nyelvű támogatást.",
+      "hint": "előír, 'to prescribe'",
+      "english": "According to some lawyers it is indispensable for the legislator to prescribe Hungarian-language support.",
       "teaches": [
-        "formal-obligation"
+        "c1-small-language-ai-vocab"
+      ],
+      "answers": [
+        "előírnia"
       ]
     },
     {
       "id": "c1-mestersegesnyelv-02-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "Kötelességünk",
-        "megóvni",
-        "anyanyelvünk",
-        "szuverenitását",
+        "Egyes",
+        "nyelvészek",
+        "szerint",
+        "az",
+        "államnak",
+        "kötelessége",
+        "támogatni",
         "a",
-        "digitális",
-        "szférában."
+        "magyar",
+        "nyelvtechnológiát."
       ],
       "solution": [
-        "Kötelességünk",
-        "megóvni",
-        "anyanyelvünk",
-        "szuverenitását",
+        "Egyes",
+        "nyelvészek",
+        "szerint",
+        "az",
+        "államnak",
+        "kötelessége",
+        "támogatni",
         "a",
-        "digitális",
-        "szférában."
+        "magyar",
+        "nyelvtechnológiát."
       ],
-      "english": "It is our duty to preserve our mother tongue's sovereignty in the digital sphere.",
+      "english": "According to some linguists the state has a duty to support Hungarian language technology.",
       "teaches": [
-        "formal-obligation"
+        "c1-small-language-ai-vocab"
       ]
     },
     {
@@ -105,22 +115,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Környezet- és nyelvjogász",
-          "text": "Hogyan garantálható, hogy a gépek magyarul is értsenek?"
+          "speaker": "Újságíró",
+          "text": "Mit javasolnak a nyelvészek a techcégekkel kapcsolatban?"
         },
         {
-          "speaker": "Minisztériumi megbízott",
-          "text": "Törvényi kötelezettségként kell _____ a techcégek számára a magyar nyelvű felület biztosítását."
+          "speaker": "Nyelvész",
+          "text": "Szerintünk elengedhetetlen volna _____ a magyar nyelvű felületet."
         }
       ],
       "options": [
-        "előírni",
-        "előírva",
-        "előírás"
+        "biztosítani",
+        "biztosítva",
+        "biztosítás"
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "c1-small-language-ai-vocab"
       ]
     },
     {
@@ -130,20 +140,20 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence articulating a statutory language sovereignty mandate using 'kötelessége biztosítani'.",
-          "answer": "Az államnak elemi nemzetbiztonsági és kulturális kötelessége biztosítani az önálló magyar nyelvtechnológiai kutatások finanszírozását a globális digitális függőség megakadályozása érdekében."
+          "prompt": "Write a sentence reporting a demand about language policy, using 'kötelessége' or 'elengedhetetlen'.",
+          "answer": "Egyes nyelvészek szerint az államnak kötelessége biztosítani a magyar nyelv jelenlétét a digitális eszközökben."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "c1-small-language-ai-vocab"
       ]
     },
     {
       "id": "c1-mestersegesnyelv-02-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik szerkezet fejez ki kötelező erejű nyelvvédelmi törvényi imperatívuszt?",
+      "question": "Melyik szerkezet fejez ki kötelességet?",
       "options": [
         "kötelessége biztosítani",
         "talán kipróbálhatja",
@@ -151,7 +161,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "c1-small-language-ai-vocab"
       ]
     }
   ]

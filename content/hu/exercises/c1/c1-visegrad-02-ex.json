@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a stratégiai célja az észak-déli energiainterkonnektorok kiépítésének a V4 térségében?",
+      "question": "Miért építettek észak-déli összeköttetéseket a közép-európai országok?",
       "options": [
-        "A szovjet örökségből származó egyoldalú kelet-nyugati energiafüggőség felszámolása és a források diverzifikációja a Balti- és az Adriai-tenger felől.",
-        "A térségi villamosenergia-hálózat teljes leválasztása az európai rendszerről.",
-        "A hazai szénhidrogén-kitermelés fenntartása bármilyen külső kapcsolat nélkül."
+        "Hogy ne csak keletről érkezzen a gáz és a kőolaj, és több forrásból lehessen vásárolni.",
+        "Hogy a térség leváljon az európai áramhálózatról, és önállóan működjön tovább.",
+        "Hogy a hazai gáz- és olajkitermelés külső kapcsolatok nélkül is folytatódhasson."
       ],
       "correct": 0,
       "teaches": [
@@ -20,14 +20,14 @@
     {
       "id": "c1-visegrad-02-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A tagállamok elfogadták a beruházási tervet, azzal a _____ hogy az uniós társfinanszírozás biztosított marad.",
-      "hint": "megkötés + -sel",
+      "sentence": "A tagállamok elfogadták a tervet, azzal a _____, hogy az uniós társfinanszírozás megmarad.",
+      "hint": "megkötés (stipulation), 'with the'",
       "answer": "megkötéssel",
-      "english": "The member states accepted the investment plan, with the stipulation that EU co-financing remains secured.",
+      "english": "The member states accepted the plan, with the stipulation that EU co-financing remains in place.",
       "teaches": [
-        "concessive-annak-ellenere"
+        "c1-visegrad-group-vocab"
       ]
     },
     {
@@ -38,19 +38,19 @@
       "pairs": [
         [
           "Via Carpatia",
-          "észak-déli autópálya-folyosó"
+          "észak-déli közlekedési folyosó"
         ],
         [
           "interkonnektor",
-          "kétirányú gáz- vagy áramvezeték"
+          "két ország hálózatát összekötő vezeték"
         ],
         [
           "LNG-terminál",
-          "cseppfolyósított földgáz fogadóállomás"
+          "cseppfolyósított földgáz fogadóállomása"
         ],
         [
           "energetikai diverzifikáció",
-          "több beszállítótól való vásárlás"
+          "több forrásból való ellátás"
         ]
       ],
       "teaches": [
@@ -62,42 +62,46 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Támogatjuk az új tranzitútvonal kijelölését, feltéve _____ hogy a környezeti hatástanulmányok kedvezőek lesznek.",
-      "hint": "feltéve … ___",
-      "answer": "mindazonáltal",
-      "english": "We support designating the new transit route, provided however that environmental impact assessments are favorable.",
+      "sentence": "Támogatjuk az új útvonal kijelölését, _____, hogy a környezeti hatástanulmányok kedvezőek lesznek.",
+      "hint": "provided (that)",
+      "english": "We support designating the new route, provided that the environmental impact studies are favourable.",
       "teaches": [
-        "concessive-annak-ellenere"
+        "felteve-hogy-kiveve-ha"
+      ],
+      "answers": [
+        "feltéve"
       ]
     },
     {
       "id": "c1-visegrad-02-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "Az",
         "észak-déli",
-        "infrastruktúra",
-        "megteremti",
-        "Közép-Európa",
-        "valódi",
-        "gazdasági",
-        "összekapcsoltságát."
+        "vezetékek",
+        "csökkentik",
+        "a",
+        "térség",
+        "függőségét",
+        "egyetlen",
+        "beszállítótól."
       ],
       "solution": [
         "Az",
         "észak-déli",
-        "infrastruktúra",
-        "megteremti",
-        "Közép-Európa",
-        "valódi",
-        "gazdasági",
-        "összekapcsoltságát."
+        "vezetékek",
+        "csökkentik",
+        "a",
+        "térség",
+        "függőségét",
+        "egyetlen",
+        "beszállítótól."
       ],
-      "english": "North-South infrastructure creates Central Europe's genuine economic interconnectedness.",
+      "english": "North-south pipelines reduce the region's dependence on a single supplier.",
       "teaches": [
-        "concessive-annak-ellenere"
+        "c1-visegrad-group-vocab"
       ]
     },
     {
@@ -108,11 +112,11 @@
       "prompt": [
         {
           "speaker": "Közlekedési szakértő",
-          "text": "Mikorra készülhet el a Via Carpatia teljes nyomvonala?"
+          "text": "Mi kell még a határon átnyúló szakaszokhoz?"
         },
         {
           "speaker": "Infrastrukturális biztos",
-          "text": "A magyar szakaszok készen állnak, de a határokon átnyúló csatlakozások még összehangolt _____ igényelnek."
+          "text": "A határokon átnyúló csatlakozások még összehangolt _____ igényelnek."
         }
       ],
       "options": [
@@ -122,7 +126,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "concessive-annak-ellenere"
+        "c1-visegrad-group-vocab"
       ]
     },
     {
@@ -132,12 +136,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a stipulative sentence outlining conditions for regional energy sharing.",
-          "answer": "A felek megállapodtak a vésztartalék-kapacitások kölcsönös megosztásáról, azzal a kifejezett megkötéssel, hogy válsághelyzetben a hazai fogyasztók ellátása abszolút prioritást élvez."
+          "prompt": "Write a sentence that states a condition for sharing energy reserves.",
+          "answer": "A felek megállapodtak a vésztartalékok megosztásáról, azzal a megkötéssel, hogy válsághelyzetben a hazai fogyasztók ellátása elsőbbséget élvez."
         }
       ],
       "teaches": [
-        "concessive-annak-ellenere"
+        "c1-visegrad-group-vocab"
       ]
     },
     {
@@ -145,16 +149,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik fordulat fejez ki diplomáciai feltételt és fenntartást?",
+      "question": "Melyik fordulattal lehet kikötést megfogalmazni egy szerződésben?",
       "options": [
         "azzal a megkötéssel, hogy",
-        "jóllehet a felek elhatárolódtak attól, hogy",
-        "tekintve hogy az egyezmény érvényes maradt"
+        "annak ellenére, hogy",
+        "azért, hogy"
       ],
       "correct": 0,
       "teaches": [
-        "concessive-annak-ellenere"
-      ]
+        "felteve-hogy-kiveve-ha"
+      ],
+      "distractor_skills": {
+        "1": "concessive-annak-ellenere",
+        "2": "azert-hogy-purpose"
+      }
     }
   ]
 }

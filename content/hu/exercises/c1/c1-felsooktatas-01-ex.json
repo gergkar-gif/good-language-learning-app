@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért váltott ki heves tiltakozást a magyar egyetemek 'modellváltása' az Európai Unióban és itthon?",
+      "question": "Mi ellen tiltakoztak a modellváltás bírálói?",
       "options": [
-        "Mert az egyetemeket felügyelő alapítványi kuratóriumokba élethosszig aktív kormánypolitikusokat ültettek be, felszámolva az intézményi és akadémiai függetlenséget.",
-        "Mert a reformok kizárólag a természettudományi karok kutatási költségvetését növelték a bölcsészettudományok rovására.",
-        "Mert a törvény kötelezővé tette a tandíjat minden alap- és mesterképzésben részt vevő hallgató számára."
+        "A kuratóriumok összetétele ellen, az egyetemi autonómia miatt.",
+        "A tandíj bevezetése ellen minden alap- és mesterképzésben.",
+        "A természettudományi karok költségvetésének növelése ellen."
       ],
       "correct": 0,
       "teaches": [
@@ -20,14 +20,18 @@
     {
       "id": "c1-felsooktatas-01-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A politikai kuratóriumok felállítása egzisztenciális _____ mért a hazai egyetemi autonómiára.",
-      "hint": "blow / csapás + -t",
-      "answer": "csapást",
-      "english": "The setting up of political boards of trustees dealt an existential blow to domestic university autonomy.",
+      "sentence": "A bírálók szerint a kuratóriumok összetétele _____ az egyetemi autonómiát.",
+      "hint": "limits",
+      "english": "According to the critics the composition of the boards restricts university autonomy.",
       "teaches": [
-        "framing-markers"
+        "c1-university-model-change-vocab"
+      ],
+      "answers": [
+        "korlátozza",
+        "sérti",
+        "veszélyezteti"
       ]
     },
     {
@@ -38,11 +42,11 @@
       "pairs": [
         [
           "modellváltás",
-          "az állami egyetemek magánalapítványi tulajdonba adása"
+          "az állami egyetemek fenntartói jogának átadása alapítványoknak"
         ],
         [
           "közérdekű vagyonkezelő alapítvány",
-          "a KEKVA-törvény szerinti speciális fenntartó forma"
+          "az átvett egyetemeket fenntartó alapítványi forma (KEKVA)"
         ],
         [
           "egyetemi autonómia",
@@ -50,7 +54,7 @@
         ],
         [
           "szenátusi jogkörök megnyirbálása",
-          "a választott oktatói testület döntési hatalmának elvétele"
+          "a bírálók szerint a választott oktatói testület jogköreinek szűkülése"
         ]
       ],
       "teaches": [
@@ -60,46 +64,50 @@
     {
       "id": "c1-felsooktatas-01-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Az összeférhetetlen politikai irányítás súlyosan _____ az intézmény nemzetközi hitelét.",
-      "hint": "undermines",
-      "english": "Incompatible political leadership severely undermines the institution's international credibility.",
+      "sentence": "A bírálók szerint a politikai irányítás _____ az intézmény nemzetközi hitelét.",
+      "hint": "may weaken",
+      "english": "According to the critics political control may weaken the institution's international standing.",
       "teaches": [
-        "framing-markers"
+        "c1-university-model-change-vocab"
       ],
       "answers": [
-        "aláássa",
-        "kikezdi",
-        "rombolja"
+        "gyengítheti",
+        "rombolhatja",
+        "veszélyeztetheti"
       ]
     },
     {
       "id": "c1-felsooktatas-01-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
+        "bírálók",
+        "szerint",
+        "a",
         "modellváltás",
-        "csapást",
-        "mért",
+        "korlátozza",
         "az",
         "egyetemek",
-        "függetlenségére."
+        "autonómiáját."
       ],
       "solution": [
         "A",
+        "bírálók",
+        "szerint",
+        "a",
         "modellváltás",
-        "csapást",
-        "mért",
+        "korlátozza",
         "az",
         "egyetemek",
-        "függetlenségére."
+        "autonómiáját."
       ],
-      "english": "The model change dealt a blow to universities' independence.",
+      "english": "According to the critics the model change restricts the autonomy of the universities.",
       "teaches": [
-        "framing-markers"
+        "c1-university-model-change-vocab"
       ]
     },
     {
@@ -110,21 +118,21 @@
       "prompt": [
         {
           "speaker": "Egyetemi oktató",
-          "text": "Miért tiltakoznak a professzorok a KEKVA-modell ellen?"
+          "text": "Miért kritizálják egyesek a KEKVA-modellt?"
         },
         {
           "speaker": "Oktatáskutató",
-          "text": "Mert a pártpolitikai kuratóriumok kinevezése alapjaiban ássa alá a tanszabadságot és az egyetem _____."
+          "text": "A bírálók szerint a kuratóriumok összetétele korlátozza az egyetem _____."
         }
       ],
       "options": [
         "önrendelkezését",
-        "költségvetési fegyelmét",
-        "nemzetközi kapcsolatait"
+        "önrendelkezésnek",
+        "önrendelkezni"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "c1-university-model-change-vocab"
       ]
     },
     {
@@ -134,28 +142,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence diagnosing the crisis of university autonomy using an institutional threat framing marker.",
-          "answer": "Az állami egyetemek politikai kuratóriumok alá rendelése egzisztenciális csapást mért a magyar felsőoktatás autonómiájára, súlyosan aláásva a tudományos kutatás függetlenségét és nemzetközi elismertségét."
+          "prompt": "Write a sentence naming a criticism of the model change and whose view it is.",
+          "answer": "A bírálók szerint a kuratóriumok összetétele korlátozza az egyetemi autonómiát, a kormány akkori álláspontja szerint viszont az alapítványi forma rugalmasabb működést tesz lehetővé."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "c1-university-model-change-vocab"
       ]
     },
     {
       "id": "c1-felsooktatas-01-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik kifejezés tölt be diagnosztikus szerepet a felsőoktatási intézményi válság megfogalmazásakor?",
+      "question": "Melyik kifejezés vezet be egy kritikát?",
       "options": [
-        "aláássa az autonómiát",
-        "a kreditrendszer adminisztratív átalakítása lezárult",
-        "a vizsgaidőszak időpontjainak kismértékű módosítása"
+        "a bírálók szerint",
+        "a kreditrendszer átalakítása lezárult",
+        "a vizsgaidőszak időpontjai módosultak"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "c1-university-model-change-vocab"
       ]
     }
   ]

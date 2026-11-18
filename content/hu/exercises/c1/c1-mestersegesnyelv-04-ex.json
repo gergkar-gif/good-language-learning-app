@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a fő etikai probléma a magyar írók műveinek engedély nélküli 'adatkaparásával' (data scraping)?",
+      "question": "Mit kifogásolnak a szerzők az 'adatkaparással' (data scraping) kapcsolatban?",
       "options": [
-        "Hogy a nemzetközi cégek szabadon felhasználják a szerzők szellemi tulajdonát a modellek betanítására anélkül, hogy engedélyt kérnének vagy díjazást fizetnének.",
-        "Hogy a digitális másolatok készítése közben a szövegfelismerő szoftverek súlyos tipográfiai és nyomdai hibákat vétenek a kiadványokban.",
-        "Hogy a letöltött irodalmi művek fájlmérete túlterheli az egyetemi könyvtárak szervereit és a digitális archívumok tárhelyeit."
+        "Hogy műveiket engedély és díjazás nélkül használhatják a modellek betanítására.",
+        "Hogy a szövegfelismerő szoftverek tipográfiai hibákat vétenek a kiadványokban.",
+        "Hogy a letöltött művek fájlmérete túlterheli az egyetemi könyvtárak szervereit."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Kutatások által _____ a mélyhamisítások tömege aláássa a társadalom valóságérzékét.",
-      "hint": "probabilistically / valószínűsített + -en",
-      "answer": "valószínűsítetten",
-      "english": "Probabilistically supported by research the mass of deepfakes undermines society's sense of reality.",
+      "sentence": "A kutatók szerint a mélyhamisítások _____ nehezebbé teszik a valódi és a hamis felvételek megkülönböztetését.",
+      "hint": "feltesz, 'to assume', as an adverb",
+      "english": "According to researchers deepfakes will presumably make it harder to tell real and fake recordings apart.",
       "teaches": [
         "epistemic-hedging"
+      ],
+      "answers": [
+        "feltehetőleg",
+        "valószínűleg",
+        "feltehetően"
       ]
     },
     {
@@ -60,14 +64,17 @@
     {
       "id": "c1-mestersegesnyelv-04-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Tudományos _____ szerint az algoritmusok nem rendelkeznek valódi tudattal és empátiával.",
-      "hint": "assumptions / feltevés + -ek",
-      "answer": "feltevések",
-      "english": "According to scientific assumptions algorithms do not possess genuine consciousness and empathy.",
+      "sentence": "A _____ szerint a hangklónozás feltehetőleg egyre meggyőzőbb lesz.",
+      "hint": "researchers or experts",
+      "english": "According to the researchers voice cloning will presumably become more and more convincing.",
       "teaches": [
-        "epistemic-hedging"
+        "c1-small-language-ai-vocab"
+      ],
+      "answers": [
+        "kutatók",
+        "szakértők"
       ]
     },
     {
@@ -77,23 +84,31 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "mélyhamisítások",
-        "veszélyeztetik",
+        "kutatók",
+        "szerint",
         "a",
-        "társadalmi",
-        "bizalom",
-        "alapjait."
+        "mélyhamisítások",
+        "feltehetőleg",
+        "nehezítik",
+        "a",
+        "hamis",
+        "felvételek",
+        "felismerését."
       ],
       "solution": [
         "A",
-        "mélyhamisítások",
-        "veszélyeztetik",
+        "kutatók",
+        "szerint",
         "a",
-        "társadalmi",
-        "bizalom",
-        "alapjait."
+        "mélyhamisítások",
+        "feltehetőleg",
+        "nehezítik",
+        "a",
+        "hamis",
+        "felvételek",
+        "felismerését."
       ],
-      "english": "Deepfakes threaten the foundations of social trust.",
+      "english": "According to researchers deepfakes presumably make it harder to recognise fake recordings.",
       "teaches": [
         "epistemic-hedging"
       ]
@@ -105,18 +120,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Kiberbiztonsági elemző",
-          "text": "Kiszűrhető-e a szintetikus hazugság az interneten?"
+          "speaker": "Újságíró",
+          "text": "Mit mondanak a hangklónozás jövőjéről?"
         },
         {
-          "speaker": "Jogászprofesszor",
-          "text": "Tudományos feltevések szerint a digitális vízjelek kötelezővé tétele _____ kimenetellel erősítené a védelmet."
+          "speaker": "Szerkesztő",
+          "text": "_____ a hangklónozás feltehetőleg egyre meggyőzőbb lesz."
         }
       ],
       "options": [
-        "pozitív",
-        "pozitívan",
-        "pozitivitás"
+        "A kutatók szerint",
+        "A kutatók mellett",
+        "A kutatókhoz képest"
       ],
       "correct": 0,
       "teaches": [
@@ -130,8 +145,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence reflecting on AI ethics and copyright using 'tudományos feltevések szerint'.",
-          "answer": "Tudományos feltevések szerint a szerzői jogok szigorú garanciái nélkül a globális mesterséges intelligencia modellek elszívják az alkotói energiákat, megfosztva a kultúrát autentikus megújulási képességétől."
+          "prompt": "Write a sentence about AI and copyright that hedges a claim and says whose view it is.",
+          "answer": "A kutatók szerint a hangklónozás feltehetőleg egyre meggyőzőbb lesz, a jogászok szerint pedig a szerzői jogi kérdések minden bizonnyal vita tárgyai maradnak."
         }
       ],
       "teaches": [
@@ -143,10 +158,10 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés testesíti meg az empirikus, tudományos távolságtartást egy technológiai kockázat értékelésekor?",
+      "question": "Melyik kifejezés jelzi, hogy valami csak feltételezés?",
       "options": [
-        "tudományos feltevések szerint",
-        "biztosan mindenki tudja",
+        "feltehetőleg",
+        "pontosan tudjuk",
         "álmomban úgy láttam"
       ],
       "correct": 0,

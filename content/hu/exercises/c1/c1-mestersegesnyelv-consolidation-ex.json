@@ -4,25 +4,25 @@
     {
       "id": "c1-mestersegesnyelv-consolidation-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recognize",
-      "question": "Milyen szerkezettel fejezhetünk ki technológiai veszélyt a nemzeti kultúrára?",
+      "question": "Milyen szerkezettel nevezhetünk meg egy kockázatot?",
       "options": [
-        "egzisztenciális fenyegetést jelent a nyelvre",
+        "egyes nyelvészek szerint veszélyt jelent a nyelvre",
         "mivel elküldték az emailt a szerverre",
         "amikor új szoftvert telepítenek a számítógépre"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "c1-small-language-ai-vocab"
       ]
     },
     {
       "id": "c1-mestersegesnyelv-consolidation-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recognize",
-      "question": "Melyik kifejezés testesít meg kötelező erejű digitális állami feladatot?",
+      "question": "Melyik kifejezés fejez ki kötelességet?",
       "options": [
         "kötelessége biztosítani",
         "szabadon választhatnak a háttérképek közül",
@@ -30,7 +30,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "c1-small-language-ai-vocab"
       ]
     },
     {
@@ -41,11 +41,11 @@
       "pairs": [
         [
           "PULI modell",
-          "hazai szuverén magyar alapmodell"
+          "magyar nyelvre fejlesztett nyelvmodell"
         ],
         [
-          "digitális nyelvkihalás",
-          "a nyelv kirekesztődése a gépi kommunikációból"
+          "tanítóadat",
+          "a szövegek, amelyekből a modell tanul"
         ],
         [
           "hangvezérlés",
@@ -57,7 +57,7 @@
         ],
         [
           "digitális humanizmus",
-          "az emberi értékek és méltóság védelme a technológiában"
+          "az a nézet, hogy a technológiának az emberi értékeket kell szolgálnia"
         ]
       ],
       "teaches": [
@@ -70,7 +70,7 @@
       "category": "vocabulary",
       "stage": "recall",
       "sentence": "A mesterségesen generált megtévesztő videókat és hangokat _____ nevezzük.",
-      "hint": "deepfakes / mélyhamisítás + -oknak",
+      "hint": "mélyhamisítás, 'deepfake', plural",
       "answer": "mélyhamisításoknak",
       "english": "Artificially generated deceptive videos and voices are called deepfakes.",
       "teaches": [
@@ -82,9 +82,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A magyar nyelv védelme a mesterséges intelligenciában a nemzeti szellemi _____ kérdése.",
+      "sentence": "Egyes nyelvészek szerint a magyar nyelv védelme a mesterséges intelligenciában a nyelvi _____ kérdése.",
       "hint": "sovereignty",
-      "english": "Protecting the Hungarian language in artificial intelligence is a question of national intellectual sovereignty.",
+      "english": "According to some linguists protecting the Hungarian language in artificial intelligence is a question of linguistic sovereignty.",
       "teaches": [
         "c1-small-language-ai-vocab"
       ],
@@ -96,14 +96,16 @@
     {
       "id": "c1-mestersegesnyelv-consolidation-6",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Az államnak alkotmányos _____ megóvni a nemzeti nyelvkincset.",
-      "hint": "duty / kötelesség + -e",
-      "answer": "kötelessége",
-      "english": "The state has a constitutional duty to preserve the national language treasure.",
+      "sentence": "Egyes nyelvészek szerint az államnak _____ megóvni a nemzeti nyelvkincset.",
+      "hint": "kötelesség, 'duty'",
+      "english": "According to some linguists the state has a duty to protect the national language heritage.",
       "teaches": [
-        "formal-obligation"
+        "c1-small-language-ai-vocab"
+      ],
+      "answers": [
+        "kötelessége"
       ]
     },
     {
@@ -111,28 +113,29 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minél több magyar adatot használunk, _____ pontosabb lesz a modell kifejezőereje.",
+      "sentence": "A fejlesztők szerint minél több magyar adatot használnak, _____ pontosabb lehet a modell.",
       "hint": "minél … ___",
-      "answer": "annál",
-      "english": "The more Hungarian data we use, the more accurate the model's expressive power will be.",
+      "english": "According to the developers the more Hungarian data is used, the more accurate the model can be.",
       "teaches": [
         "correlative-minel-annal"
+      ],
+      "answers": [
+        "annál"
       ]
     },
     {
       "id": "c1-mestersegesnyelv-consolidation-8",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "context",
-      "sentence": "Mindent _____, anyanyelvünk megőrzése a jövő legfontosabb szellemi próbája.",
+      "sentence": "Mindent _____, a nyelvmodellek kérdésében többféle vélemény létezik.",
       "hint": "taking into account",
-      "english": "Taking everything into account, preserving our mother tongue is the future's most important intellectual test.",
+      "english": "All things considered, there are several opinions on the question of language models.",
       "teaches": [
-        "conclusive-markers"
+        "c1-small-language-ai-vocab"
       ],
       "answers": [
         "egybevetve",
-        "összevetve",
         "figyelembe véve"
       ]
     },
@@ -141,11 +144,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a lényege a 'Minél... annál...' korrelatív szerkezetnek a nyelvtechnológiai érvelésben?",
+      "question": "Mit fejez ki a 'Minél... annál...' szerkezet?",
       "options": [
-        "Megmutatja, hogy a tanítóadatok minőségének növelése arányosan jobb és árnyaltabb anyanyelvi modellt eredményez.",
-        "Időbeli sorrendbe állítja a gépi tanulási fázisokat, bemutatva a modellfejlesztés technológiai egymásutániságát.",
-        "Összehasonlítja a digitális adatbázisok pontosságát a hagyományos nyomtatott szótárak szerkesztési elveivel."
+        "Azt, hogy két dolog egymással arányosan változik.",
+        "Időbeli sorrendbe állít két eseményt.",
+        "Két adatbázis pontosságát hasonlítja össze."
       ],
       "correct": 0,
       "teaches": [
@@ -155,33 +158,33 @@
     {
       "id": "c1-mestersegesnyelv-consolidation-10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
-        "A",
+        "Egyes",
+        "nyelvészek",
+        "szerint",
+        "a",
         "magyar",
         "nyelv",
-        "a",
         "digitális",
-        "jövőben",
-        "is",
-        "élni",
-        "fog."
+        "jelenléte",
+        "fontos."
       ],
       "solution": [
-        "A",
+        "Egyes",
+        "nyelvészek",
+        "szerint",
+        "a",
         "magyar",
         "nyelv",
-        "a",
         "digitális",
-        "jövőben",
-        "is",
-        "élni",
-        "fog."
+        "jelenléte",
+        "fontos."
       ],
-      "english": "The Hungarian language will live in the digital future as well.",
+      "english": "According to some linguists the digital presence of the Hungarian language is important.",
       "teaches": [
-        "conclusive-markers"
+        "c1-small-language-ai-vocab"
       ]
     },
     {
@@ -191,12 +194,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence diagnosing the existential threat of global AI to Hungarian using an elevated threat framing marker.",
-          "answer": "A globális techóriások által vezérelt mesterséges intelligencia egzisztenciális fenyegetést jelent a magyar nyelvre, mivel a monokultúrás tanítóadatok terjedése észrevétlen digitális asszimilációt idéz elő."
+          "prompt": "Write a sentence naming a risk for Hungarian and whose view it is.",
+          "answer": "Egyes nyelvészek szerint a nyelvmodellek angol túlsúlya veszélyt jelent a magyar nyelv sokszínűségére."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "c1-small-language-ai-vocab"
       ]
     },
     {
@@ -206,12 +209,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on digital humanism and Hungarian language sovereignty.",
-          "answer": "Mindent egybevetve, a magyar nyelv túlélése a szintetikus korban a digitális humanizmus megvalósításán és a szuverén hazai nyelvtechnológiai innovációkon múlik."
+          "prompt": "Write a concluding sentence about Hungarian and language technology, and say whose view it is.",
+          "answer": "Mindent egybevetve, egyes nyelvészek szerint a magyar nyelv jövője a nyelvtechnológiai fejlesztéseken és a mindennapi nyelvhasználaton is múlik."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-small-language-ai-vocab"
       ]
     }
   ]

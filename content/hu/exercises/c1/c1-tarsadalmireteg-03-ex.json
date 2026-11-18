@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit nevezünk 'ellátási sivatagnak' (welfare/service desert) a közszolgáltatások terén?",
+      "question": "Mit nevezünk 'ellátási sivatagnak'?",
       "options": [
-        "Olyan földrajzi térséget, ahol a lakosság számára a mindennapi élethez szükséges alapvető közszolgáltatások (orvos, gyógyszertár, posta, iskola) tartósan hiányoznak.",
-        "Olyan egykori ipari körzetet és rozsdaövezetet, ahol a gyárak bezárása után átmenetileg szünetel a termelő gazdasági tevékenység.",
-        "Az autópályák és gyorsforgalmi utak mentén kijelölt olyan pihenőhelyeket, ahol nincsenek üzemanyagtöltő állomások és üzletek."
+        "Olyan térséget, ahol az orvos, a gyógyszertár, a posta vagy az iskola tartósan hiányzik.",
+        "Olyan egykori ipari körzetet, ahol a gyárak bezárása után szünetel a termelés.",
+        "Az autópályák mentén kijelölt pihenőhelyeket, ahol nincs üzemanyagtöltő állomás."
       ],
       "correct": 0,
       "teaches": [
@@ -22,9 +22,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Míg a nagyvárosokban bőséges a szakorvosi kínálat, _____ a kistelepüléseken százszámra állnak üresen a praxisok.",
+      "sentence": "Míg a nagyvárosokban több szakorvost találunk, _____ a kistelepüléseken sok a betöltetlen praxis.",
       "hint": "míg … ___",
-      "english": "While in big cities specialist supply is plentiful, meanwhile in small settlements practices stand empty by the hundreds.",
+      "english": "While we find more specialists in the cities, many practices stand unfilled in the small villages.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
@@ -64,14 +64,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Egyfelől a jogszabályok egyenlő ellátást írnak elő, másfelől _____ a perifériákon mélyül a szegregáció.",
+      "sentence": "Egyfelől a jogszabályok egyenlő ellátást írnak elő, másfelől _____ egyes kistelepüléseken hiányzik az ellátás.",
       "hint": "egyfelől … másfelől ___",
-      "english": "On one hand laws prescribe equal service; on the other hand however segregation deepens in peripheries.",
+      "english": "On one hand the rules prescribe equal provision; on the other hand provision is missing in some small villages.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
       "answers": [
-        "viszont"
+        "viszont",
+        "ugyanakkor"
       ]
     },
     {
@@ -82,26 +83,28 @@
       "tiles": [
         "Míg",
         "a",
-        "centrumban",
-        "fejlődés",
-        "van,",
+        "városban",
+        "több",
+        "az",
+        "orvos,",
         "addig",
         "a",
-        "periférián",
-        "hanyatlás."
+        "faluban",
+        "kevesebb."
       ],
       "solution": [
         "Míg",
         "a",
-        "centrumban",
-        "fejlődés",
-        "van,",
+        "városban",
+        "több",
+        "az",
+        "orvos,",
         "addig",
         "a",
-        "periférián",
-        "hanyatlás."
+        "faluban",
+        "kevesebb."
       ],
-      "english": "While in the center there is development, in the periphery there is decline.",
+      "english": "While there are more doctors in the town, there are fewer in the village.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -118,17 +121,17 @@
         },
         {
           "speaker": "Háziorvos",
-          "text": "Míg a városban karrierlehetőség és jó fizetés várja őket, addig a periférián magányos és alulfinanszírozott _____ szembesülnek."
+          "text": "Egyes orvosok szerint míg a városban karrierlehetőség várja őket, addig a faluban nehéz és magányos _____ kell szembenézniük."
         }
       ],
       "options": [
-        "küzdelemmel",
-        "küzdelem",
-        "küzdelemhez"
+        "munkával",
+        "munkát",
+        "munkához"
       ],
       "correct": 0,
       "teaches": [
-        "contrastive-discourse-markers"
+        "verb-government-val-vel"
       ]
     },
     {
@@ -138,12 +141,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a comparative sentence contrasting urban and rural educational quality using 'Míg... addig...'.",
-          "answer": "Míg a budapesti tehetős kerületek iskoláiban korszerű laboratóriumok és nyelvtanárok állnak rendelkezésre, addig a hátrányos helyzetű falvakban a szaktanárok hiánya miatt generációk esnek el a felemelkedés esélyétől."
+          "prompt": "Write a comparative sentence about schools in a city and a small village using 'Míg ..., addig ...'.",
+          "answer": "Míg a nagyvárosi iskolákban könnyebb szaktanárt találni, addig sok kistelepülésen pedagógushiány van."
         }
       ],
       "teaches": [
-        "contrastive-discourse-markers"
+        "c1-centre-periphery-vocab"
       ]
     },
     {
@@ -151,11 +154,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezettel állíthatunk szembe hatásosan két eltérő társadalmi valóságot?",
+      "question": "Melyik szerkezettel állíthatunk szembe két helyzetet?",
       "options": [
-        "Míg a centrumban..., addig a periférián...",
-        "Bár a centrumban..., mégis a periférián...",
-        "Minthogy a centrumban..., úgy a periférián..."
+        "Míg a városban ..., addig a faluban ...",
+        "Bár a városban ..., mégis a faluban ...",
+        "Minthogy a városban ..., úgy a faluban ..."
       ],
       "correct": 0,
       "teaches": [

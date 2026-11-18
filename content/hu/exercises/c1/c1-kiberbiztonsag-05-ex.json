@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'társadalmi ellenállóképesség' (societal resilience) a kibertérben?",
+      "question": "Mit jelent a társadalmi ellenállóképesség a kibertérben?",
       "options": [
-        "A társadalom, az intézmények és az állampolgárok azon képességét, hogy elviseljék, kivédjék és gyorsan kiheverjék a súlyos dezinformációs és kiberinfrastruktúra-támadásokat.",
-        "A felhőalapú informatikai szerverek azon műszaki tulajdonságát, hogy hardveres meghibásodás esetén azonnal átkapcsolnak tartalék adatközpontokra.",
-        "Az állami hírügynökség azon jogszabályi monopóliumát, amely megtiltja a külföldi hírek közzétételét válsághelyzetek idején."
+        "Azt a képességet, hogy a társadalom elviseli a támadást, és gyorsan helyreáll.",
+        "A felhőszerverek képességét, hogy hiba esetén átkapcsolnak a tartalék központra.",
+        "Az állami hírügynökség jogát, hogy válság idején megtiltsa a külföldi híreket."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "_____, a digitális szuverenitás megteremtése a nemzet fennmaradásának záloga.",
-      "hint": "All things considered",
-      "english": "All things considered, establishing digital sovereignty is the pledge of the nation's survival.",
+      "sentence": "A kórház folytatni tudja a betegellátást, _____, hogy a tartalék rendszer működik.",
+      "hint": "provided (that)",
+      "english": "The hospital can continue patient care, provided that the backup system works.",
       "teaches": [
-        "conclusive-markers"
+        "felteve-hogy-kiveve-ha"
       ],
       "answers": [
-        "Mindent egybevetve",
-        "Mindent összevetve",
-        "Mindent figyelembe véve"
+        "feltéve"
       ]
     },
     {
@@ -42,7 +40,7 @@
       "pairs": [
         [
           "kvantumkriptográfia",
-          "a fizika törvényein alapuló feltörhetetlen kulcscsere"
+          "a fizika törvényein alapuló kulcscsere, amelyben a lehallgatás észrevehető"
         ],
         [
           "szuverén európai felhő",
@@ -54,7 +52,7 @@
         ],
         [
           "digitális immunitás",
-          "a rendszerek képessége az azonnali öngyógyításra"
+          "a rendszerek ellenálló képessége a támadásokkal szemben"
         ]
       ],
       "teaches": [
@@ -66,12 +64,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Végkövetkeztetésként _____ hogy az oktatás és a technológia együttesen teremtheti meg a biztonságunkat.",
-      "hint": "can be drawn / levon + -ható",
-      "answer": "levonható",
-      "english": "As an ultimate conclusion it can be drawn that education and technology together can create our security.",
+      "sentence": "Minden dolgozó hozzáférhet az adatokhoz, _____, ha a rendszer gyanús tevékenységet észlel.",
+      "hint": "except",
+      "answer": "kivéve",
+      "english": "Every employee can access the data, except if the system detects suspicious activity.",
       "teaches": [
-        "conclusive-markers"
+        "felteve-hogy-kiveve-ha"
       ]
     },
     {
@@ -80,26 +78,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Mindent",
-        "egybevetve,",
-        "a",
-        "kiberbiztonság",
-        "a",
-        "szabadság",
-        "alapja."
+        "A",
+        "szolgáltatás",
+        "tovább",
+        "működik,",
+        "feltéve,",
+        "hogy",
+        "van",
+        "tartalék",
+        "áramforrás."
       ],
       "solution": [
-        "Mindent",
-        "egybevetve,",
-        "a",
-        "kiberbiztonság",
-        "a",
-        "szabadság",
-        "alapja."
+        "A",
+        "szolgáltatás",
+        "tovább",
+        "működik,",
+        "feltéve,",
+        "hogy",
+        "van",
+        "tartalék",
+        "áramforrás."
       ],
-      "english": "All things considered, cybersecurity is the foundation of freedom.",
+      "english": "The service keeps running, provided that there is a backup power supply.",
       "teaches": [
-        "conclusive-markers"
+        "felteve-hogy-kiveve-ha"
       ]
     },
     {
@@ -109,22 +111,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Külügyi szakértő",
-          "text": "Hogyan összegezhetjük a digitális szuverenitásért folytatott küzdelmet?"
+          "speaker": "Kérdező",
+          "text": "Mikor marad működőképes a kórház egy támadás idején?"
         },
         {
-          "speaker": "Nemzetbiztonsági tanácsadó",
-          "text": "Mindent egybevetve, a technológiai önrendelkezés nélkül a nemzeti szuverenitás üres _____ válik."
+          "speaker": "Szakértő",
+          "text": "Ha a tartalék rendszer működik, _____, ha a támadás a tartalékot is eléri."
         }
       ],
       "options": [
-        "jelszóvá",
-        "ajándékká",
-        "fegyverré"
+        "kivéve",
+        "feltéve",
+        "ellenére"
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "felteve-hogy-kiveve-ha"
       ]
     },
     {
@@ -134,12 +136,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a concluding thesis on national cybersecurity using 'Végkövetkeztetésként levonható, hogy...'.",
-          "answer": "Végkövetkeztetésként levonható, hogy az államnak a kritikus infrastruktúrák megerősítése mellett a lakosság digitális műveltségét is fejlesztenie kell az ellenállóképesség biztosításához."
+          "prompt": "Write a sentence with a condition and an exception about a hospital's cyber resilience.",
+          "answer": "A kórház folytatni tudja a betegellátást, feltéve, hogy a tartalék rendszer működik, kivéve, ha a támadás a tartalékot is eléri."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-cyber-warfare-vocab"
       ]
     },
     {
@@ -147,15 +149,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik partikula szolgál végső stratégiai szintézis és doktrinális konklúzió levonására?",
+      "question": "Melyik kifejezés vezet be kivételt?",
       "options": [
-        "mindent egybevetve",
-        "eleinte még",
-        "olykor-olykor"
+        "kivéve, ha",
+        "feltéve, hogy",
+        "annak ellenére, hogy"
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "felteve-hogy-kiveve-ha"
       ]
     }
   ]

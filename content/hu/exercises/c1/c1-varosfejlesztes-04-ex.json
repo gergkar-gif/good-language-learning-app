@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért vált a Városliget beépítése az egyik legvitatottabb környezetvédelmi üggyé Magyarországon?",
+      "question": "Miért vált vitatottá a Liget Budapest Projekt?",
       "options": [
-        "Mert a monumentális új múzeumépületek zöldfelületeket és öreg fákat vettek el egy olyan belváros mellett, amely súlyos hősziget-hatástól és zöldhiánytól szenved.",
-        "Mert a múzeumi negyed látogatását kizárólag külföldi turistáknak engedélyezték volna.",
-        "Mert a projekt teljes költségvetését kizárólag kerületi parkolási díjakból akarták fedezni."
+        "Mert a bírálók szerint az új épületek zöldfelületet és fákat vettek el a parkból.",
+        "Mert a projekt költségét a kerületi parkolási díjakból akarták fedezni.",
+        "Mert a múzeumi negyedet a tervek szerint külföldi turisták használnák."
       ],
       "correct": 0,
       "teaches": [
@@ -22,9 +22,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Klíma-előrejelzések _____ a nagyvárosi hősziget-hatás elviselhetetlenné teszi a nyarakat zöldparkok nélkül.",
+      "sentence": "A klímamodellek _____ a városi hősziget-hatás erősödhet a belvárosban.",
       "hint": "according to",
-      "english": "According to climate projections the urban heat island effect makes summers unbearable without green parks.",
+      "english": "According to climate models the urban heat island effect may become stronger in the inner city.",
       "teaches": [
         "epistemic-hedging"
       ],
@@ -65,16 +65,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Demográfiai modellek alapján _____ nőni fog az agglomeráció vízigénye a következő évtizedben.",
-      "hint": "probabilistically",
-      "english": "Probabilistically based on demographic models the growth of the agglomeration generates further traffic tension.",
+      "sentence": "A kutatók szerint a városi hőmérséklet _____ tovább emelkedik a következő években.",
+      "hint": "presumably",
+      "english": "According to researchers the urban temperature will presumably go on rising in the coming years.",
       "teaches": [
         "epistemic-hedging"
       ],
       "answers": [
-        "valószínűsíthetően",
+        "feltehetőleg",
         "várhatóan",
-        "valószínűleg"
+        "valószínűleg",
+        "valószínűsíthetően"
       ]
     },
     {
@@ -84,8 +85,11 @@
       "stage": "practice",
       "tiles": [
         "A",
+        "kutatók",
+        "szerint",
+        "a",
         "parkok",
-        "hűsítik",
+        "hűthetik",
         "a",
         "forró",
         "városi",
@@ -93,14 +97,17 @@
       ],
       "solution": [
         "A",
+        "kutatók",
+        "szerint",
+        "a",
         "parkok",
-        "hűsítik",
+        "hűthetik",
         "a",
         "forró",
         "városi",
         "levegőt."
       ],
-      "english": "Parks cool the hot urban air.",
+      "english": "According to researchers parks can cool the hot urban air.",
       "teaches": [
         "epistemic-hedging"
       ]
@@ -113,17 +120,17 @@
       "prompt": [
         {
           "speaker": "Klímatudós",
-          "text": "Hogyan alakul a főváros hőmérséklete a jövőben?"
+          "text": "Mit mutatnak az előrejelzések a belvárosról?"
         },
         {
           "speaker": "Tájépítész",
-          "text": "Előrejelzések szerint az öreg parkfák lombkoronája nélkül a belváros élhetetlenné _____ a nyár folyamán."
+          "text": "Az előrejelzések szerint a belvárosban a nyarak _____ forróbbak lesznek."
         }
       ],
       "options": [
-        "válik",
-        "válni",
-        "válva"
+        "várhatóan",
+        "várható",
+        "várva"
       ],
       "correct": 0,
       "teaches": [
@@ -137,8 +144,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence projecting urban heat island impacts using an epistemic stance marker.",
-          "answer": "Klímamodellek alapján valószínűsíthetően a nagyvárosi hősziget-hatás drámai fokozódása várható, amely a Városligethez hasonló kiterjedt zöldfelületek védelmét elemi túlélési kérdéssé teszi."
+          "prompt": "Write a sentence about the heat island effect that says whose forecast it is.",
+          "answer": "A klímamodellek szerint a belvárosi hősziget-hatás várhatóan erősödik, ezért a zöldfelületek védői a fák megóvását kérik."
         }
       ],
       "teaches": [
@@ -150,9 +157,9 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés tölt be tudományosan megalapozott előrejelző funkciót a várostervezésben?",
+      "question": "Melyik kifejezés vezet be egy előrejelzést?",
       "options": [
-        "demográfiai modellek alapján valószínűsíthetően",
+        "az előrejelzések szerint",
         "az időjárás pillanatnyi alakulását figyelve",
         "az ismerősök szóbeszéde alapján tájékozódva"
       ],

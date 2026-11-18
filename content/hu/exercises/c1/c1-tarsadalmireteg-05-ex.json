@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'kiegyensúlyozott térszerkezet' (balanced spatial structure) eszménye?",
+      "question": "Mit jelent a 'kiegyensúlyozott térszerkezet'?",
       "options": [
-        "Olyan országos hálózatot, ahol a gazdasági erő, az oktatás és a minőségi életfeltételek több erős regionális pólus között oszlanak meg, nem pedig egyetlen városban összpontosulnak.",
-        "Olyan centralizált modellt, ahol a fejlesztési forrásokat és a stratégiai beruházásokat a központi minisztériumok hangolják össze.",
-        "Olyan közigazgatási rendszert, amely a helyi önkormányzatok jogköreit megszüntetve egyetlen központi kormányhivatal alá vonja a régiókat."
+        "Olyan országot, ahol a gazdasági erő és az oktatás több erős térségi központ között oszlik meg.",
+        "Olyan országot, ahol minden fejlesztési forrást a központi minisztériumok hangolnak össze.",
+        "Olyan országot, ahol a helyi önkormányzatok jogkörei egy központi hivatalhoz kerülnek."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A decentralizáció hiánya, _____ gátolja a vidéki nagyvárosok nemzetközi felemelkedését.",
-      "hint": "vitathatatlan + -ul",
-      "english": "The lack of decentralization, undisputedly, hinders the international rise of regional cities.",
+      "sentence": "Egyes szakértők szerint a decentralizáció hiánya _____ gátolja a vidéki nagyvárosok fejlődését.",
+      "hint": "undeniably (adverb)",
+      "english": "According to some experts the lack of decentralisation undeniably hinders the development of the rural cities.",
       "teaches": [
-        "discourse-particles"
+        "evaluative-stance"
       ],
       "answers": [
         "vitathatatlanul",
-        "kétségkívül",
-        "tagadhatatlanul"
+        "kétségkívül"
       ]
     },
     {
@@ -66,16 +65,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A kutatási adatok alapján _____ látszik, hogy a helyi autonómia erősíti a gazdaságot.",
-      "hint": "egyértelmű + -en",
-      "english": "Based on research data it clearly appears that local autonomy strengthens the economy.",
+      "sentence": "Egyes kutatók szerint _____ kimutatható, hogy a helyi autonómia erősíti a gazdaságot.",
+      "hint": "clearly (adverb)",
+      "english": "Some researchers say it can be shown clearly that local autonomy strengthens the economy.",
       "teaches": [
-        "discourse-particles"
+        "evaluative-stance"
       ],
       "answers": [
         "egyértelműen",
-        "világosan",
-        "tisztán"
+        "világosan"
       ]
     },
     {
@@ -84,26 +82,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
+        "Egyes",
+        "szakértők",
+        "szerint",
+        "a",
         "decentralizáció",
         "vitathatatlanul",
+        "segíti",
         "a",
-        "fejlődés",
-        "legfőbb",
-        "záloga."
+        "fejlődést."
       ],
       "solution": [
-        "A",
+        "Egyes",
+        "szakértők",
+        "szerint",
+        "a",
         "decentralizáció",
         "vitathatatlanul",
+        "segíti",
         "a",
-        "fejlődés",
-        "legfőbb",
-        "záloga."
+        "fejlődést."
       ],
-      "english": "Decentralization is undisputedly the foremost pledge of development.",
+      "english": "According to some experts decentralisation undeniably helps development.",
       "teaches": [
-        "discourse-particles"
+        "evaluative-stance"
       ]
     },
     {
@@ -114,11 +116,11 @@
       "prompt": [
         {
           "speaker": "Urbanista",
-          "text": "Hogyan teremthetünk valóban kiegyensúlyozott térszerkezetet?"
+          "text": "Hogyan teremthetünk kiegyensúlyozottabb térszerkezetet?"
         },
         {
           "speaker": "Közgazdász",
-          "text": "Egyértelműen a vidéki egyetemi pólusok és az önkormányzati pénzügyi _____ megerősítésével."
+          "text": "Egyes közgazdászok szerint a vidéki egyetemi központok és az önkormányzati pénzügyi _____ megerősítésével."
         }
       ],
       "options": [
@@ -128,7 +130,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "c1-centre-periphery-vocab"
       ]
     },
     {
@@ -138,12 +140,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a concluding argument on territorial cohesion using 'vitathatatlanul' or 'egyértelműen'.",
-          "answer": "A valódi területi kohézió megteremtése, vitathatatlanul, nem puszta gazdaságpolitikai feladat, hanem a magyar nemzeti szolidaritás és a demokratikus jogállamiság alapvető próbája."
+          "prompt": "Write a sentence on territorial cohesion using 'vitathatatlanul' or 'egyértelműen', attributing the view.",
+          "answer": "Egyes szakértők szerint a területi kohézió vitathatatlanul fontos feladata a regionális fejlesztési politikának."
         }
       ],
       "teaches": [
-        "discourse-particles"
+        "c1-centre-periphery-vocab"
       ]
     },
     {
@@ -151,15 +153,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik partikula szolgál a szakpolitikai állítás megkérdőjelezhetetlenségének nyomatékosítására?",
+      "question": "Melyik szó fejez ki erős meggyőződést?",
       "options": [
         "vitathatatlanul",
-        "feltehetőleg esetleg",
-        "némiképp bizonytalanul"
+        "feltehetőleg",
+        "talán"
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "evaluative-stance"
       ]
     }
   ]

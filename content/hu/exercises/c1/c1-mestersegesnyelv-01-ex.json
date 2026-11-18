@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért jelent kulturális kockázatot a nagy nyelvmodellek döntően angol tanítóanyaga?",
+      "question": "Miért jelenthet kockázatot a nagy nyelvmodellek túlnyomóan angol tanítóanyaga a magyar nyelv számára?",
       "options": [
-        "Mert a modellek az angolszász értékrendet és gondolkodási mintákat vetítik rá a magyar nyelvre, elnyomva az egyedi hazai kulturális kontextust.",
-        "Mert a rendszerek képtelenné válnak a digitális szövegekben szereplő dátumok és pénzösszegek helyes matematikai átváltására.",
-        "Mert a szerverközpontok megnövekedett áramfogyasztása miatt a szolgáltatók kénytelenek korlátozni a hozzáférést a felhasználók előtt."
+        "Mert a nyelvészek szerint a modell angol mintákat vihet át a magyar szövegekbe.",
+        "Mert a rendszerek nem tudják helyesen átváltani a dátumokat és a pénzösszegeket.",
+        "Mert a szerverek nagy áramfogyasztása miatt a szolgáltatók korlátozzák a hozzáférést."
       ],
       "correct": 0,
       "teaches": [
@@ -20,14 +20,15 @@
     {
       "id": "c1-mestersegesnyelv-01-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A globális techcégek hegemóniája egzisztenciális _____ jelent a kis nyelvek fennmaradására.",
-      "hint": "threat / fenyegetés + -t",
-      "answer": "fenyegetést",
-      "english": "The hegemony of global tech companies poses an existential threat to the survival of small languages.",
+      "sentence": "Egyes nyelvészek szerint az angol túlsúly kockázatot _____ a magyar nyelv sokszínűségére.",
+      "english": "According to some linguists the English dominance poses a risk to the diversity of the Hungarian language.",
       "teaches": [
-        "framing-markers"
+        "c1-small-language-ai-vocab"
+      ],
+      "answers": [
+        "jelent"
       ]
     },
     {
@@ -37,20 +38,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "angolszász hegemónia",
-          "az angol nyelv és kultúra megkérdőjelezhetetlen túlsúlya"
+          "nagy nyelvmodell",
+          "szövegekből tanuló, szöveget létrehozó program"
         ],
         [
-          "kulturális egydimenziósodás",
-          "a sokféle látásmód beszűkülése egyetlen mintára"
+          "tanítóadat",
+          "a szövegek, amelyekből a modell tanul"
         ],
         [
-          "algoritmikus asszimiláció",
-          "a mesterséges intelligencia általi észrevétlen beolvasztás"
+          "gépi fordítás",
+          "szöveg átültetése egyik nyelvről a másikra számítógéppel"
         ],
         [
-          "értékrendi dominancia",
-          "a globális normák ráerőltetése a helyi közösségekre"
+          "nyelvi sokszínűség",
+          "sokféle nyelv és nyelvváltozat egymás mellett élése"
         ]
       ],
       "teaches": [
@@ -60,44 +61,46 @@
     {
       "id": "c1-mestersegesnyelv-01-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A monokultúrás algoritmusok terjedése digitális _____ idéz elő a világban.",
-      "hint": "assimilation / asszimiláció + -t",
-      "answer": "asszimilációt",
-      "english": "The spread of monocultural algorithms brings about digital assimilation in the world.",
+      "sentence": "Amikor a gépi fordítás angol szerkezeteket másol a magyar szövegbe, azt fordítási _____ nevezik.",
+      "hint": "torzítás, 'distortion', as the thing named",
+      "english": "When machine translation copies English structures into a Hungarian text, this is called translation distortion.",
       "teaches": [
-        "framing-markers"
+        "c1-small-language-ai-vocab"
+      ],
+      "answers": [
+        "torzításnak"
       ]
     },
     {
       "id": "c1-mestersegesnyelv-01-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "A",
-        "techcégek",
+        "Egyes",
+        "kutatók",
+        "szerint",
+        "a",
+        "nyelvmodellek",
+        "angol",
         "túlsúlya",
-        "aláássa",
-        "az",
-        "anyanyelvi",
-        "kultúra",
-        "önállóságát."
+        "kockázat."
       ],
       "solution": [
-        "A",
-        "techcégek",
+        "Egyes",
+        "kutatók",
+        "szerint",
+        "a",
+        "nyelvmodellek",
+        "angol",
         "túlsúlya",
-        "aláássa",
-        "az",
-        "anyanyelvi",
-        "kultúra",
-        "önállóságát."
+        "kockázat."
       ],
-      "english": "Tech companies' dominance undermines mother-tongue culture's independence.",
+      "english": "According to some researchers the English dominance of language models is a risk.",
       "teaches": [
-        "framing-markers"
+        "c1-small-language-ai-vocab"
       ]
     },
     {
@@ -108,21 +111,21 @@
       "prompt": [
         {
           "speaker": "Nyelvfilozófus",
-          "text": "Hogyan torzítja a gondolkodást a külföldi mesterséges intelligencia?"
+          "text": "Mit gondolnak a kutatók az angol mintákról?"
         },
         {
           "speaker": "Digitális kutató",
-          "text": "Az angol minták másolása egzisztenciális fenyegetést jelent, és közvetlen asszimilációt _____."
+          "text": "Egyesek szerint az angol minták túlsúlya _____ az anyanyelvi kultúra sokszínűségét."
         }
       ],
       "options": [
-        "idéz elő",
-        "idézne elő",
-        "idézve elő"
+        "aláássa",
+        "aláás",
+        "aláásni"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "c1-small-language-ai-vocab"
       ]
     },
     {
@@ -132,28 +135,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence framing the technological threat to Hungarian using 'egzisztenciális fenyegetést jelent'.",
-          "answer": "A globális techóriások által uralt algoritmusok egzisztenciális fenyegetést jelentenek a magyar anyanyelvi kultúrára, mivel a nyelvi sokszínűség felszámolásával felgyorsítják a digitális asszimilációt."
+          "prompt": "Write a sentence naming a risk for Hungarian and whose view it is, using 'veszélyt jelent'.",
+          "answer": "Egyes kutatók szerint a globális nyelvmodellek angol túlsúlya veszélyt jelent a magyar nyelv sokszínűségére."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "c1-small-language-ai-vocab"
       ]
     },
     {
       "id": "c1-mestersegesnyelv-01-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik kifejezés tölt be formális veszélyérzékelő és kritikai keretező szerepet?",
+      "question": "Melyik kifejezés nevez meg egy kockázatot egy elemzésben?",
       "options": [
-        "egzisztenciális fenyegetést jelent",
+        "veszélyt jelent a nyelvre",
         "nagyon örülnek az új programnak",
         "egy kávét rendelnek délután"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "c1-small-language-ai-vocab"
       ]
     }
   ]

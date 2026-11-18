@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel fogalmazhatunk meg rendszerszintű fenyegetést a kiberbiztonsági elemzésben?",
+      "question": "Melyik mondat használ képes kifejezést a kiberbiztonságról?",
       "options": [
-        "akut nemzetbiztonsági kockázatot hordoz / közvetlen veszélyt idéz elő / sérülékenységet tár fel",
-        "hálózati forgalmat monitoroz / statisztikai kimutatást készít / biztonsági mentést hajt végre",
-        "felhasználói jogosultságot frissít / adminisztratív bejelentést rögzít / szerverkapacitást növel"
+        "A kibertér ma már hadszíntér is.",
+        "A hadszíntér a hegyek között található.",
+        "A hadszíntér jól látható a térképen."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "metaphor"
       ]
     },
     {
@@ -25,8 +25,8 @@
       "question": "Milyen kifejezéssel írhatunk le hatósági kötelezettséget a NIS2-irányelv kapcsán?",
       "options": [
         "szigorú auditkötelezettséget ír elő",
-        "önkéntes ajánlásokat fogalmaz meg a piaci szereplők számára",
-        "kizárólag az állami hivatalok informatikai beszerzéseit koordinálja"
+        "önkéntes ajánlásokat fogalmaz meg a szereplők számára",
+        "a szereplők kérdéseire hetente válaszol"
       ],
       "correct": 0,
       "teaches": [
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A kórházak informatikai leállását egy zsarolási célból terjesztett _____ okozta.",
+      "sentence": "Egy kórház adatait titkosító és váltságdíjat követelő kártevő neve _____.",
       "hint": "ransomware",
       "answer": "zsarolóvírus",
-      "english": "The IT outage of hospitals was caused by ransomware distributed for extortion purposes.",
+      "english": "The malware that encrypts a hospital's data and demands a ransom is called ransomware.",
       "teaches": [
         "c1-cyber-warfare-vocab"
       ]
@@ -82,9 +82,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A kibertámadások kivédésére a modern rendszerek a _____ alapján épülnek fel.",
+      "sentence": "A támadások elleni védelemben a _____ azt jelenti, hogy soha ne bízz, mindig ellenőrizz.",
       "hint": "zero trust principle",
-      "english": "To repel cyber attacks, modern systems are built upon the zero trust principle.",
+      "english": "In defence against attacks the zero trust principle means: never trust, always verify.",
       "teaches": [
         "c1-cyber-warfare-vocab"
       ],
@@ -98,7 +98,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A támadás komplexitása alapján a nyomok _____ egy állami hekkercsoportra utalnak.",
+      "sentence": "A támadás bonyolultsága alapján a nyomok _____ egy állami hekkercsoportra utalnak.",
       "hint": "in all likelihood / presumably",
       "answer": "minden valószínűség szerint",
       "english": "Based on the attack complexity the traces in all likelihood point to a state hacker group.",
@@ -111,15 +111,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minél kiterjedtebb az adatgyűjtés, _____ válik a polgárok magánélete.",
-      "hint": "the more vulnerable",
-      "english": "The more extensive data collection is, the more vulnerable citizens' private life becomes.",
+      "sentence": "Minél kiterjedtebb az adatgyűjtés, _____ nagyobb a visszaélés veszélye.",
+      "hint": "the more ... (correlative)",
+      "english": "The more extensive the data collection, the greater the risk of abuse.",
       "teaches": [
         "correlative-minel-annal"
       ],
       "answers": [
-        "annál sebezhetőbbé",
-        "annál kiszolgáltatottabbá"
+        "annál"
       ]
     },
     {
@@ -144,21 +143,21 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Milyen funkciót tölt be a 'Mindent egybevetve...' indítás egy szakpolitikai doktrínában?",
+      "question": "Melyik mondat fejez ki feltételt?",
       "options": [
-        "Egybekapcsolja az összes részletes biztonsági tapasztalatot egy megkérdőjelezhetetlen stratégiai végső tanulsággá.",
-        "Átmenetileg felmenti a döntéshozókat a kötelező incidensbejelentési határidők betartása alól.",
-        "Részletezi a hálózati tűzfalak technikai beállításának adminisztratív lépéseit."
+        "A szolgáltatás működik, feltéve, hogy van tartalék.",
+        "A szolgáltatás működik, annak ellenére, hogy van tartalék.",
+        "A szolgáltatás működik, mivel van tartalék."
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "felteve-hogy-kiveve-ha"
       ]
     },
     {
       "id": "c1-kiberbiztonsag-consolidation-10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
@@ -167,8 +166,8 @@
         "a",
         "kibertérben",
         "is",
-        "döntő",
-        "tényező."
+        "fontos",
+        "szempont."
       ],
       "solution": [
         "A",
@@ -177,12 +176,12 @@
         "a",
         "kibertérben",
         "is",
-        "döntő",
-        "tényező."
+        "fontos",
+        "szempont."
       ],
-      "english": "Societal resilience in cyberspace is also a decisive factor.",
+      "english": "Societal resilience is an important consideration in cyberspace too.",
       "teaches": [
-        "conclusive-markers"
+        "c1-cyber-warfare-vocab"
       ]
     },
     {
@@ -192,12 +191,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical assessment of Pegasus and surveillance spyware ethics.",
-          "answer": "A kémszoftverek bevetése, független bírói kontroll hiányában, közvetlen veszélyt idéz elő a demokratikus jogállam és a sajtószabadság épségére nézve."
+          "prompt": "Write a critical assessment of spyware use, attributing the view.",
+          "answer": "A kritikusok szerint a kémszoftverek használata független bírói kontroll nélkül veszélyt jelent a sajtószabadságra."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "c1-cyber-warfare-vocab"
       ]
     },
     {
@@ -207,12 +206,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on cyber resilience and digital sovereignty in Central Europe.",
-          "answer": "Mindent egybevetve, a kiberbiztonság nem pusztán technikai feladvány, hanem a nemzeti önrendelkezés, az emberi méltóság és a polgári szabadság huszonegyedik századi záloga."
+          "prompt": "Formulate a concluding thought on cyber resilience, attributing the view.",
+          "answer": "Egyes szakértők szerint a kiberbiztonság nem pusztán technikai kérdés, hanem a társadalmi ellenállóképesség kérdése is."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-cyber-warfare-vocab"
       ]
     }
   ]

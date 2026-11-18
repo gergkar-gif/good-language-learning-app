@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a fő gazdasági indoka a vendégmunkások magyarországi alkalmazásának a multinacionális üzemekben?",
+      "question": "Mivel indokolják a munkáltatók a vendégmunkások alkalmazását?",
       "options": [
-        "A krónikus munkaerőhiány gyors kezelése és a hazai gyári bérek emelkedésének fékezése olcsó, kötött munkaerővel.",
-        "Azt a modellt, amelyben a munkavállalók fele állami, fele magánalkalmazottként dolgozik.",
-        "A fizikai és a szellemi foglalkozásúak közötti adózási különbségtételt."
+        "A betöltetlen állások miatti munkaerőhiánnyal, amelyet nem tudnak pótolni.",
+        "Azzal, hogy a külföldi dolgozók a hazaiaknál lényegesen drágábbak.",
+        "Azzal, hogy a törvény minden gyárat külföldi munkaerő felvételére kötelez."
       ],
       "correct": 0,
       "teaches": [
@@ -22,9 +22,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Míg egyfelől a gyárak olcsó munkaerőhöz jutnak, _____ másfelől a hazai bérek növekedése megtorpan.",
+      "sentence": "Míg egyfelől a gyárak a munkaerőhiányra hivatkoznak, _____ másfelől a szakszervezetek a bérek miatt aggódnak.",
       "hint": "míg … ___",
-      "english": "While on the one hand factories get cheap labor, meanwhile on the other hand domestic wage growth halts.",
+      "english": "While on the one hand the factories refer to the labour shortage, on the other hand the trade unions worry about wages.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
@@ -47,12 +47,12 @@
           "a gyári alkalmazottak számára létesített zárt szálláshely"
         ],
         [
-          "bérverseny visszafogása",
-          "a fizetések emelkedésének megakadályozása olcsó munkaerővel"
+          "munkaerő-toborzás",
+          "dolgozók keresése és felvétele a cégek által"
         ],
         [
           "kiszorítási hatás",
-          "a hazai munkavállalók háttérbe szorulása a munkaerőpiacon"
+          "az a jelenség, amikor az új munkaerő miatt a korábbi dolgozók háttérbe szorulnak"
         ]
       ],
       "teaches": [
@@ -64,9 +64,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Egyrészről a termelés pörög, ezzel _____ a helyi dolgozók elvándorlása folytatódik.",
+      "sentence": "Egyrészről a gyárak új dolgozókat keresnek, ezzel _____ a szakszervezetek a hazai bérekre hívják fel a figyelmet.",
       "hint": "in contrast",
-      "english": "On the one hand production is booming, in contrast with this the out-migration of local workers continues.",
+      "english": "On the one hand the factories are looking for new workers, in contrast the trade unions draw attention to domestic wages.",
       "teaches": [
         "contrastive-discourse-markers"
       ],
@@ -82,28 +82,32 @@
       "tiles": [
         "Míg",
         "egyfelől",
-        "nő",
         "a",
-        "profit,",
+        "gyárak",
+        "munkaerőt",
+        "keresnek,",
         "addig",
         "másfelől",
-        "apad",
         "a",
-        "bér."
+        "szakszervezetek",
+        "béremelést",
+        "kérnek."
       ],
       "solution": [
         "Míg",
         "egyfelől",
-        "nő",
         "a",
-        "profit,",
+        "gyárak",
+        "munkaerőt",
+        "keresnek,",
         "addig",
         "másfelől",
-        "apad",
         "a",
-        "bér."
+        "szakszervezetek",
+        "béremelést",
+        "kérnek."
       ],
-      "english": "While on the one hand profit grows, on the other hand wages dwindle.",
+      "english": "While on the one hand the factories look for workers, on the other hand the trade unions ask for pay rises.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -116,17 +120,17 @@
       "prompt": [
         {
           "speaker": "Munkaerőpiaci elemző",
-          "text": "Miért támogatják a gyárak a vendégmunkás-kvóták emelését?"
+          "text": "Hogyan vitatják a vendégmunkások alkalmazását?"
         },
         {
-          "speaker": "Szakszervezeti aktivista",
-          "text": "Míg egyfelől a gyárosok rugalmasságot nyernek, addig másfelől ez a hazai fizetések _____ jár."
+          "speaker": "Szakszervezeti tárgyaló",
+          "text": "_____ egyfelől a gyárak munkaerőt keresnek, addig másfelől a bérek alakulása aggaszt minket."
         }
       ],
       "options": [
-        "letörésével",
-        "letörésére",
-        "letörését"
+        "Míg",
+        "Mivel",
+        "Hogy"
       ],
       "correct": 0,
       "teaches": [
@@ -140,8 +144,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write an antithetical sentence on guest worker employment using 'Míg egyfelől... addig másfelől'.",
-          "answer": "Míg egyfelől a harmadik országbeli vendégmunkások alkalmazása megoldást nyújt a gyárak azonnali munkaerőhiányára, addig másfelől megakadályozza a magyar dolgozók bérének valódi európai felzárkózását."
+          "prompt": "Write a sentence that sets two views on guest workers against each other with 'Míg egyfelől... addig másfelől'.",
+          "answer": "Míg egyfelől a munkáltatók a harmadik országbeli vendégmunkásokkal pótolják a betöltetlen állásokat, addig másfelől a szakszervezetek attól tartanak, hogy ez fékezi a hazai bérek emelkedését."
         }
       ],
       "teaches": [
@@ -153,7 +157,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fejez ki éles ellentétezést és megosztottságot a munkaerőpiaci érvelésben?",
+      "question": "Melyik szerkezet állít szembe két nézetet a munkaerőpiaci vitában?",
       "options": [
         "Míg egyfelől... addig másfelől",
         "Nemcsak hogy... hanem ráadásul",

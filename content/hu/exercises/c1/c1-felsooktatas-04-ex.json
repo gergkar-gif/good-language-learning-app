@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért tekintik Karikó Katalin és Krausz Ferenc 2023-as Nobel-díját 'keserédes diadalnak' a magyar tudományban?",
+      "question": "Mit ünnepeltek Magyarországon 2023 októberében?",
       "options": [
-        "Mert mindketten külföldi intézményekben érték el korszakalkotó eredményeiket, miután a hazai rendszer forráshiány és intézményi elutasítás miatt nem tudta megtartani őket.",
-        "Mert a kutatásaik tudományos jelentőségét a hazai akadémiai körök kezdetben vitatták.",
-        "Mert a díjazott felfedezések szabadalmi jogai nem maradtak a magyar állam tulajdonában."
+        "Karikó Katalin orvosi és Krausz Ferenc fizikai Nobel-díját.",
+        "Két magyar egyetem közös Erasmus-pályázatának elfogadását.",
+        "A magyar kutatók első közös szabadalmának bejegyzését."
       ],
       "correct": 0,
       "teaches": [
@@ -22,16 +22,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Nemzetközi elemzések alapján _____ a hazai kutatás forráshiánya gyorsítja az agyelszívást.",
-      "hint": "probabilistically",
-      "english": "Probabilistically based on international analyses the domestic research funding shortage accelerates brain drain.",
+      "sentence": "Az elemzők szerint a kutatói pályák vonzereje _____ a finanszírozástól is függ.",
+      "hint": "presumably",
+      "english": "According to analysts the attractiveness of research careers presumably also depends on funding.",
       "teaches": [
         "epistemic-hedging"
       ],
       "answers": [
-        "valószínűsíthetően",
+        "feltehetőleg",
         "valószínűleg",
-        "várhatóan"
+        "feltehetően"
       ]
     },
     {
@@ -41,20 +41,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Nobel-díj az emigrációban",
-          "külföldi kutatóhelyeken elért magyar tudományos csúcssiker"
+          "Nobel-díj",
+          "a tudomány egyik legrangosabb nemzetközi elismerése"
         ],
         [
           "mRNS technológia",
-          "Karikó Katalin által forradalmasított génterápiás módszer"
+          "Karikó Katalin kutatásához kapcsolódó módszer"
         ],
         [
           "attoszekundumos fizika",
-          "Krausz Ferenc által kidolgozott szupergyors fényimpulzus-mérés"
+          "Krausz Ferenc kutatási területe: rendkívül rövid fényimpulzusok"
         ],
         [
-          "intézményi elutasítás",
-          "a tehetséges kutatók támogatásának elutasítása vagy elbocsátása"
+          "kuratórium",
+          "az alapítványi fenntartású egyetem irányító testülete"
         ]
       ],
       "teaches": [
@@ -66,15 +66,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A statisztikai adatok szerint _____ tovább nő a külföldön publikáló magyar tudósok aránya.",
-      "hint": "predictably",
-      "english": "According to statistical data predictably the proportion of Hungarian scientists publishing abroad further grows.",
+      "sentence": "Az elemzők szerint a nemzetközi együttműködés _____ előnyös a tudományos eredményekre.",
+      "hint": "presumably",
+      "english": "According to analysts international cooperation is presumably beneficial for scientific results.",
       "teaches": [
         "epistemic-hedging"
       ],
       "answers": [
-        "prognosztizálható módon",
-        "előreláthatólag",
+        "feltehetőleg",
+        "valószínűleg",
         "várhatóan"
       ]
     },
@@ -85,23 +85,25 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "tudományos",
-        "szabadság",
+        "kutatók",
+        "szerint",
         "a",
-        "Nobel-díjas",
-        "kutatások",
-        "alapja."
+        "nemzetközi",
+        "együttműködés",
+        "feltehetőleg",
+        "előnyös."
       ],
       "solution": [
         "A",
-        "tudományos",
-        "szabadság",
+        "kutatók",
+        "szerint",
         "a",
-        "Nobel-díjas",
-        "kutatások",
-        "alapja."
+        "nemzetközi",
+        "együttműködés",
+        "feltehetőleg",
+        "előnyös."
       ],
-      "english": "Scientific freedom is the foundation of Nobel-caliber research.",
+      "english": "According to researchers international cooperation is presumably beneficial.",
       "teaches": [
         "epistemic-hedging"
       ]
@@ -114,17 +116,17 @@
       "prompt": [
         {
           "speaker": "Kutatóbiológus",
-          "text": "Hazatérhetnek-e a külföldön sikeres magyar tudósok?"
+          "text": "Mit mondanak az elemzők a kutatói pályákról?"
         },
         {
           "speaker": "Akadémikus",
-          "text": "Nemzetközi tapasztalatok alapján valószínűsíthetően csak akkor, ha biztosítjuk a teljes kutatói _____."
+          "text": "Az elemzők szerint a kutatói pálya vonzereje _____ a finanszírozástól is függ."
         }
       ],
       "options": [
-        "autonómiát",
-        "hierarchiát",
-        "kiszolgáltatottságot"
+        "minden bizonnyal",
+        "minden bizonyos",
+        "minden bizonytalan"
       ],
       "correct": 0,
       "teaches": [
@@ -138,8 +140,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence reflecting on Katalin Karikó's Nobel Prize using an epistemic stance marker.",
-          "answer": "Nemzetközi elemzések alapján valószínűsíthetően Karikó Katalin példája arra figyelmeztet, hogy a tudományos tehetségek megtartásához a politikai szlogenek helyett valódi egyetemi autonómiára és méltó alapkutatási finanszírozásra van szükség."
+          "prompt": "Write a sentence about research conditions that hedges a claim and says whose view it is.",
+          "answer": "Az elemzők szerint a kutatói pályák vonzereje minden bizonnyal a finanszírozástól is függ, a kutatók szerint pedig a nemzetközi együttműködés feltehetőleg előnyös."
         }
       ],
       "teaches": [
@@ -151,11 +153,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés tölt be tudományos valószínűséget és hipotézist kifejező szerepet?",
+      "question": "Melyik kifejezés jelzi, hogy valami csak feltételezés?",
       "options": [
-        "nemzetközi elemzések alapján valószínűsíthetően",
-        "a kutatási eredmények sajtóbemutatója sikeresen lezajlott",
-        "a laboratóriumi műszerek beszerzése a tervek szerint halad"
+        "feltehetőleg",
+        "a kutatási eredmények sajtóbemutatója lezajlott",
+        "a műszerek beszerzése a tervek szerint halad"
       ],
       "correct": 0,
       "teaches": [

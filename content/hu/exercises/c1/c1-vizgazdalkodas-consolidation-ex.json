@@ -6,15 +6,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Milyen szerkezettel fejezhetünk ki akut ökológiai fenyegetést és rendszerszintű kockázatot?",
+      "question": "Melyik szó fejezi ki a beszélő értékelését?",
       "options": [
-        "akut válsághelyzetet idéz elő",
-        "a vízgyűjtő területek időszakos hidrológiai ingadozásait rögzítve",
-        "amikor a környezeti hatásvizsgálatok nem mutatnak ki azonnali anomáliákat"
+        "sajnos",
+        "a kutatók szerint",
+        "évente"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "evaluative-stance"
       ]
     },
     {
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Melyik kifejezés fejez ki kötelező érvényű törvényi védelmi imperatívuszt?",
+      "question": "Melyik szerkezet fejez ki kötelezettséget?",
       "options": [
-        "törvényi kötelessége megóvni",
-        "esetlegesen megfontolhatják a tájhasználat módosítását",
-        "szükség szerint egyeztethetnek a gazdálkodókkal a vízkivételről"
+        "kötelessége megóvni",
+        "dönthet a megóvásról",
+        "megfontolhatja a megóvást"
       ],
       "correct": 0,
       "teaches": [
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A Duna és Tisza közötti _____ a klímaváltozás miatt félsivatagosodás fenyegeti.",
-      "hint": "Homokhátság + -ot",
+      "sentence": "Egyes kutatók szerint a Duna és a Tisza közötti _____ félsivatagosodás fenyegeti.",
+      "hint": "Homokhátság (region name), accusative",
       "answer": "homokhátságot",
-      "english": "The sand ridge between Danube and Tisza is threatened by semi-desertification due to climate change.",
+      "english": "According to some researchers desertification threatens the Sand Ridge between the Danube and the Tisza.",
       "teaches": [
         "c1-water-management-vocab"
       ]
@@ -82,9 +82,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Az államnak elemi feladata a stratégiai nemzeti _____ védelme a kizsákmányolástól.",
-      "hint": "water asset",
-      "english": "The state's fundamental task is the protection of strategic national water asset from exploitation.",
+      "sentence": "Egyes szakértők szerint a nemzeti _____ védelme az állam feladata.",
+      "hint": "water asset (Hungarian term)",
+      "english": "According to some experts protecting the national water assets is the state's task.",
       "teaches": [
         "c1-water-management-vocab"
       ],
@@ -97,10 +97,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A kormánynak törvényi _____ megóvni az ország ivóvízkészleteit.",
-      "hint": "kötelesség + -e",
+      "sentence": "Egyes szakértők szerint az államnak _____ megóvni az ivóvízkészleteket.",
+      "hint": "duty (noun, 3rd person possessive)",
       "answer": "kötelessége",
-      "english": "The government has a statutory duty to preserve the country's drinking water reserves.",
+      "english": "According to some experts the state has a duty to protect the drinking water reserves.",
       "teaches": [
         "formal-obligation"
       ]
@@ -110,10 +110,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Minél több vizet tartunk meg a tájban, _____ ellenállóbbak lesznek a mezőgazdasági termőföldek.",
+      "sentence": "Minél több vizet tartunk meg a tájban, _____ ellenállóbbak lehetnek a termőföldek.",
       "hint": "minél … ___",
       "answer": "annál",
-      "english": "The more water we retain in the landscape, the more resilient agricultural soils will be.",
+      "english": "The more water we keep in the landscape, the more resistant farmland can be.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -123,28 +123,24 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Mindent _____, a vízmegtartás a magyar táj jövőjének egyetlen záloga.",
-      "hint": "taking into account",
-      "english": "All things considered, water retention is the sole pledge of the Hungarian landscape's future.",
+      "sentence": "Az aszály miatti károk nem _____ a mezőgazdaságban.",
+      "hint": "negligible (adjective, plural)",
+      "english": "The damage caused by drought is not negligible in agriculture.",
       "teaches": [
-        "conclusive-markers"
+        "litotes-understatement"
       ],
-      "answers": [
-        "összevetve",
-        "egybevetve",
-        "figyelembe véve"
-      ]
+      "answer": "elhanyagolhatók"
     },
     {
       "id": "c1-vizgazdalkodas-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "context",
-      "question": "Mi a funkciója a 'Minél... annál...' arányossági szerkezetnek az ökológiai érvelésben?",
+      "question": "Mit fejez ki a 'minél ... annál ...' szerkezet?",
       "options": [
-        "Bemutatja a természetes beavatkozások egymást erősítő, pozitív kumulatív hatásait.",
-        "Kizárólag a rövid távú árvízvédelmi beavatkozások hatékonyságát méri.",
-        "Kifejezi a tájhasználati módosítások adminisztratív nehézségeit."
+        "Két növekvő mennyiség összefüggését.",
+        "Egyetlen árvízvédelmi beavatkozás hatékonyságát.",
+        "Két egymást kizáró lehetőség közötti választást."
       ],
       "correct": 0,
       "teaches": [
@@ -154,29 +150,31 @@
     {
       "id": "c1-vizgazdalkodas-consolidation-10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
-        "A",
-        "víz",
+        "Nem",
+        "ritka,",
+        "hogy",
+        "nyáron",
+        "alacsony",
         "a",
-        "nemzet",
-        "legféltettebb",
-        "természeti",
-        "kincse."
+        "folyók",
+        "vízállása."
       ],
       "solution": [
-        "A",
-        "víz",
+        "Nem",
+        "ritka,",
+        "hogy",
+        "nyáron",
+        "alacsony",
         "a",
-        "nemzet",
-        "legféltettebb",
-        "természeti",
-        "kincse."
+        "folyók",
+        "vízállása."
       ],
-      "english": "Water is the nation's most cherished natural treasure.",
+      "english": "It is not rare for the rivers' water level to be low in summer.",
       "teaches": [
-        "conclusive-markers"
+        "c1-water-management-vocab"
       ]
     },
     {
@@ -186,12 +184,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical diagnosis of Hungary's water management using an ecological threat framing marker.",
-          "answer": "A felszíni vizek túlzott elvezetése és a mélységi rétegvizek ipari kizsákmányolása akut válsághelyzetet idéz elő, amely közvetlen fenyegetést jelent a Kárpát-medence ivóvízbázisára."
+          "prompt": "Write a sentence about the Sand Ridge using a stance adverb.",
+          "answer": "Aggasztóan süllyedt a talajvíz szintje a Homokhátságon, a kutatók szerint helyenként több méterrel."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "c1-water-management-vocab"
       ]
     },
     {
@@ -201,12 +199,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a concluding thought on water sovereignty and future generations.",
-          "answer": "Mindent összevetve, a vízszuverenitás feltétlen védelme és a természetes vizes élőhelyek helyreállítása az egyetlen felelős válasz a huszonegyedik század éghajlati kihívásaira."
+          "prompt": "Formulate a concluding thought on water sovereignty, attributing the view.",
+          "answer": "Egyes szakértők szerint a vízszuverenitás nem elhanyagolható biztonsági téma."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-water-management-vocab"
       ]
     }
   ]

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi a fő környezeti aggály az akkumulátorgyárak magyarországi telepítésével kapcsolatban?",
+      "question": "Mi az akkumulátorgyárakkal kapcsolatos egyik környezeti aggály?",
       "options": [
-        "A hatalmas napi ipari vízfogyasztásuk és a mélységi vízbázisok elszennyeződésének kockázata a klímasérülékeny térségekben.",
-        "Hogy az üzemek működése kizárólag a helyi munkaerőpiac kapacitására támaszkodik.",
-        "Hogy a létesítmények logisztikája túlterheli a közúti árufuvarozási infrastruktúrát."
+        "A gyárak vízigénye és a vízbázisok szennyeződésének kockázata aszályos térségben.",
+        "Hogy a gyárakban dolgozók munkaidejét a helyi önkormányzat szabályozza egységesen.",
+        "Hogy a gyárak termékei nem alkalmasak elektromos járművekbe való beépítésre."
       ],
       "correct": 0,
       "teaches": [
@@ -22,9 +22,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A hatalmas ipari vízkivétel minden _____ szerint kimeríti a védett rétegvízkészletet.",
+      "sentence": "A nagy ipari vízkivétel minden _____ szerint hatással lesz a rétegvízkészletre.",
       "hint": "in all likelihood",
-      "english": "The enormous industrial water extraction in all likelihood depletes the protected strata water reserve.",
+      "english": "The large industrial water abstraction will in all likelihood affect the confined water reserve.",
       "teaches": [
         "epistemic-hedging"
       ],
@@ -40,15 +40,15 @@
       "pairs": [
         [
           "akkumulátorgyár",
-          "elektromos energiatárolókat előállító gigantikus ipari üzem"
+          "akkumulátorokat gyártó ipari üzem"
         ],
         [
           "rétegvízkészlet",
-          "a föld mélyén fekvő, lassan megújuló tiszta ivóvízbázis"
+          "a föld mélyén fekvő, lassan megújuló ivóvízbázis"
         ],
         [
           "karsztvízbázis",
-          "mészkőhegységek kiterjedt földalatti vízkincse"
+          "mészkőhegységek földalatti vízkészlete"
         ],
         [
           "monitoringrendszer",
@@ -64,9 +64,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A klímamodellek alapján _____ elkerülhetetlen lesz a szigorú lakossági vízkorlátozás.",
-      "hint": "presumably",
-      "english": "Based on climate models presumably strict residential water rationing will be unavoidable.",
+      "sentence": "A modellek alapján a szárazság _____ folytatódik a következő években.",
+      "hint": "presumably (adverb)",
+      "english": "Based on the models, the dry spell will presumably continue in the coming years.",
       "teaches": [
         "epistemic-hedging"
       ],
@@ -83,25 +83,29 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "túlzott",
         "vízkivétel",
-        "bizonytalan",
-        "kimenetellel",
-        "fenyegeti",
+        "hatása",
+        "minden",
+        "valószínűség",
+        "szerint",
+        "érezhető",
+        "lesz",
         "a",
-        "régiót."
+        "kutakban."
       ],
       "solution": [
         "A",
-        "túlzott",
         "vízkivétel",
-        "bizonytalan",
-        "kimenetellel",
-        "fenyegeti",
+        "hatása",
+        "minden",
+        "valószínűség",
+        "szerint",
+        "érezhető",
+        "lesz",
         "a",
-        "régiót."
+        "kutakban."
       ],
-      "english": "Excessive water extraction threatens the region with uncertain outcome.",
+      "english": "The effect of the water abstraction will in all likelihood be felt in the wells.",
       "teaches": [
         "epistemic-hedging"
       ]
@@ -113,12 +117,12 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Aggódó polgár",
-          "text": "Biztonságban van a városunk ivóvize a gyárépítés után?"
+          "speaker": "Aggódó lakó",
+          "text": "Hogyan érinti a kutakat a vízkivétel?"
         },
         {
           "speaker": "Hidrogeológus",
-          "text": "Minden valószínűség szerint a rétegvíz apadása _____ hatással lesz a kutak vízhozamára."
+          "text": "Minden valószínűség szerint _____ hatással lesz a kutakra."
         }
       ],
       "options": [
@@ -128,7 +132,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "c1-water-management-vocab"
       ]
     },
     {
@@ -138,12 +142,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluative sentence on industrial water demand using 'minden valószínűség szerint'.",
-          "answer": "A tervezett gigaberuházások drasztikus vízigénye minden valószínűség szerint felgyorsítja a karsztvízbázisok kimerülését, veszélyeztetve a lakosság egészséges ivóvízellátását."
+          "prompt": "Write a hedged sentence about industrial water demand using 'minden valószínűség szerint'.",
+          "answer": "A nagy vízigényű üzemek minden valószínűség szerint csökkentik a helyi kutak vízszintjét."
         }
       ],
       "teaches": [
-        "epistemic-hedging"
+        "c1-water-management-vocab"
       ]
     },
     {
@@ -151,11 +155,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozószó fejez ki tudományos modellre alapozott episztemikus valószínűséget?",
+      "question": "Melyik kifejezés fejez ki óvatos, modellekre alapozott valószínűséget?",
       "options": [
         "minden valószínűség szerint",
-        "a mérési eredményektől teljesen függetlenül",
-        "az elméleti következtetéseket figyelmen kívül hagyva"
+        "a mérési eredményektől függetlenül",
+        "a modelleket figyelmen kívül hagyva"
       ],
       "correct": 0,
       "teaches": [

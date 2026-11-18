@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan üresítette ki a 'még elégséges szolgáltatás' rendeleti előírása a sztrájkjogot a közoktatásban?",
+      "question": "Mit jelent a 'még elégséges szolgáltatás' a sztrájkjogban?",
       "options": [
-        "Olyan magas szintű kötelező tanítást írt elő a sztrájk idejére, amely láthatatlanná és hatástalanná tette a munkabeszüntetést.",
-        "Kizárólag a tanítási szünetek idejére engedélyezte a sztrájk megszervezését.",
-        "A sztrájkban részt vevő pedagógusok bérének azonnali megkettőzését írta elő."
+        "Azt a minimális szolgáltatást, amelyet sztrájk idején is biztosítani kell.",
+        "A sztrájkot megelőző kötelező hatósági egyeztetést a felek között.",
+        "A sztrájkban részt vevők számára járó külön szabadnapot."
       ],
       "correct": 0,
       "teaches": [
@@ -22,9 +22,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szigorú tiltások minden _____ szerint csak felerősítik a dolgozók felháborodását.",
+      "sentence": "A munkáltatók és a szakszervezetek megállapodása minden _____ szerint hamarosan megszületik.",
       "hint": "probability",
-      "english": "Strict prohibitions in all probability only strengthen workers' indignation.",
+      "english": "The agreement between the employers and the trade unions will in all probability be reached soon.",
       "teaches": [
         "epistemic-hedging"
       ],
@@ -64,16 +64,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az alacsony fizetések miatt _____ felgyorsul a tanárok és orvosok elvándorlása.",
+      "sentence": "A tárgyalások elhúzódása miatt _____ csak a jövő évben születik megállapodás.",
       "hint": "foreseeably",
-      "english": "Due to low wages foreseeably the out-migration of teachers and doctors accelerates.",
+      "english": "Because the negotiations are dragging on, an agreement will foreseeably be reached only next year.",
       "teaches": [
         "epistemic-hedging"
       ],
       "answers": [
         "előreláthatólag",
         "várhatóan",
-        "prognosztizálhatóan"
+        "feltételezhetően",
+        "valószínűleg"
       ]
     },
     {
@@ -83,25 +84,21 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "feszültség",
-        "prognosztizálható",
-        "módon",
-        "robbanáshoz",
-        "vezet",
-        "a",
-        "gyárakban."
+        "tárgyalások",
+        "várhatóan",
+        "hosszú",
+        "ideig",
+        "elhúzódnak."
       ],
       "solution": [
         "A",
-        "feszültség",
-        "prognosztizálható",
-        "módon",
-        "robbanáshoz",
-        "vezet",
-        "a",
-        "gyárakban."
+        "tárgyalások",
+        "várhatóan",
+        "hosszú",
+        "ideig",
+        "elhúzódnak."
       ],
-      "english": "The tension in a predictable manner leads to an explosion in factories.",
+      "english": "The negotiations will, as expected, drag on for a long time.",
       "teaches": [
         "epistemic-hedging"
       ]
@@ -113,18 +110,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Oktatáskutató",
-          "text": "Megoldotta-e a státusztörvény a pedagógushiányt?"
+          "speaker": "Újságíró",
+          "text": "Meddig tarthatnak még a tárgyalások?"
         },
         {
-          "speaker": "Szociológus",
-          "text": "Minden valószínűség szerint a jogfosztás csak _____ a pályaelhagyást."
+          "speaker": "Szakszervezeti tárgyaló",
+          "text": "_____ még hetekig eltartanak."
         }
       ],
       "options": [
-        "gyorsította",
-        "gyorsítana",
-        "gyorsítania"
+        "Minden valószínűség szerint",
+        "Minden valószínűség miatt",
+        "Mindenféle valószínűségben"
       ],
       "correct": 0,
       "teaches": [
@@ -138,8 +135,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence projecting the outcome of union suppression using an epistemic stance adverbial.",
-          "answer": "A sztrájkjog adminisztratív elfojtása minden valószínűség szerint nem az engedelmességet növeli, hanem prognosztizálható módon spontán vadsztrájkokat és a fiatal munkavállalók külföldre vándorlását idézi elő."
+          "prompt": "Write a sentence forecasting a labour dispute with an epistemic stance adverbial.",
+          "answer": "A szakszervezetek szerint a korlátozás várhatóan elégedetlenséget szül, a tárgyalások pedig minden valószínűség szerint elhúzódnak."
         }
       ],
       "teaches": [
@@ -151,7 +148,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés tölt be tudományos valószínűséget és előrejelzést kifejező szerepet?",
+      "question": "Melyik kifejezés fejez ki előrejelzést?",
       "options": [
         "prognosztizálható módon",
         "visszamenőleges hatállyal elrendelve",

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért alakult ki válságos helyzet a budapesti agglomeráció 'alvóvárosaiban'?",
+      "question": "Miért alakult ki nehéz helyzet a budapesti agglomeráció 'alvóvárosaiban' a városkutatók szerint?",
       "options": [
-        "Mert a lakosságszám robbanásszerűen megnőtt, miközben az iskolák, orvosi rendelők és a közösségi közlekedés nem követték a kiköltözés ütemét.",
-        "Mert az iparűzési adó bevételeit kizárólag a fővárosi önkormányzat kapja meg.",
-        "Mert az agglomerációs településeken megszüntették a gépjármű-regisztrációt."
+        "Mert gyorsan nőtt a lakosságszám, az iskolák és a rendelők kapacitása viszont nem bővült vele.",
+        "Mert az agglomerációs településeken megszüntették a gépjármű-regisztrációt.",
+        "Mert az agglomerációs településeken a közutakon tilos az autóhasználat."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-varosfejlesztes-01-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A százezer ingázó autó beáramlása mindennapos közlekedési _____ idéz elő a hidakon.",
-      "hint": "patthelyzet + -et",
-      "english": "The influx of a hundred thousand commuting cars brings about a daily traffic impasse on bridges.",
+      "sentence": "Egyes városkutatók szerint az ingázók nagy száma közlekedési _____ idéz elő a bevezető utakon.",
+      "hint": "patthelyzet, 'impasse', as the object",
+      "english": "According to some urban researchers the large number of commuters causes a traffic impasse on the approach roads.",
       "teaches": [
-        "framing-markers"
+        "c1-urban-sprawl-vocab"
       ],
       "answers": [
         "patthelyzetet"
@@ -48,11 +48,11 @@
         ],
         [
           "autófüggőség",
-          "az a helyzet, amikor a mindennapi élet autó nélkül lehetetlen"
+          "az a helyzet, amikor a mindennapi élet autó nélkül nehezen szervezhető"
         ],
         [
           "közlekedési patthelyzet",
-          "a forgalom teljes megbénulása a hálózat elégtelensége miatt"
+          "a forgalom megállása vagy nagyon lassú haladása a hálózat túlterheltsége miatt"
         ]
       ],
       "teaches": [
@@ -62,48 +62,48 @@
     {
       "id": "c1-varosfejlesztes-01-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A zöldterületek beépítése súlyos feszültséget _____ a helyi lakosság körében.",
-      "hint": "generates",
-      "english": "The building over of green spaces generates severe tension among the local population.",
+      "sentence": "A kritikusok szerint a zöldterületek beépítése feszültséget _____ a helyi lakosság körében.",
+      "hint": "causes",
+      "english": "According to critics building over green areas causes tension among the local residents.",
       "teaches": [
-        "framing-markers"
+        "c1-urban-sprawl-vocab"
       ],
       "answers": [
-        "generál",
-        "szül",
-        "kelt"
+        "kelt",
+        "okoz",
+        "szül"
       ]
     },
     {
       "id": "c1-varosfejlesztes-01-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "A",
+        "Egyes",
+        "kutatók",
+        "szerint",
+        "a",
         "zsúfoltság",
         "patthelyzetet",
         "idéz",
-        "elő",
-        "a",
-        "városi",
-        "utakon."
+        "elő."
       ],
       "solution": [
-        "A",
+        "Egyes",
+        "kutatók",
+        "szerint",
+        "a",
         "zsúfoltság",
         "patthelyzetet",
         "idéz",
-        "elő",
-        "a",
-        "városi",
-        "utakon."
+        "elő."
       ],
-      "english": "Congestion brings about an impasse on city roads.",
+      "english": "According to some researchers congestion causes an impasse.",
       "teaches": [
-        "framing-markers"
+        "c1-urban-sprawl-vocab"
       ]
     },
     {
@@ -114,21 +114,21 @@
       "prompt": [
         {
           "speaker": "Városkutató",
-          "text": "Hogyan oldható meg az elővárosi forgalmi dugók problémája?"
+          "text": "Mit mondanak a szakemberek az elővárosi dugókról?"
         },
         {
-          "speaker": "Közlekedésmérnök",
-          "text": "Az autópályák bővítése nem segít; a kötöttpályás vasút fejlesztése nélkül a patthelyzet csak _____."
+          "speaker": "Közlekedéskutató",
+          "text": "Egyes szakemberek szerint a patthelyzet kötöttpályás fejlesztés nélkül tovább _____."
         }
       ],
       "options": [
-        "mélyül",
+        "mélyülhet",
         "mélyülni",
         "mélyülve"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "c1-urban-sprawl-vocab"
       ]
     },
     {
@@ -138,20 +138,20 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence diagnosing urban traffic congestion using a conflict framing marker.",
-          "answer": "A budapesti agglomeráció robbanásszerű növekedése és a hiányos elővárosi vasúti hálózat mindennapos közlekedési patthelyzetet idéz elő a bevezető utakon, feszültséget generálva az ingázók és a belváros lakói között."
+          "prompt": "Write a sentence naming a problem of commuting around Budapest and whose view it is.",
+          "answer": "Egyes városkutatók szerint az ingázók nagy száma terhelést jelent az agglomerációs települések iskoláira és orvosi rendelőire."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "c1-urban-sprawl-vocab"
       ]
     },
     {
       "id": "c1-varosfejlesztes-01-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik kifejezés tölt be diagnosztizáló szerepet a várostervezési konfliktusok leírásakor?",
+      "question": "Melyik kifejezés nevez meg egy problémát egy városelemzésben?",
       "options": [
         "közlekedési patthelyzetet idéz elő",
         "a kerékpárutak esztétikai vonzerejét dicsérve",
@@ -159,7 +159,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "c1-urban-sprawl-vocab"
       ]
     }
   ]

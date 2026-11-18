@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'vízszuverenitás' fogalma a 21. századi biztonságpolitikában?",
+      "question": "Mit jelent a 'vízszuverenitás'?",
       "options": [
-        "A nemzet jogát és stratégiai képességét arra, hogy saját ivóvízkészleteit és vizeit önállóan védje meg és a közösség javára gazdálkodjon vele.",
-        "A nemzetközi vízgazdálkodási megállapodások teljes felmondásának jogát.",
-        "A magánvállalatok jogát a védett vízkészletek korlátlan kereskedelmi hasznosítására."
+        "Azt, hogy egy ország saját vízkészleteit maga védi és kezeli.",
+        "Azt, hogy az ország felmondja a nemzetközi vízgazdálkodási megállapodásokat.",
+        "Azt, hogy a magánvállalatok korlátlanul értékesíthetik a védett vízkészleteket."
       ],
       "correct": 0,
       "teaches": [
@@ -22,17 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Mindent _____, a vizek helyben tartása a magyar jövő legfőbb záloga.",
-      "hint": "taking into account",
-      "english": "All things considered, retaining waters on site is the foremost pledge of the Hungarian future.",
+      "sentence": "Az aszály miatti károk nem _____ a mezőgazdaságban.",
+      "hint": "negligible (adjective, plural)",
+      "english": "The damage caused by drought is not negligible in agriculture.",
       "teaches": [
-        "conclusive-markers"
+        "litotes-understatement"
       ],
-      "answers": [
-        "összevetve",
-        "egybevetve",
-        "figyelembe véve"
-      ]
+      "answer": "elhanyagolhatók"
     },
     {
       "id": "c1-vizgazdalkodas-05-controlled-3",
@@ -42,15 +38,15 @@
       "pairs": [
         [
           "vízszuverenitás",
-          "az önálló és fenntartható nemzeti vízgazdálkodás joga"
+          "az ország joga saját vízkészleteinek védelmére és kezelésére"
         ],
         [
-          "klímaadaptáció",
+          "klímaadaptációs stratégia",
           "a társadalom felkészülése az éghajlati szélsőségekre"
         ],
         [
           "tájpolitikai fordulat",
-          "radikális váltás a vízmegtartó természetes tájhasználat felé"
+          "váltás a vízmegtartó tájhasználat felé"
         ],
         [
           "generációk közötti szolidaritás",
@@ -66,12 +62,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Konklúzióként _____, hogy a jelenlegi vízelvezető gyakorlat fenntarthatatlan.",
-      "hint": "levon + -ható",
-      "answer": "levonható",
-      "english": "As a conclusion it can be deduced that the current drainage practice is unsustainable.",
+      "sentence": "_____ ritka, hogy nyáron alacsony a folyók vízállása.",
+      "hint": "negation",
+      "answer": "Nem",
+      "english": "It is not rare for the water level of rivers to be low in summer.",
       "teaches": [
-        "conclusive-markers"
+        "litotes-understatement"
       ]
     },
     {
@@ -80,28 +76,26 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Mindent",
-        "összevetve,",
+        "A",
+        "vízhiány",
+        "nem",
+        "kis",
+        "gond",
         "a",
-        "víz",
-        "a",
-        "nemzet",
-        "legdrágább",
-        "kincse."
+        "mezőgazdaságnak."
       ],
       "solution": [
-        "Mindent",
-        "összevetve,",
+        "A",
+        "vízhiány",
+        "nem",
+        "kis",
+        "gond",
         "a",
-        "víz",
-        "a",
-        "nemzet",
-        "legdrágább",
-        "kincse."
+        "mezőgazdaságnak."
       ],
-      "english": "All things considered, water is the nation's most precious treasure.",
+      "english": "Water shortage is no small problem for agriculture.",
       "teaches": [
-        "conclusive-markers"
+        "litotes-understatement"
       ]
     },
     {
@@ -112,21 +106,21 @@
       "prompt": [
         {
           "speaker": "Klímapolitikai szakértő",
-          "text": "Hogyan foglalhatjuk össze a nemzeti vízstratégia lényegét?"
+          "text": "Mennyire súlyos a vízhiány a mezőgazdaságban?"
         },
         {
           "speaker": "Ökológus",
-          "text": "Mindent összevetve, a víz elvezetése helyett a vízmegtartást kell _____ tennünk."
+          "text": "Nem _____ a probléma: sok gazdaságot érint."
         }
       ],
       "options": [
-        "prioritássá",
-        "prioritást",
-        "prioritásra"
+        "elhanyagolható",
+        "elhanyagolás",
+        "elhanyagolva"
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "c1-water-management-vocab"
       ]
     },
     {
@@ -136,12 +130,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a concluding policy synthesis on water conservation using 'Mindent összevetve'.",
-          "answer": "Mindent összevetve, a Kárpát-medence ökológiai megmaradásának egyetlen záloga a holisztikus vízmegtartás és a természeti tőke feltétlen védelme a jövő nemzedékek számára."
+          "prompt": "Write a sentence using 'nem elhanyagolható' about drought.",
+          "answer": "Az aszály miatti károk nem elhanyagolhatók a mezőgazdaságban."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-water-management-vocab"
       ]
     },
     {
@@ -149,15 +143,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés tölt be formális összefoglaló, konklúziót levonó szerepet az esszéírásban?",
+      "question": "Melyik kifejezés jelenti azt, hogy valami jelentős?",
       "options": [
-        "Mindent összevetve",
-        "Az előzetes várakozásoknak megfelelően",
-        "A tárgyalások kezdeti szakaszában"
+        "nem elhanyagolható",
+        "elhanyagolható",
+        "nem jelentős"
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "litotes-understatement"
       ]
     }
   ]

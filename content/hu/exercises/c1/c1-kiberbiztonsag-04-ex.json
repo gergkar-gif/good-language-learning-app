@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit ír elő az 'adatminimalizálás' (data minimization) elve a GDPR szerint?",
+      "question": "Mit ír elő az adatminimalizálás elve a GDPR szerint?",
       "options": [
-        "Hogy a szervezetek kizárólag a feltétlenül szükséges mértékű és típusú személyes adatot gyűjthetik és kezelhetik a megjelölt cél érdekében.",
-        "Hogy az adatbázisokat minél kisebb betűmérettel kell kinyomtatni papírra.",
-        "Hogy a cégek csak heti egyetlen emailt küldhetnek az ügyfeleiknek."
+        "Hogy csak a megjelölt célhoz szükséges személyes adatot szabad gyűjteni és kezelni.",
+        "Hogy az adatbázisokat a lehető legkisebb betűmérettel kell kinyomtatni.",
+        "Hogy a cégek ügyfeleiknek hetente legfeljebb egy e-mailt küldhetnek."
       ],
       "correct": 0,
       "teaches": [
@@ -22,7 +22,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "_____ az ellátási lánc, annál nagyobb a rejtett sebezhetőségek beépülésének kockázata.",
+      "sentence": "_____ az ellátási lánc, annál nagyobb a rejtett sebezhetőségek kockázata.",
       "hint": "The more complex",
       "english": "The more complex the supply chain, the greater the risk of embedding hidden vulnerabilities.",
       "teaches": [
@@ -65,15 +65,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Minél kiterjedtebb az adathalászat, _____ válik a digitálisan képzetlen lakosság.",
-      "hint": "the more vulnerable",
-      "english": "The more extensive the phishing, the more vulnerable the digitally uneducated population becomes.",
+      "sentence": "Minél több adatot gyűjtenek rólunk, _____ nagyobb a visszaélés veszélye.",
+      "hint": "the more ... (correlative)",
+      "english": "The more data is collected about us, the greater the risk of abuse.",
       "teaches": [
         "correlative-minel-annal"
       ],
       "answers": [
-        "annál sebezhetőbbé",
-        "annál kiszolgáltatottabbá"
+        "annál"
       ]
     },
     {
@@ -114,21 +113,21 @@
       "prompt": [
         {
           "speaker": "Adatvédelmi tisztviselő",
-          "text": "Mekkora kockázatot jelent a felhasználói adatok korlátlan gyűjtése?"
+          "text": "Miért kockázatos sok adatot egy helyen tárolni?"
         },
         {
           "speaker": "Biztonsági auditor",
-          "text": "Minél több adatot tárolunk egy helyen, annál kívánatosabb _____ válik az adatbázis a hackerek számára."
+          "text": "Minél több adatot tárolunk egy helyen, annál vonzóbb _____ válik az adatbázis a támadók számára."
         }
       ],
       "options": [
         "célponttá",
-        "játékszerré",
-        "ajándékká"
+        "célpont",
+        "célpontnak"
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "c1-cyber-warfare-vocab"
       ]
     },
     {
@@ -138,8 +137,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a proportional analytical sentence about artificial intelligence using 'minél... annál...'.",
-          "answer": "Minél önállóbban működnek az autonóm algoritmusok, annál nélkülözhetetlenebbé válik a szigorú és átlátható jogi felelősségre vonhatóság garantálása."
+          "prompt": "Write a sentence about personal data using 'minél ... annál ...'.",
+          "answer": "Minél több személyes adatot gyűjtenek egy szolgáltatásról, annál szigorúbb védelemre van szükség."
         }
       ],
       "teaches": [
@@ -151,11 +150,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kötőszópáros fejez ki fokozott arányossági viszonyt (proportional correlative)?",
+      "question": "Melyik pár fejez ki arányos változást: ha az egyik több, a másik is több?",
       "options": [
-        "minél... annál",
-        "holott... mégis",
-        "miután... ezért"
+        "minél ... annál",
+        "holott ... mégis",
+        "miután ... ezért"
       ],
       "correct": 0,
       "teaches": [

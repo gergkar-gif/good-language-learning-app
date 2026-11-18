@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért tekintik a debreceni Komondor szuperszámítógépen betanított PULI modellt mérföldkőnek?",
+      "question": "Mit fejlesztettek a Nyelvtudományi Kutatóközpont kutatói?",
       "options": [
-        "Mert ez az első független, nemzeti kutatók által ellenőrzött és finomhangolt magyar alapmodell, amely megvédi nyelvi szuverenitásunkat.",
-        "Mert ez a leggyorsabb kereskedelmi szoftver, amelyet külföldi techcégek licenceltek a globális pénzügyi piacok elemzésére.",
-        "Mert ez az első olyan digitális fordítórendszer, amely hivatalos minősítést kapott a nemzetközi diplomáciai tolmácsolásban."
+        "Egy PULI nevű nyelvmodellt, amelyet a magyar nyelvre fejlesztettek.",
+        "Egy fordítóprogramot, amelyet külföldi bankok használnak pénzügyi elemzésre.",
+        "Egy tolmácsrendszert, amelyet nemzetközi szervezetek hivatalosan minősítettek."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Minél gazdagabb a magyar tanítókorpusz, _____ pontosabb és választékosabb lesz a mesterséges intelligencia válasza.",
+      "sentence": "A fejlesztők szerint minél gazdagabb a magyar tanítókorpusz, _____ pontosabb lehet a modell válasza.",
       "hint": "minél … ___",
-      "answer": "annál",
-      "english": "The richer the Hungarian training corpus, the more accurate and sophisticated the artificial intelligence's answer will be.",
+      "english": "According to the developers the richer the Hungarian training corpus, the more accurate the model's answer can be.",
       "teaches": [
         "correlative-minel-annal"
+      ],
+      "answers": [
+        "annál"
       ]
     },
     {
@@ -38,7 +40,7 @@
       "pairs": [
         [
           "PULI modell",
-          "hazai kutatók által épített szuverén magyar nyelvmodell"
+          "magyar nyelvre fejlesztett nyelvmodell"
         ],
         [
           "szuperszámítógép",
@@ -46,11 +48,11 @@
         ],
         [
           "korpuszépítés",
-          "hiteles, minőségi nemzeti szövegadatbázis összeállítása"
+          "szövegek gyűjtése és rendezése a modell tanításához"
         ],
         [
           "kulturális hűség",
-          "a helyi értékek és történelmi kontextus pontos megőrzése"
+          "a helyi értékek és a történelmi kontextus pontos megőrzése"
         ]
       ],
       "teaches": [
@@ -62,12 +64,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "_____ jobban elhanyagoljuk a hazai fejlesztéseket, annál kiszolgáltatottabbá válunk a külföldi algoritmusoknak.",
+      "sentence": "_____ több magyar szöveg áll rendelkezésre, annál pontosabb lehet a modell.",
       "hint": "___ … annál",
-      "answer": "Minél",
-      "english": "The more we neglect domestic developments, the more vulnerable we become to foreign algorithms.",
+      "english": "The more Hungarian text is available, the more accurate the model can be.",
       "teaches": [
         "correlative-minel-annal"
+      ],
+      "answers": [
+        "Minél"
       ]
     },
     {
@@ -79,25 +83,27 @@
         "Minél",
         "több",
         "a",
-        "saját",
-        "adat,",
+        "magyar",
+        "szöveg,",
         "annál",
-        "erősebb",
+        "jobb",
+        "lehet",
         "a",
-        "szuverenitás."
+        "modell."
       ],
       "solution": [
         "Minél",
         "több",
         "a",
-        "saját",
-        "adat,",
+        "magyar",
+        "szöveg,",
         "annál",
-        "erősebb",
+        "jobb",
+        "lehet",
         "a",
-        "szuverenitás."
+        "modell."
       ],
-      "english": "The more our own data, the stronger the sovereignty.",
+      "english": "The more Hungarian text there is, the better the model can be.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -110,16 +116,16 @@
       "prompt": [
         {
           "speaker": "Adattudós",
-          "text": "Mi múlik a szuverén magyar modell sikerén?"
+          "text": "Mitől függ a nyelvmodell minősége?"
         },
         {
-          "speaker": "Nyelvész kutató",
-          "text": "Minél bátrabban fektetünk be a PULI fejlesztésébe, _____ önállóbbak maradunk a szellemi életben."
+          "speaker": "Fejlesztő",
+          "text": "Minél több szöveggel tanítjuk, _____ pontosabb lehet."
         }
       ],
       "options": [
         "annál",
-        "azzal",
+        "akkor",
         "abból"
       ],
       "correct": 0,
@@ -134,8 +140,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a proportional correlative sentence demonstrating the value of national language technology using 'Minél... annál...'.",
-          "answer": "Minél tudatosabban építjük a minőségi magyar szövegkorpuszokat és a hazai modelleket, annál ellenállóbbá válik anyanyelvünk a globális digitális asszimilációval szemben."
+          "prompt": "Write a sentence with 'Minél... annál...' about training a language model, and say whose expectation it is.",
+          "answer": "A fejlesztők szerint minél több minőségi magyar szöveggel tanítják a modelleket, annál pontosabbak lehetnek a válaszaik."
         }
       ],
       "teaches": [
@@ -147,7 +153,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kötőszópár fejez ki funkcionális kölcsönhatást a technológiai fejlesztés és a nyelvi minőség között?",
+      "question": "Melyik kötőszópár fejez ki arányos összefüggést?",
       "options": [
         "Minél... annál...",
         "Ezért... emiatt...",

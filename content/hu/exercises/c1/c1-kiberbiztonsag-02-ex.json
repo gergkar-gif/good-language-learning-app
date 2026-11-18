@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért tekinthető a katonai minőségű kémszoftver (pl. Pegasus) 'fegyverként használt szoftvernek'?",
+      "question": "Miért mondják a Pegasust 'fegyverként használt szoftvernek'?",
       "options": [
-        "Mert felhasználói beavatkozás nélkül (zero-click) töri fel a telefont, átveszi a mikrofon, a kamera és a titkosított csevegések teljes irányítását.",
-        "Mert fizikailag tönkreteszi a készülék mikroprocesszorát és túlfeszültséget idéz elő az akkumulátor töltési áramkörében.",
-        "Mert kéretlen vírusirtóként működve letiltja az engedély nélküli alkalmazások letöltését a hivatalos áruházakból."
+        "Mert a telefont a tulajdonos beavatkozása nélkül is megfertőzheti, és titokban adatokat gyűjt.",
+        "Mert fizikailag tönkreteszi a telefon processzorát és az akkumulátorát.",
+        "Mert a hivatalos áruházakból eltávolítja az engedély nélküli alkalmazásokat."
       ],
       "correct": 0,
       "teaches": [
@@ -20,19 +20,15 @@
     {
       "id": "c1-kiberbiztonsag-02-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A jogállami működés szigorú előzetes bírói _____ a megfigyelések előtt.",
-      "hint": "authorization demands",
-      "english": "The rule of law demands strict prior judicial authorization before surveillance.",
+      "sentence": "A törvény auditkötelezettséget _____ elő a megfigyelést végző szervek számára.",
+      "hint": "prescribe (3rd person, indefinite)",
+      "english": "The law prescribes an audit duty for the bodies that carry out surveillance.",
       "teaches": [
-        "formal-obligation"
+        "c1-cyber-warfare-vocab"
       ],
-      "answers": [
-        "engedélyezést követel meg",
-        "engedélyt követel meg",
-        "engedélyezést ír elő"
-      ]
+      "answer": "ír"
     },
     {
       "id": "c1-kiberbiztonsag-02-controlled-3",
@@ -66,48 +62,42 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A kibervédelmi szabályozás részletes megfelelési _____ valamennyi állami intézménynek.",
-      "hint": "minimum sets",
-      "english": "The cybersecurity regulation sets a detailed compliance minimum for all state institutions.",
+      "sentence": "A szabályozás megfelelési minimumot _____ meg az állami intézmények számára.",
+      "hint": "set (a limit), 3rd person",
+      "english": "The regulation sets a minimum compliance standard for state institutions.",
       "teaches": [
         "formal-obligation"
       ],
-      "answers": [
-        "minimumot szab meg",
-        "minimumot ír elő",
-        "minimumot határoz meg"
-      ]
+      "answer": "szab"
     },
     {
       "id": "c1-kiberbiztonsag-02-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "A",
-        "törvény",
+        "Az",
+        "emberi",
+        "jogi",
+        "szervezetek",
         "független",
         "bírói",
         "kontrollt",
-        "ír",
-        "elő",
-        "minden",
-        "esetben."
+        "követelnek."
       ],
       "solution": [
-        "A",
-        "törvény",
+        "Az",
+        "emberi",
+        "jogi",
+        "szervezetek",
         "független",
         "bírói",
         "kontrollt",
-        "ír",
-        "elő",
-        "minden",
-        "esetben."
+        "követelnek."
       ],
-      "english": "The law prescribes independent judicial oversight in every case.",
+      "english": "Human rights organisations demand independent judicial control.",
       "teaches": [
-        "formal-obligation"
+        "c1-cyber-warfare-vocab"
       ]
     },
     {
@@ -118,21 +108,21 @@
       "prompt": [
         {
           "speaker": "Vizsgálóbizottsági tag",
-          "text": "Hogyan garantálható, hogy a kémszoftvereket ne használják politikai ellenfelek ellen?"
+          "text": "Hogyan előzhető meg, hogy a kémszoftvereket politikai ellenfelek ellen használják?"
         },
         {
-          "speaker": "Ombudsman",
-          "text": "A jogszabálynak szigorú, előzetes és független bírói _____ kell megkövetelnie."
+          "speaker": "Jogvédő",
+          "text": "Az emberi jogi szervezetek szerint a jogszabálynak független bírói _____ kell megkövetelnie."
         }
       ],
       "options": [
         "engedélyezést",
-        "segítséget",
-        "ünneplést"
+        "engedélyezésre",
+        "engedélyezéssel"
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "c1-cyber-warfare-vocab"
       ]
     },
     {
@@ -142,12 +132,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Formulate a legal mandate on spyware regulation using 'garanciákat követel meg'.",
-          "answer": "A demokratikus jogállam szigorú eljárási garanciákat követel meg, hogy megakadályozza az újságírók és jogvédők politikai motivációjú megfigyelését."
+          "prompt": "Formulate a legal requirement on spyware using 'garanciákat követel meg'.",
+          "answer": "Az emberi jogi szervezetek szerint a jogállam szigorú eljárási garanciákat követel meg a megfigyelésnél."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "c1-cyber-warfare-vocab"
       ]
     },
     {
@@ -155,7 +145,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik állítmány fejez ki kötelező erejű jogszabályi előírást (deontic regulatory predicate)?",
+      "question": "Melyik állítmány fejez ki jogszabályi előírást?",
       "options": [
         "auditkötelezettséget ír elő",
         "reményét fejezi ki",

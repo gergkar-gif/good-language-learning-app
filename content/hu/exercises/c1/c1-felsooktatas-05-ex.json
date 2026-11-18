@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'tudományos szuverenitás' fogalma a 21. századi tudománypolitikában?",
+      "question": "Mit jelent a 'tudományos szuverenitás' kifejezés a tudománypolitikában?",
       "options": [
-        "A nemzet azon képességét, hogy független, nemzetközileg integrált és politikailag nem befolyásolt intézményekben saját maga termelje újra a magas szintű tudást és innovációt.",
-        "A hazai kutatóhelyek szigorúbb állami finanszírozási felügyeletét és a nemzetközi projektek helyett a belső pályázatok előnyben részesítését.",
-        "A szabadalmi bevételek és technológiai licencek kiemelt állami tulajdonrészének fenntartását a hazai vállalatok védelmében."
+        "Azt a képességet, hogy egy ország saját intézményeiben állítsa elő a magas szintű tudást.",
+        "Azt, hogy a hazai kutatóhelyeket szigorúbb állami finanszírozási felügyelet alatt tartják.",
+        "Azt, hogy a szabadalmi bevételekből az állam kiemelt részt tart meg."
       ],
       "correct": 0,
       "teaches": [
@@ -20,17 +20,17 @@
     {
       "id": "c1-felsooktatas-05-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "Mindent _____, a szabad egyetemi szellem a nemzeti felemelkedés legfőbb záloga.",
-      "hint": "summarizing",
-      "english": "Summarizing everything, free university spirit is the foremost pledge of national elevation.",
+      "sentence": "Mindent _____, a vita az egyetemek önállóságának mértékéről szól.",
+      "hint": "taking into account",
+      "english": "All things considered, the debate is about the degree of the universities' independence.",
       "teaches": [
-        "conclusive-markers"
+        "c1-university-model-change-vocab"
       ],
       "answers": [
-        "összegezve",
-        "egybevetve"
+        "egybevetve",
+        "figyelembe véve"
       ]
     },
     {
@@ -41,19 +41,19 @@
       "pairs": [
         [
           "tudományos szuverenitás",
-          "az önálló, szabad kutatás és innováció nemzeti képessége"
+          "az ország képessége, hogy saját intézményeiben folytasson kutatást"
         ],
         [
           "agyvisszaszívás",
-          "a külföldön élő magyar kutatók hazacsábításának programja"
+          "a külföldön élő kutatók hazahívását célzó programok"
         ],
         [
           "kritikai gondolkodás",
-          "az előítéletektől és hatalmi elvárásoktól mentes önálló elemzés"
+          "az állítások önálló vizsgálata"
         ],
         [
           "egyetemi önrendelkezés",
-          "az oktatók és hallgatók joga intézményük demokratikus vezetésére"
+          "az egyetemek joga a saját ügyeik intézésére"
         ]
       ],
       "teaches": [
@@ -63,44 +63,40 @@
     {
       "id": "c1-felsooktatas-05-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Végső akadémiai _____ kijelenthető, hogy autonómia nélkül nincs nemzetközileg versenyképes tudomány.",
-      "hint": "conclusion / konklúzió + -ként",
-      "answer": "konklúzióként",
-      "english": "As a final academic conclusion it can be stated that without autonomy there is no internationally competitive science.",
+      "sentence": "_____ megállapítható, hogy a modellváltásról többféle vélemény létezik.",
+      "hint": "összegzés, 'summary', as an adverb",
+      "answer": "Összegzésképpen",
+      "english": "In summary it can be stated that there are several opinions about the model change.",
       "teaches": [
-        "conclusive-markers"
+        "c1-university-model-change-vocab"
       ]
     },
     {
       "id": "c1-felsooktatas-05-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "Mindent",
-        "összegezve,",
+        "A",
+        "fentiek",
+        "tükrében",
         "a",
-        "szabad",
-        "egyetem",
-        "a",
-        "nemzet",
-        "jövője."
+        "vita",
+        "folytatódik."
       ],
       "solution": [
-        "Mindent",
-        "összegezve,",
+        "A",
+        "fentiek",
+        "tükrében",
         "a",
-        "szabad",
-        "egyetem",
-        "a",
-        "nemzet",
-        "jövője."
+        "vita",
+        "folytatódik."
       ],
-      "english": "Summarizing everything, the free university is the nation's future.",
+      "english": "In the light of the above the debate continues.",
       "teaches": [
-        "conclusive-markers"
+        "c1-university-model-change-vocab"
       ]
     },
     {
@@ -110,22 +106,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Egyetemi rektor",
-          "text": "Hogyan foglalható össze a magyar felsőoktatás jövője?"
+          "speaker": "Újságíró",
+          "text": "Hogyan foglalható össze a vita?"
         },
         {
-          "speaker": "Akadémikus professzor",
-          "text": "Mindent összegezve, az egyetemi autonómia helyreállítása az európai jövőnk egyetlen járható _____."
+          "speaker": "Oktató",
+          "text": "_____ egyes oktatók az európai együttműködést tartják fontosnak."
         }
       ],
       "options": [
-        "útja",
-        "lehetősége",
-        "alternatívája"
+        "A fentiek tükrében",
+        "A fentiek tükrébe",
+        "A fentieknek tükrében"
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "c1-university-model-change-vocab"
       ]
     },
     {
@@ -135,28 +131,28 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a concluding synthesis on university autonomy and scientific sovereignty using 'Mindent összegezve'.",
-          "answer": "Mindent összegezve, a magyar felsőoktatás megújulásának és a tudományos szuverenitás megőrzésének egyetlen feltétele az egyetemi autonómia helyreállítása, a tanszabadság törvényi védelme és az európai kutatási integráció visszaállítása."
+          "prompt": "Write a concluding sentence about university autonomy with 'Mindent egybevetve', and say whose view it is.",
+          "answer": "Mindent egybevetve, a vita arról szól, mekkora önállóságot kapjanak az egyetemek; a felek álláspontja ebben eltér."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-university-model-change-vocab"
       ]
     },
     {
       "id": "c1-felsooktatas-05-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik kifejezés tölt be ünnepélyes, akadémiai összegző funkciót a tézis zárlatában?",
+      "question": "Melyik kifejezés alkalmas arra, hogy összegezzünk egy vitát?",
       "options": [
-        "Mindent összegezve",
+        "Mindent egybevetve",
         "A tanszéki értekezlet jegyzőkönyvét áttekintve",
         "A laboratóriumi mérések sorozatát folytatva"
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "c1-university-model-change-vocab"
       ]
     }
   ]

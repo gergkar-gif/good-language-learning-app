@@ -4,17 +4,17 @@
     {
       "id": "c1-visegrad-05-introduce-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "introduce",
-      "question": "Miért tekinti a modern külpolitikai elemzés veszélyes illúziónak a 'hídszerepet' Közép-Európában?",
+      "question": "Mit jelent az a kép, hogy egy ország 'kompország'?",
       "options": [
-        "Mert a két eltérő civilizációs blokk közötti 'híd' valójában nem biztosít egyensúlyt, hanem ütközőzónává és felvonulási területté teszi a régiót a nagyhatalmak számára.",
-        "Mert a regionális gazdasági integráció feleslegessé teszi az önálló külpolitikai fellépést.",
-        "Mert a geopolitikai szövetségi kötelezettségek kizárják a kétoldalú kereskedelmet."
+        "Olyan országot, amely két part, Kelet és Nyugat között ingázik.",
+        "Olyan országot, amelynek gazdaságát a vízi szállítás határozza meg.",
+        "Olyan országot, amely mindkét partot elzárja a szomszédaitól."
       ],
       "correct": 0,
       "teaches": [
-        "c1-visegrad-group-vocab"
+        "metaphor"
       ]
     },
     {
@@ -22,16 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "_____ Közép-Európa nem maradhat meg a két világ közötti semleges zónában.",
-      "hint": "In the final analysis",
-      "english": "In the final analysis, Central Europe cannot remain in a neutral zone between two worlds.",
+      "sentence": "Az _____ képe szerint a térség két hatalmi blokk közé szorul.",
+      "hint": "buffer state",
+      "english": "In the image of the buffer state the region is squeezed between two power blocs.",
       "teaches": [
-        "conclusive-markers"
+        "metaphor"
       ],
-      "answers": [
-        "Végeredményben",
-        "Végső soron"
-      ]
+      "answer": "ütközőállam"
     },
     {
       "id": "c1-visegrad-05-controlled-3",
@@ -40,20 +37,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "hídszerep illúziója",
-          "veszélyes el nem köteleződési kísérlet"
+          "hídszerep",
+          "összekötő szerep Kelet és Nyugat között"
         ],
         [
-          "mag-Európa",
-          "legszorosabban integrálódó uniós mag"
+          "kompország",
+          "két part között ingázó ország"
         ],
         [
-          "stratégiai autonómia",
-          "független európai cselekvőképesség"
+          "ütközőállam",
+          "két hatalmi blokk közé szorult állam"
         ],
         [
-          "összefogás",
-          "térségi szolidaritás"
+          "átjáróház",
+          "hely, amelyen mindenki átvonulhat"
         ]
       ],
       "teaches": [
@@ -63,17 +60,15 @@
     {
       "id": "c1-visegrad-05-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "_____ nézve a V4 gazdasági súlya meghaladja a legtöbb nyugati középállamét.",
-      "hint": "Overall",
-      "english": "Overall, the economic weight of the V4 exceeds that of most western medium-sized states.",
+      "sentence": "Ady képe szerint Magyarország _____, amely Kelet és Nyugat partjai között ingázik.",
+      "hint": "'ferry country' (one word)",
+      "english": "In Ady's image Hungary is a ferry country that shuttles between the shores of East and West.",
       "teaches": [
-        "conclusive-markers"
+        "c1-visegrad-group-vocab"
       ],
-      "answers": [
-        "Összességében"
-      ]
+      "answer": "kompország"
     },
     {
       "id": "c1-visegrad-05-practice-5",
@@ -81,28 +76,30 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Közép-Európa",
-        "jövője",
-        "az",
-        "európai",
-        "demokratikus",
-        "szövetség",
-        "megkérdőjelezhetetlen",
-        "része."
+        "Egyes",
+        "elemzők",
+        "szerint",
+        "a",
+        "híd",
+        "nem",
+        "menedék,",
+        "hanem",
+        "átjáróház."
       ],
       "solution": [
-        "Közép-Európa",
-        "jövője",
-        "az",
-        "európai",
-        "demokratikus",
-        "szövetség",
-        "megkérdőjelezhetetlen",
-        "része."
+        "Egyes",
+        "elemzők",
+        "szerint",
+        "a",
+        "híd",
+        "nem",
+        "menedék,",
+        "hanem",
+        "átjáróház."
       ],
-      "english": "Central Europe's future is an unquestionable part of the European democratic alliance.",
+      "english": "According to some analysts the bridge is not a refuge but a thoroughfare.",
       "teaches": [
-        "conclusive-markers"
+        "metaphor"
       ]
     },
     {
@@ -113,21 +110,21 @@
       "prompt": [
         {
           "speaker": "Filozófus",
-          "text": "Hogyan oldható fel Ady 'kompország' tragédiája?"
+          "text": "Mit mond Ady képe Magyarországról?"
         },
         {
           "speaker": "Történész",
-          "text": "Végleges és egyértelmű nyugati intézményi és kulturális _____."
+          "text": "Azt, hogy az ország Kelet és Nyugat _____ ingázik."
         }
       ],
       "options": [
-        "elköteleződéssel",
-        "elköteleződéshez",
-        "elköteleződésről"
+        "között",
+        "közé",
+        "közül"
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "c1-visegrad-group-vocab"
       ]
     },
     {
@@ -137,12 +134,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a summation sentence about the strategic future of Central Europe.",
-          "answer": "Végeredményben Közép-Európa történelmi stabilitása azon múlik, hogy a térség nemzetei képesek-e feladni a veszélyes hintapolitikát, és elkötelezetten a nyugati jogállami szövetség oszlopaiként fellépni."
+          "prompt": "Write a sentence that explains an image for Central Europe and says whose it is.",
+          "answer": "Ady Endre képe szerint Magyarország kompország, amely két part között ingázik."
         }
       ],
       "teaches": [
-        "conclusive-markers"
+        "c1-visegrad-group-vocab"
       ]
     },
     {
@@ -150,15 +147,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik partikula szolgál végső, összegző következtetés levonására politikai elemzésben?",
+      "question": "Melyik mondat használ metaforát?",
       "options": [
-        "végeredményben",
-        "mindenekelőtt",
-        "első megközelítésben"
+        "A híd nem menedék, hanem átjáróház.",
+        "A híd építése több évig tartott.",
+        "A hídon naponta sok autó halad át."
       ],
       "correct": 0,
       "teaches": [
-        "conclusive-markers"
+        "metaphor"
       ]
     }
   ]

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért zárta ki az Európai Unió a modellváltott magyar egyetemeket az Erasmus+ és Horizont programokból?",
+      "question": "Mit döntött az Európai Unió Tanácsa 2022 decemberében az alapítványi fenntartású egyetemekről?",
       "options": [
-        "Mert az Európai Unió szerint a kuratóriumok politikai összeférhetetlensége sérti az uniós pénzek átlátható és korrupciómentes felhasználását.",
-        "Mert a magyar diákok nemzetközi vizsgaeredményei elmaradtak az uniós átlagtól.",
-        "Mert az egyetemek nem rendelkeztek a kötelező digitális akkreditációval."
+        "Azt, hogy velük az uniós forrásokból nem vállalhatók új jogi kötelezettségek.",
+        "Azt, hogy a magyar diákoknak kötelező az uniós átlagos vizsgaeredmény.",
+        "Azt, hogy az egyetemeknek kötelező digitális akkreditációt szerezniük."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-felsooktatas-02-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A kormánynak törvényi kötelessége _____ a tanszabadságot és a kutatók függetlenségét.",
+      "sentence": "A bírálók szerint az államnak kötelessége _____ a tanszabadságot és a kutatók függetlenségét.",
       "hint": "to guarantee",
-      "english": "The government has a statutory duty to guarantee academic freedom and the independence of researchers.",
+      "english": "According to the critics the state has a duty to guarantee academic freedom and the independence of researchers.",
       "teaches": [
-        "formal-obligation"
+        "c1-university-model-change-vocab"
       ],
       "answers": [
         "garantálni",
@@ -46,15 +46,15 @@
         ],
         [
           "Horizont Európa",
-          "az Európai Unió legjelentősebb kutatás-innovációs keretprogramja"
+          "az Európai Unió kutatási és innovációs keretprogramja"
         ],
         [
           "forrásbefagyasztás",
-          "a támogatási pénzek kifizetésének jogi felfüggesztése"
+          "a támogatási pénzek felhasználásának felfüggesztése"
         ],
         [
           "összeférhetetlenségi szabály",
-          "a politikai és egyetemi vezetői posztok összefonódásának tilalma"
+          "a közérdek és a magánérdek vagy más tisztség összefonódásának tilalma"
         ]
       ],
       "teaches": [
@@ -64,40 +64,46 @@
     {
       "id": "c1-felsooktatas-02-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A jogalkotónak szigorú összeférhetetlenségi tilalmat kell _____ a kuratóriumok tagjaira.",
-      "hint": "prescribe / előír, inf 3sg",
-      "answer": "előírnia",
-      "english": "The legislator must prescribe a strict conflict-of-interest ban on board members.",
+      "sentence": "Egyes jogászok szerint a jogalkotónak összeférhetetlenségi szabályokat kellene _____ a kuratóriumok tagjaira.",
+      "hint": "előír, 'to prescribe'",
+      "english": "According to some lawyers the legislator should prescribe conflict-of-interest rules for the members of the boards.",
       "teaches": [
-        "formal-obligation"
+        "c1-university-model-change-vocab"
+      ],
+      "answers": [
+        "előírnia"
       ]
     },
     {
       "id": "c1-felsooktatas-02-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "Kötelességünk",
-        "visszaszerezni",
+        "A",
+        "bírálók",
+        "szerint",
         "a",
         "diákok",
-        "európai",
-        "Erasmus-jogait."
+        "Erasmus-lehetősége",
+        "fontos",
+        "kérdés."
       ],
       "solution": [
-        "Kötelességünk",
-        "visszaszerezni",
+        "A",
+        "bírálók",
+        "szerint",
         "a",
         "diákok",
-        "európai",
-        "Erasmus-jogait."
+        "Erasmus-lehetősége",
+        "fontos",
+        "kérdés."
       ],
-      "english": "It is our duty to regain students' European Erasmus rights.",
+      "english": "According to the critics the students' Erasmus opportunity is an important issue.",
       "teaches": [
-        "formal-obligation"
+        "c1-university-model-change-vocab"
       ]
     },
     {
@@ -108,21 +114,21 @@
       "prompt": [
         {
           "speaker": "Egyetemista",
-          "text": "Hogyan utazhatunk újra Erasmusszal külföldre?"
+          "text": "Mit mondanak a szakértők az Erasmus-kizárásról?"
         },
         {
           "speaker": "Oktatásjogi szakértő",
-          "text": "Az államnak kötelessége garantálni a politikai összeférhetetlenség felszámolását és az egyetemi autonómia _____."
+          "text": "Egyes jogászok szerint elengedhetetlen volna _____ az összeférhetetlenségi szabályokat."
         }
       ],
       "options": [
-        "visszaállítását",
-        "korlátozását",
-        "felülvizsgálatát"
+        "szigorítani",
+        "szigorítva",
+        "szigorítás"
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "c1-university-model-change-vocab"
       ]
     },
     {
@@ -132,20 +138,20 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence demanding statutory guarantees for academic freedom using 'kötelessége garantálni'.",
-          "answer": "A mindenkori kormánynak elidegeníthetetlen alkotmányos kötelessége garantálni a tanszabadságot és felszámolni a politikai összeférhetetlenséget az egyetemek élén az Erasmus-tagság helyreállítása érdekében."
+          "prompt": "Write a sentence reporting a demand about academic freedom and whose it is.",
+          "answer": "Egyes jogászok szerint az államnak kötelessége garantálni a tanszabadságot, és elengedhetetlen volna összeférhetetlenségi szabályokat előírni a kuratóriumokban."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "c1-university-model-change-vocab"
       ]
     },
     {
       "id": "c1-felsooktatas-02-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik kifejezés testesíti meg az akadémiai szabadságot védő kógens kötelezettséget?",
+      "question": "Melyik kifejezés fejez ki kötelességet?",
       "options": [
         "kötelessége garantálni a tanszabadságot",
         "javaslatot tehet a tanrend korszerűsítésére",
@@ -153,7 +159,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "c1-university-model-change-vocab"
       ]
     }
   ]

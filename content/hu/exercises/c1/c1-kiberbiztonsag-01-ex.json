@@ -4,34 +4,31 @@
     {
       "id": "c1-kiberbiztonsag-01-introduce-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "introduce",
-      "question": "Mit ért a katonai doktrína a 'kibertér mint hadszíntér' kifejezés alatt?",
+      "question": "Mit jelent a 'kibertér mint hadszíntér' kifejezés?",
       "options": [
-        "Azt, hogy a szárazföld, a tenger, a levegő és a világűr mellett a digitális információs tér hivatalosan is az önálló hadműveletek ötödik dimenziójává vált.",
-        "Azt, hogy a modern haderők fejlett szimulációs szoftverek és virtuális környezetek segítségével készítik fel a parancsnoki állományt.",
-        "A toborzóirodák és a katonai logisztikai raktárak internetes honlapjainak és nyilvános információs felületeinek üzemeltetését."
+        "Azt, hogy a támadások a hálózatokon folynak, és a katonai gondolkodás is számol velük.",
+        "Azt, hogy a katonák mostantól csak szimulációs programokkal gyakorolnak.",
+        "Azt, hogy a hadseregek honlapjait külön katonai szerverek üzemeltetik."
       ],
       "correct": 0,
       "teaches": [
-        "c1-cyber-warfare-vocab"
+        "metaphor"
       ]
     },
     {
       "id": "c1-kiberbiztonsag-01-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A villamos hálózat vezérlésének megbénítása akut _____ a társadalom működésére.",
-      "hint": "national security risk bears",
-      "english": "Paralyzing the control of electrical grid bears acute national security risk for the functioning of society.",
+      "sentence": "Egy _____ a hálózat védelmét szolgáló program: nem tűz ellen, hanem illetéktelen behatolók ellen véd.",
+      "hint": "firewall (one word)",
+      "english": "A firewall is a program that protects the network: it protects against unauthorised intruders, not against fire.",
       "teaches": [
-        "framing-markers"
+        "c1-cyber-warfare-vocab"
       ],
-      "answers": [
-        "nemzetbiztonsági kockázatot hordoz",
-        "nemzetbiztonsági kockázatot jelent"
-      ]
+      "answer": "tűzfal"
     },
     {
       "id": "c1-kiberbiztonsag-01-controlled-3",
@@ -63,23 +60,20 @@
     {
       "id": "c1-kiberbiztonsag-01-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A biztonsági frissítések elmulasztása közvetlen _____ a szerverpark stabilitására.",
-      "hint": "poses immediate danger",
-      "english": "Neglecting security patches poses immediate danger to the stability of the server farm.",
+      "sentence": "Az adatokat titkosító és váltságdíjat követelő kártevő neve _____.",
+      "hint": "ransomware (one word)",
+      "english": "The malware that encrypts data and demands a ransom is called ransomware.",
       "teaches": [
-        "framing-markers"
+        "c1-cyber-warfare-vocab"
       ],
-      "answers": [
-        "veszélyt idéz elő",
-        "veszélyt jelent"
-      ]
+      "answer": "zsarolóvírus"
     },
     {
       "id": "c1-kiberbiztonsag-01-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -101,7 +95,7 @@
       ],
       "english": "The attack poses an immediate danger to security of supply.",
       "teaches": [
-        "framing-markers"
+        "c1-cyber-warfare-vocab"
       ]
     },
     {
@@ -111,22 +105,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Hálózatbiztonsági parancsnok",
-          "text": "Hogyan minősítsük a transzformátorállomások elleni kísérletet?"
+          "speaker": "Hálózatbiztonsági szakértő",
+          "text": "Mit kockáztat egy kórház, ha zsarolóvírus titkosítja az adatait?"
         },
         {
           "speaker": "Elemző",
-          "text": "Ez a behatolás akut nemzetbiztonsági _____ rejt magában, és azonnali védelmi készültséget igényel."
+          "text": "Akut _____ rejt magában a betegellátásra nézve."
         }
       ],
       "options": [
         "kockázatot",
-        "lehetőséget",
-        "meglepetést"
+        "kockázat",
+        "kockázatban"
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "c1-cyber-warfare-vocab"
       ]
     },
     {
@@ -137,11 +131,11 @@
       "template": [
         {
           "prompt": "Write a threat analysis sentence using 'közvetlen veszélyt idéz elő'.",
-          "answer": "A kórházi vezérlőrendszerek elégtelen titkosítása közvetlen veszélyt idéz elő a betegellátás folyamatosságára nézve."
+          "answer": "A zsarolóvírus-támadás közvetlen veszélyt idéz elő a betegellátásra nézve."
         }
       ],
       "teaches": [
-        "framing-markers"
+        "c1-cyber-warfare-vocab"
       ]
     },
     {
@@ -149,15 +143,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés fejez ki súlyos nemzetbiztonsági fenyegetést a kiberbiztonsági diskurzusban?",
+      "question": "Melyik mondat használ képes kifejezést?",
       "options": [
-        "akut nemzetbiztonsági kockázatot hordoz / közvetlen veszélyt idéz elő / sérülékenységet tár fel",
-        "hálózati forgalmat monitoroz / statisztikai kimutatást készít / biztonsági mentést hajt végre",
-        "felhasználói jogosultságot frissít / adminisztratív bejelentést rögzít / szerverkapacitást növel"
+        "A kibertér ma már hadszíntér is.",
+        "A hadszíntér a hegyek között található.",
+        "A hadszíntér jól látható a térképen."
       ],
       "correct": 0,
       "teaches": [
-        "framing-markers"
+        "metaphor"
       ]
     }
   ]

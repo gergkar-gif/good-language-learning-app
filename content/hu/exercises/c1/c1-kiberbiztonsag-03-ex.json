@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen áttörést hoz az Európai Unió NIS2-irányelve a vállalati kibervédelemben?",
+      "question": "Mit ír elő az Európai Unió NIS2-irányelve?",
       "options": [
-        "Kötelezővé teszi a 24 órán belüli incidensbejelentést, kiterjeszti a felelősséget a felsővezetésre, és szigorú bírságokat szab ki a mulasztásokra.",
-        "Ingyenes kiberbiztonsági szoftvercsomagot biztosít a magánszemélyek és az egyéni vállalkozók otthoni számítógépei számára.",
-        "Előírja a számítógépek folyamatos éjszakai készenlétét a minisztériumokban az informatikai frissítések letöltéséhez."
+        "Szigorúbb kiberbiztonsági és incidensbejelentési kötelezettségeket a fontos ágazatok szervezeteinek.",
+        "Ingyenes kiberbiztonsági szoftvercsomagot minden magánszemély otthoni számítógépére.",
+        "Az állami számítógépek éjszakai kikapcsolását minden szoftverfrissítés idejére."
       ],
       "correct": 0,
       "teaches": [
@@ -22,7 +22,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A támadás komplexitása alapján az akciót _____ egy állami háttérrel rendelkező egység szervezte.",
+      "sentence": "A támadás bonyolultsága alapján az akciót _____ egy állami háttérrel rendelkező egység szervezte.",
       "hint": "in all likelihood",
       "english": "Based on the complexity of the attack, the action was in all likelihood organized by a unit with state backing.",
       "teaches": [
@@ -66,7 +66,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A logfájlok elemzése alapján az elkövetők _____ több hónapon át észrevétlenül tartózkodtak a rendszerben.",
+      "sentence": "A rendszer naplója alapján az elkövetők _____ több hónapon át észrevétlenül tartózkodtak a rendszerben.",
       "hint": "presumably",
       "english": "Based on the analysis of log files, the perpetrators presumably remained unnoticed in the system for several months.",
       "teaches": [
@@ -90,7 +90,7 @@
         "minden",
         "valószínűség",
         "szerint",
-        "orosz",
+        "külföldi",
         "nyomokat",
         "hagytak."
       ],
@@ -100,11 +100,11 @@
         "minden",
         "valószínűség",
         "szerint",
-        "orosz",
+        "külföldi",
         "nyomokat",
         "hagytak."
       ],
-      "english": "The attackers in all likelihood left Russian traces.",
+      "english": "In all likelihood the attackers left foreign traces.",
       "teaches": [
         "epistemic-hedging"
       ]
@@ -121,17 +121,17 @@
         },
         {
           "speaker": "Hálózatelemző",
-          "text": "A technikai bizonyítékok minden valószínűség szerint egy keleti APT-csoportra utalnak, ám a felelősségvállalás teljes bizonyossággal nem _____."
+          "text": "A technikai bizonyítékok minden valószínűség szerint egy külföldi csoportra utalnak, ám a felelősség teljes bizonyossággal nem _____."
         }
       ],
       "options": [
         "bizonyítható",
-        "tagadható",
-        "ünnepelhető"
+        "bizonyítani",
+        "bizonyításra"
       ],
       "correct": 0,
       "teaches": [
-        "epistemic-hedging"
+        "c1-cyber-warfare-vocab"
       ]
     },
     {
@@ -141,12 +141,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a threat attribution assessment sentence using 'minden valószínűség szerint'.",
-          "answer": "A támadás módszertana és a célpontok köre minden valószínűség szerint államilag támogatott szereplők beavatkozását valószínűsíti."
+          "prompt": "Write a threat attribution sentence using 'minden valószínűség szerint'.",
+          "answer": "A támadás módja és a célpontok köre minden valószínűség szerint államilag támogatott szereplőkre utal."
         }
       ],
       "teaches": [
-        "epistemic-hedging"
+        "c1-cyber-warfare-vocab"
       ]
     },
     {
@@ -154,11 +154,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés fejez ki óvatos, magas valószínűségű tényattribúciót (epistemic uncertainty marker)?",
+      "question": "Melyik kifejezés fejez ki óvatos, de magas valószínűséget?",
       "options": [
         "minden valószínűség szerint",
-        "biztosan nem és soha",
-        "teljesen kizárt módon"
+        "kétségtelenül és véglegesen",
+        "csekély valószínűség szerint"
       ],
       "correct": 0,
       "teaches": [
