@@ -1,0 +1,31 @@
+# Facts: hu c1 visegrad-group (after the fixes)
+
+claim | where | sure / check
+- Charles I (Károly Róbert) of Hungary, Casimir III (the Great) of Poland and John of Luxembourg, king of Bohemia, met at Visegrád in 1335 | story 01, voc 01, ex 01 | sure (month/season dropped: "őszén" removed; check if the reviewer wants November)
+- At the meeting they are said to have agreed on trade routes avoiding the Vienna staple right | story 01 | check (hedged *a hagyomány szerint*; historians' weight on it varies)
+- The present V4 name refers to the medieval meeting | story 01 | sure
+- "Több mint hat és fél évszázaddal később" (1335 to 1991 = 656 years; the old text said five and a half: wrong) | story 01 | sure
+- Visegrád Declaration signed Feb 1991 (15 Feb) by Havel (Czechoslovak president), Antall (Hungarian PM), Wałęsa (Polish president) | story 01 | sure
+- Aims: end of communist legacy, democratic rule-of-law state, joint accession to European and Euro-Atlantic organisations (paraphrase; declaration not quoted) | story 01, ex 01 introduce | sure as paraphrase
+- Comecon and the Warsaw Pact military structures ceased in 1991 | story 01 | sure (Comecon June 1991; military structures April 1991; political structures July 1991)
+- Czechoslovakia dissolved 1993, V4 has four members since | story 01 | sure
+- Via Carpatia runs from the Baltic coast to the Aegean (Klaipėda to Thessaloniki); in Hungary via Miskolc and Debrecen; not fully built | story 02, voc 02 | sure; "not fully built" check (2026)
+- LNG terminals at Świnoujście (Poland) and Krk (Croatia) | story 02 | sure; Klaipėda (Lithuania) removed (not V4)
+- Interconnectors reduced dependence on Russian gas (old text: "megtörte az orosz gázmonopóliumot") | story 02, ex consolidation 5 | sure as "reduced"
+- Cold-war pipelines mostly east-west (Barátság oil pipeline) | story 02 | sure
+- Russia launched a full-scale invasion of Ukraine on 24 Feb 2022 | story 03 | sure
+- V4 acted jointly against mandatory migration quotas (2015 on) | story 03 | sure
+- Poland and Czechia supported Ukraine with weapons and humanitarian aid | story 03 | sure
+- Hungary (Fidesz-KDNP government, from 2022) supplied no weapons and criticised energy sanctions, citing energy dependence and the safety of Hungarians in Transcarpathia | story 03, ex 03 production | sure as the government's stated reasons; the position belongs to the past government (check: new government since May 2026, no claim made about it)
+- Slovak position changed after the autumn 2023 change of government | story 03 | check (state military aid stopped; stated vaguely)
+- "Elemzők szerint a különbségek megnehezítették a V4 közös fellépését" | story 03 | check (attributed generally)
+- Accession to the EU in 2004 (Czechia, Hungary, Poland, Slovakia) | story 04 | sure
+- Cohesion funds financed motorways, railways, sewage plants, research centres in part | story 04 | sure
+- V4 repeatedly took a joint line on cohesion funds in MFF talks | story 04 | sure (e.g. 2012-13, 2020)
+- Some net-contributor states pushed for rule-of-law conditionality | story 04 | sure
+- Three Seas Initiative launched 2015, links countries between the Baltic, Adriatic and Black Seas; "twelve" removed (Greece joined 2023) | story 04, ex 04 | sure (2015); membership number deliberately not stated
+- Aim: north-south digital, energy, transport links, with private capital | story 04 | sure; "supporters say it strengthens resilience" attributed
+- MFF is a seven-year framework | ex 04 matching | sure
+- Ady's image of the ferry country (Komp-ország), linked to Ady | story 05, voc 05 | sure as a paraphrase (reviewer: 1905); no quotation
+- Kundera's essay on the tragedy of Central Europe, 1980s (1983 French, 1984 English) | story 05 | sure as paraphrase; old text "keleti despociák" (a misspelling, not a quotation) removed
+- The bridge-vs-thoroughfare view is attributed to "egyes elemzők"; the integration-vs-sovereignty debate described in one line | story 05 | check (generic; no named source)
