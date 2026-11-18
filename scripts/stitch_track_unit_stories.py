@@ -185,6 +185,13 @@ def stitch_language_track(lang: str, level: str, track_id: str, lang_audio_code:
             encoding="utf-8"
         )
         updated_count += 1
+        if only_unit:
+            # the paragraphs are rebuilt, the title and summary are kept: after a
+            # read-through they still describe the old text (HU C1 culture 9-24,
+            # 2026-11-18: 16 readings kept generator summaries, two with facts
+            # the readers had corrected)
+            print(f"  kept title: {combined.get('title')!r}\n  kept summary: {(combined.get('summary') or '')[:160]!r}\n"
+                  f"  -> rewrite both if the segments changed ({combined_path.relative_to(ROOT) if 'ROOT' in globals() else combined_path})")
 
     print(f"{lang} {level} ({track_id}): stitched {updated_count} consolidated unit stories")
 
