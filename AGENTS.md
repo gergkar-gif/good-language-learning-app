@@ -157,6 +157,8 @@ Carried over from `docs/archive/PLANNING.md`; the rules that still apply to cont
 
 **Readings.** Early readings are short and simple. The Carlos and Meg narrative should visibly develop, including the relationship. Avoid vocabulary and grammar not yet taught, and avoid repeating the same word (`sonreir`, `sonrisa`) across readings.
 
+**Classics: say what the text is (user, 2026-11-18; check at every read-through).** The Library prints "Adapted from <work> by <author>" for any story with an `author`. Set `"about": true` on a text that discusses a writer or a work (life, ideas, reception) and `"inspired": true` on an original story on a work's themes; only a real adaptation of a public-domain work keeps "Adapted from". A work whose author died less than 70 years ago is never adapted. `work` is a real title by that author; `author` is in the course language's name order. `check-content` flags doubtful ones (`story-attribution`; death years in `AUTHOR_DIED`, `scripts/check-content.py`). Rulebook: docs/unit-agent-rules.md § 4.
+
 **Grammar to Workshop.** After teaching a conjugation pattern, give a clear route into Workshop practice where the architecture supports it, and use the same grammar-skill IDs across lessons, exercises, Workshop and the grammar reference.
 
 **Product shape.** Core navigation is Home, Lessons, Library, Workshop, Decks, Journey. Library is for reading, Workshop for active manipulation and production, Decks for review, and the grammar reference is a permanent lookup resource, not another lesson sequence. Visual rules live in `DESIGN.md`.

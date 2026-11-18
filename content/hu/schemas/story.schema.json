@@ -50,6 +50,7 @@
     "author": { "type": "string", "description": "Classics and current-events only." },
     "work": { "type": "string", "description": "Classics and current-events only: the original work, or the source article's title." },
     "inspired": { "type": "boolean", "description": "Classics only: an original text written around a work's themes, not an adaptation of it. The reader says \"Inspired by\" instead of \"Adapted from\"." },
+    "about": { "type": "boolean", "description": "Classics only: an original text about the author or the work (its life, ideas, reception), not an adaptation of it and not a story on its themes. The reader says \"About\" instead of \"Adapted from\". Check it at every read-through: a text that discusses a writer must not say it is adapted from them." },
     "sourceUrl": { "type": "string", "description": "Current-events only: link to the original Wikipedia/news article being adapted. Not currently rendered, kept for provenance." },
     "text": {
       "type": "string",

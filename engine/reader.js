@@ -1689,6 +1689,14 @@ window.Reader = {
     // "Next in the Latin America series" when the learner has started that
     // shelf and this is its first unread part; "Adapted from <work> by
     // <author>" for a classic; otherwise null (caller keeps its own reason).
+    // How a classic relates to its source: an adaptation of the work, an
+    // original text on its themes (`inspired`), or an original text about
+    // the author or the work (`about`, e.g. an essay on Bibó's ideas).
+    _sourceVerb(story) {
+        if (story.about) return 'About ';
+        return story.inspired ? 'Inspired by ' : 'Adapted from ';
+    },
+
     _specificReason(story, readIds) {
         const series = this._seriesOf(story);
         if (series) {
@@ -1699,7 +1707,7 @@ window.Reader = {
             }
         }
         if (story.author) {
-            return (story.inspired ? 'Inspired by ' : 'Adapted from ') + (story.work ? story.work + ' by ' : '') + story.author;
+            return this._sourceVerb(story) + (story.work ? story.work + ' by ' : '') + story.author;
         }
         return null;
     },
@@ -2268,7 +2276,7 @@ window.Reader = {
         // publication (story.source) instead of implying a book.
         const isCurrent = story.type === 'current';
         if ((isClassic || isCurrent) && (story.work || story.author)) {
-            let adapted = story.inspired ? 'Inspired by ' : 'Adapted from ';
+            let adapted = self._sourceVerb(story);
             if (isCurrent && story.source) adapted += self.escapeHtml(story.source) + ': ';
             if (story.work) adapted += '<em>' + self.escapeHtml(story.work) + '</em>';
             if (story.work && story.author) adapted += ' by ';

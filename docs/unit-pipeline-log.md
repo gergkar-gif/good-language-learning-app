@@ -288,6 +288,11 @@ not verified:
   app's grader; a lesson with no entry (generated placeholder) fails.
 - `python scripts/check_c1_forms.py <course> <level>` (HU): no C1 formula in screens,
   items, goals or challenges (added 2026-11-11 after the HU B2 pass).
+- Attribution (user, 2026-11-18): `check-content` reports no
+  `story-attribution`, and every classic's Library line is true ("Adapted
+  from" only for an adaptation of a public-domain work; "About" for a text
+  about a writer or work; "Inspired by" for an original story on its
+  themes). HU C1 had 36 texts about writers labelled "Adapted from".
 - Reader library: stories the manifest lists with no unit and not hidden are
   open to learners but read by no batch (ES B1: 29, with false labels and
   wrong plots). List them (`content/<course>/stories/manifest.json`: level,

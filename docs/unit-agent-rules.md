@@ -110,6 +110,17 @@ between *yo/tú/él* or *este/ese/aquel* is that paradigm's grammar skill;
   Reader shows an English toggle.
 - Glosses read right to an English speaker (*terem* = "large room", not
   "hall").
+- Attribution of a classic or unit text (user, 2026-11-18; check it in every
+  read-through): the Library prints "Adapted from <work> by <author>" for a
+  story with an `author`. A text that discusses a writer or a work (their
+  life, ideas, reception; "Bibó 1946-ban írta …") gets `"about": true` and
+  reads "About …"; an original story on a work's themes gets
+  `"inspired": true`. A work whose author died less than 70 years ago is
+  never "adapted": it is `about` or `inspired`. `work` names a real title
+  by that author (not "X esszéi", not the author's own name, not an event
+  they took part in); `author` is in Hungarian name order. `check-content`
+  flags a doubtful one as `story-attribution` (keep `AUTHOR_DIED` in
+  `scripts/check-content.py` complete when a new writer appears).
 - Challenge per lesson in `content/<course>/curriculum/challenges.json`:
   one scenario with the story's people, nobody else answers for the
   learner, the scenario mentions what the target talks about; cues say

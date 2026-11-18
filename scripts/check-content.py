@@ -60,6 +60,7 @@ CHECKS = {
     # ES B2 batches 15-30, 2026-11-13: agents kept padding texts about a work with talk
     # about the text itself, though the brief forbids it (four batches running)
     "story-meta": "a classic text talks about itself, the course or its reader instead of the work",
+    "story-attribution": "a classic with an `author` and neither `about` nor `inspired`: the Library says \"Adapted from <work> by <author>\", but the text names its author near the start (so it is about them) or the author died less than 70 years ago (an in-copyright work is not adapted; the text is about it or inspired by it). Mark `about`/`inspired`, or rewrite (HU C1 2026-11-18: 36 texts about writers said \"Adapted from\")",
     # ES B2, 2026-11-14: "Fuentes quería que el lector…", "Algunos lectores señalaron…" in items
     "item-reader": "an item or challenge (B2+, Spanish) says what unnamed readers or critics think or do",
     # options (brief § 6.3)
@@ -135,7 +136,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"character-role", "character-extra", "story-meta", "item-reader", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"character-role", "character-extra", "story-meta", "story-attribution", "item-reader", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -809,6 +810,50 @@ STORY_META_HU = re.compile(r"\b(az olvaso(?:k)? (?:szamara|azt|ugy|is|most|itt)|
                            r"parafrazis, nem idezet|nem szo szerinti idezet|ez a tortenet bizonytalan|de ez a tortenet bizonytalan|ellenorizendo)\b")
 
 
+# Death years of writers whose works may still be in copyright (EU: 70 years
+# after the author's death). Add a writer when a classic by them is written;
+# an unlisted one is treated as public domain, so keep this list complete.
+AUTHOR_DIED = {
+    "marai sandor": 1989, "szabo magda": 2007, "ottlik geza": 1990, "orkeny istvan": 1979,
+    "veres peter": 1970, "tamasi aron": 1966, "suto andras": 2006, "nemeth laszlo": 1975,
+    "meszoly miklos": 2001, "kertesz imre": 2016, "illyes gyula": 1983, "fust milan": 1967,
+    "fekete istvan": 1970, "esterhazy peter": 2016, "dery tibor": 1977, "bibo istvan": 1979,
+    "konrad gyorgy": 2019, "kornai janos": 2021, "pilinszky janos": 1981, "szucs jeno": 1988,
+    "erdei ferenc": 1971, "polanyi mihaly": 1976, "solyom laszlo": 2023, "kalmar laszlo": 1976,
+    "szent-gyorgyi albert": 1986, "nagy lajos": 1954, "molnar ferenc": 1952, "weores sandor": 1989,
+    "kaan karoly": 1940, "neumann janos": 1957,
+}
+CURRENT_YEAR = 2026
+
+
+def _author_key(name):
+    """'Kálmán Mikszáth' and 'Mikszáth Kálmán' give the same key."""
+    words = sorted(fold(name).replace("baro ", "").split())
+    for k in AUTHOR_DIED:
+        if sorted(k.split()) == words:
+            return k
+    return " ".join(words)
+
+
+def story_attribution(story):
+    """Why a classic's "Adapted from" line is doubtful, or None."""
+    if story.get("type") not in ("classic", "classics") or not story.get("author"):
+        return None
+    if story.get("about") or story.get("inspired"):
+        return None
+    reasons = []
+    for part in re.split(r"\s*(?:&|/|,| és )\s*", story["author"]):
+        died = AUTHOR_DIED.get(_author_key(part))
+        if died and CURRENT_YEAR - died < 70:
+            reasons.append(f"{part.strip()} died {died}: work in copyright")
+    head = fold(" ".join(p.get("text", "") for p in story.get("paragraphs", []) if p.get("lang") != "en")[:600])
+    surnames = {w for part in re.split(r"\s*(?:&|/|,| és )\s*", story["author"]) for w in fold(part).split() if len(w) > 3}
+    named = [w for w in surnames if re.search(rf"\b{re.escape(w)}\b", head)]
+    if named:
+        reasons.append(f"the text names {named[0]} in its opening")
+    return "; ".join(reasons) or None
+
+
 def check_story(src, course, level, ref, L):
     """Placeholder content in a lesson's story: copied comprehension questions, key words it doesn't use."""
     out, rel = [], f"content/{course}/{ref}"
@@ -834,6 +879,9 @@ def check_story(src, course, level, ref, L):
             m = STORY_META_HU.search(fold(p.get("text", ""))) if p.get("lang") != "en" else None
             if m:
                 out.append(("story-meta", Path(ref).stem, m.group(0), rel))
+    why = story_attribution(story)
+    if why:
+        out.append(("story-attribution", Path(ref).stem, why, rel))
     if course.startswith("es-"):
         for p in story.get("paragraphs", []):
             sent = perfecto_marker(p.get("text", "")) if p.get("lang") != "en" else None
