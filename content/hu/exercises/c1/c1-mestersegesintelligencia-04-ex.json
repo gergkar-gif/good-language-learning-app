@@ -20,16 +20,14 @@
     {
       "id": "c1-mestersegesintelligencia-04-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
       "stage": "controlled",
-      "sentence": "Fontos, _____ az orvos mondja ki a végső szót.",
-      "hint": "that",
-      "english": "It is important that the physician has the final say.",
+      "category": "grammar",
+      "sentence": "Sok orvos szerint _____ döntsön az orvos a beteggel együtt.",
+      "hint": "'let'",
+      "answer": "hadd",
+      "english": "According to many doctors, let the doctor decide together with the patient.",
       "teaches": [
-        "hogy-jon-jen"
-      ],
-      "answers": [
-        "hogy"
+        "optative-subjunctive"
       ]
     },
     {
@@ -77,33 +75,27 @@
     {
       "id": "c1-mestersegesintelligencia-04-practice-5",
       "type": "sentence-builder",
-      "category": "vocabulary",
       "stage": "practice",
+      "category": "grammar",
       "tiles": [
-        "A",
-        "klinikai",
-        "validáció",
-        "nélkül",
-        "nem",
-        "alkalmazható",
-        "orvosi",
-        "döntéstámogató",
-        "rendszer."
+        "Mit",
+        "tegyünk,",
+        "ha",
+        "az",
+        "algoritmus",
+        "téved?"
       ],
       "solution": [
-        "A",
-        "klinikai",
-        "validáció",
-        "nélkül",
-        "nem",
-        "alkalmazható",
-        "orvosi",
-        "döntéstámogató",
-        "rendszer."
+        "Mit",
+        "tegyünk,",
+        "ha",
+        "az",
+        "algoritmus",
+        "téved?"
       ],
-      "english": "Without clinical validation, no medical decision support system may be applied.",
+      "english": "What should we do if the algorithm is wrong?",
       "teaches": [
-        "c1-ai-ethics-vocab"
+        "optative-subjunctive"
       ]
     },
     {
@@ -137,32 +129,32 @@
     {
       "id": "c1-mestersegesintelligencia-04-production-7",
       "type": "structured-writing",
-      "category": "writing",
       "stage": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence on medical AI ethics with bármilyen ... is or fontos, hogy.",
-          "answer": "Bármilyen megbízható is a diagnosztikai neurális hálózat, fontos, hogy a végső terápiás döntést az orvos hozza meg a beteg beleegyezésével."
+          "prompt": "Write a sentence with 'hadd' about who should make the final decision, saying whose view it is.",
+          "answer": "Sok orvos szerint hadd hozza meg a végső döntést az orvos a beteggel együtt."
         }
       ],
       "teaches": [
-        "c1-ai-ethics-vocab"
+        "optative-subjunctive"
       ]
     },
     {
       "id": "c1-mestersegesintelligencia-04-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
       "stage": "check",
-      "question": "Melyik mondat jelenti azt, hogy a szoftver kifinomultsága nem változtat azon, hogy az orvos dönt?",
+      "category": "grammar",
+      "question": "Melyik mondat kérdezi, mit kellene tenni?",
       "options": [
-        "Bármilyen kifinomult is a szoftver, az orvos dönt.",
-        "Mivel kifinomult a szoftver, az orvos dönt.",
-        "Ha kifinomult a szoftver, az orvos nem dönt."
+        "Bízzunk-e a gépben, ha nem tudjuk, hogyan döntött?",
+        "Bízunk a gépben, mert tudjuk, hogyan döntött.",
+        "Bíztunk a gépben, bár nem tudtuk, hogyan döntött."
       ],
       "correct": 0,
       "teaches": [
-        "concessive-indefinites"
+        "optative-subjunctive"
       ]
     }
   ]
