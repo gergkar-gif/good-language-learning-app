@@ -1,0 +1,1071 @@
+[
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-01-ex.json",
+  "id": "c1-monetaris-01-introduce-1",
+  "set": {
+   "options": [
+    "A világtörténelem valaha mért legmagasabb havi áremelkedési ütemét.",
+    "A világtörténelem valaha mért legmagasabb éves munkanélküliségi rátáját.",
+    "A világtörténelem valaha mért leghosszabb ideig tartó áremelkedését."
+   ],
+   "correct": 0
+  },
+  "why": "give-away length and absurd wrong options; plausible one-fault options",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-01-ex.json",
+  "id": "c1-monetaris-01-controlled-2",
+  "set": {
+   "hint": "pénzromlás, the thing that was halted",
+   "teaches": [
+    "acc-poss"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint gave the answer (pénzromlás + -át); retired tag; possessed noun plus accusative",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-01-ex.json",
+  "id": "c1-monetaris-01-practice-4",
+  "set": {
+   "sentence": "A forint kezdeti hitelességét a visszaszerzett nemzeti _____ is erősítette.",
+   "english": "The retrieved national gold reserve also strengthened the initial credibility of the forint.",
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"harminc tonna\" figure removed (not certain); retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-01-ex.json",
+  "id": "c1-monetaris-01-practice-5",
+  "set": {
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-01-ex.json",
+  "id": "c1-monetaris-01-dialogue-6",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Történész",
+     "text": "Hogyan sikerült rövid idő alatt megállítani az elszabadult hiperinflációt?"
+    },
+    {
+     "speaker": "Gazdaságtörténész",
+     "text": "A szigorú bérplafon és a valós _____ megléte visszaadta a pénzbe vetett hitet."
+    }
+   ],
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "distractor_skills": {
+    "1": "how-the-accusative-t-works",
+    "2": "val-vel"
+   }
+  },
+  "why": "\"egyetlen nap alatt\" is wrong (the stabilisation took weeks); case choice: real accusative and instrumental forms in the wrong options",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-01-ex.json",
+  "id": "c1-monetaris-01-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence reflecting on the lesson of the 1946 monetary stabilization.",
+     "answer": "Az 1946-os valutareform tanulsága, hogy a monetáris stabilitás alapja a fedezetlen pénzkibocsátás kerülése és az intézményi hitelesség."
+    }
+   ],
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ]
+  },
+  "why": "model answer simplified (\"máig ható\" unmet); retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-01-ex.json",
+  "id": "c1-monetaris-01-check-8",
+  "set": {
+   "question": "Miért volt szükség szigorú bér- és árplafonra a forint bevezetésekor?",
+   "options": [
+    "Hogy az új fizetőeszköz értéke ne romoljon meg azonnal.",
+    "Hogy a bankok a bankjegyeket azonnal aranyra cseréljék.",
+    "Hogy a külföldi hitelezők törölhessék az ország adósságát."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length give-away 79 vs 50 and tell-absolute (mindenki); plausible one-fault wrong options",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-01.json",
+  "old": "  \"grammar\": \"Historical Monetary Stabilizations and Currency Substitution\",\n  \"goal\": [\n    \"I can analyze the 1945–1946 Hungarian hyperinflation—the highest ever recorded in world history.\",\n    \"I can evaluate the stabilization package that introduced the modern Forint on August 1, 1946.\",\n    \"I can formulate currency replacement and monetary credibility narratives in formal Hungarian.\"",
+  "new": "  \"grammar\": \"Historical Monetary Stabilizations and Currency Substitution\",\n  \"goal\": [\n    \"I can describe the hyperinflation of 1945–46 and the introduction of the forint in 1946 (*hiperinfláció, valutareform*).\",\n    \"I can explain why a stabilization package was needed in 1946.\",\n    \"I can write about a currency reform and its credibility in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-01.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the 1945–1946 Hungarian hyperinflation—the highest ever recorded in world history.\",\n        \"I can evaluate the stabilization package that introduced the modern Forint on August 1, 1946.\",\n        \"I can formulate currency replacement and monetary credibility narratives in formal Hungarian.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the hyperinflation of 1945–46 and the introduction of the forint in 1946 (*hiperinfláció, valutareform*).\",\n        \"I can explain why a stabilization package was needed in 1946.\",\n        \"I can write about a currency reform and its credibility in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-01.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the 1945–1946 Hungarian hyperinflation—the highest ever recorded in world history.\",\n        \"I can evaluate the stabilization package that introduced the modern Forint on August 1, 1946.\",\n        \"I can formulate currency replacement and monetary credibility narratives in formal Hungarian.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the hyperinflation of 1945–46 and the introduction of the forint in 1946 (*hiperinfláció, valutareform*).\",\n        \"I can explain why a stabilization package was needed in 1946.\",\n        \"I can write about a currency reform and its credibility in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-monetaris-01-voc.json",
+  "old": "    {\n      \"lemma\": \"értékmegőrzés\",\n      \"translation\": \"preservation of value\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"értékmegőrzés\",\n      \"translation\": \"preservation of value\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"katasztrofális\",\n      \"translation\": \"catastrophic\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"bérplafon\",\n      \"translation\": \"wage ceiling, cap on wages\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fizetőeszköz\",\n      \"translation\": \"means of payment, currency\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"elszabadult\",\n      \"translation\": \"runaway, out of control\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"elértéktelenedés\",\n      \"translation\": \"loss of value\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-01-a-gr.json",
+  "old": "Following World War II, Hungary suffered the most extreme hyperinflation in recorded history: prices doubled every 15 hours, culminating in the 100-quintillion Pengő banknote. On August 1, 1946, the Forint was introduced at an astronomical exchange rate of 1 Forint = 400 octillion (4x10^29) Pengő.",
+  "new": "Following World War II, Hungary suffered what is generally described as the most extreme hyperinflation on record: at its peak in the summer of 1946 prices doubled about every 15 hours. On 1 August 1946 the forint was introduced, replacing the pengő at a rate of 400 octillion (4×10^29) pengő to one forint.",
+  "why": "false/overstated claim about the largest banknote removed; peak wording",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-01-a-gr.json",
+  "old": "Syntactically, monetary history deploys causal fronting and resultative passive constructions: `A jegybank aranytartalékának visszaszolgáltatását követően a forint szilárd aranyfedezettel debütálhatott`.",
+  "new": "Writers on monetary history often begin a sentence with a noun phrase and *követően* ('following, after'): `A valutareformot követően a lakosság bizalma fokozatosan helyreállt`. The forint-era examples below use the same formal style.",
+  "why": "the \"causal fronting and resultative passive\" description did not match the sentence; example no longer asserts the order of the gold return",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-01-a-gr.json",
+  "old": "Az aranytartalék visszaszerzése biztosította a forint kezdeti hitelét.",
+  "new": "Az aranytartalék visszaszerzése támogatta a forint kezdeti hitelét.",
+  "why": "\"biztosította\" overclaims",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-01-a-gr.json",
+  "old": "Retrieval of the gold reserves secured initial credibility for the forint.",
+  "new": "Retrieval of the gold reserve supported the initial credibility of the forint.",
+  "why": "matches the changed Hungarian row",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-01-pengo.json",
+  "old": "1946 nyarán a budapesti utcákat ellepték az eldobált pengőbankjók. A háborús pusztítás, a szovjet jóvátételi terhek és a fedezetlen pénznyomtatás a világtörténelem legsúlyosabb hiperinflációjához vezetett: az árak tizenöt óránként megduplázódtak, a bankjegyek címletei a csillagászati trilliók és billiárdok világába léptek át. A pénz elveszítette minden funkcióját; az emberek cigarettával és tojással fizettek egymásnak.",
+  "new": "1946 nyarán a budapesti utcákat ellepték az eldobált pengőbankjegyek. A háborús pusztítás, a szovjet jóvátételi terhek és a fedezetlen pénznyomtatás a világtörténelem legsúlyosabb hiperinflációjához vezetett: a csúcsponton az árak nagyjából tizenöt óránként megduplázódtak, a bankjegyek címletei a csillagászati számok világába léptek át. A pénz elveszítette a funkcióit; sokan természetben, élelmiszerrel és áruval próbáltak fizetni.",
+  "why": "typo pengőbankjók; \"cigarettával és tojással\" is an unsourced detail; peak qualifier",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-01-pengo.json",
+  "old": "1946. augusztus 1-jén a kormány radikális stabilizációs programot hajtott végre: megjelent a forint. A stabilitást az amerikai hadsereg által visszaszolgáltatott harminc tonnányi jegybanki aranytartalék alapozta meg. Az új fizetőeszköz kíméletlen bér- és árplafont kapott, de sikeresen megfékezte az összeomlást. A forint megszületése bebizonyította, hogy a pénz értéke nem a papírban, hanem az intézményi hitelességben és a fegyelmezett kibocsátásban rejlik.",
+  "new": "1946. augusztus 1-jén megjelent a forint. Az új pénz hitelét támogatta, hogy a jegybanki aranytartalék jelentős részét az amerikai hadsereg visszaszolgáltatta, valamint hogy szigorú bér- és ármegkötéseket vezettek be. A forint sikeresen megfékezte az összeomlást. Megszületése azt mutatta, hogy a pénz értéke nagyban az intézményi hitelességen és a fegyelmezett kibocsátáson múlik.",
+  "why": "\"harminc tonnányi\" dropped (user/reviewer: not sure); \"kíméletlen\" removed; claim softened",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-02-ex.json",
+  "id": "c1-monetaris-02-controlled-2",
+  "set": {
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-02-ex.json",
+  "id": "c1-monetaris-02-practice-4",
+  "set": {
+   "hint": "reálbércsökkenés, with (what it came with)",
+   "teaches": [
+    "val-vel"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint gave the answer (reálbércsökkenés + -sel); retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-02-ex.json",
+  "id": "c1-monetaris-02-practice-5",
+  "set": {
+   "tiles": [
+    "A",
+    "csúszó",
+    "leértékelés",
+    "rendszere",
+    "csökkentette",
+    "az",
+    "árfolyam-spekuláció",
+    "kockázatait."
+   ],
+   "solution": [
+    "A",
+    "csúszó",
+    "leértékelés",
+    "rendszere",
+    "csökkentette",
+    "az",
+    "árfolyam-spekuláció",
+    "kockázatait."
+   ],
+   "english": "The crawling peg system reduced the risks of exchange rate speculation.",
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"letörte ... a kockázatait\" is not Hungarian that means anything; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-02-ex.json",
+  "id": "c1-monetaris-02-dialogue-6",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Közgazdász",
+     "text": "Hogyan látják ma a szakértők az 1995-ös stabilizációs intézkedéseket?"
+    },
+    {
+     "speaker": "Elemző",
+     "text": "Egyesek szerint gazdaságilag elkerülhetetlen lépés volt, de súlyos _____ árat fizetett érte az ország."
+    }
+   ],
+   "teaches": [
+    "i-adjectives"
+   ]
+  },
+  "why": "the evaluation was stated as settled fact; now attributed; choice is the -i adjective",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-02-ex.json",
+  "id": "c1-monetaris-02-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Analyze the trade-off of the Bokros Package in one balanced evaluative sentence.",
+     "answer": "Bár az 1995-ös Bokros-csomag jelentős reálbércsökkenéssel járt, sok közgazdász szerint elhárította az államcsődöt, és javította az ország külső egyensúlyát."
+    }
+   ],
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ]
+  },
+  "why": "\"elhárította az államcsődöt\" was stated as settled; hedged; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-02-ex.json",
+  "id": "c1-monetaris-02-check-8",
+  "set": {
+   "options": [
+    "A költségvetési és a külső fizetési hiány együttes fennállását.",
+    "A költségvetési többlet és a külkereskedelmi többlet egyidejű fennállását.",
+    "Az állami adósság és a magánadósság azonos mértékű csökkenését."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length give-away 82 vs 47; absurd wrong options; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-02.json",
+  "old": "  \"grammar\": \"Devaluation Dynamics, Crawling Peg and External Balance Restoration\",\n  \"goal\": [\n    \"I can analyze the 1995 Bokros Package (*Bokros-csomag, kiigazítás, ikerdeficit*).\",\n    \"I can evaluate the crawling peg exchange rate system (*csúszó leértékelés*).\",\n    \"I can discuss twin deficits and structural macroeconomic stabilization.\"",
+  "new": "  \"grammar\": \"Devaluation Dynamics, Crawling Peg and External Balance Restoration\",\n  \"goal\": [\n    \"I can describe the Bokros Package of 1995 (*Bokros-csomag, kiigazítás, ikerdeficit*).\",\n    \"I can explain the crawling peg exchange rate system (*csúszó leértékelés*).\",\n    \"I can talk about twin deficits and the social cost of stabilization.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-02.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the 1995 Bokros Package (*Bokros-csomag, kiigazítás, ikerdeficit*).\",\n        \"I can evaluate the crawling peg exchange rate system (*csúszó leértékelés*).\",\n        \"I can discuss twin deficits and structural macroeconomic stabilization.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Bokros Package of 1995 (*Bokros-csomag, kiigazítás, ikerdeficit*).\",\n        \"I can explain the crawling peg exchange rate system (*csúszó leértékelés*).\",\n        \"I can talk about twin deficits and the social cost of stabilization.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-02.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the 1995 Bokros Package (*Bokros-csomag, kiigazítás, ikerdeficit*).\",\n        \"I can evaluate the crawling peg exchange rate system (*csúszó leértékelés*).\",\n        \"I can discuss twin deficits and structural macroeconomic stabilization.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Bokros Package of 1995 (*Bokros-csomag, kiigazítás, ikerdeficit*).\",\n        \"I can explain the crawling peg exchange rate system (*csúszó leértékelés*).\",\n        \"I can talk about twin deficits and the social cost of stabilization.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-monetaris-02-voc.json",
+  "old": "    {\n      \"lemma\": \"fizetésképtelenség elkerülése\",\n      \"translation\": \"avoidance of insolvency / sovereign default\",\n      \"pos\": \"expression\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"fizetésképtelenség elkerülése\",\n      \"translation\": \"avoidance of insolvency / sovereign default\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"devizatartalék\",\n      \"translation\": \"foreign exchange reserve\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"felértékelődés\",\n      \"translation\": \"appreciation (of a currency)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"spekuláció\",\n      \"translation\": \"speculation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"megnyirbál\",\n      \"translation\": \"to cut back, to trim\",\n      \"pos\": \"verb\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-02-a-gr.json",
+  "old": "Syntactically, texts contrast short-term social costs with medium-term competitiveness gains: `Bár a csomag 12%-os reálbércsökkenést okozott a lakosságnak, helyreállította az ország nemzetközi fizetőképességét és megalapozta a későbbi exportvezérelt növekedést`.",
+  "new": "Syntactically, texts contrast short-term social costs with medium-term gains with *bár* ('although'): `Bár a csomag 1995-ben jelentős reálbércsökkenést okozott a lakosságnak, sok elemző szerint helyreállította az ország fizetőképességét`. You know concessive clauses from earlier units.",
+  "why": "specific 12% figure removed; unsourced \"restored\" now attributed; recap not presenting concessives as new",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-02-bokros.json",
+  "old": "1995 elején Magyarország a gazdasági összeomlás szélén táncolt: a költségvetési hiány és a folyó fizetési mérleg hiánya (az ikerdeficit) elérte a GDP tíz százalékát, a külföldi befektetők bizalma elillant, és a fizetésképtelenség réme fenyegetett. Március 12-én Bokros Lajos pénzügyminiszter drasztikus stabilizációs csomagot jelentett be.",
+  "new": "1995 elején Magyarország a gazdasági összeomlás szélén állt: a költségvetési hiány és a folyó fizetési mérleg hiánya (az ikerdeficit) is nagy volt, a külföldi befektetők bizalma meggyengült, és a fizetésképtelenség veszélye fenyegetett. Március 12-én Bokros Lajos pénzügyminiszter stabilizációs csomagot jelentett be.",
+  "why": "\"elérte a GDP tíz százalékát\" dropped (user/reviewer); elillant → meggyengült",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-02-bokros.json",
+  "old": "A csomag azonnali forintleértékelést, importvám-pótlékot és csúszó leértékelési árfolyamrendszert vezetett be, miközben fájdalmasan megnyirbálta a szociális kiadásokat és a reálbéreket. A társadalmi felháborodás viharos volt, ám a lépések meghozták az eredményt: az ikerdeficit megszűnt, a devizatartalék felduzzadt, és Magyarország vonzóvá vált a működőtőke-befektetések számára. A stabilizáció megalapozta a kilencvenes évek végi gazdasági fellendülést, de máig tartó politikai traumát hagyott maga után.",
+  "new": "A csomag azonnali forintleértékelést, importvám-pótlékot és csúszó leértékelési árfolyamrendszert vezetett be, miközben megnyirbálta a szociális kiadásokat és a reálbéreket. A társadalmi felháborodás erős volt, ám a külső egyensúly javult: az ikerdeficit csökkent, a devizatartalék nőtt, és Magyarország vonzóvá vált a működőtőke-befektetések számára. Sok elemző szerint a stabilizáció hozzájárult a kilencvenes évek végi gazdasági fellendüléshez; sokak szerint viszont máig tartó politikai nyomot hagyott maga után.",
+  "why": "overclaims (\"megszűnt\", \"megalapozta\") softened; \"politikai trauma\" attributed (reviewer)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-03-ex.json",
+  "id": "c1-monetaris-03-controlled-2",
+  "set": {
+   "sentence": "A jegybank a sáv védelmében kénytelen volt az erősödési _____ nagy összegű devizapiaci intervenciót végrehajtani.",
+   "hint": "sávszél, at (where)",
+   "english": "To defend the band the central bank was forced to carry out a large foreign-exchange intervention at the strong edge.",
+   "teaches": [
+    "nal-nel"
+   ],
+   "category": "grammar"
+  },
+  "why": "the intervention defended the band (not \"the forint\"); hint gave the answer (sávszél + -nél); retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-03-ex.json",
+  "id": "c1-monetaris-03-practice-4",
+  "set": {
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-03-ex.json",
+  "id": "c1-monetaris-03-practice-5",
+  "set": {
+   "tiles": [
+    "A",
+    "szabad",
+    "lebegtetés",
+    "nagyobb",
+    "mozgásteret",
+    "ad",
+    "a",
+    "monetáris",
+    "politikának."
+   ],
+   "solution": [
+    "A",
+    "szabad",
+    "lebegtetés",
+    "nagyobb",
+    "mozgásteret",
+    "ad",
+    "a",
+    "monetáris",
+    "politikának."
+   ],
+   "english": "Free floating gives monetary policy more room for manoeuvre.",
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"teljes függetlenség\" overclaim; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-03-ex.json",
+  "id": "c1-monetaris-03-dialogue-6",
+  "set": {
+   "teaches": [
+    "plural-nouns-k"
+   ],
+   "distractor_skills": {
+    "1": "how-the-accusative-t-works",
+    "2": "ra-re"
+   }
+  },
+  "why": "case choice: the plural noun; wrong options are real accusative and -ra forms"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-03-ex.json",
+  "id": "c1-monetaris-03-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Contrast pegged exchange rate bands with free floating regimes.",
+     "answer": "Míg az intervenciós sáv kiszámíthatóságot nyújt, de sérülékeny a spekulatív támadásokkal szemben, addig a szabad lebegtetés sokkelnyelőként működhet, és nagyobb mozgásteret ad a monetáris politikának."
+    }
+   ],
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ]
+  },
+  "why": "\"megőrizve a jegybank függetlenségét\" overclaim; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-03-ex.json",
+  "id": "c1-monetaris-03-check-8",
+  "set": {
+   "options": [
+    "A forint leértékelődése külső sokkok idején automatikusan javítja az export versenyképességét és mérsékli az importot.",
+    "A jegybank a devizatartalékok felhasználásával szűk sávban tartja az árfolyamot, tompítva a piaci áringadozásokat.",
+    "A forint árfolyama külső sokkok idején változatlan marad, ezért az export és az import is állandó."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag; absurd third option replaced by a one-fault wrong option",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-03.json",
+  "old": "  \"grammar\": \"Intervention Limits, Exchange Rate Fluctuation Bands and Speculative Runs\",\n  \"goal\": [\n    \"I can analyze exchange rate regimes (*intervenciós sáv, sávos lebegtetés, szabad lebegtetés*).\",\n    \"I can evaluate speculative attacks (*spekulatív támadás a forint ellen 2003-ban*).\",\n    \"I can describe central bank reserve interventions and market dynamics in C1 Hungarian.\"",
+  "new": "  \"grammar\": \"Intervention Limits, Exchange Rate Fluctuation Bands and Speculative Runs\",\n  \"goal\": [\n    \"I can describe exchange rate regimes (*intervenciós sáv, szabad lebegtetés*).\",\n    \"I can explain the speculative attack on the forint in 2003 (*spekulatív támadás*).\",\n    \"I can describe central bank interventions in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-03.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze exchange rate regimes (*intervenciós sáv, sávos lebegtetés, szabad lebegtetés*).\",\n        \"I can evaluate speculative attacks (*spekulatív támadás a forint ellen 2003-ban*).\",\n        \"I can describe central bank reserve interventions and market dynamics in C1 Hungarian.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe exchange rate regimes (*intervenciós sáv, szabad lebegtetés*).\",\n        \"I can explain the speculative attack on the forint in 2003 (*spekulatív támadás*).\",\n        \"I can describe central bank interventions in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-03.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze exchange rate regimes (*intervenciós sáv, sávos lebegtetés, szabad lebegtetés*).\",\n        \"I can evaluate speculative attacks (*spekulatív támadás a forint ellen 2003-ban*).\",\n        \"I can describe central bank reserve interventions and market dynamics in C1 Hungarian.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe exchange rate regimes (*intervenciós sáv, szabad lebegtetés*).\",\n        \"I can explain the speculative attack on the forint in 2003 (*spekulatív támadás*).\",\n        \"I can describe central bank interventions in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-monetaris-03-voc.json",
+  "old": "    {\n      \"lemma\": \"árfolyamkockázat\",\n      \"translation\": \"exchange rate / currency risk\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"árfolyamkockázat\",\n      \"translation\": \"exchange rate / currency risk\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"jegybanki\",\n      \"translation\": \"of the central bank, central bank (adjective)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"lebegő\",\n      \"translation\": \"floating\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"sérülékeny\",\n      \"translation\": \"vulnerable\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"kiszélesít\",\n      \"translation\": \"to widen\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"hozam\",\n      \"translation\": \"yield, return\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kimerülés\",\n      \"translation\": \"exhaustion, depletion\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"mérsékel\",\n      \"translation\": \"to moderate, to reduce\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"import\",\n      \"translation\": \"import(s)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"áringadozás\",\n      \"translation\": \"price fluctuation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tompít\",\n      \"translation\": \"to cushion, to soften\",\n      \"pos\": \"verb\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-03-a-gr.json",
+  "old": "Syntactically, texts formulate conditional market tensions: `A jegybank kénytelen volt több milliárd eurónyi forintot vásárolni, miközben drasztikus kamatvágással próbálta megfékezni a spekulációs tőkebeáramlást`.",
+  "new": "Reports on market events often pair *kénytelen volt* + infinitive (you know *kénytelen* from B1 Unit 10) with *miközben* (you know it from B1 Citizenship Unit 2): `A jegybank kénytelen volt jelentős összegű eurót vásárolni, miközben kamatvágással próbálta megfékezni a spekulációs tőkebeáramlást`.",
+  "why": "the old example had the central bank buying forints (it bought euros); the description did not match the sentence; recaps added",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-03-a-gr.json",
+  "old": "A 2008-as válság nyomán a sávos rendszert felváltotta a szabad lebegtetés.",
+  "new": "2008 februárjában a sávos rendszert felváltotta a szabad lebegtetés.",
+  "why": "the band was ended in Feb 2008, before the autumn 2008 crisis: \"a 2008-as válság nyomán\" was a wrong cause",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-03-a-gr.json",
+  "old": "Following the 2008 crisis, the band system was replaced by free floating.",
+  "new": "In February 2008 the band system was replaced by free floating.",
+  "why": "matches changed row",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-03-savszel.json",
+  "old": "2003 januárjában a Magyar Nemzeti Bank történetének egyik legdrámaibb ostromát élte át. A forintot egy plusz-mínusz 15 százalékos intervenciós sáv rögzítette az euróhoz, ám a nemzetközi spekulánsok úgy vélték: a forint alulértékelt, és a jegybank nem lesz képes fenntartani a sávot. Órák alatt milliárdnyi eurónyi tőke zúdult be az országba, a forint az erősödési sávszélnek feszült, a bankárok telefonjai izzottak.",
+  "new": "2003 januárjában a Magyar Nemzeti Bank a forint történetének egyik feszült időszakát élte át. A forintot egy plusz-mínusz 15 százalékos intervenciós sáv rögzítette az euróhoz, ám a nemzetközi spekulánsok úgy vélték: a forint alulértékelt, és a jegybank kénytelen lesz kiszélesíteni vagy feladni a sávot. Rövid idő alatt jelentős külföldi tőke áramlott az országba, a forint az erősödési sávszélre került.",
+  "why": "\"legdrámaibb ostrom\", \"milliárdnyi\", telephones: invented colour; the speculators bet on widening/ending the band (not \"unable to hold it\")",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-03-savszel.json",
+  "old": "Járai Zsigmond jegybankelnök gigantikus devizapiaci intervencióval vásárolta fel a beáramló eurót, miközben drasztikus kamatcsökkentést hajtott végre. A sáv megvédése sikerült, de a beavatkozás hatalmas likviditási feszültséget és veszteséget okozott. A 2008-as pénzügyi világválság küszöbén a döntéshozók belátták: a rögzített sáv tarthatatlan. 2008 februárjában a forintot szabadon lebegő valutává nyilvánították, rábízva árfolyamát a globális piac keresleti és kínálati erőire.",
+  "new": "A jegybank elnöke, Járai Zsigmond, jelentős devizapiaci intervencióval vásárolta fel a beáramló eurót, miközben csökkentette a kamatot. A sávrendszert fenntartották, a központi árfolyamot azonban módosították. 2008 februárjában a jegybank és a kormány megszüntette a sávot: a forint szabadon lebegő valuta lett, árfolyamát a piaci kereslet és kínálat alakította.",
+  "why": "\"gigantikus\", \"hatalmas likviditási feszültség és veszteség\" unsourced; mind-reading (\"belátták\") removed; central parity change (Jan 2003) — see facts (check)",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-04-ex.json",
+  "id": "c1-monetaris-04-introduce-1",
+  "set": {
+   "question": "Miért vált súlyos problémává a svájci frank alapú devizahitelezés Magyarországon?",
+   "options": [
+    "Mert a forint gyengülésével a háztartások törlesztőrészletei jelentősen megnőttek, miközben jövedelmük forintban maradt.",
+    "Mert a svájci jegybank megemelte az alapkamatot, ami azonnal megduplázta a nemzetközi hitelkamatokat.",
+    "Mert a bankok a hitelek futamidejét egyoldalúan a felére rövidítették, így a havi részletek jelentősen megnőttek."
+   ],
+   "correct": 0
+  },
+  "why": "\"tömeges tragédia\" is a judgement; third option was true of the story (banks did raise rates unilaterally): now a false cause",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-04-ex.json",
+  "id": "c1-monetaris-04-controlled-2",
+  "set": {
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-04-ex.json",
+  "id": "c1-monetaris-04-practice-4",
+  "set": {
+   "sentence": "A devizahitelek 2014-es _____ megóvta az érintett háztartásokat a svájci frank későbbi erősödésétől.",
+   "hint": "forintosítás, possessed (of the loans)",
+   "english": "The 2014 conversion of FX loans to forints shielded the households concerned from the later strengthening of the Swiss franc.",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint gave the answer (forintosítás + -a); \"megóvta a lakosságot\" overclaim; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-04-ex.json",
+  "id": "c1-monetaris-04-practice-5",
+  "set": {
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-04-ex.json",
+  "id": "c1-monetaris-04-dialogue-6",
+  "set": {
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "distractor_skills": {
+    "1": "dative-possessor",
+    "2": "val-vel"
+   }
+  },
+  "why": "retired tag; wrong options are real dative and instrumental forms"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-04-ex.json",
+  "id": "c1-monetaris-04-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Explain the systemic risk of retail FX lending in one analytical sentence.",
+     "answer": "A lakossági devizahitelezés alapvető veszélye, hogy a háztartások jövedelme forintban keletkezik, a tartozásuk viszont devizában van, ezért az árfolyam gyengülése megnöveli a törlesztési terheket."
+    }
+   ],
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ]
+  },
+  "why": "English word \"mismatch\" inside the Hungarian answer; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-04-ex.json",
+  "id": "c1-monetaris-04-check-8",
+  "set": {
+   "options": [
+    "A lakossági jelzáloghitelek átváltása forintra, ami megszüntette a közvetlen devizakockázatot a családok számára.",
+    "A lakossági hitelek kamatainak hatósági maximalizálása és a törlesztési futamidők egységes meghosszabbítása.",
+    "A lakossági jelzáloghitelek átváltása euróra, ami az árfolyamkockázatot a családoktól a bankokra hárította."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag; the absurd nationalisation option replaced by a one-fault option",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-04.json",
+  "old": "  \"grammar\": \"Foreign Currency Lending, Balance Sheet Mismatch and Legislative Settlements\",\n  \"goal\": [\n    \"I can analyze the Swiss Franc retail mortgage crisis (*devizahitelezés, devizahitel-válság, forintosítás*).\",\n    \"I can evaluate balance sheet mismatches and exchange rate pass-through to households.\",\n    \"I can explain statutory settlement mechanisms (*Kúria jogegységi döntése, elszámolási törvény*) in formal Hungarian.\"",
+  "new": "  \"grammar\": \"Foreign Currency Lending, Balance Sheet Mismatch and Legislative Settlements\",\n  \"goal\": [\n    \"I can describe the Swiss franc mortgage crisis (*devizahitel, árfolyamrés, forintosítás*).\",\n    \"I can explain why a foreign currency loan is risky for households.\",\n    \"I can describe the court ruling and the conversion law in formal Hungarian (*Kúria, jogegységi határozat*).\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-04.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the Swiss Franc retail mortgage crisis (*devizahitelezés, devizahitel-válság, forintosítás*).\",\n        \"I can evaluate balance sheet mismatches and exchange rate pass-through to households.\",\n        \"I can explain statutory settlement mechanisms (*Kúria jogegységi döntése, elszámolási törvény*) in formal Hungarian.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Swiss franc mortgage crisis (*devizahitel, árfolyamrés, forintosítás*).\",\n        \"I can explain why a foreign currency loan is risky for households.\",\n        \"I can describe the court ruling and the conversion law in formal Hungarian (*Kúria, jogegységi határozat*).\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-04.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the Swiss Franc retail mortgage crisis (*devizahitelezés, devizahitel-válság, forintosítás*).\",\n        \"I can evaluate balance sheet mismatches and exchange rate pass-through to households.\",\n        \"I can explain statutory settlement mechanisms (*Kúria jogegységi döntése, elszámolási törvény*) in formal Hungarian.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Swiss franc mortgage crisis (*devizahitel, árfolyamrés, forintosítás*).\",\n        \"I can explain why a foreign currency loan is risky for households.\",\n        \"I can describe the court ruling and the conversion law in formal Hungarian (*Kúria, jogegységi határozat*).\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-monetaris-04-voc.json",
+  "old": "    {\n      \"lemma\": \"adósságcsapda\",\n      \"translation\": \"debt trap\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"adósságcsapda\",\n      \"translation\": \"debt trap\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"adós\",\n      \"translation\": \"debtor, borrower\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"pénzintézet\",\n      \"translation\": \"financial institution\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"futamidő\",\n      \"translation\": \"term, duration (of a loan)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"deviza\",\n      \"translation\": \"foreign currency\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"lakossági\",\n      \"translation\": \"retail, household (adjective)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"jelzáloghitel\",\n      \"translation\": \"mortgage loan\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"menedékvaluta\",\n      \"translation\": \"safe-haven currency\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-04-a-gr.json",
+  "old": "Between 2004 and 2008, hundreds of thousands of Hungarian households took out Swiss Franc mortgages due to lower nominal interest rates, ignoring currency risk. When the Forint depreciated from 150 to over 250 HUF/CHF during the global crisis, monthly installments doubled, creating a systemic socio-economic crisis.",
+  "new": "Between 2004 and 2008, hundreds of thousands of Hungarian households took out Swiss franc loans, attracted by lower interest rates than on forint loans. When the forint weakened sharply against the franc during the global crisis, the monthly instalments of many borrowers rose steeply, and the foreign-currency loans became a widely discussed social and legal problem.",
+  "why": "\"ignoring currency risk\" was a judgement; the 150 to 250 HUF/CHF figures were not certain; \"doubled\" removed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-04-a-gr.json",
+  "old": "The Curia ruled that banks' unilateral rate hikes and exchange rate spreads (*árfolyamrés*) were unfair contract terms (*tisztességtelen szerződési feltétel*), paving the way for the 2014 mandatory conversion to Forints (*forintosítás*).",
+  "new": "The Curia ruled in 2014 (a uniformity decision, *jogegységi határozat*) that certain terms in these contracts, among them exchange rate spreads and unilateral rate increases, were unfair contract terms (*tisztességtelen szerződési feltétel*). Laws passed in 2014 then settled the accounts and provided for the conversion of the loans to forints (*forintosítás*), carried out in early 2015.",
+  "why": "Curia ruling made precise; the conversion described by year only",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-04-a-gr.json",
+  "old": "A svájci frank meglódulása megduplázta a háztartások törlesztőrészleteit.",
+  "new": "A svájci frank erősödése sok háztartásnál megnövelte a törlesztőrészleteket.",
+  "why": "\"megduplázta\" was a figure",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-04-a-gr.json",
+  "old": "The surge of the Swiss Franc doubled household loan installments.",
+  "new": "The strengthening of the Swiss franc raised the instalments of many households.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-04-a-gr.json",
+  "old": "A devizahitelek forintosítása elhárította a rendszerszintű pénzügyi kockázatot.",
+  "new": "A devizahitelek forintosítása csökkentette a rendszerszintű pénzügyi kockázatot.",
+  "why": "\"elhárította\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-04-a-gr.json",
+  "old": "The conversion of FX loans into forints eliminated systemic financial risk.",
+  "new": "The conversion of FX loans into forints reduced systemic financial risk.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-04-devizahitel.json",
+  "old": "A kétezres évek közepén a svájci frank alapú hitel csábító ígéretnek tűnt: a magas forintkamatokkal szemben a frankhitelek alacsony törlesztőrészletet kínáltak lakásvásárlásra és autóhitelekre. Családok százezrei adósodtak el anélkül, hogy felmérték volna az árfolyamkockázat halálos veszélyét. Amikor a 2008-as világválság kirobbant, a forint mélyrepülésbe kezdett, a svájci frank pedig menedékvalutaként felértékelődött: a havi részletek a duplájára, triplájára ugrottak.",
+  "new": "A kétezres évek közepén a svájci frank alapú hitel csábító ígéretnek tűnt: a magas forintkamatokkal szemben a frankhitelek alacsonyabb törlesztőrészletet kínáltak lakásvásárlásra és autóhitelekre. Háztartások százezrei vettek fel frankhitelt, sokan nem mérték fel teljesen az árfolyamkockázatot. Amikor a 2008-as világválság kirobbant, a forint jelentősen gyengült, a svájci frank pedig menedékvalutaként felértékelődött: sok esetben a havi részletek jelentősen megnőttek.",
+  "why": "\"halálos veszély\", \"mélyrepülés\", \"duplájára, triplájára\" overstated",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-04-devizahitel.json",
+  "old": "A devizahitel-válság nemzeti tragédiává vált: elárverezett otthonok, széteső családok és a bedőlő banki portfóliók jellemezték a korszakot. Hosszas jogi csaták után a Kúria kimondta, hogy az árfolyamrés és az egyoldalú banki kamatemelések tisztességtelenek voltak. 2014 végén a parlament törvénybe iktatta a devizahitelek kötelező forintosítását: a lakossági hitelállományt piaci árfolyamon forintosították, megelőzve az újabb frankrobbanás katasztrófáját. A krízis örök mementó maradt a lakossági devizakockázat veszélyeiről.",
+  "new": "A devizahitel-válság sokak szerint nemzeti tragédiává vált: voltak elárverezett otthonok és családok, amelyek nehéz helyzetbe kerültek. Hosszas jogi viták után a Kúria 2014-ben kimondta, hogy bizonyos szerződési feltételek, köztük az árfolyamrés és az egyoldalú banki kamatemelés, tisztességtelenek. 2014-ben a parlament törvényeket fogadott el a devizahitelek elszámolásáról és kötelező forintosításáról, a hiteleket 2015 elején váltották át forintra, jegybanki árfolyamon. A válság emléke máig él a lakossági devizakockázatról szóló vitákban.",
+  "why": "\"nemzeti tragédia\" attributed (reviewer); \"piaci árfolyamon\" is not right (the rate was set by reference to the central bank rate of autumn 2014: see facts); invented portfolio details removed",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-monetaris-05-a-gr.json",
+  "old": "Syntactically, texts contrast nominal criteria with real convergence: `Noha a nominális maastrichti kritériumok formailag teljesíthetők volnának, a közgazdászok többsége szerint az euró bevezetése csak a reálkonvergencia megfelelő szintje mellett indokolt`.",
+  "new": "Syntactically, texts contrast nominal criteria with real convergence with *noha* (you know it from earlier units): `Noha a nominális maastrichti kritériumok formailag teljesíthetők volnának, sok közgazdász szerint az euró bevezetése csak a reálkonvergencia megfelelő szintje mellett indokolt`.",
+  "why": "\"a közgazdászok többsége\" is an unsourced majority; recap of noha added",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-05-ex.json",
+  "id": "c1-monetaris-05-controlled-2",
+  "set": {
+   "sentence": "Az euró bevezetésének _____ az ERM II-ben való kétéves részvétel.",
+   "hint": "anteroom, possessed",
+   "answer": null,
+   "answers": [
+    "előszobája"
+   ],
+   "english": "The two years' participation in ERM II is the anteroom of euro adoption.",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "category": "grammar"
+  },
+  "why": "\"árfolyam-stabilitási mechanizmus\" is not the official name (ERM II); sentence rebuilt around a whole word; hint gave the answer; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-05-ex.json",
+  "id": "c1-monetaris-05-practice-4",
+  "set": {
+   "sentence": "Az önálló monetáris politika feladásával a gazdaság elveszíti a lebegő árfolyam sokkelnyelő _____.",
+   "hint": "role, object of the verb",
+   "answer": null,
+   "answers": [
+    "szerepét",
+    "funkcióját"
+   ],
+   "english": "By giving up independent monetary policy the economy loses the shock-absorbing role of the floating exchange rate.",
+   "teaches": [
+    "acc-poss"
+   ],
+   "category": "grammar"
+  },
+  "why": "awkward sentence with a stacked genitive; hint gave the answer (funkció + -jának); retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-05-ex.json",
+  "id": "c1-monetaris-05-practice-5",
+  "set": {
+   "teaches": [
+    "potential-hat-het"
+   ],
+   "category": "grammar"
+  },
+  "why": "the sentence is a -hat/-het form; retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-05-ex.json",
+  "id": "c1-monetaris-05-dialogue-6",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Politikus",
+     "text": "Mikor célszerű bevezetni a közös európai valutát Magyarországon?"
+    },
+    {
+     "speaker": "Közgazdász",
+     "text": "Sok közgazdász szerint akkor, amikor a magyar termelékenység és a _____ eléri a magországok szintjét."
+    }
+   ],
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "distractor_skills": {
+    "1": "how-the-accusative-t-works",
+    "2": "val-vel"
+   }
+  },
+  "why": "a contested view was a flat answer: attributed; wrong options are real accusative and instrumental forms; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-05-ex.json",
+  "id": "c1-monetaris-05-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Formulate the core dilemma of Eurozone accession in academic Hungarian.",
+     "answer": "Az euró bevezetése megszüntetné az árfolyamkockázatot és a tranzakciós költségeket, de a gazdaság elveszítené az önálló monetáris politikát és a lebegő árfolyamot."
+    }
+   ],
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ]
+  },
+  "why": "model answer too heavy; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-05-ex.json",
+  "id": "c1-monetaris-05-check-8",
+  "set": {
+   "options": [
+    "Hogy a közös valuta ott működik jól, ahol a munkaerő és a tőke könnyen mozog a sokkok kiegyenlítésére.",
+    "Hogy a közös valuta ott működik jól, ahol a tagállamok ugyanakkora költségvetési hiányt tartanak fenn.",
+    "Hogy a közös valuta ott működik jól, ahol a tagállamok egymástól függetlenül dönthetnek az árfolyamról."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length give-away 127 vs 67 and absurd options; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-monetaris-05-voc.json",
+  "old": "\"lemma\": \"árfolyam-stabilitási mechanizmus\"",
+  "new": "\"lemma\": \"árfolyam-mechanizmus II (ERM II)\"",
+  "why": "the official name is Árfolyam-mechanizmus II (ERM II)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-05.json",
+  "old": "  \"grammar\": \"Maastricht Convergence Criteria and Optimal Currency Area Theory\",\n  \"goal\": [\n    \"I can analyze the Maastricht convergence criteria (*maastrichti kritériumok, konvergenciaprogram, ERM-II*).\",\n    \"I can evaluate the Optimal Currency Area (OCA) theory applied to Central Europe.\",\n    \"I can synthesize the macro-debate between monetary sovereignty and Eurozone adoption in academic Hungarian.\"",
+  "new": "  \"grammar\": \"Maastricht Convergence Criteria and Optimal Currency Area Theory\",\n  \"goal\": [\n    \"I can describe the Maastricht convergence criteria (*maastrichti kritériumok, ERM II*).\",\n    \"I can explain the arguments for and against adopting the euro.\",\n    \"I can set the arguments about monetary sovereignty against those about integration in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-05.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the Maastricht convergence criteria (*maastrichti kritériumok, konvergenciaprogram, ERM-II*).\",\n        \"I can evaluate the Optimal Currency Area (OCA) theory applied to Central Europe.\",\n        \"I can synthesize the macro-debate between monetary sovereignty and Eurozone adoption in academic Hungarian.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Maastricht convergence criteria (*maastrichti kritériumok, ERM II*).\",\n        \"I can explain the arguments for and against adopting the euro.\",\n        \"I can set the arguments about monetary sovereignty against those about integration in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-05.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the Maastricht convergence criteria (*maastrichti kritériumok, konvergenciaprogram, ERM-II*).\",\n        \"I can evaluate the Optimal Currency Area (OCA) theory applied to Central Europe.\",\n        \"I can synthesize the macro-debate between monetary sovereignty and Eurozone adoption in academic Hungarian.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Maastricht convergence criteria (*maastrichti kritériumok, ERM II*).\",\n        \"I can explain the arguments for and against adopting the euro.\",\n        \"I can set the arguments about monetary sovereignty against those about integration in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-monetaris-05-voc.json",
+  "old": "    {\n      \"lemma\": \"nominális konvergencia\",\n      \"translation\": \"nominal convergence (inflation / fiscal metrics)\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"nominális konvergencia\",\n      \"translation\": \"nominal convergence (inflation / fiscal metrics)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"magország\",\n      \"translation\": \"core country (of the euro area)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kiegyenlítés\",\n      \"translation\": \"balancing out, offsetting\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"termelékenység\",\n      \"translation\": \"productivity\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"sokkelnyelő\",\n      \"translation\": \"shock absorber\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-05-eurodilemma.json",
+  "old": "Húsz évvel az Európai Unióhoz való csatlakozás után a forint sorsa továbbra is a magyar gazdaságpolitika legvitatottabb kérdése. Az euró bevezetésének pártolói a nemzetközi integráció előnyeit hangsúlyozzák: az eurózóna tagjaként megszűnnének a drága tranzakciós költségek és a devizaárfolyam-ingadozás kockázatai, csökkenne a vállalati kamatfelár, és Magyarország beülhetne a frankfurti Európai Központi Bank döntéshozó asztalához.",
+  "new": "Az Európai Unióhoz való csatlakozás (2004) óta eltelt két évtizedben az euró bevezetése visszatérő vitatéma maradt. Az euró bevezetésének pártolói a nemzetközi integráció előnyeit hangsúlyozzák: az eurózóna tagjaként megszűnnének a tranzakciós költségek és a devizaárfolyam-ingadozás kockázatai, csökkenne a vállalati kamatfelár, és a magyar jegybank elnöke részt vehetne az Európai Központi Bank döntéshozatalában.",
+  "why": "\"legvitatottabb kérdése\" a present-day judgement; ECB seat claim simplified",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-05-eurodilemma.json",
+  "old": "A szuverenitás hívei ezzel szemben Robert Mundell optimális valutaövezeti elméletére hivatkoznak: ha egy ország lemond önálló valutájáról, feladja a jegybanki kamatpolitika és a lebegő árfolyam rugalmas fegyverét. Aszimmetrikus gazdasági sokkok idején a forint leértékelődése védi a hazai ipart és munkahelyeket. A többségi szakmai konszenzus szerint az euró bevezetése nem politikai presztízskérdés, hanem érettségi vizsga: csak akkor szabad belépni, ha a magyar gazdaság termelékenysége és reálkonvergenciája eléri az európai magországok szintjét.",
+  "new": "A szuverenitás hívei ezzel szemben Robert Mundell optimális valutaövezeti elméletére hivatkoznak: ha egy ország lemond önálló valutájáról, feladja a jegybanki kamatpolitikát és a lebegő árfolyam rugalmasságát. Szerintük aszimmetrikus gazdasági sokkok idején a forint leértékelődése védheti a hazai ipart és a munkahelyeket. Sok közgazdász szerint az euró bevezetése nem politikai presztízskérdés, hanem érettségi vizsga: csak akkor érdemes belépni, ha a magyar gazdaság termelékenysége és reálkonvergenciája eléri az európai magországok szintjét.",
+  "why": "\"többségi szakmai konszenzus\" → \"sok közgazdász szerint\" (reviewer); the sovereignty side attributed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-consolidation-ex.json",
+  "id": "c1-monetaris-consolidation-1",
+  "set": {
+   "options": [
+    "Mert az új pénz a szigorú stabilizációs program részeként megállította a világtörténelem legsúlyosabb hiperinflációját.",
+    "Mert azonnal felváltotta az amerikai dollárt, és a nemzetközi kereskedelem vezető elszámoló valutájává vált.",
+    "Mert bevezetésével az állam eltörölte a háborús jóvátételi kötelezettségeit, és ezzel megszüntette a pénzromlást."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag; gold claim removed; second wrong option no longer partly true",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-consolidation-ex.json",
+  "id": "c1-monetaris-consolidation-2",
+  "set": {
+   "question": "Mi volt az 1995-ös csúszó leértékelés (crawling peg) egyik fő gazdasági célja?",
+   "options": [
+    "Kiszámíthatóvá tette az árfolyam pályáját az exportőrök számára, és csökkentette a leértékelési spekulációt.",
+    "Rögzítette a hazai inflációt az európai átlagszinten, és megszüntette a költségvetési deficitet az államban.",
+    "Azonnal felértékelte a nemzeti valutát, jelentősen megkönnyítve az importált fogyasztási cikkek beszerzését."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"legfőbb előny\" and \"felszámolta\" overclaim; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-consolidation-ex.json",
+  "id": "c1-monetaris-consolidation-4",
+  "set": {
+   "hint": "forintosítás, possessed (of the loans)",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint gave the answer; possessed noun",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-consolidation-ex.json",
+  "id": "c1-monetaris-consolidation-6",
+  "set": {
+   "hint": "pénzromlás, the thing that was halted",
+   "teaches": [
+    "acc-poss"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint gave the answer (pénzromlás + -át); retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-consolidation-ex.json",
+  "id": "c1-monetaris-consolidation-7",
+  "set": {
+   "hint": "lebegtetés, onto (where to)",
+   "teaches": [
+    "ra-re"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint gave the answer (lebegtetés + -re); retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-consolidation-ex.json",
+  "id": "c1-monetaris-consolidation-8",
+  "set": {
+   "sentence": "Sok közgazdász szerint az euró bevezetése csak a gazdasági _____ megfelelő foka esetén hoz hasznot.",
+   "english": "According to many economists adopting the euro brings a benefit only when real convergence has reached an adequate degree.",
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "unsourced \"a közgazdászok\" generalisation; \"nettó\" unmet; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-consolidation-ex.json",
+  "id": "c1-monetaris-consolidation-9",
+  "set": {
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-consolidation-ex.json",
+  "id": "c1-monetaris-consolidation-10",
+  "set": {
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-consolidation-ex.json",
+  "id": "c1-monetaris-consolidation-11",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a critical evaluation of the Eurozone accession dilemma for a converging economy.",
+     "answer": "Az euró bevezetése megszüntetné az árfolyamkockázatot és a tranzakciós költségeket, ám az önálló monetáris politika feladása miatt fontos, hogy a gazdaság termelékenysége elérje a magországok szintjét."
+    }
+   ],
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ]
+  },
+  "why": "model answer simplified to match lesson 05; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-monetaris-consolidation-ex.json",
+  "id": "c1-monetaris-consolidation-12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Formulate a concluding thought on Hungarian monetary resilience over the past century.",
+     "answer": "A forint története a hiperinfláció megfékezésétől a devizahitel-válság rendezéséig azt mutatja, hogy a gazdasági stabilitás nagyban függ a fegyelmezett költségvetési és monetáris politikától."
+    }
+   ],
+   "teaches": [
+    "c1-forint-eurozone-vocab"
+   ]
+  },
+  "why": "\"azt bizonyítja ... legfontosabb fundamentuma\" overclaim; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-consolidation.json",
+  "old": "  \"grammar\": \"Review and Capstone Integration\",\n  \"goal\": [\n    \"I can navigate the history of the 1946 hyperinflation, gold backing, and the birth of the Forint.\",\n    \"I can analyze the 1995 Bokros Package, crawling peg regimes, and speculative currency attacks.\",\n    \"I can evaluate the retail FX debtor crisis, statutory forint conversion, and the Eurozone adoption dilemma.\"",
+  "new": "  \"grammar\": \"Review and Capstone Integration\",\n  \"goal\": [\n    \"I can recount the history of the forint from the hyperinflation of 1946 to the Bokros Package of 1995.\",\n    \"I can explain speculative attacks and the move to a floating exchange rate.\",\n    \"I can describe the foreign currency loan crisis and the arguments about adopting the euro.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-consolidation.json",
+  "old": "      \"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can navigate the history of the 1946 hyperinflation, gold backing, and the birth of the Forint.\",\n        \"I can analyze the 1995 Bokros Package, crawling peg regimes, and speculative currency attacks.\",\n        \"I can evaluate the retail FX debtor crisis, statutory forint conversion, and the Eurozone adoption dilemma.\"",
+  "new": "      \"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can recount the history of the forint from the hyperinflation of 1946 to the Bokros Package of 1995.\",\n        \"I can explain speculative attacks and the move to a floating exchange rate.\",\n        \"I can describe the foreign currency loan crisis and the arguments about adopting the euro.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-monetaris-consolidation.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can navigate the history of the 1946 hyperinflation, gold backing, and the birth of the Forint.\",\n        \"I can analyze the 1995 Bokros Package, crawling peg regimes, and speculative currency attacks.\",\n        \"I can evaluate the retail FX debtor crisis, statutory forint conversion, and the Eurozone adoption dilemma.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can recount the history of the forint from the hyperinflation of 1946 to the Bokros Package of 1995.\",\n        \"I can explain speculative attacks and the move to a floating exchange rate.\",\n        \"I can describe the foreign currency loan crisis and the arguments about adopting the euro.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-01-pengo.json",
+  "old": "\"grammar\": [\n    \"c1-macroeconomic-indicators\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-forint-eurozone-vocab\"\n  ]",
+  "why": "story grammar field held a retired slug"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-02-bokros.json",
+  "old": "\"grammar\": [\n    \"c1-fiscal-counterbalancing\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-forint-eurozone-vocab\"\n  ]",
+  "why": "story grammar field held a retired slug"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-03-savszel.json",
+  "old": "\"grammar\": [\n    \"c1-monetary-tightening-clauses\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-forint-eurozone-vocab\"\n  ]",
+  "why": "story grammar field held a retired slug"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-04-devizahitel.json",
+  "old": "\"grammar\": [\n    \"c1-inflationary-expectations\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-forint-eurozone-vocab\"\n  ]",
+  "why": "story grammar field held a retired slug"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-monetaris-05-eurodilemma.json",
+  "old": "\"grammar\": [\n    \"c1-growth-model-synthesis\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-forint-eurozone-vocab\"\n  ]",
+  "why": "story grammar field held a retired slug"
+ }
+]

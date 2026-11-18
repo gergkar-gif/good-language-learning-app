@@ -1,0 +1,36 @@
+# Facts: forint-eurozone (Culture Unit 13)
+
+claim | where | sure / check
+- Hungarian hyperinflation 1945-46 was the worst on record; at the peak (July 1946) prices doubled about every 15 hours | story 01 p1, grammar 01 | sure (reviewer)
+- 1 August 1946 the forint was introduced | story 01, grammar 01 | sure
+- 1 forint = 400 octillion (4x10^29) pengő | grammar 01 text 1 | check (widely published; not verified here)
+- the highest-value pengő note (100 quintillion) removed from the text: printed, probably never issued | grammar 01 (old) | check (removed)
+- US army returned a large part of the central bank's gold reserve (the "tonnage" was removed) | story 01 p2, items 01 practice-4, cons-1 | check (reviewer: drop the tonnage; the year/timing of the gold return relative to 1 Aug 1946 not confirmed, so no order stated)
+- strict wage and price controls accompanied the forint | story 01 p2 | check
+- payment in kind (food, goods) spread in 1946 | story 01 p1 | check (old "cigarettes and eggs" removed as unsourced)
+- Soviet reparations, war damage and unbacked money printing as causes | story 01 p1 | sure
+- Bokros package announced 12 March 1995 by Finance Minister Lajos Bokros | story 02, grammar 02 | sure
+- 9% devaluation, crawling peg, 8% import surcharge | grammar 02 text 1 | check (9% and 8% from memory)
+- the old "real wages fell 12%" figure removed | grammar 02 | check (removed)
+- "elérte a GDP tíz százalékát" removed | story 02 | sure (reviewer)
+- external balance improved, deficits fell, reserves rose after 1995 | story 02 | sure as general direction
+- package contributed to the late-1990s recovery (attributed "sok elemző szerint") and left a political mark (attributed) | story 02 | check (disputed matter)
+- the +/-15% band around the euro parity operated from 2001 to 2008 | grammar 03 | sure
+- January 2003 speculative attack on the strong edge; MNB bought euros, cut rates | story 03, grammar 03 | sure (reviewer); old text said the bank "bought forints": wrong, corrected
+- Járai Zsigmond MNB president in 2003 | story 03 | sure
+- central parity was moved (devalued) in Jan 2003 (by about 2.3 per cent) after the attack | story 03 p2 | check (from memory, no figure stated)
+- band abolished and the forint floating from 25-26 Feb 2008 | story 03, grammar 03, items | sure (reviewer: 25 Feb 2008)
+- the band was ended before the autumn 2008 crisis (old table row said "after the 2008 crisis") | grammar 03 row | sure
+- FX lending boom 2004-2008, hundreds of thousands of households | grammar 04, story 04 | sure as magnitude
+- forint weakened against the franc in the 2008 crisis; franc a safe haven | story 04 | sure
+- Kúria uniformity decision 2014 on exchange-rate spread (árfolyamrés) and unilateral rate rises being unfair terms | story 04, item 04 controlled-2 | sure for 2014; check for exact scope of the ruling (certain terms)
+- 2014 laws on settlement and forced conversion; conversion carried out early 2015 | story 04, grammar 04 | sure (reviewer)
+- conversion rate was set by reference to the central bank rate of autumn 2014, not the market rate of early 2015 (Jan 2015 SNB franc shock was avoided) | story 04 p2 | check (old "piaci árfolyamon" is wrong as far as known; 7 Nov 2014 rate recalled but not stated)
+- "nemzeti tragédia" | story 04 | judgement, attributed with "sokak szerint"
+- Maastricht criteria: price stability, fiscal discipline, exchange rate stability (two years in ERM II), interest rates | grammar 05, item 05 controlled-2 | sure
+- official name: Árfolyam-mechanizmus II (ERM II) | voc 05 | sure
+- Mundell's optimal currency area theory | story 05, item 05 check-8 | sure
+- "sok közgazdász szerint" (not "majority consensus") | story 05, cons-8 | judgement attributed
+- no euro adoption date, no stance of the 2026 government stated | story 05 | sure
+- Hungary joined the EU in 2004 | story 05 | sure
+- central bank governors of euro-area states sit on the ECB Governing Council | story 05 p1 | sure (simplified wording in the text)

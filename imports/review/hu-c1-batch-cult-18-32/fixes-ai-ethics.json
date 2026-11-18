@@ -1,0 +1,1237 @@
+[
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-01-a-gr.json",
+  "old": "Delimiting and focalizing particles (*kiváltképp* [especially], *éppenséggel* [as a matter of fact / indeed], *egyenesen* [outright / directly], *tulajdonképpen / voltaképpen* [essentially / strictly speaking]) lend precision and rhetorical force to academic tech discourse.",
+  "new": "Delimiting and focalizing particles lend precision and rhetorical force to academic discourse about technology. You know *éppenséggel* (as a matter of fact) from B2 Unit 13; new here are *kiváltképp* (especially), *egyenesen* (outright) and *tulajdonképpen / voltaképpen* (essentially, strictly speaking).",
+  "why": "the screen presented *éppenséggel* (taught in B2 Unit 13) as new: recap added",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-01-a-gr.json",
+  "old": "Example: `A magyar nyelv agglutináló sajátosságai kiváltképp nagy kihívás elé állítják a nagy nyelvi modelleket, amelyek éppenséggel az angolszász izoláló struktúrákra lettek optimalizálva`.",
+  "new": "Example: `A magyar nyelv agglutináló sajátosságai kiváltképp nagy kihívás elé állítják a nagy nyelvi modelleket, amelyek éppenséggel az angol nyelv szerkezetére lettek optimalizálva`.",
+  "why": "\"angolszász izoláló struktúrákra\" was loose: English is analytic, not \"isolating\"; claim narrowed",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-01-a-gr.json",
+  "old": "A hazai kutatóintézetek kiváltképp a morfológiai elemzés terén értek el áttörést.",
+  "new": "A hazai kutatóintézetek kiváltképp a morfológiai elemzés terén értek el eredményeket.",
+  "why": "\"áttörést\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-01-a-gr.json",
+  "old": "Domestic research institutes reached breakthroughs especially in morphological parsing.",
+  "new": "Domestic research institutes achieved results especially in morphological parsing.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-01-a-gr.json",
+  "old": "Az eredmények egyenesen felülmúlták a legoptimistább nemzetközi várakozásokat is.",
+  "new": "A szabad szórend egyenesen próbára teszi a gépi elemzést.",
+  "why": "the old row (\"az eredmények egyenesen felülmúlták a legoptimistább várakozásokat\") was an unsourced claim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-01-a-gr.json",
+  "old": "The results outright surpassed even the most optimistic international expectations.",
+  "new": "Free word order puts machine parsing outright to the test.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-01-ex.json",
+  "id": "c1-mestersegesintelligencia-01-introduce-1",
+  "set": {
+   "question": "Mi a hazai nyelvi alapmodellek (pl. Puli) fejlesztésének fő indoka a fejlesztők szerint?",
+   "options": [
+    "Hogy a magyar nyelv szerkezetét és kulturális hátterét pontosabban figyelembe vegyék.",
+    "Hogy csökkentsék a hazai szuperszámítógépek áramfogyasztását és hűtési költségeit.",
+    "Hogy a modellek angol nyelven jobban működjenek, mint a külföldi rendszerek."
+   ],
+   "correct": 0
+  },
+  "why": "second wrong option was true of the story (a plausible benefit); question now asks for the developers' stated reason",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-01-ex.json",
+  "id": "c1-mestersegesintelligencia-01-controlled-2",
+  "set": {
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-01-ex.json",
+  "id": "c1-mestersegesintelligencia-01-practice-4",
+  "set": {
+   "sentence": "A globális platformoktól való egyoldalú függés _____ az adatszuverenitás gyengüléséhez vezethet.",
+   "english": "Unilateral dependence on global platforms can indeed weaken data sovereignty.",
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"felszámolásához vezethet\" overclaim; retagged to vocabulary (the blank tests a lexical particle)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-01-ex.json",
+  "id": "c1-mestersegesintelligencia-01-practice-5",
+  "set": {
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-01-ex.json",
+  "id": "c1-mestersegesintelligencia-01-dialogue-6",
+  "set": {
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "distractor_skills": {
+    "1": "how-the-accusative-t-works",
+    "2": "val-vel"
+   }
+  },
+  "why": "the wrong options are real accusative and instrumental forms"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-01-ex.json",
+  "id": "c1-mestersegesintelligencia-01-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence using a focalizing particle to emphasize technological sovereignty.",
+     "answer": "A hazai szuperszámítógép-kapacitások kiépítése egyenesen fontos lépés lehet ahhoz, hogy a nemzeti kutatás ne függjön teljesen a külföldi platformoktól."
+    }
+   ],
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ]
+  },
+  "why": "\"egyenesen elengedhetetlen\" and \"globális technológiai óriások kiszolgálója\" are loaded; simplified",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-01-ex.json",
+  "id": "c1-mestersegesintelligencia-01-check-8",
+  "set": {
+   "question": "Melyik szó illik a mondatba ('as a matter of fact')? A modell pontossága _____ a szakszerű finomhangolásnak köszönhető.",
+   "options": [
+    "éppenséggel",
+    "mivel",
+    "amennyiben"
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "the stem used Hungarian grammar terms and the two wrong options were not Hungarian sentences; rebuilt as a word choice with an English meaning line",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-01.json",
+  "old": "  \"grammar\": \"Delimiting and Focalizing Particles in Tech Discourse\",\n  \"goal\": [\n    \"I can analyze Hungarian AI research initiatives (*SZTAKI, MILAB, Komondor szuperszámítógép*).\",\n    \"I can utilize delimiting and focalizing particles (*kiváltképp, éppenséggel, egyenesen, voltaképpen*).\",\n    \"I can discuss sovereign language models (Puli, Nyelvmodell) and domestic research infrastructure.\"",
+  "new": "  \"grammar\": \"Delimiting and Focalizing Particles in Tech Discourse\",\n  \"goal\": [\n    \"I can describe Hungarian research on language models (*nyelvi modell, kutatóhálózat, Puli*).\",\n    \"I can use focusing words such as *kiváltképp, éppenséggel, egyenesen* in formal Hungarian.\",\n    \"I can explain why a language needs its own models and research infrastructure.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-01.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze Hungarian AI research initiatives (*SZTAKI, MILAB, Komondor szuperszámítógép*).\",\n        \"I can utilize delimiting and focalizing particles (*kiváltképp, éppenséggel, egyenesen, voltaképpen*).\",\n        \"I can discuss sovereign language models (Puli, Nyelvmodell) and domestic research infrastructure.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe Hungarian research on language models (*nyelvi modell, kutatóhálózat, Puli*).\",\n        \"I can use focusing words such as *kiváltképp, éppenséggel, egyenesen* in formal Hungarian.\",\n        \"I can explain why a language needs its own models and research infrastructure.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-01.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze Hungarian AI research initiatives (*SZTAKI, MILAB, Komondor szuperszámítógép*).\",\n        \"I can utilize delimiting and focalizing particles (*kiváltképp, éppenséggel, egyenesen, voltaképpen*).\",\n        \"I can discuss sovereign language models (Puli, Nyelvmodell) and domestic research infrastructure.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe Hungarian research on language models (*nyelvi modell, kutatóhálózat, Puli*).\",\n        \"I can use focusing words such as *kiváltképp, éppenséggel, egyenesen* in formal Hungarian.\",\n        \"I can explain why a language needs its own models and research infrastructure.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-mestersegesintelligencia-01-voc.json",
+  "old": "    {\n      \"lemma\": \"szuverenitás\",\n      \"translation\": \"technological sovereignty\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"szuverenitás\",\n      \"translation\": \"technological sovereignty\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"függés\",\n      \"translation\": \"dependence\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"köszönhető\",\n      \"translation\": \"due to, thanks to (adjective)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"óriás\",\n      \"translation\": \"giant\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"modellcsalád\",\n      \"translation\": \"model family\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-01-alapmodellek.json",
+  "old": "Amikor a Számítástechnikai és Automatizálási Kutatóintézet (SZTAKI) és a Mesterséges Intelligencia Nemzeti Laboratórium (MILAB) kutatói nekifogtak a saját nagy nyelvi modellek kifejlesztésének, nem csupán mérnöki feladatot oldottak meg: a nemzeti kulturális szuverenitás digitális védvonalát húzták meg.",
+  "new": "Amikor a HUN-REN Nyelvtudományi Kutatóközpont kutatói nekifogtak a magyar nyelvű nagy nyelvi modellek (a Puli modellcsalád) kifejlesztésének, nem csupán mérnöki feladatot oldottak meg: a magyar nyelv digitális jelenlétének védelméhez is hozzájárultak.",
+  "why": "the Puli models were built by the HUN-REN Research Centre for Linguistics (NYTK), not by SZTAKI/MILAB (reviewer); \"védvonal\" rhetoric toned down",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-01-alapmodellek.json",
+  "old": "A magyar nyelv sajátos gazdagsága – az összetett esetragok, a gazdag igeragozás és a szabad szórend – kiváltképp próbára teszi a globális multimodális rendszereket. A debreceni Komondor szuperszámítógép kapacitásával megtámogatott hazai projektek (mint a Puli modellcsalád) bebizonyították, hogy Magyarország képes önálló kutatási kiválósági központként fellépni a generatív forradalom korszakában.",
+  "new": "A magyar nyelv sajátosságai – az összetett esetragok, a gazdag igeragozás és a szabad szórend – kiváltképp próbára teszik a globális nyelvi rendszereket. Sok szakértő szerint a hazai alapmodellek azt mutatják, hogy Magyarország képes önálló kutatási eredményeket felmutatni a generatív mesterséges intelligencia korszakában.",
+  "why": "Komondor supercomputer link unconfirmed: dropped (reviewer); \"bebizonyították ... kutatási kiválósági központ\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-mestersegesintelligencia-01-voc.json",
+  "old": "\"translation\": \"supercomputer (Komondor HPC)\"",
+  "new": "\"translation\": \"supercomputer\"",
+  "why": "the Komondor link is unconfirmed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-01-ex.json",
+  "old": "\"Komondor HPC\"",
+  "new": "\"nagy teljesítményű számítógép\"",
+  "why": "matching pair: Komondor link unconfirmed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-02-a-gr.json",
+  "old": "Example in EU policy context: `Az Európai Unió szigorú szabályozást vezetett be a nagy kockázatú rendszerekre, annál is inkább, mivel az automatizált arcfelismerés alapvető emberi jogi garanciákat fenyeget`.",
+  "new": "Example in an EU policy context: `Az Európai Unió követelményeket vezetett be a nagy kockázatú rendszerekre, annál is inkább, mivel az automatizált arcfelismerés alapvető jogokat érinthet`.",
+  "why": "\"szigorú ... fenyeget\" stated a contested risk as fact",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-02-a-gr.json",
+  "old": "A jogalkotó korlátozza a biometrikus azonosítást, annál is inkább, mivel a visszaélés veszélye rendkívül magas.",
+  "new": "A jogalkotó korlátozza a biometrikus azonosítást, annál is inkább, mivel a visszaélés veszélye nagy.",
+  "why": "\"rendkívül magas\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-02-a-gr.json",
+  "old": "The legislator restricts biometric identification, all the more so since the risk of abuse is extremely high.",
+  "new": "The legislator restricts biometric identification, all the more so since the risk of abuse is great.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-02-a-gr.json",
+  "old": "A megfelelőségi audit elengedhetetlen, annál is inkább, mivel a jogsértések súlyos bírságot vonnak maguk után.",
+  "new": "A megfelelőségi értékelés a nagy kockázatú rendszereknél kötelező, annál is inkább, mivel a jogsértések bírságot vonhatnak maguk után.",
+  "why": "\"elengedhetetlen\"/\"súlyos bírság\" imprecise",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-02-a-gr.json",
+  "old": "Conformity assessment is indispensable, all the more so since infringements incur severe fines.",
+  "new": "Conformity assessment is mandatory for high-risk systems, all the more so since infringements can lead to fines.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-02-ex.json",
+  "id": "c1-mestersegesintelligencia-02-introduce-1",
+  "set": {
+   "options": [
+    "Kockázatalapú megközelítésre, a minimális kockázattól a tiltott gyakorlatokig terjedő szintekkel.",
+    "Egységes, a rendszerek kockázatától független, minden MI-re azonos kötelezettségekre.",
+    "A mesterséges intelligencia teljes betiltására az Európai Unió egész területén."
+   ],
+   "correct": 0
+  },
+  "why": "length give-away 118 vs 88 and absurd wrong options; tell-free",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-02-ex.json",
+  "id": "c1-mestersegesintelligencia-02-controlled-2",
+  "set": {
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-02-ex.json",
+  "id": "c1-mestersegesintelligencia-02-practice-4",
+  "set": {
+   "hint": "az, the source of the reasoning",
+   "teaches": [
+    "elative-bol-bel"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint gave the answer (az + -ból); form of the elative",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-02-ex.json",
+  "id": "c1-mestersegesintelligencia-02-practice-5",
+  "set": {
+   "tiles": [
+    "A",
+    "nagy",
+    "kockázatú",
+    "rendszereknél",
+    "kötelező",
+    "a",
+    "megfelelőségi",
+    "értékelés."
+   ],
+   "solution": [
+    "A",
+    "nagy",
+    "kockázatú",
+    "rendszereknél",
+    "kötelező",
+    "a",
+    "megfelelőségi",
+    "értékelés."
+   ],
+   "english": "For high-risk systems a conformity assessment is mandatory.",
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "wrong: the AI Act does not require an independent external audit for every high-risk system",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-02-ex.json",
+  "id": "c1-mestersegesintelligencia-02-dialogue-6",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Vállalati jogász",
+     "text": "Hogyan készüljünk fel az AI Act követelményeire?"
+    },
+    {
+     "speaker": "Etikai auditor",
+     "text": "A belső algoritmusok kockázati besorolásával és az adatkezelési _____ dokumentálásával."
+    }
+   ],
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "distractor_skills": {
+    "1": "how-the-accusative-t-works",
+    "2": "val-vel"
+   }
+  },
+  "why": "\"hatálybalépésére\" made a present-day claim about timing; wrong options are real accusative and instrumental forms",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-02-ex.json",
+  "id": "c1-mestersegesintelligencia-02-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a causal sentence explaining why algorithmic transparency is crucial in hiring.",
+     "answer": "A toborzási algoritmusok átláthatósága fontos, annál is inkább, mivel a tanító adatokban rejlő előítéletek diszkriminációt konzerválhatnak a munkaerőpiacon."
+    }
+   ],
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ]
+  },
+  "why": "\"tudattalan előítéletek ... rendszerszintű diszkrimináció\" overclaim; hedged",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-02-ex.json",
+  "id": "c1-mestersegesintelligencia-02-check-8",
+  "set": {
+   "question": "Melyik mondat fejezi ki, hogy az ok megerősíti az állítást ('all the more so since')?",
+   "options": [
+    "A szabályozás indokolt, annál is inkább, mivel nagy a visszaélés veszélye.",
+    "A szabályozás indokolt, holott nagy a visszaélés veszélye.",
+    "A szabályozás indokolt, ha nagy a visszaélés veszélye."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length give-away 22 vs 16 and tell-absolute (egyáltalán); stem used grammar terms",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-02.json",
+  "old": "  \"grammar\": \"Correlative Causal Connectors in AI Ethics and Regulation\",\n  \"goal\": [\n    \"I can analyze the European AI Act risk tiers and compliance audits (*AI Act, nagy kockázatú rendszerek, megfelelőségi audit*).\",\n    \"I can deploy correlative causal connectors (*annál is inkább mivel, abból a megfontolásból fakadóan, arra hivatkozva hogy*).\",\n    \"I can evaluate algorithmic discrimination, human-in-the-loop oversight, and institutional liability.\"",
+  "new": "  \"grammar\": \"Correlative Causal Connectors in AI Ethics and Regulation\",\n  \"goal\": [\n    \"I can describe the EU AI Act and its risk levels (*AI Act, nagy kockázatú rendszerek, megfelelőségi értékelés*).\",\n    \"I can give a reason that strengthens a claim with *annál is inkább, mivel* in formal Hungarian.\",\n    \"I can explain why transparency and human oversight matter for algorithms.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-02.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the European AI Act risk tiers and compliance audits (*AI Act, nagy kockázatú rendszerek, megfelelőségi audit*).\",\n        \"I can deploy correlative causal connectors (*annál is inkább mivel, abból a megfontolásból fakadóan, arra hivatkozva hogy*).\",\n        \"I can evaluate algorithmic discrimination, human-in-the-loop oversight, and institutional liability.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the EU AI Act and its risk levels (*AI Act, nagy kockázatú rendszerek, megfelelőségi értékelés*).\",\n        \"I can give a reason that strengthens a claim with *annál is inkább, mivel* in formal Hungarian.\",\n        \"I can explain why transparency and human oversight matter for algorithms.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-02.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the European AI Act risk tiers and compliance audits (*AI Act, nagy kockázatú rendszerek, megfelelőségi audit*).\",\n        \"I can deploy correlative causal connectors (*annál is inkább mivel, abból a megfontolásból fakadóan, arra hivatkozva hogy*).\",\n        \"I can evaluate algorithmic discrimination, human-in-the-loop oversight, and institutional liability.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the EU AI Act and its risk levels (*AI Act, nagy kockázatú rendszerek, megfelelőségi értékelés*).\",\n        \"I can give a reason that strengthens a claim with *annál is inkább, mivel* in formal Hungarian.\",\n        \"I can explain why transparency and human oversight matter for algorithms.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-mestersegesintelligencia-02-voc.json",
+  "old": "    {\n      \"lemma\": \"felelősségvállalás\",\n      \"translation\": \"accountability, assumption of liability\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"felelősségvállalás\",\n      \"translation\": \"accountability, assumption of liability\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"csorbít\",\n      \"translation\": \"to impair, to curtail\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"dokumentálás\",\n      \"translation\": \"documentation, documenting\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"konzervál\",\n      \"translation\": \"to preserve, to perpetuate\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"toborzási\",\n      \"translation\": \"recruitment (adjective)\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-02-etika.json",
+  "old": "Az Európai Parlament és a Tanács által elfogadott Mesterséges Intelligencia Rendelet (AI Act) a digitális korszak egyik legfontosabb jogalkotási mérföldköve. Európa úgy döntött: nem a vadkapitalista adathalászat vagy a tekintélyelvű társadalmi pontozás mintáját követi, hanem a polgárok méltóságára és az alapjogok védelmére alapozza a technológiai fejlődést.",
+  "new": "Az Európai Parlament és a Tanács által 2024-ben elfogadott Mesterséges Intelligencia Rendelet (AI Act) sok szakértő szerint az első átfogó uniós jogi keret a mesterséges intelligenciára. A jogalkotók célja szerint a szabályozás a polgárok méltóságára és az alapjogok védelmére épül.",
+  "why": "\"egyik legfontosabb mérföldkő\" and the polemic against \"vadkapitalista adathalászat\" and \"tekintélyelvű pontozás\" removed; adoption year 2024 (reviewer: sure)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-02-etika.json",
+  "old": "A jogszabály kockázatalapú megközelítést alkalmaz: a tiltott kategóriák (mint a valós idejű távoli biometrikus arcfelismerés a nyilvános terekben) mellett szigorú auditkötelezettséget ír elő a nagy kockázatú rendszerekre – a toborzástól az igazságszolgáltatásig. Az átláthatóság és a kötelező emberi felügyelet követelménye azt hivatott garantálni, hogy a gép mindvégig az ember eszköze maradjon, ne pedig önkényes bírája.",
+  "new": "A jogszabály kockázatalapú megközelítést alkalmaz: bizonyos gyakorlatok tiltottak (a valós idejű távoli biometrikus azonosítás a nyilvános terekben főszabályként tiltott, kivételekkel), a nagy kockázatú rendszerekre – a toborzástól az igazságszolgáltatásig – szigorú követelmények vonatkoznak. A rendelet célja szerint az átláthatóság és az emberi felügyelet azt biztosítja, hogy a rendszerek az emberi döntéshozatalt segítsék.",
+  "why": "real-time remote biometric identification is banned as a rule, with exceptions (reviewer); \"garantálni ... önkényes bírája\" removed; no application dates",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-03-a-gr.json",
+  "old": "Assertive evidentials convey epistemic authority and grounded empirical observations: `a kutatások tanúsága szerint` (according to the testimony of research), `kétségkívül` (undoubtedly), `bizonyítottnak tekinthető` (can be regarded as proven), and `szemmel láthatóan` (visibly / manifestly).",
+  "new": "You know *szerint* from B1 Unit 13 and degrees of certainty from C1 Unit 3. Some fixed phrases carry more weight: `a kutatások tanúsága szerint` (according to research), `kétségkívül` (undoubtedly), `bizonyítottnak tekinthető` (can be regarded as proven) and `szemmel láthatóan` (visibly).",
+  "why": "the screen presented known evidential and certainty forms as new; recap added (sheet names B1 Unit 13 for evidentials, C1 Unit 3 for epistemic-hedging)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-03-a-gr.json",
+  "old": "Example in socioeconomic debate: `A tények tanúsága szerint a generatív mesterséges intelligencia immár nem a fizikai munkaköröket, hanem a fehérgalléros és kreatív pozíciókat érinti a legközvetlenebbül`.",
+  "new": "Example in a socioeconomic debate: `A kutatások tanúsága szerint a generatív mesterséges intelligencia a fehérgalléros és kreatív munkaköröket is közvetlenül érinti`.",
+  "why": "\"a tények tanúsága ... a legközvetlenebbül\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-03-a-gr.json",
+  "old": "A statisztikák tanúsága szerint a kognitív feladatok automatizálása felgyorsult.",
+  "new": "Egyes felmérések tanúsága szerint a kognitív feladatok automatizálása felgyorsult.",
+  "why": "unsourced general claim attributed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-03-a-gr.json",
+  "old": "According to the testimony of statistics, the automation of cognitive tasks has accelerated.",
+  "new": "According to some surveys the automation of cognitive tasks has accelerated.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-03-a-gr.json",
+  "old": "Bizonyítottnak tekinthető, hogy a magas digitális kompetenciájú munkavállalók bérelőnyre tesznek szert.",
+  "new": "Bizonyítottnak tekinthető, hogy a tanulás segít az új munkakörökhöz való alkalmazkodásban.",
+  "why": "\"high digital competence gains a wage premium\" was an unsourced claim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-03-a-gr.json",
+  "old": "It can be regarded as proven that workers with high digital competence gain a wage premium.",
+  "new": "It can be regarded as proven that learning helps people adapt to new jobs.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-03-a-gr.json",
+  "old": "Kétségkívül új oktatási stratégiára van szükség az átképzés ösztönzésére.",
+  "new": "Kétségkívül vita tárgya, hogy milyen oktatási stratégiára van szükség az átképzéshez.",
+  "why": "a policy opinion stated as certain",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-03-a-gr.json",
+  "old": "Undoubtedly a new educational strategy is required to incentivize reskilling.",
+  "new": "It is undoubtedly a matter of debate what educational strategy reskilling needs.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-03-ex.json",
+  "id": "c1-mestersegesintelligencia-03-introduce-1",
+  "set": {
+   "question": "Miben különbözik a generatív MI hatása sokak szerint a korábbi automatizációs hullámoktól?",
+   "options": [
+    "Nem a fizikai kétkezi munkát, hanem a magasan képzett fehérgalléros és kreatív tevékenységeket is közvetlenül érinti.",
+    "Elsősorban az agrárgazdaságban és az építőiparban dolgozók fizikai feladatait gépesíti.",
+    "Nem a szellemi munkaköröket, hanem a nehézipari gyártósorok futószalagjait korszerűsíti."
+   ],
+   "correct": 0
+  },
+  "why": "a contested claim stated as fact: \"sokak szerint\"; wrong options plausible, each one fault",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-03-ex.json",
+  "id": "c1-mestersegesintelligencia-03-controlled-2",
+  "set": {
+   "sentence": "A felmérések _____ szerint sok cég már beépítette az MI-eszközöket a napi munkafolyamatokba.",
+   "hint": "tanúság, possessed",
+   "english": "According to the surveys many companies have already built AI tools into their daily workflows.",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "category": "grammar"
+  },
+  "why": "\"több mint fele\" is an unsourced figure; hint gave the answer (tanúság + -a)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-03-ex.json",
+  "id": "c1-mestersegesintelligencia-03-practice-4",
+  "set": {
+   "sentence": "_____ tekinthető, hogy a tanulás segít az új munkakörökhöz való alkalmazkodásban.",
+   "hint": "proven (what it is regarded as)",
+   "english": "It can be regarded as proven that learning helps people adapt to new jobs.",
+   "teaches": [
+    "verb-government-nak-nek"
+   ],
+   "category": "grammar"
+  },
+  "why": "\"tudományosan bizonyítottnak\" unsourced overclaim; hint gave the answer (bizonyított + -nak)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-03-ex.json",
+  "id": "c1-mestersegesintelligencia-03-practice-5",
+  "set": {
+   "tiles": [
+    "Egyes",
+    "kutatások",
+    "tanúsága",
+    "szerint",
+    "az",
+    "élethosszig",
+    "tartó",
+    "tanulás",
+    "segít",
+    "az",
+    "alkalmazkodásban."
+   ],
+   "solution": [
+    "Egyes",
+    "kutatások",
+    "tanúsága",
+    "szerint",
+    "az",
+    "élethosszig",
+    "tartó",
+    "tanulás",
+    "segít",
+    "az",
+    "alkalmazkodásban."
+   ],
+   "english": "According to some research, lifelong learning helps with adaptation.",
+   "teaches": [
+    "evidentials"
+   ],
+   "category": "grammar"
+  },
+  "why": "\"a tények tanúsága ... elengedhetetlen\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-03-ex.json",
+  "id": "c1-mestersegesintelligencia-03-dialogue-6",
+  "set": {
+   "options": [
+    "átképzési",
+    "átképzett",
+    "átképzésbeli"
+   ],
+   "correct": 0,
+   "teaches": [
+    "i-adjectives"
+   ],
+   "distractor_skills": {
+    "1": "past-participle-adjective",
+    "2": "spatial-belonging-beli"
+   }
+  },
+  "why": "wrong options: a real past-participle form and a -beli adjective (átképzéses could be accepted by a native: replaced)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-03-ex.json",
+  "id": "c1-mestersegesintelligencia-03-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write an assertive evidential sentence about labor market disruption.",
+     "answer": "A gazdasági mutatók tanúsága szerint a rutin kognitív munkák automatizálása kétségkívül átképzési igényeket támaszt az európai munkaerőpiacon."
+    }
+   ],
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ]
+  },
+  "why": "\"kétségkívül mélyreható átképzési hullámot tesz elkerülhetetlenné\" overclaim; retagged",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-03-ex.json",
+  "id": "c1-mestersegesintelligencia-03-check-8",
+  "set": {
+   "question": "Melyik mondatban hivatkoznak a tapasztalatokra ('according to experience')?",
+   "options": [
+    "A tapasztalatok tanúsága szerint a kreativitás nehezen automatizálható.",
+    "Ha a kreativitás automatizálható volna, az új helyzetet teremtene.",
+    "Bár a kreativitás nem automatizálható, a rutinfeladatok azok."
+   ],
+   "correct": 0,
+   "teaches": [
+    "evidentials"
+   ],
+   "category": "grammar"
+  },
+  "why": "the stem used Hungarian grammar terms and options 2 and 3 were fragments; rebuilt",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-03.json",
+  "old": "  \"grammar\": \"Assertive Evidentials and Epistemic Certainty in Economic Forecasting\",\n  \"goal\": [\n    \"I can analyze labor market polarization, cognitive automation, and reskilling (*munkaerőpiaci polarizáció, kognitív automatizáció, átképzés*).\",\n    \"I can employ assertive evidentials and epistemic certainty expressions (*a tények tanúsága szerint, bizonyítottnak tekinthető, kétségkívül*).\",\n    \"I can evaluate economic structural shifts and the future of creative professions in Hungary.\"",
+  "new": "  \"grammar\": \"Assertive Evidentials and Epistemic Certainty in Economic Forecasting\",\n  \"goal\": [\n    \"I can describe how automation changes work and why reskilling matters (*kognitív automatizáció, átképzés*).\",\n    \"I can refer to evidence with phrases such as *a kutatások tanúsága szerint* and *kétségkívül*.\",\n    \"I can discuss which jobs automation affects in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-03.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze labor market polarization, cognitive automation, and reskilling (*munkaerőpiaci polarizáció, kognitív automatizáció, átképzés*).\",\n        \"I can employ assertive evidentials and epistemic certainty expressions (*a tények tanúsága szerint, bizonyítottnak tekinthető, kétségkívül*).\",\n        \"I can evaluate economic structural shifts and the future of creative professions in Hungary.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe how automation changes work and why reskilling matters (*kognitív automatizáció, átképzés*).\",\n        \"I can refer to evidence with phrases such as *a kutatások tanúsága szerint* and *kétségkívül*.\",\n        \"I can discuss which jobs automation affects in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-03.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze labor market polarization, cognitive automation, and reskilling (*munkaerőpiaci polarizáció, kognitív automatizáció, átképzés*).\",\n        \"I can employ assertive evidentials and epistemic certainty expressions (*a tények tanúsága szerint, bizonyítottnak tekinthető, kétségkívül*).\",\n        \"I can evaluate economic structural shifts and the future of creative professions in Hungary.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe how automation changes work and why reskilling matters (*kognitív automatizáció, átképzés*).\",\n        \"I can refer to evidence with phrases such as *a kutatások tanúsága szerint* and *kétségkívül*.\",\n        \"I can discuss which jobs automation affects in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-mestersegesintelligencia-03-voc.json",
+  "old": "    {\n      \"lemma\": \"strukturális átalakulás\",\n      \"translation\": \"structural transformation\",\n      \"pos\": \"expression\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"strukturális átalakulás\",\n      \"translation\": \"structural transformation\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"kétkezi\",\n      \"translation\": \"manual (work)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"kreativitás\",\n      \"translation\": \"creativity\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"automatizálható\",\n      \"translation\": \"automatable\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"gépesít\",\n      \"translation\": \"to mechanise\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"szinergia\",\n      \"translation\": \"synergy\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"promptolás\",\n      \"translation\": \"prompting (writing instructions for an AI model)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"futószalag\",\n      \"translation\": \"conveyor belt, assembly line\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"építőipar\",\n      \"translation\": \"construction industry\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-03-automatizacio.json",
+  "old": "Míg a huszadik század ipari robotizációja az üzemcsarnokok futószalagjait és a fizikai munkát alakította át, addig a huszonegyedik század mesterséges intelligenciája az irodák íróasztalaihoz ült be. A szoftverfejlesztés, a jogi szövegezés, a pénzügyi elemzés és a grafikai tervezés világa egyaránt szembesült azzal, hogy az algoritmusok másodpercek alatt végzik el a rutinszerű intellektuális feladatokat.",
+  "new": "Míg a huszadik század ipari robotizációja főként a gyárak futószalagjait és a fizikai munkát alakította át, addig a mesterséges intelligencia az irodai munkát is érinti. A szoftverfejlesztés, a jogi szövegezés, a pénzügyi elemzés és a grafikai tervezés világában is szembesülnek azzal, hogy az algoritmusok rövid idő alatt képesek elvégezni bizonyos rutinszerű szellemi feladatokat.",
+  "why": "\"íróasztalaihoz ült be\" cliché and \"másodpercek alatt végzik el\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-03-automatizacio.json",
+  "old": "Közép-Európában ez a strukturális sokk kettős kihívást jelent: a magas hozzáadott értékű szolgáltatóközpontoknak (SSC) radikálisan feljebb kell lépniük az értékláncban, míg az oktatási rendszernek a mechanikus lexikális tudás helyett a kritikai gondolkodásra és az emberi intuícióra kell helyeznie a hangsúlyt. Az átképzés immár nem opció, hanem a gazdasági túlélés záloga.",
+  "new": "Sok szakértő szerint Közép-Európában ez a szerkezeti változás kettős kihívást jelent: a magas hozzáadott értékű szolgáltatóközpontoknak (SSC) feljebb kellene lépniük az értékláncban, az oktatási rendszernek pedig a lexikális tudás helyett a kritikai gondolkodásra és az emberi intuícióra kellene nagyobb hangsúlyt helyeznie. Sokak szerint az átképzés egyre fontosabbá válik.",
+  "why": "\"radikálisan\", \"az átképzés nem opció, hanem a túlélés záloga\" were unattributed judgements",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-04.json",
+  "old": "\"grammar\": \"Deliberative and Optative Subjunctive in Medical Decision Making\"",
+  "new": "\"grammar\": \"Concession and Necessity in Medical Decisions\"",
+  "why": "the title named the optative subjunctive, which is never met: lesson rewritten with known forms"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-04.json",
+  "old": "\"title\": \"Deliberative and Optative Subjunctive in Medical Decision Making\"",
+  "new": "\"title\": \"Concession and Necessity in Medical Decisions\"",
+  "why": "same"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-04-a-gr.json",
+  "old": "\"title\": \"Deliberative and Optative Subjunctive in Medical Decision Making\"",
+  "new": "\"title\": \"Concession and Necessity in Medical Decisions\"",
+  "why": "same"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-04-a-gr.json",
+  "old": "Deliberative and evaluative subjunctive structures weigh complex ethical considerations: `bármiként alakuljon is a technológiai fejlődés` (however technological development unfolds), `legyen szó akár korai daganatszűrésről, akár CT-elemzésről` (whether it concerns early tumor screening or CT analysis), and `elengedhetetlen, hogy az orvos mondja ki a végső szót` (it is essential that the physician pronounce the final word).",
+  "new": "You know *hogy* + subjunctive from B1 Unit 3 (*fontos, hogy az orvos döntsön*) and concessive *bármilyen … is* from B2 Unit 4. Medical texts use them to weigh a concession against a necessity. *Akár … akár* sets two cases side by side: `akár korai daganatszűrésről, akár CT-elemzésről van szó`.",
+  "why": "the screen taught optative-subjunctive forms (bármiként alakuljon is, legyen szó akár...akár) which are never met; rewritten with known forms (user)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-04-a-gr.json",
+  "old": "This modal register ensures that deontic necessity, ethical caution, and professional responsibility are properly balanced in clinical discourse.",
+  "new": "Example: `Bármilyen kifinomult is a szoftver, fontos, hogy a végső döntést az orvos hozza meg`. Together the forms keep technical promise and professional responsibility in balance.",
+  "why": "replaces the \"deontic necessity\" paragraph; known forms only",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-04-a-gr.json",
+  "old": "Legyen szó akár mammográfiáról, akár tüdőszűrésről, az algoritmus jelentősen csökkenti a tévesztések számát.",
+  "new": "Akár mammográfiáról, akár tüdőszűrésről van szó, az algoritmus segítheti a tévesztések számának csökkentését.",
+  "why": "\"legyen szó akár\" is optative-subjunctive",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-04-a-gr.json",
+  "old": "Be it about mammography or lung screening, the algorithm significantly reduces error rates.",
+  "new": "Whether it is mammography or lung screening, the algorithm can help reduce the number of errors.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-04-a-gr.json",
+  "old": "Bármilyen kifinomult legyen is a szoftver, a végső diagnózis felállítása az orvos felelőssége marad.",
+  "new": "Bármilyen kifinomult is a szoftver, a végső diagnózist az orvos állítja fel.",
+  "why": "\"legyen is\" is optative-subjunctive; the claim is now plain indicative",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-04-a-gr.json",
+  "old": "However sophisticated the software may be, establishing the final diagnosis remains the doctor's responsibility.",
+  "new": "However sophisticated the software is, the final diagnosis is made by the doctor.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-04-a-gr.json",
+  "old": "Kulcsfontosságú, hogy a klinikai validáció során szigorúan ellenőrizzék a betegbiztonsági szempontokat.",
+  "new": "Fontos, hogy a klinikai validáció során ellenőrizzék a betegbiztonsági szempontokat.",
+  "why": "\"kulcsfontosságú ... szigorúan\" simplified; hogy + subjunctive is known",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-04-a-gr.json",
+  "old": "It is crucial that during clinical validation they strictly verify patient safety aspects.",
+  "new": "It is important that patient safety aspects are checked during clinical validation.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-04-ex.json",
+  "id": "c1-mestersegesintelligencia-04-introduce-1",
+  "set": {
+   "question": "Mi az orvosi képalkotó MI egyik fő lehetséges haszna a diagnosztikában?",
+   "options": [
+    "A korai elváltozások felismerésének támogatása és a radiológusok tehermentesítése.",
+    "A betegek orvosi vizsgálat nélküli műtétre irányítása a szoftver döntése alapján.",
+    "Az orvosi diagnózis teljes átadása a szoftvernek, orvosi felügyelet nélkül."
+   ],
+   "correct": 0
+  },
+  "why": "length give-away 109 vs 62; wrong options absurd (patients sent to surgery without examination, closing medical schools)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-04-ex.json",
+  "id": "c1-mestersegesintelligencia-04-controlled-2",
+  "set": {
+   "sentence": "Fontos, _____ az orvos mondja ki a végső szót.",
+   "hint": "that",
+   "answer": null,
+   "answers": [
+    "hogy"
+   ],
+   "english": "It is important that the physician has the final say.",
+   "teaches": [
+    "hogy-jon-jen"
+   ],
+   "category": "grammar"
+  },
+  "why": "optative \"Legyen szó akár ...\" is the never-met skill: now hogy + subjunctive (B1 Unit 3)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-04-ex.json",
+  "id": "c1-mestersegesintelligencia-04-practice-4",
+  "set": {
+   "sentence": "Bármilyen kifinomult _____ a szoftver, a végső diagnózist az orvos állítja fel.",
+   "hint": "even",
+   "answer": null,
+   "answers": [
+    "is"
+   ],
+   "english": "However sophisticated the software is, the final diagnosis is made by the doctor.",
+   "teaches": [
+    "concessive-indefinites"
+   ],
+   "category": "grammar"
+  },
+  "why": "\"Bármiként alakuljon is\" is the optative subjunctive: replaced by concessive bármilyen ... is (B2 Unit 4)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-04-ex.json",
+  "id": "c1-mestersegesintelligencia-04-practice-5",
+  "set": {
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-04-ex.json",
+  "id": "c1-mestersegesintelligencia-04-dialogue-6",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Főorvos",
+     "text": "Hogyan győzzük meg a kételkedő kollégákat az MI használatáról?"
+    },
+    {
+     "speaker": "Klinikai kutató",
+     "text": "Független tesztekkel kell bizonyítani, hogy a szoftver csökkenti a téves _____ eredmények kockázatát."
+    }
+   ],
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "distractor_skills": {
+    "2": "an-en-adverb"
+   }
+  },
+  "why": "\"téves negatív kockázat\" was elliptical; wrong options: a real noun and a real adverb; retagged",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-04-ex.json",
+  "id": "c1-mestersegesintelligencia-04-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence on medical AI ethics with bármilyen ... is or fontos, hogy.",
+     "answer": "Bármilyen megbízható is a diagnosztikai neurális hálózat, fontos, hogy a végső terápiás döntést az orvos hozza meg a beteg beleegyezésével."
+    }
+   ],
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ]
+  },
+  "why": "optative-subjunctive sentence replaced by a known-form sentence (\"mindig az orvos\" removed)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-04-ex.json",
+  "id": "c1-mestersegesintelligencia-04-check-8",
+  "set": {
+   "question": "Melyik mondat jelenti azt, hogy a szoftver kifinomultsága nem változtat azon, hogy az orvos dönt?",
+   "options": [
+    "Bármilyen kifinomult is a szoftver, az orvos dönt.",
+    "Mivel kifinomult a szoftver, az orvos dönt.",
+    "Ha kifinomult a szoftver, az orvos nem dönt."
+   ],
+   "correct": 0,
+   "teaches": [
+    "concessive-indefinites"
+   ],
+   "category": "grammar"
+  },
+  "why": "the stem used Hungarian grammar terms; the options named the optative; rebuilt around bármilyen ... is",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-04.json",
+  "old": "  \"grammar\": \"Deliberative and Optative Subjunctive in Medical Decision Making\",\n  \"goal\": [\n    \"I can analyze medical imaging, diagnostic AI, and clinical decision support (*képalkotás, radiológiai diagnosztika, klinikai döntéstámogatás*).\",\n    \"I can employ deliberative and optative subjunctive structures (*bármiként alakuljon is, legyen szó akár... akár, elengedhetetlen, hogy biztosítsák*).\",\n    \"I can debate patient safety, algorithmic false negatives, and personalized oncology in Budapest hospitals.\"",
+  "new": "  \"grammar\": \"Deliberative and Optative Subjunctive in Medical Decision Making\",\n  \"goal\": [\n    \"I can describe how AI is used in medical imaging and diagnosis (*képalkotás, radiológiai diagnosztika, klinikai döntéstámogatás*).\",\n    \"I can say what is important with *fontos, hogy* and concede a point with *bármilyen … is*.\",\n    \"I can discuss patient safety and the doctor's responsibility in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-04.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze medical imaging, diagnostic AI, and clinical decision support (*képalkotás, radiológiai diagnosztika, klinikai döntéstámogatás*).\",\n        \"I can employ deliberative and optative subjunctive structures (*bármiként alakuljon is, legyen szó akár... akár, elengedhetetlen, hogy biztosítsák*).\",\n        \"I can debate patient safety, algorithmic false negatives, and personalized oncology in Budapest hospitals.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe how AI is used in medical imaging and diagnosis (*képalkotás, radiológiai diagnosztika, klinikai döntéstámogatás*).\",\n        \"I can say what is important with *fontos, hogy* and concede a point with *bármilyen … is*.\",\n        \"I can discuss patient safety and the doctor's responsibility in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-04.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze medical imaging, diagnostic AI, and clinical decision support (*képalkotás, radiológiai diagnosztika, klinikai döntéstámogatás*).\",\n        \"I can employ deliberative and optative subjunctive structures (*bármiként alakuljon is, legyen szó akár... akár, elengedhetetlen, hogy biztosítsák*).\",\n        \"I can debate patient safety, algorithmic false negatives, and personalized oncology in Budapest hospitals.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe how AI is used in medical imaging and diagnosis (*képalkotás, radiológiai diagnosztika, klinikai döntéstámogatás*).\",\n        \"I can say what is important with *fontos, hogy* and concede a point with *bármilyen … is*.\",\n        \"I can discuss patient safety and the doctor's responsibility in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-mestersegesintelligencia-04-voc.json",
+  "old": "    {\n      \"lemma\": \"validáció\",\n      \"translation\": \"clinical validation\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"validáció\",\n      \"translation\": \"clinical validation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"radiológus\",\n      \"translation\": \"radiologist\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"műtő\",\n      \"translation\": \"operating theatre\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tehermentesítés\",\n      \"translation\": \"relieving of a burden\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"adminisztratív\",\n      \"translation\": \"administrative\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"kételkedő\",\n      \"translation\": \"doubtful, sceptical\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"diagnosztikai\",\n      \"translation\": \"diagnostic\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-04-orvoslas.json",
+  "old": "A Semmelweis Egyetem radiológiai klinikáin és a magyar egészségügyi startupok laborjaiban a mesterséges intelligencia nem a jövő ígérete, hanem a jelen életeket mentő valósága. A neurális hálózatok képesek több tízezer mellkasi röntgenfelvétel vagy agyi MRI-kép tizedmásodperc alatti átfésülésére, észrevéve az emberi szem számára szinte láthatatlan apró mikromeszesedéseket és elváltozásokat.",
+  "new": "Magyarországon is használnak vagy tesztelnek mesterséges intelligenciát a képalkotó diagnosztikában egyetemi klinikákon, kórházakban és egészségügyi startupokban. A neurális hálózatok nagy mennyiségű mellkasi röntgenfelvétel vagy agyi MRI-kép gyors átvizsgálására képesek, és olyan apró elváltozásokat is jelezhetnek, amelyeket az emberi szem könnyen elkerül.",
+  "why": "\"Semmelweis Egyetem ... a jelen életeket mentő valósága\", \"több tízezer ... tizedmásodperc alatt\" unsourced and overstated",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-04-orvoslas.json",
+  "old": "Az orvosok azonban nem riválist, hanem fáradhatatlan asszisztenst látnak a szoftverben. Az algoritmus tehermentesíti a túlterhelt szakembereket a monotónia alól, lehetővé téve, hogy figyelmüket a bonyolult, kétes esetekre és a betegekkel való közvetlen emberi kapcsolattartásra fordítsák. A magyar orvosi MI-innováció a klinikai döntéstámogatás terén nemzetközi elismerést vívott ki.",
+  "new": "Sok orvos nem riválist, hanem segítőt lát a szoftverben. Az algoritmus tehermentesítheti a túlterhelt szakembereket a monoton munkától, így több figyelmet fordíthatnak a bonyolult, kétes esetekre és a betegekkel való közvetlen kapcsolatra. A klinikai döntéstámogatás területén magyar kutatócsoportok is dolgoznak.",
+  "why": "\"fáradhatatlan asszisztens\" generalisation and \"nemzetközi elismerést vívott ki\" (reviewer: hedge)",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-mestersegesintelligencia-05-a-gr.json",
+  "old": "Contrastive focus inversion in Hungarian moves the emphasized argument directly before the finite verb, leaving the negated counter-argument in post-verbal position or in a paired *nem... hanem...* clause: `Nem a gép intellektusa fenyegeti az emberiséget, hanem a saját értékeink tisztázatlansága` (It is not the machine's intellect that threatens humanity, but the lack of clarity in our own values).",
+  "new": "You know focus before the verb from B2 Unit 1 and *nem … hanem …* from A1 Unit 14. In debates about superintelligence the emphasised argument stands directly before the finite verb and the counter-argument follows after *hanem*: `Nem a gép intellektusa fenyegeti az emberiséget, hanem a saját értékeink tisztázatlansága` (It is not the machine's intellect that threatens humanity, but the lack of clarity in our own values).",
+  "why": "the screen presented known focus and nem ... hanem as new; recap added (sheet: B2 Unit 1 b2-focus-inversion, A1 Unit 14 basic-connectors)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-05-ex.json",
+  "id": "c1-mestersegesintelligencia-05-controlled-2",
+  "set": {
+   "sentence": "Sokak szerint nem a szilícium autonómiája jelenti az igazi veszélyt, _____ az emberi felelősségvállalás hiánya.",
+   "english": "According to many, it is not the autonomy of silicon that poses the real danger, but the lack of human accountability.",
+   "hint": "nem … ?",
+   "teaches": [
+    "basic-connectors"
+   ],
+   "category": "grammar"
+  },
+  "why": "a contested view stated as fact: \"sokak szerint\"; retagged to the connector",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-05-ex.json",
+  "id": "c1-mestersegesintelligencia-05-practice-4",
+  "set": {
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-05-ex.json",
+  "id": "c1-mestersegesintelligencia-05-practice-5",
+  "set": {
+   "teaches": [
+    "basic-hungarian-word-order"
+   ],
+   "category": "grammar"
+  },
+  "why": "focus before the verb is the A1 skill"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-05-ex.json",
+  "id": "c1-mestersegesintelligencia-05-dialogue-6",
+  "set": {
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "distractor_skills": {
+    "1": "how-the-accusative-t-works",
+    "2": "ra-re"
+   }
+  },
+  "why": "wrong options are a real accusative and a real -ra form; the choice is the possessed noun"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-05-ex.json",
+  "id": "c1-mestersegesintelligencia-05-production-7",
+  "set": {
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ]
+  },
+  "why": "retagged (open writing takes the unit vocabulary)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-05-ex.json",
+  "id": "c1-mestersegesintelligencia-05-check-8",
+  "set": {
+   "question": "Melyik mondat jelenti azt, hogy a veszély forrása nem az algoritmus, hanem az emberi döntés?",
+   "options": [
+    "Nem az algoritmus a veszély, hanem az emberi kontroll feladása.",
+    "Az algoritmus veszélyes, mert az ember feladta a kontrollt.",
+    "Ha feladjuk a kontrollt, az algoritmus veszélyessé válhat."
+   ],
+   "correct": 0,
+   "teaches": [
+    "basic-hungarian-word-order"
+   ],
+   "category": "grammar"
+  },
+  "why": "the stem used Hungarian grammar terms; rebuilt",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-05.json",
+  "old": "  \"grammar\": \"Contrastive Focus Inversion in Existential and Epistemic AI Debate\",\n  \"goal\": [\n    \"I can analyze Artificial General Intelligence, the alignment problem, and existential risks (*AGI, összehangolás, kontrollprobléma*).\",\n    \"I can apply contrastive focus syntactic inversion (*nem a technológia jelenti a veszélyt, hanem a felelősség hiánya*).\",\n    \"I can synthesize philosophical implications of superintelligence and epistemic autonomy in fluent Hungarian.\"",
+  "new": "  \"grammar\": \"Contrastive Focus Inversion in Existential and Epistemic AI Debate\",\n  \"goal\": [\n    \"I can discuss the alignment problem and the risks of general AI (*AGI, összehangolási probléma, kontrollprobléma*).\",\n    \"I can set two views against each other with *nem … hanem …*.\",\n    \"I can write about human control of technology in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-05.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze Artificial General Intelligence, the alignment problem, and existential risks (*AGI, összehangolás, kontrollprobléma*).\",\n        \"I can apply contrastive focus syntactic inversion (*nem a technológia jelenti a veszélyt, hanem a felelősség hiánya*).\",\n        \"I can synthesize philosophical implications of superintelligence and epistemic autonomy in fluent Hungarian.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can discuss the alignment problem and the risks of general AI (*AGI, összehangolási probléma, kontrollprobléma*).\",\n        \"I can set two views against each other with *nem … hanem …*.\",\n        \"I can write about human control of technology in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-05.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze Artificial General Intelligence, the alignment problem, and existential risks (*AGI, összehangolás, kontrollprobléma*).\",\n        \"I can apply contrastive focus syntactic inversion (*nem a technológia jelenti a veszélyt, hanem a felelősség hiánya*).\",\n        \"I can synthesize philosophical implications of superintelligence and epistemic autonomy in fluent Hungarian.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can discuss the alignment problem and the risks of general AI (*AGI, összehangolási probléma, kontrollprobléma*).\",\n        \"I can set two views against each other with *nem … hanem …*.\",\n        \"I can write about human control of technology in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-mestersegesintelligencia-05-voc.json",
+  "old": "    {\n      \"lemma\": \"kontrollprobléma\",\n      \"translation\": \"control problem\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"kontrollprobléma\",\n      \"translation\": \"control problem\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szilícium\",\n      \"translation\": \"silicon\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"cselekedet\",\n      \"translation\": \"action, deed\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"eljövetel\",\n      \"translation\": \"coming, arrival\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szétválás\",\n      \"translation\": \"separation, divergence\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"önmeghatározás\",\n      \"translation\": \"self-definition, self-determination\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"munkakör\",\n      \"translation\": \"job, position\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"humánus\",\n      \"translation\": \"humane\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"rámutat\",\n      \"translation\": \"to point out\",\n      \"pos\": \"verb\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-05-jovo.json",
+  "old": "Amikor a mesterséges általános intelligencia (AGI) távoli elméleti hipotézisből kézzelfogható mérnöki célkitűzéssé lépett elő, az emberiség saját Prometheus-pillanatával szembesült. A kérdés immár nem az, hogy képesek vagyunk-e nálunk gyorsabb és sokoldalúbb digitális elméket alkotni, hanem az, hogy képesek leszünk-e ezek céljait az emberi virágzás és túlélés egyetemes értékeihez igazítani.",
+  "new": "Egyes kutatók és vállalatok szerint a mesterséges általános intelligencia (AGI) távoli elméleti hipotézisből kézzelfogható mérnöki célkitűzéssé vált, mások ezt vitatják. A kérdés sok gondolkodó szerint már nem az, hogy képesek vagyunk-e nálunk gyorsabb és sokoldalúbb digitális rendszereket alkotni, hanem az, hogy képesek leszünk-e ezek céljait az emberi értékekhez igazítani.",
+  "why": "the claim that AGI is already a concrete engineering goal is disputed: attributed and the dispute named in one line",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-05-jovo.json",
+  "old": "Ez az úgynevezett összehangolási (alignment) probléma: hogyan kódolható a szilíciumba az empátia, az igazságosság és az élet védelme? A digitális korszak legnagyobb kihívása nem technikai, hanem filozófiai. Neumann János, Stanislaw Lem és a kortárs gondolkodók tanítása szerint a gépek tükröt tartanak elénk: annak az intelligenciának a határait mutatják meg, amelyet végső soron nekünk magunknak kell felelősen irányítanunk.",
+  "new": "Ez az úgynevezett összehangolási (alignment) probléma: hogyan kódolhatók az emberi értékek a rendszerekbe? Sok gondolkodó szerint a digitális korszak egyik legnagyobb kihívása nem csupán technikai, hanem filozófiai. A gépek tükröt tarthatnak elénk: azt mutatják meg, milyen intelligenciát akarunk, és milyen felelősséggel irányítjuk.",
+  "why": "invented attribution to \"Neumann János, Stanislaw Lem\" removed; \"végső soron\" is the never-met conclusive marker (user): rewritten away",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json",
+  "id": "c1-mestersegesintelligencia-consolidation-1",
+  "set": {
+   "question": "Mit tesznek a 'kiváltképp' és az 'éppenséggel' szavak egy tudományos szövegben?",
+   "options": [
+    "Kiemelnek és pontosítanak egy állítást.",
+    "Kérdő mondatok végére kerülnek.",
+    "Tagadó mondatot csinálnak az állításból."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "tell-absolute (Kizárólag) and length give-away 73 vs 41; grammar term stem",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json",
+  "id": "c1-mestersegesintelligencia-consolidation-2",
+  "set": {
+   "question": "Hogyan emeljük ki a szórenddel, mi a lényeg a 'nem ... hanem ...' mondatban?",
+   "options": [
+    "A kiemelt szót közvetlenül az ige elé tesszük, és szembeállítjuk a másikkal.",
+    "A kiemelt szót a mondat végére tesszük, és feltételes móddal enyhítjük az állítást.",
+    "Az igét a mondat végére tesszük, és tagadás nélkül sorolunk fel alternatívákat."
+   ],
+   "correct": 0,
+   "teaches": [
+    "basic-hungarian-word-order"
+   ],
+   "category": "grammar"
+  },
+  "why": "the stem used Hungarian grammar terms; wrong options not parallel",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json",
+  "id": "c1-mestersegesintelligencia-consolidation-5",
+  "set": {
+   "hint": "high-risk (adjective formed from kockázat)"
+  },
+  "why": "hint gave the ending (kockázat + -ú)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json",
+  "id": "c1-mestersegesintelligencia-consolidation-6",
+  "set": {
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json",
+  "id": "c1-mestersegesintelligencia-consolidation-8",
+  "set": {
+   "sentence": "Bármilyen pontos _____ a modell, a klinikai felelősség az orvosé.",
+   "hint": "even",
+   "answer": null,
+   "answers": [
+    "is"
+   ],
+   "english": "However accurate the model is, clinical responsibility lies with the doctor.",
+   "teaches": [
+    "concessive-indefinites"
+   ],
+   "category": "grammar"
+  },
+  "why": "\"Bármiként alakuljon is\" is the never-met optative subjunctive: bármilyen ... is",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json",
+  "id": "c1-mestersegesintelligencia-consolidation-9",
+  "set": {
+   "options": [
+    "Arra mutatnak rá, hogy a döntő pont nem a gép képességeiben, hanem az emberi felelősségben van.",
+    "Kérdőre vonják az innováció társadalmi hasznát, és az eszközök iskolai korlátozását javasolják.",
+    "A társadalmi felelősséget háttérbe szorítva a szoftverek fejlesztésére összpontosítanak."
+   ],
+   "correct": 0,
+   "teaches": [
+    "basic-hungarian-word-order"
+   ],
+   "category": "grammar"
+  },
+  "why": "length give-away; plainly absurd options replaced",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json",
+  "id": "c1-mestersegesintelligencia-consolidation-10",
+  "set": {
+   "tiles": [
+    "Sokak",
+    "szerint",
+    "a",
+    "mesterséges",
+    "intelligenciának",
+    "az",
+    "emberi",
+    "méltóságot",
+    "kell",
+    "szolgálnia."
+   ],
+   "solution": [
+    "Sokak",
+    "szerint",
+    "a",
+    "mesterséges",
+    "intelligenciának",
+    "az",
+    "emberi",
+    "méltóságot",
+    "kell",
+    "szolgálnia."
+   ],
+   "english": "According to many, artificial intelligence must serve human dignity.",
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "optative-subjunctive tag; a normative claim attributed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json",
+  "id": "c1-mestersegesintelligencia-consolidation-11",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a synthesized argument on European AI regulation balancing innovation and human rights.",
+     "answer": "A rendelet célja szerint a szabályozás nem az innováció gátlására, hanem az emberi felügyelet és az alapjogok védelmére épül."
+    }
+   ],
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ]
+  },
+  "why": "\"nem az innováció elfojtását célozza\" claims the regulator's intent; hedged",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json",
+  "id": "c1-mestersegesintelligencia-consolidation-12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Formulate a concluding thought on artificial intelligence and human agency.",
+     "answer": "Nem a szilícium autonómiája dönti el a jövőt, hanem az emberi felelősség: a mesterséges intelligencia mércéje az, hogy mennyire szolgálja az emberi értékeket."
+    }
+   ],
+   "teaches": [
+    "c1-ai-ethics-vocab"
+   ]
+  },
+  "why": "retagged; wording simplified",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-consolidation.json",
+  "old": "  \"grammar\": \"Review and Capstone Integration\",\n  \"goal\": [\n    \"I can analyze foundation model research and Hungarian supercomputer infrastructure (SZTAKI, Komondor).\",\n    \"I can evaluate EU AI Act compliance tiers, cognitive automation, and healthcare AI diagnostics.\",\n    \"I can synthesize debates on AGI value alignment, epistemic autonomy, and technological sovereignty.\"",
+  "new": "  \"grammar\": \"Review and Capstone Integration\",\n  \"goal\": [\n    \"I can recount Hungarian research on language models and the aims of the EU AI Act.\",\n    \"I can explain how automation, medical AI and general AI raise questions of responsibility.\",\n    \"I can set two views against each other and give reasons in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-consolidation.json",
+  "old": "      \"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can analyze foundation model research and Hungarian supercomputer infrastructure (SZTAKI, Komondor).\",\n        \"I can evaluate EU AI Act compliance tiers, cognitive automation, and healthcare AI diagnostics.\",\n        \"I can synthesize debates on AGI value alignment, epistemic autonomy, and technological sovereignty.\"",
+  "new": "      \"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can recount Hungarian research on language models and the aims of the EU AI Act.\",\n        \"I can explain how automation, medical AI and general AI raise questions of responsibility.\",\n        \"I can set two views against each other and give reasons in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-mestersegesintelligencia-consolidation.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze foundation model research and Hungarian supercomputer infrastructure (SZTAKI, Komondor).\",\n        \"I can evaluate EU AI Act compliance tiers, cognitive automation, and healthcare AI diagnostics.\",\n        \"I can synthesize debates on AGI value alignment, epistemic autonomy, and technological sovereignty.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can recount Hungarian research on language models and the aims of the EU AI Act.\",\n        \"I can explain how automation, medical AI and general AI raise questions of responsibility.\",\n        \"I can set two views against each other and give reasons in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-01-alapmodellek.json",
+  "old": "\"grammar\": [\n    \"c1-discourse-limiting-particles\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-ai-ethics-vocab\"\n  ]",
+  "why": "story grammar field held a retired slug"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-02-etika.json",
+  "old": "\"grammar\": [\n    \"c1-correlative-causal-adverbials\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-ai-ethics-vocab\"\n  ]",
+  "why": "story grammar field held a retired slug"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-03-automatizacio.json",
+  "old": "\"grammar\": [\n    \"c1-assertive-evidential-markers\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-ai-ethics-vocab\"\n  ]",
+  "why": "story grammar field held a retired slug"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-04-orvoslas.json",
+  "old": "\"grammar\": [\n    \"c1-subjunctive-deliberative-optatives\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-ai-ethics-vocab\"\n  ]",
+  "why": "story grammar field held a retired slug"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-mestersegesintelligencia-05-jovo.json",
+  "old": "\"grammar\": [\n    \"c1-adv-contrastive-focus-inversion\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-ai-ethics-vocab\"\n  ]",
+  "why": "story grammar field held a retired slug"
+ }
+]
