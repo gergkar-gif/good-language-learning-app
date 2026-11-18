@@ -63,7 +63,11 @@ def main():
                     .get("levels") or {}).items() for u in L.get("units", []) if u.get("hidden")}
     hidden = {i for i, (lv, u) in enumerate(units) if (lv, u.get("id")) in hidden_slugs}
     if pos in hidden:
-        hidden = set()               # reading a hidden unit: its own track counts
+        # Reading a hidden unit: its own track counts (at every level, so B2 latam
+        # meets B1 latam), any other hidden track still does not (ES C1 core,
+        # 2026-11-18: the hidden latam screens are not met by a C1 core unit).
+        own = units[pos][1].get("track")
+        hidden = {i for i in hidden if units[i][1].get("track") != own}
 
     def stem_of(name):
         """The stem a screen id or file name belongs to: the longest stem it
@@ -122,6 +126,19 @@ def main():
         i = unit_of.get(by_lid.get(lid))
         if i is not None and i < pos and i not in hidden:
             words.setdefault(i, []).append(lemma)
+    # The word index leaves hidden tracks out, so a hidden unit's earlier units on its
+    # own (still hidden) track are read from their vocabulary lists here.
+    indexed = {w for ws in words.values() for w in ws}
+    for i in range(pos):
+        lv, u = units[i]
+        if i in hidden or not (lv, u.get("id")) in hidden_slugs:
+            continue
+        for st in u.get("stems", []):
+            for w in (read(f"content/{course}/vocabulary/{lv}/{st}-voc.json") or {}).get("words") or []:
+                lemma = (w or {}).get("lemma")
+                if lemma and lemma not in indexed:
+                    indexed.add(lemma)
+                    words.setdefault(i, []).append(lemma)
 
     titles = {}
     for lv in sorted({lv for lv, _ in units[:pos]}, key=LEVELS.index):

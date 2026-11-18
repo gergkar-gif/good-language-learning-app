@@ -354,6 +354,14 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
   `conectores-temporales-narrativos` b2-02-04 (*apenas* "as soon as"; *apenas*
   "barely" is b2-01-02), `imperfecto-de-cortesia` b2-02-05.
 
+- **C1 core (user, 2026-11-18):** written in es-latam, planted in es-es with
+  Spain's words (`plant_es_es_c1.py`); English screens, goals and question
+  stems as at B2; the ES B2 lesson size; original genre texts (no retelling of
+  any work, no quotations); C1 forms never before their screen
+  (`check_es_c1_forms.py es-latam c1 --track core`, which sees forms the tags
+  miss: *el cual*, *el haber* + participle, future subjunctive, *de lo que*
+  comparatives, *con lo / para lo* + adjective + *que*, *ni que* + past
+  subjunctive).
 - **es-latam has no *vosotros*** (AGENTS.md): no *vosotros*/*os* forms in
   readings, screens, examples, exercises or challenges; *ustedes* for
   plural "you" (`check-content` flags it: `latam-vosotros`). Only the verb

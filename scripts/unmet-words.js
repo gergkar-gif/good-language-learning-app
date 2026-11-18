@@ -107,17 +107,26 @@ for (const level of LEVELS) {
 // checked on its own is checked against the visible course only, so its own
 // track's words show as unmet until the track is shown again.
 const hiddenStems = new Set();
+const hiddenTrack = new Map();   // hidden stem -> its track id
 for (const lv of Object.values((readJson(`content/${course}/curriculum/curriculum.json`) || {}).levels || {})) {
     for (const u of lv.units || []) {
-        if (u.hidden) for (const l of u.lessons || []) hiddenStems.add(String(l.id).replace(/^lesson\./, '').replace(/\./g, '-'));
+        if (u.hidden) for (const l of u.lessons || []) {
+            const st = String(l.id).replace(/^lesson\./, '').replace(/\./g, '-');
+            hiddenStems.add(st);
+            hiddenTrack.set(st, u.track || '');
+        }
     }
 }
 // --with-hidden: read a hidden track as if it were shown (reviewing the track before it is
 // unhidden, HU C1 culture 2026-11-17): its lessons count, and their vocabulary lists, which
 // the word index leaves out, are read here. Without it the track's own words always show as unmet.
+// With --stems, only the hidden tracks of those stems are opened (ES C1 core, 2026-11-18: the
+// hidden latam track must stay unmet for a C1 core unit); without --stems, every hidden track.
 const withHidden = args.includes('--with-hidden');
-const hiddenVocab = withHidden ? [...hiddenStems] : [];
-if (withHidden) hiddenStems.clear();
+const openTracks = onlyStems ? new Set([...onlyStems].filter(s => hiddenTrack.has(s)).map(s => hiddenTrack.get(s))) : null;
+const opened = withHidden ? [...hiddenStems].filter(s => !openTracks || openTracks.has(hiddenTrack.get(s))) : [];
+const hiddenVocab = opened;
+for (const s of opened) hiddenStems.delete(s);
 if (onlyStems && [...onlyStems].some(s => hiddenStems.has(s))) {
     console.error('unmet-words.js: some of these stems are in a hidden track; its own words are not counted as met (pass --with-hidden to review the track)');
 }
