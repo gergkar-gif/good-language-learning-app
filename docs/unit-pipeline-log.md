@@ -2262,3 +2262,17 @@ subjunctive, unpinned production prompts (the reader's main class, 25 fixes in
 all). The es-es plant converted a sentence-builder tile without its article
 (*la salón*); the plant script now copies tiles and lists them.
 
+### 2026-11-18: ES C1 core Units 3–7 (one writer with two units, one with three)
+
+Writers wrote their units in sequence, each building a small generator once and reusing it:
+~151k (A, 2 units) and ~136k (B, 3 units, figure uncertain after a usage-limit resume) a unit,
+against ~339k in the pilot; readers ~122k and ~108k a unit. No quality difference between the
+two- and three-unit writers (~16 reader fixes a unit each). The generator is now
+`scripts/es_c1_builders.py`. Readers still found what no check sees: six recaps naming the wrong
+unit (`check_unit_refs.py` only reported a recap naming a unit before the form was taught, and
+read only the last italic of a list; `--named` now reports both, opt-in), consolidation items
+copying screen examples, challenges not practising their canDo, tags copied from the previous
+unit. A rebase conflict on challenges.json/tags.lock.json taken from master's side silently
+dropped a batch's challenges, locks and taught_in: after such a conflict, rerun
+`add_challenges.py`, `lock_tags.py --update` and `set_planned_taught_in.py` and count before pushing.
+

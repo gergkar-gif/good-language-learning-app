@@ -4,7 +4,12 @@ and 2 of 10 in Unit 35 named a unit where the word isn't, one in Unit 39 a
 form that is new on that screen; checking the words found 5 more in Units 19-35, where
 the recap follows a skill title that names a word its screen never shows).
 
-    python scripts/check_unit_refs.py <course> <level> [<unit id> ...] [--bare]
+    python scripts/check_unit_refs.py <course> <level> [<unit id> ...] [--bare] [--named]
+
+--named also reports a recap whose named unit does not show the word at all, though
+an earlier unit does ("*con el fin de* from B2 Unit 12" when B1 Unit 32 teaches it:
+ES C1 Units 3-6, 2026-11-18, six such recaps found only by readers). Opt-in, since
+the frozen levels were read without it.
 
 --bare also lists recaps with no italicised word ("You know the imperative from
 A2 Unit 10"), which the check can't read: check those by hand (HU B2 pilot).
@@ -53,7 +58,8 @@ def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     bare = "--bare" in sys.argv
-    args = [a for a in sys.argv if a not in ("--bare", "--labels")]
+    named = "--named" in sys.argv
+    args = [a for a in sys.argv if a not in ("--bare", "--labels", "--named")]
     course, level, only = args[1], args[2].lower(), set(args[3:])
     pos, stems_of, track_of, by_label, label_of = {}, {}, {}, {}, {}
     for li, lvl in enumerate(ORDER):
@@ -112,22 +118,43 @@ def main():
     for f in sorted(glob.glob(str(ROOT / f"content/{course}/grammar/{level}/*.json"))):
         if wanted is not None and stem_of(f, pos) not in wanted:
             continue
-        for m in REF.finditer(Path(f).read_text(encoding="utf-8")):
-            word = re.split(r"\.\.\.|…", m.group(1))[0].strip(" ,.'")
-            if len(word) < 3 or word.startswith("-"):
-                continue
+        src = Path(f).read_text(encoding="utf-8")
+        for m in REF.finditer(src):
+            # a list of recapped forms ("*con el fin de*, *con miras a* and *con vistas a* from
+            # B2 Unit 12") claims the unit for each of them, not only the last (ES C1, 2026-11-18)
+            words = [m.group(1)]
+            # only "from <level> Unit N" covers a list; "*X* (B2 Unit N)" names X alone
+            if named and not re.match(r"\*[^*]+\* \(", m.group(0)):
+                before = src[:m.start()]
+                while True:
+                    k = re.search(r"\*([^*]+)\*(?:,| and| y| or| o)\s*$", before)
+                    if not k:
+                        break
+                    words.insert(0, k.group(1))
+                    before = before[:k.start()]
             lv = m.group(2).lower()
             idx = un.resolve(course, lv, m.group(3), int(m.group(4)))
             if idx is None:
-                print(f"{Path(f).name}: *{word}* claimed from {m.group(0)[m.group(0).index(m.group(2)):]}: no such unit")
+                print(f"{Path(f).name}: *{words[-1]}* claimed from {m.group(0)[m.group(0).index(m.group(2)):]}: no such unit")
                 hits += 1
                 continue
             claim = (ORDER.index(lv), idx + 1)
-            seen = first(word)
-            if seen is None or seen > claim:
-                where = "nowhere" if seen is None else un.name(course, ORDER[seen[0]], seen[1] - 1)
-                print(f"{Path(f).name}: *{word}* claimed from {m.group(0)[m.group(0).index(m.group(2)):]}, first appears {where}")
-                hits += 1
+            for raw in words:
+                word = re.split(r"\.\.\.|…", raw)[0].strip(" ,.'")
+                if len(word) < 3 or word.startswith("-"):
+                    continue
+                seen = first(word)
+                if seen is None or seen > claim:
+                    where = "nowhere" if seen is None else un.name(course, ORDER[seen[0]], seen[1] - 1)
+                    print(f"{Path(f).name}: *{word}* claimed from {m.group(0)[m.group(0).index(m.group(2)):]}, first appears {where}")
+                    hits += 1
+                elif named and seen < claim:
+                    pat = re.compile(rf"(?<![{LETTER}]){re.escape(word.lower())}")
+                    if not any(pat.search(t) for t in texts.get(claim, [])):
+                        where = un.name(course, ORDER[seen[0]], seen[1] - 1)
+                        print(f"{Path(f).name}: *{word}* claimed from {m.group(0)[m.group(0).index(m.group(2)):]}, "
+                              f"which does not show it; first taught {where}")
+                        hits += 1
         # a recap with no italicised word can't be checked (HU B2 pilot: both
         # readers wrote "You know viszont … from B1 Unit 21"): list it
         text = Path(f).read_text(encoding="utf-8")

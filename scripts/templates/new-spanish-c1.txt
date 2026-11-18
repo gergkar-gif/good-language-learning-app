@@ -63,7 +63,7 @@ One challenge per lesson, consolidation included (six), written to `{W}/{CHALLEN
 - `node scripts/unmet-words.js es-latam c1 --stems {STEMS} --with-hidden` (C1 core is hidden while it is written; `--with-hidden` counts this unit's and earlier C1 units' own lists, not the latam track). Transparent English cognates are skipped already; every other hit is listed in the first lesson that uses it or replaced by a met word.
 - `python scripts/check_es_c1_forms.py es-latam c1 --track core`: no hit in your unit.
 - `node scripts/render_lesson.js es-latam {STEMS_SP}` and read every screen and item as rendered (`!!` = error).
-- `python scripts/check_unit_refs.py es-latam c1 {UID} --labels --bare`.
+- `python scripts/check_unit_refs.py es-latam c1 {UID} --bare --named` (read every hit: a recap of a form rather than a word can be a false positive).
 - `python scripts/validate-content.py --changed`.
 - `python scripts/lock_tags.py es-latam c1/{UID} --update --reason "new unit, written 2026-11 (ES C1 core)"`.
 
