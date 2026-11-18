@@ -1,0 +1,23 @@
+# hu C1 batch: hu-c1-batch-cult-34-48
+
+Started 2026-11-18T02:21:42Z from origin/master 7f07388a. 2 Sonnet reader(s).
+
+- Reader A: C1 Culture Unit 17 visegrad-group (c1-visegrad-01 c1-visegrad-02 c1-visegrad-03 c1-visegrad-04 c1-visegrad-05 c1-visegrad-consolidation; stories ['c1-visegrad-01-tortenet', 'c1-visegrad-02-infrastruktura', 'c1-visegrad-03-divergencia', 'c1-visegrad-04-kohezio', 'c1-visegrad-05-jovo']); C1 Culture Unit 18 cyber-warfare (c1-kiberbiztonsag-01 c1-kiberbiztonsag-02 c1-kiberbiztonsag-03 c1-kiberbiztonsag-04 c1-kiberbiztonsag-05 c1-kiberbiztonsag-consolidation; stories ['c1-kiberbiztonsag-01-tamadas', 'c1-kiberbiztonsag-02-pegasus', 'c1-kiberbiztonsag-03-nis2', 'c1-kiberbiztonsag-04-adatvedelem', 'c1-kiberbiztonsag-05-reziliencia']); C1 Culture Unit 19 centre-periphery (c1-tarsadalmireteg-01 c1-tarsadalmireteg-02 c1-tarsadalmireteg-03 c1-tarsadalmireteg-04 c1-tarsadalmireteg-05 c1-tarsadalmireteg-consolidation; stories ['c1-tarsadalmireteg-01-vizfej', 'c1-tarsadalmireteg-02-kozlekedes', 'c1-tarsadalmireteg-03-szolgaltatas', 'c1-tarsadalmireteg-04-revitalizacio', 'c1-tarsadalmireteg-05-jovo']); C1 Culture Unit 20 water-management (c1-vizgazdalkodas-01 c1-vizgazdalkodas-02 c1-vizgazdalkodas-03 c1-vizgazdalkodas-04 c1-vizgazdalkodas-05 c1-vizgazdalkodas-consolidation; stories ['c1-vizgazdalkodas-01-homokhatsag', 'c1-vizgazdalkodas-02-tiszabeka', 'c1-vizgazdalkodas-03-arteri', 'c1-vizgazdalkodas-04-akkugyar', 'c1-vizgazdalkodas-05-vizszuverenitas'])
+- Reader B: C1 Culture Unit 21 dual-labour-market (c1-munkaeropiac-01 c1-munkaeropiac-02 c1-munkaeropiac-03 c1-munkaeropiac-04 c1-munkaeropiac-05 c1-munkaeropiac-consolidation; stories ['c1-munkaeropiac-01-vendegmunkas', 'c1-munkaeropiac-02-akkugyar-munka', 'c1-munkaeropiac-03-gig-economy', 'c1-munkaeropiac-04-szakszervezet', 'c1-munkaeropiac-05-berfelzarkozas']); C1 Culture Unit 22 small-language-ai (c1-mestersegesnyelv-01 c1-mestersegesnyelv-02 c1-mestersegesnyelv-03 c1-mestersegesnyelv-04 c1-mestersegesnyelv-05 c1-mestersegesnyelv-consolidation; stories ['c1-mestersegesnyelv-01-nyelvmodellek', 'c1-mestersegesnyelv-02-digitalis-kihalas', 'c1-mestersegesnyelv-03-nemzeti-nyelvtechnologia', 'c1-mestersegesnyelv-04-etika-es-szerzoi-jog', 'c1-mestersegesnyelv-05-jovokepek']); C1 Culture Unit 23 urban-sprawl (c1-varosfejlesztes-01 c1-varosfejlesztes-02 c1-varosfejlesztes-03 c1-varosfejlesztes-04 c1-varosfejlesztes-05 c1-varosfejlesztes-consolidation; stories ['c1-varosfejlesztes-01-agglomeracio', 'c1-varosfejlesztes-02-rozsdaovezet', 'c1-varosfejlesztes-03-kozlekedes', 'c1-varosfejlesztes-04-varosliget', 'c1-varosfejlesztes-05-kozossegi-varos']); C1 Culture Unit 24 university-model-change (c1-felsooktatas-01 c1-felsooktatas-02 c1-felsooktatas-03 c1-felsooktatas-04 c1-felsooktatas-05 c1-felsooktatas-consolidation; stories ['c1-felsooktatas-01-modellvaltas', 'c1-felsooktatas-02-erasmus', 'c1-felsooktatas-03-szfe', 'c1-felsooktatas-04-nobeldij', 'c1-felsooktatas-05-tudomanyos-szuverenitas'])
+
+## Baseline check-content, errors / suspects
+
+| Unit | track | errors / suspects |
+|---|---|---|
+| C1 Culture Unit 17 visegrad-group | culture | 8 / 14 |
+| C1 Culture Unit 18 cyber-warfare | culture | 11 / 15 |
+| C1 Culture Unit 19 centre-periphery | culture | 4 / 13 |
+| C1 Culture Unit 20 water-management | culture | 7 / 15 |
+| C1 Culture Unit 21 dual-labour-market | culture | 5 / 18 |
+| C1 Culture Unit 22 small-language-ai | culture | 1 / 11 |
+| C1 Culture Unit 23 urban-sprawl | culture | 8 / 16 |
+| C1 Culture Unit 24 university-model-change | culture | 6 / 16 |
+
+## Walk (with `python scripts/dev-server.py 8131` running)
+
+    node scripts/walk_lessons.js hu c1 --jobs 4 --only c1-visegrad-01 c1-visegrad-02 c1-visegrad-03 c1-visegrad-04 c1-visegrad-05 c1-visegrad-consolidation c1-kiberbiztonsag-01 c1-kiberbiztonsag-02 c1-kiberbiztonsag-03 c1-kiberbiztonsag-04 c1-kiberbiztonsag-05 c1-kiberbiztonsag-consolidation c1-tarsadalmireteg-01 c1-tarsadalmireteg-02 c1-tarsadalmireteg-03 c1-tarsadalmireteg-04 c1-tarsadalmireteg-05 c1-tarsadalmireteg-consolidation c1-vizgazdalkodas-01 c1-vizgazdalkodas-02 c1-vizgazdalkodas-03 c1-vizgazdalkodas-04 c1-vizgazdalkodas-05 c1-vizgazdalkodas-consolidation c1-munkaeropiac-01 c1-munkaeropiac-02 c1-munkaeropiac-03 c1-munkaeropiac-04 c1-munkaeropiac-05 c1-munkaeropiac-consolidation c1-mestersegesnyelv-01 c1-mestersegesnyelv-02 c1-mestersegesnyelv-03 c1-mestersegesnyelv-04 c1-mestersegesnyelv-05 c1-mestersegesnyelv-consolidation c1-varosfejlesztes-01 c1-varosfejlesztes-02 c1-varosfejlesztes-03 c1-varosfejlesztes-04 c1-varosfejlesztes-05 c1-varosfejlesztes-consolidation c1-felsooktatas-01 c1-felsooktatas-02 c1-felsooktatas-03 c1-felsooktatas-04 c1-felsooktatas-05 c1-felsooktatas-consolidation
