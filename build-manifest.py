@@ -188,8 +188,10 @@ def load_unit_table(lang, level_id):
 # unit, its stories and its decks) and the engine filters on load. Remove an
 # entry here to bring a track back.
 HIDDEN_TRACKS = {
-    "es-es": {"b1": {"cultura"}},
-    "es-latam": {"b1": {"latam"}, "b2": {"latam"}},
+    # ES C1 core: hidden while it is written (user, 2026-11-18;
+    # imports/review/es-c1-plan/); unhide after the C1 level checklist.
+    "es-es": {"b1": {"cultura"}, "c1": {"core"}},
+    "es-latam": {"b1": {"latam"}, "b2": {"latam"}, "c1": {"core"}},
 }
 
 
@@ -209,6 +211,9 @@ LEVEL_TRACKS = {
             {"id": "latam", "title": "Latin America",
              "description": "Latin America country by country: places, culture and current affairs."},
         ],
+        "c1": [
+            {"id": "core", "title": "Core Spanish"},
+        ],
     },
     "es-es": {
         "b1": [
@@ -216,6 +221,9 @@ LEVEL_TRACKS = {
             {"id": "cultura", "title": "Cultura y Ciudadanía",
              "description": "The history, institutions and culture behind the CCSE citizenship exam."},
         ],        "b2": [
+            {"id": "core", "title": "Core Spanish"},
+        ],
+        "c1": [
             {"id": "core", "title": "Core Spanish"},
         ],
     },
