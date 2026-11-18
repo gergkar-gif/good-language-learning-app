@@ -1,0 +1,1088 @@
+[
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-01-ex.json",
+  "id": "c1-bioetika-01-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Miért tartják különösen aggályosnak a csíravonal-módosítást?",
+   "options": [
+    "Mert a változtatás az utódokra is átöröklődik, nem csak a betegre.",
+    "Mert csak a beteg saját testi sejtjeit változtatja meg a kezelés.",
+    "Mert a kezelt beteg életét a beavatkozás közvetlenül veszélyezteti."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away and absolute (kizárólag); \"tiltja a nemzetközi bioetika\" overstated (the Oviedo ban binds its parties); wrong options each one fault"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-01-ex.json",
+  "id": "c1-bioetika-01-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "sentence": "A csíravonal-módosítás _____ változtatást hoz létre, vagyis az utódok is megkapják.",
+   "hint": "heritable",
+   "english": "Germline modification creates a heritable change, so the descendants receive it too."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-biomedical-discourse; item tests a word, so vocabulary; \"szigorúan tiltják ... nemzetközi egyezmények\" overstated"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-01-ex.json",
+  "id": "c1-bioetika-01-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; builder tests no C1 form: vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-01-ex.json",
+  "id": "c1-bioetika-01-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; open writing takes the unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-01-ex.json",
+  "id": "c1-bioetika-01-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Melyik egyezmény rögzíti az európai bioetika alapelveit?",
+   "options": [
+    "Az oviedói egyezmény az emberi jogokról és a biomedicináról.",
+    "A genfi egyezmények a háborús sebesültek és betegek védelméről.",
+    "A római szerződés az Európai Gazdasági Közösség létrehozásáról."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (60 vs 39) and absurd wrong options; wrong options now real treaties with one fault (wrong subject)"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-bioetika-01-voc.json",
+  "old": "\"lemma\": \"szomatikus sejtterápia\",\n      \"translation\": \"somatic cell therapy\"",
+  "new": "\"lemma\": \"szomatikus génterápia\",\n      \"translation\": \"somatic gene therapy\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "screens, story and writing item say génterápia/gyógyítás; the list had \"sejtterápia\" (unused)"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-bioetika-01-voc.json",
+  "old": "      \"translation\": \"genome\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"genome\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"cisztás fibrózis\",\n      \"translation\": \"cystic fibrosis\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vérzékenység\",\n      \"translation\": \"haemophilia\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"oviedói egyezmény\",\n      \"translation\": \"Oviedo Convention (Convention on Human Rights and Biomedicine)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"géntechnológia\",\n      \"translation\": \"genetic engineering\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szerkeszthető\",\n      \"translation\": \"editable\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-01-genszerkesztes.json",
+  "old": "az emberiség átlépte a biológiai evolúció Rubiconját",
+  "new": "az orvoslás új korszak küszöbére érkezett",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Rubicon metaphor stacked on \"evolution\"; plain"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-01-genszerkesztes.json",
+  "old": "felszámolásának ígérete felcsillantotta az orvoslás régóta várt megváltását",
+  "new": "kezelésének lehetősége új reményt keltett az orvoslásban",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"felszámolás\" promises a cure of incurable diseases; \"megváltás\" loaded"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-01-genszerkesztes.json",
+  "old": "A nemzetközi bioetikai közösség szigorú határvonalat húzott",
+  "new": "A nemzetközi bioetikai álláspontok többsége éles határvonalat húz",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"the international community drew\" overstated; views differ"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-01-genszerkesztes.json",
+  "old": "Ha megengedjük az emberi faj tervszerű genetikai átalakítását, nemcsak beláthatatlan ökológiai és evolúciós kockázatot vállalunk, hanem megnyitjuk az utat egy új, biológiai kasztrendszer és a géntechnológiai eugenika előtt.",
+  "new": "Egyes bioetikusok attól tartanak, hogy az emberi faj tervszerű genetikai átalakítása beláthatatlan kockázatot hordozna, és utat nyithatna a géntechnológiai eugenika előtt.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "narrator took a side in a disputed matter (\"kasztrendszer\" claim); ecological risk belongs to gene drives, not human germline; attributed as a concern"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-01-genszerkesztes.json",
+  "old": "\"c1-biomedical-discourse\"",
+  "new": "\"c1-patient-rights-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-01.json",
+  "old": "\"title\": \"CRISPR, Gene Editing and Genomic Sovereignty\",",
+  "new": "\"title\": \"CRISPR and Gene Editing\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "inflated title (\"Genomic Sovereignty\" is not taught anywhere)"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-01.json",
+  "old": "  \"goal\": [\n    \"I can analyze ethical controversies surrounding CRISPR and human genome editing.\"",
+  "new": "  \"goal\": [\n    \"I can explain why changing the germline is more controversial than treating one patient.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-01.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze ethical controversies surrounding CRISPR and human genome editing.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain why changing the germline is more controversial than treating one patient.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-01.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze ethical controversies surrounding CRISPR and human genome editing.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain why changing the germline is more controversial than treating one patient.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-02-ex.json",
+  "id": "c1-bioetika-02-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "sentence": "A donorszervek elosztásánál a szöveti _____ és a sürgősség a legfontosabb szempont.",
+   "english": "When donor organs are allocated, tissue compatibility and urgency are the most important criteria."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-biomedical-discourse; word item; \"donor szervek\" is one word; \"klinikai\" unmet"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-02-ex.json",
+  "id": "c1-bioetika-02-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "tiles": [
+    "A",
+    "szervelosztás",
+    "szabályai",
+    "nem",
+    "veszik",
+    "figyelembe",
+    "a",
+    "beteg",
+    "vagyonát."
+   ],
+   "solution": [
+    "A",
+    "szervelosztás",
+    "szabályai",
+    "nem",
+    "veszik",
+    "figyelembe",
+    "a",
+    "beteg",
+    "vagyonát."
+   ],
+   "english": "The organ allocation rules do not take the patient's wealth into account."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"kizár minden diszkriminációt\" overclaims the allocation system; new builder, no unmet \"diszkrimináció\""
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-02-ex.json",
+  "id": "c1-bioetika-02-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Explain on what grounds Eurotransplant allocates organs.",
+     "answer": "Az Eurotransplant orvosi szempontok – kompatibilitás, sürgősség és várakozási idő – alapján osztja el a szerveket, hogy az eljárás méltányos legyen."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"garantálva a pártatlan eljárást\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-02-ex.json",
+  "id": "c1-bioetika-02-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Mi az előfeltétele a donációnak elhunyt donor esetén?"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; plainer stem"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-bioetika-02-voc.json",
+  "old": "      \"translation\": \"living donor transplantation\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"living donor transplantation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"donor\",\n      \"translation\": \"donor\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"recipiens\",\n      \"translation\": \"recipient\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"agyműködés\",\n      \"translation\": \"brain function\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"sürgősség\",\n      \"translation\": \"urgency\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szervelosztás\",\n      \"translation\": \"organ allocation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"hozzátartozó\",\n      \"translation\": \"relative, next of kin\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-02-transzplantacio.json",
+  "old": "annak felismerése, hogy a teljes agyműködés visszafordíthatatlan leállása jelenti a biológiai személyiség végét, még ha a keringést gépek fenn is tartják",
+  "new": "annak felismerése, hogy az egész agy működésének visszafordíthatatlan leállása a halál beálltát jelenti, még ha a keringést gépek fenn is tartják",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"biológiai személyiség vége\" is a philosophical position, the definition of death is debated; check the Hungarian legal definition"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-02-transzplantacio.json",
+  "old": "Az algoritmusok által vezérelt szervelosztás az orvosi igazságosság mintapéldája: a vér szerinti és szöveti kompatibilitás, a várakozási idő és a sürgősség az egyetlen megengedett szempont. A rendszer kizár minden vagyoni vagy társadalmi előnyt, megvalósítva az orvosi etika legszebb ígéretét: az élet egyenlő értékét.",
+  "new": "Az Eurotransplant szervelosztása orvosi szempontokat követ: a vér- és szöveti kompatibilitás, a várakozási idő és a sürgősség a legfontosabbak közé tartozik. A rendszer célja, hogy a vagyon és a társadalmi helyzet ne számítson.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"az egyetlen megengedett szempont\" and \"legszebb ígéret\" overstated (reviewer note)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-02-transzplantacio.json",
+  "old": "\"c1-biomedical-discourse\"",
+  "new": "\"c1-patient-rights-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-02-a-gr.json",
+  "old": "Allocating scarce organs through *Eurotransplant* balances biological compatibility (*szöveti egyezés*), medical urgency, and pediatric priority, strictly excluding wealth or social status from the algorithmic equation.",
+  "new": "Eurotransplant allocation takes biological compatibility (*szöveti egyezés*), medical urgency, waiting time and, for children, special priority into account; wealth and social status are not among its criteria.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"strictly excluding ... algorithmic equation\" overstated"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-02.json",
+  "old": "\"title\": \"Organ Transplantation, Brain Death and Allocation Justice\",",
+  "new": "\"title\": \"Organ Transplants and Brain Death\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "plainer title"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-02.json",
+  "old": "  \"goal\": [\n    \"I can analyze the legal concept of presumed consent in organ donation (*feltételezett beleegyezés*).\"",
+  "new": "  \"goal\": [\n    \"I can explain what presumed consent means in organ donation (*feltételezett beleegyezés*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-02.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the legal concept of presumed consent in organ donation (*feltételezett beleegyezés*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what presumed consent means in organ donation (*feltételezett beleegyezés*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-02.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the legal concept of presumed consent in organ donation (*feltételezett beleegyezés*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what presumed consent means in organ donation (*feltételezett beleegyezés*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-03-ex.json",
+  "id": "c1-bioetika-03-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "options": [
+    "Mert az őssejtek kinyerése a korai emberi embrió elpusztításával jár.",
+    "Mert az őssejtek kinyerése a felnőtt donor szervezetének károsításával jár.",
+    "Mert az őssejtekből csak állati szövetek hozhatók létre a laborban."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "wrong options: \"semmit\", \"minden esetben\" absolutes; one fault each"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-03-ex.json",
+  "id": "c1-bioetika-03-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "hint": "státusz, the embryo's"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; the blank is státusz + 3rd person possessive -a (known skill); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-03-ex.json",
+  "id": "c1-bioetika-03-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-03-ex.json",
+  "id": "c1-bioetika-03-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-03-ex.json",
+  "id": "c1-bioetika-03-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "options": [
+    "A vágyott gyermek megszületése és a fel nem használt fagyasztott embriók sorsa közötti erkölcsi dilemma.",
+    "A genetikai vizsgálatok magas költsége és az eljárás technikai sikeressége közötti aránytalanság.",
+    "Az eljárás hosszú várakozási ideje és a páciensek kórházi ellátásának terhei közötti ellentmondás."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; wrong option 3 meaningless (parental custody after natural conception)"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-bioetika-03-voc.json",
+  "old": "      \"translation\": \"pluripotent\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "new": "      \"translation\": \"pluripotent\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"őssejtkutatás\",\n      \"translation\": \"stem cell research\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"lombikbébi\",\n      \"translation\": \"test-tube baby, IVF baby\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"sejthalmaz\",\n      \"translation\": \"cluster of cells\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"idegrendszer\",\n      \"translation\": \"nervous system\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"metafizika\",\n      \"translation\": \"metaphysics\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"igazolható\",\n      \"translation\": \"justifiable\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"markáns\",\n      \"translation\": \"distinct, marked\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-03-embriokutatas.json",
+  "old": "A mesterséges megtermékenyítés gyermekek százezreinek születését tette lehetővé meddő párok számára, miközben fagyasztókban tárolt embriók ezreinek etikai státuszáról nyitott vitát.",
+  "new": "A mesterséges megtermékenyítés sok gyermek születését tette lehetővé meddő párok számára, miközben a fagyasztva tárolt embriók etikai státuszáról is vitát nyitott.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unsourced figures (százezrek, ezrek) dropped"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-03-embriokutatas.json",
+  "old": "így a pluripotens őssejtek felhasználása súlyos betegségek gyógyítására erkölcsileg igazolható cél.",
+  "new": "így e nézet szerint a pluripotens őssejtek felhasználása súlyos betegségek gyógyítására erkölcsileg igazolható cél.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "the second position was told as the narrator's settled verdict; now attributed"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-03-embriokutatas.json",
+  "old": "\"c1-biomedical-discourse\"",
+  "new": "\"c1-patient-rights-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-03.json",
+  "old": "  \"goal\": [\n    \"I can analyze ethical perspectives on the moral status of the human embryo (*embrió erkölcsi státusza*).\"",
+  "new": "  \"goal\": [\n    \"I can set out two views on the moral status of the embryo (*embrió erkölcsi státusza*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-03.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze ethical perspectives on the moral status of the human embryo (*embrió erkölcsi státusza*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can set out two views on the moral status of the embryo (*embrió erkölcsi státusza*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-03.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze ethical perspectives on the moral status of the human embryo (*embrió erkölcsi státusza*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can set out two views on the moral status of the embryo (*embrió erkölcsi státusza*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-04-ex.json",
+  "id": "c1-bioetika-04-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "sentence": "Karsai a strasbourgi bíróságon a _____ tiszteletben tartásához való jogra hivatkozott.",
+   "hint": "private life",
+   "answer": null,
+   "answers": [
+    "magánélet"
+   ],
+   "english": "At the Strasbourg court Karsai invoked the right to respect for private life."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-patient-autonomy; \"emberi méltósághoz való jog\" as Karsai's ground is unconfirmed (the case turned on Art. 8, private life); now a vocabulary blank"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-04-ex.json",
+  "id": "c1-bioetika-04-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "tiles": [
+    "A",
+    "vita",
+    "az",
+    "egyéni",
+    "szabadság",
+    "és",
+    "az",
+    "élet",
+    "védelme",
+    "közötti",
+    "határról",
+    "szól."
+   ],
+   "solution": [
+    "A",
+    "vita",
+    "az",
+    "egyéni",
+    "szabadság",
+    "és",
+    "az",
+    "élet",
+    "védelme",
+    "közötti",
+    "határról",
+    "szól."
+   ],
+   "english": "The debate is about the boundary between individual freedom and the protection of life."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"végső határa\" is a judgement; new builder"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-04-ex.json",
+  "id": "c1-bioetika-04-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say how Karsai's public case affected the debate.",
+     "answer": "Karsai Dániel nyilvános fellépése nyomán a közéletben is vita indult az életvégi döntésekről és az önrendelkezés határairól."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"bátorsága\", \"kényszerítve\" judgement; says what is documented"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-04-ex.json",
+  "id": "c1-bioetika-04-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Mi volt a Karsai-ügy egyik következménye?",
+   "options": [
+    "Széles körű közéleti vita indult a méltóságteljes elmúlásról.",
+    "A parlament azonnal eltörölte az aktív eutanázia tilalmát.",
+    "A strasbourgi bíróság megállapította, hogy az állam megsértette a 8. cikket."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"történelmi jelentőségű\" is a judgement; wrong option 3 (refusing the application) hid the real outcome; now a plausible false outcome"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-bioetika-04-voc.json",
+  "old": "      \"translation\": \"societal dialogue / discourse\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"societal dialogue / discourse\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"alkotmányjogász\",\n      \"translation\": \"constitutional lawyer\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"gyógyíthatatlan\",\n      \"translation\": \"incurable\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"elmúlás\",\n      \"translation\": \"passing away, dying\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"beadvány\",\n      \"translation\": \"application, petition\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"amiotrófiás laterálszklerózis\",\n      \"translation\": \"amyotrophic lateral sclerosis (ALS)\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-04-karsaidaniel.json",
+  "old": "2023 őszén egy bátor bejelentés rázta meg a magyar közéletet. Dr. Karsai Dániel, az elismert alkotmányjogász a nyilvánosság elé lépett, és feltárta, hogy gyógyíthatatlan amiotrófiás laterálszklerózisban (ALS) szenved.",
+  "new": "2023-ban Dr. Karsai Dániel alkotmányjogász a nyilvánosság elé lépett, és elmondta, hogy gyógyíthatatlan amiotrófiás laterálszklerózisban (ALS) szenved; a betegséget 2022-ben állapították meg nála.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "reviewer facts: diagnosed 2022, public 2023; \"bátor bejelentés\" judgement; season unconfirmed"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-04-karsaidaniel.json",
+  "old": "A betegség fokozatosan megfosztja az embert minden mozgási képességétől, a beszédtől és a nyeléstől, miközben az elme mindvégig kristálytiszta marad.",
+  "new": "A betegség fokozatosan elveszi az ember mozgási képességét, a beszédet és a nyelést, miközben az értelem általában épen marad.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"mindvégig kristálytiszta\" overclaims"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-04-karsaidaniel.json",
+  "old": "Karsai nem a csendes visszahúzódást választotta, hanem jogi harcba szállt a méltóságteljes halálért a strasbourgi Emberi Jogok Európai Bíróságán és a hazai Alkotmánybíróságon. Azzal érvelt, hogy az államnak nincs joga arra kényszeríteni a polgárát, hogy elviselhetetlen, emberhez méltatlan testi szenvedésben élje le élete utolsó heteit. Bár a hatályos törvények nem változtak meg azonnal, küzdelmével példátlan társadalmi empátiát ébresztett, és ledöntötte az elmúlás körüli évszázados tabukat.",
+  "new": "Karsai a strasbourgi Emberi Jogok Európai Bíróságához fordult. Azzal érvelt, hogy az állam nem kényszerítheti a polgárát arra, hogy elviselhetetlen testi szenvedésben élje le élete utolsó időszakát, és hogy a segített halál tilalma sérti a magánélet tiszteletben tartásához való jogát. A bíróság 2024 júniusában úgy döntött, hogy a magyar szabályozás nem sértette az Emberi Jogok Európai Egyezményének 8. cikkét; a nagykamarai áttételi kérelmet szeptember elején elutasították, és Karsai Dániel még abban a hónapban meghalt. Az ügy nyomán a közéletben is szélesebb vita indult az életvégi döntésekről.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "reviewer facts: no Constitutional Court case confirmed; ECtHR 13 June 2024 no violation of Art. 8; referral refused 2 Sept 2024; died September 2024; \"példátlan empátia\", \"évszázados tabuk\" judgements removed; legal-argument wording is a paraphrase (check)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-04-karsaidaniel.json",
+  "old": "\"c1-patient-autonomy\"",
+  "new": "\"c1-patient-rights-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-04-a-gr.json",
+  "old": "In 2023–2024, Hungarian constitutional lawyer Dr. Dániel Karsai, suffering from terminal ALS, ignited historic national discourse by taking his fight for assisted dying to the European Court of Human Rights and the Constitutional Court.",
+  "new": "In 2023–2024 the Hungarian constitutional lawyer Dr. Dániel Karsai, who had ALS, took his case for assisted dying to the European Court of Human Rights, and it became a matter of public debate.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Constitutional Court case unconfirmed; \"ignited historic national discourse\" overstated"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-04-a-gr.json",
+  "old": "Karsai argued that criminalizing assistance to end one's life abroad deprives patients of the right to make the ultimate decision about their own bodily suffering, violating Article 8 of the European Convention.",
+  "new": "Karsai argued that the ban on assisting a person to end their life violated his right to respect for private life under Article 8 of the European Convention. In June 2024 the Court found no violation of Article 8.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "paraphrase of the complaint (check); outcome added from reviewer facts"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-04-a-gr.json",
+  "old": "\"Karsai Dániel strasbourgi beadványa és az Alkotmánybíróság...\"",
+  "new": "\"Karsai Dániel strasbourgi beadványa és az Egyezmény 8. cikke...\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "no Constitutional Court case"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-04-a-gr.json",
+  "old": "\"Dániel Karsai's Strasbourg application and the Constitutional Court...\"",
+  "new": "\"Dániel Karsai's Strasbourg application and Article 8 of the Convention...\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "no Constitutional Court case"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"The Constitutional Battle for Dignified Death: The Dániel Karsai Case\",",
+  "new": "\"title\": \"The Dániel Karsai Case and Dignified Death\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "plainer title; \"constitutional battle\" not supported"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "  \"goal\": [\n    \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\"",
+  "new": "  \"goal\": [\n    \"I can describe the Karsai case and the question it raised about dying with dignity.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Karsai case and the question it raised about dying with dignity.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Karsai case and the question it raised about dying with dignity.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "  \"goal\": [\n    \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\",\n    \"I can evaluate European Court of Human Rights jurisprudence on assisted dying (Article 8 ECHR).\"",
+  "new": "  \"goal\": [\n    \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\",\n    \"I can say what the European Court of Human Rights decided in the Karsai case (Article 8).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\",\n        \"I can evaluate European Court of Human Rights jurisprudence on assisted dying (Article 8 ECHR).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\",\n        \"I can say what the European Court of Human Rights decided in the Karsai case (Article 8).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\",\n        \"I can evaluate European Court of Human Rights jurisprudence on assisted dying (Article 8 ECHR).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\",\n        \"I can say what the European Court of Human Rights decided in the Karsai case (Article 8).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "  \"goal\": [\n    \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\",\n    \"I can evaluate European Court of Human Rights jurisprudence on assisted dying (Article 8 ECHR).\",\n    \"I can discuss the public, ethical, and legislative repercussions of terminal disease activism.\"",
+  "new": "  \"goal\": [\n    \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\",\n    \"I can evaluate European Court of Human Rights jurisprudence on assisted dying (Article 8 ECHR).\",\n    \"I can discuss the public debate the case started.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\",\n        \"I can evaluate European Court of Human Rights jurisprudence on assisted dying (Article 8 ECHR).\",\n        \"I can discuss the public, ethical, and legislative repercussions of terminal disease activism.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\",\n        \"I can evaluate European Court of Human Rights jurisprudence on assisted dying (Article 8 ECHR).\",\n        \"I can discuss the public debate the case started.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\",\n        \"I can evaluate European Court of Human Rights jurisprudence on assisted dying (Article 8 ECHR).\",\n        \"I can discuss the public, ethical, and legislative repercussions of terminal disease activism.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\",\n        \"I can evaluate European Court of Human Rights jurisprudence on assisted dying (Article 8 ECHR).\",\n        \"I can discuss the public debate the case started.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-05-ex.json",
+  "id": "c1-bioetika-05-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "options": [
+    "A kártérítési felelősség megoszlását a szoftverfejlesztő és a kezelőorvos között tévedés esetén.",
+    "A betegadatok papíralapú tárolásának és archiválásának kötelezettségét a kórházakban.",
+    "A szoftverfejlesztők orvosi kamarai tagságának hiányát a diagnosztikai rendszerekben."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (96 vs 65) and \"kizárólagos\"/\"kötelező\" tells"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-05-ex.json",
+  "id": "c1-bioetika-05-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "sentence": "A technológia elterjedése ellenére az orvos-beteg _____ megőrzése a gyógyítás egyik fontos feltétele.",
+   "english": "Despite the spread of technology, preserving doctor-patient trust is one important condition of healing."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"legfőbb záloga\" is a judgement"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-05-ex.json",
+  "id": "c1-bioetika-05-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-05-ex.json",
+  "id": "c1-bioetika-05-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say why human presence still matters in automated medicine.",
+     "answer": "Bár az algoritmusok nagy pontossággal elemeznek adatokat, a gyógyításban a vigasz, a remény és az emberi jelenlét is fontos."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"páratlan pontossággal\", \"kizárólag\" overclaim"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-05-ex.json",
+  "id": "c1-bioetika-05-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Mi marad az orvos feladata az algoritmusos diagnosztika mellett?",
+   "options": [
+    "Az orvos az adatokat empátiával és etikai felelősséggel közvetíti a beteg felé.",
+    "Az orvos az adminisztratív ellenőrzést végzi a szoftverfejlesztő cégek felett.",
+    "Az orvos a diagnosztikai döntéseket teljesen a jogi osztályra bízza."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; length give-away (102 vs 73)"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-bioetika-05-voc.json",
+  "old": "      \"translation\": \"algorithmic bias\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"algorithmic bias\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kezelőorvos\",\n      \"translation\": \"treating physician\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vigasz\",\n      \"translation\": \"consolation, comfort\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szoftver\",\n      \"translation\": \"software\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"diagnosztikai\",\n      \"translation\": \"diagnostic\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"daganatos elváltozás\",\n      \"translation\": \"tumorous lesion\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-05-mestersegesintelligencia.json",
+  "old": "képesek áttekinteni ezer meg ezer CT- és MRI-felvételt, észrevéve a legapróbb daganatos elváltozásokat is, amelyek felett a fáradt emberi szem könnyen átsiklana. A diagnosztika sebessége és pontossága ugrásszerűen megnőtt.",
+  "new": "képesek nagy számú CT- és MRI-felvételt gyorsan áttekinteni, és egyes vizsgálatokban olyan apró elváltozásokat is jeleznek, amelyek felett a fáradt emberi szem könnyen átsiklana. Több területen a diagnosztika sebessége és pontossága is javult.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"a legapróbb\", \"ugrásszerűen\" overclaim"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-05-mestersegesintelligencia.json",
+  "old": "A legmélyebb bioetikai tanulság az, hogy",
+  "new": "Az egyik fontos bioetikai tanulság az, hogy",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "superlative judgement"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-05-mestersegesintelligencia.json",
+  "old": "A jövő orvosa a géppel együtt dolgozik, de szívvel gyógyít.",
+  "new": "Az orvos a géppel együtt dolgozhat, de a gyógyításban az emberi jelenlét továbbra is fontos.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "prediction stated as fact; flourish"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-05-mestersegesintelligencia.json",
+  "old": "\"c1-biomedical-discourse\"",
+  "new": "\"c1-patient-rights-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-05-a-gr.json",
+  "old": "AI systems match or exceed human radiologists in detecting melanomas, mammograms, and CT abnormalities.",
+  "new": "In some studies, AI systems have matched or exceeded human readers in detecting melanomas, breast cancer on mammograms and some CT abnormalities.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "overstated and garbled"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-05-a-gr.json",
+  "old": "Crucially, bioethics insists that diagnosis is only the cognitive half of healing; true medical care requires *empátia* and communicating existential truths with compassion, something no neural network can possess.",
+  "new": "Many bioethicists stress that diagnosis is only one part of healing; medical care also involves *empátia* and telling hard truths with compassion, which a neural network does not do.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"bioethics insists\", \"no neural network can possess\" overclaim"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-05.json",
+  "old": "  \"goal\": [\n    \"I can evaluate artificial intelligence in radiological and pathological diagnostics.\"",
+  "new": "  \"goal\": [\n    \"I can discuss what AI changes in diagnosis and what the doctor still does.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-05.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can evaluate artificial intelligence in radiological and pathological diagnostics.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can discuss what AI changes in diagnosis and what the doctor still does.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-05.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can evaluate artificial intelligence in radiological and pathological diagnostics.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can discuss what AI changes in diagnosis and what the doctor still does.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Miért tartják aggályosnak az emberi csíravonal-módosítást?",
+   "options": [
+    "Mert a változtatás öröklődik, így az utódokat is érinti.",
+    "Mert csak a beteg testi sejtjeit érinti, az utódokat nem.",
+    "Mert a szomatikus terápiák a csíravonalat is megváltoztatják."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"teljesen\" tell; \"kizárólag növényi kultúrák\" absurd; wrong options one fault each"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "options": [
+    "A feltételezett beleegyezés elvén (opt-out rendszer).",
+    "A kifejezett írásbeli beleegyezés elvén (opt-in rendszer).",
+    "A kórházi etikai bizottság egyedi döntésén."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; third option absurd; present-day law (check)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "sentence": "Elhunyt donornál független orvosok állapítják meg az _____ beálltát.",
+   "english": "In the case of a deceased donor, independent doctors establish the onset of brain death."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet \"általi\", \"megállapítása\"; reworded"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-5",
+  "set": {
+   "sentence": "Karsai Dániel alkotmányjogász volt, aki a méltóságteljes _____ való jogért lépett a nyilvánosság elé.",
+   "hint": "death",
+   "answer": null,
+   "answers": [
+    "halálhoz"
+   ],
+   "english": "Dániel Karsai was a constitutional lawyer who stepped into the public eye for the right to a dignified death.",
+   "category": "grammar",
+   "teaches": [
+    "hoz-suffix"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Karsai's grounds were Art. 8 (private life), not \"human dignity\" as such; now the allative -hoz (known)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-6",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "sentence": "Az orvos nem végezhet beavatkozást a páciens tájékozott _____ hiányában.",
+   "hint": "consent, the patient's",
+   "english": "The doctor may not carry out an intervention without the patient's informed consent."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; the blank is a possessed noun (known 3rd-person possessive); hint named the ending; \"kezelőorvos\"/\"hajthat végre\" unmet"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-7",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "trust, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; blank is an accusative -t (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-8",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "dilemma, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; blank is an accusative -t (known); hint named the ending; triage appears nowhere in the unit"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-9",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Mi az orvosi etika egyik alapelve a betegekkel szemben?",
+   "options": [
+    "A beteg méltóságát és önrendelkezését tiszteletben kell tartani.",
+    "A kezelést az orvos a beteg véleményének megkérdezése nélkül választja ki.",
+    "A beteg adatait a kutatók számára szabadon hozzáférhetővé kell tenni."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "taste stem \"legméltóbban\", absurd wrong options, \"semmilyen\" tell"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-10",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-11",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say what public debate Karsai's case started.",
+     "answer": "Karsai Dániel fellépése nyomán a közéletben is vita indult a méltóságteljes elmúlásról és az önrendelkezés határairól."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"felrázta a társadalom lelkiismeretét ... jogállam alapvető kötelezettsége\" is a judgement"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-12",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-consolidation.json",
+  "old": "  \"goal\": [\n    \"I can analyze biotechnology dilemmas (CRISPR gene editing, embryonic stem cells, Eurotransplant).\"",
+  "new": "  \"goal\": [\n    \"I can talk about the main dilemmas of this unit: gene editing, organ donation, the embryo, dying with dignity and AI in medicine.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-consolidation.json",
+  "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can analyze biotechnology dilemmas (CRISPR gene editing, embryonic stem cells, Eurotransplant).\"",
+  "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can talk about the main dilemmas of this unit: gene editing, organ donation, the embryo, dying with dignity and AI in medicine.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-consolidation.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze biotechnology dilemmas (CRISPR gene editing, embryonic stem cells, Eurotransplant).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can talk about the main dilemmas of this unit: gene editing, organ donation, the embryo, dying with dignity and AI in medicine.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ }
+]

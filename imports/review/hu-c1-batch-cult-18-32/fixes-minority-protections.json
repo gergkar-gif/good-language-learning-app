@@ -1,0 +1,989 @@
+[
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-01-ex.json",
+  "id": "c1-emberijogok-01-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "elégtétel, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-international-treaty-framing; accusative -t (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-01-ex.json",
+  "id": "c1-emberijogok-01-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-01-ex.json",
+  "id": "c1-emberijogok-01-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-01-ex.json",
+  "id": "c1-emberijogok-01-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; concept question: vocabulary"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-emberijogok-01-voc.json",
+  "old": "      \"translation\": \"exhaustion of domestic remedies\",\n      \"pos\": \"expression\"\n    }\n  ]",
+  "new": "      \"translation\": \"exhaustion of domestic remedies\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"megalázó\",\n      \"translation\": \"degrading, humiliating\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"gyülekezési jog\",\n      \"translation\": \"right of assembly\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kárvallott\",\n      \"translation\": \"victim, injured party\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"ítél\",\n      \"translation\": \"to award, to sentence, to judge\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"észszerű\",\n      \"translation\": \"reasonable\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-01-strasbourg.json",
+  "old": "az a nemzetközi szentély, amelyhez az Atlanti-óceántól a Kaukázusig több mint hétszázmillió európai polgár fordulhat közvetlen panasszal saját kormánya ellen.",
+  "new": "az a nemzetközi fórum, amelyhez az Atlanti-óceántól a Kaukázusig több száz millió európai polgár fordulhat közvetlen panasszal saját kormánya ellen.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "outdated figure (46 states since 2022, about 675 million): \"több száz millió\" (reviewer facts); \"szentély\" flourish"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-01-strasbourg.json",
+  "old": "Magyarországról évente beadványok százai érkeznek a Rajna-parti városba. A bíróság döntései nyomán az állam kénytelen volt felszámolni a börtönök méltatlan túlzsúfoltságát, kártérítést fizetni az évtizedekig elhúzódó perek kárvallottjainak, és megerősíteni a tisztességes eljáráshoz való jog garanciáit. Strasbourg ítéletei nem támadást jelentenek a nemzeti szuverenitás ellen, hanem az európai civilizáció közös morális mércéjét érvényesítik.",
+  "new": "Magyarországról is érkeztek beadványok a Rajna-parti városba. A Varga és társai ügyben (2015) a bíróság mintaítéletben állapította meg, hogy a magyar börtönök túlzsúfoltsága sérti az Egyezmény 3. cikkét, és az államtól hatékony jogorvoslat megteremtését várta el. Más ügyekben az elhúzódó eljárások miatt ítélt meg igazságos elégtételt a panaszosoknak. A bíróság ítéletei az Egyezményben rögzített közös mércét érvényesítik.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unsourced \"hundreds a year\"; \"felszámolta\" overclaims the effect; \"évtizedekig\"; the sovereignty line is a judgement in a present-day dispute (reviewer facts); Varga and Others 2015 pilot judgment is sure"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-01-strasbourg.json",
+  "old": "\"c1-international-treaty-framing\"",
+  "new": "\"c1-minority-protections-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-01.json",
+  "old": "  \"goal\": [\n    \"I can analyze the application of the European Convention on Human Rights in Hungarian courts.\"",
+  "new": "  \"goal\": [\n    \"I can explain what the European Convention on Human Rights and the Strasbourg Court do.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-01.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the application of the European Convention on Human Rights in Hungarian courts.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the European Convention on Human Rights and the Strasbourg Court do.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-01.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the application of the European Convention on Human Rights in Hungarian courts.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the European Convention on Human Rights and the Strasbourg Court do.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-02-ex.json",
+  "id": "c1-emberijogok-02-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "plural-nouns-k"
+   ],
+   "sentence": "A törvényi feltételek teljesülése esetén a nemzetiségi településeken kötelező a kétnyelvű _____ kihelyezése.",
+   "hint": "place-name sign, plural",
+   "english": "When the statutory conditions are met, bilingual place-name signs must be put up in nationality settlements."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; plural -k (known); hint named the ending; law only requires bilingual signs under conditions"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-02-ex.json",
+  "id": "c1-emberijogok-02-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-02-ex.json",
+  "id": "c1-emberijogok-02-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say why minority languages count as part of the cultural heritage.",
+     "answer": "A kisebbségi nyelvek a közös kulturális örökség részei; megőrzésük a közösségek identitását és a sokszínűséget szolgálja."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"duty of the majority society\" is a judgement"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-02-ex.json",
+  "id": "c1-emberijogok-02-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "options": [
+    "Joguk van az anyanyelvű vagy kétnyelvű oktatáshoz az óvodától a középiskoláig.",
+    "Az anyanyelvet csak délutáni szakkörök és vasárnapi iskolák keretében tanulhatják.",
+    "Intézményt csak akkor működtethetnek, ha az anyaország fedezi a költségeket."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"Kizárólag\" tell; wrong options one fault each"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-emberijogok-02-voc.json",
+  "old": "      \"translation\": \"majority society\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"majority society\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"védőpajzs\",\n      \"translation\": \"protective shield\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"létesít\",\n      \"translation\": \"to establish, to set up\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"ápol\",\n      \"translation\": \"to cultivate, to nurse\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"egynyelvű\",\n      \"translation\": \"monolingual\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"lovári\",\n      \"translation\": \"Lovari (a Romani language)\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-02-nyelvikarta.json",
+  "old": "míg Szabolcsban a lovári és a beás cigány nyelv őrzi évszázados szóbeli hagyományait.",
+  "new": "míg a lovári és a beás nyelv a roma közösségek szóbeli hagyományát őrzi.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "reviewer facts: Beás is spoken mainly in south Transdanubia, not Szabolcs: place dropped"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-02-nyelvikarta.json",
+  "old": "A törvény garantálja, hogy a nemzetiségi közösségek saját nyelvükön tanulhassanak az óvodától az érettségiig, és saját anyanyelvüket használhassák a helyi önkormányzati testületekben. Egy nyelv kihalása pótolhatatlan veszteség az egész emberiség számára; megőrzésük a többségi nemzet legnemesebb kulturális kötelessége.",
+  "new": "A Kartát Magyarország 1995-ben erősítette meg; a 2011-es nemzetiségi törvény külön rögzíti, hogy a nemzetiségek anyanyelven tanulhassanak az óvodától a középiskoláig, és használhassák anyanyelvüket a helyi önkormányzatokban. A nyelvek védelme a kisebbségi közösségek kulturális örökségének megőrzését szolgálja.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "reviewer facts: Charter (ratified 1995) and the 2011 nationality act are two things (\"A törvény garantálja\" conflated them); \"legnemesebb kötelesség\" judgement; exact scope of the law: check"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-02-nyelvikarta.json",
+  "old": "\"c1-minority-protection-clauses\"",
+  "new": "\"c1-minority-protections-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-02-a-gr.json",
+  "old": "Hungary signed and ratified the *Regionális vagy Kisebbségi Nyelvek Európai Kartája*, undertaking specific commitments for 14 minority languages (including German, Slovak, Romanian, Serbian, Croatian, Romani, and Boyash).",
+  "new": "Hungary signed the *Regionális vagy Kisebbségi Nyelvek Európai Kartája* and ratified it in 1995, undertaking specific commitments for a number of minority languages (including German, Slovak, Romanian, Serbian, Croatian, Romani and Boyash).",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the count of 14 not confirmed"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-02-a-gr.json",
+  "old": "Under the Charter, multi-ethnic municipalities must provide bilingual place-name signs (*kétnyelvű helységnévtáblák*), mother-tongue kindergarten instruction, and translation in official local government proceedings.",
+  "new": "The Charter and the Hungarian nationality law call for measures such as bilingual place-name signs (*kétnyelvű helységnévtáblák*), mother-tongue kindergarten instruction and the use of the minority language in local government, under conditions set by law.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the Charter does not itself oblige municipalities; conditions apply"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-02.json",
+  "old": "  \"goal\": [\n    \"I can analyze the European Charter for Regional or Minority Languages (*Regionális vagy Kisebbségi Nyelvek Európai Kartája*).\"",
+  "new": "  \"goal\": [\n    \"I can explain what the European Charter for Regional or Minority Languages protects (*Regionális vagy Kisebbségi Nyelvek Európai Kartája*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-02.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the European Charter for Regional or Minority Languages (*Regionális vagy Kisebbségi Nyelvek Európai Kartája*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the European Charter for Regional or Minority Languages protects (*Regionális vagy Kisebbségi Nyelvek Európai Kartája*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-02.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the European Charter for Regional or Minority Languages (*Regionális vagy Kisebbségi Nyelvek Európai Kartája*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the European Charter for Regional or Minority Languages protects (*Regionális vagy Kisebbségi Nyelvek Európai Kartája*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-03-ex.json",
+  "id": "c1-emberijogok-03-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "options": [
+    "Hogy az iskolai etnikai szegregáció jogellenes, és sérelemdíj megfizetésére kötelezi az intézményfenntartót.",
+    "Hogy a bíróságok nem vizsgálhatják felül az iskolák pedagógiai módszertani döntéseit.",
+    "Hogy az elkülönítés akkor jogszerű, ha a szülők nem tiltakoznak ellene."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag not present; wrong option 3 (\"minden esetben jogszerű\") is close to a possible true statement for justified remedial classes and has an absolute: now one clear fault"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-03-ex.json",
+  "id": "c1-emberijogok-03-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "sentence": "A bíróság megállapította az egyenlő _____ követelményének megsértését.",
+   "english": "The court found a violation of the requirement of equal treatment."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"súlyos\" overstates; word item"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-03-ex.json",
+  "id": "c1-emberijogok-03-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-03-ex.json",
+  "id": "c1-emberijogok-03-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Describe the harm that ethnic school segregation can cause.",
+     "answer": "A szegregáció elmélyítheti a társadalmi előítéleteket, csökkentheti a hátrányos helyzetű gyermekek esélyeit, és gyengítheti a társadalmi integrációt."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"megfosztja\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-03-ex.json",
+  "id": "c1-emberijogok-03-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "options": [
+    "Stratégiai pereskedéssel az egyenlő bánásmód megsértése miatt.",
+    "Népszavazási kezdeményezést indítottak az iskolai szegregáció betiltásáért.",
+    "Nemzetközi bojkottot szerveztek a helyi önkormányzat intézményei ellen."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; wrong options were absurd (constitutional amendment to the Kúria president)"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-emberijogok-03-voc.json",
+  "old": "      \"translation\": \"equality of opportunity\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"equality of opportunity\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"elkülönítés\",\n      \"translation\": \"separation, segregation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"sérelemdíj\",\n      \"translation\": \"compensation for non-material harm\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"jogszerű\",\n      \"translation\": \"lawful\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"bojkott\",\n      \"translation\": \"boycott\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"módszertani\",\n      \"translation\": \"methodological\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"alkotmánymódosítás\",\n      \"translation\": \"constitutional amendment\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-03-szegregacio.json",
+  "old": "Amikor a Heves megyei Gyöngyöspata általános iskolájában a roma gyermekeket elkülönített osztálytermekbe, a földszintre szorították, és megfosztották őket a színvonalas oktatástól és az iskolai kirándulásoktól, nemcsak pedagógiai hiba történt: az egyenlő emberi méltóság alkotmányos parancsa sérült meg brutálisan. A roma szülők és az Esélyt a Hátrányos Helyzetű Gyerekeknek Alapítvány (CFA) jogászai elhatározták, hogy bíróság elé viszik az ügyet.",
+  "new": "A Heves megyei Gyöngyöspata általános iskolájában a roma gyermekek elkülönített osztályokba kerültek. A későbbi bírósági megállapítások szerint ez sértette az egyenlő bánásmód követelményét. A roma szülők és az Esélyt a Hátrányos Helyzetű Gyerekeknek Alapítvány jogászai bírósághoz fordultak.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "reviewer facts: \"brutálisan\" loaded; unconfirmed details (földszint, kirándulások) removed; wrong acronym CFA"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-03-szegregacio.json",
+  "old": "A per éveken át tartott, és a legfelsőbb bírói fórumig, a Kúriáig jutott. 2020-ban a Kúria történelmi ítéletében kimondta: a szegregáció jogellenes volt, és több mint százmillió forintos nem vagyoni kártérítést (sérelemdíjat) ítélt meg a megalázott diákoknak. Az ítélet világos üzenetet küldött: a származás szerinti elkülönítés nem fogadható el egy európai jogállamban, és az oktatás valódi esélyegyenlősége minden gyermek elidegeníthetetlen joga.",
+  "new": "A per éveken át tartott, és a Kúriáig jutott. 2020-ban a Kúria megállapította, hogy az elkülönítés jogellenes volt, és sérelemdíjat (nem vagyoni kártérítést) ítélt meg a diákoknak. Az ítélet szerint a származás szerinti elkülönítés sérti az egyenlő bánásmód követelményét.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the compensation figure is dropped (reviewer: keep only if sure); \"történelmi\" and \"elidegeníthetetlen\" judgements; year 2020 check"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-03-szegregacio.json",
+  "old": "\"c1-minority-protection-clauses\"",
+  "new": "\"c1-minority-protections-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-03-a-gr.json",
+  "old": "In 2020, the Hungarian Supreme Court (*Kúria*) affirmed the award of substantial non-material damages (*sérelemdíj*), establishing that educational segregation causes irreparable harm to dignity and future life chances.",
+  "new": "In 2020 the Hungarian Supreme Court (*Kúria*) found the segregation unlawful and awarded non-material damages (*sérelemdíj*) to the pupils.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"irreparable harm to dignity and future life chances\" is not what the ruling is known to say"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-03.json",
+  "old": "\"title\": \"Educational Desegregation and Roma Civil Rights: The Gyöngyöspata Precedent\",",
+  "new": "\"title\": \"The Gyöngyöspata School Case\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "plainer title"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-03.json",
+  "old": "  \"goal\": [\n    \"I can analyze strategic litigation on educational segregation (*iskolai szegregáció, deszegregáció*).\"",
+  "new": "  \"goal\": [\n    \"I can describe the Gyöngyöspata school case and what the Kúria decided.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-03.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze strategic litigation on educational segregation (*iskolai szegregáció, deszegregáció*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Gyöngyöspata school case and what the Kúria decided.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-03.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze strategic litigation on educational segregation (*iskolai szegregáció, deszegregáció*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Gyöngyöspata school case and what the Kúria decided.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-04-ex.json",
+  "id": "c1-emberijogok-04-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "options": [
+    "Hogy a fogyatékossággal élő személy segítséggel maga hozhasson döntéseket, ne vegyék el a cselekvőképességét.",
+    "Hogy az állam minden fontosabb vagyoni döntés jóváhagyására gondnokot jelöljön ki számára.",
+    "Hogy a fogyatékossággal élők ellátását a nagy szociális otthonokban központosítsák az országban."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag not present; length give-away (126 vs 82) and \"kizárólag\""
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-04-ex.json",
+  "id": "c1-emberijogok-04-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-universal-jurisdiction; word item"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-04-ex.json",
+  "id": "c1-emberijogok-04-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-04-ex.json",
+  "id": "c1-emberijogok-04-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-04-ex.json",
+  "id": "c1-emberijogok-04-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "question": "Miért tekintik alapjogi kérdésnek az akadálymentesítést?",
+   "options": [
+    "Mert az egyenlő hozzáférés hiánya kizárhatja őket az oktatásból, a munkából és a közéletből.",
+    "Mert az akadálymentesítés elsősorban építészeti és esztétikai kérdés, nem jogi kérdés.",
+    "Mert az akadálymentesítést a magánszemélyek önkéntes adományai finanszírozzák."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"kizárólag\" tell; wrong options were not answers to \"why\""
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-emberijogok-04-voc.json",
+  "old": "      \"translation\": \"independent living\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"independent living\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"gondnok\",\n      \"translation\": \"guardian\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szemléletváltás\",\n      \"translation\": \"change of outlook\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"infokommunikációs\",\n      \"translation\": \"info-communication (adjective)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"műemlékvédelem\",\n      \"translation\": \"heritage protection\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fogyatékosságjogi\",\n      \"translation\": \"disability-rights (adjective)\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-04-fogyatekossagjogok.json",
+  "old": "Hosszú évszázadokon át a társadalom a fogyatékossággal élő személyeket szomorú sorsú, tehetetlen gondozottakként kezelte, akiket távoli, zárt intézményekbe kell zárni, és meg kell fosztani minden döntési joguktól. A huszonegyedik században azonban a fogyatékosságjogi mozgalom gyökeres szemléletváltást ért el az ENSZ egyezményének elfogadásával:",
+  "new": "Sokáig a fogyatékossággal élő személyeket gyakran tehetetlen gondozottakként kezelték, zárt intézményekben helyezték el őket, és megfosztották őket a döntési joguktól. A fogyatékosságjogi mozgalom az ENSZ 2006-ban elfogadott egyezményével szemléletváltást ért el:",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "generalising \"centuries\"; date of the CRPD added (2006, sure)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-04-fogyatekossagjogok.json",
+  "old": "Magyarországon az új Polgári Törvénykönyv megteremtette a támogatott döntéshozatal intézményét. A cél többé nem a cselekvőképesség elvétele, hanem a segítés:",
+  "new": "Magyarországon az új Polgári Törvénykönyv bevezette a támogatott döntéshozatal intézményét a gondnokság egyik kevésbé korlátozó alternatívájaként. A cél a cselekvőképesség elvétele helyett a segítés:",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the Civil Code did not abolish guardianship; \"többé nem\" overclaims (check)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-04-fogyatekossagjogok.json",
+  "old": "nem kegy, hanem annak elismerése, hogy minden ember teljes jogú és értékes tagja a társadalomnak.",
+  "new": "az egyezmény szerint nem kegy, hanem jogi követelmény.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "judgement"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-04-fogyatekossagjogok.json",
+  "old": "\"c1-universal-jurisdiction\"",
+  "new": "\"c1-minority-protections-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-04-a-gr.json",
+  "old": "The UN CRPD prompted a paradigm shift in Hungarian civil law: replacing plenary guardianship (*kizáró gondnokság*) with *támogatott döntéshozatal* (supported decision-making), preserving the legal capacity (*cselekvőképesség*) of persons with disabilities.",
+  "new": "Following the UN CRPD, the Hungarian Civil Code introduced *támogatott döntéshozatal* (supported decision-making) as a less restrictive alternative to guardianship (*gondnokság*), with the aim of preserving the legal capacity (*cselekvőképesség*) of persons with disabilities.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"replacing plenary guardianship\" overclaims"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-04-a-gr.json",
+  "old": "In child protection and disability care, international human rights law mandates *kitagolás* (deinstitutionalization): transitioning residents from isolated mega-institutions to community-based supported apartments (*támogatott lakhatás*).",
+  "new": "The CRPD recognises the right to live in the community; in Hungary the *kitagolás* programme (deinstitutionalization) moves residents from large institutions to community-based supported housing (*támogatott lakhatás*).",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"mandates\" overstated; CRPD Art. 19"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "\"title\": \"Advocacy for Vulnerable Groups: Disability Rights and Child Protection\",",
+  "new": "\"title\": \"Disability Rights and Independent Living\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "child protection is not practised in the lesson"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "  \"goal\": [\n    \"I can analyze the UN Convention on the Rights of Persons with Disabilities (CRPD).\"",
+  "new": "  \"goal\": [\n    \"I can explain what the UN disability convention (CRPD) changes for legal capacity and independent living.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the UN Convention on the Rights of Persons with Disabilities (CRPD).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the UN disability convention (CRPD) changes for legal capacity and independent living.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the UN Convention on the Rights of Persons with Disabilities (CRPD).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the UN disability convention (CRPD) changes for legal capacity and independent living.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "  \"goal\": [\n    \"I can analyze the UN Convention on the Rights of Persons with Disabilities (CRPD).\",\n    \"I can evaluate supported decision-making (*támogatott döntéshozatal*) vs. legal guardianship (*gondnokság*).\",\n    \"I can discuss child protection systems and institutional reform in Hungarian law.\"",
+  "new": "  \"goal\": [\n    \"I can analyze the UN Convention on the Rights of Persons with Disabilities (CRPD).\",\n    \"I can evaluate supported decision-making (*támogatott döntéshozatal*) vs. legal guardianship (*gondnokság*).\",\n    \"I can discuss what moving from large institutions to community living means (*kitagolás*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the UN Convention on the Rights of Persons with Disabilities (CRPD).\",\n        \"I can evaluate supported decision-making (*támogatott döntéshozatal*) vs. legal guardianship (*gondnokság*).\",\n        \"I can discuss child protection systems and institutional reform in Hungarian law.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the UN Convention on the Rights of Persons with Disabilities (CRPD).\",\n        \"I can evaluate supported decision-making (*támogatott döntéshozatal*) vs. legal guardianship (*gondnokság*).\",\n        \"I can discuss what moving from large institutions to community living means (*kitagolás*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the UN Convention on the Rights of Persons with Disabilities (CRPD).\",\n        \"I can evaluate supported decision-making (*támogatott döntéshozatal*) vs. legal guardianship (*gondnokság*).\",\n        \"I can discuss child protection systems and institutional reform in Hungarian law.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the UN Convention on the Rights of Persons with Disabilities (CRPD).\",\n        \"I can evaluate supported decision-making (*támogatott döntéshozatal*) vs. legal guardianship (*gondnokság*).\",\n        \"I can discuss what moving from large institutions to community living means (*kitagolás*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-05-ex.json",
+  "id": "c1-emberijogok-05-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "dative-possessor"
+   ],
+   "hint": "végrehajtás, the possessor of the next noun"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; the -nak possessor form (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-05-ex.json",
+  "id": "c1-emberijogok-05-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "tiles": [
+    "A",
+    "független",
+    "emberi",
+    "jogi",
+    "intézmény",
+    "a",
+    "kormánytól",
+    "függetlenül",
+    "mondhat",
+    "véleményt."
+   ],
+   "solution": [
+    "A",
+    "független",
+    "emberi",
+    "jogi",
+    "intézmény",
+    "a",
+    "kormánytól",
+    "függetlenül",
+    "mondhat",
+    "véleményt."
+   ],
+   "english": "An independent human rights institution can give its opinion independently of the government."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"tartópillére\" flourish (judgement); new builder"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-05-ex.json",
+  "id": "c1-emberijogok-05-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say why the Paris Principles require independence.",
+     "answer": "A Párizsi Elvek szerint az intézménynek függetlennek kell lennie, hogy a kormánytól függetlenül mondhasson véleményt, és a polgárok megbízhassanak benne."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; prompt \"single most critical\" taste; answer \"kormányzati propagandaszerv\" is a political judgement"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-05-ex.json",
+  "id": "c1-emberijogok-05-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "options": [
+    "Hogy minden állam emberi jogi helyzetét rendszeresen megvizsgálják más államok, nyilvános ülésen.",
+    "Hogy kötelező jogi szankciókat és gazdasági embargót vezessen be a jogsértő államok ellen.",
+    "Hogy a fejlődő országoknak intézményfejlesztési pénzügyi segélyt nyújtson a felülvizsgálat után."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; length give-away (124 vs 89), \"kizárólag\""
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-emberijogok-05-voc.json",
+  "old": "      \"translation\": \"societal solidarity\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"societal solidarity\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"igazságügyi\",\n      \"translation\": \"judicial, relating to justice\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"alárendeltség\",\n      \"translation\": \"subordination\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"beszámolási kötelezettség\",\n      \"translation\": \"duty to report\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"embargó\",\n      \"translation\": \"embargo\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"implementáció\",\n      \"translation\": \"implementation\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-05-parisprinciples.json",
+  "old": "Magyarország delegációja előtt svéd, kanadai, brazil vagy dél-afrikai diplomaták tesznek fel kényelmetlen kérdéseket az igazságszolgáltatás függetlenségéről, a romák integrációjáról és a sajtószabadságról.",
+  "new": "Az érintett állam delegációja előtt más államok diplomatái tesznek fel kérdéseket és fogalmaznak meg ajánlásokat.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "invented specifics (named countries and topics) removed"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-05-parisprinciples.json",
+  "old": "A valódi függetlenség azt jelenti, hogy a jogvédő intézmény nem szolgálhatja a pillanatnyi kormányzati érdekeket; kötelessége a legkiszolgáltatottabbak mellé állni akkor is, ha ez politikai konfliktussal jár. Mert az emberi jogok tisztelete nem nemzetközi divat vagy bürokratikus kötelezettség, hanem a szabad és méltóságteljes emberi élet egyetlen lehetséges fundamentuma.",
+  "new": "A Párizsi Elvek szerint az ilyen intézménynek törvényben rögzített függetlenséggel kell működnie, és akkor is véleményt kell tudnia mondani, ha ez a kormány számára kellemetlen.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "normative claims and moralising ending replaced by what the Principles require (paraphrase)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-05-parisprinciples.json",
+  "old": "\"c1-universal-jurisdiction\"",
+  "new": "\"c1-minority-protections-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-05-a-gr.json",
+  "old": "must possess complete constitutional, operational, and financial independence from the government.",
+  "new": "must have guaranteed independence from the government: a legal basis, its own operation and its own funding.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"complete\" overstated"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-05-a-gr.json",
+  "old": "every state's human rights record is examined every 4.5 years in Geneva by peer nations, civil society coalitions, and international rapporteurs.",
+  "new": "every state's human rights record is examined in Geneva roughly every 4.5 years by other states, with input from civil society and UN bodies.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the review is by states; civil society only submits information (check cycle length for the present)"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-05.json",
+  "old": "  \"goal\": [\n    \"I can analyze the Paris Principles governing National Human Rights Institutions (NHRIs).\"",
+  "new": "  \"goal\": [\n    \"I can explain what the Paris Principles and the UN Universal Periodic Review are.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-05.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the Paris Principles governing National Human Rights Institutions (NHRIs).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the Paris Principles and the UN Universal Periodic Review are.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-05.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the Paris Principles governing National Human Rights Institutions (NHRIs).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the Paris Principles and the UN Universal Periodic Review are.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "options": [
+    "A hazai bírósági jogorvoslatok teljes kimerítése.",
+    "Külföldi állampolgárság megszerzése a panasz benyújtása előtt.",
+    "Az ügyvédi kamarai tagság megléte a panaszos oldalán."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; length give-away (49 vs 36)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "question": "Mit állapított meg a Kúria a gyöngyöspatai ügyben?",
+   "options": [
+    "Az iskolai etnikai szegregáció jogellenes, és nem vagyoni kártérítést von maga után.",
+    "A szegregált oktatás megengedhető, ha a szülők nem tiltakoznak ellene.",
+    "A bíróságoknak nincs hatáskörük az iskolafenntartók szervezeti döntéseinek felülvizsgálatára."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"legfőbb üzenete\" taste; wrong option 2 could pass for a true remark about remedial classes"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-4",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "elégtétel, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "sentence": "A fogyatékossággal élők számára az _____ segíti a társadalmi életben való egyenlő részvételt.",
+   "english": "For persons with disabilities, accessibility helps equal participation in social life."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"biztosítja a társadalmi életben való egyenlő részvételt\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-6",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "on-en-on"
+   ],
+   "hint": "kötelezettség, obligation"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; superessive -n/-on/-en (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-7",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-8",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "sentence": "A cselekvőképesség elvétele helyett az ENSZ-egyezmény a _____ döntéshozatalt részesíti előnyben.",
+   "english": "Instead of taking away legal capacity, the UN convention favours supported decision-making."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"a modern jog\" generalisation"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-9",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "question": "Mi az egyetemes emberi jogok alapgondolata?",
+   "options": [
+    "Az emberi jogok minden embert egyformán megillető jogok, az állampolgárságtól függetlenül.",
+    "Az emberi jogok érvényesülése az állam gazdasági teljesítőképességétől függ.",
+    "Az emberi jogok csak az állampolgárokat illetik meg, és válság idején szűkíthetők."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; taste stem \"legmélyebben\", \"legfőbb\", \"kizárólag\""
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-10",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "tiles": [
+    "A",
+    "kisebbségek",
+    "védelme",
+    "az",
+    "emberi",
+    "jogi",
+    "egyezmények",
+    "egyik",
+    "fontos",
+    "feladata."
+   ],
+   "solution": [
+    "A",
+    "kisebbségek",
+    "védelme",
+    "az",
+    "emberi",
+    "jogi",
+    "egyezmények",
+    "egyik",
+    "fontos",
+    "feladata."
+   ],
+   "english": "The protection of minorities is one important task of the human rights conventions."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; builder was a judgement (\"nélkülözhetetlen záloga\")"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-11",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say what strategic litigation is for.",
+     "answer": "A stratégiai pereskedés egyetlen esetből is kiindulhat, és rendszerszintű diszkriminációra hívhatja fel a figyelmet."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"fegyver ... felszámolni\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-12",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say what human rights protection takes into account.",
+     "answer": "Az emberi jogi védelem a kisebbségek és a kiszolgáltatott csoportok helyzetét is figyelembe veszi."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; political judgement"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-consolidation.json",
+  "old": "  \"goal\": [\n    \"I can navigate ECHR Strasbourg litigation, Article 6 fair trial, and just satisfaction awards.\"",
+  "new": "  \"goal\": [\n    \"I can talk about the main topics of this unit: the Strasbourg Court, minority languages, school segregation, disability rights and human rights monitoring.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-consolidation.json",
+  "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can navigate ECHR Strasbourg litigation, Article 6 fair trial, and just satisfaction awards.\"",
+  "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can talk about the main topics of this unit: the Strasbourg Court, minority languages, school segregation, disability rights and human rights monitoring.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-consolidation.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can navigate ECHR Strasbourg litigation, Article 6 fair trial, and just satisfaction awards.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can talk about the main topics of this unit: the Strasbourg Court, minority languages, school segregation, disability rights and human rights monitoring.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ }
+]
