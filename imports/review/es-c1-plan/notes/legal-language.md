@@ -1,0 +1,10 @@
+Genre: model regulation with commentary
+Lesson plan:
+- 01 obligation in legal texts: recap `perifrasis-haber-de-infinitivo` and `perifrasis-deber-obligacion-conjetura` (B2): the future as command (*Los socios abonarán la cuota*), *deberá*, *habrá de*.
+- 02 NEW `futuro-subjuntivo-reconocimiento`, screen `c1-06-02-a-gr`: RECOGNITION ONLY. The future subjunctive (*hablare, comiere, fuere, hubiere*: the stem of the preterite third plural + *-re*) survives today in old legal texts, a few fixed phrases (*sea lo que fuere*) and proverbs (*Adonde fueres, haz lo que vieres*); in modern Spanish its place is taken by the present subjunctive or the present indicative (*el que infringiere* = *el que infrinja*). A small table of forms for recognition. Items test recognising the form and giving its modern equivalent, never producing it in a modern sentence. At least 6 items tagged with it. Be exact: say it is archaic and rare, not that it is wrong.
+- 03 who a rule applies to: recap `relativas-subjuntivo` (B2): *las personas que deseen inscribirse*, *quien no cumpla*.
+- 04 conditions in rules and contracts: recap `conditional-conjunctions` (B1): *en caso de que*, *siempre que*, *a menos que* + subjunctive.
+- 05 impersonal, nominal legal style: recap `nominalizacion-despersonalizacion` and `impersonal-tercera-plural-uno` (B2): *queda prohibido*, *se procederá a la expulsión*; plus the text and the Reading group.
+Domain words: rules and rights (e.g. *el reglamento, el artículo, el socio, la cuota, la sanción, el incumplimiento, vigente, infringir*); check each against the sheet first.
+Text: an invented regulation (the rules of a community garden or a residents' association: four or five short articles written in legal style, one using a future subjunctive in a deliberately old-fashioned formula), followed by a plain commentary explaining what the articles mean in modern Spanish. Quote no real law.
+Norm note: do not claim that any modern law still uses the future subjunctive; say only that older legal texts did.

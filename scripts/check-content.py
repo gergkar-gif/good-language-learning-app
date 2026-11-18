@@ -98,6 +98,10 @@ CHECKS = {
     "taught-later": "a grammar skill is used before the lesson whose screen teaches it",
     "vocab-unused": "a vocabulary word no exercise of its lesson uses",
     "vocab-duplicate": "a vocabulary list has the same lemma twice",
+    # ES C1 pilot, 2026-11-18: parallel writers can't see each other's lists, and five
+    # two-option items (a coin toss) were written; both ES C1 only, new content
+    "vocab-relisted": "ES C1: a lemma already listed in an earlier C1 lesson is listed again (use it, don't re-list it)",
+    "few-options": "ES C1: a choice item with fewer than 3 options",
     "ds-on-answer": "distractor_skills names the right option",
     "ds-own-skill": "distractor_skills names the skill the exercise teaches (a wrong form of the tested skill gets none)",
     "reported-question": "a question in reported speech ('asks Meg where she is going') lets a third-person option fit; quote the direct question",
@@ -906,6 +910,14 @@ def check_unit(src, course, level, unit, shape):
     order, screen = unit_positions(src, course, level)
     seen = {}
     stems = unit["stems"]
+    es_c1 = course in ("es-es", "es-latam") and level == "c1"
+    first_listed = {}            # folded lemma -> first C1 stem listing it (ES C1)
+    if es_c1:
+        for st in sorted(order, key=order.get):
+            if st in stems:
+                break
+            for w in (src.read(f"content/{course}/vocabulary/{level}/{st}-voc.json") or {}).get("words", []) or []:
+                first_listed.setdefault(fold(w.get("lemma", "")), st)
     for stem in stems:
         ex_rel = f"content/{course}/exercises/{level}/{stem}-ex.json"
         data = src.read(ex_rel) or {}
@@ -918,6 +930,8 @@ def check_unit(src, course, level, unit, shape):
             eid = e.get("id")
             for check, msg in check_exercise(e, course, lang):
                 out.append((check, eid, msg, ex_rel))
+            if es_c1 and isinstance(e.get("options"), list) and len(e["options"]) < 3:
+                out.append(("few-options", eid, f"{len(e['options'])} options", ex_rel))
             if course in ("es-es", "es-latam") and level not in ("a1", "a2", "b1"):
                 hit = next((t for t in texts(e) if ITEM_READER.search(fold(t))), None)
                 if hit:
@@ -986,6 +1000,10 @@ def check_unit(src, course, level, unit, shape):
                 if lemma in seen_lemmas:
                     out.append(("vocab-duplicate", stem, w.get("lemma"), f"content/{course}/{vocab_ref}"))
                 seen_lemmas.add(lemma)
+                if es_c1:
+                    if lemma in first_listed and first_listed[lemma] != stem:
+                        out.append(("vocab-relisted", stem, f"{w.get('lemma')} (listed in {first_listed[lemma]})", f"content/{course}/{vocab_ref}"))
+                    first_listed.setdefault(lemma, stem)
                 # ES *lavarse* is used as *me lavo*: stem the verb, not the -se form
                 sw = stem_words(re.sub(r"(ar|er|ir)se$", r"\1", w.get("lemma", "")) if lang == "es" else w.get("lemma", ""), L.get("articles", ()))
                 verb = fold(re.sub(r"(ar|er|ir)se$", r"\1", w.get("lemma", "")))

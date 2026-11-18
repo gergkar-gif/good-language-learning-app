@@ -362,6 +362,10 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
   miss: *el cual*, *el haber* + participle, future subjunctive, *de lo que*
   comparatives, *con lo / para lo* + adjective + *que*, *ni que* + past
   subjunctive).
+  `check-content` fails, at C1 only, a choice item with fewer than 3 options
+  (`few-options`) and a word an earlier C1 lesson already lists
+  (`vocab-relisted`). Production prompts are pinned (construction, person,
+  gender), and no context lets a wrong option be right in another reading.
 - **es-latam has no *vosotros*** (AGENTS.md): no *vosotros*/*os* forms in
   readings, screens, examples, exercises or challenges; *ustedes* for
   plural "you" (`check-content` flags it: `latam-vosotros`). Only the verb
