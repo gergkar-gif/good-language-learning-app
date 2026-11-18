@@ -31,6 +31,25 @@ import plant_es_es_b2 as b2  # noqa: E402  (walk, dump, notes)
 
 SRC, DST = b2.SRC, b2.DST
 LEVEL = "c1"
+# Sentence-builder tiles are converted one by one, so the gender guard of
+# convert() never sees the article on the next tile (*la* + *sala* became
+# *la salón*, c1-02-consolidation.ex11, 2026-11-18). Tiles and solutions are
+# copied unchanged and listed when they hold a course-variant word.
+b2.SKIP = tuple(b2.SKIP) + ("tiles", "solution")
+
+
+def note_tiles(node, where, path=""):
+    if isinstance(node, dict):
+        for k, v in node.items():
+            if k in ("tiles", "solution") and isinstance(v, list):
+                found = [w for t in v if isinstance(t, str) for w in b2.cv.find(t, "es-es")]
+                if found:
+                    b2.notes.append((where, f"{path}.{k}", "tiles", ", ".join(dict.fromkeys(found))))
+            else:
+                note_tiles(v, where, f"{path}.{k}" if path else k)
+    elif isinstance(node, list):
+        for i, v in enumerate(node):
+            note_tiles(v, where, f"{path}[{i}]")
 
 
 def unit_files(u):
@@ -58,6 +77,7 @@ def plant(u, force):
         raw = src.read_text(encoding="utf-8")
         old = json.loads(raw)
         new = b2.walk(old, str(dst.relative_to(ROOT)))
+        note_tiles(old, str(dst.relative_to(ROOT)))
         if new == old:              # nothing to convert: keep the file byte for byte
             shutil.copy2(src, dst)
         else:
