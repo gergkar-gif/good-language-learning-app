@@ -2246,3 +2246,19 @@ The user took the four recommended options:
 - **The reviewer facts caught an invented event told as fact** (a 2024 grid and hospital attack in cyber-warfare 01): the reader made it an explicitly imagined scenario. Inventions of this kind are only caught by the reviewer's own read; no script sees them.
 - **Readers copied one checklist line into four lessons** ("I can link two quantities with *minél … annál …*", "I can say whose view a conclusion is"): 26 `checklist-shared` errors after applying. The check exists; the readers' prompt now gets nothing new, as the reviewer fixed them in ten minutes, but if it recurs the fixer is a per-lesson topic suffix.
 - **Combined readings and segment summaries kept the generator's text**: Units 9–16's 40 segment titles and summaries and all 16 combined readings still described the old texts, two with facts the readers had corrected (PULI "by SZTAKI and MILAB", Karsai's "constitutional battle"). **Scripted:** `stitch_track_unit_stories.py --unit` prints the kept title and summary and asks for a rewrite. Segment summaries are in the readers' scope (Units 17–24's readers updated theirs); the focus file should say so.
+
+### 2026-11-18: ES C1 core pilot (Units 1–2, new units)
+
+Two Sonnet writers in parallel (new-spanish-c1 template), one Sonnet reader for
+both, plant in es-es. Writers 356k / 322k, reader 293k: ~485k a unit, above the
+250–350k guessed in the plan. The writers' own checks were clean, yet a screen
+rule was false (Unit 2 lesson 05, double participles as adjectives) and six items
+rested on it; the reviewer caught it by checking the claim against the RAE
+before the read, which the reader would not have done (it reads against the
+screen). Rule from now: the reviewer verifies every norm claim on a new screen
+against a source before the read. Other first-draft defects: 2-option choice
+items (template now asks for 3+), past-frame items with an arguable present
+subjunctive, unpinned production prompts (the reader's main class, 25 fixes in
+all). The es-es plant converted a sentence-builder tile without its article
+(*la salón*); the plant script now copies tiles and lists them.
+
