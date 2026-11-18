@@ -1,0 +1,233 @@
+[
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-01.json",
+  "old": "    \"I can analyze state-sponsored cyber warfare, APT groups, and ransomware attacks on critical infrastructure (*államilag támogatott hekkercsoport, zsarolóvírus, kiberhadviselés*).\",\n    \"I can employ rhetorical threat-framing connectors to assess existential systemic risks (*akut nemzetbiztonsági kockázatot hordoz, közvetlen veszélyt idéz elő, sérülékenységet tár fel*).\",\n    \"I can debate the vulnerabilities of hospital systems and electrical grids under hostile cyber siege.\"",
+  "new": "    \"I can describe a hypothetical cyber attack on critical infrastructure such as a power grid or a hospital.\",\n    \"I can read and use the images of war and medicine in cyber security (*hadszíntér, tűzfal, zsarolóvírus*).\",\n    \"I can say in plain words what such an image means.\"",
+  "kind": "text",
+  "why": "goal lines: plain can-do lines, no template"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-01.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze state-sponsored cyber warfare, APT groups, and ransomware attacks on critical infrastructure (*államilag támogatott hekkercsoport, zsarolóvírus, kiberhadviselés*).\",\n        \"I can employ rhetorical threat-framing connectors to assess existential systemic risks (*akut nemzetbiztonsági kockázatot hordoz, közvetlen veszélyt idéz elő, sérülékenységet tár fel*).\",\n        \"I can debate the vulnerabilities of hospital systems and electrical grids under hostile cyber siege.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe a hypothetical cyber attack on critical infrastructure such as a power grid or a hospital.\",\n        \"I can read and use the images of war and medicine in cyber security (*hadszíntér, tűzfal, zsarolóvírus*).\",\n        \"I can say in plain words what such an image means.\"",
+  "kind": "text",
+  "why": "goal section matches goal"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-01.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze state-sponsored cyber warfare, APT groups, and ransomware attacks on critical infrastructure (*államilag támogatott hekkercsoport, zsarolóvírus, kiberhadviselés*).\",\n        \"I can employ rhetorical threat-framing connectors to assess existential systemic risks (*akut nemzetbiztonsági kockázatot hordoz, közvetlen veszélyt idéz elő, sérülékenységet tár fel*).\",\n        \"I can debate the vulnerabilities of hospital systems and electrical grids under hostile cyber siege.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe a hypothetical cyber attack on critical infrastructure such as a power grid or a hospital.\",\n        \"I can read and use the images of war and medicine in cyber security (*hadszíntér, tűzfal, zsarolóvírus*).\",\n        \"I can say in plain words what such an image means.\"",
+  "kind": "text",
+  "why": "checklist matches goals"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-kiberbiztonsag-01-voc.json",
+  "old": "{\n      \"lemma\": \"kiberzsarolás\",\n      \"translation\": \"cyber extortion\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "new": "{\n      \"lemma\": \"kiberzsarolás\",\n      \"translation\": \"cyber extortion\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"SCADA-rendszer\",\n      \"translation\": \"SCADA system (industrial control system)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tűzfal\",\n      \"translation\": \"firewall\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"hadszíntér\",\n      \"translation\": \"theatre of war, battlefield\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"forgatókönyv\",\n      \"translation\": \"scenario\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"rendszerirányító\",\n      \"translation\": \"system operator\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"transzformátorállomás\",\n      \"translation\": \"transformer substation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"betegfelvétel\",\n      \"translation\": \"patient admission\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kritikus infrastruktúra\",\n      \"translation\": \"critical infrastructure\",\n      \"pos\": \"expression\"\n    }\n  ]\n}",
+  "kind": "text",
+  "why": "add unmet culture words (first lesson that uses them)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kiberbiztonsag-01-tamadas.json",
+  "old": "How coordinated state-sponsored cyber attacks targeted Hungary's power grid control and regional hospitals, testing emergency air-gapping and redundancy.",
+  "new": "An imagined scenario of an attack on a power grid and a ransomware attack on hospitals, used to show why critical infrastructure needs protection.",
+  "kind": "text",
+  "why": "summary matches story"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kiberbiztonsag-01-tamadas.json",
+  "old": "\"grammar\": [\n    \"c1-discourse-threat-framing\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-cyber-warfare-vocab\"\n  ]",
+  "kind": "text",
+  "why": "story grammar: retired slug -> unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-02.json",
+  "old": "    \"I can analyze the Pegasus surveillance affair, zero-day vulnerabilities, and lawful interception frameworks (*nulladik napi sebezhetőség, Pegasus-ügy, törvényes megfigyelés, bírói kontroll*).\",\n    \"I can formulate deontic regulatory mandates and audit requirements (*szigorú auditkötelezettséget ír elő, megfelelési minimumot szab, garanciákat követel meg*).\",\n    \"I can debate the legal and constitutional balance between intelligence operations and journalist/civilian protection.\"",
+  "new": "    \"I can describe the Pegasus affair, zero-day vulnerabilities and lawful interception.\",\n    \"I can state what a law or a court requires with *előír*, *megkövetel* and *kötelezettséget ró*.\",\n    \"I can report what a court or a rights group has said about surveillance, naming who said it.\"",
+  "kind": "text",
+  "why": "goal lines: plain can-do lines, no template"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-02.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the Pegasus surveillance affair, zero-day vulnerabilities, and lawful interception frameworks (*nulladik napi sebezhetőség, Pegasus-ügy, törvényes megfigyelés, bírói kontroll*).\",\n        \"I can formulate deontic regulatory mandates and audit requirements (*szigorú auditkötelezettséget ír elő, megfelelési minimumot szab, garanciákat követel meg*).\",\n        \"I can debate the legal and constitutional balance between intelligence operations and journalist/civilian protection.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Pegasus affair, zero-day vulnerabilities and lawful interception.\",\n        \"I can state what a law or a court requires with *előír*, *megkövetel* and *kötelezettséget ró*.\",\n        \"I can report what a court or a rights group has said about surveillance, naming who said it.\"",
+  "kind": "text",
+  "why": "goal section matches goal"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-02.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the Pegasus surveillance affair, zero-day vulnerabilities, and lawful interception frameworks (*nulladik napi sebezhetőség, Pegasus-ügy, törvényes megfigyelés, bírói kontroll*).\",\n        \"I can formulate deontic regulatory mandates and audit requirements (*szigorú auditkötelezettséget ír elő, megfelelési minimumot szab, garanciákat követel meg*).\",\n        \"I can debate the legal and constitutional balance between intelligence operations and journalist/civilian protection.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Pegasus affair, zero-day vulnerabilities and lawful interception.\",\n        \"I can state what a law or a court requires with *előír*, *megkövetel* and *kötelezettséget ró*.\",\n        \"I can report what a court or a rights group has said about surveillance, naming who said it.\"",
+  "kind": "text",
+  "why": "checklist matches goals"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-kiberbiztonsag-02-voc.json",
+  "old": "{\n      \"lemma\": \"fegyverként használt szoftver\",\n      \"translation\": \"weaponized software / cyber weapon\",\n      \"pos\": \"expression\"\n    }\n  ]\n}",
+  "new": "{\n      \"lemma\": \"fegyverként használt szoftver\",\n      \"translation\": \"weaponized software / cyber weapon\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"terrorelhárítás\",\n      \"translation\": \"counter-terrorism\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"auditkötelezettség\",\n      \"translation\": \"audit duty\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"bírói kontroll\",\n      \"translation\": \"judicial oversight\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"jogvédő\",\n      \"translation\": \"human rights defender\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "kind": "text",
+  "why": "add unmet culture words (first lesson that uses them)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kiberbiztonsag-02-pegasus.json",
+  "old": "Exploring the legal shockwaves of Pegasus military-grade spyware in Central Europe and the imperative of judicial oversight over intelligence surveillance.",
+  "new": "What the 2021 reports said about the Pegasus spyware, and how courts and rights groups judged the rules on secret surveillance in Hungary.",
+  "kind": "text",
+  "why": "summary matches story"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kiberbiztonsag-02-pegasus.json",
+  "old": "\"grammar\": [\n    \"c1-regulatory-compliance-syntax\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-cyber-warfare-vocab\"\n  ]",
+  "kind": "text",
+  "why": "story grammar: retired slug -> unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-03.json",
+  "old": "    \"I can evaluate EU cybersecurity governance, the NIS2 Directive, and GovCERT-Hungary incident response (*NIS2-irányelv, GovCERT-Hungary, incidenskezelés, kiberhigiénia*).\",\n    \"I can calibrate threat intelligence attribution using epistemic uncertainty markers (*minden valószínűség szerint, vélhetően államilag támogatott, feltételezhetően, hitelt érdemlően nem bizonyítható*).\",\n    \"I can explain mandatory incident notification thresholds and supply chain cybersecurity audits.\"",
+  "new": "    \"I can describe what the NIS2 Directive and a national incident response team do.\",\n    \"I can hedge a claim about who is behind an attack with *minden valószínűség szerint* and *vélhetően*.\",\n    \"I can say that a claim is uncertain.\"",
+  "kind": "text",
+  "why": "goal lines: plain can-do lines, no template"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-03.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can evaluate EU cybersecurity governance, the NIS2 Directive, and GovCERT-Hungary incident response (*NIS2-irányelv, GovCERT-Hungary, incidenskezelés, kiberhigiénia*).\",\n        \"I can calibrate threat intelligence attribution using epistemic uncertainty markers (*minden valószínűség szerint, vélhetően államilag támogatott, feltételezhetően, hitelt érdemlően nem bizonyítható*).\",\n        \"I can explain mandatory incident notification thresholds and supply chain cybersecurity audits.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe what the NIS2 Directive and a national incident response team do.\",\n        \"I can hedge a claim about who is behind an attack with *minden valószínűség szerint* and *vélhetően*.\",\n        \"I can say that a claim is uncertain.\"",
+  "kind": "text",
+  "why": "goal section matches goal"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-03.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can evaluate EU cybersecurity governance, the NIS2 Directive, and GovCERT-Hungary incident response (*NIS2-irányelv, GovCERT-Hungary, incidenskezelés, kiberhigiénia*).\",\n        \"I can calibrate threat intelligence attribution using epistemic uncertainty markers (*minden valószínűség szerint, vélhetően államilag támogatott, feltételezhetően, hitelt érdemlően nem bizonyítható*).\",\n        \"I can explain mandatory incident notification thresholds and supply chain cybersecurity audits.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe what the NIS2 Directive and a national incident response team do.\",\n        \"I can hedge a claim about who is behind an attack with *minden valószínűség szerint* and *vélhetően*.\",\n        \"I can say that a claim is uncertain.\"",
+  "kind": "text",
+  "why": "checklist matches goals"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-kiberbiztonsag-03-voc.json",
+  "old": "{\n      \"lemma\": \"ellátási lánc átvilágítása\",\n      \"translation\": \"supply chain screening\",\n      \"pos\": \"expression\"\n    }\n  ]\n}",
+  "new": "{\n      \"lemma\": \"ellátási lánc átvilágítása\",\n      \"translation\": \"supply chain screening\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"incidensbejelentés\",\n      \"translation\": \"incident report, incident notification\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"hibrid hadviselés\",\n      \"translation\": \"hybrid warfare\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"versenyszféra\",\n      \"translation\": \"private sector\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "kind": "text",
+  "why": "add unmet culture words (first lesson that uses them)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kiberbiztonsag-03-nis2.json",
+  "old": "How NIS2 compliance obligations and GovCERT incident response units re-engineer Hungary's national cyber defence posture across public and private sectors.",
+  "new": "What the EU's NIS2 Directive requires, and how Hungary's rules and incident response are organised.",
+  "kind": "text",
+  "why": "summary matches story"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kiberbiztonsag-03-nis2.json",
+  "old": "\"grammar\": [\n    \"c1-epistemic-uncertainty-markers\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-cyber-warfare-vocab\"\n  ]",
+  "kind": "text",
+  "why": "story grammar: retired slug -> unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-04.json",
+  "old": "    \"I can critique platform monopolies, surveillance capitalism, and GDPR enforcement (*megfigyelési kapitalizmus, GDPR, platformmonopólium, biometrikus profilalkotás*).\",\n    \"I can construct proportional correlatives linking systemic exposure to threat surface (*minél összetettebb a hálózat, annál nagyobb a támadási felület; minél több adatot gyűjtenek, annál sebezhetőbb a magánszféra*).\",\n    \"I can debate data minimization and accountability principles in generative AI training.\"",
+  "new": "    \"I can describe surveillance capitalism and what the GDPR requires of those who collect data.\",\n    \"I can link two growing things with *minél ... annál ...*.\",\n    \"I can say whose view a claim about platforms is.\"",
+  "kind": "text",
+  "why": "goal lines: plain can-do lines, no template"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can critique platform monopolies, surveillance capitalism, and GDPR enforcement (*megfigyelési kapitalizmus, GDPR, platformmonopólium, biometrikus profilalkotás*).\",\n        \"I can construct proportional correlatives linking systemic exposure to threat surface (*minél összetettebb a hálózat, annál nagyobb a támadási felület; minél több adatot gyűjtenek, annál sebezhetőbb a magánszféra*).\",\n        \"I can debate data minimization and accountability principles in generative AI training.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe surveillance capitalism and what the GDPR requires of those who collect data.\",\n        \"I can link two growing things with *minél ... annál ...*.\",\n        \"I can say whose view a claim about platforms is.\"",
+  "kind": "text",
+  "why": "goal section matches goal"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can critique platform monopolies, surveillance capitalism, and GDPR enforcement (*megfigyelési kapitalizmus, GDPR, platformmonopólium, biometrikus profilalkotás*).\",\n        \"I can construct proportional correlatives linking systemic exposure to threat surface (*minél összetettebb a hálózat, annál nagyobb a támadási felület; minél több adatot gyűjtenek, annál sebezhetőbb a magánszféra*).\",\n        \"I can debate data minimization and accountability principles in generative AI training.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe surveillance capitalism and what the GDPR requires of those who collect data.\",\n        \"I can link two growing things with *minél ... annál ...*.\",\n        \"I can say whose view a claim about platforms is.\"",
+  "kind": "text",
+  "why": "checklist matches goals"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-kiberbiztonsag-04-voc.json",
+  "old": "{\n      \"lemma\": \"felügyeleti hatóság\",\n      \"translation\": \"supervisory authority (e.g. NAIH)\",\n      \"pos\": \"expression\"\n    }\n  ]\n}",
+  "new": "{\n      \"lemma\": \"felügyeleti hatóság\",\n      \"translation\": \"supervisory authority (e.g. NAIH)\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"megfigyelési kapitalizmus\",\n      \"translation\": \"surveillance capitalism (Zuboff's term for a business model built on behavioural data)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"viselkedési adat\",\n      \"translation\": \"behavioural data\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "kind": "text",
+  "why": "add unmet culture words (first lesson that uses them)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kiberbiztonsag-04-adatvedelem.json",
+  "old": "Analyzing the silent societal transformation of big data extraction, platform dominance, and how GDPR and the AI Act attempt to restore informational human dignity.",
+  "new": "What surveillance capitalism means, and how the GDPR and the EU's AI regulation try to limit the collection and use of personal data.",
+  "kind": "text",
+  "why": "summary matches story"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kiberbiztonsag-04-adatvedelem.json",
+  "old": "\"grammar\": [\n    \"c1-adv-proportional-threat-correlatives\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-cyber-warfare-vocab\"\n  ]",
+  "kind": "text",
+  "why": "story grammar: retired slug -> unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-05.json",
+  "old": "    \"I can articulate strategic national cyber resilience, quantum communication, and digital defense doctrines (*társadalmi ellenállóképesség, kvantumkriptográfia, szuverén európai felhő, hibrid hadviselés elhárítása*).\",\n    \"I can synthesize strategic policy recommendations using conclusive discourse markers (*mindent egybevetve, végkövetkeztetésként levonható, összességében megállapítható, összegzésképpen leszögezhető*).\",\n    \"I can formulate a holistic vision for Central European cyber independence in a multipolar world.\"",
+  "new": "    \"I can describe what societal resilience and quantum-safe communication mean.\",\n    \"I can state a condition and an exception with *feltéve, hogy* and *kivéve, ha*.\",\n    \"I can say whose view a statement about digital sovereignty is.\"",
+  "kind": "text",
+  "why": "goal lines: plain can-do lines, no template"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-05.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can articulate strategic national cyber resilience, quantum communication, and digital defense doctrines (*társadalmi ellenállóképesség, kvantumkriptográfia, szuverén európai felhő, hibrid hadviselés elhárítása*).\",\n        \"I can synthesize strategic policy recommendations using conclusive discourse markers (*mindent egybevetve, végkövetkeztetésként levonható, összességében megállapítható, összegzésképpen leszögezhető*).\",\n        \"I can formulate a holistic vision for Central European cyber independence in a multipolar world.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe what societal resilience and quantum-safe communication mean.\",\n        \"I can state a condition and an exception with *feltéve, hogy* and *kivéve, ha*.\",\n        \"I can say whose view a statement about digital sovereignty is.\"",
+  "kind": "text",
+  "why": "goal section matches goal"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-05.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can articulate strategic national cyber resilience, quantum communication, and digital defense doctrines (*társadalmi ellenállóképesség, kvantumkriptográfia, szuverén európai felhő, hibrid hadviselés elhárítása*).\",\n        \"I can synthesize strategic policy recommendations using conclusive discourse markers (*mindent egybevetve, végkövetkeztetésként levonható, összességében megállapítható, összegzésképpen leszögezhető*).\",\n        \"I can formulate a holistic vision for Central European cyber independence in a multipolar world.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe what societal resilience and quantum-safe communication mean.\",\n        \"I can state a condition and an exception with *feltéve, hogy* and *kivéve, ha*.\",\n        \"I can say whose view a statement about digital sovereignty is.\"",
+  "kind": "text",
+  "why": "checklist matches goals"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-kiberbiztonsag-05-voc.json",
+  "old": "{\n      \"lemma\": \"információs integritás\",\n      \"translation\": \"information integrity\",\n      \"pos\": \"expression\"\n    }\n  ]\n}",
+  "new": "{\n      \"lemma\": \"információs integritás\",\n      \"translation\": \"information integrity\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"kvantum-kulcsszétosztás\",\n      \"translation\": \"quantum key distribution (QKD)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tartalék rendszer\",\n      \"translation\": \"backup system\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "kind": "text",
+  "why": "add unmet culture words (first lesson that uses them)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kiberbiztonsag-05-reziliencia.json",
+  "old": "Exploring quantum key distribution (QKD) physics and why technological protection must be rooted in citizen education and democratic institutions to achieve true resilience.",
+  "new": "Why quantum computing worries cryptographers, what quantum key distribution offers, and why experts also stress societal resilience.",
+  "kind": "text",
+  "why": "summary matches story"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-kiberbiztonsag-05-reziliencia.json",
+  "old": "\"grammar\": [\n    \"c1-adv-conclusive-synthesis-markers\"\n  ]",
+  "new": "\"grammar\": [\n    \"c1-cyber-warfare-vocab\"\n  ]",
+  "kind": "text",
+  "why": "story grammar: retired slug -> unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-consolidation.json",
+  "old": "    \"I can analyze cyber warfare, ransomware attacks on infrastructure, and the zero trust security model.\",\n    \"I can evaluate Pegasus spyware ethics, NIS2 regulatory compliance, and threat intelligence attribution.\",\n    \"I can debate surveillance capitalism, data minimization under GDPR, and quantum cryptography resilience.\"",
+  "new": "    \"I can describe a hypothetical cyber attack and explain war and medicine images in cyber security.\",\n    \"I can state what a law requires, hedge a claim about an attacker and link two growing things.\",\n    \"I can state a condition and an exception in a resilience plan.\"",
+  "kind": "text",
+  "why": "goal lines: plain can-do lines, no template"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-consolidation.json",
+  "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can analyze cyber warfare, ransomware attacks on infrastructure, and the zero trust security model.\",\n        \"I can evaluate Pegasus spyware ethics, NIS2 regulatory compliance, and threat intelligence attribution.\",\n        \"I can debate surveillance capitalism, data minimization under GDPR, and quantum cryptography resilience.\"",
+  "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can describe a hypothetical cyber attack and explain war and medicine images in cyber security.\",\n        \"I can state what a law requires, hedge a claim about an attacker and link two growing things.\",\n        \"I can state a condition and an exception in a resilience plan.\"",
+  "kind": "text",
+  "why": "goal section matches goal"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-kiberbiztonsag-consolidation.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze cyber warfare, ransomware attacks on infrastructure, and the zero trust security model.\",\n        \"I can evaluate Pegasus spyware ethics, NIS2 regulatory compliance, and threat intelligence attribution.\",\n        \"I can debate surveillance capitalism, data minimization under GDPR, and quantum cryptography resilience.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe a hypothetical cyber attack and explain war and medicine images in cyber security.\",\n        \"I can state what a law requires, hedge a claim about an attacker and link two growing things.\",\n        \"I can state a condition and an exception in a resilience plan.\"",
+  "kind": "text",
+  "why": "checklist matches goals"
+ }
+]
