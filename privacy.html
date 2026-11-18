@@ -45,47 +45,78 @@
     <p>Signing in is optional and only needed if you want to back up your
     progress or use it on another device. If you use it:</p>
     <ul>
-        <li>You enter an <strong>email address</strong>, and we send you a
-        one-time sign-in link via <a href="https://resend.com" target="_blank" rel="noopener">Resend</a>,
+        <li><strong>Email sign-in link:</strong> you enter an <strong>email address</strong>,
+        and we send a one-time login link via
+        <a href="https://resend.com" target="_blank" rel="noopener">Resend</a>,
         our transactional email provider.</li>
-        <li>Once signed in, your <strong>learning progress</strong> (lesson
-        completion, spaced-repetition review data, XP, and similar in-app
-        state) can be backed up to and restored from our database.</li>
-        <li>Your email address and backed-up progress are stored in
+        <li><strong>Sign in with Google:</strong> if you choose Google Sign-In,
+        Google Identity Services is loaded on demand to verify your account and
+        share your verified email address and first name (the name is saved
+        locally in your browser for the Home greeting).</li>
+        <li><strong>Synced data:</strong> once signed in, your <strong>learning
+        progress</strong> (lesson completion, spaced-repetition review data,
+        XP, level tests, and similar in-app state) and any books you upload
+        into <em>My Texts</em> are stored in
         <a href="https://developers.cloudflare.com/d1/" target="_blank" rel="noopener">Cloudflare D1</a>,
         a database run by Cloudflare on our behalf.</li>
     </ul>
-    <p>If you never use the Account feature, no email address or progress
-    data ever leaves your device — everything is stored locally in your
-    browser.</p>
+    <p>If you never open sign-in or use the Account feature, no email address,
+    progress data, or Google Sign-In script is sent or loaded — everything is
+    stored locally in your browser.</p>
 
     <h2>Bot protection (Cloudflare Turnstile)</h2>
-    <p>The sign-in flow is protected by
+    <p>Requesting an email login link is protected by
     <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener">Cloudflare Turnstile</a>,
-    running in invisible mode, to prevent automated abuse of the login-link
-    email. Turnstile runs in your browser and shares certain signals (such
-    as your IP address and browser characteristics) with Cloudflare to
-    assess whether a request is coming from a bot. See Cloudflare's
+    loaded only when you open sign-in, to prevent automated abuse. Turnstile
+    runs in your browser and shares certain signals (such as your IP address
+    and browser characteristics) with Cloudflare to assess whether a request is
+    coming from a bot. See Cloudflare's
     <a href="https://www.cloudflare.com/turnstileprivacypolicy/" target="_blank" rel="noopener">Turnstile Privacy Policy Addendum</a>
     for details of what Turnstile collects and how Cloudflare uses it.</p>
 
     <h2>Text-to-speech audio</h2>
     <p>Spoken audio for lessons, stories, and exercises is generated using
     <a href="https://cloud.google.com/text-to-speech" target="_blank" rel="noopener">Google Cloud Text-to-Speech</a>,
-    called via our own server. The text sent for synthesis is app content
-    (words, sentences, story text) — never your email address or personal
-    information. Generated audio is cached locally in your browser so the
-    same text isn't re-synthesized every time.</p>
+    called via our own Cloudflare Worker. The text sent for synthesis is app
+    content (words, sentences, story text) — never your email address or
+    personal information. Generated audio is cached locally in your browser so
+    the same text isn't re-synthesized every time.</p>
+
+    <h2>AI feedback, transcription, and word lookup</h2>
+    <p>Three optional study features use
+    <a href="https://developers.cloudflare.com/workers-ai/" target="_blank" rel="noopener">Cloudflare Workers AI</a>
+    via our own Cloudflare Workers when you use them:</p>
+    <ul>
+        <li><strong>Writing &amp; speaking grading:</strong> when you submit a
+        written or spoken response in open-ended practice or exam prep, the prompt
+        and your response text are sent to Workers AI for CEFR-aligned feedback
+        (falling back to a local, offline grader if unreachable).</li>
+        <li><strong>Mobile voice transcription:</strong> on mobile browsers,
+        recorded speaking attempts are sent to Workers AI (Whisper) to
+        transcribe what you said for pronunciation scoring.</li>
+        <li><strong>Fallback word lookup:</strong> if you tap a word in the
+        Reader that is missing from the offline dictionary, that word and up to
+        300 characters of its sentence are sent to Workers AI to generate a
+        suggested gloss, which is cached by word in Cloudflare KV and your browser.</li>
+    </ul>
+    <p>None of these requests include your email address or account identity.</p>
+
+    <h2>Bug reports (optional)</h2>
+    <p>If you use the flag button to report an error, your current URL, active
+    tab/lesson/step, and any note you choose to write are sent through our
+    Cloudflare Worker to open a <strong>public GitHub issue</strong> on the
+    <a href="https://github.com/gergkar-gif/good-language-learning-app" target="_blank" rel="noopener">project repository</a>.
+    Do not include personal details in a bug report note.</p>
 
     <h2>What we don't do</h2>
     <p>Parlour has no advertising, no analytics or tracking scripts, and
     does not sell or share your data with anyone beyond the service
-    providers named above, which exist solely to make the app work.</p>
+    providers named above, which exist solely to run those features.</p>
 
     <h2>Questions</h2>
     <p>If you have questions about this policy or want your data deleted,
     contact <a href="mailto:gergkar@gmail.com">gergkar@gmail.com</a>.</p>
 
-    <footer>Last updated 2026-09-17.</footer>
+    <footer>Last updated 2026-11-17.</footer>
 </body>
 </html>

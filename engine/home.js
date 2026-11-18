@@ -519,7 +519,7 @@ const Home = (function () {
                 ${row('data-go="reader"', 'Read',
                     allLevelRead ? 'Re-read for fluency or explore new stories' : 'Stories and your own texts',
                     readFact, thumb('read'))}
-                ${row('data-go="drills"', 'Practise', 'Speak, write, drill a skill', '', thumb('practise'))}
+                ${row('data-go="drills"', 'Practise', 'Speak, write, drill, or prep for exams', '', thumb('practise'))}
             </div>
         `;
     }

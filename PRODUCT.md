@@ -10,12 +10,12 @@ web
 Self-directed adult learners studying alone in short sessions, largely on a phone, who want real CEFR progress (Spanish is DELE-aligned) rather than gamified streaks. The owner is currently the first learner (Spanish and Hungarian); multi-user support is deferred.
 
 ## Product Purpose
-Parlour ("Read, practise, and learn a language") is a modular, content-driven language curriculum covering CEFR A1 to C1. Learners follow lessons, read stories, practise with purpose and retain what matters. Spanish (Core plus Latin America tracks) and Hungarian are live through B1; B2 is being generated for Spanish. Success is measurable progression through CEFR levels and retained vocabulary and grammar, not time-on-app.
+Parlour ("Free Spanish & Hungarian — no ads, no paywalls, just tools that work") is a modular, content-driven language curriculum covering CEFR A1 to C1. Learners follow lessons, read stories and imported books, practise with purpose and retain what matters. Spanish (Spain and Latin America) is live through B2, and Hungarian is live through C1. Success is measurable progression through CEFR levels and retained vocabulary and grammar, not time-on-app.
 
 ## Positioning
-- An advanced speaking and writing engine plus CEFR-exam practice tasks that take learners past beginner phrasebook sentences.
+- An advanced speaking and writing engine plus CEFR-exam practice tasks (DELE, ECL, CCSE, Hungarian Cultural Exam) that take learners past beginner phrasebook sentences.
 - A learner model: every exercise carries `category` and `teaches` metadata, and grammar skills are recycled through it, with SM-2 spaced repetition for words.
-- A story-led A1 to B1 curriculum, one story per unit, with a dual track (Core plus Latin America).
+- A story-led A1–B2 (Spanish) / A1–C1 (Hungarian) curriculum, with unit stories, graded readings, and classics.
 - A Reader/Library that analyses vocabulary in the learner's own pasted texts, plus Workshop drillers (vocabulary, listening, verb, suffix, etc.).
 - A calm, non-gamified, editorial product stance: no streak pressure.
 

@@ -42,12 +42,15 @@ assert(indexHtml.includes('<link rel="canonical" href="https://parlour.me.uk/">'
 assert(indexHtml.includes('<meta name="robots" content="index, follow">'), 'index.html must permit indexing');
 
 // Open Graph
-assert(indexHtml.includes('<meta property="og:title" content="Parlour — Read, practise, and learn a language">'), 'index.html must have og:title');
+assert(indexHtml.includes('<meta property="og:title" content="Parlour — Free Spanish (A1–B2) &amp; Hungarian (A1–C1) Course">'), 'index.html must have og:title');
 assert(indexHtml.includes('<meta property="og:url" content="https://parlour.me.uk/">'), 'index.html must have og:url');
 assert(indexHtml.includes('<meta property="og:type" content="website">'), 'index.html must have og:type');
+assert(indexHtml.includes('<meta property="og:image" content="https://parlour.me.uk/assets/icons/og-card.png">'), 'index.html must have og:image');
+assert(fs.existsSync(path.join(rootDir, 'assets/icons/og-card.png')), 'assets/icons/og-card.png must exist on disk');
 
 // Twitter
-assert(indexHtml.includes('<meta name="twitter:card" content="summary">'), 'index.html must have twitter:card');
+assert(indexHtml.includes('<meta name="twitter:card" content="summary_large_image">'), 'index.html must have twitter:card');
+assert(indexHtml.includes('<meta name="twitter:image" content="https://parlour.me.uk/assets/icons/og-card.png">'), 'index.html must have twitter:image');
 
 // Schema.org JSON-LD
 const jsonLdMatch = indexHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);

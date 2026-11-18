@@ -827,7 +827,7 @@ const Journey = (function () {
                         <div>
                             <h2 class="sync-prompt-title">CEFR Can-Do Passport</h2>
                             <p class="sp-setup-sub" style="font-size:13px; margin:2px 0 0 0;">
-                                Competency Portfolio — syllabus capabilities and live verification states.
+                                What you can actually do in the language, checked against your speaking and writing.
                             </p>
                         </div>
                         <button class="wp-close" data-cando-modal-close="1" aria-label="Close">×</button>
@@ -900,7 +900,7 @@ const Journey = (function () {
                     <h2 class="sync-prompt-title">Import your streak</h2>
                     <button class="wp-close" data-streak-modal-close="1" aria-label="Close">×</button>
                 </div>
-                <p class="jr-account-blurb">Switching from Duolingo or another app? Bring your existing streak over so your daily momentum continues uninterrupted.</p>
+                <p class="jr-account-blurb">Switching from Duolingo or another app? Bring your day count over so you don't start back at zero.</p>
                 <div class="jr-account-login">
                     <input type="number" id="streak-modal-input" class="dk-editor-input"
                         placeholder="e.g. 45" min="0" max="9999" value="${currentImported || ''}">

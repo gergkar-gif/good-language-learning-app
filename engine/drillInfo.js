@@ -21,29 +21,22 @@ const DrillInfo = (function () {
         'es-grammar-studio': {
             title: 'About Spanish Grammar Studio',
             body: [
-                "Targeted contrastive practice on the core mechanics of Spanish: Ser vs Estar, Por vs Para, Pretérito vs Imperfecto, Clitic Pronouns & Se Lo, and Subjunctive Triggers.",
-                "Rather than testing rules in isolation, exercises pair confusing structures directly against each other with instant feedback explaining why one form fits and the other fails."
+                "Drills the places where Spanish pairs two similar forms that do different jobs — ser vs estar, por vs para, preterite vs imperfect, clitic pronouns, and the subjunctive.",
+                "Seeing why one fits and the other breaks builds the distinction much faster than practising each rule on its own."
             ]
         },
         'fr-grammar-studio': {
             title: 'About French Grammar Studio',
             body: [
-                "Targeted contrastive practice on the core mechanics of French: Passé composé vs Imparfait, Partitive & Articles, Clitic Pronouns, Past Participle Agreement, and Subjunctive Triggers.",
-                "Direct comparative items with immediate rule feedback to turn common French grammar friction points into reliable instincts."
+                "Drills the French grammar distinctions that trip learners up most often — passé composé vs imparfait, partitives, clitic pronouns, past participle agreement, and the subjunctive.",
+                "Putting confusing pairs side by side with immediate feedback turns slow rule-checking into instinct."
             ]
         },
         'it-grammar-studio': {
             title: 'About Italian Grammar Studio',
             body: [
-                "Targeted contrastive practice on the core mechanics of Italian: Preposizioni Articolate, Essere vs Avere, Pronomi Combinati, Particelle Ci vs Ne, and Congiuntivo Triggers.",
-                "Rather than testing rules in isolation, exercises pair confusing structures directly against each other with instant feedback explaining why one form fits and the other fails."
-            ]
-        },
-        'hu-verb-studio': {
-            title: 'About Verb & Morphology Practice',
-            body: [
-                "Consolidated Hungarian inflection and structure practice across conjugation, verbal prefixes, suffix stacking, and word decomposition.",
-                "Work on individual forms or peel complex words apart piece by piece to build natural reading and speaking instincts."
+                "Drills the Italian mechanics that refuse to stay separate in your head — articulated prepositions, essere vs avere, combined pronouns, ci vs ne, and the subjunctive.",
+                "Testing contrasting choices back to back trains you to feel why one form holds and the other falls apart."
             ]
         },
         'hu-verb': {
@@ -84,8 +77,8 @@ const DrillInfo = (function () {
         grammar: {
             title: 'About Grammar Practice',
             body: [
-                "Targeted grammar practice built around your course skills. 'Fix weak areas' prioritises concepts you've recently missed, while 'Practise a skill' lets you drill any grammar point in the course.",
-                "Exercises progress from recognition to active production, with on-demand rule reviews whenever you need a quick reminder."
+                "Focused repetition on one grammar point at a time, drawn from your lessons. 'Fix weak areas' pulls the topics you've recently missed; 'Practise a skill' lets you pick anything you've reached.",
+                "Getting a rule right once in a lesson proves you understood the explanation; drilling it here makes it automatic."
             ]
         },
         vocabulary: {

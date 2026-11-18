@@ -198,7 +198,7 @@ const BugReport = (function () {
                     ${!noteVisible ? `
                         <div class="br-actions">
                             <button class="br-primary" id="br-quick">Report issue</button>
-                            <button class="br-secondary" id="br-write-in">Write in&hellip;</button>
+                            <button class="br-secondary" id="br-write-in">Add a note&hellip;</button>
                         </div>
                     ` : `
                         <textarea id="br-note" class="br-note" placeholder="What's wrong here?" autofocus></textarea>

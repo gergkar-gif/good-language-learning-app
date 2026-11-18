@@ -110,8 +110,8 @@ function _ensureWordPopup() {
                 <button id="popup-lesson-link" class="dk-link-btn wp-lesson-link" hidden></button>
                 <p id="popup-new-word-cap" class="wp-cap">Daily new word limit reached (20/20)</p>
                 <div class="wp-actions">
-                    <button id="popup-add-btn" class="wp-add" onclick="addToSRS()">+ Add to My Words</button>
-                    <button id="popup-add-to-deck-btn" class="wp-add-to-deck" onclick="openWordDeckPicker()">+ Add to deck</button>
+                    <button id="popup-add-btn" class="wp-add" onclick="addToSRS()">+ Add to review</button>
+                    <button id="popup-add-to-deck-btn" class="wp-add-to-deck" onclick="openWordDeckPicker()">+ Add to a deck</button>
                 </div>
             </div>
         </div>
@@ -463,7 +463,7 @@ async function showWord(spanish, contextTokens, tokenIndex, looksLikeName, conte
         btn.classList.add('is-disabled');
         capWarning.style.display = 'block';
     } else {
-        btn.textContent = '+ Add to My Words';
+        btn.textContent = '+ Add to review';
     }
 
     _showLessonLink(cleanWord, tapId);
@@ -1900,7 +1900,7 @@ window.Reader = {
             : 'A1';
         if (getReadStoryIds().length < 5 && level === 'A1') return;
         Guide.note('library-mytexts', document.querySelector('#lib-subnav [data-lib-tab="mytexts"]'),
-            'You can paste in anything you\'d like to read and look up words the same way.');
+            'Import an EPUB, Word doc, or text file — or paste anything in — and look up words the same way.');
     },
 
     // ---- Familiarity ("62% familiar" on story cards) ----

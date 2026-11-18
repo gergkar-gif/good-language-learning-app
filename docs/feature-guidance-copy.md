@@ -76,69 +76,43 @@ Only notes in this section may appear several in one day.
 **4a. First review card**
 - Text: Words come back less often as you get them right.
 
-## 5. The first week — one invitation per unit end
+## 5. First speaking or writing task
 
-Each invitation is skipped if the learner has already found that area on
-their own. A skipped invitation comes back once, later, then stops.
-
-**5a. End of Unit 1 → Library**
-- Invitation: There's a short story in the Library written for where you are now.
-- Button: Read it
-- On the first story opened: Tap any word to see what it means. Words you look up can go into your deck.
-
-**5b. End of Unit 2 → Workshop**
-- Invitation: The Workshop is for practising one thing at a time: verbs, listening, speaking.
-- Button: Have a look
-- On arrival: no extra note. Each driller already has its "About this drill"
-  info (`engine/drillInfo.js`), which stays as it is.
-
-**5c. First speaking or writing task**
 - Text: There's no single right answer here. You'll get notes on what worked and what to adjust.
+
+*(Note: The old per-lesson end-of-lesson invitations — `invite-decks`, `invite-library`, `invite-verb-driller`, `invite-listening-driller`, `invite-workshop` — were superseded by Home's recommendation engine and removed from `engine/guide.js`.)*
 
 ## 6. Later, when useful
 
 These appear only when there's a reason, at most one per day.
 
-**6a. Verb Driller** — built 2026-10-02
-- Trigger: a verb-tense skill ranks weak (the skills in `indexes/verb-tense-skills.json`, judged by the learner model's usual weak-skill rule). Spanish only: Hungarian has no tense mapping, so it never shows there. Per-verb counting was considered and dropped (Spanish forms are ambiguous, and finding the verb needs the dictionary loaded mid-lesson)
-- Where: end-of-lesson screen
-- Text: If a verb keeps catching you out, the Verb Driller practises just that.
-
-**6b. Listening Driller** — built 2026-10-02
-- Trigger: at least 8 of the last 20 listening steps (listening-choice and dictation) attempted, and 60% or fewer right first try. Kept per course in `listeningLog` and synced
-- Where: end-of-lesson screen
-- Text: Listening practice has its own space in the Workshop.
-
-**6c. My Texts**
+**6a. My Texts**
 - Trigger: reaching A2, or five Library stories read
 - Where: Library, next to the My Texts tab
-- Text: You can paste in anything you'd like to read and look up words the same way.
+- Text: Import an EPUB, Word doc, or text file — or paste anything in — and look up words the same way.
 
-**6d. My Dictionary**
+**6b. Known words (graduated from review)**
 - Trigger: a word graduates out of review on its own (it was answered right often enough)
 - Where: the review session summary
-- Text: Words you already know can go in My Dictionary, so they stop coming up for review.
+- Text: Words you know well graduate out of review as known. Find them anytime in All my words.
 
-**6e. Grammar Guide**
+**6c. Grammar Guide**
 - Trigger: first time a learner reopens a finished lesson
 - Where: unit page, next to the Grammar Guide link
 - Text: Every unit's grammar is collected here, in case you want to look something up.
 
-**6f. Import flashcards**
+**6d. Import flashcards**
 - Trigger: third visit to Decks
 - Where: next to Import
 - Text: If you have flashcards elsewhere, you can import them from Quizlet, Anki, Memrise or a spreadsheet.
 
-**6g. Streak import**
+**6e. Streak import**
 - Trigger: first visit to Journey
 - Where: next to the streak
 - Text: If you're coming from another app, you can bring your streak with you.
 
 ## 7. For reference
 
-"How Parlour works" stays on Home, full length, as it is. Not moved to
-Journey (Journey is already too crammed) and not cut down. When the welcome
-card is replaced by the new first screen, the link to it stays on Home.
+"About Parlour" (`Guide.openOverviewModal()` in `engine/guide.js`) stays reachable from Home's footer and the sidebar footer.
 
-The drillers' "About this drill" info (`engine/drillInfo.js`) is kept as it
-is; it already does its job.
+The drillers' "About this drill" info (`engine/drillInfo.js`) stays in the plain, second-person voice ("what this trains, why it might feel strange at first, what getting better looks like").

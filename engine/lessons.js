@@ -52,9 +52,6 @@ let lastLessonChecklist = null;
 
 // The tab the lesson was opened from, so closing it goes back there.
 let lessonReturnTab = 'learn';
-// Words this sitting added to the deck (lessonSaveSrsChoices()), for the
-// end-of-lesson invitation to Decks.
-let lessonNewDeckWords = 0;
 
 // per-step interaction state, reset on every renderStep()
 let stepState = {};
@@ -549,7 +546,6 @@ async function startLesson(lessonId) {
         lessonStats = { total: 0, correctFirstTry: 0 };
         gradedStepIndices = new Set();
         requeuedMicSteps = new Set();
-        lessonNewDeckWords = 0;
 
         // A lesson can be opened from the level list or from Home's continue
         // card, and closing it should put the learner back where they were rather
@@ -3387,7 +3383,6 @@ function lessonSaveSrsChoices() {
             source: source,
             added: new Date().toISOString()
         }, newCardSchedule()));
-        lessonNewDeckWords++;
     });
 
     saveDeck();

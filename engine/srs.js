@@ -857,7 +857,7 @@ function renderReviewSessionSummary() {
 
     if (s.graduated && typeof Guide !== 'undefined') {
         Guide.note('my-dictionary', summaryEl.querySelector('.review-summary-stats'),
-            'Words you already know can go in My Dictionary, so they stop coming up for review.');
+            'Words you know well graduate out of review as known. Find them anytime in All my words.');
     }
 }
 

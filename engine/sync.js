@@ -203,7 +203,7 @@ const Sync = (function () {
                         <button class="wp-close" data-sync-prompt-close="1" aria-label="Close">&times;</button>
                     </div>
                     <p class="jr-account-blurb">Sign in to sync your progress across devices &mdash;
-                        no password, and you won't need to log in again.</p>
+                        no password, and you won't need to log in again on this browser.</p>
                     ${googleSection}
                     <div class="jr-account-login">
                         <input type="email" id="sync-prompt-email-input" class="dk-editor-input"
@@ -226,7 +226,7 @@ const Sync = (function () {
                         <button class="wp-close" data-sync-prompt-close="1" aria-label="Close">&times;</button>
                     </div>
                     <p class="jr-account-blurb">We sent a link to ${esc(sentEmail)}. Tap it and
-                        you're all set — no password, no need to log in again.</p>
+                        you're all set — no password, no need to log in again on this browser.</p>
                     <button class="dk-secondary" data-sync-prompt-close="1">Got it</button>
                 </div>
             </div>

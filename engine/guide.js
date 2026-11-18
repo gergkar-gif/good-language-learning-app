@@ -7,10 +7,7 @@
 //    describes. Shown once per feature; closed by tapping anywhere, by the
 //    ×, or by using the feature itself. At most one new note a day, except
 //    the few that belong inside a lesson.
-// 2. Invitations — one line plus a button on the end-of-lesson screen that
-//    takes a new learner to an area they haven't found yet (Decks, then the
-//    Library, then the Workshop). A skipped invitation comes back once.
-// 3. The "How Parlour works" modal, opened from Home.
+// 2. The "About Parlour" modal, opened from the sidebar or Home footer.
 
 const Guide = (function () {
     'use strict';
@@ -23,7 +20,6 @@ const Guide = (function () {
     // A note shown this many times without being dismissed or used is
     // retired anyway: ignoring it twice is an answer too.
     const MAX_NOTE_SHOWS = 2;
-    const MAX_INVITATION_SHOWS = 2;
 
     function _get(key) {
         try { return localStorage.getItem(key); } catch (e) { return null; }
@@ -214,82 +210,7 @@ const Guide = (function () {
     }
 
     // --------------------------------------------
-    // INVITATIONS (END-OF-LESSON SCREEN)
-    // --------------------------------------------
-    // In order: the deck after the first lesson, the Library after Unit 1,
-    // the Workshop after Unit 2. The first one that applies is offered.
-    //   ctx.firstTime     — the lesson was finished for the first time
-    //   ctx.newWords      — words this lesson added to the deck
-    //   ctx.unitCompleted — this completion finished a unit
-    //   ctx.unitsDone     — units finished in the course so far
-    //   ctx.weakVerbTense — a verb-tense skill ranks weak (LearnerModel.weakVerbTense)
-    //   ctx.weakListening — recent listening steps are mostly missed (LearnerModel.listeningState)
-    // The two driller notes come before the general Workshop one, and, like every
-    // invitation here, stop once the learner has opened the Workshop.
-    const INVITATIONS = [
-        {
-            id: 'invite-decks',
-            tab: 'review',
-            applies: ctx => ctx.firstTime && ctx.newWords > 0,
-            text: ctx => `${ctx.newWords} new ${ctx.newWords === 1 ? 'word is' : 'words are'} in your deck, ready for a short review.`,
-            button: 'See your deck',
-            nextLesson: true
-        },
-        {
-            id: 'invite-library',
-            tab: 'reader',
-            applies: ctx => ctx.unitCompleted && ctx.unitsDone >= 1,
-            text: () => 'There\'s a short story in the Library written for where you are now.',
-            button: 'Read it'
-        },
-        {
-            id: 'invite-verb-driller',
-            tab: 'drills',
-            applies: ctx => !!ctx.weakVerbTense,
-            text: () => 'If a verb keeps catching you out, Verb Practice focuses on just that.',
-            button: 'Have a look'
-        },
-        {
-            id: 'invite-listening-driller',
-            tab: 'drills',
-            applies: ctx => !!ctx.weakListening,
-            text: () => 'Listening practice has its own space in the Workshop.',
-            button: 'Have a look'
-        },
-        {
-            id: 'invite-workshop',
-            tab: 'drills',
-            applies: ctx => ctx.unitCompleted && ctx.unitsDone >= 2,
-            text: () => 'The Workshop is for practising one thing at a time: verbs, listening, speaking.',
-            button: 'Have a look'
-        }
-    ];
-
-    // The invitation for this lesson completion, or null. Counts as shown
-    // once returned.
-    function invitation(ctx) {
-        const inv = INVITATIONS.find(i =>
-            !hasSeen(i.id)
-            && visits(i.tab) === 0
-            && _count(SHOWS_PREFIX, i.id) < MAX_INVITATION_SHOWS
-            && i.applies(ctx));
-        if (!inv) return null;
-        _bump(SHOWS_PREFIX, inv.id);
-        return {
-            id: inv.id,
-            tab: inv.tab,
-            text: inv.text(ctx),
-            button: inv.button,
-            nextLesson: !!inv.nextLesson
-        };
-    }
-
-    function acceptInvitation(id) {
-        markSeen(id);
-    }
-
-    // --------------------------------------------
-    // HOW PARLOUR WORKS (PHILOSOPHY & ROOMS MODAL)
+    // ABOUT PARLOUR (PHILOSOPHY & ROOMS MODAL)
     // --------------------------------------------
 
     function openOverviewModal() {
@@ -303,7 +224,7 @@ const Guide = (function () {
             <div class="wp-sheet pl-guide-modal" role="dialog" aria-modal="true" aria-labelledby="pl-guide-modal-title">
                 <div class="wp-header pl-guide-modal-header">
                     <div>
-                        <span class="hm-eyebrow">About & Guide</span>
+                        <span class="hm-eyebrow">Guide</span>
                         <h2 id="pl-guide-modal-title" class="pl-guide-title">About Parlour</h2>
                     </div>
                     <button class="wp-close" data-guide-modal-close="1" aria-label="Close modal">&times;</button>
@@ -312,51 +233,51 @@ const Guide = (function () {
                 <div class="pl-guide-modal-scroll">
                     <!-- The Philosophy -->
                     <div class="pl-guide-section">
-                        <h3 class="pl-guide-sec-title">What Is Parlour?</h3>
+                        <h3 class="pl-guide-sec-title">Why I built this</h3>
                         <p class="pl-guide-p">
-                            Parlour is a language learning platform, built for anyone who wants to learn a language, speak it competently, without trying to juggle five different language apps.
+                            I started Parlour because I&rsquo;d had enough of language apps built around cartoon mascots, hearts, and paywalls. You shouldn&rsquo;t lose your own word list behind a subscription, and you shouldn&rsquo;t have to juggle five separate apps just to learn grammar, read real books, and review vocabulary.
                         </p>
                         <p class="pl-guide-p">
-                            When I started this project, I felt like I had enough of paywalls, garbage UI, and annoying cartoon mascots. I made this app in a way that I always imagined a language app should look like. It should explain the grammar, let you practice, let you read stories, collect and practice your own words &ndash; it should treat you like a serious person. Learning a language is not easy &ndash; and it shouldn&rsquo;t be. The difficulty is what gives it the special flavour. But the difficulty should not be that you run out of hearts, or that your word list is suddenly behind a paywall.
+                            Learning a language is hard, and it should be &mdash; that&rsquo;s what gives it its flavour. Parlour tries to treat you like an adult: explain the grammar clearly, practise it in context, give you real stories to read, and get out of your way.
                         </p>
                         <p class="pl-guide-p">
-                            Parlour is non-commercial, free, and privacy-respecting: no ads, no trackers, and your study data stays local to your browser unless you choose to back it up.
+                            Parlour covers Spanish (Latin America and Spain, CEFR A1&ndash;B2) and Hungarian (CEFR A1&ndash;C1). It is free, non-commercial, and has no ads or trackers &mdash; just tools that work. Your progress stays local in your browser unless you sign in to back it up.
                         </p>
                     </div>
 
                     <!-- The 6 Rooms -->
                     <div class="pl-guide-section">
-                        <h3 class="pl-guide-sec-title">The Six Main &lsquo;Rooms&rsquo;</h3>
+                        <h3 class="pl-guide-sec-title">The Six Rooms</h3>
                         <div class="pl-guide-rooms">
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Home</span>
                                 <h4>Your Study Desk</h4>
-                                <p>Answers one question every day: <em>&ldquo;What is the single best thing to do right now?&rdquo;</em> Recommends your next lesson, reviews due cards, or suggests a quick 5&ndash;15 minute study budget.</p>
+                                <p>Answers one question when you open the app: <em>&ldquo;What should I do right now?&rdquo;</em> Points you to your next lesson, overdue reviews, or a 5&ndash;30 minute study session.</p>
                             </div>
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Lessons</span>
                                 <h4>The Course Workbook</h4>
-                                <p>Structured CEFR curriculum (A1 to B1+). Each unit breaks down grammar clearly with interactive steps, vocabulary in context, and communicative tasks. You can follow the path that we laid out, or follow your own intuition. If you don&rsquo;t know where your knowledge is, fill in the placement test.</p>
+                                <p>Structured CEFR courses (A1&ndash;B2 in Spanish, A1&ndash;C1 in Hungarian) with clear grammar explanations, contextual drills, and speaking tasks. Follow the sequence, jump straight to any unit, or take the placement diagnostic to skip what you already know.</p>
                             </div>
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Library</span>
                                 <h4>The Reading Rooms</h4>
-                                <p>Graded stories and classic literature. Tap any word to see instant translations and add it to your deck. Plus: paste your own texts into <em>My Texts</em>.</p>
+                                <p>Graded stories and classic literature matched to your level. Tap any word for an instant translation (with suffix breakdowns in Hungarian) and save the ones you want to learn. In <em>My Texts</em>, import <code>.epub</code>, <code>.docx</code>, or <code>.txt</code> files &mdash; or paste anything you want to read.</p>
                             </div>
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Workshop</span>
                                 <h4>The Practice Studio</h4>
-                                <p>Focused micro-practice. Drill fast verb conjugations, train your listening, or use Speaking &amp; Writing Practice for open-ended composition with CEFR grading.</p>
+                                <p>Focused practice outside the lesson path: fast verb conjugations, Grammar &amp; Morphology Studios, Listening with songs and real video, CEFR-graded Speaking &amp; Writing, and official exam prep for DELE, ECL, CCSE, and the Hungarian Cultural Exam.</p>
                             </div>
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Decks</span>
                                 <h4>The Memory Box</h4>
-                                <p>Spaced repetition (SRS) flashcards. Target words from your lessons and reading flow here automatically. You can also import decks directly from Quizlet or Anki.</p>
+                                <p>Spaced-repetition flashcards alongside Learn, Match, and Blast modes. Vocabulary from your lessons collects here automatically, and you can add words while reading or import sets from Quizlet, Anki, Memrise, or CSV.</p>
                             </div>
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Journey</span>
                                 <h4>Your Learning Record</h4>
-                                <p>Visual milestones, CEFR proficiency levels, and streak stats. You can also import your existing streak from another app so you never lose momentum.</p>
+                                <p>Milestones, skill breakdowns, a CEFR Can-Do Passport, dark/light theme settings, and optional cloud backup. Switching from another app? Import your existing streak so you don&rsquo;t start from zero.</p>
                             </div>
                         </div>
                     </div>
@@ -366,22 +287,22 @@ const Guide = (function () {
                         <h3 class="pl-guide-sec-title">Bring your study habits with you</h3>
                         <ul class="pl-guide-bullets">
                             <li>
-                                <strong>Import your streak:</strong> Head to <em>Journey</em> and tap <em>Import streak</em> to bring your streak over.
+                                <strong>Import your streak:</strong> In <em>Journey</em>, tap <em>Import a streak</em> to bring your day count over.
                             </li>
                             <li>
-                                <strong>Import your flashcards:</strong> In <em>Decks</em>, tap <em>Import</em> to paste sets from Quizlet, Anki, or CSV spreadsheets.
+                                <strong>Import your flashcards:</strong> In <em>Decks</em>, tap <em>Import deck</em> to paste sets or upload exports from Quizlet, Anki, Memrise, or spreadsheets.
                             </li>
                             <li>
-                                <strong>Read whatever you want:</strong> In <em>Library &rarr; My Texts</em>, paste any article, story, or song lyrics to read with full tap-to-translate dictionary support.
+                                <strong>Read whatever you want:</strong> In <em>Library &rarr; My Texts</em>, upload <code>.epub</code>, <code>.docx</code>, <code>.txt</code>, or <code>.md</code> files &mdash; or paste articles and lyrics &mdash; for full tap-to-translate reading.
                             </li>
                         </ul>
                     </div>
 
                     <!-- Colophon & Contact -->
                     <div class="pl-guide-section" style="margin-bottom: 0;">
-                        <h3 class="pl-guide-sec-title">Colophon & Contact</h3>
+                        <h3 class="pl-guide-sec-title">Colophon &amp; Contact</h3>
                         <p class="pl-guide-p">
-                            Parlour is an independent, non-commercial project by Károly Gergely. If you notice an error in the curriculum, have feedback, or want to contribute, get in touch at <a href="mailto:gergkar@gmail.com" style="color:var(--text); text-decoration:underline;">gergkar@gmail.com</a> or open an issue on <a href="https://github.com/gergkar-gif/good-language-learning-app" target="_blank" rel="noopener" style="color:var(--text); text-decoration:underline;">GitHub</a>.
+                            Parlour is an independent, non-commercial project by K&aacute;roly Gergely. Notice an error in a lesson, have feedback, or want to contribute? Use the flag button on any screen, email <a href="mailto:gergkar@gmail.com" style="color:var(--text); text-decoration:underline;">gergkar@gmail.com</a>, or open an issue on <a href="https://github.com/gergkar-gif/good-language-learning-app" target="_blank" rel="noopener" style="color:var(--text); text-decoration:underline;">GitHub</a>. &middot; <a href="privacy.html" style="color:var(--text); text-decoration:underline;">Privacy Policy</a>
                         </p>
                     </div>
                 </div>
@@ -426,8 +347,6 @@ const Guide = (function () {
         visits,
         note,
         clearNote,
-        invitation,
-        acceptInvitation,
         openOverviewModal,
         closeOverviewModal
     };

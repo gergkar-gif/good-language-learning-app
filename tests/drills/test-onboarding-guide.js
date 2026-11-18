@@ -4,10 +4,9 @@
 // Verifies:
 // 1. Seen-state tracking and localStorage persistence
 // 2. Zero emoji pictograms in the guide copy
-// 3. End-of-lesson invitations: order, skipping areas already found,
-//    coming back once, acceptance
+// 3. Dead end-of-lesson invitations removed from Guide
 // 4. Deferred sync prompt logic (does not show on initial empty state)
-// 5. Home: first-open screen and the "How Parlour works" link
+// 5. Home: first-open screen and the "About Parlour" link
 // 6. App shell: guide.js loaded and precached, old banner slot gone
 // 7. Margin note CSS: no box, no shadow, the old banner styles gone
 
@@ -51,36 +50,11 @@ const guideCode = fs.readFileSync(path.join(__dirname, '../../engine/guide.js'),
 assert(!EMOJI_REGEX.test(guideCode), 'guide.js must not contain any emoji characters');
 console.log('[PASS] No emoji in guide copy.');
 
-// 3. Invitations
-console.log('\n--- Test 3: End-of-Lesson Invitations ---');
-Guide.resetAll();
-const ctx = (over) => Object.assign({ firstTime: true, newWords: 0, unitCompleted: false, unitsDone: 0 }, over);
-
-let inv = Guide.invitation(ctx({ newWords: 12 }));
-assert(inv && inv.id === 'invite-decks', 'first lesson with new words invites to Decks');
-assert.strictEqual(inv.text, '12 new words are in your deck, ready for a short review.');
-assert.strictEqual(inv.nextLesson, true, 'the Decks invitation also offers the next lesson');
-assert.strictEqual(Guide.invitation(ctx({ newWords: 0 })), null, 'no new words, no Decks invitation');
-
-// Skipped once: comes back once more, then stops.
-inv = Guide.invitation(ctx({ newWords: 3 }));
-assert(inv && inv.id === 'invite-decks', 'a skipped invitation comes back once');
-assert.strictEqual(Guide.invitation(ctx({ newWords: 3 })), null, 'and then stops');
-
-// Library after Unit 1, unless the learner already found it.
-inv = Guide.invitation(ctx({ unitCompleted: true, unitsDone: 1 }));
-assert(inv && inv.id === 'invite-library' && inv.tab === 'reader', 'Unit 1 end invites to the Library');
-Guide.acceptInvitation(inv.id);
-assert.strictEqual(Guide.invitation(ctx({ unitCompleted: true, unitsDone: 1 })), null, 'accepted invitations are not repeated');
-
-Guide.markVisited('drills');
-assert.strictEqual(Guide.invitation(ctx({ unitCompleted: true, unitsDone: 2 })), null,
-    'no Workshop invitation once the learner has found the Workshop');
-
-Guide.resetAll();
-assert.strictEqual(Guide.invitation(ctx({ unitCompleted: false, unitsDone: 3 })), null,
-    'unit invitations only appear at the end of a unit');
-console.log('[PASS] Invitation order, skipping and repetition verified.');
+// 3. Orphaned invitations removed
+console.log('\n--- Test 3: Orphaned Invitations Removed ---');
+assert.strictEqual(Guide.invitation, undefined, 'dead Guide.invitation removed');
+assert.strictEqual(Guide.acceptInvitation, undefined, 'dead Guide.acceptInvitation removed');
+console.log('[PASS] Dead end-of-lesson invitation code removed.');
 
 // 4. Deferred Sync Prompt Logic
 console.log('\n--- Test 4: Deferred Sync Prompt Verification ---');

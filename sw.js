@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-11-17-browser-verified';
+const CACHE_VERSION = 'v2026-11-18-copy';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 

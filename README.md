@@ -4,7 +4,7 @@
 
 Learn with lessons. Read stories. Practise with purpose. Remember what matters.
 
-A modular, content-driven language curriculum (CEFR A1–C1). The Spanish (Spain and Latin America) and Hungarian courses are both live through B1, DELE-aligned for Spanish; B2/C1 content is not yet built for either.
+A modular, content-driven language curriculum (CEFR A1–C1). Spanish (Spain and Latin America) is live through B2 (DELE-aligned) and Hungarian is live through C1.
 
 ## Philosophy
 

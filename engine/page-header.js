@@ -18,7 +18,7 @@
 const PAGE_HEADERS = {
     home: {
         title: () => (typeof Home !== 'undefined') ? Home.greeting() : 'Home',
-        subtitle: 'Welcome back to your language journey.',
+        subtitle: 'Your study desk.',
         illustration: 'home'
     },
     learn: {
@@ -43,7 +43,7 @@ const PAGE_HEADERS = {
     },
     journey: {
         title: 'My Journey',
-        subtitle: 'How far you have come.',
+        subtitle: 'Your progress, in plain numbers.',
         illustration: 'journey'
     }
 };

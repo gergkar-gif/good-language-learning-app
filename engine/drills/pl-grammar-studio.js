@@ -983,10 +983,6 @@ const PlGrammarStudio = (function () {
     function _attachEvents() {
         if (!_container) return;
 
-        if (typeof DrillInfo !== 'undefined') {
-            DrillInfo.attach(_container);
-        }
-
         if (!_keyHandlerAttached && typeof document !== 'undefined') {
             document.addEventListener('keydown', _handleGlobalKey);
             _keyHandlerAttached = true;
