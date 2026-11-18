@@ -10,8 +10,8 @@ Writer mode writes, into <worktree>/.scratch/:
 The unit notes come from imports/review/es-c1-plan/notes/<unit id>.md: a first
 line "Genre: <genre>", then the notes (lesson plan, words, text) as {EXTRA}.
 {NOTMET} lists every C1 skill taught after the unit, and every skill of an
-earlier unit that has no lesson file in the worktree (written in parallel by
-another writer).
+earlier unit that has no lesson file in the worktree and is not one of this
+writer's own units (written in parallel by another writer).
 
 Reader mode writes <worktree>/.scratch/reader-prompt.md from
 scripts/templates/read-spanish-c1.txt for the given units; --norm-notes names a
@@ -50,7 +50,7 @@ def unit_index(table, stem):
     return None
 
 
-def notmet(w, table, skills, frozen, idx):
+def notmet(w, table, skills, frozen, idx, own=()):
     lines = []
     for slug, sk in skills.items():
         if sk.get("kind") != "grammar" or sk.get("level") != "C1":
@@ -62,7 +62,7 @@ def notmet(w, table, skills, frozen, idx):
             continue
         if j > idx:
             lines.append(f"- `{slug}`: {sk['title']} (taught at {scr}, Unit {j + 1})")
-        elif not (w / f"content/{COURSE}/lessons/{LEVEL}/{table[j]['stems'][0]}.json").exists():
+        elif table[j]["id"] not in own and not (w / f"content/{COURSE}/lessons/{LEVEL}/{table[j]['stems'][0]}.json").exists():
             lines.append(f"- `{slug}`: {sk['title']} (Unit {j + 1}, being written at the same time by another writer: "
                          "not met for you; don't use it or present it)")
     return "\n".join(sorted(lines)) or "- (none)"
@@ -96,7 +96,7 @@ def writer(w, uids):
         vals = {"{W}": str(w), "{SHEET}": f".scratch/sheet-{uid}.md", "{NUM}": str(num), "{N2}": n2,
                 "{UID}": uid, "{TITLE}": u["title"], "{S}": f"c1-{n2}", "{GENRE}": genre,
                 "{STEMS}": ",".join(stems), "{STEMS_SP}": " ".join(stems),
-                "{NOTMET}": notmet(w, table, skills, frozen, i), "{EXTRA}": extra,
+                "{NOTMET}": notmet(w, table, skills, frozen, i, set(uids)), "{EXTRA}": extra,
                 "{CHALLENGES}": f".scratch/challenges-{uid}.json", "{REPORT}": f".scratch/report-{uid}.md"}
         t = tpl
         for k, v in vals.items():
