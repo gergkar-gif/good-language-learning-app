@@ -4,17 +4,17 @@
     {
       "id": "c1-mestersegesintelligencia-consolidation-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recognize",
-      "question": "Milyen funkciót töltenek be a 'kiváltképp', 'éppenséggel' partikulák az akadémiai szövegekben?",
+      "question": "Mit tesznek a 'kiváltképp' és az 'éppenséggel' szavak egy tudományos szövegben?",
       "options": [
-        "Pontosítják, elhatárolják és fókuszálják az állítások érvényességi körét.",
-        "Kizárólag kérdő mondatok végén állhatnak.",
-        "Tagadást fejeznek ki."
+        "Kiemelnek és pontosítanak egy állítást.",
+        "Kérdő mondatok végére kerülnek.",
+        "Tagadó mondatot csinálnak az állításból."
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "c1-ai-ethics-vocab"
       ]
     },
     {
@@ -22,15 +22,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Hogyan emel ki egy ellenpontozó állítást a kontrasztív fókusz inverziója?",
+      "question": "Hogyan emeljük ki a szórenddel, mi a lényeg a 'nem ... hanem ...' mondatban?",
       "options": [
-        "A hangsúlyozott elemet közvetlenül a véges ige elé helyezi, miközben a 'nem... hanem...' szerkezettel élesen szembeállítja az alternatívákat.",
-        "A mondat végére helyezi a határozószót, és feltételes móddal tompítja az állítás határozottságát a vitapartner meggyőzésére.",
-        "Elhagyja a tagadószót, miközben a bővítményeket szigorúan a névszói állítmány mögé sorolja fel a mondatban."
+        "A kiemelt szót közvetlenül az ige elé tesszük, és szembeállítjuk a másikkal.",
+        "A kiemelt szót a mondat végére tesszük, és feltételes móddal enyhítjük az állítást.",
+        "Az igét a mondat végére tesszük, és tagadás nélkül sorolunk fel alternatívákat."
       ],
       "correct": 0,
       "teaches": [
-        "b2-focus-inversion"
+        "basic-hungarian-word-order"
       ]
     },
     {
@@ -86,7 +86,7 @@
       "category": "vocabulary",
       "stage": "recall",
       "sentence": "Az Európai Unió rendelete szigorú auditot követel meg a nagy _____ rendszerektől.",
-      "hint": "high-risk / kockázat + -ú",
+      "hint": "high-risk (adjective formed from kockázat)",
       "answer": "kockázatú",
       "english": "The European Union regulation demands strict audits from high-risk systems.",
       "teaches": [
@@ -96,14 +96,14 @@
     {
       "id": "c1-mestersegesintelligencia-consolidation-6",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recall",
       "sentence": "A digitális szabályozás kulcsfontosságú, _____ is inkább, mivel az algoritmusok polgárok millióinak életét befolyásolják.",
       "hint": "___ is inkább, mivel",
       "answer": "annál",
       "english": "Digital regulation is crucial, all the more so since algorithms influence the lives of millions of citizens.",
       "teaches": [
-        "causal-postpositions"
+        "c1-ai-ethics-vocab"
       ]
     },
     {
@@ -126,12 +126,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Bármiként _____ is a modellek pontossága, a klinikai felelősség az orvosé.",
-      "hint": "unfold / alakul + -jon",
-      "answer": "alakuljon",
-      "english": "However the accuracy of models unfolds, clinical responsibility belongs to the doctor.",
+      "sentence": "Bármilyen pontos _____ a modell, a klinikai felelősség az orvosé.",
+      "hint": "even",
+      "english": "However accurate the model is, clinical responsibility lies with the doctor.",
       "teaches": [
-        "optative-subjunctive"
+        "concessive-indefinites"
+      ],
+      "answers": [
+        "is"
       ]
     },
     {
@@ -141,49 +143,47 @@
       "stage": "context",
       "question": "Mi a lényege a 'nem a technológia, hanem az etika' típusú megfogalmazásoknak?",
       "options": [
-        "Kontrasztív fókusszal rámutatnak arra, hogy az igazi döntési pont nem a gép képességeiben, hanem az emberi erkölcsi felelősségben rejlik.",
-        "Kérdőre vonják a technológiai innováció társadalmi hasznát, és a digitális eszközök iskolai korlátozását javasolják.",
-        "A társadalmi felelősséget háttérbe szorítva a szoftverek fejlesztési folyamatára és a mérnöki feladatokra összpontosítanak."
+        "Arra mutatnak rá, hogy a döntő pont nem a gép képességeiben, hanem az emberi felelősségben van.",
+        "Kérdőre vonják az innováció társadalmi hasznát, és az eszközök iskolai korlátozását javasolják.",
+        "A társadalmi felelősséget háttérbe szorítva a szoftverek fejlesztésére összpontosítanak."
       ],
       "correct": 0,
       "teaches": [
-        "b2-focus-inversion"
+        "basic-hungarian-word-order"
       ]
     },
     {
       "id": "c1-mestersegesintelligencia-consolidation-10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
-        "A",
+        "Sokak",
+        "szerint",
+        "a",
         "mesterséges",
-        "intelligencia",
+        "intelligenciának",
         "az",
         "emberi",
-        "virágzást",
-        "és",
         "méltóságot",
         "kell",
-        "hogy",
-        "szolgálja."
+        "szolgálnia."
       ],
       "solution": [
-        "A",
+        "Sokak",
+        "szerint",
+        "a",
         "mesterséges",
-        "intelligencia",
+        "intelligenciának",
         "az",
         "emberi",
-        "virágzást",
-        "és",
         "méltóságot",
         "kell",
-        "hogy",
-        "szolgálja."
+        "szolgálnia."
       ],
-      "english": "Artificial intelligence must serve human flourishing and dignity.",
+      "english": "According to many, artificial intelligence must serve human dignity.",
       "teaches": [
-        "optative-subjunctive"
+        "c1-ai-ethics-vocab"
       ]
     },
     {
@@ -194,11 +194,11 @@
       "template": [
         {
           "prompt": "Write a synthesized argument on European AI regulation balancing innovation and human rights.",
-          "answer": "Az Európai Unió AI Act szabályozása nem az innováció elfojtását célozza, hanem kiváltképp azt szavatolja, hogy a technológiai fejlődés szilárd etikai korlátok és emberi felügyelet mellett szolgálja a társadalom javát."
+          "answer": "A rendelet célja szerint a szabályozás nem az innováció gátlására, hanem az emberi felügyelet és az alapjogok védelmére épül."
         }
       ],
       "teaches": [
-        "causal-postpositions"
+        "c1-ai-ethics-vocab"
       ]
     },
     {
@@ -209,11 +209,11 @@
       "template": [
         {
           "prompt": "Formulate a concluding thought on artificial intelligence and human agency.",
-          "answer": "Nem a szilícium autonómiája dönti el a jövőt, hanem az emberiség erkölcsi érettsége: a mesterséges intelligencia valódi mércéje az, hogy mennyire képes gazdagítani és megóvni a humánus értékeket."
+          "answer": "Nem a szilícium autonómiája dönti el a jövőt, hanem az emberi felelősség: a mesterséges intelligencia mércéje az, hogy mennyire szolgálja az emberi értékeket."
         }
       ],
       "teaches": [
-        "b2-focus-inversion"
+        "c1-ai-ethics-vocab"
       ]
     }
   ]

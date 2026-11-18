@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A jegybank a forint védelmében kénytelen volt az erősödési _____ hatalmas összegben intervenciót végrehajtani.",
-      "hint": "band edge / sávszél + -nél",
+      "sentence": "A jegybank a sáv védelmében kénytelen volt az erősödési _____ nagy összegű devizapiaci intervenciót végrehajtani.",
+      "hint": "sávszél, at (where)",
       "answer": "sávszélnél",
-      "english": "In defense of the forint the central bank was forced to execute intervention in huge amounts at the strong band edge.",
+      "english": "To defend the band the central bank was forced to carry out a large foreign-exchange intervention at the strong edge.",
       "teaches": [
-        "c1-monetary-tightening-clauses"
+        "nal-nel"
       ]
     },
     {
@@ -60,13 +60,13 @@
     {
       "id": "c1-monetaris-03-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "sentence": "2008 februárjában a forint rögzített sávját végleg felváltotta a szabad _____.",
       "hint": "floating",
       "english": "In February 2008 the pegged band of the forint was definitively replaced by free floating.",
       "teaches": [
-        "c1-monetary-tightening-clauses"
+        "c1-forint-eurozone-vocab"
       ],
       "answers": [
         "lebegtetés",
@@ -76,35 +76,33 @@
     {
       "id": "c1-monetaris-03-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
         "szabad",
         "lebegtetés",
-        "lehetővé",
-        "teszi",
+        "nagyobb",
+        "mozgásteret",
+        "ad",
         "a",
         "monetáris",
-        "politika",
-        "teljes",
-        "függetlenségét."
+        "politikának."
       ],
       "solution": [
         "A",
         "szabad",
         "lebegtetés",
-        "lehetővé",
-        "teszi",
+        "nagyobb",
+        "mozgásteret",
+        "ad",
         "a",
         "monetáris",
-        "politika",
-        "teljes",
-        "függetlenségét."
+        "politikának."
       ],
-      "english": "Free floating enables full independence of monetary policy.",
+      "english": "Free floating gives monetary policy more room for manoeuvre.",
       "teaches": [
-        "c1-monetary-tightening-clauses"
+        "c1-forint-eurozone-vocab"
       ]
     },
     {
@@ -129,8 +127,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "c1-monetary-tightening-clauses"
-      ]
+        "plural-nouns-k"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "ra-re"
+      }
     },
     {
       "id": "c1-monetaris-03-production-7",
@@ -140,27 +142,27 @@
       "template": [
         {
           "prompt": "Contrast pegged exchange rate bands with free floating regimes.",
-          "answer": "Míg az intervenciós sáv kiszámíthatóságot nyújt, de sérülékeny a spekulatív támadásokkal szemben, addig a szabad lebegtetés automatikus sokkelnyelőként működik, megőrizve a jegybank függetlenségét."
+          "answer": "Míg az intervenciós sáv kiszámíthatóságot nyújt, de sérülékeny a spekulatív támadásokkal szemben, addig a szabad lebegtetés sokkelnyelőként működhet, és nagyobb mozgásteret ad a monetáris politikának."
         }
       ],
       "teaches": [
-        "c1-monetary-tightening-clauses"
+        "c1-forint-eurozone-vocab"
       ]
     },
     {
       "id": "c1-monetaris-03-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
       "question": "Hogyan működik a lebegő árfolyamrendszer mint makrogazdasági sokkelnyelő?",
       "options": [
         "A forint leértékelődése külső sokkok idején automatikusan javítja az export versenyképességét és mérsékli az importot.",
         "A jegybank a devizatartalékok felhasználásával szűk sávban tartja az árfolyamot, tompítva a piaci áringadozásokat.",
-        "Automatikusan leállítja a nemzetközi tőkemozgásokat, és hatóságilag rögzíti az importált energiahordozók fogyasztói árát."
+        "A forint árfolyama külső sokkok idején változatlan marad, ezért az export és az import is állandó."
       ],
       "correct": 0,
       "teaches": [
-        "c1-monetary-tightening-clauses"
+        "c1-forint-eurozone-vocab"
       ]
     }
   ]

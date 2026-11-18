@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért vált tömeges tragédiává a svájci frank alapú devizahitelezés Magyarországon?",
+      "question": "Miért vált súlyos problémává a svájci frank alapú devizahitelezés Magyarországon?",
       "options": [
-        "Mert a forint gyengülésével a háztartások törlesztőrészletei drasztikusan megugrottak, miközben jövedelmük forintban maradt.",
-        "Mert a svájci jegybank drasztikusan megemelte az alapkamatot, ami azonnal megduplázta a nemzetközi hitelkamatokat.",
-        "Mert a hitelező pénzintézetek a futamidő felénél jelentősen felemelték a kölcsönszerződések fix kamatfelárait."
+        "Mert a forint gyengülésével a háztartások törlesztőrészletei jelentősen megnőttek, miközben jövedelmük forintban maradt.",
+        "Mert a svájci jegybank megemelte az alapkamatot, ami azonnal megduplázta a nemzetközi hitelkamatokat.",
+        "Mert a bankok a hitelek futamidejét egyoldalúan a felére rövidítették, így a havi részletek jelentősen megnőttek."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-monetaris-04-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
       "sentence": "A Kúria jogegységi döntése kimondta, hogy a bankok által alkalmazott _____ tisztességtelen szerződési feltételnek minősül.",
       "hint": "spread",
       "english": "The Curia's uniformity decision declared that the exchange rate spread applied by banks constitutes an unfair contract term.",
       "teaches": [
-        "c1-inflationary-expectations"
+        "c1-forint-eurozone-vocab"
       ],
       "answers": [
         "árfolyamrés"
@@ -64,18 +64,18 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A devizahitelek 2014-es _____ megóvta a lakosságot a svájci frank későbbi drasztikus erősödésétől.",
-      "hint": "conversion to forints / forintosítás + -a",
+      "sentence": "A devizahitelek 2014-es _____ megóvta az érintett háztartásokat a svájci frank későbbi erősödésétől.",
+      "hint": "forintosítás, possessed (of the loans)",
       "answer": "forintosítása",
-      "english": "The 2014 conversion of FX loans to forints shielded the public from the subsequent drastic appreciation of the Swiss Franc.",
+      "english": "The 2014 conversion of FX loans to forints shielded the households concerned from the later strengthening of the Swiss franc.",
       "teaches": [
-        "c1-inflationary-expectations"
+        "3rd-person-possessive"
       ]
     },
     {
       "id": "c1-monetaris-04-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -97,7 +97,7 @@
       ],
       "english": "The conversion of FX loans to forints eliminated household exchange rate risk.",
       "teaches": [
-        "c1-inflationary-expectations"
+        "c1-forint-eurozone-vocab"
       ]
     },
     {
@@ -122,8 +122,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "c1-inflationary-expectations"
-      ]
+        "c1-forint-eurozone-vocab"
+      ],
+      "distractor_skills": {
+        "1": "dative-possessor",
+        "2": "val-vel"
+      }
     },
     {
       "id": "c1-monetaris-04-production-7",
@@ -133,27 +137,27 @@
       "template": [
         {
           "prompt": "Explain the systemic risk of retail FX lending in one analytical sentence.",
-          "answer": "A lakossági devizahitelezés alapvető veszélye a devizális eltérésben (mismatch) rejlik: a háztartások forintban képződő jövedelme nem nyújt fedezetet a külső sokkok által kiváltott árfolyamgyengülés törlesztési terheire."
+          "answer": "A lakossági devizahitelezés alapvető veszélye, hogy a háztartások jövedelme forintban keletkezik, a tartozásuk viszont devizában van, ezért az árfolyam gyengülése megnöveli a törlesztési terheket."
         }
       ],
       "teaches": [
-        "c1-inflationary-expectations"
+        "c1-forint-eurozone-vocab"
       ]
     },
     {
       "id": "c1-monetaris-04-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
       "question": "Mi volt a forintosítás jogi és gazdasági következménye?",
       "options": [
         "A lakossági jelzáloghitelek átváltása forintra, ami megszüntette a közvetlen devizakockázatot a családok számára.",
         "A lakossági hitelek kamatainak hatósági maximalizálása és a törlesztési futamidők egységes meghosszabbítása.",
-        "Az összes kereskedelmi bank azonnali államosítása és a jelzáloghitelek állami kezelésbe vétele a minisztérium által."
+        "A lakossági jelzáloghitelek átváltása euróra, ami az árfolyamkockázatot a családoktól a bankokra hárította."
       ],
       "correct": 0,
       "teaches": [
-        "c1-inflationary-expectations"
+        "c1-forint-eurozone-vocab"
       ]
     }
   ]

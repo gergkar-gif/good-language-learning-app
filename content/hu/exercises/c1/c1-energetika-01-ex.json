@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "Mekkora hányadát adja a Paksi Atomerőmű a magyarországi villamosenergia-termelésnek?",
       "options": [
-        "Körülbelül a felét (mintegy 45–50%-át) szén-dioxid-mentes alapterhelésként.",
-        "Mintegy 10–15%-át, kizárólag a csúcsidőszaki ingadozások kiegyenlítésére.",
-        "Több mint 80%-át, teljesen feleslegessé téve a megújuló energiaforrásokat."
+        "Körülbelül a felét, szén-dioxid-mentes alapterhelésként.",
+        "Körülbelül a tizedét, főként a csúcsidőszaki ingadozások kiegyenlítésére.",
+        "Körülbelül a kilenctizedét, szinte feleslegessé téve a megújulókat."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-energetika-01-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A paksi atomerőművi blokkok folyamatos és stabil _____ termeléssel szavatolják a hazai ellátásbiztonságot.",
+      "sentence": "A paksi atomerőművi blokkok folyamatos és stabil _____ termeléssel támogatják a hazai ellátásbiztonságot.",
       "hint": "baseload",
-      "english": "The Paks nuclear power units guarantee domestic security of supply with continuous and stable baseload generation.",
+      "english": "The Paks reactor units support domestic security of supply with continuous, stable baseload generation.",
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-paks-nuclear-vocab"
       ],
       "answers": [
         "alapterheléses"
@@ -62,20 +62,22 @@
     {
       "id": "c1-energetika-01-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A reaktorok biztonságos működését az OAH szigorú és független hatósági _____ garantálja.",
-      "hint": "supervision / felügyelet + -e",
-      "answer": "felügyelete",
-      "english": "The safe operation of the reactors is guaranteed by the strict and independent regulatory supervision of the OAH.",
+      "sentence": "A reaktorok működése az Országos Atomenergia Hivatal hatósági _____ alatt áll.",
+      "hint": "supervision",
+      "english": "The operation of the reactors is under the regulatory supervision of the Hungarian Atomic Energy Authority.",
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-paks-nuclear-vocab"
+      ],
+      "answers": [
+        "felügyelet"
       ]
     },
     {
       "id": "c1-energetika-01-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -101,7 +103,7 @@
       ],
       "english": "Nuclear energy provides the backbone of domestic carbon-free electricity generation.",
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-paks-nuclear-vocab"
       ]
     },
     {
@@ -116,7 +118,7 @@
         },
         {
           "speaker": "Energetikai mérnök",
-          "text": "Mert a leállításuk hatalmas _____ hiányt okozna a magyar villamosenergia-hálózatban."
+          "text": "A hosszabbítás hívei szerint a leállításuk hatalmas _____ hiányt okozna a magyar villamosenergia-hálózatban."
         }
       ],
       "options": [
@@ -126,7 +128,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "c1-nuclear-governance"
+        "spatial-belonging-beli"
       ]
     },
     {
@@ -137,27 +139,27 @@
       "template": [
         {
           "prompt": "Write a sentence summarizing the strategic role of Paks I in Hungary's energy mix.",
-          "answer": "A Paksi Atomerőmű négy reaktorblokkja a hazai villamosenergia-mix megkerülhetetlen gerincét alkotja, szén-dioxid-kibocsátás nélküli alapterhelést nyújtva az országos hálózat számára."
+          "answer": "A Paksi Atomerőmű négy reaktorblokkja a hazai villamosenergia-termelés mintegy felét adja, üzem közben szén-dioxid-kibocsátás nélkül."
         }
       ],
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-paks-nuclear-vocab"
       ]
     },
     {
       "id": "c1-energetika-01-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mi indokolja a meglévő blokkok üzemidő-hosszabbítását gazdaságilag?",
+      "question": "Mivel indokolják az üzemidő-hosszabbítás hívei gazdaságilag a meglévő blokkok további működtetését?",
       "options": [
-        "A meglévő, amortizálódott blokkok élettartamának növelése töredékébe kerül egy vadonatúj erőmű felépítésének.",
-        "A hazai villamosenergia-igény drasztikus és tartós visszaesésének előrejelzése.",
-        "A megújuló energiaforrások támogatási rendszerének azonnali kivezetése."
+        "Hogy a meglévő blokkok élettartamának növelése olcsóbb egy új erőmű felépítésénél.",
+        "Hogy a hazai villamosenergia-igény tartósan és jelentősen visszaesik.",
+        "Hogy a megújuló energiaforrások támogatását azonnal meg kell szüntetni."
       ],
       "correct": 0,
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-paks-nuclear-vocab"
       ]
     }
   ]

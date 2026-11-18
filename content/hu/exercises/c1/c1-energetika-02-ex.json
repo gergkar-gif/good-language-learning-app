@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért váltott ki nemzetközi vitát a Paks II beruházás 2014-es megkötése?",
+      "question": "Miért váltott ki vitát a Paks II beruházás 2014-es megkötése?",
       "options": [
-        "Mert nemzetközi közbeszerzés nélkül, közvetlen orosz államközi megállapodással és hitellel kötötték meg.",
-        "Mert a beruházás teljes költségvetését kizárólag lakossági kötvénykibocsátásból finanszírozzák.",
-        "Mert a létesítmény tervezett kapacitása meghaladja a közép-európai villamosenergia-hálózat teljesítményét."
+        "Mert a bírálók szerint nemzetközi közbeszerzés nélkül, közvetlen orosz államközi megállapodással és hitellel kötötték meg.",
+        "Mert a beruházás teljes költségét a magyar lakosság által jegyzett állampapírokból finanszírozzák.",
+        "Mert a szerződést a Nemzetközi Atomenergia-ügynökség megbízásából kötötték meg."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-energetika-02-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A Paks II projekt kulcsrakész _____ szerződés keretében valósul meg a fővállalkozóval.",
+      "sentence": "A Paks II projektet kulcsrakész _____ szerződés keretében tervezik megvalósítani a fővállalkozóval.",
       "hint": "EPC",
-      "english": "The Paks II project is implemented within an EPC general contracting agreement framework with the contractor.",
+      "english": "The Paks II project is planned to be carried out with the main contractor under a turnkey EPC contract.",
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-paks-nuclear-vocab"
       ],
       "answers": [
         "fővállalkozói"
@@ -62,13 +62,13 @@
     {
       "id": "c1-energetika-02-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Az ukrajnai háború után elrendelt nemzetközi intézkedések fokozták a beruházás _____ kitettségét.",
+      "sentence": "Az ukrajnai háború kitörése után a beruházás _____ kitettségéről is vita folyt.",
       "hint": "sanctions",
-      "english": "International measures enacted after the war in Ukraine increased the investment's sanctions exposure.",
+      "english": "After the outbreak of the war in Ukraine there was also debate about the investment's exposure to sanctions.",
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-paks-nuclear-vocab"
       ],
       "answers": [
         "szankciós"
@@ -77,35 +77,41 @@
     {
       "id": "c1-energetika-02-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
+        "bírálók",
+        "szerint",
+        "a",
         "geopolitikai",
         "kockázatok",
         "és",
         "a",
         "technológiai",
         "függőség",
-        "lassítják",
+        "hátráltatják",
         "a",
         "beruházást."
       ],
       "solution": [
         "A",
+        "bírálók",
+        "szerint",
+        "a",
         "geopolitikai",
         "kockázatok",
         "és",
         "a",
         "technológiai",
         "függőség",
-        "lassítják",
+        "hátráltatják",
         "a",
         "beruházást."
       ],
-      "english": "Geopolitical risks and technological dependence slow down the investment.",
+      "english": "According to the critics, geopolitical risks and technological dependence hinder the investment.",
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-paks-nuclear-vocab"
       ]
     },
     {
@@ -116,22 +122,25 @@
       "prompt": [
         {
           "speaker": "Diplomata",
-          "text": "Hogyan érintik az európai szankciók a Paks II projekt alkatrész-beszerzéseit?"
+          "text": "Mit mondanak a bírálók a Paks II projekt függőségi kockázatáról?"
         },
         {
           "speaker": "Szakértő",
-          "text": "Bár a nukleáris ipar mentesül a szankciók alól, a nyugati irányítástechnika szállítása komoly _____ ütközik."
+          "text": "Szerintük a projekt az orosz technológiától és hiteltől tenné függővé az országot, ezért _____ aggályokat vet fel."
         }
       ],
       "options": [
-        "akadályokba",
-        "késedelmekbe",
-        "ellentmondásokba"
+        "geopolitikai",
+        "geopolitikailag",
+        "geopolitikának"
       ],
       "correct": 0,
       "teaches": [
-        "c1-nuclear-governance"
-      ]
+        "i-adjectives"
+      ],
+      "distractor_skills": {
+        "2": "dative-possessor"
+      }
     },
     {
       "id": "c1-energetika-02-production-7",
@@ -141,27 +150,27 @@
       "template": [
         {
           "prompt": "Analyze the geopolitical controversy of Paks II in one objective sentence.",
-          "answer": "A Paks II projekt a hazai villamosenergia-igény hosszú távú biztosítását célozza, ám az orosz kivitelező és hitelkonstrukció révén mély geopolitikai és szuverenitási aggályokat vet fel a változó európai környezetben."
+          "answer": "A kormány szerint a Paks II a hazai villamosenergia-igény hosszú távú biztosítását szolgálja, a bírálók szerint viszont az orosz kivitelező és hitel geopolitikai és szuverenitási aggályokat vet fel."
         }
       ],
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-paks-nuclear-vocab"
       ]
     },
     {
       "id": "c1-energetika-02-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Milyen feltétellel hagyta jóvá az Európai Bizottság a Paks II állami támogatását?",
+      "question": "Mit vizsgált az Európai Bizottság a Paks II beruházással kapcsolatban?",
       "options": [
-        "A piaci megtérülés igazolásával és a termelt áram jelentős részének transzparens tőzsdei értékesítésével.",
-        "A fosszilis tüzelésű erőművek azonnali leállításával és kötelező bezárásával.",
-        "A szomszédos országokkal kötendő kétoldalú villamosenergia-kereskedelmi megállapodásokkal."
+        "Hogy az állami támogatás összeegyeztethető-e az uniós versenyszabályokkal.",
+        "Hogy a két új blokk kapacitása megfelel-e a NAÜ ajánlásainak.",
+        "Hogy a beruházás hány magyar vállalatnak ad majd munkát."
       ],
       "correct": 0,
       "teaches": [
-        "c1-nuclear-governance"
+        "c1-paks-nuclear-vocab"
       ]
     }
   ]

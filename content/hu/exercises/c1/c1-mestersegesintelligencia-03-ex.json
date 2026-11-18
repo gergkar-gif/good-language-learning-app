@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miben különbözik a generatív MI hatása a korábbi ipari forradalmaktól?",
+      "question": "Miben különbözik a generatív MI hatása sokak szerint a korábbi automatizációs hullámoktól?",
       "options": [
-        "Nem a fizikai kétkezi munkát, hanem a magasan képzett fehérgalléros és kreatív kognitív tevékenységeket érinti közvetlenül.",
-        "Elsősorban az agrárgazdaságban és építőiparban dolgozó kétkezi munkások fizikai feladatait gépesíti korszerű eszközökkel.",
-        "Nem a szellemi munkaköröket, hanem a nehézipari gyártósorok mechanikus futószalagjait korszerűsíti automatizált robotokkal."
+        "Nemcsak a fizikai munkát, hanem a képzett szellemi és kreatív munkát is érinti.",
+        "Elsősorban az agrárgazdaságban és az építőiparban dolgozók fizikai feladatait gépesíti.",
+        "Nem a szellemi munkaköröket, hanem a nehézipari gyártósorok futószalagjait korszerűsíti."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A felmérések _____ szerint a cégek több mint fele már beépítette az MI-eszközöket a napi munkafolyamatokba.",
-      "hint": "tanúság + -a",
+      "sentence": "A felmérések _____ szerint sok cég már beépítette az MI-eszközöket a napi munkafolyamatokba.",
+      "hint": "tanúság, possessed",
       "answer": "tanúsága",
-      "english": "According to the testimony of surveys, more than half of companies have already integrated AI tools into daily workflows.",
+      "english": "According to the surveys many companies have already built AI tools into their daily workflows.",
       "teaches": [
-        "evidentials"
+        "3rd-person-possessive"
       ]
     },
     {
@@ -62,12 +62,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Tudományosan _____ tekinthető, hogy a sikeres alkalmazkodás kulcsa az emberi intuíció és az algoritmus szinergiája.",
-      "hint": "proven / bizonyított + -nak",
+      "sentence": "_____ tekinthető, hogy a tanulás segít az új munkakörökhöz való alkalmazkodásban.",
+      "hint": "proven (what it is regarded as)",
       "answer": "bizonyítottnak",
-      "english": "It can be regarded as scientifically proven that the key to successful adaptation is the synergy of human intuition and algorithm.",
+      "english": "It can be regarded as proven that learning helps people adapt to new jobs.",
       "teaches": [
-        "evidentials"
+        "verb-government-nak-nek"
       ]
     },
     {
@@ -76,28 +76,32 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "tények",
+        "Egyes",
+        "kutatások",
         "tanúsága",
         "szerint",
         "az",
         "élethosszig",
         "tartó",
         "tanulás",
-        "elengedhetetlen."
+        "segít",
+        "az",
+        "alkalmazkodásban."
       ],
       "solution": [
-        "A",
-        "tények",
+        "Egyes",
+        "kutatások",
         "tanúsága",
         "szerint",
         "az",
         "élethosszig",
         "tartó",
         "tanulás",
-        "elengedhetetlen."
+        "segít",
+        "az",
+        "alkalmazkodásban."
       ],
-      "english": "According to the testimony of facts, lifelong learning is indispensable.",
+      "english": "According to some research, lifelong learning helps with adaptation.",
       "teaches": [
         "evidentials"
       ]
@@ -119,13 +123,17 @@
       ],
       "options": [
         "átképzési",
-        "átképzéses",
+        "átképzett",
         "átképzésbeli"
       ],
       "correct": 0,
       "teaches": [
-        "evidentials"
-      ]
+        "i-adjectives"
+      ],
+      "distractor_skills": {
+        "1": "past-participle-adjective",
+        "2": "spatial-belonging-beli"
+      }
     },
     {
       "id": "c1-mestersegesintelligencia-03-production-7",
@@ -135,11 +143,11 @@
       "template": [
         {
           "prompt": "Write an assertive evidential sentence about labor market disruption.",
-          "answer": "A gazdasági mutatók tanúsága szerint a kognitív rutinmunkák automatizálása kétségkívül mélyreható átképzési hullámot tesz elkerülhetetlenné az európai munkaerőpiacon."
+          "answer": "A gazdasági mutatók tanúsága szerint a rutin kognitív munkák automatizálása kétségkívül átképzési igényeket támaszt az európai munkaerőpiacon."
         }
       ],
       "teaches": [
-        "evidentials"
+        "c1-ai-ethics-vocab"
       ]
     },
     {
@@ -147,11 +155,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik állítás tartalmaz episztemikus evidenciát jelölő formulát?",
+      "question": "Melyik mondatban hivatkoznak a tapasztalatokra ('according to experience')?",
       "options": [
         "A tapasztalatok tanúsága szerint a kreativitás nehezen automatizálható.",
-        "Ha a kreativitás automatizálható volna.",
-        "Bár a kreativitás nem automatizálható."
+        "Ha a kreativitás automatizálható volna, az új helyzetet teremtene.",
+        "Bár a kreativitás nem automatizálható, a rutinfeladatok azok."
       ],
       "correct": 0,
       "teaches": [

@@ -1,0 +1,1225 @@
+[
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-01-a-gr.json",
+  "old": "Built between 1974 and 1987, the four VVER-440/213 pressurized water reactor blocks at Paks produce roughly half of Hungary's domestic electricity. In the 2000s, safety upgrades enabled a 20-year lifetime extension (to 2032–2037), and a further 20-year extension to 2052–2057 is currently underway.",
+  "new": "Built between 1974 and 1987, the four VVER-440/213 pressurized water reactor units at Paks produce roughly half of Hungary's domestic electricity. In the 2000s a 20-year lifetime extension was approved for the units (to 2032–2037), and in December 2022 the National Assembly approved preparations for a further 20-year extension.",
+  "why": "\"is currently underway\" and the 2052-2057 dates replaced by the 2022 parliamentary decision (reviewer fact); figures as years",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-01-a-gr.json",
+  "old": "Syntactically, engineering evaluations combine technical passive structures with causal postpositions: `A reaktortartály állapotának roncsolásmentes vizsgálata révén bizonyítást nyert, hogy a blokkok biztonságosan üzemeltethetők további évtizedeken át`.",
+  "new": "Technical reports often use *révén* ('by means of'; you know it from earlier units) with a verbal noun: `A hatósági vizsgálatok révén ellenőrizhető, hogy a blokkok megfelelnek-e a biztonsági előírásoknak`.",
+  "why": "old example claimed \"bizonyítást nyert, hogy a blokkok biztonságosan üzemeltethetők\" (overclaim) and the description did not match; révén recapped without a unit number (rulebook)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-01-a-gr.json",
+  "old": "Az üzemidő meghosszabbítása a legolcsóbb dekarbonizált kapacitásfenntartás.",
+  "new": "Az üzemidő meghosszabbítása a támogatók szerint költséghatékony módja a meglévő kapacitás fenntartásának.",
+  "why": "\"a legolcsóbb dekarbonizált kapacitásfenntartás\" is a contested claim stated as fact",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-01-a-gr.json",
+  "old": "Extending operating lifetimes is the cheapest decarbonized capacity maintenance.",
+  "new": "According to its supporters, extending operating lifetimes is a cost-effective way of maintaining existing capacity.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-01-a-gr.json",
+  "old": "A biztonsági rendszerek kettőzése kizárja a súlyos üzemzavarok kockázatát.",
+  "new": "A biztonsági rendszerek kettőzése csökkenti a súlyos üzemzavarok kockázatát.",
+  "why": "\"kizárja\" is an overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-01-a-gr.json",
+  "old": "Redundancy of safety systems eliminates the risk of severe incidents.",
+  "new": "Redundancy of safety systems reduces the risk of severe incidents.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-01-ex.json",
+  "id": "c1-energetika-01-introduce-1",
+  "set": {
+   "options": [
+    "Körülbelül a felét, szén-dioxid-mentes alapterhelésként.",
+    "Körülbelül a tizedét, főként a csúcsidőszaki ingadozások kiegyenlítésére.",
+    "Körülbelül a kilenctizedét, szinte feleslegessé téve a megújulókat."
+   ],
+   "correct": 0
+  },
+  "why": "tell-absolute (kizárólag); the 45-50% figure dropped; wrong options plausible, one fault each",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-01-ex.json",
+  "id": "c1-energetika-01-controlled-2",
+  "set": {
+   "sentence": "A paksi atomerőművi blokkok folyamatos és stabil _____ termeléssel támogatják a hazai ellátásbiztonságot.",
+   "english": "The Paks reactor units support domestic security of supply with continuous, stable baseload generation.",
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"szavatolják\" overclaim; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-01-ex.json",
+  "id": "c1-energetika-01-practice-4",
+  "set": {
+   "sentence": "A reaktorok működése az Országos Atomenergia Hivatal hatósági _____ alatt áll.",
+   "hint": "supervision",
+   "answer": null,
+   "answers": [
+    "felügyelet"
+   ],
+   "english": "The operation of the reactors is under the regulatory supervision of the Hungarian Atomic Energy Authority.",
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"szigorú és független\", \"garantálja\" are judgements; hint gave the answer (felügyelet + -e); retired tag; authority name: check",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-01-ex.json",
+  "id": "c1-energetika-01-dialogue-6",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Politikus",
+     "text": "Miért van szükség a paksi blokkok üzemidejének további meghosszabbítására?"
+    },
+    {
+     "speaker": "Energetikai mérnök",
+     "text": "A hosszabbítás hívei szerint a leállításuk hatalmas _____ hiányt okozna a magyar villamosenergia-hálózatban."
+    }
+   ],
+   "teaches": [
+    "spatial-belonging-beli"
+   ]
+  },
+  "why": "an advocacy claim stated as fact: attributed; the choice is the -beli adjective",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-01-ex.json",
+  "id": "c1-energetika-01-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence summarizing the strategic role of Paks I in Hungary's energy mix.",
+     "answer": "A Paksi Atomerőmű négy reaktorblokkja a hazai villamosenergia-termelés mintegy felét adja, üzem közben szén-dioxid-kibocsátás nélkül."
+    }
+   ],
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ]
+  },
+  "why": "\"megkerülhetetlen gerinc\" judgement; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-01-ex.json",
+  "id": "c1-energetika-01-check-8",
+  "set": {
+   "question": "Mivel indokolják az üzemidő-hosszabbítás hívei gazdaságilag a meglévő blokkok további működtetését?",
+   "options": [
+    "Hogy a meglévő blokkok élettartamának növelése olcsóbb egy új erőmű felépítésénél.",
+    "Hogy a hazai villamosenergia-igény tartósan és jelentősen visszaesik.",
+    "Hogy a megújuló energiaforrások támogatását azonnal meg kell szüntetni."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length give-away 109 vs 79; the economic claim attributed; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-01.json",
+  "old": "  \"grammar\": \"VVER-440 Reactor Architecture, Baseline Power and 20-Year Life Extensions\",\n  \"goal\": [\n    \"I can analyze the history and operation of the Paks Nuclear Power Plant (*Paks I, VVER-440 blokkok, Paksi Atomerőmű*).\",\n    \"I can evaluate technical life-extension programs (*üzemidő-hosszabbítás, biztonsági felülvizsgálat*).\",\n    \"I can discuss nuclear baseload generation representing ~50% of Hungarian electricity.\"",
+  "new": "  \"grammar\": \"VVER-440 Reactor Architecture, Baseline Power and 20-Year Life Extensions\",\n  \"goal\": [\n    \"I can describe the history of the Paks Nuclear Power Plant and its place in Hungarian electricity (*Paksi Atomerőmű, blokk, üzemidő-hosszabbítás*).\",\n    \"I can explain why the operating lifetime of the reactors was extended.\",\n    \"I can write about baseload electricity generation in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-01.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the history and operation of the Paks Nuclear Power Plant (*Paks I, VVER-440 blokkok, Paksi Atomerőmű*).\",\n        \"I can evaluate technical life-extension programs (*üzemidő-hosszabbítás, biztonsági felülvizsgálat*).\",\n        \"I can discuss nuclear baseload generation representing ~50% of Hungarian electricity.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the history of the Paks Nuclear Power Plant and its place in Hungarian electricity (*Paksi Atomerőmű, blokk, üzemidő-hosszabbítás*).\",\n        \"I can explain why the operating lifetime of the reactors was extended.\",\n        \"I can write about baseload electricity generation in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-01.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the history and operation of the Paks Nuclear Power Plant (*Paks I, VVER-440 blokkok, Paksi Atomerőmű*).\",\n        \"I can evaluate technical life-extension programs (*üzemidő-hosszabbítás, biztonsági felülvizsgálat*).\",\n        \"I can discuss nuclear baseload generation representing ~50% of Hungarian electricity.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the history of the Paks Nuclear Power Plant and its place in Hungarian electricity (*Paksi Atomerőmű, blokk, üzemidő-hosszabbítás*).\",\n        \"I can explain why the operating lifetime of the reactors was extended.\",\n        \"I can write about baseload electricity generation in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-energetika-01-voc.json",
+  "old": "    {\n      \"lemma\": \"termelési volumen\",\n      \"translation\": \"production volume\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"termelési volumen\",\n      \"translation\": \"production volume\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"alapterhelés\",\n      \"translation\": \"baseload\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"felügyelet\",\n      \"translation\": \"supervision, oversight\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"reaktor\",\n      \"translation\": \"reactor\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"karbonmentes\",\n      \"translation\": \"carbon-free\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"amortizálódik\",\n      \"translation\": \"to be written off, to depreciate\",\n      \"pos\": \"verb\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-energetika-01-paks1.json",
+  "old": "Amikor 1982 decemberében az 1-es blokk rákapcsolódott az országos villamosenergia-hálózatra, Magyarország belépett a nukleáris energiát alkalmazó nemzetek elit klubjába. A Tolna megyei Paks mellett felépült négy szovjet típusú VVER-440-es nyomottvizes reaktorblokk a szocialista korszak legnagyobb és legmegbízhatóbb ipari beruházásának bizonyult.",
+  "new": "Amikor 1982 decemberében az 1-es blokk rákapcsolódott az országos villamosenergia-hálózatra, Magyarország a nukleáris energiát használó országok közé lépett. A Tolna megyei Paks mellett felépült négy szovjet típusú VVER-440-es nyomottvizes reaktorblokk a szocialista korszak egyik legnagyobb ipari beruházása volt.",
+  "why": "\"elit klub\", \"legnagyobb és legmegbízhatóbb\" were judgements",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-energetika-01-paks1.json",
+  "old": "Az évtizedek során a magyar mérnökök kiváló biztonsági kultúrát honosítottak meg, aminek köszönhetően Paks a nemzetközi rangsorokban is a legbiztonságosabb és leghatékonyabb atomerőművek közé emelkedett. A létesítmény ma a hazai áramtermelés mintegy felét adja tiszta, szén-dioxid-mentes alapterhelésként. A 2000-es években végrehajtott húszéves üzemidő-hosszabbítás nélkül az ország energiaellátása megroppant volna; ma pedig már a blokkok hatvanéves korukig történő működtetésének műszaki előkészítése zajlik.",
+  "new": "Az évtizedek során a paksi üzemeltető szerint a blokkok magas biztonsági és hatékonysági mutatókat értek el a nemzetközi összehasonlításokban. Az erőmű ma a hazai áramtermelés mintegy felét adja, üzem közben szén-dioxid-kibocsátás nélküli alapterhelésként. A 2000-es években húszéves üzemidő-hosszabbítást engedélyeztek a blokkoknak; 2022 decemberében pedig az Országgyűlés jóváhagyta egy újabb, húszéves hosszabbítás előkészítését.",
+  "why": "\"hatvanéves korukig\" is wrong (the 2022 decision prepares a further 20 years, to 70 years: reviewer); \"a legbiztonságosabb ... közé emelkedett\" hedged; the counterfactual \"megroppant volna\" removed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-02-a-gr.json",
+  "old": "The 2014 intergovernmental pact with Russia for two VVER-1200 generation 3+ reactors sparked intense debate concerning financing (10 billion Euro Russian state loan) and geopolitical energy dependence.",
+  "new": "The 2014 intergovernmental agreement with Russia for two VVER-1200 generation 3+ reactors sparked intense debate over its financing (a Russian state loan of up to 10 billion euros) and over geopolitical energy dependence.",
+  "why": "\"10 billion\" made \"up to\" (reviewer)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-02-a-gr.json",
+  "old": "Syntactically, texts contrast legal-procedural hurdles with geopolitical dilemmas: `Noha az Európai Bizottság jóváhagyta az állami támogatást, a háborús szankciók és az engedélyeztetési csúszások komolyan lelassították a beruházás ütemét`.",
+  "new": "Syntactically, texts contrast a procedural step with a continuing dispute with *noha* (you know it from earlier units): `Noha az Európai Bizottság 2017 márciusában jóváhagyta az állami támogatást, a beruházás ütemezése azóta is vita tárgya`.",
+  "why": "the old example asserted sanctions and licensing \"seriously slowed\" the project: disputed and a present-day claim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-02-a-gr.json",
+  "old": "A Paks II beruházás célja a kieső régi blokkok pótlása a 2030-as évektől.",
+  "new": "A Paks II beruházás célja a későbbiekben kieső régi blokkok pótlása.",
+  "why": "\"a 2030-as évektől\" removed (no date)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-02-a-gr.json",
+  "old": "The aim of Paks II is replacing retiring old blocks from the 2030s.",
+  "new": "The aim of Paks II is to replace old units that will retire later.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-02-a-gr.json",
+  "old": "A szankciók és engedélyezési késedelmek áthangolták az építési ütemtervet.",
+  "new": "A beruházás ütemezése több tényező miatt is vita tárgya.",
+  "why": "\"áthangolták az építési ütemtervet\" asserted an effect of sanctions",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-02-a-gr.json",
+  "old": "Sanctions and licensing delays recalibrated the construction timetable.",
+  "new": "The timetable of the investment is disputed for several reasons.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-02-ex.json",
+  "id": "c1-energetika-02-introduce-1",
+  "set": {
+   "question": "Miért váltott ki vitát a Paks II beruházás 2014-es megkötése?",
+   "options": [
+    "Mert a bírálók szerint nemzetközi közbeszerzés nélkül, közvetlen orosz államközi megállapodással és hitellel kötötték meg.",
+    "Mert a beruházás teljes költségét a magyar lakosság által jegyzett állampapírokból finanszírozzák.",
+    "Mert a szerződést a Nemzetközi Atomenergia-ügynökség megbízásából kötötték meg."
+   ],
+   "correct": 0
+  },
+  "why": "tell-absolute (kizárólag); absurd options; the \"no tender\" claim attributed to the critics",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-02-ex.json",
+  "id": "c1-energetika-02-controlled-2",
+  "set": {
+   "sentence": "A Paks II projektet kulcsrakész _____ szerződés keretében tervezik megvalósítani a fővállalkozóval.",
+   "english": "The Paks II project is planned to be carried out with the main contractor under a turnkey EPC contract.",
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"valósul meg\" stated the project status as fact; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-02-ex.json",
+  "id": "c1-energetika-02-practice-4",
+  "set": {
+   "sentence": "Az ukrajnai háború kitörése után a beruházás _____ kitettségéről is vita folyt.",
+   "english": "After the outbreak of the war in Ukraine there was also debate about the investment's exposure to sanctions.",
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "the effect of sanctions was stated as fact; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-02-ex.json",
+  "id": "c1-energetika-02-practice-5",
+  "set": {
+   "tiles": [
+    "A",
+    "bírálók",
+    "szerint",
+    "a",
+    "geopolitikai",
+    "kockázatok",
+    "és",
+    "a",
+    "technológiai",
+    "függőség",
+    "hátráltatják",
+    "a",
+    "beruházást."
+   ],
+   "solution": [
+    "A",
+    "bírálók",
+    "szerint",
+    "a",
+    "geopolitikai",
+    "kockázatok",
+    "és",
+    "a",
+    "technológiai",
+    "függőség",
+    "hátráltatják",
+    "a",
+    "beruházást."
+   ],
+   "english": "According to the critics, geopolitical risks and technological dependence hinder the investment.",
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "the claim attributed to critics; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-02-ex.json",
+  "id": "c1-energetika-02-dialogue-6",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Diplomata",
+     "text": "Mit mondanak a bírálók a Paks II projekt függőségi kockázatáról?"
+    },
+    {
+     "speaker": "Szakértő",
+     "text": "Szerintük a projekt az orosz technológiától és hiteltől tenné függővé az országot, ezért _____ aggályokat vet fel."
+    }
+   ],
+   "options": [
+    "geopolitikai",
+    "geopolitikailag",
+    "geopolitikának"
+   ],
+   "correct": 0,
+   "teaches": [
+    "i-adjectives"
+   ],
+   "distractor_skills": {
+    "2": "dative-possessor"
+   }
+  },
+  "why": "\"késedelmekbe\" was also a natural answer (two right answers) and the sanctions claim was contested; rebuilt as an attributed critique with an -i adjective choice",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-02-ex.json",
+  "id": "c1-energetika-02-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Analyze the geopolitical controversy of Paks II in one objective sentence.",
+     "answer": "A kormány szerint a Paks II a hazai villamosenergia-igény hosszú távú biztosítását szolgálja, a bírálók szerint viszont az orosz kivitelező és hitel geopolitikai és szuverenitási aggályokat vet fel."
+    }
+   ],
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ]
+  },
+  "why": "one-sided \"mély aggályokat vet fel\" stated as objective: now both views attributed; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-02-ex.json",
+  "id": "c1-energetika-02-check-8",
+  "set": {
+   "question": "Mit vizsgált az Európai Bizottság a Paks II beruházással kapcsolatban?",
+   "options": [
+    "Hogy az állami támogatás összeegyeztethető-e az uniós versenyszabályokkal.",
+    "Hogy a két új blokk kapacitása megfelel-e a NAÜ ajánlásainak.",
+    "Hogy a beruházás hány magyar vállalatnak ad majd munkát."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "the exact conditions of the 2017 Commission decision are not certain: question rebuilt on what the Commission examined; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-02.json",
+  "old": "  \"grammar\": \"Intergovernmental Agreements, EPC Contracts and Sanctions Resilience\",\n  \"goal\": [\n    \"I can analyze the Paks II expansion agreement (*Roszatom, orosz államközi hitel, VVER-1200*).\",\n    \"I can evaluate geopolitical energy dependence and sanctions impacts.\",\n    \"I can discuss turnkey EPC contracts and European Commission state aid clearance.\"",
+  "new": "  \"grammar\": \"Intergovernmental Agreements, EPC Contracts and Sanctions Resilience\",\n  \"goal\": [\n    \"I can describe the Paks II agreement and the debate about it (*államközi szerződés, fővállalkozói szerződés*).\",\n    \"I can explain the arguments of the critics and of the government.\",\n    \"I can write about state aid and energy dependence in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-02.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the Paks II expansion agreement (*Roszatom, orosz államközi hitel, VVER-1200*).\",\n        \"I can evaluate geopolitical energy dependence and sanctions impacts.\",\n        \"I can discuss turnkey EPC contracts and European Commission state aid clearance.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Paks II agreement and the debate about it (*államközi szerződés, fővállalkozói szerződés*).\",\n        \"I can explain the arguments of the critics and of the government.\",\n        \"I can write about state aid and energy dependence in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-02.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the Paks II expansion agreement (*Roszatom, orosz államközi hitel, VVER-1200*).\",\n        \"I can evaluate geopolitical energy dependence and sanctions impacts.\",\n        \"I can discuss turnkey EPC contracts and European Commission state aid clearance.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Paks II agreement and the debate about it (*államközi szerződés, fővállalkozói szerződés*).\",\n        \"I can explain the arguments of the critics and of the government.\",\n        \"I can write about state aid and energy dependence in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-energetika-02-voc.json",
+  "old": "    {\n      \"lemma\": \"szankciós kitettség\",\n      \"translation\": \"sanctions exposure / vulnerability\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"szankciós kitettség\",\n      \"translation\": \"sanctions exposure / vulnerability\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fővállalkozó\",\n      \"translation\": \"main contractor\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szuverenitás\",\n      \"translation\": \"sovereignty\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"bíráló\",\n      \"translation\": \"critic\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"függőség\",\n      \"translation\": \"dependence\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-energetika-02-paks2.json",
+  "old": "2014 januárjában a moszkvai elnöki rezidencián született meg a modern magyar gazdaságtörténet legvitatottabb megállapodása: a magyar kormány versenytárgyalás nélkül a Roszatomot bízta meg két új, 1200 megawattos atomerőművi blokk felépítésével, egy tízmilliárd eurós orosz állami hitelkeret terhére. A döntés azonnal heves belpolitikai és nemzetközi tiltakozást váltott ki.",
+  "new": "2014 januárjában Moszkvában született meg a magyar energiapolitika egyik legvitatottabb megállapodása: a magyar és az orosz kormány megállapodott abban, hogy a Roszatom két új, 1200 megawattos atomerőművi blokkot épít Paksra, egy legfeljebb tízmilliárd eurós orosz állami hitelkeret terhére. A bírálók szerint a megállapodás nemzetközi közbeszerzés nélkül született, és heves belpolitikai és nemzetközi vitát váltott ki.",
+  "why": "\"a modern magyar gazdaságtörténet legvitatottabb megállapodása\", \"azonnal heves tiltakozás\" were judgements; \"up to\" the loan (reviewer); the elnöki rezidencia detail was unsourced",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-energetika-02-paks2.json",
+  "old": "A bírálók a Moszkvától való hosszú távú pénzügyi és technológiai kiszolgáltatottságot, valamint az átláthatatlan hitelszerződést kárhoztatták, míg a kormányzat az olcsó áram és az ipari ellátásbiztonság zálogaként mutatta fel a projektet. Az Európai Bizottság évekig vizsgálta az állami támogatást és a közbeszerzési szabályokat, mire zöld utat adott. Az ukrajnai háború kitörése és a nemzetközi szankciók azonban újabb akadályokat gördítettek a beruházás elé: a megkezdett talajelőkészítés dacára a Paks II átadási céldátuma folyamatosan kitolódik.",
+  "new": "A bírálók a Moszkvától való hosszú távú pénzügyi és technológiai függőséget és az átláthatatlannak tartott hitelszerződést kifogásolták, míg a kormányzat az olcsó áram és az ipari ellátásbiztonság zálogaként mutatta be a projektet. Az Európai Bizottság évekig vizsgálta az állami támogatást és a közbeszerzési szabályokat, majd 2017-ben jóváhagyta a támogatást. Az ukrajnai háború kitörése után a szankciók és az orosz függőség újabb viták tárgya lett; a beruházás ütemezéséről azóta is viták folynak.",
+  "why": "\"kálvária\", the \"folyamatosan kitolódó céldátum\" and the effect of sanctions are present-day claims: no target date, delays hedged (reviewer)",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-energetika-02-paks2.json",
+  "old": "\"title\": \"A moszkvai paktumtól a gödörig: A Paks II beruházás kálváriája\"",
+  "new": "\"title\": \"A Paks II beruházás: megállapodás, viták, engedélyek\"",
+  "why": "\"kálvária\" and \"gödör\" are loaded; plain title",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-02.json",
+  "old": "\"title\": \"Story: A moszkvai paktumtól a gödörig: A Paks II beruházás kálváriája\"",
+  "new": "\"title\": \"Story: A Paks II beruházás: megállapodás, viták, engedélyek\"",
+  "why": "same title in the lesson file",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-03-a-gr.json",
+  "old": "The 1997 International Court of Justice judgment at The Hague declared both parties violated international law, mandating joint environmental negotiation without resolving Szigetköz's ecological desiccation.",
+  "new": "The 1997 International Court of Justice judgment found that both sides had breached their obligations (Hungary in suspending and abandoning works, Slovakia in putting the diversion into operation) and told them to negotiate in good faith.",
+  "why": "the old text (\"declared both violated international law ... without resolving the desiccation\") was imprecise and editorialised",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-03-a-gr.json",
+  "old": "A Duna egyoldalú elterelése drasztikusan lecsökkentette a Szigetköz vízhozamát.",
+  "new": "A Duna egyoldalú elterelése jelentősen lecsökkentette a Szigetköz vízhozamát.",
+  "why": "\"drasztikusan\" is an adverb of the later scalar-adverbs skill",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-03-a-gr.json",
+  "old": "Unilateral diversion of the Danube drastically reduced Szigetköz water discharge.",
+  "new": "Unilateral diversion of the Danube greatly reduced the water discharge of the Szigetköz.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-03-a-gr.json",
+  "old": "A Duna Kör fellépése a magyar rendszerváltás bölcsőjévé vált.",
+  "new": "A Duna Kör fellépése a rendszerváltás előtti ellenzéki mozgalmak egyik fontos színterévé vált.",
+  "why": "\"a magyar rendszerváltás bölcsője\" is a judgement",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-03-a-gr.json",
+  "old": "The action of Danube Circle became the cradle of Hungarian democratic transition.",
+  "new": "The action of the Danube Circle became one important arena of the opposition movements before the change of regime.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-03-ex.json",
+  "id": "c1-energetika-03-introduce-1",
+  "set": {
+   "options": [
+    "Mert a vízlépcső elleni tiltakozás az ellenzéki fellépés egyik fontos színterévé vált.",
+    "Mert a vízlépcső építését támogató tömegmozgalom központjává vált.",
+    "Mert a környezetvédők a vízlépcső elleni tiltakozást a szlovák kormány kérésére szervezték meg."
+   ],
+   "correct": 0
+  },
+  "why": "length give-away 127 vs 84; \"központjává\" overclaim; absurd wrong options",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-03-ex.json",
+  "id": "c1-energetika-03-controlled-2",
+  "set": {
+   "sentence": "A Duna 1992-es egyoldalú szlovák _____ súlyos talajvízszint-csökkenést okozott a Szigetközben.",
+   "hint": "elterelés, possessed",
+   "english": "The unilateral Slovak diversion of the Danube in 1992 caused a serious fall in the groundwater level in the Szigetköz.",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint gave the answer (elterelés + -e); \"katasztrofális\" judgement; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-03-ex.json",
+  "id": "c1-energetika-03-practice-5",
+  "set": {
+   "tiles": [
+    "A",
+    "Szigetköz",
+    "vízellátását",
+    "mesterséges",
+    "vízpótlással",
+    "igyekeztek",
+    "javítani."
+   ],
+   "solution": [
+    "A",
+    "Szigetköz",
+    "vízellátását",
+    "mesterséges",
+    "vízpótlással",
+    "igyekeztek",
+    "javítani."
+   ],
+   "english": "They tried to improve the water supply of the Szigetköz with artificial water replenishment.",
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"csak ... megmenteni\" overclaim; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-03-ex.json",
+  "id": "c1-energetika-03-dialogue-6",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Környezetvédő",
+     "text": "Milyen következményekkel járt a Duna elterelése a szigetközi élővilágra?"
+    },
+    {
+     "speaker": "Biológus",
+     "text": "A mellékágak kiszáradásával megfogyatkozott a halállomány, és lesüllyedt a környékbeli _____."
+    }
+   ],
+   "options": [
+    "talajvízszint",
+    "madárállomány",
+    "jövedelem"
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ]
+  },
+  "why": "\"összeomlott a halállomány\" unsourced; wrong options made unambiguous",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-03-ex.json",
+  "id": "c1-energetika-03-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Summarize the Bős-Nagymaros controversy from an ecological and legal perspective.",
+     "answer": "A Bős–Nagymaros vita megmutatta, hogy a határokon átnyúló folyók elterelése nemzetközi jogi vitákhoz és ökológiai károkhoz is vezethet a vizes élőhelyeken."
+    }
+   ],
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ]
+  },
+  "why": "\"visszafordíthatatlan\", \"nemcsak súlyos jogsértés\" overclaim (the court found both sides in breach); retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-03-ex.json",
+  "id": "c1-energetika-03-check-8",
+  "set": {
+   "options": [
+    "Hogy sem Magyarország, sem Szlovákia nem járt el teljesen jogszerűen.",
+    "Hogy a szerződés automatikusan érvényét vesztette a rendszerváltással.",
+    "Hogy a hajózási társaságoknak kell kártérítést fizetniük a Duna elterelése miatt."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length give-away 120 vs 83 and tell-absolute (kizárólag); the ICJ outcome stated briefly; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-03.json",
+  "old": "  \"grammar\": \"Cross-Border River Ecology, The Hague Judgment and Environmental Movements\",\n  \"goal\": [\n    \"I can analyze the Bős–Nagymaros barrage system controversy (*vízlépcső, Duna Kör, C-variáns*).\",\n    \"I can evaluate the 1997 International Court of Justice (The Hague) landmark environmental judgment.\",\n    \"I can describe ecological riverbed alteration and civic environmental mobilization in formal Hungarian.\"",
+  "new": "  \"grammar\": \"Cross-Border River Ecology, The Hague Judgment and Environmental Movements\",\n  \"goal\": [\n    \"I can describe the Bős–Nagymaros dispute and the ruling of 1997 (*vízlépcső, Duna Kör, C-variáns*).\",\n    \"I can explain what the diversion of the Danube meant for the Szigetköz.\",\n    \"I can write about a protest movement and a court ruling in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-03.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the Bős–Nagymaros barrage system controversy (*vízlépcső, Duna Kör, C-variáns*).\",\n        \"I can evaluate the 1997 International Court of Justice (The Hague) landmark environmental judgment.\",\n        \"I can describe ecological riverbed alteration and civic environmental mobilization in formal Hungarian.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Bős–Nagymaros dispute and the ruling of 1997 (*vízlépcső, Duna Kör, C-variáns*).\",\n        \"I can explain what the diversion of the Danube meant for the Szigetköz.\",\n        \"I can write about a protest movement and a court ruling in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-03.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the Bős–Nagymaros barrage system controversy (*vízlépcső, Duna Kör, C-variáns*).\",\n        \"I can evaluate the 1997 International Court of Justice (The Hague) landmark environmental judgment.\",\n        \"I can describe ecological riverbed alteration and civic environmental mobilization in formal Hungarian.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Bős–Nagymaros dispute and the ruling of 1997 (*vízlépcső, Duna Kör, C-variáns*).\",\n        \"I can explain what the diversion of the Danube meant for the Szigetköz.\",\n        \"I can write about a protest movement and a court ruling in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-energetika-03-voc.json",
+  "old": "    {\n      \"lemma\": \"ökocídium\",\n      \"translation\": \"ecocide, massive environmental destruction\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"ökocídium\",\n      \"translation\": \"ecocide, massive environmental destruction\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"mellékág\",\n      \"translation\": \"side arm (of a river)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vízpótlás\",\n      \"translation\": \"water replenishment\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"ártéri\",\n      \"translation\": \"floodplain (adjective)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"vízhozam\",\n      \"translation\": \"water discharge, flow\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"ökológiai\",\n      \"translation\": \"ecological\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"tiltakozás\",\n      \"translation\": \"protest\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-energetika-03-bosnagymaros.json",
+  "old": "A Bős–Nagymaros vízlépcsőrendszer története a közép-európai környezetvédelem legnagyobb és legfájdalmasabb traumája. Az 1977-ben aláírt gigantomán szocialista terv a Duna elgátolásával és dunakanyari betonmonstrumok felépítésével fenyegetett, ami a Szigetköz páratlan ártéri erdeinek és ivóvízbázisának pusztulásával járt volna. A nyolcvanas évek közepén létrejött Duna Kör a tiltakozások élére állt: a természetvédelem a kommunista diktatúra elleni polgári ellenállás legfontosabb fedőszervezetévé vált.",
+  "new": "A Bős–Nagymaros vízlépcsőrendszer a közép-európai környezetvédelem egyik legnagyobb vitája lett. Az 1977-ben aláírt csehszlovák–magyar szerződés a Duna felső szakaszán két vízlépcső építését irányozta elő, Bősnél és Nagymarosnál. A bírálók szerint a terv a Szigetköz ártéri erdeit és ivóvízbázisát veszélyeztette. A nyolcvanas évek közepén létrejött Duna Kör a tiltakozások élére állt: a környezetvédelem az ellenzéki fellépés egyik fontos színterévé vált.",
+  "why": "\"gigantomán\", \"betonmonstrumok\", \"legfájdalmasabb trauma\", \"legfontosabb fedőszervezet\" replaced by neutral wording (reviewer)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-energetika-03-bosnagymaros.json",
+  "old": "1989-ben a demokratizálódó magyar kormány felmondta a nagymarosi építkezést, mire 1992 októberében Szlovákia az úgynevezett C-variánssal egyoldalúan elterelte a határfolyót, szárazra kényszerítve a régi Duna-medret és az ágrendszereket. A vita a Hágai Nemzetközi Bíróság elé került, amely 1997-es ítéletében mindkét felet elmarasztalta. Bár a szlovák oldalon a bősi erőmű ma is termel áramot, a Szigetköz ökológiai egyensúlya csak mesterséges vízpótlással tartható fenn: mementóként arra, milyen jóvátehetetlen károkat okoz a természet megerőszakolása.",
+  "new": "1989-ben a magyar kormány felfüggesztette a nagymarosi építkezést, mire 1992 októberében a szlovák oldal a C-variánssal egyoldalúan elterelte a határfolyót, és a régi Duna-medrben jelentősen csökkent a vízhozam. A vita a Hágai Nemzetközi Bíróság elé került, amely 1997-es ítéletében megállapította, hogy mindkét fél megszegett kötelezettségeket. A bősi erőmű a szlovák oldalon azóta is termel áramot; a Szigetköz vízellátását különféle vízpótlási megoldásokkal igyekeznek javítani. Sokak számára a vita a környezetvédelmi szempontok fontosságára emlékeztet.",
+  "why": "\"felmondta\" (Hungary suspended); in 1992 it was still Czechoslovakia; \"szárazra kényszerítve\", \"természet megerőszakolása\" removed (reviewer)",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-04-a-gr.json",
+  "old": "Due to thin continental crust, the Pannonian Basin boasts Europe's highest geothermal gradient (~45°C/km vs 30°C world average). Cities like Szeged have executed Europe's largest municipal geothermal district heating conversion, replacing fossil Russian gas with deep thermal water loops.",
+  "new": "Because of the thin crust beneath the Pannonian Basin, its geothermal gradient is well above the European average (commonly cited as roughly 45 °C per kilometre against about 30 °C). The city of Szeged runs a large geothermal district heating system that replaces part of the natural gas used for heating.",
+  "why": "\"Europe's highest gradient\", \"Europe's largest conversion\" and \"Russian gas\" were overstatements (reviewer: egyik legnagyobb); figures given as commonly cited",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-04-a-gr.json",
+  "old": "Syntactically, texts describe technical environmental loops using nominal compounds: `A kitermelt és lehűlt termálvíz kötelező visszasajtolása a vízadó rétegbe biztosítja a hidrotermális rezervoár nyomásának és hőmérsékletének fenntarthatóságát`.",
+  "new": "Technical texts use past participles (*kitermelt*, *lehűlt*; you know them from B1 Unit 2) and verbal nouns in *-ás/-és* (from B1 Unit 16): `A kitermelt és lehűlt termálvíz visszasajtolása a vízadó rétegbe segít fenntartani a rezervoár nyomását és hőmérsékletét`.",
+  "why": "the \"nominal compounds\" description did not match; recaps given (the sheet names these units); \"kötelező\" and \"biztosítja\" overclaims removed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-04-a-gr.json",
+  "old": "A Pannon-medence geotermikus adottságai európai szinten egyedülállóak.",
+  "new": "A Pannon-medence geotermikus adottságai európai viszonylatban kedvezőek.",
+  "why": "\"egyedülállóak\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-04-a-gr.json",
+  "old": "Geothermal endowments of the Pannonian Basin are unique on a European scale.",
+  "new": "The geothermal endowment of the Pannonian Basin is favourable by European standards.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-04-a-gr.json",
+  "old": "Szeged városa sikeresen váltotta ki a földgázt geotermikus távfűtéssel.",
+  "new": "Szegeden a geotermikus távfűtés a földgáz egy részét váltotta ki.",
+  "why": "\"sikeresen váltotta ki a földgázt\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-04-a-gr.json",
+  "old": "The city of Szeged successfully displaced natural gas with geothermal district heating.",
+  "new": "In Szeged geothermal district heating has replaced part of the natural gas.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-04-ex.json",
+  "id": "c1-energetika-04-introduce-1",
+  "set": {
+   "options": [
+    "Mert a vékony földkéreg miatt a geotermikus gradiens magasabb az európai átlagnál.",
+    "Mert a mélyebb kőzetrétegek természetes módon megakadályozzák a termálvíz lehűlését.",
+    "Mert a síkvidéki domborzat miatt a hévízvezeték-hálózat kiépítése olcsóbb."
+   ],
+   "correct": 0
+  },
+  "why": "length give-away 122 vs 84; \"sokkal magasabb\" and \"forró vízkészleteket rejtve\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-04-ex.json",
+  "id": "c1-energetika-04-controlled-2",
+  "set": {
+   "hint": "visszasajtolás, possessed (of the water)",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "category": "grammar"
+  },
+  "why": "hint gave the answer (visszasajtolás + -a); retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-04-ex.json",
+  "id": "c1-energetika-04-practice-4",
+  "set": {
+   "sentence": "Szegeden a geotermikus energia hasznosításával megkezdték a távfűtés _____.",
+   "hint": "dekarbonizáció, object, possessed",
+   "english": "In Szeged they began the decarbonization of district heating by using geothermal energy.",
+   "teaches": [
+    "acc-poss"
+   ],
+   "category": "grammar"
+  },
+  "why": "\"sikeresen hajtotta végre ... dekarbonizációját\" overclaim; hint gave the answer; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-04-ex.json",
+  "id": "c1-energetika-04-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write an evaluative statement highlighting the advantages of geothermal district heating.",
+     "answer": "A geotermikus távhő egyik előnye az időjárásfüggetlenség és a helyi, megújuló jelleg; visszasajtolással párosítva csökkentheti a települések földgázfelhasználását."
+    }
+   ],
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ]
+  },
+  "why": "\"kiváltja a földgázimportot\" overclaim; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-04-ex.json",
+  "id": "c1-energetika-04-check-8",
+  "set": {
+   "options": [
+    "Mert segít fenntartani a vízadó réteg nyomását, és védi a felszíni vizeket a hőszennyezéstől.",
+    "Mert a visszasajtolt víz a föld alatt azonnal villamos energiává alakul.",
+    "Mert a technológia révén a termálvíz szén-dioxid-megkötő képessége megduplázódik."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length give-away 114 vs 81; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-04.json",
+  "old": "  \"grammar\": \"Thermal Water Reservoirs, District Heating and Enhanced Geothermal Systems (EGS)\",\n  \"goal\": [\n    \"I can analyze the unique geothermal endowment of the Pannonian Basin (*geotermikus gradiens, hévízkészlet, távfűtés*).\",\n    \"I can evaluate municipal district heating decarbonization (*szegedi geotermikus fűtési rendszer*).\",\n    \"I can discuss reservoir reinjection and environmental sustainability in advanced Hungarian.\"",
+  "new": "  \"grammar\": \"Thermal Water Reservoirs, District Heating and Enhanced Geothermal Systems (EGS)\",\n  \"goal\": [\n    \"I can describe geothermal energy in the Pannonian Basin and district heating in Szeged (*hévíz, távfűtés, visszasajtolás*).\",\n    \"I can explain why used thermal water is pumped back into the ground.\",\n    \"I can write about the advantages of a local energy source in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-04.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the unique geothermal endowment of the Pannonian Basin (*geotermikus gradiens, hévízkészlet, távfűtés*).\",\n        \"I can evaluate municipal district heating decarbonization (*szegedi geotermikus fűtési rendszer*).\",\n        \"I can discuss reservoir reinjection and environmental sustainability in advanced Hungarian.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe geothermal energy in the Pannonian Basin and district heating in Szeged (*hévíz, távfűtés, visszasajtolás*).\",\n        \"I can explain why used thermal water is pumped back into the ground.\",\n        \"I can write about the advantages of a local energy source in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-04.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the unique geothermal endowment of the Pannonian Basin (*geotermikus gradiens, hévízkészlet, távfűtés*).\",\n        \"I can evaluate municipal district heating decarbonization (*szegedi geotermikus fűtési rendszer*).\",\n        \"I can discuss reservoir reinjection and environmental sustainability in advanced Hungarian.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe geothermal energy in the Pannonian Basin and district heating in Szeged (*hévíz, távfűtés, visszasajtolás*).\",\n        \"I can explain why used thermal water is pumped back into the ground.\",\n        \"I can write about the advantages of a local energy source in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-energetika-04-voc.json",
+  "old": "    {\n      \"lemma\": \"vízadó réteg\",\n      \"translation\": \"aquifer, water-bearing formation\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"vízadó réteg\",\n      \"translation\": \"aquifer, water-bearing formation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"hévíz\",\n      \"translation\": \"thermal water, hot spring water\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"földkéreg\",\n      \"translation\": \"earth's crust\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"domborzat\",\n      \"translation\": \"relief, terrain\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"távhő\",\n      \"translation\": \"district heat\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"dekarbonizáció\",\n      \"translation\": \"decarbonization\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vízkészlet\",\n      \"translation\": \"water resource, water reserve\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fosszilis\",\n      \"translation\": \"fossil (adjective)\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-energetika-04-geotermia.json",
+  "old": "Magyarország alatt a földkéreg szokatlanul vékony: míg a világátlag szerint kilométerenként harminc fokkal emelkedik a hőmérséklet a mélybe fúrva, a Pannon-medencében ez az érték eléri a negyvenöt-ötven Celsius-fokot is. A Kárpát-medence mélye forró hévizek gigantikus kazánja, amelyet az ókori rómaiak és a hódoltság kori törökök még csak gyógyfürdőzésre használtak, ma viszont a tiszta energiaforradalom legígéretesebb pillére.",
+  "new": "Magyarország alatt a földkéreg a világátlagnál vékonyabb: míg a világátlag szerint kilométerenként harminc fokkal emelkedik a hőmérséklet a mélybe fúrva, a Pannon-medencében ez az érték a közölt adatok szerint negyvenöt-ötven Celsius-fok is lehet. A Kárpát-medence mélye forró hévizeket rejt, amelyeket már az ókori rómaiak és a hódoltság kori törökök is használtak fürdőzésre; ma az energiaátállás egyik ígéretes lehetőségének tartják.",
+  "why": "\"gigantikus kazán\", \"legígéretesebb pillére\" judgements; figures attributed (\"a közölt adatok szerint\")",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-energetika-04-geotermia.json",
+  "old": "A legsikeresebb áttörést Szeged városa hajtotta végre, ahol felépült Európa legnagyobb geotermikus távhőrendszere: huszonhét kúttal és korszerű hőközpontokkal huszonhétezer lakás és több száz középület fűtését állították át földgázról a földből feltörő forró víz energiájára. A rendszer legnagyobb erénye az időjárásfüggetlenség: sem a szélcsend, sem a felhős égbolt nem akadályozza a működését. A használt víz visszasajtolásával pedig zárt, megújuló körfolyamat jön létre, amely bizonyítja, hogy a magyar energiafüggetlenség kulcsa ott rejtőzik közvetlenül a talpunk alatt.",
+  "new": "Szegeden Európa egyik legnagyobb geotermikus távhőrendszere épült ki: a város közlése szerint kutak és hőközpontok segítségével sok ezer lakás és számos középület fűtését állították át részben földgázról a földből feltörő forró víz energiájára. A rendszer egyik előnye az időjárásfüggetlenség: sem a szélcsend, sem a felhős égbolt nem akadályozza a működését. A használt víz visszasajtolásával zárt körfolyamat jön létre, és sokak szerint a geotermia az energiafüggőség csökkentésének egyik lehetősége.",
+  "why": "\"Európa legnagyobb\" → \"egyik legnagyobb\" (reviewer); the well and flat counts dropped (reviewer: keep only if attributed); \"bizonyítja, hogy a magyar energiafüggetlenség kulcsa...\" was a political judgement",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-05-a-gr.json",
+  "old": "Between 2018 and 2024, Hungary experienced one of Europe's fastest solar expansions, exceeding 6,000 MW. On sunny summer afternoons, solar generation frequently covers over 100% of national electricity demand, causing wholesale prices to drop below zero (*negatív áramárak*) and stressing the grid.",
+  "new": "Between 2018 and 2024 Hungary saw a very fast expansion of solar power, with installed capacity exceeding 6,000 MW by 2024. On sunny summer middays solar generation can cover a large part of national demand, which can push wholesale prices below zero (*negatív áramárak*) and puts strain on the grid.",
+  "why": "\"over 100% of demand\" was not certain; \"one of Europe's fastest\" removed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-05-a-gr.json",
+  "old": "Syntactically, texts formulate economic and infrastructural tensions: `A termelési túlcsordulás és az árkannibalizáció elkerülésére a szabályozó hatóság akkumulátoros energiatárolók telepítéséhez kötötte az új naperőművek hálózati csatlakozását`.",
+  "new": "Purpose is often stated with a verbal noun + *-ra/-re* (you know the case from A2 Unit 6): `Az árkannibalizáció mérséklésére sokan akkumulátoros energiatárolók telepítését javasolják az új naperőművek mellé`.",
+  "why": "the old example stated a regulatory requirement (storage as a condition of connection) as fact; present-day claim removed",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-05-a-gr.json",
+  "old": "Az akkumulátoros energiatárolás és a zöldhidrogén jelenti a jövő tárolási megoldását.",
+  "new": "Az akkumulátoros energiatárolás és a zöldhidrogén a lehetséges tárolási megoldások közé tartozik.",
+  "why": "\"jelenti a jövő megoldását\" overclaim",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-energetika-05-a-gr.json",
+  "old": "Battery storage and green hydrogen represent future storage solutions.",
+  "new": "Battery storage and green hydrogen are among the possible storage solutions.",
+  "why": "matches",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-05-ex.json",
+  "id": "c1-energetika-05-introduce-1",
+  "set": {
+   "options": [
+    "A napsütéses órákban fellépő túltermelés, amikor több áram termelődik, mint amennyi kell.",
+    "A nemzetközi tőzsdéken alkalmazott spekulatív határidős elszámolások elterjedése.",
+    "A hagyományos széntüzelésű erőművek váratlan és nagymértékű kapacitásbővítése."
+   ],
+   "correct": 0
+  },
+  "why": "length give-away 130 vs 81",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-05-ex.json",
+  "id": "c1-energetika-05-controlled-2",
+  "set": {
+   "sentence": "A napenergia-boom következtében fellépő árkannibalizáció csökkenti a naperőművek _____ megtérülését.",
+   "answer": null,
+   "answers": [
+    "gazdasági",
+    "piaci"
+   ],
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"piaci gazdasági megtérülés\" redundant and \"piaci\" also fits: both go in answers; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-05-ex.json",
+  "id": "c1-energetika-05-practice-4",
+  "set": {
+   "sentence": "A megújulók integrációjában a hálózatfejlesztés mellett az ipari méretű energiatárolás is _____ kap.",
+   "hint": "key role, object",
+   "english": "In the integration of renewables, besides grid development, industrial-scale storage also gets a key role.",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "category": "grammar"
+  },
+  "why": "the production step showed \"kap kulcsszerepet szerepet\" (the sentence ended with \"szerepet\" after the blank); hint gave the answer (kulcsszerep + -et); retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-05-ex.json",
+  "id": "c1-energetika-05-practice-5",
+  "set": {
+   "tiles": [
+    "A",
+    "tárolókapacitások",
+    "kiépítése",
+    "fontos",
+    "a",
+    "megújuló",
+    "energia",
+    "rugalmas",
+    "felhasználásához."
+   ],
+   "solution": [
+    "A",
+    "tárolókapacitások",
+    "kiépítése",
+    "fontos",
+    "a",
+    "megújuló",
+    "energia",
+    "rugalmas",
+    "felhasználásához."
+   ],
+   "english": "Building storage capacity is important for the flexible use of renewable energy.",
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"elengedhetetlen\" overclaim; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-05-ex.json",
+  "id": "c1-energetika-05-dialogue-6",
+  "set": {
+   "options": [
+    "moratórium",
+    "kedvezmény",
+    "támogatás"
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ]
+  },
+  "why": "\"szabályozás\" also fitted (two right answers); wrong options made unambiguous; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-05-ex.json",
+  "id": "c1-energetika-05-production-7",
+  "set": {
+   "template": [
+    {
+     "prompt": "Synthesize the challenge of negative electricity prices and storage solutions.",
+     "answer": "A negatív áramárak jelensége megmutatja, hogy a megújulók további térnyerését sokak szerint segíthetné az ipari akkumulátoros tárolás és a zöldhidrogén-technológia."
+    }
+   ],
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ]
+  },
+  "why": "\"zátonyra fut\" overclaim; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-05-ex.json",
+  "id": "c1-energetika-05-check-8",
+  "set": {
+   "options": [
+    "A felesleges árammal elektrolízissel vizet bont hidrogénre, amely tárolható és később árammá alakítható.",
+    "A hidrogén elégetésével növeli a naperőművek hatásfokát borús időben.",
+    "A gázhálózatba juttatva azonnal kiváltja a geotermikus távhőrendszerek működését."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "length give-away 131 vs 91; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-05.json",
+  "old": "  \"grammar\": \"Photovoltaic Penetration, Balancing Volatility and Market Price Cannibalization\",\n  \"goal\": [\n    \"I can analyze the solar boom in Hungary (>6,000 MW PV installed capacity).\",\n    \"I can evaluate price cannibalization and negative wholesale power prices (*negatív áramárak*).\",\n    \"I can synthesize the future of renewable integration, battery storage, and green hydrogen in Central Europe.\"",
+  "new": "  \"grammar\": \"Photovoltaic Penetration, Balancing Volatility and Market Price Cannibalization\",\n  \"goal\": [\n    \"I can describe the growth of solar power in Hungary and the problems it brings (*naperőmű, negatív áramár, tárolás*).\",\n    \"I can explain why electricity prices can turn negative.\",\n    \"I can write about storage and the grid in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-05.json",
+  "old": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the solar boom in Hungary (>6,000 MW PV installed capacity).\",\n        \"I can evaluate price cannibalization and negative wholesale power prices (*negatív áramárak*).\",\n        \"I can synthesize the future of renewable integration, battery storage, and green hydrogen in Central Europe.\"",
+  "new": "      \"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the growth of solar power in Hungary and the problems it brings (*naperőmű, negatív áramár, tárolás*).\",\n        \"I can explain why electricity prices can turn negative.\",\n        \"I can write about storage and the grid in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-05.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the solar boom in Hungary (>6,000 MW PV installed capacity).\",\n        \"I can evaluate price cannibalization and negative wholesale power prices (*negatív áramárak*).\",\n        \"I can synthesize the future of renewable integration, battery storage, and green hydrogen in Central Europe.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the growth of solar power in Hungary and the problems it brings (*naperőmű, negatív áramár, tárolás*).\",\n        \"I can explain why electricity prices can turn negative.\",\n        \"I can write about storage and the grid in formal Hungarian.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-energetika-05-voc.json",
+  "old": "    {\n      \"lemma\": \"hálózati csatlakozási stop\",\n      \"translation\": \"grid connection freeze / moratorium\",\n      \"pos\": \"expression\"\n    }\n  ]",
+  "new": "    {\n      \"lemma\": \"hálózati csatlakozási stop\",\n      \"translation\": \"grid connection freeze / moratorium\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"megtérülés\",\n      \"translation\": \"return on investment, payback\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"elektrolízis\",\n      \"translation\": \"electrolysis\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"hidrogén\",\n      \"translation\": \"hydrogen\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"moratórium\",\n      \"translation\": \"moratorium\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"körzeti\",\n      \"translation\": \"district, local (adjective)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"betelik\",\n      \"translation\": \"to fill up, to reach capacity\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"kulcsszerep\",\n      \"translation\": \"key role\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"geotermia\",\n      \"translation\": \"geothermal energy\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"importkitettség\",\n      \"translation\": \"exposure to imports, import dependence\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"hőhasznosítás\",\n      \"translation\": \"use of heat\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "why": "culture words missing from the vocabulary list",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-energetika-05-napenergia.json",
+  "old": "Alig egy évtizeddel ezelőtt a napenergia még csak elenyésző egzotikumnak számított a magyar energiamixben. Ám az elmúlt években olyan robbanásszerű boom ment végbe, amelyre a legoptimistább elemzők sem számítottak: a háztartási méretű kiserőművek és a gigantikus ipari napelemfarmok együttes kapacitása 2024-re átlépte a hatezer megawattot. Ez a hatalmas volumen verőfényes nyári délidőben képes egymagában fedezni az egész ország pillanatnyi áramigényét.",
+  "new": "Alig egy évtizeddel ezelőtt a napenergia még csak kis szerepet játszott a magyar energiamixben. Az elmúlt években gyors bővülés ment végbe: a háztartási méretű kiserőművek és az ipari napelemparkok együttes kapacitása 2024-re átlépte a hatezer megawattot. Ez a nagy kapacitás verőfényes nyári délidőben a hazai áramigény jelentős részét képes fedezni.",
+  "why": "\"legoptimistább elemzők sem számítottak\", \"egymagában az egész ország\" overclaims",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-energetika-05-napenergia.json",
+  "old": "A siker azonban új, égető dilemmákat hozott magával. Amikor a nap süt, a túltermelés miatt az áram ára a nemzetközi tőzsdéken nemegyszer negatív tartományba zuhan; ám amint lemegy a nap, azonnal fosszilis vagy importált energiára van szükség a fogyasztás kielégítésére. A hálózat telítődött, ami miatt a kormány átmeneti csatlakozási moratóriumot rendelt el. A jövő kulcsa ezért a rugalmasságban rejlik: ipari akkumulátoros energiatárolókban, zöldhidrogén-fejlesztésekben és az intelligens okoshálózatokban, amelyek képesek a déli napfény bőségét az esti sötétség óráira átmenteni.",
+  "new": "A siker új dilemmákat hozott magával. Amikor a nap süt, a túltermelés miatt az áram ára a nagykereskedelmi tőzsdén nemegyszer negatív tartományba csökken; ám amint lemegy a nap, fosszilis vagy importált energiára van szükség a fogyasztás kielégítésére. A hálózat több helyen telítődött, ezért az új csatlakozásokat átmenetileg korlátozták. Sokak szerint a jövő kulcsa a rugalmasság: az akkumulátoros energiatárolók, a zöldhidrogén-fejlesztések és az intelligens hálózatok, amelyek a déli napfény bőségét az esti órákra átmenthetik.",
+  "why": "\"a kormány átmeneti csatlakozási moratóriumot rendelt el\" is a present-day regulatory claim: hedged (reviewer: household feed-in suspension 2022)",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-consolidation-ex.json",
+  "id": "c1-energetika-consolidation-1",
+  "set": {
+   "options": [
+    "Szén-dioxid-mentes alapterhelést nyújt, és a hazai áramtermelés mintegy felét adja.",
+    "Az ipari nagyfogyasztók energiaigényét elégíti ki, közvetlen vezetéken, a közhálózat nélkül.",
+    "A megújuló források termelésingadozásait szabályozza gyorsindítású gázturbinákkal."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "tell-absolute (Kizárólag); retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-consolidation-ex.json",
+  "id": "c1-energetika-consolidation-2",
+  "set": {
+   "question": "Mi volt a Bős–Nagymaros vízlépcsővita egyik ökológiai tanulsága?",
+   "options": [
+    "A Duna elterelése súlyosan károsította az ártéri vizes élőhelyeket és a talajvízszintet a Szigetközben.",
+    "A megépült tározók javították a folyó menti mezőgazdasági területek természetes vízellátását.",
+    "A nemzetközi bírósági döntések azonnali és teljes körű kártalanítást biztosítottak a feleknek."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"drasztikusan\" is an adverb of a later skill (scalar adverbs); \"legfőbb\" overclaim; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-consolidation-ex.json",
+  "id": "c1-energetika-consolidation-4",
+  "set": {
+   "sentence": "A Paks II bírálói a beruházás geopolitikai és pénzügyi _____ miatt aggódtak.",
+   "english": "The critics of Paks II were concerned about the investment's geopolitical and financial dependence."
+  },
+  "why": "criticism stated as fact; rebuilt around the critics",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-consolidation-ex.json",
+  "id": "c1-energetika-consolidation-5",
+  "set": {
+   "sentence": "Szegeden a távfűtés egy részét földgáz helyett mélyfúrású _____ támaszkodva állították át.",
+   "hint": "hévíz, onto (what it relies on)",
+   "english": "In Szeged part of the district heating was converted from natural gas, relying on thermal water from deep wells.",
+   "teaches": [
+    "ra-re"
+   ],
+   "category": "grammar"
+  },
+  "why": "\"alapozta meg a dekarbonizációt\" overclaim; hint gave the answer (hévíz + -re)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-consolidation-ex.json",
+  "id": "c1-energetika-consolidation-6",
+  "set": {
+   "sentence": "A hosszabbítás hívei szerint a meglévő reaktorok biztonságos _____ költséghatékony módja a kapacitás fenntartásának.",
+   "hint": "üzemidő-hosszabbítás, possessed",
+   "english": "According to the supporters of the extension, the safe lifetime extension of the existing reactors is a cost-effective way of maintaining capacity.",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "category": "grammar"
+  },
+  "why": "\"a legolcsóbb eszköz\" contested: attributed; hint gave the answer; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-consolidation-ex.json",
+  "id": "c1-energetika-consolidation-7",
+  "set": {
+   "sentence": "A Hágai Bíróság döntése dacára sokak szerint súlyos _____ seb maradt a Szigetközben.",
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "metaphor stated as fact: attributed; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-consolidation-ex.json",
+  "id": "c1-energetika-consolidation-8",
+  "set": {
+   "sentence": "A fotovoltaikus termelés hirtelen megugrása ipari méretű _____ kapacitások kiépítését teszi fontossá.",
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "\"elengedhetetlenné\" softened; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-consolidation-ex.json",
+  "id": "c1-energetika-consolidation-9",
+  "set": {
+   "options": [
+    "A napenergia főként áramot ad, a geotermia pedig időjárásfüggetlen hőt a fűtéshez.",
+    "A napenergia hatékonysága a geotermikus fúrások mélységének függvényében növekszik.",
+    "Mindkét technológia a villamosenergia-csúcsigények fedezésére szolgál, a fűtéshez nem használható."
+   ],
+   "correct": 0,
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "tell-absolute (kizárólag) and length give-away 119 vs 85; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-consolidation-ex.json",
+  "id": "c1-energetika-consolidation-10",
+  "set": {
+   "tiles": [
+    "Sokak",
+    "szerint",
+    "a",
+    "fenntartható",
+    "energiagazdálkodás",
+    "a",
+    "nemzeti",
+    "szuverenitás",
+    "egyik",
+    "záloga."
+   ],
+   "solution": [
+    "Sokak",
+    "szerint",
+    "a",
+    "fenntartható",
+    "energiagazdálkodás",
+    "a",
+    "nemzeti",
+    "szuverenitás",
+    "egyik",
+    "záloga."
+   ],
+   "english": "According to many, sustainable energy management is one of the pledges of national sovereignty.",
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "why": "political judgement attributed; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-consolidation-ex.json",
+  "id": "c1-energetika-consolidation-11",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a critical evaluation of Hungary's energy transition balancing nuclear and renewables.",
+     "answer": "Magyarország energetikai jövője a nukleáris alapterhelés, a geotermikus hőhasznosítás és a tárolókkal kiegészített napenergia együttes alkalmazásán múlhat, amely csökkentheti a karbonkibocsátást és az importkitettséget."
+    }
+   ],
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ]
+  },
+  "why": "overclaims softened; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-energetika-consolidation-ex.json",
+  "id": "c1-energetika-consolidation-12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Formulate a concluding thought on environmental ethics in water management and energy.",
+     "answer": "A Bős–Nagymaros vita arra emlékeztet, hogy az energetikai beruházások környezeti következményeit előre fel kell mérni."
+    }
+   ],
+   "teaches": [
+    "c1-paks-nuclear-vocab"
+   ]
+  },
+  "why": "Kis-Balaton is not in the unit; \"minden gazdasági haszonnál előbbre való\" is a judgement; retired tag",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-consolidation.json",
+  "old": "  \"grammar\": \"Review and Capstone Integration\",\n  \"goal\": [\n    \"I can evaluate the history and 20-year lifetime extension of Paks I nuclear units.\",\n    \"I can analyze the Paks II expansion financing and geopolitical sanctions framework.\",\n    \"I can discuss Bős-Nagymaros riverbed ecology, Pannonian geothermal district heating, and solar grid balancing.\"",
+  "new": "  \"grammar\": \"Review and Capstone Integration\",\n  \"goal\": [\n    \"I can recount the history of Paks I and the debate about extending its lifetime.\",\n    \"I can describe the Paks II agreement, the Bős–Nagymaros dispute and the ruling of 1997.\",\n    \"I can explain what geothermal energy and solar power can add to Hungarian energy supply.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-consolidation.json",
+  "old": "      \"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can evaluate the history and 20-year lifetime extension of Paks I nuclear units.\",\n        \"I can analyze the Paks II expansion financing and geopolitical sanctions framework.\",\n        \"I can discuss Bős-Nagymaros riverbed ecology, Pannonian geothermal district heating, and solar grid balancing.\"",
+  "new": "      \"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can recount the history of Paks I and the debate about extending its lifetime.\",\n        \"I can describe the Paks II agreement, the Bős–Nagymaros dispute and the ruling of 1997.\",\n        \"I can explain what geothermal energy and solar power can add to Hungarian energy supply.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-energetika-consolidation.json",
+  "old": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can evaluate the history and 20-year lifetime extension of Paks I nuclear units.\",\n        \"I can analyze the Paks II expansion financing and geopolitical sanctions framework.\",\n        \"I can discuss Bős-Nagymaros riverbed ecology, Pannonian geothermal district heating, and solar grid balancing.\"",
+  "new": "      \"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can recount the history of Paks I and the debate about extending its lifetime.\",\n        \"I can describe the Paks II agreement, the Bős–Nagymaros dispute and the ruling of 1997.\",\n        \"I can explain what geothermal energy and solar power can add to Hungarian energy supply.\"",
+  "why": "goal lines rewritten as plain can-do lines",
+  "kind": "hungarian"
+ }
+]

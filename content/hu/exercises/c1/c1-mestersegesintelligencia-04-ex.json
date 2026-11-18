@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mi az orvosi képalkotó MI legfőbb klinikai haszna a diagnosztikában?",
+      "question": "Mi az orvosi képalkotó MI egyik fő lehetséges haszna a diagnosztikában?",
       "options": [
-        "A korai stádiumú kóros elváltozások megbízható felismerése és a radiológusok adminisztratív tehermentesítése.",
-        "A betegek azonnali és orvosi vizsgálat nélküli műtőbe küldése.",
-        "Az orvosi egyetemek bezárásának elősegítése."
+        "A korai elváltozások felismerésének támogatása és a radiológusok tehermentesítése.",
+        "A betegek orvosi vizsgálat nélküli műtétre irányítása a szoftver döntése alapján.",
+        "Az orvosi diagnózis teljes átadása a szoftvernek, orvosi felügyelet nélkül."
       ],
       "correct": 0,
       "teaches": [
@@ -22,14 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "_____ szó akár tüdőszűrésről, akár agyi MRI-ről, a gépi felismerés hatékonysága lenyűgöző.",
-      "hint": "Be it",
-      "english": "Be it about lung screening or brain MRI, the efficiency of machine recognition is impressive.",
+      "sentence": "Fontos, _____ az orvos mondja ki a végső szót.",
+      "hint": "that",
+      "english": "It is important that the physician has the final say.",
       "teaches": [
-        "optative-subjunctive"
+        "hogy-jon-jen"
       ],
       "answers": [
-        "Legyen"
+        "hogy"
       ]
     },
     {
@@ -64,18 +64,20 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Bármiként _____ is a technológiai fejlődés, a döntés etikai terhe mindig az orvosé marad.",
-      "hint": "unfold / alakul + -jon",
-      "answer": "alakuljon",
-      "english": "However technological development unfolds, the ethical burden of decision always remains with the doctor.",
+      "sentence": "Bármilyen kifinomult _____ a szoftver, a végső diagnózist az orvos állítja fel.",
+      "hint": "even",
+      "english": "However sophisticated the software is, the final diagnosis is made by the doctor.",
       "teaches": [
-        "optative-subjunctive"
+        "concessive-indefinites"
+      ],
+      "answers": [
+        "is"
       ]
     },
     {
       "id": "c1-mestersegesintelligencia-04-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -101,7 +103,7 @@
       ],
       "english": "Without clinical validation, no medical decision support system may be applied.",
       "teaches": [
-        "optative-subjunctive"
+        "c1-ai-ethics-vocab"
       ]
     },
     {
@@ -116,7 +118,7 @@
         },
         {
           "speaker": "Klinikai kutató",
-          "text": "Független tesztekkel kell bizonyítani, hogy a szoftver minimalizálja a téves _____ kockázatát."
+          "text": "Független tesztekkel kell bizonyítani, hogy a szoftver csökkenti a téves _____ eredmények kockázatát."
         }
       ],
       "options": [
@@ -126,8 +128,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "optative-subjunctive"
-      ]
+        "c1-ai-ethics-vocab"
+      ],
+      "distractor_skills": {
+        "2": "an-en-adverb"
+      }
     },
     {
       "id": "c1-mestersegesintelligencia-04-production-7",
@@ -136,12 +141,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a deliberative subjunctive sentence on medical AI ethics.",
-          "answer": "Bármilyen megbízható legyen is a diagnosztikai neurális hálózat, elengedhetetlen, hogy a végső terápiás döntést mindig az orvos hozza meg a beteg személyes beleegyezésével."
+          "prompt": "Write a sentence on medical AI ethics with bármilyen ... is or fontos, hogy.",
+          "answer": "Bármilyen megbízható is a diagnosztikai neurális hálózat, fontos, hogy a végső terápiás döntést az orvos hozza meg a beteg beleegyezésével."
         }
       ],
       "teaches": [
-        "optative-subjunctive"
+        "c1-ai-ethics-vocab"
       ]
     },
     {
@@ -149,15 +154,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet fejez ki mérlegelő vagy megengedő kötőmódot?",
+      "question": "Melyik mondat jelenti azt, hogy a szoftver kifinomultsága nem változtat azon, hogy az orvos dönt?",
       "options": [
-        "Bármiként alakuljon is a helyzet",
-        "Mivel úgy alakult a helyzet",
-        "Amikor alakul a helyzet"
+        "Bármilyen kifinomult is a szoftver, az orvos dönt.",
+        "Mivel kifinomult a szoftver, az orvos dönt.",
+        "Ha kifinomult a szoftver, az orvos nem dönt."
       ],
       "correct": 0,
       "teaches": [
-        "optative-subjunctive"
+        "concessive-indefinites"
       ]
     }
   ]

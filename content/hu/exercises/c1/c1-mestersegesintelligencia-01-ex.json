@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Miért van kiemelt jelentősége a magyar nyelvű saját alapmodellek (pl. Puli) fejlesztésének?",
+      "question": "Mi a hazai nyelvi alapmodellek (pl. Puli) fejlesztésének fő indoka a fejlesztők szerint?",
       "options": [
-        "Mert biztosítják, hogy a magyar nyelv agglutináló szerkezete és kulturális kontextusa pontosan érvényesüljön a digitális környezetben.",
-        "Mert önálló technológiai bázist teremtenek a közigazgatási és oktatási intézmények biztonságos digitális működéséhez.",
-        "Mert közvetlenül csökkentik a hazai szuperszámítógépek hardveres áramfogyasztását és az adatközpontok hűtési költségeit."
+        "Hogy a magyar nyelv szerkezetét és kulturális hátterét pontosabban figyelembe vegyék.",
+        "Hogy csökkentsék a hazai szuperszámítógépek áramfogyasztását és hűtési költségeit.",
+        "Hogy a modellek angol nyelven jobban működjenek, mint a külföldi rendszerek."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-mestersegesintelligencia-01-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
       "sentence": "A nyelvi modellek fejlesztése során a magyar toldalékolási rendszer _____ komoly morfológiai előkészítést igényel.",
       "hint": "especially",
       "english": "During the development of language models, the Hungarian affixation system especially requires serious morphological preparation.",
       "teaches": [
-        "discourse-particles"
+        "c1-ai-ethics-vocab"
       ],
       "answers": [
         "kiváltképp",
@@ -50,7 +50,7 @@
         ],
         [
           "szuperszámítógép",
-          "Komondor HPC"
+          "nagy teljesítményű számítógép"
         ],
         [
           "digitális szuverenitás",
@@ -64,13 +64,13 @@
     {
       "id": "c1-mestersegesintelligencia-01-practice-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A globális platformoktól való egyoldalú függés _____ az európai adatszuverenitás felszámolásához vezethet.",
+      "sentence": "A globális platformoktól való egyoldalú függés _____ az adatszuverenitás gyengüléséhez vezethet.",
       "hint": "indeed",
-      "english": "Unilateral dependence on global platforms can indeed lead to the liquidation of European data sovereignty.",
+      "english": "Unilateral dependence on global platforms can indeed weaken data sovereignty.",
       "teaches": [
-        "discourse-particles"
+        "c1-ai-ethics-vocab"
       ],
       "answers": [
         "éppenséggel",
@@ -80,7 +80,7 @@
     {
       "id": "c1-mestersegesintelligencia-01-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -108,7 +108,7 @@
       ],
       "english": "The domestic research network places especially great emphasis on linguistic representation.",
       "teaches": [
-        "discourse-particles"
+        "c1-ai-ethics-vocab"
       ]
     },
     {
@@ -133,8 +133,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
-      ]
+        "c1-ai-ethics-vocab"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "val-vel"
+      }
     },
     {
       "id": "c1-mestersegesintelligencia-01-production-7",
@@ -144,27 +148,27 @@
       "template": [
         {
           "prompt": "Write a sentence using a focalizing particle to emphasize technological sovereignty.",
-          "answer": "A független hazai szuperszámítógép-kapacitások kiépítése egyenesen elengedhetetlen ahhoz, hogy a nemzeti kutatás ne szoruljon a globális technológiai óriások kiszolgálójának szerepébe."
+          "answer": "A hazai szuperszámítógép-kapacitások kiépítése egyenesen elengedhetetlen lehet ahhoz, hogy a nemzeti kutatás ne függjön teljesen a külföldi platformoktól."
         }
       ],
       "teaches": [
-        "discourse-particles"
+        "c1-ai-ethics-vocab"
       ]
     },
     {
       "id": "c1-mestersegesintelligencia-01-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik mondat alkalmaz határoló/fókuszáló partikulát emelkedett stílusban?",
+      "question": "Melyik szó illik a mondatba ('as a matter of fact')? A modell pontossága _____ a szakszerű finomhangolásnak köszönhető.",
       "options": [
-        "A modell pontossága éppenséggel a szakszerű finomhangolásnak köszönhető.",
-        "A modell pontossága mivel szakszerűen finomhangolták.",
-        "A modell pontossága ha szakszerűen finomhangolják."
+        "éppenséggel",
+        "mivel",
+        "amennyiben"
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "c1-ai-ethics-vocab"
       ]
     }
   ]

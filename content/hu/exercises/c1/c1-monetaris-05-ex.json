@@ -22,15 +22,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az euró bevezetésének előszobája az _____ mechanizmusban (ERM-II) való kétéves részvétel.",
-      "hint": "exchange rate stability",
-      "english": "The anteroom of Euro adoption is two years' participation in the exchange rate stability mechanism (ERM-II).",
+      "sentence": "Az euró bevezetésének _____ az ERM II-ben való kétéves részvétel.",
+      "hint": "anteroom, possessed",
+      "english": "The two years' participation in ERM II is the anteroom of euro adoption.",
       "teaches": [
-        "c1-growth-model-synthesis"
+        "3rd-person-possessive"
       ],
       "answers": [
-        "árfolyam-stabilitási",
-        "árfolyamstabilitási"
+        "előszobája"
       ]
     },
     {
@@ -65,12 +64,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az önálló monetáris politika feladása megfosztja a gazdaságot a lebegő árfolyam mint automatikus sokkelnyelő _____ lehetőségétől.",
-      "hint": "function / funkció + -jának",
-      "answer": "funkciójának",
-      "english": "Surrendering independent monetary policy deprives the economy of the possibility of floating exchange rate as an automatic shock absorber function.",
+      "sentence": "Az önálló monetáris politika feladásával a gazdaság elveszíti a lebegő árfolyam sokkelnyelő _____.",
+      "hint": "role, object of the verb",
+      "english": "By giving up independent monetary policy the economy loses the shock-absorbing role of the floating exchange rate.",
       "teaches": [
-        "c1-growth-model-synthesis"
+        "acc-poss"
+      ],
+      "answers": [
+        "szerepét",
+        "funkcióját"
       ]
     },
     {
@@ -104,7 +106,7 @@
       ],
       "english": "Without economic catch-up adopting the Euro may entail severe risks.",
       "teaches": [
-        "c1-growth-model-synthesis"
+        "potential-hat-het"
       ]
     },
     {
@@ -119,7 +121,7 @@
         },
         {
           "speaker": "Közgazdász",
-          "text": "Amikor a magyar termelékenység és a _____ eléri a magországok szintjét."
+          "text": "Sok közgazdász szerint akkor, amikor a magyar termelékenység és a _____ eléri a magországok szintjét."
         }
       ],
       "options": [
@@ -129,8 +131,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "c1-growth-model-synthesis"
-      ]
+        "c1-forint-eurozone-vocab"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "val-vel"
+      }
     },
     {
       "id": "c1-monetaris-05-production-7",
@@ -140,27 +146,27 @@
       "template": [
         {
           "prompt": "Formulate the core dilemma of Eurozone accession in academic Hungarian.",
-          "answer": "Az eurózóna-csatlakozás alapvető dilemmája a tranzakciós költségek kiküszöböléséből fakadó integrációs haszon és az önálló monetáris sokkelnyelő képesség feladásából eredő makrogazdasági kockázat mérlegelése."
+          "answer": "Az euró bevezetése megszüntetné az árfolyamkockázatot és a tranzakciós költségeket, de a gazdaság elveszítené az önálló monetáris politikát és a lebegő árfolyamot."
         }
       ],
       "teaches": [
-        "c1-growth-model-synthesis"
+        "c1-forint-eurozone-vocab"
       ]
     },
     {
       "id": "c1-monetaris-05-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
       "question": "Mi az optimális valutaövezet (Optimal Currency Area) elméletének lényege?",
       "options": [
-        "Hogy a közös valuta csak olyan régiókban működik hatékonyan, ahol magas a munkaerő és tőke mobilitása a sokkok kiegyenlítésére.",
-        "Hogy minden kontinensnek pontosan egy pénznemmel kell rendelkeznie.",
-        "Hogy a pénznyomtatás költségeit minimalizálni kell."
+        "Hogy a közös valuta ott működik jól, ahol a munkaerő és a tőke könnyen mozog a sokkok kiegyenlítésére.",
+        "Hogy a közös valuta ott működik jól, ahol a tagállamok ugyanakkora költségvetési hiányt tartanak fenn.",
+        "Hogy a közös valuta ott működik jól, ahol a tagállamok egymástól függetlenül dönthetnek az árfolyamról."
       ],
       "correct": 0,
       "teaches": [
-        "c1-growth-model-synthesis"
+        "c1-forint-eurozone-vocab"
       ]
     }
   ]

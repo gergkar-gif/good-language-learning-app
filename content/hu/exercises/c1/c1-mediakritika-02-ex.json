@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "Hogyan működnek a közösségi média 'véleménybuborékai' (filter bubbles)?",
       "options": [
-        "Az algoritmusok a korábbi aktivitás alapján szűrik a tartalmat, így a felhasználó csak a saját nézeteit megerősítő üzenetekkel találkozik.",
-        "A közösségi hálózatok adminisztrátorai kézzel törlik a kritikus bejegyzéseket a platformokról.",
-        "A felhasználók kizárólag a hivatalos állami hírügynökség közleményeit oszthatják meg egymással."
+        "Az algoritmusok a korábbi aktivitás alapján szűrik a tartalmat, így főként a saját nézeteit megerősítő üzenetek jutnak el a felhasználóhoz.",
+        "A közösségi hálózatok adminisztrátorai kézzel törlik a kritikus bejegyzéseket a platformokról, és ezzel zárják le a vitákat.",
+        "A felhasználók csak az állami hírügynökség közleményeit oszthatják meg egymással, a többi bejegyzés tiltott."
       ],
       "correct": 0,
       "teaches": [
@@ -22,9 +22,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "_____ módon a közösségi platformok a társadalmi megosztottság elmélyítéséből húznak profitot.",
+      "sentence": "_____ módon a bírálók szerint a közösségi platformok a társadalmi megosztottság elmélyítéséből is profitálnak.",
       "hint": "In an alarming manner",
-      "english": "In an alarming manner, social platforms draw profit from deepening societal division.",
+      "english": "In an alarming manner, according to the critics, social platforms also profit from deepening social division.",
       "teaches": [
         "evaluative-stance"
       ],
@@ -81,12 +81,14 @@
     {
       "id": "c1-mediakritika-02-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "Az",
+        "A",
+        "bírálók",
+        "szerint",
+        "az",
         "ajánlóalgoritmusok",
-        "tudatosan",
         "a",
         "felhasználók",
         "érzelmi",
@@ -94,18 +96,20 @@
         "építenek."
       ],
       "solution": [
-        "Az",
+        "A",
+        "bírálók",
+        "szerint",
+        "az",
         "ajánlóalgoritmusok",
-        "tudatosan",
         "a",
         "felhasználók",
         "érzelmi",
         "reakcióira",
         "építenek."
       ],
-      "english": "Recommendation algorithms consciously build on users' emotional reactions.",
+      "english": "According to the critics, recommendation algorithms build on users' emotional reactions.",
       "teaches": [
-        "evaluative-stance"
+        "c1-media-pluralism-vocab"
       ]
     },
     {
@@ -116,11 +120,11 @@
       "prompt": [
         {
           "speaker": "Társadalomkutató",
-          "text": "Miért nem állnak szóba egymással a különböző politikai táborok hívei?"
+          "text": "Miért nem értenek egyet a politikai táborok az alaptényekben sem?"
         },
         {
           "speaker": "Digitális etikus",
-          "text": "Mert a buborékok miatt már az alaptényekben sem értenek egyet: mindenkinek megvan a maga saját _____."
+          "text": "Sok kutató szerint a buborékok miatt sokaknak megvan a saját _____."
         }
       ],
       "options": [
@@ -130,8 +134,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "evaluative-stance"
-      ]
+        "3rd-person-possessive"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "c1-mediakritika-02-production-7",
@@ -141,11 +149,11 @@
       "template": [
         {
           "prompt": "Write an evaluative stance sentence about algorithmic radicalization.",
-          "answer": "Aggasztó módon a platformok algoritmikus szűrői ahelyett, hogy a sokszínű tájékozódást segítenék, vitathatatlanul a polarizációt és a dogmatikus törzsi szemléletet erősítik fel a társadalomban."
+          "answer": "Aggasztó módon az algoritmikus szűrők sok kutató szerint a sokszínű tájékozódás helyett a polarizációt erősíthetik."
         }
       ],
       "teaches": [
-        "evaluative-stance"
+        "c1-media-pluralism-vocab"
       ]
     },
     {
@@ -153,11 +161,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik határozószó fejez ki morális vagy intellektuális értékítéletet?",
+      "question": "Melyik kifejezés mondja ki a beszélő véleményét ('worryingly')?",
       "options": [
         "aggasztó módon",
-        "rutinszerűen",
-        "fokozatosan"
+        "fokozatosan",
+        "rutinszerűen"
       ],
       "correct": 0,
       "teaches": [

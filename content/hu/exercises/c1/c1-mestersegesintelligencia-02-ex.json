@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "Milyen elvre épül az Európai Unió Mesterséges Intelligencia Rendelete (AI Act)?",
       "options": [
-        "Kockázatalapú megközelítésre: a minimális kockázatútól a nagy kockázatún át a tiltott rendszerekig terjedő szintekkel.",
-        "A mesterséges intelligencia teljes és feltétel nélküli betiltására az egész kontinensen.",
-        "Minden fejlesztő kötelező adómentességére."
+        "Kockázatalapú megközelítésre, a minimális kockázattól a tiltott gyakorlatokig terjedő szintekkel.",
+        "Egységes, a rendszerek kockázatától független, minden MI-re azonos kötelezettségekre.",
+        "A mesterséges intelligencia teljes betiltására az Európai Unió egész területén."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-mestersegesintelligencia-02-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
       "sentence": "A szigorú ellenőrzés indokolt, _____ az algoritmusok torzítása közvetlenül csorbíthatja az egyenlő bánásmód elvét.",
       "hint": "all the more so since",
       "english": "Strict oversight is justified, all the more so since algorithmic bias can directly infringe upon the principle of equal treatment.",
       "teaches": [
-        "causal-postpositions"
+        "c1-ai-ethics-vocab"
       ],
       "answers": [
         "annál is inkább, mivel",
@@ -66,17 +66,17 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "A jogalkotó _____ a megfontolásból fakadóan lépett fel, hogy megelőzze a polgárok automatizált profilozását.",
-      "hint": "az + -ból",
+      "hint": "az, the source of the reasoning",
       "answer": "abból",
       "english": "The legislator intervened arising from the consideration that automated profiling of citizens should be prevented.",
       "teaches": [
-        "causal-postpositions"
+        "elative-bol-bel"
       ]
     },
     {
       "id": "c1-mestersegesintelligencia-02-practice-5",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -85,10 +85,8 @@
         "rendszereknél",
         "kötelező",
         "a",
-        "független",
-        "külső",
         "megfelelőségi",
-        "audit."
+        "értékelés."
       ],
       "solution": [
         "A",
@@ -97,14 +95,12 @@
         "rendszereknél",
         "kötelező",
         "a",
-        "független",
-        "külső",
         "megfelelőségi",
-        "audit."
+        "értékelés."
       ],
-      "english": "For high-risk systems, an independent external conformity audit is mandatory.",
+      "english": "For high-risk systems a conformity assessment is mandatory.",
       "teaches": [
-        "causal-postpositions"
+        "c1-ai-ethics-vocab"
       ]
     },
     {
@@ -115,7 +111,7 @@
       "prompt": [
         {
           "speaker": "Vállalati jogász",
-          "text": "Hogyan készüljünk fel az AI Act hatálybalépésére?"
+          "text": "Hogyan készüljünk fel az AI Act követelményeire?"
         },
         {
           "speaker": "Etikai auditor",
@@ -129,8 +125,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "causal-postpositions"
-      ]
+        "c1-ai-ethics-vocab"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "val-vel"
+      }
     },
     {
       "id": "c1-mestersegesintelligencia-02-production-7",
@@ -140,27 +140,27 @@
       "template": [
         {
           "prompt": "Write a causal sentence explaining why algorithmic transparency is crucial in hiring.",
-          "answer": "A toborzási algoritmusok átláthatósága elengedhetetlen, annál is inkább, mivel a tanító adatokban megbúvó tudattalan előítéletek rendszerszintű diszkriminációt konzerválhatnak a munkaerőpiacon."
+          "answer": "A toborzási algoritmusok átláthatósága fontos, annál is inkább, mivel a tanító adatokban rejlő előítéletek diszkriminációt konzerválhatnak a munkaerőpiacon."
         }
       ],
       "teaches": [
-        "causal-postpositions"
+        "c1-ai-ethics-vocab"
       ]
     },
     {
       "id": "c1-mestersegesintelligencia-02-check-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Melyik kifejezés kapcsol össze indoklást megerősítő kauzális viszonyt?",
+      "question": "Melyik mondat fejezi ki, hogy az ok megerősíti az állítást ('all the more so since')?",
       "options": [
-        "annál is inkább, mivel",
-        "holott egyébként",
-        "noha egyáltalán"
+        "A szabályozás indokolt, annál is inkább, mivel nagy a visszaélés veszélye.",
+        "A szabályozás indokolt, holott nagy a visszaélés veszélye.",
+        "A szabályozás indokolt, ha nagy a visszaélés veszélye."
       ],
       "correct": 0,
       "teaches": [
-        "causal-postpositions"
+        "c1-ai-ethics-vocab"
       ]
     }
   ]
