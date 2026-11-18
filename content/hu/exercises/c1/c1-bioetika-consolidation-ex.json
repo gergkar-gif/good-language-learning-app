@@ -4,33 +4,33 @@
     {
       "id": "c1-bioetika-consolidation-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recognize",
-      "question": "Miért tiltja a bioetika az emberi csíravonal-módosítást?",
+      "question": "Miért tartják aggályosnak az emberi csíravonal-módosítást?",
       "options": [
-        "Mert a változtatások örökölhetők, beláthatatlan evolúciós és etikai kockázatot teremtve.",
-        "Mert a szomatikus terápiák minden esetben teljesen kiváltják a genetikai beavatkozást.",
-        "Mert a génszerkesztési eljárások kizárólag növényi kultúrákban alkalmazhatók legálisan."
+        "Mert a változtatás öröklődik, így az utódokat is érinti.",
+        "Mert csak a beteg testi sejtjeit érinti, az utódokat nem.",
+        "Mert a szomatikus terápiák a csíravonalat is megváltoztatják."
       ],
       "correct": 0,
       "teaches": [
-        "c1-biomedical-discourse"
+        "c1-patient-rights-vocab"
       ]
     },
     {
       "id": "c1-bioetika-consolidation-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recognize",
       "question": "Milyen elven alapul a magyar donációs jogszabály?",
       "options": [
         "A feltételezett beleegyezés elvén (opt-out rendszer).",
         "A kifejezett írásbeli beleegyezés elvén (opt-in rendszer).",
-        "A legközelebbi hozzátartozók kötelező bírósági nyilatkozatán."
+        "A kórházi etikai bizottság egyedi döntésén."
       ],
       "correct": 0,
       "teaches": [
-        "c1-biomedical-discourse"
+        "c1-patient-rights-vocab"
       ]
     },
     {
@@ -69,9 +69,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A transzplantáció előfeltétele az _____ független orvosok általi kétséget kizáró megállapítása.",
+      "sentence": "Elhunyt donornál független orvosok állapítják meg az _____ beálltát.",
       "hint": "brain death",
-      "english": "The precondition of transplantation is the certification of brain death beyond doubt by independent doctors.",
+      "english": "In the case of a deceased donor, independent doctors establish the onset of brain death.",
       "teaches": [
         "c1-patient-rights-vocab"
       ],
@@ -82,16 +82,16 @@
     {
       "id": "c1-bioetika-consolidation-5",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "recall",
-      "sentence": "A méltóságteljes halálhoz való jog küzdelmében Karsai Dániel az emberi _____ sérthetetlenségére hivatkozott.",
-      "hint": "dignity",
-      "english": "In the fight for the right to dignified death Dániel Karsai cited the inviolability of human dignity.",
+      "sentence": "Karsai Dániel alkotmányjogász volt, aki a méltóságteljes _____ való jogért lépett a nyilvánosság elé.",
+      "hint": "death",
+      "english": "Dániel Karsai was a constitutional lawyer who stepped into the public eye for the right to a dignified death.",
       "teaches": [
-        "c1-patient-rights-vocab"
+        "hoz-suffix"
       ],
       "answers": [
-        "méltóság"
+        "halálhoz"
       ]
     },
     {
@@ -99,12 +99,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A kezelőorvos nem hajthat végre beavatkozást a páciens tájékozott _____ hiányában.",
-      "hint": "consent / beleegyezés + -e",
+      "sentence": "Az orvos nem végezhet beavatkozást a páciens tájékozott _____ hiányában.",
+      "hint": "consent, the patient's",
       "answer": "beleegyezése",
-      "english": "The treating doctor cannot carry out interventions in the absence of the patient's informed consent.",
+      "english": "The doctor may not carry out an intervention without the patient's informed consent.",
       "teaches": [
-        "c1-patient-autonomy"
+        "3rd-person-possessive"
       ]
     },
     {
@@ -113,11 +113,11 @@
       "category": "grammar",
       "stage": "context",
       "sentence": "A gépi tanulás nem pótolhatja az orvos és beteg közötti mély empátiát és kölcsönös _____.",
-      "hint": "trust / bizalom + -at",
+      "hint": "trust, object of the verb",
       "answer": "bizalmat",
       "english": "Machine learning cannot replace deep empathy and mutual trust between doctor and patient.",
       "teaches": [
-        "c1-biomedical-discourse"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -126,33 +126,33 @@
       "category": "grammar",
       "stage": "context",
       "sentence": "Erőforrás-szűkösség esetén a triage kényszere feloldhatatlan morális _____ teremt.",
-      "hint": "dilemma / dilemma + -t",
+      "hint": "dilemma, object of the verb",
       "answer": "dilemmát",
       "english": "In case of resource scarcity the duress of triage creates an insoluble moral dilemma.",
       "teaches": [
-        "c1-biomedical-discourse"
+        "how-the-accusative-t-works"
       ]
     },
     {
       "id": "c1-bioetika-consolidation-9",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "context",
-      "question": "Melyik állítás foglalja össze legméltóbban az orvosi etika alapkövét?",
+      "question": "Mi az orvosi etika egyik alapelve a betegekkel szemben?",
       "options": [
-        "A beteg ember méltóságának és önrendelkezésének tiszteletben tartása minden technológiai siker felett áll.",
-        "A technológia tökéletes, és nincs szükség emberi orvosokra.",
-        "Az orvostudománynak semmilyen erkölcsi határa nem lehet."
+        "A beteg méltóságát és önrendelkezését tiszteletben kell tartani.",
+        "A kezelést az orvos a beteg véleményének megkérdezése nélkül választja ki.",
+        "A beteg adatait a kutatók számára szabadon hozzáférhetővé kell tenni."
       ],
       "correct": 0,
       "teaches": [
-        "c1-biomedical-discourse"
+        "c1-patient-rights-vocab"
       ]
     },
     {
       "id": "c1-bioetika-consolidation-10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
@@ -182,28 +182,28 @@
       ],
       "english": "The true greatness of healing lies in human compassion and dignity.",
       "teaches": [
-        "c1-biomedical-discourse"
+        "c1-patient-rights-vocab"
       ]
     },
     {
       "id": "c1-bioetika-consolidation-11",
       "type": "structured-writing",
-      "category": "writing",
+      "category": "vocabulary",
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical evaluation of Dániel Karsai's constitutional legacy.",
-          "answer": "Karsai Dániel fellépése felrázta a társadalom lelkiismeretét, bebizonyítva, hogy az emberi méltóság védelme az elmúlás legnehezebb pillanataiban is a jogállam alapvető kötelezettsége."
+          "prompt": "Say what public debate Karsai's case started.",
+          "answer": "Karsai Dániel fellépése nyomán a közéletben is vita indult a méltóságteljes elmúlásról és az önrendelkezés határairól."
         }
       ],
       "teaches": [
-        "c1-patient-autonomy"
+        "c1-patient-rights-vocab"
       ]
     },
     {
       "id": "c1-bioetika-consolidation-12",
       "type": "structured-writing",
-      "category": "writing",
+      "category": "vocabulary",
       "stage": "production",
       "template": [
         {
@@ -212,7 +212,7 @@
         }
       ],
       "teaches": [
-        "c1-biomedical-discourse"
+        "c1-patient-rights-vocab"
       ]
     }
   ]

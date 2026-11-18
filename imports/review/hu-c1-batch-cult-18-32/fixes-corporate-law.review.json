@@ -1,0 +1,964 @@
+[
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-01-ex.json",
+  "id": "c1-szerzodesek-01-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "options": [
+    "A céget érintő jogi, adózási és pénzügyi kockázatok alapos feltárása a vételár meghatározásához.",
+    "A munkavállalók éves teljesítményértékelésének statisztikai összesítése a bérköltségek csökkentéséhez.",
+    "A versenytársak piaci részesedésének felmérése nyilvános adatok alapján a marketingterv készítéséhez."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (96 vs 72)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-01-ex.json",
+  "id": "c1-szerzodesek-01-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "on-en-on"
+   ],
+   "hint": "számla, account"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; blank is a -n/-on form (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-01-ex.json",
+  "id": "c1-szerzodesek-01-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-01-ex.json",
+  "id": "c1-szerzodesek-01-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-01-ex.json",
+  "id": "c1-szerzodesek-01-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "question": "Mikor szokás a felvásárlásnál a tulajdonjog átszállását kikötni?",
+   "options": [
+    "A zárásnál, a zárási feltételek teljesülése és a vételár megfizetése után.",
+    "Az előzetes szándéknyilatkozat aláírásakor, a feltételek vizsgálata előtt.",
+    "A titoktartási megállapodás megkötésekor, az átvilágítás megkezdése előtt."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (90 vs 56); \"cégbírósági bejegyzéssel\" is not the moment of transfer for every company form; usual contract term"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-szerzodesek-01-voc.json",
+  "old": "      \"translation\": \"escrow account\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"escrow account\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"könyvvizsgáló\",\n      \"translation\": \"auditor\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"középvállalat\",\n      \"translation\": \"medium-sized company\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tehermentesség\",\n      \"translation\": \"freedom from encumbrances\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szellemi tulajdonjog\",\n      \"translation\": \"intellectual property right\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"peres ügy\",\n      \"translation\": \"lawsuit\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kártalanítás\",\n      \"translation\": \"compensation, indemnification\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-01-cegfelvasarlas.json",
+  "old": "a tárgyalások nem az pezsgőbontással kezdődnek, hanem hónapokig tartó kíméletlen vizsgálattal",
+  "new": "a tárgyalások nem pezsgőbontással kezdődnek, hanem hónapokig tartó alapos vizsgálattal",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "typo \"nem az pezsgőbontással\"; \"kíméletlen\" loaded"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-01-cegfelvasarlas.json",
+  "old": "megkötése a jogi precizitás csúcsteljesítménye",
+  "new": "megkötése nagy jogi pontosságot igénylő feladat",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "flourish"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-01-cegfelvasarlas.json",
+  "old": "millió eurós kártérítési kötelezettséget vonhat maga után",
+  "new": "akár millió eurós kártérítési kötelezettséget is maga után vonhat",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "hedge the amount"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-01-cegfelvasarlas.json",
+  "old": "\"c1-corporate-governance\"",
+  "new": "\"c1-corporate-law-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-01.json",
+  "old": "  \"goal\": [\n    \"I can navigate Hungarian corporate acquisition terminology (*felvásárlás, fúzió, átvilágítás*).\"",
+  "new": "  \"goal\": [\n    \"I can talk about a company takeover: due diligence, warranties and the purchase agreement.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-01.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can navigate Hungarian corporate acquisition terminology (*felvásárlás, fúzió, átvilágítás*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can talk about a company takeover: due diligence, warranties and the purchase agreement.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-01.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can navigate Hungarian corporate acquisition terminology (*felvásárlás, fúzió, átvilágítás*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can talk about a company takeover: due diligence, warranties and the purchase agreement.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-02-ex.json",
+  "id": "c1-szerzodesek-02-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "options": [
+    "Hogy a cég eladásakor vagy felszámolásakor a befektető a pénzéhez jusson az alapítók előtt.",
+    "Hogy a befektető vétójogot kap a cég napi operatív döntéseiben, az alapítók beleszólása nélkül.",
+    "Hogy az alapítók a későbbi tőkeemelések után automatikusan visszavásárolhatják a részvényeiket."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (91 vs 67)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-02-ex.json",
+  "id": "c1-szerzodesek-02-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "sentence": "A felek közötti szindikátusi szerződés többéves alapítói _____ ír elő, hogy az alapítók ne távozzanak korán.",
+   "hint": "zárolás, object of the verb",
+   "english": "The shareholders' agreement provides for a multi-year founder lock-up so that the founders do not leave early."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; blank is an accusative -t (known); hint named the ending; \"elvándorlás\" is emigration, wrong word; the four-year term is typical, not a rule"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-02-ex.json",
+  "id": "c1-szerzodesek-02-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-02-ex.json",
+  "id": "c1-szerzodesek-02-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say what founder vesting is for in a venture capital deal.",
+     "answer": "Az alapítói zárolás (vesting) segít abban, hogy a kulcsemberek elkötelezettek maradjanak a cég mellett; idő előtti távozás esetén elveszíthetik a még fel nem szabadult részvényeiket."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"essential\", \"biztosítja\" overclaim"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-02-ex.json",
+  "id": "c1-szerzodesek-02-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "question": "Mi a különbség a pre-money és a post-money értékelés között?",
+   "options": [
+    "A pre-money a cég értéke a tőkebevonás előtt, a post-money a befektetett tőkével növelt érték.",
+    "A pre-money az adózás előtti profitot, a post-money az osztalékalapot jelenti a pénzügyi évben.",
+    "A pre-money a könyv szerinti értéket, a post-money a piaci tőkeértéket fejezi ki a tőzsdén."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; length give-away (121 vs 81); wrong options kept as plausible misdefinitions"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-szerzodesek-02-voc.json",
+  "old": "      \"translation\": \"valuation (pre-money / post-money)\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"valuation (pre-money / post-money)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"részvény\",\n      \"translation\": \"share (of stock)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tőkeemelés\",\n      \"translation\": \"capital increase\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"inkubátor\",\n      \"translation\": \"incubator\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vétójog\",\n      \"translation\": \"right of veto\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"osztalék\",\n      \"translation\": \"dividend\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tőkebefektető\",\n      \"translation\": \"capital investor\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-02-kockazatitoke.json",
+  "old": "Budapest kávéházaiból és egyetemi inkubátoraiból az elmúlt évtizedben globális sikertörténetek indultak el.",
+  "new": "Egyes magyar startupok az elmúlt évtizedben nemzetközi sikert értek el.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unsourced \"global success stories\" generalisation"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-02-kockazatitoke.json",
+  "old": "a tőke segítségével világhódító útra indítják innovációjukat",
+  "new": "a tőke segítségével nemzetközi növekedésnek indítják az üzletüket",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "flourish"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-02-kockazatitoke.json",
+  "old": "\"c1-corporate-governance\"",
+  "new": "\"c1-corporate-law-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-02-a-gr.json",
+  "old": "\"Négyéves alapítói zárolás (vesting) a csapat elkötelezettségének megőrzésére...\"",
+  "new": "\"Többéves alapítói zárolás (vesting) a csapat elkötelezettségének megőrzésére...\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "a four-year term is typical, not a rule"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-02-a-gr.json",
+  "old": "\"Four-year founder vesting to preserve team commitment...\"",
+  "new": "\"Multi-year founder vesting to preserve team commitment...\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "as above"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-02.json",
+  "old": "  \"goal\": [\n    \"I can analyze venture capital financing terms in Hungarian (*kockázati tőkebevonás, befektetési szindikátus*).\"",
+  "new": "  \"goal\": [\n    \"I can explain the main terms of a venture capital deal (*kockázati tőke*, *likvidációs preferencia*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-02.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze venture capital financing terms in Hungarian (*kockázati tőkebevonás, befektetési szindikátus*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain the main terms of a venture capital deal (*kockázati tőke*, *likvidációs preferencia*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-02.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze venture capital financing terms in Hungarian (*kockázati tőkebevonás, befektetési szindikátus*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain the main terms of a venture capital deal (*kockázati tőke*, *likvidációs preferencia*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-03-ex.json",
+  "id": "c1-szerzodesek-03-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "options": [
+    "Teljes bírságkiszabási mentességet nyújtva az elsőként önként vallomást tevő kartelltag számára.",
+    "Az eljárásban részt vevő cégek számára adókedvezményt biztosítva a vizsgálat időtartamára.",
+    "A kartelltagok kötelező állami felügyelet alá vonásával a vizsgálat megkezdése után."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (96 vs 69)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-03-ex.json",
+  "id": "c1-szerzodesek-03-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "sentence": "A versenytársak árrögzítő megállapodása a törvényi _____ ütközik.",
+   "hint": "cartel ban, into",
+   "english": "An agreement fixing prices between competitors runs up against the statutory cartel ban."
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "retired tag c1-eu-harmonization; no known skill covers -ba after ütközik: vocabulary; hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-03-ex.json",
+  "id": "c1-szerzodesek-03-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-03-ex.json",
+  "id": "c1-szerzodesek-03-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Explain the antitrust danger of market abuse by a dominant corporation.",
+     "answer": "A domináns helyzetben lévő vállalat kiszoríthatja a versenytársakat és indokolatlanul magas árakat kényszeríthet a fogyasztókra, ami árthat az innovációnak és a piaci hatékonyságnak."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"tönkreteszi\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-03-ex.json",
+  "id": "c1-szerzodesek-03-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "question": "Milyen esetben kell a GVH előzetes engedélyét kérni?",
+   "options": [
+    "Ha az összefonódás eléri a törvényi árbevételi küszöböt.",
+    "Ha egy vállalkozás új telephelyet nyit belföldön.",
+    "Ha egy vállalkozás exportügyletet köt az Európai Unióban."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; length give-away (80 vs 57); only a merger reaching the legal turnover thresholds needs approval"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-szerzodesek-03-voc.json",
+  "old": "      \"translation\": \"competition supervision proceeding\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"competition supervision proceeding\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"árrögzítés\",\n      \"translation\": \"price fixing\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"árbevétel\",\n      \"translation\": \"turnover, revenue\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"domináns\",\n      \"translation\": \"dominant\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"bírság\",\n      \"translation\": \"fine, penalty\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kárvallott\",\n      \"translation\": \"victim, injured party\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"háttéralku\",\n      \"translation\": \"back-room deal\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-03-versenyjog.json",
+  "old": "A hatóság leghatékonyabb fegyvere az úgynevezett engedékenységi politika (leniency).",
+  "new": "A hatóság egyik fontos eszköze az úgynevezett engedékenységi politika (leniency).",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "superlative judgement"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-03-versenyjog.json",
+  "old": "elsőként feladja kartelltársait és átadja a bizonyítékokat a nyomozóknak, teljes mentességet kap a több milliárdos bírság alól. A folyamatos ellenőrzés biztosítja, hogy a magyar gazdaságban a tehetség és az innováció győzzön, ne pedig a háttéralkuk.",
+  "new": "elsőként jelentkezik a hatóságnál és átadja a bizonyítékokat, a feltételek teljesülése esetén mentesülhet a bírság alól. Az eljárás célja, hogy a versenyt ne a háttéralkuk döntsék el.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unsourced \"több milliárdos\"; \"biztosítja ... győzzön\" overclaims; leniency has conditions"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-03-versenyjog.json",
+  "old": "\"c1-eu-harmonization\"",
+  "new": "\"c1-corporate-law-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-03-a-gr.json",
+  "old": "Competitors colluding in public tenders face astronomical fines or criminal charges.",
+  "new": "Competitors colluding in public tenders can face heavy fines or criminal charges.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"astronomical\""
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-03-a-gr.json",
+  "old": "grants total immunity from fines to the first cartel member that uncovers the illegal agreement and hands over evidence to the authority.",
+  "new": "can grant immunity from fines to the first cartel member that reports the illegal agreement and hands over evidence to the authority, if the conditions are met.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "leniency has conditions"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-03.json",
+  "old": "\"title\": \"Competition Law, Cartels and Regulatory Antitrust: GVH\",",
+  "new": "\"title\": \"Competition Law and the GVH\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "plainer title"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-03.json",
+  "old": "  \"goal\": [\n    \"I can navigate Hungarian and EU antitrust terminology (*kartelltilalom, erőfölénnyel való visszaélés*).\"",
+  "new": "  \"goal\": [\n    \"I can explain what the cartel ban and the leniency policy are (*kartelltilalom*, *engedékenységi politika*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-03.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can navigate Hungarian and EU antitrust terminology (*kartelltilalom, erőfölénnyel való visszaélés*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the cartel ban and the leniency policy are (*kartelltilalom*, *engedékenységi politika*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-03.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can navigate Hungarian and EU antitrust terminology (*kartelltilalom, erőfölénnyel való visszaélés*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the cartel ban and the leniency policy are (*kartelltilalom*, *engedékenységi politika*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-04-ex.json",
+  "id": "c1-szerzodesek-04-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "options": [
+    "A Közbeszerzési Döntőbizottság (KDB).",
+    "A Gazdasági Versenyhivatal versenyfelügyeleti tanácsa.",
+    "A Kereskedelmi és Iparkamara etikai bizottsága."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "wrong options were ministry/audit-office bodies that are not named elsewhere; now real bodies, one fault (wrong body); present-day: KDB (check)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-04-ex.json",
+  "id": "c1-szerzodesek-04-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "kérelem, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; accusative -t (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-04-ex.json",
+  "id": "c1-szerzodesek-04-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-04-ex.json",
+  "id": "c1-szerzodesek-04-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-04-ex.json",
+  "id": "c1-szerzodesek-04-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "question": "Mi lehet a következménye annak, ha egy ajánlattevő aránytalanul alacsony árat ad meg, és nem tudja megindokolni?",
+   "options": [
+    "Az ajánlatkérő érvénytelennek nyilváníthatja az ajánlatot, ha az indoklás nem igazolja a teljesítést.",
+    "Az ajánlatkérőnek a legolcsóbb árajánlatot el kell fogadnia az indoklástól függetlenül.",
+    "Az ajánlattevőt azonnal bírsággal kell sújtani a nem indokolt ár miatt."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; length; the contracting authority (ajánlatkérő), not \"a hatóság\", assesses an abnormally low price"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-szerzodesek-04-voc.json",
+  "old": "      \"translation\": \"grant / subsidy agreement\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"grant / subsidy agreement\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"pályázó\",\n      \"translation\": \"applicant, tenderer\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"pályáztatás\",\n      \"translation\": \"tendering, invitation of bids\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"jogszerűtlen\",\n      \"translation\": \"unlawful\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"bírálóbizottság\",\n      \"translation\": \"evaluation committee\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"árajánlat\",\n      \"translation\": \"price quotation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"irányelv\",\n      \"translation\": \"directive\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-04-kozbeszerzes.json",
+  "old": "szigorú európai irányelvek alapján írja elő",
+  "new": "uniós irányelvekkel összhangban írja elő",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "plain"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-04-kozbeszerzes.json",
+  "old": "A tiszta verseny a közpénzek védelmének egyetlen garanciája.",
+  "new": "A tiszta verseny a közpénzek védelmének fontos feltétele.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"egyetlen garancia\" overclaim (reviewer note)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-04-kozbeszerzes.json",
+  "old": "\"c1-corporate-governance\"",
+  "new": "\"c1-corporate-law-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-04-a-gr.json",
+  "old": "Public procurement (*közbeszerzés*) governs billions in state and EU expenditures.",
+  "new": "Public procurement (*közbeszerzés*) governs how state and EU money is spent on works, goods and services.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unsourced \"billions\""
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-04.json",
+  "old": "  \"goal\": [\n    \"I can analyze public procurement tender regulations (*közbeszerzési eljárás, ajánlattétel*).\"",
+  "new": "  \"goal\": [\n    \"I can explain how a bidder can seek a remedy in public procurement (*jogorvoslat*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze public procurement tender regulations (*közbeszerzési eljárás, ajánlattétel*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain how a bidder can seek a remedy in public procurement (*jogorvoslat*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze public procurement tender regulations (*közbeszerzési eljárás, ajánlattétel*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain how a bidder can seek a remedy in public procurement (*jogorvoslat*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-05-ex.json",
+  "id": "c1-szerzodesek-05-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "answer": "jog",
+   "hint": "law",
+   "answers": null
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "WRONG ANSWER: sentence \"magyar anyagi _____ alkalmazását\" takes the bare noun jog, not \"jogot\"; retired tag; hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-05-ex.json",
+  "id": "c1-szerzodesek-05-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-05-ex.json",
+  "id": "c1-szerzodesek-05-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Draft a standard international choice-of-law and arbitration clause.",
+     "answer": "A jelen szerződésre a magyar jog az irányadó. A felek a szerződésből eredő vitás kérdéseket a Magyar Kereskedelmi és Iparkamara mellett működő Kereskedelmi Választottbíróság hatáskörébe utalják."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; the court is the Kereskedelmi Választottbíróság (reviewer note)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-05-ex.json",
+  "id": "c1-szerzodesek-05-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "options": [
+    "A Róma I. rendelet.",
+    "A Brüsszel Ia. rendelet.",
+    "A Róma II. rendelet."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; wrong options were absurd customs items; now real regulations with one fault (wrong subject)"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-szerzodesek-05-voc.json",
+  "old": "      \"translation\": \"EU single / internal market\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"EU single / internal market\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"irányadó\",\n      \"translation\": \"governing, applicable\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"fellebbezés\",\n      \"translation\": \"appeal\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"választottbíráskodás\",\n      \"translation\": \"arbitration\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Kereskedelmi Választottbíróság\",\n      \"translation\": \"Court of Arbitration (at the Hungarian Chamber of Commerce and Industry)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"New York-i Egyezmény\",\n      \"translation\": \"New York Convention (on foreign arbitral awards)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"rendelet\",\n      \"translation\": \"regulation, decree\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-05-nemzetkozimaganjog.json",
+  "old": "Az uniós Róma I. és Brüsszel Ia. rendeletek megadják a feleknek a jogválasztás (choice of law) szabadságát. A nemzetközi kereskedelemben azonban az állami bíróságok helyett egyre gyakrabban a Magyar Kereskedelmi és Iparkamara mellett működő Állandó Választottbíróságot jelölik ki. A választottbíráskodás gyors, diszkrét, és a New York-i Egyezmény révén döntései a világ szinte minden országában közvetlenül végrehajthatók, biztosítva a nemzetközi üzlet zavartalan működését.",
+  "new": "Az uniós Róma I. rendelet a feleknek a jogválasztás (choice of law) szabadságát biztosítja, a Brüsszel Ia. rendelet pedig a joghatóság szabályait rögzíti. A nemzetközi kereskedelemben az állami bíróságok helyett gyakran a Magyar Kereskedelmi és Iparkamara mellett működő Kereskedelmi Választottbíróságot jelölik ki. A választottbíráskodás gyakran gyorsabb és diszkrétebb, és a New York-i Egyezmény alapján döntései sok államban végrehajthatók.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "outdated name (since the 2017 arbitration act: Kereskedelmi Választottbíróság); Rome I covers choice of law, Brussels Ia jurisdiction; \"szinte minden ország\", \"közvetlenül\", \"egyre gyakrabban\" overclaim"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-05-nemzetkozimaganjog.json",
+  "old": "\"c1-eu-harmonization\"",
+  "new": "\"c1-corporate-law-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-05-a-gr.json",
+  "old": "Permanent Arbitration Court attached to the Hungarian Chamber of Commerce (*MKIK*)",
+  "new": "Court of Arbitration attached to the Hungarian Chamber of Commerce and Industry (*MKIK*)",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "outdated name"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-05-a-gr.json",
+  "old": "\"title\": \"Private International Law: Choice of Law, Rome I, and Brussels Ibis\"",
+  "new": "\"title\": \"Private International Law: Choice of Law, Rome I, and Brussels Ia\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "typo Ibis"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-05.json",
+  "old": "\"grammar\": \"Private International Law: Choice of Law, Rome I, and Brussels Ibis\"",
+  "new": "\"grammar\": \"Private International Law: Choice of Law, Rome I, and Brussels Ia\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "typo Ibis"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-05.json",
+  "old": "\"title\": \"Private International Law: Choice of Law, Rome I, and Brussels Ibis\"",
+  "new": "\"title\": \"Private International Law: Choice of Law, Rome I, and Brussels Ia\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "typo Ibis"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-05.json",
+  "old": "  \"goal\": [\n    \"I can analyze private international law in Hungarian commercial contracts (*nemzetközi magánjog*).\"",
+  "new": "  \"goal\": [\n    \"I can explain how parties choose the governing law and an arbitration court (*jogválasztás*, *választottbíróság*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-05.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze private international law in Hungarian commercial contracts (*nemzetközi magánjog*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain how parties choose the governing law and an arbitration court (*jogválasztás*, *választottbíróság*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-05.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze private international law in Hungarian commercial contracts (*nemzetközi magánjog*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain how parties choose the governing law and an arbitration court (*jogválasztás*, *választottbíróság*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-4",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "sentence": "A startup-befektetésnél a szindikátusi szerződés többéves alapítói _____ ír elő.",
+   "hint": "zárolás, object of the verb",
+   "english": "In a startup investment the shareholders' agreement provides for a multi-year founder lock-up."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "multi-year (not \"four-year\"); hint named the ending; category vocabulary -> accusative skill"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-5",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "hoz-suffix"
+   ],
+   "hint": "Döntőbizottság, the body turned to"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "hint named the ending; the -hoz is the tested form (known)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "answer": null,
+   "answers": [
+    "jog"
+   ],
+   "hint": "law"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"jogválasztás\" does not fit \"az alkalmazandó _____ kérdésében\""
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-7",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "mentesség, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-8",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "sentence": "A választottbírósági döntéseket sok országban _____ végre.",
+   "hint": "hajt, 3rd person plural, definite",
+   "answer": null,
+   "answers": [
+    "hajtják"
+   ],
+   "english": "Arbitral awards are enforced in many countries."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "hint named the ending; \"világszerte közvetlenül\" overclaim; \"-hatók\" participle form is later: finite verb"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-9",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "question": "Mi a jogbiztonság szerepe az üzleti életben?",
+   "options": [
+    "A kiszámítható szerződéses szabályok segítik a felek közötti bizalmat.",
+    "A jogi szabályozás helyett elegendő a felek szóbeli megállapodása.",
+    "A bíróságnak csak a szóbeli egyezségeket kell utólag jóváhagynia."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "taste stem \"legmélyebben\"; absurd/absolute wrong options"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-10",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-11",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Write a short evaluation of the role of arbitration in international commercial trade.",
+     "answer": "A választottbíráskodás gyakran gyors vitarendezést kínál, és döntései a New York-i Egyezmény alapján sok államban végrehajthatók."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"sarokköve\", \"globálisan\" overclaim"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-12",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Formulate a concluding thought on contractual ethics in business.",
+     "answer": "Az üzleti kapcsolatok a megbízhatóságra, az adott szó tiszteletére és a hosszú távú kölcsönös bizalomra épülnek."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; value judgement phrased as a plain statement"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-consolidation.json",
+  "old": "  \"goal\": [\n    \"I can navigate corporate M&A transactions, legal due diligence, and share purchase agreements.\"",
+  "new": "  \"goal\": [\n    \"I can talk about the main topics of this unit: takeovers, venture capital, competition law, public procurement and arbitration.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-consolidation.json",
+  "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can navigate corporate M&A transactions, legal due diligence, and share purchase agreements.\"",
+  "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can talk about the main topics of this unit: takeovers, venture capital, competition law, public procurement and arbitration.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-consolidation.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can navigate corporate M&A transactions, legal due diligence, and share purchase agreements.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can talk about the main topics of this unit: takeovers, venture capital, competition law, public procurement and arbitration.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ }
+]

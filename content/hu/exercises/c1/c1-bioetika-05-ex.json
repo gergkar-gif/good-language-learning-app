@@ -9,8 +9,8 @@
       "question": "Milyen jogi problémát vet fel az AI alkalmazása a diagnosztikában?",
       "options": [
         "A kártérítési felelősség megoszlását a szoftverfejlesztő és a kezelőorvos között tévedés esetén.",
-        "A betegadatok kizárólagos papíralapú tárolásának kötelezettségét.",
-        "A szoftverek kötelező orvosi kamarai tagságának hiányát."
+        "A betegadatok papíralapú tárolásának és archiválásának kötelezettségét a kórházakban.",
+        "A szoftverfejlesztők orvosi kamarai tagságának hiányát a diagnosztikai rendszerekben."
       ],
       "correct": 0,
       "teaches": [
@@ -20,13 +20,13 @@
     {
       "id": "c1-bioetika-05-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A technológia elterjedése ellenére az orvos-beteg _____ megőrzése a gyógyítás legfőbb záloga.",
+      "sentence": "A technológia elterjedése ellenére az orvos-beteg _____ megőrzése a gyógyítás egyik fontos feltétele.",
       "hint": "trust",
-      "english": "Despite the spread of technology preserving doctor-patient trust is the chief pledge of healing.",
+      "english": "Despite the spread of technology, preserving doctor-patient trust is one important condition of healing.",
       "teaches": [
-        "c1-biomedical-discourse"
+        "c1-patient-rights-vocab"
       ],
       "answers": [
         "bizalom"
@@ -62,7 +62,7 @@
     {
       "id": "c1-bioetika-05-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -90,38 +90,38 @@
       ],
       "english": "Technology can assist healing, but cannot replace the human being.",
       "teaches": [
-        "c1-biomedical-discourse"
+        "c1-patient-rights-vocab"
       ]
     },
     {
       "id": "c1-bioetika-05-production-5",
       "type": "structured-writing",
-      "category": "writing",
+      "category": "vocabulary",
       "stage": "production",
       "template": [
         {
-          "prompt": "Reflect on why human empathy remains irreplaceable in automated medicine.",
-          "answer": "Bár az algoritmusok páratlan pontossággal elemeznek adatokat, a gyógyítás etikai és lelki dimenziója – a vigasz, a remény és az emberi jelenlét – kizárólag az emberi empátián alapulhat."
+          "prompt": "Say why human presence still matters in automated medicine.",
+          "answer": "Bár az algoritmusok nagy pontossággal elemeznek adatokat, a gyógyításban a vigasz, a remény és az emberi jelenlét is fontos."
         }
       ],
       "teaches": [
-        "c1-biomedical-discourse"
+        "c1-patient-rights-vocab"
       ]
     },
     {
       "id": "c1-bioetika-05-check-6",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Milyen szerep hárul a jövő orvosára a mesterséges intelligencia korában?",
+      "question": "Mi marad az orvos feladata az algoritmusos diagnosztika mellett?",
       "options": [
-        "A technológiai adatok értő, empátiával és etikai felelősséggel kísért emberi közvetítése a beteg felé.",
-        "A kizárólagos adminisztratív ellenőrzés a szoftverfejlesztő cégek felett.",
-        "A diagnosztikai döntések teljes átruházása a jogi osztályra."
+        "Az orvos az adatokat empátiával és etikai felelősséggel közvetíti a beteg felé.",
+        "Az orvos az adminisztratív ellenőrzést végzi a szoftverfejlesztő cégek felett.",
+        "Az orvos a diagnosztikai döntéseket a kórház jogi osztályára bízza."
       ],
       "correct": 0,
       "teaches": [
-        "c1-biomedical-discourse"
+        "c1-patient-rights-vocab"
       ]
     }
   ]

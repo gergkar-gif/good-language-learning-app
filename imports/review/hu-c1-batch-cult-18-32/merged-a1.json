@@ -1,0 +1,4191 @@
+[
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-01-ex.json",
+  "id": "c1-bioetika-01-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Miért tartják különösen aggályosnak a csíravonal-módosítást?",
+   "options": [
+    "Mert a változtatás az utódokra is átöröklődik, nem csak a betegre.",
+    "Mert csak a beteg saját testi sejtjeit változtatja meg a kezelés.",
+    "Mert a kezelt beteg életét a beavatkozás közvetlenül veszélyezteti."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away and absolute (kizárólag); \"tiltja a nemzetközi bioetika\" overstated (the Oviedo ban binds its parties); wrong options each one fault"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-01-ex.json",
+  "id": "c1-bioetika-01-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "sentence": "A csíravonal-módosítás _____ változtatást hoz létre, vagyis az utódok is megkapják.",
+   "hint": "heritable",
+   "english": "Germline modification creates a heritable change, so the descendants receive it too."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-biomedical-discourse; item tests a word, so vocabulary; \"szigorúan tiltják ... nemzetközi egyezmények\" overstated"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-01-ex.json",
+  "id": "c1-bioetika-01-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; builder tests no C1 form: vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-01-ex.json",
+  "id": "c1-bioetika-01-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; open writing takes the unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-01-ex.json",
+  "id": "c1-bioetika-01-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Melyik egyezmény rögzíti az európai bioetika alapelveit?",
+   "options": [
+    "Az oviedói egyezmény az emberi jogokról és a biomedicináról.",
+    "A genfi egyezmények a háborús sebesültek és betegek védelméről.",
+    "A római szerződés az Európai Gazdasági Közösség létrehozásáról."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (60 vs 39) and absurd wrong options; wrong options now real treaties with one fault (wrong subject)"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-bioetika-01-voc.json",
+  "old": "\"lemma\": \"szomatikus sejtterápia\",\n      \"translation\": \"somatic cell therapy\"",
+  "new": "\"lemma\": \"szomatikus génterápia\",\n      \"translation\": \"somatic gene therapy\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "screens, story and writing item say génterápia/gyógyítás; the list had \"sejtterápia\" (unused)"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-bioetika-01-voc.json",
+  "old": "      \"translation\": \"genome\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"genome\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"cisztás fibrózis\",\n      \"translation\": \"cystic fibrosis\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vérzékenység\",\n      \"translation\": \"haemophilia\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"oviedói egyezmény\",\n      \"translation\": \"Oviedo Convention (Convention on Human Rights and Biomedicine)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"géntechnológia\",\n      \"translation\": \"genetic engineering\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szerkeszthető\",\n      \"translation\": \"editable\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-01-genszerkesztes.json",
+  "old": "az emberiség átlépte a biológiai evolúció Rubiconját",
+  "new": "az orvoslás új korszak küszöbére érkezett",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Rubicon metaphor stacked on \"evolution\"; plain"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-01-genszerkesztes.json",
+  "old": "felszámolásának ígérete felcsillantotta az orvoslás régóta várt megváltását",
+  "new": "kezelésének lehetősége új reményt keltett az orvoslásban",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"felszámolás\" promises a cure of incurable diseases; \"megváltás\" loaded"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-01-genszerkesztes.json",
+  "old": "A nemzetközi bioetikai közösség szigorú határvonalat húzott",
+  "new": "A nemzetközi bioetikai álláspontok többsége éles határvonalat húz",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"the international community drew\" overstated; views differ"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-01-genszerkesztes.json",
+  "old": "Ha megengedjük az emberi faj tervszerű genetikai átalakítását, nemcsak beláthatatlan ökológiai és evolúciós kockázatot vállalunk, hanem megnyitjuk az utat egy új, biológiai kasztrendszer és a géntechnológiai eugenika előtt.",
+  "new": "Egyes bioetikusok attól tartanak, hogy az emberi faj tervszerű genetikai átalakítása beláthatatlan kockázatot hordozna, és utat nyithatna a géntechnológiai eugenika előtt.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "narrator took a side in a disputed matter (\"kasztrendszer\" claim); ecological risk belongs to gene drives, not human germline; attributed as a concern"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-01-genszerkesztes.json",
+  "old": "\"c1-biomedical-discourse\"",
+  "new": "\"c1-patient-rights-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-01.json",
+  "old": "\"title\": \"CRISPR, Gene Editing and Genomic Sovereignty\",",
+  "new": "\"title\": \"CRISPR and Gene Editing\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "inflated title (\"Genomic Sovereignty\" is not taught anywhere)"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-01.json",
+  "old": "  \"goal\": [\n    \"I can analyze ethical controversies surrounding CRISPR and human genome editing.\"",
+  "new": "  \"goal\": [\n    \"I can explain why changing the germline is more controversial than treating one patient.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-01.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze ethical controversies surrounding CRISPR and human genome editing.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain why changing the germline is more controversial than treating one patient.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-01.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze ethical controversies surrounding CRISPR and human genome editing.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain why changing the germline is more controversial than treating one patient.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-02-ex.json",
+  "id": "c1-bioetika-02-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "sentence": "A donorszervek elosztásánál a szöveti _____ és a sürgősség a legfontosabb szempont.",
+   "english": "When donor organs are allocated, tissue compatibility and urgency are the most important criteria."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-biomedical-discourse; word item; \"donor szervek\" is one word; \"klinikai\" unmet"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-02-ex.json",
+  "id": "c1-bioetika-02-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "tiles": [
+    "A",
+    "szervelosztás",
+    "szabályai",
+    "nem",
+    "veszik",
+    "figyelembe",
+    "a",
+    "beteg",
+    "vagyonát."
+   ],
+   "solution": [
+    "A",
+    "szervelosztás",
+    "szabályai",
+    "nem",
+    "veszik",
+    "figyelembe",
+    "a",
+    "beteg",
+    "vagyonát."
+   ],
+   "english": "The organ allocation rules do not take the patient's wealth into account."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"kizár minden diszkriminációt\" overclaims the allocation system; new builder, no unmet \"diszkrimináció\""
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-02-ex.json",
+  "id": "c1-bioetika-02-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Explain on what grounds Eurotransplant allocates organs.",
+     "answer": "Az Eurotransplant orvosi szempontok – kompatibilitás, sürgősség és várakozási idő – alapján osztja el a szerveket, hogy az eljárás méltányos legyen."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"garantálva a pártatlan eljárást\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-02-ex.json",
+  "id": "c1-bioetika-02-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Mi az előfeltétele a donációnak elhunyt donor esetén?"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; plainer stem"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-bioetika-02-voc.json",
+  "old": "      \"translation\": \"living donor transplantation\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"living donor transplantation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"donor\",\n      \"translation\": \"donor\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"recipiens\",\n      \"translation\": \"recipient\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"agyműködés\",\n      \"translation\": \"brain function\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"sürgősség\",\n      \"translation\": \"urgency\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szervelosztás\",\n      \"translation\": \"organ allocation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"hozzátartozó\",\n      \"translation\": \"relative, next of kin\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-02-transzplantacio.json",
+  "old": "annak felismerése, hogy a teljes agyműködés visszafordíthatatlan leállása jelenti a biológiai személyiség végét, még ha a keringést gépek fenn is tartják",
+  "new": "annak felismerése, hogy az egész agy működésének visszafordíthatatlan leállása a halál beálltát jelenti, még ha a keringést gépek fenn is tartják",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"biológiai személyiség vége\" is a philosophical position, the definition of death is debated; check the Hungarian legal definition"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-02-transzplantacio.json",
+  "old": "Az algoritmusok által vezérelt szervelosztás az orvosi igazságosság mintapéldája: a vér szerinti és szöveti kompatibilitás, a várakozási idő és a sürgősség az egyetlen megengedett szempont. A rendszer kizár minden vagyoni vagy társadalmi előnyt, megvalósítva az orvosi etika legszebb ígéretét: az élet egyenlő értékét.",
+  "new": "Az Eurotransplant szervelosztása orvosi szempontokat követ: a vér- és szöveti kompatibilitás, a várakozási idő és a sürgősség a legfontosabbak közé tartozik. A rendszer célja, hogy a vagyon és a társadalmi helyzet ne számítson.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"az egyetlen megengedett szempont\" and \"legszebb ígéret\" overstated (reviewer note)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-02-transzplantacio.json",
+  "old": "\"c1-biomedical-discourse\"",
+  "new": "\"c1-patient-rights-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-02-a-gr.json",
+  "old": "Allocating scarce organs through *Eurotransplant* balances biological compatibility (*szöveti egyezés*), medical urgency, and pediatric priority, strictly excluding wealth or social status from the algorithmic equation.",
+  "new": "Eurotransplant allocation takes biological compatibility (*szöveti egyezés*), medical urgency, waiting time and, for children, special priority into account; wealth and social status are not among its criteria.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"strictly excluding ... algorithmic equation\" overstated"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-02.json",
+  "old": "\"title\": \"Organ Transplantation, Brain Death and Allocation Justice\",",
+  "new": "\"title\": \"Organ Transplants and Brain Death\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "plainer title"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-02.json",
+  "old": "  \"goal\": [\n    \"I can analyze the legal concept of presumed consent in organ donation (*feltételezett beleegyezés*).\"",
+  "new": "  \"goal\": [\n    \"I can explain what presumed consent means in organ donation (*feltételezett beleegyezés*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-02.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the legal concept of presumed consent in organ donation (*feltételezett beleegyezés*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what presumed consent means in organ donation (*feltételezett beleegyezés*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-02.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the legal concept of presumed consent in organ donation (*feltételezett beleegyezés*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what presumed consent means in organ donation (*feltételezett beleegyezés*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-03-ex.json",
+  "id": "c1-bioetika-03-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "options": [
+    "Mert az őssejtek kinyerése a korai emberi embrió elpusztításával jár.",
+    "Mert az őssejtek kinyerése a felnőtt donor szervezetének károsításával jár.",
+    "Mert az őssejtekből csak állati szövetek hozhatók létre a laborban."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "wrong options: \"semmit\", \"minden esetben\" absolutes; one fault each"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-03-ex.json",
+  "id": "c1-bioetika-03-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "hint": "státusz, the embryo's"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; the blank is státusz + 3rd person possessive -a (known skill); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-03-ex.json",
+  "id": "c1-bioetika-03-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-03-ex.json",
+  "id": "c1-bioetika-03-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-03-ex.json",
+  "id": "c1-bioetika-03-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "options": [
+    "A vágyott gyermek megszületése és a fel nem használt fagyasztott embriók sorsa közötti erkölcsi dilemma.",
+    "A genetikai vizsgálatok magas költsége és az eljárás technikai sikeressége közötti aránytalanság.",
+    "Az eljárás hosszú várakozási ideje és a páciensek kórházi ellátásának terhei közötti ellentmondás."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; wrong option 3 meaningless (parental custody after natural conception)"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-bioetika-03-voc.json",
+  "old": "      \"translation\": \"pluripotent\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "new": "      \"translation\": \"pluripotent\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"őssejtkutatás\",\n      \"translation\": \"stem cell research\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"lombikbébi\",\n      \"translation\": \"test-tube baby, IVF baby\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"sejthalmaz\",\n      \"translation\": \"cluster of cells\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"idegrendszer\",\n      \"translation\": \"nervous system\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"metafizika\",\n      \"translation\": \"metaphysics\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"igazolható\",\n      \"translation\": \"justifiable\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"markáns\",\n      \"translation\": \"distinct, marked\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-03-embriokutatas.json",
+  "old": "A mesterséges megtermékenyítés gyermekek százezreinek születését tette lehetővé meddő párok számára, miközben fagyasztókban tárolt embriók ezreinek etikai státuszáról nyitott vitát.",
+  "new": "A mesterséges megtermékenyítés sok gyermek születését tette lehetővé meddő párok számára, miközben a fagyasztva tárolt embriók etikai státuszáról is vitát nyitott.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unsourced figures (százezrek, ezrek) dropped"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-03-embriokutatas.json",
+  "old": "így a pluripotens őssejtek felhasználása súlyos betegségek gyógyítására erkölcsileg igazolható cél.",
+  "new": "így e nézet szerint a pluripotens őssejtek felhasználása súlyos betegségek gyógyítására erkölcsileg igazolható cél.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "the second position was told as the narrator's settled verdict; now attributed"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-03-embriokutatas.json",
+  "old": "\"c1-biomedical-discourse\"",
+  "new": "\"c1-patient-rights-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-03.json",
+  "old": "  \"goal\": [\n    \"I can analyze ethical perspectives on the moral status of the human embryo (*embrió erkölcsi státusza*).\"",
+  "new": "  \"goal\": [\n    \"I can set out two views on the moral status of the embryo (*embrió erkölcsi státusza*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-03.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze ethical perspectives on the moral status of the human embryo (*embrió erkölcsi státusza*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can set out two views on the moral status of the embryo (*embrió erkölcsi státusza*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-03.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze ethical perspectives on the moral status of the human embryo (*embrió erkölcsi státusza*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can set out two views on the moral status of the embryo (*embrió erkölcsi státusza*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-04-ex.json",
+  "id": "c1-bioetika-04-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "sentence": "Karsai a strasbourgi bíróságon a _____ tiszteletben tartásához való jogra hivatkozott.",
+   "hint": "private life",
+   "answer": null,
+   "answers": [
+    "magánélet"
+   ],
+   "english": "At the Strasbourg court Karsai invoked the right to respect for private life."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-patient-autonomy; \"emberi méltósághoz való jog\" as Karsai's ground is unconfirmed (the case turned on Art. 8, private life); now a vocabulary blank"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-04-ex.json",
+  "id": "c1-bioetika-04-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "tiles": [
+    "A",
+    "vita",
+    "az",
+    "egyéni",
+    "szabadság",
+    "és",
+    "az",
+    "élet",
+    "védelme",
+    "közötti",
+    "határról",
+    "szól."
+   ],
+   "solution": [
+    "A",
+    "vita",
+    "az",
+    "egyéni",
+    "szabadság",
+    "és",
+    "az",
+    "élet",
+    "védelme",
+    "közötti",
+    "határról",
+    "szól."
+   ],
+   "english": "The debate is about the boundary between individual freedom and the protection of life."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"végső határa\" is a judgement; new builder"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-04-ex.json",
+  "id": "c1-bioetika-04-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say how Karsai's public case affected the debate.",
+     "answer": "Karsai Dániel nyilvános fellépése nyomán a közéletben is vita indult az életvégi döntésekről és az önrendelkezés határairól."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"bátorsága\", \"kényszerítve\" judgement; says what is documented"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-04-ex.json",
+  "id": "c1-bioetika-04-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Mi volt a Karsai-ügy egyik következménye?",
+   "options": [
+    "Széles körű közéleti vita indult a méltóságteljes elmúlásról.",
+    "A parlament azonnal eltörölte az aktív eutanázia tilalmát.",
+    "A strasbourgi bíróság megállapította, hogy az állam megsértette a 8. cikket."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"történelmi jelentőségű\" is a judgement; wrong option 3 (refusing the application) hid the real outcome; now a plausible false outcome"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-bioetika-04-voc.json",
+  "old": "      \"translation\": \"societal dialogue / discourse\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"societal dialogue / discourse\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"alkotmányjogász\",\n      \"translation\": \"constitutional lawyer\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"gyógyíthatatlan\",\n      \"translation\": \"incurable\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"elmúlás\",\n      \"translation\": \"passing away, dying\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"beadvány\",\n      \"translation\": \"application, petition\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"amiotrófiás laterálszklerózis\",\n      \"translation\": \"amyotrophic lateral sclerosis (ALS)\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-04-karsaidaniel.json",
+  "old": "2023 őszén egy bátor bejelentés rázta meg a magyar közéletet. Dr. Karsai Dániel, az elismert alkotmányjogász a nyilvánosság elé lépett, és feltárta, hogy gyógyíthatatlan amiotrófiás laterálszklerózisban (ALS) szenved.",
+  "new": "2023-ban Dr. Karsai Dániel alkotmányjogász a nyilvánosság elé lépett, és elmondta, hogy gyógyíthatatlan amiotrófiás laterálszklerózisban (ALS) szenved; a betegséget 2022-ben állapították meg nála.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "reviewer facts: diagnosed 2022, public 2023; \"bátor bejelentés\" judgement; season unconfirmed"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-04-karsaidaniel.json",
+  "old": "A betegség fokozatosan megfosztja az embert minden mozgási képességétől, a beszédtől és a nyeléstől, miközben az elme mindvégig kristálytiszta marad.",
+  "new": "A betegség fokozatosan elveszi az ember mozgási képességét, a beszédet és a nyelést, miközben az értelem általában épen marad.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"mindvégig kristálytiszta\" overclaims"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-04-karsaidaniel.json",
+  "old": "Karsai nem a csendes visszahúzódást választotta, hanem jogi harcba szállt a méltóságteljes halálért a strasbourgi Emberi Jogok Európai Bíróságán és a hazai Alkotmánybíróságon. Azzal érvelt, hogy az államnak nincs joga arra kényszeríteni a polgárát, hogy elviselhetetlen, emberhez méltatlan testi szenvedésben élje le élete utolsó heteit. Bár a hatályos törvények nem változtak meg azonnal, küzdelmével példátlan társadalmi empátiát ébresztett, és ledöntötte az elmúlás körüli évszázados tabukat.",
+  "new": "Karsai a strasbourgi Emberi Jogok Európai Bíróságához fordult. Azzal érvelt, hogy az állam nem kényszerítheti a polgárát arra, hogy elviselhetetlen testi szenvedésben élje le élete utolsó időszakát, és hogy a segített halál tilalma sérti a magánélet tiszteletben tartásához való jogát. A bíróság 2024 júniusában úgy döntött, hogy a magyar szabályozás nem sértette az Emberi Jogok Európai Egyezményének 8. cikkét; a nagykamarai áttételi kérelmet szeptember elején elutasították, és Karsai Dániel még abban a hónapban meghalt. Az ügy nyomán a közéletben is szélesebb vita indult az életvégi döntésekről.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "reviewer facts: no Constitutional Court case confirmed; ECtHR 13 June 2024 no violation of Art. 8; referral refused 2 Sept 2024; died September 2024; \"példátlan empátia\", \"évszázados tabuk\" judgements removed; legal-argument wording is a paraphrase (check)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-04-karsaidaniel.json",
+  "old": "\"c1-patient-autonomy\"",
+  "new": "\"c1-patient-rights-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-04-a-gr.json",
+  "old": "In 2023–2024, Hungarian constitutional lawyer Dr. Dániel Karsai, suffering from terminal ALS, ignited historic national discourse by taking his fight for assisted dying to the European Court of Human Rights and the Constitutional Court.",
+  "new": "In 2023–2024 the Hungarian constitutional lawyer Dr. Dániel Karsai, who had ALS, took his case for assisted dying to the European Court of Human Rights, and it became a matter of public debate.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Constitutional Court case unconfirmed; \"ignited historic national discourse\" overstated"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-04-a-gr.json",
+  "old": "Karsai argued that criminalizing assistance to end one's life abroad deprives patients of the right to make the ultimate decision about their own bodily suffering, violating Article 8 of the European Convention.",
+  "new": "Karsai argued that the ban on assisting a person to end their life violated his right to respect for private life under Article 8 of the European Convention. In June 2024 the Court found no violation of Article 8.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "paraphrase of the complaint (check); outcome added from reviewer facts"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-04-a-gr.json",
+  "old": "\"Karsai Dániel strasbourgi beadványa és az Alkotmánybíróság...\"",
+  "new": "\"Karsai Dániel strasbourgi beadványa és az Egyezmény 8. cikke...\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "no Constitutional Court case"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-04-a-gr.json",
+  "old": "\"Dániel Karsai's Strasbourg application and the Constitutional Court...\"",
+  "new": "\"Dániel Karsai's Strasbourg application and Article 8 of the Convention...\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "no Constitutional Court case"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"The Constitutional Battle for Dignified Death: The Dániel Karsai Case\",",
+  "new": "\"title\": \"The Dániel Karsai Case and Dignified Death\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "plainer title; \"constitutional battle\" not supported"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "  \"goal\": [\n    \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\"",
+  "new": "  \"goal\": [\n    \"I can describe the Karsai case and the question it raised about dying with dignity.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Karsai case and the question it raised about dying with dignity.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the constitutional litigation surrounding Dániel Karsai and end-of-life autonomy in Hungary.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Karsai case and the question it raised about dying with dignity.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "  \"goal\": [\n    \"I can describe the Karsai case and the question it raised about dying with dignity.\",\n    \"I can evaluate European Court of Human Rights jurisprudence on assisted dying (Article 8 ECHR).\"",
+  "new": "  \"goal\": [\n    \"I can describe the Karsai case and the question it raised about dying with dignity.\",\n    \"I can say what the European Court of Human Rights decided in the Karsai case (Article 8).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Karsai case and the question it raised about dying with dignity.\",\n        \"I can evaluate European Court of Human Rights jurisprudence on assisted dying (Article 8 ECHR).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Karsai case and the question it raised about dying with dignity.\",\n        \"I can say what the European Court of Human Rights decided in the Karsai case (Article 8).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Karsai case and the question it raised about dying with dignity.\",\n        \"I can evaluate European Court of Human Rights jurisprudence on assisted dying (Article 8 ECHR).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Karsai case and the question it raised about dying with dignity.\",\n        \"I can say what the European Court of Human Rights decided in the Karsai case (Article 8).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "  \"goal\": [\n    \"I can describe the Karsai case and the question it raised about dying with dignity.\",\n    \"I can say what the European Court of Human Rights decided in the Karsai case (Article 8).\",\n    \"I can discuss the public, ethical, and legislative repercussions of terminal disease activism.\"",
+  "new": "  \"goal\": [\n    \"I can describe the Karsai case and the question it raised about dying with dignity.\",\n    \"I can say what the European Court of Human Rights decided in the Karsai case (Article 8).\",\n    \"I can discuss the public debate the case started.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Karsai case and the question it raised about dying with dignity.\",\n        \"I can say what the European Court of Human Rights decided in the Karsai case (Article 8).\",\n        \"I can discuss the public, ethical, and legislative repercussions of terminal disease activism.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Karsai case and the question it raised about dying with dignity.\",\n        \"I can say what the European Court of Human Rights decided in the Karsai case (Article 8).\",\n        \"I can discuss the public debate the case started.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Karsai case and the question it raised about dying with dignity.\",\n        \"I can say what the European Court of Human Rights decided in the Karsai case (Article 8).\",\n        \"I can discuss the public, ethical, and legislative repercussions of terminal disease activism.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Karsai case and the question it raised about dying with dignity.\",\n        \"I can say what the European Court of Human Rights decided in the Karsai case (Article 8).\",\n        \"I can discuss the public debate the case started.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-05-ex.json",
+  "id": "c1-bioetika-05-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "options": [
+    "A kártérítési felelősség megoszlását a szoftverfejlesztő és a kezelőorvos között tévedés esetén.",
+    "A betegadatok papíralapú tárolásának és archiválásának kötelezettségét a kórházakban.",
+    "A szoftverfejlesztők orvosi kamarai tagságának hiányát a diagnosztikai rendszerekben."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (96 vs 65) and \"kizárólagos\"/\"kötelező\" tells"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-05-ex.json",
+  "id": "c1-bioetika-05-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "sentence": "A technológia elterjedése ellenére az orvos-beteg _____ megőrzése a gyógyítás egyik fontos feltétele.",
+   "english": "Despite the spread of technology, preserving doctor-patient trust is one important condition of healing."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"legfőbb záloga\" is a judgement"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-05-ex.json",
+  "id": "c1-bioetika-05-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-05-ex.json",
+  "id": "c1-bioetika-05-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say why human presence still matters in automated medicine.",
+     "answer": "Bár az algoritmusok nagy pontossággal elemeznek adatokat, a gyógyításban a vigasz, a remény és az emberi jelenlét is fontos."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"páratlan pontossággal\", \"kizárólag\" overclaim"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-bioetika-05-voc.json",
+  "old": "      \"translation\": \"algorithmic bias\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"algorithmic bias\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kezelőorvos\",\n      \"translation\": \"treating physician\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vigasz\",\n      \"translation\": \"consolation, comfort\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szoftver\",\n      \"translation\": \"software\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"diagnosztikai\",\n      \"translation\": \"diagnostic\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"daganatos elváltozás\",\n      \"translation\": \"tumorous lesion\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-05-mestersegesintelligencia.json",
+  "old": "képesek áttekinteni ezer meg ezer CT- és MRI-felvételt, észrevéve a legapróbb daganatos elváltozásokat is, amelyek felett a fáradt emberi szem könnyen átsiklana. A diagnosztika sebessége és pontossága ugrásszerűen megnőtt.",
+  "new": "képesek nagy számú CT- és MRI-felvételt gyorsan áttekinteni, és egyes vizsgálatokban olyan apró elváltozásokat is jeleznek, amelyek felett a fáradt emberi szem könnyen átsiklana. Több területen a diagnosztika sebessége és pontossága is javult.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"a legapróbb\", \"ugrásszerűen\" overclaim"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-05-mestersegesintelligencia.json",
+  "old": "A legmélyebb bioetikai tanulság az, hogy",
+  "new": "Az egyik fontos bioetikai tanulság az, hogy",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "superlative judgement"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-05-mestersegesintelligencia.json",
+  "old": "A jövő orvosa a géppel együtt dolgozik, de szívvel gyógyít.",
+  "new": "Az orvos a géppel együtt dolgozhat, de a gyógyításban az emberi jelenlét továbbra is fontos.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "prediction stated as fact; flourish"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-bioetika-05-mestersegesintelligencia.json",
+  "old": "\"c1-biomedical-discourse\"",
+  "new": "\"c1-patient-rights-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-05-a-gr.json",
+  "old": "AI systems match or exceed human radiologists in detecting melanomas, mammograms, and CT abnormalities.",
+  "new": "In some studies, AI systems have matched or exceeded human readers in detecting melanomas, breast cancer on mammograms and some CT abnormalities.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "overstated and garbled"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-bioetika-05-a-gr.json",
+  "old": "Crucially, bioethics insists that diagnosis is only the cognitive half of healing; true medical care requires *empátia* and communicating existential truths with compassion, something no neural network can possess.",
+  "new": "Many bioethicists stress that diagnosis is only one part of healing; medical care also involves *empátia* and telling hard truths with compassion, which a neural network does not do.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"bioethics insists\", \"no neural network can possess\" overclaim"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-05.json",
+  "old": "  \"goal\": [\n    \"I can evaluate artificial intelligence in radiological and pathological diagnostics.\"",
+  "new": "  \"goal\": [\n    \"I can discuss what AI changes in diagnosis and what the doctor still does.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-05.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can evaluate artificial intelligence in radiological and pathological diagnostics.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can discuss what AI changes in diagnosis and what the doctor still does.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-05.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can evaluate artificial intelligence in radiological and pathological diagnostics.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can discuss what AI changes in diagnosis and what the doctor still does.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Miért tartják aggályosnak az emberi csíravonal-módosítást?",
+   "options": [
+    "Mert a változtatás öröklődik, így az utódokat is érinti.",
+    "Mert csak a beteg testi sejtjeit érinti, az utódokat nem.",
+    "Mert a szomatikus terápiák a csíravonalat is megváltoztatják."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"teljesen\" tell; \"kizárólag növényi kultúrák\" absurd; wrong options one fault each"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "options": [
+    "A feltételezett beleegyezés elvén (opt-out rendszer).",
+    "A kifejezett írásbeli beleegyezés elvén (opt-in rendszer).",
+    "A kórházi etikai bizottság egyedi döntésén."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; third option absurd; present-day law (check)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "sentence": "Elhunyt donornál független orvosok állapítják meg az _____ beálltát.",
+   "english": "In the case of a deceased donor, independent doctors establish the onset of brain death."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet \"általi\", \"megállapítása\"; reworded"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-5",
+  "set": {
+   "sentence": "Karsai Dániel alkotmányjogász volt, aki a méltóságteljes _____ való jogért lépett a nyilvánosság elé.",
+   "hint": "death",
+   "answer": null,
+   "answers": [
+    "halálhoz"
+   ],
+   "english": "Dániel Karsai was a constitutional lawyer who stepped into the public eye for the right to a dignified death.",
+   "category": "grammar",
+   "teaches": [
+    "hoz-suffix"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Karsai's grounds were Art. 8 (private life), not \"human dignity\" as such; now the allative -hoz (known)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-6",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "sentence": "Az orvos nem végezhet beavatkozást a páciens tájékozott _____ hiányában.",
+   "hint": "consent, the patient's",
+   "english": "The doctor may not carry out an intervention without the patient's informed consent."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; the blank is a possessed noun (known 3rd-person possessive); hint named the ending; \"kezelőorvos\"/\"hajthat végre\" unmet"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-7",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "trust, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; blank is an accusative -t (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-8",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "dilemma, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; blank is an accusative -t (known); hint named the ending; triage appears nowhere in the unit"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-9",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "question": "Mi az orvosi etika egyik alapelve a betegekkel szemben?",
+   "options": [
+    "A beteg méltóságát és önrendelkezését tiszteletben kell tartani.",
+    "A kezelést az orvos a beteg véleményének megkérdezése nélkül választja ki.",
+    "A beteg adatait a kutatók számára szabadon hozzáférhetővé kell tenni."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "taste stem \"legméltóbban\", absurd wrong options, \"semmilyen\" tell"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-10",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-11",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say what public debate Karsai's case started.",
+     "answer": "Karsai Dániel fellépése nyomán a közéletben is vita indult a méltóságteljes elmúlásról és az önrendelkezés határairól."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"felrázta a társadalom lelkiismeretét ... jogállam alapvető kötelezettsége\" is a judgement"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-bioetika-consolidation-ex.json",
+  "id": "c1-bioetika-consolidation-12",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-patient-rights-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-consolidation.json",
+  "old": "  \"goal\": [\n    \"I can analyze biotechnology dilemmas (CRISPR gene editing, embryonic stem cells, Eurotransplant).\"",
+  "new": "  \"goal\": [\n    \"I can talk about the main dilemmas of this unit: gene editing, organ donation, the embryo, dying with dignity and AI in medicine.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-consolidation.json",
+  "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can analyze biotechnology dilemmas (CRISPR gene editing, embryonic stem cells, Eurotransplant).\"",
+  "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can talk about the main dilemmas of this unit: gene editing, organ donation, the embryo, dying with dignity and AI in medicine.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-bioetika-consolidation.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze biotechnology dilemmas (CRISPR gene editing, embryonic stem cells, Eurotransplant).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can talk about the main dilemmas of this unit: gene editing, organ donation, the embryo, dying with dignity and AI in medicine.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-01-ex.json",
+  "id": "c1-szerzodesek-01-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "options": [
+    "A céget érintő jogi, adózási és pénzügyi kockázatok alapos feltárása a vételár meghatározásához.",
+    "A munkavállalók éves teljesítményértékelésének statisztikai összesítése a bérköltségek csökkentéséhez.",
+    "A versenytársak piaci részesedésének felmérése nyilvános adatok alapján a marketingterv készítéséhez."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (96 vs 72)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-01-ex.json",
+  "id": "c1-szerzodesek-01-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "on-en-on"
+   ],
+   "hint": "számla, account"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; blank is a -n/-on form (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-01-ex.json",
+  "id": "c1-szerzodesek-01-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-01-ex.json",
+  "id": "c1-szerzodesek-01-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-01-ex.json",
+  "id": "c1-szerzodesek-01-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "question": "Mikor szokás a felvásárlásnál a tulajdonjog átszállását kikötni?",
+   "options": [
+    "A zárásnál, a zárási feltételek teljesülése és a vételár megfizetése után.",
+    "Az előzetes szándéknyilatkozat aláírásakor, a feltételek vizsgálata előtt.",
+    "A titoktartási megállapodás megkötésekor, az átvilágítás megkezdése előtt."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (90 vs 56); \"cégbírósági bejegyzéssel\" is not the moment of transfer for every company form; usual contract term"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-szerzodesek-01-voc.json",
+  "old": "      \"translation\": \"escrow account\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"escrow account\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"könyvvizsgáló\",\n      \"translation\": \"auditor\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"középvállalat\",\n      \"translation\": \"medium-sized company\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tehermentesség\",\n      \"translation\": \"freedom from encumbrances\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szellemi tulajdonjog\",\n      \"translation\": \"intellectual property right\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"peres ügy\",\n      \"translation\": \"lawsuit\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kártalanítás\",\n      \"translation\": \"compensation, indemnification\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-01-cegfelvasarlas.json",
+  "old": "a tárgyalások nem az pezsgőbontással kezdődnek, hanem hónapokig tartó kíméletlen vizsgálattal",
+  "new": "a tárgyalások nem pezsgőbontással kezdődnek, hanem hónapokig tartó alapos vizsgálattal",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "typo \"nem az pezsgőbontással\"; \"kíméletlen\" loaded"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-01-cegfelvasarlas.json",
+  "old": "megkötése a jogi precizitás csúcsteljesítménye",
+  "new": "megkötése nagy jogi pontosságot igénylő feladat",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "flourish"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-01-cegfelvasarlas.json",
+  "old": "millió eurós kártérítési kötelezettséget vonhat maga után",
+  "new": "akár millió eurós kártérítési kötelezettséget is maga után vonhat",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "hedge the amount"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-01-cegfelvasarlas.json",
+  "old": "\"c1-corporate-governance\"",
+  "new": "\"c1-corporate-law-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-01.json",
+  "old": "  \"goal\": [\n    \"I can navigate Hungarian corporate acquisition terminology (*felvásárlás, fúzió, átvilágítás*).\"",
+  "new": "  \"goal\": [\n    \"I can talk about a company takeover: due diligence, warranties and the purchase agreement.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-01.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can navigate Hungarian corporate acquisition terminology (*felvásárlás, fúzió, átvilágítás*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can talk about a company takeover: due diligence, warranties and the purchase agreement.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-01.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can navigate Hungarian corporate acquisition terminology (*felvásárlás, fúzió, átvilágítás*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can talk about a company takeover: due diligence, warranties and the purchase agreement.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-02-ex.json",
+  "id": "c1-szerzodesek-02-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "options": [
+    "Hogy a cég eladásakor vagy felszámolásakor a befektető a pénzéhez jusson az alapítók előtt.",
+    "Hogy a befektető vétójogot kap a cég napi operatív döntéseiben, az alapítók beleszólása nélkül.",
+    "Hogy az alapítók a későbbi tőkeemelések után automatikusan visszavásárolhatják a részvényeiket."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (91 vs 67)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-02-ex.json",
+  "id": "c1-szerzodesek-02-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "sentence": "A felek közötti szindikátusi szerződés többéves alapítói _____ ír elő, hogy az alapítók ne távozzanak korán.",
+   "hint": "zárolás, object of the verb",
+   "english": "The shareholders' agreement provides for a multi-year founder lock-up so that the founders do not leave early."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; blank is an accusative -t (known); hint named the ending; \"elvándorlás\" is emigration, wrong word; the four-year term is typical, not a rule"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-02-ex.json",
+  "id": "c1-szerzodesek-02-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-02-ex.json",
+  "id": "c1-szerzodesek-02-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say what founder vesting is for in a venture capital deal.",
+     "answer": "Az alapítói zárolás (vesting) segít abban, hogy a kulcsemberek elkötelezettek maradjanak a cég mellett; idő előtti távozás esetén elveszíthetik a még fel nem szabadult részvényeiket."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"essential\", \"biztosítja\" overclaim"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-02-ex.json",
+  "id": "c1-szerzodesek-02-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "question": "Mi a különbség a pre-money és a post-money értékelés között?",
+   "options": [
+    "A pre-money a cég értéke a tőkebevonás előtt, a post-money a befektetett tőkével növelt érték.",
+    "A pre-money az adózás előtti profitot, a post-money az osztalékalapot jelenti a pénzügyi évben.",
+    "A pre-money a könyv szerinti értéket, a post-money a piaci tőkeértéket fejezi ki a tőzsdén."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; length give-away (121 vs 81); wrong options kept as plausible misdefinitions"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-szerzodesek-02-voc.json",
+  "old": "      \"translation\": \"valuation (pre-money / post-money)\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"valuation (pre-money / post-money)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"részvény\",\n      \"translation\": \"share (of stock)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tőkeemelés\",\n      \"translation\": \"capital increase\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"inkubátor\",\n      \"translation\": \"incubator\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vétójog\",\n      \"translation\": \"right of veto\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"osztalék\",\n      \"translation\": \"dividend\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tőkebefektető\",\n      \"translation\": \"capital investor\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-02-kockazatitoke.json",
+  "old": "Budapest kávéházaiból és egyetemi inkubátoraiból az elmúlt évtizedben globális sikertörténetek indultak el.",
+  "new": "Egyes magyar startupok az elmúlt évtizedben nemzetközi sikert értek el.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unsourced \"global success stories\" generalisation"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-02-kockazatitoke.json",
+  "old": "a tőke segítségével világhódító útra indítják innovációjukat",
+  "new": "a tőke segítségével nemzetközi növekedésnek indítják az üzletüket",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "flourish"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-02-kockazatitoke.json",
+  "old": "\"c1-corporate-governance\"",
+  "new": "\"c1-corporate-law-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-02-a-gr.json",
+  "old": "\"Négyéves alapítói zárolás (vesting) a csapat elkötelezettségének megőrzésére...\"",
+  "new": "\"Többéves alapítói zárolás (vesting) a csapat elkötelezettségének megőrzésére...\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "a four-year term is typical, not a rule"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-02-a-gr.json",
+  "old": "\"Four-year founder vesting to preserve team commitment...\"",
+  "new": "\"Multi-year founder vesting to preserve team commitment...\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "as above"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-02.json",
+  "old": "  \"goal\": [\n    \"I can analyze venture capital financing terms in Hungarian (*kockázati tőkebevonás, befektetési szindikátus*).\"",
+  "new": "  \"goal\": [\n    \"I can explain the main terms of a venture capital deal (*kockázati tőke*, *likvidációs preferencia*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-02.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze venture capital financing terms in Hungarian (*kockázati tőkebevonás, befektetési szindikátus*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain the main terms of a venture capital deal (*kockázati tőke*, *likvidációs preferencia*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-02.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze venture capital financing terms in Hungarian (*kockázati tőkebevonás, befektetési szindikátus*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain the main terms of a venture capital deal (*kockázati tőke*, *likvidációs preferencia*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-03-ex.json",
+  "id": "c1-szerzodesek-03-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "options": [
+    "Teljes bírságkiszabási mentességet nyújtva az elsőként önként vallomást tevő kartelltag számára.",
+    "Az eljárásban részt vevő cégek számára adókedvezményt biztosítva a vizsgálat időtartamára.",
+    "A kartelltagok kötelező állami felügyelet alá vonásával a vizsgálat megkezdése után."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (96 vs 69)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-03-ex.json",
+  "id": "c1-szerzodesek-03-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "sentence": "A versenytársak árrögzítő megállapodása a törvényi _____ ütközik.",
+   "hint": "cartel ban, into",
+   "english": "An agreement fixing prices between competitors runs up against the statutory cartel ban."
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "retired tag c1-eu-harmonization; no known skill covers -ba after ütközik: vocabulary; hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-03-ex.json",
+  "id": "c1-szerzodesek-03-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-03-ex.json",
+  "id": "c1-szerzodesek-03-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Explain the antitrust danger of market abuse by a dominant corporation.",
+     "answer": "A domináns helyzetben lévő vállalat kiszoríthatja a versenytársakat és indokolatlanul magas árakat kényszeríthet a fogyasztókra, ami árthat az innovációnak és a piaci hatékonyságnak."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"tönkreteszi\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-03-ex.json",
+  "id": "c1-szerzodesek-03-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "question": "Milyen esetben kell a GVH előzetes engedélyét kérni?",
+   "options": [
+    "Ha az összefonódás eléri a törvényi árbevételi küszöböt.",
+    "Ha egy vállalkozás új telephelyet nyit belföldön.",
+    "Ha egy vállalkozás exportügyletet köt az Európai Unióban."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; length give-away (80 vs 57); only a merger reaching the legal turnover thresholds needs approval"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-szerzodesek-03-voc.json",
+  "old": "      \"translation\": \"competition supervision proceeding\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"competition supervision proceeding\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"árrögzítés\",\n      \"translation\": \"price fixing\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"árbevétel\",\n      \"translation\": \"turnover, revenue\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"domináns\",\n      \"translation\": \"dominant\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"bírság\",\n      \"translation\": \"fine, penalty\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kárvallott\",\n      \"translation\": \"victim, injured party\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"háttéralku\",\n      \"translation\": \"back-room deal\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-03-versenyjog.json",
+  "old": "A hatóság leghatékonyabb fegyvere az úgynevezett engedékenységi politika (leniency).",
+  "new": "A hatóság egyik fontos eszköze az úgynevezett engedékenységi politika (leniency).",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "superlative judgement"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-03-versenyjog.json",
+  "old": "elsőként feladja kartelltársait és átadja a bizonyítékokat a nyomozóknak, teljes mentességet kap a több milliárdos bírság alól. A folyamatos ellenőrzés biztosítja, hogy a magyar gazdaságban a tehetség és az innováció győzzön, ne pedig a háttéralkuk.",
+  "new": "elsőként jelentkezik a hatóságnál és átadja a bizonyítékokat, a feltételek teljesülése esetén mentesülhet a bírság alól. Az eljárás célja, hogy a versenyt ne a háttéralkuk döntsék el.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unsourced \"több milliárdos\"; \"biztosítja ... győzzön\" overclaims; leniency has conditions"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-03-versenyjog.json",
+  "old": "\"c1-eu-harmonization\"",
+  "new": "\"c1-corporate-law-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-03-a-gr.json",
+  "old": "Competitors colluding in public tenders face astronomical fines or criminal charges.",
+  "new": "Competitors colluding in public tenders can face heavy fines or criminal charges.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"astronomical\""
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-03-a-gr.json",
+  "old": "grants total immunity from fines to the first cartel member that uncovers the illegal agreement and hands over evidence to the authority.",
+  "new": "can grant immunity from fines to the first cartel member that reports the illegal agreement and hands over evidence to the authority, if the conditions are met.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "leniency has conditions"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-03.json",
+  "old": "\"title\": \"Competition Law, Cartels and Regulatory Antitrust: GVH\",",
+  "new": "\"title\": \"Competition Law and the GVH\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "plainer title"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-03.json",
+  "old": "  \"goal\": [\n    \"I can navigate Hungarian and EU antitrust terminology (*kartelltilalom, erőfölénnyel való visszaélés*).\"",
+  "new": "  \"goal\": [\n    \"I can explain what the cartel ban and the leniency policy are (*kartelltilalom*, *engedékenységi politika*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-03.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can navigate Hungarian and EU antitrust terminology (*kartelltilalom, erőfölénnyel való visszaélés*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the cartel ban and the leniency policy are (*kartelltilalom*, *engedékenységi politika*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-03.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can navigate Hungarian and EU antitrust terminology (*kartelltilalom, erőfölénnyel való visszaélés*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the cartel ban and the leniency policy are (*kartelltilalom*, *engedékenységi politika*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-04-ex.json",
+  "id": "c1-szerzodesek-04-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "options": [
+    "A Közbeszerzési Döntőbizottság (KDB).",
+    "A Gazdasági Versenyhivatal versenyfelügyeleti tanácsa.",
+    "A Kereskedelmi és Iparkamara etikai bizottsága."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "wrong options were ministry/audit-office bodies that are not named elsewhere; now real bodies, one fault (wrong body); present-day: KDB (check)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-04-ex.json",
+  "id": "c1-szerzodesek-04-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "kérelem, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; accusative -t (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-04-ex.json",
+  "id": "c1-szerzodesek-04-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-04-ex.json",
+  "id": "c1-szerzodesek-04-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-04-ex.json",
+  "id": "c1-szerzodesek-04-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "question": "Mi lehet a következménye annak, ha egy ajánlattevő aránytalanul alacsony árat ad meg, és nem tudja megindokolni?",
+   "options": [
+    "Az ajánlatkérő érvénytelennek nyilváníthatja az ajánlatot, ha az indoklás nem igazolja a teljesítést.",
+    "Az ajánlatkérőnek a legolcsóbb árajánlatot el kell fogadnia az indoklástól függetlenül.",
+    "Az ajánlattevőt azonnal bírsággal kell sújtani a nem indokolt ár miatt."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; length; the contracting authority (ajánlatkérő), not \"a hatóság\", assesses an abnormally low price"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-szerzodesek-04-voc.json",
+  "old": "      \"translation\": \"grant / subsidy agreement\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"grant / subsidy agreement\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"pályázó\",\n      \"translation\": \"applicant, tenderer\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"pályáztatás\",\n      \"translation\": \"tendering, invitation of bids\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"jogszerűtlen\",\n      \"translation\": \"unlawful\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"bírálóbizottság\",\n      \"translation\": \"evaluation committee\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"árajánlat\",\n      \"translation\": \"price quotation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"irányelv\",\n      \"translation\": \"directive\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-04-kozbeszerzes.json",
+  "old": "szigorú európai irányelvek alapján írja elő",
+  "new": "uniós irányelvekkel összhangban írja elő",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "plain"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-04-kozbeszerzes.json",
+  "old": "A tiszta verseny a közpénzek védelmének egyetlen garanciája.",
+  "new": "A tiszta verseny a közpénzek védelmének fontos feltétele.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"egyetlen garancia\" overclaim (reviewer note)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-04-kozbeszerzes.json",
+  "old": "\"c1-corporate-governance\"",
+  "new": "\"c1-corporate-law-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-04-a-gr.json",
+  "old": "Public procurement (*közbeszerzés*) governs billions in state and EU expenditures.",
+  "new": "Public procurement (*közbeszerzés*) governs how state and EU money is spent on works, goods and services.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unsourced \"billions\""
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-04.json",
+  "old": "  \"goal\": [\n    \"I can analyze public procurement tender regulations (*közbeszerzési eljárás, ajánlattétel*).\"",
+  "new": "  \"goal\": [\n    \"I can explain how a bidder can seek a remedy in public procurement (*jogorvoslat*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze public procurement tender regulations (*közbeszerzési eljárás, ajánlattétel*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain how a bidder can seek a remedy in public procurement (*jogorvoslat*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze public procurement tender regulations (*közbeszerzési eljárás, ajánlattétel*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain how a bidder can seek a remedy in public procurement (*jogorvoslat*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-05-ex.json",
+  "id": "c1-szerzodesek-05-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "answer": "jog",
+   "hint": "law",
+   "answers": null
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "WRONG ANSWER: sentence \"magyar anyagi _____ alkalmazását\" takes the bare noun jog, not \"jogot\"; retired tag; hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-05-ex.json",
+  "id": "c1-szerzodesek-05-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-05-ex.json",
+  "id": "c1-szerzodesek-05-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Draft a standard international choice-of-law and arbitration clause.",
+     "answer": "A jelen szerződésre a magyar jog az irányadó. A felek a szerződésből eredő vitás kérdéseket a Magyar Kereskedelmi és Iparkamara mellett működő Kereskedelmi Választottbíróság hatáskörébe utalják."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; the court is the Kereskedelmi Választottbíróság (reviewer note)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-05-ex.json",
+  "id": "c1-szerzodesek-05-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "options": [
+    "A Róma I. rendelet.",
+    "A Brüsszel Ia. rendelet.",
+    "A Róma II. rendelet."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; wrong options were absurd customs items; now real regulations with one fault (wrong subject)"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-szerzodesek-05-voc.json",
+  "old": "      \"translation\": \"EU single / internal market\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"EU single / internal market\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"irányadó\",\n      \"translation\": \"governing, applicable\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"fellebbezés\",\n      \"translation\": \"appeal\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"választottbíráskodás\",\n      \"translation\": \"arbitration\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Kereskedelmi Választottbíróság\",\n      \"translation\": \"Court of Arbitration (at the Hungarian Chamber of Commerce and Industry)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"New York-i Egyezmény\",\n      \"translation\": \"New York Convention (on foreign arbitral awards)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"rendelet\",\n      \"translation\": \"regulation, decree\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-05-nemzetkozimaganjog.json",
+  "old": "Az uniós Róma I. és Brüsszel Ia. rendeletek megadják a feleknek a jogválasztás (choice of law) szabadságát. A nemzetközi kereskedelemben azonban az állami bíróságok helyett egyre gyakrabban a Magyar Kereskedelmi és Iparkamara mellett működő Állandó Választottbíróságot jelölik ki. A választottbíráskodás gyors, diszkrét, és a New York-i Egyezmény révén döntései a világ szinte minden országában közvetlenül végrehajthatók, biztosítva a nemzetközi üzlet zavartalan működését.",
+  "new": "Az uniós Róma I. rendelet a feleknek a jogválasztás (choice of law) szabadságát biztosítja, a Brüsszel Ia. rendelet pedig a joghatóság szabályait rögzíti. A nemzetközi kereskedelemben az állami bíróságok helyett gyakran a Magyar Kereskedelmi és Iparkamara mellett működő Kereskedelmi Választottbíróságot jelölik ki. A választottbíráskodás gyakran gyorsabb és diszkrétebb, és a New York-i Egyezmény alapján döntései sok államban végrehajthatók.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "outdated name (since the 2017 arbitration act: Kereskedelmi Választottbíróság); Rome I covers choice of law, Brussels Ia jurisdiction; \"szinte minden ország\", \"közvetlenül\", \"egyre gyakrabban\" overclaim"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-szerzodesek-05-nemzetkozimaganjog.json",
+  "old": "\"c1-eu-harmonization\"",
+  "new": "\"c1-corporate-law-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-05-a-gr.json",
+  "old": "Permanent Arbitration Court attached to the Hungarian Chamber of Commerce (*MKIK*)",
+  "new": "Court of Arbitration attached to the Hungarian Chamber of Commerce and Industry (*MKIK*)",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "outdated name"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-szerzodesek-05-a-gr.json",
+  "old": "\"title\": \"Private International Law: Choice of Law, Rome I, and Brussels Ibis\"",
+  "new": "\"title\": \"Private International Law: Choice of Law, Rome I, and Brussels Ia\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "typo Ibis"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-05.json",
+  "old": "\"grammar\": \"Private International Law: Choice of Law, Rome I, and Brussels Ibis\"",
+  "new": "\"grammar\": \"Private International Law: Choice of Law, Rome I, and Brussels Ia\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "typo Ibis"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-05.json",
+  "old": "\"title\": \"Private International Law: Choice of Law, Rome I, and Brussels Ibis\"",
+  "new": "\"title\": \"Private International Law: Choice of Law, Rome I, and Brussels Ia\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "typo Ibis"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-05.json",
+  "old": "  \"goal\": [\n    \"I can analyze private international law in Hungarian commercial contracts (*nemzetközi magánjog*).\"",
+  "new": "  \"goal\": [\n    \"I can explain how parties choose the governing law and an arbitration court (*jogválasztás*, *választottbíróság*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-05.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze private international law in Hungarian commercial contracts (*nemzetközi magánjog*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain how parties choose the governing law and an arbitration court (*jogválasztás*, *választottbíróság*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-05.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze private international law in Hungarian commercial contracts (*nemzetközi magánjog*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain how parties choose the governing law and an arbitration court (*jogválasztás*, *választottbíróság*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-4",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "sentence": "A startup-befektetésnél a szindikátusi szerződés többéves alapítói _____ ír elő.",
+   "hint": "zárolás, object of the verb",
+   "english": "In a startup investment the shareholders' agreement provides for a multi-year founder lock-up."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "multi-year (not \"four-year\"); hint named the ending; category vocabulary -> accusative skill"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-5",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "hoz-suffix"
+   ],
+   "hint": "Döntőbizottság, the body turned to"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "hint named the ending; the -hoz is the tested form (known)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "answer": null,
+   "answers": [
+    "jog"
+   ],
+   "hint": "law"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"jogválasztás\" does not fit \"az alkalmazandó _____ kérdésében\""
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-7",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "mentesség, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-8",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "sentence": "A választottbírósági döntéseket sok országban _____ végre.",
+   "hint": "hajt, 3rd person plural, definite",
+   "answer": null,
+   "answers": [
+    "hajtják"
+   ],
+   "english": "Arbitral awards are enforced in many countries."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "hint named the ending; \"világszerte közvetlenül\" overclaim; \"-hatók\" participle form is later: finite verb"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-9",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "question": "Mi a jogbiztonság szerepe az üzleti életben?",
+   "options": [
+    "A kiszámítható szerződéses szabályok segítik a felek közötti bizalmat.",
+    "A jogi szabályozás helyett elegendő a felek szóbeli megállapodása.",
+    "A bíróságnak csak a szóbeli egyezségeket kell utólag jóváhagynia."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "taste stem \"legmélyebben\"; absurd/absolute wrong options"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-10",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-11",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Write a short evaluation of the role of arbitration in international commercial trade.",
+     "answer": "A választottbíráskodás gyakran gyors vitarendezést kínál, és döntései a New York-i Egyezmény alapján sok államban végrehajthatók."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"sarokköve\", \"globálisan\" overclaim"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json",
+  "id": "c1-szerzodesek-consolidation-12",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-corporate-law-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Formulate a concluding thought on contractual ethics in business.",
+     "answer": "Az üzleti kapcsolatok a megbízhatóságra, az adott szó tiszteletére és a hosszú távú kölcsönös bizalomra épülnek."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; value judgement phrased as a plain statement"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-consolidation.json",
+  "old": "  \"goal\": [\n    \"I can navigate corporate M&A transactions, legal due diligence, and share purchase agreements.\"",
+  "new": "  \"goal\": [\n    \"I can talk about the main topics of this unit: takeovers, venture capital, competition law, public procurement and arbitration.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-consolidation.json",
+  "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can navigate corporate M&A transactions, legal due diligence, and share purchase agreements.\"",
+  "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can talk about the main topics of this unit: takeovers, venture capital, competition law, public procurement and arbitration.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-szerzodesek-consolidation.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can navigate corporate M&A transactions, legal due diligence, and share purchase agreements.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can talk about the main topics of this unit: takeovers, venture capital, competition law, public procurement and arbitration.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-01-ex.json",
+  "id": "c1-emberijogok-01-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "elégtétel, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-international-treaty-framing; accusative -t (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-01-ex.json",
+  "id": "c1-emberijogok-01-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-01-ex.json",
+  "id": "c1-emberijogok-01-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-01-ex.json",
+  "id": "c1-emberijogok-01-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; concept question: vocabulary"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-emberijogok-01-voc.json",
+  "old": "      \"translation\": \"exhaustion of domestic remedies\",\n      \"pos\": \"expression\"\n    }\n  ]",
+  "new": "      \"translation\": \"exhaustion of domestic remedies\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"megalázó\",\n      \"translation\": \"degrading, humiliating\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"gyülekezési jog\",\n      \"translation\": \"right of assembly\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kárvallott\",\n      \"translation\": \"victim, injured party\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"ítél\",\n      \"translation\": \"to award, to sentence, to judge\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"észszerű\",\n      \"translation\": \"reasonable\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-01-strasbourg.json",
+  "old": "az a nemzetközi szentély, amelyhez az Atlanti-óceántól a Kaukázusig több mint hétszázmillió európai polgár fordulhat közvetlen panasszal saját kormánya ellen.",
+  "new": "az a nemzetközi fórum, amelyhez az Atlanti-óceántól a Kaukázusig több száz millió európai polgár fordulhat közvetlen panasszal saját kormánya ellen.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "outdated figure (46 states since 2022, about 675 million): \"több száz millió\" (reviewer facts); \"szentély\" flourish"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-01-strasbourg.json",
+  "old": "Magyarországról évente beadványok százai érkeznek a Rajna-parti városba. A bíróság döntései nyomán az állam kénytelen volt felszámolni a börtönök méltatlan túlzsúfoltságát, kártérítést fizetni az évtizedekig elhúzódó perek kárvallottjainak, és megerősíteni a tisztességes eljáráshoz való jog garanciáit. Strasbourg ítéletei nem támadást jelentenek a nemzeti szuverenitás ellen, hanem az európai civilizáció közös morális mércéjét érvényesítik.",
+  "new": "Magyarországról is érkeztek beadványok a Rajna-parti városba. A Varga és társai ügyben (2015) a bíróság mintaítéletben állapította meg, hogy a magyar börtönök túlzsúfoltsága sérti az Egyezmény 3. cikkét, és az államtól hatékony jogorvoslat megteremtését várta el. Más ügyekben az elhúzódó eljárások miatt ítélt meg igazságos elégtételt a panaszosoknak. A bíróság ítéletei az Egyezményben rögzített közös mércét érvényesítik.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unsourced \"hundreds a year\"; \"felszámolta\" overclaims the effect; \"évtizedekig\"; the sovereignty line is a judgement in a present-day dispute (reviewer facts); Varga and Others 2015 pilot judgment is sure"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-01-strasbourg.json",
+  "old": "\"c1-international-treaty-framing\"",
+  "new": "\"c1-minority-protections-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-01.json",
+  "old": "  \"goal\": [\n    \"I can analyze the application of the European Convention on Human Rights in Hungarian courts.\"",
+  "new": "  \"goal\": [\n    \"I can explain what the European Convention on Human Rights and the Strasbourg Court do.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-01.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the application of the European Convention on Human Rights in Hungarian courts.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the European Convention on Human Rights and the Strasbourg Court do.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-01.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the application of the European Convention on Human Rights in Hungarian courts.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the European Convention on Human Rights and the Strasbourg Court do.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-02-ex.json",
+  "id": "c1-emberijogok-02-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "plural-nouns-k"
+   ],
+   "sentence": "A törvényi feltételek teljesülése esetén a nemzetiségi településeken kötelező a kétnyelvű _____ kihelyezése.",
+   "hint": "place-name sign, plural",
+   "english": "When the statutory conditions are met, bilingual place-name signs must be put up in nationality settlements."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; plural -k (known); hint named the ending; law only requires bilingual signs under conditions"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-02-ex.json",
+  "id": "c1-emberijogok-02-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-02-ex.json",
+  "id": "c1-emberijogok-02-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say why minority languages count as part of the cultural heritage.",
+     "answer": "A kisebbségi nyelvek a közös kulturális örökség részei; megőrzésük a közösségek identitását és a sokszínűséget szolgálja."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"duty of the majority society\" is a judgement"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-02-ex.json",
+  "id": "c1-emberijogok-02-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "options": [
+    "Joguk van az anyanyelvű vagy kétnyelvű oktatáshoz az óvodától a középiskoláig.",
+    "Az anyanyelvet csak délutáni szakkörök és vasárnapi iskolák keretében tanulhatják.",
+    "Intézményt csak akkor működtethetnek, ha az anyaország fedezi a költségeket."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"Kizárólag\" tell; wrong options one fault each"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-emberijogok-02-voc.json",
+  "old": "      \"translation\": \"majority society\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"majority society\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"védőpajzs\",\n      \"translation\": \"protective shield\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"létesít\",\n      \"translation\": \"to establish, to set up\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"ápol\",\n      \"translation\": \"to cultivate, to nurse\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"egynyelvű\",\n      \"translation\": \"monolingual\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"lovári\",\n      \"translation\": \"Lovari (a Romani language)\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-02-nyelvikarta.json",
+  "old": "míg Szabolcsban a lovári és a beás cigány nyelv őrzi évszázados szóbeli hagyományait.",
+  "new": "míg a lovári és a beás nyelv a roma közösségek szóbeli hagyományát őrzi.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "reviewer facts: Beás is spoken mainly in south Transdanubia, not Szabolcs: place dropped"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-02-nyelvikarta.json",
+  "old": "A törvény garantálja, hogy a nemzetiségi közösségek saját nyelvükön tanulhassanak az óvodától az érettségiig, és saját anyanyelvüket használhassák a helyi önkormányzati testületekben. Egy nyelv kihalása pótolhatatlan veszteség az egész emberiség számára; megőrzésük a többségi nemzet legnemesebb kulturális kötelessége.",
+  "new": "A Kartát Magyarország 1995-ben erősítette meg; a 2011-es nemzetiségi törvény külön rögzíti, hogy a nemzetiségek anyanyelven tanulhassanak az óvodától a középiskoláig, és használhassák anyanyelvüket a helyi önkormányzatokban. A nyelvek védelme a kisebbségi közösségek kulturális örökségének megőrzését szolgálja.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "reviewer facts: Charter (ratified 1995) and the 2011 nationality act are two things (\"A törvény garantálja\" conflated them); \"legnemesebb kötelesség\" judgement; exact scope of the law: check"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-02-nyelvikarta.json",
+  "old": "\"c1-minority-protection-clauses\"",
+  "new": "\"c1-minority-protections-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-02-a-gr.json",
+  "old": "Hungary signed and ratified the *Regionális vagy Kisebbségi Nyelvek Európai Kartája*, undertaking specific commitments for 14 minority languages (including German, Slovak, Romanian, Serbian, Croatian, Romani, and Boyash).",
+  "new": "Hungary signed the *Regionális vagy Kisebbségi Nyelvek Európai Kartája* and ratified it in 1995, undertaking specific commitments for a number of minority languages (including German, Slovak, Romanian, Serbian, Croatian, Romani and Boyash).",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the count of 14 not confirmed"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-02-a-gr.json",
+  "old": "Under the Charter, multi-ethnic municipalities must provide bilingual place-name signs (*kétnyelvű helységnévtáblák*), mother-tongue kindergarten instruction, and translation in official local government proceedings.",
+  "new": "The Charter and the Hungarian nationality law call for measures such as bilingual place-name signs (*kétnyelvű helységnévtáblák*), mother-tongue kindergarten instruction and the use of the minority language in local government, under conditions set by law.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the Charter does not itself oblige municipalities; conditions apply"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-02.json",
+  "old": "  \"goal\": [\n    \"I can analyze the European Charter for Regional or Minority Languages (*Regionális vagy Kisebbségi Nyelvek Európai Kartája*).\"",
+  "new": "  \"goal\": [\n    \"I can explain what the European Charter for Regional or Minority Languages protects (*Regionális vagy Kisebbségi Nyelvek Európai Kartája*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-02.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the European Charter for Regional or Minority Languages (*Regionális vagy Kisebbségi Nyelvek Európai Kartája*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the European Charter for Regional or Minority Languages protects (*Regionális vagy Kisebbségi Nyelvek Európai Kartája*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-02.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the European Charter for Regional or Minority Languages (*Regionális vagy Kisebbségi Nyelvek Európai Kartája*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the European Charter for Regional or Minority Languages protects (*Regionális vagy Kisebbségi Nyelvek Európai Kartája*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-03-ex.json",
+  "id": "c1-emberijogok-03-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "options": [
+    "Hogy az iskolai etnikai szegregáció jogellenes, és sérelemdíj megfizetésére kötelezi az intézményfenntartót.",
+    "Hogy a bíróságok nem vizsgálhatják felül az iskolák pedagógiai módszertani döntéseit.",
+    "Hogy az elkülönítés akkor jogszerű, ha a szülők nem tiltakoznak ellene."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag not present; wrong option 3 (\"minden esetben jogszerű\") is close to a possible true statement for justified remedial classes and has an absolute: now one clear fault"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-03-ex.json",
+  "id": "c1-emberijogok-03-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "sentence": "A bíróság megállapította az egyenlő _____ követelményének megsértését.",
+   "english": "The court found a violation of the requirement of equal treatment."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"súlyos\" overstates; word item"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-03-ex.json",
+  "id": "c1-emberijogok-03-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-03-ex.json",
+  "id": "c1-emberijogok-03-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Describe the harm that ethnic school segregation can cause.",
+     "answer": "A szegregáció elmélyítheti a társadalmi előítéleteket, csökkentheti a hátrányos helyzetű gyermekek esélyeit, és gyengítheti a társadalmi integrációt."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"megfosztja\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-03-ex.json",
+  "id": "c1-emberijogok-03-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "options": [
+    "Stratégiai pereskedéssel az egyenlő bánásmód megsértése miatt.",
+    "Népszavazási kezdeményezést indítottak az iskolai szegregáció betiltásáért.",
+    "Nemzetközi bojkottot szerveztek a helyi önkormányzat intézményei ellen."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; wrong options were absurd (constitutional amendment to the Kúria president)"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-emberijogok-03-voc.json",
+  "old": "      \"translation\": \"equality of opportunity\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"equality of opportunity\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"elkülönítés\",\n      \"translation\": \"separation, segregation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"sérelemdíj\",\n      \"translation\": \"compensation for non-material harm\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"jogszerű\",\n      \"translation\": \"lawful\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"bojkott\",\n      \"translation\": \"boycott\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"módszertani\",\n      \"translation\": \"methodological\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"alkotmánymódosítás\",\n      \"translation\": \"constitutional amendment\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-03-szegregacio.json",
+  "old": "Amikor a Heves megyei Gyöngyöspata általános iskolájában a roma gyermekeket elkülönített osztálytermekbe, a földszintre szorították, és megfosztották őket a színvonalas oktatástól és az iskolai kirándulásoktól, nemcsak pedagógiai hiba történt: az egyenlő emberi méltóság alkotmányos parancsa sérült meg brutálisan. A roma szülők és az Esélyt a Hátrányos Helyzetű Gyerekeknek Alapítvány (CFA) jogászai elhatározták, hogy bíróság elé viszik az ügyet.",
+  "new": "A Heves megyei Gyöngyöspata általános iskolájában a roma gyermekek elkülönített osztályokba kerültek. A későbbi bírósági megállapítások szerint ez sértette az egyenlő bánásmód követelményét. A roma szülők és az Esélyt a Hátrányos Helyzetű Gyerekeknek Alapítvány jogászai bírósághoz fordultak.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "reviewer facts: \"brutálisan\" loaded; unconfirmed details (földszint, kirándulások) removed; wrong acronym CFA"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-03-szegregacio.json",
+  "old": "A per éveken át tartott, és a legfelsőbb bírói fórumig, a Kúriáig jutott. 2020-ban a Kúria történelmi ítéletében kimondta: a szegregáció jogellenes volt, és több mint százmillió forintos nem vagyoni kártérítést (sérelemdíjat) ítélt meg a megalázott diákoknak. Az ítélet világos üzenetet küldött: a származás szerinti elkülönítés nem fogadható el egy európai jogállamban, és az oktatás valódi esélyegyenlősége minden gyermek elidegeníthetetlen joga.",
+  "new": "A per éveken át tartott, és a Kúriáig jutott. 2020-ban a Kúria megállapította, hogy az elkülönítés jogellenes volt, és sérelemdíjat (nem vagyoni kártérítést) ítélt meg a diákoknak. Az ítélet szerint a származás szerinti elkülönítés sérti az egyenlő bánásmód követelményét.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the compensation figure is dropped (reviewer: keep only if sure); \"történelmi\" and \"elidegeníthetetlen\" judgements; year 2020 check"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-03-szegregacio.json",
+  "old": "\"c1-minority-protection-clauses\"",
+  "new": "\"c1-minority-protections-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-03-a-gr.json",
+  "old": "In 2020, the Hungarian Supreme Court (*Kúria*) affirmed the award of substantial non-material damages (*sérelemdíj*), establishing that educational segregation causes irreparable harm to dignity and future life chances.",
+  "new": "In 2020 the Hungarian Supreme Court (*Kúria*) found the segregation unlawful and awarded non-material damages (*sérelemdíj*) to the pupils.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"irreparable harm to dignity and future life chances\" is not what the ruling is known to say"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-03.json",
+  "old": "\"title\": \"Educational Desegregation and Roma Civil Rights: The Gyöngyöspata Precedent\",",
+  "new": "\"title\": \"The Gyöngyöspata School Case\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "plainer title"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-03.json",
+  "old": "  \"goal\": [\n    \"I can analyze strategic litigation on educational segregation (*iskolai szegregáció, deszegregáció*).\"",
+  "new": "  \"goal\": [\n    \"I can describe the Gyöngyöspata school case and what the Kúria decided.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-03.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze strategic litigation on educational segregation (*iskolai szegregáció, deszegregáció*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe the Gyöngyöspata school case and what the Kúria decided.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-03.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze strategic litigation on educational segregation (*iskolai szegregáció, deszegregáció*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe the Gyöngyöspata school case and what the Kúria decided.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-04-ex.json",
+  "id": "c1-emberijogok-04-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "options": [
+    "Hogy a fogyatékossággal élő személy segítséggel maga hozhasson döntéseket, ne vegyék el a cselekvőképességét.",
+    "Hogy az állam minden fontosabb vagyoni döntés jóváhagyására gondnokot jelöljön ki számára.",
+    "Hogy a fogyatékossággal élők ellátását a nagy szociális otthonokban központosítsák az országban."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag not present; length give-away (126 vs 82) and \"kizárólag\""
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-04-ex.json",
+  "id": "c1-emberijogok-04-controlled-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-universal-jurisdiction; word item"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-04-ex.json",
+  "id": "c1-emberijogok-04-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-04-ex.json",
+  "id": "c1-emberijogok-04-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-04-ex.json",
+  "id": "c1-emberijogok-04-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "question": "Miért tekintik alapjogi kérdésnek az akadálymentesítést?",
+   "options": [
+    "Mert az egyenlő hozzáférés hiánya kizárhatja őket az oktatásból, a munkából és a közéletből.",
+    "Mert az akadálymentesítés elsősorban építészeti és esztétikai kérdés, nem jogi kérdés.",
+    "Mert az akadálymentesítést a magánszemélyek önkéntes adományai finanszírozzák."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"kizárólag\" tell; wrong options were not answers to \"why\""
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-emberijogok-04-voc.json",
+  "old": "      \"translation\": \"independent living\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"independent living\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"gondnok\",\n      \"translation\": \"guardian\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szemléletváltás\",\n      \"translation\": \"change of outlook\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"infokommunikációs\",\n      \"translation\": \"info-communication (adjective)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"műemlékvédelem\",\n      \"translation\": \"heritage protection\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fogyatékosságjogi\",\n      \"translation\": \"disability-rights (adjective)\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-04-fogyatekossagjogok.json",
+  "old": "Hosszú évszázadokon át a társadalom a fogyatékossággal élő személyeket szomorú sorsú, tehetetlen gondozottakként kezelte, akiket távoli, zárt intézményekbe kell zárni, és meg kell fosztani minden döntési joguktól. A huszonegyedik században azonban a fogyatékosságjogi mozgalom gyökeres szemléletváltást ért el az ENSZ egyezményének elfogadásával:",
+  "new": "Sokáig a fogyatékossággal élő személyeket gyakran tehetetlen gondozottakként kezelték, zárt intézményekben helyezték el őket, és megfosztották őket a döntési joguktól. A fogyatékosságjogi mozgalom az ENSZ 2006-ban elfogadott egyezményével szemléletváltást ért el:",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "generalising \"centuries\"; date of the CRPD added (2006, sure)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-04-fogyatekossagjogok.json",
+  "old": "Magyarországon az új Polgári Törvénykönyv megteremtette a támogatott döntéshozatal intézményét. A cél többé nem a cselekvőképesség elvétele, hanem a segítés:",
+  "new": "Magyarországon az új Polgári Törvénykönyv bevezette a támogatott döntéshozatal intézményét a gondnokság egyik kevésbé korlátozó alternatívájaként. A cél a cselekvőképesség elvétele helyett a segítés:",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the Civil Code did not abolish guardianship; \"többé nem\" overclaims (check)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-04-fogyatekossagjogok.json",
+  "old": "nem kegy, hanem annak elismerése, hogy minden ember teljes jogú és értékes tagja a társadalomnak.",
+  "new": "az egyezmény szerint nem kegy, hanem jogi követelmény.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "judgement"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-04-fogyatekossagjogok.json",
+  "old": "\"c1-universal-jurisdiction\"",
+  "new": "\"c1-minority-protections-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-04-a-gr.json",
+  "old": "The UN CRPD prompted a paradigm shift in Hungarian civil law: replacing plenary guardianship (*kizáró gondnokság*) with *támogatott döntéshozatal* (supported decision-making), preserving the legal capacity (*cselekvőképesség*) of persons with disabilities.",
+  "new": "Following the UN CRPD, the Hungarian Civil Code introduced *támogatott döntéshozatal* (supported decision-making) as a less restrictive alternative to guardianship (*gondnokság*), with the aim of preserving the legal capacity (*cselekvőképesség*) of persons with disabilities.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"replacing plenary guardianship\" overclaims"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-04-a-gr.json",
+  "old": "In child protection and disability care, international human rights law mandates *kitagolás* (deinstitutionalization): transitioning residents from isolated mega-institutions to community-based supported apartments (*támogatott lakhatás*).",
+  "new": "The CRPD recognises the right to live in the community; in Hungary the *kitagolás* programme (deinstitutionalization) moves residents from large institutions to community-based supported housing (*támogatott lakhatás*).",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"mandates\" overstated; CRPD Art. 19"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "\"title\": \"Advocacy for Vulnerable Groups: Disability Rights and Child Protection\",",
+  "new": "\"title\": \"Disability Rights and Independent Living\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "child protection is not practised in the lesson"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "  \"goal\": [\n    \"I can analyze the UN Convention on the Rights of Persons with Disabilities (CRPD).\"",
+  "new": "  \"goal\": [\n    \"I can explain what the UN disability convention (CRPD) changes for legal capacity and independent living.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the UN Convention on the Rights of Persons with Disabilities (CRPD).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the UN disability convention (CRPD) changes for legal capacity and independent living.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the UN Convention on the Rights of Persons with Disabilities (CRPD).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the UN disability convention (CRPD) changes for legal capacity and independent living.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "  \"goal\": [\n    \"I can explain what the UN disability convention (CRPD) changes for legal capacity and independent living.\",\n    \"I can evaluate supported decision-making (*támogatott döntéshozatal*) vs. legal guardianship (*gondnokság*).\",\n    \"I can discuss child protection systems and institutional reform in Hungarian law.\"",
+  "new": "  \"goal\": [\n    \"I can explain what the UN disability convention (CRPD) changes for legal capacity and independent living.\",\n    \"I can evaluate supported decision-making (*támogatott döntéshozatal*) vs. legal guardianship (*gondnokság*).\",\n    \"I can discuss what moving from large institutions to community living means (*kitagolás*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the UN disability convention (CRPD) changes for legal capacity and independent living.\",\n        \"I can evaluate supported decision-making (*támogatott döntéshozatal*) vs. legal guardianship (*gondnokság*).\",\n        \"I can discuss child protection systems and institutional reform in Hungarian law.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the UN disability convention (CRPD) changes for legal capacity and independent living.\",\n        \"I can evaluate supported decision-making (*támogatott döntéshozatal*) vs. legal guardianship (*gondnokság*).\",\n        \"I can discuss what moving from large institutions to community living means (*kitagolás*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the UN disability convention (CRPD) changes for legal capacity and independent living.\",\n        \"I can evaluate supported decision-making (*támogatott döntéshozatal*) vs. legal guardianship (*gondnokság*).\",\n        \"I can discuss child protection systems and institutional reform in Hungarian law.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the UN disability convention (CRPD) changes for legal capacity and independent living.\",\n        \"I can evaluate supported decision-making (*támogatott döntéshozatal*) vs. legal guardianship (*gondnokság*).\",\n        \"I can discuss what moving from large institutions to community living means (*kitagolás*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-05-ex.json",
+  "id": "c1-emberijogok-05-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "dative-possessor"
+   ],
+   "hint": "végrehajtás, the possessor of the next noun"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; the -nak possessor form (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-05-ex.json",
+  "id": "c1-emberijogok-05-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "tiles": [
+    "A",
+    "független",
+    "emberi",
+    "jogi",
+    "intézmény",
+    "a",
+    "kormánytól",
+    "függetlenül",
+    "mondhat",
+    "véleményt."
+   ],
+   "solution": [
+    "A",
+    "független",
+    "emberi",
+    "jogi",
+    "intézmény",
+    "a",
+    "kormánytól",
+    "függetlenül",
+    "mondhat",
+    "véleményt."
+   ],
+   "english": "An independent human rights institution can give its opinion independently of the government."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"tartópillére\" flourish (judgement); new builder"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-05-ex.json",
+  "id": "c1-emberijogok-05-production-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say why the Paris Principles require independence.",
+     "answer": "A Párizsi Elvek szerint az intézménynek függetlennek kell lennie, hogy a kormánytól függetlenül mondhasson véleményt, és a polgárok megbízhassanak benne."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; prompt \"single most critical\" taste; answer \"kormányzati propagandaszerv\" is a political judgement"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-05-ex.json",
+  "id": "c1-emberijogok-05-check-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "options": [
+    "Hogy minden állam emberi jogi helyzetét rendszeresen megvizsgálják más államok, nyilvános ülésen.",
+    "Hogy kötelező jogi szankciókat és gazdasági embargót vezessen be a jogsértő államok ellen.",
+    "Hogy a fejlődő országoknak intézményfejlesztési pénzügyi segélyt nyújtson a felülvizsgálat után."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; length give-away (124 vs 89), \"kizárólag\""
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-emberijogok-05-voc.json",
+  "old": "      \"translation\": \"societal solidarity\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"societal solidarity\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"igazságügyi\",\n      \"translation\": \"judicial, relating to justice\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"alárendeltség\",\n      \"translation\": \"subordination\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"beszámolási kötelezettség\",\n      \"translation\": \"duty to report\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"embargó\",\n      \"translation\": \"embargo\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"implementáció\",\n      \"translation\": \"implementation\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-05-parisprinciples.json",
+  "old": "Magyarország delegációja előtt svéd, kanadai, brazil vagy dél-afrikai diplomaták tesznek fel kényelmetlen kérdéseket az igazságszolgáltatás függetlenségéről, a romák integrációjáról és a sajtószabadságról.",
+  "new": "Az érintett állam delegációja előtt más államok diplomatái tesznek fel kérdéseket és fogalmaznak meg ajánlásokat.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "invented specifics (named countries and topics) removed"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-05-parisprinciples.json",
+  "old": "A valódi függetlenség azt jelenti, hogy a jogvédő intézmény nem szolgálhatja a pillanatnyi kormányzati érdekeket; kötelessége a legkiszolgáltatottabbak mellé állni akkor is, ha ez politikai konfliktussal jár. Mert az emberi jogok tisztelete nem nemzetközi divat vagy bürokratikus kötelezettség, hanem a szabad és méltóságteljes emberi élet egyetlen lehetséges fundamentuma.",
+  "new": "A Párizsi Elvek szerint az ilyen intézménynek törvényben rögzített függetlenséggel kell működnie, és akkor is véleményt kell tudnia mondani, ha ez a kormány számára kellemetlen.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "normative claims and moralising ending replaced by what the Principles require (paraphrase)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-emberijogok-05-parisprinciples.json",
+  "old": "\"c1-universal-jurisdiction\"",
+  "new": "\"c1-minority-protections-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired slug in story grammar field"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-05-a-gr.json",
+  "old": "must possess complete constitutional, operational, and financial independence from the government.",
+  "new": "must have guaranteed independence from the government: a legal basis, its own operation and its own funding.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"complete\" overstated"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-emberijogok-05-a-gr.json",
+  "old": "every state's human rights record is examined every 4.5 years in Geneva by peer nations, civil society coalitions, and international rapporteurs.",
+  "new": "every state's human rights record is examined in Geneva roughly every 4.5 years by other states, with input from civil society and UN bodies.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the review is by states; civil society only submits information (check cycle length for the present)"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-05.json",
+  "old": "  \"goal\": [\n    \"I can analyze the Paris Principles governing National Human Rights Institutions (NHRIs).\"",
+  "new": "  \"goal\": [\n    \"I can explain what the Paris Principles and the UN Universal Periodic Review are.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-05.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the Paris Principles governing National Human Rights Institutions (NHRIs).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what the Paris Principles and the UN Universal Periodic Review are.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-05.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the Paris Principles governing National Human Rights Institutions (NHRIs).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what the Paris Principles and the UN Universal Periodic Review are.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "options": [
+    "A hazai bírósági jogorvoslatok teljes kimerítése.",
+    "Külföldi állampolgárság megszerzése a panasz benyújtása előtt.",
+    "Az ügyvédi kamarai tagság megléte a panaszos oldalán."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; length give-away (49 vs 36)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "question": "Mit állapított meg a Kúria a gyöngyöspatai ügyben?",
+   "options": [
+    "Az iskolai etnikai szegregáció jogellenes, és nem vagyoni kártérítést von maga után.",
+    "A szegregált oktatás megengedhető, ha a szülők nem tiltakoznak ellene.",
+    "A bíróságoknak nincs hatáskörük az iskolafenntartók szervezeti döntéseinek felülvizsgálatára."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"legfőbb üzenete\" taste; wrong option 2 could pass for a true remark about remedial classes"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-4",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "elégtétel, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "sentence": "A fogyatékossággal élők számára az _____ segíti a társadalmi életben való egyenlő részvételt.",
+   "english": "For persons with disabilities, accessibility helps equal participation in social life."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"biztosítja a társadalmi életben való egyenlő részvételt\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-6",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "on-en-on"
+   ],
+   "hint": "kötelezettség, obligation"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; superessive -n/-on/-en (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-7",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-8",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "sentence": "A cselekvőképesség elvétele helyett az ENSZ-egyezmény a _____ döntéshozatalt részesíti előnyben.",
+   "english": "Instead of taking away legal capacity, the UN convention favours supported decision-making."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"a modern jog\" generalisation"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-9",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "question": "Mi az egyetemes emberi jogok alapgondolata?",
+   "options": [
+    "Az emberi jogok minden embert egyformán megillető jogok, az állampolgárságtól függetlenül.",
+    "Az emberi jogok érvényesülése az állam gazdasági teljesítőképességétől függ.",
+    "Az emberi jogok csak az állampolgárokat illetik meg, és válság idején szűkíthetők."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; taste stem \"legmélyebben\", \"legfőbb\", \"kizárólag\""
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-10",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "tiles": [
+    "A",
+    "kisebbségek",
+    "védelme",
+    "az",
+    "emberi",
+    "jogi",
+    "egyezmények",
+    "egyik",
+    "fontos",
+    "feladata."
+   ],
+   "solution": [
+    "A",
+    "kisebbségek",
+    "védelme",
+    "az",
+    "emberi",
+    "jogi",
+    "egyezmények",
+    "egyik",
+    "fontos",
+    "feladata."
+   ],
+   "english": "The protection of minorities is one important task of the human rights conventions."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; builder was a judgement (\"nélkülözhetetlen záloga\")"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-11",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say what strategic litigation is for.",
+     "answer": "A stratégiai pereskedés egyetlen esetből is kiindulhat, és rendszerszintű diszkriminációra hívhatja fel a figyelmet."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"fegyver ... felszámolni\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json",
+  "id": "c1-emberijogok-consolidation-12",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-minority-protections-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say what human rights protection takes into account.",
+     "answer": "Az emberi jogi védelem a kisebbségek és a kiszolgáltatott csoportok helyzetét is figyelembe veszi."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; political judgement"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-consolidation.json",
+  "old": "  \"goal\": [\n    \"I can navigate ECHR Strasbourg litigation, Article 6 fair trial, and just satisfaction awards.\"",
+  "new": "  \"goal\": [\n    \"I can talk about the main topics of this unit: the Strasbourg Court, minority languages, school segregation, disability rights and human rights monitoring.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-consolidation.json",
+  "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can navigate ECHR Strasbourg litigation, Article 6 fair trial, and just satisfaction awards.\"",
+  "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can talk about the main topics of this unit: the Strasbourg Court, minority languages, school segregation, disability rights and human rights monitoring.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-emberijogok-consolidation.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can navigate ECHR Strasbourg litigation, Article 6 fair trial, and just satisfaction awards.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can talk about the main topics of this unit: the Strasbourg Court, minority languages, school segregation, disability rights and human rights monitoring.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-01-ex.json",
+  "id": "c1-polgariengedetlenseg-01-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "options": [
+    "A békés, erőszakmentes együtt nem működés és a közjogi törvényekhez való ragaszkodás.",
+    "A hadsereg aktív támogatása és a közös adók önkéntes megfizetése a kormányzat felé.",
+    "A nemzetközi bíróságokhoz benyújtott kártérítési perek sorozata a bécsi udvar ellen."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (85 vs 65)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-01-ex.json",
+  "id": "c1-polgariengedetlenseg-01-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "concessive-indefinites"
+   ],
+   "sentence": "_____ megtorlást alkalmazott is a hatalom, sokan megtagadták az önkéntes adófizetést.",
+   "hint": "whatever kind",
+   "answers": [
+    "Bármilyen",
+    "Akármilyen"
+   ],
+   "answer": null,
+   "english": "Whatever reprisals the authorities used, many refused to pay taxes voluntarily."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "the blank was \"adó\" (a word), so the tag concessive-indefinites tested nothing; the blank is now the tested bármilyen (known B2 skill)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-01-ex.json",
+  "id": "c1-polgariengedetlenseg-01-practice-4",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "hogy-jon-jen"
+   ],
+   "hint": "hódol, subjunctive, 3rd person singular"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tag concessive-indefinites does not match: the blank is a subjunctive (known, B1 Unit 3)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-01-ex.json",
+  "id": "c1-polgariengedetlenseg-01-practice-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "tiles": [
+    "Az",
+    "adómegtagadás",
+    "a",
+    "passzív",
+    "rezisztencia",
+    "egyik",
+    "fontos",
+    "eszköze",
+    "volt."
+   ],
+   "solution": [
+    "Az",
+    "adómegtagadás",
+    "a",
+    "passzív",
+    "rezisztencia",
+    "egyik",
+    "fontos",
+    "eszköze",
+    "volt."
+   ],
+   "english": "Tax refusal was one important instrument of passive resistance."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "builder tests no concessive: vocabulary; \"legfontosabb gazdasági fegyvere\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-01-ex.json",
+  "id": "c1-polgariengedetlenseg-01-dialogue-6",
+  "set": {
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tag concessive-indefinites does not match: choice between adjective, adverb and noun of one word: unit vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-01-ex.json",
+  "id": "c1-polgariengedetlenseg-01-production-7",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Explain Ferenc Deák's strategy of non-cooperation in one complex sentence.",
+     "answer": "Deák a fegyvertelen nemzet védelmét a jogi folytonosság megőrzésében látta: az önkénnyel való együttműködés és az adófizetés erőszakmentes megtagadásában."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"intégritás\" is a misspelling (integritás); \"felismerte\" is mind-reading, \"leghatékonyabb\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-01-ex.json",
+  "id": "c1-polgariengedetlenseg-01-check-8",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "options": [
+    "A törvénytelen önkényuralmi rendeletek nem érvényteleníthetik az ország legitim alkotmányát.",
+    "A katonai győzelem automatikusan felülírja a korábbi közjogi alaptörvényeket.",
+    "A közjogi folytonosságot csak a végrehajtó hatalom rendelettel biztosíthatja."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired-style tag concessive-indefinites on a concept item; \"kizárólag\" tell"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-polgariengedetlenseg-01-voc.json",
+  "old": "      \"translation\": \"to persist, survive, endure\",\n      \"pos\": \"verb\"\n    }\n  ]",
+  "new": "      \"translation\": \"to persist, survive, endure\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"önkényuralmi\",\n      \"translation\": \"despotic, autocratic\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"pátens\",\n      \"translation\": \"patent (imperial decree)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"abszolutista\",\n      \"translation\": \"absolutist\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"legitim\",\n      \"translation\": \"legitimate\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"kivet\",\n      \"translation\": \"to impose (a tax)\",\n      \"pos\": \"verb\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-01-deak.json",
+  "old": "Deák Ferenc politikája a magyar történelem talán legfegyelmezettebb polgári engedetlenségi stratégiája volt.",
+  "new": "Deák Ferenc nevéhez a magyar történelem egyik legismertebb passzív ellenállási stratégiája fűződik.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"legfegyelmezettebb\" judgement"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-01-deak.json",
+  "old": "A nemesek és polgárok nem fizettek önként adót, nem vállaltak hivatalt az abszolutista adminisztrációban, és a végrehajtókkal szemben rideg elutasítással léptek fel.",
+  "new": "Az ellenállás hívei gyakran megtagadták az önkéntes adófizetést, nem vállaltak hivatalt az abszolutista adminisztrációban, és a végrehajtókkal szemben elutasítóan léptek fel.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "generalisation hedged (tax refusal was not universal)"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-01-deak.json",
+  "old": "Deák világossá tette: a nemzet elviselheti az elnyomást, de önként egyetlen jottányit sem engedhet saját közjogi alkotmányából. 'Ha kell, szenvedni fog a nemzet, hogy megmentse az utókornak alkotmányos szabadságát' – hangoztatta. E passzív, jogi alapú ellenállás nélkül a kiegyezés kompromisszuma elképzelhetetlen lett volna.",
+  "new": "Deák álláspontja szerint a nemzet elviselheti az elnyomást, de önként nem mondhat le a közjogi alkotmányáról. A kiegyezés előkészítésében ez a jogi alapú álláspont fontos szerepet játszott.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "reviewer facts: the quotation in quotation marks is unverifiable: paraphrased, no quotation marks; \"elképzelhetetlen lett volna\" counterfactual dropped"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-polgariengedetlenseg-01-a-gr.json",
+  "old": "Following the defeat of the 1848–49 Revolution, Ferenc Deák championed 'passzív rezisztencia': refusing public office, withholding Austrian taxes, and asserting that unconstitutional decrees had no binding force upon Hungarian citizens.",
+  "new": "After the defeat of the 1848–49 Revolution, Ferenc Deák became a leading voice of 'passzív rezisztencia': refusing public office, in places withholding taxes, and holding that decrees issued against the constitution did not bind Hungarian citizens.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "tax refusal was not Deák's personal policy everywhere (check)"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-polgariengedetlenseg-01-a-gr.json",
+  "old": "Syntactically, historical texts deploy modal participle clauses and concessives: `Nem hódolva az önkénynek, a nemzet ragaszkodott az 1848-as törvényekhez` (Not bowing to autocracy, the nation clung to the 1848 laws).",
+  "new": "You know the adverbial participle in *-va/-ve* from B1 Unit 29; historical texts use it often: *Nem hódolva az önkénynek, a nemzet ragaszkodott az 1848-as törvényekhez* (Not bowing to autocracy, the nation clung to the 1848 laws).",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "B1 -va/-ve presented as C1 syntax; backticks shown literally"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-polgariengedetlenseg-01-a-gr.json",
+  "old": "\"Az adómegtagadás a passzív ellenállás leghatásosabb fegyvere volt.\"",
+  "new": "\"Az adómegtagadás a passzív ellenállás egyik fontos eszköze volt.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "superlative claim"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-polgariengedetlenseg-01-a-gr.json",
+  "old": "\"Tax refusal was the most effective weapon of passive resistance.\"",
+  "new": "\"Tax refusal was one important instrument of passive resistance.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "superlative claim"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-01.json",
+  "old": "  \"goal\": [\n    \"I can analyze Ferenc Deák's doctrine of passive resistance (*passzív rezisztencia, adómegtagadás*).\"",
+  "new": "  \"goal\": [\n    \"I can explain what passive resistance was in the Deák era (*passzív rezisztencia, adómegtagadás*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-01.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze Ferenc Deák's doctrine of passive resistance (*passzív rezisztencia, adómegtagadás*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain what passive resistance was in the Deák era (*passzív rezisztencia, adómegtagadás*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-01.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze Ferenc Deák's doctrine of passive resistance (*passzív rezisztencia, adómegtagadás*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain what passive resistance was in the Deák era (*passzív rezisztencia, adómegtagadás*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-02-ex.json",
+  "id": "c1-polgariengedetlenseg-02-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "question": "Mit fejezett ki a Beszélő szerkesztőinek nyílt névvállalása?",
+   "options": [
+    "Azt, hogy a polgári engedetlenséget nyíltan, erőszak nélkül és felelősséget vállalva gyakorolták.",
+    "Azt, hogy a lap a pártállami hatóságok írásos engedélyével és támogatásával jött létre.",
+    "Azt, hogy a szerkesztők diplomáciai védettséget kaptak a nyugati nagykövetségektől."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"korszakalkotó\" judgement; stem plainer, options adapted"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-02-ex.json",
+  "id": "c1-polgariengedetlenseg-02-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "participle-actions"
+   ],
+   "sentence": "A szerkesztők a házkutatásokkal _____ is folytatták a lap kiadását.",
+   "hint": "szembesül, adverbial participle",
+   "answer": null,
+   "answers": [
+    "szembesülve"
+   ],
+   "english": "Even when faced with house searches, the editors continued to publish the paper."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tag evaluative-stance does not match; \"mély erkölcsi kötelességüktől vezérelve\" is mind-reading; now the -va/-ve form (known, B1 Unit 29)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-02-ex.json",
+  "id": "c1-polgariengedetlenseg-02-practice-4",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "basic-connectors"
+   ],
+   "sentence": "Nem azért terjesztették a lapot, mert a mártíromságot keresték, _____ mert nem akartak tovább hallgatni.",
+   "hint": "nem azért ..., ___ mert",
+   "english": "They did not distribute the paper because they sought martyrdom, but because they did not want to stay silent any longer."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tag evaluative-stance does not match: the blank is nem azért … hanem; \"mintha keresték volna a mártíromságot\" is mind-reading and an odd mintha"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-02-ex.json",
+  "id": "c1-polgariengedetlenseg-02-practice-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "builder tests no evaluative form: vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-02-ex.json",
+  "id": "c1-polgariengedetlenseg-02-dialogue-6",
+  "set": {
+   "teaches": [
+    "potential-hat-het"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tag evaluative-stance does not match: the blank is the potential -hat (known A2 Unit 23)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-02-ex.json",
+  "id": "c1-polgariengedetlenseg-02-production-7",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Write a sentence with 'nem azért..., hanem mert...' about why the opposition distributed samizdat.",
+     "answer": "Az ellenzéki értelmiségiek nem azért terjesztették a szamizdatot, mert nem féltek a veszélytől, hanem mert a független nyilvánosságot fontosnak tartották."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tag; \"nem azért ... mintha figyelmen kívül hagyták volna\" and mind-reading"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-02-ex.json",
+  "id": "c1-polgariengedetlenseg-02-check-8",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "basic-connectors"
+   ],
+   "question": "Melyik mondat fejezi ki helyesen az ellentétet?",
+   "options": [
+    "Nem azért írtak, mert biztonságban érezték magukat, hanem mert nem akartak hallgatni.",
+    "Nem azért írtak, mert biztonságban érezték magukat, vagy mert nem akartak hallgatni.",
+    "Nem azért írtak, mert biztonságban érezték magukat, és mert nem akartak hallgatni."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "stem used grammar terms (struktúra, mellérendelés) and a taste superlative; now the connectors differ"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-polgariengedetlenseg-02-voc.json",
+  "old": "      \"translation\": \"defense of free speech\",\n      \"pos\": \"expression\"\n    }\n  ]",
+  "new": "      \"translation\": \"defense of free speech\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"állambiztonság\",\n      \"translation\": \"state security (service)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"izgatás\",\n      \"translation\": \"incitement (a criminal offence)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"mártíromság\",\n      \"translation\": \"martyrdom\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"deklarál\",\n      \"translation\": \"to declare\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"pártállami\",\n      \"translation\": \"of the party-state\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-02-szamizdat.json",
+  "old": "a szerkesztők – köztük Kis János, Haraszti Miklós és Kőszeg Ferenc – tudatosan vállalták nevüket a címlapon. Ez a polgári engedetlenség radikális fordulata volt: az illegális konspiráció helyett nyílt arccal deklarálták, hogy a szólásszabadság veleszületett alapjog.",
+  "new": "a szerkesztők – köztük Kis János – nevüket vállalva jelentek meg. Ez a polgári engedetlenség új formája volt: az illegális konspiráció helyett nyíltan vállalták a szólásszabadság melletti kiállást.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "reviewer facts: do not list cover names beyond \"köztük Kis János\"; \"veleszületett alapjog\" is a position, not a fact"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-02-szamizdat.json",
+  "old": "a szamizdat a szabadság szigetét hozta létre. Nem azért cselekedtek így, mert nem féltek a büntetéstől, hanem mert felismerték: a diktatúrát a hazugság élteti, és az igazság kimondása az ellenállás legfontosabb formája.",
+  "new": "a szamizdat alternatív nyilvánosságot teremtett. A szerkesztők céljuk szerint a cenzúra nélküli nyilvánosságot akarták megteremteni.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "mind-reading (\"felismerték\"), judgement (\"a diktatúrát a hazugság élteti\"), flourish"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-polgariengedetlenseg-02-a-gr.json",
+  "old": "Rhetorical discourse on dissent highlights moral imperatives over personal safety, using correlative contrastives: `Nem azért terjesztették a szamizdatot, mintha veszélytelen lett volna, hanem mert a nyilvánosság megteremtése elemi erkölcsi kötelességük volt`.",
+  "new": "You know *nem … hanem* from A1 Unit 14; discourse on dissent often extends it: *Nem azért terjesztették a szamizdatot, mert veszélytelen volt, hanem mert a nyilvánosság megteremtését fontosnak tartották.*",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "A1 connector presented as new; the example had an odd \"mintha\" and mind-reading; backticks"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-02.json",
+  "old": "  \"goal\": [\n    \"I can analyze the democratic opposition and samizdat culture (*Beszélő, szamizdat, névvállalás*).\"",
+  "new": "  \"goal\": [\n    \"I can say what samizdat was and why the Beszélő editors published under their names (*szamizdat, névvállalás*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-02.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the democratic opposition and samizdat culture (*Beszélő, szamizdat, névvállalás*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can say what samizdat was and why the Beszélő editors published under their names (*szamizdat, névvállalás*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-02.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the democratic opposition and samizdat culture (*Beszélő, szamizdat, névvállalás*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can say what samizdat was and why the Beszélő editors published under their names (*szamizdat, névvállalás*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-03-ex.json",
+  "id": "c1-polgariengedetlenseg-03-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "bénultság, object of the verb"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-radbruch-formula-syntax; accusative -t (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-03-ex.json",
+  "id": "c1-polgariengedetlenseg-03-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-03-ex.json",
+  "id": "c1-polgariengedetlenseg-03-practice-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-03-ex.json",
+  "id": "c1-polgariengedetlenseg-03-dialogue-6",
+  "set": {
+   "teaches": [
+    "postpositions-basic"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; the blank is the case before mellé (known A1 Unit 18)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-03-ex.json",
+  "id": "c1-polgariengedetlenseg-03-production-7",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say how the 1990 taxi blockade ended.",
+     "answer": "A taxisblokád tárgyalásokkal ért véget, a karhatalom bevetése nélkül, az Érdekegyeztető Tanácsban elért kompromisszummal."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"a magyar demokrácia első nagy próbája\" is a judgement"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-03-ex.json",
+  "id": "c1-polgariengedetlenseg-03-check-8",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "question": "Hogyan ért véget a blokád?",
+   "options": [
+    "Tárgyalásos megegyezéssel, a rendőrség és a hadsereg bevetése nélkül.",
+    "A hadsereg szabadította fel a hidakat és az autópályákat egy hét alatt.",
+    "A kormány lemondott, és a parlament új választást írt ki a válság miatt."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"történelmi jelentőségű\" judgement"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-polgariengedetlenseg-03-voc.json",
+  "old": "      \"translation\": \"crisis management\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"crisis management\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"karhatalom\",\n      \"translation\": \"police and armed forces (of order)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fuvarozó\",\n      \"translation\": \"haulier, carrier\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"áremelés\",\n      \"translation\": \"price rise\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"közrend\",\n      \"translation\": \"public order\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"benzináremelés\",\n      \"translation\": \"petrol price rise\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-03-taxisblokad.json",
+  "old": "a kormány drasztikus benzináremelést jelentett be. Órákon belül taxik ezrei zárták le a budapesti Duna-hidakat, majd a főbb autópályákat és csomópontokat. Magyarország közlekedése megbénult. A frissen választott Antall-kormány súlyos dilemma elé került: bevesse-e a rendőrséget és a hadsereget, vagy üljön tárgyalóasztalhoz a tiltakozókkal?",
+  "new": "a kormány jelentős benzináremelést jelentett be. Röviddel ezután taxik zárták le a budapesti Duna-hidakat, majd a főbb autópályákat és csomópontokat. Az ország közlekedése nagyrészt megbénult. A frissen választott Antall-kormány előtt felmerült a kérdés: vessen-e be karhatalmat, vagy üljön tárgyalóasztalhoz a tiltakozókkal?",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"taxik ezrei\" unsourced; the hike was announced on the 25th, the blockade started the next morning; \"súlyos dilemma\", \"órákon belül\" dramatised"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-03-taxisblokad.json",
+  "old": "kompromisszum született: a kormány csökkentette az áremelést, a fuvarozók pedig feloldották a zárlatot. A taxisblokád bebizonyította: a demokratikus békét konszenzussal, nem pedig karhatalommal kell megteremteni.",
+  "new": "kompromisszum született: a kormány engedményeket tett, a fuvarozók pedig feloldották a zárlatot. A válság erőszak nélkül ért véget.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "terms of the settlement unconfirmed (check); moral drawn by the narrator removed"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-polgariengedetlenseg-03-a-gr.json",
+  "old": "Legal and political analysis combines concessive clauses with causality: `Bár a blokád formailag sértette a közlekedési rendet, a kialakult válságot a kormányzat csak tárgyalásos kompromisszummal oldhatta fel`.",
+  "new": "You know *bár* and concessive clauses from B1 and B2: *Bár a blokád formailag sértette a közlekedési rendet, a kialakult válságot a kormányzat tárgyalásos kompromisszummal oldotta fel.*",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"csak ... oldhatta fel\" is a counterfactual claim; \"bár\" is known; backticks"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-03.json",
+  "old": "  \"goal\": [\n    \"I can analyze the 1990 Taxi Blockade (*taxisblokád, hidak lezárása, Érdekegyeztető Tanács*).\"",
+  "new": "  \"goal\": [\n    \"I can describe how the 1990 taxi blockade began and how it ended (*taxisblokád, Érdekegyeztető Tanács*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-03.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the 1990 Taxi Blockade (*taxisblokád, hidak lezárása, Érdekegyeztető Tanács*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe how the 1990 taxi blockade began and how it ended (*taxisblokád, Érdekegyeztető Tanács*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-03.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the 1990 Taxi Blockade (*taxisblokád, hidak lezárása, Érdekegyeztető Tanács*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe how the 1990 taxi blockade began and how it ended (*taxisblokád, Érdekegyeztető Tanács*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-04-ex.json",
+  "id": "c1-polgariengedetlenseg-04-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "options": [
+    "Mert szerintük a sztrájkszabályok kiüresítették a munkabeszüntetés láthatóságát és hatékonyságát.",
+    "Mert a szakszervezetek feloszlatták önmagukat és megtagadták a tárgyalásokat.",
+    "Mert a nemzetközi normák automatikusan felmentették őket a munkavégzés alól."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "the reason is the teachers' view: attributed"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-04-ex.json",
+  "id": "c1-polgariengedetlenseg-04-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "val-vel"
+   ],
+   "sentence": "A tankerület néhány pedagógus munkaviszonyát rendkívüli _____ szüntette meg.",
+   "hint": "felmentés, by means of",
+   "english": "The school district terminated the employment of some teachers by extraordinary dismissal."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-legitimacy-vs-legality; instrumental -val/-vel (known); hint named the ending; \"elbocsátotta az oktatókat\" generalises (only some were dismissed)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-04-ex.json",
+  "id": "c1-polgariengedetlenseg-04-practice-4",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "sentence": "A sztrájkjog korlátozása után több pedagógus polgári _____ mellett döntött.",
+   "english": "After the restriction of the right to strike, several teachers decided in favour of civil disobedience."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"aránytalan\", \"közvetlenül\" judgements"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-04-ex.json",
+  "id": "c1-polgariengedetlenseg-04-practice-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "tiles": [
+    "A",
+    "tanárok",
+    "szerint",
+    "a",
+    "sztrájkjog",
+    "korlátozása",
+    "indokolta",
+    "a",
+    "polgári",
+    "engedetlenséget."
+   ],
+   "solution": [
+    "A",
+    "tanárok",
+    "szerint",
+    "a",
+    "sztrájkjog",
+    "korlátozása",
+    "indokolta",
+    "a",
+    "polgári",
+    "engedetlenséget."
+   ],
+   "english": "According to the teachers, the restriction of the right to strike justified civil disobedience."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; judgement as fact (\"kiüresítése ... vezetett\")"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-04-ex.json",
+  "id": "c1-polgariengedetlenseg-04-dialogue-6",
+  "set": {
+   "teaches": [
+    "i-adjectives"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; the blank is an adjective in -i (known A2 Unit 2)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-04-ex.json",
+  "id": "c1-polgariengedetlenseg-04-production-7",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Explain the teachers' dilemma between their work duties and conscientious protest.",
+     "answer": "A pedagógusok szerint a sztrájkjog korlátozása után a polgári engedetlenség maradt az az eszköz, amellyel felhívhatták a figyelmet az oktatás helyzetére, még ha ezzel munkajogi kötelezettséget szegtek is."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"felismerték\" mind-reading, \"csak a polgári engedetlenség képes\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-04-ex.json",
+  "id": "c1-polgariengedetlenseg-04-check-8",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "question": "Milyen jogi következménnyel járt egyes tanárok számára a polgári engedetlenség?",
+   "options": [
+    "Egyes tanárokat rendkívüli felmentéssel elbocsátottak.",
+    "A tanárokat bírósági ítélet kötelezte a hiányzó órák pótlására.",
+    "A tanárokat a tankerület másik iskolába helyezte át."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"azonnali megszüntetés\" for all teachers overclaims; wrong options were absurd"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-polgariengedetlenseg-04-voc.json",
+  "old": "      \"translation\": \"human chain (protest form)\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"human chain (protest form)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"gyermekfelügyelet\",\n      \"translation\": \"childcare supervision\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kiüresít\",\n      \"translation\": \"to hollow out\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"munkaviszony\",\n      \"translation\": \"employment relationship\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szakszervezet\",\n      \"translation\": \"trade union\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tankerület\",\n      \"translation\": \"school district\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fenntartó\",\n      \"translation\": \"maintainer, operator (of a school)\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-04-tanarok.json",
+  "old": "2022 tavaszán a kormány rendeleti úton úgy szabályozta a tanári sztrájk feltételeit,",
+  "new": "2022 elején a kormány rendeleti úton úgy szabályozta a tanári sztrájk feltételeit,",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "reviewer facts: the decree was February 2022"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-04-tanarok.json",
+  "old": "Ekkor országszerte gimnáziumok és általános iskolák tantestületei polgári engedetlenséget hirdettek. Nem vették fel a munkát, jóllehet tudták, hogy elbocsátás vagy fegyelmi büntetés fenyegeti őket. Álláspontjuk szerint az oktatás minőségének romlása és a szabad tiltakozás ellehetetlenítése olyan súlyos kár, amellyel szemben a jogsértés tudatos vállalása erkölcsi kötelességgé vált.",
+  "new": "Ősszel egyes gimnáziumok és általános iskolák pedagógusai polgári engedetlenséget hirdettek. Nem vették fel a munkát, jóllehet elbocsátás vagy fegyelmi büntetés fenyegethette őket; néhány tanárt valóban rendkívüli felmentéssel elbocsátottak. Álláspontjuk szerint az oktatás minőségének romlása és a tiltakozás lehetőségének szűkülése olyan súlyos kár, amellyel szemben a jogsértés tudatos vállalása erkölcsi kötelességgé vált.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "reviewer facts: civil disobedience from autumn 2022; \"országszerte\" overclaims; \"tudták\" mind-reading"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-polgariengedetlenseg-04-a-gr.json",
+  "old": "Recent Hungarian civic movements—notably the educators' protests of 2022–2023—faced strict legislative curtailment of strike rights via mandatory 'még elégséges szolgáltatás'. When formal strike avenues were rendered ineffective, educators engaged in conscious civil disobedience (`polgári engedetlenség`).",
+  "new": "Recent Hungarian civic movements, notably the educators' protests of 2022–2023, took place after the government set rules on the minimum service ('elégséges szolgáltatás') required during teachers' strikes. In the teachers' view the formal strike avenues had become ineffective, and some educators chose civil disobedience (*polgári engedetlenség*).",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "a contested judgement told as fact; backticks; present-day wording: check"
+ },
+ {
+  "file": "content/hu/grammar/c1/c1-polgariengedetlenseg-04-a-gr.json",
+  "old": "Syntactically, analyzing this balances labour law duties against constitutional rights: `A pedagógusok tudatában voltak a kötelezettségszegésnek, ám az oktatás védelmében mégis ezt a végső eszközt választották`.",
+  "new": "The debate balances labour law duties against constitutional rights: *A pedagógusok szerint az oktatás védelmében ezt a végső eszközt kellett választaniuk, még ha ezzel kötelezettséget szegtek is.*",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "mind-reading (\"tudatában voltak\"); \"kellett\" obligation is the teachers' view; backticks"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-04.json",
+  "old": "  \"goal\": [\n    \"I can analyze the legal conflict surrounding teachers' protests (*sztrájkjog, polgári engedetlenség*).\"",
+  "new": "  \"goal\": [\n    \"I can explain why some teachers chose civil disobedience in 2022 (*sztrájkjog, polgári engedetlenség*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze the legal conflict surrounding teachers' protests (*sztrájkjog, polgári engedetlenség*).\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain why some teachers chose civil disobedience in 2022 (*sztrájkjog, polgári engedetlenség*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze the legal conflict surrounding teachers' protests (*sztrájkjog, polgári engedetlenség*).\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain why some teachers chose civil disobedience in 2022 (*sztrájkjog, polgári engedetlenség*).\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-05-ex.json",
+  "id": "c1-polgariengedetlenseg-05-introduce-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "question": "Mit mond Rawls a polgári engedetlenség jellegéről?"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Rawls's definition has three features, not \"three conditions\" in the usual list; stem plainer"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-05-ex.json",
+  "id": "c1-polgariengedetlenseg-05-controlled-2",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "ra-re"
+   ],
+   "sentence": "A polgári engedetlenség a többség _____ apellál.",
+   "hint": "sense of justice, what it appeals to",
+   "english": "Civil disobedience appeals to the majority's sense of justice."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag c1-dissent-deliberation; sublative -ra/-re (known A2 Unit 6); \"veleszületett\" igazságérzet is not Rawls's claim; hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-05-ex.json",
+  "id": "c1-polgariengedetlenseg-05-practice-4",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "sentence": "Rawls szerint a büntetés vállalása a jogrendszer iránti _____ fejezi ki.",
+   "hint": "hűség, object of the verb",
+   "english": "According to Rawls, accepting the punishment expresses loyalty to the legal system."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; accusative -t (known); hint named the ending; attributed to Rawls"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-05-ex.json",
+  "id": "c1-polgariengedetlenseg-05-practice-5",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "tiles": [
+    "A",
+    "szankciók",
+    "önkéntes",
+    "vállalása",
+    "mutatja",
+    "a",
+    "tett",
+    "erkölcsi",
+    "komolyságát."
+   ],
+   "solution": [
+    "A",
+    "szankciók",
+    "önkéntes",
+    "vállalása",
+    "mutatja",
+    "a",
+    "tett",
+    "erkölcsi",
+    "komolyságát."
+   ],
+   "english": "Accepting the sanctions voluntarily shows the moral seriousness of the act."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"igazolja\" -> \"mutatja\""
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-05-ex.json",
+  "id": "c1-polgariengedetlenseg-05-dialogue-6",
+  "set": {
+   "teaches": [
+    "verb-government-ra-re"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; felhívja a figyelmet valamire (known B1 Unit 2)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-05-ex.json",
+  "id": "c1-polgariengedetlenseg-05-production-7",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-05-ex.json",
+  "id": "c1-polgariengedetlenseg-05-check-8",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "question": "Miért fontos a szankciók vállalása Rawls szerint?",
+   "options": [
+    "Mert ez mutatja, hogy a tiltakozó a jogrend egészét elismeri.",
+    "Mert a vállalás után a bíróság a vádat rendszerint elejti.",
+    "Mert a szankciók elfogadása nélkül a bíróság nem tárgyalhatná az ügyet."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; stated as Rawls's view; wrong options were absolute/absurd (\"automatikusan mentességet\")"
+ },
+ {
+  "file": "content/hu/vocabulary/c1/c1-polgariengedetlenseg-05-voc.json",
+  "old": "      \"translation\": \"fidelity to the legal system as a whole\",\n      \"pos\": \"expression\"\n    }\n  ]",
+  "new": "      \"translation\": \"fidelity to the legal system as a whole\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"jogfilozófia\",\n      \"translation\": \"legal philosophy\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szembeszegül\",\n      \"translation\": \"to defy, to oppose\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"alkotmányosság\",\n      \"translation\": \"constitutionality\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"összeesküvés\",\n      \"translation\": \"conspiracy\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"anarchia\",\n      \"translation\": \"anarchy\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet culture words (unmet-words.js --with-hidden), first lesson that uses them"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-05-dworkin.json",
+  "old": "Dworkin hozzáteszi: ha egy törvény alkotmányossága mélyen vitatható, az államnak mérlegelnie kell, hogy büntetőjogilag felelősségre vonja-e azokat, akik lelkiismereti okokból szembeszegülnek vele. A polgári engedetlenség nem a káosz hirdetése, hanem ünnepélyes felhívás a többség igazságérzetéhez: emlékeztető arra, hogy a valódi jogrendnek az igazságosságon kell nyugodnia.",
+  "new": "Dworkin úgy érvelt, hogy ha egy törvény alkotmányossága mélyen vitatható, az államnak mérlegelnie kell, hogy büntetőjogilag felelősségre vonja-e azokat, akik lelkiismereti okokból szembeszegülnek vele. Rawls szerint a polgári engedetlenség nem a káosz hirdetése, hanem a többség igazságérzetéhez intézett felhívás.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Dworkin's position paraphrased (check); the closing normative claim removed"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-05.json",
+  "old": "\"title\": \"Legal Philosophy of Dissent: Rawls, Dworkin & Constitutional Limits\",",
+  "new": "\"title\": \"Rawls and Dworkin on Civil Disobedience\",",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "plainer title"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-05.json",
+  "old": "  \"goal\": [\n    \"I can analyze John Rawls' and Ronald Dworkin's theories of civil disobedience.\"",
+  "new": "  \"goal\": [\n    \"I can explain how Rawls defines civil disobedience.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-05.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can analyze John Rawls' and Ronald Dworkin's theories of civil disobedience.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can explain how Rawls defines civil disobedience.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-05.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can analyze John Rawls' and Ronald Dworkin's theories of civil disobedience.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can explain how Rawls defines civil disobedience.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json",
+  "id": "c1-polgariengedetlenseg-consolidation-1",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "options": [
+    "Az együtt nem működés és a közjogi alapokhoz való ragaszkodás erőszakmentes formája.",
+    "A hatályos törvények titkos kijátszása a személyes felelősség elkerülésével.",
+    "A közigazgatási döntések bírósági úton történő rutinszerű megtámadása."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tag concessive-indefinites does not match; \"feltétlen ragaszkodás\" overclaims"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json",
+  "id": "c1-polgariengedetlenseg-consolidation-2",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "question": "Miért választották a pedagógusok a polgári engedetlenséget 2022-ben?",
+   "options": [
+    "Mert szerintük a sztrájkjog rendeleti korlátozása kiüresítette a munkabeszüntetést.",
+    "Mert a fenntartó kifejezetten felszólította a tantestületet a tiltakozásra.",
+    "Mert a kollektív szerződés tiltotta a rendes sztrájk megszervezését."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; the cause is the teachers' view; \"törvényi\" -> the restriction was by decree (story)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json",
+  "id": "c1-polgariengedetlenseg-consolidation-4",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "val-vel"
+   ],
+   "hint": "név, how they published"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "instrumental -val/-vel (known); hint named the ending"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json",
+  "id": "c1-polgariengedetlenseg-consolidation-5",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "3rd-person-possessive"
+   ],
+   "hint": "vállalás, the sanctions'"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "hint named the ending; possessed noun (known)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json",
+  "id": "c1-polgariengedetlenseg-consolidation-6",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "hint": "voluntary"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tag concessive-indefinites does not match: the blank is a word (önkéntes)"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json",
+  "id": "c1-polgariengedetlenseg-consolidation-7",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json",
+  "id": "c1-polgariengedetlenseg-consolidation-8",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "ra-re"
+   ],
+   "sentence": "A polgári engedetlenség nem anarchia, hanem a többség _____ való apellálás.",
+   "hint": "sense of justice, what it appeals to",
+   "english": "Civil disobedience is not anarchy but an appeal to the majority's sense of justice."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; sublative -ra/-re (known); hint named the ending; \"veleszületett\" removed"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json",
+  "id": "c1-polgariengedetlenseg-consolidation-9",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "question": "Hogyan látja Rawls a polgári engedetlenséget?",
+   "options": [
+    "Mint a jogrend iránti hűséget megőrző, békés eszközt az igazságtalan törvények ellen.",
+    "Mint a gazdasági érdekcsoportok közötti hatalommegosztás egyik technikáját.",
+    "Mint az állampolgári kötelezettségek alóli általános felmentés jogalapját."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"deliberatív demokrácia\" is not Rawls's frame; \"kizárólagos\" tell; wrong options absurd"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json",
+  "id": "c1-polgariengedetlenseg-consolidation-10",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json",
+  "id": "c1-polgariengedetlenseg-consolidation-11",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Explain why civil disobedience is non-violent in Rawls's definition.",
+     "answer": "Rawls szerint a polgári engedetlenség erőszakmentes, mert célja nem a hatalom megdöntése, hanem a törvény megváltoztatása a többség igazságérzetére apellálva, a szankciók vállalásával."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; \"bátor vállalás\" judgement"
+ },
+ {
+  "file": "content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json",
+  "id": "c1-polgariengedetlenseg-consolidation-12",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "c1-civil-disobedience-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Say what the Hungarian examples of passive resistance and civil disobedience have in common.",
+     "answer": "A passzív rezisztencia és a polgári engedetlenség magyar példáiban a résztvevők nyíltan, békés eszközökkel tiltakoztak a számukra igazságtalannak tartott rendelkezések ellen."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "retired tag; political judgement"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-consolidation.json",
+  "old": "  \"goal\": [\n    \"I can evaluate historical passive resistance, public-law continuity, and tax refusal.\"",
+  "new": "  \"goal\": [\n    \"I can talk about the main topics of this unit: passive resistance, samizdat, the taxi blockade, the teachers and Rawls.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-consolidation.json",
+  "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can evaluate historical passive resistance, public-law continuity, and tax refusal.\"",
+  "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can talk about the main topics of this unit: passive resistance, samizdat, the taxi blockade, the teachers and Rawls.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/lessons/c1/c1-polgariengedetlenseg-consolidation.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can evaluate historical passive resistance, public-law continuity, and tax refusal.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can talk about the main topics of this unit: passive resistance, samizdat, the taxi blockade, the teachers and Rawls.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "goal line rewritten as a plain can-do line / matches what the lesson practises"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-01-deak.json",
+  "old": "\"c1-subjunctive-concessives\"",
+  "new": "\"c1-civil-disobedience-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "slug not in skills/hu.json (retired or invented) in the story grammar field"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-02-szamizdat.json",
+  "old": "\"c1-ethical-stance-markers\"",
+  "new": "\"c1-civil-disobedience-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "slug not in skills/hu.json (retired or invented) in the story grammar field"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-03-taxisblokad.json",
+  "old": "\"c1-radbruch-formula-syntax\"",
+  "new": "\"c1-civil-disobedience-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "slug not in skills/hu.json (retired or invented) in the story grammar field"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-04-tanarok.json",
+  "old": "\"c1-legitimacy-vs-legality\"",
+  "new": "\"c1-civil-disobedience-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "slug not in skills/hu.json (retired or invented) in the story grammar field"
+ },
+ {
+  "file": "content/hu/stories/world/c1/c1-polgariengedetlenseg-05-dworkin.json",
+  "old": "\"c1-dissent-deliberation\"",
+  "new": "\"c1-civil-disobedience-vocab\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "slug not in skills/hu.json (retired or invented) in the story grammar field"
+ }
+]

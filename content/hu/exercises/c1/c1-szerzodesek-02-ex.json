@@ -9,8 +9,8 @@
       "question": "Mit garantál a 'likvidációs preferencia' a kockázati tőkebefektetőnek?",
       "options": [
         "Hogy a cég eladásakor vagy felszámolásakor a befektető a pénzéhez jusson az alapítók előtt.",
-        "Hogy a befektető vétójogot kap a cég napi operatív döntéseiben.",
-        "Hogy az alapítók automatikusan visszavásárolhatják a részvényeiket."
+        "Hogy a befektető vétójogot kap a cég napi operatív döntéseiben, az alapítók beleszólása nélkül.",
+        "Hogy az alapítók a későbbi tőkeemelések után automatikusan visszavásárolhatják a részvényeiket."
       ],
       "correct": 0,
       "teaches": [
@@ -22,12 +22,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A felek közötti szindikátusi szerződés négyéves alapítói _____ ír elő az elvándorlás megakadályozására.",
-      "hint": "zárolás + -t",
+      "sentence": "A felek közötti szindikátusi szerződés többéves alapítói _____ ír elő, hogy az alapítók ne távozzanak korán.",
+      "hint": "zárolás, object of the verb",
       "answer": "zárolást",
-      "english": "The shareholders' agreement between parties prescribes a four-year founder vesting to prevent departure.",
+      "english": "The shareholders' agreement provides for a multi-year founder lock-up so that the founders do not leave early.",
       "teaches": [
-        "c1-corporate-governance"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -60,7 +60,7 @@
     {
       "id": "c1-szerzodesek-02-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -86,38 +86,38 @@
       ],
       "english": "The investor may request veto rights in the company's most important strategic decisions.",
       "teaches": [
-        "c1-corporate-governance"
+        "c1-corporate-law-vocab"
       ]
     },
     {
       "id": "c1-szerzodesek-02-production-5",
       "type": "structured-writing",
-      "category": "writing",
+      "category": "vocabulary",
       "stage": "production",
       "template": [
         {
-          "prompt": "Explain why founder vesting is essential in venture capital deals.",
-          "answer": "Az alapítói zárolás (vesting) biztosítja, hogy a kulcsemberek elkötelezettek maradjanak a cég mellett; idő előtti távozás esetén elveszítik a még fel nem szabadult részvényeiket."
+          "prompt": "Say what founder vesting is for in a venture capital deal.",
+          "answer": "Az alapítói zárolás (vesting) segít abban, hogy a kulcsemberek elkötelezettek maradjanak a cég mellett; idő előtti távozás esetén elveszíthetik a még fel nem szabadult részvényeiket."
         }
       ],
       "teaches": [
-        "c1-corporate-governance"
+        "c1-corporate-law-vocab"
       ]
     },
     {
       "id": "c1-szerzodesek-02-check-6",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "question": "Mi képezi a pre-money és post-money értékelés közötti különbséget?",
+      "question": "Mi a különbség a pre-money és a post-money értékelés között?",
       "options": [
-        "A pre-money értékelés a cég értéke a tőkebevonás előtt, míg a post-money magában foglalja a frissen befektetett tőkét is.",
-        "A pre-money az adózás előtti profitot, a post-money az osztalékalapot jelenti.",
-        "A pre-money a könyv szerinti értéket, a post-money a piaci tőkeértéket fejezi ki."
+        "A pre-money a cég értéke a tőkebevonás előtt, a post-money a befektetett tőkével növelt érték.",
+        "A pre-money az adózás előtti profitot, a post-money az osztalékalapot jelenti a pénzügyi évben.",
+        "A pre-money a könyv szerinti értéket, a post-money a piaci tőkeértéket fejezi ki a tőzsdén."
       ],
       "correct": 0,
       "teaches": [
-        "c1-corporate-governance"
+        "c1-corporate-law-vocab"
       ]
     }
   ]
