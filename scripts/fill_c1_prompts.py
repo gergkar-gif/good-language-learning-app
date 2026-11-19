@@ -18,6 +18,11 @@ scripts/templates/read-spanish-c1.txt for the given units; --norm-notes names a
 file with the reviewer's notes on the screens' normative claims.
 
     python scripts/fill_c1_prompts.py writer <worktree> <unit id> [<unit id> ...]
+    python scripts/fill_c1_prompts.py antigravity <checkout path on the user's machine> <unit id>
+
+Antigravity mode writes imports/review/es-c1-plan/antigravity/unit-NN-<unit id>.md: the
+writer brief for the unit with scripts/templates/antigravity-c1-header.txt in front
+(Antigravity works in the user's main checkout, commits unfrozen, Claude reads after).
     python scripts/fill_c1_prompts.py reader <worktree> --norm-notes <file> <unit id> [...]
 """
 import json
@@ -126,6 +131,49 @@ def writer(w, uids):
     print(f"wrote {w}/.scratch/writer.md and {len(order)} brief(s)")
 
 
+def antigravity(checkout, uid):
+    import datetime
+    import tempfile
+    with tempfile.TemporaryDirectory() as tmp:
+        t = Path(tmp)
+        for rel in ("content/es-latam/curriculum/units", "skills"):
+            (t / rel).mkdir(parents=True, exist_ok=True)
+        import shutil
+        shutil.copy(ROOT / f"content/{COURSE}/curriculum/units/{LEVEL}.json", t / f"content/{COURSE}/curriculum/units/{LEVEL}.json")
+        for f in ("es.json", "frozen-es.json"):
+            shutil.copy(ROOT / "skills" / f, t / "skills" / f)
+        (t / f"content/{COURSE}/lessons/{LEVEL}").mkdir(parents=True, exist_ok=True)
+        for lf in (ROOT / f"content/{COURSE}/lessons/{LEVEL}").glob("*.json"):
+            shutil.copy(lf, t / f"content/{COURSE}/lessons/{LEVEL}" / lf.name)
+        writer(t, [uid])
+        brief = (t / f".scratch/brief-{uid}.md").read_text(encoding="utf-8").replace(str(t), checkout)
+    table, *_ = load(ROOT)
+    i = next(k for k, u in enumerate(table) if u["id"] == uid)
+    n2 = f"{i + 1:02d}"
+    brief = brief.replace("DO NOT COMMIT (the main session collects your files as `git diff` / `git status`). Never change git or tool config, never bypass hooks.",
+                          "Never change git or tool config, never bypass hooks. Commit only when the whole unit is done (see \"Antigravity: how this works\" above).")
+    brief = brief.replace("; another agent works at the same time in another worktree.", "; it is not committed.")
+    brief = brief.replace(f"(try to write it to `{checkout}/.scratch/report-{uid}.md` too; the harness may refuse, so make the reply complete)",
+                          f"(write it to `{checkout}/imports/review/es-c1-antigravity-{n2}/report.md` and commit it with the unit)")
+    brief = brief.replace(f"written to `{checkout}/.scratch/challenges-{uid}.json` as a JSON object keyed by lesson stem",
+                          f"written to `{checkout}/.scratch/challenges-{uid}.json` as a JSON object keyed by lesson stem, then added with "
+                          f"`python scripts/add_challenges.py es-latam c1 .scratch/challenges-{uid}.json` (fix and rerun until it accepts all six)")
+    brief = brief.replace("`python3 ", "`python ").replace(" python3 ", " python ")
+    head = (ROOT / "scripts/templates/antigravity-c1-header.txt").read_text(encoding="utf-8")
+    for k, v in {"{NUM}": str(i + 1), "{N2}": n2, "{UID}": uid, "{A}": checkout, "{DATE}": datetime.date.today().isoformat()}.items():
+        head = head.replace(k, v)
+    out = ROOT / f"imports/review/es-c1-plan/antigravity/unit-{n2}-{uid}.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    text = head + brief
+    left = re.findall(r"\{[A-Z_0-9]+\}", text)
+    if left:
+        sys.exit(f"unfilled {left}")
+    if "DO NOT COMMIT" in text or "another agent works" in text:
+        sys.exit("a writer-only instruction was not replaced: update antigravity() to the template's wording")
+    out.write_text(text, encoding="utf-8")
+    print(f"wrote {out.relative_to(ROOT)}")
+
+
 def reader(w, uids, norm_file):
     table, *_ = load(w)
     by_id = {u["id"]: i for i, u in enumerate(table)}
@@ -154,11 +202,13 @@ def reader(w, uids, norm_file):
 
 
 def main(argv):
-    if len(argv) < 3 or argv[0] not in ("writer", "reader"):
+    if len(argv) < 3 or argv[0] not in ("writer", "reader", "antigravity"):
         sys.exit(__doc__)
     mode, w = argv[0], Path(argv[1]).resolve()
     rest = argv[2:]
-    if mode == "writer":
+    if mode == "antigravity":
+        antigravity(argv[1], rest[0])
+    elif mode == "writer":
         writer(w, rest)
     else:
         if "--norm-notes" not in rest:

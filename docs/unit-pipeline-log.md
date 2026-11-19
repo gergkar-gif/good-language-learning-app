@@ -2276,3 +2276,15 @@ unit. A rebase conflict on challenges.json/tags.lock.json taken from master's si
 dropped a batch's challenges, locks and taught_in: after such a conflict, rerun
 `add_challenges.py`, `lock_tags.py --update` and `set_planned_taught_in.py` and count before pushing.
 
+### 2026-11-19: ES C1 Unit 8 by Antigravity (trial), and the switch
+
+Antigravity (Gemini 4 Hydrogen, High) wrote Unit 8 from the Claude writers' brief in ~35 min
+(~20 waiting on full manifest builds; now `build-manifest.py es-latam`). Checks clean on hand-over;
+the Sonnet read found 33 defects (Claude-written units ~16): unnatural collocations and illogical
+claims, unrelated multi-fault listening options, goals no item practised, challenge scenarios not
+matching their targets, a false gerund claim, a "wrong" option the DLE accepts. These are now a
+"Learned on Unit 8" list in `scripts/templates/new-spanish-c1.txt`. The user chose Antigravity for
+Units 9 onward; `fill_c1_prompts.py antigravity` builds each brief. Reviewer's own slip: the Unit 8
+notes stated an unverified rule (agreeing *de las que* as the only form after a noun), which made
+one wrong option rest on it; unit notes state as a rule only what a source confirms.
+
