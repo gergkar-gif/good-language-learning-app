@@ -38,7 +38,7 @@
       "sentence": "De no ____ las tasas de interés, el consumo seguirá cayendo.",
       "answer": "bajar",
       "english": "If interest rates do not fall, consumption will keep falling.",
-      "hint": "to fall, infinitive",
+      "hint": "to go down (of rates), infinitive",
       "teaches": [
         "implicit-conditionals"
       ]
@@ -49,14 +49,17 @@
       "category": "grammar",
       "question": "Which sentence compresses the condition 'Si se mantiene esta tendencia' correctly without *si*?",
       "options": [
-        "De mantenerse esta tendencia, la desaceleración durará varios meses.",
         "De se mantiene esta tendencia, la desaceleración durará varios meses.",
-        "De mantuviera esta tendencia, la desaceleración durará varios meses."
+        "De mantuviera esta tendencia, la desaceleración durará varios meses.",
+        "De mantenerse esta tendencia, la desaceleración durará varios meses."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "implicit-conditionals"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect-subjunctive-forms"
+      }
     },
     {
       "id": "c1-09-02.ex04",
@@ -95,14 +98,17 @@
         }
       ],
       "options": [
-        "De no cambiar la política monetaria, el estancamiento podría durar todo el año.",
         "De no cambia la política monetaria, el estancamiento podría durar todo el año.",
+        "De no cambiar la política monetaria, el estancamiento podría durar todo el año.",
         "De no cambiara la política monetaria, el estancamiento podría durar todo el año."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "implicit-conditionals"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "imperfect-subjunctive-forms"
+      }
     },
     {
       "id": "c1-09-02.ex07",
@@ -114,7 +120,7 @@
           "answer": "De seguir así, la economía entrará en recesión."
         },
         {
-          "prompt": "Translate using «De haberse frenado antes» and «la inflación»: \"Had inflation been curbed earlier, investment would have grown.\"",
+          "prompt": "Translate using «De haberse frenado antes», «la inflación» and «habría crecido»: \"Had inflation been curbed earlier, investment would have grown.\"",
           "answer": "De haberse frenado antes la inflación, la inversión habría crecido."
         }
       ],
@@ -128,11 +134,11 @@
       "category": "grammar",
       "question": "Which opening correctly expresses an unfulfilled past condition without *si*?",
       "options": [
-        "De haber pedido el préstamo antes, la empresa pagaría menos intereses.",
-        "De pedir el préstamo el año pasado, la empresa habría pagado menos.",
-        "De hubiera pedido el préstamo antes, la empresa pagaría menos intereses."
+        "Si haber pedido el préstamo antes, la empresa pagaría menos intereses.",
+        "De hubiera pedido el préstamo antes, la empresa pagaría menos intereses.",
+        "De haber pedido el préstamo antes, la empresa pagaría menos intereses."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "implicit-conditionals"
       ]

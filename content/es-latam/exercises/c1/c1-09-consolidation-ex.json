@@ -7,11 +7,11 @@
       "category": "grammar",
       "question": "Which sentence introduces a triggering event correctly with a formal cause connector?",
       "options": [
-        "A raíz del encarecimiento del transporte, los precios subieron en todo el sector.",
         "Dado que el encarecimiento del transporte, los precios subieron en todo el sector.",
-        "Porque del encarecimiento del transporte, los precios subieron en todo el sector."
+        "Porque el encarecimiento del transporte, los precios subieron en todo el sector.",
+        "A raíz del encarecimiento del transporte, los precios subieron en todo el sector."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "formal-cause-connectors"
       ]
@@ -52,11 +52,11 @@
       "category": "grammar",
       "question": "Which sentence expresses a compressed condition without *si* correctly?",
       "options": [
-        "De no frenarse el déficit, la confianza de los mercados caerá.",
         "De no se frena el déficit, la confianza de los mercados caerá.",
+        "De no frenarse el déficit, la confianza de los mercados caerá.",
         "De no frenara el déficit, la confianza de los mercados caerá."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "implicit-conditionals"
       ]
@@ -103,11 +103,11 @@
       "category": "listening",
       "sentence": "Si hubieran bajado las tasas antes, hoy la inversión sería mayor, pero la inflación seguiría alta.",
       "options": [
-        "If they had lowered rates earlier, investment would be higher today, but inflation would stay high.",
         "If they had raised rates earlier, investment would be higher today, but inflation would stay high.",
-        "If they had lowered rates earlier, investment would be lower today, and inflation would fall."
+        "If they had lowered rates earlier, investment would be lower today, but inflation would stay high.",
+        "If they had lowered rates earlier, investment would be higher today, but inflation would stay high."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "mixed-conditionals"
       ]
@@ -137,11 +137,11 @@
         }
       ],
       "options": [
-        "Suelen decir que esa política dio lugar a una recesión.",
         "Suelen decir que esa política llevó a cabo una recesión.",
+        "Suelen decir que esa política dio lugar a una recesión.",
         "Suelen decir que esa política puso en marcha una recesión."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "c1-economy-markets-vocab"
       ]
@@ -183,11 +183,11 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Translate using «De mantenerse» and «la volatilidad»: \"If volatility continues, investment will fall.\"",
+          "prompt": "Translate using «De mantenerse», «la volatilidad» and «caer»: \"If volatility continues, investment will fall.\"",
           "answer": "De mantenerse la volatilidad, la inversión caerá."
         },
         {
-          "prompt": "Translate using «De no aliviar» and «la deuda»: \"If household debt is not eased, consumption will not recover.\"",
+          "prompt": "Translate using «De no aliviar» and «la deuda de las familias»: \"If household debt is not eased, consumption will not recover.\"",
           "answer": "De no aliviar la deuda de las familias, el consumo no se recuperará."
         }
       ],

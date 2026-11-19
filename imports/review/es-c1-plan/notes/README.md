@@ -29,6 +29,7 @@ Rules for choosing:
   unit that teaches it): pick five that suit the domain, at most one already used in 3+ C1 units.
   One skill per lesson; a lesson may instead be vocabulary-led (collocations, fixed expressions),
   tagged with the unit vocabulary skill: at most two such lessons a unit.
+- Every recap lesson adds something the earlier screen did not teach (a C1 variant, a formal or written use, a contrast with a near form); first print that screen (`python scripts/show_screen.py es-latam <screen id>`) and name in the notes what is new. A lesson that would repeat the earlier screen whole is not allowed (Unit 10, 2026-11-19).
 - Never a skill the sheet lists as later, hidden-only or C2, and never a new C1 skill of a later
   unit (the brief's "C1 forms not met yet").
 - No norm claim in the notes that you cannot back with a source; if a lesson depends on one, pick

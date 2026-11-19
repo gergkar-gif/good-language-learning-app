@@ -68,11 +68,11 @@
       "category": "listening",
       "sentence": "Si hubieran bajado los impuestos el año pasado, hoy el déficit sería mucho mayor.",
       "options": [
-        "If they had lowered taxes last year, the deficit would be much larger today.",
         "If they had raised taxes last year, the deficit would be much larger today.",
+        "If they had lowered taxes last year, the deficit would be much larger today.",
         "If they had lowered taxes last year, the deficit would be much smaller today."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "mixed-conditionals"
       ]
@@ -157,14 +157,17 @@
       "category": "grammar",
       "question": "Which sentence correctly contrasts a past action with a present consequence?",
       "options": [
-        "Si no hubiéramos aprobado aquel ajuste, actualmente los ingresos serían insuficientes.",
-        "Si no habríamos aprobado aquel ajuste, actualmente los ingresos serían insuficientes.",
+        "Si no habríamos aprobado aquel ajuste el año pasado, actualmente los ingresos serían insuficientes.",
+        "Si no hubiéramos aprobado aquel ajuste el año pasado, actualmente los ingresos serían insuficientes.",
         "Si no aprobáramos aquel ajuste el año pasado, actualmente los ingresos serían insuficientes."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "mixed-conditionals"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "imperfect-subjunctive-forms"
+      }
     }
   ]
 }

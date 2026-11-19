@@ -26,9 +26,22 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
 - Unit 8: a contested form (*la mayoría de* + bare plural) used as the error: when usage is
   divided, test a form nobody accepts instead (*la mitad de* + bare plural).
 
+- Units 9-10 (reader, 71 fixes): listening wrong options that change TWO details (again: change
+  exactly one); a time word or absolute only in wrong or reading options (a tell); a "wrong" option
+  that is accepted Spanish (*De pedir el préstamo …, habría pagado* is a valid condition); hints that
+  name the agreement being tested or invite another right verb; unnatural phrases (*líneas de
+  trabajo*, *organizar sus prestaciones*, the calque *pienso si*); questions about the text that the
+  text does not answer; an invented person with a full name and title in a text (keep people
+  unnamed: *una investigadora*); Spain-only *a medio plazo* in es-latam (*a mediano plazo*).
+- Units 9-10: option order does NOT matter: the app shuffles options when it shows them
+  (`engine/lessons.js` `shuffledOptions`). Do not spend effort rotating right answers.
+- Unit 10 (notes drafted by the writer): two lessons re-taught B1/B2 screens almost whole. A recap
+  lesson must add what the earlier screen did not teach (a C1 variant, a formal or written use,
+  a contrast with a near form), never repeat it; see `notes/README.md`.
+
 ## Writer's notes (append after each unit)
 
-- Unit 10: every `listening-choice` and `dialogue-complete` item initially put the right answer at index 0 -> rotate option order across 0/1/2/3 when authoring choice items.
+- Unit 10: every `listening-choice` and `dialogue-complete` item initially put the right answer at index 0 -> rotate option order across 0/1/2/3 when authoring choice items. (Reviewer: not needed, the app shuffles options.)
 - Unit 10: `por el contrario` as a wrong option against `en cambio` in a two-sector contrast could be read as acceptable Spanish -> use an unmistakably wrong discourse relation (`por lo tanto`, `además`) as the distractor.
 - Unit 10: `*cuanto/a/os/as*` in a grammar table tripped `latam-vosotros` on `/os/` -> write out `*cuanto, cuanta, cuantos, cuantas*` in full.
 - Unit 11: `c1-11-05-a-gr` initially claimed *hasta el punto de que* was taught in B2 Unit 31, but `check_unit_refs.py` + `show_screen.py` showed B2 Unit 31 only taught *de tal manera que* / *de tal modo que* -> verify every italicised form in a recap opener against the actual B1/B2 screen.
