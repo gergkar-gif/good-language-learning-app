@@ -1,0 +1,86 @@
+[
+  {
+    "id": "c1-21-02.ex06",
+    "file": "content/es-latam/exercises/c1/c1-21-02-ex.json",
+    "kind": "target",
+    "set": {
+      "options": [
+        "¡Toda una hazaña! No está mal tardar casi una semana en responder dos líneas.",
+        "¡Para colmo! Responde todos los correos con mucha rapidez.",
+        "¡En broma! Para colmo responde el correo al instante.",
+        "¡Un poquito! Nada menos que dos líneas es un informe enorme."
+      ]
+    },
+    "why": "Replaced awkward collocation 'Qué exageración esperar tanto' and tightened distractors so none can be read as ironic praise."
+  },
+  {
+    "id": "c1-21-03.ex06",
+    "file": "content/es-latam/exercises/c1/c1-21-03-ex.json",
+    "kind": "target",
+    "set": {
+      "options": [
+        "¡A buena hora! Me encanta que avisen cuando ya es tarde.",
+        "¡A buena hora! Me encanta que avisan cuando ya es tarde.",
+        "¡A buena hora! Me encanta que avisarán cuando ya es tarde.",
+        "¡A buena hora! Me encanta avisar cuando ya es tarde."
+      ]
+    },
+    "why": "Aligned all four options to '¡A buena hora!' and removed asymmetric 'siempre' so each wrong option has one clean subjunctive-emotion fault."
+  },
+  {
+    "id": "c1-21-04.ex08",
+    "file": "content/es-latam/exercises/c1/c1-21-04-ex.json",
+    "kind": "target",
+    "old": "\"Se hizo el tonta como si no recordara la reunión de la mañana.\"",
+    "new": "\"Se hizo la tonta como si no haya recordado la reunión de la mañana.\"",
+    "why": "Replaced stray gender-agreement error ('el tonta') with a como-si mood fault (present perfect subjunctive 'haya recordado')."
+  },
+  {
+    "id": "c1-21-05.ex08",
+    "file": "content/es-latam/exercises/c1/c1-21-05-ex.json",
+    "old": "\"By noting with understatement that the office spent six hours proving it had no time.\",\n        \"By explaining that the employee who objected was promoted to head the committee.\",\n        \"By announcing that the company scrapped the entire productivity programme on Friday.\"",
+    "new": "\"By noting with understatement that the office spent five hours proving it had no time.\",\n        \"By explaining that the employee who objected was promoted to head the committee.\",\n        \"By announcing that the company scrapped the new productivity programme on Friday.\"",
+    "why": "Aligned 'six hours' to 'five hours' to match the story's arithmetic (90 min + 3.5 h = 5 h) and replaced absolute 'entire' with 'new'."
+  },
+  {
+    "id": "c1-original-21",
+    "file": "content/es-latam/stories/original/c1/c1-21.json",
+    "kind": "target",
+    "old": "la oficina logró invertir seis horas colectivas",
+    "new": "la oficina logró invertir cinco horas colectivas",
+    "why": "Internal arithmetic check: 90 minutes on Monday afternoon plus 10:00–13:30 on Tuesday equals 5 hours, not 6."
+  },
+  {
+    "id": "c1-21-consolidation.ex06",
+    "file": "content/es-latam/exercises/c1/c1-21-consolidation-ex.json",
+    "kind": "target",
+    "set": {
+      "sentence": "_____ muy gracioso ese chiste, pero a Carlos no le hace gracia.",
+      "english": "That joke may well be very funny, but Carlos does not find it funny."
+    },
+    "why": "Anchored second clause in the present ('no le hace gracia') so present concessive 'Será' is uniquely required rather than past 'Sería'."
+  },
+  {
+    "id": "c1-21-consolidation.ex08",
+    "file": "content/es-latam/exercises/c1/c1-21-consolidation-ex.json",
+    "kind": "target",
+    "set": {
+      "options": [
+        "¿Para qué decidir el título en dos minutos cuando podemos dedicarle una sesión?",
+        "¿A qué hora reservaste la sala para decidir el título del documento?",
+        "¿Cuántas personas firmaron la convocatoria del documento el lunes?",
+        "¿Dónde guardaste el acta oficial de la sesión anterior?"
+      ],
+      "distractor_skills": null
+    },
+    "why": "Item is tagged rhetorical-devices, but previous distractors tested subjunctive-emotion; replaced with satirical rhetorical question vs literal questions."
+  },
+  {
+    "id": "c1-21-consolidation",
+    "file": "content/es-latam/curriculum/challenges.json",
+    "kind": "target",
+    "old": "¡Ni que hubiera hecho un milagro! Habla como si hubiera hecho una hazaña.",
+    "new": "¡Ni que hubiera hecho un milagro! Habla como si hubiera logrado una hazaña.",
+    "why": "Avoided repeating 'hubiera hecho' twice in adjacent sentences; 'logrado una hazaña' is more idiomatic."
+  }
+]
