@@ -63,6 +63,4 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
 - Unit 13: Reading Q2 initially used `completely replaced` and two choice distractors had extra time phrases (`el año pasado`, `el mes pasado`) -> remove absolutes and asymmetric time phrases from wrong options during self-review.
 - Unit 14: two Reading options initially mentioned details not in the corresponding paragraph (`intermittent clean generation`, `circular-economy rules` in paragraph 5) -> verify every phrase of every reading answer directly against its paragraph.
 - Unit 14: grouped italic runs (`*se busca / se buscan*`, `*lo bueno, lo malo, lo importante*`) in recap openers tripped `check_unit_refs.py` -> put each cited form in its own italic run.
-
-
-
+- Unit 15: self-review of rendered output caught an asymmetric time word (`hoy`) in only one wrong option (`c1-15-01.ex08`) and a second fault (masculine `solo` with feminine `la discriminación`) in a mood-contrast distractor (`c1-15-05.ex09`) -> inspect every wrong option in the rendered text for asymmetric adverbs and stray gender/number errors.
