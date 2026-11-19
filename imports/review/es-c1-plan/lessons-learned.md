@@ -39,6 +39,17 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
   lesson must add what the earlier screen did not teach (a C1 variant, a formal or written use,
   a contrast with a near form), never repeat it; see `notes/README.md`.
 
+- Units 11-12 (reader, 57 fixes): a recap that misdescribed the earlier screen (B2 Unit 1 fronts
+  adjectives and place phrases, not objects): print the screen with `show_screen.py` before
+  recapping it; hints that give away the tested point (the mood, "with accent"): a hint names the
+  verb and person only; *-ra* and *-se* imperfect subjunctive are the same form, so an answer
+  accepts both (`answers: [hubiera, hubiese]`); real wrong forms of other skills carry
+  `distractor_skills` (none of Units 11-12's items had any); illogical exchanges (thanking for the
+  floor before it is given), tautologies (*ceñirse al tema y no desviar el tema*), reading questions
+  whose premise is not in the text; a lesson goal (topic vs contrastive focus) no item practised.
+- Units 8-12: listening wrong options rewritten in every read. `check-content` now flags
+  `listening-many-changes` (a wrong option 10+ words away from the right one); fix every hit.
+
 ## Writer's notes (append after each unit)
 
 - Unit 10: every `listening-choice` and `dialogue-complete` item initially put the right answer at index 0 -> rotate option order across 0/1/2/3 when authoring choice items. (Reviewer: not needed, the app shuffles options.)

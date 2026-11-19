@@ -52,6 +52,10 @@ def note_tiles(node, where, path=""):
             note_tiles(v, where, f"{path}[{i}]")
 
 
+def rel_posix(p):
+    return Path(p).as_posix()
+
+
 def unit_files(u):
     files = []
     for st in u["stems"]:
@@ -78,6 +82,13 @@ def plant(u, force):
         old = json.loads(raw)
         new = b2.walk(old, str(dst.relative_to(ROOT)))
         note_tiles(old, str(dst.relative_to(ROOT)))
+        # a C1 story's title is Spanish, but walk() skips `title` as an English field
+        # (Unit 11: *celulares* stayed in the es-es title, 2026-11-19)
+        if "/stories/" in rel_posix(src) and isinstance(new, dict) and isinstance(new.get("title"), str):
+            t, _changes, refused = b2.cv.convert(new["title"], "es-es")
+            new["title"] = t
+            for r in refused:
+                b2.notes.append((str(dst.relative_to(ROOT)), "title", "refused", f"{r}: {t[:120]}"))
         if new == old:              # nothing to convert: keep the file byte for byte
             shutil.copy2(src, dst)
         else:

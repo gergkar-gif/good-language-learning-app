@@ -59,7 +59,11 @@
       "correct": 2,
       "teaches": [
         "como-si"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "subjuntivo-perfecto",
+        "1": "preterito-perfecto"
+      }
     },
     {
       "id": "c1-12-consolidation.ex04",
@@ -68,7 +72,7 @@
       "sentence": "La directora dice que ____ una aclaración explícita antes de enviar la nota.",
       "answer": "escribamos",
       "english": "The director tells us to write an explicit clarification before sending the note.",
-      "hint": "escribir (1st person plural subjunctive: decir = tell someone to)",
+      "hint": "escribir (1st person plural)",
       "teaches": [
         "verbos-doble-modo"
       ]
@@ -105,8 +109,8 @@
       "options": [
         "Underneath, the letter shows frankness; on the surface, it hides a subtle insinuation.",
         "On the surface, the letter shows frankness; underneath, it hides a subtle insinuation.",
-        "On the surface, the letter shows sarcasm; underneath, it contains an explicit apology.",
-        "Apparently, the letter avoids any insinuation and remains completely literal."
+        "On the surface, the letter shows frankness; underneath, it hides an explicit apology.",
+        "On the surface, the letter shows frankness; underneath, it hides a harsh accusation."
       ],
       "correct": 1,
       "teaches": [
@@ -117,8 +121,8 @@
       "id": "c1-12-consolidation.ex08",
       "type": "dictation",
       "category": "listening",
-      "sentence": "El autor aludió a un sobreentendido que cambiaba la lectura del texto.",
-      "english": "The author alluded to an unspoken assumption that changed the reading of the text.",
+      "sentence": "Entiendo que estés molesto, pero sospecho que fue un equívoco.",
+      "english": "I understand why you are upset, but I suspect it was a misunderstanding.",
       "teaches": [
         "reporting-verbs"
       ]
@@ -145,7 +149,12 @@
       "correct": 2,
       "teaches": [
         "verbos-doble-modo"
-      ]
+      ],
+      "hint": "Meg means: accepting it entails a consequence for the team.",
+      "distractor_skills": {
+        "0": "present-tense",
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "c1-12-consolidation.ex10",
@@ -182,8 +191,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Using 'como si' + imperfect subjunctive of 'ser', write one sentence saying that he reacted (reaccionó) as if the irony (la ironía) were literal (literal).",
-          "answer": "Reaccionó como si la ironía fuera literal."
+          "prompt": "Using 'como si' + the pluperfect subjunctive with 'hubiera', write one sentence saying that she answered (contestó) as if she had not read the message (el mensaje).",
+          "answer": "Contestó como si no hubiera leído el mensaje."
         }
       ],
       "teaches": [
@@ -198,8 +207,7 @@
       "options": [
         "equívoco",
         "subtexto",
-        "sarcasmo",
-        "contexto"
+        "sarcasmo"
       ],
       "correct": 1,
       "teaches": [

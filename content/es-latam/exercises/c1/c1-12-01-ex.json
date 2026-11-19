@@ -15,7 +15,12 @@
       "correct": 1,
       "teaches": [
         "verbos-doble-modo"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "present-tense",
+        "2": "preterito-perfecto",
+        "3": "imperfect"
+      }
     },
     {
       "id": "c1-12-01.ex02",
@@ -54,7 +59,7 @@
       "sentence": "Siento mucho que esa suposición ____ tanta confusión en el equipo.",
       "answer": "cause",
       "english": "I am very sorry that this assumption is causing so much confusion in the team.",
-      "hint": "causar (subjunctive: sentir = regret)",
+      "hint": "causar (3rd person singular)",
       "teaches": [
         "verbos-doble-modo"
       ]
@@ -65,10 +70,10 @@
       "category": "listening",
       "sentence": "Aceptar ese cambio supone que tengamos que revisar toda la interpretación del contrato.",
       "options": [
-        "I assume we already reviewed the whole interpretation of the contract before the change.",
-        "Accepting that change entails our having to review the whole interpretation of the contract.",
-        "Accepting that change means we no longer need to review the contract.",
-        "They assume that the change improves the interpretation of the contract."
+        "Accepting that change assumes we have already reviewed the whole interpretation of the contract.",
+        "Accepting that change means we will have to review the whole interpretation of the contract.",
+        "Rejecting that change means we will have to review the whole interpretation of the contract.",
+        "Accepting that change means we will not have to review the whole interpretation of the contract."
       ],
       "correct": 1,
       "teaches": [
@@ -82,7 +87,7 @@
       "sentence": "Entiendo que ____ molesto por el mensaje implícito, pero conviene mirar el contexto.",
       "answer": "estés",
       "english": "I understand why you are upset about the implicit message, but it is advisable to look at the context.",
-      "hint": "estar (2nd person singular subjunctive: entender = find understandable)",
+      "hint": "estar (2nd person singular)",
       "teaches": [
         "verbos-doble-modo"
       ]
@@ -109,7 +114,8 @@
       "correct": 0,
       "teaches": [
         "verbos-doble-modo"
-      ]
+      ],
+      "hint": "Carlos is afraid of what might happen when the clients read it."
     },
     {
       "id": "c1-12-01.ex07",
@@ -155,7 +161,10 @@
       "correct": 2,
       "teaches": [
         "verbos-doble-modo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-perfecto"
+      }
     }
   ]
 }

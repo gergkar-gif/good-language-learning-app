@@ -102,6 +102,9 @@ CHECKS = {
     # two-option items (a coin toss) were written; both ES C1 only, new content
     "vocab-relisted": "ES C1: a lemma already listed in an earlier C1 lesson is listed again (use it, don't re-list it)",
     "few-options": "ES C1: a choice item with fewer than 3 options",
+    # ES C1 Units 8-12, 2026-11-19: three reads running rewrote listening wrong options that
+    # were unrelated sentences or changed several details; a word-count heuristic, so a suspect
+    "listening-many-changes": "ES C1: a listening wrong option differs from the right one in 10+ words (change ONE detail: a number, más/menos, the subject)",
     "ds-on-answer": "distractor_skills names the right option",
     "ds-own-skill": "distractor_skills names the skill the exercise teaches (a wrong form of the tested skill gets none)",
     "reported-question": "a question in reported speech ('asks Meg where she is going') lets a third-person option fit; quote the direct question",
@@ -140,7 +143,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"character-role", "character-extra", "story-meta", "story-attribution", "item-reader", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"listening-many-changes", "character-role", "character-extra", "story-meta", "story-attribution", "item-reader", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -932,6 +935,15 @@ def check_unit(src, course, level, unit, shape):
                 out.append((check, eid, msg, ex_rel))
             if es_c1 and isinstance(e.get("options"), list) and len(e["options"]) < 3:
                 out.append(("few-options", eid, f"{len(e['options'])} options", ex_rel))
+            if es_c1 and e.get("type") == "listening-choice" and isinstance(e.get("options"), list) \
+                    and isinstance(e.get("correct"), int) and 0 <= e["correct"] < len(e["options"]):
+                right = Counter(re.findall(r"[\w']+", str(e["options"][e["correct"]]).lower()))
+                for i, o in enumerate(e["options"]):
+                    if i != e["correct"]:
+                        w = Counter(re.findall(r"[\w']+", str(o).lower()))
+                        d = sum(((right - w) + (w - right)).values())
+                        if d >= 10:
+                            out.append(("listening-many-changes", eid, f"option {i}: {d} words differ", ex_rel))
             if course in ("es-es", "es-latam") and level not in ("a1", "a2", "b1"):
                 hit = next((t for t in texts(e) if ITEM_READER.search(fold(t))), None)
                 if hit:
