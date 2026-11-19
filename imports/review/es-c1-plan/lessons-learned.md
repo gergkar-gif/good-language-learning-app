@@ -99,9 +99,5 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
 - Unit 21: self-read caught an internal arithmetic mismatch in the satirical column (90 min Monday + 3.5 h Tuesday = 5 hours, not 6) and a `rhetorical-devices` dialogue item whose wrong options only tested `subjunctive-emotion` mood -> check every time/number total inside a story against its own paragraphs, and verify every item's distractors actually break its `teaches` skill.
 - Unit 22: self-read caught 4 unmet words (`metió`, `perdona`, `buenísimo`) plus asymmetric time/second-clause phrasing in dialogue distractors and grammar-label hints (`superlative`, `preterite`, `admiring augmentative`) -> keep dialogue distractors strictly symmetric outside the tested form, use plain English glosses in hints, and verify `distractor_skills` slugs against `skills/es.json` (e.g. `imperfect-subjunctive-forms`, not `imperfecto-subjuntivo`).
 - Unit 23: `word-lesson-index.json` only indexes published tracks (not hidden C1 core), so checking candidate vocabulary only against it caused 6 `vocab-relisted` hits from earlier C1 core units -> always check new unit lemmas against `.scratch/sheet-<unit>.md` (which includes earlier hidden C1 core units), and contract `a + el -> al` / `de + el -> del` even inside wrong preposition distractors.
-
-
-
-
-
+- Unit 24: `unmet-words.js` did not map adjectival participle *estancado/a* to reflexive lemma *estancarse* and rejected *ambos/ambas* as untaught -> list adjectival participles separately when derived from reflexive verbs, verify pronouns like *ambos* against `.scratch/sheet-<unit>.md` (*los dos / las dos*), and check `distractor_skills` slugs against `skills/es.json` (`present-tense`, `imperfect`, `condicional-regular`).
 
