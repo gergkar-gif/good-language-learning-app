@@ -1,15 +1,15 @@
 # Antigravity brief: ES C1 core Unit {NUM} `{UID}` ({DATE})
 
-Antigravity writes this ES C1 unit from scratch (user, 2026-11-19: Antigravity writes the C1 units from Unit 9 on). Claude reviews it afterwards: a norm check against the RAE, a second read, fixes, play-through, freeze, planting in es-es.
+Antigravity writes this ES C1 unit from scratch (user, 2026-11-19: Antigravity writes the C1 units from Unit 9 on). If you came here from `imports/review/es-c1-plan/antigravity/RUN.md`, follow that file's loop around this brief. Claude reviews it afterwards: a norm check against the RAE, a second read, fixes, play-through, freeze, planting in es-es.
 
 ## Antigravity: how this works
 
-- Work in the main checkout `{A}`, on `master`, up to date first: `git pull --rebase --autostash origin master`. Touch only Unit {NUM}'s files (listed in the brief below), `content/es-latam/curriculum/challenges.json` (through `add_challenges.py`), `content/es-latam/indexes/tags.lock.json` (through `lock_tags.py`), `skills/es.json` and the generated indexes (through `set_planned_taught_in.py` / `build_skill_registry.py`), and the report file.
+- Work in the main checkout `{A}`, on `master`, up to date first: `git pull --rebase --autostash origin master`. Touch only Unit {NUM}'s files (listed in the brief below), `content/es-latam/curriculum/challenges.json` (through `add_challenges.py`), `content/es-latam/indexes/tags.lock.json` (through `lock_tags.py`), `skills/es.json` and the generated indexes (through `set_planned_taught_in.py` / `build_skill_registry.py`), the report file, this brief, the unit's notes if you drafted them, and your lines in `imports/review/es-c1-plan/lessons-learned.md`.
 - Rebuild only es-latam: `python build-manifest.py es-latam` (seconds; the full build took minutes on Unit 8). Generated files it rewrites (decks, manifests, curriculum.json) stay out of your commit: `git checkout -- content/*/decks content/*/stories/manifest.json content/*/curriculum/curriculum.json` before committing; the auto-sync job rebuilds them.
 - Write es-latam only. Do NOT plant the unit in es-es and do NOT run `freeze_unit.py`: Claude does both after the read.
 - Do NOT edit ROADMAP.md, ACHIEVED.md or the docs: Claude records the outcome. Raise anything you would change in the report instead.
 - When the unit is done and every check below is clean: one commit (message: `ES C1 core Unit {NUM} ({UID}): written by Antigravity, before the read`), `git pull --rebase --autostash origin master`, `git push origin HEAD:master`. The pre-push hook runs the validator and check-content; never bypass it.
-- In the report, add at the top: the model and setting you ran as, wall-clock time, and how much of your allowance the unit used if you can see it. Then stop.
+- In the report, add at the top: the model and setting you ran as, wall-clock time, and how much of your allowance the unit used if you can see it. Then go on as RUN.md says if you are running the loop; otherwise stop.
 
 ## Order of work
 

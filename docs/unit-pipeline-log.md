@@ -2288,3 +2288,18 @@ Units 9 onward; `fill_c1_prompts.py antigravity` builds each brief. Reviewer's o
 notes stated an unverified rule (agreeing *de las que* as the only form after a noun), which made
 one wrong option rest on it; unit notes state as a rule only what a source confirms.
 
+### 2026-11-19: ES C1, Antigravity's unattended run (set-up)
+
+The user wanted Antigravity to write unit after unit without coming back. `RUN.md` is the loop;
+the reviewer's part per batch, whenever the user asks for it:
+1. `git log` for "written by Antigravity" commits since the last batch; `freeze_unit.py --status`.
+2. Norm check of each unit's report ("Norm claims") against a source; fix or soften before the read.
+3. Readers (`fill_c1_prompts.py reader`, at most two at once, two or three units each).
+4. Apply, `lock_tags --update`, check, walk, freeze es-latam; `plant_es_es_c1.py`, check, walk,
+   freeze es-es.
+5. Append the batch's new defect classes to `imports/review/es-c1-plan/lessons-learned.md` (and, for
+   a class a script can catch, a check): Antigravity reads that file and
+   `c1_reviewer_changes.py` before its next unit, so the fixes reach it without a hand-back.
+Units with a new skill have reviewer-written notes (norm traps checked); topic units' notes are
+drafted by Antigravity from `notes/README.md`; read those notes as part of the unit.
+

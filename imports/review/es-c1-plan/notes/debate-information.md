@@ -1,0 +1,9 @@
+Genre: debate transcript
+Lesson plan:
+- 01 NEW `dislocacion-clitica`, screen `c1-11-01-a-gr`: putting a known object first as the topic, picked up by a clitic: *El informe lo firmó ayer la directora*, *A los vecinos les preocupa el ruido*, *Eso no lo dije yo*. Norm (reviewer, RAE grammar §34.2 and studies on dislocation, 2026-11-19): a fronted TOPIC direct object needs its clitic (*El informe lo firmé*; *El informe firmé* is wrong as a topic); a fronted contrastive FOCUS takes no clitic (*Un libro te daré, y no dos*; you know focus fronting from `inversion-enfasis-fronting`, B2 Unit 1, recap it). So a wrong option without the clitic must be pinned as a topic (the context names the object as already known), never a possible contrastive focus. Indirect objects: *A Ana le dieron el premio*. At least 6 items tagged with it.
+- 02 conceding a point before answering: recap `contrast-concession-connectors` (B1) and `concesivas-si-bien` (B2) in debate: *Es cierto que…, sin embargo…*.
+- 03 interrupting and taking the floor politely: recap `imperfecto-de-cortesia` (B2) and `formal-register` (B2): *Quería añadir…*, *Si me permite…*.
+- 04 reformulating the other side's argument: recap `reformulation-markers` (B2) and `discurso-indirecto-deicticos` (B2): *Lo que usted dice es que…*, *es decir*.
+- 05 closing a debate: recap `consecutivas-de-tal-manera` (B2): *de tal manera que*, *hasta el punto de que*; plus the text and the Reading group.
+Domain words: debate (*el moderador, el turno, la réplica, rebatir, el argumento* only if not listed, *la postura* only if not listed, *interrumpir*, *matizar* only if not listed); check each against the sheet.
+Text: a transcript of an invented televised debate (a moderator and two guests, unnamed: *la invitada*, *el invitado*) on whether schools should ban phones; it uses topic dislocation naturally (*Ese dato lo conozco*). No real programme or person.

@@ -1,0 +1,9 @@
+Genre: essay on varieties
+Lesson plan:
+- 01 NEW `leismo-laismo-reconocimiento`, screen `c1-25-01-a-gr`: RECOGNITION. The standard: *lo/la* for direct objects, *le* for indirect. Leísmo: *le* as a direct object. The norm (RAE DPD, *leísmo*, 2026-11-19 reviewer check) accepts only *le* for a male person in the singular (*A Juan le vi ayer* = *lo vi*), common in central and northern Spain; leísmo for a woman or a thing (*le vi* for *la vi*, *el libro le leí*) and laísmo (*la dije* for *le dije*) and loísmo (*lo di un regalo*) are rejected. Most of Latin America uses *lo/la/le* the standard way. Items: recognising which sentence shows each phenomenon, which one the norm accepts, and the standard equivalent; the learner's own production stays standard (*lo vi*). The accepted male-person *le* must never be a "wrong" option. At least 6 items tagged with it.
+- 02 forms of address across the Spanish-speaking world: recap `sociolinguistica-tratamiento-cortesia` (B2) and `voseo-rioplatense-reconocimiento` (B2, recognition).
+- 03 words that change by country: vocabulary-led (*carro/coche, computadora/ordenador, jugo/zumo, celular/móvil*: recognition), tagged with the unit vocabulary skill; never mark either word wrong.
+- 04 pronunciation differences described in words (*seseo*, *ceceo*, aspirated *s*): vocabulary-led, recognition.
+- 05 standard and variety: recap `formal-register` (B2); plus the text and the Reading group.
+Domain words: language and variety (*la variedad, el dialecto, el acento, la norma* only if not listed, *el hablante* only if not listed, *regional, culto*); check each against the sheet.
+Text: an essay on why there is no single "correct" Spanish accent but there is a shared written norm; facts only general and certain (Spanish is spoken in many countries; the academies work together on a shared norm; leísmo is typical of parts of Spain). No figures, no named person.
