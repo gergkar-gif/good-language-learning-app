@@ -35,7 +35,9 @@ Start every chat by reading this file to the end. Work in `C:/dev/parlour`.
 6. Append to `imports/review/es-c1-plan/lessons-learned.md` under "Writer's notes" one to three
    lines: what your self-review caught in this unit, as a rule (`Unit N: … -> …`). Only real
    findings; none is fine.
-7. Commit and push exactly as the unit brief says (one commit per unit: the unit's files, its
+7. Run `python scripts/c1_report_check.py <unit number>` and complete the report until it passes (it
+   needs the norm-claims list, the self-read count, the checks and your unsure lines: Units 18-19's
+   reports left out the norm claims). Then commit and push exactly as the unit brief says (one commit per unit: the unit's files, its
    notes if you wrote them, its brief, its report, the self-read report and fixes, the
    lessons-learned lines, and the indexes the scripts wrote). Then go back to step 1 for the next unit.
 
