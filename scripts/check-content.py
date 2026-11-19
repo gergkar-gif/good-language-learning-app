@@ -102,6 +102,8 @@ CHECKS = {
     # two-option items (a coin toss) were written; both ES C1 only, new content
     "vocab-relisted": "ES C1: a lemma already listed in an earlier C1 lesson is listed again (use it, don't re-list it)",
     "few-options": "ES C1: a choice item with fewer than 3 options",
+    # ES C1 Units 18-19, 2026-11-19: two unit texts of ~350 words against the brief's 400-600
+    "c1-text-length": "ES C1: the unit text on lesson 05 is outside 400-600 Spanish words",
     # ES C1 Units 8-12, 2026-11-19: three reads running rewrote listening wrong options that
     # were unrelated sentences or changed several details; a word-count heuristic, so a suspect
     "listening-many-changes": "ES C1: a listening wrong option differs from the right one in 10+ words (change ONE detail: a number, más/menos, the subject)",
@@ -1027,6 +1029,12 @@ def check_unit(src, course, level, unit, shape):
         for sec in lesson.get("sections", []):
             if sec.get("type") == "story" and sec.get("ref"):
                 out += check_story(src, course, level, sec["ref"], L)
+                if es_c1:
+                    story = src.read(f"content/{course}/{sec['ref']}") or {}
+                    n = sum(len(re.findall(r"[\wáéíóúüñÁÉÍÓÚÜÑ]+", p.get("text", "")))
+                            for p in story.get("paragraphs", []) if isinstance(p, dict) and p.get("lang", "es") != "en")
+                    if not 400 <= n <= 600:
+                        out.append(("c1-text-length", stem, f"{n} words", f"content/{course}/{sec['ref']}"))
             if course == "es-latam" and sec.get("type") in ("grammar", "vocabulary", "story") and sec.get("ref"):
                 # exercises are checked item by item (check_exercise); screens and stories here
                 w = vosotros_hit(" ".join(texts(src.read(f"content/{course}/{sec['ref']}") or {})))

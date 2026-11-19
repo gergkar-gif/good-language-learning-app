@@ -17,7 +17,9 @@
         "como-condicional-subjuntivo"
       ],
       "distractor_skills": {
-        "1": "present-tense"
+        "1": "present-tense",
+        "2": "preterito-indefinido",
+        "3": "futuro-simple"
       }
     },
     {
@@ -36,7 +38,8 @@
         "conditional-conjunctions"
       ],
       "distractor_skills": {
-        "1": "present-tense"
+        "1": "present-tense",
+        "3": "futuro-simple"
       }
     },
     {
@@ -76,7 +79,7 @@
       "sentence": "Te lo advierto: como _____ el archivo sin respaldo, perderemos todo el trabajo.",
       "answer": "pierdas",
       "english": "I'm warning you: if you lose the file without a backup, we will lose all the work.",
-      "hint": "perder (tú, warning)",
+      "hint": "perder (tú)",
       "teaches": [
         "como-condicional-subjuntivo"
       ]
@@ -85,10 +88,10 @@
       "id": "c1-19-consolidation.ex05",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "De no _____ así, el contrato prevé una penalización.",
-      "answer": "ser",
-      "english": "If that is not the case, the contract provides for a penalty.",
-      "hint": "infinitive ('to be')",
+      "sentence": "De no _____ el anexo a tiempo, aplicaremos un recargo.",
+      "answer": "recibir",
+      "english": "If we do not receive the attachment on time, we will apply a surcharge.",
+      "hint": "infinitive ('to receive')",
       "teaches": [
         "implicit-conditionals"
       ]
@@ -100,9 +103,9 @@
       "sentence": "Si hubiéramos revisado la copia ayer, hoy no _____ este problema.",
       "answer": "tendríamos",
       "english": "If we had reviewed the copy yesterday, today we would not have this problem.",
-      "hint": "tener (nosotros, present result)",
+      "hint": "tener (nosotros)",
       "teaches": [
-        "hypothetical-structures"
+        "mixed-conditionals"
       ]
     },
     {
@@ -124,8 +127,8 @@
       "id": "c1-19-consolidation.ex08",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Si no hubiéramos guardado el respaldo, todo el trabajo habría sido en vano.",
-      "english": "If we hadn't saved the backup, all the work would have been in vain.",
+      "sentence": "Si no hubiéramos hecho una copia, todo el trabajo se habría perdido.",
+      "english": "If we hadn't made a copy, all the work would have been lost.",
       "teaches": [
         "pluscuamperfecto-subjuntivo-si"
       ]
@@ -145,15 +148,16 @@
         }
       ],
       "options": [
-        "Sí, por si acaso: si hay un problema con el envío a última hora, tendremos margen de sobra.",
-        "Sí, por si acaso: si haya un problema con el envío a última hora, tendremos margen de sobra.",
-        "Sí, por si acaso: si habría un problema con el envío a última hora, tendremos margen de sobra."
+        "Sí, por si acaso: si hay un problema con el envío a última hora, usaremos esta copia.",
+        "Sí, por si acaso: si haya un problema con el envío a última hora, usaremos esta copia.",
+        "Sí, por si acaso: si habría un problema con el envío a última hora, usaremos esta copia."
       ],
       "correct": 0,
       "teaches": [
         "si-clauses"
       ],
       "distractor_skills": {
+        "1": "subjuntivo-morfologia",
         "2": "condicional-regular"
       }
     },
@@ -186,11 +190,11 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Warn a colleague in one sentence: if you run late again, we will lose the client, using «como» + subjunctive.",
+          "prompt": "Warn a colleague in one sentence: if you run late again, we will lose the client. Use «como» + subjunctive of «retrasarse».",
           "answer": "Como te retrases otra vez, perderemos al cliente."
         },
         {
-          "prompt": "Warn about a recent action in one sentence: if you have forgotten the attachment, there will be a surcharge, using «como hayas».",
+          "prompt": "Warn about a recent action in one sentence: if you have forgotten the attachment, there will be a surcharge. Use «como hayas olvidado» and «habrá».",
           "answer": "Como hayas olvidado el anexo, habrá un recargo."
         }
       ],

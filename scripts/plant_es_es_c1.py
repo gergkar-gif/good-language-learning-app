@@ -21,6 +21,7 @@ Worksheet: imports/review/es-es-c1-plant/<unit id>.md
 """
 import glob
 import json
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -50,6 +51,16 @@ def note_tiles(node, where, path=""):
     elif isinstance(node, list):
         for i, v in enumerate(node):
             note_tiles(v, where, f"{path}[{i}]")
+
+
+def quoted(node):
+    if isinstance(node, str):
+        return re.sub(r"«([^»]+)»", lambda m: "«" + b2.cv.convert(m.group(1), "es-es")[0] + "»", node)
+    if isinstance(node, list):
+        return [quoted(v) for v in node]
+    if isinstance(node, dict):
+        return {k: (v if k in b2.SKIP else quoted(v)) for k, v in node.items()}
+    return node
 
 
 def rel_posix(p):
@@ -82,6 +93,9 @@ def plant(u, force):
         old = json.loads(raw)
         new = b2.walk(old, str(dst.relative_to(ROOT)))
         note_tiles(old, str(dst.relative_to(ROOT)))
+        # Spanish quoted inside an English field («el vaso de jugo» in a prompt whose answer walk()
+        # converted to *zumo*, Unit 17, 2026-11-19): convert every «…» run too
+        new = quoted(new)
         # a C1 story's title is Spanish, but walk() skips `title` as an English field
         # (Unit 11: *celulares* stayed in the es-es title, 2026-11-19)
         if "/stories/" in rel_posix(src) and isinstance(new, dict) and isinstance(new.get("title"), str):

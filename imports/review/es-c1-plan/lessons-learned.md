@@ -61,6 +61,14 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
   that add what the text does not say; challenge targets that do not use the canDo's form;
   illogical scenarios (a committee "evaluating the diagnosis").
 
+- Units 16-19 (readers, 166 fixes after the self-reads' 85): screens still present known forms as
+  new (*mientras que*, the five verbs of change, accidental *se*, *como* + subjunctive warnings are
+  B1/B2); unit texts under 400 words (`c1-text-length` now fails them); options in which two wrong
+  answers share a fault; `tier2` on consolidation challenges (every C1 challenge is `tier1`, as
+  the brief's model entry; the grader scores tier2 as a transaction and failed one target);
+  hints naming the tested point; prompts that two answers fit; reading answers not in the text;
+  missing `distractor_skills` on real forms of other skills.
+
 ## Writer's notes (append after each unit)
 
 - Unit 10: every `listening-choice` and `dialogue-complete` item initially put the right answer at index 0 -> rotate option order across 0/1/2/3 when authoring choice items. (Reviewer: not needed, the app shuffles options.)
