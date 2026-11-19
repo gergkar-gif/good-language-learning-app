@@ -50,6 +50,17 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
 - Units 8-12: listening wrong options rewritten in every read. `check-content` now flags
   `listening-many-changes` (a wrong option 10+ words away from the right one); fix every hit.
 
+- Units 13-15 (readers, 94 fixes): the most frequent class: a screen presents as NEW a form the
+  knowledge sheet already lists (*a raíz de*, *-ra/-se*, passive *se*, *habrá salido*, the
+  prepositional cleft, *debería haber*), or recaps one unit when the form was taught in two. Rule:
+  for every Spanish form on a screen, grep the sheet; if it is there, the screen says "You know *X*
+  from <Level> Unit N" and teaches only what is new. Also: two wrong options with the SAME fault
+  (each wrong option has its own fault); an extra word or detail in only one option (a tell);
+  `distractor_skills` on an ungrammatical option (only on real forms of another skill);
+  fill-blanks missing equally right answers (*debió / debía* beside *debería*); reading answers
+  that add what the text does not say; challenge targets that do not use the canDo's form;
+  illogical scenarios (a committee "evaluating the diagnosis").
+
 ## Writer's notes (append after each unit)
 
 - Unit 10: every `listening-choice` and `dialogue-complete` item initially put the right answer at index 0 -> rotate option order across 0/1/2/3 when authoring choice items. (Reviewer: not needed, the app shuffles options.)

@@ -82,6 +82,12 @@ def main():
     hidden_ids = {u["slug"] for L in (json.loads(cur.read_text(encoding="utf-8")).get("levels", {}) if cur.is_file() else {}).values()
                   for u in L.get("units", []) if u.get("hidden")}
     hidden_stems = {st for (lvl, uid), sts in stems_of.items() if uid in hidden_ids for st in sts}
+    # checking a hidden track (ES C1 core while it is written, 2026-11-19): its own earlier units
+    # teach the units after them, so they count; other hidden tracks still do not
+    checked = {st for (lvl, uid), sts in stems_of.items() if lvl == level and (not only or uid in only) for st in sts}
+    own = {track_of.get(st) for st in checked if st in hidden_stems}
+    hidden_stems = {st for st in hidden_stems
+                    if not (track_of.get(st) in own and any(st in sts for (lvl, uid), sts in stems_of.items() if lvl == level))}
     texts = {}
     # where a word is taught: an italicised form on a grammar screen (the recapped
     # words themselves left out, they teach nothing) or a vocabulary-list lemma. A
