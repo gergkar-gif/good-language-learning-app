@@ -61,5 +61,8 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
 - Unit 12: irregular preterite *dedujo* (from new verb *deducir*) tripped `unmet-words` -> prefer regular forms of newly listed irregular verbs in exercises when testing mood contrast.
 - Unit 13: a fill-blank hint naming only `deber (3rd person singular)` before `haber` left `debe`/`debió` valid alongside `debería` -> include the English cue (`'should have'`) or anchor the present frame (`hoy`, `present`) so only one form fits.
 - Unit 13: Reading Q2 initially used `completely replaced` and two choice distractors had extra time phrases (`el año pasado`, `el mes pasado`) -> remove absolutes and asymmetric time phrases from wrong options during self-review.
+- Unit 14: two Reading options initially mentioned details not in the corresponding paragraph (`intermittent clean generation`, `circular-economy rules` in paragraph 5) -> verify every phrase of every reading answer directly against its paragraph.
+- Unit 14: grouped italic runs (`*se busca / se buscan*`, `*lo bueno, lo malo, lo importante*`) in recap openers tripped `check_unit_refs.py` -> put each cited form in its own italic run.
+
 
 
