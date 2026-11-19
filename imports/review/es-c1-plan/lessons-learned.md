@@ -69,6 +69,9 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
   hints naming the tested point; prompts that two answers fit; reading answers not in the text;
   missing `distractor_skills` on real forms of other skills.
 
+- From Unit 20 on: run `python scripts/c1_known_forms.py <unit id>` before committing and recap every
+  known form it lists that the screen relies on (RUN.md step 5).
+
 ## Writer's notes (append after each unit)
 
 - Unit 10: every `listening-choice` and `dialogue-complete` item initially put the right answer at index 0 -> rotate option order across 0/1/2/3 when authoring choice items. (Reviewer: not needed, the app shuffles options.)
