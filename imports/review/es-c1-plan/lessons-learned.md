@@ -59,4 +59,7 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
 - Unit 11: conjugating the verb inside a multi-word vocabulary expression (`ceda` from `ceder la palabra`) triggered `unmet-words` -> use multi-word verbal expressions in the infinitive in exercises unless the base verb is already met.
 - Unit 12: *el lector* inside exercises triggered `item-reader` suspects, and *enfado* in the story triggered `course-variant` -> use concrete roles (*el cliente*, *el periodista*, *el público*) in exercises and *enojo* in es-latam.
 - Unit 12: irregular preterite *dedujo* (from new verb *deducir*) tripped `unmet-words` -> prefer regular forms of newly listed irregular verbs in exercises when testing mood contrast.
+- Unit 13: a fill-blank hint naming only `deber (3rd person singular)` before `haber` left `debe`/`debió` valid alongside `debería` -> include the English cue (`'should have'`) or anchor the present frame (`hoy`, `present`) so only one form fits.
+- Unit 13: Reading Q2 initially used `completely replaced` and two choice distractors had extra time phrases (`el año pasado`, `el mes pasado`) -> remove absolutes and asymmetric time phrases from wrong options during self-review.
+
 
