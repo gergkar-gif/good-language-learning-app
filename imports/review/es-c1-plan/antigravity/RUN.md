@@ -21,21 +21,31 @@ Start every chat by reading this file to the end. Work in `C:/dev/parlour`.
 4. Build the unit's brief: `python scripts/fill_c1_prompts.py antigravity C:/dev/parlour <unit id>`.
    It writes `imports/review/es-c1-plan/antigravity/unit-NN-<unit id>.md`. Follow that brief
    exactly, up to and including its checks.
-5. Self-review before committing: render the unit (`node scripts/render_lesson.js es-latam <the six
-   stems>`) and read every screen, item, challenge and the text once more against the
-   lessons-learned list and the brief's "Learned on …" lists. Fix what you find and rerun the checks.
+5. Self-read before committing (added 2026-11-19: the reviewer's reads kept finding ~32 fixes a
+   unit). Read your own unit exactly as the reviewer's readers do:
+   - `python scripts/fill_c1_prompts.py reader C:/dev/parlour --norm-notes imports/review/es-c1-plan/antigravity/self-read-norm-notes.md <unit id>`
+     writes `.scratch/reader-prompt.md`; follow it as a reader (report and fixes file only), with
+     fresh eyes: forget that you wrote the unit.
+   - Apply your fixes: `python scripts/apply_replacements.py .scratch/fixes-<unit id>.json`, then
+     `python scripts/lock_tags.py es-latam c1/<unit id> --update --reason "self-read"` and every check
+     of the unit brief again until clean.
+   - Copy the read's report to `imports/review/es-c1-antigravity-NN/self-read.md` and the fixes file
+     to `imports/review/es-c1-antigravity-NN/self-read-fixes.json`, and put the number of fixes at
+     the top of your unit report ("Self-read: N fixes"). The reviewer compares it with its own read.
 6. Append to `imports/review/es-c1-plan/lessons-learned.md` under "Writer's notes" one to three
    lines: what your self-review caught in this unit, as a rule (`Unit N: … -> …`). Only real
    findings; none is fine.
 7. Commit and push exactly as the unit brief says (one commit per unit: the unit's files, its
-   notes if you wrote them, its brief, its report, the lessons-learned lines, and the indexes the
-   scripts wrote). Then go back to step 1 for the next unit.
+   notes if you wrote them, its brief, its report, the self-read report and fixes, the
+   lessons-learned lines, and the indexes the scripts wrote). Then go back to step 1 for the next unit.
 
 ## When to stop
 
-- After 3 units in one chat: write a short summary of the three (units, check counts, anything for
-  the user) at the end of the third report and stop; the user starts a fresh chat for the next
-  block (long chats lose track of the brief).
+- This run (user, 2026-11-19): Units 16 to 27, twelve units, with no stop for review in between.
+  When Unit 27 is committed, stop and report: the run is done.
+- After 4 units in one chat: write a short summary of the four (units, self-read fix counts, check
+  counts, anything for the user) at the end of the fourth report and stop; the user starts a fresh
+  chat for the next block (long chats lose track of the brief).
 - When your allowance is running low: finish or abandon the current unit cleanly (never commit a
   half-written unit; `git stash` it and say so in your last message) and stop.
 - When a check cannot be made clean, or a unit's plan does not fit the course (a recap the sheet
