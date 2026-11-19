@@ -83,5 +83,8 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
 - Unit 18: sentence-final `, pues.` is acceptable in several Latin American varieties, and `tell-opener` flags choice items where only the right option starts with *pues / bueno / mira* -> use unmistakably wrong markers (e.g. `, o sea.`) as distractors and test mid-turn or non-opener positions when `tell-opener` fires.
 - Unit 19: `add_challenges.py` requires `canDo` to match the lesson's **first** checklist item verbatim, and `fb()` in `es_c1_builders.py` takes `answers=[...]` (not `alt=`) for multiple accepted answers -> always copy `checklist[0]` into `canDo` and use `answers=[...]` for `-ra`/`-se` subjunctive pairs.
 - Unit 19: self-read caught a redundant condition+connector pair (`como vuelvas..., de lo contrario...`), missing personal *a* (`perderemos el cliente` -> `al cliente`), and an impossible English tense in a listening distractor (`was delayed tomorrow`) -> read every grammar example and distractor aloud in both languages during the self-read.
+- Unit 20: self-read caught fill-blank hints naming the tested grammar label or agreement (`present concession`, `agreeing with «la tarifa»`) and a challenge target using `para lo ... que` while `canDo` (`checklist[0]`) named `con lo ... que` -> keep hints to bare lemmas or plain English glosses (`'may well be'`) and verify every challenge target matches `checklist[0]`'s exact form.
+- Unit 20: grammar screen tables require 2-column rows (`[left, right]`) and `matching` pairs require 2-element arrays (`[spanish, english]`), not dicts -> always generate 2-column tables and list pairs in builder scripts.
+
 
 

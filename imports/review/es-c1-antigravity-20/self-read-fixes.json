@@ -1,0 +1,167 @@
+[
+  {
+    "id": "c1-20-01.ex02",
+    "file": "content/es-latam/exercises/c1/c1-20-01-ex.json",
+    "old": "\"hint\": \"ser (3rd person singular, present concession)\"",
+    "new": "\"hint\": \"ser (3rd person singular, 'may well be')\"",
+    "why": "Hint named the tested grammar label ('present concession'); replaced with plain English gloss."
+  },
+  {
+    "id": "c1-20-01.ex03",
+    "file": "content/es-latam/exercises/c1/c1-20-01-ex.json",
+    "old": "\"hint\": \"tener (3rd person singular, past concession)\"",
+    "new": "\"hint\": \"tener (3rd person singular, 'may well have had')\"",
+    "why": "Hint named the tested grammar label ('past concession'); replaced with plain English gloss."
+  },
+  {
+    "id": "c1-20-01.ex06",
+    "file": "content/es-latam/exercises/c1/c1-20-01-ex.json",
+    "kind": "target",
+    "old": "\"Era costoso, pero te lo regalan gratis este semestre.\",\n        \"Sería costoso, pero el horario te compensa de sobra.\"",
+    "new": "\"Sea costoso, pero no es para tanto si el horario te compensa.\",\n        \"Fuera costoso, pero no es para tanto si el horario te compensa.\"",
+    "why": "Removed tautology ('regalan gratis') + asymmetric time phrase ('este semestre') and replaced hedged conditional distractor (potentially valid) with clear mood faults."
+  },
+  {
+    "id": "c1-20-01.ex08",
+    "file": "content/es-latam/exercises/c1/c1-20-01-ex.json",
+    "kind": "target",
+    "old": "\"Tendría algún defecto, porque hoy funciona perfectamente.\"",
+    "new": "\"Habrá tenido algún defecto, porque hoy vale la pena.\"",
+    "why": "Aligned distractor to one clear fault ('porque' instead of 'pero') in the same frame."
+  },
+  {
+    "id": "c1-20-02.ex01",
+    "file": "content/es-latam/exercises/c1/c1-20-02-ex.json",
+    "kind": "target",
+    "old": "\"Aún cuando el desembolso es elevado mañana, el barrio necesita ese servicio.\"",
+    "new": "\"Aun cuando el desembolso será elevado, el barrio necesita ese servicio.\"",
+    "why": "Removed asymmetric time word ('mañana') and double fault so option 1 has one clear mood/tense fault (future indicative after aun cuando)."
+  },
+  {
+    "id": "c1-20-03.ex02",
+    "file": "content/es-latam/exercises/c1/c1-20-03-ex.json",
+    "old": "\"hint\": \"alto (agreeing with «la tarifa»)\"",
+    "new": "\"hint\": \"alto\"",
+    "why": "Hint gave away the agreement being tested; reduced to bare lemma."
+  },
+  {
+    "id": "c1-20-03.ex03",
+    "file": "content/es-latam/exercises/c1/c1-20-03-ex.json",
+    "old": "\"hint\": \"preposition setting a benchmark ('for')\"",
+    "new": "\"hint\": \"preposition ('for')\"",
+    "why": "Hint named the tested function ('setting a benchmark'); kept plain gloss."
+  },
+  {
+    "id": "c1-20-03.ex06",
+    "file": "content/es-latam/exercises/c1/c1-20-03-ex.json",
+    "kind": "target",
+    "old": "\"Para lo largas que fue las obras, el resultado es muy decepcionante.\"",
+    "new": "\"Con lo largo que fueron las obras, el resultado es muy decepcionante.\"",
+    "why": "Had two faults (wrong preposition + singular verb); replaced with one clear adjective-agreement fault."
+  },
+  {
+    "id": "c1-20-04.ex06",
+    "file": "content/es-latam/exercises/c1/c1-20-04-ex.json",
+    "kind": "target",
+    "set": {
+      "options": [
+        "Qué pena; resulta absurdo que hayan pasado por alto el mérito de quienes hicieron la obra.",
+        "Qué pena; resulta absurdo que han pasado por alto el mérito de quienes hicieron la obra.",
+        "Qué pena; está claro que hayan pasado por alto el mérito de quienes hicieron la obra.",
+        "Qué pena; resulta absurdo que pasar por alto el mérito de quienes hicieron la obra."
+      ],
+      "distractor_skills": {
+        "1": "preterito-perfecto"
+      }
+    },
+    "why": "Prompt refers to yesterday's completed report ('ayer no incluyeron'), so present perfect subjunctive ('hayan pasado por alto') matches the time frame cleanly; added distractor_skills for indicative 'han pasado'."
+  },
+  {
+    "id": "c1-20-05.ex09",
+    "file": "content/es-latam/exercises/c1/c1-20-05-ex.json",
+    "kind": "target",
+    "set": {
+      "options": [
+        "Las obras molestaron mucho, todo hay que decirlo; no obstante, hoy el recorrido es más rápido.",
+        "Las obras molestaron mucho, todo hay que decirlo; por el contrario, hoy el recorrido es más rápido.",
+        "Las obras molestaron mucho, todo hay que decirlo; al contrario, hoy el recorrido es más rápido.",
+        "Las obras molestaron mucho, todo hay que decirlo; por lo tanto, hoy el recorrido es más rápido."
+      ]
+    },
+    "why": "Removed asymmetric time words across options and made each wrong option a single clear discourse-marker fault."
+  },
+  {
+    "id": "c1-20-consolidation.ex02",
+    "file": "content/es-latam/exercises/c1/c1-20-consolidation-ex.json",
+    "kind": "target",
+    "old": "\"Con lo congestionada que esté la calle hoy, el tranvía ahorra media hora.\"",
+    "new": "\"Con lo congestionada que esté la calle, el tranvía ahorra media hora.\"",
+    "why": "Removed asymmetric time word 'hoy' appearing only in option 3."
+  },
+  {
+    "id": "c1-20-consolidation.ex04",
+    "file": "content/es-latam/exercises/c1/c1-20-consolidation-ex.json",
+    "old": "\"hint\": \"tener (3rd person singular)\"",
+    "new": "\"hint\": \"tener (3rd person singular, 'may well have')\"",
+    "why": "Without the English cue, present indicative 'tiene' also fit the sentence; cue pins concessive future 'tendrá'."
+  },
+  {
+    "id": "c1-20-consolidation.ex05",
+    "file": "content/es-latam/exercises/c1/c1-20-consolidation-ex.json",
+    "old": "\"hint\": \"costoso (agreeing with «las obras»)\"",
+    "new": "\"hint\": \"costoso\"",
+    "why": "Hint gave away the agreement being tested; reduced to bare lemma."
+  },
+  {
+    "id": "c1-20-consolidation.ex06",
+    "file": "content/es-latam/exercises/c1/c1-20-consolidation-ex.json",
+    "old": "\"hint\": \"dar (3rd person plural, completed past)\"",
+    "new": "\"hint\": \"dar (3rd person plural, 'have given')\"",
+    "why": "Hint named grammar label ('completed past'); replaced with plain English gloss."
+  },
+  {
+    "id": "c1-20-consolidation.ex11",
+    "file": "content/es-latam/exercises/c1/c1-20-consolidation-ex.json",
+    "kind": "target",
+    "set": {
+      "template": [
+        {
+          "prompt": "Write one sentence starting with «La tarifa», conceding that it is high with the concessive future of «ser» + «pero», then saying it is worth it («valer la pena»).",
+          "answer": "La tarifa será alta, pero vale la pena."
+        }
+      ]
+    },
+    "why": "Original prompt did not pin word order ('Será alta la tarifa' vs 'La tarifa será alta'); pinned default order starting with 'La tarifa'."
+  },
+  {
+    "id": "c1-20-03",
+    "file": "content/es-latam/curriculum/challenges.json",
+    "kind": "target",
+    "set": {
+      "scenario": "You are Carlos. You and a colleague are talking about the monthly bus pass after a recent price rise. Comment that considering how high the fare is, the service leaves a lot to be desired.",
+      "prompt": "Respond in one sentence using «con lo» + adjective + «que».",
+      "cues": [
+        "Open by noting how high the fare is",
+        "Evaluate the service as leaving a lot to be desired"
+      ],
+      "target": "Con lo alta que es la tarifa, el servicio deja mucho que desear.",
+      "english": "Considering how high the fare is, the service leaves a lot to be desired."
+    },
+    "why": "Target previously used 'Para lo alta que es' while canDo (checklist[0]) specifies 'con lo + adjective/adverb + que'; aligned target with canDo."
+  },
+  {
+    "id": "c1-20-consolidation",
+    "file": "content/es-latam/curriculum/challenges.json",
+    "old": "whether the expensive new library renovation was worth it. Give a two-sentence evaluation: concede that it was costly",
+    "new": "whether the expensive new library renovation is worth it. Give a two-sentence evaluation: concede that it is costly",
+    "why": "Scenario said 'was costly' (past) while prompt and target used present concessive future ('Será costosa')."
+  },
+  {
+    "id": "c1-original-20",
+    "file": "content/es-latam/stories/original/c1/c1-20.json",
+    "kind": "target",
+    "old": "El proyecto costará todavía varios años de amortización",
+    "new": "El proyecto exigirá todavía varios años de amortización",
+    "why": "'costar años de amortización' is an unnatural collocation; 'exigirá todavía varios años de amortización' is idiomatic newspaper Spanish."
+  }
+]
