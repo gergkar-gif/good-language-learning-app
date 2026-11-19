@@ -94,6 +94,8 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
 - Unit 20: self-read caught fill-blank hints naming the tested grammar label or agreement (`present concession`, `agreeing with «la tarifa»`) and a challenge target using `para lo ... que` while `canDo` (`checklist[0]`) named `con lo ... que` -> keep hints to bare lemmas or plain English glosses (`'may well be'`) and verify every challenge target matches `checklist[0]`'s exact form.
 - Unit 20: grammar screen tables require 2-column rows (`[left, right]`) and `matching` pairs require 2-element arrays (`[spanish, english]`), not dicts -> always generate 2-column tables and list pairs in builder scripts.
 - Unit 21: self-read caught an internal arithmetic mismatch in the satirical column (90 min Monday + 3.5 h Tuesday = 5 hours, not 6) and a `rhetorical-devices` dialogue item whose wrong options only tested `subjunctive-emotion` mood -> check every time/number total inside a story against its own paragraphs, and verify every item's distractors actually break its `teaches` skill.
+- Unit 22: self-read caught 4 unmet words (`metió`, `perdona`, `buenísimo`) plus asymmetric time/second-clause phrasing in dialogue distractors and grammar-label hints (`superlative`, `preterite`, `admiring augmentative`) -> keep dialogue distractors strictly symmetric outside the tested form, use plain English glosses in hints, and verify `distractor_skills` slugs against `skills/es.json` (e.g. `imperfect-subjunctive-forms`, not `imperfecto-subjuntivo`).
+
 
 
 
