@@ -38,7 +38,7 @@
       "question": "Which sentence uses agreement correctly?",
       "options": [
         "El público de la sala aplaudieron con fuerza.",
-        "La mayoría de encuestados respondió sin dudas.",
+        "La mitad de encuestados respondió sin dudas a tiempo.",
         "El resto de los estudiantes entregaron el informe a tiempo."
       ],
       "correct": 2,
@@ -53,8 +53,8 @@
       "sentence": "Llegaron menos jóvenes de los que preveía el municipio rural.",
       "options": [
         "Fewer young people arrived than the rural municipality forecast.",
-        "More older residents stayed than the national census recorded.",
-        "The urban centre lost more households than the surrounding towns."
+        "More young people arrived than the rural municipality forecast.",
+        "Fewer young people left than the rural municipality forecast."
       ],
       "correct": 0,
       "teaches": [
@@ -89,9 +89,9 @@
       "id": "c1-08-consolidation.ex06",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Hubo más vacantes en la localidad de ____ que aparecían en el censo.",
+      "sentence": "Hubo más vacantes de ____ que aparecían en el censo.",
       "answer": "las",
-      "english": "There were more vacancies in the town than appeared in the census.",
+      "english": "There were more vacancies than appeared in the census.",
       "hint": "feminine plural article agreeing with vacantes",
       "teaches": [
         "comparativas-de-lo-que"
@@ -114,7 +114,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Por qué descendió tanto el promedio de hijos por hogar en la encuesta?"
+          "text": "Todavía no se conoce la causa. ¿Por qué descendió tanto el promedio de hijos por hogar en la encuesta?"
         },
         {
           "speaker": "Meg",
@@ -185,11 +185,11 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Translate using «la gente» (bare collective noun): \"People think that the census reflects the real trend.\"",
+          "prompt": "Translate using «la gente» (bare collective noun) and «opinar»: \"People think that the census reflects the real trend.\"",
           "answer": "La gente opina que el censo refleja la tendencia real."
         },
         {
-          "prompt": "Translate using «alrededor de» and «el índice»: \"The index stands at around fifteen per cent.\"",
+          "prompt": "Translate using «alrededor de», «el índice» and «situarse»: \"The index stands at around fifteen per cent.\"",
           "answer": "El índice se sitúa alrededor del quince por ciento."
         }
       ],

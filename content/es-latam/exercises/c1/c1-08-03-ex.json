@@ -96,8 +96,8 @@
       "sentence": "Esta localidad urbana tiene más habitantes que el municipio rural vecino.",
       "options": [
         "This urban town has more inhabitants than the neighbouring rural municipality.",
-        "This rural municipality has fewer homes than the town expected.",
-        "This urban town lost fewer residents than the projection forecast."
+        "This urban town has fewer inhabitants than the neighbouring rural municipality.",
+        "This rural municipality has more inhabitants than the neighbouring urban town."
       ],
       "correct": 0,
       "teaches": [
@@ -134,12 +134,16 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Translate using «más ... de las que» and «preveía»: \"More rural towns exceeded the limit than the study forecast.\"",
-          "answer": "Más localidades rurales rebasaron el límite de las que preveía el estudio."
+          "prompt": "Translate using «más localidades rurales ... de las que», «preveía» and «rebasar»: \"More rural towns than the study forecast exceeded the limit.\"",
+          "answer": "Más localidades rurales de las que preveía el estudio rebasaron el límite."
         },
         {
-          "prompt": "Translate comparing two places with «que»: \"The urban centre grew more than the rural town.\"",
+          "prompt": "Translate comparing two places with «que» and «localidad»: \"The urban centre grew more than the rural town.\"",
           "answer": "El centro urbano creció más que la localidad rural."
+        },
+        {
+          "prompt": "Translate using «más de» before a number, «localidades» and «participar»: \"More than a hundred towns took part in the study.\"",
+          "answer": "Más de cien localidades participaron en el estudio."
         }
       ],
       "teaches": [
