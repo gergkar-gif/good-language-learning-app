@@ -114,7 +114,7 @@ def writer(w, uids):
              "their skills recapped, never re-taught or re-listed).", ""]
     for num, uid in order:
         steps += [f"## Unit {num} `{uid}`",
-                  f"1. From `{w}`: `python scripts/set_planned_taught_in.py es c1 {uid}`, `python3 build-manifest.py`, "
+                  f"1. From `{w}`: `python scripts/set_planned_taught_in.py es c1 {uid}`, `python3 build-manifest.py es-latam`, "
                   f"`python scripts/build_word_lesson_index.py es-latam`, then "
                   f"`python scripts/prior_knowledge.py es-latam c1 {uid} --out .scratch/sheet-{uid}.md` (the knowledge "
                   "sheet; generate it only now, so it includes the units you have just finished).",

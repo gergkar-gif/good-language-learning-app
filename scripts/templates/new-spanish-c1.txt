@@ -58,7 +58,7 @@ One challenge per lesson, consolidation included (six), written to `{W}/{CHALLEN
 
 ## Checks (from `{W}`, in this order; fix and rerun until clean)
 
-- `python3 build-manifest.py`, then `python scripts/build_word_lesson_index.py es-latam` (rerun both after changing a vocabulary list).
+- `python3 build-manifest.py es-latam` (one course: seconds instead of minutes), then `python scripts/build_word_lesson_index.py es-latam` (rerun both after changing a vocabulary list).
 - `python scripts/check-content.py es-latam c1 {UID}`: fix every error (it also fails a choice item with fewer than 3 options, `few-options`, and a word an earlier C1 lesson already lists, `vocab-relisted`: use that word, don't list it again); fix or give a one-line reason for each suspect.
 - `node scripts/unmet-words.js es-latam c1 --stems {STEMS} --with-hidden` (C1 core is hidden while it is written; `--with-hidden` counts this unit's and earlier C1 units' own lists, not the latam track). Transparent English cognates are skipped already; every other hit is listed in the first lesson that uses it or replaced by a met word.
 - `python scripts/check_es_c1_forms.py es-latam c1 --track core`: no hit in your unit.
