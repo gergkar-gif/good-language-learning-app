@@ -43,8 +43,11 @@ Start every chat by reading this file to the end. (Revised 2026-11-19 after the 
 
 ## When to stop
 
-- This run (user, 2026-11-19): Units 16 to 27, with no stop for review in between. When Unit 27 is
-  committed, stop and report: the run is done.
+- This run (user, 2026-11-19): Units 28 to 36, the last nine units of C1 core, with no stop for
+  review in between. Unit 36 `own-voice-c1` has reviewer-written notes (a capstone that recaps the
+  C1 skills themselves); Units 28-35 are topic units whose notes you draft, following the
+  "Topics with real people, works and ideas" rules in `notes/README.md`. When Unit 36 is
+  committed, stop and report: C1 core is written.
 - After 3 units in one chat: write a short summary of the three (units, check counts, anything for
   the user) at the end of the third report and stop; the user starts a fresh chat for the next
   block. (Four was tried for Units 16-19: the fourth unit had the shortest report, no norm claims

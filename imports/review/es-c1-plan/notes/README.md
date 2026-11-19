@@ -35,3 +35,17 @@ Rules for choosing:
 - No norm claim in the notes that you cannot back with a source; if a lesson depends on one, pick
   another skill.
 - Commit the notes file with the unit.
+
+Topics with real people, works and ideas (Units 27-35: history, migration, human rights, politics,
+art, literature, philosophy, geopolitics, public speaking; added 2026-11-19):
+- Texts and items name no living person, no politician, party, government or company, and invent
+  no event about a real country. An invented setting is the default.
+- Never quote a law, a speech, a poem, a philosopher or any real text: not from memory, not
+  paraphrased as a quotation. Describe ideas in your own words ("some philosophers argue that…")
+  only when the idea is widely known and stated without a name, a date or a figure.
+- A real work or artist may be named only for a fact you are certain of (title, author, century);
+  never retell its plot or describe scenes. Literature (Unit 32) is an essay on a genre or a way of
+  reading, built on invented examples.
+- Human rights and history: only general, uncontroversial statements; no figures, no dates you
+  are not sure of; hedge judgements.
+
