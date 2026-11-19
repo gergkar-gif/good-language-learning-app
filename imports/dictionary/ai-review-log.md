@@ -8,6 +8,12 @@ from `ai-rejected.json` and run the pull again, or add the entry by hand to `add
 
 Newest entries first.
 
+## 2026-11-19
+
+- **hu:** 1 approved, 0 rejected (6 cached answers, 1 not yet in the dictionary): *ágynyugalmat* → *ágynyugalom*, noun, "bed rest".
+- **es:** 0 approved, 0 rejected (2 cached answers, both already in the dictionary).
+- Coverage audit, words not in the dictionary: es-latam 1131 (824 look like names), es-es 428 (388), hu 596 (305).
+
 ## 2026-10-14
 
 - **hu:** 0 approved, 3 rejected (5 cached answers, 3 not yet in the dictionary).
