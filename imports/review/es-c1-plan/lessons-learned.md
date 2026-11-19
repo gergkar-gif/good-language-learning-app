@@ -72,6 +72,16 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
 - From Unit 20 on: run `python scripts/c1_known_forms.py <unit id>` before committing and recap every
   known form it lists that the screen relies on (RUN.md step 5).
 
+- Units 20-27 (readers, 289 fixes): wrong options with two or three faults each (in almost every
+  unit; each wrong option changes ONE thing); reading-question options that are absurd or carry
+  absolutes only they have; challenge cues quoting the Spanish target (`cue-quotes-target` now
+  flags it); hints naming the gender/number being tested; a false historical claim in a text
+  (Unit 26: universities as research institutions "from their origins"): state history only as
+  certain, general facts; screens re-teaching B2 screens with new examples only (*cuyo*, the
+  pluperfect, B2 Unit 28's markers); forced idiom uses (*En el clavo dio…*).
+- A hint naming the mood stays when both moods are acceptable (*el hecho de que* + indicative or
+  subjunctive); remove a mood hint only where one mood alone is right.
+
 ## Writer's notes (append after each unit)
 
 - Unit 10: every `listening-choice` and `dialogue-complete` item initially put the right answer at index 0 -> rotate option order across 0/1/2/3 when authoring choice items. (Reviewer: not needed, the app shuffles options.)

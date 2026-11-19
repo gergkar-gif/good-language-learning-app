@@ -58,10 +58,10 @@
       "category": "listening",
       "sentence": "De no haber limado asperezas antes de discutir el pliego, la reunión no habría logrado apaciguar los ánimos ni asegurar la tregua.",
       "options": [
-        "Smoothing over rough edges before discussing the list of demands",
-        "Smoothing over rough edges after discussing the list of demands",
-        "Ignoring rough edges before discussing the list of demands",
-        "Smoothing over rough edges before discussing the temporary truce"
+        "Without smoothing over rough edges before the list of demands, the meeting would not have secured the truce",
+        "Without smoothing over rough edges after the list of demands, the meeting would not have secured the truce",
+        "Without smoothing over rough edges before the list of demands, the meeting would still have secured the truce",
+        "Without smoothing over rough edges before the list of demands, the meeting would not have secured the budget"
       ],
       "correct": 0,
       "teaches": [
@@ -87,7 +87,7 @@
       "prompt": [
         {
           "speaker": "Mediador A",
-          "text": "El encuentro privado del martes cambió por completo el tono de la negociación."
+          "text": "La reunión del martes cambió por completo el tono de la negociación."
         },
         {
           "speaker": "Mediadora B",
@@ -105,6 +105,7 @@
         "inversiones-condicionales-de-haber"
       ],
       "distractor_skills": {
+        "2": "futuro-perfecto",
         "3": "condicional-regular"
       }
     },

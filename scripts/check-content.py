@@ -104,6 +104,8 @@ CHECKS = {
     "few-options": "ES C1: a choice item with fewer than 3 options",
     # ES C1 Units 18-19, 2026-11-19: two unit texts of ~350 words against the brief's 400-600
     "c1-text-length": "ES C1: the unit text on lesson 05 is outside 400-600 Spanish words",
+    # ES C1 Units 25-26, 2026-11-19: challenge cues that quote the Spanish target give it away
+    "cue-quotes-target": "ES C1: a challenge cue repeats 5+ consecutive words of the target (cues say what to include, never the words; naming a short construction is fine)",
     # ES C1 Units 8-12, 2026-11-19: three reads running rewrote listening wrong options that
     # were unrelated sentences or changed several details; a word-count heuristic, so a suspect
     "listening-many-changes": "ES C1: a listening wrong option differs from the right one in 10+ words (change ONE detail: a number, más/menos, the subject)",
@@ -145,7 +147,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"listening-many-changes", "character-role", "character-extra", "story-meta", "story-attribution", "item-reader", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"cue-quotes-target", "listening-many-changes", "character-role", "character-extra", "story-meta", "story-attribution", "item-reader", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -973,6 +975,13 @@ def check_unit(src, course, level, unit, shape):
 
         ch_rel = f"content/{course}/curriculum/challenges.json"
         ch_entry = ((src.read(ch_rel) or {}).get("challenges") or {}).get(stem)
+        if es_c1 and ch_entry:
+            tw = re.findall(r"[\wáéíóúüñ]+", str(ch_entry.get("target", "")).lower())
+            grams = {" ".join(tw[i:i + 5]) for i in range(len(tw) - 4)}
+            for cue in ch_entry.get("cues") or []:
+                cw = re.findall(r"[\wáéíóúüñ]+", str(cue).lower())
+                if any(" ".join(cw[i:i + 5]) in grams for i in range(len(cw) - 4)):
+                    out.append(("cue-quotes-target", stem, str(cue)[:60], ch_rel))
         if ch_entry:
             for check, cid, msg in challenge_people.findings(course, {stem: ch_entry}):
                 out.append((check, cid, msg, ch_rel))

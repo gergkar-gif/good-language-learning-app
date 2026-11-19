@@ -32,6 +32,10 @@ import plant_es_es_b2 as b2  # noqa: E402  (walk, dump, notes)
 
 SRC, DST = b2.SRC, b2.DST
 LEVEL = "c1"
+# Copied unconverted: the unit teaches both countries' words side by side, so converting them
+# would erase the contrast (*carro* vs *coche* -> *coche* vs *coche*), as the B2 plant did for
+# its dialect unit (2026-11-19)
+HAND = {"language-variation"}
 # Sentence-builder tiles are converted one by one, so the gender guard of
 # convert() never sees the article on the next tile (*la* + *sala* became
 # *la salón*, c1-02-consolidation.ex11, 2026-11-18). Tiles and solutions are
@@ -91,6 +95,10 @@ def plant(u, force):
         dst.parent.mkdir(parents=True, exist_ok=True)
         raw = src.read_text(encoding="utf-8")
         old = json.loads(raw)
+        if u["id"] in HAND:
+            shutil.copy2(src, dst)
+            copied += 1
+            continue
         new = b2.walk(old, str(dst.relative_to(ROOT)))
         note_tiles(old, str(dst.relative_to(ROOT)))
         # Spanish quoted inside an English field («el vaso de jugo» in a prompt whose answer walk()
@@ -121,7 +129,8 @@ def plant(u, force):
         if st in sc["challenges"]:
             if st in dc["challenges"] and not force:
                 sys.exit(f"es-es challenge {st} exists: rerun with --force")
-            dc["challenges"][st] = b2.walk(sc["challenges"][st], "content/es-es/curriculum/challenges.json", st)
+            dc["challenges"][st] = sc["challenges"][st] if u["id"] in HAND else \
+                b2.walk(sc["challenges"][st], "content/es-es/curriculum/challenges.json", st)
             added += 1
     dp.write_text(b2.dump(dc, draw), encoding="utf-8")
 
