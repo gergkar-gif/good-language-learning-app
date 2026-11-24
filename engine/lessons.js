@@ -745,9 +745,16 @@ function esc(value) {
 // as italics — the convention content authors use to call out a Spanish
 // word inside otherwise-English prose (e.g. "this means *adiós*"). Doubles
 // are unwound first so **x** doesn't get read as two single-asterisk pairs.
+// Screen text is light markdown: *x* and **x** both show as italics. A bold run may hold
+// italic terms (**Rule: *si bien* + indicative**: 205 screen sections across the courses):
+// the whole run is italic and its inner asterisks go, rather than pairing up wrongly and
+// leaving stray "*" on screen. Backticks are dropped (165 HU C1 screens showed them
+// literally) and ~~x~~ is struck through (user, 2026-11-24).
 function escMd(value) {
     return esc(value)
-        .replace(/\*\*([^*]+)\*\*/g, '<em>$1</em>')
+        .replace(/`([^`]+)`/g, '$1')
+        .replace(/~~([^~]+)~~/g, '<s>$1</s>')
+        .replace(/\*\*(.+?)\*\*/g, (m, inner) => '<em>' + inner.replace(/\*([^*]+)\*/g, '$1') + '</em>')
         .replace(/\*([^*]+)\*/g, '<em>$1</em>');
 }
 

@@ -64,9 +64,14 @@ const GrammarDriller = (function () {
                 .replace(/"/g, '&quot;');
     }
 
+    // **x** is bold here; a bold run may hold italic terms (**Rule: *si bien* …**), which then
+    // render as italics inside the bold instead of leaving stray "*" (2026-11-24, as escMd in
+    // lessons.js); backticks dropped, ~~x~~ struck through.
     function _escMd(value) {
         return _escapeHtml(value)
-            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+            .replace(/`([^`]+)`/g, '$1')
+            .replace(/~~([^~]+)~~/g, '<s>$1</s>')
+            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
             .replace(/\*([^*]+)\*/g, '<em>$1</em>');
     }
 
