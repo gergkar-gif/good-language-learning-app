@@ -17,6 +17,7 @@
 // with no dictionary reading are skipped).
 //
 //   node scripts/unmet-words.js <course> [level] [--stems a1-21,a1-22]
+//   node scripts/unmet-words.js <course> c1 --stems c1-36-consolidation --with-hidden --test content/<course>/tests/c1-test.json
 //
 // Prints JSON: [{stem, id, word, first}] with `first` the stem that first
 // teaches the word, or null if no lesson does. scripts/check-content.py runs
@@ -343,6 +344,20 @@ function targetTexts(e) {
     for (const [stem, c] of Object.entries(challenges.challenges || challenges)) {
         if (c && typeof c.target === 'string') addExtra(stem, { id: `${stem}:challenge`, prompt: [{ text: c.target }] });
     }
+    // --test <file>: a level test's target-language text, checked as if it came after the
+    // last lesson of the --stems stem given (ES C1 test, 2026-11-24). Only its hits print.
+    const testFile = flag('--test');
+    if (testFile) {
+        if (!onlyStems || onlyStems.size !== 1) { console.error('unmet-words.js: --test needs --stems <the level\'s last stem>'); process.exit(2); }
+        const at = [...onlyStems][0];
+        const SKIPK = new Set(['id', 'type', 'teaches', 'correct', 'title', 'intro', 'level', 'passMark', 'speaker', 'gender', 'evidence', 'explanation', 'source']);
+        const walk = (node, id) => {
+            if (typeof node === 'string') addExtra(at, { id: `test:${id}`, prompt: [{ text: node.replace(/_{3,}/g, ' ') }] });
+            else if (Array.isArray(node)) node.forEach(v => walk(v, id));
+            else if (node && typeof node === 'object') for (const [k, v] of Object.entries(node)) if (!SKIPK.has(k)) walk(v, node.id || id);
+        };
+        walk(readJson(testFile) || {}, 'test');
+    }
     const found = [];
     for (const [stem, pos] of order) {
         const level = levelOf.get(stem);
@@ -433,5 +448,5 @@ function targetTexts(e) {
             }
         }
     }
-    process.stdout.write(JSON.stringify(found));
+    process.stdout.write(JSON.stringify(testFile ? found.filter(f => String(f.id).startsWith('test:')) : found));
 })();
