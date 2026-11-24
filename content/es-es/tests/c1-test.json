@@ -1,0 +1,622 @@
+{
+  "id": "test.c1",
+  "level": "C1",
+  "title": "C1 Level Assessment",
+  "intro": "The check at the end of Spanish C1: the grammar of the C1 units in context (formal relatives, comparisons and agreement, mood, the written norm, spoken markers and tone), an unseen article, a radio interview, and short writing and speaking tasks.",
+  "passMark": 0.8,
+  "questions": [
+    {
+      "id": "c1-infinitivo-compuesto",
+      "type": "dropdown",
+      "sentence": "Criticaron a la autora por no _____ sus fuentes antes de publicar el artículo.",
+      "options": [
+        "haber contrastado",
+        "habiendo contrastado",
+        "haber contrastando",
+        "haya contrastado"
+      ],
+      "correct": 0,
+      "teaches": [
+        "infinitivo-compuesto-nominal"
+      ]
+    },
+    {
+      "id": "c1-dequeismo",
+      "type": "dropdown",
+      "sentence": "Opino _____ el plazo es demasiado corto para un proyecto así.",
+      "options": [
+        "que",
+        "de que",
+        "a que",
+        "con que"
+      ],
+      "correct": 0,
+      "teaches": [
+        "dequeismo-queismo"
+      ]
+    },
+    {
+      "id": "c1-queismo",
+      "type": "dropdown",
+      "sentence": "Me di cuenta _____ el informe tenía un error en la primera página.",
+      "options": [
+        "de que",
+        "que",
+        "en que",
+        "a que"
+      ],
+      "correct": 0,
+      "teaches": [
+        "dequeismo-queismo"
+      ]
+    },
+    {
+      "id": "c1-gerundio",
+      "type": "dropdown",
+      "sentence": "Nos enviaron un paquete _____ los formularios firmados.",
+      "options": [
+        "que contenía",
+        "conteniendo",
+        "contenido",
+        "contener"
+      ],
+      "correct": 0,
+      "teaches": [
+        "gerundio-normativo"
+      ]
+    },
+    {
+      "id": "c1-derivacion",
+      "type": "dropdown",
+      "sentence": "Antes de empezar el experimento, hay que _____ la temperatura.",
+      "options": [
+        "estabilizar",
+        "estabilidad",
+        "estable",
+        "estabilizado"
+      ],
+      "correct": 0,
+      "teaches": [
+        "derivacion-nominal-verbal"
+      ]
+    },
+    {
+      "id": "c1-condicional-rumor",
+      "type": "choice",
+      "prompt": "Una noticia dice: «El ministro habría dimitido esta mañana». ¿Qué quiere decir el periodista?",
+      "options": [
+        "Que el ministro ha dimitido, según información que no está confirmada.",
+        "Que el ministro dimitiría esta mañana si tuviera motivos.",
+        "Que el ministro no ha dimitido, aunque pensaba hacerlo.",
+        "Que el periodista cree que el ministro dimitirá mañana."
+      ],
+      "correct": 0,
+      "teaches": [
+        "condicional-de-rumor"
+      ]
+    },
+    {
+      "id": "c1-titular",
+      "type": "choice",
+      "prompt": "¿Qué significa el titular «Dimite la directora del hospital»?",
+      "options": [
+        "La directora del hospital ha dimitido.",
+        "La directora del hospital dimitirá pronto.",
+        "La directora del hospital quiere dimitir.",
+        "La directora del hospital dimitía a menudo."
+      ],
+      "correct": 0,
+      "teaches": [
+        "estilo-titular"
+      ]
+    },
+    {
+      "id": "c1-futuro-subjuntivo",
+      "type": "choice",
+      "prompt": "Un reglamento antiguo dice: «Quien infringiere esta norma perderá la parcela». ¿Cómo se diría hoy?",
+      "options": [
+        "Quien infrinja esta norma perderá la parcela.",
+        "Quien infringirá esta norma perderá la parcela.",
+        "Quien infringiera esta norma perderá la parcela.",
+        "Quien infringe esta norma perdería la parcela."
+      ],
+      "correct": 0,
+      "teaches": [
+        "futuro-subjuntivo-reconocimiento"
+      ]
+    },
+    {
+      "id": "c1-el-cual",
+      "type": "dropdown",
+      "sentence": "La resolución, según _____ el plazo vence el lunes, ya está publicada.",
+      "options": [
+        "la cual",
+        "lo cual",
+        "el cual",
+        "cual"
+      ],
+      "correct": 0,
+      "teaches": [
+        "relativos-el-cual"
+      ]
+    },
+    {
+      "id": "c1-lo-cual",
+      "type": "dropdown",
+      "sentence": "Nadie presentó las solicitudes a tiempo, _____ retrasó todo el trámite.",
+      "options": [
+        "lo cual",
+        "el cual",
+        "la cual",
+        "cual"
+      ],
+      "correct": 0,
+      "teaches": [
+        "relativos-el-cual"
+      ]
+    },
+    {
+      "id": "c1-colectivo",
+      "type": "dropdown",
+      "sentence": "La gente _____ que el transporte público ha mejorado en los últimos años.",
+      "options": [
+        "opina",
+        "opinan",
+        "opinamos",
+        "opine"
+      ],
+      "correct": 0,
+      "teaches": [
+        "concordancia-ad-sensum"
+      ]
+    },
+    {
+      "id": "c1-partitivo",
+      "type": "dropdown",
+      "sentence": "La mitad _____ estudiantes aprobó el examen en junio.",
+      "options": [
+        "de los",
+        "de",
+        "del",
+        "a los"
+      ],
+      "correct": 0,
+      "teaches": [
+        "concordancia-ad-sensum"
+      ]
+    },
+    {
+      "id": "c1-de-lo-que",
+      "type": "dropdown",
+      "sentence": "La población rural cayó más _____ preveía el estudio.",
+      "options": [
+        "de lo que",
+        "de la que",
+        "del que",
+        "de los que"
+      ],
+      "correct": 0,
+      "teaches": [
+        "comparativas-de-lo-que"
+      ]
+    },
+    {
+      "id": "c1-de-las-que",
+      "type": "dropdown",
+      "sentence": "Se marcharon más personas _____ habían llegado el año anterior.",
+      "options": [
+        "de las que",
+        "del que",
+        "de los que",
+        "de la que"
+      ],
+      "correct": 0,
+      "teaches": [
+        "comparativas-de-lo-que"
+      ]
+    },
+    {
+      "id": "c1-dislocacion-od",
+      "type": "dropdown",
+      "sentence": "Ese informe ya _____ firmó la directora.",
+      "options": [
+        "lo",
+        "le",
+        "la",
+        "se"
+      ],
+      "correct": 0,
+      "teaches": [
+        "dislocacion-clitica"
+      ]
+    },
+    {
+      "id": "c1-dislocacion-oi",
+      "type": "dropdown",
+      "sentence": "A los invitados _____ interesa sobre todo el tono del debate.",
+      "options": [
+        "les",
+        "los",
+        "las",
+        "se"
+      ],
+      "correct": 0,
+      "teaches": [
+        "dislocacion-clitica"
+      ]
+    },
+    {
+      "id": "c1-sentir",
+      "type": "dropdown",
+      "sentence": "Siento mucho que no _____ venir a la cena del sábado.",
+      "options": [
+        "puedas",
+        "puedes",
+        "podrás",
+        "pudiste"
+      ],
+      "correct": 0,
+      "teaches": [
+        "verbos-doble-modo"
+      ]
+    },
+    {
+      "id": "c1-suponer",
+      "type": "dropdown",
+      "sentence": "Supongo que ya lo _____, pero te lo recuerdo: la reunión es a las nueve.",
+      "options": [
+        "sabes",
+        "sepas",
+        "supieras",
+        "sepa"
+      ],
+      "correct": 0,
+      "teaches": [
+        "verbos-doble-modo"
+      ]
+    },
+    {
+      "id": "c1-se-aspectual",
+      "type": "choice",
+      "prompt": "¿Qué frase suena natural en español?",
+      "options": [
+        "Se comió el pastel entero.",
+        "Se comió pan.",
+        "Se bebió agua.",
+        "Se leyó novelas."
+      ],
+      "correct": 0,
+      "teaches": [
+        "se-aspectual"
+      ]
+    },
+    {
+      "id": "c1-marcadores",
+      "type": "dropdown",
+      "sentence": "—¿Vas a venir a la cena del sábado? —_____, no estoy seguro; depende del trabajo.",
+      "options": [
+        "Pues",
+        "Oiga",
+        "¿Verdad?",
+        "¿No?"
+      ],
+      "correct": 0,
+      "teaches": [
+        "marcadores-conversacionales"
+      ]
+    },
+    {
+      "id": "c1-como-advertencia",
+      "type": "choice",
+      "prompt": "Alguien dice: «Como no llegues a tiempo, salimos sin ti». ¿Qué expresa la frase?",
+      "options": [
+        "Una advertencia: si no llegas a tiempo, saldremos sin ti.",
+        "Una causa: salimos sin ti porque no llegaste a tiempo.",
+        "Un deseo: ojalá llegues a tiempo.",
+        "Una comparación: llegas tarde, como siempre."
+      ],
+      "correct": 0,
+      "teaches": [
+        "como-condicional-subjuntivo"
+      ]
+    },
+    {
+      "id": "c1-futuro-concesivo",
+      "type": "choice",
+      "prompt": "En una discusión, alguien dice: «Será caro, pero vale la pena». ¿Qué quiere decir?",
+      "options": [
+        "Admite que puede ser caro, pero cree que vale la pena.",
+        "Cree que el precio subirá más adelante.",
+        "Está seguro de que no es caro.",
+        "Pregunta si vale la pena pagar tanto."
+      ],
+      "correct": 0,
+      "teaches": [
+        "futuro-concesivo"
+      ]
+    },
+    {
+      "id": "c1-con-lo",
+      "type": "dropdown",
+      "sentence": "Con lo _____ que es la tarifa, el servicio deja mucho que desear.",
+      "options": [
+        "cara",
+        "caro",
+        "caras",
+        "caros"
+      ],
+      "correct": 0,
+      "teaches": [
+        "con-lo-que-para-lo-que"
+      ]
+    },
+    {
+      "id": "c1-para-lo",
+      "type": "dropdown",
+      "sentence": "Para lo poco que _____, trabaja con muchísima paciencia.",
+      "options": [
+        "cobra",
+        "cobre",
+        "cobrara",
+        "cobrase"
+      ],
+      "correct": 0,
+      "teaches": [
+        "con-lo-que-para-lo-que"
+      ]
+    },
+    {
+      "id": "c1-ni-que",
+      "type": "dropdown",
+      "sentence": "Pide el plato más caro cada viernes: ¡ni que _____ millonario!",
+      "options": [
+        "fuera",
+        "es",
+        "sea",
+        "será"
+      ],
+      "correct": 0,
+      "teaches": [
+        "ni-que-exclamativo"
+      ]
+    },
+    {
+      "id": "c1-sufijos",
+      "type": "dropdown",
+      "sentence": "Salió tan enfadado que dio un _____ al cerrar la puerta.",
+      "options": [
+        "portazo",
+        "portal",
+        "puerto",
+        "portada"
+      ],
+      "correct": 0,
+      "teaches": [
+        "sufijos-apreciativos"
+      ]
+    },
+    {
+      "id": "c1-leismo",
+      "type": "choice",
+      "prompt": "¿Qué frase sigue la norma culta de todo el mundo hispánico?",
+      "options": [
+        "A María le dije la verdad.",
+        "A María la dije la verdad.",
+        "A Pedro lo di un regalo.",
+        "El informe le leí ayer."
+      ],
+      "correct": 0,
+      "teaches": [
+        "leismo-laismo-reconocimiento"
+      ]
+    }
+  ],
+  "writingTask": {
+    "id": "es-c1-writing",
+    "title": "Artículo de opinión: los servicios públicos y sus usuarios",
+    "prompt": "Escribe un artículo de opinión (150–200 palabras) sobre esta pregunta: ¿debe un servicio público cambiar su función para responder a lo que piden sus usuarios? Presenta tu postura, reconoce una objeción con una concesión (por ejemplo, «será…, pero…» o «si bien…») y termina con una conclusión clara. Usa al menos una estructura formal como «lo cual», «tras haber…» o «más de lo que».",
+    "minWords": 150,
+    "targetKeywords": [
+      "lo cual",
+      "si bien",
+      "tras haber",
+      "de lo que",
+      "sin embargo",
+      "en definitiva"
+    ],
+    "teaches": [
+      "relativos-el-cual",
+      "futuro-concesivo",
+      "infinitivo-compuesto-nominal",
+      "comparativas-de-lo-que"
+    ]
+  },
+  "speakingTask": {
+    "id": "es-c1-speaking",
+    "title": "Intervención en un debate: ¿mediación o autoridades?",
+    "prompt": "Graba una intervención de 60–90 segundos en un debate: ante un conflicto entre vecinos, ¿es mejor pedir ayuda a un mediador o ir directamente a las autoridades? Defiende tu postura, retoma un argumento contrario poniéndolo al principio con un pronombre («Ese argumento lo entiendo, pero…») y usa al menos una palabra como «pues», «bueno» o «vamos».",
+    "minSeconds": 60,
+    "targetKeywords": [
+      "pues",
+      "bueno",
+      "vamos",
+      "lo entiendo",
+      "sin embargo"
+    ],
+    "teaches": [
+      "dislocacion-clitica",
+      "marcadores-conversacionales",
+      "futuro-concesivo"
+    ]
+  },
+  "readingSection": {
+    "id": "rs-c1-es-es",
+    "title": "Comprensión de lectura: La biblioteca que no quiso desaparecer",
+    "passage": "Cuando el ayuntamiento anunció, hace ya unos años, que estudiaba cerrar la biblioteca del barrio, pocos vecinos protestaron. Al fin y al cabo, razonaban muchos, ¿quién necesita desplazarse para consultar un libro que puede leerse en una pantalla? El cierre parecía cuestión de tiempo. Sin embargo, el pronóstico resultó bastante más pesimista de lo que justificaban los hechos.\nLa nueva directora, tras haber analizado durante meses quién entraba en el edificio y para qué, llegó a una conclusión que sorprendió al propio ayuntamiento: la mayoría de los usuarios no iba a pedir libros prestados. Iban a estudiar porque en casa no tenían un lugar tranquilo, a usar los ordenadores para hacer trámites o, simplemente, a pasar la tarde en un espacio cálido y gratuito. La biblioteca, en otras palabras, se había transformado en algo diferente de lo que decía su reglamento.\nTras ese diagnóstico, el equipo transformó el servicio sin apenas aumentar el presupuesto. Se ampliaron los horarios de la sala de estudio, se organizaron talleres para aprender a solicitar ayudas en línea y se creó un club de lectura para personas mayores, el cual reúne hoy a más participantes de los que caben en la sala. Los libros no desaparecieron, pero dejaron de ser el único motivo para cruzar la puerta.\nNo todos aplaudieron el cambio. Algunos usuarios de siempre se quejaron de que el ruido había aumentado y de que la biblioteca parecía ahora un centro social. La directora no lo niega: «Será más ruidosa que antes, pero nunca ha estado tan viva». Para resolver el conflicto, se reservó una planta entera al silencio, lo cual calmó la mayor parte de las críticas.\nLa experiencia del barrio deja una lección que va más allá de los libros. Un servicio público rara vez desaparece porque la tecnología lo vuelva inútil; suele desaparecer cuando nadie se pregunta qué necesitan de verdad las personas que lo usan. El haber hecho esa pregunta a tiempo es, probablemente, lo que salvó a esta biblioteca.",
+    "questions": [
+      {
+        "id": "rs-c1-01",
+        "type": "reading-mc",
+        "question": "¿Qué descubrió la directora al analizar el uso del edificio?",
+        "options": [
+          "Que la mayoría de los usuarios iba por motivos diferentes de pedir libros.",
+          "Que la mayoría de los usuarios iba a pedir libros prestados.",
+          "Que casi nadie entraba en el edificio por la tarde.",
+          "Que la mayoría de los usuarios prefería leer en casa."
+        ],
+        "correct": 0
+      },
+      {
+        "id": "rs-c1-02",
+        "type": "reading-mc",
+        "question": "¿Cómo se transformó el servicio?",
+        "options": [
+          "Con nuevos horarios y actividades, sin apenas aumentar el presupuesto.",
+          "Con nuevos horarios y actividades, gracias a un gran aumento del presupuesto.",
+          "Con nuevas actividades, después de eliminar los libros.",
+          "Con un horario más corto en la sala de estudio."
+        ],
+        "correct": 0
+      },
+      {
+        "id": "rs-c1-03",
+        "type": "reading-mc",
+        "question": "¿Qué se hizo para responder a las quejas por el ruido?",
+        "options": [
+          "Se reservó una planta entera al silencio.",
+          "Se cerró el club de lectura para personas mayores.",
+          "Se redujeron los horarios de la sala de estudio.",
+          "Se prohibió hablar en todo el edificio."
+        ],
+        "correct": 0
+      },
+      {
+        "id": "rs-c1-04",
+        "type": "true-false-not-stated",
+        "statement": "Cuando se anunció el posible cierre, muchos vecinos protestaron.",
+        "correct": 1
+      },
+      {
+        "id": "rs-c1-05",
+        "type": "true-false-not-stated",
+        "statement": "El club de lectura tiene tanto éxito que la sala se queda pequeña.",
+        "correct": 0
+      },
+      {
+        "id": "rs-c1-06",
+        "type": "true-false-not-stated",
+        "statement": "La directora había trabajado antes en otra biblioteca.",
+        "correct": 2
+      }
+    ]
+  },
+  "listeningSection": {
+    "id": "ls-c1-mediacion",
+    "title": "Entrevista de radio: conflictos entre vecinos",
+    "context": "Vas a escuchar una entrevista de radio con un mediador que trabaja con comunidades de vecinos.",
+    "previewSeconds": 40,
+    "audio": {
+      "turns": [
+        {
+          "speaker": "Presentadora",
+          "gender": "female",
+          "text": "Hoy nos acompaña un mediador que trabaja con comunidades de vecinos. Dígame, ¿cuál es el conflicto más común?"
+        },
+        {
+          "speaker": "Mediador",
+          "gender": "male",
+          "text": "Pues, aunque parezca mentira, el ruido. Más que el dinero o las obras. Y muchas veces el problema no es tanto el volumen como sentir que el otro no te respeta."
+        },
+        {
+          "speaker": "Presentadora",
+          "gender": "female",
+          "text": "¿Y cómo se resuelve algo así?"
+        },
+        {
+          "speaker": "Mediador",
+          "gender": "male",
+          "text": "Lo primero es escuchar a cada una de las partes a solas. Tras haberlas escuchado, las reúno, pero solo cuando las dos aceptan que el objetivo no es ganar, sino llegar a un acuerdo que las dos puedan cumplir."
+        },
+        {
+          "speaker": "Presentadora",
+          "gender": "female",
+          "text": "¿Y si una de las partes no quiere hablar?"
+        },
+        {
+          "speaker": "Mediador",
+          "gender": "male",
+          "text": "Bueno, eso pasa más de lo que la gente cree. En esos casos no insisto, porque un acuerdo impuesto dura poco. Será más lento, pero esperar suele dar mejores resultados."
+        },
+        {
+          "speaker": "Presentadora",
+          "gender": "female",
+          "text": "Una última pregunta: ¿qué consejo le daría a alguien que se muda a un edificio nuevo?"
+        },
+        {
+          "speaker": "Mediador",
+          "gender": "male",
+          "text": "Que se presente a sus vecinos antes de que surja cualquier problema. Con lo poco que cuesta decir «buenos días», es increíble cuántos conflictos se evitarían así."
+        }
+      ]
+    },
+    "questions": [
+      {
+        "id": "ls-c1-01",
+        "type": "listening-mc",
+        "question": "Según el mediador, ¿cuál es el conflicto más común entre vecinos?",
+        "options": [
+          "El ruido",
+          "El dinero",
+          "Las obras"
+        ],
+        "correct": 0,
+        "evidence": "Pues, aunque parezca mentira, el ruido. Más que el dinero o las obras."
+      },
+      {
+        "id": "ls-c1-02",
+        "type": "listening-mc",
+        "question": "¿Qué hace el mediador antes de reunir a las dos partes?",
+        "options": [
+          "Habla con cada una a solas",
+          "Les propone un acuerdo por escrito",
+          "Habla con las dos juntas"
+        ],
+        "correct": 0,
+        "evidence": "Lo primero es escuchar a cada una de las partes a solas."
+      },
+      {
+        "id": "ls-c1-03",
+        "type": "listening-mc",
+        "question": "¿Qué hace cuando una de las partes no quiere hablar?",
+        "options": [
+          "No insiste y espera",
+          "Insiste hasta que acepta hablar",
+          "Propone un acuerdo sin ella"
+        ],
+        "correct": 0,
+        "evidence": "En esos casos no insisto, porque un acuerdo impuesto dura poco."
+      },
+      {
+        "id": "ls-c1-04",
+        "type": "true-false-not-stated",
+        "statement": "Según el mediador, el problema del ruido es sobre todo una cuestión de volumen.",
+        "correct": 1,
+        "evidence": "El problema no es tanto el volumen como sentir que el otro no te respeta."
+      },
+      {
+        "id": "ls-c1-05",
+        "type": "true-false-not-stated",
+        "statement": "El mediador recomienda presentarse a los vecinos antes de que haya problemas.",
+        "correct": 0,
+        "evidence": "Que se presente a sus vecinos antes de que surja cualquier problema."
+      },
+      {
+        "id": "ls-c1-06",
+        "type": "true-false-not-stated",
+        "statement": "El mediador también trabaja con empresas.",
+        "correct": 2,
+        "evidence": "La entrevista no lo menciona."
+      }
+    ]
+  }
+}
