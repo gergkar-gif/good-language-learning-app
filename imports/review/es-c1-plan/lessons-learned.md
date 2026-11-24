@@ -82,6 +82,11 @@ also run `python scripts/c1_reviewer_changes.py --last 3` and read what the revi
 - A hint naming the mood stays when both moods are acceptable (*el hecho de que* + indicative or
   subjunctive); remove a mood hint only where one mood alone is right.
 
+- Units 28-36 (readers, 389 fixes, final run): the same classes as before; also a close echo of a
+  famous philosopher's formula used as an example (Unit 33: quoting in disguise is quoting) and
+  screen text with italics nested in bold, which rendered with stray asterisks (fixed in the
+  engine, ROADMAP 156).
+
 ## Writer's notes (append after each unit)
 
 - Unit 10: every `listening-choice` and `dialogue-complete` item initially put the right answer at index 0 -> rotate option order across 0/1/2/3 when authoring choice items. (Reviewer: not needed, the app shuffles options.)

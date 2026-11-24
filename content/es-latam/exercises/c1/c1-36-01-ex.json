@@ -7,15 +7,18 @@
       "category": "grammar",
       "question": "Which sentence combines a compound infinitive with *lo cual* accurately?",
       "options": [
-        "Tras haber revisado la oración, el equipo ajustó el orden, lo cual dio mayor precisión al texto.",
-        "Tras haber revisada la oración, el equipo ajustó el orden, lo cual dio mayor precisión al texto.",
-        "Tras haber revisado la oración, el equipo ajustó el orden, la cual dio mayor precisión al texto.",
-        "Tras haber revisar la oración, el equipo ajustó el orden, lo cual dio mayor precisión al texto."
+        "Tras haber revisado el párrafo, el equipo ajustó el orden, lo cual dio mayor precisión al texto.",
+        "Tras haber revisada el párrafo, el equipo ajustó el orden, lo cual dio mayor precisión al texto.",
+        "Tras haber revisado el párrafo, el equipo ajustó el orden, la cual dio mayor precisión al texto.",
+        "Tras haber revisar el párrafo, el equipo ajustó el orden, lo cual dio mayor precisión al texto."
       ],
       "correct": 0,
       "teaches": [
         "infinitivo-compuesto-nominal"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "relativos-el-cual"
+      }
     },
     {
       "id": "c1-36-01.ex02",
@@ -24,7 +27,7 @@
       "sentence": "El informe incluía una nota final, la _____ permitió aclarar el alcance del estudio.",
       "answer": "cual",
       "english": "The report included a final note, which made it possible to clarify the scope of the study.",
-      "hint": "which (formal relative after 'la')",
+      "hint": "which (formal relative, not que)",
       "teaches": [
         "relativos-el-cual"
       ]
@@ -80,7 +83,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Tengo dos frases largas y quiero conectar la segunda para hablar de todo el cambio anterior. ¿Cómo queda más preciso?"
+          "text": "¿Cómo resumes en una sola frase que ajustaste la oración principal y que ese cambio dio mayor coherencia a todo el párrafo?"
         },
         {
           "speaker": "Carlos",
@@ -108,7 +111,8 @@
         "comparado",
         "los",
         "datos,",
-        "logramos",
+        "llegamos",
+        "a",
         "una",
         "conclusión",
         "precisa."
@@ -119,7 +123,8 @@
         "comparado",
         "los",
         "datos,",
-        "logramos",
+        "llegamos",
+        "a",
         "una",
         "conclusión",
         "precisa."
@@ -137,7 +142,7 @@
       "options": [
         "la reorganización del plan",
         "el reorganizado del plan",
-        "la reorganizamiento del plan",
+        "el reorganizamiento del plan",
         "el reorganizaría del plan"
       ],
       "correct": 0,
