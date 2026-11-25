@@ -28,3 +28,8 @@ New in this batch: Units 7–10 are topic-only (every lesson tagged with a retir
 grammar); each lesson gets one known skill, suggested in the notes.
 
 ## Agents (edit-in-place, Sonnet), started 06:48 UTC on 5547a695
+
+- A (Latin America Units 5, 6, 7; /home/user/parlour-read-a): agent a4084a5b1313db86a
+- B (Latin America Units 8, 9, 10; /home/user/parlour-read-b): agent a5640853612062a2f
+
+Resume a stopped agent with SendMessage to its id; never start a new one.
