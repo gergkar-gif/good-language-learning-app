@@ -596,6 +596,21 @@ def validate_unit_tracks(data, path):
 STRAY_SCRIPT = re.compile(r"[Ѐ-ӿ֐-ۿ฀-๿぀-ヿ㐀-鿿가-힯]+")
 
 
+MOJIBAKE = re.compile(r"[ÃÅÄ][\u0080-\u00ff\u2018-\u203a\u0152-\u0178]")
+
+
+def mojibake_errors(path):
+    """UTF-8 decoded as Windows-1252 (*mindazonÃ¡ltal*): all four HU level tests had it
+    (2026-11-25). Fix with scripts/fix_mojibake.py."""
+    out = []
+    for n, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        m = MOJIBAKE.search(line)
+        if m:
+            out.append((f"line {n}", f"mojibake {line[max(0, m.start() - 20):m.end() + 20].strip()!r} "
+                        "(run python scripts/fix_mojibake.py on the file)"))
+    return out
+
+
 def stray_script_errors(path):
     errs = []
     for n, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
@@ -761,6 +776,7 @@ def validate_language(lang, only=None, sources=None):
             elif name == "units" and enforce_metadata:
                 meta_errors = validate_unit_tracks(data, path)
             meta_errors += stray_script_errors(path)
+            meta_errors += mojibake_errors(path)
             if name == "exercises":
                 meta_errors += fill_blank_hint_errors(data)
 
