@@ -31,3 +31,11 @@ the reviewer stated from knowledge without a fetched source are marked so in eac
    from the ES B2 core close-out.
 3. **The B1 latam track** comes next (decided); `story-quote`, `latam_consolidation_story.py`,
    `reader_orphans.py` and `check_es_c1_forms.py` are ready for it.
+
+## After the user's decision (2026-11-25)
+
+"add one word items, then i think we can mark as complete": one review matching item added to
+each thin vocabulary skill's consolidation (4 unit words from different lessons; core ones mirrored
+to es-es); validator: no B2 warnings left. Refreezing ran the newer `story-attribution` check on
+B2 core: the 31 texts about a work got `about: true` (es-latam and es-es), Güiraldes's adaptation
+accepted. es-latam B2 and es-es B2: 0 errors, 0 suspects. Track signed off as complete.
