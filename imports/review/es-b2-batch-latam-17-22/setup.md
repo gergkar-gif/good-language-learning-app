@@ -27,3 +27,8 @@ no-invented-people rule up front; consolidation story files are the reviewer's
 (`latam_consolidation_story.py`).
 
 ## Agents (edit-in-place, Sonnet), started 12:04 UTC on 031a4653
+
+- A (Latin America Units 17, 18, 19; /home/user/parlour-read-a): agent a3e0d268b35d3336d
+- B (Latin America Units 20, 21, 22; /home/user/parlour-read-b): agent abea4e8d2325ad4b9
+
+Resume a stopped agent with SendMessage to its id; never start a new one.
