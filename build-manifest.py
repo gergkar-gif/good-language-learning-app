@@ -188,10 +188,10 @@ def load_unit_table(lang, level_id):
 # unit, its stories and its decks) and the engine filters on load. Remove an
 # entry here to bring a track back.
 HIDDEN_TRACKS = {
-    # ES C1 core: hidden while it is written (user, 2026-11-18;
-    # imports/review/es-c1-plan/); unhide after the C1 level checklist.
-    "es-es": {"b1": {"cultura"}, "c1": {"core"}},
-    "es-latam": {"b1": {"latam"}, "b2": {"latam"}, "c1": {"core"}},
+    # ES C1 core was hidden while it was written (2026-11-18) and shown once the
+    # level checklist and the C1 level test were done (2026-11-24).
+    "es-es": {"b1": {"cultura"}},
+    "es-latam": {"b1": {"latam"}, "b2": {"latam"}},
 }
 
 

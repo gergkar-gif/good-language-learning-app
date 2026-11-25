@@ -15,7 +15,7 @@ Parlour ("Free Spanish & Hungarian — no ads, no paywalls, just tools that work
 ## Positioning
 - An advanced speaking and writing engine plus CEFR-exam practice tasks (DELE, ECL, CCSE, Hungarian Cultural Exam) that take learners past beginner phrasebook sentences.
 - A learner model: every exercise carries `category` and `teaches` metadata, and grammar skills are recycled through it, with SM-2 spaced repetition for words.
-- A story-led A1–B2 (Spanish) / A1–C1 (Hungarian) curriculum, with unit stories, graded readings, and classics.
+- A story-led A1–C1 curriculum (Spanish and Hungarian), with unit stories, graded readings, and classics.
 - A Reader/Library that analyses vocabulary in the learner's own pasted texts, plus Workshop drillers (vocabulary, listening, verb, suffix, etc.).
 - A calm, non-gamified, editorial product stance: no streak pressure.
 

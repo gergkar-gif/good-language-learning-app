@@ -241,7 +241,7 @@ const Guide = (function () {
                             Learning a language is hard, and it should be &mdash; that&rsquo;s what gives it its flavour. Parlour tries to treat you like an adult: explain the grammar clearly, practise it in context, give you real stories to read, and get out of your way.
                         </p>
                         <p class="pl-guide-p">
-                            Parlour covers Spanish (Latin America and Spain, CEFR A1&ndash;B2) and Hungarian (CEFR A1&ndash;C1). It is free, non-commercial, and has no ads or trackers &mdash; just tools that work. Your progress stays local in your browser unless you sign in to back it up.
+                            Parlour covers Spanish (Latin America and Spain) and Hungarian, both CEFR A1&ndash;C1. It is free, non-commercial, and has no ads or trackers &mdash; just tools that work. Your progress stays local in your browser unless you sign in to back it up.
                         </p>
                     </div>
 
@@ -257,7 +257,7 @@ const Guide = (function () {
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Lessons</span>
                                 <h4>The Course Workbook</h4>
-                                <p>Structured CEFR courses (A1&ndash;B2 in Spanish, A1&ndash;C1 in Hungarian) with clear grammar explanations, contextual drills, and speaking tasks. Follow the sequence, jump straight to any unit, or take the placement diagnostic to skip what you already know.</p>
+                                <p>Structured CEFR courses (A1&ndash;C1 in Spanish and Hungarian) with clear grammar explanations, contextual drills, and speaking tasks. Follow the sequence, jump straight to any unit, or take the placement diagnostic to skip what you already know.</p>
                             </div>
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Library</span>
