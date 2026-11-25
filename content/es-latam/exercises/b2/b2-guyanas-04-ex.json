@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
+          "el cohete",
+          "rocket"
+        ],
+        [
+          "el combustible",
+          "fuel"
+        ],
+        [
           "el yacimiento",
-          "oilfield, deposit"
+          "field, deposit (oil)"
         ],
         [
-          "orbital",
-          "orbital"
-        ],
-        [
-          "el hidrocarburo",
-          "hydrocarbon, petroleum"
-        ],
-        [
-          "la soberanía",
-          "sovereignty"
+          "el barril",
+          "barrel"
         ]
       ],
       "teaches": [
@@ -31,27 +31,29 @@
       "id": "b2-guyanas-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál es la principal ventaja física del puerto aeroespacial europeo de Kourou en la Guayana Francesa?",
+      "question": "Which sentence says \"If the rockets left from Europe, they would need more fuel\"?",
       "options": [
-        "Su ubicación a cinco grados del ecuador maximiza la velocidad de rotación de la Tierra, ahorrando combustible.",
-        "La ausencia total de lluvias tropicales durante los doce meses del año.",
-        "Su cercanía inmediata a las minas de bauxita de Paramaribo."
+        "Si los cohetes salieran de Europa, necesitarían más combustible.",
+        "Si los cohetes saldrían de Europa, necesitarían más combustible.",
+        "Si los cohetes salieron de Europa, necesitarían más combustible."
       ],
       "correct": 0,
       "teaches": [
-        "guyana-petroleo-espacio-kourou"
+        "hypothetical-structures"
       ]
     },
     {
       "id": "b2-guyanas-04.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El descubrimiento de inmensos __ petrolíferos situó a Guyana en el centro de las finanzas mundiales.",
-      "hint": "yacimiento - masculino plural",
-      "answer": "yacimientos",
-      "english": "The discovery of immense oil deposits placed Guyana at the center of world finance.",
+      "sentence": "Si el petróleo se __, la economía de Guyana tendría que cambiar.",
+      "answers": [
+        "acabara",
+        "acabase"
+      ],
+      "english": "If the oil ran out, the economy of Guyana would have to change.",
       "teaches": [
-        "guyana-petroleo-espacio-kourou"
+        "hypothetical-structures"
       ]
     },
     {
@@ -59,49 +61,84 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Kourou",
-        "es",
-        "el",
-        "puerto",
-        "espacial",
-        "europeo"
+        "Si",
+        "no",
+        "hubiera",
+        "petróleo,",
+        "la",
+        "economía",
+        "de",
+        "Guyana",
+        "dependería",
+        "más",
+        "del",
+        "azúcar,",
+        "del",
+        "arroz",
+        "y",
+        "del",
+        "oro."
       ],
       "solution": [
-        "Kourou",
-        "es",
-        "el",
-        "puerto",
-        "espacial",
-        "europeo"
+        "Si",
+        "no",
+        "hubiera",
+        "petróleo,",
+        "la",
+        "economía",
+        "de",
+        "Guyana",
+        "dependería",
+        "más",
+        "del",
+        "azúcar,",
+        "del",
+        "arroz",
+        "y",
+        "del",
+        "oro."
       ],
-      "english": "Kourou is the European spaceport.",
+      "english": "If there were no oil, the economy of Guyana would depend more on sugar, rice and gold.",
       "teaches": [
-        "guyana-petroleo-espacio-kourou"
+        "hypothetical-structures"
       ]
     },
     {
       "id": "b2-guyanas-04.ex05",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "¿Qué síntesis define la importancia de las Guayanas y Belice en una conferencia panamericana?",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Qué hay en Kourou, en la Guayana Francesa?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Qué interesante."
+        }
+      ],
       "options": [
-        "—Demuestran que América es un mosaico políglota y biodiverso que une al Caribe con el corazón amazónico.",
-        "—Constituyen colonias mineras que no poseen ninguna identidad cultural propia.",
-        "—Han acordado separarse físicamente del continente mediante una presa marítima internacional."
+        "Hay un centro espacial desde donde salen cohetes europeos.",
+        "Hay un gran lago donde nacen los ríos de Guyana.",
+        "Hay un puente que une Brasil con Surinam."
       ],
       "correct": 0,
       "teaches": [
-        "guyana-petroleo-espacio-kourou"
+        "b2-belize-guianas-vocab"
       ]
     },
     {
       "id": "b2-guyanas-04.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "El descubrimiento de petróleo en el bloque Stabroek convirtió a Guyana en una de las economías de más rápido crecimiento.",
-      "english": "The discovery of oil in the Stabroek block turned Guyana into one of the fastest-growing economies.",
+      "sentence": "Si el centro espacial estuviera en Europa, los cohetes gastarían más combustible.",
+      "english": "If the space centre were in Europe, the rockets would use more fuel.",
       "teaches": [
-        "guyana-petroleo-espacio-kourou"
+        "hypothetical-structures"
       ]
     }
   ]

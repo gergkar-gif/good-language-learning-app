@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "la homilía",
-          "homily, sermon"
+          "el arzobispo",
+          "archbishop"
         ],
         [
-          "el mártir",
-          "martyr"
+          "el campesino",
+          "farmer, peasant"
         ],
         [
-          "el cese al fuego",
-          "ceasefire"
+          "la guerrilla",
+          "guerrilla group"
         ],
         [
-          "la reconciliación",
-          "reconciliation"
+          "la masacre",
+          "massacre"
         ]
       ],
       "teaches": [
@@ -31,27 +31,30 @@
       "id": "b2-salvadorhonduras-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál es la función semántica del conector 'por el contrario' en el discurso formal?",
+      "question": "Which sentence says \"Many expected a quiet bishop; however, Romero spoke for the victims\"?",
       "options": [
-        "Introducir una afirmación radicalmente opuesta que sustituye o contradice lo previamente negado.",
-        "Indicar una causa temporal consecutiva equivalente a 'por lo tanto'.",
-        "Añadir información complementaria sin modificar el sentido previo."
+        "Muchos esperaban un obispo tranquilo; sin embargo, Romero habló por las víctimas.",
+        "Muchos esperaban un obispo tranquilo; por eso, Romero habló por las víctimas.",
+        "Muchos esperaban un obispo tranquilo; además, Romero habló por las víctimas."
       ],
       "correct": 0,
       "teaches": [
-        "contrast-markers"
-      ]
+        "contrast-concession-connectors"
+      ],
+      "distractor_skills": {
+        "1": "porque-y-por-eso",
+        "2": "ordering-markers"
+      }
     },
     {
       "id": "b2-salvadorhonduras-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Monseñor Romero sabía que lo amenazaban de muerte; __ obstante, continuó denunciando los abusos en sus homilías.",
-      "hint": "conector concesivo restrictivo",
-      "answer": "no",
-      "english": "Archbishop Romero knew he was threatened with death; nevertheless, he continued denouncing abuses in his homilies.",
+      "sentence": "La guerra duró doce años. Sin __, en 1992 las dos partes firmaron la paz.",
+      "answer": "embargo",
+      "english": "The war lasted twelve years. However, in 1992 the two sides signed peace.",
       "teaches": [
-        "contrast-markers"
+        "contrast-concession-connectors"
       ]
     },
     {
@@ -59,32 +62,40 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "El",
-        "régimen",
-        "buscaba",
-        "el",
-        "silencio;",
-        "Romero,",
-        "por",
-        "el",
-        "contrario,",
-        "habló."
+        "La",
+        "guerra",
+        "fue",
+        "muy",
+        "violenta;",
+        "no",
+        "obstante,",
+        "las",
+        "dos",
+        "partes",
+        "llegaron",
+        "a",
+        "un",
+        "acuerdo."
       ],
       "solution": [
-        "El",
-        "régimen",
-        "buscaba",
-        "el",
-        "silencio;",
-        "Romero,",
-        "por",
-        "el",
-        "contrario,",
-        "habló."
+        "La",
+        "guerra",
+        "fue",
+        "muy",
+        "violenta;",
+        "no",
+        "obstante,",
+        "las",
+        "dos",
+        "partes",
+        "llegaron",
+        "a",
+        "un",
+        "acuerdo."
       ],
-      "english": "The regime sought silence; Romero, on the contrary, spoke.",
+      "english": "The war was very violent; nevertheless, the two sides reached an agreement.",
       "teaches": [
-        "contrast-markers"
+        "contrast-concession-connectors"
       ]
     },
     {
@@ -93,36 +104,36 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Historiador",
-          "text": "¿Cómo influyó el mensaje de Monseñor Romero en el desenlace del conflicto civil salvadoreño?"
+          "speaker": "Meg",
+          "text": "¿Cómo terminó la guerra en El Salvador?"
         },
         {
-          "speaker": "Politóloga",
+          "speaker": "Carlos",
           "text": "_____"
         },
         {
-          "speaker": "Historiador",
-          "text": "Su legado ético fue el pilar moral que hizo posible el pacto de paz."
+          "speaker": "Meg",
+          "text": "Entonces el acuerdo fue muy importante."
         }
       ],
       "options": [
-        "Muchos temían que su asesinato aniquilara la esperanza; no obstante, su martirio fortaleció la conciencia democrática hasta alcanzar los Acuerdos de Chapultepec.",
-        "Varios sectores pensaban que su prédica uniría a las partes; por el contrario, la confrontación armada se intensificó durante años y aplazó el diálogo político.",
-        "Casi todos asumían que su muerte pondría fin a las disputas; por consiguiente, las delegaciones oficiales firmaron un armisticio definitivo pocas semanas después."
+        "Fue una guerra larga; sin embargo, en 1992 se firmó la paz en Ciudad de México.",
+        "Terminó en 1980, el día en que murió el arzobispo Romero.",
+        "Todavía no terminó: la guerra continúa entre el FMLN y el gobierno."
       ],
       "correct": 0,
       "teaches": [
-        "contrast-markers"
+        "b2-el-salvador-honduras-vocab"
       ]
     },
     {
       "id": "b2-salvadorhonduras-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "La represión pretendía imponer el miedo; por el contrario, las homilías unieron al pueblo en la exigencia de justicia.",
-      "english": "Repression intended to impose fear; on the contrary, the homilies united the people in the demand for justice.",
+      "sentence": "Mucha gente lo escuchaba por la radio; sin embargo, otros lo criticaban.",
+      "english": "Many people listened to him on the radio; however, others criticised him.",
       "teaches": [
-        "contrast-markers"
+        "contrast-concession-connectors"
       ]
     }
   ]

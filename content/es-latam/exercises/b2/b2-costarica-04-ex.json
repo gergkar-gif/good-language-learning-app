@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "la descarbonización",
-          "decarbonization"
+          "la ley forestal",
+          "forestry law"
         ],
         [
-          "la geotermia",
-          "geothermal energy"
+          "la electricidad",
+          "electricity"
         ],
         [
-          "la huella de carbono",
-          "carbon footprint"
+          "renovable",
+          "renewable"
         ],
         [
-          "el ecoturismo",
-          "ecotourism"
+          "el sendero",
+          "path, trail"
         ]
       ],
       "teaches": [
@@ -31,27 +31,30 @@
       "id": "b2-costarica-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cómo financió el estado costarricense el programa de Pago por Servicios Ambientales (PSA)?",
+      "question": "Which sentence says \"The guides check the trails before the visitors arrive\"?",
       "options": [
-        "Mediante un impuesto ecológico a los combustibles fósiles y fondos internacionales de mitigación.",
-        "A través de la venta de maderas preciosas extraídas de las reservas biológicas.",
-        "Mediante la privatización de las compañías de generación hidroeléctrica."
+        "Los guías revisan los senderos antes de que lleguen los visitantes.",
+        "Los guías revisan los senderos antes de que llegan los visitantes.",
+        "Los guías revisan los senderos antes de llegan los visitantes."
       ],
       "correct": 0,
       "teaches": [
-        "ecoturismo-matriz-energetica"
-      ]
+        "antes-despues-de-que"
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b2-costarica-04.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El país genera más del noventa y ocho por ciento de su electricidad mediante fuentes __.",
-      "hint": "renovable - plural",
-      "answer": "renovables",
-      "english": "The country generates more than ninety-eight percent of its electricity through renewable sources.",
+      "sentence": "Después de que el país __ una ley forestal en 1996, empezaron los pagos por servicios ambientales.",
+      "hint": "aprobar",
+      "answer": "aprobó",
+      "english": "After the country passed a forestry law in 1996, payments for environmental services began.",
       "teaches": [
-        "ecoturismo-matriz-energetica"
+        "antes-despues-de-que"
       ]
     },
     {
@@ -59,51 +62,72 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Costa",
-        "Rica",
-        "revirtió",
-        "la",
-        "deforestación",
-        "con",
-        "éxito"
+        "Los",
+        "guías",
+        "revisan",
+        "los",
+        "senderos",
+        "antes",
+        "de",
+        "que",
+        "lleguen",
+        "los",
+        "visitantes."
       ],
       "solution": [
-        "Costa",
-        "Rica",
-        "revirtió",
-        "la",
-        "deforestación",
-        "con",
-        "éxito"
+        "Los",
+        "guías",
+        "revisan",
+        "los",
+        "senderos",
+        "antes",
+        "de",
+        "que",
+        "lleguen",
+        "los",
+        "visitantes."
       ],
-      "english": "Costa Rica reversed deforestation successfully.",
+      "english": "The guides check the trails before the visitors arrive.",
       "teaches": [
-        "ecoturismo-matriz-energetica"
+        "antes-despues-de-que"
       ]
     },
     {
       "id": "b2-costarica-04.ex05",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "¿Qué respuesta sintetiza adecuadamente la postura ambiental y social en un debate sobre Costa Rica?",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cuándo empezó Costa Rica a pagar por proteger los bosques?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Gracias, ahora tengo la fecha."
+        }
+      ],
       "options": [
-        "—Costa Rica ha sido pionera en revertir la deforestación, aunque todavía debe corregir las asimetrías territoriales con las costas.",
-        "—El país ha decidido restaurar las fuerzas armadas para proteger las plantaciones de piña.",
-        "—La cobertura de la seguridad social ha sido privatizada íntegramente en las zonas rurales."
+        "Después de que el país aprobó una ley forestal en 1996.",
+        "Antes de que terminara la guerra civil de 1948.",
+        "Después de que el volcán Arenal empezó a dormir."
       ],
       "correct": 0,
       "teaches": [
-        "ecoturismo-matriz-energetica"
+        "b2-costa-rica-vocab"
       ]
     },
     {
       "id": "b2-costarica-04.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Costa Rica logró revertir la deforestación mediante incentivos económicos directos a los agricultores que conservan árboles.",
-      "english": "Costa Rica managed to reverse deforestation through direct economic incentives to farmers who conserve trees.",
+      "sentence": "Antes de que el turismo creciera, el país había perdido gran parte de sus bosques.",
+      "english": "Before tourism grew, the country had lost a large part of its forests.",
       "teaches": [
-        "ecoturismo-matriz-energetica"
+        "antes-despues-de-que"
       ]
     }
   ]

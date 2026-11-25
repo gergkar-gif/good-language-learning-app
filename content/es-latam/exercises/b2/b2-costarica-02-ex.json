@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "la proscripción",
-          "proscription, abolition"
+          "el ejército",
+          "army"
         ],
         [
-          "el pacto civil",
-          "civil pact"
+          "el cuartel",
+          "barracks"
         ],
         [
-          "el desarme",
-          "disarmament"
+          "abolir",
+          "to abolish"
         ],
         [
-          "la fuerza pública",
-          "civil police force"
+          "la neutralidad",
+          "neutrality"
         ]
       ],
       "teaches": [
@@ -31,27 +31,29 @@
       "id": "b2-costarica-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál fue la trascendencia del artículo 12 de la Constitución costarricense de 1949?",
+      "question": "Which sentence says \"It is not that Costa Rica has no police, but that it has no army\"?",
       "options": [
-        "Proscribió el ejército como institución permanente, encomendando el orden a fuerzas policiales civiles.",
-        "Estableció el servicio militar obligatorio para todos los ciudadanos mayores de edad.",
-        "Creó una corte marcial especial para juzgar delitos electorales."
+        "No es que Costa Rica no tenga policía, sino que no tiene ejército.",
+        "No es que Costa Rica no tiene policía, sino que no tiene ejército.",
+        "No es que Costa Rica no tenga policía, sino no tiene ejército."
       ],
       "correct": 0,
       "teaches": [
-        "abolicion-ejercito-pacto-civil"
-      ]
+        "refutacion-no-es-que-sino"
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b2-costarica-02.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El presupuesto ahorrado en armamento militar se __ íntegramente a la construcción de escuelas rurales.",
-      "hint": "destinar - pretérito indefinido",
-      "answer": "destinó",
-      "english": "The budget saved on military weapons was allocated entirely to building rural schools.",
+      "sentence": "No es que Costa Rica no necesite seguridad, __ que la da una policía civil.",
+      "answer": "sino",
+      "english": "It is not that Costa Rica does not need security, but that a civilian police provides it.",
       "teaches": [
-        "abolicion-ejercito-pacto-civil"
+        "refutacion-no-es-que-sino"
       ]
     },
     {
@@ -59,51 +61,78 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
+        "No",
+        "es",
+        "que",
         "Costa",
         "Rica",
-        "abolió",
-        "el",
-        "ejército",
-        "en",
-        "1948"
+        "no",
+        "tenga",
+        "seguridad,",
+        "sino",
+        "que",
+        "la",
+        "dan",
+        "policías",
+        "civiles."
       ],
       "solution": [
+        "No",
+        "es",
+        "que",
         "Costa",
         "Rica",
-        "abolió",
-        "el",
-        "ejército",
-        "en",
-        "1948"
+        "no",
+        "tenga",
+        "seguridad,",
+        "sino",
+        "que",
+        "la",
+        "dan",
+        "policías",
+        "civiles."
       ],
-      "english": "Costa Rica abolished the army in 1948.",
+      "english": "It is not that Costa Rica has no security, but that civilian police provide it.",
       "teaches": [
-        "abolicion-ejercito-pacto-civil"
+        "refutacion-no-es-que-sino"
       ]
     },
     {
       "id": "b2-costarica-02.ex05",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "¿Qué respuesta sintetiza adecuadamente la postura ambiental y social en un debate sobre Costa Rica?",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Costa Rica no tiene ejército. ¿No tiene seguridad?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Ahora lo entiendo."
+        }
+      ],
       "options": [
-        "—Costa Rica ha sido pionera en revertir la deforestación, aunque todavía debe corregir las asimetrías territoriales con las costas.",
-        "—El país ha decidido restaurar las fuerzas armadas para proteger las plantaciones de piña.",
-        "—La cobertura de la seguridad social ha sido privatizada íntegramente en las zonas rurales."
+        "No es que no tenga seguridad, sino que la dan policías civiles.",
+        "No es que no tenga seguridad, sino que tiene un ejército pequeño.",
+        "No es que no tenga seguridad, sino que la daba el ejército hasta 1983."
       ],
       "correct": 0,
       "teaches": [
-        "abolicion-ejercito-pacto-civil"
+        "b2-costa-rica-vocab"
       ]
     },
     {
       "id": "b2-costarica-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Al demoler simbólicamente la almena del cuartel Bellavista, Figueres inauguró una era sin tutela militar.",
-      "english": "By symbolically demolishing the battlement of Bellavista barracks, Figueres inaugurated an era without military guardianship.",
+      "sentence": "No es que no haya seguridad, sino que la seguridad la da la policía civil.",
+      "english": "It is not that there is no security, but that security is provided by the civilian police.",
       "teaches": [
-        "abolicion-ejercito-pacto-civil"
+        "refutacion-no-es-que-sino"
       ]
     }
   ]
