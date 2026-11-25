@@ -520,6 +520,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-13 | ES B2 core Units 23–26 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 334,129 (18 min), B 351,819 (19 min); ~171k a unit | | 0 errors in all four, 3 suspects accepted, unmet 0 | walked 24/24, all frozen; 9 challenges in frozen Units 17–18, 26 fixed for character facts |
 | 11-13 | ES B2 core Units 27–30 (es-latam) | two edit-in-place agents (Sonnet), two units each | A 336,404 (19 min), B 328,070 (18 min); ~166k a unit | | 23 errors / 75 suspects → 0 / 5 accepted, unmet 1 kept | walked 24/24, all frozen; both texts about a work rewritten by the reviewer (meta padding); new `story-meta` check finds 43 sentences in 18 frozen texts |
 | 11-14 | ES B2 core Units 31–36 (es-latam) | two edit-in-place agents (Sonnet), **three units each**, both stopped by the 5-hour limit at once and resumed | A 295,492 (resumed run only), B 310,080; ~100k a unit | | 57 errors / 172 suspects → 0 / 6 accepted, unmet 0 | walked 36/36, all frozen; B2 core 36/36; texts about the work 108–195 words |
+| 11-25 | ES B2 latam Units 1–4 (es-latam, hidden track) | two edit-in-place agents (Sonnet), two units each; reviewer facts sent mid-run | A 354,086 (15 min), B 325,566 (13 min); ~170k a unit | | 113 errors / 57 suspects → 0 / 7 accepted, unmet 0 | walked 24/24, all frozen; 2 screen edits, 1 challenge rewritten; 6 lessons re-pointed to known skills |
 | 11-14 | HU C1 core Units 1–8 (first C1 batch, no pilot) | read-first, two Sonnet readers, **four units each** (Units 2–8 half-size, 52 items), B stopped once by the 5-hour limit | A 363,583 (17 min), B 353,181 (15 min); ~90k a unit | 737 applied | 50 errors / 100 suspects → 0 / 40 accepted (38 `vocab-unused` stems), unmet 79 → 18 lookup misses | walked 48/48, all frozen; 5 registry moves signed off; 28 retired tags retagged |
 | 11-14 | HU C1 core Units 9–16 | read-first, two Sonnet readers, four units each, extras via `stage_extras.py` | A 383,237 (20 min), B 422,476 (21 min); ~100k a unit | 898 applied | 66 errors / 80 suspects → 0 / 40 accepted (`vocab-unused`), unmet 68 → 31 lookup misses | walked 48/48, all frozen (C1 16/72); 175 retired tags retagged |
 | 11-14 | HU C1 core Units 17–24 | four units each; both readers stopped by the 5-hour limit and resumed after the reset | resumed runs only: A 376,461, B 364,720 (~90k a unit, a floor) | 864 applied | 65 errors / 113 suspects → 0 / 40 accepted, unmet 119 → 52 lookup misses | walked 48/48, all frozen (C1 24/72); c1-22-01 gained the epistemic past modals |
@@ -2302,4 +2303,23 @@ the reviewer's part per batch, whenever the user asks for it:
    `c1_reviewer_changes.py` before its next unit, so the fixes reach it without a hand-back.
 Units with a new skill have reviewer-written notes (norm traps checked); topic units' notes are
 drafted by Antigravity from `notes/README.md`; read those notes as part of the unit.
+
+### 2026-11-25: ES B2 latam Units 1–4 (first batch of the Latin America track)
+
+- **The core B2 brief carried over with one new part: grammar must be known by the unit.** The
+  track was generated against an older core order, so 13 lessons drill core skills taught up to
+  20 units later. Naming a known replacement per lesson in the unit notes worked: all six such
+  lessons in this batch came back re-pointed, the later forms gone from text and items. The
+  notes for each next batch list these lessons (`taught-later` by lesson) at setup.
+- **Facts sent mid-run were all applied** (both agents), including the two errors no prompt
+  would catch (the Zapatista structures dissolved in 2023; the CEH genocide regions). The
+  reviewer's read of the texts during the wait stays the step that finds them.
+- **Found at setup, fixed by script:** `prior_knowledge.py` and `unmet-words.js --with-hidden`
+  counted the hidden, unread B1 latam track as met for B2 latam; both now open only the same
+  level's track.
+- **Generated lessons on this track lack checklists** (15 of 24): `add_missing_checklists.py`
+  before `add_challenges.py`, and the consolidation challenge's `canDo` must be its first
+  checklist line. Next batch's brief says so.
+- ~170k a unit at two per agent, as ES B2 core at two. Next batch: three units per agent
+  (the core rate fell to ~100k at three with no loss).
 

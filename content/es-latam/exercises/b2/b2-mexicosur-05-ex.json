@@ -8,19 +8,19 @@
       "pairs": [
         [
           "la milpa",
-          "traditional polyculture maize field"
+          "milpa, traditional field of maize, beans and squash"
         ],
         [
-          "el maíz criollo",
-          "native/creole maize"
+          "el frijol",
+          "bean"
         ],
         [
-          "el trazado",
-          "railway/road route, layout"
+          "la calabaza",
+          "squash, pumpkin"
         ],
         [
-          "el ecoturismo",
-          "ecotourism"
+          "la consulta",
+          "consultation"
         ]
       ],
       "teaches": [
@@ -31,27 +31,30 @@
       "id": "b2-mexicosur-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué función cumple el conector 'si bien' en 'Si bien el proyecto generará empleo, los ambientalistas advierten sobre los riesgos biológicos'?",
+      "question": "Which sentence says \"Although the train creates jobs, some communities criticise it\"?",
       "options": [
-        "Concede un hecho positivo antes de introducir la objeción principal con verbo en indicativo.",
-        "Plantea una condición estricta e hipotética que exige subjuntivo.",
-        "Expresa una consecuencia lógica derivada directamente de la premisa."
+        "Aunque el tren crea empleos, algunas comunidades lo critican.",
+        "Porque el tren crea empleos, algunas comunidades lo critican.",
+        "Si el tren crea empleos, algunas comunidades lo critican."
       ],
       "correct": 0,
       "teaches": [
-        "concesivas-por-mas-que"
-      ]
+        "concesivas-aunque"
+      ],
+      "distractor_skills": {
+        "1": "por-que-y-porque",
+        "2": "si-clauses"
+      }
     },
     {
       "id": "b2-mexicosur-05.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A pesar de que el tren ya comenzó a operar, los científicos __ monitoreando la calidad del agua en los cenotes.",
-      "hint": "continuar - present indicative",
-      "answer": "continúan",
-      "english": "Even though the train already began operating, scientists continue monitoring water quality in the cenotes.",
+      "sentence": "__ la milpa necesita mucho trabajo, muchas familias la siguen sembrando.",
+      "answer": "Aunque",
+      "english": "Although the milpa needs a lot of work, many families keep planting it.",
       "teaches": [
-        "concesivas-por-mas-que"
+        "concesivas-aunque"
       ]
     },
     {
@@ -59,26 +62,32 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "La",
-        "milpa",
-        "tradicional",
-        "garantiza",
-        "la",
-        "soberanía",
-        "alimentaria."
+        "Aunque",
+        "el",
+        "tren",
+        "crea",
+        "empleos,",
+        "algunos",
+        "científicos",
+        "temen",
+        "su",
+        "impacto."
       ],
       "solution": [
-        "La",
-        "milpa",
-        "tradicional",
-        "garantiza",
-        "la",
-        "soberanía",
-        "alimentaria."
+        "Aunque",
+        "el",
+        "tren",
+        "crea",
+        "empleos,",
+        "algunos",
+        "científicos",
+        "temen",
+        "su",
+        "impacto."
       ],
-      "english": "The traditional milpa guarantees food sovereignty.",
+      "english": "Although the train creates jobs, some scientists fear its impact.",
       "teaches": [
-        "concesivas-por-mas-que"
+        "concesivas-aunque"
       ]
     },
     {
@@ -87,36 +96,36 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Agrónomo",
-          "text": "¿Por qué es tan valioso el sistema de la milpa frente a la agricultura industrial moderna?"
+          "speaker": "Meg",
+          "text": "¿Qué piensa la gente del Tren Maya?"
         },
         {
-          "speaker": "Comunera maya",
+          "speaker": "Carlos",
           "text": "_____"
         },
         {
-          "speaker": "Agrónomo",
-          "text": "Es una lección milenaria de equilibrio y sostenibilidad ecológica."
+          "speaker": "Meg",
+          "text": "Entonces hay varias opiniones."
         }
       ],
       "options": [
-        "Porque el maíz, el frijol y la calabaza se nutren mutuamente y protegen la fertilidad del suelo sin agroquímicos.",
-        "Porque requiere tractores importados de última generación para nivelar el terreno.",
-        "Porque las semillas transgénicas son las únicas que pueden resistir las lluvias tropicales."
+        "Aunque crea empleos, algunas personas temen su impacto en la selva.",
+        "Sale de Cancún por la mañana y llega a la ciudad por la tarde.",
+        "Necesita agua, sol y mucho trabajo durante todo el año."
       ],
       "correct": 0,
       "teaches": [
-        "concesivas-por-mas-que"
+        "b2-mexico-south-vocab"
       ]
     },
     {
       "id": "b2-mexicosur-05.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Las comunidades exigen que se respeten los resultados de las consultas previas antes de autorizar las obras.",
-      "english": "Communities demand that the results of prior consultations be respected before authorizing the works.",
+      "sentence": "El Gobierno defiende el tren; sin embargo, algunas comunidades piden más consultas.",
+      "english": "The government defends the train; however, some communities ask for more consultations.",
       "teaches": [
-        "relativas-subjuntivo"
+        "contrast-concession-connectors"
       ]
     }
   ]
