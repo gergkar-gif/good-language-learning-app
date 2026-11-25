@@ -28,3 +28,8 @@ Last batch: four units per agent (Units 31–36 are half size). Two lessons re-p
 one retired slug (36-05); the rest recap known skills.
 
 ## Agents (edit-in-place, Sonnet), started 12:50 UTC on 29a041dd
+
+- A (Latin America Units 29–32; /home/user/parlour-read-a): agent a83562193ef052253
+- B (Latin America Units 33–36; /home/user/parlour-read-b): agent a5d0db00c84424c35
+
+Resume a stopped agent with SendMessage to its id; never start a new one.
