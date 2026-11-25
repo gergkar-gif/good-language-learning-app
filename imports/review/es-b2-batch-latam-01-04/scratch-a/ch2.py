@@ -1,0 +1,15 @@
+import sys,json; sys.path.insert(0,'/home/user/parlour-read-a/.scratch')
+from lib import *
+def lc(stem):
+    l=rj(f'lessons/b2/{stem}.json'); return [s for s in l['sections'] if s['type'] in('checklist','goal')][-1]['items'][0]
+def C(stem,title,scen,prompt,cues,target,eng):
+    return {"tier":"tier1","level":"B2","title":"Communicative Challenge: "+title,"scenario":scen,"prompt":prompt,"cues":cues,"target":target,"english":eng,"canDo":lc(stem)}
+d={
+"b2-mexiconorte-01":C("b2-mexiconorte-01","Up into the Sierra","You are Meg. You and Carlos are planning a trip to the Barrancas del Cobre and reading about the region in Budapest.","Tell Carlos what happens to the climate as you go up into the mountains.",["Use a connector for a gradual change","Say that the climate changes"],"Conforme se sube a la sierra, el clima cambia.","As you go up into the mountains, the climate changes."),
+"b2-mexiconorte-02":C("b2-mexiconorte-02","The Vaqueros' Day","You are Carlos. You are telling Meg what you read in an article about vaqueros in northern Mexico.","Tell Meg that the days of work were hard, with the quality first.",["Start with the quality","Say whose days of work they were"],"Duros eran los días de trabajo.","Hard were the days of work."),
+"b2-mexiconorte-03":C("b2-mexiconorte-03","Water for Monterrey","You are Meg. You are preparing a talk in Budapest about Monterrey and its water problem, and Carlos asks what could help.","Tell Carlos what would happen if Monterrey could reuse more water.",["Start with a condition that is only imagined","Say that the pressure would be less"],"Si Monterrey pudiera reutilizar más agua, la presión sería menor.","If Monterrey could reuse more water, the pressure would be less."),
+"b2-mexiconorte-04":C("b2-mexiconorte-04","The Corrido","You are Carlos. You and Meg are watching a documentary about the Mexican border in Budapest, and a corrido is playing.","Tell Meg what a corrido is, with a relative clause.",["Say that it is a song","Say what is told in it"],"El corrido es una canción en la que se cuentan historias de migrantes.","The corrido is a song in which stories of migrants are told."),
+"b2-mexiconorte-05":C("b2-mexiconorte-05","Made in the North","You are Meg. You are reading an article about the factories of northern Mexico, and Carlos asks what they make.","Tell Carlos what is made in the north.",["Use se and a plural verb","Name two kinds of product"],"En el norte se fabrican vehículos y aparatos electrónicos.","In the north vehicles and electronic devices are made."),
+"b2-mexiconorte-consolidation":C("b2-mexiconorte-consolidation","The North and Its Water","You are Carlos. You are giving a short talk in Budapest about northern Mexico, and you reach the problem of water.","Tell your listeners how the cities of the north are changing and what worries people.",["Use a connector for a gradual change","Mention the lack of water"],"Conforme crecen las ciudades del norte, la falta de agua preocupa más.","As the cities of the north grow, the lack of water causes more concern."),
+}
+json.dump(d,open('/home/user/parlour-read-a/challenges-mexico-north.json','w'),ensure_ascii=False,indent=2)

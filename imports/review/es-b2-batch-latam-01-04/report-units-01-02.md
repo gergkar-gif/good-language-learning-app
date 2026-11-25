@@ -1,0 +1,10 @@
+# Agent A report (Latin America Units 1 mexico-central, 2 mexico-north), 2026-11-25
+
+Saved from the agent's reply (it could not write the files). 354,086 tokens, 53 tool uses, 15 min 8 s.
+
+- check-content: mexico-central 32 / 20 → 0 / 3; mexico-north 23 / 11 → 0 / 3. Suspects left, the agent's reasons: `answers-alternatives` mexicocentro-02.ex03 (*fue/resultó*), consolidation.ex04 (*era/fue*), mexiconorte-01.ex03 and consolidation.ex04 (*Conforme/A medida que*), mexiconorte-02.ex03 (*eran/fueron*); `tell-opener` mexicocentro-consolidation.ex07 (each option opens with a different adverb).
+- unmet-words (--with-hidden, after the last edit): ~150 → 0; 132 → 0. Challenge targets are not covered by it (they are not in challenges.json yet).
+- Skills re-pointed (north): 01 gerund-periphrases → conectores-temporales-narrativos (*conforme*, *a medida que*, *al cabo de*); 03 implicit-conditionals → hypothetical-structures (+ si-clauses ex04); 05 → pasiva-refleja. Central: all five kept, screens recaps. Consolidation central ex09 added (writing, sino-vs-pero) so each item has one tag. North consolidation's sentence-order item replaced by a builder.
+- Texts: all ten rewritten; reviewer-facts verdicts applied; Frida Kahlo paragraph cut (not a muralist); 1968 toll stated as disputed, no figure; Rivera's "civilización tolteca / huelgas / mercado" details cut as unsure.
+- Unsure Spanish: "El suelo blando tiene otro efecto: amplifica las ondas de los terremotos"; "Enorme fue la solidaridad entre desconocidos"; "Muy lejos de la capital estaba la gente, y tenía que arreglarse sola"; "Típicos del norte son los asados en familia" (screen); wrong options to confirm: mexicocentro-05.ex07 "Fue en los barrios donde organizaron la ayuda" (possible second right answer), mexiconorte-03.ex05 "Si reutiliza más agua, la presión sería menor", mexiconorte-02.ex02 "Duro el trabajo era…".
+- For the reviewer: combined readings not rebuilt (the north consolidation shows the old text until then); north lessons 01–05 have no checklist (none originally); not locked.

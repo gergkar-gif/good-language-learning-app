@@ -1,0 +1,16 @@
+import sys,json; sys.path.insert(0,'/home/user/parlour-read-a/.scratch')
+from lib import *
+def lc(stem): 
+    l=rj(f'lessons/b2/{stem}.json')
+    return [s for s in l['sections'] if s['type']=='checklist'][0]['items'][0]
+def C(stem,title,scen,prompt,cues,target,eng):
+    return {"tier":"tier1","level":"B2","title":"Communicative Challenge: "+title,"scenario":scen,"prompt":prompt,"cues":cues,"target":target,"english":eng,"canDo":lc(stem)}
+d={
+"b2-mexicocentro-01":C("b2-mexicocentro-01","The Sinking Valley","You are Meg. You and Carlos are watching a documentary about Mexico City in Budapest. It says the ground of the city is sinking.","Tell Carlos what worries people most today, with a cleft sentence.",["Say that what worries people most is one thing","Name the sinking of the ground"],"Lo que más preocupa hoy es el hundimiento del suelo.","What worries people most today is the sinking of the ground."),
+"b2-mexicocentro-02":C("b2-mexicocentro-02","The Dike of Nezahualcóyotl","You are Carlos. You are telling Meg about an article on Tenochtitlan that you read in Budapest. It praised the dike of Nezahualcóyotl.","Tell Meg that the dike was very important, with the important thing first.",["Start with the quality","Say what the dike did for the city"],"Muy importante fue el albarradón para proteger la ciudad.","The dike was very important for protecting the city."),
+"b2-mexicocentro-03":C("b2-mexicocentro-03","Life in the Colonial Street","You are Meg. You are preparing a talk in Budapest about colonial Mexico City, and Carlos asks about the caste system.","Tell Carlos that life in the street was more mixed than the castes, using a stance adverb.",["Open with an adverb that corrects an idea","Say that the street was more mixed than the castes"],"En realidad, la vida de la calle era más mezclada que las castas.","Actually, life in the street was more mixed than the castes."),
+"b2-mexicocentro-04":C("b2-mexicocentro-04","Murals for the People","You are Carlos. You are talking to Meg in Budapest about a documentary on Mexican muralism.","Tell Meg what the murals were not and what they were.",["Say what the murals were not","Say what they were for"],"Los murales no eran para decorar, sino para enseñar la historia.","The murals were not for decoration but for teaching history."),
+"b2-mexicocentro-05":C("b2-mexicocentro-05","After the Earthquake","You are Meg. You are reading an article about the 1985 earthquake in Mexico City, and Carlos asks who organised the help.","Tell Carlos who formed the rescue teams, with a cleft sentence.",["Say who it was","Mention the rescue teams"],"Fueron los vecinos quienes formaron brigadas.","It was the neighbours who formed rescue teams."),
+"b2-mexicocentro-consolidation":C("b2-mexicocentro-consolidation","The Fall of Tenochtitlan","You are Carlos. You are giving a short talk in Budapest about central Mexico, and you reach the year 1521.","Say when Tenochtitlan fell and what was built afterwards.",["Say the year with a cleft sentence","Say what was built on the remains"],"Fue en 1521 cuando cayó Tenochtitlan. Sobre sus restos se construyó la ciudad colonial.","It was in 1521 that Tenochtitlan fell. On its remains the colonial city was built."),
+}
+json.dump(d,open('/home/user/parlour-read-a/challenges-mexico-central.json','w'),ensure_ascii=False,indent=2)
