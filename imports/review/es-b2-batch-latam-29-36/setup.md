@@ -33,3 +33,15 @@ one retired slug (36-05); the rest recap known skills.
 - B (Latin America Units 33–36; /home/user/parlour-read-b): agent a5d0db00c84424c35
 
 Resume a stopped agent with SendMessage to its id; never start a new one.
+
+## Found during the wait (2026-11-25)
+
+- **Reader leak:** four combined readings of frozen units (Guatemala, Nicaragua, El Salvador/
+  Honduras, Paraguay) were referenced by no lesson, so the manifest listed them with no unit and no
+  `hidden` flag: open in the Reader while the track is hidden. Their consolidation lessons now show
+  the combined reading (as Cuba, Costa Rica do); units refrozen, consolidations walked 4/4.
+  **Scripted:** `scripts/reader_orphans.py <course> [level]`; B2 now lists 0. (es-latam A1–B1 list
+  55 free-standing Reader stories, es-es 56, hu 11: read at their levels' checklists, ES B1's 29 in
+  its close-out; not part of this pass.)
+- `check_es_c1_forms.py es-latam --track latam`: 0 hits in the 28 frozen B2 latam units; 27 in the
+  old texts of Units 29–36 (agents told) and in the unread B1 track.

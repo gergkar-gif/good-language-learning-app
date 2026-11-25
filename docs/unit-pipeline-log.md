@@ -295,8 +295,7 @@ not verified:
   themes). HU C1 had 36 texts about writers labelled "Adapted from".
 - Reader library: stories the manifest lists with no unit and not hidden are
   open to learners but read by no batch (ES B1: 29, with false labels and
-  wrong plots). List them (`content/<course>/stories/manifest.json`: level,
-  no `unit`, no `hidden`) and read them before calling the level done.
+  wrong plots). List them with `python scripts/reader_orphans.py <course> <level>` (2026-11-25) and read them before calling the level done.
 - Not covered by any of this: speaking steps (microphone), spoken
   challenge answers, wrong-answer paths, and a native speaker's eye (the
   user spot-checks).
