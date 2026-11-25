@@ -28,3 +28,8 @@ As batch 5–10: three units per agent, all six units topic-only (one known skil
 + `scripts/templates/edit-spanish-latam-b2-track.txt`.
 
 ## Agents (edit-in-place, Sonnet), started 07:17 UTC on 9dd0bd98
+
+- A (Latin America Units 11, 12, 13; /home/user/parlour-read-a): agent a1848106ba02db261
+- B (Latin America Units 14, 15, 16; /home/user/parlour-read-b): agent a214e82b2823f9307
+
+Resume a stopped agent with SendMessage to its id; never start a new one.
