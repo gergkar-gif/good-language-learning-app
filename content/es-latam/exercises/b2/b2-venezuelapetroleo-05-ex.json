@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "bonanza",
-          "economic prosperity boom"
+          "el auge",
+          "boom"
         ],
         [
-          "espejismo",
-          "mirage / illusion"
+          "la deuda",
+          "debt"
         ],
         [
-          "petrodólar",
-          "petroleum revenue dollar"
+          "la devaluación",
+          "fall in the value of a currency"
         ],
         [
-          "consumismo",
-          "frenzied consumerism"
+          "la moneda",
+          "currency"
         ]
       ],
       "teaches": [
@@ -31,61 +31,57 @@
       "id": "b2-venezuelapetroleo-05.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La enorme entrada de petrodólares en los años setenta desató un periodo de opulencia conocido como la Venezuela __.",
-      "hint": "Saudi",
-      "answer": "Saudita",
-      "english": "The huge influx of petrodollars in the seventies unleashed a period of opulence known as Saudi Venezuela.",
+      "sentence": "El país debería haber __ más dinero en los años de precios altos.",
+      "hint": "ahorrar",
+      "answer": "ahorrado",
+      "english": "The country should have saved more money in the years of high prices.",
       "teaches": [
-        "venezuela-bonanza-petrolera-sociedad"
+        "regrets-reproaches"
       ]
     },
     {
       "id": "b2-venezuelapetroleo-05.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué fenómeno económico se conoció como 'la enfermedad holandesa' en Venezuela?",
+      "question": "Which sentence means \"We should have saved more\"?",
       "options": [
-        "La sobrevaloración de la moneda petrolera que abarató las importaciones y desmanteló la agricultura y manufactura locales.",
-        "Una epidemia biológica transmitida por el ganado vacuno en los Llanos.",
-        "La prohibición de comerciar con los países de los Países Bajos y las Antillas.",
-        "La obligación de pagar todos los salarios en monedas de plata."
+        "Deberíamos haber ahorrado más.",
+        "Deberíamos ahorrar más.",
+        "Deberíamos haber ahorrar más."
       ],
       "correct": 0,
       "teaches": [
-        "venezuela-bonanza-petrolera-sociedad"
-      ]
+        "regrets-reproaches"
+      ],
+      "distractor_skills": {
+        "1": "deber-vs-tener-que"
+      }
     },
     {
       "id": "b2-venezuelapetroleo-05.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "El",
-        "Viernes",
-        "Negro",
+        "Me",
+        "arrepiento",
         "de",
-        "1983",
-        "puso",
-        "fin",
-        "a",
-        "la",
-        "estabilidad."
+        "no",
+        "haber",
+        "ahorrado",
+        "más."
       ],
       "solution": [
-        "El",
-        "Viernes",
-        "Negro",
+        "Me",
+        "arrepiento",
         "de",
-        "1983",
-        "puso",
-        "fin",
-        "a",
-        "la",
-        "estabilidad."
+        "no",
+        "haber",
+        "ahorrado",
+        "más."
       ],
-      "english": "Black Friday of 1983 put an end to stability.",
+      "english": "I regret not having saved more.",
       "teaches": [
-        "venezuela-bonanza-petrolera-sociedad"
+        "regrets-reproaches"
       ]
     },
     {
@@ -94,34 +90,49 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Sociólogo",
-          "text": "¿Qué lecciones dejó el espejismo de la bonanza petrolera de los años setenta?"
+          "speaker": "Meg",
+          "text": "¿Qué es una devaluación?"
         },
         {
-          "speaker": "Economista",
+          "speaker": "Carlos",
           "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Ahora lo entiendo."
         }
       ],
       "options": [
-        "Demostró que el consumo de bienes importados no sustituye al desarrollo productivo y que la dependencia del crudo genera extrema vulnerabilidad.",
-        "Que un país puede vivir indefinidamente sin producir alimentos ni energía.",
-        "Que los precios del petróleo en el mercado internacional nunca vuelven a caer.",
-        "Que las monedas latinoamericanas no sufren devaluaciones fiscales."
+        "Es cuando la moneda de un país pierde valor.",
+        "Es cuando un país vende más petróleo que antes.",
+        "Es cuando el gobierno pide dinero a otros países."
       ],
       "correct": 0,
       "teaches": [
-        "venezuela-bonanza-petrolera-sociedad"
+        "b2-venezuela-oil-caracas-vocab"
       ]
     },
     {
       "id": "b2-venezuelapetroleo-05.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "La volatilidad de los precios del crudo evidenció los riesgos del modelo monoproductor rentista.",
-      "english": "The volatility of crude prices showed the risks of the rentier single-product model.",
+      "sentence": "Deberían haber ahorrado más cuando el petróleo era caro.",
+      "english": "They should have saved more when oil was expensive.",
       "teaches": [
-        "venezuela-bonanza-petrolera-sociedad"
+        "regrets-reproaches"
       ]
+    },
+    {
+      "id": "b2-venezuelapetroleo-05.ex07",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "What happened on 18 February 1983, according to the text?",
+      "options": [
+        "El gobierno bajó el valor de la moneda, el bolívar.",
+        "El Estado se hizo cargo de la industria petrolera.",
+        "Se fundó la OPEP en Bagdad."
+      ],
+      "correct": 0
     }
   ]
 }

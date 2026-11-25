@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "vanguardia",
-          "avant-garde"
+          "el arquitecto",
+          "architect"
         ],
         [
-          "acústica",
-          "sound properties / acoustics"
+          "el mural",
+          "large painting on a wall"
         ],
         [
-          "hormigón",
-          "reinforced concrete"
+          "la escultura",
+          "sculpture"
         ],
         [
-          "brutalismo",
-          "brutalist architecture"
+          "la nube",
+          "cloud"
         ]
       ],
       "teaches": [
@@ -31,61 +31,67 @@
       "id": "b2-venezuelapetroleo-03.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Carlos Raúl Villanueva concibió la Ciudad Universitaria como una síntesis armónica de la arquitectura con las artes __.",
-      "hint": "plástico",
-      "answer": "plásticas",
-      "english": "Carlos Raúl Villanueva conceived the University City as a harmonic synthesis of architecture with the plastic arts.",
+      "sentence": "Los estudiantes caminan por el campus como si __ en una ciudad.",
+      "hint": "estar",
+      "answers": [
+        "estuvieran",
+        "estuviesen"
+      ],
+      "english": "The students walk across the campus as if they were in a city.",
       "teaches": [
-        "venezuela-arquitectura-villanueva-ucv"
+        "como-si"
       ]
     },
     {
       "id": "b2-venezuelapetroleo-03.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué función dual cumplen las 'Nubes Flotantes' de Alexander Calder en el Aula Magna?",
+      "question": "Which sentence means \"The clouds hang from the ceiling as if they were real clouds\"?",
       "options": [
-        "Operan simultáneamente como esculturas artísticas de vanguardia y como paneles de calibración acústica perfecta.",
-        "Sirven únicamente como pararrayos en caso de tormentas tropicales.",
-        "Eran pantallas de televisión instaladas para transmitir conferencias magistrales.",
-        "Son depósitos de agua para el sistema de incendios del auditorio."
+        "Las nubes cuelgan del techo como si fueran nubes de verdad.",
+        "Las nubes cuelgan del techo como si son nubes de verdad.",
+        "Las nubes cuelgan del techo como si sean nubes de verdad."
       ],
       "correct": 0,
       "teaches": [
-        "venezuela-arquitectura-villanueva-ucv"
-      ]
+        "como-si"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b2-venezuelapetroleo-03.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "La",
-        "UNESCO",
-        "declaró",
-        "la",
-        "Ciudad",
-        "Universitaria",
-        "Patrimonio",
-        "de",
-        "la",
-        "Humanidad."
+        "El",
+        "arquitecto",
+        "diseñó",
+        "el",
+        "campus",
+        "como",
+        "si",
+        "fuera",
+        "una",
+        "ciudad."
       ],
       "solution": [
-        "La",
-        "UNESCO",
-        "declaró",
-        "la",
-        "Ciudad",
-        "Universitaria",
-        "Patrimonio",
-        "de",
-        "la",
-        "Humanidad."
+        "El",
+        "arquitecto",
+        "diseñó",
+        "el",
+        "campus",
+        "como",
+        "si",
+        "fuera",
+        "una",
+        "ciudad."
       ],
-      "english": "UNESCO declared the University City World Heritage.",
+      "english": "The architect designed the campus as if it were a city.",
       "teaches": [
-        "venezuela-arquitectura-villanueva-ucv"
+        "como-si"
       ]
     },
     {
@@ -94,34 +100,49 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Estudiante",
-          "text": "¿Por qué los pasillos de la UCV son abiertos y poseen tantas celosías de hormigón?"
+          "speaker": "Meg",
+          "text": "¿Qué es un mural?"
         },
         {
-          "speaker": "Profesora",
+          "speaker": "Carlos",
           "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Ahora lo entiendo."
         }
       ],
       "options": [
-        "Villanueva diseñó celosías y corredores cubiertos para permitir la ventilación natural y la sombra constante frente al calor caraqueño.",
-        "Faltaba presupuesto para construir ventanas y paredes normales.",
-        "Para que los estudiantes pudieran saltar por los pasillos sin utilizar escaleras.",
-        "Porque las normas coloniales exigían que no hubiera puertas."
+        "Es una pintura grande hecha sobre una pared.",
+        "Es una escultura pequeña que se pone sobre una mesa.",
+        "Es un techo de madera que está encima de un aula."
       ],
       "correct": 0,
       "teaches": [
-        "venezuela-arquitectura-villanueva-ucv"
+        "b2-venezuela-oil-caracas-vocab"
       ]
     },
     {
       "id": "b2-venezuelapetroleo-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "La integración de murales y esculturas en los patios universitarios democratizó el acceso cotidiano al arte.",
-      "english": "The integration of murals and sculptures in university courtyards democratized daily access to art.",
+      "sentence": "El campus parece una ciudad pequeña, como si tuviera sus propias calles.",
+      "english": "The campus looks like a small city, as if it had its own streets.",
       "teaches": [
-        "venezuela-arquitectura-villanueva-ucv"
+        "como-si"
       ]
+    },
+    {
+      "id": "b2-venezuelapetroleo-03.ex07",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "What did UNESCO do in 2000, according to the text?",
+      "options": [
+        "Declaró la Ciudad Universitaria de Caracas Patrimonio de la Humanidad.",
+        "Declaró el pozo Zumaque I Patrimonio de la Humanidad.",
+        "Declaró el parque nacional El Ávila Patrimonio de la Humanidad."
+      ],
+      "correct": 0
     }
   ]
 }

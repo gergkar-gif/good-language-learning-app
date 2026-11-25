@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el paisa",
-          "native of Antioquia/Coffee Axis"
+          "la ladera",
+          "hillside, slope"
         ],
         [
-          "la resiliencia",
-          "resilience"
+          "la comuna",
+          "district (of Medellín)"
         ],
         [
-          "el emprendimiento",
-          "initiative, entrepreneurship"
+          "la escalera",
+          "staircase, stairs"
         ],
         [
-          "pujante",
-          "thriving, dynamic, enterprising"
+          "el homicidio",
+          "homicide, killing"
         ]
       ],
       "teaches": [
@@ -29,29 +29,32 @@
     },
     {
       "id": "b2-colombiaandina-03.ex02",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El Metrocable fue el primer sistema de teleférico en el mundo que se __ al transporte público masivo.",
-      "hint": "incorporar",
-      "answer": "incorporó",
-      "english": "The Metrocable was the first cable car system in the world that was incorporated into mass transit.",
-      "teaches": [
-        "colombia-medellin-innovacion-social"
-      ]
-    },
-    {
-      "id": "b2-colombiaandina-03.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué enunciado expresa con exactitud el principio rector del 'urbanismo social' en Medellín?",
+      "question": "Which sentence says \"It is not that it is hot, but that the climate is mild all year\"?",
       "options": [
-        "Consistió en construir las obras públicas más bellas en los barrios que habían sufrido la mayor exclusión y violencia.",
-        "Prohibió la construcción de viviendas populares en las pendientes del valle de Aburrá.",
-        "Priorizó la inversión estatal exclusivamente en el distrito financiero del sur."
+        "No es que haga calor, sino que el clima es templado todo el año.",
+        "No es que hace calor, sino que el clima es templado todo el año.",
+        "No es que haga calor, sino que el clima sea templado todo el año."
       ],
       "correct": 0,
       "teaches": [
-        "colombia-medellin-innovacion-social"
+        "refutacion-no-es-que-sino"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "subjuntivo-morfologia"
+      }
+    },
+    {
+      "id": "b2-colombiaandina-03.ex03",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "No es que Medellín sea una ciudad fría, __ que su clima es templado.",
+      "answer": "sino",
+      "english": "It is not that Medellín is a cold city, but that its climate is mild.",
+      "teaches": [
+        "refutacion-no-es-que-sino"
       ]
     },
     {
@@ -59,34 +62,38 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "La",
-        "pujanza",
-        "paisa",
+        "No",
         "es",
-        "un",
-        "rasgo",
         "que",
-        "impulsa",
+        "los",
+        "problemas",
+        "hayan",
+        "desaparecido,",
+        "sino",
+        "que",
         "la",
-        "innovación",
-        "empresarial."
+        "ciudad",
+        "ha",
+        "cambiado."
       ],
       "solution": [
-        "La",
-        "pujanza",
-        "paisa",
+        "No",
         "es",
-        "un",
-        "rasgo",
         "que",
-        "impulsa",
+        "los",
+        "problemas",
+        "hayan",
+        "desaparecido,",
+        "sino",
+        "que",
         "la",
-        "innovación",
-        "empresarial."
+        "ciudad",
+        "ha",
+        "cambiado."
       ],
-      "english": "Paisa industriousness is a trait that drives business innovation.",
+      "english": "It is not that the problems have disappeared, but that the city has changed.",
       "teaches": [
-        "colombia-medellin-innovacion-social"
+        "refutacion-no-es-que-sino"
       ]
     },
     {
@@ -95,36 +102,36 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Periodista alemán",
-          "text": "¿Cómo logró Medellín superar las alarmantes tasas de homicidio de los años noventa?"
+          "speaker": "Meg",
+          "text": "¿Qué es una comuna?"
         },
         {
-          "speaker": "Líder comunitario",
+          "speaker": "Carlos",
           "text": "_____"
         },
         {
-          "speaker": "Periodista alemán",
-          "text": "Una demostración conmovedora del poder sanador de la inversión social."
+          "speaker": "Meg",
+          "text": "Entonces Medellín tiene muchas comunas."
         }
       ],
       "options": [
-        "Fue un esfuerzo conjunto en el que la inversión pública llegó con dignidad a sitios adonde el Estado nunca antes había hecho presencia.",
-        "El servicio de metro cuenta con dos líneas principales que cruzan el valle de norte a sur.",
-        "La feria de las flores se celebra anualmente durante el mes de agosto con desfiles de silleteros."
+        "Es una zona de la ciudad con varios barrios.",
+        "Es una calle larga con muchas escaleras.",
+        "Es una montaña con casas en la ladera."
       ],
       "correct": 0,
       "teaches": [
-        "colombia-medellin-innovacion-social"
+        "b2-colombia-andes-vocab"
       ]
     },
     {
       "id": "b2-colombiaandina-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "El arte urbano y el hip hop transformaron el dolor de la Comuna 13 en memoria viva.",
-      "english": "Urban art and hip hop transformed the pain of Comuna 13 into living memory.",
+      "sentence": "No es que Medellín sea fría, sino que tiene un clima templado.",
+      "english": "It is not that Medellín is cold, but that it has a mild climate.",
       "teaches": [
-        "colombia-medellin-innovacion-social"
+        "refutacion-no-es-que-sino"
       ]
     }
   ]

@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "diáspora",
-          "population dispersed abroad"
+          "la arepa",
+          "round maize bread"
         ],
         [
-          "arepa",
-          "grilled cornflour cake"
+          "la harina",
+          "flour"
         ],
         [
-          "arraigo",
-          "deep emotional attachment"
+          "extrañar",
+          "to miss someone or something"
         ],
         [
-          "añoranza",
-          "homesick longing"
+          "la orquesta",
+          "orchestra"
         ]
       ],
       "teaches": [
@@ -31,59 +31,56 @@
       "id": "b2-venezuelasabana-05.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La arepa con pollo desmechado y aguacate se conoce popularmente como reina __.",
-      "hint": "arepa name",
-      "answer": "pepiada",
-      "english": "The arepa with shredded chicken and avocado is popularly known as reina pepiada.",
+      "sentence": "Ojalá __ podido quedarme con mi familia.",
+      "hint": "haber",
+      "answers": [
+        "hubiera",
+        "hubiese"
+      ],
+      "english": "I wish I had been able to stay with my family.",
       "teaches": [
-        "venezuela-diaspora-identidad-global"
+        "counterfactual-wishes"
       ]
     },
     {
       "id": "b2-venezuelasabana-05.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué ha demostrado la experiencia de la diáspora venezolana en las naciones de acogida?",
+      "question": "Which sentence means \"I wish I had brought more flour\"?",
       "options": [
-        "Que la identidad se reinventa mediante el trabajo digno, la excelencia profesional y la diplomacia gastronómica y cultural.",
-        "Que los migrantes renuncian de inmediato a todas sus costumbres culinarias.",
-        "Que la cocina tradicional desaparece cuando una persona cruza una frontera.",
-        "Que la música del cuatro solo puede interpretarse en territorio nacional."
+        "Ojalá hubiera traído más harina.",
+        "Ojalá habría traído más harina.",
+        "Ojalá traiga más harina."
       ],
       "correct": 0,
       "teaches": [
-        "venezuela-diaspora-identidad-global"
-      ]
+        "counterfactual-wishes"
+      ],
+      "distractor_skills": {
+        "2": "subjuntivo-deseos"
+      }
     },
     {
       "id": "b2-venezuelasabana-05.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "La",
-        "arepa",
-        "se",
-        "convirtió",
-        "en",
-        "un",
-        "icono",
-        "gastronómico",
-        "mundial."
+        "Ojalá",
+        "hubiéramos",
+        "llevado",
+        "más",
+        "harina."
       ],
       "solution": [
-        "La",
-        "arepa",
-        "se",
-        "convirtió",
-        "en",
-        "un",
-        "icono",
-        "gastronómico",
-        "mundial."
+        "Ojalá",
+        "hubiéramos",
+        "llevado",
+        "más",
+        "harina."
       ],
-      "english": "The arepa became a global gastronomic icon.",
+      "english": "I wish we had taken more flour.",
       "teaches": [
-        "venezuela-diaspora-identidad-global"
+        "counterfactual-wishes"
       ]
     },
     {
@@ -92,34 +89,49 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Cliente",
-          "text": "He visto areperas en Madrid, Santiago y Buenos Aires. ¿A qué se debe su enorme popularidad?"
+          "speaker": "Meg",
+          "text": "¿Quién es Gustavo Dudamel?"
         },
         {
-          "speaker": "Cocinero",
+          "speaker": "Carlos",
           "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Ahora lo entiendo."
         }
       ],
       "options": [
-        "La arepa es versátil, deliciosa y lleva consigo el calor hogareño y la memoria viva de nuestra tierra a cualquier parte del mundo.",
-        "Es una comida obligatoria impuesta por los tratados comerciales internacionales.",
-        "Porque en las ciudades modernas no existe ningún otro tipo de restaurante.",
-        "Porque la masa de maíz se fabrica exclusivamente en laboratorios farmacéuticos."
+        "Es un director de orquesta nacido en Barquisimeto.",
+        "Es el ingeniero que inventó la harina de maíz.",
+        "Es la persona que empezó el programa El Sistema."
       ],
       "correct": 0,
       "teaches": [
-        "venezuela-diaspora-identidad-global"
+        "b2-venezuela-llanos-diaspora-vocab"
       ]
     },
     {
       "id": "b2-venezuelasabana-05.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "La venezolanidad florece hoy en miles de comunidades solidarias que construyen puentes de fraternidad continental.",
-      "english": "Venezuelan identity flourishes today in thousands of solidarity communities building bridges of continental fraternity.",
+      "sentence": "Ojalá hubiera podido ver a mi familia antes.",
+      "english": "I wish I had been able to see my family earlier.",
       "teaches": [
-        "venezuela-diaspora-identidad-global"
+        "counterfactual-wishes"
       ]
+    },
+    {
+      "id": "b2-venezuelasabana-05.ex07",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "What did Luis Caballero Mejías invent, according to the text?",
+      "options": [
+        "Una harina de maíz para hacer arepas.",
+        "Un instrumento para tocar joropo.",
+        "Un programa de orquestas para jóvenes."
+      ],
+      "correct": 0
     }
   ]
 }

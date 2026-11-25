@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
+          "el levantamiento",
+          "uprising"
+        ],
+        [
           "la cesión",
-          "cession, transfer of sovereignty"
+          "cession, handing over"
         ],
         [
-          "el botín",
-          "spoils of war, booty"
+          "la esclavitud",
+          "slavery"
         ],
         [
-          "el insurrecto",
-          "insurgent, rebel"
-        ],
-        [
-          "tutelar",
-          "tutelar, supervisory"
+          "el tratado",
+          "treaty"
         ]
       ],
       "teaches": [
@@ -31,27 +31,31 @@
       "id": "b2-puertorico-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué trascendencia histórica tuvo el Grito de Lares del 23 de septiembre de 1868 en Puerto Rico?",
+      "question": "Which sentence means \"Spain granted autonomy before the war with the United States began\"?",
       "options": [
-        "Fue la primera insurrección armada que proclamó la República de Puerto Rico y la abolición inmediata de la esclavitud.",
-        "Fue una huelga marítima organizada por los pescadores de langostas de la bahía de San Juan.",
-        "Fue una asamblea constituyente que aprobó la anexión voluntaria al imperio británico."
+        "España concedió la autonomía antes de que empezara la guerra con Estados Unidos.",
+        "España concedió la autonomía antes de que empezó la guerra con Estados Unidos.",
+        "España concedió la autonomía antes de que empiece la guerra con Estados Unidos."
       ],
       "correct": 0,
       "teaches": [
-        "puertorico-grito-lares-cesion-1898"
-      ]
+        "antes-despues-de-que"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b2-puertorico-02.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "En virtud del Tratado de París de 1898, España __ la soberanía de Puerto Rico a los Estados Unidos sin consultar a la población insular.",
-      "hint": "ceder - pretérito indefinido",
-      "answer": "cedió",
-      "english": "Under the Treaty of Paris of 1898, Spain ceded sovereignty of Puerto Rico to the United States without consulting the island population.",
+      "sentence": "La esclavitud se abolió en 1873, cinco años después de que __ el Grito de Lares.",
+      "hint": "ocurrir",
+      "answer": "ocurrió",
+      "english": "Slavery was abolished in 1873, five years after the Grito de Lares happened.",
       "teaches": [
-        "puertorico-grito-lares-cesion-1898"
+        "antes-despues-de-que"
       ]
     },
     {
@@ -59,32 +63,40 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "El",
-        "Grito",
+        "Después",
         "de",
-        "Lares",
-        "proclamó",
+        "que",
+        "terminó",
         "la",
-        "libertad",
-        "de",
-        "la",
-        "patria."
+        "guerra,",
+        "el",
+        "tratado",
+        "cedió",
+        "Puerto",
+        "Rico",
+        "a",
+        "Estados",
+        "Unidos."
       ],
       "solution": [
-        "El",
-        "Grito",
+        "Después",
         "de",
-        "Lares",
-        "proclamó",
+        "que",
+        "terminó",
         "la",
-        "libertad",
-        "de",
-        "la",
-        "patria."
+        "guerra,",
+        "el",
+        "tratado",
+        "cedió",
+        "Puerto",
+        "Rico",
+        "a",
+        "Estados",
+        "Unidos."
       ],
-      "english": "The Grito de Lares proclaimed the freedom of the homeland.",
+      "english": "After the war ended, the treaty handed Puerto Rico over to the United States.",
       "teaches": [
-        "puertorico-grito-lares-cesion-1898"
+        "antes-despues-de-que"
       ]
     },
     {
@@ -93,36 +105,36 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Historiadora",
-          "text": "¿Por qué el año 1898 representó una ruptura tan traumática para Puerto Rico?"
+          "speaker": "Meg",
+          "text": "¿Qué fue el Grito de Lares?"
         },
         {
-          "speaker": "Profesor",
+          "speaker": "Carlos",
           "text": "_____"
         },
         {
-          "speaker": "Historiadora",
-          "text": "Una paradoja colonial que postergó indefinidamente la autodeterminación democrática del pueblo boricua."
+          "speaker": "Meg",
+          "text": "Entonces es una fecha importante."
         }
       ],
       "options": [
-        "Porque la isla acababa de inaugurar su Carta Autonómica democrática cuando fue ocupada militarmente y transferida como botín de guerra sin consulta popular.",
-        "Porque se produjo un eclipse solar que dañó las cosechas de plátanos y café en la cordillera.",
-        "Porque el puerto comercial de Ponce fue clausurado para el tránsito de barcos veleros."
+        "Fue un levantamiento contra España, en 1868.",
+        "Fue el tratado que cedió la isla a Estados Unidos en 1898.",
+        "Fue la ley que creó un gobierno civil en 1900."
       ],
       "correct": 0,
       "teaches": [
-        "puertorico-grito-lares-cesion-1898"
+        "b2-puerto-rico-vocab"
       ]
     },
     {
       "id": "b2-puertorico-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Betances defendió incansablemente la emancipación de las Antillas desde el exilio.",
-      "english": "Betances tirelessly defended the emancipation of the Antilles from exile.",
+      "sentence": "Antes de que llegaran las tropas estadounidenses, el nuevo gobierno de la isla ya trabajaba.",
+      "english": "Before the American troops arrived, the island's new government was already working.",
       "teaches": [
-        "puertorico-grito-lares-cesion-1898"
+        "antes-despues-de-que"
       ]
     }
   ]

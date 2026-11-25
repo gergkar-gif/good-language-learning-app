@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "yacimiento",
-          "oil deposit"
+          "el pozo",
+          "well"
         ],
         [
-          "rentismo",
-          "reliance on resource rents"
+          "el petróleo",
+          "oil"
         ],
         [
-          "concesión",
-          "operating concession"
+          "el barril",
+          "barrel"
         ],
         [
-          "reventón",
-          "oil gush / blowout"
+          "la concesión",
+          "permission given by the state to a company"
         ]
       ],
       "teaches": [
@@ -31,59 +31,69 @@
       "id": "b2-venezuelapetroleo-02.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El reventón del pozo Barroso II en 1922 convirtió a Venezuela en un actor determinante en el mercado global de __.",
-      "hint": "hidrocarburo",
-      "answer": "hidrocarburos",
-      "english": "The blowout of the Barroso II well in 1922 turned Venezuela into a decisive actor in the global hydrocarbons market.",
+      "sentence": "Antes de que se __ el petróleo, Venezuela vivía del café y del cacao.",
+      "hint": "descubrir",
+      "answers": [
+        "descubriera",
+        "descubriese"
+      ],
+      "english": "Before oil was discovered, Venezuela lived from coffee and cacao.",
       "teaches": [
-        "venezuela-petroleo-zumaque-petroestado"
+        "antes-despues-de-que"
       ]
     },
     {
       "id": "b2-venezuelapetroleo-02.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué advertía el intelectual Arturo Uslar Pietri con la célebre frase 'sembrar el petróleo'?",
+      "question": "Which sentence means \"Before the company arrived, the village was quiet\"?",
       "options": [
-        "Que la renta petrolera debía reinvertirse en educación, industria y agricultura para evitar la ruina de una economía monoproductora.",
-        "Que los barriles de petróleo debían enterrarse literalmente en los campos de cultivo.",
-        "Que el Estado debía renunciar a extraer crudo para proteger el café tradicional.",
-        "Que las compañías petroleras extranjeras debían gobernar el país."
+        "Antes de que llegara la empresa, el pueblo era tranquilo.",
+        "Antes de que llegó la empresa, el pueblo era tranquilo.",
+        "Antes de que llegaba la empresa, el pueblo era tranquilo."
       ],
       "correct": 0,
       "teaches": [
-        "venezuela-petroleo-zumaque-petroestado"
-      ]
+        "antes-despues-de-que"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b2-venezuelapetroleo-02.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "La",
-        "renta",
-        "petrolera",
-        "transformó",
-        "las",
-        "finanzas",
-        "públicas",
+        "Antes",
         "de",
-        "Venezuela."
+        "que",
+        "llegara",
+        "el",
+        "petróleo,",
+        "Venezuela",
+        "exportaba",
+        "sobre",
+        "todo",
+        "café."
       ],
       "solution": [
-        "La",
-        "renta",
-        "petrolera",
-        "transformó",
-        "las",
-        "finanzas",
-        "públicas",
+        "Antes",
         "de",
-        "Venezuela."
+        "que",
+        "llegara",
+        "el",
+        "petróleo,",
+        "Venezuela",
+        "exportaba",
+        "sobre",
+        "todo",
+        "café."
       ],
-      "english": "Oil rent transformed Venezuela's public finances.",
+      "english": "Before oil arrived, Venezuela exported mainly coffee.",
       "teaches": [
-        "venezuela-petroleo-zumaque-petroestado"
+        "antes-despues-de-que"
       ]
     },
     {
@@ -92,34 +102,49 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Historiador",
-          "text": "¿Cómo afectó el descubrimiento petrolero al campo venezolano tradicional?"
+          "speaker": "Meg",
+          "text": "¿Qué es una concesión petrolera?"
         },
         {
-          "speaker": "Investigadora",
+          "speaker": "Carlos",
           "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Ahora lo entiendo."
         }
       ],
       "options": [
-        "Provocó un éxodo masivo del campesinado hacia los campos petroleros y las ciudades, reduciendo drásticamente la producción de café y cacao.",
-        "Hizo que todos los venezolanos se dedicaran exclusivamente a pescar en el mar Caribe.",
-        "Aumentó la producción de cacao hasta triplicar el comercio con Europa.",
-        "No generó ningún impacto en la vida rural venezolana."
+        "Es un permiso del Estado para que una empresa busque petróleo.",
+        "Es un barril que se usa para vender petróleo en el puerto.",
+        "Es una torre que ayuda a sacar el petróleo de un pozo."
       ],
       "correct": 0,
       "teaches": [
-        "venezuela-petroleo-zumaque-petroestado"
+        "b2-venezuela-oil-caracas-vocab"
       ]
     },
     {
       "id": "b2-venezuelapetroleo-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "En pocas décadas, el petroestado centralizó los recursos fiscales y redefinió el pacto social.",
-      "english": "In a few decades, the petrostate centralized fiscal resources and redefined the social pact.",
+      "sentence": "Después de que descubrieron el petróleo, la economía cambió.",
+      "english": "After they discovered oil, the economy changed.",
       "teaches": [
-        "venezuela-petroleo-zumaque-petroestado"
+        "antes-despues-de-que"
       ]
+    },
+    {
+      "id": "b2-venezuelapetroleo-02.ex07",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "What did Venezuela live from before oil, according to the text?",
+      "options": [
+        "Vivía sobre todo del café y del cacao.",
+        "Vivía sobre todo de las minas de oro.",
+        "Vivía sobre todo del turismo en las playas."
+      ],
+      "correct": 0
     }
   ]
 }

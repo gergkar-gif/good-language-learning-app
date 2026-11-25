@@ -161,7 +161,7 @@ them unless a step below says otherwise.
    inflected form (*barátnő* "with her girlfriends").
 5. **Left over by hand:** remaining check-content errors and unmet-word
    suspects (a Sonnet fixer when there are many: HU units 42–44 had ~250,
-   212k), then (a track whose lessons lack checklists: `add_missing_checklists.py`, then `fix_shared_checklists.py --write`) `python scripts/add_challenges.py <course> <level>
+   212k), then (a track whose lessons lack checklists: `add_missing_checklists.py` first, and `fix_shared_checklists.py --write` after `add_challenges.py`, so it updates each `canDo` in challenges.json) `python scripts/add_challenges.py <course> <level>
    <challenges.json>` per unit (it checks fields, level and `canDo`;
    check-content then reports unmet words in targets). Spanish: `python
    scripts/latam_challenges.py <drafts> <drafts.latam.json>` first (course
@@ -522,6 +522,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-14 | ES B2 core Units 31–36 (es-latam) | two edit-in-place agents (Sonnet), **three units each**, both stopped by the 5-hour limit at once and resumed | A 295,492 (resumed run only), B 310,080; ~100k a unit | | 57 errors / 172 suspects → 0 / 6 accepted, unmet 0 | walked 36/36, all frozen; B2 core 36/36; texts about the work 108–195 words |
 | 11-25 | ES B2 latam Units 1–4 (es-latam, hidden track) | two edit-in-place agents (Sonnet), two units each; reviewer facts sent mid-run | A 354,086 (15 min), B 325,566 (13 min); ~170k a unit | | 113 errors / 57 suspects → 0 / 7 accepted, unmet 0 | walked 24/24, all frozen; 2 screen edits, 1 challenge rewritten; 6 lessons re-pointed to known skills |
 | 11-25 | ES B2 latam Units 5–10 (es-latam, hidden track) | two edit-in-place agents (Sonnet), **three units each**; Units 7–10 topic-only | A 353,430 (17 min), B 396,874 (21 min); ~125k a unit | | 114 errors / 102 suspects → 0 / 1 accepted, unmet 0 | walked 36/36, all frozen; 3 challenges fixed, 12 shared checklist lines fixed by a new script |
+| 11-25 | ES B2 latam Units 11–16 (es-latam, hidden track) | two edit-in-place agents (Sonnet), three units each; all topic-only; facts searched before launch | A 362,333 (20 min), B 346,891 (19 min); ~118k a unit | | 79 errors / 65 suspects → 0 / 4 accepted, unmet 0 | walked 36/36, all frozen; invented witnesses cut; 2 new scripts (`story-quote`, `latam_consolidation_story.py`) |
 | 11-14 | HU C1 core Units 1–8 (first C1 batch, no pilot) | read-first, two Sonnet readers, **four units each** (Units 2–8 half-size, 52 items), B stopped once by the 5-hour limit | A 363,583 (17 min), B 353,181 (15 min); ~90k a unit | 737 applied | 50 errors / 100 suspects → 0 / 40 accepted (38 `vocab-unused` stems), unmet 79 → 18 lookup misses | walked 48/48, all frozen; 5 registry moves signed off; 28 retired tags retagged |
 | 11-14 | HU C1 core Units 9–16 | read-first, two Sonnet readers, four units each, extras via `stage_extras.py` | A 383,237 (20 min), B 422,476 (21 min); ~100k a unit | 898 applied | 66 errors / 80 suspects → 0 / 40 accepted (`vocab-unused`), unmet 68 → 31 lookup misses | walked 48/48, all frozen (C1 16/72); 175 retired tags retagged |
 | 11-14 | HU C1 core Units 17–24 | four units each; both readers stopped by the 5-hour limit and resumed after the reset | resumed runs only: A 376,461, B 364,720 (~90k a unit, a floor) | 864 applied | 65 errors / 113 suspects → 0 / 40 accepted, unmet 119 → 52 lookup misses | walked 48/48, all frozen (C1 24/72); c1-22-01 gained the epistemic past modals |
@@ -2335,9 +2336,22 @@ drafted by Antigravity from `notes/README.md`; read those notes as part of the u
   lines, and the agents had written consolidation goals that repeat lesson lines (12 errors). Seen
   in HU C1 culture too, so **scripted:** `python scripts/fix_shared_checklists.py <course> <level>
   <unit ids> [--write]` suffixes the later copy ("(review)", or the place) in checklist, goal and the
-  challenge `canDo`. Run it after `add_missing_checklists.py`, before `add_challenges.py`.
+  challenge `canDo`. Run it after `add_challenges.py` (it updates the added entries; a draft file it does not touch).
 - **Invented quotations are the generator's habit on this track too** (six cut in this batch, one per
   famous figure). The template rule held; keep naming it in the notes.
 - **Present-day facts moved a lot in 2025–2026** (three changes of government, El Salvador's
   extensions, Cuba's 2026 fuel crisis): a news search per unit before launch, as the HU passes did.
+
+### 2026-11-25: ES B2 latam Units 11–16
+
+- **Cost held at three per agent** (~118k a unit, against ~125k for 5–10). Searching present-day facts
+  before launch and writing them into the unit notes meant no correction was needed for them mid-run.
+- **The old texts invent witnesses**, the habit that produced the invented quotations of earlier
+  batches in a stronger form: named people speak in quotation marks, and real people get speeches
+  and roles they never had. The reviewer's read caught it in the wait; **scripted** as `story-quote`.
+- **The generator left a sixth text per unit** (`-consolidation.json`) that no batch read: shown by
+  some consolidation lessons, orphaned but in the Reader manifest in others. **Scripted:**
+  `latam_consolidation_story.py`; the remaining 20 units get it in their batches.
+- **Script order matters:** `fix_shared_checklists.py` changes checklist lines after the challenge
+  drafts copied them; run it after `add_challenges.py` so it updates `canDo` in challenges.json.
 

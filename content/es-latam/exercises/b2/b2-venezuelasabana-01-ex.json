@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "sabana",
-          "open tropical grassland"
+          "el llano",
+          "flat grassland"
         ],
         [
-          "vaquería",
-          "cattle roundup chores"
+          "el llanero",
+          "cowboy of the plains"
         ],
         [
-          "joropo",
-          "traditional folk music and dance"
+          "el joropo",
+          "music and dance of the Llanos"
         ],
         [
-          "baquiano",
-          "expert regional pathfinder"
+          "el arpa",
+          "harp"
         ]
       ],
       "teaches": [
@@ -31,28 +31,26 @@
       "id": "b2-venezuelasabana-01.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Los cantos de __ fueron declarados Patrimonio Cultural Inmaterial por la UNESCO en 2017.",
-      "hint": "cattle herding",
-      "answer": "vaquería",
-      "english": "Cattle herding songs were declared Intangible Cultural Heritage by UNESCO in 2017.",
+      "sentence": "El llanero es el hombre __ cuida el ganado a caballo.",
+      "answer": "que",
+      "english": "The llanero is the man who looks after the cattle on horseback.",
       "teaches": [
-        "venezuela-llanos-joropo-vaqueria"
+        "relative-clauses"
       ]
     },
     {
       "id": "b2-venezuelasabana-01.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué instrumentos componen tradicionalmente el ensamble musical del joropo llanero?",
+      "question": "Which sentence means \"The Llanos are the region where the llaneros live\"?",
       "options": [
-        "El arpa llanera, el cuatro venezolano y las maracas de capacho.",
-        "El acordeón, la caja vallenata y la guacharaca.",
-        "El piano de cola y el clarinete de madera.",
-        "La flauta traversa y el violonchelo europeo."
+        "Los Llanos son la región donde viven los llaneros.",
+        "Los Llanos son la región que viven los llaneros.",
+        "Los Llanos son la región quien viven los llaneros."
       ],
       "correct": 0,
       "teaches": [
-        "venezuela-llanos-joropo-vaqueria"
+        "relative-clauses"
       ]
     },
     {
@@ -61,27 +59,33 @@
       "category": "grammar",
       "tiles": [
         "El",
-        "arpa",
-        "llanera",
-        "guía",
-        "el",
-        "zapateo",
-        "del",
-        "joropo."
+        "joropo",
+        "es",
+        "la",
+        "música",
+        "que",
+        "se",
+        "baila",
+        "en",
+        "los",
+        "Llanos."
       ],
       "solution": [
         "El",
-        "arpa",
-        "llanera",
-        "guía",
-        "el",
-        "zapateo",
-        "del",
-        "joropo."
+        "joropo",
+        "es",
+        "la",
+        "música",
+        "que",
+        "se",
+        "baila",
+        "en",
+        "los",
+        "Llanos."
       ],
-      "english": "The llanero harp guides the zapateo of the joropo.",
+      "english": "The joropo is the music that is danced in the Llanos.",
       "teaches": [
-        "venezuela-llanos-joropo-vaqueria"
+        "relative-clauses"
       ]
     },
     {
@@ -90,34 +94,49 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Viajero",
-          "text": "¿Por qué el llanero canta mientras ordeña o arrea el ganado a través de los ríos?"
+          "speaker": "Meg",
+          "text": "¿Qué es un llanero?"
         },
         {
-          "speaker": "Baquiano",
+          "speaker": "Carlos",
           "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Ahora lo entiendo."
         }
       ],
       "options": [
-        "Los cantos de vaquería modulan tonos que tranquilizan a los animales y evitan estampidas durante las travesías.",
-        "Porque la ley prohíbe que el ganado camine en completo silencio.",
-        "Para ahuyentar a los barcos de turistas que navegan por el río.",
-        "Porque los copleros practican para concursos de ópera en Europa."
+        "Es una persona que trabaja con el ganado en los Llanos.",
+        "Es un instrumento que suena en las fiestas.",
+        "Es un río grande que cruza los Llanos."
       ],
       "correct": 0,
       "teaches": [
-        "venezuela-llanos-joropo-vaqueria"
+        "b2-venezuela-llanos-diaspora-vocab"
       ]
     },
     {
       "id": "b2-venezuelasabana-01.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "En los esteros de Apure, el chigüire y la corocora roja conviven en un equilibrio ecológico milenario.",
-      "english": "In the wetlands of Apure, the capybara and the scarlet ibis coexist in a millenary ecological balance.",
+      "sentence": "El arpa es el instrumento que se oye en el joropo.",
+      "english": "The harp is the instrument that you hear in the joropo.",
       "teaches": [
-        "venezuela-llanos-joropo-vaqueria"
+        "relative-clauses"
       ]
+    },
+    {
+      "id": "b2-venezuelasabana-01.ex07",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Which instruments does the joropo use, according to the text?",
+      "options": [
+        "El arpa, el cuatro y las maracas.",
+        "El piano, el violín y la guitarra eléctrica.",
+        "La marimba, la flauta y el tambor."
+      ],
+      "correct": 0
     }
   ]
 }

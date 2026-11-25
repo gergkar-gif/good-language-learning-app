@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el estatus",
-          "political status"
-        ],
-        [
           "la estadidad",
-          "statehood (US state)"
+          "statehood"
         ],
         [
-          "el plebiscito",
-          "plebiscite, referendum"
+          "la consulta",
+          "vote, referendum"
         ],
         [
-          "anexionista",
-          "annexationist, pro-statehood"
+          "vinculante",
+          "binding"
+        ],
+        [
+          "el comisionado",
+          "commissioner, delegate"
         ]
       ],
       "teaches": [
@@ -31,27 +31,34 @@
       "id": "b2-puertorico-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué fórmula jurídica e institucional se consagró en Puerto Rico con la Constitución de 1952?",
+      "question": "Which sentence means \"If Puerto Rico were a state, its citizens would elect senators with a vote\"?",
       "options": [
-        "El Estado Libre Asociado (Commonwealth), que otorgó autogobierno interno en unión permanente con EE. UU.",
-        "La independencia absoluta y la proclamación de una república presidencialista no alineada.",
-        "La cesión temporal de la administración a una comisión militar mixta de las Naciones Unidas."
+        "Si Puerto Rico fuera un estado, sus ciudadanos elegirían senadores con voto.",
+        "Si Puerto Rico es un estado, sus ciudadanos elegirían senadores con voto.",
+        "Si Puerto Rico sería un estado, sus ciudadanos elegirían senadores con voto."
       ],
       "correct": 0,
       "teaches": [
-        "puertorico-estado-libre-asociado-debate"
-      ]
+        "hypothetical-structures"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "condicional-regular"
+      }
     },
     {
       "id": "b2-puertorico-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Los sectores independentistas sostienen que la plena soberanía es indispensable a fin de que la nación __ su propio modelo económico.",
-      "hint": "diseñar - presente subjuntivo",
-      "answer": "diseñe",
-      "english": "Pro-independence sectors maintain that full sovereignty is essential so that the nation designs its own economic model.",
+      "sentence": "Si Puerto Rico __ un país independiente, tendría su propia política exterior.",
+      "hint": "ser",
+      "answers": [
+        "fuera",
+        "fuese"
+      ],
+      "english": "If Puerto Rico were an independent country, it would have its own foreign policy.",
       "teaches": [
-        "puertorico-estado-libre-asociado-debate"
+        "hypothetical-structures"
       ]
     },
     {
@@ -59,32 +66,38 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "El",
-        "debate",
-        "del",
-        "estatus",
-        "define",
-        "la",
-        "política",
-        "en",
+        "Si",
         "Puerto",
-        "Rico."
+        "Rico",
+        "eligiera",
+        "la",
+        "libre",
+        "asociación,",
+        "firmaría",
+        "un",
+        "acuerdo",
+        "con",
+        "Estados",
+        "Unidos."
       ],
       "solution": [
-        "El",
-        "debate",
-        "del",
-        "estatus",
-        "define",
-        "la",
-        "política",
-        "en",
+        "Si",
         "Puerto",
-        "Rico."
+        "Rico",
+        "eligiera",
+        "la",
+        "libre",
+        "asociación,",
+        "firmaría",
+        "un",
+        "acuerdo",
+        "con",
+        "Estados",
+        "Unidos."
       ],
-      "english": "The status debate defines politics in Puerto Rico.",
+      "english": "If Puerto Rico chose free association, it would sign an agreement with the United States.",
       "teaches": [
-        "puertorico-estado-libre-asociado-debate"
+        "hypothetical-structures"
       ]
     },
     {
@@ -93,36 +106,36 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Politólogo",
-          "text": "¿Por qué el debate sobre el estatus sigue sin resolverse tras tantas décadas de consultas?"
+          "speaker": "Meg",
+          "text": "¿Qué significa que una consulta no sea vinculante?"
         },
         {
-          "speaker": "Jurista",
+          "speaker": "Carlos",
           "text": "_____"
         },
         {
-          "speaker": "Politólogo",
-          "text": "Una paradoja constitucional que mantiene a la isla en un limbo jurídico interminable."
+          "speaker": "Meg",
+          "text": "Ahora entiendo por qué importa el Congreso."
         }
       ],
       "options": [
-        "Porque cualquier resultado plebiscitario carece de carácter vinculante a menos que el Congreso de los Estados Unidos decida actuar bajo su cláusula territorial.",
-        "Porque las papeletas electorales se imprimen exclusivamente en papel bond de alto gramaje.",
-        "Porque los colegios electorales cierran sus puertas a las cuatro de la tarde los días feriados."
+        "Significa que el resultado no obliga al Congreso a hacer nada.",
+        "Significa que solo votan los ciudadanos que viven fuera de la isla.",
+        "Significa que la votación es obligatoria para todos los ciudadanos."
       ],
       "correct": 0,
       "teaches": [
-        "puertorico-estado-libre-asociado-debate"
+        "b2-puerto-rico-vocab"
       ]
     },
     {
       "id": "b2-puertorico-03.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "La cláusula territorial subordina el autogobierno a la autoridad del Congreso federal.",
-      "english": "The territorial clause subordinates self-government to the authority of the federal Congress.",
+      "sentence": "Si la isla fuera independiente, tendría su propia política exterior.",
+      "english": "If the island were independent, it would have its own foreign policy.",
       "teaches": [
-        "puertorico-estado-libre-asociado-debate"
+        "hypothetical-structures"
       ]
     }
   ]
