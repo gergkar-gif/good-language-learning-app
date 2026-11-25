@@ -1575,6 +1575,7 @@ const LevelTest = (function () {
         try {
             document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
             document.getElementById('leveltest').classList.remove('hidden');
+            if (typeof pushNavState === 'function') pushNavState('leveltest');
             if (typeof PageHeader !== 'undefined') PageHeader.render({
                 title: level + ' Assessment',
                 subtitle: 'Language in Context, Written Production & Spoken Production.',

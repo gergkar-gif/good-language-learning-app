@@ -166,6 +166,27 @@ async function runTests() {
     assert.strictEqual(noAiData.code, 'BINDING_MISSING');
     console.log('✓ Missing env.AI binding returns informative 500');
 
+    // 8. Disallowed origin rejection (403)
+    console.log('8. Testing disallowed origin gating (403)...');
+    const badOriginReq = createRequest('POST', 'https://parlour-stt.gergkar.workers.dev/transcribe', {
+        Origin: 'https://evil.example',
+        'Content-Type': 'audio/webm'
+    }, fakeAudio.buffer);
+    const badOriginRes = await worker.fetch(badOriginReq, mockEnv);
+    assert.strictEqual(badOriginRes.status, 403);
+    console.log('✓ Disallowed origin returns 403');
+
+    // 9. Oversized audio rejection (413)
+    console.log('9. Testing oversized audio payload limit (413)...');
+    const hugeAudio = new ArrayBuffer(5 * 1024 * 1024 + 1);
+    const hugeReq = createRequest('POST', 'https://parlour-stt.gergkar.workers.dev/transcribe', {
+        Origin: 'https://parlour.me.uk',
+        'Content-Type': 'audio/webm'
+    }, hugeAudio);
+    const hugeRes = await worker.fetch(hugeReq, mockEnv);
+    assert.strictEqual(hugeRes.status, 413);
+    console.log('✓ Oversized audio (>5 MB) returns 413');
+
     console.log('\nAll Cloudflare STT Worker tests passed successfully!');
 }
 

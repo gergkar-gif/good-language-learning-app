@@ -152,6 +152,12 @@ const mockWebCrypto = {
     const resMissing = await workerSandbox.handleGoogleAuth(reqMissing, env, cors);
     assert.strictEqual(resMissing.status, 400, 'Missing credential should return HTTP 400');
 
+    // Scenario A2: Missing GOOGLE_CLIENT_ID fails closed (503)
+    const envNoClientId = Object.assign({}, env, { GOOGLE_CLIENT_ID: '' });
+    const reqDummy = { json: async () => ({ credential: 'some-token' }) };
+    const resNoClientId = await workerSandbox.handleGoogleAuth(reqDummy, envNoClientId, cors);
+    assert.strictEqual(resNoClientId.status, 503, 'Missing GOOGLE_CLIENT_ID should return HTTP 503');
+
     // Scenario B: Invalid token returned by Google
     mockFetchResponse = {
         ok: false,
@@ -252,6 +258,7 @@ const mockWebCrypto = {
     assert(syncContent.includes('renderGoogleButton'), 'engine/sync.js must implement renderGoogleButton');
     assert(syncContent.includes('promptGoogleOneTap'), 'engine/sync.js must implement promptGoogleOneTap');
     assert(syncContent.includes('isGoogleAuthAvailable'), 'engine/sync.js must implement isGoogleAuthAvailable');
+    assert(syncContent.includes('deleteAccount'), 'engine/sync.js must export deleteAccount');
     assert(syncContent.includes('accounts.google.com/gsi/client'), 'engine/sync.js must load Google Identity Services SDK lazily');
     console.log('[PASS] engine/sync.js implements all required Google auth functions.');
 
@@ -262,6 +269,7 @@ const mockWebCrypto = {
     assert(journeyContent.includes('isGoogleAuthAvailable'), 'engine/journey.js must check isGoogleAuthAvailable');
     assert(journeyContent.includes('jr-google-signin-btn'), 'engine/journey.js must render jr-google-signin-btn container');
     assert(journeyContent.includes('jr-account-divider'), 'engine/journey.js must render jr-account-divider');
+    assert(journeyContent.includes('data-sync-delete'), 'engine/journey.js must render account deletion button');
     assert(journeyContent.includes('renderGoogleButton'), 'engine/journey.js must wire renderGoogleButton in render()');
     console.log('[PASS] engine/journey.js Account card properly integrates Google Sign-In container and divider.');
 

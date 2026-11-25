@@ -302,7 +302,7 @@ const Guide = (function () {
                     <div class="pl-guide-section" style="margin-bottom: 0;">
                         <h3 class="pl-guide-sec-title">Colophon &amp; Contact</h3>
                         <p class="pl-guide-p">
-                            Parlour is an independent, non-commercial project by K&aacute;roly Gergely. Notice an error in a lesson, have feedback, or want to contribute? Use the flag button on any screen, email <a href="mailto:gergkar@gmail.com" style="color:var(--text); text-decoration:underline;">gergkar@gmail.com</a>, or open an issue on <a href="https://github.com/gergkar-gif/good-language-learning-app" target="_blank" rel="noopener" style="color:var(--text); text-decoration:underline;">GitHub</a>. &middot; <a href="privacy.html" style="color:var(--text); text-decoration:underline;">Privacy Policy</a>
+                            Parlour is an independent, non-commercial project by K&aacute;roly Gergely. Notice an error in a lesson, have feedback, or want to contribute? Use the flag button on any screen, email <a href="mailto:gergkar@gmail.com" style="color:var(--text); text-decoration:underline;">gergkar@gmail.com</a>, or open an issue on <a href="https://github.com/gergkar-gif/good-language-learning-app" target="_blank" rel="noopener" style="color:var(--text); text-decoration:underline;">GitHub</a>. &middot; <a href="privacy.html" style="color:var(--text); text-decoration:underline;">Privacy Policy</a> &middot; <a href="credits.html" style="color:var(--text); text-decoration:underline;">Credits &amp; Licences</a>
                         </p>
                     </div>
                 </div>
@@ -314,6 +314,7 @@ const Guide = (function () {
         `;
 
         document.body.appendChild(overlay);
+        if (typeof pushNavState === 'function') pushNavState('modal');
 
         overlay.querySelectorAll('[data-guide-modal-close]').forEach(btn => {
             btn.addEventListener('click', closeOverviewModal);

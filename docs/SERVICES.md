@@ -15,6 +15,7 @@ dashboard by hand, then put the Worker's URL into the client file named below.
 | [Grader](#grader) | `grader-worker.js` | Writing Studio, Open Production drills | CEFR-aligned feedback on writing and speaking (Workers AI) |
 | [Word gloss](#word-gloss-ai-fallback) | `gloss-worker.js` | `engine/gloss-ai.js` | A machine-suggested gloss when a tapped word has no dictionary entry (Workers AI + a KV cache) |
 | [Speech-to-text](#speech-to-text) | `stt-worker.js` | Speaking drills and lessons | Whisper transcription of the learner's recording on mobile |
+| [Text-to-speech](#text-to-speech) | `tts-worker.js` | `engine/tts.js` | Google Cloud TTS proxy with R2 caching and daily character cap |
 
 All five run on Cloudflare's free tier with no card. The two Workers AI services
 (grader, STT) also fall back gracefully when the Worker is unreachable or over
@@ -69,6 +70,8 @@ restricts requests by `Origin` to the app's own domains.
    with the token, **Encrypt**.
 3. Put the Worker URL in `WORKER_URL` near the top of `engine/bugreport.js`.
 
+**Guardrails and verification.** Enforces allowed `Origin` headers and a per-isolate rate limit (5 reports per IP per 10 minutes, 25 global per hour). `GET /health` reports `{ status: "ok", hasGithubToken }`.
+
 **Handling reports.** Ask Claude to check for open `bug-report` issues; it
 investigates and fixes each one, or asks a follow-up in the issue. A scheduled
 cloud routine also does this automatically (see
@@ -114,6 +117,8 @@ Cloudflare's DNS panel; any CNAME must be **DNS only**, grey cloud).
    `TURNSTILE_SECRET_KEY`. The Worker skips verification entirely when that secret
    is unset (and the client skips the widget when the site key is empty), so
    sign-in keeps working unprotected until both exist.
+
+**Guardrails and verification.** `GET /health` reports booleans for `hasDb`, `hasJwtSecret`, `hasResendKey`, `hasGoogleClientId`, and `turnstileEnabled`. Magic-link requests enforce a global daily cap (`MAX_LINKS_PER_DAY`, default `90`) alongside the 3/hour per-email limit; `/auth/google` requires `GOOGLE_CLIENT_ID` (503 if unset); `POST /auth/delete` permanently removes the signed-in user's `user_books`, `magic_links`, and `users` rows from D1 (re-paste `sync-worker.js` in the Cloudflare dashboard whenever routes change); `/sync/state` caps payloads at 1 MB; `/sync/book` caps each user at 50 books (1.8 MB each).
 
 **Trying it out.** My Journey, then **Account**: enter an email, **Send me a login
 link**, open the link from your inbox (check spam). You land back signed in.
@@ -175,10 +180,10 @@ and speaking with CEFR-aligned formative feedback, without AI keys in the browse
 `https://parlour-grader.<your-subdomain>.workers.dev`), source
 `grader-worker.js`, plus the `AI` binding.
 
-**Verifying.**
+**Guardrails and verification.** Requires an allowed `Origin` on `POST` (returns `403` otherwise), caps prompt payloads at 16,000 characters (`413`), and ignores caller-supplied `model` overrides (`GRADER_MODEL` env var only). `GET /health` reports `workersAiAvailable`.
 
 ```bash
-curl.exe -X POST https://parlour-grader.gergkar.workers.dev/grade -H "Content-Type: application/json" -d "{\"prompt\":\"Ping\"}"
+curl.exe -X POST https://parlour-grader.gergkar.workers.dev/grade -H "Origin: https://parlour.me.uk" -H "Content-Type: application/json" -d "{\"prompt\":\"Ping\"}"
 ```
 
 A deployed Worker returns a JSON response from Workers AI rather than error code
@@ -277,7 +282,19 @@ Expected:
 
 After that, any speaking drill or oral challenge records cleanly on mobile and
 desktop, scores pronunciation with Whisper, and lets you tap **Your Voice** to
-listen back.
+listen back. Requests are origin-gated (`403` on unknown origins) and capped at 5 MB per audio upload (`413`).
+
+---
+
+## Text-to-speech
+
+`tts-worker.js` proxies Google Cloud TTS (`GOOGLE_TTS_API_KEY`) and caches MP3 clips permanently in the `TTS_CACHE` R2 bucket (`engine/tts.js` calls `https://parlour-tts.gergkar.workers.dev/synthesize`).
+
+**Guardrails.**
+- Rejects `POST` requests from disallowed `Origin` headers (`403`).
+- Rejects texts longer than 3,000 characters (`400`, `TEXT_TOO_LONG`).
+- Enforces an R2-backed daily cap on uncached synthesis (`TTS_DAILY_CHAR_CAP`, default `30000` chars/day; `429`, `DAILY_CAP`). R2 cache hits remain unlimited.
+- `GET /health` reports `hasApiKey`, `hasR2Cache`, and `dailyCharCap`.
 
 ---
 
@@ -290,7 +307,7 @@ Parlour is indexed via Google Search Console at `https://parlour.me.uk`.
 - `sitemap.xml`: Canonical sitemap containing indexable routes (`https://parlour.me.uk/`, `https://parlour.me.uk/privacy.html`).
 - `index.html`: Canonical link, Open Graph metadata, Twitter card, Schema.org JSON-LD structured data (`WebSite` and `WebApplication`), and `<noscript>` fallback.
 
-**Search Console setup.**
+**Search Console, Bing, and Cloudflare bot checks.**
 1. Sign in to [Google Search Console](https://search.google.com/search-console).
 2. Choose **Domain** property and enter `parlour.me.uk` (or **URL prefix** with `https://parlour.me.uk`).
 3. Verification:
@@ -298,4 +315,25 @@ Parlour is indexed via Google Search Console at `https://parlour.me.uk`.
    - For URL prefix property: Add the HTML tag `<meta name="google-site-verification" content="..." />` into `index.html` or upload the verification HTML file to the root.
 4. Under **Sitemaps**, submit `https://parlour.me.uk/sitemap.xml`.
 5. Under **URL Inspection**, enter `https://parlour.me.uk/` and click **Request Indexing**.
+6. Also verify `https://parlour.me.uk` in [Bing Webmaster Tools](https://www.bing.com/webmasters) and submit `sitemap.xml` (used by Bing and ChatGPT Search).
+7. In Cloudflare Dashboard (**Security** then **Bots**), confirm AI search crawlers (`OAI-SearchBot`) are not blocked at the edge.
+
+---
+
+## Android TWA Digital Asset Links
+
+`.nojekyll` at the repository root ensures GitHub Pages serves `.well-known/assetlinks.json`. Once the Android upload keystore or Google Play App Signing SHA-256 fingerprint is generated, replace the empty `[]` in `.well-known/assetlinks.json` with:
+
+```json
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "<your.package.name>",
+      "sha256_cert_fingerprints": ["<AA:BB:...>"]
+    }
+  }
+]
+```
 

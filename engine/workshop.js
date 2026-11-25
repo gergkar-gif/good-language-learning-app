@@ -559,6 +559,7 @@ const Workshop = (function () {
     // draw anything, so open() shows a loading overlay across the gap
     // (see UI.showLoading) rather than leaving the old screen tappable.
     function _renderAndHideLoader(drillerTitle) {
+        if (_active && typeof pushNavState === 'function') pushNavState('workshop');
         const label = drillerTitle ? `Loading ${drillerTitle}…` : 'Loading…';
         if (typeof UI !== 'undefined') UI.showLoading(label);
         return Promise.resolve(render()).finally(() => {

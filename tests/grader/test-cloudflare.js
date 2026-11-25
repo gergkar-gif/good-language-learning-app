@@ -4,7 +4,10 @@ async function testWorker() {
     try {
         const res = await fetch('https://parlour-grader.gergkar.workers.dev/grade', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'Origin': 'https://parlour.me.uk'
+            },
             body: JSON.stringify({
                 prompt: 'You are a grader. Evaluate this student text: "Hola, me llamo Carlos y vivo en Madrid." Return valid JSON with keys: cefr_estimate, strengths, suggestions.'
             })

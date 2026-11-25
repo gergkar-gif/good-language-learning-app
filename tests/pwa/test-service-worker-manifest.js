@@ -29,6 +29,7 @@ try {
 
 assert(manifest.name && manifest.name.includes('Parlour'), 'Manifest name should include Parlour');
 assert.strictEqual(manifest.short_name, 'Parlour', 'Manifest short_name must be Parlour');
+assert(manifest.id, 'Manifest id must be defined');
 assert.strictEqual(manifest.start_url, './index.html', 'start_url must point to ./index.html');
 assert.strictEqual(manifest.display, 'standalone', 'display mode must be standalone');
 assert(manifest.theme_color, 'theme_color must be defined');
@@ -37,9 +38,13 @@ assert(Array.isArray(manifest.icons) && manifest.icons.length > 0, 'Icons array 
 
 manifest.icons.forEach((icon, idx) => {
     assert(icon.src, `Icon at index ${idx} must have src`);
+    assert(icon.purpose !== 'any maskable', `Icon at index ${idx} must not combine "any maskable"`);
     const iconDiskPath = path.join(rootDir, icon.src);
     assert(fs.existsSync(iconDiskPath), `Icon file on disk must exist: ${icon.src}`);
 });
+assert(manifest.icons.some(i => i.type === 'image/png' && i.sizes === '192x192' && i.purpose === 'any'), 'Manifest must include a 192x192 PNG icon');
+assert(manifest.icons.some(i => i.type === 'image/png' && i.sizes === '512x512' && i.purpose === 'any'), 'Manifest must include a 512x512 PNG icon');
+assert(manifest.icons.some(i => i.type === 'image/png' && i.sizes === '512x512' && i.purpose === 'maskable'), 'Manifest must include a 512x512 maskable PNG icon');
 console.log('[PASS] manifest.webmanifest is fully compliant with PWA specifications.');
 
 console.log('\n--- Test 2: HTML Shell Manifest & Meta Tag Integration ---');
@@ -170,10 +175,126 @@ const initPath = path.join(rootDir, 'engine/init.js');
 const initContent = fs.readFileSync(initPath, 'utf8');
 
 assert(initContent.includes('_initServiceWorker'), 'engine/init.js must define _initServiceWorker');
-assert(initContent.includes("navigator.serviceWorker.register('./sw.js')"), 'engine/init.js must register ./sw.js');
+assert(/navigator\.serviceWorker\.register\(['"]\.\/sw\.js['"]/.test(initContent), 'engine/init.js must register ./sw.js');
 assert(initContent.includes('offline-indicator'), 'engine/init.js must manage offline-indicator');
 assert(initContent.includes('is-offline'), 'engine/init.js must toggle is-offline class');
 console.log('[PASS] Service worker registration and offline status indicator wired into engine/init.js.');
+
+console.log('\n--- Test 7: Play Store TWA, Account Deletion & Credits Prep ---');
+assert(fs.existsSync(path.join(rootDir, '.nojekyll')), '.nojekyll must exist at workspace root');
+const assetLinksPath = path.join(rootDir, '.well-known/assetlinks.json');
+assert(fs.existsSync(assetLinksPath), '.well-known/assetlinks.json must exist');
+assert(Array.isArray(JSON.parse(fs.readFileSync(assetLinksPath, 'utf8'))), '.well-known/assetlinks.json must be a JSON array');
+const privacyHtml = fs.readFileSync(path.join(rootDir, 'privacy.html'), 'utf8');
+assertZeroEmojis(privacyHtml, 'privacy.html');
+assert(privacyHtml.includes('id="delete-account"'), 'privacy.html must include #delete-account section');
+const creditsPath = path.join(rootDir, 'credits.html');
+assert(fs.existsSync(creditsPath), 'credits.html must exist at workspace root');
+assertZeroEmojis(fs.readFileSync(creditsPath, 'utf8'), 'credits.html');
+console.log('[PASS] .nojekyll, Digital Asset Links placeholder, privacy deletion section, and credits.html verified.');
+
+console.log('\n--- Test 8: Android Hardware Back Navigation Handling ---');
+assertZeroEmojis(initContent, 'engine/init.js');
+assert(initContent.includes('pushNavState'), 'engine/init.js must define pushNavState');
+assert(initContent.includes('popNavState'), 'engine/init.js must define popNavState');
+assert(initContent.includes('_handleAppBack'), 'engine/init.js must define _handleAppBack');
+assert(initContent.includes('_ignoreNavPops'), 'engine/init.js must track _ignoreNavPops for popstate');
+
+const backCalls = [];
+let mockOverlays = [];
+let mockActiveTab = 'home';
+let mockHiddenIds = new Set(['lesson-screen', 'leveltest', 'study-plan-screen', 'reader-content', 'review-session']);
+let mockActiveDriller = null;
+let mockStoryId = null;
+
+function makeClassList(id) {
+    return {
+        contains: (cls) => cls === 'hidden' && mockHiddenIds.has(id),
+        add: (cls) => { if (cls === 'hidden') mockHiddenIds.add(id); },
+        remove: (cls) => { if (cls === 'hidden') mockHiddenIds.delete(id); },
+        toggle: () => {}
+    };
+}
+function makeMockEl(id, extra = {}) {
+    return Object.assign({
+        id,
+        style: {},
+        classList: makeClassList(id),
+        querySelector: () => null,
+        querySelectorAll: () => [],
+        remove: () => {}
+    }, extra);
+}
+
+const initSandbox = {
+    window: { addEventListener: () => {} },
+    localStorage: { getItem: () => null, setItem: () => {} },
+    document: {
+        body: { classList: { contains: () => false } },
+        addEventListener: () => {},
+        getElementById: (id) => {
+            if (id === 'word-popup') return null;
+            if (id === mockActiveTab || !mockHiddenIds.has(id) || ['lesson-screen', 'leveltest', 'study-plan-screen', 'reader', 'reader-content', 'drills', 'review', 'review-session', 'journey', 'home'].includes(id)) {
+                return makeMockEl(id);
+            }
+            return null;
+        },
+        querySelectorAll: (sel) => {
+            if (sel === '.wp-overlay') return mockOverlays;
+            if (sel === '.tab') return ['home', 'reader', 'drills', 'review'].map(id => makeMockEl(id));
+            return [];
+        },
+        querySelector: (sel) => {
+            if (sel === '.tab:not(.hidden)') return makeMockEl(mockActiveTab);
+            return null;
+        }
+    },
+    Reader: { get currentStoryId() { return mockStoryId; }, closeStory: () => { mockStoryId = null; mockHiddenIds.add('reader-content'); backCalls.push('reader'); } },
+    Workshop: { activeDriller: () => mockActiveDriller, close: () => { mockActiveDriller = null; backCalls.push('workshop'); }, render: () => {} },
+    endReviewSession: () => { mockHiddenIds.add('review-session'); backCalls.push('review'); },
+    showTab: undefined,
+    history: { pushState: () => {}, back: () => {}, state: null }
+};
+vm.runInNewContext(initContent, initSandbox);
+
+// (a) Open .wp-overlay closes first
+let modalClosed = false;
+mockOverlays = [makeMockEl('m1', { querySelector: () => ({ click: () => { modalClosed = true; } }) })];
+assert.strictEqual(initSandbox.window._handleAppBack(), true);
+assert.strictEqual(modalClosed, true, 'Open .wp-overlay modal must close first on Back');
+mockOverlays = [];
+
+// (b) Open Reader story closes
+mockActiveTab = 'reader';
+mockHiddenIds.delete('reader');
+mockHiddenIds.delete('reader-content');
+mockStoryId = 'story-1';
+assert.strictEqual(initSandbox.window._handleAppBack(), true);
+assert.deepStrictEqual(backCalls.slice(-1), ['reader']);
+
+// (c) Open Workshop driller closes
+mockActiveTab = 'drills';
+mockHiddenIds.delete('drills');
+mockActiveDriller = { id: 'verbs', title: 'Verbs' };
+assert.strictEqual(initSandbox.window._handleAppBack(), true);
+assert.deepStrictEqual(backCalls.slice(-1), ['workshop']);
+
+// (d) Open Decks review session closes
+mockActiveTab = 'review';
+mockHiddenIds.delete('review');
+mockHiddenIds.delete('review-session');
+assert.strictEqual(initSandbox.window._handleAppBack(), true);
+assert.deepStrictEqual(backCalls.slice(-1), ['review']);
+
+// (e) Non-Home tab returns to home
+mockActiveTab = 'reader';
+assert.strictEqual(initSandbox.window._handleAppBack(), true);
+assert.strictEqual(mockHiddenIds.has('home'), false, 'Non-Home tab must return to home on Back');
+
+// (f) Home root returns false
+mockActiveTab = 'home';
+assert.strictEqual(initSandbox.window._handleAppBack(), false, 'Home root must return false on Back');
+console.log('[PASS] Android Back navigation priority order verified across overlays, Reader, Workshop, Decks, and tabs.');
 
 console.log('\n==========================================================');
 console.log('ALL PWA & OFFLINE TESTS PASSED [Zero Emojis Enforced]');

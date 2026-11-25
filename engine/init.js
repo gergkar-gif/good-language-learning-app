@@ -67,6 +67,138 @@ function teardownTab(tabId) {
     }
 }
 
+let _ignoreNavPops = 0;
+
+function pushNavState(tag) {
+    if (typeof history !== 'undefined' && typeof history.pushState === 'function') {
+        try {
+            history.pushState({ parlourNav: tag || 'nav' }, '');
+        } catch (e) {}
+    }
+}
+
+function popNavState(tag) {
+    if (typeof history !== 'undefined' && history.state && history.state.parlourNav === tag && typeof history.back === 'function') {
+        _ignoreNavPops++;
+        try {
+            history.back();
+        } catch (e) {
+            _ignoreNavPops = Math.max(0, _ignoreNavPops - 1);
+        }
+    }
+}
+
+if (typeof window !== 'undefined') {
+    window.pushNavState = pushNavState;
+    window.popNavState = popNavState;
+}
+
+function _isElementVisible(el) {
+    return Boolean(el && (!el.classList || !el.classList.contains('hidden')) && (!el.style || el.style.display !== 'none'));
+}
+
+function _handleAppBack() {
+    if (typeof document === 'undefined') return false;
+
+    const wordPopup = document.getElementById('word-popup');
+    if (wordPopup && wordPopup.style && wordPopup.style.display && wordPopup.style.display !== 'none') {
+        if (typeof closePopup === 'function') closePopup();
+        else wordPopup.style.display = 'none';
+        return true;
+    }
+
+    const overlays = Array.from(document.querySelectorAll('.wp-overlay')).filter(_isElementVisible);
+    if (overlays.length > 0) {
+        const top = overlays[overlays.length - 1];
+        const closeBtn = top.querySelector('.wp-close, [data-sync-prompt-close], [data-guide-modal-close], [data-delete-modal-close], [data-streak-modal-close], [data-cando-modal-close]');
+        if (closeBtn && typeof closeBtn.click === 'function') closeBtn.click();
+        else if (typeof top.remove === 'function') top.remove();
+        return true;
+    }
+
+    const lessonScreen = document.getElementById('lesson-screen');
+    const isLessonOpen = (document.body && document.body.classList && document.body.classList.contains('in-lesson')) ||
+        _isElementVisible(lessonScreen);
+    if (isLessonOpen && typeof closeLesson === 'function') {
+        closeLesson({ fromPopstate: true });
+        return true;
+    }
+
+    const leveltestTab = document.getElementById('leveltest');
+    if (_isElementVisible(leveltestTab)) {
+        if (leveltestTab.querySelector('[data-close-test]') && typeof LevelTest !== 'undefined' && typeof LevelTest.close === 'function') {
+            LevelTest.close();
+        } else if (typeof DiagnosticTest !== 'undefined' && typeof DiagnosticTest.close === 'function') {
+            DiagnosticTest.close();
+        } else {
+            showTab('learn', null, { fromPopstate: true });
+        }
+        return true;
+    }
+
+    const studyPlanTab = document.getElementById('study-plan-screen');
+    if (_isElementVisible(studyPlanTab)) {
+        showTab('home', null, { fromPopstate: true });
+        return true;
+    }
+
+    const readerTab = document.getElementById('reader');
+    const readerContent = document.getElementById('reader-content');
+    if (_isElementVisible(readerTab) && typeof Reader !== 'undefined' &&
+        (Reader.currentStoryId || _isElementVisible(readerContent))) {
+        if (typeof Reader.closeStory === 'function') {
+            Reader.closeStory();
+            return true;
+        }
+    }
+
+    const drillsTab = document.getElementById('drills');
+    if (_isElementVisible(drillsTab) && typeof Workshop !== 'undefined' &&
+        typeof Workshop.activeDriller === 'function' && Workshop.activeDriller()) {
+        if (typeof Workshop.close === 'function') {
+            Workshop.close();
+            return true;
+        }
+    }
+
+    const reviewTab = document.getElementById('review');
+    if (_isElementVisible(reviewTab)) {
+        const reviewSession = document.getElementById('review-session');
+        if (_isElementVisible(reviewSession) && typeof endReviewSession === 'function') {
+            endReviewSession();
+            return true;
+        }
+        const decksRoot = document.getElementById('decks-root');
+        const deckBack = decksRoot ? decksRoot.querySelector('.dk-back') : null;
+        if (deckBack && typeof deckBack.click === 'function') {
+            deckBack.click();
+            return true;
+        }
+    }
+
+    const journeyTab = document.getElementById('journey');
+    if (_isElementVisible(journeyTab)) {
+        const jrRoot = document.getElementById('journey-root');
+        const jrBack = jrRoot ? jrRoot.querySelector('[data-jr-back]') : null;
+        if (jrBack && typeof jrBack.click === 'function') {
+            jrBack.click();
+            return true;
+        }
+    }
+
+    const activeTab = document.querySelector('.tab:not(.hidden)');
+    if (activeTab && activeTab.id && activeTab.id !== 'home') {
+        showTab('home', null, { fromPopstate: true });
+        return true;
+    }
+
+    return false;
+}
+
+if (typeof window !== 'undefined') {
+    window._handleAppBack = _handleAppBack;
+}
+
 function showTab(tabName, button, options) {
     // A margin note belongs to the screen it was shown on.
     if (typeof Guide !== 'undefined') {
@@ -82,6 +214,10 @@ function showTab(tabName, button, options) {
     document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
     const tab = document.getElementById(tabName);
     if (tab) tab.classList.remove('hidden');
+
+    if (tabName !== 'home' && !(options && options.fromPopstate) && (!previousTab || previousTab.id !== tabName)) {
+        pushNavState('tab:' + tabName);
+    }
 
     document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
     const activeBtn = (button && button.matches && button.matches('.nav button[data-tab]'))
@@ -161,14 +297,17 @@ function _attachLessonClose() {
     const btn = document.getElementById('lesson-close-btn');
     if (btn) btn.addEventListener('click', () => closeLesson());
 
-    // Clean browser history navigation: when in a lesson, pressing the browser's
-    // back button (or Android/iOS back gesture) cleanly closes the lesson back to
-    // the previous tab, without navigating away from the web app.
+    // Clean browser history navigation: Back closes overlays, lessons, tests,
+    // Reader stories, Workshop drillers, Deck modes, and non-Home tabs before
+    // letting the browser or TWA exit the app.
     window.addEventListener('popstate', e => {
-        const isLessonOpen = document.body.classList.contains('in-lesson') ||
-            (document.getElementById('lesson-screen') && !document.getElementById('lesson-screen').classList.contains('hidden'));
-        if (isLessonOpen && typeof closeLesson === 'function') {
-            closeLesson({ fromPopstate: true });
+        if (_ignoreNavPops > 0) {
+            _ignoreNavPops--;
+            return;
+        }
+        const handled = _handleAppBack();
+        if (!handled && e && e.state && e.state.parlourNav && typeof history !== 'undefined' && typeof history.back === 'function') {
+            history.back();
         }
     });
 

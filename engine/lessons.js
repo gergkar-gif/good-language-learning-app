@@ -572,8 +572,10 @@ async function startLesson(lessonId) {
         document.body.classList.add('in-lesson');
 
         // Push browser history state so browser Back button returns cleanly instead of leaving the app
-        if (typeof history !== 'undefined' && history.pushState) {
-            history.pushState({ parlourModal: 'lesson', lessonId }, '');
+        if (typeof pushNavState === 'function') {
+            pushNavState('lesson');
+        } else if (typeof history !== 'undefined' && history.pushState) {
+            history.pushState({ parlourNav: 'lesson', lessonId }, '');
         }
 
         document.getElementById('lesson-title').textContent = currentLesson.title;
@@ -720,8 +722,8 @@ function closeLesson(options) {
 
     // If closed via on-screen button (not popstate event) and history state was pushed, pop it
     const fromPop = options && options.fromPopstate;
-    if (!fromPop && typeof history !== 'undefined' && history.state && history.state.parlourModal === 'lesson') {
-        history.back();
+    if (!fromPop && typeof popNavState === 'function') {
+        popNavState('lesson');
     }
 
     // Through showTab rather than by hand, so the section is re-rendered on

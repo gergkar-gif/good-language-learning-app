@@ -759,6 +759,7 @@ function startReviewSession(lemmas, name, options) {
 
     const root = document.getElementById('review-session');
     if (root) root.classList.remove('hidden');
+    if (typeof pushNavState === 'function') pushNavState('review-session');
     const browser = document.getElementById('decks-root');
     if (browser) browser.classList.add('hidden');
 

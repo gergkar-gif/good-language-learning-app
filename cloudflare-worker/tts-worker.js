@@ -23,18 +23,21 @@ const ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000'
 ];
 
+const MAX_TEXT_CHARS = 3000;
+const DEFAULT_DAILY_CHAR_CAP = 30000;
+
+function isAllowedOrigin(origin) {
+    if (!origin) return false;
+    if (ALLOWED_ORIGINS.includes(origin)) return true;
+    return /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+}
+
 function corsHeaders(origin) {
-    if (!ALLOWED_ORIGINS.includes(origin)) {
-        return {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-        };
-    }
     return {
-        'Access-Control-Allow-Origin': origin,
+        'Access-Control-Allow-Origin': isAllowedOrigin(origin) ? origin : ALLOWED_ORIGINS[0],
         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        'Vary': 'Origin'
     };
 }
 
@@ -147,12 +150,17 @@ export default {
                 status: 'ok',
                 service: 'parlour-google-tts-proxy',
                 hasApiKey: Boolean(env && env.GOOGLE_TTS_API_KEY),
-                hasR2Cache: Boolean(env && env.TTS_CACHE)
+                hasR2Cache: Boolean(env && env.TTS_CACHE),
+                dailyCharCap: parseInt(env && env.TTS_DAILY_CHAR_CAP, 10) || DEFAULT_DAILY_CHAR_CAP
             }, 200, cors);
         }
 
         if (request.method !== 'POST') {
             return json({ error: 'Method not allowed' }, 405, cors);
+        }
+
+        if (!isAllowedOrigin(origin)) {
+            return json({ error: 'Origin not allowed' }, 403, cors);
         }
 
         let payload;
@@ -165,6 +173,9 @@ export default {
         let text = (payload.text || '').trim();
         if (!text) {
             return json({ error: 'Missing text in payload' }, 400, cors);
+        }
+        if (text.length > MAX_TEXT_CHARS) {
+            return json({ error: 'Text exceeds maximum length', code: 'TEXT_TOO_LONG' }, 400, cors);
         }
 
         // Resolve language early — normalization rules below depend on it.
@@ -225,7 +236,7 @@ export default {
             text = text.replace(/,(\s+)(?![—–])/g, ', —$1');
         }
 
-        const apiKey = (env && env.GOOGLE_TTS_API_KEY) || payload.apiKey;
+        const apiKey = env && env.GOOGLE_TTS_API_KEY;
         if (!apiKey) {
             return json({
                 error: 'Google Cloud TTS API key not configured. Please set GOOGLE_TTS_API_KEY secret on Cloudflare Worker.',
@@ -273,6 +284,31 @@ export default {
                     }, 200, cors);
                 }
             }
+
+            // shortcut: non-atomic R2 counter allows tiny burst overshoot under concurrency; upgrade to Durable Object only if traffic warrants
+            const cap = parseInt(env && env.TTS_DAILY_CHAR_CAP, 10) || DEFAULT_DAILY_CHAR_CAP;
+            const capKey = '_meta/daily-cap-' + new Date().toISOString().slice(0, 10) + '.json';
+            let used = 0;
+            try {
+                const capObj = await r2.get(capKey);
+                if (capObj) {
+                    const parsed = JSON.parse(await capObj.text());
+                    used = Number(parsed && parsed.chars) || 0;
+                }
+            } catch {}
+
+            if (used + text.length > cap) {
+                return json({
+                    error: 'Daily cloud TTS synthesis limit reached',
+                    code: 'DAILY_CAP'
+                }, 429, cors);
+            }
+
+            try {
+                await r2.put(capKey, JSON.stringify({ chars: used + text.length }), {
+                    httpMetadata: { contentType: 'application/json' }
+                });
+            } catch {}
         }
 
         const googlePayload = {

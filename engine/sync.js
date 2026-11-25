@@ -845,6 +845,36 @@ const Sync = (function () {
         }
     }
 
+    async function deleteAccount() {
+        const token = getToken();
+        if (!token) throw new Error('Not signed in');
+
+        if (_autoSaveTimer) {
+            clearTimeout(_autoSaveTimer);
+            _autoSaveTimer = null;
+        }
+        _isDirty = false;
+
+        const res = await fetch(WORKER_URL + '/auth/delete', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        if (res.status === 401) {
+            _handleUnauthorized();
+            throw new Error('Session expired — please sign in again.');
+        }
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.error || 'Could not delete account.');
+        }
+
+        logout();
+        return { ok: true };
+    }
+
     // ----------------------------------------
     // BACKUP / RESTORE
     // ----------------------------------------
@@ -1601,7 +1631,7 @@ const Sync = (function () {
         loginWithGoogle, renderGoogleButton, promptGoogleOneTap,
         isGoogleAuthAvailable, getGoogleClientId,
         gatherSnapshot, applySnapshot, backup, restore, status,
-        saveBook, loadBook, deleteBook,
+        saveBook, loadBook, deleteBook, deleteAccount,
         maybeShowFirstVisitPrompt, scheduleAutoSave, performAutoSave,
         lastSavedAt, syncOnStartup, checkForRemoteUpdates, mergeSnapshots,
         isDirty: () => _isDirty

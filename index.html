@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
     <title>Parlour — Free Spanish &amp; Hungarian (A1–C1) Course</title>
     <meta name="description" content="Free Spanish &amp; Hungarian (A1–C1): grammar, stories, an EPUB reader, SRS decks, and DELE/ECL prep. No ads, no paywalls, just tools that work.">
     <link rel="canonical" href="https://parlour.me.uk/">
@@ -65,11 +65,11 @@
     <meta name="theme-color" content="#E65100">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
 
     <link rel="stylesheet" href="styles/base.css?v=2026-09-30merged">
     <link rel="stylesheet" href="styles/geometry.css?v=2026-09-30merged">
-    <link rel="stylesheet" href="styles/components.css?v=2026-11-25">
+    <link rel="stylesheet" href="styles/components.css?v=2026-11-25play">
     <link rel="stylesheet" href="styles/layout.css?v=2026-10-08rework">
     <link rel="stylesheet" href="styles/utilities.css?v=2026-09-30merged">
     <link rel="stylesheet" href="styles/verbs.css?v=2026-09-30merged">
@@ -148,6 +148,7 @@
             <div class="nav-footer-links">
                 <button type="button" class="nav-guide-btn" onclick="if (typeof Guide !== 'undefined') Guide.openOverviewModal();">About Parlour</button>
                 <a href="privacy.html" class="text-muted nav-privacy-link">Privacy</a>
+                <a href="credits.html" class="text-muted nav-privacy-link">Credits</a>
             </div>
         </div>
     </nav>
@@ -398,7 +399,7 @@
 <script src="engine/morphology/czech.js?v=2026-11-12"></script>
 <script src="engine/morphology/slovak.js?v=2026-11-12"></script>
 <script src="engine/lexicon.js?v=2026-11-08"></script>
-<script src="engine/srs.js?v=2026-11-18copy"></script>
+<script src="engine/srs.js?v=2026-11-25play"></script>
 <script src="engine/content-loader.js?v=2026-09-14h"></script>
 <script src="engine/ui.js?v=2026-09-17b"></script>
 <script src="engine/art.js?v=2026-10-03voice"></script>
@@ -412,7 +413,7 @@
 
 <!-- Engine: reader (depends on Content) -->
 <script src="engine/gloss-ai.js?v=2026-10-02b"></script>
-<script src="engine/reader.js?v=2026-11-18copy"></script>
+<script src="engine/reader.js?v=2026-11-25play"></script>
 
 <!-- Engine: driller session-accuracy signal (only depends on Lang) — loaded
      before every driller that writes to it: verbs/speed, translation,
@@ -502,16 +503,16 @@
 <script src="engine/drills/es-grammar-studio.js?v=2026-10-17"></script>
 
 <!-- Engine: workshop shell (depends on Verbs, GrammarDriller, TranslationDriller, VocabularyDriller, ListeningDriller, Hu*Driller) -->
-<script src="engine/workshop.js?v=2026-10-06parity"></script>
+<script src="engine/workshop.js?v=2026-11-25play"></script>
 
 <!-- Engine: lessons, progress, curriculum -->
 <script src="engine/exercise-audio.js?v=2026-10-09a"></script>
-<script src="engine/lessons.js?v=2026-11-18copy"></script>
+<script src="engine/lessons.js?v=2026-11-25play"></script>
 <script src="engine/progress.js?v=2026-09-24a"></script>
 <script src="engine/learnerPath.js?v=2026-09-27a"></script>
 <script src="engine/recycle.js?v=2026-09-28trouble"></script>
-<script src="engine/leveltest.js?v=2026-11-25"></script>
-<script src="engine/diagnostic.js?v=2026-11-10accents"></script>
+<script src="engine/leveltest.js?v=2026-11-25play"></script>
+<script src="engine/diagnostic.js?v=2026-11-25play"></script>
 <script src="engine/learnerModel.js?v=2026-11-10placement"></script>
 <script src="engine/recommend.js?v=2026-09-14h"></script>
 <script src="engine/recommendationEngine.js?v=2026-10-02due"></script>
@@ -520,11 +521,11 @@
      LearnerModel, RecommendationEngine, all loaded above -->
 <script src="engine/studyPlan.js?v=2026-09-25sig2"></script>
 
-<script src="engine/journey.js?v=2026-11-18copy"></script>
+<script src="engine/journey.js?v=2026-11-25play"></script>
 <script src="engine/decks/match.js?v=2026-09-25sig2"></script>
 <script src="engine/decks/learn.js?v=2026-10-02f"></script>
 <script src="engine/decks/blast.js?v=2026-09-27b"></script>
-<script src="engine/decks.js?v=2026-10-13reset"></script>
+<script src="engine/decks.js?v=2026-11-25play"></script>
 
 <!-- Engine: time-based session screen â€” depends on StudyPlan, GrammarDriller,
      VocabularyDriller, Decks, LevelTest, all loaded above -->
@@ -536,16 +537,16 @@
 <script src="engine/library.js?v=2026-10-13booktitle"></script>
 
 <!-- Engine: guide & encounter coach (philosophy, room overviews, tips) -->
-<script src="engine/guide.js?v=2026-11-18copy"></script>
+<script src="engine/guide.js?v=2026-11-25play"></script>
 
 <!-- Engine: home (reads from every module above) -->
 <script src="engine/home.js?v=2026-11-18copy"></script>
 
 <!-- Engine: cloud sync (step 7 — reads Lang, called by init's boot and Journey's Account card; lazy-loads Google Identity Services only when opening sign-in) -->
-<script src="engine/sync.js?v=2026-11-18copy"></script>
+<script src="engine/sync.js?v=2026-11-25play"></script>
 
 <!-- Engine: bootstrap (loads last) -->
-<script src="engine/init.js?v=2026-10-17ios2"></script>
+<script src="engine/init.js?v=2026-11-25play"></script>
 
 <!-- Engine: bug report (independent floating overlay, loads anywhere after Art) -->
 <script src="engine/bugreport.js?v=2026-11-18copy"></script>

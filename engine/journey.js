@@ -483,7 +483,10 @@ const Journey = (function () {
                 <button class="dk-secondary" data-sync-restore="1">Restore from cloud</button>
             </div>
             <p class="jr-account-status" id="jr-account-status"></p>
-            <button class="jr-account-logout" data-sync-logout="1">Log out</button>
+            <div class="jr-account-footer">
+                <button class="jr-account-logout" data-sync-logout="1">Log out</button>
+                <button class="jr-account-logout jr-account-delete" data-sync-delete="1">Delete account</button>
+            </div>
         ` : `
             ${expiredNotice}
             <p class="jr-account-blurb">${expiredNotice ? 'Sign in to reconnect this device to your cloud progress.' : 'Back up your progress so it isn\'t stuck on one device.'}</p>
@@ -973,6 +976,65 @@ const Journey = (function () {
         setTimeout(() => { if (input) input.focus(); }, 50);
     }
 
+    function showDeleteAccountModal(host) {
+        const existing = document.getElementById('delete-account-overlay');
+        if (existing) existing.remove();
+
+        const overlay = document.createElement('div');
+        overlay.id = 'delete-account-overlay';
+        overlay.className = 'wp-overlay';
+        overlay.innerHTML = `
+            <div class="wp-sheet sync-prompt-sheet">
+                <div class="wp-header">
+                    <h2 class="sync-prompt-title">Delete cloud account</h2>
+                    <button class="wp-close" data-delete-modal-close="1" aria-label="Close">×</button>
+                </div>
+                <p class="jr-account-blurb">This permanently deletes your email address, cloud progress snapshot, uploaded <em>My Texts</em> books, and login links from Parlour's servers. Progress already on this device stays in your browser until you clear site data.</p>
+                <p class="jr-account-status" id="jr-delete-status"></p>
+                <div class="jr-account-actions" style="justify-content:flex-end; margin-top:8px;">
+                    <button type="button" class="dk-secondary" data-delete-modal-close="1">Cancel</button>
+                    <button type="button" class="dk-secondary jr-delete-confirm-btn" id="jr-delete-confirm">Permanently delete account</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(overlay);
+
+        const statusEl = overlay.querySelector('#jr-delete-status');
+        const confirmBtn = overlay.querySelector('#jr-delete-confirm');
+
+        function close() {
+            document.removeEventListener('keydown', onEsc);
+            overlay.remove();
+        }
+        function onEsc(e) {
+            if (e.key === 'Escape') close();
+        }
+        document.addEventListener('keydown', onEsc);
+
+        overlay.querySelectorAll('[data-delete-modal-close]').forEach(btn => {
+            btn.addEventListener('click', close);
+        });
+        overlay.addEventListener('click', e => {
+            if (e.target === overlay) close();
+        });
+
+        confirmBtn.addEventListener('click', async () => {
+            confirmBtn.disabled = true;
+            if (statusEl) statusEl.textContent = 'Deleting account\u2026';
+            try {
+                await Sync.deleteAccount();
+                close();
+                _draw();
+                const acctStatus = host.querySelector('#jr-account-status');
+                if (acctStatus) acctStatus.textContent = 'Account and cloud data deleted.';
+            } catch (error) {
+                confirmBtn.disabled = false;
+                if (statusEl) statusEl.textContent = error.message || 'Could not delete account.';
+            }
+        });
+    }
+
     // Every stat here is counted from something the learner did — so every
     // stat also gets somewhere to go do more of it. One delegated listener
     // (guarded the same way engine/curriculum.js guards its own root
@@ -984,7 +1046,13 @@ const Journey = (function () {
 
         host.addEventListener('click', e => {
             const view = e.target.closest('[data-jr-view]');
-            if (view) { _view = view.getAttribute('data-jr-view'); _draw(); window.scrollTo(0, 0); return; }
+            if (view) {
+                if (typeof pushNavState === 'function') pushNavState('journey-detail');
+                _view = view.getAttribute('data-jr-view');
+                _draw();
+                window.scrollTo(0, 0);
+                return;
+            }
             if (e.target.closest('[data-jr-back]')) { _view = 'main'; _draw(); window.scrollTo(0, 0); return; }
 
             const milestonesToggle = e.target.closest('[data-jr-milestones-toggle]');
@@ -1077,6 +1145,11 @@ const Journey = (function () {
             if (e.target.closest('[data-sync-logout]')) {
                 Sync.logout();
                 _draw();
+                return;
+            }
+
+            if (e.target.closest('[data-sync-delete]')) {
+                showDeleteAccountModal(host);
                 return;
             }
 

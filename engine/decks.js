@@ -450,6 +450,7 @@ const Decks = (function () {
     // the name and description, not separate actions.
     function openCreateDeck() {
         draft = { id: null, name: '', description: '', words: [] };
+        if (typeof pushNavState === 'function') pushNavState('decks-sub');
         Lexicon.load();     // warm the dictionary before the learner starts typing
         render();
     }
@@ -463,6 +464,7 @@ const Decks = (function () {
             description: deck.description || '',
             words: deck.words.slice()
         };
+        if (typeof pushNavState === 'function') pushNavState('decks-sub');
         Lexicon.load();
         render();
     }
@@ -666,6 +668,7 @@ const Decks = (function () {
     // ----------------------------------------
     function openImportDeck() {
         draft = null;
+        if (typeof pushNavState === 'function') pushNavState('decks-sub');
         importDraft = {
             name: '',
             rawText: '',

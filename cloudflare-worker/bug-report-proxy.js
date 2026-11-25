@@ -23,18 +23,77 @@ const ALLOWED_ORIGINS = [
     'http://localhost:8131'
 ];
 
+const MAX_PER_IP = 5;
+const IP_WINDOW_MS = 10 * 60 * 1000;
+const MAX_GLOBAL_PER_HOUR = 25;
+const GLOBAL_WINDOW_MS = 60 * 60 * 1000;
+
+// shortcut: per-isolate in-memory limiter resets on cold start; upgrade to KV or Cloudflare WAF rate limit if distributed spam occurs
+const ipHits = new Map();
+const globalHits = [];
+
+function checkRateLimit(ip, now) {
+    while (globalHits.length && globalHits[0] <= now - GLOBAL_WINDOW_MS) {
+        globalHits.shift();
+    }
+    if (globalHits.length >= MAX_GLOBAL_PER_HOUR) return false;
+
+    const recentIp = (ipHits.get(ip) || []).filter(t => t > now - IP_WINDOW_MS);
+    if (recentIp.length >= MAX_PER_IP) {
+        ipHits.set(ip, recentIp);
+        return false;
+    }
+
+    if (ipHits.size > 1000) {
+        for (const [k, list] of ipHits.entries()) {
+            const kept = list.filter(t => t > now - IP_WINDOW_MS);
+            if (kept.length) ipHits.set(k, kept);
+            else ipHits.delete(k);
+        }
+    }
+
+    recentIp.push(now);
+    ipHits.set(ip, recentIp);
+    globalHits.push(now);
+    return true;
+}
+
+function isAllowedOrigin(origin) {
+    if (!origin) return false;
+    if (ALLOWED_ORIGINS.includes(origin)) return true;
+    return /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+}
+
 function corsHeaders(origin) {
-    if (!ALLOWED_ORIGINS.includes(origin)) return null;
+    if (!isAllowedOrigin(origin)) return null;
     return {
         'Access-Control-Allow-Origin': origin,
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type'
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Vary': 'Origin'
     };
 }
 
 export default {
     async fetch(request, env) {
         const origin = request.headers.get('Origin') || '';
+        const url = new URL(request.url);
+
+        if (request.method === 'GET' && url.pathname === '/health') {
+            return new Response(JSON.stringify({
+                status: 'ok',
+                service: 'parlour-bug-report',
+                hasGithubToken: Boolean(env && env.GITHUB_TOKEN)
+            }), {
+                status: 200,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': isAllowedOrigin(origin) ? origin : ALLOWED_ORIGINS[0],
+                    'Vary': 'Origin'
+                }
+            });
+        }
+
         const cors = corsHeaders(origin);
 
         if (request.method === 'OPTIONS') {
@@ -45,6 +104,11 @@ export default {
         }
         if (request.method !== 'POST') {
             return new Response('Method not allowed', { status: 405, headers: cors });
+        }
+
+        const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+        if (!checkRateLimit(ip, Date.now())) {
+            return new Response('Too many bug reports — try again later', { status: 429, headers: cors });
         }
 
         let payload;
@@ -73,7 +137,8 @@ export default {
 
         if (!ghResponse.ok) {
             const errText = await ghResponse.text();
-            return new Response('GitHub error ' + ghResponse.status + ': ' + errText, {
+            console.error('GitHub error ' + ghResponse.status + ': ' + errText);
+            return new Response('GitHub error ' + ghResponse.status, {
                 status: 502,
                 headers: cors
             });

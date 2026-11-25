@@ -24,14 +24,24 @@ const ALLOWED_ORIGINS = [
 const TOKEN_TTL_MS = 10 * 60 * 1000;        // magic-link token: 10 minutes
 const SESSION_TTL_SECONDS = 365 * 24 * 60 * 60; // session token: 365 days
 const MAX_LINKS_PER_HOUR = 3;
+const DEFAULT_MAX_LINKS_PER_DAY = 90;
+const MAX_STATE_BYTES = 1024 * 1024;
+const MAX_BOOKS_PER_USER = 50;
 const RESEND_FROM = 'Parlour <noreply@parlour.me.uk>';
 
+function isAllowedOrigin(origin) {
+    if (!origin) return false;
+    if (ALLOWED_ORIGINS.includes(origin)) return true;
+    return /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+}
+
 function corsHeaders(origin) {
-    if (!ALLOWED_ORIGINS.includes(origin)) return null;
+    if (!isAllowedOrigin(origin)) return null;
     return {
         'Access-Control-Allow-Origin': origin,
         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        'Vary': 'Origin'
     };
 }
 
@@ -185,6 +195,16 @@ async function handleRequestLink(request, env, cors) {
         return json({ error: 'Verification failed — please try again' }, 403, cors);
     }
 
+    // Global daily magic-link cap to protect the Resend free tier (3,000/month).
+    const DEFAULT_DAY_CAP = parseInt(env.MAX_LINKS_PER_DAY, 10) || DEFAULT_MAX_LINKS_PER_DAY;
+    const dayAgo = Date.now() - 24 * 60 * 60 * 1000;
+    const dailyCount = await env.DB.prepare(
+        'SELECT COUNT(*) AS n FROM magic_links WHERE expires_at > ?'
+    ).bind(dayAgo + TOKEN_TTL_MS).first();
+    if (dailyCount && dailyCount.n >= DEFAULT_DAY_CAP) {
+        return json({ error: 'Daily sign-in email limit reached — try again tomorrow' }, 429, cors);
+    }
+
     // Rate limit: at most MAX_LINKS_PER_HOUR requests per email per hour,
     // checked against D1 directly rather than a separate store.
     // expires_at is issued_at + TOKEN_TTL_MS, so "issued within the last
@@ -271,6 +291,10 @@ async function handleGoogleAuth(request, env, cors) {
         return json({ error: 'Missing credential' }, 400, cors);
     }
 
+    if (!env.GOOGLE_CLIENT_ID) {
+        return json({ error: 'Google Sign-In is not configured' }, 503, cors);
+    }
+
     // Verify Google ID token via Google's tokeninfo endpoint (zero external dependencies)
     let tokenInfo;
     try {
@@ -287,7 +311,7 @@ async function handleGoogleAuth(request, env, cors) {
     }
 
     // Validate claims
-    if (env.GOOGLE_CLIENT_ID && tokenInfo.aud !== env.GOOGLE_CLIENT_ID) {
+    if (tokenInfo.aud !== env.GOOGLE_CLIENT_ID) {
         return json({ error: 'Invalid Google client ID' }, 401, cors);
     }
 
@@ -359,6 +383,11 @@ async function handlePostState(request, env, cors) {
         return json({ error: 'Missing state' }, 400, cors);
     }
 
+    const serialized = JSON.stringify(payload.state);
+    if (serialized.length > MAX_STATE_BYTES) {
+        return json({ error: 'State payload exceeds cloud storage limit' }, 413, cors);
+    }
+
     const updatedAt = Date.now();
     // A save sent while the page closes can't read the cloud first, so it
     // says which cloud version it was based on. Write only if nobody has
@@ -366,7 +395,7 @@ async function handlePostState(request, env, cors) {
     if (typeof payload.baseUpdatedAt === 'number') {
         const result = await env.DB.prepare(
             'UPDATE users SET state_json = ?, updated_at = ? WHERE id = ? AND (updated_at IS NULL OR updated_at <= ?)'
-        ).bind(JSON.stringify(payload.state), updatedAt, session.sub, payload.baseUpdatedAt).run();
+        ).bind(serialized, updatedAt, session.sub, payload.baseUpdatedAt).run();
         if (!result.meta || !result.meta.changes) {
             return json({ error: 'Cloud copy is newer', conflict: true }, 409, cors);
         }
@@ -374,7 +403,7 @@ async function handlePostState(request, env, cors) {
     }
 
     await env.DB.prepare('UPDATE users SET state_json = ?, updated_at = ? WHERE id = ?')
-        .bind(JSON.stringify(payload.state), updatedAt, session.sub).run();
+        .bind(serialized, updatedAt, session.sub).run();
 
     return json({ ok: true, updatedAt }, 200, cors);
 }
@@ -463,6 +492,18 @@ async function handlePostBook(request, env, cors) {
         return json({ error: 'Book payload exceeds cloud storage limit' }, 413, cors);
     }
 
+    const existingBook = await env.DB.prepare(
+        'SELECT 1 AS found FROM user_books WHERE user_id = ? AND book_key = ?'
+    ).bind(session.sub, bookKey).first();
+    if (!existingBook) {
+        const bookCount = await env.DB.prepare(
+            'SELECT COUNT(*) AS n FROM user_books WHERE user_id = ?'
+        ).bind(session.sub).first();
+        if (bookCount && bookCount.n >= MAX_BOOKS_PER_USER) {
+            return json({ error: 'Cloud book limit reached' }, 403, cors);
+        }
+    }
+
     const updatedAt = Date.now();
     await env.DB.prepare(
         'INSERT INTO user_books (user_id, book_key, payload_json, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT(user_id, book_key) DO UPDATE SET payload_json = excluded.payload_json, updated_at = excluded.updated_at'
@@ -471,9 +512,47 @@ async function handlePostBook(request, env, cors) {
     return json({ ok: true, updatedAt }, 200, cors);
 }
 
+async function handleDeleteAccount(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+
+    await ensureBooksTable(env);
+
+    let email = typeof session.email === 'string' ? session.email.trim().toLowerCase() : '';
+    if (!email) {
+        const userRow = await env.DB.prepare('SELECT email FROM users WHERE id = ?').bind(session.sub).first();
+        email = userRow && typeof userRow.email === 'string' ? userRow.email.trim().toLowerCase() : '';
+    }
+
+    await env.DB.prepare('DELETE FROM user_books WHERE user_id = ?').bind(session.sub).run();
+    if (email) {
+        await env.DB.prepare('DELETE FROM magic_links WHERE email = ?').bind(email).run();
+    }
+    await env.DB.prepare('DELETE FROM users WHERE id = ?').bind(session.sub).run();
+
+    return json({ ok: true, deleted: true }, 200, cors);
+}
+
 export default {
     async fetch(request, env) {
         const origin = request.headers.get('Origin') || '';
+        const path = new URL(request.url).pathname;
+
+        if (request.method === 'GET' && path === '/health') {
+            return json({
+                status: 'ok',
+                service: 'parlour-sync',
+                hasDb: Boolean(env && env.DB),
+                hasJwtSecret: Boolean(env && env.JWT_SECRET),
+                hasResendKey: Boolean(env && env.RESEND_API_KEY),
+                hasGoogleClientId: Boolean(env && env.GOOGLE_CLIENT_ID),
+                turnstileEnabled: Boolean(env && env.TURNSTILE_SECRET_KEY)
+            }, 200, {
+                'Access-Control-Allow-Origin': isAllowedOrigin(origin) ? origin : ALLOWED_ORIGINS[0],
+                'Vary': 'Origin'
+            });
+        }
+
         const cors = corsHeaders(origin);
 
         if (request.method === 'OPTIONS') {
@@ -483,11 +562,10 @@ export default {
             return new Response('Forbidden', { status: 403 });
         }
 
-        const path = new URL(request.url).pathname;
-
         if (path === '/auth/request-link' && request.method === 'POST') return handleRequestLink(request, env, cors);
         if (path === '/auth/verify' && request.method === 'POST') return handleVerify(request, env, cors);
         if (path === '/auth/google' && request.method === 'POST') return handleGoogleAuth(request, env, cors);
+        if (path === '/auth/delete' && request.method === 'POST') return handleDeleteAccount(request, env, cors);
         if (path === '/sync/state' && request.method === 'GET') return handleGetState(request, env, cors);
         if (path === '/sync/state' && request.method === 'POST') return handlePostState(request, env, cors);
         if (path === '/sync/book' && request.method === 'GET') return handleGetBook(request, env, cors);

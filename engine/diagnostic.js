@@ -1351,6 +1351,7 @@ const DiagnosticTest = (function () {
             document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
             const hostTab = document.getElementById('leveltest');
             if (hostTab) hostTab.classList.remove('hidden');
+            if (typeof pushNavState === 'function') pushNavState('diagnostic');
 
             if (typeof PageHeader !== 'undefined' && PageHeader.render) {
                 PageHeader.render({

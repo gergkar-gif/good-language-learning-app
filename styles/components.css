@@ -3731,6 +3731,23 @@
   cursor: pointer;
 }
 
+.jr-account-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.jr-account-delete {
+  color: var(--danger);
+}
+
+.jr-delete-confirm-btn {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
 /* ---- First-visit sync prompt (engine/sync.js) — reuses .wp-overlay/
    .wp-sheet and the .jr-account-* rules above for its body ---- */
 .sync-prompt-sheet .jr-account-logout {

@@ -2163,6 +2163,7 @@ window.Reader = {
     renderStory(story) {
         const container = document.getElementById('reader-content');
         if (!container) return;
+        if (typeof pushNavState === 'function') pushNavState('reader');
 
         // Saving is Library's concern (it owns the Saved list), but the
         // action itself lives here because "save this" only makes sense

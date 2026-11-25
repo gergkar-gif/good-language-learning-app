@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits &amp; Licences — Parlour</title>
+    <meta name="description" content="Third-party linguistic datasets, public-domain texts, and service providers used in Parlour.">
+    <link rel="canonical" href="https://parlour.me.uk/credits.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://parlour.me.uk/credits.html">
+    <meta property="og:title" content="Credits &amp; Licences — Parlour">
+    <meta property="og:description" content="Third-party linguistic datasets, public-domain texts, and service providers used in Parlour.">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+            max-width: 40rem;
+            margin: 0 auto;
+            padding: 2rem 1.25rem 4rem;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+        h1 { font-size: 1.5rem; }
+        h2 { font-size: 1.1rem; margin-top: 2rem; }
+        a { color: #E65100; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+        footer { margin-top: 3rem; font-size: 0.85rem; color: #666; }
+        @media (prefers-color-scheme: dark) {
+            body { background: #16130f; color: #e8e2d8; }
+            a { color: #ff9d4d; }
+            footer { color: #999; }
+        }
+    </style>
+</head>
+<body>
+    <a class="back-link" href="index.html">&larr; Back to Parlour</a>
+    <h1>Credits &amp; Licences</h1>
+    <p>Parlour is a free, non-commercial language-learning app for Spanish and
+    Hungarian. This page lists the open linguistic datasets, public-domain
+    literary sources, and operational service providers used by the app.</p>
+
+    <h2>AI-Assisted Content</h2>
+    <p>Parlour&rsquo;s curriculum, lessons, grammar explanations, exercises,
+    vocabulary lists, and original stories were co-produced with AI assistance
+    (OpenAI ChatGPT and Anthropic Claude). The project owner directed all
+    design decisions, reviewed content for pedagogical accuracy, and edited
+    material where necessary.</p>
+
+    <h2>Linguistic Data Sources</h2>
+    <ul>
+        <li>
+            <strong>Spanish Verb Conjugation Data:</strong>
+            <a href="https://github.com/miko3k/verbos" target="_blank" rel="noopener">miko3k/verbos</a>
+            (originally compiled by Fred Jehle, Indiana University&ndash;Purdue University Fort Wayne),
+            used for Spanish verb conjugation tables. Licensed under
+            <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="noopener">CC BY-NC-SA 3.0</a>
+            (non-commercial use only).
+        </li>
+        <li>
+            <strong>Spanish&ndash;English Dictionary &amp; Inflection Index:</strong>
+            <a href="https://github.com/doozan/spanish_data" target="_blank" rel="noopener">doozan/spanish_data</a>,
+            derived from Spanish Wiktionary, used for word lookup, inflection forms, and frequency ranking. Licensed under
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
+        </li>
+        <li>
+            <strong>Hungarian&ndash;English Dictionary:</strong>
+            <a href="https://kaikki.org/dictionary/Hungarian/" target="_blank" rel="noopener">kaikki.org</a>
+            machine-readable Wiktionary extracts by Tatu Ylonen (derived from English Wiktionary). Licensed under
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+            and <a href="https://www.gnu.org/licenses/fdl-1.3.html" target="_blank" rel="noopener">GFDL</a>.
+        </li>
+        <li>
+            <strong>Hungarian Word Frequency Database:</strong>
+            <a href="https://huggingface.co/datasets/petyaracz/hungarian-word-frequencies" target="_blank" rel="noopener">petyaracz/hungarian-word-frequencies</a>
+            by Peter Racz (derived from Hungarian Webcorpus 2), used for lemma frequency ranking in good faith for non-commercial educational use (formal licence verification in progress).
+        </li>
+    </ul>
+
+    <h2>Classic Literature &amp; Readings</h2>
+    <p>Simplified classic stories in the Library are adapted from public-domain
+    works (including Miguel de Cervantes, Benito Perez Galdos, Gustavo Adolfo
+    Becquer, Horacio Quiroga, Ruben Dario, Leopoldo Alas, Herman Melville, Jules
+    Verne, Franz Kafka, Louisa May Alcott, Homer, and Aesop). Readings on newer
+    authors are original texts about the author and work.</p>
+
+    <h2>Service Providers</h2>
+    <ul>
+        <li><strong>Cloudflare Workers, D1, KV &amp; R2:</strong> optional cloud backup, AI grading, fallback word glosses, speech-to-text, and TTS caching.</li>
+        <li><strong>Google Cloud Text-to-Speech:</strong> spoken audio synthesis for lessons and stories.</li>
+        <li><strong>Resend &amp; Google Identity Services:</strong> optional passwordless email sign-in links and Google Sign-In.</li>
+        <li><strong>GitHub Issues API:</strong> optional in-app bug reporting.</li>
+    </ul>
+
+    <h2>Ownership &amp; Contact</h2>
+    <p>Application code and original curriculum content are &copy; the project
+    owner. Third-party datasets retain their respective licences listed above.
+    Questions or attribution notices: <a href="mailto:gergkar@gmail.com">gergkar@gmail.com</a>.
+    See also the <a href="privacy.html">Privacy Policy</a>.</p>
+
+    <footer>Last updated 2026-11-25.</footer>
+</body>
+</html>

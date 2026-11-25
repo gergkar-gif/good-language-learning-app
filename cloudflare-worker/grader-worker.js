@@ -32,17 +32,25 @@ const ALLOWED_ORIGINS = [
     'http://localhost:8131'
 ];
 
+const MAX_PROMPT_CHARS = 16000;
+
 const CANDIDATE_MODELS = [
     '@cf/mistralai/mistral-small-3.1-24b-instruct',
     '@cf/meta/llama-3.3-70b-instruct-fp8-fast'
 ];
 
+function isAllowedOrigin(origin) {
+    if (!origin) return false;
+    if (ALLOWED_ORIGINS.includes(origin)) return true;
+    return /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+}
+
 function corsHeaders(origin) {
-    if (!ALLOWED_ORIGINS.includes(origin)) return null;
     return {
-        'Access-Control-Allow-Origin': origin,
+        'Access-Control-Allow-Origin': isAllowedOrigin(origin) ? origin : ALLOWED_ORIGINS[0],
         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        'Vary': 'Origin'
     };
 }
 
@@ -56,21 +64,29 @@ function json(data, status, cors) {
 export default {
     async fetch(request, env) {
         const origin = request.headers.get('Origin') || '';
-        const cors = corsHeaders(origin) || {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-        };
+        const cors = corsHeaders(origin);
+        const url = new URL(request.url);
 
         if (request.method === 'OPTIONS') {
             return new Response(null, { headers: cors });
+        }
+
+        if (request.method === 'GET' && url.pathname === '/health') {
+            return json({
+                status: 'ok',
+                service: 'parlour-grader',
+                workersAiAvailable: Boolean(env && env.AI)
+            }, 200, cors);
         }
 
         if (request.method !== 'POST') {
             return json({ error: 'Method not allowed' }, 405, cors);
         }
 
-        const url = new URL(request.url);
+        if (!isAllowedOrigin(origin)) {
+            return json({ error: 'Origin not allowed' }, 403, cors);
+        }
+
         let payload;
         try {
             payload = await request.json();
@@ -94,10 +110,14 @@ export default {
             return json({ error: 'Missing prompt or messages payload' }, 400, cors);
         }
 
+        const totalChars = messages.reduce((sum, m) => sum + String((m && m.content) || '').length, 0);
+        if (totalChars > MAX_PROMPT_CHARS) {
+            return json({ error: 'Prompt exceeds maximum length' }, 413, cors);
+        }
+
         // Check if Cloudflare Workers AI is available in environment
         if (env && env.AI) {
             const modelsToTry = [];
-            if (payload.model && payload.model !== 'auto') modelsToTry.push(payload.model);
             if (env.GRADER_MODEL) modelsToTry.push(env.GRADER_MODEL);
             modelsToTry.push(...CANDIDATE_MODELS);
 
@@ -139,11 +159,13 @@ export default {
                         String(aiError).includes('No such model') || String(aiError).includes('deprecated')) {
                         continue;
                     }
-                    return json({ error: 'Workers AI inference failed', details: String(aiError) }, 500, cors);
+                    console.error('Workers AI inference failed:', aiError);
+                    return json({ error: 'Workers AI inference failed' }, 500, cors);
                 }
             }
 
-            return json({ error: 'Workers AI inference failed', details: String(lastAiError) }, 500, cors);
+            console.error('Workers AI inference failed:', lastAiError);
+            return json({ error: 'Workers AI inference failed' }, 500, cors);
         }
 
         // Fallback: If AI Gateway or Upstream OpenAI endpoint is configured in env

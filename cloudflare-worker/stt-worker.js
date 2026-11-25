@@ -22,13 +22,20 @@ const ALLOWED_ORIGINS = [
     'http://127.0.0.1:8131'
 ];
 
+const MAX_AUDIO_BYTES = 5 * 1024 * 1024;
+
+function isAllowedOrigin(origin) {
+    if (!origin) return false;
+    if (ALLOWED_ORIGINS.includes(origin)) return true;
+    return /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+}
+
 function corsHeaders(origin) {
-    const isAllowed = ALLOWED_ORIGINS.includes(origin) || (origin && origin.startsWith('http://localhost:'));
-    const allowOrigin = isAllowed ? origin : '*';
     return {
-        'Access-Control-Allow-Origin': allowOrigin,
+        'Access-Control-Allow-Origin': isAllowedOrigin(origin) ? origin : ALLOWED_ORIGINS[0],
         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Language, X-Prompt'
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Language, X-Prompt',
+        'Vary': 'Origin'
     };
 }
 
@@ -183,6 +190,10 @@ export default {
             return json({ error: 'Method not allowed. Send POST to /transcribe' }, 405, cors);
         }
 
+        if (!isAllowedOrigin(origin)) {
+            return json({ error: 'Origin not allowed' }, 403, cors);
+        }
+
         if (url.pathname !== '/transcribe' && url.pathname !== '/') {
             return json({ error: 'Not found' }, 404, cors);
         }
@@ -226,6 +237,9 @@ export default {
 
         if (!audioBuffer || audioBuffer.byteLength === 0) {
             return json({ error: 'No audio data received' }, 400, cors);
+        }
+        if (audioBuffer.byteLength > MAX_AUDIO_BYTES) {
+            return json({ error: 'Audio payload exceeds 5 MB limit', code: 'PAYLOAD_TOO_LARGE' }, 413, cors);
         }
 
         // Call Cloudflare Workers AI Whisper (large-v3-turbo: 4-layer decoder distilled from
