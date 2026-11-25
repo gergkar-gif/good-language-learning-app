@@ -522,20 +522,6 @@
         },
         {
           "id": "hu-diag-b2-03",
-          "sentence": "A professzor esszét _____ a hallgatókkal.",
-          "options": [
-            "írat",
-            "írtat",
-            "íret",
-            "írtet"
-          ],
-          "correct": 0,
-          "teaches": [
-            "causative-verbal-derivations"
-          ]
-        },
-        {
-          "id": "hu-diag-b2-04",
           "sentence": "Mindenki dicsérte a kenyér _____.",
           "options": [
             "frissességét",
@@ -549,7 +535,7 @@
           ]
         },
         {
-          "id": "hu-diag-b2-05",
+          "id": "hu-diag-b2-04",
           "sentence": "_____ mondja is, nem hiszek neki.",
           "options": [
             "Bárki",
@@ -563,7 +549,22 @@
           ]
         },
         {
+          "id": "hu-diag-b2-05",
+          "sentence": "A szomszédok, _____ között felnőttem, ma is a barátaim.",
+          "options": [
+            "akik",
+            "amelyek",
+            "ami",
+            "aki"
+          ],
+          "correct": 0,
+          "teaches": [
+            "b2-relative-postpositions"
+          ]
+        },
+        {
           "id": "hu-diag-b2-06",
+          "prompt": "Helyzet: Elmondod, hogy semmi sem változtat a döntéseden.",
           "sentence": "Akkor sem mondok le róla, _____ mindenki ellenzi.",
           "options": [
             "ha",
@@ -578,10 +579,11 @@
         },
         {
           "id": "hu-diag-b2-07",
+          "prompt": "Helyzet: Egy ismerősöd mindenről magabiztosan beszél, pedig keveset tud.",
           "sentence": "Úgy beszél, mintha mindent _____.",
           "options": [
             "tudna",
-            "tud",
+            "tudtak",
             "tudjon",
             "tudott"
           ],
@@ -592,44 +594,32 @@
         },
         {
           "id": "hu-diag-b2-08",
-          "sentence": "A lányunk már a felnőttkor _____ áll.",
-          "options": [
-            "küszöbén",
-            "múltával",
-            "során",
-            "folyamán"
-          ],
-          "correct": 0,
+          "type": "text-input",
+          "sentence": "A lányunk már a felnőttkor (küszöb - névutó) _____ áll.",
+          "answer": "küszöbén",
+          "altAnswers": [],
           "teaches": [
             "b2-temporal-framing"
           ]
         },
         {
           "id": "hu-diag-b2-09",
-          "sentence": "A szomszédok, _____ között felnőttem, ma is a barátaim.",
-          "options": [
-            "akik",
-            "amelyek",
-            "ami",
-            "aki"
-          ],
-          "correct": 0,
+          "type": "text-input",
+          "sentence": "Tíz év alatt a lakások ára a (kétszeres) _____ nőtt.",
+          "answer": "kétszeresére",
+          "altAnswers": [],
           "teaches": [
-            "b2-relative-postpositions"
+            "b2-proportional-rates"
           ]
         },
         {
           "id": "hu-diag-b2-10",
-          "sentence": "Olyannyira gyors volt a támadás, _____ a védelem nem tudott reagálni.",
-          "options": [
-            "hogy",
-            "mint",
-            "ha",
-            "amely"
-          ],
-          "correct": 0,
+          "type": "text-input",
+          "sentence": "A szerelővel (megjavít - műveltető, múlt idő, én) _____ az autót.",
+          "answer": "megjavíttattam",
+          "altAnswers": [],
           "teaches": [
-            "annyira-hogy"
+            "causative-verbal-derivations"
           ]
         }
       ],
@@ -682,7 +672,7 @@
           "sentence": "A szerződés érvényes, feltéve, _____ mindkét fél aláírta.",
           "options": [
             "hogy",
-            "ha",
+            "hanem",
             "mert",
             "mint"
           ],
@@ -721,20 +711,21 @@
         },
         {
           "id": "hu-diag-c1-05",
-          "sentence": "A különbség a városok és a falvak között _____ nőtt.",
+          "sentence": "Szép terv, _____ megvalósíthatatlan.",
           "options": [
-            "számottevően",
-            "számottevő",
-            "számottevőség",
-            "számottevőt"
+            "csakhogy",
+            "hogy",
+            "mintha",
+            "tehát"
           ],
           "correct": 0,
           "teaches": [
-            "scalar-adverbs"
+            "rhetorical-argument"
           ]
         },
         {
           "id": "hu-diag-c1-06",
+          "prompt": "Helyzet: Egy vitában udvariasan szót kérsz, hogy kiegészítsd a másik véleményét.",
           "sentence": "_____ tegyem hozzá, hogy nem értek egyet.",
           "options": [
             "Hadd",
@@ -749,34 +740,7 @@
         },
         {
           "id": "hu-diag-c1-07",
-          "sentence": "Enyhén _____, nem volt a helyzet magaslatán.",
-          "options": [
-            "szólva",
-            "szólt",
-            "szólni",
-            "szólás"
-          ],
-          "correct": 0,
-          "teaches": [
-            "litotes-understatement"
-          ]
-        },
-        {
-          "id": "hu-diag-c1-08",
-          "sentence": "Szép terv, _____ megvalósíthatatlan.",
-          "options": [
-            "csakhogy",
-            "hogy",
-            "mintha",
-            "tehát"
-          ],
-          "correct": 0,
-          "teaches": [
-            "rhetorical-argument"
-          ]
-        },
-        {
-          "id": "hu-diag-c1-09",
+          "prompt": "Helyzet: Finoman, enyhítve bírálod egy kísérlet gyenge eredményét.",
           "sentence": "Nem _____ fényes eredménnyel zárult a kísérlet.",
           "options": [
             "éppen",
@@ -790,17 +754,33 @@
           ]
         },
         {
-          "id": "hu-diag-c1-10",
-          "sentence": "A régiek hittek ebben; a modernek _____ kételkednek.",
-          "options": [
-            "ellenben",
-            "hiszen",
-            "tehát",
-            "ugyanis"
-          ],
-          "correct": 0,
+          "id": "hu-diag-c1-08",
+          "type": "text-input",
+          "sentence": "A különbség a városok és a falvak között (számottevő - határozószó) _____ nőtt.",
+          "answer": "számottevően",
+          "altAnswers": [],
           "teaches": [
-            "rhetorical-argument"
+            "scalar-adverbs"
+          ]
+        },
+        {
+          "id": "hu-diag-c1-09",
+          "type": "text-input",
+          "sentence": "Enyhén (szól - határozói igenév) _____, nem volt a helyzet magaslatán.",
+          "answer": "szólva",
+          "altAnswers": [],
+          "teaches": [
+            "litotes-understatement"
+          ]
+        },
+        {
+          "id": "hu-diag-c1-10",
+          "type": "text-input",
+          "sentence": "Kell, hogy (van - kötőmód) _____ más magyarázat.",
+          "answer": "legyen",
+          "altAnswers": [],
+          "teaches": [
+            "epistemic-modality"
           ]
         }
       ],

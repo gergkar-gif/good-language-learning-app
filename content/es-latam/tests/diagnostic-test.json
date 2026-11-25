@@ -494,16 +494,16 @@
       "questions": [
         {
           "id": "es-diag-b2-01",
-          "sentence": "Por mucho que _____ mañana, no llegarás a tiempo.",
+          "sentence": "Había tanto tráfico _____ llegamos una hora tarde.",
           "options": [
-            "corras",
-            "corriste",
-            "correrás",
-            "correrías"
+            "que",
+            "como",
+            "de",
+            "cual"
           ],
           "correct": 0,
           "teaches": [
-            "concesivas-por-mas-que"
+            "consecutivas-de-tal-manera"
           ]
         },
         {
@@ -522,7 +522,7 @@
         },
         {
           "id": "es-diag-b2-03",
-          "sentence": "Busco a alguien que _____ hablar húngaro.",
+          "sentence": "No conozco a nadie que _____ hablar húngaro.",
           "options": [
             "sepa",
             "sabe",
@@ -564,6 +564,7 @@
         },
         {
           "id": "es-diag-b2-06",
+          "prompt": "Situación: Explicas para qué la empresa cerró dos oficinas.",
           "sentence": "Con el fin de _____ los gastos, la empresa cerró dos oficinas.",
           "options": [
             "reducir",
@@ -578,34 +579,7 @@
         },
         {
           "id": "es-diag-b2-07",
-          "sentence": "Se _____ a todos los vecinos a la reunión del jueves.",
-          "options": [
-            "invitó",
-            "invitaron",
-            "invitamos",
-            "invitar"
-          ],
-          "correct": 0,
-          "teaches": [
-            "se-pasivo-vs-impersonal"
-          ]
-        },
-        {
-          "id": "es-diag-b2-08",
-          "sentence": "Después de mucho discutir, _____ por aceptar la propuesta.",
-          "options": [
-            "acabó",
-            "volvió",
-            "dejó",
-            "pasó"
-          ],
-          "correct": 0,
-          "teaches": [
-            "terminar-por-infinitivo"
-          ]
-        },
-        {
-          "id": "es-diag-b2-09",
+          "prompt": "Situación: Ves las luces encendidas en la casa de tu vecino y haces una suposición.",
           "sentence": "Las luces están encendidas: _____ de estar en casa.",
           "options": [
             "debe",
@@ -619,17 +593,35 @@
           ]
         },
         {
-          "id": "es-diag-b2-10",
-          "sentence": "Había tanto tráfico _____ llegamos una hora tarde.",
-          "options": [
-            "que",
-            "como",
-            "de",
-            "cual"
-          ],
-          "correct": 0,
+          "id": "es-diag-b2-08",
+          "type": "text-input",
+          "sentence": "Ayer se (invitar) _____ a todos los vecinos a la reunión.",
+          "answer": "invitó",
+          "altAnswers": [],
           "teaches": [
-            "consecutivas-de-tal-manera"
+            "se-pasivo-vs-impersonal"
+          ]
+        },
+        {
+          "id": "es-diag-b2-09",
+          "type": "text-input",
+          "sentence": "Ojalá (yo, estudiar) _____ más el año pasado; ahora no tendría este problema.",
+          "answer": "hubiera estudiado",
+          "altAnswers": [
+            "hubiese estudiado"
+          ],
+          "teaches": [
+            "counterfactual-wishes"
+          ]
+        },
+        {
+          "id": "es-diag-b2-10",
+          "type": "text-input",
+          "sentence": "Por más que (tú, insistir) _____ mañana, no voy a cambiar de idea.",
+          "answer": "insistas",
+          "altAnswers": [],
+          "teaches": [
+            "concesivas-por-mas-que"
           ]
         }
       ],
@@ -721,62 +713,6 @@
         },
         {
           "id": "es-diag-c1-05",
-          "sentence": "Según fuentes no confirmadas, el director _____ su cargo ayer.",
-          "options": [
-            "habría dejado",
-            "dejaría",
-            "dejará",
-            "haya dejado"
-          ],
-          "correct": 0,
-          "teaches": [
-            "condicional-de-rumor"
-          ]
-        },
-        {
-          "id": "es-diag-c1-06",
-          "sentence": "Esa película ya _____ he visto tres veces.",
-          "options": [
-            "la",
-            "le",
-            "lo",
-            "se"
-          ],
-          "correct": 0,
-          "teaches": [
-            "dislocacion-clitica"
-          ]
-        },
-        {
-          "id": "es-diag-c1-07",
-          "sentence": "¡Ni que _____ el único que trabaja aquí!",
-          "options": [
-            "fueras",
-            "eres",
-            "seas",
-            "serás"
-          ],
-          "correct": 0,
-          "teaches": [
-            "ni-que-exclamativo"
-          ]
-        },
-        {
-          "id": "es-diag-c1-08",
-          "sentence": "Con lo _____ que está la calle, mejor no salgas ahora.",
-          "options": [
-            "oscura",
-            "oscuro",
-            "oscuras",
-            "oscuros"
-          ],
-          "correct": 0,
-          "teaches": [
-            "con-lo-que-para-lo-que"
-          ]
-        },
-        {
-          "id": "es-diag-c1-09",
           "sentence": "Será muy listo, _____ no sabe trabajar en equipo.",
           "options": [
             "pero",
@@ -790,17 +726,65 @@
           ]
         },
         {
-          "id": "es-diag-c1-10",
-          "sentence": "Recibimos una carta _____ dos preguntas sobre el contrato.",
+          "id": "es-diag-c1-06",
+          "prompt": "Situación: Lees una noticia que todavía no está confirmada.",
+          "sentence": "Según fuentes no confirmadas, el director _____ su cargo ayer.",
           "options": [
-            "que contenía",
-            "conteniendo",
-            "contenida",
-            "contener"
+            "habría dejado",
+            "dejaría",
+            "dejará",
+            "haya dejado"
           ],
           "correct": 0,
           "teaches": [
+            "condicional-de-rumor"
+          ]
+        },
+        {
+          "id": "es-diag-c1-07",
+          "prompt": "Situación: Un compañero dice que nadie trabaja tanto como él, y le respondes con ironía.",
+          "sentence": "¡Ni que _____ el único que trabaja aquí!",
+          "options": [
+            "fueras",
+            "eres",
+            "serías",
+            "serás"
+          ],
+          "correct": 0,
+          "teaches": [
+            "ni-que-exclamativo"
+          ]
+        },
+        {
+          "id": "es-diag-c1-08",
+          "type": "text-input",
+          "sentence": "Con lo (oscuro) _____ que está la calle, mejor no salgas ahora.",
+          "answer": "oscura",
+          "altAnswers": [],
+          "teaches": [
+            "con-lo-que-para-lo-que"
+          ]
+        },
+        {
+          "id": "es-diag-c1-09",
+          "type": "text-input",
+          "sentence": "Recibimos una carta que (contener) _____ dos preguntas sobre el contrato.",
+          "answer": "contenía",
+          "altAnswers": [
+            "contiene"
+          ],
+          "teaches": [
             "gerundio-normativo"
+          ]
+        },
+        {
+          "id": "es-diag-c1-10",
+          "type": "text-input",
+          "sentence": "Tenía tanta hambre que (comerse, él) _____ toda la pizza.",
+          "answer": "se comió",
+          "altAnswers": [],
+          "teaches": [
+            "se-aspectual"
           ]
         }
       ],

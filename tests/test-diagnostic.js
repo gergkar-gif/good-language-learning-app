@@ -14,9 +14,9 @@ langs.forEach(lang => {
 
     assert.strictEqual(data.passRatio, 0.83, `${lang}: passRatio must be 0.83 (10 of 12)`);
     assert(Array.isArray(data.tiers), `${lang}: tiers array exists`);
-    assert.strictEqual(data.tiers.length, 3, `${lang}: must have 3 tiers (A1, A2, B1)`);
-
-    const expectedLevels = ['A1', 'A2', 'B1'];
+    // B2 and C1 tiers added 2026-11-25, when every course had content up to C1
+    const expectedLevels = ['A1', 'A2', 'B1', 'B2', 'C1'];
+    assert.strictEqual(data.tiers.length, expectedLevels.length, `${lang}: must have ${expectedLevels.length} tiers (${expectedLevels.join(', ')})`);
     data.tiers.forEach((tier, tIdx) => {
         assert.strictEqual(tier.level, expectedLevels[tIdx], `${lang}: tier ${tIdx} level is ${expectedLevels[tIdx]}`);
         assert.strictEqual(tier.questions.length, 10, `${lang} ${tier.level}: must have exactly 10 questions`);
@@ -63,7 +63,7 @@ langs.forEach(lang => {
         });
     });
 
-    console.log(`[PASS] ${lang} diagnostic-test.json structure validated (3 tiers, 10 core questions + readingSection each, pass mark 10 of 12).`);
+    console.log(`[PASS] ${lang} diagnostic-test.json structure validated (5 tiers, 10 core questions + readingSection each, pass mark 10 of 12).`);
 });
 
 // 2. Test evaluation logic
