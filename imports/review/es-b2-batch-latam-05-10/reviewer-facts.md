@@ -71,3 +71,14 @@ Claim | verdict | source ("—" = reviewer's knowledge, no source fetched). Sent
 | GDP −35 % 1989–1993; Maleconazo Aug 1994, ~35,000 rafters; thaw Dec 2014, Obama visit 2016; >240 Trump measures; monetary unification 2021; 11J 2021 | True ("las más extendidas en seis décadas": attribute). | — |
 | "entre 2022 y 2024, más de medio millón … casi el cinco por ciento" | Estimates differ widely: "cientos de miles de personas emigraron desde 2021". | — |
 | Present-day 2026 | Fuel crisis: Venezuelan oil stopped after Maduro's capture (January 2026) and the US threatened tariffs on suppliers; repeated nationwide blackouts in 2026. Dated, no judgement. | [El Imparcial, 2026-03-16](https://www.elimparcial.com/mundo/2026/03/16/el-sistema-electrico-de-cuba-sufre-colapso-total-y-sume-a-la-isla-en-un-apagon-nacional-por-primera-vez-en-2026/) |
+
+## Agent A's open claims (reviewer's knowledge, no source fetched)
+| Claim | Verdict |
+|---|---|
+| Remittances "cerca de una cuarta parte" of the economy in 2023 (World Bank) | Consistent with World Bank data (El Salvador ~24 %, Honduras ~26 % of GDP). Keep, attributed. |
+| Inter-American Court 2015: Honduras violated two Garifuna communities' land rights | True (Punta Piedra, Triunfo de la Cruz, October 2015). |
+| Cáceres: seven convicted 2018; a former DESA executive convicted 2021 | True (David Castillo, July 2021). |
+| Bitcoin legal tender Sept 2021; acceptance made voluntary January 2025 | True. |
+| ICJ 1992: the Gulf of Fonseca waters shared by the three states | True (judgment of September 1992). |
+| IACHR: more than 300 deaths in the 2018 protests | True (IACHR count above 320). |
+| "alrededor del 5 %" of the world's species in Costa Rica | Common estimate; keep attributed. |
