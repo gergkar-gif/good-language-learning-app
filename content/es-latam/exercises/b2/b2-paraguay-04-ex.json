@@ -5,94 +5,130 @@
       "id": "b2-paraguay-04.ex01",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "paraguay-adverbiales-lugar"
-      ],
-      "question": "¿Qué locución locativa expresa desplazamiento hacia el interior de un territorio agreste o continental?",
+      "question": "You are talking about the quebracho and want to add a quick side remark about tannin. Which sentence does that?",
       "options": [
-        "Mar adentro",
-        "Tierra adentro",
-        "Cuesta abajo",
-        "De par en par"
+        "El quebracho tiene madera dura; dicho sea de paso, de él se extrae el tanino.",
+        "El quebracho tiene madera dura; volviendo a lo que decíamos, de él se extrae el tanino.",
+        "El quebracho tiene madera dura; por lo tanto, de él se extrae el tanino."
       ],
-      "correct": 1
+      "correct": 0,
+      "teaches": [
+        "marcadores-digresion"
+      ]
     },
     {
       "id": "b2-paraguay-04.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "A __ de los menonitas, llegaron al Chaco en 1927.",
+      "english": "Speaking of the Mennonites, they arrived in the Chaco in 1927.",
+      "answer": "propósito",
       "teaches": [
-        "paraguay-adverbiales-lugar"
-      ],
-      "sentence": "Los exploradores navegaron río __ buscando la confluencia con el Pilcomayo.",
-      "answer": "abajo",
-      "english": "The explorers navigated downriver looking for the confluence with the Pilcomayo."
+        "marcadores-digresion"
+      ]
     },
     {
       "id": "b2-paraguay-04.ex03",
-      "type": "matching",
+      "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "paraguay-adverbiales-lugar"
+      "tiles": [
+        "Volviendo",
+        "a",
+        "lo",
+        "que",
+        "decíamos,",
+        "el",
+        "Chaco",
+        "es",
+        "un",
+        "lugar",
+        "muy",
+        "seco."
       ],
-      "pairs": [
-        [
-          "tierra adentro",
-          "penetración hacia el interior territorial"
-        ],
-        [
-          "río abajo",
-          "navegación en el sentido de la corriente"
-        ],
-        [
-          "en los confines de",
-          "límite extremo o remoto de una región"
-        ],
-        [
-          "a lo largo y ancho de",
-          "cobertura completa de un espacio geográfico"
-        ]
+      "solution": [
+        "Volviendo",
+        "a",
+        "lo",
+        "que",
+        "decíamos,",
+        "el",
+        "Chaco",
+        "es",
+        "un",
+        "lugar",
+        "muy",
+        "seco."
+      ],
+      "english": "Going back to what we were saying, the Chaco is a very dry place.",
+      "teaches": [
+        "marcadores-digresion"
       ]
     },
     {
       "id": "b2-paraguay-04.ex04",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "paraguay-adverbiales-lugar"
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "el quebracho",
+          "very hard wood tree"
+        ],
+        [
+          "el tanino",
+          "tannin"
+        ],
+        [
+          "el menonita",
+          "Mennonite"
+        ],
+        [
+          "la cooperativa",
+          "cooperative"
+        ]
       ],
-      "sentence": "En los __ del Gran Chaco, habitan comunidades indígenas en armonía con el monte.",
-      "answer": "confines",
-      "english": "In the confines of the Gran Chaco, indigenous communities live in harmony with the wilderness."
+      "teaches": [
+        "b2-paraguay-vocab"
+      ]
     },
     {
       "id": "b2-paraguay-04.ex05",
-      "type": "multiple-choice",
-      "category": "vocabulary",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Qué es el quebracho?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Es una planta muy útil."
+        }
+      ],
+      "options": [
+        "Un árbol del Chaco con madera muy dura y mucho tanino.",
+        "Una cooperativa de los menonitas en Filadelfia.",
+        "Una guerra entre Bolivia y Paraguay."
+      ],
+      "correct": 0,
       "teaches": [
         "b2-paraguay-vocab"
-      ],
-      "question": "¿Qué sustancia química extraída del quebracho colorado fue esencial para el curtido de cueros?",
-      "options": [
-        "El caucho",
-        "El tanino",
-        "El salitre",
-        "El guano"
-      ],
-      "correct": 1
+      ]
     },
     {
       "id": "b2-paraguay-04.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué ciudad es el epicentro agroindustrial cooperativo fundado por menonitas en el Chaco central?",
+      "question": "What does the text say about the Chaco War?",
       "options": [
-        "Encarnación",
-        "Filadelfia",
-        "Villarrica",
-        "Concepción"
+        "Fue una guerra entre Bolivia y Paraguay, de 1932 a 1935.",
+        "Fue una guerra entre Paraguay y Brasil, de 1864 a 1870.",
+        "Fue una guerra ganada por los menonitas en 1927."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

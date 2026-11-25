@@ -524,6 +524,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-25 | ES B2 latam Units 5–10 (es-latam, hidden track) | two edit-in-place agents (Sonnet), **three units each**; Units 7–10 topic-only | A 353,430 (17 min), B 396,874 (21 min); ~125k a unit | | 114 errors / 102 suspects → 0 / 1 accepted, unmet 0 | walked 36/36, all frozen; 3 challenges fixed, 12 shared checklist lines fixed by a new script |
 | 11-25 | ES B2 latam Units 11–16 (es-latam, hidden track) | two edit-in-place agents (Sonnet), three units each; all topic-only; facts searched before launch | A 362,333 (20 min), B 346,891 (19 min); ~118k a unit | | 79 errors / 65 suspects → 0 / 4 accepted, unmet 0 | walked 36/36, all frozen; invented witnesses cut; 2 new scripts (`story-quote`, `latam_consolidation_story.py`) |
 | 11-25 | ES B2 latam Units 17–22 (es-latam, hidden track) | two edit-in-place agents (Sonnet), three units each; all topic-only | A 328,360 (18 min), B 320,171 (16 min); ~108k a unit | | 48 errors / 78 suspects → 0 / 2 accepted, unmet 0 | walked 36/36, all frozen; 3 reviewer text edits |
+| 11-25 | ES B2 latam Units 23–28 (es-latam, hidden track) | two edit-in-place agents (Sonnet), three units each; mixed units (re-pointing, duplicates) | A 306,244 (16 min), B 310,142 (17 min); ~103k a unit | | 56 errors / 148 suspects → 0 / 2 accepted, unmet 0 | walked 36/36, all frozen; 2 challenges and 1 recap fixed |
 | 11-14 | HU C1 core Units 1–8 (first C1 batch, no pilot) | read-first, two Sonnet readers, **four units each** (Units 2–8 half-size, 52 items), B stopped once by the 5-hour limit | A 363,583 (17 min), B 353,181 (15 min); ~90k a unit | 737 applied | 50 errors / 100 suspects → 0 / 40 accepted (38 `vocab-unused` stems), unmet 79 → 18 lookup misses | walked 48/48, all frozen; 5 registry moves signed off; 28 retired tags retagged |
 | 11-14 | HU C1 core Units 9–16 | read-first, two Sonnet readers, four units each, extras via `stage_extras.py` | A 383,237 (20 min), B 422,476 (21 min); ~100k a unit | 898 applied | 66 errors / 80 suspects → 0 / 40 accepted (`vocab-unused`), unmet 68 → 31 lookup misses | walked 48/48, all frozen (C1 16/72); 175 retired tags retagged |
 | 11-14 | HU C1 core Units 17–24 | four units each; both readers stopped by the 5-hour limit and resumed after the reset | resumed runs only: A 376,461, B 364,720 (~90k a unit, a floor) | 864 applied | 65 errors / 113 suspects → 0 / 40 accepted, unmet 119 → 52 lookup misses | walked 48/48, all frozen (C1 24/72); c1-22-01 gained the epistemic past modals |
@@ -2365,4 +2366,13 @@ drafted by Antigravity from `notes/README.md`; read those notes as part of the u
   the right guard; syncing `canDo` from the lesson and checking the target still fits takes minutes.
 - **The reviewer's read still finds dated-fact errors no check sees** (the 2008 referendum date,
   Quito "first", the Valech figure). Keep reading every text during the wait.
+
+### 2026-11-25: ES B2 latam Units 23–28
+
+- **~103k a unit**, falling batch on batch at three per agent (125 → 118 → 108 → 103k).
+- **Lessons with no goal section** (25 here): `add_missing_checklists.py --from-challenges <drafts>`
+  builds their checklist from the agent's challenge `canDo`; run it per unit before
+  `add_challenges.py`.
+- **Near-duplicate units** (five concession lessons; one skill twice) were caught at setup by listing
+  each lesson's skill; the notes re-pointed them and both agents followed.
 

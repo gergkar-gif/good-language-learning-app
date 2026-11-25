@@ -3,96 +3,140 @@
   "exercises": [
     {
       "id": "b2-argentinaregiones-01.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "la llanura",
+          "plain, flat open land"
+        ],
+        [
+          "el gaucho",
+          "gaucho, horseman of the pampas"
+        ],
+        [
+          "la estancia",
+          "large cattle ranch"
+        ],
+        [
+          "el arreo",
+          "cattle drive"
+        ],
+        [
+          "la payada",
+          "improvised song with a guitar"
+        ]
+      ],
       "teaches": [
-        "concesivas-si-bien"
-      ],
-      "question": "¿Qué modo verbal rige obligatoriamente el conector concesivo formal 'si bien' en la prosa culta?",
-      "options": [
-        "Modo indicativo, pues introduce una objeción que se presenta como un hecho indudable y constatado.",
-        "Modo subjuntivo en todos los casos por tratarse de una cláusula concesiva.",
-        "Infinitivo compuesto precedido de preposición temporal obligatoria.",
-        "Imperativo afirmativo con pronombre enclítico adherido al final."
-      ],
-      "correct": 0
+        "b2-argentina-pampas-patagonia-vocab"
+      ]
     },
     {
       "id": "b2-argentinaregiones-01.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "__ bien la pampa parece plana, tiene paisajes muy variados.",
+      "answer": "Si",
+      "english": "Although the pampa looks flat, it has very varied landscapes.",
       "teaches": [
         "concesivas-si-bien"
-      ],
-      "sentence": "Si bien la llanura pampeana __ un suelo de excepcional fertilidad, exige una labor ganadera constante.",
-      "answer": "posee",
-      "english": "Although the pampas plain possesses an exceptionally fertile soil, it demands constant livestock labor."
+      ]
     },
     {
       "id": "b2-argentinaregiones-01.ex03",
       "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence says: \"Although the pampa looks flat, it has varied landscapes\"?",
+      "options": [
+        "Si bien la pampa parece plana, tiene paisajes variados.",
+        "Si bien que la pampa parece plana, tiene paisajes variados.",
+        "Si bien la pampa parezca plana, tiene paisajes variados."
+      ],
+      "correct": 0,
       "teaches": [
         "concesivas-si-bien"
-      ],
-      "question": "¿Qué relación argumentativa establece 'si bien' en: 'Si bien el Martín Fierro nació como protesta social, fue canonizado como poema patrio'?",
-      "options": [
-        "Expresa una condición hipotética sin valor en el mundo real.",
-        "Concede un hecho verificado para inmediatamente contraponer una afirmación de mayor peso histórico.",
-        "Señala la causa biológica de la extinción del nomadismo gaucho.",
-        "Indica una consecuencia puramente cronológica entre dos acontecimientos desvinculados."
-      ],
-      "correct": 1
+      ]
     },
     {
       "id": "b2-argentinaregiones-01.ex04",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "Si",
+        "bien",
+        "el",
+        "gaucho",
+        "fue",
+        "una",
+        "figura",
+        "real,",
+        "su",
+        "imagen",
+        "es",
+        "en",
+        "parte",
+        "un",
+        "mito."
+      ],
+      "solution": [
+        "Si",
+        "bien",
+        "el",
+        "gaucho",
+        "fue",
+        "una",
+        "figura",
+        "real,",
+        "su",
+        "imagen",
+        "es",
+        "en",
+        "parte",
+        "un",
+        "mito."
+      ],
+      "english": "Although the gaucho was a real figure, his image is partly a myth.",
       "teaches": [
         "concesivas-si-bien"
-      ],
-      "sentence": "El alambrado transformó las estancias, si bien la memoria del gaucho libre __ viva en la tradición.",
-      "answer": "sigue",
-      "english": "The wire fencing transformed the ranches, although the memory of the free gaucho remains alive in tradition."
+      ]
     },
     {
       "id": "b2-argentinaregiones-01.ex05",
-      "type": "matching",
-      "category": "vocabulary",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "En el documental dijeron que visitaron una estancia. ¿Qué es?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Ahora lo entiendo."
+        }
+      ],
+      "options": [
+        "Es una gran propiedad rural con muchas vacas.",
+        "Es una canción improvisada que se canta con guitarra.",
+        "Es un viaje con vacas de un lugar a otro."
+      ],
+      "correct": 0,
       "teaches": [
         "b2-argentina-pampas-patagonia-vocab"
-      ],
-      "pairs": [
-        [
-          "la llanura pampeana",
-          "the fertile pampas plain"
-        ],
-        [
-          "la payada criolla",
-          "the improvised sung poetic duel"
-        ],
-        [
-          "el arreo de hacienda",
-          "the cattle drive / herding"
-        ],
-        [
-          "el facón gaucho",
-          "the traditional gaucho dagger"
-        ]
       ]
     },
     {
       "id": "b2-argentinaregiones-01.ex06",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Cuál fue el impacto social y literario central del poema 'El gaucho Martín Fierro' de José Hernández?",
-      "options": [
-        "Promover la llegada masiva de ferrocarriles británicos a las provincias del interior.",
-        "Denunciar los abusos de las levas militares forzosas y defender la dignidad humana del gaucho marginado.",
-        "Fomentar la emigración de los peones rurales hacia los conventillos de la capital porteña.",
-        "Exigir la prohibición definitiva del canto payadoril en las pulperías de frontera."
-      ],
-      "correct": 1
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "Si bien la pampa parece plana, tiene lagunas, ríos y paisajes muy distintos.",
+      "english": "Although the pampa looks flat, it has lagoons, rivers and very different landscapes.",
+      "teaches": [
+        "concesivas-si-bien"
+      ]
     }
   ]
 }

@@ -3,86 +3,28 @@
   "exercises": [
     {
       "id": "b2-argentinaba-02.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál es la forma verbal correcta del voseo rioplatense para el presente de indicativo del verbo 'saber'?",
-      "options": [
-        "Vos sabés",
-        "Vos sabes",
-        "Vos sabís",
-        "Vos sepás"
-      ],
-      "correct": 0,
-      "teaches": [
-        "voseo-rioplatense-reconocimiento"
-      ]
-    },
-    {
-      "id": "b2-argentinaba-02.ex02",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Si querés comprender la historia de los inmigrantes en La Boca, __ al antiguo conventillo de la calle Garibaldi.",
-      "answer": "andá",
-      "english": "If you want to understand the history of immigrants in La Boca, go to the old tenement on Garibaldi Street.",
-      "teaches": [
-        "voseo-rioplatense-reconocimiento"
-      ]
-    },
-    {
-      "id": "b2-argentinaba-02.ex03",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Decime",
-        "la",
-        "verdad",
-        "sobre",
-        "las",
-        "condiciones",
-        "en",
-        "el",
-        "inquilinato."
-      ],
-      "solution": [
-        "Decime",
-        "la",
-        "verdad",
-        "sobre",
-        "las",
-        "condiciones",
-        "en",
-        "el",
-        "inquilinato."
-      ],
-      "english": "Tell me the truth about the conditions in the tenement house.",
-      "teaches": [
-        "voseo-rioplatense-reconocimiento"
-      ]
-    },
-    {
-      "id": "b2-argentinaba-02.ex04",
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
         [
-          "conventillo",
-          "tenement boarding house"
+          "el conventillo",
+          "tenement, large house with many families"
         ],
         [
-          "cocoliche",
-          "Italian-Spanish immigrant hybrid dialect"
+          "el cocoliche",
+          "mixed Italian and Spanish speech of immigrants"
         ],
         [
-          "inquilinato",
-          "tenement housing system"
+          "la colectividad",
+          "community of people from the same country"
         ],
         [
-          "crisol",
-          "melting pot / crucible"
+          "el hacinamiento",
+          "overcrowding"
         ],
         [
-          "chapa",
-          "corrugated sheet metal"
+          "el arribo",
+          "arrival"
         ]
       ],
       "teaches": [
@@ -90,38 +32,96 @@
       ]
     },
     {
-      "id": "b2-argentinaba-02.ex05",
-      "type": "dialogue-complete",
+      "id": "b2-argentinaba-02.ex02",
+      "type": "fill-blank",
       "category": "grammar",
-      "prompt": [
-        {
-          "speaker": "Mateo",
-          "text": "¿Tenés tiempo de revisar los documentos de desembarco de mi abuelo?"
-        },
-        {
-          "speaker": "Sofía",
-          "text": "Claro, pasámelos ahora mismo; __ que me apasiona la historia familiar."
-        }
-      ],
+      "sentence": "Los barcos __ llegando al puerto cada semana.",
+      "answer": "iban",
+      "english": "Ships kept arriving at the port every week.",
+      "teaches": [
+        "gerund-periphrases"
+      ]
+    },
+    {
+      "id": "b2-argentinaba-02.ex03",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence says: \"The neighbourhood was gradually filling up with immigrants\"?",
       "options": [
-        "vos sabés",
-        "tú sabes",
-        "usted sabe",
-        "vosotros sabéis"
+        "El barrio se iba llenando de inmigrantes.",
+        "El barrio se llenando de inmigrantes.",
+        "El barrio se iba lleno de inmigrantes."
       ],
       "correct": 0,
       "teaches": [
-        "voseo-rioplatense-reconocimiento"
+        "gerund-periphrases"
+      ]
+    },
+    {
+      "id": "b2-argentinaba-02.ex04",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Muchos",
+        "inmigrantes",
+        "seguían",
+        "hablando",
+        "su",
+        "lengua",
+        "en",
+        "casa."
+      ],
+      "solution": [
+        "Muchos",
+        "inmigrantes",
+        "seguían",
+        "hablando",
+        "su",
+        "lengua",
+        "en",
+        "casa."
+      ],
+      "english": "Many immigrants still spoke their language at home.",
+      "teaches": [
+        "gerund-periphrases"
+      ]
+    },
+    {
+      "id": "b2-argentinaba-02.ex05",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "En el documental decían que vivían en un conventillo. ¿Qué es?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Gracias, ahora lo entiendo."
+        }
+      ],
+      "options": [
+        "Es una casa grande donde vivían muchas familias.",
+        "Es una forma de hablar que mezcla italiano y español.",
+        "Es un grupo de personas del mismo país."
+      ],
+      "correct": 0,
+      "teaches": [
+        "b2-argentina-buenos-aires-vocab"
       ]
     },
     {
       "id": "b2-argentinaba-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Mirá con atención las cartas que los obreros enviaban a sus familias en Génova y Nápoles.",
-      "english": "Look carefully at the letters that the workers sent to their families in Genoa and Naples.",
+      "sentence": "El barrio se iba llenando de familias que venían de Italia y de España.",
+      "english": "The neighbourhood was gradually filling up with families from Italy and Spain.",
       "teaches": [
-        "voseo-rioplatense-reconocimiento"
+        "gerund-periphrases"
       ]
     }
   ]

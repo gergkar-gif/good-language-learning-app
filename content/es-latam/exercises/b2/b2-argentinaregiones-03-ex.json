@@ -3,96 +3,139 @@
   "exercises": [
     {
       "id": "b2-argentinaregiones-03.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "la quebrada",
+          "ravine, narrow mountain valley"
+        ],
+        [
+          "el pucará",
+          "pre-Hispanic stone fortress"
+        ],
+        [
+          "el adobe",
+          "mud brick dried in the sun"
+        ],
+        [
+          "la copla",
+          "short folk verse"
+        ],
+        [
+          "el cardón",
+          "giant cactus"
+        ]
+      ],
       "teaches": [
-        "contrast-concession-connectors"
-      ],
-      "question": "¿Qué función cumple el conector 'si bien es cierto que' en la argumentación formal?",
-      "options": [
-        "Concede de manera explícita un argumento preliminar para introducir a continuación una objeción decisiva.",
-        "Niega tajantemente la veracidad de la proposición que lo precede.",
-        "Formula una pregunta retórica dirigida a los habitantes de los valles andinos.",
-        "Introduce un ejemplo aislado sin relación con la tesis del párrafo."
-      ],
-      "correct": 0
+        "b2-argentina-pampas-patagonia-vocab"
+      ]
     },
     {
       "id": "b2-argentinaregiones-03.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "La quebrada es muy seca; __, allí viven muchas comunidades.",
+      "english": "The ravine is very dry; however, many communities live there.",
       "teaches": [
         "contrast-concession-connectors"
       ],
-      "sentence": "Los valles calchaquíes sufren un aislamiento secular; no __, su producción artesanal y enológica es reconocida mundialmente.",
-      "answer": "obstante",
-      "english": "The Calchaquí Valleys suffer centuries-old isolation; nevertheless, their artisanal and wine production is world renowned."
+      "answers": [
+        "sin embargo",
+        "no obstante"
+      ]
     },
     {
       "id": "b2-argentinaregiones-03.ex03",
       "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence says: \"The valley is small. However, corn is grown there\"?",
+      "options": [
+        "El valle es pequeño. Sin embargo, allí se cultiva maíz.",
+        "El valle es pequeño. Por eso, allí se cultiva maíz.",
+        "El valle es pequeño. Además, allí se cultiva maíz."
+      ],
+      "correct": 0,
       "teaches": [
         "contrast-concession-connectors"
       ],
-      "question": "¿Cómo se puntúan conectores parentéticos como 'con todo' y 'no obstante' cuando van al inicio de una oración coordinada?",
-      "options": [
-        "Se colocan entre signos de admiración para enfatizar la sorpresa.",
-        "Van seguidos obligatoriamente de una coma que los aísla del resto del enunciado.",
-        "Deben escribirse en cursiva y sin ninguna marca de puntuación posterior.",
-        "Se unen mediante guiones a la primera palabra de la cláusula subordinada."
-      ],
-      "correct": 1
+      "distractor_skills": {
+        "1": "porque-y-por-eso",
+        "2": "ordering-markers"
+      }
     },
     {
       "id": "b2-argentinaregiones-03.ex04",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "La",
+        "quebrada",
+        "es",
+        "seca;",
+        "no",
+        "obstante,",
+        "hay",
+        "pueblos",
+        "con",
+        "mucha",
+        "vida."
+      ],
+      "solution": [
+        "La",
+        "quebrada",
+        "es",
+        "seca;",
+        "no",
+        "obstante,",
+        "hay",
+        "pueblos",
+        "con",
+        "mucha",
+        "vida."
+      ],
+      "english": "The ravine is dry; nevertheless, there are towns full of life.",
       "teaches": [
         "contrast-concession-connectors"
-      ],
-      "sentence": "Las capillas de adobe son vulnerables a las inclemencias sísmicas; con __, han resistido varios siglos en pie.",
-      "answer": "todo",
-      "english": "The adobe chapels are vulnerable to seismic shocks; all the same, they have stood firm for several centuries."
+      ]
     },
     {
       "id": "b2-argentinaregiones-03.ex05",
-      "type": "matching",
-      "category": "vocabulary",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "En el documental mostraron un pucará. ¿Qué es?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Qué interesante."
+        }
+      ],
+      "options": [
+        "Es una fortaleza de piedra de los pueblos antiguos.",
+        "Es un material de construcción de la región.",
+        "Es un verso popular que se canta en las fiestas."
+      ],
+      "correct": 0,
       "teaches": [
         "b2-argentina-pampas-patagonia-vocab"
-      ],
-      "pairs": [
-        [
-          "el pucará de piedra",
-          "the pre-Columbian stone fortress"
-        ],
-        [
-          "la devoción a la pachamama",
-          "the devotion to Mother Earth"
-        ],
-        [
-          "la quebrada tectónica",
-          "the tectonic canyon / ravine"
-        ],
-        [
-          "el cardón centenario",
-          "the ancient columnar cactus"
-        ]
       ]
     },
     {
       "id": "b2-argentinaregiones-03.ex06",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué práctica ritual tradicional celebran las comunidades andinas del noroeste argentino cada primero de agosto?",
-      "options": [
-        "La inauguración de nuevas acequias de cemento para desviar el río Grande.",
-        "La ceremonia de la corpachada para alimentar y sahumar a la Pachamama en agradecimiento por su fertilidad.",
-        "Una carrera de caballos criollos a lo largo de las terrazas de Purmamarca.",
-        "La quema solemne de instrumentos musicales coloniales en la plaza de Tilcara."
-      ],
-      "correct": 1
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "La región es seca; sin embargo, muchas comunidades viven allí desde hace siglos.",
+      "english": "The region is dry; however, many communities have lived there for centuries.",
+      "teaches": [
+        "contrast-concession-connectors"
+      ]
     }
   ]
 }

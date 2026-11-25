@@ -3,92 +3,28 @@
   "exercises": [
     {
       "id": "b2-argentinaba-04.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué marcador discursivo es más idóneo para introducir una consideración analítica destacada en un ensayo?",
-      "options": [
-        "Cabe señalar que",
-        "O sea que",
-        "Total que",
-        "De buenas a primeras"
-      ],
-      "correct": 0,
-      "teaches": [
-        "argument-markers"
-      ]
-    },
-    {
-      "id": "b2-argentinaba-04.ex02",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "__ destacar que la tertulia de cafetín cumplió el rol de una verdadera asamblea cívica en la metrópolis.",
-      "answer": "Es menester",
-      "english": "It is necessary to highlight that the café salon fulfilled the role of a true civic assembly in the metropolis.",
-      "teaches": [
-        "argument-markers"
-      ]
-    },
-    {
-      "id": "b2-argentinaba-04.ex03",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "En",
-        "lo",
-        "que",
-        "atañe",
-        "al",
-        "psicoanálisis",
-        "Buenos",
-        "Aires",
-        "posee",
-        "una",
-        "vitalidad",
-        "incomparable."
-      ],
-      "solution": [
-        "En",
-        "lo",
-        "que",
-        "atañe",
-        "al",
-        "psicoanálisis",
-        "Buenos",
-        "Aires",
-        "posee",
-        "una",
-        "vitalidad",
-        "incomparable."
-      ],
-      "english": "As far as psychoanalysis is concerned, Buenos Aires possesses an incomparable vitality.",
-      "teaches": [
-        "argument-markers"
-      ]
-    },
-    {
-      "id": "b2-argentinaba-04.ex04",
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
         [
-          "psicoanálisis",
+          "el psicoanálisis",
           "psychoanalysis"
         ],
         [
-          "tertulia",
-          "literary gathering / café discussion group"
+          "la tertulia",
+          "regular gathering of friends to talk"
         ],
         [
-          "diván",
-          "psychoanalytic couch / divan"
+          "el cafetín",
+          "small traditional café"
         ],
         [
-          "cafetín",
-          "traditional small Buenos Aires café"
+          "la librería",
+          "bookshop"
         ],
         [
-          "introspección",
-          "introspection"
+          "el inconsciente",
+          "the unconscious mind"
         ]
       ],
       "teaches": [
@@ -96,24 +32,25 @@
       ]
     },
     {
-      "id": "b2-argentinaba-04.ex05",
-      "type": "dialogue-complete",
+      "id": "b2-argentinaba-04.ex02",
+      "type": "fill-blank",
       "category": "grammar",
-      "prompt": [
-        {
-          "speaker": "Profesor",
-          "text": "¿Toda la literatura nocturna de Corrientes responde a la evasión bohemia?"
-        },
-        {
-          "speaker": "Alumna",
-          "text": "No exactamente; __ que muchos autores producían allí su crítica social más rigurosa."
-        }
-      ],
+      "sentence": "En __, los cafés y las librerías de Buenos Aires son lugares para conversar.",
+      "answer": "resumen",
+      "english": "In short, the cafés and bookshops of Buenos Aires are places for conversation.",
+      "teaches": [
+        "argument-markers"
+      ]
+    },
+    {
+      "id": "b2-argentinaba-04.ex03",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence says: \"The most important thing is that cafés are places to talk\"?",
       "options": [
-        "convendría matizar",
-        "sale sobrando",
-        "da lo mismo",
-        "se viene abajo"
+        "Lo más importante es que los cafés son lugares para conversar.",
+        "Lo más importante es los cafés son lugares para conversar.",
+        "Lo más importante que los cafés son lugares para conversar."
       ],
       "correct": 0,
       "teaches": [
@@ -121,11 +58,74 @@
       ]
     },
     {
+      "id": "b2-argentinaba-04.ex04",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "En",
+        "resumen,",
+        "Buenos",
+        "Aires",
+        "es",
+        "una",
+        "ciudad",
+        "de",
+        "cafés",
+        "y",
+        "librerías."
+      ],
+      "solution": [
+        "En",
+        "resumen,",
+        "Buenos",
+        "Aires",
+        "es",
+        "una",
+        "ciudad",
+        "de",
+        "cafés",
+        "y",
+        "librerías."
+      ],
+      "english": "In short, Buenos Aires is a city of cafés and bookshops.",
+      "teaches": [
+        "argument-markers"
+      ]
+    },
+    {
+      "id": "b2-argentinaba-04.ex05",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "Quedamos con unos amigos en una tertulia. ¿Sabes qué es?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "Sí, eso es."
+        }
+      ],
+      "options": [
+        "Sí, es una reunión de amigos que conversan en un café.",
+        "Sí, es una librería con muchos libros antiguos.",
+        "Sí, es un tratamiento para hablar de los problemas."
+      ],
+      "correct": 0,
+      "teaches": [
+        "b2-argentina-buenos-aires-vocab"
+      ]
+    },
+    {
       "id": "b2-argentinaba-04.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Resulta evidente que el debate filosófico nocturno moldeó la identidad intelectual de la ciudad.",
-      "english": "It is evident that nocturnal philosophical debate shaped the intellectual identity of the city.",
+      "sentence": "En resumen, los porteños usan los cafés para conversar y para leer.",
+      "english": "In short, the people of Buenos Aires use cafés to talk and to read.",
       "teaches": [
         "argument-markers"
       ]

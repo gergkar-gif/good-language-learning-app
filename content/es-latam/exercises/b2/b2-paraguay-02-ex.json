@@ -5,94 +5,139 @@
       "id": "b2-paraguay-02.ex01",
       "type": "multiple-choice",
       "category": "grammar",
+      "question": "Some historians say the missions protected the Guaraní, but others say the Jesuits controlled their lives. Which sentence joins the two ideas as a contrast?",
+      "options": [
+        "Las misiones protegieron a los guaraníes; no obstante, según otros, los jesuitas controlaban su vida.",
+        "Las misiones protegieron a los guaraníes; por eso, según otros, los jesuitas controlaban su vida.",
+        "Las misiones protegieron a los guaraníes; así que, según otros, los jesuitas controlaban su vida."
+      ],
+      "correct": 0,
       "teaches": [
         "contrast-concession-connectors"
       ],
-      "question": "¿Qué modo verbal debe seguir obligatoriamente al nexo concesivo culto 'si bien'?",
-      "options": [
-        "Subjuntivo imperativo",
-        "Indicativo",
-        "Infinitivo compuesto",
-        "Gerundio continuo"
-      ],
-      "correct": 1
+      "distractor_skills": {
+        "1": "porque-y-por-eso"
+      }
     },
     {
       "id": "b2-paraguay-02.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Los jesuitas fueron expulsados en 1767; no __, las ruinas de las misiones siguen en pie.",
+      "english": "The Jesuits were expelled in 1767; nevertheless, the ruins of the missions are still standing.",
+      "answer": "obstante",
       "teaches": [
         "contrast-concession-connectors"
-      ],
-      "sentence": "Si __ las misiones sufrieron el expolio colonial, su legado artístico perdura en la memoria.",
-      "answer": "bien",
-      "english": "Although the missions suffered colonial plundering, their artistic legacy endures in memory."
+      ]
     },
     {
       "id": "b2-paraguay-02.ex03",
-      "type": "matching",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "La",
+        "iglesia",
+        "de",
+        "Jesús",
+        "quedó",
+        "sin",
+        "terminar;",
+        "sin",
+        "embargo,",
+        "hoy",
+        "es",
+        "patrimonio",
+        "de",
+        "la",
+        "humanidad."
+      ],
+      "solution": [
+        "La",
+        "iglesia",
+        "de",
+        "Jesús",
+        "quedó",
+        "sin",
+        "terminar;",
+        "sin",
+        "embargo,",
+        "hoy",
+        "es",
+        "patrimonio",
+        "de",
+        "la",
+        "humanidad."
+      ],
+      "english": "The church of Jesús was left unfinished; however, it is a world heritage site today.",
       "teaches": [
         "contrast-concession-connectors"
-      ],
-      "pairs": [
-        [
-          "si bien",
-          "concesión en indicativo de hecho comprobado"
-        ],
-        [
-          "por más que",
-          "concesión enfática con subjuntivo o indicativo"
-        ],
-        [
-          "aun cuando",
-          "concesión extrema en subjuntivo hipotético"
-        ],
-        [
-          "pese a que",
-          "concesión formal de amplio uso ensayístico"
-        ]
       ]
     },
     {
       "id": "b2-paraguay-02.ex04",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "contrast-concession-connectors"
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "la reducción",
+          "Jesuit mission settlement"
+        ],
+        [
+          "el jesuita",
+          "Jesuit"
+        ],
+        [
+          "tallar",
+          "to carve"
+        ],
+        [
+          "el patrimonio",
+          "heritage"
+        ]
       ],
-      "sentence": "Aun __ faltaran herramientas modernas, los tallistas guaraníes erigieron catedrales colosales.",
-      "answer": "cuando",
-      "english": "Even though modern tools were lacking, Guaraní carvers erected colossal cathedrals."
+      "teaches": [
+        "b2-paraguay-vocab"
+      ]
     },
     {
       "id": "b2-paraguay-02.ex05",
-      "type": "multiple-choice",
-      "category": "vocabulary",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Qué pasó con las misiones en 1767?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Por eso hoy solo quedan ruinas."
+        }
+      ],
+      "options": [
+        "El rey de España expulsó a los jesuitas.",
+        "El rey de España fundó más reducciones jesuitas.",
+        "La UNESCO declaró las ruinas patrimonio de la humanidad."
+      ],
+      "correct": 0,
       "teaches": [
         "b2-paraguay-vocab"
-      ],
-      "question": "¿Cómo se llamaba el poblado comunal autónomo fundado por los jesuitas para los indígenas?",
-      "options": [
-        "El latifundio",
-        "La reducción",
-        "El feudo",
-        "El corregimiento"
-      ],
-      "correct": 1
+      ]
     },
     {
       "id": "b2-paraguay-02.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué célebre compositor toscano compuso música sacra barroca interpretada por los guaraníes?",
+      "question": "Which two sites in Paraguay does the text say UNESCO declared World Heritage in 1993?",
       "options": [
-        "Antonio Vivaldi",
-        "Domenico Zipoli",
-        "Claudio Monteverdi",
-        "Arcangelo Corelli"
+        "Trinidad y Jesús de Tavarangüé.",
+        "Asunción y Humaitá.",
+        "Filadelfia y Loma Plata."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

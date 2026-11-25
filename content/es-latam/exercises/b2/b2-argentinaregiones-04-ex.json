@@ -3,96 +3,130 @@
   "exercises": [
     {
       "id": "b2-argentinaregiones-04.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "la estepa",
+          "cold dry grassland"
+        ],
+        [
+          "el colono",
+          "settler"
+        ],
+        [
+          "la meseta",
+          "high plain"
+        ],
+        [
+          "el desprendimiento",
+          "break-off of a block of ice"
+        ],
+        [
+          "el ovino",
+          "sheep"
+        ]
+      ],
       "teaches": [
-        "a-pesar-de"
-      ],
-      "question": "¿Qué elemento sintáctico sigue directamente a la locución preposicional concesiva 'pese a' en: 'Pese al viento incesante, el barco zarpó'?",
-      "options": [
-        "Un sintagma nominal que sintetiza la objeción o dificultad superada.",
-        "Un verbo conjugado en imperfecto de subjuntivo con pronombre enclítico.",
-        "Una conjunción disyuntiva que abre dos alternativas excluyentes.",
-        "Un adverbio de lugar que indica la distancia hacia la costa."
-      ],
-      "correct": 0
+        "b2-argentina-pampas-patagonia-vocab"
+      ]
     },
     {
       "id": "b2-argentinaregiones-04.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "A __ de las dificultades del clima, los colonos galeses se quedaron.",
+      "answer": "pesar",
+      "english": "Despite the difficulties of the climate, the Welsh settlers stayed.",
       "teaches": [
         "a-pesar-de"
-      ],
-      "sentence": "Pese a las bajas temperaturas del invierno patagónico, el glaciar Perito Moreno mantiene un dinamismo __.",
-      "answer": "constante",
-      "english": "In spite of the low temperatures of the Patagonian winter, the Perito Moreno glacier maintains a constant dynamism."
+      ]
     },
     {
       "id": "b2-argentinaregiones-04.ex03",
       "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence says: \"Despite the cold, the settlers stayed\"?",
+      "options": [
+        "A pesar del frío, los colonos se quedaron.",
+        "A pesar de el frío, los colonos se quedaron.",
+        "A pesar de que el frío, los colonos se quedaron."
+      ],
+      "correct": 0,
       "teaches": [
         "a-pesar-de"
-      ],
-      "question": "¿Qué condición suele exigirse para utilizar 'pese a + infinitivo' en lugar de 'pese a que + verbo conjugado'?",
-      "options": [
-        "Que el sujeto del infinitivo coincida con el sujeto gramatical de la oración principal.",
-        "Que la oración se refiera únicamente a sucesos ocurridos en el siglo diecinueve.",
-        "Que el verbo de la cláusula principal pertenezca a la primera conjugación.",
-        "Que no existan adjetivos calificativos en el predicado."
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b2-argentinaregiones-04.ex04",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
+      "tiles": [
+        "Pese",
+        "a",
+        "las",
+        "malas",
+        "cosechas,",
+        "los",
+        "colonos",
+        "no",
+        "se",
+        "fueron."
+      ],
+      "solution": [
+        "Pese",
+        "a",
+        "las",
+        "malas",
+        "cosechas,",
+        "los",
+        "colonos",
+        "no",
+        "se",
+        "fueron."
+      ],
+      "english": "Despite the bad harvests, the settlers did not leave.",
       "teaches": [
         "a-pesar-de"
-      ],
-      "sentence": "Pese a no contar con experiencia previa en suelos áridos, los colonos galeses __ prosperar en el valle del Chubut.",
-      "answer": "lograron",
-      "english": "In spite of not having previous experience in arid soils, the Welsh settlers managed to prosper in the Chubut valley."
+      ]
     },
     {
       "id": "b2-argentinaregiones-04.ex05",
-      "type": "matching",
-      "category": "vocabulary",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Leí sobre la estepa de la Patagonia. ¿Qué es la estepa?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Gracias, ahora lo entiendo."
+        }
+      ],
+      "options": [
+        "Es una llanura muy fría con pocos árboles y mucho viento.",
+        "Es una región con muchos lagos y bosques verdes.",
+        "Es una pared de hielo que cae sobre el lago."
+      ],
+      "correct": 0,
       "teaches": [
         "b2-argentina-pampas-patagonia-vocab"
-      ],
-      "pairs": [
-        [
-          "el ventisquero andino",
-          "the Andean snowfield glacier"
-        ],
-        [
-          "el desprendimiento de hielo",
-          "the ice detachment / calving"
-        ],
-        [
-          "la estepa infinita",
-          "the boundless cold steppe"
-        ],
-        [
-          "la estancia ovina",
-          "the sheep breeding ranch"
-        ]
       ]
     },
     {
       "id": "b2-argentinaregiones-04.ex06",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Cómo lograron sobrevivir los primeros inmigrantes galeses que llegaron a las costas de Chubut en 1865?",
-      "options": [
-        "Comprando provisiones en las bases navales británicas de las islas Malvinas.",
-        "Estableciendo un histórico pacto de amistad y comercio pacífico con los pueblos originarios tehuelches.",
-        "Construyendo fábricas de cerveza en las orillas del lago Argentino.",
-        "Regresando de inmediato a Europa tras el primer invierno en el Mimosa."
-      ],
-      "correct": 1
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "A pesar de que el clima era muy duro, los colonos galeses se quedaron en el valle.",
+      "english": "Although the climate was very harsh, the Welsh settlers stayed in the valley.",
+      "teaches": [
+        "a-pesar-de"
+      ]
     }
   ]
 }

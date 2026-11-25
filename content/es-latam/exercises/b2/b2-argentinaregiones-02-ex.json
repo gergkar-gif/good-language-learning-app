@@ -3,96 +3,132 @@
   "exercises": [
     {
       "id": "b2-argentinaregiones-02.ex01",
-      "type": "multiple-choice",
-      "category": "grammar",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "el oasis",
+          "oasis, green area in a dry region"
+        ],
+        [
+          "la acequia",
+          "irrigation canal"
+        ],
+        [
+          "la cepa",
+          "vine, grape variety"
+        ],
+        [
+          "la vendimia",
+          "grape harvest"
+        ],
+        [
+          "la bodega",
+          "winery"
+        ]
+      ],
       "teaches": [
-        "concesivas-aun-cuando"
-      ],
-      "question": "¿Cuándo exige modo subjuntivo la locución concesiva 'aun cuando'?",
-      "options": [
-        "Cuando introduce un hecho plenamente constatado en el presente del hablante.",
-        "Cuando se proyecta hacia una hipótesis incierta, un escenario futuro o una objeción desestimada por extrema.",
-        "Únicamente cuando se ubica al final de oraciones interrogativas directas.",
-        "Siempre que el verbo principal esté conjugado en pretérito indefinido."
-      ],
-      "correct": 1
+        "b2-argentina-pampas-patagonia-vocab"
+      ]
     },
     {
       "id": "b2-argentinaregiones-02.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Con el tiempo, el malbec __ a convertirse en la uva más conocida del país.",
+      "answer": "llegó",
+      "english": "In time, Malbec became the best-known grape of the country.",
       "teaches": [
-        "concesivas-aun-cuando"
-      ],
-      "sentence": "Aun cuando las lluvias anuales __ escasas en Cuyo, el agua de deshielo asegura la irrigación de los viñedos.",
-      "answer": "son",
-      "english": "Even though annual rainfall is scarce in Cuyo, snowmelt water ensures the irrigation of the vineyards."
+        "perifrasis-llegar-a-infinitivo"
+      ]
     },
     {
       "id": "b2-argentinaregiones-02.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "concesivas-aun-cuando"
-      ],
-      "question": "¿Por qué se utiliza el subjuntivo en: 'Aun cuando caigan heladas tardías en el Valle de Uco, los sistemas de aspersión protegerán las cepas'?",
+      "question": "Which sentence says: \"If there happens to be little snow in winter, there is less water\"?",
       "options": [
-        "Porque la helada tardía se plantea como una posibilidad contingente y futura, no como una certeza actual.",
-        "Porque el hablante desea fervientemente que las heladas destruyan la cosecha.",
-        "Porque las oraciones concesivas en Mendoza rechazan por ley el modo indicativo.",
-        "Porque el verbo 'caer' es irregular y no posee formas del modo indicativo."
+        "Si llega a faltar nieve en invierno, hay menos agua.",
+        "Si llegará a faltar nieve en invierno, hay menos agua.",
+        "Si llega faltar nieve en invierno, hay menos agua."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "perifrasis-llegar-a-infinitivo"
+      ]
     },
     {
       "id": "b2-argentinaregiones-02.ex04",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "concesivas-aun-cuando"
+      "tiles": [
+        "El",
+        "malbec",
+        "llegó",
+        "a",
+        "ser",
+        "la",
+        "uva",
+        "más",
+        "conocida",
+        "del",
+        "país."
       ],
-      "sentence": "Aun cuando los costos de producción __ elevados, los bodegueros continuarán apostando por la crianza en roble.",
-      "answer": "sean",
-      "english": "Even though production costs may be high, winemakers will continue betting on aging in oak."
+      "solution": [
+        "El",
+        "malbec",
+        "llegó",
+        "a",
+        "ser",
+        "la",
+        "uva",
+        "más",
+        "conocida",
+        "del",
+        "país."
+      ],
+      "english": "Malbec came to be the best-known grape of the country.",
+      "teaches": [
+        "perifrasis-llegar-a-infinitivo"
+      ]
     },
     {
       "id": "b2-argentinaregiones-02.ex05",
-      "type": "matching",
-      "category": "vocabulary",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "En el documental mostraron una acequia. ¿Qué es?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Gracias, ahora lo entiendo."
+        }
+      ],
+      "options": [
+        "Es un canal pequeño que lleva agua a los campos.",
+        "Es una fiesta que se celebra cuando se recoge la uva.",
+        "Es un lugar donde se hace y se guarda el vino."
+      ],
+      "correct": 0,
       "teaches": [
         "b2-argentina-pampas-patagonia-vocab"
-      ],
-      "pairs": [
-        [
-          "el oasis de riego",
-          "the irrigated valley oasis"
-        ],
-        [
-          "la acequia milenaria",
-          "the ancient irrigation canal"
-        ],
-        [
-          "el terruño pedregoso",
-          "the stony terroir / native soil"
-        ],
-        [
-          "la fiesta de la vendimia",
-          "the grape harvest festival"
-        ]
       ]
     },
     {
       "id": "b2-argentinaregiones-02.ex06",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Quién introdujo la cepa Malbec en Mendoza en 1853 y cuál fue su impacto en la región?",
-      "options": [
-        "El naturalista Charles Darwin durante su cruce de la cordillera de los Andes.",
-        "El agrónomo francés Michel Aimé Pouget, permitiendo que la uva floreciera con un perfil organoléptico superior al europeo.",
-        "El libertador José de San Martín para financiar el Ejército de los Andes.",
-        "Los misioneros jesuitas antes de su expulsión a finales del siglo dieciocho."
-      ],
-      "correct": 1
+      "type": "dictation",
+      "category": "listening",
+      "sentence": "Algunas viñas llegan a estar a mucha altura, y las noches son frías.",
+      "english": "Some vineyards get to be at a great height, and the nights are cold.",
+      "teaches": [
+        "perifrasis-llegar-a-infinitivo"
+      ]
     }
   ]
 }
