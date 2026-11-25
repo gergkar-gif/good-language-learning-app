@@ -194,6 +194,8 @@ Sharp and architectural: 2px on controls, 4px only where a container needs a cor
 ### The door (the app's mark)
 The Home hero and the Home nav icon are the app's open door, deconstructed into Kandinsky and Klutsis parts: a free navy **wedge** for the leaf, a **hinge line** standing beside it, a short **lintel** line, a hairline **swing arc** sweeping out from the hinge, a **sand disc** behind as light, a diagonal axis running on from the wedge's hypotenuse, a baseline, and one vermilion **knob** on the wedge. Same parts in the nav icon at 30px, without the disc. The knob turns vermilion only when Home is active or hovered.
 
+**Brand assets (`assets/icons/`, 2026-11-25).** App and Play icons (`icon-192/512`, `icon-maskable-512`) use the full door on the dark tile (Night Bg ground, Night Wash disc, cream wedge and lines, vermilion knob); the maskable one sits inside the central safe zone. `logo-light.svg` and `logo-dark.svg` are the full-detail masters. The favicon is a reduced mark (wedge, knob and disc on the dark tile, no hairlines), because the arc, diagonal and baseline blur below 32px. The hinge and lintel use butt caps, so the hinge never pokes past the baseline. After changing an icon, bump its `?v=` and `sw.js` CACHE_VERSION.
+
 ### Page heroes
 Each page has its own single composition, built from sand disc, navy shapes, hairlines and one vermilion accent:
 - Home: the door (above).
