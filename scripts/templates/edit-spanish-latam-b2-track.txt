@@ -44,6 +44,7 @@ Write one challenge per lesson of each unit, consolidation included (six per uni
 - `node scripts/unmet-words.js es-latam b2 --stems <six stems> --with-hidden` (counts before and after; run it after your LAST edit and report that count).
 - `node scripts/render_lesson.js es-latam <six stems, space-separated>` and read every screen and item as rendered (`!!` = error).
 - `python scripts/check_unit_refs.py es-latam b2 <unit id> --labels --bare`.
+- `python scripts/check_es_c1_forms.py es-latam --track latam`: no hit in your units' files (C1 forms such as *el cual*, *sin haber* + participle, *más de lo que*; added 2026-11-25 after the old Units 29–36 texts used them).
 - `python scripts/validate-content.py --changed` (report anything it fails on).
 
 ## Report
