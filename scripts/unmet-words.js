@@ -108,13 +108,14 @@ for (const level of LEVELS) {
 // checked on its own is checked against the visible course only, so its own
 // track's words show as unmet until the track is shown again.
 const hiddenStems = new Set();
-const hiddenTrack = new Map();   // hidden stem -> its track id
+const hiddenTrack = new Map();   // hidden stem -> its level:track
 for (const lv of Object.values((readJson(`content/${course}/curriculum/curriculum.json`) || {}).levels || {})) {
     for (const u of lv.units || []) {
         if (u.hidden) for (const l of u.lessons || []) {
             const st = String(l.id).replace(/^lesson\./, '').replace(/\./g, '-');
             hiddenStems.add(st);
-            hiddenTrack.set(st, u.track || '');
+            // level and track: opening B2 latam must not open the unread B1 latam (2026-11-25)
+            hiddenTrack.set(st, `${levelOf.get(st) || ''}:${u.track || ''}`);
         }
     }
 }

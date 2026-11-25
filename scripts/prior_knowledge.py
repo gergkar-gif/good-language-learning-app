@@ -63,11 +63,12 @@ def main():
                     .get("levels") or {}).items() for u in L.get("units", []) if u.get("hidden")}
     hidden = {i for i, (lv, u) in enumerate(units) if (lv, u.get("id")) in hidden_slugs}
     if pos in hidden:
-        # Reading a hidden unit: its own track counts (at every level, so B2 latam
-        # meets B1 latam), any other hidden track still does not (ES C1 core,
-        # 2026-11-18: the hidden latam screens are not met by a C1 core unit).
-        own = units[pos][1].get("track")
-        hidden = {i for i in hidden if units[i][1].get("track") != own}
+        # Reading a hidden unit: its own track at its own level counts, any other
+        # hidden track still does not (ES C1 core, 2026-11-18: the hidden latam
+        # screens are not met by a C1 core unit; ES B2 latam, 2026-11-25: the B1
+        # latam track is hidden and unread, so a B2 latam unit does not meet it).
+        own = (units[pos][0], units[pos][1].get("track"))
+        hidden = {i for i in hidden if (units[i][0], units[i][1].get("track")) != own}
 
     def stem_of(name):
         """The stem a screen id or file name belongs to: the longest stem it

@@ -1,0 +1,77 @@
+You are rewriting and fixing TWO units of the B2 Latin America track (es-latam, Latin American Spanish) of the Parlour language app, for a learner who knows only English. Work ONLY in `/home/user/parlour-read-b` (a git worktree; absolute paths). **Finish each unit completely (screens, items, texts, challenges file, checks) before you start the next.** Files written as you go survive if you are cut off.
+
+As models of finished B2 work, look first at frozen core units: `content/es-latam/grammar/b2/b2-08-01-a-gr.json`, `content/es-latam/exercises/b2/b2-08-01-ex.json`, `content/es-latam/lessons/b2/b2-08-01.json`.
+
+## Unit 1 of yours: `es-latam b2 mexico-south`, B2 Latin America Unit 3 (app number), after core Unit 3
+
+Lessons b2-mexicosur-01 … -05, b2-mexicosur-consolidation; texts `content/es-latam/stories/world/b2/b2-mexicosur-01.json` … `-05.json`. Knowledge sheet `/home/user/parlour-read-b/prior-mexico-south.md`; challenges file `/home/user/parlour-read-b/challenges-mexico-south.json`; report `/home/user/parlour-read-b/report-mexico-south.md`. Known by now: B1 and B2 core Units 1–3 (see the sheet). Lessons whose skill is taught later, to re-point:
+- b2-mexicosur-01 subjunctive in relatives with an unknown antecedent (`relativas-subjuntivo`, core Unit 13): re-point to `relative-clauses` or `relativas-preposicion-el-que` (B1) with the indicative; remove *busca … que + subjunctive* relatives from screen, items and text.
+- b2-mexicosur-02 and -05 *por más que* (`concesivas-por-mas-que`, core Unit 8): re-point to `a-pesar-de` (B1: *a pesar de que*, *pese a*) or `concesivas-aunque` (A2); remove *por más que*, *si bien*, *aun cuando*.
+- b2-mexicosur-03 (`se-impersonal`, B1) and -04 (`subjuntivo-de-finalidad-para-que`, B1) are known: recap. In -04, *a fin de que* / *con el objeto de que* are new forms: teach them only if the screen presents them plainly as new words of the known *para que* pattern, else keep to *para que*.
+- The consolidation's later-skill items follow their lessons.
+Topics: Oaxaca, Chiapas, the Zapatista uprising (1994), indigenous self-government, environment. Disputed and present-day matters: attribute, date, no judgement in the narrator's voice.
+
+## Unit 2 of yours: `es-latam b2 guatemala`, B2 Latin America Unit 4, after core Unit 4
+
+Lessons b2-guatemala-01 … -05, consolidation; texts `…/world/b2/b2-guatemala-01.json` … `-05.json`. Knowledge sheet `/home/user/parlour-read-b/prior-guatemala.md`; challenges file `/home/user/parlour-read-b/challenges-guatemala.json`; report `/home/user/parlour-read-b/report-guatemala.md`. Known by now: B1 and B2 core Units 1–4 (Unit 4 adds `infinitive-vs-que-subjunctive`). Lessons whose skill is taught later, to re-point:
+- b2-guatemala-02 *antes de que / después de que* (`antes-despues-de-que`, core Unit 7): re-point to `antes-despues-infinitive` (A2: *antes de* / *después de* + infinitive) or `cuando-subjuntivo` (A2); remove *antes de que* / *después de que* + subjunctive.
+- b2-guatemala-03 *si bien* (`concesivas-si-bien`, core Unit 8): re-point to `a-pesar-de` (B1: *a pesar de que*, *pese a*); remove *si bien*.
+- b2-guatemala-01 (`ser-passive`, B1) and -04 (`estilo-indirecto`, B1) are known: recap. -05 mixes four skills: keep the known ones only.
+- The consolidation's later-skill items follow their lessons; ex05 and ex08 carry two tags each: one tag, by what a wrong answer shows.
+Topics: the Maya, colonial Antigua, the 1954 coup, the armed conflict (1960–1996) and the peace accords, memory and the truth commission reports, present-day society. Attribute every judgement about the conflict (CEH report *Guatemala: memoria del silencio*, 1999; REMHI); figures only if certain.
+
+## How you work
+
+Edit files directly in your worktree; DO NOT COMMIT; never change git or tool config, never bypass hooks; never edit `skills/*.json`, `skills/frozen-*.json`, `tags.lock.json` or generated files by hand (`build-manifest.py` regenerates curricula and manifests: that is expected). The reviewer takes your work as `git diff` from the worktree. Only es-latam exists at B2: nothing is mirrored. Only touch the files of your units, plus your challenges files and reports.
+
+Read first, and nothing else unless needed to settle a point: `/home/user/parlour-read-b/docs/unit-agent-rules.md` § 1–5, § 6a and § 6c (skip § 6b, Hungarian); it is your rulebook. Then each unit's knowledge sheet (named in your unit notes): what the learner has met. Anything under "Known" is recapped, never presented as new; anything under "later" or "Taught only on a screen of a hidden track" has NOT been met and must not be used in a screen example, an item, an option or the text. Unit numbers in recaps are the ones the sheet gives (the number the app shows, per track: B2 core Unit 2 is `narrative-time-aspect`, stems `b2-02-*`; B1 core Unit N has stems `b1-NN-*`); write "You know *X* from B2 Unit N", the Spanish word or form in italics, one italic run per term.
+
+## What this track is
+
+Your units are on the B2 **Latin America** track (`latam`, es-latam only): 36 units, one region each, placed after the B2 core unit of the same number (Latin America Unit 3 comes after core Unit 3). The track is hidden in the app until it is read; it teaches **no new grammar skill**. Every lesson applies a grammar skill the learner already knows (B1, or B2 core up to the unit's own number) to the region's topic, and teaches the topic's words. The track was generated in academic Spanish: the screens, question stems, goals and intro are in Spanish metalanguage the learner has not met, and many lessons drill a core skill taught much later (`taught-later` errors). The learner knows only English and has finished A1–B1 core and B2 core up to this unit; the B1 Latin America track is hidden and unread, so nothing from it counts as met.
+
+## Decisions by the user (2026-11-13, for all of B2) that these units follow
+
+1. **Screens in English.** Every grammar screen is rewritten so its title, explanations and tips are in English (model: the frozen B2 core screens, e.g. `/home/user/parlour-read-b/content/es-latam/grammar/b2/b2-08-01-a-gr.json`, `b2-30-01-a-gr.json`): short, explicit, natural; it opens with a recap of the known skill ("You know *si bien* from B2 Unit 8") and shows it at work on the topic, with new topic examples (`spanish` + `english`). Keep the section types (copy field names from existing sections; schemas in `/home/user/parlour-read-b/content/es-latam/schemas/`). No Spanish metalanguage (*antecedente inespecífico*, *anteposición enfática*): plain English grammar words. A screen never presents a known skill as new, and never presents a skill the sheet lists as later.
+2. **Question stems in English.** Every multiple-choice and listening question asked in Spanish is asked in English. Reading questions ask about what the lesson's text says, in English, with Spanish options that are whole, short, untruncated statements (never options ending in "..."); one is right by the text as written, the others are clearly wrong by the text. A multiple-choice item takes neither `hint` nor `english`.
+3. **Unmet words, B2 rule.** `node scripts/unmet-words.js es-latam b2 --stems <the unit's six stems, ONE comma-separated list> --with-hidden` (the flag counts this track's own earlier units as met; transparent English cognates are skipped). Every other hit is fixed: a topic word the lesson needs is added to the vocabulary list of the first lesson that uses it (copy an existing entry's fields; British English gloss), anything else is replaced with a met word. Inflected forms of a listed verb, and names, are fine. Words listed in a lesson's vocabulary must be used in that lesson's items (`vocab-unused`): use each one or remove it from the list (never a lemma that `content/es-latam/conversation-scenarios.json` lists in `requiredLemmas`).
+4. English everywhere the learner reads instructions: lesson `title` (English, with the place: "The Valley of Mexico: a lake basin that is sinking"), `goal`, the `goal` and `checklist` sections (real can-do lines for this lesson, each distinct; never "Master 8 key vocabulary terms", never a grammar label in Spanish), the `intro` section (true about the track: screens and instructions are in English, the texts in Spanish).
+
+## Grammar per lesson
+
+Each lesson's grammar must be **known by this unit**. Your unit notes list the lessons whose current skill is taught later, with a suggested known skill. For those, rewrite the screen around the known skill and rewrite or retag its items (a tested form → its grammar skill, a tested word → the unit vocabulary skill `b2-<unit id>-vocab`). For a lesson whose skill is already known, keep the skill and rewrite the screen as a recap applied to the topic. The later form must also leave the lesson's text and every item and option. A tag must name a registry skill (`skills/es.json`); a retired topic slug is replaced by what a wrong answer shows.
+
+## The texts (the five lesson readings and the unit's combined reading)
+
+The lesson texts are `content/es-latam/stories/world/b2/<stem>.json` (one per teaching lesson); the unit's combined Library reading `<unit stem>.json` is rebuilt from them by the reviewer (do not edit it). They are non-fiction about the region, B2 level. Keep each text's subject and structure; fix it:
+
+- **Facts.** Every date, figure, name and causal claim must be true. Keep a claim only if you are sure of it; when unsure, cut it or make it general ("a finales del siglo XIX") rather than guess. Give no figure (population, percentage, height, death toll, money) unless you are certain or the reviewer's facts file confirms it. Never add a new fact you are not sure of. Present-day claims (who governs, laws, institutions, ongoing projects) are the riskiest: state them dated ("en 2024…") or leave them out; the reviewer checks each against 2026 news and sends corrections.
+- **Disputed matters** (conquest, revolutions, dictatorships, armed conflicts, present-day politics, migration): state what happened plainly, attribute judgements ("según la Comisión para el Esclarecimiento Histórico…"), name a dispute in one line, and give no present-day political judgement in the narrator's voice. No invented quotations: a sentence in quotation marks must be a real, well-known quotation you are sure of, else paraphrase without quotation marks.
+- **Language.** B2, clear, not academic: cut generator ornament (*asombrosa precisión*, *imán civilizatorio*, strings of abstract nouns); prefer met words and the lesson's grammar shown naturally. Every sentence says something true about the place; drop a form rather than force it. No talk about the text, the course or the reader (*este texto*, *el lector*, *como veremos*): `story-meta` must be 0. No asterisks in story files. Each lesson text about 200–320 words.
+- `title` plain Spanish; `summary` one plain English sentence about what the text says.
+- Questions on a story file (if it has them) and the lesson's reading items must be answerable from the text as you leave it.
+
+## Items
+
+Read every exercise of the unit as rendered (`node scripts/render_lesson.js es-latam <stems>`), and fix in place everything the rulebook § 1–4 and § 6 names: one right answer; every wrong option a real Spanish string with exactly one fault, never a possible right answer; length give-aways (make the wrong options as specific as the right one, or shorten the right one) and tells (an absolute word or a time word only one option has); `teaches` by what a wrong answer shows; `distractor_skills` on a wrong option that is a real form of another known skill; fill-blanks blank a whole word and carry `english`; `answers` only for true alternatives; no English inside a Spanish line; a writing prompt pins what its stored answer contains. A sentence-builder fix sets `tiles`, `solution` and `english` only. Do not report or fix: missing listening groups or item counts below the brief; vocabulary lists re-listing earlier words; alternative builder orders. If you add an item, give it the next id in the file and list it in a section of the lesson file, or the learner never sees it.
+
+## Challenges
+
+Write one challenge per lesson of each unit, consolidation included (six per unit), to the unit's challenges file: a JSON object keyed by lesson stem, each entry with exactly the fields of the B2 entries in `/home/user/parlour-read-b/content/es-latam/curriculum/challenges.json` under `challenges` (look at `b2-08-01`: `tier` "tier1", `level` "B2", `title` "Communicative Challenge: …", `scenario`, `prompt`, `cues`, `target`, `english`, `canDo`). Rulebook § 4: the scenario starts with the role ("You are Meg." / "You are Carlos."); Carlos is Hungarian and works in an office, Meg is South African and a student, they live in Budapest; on this track they talk or write about the region (a documentary, a trip being planned, an article, a talk), never as if they lived there; invent no other facts about them or their families. Only Carlos and Meg by name: Ana and Andreas are Carlos's siblings and Lauren and Kaylee are Meg's sisters in the B1 stories; a colleague, classmate or friend stays unnamed. Cues say what to include, never the words; target 1–3 sentences of met words using the lesson's grammar, every fact in it true and in the lesson's text; `canDo` = the lesson's first checklist line after your fixes. No *vosotros*, no Spain-only words.
+
+## Checks (from `/home/user/parlour-read-b`, in this order, after your edits; fix and rerun until clean)
+
+- `python3 build-manifest.py` then `python scripts/build_word_lesson_index.py es-latam`.
+- `python scripts/check-content.py es-latam b2 <unit id>`: note the error and suspect counts before you start and after. Fix every error; each remaining suspect is fixed or given a one-line reason in the report.
+- `node scripts/unmet-words.js es-latam b2 --stems <six stems> --with-hidden` (counts before and after; run it after your LAST edit and report that count).
+- `node scripts/render_lesson.js es-latam <six stems, space-separated>` and read every screen and item as rendered (`!!` = error).
+- `python scripts/check_unit_refs.py es-latam b2 <unit id> --labels --bare`.
+- `python scripts/validate-content.py --changed` (report anything it fails on).
+
+## Report
+
+As your final reply (try to write it to the report file named in your notes first; the harness may refuse a subagent's file, so make the reply complete): per lesson, the skill before → after, what you changed on the screen and in the items (ids); per text, every factual claim you kept that has a date, a figure or a present-day fact, one per line, with how sure you are, and every claim you cut or corrected (old → new); check counts before/after (check-content errors/suspects, unmet words after your last edit); every Spanish line you are unsure of, marked (unsure); and a group "For the user": anything you could not fix or that needs a decision. Don't pad.
+
+Scratch files: write your own temporary scripts and copies only under `/home/user/parlour-read-b/.scratch/` (create it), never in a shared folder; another agent works at the same time.
+
+The reviewer writes verified facts to /home/user/good-language-learning-app/imports/review/es-b2-batch-latam-01-04/reviewer-facts.md while you work and may send you corrections; apply them.
