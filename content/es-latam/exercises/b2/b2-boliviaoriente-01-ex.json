@@ -7,20 +7,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "Chiquitanía",
-          "tropical savannah and dry forest region"
+          "la misión",
+          "mission (a settlement founded by missionaries)"
         ],
         [
-          "oratorio",
-          "musical chapel or sacred composition"
+          "el jesuita",
+          "Jesuit"
         ],
         [
-          "barroco",
-          "elaborate mestizo artistic style"
+          "el templo",
+          "church, temple"
         ],
         [
-          "espesura",
-          "dense forest thicket"
+          "la partitura",
+          "musical score"
+        ],
+        [
+          "expulsar",
+          "to expel"
         ]
       ],
       "teaches": [
@@ -31,28 +35,28 @@
       "id": "b2-boliviaoriente-01.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Los cabildos indígenas conservaron los archivos musicales; por __, las partituras pervivieron.",
-      "hint": "hence",
-      "answer": "ende",
-      "english": "Indigenous town councils preserved the musical archives; therefore, the scores survived.",
+      "sentence": "Los jesuitas fueron __ de los territorios españoles en 1767.",
+      "hint": "expulsar",
+      "answer": "expulsados",
+      "english": "The Jesuits were expelled from the Spanish territories in 1767.",
       "teaches": [
-        "bolivia-chiquitos-misiones-selva"
+        "ser-passive"
       ]
     },
     {
       "id": "b2-boliviaoriente-01.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué conector causal de registro culto encabeza adecuadamente '___ las misiones se hallaban aisladas de los centros mineros, sus templos no fueron desmantelados'?",
+      "question": "Which sentence says: \"The missions were founded by Jesuits\"?",
       "options": [
-        "Habida cuenta de que",
-        "Por consiguiente",
-        "De modo que",
-        "Por ende"
+        "Las misiones fueron fundadas por jesuitas.",
+        "Las misiones fueron fundados por jesuitas.",
+        "Las misiones fue fundada por jesuitas.",
+        "Las misiones fueron fundando por jesuitas."
       ],
       "correct": 0,
       "teaches": [
-        "bolivia-chiquitos-misiones-selva"
+        "ser-passive"
       ]
     },
     {
@@ -60,28 +64,32 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Dado",
-        "que",
-        "hubo",
-        "cuidado",
-        "comunitario",
-        "sobrevivió",
-        "el",
-        "barroco."
+        "Seis",
+        "misiones",
+        "fueron",
+        "declaradas",
+        "Patrimonio",
+        "de",
+        "la",
+        "Humanidad",
+        "en",
+        "1990."
       ],
       "solution": [
-        "Dado",
-        "que",
-        "hubo",
-        "cuidado",
-        "comunitario",
-        "sobrevivió",
-        "el",
-        "barroco."
+        "Seis",
+        "misiones",
+        "fueron",
+        "declaradas",
+        "Patrimonio",
+        "de",
+        "la",
+        "Humanidad",
+        "en",
+        "1990."
       ],
-      "english": "Given that there was communal care, baroque survived.",
+      "english": "Six missions were declared World Heritage Sites in 1990.",
       "teaches": [
-        "bolivia-chiquitos-misiones-selva"
+        "ser-passive"
       ]
     },
     {
@@ -90,33 +98,37 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Musicóloga",
-          "text": "¿Cómo llegaron estas sonatas barrocas intactas hasta el siglo veintiuno?"
+          "speaker": "Meg",
+          "text": "¿Quién construyó los templos?"
         },
         {
-          "speaker": "Luthier",
-          "text": "Los músicos del cabildo las transcribieron fielmente; _____ se conservaron miles de partituras."
+          "speaker": "Carlos",
+          "text": "Los templos _____ por jesuitas y por indígenas de la región."
         }
       ],
       "options": [
-        "por ende",
-        "antes bien",
-        "no obstante",
-        "si bien"
+        "fueron construidos",
+        "fueron construyendo",
+        "fue construido",
+        "están construidos"
       ],
       "correct": 0,
       "teaches": [
-        "bolivia-chiquitos-misiones-selva"
-      ]
+        "ser-passive"
+      ],
+      "distractor_skills": {
+        "1": "progressive",
+        "3": "pasiva-estado-estar-participio"
+      }
     },
     {
       "id": "b2-boliviaoriente-01.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Las misiones jesuíticas de Chiquitos custodian templos barrocos de madera tallada.",
-      "english": "The Jesuit missions of Chiquitos safeguard baroque temples of carved wood.",
+      "sentence": "Las partituras fueron encontradas en los archivos de las misiones.",
+      "english": "The scores were found in the archives of the missions.",
       "teaches": [
-        "bolivia-chiquitos-misiones-selva"
+        "ser-passive"
       ]
     }
   ]

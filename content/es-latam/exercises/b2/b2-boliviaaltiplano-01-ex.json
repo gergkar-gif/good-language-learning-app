@@ -7,20 +7,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "altiplano",
-          "high intermontane plateau"
+          "el altiplano",
+          "high plateau"
         ],
         [
-          "totora",
-          "sturdy aquatic reed"
+          "la totora",
+          "reed that grows in the lake"
         ],
         [
-          "bofedal",
-          "high-altitude peat wetland"
+          "el bofedal",
+          "high wetland where animals graze"
         ],
         [
-          "gélido",
-          "bitingly frigid cold"
+          "la embarcación",
+          "boat"
+        ],
+        [
+          "la helada",
+          "night frost"
         ]
       ],
       "teaches": [
@@ -31,63 +35,67 @@
       "id": "b2-boliviaaltiplano-01.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El lago __ es el lago navegable más alto del mundo a más de tres mil ochocientos metros.",
-      "hint": "lake",
-      "answer": "Titicaca",
-      "english": "Lake Titicaca is the highest navigable lake in the world at over three thousand eight hundred meters.",
+      "sentence": "La totora es una planta __ crece en el agua del lago.",
+      "answer": "que",
+      "english": "Totora is a plant that grows in the water of the lake.",
       "teaches": [
-        "bolivia-altiplano-titicaca-geografia"
+        "relative-clauses"
       ]
     },
     {
       "id": "b2-boliviaaltiplano-01.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué función climática vital cumple el lago Titicaca para las comunidades agrícolas del altiplano?",
+      "question": "Which sentence says: \"The Aymara people who live next to the lake grow potatoes\"?",
       "options": [
-        "Actúa como un inmenso termorregulador que modera las heladas nocturnas permitiendo el cultivo de tubérculos y cereales.",
-        "Provoca olas gigantescas que impiden cualquier tipo de asentamiento humano ribereño.",
-        "Calienta el agua hasta transformarla en vapor termal durante todo el año.",
-        "Deseca los valles vecinos impidiendo el crecimiento de pastizales para camélidos."
+        "Los aymaras que viven junto al lago cultivan papa.",
+        "Los aymaras viven junto al lago cultivan papa.",
+        "Los aymaras que vive junto al lago cultivan papa.",
+        "Los aymaras lo que viven junto al lago cultivan papa."
       ],
       "correct": 0,
       "teaches": [
-        "bolivia-altiplano-titicaca-geografia"
-      ]
+        "relative-clauses"
+      ],
+      "distractor_skills": {
+        "3": "relativas-preposicion-el-que"
+      }
     },
     {
       "id": "b2-boliviaaltiplano-01.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "La",
-        "Isla",
-        "del",
-        "Sol",
-        "fue",
-        "venerada",
-        "como",
-        "la",
-        "cuna",
-        "mítica",
-        "solar."
+        "El",
+        "lago",
+        "Titicaca,",
+        "que",
+        "está",
+        "entre",
+        "Bolivia",
+        "y",
+        "Perú,",
+        "es",
+        "muy",
+        "alto."
       ],
       "solution": [
-        "La",
-        "Isla",
-        "del",
-        "Sol",
-        "fue",
-        "venerada",
-        "como",
-        "la",
-        "cuna",
-        "mítica",
-        "solar."
+        "El",
+        "lago",
+        "Titicaca,",
+        "que",
+        "está",
+        "entre",
+        "Bolivia",
+        "y",
+        "Perú,",
+        "es",
+        "muy",
+        "alto."
       ],
-      "english": "The Island of the Sun was venerated as the mythical solar cradle.",
+      "english": "Lake Titicaca, which is between Bolivia and Peru, is very high.",
       "teaches": [
-        "bolivia-altiplano-titicaca-geografia"
+        "relative-clauses"
       ]
     },
     {
@@ -96,33 +104,35 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Turista",
-          "text": "¿Con qué material ancestral construyen los pescadores sus balsas en el Titicaca?"
+          "speaker": "Meg",
+          "text": "En el documental hablan de los bofedales. ¿Qué son?"
         },
         {
-          "speaker": "Guía aymara",
-          "text": "Las embarcaciones tradicionales _____ con tallos secos de caña de totora trenzada."
+          "speaker": "Carlos",
+          "text": "Son humedales _____ están a mucha altura."
         }
       ],
       "options": [
-        "son elaboradas",
-        "fueron elaborando a",
-        "está elaborada",
-        "se elaboraban de"
+        "que",
+        "quien",
+        "cuyo"
       ],
       "correct": 0,
       "teaches": [
-        "bolivia-altiplano-titicaca-geografia"
-      ]
+        "relative-clauses"
+      ],
+      "distractor_skills": {
+        "2": "relativo-posesivo-cuyo"
+      }
     },
     {
       "id": "b2-boliviaaltiplano-01.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "El altiplano boliviano despliega un horizonte infinito custodiado por la Cordillera Real.",
-      "english": "The Bolivian high plateau unfolds an infinite horizon guarded by the Cordillera Real.",
+      "sentence": "Las comunidades que viven junto al lago cultivan papa y quinua.",
+      "english": "The communities that live next to the lake grow potatoes and quinoa.",
       "teaches": [
-        "bolivia-altiplano-titicaca-geografia"
+        "relative-clauses"
       ]
     }
   ]

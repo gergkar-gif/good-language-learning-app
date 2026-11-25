@@ -7,20 +7,28 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "quiebre",
-          "abrupt institutional constitutional rupture"
+          "el golpe de Estado",
+          "coup d'état"
         ],
         [
-          "bombardeo",
-          "destructive aerial air attack"
+          "la dictadura",
+          "dictatorship"
         ],
         [
-          "trovador",
-          "poet musician singing social truths"
+          "el desaparecido",
+          "person who disappeared (a victim of forced disappearance)"
         ],
         [
-          "inmolación",
-          "supreme sacrifice for moral principles"
+          "la memoria",
+          "memory"
+        ],
+        [
+          "el informe",
+          "report"
+        ],
+        [
+          "bombardear",
+          "to bomb"
         ]
       ],
       "teaches": [
@@ -31,59 +39,67 @@
       "id": "b2-chilecentro-04.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Al despuntar el alba, los blindados militares ya habían __ el Palacio de La Moneda.",
-      "hint": "surrounded",
-      "answer": "rodeado",
-      "english": "At daybreak, military armored vehicles had already surrounded the La Moneda Palace.",
+      "sentence": "Allende habló por radio antes de que el palacio __ bombardeado.",
+      "answers": [
+        "fuera",
+        "fuese"
+      ],
+      "english": "Allende spoke on the radio before the palace was bombed.",
       "teaches": [
-        "chile-moneda-golpe-memoria"
+        "antes-despues-de-que"
       ]
     },
     {
       "id": "b2-chilecentro-04.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué modo exige la locución 'antes de que' en 'El presidente habló antes de que los cazabombarderos atacaran'?",
+      "question": "Which sentence says: \"Allende spoke on the radio before the planes bombed the palace\"?",
       "options": [
-        "Modo subjuntivo siempre, con independencia de que el hecho sea histórico y consumado.",
-        "Modo indicativo obligatorio cuando se alude a acontecimientos ya pasados.",
-        "Condicional simple para expresar duda temporal sobre los hechos.",
-        "Imperativo para conmemorar solemnemente a las víctimas de la tragedia."
+        "Allende habló por radio antes de que los aviones bombardearan el palacio.",
+        "Allende habló por radio antes de que los aviones bombardearon el palacio.",
+        "Allende habló por radio antes de que los aviones bombardeen el palacio."
       ],
       "correct": 0,
       "teaches": [
-        "chile-moneda-golpe-memoria"
-      ]
+        "antes-despues-de-que"
+      ],
+      "distractor_skills": {
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b2-chilecentro-04.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "La",
-        "música",
+        "Después",
         "de",
-        "Víctor",
-        "Jara",
-        "pervivió",
-        "en",
-        "la",
-        "clandestinidad."
+        "que",
+        "los",
+        "aviones",
+        "bombardearon",
+        "el",
+        "palacio,",
+        "los",
+        "soldados",
+        "entraron."
       ],
       "solution": [
-        "La",
-        "música",
+        "Después",
         "de",
-        "Víctor",
-        "Jara",
-        "pervivió",
-        "en",
-        "la",
-        "clandestinidad."
+        "que",
+        "los",
+        "aviones",
+        "bombardearon",
+        "el",
+        "palacio,",
+        "los",
+        "soldados",
+        "entraron."
       ],
-      "english": "Víctor Jara's music survived in the underground.",
+      "english": "After the planes bombed the palace, the soldiers went in.",
       "teaches": [
-        "chile-moneda-golpe-memoria"
+        "antes-despues-de-que"
       ]
     },
     {
@@ -92,33 +108,36 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Historiador",
-          "text": "¿Cuándo se consumó el quebrantamiento de la república democrática?"
+          "speaker": "Meg",
+          "text": "¿Cuándo habló Allende por radio?"
         },
         {
-          "speaker": "Investigadora",
-          "text": "Tan pronto como los tanques _____ contra la sede del poder ejecutivo."
+          "speaker": "Carlos",
+          "text": "Habló antes de que _____ el ataque contra el palacio."
         }
       ],
       "options": [
-        "dispararon",
-        "dispararan",
-        "disparaban a",
-        "disparen"
+        "empezara",
+        "empezó",
+        "empezaba"
       ],
       "correct": 0,
       "teaches": [
-        "chile-moneda-golpe-memoria"
-      ]
+        "antes-despues-de-que"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b2-chilecentro-04.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Las canciones de la Nueva Canción Chilena desafiaron el silencio impuesto por la censura.",
-      "english": "Songs of the Chilean New Song movement defied the silence imposed by censorship.",
+      "sentence": "Antes de que terminara la dictadura, muchas familias buscaban a sus familiares desaparecidos.",
+      "english": "Before the dictatorship ended, many families were looking for their disappeared relatives.",
       "teaches": [
-        "chile-moneda-golpe-memoria"
+        "antes-despues-de-que"
       ]
     }
   ]

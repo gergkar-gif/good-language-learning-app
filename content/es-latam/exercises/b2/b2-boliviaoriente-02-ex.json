@@ -7,20 +7,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "camba",
-          "identity of Bolivian lowlands"
+          "la agroindustria",
+          "agribusiness"
         ],
         [
-          "agroindustria",
-          "large scale agricultural business"
+          "la soya",
+          "soya, soybean"
         ],
         [
-          "desmonte",
-          "clearing of forest land"
+          "el ganado",
+          "cattle"
         ],
         [
-          "pujanza",
-          "dynamic economic vigor"
+          "el desmonte",
+          "clearing of forest"
+        ],
+        [
+          "el incendio",
+          "fire"
         ]
       ],
       "teaches": [
@@ -31,55 +35,66 @@
       "id": "b2-boliviaoriente-02.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La producción agrícola genera divisas; no __, los desmontes acelerados amenazan la biodiversidad.",
-      "hint": "nevertheless",
-      "answer": "obstante",
-      "english": "Agricultural production generates foreign exchange; nevertheless, accelerated land clearing threatens biodiversity.",
+      "sentence": "La soya es un producto importante. __ embargo, necesita mucha tierra.",
+      "answer": "Sin",
+      "english": "Soya is an important product. However, it needs a lot of land.",
       "teaches": [
-        "bolivia-santacruz-agroindustria-camba"
+        "contrast-concession-connectors"
       ]
     },
     {
       "id": "b2-boliviaoriente-02.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué matiz semántico aporta la locución 'en contrapartida' al contrastar las economías andina y oriental?",
+      "question": "Which sentence says: \"Agribusiness creates jobs; however, some people criticise the clearing of forest\"?",
       "options": [
-        "Introduce un contrapeso equilibrado entre dos modelos productivos complementarios.",
-        "Indica una consecuencia desastrosa inevitable para la agricultura campesina.",
-        "Niega que exista alguna actividad comercial fuera de las ciudades capitales.",
-        "Expresa una orden judicial de clausura para las haciendas ganaderas."
+        "La agroindustria crea empleo; sin embargo, algunas personas critican el desmonte.",
+        "La agroindustria crea empleo; por eso, algunas personas critican el desmonte.",
+        "La agroindustria crea empleo; además, algunas personas critican el desmonte.",
+        "La agroindustria crea empleo; entonces, algunas personas critican el desmonte."
       ],
       "correct": 0,
       "teaches": [
-        "bolivia-santacruz-agroindustria-camba"
-      ]
+        "contrast-concession-connectors"
+      ],
+      "distractor_skills": {
+        "1": "porque-y-por-eso",
+        "2": "ordering-markers"
+      }
     },
     {
       "id": "b2-boliviaoriente-02.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Si",
-        "bien",
-        "hay",
-        "prosperidad",
-        "surgen",
-        "desafíos",
-        "ambientales."
+        "Aunque",
+        "Santa",
+        "Cruz",
+        "es",
+        "una",
+        "ciudad",
+        "moderna,",
+        "conserva",
+        "sus",
+        "fiestas",
+        "tradicionales."
       ],
       "solution": [
-        "Si",
-        "bien",
-        "hay",
-        "prosperidad",
-        "surgen",
-        "desafíos",
-        "ambientales."
+        "Aunque",
+        "Santa",
+        "Cruz",
+        "es",
+        "una",
+        "ciudad",
+        "moderna,",
+        "conserva",
+        "sus",
+        "fiestas",
+        "tradicionales."
       ],
-      "english": "Although there is prosperity, environmental challenges arise.",
+      "english": "Although Santa Cruz is a modern city, it keeps its traditional festivals.",
       "teaches": [
-        "bolivia-santacruz-agroindustria-camba"
+        "contrast-concession-connectors"
       ]
     },
     {
@@ -88,33 +103,35 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Socióloga",
-          "text": "¿Es la tensión regional un obstáculo insalvable para el país?"
+          "speaker": "Meg",
+          "text": "Dicen que la agroindustria da trabajo a mucha gente."
         },
         {
-          "speaker": "Economista",
-          "text": "No se trata de una ruptura irreversible; _____ expresa modelos de desarrollo complementarios."
+          "speaker": "Carlos",
+          "text": "Sí; _____ algunas personas critican el desmonte."
         }
       ],
       "options": [
-        "antes bien",
-        "por ende",
-        "dado que",
-        "de modo que"
+        "sin embargo",
+        "por lo tanto",
+        "por eso"
       ],
       "correct": 0,
       "teaches": [
-        "bolivia-santacruz-agroindustria-camba"
-      ]
+        "contrast-concession-connectors"
+      ],
+      "distractor_skills": {
+        "2": "porque-y-por-eso"
+      }
     },
     {
       "id": "b2-boliviaoriente-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Santa Cruz de la Sierra se consolidó como el motor agropecuario de Bolivia.",
-      "english": "Santa Cruz de la Sierra established itself as the agricultural engine of Bolivia.",
+      "sentence": "El campo produce mucho; no obstante, los incendios preocupan a los ambientalistas.",
+      "english": "The countryside produces a lot; nevertheless, the fires worry environmentalists.",
       "teaches": [
-        "bolivia-santacruz-agroindustria-camba"
+        "contrast-concession-connectors"
       ]
     }
   ]

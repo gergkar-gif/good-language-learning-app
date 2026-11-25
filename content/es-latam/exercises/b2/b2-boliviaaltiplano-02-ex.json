@@ -7,20 +7,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "socavón",
-          "deep subterranean mine gallery"
+          "el socavón",
+          "mine tunnel"
         ],
         [
-          "mita",
-          "forced rotational mining labor"
+          "la mita",
+          "forced labour system of the colonial period"
         ],
         [
-          "plata",
-          "precious extracted silver ore"
+          "la plata",
+          "silver"
         ],
         [
-          "suntuoso",
-          "lavishly opulent and ornate"
+          "el minero",
+          "miner"
+        ],
+        [
+          "acuñar",
+          "to mint (coins)"
         ]
       ],
       "teaches": [
@@ -31,29 +35,32 @@
       "id": "b2-boliviaaltiplano-02.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El cerro sagrado de __ albergó la mayor concentración de plata conocida en la historia.",
-      "hint": "mountain",
-      "answer": "Potosí",
-      "english": "The sacred mountain of Potosí harbored the largest concentration of silver known in history.",
+      "sentence": "Hoy la Casa de la Moneda de Potosí __ convertida en museo.",
+      "answer": "está",
+      "english": "Today the Mint of Potosí is turned into a museum.",
       "teaches": [
-        "bolivia-potosi-cerro-rico-plata"
+        "pasiva-estado-estar-participio"
       ]
     },
     {
       "id": "b2-boliviaaltiplano-02.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Quién es la deidad sincrética conocida como 'El Tío' en las minas de Potosí?",
+      "question": "Which sentence tells you that the mint is a museum right now?",
       "options": [
-        "El señor y protector del inframundo minero a quien se rinde culto con ofrendas de alcohol, coca y cigarrillos en el socavón.",
-        "El apodo del primer virrey español que visitó las galerías subterráneas.",
-        "Un santo católico canonizado exclusivamente para la protección de los ingenieros.",
-        "El nombre del principal río subterráneo que inundaba las minas."
+        "La Casa de la Moneda está convertida en museo.",
+        "La Casa de la Moneda fue convertida en museo.",
+        "La Casa de la Moneda estaba convertida en museo.",
+        "La Casa de la Moneda será convertida en museo."
       ],
       "correct": 0,
       "teaches": [
-        "bolivia-potosi-cerro-rico-plata"
-      ]
+        "pasiva-estado-estar-participio"
+      ],
+      "distractor_skills": {
+        "1": "ser-passive",
+        "3": "ser-passive"
+      }
     },
     {
       "id": "b2-boliviaaltiplano-02.ex04",
@@ -61,33 +68,35 @@
       "category": "grammar",
       "tiles": [
         "La",
-        "Casa",
+        "ciudad",
         "de",
-        "la",
-        "Moneda",
-        "fue",
-        "fundada",
+        "Potosí",
+        "está",
+        "inscrita",
         "en",
         "la",
-        "Villa",
-        "Imperial."
+        "lista",
+        "de",
+        "la",
+        "UNESCO."
       ],
       "solution": [
         "La",
-        "Casa",
+        "ciudad",
         "de",
-        "la",
-        "Moneda",
-        "fue",
-        "fundada",
+        "Potosí",
+        "está",
+        "inscrita",
         "en",
         "la",
-        "Villa",
-        "Imperial."
+        "lista",
+        "de",
+        "la",
+        "UNESCO."
       ],
-      "english": "The Royal Mint was founded in the Imperial Villa.",
+      "english": "The city of Potosí is on the UNESCO list.",
       "teaches": [
-        "bolivia-potosi-cerro-rico-plata"
+        "pasiva-estado-estar-participio"
       ]
     },
     {
@@ -96,33 +105,37 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Historiadora",
-          "text": "¿Qué moneda acuñada en Potosí se convirtió en la primera divisa global?"
+          "speaker": "Meg",
+          "text": "¿Podemos entrar ahora al museo?"
         },
         {
-          "speaker": "Numismático",
-          "text": "El célebre 'real de a ocho' _____ por comerciantes de Europa, Asia y las Américas."
+          "speaker": "Carlos",
+          "text": "Sí, el museo _____ hasta las seis."
         }
       ],
       "options": [
-        "fue aceptado universalmente",
-        "estuvo aceptando a",
-        "se aceptó con",
-        "fueron aceptados de"
+        "está abierto",
+        "fue abierto",
+        "está abriendo",
+        "está abierta"
       ],
       "correct": 0,
       "teaches": [
-        "bolivia-potosi-cerro-rico-plata"
-      ]
+        "pasiva-estado-estar-participio"
+      ],
+      "distractor_skills": {
+        "1": "ser-passive",
+        "2": "progressive"
+      }
     },
     {
       "id": "b2-boliviaaltiplano-02.ex06",
       "type": "dictation",
       "category": "listening",
-      "sentence": "La plata extraída de Potosí financió el comercio transoceánico durante tres centurias.",
-      "english": "The silver extracted from Potosí financed transoceanic commerce for three centuries.",
+      "sentence": "El centro histórico de Potosí está protegido por la UNESCO.",
+      "english": "The historic centre of Potosí is protected by UNESCO.",
       "teaches": [
-        "bolivia-potosi-cerro-rico-plata"
+        "pasiva-estado-estar-participio"
       ]
     }
   ]
