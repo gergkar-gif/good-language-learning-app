@@ -8,14 +8,16 @@
       "teaches": [
         "relativas-universales-quiera"
       ],
-      "question": "En la oración 'Cuantos soliciten la condición de refugiado tendrán derecho al debido proceso', ¿qué valor tiene 'cuantos'?",
+      "question": "Which sentence means \"Anyone who reaches the border needs clear information\"?",
       "options": [
-        "Pronombre interrogativo de cantidad",
-        "Relativo generalizador distributivo equivalente a 'todos los que'",
-        "Adverbio de lugar impreciso",
-        "Conjunción comparativa subordinante"
+        "Cualquier persona que llegue a la frontera necesita información clara.",
+        "Cualquiera persona que llegue a la frontera necesita información clara.",
+        "Cualquier persona que llega a la frontera necesita información clara."
       ],
-      "correct": 1
+      "correct": 0,
+      "distractor_skills": {
+        "2": "present-tense"
+      }
     },
     {
       "id": "b2-migracion-03.ex02",
@@ -24,9 +26,9 @@
       "teaches": [
         "relativas-universales-quiera"
       ],
-      "sentence": "__ que sean las causas socioeconómicas del éxodo, la protección del menor es incondicional.",
-      "answer": "Cualesquiera",
-      "english": "Whatever the socioeconomic causes of the exodus may be, the protection of the minor is unconditional."
+      "sentence": "Dondequiera que __ los migrantes, necesitan documentos.",
+      "answer": "vayan",
+      "english": "Wherever migrants go, they need documents."
     },
     {
       "id": "b2-migracion-03.ex03",
@@ -37,35 +39,34 @@
       ],
       "pairs": [
         [
-          "cualesquiera",
-          "whichever / whatever (plural)"
+          "aduana",
+          "customs office"
         ],
         [
-          "dondequiera",
-          "wherever"
+          "cruce",
+          "crossing"
         ],
         [
-          "regularización",
-          "regularization of migratory status"
+          "selva",
+          "jungle"
         ],
         [
-          "radicación",
-          "legal settlement / residency"
+          "altiplano",
+          "high plateau"
         ]
       ]
     },
     {
       "id": "b2-migracion-03.ex04",
       "type": "multiple-choice",
-      "question": "¿Qué rol cumplen los consulados en los acuerdos fronterizos de regularización y documentación?",
+      "category": "reading",
+      "question": "Which jungle between Colombia and Panama did more than half a million people cross in 2023, according to the text?",
       "options": [
-        "Cerrar las fronteras a cualquier intercambio comercial.",
-        "Expedir partidas de nacimiento, pasaportes y certificar antecedentes para evitar la apatridia.",
-        "Organizar torneos deportivos exclusivamente.",
-        "Impedir el cruce de vehículos sanitarios de emergencia."
+        "La selva del Darién.",
+        "La selva de Roraima.",
+        "La selva del Chaco."
       ],
-      "correct": 1,
-      "category": "reading"
+      "correct": 0
     }
   ]
 }

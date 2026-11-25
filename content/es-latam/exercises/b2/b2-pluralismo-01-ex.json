@@ -8,14 +8,17 @@
       "teaches": [
         "contrast-concession-connectors"
       ],
-      "question": "¿Qué matiz semántico aporta la locución concesiva 'a despecho de' frente al neutro 'a pesar de'?",
+      "question": "Which sentence means \"The convention was approved in 1989; nevertheless, many conflicts remain\"?",
       "options": [
-        "Denota sumisión resignada ante el poder establecido.",
-        "Enfatiza un desafío firme, perseverancia moral y triunfo de la acción sobre un entorno hostil.",
-        "Indica que el sujeto ignoraba la existencia de leyes.",
-        "Expresa arrepentimiento por haber iniciado una protesta."
+        "El convenio se aprobó en 1989; no obstante, todavía hay muchos conflictos.",
+        "El convenio se aprobó en 1989; por eso, todavía hay muchos conflictos.",
+        "El convenio se aprobó en 1989; además, todavía hay muchos conflictos."
       ],
-      "correct": 1
+      "correct": 0,
+      "distractor_skills": {
+        "1": "porque-y-por-eso",
+        "2": "ordering-markers"
+      }
     },
     {
       "id": "b2-pluralismo-01.ex02",
@@ -24,9 +27,9 @@
       "teaches": [
         "contrast-concession-connectors"
       ],
-      "sentence": "A __ de las presiones de las corporaciones mineras, la comunidad mantuvo la defensa del río.",
-      "answer": "despecho",
-      "english": "In spite of the pressures from mining corporations, the community maintained the defense of the river."
+      "sentence": "La Declaración de 2007 no es un tratado; sin __, se cita con frecuencia.",
+      "answer": "embargo",
+      "english": "The 2007 Declaration is not a treaty; however, it is often cited."
     },
     {
       "id": "b2-pluralismo-01.ex03",
@@ -37,20 +40,20 @@
       ],
       "pairs": [
         [
-          "a despecho de",
-          "in spite of / in defiance of"
+          "pueblo indígena",
+          "indigenous people"
         ],
         [
-          "autodeterminación",
-          "self-determination"
+          "consulta",
+          "consultation"
         ],
         [
-          "aculturación",
-          "acculturation / forced cultural assimilation"
+          "convenio",
+          "convention (agreement)"
         ],
         [
-          "inalienable",
-          "inalienable / non-transferable"
+          "tribunal",
+          "court"
         ]
       ]
     },
@@ -58,14 +61,13 @@
       "id": "b2-pluralismo-01.ex04",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué estipula el Convenio 169 de la OIT sobre los proyectos que afectan tierras indígenas?",
+      "question": "When did the ILO approve Convention 169, according to the text?",
       "options": [
-        "La venta forzosa de los territorios colectivos a la banca privada.",
-        "La obligación imperativa de realizar una consulta libre, previa e informada con las comunidades.",
-        "La disolución de los concejos comunales de ancianos.",
-        "La prohibición de enseñar idiomas originarios en las escuelas."
+        "En 1989.",
+        "En 1957.",
+        "En 2007."
       ],
-      "correct": 1
+      "correct": 0
     }
   ]
 }

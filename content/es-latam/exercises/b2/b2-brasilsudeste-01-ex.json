@@ -5,92 +5,109 @@
       "id": "b2-brasilsudeste-01.ex01",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "contrast-markers"
-      ],
-      "question": "¿Qué conector contrastivo confronta de modo equilibrado dos facetas simultáneas de una realidad urbana?",
+      "question": "Which sentence says the same thing again in other words?",
       "options": [
-        "Además",
-        "Mientras que",
-        "Asimismo",
-        "Por ende"
+        "La ciudad creció gracias al café; sin embargo, el dinero del café pagó su crecimiento.",
+        "La ciudad creció gracias al café; es decir, el dinero del café pagó su crecimiento.",
+        "La ciudad creció gracias al café; además, el dinero del café pagó su crecimiento."
       ],
-      "correct": 1
+      "correct": 1,
+      "teaches": [
+        "reformulation-markers"
+      ],
+      "distractor_skills": {
+        "0": "contrast-concession-connectors",
+        "2": "ordering-markers"
+      }
     },
     {
       "id": "b2-brasilsudeste-01.ex02",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Muchos inmigrantes trabajaban en las fábricas; en otras ____, la industria necesitaba obreros.",
+      "answer": "palabras",
+      "english": "Many immigrants worked in the factories; in other words, industry needed workers.",
       "teaches": [
-        "contrast-markers"
-      ],
-      "sentence": "El centro financiero concentra la riqueza; en __, las periferias reclaman inversiones básicas.",
-      "answer": "contrapartida",
-      "english": "The financial center concentrates wealth; in contrast, the peripheries demand basic investments."
+        "reformulation-markers"
+      ]
     },
     {
       "id": "b2-brasilsudeste-01.ex03",
       "type": "matching",
-      "category": "grammar",
-      "teaches": [
-        "contrast-markers"
-      ],
+      "category": "vocabulary",
       "pairs": [
         [
-          "mientras que",
-          "confrontación de facetas simultáneas"
+          "el ferrocarril",
+          "railway"
         ],
         [
-          "en contrapartida",
-          "equilibrio de platos de una balanza"
+          "el inmigrante",
+          "immigrant"
         ],
         [
-          "por el contrario",
-          "contraposición tajante tras negación"
+          "la huelga",
+          "strike"
         ],
         [
-          "en tanto que",
-          "matiz contrastivo-temporal culto"
+          "el obrero",
+          "factory worker"
         ]
+      ],
+      "teaches": [
+        "b2-brazil-rio-sao-paulo-vocab"
       ]
     },
     {
       "id": "b2-brasilsudeste-01.ex04",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "contrast-markers"
+      "tiles": [
+        "Los",
+        "obreros",
+        "dejaron",
+        "de",
+        "trabajar;",
+        "es",
+        "decir,",
+        "hicieron",
+        "huelga."
       ],
-      "sentence": "No disminuyó la congestión vehicular; por el __, se expandió hacia las vías de circunvalación.",
-      "answer": "contrario",
-      "english": "Vehicular congestion did not decrease; on the contrary, it expanded toward the ring roads."
+      "solution": [
+        "Los",
+        "obreros",
+        "dejaron",
+        "de",
+        "trabajar;",
+        "es",
+        "decir,",
+        "hicieron",
+        "huelga."
+      ],
+      "english": "The workers stopped working; that is, they went on strike.",
+      "teaches": [
+        "reformulation-markers"
+      ]
     },
     {
       "id": "b2-brasilsudeste-01.ex05",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "vocabulary",
+      "sentence": "Los obreros pararon las fábricas con una ____.",
+      "answer": "huelga",
+      "english": "The workers stopped the factories with a strike.",
       "teaches": [
         "b2-brazil-rio-sao-paulo-vocab"
-      ],
-      "question": "¿Qué sustantivo designa el conjunto urbano formado por el crecimiento y unión de varios municipios vecinos?",
-      "options": [
-        "La conurbación",
-        "El minifundio",
-        "La rada",
-        "El archipiélago"
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b2-brasilsudeste-01.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué cultivo agrícola financió el despliegue ferroviario y la industrialización inicial de São Paulo?",
+      "question": "According to the text, who did the ship Kasato Maru bring to Santos in 1908?",
       "options": [
-        "El café",
-        "El caucho",
-        "La yerba mate",
-        "El algodón"
+        "Los primeros inmigrantes de Japón.",
+        "Los primeros inmigrantes de Italia.",
+        "Los primeros obreros del Gran ABC."
       ],
       "correct": 0
     }

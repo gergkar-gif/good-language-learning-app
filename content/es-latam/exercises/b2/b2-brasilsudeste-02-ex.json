@@ -3,94 +3,114 @@
   "exercises": [
     {
       "id": "b2-brasilsudeste-02.ex01",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
+      "sentence": "La bahía de Guanabara, ____ aguas bañan muchas playas, tiene varias islas.",
+      "answer": "cuyas",
+      "english": "Guanabara Bay, whose waters wash many beaches, has several islands.",
       "teaches": [
-        "relative-clauses"
-      ],
-      "question": "En 'Los morros que rodean la bahía crean un anfiteatro natural', ¿qué tipo de relativa es?",
-      "options": [
-        "Relativa explicativa separada por comas.",
-        "Relativa especificativa que delimita el conjunto de morros sin comas.",
-        "Subordinada adverbial de tiempo.",
-        "Oración principal transitiva."
-      ],
-      "correct": 1
+        "relativo-posesivo-cuyo"
+      ]
     },
     {
       "id": "b2-brasilsudeste-02.ex02",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence says \"The sailors who arrived in 1502 thought the bay was a river\"?",
+      "options": [
+        "Los navegantes donde llegaron en 1502 creyeron que la bahía era un río.",
+        "Los navegantes cuyos llegaron en 1502 creyeron que la bahía era un río.",
+        "Los navegantes que llegaron en 1502 creyeron que la bahía era un río."
+      ],
+      "correct": 2,
       "teaches": [
         "relative-clauses"
       ],
-      "sentence": "La bahía de Guanabara, __ aguas albergan islas históricas, cautivó a los exploradores portugueses.",
-      "answer": "cuyas",
-      "english": "Guanabara Bay, whose waters harbor historic islands, captivated Portuguese explorers."
+      "distractor_skills": {
+        "1": "relativo-posesivo-cuyo"
+      }
     },
     {
       "id": "b2-brasilsudeste-02.ex03",
       "type": "matching",
-      "category": "grammar",
-      "teaches": [
-        "relative-clauses"
-      ],
+      "category": "vocabulary",
       "pairs": [
         [
-          "relativa especificativa",
-          "los cerros que dominan la playa"
+          "el morro",
+          "hill (in Rio)"
         ],
         [
-          "relativa explicativa",
-          "el Corcovado, que se eleva hacia el cielo"
+          "la bahía",
+          "bay"
         ],
         [
-          "relativo posesivo",
-          "la ciudad cuyas calzadas son famosas"
+          "la favela",
+          "favela, informal hillside district"
         ],
         [
-          "relativo locativo",
-          "el paseo donde florece la sociabilidad"
+          "la ladera",
+          "hillside"
         ]
+      ],
+      "teaches": [
+        "b2-brazil-rio-sao-paulo-vocab"
       ]
     },
     {
       "id": "b2-brasilsudeste-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "El Corcovado es la montaña ____ está el Cristo Redentor.",
+      "answer": "donde",
+      "english": "The Corcovado is the mountain where the statue of Christ the Redeemer stands.",
       "teaches": [
         "relative-clauses"
-      ],
-      "sentence": "Las comunidades __ trepan por las laderas conservan vivas las tradiciones de la samba de raíz.",
-      "answer": "que",
-      "english": "The communities that climb up the hillsides keep the traditions of root samba alive."
+      ]
     },
     {
       "id": "b2-brasilsudeste-02.ex05",
-      "type": "multiple-choice",
-      "category": "vocabulary",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "La",
+        "ciudad",
+        "donde",
+        "se",
+        "instaló",
+        "la",
+        "corte",
+        "en",
+        "1808",
+        "era",
+        "Río."
+      ],
+      "solution": [
+        "La",
+        "ciudad",
+        "donde",
+        "se",
+        "instaló",
+        "la",
+        "corte",
+        "en",
+        "1808",
+        "era",
+        "Río."
+      ],
+      "english": "The city where the court settled in 1808 was Rio.",
       "teaches": [
-        "b2-brazil-rio-sao-paulo-vocab"
-      ],
-      "question": "¿Cómo se denominan las colinas redondeadas de granito características del paisaje de Río de Janeiro?",
-      "options": [
-        "Morros",
-        "Cuchillas",
-        "Médanos",
-        "Altiplanos"
-      ],
-      "correct": 0
+        "relative-clauses"
+      ]
     },
     {
       "id": "b2-brasilsudeste-02.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿En qué año se trasladó la corte monárquica portuguesa de Juan VI a Río de Janeiro?",
+      "question": "According to the text, what happened in Rio in 1808?",
       "options": [
-        "1750",
-        "1808",
-        "1888",
-        "1922"
+        "Se inauguró el Sambódromo.",
+        "La familia real portuguesa se instaló allí.",
+        "Se declaró la independencia de Brasil."
       ],
       "correct": 1
     }
