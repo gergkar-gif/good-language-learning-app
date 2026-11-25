@@ -27,3 +27,8 @@ the notes) and two near-duplicate units (25: five concessions; 27: one skill twi
 28 partly topic-only.
 
 ## Agents (edit-in-place, Sonnet), started 12:28 UTC on 842d5dbe
+
+- A (Latin America Units 23, 24, 25; /home/user/parlour-read-a): agent af85a410167828c62
+- B (Latin America Units 26, 27, 28; /home/user/parlour-read-b): agent adf0d20e535d30e95
+
+Resume a stopped agent with SendMessage to its id; never start a new one.
