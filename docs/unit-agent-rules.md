@@ -635,3 +635,5 @@ A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"},
   have the same number in both courses (B1 core Unit 25 is `b1-25-*` in
   es-es and es-latam); es-es A2 has one unit more than es-latam (unit 33
   `vosotros`, the last), so A2 numbers match too.
+
+**ES B2 latam (2026-11-25).** Non-fiction (world) texts carry no invented people and no invented quotations: the generator stages named witnesses ("Don Baudilio", "la doctora Arreaza") who speak in quotation marks, and even gives real people speeches they never made or wrong roles. Keep a quotation only if it is real and you are sure of its wording (a constitution's article, a book title, a famous slogan); otherwise paraphrase without quotation marks. `check-content` flags quoted spans of six or more words in world texts as `story-quote`. A lesson on this track teaches one skill the learner knows by its unit; never a core skill taught later.

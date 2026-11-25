@@ -60,6 +60,7 @@ CHECKS = {
     # ES B2 batches 15-30, 2026-11-13: agents kept padding texts about a work with talk
     # about the text itself, though the brief forbids it (four batches running)
     "story-meta": "a classic text talks about itself, the course or its reader instead of the work",
+    "story-quote": "a non-fiction (world) text puts six or more words in quotation marks: the generator invents witnesses and quotations; keep a quotation only if it is real and sourced (ES B2 latam 2026-11-25: invented speeches given to real people)",
     "story-attribution": "a classic with an `author` and neither `about` nor `inspired`: the Library says \"Adapted from <work> by <author>\", but the text names its author near the start (so it is about them) or the author died less than 70 years ago (an in-copyright work is not adapted; the text is about it or inspired by it). Mark `about`/`inspired`, or rewrite (HU C1 2026-11-18: 36 texts about writers said \"Adapted from\")",
     # ES B2, 2026-11-14: "Fuentes quería que el lector…", "Algunos lectores señalaron…" in items
     "item-reader": "an item or challenge (B2+, Spanish) says what unnamed readers or critics think or do",
@@ -147,7 +148,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"cue-quotes-target", "listening-many-changes", "character-role", "character-extra", "story-meta", "story-attribution", "item-reader", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"story-quote", "cue-quotes-target", "listening-many-changes", "character-role", "character-extra", "story-meta", "story-attribution", "item-reader", "table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -865,6 +866,10 @@ def story_attribution(story):
     return "; ".join(reasons) or None
 
 
+# quoted spans: «…», “…”, "…", and '…' (not an apostrophe inside a word)
+STORY_QUOTE = re.compile(r"«([^»]+)»|“([^”]+)”|\"([^\"]+)\"|(?<![\w])'([^']+)'(?![\w])")
+
+
 def check_story(src, course, level, ref, L):
     """Placeholder content in a lesson's story: copied comprehension questions, key words it doesn't use."""
     out, rel = [], f"content/{course}/{ref}"
@@ -890,6 +895,12 @@ def check_story(src, course, level, ref, L):
             m = STORY_META_HU.search(fold(p.get("text", ""))) if p.get("lang") != "en" else None
             if m:
                 out.append(("story-meta", Path(ref).stem, m.group(0), rel))
+    if story.get("type") == "world" and level not in ("a1", "a2"):
+        for p in story.get("paragraphs", []):
+            for m in STORY_QUOTE.finditer(p.get("text", "")):
+                q = next(g for g in m.groups() if g)
+                if len(q.split()) >= 6:
+                    out.append(("story-quote", Path(ref).stem, q[:60], rel))
     why = story_attribution(story)
     if why:
         out.append(("story-attribution", Path(ref).stem, why, rel))
