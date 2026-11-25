@@ -1,0 +1,28 @@
+You are rewriting and fixing THREE units of the B2 Latin America track (es-latam, Latin American Spanish) of the Parlour language app, for a learner who knows only English. Work ONLY in `{W}` (a git worktree; absolute paths). **Finish each unit completely (screens, items, texts, challenges file, checks) before you start the next.** Files written as you go survive if you are cut off.
+
+As models of finished work on THIS track, look first at the frozen Latin America Units 1–4: `content/es-latam/grammar/b2/b2-guatemala-03-a-gr.json`, `content/es-latam/exercises/b2/b2-guatemala-03-ex.json`, `content/es-latam/lessons/b2/b2-guatemala-03.json`, `content/es-latam/stories/world/b2/b2-guatemala-04.json` (tone and length of a text), and their challenges in `content/es-latam/curriculum/challenges.json` (`b2-guatemala-01` …).
+
+**Topic-only lessons.** Some of your lessons have no grammar at all: their screen is a topic or word list and their items are tagged with a retired topic slug. Give each such lesson ONE known grammar skill (the notes suggest one; you may choose another from the sheet's "Known grammar" if it fits the topic better, but never one already chosen for another lesson of the same unit), write its screen as a recap of that skill applied to the topic, and make the lesson's grammar items test it; word items get the unit vocabulary skill. Every retired slug must be gone.
+
+## Unit 1 of yours: `es-latam b2 el-salvador-honduras`, B2 Latin America Unit 5 (app number), after core Unit 5
+
+Lessons b2-salvadorhonduras-01 … -05, consolidation; texts `content/es-latam/stories/world/b2/b2-salvadorhonduras-01.json` … `-05.json`. Sheet `{W}/prior-el-salvador-honduras.md`; challenges `{W}/challenges-el-salvador-honduras.json`; report `{W}/report-el-salvador-honduras.md`. Known by now: B1 and B2 core Units 1–5 (Unit 5 adds `refutacion-no-es-que-sino`).
+- -01 `relativo-posesivo-cuyo` (B1) and -04 `formal-cause-connectors` (B1): known, recap.
+- -02 `reporting-verbs` (core Unit 18): re-point to `estilo-indirecto-informacion` (B1: *dijo que*, *según*); remove the B2 reporting verbs (*advertir*, *sostener*, *señalar que* as a taught set).
+- -03 `contrast-markers` (core Unit 30): re-point to `contrast-concession-connectors` (B1: *sin embargo*, *no obstante*); remove *en cambio*/*por el contrario* as taught forms.
+- -05: known skills only. Consolidation ex05, ex08: one tag each.
+Topics: Copán, the Salvadoran civil war (1980–1992) and the Chapultepec accords, Óscar Romero, migration and remittances, Honduras today. Present-day (Bukele's state of exception since 2022, bitcoin, Honduras' 2025 election and its disputed count): dated, attributed, no judgement; the reviewer sends checked facts.
+
+## Unit 2 of yours: `es-latam b2 nicaragua`, B2 Latin America Unit 6, after core Unit 6
+
+Lessons b2-nicaragua-01 … -05, consolidation; texts `…/world/b2/b2-nicaragua-01.json` … `-05.json`. Sheet `{W}/prior-nicaragua.md`; challenges `{W}/challenges-nicaragua.json`; report `{W}/report-nicaragua.md`. Known: B1, B2 core 1–6 (Unit 6 adds `el-hecho-de-que-subjuntivo`).
+- -01 `consecutivas-de-tal-manera` (core Unit 31): re-point to `formal-cause-connectors` (B1) or `porque-y-por-eso` (A2) for causes and results; remove *de tal manera que*, *tan … que*, *tanto … que* as taught forms.
+- -02 `rhetorical-devices` (core Unit 36): re-point to `inversion-enfasis-fronting` (B2 Unit 1; Darío and poetry suit it) or `stance-adverbs`.
+- -03 `pluscuamperfecto-subjuntivo-si` (B1): known, recap.
+- -04 `concesivas-aun-cuando` (core Unit 8): re-point to `a-pesar-de` (B1) or `concesivas-aunque` (A2); remove *aun cuando*, *si bien*, *a sabiendas de que*.
+- -05: known skills only; consolidation ex05 one tag.
+Topics: lakes and volcanoes, Rubén Darío, the Sandinista revolution and the Contra war, 2018 protests, present-day government (in 2025 a constitutional reform made Daniel Ortega and Rosario Murillo co-presidents): dated facts, attributed judgements (UN, IACHR), no narrator judgement.
+
+## Unit 3 of yours: `es-latam b2 costa-rica`, B2 Latin America Unit 7, after core Unit 7
+
+Lessons b2-costarica-01 … -05, consolidation; texts `…/world/b2/b2-costarica-01.json` … `-05.json`. Sheet `{W}/prior-costa-rica.md`; challenges `{W}/challenges-costa-rica.json`; report `{W}/report-costa-rica.md`. Known: B1, B2 core 1–7 (Unit 7 adds `antes-despues-de-que`). **All five lessons are topic-only** (retired slugs). Suggested skills: -01 biodiversity: `oraciones-hendidas-enfasis`; -02 abolition of the army (1948–49): `refutacion-no-es-que-sino` (B2 Unit 5); -03 welfare and health: `el-hecho-de-que-subjuntivo` (B2 Unit 6); -04 ecotourism and energy: `antes-despues-de-que` (B2 Unit 7); -05 migration and agribusiness: `infinitive-vs-que-subjunctive` (B2 Unit 4). Present-day (electricity share from renewables, the 2026 election and new government): dated or left out.
