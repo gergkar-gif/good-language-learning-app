@@ -711,16 +711,36 @@ const CefrExam = (function () {
             return m ? m.length : 0;
         }
 
+        // Offline marking of writing and speaking goes through ProductionCheck
+        // (engine/production-check.js): repeated words, text copied from the
+        // task and English answers do not count, phrases match whole words,
+        // and no criterion has a minimum score. Before 2026-11-25 every
+        // criterion had a floor and phrases matched as substrings, so an
+        // empty answer scored 11/25 and any recording 21/25.
+        const _Check = (typeof ProductionCheck !== 'undefined')
+            ? ProductionCheck
+            : (typeof require === 'function' ? require('./production-check.js') : null);
+
+        function _taskSources(tarea) {
+            return [tarea.prompt, tarea.instructions, tarea.context, tarea.situation, tarea.text]
+                .concat(Array.isArray(tarea.bulletPoints) ? tarea.bulletPoints : [])
+                .filter(v => typeof v === 'string' && v);
+        }
+
         function _evaluateWritingText(text, tarea) {
-            const wordCount = _countWords(text);
             const minWords = tarea.minWords || 100;
             const maxWords = tarea.maxWords || 130;
+            const check = _Check.analyse(text, { minWords: minWords, targetKeywords: tarea.targetKeywords || [] },
+                { modality: 'written', sourceTexts: _taskSources(tarea) });
+            const wordCount = check.effectiveWords;
+            const gate = !check.notTargetLanguage && wordCount >= minWords * 0.6;
 
             // Length score (up to 7 pts)
-            let lengthScore = 7;
-            if (wordCount < minWords * 0.7) lengthScore = 3;
-            else if (wordCount < minWords) lengthScore = 5;
-            else if (wordCount > maxWords * 1.3) lengthScore = 5;
+            let lengthScore = 0;
+            if (check.notTargetLanguage) lengthScore = 0;
+            else if (wordCount >= minWords) lengthScore = check.words > maxWords * 1.3 ? 5 : 7;
+            else if (wordCount >= minWords * 0.7) lengthScore = 4;
+            else if (wordCount >= minWords * 0.4) lengthScore = 2;
 
             // Connectors & cohesion (up to 6 pts)
             const isHu = _id.includes('hu');
@@ -780,19 +800,22 @@ const CefrExam = (function () {
                     ]))
                 );
             }
-            const lowerText = text.toLowerCase();
-            const foundConnectors = examConnectors.filter(c => lowerText.includes(c));
-            const cohesionScore = Math.min(6, Math.max(2, foundConnectors.length * 2));
+            const foundConnectors = _Check.matchPhrases(text, examConnectors);
+            const cohesionScore = gate ? Math.min(6, foundConnectors.length * 2) : 0;
 
-            // Punctuation & paragraphs (up to 6 pts)
-            const hasParagraphs = text.includes('\n');
-            const hasPunctuation = /[.!?¿¡]/.test(text);
-            const structScore = (hasParagraphs && hasPunctuation) ? 6 : 4;
+            // Sentences & paragraphs (up to 6 pts)
+            const hasParagraphs = /\n\s*\S/.test(String(text || '').trim());
+            const structScore = !gate ? 0
+                : (check.sentences >= 3 ? (hasParagraphs ? 6 : 4) : (check.sentences >= 1 ? 2 : 0));
 
-            // Keyword compliance (up to 6 pts)
+            // Keyword compliance (up to 6 pts). A task without target
+            // phrases marks vocabulary range instead of handing out a floor.
             const targetKeywords = tarea.targetKeywords || [];
-            const matchedKw = targetKeywords.filter(kw => lowerText.includes(kw.toLowerCase()));
-            const kwScore = Math.min(6, Math.max(2, matchedKw.length * 2));
+            const matchedKw = check.matchedKeywords;
+            const kwScore = !gate ? 0
+                : (targetKeywords.length
+                    ? Math.min(6, matchedKw.length * 2)
+                    : (check.distinctWords >= minWords * 0.6 ? 6 : (check.distinctWords >= minWords * 0.4 ? 3 : 0)));
 
             const totalScore = Math.min(25, lengthScore + cohesionScore + structScore + kwScore);
 
@@ -814,11 +837,16 @@ const CefrExam = (function () {
         }
 
         function _evaluateSpeakingText(text, tarea) {
-            const wordCount = _countWords(text);
             const hasAudio = !!_state.speakingAudioBlobUrl;
+            const check = _Check.analyse(text, { minWords: 30, targetKeywords: tarea.targetKeywords || [] },
+                { modality: 'oral', sourceTexts: _taskSources(tarea) });
+            const wordCount = check.effectiveWords;
+            const gate = !check.notTargetLanguage && wordCount >= 15;
 
-            let lengthScore = (wordCount >= 60 || hasAudio) ? 7 : (wordCount >= 30 ? 4 : 2);
-            const lowerText = text.toLowerCase();
+            // Marked on the transcript only: a recording on its own proves
+            // nothing was said in the language, so it earns no length points.
+            let lengthScore = check.notTargetLanguage ? 0
+                : (wordCount >= 60 ? 7 : (wordCount >= 30 ? 4 : (wordCount >= 15 ? 2 : 0)));
             const isHu = _id.includes('hu');
             const isA1 = (_data && _data.level === 'A1') || _id.includes('a1');
             const isA2 = (_data && _data.level === 'A2') || _id.includes('a2');
@@ -840,10 +868,14 @@ const CefrExam = (function () {
                         : (isB2 ? ['en primer lugar', 'por ejemplo', 'en mi opinión', 'desde mi perspectiva', 'además', 'por consiguiente', 'no obstante', 'sin embargo', 'en definitiva', 'cabe destacar']
                         : ['en primer lugar', 'por ejemplo', 'en mi opinión', 'además', 'por eso'])));
             }
-            const foundConnectors = speakingConnectors.filter(c => lowerText.includes(c));
-            const cohesionScore = Math.min(6, Math.max(2, foundConnectors.length * 2));
+            const foundConnectors = _Check.matchPhrases(text, speakingConnectors);
+            const cohesionScore = gate ? Math.min(6, foundConnectors.length * 2) : 0;
+            // Delivery: spoken (recorded) and long enough to judge.
+            const deliveryScore = gate ? (hasAudio ? 6 : 3) : 0;
+            // Range of vocabulary, in place of the former constant 6 points.
+            const rangeScore = !gate ? 0 : (check.distinctWords >= 40 ? 6 : (check.distinctWords >= 20 ? 3 : 0));
 
-            const totalScore = Math.min(25, lengthScore + cohesionScore + (hasAudio ? 6 : 3) + 6);
+            const totalScore = Math.min(25, lengthScore + cohesionScore + deliveryScore + rangeScore);
 
             return {
                 totalScore: totalScore,
@@ -2106,7 +2138,15 @@ const CefrExam = (function () {
         return {
             id: _id,
             render: render,
-            stop: stop
+            stop: stop,
+            // For tests/test-cefr-exam-production.js: the offline markers.
+            _testHooks: {
+                writing: (text, tarea) => _evaluateWritingText(text, tarea),
+                speaking: (text, tarea, audio) => {
+                    _state.speakingAudioBlobUrl = audio || null;
+                    return _evaluateSpeakingText(text, tarea);
+                }
+            }
         };
     }
 

@@ -18,6 +18,17 @@ if git diff --name-only origin/master...HEAD 2>/dev/null | grep -qE '^(engine|te
   done
 fi
 
+# Level-test / CEFR-exam production marking (writing and speaking).
+if git diff --name-only origin/master...HEAD 2>/dev/null | grep -qE '^(engine/(leveltest|cefr-exam|production-check)\.js|content/[^/]+/(tests/|[^/]*exam\.json))'; then
+  echo "pre-push: running production-marking tests..."
+  for t in test-leveltest-production test-cefr-exam-production; do
+    if ! node "tests/$t.js" > /dev/null; then
+      echo "pre-push: push blocked. tests/$t.js fails; run it for the details."
+      exit 1
+    fi
+  done
+fi
+
 # Only validate content files if the commits being pushed actually touch content/
 if ! git diff --name-only origin/master...HEAD 2>/dev/null | grep -q '^content/'; then
   exit 0

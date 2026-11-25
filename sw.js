@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-11-24-es-c1';
+const CACHE_VERSION = 'v2026-11-25-prodcheck';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -69,6 +69,7 @@ const PRECACHE_ASSETS = [
     'engine/canDoPrompt.js',
     'engine/drills/speaking-runner.js',
     'engine/drills/speaking.js',
+    'engine/production-check.js',
     'engine/grader/local-grader.js',
     'engine/grader/grader-prompt.js',
     'engine/grader/schema.js',

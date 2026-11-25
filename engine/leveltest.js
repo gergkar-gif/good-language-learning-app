@@ -47,6 +47,10 @@ const LevelTest = (function () {
     let exitCallback = null;
     let openingTab = 'learn';
 
+    const Check = (typeof ProductionCheck !== 'undefined')
+        ? ProductionCheck
+        : require('./production-check.js');
+
     function hasTest(level) {
         if (!level || typeof level !== 'string') return false;
         const norm = level.toUpperCase();
@@ -145,11 +149,29 @@ const LevelTest = (function () {
         return m ? m.length : 0;
     }
 
+    // Whole-word match, so "era" is not found in "primera".
     function hasKeyword(text, kw) {
         if (!text || !kw) return false;
-        const normText = text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        const normKw = kw.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        return normText.includes(normKw);
+        return Check.matchPhrases(text, [kw]).length > 0;
+    }
+
+    // Everything the test itself shows the learner. A run of words copied
+    // from here into the writing or speaking box is not the learner's own.
+    function testSourceTexts() {
+        const out = [];
+        const add = v => { if (typeof v === 'string' && v) out.push(v); };
+        (test.questions || []).forEach(q => { add(q.sentence); add(q.prompt); });
+        if (test.readingSection) {
+            add(test.readingSection.passage);
+            (test.readingSection.questions || []).forEach(q => { add(q.question); add(q.stem); add(q.text); });
+        }
+        if (test.listeningSection && test.listeningSection.audio) {
+            (test.listeningSection.audio.turns || []).forEach(t => add(t.text));
+        }
+        [test.writingTask, test.speakingTask].forEach(t => {
+            if (t) { add(t.prompt); add(t.context); }
+        });
+        return out;
     }
 
     // ----------------------------------------
@@ -181,50 +203,27 @@ const LevelTest = (function () {
             }
         });
 
-        // Writing evaluation (up to 3 points)
-        let writingScore = 0;
-        let writingMax = 0;
+        // Writing and speaking are feedback, not marks (user decision
+        // 2026-11-25). No offline check can tell good language from text
+        // padded with the target phrases, so counting them let a learner
+        // buy up to 6 points by typing. The pass and jump-ahead decisions
+        // rest on the items the test can actually mark; the productions
+        // get the quick check below now and the AI grader's reading after
+        // (gradeProductions).
+        const sources = testSourceTexts();
         let writingBreakdown = null;
         if (test.writingTask) {
-            writingMax = 3;
-            const wWords = countWords(writingText);
-            const reqWords = test.writingTask.minWords || 20;
-            const matchedKw = (test.writingTask.targetKeywords || []).filter(kw => hasKeyword(writingText, kw));
-
-            const lenPts = wWords >= reqWords ? 1 : (wWords >= reqWords * 0.6 ? 0.5 : 0);
-            const kwPts = matchedKw.length >= 2 ? 1 : (matchedKw.length >= 1 ? 0.5 : 0);
-            const structPts = (wWords >= 10 && /[.!?¿¡]/.test(writingText)) ? 1 : (wWords >= 6 ? 0.5 : 0);
-            writingScore = Math.min(3, lenPts + kwPts + structPts);
-            writingBreakdown = {
-                words: wWords,
-                requiredWords: reqWords,
-                matchedKeywords: matchedKw,
-                score: writingScore,
-                max: writingMax
-            };
+            writingBreakdown = Object.assign(
+                Check.analyse(writingText, test.writingTask, { modality: 'written', sourceTexts: sources }),
+                { counted: false, ai: null }
+            );
         }
-
-        // Speaking evaluation (up to 3 points)
-        let speakingScore = 0;
-        let speakingMax = 0;
         let speakingBreakdown = null;
         if (test.speakingTask) {
-            speakingMax = 3;
-            const sWords = countWords(speakingTranscript);
-            const hasAudio = !!speakingAudioUrl;
-            const matchedKw = (test.speakingTask.targetKeywords || []).filter(kw => hasKeyword(speakingTranscript, kw));
-
-            const subPts = (hasAudio || sWords >= 8) ? 1 : 0;
-            const kwPts = matchedKw.length >= 1 ? 1 : 0.5;
-            const prodPts = (sWords >= 15 || (hasAudio && sWords >= 6)) ? 1 : 0.5;
-            speakingScore = Math.min(3, subPts + kwPts + prodPts);
-            speakingBreakdown = {
-                words: sWords,
-                hasAudio: hasAudio,
-                matchedKeywords: matchedKw,
-                score: speakingScore,
-                max: speakingMax
-            };
+            speakingBreakdown = Object.assign(
+                Check.analyse(speakingTranscript, test.speakingTask, { modality: 'oral', sourceTexts: sources }),
+                { counted: false, ai: null, hasAudio: !!speakingAudioUrl }
+            );
         }
 
         // Reading comprehension section scoring
@@ -302,8 +301,8 @@ const LevelTest = (function () {
             } catch (e) {}
         }
 
-        const totalEarned = part1Correct + readingCorrect + listeningCorrect + writingScore + speakingScore;
-        const totalPossible = test.questions.length + readingMax + listeningMax + writingMax + speakingMax;
+        const totalEarned = part1Correct + readingCorrect + listeningCorrect;
+        const totalPossible = test.questions.length + readingMax + listeningMax;
         const score = totalEarned / totalPossible;
         const jumpAhead = score >= JUMP_AHEAD_MARK;
 
@@ -918,6 +917,7 @@ const LevelTest = (function () {
                     </div>
                     <p class="lt-task-prompt">${esc(t.prompt)}</p>
                     ${t.context ? `<p class="lt-task-context"><em>${esc(t.context)}</em></p>` : ''}
+                    <p class="lt-task-context">Not counted in your score: you get feedback on it after marking.</p>
                     <div class="lt-keywords">
                         <span class="lt-keywords-label">Target structures to incorporate:</span>
                         <div class="lt-chips">
@@ -952,6 +952,7 @@ const LevelTest = (function () {
                         <span class="lt-task-badge">Target: min. ${t.minSeconds || 15}s speech</span>
                     </div>
                     <p class="lt-task-prompt">${esc(t.prompt)}</p>
+                    <p class="lt-task-context">Not counted in your score: you get feedback on it after marking.</p>
                     <div class="lt-keywords">
                         <span class="lt-keywords-label">Target oral expressions:</span>
                         <div class="lt-chips">
@@ -975,6 +976,90 @@ const LevelTest = (function () {
                 </div>
             </div>
         `;
+    }
+
+    // One feedback card per production. Not part of the score: says so,
+    // then shows the AI grader's reading when it has arrived, else the
+    // offline quick check with the reasons words were not counted.
+    function productionCardHtml(label, p) {
+        if (!p) return '';
+        let body;
+        if (p.ai && p.ai.pending) {
+            body = '<p class="lt-prod-line">Getting feedback…</p>';
+        } else if (p.ai && p.ai.aiEvaluated) {
+            body = `<p class="lt-prod-line"><strong>${p.ai.overallScore}%</strong> from the AI grader.</p>`
+                + (p.ai.tip ? `<p class="lt-prod-line">${esc(p.ai.tip)}</p>` : '');
+        } else {
+            body = `<p class="lt-prod-line">Quick check: ${p.score} / ${p.max} (${p.effectiveWords} of ${p.requiredWords} words counted, ${p.matchedKeywords.length} target phrases).`
+                + (p.ai ? ' AI feedback is unavailable right now.' : '') + '</p>'
+                + (p.notes || []).map(n => `<p class="lt-prod-line">${esc(n)}</p>`).join('');
+        }
+        return `
+            <div class="lt-breakdown-row lt-prod-row">
+                <span class="lt-breakdown-label">${label} <em>(feedback only, not in your score)</em></span>
+            </div>
+            <div class="lt-prod-body">${body}</div>
+        `;
+    }
+
+    function productionFeedbackHtml(result) {
+        if (!result.writing && !result.speaking) return '';
+        return `<div class="lt-result-breakdown lt-production-feedback">
+            ${productionCardHtml('Written Production', result.writing)}
+            ${productionCardHtml('Spoken Production', result.speaking)}
+        </div>`;
+    }
+
+    // Asks the AI grader to read the writing and speaking answers after the
+    // score is shown. The answer only changes the feedback cards and the
+    // stored result's feedback fields, never score / passed / jumpAhead.
+    function gradeProductions(result, level) {
+        if (typeof GraderEngine === 'undefined') return;
+        if (typeof navigator !== 'undefined' && navigator.onLine === false) return;
+        const jobs = [];
+        if (result.writing && writingText.trim()) {
+            jobs.push(['writing', writingText, test.writingTask, 'written', 'written_production']);
+        }
+        if (result.speaking && speakingTranscript.trim()) {
+            jobs.push(['speaking', speakingTranscript, test.speakingTask, 'oral', 'oral_production']);
+        }
+        if (!jobs.length) return;
+        const engine = new GraderEngine();
+        jobs.forEach(([key, text, task, modality, taskType]) => {
+            result[key].ai = { pending: true };
+            engine.grade(text, {
+                cefrLevel: test.level,
+                taskType: taskType,
+                taskInstructions: [task.prompt, task.context].filter(Boolean).join(' '),
+                targetSkills: task.teaches || [],
+                modality: modality
+            }).then(ai => {
+                result[key].ai = {
+                    aiEvaluated: !!(ai && ai.aiEvaluated),
+                    overallScore: ai && typeof ai.overallScore === 'number' ? ai.overallScore : null,
+                    tip: ai && ai.aiEvaluated && typeof _graderOneLineTip === 'function' ? _graderOneLineTip(ai) : ''
+                };
+            }).catch(() => {
+                result[key].ai = { aiEvaluated: false };
+            }).then(() => {
+                storeProductionFeedback(level, result);
+                if (marked && mark.lastResult === result) render(level);
+            });
+        });
+        render(level);
+    }
+
+    // Writes the AI feedback into the saved result if that result is the
+    // one just taken (saveResult keeps only the best attempt).
+    function storeProductionFeedback(level, result) {
+        try {
+            const all = allResults();
+            if (all[level] && all[level].takenAt === result.takenAt) {
+                all[level].writing = result.writing;
+                all[level].speaking = result.speaking;
+                localStorage.setItem(resultsKey(), JSON.stringify(all));
+            }
+        } catch (e) { /* feedback only; nothing to recover */ }
     }
 
     function resultHtml(result) {
@@ -1012,19 +1097,8 @@ const LevelTest = (function () {
                             <span class="lt-breakdown-val">${result.listening.correct} / ${result.listening.total}</span>
                         </div>
                     ` : ''}
-                    ${result.writing ? `
-                        <div class="lt-breakdown-row">
-                            <span class="lt-breakdown-label">Part ${1 + (result.reading ? 1 : 0) + (result.listening ? 1 : 0) + 1}: Written Production</span>
-                            <span class="lt-breakdown-val">${result.writing.score} / ${result.writing.max} (${result.writing.words} words, ${result.writing.matchedKeywords.length} targets)</span>
-                        </div>
-                    ` : ''}
-                    ${result.speaking ? `
-                        <div class="lt-breakdown-row">
-                            <span class="lt-breakdown-label">Part ${1 + (result.reading ? 1 : 0) + (result.listening ? 1 : 0) + (result.writing ? 1 : 0) + 1}: Spoken Production</span>
-                            <span class="lt-breakdown-val">${result.speaking.score} / ${result.speaking.max} (${result.speaking.hasAudio ? 'audio recorded' : 'transcript'}, ${result.speaking.matchedKeywords.length} targets)</span>
-                        </div>
-                    ` : ''}
                 </div>
+                ${productionFeedbackHtml(result)}
                 ${topics}
                 <button class="dk-secondary" data-retake="1">Take assessment again</button>
             </div>
@@ -1361,6 +1435,7 @@ const LevelTest = (function () {
             mark.lastResult = mark();
             marked = true;
             render(level);
+            gradeProductions(mark.lastResult, level);
             host.scrollIntoView({ block: 'start' });
         };
         const retake = host.querySelector('[data-retake]');
@@ -1511,7 +1586,21 @@ const LevelTest = (function () {
         }
     }
 
-    return { open, render, resultFor, stop, close: closeTest, hasTest };
+    // For tests/test-leveltest-production.js: mark a given sitting without a DOM.
+    const _testHooks = {
+        markSitting(t, state) {
+            test = t;
+            answers = state.answers || {};
+            readingAnswers = state.readingAnswers || {};
+            listeningAnswers = state.listeningAnswers || {};
+            writingText = state.writing || '';
+            speakingTranscript = state.speaking || '';
+            speakingAudioUrl = state.audio || null;
+            return mark();
+        }
+    };
+
+    return { open, render, resultFor, stop, close: closeTest, hasTest, _testHooks };
 })();
 
 if (typeof window !== 'undefined') {
