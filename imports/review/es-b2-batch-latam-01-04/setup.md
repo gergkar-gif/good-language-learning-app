@@ -29,3 +29,10 @@ core skills taught later). Briefs: `brief-a.txt`, `brief-b.txt` = `unit-<x>.txt`
 Fixed at setup: `prior_knowledge.py` and `unmet-words.js --with-hidden` counted the hidden, unread
 B1 latam track as met for a B2 latam unit (Mexico I: 109 unmet words with it, 140 without). Both
 now open only the reviewed unit's own level and track. Knowledge sheets regenerated after the fix.
+
+## Agents (edit-in-place, Sonnet), started 01:31 UTC on d16afea7
+
+- A (Latin America Units 1, 2; /home/user/parlour-read-a): agent a6e53ffaa9e6236dc
+- B (Latin America Units 3, 4; /home/user/parlour-read-b): agent a079f6fdc14c49573
+
+Resume a stopped agent with SendMessage to its id; never start a new one.
