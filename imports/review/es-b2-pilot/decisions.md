@@ -75,3 +75,10 @@ Found at setup and decided by the user:
   retagged (each checked: all test a nominalised form); Unit 35 relocked and refrozen.
 - Unchecked regional word lists in 34-02: "thats ok".
 - Grammar items attributing things to unnamed readers: "fix these things about readers".
+
+## Latam track order (user, 2026-11-25)
+
+"b1 latam track will be read after this - we can hide the culture tracks until they are all
+ready": the B1 latam track is read after the B2 latam track; the hidden culture tracks (es-latam
+`latam` B1 and B2, es-es `cultura` B1) are shown only when all are ready. B2 latam units treat B1
+latam as unmet (`prior_knowledge.py`, `unmet-words.js --with-hidden` open only the same level).
