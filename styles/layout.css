@@ -544,31 +544,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     flex-shrink: 0;
   }
 
   .nav-brand-icon {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     display: block;
-  }
-
-  .nav-brand-icon .brand-tile {
-    fill: var(--primary);
-  }
-
-  .nav-brand-icon .brand-door {
-    fill: none;
-    stroke: var(--bg);
-    stroke-width: 1.6;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .nav-brand-icon .brand-knob {
-    fill: var(--accent);
+    overflow: visible;
   }
 
   .nav-brand-name {

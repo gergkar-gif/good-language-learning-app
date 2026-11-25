@@ -149,11 +149,12 @@ const Art = (function () {
 
     const ICONS = {
 
-        // Home — a door standing open, the mark the app is named for.
+        // Home — deconstructed door standing open, the mark the app is named for.
         home: `
-            <rect class="ink-line" x="4" y="3" width="16" height="18"/>
-            <path class="ink-line" d="M4 3 12 6v15l-8-3Z"/>
-            <circle class="ink-solid" cx="10" cy="12" r="1"/>
+            <path class="ink-line" d="M6 2V22M6 5.5H21"/>
+            <path class="ink-solid" d="M6 5.5V22H18Z"/>
+            <path class="ink-line" d="M6 4A18 18 0 0 1 22 22"/>
+            <circle class="ink-solid" cx="9.5" cy="17.5" r="1.5"/>
         `,
 
         // Lessons — the path out to a vanishing point.
