@@ -97,7 +97,7 @@ function createDrillerEnv(langCode) {
         'Must not contain retired regional identity debates slug');
 
     // 2. Must not contain "0 exercises available"
-    assert.ok(!html.includes('0 exercises available'),
+    assert.ok(!/\b0 exercises available\b/.test(html),
         'Selected skill card must not show 0 exercises available');
     assert.ok(!html.match(/\b0 exercises\b/),
         'List must not contain 0 exercises');
@@ -116,8 +116,12 @@ function createDrillerEnv(langCode) {
     assert.ok(html.includes('<details class="gd-untaught-section" open>'),
         'Untaught/all skills section should be open for new learner');
 
-    // 6. Selected skill must be a real Level A1 skill
+    // 6. Selected skill must be a real Level A1 skill and C1 skills must render in the browser
     assert.ok(html.includes('Level A1'), 'Should select a Level A1 skill');
+    assert.ok(/<div class="gd-selected-skill-info">\s*Level A1\b/.test(html),
+        'Default selected skill card must be Level A1, not Level C1');
+    assert.ok(html.includes('<div class="gd-level-header">Level C1</div>'),
+        'Skill browser must include Level C1 header');
     assert.ok(html.includes('exercises available'), 'Should have exercises available');
 
     // 7. Verify switching to Tab 1 ("Fix weak areas")
@@ -148,10 +152,14 @@ function createDrillerEnv(langCode) {
     await huCtx.GrammarDriller.render(huContainer);
     const huHtml = huContainer.innerHTML;
 
-    assert.ok(!huHtml.includes('0 exercises available'),
+    assert.ok(!/\b0 exercises available\b/.test(huHtml),
         'hu: Selected skill card must not show 0 exercises available');
     assert.ok(!huHtml.match(/\b0 exercises\b/),
         'hu: List must not contain 0 exercises');
+    assert.ok(/<div class="gd-selected-skill-info">\s*Level A1\b/.test(huHtml),
+        'hu: Default selected skill card must be Level A1, not Level C1');
+    assert.ok(huHtml.includes('<div class="gd-level-header">Level C1</div>'),
+        'hu: Skill browser must include Level C1 header');
     assert.ok(!huHtml.includes('gd-family-tag'),
         'hu: Skill rows must not display gd-family-tag brown badges');
     assert.ok(huHtml.includes('data-tab="skill" role="tab" aria-selected="true"'),

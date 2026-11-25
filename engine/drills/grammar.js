@@ -19,7 +19,7 @@ const GrammarDriller = (function () {
     const PHASE = { SETTINGS: 1, SESSION: 2, RESULTS: 3 };
     const TAB = { WEAK: 'weak', SKILL: 'skill' };
     const COUNT_OPTIONS = [5, 10, 15, 20];
-    const LEVEL_ORDER = ['A1', 'A2', 'B1', 'B2'];
+    const LEVEL_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
     let _phase = PHASE.SETTINGS;
     let _activeTab = TAB.WEAK;
@@ -614,7 +614,9 @@ const GrammarDriller = (function () {
         const sortFn = (a, b) => {
             const la = LEVEL_ORDER.indexOf(a.level);
             const lb = LEVEL_ORDER.indexOf(b.level);
-            if (la !== lb) return la - lb;
+            const ra = la === -1 ? LEVEL_ORDER.length : la;
+            const rb = lb === -1 ? LEVEL_ORDER.length : lb;
+            if (ra !== rb) return ra - rb;
             return a.title.localeCompare(b.title);
         };
 
