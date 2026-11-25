@@ -1,0 +1,197 @@
+import sys; sys.path.insert(0,'/home/user/parlour-read-a/.scratch')
+from lib import *
+import json
+V='b2-argentina-buenos-aires-vocab'
+U={}
+s='b2-argentinaba-01'
+U[s]=dict(num=1,title='Buenos Aires and the Río de la Plata: how the city was planned',
+goal='I can describe how Buenos Aires grew along its river with formal phrases such as *mediante*, *debido a* and *a raíz de*.',gramtxt=None,goals=None,
+stitle='El Río de la Plata y la ciudad de Buenos Aires',
+summary='Buenos Aires grew beside the wide Río de la Plata: the text covers the river, the avenues of the late 19th century, Puerto Madero and the reserve built on land won from the river.',
+paras=['El Río de la Plata es un estuario muy ancho donde se juntan los ríos Paraná y Uruguay, y sus aguas tienen un color marrón. Buenos Aires está en su orilla. Juan de Garay refundó la ciudad en 1580. Durante siglos la ciudad dio la espalda al río: debido a la poca profundidad de la costa, los barcos grandes anclaban lejos, y unas carretas con ruedas enormes llevaban a los pasajeros y las mercancías hasta la orilla.',
+'A finales del siglo XIX, cuando la economía argentina crecía con la exportación de carne y de cereales, la ciudad cambió mucho. Se abrió la Avenida de Mayo, que une la Plaza de Mayo con el Congreso, y más tarde la Avenida 9 de Julio, que según se dice es una de las más anchas del mundo. Muchos edificios se inspiraron en los de París y de Madrid, y un paisajista francés, Carlos Thays, diseñó parques y plazas, sobre todo en Palermo.',
+'El puerto también cambió. Puerto Madero, proyectado por el comerciante Eduardo Madero, se construyó a finales del siglo XIX. Pero a raíz del tamaño cada vez mayor de los barcos, quedó pequeño pronto, y se hizo un puerto nuevo más al norte. Los antiguos almacenes de ladrillo estuvieron casi abandonados durante décadas. En los años noventa del siglo XX se convirtieron en un barrio de oficinas, restaurantes y viviendas.',
+'Hoy la ciudad vuelve a mirar el río. Junto a Puerto Madero hay una reserva ecológica, la Costanera Sur, que se formó sobre terrenos ganados al río mediante el relleno con escombros. Allí crecen sauces y viven muchas aves, a pocos minutos del centro. Buenos Aires conserva además barrios antiguos, como San Telmo, y barrios nuevos, como Puerto Madero.'],
+qs=[('Why did big ships anchor far from the shore in colonial times?',['Porque la costa tenía poca profundidad.','Porque el puerto estaba cerrado por el hielo.','Porque la ciudad no tenía carretas.'],0,'The first paragraph explains it.'),
+ ('What happened to Puerto Madero after it was built?',['Quedó pequeño por el tamaño de los barcos y se hizo un puerto nuevo.','Se convirtió enseguida en un barrio de oficinas.','Fue destruido por una inundación del río.'],0,'The third paragraph describes it.'),
+ ('What is the Costanera Sur reserve built on?',['Sobre terrenos ganados al río con escombros.','Sobre las ruinas de la ciudad colonial.','Sobre una antigua isla del Paraná.'],0,'The last paragraph says so.')],
+gtitle='Formal Prepositional Phrases for Describing a City',
+know='You know *mediante* from B1 Unit 24 ("by means of"), and *debido a* and *a raíz de* from B1 Unit 6. These formal phrases are followed directly by a noun, and they let you explain how a city was built and why it changed.',
+tabletitle='Means and cause in the story of a city',
+rows=[('Mediante el relleno con escombros se ganó tierra al río.','*mediante* + noun: by means of landfill'),
+ ('Debido a la poca profundidad, los barcos anclaban lejos.','*debido a* + noun: because of the shallow water'),
+ ('A raíz del tamaño de los barcos, se hizo un puerto nuevo.','*a raíz de* + noun: as a result of the size of the ships'),
+ ('Mediante estas avenidas, la ciudad se parecía a París.','*mediante* often opens a sentence, followed by a comma')],
+examples=[('Mediante el relleno con escombros, se ganó tierra al río.','By means of landfill, land was won from the river.'),
+ ('Debido a la poca profundidad de la costa, los barcos grandes anclaban lejos.','Because of the shallow coast, big ships anchored far away.'),
+ ('A raíz del tamaño de los barcos, Puerto Madero quedó pequeño.','As a result of the size of the ships, Puerto Madero became too small.'),
+ ('Mediante nuevos parques y avenidas, la ciudad cambió de aspecto.','By means of new parks and avenues, the city changed its look.')],
+tip='After *mediante*, *debido a* and *a raíz de* put a noun, not a verb: *debido a la poca profundidad*. With *el*, *a* + *el* becomes *al* and *de* + *el* becomes *del*: *a raíz del tamaño*. Do not say *mediante de* or *debido de*.',
+vtitle='The river and the port',
+words=[('el estuario','estuary, wide mouth of a river','noun'),('el trazado','layout, plan of streets','noun'),('la dársena','dock, sheltered basin in a port','noun'),('la barranca','steep slope above a river','noun'),('el palacete','mansion, small palace','noun')],
+items=[matching(s+'.ex01',[['el estuario','estuary, wide mouth of a river'],['el trazado','layout, plan of streets'],['la dársena','dock, sheltered basin in a port'],['la barranca','steep slope above a river'],['el palacete','mansion, small palace']],V),
+ fill(s+'.ex02','__ el relleno con escombros, se ganó tierra al río.','Mediante','By means of landfill, land was won from the river.','prepositional-phrases'),
+ mc(s+'.ex03','Which sentence says: "As a result of the size of the ships, a new port was built"?',['A raíz del tamaño de los barcos, se construyó un puerto nuevo.','A raíz de el tamaño de los barcos, se construyó un puerto nuevo.','A raíz tamaño de los barcos, se construyó un puerto nuevo.'],0,'prepositional-phrases'),
+ build(s+'.ex04',['Debido','a','la','poca','profundidad,','los','barcos','anclaban','lejos.'],'Because of the shallow water, the ships anchored far away.','prepositional-phrases'),
+ dlg(s+'.ex05',[('Meg','En el documental hablaban de una dársena. ¿Qué es?'),('Carlos','_____'),('Meg','Ahora lo entiendo.')],['Es una zona del puerto donde se detienen los barcos.','Es una pendiente al lado del río.','Es la parte final de un río, cerca del mar.'],0,V),
+ dic(s+'.ex06','Debido a la poca profundidad del río, los barcos grandes anclaban lejos de la costa.','Because of the shallow river, big ships anchored far from the coast.','prepositional-phrases')])
+s='b2-argentinaba-02'
+U[s]=dict(num=2,title='The great immigration to Buenos Aires: tenements and cocoliche',
+goal='I can describe how a neighbourhood changed little by little with *ir*, *seguir* and *venir* + gerund.',gramtxt=None,goals=None,
+stitle='La gran inmigración y los conventillos',
+summary='Between 1880 and the early 20th century millions of Europeans arrived in Argentina; the text covers the immigrants\' hotel, the tenements, the tenants\' strike of 1907, cocoliche and the 1914 census.',
+paras=['Entre 1880 y las primeras décadas del siglo XX llegaron a la Argentina millones de inmigrantes europeos, sobre todo italianos y españoles. La Constitución de 1853 invitaba a los extranjeros a vivir en el país, y el gobierno de la época quería poblar el territorio y atraer trabajadores. Los barcos iban llegando al puerto de Buenos Aires, y allí había un Hotel de Inmigrantes donde los recién llegados podían quedarse unos días.',
+'Pocas familias podían pagar una casa, y por eso muchas vivían en conventillos: casas grandes con un patio central y una habitación para cada familia. Algunos eran casonas antiguas. Después de la epidemia de fiebre amarilla de 1871, muchas familias ricas dejaron el sur de la ciudad, y esas casas se fueron alquilando por habitaciones. En La Boca se construyeron también conventillos de madera y chapa.',
+'En 1907 los inquilinos de muchos conventillos hicieron una huelga: se negaron a pagar el alquiler porque, según ellos, era demasiado caro.',
+'Los barrios se fueron llenando de idiomas. Los inmigrantes seguían hablando sus lenguas en casa, y en la calle el italiano y el español se iban mezclando. Así nació el cocoliche, una forma de hablar de los inmigrantes italianos que mezclaba las dos lenguas. Muchas palabras del lunfardo, el habla popular de Buenos Aires, vienen también del italiano.',
+'Según el censo de 1914, casi la mitad de la población de la ciudad había nacido en el extranjero. Con el tiempo, los hijos de los inmigrantes se fueron integrando, y su cultura, desde la comida hasta la música, se fue mezclando con la de los demás porteños.'],
+qs=[('What did the Constitution of 1853 do, according to the text?',['Invitaba a los extranjeros a vivir en el país.','Prohibía la llegada de inmigrantes.','Creaba el Hotel de Inmigrantes.'],0,'The first paragraph says it.'),
+ ('What happened in 1907?',['Los inquilinos de muchos conventillos hicieron una huelga.','Empezó la epidemia de fiebre amarilla.','Se hizo el censo de la ciudad.'],0,'The third paragraph describes the tenants\' strike.'),
+ ('What does the 1914 census show, according to the text?',['Casi la mitad de la población de la ciudad había nacido en el extranjero.','Casi nadie había nacido fuera de la ciudad.','La mayoría de los inmigrantes ya había vuelto a Europa.'],0,'The last paragraph gives this.')],
+gtitle='Ir, Seguir and Venir + Gerund: Change Over Time',
+know='You know *ir* + gerund, *venir* + gerund and *seguir* + gerund from B2 Unit 24 (*seguir* + gerund from A2 Unit 28 too). They show a process that moves forward step by step (*ir*), has built up until now (*venir*) or has not stopped (*seguir*). The story of immigration is exactly that: a neighbourhood slowly filling up.',
+tabletitle='Gradual change and continuity',
+rows=[('El barrio se iba llenando de inmigrantes.','*ir* + gerund: it was gradually filling up'),
+ ('Los barcos iban llegando al puerto.','*ir* + gerund: the ships kept arriving, one after another'),
+ ('Muchos inmigrantes seguían hablando su lengua en casa.','*seguir* + gerund: they still spoke it, it had not stopped'),
+ ('El italiano y el español se iban mezclando en la calle.','reflexive: the pronoun goes before *ir*')],
+examples=[('El barrio se iba llenando de familias que venían de Italia y de España.','The neighbourhood was gradually filling up with families from Italy and Spain.'),
+ ('Los barcos iban llegando al puerto cada semana.','Ships kept arriving at the port every week.'),
+ ('Muchos inmigrantes seguían hablando su lengua en casa.','Many immigrants still spoke their language at home.'),
+ ('El italiano y el español se iban mezclando en la calle.','Italian and Spanish were gradually mixing in the street.')],
+tip='*Iba llegando* is not a plan: *ir* + gerund (no *a*) shows a process, one step at a time. A note for later: people in Buenos Aires say *vos* where you learned *tú*; you will meet that form later in the course, so here you only need to know it exists.',
+vtitle='Immigration and the tenements',
+words=[('el conventillo','tenement, large house with many families','noun'),('el cocoliche','mixed Italian and Spanish speech of immigrants','noun'),('la colectividad','community of people from the same country','noun'),('el hacinamiento','overcrowding','noun'),('el arribo','arrival','noun')],
+items=[matching(s+'.ex01',[['el conventillo','tenement, large house with many families'],['el cocoliche','mixed Italian and Spanish speech of immigrants'],['la colectividad','community of people from the same country'],['el hacinamiento','overcrowding'],['el arribo','arrival']],V),
+ fill(s+'.ex02','Los barcos __ llegando al puerto cada semana.','iban','Ships kept arriving at the port every week.','gerund-periphrases'),
+ mc(s+'.ex03','Which sentence says: "The neighbourhood was gradually filling up with immigrants"?',['El barrio se iba llenando de inmigrantes.','El barrio se llenando de inmigrantes.','El barrio se iba lleno de inmigrantes.'],0,'gerund-periphrases'),
+ build(s+'.ex04',['Muchos','inmigrantes','seguían','hablando','su','lengua','en','casa.'],'Many immigrants still spoke their language at home.','gerund-periphrases'),
+ dlg(s+'.ex05',[('Meg','En el documental decían que vivían en un conventillo. ¿Qué es?'),('Carlos','_____'),('Meg','Gracias, ahora lo entiendo.')],['Es una casa grande donde vivían muchas familias.','Es una forma de hablar que mezcla italiano y español.','Es un grupo de personas del mismo país.'],0,V),
+ dic(s+'.ex06','El barrio se iba llenando de familias que venían de Italia y de España.','The neighbourhood was gradually filling up with families from Italy and Spain.','gerund-periphrases')])
+s='b2-argentinaba-03'
+U[s]=dict(num=3,title='Tango: from the port districts to the world',
+goal='I can say who or what did something in the history of tango with the passive *ser* + participle.',gramtxt=None,goals=None,
+stitle='El tango: del puerto al mundo',
+summary='Tango was born in the port districts of Buenos Aires and Montevideo in the late 19th century; the text covers the bandoneón, Paris, Gardel, Piazzolla and the UNESCO listing of 2009.',
+paras=['El tango nació a finales del siglo XIX en los barrios del puerto de Buenos Aires y de Montevideo. Fue creado por gente muy distinta: hijos de inmigrantes europeos, descendientes de africanos y personas del campo que llegaban a la ciudad. Su música mezcló ritmos como la milonga y el candombe. En esos años el tango fue visto con desconfianza por parte de la sociedad de la época, porque se bailaba en lugares populares.',
+'El bandoneón, un instrumento parecido al acordeón, fue traído desde Alemania, y su sonido se volvió la voz del tango. Las letras usan muchas palabras del lunfardo y hablan del amor, de la nostalgia y de la vida en la ciudad.',
+'En los años diez del siglo XX, el tango fue llevado a Europa por músicos y bailarines, y se hizo muy popular en París. Después fue aceptado también por la sociedad de Buenos Aires.',
+'Carlos Gardel fue el cantante más famoso del tango. Su lugar de nacimiento se discute: algunos dicen que nació en Francia, y otros, en Uruguay. En 1917 cantó Mi noche triste, una canción que muchos consideran el primer tango cantado como canción. Gardel murió en 1935 en un accidente de avión en Medellín, Colombia.',
+'Astor Piazzolla fue criticado por algunos tangueros porque mezcló el tango con el jazz y la música clásica, pero hoy su música es muy valorada. En 2009 el tango fue declarado Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO, a propuesta de Argentina y de Uruguay.'],
+qs=[('Who created the tango, according to the text?',['Hijos de inmigrantes europeos, descendientes de africanos y personas del campo.','Solo los músicos de los teatros de París.','Los marineros alemanes que traían el bandoneón.'],0,'The first paragraph says it.'),
+ ('What is disputed about Carlos Gardel?',['Su lugar de nacimiento: Francia o Uruguay.','Su año de muerte.','El nombre de su canción más famosa.'],0,'The fourth paragraph says his birthplace is disputed.'),
+ ('What happened in 2009?',['El tango fue declarado Patrimonio Cultural Inmaterial por la UNESCO.','Gardel cantó Mi noche triste.','Piazzolla fue criticado por mezclar el tango con el jazz.'],0,'The last paragraph gives the date.')],
+gtitle='The Passive with Ser: Who Did It to Whom',
+know='You know the passive with *ser* + past participle from B1 Unit 18: *La ley fue aprobada por el Parlamento*. The participle agrees with the subject, and *por* names who did the action. It suits the history of tango, where it matters who brought, sang or declared what.',
+tabletitle='Passive with ser in the story of tango',
+rows=[('El bandoneón fue traído desde Alemania.','masculine singular subject: *traído*'),
+ ('La canción fue cantada por Gardel.','feminine singular: *cantada*, and *por* names the singer'),
+ ('Muchos tangos fueron cantados por Gardel.','plural subject: *fueron cantados*'),
+ ('El tango fue declarado Patrimonio por la UNESCO.','the actor is named with *por*')],
+examples=[('El bandoneón fue traído desde Alemania.','The bandoneón was brought from Germany.'),
+ ('Muchos tangos fueron cantados por Carlos Gardel.','Many tangos were sung by Carlos Gardel.'),
+ ('El tango fue llevado a Europa por músicos y bailarines.','Tango was taken to Europe by musicians and dancers.'),
+ ('El tango fue declarado Patrimonio Cultural Inmaterial por la UNESCO en 2009.','Tango was declared Intangible Cultural Heritage by UNESCO in 2009.')],
+tip='*Ser* and the participle both agree with the subject: *la canción fue cantada*, *los tangos fueron cantados*. With *se* (*se cantaron muchos tangos*) you leave the actor out; with *ser* you can name it with *por*.',
+vtitle='Tango and its words',
+words=[('el arrabal','poor outskirts of a city','noun'),('el bandoneón','bandoneón, accordion-like instrument of tango','noun'),('el lunfardo','slang of Buenos Aires','noun'),('la milonga','dance hall where tango is danced','noun'),('el compadrito','swaggering tough guy of the old tango','noun')],
+items=[matching(s+'.ex01',[['el arrabal','poor outskirts of a city'],['el bandoneón','bandoneón, accordion-like instrument of tango'],['el lunfardo','slang of Buenos Aires'],['la milonga','dance hall where tango is danced'],['el compadrito','swaggering tough guy of the old tango']],V),
+ fill(s+'.ex02','El tango fue declarado Patrimonio Cultural Inmaterial __ la UNESCO en 2009.','por','Tango was declared Intangible Cultural Heritage by UNESCO in 2009.','ser-passive'),
+ mc(s+'.ex03','Which sentence says: "The bandoneón was brought from Germany"?',['El bandoneón fue traído desde Alemania.','El bandoneón fue traída desde Alemania.','El bandoneón fueron traído desde Alemania.'],0,'ser-passive'),
+ build(s+'.ex04',['Muchos','tangos','fueron','cantados','por','Carlos','Gardel.'],'Many tangos were sung by Carlos Gardel.','ser-passive'),
+ dlg(s+'.ex05',[('Carlos','Fuimos a una milonga el sábado. ¿Sabes qué es?'),('Meg','_____'),('Carlos','Exacto.')],['Sí, es un lugar donde la gente baila tango.','Sí, es un instrumento del tango.','Sí, es la forma de hablar de los porteños.'],0,V),
+ dic(s+'.ex06','El tango fue llevado a Europa por músicos y bailarines.','Tango was taken to Europe by musicians and dancers.','ser-passive')])
+s='b2-argentinaba-04'
+U[s]=dict(num=4,title='Psychoanalysis, cafés and bookshops in Buenos Aires',
+goal='I can sum up an argument and stress the main point with *en resumen* and *lo más importante es que*.',gramtxt=None,goals=None,
+stitle='El psicoanálisis, los cafés y las librerías',
+summary='The text describes three habits of Buenos Aires life: psychoanalysis, the traditional cafés with their gatherings, and the bookshops of Corrientes, and sums them up as places for conversation.',
+paras=['Muchos visitantes se sorprenden de lo presente que está la psicología en Buenos Aires. La Asociación Psicoanalítica Argentina se fundó en 1942, y las ideas de Sigmund Freud y de otros autores se estudian en las universidades y se discuten en la prensa. Según varias estimaciones, la ciudad tiene muchos psicólogos por habitante.',
+'Los cafés tradicionales tienen también un papel importante en la vida de la ciudad. El Café Tortoni, en la Avenida de Mayo, abrió en 1858 y todavía recibe clientes. En muchos cafés se organizan tertulias, reuniones de amigos donde se conversa durante horas sin prisa.',
+'La calle Corrientes es conocida por sus teatros y sus librerías. La librería El Ateneo Grand Splendid funciona en un antiguo teatro inaugurado en 1919, y muchas personas la visitan por su arquitectura. En 2011 la UNESCO nombró a Buenos Aires Capital Mundial del Libro, y cada año se celebra en la ciudad una feria internacional del libro.',
+'En resumen, Buenos Aires es una ciudad donde se conversa, se lee y se piensa mucho. Lo más importante es que los tres lugares, el diván, el café y la librería, sirven para hablar y para escuchar.'],
+qs=[('When was the Argentine Psychoanalytic Association founded?',['En 1942.','En 1858.','En 1919.'],0,'The first paragraph gives the date.'),
+ ('What is a tertulia, according to the text?',['Una reunión de amigos donde se conversa durante horas sin prisa.','Un tipo de libro de psicología.','Una feria internacional de teatros.'],0,'The second paragraph defines it.'),
+ ('What did UNESCO do in 2011?',['Nombró a Buenos Aires Capital Mundial del Libro.','Abrió el Café Tortoni.','Inauguró la librería El Ateneo.'],0,'The third paragraph says it.')],
+gtitle='Summing Up an Argument',
+know='You know *en resumen*, *lo más importante es que* and *destaca que* from B1 Unit 13, the markers for closing an argument. A text about three habits of one city is easier to follow when you sum it up and then stress the main point.',
+tabletitle='Markers that close an argument',
+rows=[('En resumen, Buenos Aires es una ciudad donde se conversa mucho.','*en resumen* + comma: the summary of the whole text'),
+ ('Lo más importante es que los cafés sirven para conversar.','*lo más importante es que* + clause: the main point'),
+ ('El periodista destaca que los cafés son lugares de encuentro.','*destaca que* + clause: a source underlines something'),
+ ('En resumen, la ciudad lee, conversa y piensa.','a summary is short and goes at the end')],
+examples=[('En resumen, los cafés y las librerías son lugares para conversar.','In short, cafés and bookshops are places for conversation.'),
+ ('Lo más importante es que los cafés sirven para conversar sin prisa.','The most important thing is that cafés are for talking without hurry.'),
+ ('El periodista destaca que los cafés son lugares de encuentro.','The journalist stresses that cafés are meeting places.'),
+ ('En resumen, la ciudad lee, conversa y piensa mucho.','In short, the city reads, talks and thinks a lot.')],
+tip='Use *en resumen* once, near the end, for the whole argument. After *lo más importante es que* put a full clause with a verb: *lo más importante es que los cafés sirven para conversar*, not *lo más importante es los cafés*.',
+vtitle='Psychoanalysis, cafés and books',
+words=[('el psicoanálisis','psychoanalysis','noun'),('la tertulia','regular gathering of friends to talk','noun'),('el cafetín','small traditional café','noun'),('la librería','bookshop','noun'),('el inconsciente','the unconscious mind','noun')],
+items=[matching(s+'.ex01',[['el psicoanálisis','psychoanalysis'],['la tertulia','regular gathering of friends to talk'],['el cafetín','small traditional café'],['la librería','bookshop'],['el inconsciente','the unconscious mind']],V),
+ fill(s+'.ex02','En __, los cafés y las librerías de Buenos Aires son lugares para conversar.','resumen','In short, the cafés and bookshops of Buenos Aires are places for conversation.','argument-markers'),
+ mc(s+'.ex03','Which sentence says: "The most important thing is that cafés are places to talk"?',['Lo más importante es que los cafés son lugares para conversar.','Lo más importante es los cafés son lugares para conversar.','Lo más importante que los cafés son lugares para conversar.'],0,'argument-markers'),
+ build(s+'.ex04',['En','resumen,','Buenos','Aires','es','una','ciudad','de','cafés','y','librerías.'],'In short, Buenos Aires is a city of cafés and bookshops.','argument-markers'),
+ dlg(s+'.ex05',[('Carlos','Quedamos con unos amigos en una tertulia. ¿Sabes qué es?'),('Meg','_____'),('Carlos','Sí, eso es.')],['Sí, es una reunión de amigos que conversan en un café.','Sí, es una librería con muchos libros antiguos.','Sí, es un tratamiento para hablar de los problemas.'],0,V),
+ dic(s+'.ex06','En resumen, los porteños usan los cafés para conversar y para leer.','In short, the people of Buenos Aires use cafés to talk and to read.','argument-markers')])
+s='b2-argentinaba-05'
+U[s]=dict(num=5,title='Jorge Luis Borges and Julio Cortázar: Argentina\'s fantastic literature',
+goal='I can guess about the present with the future of probability (*estará*, *habrá*, *serán*).',gramtxt=None,goals=None,
+stitle='Borges, Cortázar y la literatura fantástica',
+summary='The text presents two Argentine writers, Borges and Cortázar: their lives, some of their best-known books and their themes, without quoting or retelling them.',
+paras=['Jorge Luis Borges (1899-1986) y Julio Cortázar (1914-1984) son dos de los escritores argentinos más conocidos en el mundo. Borges nació en Buenos Aires. Cortázar nació en Bruselas, pero creció en la Argentina, y desde 1951 vivió en París hasta su muerte.',
+'Borges escribió poemas, ensayos y cuentos. Sus libros Ficciones, de 1944, y El Aleph, de 1949, están entre los más conocidos. En ellos aparecen con frecuencia el laberinto, el espejo, el infinito y las bibliotecas. Fue director de la Biblioteca Nacional desde 1955, cuando casi había perdido la vista. No recibió el Premio Nobel, y ese tema todavía se comenta.',
+'Cortázar publicó cuentos, como los de Bestiario, de 1951, entre ellos Casa tomada, y la novela Rayuela, de 1963. En sus textos lo extraño aparece en medio de la vida cotidiana. Rayuela propone al lector dos maneras de leer el libro, y por eso se ha hablado mucho de su estructura. También escribió Historias de cronopios y de famas, un libro de textos breves y con humor.',
+'Hoy, en cualquier librería de la calle Corrientes, habrá alguien comprando un libro de uno de los dos. No hay cifras exactas de sus lectores, pero serán millones: sus obras se han traducido a muchas lenguas.'],
+qs=[('Where was Cortázar born, and where did he live from 1951?',['Nació en Bruselas y vivió en París desde 1951.','Nació en Buenos Aires y vivió en Madrid.','Nació en París y vivió en Buenos Aires.'],0,'The first paragraph says it.'),
+ ('Which themes appear often in the books of Borges, according to the text?',['El laberinto, el espejo, el infinito y las bibliotecas.','El tango, el café y el psicoanálisis.','Los conventillos, el puerto y los inmigrantes.'],0,'The second paragraph lists them.'),
+ ('What does Rayuela offer the reader?',['Dos maneras de leer el libro.','Un diccionario de lunfardo.','Una historia del tango.'],0,'The third paragraph says it.')],
+gtitle='The Future of Probability: Guessing About Now',
+know='You know *estará* for a guess about the present from B1 Unit 22: the future tense can express a guess about the present. *Estará en casa* means "He is probably at home". When you talk about writers read all over the world, you often cannot give exact figures, so you guess.',
+tabletitle='Guessing with the future',
+rows=[('Habrá alguien comprando un libro de Borges.','*habrá* + gerund: someone is probably buying one now'),
+ ('Serán millones de lectores.','*serán*: they are probably millions'),
+ ('Estará leyendo Rayuela en un café.','*estará* + gerund: he is probably reading it now'),
+ ('Tendrá muchos lectores en Francia.','*tendrá*: it probably has many readers')],
+examples=[('En una librería de la calle Corrientes habrá alguien comprando un libro de Borges.','In a bookshop on Corrientes Street, someone is probably buying a book by Borges.'),
+ ('No hay cifras exactas, pero serán millones de lectores.','There are no exact figures, but they are probably millions of readers.'),
+ ('En este momento alguien estará leyendo Rayuela en un café.','Right now someone is probably reading Rayuela in a café.'),
+ ('Ficciones tendrá lectores en muchos países.','Ficciones probably has readers in many countries.')],
+tip='The future of probability is about the present, not about tomorrow: *estará leyendo* means "is probably reading now".',
+vtitle='Fantastic literature',
+words=[('el laberinto','labyrinth, maze','noun'),('el espejo','mirror','noun'),('el infinito','infinity','noun'),('el azar','chance','noun'),('la paradoja','paradox','noun')],
+items=[matching(s+'.ex01',[['el laberinto','labyrinth, maze'],['el espejo','mirror'],['el infinito','infinity'],['el azar','chance'],['la paradoja','paradox']],V),
+ fill(s+'.ex02','En este momento alguien __ leyendo Ficciones en un café de Buenos Aires.','estará','Right now someone is probably reading Ficciones in a café in Buenos Aires.','future-probability'),
+ mc(s+'.ex03','Which sentence says: "It is probably a book by Cortázar"?',['Será un libro de Cortázar.','Sería un libro de Cortázar.','Fue un libro de Cortázar.'],0,'future-probability'),
+ build(s+'.ex04',['Habrá','muchos','lectores','de','Borges','en','el','mundo.'],'There are probably many readers of Borges in the world.','future-probability'),
+ dlg(s+'.ex05',[('Meg','Borges escribía sobre un laberinto. ¿Qué es un laberinto?'),('Carlos','_____'),('Meg','Qué interesante.')],['Es un lugar con muchos caminos donde es fácil perderse.','Es una superficie donde se ve la imagen de una persona.','Es una idea que parece falsa pero tiene sentido.'],0,V),
+ dic(s+'.ex06','Habrá lectores de Borges y de Cortázar en cada librería de la calle Corrientes.','There are probably readers of Borges and Cortázar in every bookshop on Corrientes Street.','future-probability')])
+for stem,L in U.items(): write_all(stem,L['num'],L)
+# consolidation
+s='b2-argentinaba-consolidation'; p='lessons/b2/%s.json'%s
+d=jl(p); d['title']='Review: Buenos Aires, its people and its culture'
+d['goal']='I can talk about Buenos Aires: its river and port, immigration, tango, cafés and two great writers.'
+goals=['I can talk about the history and culture of Buenos Aires, from the port to the tango.','I can use formal prepositional phrases, *ir* + gerund, the passive with *ser*, summary markers and the future of probability on these topics.','I can use the words for the river, immigration, tango, cafés and fantastic literature.']
+for x in d['sections']:
+    if x['type'] in('goal','checklist'): x['items']=goals
+jw(p,d)
+items=[matching(s+'.ex01',[['el estuario','estuary, wide mouth of a river'],['el conventillo','tenement, large house with many families'],['el bandoneón','bandoneón, accordion-like instrument of tango'],['la tertulia','regular gathering of friends to talk'],['el laberinto','labyrinth, maze']],V),
+ fill(s+'.ex02','__ a la poca profundidad del río, los barcos grandes anclaban lejos.','Debido','Because of the shallow river, big ships anchored far away.','prepositional-phrases'),
+ mc(s+'.ex03','Which sentence says: "The families were gradually settling in the new neighbourhood"?',['Las familias se iban quedando en el barrio nuevo.','Las familias se iban a quedando en el barrio nuevo.','Las familias se quedando en el barrio nuevo.'],0,'gerund-periphrases'),
+ build(s+'.ex04',['La','canción','fue','cantada','por','Carlos','Gardel.'],'The song was sung by Carlos Gardel.','ser-passive'),
+ fill(s+'.ex05','Lo más importante __ los cafés sirven para conversar.','es que','The most important thing is that cafés are for talking.','argument-markers'),
+ mc(s+'.ex06','Which sentence says: "There are probably many people in the café now"?',['Habrá mucha gente en el café ahora.','Habría mucha gente en el café ahora.','Hubo mucha gente en el café ahora.'],0,'future-probability'),
+ dlg(s+'.ex07',[('Carlos','¿Qué quieres hacer en Buenos Aires?'),('Meg','_____'),('Carlos','Yo también.')],['Quiero ir a una milonga y a una librería de la calle Corrientes.','Quiero ver un témpano y un ventisquero en la ciudad.','Quiero visitar un observatorio en medio del desierto.'],0,V),
+ dic(s+'.ex08','El tango fue declarado Patrimonio de la Humanidad por la UNESCO.','Tango was declared World Heritage by UNESCO.','ser-passive')]
+jw('exercises/b2/%s-ex.json'%s,dict(lesson=s,exercises=items))
+ch={}
+def C(stem,title,scen,prompt,cues,target,eng):
+    l=jl('lessons/b2/%s.json'%stem)
+    cd=l.get('goal') if stem!=s else goals[0]
+    ch[stem]=dict(tier='tier1',level='B2',title='Communicative Challenge: '+title,scenario=scen,prompt=prompt,cues=cues,target=target,english=eng,canDo=cd)
+C('b2-argentinaba-01','The River and the Port','You are Meg. You and Carlos are watching a documentary about Buenos Aires, and he asks why big ships anchored far from the shore.','Tell Carlos why, with a formal phrase of cause.',['Say what the cause was','Use a formal phrase before the noun'],'Debido a la poca profundidad del río, los barcos grandes anclaban lejos.','Because of the shallow river, big ships anchored far away.')
+C('b2-argentinaba-02','A Neighbourhood Filling Up','You are Carlos. You and Meg are reading an article about the immigrants of Buenos Aires, and she asks what happened to the neighbourhoods.','Tell Meg how the neighbourhood changed, step by step.',['Say what the neighbourhood was doing','Show that it was gradual'],'El barrio se iba llenando de familias que venían de Italia y de España.','The neighbourhood was gradually filling up with families from Italy and Spain.')
+C('b2-argentinaba-03','Tango and the UNESCO','You are Meg. You and Carlos are listening to tango in a documentary, and he asks what UNESCO did with it.','Tell Carlos what UNESCO did, naming who did it.',['Say what was declared','Name who declared it'],'El tango fue declarado Patrimonio Cultural Inmaterial por la UNESCO en 2009.','Tango was declared Intangible Cultural Heritage by UNESCO in 2009.')
+C('b2-argentinaba-04','The Cafés of Buenos Aires','You are Carlos. You and Meg have read an article about the cafés and bookshops of Buenos Aires, and she asks for the main idea.','Sum up the article for Meg and stress the main point.',['Start with a summary marker','Say what the places are for'],'En resumen, los cafés y las librerías son lugares para conversar.','In short, the cafés and bookshops are places to talk.')
+C('b2-argentinaba-05','Readers of Borges','You are Meg. You and Carlos are talking about a talk on Borges and Cortázar, and he asks if people still read them.','Guess whether someone is reading Borges right now in the city.',['Guess about the present','Mention a bookshop'],'En una librería de la calle Corrientes habrá alguien comprando un libro de Borges.','In a bookshop on Corrientes Street, someone is probably buying a book by Borges.')
+C(s,'Buenos Aires in a Sentence','You are Carlos. You and Meg have watched a whole documentary about Buenos Aires, and she asks what you liked best.','Tell Meg one fact about the city, saying who did it.',['Say what was done','Name who did it'],'La canción fue cantada por Carlos Gardel.','The song was sung by Carlos Gardel.')
+json.dump(ch,open('/home/user/parlour-read-a/challenges-argentina-buenos-aires.json','w'),ensure_ascii=False,indent=2)
