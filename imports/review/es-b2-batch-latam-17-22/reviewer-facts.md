@@ -39,3 +39,12 @@ Present-day facts searched before launch (in the unit notes):
 | chilecentro-03 | Mistral Nobel 1945 (first Latin American), born Vicuña 1889; Neruda born Parral 1904, Nobel 1971 | True. |
 | chilecentro-04 | Allende's last speech on the radio, 11 Sept 1973 | True; paraphrase it (no quotation). |
 | chilecentro-05 | 5 Oct 1988; Aylwin March 1990; 18 Oct 2019; "más de un millón doscientas mil" on 25 Oct; agreement 15 Nov 2019; "privatizó el agua, la salud…" | Dates true; the march figure attributed (authorities' estimate); the privatisation sentence attributed to critics. |
+
+## Agent B's open claims (reviewer's knowledge)
+| Claim | Verdict |
+|---|---|
+| October 2003 protests and the president's resignation | True (Sánchez de Lozada resigned 17 October 2003). |
+| 2008 Santa Cruz autonomy referendum judged illegal by the central government | True (4 May 2008). |
+| Allende "según la investigación judicial de 2011, se quitó la vida" | True as attributed (2011 exhumation and expert report; case closed later). |
+| Valech "más de veinte mil" | The 2004 report counted about 28,000 people (later reports raised the total): "unas veintiocho mil". |
+| The 2009 constitution in force in 2026 | True. |
