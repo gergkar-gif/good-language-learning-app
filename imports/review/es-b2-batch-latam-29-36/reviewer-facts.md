@@ -41,3 +41,12 @@ Present-day facts searched before launch (in the unit notes):
 | pluralismo-03 | T-622 of 2016 (Atrato river); Supreme Court 2018 (Colombian Amazon) | True. |
 | pluralismo-05 | Berta Cáceres "asesinada impunemente en 2016" | **Wrong**: seven men convicted (2018) and a company executive (2021): cut "impunemente". "La región más peligrosa" attributed to Global Witness. Escazú in force 2021: true. |
 | futuro-04/05 | Chile 2019, Colombia 2021 protests; "el laboratorio del mestizaje … más fértil del planeta" | Protests true; the superlative is judgement: cut. |
+
+## Agent A's open claims (reviewer's knowledge)
+| Claim | Verdict |
+|---|---|
+| Funai "más de cien registros" of isolated peoples, only part confirmed | True (about 114 records, about 28 confirmed). |
+| About half of the Cerrado's native vegetation lost | Common estimate; attributed as written. |
+| ~390,000 million Amazon trees | From a 2013 study (ter Steege et al.); attributed as written. |
+| Spanish–Portuguese vocabulary ~89 % | Ethnologue's lexical-similarity figure; attributed. |
+| Capoeira disguised as dance; Morro da Providência the first favela | Both worded as common accounts ("la explicación más extendida", "la historia más conocida"): fine. |
