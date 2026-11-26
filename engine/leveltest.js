@@ -1066,10 +1066,17 @@ const LevelTest = (function () {
         const percent = Math.round(result.score * 100);
         const next = { A1: 'A2', A2: 'B1', B1: 'B2', B2: 'C1' }[result.level];
 
+        const jumpPct = Math.round(JUMP_AHEAD_MARK * 100);
+        const levelProg = (typeof getLevelProgress === 'function') ? getLevelProgress(result.level) : null;
+        const hasIncompleteLessons = !levelProg || levelProg.total === 0 || levelProg.completed < levelProg.total;
+        const jumpNote = hasIncompleteLessons
+            ? ` Score ${jumpPct}%+ to mark all ${result.level} lessons complete automatically.`
+            : '';
+
         const verdict = result.jumpAhead
             ? `<p class="lt-verdict is-pass">${percent}% — that's ${result.level} mastered! Every lesson in the level is now marked complete, so you can move straight on to ${next || 'what comes next'}.</p>`
             : result.passed
-            ? `<p class="lt-verdict is-pass">${percent}% — you have passed the ${result.level} assessment and are ready for ${next || 'what comes next'}.</p>`
+            ? `<p class="lt-verdict is-pass">${percent}% — you have passed the ${result.level} assessment and are ready for ${next || 'what comes next'}.${jumpNote}</p>`
             : `<p class="lt-verdict is-fail">${percent}% — not quite. ${Math.round(test.passMark * 100)}% is the mark for moving on.</p>`;
 
         const topics = result.weakest.length
@@ -1236,6 +1243,7 @@ const LevelTest = (function () {
             <div class="lt-head">
                 <h2>${esc(test.title)}</h2>
                 <p>${esc(test.intro)}</p>
+                <p class="lt-threshold-note">${Math.round(test.passMark * 100)}% to pass · ${Math.round(JUMP_AHEAD_MARK * 100)}% to mark all ${esc(test.level)} lessons complete.</p>
                 ${previous && !marked ? `<p class="lt-previous">Your best so far:
                     ${Math.round(previous.score * 100)}% (${previous.passed ? 'passed' : 'needs practice'}).</p>` : ''}
             </div>

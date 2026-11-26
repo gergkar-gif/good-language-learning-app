@@ -684,7 +684,7 @@ function unitListHtml(level) {
             <span class="level-test-meta">${
                 result
                     ? `${result.correct} / ${result.total}${result.passed ? ' · passed' : ''}`
-                    : '20 questions · 80% to move on'
+                    : '80% to pass · 90% to complete all lessons'
             }</span>
         </button>
     ` : `
