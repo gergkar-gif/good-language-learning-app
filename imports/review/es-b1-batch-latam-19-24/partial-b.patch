@@ -1,0 +1,2482 @@
+diff --git a/content/es-latam/exercises/b1/b1-guerrafria-01-ex.json b/content/es-latam/exercises/b1/b1-guerrafria-01-ex.json
+index b52a97a3..65ece401 100644
+--- a/content/es-latam/exercises/b1/b1-guerrafria-01-ex.json
++++ b/content/es-latam/exercises/b1/b1-guerrafria-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "enfrentado",
+-          "opposed, at odds"
++          "la superpotencia",
++          "superpower"
+         ],
+         [
+-          "planificado",
+-          "planned"
++          "el capitalismo",
++          "capitalism"
+         ],
+         [
+-          "la alianza",
+-          "alliance"
++          "el comunismo",
++          "communism"
+         ],
+         [
+-          "condicionado",
+-          "conditional"
++          "la contención",
++          "containment"
+         ]
+       ],
+       "teaches": [
+@@ -32,10 +32,6 @@
+       "type": "matching",
+       "category": "vocabulary",
+       "pairs": [
+-        [
+-          "la doctrina",
+-          "doctrine"
+-        ],
+         [
+           "la carrera armamentística",
+           "arms race"
+@@ -45,8 +41,12 @@
+           "arsenal"
+         ],
+         [
+-          "el escenario",
+-          "stage, setting"
++          "la bomba atómica",
++          "atomic bomb"
++        ],
++        [
++          "la rivalidad",
++          "rivalry"
+         ]
+       ],
+       "teaches": [
+@@ -57,11 +57,11 @@
+       "id": "b1-guerrafria-01.ex02",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿En qué quedó dividido el mundo tras el final de la Segunda Guerra Mundial, en 1945?",
++      "question": "Why is the period after 1945 called the Cold War, according to the text?",
+       "options": [
+-        "En dos grandes bloques enfrentados, uno liderado por Estados Unidos y otro por la Unión Soviética.",
+-        "En un único bloque unificado bajo liderazgo de las Naciones Unidas.",
+-        "En decenas de bloques regionales completamente independientes entre sí."
++        "Porque los dos bloques no se enfrentaron en una guerra directa.",
++        "Porque las dos superpotencias dejaron de competir en 1945.",
++        "Porque la guerra ocurrió en países de clima frío."
+       ],
+       "correct": 0
+     },
+@@ -69,101 +69,85 @@
+       "id": "b1-guerrafria-01.ex03",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué buscaron activamente ambas superpotencias durante estos años?",
++      "question": "What did each superpower offer to the countries it wanted as allies?",
+       "options": [
+-        "Sumar países a su propio bloque, mediante alianzas militares o ayuda económica condicionada.",
+-        "Evitar cualquier tipo de influencia sobre otros países del mundo.",
+-        "Unificar sus dos sistemas económicos en uno solo."
++        "Ayuda económica o militar.",
++        "Tierras dentro de su territorio.",
++        "Un puesto en su gobierno."
+       ],
+       "correct": 0
+     },
+     {
+       "id": "b1-guerrafria-01.ex04a",
+       "type": "fill-blank",
+-      "category": "vocabulary",
+-      "sentence": "Debía impedirse, ___ mediante presión diplomática, ya mediante intervención militar directa, la expansión del comunismo.",
++      "category": "grammar",
++      "sentence": "La Unión Soviética, _____ defendía el comunismo, dirigía el otro bloque.",
++      "answer": "que",
++      "english": "The Soviet Union, which defended communism, led the other bloc.",
+       "teaches": [
+-        "b1-cold-war-vocab"
+-      ],
+-      "english": "The expansion of communism had to be prevented, whether through diplomatic pressure or direct military intervention.",
+-      "answers": [
+-        "ya sea",
+-        "ya"
++        "relative-clauses"
+       ]
+     },
+     {
+       "id": "b1-guerrafria-01.ex04b",
+       "type": "fill-blank",
+-      "category": "vocabulary",
+-      "sentence": "Debía impedirse, ya mediante presión diplomática, ___ mediante intervención militar directa, la expansión del comunismo.",
++      "category": "grammar",
++      "sentence": "La contención fue una política _____ quería frenar el comunismo.",
++      "answer": "que",
++      "english": "Containment was a policy that wanted to halt communism.",
+       "teaches": [
+-        "b1-cold-war-vocab"
+-      ],
+-      "english": "The expansion of communism had to be prevented, either through diplomatic pressure or through direct military intervention.",
+-      "answers": [
+-        "ya sea",
+-        "ya"
++        "relative-clauses"
+       ]
+     },
+     {
+       "id": "b1-guerrafria-01.ex05",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué debía impedirse, ya sea mediante presión diplomática, ya sea mediante intervención militar directa?",
++      "question": "What did the Soviet Union do in 1949, according to the text?",
+       "options": [
+-        "La expansión del comunismo.",
+-        "La expansión del capitalismo.",
+-        "La competencia entre las superpotencias."
++        "Probó su primera bomba atómica.",
++        "Usó la bomba atómica contra Japón.",
++        "Creó una alianza militar con Canadá."
+       ],
+       "correct": 0
+     },
+     {
+       "id": "b1-guerrafria-01.ex06",
+       "type": "sentence-builder",
+-      "category": "vocabulary",
++      "category": "grammar",
+       "tiles": [
+-        "Ya",
+-        "sea",
+-        "a",
+-        "través",
+-        "de",
+-        "alianzas",
+-        "militares,",
+-        "ya",
+-        "sea",
+-        "mediante",
++        "Truman",
++        "prometió",
+         "ayuda",
+-        "económica,",
+-        "buscaron",
+-        "sumar",
+-        "países",
+         "a",
+-        "su",
+-        "bloque."
++        "los",
++        "países",
++        "que",
++        "veían",
++        "una",
++        "amenaza",
++        "en",
++        "el",
++        "comunismo."
+       ],
+       "solution": [
+-        "Ya",
+-        "sea",
+-        "a",
+-        "través",
+-        "de",
+-        "alianzas",
+-        "militares,",
+-        "ya",
+-        "sea",
+-        "mediante",
++        "Truman",
++        "prometió",
+         "ayuda",
+-        "económica,",
+-        "buscaron",
+-        "sumar",
+-        "países",
+         "a",
+-        "su",
+-        "bloque."
++        "los",
++        "países",
++        "que",
++        "veían",
++        "una",
++        "amenaza",
++        "en",
++        "el",
++        "comunismo."
+       ],
+-      "english": "Whether through military alliances or through economic aid, they sought to add countries to their bloc.",
++      "english": "Truman promised help to the countries that saw a threat in communism.",
+       "teaches": [
+-        "b1-cold-war-vocab"
++        "relative-clauses"
+       ]
+     },
+     {
+@@ -172,18 +156,18 @@
+       "category": "reading",
+       "prompt": [
+         {
+-          "speaker": "Rosario",
+-          "text": "¿Con qué contaban ambas superpotencias, como parte de esta rivalidad global?"
++          "speaker": "Meg",
++          "text": "En el documental vimos las armas de las superpotencias. ¿Qué pasó con ellas?"
+         },
+         {
+-          "speaker": "Feliciano",
++          "speaker": "Carlos",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Con arsenales capaces de destruir la civilización humana varias veces.",
+-        "Con un único ejército conjunto bajo mando de las Naciones Unidas.",
+-        "Con armas incapaces de causar daño a gran escala."
++        "Formaron arsenales enormes, y esa carrera armamentística duró décadas.",
++        "Destruyeron sus bombas atómicas, y la carrera duró pocos años.",
++        "Firmaron un tratado y dejaron de construir armas en 1949."
+       ],
+       "correct": 0
+     },
+@@ -191,11 +175,11 @@
+       "id": "b1-guerrafria-01.ex08",
+       "type": "listening-choice",
+       "category": "listening",
+-      "sentence": "América Latina resultaba un terreno particularmente sensible dentro de esta confrontación global, por su cercanía a Estados Unidos y su propia desigualdad social.",
++      "sentence": "En 1955 los países comunistas de Europa del Este firmaron el Pacto de Varsovia.",
+       "options": [
+-        "Latin America turned out to be a particularly sensitive terrain within this global confrontation, due to its proximity to the United States and its own social inequality.",
+-        "Latin America managed to avoid any political involvement in the Cold War because of its geographical distance from ideological conflicts.",
+-        "Hemispheric diplomacy successfully neutralized superpower tensions, creating a neutral zone free from foreign intervention or social disputes."
++        "In 1955 the communist countries of Eastern Europe signed the Warsaw Pact.",
++        "In 1955 the communist countries of Eastern Europe signed the NATO treaty.",
++        "In 1949 the communist countries of Eastern Europe signed the Warsaw Pact."
+       ],
+       "correct": 0,
+       "teaches": [
+diff --git a/content/es-latam/exercises/b1/b1-guerrafria-02-ex.json b/content/es-latam/exercises/b1/b1-guerrafria-02-ex.json
+index 404f249a..3a2e9d73 100644
+--- a/content/es-latam/exercises/b1/b1-guerrafria-02-ex.json
++++ b/content/es-latam/exercises/b1/b1-guerrafria-02-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "temerosamente",
+-          "fearfully"
++          "el tratado",
++          "treaty"
+         ],
+         [
+-          "lanzar",
+-          "to launch"
++          "el ataque",
++          "attack"
+         ],
+         [
+-          "receptor",
+-          "recipient"
++          "recíproco",
++          "mutual"
+         ],
+         [
+-          "comprometer",
+-          "to commit, pledge"
++          "la asistencia",
++          "assistance, help"
+         ]
+       ],
+       "teaches": [
+@@ -33,20 +33,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "alinearse",
+-          "to align oneself"
++          "fundar",
++          "to found"
+         ],
+         [
+-          "a raya",
+-          "in check, at bay"
++          "el miembro",
++          "member"
+         ],
+         [
+-          "implementar",
+-          "to implement"
++          "pacífico",
++          "peaceful"
+         ],
+         [
+-          "profundo",
+-          "deep, profound"
++          "prohibir",
++          "to ban, to forbid"
+         ]
+       ],
+       "teaches": [
+@@ -57,11 +57,11 @@
+       "id": "b1-guerrafria-02.ex02",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿En qué se convirtió Cuba después de que la revolución transformara su política exterior?",
++      "question": "In which city was the OAS founded in 1948?",
+       "options": [
+-        "En un aliado de la Unión Soviética.",
+-        "En un aliado del bloque occidental.",
+-        "En un país sin ninguna relación con las superpotencias."
++        "En Bogotá.",
++        "En Río de Janeiro.",
++        "En Washington."
+       ],
+       "correct": 0
+     },
+@@ -69,11 +69,11 @@
+       "id": "b1-guerrafria-02.ex03",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué programa lanzó el presidente Kennedy, con tal de que los países receptores emprendieran reformas moderadas?",
++      "question": "What did the OAS do about the government of Cuba in 1962?",
+       "options": [
+-        "La Alianza para el Progreso.",
+-        "Un embargo comercial total contra toda América Latina.",
+-        "Un tratado militar para invadir directamente Cuba."
++        "Excluyó al gobierno de Cuba.",
++        "Eligió a Cuba como líder.",
++        "Firmó un tratado con Cuba."
+       ],
+       "correct": 0
+     },
+@@ -81,76 +81,58 @@
+       "id": "b1-guerrafria-02.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Estados Unidos estaba dispuesto a comprometer miles de millones de dólares, ___ los gobiernos aceptaran alinearse con el bloque occidental.",
+-      "answer": "con tal de que",
++      "sentence": "En 1947 se _____ en Río de Janeiro el Tratado Interamericano de Asistencia Recíproca.",
++      "answer": "firmó",
++      "hint": "firmar",
++      "english": "In 1947 the Inter-American Treaty of Reciprocal Assistance was signed in Rio de Janeiro.",
+       "teaches": [
+-        "conditional-conjunctions"
+-      ],
+-      "english": "The United States was prepared to commit billions of dollars, provided that governments agreed to align themselves with the Western bloc."
++        "se-impersonal"
++      ]
+     },
+     {
+       "id": "b1-guerrafria-02.ex05",
+       "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "¿Por qué algunos países implementaron reformas reales?",
++      "category": "grammar",
++      "question": "Which sentence says \"In 1948 the OAS was founded in Bogotá\"?",
+       "options": [
+-        "Con tal de que continuara llegando la ayuda estadounidense.",
+-        "Porque querían romper todas sus relaciones con Estados Unidos.",
+-        "Porque la Unión Soviética lo exigió a cambio de armas."
++        "En 1948 se fundó en Bogotá la OEA.",
++        "En 1948 se fundaron en Bogotá la OEA.",
++        "En 1948 fundó en Bogotá la OEA."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "se-impersonal"
++      ]
+     },
+     {
+       "id": "b1-guerrafria-02.ex06",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Washington",
+-        "estaba",
+-        "dispuesto",
+-        "a",
+-        "tolerar",
+-        "casi",
+-        "cualquier",
+-        "cosa,",
+-        "con",
+-        "tal",
+-        "de",
+-        "que",
+-        "un",
+-        "gobierno",
++        "En",
++        "Chile",
+         "se",
+-        "mantuviera",
+-        "alineado",
+-        "contra",
++        "prohibió",
+         "el",
+-        "comunismo."
++        "Partido",
++        "Comunista",
++        "en",
++        "1948."
+       ],
+       "solution": [
+-        "Washington",
+-        "estaba",
+-        "dispuesto",
+-        "a",
+-        "tolerar",
+-        "casi",
+-        "cualquier",
+-        "cosa,",
+-        "con",
+-        "tal",
+-        "de",
+-        "que",
+-        "un",
+-        "gobierno",
++        "En",
++        "Chile",
+         "se",
+-        "mantuviera",
+-        "alineado",
+-        "contra",
++        "prohibió",
+         "el",
+-        "comunismo."
++        "Partido",
++        "Comunista",
++        "en",
++        "1948."
+       ],
+-      "english": "Washington was willing to tolerate almost anything, as long as a government stayed aligned against communism.",
++      "english": "In Chile the Communist Party was banned in 1948.",
+       "teaches": [
+-        "conditional-conjunctions"
++        "se-impersonal"
+       ]
+     },
+     {
+@@ -159,18 +141,18 @@
+       "category": "reading",
+       "prompt": [
+         {
+-          "speaker": "Consuelo",
+-          "text": "¿Qué debían hacer los gobiernos latinoamericanos, a cambio de recibir esta ayuda económica?"
++          "speaker": "Meg",
++          "text": "En el museo leí sobre la carta de la OEA. ¿Qué principio incluía?"
+         },
+         {
+-          "speaker": "Teodoro",
++          "speaker": "Carlos",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Aceptar alinearse con el bloque occidental.",
+-        "No tenían que hacer absolutamente nada a cambio de la ayuda.",
+-        "Debían romper de inmediato todas sus relaciones con Estados Unidos."
++        "Incluía el principio de no intervención en los asuntos de otro país.",
++        "Daba a Estados Unidos el derecho de intervenir en otro país.",
++        "Pedía a todos los miembros formar un ejército común."
+       ],
+       "correct": 0
+     },
+@@ -178,11 +160,11 @@
+       "id": "b1-guerrafria-02.ex08",
+       "type": "listening-choice",
+       "category": "listening",
+-      "sentence": "Esta combinación de ayuda económica condicionada y presión anticomunista definiría la relación entre Estados Unidos y buena parte de la región durante décadas.",
++      "sentence": "En 1948 se fundó en Bogotá la Organización de los Estados Americanos.",
+       "options": [
+-        "This combination of conditional economic aid and anti-communist pressure would define the relationship between the United States and much of the region for decades.",
+-        "Washington offered generous economic grants to Latin American democracies without imposing any geopolitical or ideological obligations.",
+-        "Inter-American cooperation focused entirely on cultural exchanges, avoiding any military alignment or intelligence sharing during those decades."
++        "In 1948 the Organization of American States was founded in Bogotá.",
++        "In 1948 the Organization of American States was founded in Rio de Janeiro.",
++        "In 1947 the Organization of American States was founded in Bogotá."
+       ],
+       "correct": 0,
+       "teaches": [
+diff --git a/content/es-latam/exercises/b1/b1-guerrafria-03-ex.json b/content/es-latam/exercises/b1/b1-guerrafria-03-ex.json
+index 2be62420..d5b76ec1 100644
+--- a/content/es-latam/exercises/b1/b1-guerrafria-03-ex.json
++++ b/content/es-latam/exercises/b1/b1-guerrafria-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "empujar",
+-          "to push"
++          "la guerrilla",
++          "guerrilla group"
+         ],
+         [
+-          "la academia",
+-          "academy"
++          "el guerrillero",
++          "guerrilla fighter"
+         ],
+         [
+-          "interno",
+-          "internal"
++          "la doctrina",
++          "doctrine"
+         ],
+         [
+-          "sindical",
+-          "union, labor (adjective)"
++          "interno",
++          "internal"
+         ]
+       ],
+       "teaches": [
+@@ -33,20 +33,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "bloquear",
+-          "to block"
++          "el oficial",
++          "officer"
+         ],
+         [
+-          "respaldar",
+-          "to back, support"
++          "el entrenamiento",
++          "training"
+         ],
+         [
+-          "el activista",
+-          "activist"
++          "combatir",
++          "to fight (against)"
+         ],
+         [
+-          "preventivo",
+-          "preventive"
++          "la violación",
++          "violation, abuse"
+         ]
+       ],
+       "teaches": [
+@@ -57,11 +57,11 @@
+       "id": "b1-guerrafria-03.ex02",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Hacia qué empujaron el ejemplo cubano y la lógica de la Guerra Fría a buena parte de la política latinoamericana?",
++      "question": "What was the main danger for a country, according to the National Security Doctrine?",
+       "options": [
+-        "Hacia una polarización cada vez más extrema entre revolución socialista y anticomunismo militante.",
+-        "Hacia un consenso político moderado y estable en toda la región.",
+-        "Hacia la desaparición completa de cualquier ideología política."
++        "El que venía de adentro del país.",
++        "El que venía de las fronteras.",
++        "El que venía de las empresas extranjeras."
+       ],
+       "correct": 0
+     },
+@@ -69,79 +69,69 @@
+       "id": "b1-guerrafria-03.ex03",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué adoptaron muchos militares latinoamericanos, según la lección?",
++      "question": "What happened to Che Guevara in Bolivia in 1967?",
+       "options": [
+-        "Lo que se conocería como la Doctrina de Seguridad Nacional.",
+-        "La neutralidad como política oficial de los ejércitos.",
+-        "Un sistema de milicias populares sin mandos profesionales."
++        "El ejército lo capturó cuando quería organizar una guerrilla.",
++        "El ejército lo nombró jefe de su academia militar.",
++        "El gobierno lo invitó a firmar un tratado."
+       ],
+       "correct": 0
+     },
+     {
+       "id": "b1-guerrafria-03.ex04",
+       "type": "fill-blank",
+-      "category": "vocabulary",
+-      "sentence": "___ el ejemplo cubano empujó a la política latinoamericana hacia una polarización cada vez más extrema.",
+-      "hint": "there is no doubt that",
+-      "answer": "No cabe duda de que",
++      "category": "grammar",
++      "sentence": "Los guerrilleros pasaban meses en las montañas, _____ ataques.",
++      "answer": "planeando",
++      "hint": "planear",
++      "english": "The guerrilla fighters spent months in the mountains, planning attacks.",
+       "teaches": [
+-        "b1-cold-war-vocab"
+-      ],
+-      "english": "There is no doubt that the Cuban example pushed Latin American politics towards increasingly extreme polarisation."
++        "gerundio-acciones-paralelas"
++      ]
+     },
+     {
+       "id": "b1-guerrafria-03.ex05",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué hacían los gobiernos anticomunistas con los movimientos revolucionarios?",
++      "question": "What do critics of the School of the Americas say about some of its students?",
+       "options": [
+-        "Utilizaban propaganda para presentarlos como una amenaza.",
+-        "Los apoyaban abiertamente con armas y dinero.",
+-        "Los ignoraban por completo."
++        "Que participaron después en violaciones de los derechos humanos.",
++        "Que trabajaron después como profesores de la escuela.",
++        "Que se hicieron guerrilleros en otro país."
+       ],
+       "correct": 0
+     },
+     {
+       "id": "b1-guerrafria-03.ex06",
+       "type": "sentence-builder",
+-      "category": "vocabulary",
++      "category": "grammar",
+       "tiles": [
+-        "No",
+-        "cabe",
+-        "duda",
+-        "de",
+-        "que",
+-        "esta",
+-        "polarización",
+-        "también",
+-        "radicalizó",
+-        "a",
+-        "sectores",
+-        "de",
+-        "la",
+-        "izquierda",
+-        "latinoamericana."
++        "Otros",
++        "buscaron",
++        "el",
++        "cambio",
++        "participando",
++        "en",
++        "elecciones",
++        "y",
++        "en",
++        "sindicatos."
+       ],
+       "solution": [
+-        "No",
+-        "cabe",
+-        "duda",
+-        "de",
+-        "que",
+-        "esta",
+-        "polarización",
+-        "también",
+-        "radicalizó",
+-        "a",
+-        "sectores",
+-        "de",
+-        "la",
+-        "izquierda",
+-        "latinoamericana."
++        "Otros",
++        "buscaron",
++        "el",
++        "cambio",
++        "participando",
++        "en",
++        "elecciones",
++        "y",
++        "en",
++        "sindicatos."
+       ],
+-      "english": "There is no doubt that this polarization also radicalized sectors of the Latin American left.",
++      "english": "Others sought change by taking part in elections and in unions.",
+       "teaches": [
+-        "b1-cold-war-vocab"
++        "gerundio-acciones-paralelas"
+       ]
+     },
+     {
+@@ -150,18 +140,18 @@
+       "category": "reading",
+       "prompt": [
+         {
+-          "speaker": "Encarnación",
+-          "text": "¿Qué ocurrió con sectores de la izquierda latinoamericana a causa de esta polarización?"
++          "speaker": "Meg",
++          "text": "¿Dónde fundó el ejército de Estados Unidos la Escuela de las Américas?"
+         },
+         {
+-          "speaker": "Bartolomé",
++          "speaker": "Carlos",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Se radicalizaron, en sentido contrario.",
+-        "Abandonaron toda actividad política.",
+-        "Se unieron a los gobiernos anticomunistas."
++        "La fundó en 1946, en la zona del Canal de Panamá.",
++        "La fundó en 1984, en Fort Benning.",
++        "La fundó en 1959, en Cuba."
+       ],
+       "correct": 0
+     },
+@@ -169,11 +159,11 @@
+       "id": "b1-guerrafria-03.ex08",
+       "type": "listening-choice",
+       "category": "listening",
+-      "sentence": "Esta dinámica de polarización extrema resultaría, en las próximas dos décadas, extraordinariamente costosa para la región.",
++      "sentence": "Muchos oficiales latinoamericanos estudiaron en la Escuela de las Américas.",
+       "options": [
+-        "This dynamic of extreme polarization would prove extraordinarily costly for the region over the following two decades.",
+-        "This polarization had no lasting cost for the region whatsoever.",
+-        "The region avoided any further political conflict after this period."
++        "Many Latin American officers studied at the School of the Americas.",
++        "Many Latin American officers taught at the School of the Americas.",
++        "Many Latin American officers studied at a school in Cuba."
+       ],
+       "correct": 0,
+       "teaches": [
+diff --git a/content/es-latam/exercises/b1/b1-guerrafria-04-ex.json b/content/es-latam/exercises/b1/b1-guerrafria-04-ex.json
+index e2ab401c..e88bd418 100644
+--- a/content/es-latam/exercises/b1/b1-guerrafria-04-ex.json
++++ b/content/es-latam/exercises/b1/b1-guerrafria-04-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "poderoso",
+-          "powerful"
++          "la reforma agraria",
++          "land reform"
+         ],
+         [
+-          "restaurar",
+-          "to restore"
++          "expropiar",
++          "to expropriate"
+         ],
+         [
+-          "constitucional",
+-          "constitutional"
++          "el golpe de Estado",
++          "coup d'état"
+         ],
+         [
+-          "la autodeterminación",
+-          "self-determination"
++          "derrocar",
++          "to overthrow"
+         ]
+       ],
+       "teaches": [
+@@ -33,20 +33,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "proporcionar",
+-          "to provide"
++          "las tropas",
++          "troops"
+         ],
+         [
+-          "advertir",
+-          "to notice, warn"
++          "el informe",
++          "report"
+         ],
+         [
+-          "la esfera",
+-          "sphere"
++          "el opositor",
++          "opponent"
+         ],
+         [
+-          "el tablero",
+-          "board (as in game board)"
++          "secreto",
++          "secret"
+         ]
+       ],
+       "teaches": [
+@@ -57,11 +57,11 @@
+       "id": "b1-guerrafria-04.ex02",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué organizó la CIA contra Árbenz, so pretexto de su reforma agraria?",
++      "question": "What did the Guatemalan land law of 1952 take over?",
+       "options": [
+-        "Un golpe de Estado.",
+-        "Un programa de ayuda económica sin ninguna condición política.",
+-        "Una misión diplomática para fortalecer la democracia."
++        "Tierras sin cultivar, también de una empresa estadounidense.",
++        "Las casas de los militares, también las de los obispos.",
++        "Las fábricas de la capital, también las del gobierno."
+       ],
+       "correct": 0
+     },
+@@ -69,11 +69,11 @@
+       "id": "b1-guerrafria-04.ex03",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué hizo Estados Unidos, so pretexto de restaurar el orden constitucional?",
++      "question": "What happened to President Juan Bosch in 1963?",
+       "options": [
+-        "Envió más de veinte mil soldados a la República Dominicana.",
+-        "Rompió por completo relaciones diplomáticas con la República Dominicana.",
+-        "Ofreció asilo político a todos los líderes del levantamiento."
++        "Un golpe de Estado lo derrocó.",
++        "Los soldados de Estados Unidos lo capturaron.",
++        "El Senado de su país lo eligió presidente."
+       ],
+       "correct": 0
+     },
+@@ -81,23 +81,23 @@
+       "id": "b1-guerrafria-04.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "La CIA organizó un golpe de Estado contra Árbenz, ___ que su reforma agraria representaba una amenaza comunista.",
+-      "hint": "under the pretext of",
+-      "answer": "so pretexto de",
++      "sentence": "El presidente Johnson dijo que _____ proteger a los ciudadanos estadounidenses.",
++      "answer": "quería",
++      "hint": "querer, imperfect",
++      "english": "President Johnson said that he wanted to protect US citizens.",
+       "teaches": [
+-        "prepositional-phrases"
+-      ],
+-      "english": "The CIA organised a coup against Árbenz on the pretext that his agrarian reform represented a communist threat."
++        "estilo-indirecto-informacion"
++      ]
+     },
+     {
+       "id": "b1-guerrafria-04.ex05",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué proporcionaron la URSS y Cuba a movimientos guerrilleros, so pretexto de apoyar la autodeterminación de los pueblos?",
++      "question": "What does the Senate report of 1975 say about money?",
+       "options": [
+-        "Entrenamiento militar.",
+-        "Únicamente apoyo diplomático simbólico.",
+-        "Ningún tipo de apoyo, por su neutralidad."
++        "Que se dio dinero a los opositores de Allende.",
++        "Que se dio dinero al gobierno de Allende.",
++        "Que se dio dinero a los guerrilleros de Cuba."
+       ],
+       "correct": 0
+     },
+@@ -106,42 +106,32 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "So",
+-        "pretexto",
+-        "de",
+-        "restaurar",
++        "Según",
+         "el",
+-        "orden",
+-        "constitucional,",
+-        "Estados",
+-        "Unidos",
+-        "envió",
+-        "soldados",
+-        "a",
+-        "la",
+-        "República",
+-        "Dominicana."
++        "informe",
++        "del",
++        "Senado,",
++        "hubo",
++        "operaciones",
++        "secretas",
++        "contra",
++        "Allende."
+       ],
+       "solution": [
+-        "So",
+-        "pretexto",
+-        "de",
+-        "restaurar",
++        "Según",
+         "el",
+-        "orden",
+-        "constitucional,",
+-        "Estados",
+-        "Unidos",
+-        "envió",
+-        "soldados",
+-        "a",
+-        "la",
+-        "República",
+-        "Dominicana."
++        "informe",
++        "del",
++        "Senado,",
++        "hubo",
++        "operaciones",
++        "secretas",
++        "contra",
++        "Allende."
+       ],
+-      "english": "Under the pretext of restoring constitutional order, the United States sent soldiers to the Dominican Republic.",
++      "english": "According to the Senate report, there were secret operations against Allende.",
+       "teaches": [
+-        "prepositional-phrases"
++        "estilo-indirecto-informacion"
+       ]
+     },
+     {
+@@ -150,18 +140,18 @@
+       "category": "reading",
+       "prompt": [
+         {
+-          "speaker": "Herminia",
+-          "text": "¿Qué motivaba con frecuencia estas intervenciones, justificadas so pretexto de principios elevados?"
++          "speaker": "Meg",
++          "text": "¿Qué dijo el presidente Johnson sobre las tropas que envió a la isla?"
+         },
+         {
+-          "speaker": "Cristino",
++          "speaker": "Carlos",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Cálculos mucho más pragmáticos.",
+-        "Nada; la justificación oficial siempre reflejaba con exactitud los verdaderos motivos.",
+-        "Un deseo genuino de promover exclusivamente la democracia en la región."
++        "Dijo que quería proteger a los ciudadanos estadounidenses.",
++        "Dijo que quería expropiar las tierras de una empresa.",
++        "Dijo que quería derrocar al presidente de Cuba."
+       ],
+       "correct": 0
+     },
+@@ -169,11 +159,11 @@
+       "id": "b1-guerrafria-04.ex08",
+       "type": "listening-choice",
+       "category": "listening",
+-      "sentence": "Decisiones fundamentales sobre el propio futuro político de la región se tomaban, con demasiada frecuencia, fuera de sus propias fronteras.",
++      "sentence": "El informe dice que se dio dinero a los opositores de Allende.",
+       "options": [
+-        "Fundamental decisions about the region's own political future were made, too often, outside its own borders.",
+-        "Every major political decision in the region was made entirely by local governments.",
+-        "Foreign powers never influenced Latin American political decisions during this period."
++        "The report says that money was given to Allende's opponents.",
++        "The report says that money was given to Allende's government.",
++        "The report says that money was taken from Allende's opponents."
+       ],
+       "correct": 0,
+       "teaches": [
+diff --git a/content/es-latam/exercises/b1/b1-guerrafria-05-ex.json b/content/es-latam/exercises/b1/b1-guerrafria-05-ex.json
+index 2c2efc21..e4286e04 100644
+--- a/content/es-latam/exercises/b1/b1-guerrafria-05-ex.json
++++ b/content/es-latam/exercises/b1/b1-guerrafria-05-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "repasar",
+-          "to review, go back over"
++          "la división",
++          "division"
+         ],
+         [
+-          "el ámbito",
+-          "sphere, area"
++          "el bando",
++          "side (in a conflict)"
+         ],
+         [
+           "el sindicato",
+-          "labor union"
++          "trade union"
+         ],
+         [
+-          "reproducir",
+-          "to reproduce"
++          "el dirigente",
++          "leader (of a union or party)"
+         ]
+       ],
+       "teaches": [
+@@ -33,20 +33,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "redefinir",
+-          "to redefine"
++          "el obispo",
++          "bishop"
+         ],
+         [
+-          "doloroso",
+-          "painful"
++          "la pobreza",
++          "poverty"
+         ],
+         [
+-          "atravesar",
+-          "to cross, run through"
++          "la injusticia",
++          "injustice"
+         ],
+         [
+-          "tocar",
+-          "to touch, affect"
++          "la desigualdad",
++          "inequality"
+         ]
+       ],
+       "teaches": [
+@@ -57,11 +57,11 @@
+       "id": "b1-guerrafria-05.ex02",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué ocurrió con toda institución política de la región, tarde o temprano?",
++      "question": "What did the bishops of Latin America talk about in Medellín in 1968?",
+       "options": [
+-        "Se vio obligada a definirse frente a la confrontación global.",
+-        "Se mantuvo al margen de la confrontación global.",
+-        "Se disolvió por completo."
++        "De la pobreza y la injusticia en la región.",
++        "De la rivalidad entre las superpotencias.",
++        "Del arsenal de las dos superpotencias."
+       ],
+       "correct": 0
+     },
+@@ -69,11 +69,11 @@
+       "id": "b1-guerrafria-05.ex03",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué experimentó toda universidad latinoamericana de este periodo?",
++      "question": "What did almost all the members of the OAS do after 1964?",
+       "options": [
+-        "Las mismas tensiones ideológicas que dividían al resto de la sociedad.",
+-        "Una completa ausencia de debate político.",
+-        "Un acuerdo unánime a favor de un solo bloque."
++        "Rompieron relaciones con Cuba.",
++        "Firmaron un tratado con Cuba.",
++        "Enviaron tropas a Cuba."
+       ],
+       "correct": 0
+     },
+@@ -81,72 +81,68 @@
+       "id": "b1-guerrafria-05.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "___ institución política que no se viera obligada, tarde o temprano, a definirse frente a esta confrontación.",
+-      "hint": "there is no",
++      "sentence": "Los historiadores han podido estudiar documentos que antes _____ secretos.",
++      "answer": "eran",
++      "hint": "ser, imperfect",
++      "english": "Historians have been able to study documents that used to be secret.",
+       "teaches": [
+-        "hay"
+-      ],
+-      "english": "There was no political institution that did not sooner or later have to take a position in relation to this confrontation.",
+-      "answers": [
+-        "No hay",
+-        "No existe"
++        "imperfect-vs-present-perfect"
+       ]
+     },
+     {
+       "id": "b1-guerrafria-05.ex05",
+       "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "¿Qué ocurrió con prácticamente todos los sindicatos obreros de la región?",
++      "category": "grammar",
++      "question": "Which sentence says \"So far historians have found many new documents\"?",
+       "options": [
+-        "Ninguno escapó a la dinámica de esta confrontación.",
+-        "Todos se mantuvieron al margen de cualquier confrontación.",
+-        "Todos se aliaron con el bloque oriental."
++        "Hasta ahora los historiadores han encontrado muchos documentos nuevos.",
++        "Hasta ahora los historiadores encontraban muchos documentos nuevos.",
++        "Hasta ahora los historiadores habían encontrado muchos documentos nuevos."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "imperfect-vs-present-perfect"
++      ],
++      "distractor_skills": {
++        "1": "imperfect",
++        "2": "pluscuamperfecto"
++      }
+     },
+     {
+       "id": "b1-guerrafria-05.ex06",
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "No",
+-        "hay",
+-        "ejército",
+-        "latinoamericano",
+-        "de",
+-        "este",
+-        "periodo",
+-        "que",
+-        "no",
+-        "acabara",
+-        "adoptando",
+-        "algún",
+-        "elemento",
+-        "de",
+-        "esta",
+-        "doctrina."
++        "Antes",
++        "los",
++        "documentos",
++        "eran",
++        "secretos,",
++        "pero",
++        "hoy",
++        "se",
++        "han",
++        "abierto",
++        "muchos",
++        "archivos."
+       ],
+       "solution": [
+-        "No",
+-        "hay",
+-        "ejército",
+-        "latinoamericano",
+-        "de",
+-        "este",
+-        "periodo",
+-        "que",
+-        "no",
+-        "acabara",
+-        "adoptando",
+-        "algún",
+-        "elemento",
+-        "de",
+-        "esta",
+-        "doctrina."
++        "Antes",
++        "los",
++        "documentos",
++        "eran",
++        "secretos,",
++        "pero",
++        "hoy",
++        "se",
++        "han",
++        "abierto",
++        "muchos",
++        "archivos."
+       ],
+-      "english": "There is no Latin American military from this period that didn't end up adopting some element of this doctrine.",
++      "english": "Before, the documents were secret, but today many archives have been opened.",
+       "teaches": [
+-        "relative-clauses"
++        "imperfect-vs-present-perfect"
+       ]
+     },
+     {
+@@ -155,18 +151,18 @@
+       "category": "reading",
+       "prompt": [
+         {
+-          "speaker": "Remedios",
+-          "text": "¿Es posible entender honestamente la historia latinoamericana de la segunda mitad del siglo veinte sin esta dinámica bipolar?"
++          "speaker": "Meg",
++          "text": "¿Qué discuten hoy los historiadores sobre esos años?"
+         },
+         {
+-          "speaker": "Baldomero",
++          "speaker": "Carlos",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "No, no hay manera honesta de entenderla sin comprender primero esta dinámica.",
+-        "Sí, la dinámica bipolar tuvo una influencia mínima y prescindible en la región.",
+-        "Sí, porque la Guerra Fría en realidad nunca afectó realmente a América Latina."
++        "Discuten cuál fue la causa principal de esos conflictos.",
++        "Discuten cuántos países firmaron el Pacto de Varsovia.",
++        "Discuten si la Guerra Fría existió realmente."
+       ],
+       "correct": 0
+     },
+@@ -174,11 +170,11 @@
+       "id": "b1-guerrafria-05.ex08",
+       "type": "listening-choice",
+       "category": "listening",
+-      "sentence": "Las consecuencias más dolorosas de esta dinámica bipolar -golpes militares, dictaduras, represión política sistemática- todavía estaban por llegar.",
++      "sentence": "Algunos dirigentes sindicales desconfiaban de los comunistas.",
+       "options": [
+-        "The most painful consequences of this bipolar dynamic -- military coups, dictatorships, systematic political repression -- were still to come.",
+-        "The region had already experienced its worst political violence by this point.",
+-        "This bipolar dynamic produced no significant political consequences."
++        "Some union leaders distrusted the communists.",
++        "Some union leaders trusted the communists.",
++        "Some union leaders feared the bishops."
+       ],
+       "correct": 0,
+       "teaches": [
+diff --git a/content/es-latam/grammar/b1/b1-guerrafria-01-ya-sea-ya-sea-gr.json b/content/es-latam/grammar/b1/b1-guerrafria-01-ya-sea-ya-sea-gr.json
+index c825056a..9821e5ee 100644
+--- a/content/es-latam/grammar/b1/b1-guerrafria-01-ya-sea-ya-sea-gr.json
++++ b/content/es-latam/grammar/b1/b1-guerrafria-01-ya-sea-ya-sea-gr.json
+@@ -1,35 +1,59 @@
+ {
+   "id": "grammar.b1.guerrafria.01.ya-sea-ya-sea",
+-  "title": "Ya sea... ya sea: presentar dos opciones formales",
++  "title": "Relative clauses: the two blocs",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "*Ya sea*... *ya sea* (whether... or, be it... or) formally presents two alternative methods or paths without ranking one above the other -- a natural fit for describing how the superpowers pursued the same goal (containment, expansion of influence) through more than one channel at once. These sentences are taken directly from the previous reading."
++      "title": "What you already know",
++      "content": "You know relative clauses with *que* and *quien* from B1 Unit 5 (*La amiga que vive al lado*, *el vecino con quien hablamos*). They add information about a person, a thing or a place without starting a new sentence. The Cold War is full of such descriptions: the superpowers, the blocs and the policies that divided them."
++    },
++    {
++      "type": "table",
++      "title": "Que and quien at work",
++      "rows": [
++        [
++          "Estados Unidos, que defendía el capitalismo",
++          "the United States, which defended capitalism"
++        ],
++        [
++          "la política que quería frenar el comunismo",
++          "the policy that wanted to halt communism"
++        ],
++        [
++          "los países que veían una amenaza en el comunismo",
++          "the countries that saw a threat in communism"
++        ],
++        [
++          "Truman, quien había llegado al cargo en 1945",
++          "Truman, who had come into office in 1945"
++        ]
++      ]
+     },
+     {
+       "type": "examples",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Ya sea a través de alianzas militares formales, ya sea mediante ayuda económica condicionada, ambas superpotencias buscaron sumar países a su propio bloque.",
+-          "english": "Whether through formal military alliances or through conditional economic aid, both superpowers sought to add countries to their own bloc."
++          "spanish": "La Unión Soviética, que defendía el comunismo, dirigía el otro bloque.",
++          "english": "The Soviet Union, which defended communism, led the other bloc."
+         },
+         {
+-          "spanish": "Debía impedirse, ya sea mediante presión diplomática, ya sea mediante intervención militar directa, la expansión del comunismo.",
+-          "english": "The expansion of communism had to be prevented, whether through diplomatic pressure or through direct military intervention."
++          "spanish": "La OTAN es una alianza militar que unió en 1949 a Estados Unidos con varios países de Europa.",
++          "english": "NATO is a military alliance that in 1949 united the United States with several European countries."
+         },
+         {
+-          "spanish": "Ambas superpotencias poseían arsenales capaces de destruir, ya sea de manera directa, ya sea a través de sus efectos posteriores, la civilización humana varias veces.",
+-          "english": "Both superpowers possessed arsenals capable of destroying human civilization several times over, whether directly or through their aftereffects."
++          "spanish": "La contención fue una política que quería frenar el comunismo.",
++          "english": "Containment was a policy that wanted to halt communism."
+         },
+         {
+-          "spanish": "La región se convirtió, casi inevitablemente, en uno de los escenarios más activos de la Guerra Fría.",
+-          "english": "The region became, almost inevitably, one of the most active stages of the Cold War."
++          "spanish": "El presidente Truman, quien había llegado al cargo en 1945, prometió ayuda.",
++          "english": "President Truman, who had come into office in 1945, promised help."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "*Ya sea* stays invariable in both slots (never ya sean, even with a plural noun following) -- it's a fixed connector, not a verb agreeing with what comes after it."
++      "content": "*Que* does not change for gender or number: *la alianza que*, *los bloques que*. With a comma, the clause adds extra information (*Estados Unidos, que defendía el capitalismo, …*). Without a comma, it says which one you mean (*los países que veían una amenaza*). *Quien* is for people only, mostly after a comma or a preposition."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b1/b1-guerrafria-02-con-tal-de-que-gr.json b/content/es-latam/grammar/b1/b1-guerrafria-02-con-tal-de-que-gr.json
+index c1bd459a..b5f8dad7 100644
+--- a/content/es-latam/grammar/b1/b1-guerrafria-02-con-tal-de-que-gr.json
++++ b/content/es-latam/grammar/b1/b1-guerrafria-02-con-tal-de-que-gr.json
+@@ -1,35 +1,59 @@
+ {
+   "id": "grammar.b1.guerrafria.02.con-tal-de-que",
+-  "title": "Con tal de que + subjuntivo: una condición explícita",
++  "title": "Impersonal and passive se: treaties and organisations",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "*Con tal de que* (provided that, as long as) states an explicit condition attached to an offer or a tolerance -- exactly the shape of US Cold War policy, which backed reform and aid on the condition that a government stayed anti-communist. It always takes the subjunctive. These sentences are taken directly from the previous reading."
++      "title": "What you already know",
++      "content": "You know *se* for general or unknown actors from B1 Unit 6 (*Se busca una persona*, *se buscan personas*, *se trabaja mucho aquí*). The same pattern suits the history of treaties and organisations, where it matters what was done and not who did it."
++    },
++    {
++      "type": "table",
++      "title": "Se with a past verb",
++      "rows": [
++        [
++          "a singular noun: *Se fundó la OEA.*",
++          "the verb is singular: the OAS was founded"
++        ],
++        [
++          "a plural noun: *Se firmaron varios acuerdos.*",
++          "the verb is plural: several agreements were signed"
++        ],
++        [
++          "no noun: *Se hablaba mucho de la seguridad.*",
++          "the verb stays singular: people talked a lot about security"
++        ]
++      ]
+     },
+     {
+       "type": "examples",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Kennedy lanzó la Alianza para el Progreso, con tal de que los países receptores emprendieran reformas moderadas capaces de reducir la desigualdad.",
+-          "english": "Kennedy launched the Alliance for Progress, provided that recipient countries undertook moderate reforms capable of reducing inequality."
++          "spanish": "En 1947 se firmó el Tratado de Río.",
++          "english": "In 1947 the Rio Treaty was signed."
++        },
++        {
++          "spanish": "En 1948 se fundó en Bogotá la OEA.",
++          "english": "In 1948 the OAS was founded in Bogotá."
+         },
+         {
+-          "spanish": "Estados Unidos estaba dispuesto a comprometer miles de millones de dólares, con tal de que los gobiernos aceptaran alinearse con el bloque occidental.",
+-          "english": "The United States was willing to commit billions of dollars, provided that governments agreed to align with the Western bloc."
++          "spanish": "En los años cuarenta se firmaron varios acuerdos.",
++          "english": "In the 1940s several agreements were signed."
+         },
+         {
+-          "spanish": "Algunos países implementaron reformas reales con tal de que continuara llegando la ayuda estadounidense.",
+-          "english": "Some countries implemented real reforms so that American aid would keep coming."
++          "spanish": "En Chile se prohibió el Partido Comunista en 1948.",
++          "english": "In Chile the Communist Party was banned in 1948."
+         },
+         {
+-          "spanish": "Washington estaba dispuesto a tolerar prácticamente cualquier cosa, con tal de que un gobierno se mantuviera firmemente alineado contra el comunismo.",
+-          "english": "Washington was willing to tolerate practically anything, as long as a government stayed firmly aligned against communism."
++          "spanish": "Se hablaba mucho de la amenaza del comunismo.",
++          "english": "People talked a lot about the threat of communism."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Con tal de + infinitive (same subject) is the shorter alternative when the person setting the condition and the person meeting it are the same -- lo hizo con tal de conseguir la ayuda -- while *con tal de que* + subjunctive is for two different subjects, as in every example above."
++      "content": "The verb agrees with the noun that follows: *se firmó el tratado*, *se firmaron los tratados*. When there is no noun, use the singular (*se hablaba*). The *se* form leaves out who acted; if you want to name them, use an ordinary verb (*Estados Unidos firmó el tratado*)."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b1/b1-guerrafria-03-no-cabe-duda-de-que-gr.json b/content/es-latam/grammar/b1/b1-guerrafria-03-no-cabe-duda-de-que-gr.json
+index 68db2cb8..c2aa4205 100644
+--- a/content/es-latam/grammar/b1/b1-guerrafria-03-no-cabe-duda-de-que-gr.json
++++ b/content/es-latam/grammar/b1/b1-guerrafria-03-no-cabe-duda-de-que-gr.json
+@@ -1,35 +1,59 @@
+ {
+   "id": "grammar.b1.guerrafria.03.no-cabe-duda-de-que",
+-  "title": "No cabe duda de que: afirmar con seguridad",
++  "title": "The gerund: two actions at the same time",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "*No cabe duda de que* (there is no doubt that) is a strong, formal way to assert a claim as settled fact -- and, unlike es cuestionable que, it takes the indicative, since it's affirming rather than evaluating uncertainty. It fits the historian's confident tone when the evidence for a claim is genuinely overwhelming. These sentences are taken directly from the previous reading."
++      "title": "What you already know",
++      "content": "You know the gerund for actions that happen at the same time from B1 Unit 2 (*Llegó corriendo*, *Volvimos a casa cantando*) and *estar* + gerund from A1 Unit 19. The gerund says what the subject of the main verb is doing while the main action happens. It does not change for person, tense, gender or number."
++    },
++    {
++      "type": "table",
++      "title": "Gerunds on the topic",
++      "rows": [
++        [
++          "planear → planeando",
++          "planning"
++        ],
++        [
++          "esperar → esperando",
++          "waiting"
++        ],
++        [
++          "responder → respondiendo",
++          "answering"
++        ],
++        [
++          "participar → participando",
++          "taking part"
++        ]
++      ]
+     },
+     {
+       "type": "examples",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "No cabe duda de que el ejemplo cubano y la lógica de la Guerra Fría empujaron a la política latinoamericana hacia una polarización cada vez más extrema.",
+-          "english": "There is no doubt that the Cuban example and Cold War logic pushed Latin American politics toward increasingly extreme polarization."
++          "spanish": "Los guerrilleros pasaban meses en las montañas, planeando ataques.",
++          "english": "The guerrilla fighters spent months in the mountains, planning attacks."
+         },
+         {
+-          "spanish": "No cabe duda de que muchos militares latinoamericanos adoptaron lo que se conocería como la Doctrina de Seguridad Nacional.",
+-          "english": "There is no doubt that many Latin American militaries adopted what would become known as the National Security Doctrine."
++          "spanish": "Los oficiales estudiaban en la escuela, aprendiendo técnicas militares.",
++          "english": "The officers studied at the school, learning military techniques."
+         },
+         {
+-          "spanish": "No cabe duda de que esta polarización también radicalizó, en sentido contrario, a sectores de la izquierda latinoamericana.",
+-          "english": "There is no doubt that this polarization also radicalized, in the opposite direction, sectors of the Latin American left."
++          "spanish": "Algunos grupos respondieron con violencia, radicalizándose cada vez más.",
++          "english": "Some groups answered with violence, becoming more and more radical."
+         },
+         {
+-          "spanish": "No cabe duda de que esta dinámica de polarización extrema resultaría extraordinariamente costosa para la región.",
+-          "english": "There is no doubt that this dynamic of extreme polarization would prove extraordinarily costly for the region."
++          "spanish": "Otros buscaron el cambio participando en elecciones y en sindicatos.",
++          "english": "Others sought change by taking part in elections and in unions."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "*No cabe duda de que* + indicative sits at the opposite end of the certainty scale from es cuestionable que + subjunctive, which you learned earlier -- the two phrases let a writer signal exactly how confident they are in a claim, just by choosing which one to use."
++      "content": "The gerund always shares its subject with the main verb: in *Los oficiales estudiaban aprendiendo técnicas*, the officers both studied and learned. If the two actions have different subjects, use *mientras* or *cuando* instead."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b1/b1-guerrafria-04-so-pretexto-de-gr.json b/content/es-latam/grammar/b1/b1-guerrafria-04-so-pretexto-de-gr.json
+index f682b0ca..96a9d964 100644
+--- a/content/es-latam/grammar/b1/b1-guerrafria-04-so-pretexto-de-gr.json
++++ b/content/es-latam/grammar/b1/b1-guerrafria-04-so-pretexto-de-gr.json
+@@ -1,35 +1,55 @@
+ {
+   "id": "grammar.b1.guerrafria.04.so-pretexto-de",
+-  "title": "So pretexto de: una justificación oficial cuestionable",
++  "title": "Reporting what governments and documents say",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "*So pretexto de* (under the pretext of) introduces an official justification the writer is signaling as doubtful -- distinct from a neutral connector, it carries built-in skepticism about whether the stated reason was the real one. Exactly the tool for describing Cold War interventions whose declared goals rarely matched their actual motives. These sentences are taken directly from the previous reading."
++      "title": "What you already know",
++      "content": "You know how to report statements with *según* + a source and with *decir que* from B1 Unit 13, and how the tense moves back after a past verb (*dijo que quería*). This is useful for foreign interventions, where governments, documents and historians tell different stories."
++    },
++    {
++      "type": "table",
++      "title": "Three ways to report",
++      "rows": [
++        [
++          "*Según* + source + fact",
++          "*Según los documentos, la CIA organizó la operación.*"
++        ],
++        [
++          "*dijo que* + imperfect",
++          "*Dijo que quería proteger a los ciudadanos.*"
++        ],
++        [
++          "*El informe dice que* + present or past",
++          "*El informe dice que se dio dinero a los opositores.*"
++        ]
++      ]
+     },
+     {
+       "type": "examples",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "La CIA organizó un golpe de Estado contra Árbenz, so pretexto de que su reforma agraria representaba una amenaza comunista para la región.",
+-          "english": "The CIA organized a coup against Árbenz, under the pretext that his land reform represented a communist threat to the region."
++          "spanish": "Según documentos publicados después por el gobierno de Estados Unidos, la CIA organizó la operación.",
++          "english": "According to documents published later by the US government, the CIA organised the operation."
+         },
+         {
+-          "spanish": "So pretexto de restaurar el orden constitucional, Estados Unidos envió más de veinte mil soldados a la República Dominicana.",
+-          "english": "Under the pretext of restoring constitutional order, the United States sent more than twenty thousand soldiers to the Dominican Republic."
++          "spanish": "El presidente Johnson dijo que quería proteger a los ciudadanos estadounidenses.",
++          "english": "President Johnson said that he wanted to protect US citizens."
+         },
+         {
+-          "spanish": "So pretexto de apoyar la autodeterminación de los pueblos, la URSS y Cuba proporcionaron entrenamiento militar a movimientos guerrilleros.",
+-          "english": "Under the pretext of supporting peoples' self-determination, the USSR and Cuba provided military training to guerrilla movements."
++          "spanish": "El gobierno de Estados Unidos dijo que los comunistas tenían influencia sobre Árbenz.",
++          "english": "The US government said that communists had influence over Árbenz."
+         },
+         {
+-          "spanish": "Este patrón de intervención, justificada so pretexto de principios elevados, estaba motivado con frecuencia por cálculos mucho más pragmáticos.",
+-          "english": "This pattern of intervention, justified under the pretext of lofty principles, was frequently motivated by far more pragmatic calculations."
++          "spanish": "Según el informe del Senado, hubo operaciones secretas contra Allende.",
++          "english": "According to the Senate report, there were secret operations against Allende."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "*So pretexto de* is somewhat archaic and formal -- you'll mostly meet it in historical or legal writing, where it works exactly like bajo el pretexto de but in a more compact, literary register."
++      "content": "Use *según* + the source to keep a claim apart from your own voice: the source is responsible for it. After a past reporting verb (*dijo que*), the verb inside moves back: *quiero* becomes *quería*, *tienen* becomes *tenían*."
+     }
+   ]
+ }
+diff --git a/content/es-latam/grammar/b1/b1-guerrafria-05-no-hay-que-no-gr.json b/content/es-latam/grammar/b1/b1-guerrafria-05-no-hay-que-no-gr.json
+index b090a65e..47cd88e0 100644
+--- a/content/es-latam/grammar/b1/b1-guerrafria-05-no-hay-que-no-gr.json
++++ b/content/es-latam/grammar/b1/b1-guerrafria-05-no-hay-que-no-gr.json
+@@ -1,35 +1,51 @@
+ {
+   "id": "grammar.b1.guerrafria.05.no-hay-que-no",
+-  "title": "No hay + sustantivo + que no: una afirmación universal",
++  "title": "Imperfect and present perfect: before and now",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "No hay + noun + que no + subjunctive (\"there is no X that doesn't...\") is a double negative that reads as a sweeping universal claim -- the strongest way to say \"every single one\" without literally saying it, perfect for a closing lesson arguing that Cold War polarization touched absolutely everything. These sentences are taken directly from the previous reading."
++      "title": "What you already know",
++      "content": "You know the imperfect from A2 Unit 21 and the present perfect from A2 Unit 1. From B1 Unit 5 you also know how they contrast: the imperfect for how things used to be, the present perfect for a change that still matters now. A Cold War summary needs both: what the region was like then, and what historians have found since."
++    },
++    {
++      "type": "table",
++      "title": "Then and now",
++      "rows": [
++        [
++          "*Antes*, *ya*, *entonces* + imperfect",
++          "*Antes los documentos eran secretos.*"
++        ],
++        [
++          "*Hoy*, *en los últimos años* + present perfect",
++          "*Se han abierto archivos.*"
++        ]
++      ]
+     },
+     {
+       "type": "examples",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "No hay institución política que no se viera obligada, tarde o temprano, a definirse frente a esta confrontación global.",
+-          "english": "There is no political institution that wasn't eventually forced to take a stance on this global confrontation."
++          "spanish": "Antes de 1945, las universidades y los sindicatos ya tenían sus propios conflictos.",
++          "english": "Before 1945, universities and unions already had their own conflicts."
+         },
+         {
+-          "spanish": "No hay universidad latinoamericana de este periodo que no experimentara las mismas tensiones ideológicas que dividían al resto de la sociedad.",
+-          "english": "There is no Latin American university from this period that didn't experience the same ideological tensions dividing the rest of society."
++          "spanish": "Los historiadores han podido estudiar documentos que antes eran secretos.",
++          "english": "Historians have been able to study documents that used to be secret."
+         },
+         {
+-          "spanish": "No hay prácticamente ningún sindicato obrero de la región que escapara a esta misma dinámica.",
+-          "english": "There is practically no labor union in the region that escaped this same dynamic."
++          "spanish": "En los últimos años se han abierto archivos en Estados Unidos.",
++          "english": "In recent years archives have been opened in the United States."
+         },
+         {
+-          "spanish": "No hay ejército latinoamericano de este periodo que no acabara adoptando algún elemento de la Doctrina de Seguridad Nacional.",
+-          "english": "There is no Latin American military from this period that didn't end up adopting some element of the National Security Doctrine."
++          "spanish": "Antes se veía la política como una lucha entre dos bandos; hoy los historiadores han descubierto más causas.",
++          "english": "Before, politics was seen as a fight between two sides; today historians have discovered more causes."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "The verb inside the que clause is always subjunctive here, since the sentence is describing a category (\"any X\") rather than one specific, known thing -- que no se viera, que no experimentara, que no acabara, all in the subjunctive."
++      "content": "Use the imperfect for the background (*eran secretos*, *tenían*) and the present perfect for what has changed up to now (*han podido*, *se han abierto*). One sentence can have both."
+     }
+   ]
+ }
+diff --git a/content/es-latam/stories/world/b1/b1-guerrafria-01-dosbloques.json b/content/es-latam/stories/world/b1/b1-guerrafria-01-dosbloques.json
+index 8d94fb0e..558b5b9b 100644
+--- a/content/es-latam/stories/world/b1/b1-guerrafria-01-dosbloques.json
++++ b/content/es-latam/stories/world/b1/b1-guerrafria-01-dosbloques.json
+@@ -1,26 +1,26 @@
+ {
+   "id": "story.b1.guerrafria.01",
+-  "title": "América Latina en el tablero de la Guerra Fría",
++  "title": "Dos bloques: el mundo después de 1945",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Tras la Segunda Guerra Mundial, el planeta quedó dividido por una confrontación global entre el capitalismo liderado por Estados Unidos y el socialismo encabezado por la Unión Soviética. En la Guerra Fría, muchos países fueron divididos en dos grandes bloques. La bipolaridad dividió el sistema internacional, mientras las dos superpotencias competían por influencia."
++      "text": "Después de la Segunda Guerra Mundial, el mundo quedó dividido en dos grandes bloques. Uno estaba dirigido por Estados Unidos, que defendía el capitalismo. El otro estaba dirigido por la Unión Soviética, que defendía el comunismo. Las dos eran superpotencias, es decir, países con más fuerza militar y económica que los otros países."
+     },
+     {
+       "type": "narration",
+-      "text": "Ya sea a través de alianzas militares formales, ya sea mediante ayuda económica condicionada, ambas superpotencias buscaron sumar países a su propio bloque. Debía impedirse, ya sea mediante presión diplomática, ya sea mediante intervención militar directa, la expansión del comunismo. En Centroamérica y el Cono Sur, las luchas cotidianas por la tierra, los salarios obreros y la educación pública quedaron atrapadas en la lógica bipolar. La región se convirtió, casi inevitablemente, en uno de los escenarios más activos de la Guerra Fría."
++      "text": "Los dos bloques nunca se enfrentaron en una guerra directa, y por eso ese período se llama la Guerra Fría. Sin embargo, la rivalidad era muy fuerte. Cada superpotencia buscaba aliados en todo el mundo y les ofrecía ayuda económica o militar. En 1949 se creó la OTAN, una alianza militar que unía a Estados Unidos, Canadá y varios países de Europa occidental. En 1955 los países comunistas de Europa del Este firmaron el Pacto de Varsovia."
+     },
+     {
+       "type": "narration",
+-      "text": "El bloque occidental estaba encabezado por Estados Unidos, mientras que el bloque oriental estaba dirigido por la Unión Soviética. Las superpotencias evitaron una guerra directa, aunque mantuvieron una fuerte competencia internacional. En 1947 se firmó en Río de Janeiro el Tratado Interamericano de Asistencia Recíproca (TIAR), estableciendo un pacto de defensa militar colectiva bajo tutela del Pentágono."
++      "text": "En 1947 el presidente Harry Truman, quien había llegado al cargo en 1945, prometió ayuda a los países que veían una amenaza en el comunismo. Esa política se llamó contención, y su objetivo era frenar la expansión del comunismo en el mundo. Para los gobiernos que la aplicaban, el comunismo era una amenaza para su seguridad."
+     },
+     {
+       "type": "narration",
+-      "text": "En 1948 se fundó en Bogotá la Organización de los Estados Americanos (OEA), concebida por Washington como un cordón sanitario diplomático contra la penetración comunista."
++      "text": "La competencia también era militar. En 1945 Estados Unidos usó la bomba atómica contra Japón, y en 1949 la Unión Soviética probó su primera bomba. Después, cada superpotencia formó un arsenal enorme, y esa carrera armamentística duró décadas. Mucha gente vivía con el miedo a una guerra que podía destruir el planeta."
+     },
+     {
+       "type": "narration",
+-      "text": "Ambas superpotencias poseían arsenales capaces de destruir, ya sea de manera directa, ya sea a través de sus efectos posteriores, la civilización humana varias veces. La intolerancia ideológica se normalizó en las cancillerías, preparando el terreno para la persecución sistemática de las fuerzas de izquierda y el socavamiento de las democracias constitucionales."
++      "text": "América Latina quedó dentro de este escenario. Estados Unidos, que tenía mucha influencia en la región desde hacía décadas, quería aliados en el continente. Por eso muchos gobiernos de América Latina se acercaron a Washington. En las décadas siguientes, la rivalidad entre los dos bloques influyó en la política de muchos países de la región."
+     }
+   ],
+   "level": "B1",
+@@ -28,37 +28,34 @@
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿De qué trata principalmente esta lectura?",
++          "question": "After 1945, which two countries led the two blocs?",
+           "options": [
+-            "De la inserción de América Latina en la lógica bipolar de la Guerra Fría y sus mecanismos institucionales.",
+-            "De la mediación de las repúblicas sudamericanas para evitar el rearme nuclear en Europa.",
+-            "De la disolución de los ejércitos regulares en Centroamérica tras la Segunda Guerra Mundial.",
+-            "De la creación de una zona económica autónoma y no alineada con ninguna potencia mundial."
++            "Estados Unidos y la Unión Soviética.",
++            "Estados Unidos y Alemania.",
++            "La Unión Soviética y Japón."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El texto analiza cómo la confrontación global entre EE.UU. y la URSS atrapó las tensiones locales y dio origen a instituciones continentales como el TIAR y la OEA."
++          "explanation": "El texto dice que un bloque estaba dirigido por Estados Unidos y el otro por la Unión Soviética."
+         },
+         {
+-          "question": "¿Qué institución multilateral se fundó en Bogotá en 1948 concebida como cordón sanitario diplomático?",
++          "question": "What was the aim of the policy of containment?",
+           "options": [
+-            "La Comisión Económica para América Latina (CEPAL).",
+-            "La Organización de los Estados Americanos (OEA).",
+-            "La Unión de Naciones Suramericanas (UNASUR).",
+-            "El Banco Interamericano de Desarrollo (BID)."
++            "Frenar la expansión del comunismo en el mundo.",
++            "Terminar con el capitalismo en Estados Unidos.",
++            "Crear un ejército común con la Unión Soviética."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "El texto indica que en 1948 se fundó en Bogotá la Organización de los Estados Americanos (OEA) concebida como un cordón sanitario diplomático."
++          "correctIndex": 0,
++          "explanation": "La política de contención quería frenar la expansión del comunismo."
+         },
+         {
+-          "question": "¿Qué efecto tuvo en la política regional la normalización de la intolerancia ideológica bipolar?",
++          "question": "When did the Soviet Union test its own atomic bomb, according to the text?",
+           "options": [
+-            "Fomentó la reconciliación pacífica entre todos los partidos políticos de la región.",
+-            "Facilitó la victoria electoral pacífica y unánime de los partidos socialistas.",
+-            "Preparó el terreno para la persecución de la izquierda y el debilitamiento de las democracias constitucionales.",
+-            "Provocó el cierre definitivo de todas las bases navales extranjeras en el continente."
++            "En 1949.",
++            "En 1945.",
++            "En 1955."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "El texto subraya que la intolerancia ideológica preparó el terreno para la persecución sistemática de la izquierda y el socavamiento de las democracias constitucionales."
++          "correctIndex": 0,
++          "explanation": "El texto dice que en 1949 la Unión Soviética probó su bomba atómica."
+         }
+       ]
+     }
+diff --git a/content/es-latam/stories/world/b1/b1-guerrafria-02-americalatina.json b/content/es-latam/stories/world/b1/b1-guerrafria-02-americalatina.json
+index 2127625f..d9e71528 100644
+--- a/content/es-latam/stories/world/b1/b1-guerrafria-02-americalatina.json
++++ b/content/es-latam/stories/world/b1/b1-guerrafria-02-americalatina.json
+@@ -1,26 +1,26 @@
+ {
+   "id": "story.b1.guerrafria.02",
+-  "title": "La Doctrina de la Seguridad Nacional y el enemigo interno",
++  "title": "El Tratado de Río y la OEA",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Durante la década de 1960, el Estado Mayor Conjunto de Estados Unidos y las academias militares del continente formularon un nuevo marco estratégico. En algunos países se buscaba mantener una posición de neutralidad. Algunos gobiernos buscaron un alineamiento con Estados Unidos, mientras otros defendían la neutralidad."
++      "text": "Después de 1945, Estados Unidos quería el apoyo de todos los países de América en la Guerra Fría. En los años cuarenta se firmaron varios acuerdos para organizar la defensa del continente. Se hablaba mucho de la seguridad común y de la amenaza del comunismo."
+     },
+     {
+       "type": "narration",
+-      "text": "Kennedy lanzó la Alianza para el Progreso, con tal de que los países receptores emprendieran reformas moderadas capaces de reducir la desigualdad. Estados Unidos estaba dispuesto a comprometer miles de millones de dólares, con tal de que los gobiernos aceptaran alinearse con el bloque occidental. Guerrilleros, dirigentes sindicales combativos, sacerdotes de la teología de la liberación, maestros y estudiantes universitarios pasaron a ser catalogados como piezas de una agresión subversiva foránea."
++      "text": "En 1947 se firmó en Río de Janeiro el Tratado Interamericano de Asistencia Recíproca, conocido como el Tratado de Río. Según ese tratado, un ataque contra un país de América se consideraba un ataque contra todos, y los países que lo firmaron se comprometían a ayudarse. Era una alianza de defensa para todo el continente."
+     },
+     {
+       "type": "narration",
+-      "text": "Cuba se convirtió en un aliado de la Unión Soviética después de que la revolución transformara su política exterior. En escuelas superiores de guerra como la ESG en Brasil y la Escuela de Guerra en Buenos Aires, los oficiales fueron instruidos en técnicas de guerra psicológica, inteligencia y contrainsurgencia urbana."
++      "text": "En 1948 se fundó en Bogotá la Organización de los Estados Americanos, la OEA. Su carta decía que los países miembros debían resolver sus conflictos de forma pacífica. También tenía el principio de no intervención: ningún país podía intervenir en los asuntos de otro. Sin embargo, Estados Unidos era el miembro más poderoso de la organización, y su influencia era muy grande."
+     },
+     {
+       "type": "narration",
+-      "text": "La posición de cada país dependía de sus intereses nacionales, aunque las superpotencias ejercían presión. Algunos países implementaron reformas reales con tal de que continuara llegando la ayuda estadounidense. La defensa de las instituciones republicanas quedó subordinada a la 'defensa de la civilización occidental y cristiana'. Washington estaba dispuesto a tolerar prácticamente cualquier cosa, con tal de que un gobierno se mantuviera firmemente alineado contra el comunismo."
++      "text": "En esos años, el anticomunismo llegó también a la política interna de varios países. En Brasil se canceló en 1947 el registro del Partido Comunista, y en Chile se prohibió en 1948. Más tarde, en 1962, la OEA excluyó al gobierno de Cuba."
+     },
+     {
+       "type": "narration",
+-      "text": "Esta doctrina desnaturalizó el rol constitucional de las fuerzas armadas, transformándolas en celosos guardianes de un orden social excluyente y en ejecutores de la más feroz represión estatal del siglo veinte."
++      "text": "No todos los países pensaban lo mismo. Algunos gobiernos apoyaban la política de Estados Unidos, y otros no estaban de acuerdo con ella. Por eso se discutía con frecuencia si la OEA servía a todo el continente o sobre todo a Washington. Los historiadores todavía discuten esta pregunta."
+     }
+   ],
+   "level": "B1",
+@@ -28,37 +28,34 @@
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál es el concepto central analizado en el texto?",
++          "question": "Where was the Rio Treaty signed in 1947?",
+           "options": [
+-            "La defensa tradicional de las fronteras territoriales ante agresiones de países limítrofes.",
+-            "La Doctrina de la Seguridad Nacional y la definición de la disidencia social como enemigo interno.",
+-            "El desarme nuclear voluntario de las fuerzas armadas en el hemisferio occidental.",
+-            "La promoción de la teología de la liberación desde los ministerios de educación pública."
++            "En Río de Janeiro.",
++            "En Bogotá.",
++            "En Washington."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "El fragmento se enfoca en la Doctrina de la Seguridad Nacional, que transformó el rol de las fuerzas armadas orientándolas hacia la persecución del llamado enemigo interno."
++          "correctIndex": 0,
++          "explanation": "El texto dice que el tratado se firmó en Río de Janeiro en 1947."
+         },
+         {
+-          "question": "¿Quiénes pasaron a ser considerados piezas de una supuesta agresión subversiva foránea según esta doctrina?",
++          "question": "What did the Rio Treaty say about an attack on one country?",
+           "options": [
+-            "Exclusivamente los generales del ejército que defendían la constitución.",
+-            "Comerciantes extranjeros dedicados a la exportación de granos y carnes.",
+-            "Sindicalistas, sacerdotes progresistas, maestros y estudiantes universitarios.",
+-            "Diplomáticos neutrales acreditados ante la Organización de Naciones Unidas."
++            "Se consideraba un ataque contra todos los países firmantes.",
++            "Cada país debía defenderse sin ayuda de otros.",
++            "Estados Unidos debía responder solo al ataque."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "El texto cita que guerrilleros, sindicalistas combativos, sacerdotes de la teología de la liberación, maestros y estudiantes pasaron a ser catalogados como subversivos."
++          "correctIndex": 0,
++          "explanation": "Según el tratado, un ataque contra un país de América se consideraba un ataque contra todos."
+         },
+         {
+-          "question": "¿Qué transformación provocó esta doctrina en el papel de las fuerzas armadas de la región?",
++          "question": "Which principle did the charter of the OAS include?",
+           "options": [
+-            "Las transformó en guardianes de un orden social excluyente y ejecutoras de feroz represión interna.",
+-            "Las convirtió en brigadas ecologistas dedicadas a la reforestación de cuencas fluviales.",
+-            "Eliminó su influencia en la política interna y las redujo a funciones puramente ceremoniales.",
+-            "Impulsó la alianza incondicional de los cuarteles con los partidos campesinos de izquierda."
++            "El principio de no intervención.",
++            "El derecho a intervenir en otros países.",
++            "La obligación de formar un ejército común."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El texto señala que esta doctrina desnaturalizó el rol de las fuerzas armadas, transformándolas en guardianes de un orden excluyente y ejecutoras de feroz represión."
++          "explanation": "La carta de la OEA incluía el principio de no intervención."
+         }
+       ]
+     }
+diff --git a/content/es-latam/stories/world/b1/b1-guerrafria-03-revolucionoanticomunismo.json b/content/es-latam/stories/world/b1/b1-guerrafria-03-revolucionoanticomunismo.json
+index 991251f7..03ae24ae 100644
+--- a/content/es-latam/stories/world/b1/b1-guerrafria-03-revolucionoanticomunismo.json
++++ b/content/es-latam/stories/world/b1/b1-guerrafria-03-revolucionoanticomunismo.json
+@@ -1,26 +1,26 @@
+ {
+   "id": "story.b1.guerrafria.03",
+-  "title": "La Escuela de las Américas y la contrainsurgencia",
++  "title": "Revolución o anticomunismo",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En 1946, el Ejército de Estados Unidos fundó en la Zona del Canal de Panamá el 'Centro de Entrenamiento Latinoamericano', rebautizado en 1963 como la Escuela de las Américas (School of the Americas). No cabe duda de que el ejemplo cubano y la lógica de la Guerra Fría empujaron a la política latinoamericana hacia una polarización cada vez más extrema. No cabe duda de que muchos militares latinoamericanos adoptaron lo que se conocería como la Doctrina de Seguridad Nacional."
++      "text": "Después de la revolución cubana de 1959, muchos jóvenes de izquierda pensaron que podían cambiar su país con las armas. En los años sesenta aparecieron grupos de guerrilleros en Venezuela, Colombia, Perú, Guatemala y otros países. Los guerrilleros pasaban meses en las montañas, planeando ataques y esperando el apoyo de los campesinos. En 1967 el ejército de Bolivia capturó a Ernesto Che Guevara, que quería organizar una guerrilla en ese país. Guevara murió ese mismo año."
+     },
+     {
+       "type": "narration",
+-      "text": "No cabe duda de que esta dinámica de polarización extrema resultaría extraordinariamente costosa para la región. Por sus aulas pasaron más de 60.000 oficiales latinoamericanos, entre ellos futuros dictadores como Manuel Antonio Noriega de Panamá, Leopoldo Galtieri y Roberto Viola de Argentina, Hugo Banzer de Bolivia y Manuel Contreras de Chile."
++      "text": "La respuesta de muchos gobiernos y militares fue la Doctrina de Seguridad Nacional. Según esta doctrina, el principal peligro para un país no venía de afuera, sino de adentro. Los militares llamaban enemigo interno a los grupos que, según ellos, querían imponer el comunismo. Así, el ejército ya no solo defendía las fronteras: también controlaba la política interna."
+     },
+     {
+       "type": "narration",
+-      "text": "La polarización aumentó mientras los grupos políticos defendían posiciones cada vez más opuestas. No cabe duda de que esta polarización también radicalizó, en sentido contrario, a sectores de la izquierda latinoamericana. Las cátedras impartían métodos de guerra irregular, infiltración en sindicatos y censura de prensa aprendidos durante los conflictos de Indochina y Argelia. Los grupos políticos actuaban defendiendo posiciones cada vez más opuestas."
++      "text": "Muchos oficiales latinoamericanos estudiaron en la Escuela de las Américas, una escuela militar que el ejército de Estados Unidos fundó en 1946 en la zona del Canal de Panamá. Allí recibían entrenamiento militar, con cursos sobre cómo combatir a la guerrilla. En 1984 la escuela se trasladó a Fort Benning, en Estados Unidos."
+     },
+     {
+       "type": "narration",
+-      "text": "Algunos conflictos nacionales adquirieron una dimensión internacional porque los dos bloques apoyaban posiciones diferentes. Oficiales de diferentes naciones compartieron cuarteles y doctrinas comunes, sentando las redes de camaradería que harían posible la coordinación transfronteriza del terrorismo de Estado en los años setenta."
++      "text": "La Escuela de las Américas ha sido muy criticada. Sus críticos dicen que algunos de sus estudiantes participaron después en violaciones de los derechos humanos. Los historiadores discuten cuánta influencia tuvo la escuela, porque los ejércitos latinoamericanos también tenían sus propias ideas."
+     },
+     {
+       "type": "narration",
+-      "text": "Los gobiernos anticomunistas utilizaban propaganda para presentar a los movimientos revolucionarios como una amenaza. La Escuela de las Américas simbolizó la militarización absoluta de las relaciones interamericanas a expensas de los derechos humanos y la soberanía popular."
++      "text": "Mientras tanto, la polarización crecía. Algunos grupos de izquierda se radicalizaron, respondiendo con más violencia a la violencia del Estado. Otros siguieron buscando el cambio por medios pacíficos, participando en elecciones, en sindicatos y en movimientos sociales. Así, la región quedó dividida entre quienes defendían la revolución y quienes defendían el orden y el anticomunismo."
+     }
+   ],
+   "level": "B1",
+@@ -28,37 +28,34 @@
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿De qué trata fundamentalmente este fragmento?",
++          "question": "What did the Cuban revolution of 1959 inspire in other countries?",
+           "options": [
+-            "Del papel de la Escuela de las Américas en el adiestramiento contrainsurgente de militares del continente.",
+-            "De la creación de universidades politécnicas binacionales en la Zona del Canal de Panamá.",
+-            "De las expediciones científicas botánicas financiadas por el ejército estadounidense en la selva.",
+-            "De las protestas pacíficas de soldados latinoamericanos contra las tácticas militares de Indochina."
++            "Grupos de guerrilleros de izquierda.",
++            "Gobiernos militares de derecha.",
++            "Partidos que apoyaban a Estados Unidos."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El texto describe la historia y propósito de la Escuela de las Américas como centro de adiestramiento militar y contrainsurgente para oficiales latinoamericanos."
++          "explanation": "El texto dice que después de 1959 aparecieron grupos de guerrilleros en varios países."
+         },
+         {
+-          "question": "¿Qué materias y métodos tácticos se impartían en las aulas de esta academia militar?",
++          "question": "Whom did the National Security Doctrine call the internal enemy?",
+           "options": [
+-            "Técnicas de diplomacia pacífica y arbitraje en tribunales internacionales.",
+-            "Métodos de guerra irregular, infiltración sindical y censura aprendidos en Indochina y Argelia.",
+-            "Diseño de infraestructuras hidroeléctricas y gestión de cooperativas agrícolas.",
+-            "Programas de alfabetización campesina y salud comunitaria rural."
++            "Los grupos que, a juicio de los militares, querían imponer el comunismo.",
++            "Los ejércitos de los países vecinos.",
++            "Las empresas extranjeras que invertían en el país."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "El texto precisa que las cátedras impartían métodos de guerra irregular, infiltración en sindicatos y censura de prensa aprendidos en Indochina y Argelia."
++          "correctIndex": 0,
++          "explanation": "Los militares llamaban enemigo interno a los grupos que querían imponer el comunismo."
+         },
+         {
+-          "question": "¿Qué efecto a largo plazo tuvieron los vínculos forjados entre oficiales en esta escuela militar?",
++          "question": "Where did the US Army found the School of the Americas in 1946?",
+           "options": [
+-            "Condujeron a la creación de una corte interamericana de defensa de los derechos humanos.",
+-            "Facilitaron el desarme total de las unidades blindadas en América del Sur.",
+-            "Sentaron las redes de camaradería que hicieron posible la coordinación represiva en los años 70.",
+-            "Evitaron que se produjeran golpes de Estado militares en los países del Caribe."
++            "En la zona del Canal de Panamá.",
++            "En Cuba.",
++            "En Fort Benning, en Estados Unidos."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "El texto indica que los oficiales compartieron doctrinas comunes, sentando las redes de camaradería que harían posible la coordinación del terrorismo de Estado en los años setenta."
++          "correctIndex": 0,
++          "explanation": "La escuela se fundó en 1946 en la zona del Canal de Panamá; en 1984 se trasladó a Fort Benning."
+         }
+       ]
+     }
+diff --git a/content/es-latam/stories/world/b1/b1-guerrafria-04-intervencionextranjera.json b/content/es-latam/stories/world/b1/b1-guerrafria-04-intervencionextranjera.json
+index c76e35a2..16d8ffaa 100644
+--- a/content/es-latam/stories/world/b1/b1-guerrafria-04-intervencionextranjera.json
++++ b/content/es-latam/stories/world/b1/b1-guerrafria-04-intervencionextranjera.json
+@@ -1,26 +1,26 @@
+ {
+   "id": "story.b1.guerrafria.04",
+-  "title": "Polarización ideológica, ruptura democrática y radicalización",
++  "title": "Intervención extranjera en la Guerra Fría",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Hacia fines de los años sesenta y principios de los setenta, la convivencia política civil en América Latina se desintegró en una espiral de radicalización irreconciliable. A raíz de la rivalidad internacional, algunos conflictos internos adquirieron una dimensión regional. Algunos gobiernos recibieron apoyo militar porque querían impedir que movimientos revolucionarios llegaran al poder."
++      "text": "Durante la Guerra Fría, Estados Unidos intervino varias veces en América Latina. Su gobierno decía que defendía la libertad y la seguridad del continente frente al comunismo. Muchos historiadores dicen que también defendía sus intereses económicos y políticos."
+     },
+     {
+       "type": "narration",
+-      "text": "La CIA organizó un golpe de Estado contra Árbenz, so pretexto de que su reforma agraria representaba una amenaza comunista para la región. Terratenientes, cámaras patronales y grandes medios de prensa tildaron de 'marxista' cualquier proyecto de reforma agraria o nacionalización de recursos básicos. La intervención extranjera podía cambiar un conflicto interno, aunque también provocaba debates sobre la soberanía."
++      "text": "En 1952 el presidente de Guatemala, Jacobo Árbenz, empezó una reforma agraria. La ley expropiaba tierras sin cultivar, también tierras de la empresa estadounidense United Fruit. El gobierno de Estados Unidos dijo que los comunistas tenían influencia sobre Árbenz. En junio de 1954 un grupo de soldados dirigido por el coronel Carlos Castillo Armas entró en Guatemala desde Honduras, y Árbenz renunció. Según documentos publicados después por el gobierno de Estados Unidos, la CIA organizó esa operación."
+     },
+     {
+       "type": "narration",
+-      "text": "Por el otro extremo, So pretexto de restaurar el orden constitucional, Estados Unidos envió más de veinte mil soldados a la República Dominicana. Grupos guerrilleros urbanos ejecutaron secuestros extorsivos y asaltos a cuarteles para acelerar las condiciones de una guerra civil abierta. Este patrón de intervención, justificada so pretexto de principios elevados, estaba motivado con frecuencia por cálculos mucho más pragmáticos."
++      "text": "En 1965 hubo una crisis en la República Dominicana. En 1963 un golpe de Estado había derrocado al presidente Juan Bosch, y en abril de 1965 un grupo de militares y civiles se levantó y pidió su regreso. El presidente de Estados Unidos, Lyndon Johnson, envió tropas a la isla. Dijo que quería proteger a los ciudadanos estadounidenses, pero según muchos historiadores, también temía una segunda Cuba en el Caribe."
+     },
+     {
+       "type": "narration",
+-      "text": "Para sus críticos, la injerencia extranjera limitaba la soberanía nacional, mientras que sus defensores la consideraban necesaria. En Chile, Uruguay y Argentina, el centro político moderado fue aplastado por la violencia callejera, las huelgas salvajes y los atentados paramilitares de la ultraderecha armada."
++      "text": "En Chile, Salvador Allende ganó las elecciones de 1970 y asumió el cargo de presidente en noviembre. Según el informe que el Senado de Estados Unidos publicó en 1975, conocido como el informe del Comité Church, el gobierno de Estados Unidos hizo operaciones secretas contra él entre 1970 y 1973. El informe dice que se dio dinero a sus opositores y que se trató de impedir su llegada al poder."
+     },
+     {
+       "type": "narration",
+-      "text": "So pretexto de apoyar la autodeterminación de los pueblos, la URSS y Cuba proporcionaron entrenamiento militar a movimientos guerrilleros. La pérdida de fe compartida en las reglas del juego democrático dejó el escenario despejado para que los mandos castrenses asumieran el control absoluto del poder público."
++      "text": "Del otro lado, la Unión Soviética apoyó al gobierno de Cuba con petróleo y armas. En la región, las reacciones fueron diferentes: algunos gobiernos aceptaron la ayuda de una superpotencia, y otros no estuvieron de acuerdo porque pensaban que cada país debía decidir su propio futuro."
+     }
+   ],
+   "level": "B1",
+@@ -28,37 +28,34 @@
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál es el fenómeno central que aborda el texto?",
++          "question": "According to US documents published later, who organised the 1954 operation in Guatemala?",
+           "options": [
+-            "El colapso del consenso democrático civil debido a la polarización extrema e injerencias externas.",
+-            "El auge de la integración económica pacífica entre las repúblicas de Centroamérica y el Cono Sur.",
+-            "La mediación exitosa de los partidos de centro para evitar cualquier confrontación violenta.",
+-            "La eliminación total de las desigualdades agrarias mediante acuerdos patronales voluntarios."
++            "La CIA, la agencia de inteligencia de Estados Unidos.",
++            "El ejército de Honduras, sin ayuda de otros países.",
++            "La Unión Soviética, junto con Cuba."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El texto analiza cómo la espiral de radicalización ideológica, las intervenciones foráneas y la violencia armada destruyeron el centro político y las democracias."
++          "explanation": "Según documentos publicados después por Estados Unidos, la CIA organizó la operación."
+         },
+         {
+-          "question": "¿Qué intervención militar directa llevó a cabo Estados Unidos en el Caribe so pretexto de restablecer el orden?",
++          "question": "Why did President Johnson say he sent troops to the Dominican Republic?",
+           "options": [
+-            "El bombardeo de los puertos cafetaleros de Costa Rica en 1970.",
+-            "El desembarco y envío de más de veinte mil soldados a la República Dominicana en 1965.",
+-            "El asedio naval permanente a las costas de Venezuela durante la década de 1960.",
+-            "La ocupación territorial de las islas Galápagos por marines estadounidenses."
++            "Dijo que quería proteger a los ciudadanos estadounidenses.",
++            "Dijo que quería terminar con la reforma agraria.",
++            "Dijo que quería ayudar al gobierno de Cuba."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "El texto señala expresamente que so pretexto de restaurar el orden constitucional, Estados Unidos envió más de veinte mil soldados a la República Dominicana."
++          "correctIndex": 0,
++          "explanation": "Johnson dijo que quería proteger a los ciudadanos estadounidenses."
+         },
+         {
+-          "question": "¿Qué destino sufrió el centro político moderado en países como Chile, Uruguay y Argentina?",
++          "question": "What does the Church Committee report say about Chile?",
+           "options": [
+-            "Asumió el liderazgo absoluto de gobiernos parlamentarios de unidad nacional.",
+-            "Logró desarmar pacíficamente tanto a las guerrillas como a los grupos paramilitares.",
+-            "Fue aplastado por la violencia de los extremos, despejando el camino para las dictaduras castrenses.",
+-            "Consolidó alianzas electorales indestructibles con las confederaciones obreras."
++            "Que Estados Unidos hizo operaciones secretas contra Allende entre 1970 y 1973.",
++            "Que Estados Unidos no tuvo ningún contacto con los opositores de Allende.",
++            "Que la Unión Soviética organizó las elecciones de 1970."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "El texto destaca que el centro moderado fue aplastado por la violencia callejera, las huelgas y los paramilitares, dejando el escenario despejado para los mandos castrenses."
++          "correctIndex": 0,
++          "explanation": "El informe dice que hubo operaciones secretas de Estados Unidos contra Allende entre 1970 y 1973."
+         }
+       ]
+     }
+diff --git a/content/es-latam/stories/world/b1/b1-guerrafria-05-continentedividido.json b/content/es-latam/stories/world/b1/b1-guerrafria-05-continentedividido.json
+index 10ab5c1e..d4116686 100644
+--- a/content/es-latam/stories/world/b1/b1-guerrafria-05-continentedividido.json
++++ b/content/es-latam/stories/world/b1/b1-guerrafria-05-continentedividido.json
+@@ -1,26 +1,26 @@
+ {
+   "id": "story.b1.guerrafria.05",
+-  "title": "El balance humano e institucional de la Guerra Fría",
++  "title": "Un continente dividido",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "A diferencia de Europa, donde la Guerra Fría se mantuvo como una 'paz armada' contenida por el equilibrio nuclear, en América Latina el conflicto ardió con ferocidad letal. No hay ejército latinoamericano de este periodo que no acabara adoptando algún elemento de la Doctrina de Seguridad Nacional. La carrera armamentista aumentó la tensión, aunque la disuasión nuclear reducía el riesgo de una guerra directa. Varios conflictos regionales quedaron vinculados a la rivalidad entre las superpotencias."
++      "text": "Antes de la Guerra Fría, las universidades, los sindicatos, las iglesias y los ejércitos de América Latina ya tenían sus propios conflictos. Después de 1945, esos conflictos se mezclaron con la rivalidad entre las superpotencias. En muchos lugares, toda discusión política empezó a parecer una lucha entre dos bandos."
+     },
+     {
+       "type": "narration",
+-      "text": "Decenas de miles de personas fueron desaparecidas, torturadas y asesinadas en centros clandestinos de detención en el Cono Sur, mientras en Centroamérica guerras civiles arrasaron aldeas indígenas completas en Guatemala y El Salvador."
++      "text": "En las universidades, los estudiantes discutían sobre la revolución y la democracia. En los sindicatos, algunos dirigentes querían reformas con el apoyo de los partidos de izquierda, y otros desconfiaban de los comunistas. En 1968 los obispos de América Latina se reunieron en Medellín y hablaron de la pobreza y la injusticia en la región. En muchos países, los militares pensaban que debían defender el orden contra el comunismo."
+     },
+     {
+       "type": "narration",
+-      "text": "Cada superpotencia intentó ampliar su esfera de influencia mientras los países latinoamericanos buscaban defender sus propios intereses. La deuda externa se multiplicó para financiar armas y fuga de capitales, destruyendo las conquistas salariales del periodo industrializador. No hay institución política que no se viera obligada, tarde o temprano, a definirse frente a esta confrontación global."
++      "text": "No todos los países siguieron la misma política. Después de 1964 casi todos los miembros de la OEA rompieron relaciones con Cuba, pero México siguió teniendo relaciones con ese país."
+     },
+     {
+       "type": "narration",
+-      "text": "No hay prácticamente ningún sindicato obrero de la región que escapara a esta misma dinámica. Sistemas judiciales desmantelados y policías militarizadas requirieron profundas reformas constitucionales durante las transiciones democráticas de fin de siglo."
++      "text": "Con el tiempo, la división se hizo más profunda. En los años sesenta y setenta, el conflicto entre la izquierda y la derecha terminó en golpes de Estado y en gobiernos militares en varios países de América Latina."
+     },
+     {
+       "type": "narration",
+-      "text": "No hay universidad latinoamericana de este periodo que no experimentara las mismas tensiones ideológicas que dividían al resto de la sociedad. Como consecuencia de la rivalidad mundial, algunos conflictos locales adquirieron una dimensión internacional. Las disputas sobre la verdad, la justicia frente a los crímenes de lesa humanidad y el papel de las superpotencias continúan marcando el corazón de la política latinoamericana."
++      "text": "Hoy los historiadores discuten cuánto pesó la Guerra Fría en esos conflictos. Algunos dicen que la rivalidad entre las superpotencias fue la causa principal. Otros dicen que los problemas internos, como la pobreza y la desigualdad, ya existían antes. En los últimos años se han abierto archivos en Estados Unidos y en otros países, y los historiadores han podido estudiar documentos que antes eran secretos."
+     }
+   ],
+   "level": "B1",
+@@ -28,37 +28,34 @@
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿De qué trata fundamentalmente este balance sobre la Guerra Fría en América Latina?",
++          "question": "What happened in Medellín in 1968?",
+           "options": [
+-            "De la devastación humana, el quiebre institucional y las profundas secuelas de violencia y endeudamiento.",
+-            "De las ventajas económicas inmediatas generadas por el aumento del gasto militar en la región.",
+-            "Del desarrollo pacífico y armónico de las instituciones judiciales en los países centroamericanos.",
+-            "De la neutralidad exitosa que permitió a la región evitar cualquier impacto de la rivalidad bipolar."
++            "Se reunieron los obispos de América Latina.",
++            "Se reunieron los presidentes de la OEA.",
++            "Se reunió un congreso de sindicatos de izquierda."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El texto hace un balance del trágico costo humano (desapariciones, masacres indígenas) y las secuelas institucionales, financieras y morales dejadas por la Guerra Fría."
++          "explanation": "El texto dice que en 1968 los obispos de América Latina se reunieron en Medellín."
+         },
+         {
+-          "question": "¿Qué impacto tuvo el conflicto en la población civil de países centroamericanos como Guatemala y El Salvador?",
++          "question": "What did Mexico do after 1964?",
+           "options": [
+-            "El acceso garantizado a tierras fértiles y créditos agrícolas subsidiados.",
+-            "Guerras civiles que llegaron a arrasar aldeas indígenas completas.",
+-            "El éxodo voluntario hacia Europa occidental para cursar estudios universitarios.",
+-            "La eliminación pacífica de los cuarteles militares en todas las zonas rurales."
++            "Siguió teniendo relaciones con Cuba.",
++            "Rompió sus relaciones con Cuba.",
++            "Salió de la OEA."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "El texto señala que en Centroamérica guerras civiles arrasaron aldeas indígenas completas en Guatemala y El Salvador."
++          "correctIndex": 0,
++          "explanation": "El texto dice que México siguió teniendo relaciones con Cuba."
+         },
+         {
+-          "question": "¿Qué secuela económica y financiera dejó la carrera militar y la represión estatal en la región?",
++          "question": "What do historians discuss today?",
+           "options": [
+-            "La erradicación definitiva de toda deuda con bancos comerciales foráneos.",
+-            "Un superávit fiscal histórico que financió la industrialización de alta tecnología.",
+-            "La multiplicación de la deuda externa para costear armas y fuga de capitales, deteriorando los salarios.",
+-            "La adopción generalizada de subsidios universales de desempleo para las familias campesinas."
++            "Cuánto pesó la Guerra Fría en los conflictos de la región.",
++            "Si la Guerra Fría existió realmente.",
++            "Cuántos países firmaron el Pacto de Varsovia."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "El texto destaca que la deuda externa se multiplicó para financiar armas y fuga de capitales, destruyendo las conquistas salariales del periodo previo."
++          "correctIndex": 0,
++          "explanation": "Los historiadores discuten cuánto pesó la Guerra Fría en esos conflictos."
+         }
+       ]
+     }
+diff --git a/content/es-latam/vocabulary/b1/b1-guerrafria-01-voc.json b/content/es-latam/vocabulary/b1/b1-guerrafria-01-voc.json
+index de41d424..46a80591 100644
+--- a/content/es-latam/vocabulary/b1/b1-guerrafria-01-voc.json
++++ b/content/es-latam/vocabulary/b1/b1-guerrafria-01-voc.json
+@@ -1,16 +1,78 @@
+ {
+   "id": "vocab.b1.guerrafria.01",
+   "lesson": "b1-guerrafria-01",
+-  "title": "Dos bloques",
+-  "theme": "La Guerra Fría",
++  "title": "Two blocs: the world after 1945",
++  "theme": "The Cold War",
+   "words": [
+-    { "lemma": "enfrentado", "translation": "opposed, at odds", "pos": "adjective" },
+-    { "lemma": "planificado", "translation": "planned", "pos": "adjective" },
+-    { "lemma": "la alianza", "translation": "alliance", "pos": "noun" },
+-    { "lemma": "condicionado", "translation": "conditional", "pos": "adjective" },
+-    { "lemma": "la doctrina", "translation": "doctrine", "pos": "noun" },
+-    { "lemma": "la carrera armamentística", "translation": "arms race", "pos": "noun" },
+-    { "lemma": "el arsenal", "translation": "arsenal", "pos": "noun" },
+-    { "lemma": "el escenario", "translation": "stage, setting", "pos": "noun" }
++    {
++      "lemma": "la Segunda Guerra Mundial",
++      "translation": "the Second World War",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la Unión Soviética",
++      "translation": "the Soviet Union",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la superpotencia",
++      "translation": "superpower",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el capitalismo",
++      "translation": "capitalism",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el comunismo",
++      "translation": "communism",
++      "pos": "noun"
++    },
++    {
++      "lemma": "comunista",
++      "translation": "communist",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "la contención",
++      "translation": "containment",
++      "pos": "noun"
++    },
++    {
++      "lemma": "frenar",
++      "translation": "to halt, to hold back",
++      "pos": "verb"
++    },
++    {
++      "lemma": "la alianza",
++      "translation": "alliance",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la carrera armamentística",
++      "translation": "arms race",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el arsenal",
++      "translation": "arsenal",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la bomba atómica",
++      "translation": "atomic bomb",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la rivalidad",
++      "translation": "rivalry",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el escenario",
++      "translation": "stage, setting",
++      "pos": "noun"
++    }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b1/b1-guerrafria-02-voc.json b/content/es-latam/vocabulary/b1/b1-guerrafria-02-voc.json
+index 88fa5768..fcb1a9ee 100644
+--- a/content/es-latam/vocabulary/b1/b1-guerrafria-02-voc.json
++++ b/content/es-latam/vocabulary/b1/b1-guerrafria-02-voc.json
+@@ -1,16 +1,78 @@
+ {
+   "id": "vocab.b1.guerrafria.02",
+   "lesson": "b1-guerrafria-02",
+-  "title": "América Latina en la Guerra Fría",
+-  "theme": "La Guerra Fría",
++  "title": "Latin America in the Cold War: the Rio Treaty and the OAS",
++  "theme": "The Cold War",
+   "words": [
+-    { "lemma": "temerosamente", "translation": "fearfully", "pos": "adverb" },
+-    { "lemma": "lanzar", "translation": "to launch", "pos": "verb" },
+-    { "lemma": "receptor", "translation": "recipient", "pos": "adjective" },
+-    { "lemma": "comprometer", "translation": "to commit, pledge", "pos": "verb" },
+-    { "lemma": "alinearse", "translation": "to align oneself", "pos": "verb" },
+-    { "lemma": "a raya", "translation": "in check, at bay", "pos": "expression" },
+-    { "lemma": "implementar", "translation": "to implement", "pos": "verb" },
+-    { "lemma": "profundo", "translation": "deep, profound", "pos": "adjective" }
++    {
++      "lemma": "el tratado",
++      "translation": "treaty",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la asistencia",
++      "translation": "assistance, help",
++      "pos": "noun"
++    },
++    {
++      "lemma": "recíproco",
++      "translation": "mutual",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "el ataque",
++      "translation": "attack",
++      "pos": "noun"
++    },
++    {
++      "lemma": "comprometerse",
++      "translation": "to commit oneself, to promise",
++      "pos": "verb"
++    },
++    {
++      "lemma": "fundar",
++      "translation": "to found",
++      "pos": "verb"
++    },
++    {
++      "lemma": "la carta",
++      "translation": "charter (a founding document)",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el miembro",
++      "translation": "member",
++      "pos": "noun"
++    },
++    {
++      "lemma": "pacífico",
++      "translation": "peaceful",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "el conflicto",
++      "translation": "conflict",
++      "pos": "noun"
++    },
++    {
++      "lemma": "intervenir",
++      "translation": "to intervene",
++      "pos": "verb"
++    },
++    {
++      "lemma": "prohibir",
++      "translation": "to ban, to forbid",
++      "pos": "verb"
++    },
++    {
++      "lemma": "el anticomunismo",
++      "translation": "anti-communism",
++      "pos": "noun"
++    },
++    {
++      "lemma": "excluir",
++      "translation": "to exclude",
++      "pos": "verb"
++    }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b1/b1-guerrafria-03-voc.json b/content/es-latam/vocabulary/b1/b1-guerrafria-03-voc.json
+index 42a6e1ce..2c598208 100644
+--- a/content/es-latam/vocabulary/b1/b1-guerrafria-03-voc.json
++++ b/content/es-latam/vocabulary/b1/b1-guerrafria-03-voc.json
+@@ -1,16 +1,73 @@
+ {
+   "id": "vocab.b1.guerrafria.03",
+   "lesson": "b1-guerrafria-03",
+-  "title": "Revolución o anticomunismo",
+-  "theme": "La Guerra Fría",
++  "title": "Revolution or anti-communism",
++  "theme": "The Cold War",
+   "words": [
+-    { "lemma": "empujar", "translation": "to push", "pos": "verb" },
+-    { "lemma": "la academia", "translation": "academy", "pos": "noun" },
+-    { "lemma": "interno", "translation": "internal", "pos": "adjective" },
+-    { "lemma": "sindical", "translation": "union, labor (adjective)", "pos": "adjective" },
+-    { "lemma": "bloquear", "translation": "to block", "pos": "verb" },
+-    { "lemma": "respaldar", "translation": "to back, support", "pos": "verb" },
+-    { "lemma": "el activista", "translation": "activist", "pos": "noun" },
+-    { "lemma": "preventivo", "translation": "preventive", "pos": "adjective" }
++    {
++      "lemma": "la guerrilla",
++      "translation": "guerrilla group, guerrilla war",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el guerrillero",
++      "translation": "guerrilla fighter",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la doctrina",
++      "translation": "doctrine",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la seguridad nacional",
++      "translation": "national security",
++      "pos": "noun"
++    },
++    {
++      "lemma": "interno",
++      "translation": "internal",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "imponer",
++      "translation": "to impose",
++      "pos": "verb"
++    },
++    {
++      "lemma": "el oficial",
++      "translation": "officer",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el entrenamiento",
++      "translation": "training",
++      "pos": "noun"
++    },
++    {
++      "lemma": "combatir",
++      "translation": "to fight (against)",
++      "pos": "verb"
++    },
++    {
++      "lemma": "trasladarse",
++      "translation": "to move (to another place)",
++      "pos": "verb"
++    },
++    {
++      "lemma": "la violación",
++      "translation": "violation, abuse",
++      "pos": "noun"
++    },
++    {
++      "lemma": "radicalizarse",
++      "translation": "to become more radical",
++      "pos": "verb"
++    },
++    {
++      "lemma": "los derechos humanos",
++      "translation": "human rights",
++      "pos": "noun"
++    }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b1/b1-guerrafria-04-voc.json b/content/es-latam/vocabulary/b1/b1-guerrafria-04-voc.json
+index ed91d17f..b1db6273 100644
+--- a/content/es-latam/vocabulary/b1/b1-guerrafria-04-voc.json
++++ b/content/es-latam/vocabulary/b1/b1-guerrafria-04-voc.json
+@@ -1,16 +1,63 @@
+ {
+   "id": "vocab.b1.guerrafria.04",
+   "lesson": "b1-guerrafria-04",
+-  "title": "Intervención extranjera",
+-  "theme": "La Guerra Fría",
++  "title": "Foreign intervention",
++  "theme": "The Cold War",
+   "words": [
+-    { "lemma": "poderoso", "translation": "powerful", "pos": "adjective" },
+-    { "lemma": "restaurar", "translation": "to restore", "pos": "verb" },
+-    { "lemma": "constitucional", "translation": "constitutional", "pos": "adjective" },
+-    { "lemma": "la autodeterminación", "translation": "self-determination", "pos": "noun" },
+-    { "lemma": "proporcionar", "translation": "to provide", "pos": "verb" },
+-    { "lemma": "advertir", "translation": "to notice, warn", "pos": "verb" },
+-    { "lemma": "la esfera", "translation": "sphere", "pos": "noun" },
+-    { "lemma": "el tablero", "translation": "board (as in game board)", "pos": "noun" }
++    {
++      "lemma": "la reforma agraria",
++      "translation": "land reform",
++      "pos": "noun"
++    },
++    {
++      "lemma": "expropiar",
++      "translation": "to expropriate, to take over by law",
++      "pos": "verb"
++    },
++    {
++      "lemma": "el golpe de Estado",
++      "translation": "coup d'état",
++      "pos": "noun"
++    },
++    {
++      "lemma": "derrocar",
++      "translation": "to overthrow",
++      "pos": "verb"
++    },
++    {
++      "lemma": "las tropas",
++      "translation": "troops",
++      "pos": "noun"
++    },
++    {
++      "lemma": "estadounidense",
++      "translation": "American (of the United States)",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "el informe",
++      "translation": "report",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el senado",
++      "translation": "senate",
++      "pos": "noun"
++    },
++    {
++      "lemma": "secreto",
++      "translation": "secret",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "el opositor",
++      "translation": "opponent",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la operación",
++      "translation": "operation",
++      "pos": "noun"
++    }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b1/b1-guerrafria-05-voc.json b/content/es-latam/vocabulary/b1/b1-guerrafria-05-voc.json
+index 77b32a66..13a6c210 100644
+--- a/content/es-latam/vocabulary/b1/b1-guerrafria-05-voc.json
++++ b/content/es-latam/vocabulary/b1/b1-guerrafria-05-voc.json
+@@ -1,16 +1,68 @@
+ {
+   "id": "vocab.b1.guerrafria.05",
+   "lesson": "b1-guerrafria-05",
+-  "title": "Un continente dividido",
+-  "theme": "La Guerra Fría",
++  "title": "A divided continent",
++  "theme": "The Cold War",
+   "words": [
+-    { "lemma": "repasar", "translation": "to review, go back over", "pos": "verb" },
+-    { "lemma": "el ámbito", "translation": "sphere, area", "pos": "noun" },
+-    { "lemma": "el sindicato", "translation": "labor union", "pos": "noun" },
+-    { "lemma": "reproducir", "translation": "to reproduce", "pos": "verb" },
+-    { "lemma": "redefinir", "translation": "to redefine", "pos": "verb" },
+-    { "lemma": "doloroso", "translation": "painful", "pos": "adjective" },
+-    { "lemma": "atravesar", "translation": "to cross, run through", "pos": "verb" },
+-    { "lemma": "tocar", "translation": "to touch, affect", "pos": "verb" }
++    {
++      "lemma": "la división",
++      "translation": "division",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la causa",
++      "translation": "cause",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el bando",
++      "translation": "side (in a conflict)",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el sindicato",
++      "translation": "trade union",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el obispo",
++      "translation": "bishop",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la pobreza",
++      "translation": "poverty",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la injusticia",
++      "translation": "injustice",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la desigualdad",
++      "translation": "inequality",
++      "pos": "noun"
++    },
++    {
++      "lemma": "desconfiar",
++      "translation": "to distrust",
++      "pos": "verb"
++    },
++    {
++      "lemma": "discutir",
++      "translation": "to discuss, to argue about",
++      "pos": "verb"
++    },
++    {
++      "lemma": "el archivo",
++      "translation": "archive",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el dirigente",
++      "translation": "leader (of a union or party)",
++      "pos": "noun"
++    }
+   ]
+ }
