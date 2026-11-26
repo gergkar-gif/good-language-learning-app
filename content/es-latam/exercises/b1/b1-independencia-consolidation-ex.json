@@ -7,24 +7,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "Ilustración",
-          "Enlightenment"
+          "la junta",
+          "governing council"
         ],
         [
-          "levantamiento",
-          "uprising"
+          "el cura",
+          "priest"
         ],
         [
-          "libertador",
+          "el libertador",
           "liberator"
         ],
         [
-          "república",
-          "republic"
+          "el préstamo",
+          "loan"
         ],
         [
-          "ciudadanía",
-          "citizenship"
+          "la igualdad",
+          "equality"
         ]
       ],
       "teaches": [
@@ -35,54 +35,57 @@
       "id": "b1-independencia-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué oración usa una voz pasiva adecuada para una explicación histórica?",
+      "question": "Which sentence means \"By 1810 juntas had already been formed in several cities\"?",
       "options": [
-        "Las ideas fueron difundidas por libros y periódicos.",
-        "Las ideas fueron difundido por libros y periódicos.",
-        "Las ideas difundieron a los libros."
+        "En 1810 ya se formaban juntas en varias ciudades.",
+        "En 1810 ya se habían formado juntas en varias ciudades.",
+        "En 1810 ya se han formado juntas en varias ciudades."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "ser-passive"
-      ]
+        "pluscuamperfecto"
+      ],
+      "distractor_skills": {
+        "0": "imperfect",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "b1-independencia-consolidation.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "_____ organizaron levantamientos contra las autoridades coloniales.",
-      "hint": "pronoun",
-      "answer": "Se",
+      "sentence": "Los realistas ___ un ejército mejor preparado.",
+      "answer": "tenían",
       "teaches": [
-        "pasiva-refleja"
+        "preterite-vs-imperfect"
       ],
-      "english": "Uprisings against the colonial authorities were organised."
+      "english": "The royalists had a better prepared army."
     },
     {
       "id": "b1-independencia-consolidation.ex04",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "San",
-        "Martín",
-        "avanzó",
-        "hacia",
-        "Chile,",
-        "organizando",
-        "sus",
-        "fuerzas."
+        "Los",
+        "patriotas",
+        "ganaron",
+        "batallas",
+        "luchando",
+        "en",
+        "la",
+        "sierra."
       ],
       "solution": [
-        "San",
-        "Martín",
-        "avanzó",
-        "hacia",
-        "Chile,",
-        "organizando",
-        "sus",
-        "fuerzas."
+        "Los",
+        "patriotas",
+        "ganaron",
+        "batallas",
+        "luchando",
+        "en",
+        "la",
+        "sierra."
       ],
-      "english": "San Martín advanced towards Chile, organising his forces.",
+      "english": "The patriots won battles fighting in the highlands.",
       "teaches": [
         "gerundio-acciones-paralelas"
       ]
@@ -90,16 +93,16 @@
     {
       "id": "b1-independencia-consolidation.ex05",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué conector introduce una consecuencia histórica?",
+      "category": "vocabulary",
+      "question": "Which word means \"a missed payment on a debt\"?",
       "options": [
-        "Como consecuencia de",
-        "Aunque",
-        "Mientras"
+        "el préstamo",
+        "el ingreso",
+        "el impago"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "formal-cause-connectors"
+        "b1-independence-vocab"
       ]
     },
     {
@@ -107,14 +110,16 @@
       "type": "sentence-order",
       "category": "vocabulary",
       "sentences": [
-        "Primero, las ideas de la Ilustración circularon entre lectores criollos.",
-        "Después, en 1808, Napoleón invadió España y capturó al rey Fernando VII.",
-        "Finalmente, se organizaron levantamientos contra las autoridades coloniales."
+        "En 1776 las colonias británicas declararon su independencia.",
+        "En 1808 Napoleón invadió España.",
+        "En 1821 México fue independiente.",
+        "En 1824 los patriotas ganaron la batalla de Ayacucho."
       ],
       "solution": [
         0,
         1,
-        2
+        2,
+        3
       ],
       "teaches": [
         "b1-independence-vocab"
@@ -123,16 +128,16 @@
     {
       "id": "b1-independencia-consolidation.ex07",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué diferencia describe mejor una república después de la independencia?",
+      "category": "grammar",
+      "question": "Which sentence means \"The governments had to ask for loans\"?",
       "options": [
-        "Es una nueva forma de organización política que tuvo que construir instituciones y definir la participación.",
-        "Es simplemente otro nombre para una colonia.",
-        "Es una institución que no necesita constitución ni gobierno."
+        "Los gobiernos tuvieron pedir préstamos.",
+        "Los gobiernos tuvieron de pedir préstamos.",
+        "Los gobiernos tuvieron que pedir préstamos."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "b1-independence-vocab"
+        "deber-vs-tener-que"
       ]
     },
     {
@@ -141,18 +146,18 @@
       "category": "reading",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿La independencia cambió la política?"
+          "speaker": "Meg",
+          "text": "¿Qué sabemos de la reunión de Guayaquil?"
         },
         {
-          "speaker": "B",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Sí, porque creó nuevas instituciones, aunque también dejó problemas que las nuevas repúblicas tuvieron que resolver.",
-        "Sí, porque todos los problemas desaparecieron inmediatamente.",
-        "No, porque no hubo ningún cambio institucional."
+        "Sabemos que se reunieron en 1822, pero no qué dijeron.",
+        "Sabemos que se reunieron en 1810, pero no qué dijeron.",
+        "Sabemos que se reunieron en 1822, y qué dijeron."
       ],
       "correct": 0
     },
@@ -160,11 +165,11 @@
       "id": "b1-independencia-consolidation.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "La independencia transformó las instituciones, pero no eliminó automáticamente la exclusión política.",
+      "sentence": "Después de la independencia, los países tenían muchas deudas.",
       "options": [
-        "Independence transformed institutions but did not automatically eliminate political exclusion.",
-        "National independence abolished all social hierarchies and established universal suffrage immediately.",
-        "The new republican constitutions granted full political representation to every indigenous community."
+        "After independence, the countries had many debts.",
+        "After independence, the countries had no debts.",
+        "Before independence, the countries had many debts."
       ],
       "correct": 0,
       "teaches": [
@@ -175,49 +180,53 @@
       "id": "b1-independencia-consolidation.ex10",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Las nuevas repúblicas tuvieron que construir instituciones mientras afrontaban problemas económicos.",
+      "sentence": "Aunque las constituciones hablaban de igualdad, la esclavitud continuó.",
       "teaches": [
         "b1-independence-vocab"
       ],
-      "english": "The new republics had to build institutions while facing economic problems."
+      "english": "Although the constitutions talked about equality, slavery continued."
     },
     {
       "id": "b1-independencia-consolidation.ex11",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Por qué no basta con estudiar las batallas para comprender la independencia?"
+          "speaker": "Meg",
+          "text": "En la visita, ¿qué es un realista?"
         },
         {
-          "speaker": "B",
+          "speaker": "Guía",
           "text": "_____"
         }
       ],
       "options": [
-        "Porque la guerra tuvo consecuencias políticas, económicas y sociales que también explican la formación de las nuevas repúblicas.",
-        "Porque las operaciones militares se decidieron exclusivamente en gabinetes diplomáticos europeos sin combates locales.",
-        "Porque los enfrentamientos armados se limitaron a escaramuzas fronterizas que no alteraron la administración colonial."
+        "Es una persona que defendía al rey.",
+        "Es una persona que daba préstamos.",
+        "Es una persona que vivía en las juntas."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-independence-vocab"
+      ]
     },
     {
       "id": "b1-independencia-consolidation.ex12",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Qué oración expresa una acción paralela?",
+      "question": "Which sentence means \"Although the women helped the cause, they did not get the vote\"?",
       "options": [
-        "Los líderes avanzaron buscando nuevos apoyos.",
-        "Los líderes estaban buscando nuevos apoyos.",
-        "Los líderes fueron líderes."
+        "Aunque las mujeres ayudaron a la causa, no tuvieron el voto.",
+        "Porque las mujeres ayudaron a la causa, no tuvieron el voto.",
+        "Por eso las mujeres ayudaron a la causa, no tuvieron el voto."
       ],
       "correct": 0,
       "teaches": [
-        "gerundio-acciones-paralelas"
+        "concesivas-aunque"
       ],
       "distractor_skills": {
-        "1": "progressive"
+        "1": "por-que-y-porque",
+        "2": "porque-y-por-eso"
       }
     },
     {
@@ -225,39 +234,39 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "A",
-        "raíz",
-        "de",
-        "la",
-        "independencia,",
-        "se",
-        "aprobaron",
-        "constituciones."
+        "Los",
+        "criollos",
+        "no",
+        "habían",
+        "elegido",
+        "al",
+        "nuevo",
+        "rey."
       ],
       "solution": [
-        "A",
-        "raíz",
-        "de",
-        "la",
-        "independencia,",
-        "se",
-        "aprobaron",
-        "constituciones."
+        "Los",
+        "criollos",
+        "no",
+        "habían",
+        "elegido",
+        "al",
+        "nuevo",
+        "rey."
       ],
-      "english": "As a result of independence, constitutions were approved.",
+      "english": "The criollos had not chosen the new king.",
       "teaches": [
-        "formal-cause-connectors"
+        "pluscuamperfecto"
       ]
     },
     {
       "id": "b1-independencia-consolidation.ex14",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "¿Qué significa preguntar «¿independencia para quién?»?",
+      "question": "Which word means \"captive\"?",
       "options": [
-        "Significa examinar quién obtuvo ciudadanía y participación política y quién continuó excluido.",
-        "Significa negar que hubiera cambios políticos.",
-        "Significa estudiar únicamente las campañas militares."
+        "cautivo",
+        "realista",
+        "inundado"
       ],
       "correct": 0,
       "teaches": [
@@ -270,20 +279,20 @@
       "category": "reading",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Las nuevas repúblicas fueron estables desde el principio?"
+          "speaker": "Meg",
+          "text": "¿Cuándo terminó la esclavitud en Brasil?"
         },
         {
-          "speaker": "B",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "No necesariamente, porque tuvieron que construir instituciones mientras afrontaban conflictos económicos, regionales y políticos.",
-        "Sí, las nuevas autoridades republicanas establecieron administraciones sólidas que evitaron cualquier disputa territorial.",
-        "Todas las provincias aceptaron de inmediato gobiernos unitarios centralizados sin oponer resistencia política."
+        "En 1823, mucho antes que en Chile.",
+        "En 1888, país por país.",
+        "En 1888, después de Cuba."
       ],
-      "correct": 0
+      "correct": 2
     },
     {
       "id": "b1-independencia-consolidation.ex16",
@@ -291,12 +300,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain one major change produced by independence and add a qualification.",
-          "answer": "La independencia transformó las instituciones políticas, aunque muchas personas continuaron excluidas de la participación."
+          "prompt": "Say that in 1808 the United States had already declared its independence.",
+          "answer": "En 1808 los Estados Unidos ya habían declarado su independencia."
         },
         {
-          "prompt": "Explain one consequence using a formal connector.",
-          "answer": "Como consecuencia de las guerras, las nuevas repúblicas heredaron problemas económicos y políticos."
+          "prompt": "Say that the new governments had to ask for loans.",
+          "answer": "Los nuevos gobiernos tuvieron que pedir préstamos."
         }
       ],
       "teaches": [
@@ -309,8 +318,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Explain why leaders needed allies during the wars.",
-          "answer": "Los líderes necesitaban aliados porque las campañas exigían recursos, soldados y apoyo político en distintas regiones."
+          "prompt": "Say that although the constitutions talked about equality, slavery continued.",
+          "answer": "Aunque las constituciones hablaban de igualdad, la esclavitud continuó."
         }
       ],
       "teaches": [
@@ -321,11 +330,11 @@
       "id": "b1-independencia-consolidation.ex18",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "¿Cuál conjunto resume mejor la unidad?",
+      "question": "Which word means \"to proclaim\"?",
       "options": [
-        "Ilustración, guerras de independencia, liderazgo, nuevas repúblicas y los límites de la participación política.",
-        "Tratados comerciales europeos, navegación atlántica, minería colonial, piratería y el consulado de comerciantes.",
-        "Feudalismo medieval, monarquías absolutas, gremios artesanales, tributos eclesiásticos e inquisición."
+        "proclamar",
+        "fusilar",
+        "limitar"
       ],
       "correct": 0,
       "teaches": [
