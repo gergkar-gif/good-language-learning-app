@@ -1,0 +1,21 @@
+# Report: es-latam B1 Unit 2 indigenous-civilizations
+
+Skills before -> after (old: passive/se impersonal, gerund, formal connectors; all texts were about the wrong lesson: Maya = Olmecs, Mexica = Teotihuacan, Inca = Chavín/Moche/Wari, Religion = Mexica history, Legacy = Inca): 
+- -01 Los mayas: -> `ser-passive` (B1 U18). Screen, ex04 `fueron`, ex06 builder, ex07 dialogue (Tikal).
+- -02 Los mexicas: -> `preterite-vs-imperfect` (A2 U22; recap also names A2 U13 mientras). ex04 `crecía`.
+- -03 Los incas: -> `relativo-posesivo-cuyo` (B1 U5). ex04 `cuya`; ex07 dialogue with cuyo/cuya/que su options.
+- -04 Religión y conocimiento: -> `superlatives` (B1 U7). ex04 `más`.
+- -05 Un legado vivo: -> `imperfect-vs-present-perfect` (B1 U5). ex04 `han` (hint "they").
+- consolidation: 18 items rewritten on the five skills and vocabulary (speakers Estudiante/Profesora, Meg/Carlos).
+New texts written from titles and the facts given. Vocabulary: -01 11, -02 10, -03 8, -04 11, -05 13 words (-05 lists náhuatl/guaraní/programa because items use them). Challenges: `challenges-indigenous-civilizations.json` (canDo = first checklist line, checked).
+
+## Facts per text
+-01: Classic period ~250-900 (sure); city-states, Tikal, Palenque, Calakmul, Copán (sure); Tikal-Calakmul rivalry (sure); kings buried in temples (sure); glyphs largely deciphered in the second half of the 20th century (sure); Yuri Knorozov, 1950s, glyphs represent syllables (sure); southern cities abandoned from the 9th century, Tikal among them, causes debated (sure; Tikal's decline "after 900" is the usual dating); Chichén Itzá important after 900 (fairly sure; check).
+-02: tradition of Aztlán, marked as tradition (sure); founded Tenochtitlan ~1325 on an island in Lake Texcoco (sure); chinampas with maize, beans, chile (sure); Mexica served other peoples before 1428 (sure); Triple Alliance of 1428 (Tenochtitlan, Texcoco, Tlacopan) and defeat of Azcapotzalco (sure); tribute in maize, textiles, cacao (sure); Codex Mendoza is colonial-era and lists tribute (sure).
+-03: Tawantinsuyo "the four parts" (sure); growth from ~1438 under Pachacútec (sure, reviewer); extent Ecuador to central Chile (sure); Qhapaq Ñan UNESCO 2014 (sure, reviewer); chasquis as relay messengers (sure); mit'a labour turn; state storehouses (sure); Machu Picchu walls built in the 15th century, UNESCO 1983 (sure, reviewer); quechua still spoken (sure, undated, no figure).
+-04: two Maya calendars of 260 and 365 days (sure); "one of the most precise of its time" attributed to "muchos especialistas" (sure); Maya zero (sure, reviewer); Dresden Codex Venus and eclipse tables (sure); Venus brightest planet (sure); Templo Mayor with shrines of Huitzilopochtli (sun and war) and Tláloc (rain) (sure); human sacrifice stated with "las fuentes cuentan" and the dispute named (sure); Inti, Pachamama, Coricancha (sure).
+-05: Nahuatl: 2020 census (INEGI), about 1.65 million speakers aged 3+ (reviewer's figure, dated and attributed); Quechua "varios millones", no figure (reviewer); Guaraní official in Paraguay since the 1992 constitution (reviewer); bilingual education programmes in "varios países" and "muchos libros" published (general, fairly sure; check wording); maize, potato, tomato, cacao are American plants (sure); Spanish words tomate, aguacate, papa, llama of indigenous origin (sure).
+Old claims cut (old -> new): Olmec text (-01) -> cut, Olmecs kept only in Unit 1; "Teotihuacan 125.000 habitantes", "K'inich Janaab' Pakal erigió templos", "casi dos millones hablan náhuatl" -> 1.65 million, 2020, attributed; "Tenochtitlan más de 200.000", "Tlatelolco más de cincuenta mil personas", "guerras floridas", "Itzcóatl" -> cut (unsure/not needed); "Qhapaq Ñan más de treinta mil kilómetros", "puentes de ichu", "patata llevada a Europa en el siglo XVI" -> cut; "más de quinientas lenguas indígenas" -> cut; "Chavín, Moche, Wari, Señor de Sipán" -> cut (wrong lesson); "huacas y ceques" -> cut; "papa vista con desconfianza" -> cut.
+
+## Checks
+check-content: before 21 errors / 4 suspects; after 0 / 0. unmet-words before: not counted (old items); after last edit 0. render no `!!`. check_unit_refs 0. c1 forms: none in my files. Tags re-locked by `lock_tags.py --update`.

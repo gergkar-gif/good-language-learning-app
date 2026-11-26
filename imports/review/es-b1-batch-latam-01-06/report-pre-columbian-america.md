@@ -1,0 +1,22 @@
+# Report: es-latam B1 Unit 1 pre-columbian-america
+
+Skills before -> after (old screens were Spanish "conectores formales"/"se pasiva"/"gerundio"; all five were replaced):
+- -01 formal connectors / contrast-concession (wrong) -> `pluscuamperfecto` (B1 U1). Screen rewritten in English with recap; ex04 (fb, `habían`), ex06 (builder) now test it; ex02/03/05/07 reading rewritten; ex08 listening.
+- -02 se impersonal / preterito-indefinido -> `pasiva-refleja` (B1 U6). ex04 fb `construyeron`, ex06 builder; ex02/03/05/07/08 rewritten.
+- -03 pasiva-refleja -> `relative-clauses` (B1 U5). ex04 fb `que`, ex06 builder.
+- -04 gerundio-acciones-paralelas -> `habitos-soler` (B1 U5). ex04 fb `solían`, ex06 builder.
+- -05 a-pesar-de / formal-cause (wrong) -> `estilo-indirecto-informacion` (B1 U13). ex04 fb `indican`, ex06 builder.
+- consolidation: 20 items rewritten, now testing the five skills (ex03-06 MC with `distractor_skills`, ex07-11 fill-blanks, ex14 sentence-order) plus vocabulary; speakers Meg/Carlos, Estudiante/Guía.
+Lesson titles, goals, goal/checklist sections, intro (-01, now true about the track), vocab titles in English. Vocabulary lists rebuilt (-01: 14, -02: 11, -03: 11, -04: 11, -05: 12 words; -01 carries maya/inca/mexica/europeo/continente because later lessons use them and no list had them). Matching items regenerated from the lists.
+Challenges: `challenges-pre-columbian-america.json` (6 entries, canDo = first checklist line, checked).
+
+## Facts per text (sure = I am sure; check = reviewer should verify)
+-01: first people crossed Beringia from Asia in the last Ice Age, "at least 15,000 years ago", date debated (sure; reviewer fact). Monte Verde ~14,500 years ago (sure; reviewer). Maize from teosinte ~9,000 years ago, Mexico (sure). Potato in the Andes (sure). Olmecs on the Gulf coast, ~1200-400 BC (sure). 1492: population unknown, no figure given (sure). "first cities and states appeared with more food" general (sure).
+-02: Mesoamerica and the Andes; Teotihuacan "one of the largest cities of the continent" (fairly sure); Maya script with glyphs (sure); quipus not fully deciphered (sure, reviewer); Caral "one of the oldest in the Americas" (sure); Tenochtitlan founded ~1325 (sure); Inca state fast growth from ~1438 (sure); southern Maya cities abandoned in 9th century, causes debated: drought, war, overpopulation (sure, reviewer).
+-03: tlatoani led city and army (sure); warriors who captured enemies got honours (sure); Mexica subject peoples paid tribute (sure); Inca ruled from Cuzco, believed son of the Sun (sure); Inca had no money, paid tribute in labour (sure); stelae record rulers' deeds (sure); we know more about rulers than farmers (general, sure).
+-04: maize, beans, squash (sure); tortillas from maize masa (sure); Andean terraces, llamas as pack animals, no horses (sure); cacao bitter drink, sometimes with chile; cacao beans as money in some regions (sure); weaving cotton/wool (sure); Mesoamerican rubber ball and courts, religious meaning, Chichén Itzá court (sure).
+-05: four Maya codices survive (sure, reviewer); Landa at Maní 1562 ordered codices burned, reason paraphrased as "contrary to Christian faith" (sure); Maya books of bark paper (sure); LiDAR study published 2018, northern Guatemala, "more than 60,000 structures" (reviewer's correction applied: "un estudio publicado en 2018", not a 2018 survey); quipus not fully deciphered (sure).
+Old claims cut or corrected (old -> new): "casi quince mil kilómetros" -> cut; "sin herramientas de hierro ni animales de tiro", "botánica sofisticada" -> cut; "papa y quinua en Perú y Bolivia" -> cut (kept potato in Andes); "Quinto Sol", sacrifice text, Quetzalcóatl/Tláloc, Pachamama/Apus, chicha/coca offerings (old -03) -> cut (Unit 2 covers religion); "los mexicas inventaron la nixtamalización" -> cut (wrong: Mesoamerican, much older); "cacao grano sagrado de la élite" -> cut; "decenas de códices ... julio de 1562" -> "muchos códices ... 1562"; Guaman Poma, Popol Vuh -> cut; "LiDAR in the Amazon" -> cut; "1500 a. C. ... decenas de ciudades-estado" , "más de cuatro mil kilómetros" Inca -> cut; "sacrificios humanos mantenían el Quinto Sol" -> cut.
+
+## Checks
+check-content: before 29 errors / 2 suspects; after 0 / 0. unmet-words (--with-hidden) before: well over 150 hits (old items); after last edit: 0. render: no `!!`. check_unit_refs 0. check_es_c1_forms: no hit in my files. validate --changed: es-latam 82 passed; my tag changes were re-locked with `lock_tags.py --update` (tags.lock.json changed by script, not by hand).
