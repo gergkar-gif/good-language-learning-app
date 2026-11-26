@@ -6,3 +6,9 @@ Panama 1903/1914/1977/1999, the occupations of Nicaragua, Haiti and the Dominica
 Alliance for Progress, the coups of 1964, 1973 and 1976, AI-5, the 1988 plebiscite, the Malvinas
 war, Alfonsín 1983, Velasco 1968–1975). To verify before launch: Argentina's first national vote by
 women (1951), the School of the Americas' move (1984), Cuba's OAS suspension (1962).
+
+| Claim | Verdict | Source |
+|---|---|---|
+| Argentina: Law 13.010 (September 1947); women's first national vote 11 November 1951 | true | iprofesional.com; argentina.gob.ar (AGN, Carolina Barry) |
+| School of the Americas: Canal Zone 1946, closed there September 1984 under the 1977 treaty, reopened at Fort Benning December 1984 | true | CRS report (irp.fas.org/crs/soa.htm) |
+| Cuba suspended from the OAS, Punta del Este, January 1962 | standard, not re-searched | — |
