@@ -24,13 +24,34 @@ const ParlourTTS = (function () {
         (typeof localStorage !== 'undefined' && localStorage.getItem('parlour_tts_endpoint')) ||
         'https://parlour-tts.gergkar.workers.dev/synthesize';
 
-    const cache = {}; // sessionKey -> HTMLAudioElement | { __buffer: AudioBuffer }, memory cache
+    const cache = {}; // sessionKey -> HTMLAudioElement | { __buffer: AudioBuffer, __b64: string }, memory cache
     const bufferCache = {}; // sessionKey -> AudioBuffer (pre-decoded PCM for 0ms mobile playback)
     const inFlight = {}; // sessionKey -> Promise<any>
     let activeAudio = null;
     let activeSource = null;
+    let activeSourceMeta = null;
     let activeTriggerBtn = null;
     let audioCtx = null;
+    let sharedAudio = null;
+
+    function enablePreservesPitch(audio) {
+        if (!audio) return;
+        try {
+            audio.preservesPitch = true;
+            if ('mozPreservesPitch' in audio) audio.mozPreservesPitch = true;
+            if ('webkitPreservesPitch' in audio) audio.webkitPreservesPitch = true;
+        } catch {}
+    }
+
+    function getReusableAudio(src) {
+        if (typeof Audio === 'undefined') return null;
+        if (!sharedAudio) {
+            sharedAudio = new Audio(src);
+        } else if (sharedAudio.src !== src) {
+            sharedAudio.src = src;
+        }
+        return sharedAudio;
+    }
 
     function getAudioCtx() {
         if (audioCtx) return audioCtx;
@@ -102,7 +123,7 @@ const ParlourTTS = (function () {
     async function cacheAudioFromBase64(key, b64) {
         const decoded = await decodeBase64ToBuffer(key, b64);
         if (decoded) {
-            const holder = { __buffer: decoded };
+            const holder = { __buffer: decoded, __b64: b64 };
             cache[key] = holder;
             return holder;
         }
@@ -230,10 +251,65 @@ const ParlourTTS = (function () {
     // control changing mid-paragraph, for instance. No-op on the device
     // path: SpeechSynthesisUtterance.rate can't be changed after speak().
     function setRate(rate) {
-        if (activeSource && activeSource.playbackRate) {
-            try { activeSource.playbackRate.value = rate; } catch {}
+        if (activeAudio) {
+            enablePreservesPitch(activeAudio);
+            activeAudio.defaultPlaybackRate = rate;
+            activeAudio.playbackRate = rate;
+            return;
         }
-        if (activeAudio) activeAudio.playbackRate = rate;
+        if (activeSource) {
+            const needsPitch = Math.abs(rate - 1.0) > 0.001;
+            if (needsPitch && activeSourceMeta && activeSourceMeta.b64 && typeof Audio !== 'undefined') {
+                const meta = activeSourceMeta;
+                const ctx = getAudioCtx();
+                const elapsed = ctx ? Math.max(0, ctx.currentTime - meta.startedAt) : 0;
+                try {
+                    activeSource.onended = null;
+                    activeSource.stop(0);
+                    activeSource.disconnect();
+                } catch {}
+                activeSource = null;
+                activeSourceMeta = null;
+
+                const audio = getReusableAudio('data:audio/mp3;base64,' + meta.b64);
+                if (audio) {
+                    activeAudio = audio;
+                    enablePreservesPitch(audio);
+                    audio.defaultPlaybackRate = rate;
+                    audio.playbackRate = rate;
+                    const seekTarget = Math.min(elapsed, Math.max(0, (meta.duration || elapsed) - 0.05));
+                    if (seekTarget > 0) {
+                        const applySeek = () => {
+                            try { audio.currentTime = seekTarget; } catch {}
+                        };
+                        if (audio.readyState >= 1) {
+                            applySeek();
+                        } else if (typeof audio.addEventListener === 'function') {
+                            audio.addEventListener('loadedmetadata', applySeek, { once: true });
+                        } else {
+                            applySeek();
+                        }
+                    }
+                    audio.onended = () => {
+                        if (activeAudio === audio) activeAudio = null;
+                        if (meta.cleanupBtn) meta.cleanupBtn();
+                        if (meta.onEnded) meta.onEnded();
+                    };
+                    audio.onerror = () => {
+                        if (activeAudio === audio) activeAudio = null;
+                        if (meta.cleanupBtn) meta.cleanupBtn();
+                    };
+                    audio.play().catch(() => {
+                        if (activeAudio === audio) activeAudio = null;
+                        if (meta.cleanupBtn) meta.cleanupBtn();
+                    });
+                    return;
+                }
+            }
+            if (activeSource.playbackRate) {
+                try { activeSource.playbackRate.value = rate; } catch {}
+            }
+        }
     }
 
     // Bumped by every stop() (and so by every speak()). A speak() that is
@@ -252,8 +328,13 @@ const ParlourTTS = (function () {
             } catch {}
             activeSource = null;
         }
+        activeSourceMeta = null;
         if (activeAudio) {
-            try { activeAudio.pause(); } catch {}
+            try {
+                activeAudio.onended = null;
+                activeAudio.onerror = null;
+                activeAudio.pause();
+            } catch {}
             activeAudio = null;
         }
         if (audioCtx && audioCtx.state === 'running' && typeof audioCtx.suspend === 'function') {
@@ -337,61 +418,86 @@ const ParlourTTS = (function () {
             return false;
         }
 
-        // Fast path: Play pre-decoded Web Audio PCM buffer in <0.02ms with zero main-thread blocking
         const pcmBuffer = bufferCache[key] || (cached && cached.__buffer);
-        if (pcmBuffer && ctx) {
-            if (!isBufferAudible(pcmBuffer)) {
-                delete bufferCache[key];
-                delete cache[key];
-            } else {
-                if (btn) {
-                    btn.classList.remove('is-loading');
-                    btn.classList.add('is-playing');
+        if (pcmBuffer && !isBufferAudible(pcmBuffer)) {
+            delete bufferCache[key];
+            delete cache[key];
+            cached = null;
+        }
+
+        // AudioBufferSourceNode.playbackRate resamples without preserving pitch
+        // (making 0.75x sound comically deep). Use HTMLAudioElement with
+        // preservesPitch = true whenever rate !== 1.0; keep the Web Audio fast
+        // path for normal 1.0x playback.
+        const needsPitchPreservation = Math.abs(rate - 1.0) > 0.001;
+
+        // Fast path: Play pre-decoded Web Audio PCM buffer in <0.02ms with zero main-thread blocking
+        if (pcmBuffer && cached && ctx && !needsPitchPreservation) {
+            if (btn) {
+                btn.classList.remove('is-loading');
+                btn.classList.add('is-playing');
+            }
+            try {
+                if (ctx.state === 'suspended' && typeof ctx.resume === 'function') {
+                    ctx.resume();
                 }
-                try {
-                    if (ctx.state === 'suspended' && typeof ctx.resume === 'function') {
-                        ctx.resume();
+                const source = ctx.createBufferSource();
+                source.buffer = pcmBuffer;
+                if (source.playbackRate) source.playbackRate.value = rate;
+                source.connect(ctx.destination);
+                activeSource = source;
+                activeSourceMeta = {
+                    b64: cached && cached.__b64,
+                    startedAt: ctx.currentTime || 0,
+                    duration: pcmBuffer.duration || 0,
+                    onEnded,
+                    cleanupBtn
+                };
+                source.onended = () => {
+                    if (activeSource === source) {
+                        activeSource = null;
+                        activeSourceMeta = null;
                     }
-                    const source = ctx.createBufferSource();
-                    source.buffer = pcmBuffer;
-                    if (source.playbackRate) source.playbackRate.value = rate;
-                    source.connect(ctx.destination);
-                    activeSource = source;
-                    source.onended = () => {
-                        if (activeSource === source) activeSource = null;
-                        cleanupBtn();
-                        if (onEnded) onEnded();
-                    };
-                    source.start(0);
-                    return true;
-                } catch (err) {
-                    activeSource = null;
                     cleanupBtn();
-                }
+                    if (onEnded) onEnded();
+                };
+                source.start(0);
+                return true;
+            } catch (err) {
+                activeSource = null;
+                activeSourceMeta = null;
+                cleanupBtn();
             }
         }
 
-        // Fallback path: HTMLAudioElement
-        const audio = (cached && !cached.__buffer) ? cached : null;
+        // Pitch-preserving / fallback path: HTMLAudioElement
+        const audio = (cached && !cached.__buffer)
+            ? cached
+            : (cached && cached.__b64 ? getReusableAudio('data:audio/mp3;base64,' + cached.__b64) : null);
         if (audio) {
             if (btn) {
                 btn.classList.remove('is-loading');
                 btn.classList.add('is-playing');
             }
             activeAudio = audio;
-            audio.currentTime = 0;
+            enablePreservesPitch(audio);
+            audio.defaultPlaybackRate = rate;
             audio.playbackRate = rate;
+            try { audio.currentTime = 0; } catch {}
             audio.onended = () => {
+                if (activeAudio === audio) activeAudio = null;
                 cleanupBtn();
                 if (onEnded) onEnded();
             };
             audio.onerror = () => {
+                if (activeAudio === audio) activeAudio = null;
                 cleanupBtn();
             };
             try {
                 await audio.play();
                 return true;
             } catch (playErr) {
+                if (activeAudio === audio) activeAudio = null;
                 cleanupBtn();
                 console.warn('ParlourTTS play failed:', playErr);
             }

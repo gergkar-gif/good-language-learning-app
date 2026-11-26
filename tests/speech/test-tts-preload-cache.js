@@ -161,6 +161,119 @@ async function runPreloadTests() {
 
     console.log('[PASS] ParlourTTS preload and cache deduplication verified.');
 
+    // Test 3: Pitch-preserving slow playback when Web Audio AudioContext is available
+    console.log('\n--- Test 3: Pitch-Preserving Slow Playback ---');
+    const createdAudios = [];
+    class TrackedMockAudio {
+        constructor(src) {
+            this.src = src;
+            this.playbackRate = 1.0;
+            this.defaultPlaybackRate = 1.0;
+            this.preservesPitch = false;
+            this.webkitPreservesPitch = false;
+            this.currentTime = 0;
+            this.readyState = 4;
+            this.onended = null;
+            this.onerror = null;
+            this.playCount = 0;
+            createdAudios.push(this);
+        }
+        async play() {
+            this.playCount++;
+            return Promise.resolve();
+        }
+        pause() {}
+    }
+
+    let bufferSourceStarts = 0;
+    let bufferSourceStops = 0;
+    let mockCtxTime = 10.0;
+    class MockAudioContext {
+        constructor() {
+            this.state = 'running';
+            this.destination = {};
+        }
+        get currentTime() { return mockCtxTime; }
+        resume() { this.state = 'running'; return Promise.resolve(); }
+        suspend() { this.state = 'suspended'; return Promise.resolve(); }
+        decodeAudioData(buf, ok) {
+            const decoded = {
+                duration: 2.5,
+                getChannelData: () => new Float32Array([0.5, -0.5, 0.5, -0.5])
+            };
+            if (ok) ok(decoded);
+            return Promise.resolve(decoded);
+        }
+        createBufferSource() {
+            return {
+                buffer: null,
+                playbackRate: { value: 1.0 },
+                onended: null,
+                connect() {},
+                disconnect() {},
+                start() { bufferSourceStarts++; },
+                stop() { bufferSourceStops++; }
+            };
+        }
+    }
+
+    global.Audio = TrackedMockAudio;
+    global.atob = (b64) => Buffer.from(b64, 'base64').toString('binary');
+    global.window = {
+        PARLOUR_TTS_ENDPOINT: 'https://test-worker.local/synthesize',
+        AudioContext: MockAudioContext
+    };
+
+    delete require.cache[require.resolve('../../engine/tts.js')];
+    const ParlourTTSWithWebAudio = require('../../engine/tts.js');
+
+    // 3a. Normal 1.0x speed uses Web Audio fast path (AudioBufferSourceNode)
+    const playedNormal = await ParlourTTSWithWebAudio.speak({
+        text: 'buenos días',
+        language: 'es',
+        type: 'listening',
+        speed: 1.0
+    });
+    assert.strictEqual(playedNormal, true, '1.0x speak() should succeed');
+    assert.strictEqual(bufferSourceStarts, 1, '1.0x speed should use Web Audio AudioBufferSourceNode');
+    assert.strictEqual(createdAudios.length, 0, '1.0x speed should not instantiate HTMLAudioElement');
+
+    // 3b. Slow 0.75x speed routes through HTMLAudioElement with preservesPitch = true
+    const playedSlow = await ParlourTTSWithWebAudio.speak({
+        text: 'buenos días',
+        language: 'es',
+        type: 'listening',
+        speed: 0.75
+    });
+    assert.strictEqual(playedSlow, true, '0.75x speak() should succeed');
+    assert.strictEqual(bufferSourceStarts, 1, '0.75x speed must NOT use pitch-shifting AudioBufferSourceNode');
+    assert.strictEqual(createdAudios.length, 1, '0.75x speed should play via HTMLAudioElement');
+    assert.strictEqual(createdAudios[0].preservesPitch, true, 'HTMLAudioElement must enable preservesPitch');
+    assert.strictEqual(createdAudios[0].webkitPreservesPitch, true, 'HTMLAudioElement must enable webkitPreservesPitch');
+    assert.strictEqual(createdAudios[0].playbackRate, 0.75, 'HTMLAudioElement playbackRate should be 0.75');
+    assert.strictEqual(createdAudios[0].defaultPlaybackRate, 0.75, 'HTMLAudioElement defaultPlaybackRate should be 0.75');
+
+    // 3c. Mid-playback setRate(0.8) hands off from AudioBufferSourceNode to pitch-preserving HTMLAudioElement
+    mockCtxTime = 20.0;
+    await ParlourTTSWithWebAudio.speak({
+        text: 'buenos días',
+        language: 'es',
+        type: 'story',
+        speed: 1.0
+    });
+    assert.strictEqual(bufferSourceStarts, 2, '1.0x story playback should start on Web Audio');
+    const playsBeforeHandoff = createdAudios[0].playCount;
+    const stopsBeforeHandoff = bufferSourceStops;
+    mockCtxTime = 21.2; // 1.2s elapsed
+    ParlourTTSWithWebAudio.setRate(0.8);
+    assert.strictEqual(bufferSourceStops, stopsBeforeHandoff + 1, 'setRate(0.8) should stop the pitch-shifting AudioBufferSourceNode');
+    assert.strictEqual(createdAudios[0].playCount, playsBeforeHandoff + 1, 'setRate(0.8) should hand off to reusable HTMLAudioElement');
+    assert.strictEqual(createdAudios[0].preservesPitch, true, 'Handed-off HTMLAudioElement must preserve pitch');
+    assert.strictEqual(createdAudios[0].playbackRate, 0.8, 'Handed-off HTMLAudioElement must play at 0.8x');
+    assert.ok(Math.abs(createdAudios[0].currentTime - 1.2) < 0.01, 'Handed-off HTMLAudioElement should seek to elapsed offset');
+
+    console.log('[PASS] Pitch-preserving slow playback & mid-playback setRate() handoff verified.');
+
     console.log('\n==========================================================');
     console.log('ALL TTS PRELOAD, CACHE & VOICE TIER TESTS PASSED');
     console.log('==========================================================');
