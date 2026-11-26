@@ -70,7 +70,7 @@
 
     <link rel="stylesheet" href="styles/base.css?v=2026-11-25footer">
     <link rel="stylesheet" href="styles/geometry.css?v=2026-09-30merged">
-    <link rel="stylesheet" href="styles/components.css?v=2026-11-26onboarding">
+    <link rel="stylesheet" href="styles/components.css?v=2026-11-26social">
     <link rel="stylesheet" href="styles/layout.css?v=2026-11-25footer">
     <link rel="stylesheet" href="styles/utilities.css?v=2026-09-30merged">
     <link rel="stylesheet" href="styles/verbs.css?v=2026-09-30merged">
@@ -522,7 +522,7 @@
      LearnerModel, RecommendationEngine, all loaded above -->
 <script src="engine/studyPlan.js?v=2026-09-25sig2"></script>
 
-<script src="engine/journey.js?v=2026-11-26onboarding"></script>
+<script src="engine/journey.js?v=2026-11-26social"></script>
 <script src="engine/decks/match.js?v=2026-09-25sig2"></script>
 <script src="engine/decks/learn.js?v=2026-10-02f"></script>
 <script src="engine/decks/blast.js?v=2026-09-27b"></script>
@@ -544,10 +544,13 @@
 <script src="engine/home.js?v=2026-11-26onboarding"></script>
 
 <!-- Engine: cloud sync (step 7 — reads Lang, called by init's boot and Journey's Account card; lazy-loads Google Identity Services only when opening sign-in) -->
-<script src="engine/sync.js?v=2026-11-26onboarding"></script>
+<script src="engine/sync.js?v=2026-11-26social"></script>
+
+<!-- Engine: opt-in social (friends, weekly board, Friend Quests — depends on Sync) -->
+<script src="engine/social.js?v=2026-11-26social"></script>
 
 <!-- Engine: bootstrap (loads last) -->
-<script src="engine/init.js?v=2026-11-25play"></script>
+<script src="engine/init.js?v=2026-11-26social"></script>
 
 <!-- Engine: bug report (independent floating overlay, loads anywhere after Art) -->
 <script src="engine/bugreport.js?v=2026-11-18copy"></script>

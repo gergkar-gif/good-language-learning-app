@@ -648,6 +648,320 @@ const Journey = (function () {
         `;
     }
 
+    let _socialData = null;
+    let _socialLoading = false;
+    let _socialOffline = false;
+    let _socialNotice = '';
+
+    function _socialRowValue() {
+        if (typeof Sync === 'undefined' || !Sync.isLoggedIn()) return '';
+        const cached = _socialData || ((typeof Social !== 'undefined' && Social.readCache) ? Social.readCache() : null);
+        if (!cached) return 'Optional';
+        const pending = (cached.pendingFriendRequests || 0) + (cached.pendingQuestInvites || 0);
+        if (pending > 0) return `${pending} waiting`;
+        if (!cached.optedIn) return 'Optional';
+        const count = (cached.friendsData && Array.isArray(cached.friendsData.friends)) ? cached.friendsData.friends.length : 0;
+        if (cached.quests && cached.quests.currentQuest && cached.quests.currentQuest.status === 'active') {
+            return 'Quest active';
+        }
+        return count > 0 ? `${count} ${plural(count, 'friend', 'friends')}` : 'Weekly board';
+    }
+
+    function _renderAvatar(name, isSelf) {
+        const initials = (typeof Social !== 'undefined' && Social.initialsFor) ? Social.initialsFor(name) : 'L';
+        return `<span class="soc-avatar${isSelf ? ' is-self' : ''}" aria-hidden="true">${esc(initials)}</span>`;
+    }
+
+    function _renderQuestSection(data) {
+        const qData = data.quests || {};
+        const q = qData.currentQuest;
+        const friends = (data.friendsData && data.friendsData.friends) || [];
+        const lastWeek = qData.lastWeekCompleted;
+
+        let inner = '';
+        if (q && q.status === 'pending') {
+            if (q.isInviter) {
+                inner = `<p class="soc-note">Invited <strong>${esc(q.partner.displayName)}</strong> to ${esc(q.label.toLowerCase())} (${q.target} ${esc(q.unit)}). Waiting for them to accept.</p>`;
+            } else {
+                inner = `
+                    <p class="soc-note"><strong>${esc(q.partner.displayName)}</strong> invited you to a shared weekly quest: <strong>${esc(q.label)}</strong> (${q.target} ${esc(q.unit)}).</p>
+                    <div class="soc-inline-actions">
+                        <button class="dk-primary" type="button" data-soc-quest-respond="accept" data-quest-id="${esc(q.id)}">Accept quest</button>
+                        <button class="dk-secondary" type="button" data-soc-quest-respond="decline" data-quest-id="${esc(q.id)}">Decline</button>
+                    </div>
+                `;
+            }
+        } else if (q && (q.status === 'active' || q.status === 'completed')) {
+            const pct = Math.min(100, Math.round((q.totalProgress / Math.max(1, q.target)) * 100));
+            const cheeredRecently = q.myLastCheerAt && (Date.now() - q.myLastCheerAt) < (20 * 60 * 60 * 1000);
+            const partnerCheered = q.partnerLastCheerAt
+                ? `<p class="soc-cheer-note">${esc(q.partner.displayName)} sent encouragement.</p>`
+                : '';
+            const statusTag = q.status === 'completed'
+                ? '<span class="soc-status-done">Completed</span>'
+                : `<span class="soc-status-week">${esc(q.weekKey)}</span>`;
+            inner = `
+                <div class="soc-quest-head">
+                    <div class="soc-quest-title-wrap">
+                        ${_renderAvatar(q.partner.displayName, false)}
+                        <div>
+                            <p class="soc-quest-title">${esc(q.label)}</p>
+                            <p class="soc-quest-sub">With ${esc(q.partner.displayName)}</p>
+                        </div>
+                    </div>
+                    ${statusTag}
+                </div>
+                <div class="soc-quest-meter">
+                    <div class="jr-track"><div class="jr-fill${q.status === 'completed' ? ' is-done' : ''}" style="width:${pct}%"></div></div>
+                    <p class="soc-quest-nums"><strong>${q.totalProgress} / ${q.target} ${esc(q.unit)}</strong> · You: ${q.myProgress} · ${esc(q.partner.displayName)}: ${q.partnerProgress}</p>
+                </div>
+                ${partnerCheered}
+                <div class="soc-inline-actions">
+                    <button class="dk-secondary" type="button" data-soc-quest-cheer="${esc(q.id)}"${cheeredRecently ? ' disabled' : ''}>${cheeredRecently ? 'Encouragement sent' : 'Send encouragement'}</button>
+                </div>
+            `;
+        } else if (friends.length > 0) {
+            const types = (qData.questTypes && qData.questTypes.length) ? qData.questTypes : [
+                { type: 'lessons', label: 'Complete lessons together', target: 6, unit: 'lessons' },
+                { type: 'stories', label: 'Read stories together', target: 4, unit: 'stories' },
+                { type: 'active_days', label: 'Study days together', target: 8, unit: 'days' },
+                { type: 'xp', label: 'Earn XP together', target: 350, unit: 'XP' }
+            ];
+            const typeOpts = types.map(t => `<option value="${esc(t.type)}">${esc(t.label)} (${t.target} ${esc(t.unit)})</option>`).join('');
+            const friendOpts = friends.map(f => `<option value="${esc(f.userId)}">${esc(f.displayName)}</option>`).join('');
+            inner = `
+                <p class="soc-note">Share one calm goal with a friend from Monday to Sunday.</p>
+                <div class="soc-form-stack">
+                    <label class="soc-label" for="soc-quest-type">Weekly goal</label>
+                    <select id="soc-quest-type" class="dk-editor-input">${typeOpts}</select>
+                    <div class="soc-inline-actions">
+                        <button class="dk-primary" type="button" data-soc-quest-automatch="1">Auto-match with a friend</button>
+                    </div>
+                    <div class="soc-divider"><span>or invite a specific friend</span></div>
+                    <div class="soc-inline-row">
+                        <select id="soc-quest-friend" class="dk-editor-input">${friendOpts}</select>
+                        <button class="dk-secondary" type="button" data-soc-quest-start="1">Invite</button>
+                    </div>
+                </div>
+            `;
+        } else {
+            inner = '<p class="soc-note">Add a friend below to start a shared weekly quest.</p>';
+        }
+
+        const lastWeekHtml = lastWeek
+            ? `<p class="soc-footnote">Last week: completed "${esc(lastWeek.label)}" with ${esc(lastWeek.partner.displayName)}.</p>`
+            : '';
+
+        return card('Friend Quest', 'Shared weekly goal', inner + lastWeekHtml);
+    }
+
+    function _renderWeeklyBoardSection(data) {
+        const board = data.leaderboard || { entries: [], dailyCap: 120, reviewDailyCap: 60 };
+        const entries = board.entries || [];
+        const weekLabel = board.weekKey || data.weekKey || 'This week';
+        const capNote = `${weekLabel} · ${board.dailyCap || 120} XP daily cap (${board.reviewDailyCap || 60} review XP) so steady study beats grinding.`;
+
+        if (!entries.length) {
+            return card('Weekly board', capNote, '<p class="soc-note">Sync after your next lesson, story, or review to appear on this week\'s board.</p>');
+        }
+
+        const rows = entries.map(item => `
+            <li class="soc-board-row${item.isSelf ? ' is-self' : ''}">
+                <span class="soc-pos">${item.position}</span>
+                ${_renderAvatar(item.displayName, item.isSelf)}
+                <div class="soc-board-meta">
+                    <span class="soc-board-name">${esc(item.displayName)}${item.isSelf ? ' <span class="soc-you-tag">you</span>' : ''}</span>
+                    <span class="soc-board-sub">Rank ${item.rank} · ${item.activeDays}/7 days</span>
+                </div>
+                <span class="soc-board-xp">${item.weeklyXp} XP</span>
+            </li>
+        `).join('');
+
+        return card('Weekly board', capNote, `<ol class="soc-board-list">${rows}</ol>`);
+    }
+
+    function _renderFriendsSection(data) {
+        const prof = data.profile || {};
+        const fData = data.friendsData || { friends: [], incoming: [], outgoing: [] };
+        const friendCode = prof.friendCode || '';
+        const pendingInvite = (typeof Social !== 'undefined' && Social.getPendingInvite) ? Social.getPendingInvite() : '';
+
+        const inviteBanner = pendingInvite ? `
+            <div class="soc-invite-banner">
+                <p>Invite code ready: <strong>${esc(pendingInvite)}</strong></p>
+                <div class="soc-inline-actions">
+                    <button class="dk-primary" type="button" data-soc-send-pending="${esc(pendingInvite)}">Send friend request</button>
+                    <button class="dk-secondary" type="button" data-soc-dismiss-pending="1">Dismiss</button>
+                </div>
+            </div>
+        ` : '';
+
+        const incomingHtml = fData.incoming.length ? `
+            <div class="soc-subsection">
+                <p class="soc-subhead">Waiting for your reply</p>
+                <ul class="soc-list">
+                    ${fData.incoming.map(req => `
+                        <li class="soc-friend-row">
+                            <div class="soc-board-meta">
+                                <span class="soc-board-name">${esc(req.displayName)}</span>
+                                <span class="soc-board-sub">${esc(req.friendCode)}</span>
+                            </div>
+                            <div class="soc-inline-actions">
+                                <button class="dk-primary" type="button" data-soc-friend-respond="accept" data-user-id="${esc(req.userId)}">Accept</button>
+                                <button class="dk-secondary" type="button" data-soc-friend-respond="decline" data-user-id="${esc(req.userId)}">Decline</button>
+                            </div>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        ` : '';
+
+        const outgoingHtml = fData.outgoing.length ? `
+            <div class="soc-subsection">
+                <p class="soc-subhead">Sent requests</p>
+                <ul class="soc-list">
+                    ${fData.outgoing.map(req => `
+                        <li class="soc-friend-row">
+                            <div class="soc-board-meta">
+                                <span class="soc-board-name">${esc(req.displayName)}</span>
+                                <span class="soc-board-sub">Pending</span>
+                            </div>
+                            <button class="jr-link" type="button" data-soc-friend-remove="${esc(req.userId)}">Cancel</button>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        ` : '';
+
+        const friendsHtml = fData.friends.length ? `
+            <div class="soc-subsection">
+                <p class="soc-subhead">Friends (${fData.friends.length})</p>
+                <ul class="soc-list">
+                    ${fData.friends.map(f => `
+                        <li class="soc-friend-row">
+                            <div class="soc-friend-id">
+                                ${_renderAvatar(f.displayName, false)}
+                                <div class="soc-board-meta">
+                                    <span class="soc-board-name">${esc(f.displayName)}</span>
+                                    <span class="soc-board-sub">Rank ${f.rank} · ${f.weeklyXp} XP this week</span>
+                                </div>
+                            </div>
+                            <button class="jr-link" type="button" data-soc-friend-remove="${esc(f.userId)}">Remove</button>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        ` : '<p class="soc-note">No friends connected yet. Share your code or invite link below.</p>';
+
+        const body = `
+            ${inviteBanner}
+            <div class="soc-code-box">
+                <div>
+                    <span class="soc-label">Your friend code</span>
+                    <p class="soc-code-val">${esc(friendCode)}</p>
+                </div>
+                <button class="dk-secondary" type="button" data-soc-copy-invite="${esc(friendCode)}">Copy invite link</button>
+            </div>
+            <div class="soc-inline-row">
+                <input type="text" id="soc-friend-code-input" class="dk-editor-input" placeholder="PRL-XXXXX" maxlength="12" aria-label="Friend code">
+                <button class="dk-secondary" type="button" data-soc-add-friend="1">Add friend</button>
+            </div>
+            ${incomingHtml}
+            ${outgoingHtml}
+            ${friendsHtml}
+        `;
+        return card('Friends', 'Private invite codes — emails are never shared', body);
+    }
+
+    function _renderSocialSettingsSection(data) {
+        const prof = data.profile || {};
+        const body = `
+            <div class="soc-inline-row">
+                <input type="text" id="soc-display-name-input" class="dk-editor-input"
+                    value="${esc(prof.displayName || '')}" placeholder="Display name (2-24 chars)" maxlength="24" aria-label="Display name">
+                <button class="dk-secondary" type="button" data-soc-save-name="1">Save name</button>
+            </div>
+            <p class="soc-footnote">Only your display name, Rank, and weekly study counts are visible to accepted friends. You can turn this off at any time without affecting your progress.</p>
+            <div class="jr-account-footer">
+                <button class="jr-account-logout" type="button" data-soc-opt-out="1">Turn off social</button>
+            </div>
+        `;
+        return card('Social settings', 'Privacy and display name', body);
+    }
+
+    function socialHtml() {
+        const loggedIn = (typeof Sync !== 'undefined') && Sync.isLoggedIn();
+        if (!loggedIn) {
+            const pendingInvite = (typeof Social !== 'undefined' && Social.getPendingInvite) ? Social.getPendingInvite() : '';
+            const inviteHint = pendingInvite
+                ? `<p class="soc-note">Sign in to accept invite code <strong>${esc(pendingInvite)}</strong>.</p>`
+                : '';
+            return card(
+                'Friends and weekly board',
+                'Sign in required',
+                `${inviteHint}<p class="soc-note">Compare steady weekly study with friends and share calm weekly quests. Signing in is optional and your progress stays synced across devices.</p>
+                 <div class="soc-inline-actions"><button class="dk-primary" type="button" data-soc-open-signin="1">Sign in</button></div>`
+            );
+        }
+
+        const data = _socialData || ((typeof Social !== 'undefined' && Social.readCache) ? Social.readCache() : null);
+        if (_socialLoading && !data) {
+            return card('Friends and weekly board', 'Loading', '<p class="soc-note">Loading your friends and weekly board…</p>');
+        }
+
+        const noticeHtml = _socialNotice
+            ? `<p class="soc-status-banner" role="status">${esc(_socialNotice)}</p>`
+            : (_socialOffline ? '<p class="soc-status-banner" role="status">Offline — showing cached data.</p>' : '');
+
+        if (!data || !data.optedIn) {
+            const defaultName = (data && data.profile && data.profile.displayName)
+                || ((typeof Sync !== 'undefined' && Sync.getUserName) ? Sync.getUserName() : '')
+                || '';
+            const pendingInvite = (typeof Social !== 'undefined' && Social.getPendingInvite) ? Social.getPendingInvite() : '';
+            const inviteHint = pendingInvite
+                ? `<p class="soc-note">You followed invite code <strong>${esc(pendingInvite)}</strong>. Enable your profile below to send the friend request.</p>`
+                : '';
+            return noticeHtml + card(
+                'Friends and weekly board',
+                'Optional · Friends only',
+                `${inviteHint}
+                 <p class="soc-note">Choose a display name to get a private friend code, compare weekly consistency (capped at 120 XP/day), and share weekly Friend Quests. Your email is never shown.</p>
+                 <div class="soc-inline-row">
+                     <input type="text" id="soc-optin-name-input" class="dk-editor-input"
+                         value="${esc(defaultName)}" placeholder="Your display name" maxlength="24" aria-label="Display name">
+                     <button class="dk-primary" type="button" data-soc-opt-in="1">Enable</button>
+                 </div>`
+            );
+        }
+
+        return noticeHtml
+            + _renderQuestSection(data)
+            + _renderWeeklyBoardSection(data)
+            + _renderFriendsSection(data)
+            + _renderSocialSettingsSection(data);
+    }
+
+    async function _refreshSocial(host) {
+        if (typeof Sync === 'undefined' || !Sync.isLoggedIn() || typeof Social === 'undefined') return;
+        _socialLoading = true;
+        _socialOffline = false;
+        const container = host.querySelector('#jr-social-root');
+        if (container && !_socialData) container.innerHTML = socialHtml();
+        try {
+            _socialData = await Social.loadDashboard();
+            _socialLoading = false;
+            _socialOffline = false;
+        } catch (err) {
+            _socialLoading = false;
+            _socialOffline = true;
+            if (!_socialData) _socialData = Social.readCache();
+        }
+        const latest = host.querySelector('#jr-social-root');
+        if (latest && _view === 'social') {
+            latest.innerHTML = socialHtml();
+        }
+    }
+
     function rowsHtml(d) {
         const stats = d.candoStats || { verified: 0 };
         const skillsMeasured = SKILLS.filter(sk => (d.totalSkills[sk.from] || 0) > 0).length + (d.speakingProduction ? 1 : 0);
@@ -664,16 +978,24 @@ const Journey = (function () {
                 ${row('data-jr-view="knowledge"', 'Grammar and vocabulary', `${d.grammarDone} / ${d.grammarTotal}`)}
                 ${row('data-jr-view="skills"', 'Skills', `${skillsMeasured} measured`)}
                 ${row('data-jr-view="milestones"', 'Milestones', remaining ? `${remaining} to go` : 'All reached')}
+                ${row('data-jr-view="social"', 'Friends and weekly board', _socialRowValue())}
                 ${row('data-jr-view="account"', 'Account and appearance', (typeof Sync !== 'undefined' && Sync.isLoggedIn()) ? 'Signed in' : '')}
             </div>
         `;
     }
 
     function detailHtml(view, d) {
-        const titles = { knowledge: 'Grammar and vocabulary', skills: 'Skills', milestones: 'Milestones', account: 'Account and appearance' };
+        const titles = {
+            knowledge: 'Grammar and vocabulary',
+            skills: 'Skills',
+            milestones: 'Milestones',
+            social: 'Friends and weekly board',
+            account: 'Account and appearance'
+        };
         const body = view === 'knowledge' ? curriculumBlock(d) + grammarBlock(d) + vocabularyBlock(d)
             : view === 'skills' ? skillsBlock(d) + xpBlock(d)
             : view === 'milestones' ? milestonesBlock(d)
+            : view === 'social' ? `<div id="jr-social-root" class="soc-root">${socialHtml()}</div>`
             : accountBlock() + appearanceBlock();
         return `
             <div class="jr-detail">
@@ -695,6 +1017,7 @@ const Journey = (function () {
             : detailHtml(_view, d);
         _wireClicks(host);
         if (_view === 'account') _refreshAccountStatus(host);
+        if (_view === 'social') _refreshSocial(host);
 
         if (typeof Guide !== 'undefined') {
             Guide.clearNote();
@@ -724,6 +1047,7 @@ const Journey = (function () {
 
     if (typeof window !== 'undefined') {
         window.addEventListener('sync-session-expired', () => {
+            _socialData = null;
             _draw();
         });
     }
@@ -731,6 +1055,13 @@ const Journey = (function () {
     // Entering the tab always starts at the top of the page.
     function render() {
         _view = 'main';
+        _socialNotice = '';
+        _draw();
+    }
+
+    function openView(viewName) {
+        _view = viewName || 'main';
+        _socialNotice = '';
         _draw();
     }
 
@@ -1149,12 +1480,189 @@ const Journey = (function () {
 
             if (e.target.closest('[data-sync-logout]')) {
                 Sync.logout();
+                _socialData = null;
+                if (typeof Social !== 'undefined' && Social.clearCache) Social.clearCache();
                 _draw();
                 return;
             }
 
             if (e.target.closest('[data-sync-delete]')) {
                 showDeleteAccountModal(host);
+                return;
+            }
+
+            if (e.target.closest('[data-soc-open-signin]')) {
+                if (typeof Sync !== 'undefined' && Sync.openSignInModal) Sync.openSignInModal();
+                return;
+            }
+
+            const _setSocialNotice = (msg) => {
+                _socialNotice = msg || '';
+                const el = host.querySelector('#jr-social-root');
+                if (el && _view === 'social') el.innerHTML = socialHtml();
+            };
+
+            if (e.target.closest('[data-soc-opt-in]')) {
+                const input = host.querySelector('#soc-optin-name-input');
+                const name = input ? input.value.trim() : '';
+                if (!name || name.length < 2) {
+                    _setSocialNotice('Enter a display name (2 to 24 characters).');
+                    return;
+                }
+                _setSocialNotice('Enabling…');
+                Social.saveProfile({ displayName: name, socialOptIn: true })
+                    .then(() => { _socialNotice = 'Friends and weekly board enabled.'; return _refreshSocial(host); })
+                    .catch(err => _setSocialNotice(err.message || 'Could not enable social profile.'));
+                return;
+            }
+
+            if (e.target.closest('[data-soc-opt-out]')) {
+                _setSocialNotice('Turning off…');
+                Social.saveProfile({ socialOptIn: false })
+                    .then(() => { _socialNotice = 'Social turned off. Your learning progress is unchanged.'; return _refreshSocial(host); })
+                    .catch(err => _setSocialNotice(err.message || 'Could not update settings.'));
+                return;
+            }
+
+            if (e.target.closest('[data-soc-save-name]')) {
+                const input = host.querySelector('#soc-display-name-input');
+                const name = input ? input.value.trim() : '';
+                if (!name || name.length < 2) {
+                    _setSocialNotice('Display name must be 2 to 24 characters.');
+                    return;
+                }
+                _setSocialNotice('Saving…');
+                Social.saveProfile({ displayName: name })
+                    .then(() => { _socialNotice = 'Display name updated.'; return _refreshSocial(host); })
+                    .catch(err => _setSocialNotice(err.message || 'Could not update display name.'));
+                return;
+            }
+
+            const copyBtn = e.target.closest('[data-soc-copy-invite]');
+            if (copyBtn) {
+                const code = copyBtn.getAttribute('data-soc-copy-invite');
+                const url = (typeof Social !== 'undefined' && Social.inviteUrlFor) ? Social.inviteUrlFor(code) : code;
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(url)
+                        .then(() => _setSocialNotice('Invite link copied to clipboard.'))
+                        .catch(() => _setSocialNotice('Share this link: ' + url));
+                } else {
+                    _setSocialNotice('Share this link: ' + url);
+                }
+                return;
+            }
+
+            if (e.target.closest('[data-soc-dismiss-pending]')) {
+                if (typeof Social !== 'undefined' && Social.clearPendingInvite) Social.clearPendingInvite();
+                _setSocialNotice('');
+                return;
+            }
+
+            const sendPendingBtn = e.target.closest('[data-soc-send-pending]');
+            if (sendPendingBtn) {
+                const code = sendPendingBtn.getAttribute('data-soc-send-pending');
+                _setSocialNotice('Sending request…');
+                Social.requestFriend(code)
+                    .then(res => {
+                        Social.clearPendingInvite();
+                        _socialNotice = res.status === 'accepted'
+                            ? `You and ${res.displayName} are now friends.`
+                            : `Friend request sent to ${res.displayName}.`;
+                        return _refreshSocial(host);
+                    })
+                    .catch(err => _setSocialNotice(err.message || 'Could not send friend request.'));
+                return;
+            }
+
+            if (e.target.closest('[data-soc-add-friend]')) {
+                const input = host.querySelector('#soc-friend-code-input');
+                const code = input ? input.value.trim().toUpperCase() : '';
+                if (!code) {
+                    _setSocialNotice('Enter a friend code first.');
+                    return;
+                }
+                _setSocialNotice('Sending request…');
+                Social.requestFriend(code)
+                    .then(res => {
+                        _socialNotice = res.status === 'accepted'
+                            ? `You and ${res.displayName} are now friends.`
+                            : `Friend request sent to ${res.displayName}.`;
+                        return _refreshSocial(host);
+                    })
+                    .catch(err => _setSocialNotice(err.message || 'Could not send friend request.'));
+                return;
+            }
+
+            const friendRespBtn = e.target.closest('[data-soc-friend-respond]');
+            if (friendRespBtn) {
+                const action = friendRespBtn.getAttribute('data-soc-friend-respond');
+                const uid = friendRespBtn.getAttribute('data-user-id');
+                _setSocialNotice('Updating…');
+                Social.respondFriend(uid, action)
+                    .then(() => { _socialNotice = action === 'accept' ? 'Friend request accepted.' : 'Request updated.'; return _refreshSocial(host); })
+                    .catch(err => _setSocialNotice(err.message || 'Could not update request.'));
+                return;
+            }
+
+            const friendRemBtn = e.target.closest('[data-soc-friend-remove]');
+            if (friendRemBtn) {
+                const uid = friendRemBtn.getAttribute('data-soc-friend-remove');
+                _setSocialNotice('Updating…');
+                Social.removeFriend(uid)
+                    .then(() => { _socialNotice = 'Removed.'; return _refreshSocial(host); })
+                    .catch(err => _setSocialNotice(err.message || 'Could not remove friend.'));
+                return;
+            }
+
+            if (e.target.closest('[data-soc-quest-automatch]')) {
+                const typeSel = host.querySelector('#soc-quest-type');
+                const questType = typeSel ? typeSel.value : 'lessons';
+                _setSocialNotice('Matching with an active friend…');
+                Social.autoMatchQuest(questType)
+                    .then(res => {
+                        _socialNotice = res.matched && res.quest
+                            ? `Quest started with ${res.quest.partner.displayName}.`
+                            : (res.message || 'No friends are free for a quest this week yet.');
+                        return _refreshSocial(host);
+                    })
+                    .catch(err => _setSocialNotice(err.message || 'Could not auto-match quest.'));
+                return;
+            }
+
+            if (e.target.closest('[data-soc-quest-start]')) {
+                const typeSel = host.querySelector('#soc-quest-type');
+                const friendSel = host.querySelector('#soc-quest-friend');
+                const questType = typeSel ? typeSel.value : 'lessons';
+                const friendId = friendSel ? friendSel.value : '';
+                _setSocialNotice('Sending quest invite…');
+                Social.startQuest(friendId, questType)
+                    .then(res => {
+                        _socialNotice = res.quest
+                            ? `Quest invite sent to ${res.quest.partner.displayName}.`
+                            : 'Quest invite sent.';
+                        return _refreshSocial(host);
+                    })
+                    .catch(err => _setSocialNotice(err.message || 'Could not start quest.'));
+                return;
+            }
+
+            const questRespBtn = e.target.closest('[data-soc-quest-respond]');
+            if (questRespBtn) {
+                const action = questRespBtn.getAttribute('data-soc-quest-respond');
+                const questId = questRespBtn.getAttribute('data-quest-id');
+                _setSocialNotice('Updating quest…');
+                Social.respondQuest(questId, action)
+                    .then(() => { _socialNotice = action === 'accept' ? 'Quest accepted.' : 'Quest declined.'; return _refreshSocial(host); })
+                    .catch(err => _setSocialNotice(err.message || 'Could not respond to quest.'));
+                return;
+            }
+
+            const cheerBtn = e.target.closest('[data-soc-quest-cheer]');
+            if (cheerBtn) {
+                const questId = cheerBtn.getAttribute('data-soc-quest-cheer');
+                Social.sendCheer(questId)
+                    .then(() => { _socialNotice = 'Encouragement sent.'; return _refreshSocial(host); })
+                    .catch(err => _setSocialNotice(err.message || 'Could not send encouragement.'));
                 return;
             }
 
@@ -1173,5 +1681,5 @@ const Journey = (function () {
     // can check "did finishing this lesson just cross one of these" without
     // duplicating the list — same milestones, same test functions, one
     // source of truth.
-    return { render, collect, MILESTONES };
+    return { render, openView, collect, MILESTONES };
 })();

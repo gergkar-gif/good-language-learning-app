@@ -9704,4 +9704,121 @@
   .story-body.lt-book-body .story-paragraph { text-indent: 1.1em; }
 }
 
+/* ============================================
+   SOCIAL (Friends, Weekly Board, Friend Quests)
+   ============================================ */
+.soc-root { display: flex; flex-direction: column; gap: 24px; }
+.soc-status-banner {
+  margin: 0;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+.soc-note { margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.soc-footnote { margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: var(--muted); }
+.soc-label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.soc-form-stack { display: flex; flex-direction: column; gap: 10px; }
+.soc-inline-row { display: flex; gap: 8px; align-items: center; }
+.soc-inline-row .dk-editor-input { flex: 1; min-width: 0; }
+.soc-inline-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 8px; }
+.soc-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.soc-divider::before, .soc-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.soc-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font: 600 11px/1 var(--font-ui);
+  letter-spacing: 0.04em;
+  background: var(--sand, #E9DFC9);
+  color: var(--primary);
+}
+.soc-avatar.is-self {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+.soc-quest-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.soc-quest-title-wrap { display: flex; align-items: center; gap: 10px; }
+.soc-quest-title { margin: 0; font-size: 15px; font-weight: 600; color: var(--text); }
+.soc-quest-sub { margin: 2px 0 0; font-size: 13px; color: var(--muted); }
+.soc-status-week { font-size: 12px; color: var(--muted); }
+.soc-status-done { font-size: 12px; font-weight: 600; color: var(--success); }
+.soc-quest-meter { margin: 8px 0 10px; }
+.soc-quest-meter .jr-fill.is-done { background: var(--success); }
+.soc-quest-nums { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
+.soc-quest-nums strong { color: var(--text); }
+.soc-cheer-note { margin: 8px 0 4px; font-size: 13px; color: var(--success); }
+.soc-board-list, .soc-list { list-style: none; margin: 0; padding: 0; }
+.soc-board-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+.soc-board-row:first-child { border-top: 0; }
+.soc-board-row.is-self .soc-pos { color: var(--accent-text, var(--accent)); font-weight: 700; }
+.soc-pos { width: 20px; text-align: right; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.soc-board-meta { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.soc-board-name { font-size: 14px; font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.soc-you-tag { font-size: 11px; font-weight: 500; color: var(--muted); margin-left: 4px; }
+.soc-board-sub { font-size: 12px; color: var(--muted); }
+.soc-board-xp { font-size: 14px; font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+.soc-code-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0 14px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.soc-code-val { margin: 0; font: 600 16px/1.2 var(--font-ui); letter-spacing: 0.08em; color: var(--text); }
+.soc-invite-banner {
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius-sm);
+}
+.soc-invite-banner p { margin: 0; font-size: 13px; color: var(--text); }
+.soc-subsection { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); }
+.soc-subhead { margin: 0 0 8px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.soc-friend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+}
+.soc-friend-row:first-child { border-top: 0; }
+.soc-friend-id { display: flex; align-items: center; gap: 10px; min-width: 0; }
+
+
 

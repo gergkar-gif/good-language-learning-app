@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-11-26-tts-pitch';
+const CACHE_VERSION = 'v2026-11-26-social';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -113,6 +113,7 @@ const PRECACHE_ASSETS = [
     'engine/guide.js',
     'engine/home.js',
     'engine/sync.js',
+    'engine/social.js',
     'engine/init.js',
     'engine/bugreport.js',
 

@@ -525,6 +525,17 @@ async function initialiseApp() {
         Workshop.open(minigameParam, { autoStart: true, count, duration, mode, skill, direction });
     }
 
+    // Deep-link to a friend invite via ?friend=PRL-XXXXX
+    if (typeof Social !== 'undefined' && typeof Social.captureFriendInviteFromUrl === 'function') {
+        const invitedCode = Social.captureFriendInviteFromUrl();
+        if (invitedCode) {
+            showTab('journey', document.querySelector('.nav button[data-tab="journey"]'));
+            if (typeof Journey !== 'undefined' && typeof Journey.openView === 'function') {
+                Journey.openView('social');
+            }
+        }
+    }
+
     // Register Service Worker for offline PWA capabilities
     _initServiceWorker();
 }

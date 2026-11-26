@@ -388,6 +388,10 @@ async function handlePostState(request, env, cors) {
         return json({ error: 'State payload exceeds cloud storage limit' }, 413, cors);
     }
 
+    const existingRow = await env.DB.prepare('SELECT state_json FROM users WHERE id = ?')
+        .bind(session.sub).first();
+    const prevState = existingRow && existingRow.state_json ? parseJsonSafe(existingRow.state_json, null) : null;
+
     const updatedAt = Date.now();
     // A save sent while the page closes can't read the cloud first, so it
     // says which cloud version it was based on. Write only if nobody has
@@ -399,11 +403,22 @@ async function handlePostState(request, env, cors) {
         if (!result.meta || !result.meta.changes) {
             return json({ error: 'Cloud copy is newer', conflict: true }, 409, cors);
         }
+        try {
+            await updateSocialStatsFromSync(env, session.sub, prevState, payload.state, updatedAt);
+        } catch (err) {
+            console.error('updateSocialStatsFromSync failed:', err && err.message ? err.message : err);
+        }
         return json({ ok: true, updatedAt }, 200, cors);
     }
 
     await env.DB.prepare('UPDATE users SET state_json = ?, updated_at = ? WHERE id = ?')
         .bind(serialized, updatedAt, session.sub).run();
+
+    try {
+        await updateSocialStatsFromSync(env, session.sub, prevState, payload.state, updatedAt);
+    } catch (err) {
+        console.error('updateSocialStatsFromSync failed:', err && err.message ? err.message : err);
+    }
 
     return json({ ok: true, updatedAt }, 200, cors);
 }
@@ -512,11 +527,968 @@ async function handlePostBook(request, env, cors) {
     return json({ ok: true, updatedAt }, 200, cors);
 }
 
+// ----------------------------------------
+// SOCIAL LAYER (Profiles, Verified Weekly Stats, Friends, Friend Quests)
+// ----------------------------------------
+// Strictly opt-in. Weekly leaderboard XP is derived server-side by diffing
+// synced state_json snapshots (newly completed lessons, newly read stories,
+// and daily-capped review XP within a 48h window) with a 120 XP/day cap so
+// steady daily study beats grinding and client-side XP edits have no effect.
+
+const MAX_DAILY_BOARD_XP = 120;
+const MAX_DAILY_REVIEW_XP = 60;
+const SOCIAL_LESSON_XP = 20;
+const SOCIAL_STORY_XP = 15;
+const MAX_SYNC_LESSONS_PER_POST = 15;
+const MAX_SYNC_STORIES_PER_POST = 15;
+const MAX_PENDING_FRIEND_REQUESTS = 20;
+const CHEER_COOLDOWN_MS = 20 * 60 * 60 * 1000;
+const FRIEND_CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+
+const QUEST_TYPES = {
+    lessons: { type: 'lessons', label: 'Complete lessons together', unit: 'lessons', target: 6 },
+    stories: { type: 'stories', label: 'Read stories together', unit: 'stories', target: 4 },
+    active_days: { type: 'active_days', label: 'Study days together', unit: 'days', target: 8 },
+    xp: { type: 'xp', label: 'Earn XP together', unit: 'XP', target: 350 }
+};
+
+let _socialTablesEnsured = false;
+
+async function ensureSocialTables(env) {
+    if (_socialTablesEnsured) return;
+    await env.DB.prepare(
+        'CREATE TABLE IF NOT EXISTS user_profiles (user_id TEXT PRIMARY KEY, display_name TEXT NOT NULL, friend_code TEXT UNIQUE NOT NULL, social_opt_in INTEGER NOT NULL DEFAULT 0, public_board_opt_in INTEGER NOT NULL DEFAULT 0, active_course TEXT NOT NULL DEFAULT \'es-latam\', updated_at INTEGER NOT NULL)'
+    ).run();
+    await env.DB.prepare(
+        'CREATE TABLE IF NOT EXISTS user_weekly_stats (user_id TEXT NOT NULL, week_key TEXT NOT NULL, capped_xp INTEGER NOT NULL DEFAULT 0, active_days_json TEXT NOT NULL DEFAULT \'[]\', daily_xp_json TEXT NOT NULL DEFAULT \'{}\', lessons_done INTEGER NOT NULL DEFAULT 0, stories_done INTEGER NOT NULL DEFAULT 0, rank INTEGER NOT NULL DEFAULT 1, streak_days INTEGER NOT NULL DEFAULT 0, updated_at INTEGER NOT NULL, PRIMARY KEY (user_id, week_key))'
+    ).run();
+    await env.DB.prepare(
+        'CREATE INDEX IF NOT EXISTS idx_weekly_board ON user_weekly_stats (week_key, capped_xp DESC)'
+    ).run();
+    await env.DB.prepare(
+        'CREATE TABLE IF NOT EXISTS friendships (user_a TEXT NOT NULL, user_b TEXT NOT NULL, status TEXT NOT NULL, created_at INTEGER NOT NULL, updated_at INTEGER NOT NULL, PRIMARY KEY (user_a, user_b))'
+    ).run();
+    await env.DB.prepare(
+        'CREATE TABLE IF NOT EXISTS friend_quests (id TEXT PRIMARY KEY, week_key TEXT NOT NULL, user_a TEXT NOT NULL, user_b TEXT NOT NULL, quest_type TEXT NOT NULL, target INTEGER NOT NULL, progress_a INTEGER NOT NULL DEFAULT 0, progress_b INTEGER NOT NULL DEFAULT 0, status TEXT NOT NULL DEFAULT \'pending\', cheer_a_at INTEGER, cheer_b_at INTEGER, completed_at INTEGER, created_at INTEGER NOT NULL)'
+    ).run();
+    _socialTablesEnsured = true;
+}
+
+function parseJsonSafe(raw, fallback) {
+    if (raw == null) return fallback;
+    if (typeof raw === 'object') return raw;
+    if (typeof raw !== 'string') return fallback;
+    try {
+        return JSON.parse(raw);
+    } catch (e) {
+        return fallback;
+    }
+}
+
+function utcDateString(ms) {
+    return new Date(ms).toISOString().slice(0, 10);
+}
+
+function getIsoWeekKey(ms) {
+    const d = new Date(ms);
+    const utc = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+    const dayNum = utc.getUTCDay() || 7;
+    utc.setUTCDate(utc.getUTCDate() + 4 - dayNum);
+    const yearStart = new Date(Date.UTC(utc.getUTCFullYear(), 0, 1));
+    const weekNo = Math.ceil((((utc - yearStart) / 86400000) + 1) / 7);
+    return utc.getUTCFullYear() + '-W' + String(weekNo).padStart(2, '0');
+}
+
+function getPreviousIsoWeekKey(ms) {
+    return getIsoWeekKey(ms - 7 * 86400000);
+}
+
+function rankForXP(xp) {
+    const safeXp = Math.max(0, Number(xp) || 0);
+    let rank = 1;
+    while (100 * rank * (rank + 1) / 2 <= safeXp) rank++;
+    return rank;
+}
+
+function generateFriendCode() {
+    const bytes = crypto.getRandomValues(new Uint8Array(5));
+    let suffix = '';
+    for (let i = 0; i < bytes.length; i++) {
+        suffix += FRIEND_CODE_ALPHABET[bytes[i] % FRIEND_CODE_ALPHABET.length];
+    }
+    return 'PRL-' + suffix;
+}
+
+function sanitizeDisplayName(raw) {
+    if (typeof raw !== 'string') return '';
+    // Strip control chars and emoji ranges; keep letters, digits, spaces, basic punctuation
+    const cleaned = raw
+        .replace(/[\u0000-\u001F\u007F]/g, '')
+        .replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{1F1E6}-\u{1F1FF}]/gu, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+    if (cleaned.length < 2 || cleaned.length > 24) return '';
+    return cleaned;
+}
+
+function sanitizeCourseCode(raw) {
+    if (typeof raw !== 'string') return 'es-latam';
+    const clean = raw.trim().toLowerCase();
+    return /^[a-z]{2}(-[a-z]{2,8})?$/.test(clean) ? clean : 'es-latam';
+}
+
+function extractCompletedSets(state) {
+    const lessons = new Set();
+    const stories = new Set();
+    if (!state || typeof state !== 'object') return { lessons, stories };
+
+    Object.keys(state).forEach(course => {
+        if (course === '_global') return;
+        const bucket = state[course];
+        if (!bucket || typeof bucket !== 'object') return;
+
+        const prog = parseJsonSafe(bucket.progress, null);
+        if (prog && typeof prog === 'object') {
+            Object.keys(prog).forEach(lessonId => {
+                if (prog[lessonId]) lessons.add(course + ':' + lessonId);
+            });
+        }
+
+        const read = parseJsonSafe(bucket.readStories, null);
+        if (Array.isArray(read)) {
+            read.forEach(storyId => {
+                if (typeof storyId === 'string' && storyId) stories.add(course + ':' + storyId);
+            });
+        } else if (read && typeof read === 'object') {
+            Object.keys(read).forEach(storyId => {
+                if (read[storyId]) stories.add(course + ':' + storyId);
+            });
+        }
+    });
+
+    return { lessons, stories };
+}
+
+function extractXpState(state) {
+    if (!state || typeof state !== 'object' || !state._global) {
+        return { total: 0, history: {} };
+    }
+    const parsed = parseJsonSafe(state._global.spanishApp_xp, null);
+    if (!parsed || typeof parsed !== 'object') {
+        return { total: 0, history: {} };
+    }
+    return {
+        total: Math.max(0, Number(parsed.total) || 0),
+        history: (parsed.history && typeof parsed.history === 'object') ? parsed.history : {}
+    };
+}
+
+function computeStreakDays(history, nowMs) {
+    if (!history || typeof history !== 'object') return 0;
+    let streak = 0;
+    for (let offset = 0; offset < 365; offset++) {
+        const d = utcDateString(nowMs - offset * 86400000);
+        const rec = history[d];
+        const hasActivity = rec && (
+            (typeof rec === 'number' && rec > 0) ||
+            (typeof rec === 'object' && ((Number(rec.total) || 0) > 0 || (Number(rec.reviewsDone) || 0) > 0 || (Number(rec.lessonsDone) || 0) > 0 || (Number(rec.storiesDone) || 0) > 0))
+        );
+        if (hasActivity) {
+            streak++;
+        } else if (offset === 0) {
+            // Today not yet completed does not break yesterday's streak
+            continue;
+        } else {
+            break;
+        }
+    }
+    return streak;
+}
+
+async function updateSocialStatsFromSync(env, userId, prevState, nextState, nowMs) {
+    await ensureSocialTables(env);
+    const profile = await env.DB.prepare(
+        'SELECT social_opt_in FROM user_profiles WHERE user_id = ?'
+    ).bind(userId).first();
+    if (!profile || !profile.social_opt_in) return;
+
+    const weekKey = getIsoWeekKey(nowMs);
+    const todayUtc = utcDateString(nowMs);
+    const yesterdayUtc = utcDateString(nowMs - 86400000);
+
+    const nextXp = extractXpState(nextState);
+    const rank = rankForXP(nextXp.total);
+    const streakDays = computeStreakDays(nextXp.history, nowMs);
+
+    const existingStats = await env.DB.prepare(
+        'SELECT * FROM user_weekly_stats WHERE user_id = ? AND week_key = ?'
+    ).bind(userId, weekKey).first();
+
+    let cappedXp = existingStats ? (Number(existingStats.capped_xp) || 0) : 0;
+    let lessonsDone = existingStats ? (Number(existingStats.lessons_done) || 0) : 0;
+    let storiesDone = existingStats ? (Number(existingStats.stories_done) || 0) : 0;
+    const activeDays = new Set(parseJsonSafe(existingStats && existingStats.active_days_json, []));
+    const dailyXp = parseJsonSafe(existingStats && existingStats.daily_xp_json, {});
+
+    let newLessons = 0;
+    let newStories = 0;
+    let xpDeltaAdded = 0;
+    let activeDaysDelta = 0;
+
+    // First sync ever establishes the baseline so importing old progress cannot
+    // backfill the current week's board.
+    if (prevState && typeof prevState === 'object') {
+        const prevSets = extractCompletedSets(prevState);
+        const nextSets = extractCompletedSets(nextState);
+        const prevXp = extractXpState(prevState);
+
+        nextSets.lessons.forEach(id => {
+            if (!prevSets.lessons.has(id)) newLessons++;
+        });
+        nextSets.stories.forEach(id => {
+            if (!prevSets.stories.has(id)) newStories++;
+        });
+
+        newLessons = Math.min(newLessons, MAX_SYNC_LESSONS_PER_POST);
+        newStories = Math.min(newStories, MAX_SYNC_STORIES_PER_POST);
+
+        const allowedDates = [todayUtc, yesterdayUtc].filter(d => getIsoWeekKey(Date.parse(d + 'T12:00:00Z')) === weekKey);
+
+        allowedDates.forEach(d => {
+            if (!dailyXp[d] || typeof dailyXp[d] !== 'object') {
+                dailyXp[d] = { total: 0, review: 0 };
+            }
+            const dayRec = dailyXp[d];
+            const prevDayHist = prevXp.history[d];
+            const nextDayHist = nextXp.history[d];
+            const prevRev = (prevDayHist && typeof prevDayHist === 'object') ? Math.max(0, Number(prevDayHist.review) || 0) : 0;
+            const nextRev = (nextDayHist && typeof nextDayHist === 'object') ? Math.max(0, Number(nextDayHist.review) || 0) : 0;
+            const revDeltaRaw = Math.max(0, nextRev - prevRev);
+
+            const revRoom = Math.max(0, MAX_DAILY_REVIEW_XP - (Number(dayRec.review) || 0));
+            const revCredited = Math.min(revDeltaRaw, revRoom);
+
+            const lessonStoryXp = (d === todayUtc)
+                ? (newLessons * SOCIAL_LESSON_XP + newStories * SOCIAL_STORY_XP)
+                : 0;
+
+            const rawDayAdd = revCredited + lessonStoryXp;
+            if (rawDayAdd > 0) {
+                const dayRoom = Math.max(0, MAX_DAILY_BOARD_XP - (Number(dayRec.total) || 0));
+                const dayCredited = Math.min(rawDayAdd, dayRoom);
+                dayRec.review = (Number(dayRec.review) || 0) + revCredited;
+                dayRec.total = (Number(dayRec.total) || 0) + dayCredited;
+                cappedXp += dayCredited;
+                xpDeltaAdded += dayCredited;
+
+                if (!activeDays.has(d)) {
+                    activeDays.add(d);
+                    activeDaysDelta++;
+                }
+            }
+        });
+
+        lessonsDone += newLessons;
+        storiesDone += newStories;
+    }
+
+    const activeDaysArr = Array.from(activeDays).sort();
+    await env.DB.prepare(
+        'INSERT INTO user_weekly_stats (user_id, week_key, capped_xp, active_days_json, daily_xp_json, lessons_done, stories_done, rank, streak_days, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(user_id, week_key) DO UPDATE SET capped_xp = excluded.capped_xp, active_days_json = excluded.active_days_json, daily_xp_json = excluded.daily_xp_json, lessons_done = excluded.lessons_done, stories_done = excluded.stories_done, rank = excluded.rank, streak_days = excluded.streak_days, updated_at = excluded.updated_at'
+    ).bind(
+        userId,
+        weekKey,
+        cappedXp,
+        JSON.stringify(activeDaysArr),
+        JSON.stringify(dailyXp),
+        lessonsDone,
+        storiesDone,
+        rank,
+        streakDays,
+        nowMs
+    ).run();
+
+    // Advance any active Friend Quest for this user in the current week
+    if (newLessons > 0 || newStories > 0 || xpDeltaAdded > 0 || activeDaysDelta > 0) {
+        const quest = await env.DB.prepare(
+            'SELECT * FROM friend_quests WHERE week_key = ? AND status = \'active\' AND (user_a = ? OR user_b = ?)'
+        ).bind(weekKey, userId, userId).first();
+
+        if (quest) {
+            let delta = 0;
+            if (quest.quest_type === 'lessons') delta = newLessons;
+            else if (quest.quest_type === 'stories') delta = newStories;
+            else if (quest.quest_type === 'active_days') delta = activeDaysDelta;
+            else if (quest.quest_type === 'xp') delta = xpDeltaAdded;
+
+            if (delta > 0) {
+                const isA = quest.user_a === userId;
+                const nextA = (Number(quest.progress_a) || 0) + (isA ? delta : 0);
+                const nextB = (Number(quest.progress_b) || 0) + (isA ? 0 : delta);
+                const done = (nextA + nextB) >= (Number(quest.target) || 1);
+                const nextStatus = done ? 'completed' : 'active';
+                const completedAt = done ? (quest.completed_at || nowMs) : null;
+
+                await env.DB.prepare(
+                    'UPDATE friend_quests SET progress_a = ?, progress_b = ?, status = ?, completed_at = ? WHERE id = ?'
+                ).bind(nextA, nextB, nextStatus, completedAt, quest.id).run();
+            }
+        }
+    }
+}
+
+async function handleGetSocialProfile(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+    await ensureSocialTables(env);
+
+    const profile = await env.DB.prepare(
+        'SELECT user_id, display_name, friend_code, social_opt_in, public_board_opt_in, active_course, updated_at FROM user_profiles WHERE user_id = ?'
+    ).bind(session.sub).first();
+
+    const weekKey = getIsoWeekKey(Date.now());
+    const pendingFriends = await env.DB.prepare(
+        'SELECT COUNT(*) AS n FROM friendships WHERE user_b = ? AND status = \'pending\''
+    ).bind(session.sub).first();
+    const pendingQuests = await env.DB.prepare(
+        'SELECT COUNT(*) AS n FROM friend_quests WHERE user_b = ? AND week_key = ? AND status = \'pending\''
+    ).bind(session.sub, weekKey).first();
+
+    if (!profile) {
+        return json({
+            optedIn: false,
+            profile: null,
+            weekKey,
+            pendingFriendRequests: pendingFriends ? pendingFriends.n : 0,
+            pendingQuestInvites: pendingQuests ? pendingQuests.n : 0
+        }, 200, cors);
+    }
+
+    return json({
+        optedIn: Boolean(profile.social_opt_in),
+        profile: {
+            displayName: profile.display_name,
+            friendCode: profile.friend_code,
+            socialOptIn: Boolean(profile.social_opt_in),
+            publicBoardOptIn: Boolean(profile.public_board_opt_in),
+            activeCourse: profile.active_course,
+            updatedAt: profile.updated_at
+        },
+        weekKey,
+        pendingFriendRequests: pendingFriends ? pendingFriends.n : 0,
+        pendingQuestInvites: pendingQuests ? pendingQuests.n : 0
+    }, 200, cors);
+}
+
+async function handlePostSocialProfile(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+    await ensureSocialTables(env);
+
+    let body;
+    try {
+        body = await request.json();
+    } catch (e) {
+        return json({ error: 'Bad request' }, 400, cors);
+    }
+
+    const existing = await env.DB.prepare(
+        'SELECT * FROM user_profiles WHERE user_id = ?'
+    ).bind(session.sub).first();
+
+    const socialOptIn = typeof body.socialOptIn === 'boolean'
+        ? (body.socialOptIn ? 1 : 0)
+        : (existing ? existing.social_opt_in : 1);
+
+    const publicBoardOptIn = typeof body.publicBoardOptIn === 'boolean'
+        ? (body.publicBoardOptIn ? 1 : 0)
+        : (existing ? existing.public_board_opt_in : 0);
+
+    const activeCourse = body.activeCourse
+        ? sanitizeCourseCode(body.activeCourse)
+        : (existing ? existing.active_course : 'es-latam');
+
+    let displayName = existing ? existing.display_name : '';
+    if (typeof body.displayName === 'string') {
+        const cleaned = sanitizeDisplayName(body.displayName);
+        if (!cleaned) {
+            return json({ error: 'Display name must be 2 to 24 characters (no emojis).' }, 400, cors);
+        }
+        displayName = cleaned;
+    } else if (!displayName && socialOptIn) {
+        return json({ error: 'Enter a display name (2 to 24 characters).' }, 400, cors);
+    }
+
+    let friendCode = existing ? existing.friend_code : '';
+    if (!friendCode) {
+        for (let attempt = 0; attempt < 6; attempt++) {
+            const candidate = generateFriendCode();
+            const taken = await env.DB.prepare(
+                'SELECT 1 AS found FROM user_profiles WHERE friend_code = ?'
+            ).bind(candidate).first();
+            if (!taken) {
+                friendCode = candidate;
+                break;
+            }
+        }
+        if (!friendCode) return json({ error: 'Could not generate friend code' }, 500, cors);
+    }
+
+    const nowMs = Date.now();
+    await env.DB.prepare(
+        'INSERT INTO user_profiles (user_id, display_name, friend_code, social_opt_in, public_board_opt_in, active_course, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?) ON CONFLICT(user_id) DO UPDATE SET display_name = excluded.display_name, social_opt_in = excluded.social_opt_in, public_board_opt_in = excluded.public_board_opt_in, active_course = excluded.active_course, updated_at = excluded.updated_at'
+    ).bind(session.sub, displayName || 'Learner', friendCode, socialOptIn, publicBoardOptIn, activeCourse, nowMs).run();
+
+    // Seed current week's stats row with Rank/streak if opting in for the first time
+    if (socialOptIn) {
+        const weekKey = getIsoWeekKey(nowMs);
+        const existingStats = await env.DB.prepare(
+            'SELECT 1 AS found FROM user_weekly_stats WHERE user_id = ? AND week_key = ?'
+        ).bind(session.sub, weekKey).first();
+        if (!existingStats) {
+            const userRow = await env.DB.prepare('SELECT state_json FROM users WHERE id = ?').bind(session.sub).first();
+            const parsedState = userRow && userRow.state_json ? parseJsonSafe(userRow.state_json, null) : null;
+            const xp = extractXpState(parsedState);
+            await env.DB.prepare(
+                'INSERT INTO user_weekly_stats (user_id, week_key, capped_xp, active_days_json, daily_xp_json, lessons_done, stories_done, rank, streak_days, updated_at) VALUES (?, ?, 0, \'[]\', \'{}\', 0, 0, ?, ?, ?)'
+            ).bind(session.sub, weekKey, rankForXP(xp.total), computeStreakDays(xp.history, nowMs), nowMs).run();
+        }
+    }
+
+    return json({
+        ok: true,
+        optedIn: Boolean(socialOptIn),
+        profile: {
+            displayName: displayName || 'Learner',
+            friendCode,
+            socialOptIn: Boolean(socialOptIn),
+            publicBoardOptIn: Boolean(publicBoardOptIn),
+            activeCourse,
+            updatedAt: nowMs
+        }
+    }, 200, cors);
+}
+
+async function handleGetFriends(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+    await ensureSocialTables(env);
+
+    const weekKey = getIsoWeekKey(Date.now());
+    const rowsRes = await env.DB.prepare(
+        'SELECT user_a, user_b, status, created_at FROM friendships WHERE (user_a = ? OR user_b = ?) AND status IN (\'accepted\', \'pending\')'
+    ).bind(session.sub, session.sub).all();
+    const rels = (rowsRes && rowsRes.results) ? rowsRes.results : [];
+
+    const friends = [];
+    const incoming = [];
+    const outgoing = [];
+
+    for (let i = 0; i < rels.length; i++) {
+        const rel = rels[i];
+        const otherId = rel.user_a === session.sub ? rel.user_b : rel.user_a;
+        const prof = await env.DB.prepare(
+            'SELECT user_id, display_name, friend_code, social_opt_in, active_course FROM user_profiles WHERE user_id = ?'
+        ).bind(otherId).first();
+        if (!prof || !prof.social_opt_in) continue;
+
+        if (rel.status === 'accepted') {
+            const st = await env.DB.prepare(
+                'SELECT capped_xp, active_days_json, lessons_done, stories_done, rank, streak_days, updated_at FROM user_weekly_stats WHERE user_id = ? AND week_key = ?'
+            ).bind(otherId, weekKey).first();
+            const days = parseJsonSafe(st && st.active_days_json, []);
+            friends.push({
+                userId: otherId,
+                displayName: prof.display_name,
+                friendCode: prof.friend_code,
+                activeCourse: prof.active_course,
+                weeklyXp: st ? (Number(st.capped_xp) || 0) : 0,
+                activeDays: Array.isArray(days) ? days.length : 0,
+                lessonsDone: st ? (Number(st.lessons_done) || 0) : 0,
+                storiesDone: st ? (Number(st.stories_done) || 0) : 0,
+                rank: st ? (Number(st.rank) || 1) : 1,
+                streakDays: st ? (Number(st.streak_days) || 0) : 0
+            });
+        } else if (rel.status === 'pending') {
+            const item = {
+                userId: otherId,
+                displayName: prof.display_name,
+                friendCode: prof.friend_code,
+                activeCourse: prof.active_course,
+                createdAt: rel.created_at
+            };
+            if (rel.user_b === session.sub) incoming.push(item);
+            else outgoing.push(item);
+        }
+    }
+
+    friends.sort((a, b) => (b.weeklyXp - a.weeklyXp) || (b.activeDays - a.activeDays) || a.displayName.localeCompare(b.displayName));
+
+    return json({ weekKey, friends, incoming, outgoing }, 200, cors);
+}
+
+async function handleFriendRequest(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+    await ensureSocialTables(env);
+
+    let body;
+    try {
+        body = await request.json();
+    } catch (e) {
+        return json({ error: 'Bad request' }, 400, cors);
+    }
+
+    const myProfile = await env.DB.prepare(
+        'SELECT social_opt_in FROM user_profiles WHERE user_id = ?'
+    ).bind(session.sub).first();
+    if (!myProfile || !myProfile.social_opt_in) {
+        return json({ error: 'Enable your social profile first.' }, 403, cors);
+    }
+
+    const rawCode = typeof body.friendCode === 'string' ? body.friendCode.trim().toUpperCase() : '';
+    if (!/^PRL-[A-Z0-9]{4,8}$/.test(rawCode)) {
+        return json({ error: 'Enter a valid friend code (e.g. PRL-7K4M2).' }, 400, cors);
+    }
+
+    const target = await env.DB.prepare(
+        'SELECT user_id, display_name, social_opt_in FROM user_profiles WHERE friend_code = ?'
+    ).bind(rawCode).first();
+    if (!target || !target.social_opt_in) {
+        return json({ error: 'No learner found with that friend code.' }, 404, cors);
+    }
+    if (target.user_id === session.sub) {
+        return json({ error: 'That is your own friend code.' }, 400, cors);
+    }
+
+    const existing = await env.DB.prepare(
+        'SELECT user_a, user_b, status FROM friendships WHERE (user_a = ? AND user_b = ?) OR (user_a = ? AND user_b = ?)'
+    ).bind(session.sub, target.user_id, target.user_id, session.sub).first();
+
+    if (existing) {
+        if (existing.status === 'blocked') {
+            return json({ error: 'Unable to send a request to this learner.' }, 403, cors);
+        }
+        if (existing.status === 'accepted') {
+            return json({ ok: true, status: 'accepted', displayName: target.display_name }, 200, cors);
+        }
+        if (existing.status === 'pending' && existing.user_b === session.sub) {
+            // Mutual request: auto-accept
+            const nowMs = Date.now();
+            await env.DB.prepare(
+                'UPDATE friendships SET status = \'accepted\', updated_at = ? WHERE user_a = ? AND user_b = ?'
+            ).bind(nowMs, existing.user_a, existing.user_b).run();
+            return json({ ok: true, status: 'accepted', displayName: target.display_name }, 200, cors);
+        }
+        return json({ ok: true, status: 'pending', displayName: target.display_name }, 200, cors);
+    }
+
+    const pendingCount = await env.DB.prepare(
+        'SELECT COUNT(*) AS n FROM friendships WHERE user_a = ? AND status = \'pending\''
+    ).bind(session.sub).first();
+    if (pendingCount && pendingCount.n >= MAX_PENDING_FRIEND_REQUESTS) {
+        return json({ error: 'Too many pending friend requests.' }, 429, cors);
+    }
+
+    const nowMs = Date.now();
+    await env.DB.prepare(
+        'INSERT INTO friendships (user_a, user_b, status, created_at, updated_at) VALUES (?, ?, \'pending\', ?, ?)'
+    ).bind(session.sub, target.user_id, nowMs, nowMs).run();
+
+    return json({ ok: true, status: 'pending', displayName: target.display_name }, 200, cors);
+}
+
+async function handleFriendRespond(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+    await ensureSocialTables(env);
+
+    let body;
+    try {
+        body = await request.json();
+    } catch (e) {
+        return json({ error: 'Bad request' }, 400, cors);
+    }
+
+    const fromUserId = typeof body.userId === 'string' ? body.userId.trim() : '';
+    const action = typeof body.action === 'string' ? body.action.trim() : '';
+    if (!fromUserId || !['accept', 'decline', 'block'].includes(action)) {
+        return json({ error: 'Invalid request' }, 400, cors);
+    }
+
+    const rel = await env.DB.prepare(
+        'SELECT * FROM friendships WHERE user_a = ? AND user_b = ? AND status = \'pending\''
+    ).bind(fromUserId, session.sub).first();
+    if (!rel) return json({ error: 'Friend request not found' }, 404, cors);
+
+    const nowMs = Date.now();
+    if (action === 'accept') {
+        await env.DB.prepare(
+            'UPDATE friendships SET status = \'accepted\', updated_at = ? WHERE user_a = ? AND user_b = ?'
+        ).bind(nowMs, fromUserId, session.sub).run();
+    } else if (action === 'block') {
+        await env.DB.prepare(
+            'UPDATE friendships SET status = \'blocked\', updated_at = ? WHERE user_a = ? AND user_b = ?'
+        ).bind(nowMs, fromUserId, session.sub).run();
+    } else {
+        await env.DB.prepare(
+            'DELETE FROM friendships WHERE user_a = ? AND user_b = ?'
+        ).bind(fromUserId, session.sub).run();
+    }
+
+    return json({ ok: true, action }, 200, cors);
+}
+
+async function handleFriendRemove(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+    await ensureSocialTables(env);
+
+    let body;
+    try {
+        body = await request.json();
+    } catch (e) {
+        return json({ error: 'Bad request' }, 400, cors);
+    }
+
+    const otherId = typeof body.userId === 'string' ? body.userId.trim() : '';
+    if (!otherId) return json({ error: 'Missing userId' }, 400, cors);
+
+    await env.DB.prepare(
+        'DELETE FROM friendships WHERE (user_a = ? AND user_b = ?) OR (user_a = ? AND user_b = ?)'
+    ).bind(session.sub, otherId, otherId, session.sub).run();
+
+    return json({ ok: true, removed: true }, 200, cors);
+}
+
+async function handleGetLeaderboard(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+    await ensureSocialTables(env);
+
+    const weekKey = getIsoWeekKey(Date.now());
+    const myProfile = await env.DB.prepare(
+        'SELECT user_id, display_name, friend_code, social_opt_in, active_course FROM user_profiles WHERE user_id = ?'
+    ).bind(session.sub).first();
+
+    if (!myProfile || !myProfile.social_opt_in) {
+        return json({ weekKey, dailyCap: MAX_DAILY_BOARD_XP, entries: [] }, 200, cors);
+    }
+
+    const relsRes = await env.DB.prepare(
+        'SELECT user_a, user_b FROM friendships WHERE (user_a = ? OR user_b = ?) AND status = \'accepted\''
+    ).bind(session.sub, session.sub).all();
+    const rels = (relsRes && relsRes.results) ? relsRes.results : [];
+
+    const memberIds = new Set([session.sub]);
+    rels.forEach(r => {
+        memberIds.add(r.user_a === session.sub ? r.user_b : r.user_a);
+    });
+
+    const entries = [];
+    for (const uid of memberIds) {
+        const prof = uid === session.sub
+            ? myProfile
+            : await env.DB.prepare(
+                'SELECT user_id, display_name, friend_code, social_opt_in, active_course FROM user_profiles WHERE user_id = ?'
+            ).bind(uid).first();
+        if (!prof || !prof.social_opt_in) continue;
+
+        const st = await env.DB.prepare(
+            'SELECT capped_xp, active_days_json, lessons_done, stories_done, rank, streak_days FROM user_weekly_stats WHERE user_id = ? AND week_key = ?'
+        ).bind(uid, weekKey).first();
+        const days = parseJsonSafe(st && st.active_days_json, []);
+
+        entries.push({
+            userId: uid,
+            isSelf: uid === session.sub,
+            displayName: prof.display_name,
+            activeCourse: prof.active_course,
+            weeklyXp: st ? (Number(st.capped_xp) || 0) : 0,
+            activeDays: Array.isArray(days) ? days.length : 0,
+            lessonsDone: st ? (Number(st.lessons_done) || 0) : 0,
+            storiesDone: st ? (Number(st.stories_done) || 0) : 0,
+            rank: st ? (Number(st.rank) || 1) : 1,
+            streakDays: st ? (Number(st.streak_days) || 0) : 0
+        });
+    }
+
+    entries.sort((a, b) =>
+        (b.weeklyXp - a.weeklyXp) ||
+        (b.activeDays - a.activeDays) ||
+        (b.rank - a.rank) ||
+        a.displayName.localeCompare(b.displayName)
+    );
+
+    entries.forEach((entry, idx) => {
+        entry.position = idx + 1;
+    });
+
+    return json({
+        weekKey,
+        scope: 'friends',
+        dailyCap: MAX_DAILY_BOARD_XP,
+        reviewDailyCap: MAX_DAILY_REVIEW_XP,
+        entries
+    }, 200, cors);
+}
+
+async function formatQuestRow(env, quest, viewerId) {
+    if (!quest) return null;
+    const isA = quest.user_a === viewerId;
+    const partnerId = isA ? quest.user_b : quest.user_a;
+    const partnerProf = await env.DB.prepare(
+        'SELECT display_name, active_course FROM user_profiles WHERE user_id = ?'
+    ).bind(partnerId).first();
+    const meta = QUEST_TYPES[quest.quest_type] || QUEST_TYPES.xp;
+    const myProgress = isA ? (Number(quest.progress_a) || 0) : (Number(quest.progress_b) || 0);
+    const partnerProgress = isA ? (Number(quest.progress_b) || 0) : (Number(quest.progress_a) || 0);
+    const myLastCheer = isA ? quest.cheer_a_at : quest.cheer_b_at;
+    const partnerLastCheer = isA ? quest.cheer_b_at : quest.cheer_a_at;
+
+    return {
+        id: quest.id,
+        weekKey: quest.week_key,
+        questType: quest.quest_type,
+        label: meta.label,
+        unit: meta.unit,
+        target: Number(quest.target) || meta.target,
+        myProgress,
+        partnerProgress,
+        totalProgress: Math.min(Number(quest.target) || meta.target, myProgress + partnerProgress),
+        status: quest.status,
+        isInviter: isA,
+        partner: {
+            userId: partnerId,
+            displayName: partnerProf ? partnerProf.display_name : 'Friend',
+            activeCourse: partnerProf ? partnerProf.active_course : 'es-latam'
+        },
+        myLastCheerAt: myLastCheer || null,
+        partnerLastCheerAt: partnerLastCheer || null,
+        completedAt: quest.completed_at || null
+    };
+}
+
+async function handleGetQuests(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+    await ensureSocialTables(env);
+
+    const nowMs = Date.now();
+    const weekKey = getIsoWeekKey(nowMs);
+    const prevWeekKey = getPreviousIsoWeekKey(nowMs);
+
+    const currentRow = await env.DB.prepare(
+        'SELECT * FROM friend_quests WHERE week_key = ? AND status IN (\'pending\', \'active\', \'completed\') AND (user_a = ? OR user_b = ?) ORDER BY created_at DESC LIMIT 1'
+    ).bind(weekKey, session.sub, session.sub).first();
+
+    const prevRow = await env.DB.prepare(
+        'SELECT * FROM friend_quests WHERE week_key = ? AND status = \'completed\' AND (user_a = ? OR user_b = ?) ORDER BY completed_at DESC LIMIT 1'
+    ).bind(prevWeekKey, session.sub, session.sub).first();
+
+    return json({
+        weekKey,
+        questTypes: Object.values(QUEST_TYPES),
+        currentQuest: await formatQuestRow(env, currentRow, session.sub),
+        lastWeekCompleted: await formatQuestRow(env, prevRow, session.sub)
+    }, 200, cors);
+}
+
+async function handleStartQuest(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+    await ensureSocialTables(env);
+
+    let body;
+    try {
+        body = await request.json();
+    } catch (e) {
+        return json({ error: 'Bad request' }, 400, cors);
+    }
+
+    const friendId = typeof body.friendId === 'string' ? body.friendId.trim() : '';
+    const questType = (typeof body.questType === 'string' && QUEST_TYPES[body.questType]) ? body.questType : 'lessons';
+    if (!friendId || friendId === session.sub) {
+        return json({ error: 'Choose a friend for this quest.' }, 400, cors);
+    }
+
+    const friendship = await env.DB.prepare(
+        'SELECT 1 AS found FROM friendships WHERE ((user_a = ? AND user_b = ?) OR (user_a = ? AND user_b = ?)) AND status = \'accepted\''
+    ).bind(session.sub, friendId, friendId, session.sub).first();
+    if (!friendship) {
+        return json({ error: 'You can only start quests with accepted friends.' }, 403, cors);
+    }
+
+    const nowMs = Date.now();
+    const weekKey = getIsoWeekKey(nowMs);
+
+    const myBusy = await env.DB.prepare(
+        'SELECT 1 AS found FROM friend_quests WHERE week_key = ? AND status IN (\'pending\', \'active\', \'completed\') AND (user_a = ? OR user_b = ?)'
+    ).bind(weekKey, session.sub, session.sub).first();
+    if (myBusy) {
+        return json({ error: 'You already have a quest for this week.' }, 409, cors);
+    }
+
+    const friendBusy = await env.DB.prepare(
+        'SELECT 1 AS found FROM friend_quests WHERE week_key = ? AND status IN (\'pending\', \'active\', \'completed\') AND (user_a = ? OR user_b = ?)'
+    ).bind(weekKey, friendId, friendId).first();
+    if (friendBusy) {
+        return json({ error: 'That friend already has a quest this week.' }, 409, cors);
+    }
+
+    const meta = QUEST_TYPES[questType];
+    const id = randomToken();
+    await env.DB.prepare(
+        'INSERT INTO friend_quests (id, week_key, user_a, user_b, quest_type, target, progress_a, progress_b, status, created_at) VALUES (?, ?, ?, ?, ?, ?, 0, 0, \'pending\', ?)'
+    ).bind(id, weekKey, session.sub, friendId, meta.type, meta.target, nowMs).run();
+
+    const created = await env.DB.prepare('SELECT * FROM friend_quests WHERE id = ?').bind(id).first();
+    return json({ ok: true, quest: await formatQuestRow(env, created, session.sub) }, 200, cors);
+}
+
+async function handleAutoMatchQuest(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+    await ensureSocialTables(env);
+
+    let body = {};
+    try {
+        body = await request.json();
+    } catch (e) {
+        body = {};
+    }
+
+    const questType = (typeof body.questType === 'string' && QUEST_TYPES[body.questType]) ? body.questType : 'lessons';
+    const nowMs = Date.now();
+    const weekKey = getIsoWeekKey(nowMs);
+
+    const myBusy = await env.DB.prepare(
+        'SELECT 1 AS found FROM friend_quests WHERE week_key = ? AND status IN (\'pending\', \'active\', \'completed\') AND (user_a = ? OR user_b = ?)'
+    ).bind(weekKey, session.sub, session.sub).first();
+    if (myBusy) {
+        return json({ error: 'You already have a quest for this week.' }, 409, cors);
+    }
+
+    const relsRes = await env.DB.prepare(
+        'SELECT user_a, user_b FROM friendships WHERE (user_a = ? OR user_b = ?) AND status = \'accepted\''
+    ).bind(session.sub, session.sub).all();
+    const rels = (relsRes && relsRes.results) ? relsRes.results : [];
+
+    const candidates = [];
+    for (let i = 0; i < rels.length; i++) {
+        const friendId = rels[i].user_a === session.sub ? rels[i].user_b : rels[i].user_a;
+        const prof = await env.DB.prepare(
+            'SELECT user_id, social_opt_in, updated_at FROM user_profiles WHERE user_id = ?'
+        ).bind(friendId).first();
+        if (!prof || !prof.social_opt_in) continue;
+
+        const busy = await env.DB.prepare(
+            'SELECT 1 AS found FROM friend_quests WHERE week_key = ? AND status IN (\'pending\', \'active\', \'completed\') AND (user_a = ? OR user_b = ?)'
+        ).bind(weekKey, friendId, friendId).first();
+        if (busy) continue;
+
+        const st = await env.DB.prepare(
+            'SELECT updated_at FROM user_weekly_stats WHERE user_id = ? AND week_key = ?'
+        ).bind(friendId, weekKey).first();
+
+        candidates.push({
+            userId: friendId,
+            lastActive: (st && st.updated_at) ? Number(st.updated_at) : (Number(prof.updated_at) || 0)
+        });
+    }
+
+    if (!candidates.length) {
+        return json({
+            ok: true,
+            matched: false,
+            message: 'No friends are free for a quest this week yet.'
+        }, 200, cors);
+    }
+
+    candidates.sort((a, b) => b.lastActive - a.lastActive);
+    const partnerId = candidates[0].userId;
+    const meta = QUEST_TYPES[questType];
+    const id = randomToken();
+
+    await env.DB.prepare(
+        'INSERT INTO friend_quests (id, week_key, user_a, user_b, quest_type, target, progress_a, progress_b, status, created_at) VALUES (?, ?, ?, ?, ?, ?, 0, 0, \'active\', ?)'
+    ).bind(id, weekKey, session.sub, partnerId, meta.type, meta.target, nowMs).run();
+
+    const created = await env.DB.prepare('SELECT * FROM friend_quests WHERE id = ?').bind(id).first();
+    return json({ ok: true, matched: true, quest: await formatQuestRow(env, created, session.sub) }, 200, cors);
+}
+
+async function handleRespondQuest(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+    await ensureSocialTables(env);
+
+    let body;
+    try {
+        body = await request.json();
+    } catch (e) {
+        return json({ error: 'Bad request' }, 400, cors);
+    }
+
+    const questId = typeof body.questId === 'string' ? body.questId.trim() : '';
+    const action = typeof body.action === 'string' ? body.action.trim() : '';
+    if (!questId || !['accept', 'decline'].includes(action)) {
+        return json({ error: 'Invalid request' }, 400, cors);
+    }
+
+    const quest = await env.DB.prepare(
+        'SELECT * FROM friend_quests WHERE id = ? AND user_b = ? AND status = \'pending\''
+    ).bind(questId, session.sub).first();
+    if (!quest) return json({ error: 'Quest invite not found' }, 404, cors);
+
+    const nextStatus = action === 'accept' ? 'active' : 'declined';
+    await env.DB.prepare('UPDATE friend_quests SET status = ? WHERE id = ?')
+        .bind(nextStatus, questId).run();
+
+    const updated = await env.DB.prepare('SELECT * FROM friend_quests WHERE id = ?').bind(questId).first();
+    return json({ ok: true, quest: nextStatus === 'active' ? await formatQuestRow(env, updated, session.sub) : null }, 200, cors);
+}
+
+async function handleCheerQuest(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+    await ensureSocialTables(env);
+
+    let body;
+    try {
+        body = await request.json();
+    } catch (e) {
+        return json({ error: 'Bad request' }, 400, cors);
+    }
+
+    const questId = typeof body.questId === 'string' ? body.questId.trim() : '';
+    if (!questId) return json({ error: 'Missing questId' }, 400, cors);
+
+    const quest = await env.DB.prepare(
+        'SELECT * FROM friend_quests WHERE id = ? AND status IN (\'active\', \'completed\') AND (user_a = ? OR user_b = ?)'
+    ).bind(questId, session.sub, session.sub).first();
+    if (!quest) return json({ error: 'Quest not found' }, 404, cors);
+
+    const isA = quest.user_a === session.sub;
+    const lastCheer = isA ? quest.cheer_a_at : quest.cheer_b_at;
+    const nowMs = Date.now();
+    if (lastCheer && (nowMs - Number(lastCheer)) < CHEER_COOLDOWN_MS) {
+        return json({ ok: true, alreadySent: true }, 200, cors);
+    }
+
+    const col = isA ? 'cheer_a_at' : 'cheer_b_at';
+    await env.DB.prepare('UPDATE friend_quests SET ' + col + ' = ? WHERE id = ?')
+        .bind(nowMs, questId).run();
+
+    return json({ ok: true, sentAt: nowMs }, 200, cors);
+}
+
 async function handleDeleteAccount(request, env, cors) {
     const session = await requireSession(request, env);
     if (!session) return json({ error: 'Not signed in' }, 401, cors);
 
     await ensureBooksTable(env);
+    await ensureSocialTables(env);
 
     let email = typeof session.email === 'string' ? session.email.trim().toLowerCase() : '';
     if (!email) {
@@ -524,6 +1496,10 @@ async function handleDeleteAccount(request, env, cors) {
         email = userRow && typeof userRow.email === 'string' ? userRow.email.trim().toLowerCase() : '';
     }
 
+    await env.DB.prepare('DELETE FROM friend_quests WHERE user_a = ? OR user_b = ?').bind(session.sub, session.sub).run();
+    await env.DB.prepare('DELETE FROM friendships WHERE user_a = ? OR user_b = ?').bind(session.sub, session.sub).run();
+    await env.DB.prepare('DELETE FROM user_weekly_stats WHERE user_id = ?').bind(session.sub).run();
+    await env.DB.prepare('DELETE FROM user_profiles WHERE user_id = ?').bind(session.sub).run();
     await env.DB.prepare('DELETE FROM user_books WHERE user_id = ?').bind(session.sub).run();
     if (email) {
         await env.DB.prepare('DELETE FROM magic_links WHERE email = ?').bind(email).run();
@@ -570,6 +1546,18 @@ export default {
         if (path === '/sync/state' && request.method === 'POST') return handlePostState(request, env, cors);
         if (path === '/sync/book' && request.method === 'GET') return handleGetBook(request, env, cors);
         if (path === '/sync/book' && request.method === 'POST') return handlePostBook(request, env, cors);
+        if (path === '/social/profile' && request.method === 'GET') return handleGetSocialProfile(request, env, cors);
+        if (path === '/social/profile' && request.method === 'POST') return handlePostSocialProfile(request, env, cors);
+        if (path === '/social/friends' && request.method === 'GET') return handleGetFriends(request, env, cors);
+        if (path === '/social/friends/request' && request.method === 'POST') return handleFriendRequest(request, env, cors);
+        if (path === '/social/friends/respond' && request.method === 'POST') return handleFriendRespond(request, env, cors);
+        if (path === '/social/friends/remove' && request.method === 'POST') return handleFriendRemove(request, env, cors);
+        if (path === '/social/leaderboard' && request.method === 'GET') return handleGetLeaderboard(request, env, cors);
+        if (path === '/social/quests' && request.method === 'GET') return handleGetQuests(request, env, cors);
+        if (path === '/social/quests/start' && request.method === 'POST') return handleStartQuest(request, env, cors);
+        if (path === '/social/quests/auto-match' && request.method === 'POST') return handleAutoMatchQuest(request, env, cors);
+        if (path === '/social/quests/respond' && request.method === 'POST') return handleRespondQuest(request, env, cors);
+        if (path === '/social/quests/cheer' && request.method === 'POST') return handleCheerQuest(request, env, cors);
 
         return json({ error: 'Not found' }, 404, cors);
     }

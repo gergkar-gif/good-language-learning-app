@@ -1639,7 +1639,8 @@ const Sync = (function () {
     }
 
     const api = {
-        isLoggedIn, email, getUserName, logout, requestLink, completeVerify,
+        isLoggedIn, email, getUserName, getToken, getWorkerUrl: () => WORKER_URL,
+        logout, requestLink, completeVerify,
         loginWithGoogle, renderGoogleButton, promptGoogleOneTap,
         isGoogleAuthAvailable, getGoogleClientId,
         gatherSnapshot, applySnapshot, backup, restore, status,
