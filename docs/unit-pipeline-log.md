@@ -2427,3 +2427,12 @@ drafted by Antigravity from `notes/README.md`; read those notes as part of the u
 - The reviewer's read still found one dated-fact slip (the PRI "until 2000"); keep reading every text.
 - `check_unit_refs.py` disagrees with the knowledge sheets on where *por un lado… por otro lado* is
   first taught (B1 Unit 23 vs A2 Unit 28); agents left the recap unnumbered. Open for the level checklist.
+
+### 2026-11-26: ES B1 latam Units 19–24
+
+- **Second usage-limit stop and container restart, nothing lost:** the routine (save both diffs,
+  commit, resume the same agents after the reset) is now the norm for every second batch.
+- ~106k and ~133k a unit on the resumed runs; every check clean on return.
+- The reviewer's read found four small factual slips (Che's death twice, Brazil as a Spanish colony,
+  Cardoso as an economist); a reviewer fix again created a give-away: rerun check-content after every
+  hand edit, as done here.
