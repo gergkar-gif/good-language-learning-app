@@ -310,6 +310,10 @@
             },
             strengths,
             priorities,
+            feedback: {
+                strengths,
+                priorities
+            },
             errors: [],
             demonstratedSkills,
             weakSkills: turnCompletionRate < 0.7 ? [{ skillId: targetSkills[0] || (isWritten ? 'written_interaction' : 'oral_interaction'), confidence: 0.6 }] : [],

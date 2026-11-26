@@ -2323,6 +2323,13 @@ const SpeakingDriller = (function () {
             let result = null;
             if (engine) {
                 result = await engine.grade(dialogueTranscript, context);
+                if (result && result.aiEvaluated === false && typeof LocalGrader !== 'undefined' && LocalGrader.gradeConversation) {
+                    const localResult = LocalGrader.gradeConversation(_completedTurns, sc);
+                    localResult.aiEvaluated = false;
+                    localResult.offline = true;
+                    localResult.warning = result.warning;
+                    result = localResult;
+                }
             } else if (typeof LocalGrader !== 'undefined' && LocalGrader.gradeConversation) {
                 result = LocalGrader.gradeConversation(_completedTurns, sc);
             }

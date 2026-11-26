@@ -254,11 +254,11 @@
             }
 
             // Extract content from either OpenAI chat completions or direct Cloudflare Worker shape
-            let contentString = '';
+            let contentPayload = '';
             if (responseData && responseData.choices && responseData.choices[0] && responseData.choices[0].message) {
-                contentString = responseData.choices[0].message.content;
-            } else if (responseData && typeof responseData.content === 'string') {
-                contentString = responseData.content;
+                contentPayload = responseData.choices[0].message.content;
+            } else if (responseData && (typeof responseData.content === 'string' || (responseData.content && typeof responseData.content === 'object' && !Array.isArray(responseData.content)))) {
+                contentPayload = responseData.content;
             } else if (responseData && typeof responseData.overallScore === 'number') {
                 // Direct assessment object already parsed by worker
                 return GraderSchema.validateAndCleanResult(responseData, localStats);
@@ -267,10 +267,12 @@
             }
 
             try {
-                const parsedObject = this._parseJson(contentString);
+                const parsedObject = (contentPayload && typeof contentPayload === 'object' && !Array.isArray(contentPayload))
+                    ? contentPayload
+                    : this._parseJson(contentPayload);
                 return GraderSchema.validateAndCleanResult(parsedObject, localStats);
             } catch (parseError) {
-                parseError.rawContent = contentString;
+                parseError.rawContent = contentPayload;
                 parseError.omniRouteData = responseData;
                 if (retryCount < this.maxRetries) {
                     await this._sleep(this._backoff(retryCount));
@@ -287,6 +289,9 @@
          * - Trailing comma cleanup
          */
         _parseJson(content) {
+            if (content && typeof content === 'object' && !Array.isArray(content)) {
+                return content;
+            }
             let cleaned = String(content || '')
                 .trim()
                 .replace(/^```(?:json)?\s*/i, '')

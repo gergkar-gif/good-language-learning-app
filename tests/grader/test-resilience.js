@@ -33,6 +33,44 @@ async function testJsonRepair() {
     assert.strictEqual(parsed4.errors[0].explanation, "In Spanish, the verb 'llamar' is used with the preposition 'a' when referring to oneself.", 'Should sanitize inner quotes to single quotes');
     assert.strictEqual(parsed4.feedback.strengths[0], "You said 'bueno' naturally.", 'Should sanitize array inner quotes');
     console.log('✓ Unescaped internal double quote repair in string values');
+
+    // 5. Already-parsed object (Cloudflare Workers AI auto-parses JSON responses for some models)
+    const preParsedObj = {
+        overallScore: 85,
+        taskCompletion: 1,
+        dimensionScores: { taskCompletion: 1, grammar: 1, vocabulary: 0.9, complexity: 0.8, coherence: 1, naturalness: 0.9 },
+        demonstratedSkills: [{ skillId: 'written_interaction', confidence: 1 }],
+        weakSkills: [],
+        errors: [],
+        feedback: { strengths: ['Clear and polite'], priorities: [] }
+    };
+    const parsed5 = engine._parseJson(preParsedObj);
+    assert.strictEqual(parsed5.overallScore, 85, 'Should accept already-parsed object in _parseJson');
+
+    const origFetch = global.fetch;
+    try {
+        global.fetch = async () => ({
+            ok: true,
+            status: 200,
+            json: async () => ({
+                model: '@cf/mistralai/mistral-small-3.1-24b-instruct',
+                choices: [{ message: { role: 'assistant', content: preParsedObj } }]
+            })
+        });
+        const liveEngine = new GraderEngine({ endpoint: 'https://parlour-grader.gergkar.workers.dev/grade', maxRetries: 0 });
+        const graded = await liveEngine.grade('Hola, quiero un café con leche, por favor.', {
+            cefrLevel: 'A1',
+            taskType: 'written_exchange',
+            language: 'es',
+            modality: 'written'
+        });
+        assert.strictEqual(graded.aiEvaluated, true, 'Should mark AI evaluation as succeeded when worker returns object content');
+        assert.strictEqual(graded.overallScore, 85, 'Should preserve overallScore from object content');
+        assert.strictEqual(graded.feedback.strengths[0], 'Clear and polite', 'Should preserve strengths from object content');
+    } finally {
+        global.fetch = origFetch;
+    }
+    console.log('✓ Already-parsed object in choices[0].message.content (Workers AI)');
 }
 
 async function testSchemaSanitization() {

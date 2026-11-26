@@ -130,7 +130,8 @@ export default {
                         max_tokens: 1500
                     });
 
-                    const content = aiResult.response || aiResult.content || '';
+                    const rawContent = aiResult.response != null ? aiResult.response : (aiResult.content != null ? aiResult.content : '');
+                    const content = typeof rawContent === 'string' ? rawContent : JSON.stringify(rawContent);
                     return json({
                         model: m,
                         choices: [
