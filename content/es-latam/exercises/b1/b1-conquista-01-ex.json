@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "inutilizar",
-          "to disable, render useless"
+          "la conquista",
+          "conquest"
         ],
         [
           "el aliado",
           "ally"
         ],
         [
-          "el rehén",
-          "hostage"
+          "el emperador",
+          "emperor"
         ],
         [
-          "deteriorarse",
-          "to deteriorate, worsen"
+          "el soldado",
+          "soldier"
         ]
       ],
       "teaches": [
@@ -34,19 +34,19 @@
       "pairs": [
         [
           "expulsar",
-          "to expel"
+          "to expel, drive out"
         ],
         [
-          "el asedio",
-          "siege"
+          "sitiar",
+          "to besiege"
         ],
         [
-          "el suministro",
-          "supply"
+          "el intérprete",
+          "interpreter"
         ],
         [
-          "conspirar",
-          "to conspire, plot"
+          "fundar",
+          "to found"
         ]
       ],
       "teaches": [
@@ -57,11 +57,11 @@
       "id": "b1-conquista-01.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué hizo Cortés para sitiar Tenochtitlan desde el lago?",
+      "question": "What did Cortés do after he reached the coast of Mexico?",
       "options": [
-        "Botó trece bergantines armados con cañones en el lago.",
-        "Construyó un puente de piedra sobre el lago.",
-        "Prefirió no usar barcos y atacó solo por tierra."
+        "Fundó la ciudad de Veracruz.",
+        "Fundó la ciudad de Lima.",
+        "Fundó la ciudad de Cuzco."
       ],
       "correct": 0
     },
@@ -69,11 +69,11 @@
       "id": "b1-conquista-01.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Por qué fue tan importante la alianza de Cortés con Tlaxcala?",
+      "question": "What happened to the Spanish soldiers during the Noche Triste?",
       "options": [
-        "Porque los tlaxcaltecas aportaron más de cien mil guerreros al ejército invasor.",
-        "Porque Tlaxcala era un aliado tradicional de los mexica desde hacía generaciones.",
-        "Porque los tlaxcaltecas proporcionaron únicamente comida, sin ningún apoyo militar."
+        "Fueron expulsados de Tenochtitlan, y muchos murieron.",
+        "Fueron recibidos en Tenochtitlan por Moctezuma.",
+        "Fueron aliados de Tenochtitlan, y muchos ganaron."
       ],
       "correct": 0
     },
@@ -81,23 +81,22 @@
       "id": "b1-conquista-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Los españoles ___ expulsados violentamente de la ciudad durante la Noche Triste.",
-      "hint": "ser",
+      "sentence": "Los españoles ___ expulsados de la ciudad durante la Noche Triste.",
       "answer": "fueron",
+      "english": "The Spaniards were expelled from the city during the Noche Triste.",
       "teaches": [
         "ser-passive"
-      ],
-      "english": "The Spanish were violently expelled from the city during the Noche Triste."
+      ]
     },
     {
       "id": "b1-conquista-01.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué factor, además de la fuerza militar, inclinó decisivamente la balanza a favor de los españoles?",
+      "question": "Why do many historians say that Spanish weapons do not explain the fall of Tenochtitlan on their own?",
       "options": [
-        "Una epidemia de viruela que segó la vida del tlatoani Cuitláhuac.",
-        "La rendición voluntaria e inmediata de todos los pueblos mexicas.",
-        "La falta total de resistencia militar por parte de los mexica."
+        "Porque los aliados indígenas y la viruela también fueron importantes.",
+        "Porque los soldados españoles eran más que los aliados indígenas.",
+        "Porque los mexicas no tenían emperador ni soldados."
       ],
       "correct": 0
     },
@@ -106,30 +105,24 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Tenochtitlan",
-        "finalmente",
+        "Cortés",
         "fue",
-        "conquistada",
-        "el",
-        "13",
-        "de",
-        "agosto",
-        "de",
-        "1521."
+        "recibido",
+        "en",
+        "Tenochtitlan",
+        "por",
+        "Moctezuma."
       ],
       "solution": [
-        "Tenochtitlan",
-        "finalmente",
+        "Cortés",
         "fue",
-        "conquistada",
-        "el",
-        "13",
-        "de",
-        "agosto",
-        "de",
-        "1521."
+        "recibido",
+        "en",
+        "Tenochtitlan",
+        "por",
+        "Moctezuma."
       ],
-      "english": "Tenochtitlan finally fell on August 13, 1521.",
+      "english": "Cortés was received in Tenochtitlan by Moctezuma.",
       "teaches": [
         "ser-passive"
       ]
@@ -137,37 +130,40 @@
     {
       "id": "b1-conquista-01.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Marta",
-          "text": "¿Cayó Tenochtitlan de un día para otro, en un solo ataque sorpresa?"
+          "speaker": "Meg",
+          "text": "¿Quién recibió a Cortés en Tenochtitlan?"
         },
         {
-          "speaker": "Pablo",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "No, el asedio duró noventa y tres días, con trece bergantines armados en el lago.",
-        "Sí, la ciudad cayó en cuestión de horas sin ninguna resistencia previa.",
-        "No, porque Tenochtitlan nunca llegó a ser sitiada realmente."
+        "Moctezuma, el emperador de los mexicas.",
+        "Moctezuma, el emperador de los españoles.",
+        "Cortés, el emperador de los mexicas."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-conquest-vocab"
+      ]
     },
     {
       "id": "b1-conquista-01.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Cuauhtémoc fue capturado el mismo día en que cayó Tenochtitlan.",
+      "sentence": "Los españoles fueron expulsados de la ciudad.",
       "options": [
-        "Cuauhtémoc was captured the same day that Tenochtitlan fell.",
-        "Cuauhtémoc escaped and was never captured.",
-        "Cuauhtémoc surrendered voluntarily years before the siege began."
+        "The Spaniards were expelled from the city.",
+        "The Spaniards expelled the emperor from the city.",
+        "The Spaniards were welcomed into the city."
       ],
       "correct": 0,
       "teaches": [
-        "b1-conquest-vocab"
+        "ser-passive"
       ]
     }
   ]

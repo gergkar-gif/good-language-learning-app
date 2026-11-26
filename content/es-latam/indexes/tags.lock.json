@@ -322,14 +322,14 @@
    "reason": "read-through, all lessons"
   },
   "B1/colonial-economy": {
-   "locked": "2026-10-08",
+   "locked": "2026-11-26",
    "exercises": 63,
-   "reason": "read-through, all lessons"
+   "reason": "B1 latam batch 1-6: lessons re-pointed to one known skill each"
   },
   "B1/colonial-society": {
-   "locked": "2026-10-08",
+   "locked": "2026-11-26",
    "exercises": 63,
-   "reason": "read-through, all lessons"
+   "reason": "B1 latam batch 1-6: lessons re-pointed to one known skill each"
   },
   "B1/complex-opinions": {
    "locked": "2026-11-12",
@@ -347,9 +347,9 @@
    "reason": "ES B1 core close-out: six skills moved to core screens and thin skills filled (user, 2026-11-12)"
   },
   "B1/conquest": {
-   "locked": "2026-10-07",
+   "locked": "2026-11-26",
    "exercises": 63,
-   "reason": "read-through, all lessons"
+   "reason": "B1 latam batch 1-6: lessons re-pointed to one known skill each"
   },
   "B1/cuban-revolution": {
    "locked": "2026-10-08",
@@ -64084,12 +64084,14 @@
    "distractor_skills": {}
   },
   "b1-conquista-01.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-conquest-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-conquista-01.ex08": {
    "teaches": [
-    "b1-conquest-vocab"
+    "ser-passive"
    ],
    "distractor_skills": {}
   },
@@ -64115,7 +64117,7 @@
   },
   "b1-conquista-02.ex04": {
    "teaches": [
-    "pasiva-refleja"
+    "pluscuamperfecto"
    ],
    "distractor_skills": {}
   },
@@ -64125,17 +64127,19 @@
   },
   "b1-conquista-02.ex06": {
    "teaches": [
-    "pasiva-refleja"
+    "pluscuamperfecto"
    ],
    "distractor_skills": {}
   },
   "b1-conquista-02.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-conquest-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-conquista-02.ex08": {
    "teaches": [
-    "b1-conquest-vocab"
+    "pluscuamperfecto"
    ],
    "distractor_skills": {}
   },
@@ -64176,12 +64180,14 @@
    "distractor_skills": {}
   },
   "b1-conquista-03.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-conquest-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-conquista-03.ex08": {
    "teaches": [
-    "b1-conquest-vocab"
+    "gerundio-acciones-paralelas"
    ],
    "distractor_skills": {}
   },
@@ -64207,7 +64213,7 @@
   },
   "b1-conquista-04.ex04": {
    "teaches": [
-    "formal-cause-connectors"
+    "subjunctive-influence"
    ],
    "distractor_skills": {}
   },
@@ -64217,17 +64223,19 @@
   },
   "b1-conquista-04.ex06": {
    "teaches": [
-    "porque-y-por-eso"
+    "subjunctive-influence"
    ],
    "distractor_skills": {}
   },
   "b1-conquista-04.ex07": {
-   "teaches": [],
+   "teaches": [
+    "subjunctive-influence"
+   ],
    "distractor_skills": {}
   },
   "b1-conquista-04.ex08": {
    "teaches": [
-    "b1-conquest-vocab"
+    "subjunctive-influence"
    ],
    "distractor_skills": {}
   },
@@ -64253,7 +64261,7 @@
   },
   "b1-conquista-05.ex04": {
    "teaches": [
-    "ser-passive"
+    "opinion-verbs-mood"
    ],
    "distractor_skills": {}
   },
@@ -64263,17 +64271,19 @@
   },
   "b1-conquista-05.ex06": {
    "teaches": [
-    "ser-passive"
+    "opinion-verbs-mood"
    ],
    "distractor_skills": {}
   },
   "b1-conquista-05.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-conquest-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-conquista-05.ex08": {
    "teaches": [
-    "b1-conquest-vocab"
+    "opinion-verbs-mood"
    ],
    "distractor_skills": {}
   },
@@ -64291,9 +64301,12 @@
   },
   "b1-conquista-consolidation.ex03": {
    "teaches": [
-    "pasiva-refleja"
+    "pluscuamperfecto"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
   },
   "b1-conquista-consolidation.ex04": {
    "teaches": [
@@ -64303,9 +64316,12 @@
   },
   "b1-conquista-consolidation.ex05": {
    "teaches": [
-    "porque-y-por-eso"
+    "subjunctive-influence"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-indefinido"
+   }
   },
   "b1-conquista-consolidation.ex06": {
    "teaches": [
@@ -64314,13 +64330,13 @@
    "distractor_skills": {}
   },
   "b1-conquista-consolidation.ex07": {
-   "teaches": [
-    "pasiva-refleja"
-   ],
+   "teaches": [],
    "distractor_skills": {}
   },
   "b1-conquista-consolidation.ex08": {
-   "teaches": [],
+   "teaches": [
+    "opinion-verbs-mood"
+   ],
    "distractor_skills": {}
   },
   "b1-conquista-consolidation.ex09": {
@@ -64341,13 +64357,13 @@
   },
   "b1-conquista-consolidation.ex12": {
    "teaches": [
-    "b1-conquest-vocab"
+    "ser-passive"
    ],
    "distractor_skills": {}
   },
   "b1-conquista-consolidation.ex13": {
    "teaches": [
-    "b1-conquest-vocab"
+    "pluscuamperfecto"
    ],
    "distractor_skills": {}
   },
@@ -64358,7 +64374,9 @@
    "distractor_skills": {}
   },
   "b1-conquista-consolidation.ex15": {
-   "teaches": [],
+   "teaches": [
+    "subjunctive-influence"
+   ],
    "distractor_skills": {}
   },
   "b1-conquista-consolidation.ex16": {
@@ -64369,7 +64387,7 @@
   },
   "b1-conquista-consolidation.ex17": {
    "teaches": [
-    "formal-cause-connectors"
+    "opinion-verbs-mood"
    ],
    "distractor_skills": {}
   },
@@ -65046,7 +65064,7 @@
   },
   "b1-economiacolonial-01.ex04": {
    "teaches": [
-    "ser-passive"
+    "cuanto-mas-tanto-mas"
    ],
    "distractor_skills": {}
   },
@@ -65056,17 +65074,19 @@
   },
   "b1-economiacolonial-01.ex06": {
    "teaches": [
-    "ser-passive"
+    "cuanto-mas-tanto-mas"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-01.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-colonial-economy-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-01.ex08": {
    "teaches": [
-    "b1-colonial-economy-vocab"
+    "cuanto-mas-tanto-mas"
    ],
    "distractor_skills": {}
   },
@@ -65092,7 +65112,7 @@
   },
   "b1-economiacolonial-02.ex04": {
    "teaches": [
-    "pasiva-refleja"
+    "se-impersonal"
    ],
    "distractor_skills": {}
   },
@@ -65102,17 +65122,19 @@
   },
   "b1-economiacolonial-02.ex06": {
    "teaches": [
-    "pasiva-refleja"
+    "se-impersonal"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-02.ex07": {
-   "teaches": [],
+   "teaches": [
+    "se-impersonal"
+   ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-02.ex08": {
    "teaches": [
-    "b1-colonial-economy-vocab"
+    "se-impersonal"
    ],
    "distractor_skills": {}
   },
@@ -65138,7 +65160,7 @@
   },
   "b1-economiacolonial-03.ex04": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "ser-passive"
    ],
    "distractor_skills": {}
   },
@@ -65148,12 +65170,14 @@
   },
   "b1-economiacolonial-03.ex06": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "ser-passive"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-03.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-colonial-economy-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-03.ex08": {
@@ -65194,17 +65218,19 @@
   },
   "b1-economiacolonial-04.ex06": {
    "teaches": [
-    "formal-cause-connectors"
+    "prepositional-phrases"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-04.ex07": {
-   "teaches": [],
+   "teaches": [
+    "prepositional-phrases"
+   ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-04.ex08": {
    "teaches": [
-    "b1-colonial-economy-vocab"
+    "prepositional-phrases"
    ],
    "distractor_skills": {}
   },
@@ -65230,7 +65256,7 @@
   },
   "b1-economiacolonial-05.ex04": {
    "teaches": [
-    "ser-passive"
+    "contrast-concession-connectors"
    ],
    "distractor_skills": {}
   },
@@ -65240,17 +65266,19 @@
   },
   "b1-economiacolonial-05.ex06": {
    "teaches": [
-    "ser-passive"
+    "contrast-concession-connectors"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-05.ex07": {
-   "teaches": [],
+   "teaches": [
+    "contrast-concession-connectors"
+   ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-05.ex08": {
    "teaches": [
-    "b1-colonial-economy-vocab"
+    "contrast-concession-connectors"
    ],
    "distractor_skills": {}
   },
@@ -65262,31 +65290,31 @@
   },
   "b1-economiacolonial-consolidation.ex02": {
    "teaches": [
-    "ser-passive"
+    "cuanto-mas-tanto-mas"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-consolidation.ex03": {
    "teaches": [
-    "pasiva-refleja"
+    "se-impersonal"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-consolidation.ex04": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "ser-passive"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-consolidation.ex05": {
    "teaches": [
-    "formal-cause-connectors"
+    "prepositional-phrases"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-consolidation.ex06": {
    "teaches": [
-    "b1-colonial-economy-vocab"
+    "contrast-concession-connectors"
    ],
    "distractor_skills": {}
   },
@@ -65295,7 +65323,9 @@
    "distractor_skills": {}
   },
   "b1-economiacolonial-consolidation.ex08": {
-   "teaches": [],
+   "teaches": [
+    "cuanto-mas-tanto-mas"
+   ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-consolidation.ex09": {
@@ -65316,40 +65346,42 @@
   },
   "b1-economiacolonial-consolidation.ex12": {
    "teaches": [
-    "pasiva-refleja"
+    "se-impersonal"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-consolidation.ex13": {
    "teaches": [
-    "formal-cause-connectors"
+    "ser-passive"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-consolidation.ex14": {
-   "teaches": [],
+   "teaches": [
+    "prepositional-phrases"
+   ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-consolidation.ex15": {
-   "teaches": [],
+   "teaches": [
+    "contrast-concession-connectors"
+   ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-consolidation.ex16": {
    "teaches": [
-    "ser-passive"
+    "cuanto-mas-tanto-mas"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-consolidation.ex17": {
    "teaches": [
-    "b1-colonial-economy-vocab"
+    "prepositional-phrases"
    ],
    "distractor_skills": {}
   },
   "b1-economiacolonial-consolidation.ex18": {
-   "teaches": [
-    "b1-colonial-economy-vocab"
-   ],
+   "teaches": [],
    "distractor_skills": {}
   },
   "b1-economiasexportacion-01.ex01": {
@@ -73546,7 +73578,7 @@
   },
   "b1-sociedadcolonial-01.ex04": {
    "teaches": [
-    "ser-passive"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },
@@ -73556,17 +73588,19 @@
   },
   "b1-sociedadcolonial-01.ex06": {
    "teaches": [
-    "ser-passive"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-01.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-colonial-society-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-01.ex08": {
    "teaches": [
-    "b1-colonial-society-vocab"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },
@@ -73592,7 +73626,7 @@
   },
   "b1-sociedadcolonial-02.ex04": {
    "teaches": [
-    "pasiva-refleja"
+    "relativas-preposicion-el-que"
    ],
    "distractor_skills": {}
   },
@@ -73602,17 +73636,19 @@
   },
   "b1-sociedadcolonial-02.ex06": {
    "teaches": [
-    "pasiva-refleja"
+    "relativas-preposicion-el-que"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-02.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-colonial-society-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-02.ex08": {
    "teaches": [
-    "b1-colonial-society-vocab"
+    "relativas-preposicion-el-que"
    ],
    "distractor_skills": {}
   },
@@ -73638,7 +73674,7 @@
   },
   "b1-sociedadcolonial-03.ex04": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "subjuntivo-de-finalidad-para-que"
    ],
    "distractor_skills": {}
   },
@@ -73648,17 +73684,19 @@
   },
   "b1-sociedadcolonial-03.ex06": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "subjuntivo-de-finalidad-para-que"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-03.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-colonial-society-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-03.ex08": {
    "teaches": [
-    "b1-colonial-society-vocab"
+    "subjuntivo-de-finalidad-para-que"
    ],
    "distractor_skills": {}
   },
@@ -73684,7 +73722,7 @@
   },
   "b1-sociedadcolonial-04.ex04": {
    "teaches": [
-    "prepositional-phrases"
+    "frequency-adverbs"
    ],
    "distractor_skills": {}
   },
@@ -73694,17 +73732,19 @@
   },
   "b1-sociedadcolonial-04.ex06": {
    "teaches": [
-    "formal-cause-connectors"
+    "frequency-adverbs"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-04.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-colonial-society-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-04.ex08": {
    "teaches": [
-    "b1-colonial-society-vocab"
+    "frequency-adverbs"
    ],
    "distractor_skills": {}
   },
@@ -73730,7 +73770,7 @@
   },
   "b1-sociedadcolonial-05.ex04": {
    "teaches": [
-    "ser-passive"
+    "verbs-of-change"
    ],
    "distractor_skills": {}
   },
@@ -73740,17 +73780,19 @@
   },
   "b1-sociedadcolonial-05.ex06": {
    "teaches": [
-    "ser-passive"
+    "verbs-of-change"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-05.ex07": {
-   "teaches": [],
+   "teaches": [
+    "verbs-of-change"
+   ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-05.ex08": {
    "teaches": [
-    "b1-colonial-society-vocab"
+    "verbs-of-change"
    ],
    "distractor_skills": {}
   },
@@ -73762,65 +73804,65 @@
   },
   "b1-sociedadcolonial-consolidation.ex02": {
    "teaches": [
-    "ser-passive"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex03": {
    "teaches": [
-    "pasiva-refleja"
+    "relativas-preposicion-el-que"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex04": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "relativas-preposicion-el-que"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex05": {
    "teaches": [
-    "formal-cause-connectors"
+    "subjuntivo-de-finalidad-para-que"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "present-tense"
+   }
   },
   "b1-sociedadcolonial-consolidation.ex06": {
    "teaches": [
-    "formal-cause-connectors"
+    "subjuntivo-de-finalidad-para-que"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex07": {
-   "teaches": [
-    "ser-passive"
-   ],
+   "teaches": [],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex08": {
-   "teaches": [],
+   "teaches": [
+    "frequency-adverbs"
+   ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex09": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "b1-colonial-society-vocab"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex10": {
    "teaches": [
-    "ser-passive"
+    "verbs-of-change"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex11": {
-   "teaches": [
-    "formal-cause-connectors"
-   ],
+   "teaches": [],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex12": {
    "teaches": [
-    "b1-colonial-society-vocab"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },
@@ -73832,28 +73874,30 @@
   },
   "b1-sociedadcolonial-consolidation.ex14": {
    "teaches": [
-    "prepositional-phrases"
+    "frequency-adverbs"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex15": {
-   "teaches": [],
+   "teaches": [
+    "verbs-of-change"
+   ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex16": {
-   "teaches": [],
+   "teaches": [
+    "pasiva-refleja"
+   ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex17": {
    "teaches": [
-    "ser-passive"
+    "frequency-adverbs"
    ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-consolidation.ex18": {
-   "teaches": [
-    "b1-colonial-society-vocab"
-   ],
+   "teaches": [],
    "distractor_skills": {}
   },
   "b2-01-01.ex01": {

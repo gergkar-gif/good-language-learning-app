@@ -5,125 +5,139 @@
       "id": "b1-conquista-consolidation.ex01",
       "type": "matching",
       "category": "vocabulary",
-      "teaches": [
-        "b1-conquest-vocab"
-      ],
       "pairs": [
         [
-          "conquistador",
-          "conquistador"
+          "el rescate",
+          "ransom"
         ],
         [
-          "alianza",
-          "alliance"
+          "el fraile",
+          "friar"
         ],
         [
-          "resistencia",
-          "resistance"
+          "la leyenda",
+          "legend"
         ],
         [
-          "tributo",
-          "tribute"
+          "derrotar",
+          "to defeat"
         ],
         [
-          "testimonio",
-          "testimony"
+          "sitiar",
+          "to besiege"
         ]
+      ],
+      "teaches": [
+        "b1-conquest-vocab"
       ]
     },
     {
       "id": "b1-conquista-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence says \"The city was besieged for several months\"?",
+      "options": [
+        "La ciudad fue sitiada durante varios meses.",
+        "La ciudad fue sitiado durante varios meses.",
+        "La ciudad fueron sitiada durante varios meses."
+      ],
+      "correct": 0,
       "teaches": [
         "ser-passive"
-      ],
-      "question": "¿Qué oración usa la voz pasiva?",
-      "options": [
-        "Tenochtitlan fue conquistada en 1521.",
-        "Los españoles llegaron a México.",
-        "Muchos pueblos resistieron."
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-conquista-consolidation.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "pasiva-refleja"
-      ],
-      "question": "¿Cuál presenta un proceso con se?",
+      "question": "Which sentence says \"The Incas had never seen horses\"?",
       "options": [
-        "Se establecieron nuevas autoridades.",
-        "Los soldados llegaron.",
-        "La ciudad cambió."
+        "Los incas nunca habían visto caballos.",
+        "Los incas nunca vieron caballos.",
+        "Los incas nunca han visto caballos."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "pluscuamperfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "b1-conquista-consolidation.ex04",
       "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "gerundio-acciones-paralelas"
-      ],
       "tiles": [
-        "Buscando",
-        "alianzas",
+        "Esperando",
+        "liberarse",
+        "de",
         "los",
-        "conquistadores",
-        "avanzaban."
+        "mexicas,",
+        "los",
+        "tlaxcaltecas",
+        "se",
+        "unieron",
+        "a",
+        "Cortés."
       ],
       "solution": [
-        "Buscando",
-        "alianzas",
+        "Esperando",
+        "liberarse",
+        "de",
         "los",
-        "conquistadores",
-        "avanzaban."
+        "mexicas,",
+        "los",
+        "tlaxcaltecas",
+        "se",
+        "unieron",
+        "a",
+        "Cortés."
       ],
-      "english": "Looking for alliances, the conquistadors advanced."
+      "english": "Hoping to free themselves from the Mexica, the Tlaxcalans joined Cortés.",
+      "teaches": [
+        "gerundio-acciones-paralelas"
+      ]
     },
     {
       "id": "b1-conquista-consolidation.ex05",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "porque-y-por-eso"
-      ],
-      "question": "¿Qué conector introduce una consecuencia?",
+      "question": "Which sentence says \"Las Casas asks the king to protect the indigenous people\"?",
       "options": [
-        "Como consecuencia de",
-        "Mientras",
-        "Aunque"
+        "Las Casas pide al rey que proteja a los indígenas.",
+        "Las Casas pide al rey que protege a los indígenas.",
+        "Las Casas pide al rey que protegió a los indígenas."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "subjunctive-influence"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-conquista-consolidation.ex06",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Los españoles ___ expulsados de Tenochtitlan en junio de 1520.",
+      "answer": "fueron",
+      "english": "The Spaniards were expelled from Tenochtitlan in June 1520.",
       "teaches": [
         "ser-passive"
-      ],
-      "sentence": "Muchas experiencias _____ registradas desde perspectivas diferentes.",
-      "english": "Many experiences were recorded from different perspectives.",
-      "answers": [
-        "fueron",
-        "eran"
       ]
     },
     {
       "id": "b1-conquista-consolidation.ex07",
       "type": "sentence-order",
-      "category": "grammar",
-      "teaches": [
-        "pasiva-refleja"
-      ],
+      "category": "reading",
       "sentences": [
-        "Primero, se establecieron nuevas autoridades.",
-        "Después se produjeron resistencias.",
-        "Más tarde, el proceso continuó durante décadas."
+        "Cortés fundó la ciudad de Veracruz.",
+        "Los españoles y sus aliados sitiaron Tenochtitlan.",
+        "Tenochtitlan cayó el 13 de agosto de 1521."
       ],
       "solution": [
         0,
@@ -134,75 +148,78 @@
     {
       "id": "b1-conquista-consolidation.ex08",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Cómo actuaron algunos pueblos?"
+          "speaker": "Meg",
+          "text": "¿Qué creen los historiadores sobre la palabra conquista?"
         },
         {
-          "speaker": "B",
-          "text": "_____"
+          "speaker": "Carlos",
+          "text": "Algunos creen que es correcta, y otros no creen que _____ todo."
         }
       ],
       "options": [
-        "Buscando proteger sus intereses, negociaron alianzas.",
-        "Esperando instrucciones de Europa, eligieron a un rey español.",
-        "Uniéndose todos en un solo imperio, expulsaron a los españoles."
+        "explique",
+        "explica",
+        "explicó"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "opinion-verbs-mood"
+      ]
     },
     {
       "id": "b1-conquista-consolidation.ex09",
       "type": "multiple-choice",
       "category": "vocabulary",
+      "question": "Which word means \"ransom\"?",
+      "options": [
+        "el rescate",
+        "el tributo",
+        "el trono"
+      ],
+      "correct": 0,
       "teaches": [
         "b1-conquest-vocab"
-      ],
-      "question": "¿Qué expresión significa 'as a result of'?",
-      "options": [
-        "Como consecuencia de",
-        "A lo largo de",
-        "En el marco de"
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-conquista-consolidation.ex10",
       "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "ser-passive"
-      ],
       "tiles": [
-        "Las",
-        "experiencias",
-        "fueron",
-        "registradas",
-        "por",
-        "autores",
-        "diferentes."
+        "Atahualpa",
+        "fue",
+        "capturado",
+        "en",
+        "Cajamarca",
+        "en",
+        "1532."
       ],
       "solution": [
-        "Las",
-        "experiencias",
-        "fueron",
-        "registradas",
-        "por",
-        "autores",
-        "diferentes."
+        "Atahualpa",
+        "fue",
+        "capturado",
+        "en",
+        "Cajamarca",
+        "en",
+        "1532."
       ],
-      "english": "The experiences were recorded by different authors."
+      "english": "Atahualpa was captured in Cajamarca in 1532.",
+      "teaches": [
+        "ser-passive"
+      ]
     },
     {
       "id": "b1-conquista-consolidation.ex11",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Por qué es útil comparar fuentes?",
+      "question": "Which people first fought the Spaniards and then joined them, according to the texts?",
       "options": [
-        "Porque fueron producidas desde perspectivas diferentes.",
-        "Porque todas son idénticas.",
-        "Porque ninguna tiene contexto."
+        "Los tlaxcaltecas, que primero lucharon contra los españoles.",
+        "Los mapuches, que primero lucharon contra los mexicas.",
+        "Los chichimecas, que primero lucharon contra los incas."
       ],
       "correct": 0
     },
@@ -210,104 +227,107 @@
       "id": "b1-conquista-consolidation.ex12",
       "type": "listening-choice",
       "category": "listening",
-      "teaches": [
-        "b1-conquest-vocab"
-      ],
-      "sentence": "Tenochtitlan fue conquistada en 1521.",
+      "sentence": "Tenochtitlan fue sitiada durante varios meses.",
       "options": [
-        "Tenochtitlan was conquered in 1521.",
-        "Tenochtitlan was never conquered.",
-        "The statement is unrelated."
+        "Tenochtitlan was besieged for several months.",
+        "Tenochtitlan was founded several months earlier.",
+        "Tenochtitlan besieged the Spaniards for several months."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "ser-passive"
+      ]
     },
     {
       "id": "b1-conquista-consolidation.ex13",
       "type": "listening-choice",
       "category": "listening",
-      "teaches": [
-        "b1-conquest-vocab"
-      ],
-      "sentence": "Se establecieron nuevas autoridades.",
+      "sentence": "Antes de 1533, los españoles ya habían capturado a Atahualpa.",
       "options": [
-        "New authorities were established.",
-        "No authorities appeared.",
-        "The statement is unrelated."
+        "Before 1533 the Spaniards had already captured Atahualpa.",
+        "Before 1533 the Spaniards captured Atahualpa.",
+        "After 1533 the Spaniards had already captured Atahualpa."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "pluscuamperfecto"
+      ]
     },
     {
       "id": "b1-conquista-consolidation.ex14",
       "type": "dictation",
       "category": "listening",
+      "sentence": "Viviendo en comunidades independientes, los mapuches resistieron mucho tiempo.",
+      "english": "Living in independent communities, the Mapuche resisted for a long time.",
       "teaches": [
         "gerundio-acciones-paralelas"
-      ],
-      "sentence": "Buscando proteger sus intereses, algunos pueblos negociaron alianzas.",
-      "english": "Seeking to protect their interests, some peoples negotiated alliances."
+      ]
     },
     {
       "id": "b1-conquista-consolidation.ex15",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Qué cambió a raíz de la conquista?"
+          "speaker": "Meg",
+          "text": "¿Qué quieren los colonos?"
         },
         {
-          "speaker": "B",
-          "text": "_____"
+          "speaker": "Carlos",
+          "text": "Quieren que el rey _____ las leyes."
         }
       ],
       "options": [
-        "Se transformaron las instituciones y las relaciones sociales.",
-        "Se mantuvieron intactas las jerarquías políticas tradicionales.",
-        "Las leyes indígenas continuaron rigiendo en todas las regiones."
+        "cambie",
+        "cambia",
+        "cambiará"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "subjunctive-influence"
+      ]
     },
     {
       "id": "b1-conquista-consolidation.ex16",
       "type": "structured-writing",
       "category": "writing",
-      "teaches": [
-        "ser-passive"
-      ],
       "template": [
         {
-          "prompt": "Explain one consequence of conquest using a passive construction.",
-          "answer": "Muchas comunidades fueron afectadas por la violencia y las epidemias."
+          "prompt": "Write one sentence with the passive with ser about the siege of Tenochtitlan.",
+          "answer": "Tenochtitlan fue sitiada por los españoles y sus aliados."
         },
         {
-          "prompt": "Add a second clause giving a consequence.",
-          "answer": "Como consecuencia, las estructuras sociales fueron profundamente transformadas."
+          "prompt": "Write one sentence with the pluperfect about Peru before 1572.",
+          "answer": "Antes de 1572, los españoles ya habían fundado Lima."
         }
+      ],
+      "teaches": [
+        "ser-passive"
       ]
     },
     {
       "id": "b1-conquista-consolidation.ex17",
       "type": "structured-writing",
       "category": "writing",
-      "teaches": [
-        "formal-cause-connectors"
-      ],
       "template": [
         {
-          "prompt": "Write two clauses about alliances or resistance using a formal connector.",
-          "answer": "A raíz de la conquista, algunas comunidades cambiaron sus alianzas mientras intentaban proteger sus intereses."
+          "prompt": "Write one sentence with an opinion verb about the word conquest. Say whose opinion it is.",
+          "answer": "Algunos historiadores no creen que la palabra conquista explique todo."
         }
+      ],
+      "teaches": [
+        "opinion-verbs-mood"
       ]
     },
     {
       "id": "b1-conquista-consolidation.ex18",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué frase muestra mejor una interpretación histórica?",
+      "question": "Which statement about the Black Legend is in the texts?",
       "options": [
-        "Las fuentes deben compararse porque cada una presenta una perspectiva.",
-        "Una fuente siempre contiene toda la verdad.",
-        "Solo una perspectiva es suficiente."
+        "Otros países usaron los textos de Las Casas para criticar a España.",
+        "Los incas usaron los textos de Las Casas para criticar a Pizarro.",
+        "Los mapuches usaron los textos de Las Casas para criticar a Valdivia."
       ],
       "correct": 0
     }
