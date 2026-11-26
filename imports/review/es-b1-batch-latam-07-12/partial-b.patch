@@ -1,0 +1,2550 @@
+diff --git a/content/es-latam/exercises/b1/b1-caudillismo-01-ex.json b/content/es-latam/exercises/b1/b1-caudillismo-01-ex.json
+index 031a00f0..58cd908c 100644
+--- a/content/es-latam/exercises/b1/b1-caudillismo-01-ex.json
++++ b/content/es-latam/exercises/b1/b1-caudillismo-01-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el carisma",
+-          "charisma"
++          "el hacendado",
++          "landowner (owner of a large estate)"
+         ],
+         [
+-          "de facto",
+-          "de facto, in practice"
++          "el peón",
++          "farm worker, labourer"
+         ],
+         [
+-          "ilimitado",
+-          "unlimited"
++          "el seguidor",
++          "follower"
+         ],
+         [
+-          "intimidar",
+-          "to intimidate"
++          "el carisma",
++          "charisma"
+         ]
+       ],
+       "teaches": [
+@@ -33,20 +33,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la lealtad",
+-          "loyalty"
++          "débil",
++          "weak"
+         ],
+         [
+-          "la disidencia",
+-          "dissent"
++          "leal",
++          "loyal"
+         ],
+         [
+-          "sofocar",
+-          "to suppress, smother"
++          "el territorio",
++          "territory"
+         ],
+         [
+-          "el vacío",
+-          "vacuum, void"
++          "el caudillismo",
++          "rule by caudillos"
+         ]
+       ],
+       "teaches": [
+@@ -57,11 +57,11 @@
+       "id": "b1-caudillismo-01.ex02",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿En qué se apoyaba principalmente la autoridad de un caudillo?",
++      "question": "According to the text, what was a caudillo?",
+       "options": [
+-        "Menos en instituciones formales que en su capacidad militar personal, su carisma y su red de seguidores.",
+-        "Exclusivamente en un cargo oficial otorgado por elección popular.",
+-        "En un título hereditario transmitido de generación en generación."
++        "Un jefe que tenía su propio ejército.",
++        "Un juez que defendía las leyes.",
++        "Un jefe que no tenía hombres."
+       ],
+       "correct": 0
+     },
+@@ -69,11 +69,11 @@
+       "id": "b1-caudillismo-01.ex03",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué fue la 'suma del poder público' que recibió Rosas en 1835?",
++      "question": "What did a caudillo give to the men who supported him?",
+       "options": [
+-        "La concentración de todas las facultades gubernamentales en su persona, concedida por la legislatura.",
+-        "Un título puramente honorífico sin ninguna consecuencia práctica.",
+-        "Un cargo temporal que duró solo unos meses."
++        "Protección, tierra o trabajo.",
++        "Un cargo en el gobierno.",
++        "Una casa en la capital."
+       ],
+       "correct": 0
+     },
+@@ -81,23 +81,22 @@
+       "id": "b1-caudillismo-01.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "___ debate todavía, entre historiadores, si Rosas fue un tirano o un garante de orden.",
+-      "hint": "debatir",
+-      "answer": "Se",
++      "sentence": "Los hombres ___ lo apoyaban recibían tierra.",
++      "answer": "que",
+       "teaches": [
+-        "se-impersonal"
++        "relative-clauses"
+       ],
+-      "english": "Historians still debate whether Rosas was a tyrant or a guarantor of order."
++      "english": "The men who supported him received land."
+     },
+     {
+       "id": "b1-caudillismo-01.ex05",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué régimen impuso Rosas, apoyado por la Mazorca, y qué se exigía en la vida cotidiana?",
++      "question": "When did Rosas lose power?",
+       "options": [
+-        "Un régimen de férreo control social; se exigía usar una cinta roja como muestra pública de lealtad.",
+-        "Un régimen de libertad total en el que estaba prohibido usar cualquier insignia.",
+-        "Un régimen de elecciones libres en el que se exigía votar cada mes."
++        "En 1852, después de la batalla de Caseros.",
++        "En 1835, cuando empezó su primer gobierno.",
++        "En 1829, antes de su primer gobierno."
+       ],
+       "correct": 0
+     },
+@@ -106,78 +105,71 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "En",
+-        "muchas",
+-        "regiones,",
+-        "se",
+-        "reconocía",
+-        "su",
+-        "autoridad",
+-        "de",
+-        "facto",
+-        "mucho",
+-        "antes",
+-        "de",
+-        "cualquier",
+-        "cargo",
+-        "oficial."
++        "Los",
++        "peones",
++        "que",
++        "trabajaban",
++        "en",
++        "sus",
++        "tierras",
++        "eran",
++        "sus",
++        "soldados."
+       ],
+       "solution": [
+-        "En",
+-        "muchas",
+-        "regiones,",
+-        "se",
+-        "reconocía",
+-        "su",
+-        "autoridad",
+-        "de",
+-        "facto",
+-        "mucho",
+-        "antes",
+-        "de",
+-        "cualquier",
+-        "cargo",
+-        "oficial."
++        "Los",
++        "peones",
++        "que",
++        "trabajaban",
++        "en",
++        "sus",
++        "tierras",
++        "eran",
++        "sus",
++        "soldados."
+       ],
+-      "english": "In many regions, his authority was recognized de facto long before any official post.",
++      "english": "The workers who worked on his land were his soldiers.",
+       "teaches": [
+-        "se-impersonal"
++        "relative-clauses"
+       ]
+     },
+     {
+       "id": "b1-caudillismo-01.ex07",
+       "type": "dialogue-complete",
+-      "category": "reading",
++      "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Marta",
+-          "text": "¿Fue Rosas un caso único, o representa un patrón más amplio en la región?"
++          "speaker": "Meg",
++          "text": "¿Dónde gobernó Rosas?"
+         },
+         {
+-          "speaker": "Pablo",
++          "speaker": "Carlos",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Representa un patrón más amplio: el poder político dependía mucho más de las lealtades afectivas y la fuerza armada que de los principios parlamentarios importados de Europa.",
+-        "Fue un caso completamente excepcional surgido de circunstancias políticas que no tuvieron equivalente en el resto de América Latina.",
+-        "Solo tuvo influencia transitoria en su provincia natal sin llegar a reflejar las tendencias políticas del período poscolonial."
++        "Gobernó Buenos Aires.",
++        "Gobernó Venezuela.",
++        "Gobernó Guatemala."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "b1-caudillismo-vocab"
++      ]
+     },
+     {
+       "id": "b1-caudillismo-01.ex08",
+       "type": "listening-choice",
+       "category": "listening",
+-      "sentence": "La divisa punzó debía llevarse obligatoriamente en el pecho por hombres y mujeres.",
++      "sentence": "Los hombres que seguían al caudillo eran leales.",
+       "options": [
+-        "The red emblem had to be worn on the chest by both men and women.",
+-        "Only soldiers were allowed to wear the red emblem.",
+-        "The red emblem was forbidden throughout Buenos Aires."
++        "The men who followed the caudillo were loyal.",
++        "The men who followed the caudillo were weak.",
++        "The men who followed the caudillo were landowners."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "b1-caudillismo-vocab"
++        "relative-clauses"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b1/b1-caudillismo-02-ex.json b/content/es-latam/exercises/b1/b1-caudillismo-02-ex.json
+index fee35b5e..efba39c4 100644
+--- a/content/es-latam/exercises/b1/b1-caudillismo-02-ex.json
++++ b/content/es-latam/exercises/b1/b1-caudillismo-02-ex.json
+@@ -11,16 +11,12 @@
+           "official, civil servant"
+         ],
+         [
+-          "el jinete",
+-          "horseman, rider"
++          "el llanero",
++          "llanero (plainsman of the Venezuelan llanos)"
+         ],
+         [
+-          "el ganado",
+-          "cattle, livestock"
+-        ],
+-        [
+-          "confiscado",
+-          "confiscated"
++          "frágil",
++          "fragile"
+         ]
+       ],
+       "teaches": [
+@@ -33,20 +29,16 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el vínculo",
+-          "bond, link"
+-        ],
+-        [
+-          "retirar",
+-          "to withdraw, remove"
++          "el presidente",
++          "president"
+         ],
+         [
+-          "el rival",
+-          "rival"
++          "local",
++          "local"
+         ],
+         [
+-          "frágil",
+-          "fragile"
++          "fuerte",
++          "strong"
+         ]
+       ],
+       "teaches": [
+@@ -56,24 +48,27 @@
+     {
+       "id": "b1-caudillismo-02.ex02",
+       "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "¿Cómo gobernaba un caudillo, a diferencia de un funcionario moderno?",
++      "category": "grammar",
++      "question": "Which sentence says \"Páez counted on the loyalty of the llaneros\"?",
+       "options": [
+-        "Mediante una red de patronazgo: favores, tierras y protección a cambio de lealtad, no a través de una burocracia impersonal.",
+-        "Exactamente igual que un funcionario moderno, con procedimientos administrativos idénticos.",
+-        "Sin ninguna relación personal con sus seguidores, solo mediante decretos escritos."
++        "Páez contaba con la lealtad de los llaneros.",
++        "Páez contaba de la lealtad de los llaneros.",
++        "Páez contaba en la lealtad de los llaneros."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "verbos-regimen-preposicional"
++      ]
+     },
+     {
+       "id": "b1-caudillismo-02.ex03",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Por qué fue reconocido José Antonio Páez como líder por otros llaneros?",
++      "question": "What did Páez give to local chiefs?",
+       "options": [
+-        "Por su extraordinaria valentía en combate y su habilidad como jinete, que le ganaron la devoción de los llaneros.",
+-        "Porque heredó el título de su familia noble española.",
+-        "Porque fue nombrado líder por decreto de la corona española."
++        "Tierras, cargos y protección.",
++        "Dinero y barcos de otros países.",
++        "Ejércitos y barcos de guerra."
+       ],
+       "correct": 0
+     },
+@@ -81,26 +76,22 @@
+       "id": "b1-caudillismo-02.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "Sus antiguos compañeros de armas ___ colocados en puestos de confianza.",
+-      "hint": "ser",
++      "sentence": "Los jefes locales dependían ___ Páez.",
++      "answer": "de",
+       "teaches": [
+-        "ser-passive"
++        "verbos-regimen-preposicional"
+       ],
+-      "english": "His former fellow soldiers were placed in positions of trust.",
+-      "answers": [
+-        "fueron",
+-        "eran"
+-      ]
++      "english": "The local chiefs depended on Páez."
+     },
+     {
+       "id": "b1-caudillismo-02.ex05",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Cómo funcionaba la 'pirámide de lealtades superpuestas' bajo Páez?",
++      "question": "Why was the network of loyalties fragile?",
+       "options": [
+-        "El caudillo entregaba hatos ganaderos y vales militares, y cada beneficiario se convertía en un defensor incondicional del régimen.",
+-        "Cada nivel era completamente independiente de los demás, sin ninguna conexión real.",
+-        "Solo existía un único nivel de autoridad, sin ninguna jerarquía intermedia."
++        "Un jefe local podía dejar de apoyar a Páez.",
++        "Los llaneros no querían tener tierras.",
++        "Páez no tenía relaciones con los jefes."
+       ],
+       "correct": 0
+     },
+@@ -109,74 +100,69 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Las",
+-        "tierras",
+-        "conquistadas",
+-        "o",
+-        "confiscadas",
+-        "durante",
+-        "las",
+-        "guerras",
+-        "fueron",
+-        "repartidas",
+-        "entre",
+-        "sus",
+-        "seguidores."
++        "Los",
++        "jefes",
++        "locales",
++        "contaban",
++        "con",
++        "la",
++        "protección",
++        "de",
++        "Páez."
+       ],
+       "solution": [
+-        "Las",
+-        "tierras",
+-        "conquistadas",
+-        "o",
+-        "confiscadas",
+-        "durante",
+-        "las",
+-        "guerras",
+-        "fueron",
+-        "repartidas",
+-        "entre",
+-        "sus",
+-        "seguidores."
++        "Los",
++        "jefes",
++        "locales",
++        "contaban",
++        "con",
++        "la",
++        "protección",
++        "de",
++        "Páez."
+       ],
+-      "english": "Lands conquered or confiscated during the wars were distributed among his followers.",
++      "english": "The local chiefs counted on the protection of Páez.",
+       "teaches": [
+-        "ser-passive"
++        "verbos-regimen-preposicional"
+       ]
+     },
+     {
+       "id": "b1-caudillismo-02.ex07",
+       "type": "dialogue-complete",
+-      "category": "reading",
++      "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Marta",
+-          "text": "¿Qué logró el sistema de favores y lealtades de Páez?"
++          "speaker": "Meg",
++          "text": "¿Quién era Páez?"
+         },
+         {
+-          "speaker": "Pablo",
++          "speaker": "Carlos",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Garantizó la estabilidad de Venezuela durante casi dos décadas, supliendo la ausencia de un Estado consolidado.",
+-        "Fracasó de inmediato y Venezuela quedó sin gobierno desde el primer año.",
+-        "Creó una burocracia impersonal moderna que reemplazó a todos los caudillos."
++        "Era un llanero que fue presidente de Venezuela.",
++        "Era un llanero que fue presidente de Argentina.",
++        "Era un funcionario que fue presidente de Venezuela."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "b1-caudillismo-vocab"
++      ]
+     },
+     {
+       "id": "b1-caudillismo-02.ex08",
+       "type": "listening-choice",
+       "category": "listening",
+-      "sentence": "Tras liderar la separación de Venezuela de la Gran Colombia en 1830, Páez gobernó apoyándose en los coroneles.",
++      "sentence": "Un caudillo dependía de las personas.",
+       "options": [
+-        "After leading Venezuela's separation from Gran Colombia in 1830, Páez governed relying on his colonels.",
+-        "Páez opposed the separation of Venezuela from Gran Colombia and fled the country.",
+-        "Páez governed Venezuela only through a modern bureaucracy."
++        "A caudillo depended on people.",
++        "A caudillo depended on written laws.",
++        "A caudillo depended on foreign armies."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "b1-caudillismo-vocab"
++        "verbos-regimen-preposicional"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b1/b1-caudillismo-03-ex.json b/content/es-latam/exercises/b1/b1-caudillismo-03-ex.json
+index 95023271..cb39ec78 100644
+--- a/content/es-latam/exercises/b1/b1-caudillismo-03-ex.json
++++ b/content/es-latam/exercises/b1/b1-caudillismo-03-ex.json
+@@ -7,20 +7,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la caballería",
+-          "cavalry"
++          "la montonera",
++          "montonera (irregular band of horsemen)"
+         ],
+         [
+-          "reclutar",
+-          "to recruit"
++          "el jinete",
++          "horseman, rider"
+         ],
+         [
+-          "ostentar",
+-          "to hold, bear (a title)"
++          "reclutar",
++          "to recruit"
+         ],
+         [
+-          "el rango",
+-          "rank"
++          "la emboscada",
++          "ambush"
+         ]
+       ],
+       "teaches": [
+@@ -33,20 +33,20 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "la emboscada",
+-          "ambush"
++          "disolver",
++          "to dissolve, break up"
+         ],
+         [
+-          "esclarecer",
+-          "to clarify, shed light on"
++          "la provincia",
++          "province"
+         ],
+         [
+-          "el colapso",
+-          "collapse"
++          "el interior",
++          "the interior (inland regions)"
+         ],
+         [
+-          "instantáneo",
+-          "instant"
++          "la muerte",
++          "death"
+         ]
+       ],
+       "teaches": [
+@@ -56,27 +56,27 @@
+     {
+       "id": "b1-caudillismo-03.ex02",
+       "type": "multiple-choice",
+-      "category": "vocabulary",
+-      "question": "¿Qué eran las 'montoneras' que comandaba Facundo Quiroga?",
++      "category": "grammar",
++      "question": "Which sentence says \"When the war ended, the men went back home\"?",
+       "options": [
+-        "Milicias rurales irregulares de gauchos, sin salario regular ni cuarteles, que volvían a sus tareas agrícolas entre conflictos.",
+-        "El ejército regular y permanente del gobierno argentino.",
+-        "Un cuerpo de policía urbana dedicado a mantener el orden en las ciudades."
++        "Cuando terminó la guerra, los hombres volvieron a casa.",
++        "Mientras terminó la guerra, los hombres volvieron a casa.",
++        "Cuando terminar la guerra, los hombres volvieron a casa."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "b1-caudillismo-vocab"
++        "cuando-mientras"
+       ]
+     },
+     {
+       "id": "b1-caudillismo-03.ex03",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Cómo reunía Quiroga a sus hombres?",
++      "question": "What was a montonera?",
+       "options": [
+-        "Los convocaba con el toque de clarín cuando la situación lo exigía y los disolvía cuando el conflicto terminaba.",
+-        "Les pagaba un salario regular y los alojaba en cuarteles permanentes.",
+-        "Los reclutaba obligatoriamente en las escuelas de Buenos Aires."
++        "Un grupo de jinetes que seguían a un caudillo.",
++        "Un ejército profesional del Estado.",
++        "Una casa grande en el campo."
+       ],
+       "correct": 0
+     },
+@@ -84,23 +84,22 @@
+       "id": "b1-caudillismo-03.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "___ su influencia mediante campañas militares, Quiroga se convirtió en una figura muy poderosa.",
+-      "hint": "extender",
+-      "answer": "Extendiendo",
++      "sentence": "Quiroga regresaba de un viaje ___ unos hombres lo atacaron.",
++      "answer": "cuando",
+       "teaches": [
+-        "gerundio-acciones-paralelas"
++        "cuando-mientras"
+       ],
+-      "english": "By extending his influence through military campaigns, Quiroga became a very powerful figure."
++      "english": "Quiroga was returning from a journey when some men attacked him."
+     },
+     {
+       "id": "b1-caudillismo-03.ex05",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué ocurrió tras la muerte de Quiroga en 1835?",
++      "question": "What happened to Quiroga in 1835?",
+       "options": [
+-        "Dejó un vacío de poder, desató una crisis política y precipitó la concentración del poder en manos de Rosas.",
+-        "Nada cambió, porque su autoridad estaba completamente institucionalizada.",
+-        "Las provincias que gobernaba continuaron funcionando exactamente igual, sin ningún cambio."
++        "Murió en una emboscada.",
++        "Perdió la batalla de Caseros.",
++        "Fue presidente de Venezuela."
+       ],
+       "correct": 0
+     },
+@@ -109,78 +108,67 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "Reuniendo",
+-        "estas",
+-        "fuerzas",
+-        "rápidamente",
+-        "cuando",
+-        "la",
+-        "situación",
++        "Mientras",
++        "el",
++        "jefe",
++        "vivía,",
++        "los",
++        "hombres",
+         "lo",
+-        "exigía,",
+-        "Quiroga",
+-        "ejercía",
+-        "un",
+-        "poder",
+-        "militar",
+-        "flexible."
++        "obedecían."
+       ],
+       "solution": [
+-        "Reuniendo",
+-        "estas",
+-        "fuerzas",
+-        "rápidamente",
+-        "cuando",
+-        "la",
+-        "situación",
++        "Mientras",
++        "el",
++        "jefe",
++        "vivía,",
++        "los",
++        "hombres",
+         "lo",
+-        "exigía,",
+-        "Quiroga",
+-        "ejercía",
+-        "un",
+-        "poder",
+-        "militar",
+-        "flexible."
++        "obedecían."
+       ],
+-      "english": "Gathering these forces quickly when the situation demanded it, Quiroga wielded a flexible military power.",
++      "english": "While the chief was alive, the men obeyed him.",
+       "teaches": [
+-        "gerundio-acciones-paralelas"
++        "cuando-mientras"
+       ]
+     },
+     {
+       "id": "b1-caudillismo-03.ex07",
+       "type": "dialogue-complete",
+-      "category": "reading",
++      "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Marta",
+-          "text": "¿Por qué fue tan grave, institucionalmente, la muerte de un caudillo como Quiroga?"
++          "speaker": "Meg",
++          "text": "¿Qué pasaba cuando terminaba la guerra?"
+         },
+         {
+-          "speaker": "Pablo",
++          "speaker": "Carlos",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Porque cuando el poder militar y político dependen de la misma persona, su muerte provoca un colapso institucional instantáneo, no solo una pérdida individual.",
+-        "Porque no tuvo ninguna consecuencia real más allá de su propia familia.",
+-        "Porque el ejército regular asumió automáticamente el control sin ningún problema."
++        "Los hombres volvían a su trabajo.",
++        "Los hombres iban a la capital.",
++        "Los hombres reclutaban a otros jefes."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "cuando-mientras"
++      ]
+     },
+     {
+       "id": "b1-caudillismo-03.ex08",
+       "type": "listening-choice",
+       "category": "listening",
+-      "sentence": "En febrero de 1835, Quiroga fue emboscado y asesinado a balazos en Barranca Yaco.",
++      "sentence": "Cuando terminaba la guerra, los hombres volvían a su trabajo.",
+       "options": [
+-        "In February 1835, Quiroga was ambushed and shot dead at Barranca Yaco.",
+-        "Quiroga died of natural causes in old age.",
+-        "Quiroga survived the ambush and later governed Buenos Aires."
++        "When the war ended, the men went back to their work.",
++        "When the war ended, the men became officials.",
++        "When the war ended, the men started a new war."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "b1-caudillismo-vocab"
++        "cuando-mientras"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b1/b1-caudillismo-04-ex.json b/content/es-latam/exercises/b1/b1-caudillismo-04-ex.json
+index 5d6eeecf..557ab573 100644
+--- a/content/es-latam/exercises/b1/b1-caudillismo-04-ex.json
++++ b/content/es-latam/exercises/b1/b1-caudillismo-04-ex.json
+@@ -7,20 +7,16 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el opositor",
+-          "opponent"
++          "la civilización",
++          "civilization"
+         ],
+         [
+-          "exiliado",
+-          "exiled"
+-        ],
+-        [
+-          "atrasado",
+-          "backward"
++          "la barbarie",
++          "barbarism"
+         ],
+         [
+-          "letrado",
+-          "literate, educated"
++          "el escritor",
++          "writer"
+         ]
+       ],
+       "teaches": [
+@@ -33,20 +29,16 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "el campesino",
+-          "peasant, farmer"
+-        ],
+-        [
+-          "amenazar",
+-          "to threaten"
++          "exiliado",
++          "exiled"
+         ],
+         [
+-          "revisionista",
+-          "revisionist"
++          "el defensor",
++          "defender, supporter"
+         ],
+         [
+-          "la etiqueta",
+-          "label"
++          "la inestabilidad",
++          "instability"
+         ]
+       ],
+       "teaches": [
+@@ -56,24 +48,27 @@
+     {
+       "id": "b1-caudillismo-04.ex02",
+       "type": "multiple-choice",
+-      "category": "reading",
+-      "question": "¿Qué argumentaba Sarmiento en 'Facundo: Civilización y Barbarie' (1845)?",
++      "category": "grammar",
++      "question": "Which sentence says \"Sarmiento wrote that the countryside represented barbarism\"?",
+       "options": [
+-        "Contraponía la civilización europea de las ciudades a la barbarie violenta del desierto pampeano, asociada al caudillismo.",
+-        "Que los caudillos eran los únicos verdaderos representantes de la civilización latinoamericana.",
+-        "Que no existía ninguna diferencia real entre el campo y la ciudad."
++        "Sarmiento escribió que el campo representaba la barbarie.",
++        "Sarmiento escribió el campo representaba la barbarie.",
++        "Sarmiento escribió de que el campo representaba la barbarie."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "estilo-indirecto"
++      ]
+     },
+     {
+       "id": "b1-caudillismo-04.ex03",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Por qué resulta difícil aplicar la interpretación de Sarmiento al caso de Rafael Carrera en Guatemala?",
++      "question": "Why does Rafael Carrera not fit Sarmiento's idea well?",
+       "options": [
+-        "Porque Carrera fue apoyado por campesinos indígenas contra políticas liberales.",
+-        "Porque Carrera nunca gobernó realmente ningún territorio.",
+-        "Porque Carrera era, él mismo, un aristócrata urbano educado en Europa."
++        "Era de origen humilde y muchos campesinos lo apoyaban.",
++        "Era un escritor que vivía en Chile.",
++        "Era un hacendado rico de Buenos Aires."
+       ],
+       "correct": 0
+     },
+@@ -81,26 +76,23 @@
+       "id": "b1-caudillismo-04.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "___ de su experiencia como opositor exiliado, Sarmiento publicó 'Facundo' en 1845.",
+-      "hint": "as a result of",
++      "sentence": "Sarmiento escribió que las ciudades ___ la civilización.",
++      "hint": "representar",
++      "answer": "representaban",
+       "teaches": [
+-        "formal-cause-connectors"
++        "estilo-indirecto"
+       ],
+-      "english": "As a result of his experience as an exiled opponent, Sarmiento published 'Facundo' in 1845.",
+-      "answers": [
+-        "A raíz",
+-        "Como consecuencia"
+-      ]
++      "english": "Sarmiento wrote that the cities represented civilization."
+     },
+     {
+       "id": "b1-caudillismo-04.ex05",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué interpretación alternativa prefieren algunos historiadores para ciertos caudillos?",
++      "question": "Until when did Carrera dominate Guatemala?",
+       "options": [
+-        "Verlos como mediadores y protectores de los pueblos frente a la agresiva modernización de las élites letradas, no como bárbaros.",
+-        "La misma interpretación de Sarmiento, sin ningún cambio.",
+-        "Que ningún caudillo tuvo jamás ningún tipo de apoyo popular genuino."
++        "Hasta su muerte, en 1865.",
++        "Hasta 1852, cuando perdió una batalla.",
++        "Hasta 1845, cuando salió del país."
+       ],
+       "correct": 0
+     },
+@@ -109,82 +101,71 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "En",
+-        "el",
+-        "marco",
++        "Los",
++        "defensores",
+         "de",
+-        "casos",
+-        "como",
++        "Rosas",
++        "decían",
++        "que",
++        "él",
++        "mantenía",
+         "el",
+-        "de",
+-        "Rafael",
+-        "Carrera,",
+-        "esta",
+-        "interpretación",
+-        "resulta",
+-        "más",
+-        "difícil",
+-        "de",
+-        "sostener."
++        "orden."
+       ],
+       "solution": [
+-        "En",
+-        "el",
+-        "marco",
++        "Los",
++        "defensores",
+         "de",
+-        "casos",
+-        "como",
++        "Rosas",
++        "decían",
++        "que",
++        "él",
++        "mantenía",
+         "el",
+-        "de",
+-        "Rafael",
+-        "Carrera,",
+-        "esta",
+-        "interpretación",
+-        "resulta",
+-        "más",
+-        "difícil",
+-        "de",
+-        "sostener."
++        "orden."
+       ],
+-      "english": "Within the framework of cases like Rafael Carrera's, this interpretation becomes harder to sustain.",
++      "english": "The defenders of Rosas said that he kept order.",
+       "teaches": [
+-        "formal-cause-connectors"
++        "estilo-indirecto"
+       ]
+     },
+     {
+       "id": "b1-caudillismo-04.ex07",
+       "type": "dialogue-complete",
+-      "category": "reading",
++      "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Marta",
+-          "text": "Entonces, ¿cuál de las dos interpretaciones del caudillismo es la correcta?"
++          "speaker": "Meg",
++          "text": "¿Qué escribió Sarmiento sobre los caudillos?"
+         },
+         {
+-          "speaker": "Pablo",
++          "speaker": "Carlos",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Ninguna basta por sí sola: la dicotomía de Sarmiento resulta insuficiente para casos como el de Carrera, y la realidad histórica es más compleja.",
+-        "La interpretación de Sarmiento es la única correcta, sin ninguna excepción posible.",
+-        "La interpretación revisionista es la única correcta y Sarmiento estaba completamente equivocado."
++        "Escribió que eran un obstáculo para el progreso.",
++        "Escribió que eran los mejores jefes del país.",
++        "Escribió que eran amigos de la civilización."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "estilo-indirecto"
++      ]
+     },
+     {
+       "id": "b1-caudillismo-04.ex08",
+       "type": "listening-choice",
+       "category": "listening",
+-      "sentence": "Carrera gobernó Guatemala con amplio respaldo social hasta 1865.",
++      "sentence": "Sarmiento escribió que los caudillos eran un obstáculo para el progreso.",
+       "options": [
+-        "Carrera governed Guatemala with broad social support until 1865.",
+-        "Carrera was overthrown by a peasant uprising in 1837.",
+-        "Carrera never governed Guatemala."
++        "Sarmiento wrote that the caudillos were an obstacle to progress.",
++        "Sarmiento wrote that the caudillos were friends of progress.",
++        "Sarmiento wrote that the caudillos were good writers."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "b1-caudillismo-vocab"
++        "estilo-indirecto"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/exercises/b1/b1-caudillismo-05-ex.json b/content/es-latam/exercises/b1/b1-caudillismo-05-ex.json
+index f45a2410..4385cc2b 100644
+--- a/content/es-latam/exercises/b1/b1-caudillismo-05-ex.json
++++ b/content/es-latam/exercises/b1/b1-caudillismo-05-ex.json
+@@ -7,20 +7,16 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "consolidado",
+-          "consolidated"
++          "nacional",
++          "national"
+         ],
+         [
+-          "personalista",
+-          "personalist (centered on one leader)"
++          "político",
++          "political"
+         ],
+         [
+-          "el consenso",
+-          "consensus"
+-        ],
+-        [
+-          "el politólogo",
+-          "political scientist"
++          "militar",
++          "military; soldier"
+         ]
+       ],
+       "teaches": [
+@@ -33,20 +29,16 @@
+       "category": "vocabulary",
+       "pairs": [
+         [
+-          "contemporáneo",
+-          "contemporary"
++          "el patronazgo",
++          "patronage (favours in exchange for support)"
+         ],
+         [
+-          "poroso",
+-          "porous"
++          "reemplazar",
++          "to replace"
+         ],
+         [
+-          "decimonónico",
+-          "nineteenth-century"
+-        ],
+-        [
+-          "pesar",
+-          "to weigh, carry weight"
++          "la democracia",
++          "democracy"
+         ]
+       ],
+       "teaches": [
+@@ -57,11 +49,11 @@
+       "id": "b1-caudillismo-05.ex02",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Dejó el caudillismo el mismo legado en todos los países latinoamericanos?",
++      "question": "What happened to the montoneras over time?",
+       "options": [
+-        "No; en algunos países limitó su papel y en otros se prolongó.",
+-        "Sí, el legado fue idéntico en absolutamente todos los países de la región.",
+-        "No dejó ningún legado real; desapareció por completo al terminar el siglo diecinueve."
++        "Los ejércitos nacionales las reemplazaron.",
++        "Los caudillos las reclutaron otra vez.",
++        "Los campesinos las disolvieron en 1852."
+       ],
+       "correct": 0
+     },
+@@ -69,11 +61,11 @@
+       "id": "b1-caudillismo-05.ex03",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Qué terminó con el poder militar de las montoneras rurales hacia finales de siglo?",
++      "question": "According to many historians, what turned out to be difficult?",
+       "options": [
+-        "La llegada de los ferrocarriles, el telégrafo y los ejércitos regulares profesionales.",
+-        "La victoria militar de las propias montoneras sobre el Estado.",
+-        "La creación de nuevas milicias de gauchos armados."
++        "Crear instituciones fuertes.",
++        "Reclutar jinetes para la guerra.",
++        "Escribir libros sobre los caudillos."
+       ],
+       "correct": 0
+     },
+@@ -81,23 +73,23 @@
+       "id": "b1-caudillismo-05.ex04",
+       "type": "fill-blank",
+       "category": "grammar",
+-      "sentence": "En algunos lugares la estabilidad institucional limitó a los caudillos; ___ el patrón personalista se prolongó mucho más.",
+-      "hint": "in others",
+-      "answer": "en otros",
++      "sentence": "El poder personal ___ peligroso para la democracia.",
++      "hint": "resultar",
++      "answer": "resultó",
+       "teaches": [
+-        "contrast-concession-connectors"
++        "resultar-adjective"
+       ],
+-      "english": "In some places, institutional stability limited the caudillos; in others, the personalist pattern continued for much longer."
++      "english": "Personal power turned out to be dangerous for democracy."
+     },
+     {
+       "id": "b1-caudillismo-05.ex05",
+       "type": "multiple-choice",
+       "category": "reading",
+-      "question": "¿Se logró en todos los países una separación clara entre autoridad militar y civil?",
++      "question": "What do some historians say about a strong chief?",
+       "options": [
+-        "No, en algunos países sí se logró esa separación; en otros, siguió siendo mucho más porosa, con periódicas intervenciones militares en la vida cívica.",
+-        "Sí, todos los países lograron exactamente el mismo grado de separación al mismo tiempo.",
+-        "No, en ningún país se logró jamás ningún tipo de separación entre lo militar y lo civil."
++        "Resultó útil para mantener el orden después de la independencia.",
++        "Resultó necesario para crear una democracia.",
++        "Resultó difícil para los hacendados."
+       ],
+       "correct": 0
+     },
+@@ -106,80 +98,61 @@
+       "type": "sentence-builder",
+       "category": "grammar",
+       "tiles": [
+-        "En",
+-        "algunos",
+-        "casos,",
+-        "el",
+-        "caudillismo",
+-        "dejó",
+-        "redes",
+-        "de",
+-        "patronazgo",
+-        "que",
+-        "siguieron",
+-        "influyendo",
+-        "en",
+-        "la",
+-        "política",
+-        "local."
++        "Resultó",
++        "difícil",
++        "crear",
++        "instituciones",
++        "fuertes."
+       ],
+       "solution": [
+-        "En",
+-        "algunos",
+-        "casos,",
+-        "el",
+-        "caudillismo",
+-        "dejó",
+-        "redes",
+-        "de",
+-        "patronazgo",
+-        "que",
+-        "siguieron",
+-        "influyendo",
+-        "en",
+-        "la",
+-        "política",
+-        "local."
++        "Resultó",
++        "difícil",
++        "crear",
++        "instituciones",
++        "fuertes."
+       ],
+-      "english": "In some cases, caudillismo left patronage networks that kept influencing local politics.",
++      "english": "It turned out to be difficult to create strong institutions.",
+       "teaches": [
+-        "contrast-concession-connectors"
++        "resultar-adjective"
+       ]
+     },
+     {
+       "id": "b1-caudillismo-05.ex07",
+       "type": "dialogue-complete",
+-      "category": "reading",
++      "category": "dialogue",
+       "prompt": [
+         {
+-          "speaker": "Marta",
+-          "text": "¿Por qué merece la pena seguir estudiando el caudillismo hoy en día?"
++          "speaker": "Meg",
++          "text": "¿Qué resultó difícil después de los caudillos?"
+         },
+         {
+-          "speaker": "Pablo",
++          "speaker": "Carlos",
+           "text": "_____"
+         }
+       ],
+       "options": [
+-        "Porque fue el síntoma de una sociedad que buscaba el orden en hombres providenciales, y ese legado personalista continúa debatiéndose en las democracias modernas.",
+-        "Porque el caudillismo es un fenómeno completamente cerrado sin ninguna relevancia actual.",
+-        "Porque no tiene absolutamente ninguna relación con la política latinoamericana contemporánea."
++        "Resultó difícil crear instituciones fuertes.",
++        "Resultó difícil reclutar más jinetes.",
++        "Resultó difícil escribir las leyes."
+       ],
+-      "correct": 0
++      "correct": 0,
++      "teaches": [
++        "resultar-adjective"
++      ]
+     },
+     {
+       "id": "b1-caudillismo-05.ex08",
+       "type": "listening-choice",
+       "category": "listening",
+-      "sentence": "En algunos lugares, como Chile, la estabilidad institucional limitó el papel de los caudillos.",
++      "sentence": "Un jefe fuerte resultó útil para mantener el orden.",
+       "options": [
+-        "In some places, such as Chile, institutional stability limited the caudillos' role.",
+-        "In every country, caudillos became more powerful over time.",
+-        "Chile was ruled by a single caudillo for the whole century."
++        "A strong chief turned out to be useful for keeping order.",
++        "A strong chief turned out to be weak.",
++        "A strong chief turned out to be a writer."
+       ],
+       "correct": 0,
+       "teaches": [
+-        "b1-caudillismo-vocab"
++        "resultar-adjective"
+       ]
+     }
+   ]
+diff --git a/content/es-latam/grammar/b1/b1-caudillismo-01-focus-gr.json b/content/es-latam/grammar/b1/b1-caudillismo-01-focus-gr.json
+index bc1e401d..f8b6b944 100644
+--- a/content/es-latam/grammar/b1/b1-caudillismo-01-focus-gr.json
++++ b/content/es-latam/grammar/b1/b1-caudillismo-01-focus-gr.json
+@@ -1,35 +1,59 @@
+ {
+   "id": "grammar.b1.caudillismo.01.focus",
+-  "title": "Se impersonal: el caudillo",
++  "title": "Relative clauses: who the caudillo was",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Impersonal *se* lets a text define a term, describe a widespread practice, or note an ongoing debate without naming a specific subject — exactly what's needed for something as informally recognized as caudillo authority. These sentences are taken directly from the previous reading."
++      "title": "What you already know",
++      "content": "You know relative clauses with *que* and *quien* from B1 Unit 5. They add information about a person or a thing. Here they help you say who a caudillo was, who followed him and what he did."
++    },
++    {
++      "type": "table",
++      "title": "Who and what the caudillo was",
++      "rows": [
++        [
++          "un jefe que tenía su propio ejército",
++          "*que* + verb: a chief who had his own army"
++        ],
++        [
++          "los peones que trabajaban en sus tierras",
++          "*que* after a plural noun: the workers who worked on his land"
++        ],
++        [
++          "los hombres que lo apoyaban",
++          "*que* + *lo* + verb: the men who supported him"
++        ],
++        [
++          "Rosas, que era hacendado",
++          "with commas, *que* (or *quien*) adds extra information about a named person"
++        ]
++      ]
+     },
+     {
+       "type": "examples",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Se llamaba caudillo a un líder regional cuya autoridad se apoyaba en su capacidad militar personal y su carisma.",
+-          "english": "A regional leader whose authority rested on personal military capacity and charisma was called a caudillo."
++          "spanish": "Los hombres que seguían al caudillo eran sus peones.",
++          "english": "The men who followed the caudillo were his farm workers."
+         },
+         {
+-          "spanish": "En muchas regiones, se reconocía su autoridad de facto mucho antes de que ningún cargo oficial la confirmara.",
+-          "english": "In many regions, his authority was recognized de facto long before any official post confirmed it."
++          "spanish": "El caudillo daba tierra a los hombres que lo apoyaban.",
++          "english": "The caudillo gave land to the men who supported him."
+         },
+         {
+-          "spanish": "Se exigía, en la vida cotidiana, el uso de una cinta roja como muestra pública de lealtad.",
+-          "english": "In everyday life, wearing a red ribbon was required as a public show of loyalty."
++          "spanish": "Rosas, que era hacendado, conocía bien el campo.",
++          "english": "Rosas, who was a landowner, knew the countryside well."
+         },
+         {
+-          "spanish": "Se debate todavía, entre historiadores, si Rosas debe entenderse como un tirano o como un garante de orden.",
+-          "english": "It's still debated among historians whether Rosas should be understood as a tyrant or as a guarantor of order."
++          "spanish": "El caudillo, quien tenía mucho carisma, hablaba bien con la gente.",
++          "english": "The caudillo, who had a lot of charisma, spoke well with people."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "*Se debate todavía* is a useful pattern whenever a text wants to flag an open historical question rather than settle it — it signals \"historians disagree,\" which is exactly the honest move to make about a genuinely contested figure like Rosas."
++      "content": "Use *que* for people and things. *Quien* (plural *quienes*) is for people only, and mostly after a comma or a preposition. After a noun with no comma, *que* is the normal choice: *un jefe que tenía*, not *un jefe quien tenía*."
+     }
+   ]
+-}
+\ No newline at end of file
++}
+diff --git a/content/es-latam/grammar/b1/b1-caudillismo-02-focus-gr.json b/content/es-latam/grammar/b1/b1-caudillismo-02-focus-gr.json
+index b3878f0b..f9e5eadd 100644
+--- a/content/es-latam/grammar/b1/b1-caudillismo-02-focus-gr.json
++++ b/content/es-latam/grammar/b1/b1-caudillismo-02-focus-gr.json
+@@ -1,35 +1,55 @@
+ {
+   "id": "grammar.b1.caudillismo.02.focus",
+-  "title": "Voz pasiva: patronazgo y clientelismo",
++  "title": "Verbs with a fixed preposition: Páez and his network",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "Passive voice fits patronage description well: favors were offered, a leader was recognized, allies were placed in posts, land was distributed — the resource or the person receiving the action stays the subject, which is exactly where a patronage network's real story lives. These sentences are taken directly from the previous reading."
++      "title": "What you already know",
++      "content": "You know verbs that need a fixed preposition (*depender de*, *contar con*, *confiar en*) from B1 Unit 29. They are the verbs you need to describe a network of loyalty: who counted on whom, who depended on whom, who trusted whom."
++    },
++    {
++      "type": "table",
++      "title": "Verb + preposition",
++      "rows": [
++        [
++          "Páez contaba con la lealtad de los llaneros.",
++          "*contar con* = to count on"
++        ],
++        [
++          "Los jefes locales dependían de Páez.",
++          "*depender de* = to depend on"
++        ],
++        [
++          "Los llaneros confiaban en su jefe.",
++          "*confiar en* = to trust"
++        ]
++      ]
+     },
+     {
+       "type": "examples",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Favores, tierras y protección eran ofrecidos personalmente por el caudillo a cambio de lealtad.",
+-          "english": "Favors, land and protection were personally offered by the caudillo in exchange for loyalty."
++          "spanish": "Páez contaba con la lealtad de los llaneros.",
++          "english": "Páez counted on the loyalty of the llaneros."
+         },
+         {
+-          "spanish": "Páez fue reconocido como líder natural por otros llaneros acostumbrados a la vida dura del ganado.",
+-          "english": "Páez was recognized as a natural leader by other plainsmen used to the hard life of cattle-herding."
++          "spanish": "Los jefes locales dependían de Páez.",
++          "english": "The local chiefs depended on Páez."
+         },
+         {
+-          "spanish": "Sus antiguos compañeros de armas fueron colocados en puestos de confianza.",
+-          "english": "His former comrades-in-arms were placed in positions of trust."
++          "spanish": "Los hombres confiaban en el jefe.",
++          "english": "The men trusted the chief."
+         },
+         {
+-          "spanish": "Las tierras conquistadas o confiscadas durante las guerras fueron repartidas entre sus seguidores más cercanos.",
+-          "english": "Lands conquered or confiscated during the wars were distributed among his closest followers."
++          "spanish": "Un caudillo no dependía de las leyes, dependía de las personas.",
++          "english": "A caudillo did not depend on laws, he depended on people."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "*Eran ofrecidos* (imperfect passive) describes an ongoing practice, while *fue reconocido* and *fueron colocados / repartidas* (preterite passive) mark specific completed acts. A patronage-system description often needs both: the standing rule, and the concrete instances of it."
++      "content": "The preposition belongs to the verb, and it does not change: *depender de*, *contar con*, *confiar en*. Before *el* it contracts: *dependía del jefe*. Do not use English as a guide: *depend on* is *depender de*, not *depender en*."
+     }
+   ]
+-}
+\ No newline at end of file
++}
+diff --git a/content/es-latam/grammar/b1/b1-caudillismo-03-focus-gr.json b/content/es-latam/grammar/b1/b1-caudillismo-03-focus-gr.json
+index 67a7b5d6..b760d837 100644
+--- a/content/es-latam/grammar/b1/b1-caudillismo-03-focus-gr.json
++++ b/content/es-latam/grammar/b1/b1-caudillismo-03-focus-gr.json
+@@ -1,35 +1,55 @@
+ {
+   "id": "grammar.b1.caudillismo.03.focus",
+-  "title": "Gerundio: influencia militar y poder político",
++  "title": "Cuando and mientras: the montoneras",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "An opening gerund, or a pair of them joined by *y*, packs in the method behind an action — how forces were raised and dissolved, how influence was extended while alliances were negotiated. These sentences are taken directly from the previous reading."
++      "title": "What you already know",
++      "content": "You know *cuando* and *mientras* from A2 Unit 13. *Cuando* introduces what happens at a moment; *mientras* introduces what is going on at the same time as something else. Together they tell how a caudillo raised and dissolved his forces."
++    },
++    {
++      "type": "table",
++      "title": "Two ways to link actions",
++      "rows": [
++        [
++          "Cuando necesitaba soldados, reclutaba a los hombres.",
++          "*cuando* = at the moment when: when he needed soldiers"
++        ],
++        [
++          "Mientras duraba la guerra, los hombres seguían al jefe.",
++          "*mientras* + imperfect = during the whole time: while the war lasted"
++        ],
++        [
++          "Quiroga regresaba de un viaje cuando lo atacaron.",
++          "imperfect for what was going on, *cuando* + preterite for the event that interrupts"
++        ]
++      ]
+     },
+     {
+       "type": "examples",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "Reuniendo estas fuerzas rápidamente cuando la situación lo exigía, y disolviéndolas de nuevo cuando el conflicto terminaba, Quiroga ejercía un poder militar flexible.",
+-          "english": "Gathering these forces quickly when the situation demanded it, and disbanding them again once the conflict ended, Quiroga wielded a flexible military power."
++          "spanish": "Cuando terminaba la guerra, los hombres volvían a su trabajo.",
++          "english": "When the war ended, the men went back to their work."
+         },
+         {
+-          "spanish": "Extendiendo su influencia mediante campañas militares mientras negociaba alianzas políticas, Quiroga se convirtió en una figura muy poderosa.",
+-          "english": "Extending his influence through military campaigns while negotiating political alliances, Quiroga became a very powerful figure."
++          "spanish": "Mientras el jefe vivía, los hombres lo obedecían.",
++          "english": "While the chief was alive, the men obeyed him."
+         },
+         {
+-          "spanish": "Cuando el poder militar y el poder político dependen de la misma persona, actuando simultáneamente como comandante y como gobernante, un colapso puede ser instantáneo.",
+-          "english": "When military and political power depend on the same person, acting simultaneously as commander and as ruler, a collapse can be instant."
++          "spanish": "Cuando terminó la guerra, el caudillo disolvió sus fuerzas.",
++          "english": "When the war ended, the caudillo dissolved his forces."
+         },
+         {
+-          "spanish": "Su muerte, dejando un vacío de poder real de la noche a la mañana, desató una crisis política considerable.",
+-          "english": "His death, leaving a real power vacuum overnight, triggered a considerable political crisis."
++          "spanish": "Los jinetes llegaban a caballo mientras el jefe esperaba.",
++          "english": "The horsemen arrived on horseback while the chief waited."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "Two gerunds joined by *y* (*reuniendo... y disolviéndolas...*) can describe a repeated cycle rather than a one-time action — here, forming an army and then dissolving it again, over and over, as the situation required."
++      "content": "Use the imperfect (*terminaba*, *duraba*) for what happened again and again or lasted a while, and the preterite (*terminó*, *atacaron*) for one event. *Mientras* needs an action that lasts: you cannot say *mientras lo atacaron*."
+     }
+   ]
+-}
+\ No newline at end of file
++}
+diff --git a/content/es-latam/grammar/b1/b1-caudillismo-04-focus-gr.json b/content/es-latam/grammar/b1/b1-caudillismo-04-focus-gr.json
+index 712ed69d..a0d78d47 100644
+--- a/content/es-latam/grammar/b1/b1-caudillismo-04-focus-gr.json
++++ b/content/es-latam/grammar/b1/b1-caudillismo-04-focus-gr.json
+@@ -1,35 +1,55 @@
+ {
+   "id": "grammar.b1.caudillismo.04.focus",
+-  "title": "Conectores formales: a raíz de, en el marco de",
++  "title": "Reported speech: what Sarmiento wrote",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "*A raíz de* introduces what caused an interpretation to form; *en el marco de* places a case or claim inside the framework of a broader theory. Comparing two interpretations of the same phenomenon needs both. These sentences are taken directly from the previous reading."
++      "title": "What you already know",
++      "content": "You know reported speech from B1 Unit 13: *dijo que*, *escribió que*, and the shift of tenses after a past verb. It is the tool for a debate in history: what the defenders of Rosas said, what Sarmiento wrote, what historians say today. Here we only report ideas, we do not quote them."
++    },
++    {
++      "type": "table",
++      "title": "Reporting with que",
++      "rows": [
++        [
++          "Los defensores decían que Rosas mantenía el orden.",
++          "*decían que* + imperfect: what they said"
++        ],
++        [
++          "Sarmiento escribió que el campo representaba la barbarie.",
++          "*escribió que* + imperfect: what he wrote (the verb moves back in time)"
++        ],
++        [
++          "Muchos historiadores dicen que la idea es simple.",
++          "a present verb (*dicen*) keeps the present: *es*"
++        ]
++      ]
+     },
+     {
+       "type": "examples",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "A raíz de su propia experiencia como opositor exiliado, Sarmiento publicó 'Facundo: Civilización y Barbarie' en 1845.",
+-          "english": "As a result of his own experience as an exiled opponent, Sarmiento published 'Facundo: Civilización y Barbarie' in 1845."
++          "spanish": "Los defensores de Rosas decían que él mantenía el orden.",
++          "english": "The defenders of Rosas said that he kept order."
+         },
+         {
+-          "spanish": "En el marco de esa interpretación, el caudillismo quedó asociado casi automáticamente con el atraso y la barbarie.",
+-          "english": "Within the framework of that interpretation, caudillismo became almost automatically associated with backwardness and barbarism."
++          "spanish": "Sarmiento escribió que las ciudades representaban la civilización.",
++          "english": "Sarmiento wrote that the cities represented civilization."
+         },
+         {
+-          "spanish": "En el marco de casos como el de Rafael Carrera, esta interpretación resulta considerablemente más difícil de sostener.",
+-          "english": "Within the framework of cases like Rafael Carrera's, this interpretation becomes considerably harder to sustain."
++          "spanish": "Escribió que los caudillos eran un obstáculo para el progreso.",
++          "english": "He wrote that the caudillos were an obstacle to progress."
+         },
+         {
+-          "spanish": "A raíz de este tipo de apoyo popular genuino, algunos historiadores prefieren una interpretación distinta.",
+-          "english": "As a result of this kind of genuine popular support, some historians prefer a different interpretation."
++          "spanish": "Muchos historiadores dicen que cada caso necesita su explicación.",
++          "english": "Many historians say that each case needs its own explanation."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "*En el marco de* is the connector of choice when you want to say \"judged by this particular theory's own standards\" — it lets you test an interpretation against a specific case without yet declaring whether the interpretation survives the test."
++      "content": "After a past verb (*escribió que*, *decían que*) the verb of the report moves back: *mantiene* becomes *mantenía*, *son* becomes *eran*. After a present verb (*dicen que*) nothing changes. Never drop *que*: *escribió que el campo…*."
+     }
+   ]
+-}
+\ No newline at end of file
++}
+diff --git a/content/es-latam/grammar/b1/b1-caudillismo-05-focus-gr.json b/content/es-latam/grammar/b1/b1-caudillismo-05-focus-gr.json
+index d720228e..e2776060 100644
+--- a/content/es-latam/grammar/b1/b1-caudillismo-05-focus-gr.json
++++ b/content/es-latam/grammar/b1/b1-caudillismo-05-focus-gr.json
+@@ -1,31 +1,55 @@
+ {
+   "id": "grammar.b1.caudillismo.05.focus",
+-  "title": "Conectores formales de contraste: en algunos lugares... en otros...",
++  "title": "Resultar + adjective: the legacy of the caudillos",
+   "sections": [
+     {
+       "type": "text",
+-      "content": "*En algunos lugares... en otros...* is the formal way to compare outcomes case by case without claiming one single result for an entire region — exactly what a fair synthesis of caudillismo's legacy requires. These sentences are taken directly from the previous reading."
++      "title": "What you already know",
++      "content": "You know *resultar* + adjective from B1 Unit 15: it says how something turned out to be. It is a good way to talk about a legacy: what turned out to be difficult, useful or dangerous. The adjective agrees with the thing described."
++    },
++    {
++      "type": "table",
++      "title": "Resultar + adjective",
++      "rows": [
++        [
++          "Resultó difícil crear instituciones fuertes.",
++          "*resultó* + adjective + infinitive: it turned out to be difficult to create"
++        ],
++        [
++          "El poder personal resultó peligroso.",
++          "the adjective agrees with the subject (masculine singular)"
++        ],
++        [
++          "Las leyes resultaban débiles.",
++          "plural subject: *resultaban* + *débiles*"
++        ]
++      ]
+     },
+     {
+       "type": "examples",
++      "title": "In context",
+       "items": [
+         {
+-          "spanish": "En algunos lugares, como Chile, la estabilidad institucional limitó el papel de los caudillos; en otros, como Bolivia, el patrón de líderes personalistas se prolongó mucho más allá del siglo diecinueve.",
+-          "english": "In some places, like Chile, institutional stability limited the caudillos' role; in others, like Bolivia, the pattern of personalist leaders continued well beyond the nineteenth century."
++          "spanish": "Resultó difícil crear instituciones fuertes.",
++          "english": "It turned out to be difficult to create strong institutions."
++        },
++        {
++          "spanish": "Un jefe fuerte resultó útil para mantener el orden.",
++          "english": "A strong chief turned out to be useful for keeping order."
+         },
+         {
+-          "spanish": "En algunos casos, el caudillismo dejó redes de patronazgo que siguieron influyendo en la política local; en otros, el recuerdo del caos generó un consenso a favor de instituciones civiles fuertes.",
+-          "english": "In some cases, caudillismo left patronage networks that kept influencing local politics; in others, the memory of chaos generated a consensus in favor of strong civilian institutions."
++          "spanish": "El poder personal resultó peligroso para la democracia.",
++          "english": "Personal power turned out to be dangerous for democracy."
+         },
+         {
+-          "spanish": "En algunos países se llegó a una separación relativamente clara entre autoridad militar y civil; en otros, esa separación siguió siendo mucho más porosa.",
+-          "english": "In some countries, a relatively clear separation between military and civilian authority was reached; in others, that separation remained much more porous."
++          "spanish": "Las leyes resultaban débiles en el campo.",
++          "english": "The laws turned out to be weak in the countryside."
+         }
+       ]
+     },
+     {
+       "type": "tip",
+-      "content": "This pattern forces honesty about variation — instead of one sweeping claim about 'Latin America,' it commits to naming at least one concrete example on each side of the contrast, which is exactly what makes a historical generalization credible rather than lazy."
++      "content": "With an infinitive, *resultar* stays singular and the adjective stays masculine: *resultó difícil crear instituciones*. With a noun, both agree: *las leyes resultaron débiles*. Use the preterite (*resultó*) for the final result and the imperfect (*resultaba*) for how things were over time."
+     }
+   ]
+-}
+\ No newline at end of file
++}
+diff --git a/content/es-latam/lessons/b1/b1-caudillismo-01.json b/content/es-latam/lessons/b1/b1-caudillismo-01.json
+index cd3b3ff9..31b0ec2f 100644
+--- a/content/es-latam/lessons/b1/b1-caudillismo-01.json
++++ b/content/es-latam/lessons/b1/b1-caudillismo-01.json
+@@ -1,18 +1,18 @@
+ {
+   "id": "lesson.b1.caudillismo.01",
+-  "title": "El caudillo",
++  "title": "The caudillo: a leader with his own army",
+   "level": "B1",
+-  "goal": "Read about what a caudillo actually was, through Juan Manuel de Rosas — near-absolute legal power, a regime of strict social control, and a red ribbon worn as a public sign of loyalty.",
+-  "grammar": "political leadership",
++  "goal": "Read about the caudillos of the 19th century, and use relative clauses to say who they were and who followed them.",
++  "grammar": "Relative clauses with que and quien",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Explain what caudillo authority was based on, in contrast to formal institutions.",
+-        "Explain what the 'suma del poder público' granted Rosas in 1835.",
+-        "Describe the regime Rosas imposed and what the red ribbon signified.",
+-        "Explain why historians still debate how to interpret Rosas.",
+-        "Use impersonal se to define a term and describe a widespread practice."
++        "Use relative clauses with *que* and *quien* to say who a caudillo was and who followed him.",
++        "Say what a caudillo gave to the men who supported him.",
++        "Say who Juan Manuel de Rosas was and when he governed Buenos Aires.",
++        "Say why historians disagree about the caudillos.",
++        "Use the key words of this lesson: landowner, farm worker, follower, charisma, weak and loyal."
+       ]
+     },
+     {
+@@ -53,11 +53,11 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can explain what caudillo authority was based on, in contrast to formal institutions.",
+-        "I can explain what the 'suma del poder público' granted Rosas in 1835.",
+-        "I can describe the regime Rosas imposed and what the red ribbon signified.",
+-        "I can explain why historians still debate how to interpret Rosas.",
+-        "I can use impersonal se to define a term and describe a widespread practice."
++        "I can use relative clauses with *que* and *quien* to say who a caudillo was and who followed him.",
++        "I can say what a caudillo gave to the men who supported him.",
++        "I can say who Juan Manuel de Rosas was and when he governed Buenos Aires.",
++        "I can say why historians disagree about the caudillos.",
++        "I can use the key words of this lesson: landowner, farm worker, follower, charisma, weak and loyal."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b1/b1-caudillismo-02.json b/content/es-latam/lessons/b1/b1-caudillismo-02.json
+index 93a7f5e9..b24a6228 100644
+--- a/content/es-latam/lessons/b1/b1-caudillismo-02.json
++++ b/content/es-latam/lessons/b1/b1-caudillismo-02.json
+@@ -1,18 +1,18 @@
+ {
+   "id": "lesson.b1.caudillismo.02",
+-  "title": "Poder personal",
++  "title": "Personal power: Páez and the networks of loyalty",
+   "level": "B1",
+-  "goal": "Read how a caudillo's power actually worked day to day, through José Antonio Páez — a personal network of favors and loyalty, not a bureaucracy.",
+-  "grammar": "patronage and authority",
++  "goal": "Read how a caudillo governed through personal ties, and use verbs with a fixed preposition to describe those ties.",
++  "grammar": "Verbs with a required preposition",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Explain how a caudillo governed differently from a modern official.",
+-        "Explain why Páez was recognized as a leader by the llaneros.",
+-        "Describe how the 'pyramid of overlapping loyalties' functioned.",
+-        "Explain what Páez's network of favors achieved in Venezuela.",
+-        "Use passive voice to describe how favors, posts and land were distributed."
++        "Use verbs with a fixed preposition (*contar con*, *depender de*, *confiar en*) to describe a caudillo's network.",
++        "Say how a caudillo governed differently from a modern official.",
++        "Say who José Antonio Páez was and what he gave to local chiefs.",
++        "Say why a network of loyalties was fragile.",
++        "Use the key words of this lesson: official, llanero, fragile, president and local."
+       ]
+     },
+     {
+@@ -53,11 +53,11 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can explain how a caudillo governed differently from a modern official.",
+-        "I can explain why Páez was recognized as a leader by the llaneros.",
+-        "I can describe how the 'pyramid of overlapping loyalties' functioned.",
+-        "I can explain what Páez's network of favors achieved in Venezuela.",
+-        "I can use passive voice to describe how favors, posts and land were distributed."
++        "I can use verbs with a fixed preposition (*contar con*, *depender de*, *confiar en*) to describe a caudillo's network.",
++        "I can say how a caudillo governed differently from a modern official.",
++        "I can say who José Antonio Páez was and what he gave to local chiefs.",
++        "I can say why a network of loyalties was fragile.",
++        "I can use the key words of this lesson: official, llanero, fragile, president and local."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b1/b1-caudillismo-03.json b/content/es-latam/lessons/b1/b1-caudillismo-03.json
+index 31618cc0..5cd82e60 100644
+--- a/content/es-latam/lessons/b1/b1-caudillismo-03.json
++++ b/content/es-latam/lessons/b1/b1-caudillismo-03.json
+@@ -1,18 +1,18 @@
+ {
+   "id": "lesson.b1.caudillismo.03",
+-  "title": "Ejército y política",
++  "title": "Army and politics: the montoneras and Facundo Quiroga",
+   "level": "B1",
+-  "goal": "Read how military command and political power fused into one thing, through a caudillo whose irregular rural militias were raised for battle and dissolved afterwards.",
+-  "grammar": "military influence",
++  "goal": "Read how caudillos raised armies of rural horsemen, and use cuando and mientras to say what happened and what was going on.",
++  "grammar": "Cuando and mientras",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Explain what montoneras were.",
+-        "Explain how Quiroga raised and dissolved his forces.",
+-        "Describe what happened after Quiroga's death in 1835.",
+-        "Explain why a caudillo's death could mean instant institutional collapse.",
+-        "Use the gerund to describe repeated cycles and simultaneous actions."
++        "Use *cuando* and *mientras* to say what happened and what was going on at the same time.",
++        "Say what the montoneras were.",
++        "Say what happened to a montonera when the war ended.",
++        "Say who Facundo Quiroga was and how he died in 1835.",
++        "Use the key words of this lesson: montonera, horseman, to recruit, ambush and province."
+       ]
+     },
+     {
+@@ -53,11 +53,11 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can explain what montoneras were.",
+-        "I can explain how Quiroga raised and dissolved his forces.",
+-        "I can describe what happened after Quiroga's death in 1835.",
+-        "I can explain why a caudillo's death could mean instant institutional collapse.",
+-        "I can use the gerund to describe repeated cycles and simultaneous actions."
++        "I can use *cuando* and *mientras* to say what happened and what was going on at the same time.",
++        "I can say what the montoneras were.",
++        "I can say what happened to a montonera when the war ended.",
++        "I can say who Facundo Quiroga was and how he died in 1835.",
++        "I can use the key words of this lesson: montonera, horseman, to recruit, ambush and province."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b1/b1-caudillismo-04.json b/content/es-latam/lessons/b1/b1-caudillismo-04.json
+index 9a099d54..f428b951 100644
+--- a/content/es-latam/lessons/b1/b1-caudillismo-04.json
++++ b/content/es-latam/lessons/b1/b1-caudillismo-04.json
+@@ -1,18 +1,18 @@
+ {
+   "id": "lesson.b1.caudillismo.04",
+-  "title": "Orden o inestabilidad",
++  "title": "Order or instability? Rosas, Carrera and Sarmiento's Facundo",
+   "level": "B1",
+-  "goal": "Read about the book that framed caudillos as pure barbarism, and the indigenous-backed caudillo whose case doesn't fit that framing at all.",
+-  "grammar": "competing interpretations",
++  "goal": "Read how people judged the caudillos, and use reported speech to say what each side said and wrote.",
++  "grammar": "Reported speech",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Explain what Sarmiento argued in 'Facundo: Civilización y Barbarie'.",
+-        "Explain why Rafael Carrera's case complicates Sarmiento's interpretation.",
+-        "Describe the alternative interpretation some historians prefer today.",
+-        "Explain why neither interpretation fully captures every case.",
+-        "Use 'a raíz de' and 'en el marco de' to compare two historical interpretations."
++        "Use reported speech (*dijo que*, *escribió que*) to say what people said and wrote about the caudillos.",
++        "Say what the defenders of Rosas said.",
++        "Say what Sarmiento wrote in Facundo (1845).",
++        "Say why Rafael Carrera does not fit Sarmiento's idea.",
++        "Use the key words of this lesson: civilization, barbarism, writer, exiled, defender and instability."
+       ]
+     },
+     {
+@@ -53,11 +53,11 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can explain what Sarmiento argued in 'Facundo: Civilización y Barbarie'.",
+-        "I can explain why Rafael Carrera's case complicates Sarmiento's interpretation.",
+-        "I can describe the alternative interpretation some historians prefer today.",
+-        "I can explain why neither interpretation fully captures every case.",
+-        "I can use 'a raíz de' and 'en el marco de' to compare two historical interpretations."
++        "I can use reported speech (*dijo que*, *escribió que*) to say what people said and wrote about the caudillos.",
++        "I can say what the defenders of Rosas said.",
++        "I can say what Sarmiento wrote in Facundo (1845).",
++        "I can say why Rafael Carrera does not fit Sarmiento's idea.",
++        "I can use the key words of this lesson: civilization, barbarism, writer, exiled, defender and instability."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/lessons/b1/b1-caudillismo-05.json b/content/es-latam/lessons/b1/b1-caudillismo-05.json
+index d24e83a0..c106ee64 100644
+--- a/content/es-latam/lessons/b1/b1-caudillismo-05.json
++++ b/content/es-latam/lessons/b1/b1-caudillismo-05.json
+@@ -1,18 +1,18 @@
+ {
+   "id": "lesson.b1.caudillismo.05",
+-  "title": "El legado del caudillismo",
++  "title": "The legacy of caudillismo",
+   "level": "B1",
+-  "goal": "Read a synthesis of what caudillismo actually left behind — not a single legacy, but sharply different outcomes depending on which country you look at.",
+-  "grammar": "synthesis",
++  "goal": "Read what the caudillos left behind, and use resultar with an adjective to say what turned out to be difficult, useful or dangerous.",
++  "grammar": "Resultar + adjective",
+   "sections": [
+     {
+       "type": "goal",
+       "items": [
+-        "Contrast Chile's outcome with Bolivia's regarding caudillo influence.",
+-        "Explain what contemporary political scientists have identified in caudillismo's patterns.",
+-        "Describe whether military-civilian separation happened uniformly across the region.",
+-        "Explain why studying caudillismo still matters today.",
+-        "Use 'en algunos lugares... en otros...' to contrast outcomes across a region."
++        "Use *resultar* + adjective to say what turned out to be difficult, useful or dangerous.",
++        "Say what happened to national armies and governments after the caudillos.",
++        "Say why it was difficult to create strong institutions.",
++        "Say what historians think about the legacy of personal power.",
++        "Use the key words of this lesson: national, political, military, patronage, to replace and democracy."
+       ]
+     },
+     {
+@@ -53,11 +53,11 @@
+     {
+       "type": "checklist",
+       "items": [
+-        "I can contrast Chile's outcome with Bolivia's regarding caudillo influence.",
+-        "I can explain what contemporary political scientists have identified in caudillismo's patterns.",
+-        "I can describe whether military-civilian separation happened uniformly across the region.",
+-        "I can explain why studying caudillismo still matters today.",
+-        "I can use 'en algunos lugares... en otros...' to contrast outcomes across a region."
++        "I can use *resultar* + adjective to say what turned out to be difficult, useful or dangerous.",
++        "I can say what happened to national armies and governments after the caudillos.",
++        "I can say why it was difficult to create strong institutions.",
++        "I can say what historians think about the legacy of personal power.",
++        "I can use the key words of this lesson: national, political, military, patronage, to replace and democracy."
+       ]
+     }
+   ]
+diff --git a/content/es-latam/stories/world/b1/b1-caudillismo-01-caudillo.json b/content/es-latam/stories/world/b1/b1-caudillismo-01-caudillo.json
+index 52db9352..1012f45e 100644
+--- a/content/es-latam/stories/world/b1/b1-caudillismo-01-caudillo.json
++++ b/content/es-latam/stories/world/b1/b1-caudillismo-01-caudillo.json
+@@ -1,64 +1,61 @@
+ {
+   "id": "story.b1.caudillismo.01",
+-  "title": "El caudillo y la suma del poder",
++  "title": "El caudillo: un jefe con su propio ejército",
+   "level": "B1",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En el siglo diecinueve, la crisis de legitimidad provocada por el colapso del imperio colonial abrió el camino a una figura política emblemática de la historia hispanoamericana. En un continente donde las constituciones escritas parecían impotentes para frenar la anarquía, el hombre fuerte armado se convirtió en el eje indiscutible de la vida pública."
++      "text": "Después de la independencia, muchos países de América Latina eran débiles. Los gobiernos tenían poco dinero y no controlaban todo el territorio. En ese vacío de poder apareció un nuevo tipo de líder: el caudillo."
+     },
+     {
+       "type": "narration",
+-      "text": "Se llamaba caudillo a un líder regional cuya autoridad se apoyaba en su capacidad militar personal y su carisma. Generalmente acaudalado estanciero o veterano de las guerras patriotas, el caudillo mantenía el orden mediante la lealtad directa de sus peones, gauchos o llaneros armados. En muchas regiones, se reconocía su autoridad de facto mucho antes de que ningún cargo oficial la confirmara."
++      "text": "Un caudillo era un jefe que tenía su propio ejército. Muchos eran hacendados, hombres que tenían tierras y ganado. Otros eran oficiales de las guerras de independencia. Sus soldados eran, muchas veces, los peones que trabajaban en sus tierras. Esos hombres no obedecían a una ley: obedecían a una persona."
+     },
+     {
+       "type": "narration",
+-      "text": "El ejemplo más célebre fue Juan Manuel de Rosas en Buenos Aires. En 1835, la legislatura le concedió la 'suma del poder público', concentrando todas las facultades gubernamentales en su persona. Apoyado por la Mazorca, Rosas impuso un régimen de férreo control social. Se exigía, en la vida cotidiana, el uso de una cinta roja como muestra pública de lealtad. Aquella 'divisa punzó' debía llevarse obligatoriamente en el pecho por hombres y mujeres para demostrar sumisión al Restaurador de las Leyes."
++      "text": "El poder del caudillo se basaba en la lealtad personal. El caudillo daba protección, tierra o trabajo a los hombres que lo apoyaban, y ellos le daban su apoyo y sus armas. Muchos caudillos tenían carisma: hablaban bien con la gente del campo y sabían ganar su respeto. Por eso sus seguidores eran leales: lo conocían personalmente y confiaban en él."
+     },
+     {
+       "type": "narration",
+-      "text": "Se debate todavía, entre historiadores, si Rosas debe entenderse como un tirano o como un garante de orden. Mientras sus opositores liberales exiliados lo retrataban como un autócrata sanguinario que ahogó la libertad, sus defensores destacan que defendió la soberanía nacional frente a los bloqueos navales de Francia e Inglaterra y mantuvo la cohesión de la confederación."
++      "text": "Algunos caudillos gobernaron una provincia o un país entero. Uno de los más conocidos fue Juan Manuel de Rosas, que gobernó Buenos Aires de 1829 a 1832 y de 1835 a 1852. Rosas era un hacendado rico, y conocía bien a los hombres del campo. Su gobierno terminó en 1852, cuando perdió la batalla de Caseros."
+     },
+     {
+       "type": "narration",
+-      "text": "El fenómeno del caudillismo demostró que el poder político decimonónico dependía mucho más de las lealtades afectivas y la fuerza armada que de los abstractos principios parlamentarios importados de Europa."
++      "text": "Los historiadores no están de acuerdo sobre el caudillismo. Según algunos, los caudillos eran jefes que mantenían el orden cuando el Estado era débil. Según otros, eran jefes cuyo poder dependía de las armas, y su presencia hacía difícil crear instituciones fuertes."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál es el tema primordial que analiza el texto sobre el siglo XIX hispanoamericano?",
++          "question": "According to the text, what was a caudillo?",
+           "options": [
+-            "El establecimiento pacífico de repúblicas parlamentarias sin ejércitos ni conflictos regionales.",
+-            "El papel predominante del caudillo y el poder personal armado tras el colapso del orden colonial.",
+-            "La sumisión absoluta de los terratenientes locales a los embajadores de las potencias europeas.",
+-            "La eliminación inmediata de todas las milicias rurales y la disolución de las provincias."
++            "Un jefe que tenía su propio ejército.",
++            "Un juez que defendía las leyes.",
++            "Un ministro que escribía las cartas."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "El texto analiza la figura del caudillo como líder carismático y militar que concentró el poder ante la ineficacia de las instituciones constitucionales."
++          "correctIndex": 0,
++          "explanation": "The second paragraph says a caudillo was a chief who had his own army."
+         },
+         {
+-          "question": "¿Qué símbolo obligatorio debían portar hombres y mujeres en Buenos Aires durante el régimen de Rosas?",
++          "question": "What did a caudillo give to the men who supported him?",
+           "options": [
+-            "Una escarapela tricolor de origen francés.",
+-            "Un pañuelo verde en el brazo izquierdo.",
+-            "La divisa punzó, una cinta roja en el pecho que mostraba lealtad política.",
+-            "Una medalla de bronce grabada con el escudo británico."
++            "Protección, tierra o trabajo.",
++            "Un cargo en el gobierno.",
++            "Una casa en la capital."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "El texto detalla que se exigía el uso obligatorio en el pecho de la cinta roja o «divisa punzó» como muestra pública de adhesión a Rosas."
++          "correctIndex": 0,
++          "explanation": "The third paragraph says he gave protection, land or work."
+         },
+         {
+-          "question": "¿Qué argumento señalan los defensores históricos de la figura de Juan Manuel de Rosas?",
++          "question": "When did Rosas lose power?",
+           "options": [
+-            "Que defendió la soberanía nacional ante los bloqueos de Francia e Inglaterra y mantuvo cohesionada la confederación.",
+-            "Que abolió el poder militar y entregó la aduana porteña a los unitarios exiliados en Montevideo.",
+-            "Que redactó la constitución más descentralizada y parlamentaria de la historia del Río de la Plata.",
+-            "Que disolvió a la Mazorca para garantizar la libre expresión de la prensa opositora."
++            "En 1852, después de la batalla de Caseros.",
++            "En 1835, cuando empezó su primer gobierno.",
++            "En 1829, antes de la independencia."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El texto menciona que sus defensores destacan la defensa de la soberanía nacional frente a las agresiones anglofrancesas y la cohesión de la confederación argentina."
++          "explanation": "The fourth paragraph says his government ended in 1852, when he lost the battle of Caseros."
+         }
+       ]
+     }
+diff --git a/content/es-latam/stories/world/b1/b1-caudillismo-02-poderpersonal.json b/content/es-latam/stories/world/b1/b1-caudillismo-02-poderpersonal.json
+index 49658241..648b1c76 100644
+--- a/content/es-latam/stories/world/b1/b1-caudillismo-02-poderpersonal.json
++++ b/content/es-latam/stories/world/b1/b1-caudillismo-02-poderpersonal.json
+@@ -1,64 +1,61 @@
+ {
+   "id": "story.b1.caudillismo.02",
+-  "title": "José Antonio Páez y las redes de lealtad personal",
++  "title": "Poder personal: Páez y la red de lealtades",
+   "level": "B1",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Para comprender el funcionamiento del caudillismo, es indispensable analizar la compleja red de relaciones humanas que sustentaba el mando de estos líderes. A diferencia de las democracias modernas, el poder de un caudillo no emanaba de una burocracia impersonal, sino de lazos íntimos de compadrazgo y reciprocidad material."
++      "text": "Un caudillo no gobernaba como un funcionario moderno. Un funcionario trabaja para el Estado y sigue reglas escritas. Un caudillo, en cambio, gobernaba con relaciones personales. Todo dependía de la confianza entre el jefe y sus hombres."
+     },
+     {
+       "type": "narration",
+-      "text": "Favores, tierras y protección eran ofrecidos personalmente por el caudillo a cambio de lealtad. En los llanos venezolanos, José Antonio Páez encarnó a la perfección este modelo señorial. Páez fue reconocido como líder natural por otros llaneros acostumbrados a la vida dura del ganado. Su extraordinaria valentía en combate y su habilidad inigualable como jinete le granjearon una devoción ciega entre los jinetes de la sabana."
++      "text": "José Antonio Páez es un buen ejemplo. Era un llanero, un hombre de los llanos de Venezuela. Los llaneros trabajaban con el ganado y sabían ir a caballo. Durante las guerras de independencia, Páez fue jefe de un grupo de llaneros, y ellos confiaron en él. Más tarde Venezuela salió de la Gran Colombia, y Páez fue el hombre más poderoso del país. Desde 1831 fue presidente varias veces."
+     },
+     {
+       "type": "narration",
+-      "text": "Sus antiguos compañeros de armas fueron colocados en puestos de confianza. Tras liderar la separación de Venezuela de la Gran Colombia en 1830, Páez gobernó apoyándose en los coroneles que habían combatido a su lado en las Queseras del Medio y Carabobo, nombrándolos jefes de cantón y comandantes de armas locales."
++      "text": "Páez contaba con una red de favores. Daba tierras, cargos y protección a jefes locales, y esos jefes dependían de él. A cambio, los jefes locales contaban con la lealtad de sus propios hombres y se la daban a Páez. Era como una pirámide de lealtades: arriba estaba Páez, y abajo estaban los llaneros."
+     },
+     {
+       "type": "narration",
+-      "text": "Las tierras conquistadas o confiscadas durante las guerras fueron repartidas entre sus seguidores más cercanos. Mediante la entrega de hatos ganaderos y vales de haberes militares, el caudillo consolidó una pirámide de lealtades superpuestas donde cada beneficiario se convertía en un defensor incondicional del régimen."
++      "text": "Esta red tenía un problema: era frágil. Si un jefe local no recibía lo que esperaba, podía dejar de apoyar a Páez. Por eso Páez tenía que cuidar sus relaciones personales con muchos hombres."
+     },
+     {
+       "type": "narration",
+-      "text": "Esa estructura de poder personalista suplió la ausencia de un Estado consolidado, creando un consenso basado en el intercambio de favores que garantizó la estabilidad de Venezuela durante casi dos décadas."
++      "text": "El poder de Páez dependía de personas, no de instituciones. Por eso un caudillo fuerte podía mantener unido un país, pero un caudillo que perdía el apoyo de sus jefes locales perdía también su poder."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál es el núcleo central que explica este texto sobre el mando de José Antonio Páez?",
++          "question": "How did a caudillo govern, compared with a modern official?",
+           "options": [
+-            "El funcionamiento del caudillismo apoyado en redes de compadrazgo, lealtad personal y reparto de tierras y cargos.",
+-            "La instauración de un modelo burocrático impersonal calcado de los ministerios prusianos.",
+-            "El desarme de los jinetes llaneros para evitar su participación en los asuntos políticos de Venezuela.",
+-            "La inmediata reintegración incondicional de Venezuela dentro del territorio de la Gran Colombia."
++            "Con relaciones personales.",
++            "Con reglas escritas.",
++            "Con un ejército extranjero."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El texto explica cómo el poder de Páez se cimentó en el carisma militar, las relaciones personales y la redistribución de tierras y puestos entre sus combatientes."
++          "explanation": "The first paragraph says a caudillo governed with personal relationships, while an official follows written rules."
+         },
+         {
+-          "question": "¿A quiénes nombró Páez como jefes de cantón y comandantes de armas locales al asumir el gobierno en 1830?",
++          "question": "What did Páez give to local chiefs?",
+           "options": [
+-            "A diplomáticos extranjeros enviados por la monarquía española.",
+-            "A coroneles y compañeros de armas que habían combatido a su lado en Queseras del Medio y Carabobo.",
+-            "A intelectuales liberales formados en las universidades europeas sin experiencia bélica.",
+-            "A sacerdotes de las órdenes mendicantes que administraban las misiones rurales."
++            "Tierras, cargos y protección.",
++            "Dinero de otros países.",
++            "Ejércitos y barcos."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "El texto afirma que Páez gobernó apoyándose en los coroneles que habían combatido con él en batallas patriotas, nombrándolos jefes de cantón y comandantes locales."
++          "correctIndex": 0,
++          "explanation": "The third paragraph says he gave land, posts and protection."
+         },
+         {
+-          "question": "¿Qué función histórica cumplió esta pirámide de lealtades personales en Venezuela según el autor?",
++          "question": "Why was the network of loyalties fragile?",
+           "options": [
+-            "Desató de inmediato una guerra civil continental que dividió al país en pequeños reinos feudales.",
+-            "Condujo a la ruina de toda la producción ganadera en los llanos del Orinoco.",
+-            "Suplió la ausencia de un Estado consolidado y garantizó la estabilidad política durante casi dos décadas.",
+-            "Provocó la reconquista inmediata de Caracas por parte de las fuerzas realistas españolas."
++            "Un jefe local podía dejar de apoyar a Páez.",
++            "Los llaneros no tenían caballos.",
++            "Páez no tenía tierras."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "El texto señala que esta estructura personalista suplió la falta de un Estado consolidado y aportó estabilidad al país durante casi veinte años."
++          "correctIndex": 0,
++          "explanation": "The fourth paragraph says a local chief could stop supporting Páez if he did not receive what he expected."
+         }
+       ]
+     }
+diff --git a/content/es-latam/stories/world/b1/b1-caudillismo-03-ejercitopolitica.json b/content/es-latam/stories/world/b1/b1-caudillismo-03-ejercitopolitica.json
+index 7130fe29..e10f1148 100644
+--- a/content/es-latam/stories/world/b1/b1-caudillismo-03-ejercitopolitica.json
++++ b/content/es-latam/stories/world/b1/b1-caudillismo-03-ejercitopolitica.json
+@@ -1,64 +1,61 @@
+ {
+   "id": "story.b1.caudillismo.03",
+-  "title": "Facundo Quiroga y las montoneras provinciales",
++  "title": "Ejército y política: las montoneras y Facundo Quiroga",
+   "level": "B1",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "En las extensas provincias del interior argentino, la confrontación política adoptó formas de guerra irregular a través de las temibles milicias rurales conocidas como montoneras. Al frente de estas partidas gauchas se erigió la figura indómita de Juan Facundo Quiroga, el célebre 'Tigre de los Llanos'."
++      "text": "Un caudillo no tenía un ejército profesional. Cuando necesitaba soldados, reclutaba a los hombres del campo. Esos grupos de jinetes armados se llamaban montoneras. Muchos jinetes traían su propio caballo."
+     },
+     {
+       "type": "narration",
+-      "text": "Reuniendo estas fuerzas rápidamente cuando la situación lo exigía, y disolviéndolas de nuevo cuando el conflicto terminaba, Quiroga ejercía un poder militar flexible. Sus hombres no cobraban un salario regular ni vivían en cuarteles; eran paisanos que volvían a sus tareas agrícolas y ganaderas hasta que el toque de clarín del caudillo riojano los convocaba nuevamente a la batalla bajo el lema de 'Religión o Muerte'."
++      "text": "Las montoneras eran fuertes en el campo, pero no eran un ejército organizado. Mientras duraba la guerra, los hombres seguían al jefe. Cuando terminaba, volvían a sus casas y a su trabajo. Así, el caudillo reclutaba sus fuerzas y después las disolvía."
+     },
+     {
+       "type": "narration",
+-      "text": "Extendiendo su influencia mediante campañas militares mientras negociaba alianzas políticas, Quiroga se convirtió en una figura muy poderosa. Llegó a dominar el noroeste argentino, disputándole la hegemonía a los unitarios porteños y actuando como árbitro supremo en los conflictos entre gobernadores provinciales."
++      "text": "Facundo Quiroga fue un caudillo de La Rioja, una provincia del noroeste de Argentina. Mandaba en su provincia y tenía influencia en otras provincias del interior. Muchos hombres armados lo seguían."
+     },
+     {
+       "type": "narration",
+-      "text": "Sin embargo, el sistema caudillesco albergaba una fragilidad estructural insalvable. Cuando el poder militar y el poder político dependen de la misma persona, actuando simultáneamente como comandante y como gobernante, un colapso puede ser instantáneo. No existían instituciones sucesorias capaces de sobrevivir a la muerte del líder carismático."
++      "text": "En 1835 Quiroga regresaba de un viaje cuando unos hombres lo atacaron en una emboscada en Barranca Yaco, en la provincia de Córdoba. Quiroga murió allí. Todavía se discute quién ordenó el ataque."
+     },
+     {
+       "type": "narration",
+-      "text": "En febrero de 1835, Quiroga fue emboscado y asesinado a balazos en Barranca Yaco. Su muerte, dejando un vacío de poder real de la noche a la mañana, desató una crisis política considerable. La desaparición del líder riojano conmocionó a toda la Confederación Argentina y precipitó la concentración absoluta del poder en manos de Juan Manuel de Rosas en Buenos Aires."
++      "text": "Cuando un caudillo moría, su poder personal no pasaba fácilmente a otra persona. Mientras el jefe vivía, los hombres lo obedecían, pero sin él la organización se rompía a menudo. Esa fue una debilidad del poder personal."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Qué aspecto crucial del caudillismo ilustra la trayectoria de Facundo Quiroga en las provincias argentinas?",
++          "question": "What was a montonera?",
+           "options": [
+-            "El funcionamiento de las montoneras rurales como base militar del caudillo y la fragilidad del poder personalista sin instituciones sucesorias.",
+-            "El éxito de un ejército permanente y profesional financiado mediante impuestos a las aduanas porteñas.",
+-            "La sumisión pacífica e incondicional de los gobernadores del interior a las órdenes del partido unitario.",
+-            "La eliminación de toda creencia religiosa entre las tropas gauchas del noroeste argentino."
++            "Un grupo de jinetes armados que seguían a un caudillo.",
++            "Un ejército profesional del Estado.",
++            "Una casa grande en el campo."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El texto aborda el poder de Quiroga sustentado en milicias rurales irregulares y cómo su muerte evidenció la debilidad institucional del sistema caudillesco."
++          "explanation": "The first paragraph says the montoneras were groups of armed horsemen raised by a caudillo."
+         },
+         {
+-          "question": "¿Bajo qué célebre lema político y religioso convocaba Quiroga a sus montoneros a la batalla?",
++          "question": "What happened to the men of a montonera when the war ended?",
+           "options": [
+-            "«Paz y Administración»",
+-            "«Libertad, Igualdad y Fraternidad»",
+-            "«Religión o Muerte»",
+-            "«Constitución y Progreso»"
++            "Volvían a sus casas y a su trabajo.",
++            "Seguían en el ejército durante años.",
++            "Recibían un cargo en el gobierno."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "El texto señala expresamente que los paisanos acudían a la batalla convocados por el caudillo bajo el lema de «Religión o Muerte»."
++          "correctIndex": 0,
++          "explanation": "The second paragraph says they went back to their homes and their work."
+         },
+         {
+-          "question": "¿Qué repercusión inmediata causó la muerte de Quiroga en Barranca Yaco en 1835?",
++          "question": "What happened to Quiroga in 1835?",
+           "options": [
+-            "Provocó la paz definitiva entre unitarios y federales bajo una constitución liberal europea.",
+-            "Precipitó la concentración absoluta del poder en manos de Juan Manuel de Rosas en Buenos Aires.",
+-            "Llevó a la disolución irrevocable de la provincia de La Rioja y de su población rural.",
+-            "Determinó la renuncia de todos los jefes militares gauchos y el desarme voluntario del interior."
++            "Murió en una emboscada en Barranca Yaco.",
++            "Perdió la batalla de Caseros.",
++            "Fue presidente de Venezuela."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "El texto indica que el vacío de poder dejado por el crimen de Barranca Yaco conmocionó al país y aceleró la concentración del poder público en Juan Manuel de Rosas."
++          "correctIndex": 0,
++          "explanation": "The fourth paragraph says he was attacked in an ambush at Barranca Yaco and died there."
+         }
+       ]
+     }
+diff --git a/content/es-latam/stories/world/b1/b1-caudillismo-04-ordeninestabilidad.json b/content/es-latam/stories/world/b1/b1-caudillismo-04-ordeninestabilidad.json
+index 9b8b4686..046f4d2b 100644
+--- a/content/es-latam/stories/world/b1/b1-caudillismo-04-ordeninestabilidad.json
++++ b/content/es-latam/stories/world/b1/b1-caudillismo-04-ordeninestabilidad.json
+@@ -1,64 +1,61 @@
+ {
+   "id": "story.b1.caudillismo.04",
+-  "title": "Sarmiento, Rafael Carrera y el enigma del orden",
++  "title": "¿Orden o inestabilidad? Rosas, Carrera y el Facundo de Sarmiento",
+   "level": "B1",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "El auge de los caudillos desató apasionados debates intelectuales sobre el ser nacional hispanoamericano. Para las élites urbanas ilustradas, los hombres fuertes rurales eran una plaga que impedía la llegada del progreso, pero la realidad histórica era mucho más compleja."
++      "text": "Después de la independencia, muchos países tenían guerras entre grupos políticos. Los defensores de Rosas decían que él mantenía el orden en un país con muchos problemas. Sus opositores decían que su gobierno era muy duro y que muchas personas tenían que salir del país."
+     },
+     {
+       "type": "narration",
+-      "text": "A raíz de su propia experiencia como opositor exiliado, Sarmiento publicó 'Facundo: Civilización y Barbarie' en 1845. En su célebre libro escrito desde Chile, Domingo Faustino Sarmiento contrapuso la civilización europea de las ciudades a la barbarie violenta del desierto pampeano. En el marco de esa interpretación, el caudillismo quedó asociado casi automáticamente con el atraso y la barbarie."
++      "text": "Domingo Faustino Sarmiento era un escritor argentino. En 1845 estaba exiliado en Chile, y allí publicó un libro sobre Facundo Quiroga. Sarmiento escribió que las ciudades representaban la civilización y que el campo, con sus caudillos, representaba la barbarie. Según él, los caudillos eran un obstáculo para el progreso. Años después, Sarmiento fue presidente de Argentina, de 1868 a 1874."
+     },
+     {
+       "type": "narration",
+-      "text": "Sin embargo, esa dicotomía resultaba insuficiente para explicar casos en otras latitudes. En el marco de casos como el de Rafael Carrera, esta interpretación resulta considerablemente más difícil de sostener. En Guatemala, Carrera lideró en 1837 un masivo levantamiento campesino e indígena maya contra las reformas liberales que pretendían privatizar las tierras comunales, suprimir los fueros eclesiásticos e imponer jueces letrados forasteros."
++      "text": "El caso de Rafael Carrera, en Guatemala, no encaja bien en la idea de Sarmiento. Carrera dominó Guatemala desde finales de la década de 1830 hasta su muerte, en 1865. Era de origen humilde, y muchos campesinos lo apoyaban. Según varios historiadores, los campesinos pensaban que Carrera defendía sus comunidades."
+     },
+     {
+       "type": "narration",
+-      "text": "A raíz de este tipo de apoyo popular genuino, algunos historiadores prefieren una interpretación distinta. Para los pueblos mayas, el caudillo mestizo Rafael Carrera no era un bárbaro tirano, sino un mediador y un protector frente a la agresiva modernización de las élites letradas capitalinas."
++      "text": "Por eso, muchos historiadores de hoy dicen que la idea de civilización y barbarie es demasiado simple. Dicen que los caudillos tenían apoyos y objetivos diferentes, y que cada caso necesita su propia explicación."
+     },
+     {
+       "type": "narration",
+-      "text": "Carrera gobernó Guatemala con amplio respaldo social hasta 1865, demostrando que muchos caudillos actuaron como escudos de las tradiciones populares frente al elitismo liberal."
++      "text": "En resumen, algunas personas decían que los caudillos traían orden, y otras decían que causaban inestabilidad. Los historiadores todavía discuten el tema."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál es el eje de la discusión histórica planteada en torno a Domingo Faustino Sarmiento y Rafael Carrera?",
++          "question": "What did Sarmiento write about the city and the countryside?",
+           "options": [
+-            "El acuerdo diplomático entre Guatemala y Argentina para unificar sus ejércitos regulares en 1845.",
+-            "El contraste entre la visión liberal que condenaba al caudillo como bárbaro y realidades donde el caudillo protegía a las comunidades indígenas.",
+-            "La superioridad técnica de la navegación fluvial frente al tendido de líneas telegráficas en Centroamérica.",
+-            "El fracaso absoluto de las comunidades mayas para incidir en la política nacional guatemalteca."
++            "Que las ciudades representaban la civilización y el campo, la barbarie.",
++            "Que las ciudades representaban la barbarie y el campo, la civilización.",
++            "Que las ciudades y el campo eran iguales."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "El texto compara la tesis de Sarmiento sobre la «barbarie» caudillesca con el caso guatemalteco de Carrera, quien contó con apoyo indígena contra las reformas liberales elitistas."
++          "correctIndex": 0,
++          "explanation": "The second paragraph says he wrote that cities represented civilization and the countryside, with its caudillos, barbarism."
+         },
+         {
+-          "question": "¿Qué medidas de los liberales guatemaltecos provocaron el levantamiento campesino e indígena liderado por Rafael Carrera en 1837?",
++          "question": "Why does Rafael Carrera not fit Sarmiento's idea well?",
+           "options": [
+-            "La privatización de tierras comunales, la supresión de fueros eclesiásticos y el nombramiento de jueces forasteros.",
+-            "La entrega obligatoria de tierras comunales a los caciques mayas y el cierre de las aduanas.",
+-            "La prohibición del cultivo de café y la clausura de los conventos dominicos en la capital.",
+-            "El reclutamiento exclusivo de criollos ricos para las milicias populares del altiplano."
++            "Era de origen humilde y muchos campesinos lo apoyaban.",
++            "Era un escritor que vivía en Chile.",
++            "Era un hacendado rico de Buenos Aires."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El texto detalla que Carrera encabezó el levantamiento indígena contra reformas liberales que pretendían privatizar tierras comunales, suprimir fueros de la Iglesia e imponer jueces forasteros."
++          "explanation": "The third paragraph says Carrera was of humble origin and had the support of many peasants."
+         },
+         {
+-          "question": "¿Por qué los pueblos indígenas mayas respaldaron a Rafael Carrera como gobernante hasta 1865?",
++          "question": "Until when did Carrera dominate Guatemala?",
+           "options": [
+-            "Porque les impuso tributos aduaneros en moneda extranjera y disolvió sus cofradías.",
+-            "Porque prometió trasladar a las comunidades mayas a las ciudades del Río de la Plata.",
+-            "Porque actuó como escudo y protector de sus tierras y tradiciones frente a las agresivas reformas de las élites liberales.",
+-            "Porque les prohibió participar en actos religiosos católicos y comunales."
++            "Hasta su muerte, en 1865.",
++            "Hasta 1852, cuando perdió una batalla.",
++            "Hasta 1845, cuando salió del país."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "El texto explica que para las comunidades mayas Carrera era un mediador y protector que defendía sus costumbres y posesiones tradicionales frente al elitismo liberal."
++          "correctIndex": 0,
++          "explanation": "The third paragraph says he dominated Guatemala until his death in 1865."
+         }
+       ]
+     }
+diff --git a/content/es-latam/stories/world/b1/b1-caudillismo-05-legado.json b/content/es-latam/stories/world/b1/b1-caudillismo-05-legado.json
+index f0775169..0e17a95a 100644
+--- a/content/es-latam/stories/world/b1/b1-caudillismo-05-legado.json
++++ b/content/es-latam/stories/world/b1/b1-caudillismo-05-legado.json
+@@ -1,64 +1,61 @@
+ {
+   "id": "story.b1.caudillismo.05",
+-  "title": "El balance del caudillismo y su legado político",
++  "title": "El legado del caudillismo",
+   "level": "B1",
+   "paragraphs": [
+     {
+       "type": "narration",
+-      "text": "Al examinar el fenómeno del caudillismo en perspectiva histórica, se comprueba que sus huellas moldearon de manera decisiva la evolución política de América Latina hasta bien entrado el siglo veinte."
++      "text": "El poder de los caudillos no duró para siempre. Rosas perdió el poder en 1852, y Rafael Carrera murió en 1865. Con el tiempo, muchos países crearon ejércitos nacionales y gobiernos más fuertes, y estos ejércitos reemplazaron a las montoneras."
+     },
+     {
+       "type": "narration",
+-      "text": "En algunos lugares, como Chile, la estabilidad institucional limitó el papel de los caudillos; en otros, como Bolivia, el patrón de líderes personalistas se prolongó mucho más allá del siglo diecinueve. Mientras la república chilena consolidaba tempranamente una oligarquía parlamentaria estable bajo la constitución de 1833, en los Andes y el Caribe los generales continuaron disputándose los palacios presidenciales por la fuerza de las armas."
++      "text": "Pero el caudillismo dejó un legado. Según muchos historiadores, resultó difícil crear instituciones fuertes mientras los jefes locales tenían sus propios ejércitos. Para mucha gente, la protección de un jefe resultaba más real que la protección de una ley."
+     },
+     {
+       "type": "narration",
+-      "text": "En algunos casos, el caudillismo dejó redes de patronazgo que siguieron influyendo en la política local; en otros, el recuerdo del caos generó un consenso a favor de instituciones civiles fuertes. Hacia finales de siglo, la llegada de los ferrocarriles, el telégrafo y los ejércitos regulares profesionales terminó con el poder militar de las montoneras rurales."
++      "text": "El patronazgo, el sistema de favores a cambio de apoyo, no desapareció pronto. Según varios historiadores, la costumbre de buscar protección en una persona continuó durante mucho tiempo. En el siglo veinte, los militares fueron importantes en la política de varios países."
+     },
+     {
+       "type": "narration",
+-      "text": "No obstante, las pautas culturales sobrevivieron a la desaparición física de los jinetes armados. En algunos países se llegó a una separación relativamente clara entre autoridad militar y civil; en otros, esa separación siguió siendo mucho más porosa. Esta permeabilidad facilitó periódicas intervenciones militares en la vida cívica."
++      "text": "Los historiadores tienen opiniones diferentes. Algunos dicen que un jefe fuerte resultó útil para mantener el orden después de la independencia. Otros dicen que el poder personal resultó peligroso para la democracia, porque dependía de una persona y no de las leyes."
+     },
+     {
+       "type": "narration",
+-      "text": "Politólogos contemporáneos destacan que el caudillismo fue el síntoma de una sociedad que buscaba el orden en hombres providenciales ante la fragilidad de sus leyes escritas, un legado personalista que continuaría debatiéndose en las democracias de la era moderna."
++      "text": "La historia no fue igual en todos los países. En algunos, los gobiernos nacionales tuvieron fuerza antes; en otros, el poder personal duró más tiempo. Por eso los historiadores estudian cada país por separado."
+     }
+   ],
+   "narration": {
+     "pedagogical": {
+       "comprehensionQuestions": [
+         {
+-          "question": "¿Cuál es la conclusión principal sobre el legado histórico del caudillismo en América Latina?",
++          "question": "What happened to the montoneras over time?",
+           "options": [
+-            "Que representó un fenómeno fugaz sin repercusiones en la historia política de los siglos posteriores.",
+-            "Que impidió de manera absoluta la construcción de redes ferroviarias y el tendido de líneas telegráficas.",
+-            "Que reflejó la fragilidad institucional y dejó una cultura personalista que facilitó posteriores intervenciones militares.",
+-            "Que transformó a todos los países de la región en monarquías hereditarias centralizadas."
++            "Los ejércitos nacionales las reemplazaron.",
++            "Los caudillos las reclutaron otra vez.",
++            "Los campesinos las disolvieron en 1852."
+           ],
+-          "correctIndex": 2,
+-          "explanation": "El texto concluye que el caudillismo dejó profundas pautas de patronazgo y personalismo en la cultura política regional, facilitando recurrentes intervenciones castrenses."
++          "correctIndex": 0,
++          "explanation": "The first paragraph says national armies replaced the montoneras."
+         },
+         {
+-          "question": "¿Qué factores técnicos y militares contribuyeron a terminar con el poderío de las montoneras rurales hacia fines del siglo XIX?",
++          "question": "According to many historians, what turned out to be difficult?",
+           "options": [
+-            "El retorno al uso exclusivo de la arquería y la caballería ligera campesina.",
+-            "La introducción del ferrocarril, el telégrafo y los ejércitos regulares profesionales.",
+-            "La firma de tratados de desarme nuclear auspiciados por los tribunales europeos.",
+-            "El cese total de la producción minera y agrícola en los campos del interior."
++            "Crear instituciones fuertes.",
++            "Reclutar jinetes para la guerra.",
++            "Escribir libros sobre los caudillos."
+           ],
+-          "correctIndex": 1,
+-          "explanation": "El texto señala textualmente que la llegada de los ferrocarriles, el telégrafo y los ejércitos regulares profesionales terminó con el poder militar de las montoneras."
++          "correctIndex": 0,
++          "explanation": "The second paragraph says it turned out to be difficult to create strong institutions while local chiefs had their own armies."
+         },
+         {
+-          "question": "¿Qué contraste político inicial destaca el texto entre países como Chile y las naciones de los Andes y el Caribe?",
++          "question": "What do some historians say about a strong chief?",
+           "options": [
+-            "Mientras Chile logró estabilidad bajo su constitución de 1833, en los Andes y el Caribe el poder siguió disputándose por las armas.",
+-            "Mientras en Chile gobernaban monarcas extranjeros, en los Andes se crearon democracias directas comunales.",
+-            "Mientras en el Caribe se eliminó el ejército, en Chile las montoneras gauchas gobernaron todo el territorio.",
+-            "Mientras los Andes exportaban exclusivamente salitre, Chile carecía de acceso al comercio marítimo internacional."
++            "Resultó útil para mantener el orden después de la independencia.",
++            "Resultó necesario para crear una democracia.",
++            "Resultó difícil para los hacendados."
+           ],
+           "correctIndex": 0,
+-          "explanation": "El texto resalta que Chile consolidó tempranamente una estabilidad oligárquica parlamentaria, mientras que en otras áreas persistieron los golpes y disputas armadas."
++          "explanation": "The fourth paragraph says some historians think a strong chief was useful to keep order after independence."
+         }
+       ]
+     }
+diff --git a/content/es-latam/vocabulary/b1/b1-caudillismo-01-voc.json b/content/es-latam/vocabulary/b1/b1-caudillismo-01-voc.json
+index e6ecee4d..49fd1d0a 100644
+--- a/content/es-latam/vocabulary/b1/b1-caudillismo-01-voc.json
++++ b/content/es-latam/vocabulary/b1/b1-caudillismo-01-voc.json
+@@ -1,16 +1,48 @@
+ {
+   "id": "vocab.b1.caudillismo.01",
+   "lesson": "b1-caudillismo-01",
+-  "title": "El caudillo",
++  "title": "The caudillo and his men",
+   "theme": "Caudillismo",
+   "words": [
+-    { "lemma": "el carisma", "translation": "charisma", "pos": "noun" },
+-    { "lemma": "de facto", "translation": "de facto, in practice", "pos": "expression" },
+-    { "lemma": "ilimitado", "translation": "unlimited", "pos": "adjective" },
+-    { "lemma": "intimidar", "translation": "to intimidate", "pos": "verb" },
+-    { "lemma": "la lealtad", "translation": "loyalty", "pos": "noun" },
+-    { "lemma": "la disidencia", "translation": "dissent", "pos": "noun" },
+-    { "lemma": "sofocar", "translation": "to suppress, smother", "pos": "verb" },
+-    { "lemma": "el vacío", "translation": "vacuum, void", "pos": "noun" }
++    {
++      "lemma": "el hacendado",
++      "translation": "landowner (owner of a large estate)",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el peón",
++      "translation": "farm worker, labourer",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el seguidor",
++      "translation": "follower",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el carisma",
++      "translation": "charisma",
++      "pos": "noun"
++    },
++    {
++      "lemma": "débil",
++      "translation": "weak",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "leal",
++      "translation": "loyal",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "el territorio",
++      "translation": "territory",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el caudillismo",
++      "translation": "rule by caudillos",
++      "pos": "noun"
++    }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b1/b1-caudillismo-02-voc.json b/content/es-latam/vocabulary/b1/b1-caudillismo-02-voc.json
+index 0e0057d1..71600f83 100644
+--- a/content/es-latam/vocabulary/b1/b1-caudillismo-02-voc.json
++++ b/content/es-latam/vocabulary/b1/b1-caudillismo-02-voc.json
+@@ -1,16 +1,38 @@
+ {
+   "id": "vocab.b1.caudillismo.02",
+   "lesson": "b1-caudillismo-02",
+-  "title": "Poder personal",
++  "title": "Personal power",
+   "theme": "Caudillismo",
+   "words": [
+-    { "lemma": "el funcionario", "translation": "official, civil servant", "pos": "noun" },
+-    { "lemma": "el jinete", "translation": "horseman, rider", "pos": "noun" },
+-    { "lemma": "el ganado", "translation": "cattle, livestock", "pos": "noun" },
+-    { "lemma": "confiscado", "translation": "confiscated", "pos": "adjective" },
+-    { "lemma": "el vínculo", "translation": "bond, link", "pos": "noun" },
+-    { "lemma": "retirar", "translation": "to withdraw, remove", "pos": "verb" },
+-    { "lemma": "el rival", "translation": "rival", "pos": "noun" },
+-    { "lemma": "frágil", "translation": "fragile", "pos": "adjective" }
++    {
++      "lemma": "el funcionario",
++      "translation": "official, civil servant",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el llanero",
++      "translation": "llanero (plainsman of the Venezuelan llanos)",
++      "pos": "noun"
++    },
++    {
++      "lemma": "frágil",
++      "translation": "fragile",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "el presidente",
++      "translation": "president",
++      "pos": "noun"
++    },
++    {
++      "lemma": "local",
++      "translation": "local",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "fuerte",
++      "translation": "strong",
++      "pos": "adjective"
++    }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b1/b1-caudillismo-03-voc.json b/content/es-latam/vocabulary/b1/b1-caudillismo-03-voc.json
+index 49e7c167..cd80d0d7 100644
+--- a/content/es-latam/vocabulary/b1/b1-caudillismo-03-voc.json
++++ b/content/es-latam/vocabulary/b1/b1-caudillismo-03-voc.json
+@@ -1,16 +1,48 @@
+ {
+   "id": "vocab.b1.caudillismo.03",
+   "lesson": "b1-caudillismo-03",
+-  "title": "Ejército y política",
++  "title": "Armies of the countryside",
+   "theme": "Caudillismo",
+   "words": [
+-    { "lemma": "la caballería", "translation": "cavalry", "pos": "noun" },
+-    { "lemma": "reclutar", "translation": "to recruit", "pos": "verb" },
+-    { "lemma": "ostentar", "translation": "to hold, bear (a title)", "pos": "verb" },
+-    { "lemma": "el rango", "translation": "rank", "pos": "noun" },
+-    { "lemma": "la emboscada", "translation": "ambush", "pos": "noun" },
+-    { "lemma": "esclarecer", "translation": "to clarify, shed light on", "pos": "verb" },
+-    { "lemma": "el colapso", "translation": "collapse", "pos": "noun" },
+-    { "lemma": "instantáneo", "translation": "instant", "pos": "adjective" }
++    {
++      "lemma": "la montonera",
++      "translation": "montonera (irregular band of horsemen)",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el jinete",
++      "translation": "horseman, rider",
++      "pos": "noun"
++    },
++    {
++      "lemma": "reclutar",
++      "translation": "to recruit",
++      "pos": "verb"
++    },
++    {
++      "lemma": "la emboscada",
++      "translation": "ambush",
++      "pos": "noun"
++    },
++    {
++      "lemma": "disolver",
++      "translation": "to dissolve, break up",
++      "pos": "verb"
++    },
++    {
++      "lemma": "la provincia",
++      "translation": "province",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el interior",
++      "translation": "the interior (inland regions)",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la muerte",
++      "translation": "death",
++      "pos": "noun"
++    }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b1/b1-caudillismo-04-voc.json b/content/es-latam/vocabulary/b1/b1-caudillismo-04-voc.json
+index 40465bfe..7f67d89f 100644
+--- a/content/es-latam/vocabulary/b1/b1-caudillismo-04-voc.json
++++ b/content/es-latam/vocabulary/b1/b1-caudillismo-04-voc.json
+@@ -1,16 +1,38 @@
+ {
+   "id": "vocab.b1.caudillismo.04",
+   "lesson": "b1-caudillismo-04",
+-  "title": "Orden o inestabilidad",
++  "title": "Order or instability?",
+   "theme": "Caudillismo",
+   "words": [
+-    { "lemma": "el opositor", "translation": "opponent", "pos": "noun" },
+-    { "lemma": "exiliado", "translation": "exiled", "pos": "adjective" },
+-    { "lemma": "atrasado", "translation": "backward", "pos": "adjective" },
+-    { "lemma": "letrado", "translation": "literate, educated", "pos": "adjective" },
+-    { "lemma": "el campesino", "translation": "peasant, farmer", "pos": "noun" },
+-    { "lemma": "amenazar", "translation": "to threaten", "pos": "verb" },
+-    { "lemma": "revisionista", "translation": "revisionist", "pos": "adjective" },
+-    { "lemma": "la etiqueta", "translation": "label", "pos": "noun" }
++    {
++      "lemma": "la civilización",
++      "translation": "civilization",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la barbarie",
++      "translation": "barbarism",
++      "pos": "noun"
++    },
++    {
++      "lemma": "el escritor",
++      "translation": "writer",
++      "pos": "noun"
++    },
++    {
++      "lemma": "exiliado",
++      "translation": "exiled",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "el defensor",
++      "translation": "defender, supporter",
++      "pos": "noun"
++    },
++    {
++      "lemma": "la inestabilidad",
++      "translation": "instability",
++      "pos": "noun"
++    }
+   ]
+ }
+diff --git a/content/es-latam/vocabulary/b1/b1-caudillismo-05-voc.json b/content/es-latam/vocabulary/b1/b1-caudillismo-05-voc.json
+index c92a772a..746b5301 100644
+--- a/content/es-latam/vocabulary/b1/b1-caudillismo-05-voc.json
++++ b/content/es-latam/vocabulary/b1/b1-caudillismo-05-voc.json
+@@ -1,16 +1,38 @@
+ {
+   "id": "vocab.b1.caudillismo.05",
+   "lesson": "b1-caudillismo-05",
+-  "title": "El legado del caudillismo",
++  "title": "What the caudillos left behind",
+   "theme": "Caudillismo",
+   "words": [
+-    { "lemma": "consolidado", "translation": "consolidated", "pos": "adjective" },
+-    { "lemma": "personalista", "translation": "personalist (centered on one leader)", "pos": "adjective" },
+-    { "lemma": "el consenso", "translation": "consensus", "pos": "noun" },
+-    { "lemma": "el politólogo", "translation": "political scientist", "pos": "noun" },
+-    { "lemma": "contemporáneo", "translation": "contemporary", "pos": "adjective" },
+-    { "lemma": "poroso", "translation": "porous", "pos": "adjective" },
+-    { "lemma": "decimonónico", "translation": "nineteenth-century", "pos": "adjective" },
+-    { "lemma": "pesar", "translation": "to weigh, carry weight", "pos": "verb" }
++    {
++      "lemma": "nacional",
++      "translation": "national",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "político",
++      "translation": "political",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "militar",
++      "translation": "military; soldier",
++      "pos": "adjective"
++    },
++    {
++      "lemma": "el patronazgo",
++      "translation": "patronage (favours in exchange for support)",
++      "pos": "noun"
++    },
++    {
++      "lemma": "reemplazar",
++      "translation": "to replace",
++      "pos": "verb"
++    },
++    {
++      "lemma": "la democracia",
++      "translation": "democracy",
++      "pos": "noun"
++    }
+   ]
+ }
