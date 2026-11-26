@@ -5,342 +5,352 @@
       "id": "b1-economiasexportacion-consolidation.ex01",
       "type": "matching",
       "category": "vocabulary",
-      "teaches": [
-        "b1-export-economies-vocab"
-      ],
       "pairs": [
         [
-          "exportación",
-          "export"
+          "exportar",
+          "to export"
         ],
         [
-          "demanda",
-          "demand"
+          "la materia prima",
+          "raw material"
         ],
         [
-          "ferrocarril",
+          "el ferrocarril",
           "railway"
         ],
         [
-          "desigualdad",
+          "la desigualdad",
           "inequality"
         ],
         [
-          "dependencia",
-          "dependency"
+          "la deuda",
+          "debt"
         ]
+      ],
+      "teaches": [
+        "b1-export-economies-vocab"
       ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué relación describe mejor el modelo exportador?",
+      "question": "What did Latin American countries mostly sell abroad between 1870 and 1914?",
       "options": [
-        "Las economías se conectaron con mercados internacionales y quedaron expuestas a condiciones externas.",
-        "Las economías dejaron de comerciar.",
-        "La infraestructura no tuvo relación con las exportaciones."
+        "Vendían máquinas y herramientas.",
+        "Vendían productos de fábrica.",
+        "Vendían materias primas y comida."
       ],
-      "correct": 0
+      "correct": 2
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex03",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Chile, ___ yacimientos de salitre eran muy ricos, ganó una guerra contra Perú y Bolivia.",
+      "answer": "cuyos",
       "teaches": [
-        "imperfect"
+        "relativo-posesivo-cuyo"
       ],
-      "sentence": "La economía _____ de los mercados internacionales.",
-      "hint": "depender, imperfect",
-      "answer": "dependía",
-      "english": "The economy depended on international markets."
+      "english": "Chile, whose saltpetre deposits were very rich, won a war against Peru and Bolivia."
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex04",
       "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "por-vs-para"
-      ],
       "tiles": [
-        "Se",
-        "construyeron",
-        "ferrocarriles",
-        "para",
-        "conectar",
-        "las",
-        "zonas",
-        "productoras",
-        "con",
-        "los",
-        "puertos",
-        "."
+        "Los",
+        "productos",
+        "que",
+        "exportaba",
+        "cada",
+        "país",
+        "dependían",
+        "de",
+        "su",
+        "tierra."
       ],
       "solution": [
-        "Se",
-        "construyeron",
-        "ferrocarriles",
-        "para",
-        "conectar",
-        "las",
-        "zonas",
-        "productoras",
-        "con",
-        "los",
-        "puertos",
-        "."
+        "Los",
+        "productos",
+        "que",
+        "exportaba",
+        "cada",
+        "país",
+        "dependían",
+        "de",
+        "su",
+        "tierra."
       ],
-      "english": "Railways were built to connect production areas with ports."
+      "english": "The products that each country exported depended on its land.",
+      "teaches": [
+        "relative-clauses"
+      ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex05",
       "type": "multiple-choice",
       "category": "grammar",
+      "question": "Which sentence says that the railways joined ports and interior, but not the regions with each other?",
+      "options": [
+        "Aunque los ferrocarriles unían los puertos con el interior, muchas líneas no unían las regiones.",
+        "Por eso los ferrocarriles unían los puertos con el interior, muchas líneas no unían las regiones.",
+        "Porque los ferrocarriles unían los puertos con el interior, muchas líneas no unían las regiones."
+      ],
+      "correct": 0,
       "teaches": [
         "concesivas-aunque"
       ],
-      "question": "¿Qué conector introduce concesión?",
-      "options": [
-        "Aunque",
-        "Por eso",
-        "Para"
-      ],
-      "correct": 0
+      "distractor_skills": {
+        "1": "porque-y-por-eso",
+        "2": "por-que-y-porque"
+      }
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex06",
       "type": "sentence-order",
       "category": "grammar",
-      "teaches": [
-        "secuencia-narrativa"
-      ],
       "sentences": [
-        "Primero, aumentaron las exportaciones.",
-        "Después, se construyeron nuevas infraestructuras.",
-        "Finalmente, las economías quedaron más conectadas con los mercados internacionales."
+        "Primero, el Perú vendió guano a Europa durante muchos años.",
+        "Después, el Estado pidió préstamos, y el guano servía como garantía.",
+        "Finalmente, el guano se agotó y en 1876 el Estado dejó de pagar la deuda."
       ],
       "solution": [
         0,
         1,
         2
+      ],
+      "teaches": [
+        "secuencia-narrativa"
       ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex07",
       "type": "multiple-choice",
       "category": "vocabulary",
+      "question": "Which word means \"estate owner\"?",
+      "options": [
+        "el peón",
+        "el hacendado",
+        "el inmigrante"
+      ],
+      "correct": 1,
       "teaches": [
         "b1-export-economies-vocab"
-      ],
-      "question": "¿Qué significa «dependencia» en este contexto?",
-      "options": [
-        "Una situación en la que una economía queda condicionada por factores externos.",
-        "Una estación ferroviaria construida para conectar puertos con zonas mineras.",
-        "Un producto agrícola destinado exclusivamente al consumo del mercado local."
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex08",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Por qué fueron importantes los ferrocarriles?"
+          "speaker": "Meg",
+          "text": "En clase vimos que los trabajadores de las haciendas no podían irse. ¿Por qué?"
         },
         {
-          "speaker": "B",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Porque facilitaban el transporte de productos hacia los puertos y mercados.",
-        "Porque eliminaban la desigualdad.",
-        "Porque reducían la demanda internacional."
+        "Porque tenían una tierra propia en la ciudad.",
+        "Porque tenían un contrato con una empresa extranjera.",
+        "Porque tenían una deuda con el dueño."
       ],
-      "correct": 0
+      "correct": 2,
+      "teaches": [
+        "b1-export-economies-vocab"
+      ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex09",
       "type": "listening-choice",
       "category": "listening",
+      "sentence": "El capital que financió los ferrocarriles era sobre todo británico.",
+      "options": [
+        "The capital that financed the railways was mostly American.",
+        "The capital that financed the railways was mostly British.",
+        "The capital that financed the railways was mostly Peruvian."
+      ],
+      "correct": 1,
       "teaches": [
         "b1-export-economies-vocab"
-      ],
-      "sentence": "La inversión extranjera podía financiar infraestructura, pero también aumentar la dependencia.",
-      "options": [
-        "Foreign investment could finance infrastructure, but it could also increase dependency.",
-        "Foreign investment had no economic effect.",
-        "Infrastructure was never financed externally."
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex10",
       "type": "dictation",
       "category": "listening",
+      "sentence": "Los inmigrantes trabajaban en la cosecha del trigo.",
+      "english": "The immigrants worked in the wheat harvest.",
       "teaches": [
         "b1-export-economies-vocab"
-      ],
-      "sentence": "Los beneficios de las exportaciones no siempre se distribuían de manera igual.",
-      "english": "The benefits of exports were not always distributed equally."
+      ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex11",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿El crecimiento exportador beneficiaba siempre a toda la población?"
+          "speaker": "Carlos",
+          "text": "¿Qué producto fue importante en el Perú desde los años 1840?"
         },
         {
-          "speaker": "B",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "No, los beneficios podían distribuirse de manera desigual.",
-        "Sí, todos recibían la misma parte.",
-        "No, porque las exportaciones no generaban riqueza."
+        "Fue el cacao, un producto de plantación.",
+        "Fue el guano, un fertilizante natural.",
+        "Fue el café, un producto del Brasil."
       ],
-      "correct": 0
+      "correct": 1,
+      "teaches": [
+        "b1-export-economies-vocab"
+      ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex12",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "formal-cause-connectors"
-      ],
-      "question": "¿Qué oración expresa una consecuencia?",
+      "question": "Which sentence says that Peru's guano business had stopped being important by the 1870s?",
       "options": [
-        "Como consecuencia de la concentración de la tierra, aumentó la desigualdad.",
-        "A pesar de los cambios en la demanda, los precios se mantuvieron estables.",
-        "Aunque los productos se exportaban, la producción agrícola era limitada."
+        "En los años 1870 el guano dejó de ser el gran negocio del Perú.",
+        "En los años 1870 el guano dejó ser el gran negocio del Perú.",
+        "En los años 1870 el guano empezó a ser el gran negocio del Perú."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "dejar-de-infinitivo"
+      ],
+      "distractor_skills": {
+        "2": "perifrasis-verbales"
+      }
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex13",
       "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "imperfect"
-      ],
       "tiles": [
-        "La",
-        "integración",
-        "internacional",
-        "ofrecía",
-        "oportunidades",
-        "y",
-        "riesgos",
-        "al",
-        "mismo",
-        "tiempo",
-        "."
+        "Muchas",
+        "familias",
+        "habían",
+        "trabajado",
+        "tierras",
+        "pequeñas",
+        "antes",
+        "del",
+        "auge."
       ],
       "solution": [
-        "La",
-        "integración",
-        "internacional",
-        "ofrecía",
-        "oportunidades",
-        "y",
-        "riesgos",
-        "al",
-        "mismo",
-        "tiempo",
-        "."
+        "Muchas",
+        "familias",
+        "habían",
+        "trabajado",
+        "tierras",
+        "pequeñas",
+        "antes",
+        "del",
+        "auge."
       ],
-      "english": "International integration offered opportunities and risks at the same time."
+      "english": "Many families had worked small plots of land before the boom.",
+      "teaches": [
+        "pluscuamperfecto"
+      ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex14",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Por qué podía ser vulnerable una economía exportadora?"
+          "speaker": "Meg",
+          "text": "¿Qué pasó con el salitre en el siglo veinte?"
         },
         {
-          "speaker": "B",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Porque dependía de precios, demanda e inversiones externas.",
-        "Porque no comerciaba con otros países.",
-        "Porque los precios internacionales eran siempre estables."
+        "Dejó de ser tan importante, porque se acabó el guano del Perú.",
+        "Dejó de ser tan importante, porque se fabricó fertilizante artificial.",
+        "Dejó de ser tan importante, porque cerraron los puertos de Chile."
       ],
-      "correct": 0
+      "correct": 1,
+      "teaches": [
+        "b1-export-economies-vocab"
+      ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex15",
       "type": "structured-writing",
       "category": "writing",
-      "teaches": [
-        "b1-export-economies-vocab"
-      ],
       "template": [
         {
-          "prompt": "Explica una ventaja y un riesgo del modelo exportador.",
-          "answer": "La integración en los mercados podía impulsar el crecimiento, aunque también podía aumentar la dependencia."
+          "prompt": "Say that the guano boom ended in the 1870s: guano stopped being Peru's big business.",
+          "answer": "El guano dejó de ser el gran negocio del Perú en los años 1870."
         }
+      ],
+      "teaches": [
+        "dejar-de-infinitivo"
       ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex16",
       "type": "structured-writing",
       "category": "writing",
-      "teaches": [
-        "b1-export-economies-vocab"
-      ],
       "template": [
         {
-          "prompt": "Explica la relación entre crecimiento y desigualdad usando un conector.",
-          "answer": "Aunque las exportaciones generaban riqueza, los beneficios no siempre se distribuían de manera igual."
+          "prompt": "Say that although the railways joined the ports with the interior, many lines did not join the regions with each other.",
+          "answer": "Aunque los ferrocarriles unían los puertos con el interior, muchas líneas no unían unas regiones con otras."
         }
+      ],
+      "teaches": [
+        "concesivas-aunque"
       ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex17",
       "type": "multiple-choice",
       "category": "vocabulary",
+      "question": "Which word means \"loan\"?",
+      "options": [
+        "el préstamo",
+        "la ganancia",
+        "la caída"
+      ],
+      "correct": 0,
       "teaches": [
         "b1-export-economies-vocab"
-      ],
-      "question": "¿Qué concepto se refiere a los bienes naturales o agrícolas destinados a la transformación o exportación?",
-      "options": [
-        "materia prima",
-        "himno",
-        "frontera"
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-economiasexportacion-consolidation.ex18",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Cuál es la principal conclusión de la unidad?"
+          "speaker": "Carlos",
+          "text": "¿Qué problema tenía vender pocos productos?"
         },
         {
-          "speaker": "B",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "El modelo exportador conectó América Latina con los mercados internacionales, pero también creó desigualdades y vulnerabilidades.",
-        "El modelo primario exportador aisló a los países de la economía mundial y evitó cualquier tipo de inversión en transporte.",
-        "Las exportaciones de materias primas beneficiaron por igual a todas las regiones sin generar tensiones políticas internas."
+        "Los países dependían de los precios de esos productos.",
+        "Los países compraban pocas máquinas a Europa y a Estados Unidos.",
+        "Los países vendían demasiadas herramientas a Europa y a Estados Unidos."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-export-economies-vocab"
+      ]
     }
   ]
 }

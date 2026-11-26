@@ -5,41 +5,41 @@
       "id": "b1-cambiosocial-consolidation.ex01",
       "type": "matching",
       "category": "vocabulary",
-      "teaches": [
-        "b1-social-change-vocab"
-      ],
       "pairs": [
         [
-          "urbanización",
-          "urbanisation"
+          "el tranvía",
+          "tram"
         ],
         [
-          "clase obrera",
-          "working class"
+          "el obrero",
+          "worker (in a factory, port or railway)"
         ],
         [
-          "inmigración",
-          "immigration"
+          "la huelga",
+          "strike"
         ],
         [
-          "sindicato",
+          "el sindicato",
           "trade union"
         ],
         [
-          "movilidad social",
-          "social mobility"
+          "el conventillo",
+          "tenement house"
         ]
+      ],
+      "teaches": [
+        "b1-social-change-vocab"
       ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué describe mejor el cambio social?",
+      "question": "Which statement about the immigrants in Argentina is true, according to the texts?",
       "options": [
-        "Las ciudades crecieron, aparecieron nuevos grupos y los trabajadores se organizaron, aunque persistieron desigualdades.",
-        "Las ciudades conservaron sus estructuras tradicionales y la población rechazó cualquier intento de organización colectiva.",
-        "La urbanización eliminó todas las diferencias sociales mientras el sector rural mantuvo el control absoluto de la economía."
+        "Muchos vivían en conventillos, y otros trabajaban en el campo.",
+        "Muchos vivían en haciendas, y otros trabajaban en las minas.",
+        "Muchos vivían en colonias, y otros trabajaban en los tranvías."
       ],
       "correct": 0
     },
@@ -47,294 +47,308 @@
       "id": "b1-cambiosocial-consolidation.ex03",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "En 1914 Buenos Aires ___ una de las ciudades más grandes de América.",
+      "answer": "era",
       "teaches": [
-        "pasiva-refleja"
+        "imperfect"
       ],
-      "sentence": "_____ produjeron cambios sociales a medida que crecían las ciudades.",
-      "hint": "pronoun",
-      "answer": "Se",
-      "english": "Social changes took place as the cities grew."
+      "english": "In 1914 Buenos Aires was one of the biggest cities in the Americas."
     },
     {
       "id": "b1-cambiosocial-consolidation.ex04",
       "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "concesivas-aunque"
-      ],
       "tiles": [
-        "La",
-        "urbanización",
-        "transformó",
+        "Según",
+        "muchos",
+        "historiadores,",
+        "aparecieron",
+        "nuevas",
+        "clases",
+        "sociales",
+        "en",
         "las",
-        "ciudades",
-        ",",
-        "aunque",
-        "persistieron",
-        "desigualdades",
-        "."
+        "ciudades."
       ],
       "solution": [
-        "La",
-        "urbanización",
-        "transformó",
+        "Según",
+        "muchos",
+        "historiadores,",
+        "aparecieron",
+        "nuevas",
+        "clases",
+        "sociales",
+        "en",
         "las",
-        "ciudades",
-        ",",
-        "aunque",
-        "persistieron",
-        "desigualdades",
-        "."
+        "ciudades."
       ],
-      "english": "Urbanisation transformed cities, although inequalities persisted."
+      "english": "According to many historians, new social classes appeared in the cities.",
+      "teaches": [
+        "estilo-indirecto-informacion"
+      ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex05",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "formal-cause-connectors"
-      ],
-      "question": "¿Qué expresión introduce una relación causal formal?",
+      "question": "Which sentence says that people got information through letters?",
       "options": [
-        "A raíz de",
-        "Sin embargo",
-        "A lo largo de"
+        "Conseguían información a través cartas de familiares.",
+        "Conseguían información a través de cartas de familiares.",
+        "Conseguían información por través de cartas de familiares."
       ],
-      "correct": 0
+      "correct": 1,
+      "teaches": [
+        "prepositional-phrases"
+      ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex06",
       "type": "sentence-order",
       "category": "grammar",
-      "teaches": [
-        "secuencia-narrativa"
-      ],
       "sentences": [
-        "Primero, crecieron las ciudades.",
-        "Después, aparecieron nuevas clases sociales.",
-        "Finalmente, los trabajadores organizaron sindicatos."
+        "Primero, los inmigrantes viajaban en barco desde Europa.",
+        "Después, muchos vivían en conventillos cerca del puerto.",
+        "Finalmente, los obreros organizaron sindicatos y hicieron huelgas."
       ],
       "solution": [
         0,
         1,
         2
+      ],
+      "teaches": [
+        "secuencia-narrativa"
       ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex07",
       "type": "multiple-choice",
       "category": "vocabulary",
+      "question": "Which word means \"strike\" (when workers stop work)?",
+      "options": [
+        "la jornada",
+        "la huelga",
+        "la mina"
+      ],
+      "correct": 1,
       "teaches": [
         "b1-social-change-vocab"
-      ],
-      "question": "¿Qué significa «movilidad social»?",
-      "options": [
-        "Cambio de posición de una persona o grupo dentro de la estructura social.",
-        "El desplazamiento geográfico diario de los trabajadores hacia centros urbanos.",
-        "Una organización gremial creada para negociar salarios en el sector industrial."
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex08",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Por qué crecieron las ciudades?"
+          "speaker": "Meg",
+          "text": "¿Qué pasó con muchos dirigentes extranjeros?"
         },
         {
-          "speaker": "B",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Porque el crecimiento económico y la llegada de trabajadores crearon nuevas oportunidades y necesidades.",
-        "Porque las ciudades dejaron de tener actividades económicas.",
-        "Porque desaparecieron los barrios."
+        "Muchos fueron elegidos por los obreros.",
+        "Muchos fueron deportados.",
+        "Muchos fueron escuchados por el gobierno."
       ],
-      "correct": 0
+      "correct": 1,
+      "teaches": [
+        "b1-social-change-vocab"
+      ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex09",
       "type": "listening-choice",
       "category": "listening",
+      "sentence": "En 1908 llegó a Santos el primer barco con inmigrantes de Japón.",
+      "options": [
+        "In 1908 the first ship with immigrants from Italy arrived in Santos.",
+        "In 1908 the last ship with immigrants from Japan left Santos.",
+        "In 1908 the first ship with immigrants from Japan arrived in Santos."
+      ],
+      "correct": 2,
       "teaches": [
         "b1-social-change-vocab"
-      ],
-      "sentence": "La inmigración modificó la población urbana y creó nuevas formas de vida.",
-      "options": [
-        "Immigration changed the urban population and created new ways of life.",
-        "Immigration had no effect on cities.",
-        "The statement refers only to rural agriculture."
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex10",
       "type": "dictation",
       "category": "listening",
+      "sentence": "Los obreros trabajaban en los puertos y en las fábricas.",
+      "english": "The workers worked in the ports and in the factories.",
       "teaches": [
         "b1-social-change-vocab"
-      ],
-      "sentence": "Los trabajadores organizaron sindicatos para defender sus demandas.",
-      "english": "Workers organised trade unions to defend their demands."
+      ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex11",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Qué relación hubo entre trabajo y conflicto?"
+          "speaker": "Carlos",
+          "text": "¿Dónde empezó la Reforma Universitaria?"
         },
         {
-          "speaker": "B",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Las malas condiciones laborales llevaron a algunos trabajadores a organizarse.",
-        "El trabajo eliminó todos los conflictos.",
-        "Los sindicatos no tuvieron relación con el trabajo."
+        "Empezó en la Universidad de Córdoba, en 1918.",
+        "Empezó en la Universidad de Lima, en 1918.",
+        "Empezó en la Universidad de Córdoba, en 1928."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-social-change-vocab"
+      ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex12",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "concesivas-aunque"
-      ],
-      "question": "¿Qué oración presenta una concesión?",
+      "question": "Which sentence says that the strike was put down by the police?",
       "options": [
-        "Aunque persistieron las desigualdades, hubo nuevas formas de movilidad social.",
-        "Debido al crecimiento de las ciudades, surgieron nuevas oportunidades laborales.",
-        "A medida que la inmigración aumentaba, la población urbana creció con rapidez."
+        "La huelga fueron reprimida por la policía.",
+        "La huelga fue reprimida por la policía.",
+        "La huelga reprimió por la policía."
       ],
-      "correct": 0
+      "correct": 1,
+      "teaches": [
+        "ser-passive"
+      ],
+      "distractor_skills": {
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-cambiosocial-consolidation.ex13",
       "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "verbs-of-change"
-      ],
       "tiles": [
-        "La",
-        "jornada",
-        "laboral",
-        "se",
-        "convirtió",
-        "en",
-        "una",
-        "cuestión",
-        "importante",
-        "."
+        "Aunque",
+        "las",
+        "mujeres",
+        "no",
+        "podían",
+        "votar,",
+        "muchas",
+        "trabajaban",
+        "como",
+        "maestras."
       ],
       "solution": [
-        "La",
-        "jornada",
-        "laboral",
-        "se",
-        "convirtió",
-        "en",
-        "una",
-        "cuestión",
-        "importante",
-        "."
+        "Aunque",
+        "las",
+        "mujeres",
+        "no",
+        "podían",
+        "votar,",
+        "muchas",
+        "trabajaban",
+        "como",
+        "maestras."
       ],
-      "english": "The working day became an important issue."
+      "english": "Although women could not vote, many worked as teachers.",
+      "teaches": [
+        "concesivas-aunque"
+      ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex14",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿La transformación social benefició a todos por igual?"
+          "speaker": "Meg",
+          "text": "¿Qué eran los conventillos?"
         },
         {
-          "speaker": "B",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "No, creó nuevas oportunidades, pero las desigualdades continuaron.",
-        "Sí, todos recibieron los mismos beneficios.",
-        "Sí, desaparecieron las diferencias económicas."
+        "Eran casas con muchos campos y una iglesia.",
+        "Eran barcos con muchas habitaciones y una cocina.",
+        "Eran casas con muchas habitaciones y un patio."
       ],
-      "correct": 0
+      "correct": 2,
+      "teaches": [
+        "b1-social-change-vocab"
+      ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex15",
       "type": "structured-writing",
       "category": "writing",
-      "teaches": [
-        "b1-social-change-vocab"
-      ],
       "template": [
         {
-          "prompt": "Explica cómo la urbanización cambió la vida social.",
-          "answer": "La urbanización creó nuevas necesidades y oportunidades, aunque también mantuvo desigualdades entre barrios."
+          "prompt": "Say that the trams carried people from one neighbourhood to another.",
+          "answer": "Los tranvías llevaban a la gente de un barrio a otro."
         }
+      ],
+      "teaches": [
+        "imperfect"
       ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex16",
       "type": "structured-writing",
       "category": "writing",
-      "teaches": [
-        "b1-social-change-vocab"
-      ],
       "template": [
         {
-          "prompt": "Explica la relación entre trabajo y organización obrera.",
-          "answer": "A raíz de las malas condiciones laborales, algunos trabajadores organizaron sindicatos y recurrieron a la huelga."
+          "prompt": "Say that many leaders were deported.",
+          "answer": "Muchos dirigentes fueron deportados."
         }
+      ],
+      "teaches": [
+        "ser-passive"
       ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex17",
       "type": "multiple-choice",
       "category": "vocabulary",
+      "question": "Which word means \"wage, salary\"?",
+      "options": [
+        "el voto",
+        "la mina",
+        "el salario"
+      ],
+      "correct": 2,
       "teaches": [
         "b1-social-change-vocab"
-      ],
-      "question": "¿Qué concepto se relaciona directamente con los trabajadores organizados?",
-      "options": [
-        "sindicato",
-        "alumbrado",
-        "barrio"
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-cambiosocial-consolidation.ex18",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Cuál es la principal conclusión?"
+          "speaker": "Carlos",
+          "text": "¿Qué cambió en las ciudades entre 1870 y 1930?"
         },
         {
-          "speaker": "B",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "La sociedad cambió profundamente, aunque los efectos fueron diferentes según el país y el grupo social.",
-        "La transformación eliminó todas las desigualdades.",
-        "Todos los países siguieron exactamente el mismo proceso."
+        "Crecieron, y desaparecieron los puertos.",
+        "Se hicieron más pequeñas, y aparecieron nuevas clases sociales.",
+        "Crecieron, y aparecieron nuevas clases sociales."
       ],
-      "correct": 0
+      "correct": 2,
+      "teaches": [
+        "b1-social-change-vocab"
+      ]
     }
   ]
 }

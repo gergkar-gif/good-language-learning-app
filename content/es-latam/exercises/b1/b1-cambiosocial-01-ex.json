@@ -7,16 +7,16 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "la aldea",
-          "village"
+          "el tranvía",
+          "tram"
         ],
         [
-          "pavimentado",
-          "paved"
+          "la avenida",
+          "avenue"
         ],
         [
-          "el alcantarillado",
-          "sewer system"
+          "el barrio",
+          "neighbourhood"
         ],
         [
           "el alumbrado",
@@ -33,20 +33,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el intendente",
-          "mayor, city administrator"
-        ],
-        [
-          "arbolado",
-          "tree-lined"
-        ],
-        [
           "la periferia",
-          "outskirts, periphery"
+          "outskirts"
         ],
         [
-          "carecer",
-          "to lack"
+          "el alcantarillado",
+          "sewer system"
+        ],
+        [
+          "el motor",
+          "engine, motor"
+        ],
+        [
+          "eléctrico",
+          "electric"
         ]
       ],
       "teaches": [
@@ -57,47 +57,53 @@
       "id": "b1-cambiosocial-01.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cómo era Buenos Aires hacia 1870, según sus propios habitantes?",
+      "question": "Why did the ports grow, according to the text?",
       "options": [
-        "Poco más que una \"gran aldea\", sin un sistema de alcantarillado adecuado y con alumbrado público poco confiable.",
-        "Ya una de las capitales más modernas de toda Europa.",
-        "Una ciudad completamente despoblada y sin ninguna actividad comercial."
+        "Porque el dinero de los inmigrantes llegaba al campo.",
+        "Porque los tranvías llevaban el dinero a los puertos.",
+        "Porque el dinero del comercio con Europa llegaba a los puertos."
       ],
-      "correct": 0
+      "correct": 2
     },
     {
       "id": "b1-cambiosocial-01.ex03",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué desató un proceso de urbanización sin precedentes en la región?",
+      "category": "grammar",
+      "question": "Which sentence says what the trams did in the early 1900s?",
       "options": [
-        "El dinamismo agroexportador, que aceleró la demanda de servicios públicos y transporte.",
-        "El descubrimiento de importantes yacimientos de oro en las ciudades.",
-        "Una orden directa del gobierno español, ya independiente medio siglo antes."
+        "Los tranvías llevan a la gente de un barrio a otro.",
+        "Los tranvías llevarán a la gente de un barrio a otro.",
+        "Los tranvías llevaban a la gente de un barrio a otro."
       ],
-      "correct": 0
+      "correct": 2,
+      "teaches": [
+        "imperfect"
+      ],
+      "distractor_skills": {
+        "0": "present-tense",
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "b1-cambiosocial-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "No ___ todavía un sistema de alcantarillado adecuado en el Buenos Aires de la década de 1870.",
-      "hint": "existir, imperfecto",
-      "answer": "existía",
+      "sentence": "Los trabajadores ___ temprano de casa y volvían tarde.",
+      "answer": "salían",
       "teaches": [
         "imperfect"
       ],
-      "english": "There was still no adequate sewage system in Buenos Aires in the 1870s."
+      "english": "The workers left home early and came back late."
     },
     {
       "id": "b1-cambiosocial-01.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué reformas inspiraron a los alcaldes y planificadores urbanos?",
+      "question": "Who lived on the outskirts of the cities, according to the text?",
       "options": [
-        "Las reformas del barón Haussmann en París.",
-        "Las reformas de las antiguas ciudades coloniales.",
-        "Ninguna reforma anterior, porque todo se planificó sin modelos."
+        "Vivían allí los obreros y muchos inmigrantes.",
+        "Vivían allí los funcionarios y los grandes comerciantes.",
+        "Vivían allí los hacendados y los banqueros."
       ],
       "correct": 0
     },
@@ -106,40 +112,46 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Antes",
+        "Buenos",
+        "Aires",
+        "crecía",
+        "todos",
+        "los",
+        "años,",
+        "y",
+        "en",
+        "1914",
+        "era",
+        "una",
         "de",
-        "estas",
-        "reformas,",
-        "ambas",
+        "las",
         "ciudades",
-        "eran,",
-        "en",
-        "muchos",
-        "sentidos,",
-        "todavía",
-        "coloniales",
-        "en",
-        "su",
-        "trazado."
+        "más",
+        "grandes",
+        "de",
+        "América."
       ],
       "solution": [
-        "Antes",
+        "Buenos",
+        "Aires",
+        "crecía",
+        "todos",
+        "los",
+        "años,",
+        "y",
+        "en",
+        "1914",
+        "era",
+        "una",
         "de",
-        "estas",
-        "reformas,",
-        "ambas",
+        "las",
         "ciudades",
-        "eran,",
-        "en",
-        "muchos",
-        "sentidos,",
-        "todavía",
-        "coloniales",
-        "en",
-        "su",
-        "trazado."
+        "más",
+        "grandes",
+        "de",
+        "América."
       ],
-      "english": "Before these reforms, both cities were, in many ways, still colonial in their layout.",
+      "english": "Buenos Aires grew every year, and in 1914 it was one of the biggest cities in the Americas.",
       "teaches": [
         "imperfect"
       ]
@@ -147,35 +159,38 @@
     {
       "id": "b1-cambiosocial-01.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Julieta",
-          "text": "¿Alcanzó esta modernización urbana a toda la ciudad por igual?"
+          "speaker": "Carlos",
+          "text": "En el museo vimos una foto de la Avenida Central. ¿Cuándo se abrió?"
         },
         {
-          "speaker": "Damián",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "No, mientras la élite construía bulevares arbolados y palacios de mármol, los sectores populares se hacinaban en los conventillos.",
-        "Sí, todos los barrios recibieron exactamente los mismos servicios al mismo tiempo.",
-        "No, porque la modernización nunca llegó ni siquiera a las avenidas ni a los edificios del centro."
+        "Se abrió en 1905, en Río de Janeiro.",
+        "Se abrió en 1850, en Lima.",
+        "Se abrió en 1930, en Buenos Aires."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-social-change-vocab"
+      ]
     },
     {
       "id": "b1-cambiosocial-01.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Los centros de estas ciudades se parecían cada vez más a una capital europea, con tranvías y edificios de varios pisos.",
+      "sentence": "Muchos barrios de la periferia no tenían alcantarillado.",
       "options": [
-        "The centers of these cities increasingly resembled a European capital, with streetcars and multi-story buildings.",
-        "These cities rejected all forms of European architectural influence.",
-        "No new buildings were constructed in either city during this period."
+        "Many neighbourhoods in the centre did not have a sewer system.",
+        "Many neighbourhoods on the outskirts had a sewer system.",
+        "Many neighbourhoods on the outskirts did not have a sewer system."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "b1-social-change-vocab"
       ]

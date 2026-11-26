@@ -7,20 +7,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el eco",
-          "echo, resonance"
-        ],
-        [
           "la huelga",
           "strike"
         ],
         [
-          "deportar",
-          "to deport"
+          "el anarquista",
+          "anarchist"
         ],
         [
-          "el juicio",
-          "trial, judgment"
+          "el socialista",
+          "socialist"
+        ],
+        [
+          "la jornada",
+          "working day"
+        ],
+        [
+          "reprimir",
+          "to put down, to repress"
         ]
       ],
       "teaches": [
@@ -33,20 +37,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "la petición",
-          "petition, demand"
+          "deportar",
+          "to deport"
         ],
         [
-          "la tropa",
-          "troops"
+          "el dirigente",
+          "leader (of a union or party)"
         ],
         [
-          "la matanza",
-          "massacre"
+          "el minero",
+          "miner"
         ],
         [
-          "el descontento",
-          "discontent"
+          "la mina",
+          "mine"
+        ],
+        [
+          "la protesta",
+          "protest"
         ]
       ],
       "teaches": [
@@ -57,50 +65,52 @@
       "id": "b1-cambiosocial-04.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Según el texto, ¿qué ocurrió con las ideas obreras entre los trabajadores?",
+      "question": "What happened to the strike of the Cananea miners in 1906?",
       "options": [
-        "Encontraron eco y acabaron convirtiéndose en organización sindical concreta.",
-        "Fueron rechazadas por todos los trabajadores desde el principio.",
-        "No tuvieron ningún efecto sobre los trabajadores."
+        "La huelga fue reprimida.",
+        "La huelga fue ganada por los mineros.",
+        "La huelga fue olvidada por el gobierno."
       ],
       "correct": 0
     },
     {
       "id": "b1-cambiosocial-04.ex03",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué conquistaron las movilizaciones obreras, a costa de enormes sacrificios?",
+      "category": "grammar",
+      "question": "Which sentence says that the strike was put down by the army?",
       "options": [
-        "La regulación del trabajo de mujeres y menores, la indemnización por accidentes y la jornada legal de ocho horas.",
-        "El fin inmediato de todos los conflictos laborales.",
-        "La desaparición de los sindicatos."
+        "La huelga fueron reprimida por el ejército.",
+        "La huelga reprimió por el ejército.",
+        "La huelga fue reprimida por el ejército."
       ],
-      "correct": 0
+      "correct": 2,
+      "teaches": [
+        "ser-passive"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-cambiosocial-04.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Esperaban allí, pacíficamente, hasta que el gobierno ___ a sus peticiones.",
-      "hint": "responder, subjuntivo",
+      "sentence": "Muchos dirigentes ___ deportados.",
+      "answer": "fueron",
       "teaches": [
-        "cuando-subjuntivo"
+        "ser-passive"
       ],
-      "english": "They waited there peacefully until the government responded to their petitions.",
-      "answers": [
-        "respondiera",
-        "respondiese"
-      ]
+      "english": "Many leaders were deported."
     },
     {
       "id": "b1-cambiosocial-04.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué ocurrió en diciembre de 1907 en la Escuela Santa María de Iquique?",
+      "question": "What did the workers ask for, according to the text?",
       "options": [
-        "Tropas del ejército abrieron fuego contra miles de trabajadores del salitre reunidos para esperar respuesta a sus peticiones.",
-        "Los trabajadores del salitre obtuvieron un aumento salarial inmediato sin ningún conflicto.",
-        "El gobierno chileno cerró pacíficamente la escuela sin ningún incidente."
+        "Pedían salarios más altos y una jornada de ocho horas.",
+        "Pedían tierras gratuitas y escuelas para sus hijos.",
+        "Pedían salarios más bajos y una jornada de doce horas."
       ],
       "correct": 0
     },
@@ -109,72 +119,85 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "El",
-        "conflicto",
-        "no",
-        "hizo",
-        "más",
-        "que",
-        "intensificarse",
-        "antes",
+        "En",
+        "enero",
         "de",
-        "que",
-        "terminara",
+        "1919,",
+        "una",
+        "huelga",
+        "en",
+        "Buenos",
+        "Aires",
+        "fue",
+        "reprimida",
+        "por",
         "la",
-        "década."
+        "policía",
+        "y",
+        "por",
+        "el",
+        "ejército."
       ],
       "solution": [
-        "El",
-        "conflicto",
-        "no",
-        "hizo",
-        "más",
-        "que",
-        "intensificarse",
-        "antes",
+        "En",
+        "enero",
         "de",
-        "que",
-        "terminara",
+        "1919,",
+        "una",
+        "huelga",
+        "en",
+        "Buenos",
+        "Aires",
+        "fue",
+        "reprimida",
+        "por",
         "la",
-        "década."
+        "policía",
+        "y",
+        "por",
+        "el",
+        "ejército."
       ],
-      "english": "The conflict only intensified before the decade ended.",
+      "english": "In January 1919 a strike in Buenos Aires was put down by the police and the army.",
       "teaches": [
-        "cuando-subjuntivo"
+        "ser-passive"
       ]
     },
     {
       "id": "b1-cambiosocial-04.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Renata",
-          "text": "¿Se estableció alguna vez una cifra exacta de víctimas de la Matanza de Santa María?"
+          "speaker": "Carlos",
+          "text": "¿Qué pasó en la escuela Santa María en 1907?"
         },
         {
-          "speaker": "Ignacio",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "No, nunca se estableció una cifra exacta, y el hecho quedó, durante décadas, prácticamente silenciado.",
-        "Sí, se publicó una cifra oficial exacta al día siguiente de los hechos.",
-        "Sí, pero la cifra oficial afirmaba que no hubo ninguna víctima."
+        "La protesta fue aceptada por el ejército sin problemas.",
+        "La protesta fue organizada por el ejército para los obreros.",
+        "La protesta fue terminada a tiros por el ejército."
       ],
-      "correct": 0
+      "correct": 2,
+      "teaches": [
+        "b1-social-change-vocab"
+      ]
     },
     {
       "id": "b1-cambiosocial-04.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "El auge exportador que trajo prosperidad a las élites también generó un descontento que ningún gobierno logró resolver completamente.",
+      "sentence": "Los historiadores discuten cuántas personas murieron.",
       "options": [
-        "The export boom that brought prosperity to the elites also generated a discontent that no government managed to fully resolve.",
-        "The export boom eliminated all social conflict in the region.",
-        "Workers were fully satisfied with their conditions throughout this period."
+        "Historians know how many people died.",
+        "Historians debate how many people died.",
+        "Historians say that nobody died."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "b1-social-change-vocab"
       ]
