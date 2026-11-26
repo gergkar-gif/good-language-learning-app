@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
+          "la convertibilidad",
+          "convertibility"
+        ],
+        [
           "planificar",
           "to plan"
         ],
         [
-          "el arancel",
-          "tariff"
+          "importado",
+          "imported"
         ],
         [
-          "el propietario",
-          "owner"
-        ],
-        [
-          "la independencia",
-          "independence"
+          "imprimir",
+          "to print"
         ]
       ],
       "teaches": [
@@ -33,20 +33,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "la desconfianza",
-          "distrust"
+          "el consumidor",
+          "consumer"
         ],
         [
-          "el incentivo",
-          "incentive"
+          "la bienvenida",
+          "welcome"
         ],
         [
-          "el paradigma",
-          "paradigm"
+          "el arancel",
+          "tariff"
         ],
         [
-          "caracterizar",
-          "to characterize"
+          "el banco central",
+          "central bank"
+        ],
+        [
+          "el dólar",
+          "dollar"
         ]
       ],
       "teaches": [
@@ -57,11 +61,11 @@
       "id": "b1-neoliberalismo-03.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué provocó la eliminación fulminante de los aranceles de importación?",
+      "question": "What did the state do in the earlier model, according to the text?",
       "options": [
-        "Un choque demoledor sobre la estructura productiva interna.",
-        "Un aumento inmediato de la producción industrial nacional.",
-        "Ningún efecto sobre la producción interna del país."
+        "Protegía la industria nacional con aranceles altos.",
+        "Bajaba los aranceles del país.",
+        "Dejaba la economía en manos de inversores extranjeros."
       ],
       "correct": 0
     },
@@ -69,11 +73,11 @@
       "id": "b1-neoliberalismo-03.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué propusieron las reformas neoliberales frente a este modelo?",
+      "question": "What did the convertibility plan of 1991 do in Argentina?",
       "options": [
-        "Una lógica radicalmente distinta, con menos regulación estatal y sin aranceles de importación.",
-        "Aumentar todavía más los aranceles y la propiedad estatal.",
-        "Eliminar por completo cualquier forma de comercio internacional."
+        "Fijó un peso igual a un dólar.",
+        "Cerró el banco central.",
+        "Subió los aranceles de importación."
       ],
       "correct": 0
     },
@@ -81,61 +85,68 @@
       "id": "b1-neoliberalismo-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "___ a este modelo, las reformas neoliberales propusieron una lógica radicalmente distinta.",
-      "hint": "faced with",
-      "answer": "Frente",
+      "sentence": "La inflación bajó mucho; no ___, según varios economistas, el peso fijo hizo más difícil exportar.",
+      "hint": "nevertheless",
+      "answer": "obstante",
       "teaches": [
-        "prepositional-phrases"
+        "contrast-concession-connectors"
       ],
-      "english": "Faced with this model, neoliberal reforms proposed a radically different approach."
+      "english": "Inflation fell a lot; nevertheless, according to several economists, the fixed peso made exporting harder."
     },
     {
       "id": "b1-neoliberalismo-03.ex05",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué otorgaron muchos países a sus bancos centrales?",
+      "category": "grammar",
+      "question": "Which sentence means “Many countries lowered tariffs; however, many small factories closed”?",
       "options": [
-        "Mayor independencia frente al poder ejecutivo.",
-        "Menos independencia, sometiéndolos completamente al poder ejecutivo.",
-        "Ningún cambio en su relación con el poder ejecutivo."
+        "Muchos países bajaron los aranceles; sin embargo, muchas fábricas pequeñas cerraron.",
+        "Muchos países bajaron los aranceles; por eso, muchas fábricas pequeñas cerraron.",
+        "Muchos países bajaron los aranceles; además, muchas fábricas pequeñas cerraron."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "contrast-concession-connectors"
+      ],
+      "distractor_skills": {
+        "1": "porque-y-por-eso",
+        "2": "ordering-markers"
+      }
     },
     {
       "id": "b1-neoliberalismo-03.ex06",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Frente",
+        "El",
+        "modelo",
+        "ayudó",
         "a",
-        "la",
-        "desconfianza",
-        "tradicional,",
-        "los",
-        "gobiernos",
-        "comenzaron",
-        "a",
-        "atraer",
-        "inversión",
-        "extranjera."
+        "crear",
+        "fábricas;",
+        "sin",
+        "embargo,",
+        "muchos",
+        "lo",
+        "consideraron",
+        "agotado."
       ],
       "solution": [
-        "Frente",
+        "El",
+        "modelo",
+        "ayudó",
         "a",
-        "la",
-        "desconfianza",
-        "tradicional,",
-        "los",
-        "gobiernos",
-        "comenzaron",
-        "a",
-        "atraer",
-        "inversión",
-        "extranjera."
+        "crear",
+        "fábricas;",
+        "sin",
+        "embargo,",
+        "muchos",
+        "lo",
+        "consideraron",
+        "agotado."
       ],
-      "english": "In contrast with the traditional distrust, governments began attracting foreign investment.",
+      "english": "The model helped create factories; however, many considered it exhausted.",
       "teaches": [
-        "prepositional-phrases"
+        "contrast-concession-connectors"
       ]
     },
     {
@@ -144,18 +155,18 @@
       "category": "reading",
       "prompt": [
         {
-          "speaker": "Carolina",
-          "text": "¿Fue este cambio de paradigma completo y uniforme en todos los países?"
+          "speaker": "Carlos",
+          "text": "¿Qué pasó con los bancos centrales?"
         },
         {
-          "speaker": "Fructuoso",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "No, el cambio de paradigma no fue uniforme y se debatió mucho sobre los límites de estas reformas.",
-        "Sí, todos los países aplicaron exactamente las mismas reformas de forma idéntica.",
-        "No, ningún país aplicó ninguna de estas reformas en absoluto."
+        "Varios países les dieron más independencia.",
+        "Varios países los cerraron para controlar la inflación.",
+        "Varios países los pusieron en manos de los inversores extranjeros."
       ],
       "correct": 0
     },
@@ -163,11 +174,11 @@
       "id": "b1-neoliberalismo-03.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Frente a la desconfianza tradicional hacia el capital extranjero, los gobiernos comenzaron a atraer inversión activamente.",
+      "sentence": "Muchos países bajaron los aranceles y los productos importados llegaron con más facilidad.",
       "options": [
-        "In contrast with the traditional distrust of foreign capital, governments began actively attracting investment.",
-        "Governments actively discouraged any form of foreign investment during this period.",
-        "Governments kept the same distrust of foreign capital and avoided all investment."
+        "Many countries lowered tariffs and imported products arrived more easily.",
+        "Many countries raised tariffs and imported products arrived with more difficulty.",
+        "Many countries lowered tariffs and national products arrived more easily."
       ],
       "correct": 0,
       "teaches": [
