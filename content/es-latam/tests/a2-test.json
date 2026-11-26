@@ -225,13 +225,14 @@
     },
     {
       "id": "condicional-cortesia",
-      "type": "text-input",
+      "type": "dropdown",
       "sentence": "Me _____ saber a qué hora sale el próximo autobús.",
-      "answer": "gustaría",
-      "altAnswers": [
-        "gustaria",
-        "Gustaría"
+      "options": [
+        "gustaría",
+        "gusta",
+        "gustaba"
       ],
+      "correct": 0,
       "teaches": [
         "condicional-simple"
       ]
