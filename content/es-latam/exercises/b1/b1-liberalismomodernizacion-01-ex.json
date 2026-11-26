@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el conjunto",
-          "set, group"
+          "liberal",
+          "liberal"
         ],
         [
-          "igualitario",
-          "egalitarian"
+          "el liberalismo",
+          "liberalism"
         ],
         [
-          "el requisito",
-          "requirement"
+          "la igualdad",
+          "equality"
         ],
         [
-          "la alfabetización",
-          "literacy"
+          "la propiedad",
+          "property"
         ]
       ],
       "teaches": [
@@ -33,20 +33,20 @@
       "category": "vocabulary",
       "pairs": [
         [
+          "votar",
+          "to vote"
+        ],
+        [
+          "el voto",
+          "vote"
+        ],
+        [
+          "el requisito",
+          "requirement"
+        ],
+        [
           "excluido",
-          "excluded"
-        ],
-        [
-          "desapercibido",
-          "unnoticed"
-        ],
-        [
-          "radical",
-          "radical"
-        ],
-        [
-          "el sufragio",
-          "suffrage, the vote"
+          "excluded, left out"
         ]
       ],
       "teaches": [
@@ -56,24 +56,27 @@
     {
       "id": "b1-liberalismomodernizacion-01.ex02",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué valores defendía el liberalismo, en principio?",
+      "category": "grammar",
+      "question": "Which sentence says \"As trade grew, the ports grew\"?",
       "options": [
-        "La libertad individual, el libre mercado y la igualdad ante la ley.",
-        "El mantenimiento estricto de las jerarquías coloniales heredadas.",
-        "La exclusión total de cualquier forma de participación política."
+        "A medida que crecía el comercio, crecían los puertos.",
+        "A medida de que crecía el comercio, crecían los puertos.",
+        "A medida que crecía el comercio, crecía los puertos."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "cuanto-mas-tanto-mas"
+      ]
     },
     {
       "id": "b1-liberalismomodernizacion-01.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Podía votar toda la población adulta bajo las constituciones liberales del siglo diecinueve?",
+      "question": "What did liberals want for the new republics?",
       "options": [
-        "No, la mayoría exigía requisitos de propiedad o alfabetización, por lo que solo una minoría ejercía realmente el derecho al voto.",
-        "Sí, todas las constituciones liberales garantizaban el voto universal desde el principio.",
-        "No, porque el voto estaba reservado exclusivamente a los peninsulares."
+        "Leyes iguales para todos los ciudadanos.",
+        "Un rey para cada república.",
+        "Un ejército para cada provincia."
       ],
       "correct": 0
     },
@@ -81,28 +84,22 @@
       "id": "b1-liberalismomodernizacion-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "___, la igualdad legal proclamada en el papel convivía con una ciudadanía política restringida.",
-      "hint": "as a consequence",
+      "sentence": "Cuanto ___ comerciaban con Europa, más ideas liberales llegaban.",
+      "answer": "más",
       "teaches": [
-        "porque-y-por-eso"
+        "cuanto-mas-tanto-mas"
       ],
-      "english": "As a consequence, the legal equality proclaimed on paper coexisted with restricted political citizenship.",
-      "answers": [
-        "Como consecuencia",
-        "En consecuencia",
-        "Por consiguiente",
-        "Por lo tanto"
-      ]
+      "english": "The more they traded with Europe, the more liberal ideas arrived."
     },
     {
       "id": "b1-liberalismomodernizacion-01.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿A quiénes excluyó particularmente el requisito de saber leer y escribir?",
+      "question": "What did many countries require from voters?",
       "options": [
-        "A la mayoría de la población indígena, afrodescendiente y campesina.",
-        "Únicamente a los antiguos peninsulares residentes en América.",
-        "No excluyó a ningún grupo social en particular."
+        "Tener propiedades o saber leer.",
+        "Tener un cargo en el gobierno.",
+        "Ser miembro de un ejército."
       ],
       "correct": 0
     },
@@ -111,76 +108,69 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Por",
-        "consiguiente,",
-        "solo",
-        "una",
-        "minoría",
-        "de",
-        "hombres",
-        "adultos",
-        "ejercía",
-        "realmente",
+        "A",
+        "medida",
+        "que",
+        "crecía",
         "el",
-        "derecho",
-        "al",
-        "voto."
+        "comercio,",
+        "crecían",
+        "las",
+        "ciudades."
       ],
       "solution": [
-        "Por",
-        "consiguiente,",
-        "solo",
-        "una",
-        "minoría",
-        "de",
-        "hombres",
-        "adultos",
-        "ejercía",
-        "realmente",
+        "A",
+        "medida",
+        "que",
+        "crecía",
         "el",
-        "derecho",
-        "al",
-        "voto."
+        "comercio,",
+        "crecían",
+        "las",
+        "ciudades."
       ],
-      "english": "Consequently, only a minority of adult men actually exercised the right to vote.",
+      "english": "As trade grew, the cities grew.",
       "teaches": [
-        "porque-y-por-eso"
+        "cuanto-mas-tanto-mas"
       ]
     },
     {
       "id": "b1-liberalismomodernizacion-01.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Marta",
-          "text": "Según el texto, ¿qué tensión cargó el liberalismo latinoamericano?"
+          "speaker": "Meg",
+          "text": "¿Quiénes no podían votar en muchos países?"
         },
         {
-          "speaker": "Pablo",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Una tensión no resuelta entre sus principios y sus prácticas: proclamaba la libertad universal, pero gobernó a través de oligarquías ilustradas.",
-        "Ninguna tensión: sus principios y sus prácticas coincidían plenamente, y todos los adultos votaban.",
-        "Una tensión entre el liberalismo y las órdenes religiosas, que gobernaban toda la región."
+        "Las mujeres y muchas personas sin propiedades.",
+        "Los comerciantes y los propietarios.",
+        "Los hacendados y los ciudadanos ricos."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-liberalism-modernization-vocab"
+      ]
     },
     {
       "id": "b1-liberalismomodernizacion-01.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Para poder votar, la ley exigía poseer bienes inmuebles de alto valor y saber leer y escribir.",
+      "sentence": "Cuanto más crecía el comercio, más crecían los puertos.",
       "options": [
-        "To vote, the law required owning high-value property and knowing how to read and write.",
-        "To vote, the law required nothing more than being an adult.",
-        "To vote, the law required speaking an indigenous language."
+        "The more trade grew, the more the ports grew.",
+        "The more trade grew, the fewer ports there were.",
+        "The less trade grew, the more the ports grew."
       ],
       "correct": 0,
       "teaches": [
-        "b1-liberalism-modernization-vocab"
+        "cuanto-mas-tanto-mas"
       ]
     }
   ]

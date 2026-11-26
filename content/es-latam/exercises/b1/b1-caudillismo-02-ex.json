@@ -11,16 +11,12 @@
           "official, civil servant"
         ],
         [
-          "el jinete",
-          "horseman, rider"
+          "el llanero",
+          "llanero (plainsman of the Venezuelan llanos)"
         ],
         [
-          "el ganado",
-          "cattle, livestock"
-        ],
-        [
-          "confiscado",
-          "confiscated"
+          "frágil",
+          "fragile"
         ]
       ],
       "teaches": [
@@ -33,20 +29,16 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el vínculo",
-          "bond, link"
+          "el presidente",
+          "president"
         ],
         [
-          "retirar",
-          "to withdraw, remove"
+          "local",
+          "local"
         ],
         [
-          "el rival",
-          "rival"
-        ],
-        [
-          "frágil",
-          "fragile"
+          "fuerte",
+          "strong"
         ]
       ],
       "teaches": [
@@ -56,24 +48,27 @@
     {
       "id": "b1-caudillismo-02.ex02",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Cómo gobernaba un caudillo, a diferencia de un funcionario moderno?",
+      "category": "grammar",
+      "question": "Which sentence says \"Páez counted on the loyalty of the llaneros\"?",
       "options": [
-        "Mediante una red de patronazgo: favores, tierras y protección a cambio de lealtad, no a través de una burocracia impersonal.",
-        "Exactamente igual que un funcionario moderno, con procedimientos administrativos idénticos.",
-        "Sin ninguna relación personal con sus seguidores, solo mediante decretos escritos."
+        "Páez contaba con la lealtad de los llaneros.",
+        "Páez contaba de la lealtad de los llaneros.",
+        "Páez contaba en la lealtad de los llaneros."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "verbos-regimen-preposicional"
+      ]
     },
     {
       "id": "b1-caudillismo-02.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Por qué fue reconocido José Antonio Páez como líder por otros llaneros?",
+      "question": "What did Páez give to local chiefs?",
       "options": [
-        "Por su extraordinaria valentía en combate y su habilidad como jinete, que le ganaron la devoción de los llaneros.",
-        "Porque heredó el título de su familia noble española.",
-        "Porque fue nombrado líder por decreto de la corona española."
+        "Tierras, cargos y protección.",
+        "Dinero y barcos de otros países.",
+        "Ejércitos y barcos de guerra."
       ],
       "correct": 0
     },
@@ -81,26 +76,22 @@
       "id": "b1-caudillismo-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Sus antiguos compañeros de armas ___ colocados en puestos de confianza.",
-      "hint": "ser",
+      "sentence": "Los jefes locales dependían ___ Páez.",
+      "answer": "de",
       "teaches": [
-        "ser-passive"
+        "verbos-regimen-preposicional"
       ],
-      "english": "His former fellow soldiers were placed in positions of trust.",
-      "answers": [
-        "fueron",
-        "eran"
-      ]
+      "english": "The local chiefs depended on Páez."
     },
     {
       "id": "b1-caudillismo-02.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Cómo funcionaba la 'pirámide de lealtades superpuestas' bajo Páez?",
+      "question": "Why was the network of loyalties fragile?",
       "options": [
-        "El caudillo entregaba hatos ganaderos y vales militares, y cada beneficiario se convertía en un defensor incondicional del régimen.",
-        "Cada nivel era completamente independiente de los demás, sin ninguna conexión real.",
-        "Solo existía un único nivel de autoridad, sin ninguna jerarquía intermedia."
+        "Un jefe local podía dejar de apoyar a Páez.",
+        "Los llaneros no querían tener tierras.",
+        "Páez no tenía relaciones con los jefes."
       ],
       "correct": 0
     },
@@ -109,74 +100,69 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Las",
-        "tierras",
-        "conquistadas",
-        "o",
-        "confiscadas",
-        "durante",
-        "las",
-        "guerras",
-        "fueron",
-        "repartidas",
-        "entre",
-        "sus",
-        "seguidores."
+        "Los",
+        "jefes",
+        "locales",
+        "contaban",
+        "con",
+        "la",
+        "protección",
+        "de",
+        "Páez."
       ],
       "solution": [
-        "Las",
-        "tierras",
-        "conquistadas",
-        "o",
-        "confiscadas",
-        "durante",
-        "las",
-        "guerras",
-        "fueron",
-        "repartidas",
-        "entre",
-        "sus",
-        "seguidores."
+        "Los",
+        "jefes",
+        "locales",
+        "contaban",
+        "con",
+        "la",
+        "protección",
+        "de",
+        "Páez."
       ],
-      "english": "Lands conquered or confiscated during the wars were distributed among his followers.",
+      "english": "The local chiefs counted on the protection of Páez.",
       "teaches": [
-        "ser-passive"
+        "verbos-regimen-preposicional"
       ]
     },
     {
       "id": "b1-caudillismo-02.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Marta",
-          "text": "¿Qué logró el sistema de favores y lealtades de Páez?"
+          "speaker": "Meg",
+          "text": "¿Quién era Páez?"
         },
         {
-          "speaker": "Pablo",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Garantizó la estabilidad de Venezuela durante casi dos décadas, supliendo la ausencia de un Estado consolidado.",
-        "Fracasó de inmediato y Venezuela quedó sin gobierno desde el primer año.",
-        "Creó una burocracia impersonal moderna que reemplazó a todos los caudillos."
+        "Era un llanero que fue presidente de Venezuela.",
+        "Era un llanero que fue presidente de Argentina.",
+        "Era un funcionario que fue presidente de Venezuela."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-caudillismo-vocab"
+      ]
     },
     {
       "id": "b1-caudillismo-02.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Tras liderar la separación de Venezuela de la Gran Colombia en 1830, Páez gobernó apoyándose en los coroneles.",
+      "sentence": "Un caudillo dependía de las personas.",
       "options": [
-        "After leading Venezuela's separation from Gran Colombia in 1830, Páez governed relying on his colonels.",
-        "Páez opposed the separation of Venezuela from Gran Colombia and fled the country.",
-        "Páez governed Venezuela only through a modern bureaucracy."
+        "A caudillo depended on people.",
+        "A caudillo depended on written laws.",
+        "A caudillo depended on foreign armies."
       ],
       "correct": 0,
       "teaches": [
-        "b1-caudillismo-vocab"
+        "verbos-regimen-preposicional"
       ]
     }
   ]

@@ -7,20 +7,16 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el opositor",
-          "opponent"
+          "la civilización",
+          "civilization"
         ],
         [
-          "exiliado",
-          "exiled"
+          "la barbarie",
+          "barbarism"
         ],
         [
-          "atrasado",
-          "backward"
-        ],
-        [
-          "letrado",
-          "literate, educated"
+          "el escritor",
+          "writer"
         ]
       ],
       "teaches": [
@@ -33,20 +29,16 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el campesino",
-          "peasant, farmer"
+          "exiliado",
+          "exiled"
         ],
         [
-          "amenazar",
-          "to threaten"
+          "el defensor",
+          "defender, supporter"
         ],
         [
-          "revisionista",
-          "revisionist"
-        ],
-        [
-          "la etiqueta",
-          "label"
+          "la inestabilidad",
+          "instability"
         ]
       ],
       "teaches": [
@@ -56,24 +48,27 @@
     {
       "id": "b1-caudillismo-04.ex02",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué argumentaba Sarmiento en 'Facundo: Civilización y Barbarie' (1845)?",
+      "category": "grammar",
+      "question": "Which sentence says \"Sarmiento wrote that the countryside represented barbarism\"?",
       "options": [
-        "Contraponía la civilización europea de las ciudades a la barbarie violenta del desierto pampeano, asociada al caudillismo.",
-        "Que los caudillos eran los únicos verdaderos representantes de la civilización latinoamericana.",
-        "Que no existía ninguna diferencia real entre el campo y la ciudad."
+        "Sarmiento escribió que el campo representaba la barbarie.",
+        "Sarmiento escribió el campo representaba la barbarie.",
+        "Sarmiento escribió de que el campo representaba la barbarie."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "estilo-indirecto"
+      ]
     },
     {
       "id": "b1-caudillismo-04.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Por qué resulta difícil aplicar la interpretación de Sarmiento al caso de Rafael Carrera en Guatemala?",
+      "question": "Why does Rafael Carrera not fit Sarmiento's idea well?",
       "options": [
-        "Porque Carrera fue apoyado por campesinos indígenas contra políticas liberales.",
-        "Porque Carrera nunca gobernó realmente ningún territorio.",
-        "Porque Carrera era, él mismo, un aristócrata urbano educado en Europa."
+        "Era humilde y muchos campesinos lo apoyaban.",
+        "Era un escritor argentino que vivía en Chile.",
+        "Era un hacendado rico que vivía en Buenos Aires."
       ],
       "correct": 0
     },
@@ -81,26 +76,23 @@
       "id": "b1-caudillismo-04.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "___ de su experiencia como opositor exiliado, Sarmiento publicó 'Facundo' en 1845.",
-      "hint": "as a result of",
+      "sentence": "Sarmiento escribió que las ciudades ___ la civilización.",
+      "hint": "representar",
+      "answer": "representaban",
       "teaches": [
-        "formal-cause-connectors"
+        "estilo-indirecto"
       ],
-      "english": "As a result of his experience as an exiled opponent, Sarmiento published 'Facundo' in 1845.",
-      "answers": [
-        "A raíz",
-        "Como consecuencia"
-      ]
+      "english": "Sarmiento wrote that the cities represented civilization."
     },
     {
       "id": "b1-caudillismo-04.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué interpretación alternativa prefieren algunos historiadores para ciertos caudillos?",
+      "question": "Until when did Carrera dominate Guatemala?",
       "options": [
-        "Verlos como mediadores y protectores de los pueblos frente a la agresiva modernización de las élites letradas, no como bárbaros.",
-        "La misma interpretación de Sarmiento, sin ningún cambio.",
-        "Que ningún caudillo tuvo jamás ningún tipo de apoyo popular genuino."
+        "Hasta su muerte, en 1865.",
+        "Hasta 1852, cuando perdió una batalla.",
+        "Hasta 1845, cuando salió del país."
       ],
       "correct": 0
     },
@@ -109,82 +101,71 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "En",
+        "Los",
+        "defensores",
+        "de",
+        "Rosas",
+        "decían",
+        "que",
+        "él",
+        "mantenía",
         "el",
-        "marco",
-        "de",
-        "casos",
-        "como",
-        "el",
-        "de",
-        "Rafael",
-        "Carrera,",
-        "esta",
-        "interpretación",
-        "resulta",
-        "más",
-        "difícil",
-        "de",
-        "sostener."
+        "orden."
       ],
       "solution": [
-        "En",
+        "Los",
+        "defensores",
+        "de",
+        "Rosas",
+        "decían",
+        "que",
+        "él",
+        "mantenía",
         "el",
-        "marco",
-        "de",
-        "casos",
-        "como",
-        "el",
-        "de",
-        "Rafael",
-        "Carrera,",
-        "esta",
-        "interpretación",
-        "resulta",
-        "más",
-        "difícil",
-        "de",
-        "sostener."
+        "orden."
       ],
-      "english": "Within the framework of cases like Rafael Carrera's, this interpretation becomes harder to sustain.",
+      "english": "The defenders of Rosas said that he kept order.",
       "teaches": [
-        "formal-cause-connectors"
+        "estilo-indirecto"
       ]
     },
     {
       "id": "b1-caudillismo-04.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Marta",
-          "text": "Entonces, ¿cuál de las dos interpretaciones del caudillismo es la correcta?"
+          "speaker": "Meg",
+          "text": "¿Qué escribió Sarmiento sobre los caudillos?"
         },
         {
-          "speaker": "Pablo",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Ninguna basta por sí sola: la dicotomía de Sarmiento resulta insuficiente para casos como el de Carrera, y la realidad histórica es más compleja.",
-        "La interpretación de Sarmiento es la única correcta, sin ninguna excepción posible.",
-        "La interpretación revisionista es la única correcta y Sarmiento estaba completamente equivocado."
+        "Escribió que eran un obstáculo para el progreso.",
+        "Escribió que eran los mejores jefes del país.",
+        "Escribió que eran amigos de la civilización."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "estilo-indirecto"
+      ]
     },
     {
       "id": "b1-caudillismo-04.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Carrera gobernó Guatemala con amplio respaldo social hasta 1865.",
+      "sentence": "Sarmiento escribió que los caudillos eran un obstáculo para el progreso.",
       "options": [
-        "Carrera governed Guatemala with broad social support until 1865.",
-        "Carrera was overthrown by a peasant uprising in 1837.",
-        "Carrera never governed Guatemala."
+        "Sarmiento wrote that the caudillos were an obstacle to progress.",
+        "Sarmiento wrote that the caudillos were friends of progress.",
+        "Sarmiento wrote that the caudillos were good writers."
       ],
       "correct": 0,
       "teaches": [
-        "b1-caudillismo-vocab"
+        "estilo-indirecto"
       ]
     }
   ]

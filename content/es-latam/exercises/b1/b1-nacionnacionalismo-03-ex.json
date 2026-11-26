@@ -7,16 +7,12 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "convincente",
-          "convincing"
+          "el águila",
+          "eagle"
         ],
         [
-          "fielmente",
-          "faithfully"
-        ],
-        [
-          "revelador",
-          "revealing"
+          "glorioso",
+          "glorious"
         ],
         [
           "el orgullo",
@@ -33,20 +29,16 @@
       "category": "vocabulary",
       "pairs": [
         [
+          "la élite",
+          "elite"
+        ],
+        [
           "la marginación",
-          "marginalization"
+          "marginalization (being left out of power and rights)"
         ],
         [
-          "perjudicado",
-          "harmed, disadvantaged"
-        ],
-        [
-          "clausurado",
-          "closed off, shut"
-        ],
-        [
-          "arraigado",
-          "rooted"
+          "la contradicción",
+          "contradiction"
         ]
       ],
       "teaches": [
@@ -56,24 +48,30 @@
     {
       "id": "b1-nacionnacionalismo-03.ex02",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué imagen azteca incorporó el gobierno mexicano al escudo patrio?",
+      "category": "grammar",
+      "question": "Which sentence says \"It is important that the country has its own past\"?",
       "options": [
-        "El águila sobre el nopal devorando una serpiente.",
-        "Una corona española sobre un león dorado.",
-        "El pabellón celeste y blanco de Belgrano."
+        "Es importante que el país tenga un pasado propio.",
+        "Es importante que el país tiene un pasado propio.",
+        "Es importante que el país tener un pasado propio."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "subjunctive-value-judgments"
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b1-nacionnacionalismo-03.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué contradicción señala el texto sobre el pasado y el presente indígenas?",
+      "question": "What symbol did Mexico choose, according to the text?",
       "options": [
-        "Se glorificaba el pasado indígena en estatuas y museos mientras las comunidades originarias vivas sufrían el despojo de sus tierras y la marginación social.",
-        "No existía ninguna contradicción; el trato a las comunidades indígenas era excelente en esa época.",
-        "El gobierno nunca glorificó el pasado indígena en ningún símbolo oficial."
+        "Un águila que come una serpiente.",
+        "Un hombre que come un cactus.",
+        "Una bandera con un himno."
       ],
       "correct": 0
     },
@@ -81,26 +79,23 @@
       "id": "b1-nacionnacionalismo-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Era necesario que la población ___ esos símbolos como propios.",
-      "hint": "reconocer",
+      "sentence": "Es importante que se ___ la vida real de las comunidades.",
+      "hint": "estudiar",
+      "answer": "estudie",
       "teaches": [
         "subjunctive-value-judgments"
       ],
-      "english": "It was necessary for the population to recognise those symbols as their own.",
-      "answers": [
-        "reconociera",
-        "reconociese"
-      ]
+      "english": "It is important that the real life of the communities is studied."
     },
     {
       "id": "b1-nacionnacionalismo-03.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Por qué convenía a las élites gobernantes presentar el pasado prehispánico como una civilización 'clausurada'?",
+      "question": "How did the elites present the indigenous past, according to many historians?",
       "options": [
-        "Para que las demandas actuales de los pueblos indígenas no cuestionaran el poder de los terratenientes criollos.",
-        "Porque realmente no existía ningún interés político en el pasado prehispánico.",
-        "Porque las élites querían eliminar por completo cualquier referencia al pasado indígena."
+        "Como un pasado glorioso y terminado.",
+        "Como un pasado triste y reciente.",
+        "Como un problema de la nación."
       ],
       "correct": 0
     },
@@ -109,36 +104,28 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Era",
-        "esencial",
+        "Es",
+        "necesario",
         "que",
-        "ese",
-        "pasado",
-        "prehispánico",
-        "se",
-        "convirtiera",
-        "en",
-        "fuente",
-        "de",
-        "orgullo",
-        "nacional."
+        "el",
+        "país",
+        "explique",
+        "bien",
+        "su",
+        "pasado."
       ],
       "solution": [
-        "Era",
-        "esencial",
+        "Es",
+        "necesario",
         "que",
-        "ese",
-        "pasado",
-        "prehispánico",
-        "se",
-        "convirtiera",
-        "en",
-        "fuente",
-        "de",
-        "orgullo",
-        "nacional."
+        "el",
+        "país",
+        "explique",
+        "bien",
+        "su",
+        "pasado."
       ],
-      "english": "It was essential for that pre-Hispanic past to become a source of national pride.",
+      "english": "It is necessary that the country explains its past well.",
       "teaches": [
         "subjunctive-value-judgments"
       ]
@@ -146,37 +133,43 @@
     {
       "id": "b1-nacionnacionalismo-03.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Marta",
-          "text": "¿Qué función cumplió el indigenismo de museo para la república mexicana?"
+          "speaker": "Meg",
+          "text": "¿Qué dicen hoy muchos historiadores?"
         },
         {
-          "speaker": "Pablo",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Dio singularidad a la república, pero dejó pendiente la integración con plenos derechos de millones de indígenas vivos.",
-        "Garantizó de inmediato plenos derechos de ciudadanía a todas las poblaciones indígenas del país.",
-        "Eliminó cualquier alusión al pasado prehispánico en la identidad nacional."
+        "Es importante que se estudie la vida real de las comunidades.",
+        "Es importante que se estudia la vida real de las comunidades.",
+        "Es importante que se olvide la vida real de las comunidades."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "subjunctive-value-judgments"
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b1-nacionnacionalismo-03.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Las comunidades originarias vivas sufrían el despojo de sus tierras comunales y la marginación social.",
+      "sentence": "Es injusto que se olvide a las comunidades indígenas.",
       "options": [
-        "Living indigenous communities suffered the dispossession of their communal lands and social marginalization.",
-        "Living indigenous communities kept all their communal lands and enjoyed full social standing.",
-        "Indigenous communities no longer existed in the country."
+        "It is unfair that the indigenous communities are forgotten.",
+        "It is unfair that the indigenous communities are rich.",
+        "It is important that the indigenous communities are forgotten."
       ],
       "correct": 0,
       "teaches": [
-        "b1-nation-nationalism-vocab"
+        "subjunctive-value-judgments"
       ]
     }
   ]
