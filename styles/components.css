@@ -7761,35 +7761,25 @@
    (engine/guide.js, engine/home.js; copy in docs/feature-guidance-copy.md)
    ============================================ */
 
-/* Margin note: serif italic with a thin accent rule, on a lightly framed
-   panel so it reads as lifted above the page rather than part of the
-   text — the eggshell panel and hairline set it apart without a shadow
-   (design principles: no shadows). The pointer marks what it's about. */
+/* Margin note: serif italic with a thin primary top rule on a soft wash
+   panel, no shadow (design principles). Positioned by Guide.note(). */
 .pl-note {
   position: fixed;
   z-index: 900;
   max-width: min(300px, calc(100% - 16px));
-  margin-top: 6px;
-  padding: 9px 30px 9px 12px;
-  background: var(--note-bg);
-  border: 1px solid var(--border);
-  border-left: 2px solid var(--accent);
-  border-radius: var(--radius);
+  padding: 12px 38px 12px 14px;
+  background: var(--wash);
+  border: 0;
+  border-top: 2px solid var(--primary);
+  border-radius: 0;
   animation: plNoteIn var(--dur-base) var(--ease-standard);
+  cursor: pointer;
 }
 
-.pl-note::before {
-  content: '';
-  position: absolute;
-  top: -6px;
-  left: 14px;
-  width: 10px;
-  height: 10px;
-  background: var(--note-bg);
-  border-top: 1px solid var(--border);
-  border-left: 1px solid var(--border);
-  transform: rotate(45deg);
-  display: none;
+@media (max-width: 639px) {
+  .pl-note {
+    border-top-width: 1.5px;
+  }
 }
 
 @keyframes plNoteIn {
@@ -7799,33 +7789,29 @@
 
 .pl-note-text {
   margin: 0;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 15px;
-  line-height: 1.5;
   font: italic 400 1rem/1.5 var(--font-display);
   color: var(--text);
 }
 
 .pl-note-close {
   position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 22px;
-  height: 22px;
+  top: 2px;
+  right: 2px;
+  width: 34px;
+  height: 34px;
   padding: 0;
   border: 0;
   background: none;
   color: var(--muted);
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 34px;
   cursor: pointer;
 }
 
 @media (hover: hover) {
   .pl-note-close:hover {
-  color: var(--text);
-}
+    color: var(--text);
+  }
 }
 
 /* First open: a name, one sentence, one question at a time. */
@@ -7906,6 +7892,29 @@
   .pl-welcome-back:hover {
   color: var(--text);
 }
+}
+
+.pl-welcome-signin {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .pl-welcome-signin:hover {
+    color: var(--text);
+  }
+}
+
+#sync-prompt-overlay {
+  z-index: 1050;
 }
 
 /* End-of-lesson invitation: one line and a way to get there. */
@@ -9366,11 +9375,6 @@
 /* WRITING AND SPEAKING FEEDBACK */
 .sp-verified-badge, .sp-competency-verified-banner { color: var(--success); }
 
-/* MARGIN NOTES (the small info bubbles) */
-.pl-note-close { color: var(--muted); }
-@media (hover: hover) {
-  .pl-note-close:hover { color: var(--text); }
-}
 @media (max-width: 639px) {
   .hm-cta, .hm-cta-btn { font: 500 15px/1 var(--font-ui); }
   .hm-budget-pill { box-shadow: inset 0 0 0 1px var(--border); font: 500 13px/1 var(--font-ui); }

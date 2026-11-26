@@ -129,26 +129,73 @@ const Guide = (function () {
 
     // Fixed to the viewport and re-placed on every scroll, so it follows
     // its anchor whichever element is doing the scrolling (the page on a
-    // phone, .content on a wide screen). Hidden while the anchor is off
-    // screen.
-    // Returns whether the note is on screen.
-    function _place(el, anchor) {
+    // phone, .content on a wide screen). Automatically flips above the
+    // anchor when there isn't room below (accounting for the fixed mobile
+    // bottom nav). Returns:
+    //   true  — placed on screen
+    //   false — anchor exists but doesn't fit on screen right now
+    //   null  — anchor is gone or hidden (display: none)
+    function _place(el, anchor, preferAbove) {
+        if (!anchor || !anchor.isConnected || !anchor.getClientRects().length) {
+            return null;
+        }
         const a = anchor.getBoundingClientRect();
         const vw = document.documentElement.clientWidth;
         const vh = document.documentElement.clientHeight;
-        const onScreen = a.bottom >= 0 && a.bottom + 6 < vh;
-        el.style.visibility = onScreen ? '' : 'hidden';
-        const maxLeft = Math.max(8, vw - el.offsetWidth - 8);
-        el.style.top = Math.round(a.bottom + 6) + 'px';
+        // Reserve room for the 62px fixed mobile bottom nav (< 1024px)
+        const bottomInset = vw < 1024 ? 72 : 12;
+        const topInset = 8;
+        const gap = 8;
+        const noteH = el.offsetHeight || 56;
+        const safeBottom = vh - bottomInset;
+
+        const fitsBelow = a.bottom + gap + noteH <= safeBottom && a.bottom >= topInset;
+        const fitsAbove = a.top - gap - noteH >= topInset && a.top <= safeBottom;
+
+        let placeAbove = false;
+        let top = 0;
+        let onScreen = false;
+
+        if (preferAbove) {
+            if (fitsAbove) {
+                placeAbove = true;
+                top = a.top - gap - noteH;
+                onScreen = true;
+            } else if (fitsBelow) {
+                top = a.bottom + gap;
+                onScreen = true;
+            }
+        } else {
+            if (fitsBelow) {
+                top = a.bottom + gap;
+                onScreen = true;
+            } else if (fitsAbove) {
+                placeAbove = true;
+                top = a.top - gap - noteH;
+                onScreen = true;
+            }
+        }
+
+        if (!onScreen) {
+            el.style.visibility = 'hidden';
+            return false;
+        }
+
+        el.style.visibility = '';
+        el.classList.toggle('is-above', placeAbove);
+        const maxLeft = Math.max(8, vw - (el.offsetWidth || 280) - 8);
+        el.style.top = Math.round(top) + 'px';
         el.style.left = Math.round(Math.min(Math.max(8, a.left), maxLeft)) + 'px';
-        return onScreen;
+        return true;
     }
 
-    // Shows a one-line note just below `anchor`. Returns the note element,
-    // or null when it isn't shown (already seen, another note is up, the
-    // day's note already used, or the anchor isn't rendered).
-    //   options.inLesson — one of the first-lesson basics, not held back by
-    //   the one-a-day limit.
+    // Shows a one-line note just below (or above, if near the bottom) `anchor`.
+    // Returns the note element, or null when it isn't shown (already seen,
+    // another note is up, the day's note already used, or the anchor isn't
+    // visible on screen).
+    //   options.inLesson    — one of the first-lesson basics, not held back by
+    //                         the one-a-day limit.
+    //   options.preferAbove — place above the anchor first (e.g. bottom bars).
     function note(featureId, anchor, text, options) {
         const opts = options || {};
         if (typeof document === 'undefined') return null;
@@ -166,33 +213,34 @@ const Guide = (function () {
         `;
         document.body.appendChild(el);
 
-        // Counted (the day's note, one of its two showings) only once it
-        // has actually been on screen — an anchor below the fold waits
-        // until the learner scrolls to it.
-        let counted = false;
-        const countIfSeen = onScreen => {
-            if (counted || !onScreen) return;
-            counted = true;
-            if (!opts.inLesson) _set(NOTE_DAY_KEY, _today());
-            if (_bump(SHOWS_PREFIX, featureId) >= MAX_NOTE_SHOWS) markSeen(featureId);
-        };
-        countIfSeen(_place(el, anchor));
+        // Only keep the note if it actually fits on screen right now —
+        // never hold _active hostage for an off-screen anchor.
+        const placed = _place(el, anchor, !!opts.preferAbove);
+        if (placed !== true) {
+            if (el.parentNode) el.parentNode.removeChild(el);
+            return null;
+        }
 
-        // Any tap closes it — on the note's ×, on the thing it points at,
-        // or anywhere else — and the tap still does whatever it would have.
-        const onDocClick = e => {
-            if (el.contains(e.target) && !e.target.closest('.pl-note-close')) return;
-            if (counted) _dismiss();
-            else clearNote();
+        if (!opts.inLesson) _set(NOTE_DAY_KEY, _today());
+        if (_bump(SHOWS_PREFIX, featureId) >= MAX_NOTE_SHOWS) markSeen(featureId);
+
+        // Any tap closes it — on the note itself, its ×, the thing it points
+        // at, or anywhere else — and taps outside still perform their action.
+        const onDocClick = () => {
+            _dismiss();
+        };
+        const onKeyDown = e => {
+            if (e.key === 'Escape') _dismiss();
         };
         const onMove = () => {
-            if (anchor.isConnected) countIfSeen(_place(el, anchor));
-            else clearNote();
+            const state = _place(el, anchor, !!opts.preferAbove);
+            if (state === null) clearNote();
         };
 
         // Attached a tick later so the click that made the note appear
         // doesn't immediately close it again.
         const timer = setTimeout(() => document.addEventListener('click', onDocClick, true), 0);
+        document.addEventListener('keydown', onKeyDown);
         window.addEventListener('resize', onMove);
         document.addEventListener('scroll', onMove, true);
 
@@ -202,6 +250,7 @@ const Guide = (function () {
             cleanup: () => {
                 clearTimeout(timer);
                 document.removeEventListener('click', onDocClick, true);
+                document.removeEventListener('keydown', onKeyDown);
                 window.removeEventListener('resize', onMove);
                 document.removeEventListener('scroll', onMove, true);
             }

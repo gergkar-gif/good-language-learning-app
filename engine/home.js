@@ -376,18 +376,25 @@ const Home = (function () {
         el.setAttribute('role', 'dialog');
         el.setAttribute('aria-modal', 'true');
         el.setAttribute('aria-labelledby', 'pl-welcome-title');
+        const canSignIn = typeof Sync !== 'undefined' && typeof Sync.openSignInModal === 'function' && !Sync.isLoggedIn();
         el.innerHTML = `
             <div class="pl-welcome-inner">
                 ${(typeof Art !== 'undefined' && Art.heroSvg) ? Art.heroSvg('home', 'pl-welcome-art') : ''}
                 <h1 id="pl-welcome-title" class="pl-welcome-name">Parlour</h1>
                 <p class="pl-welcome-line">A place to learn a language properly, at your own pace.</p>
                 <div id="pl-welcome-step" class="pl-welcome-step"></div>
+                ${canSignIn ? '<button type="button" class="pl-welcome-signin" data-welcome-signin="1">Already have an account? Sign in</button>' : ''}
             </div>
         `;
         document.body.appendChild(el);
         _showWelcomeStep('language');
 
         el.addEventListener('click', e => {
+            if (e.target.closest('[data-welcome-signin]')) {
+                if (typeof Sync !== 'undefined' && Sync.openSignInModal) Sync.openSignInModal();
+                return;
+            }
+
             const language = e.target.closest('[data-welcome-language]');
             if (language) {
                 const label = language.getAttribute('data-welcome-language');
@@ -771,6 +778,10 @@ const Home = (function () {
             showWelcome();
         } else {
             hideWelcome();
+            if (typeof Guide !== 'undefined' && hasEverOnboarded) {
+                Guide.note('home-desk', host.querySelector('.hm-continue'),
+                    'Your study desk. Come back here anytime for what to do next, or pick a quick session below.');
+            }
         }
     }
 

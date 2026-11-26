@@ -319,9 +319,12 @@ async function renderCurriculum() {
 
     // Pointed out once the learner has gone back to a finished lesson —
     // the first sign they're looking something up (see startLesson()).
-    if (typeof Guide !== 'undefined' && Guide.hasSeen('lesson-reopened')) {
-        Guide.note('grammar-guide', root.querySelector('[data-open-grammar-guide]'),
-            'Every unit\'s grammar is collected here, in case you want to look something up.');
+    if (typeof Guide !== 'undefined') {
+        Guide.clearNote();
+        if (Guide.hasSeen('lesson-reopened')) {
+            Guide.note('grammar-guide', root.querySelector('[data-open-grammar-guide]'),
+                'Every unit\'s grammar is collected here, in case you want to look something up.');
+        }
     }
 }
 
@@ -1092,6 +1095,7 @@ function attachCurriculumEvents(root) {
 
         const openGuide = e.target.closest('[data-open-grammar-guide]');
         if (openGuide) {
+            if (typeof Guide !== 'undefined') Guide.markSeen('grammar-guide');
             openGrammarGuideUnit = openGuide.getAttribute('data-open-grammar-guide');
             openWordBankUnit = null;
             renderCurriculum();

@@ -1206,7 +1206,7 @@ function revealAnswer() {
     speakRevealedWord();
 
     if (typeof Guide !== 'undefined') {
-        Guide.note('review-first', ratingsEl, 'Words come back less often as you get them right.');
+        Guide.note('review-first', ratingsEl, 'Words come back less often as you get them right.', { preferAbove: true });
     }
 }
 
@@ -1534,6 +1534,10 @@ function continueTypedReview() {
 
 function rateCard(rating) {
     if (!currentReviewCard) return;
+    if (typeof Guide !== 'undefined') {
+        Guide.markSeen('review-first');
+        Guide.clearNote();
+    }
 
     const now = new Date();
     const targetCard = currentReviewCard._original || (!currentReviewCard.isEphemeral ? currentReviewCard : null);

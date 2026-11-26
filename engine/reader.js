@@ -1903,11 +1903,13 @@ window.Reader = {
     // rebuild the shelves.
     showGuideNotes() {
         if (typeof Guide === 'undefined') return;
+        const myTextsTab = document.querySelector('#lib-subnav [data-lib-tab="mytexts"]');
+        if (!myTextsTab || myTextsTab.classList.contains('active')) return;
         const level = (typeof LearnerPath !== 'undefined' && typeof LearnerPath.currentLevel === 'function')
             ? (LearnerPath.currentLevel() || 'A1').toUpperCase()
             : 'A1';
         if (getReadStoryIds().length < 5 && level === 'A1') return;
-        Guide.note('library-mytexts', document.querySelector('#lib-subnav [data-lib-tab="mytexts"]'),
+        Guide.note('library-mytexts', myTextsTab,
             'Import an EPUB, Word doc, or text file — or paste anything in — and look up words the same way.');
     },
 
@@ -2469,7 +2471,7 @@ window.Reader = {
 
         // After the reading view is shown: a hidden anchor gets no note.
         if (typeof Guide !== 'undefined') {
-            Guide.note('library-arrival', container.querySelector('.story-paragraph'),
+            Guide.note('library-arrival', container.querySelector('.story-title, .story-header, .story-paragraph'),
                 'Tap any word to see what it means. Words you look up can go into your deck.');
         }
     },
@@ -2756,6 +2758,11 @@ function _isMidSentenceCapital(wordEl) {
 document.addEventListener('click', function (e) {
     const wordEl = e.target.closest('.word');
     if (!wordEl) return;
+
+    if (typeof Guide !== 'undefined') {
+        if (wordEl.closest('#lesson-content')) Guide.markSeen('lesson-tap-word');
+        else Guide.markSeen('library-arrival');
+    }
 
     // A word you have looked up gets a faint line everywhere it appears in
     // this story, so you can spot it again a few lines later. It lasts until

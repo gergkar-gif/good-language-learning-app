@@ -189,7 +189,11 @@ const Sync = (function () {
         if (el) el.innerHTML = '';
     }
 
-    function _promptFormHtml() {
+    function _promptFormHtml(options) {
+        const opts = options || {};
+        const title = opts.title || 'Keep your progress safe';
+        const blurb = opts.blurb || 'Sign in to sync your progress across devices &mdash; no password, and you won\'t need to log in again on this browser.';
+        const cancelLabel = opts.cancelLabel || 'Not now';
         const googleSection = isGoogleAuthAvailable() ? `
             <div id="sync-prompt-google-btn" class="jr-google-signin-container"></div>
             <div class="jr-account-divider"><span>or sign in with email</span></div>
@@ -199,11 +203,10 @@ const Sync = (function () {
             <div class="wp-overlay" id="sync-prompt-overlay">
                 <div class="wp-sheet sync-prompt-sheet">
                     <div class="wp-header">
-                        <h2 class="sync-prompt-title">Keep your progress safe</h2>
+                        <h2 class="sync-prompt-title">${esc(title)}</h2>
                         <button class="wp-close" data-sync-prompt-close="1" aria-label="Close">&times;</button>
                     </div>
-                    <p class="jr-account-blurb">Sign in to sync your progress across devices &mdash;
-                        no password, and you won't need to log in again on this browser.</p>
+                    <p class="jr-account-blurb">${blurb}</p>
                     ${googleSection}
                     <div class="jr-account-login">
                         <input type="email" id="sync-prompt-email-input" class="dk-editor-input"
@@ -211,7 +214,7 @@ const Sync = (function () {
                         <button class="dk-secondary" data-sync-prompt-send="1">Send me a link</button>
                     </div>
                     <p class="jr-account-status" id="sync-prompt-status"></p>
-                    <button class="jr-account-logout" data-sync-prompt-close="1">Not now</button>
+                    <button class="jr-account-logout" data-sync-prompt-close="1">${esc(cancelLabel)}</button>
                 </div>
             </div>
         `;
@@ -233,31 +236,18 @@ const Sync = (function () {
         `;
     }
 
-    function maybeShowFirstVisitPrompt() {
-        if (isLoggedIn()) return;
-
-        // Defer until the learner has actual progress to protect (at least 1 lesson completed or XP earned).
-        // Never interrupt a brand new user on their very first visit before they even know what Parlour is.
-        const progress = (typeof getProgress === 'function') ? getProgress() : {};
-        const completedCount = Object.keys(progress).length;
-        const xp = (typeof xpData !== 'undefined' && xpData && xpData.xp) ? xpData.xp : 0;
-        if (completedCount === 0 && xp === 0) return;
-
-        try {
-            if (localStorage.getItem(FIRST_VISIT_PROMPT_KEY)) return;
-            localStorage.setItem(FIRST_VISIT_PROMPT_KEY, '1');
-        } catch (error) {
-            return; // private browsing with storage disabled — nothing to persist the ask against
-        }
-
+    function _openSignInPrompt(options) {
         const host = ensurePromptHost();
-        host.innerHTML = _promptFormHtml();
+        host.innerHTML = _promptFormHtml(options);
 
-        host.querySelectorAll('[data-sync-prompt-close]').forEach(el => {
-            el.addEventListener('click', closeFirstVisitPrompt);
-        });
-        const overlay = document.getElementById('sync-prompt-overlay');
-        if (overlay) overlay.addEventListener('click', e => { if (e.target === overlay) closeFirstVisitPrompt(); });
+        function wireClose() {
+            host.querySelectorAll('[data-sync-prompt-close]').forEach(el => {
+                el.addEventListener('click', closeFirstVisitPrompt);
+            });
+            const ov = document.getElementById('sync-prompt-overlay');
+            if (ov) ov.addEventListener('click', e => { if (e.target === ov) closeFirstVisitPrompt(); });
+        }
+        wireClose();
 
         if (isGoogleAuthAvailable()) {
             renderGoogleButton('sync-prompt-google-btn', {
@@ -266,6 +256,7 @@ const Sync = (function () {
                     if (statusEl) statusEl.textContent = 'Signing in with Google\u2026';
                 },
                 onSuccess: () => {
+                    try { localStorage.setItem('parlour_first_open_completed', 'true'); } catch (e) {}
                     closeFirstVisitPrompt();
                     location.reload();
                 },
@@ -292,14 +283,35 @@ const Sync = (function () {
                     .catch(error => { if (statusEl) statusEl.textContent = error.message || 'Something went wrong.'; });
             });
         }
+    }
 
-        function wireClose() {
-            host.querySelectorAll('[data-sync-prompt-close]').forEach(el => {
-                el.addEventListener('click', closeFirstVisitPrompt);
-            });
-            const ov = document.getElementById('sync-prompt-overlay');
-            if (ov) ov.addEventListener('click', e => { if (e.target === ov) closeFirstVisitPrompt(); });
+    function openSignInModal() {
+        if (isLoggedIn()) return;
+        _openSignInPrompt({
+            title: 'Sign in to Parlour',
+            blurb: 'Restore your progress and saved words on this device &mdash; no password needed.',
+            cancelLabel: 'Cancel'
+        });
+    }
+
+    function maybeShowFirstVisitPrompt() {
+        if (isLoggedIn()) return;
+
+        // Defer until the learner has actual progress to protect (at least 1 lesson completed or XP earned).
+        // Never interrupt a brand new user on their very first visit before they even know what Parlour is.
+        const progress = (typeof getProgress === 'function') ? getProgress() : {};
+        const completedCount = Object.keys(progress).length;
+        const xp = (typeof xpData !== 'undefined' && xpData && xpData.xp) ? xpData.xp : 0;
+        if (completedCount === 0 && xp === 0) return;
+
+        try {
+            if (localStorage.getItem(FIRST_VISIT_PROMPT_KEY)) return;
+            localStorage.setItem(FIRST_VISIT_PROMPT_KEY, '1');
+        } catch (error) {
+            return; // private browsing with storage disabled — nothing to persist the ask against
         }
+
+        _openSignInPrompt();
     }
 
     // ----------------------------------------
@@ -1632,7 +1644,7 @@ const Sync = (function () {
         isGoogleAuthAvailable, getGoogleClientId,
         gatherSnapshot, applySnapshot, backup, restore, status,
         saveBook, loadBook, deleteBook, deleteAccount,
-        maybeShowFirstVisitPrompt, scheduleAutoSave, performAutoSave,
+        openSignInModal, maybeShowFirstVisitPrompt, scheduleAutoSave, performAutoSave,
         lastSavedAt, syncOnStartup, checkForRemoteUpdates, mergeSnapshots,
         isDirty: () => _isDirty
     };

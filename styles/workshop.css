@@ -4882,7 +4882,7 @@ body:has(#leveltest:not(.hidden)) .content { padding-bottom: 96px; max-width: 10
 /* NO SIDE BARS */
 .story-paragraph.dialogue, .lsn-reveal, .lsn-model, .wp-why, .rank-up-card, .sp-card-competency,
 .diag-philosophy-callout, .diag-situational-prompt, .diag-tier-summary-item.passed,
-.diag-tier-summary-item.developing, .pl-note, .lr-reveal, .hv-info, .sp-error-card,
+.diag-tier-summary-item.developing, .lr-reveal, .hv-info, .sp-error-card,
 .sp-briefing-goal, .sp-coach-note-card, .hce-fact-clue, .hce-mcq-exp, .hce-track-banner {
   border-left: 0;
   border-top: 1.5px solid var(--primary);
@@ -5105,15 +5105,6 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 }
 .wr-exchange-dock, .wr-exchange-dock-footer { background: var(--bg); border-color: var(--border); box-shadow: none; }
 
-/* MARGIN NOTES (the small info bubbles) */
-.pl-note {
-  background: var(--wash);
-  border: 0;
-  border-top: 2px solid var(--primary);
-  border-radius: 0;
-  box-shadow: none;
-  padding: 12px 34px 12px 14px;
-}
 .sp-studio-body .wk-card,
 .sp-studio-body .sp-card-clickable,
 .sp-studio-body .sp-card-custom,
@@ -5209,7 +5200,6 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
   .sp-error-group-badge { box-shadow: inset 0 0 0 1px var(--border); }
   .wr-exchange-textarea, .wr-exchange-input-container { box-shadow: inset 0 0 0 1px var(--border); }
   .wr-diacritic-btn { box-shadow: inset 0 0 0 1px var(--border); }
-  .pl-note { border-top: 1.5px solid var(--primary); }
   .nav { border-top-width: 1px; }
   .nav-items { height: 62px; }
   .nav-items button { font-weight: 500; font-size: 10.5px; gap: 4px; }

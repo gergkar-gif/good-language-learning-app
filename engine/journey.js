@@ -696,9 +696,13 @@ const Journey = (function () {
         _wireClicks(host);
         if (_view === 'account') _refreshAccountStatus(host);
 
-        if (_view === 'main' && typeof Guide !== 'undefined') {
-            Guide.note('journey-streak', host.querySelector('[data-jr-import-streak]'),
-                'If you\'re coming from another app, you can bring your streak with you.');
+        if (typeof Guide !== 'undefined') {
+            Guide.clearNote();
+            const imported = (typeof getImportedStreak === 'function') ? getImportedStreak() : 0;
+            if (_view === 'main' && !imported && (d.streak || 0) < 7) {
+                Guide.note('journey-streak', host.querySelector('[data-jr-import-streak]'),
+                    'If you\'re coming from another app, you can bring your streak with you.');
+            }
         }
 
         if (_view === 'account' && typeof Sync !== 'undefined' && !Sync.isLoggedIn() && Sync.isGoogleAuthAvailable && Sync.isGoogleAuthAvailable()) {
@@ -1069,6 +1073,7 @@ const Journey = (function () {
             }
 
             if (e.target.closest('[data-jr-import-streak]')) {
+                if (typeof Guide !== 'undefined') Guide.markSeen('journey-streak');
                 showImportStreakModal();
                 return;
             }

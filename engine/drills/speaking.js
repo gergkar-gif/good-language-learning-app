@@ -214,8 +214,11 @@ const SpeakingDriller = (function () {
         `;
 
         if (typeof Guide !== 'undefined') {
-            Guide.note('production', _container.querySelector('.sp-studio-nav'),
-                'There\'s no single right answer here. You\'ll get notes on what worked and what to adjust.');
+            Guide.clearNote();
+            if (_activeStudioTab === STUDIO_TAB.PRODUCTION || _activeStudioTab === STUDIO_TAB.SCENARIOS) {
+                Guide.note('production', _container.querySelector('.sp-studio-nav'),
+                    'There\'s no single right answer here. You\'ll get notes on what worked and what to adjust.');
+            }
         }
 
         _container.querySelectorAll('[data-studio-tab]').forEach(btn => {

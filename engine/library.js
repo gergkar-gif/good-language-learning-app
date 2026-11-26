@@ -2385,6 +2385,10 @@ const Library = (function () {
         if (typeof updateReaderWordColors === 'function') updateReaderWordColors();
         restoreMyTextPosition(t, chapterIndex);
         wireMyTextScrollProgress(t.id, chapterIndex);
+        if (typeof Guide !== 'undefined') {
+            Guide.note('library-arrival', container.querySelector('.story-title, .story-header, .story-paragraph'),
+                'Tap any word to see what it means. Words you look up can go into your deck.');
+        }
     }
 
     function markChapterComplete(t, completedIdx, nextIdx) {
@@ -2500,8 +2504,13 @@ const Library = (function () {
             subnav.addEventListener('click', e => {
                 const btn = e.target.closest('[data-lib-tab]');
                 if (btn) {
+                    const tab = btn.getAttribute('data-lib-tab');
+                    if (typeof Guide !== 'undefined') {
+                        Guide.clearNote();
+                        if (tab === 'mytexts') Guide.markSeen('library-mytexts');
+                    }
                     activeBookId = null;
-                    showSection(btn.getAttribute('data-lib-tab'));
+                    showSection(tab);
                 }
             });
         }

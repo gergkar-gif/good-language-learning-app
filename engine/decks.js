@@ -1749,9 +1749,10 @@ const Decks = (function () {
 
         // The new-learner introduction: what the deck is, on the first
         // visit with words in it; importing, from the third visit on.
+        if (typeof Guide !== 'undefined') Guide.clearNote();
         if (!deck && typeof Guide !== 'undefined') {
             if (typeof srsDeck !== 'undefined' && srsDeck.length) {
-                Guide.note('decks-arrival', host.querySelector('.dk-stats-row'),
+                Guide.note('decks-arrival', host.querySelector('.dk-explainer') || host.querySelector('.dk-stats-row'),
                     'Words from your lessons collect here. There\'s no need to make cards yourself.');
             }
             if (Guide.visits('review') >= 3) {
@@ -1809,7 +1810,13 @@ const Decks = (function () {
             }
         }
         host.querySelectorAll('[data-open-deck]').forEach(el => {
-            el.onclick = function () { openDeck = el.getAttribute('data-open-deck'); sortOrder = 'natural'; studyMode = null; render(); };
+            el.onclick = function () {
+                openDeck = el.getAttribute('data-open-deck');
+                if (openDeck === 'mine' && typeof Guide !== 'undefined') Guide.markSeen('my-dictionary');
+                sortOrder = 'natural';
+                studyMode = null;
+                render();
+            };
         });
         host.querySelectorAll('[data-close-deck]').forEach(el => {
             el.onclick = function () { openDeck = null; sortOrder = 'natural'; studyMode = null; render(); };
@@ -1869,6 +1876,7 @@ const Decks = (function () {
         }
         host.querySelectorAll('[data-review-deck]').forEach(el => {
             el.onclick = function () {
+                if (typeof Guide !== 'undefined') Guide.markSeen('decks-arrival');
                 const deckId = el.getAttribute('data-review-deck');
                 if (deckId === 'all') {
                     reviewDeck('all');
@@ -1887,7 +1895,10 @@ const Decks = (function () {
             el.onclick = function () { openCreateDeck(); };
         });
         host.querySelectorAll('[data-import-deck]').forEach(el => {
-            el.onclick = function () { openImportDeck(); };
+            el.onclick = function () {
+                if (typeof Guide !== 'undefined') Guide.markSeen('decks-import');
+                openImportDeck();
+            };
         });
         host.querySelectorAll('[data-dk-tab]').forEach(el => {
             el.onclick = function () { activeSection = el.getAttribute('data-dk-tab'); render(); };
