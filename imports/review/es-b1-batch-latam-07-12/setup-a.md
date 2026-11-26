@@ -15,3 +15,8 @@ Started 2026-11-26T00:30:30Z from origin/master 57527666. 1 Sonnet reader(s); es
 ## Walk (with `python scripts/dev-server.py 8131` running)
 
     node scripts/walk_lessons.js es-latam b1 --jobs 4 --only b1-razaclasepoder-01 b1-razaclasepoder-02 b1-razaclasepoder-03 b1-razaclasepoder-04 b1-razaclasepoder-05 b1-razaclasepoder-consolidation b1-independencia-01 b1-independencia-02 b1-independencia-03 b1-independencia-04 b1-independencia-05 b1-independencia-consolidation b1-nuevasrepublicas-01 b1-nuevasrepublicas-02 b1-nuevasrepublicas-03 b1-nuevasrepublicas-04 b1-nuevasrepublicas-05 b1-nuevasrepublicas-consolidation
+
+## Agent (edit-in-place, Sonnet), started 2026-11-26 on 57527666
+
+- A (Latin America Units 7–9; /home/user/parlour-read-a): agent afed7cf66af450231. Started as soon as
+  Units 1–3 were frozen, while Reader B of batch 1–6 was still running (rolling start).
