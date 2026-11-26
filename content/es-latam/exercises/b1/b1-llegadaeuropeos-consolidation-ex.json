@@ -5,127 +5,142 @@
       "id": "b1-llegadaeuropeos-consolidation.ex01",
       "type": "matching",
       "category": "vocabulary",
-      "teaches": [
-        "b1-arrival-of-europeans-vocab"
-      ],
       "pairs": [
         [
-          "expedición",
+          "el cacique",
+          "cacique, chief"
+        ],
+        [
+          "la viruela",
+          "smallpox"
+        ],
+        [
+          "la tripulación",
+          "crew"
+        ],
+        [
+          "la expedición",
           "expedition"
-        ],
-        [
-          "encuentro",
-          "encounter"
-        ],
-        [
-          "resistencia",
-          "resistance"
-        ],
-        [
-          "virreinato",
-          "viceroyalty"
-        ],
-        [
-          "legado",
-          "legacy"
         ]
+      ],
+      "teaches": [
+        "b1-arrival-of-europeans-vocab"
       ]
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "preterite-vs-imperfect"
-      ],
-      "question": "¿Qué combinación es correcta?",
+      "category": "vocabulary",
+      "question": "Which Spanish word means \"sailor\"?",
       "options": [
-        "La expedición navegaba cuando apareció tierra.",
-        "La expedición navegando cuando apareció tierra.",
-        "La expedición navegará cuando apareció tierra."
+        "el fraile",
+        "el caballo",
+        "el marinero"
       ],
-      "correct": 0
+      "correct": 2,
+      "teaches": [
+        "b1-arrival-of-europeans-vocab"
+      ]
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex03",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Cuando los españoles ___ a La Española, los taínos vivían en aldeas.",
+      "answer": "llegaron",
       "teaches": [
         "cuando-mientras"
       ],
-      "sentence": "_____ algunos grupos buscaban aliados, otros defendían sus territorios.",
-      "answer": "Mientras",
-      "english": "While some groups sought allies, others defended their territories."
+      "english": "When the Spanish arrived in Hispaniola, the Taíno lived in villages."
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex04",
       "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "pasiva-refleja"
-      ],
       "tiles": [
-        "Se",
-        "organizaron",
-        "rebeliones",
-        "contra",
+        "Los",
+        "españoles",
+        "buscaban",
+        "oro.",
+        "Sin",
+        "embargo,",
+        "había",
+        "poco",
+        "en",
         "las",
-        "nuevas",
-        "autoridades."
+        "islas."
       ],
       "solution": [
-        "Se",
-        "organizaron",
-        "rebeliones",
-        "contra",
+        "Los",
+        "españoles",
+        "buscaban",
+        "oro.",
+        "Sin",
+        "embargo,",
+        "había",
+        "poco",
+        "en",
         "las",
-        "nuevas",
-        "autoridades."
+        "islas."
       ],
-      "english": "Rebellions were organised against the new authorities."
+      "english": "The Spanish were looking for gold. However, there was little on the islands.",
+      "teaches": [
+        "contrast-concession-connectors"
+      ]
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex05",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "porque-y-por-eso"
-      ],
-      "question": "¿Cuál introduce una consecuencia?",
+      "question": "Which sentence means \"Although the Spanish sent several expeditions, they could not defeat Enriquillo\"?",
       "options": [
-        "Por lo tanto",
-        "Debido a",
-        "A causa de"
+        "A pesar de que los españoles enviaron varias expediciones, no pudieron derrotar a Enriquillo.",
+        "A pesar los españoles enviaron varias expediciones, no pudieron derrotar a Enriquillo.",
+        "Por eso los españoles enviaron varias expediciones, no pudieron derrotar a Enriquillo."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "a-pesar-de"
+      ]
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex06",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "A ___ de las epidemias, muchos pueblos perdieron a gran parte de su gente.",
+      "answer": "raíz",
       "teaches": [
-        "relative-clauses"
+        "formal-cause-connectors"
       ],
-      "sentence": "La conquista fue un proceso _____ cambió profundamente la región.",
-      "answer": "que",
-      "english": "The conquest was a process that profoundly changed the region."
+      "english": "As a result of the epidemics, many peoples lost a large part of their people."
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex07",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "preterite-vs-imperfect"
-      ],
-      "sentences": [
-        "Al principio, la expedición navegaba hacia el oeste.",
-        "Después apareció tierra.",
-        "Finalmente, los navegantes llegaron al Caribe."
+      "tiles": [
+        "Quizás",
+        "las",
+        "causas",
+        "actúen",
+        "juntas",
+        "en",
+        "cada",
+        "región."
       ],
       "solution": [
-        0,
-        1,
-        2
+        "Quizás",
+        "las",
+        "causas",
+        "actúen",
+        "juntas",
+        "en",
+        "cada",
+        "región."
+      ],
+      "english": "Perhaps the causes act together in each region.",
+      "teaches": [
+        "subjunctive-doubt"
       ]
     },
     {
@@ -134,125 +149,160 @@
       "category": "reading",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Fueron los primeros contactos siempre pacíficos?"
+          "speaker": "Estudiante",
+          "text": "¿Qué hizo Antonio de Montesinos en 1511?"
         },
         {
-          "speaker": "B",
+          "speaker": "Profesora",
           "text": "_____"
         }
       ],
       "options": [
-        "No. Hubo intercambio, pero también conflictos y tensiones.",
-        "Sí. Todos los encuentros se desarrollaron en completa armonía.",
-        "No. Las dos poblaciones evitaron cualquier trato directo."
+        "Firmó con los reyes las Leyes de Burgos.",
+        "Dijo en un sermón que el trato era injusto.",
+        "Firmó un acuerdo con Enriquillo."
       ],
-      "correct": 0
+      "correct": 1
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex09",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "pasiva-refleja"
-      ],
-      "question": "¿Qué frase centra la atención en el proceso?",
+      "question": "Which sentence means \"While Columbus was exploring the islands, he was looking for gold\"?",
       "options": [
-        "Se fundaron nuevas ciudades.",
-        "Los conquistadores fundaron nuevas ciudades.",
-        "Ellos fundaron nuevas ciudades."
+        "Mientras Colón explora las islas, buscaba oro.",
+        "Mientras Colón exploraba las islas, buscaba oro.",
+        "Mientras Colón exploraba las islas, buscará oro."
       ],
-      "correct": 0
+      "correct": 1,
+      "teaches": [
+        "cuando-mientras"
+      ],
+      "distractor_skills": {
+        "0": "present-tense",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex10",
       "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "formal-cause-connectors"
-      ],
       "tiles": [
         "Debido",
         "a",
-        "las",
-        "epidemias",
-        "cambió",
+        "que",
         "la",
-        "población."
+        "papa",
+        "crecía",
+        "bien",
+        "en",
+        "climas",
+        "fríos,",
+        "se",
+        "hizo",
+        "importante",
+        "en",
+        "Europa."
       ],
       "solution": [
         "Debido",
         "a",
-        "las",
-        "epidemias",
-        "cambió",
+        "que",
         "la",
-        "población."
+        "papa",
+        "crecía",
+        "bien",
+        "en",
+        "climas",
+        "fríos,",
+        "se",
+        "hizo",
+        "importante",
+        "en",
+        "Europa."
       ],
-      "english": "Because of the epidemics, the population changed."
+      "english": "Because the potato grew well in cold climates, it became important in Europe.",
+      "teaches": [
+        "formal-cause-connectors"
+      ]
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex11",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "relative-clauses"
-      ],
-      "question": "¿Cuál oración contiene una oración de relativo?",
+      "question": "Which sentence means \"It is not certain that we can know the exact figure\"?",
       "options": [
-        "Las sociedades que sobrevivieron conservaron tradiciones.",
-        "Las sociedades sobrevivieron después.",
-        "Las sociedades cambiaron rápidamente."
+        "No es seguro que podemos conocer la cifra exacta.",
+        "No es seguro que conocemos la cifra exacta.",
+        "No es seguro que podamos conocer la cifra exacta."
       ],
-      "correct": 0
+      "correct": 2,
+      "teaches": [
+        "subjunctive-doubt"
+      ],
+      "distractor_skills": {
+        "0": "present-tense",
+        "1": "present-tense"
+      }
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex12",
-      "type": "sentence-order",
-      "category": "grammar",
-      "teaches": [
-        "porque-y-por-eso"
-      ],
-      "sentences": [
-        "Las epidemias provocaron grandes pérdidas.",
-        "La población disminuyó.",
-        "Como consecuencia, las sociedades cambiaron profundamente."
+      "type": "sentence-builder",
+      "category": "vocabulary",
+      "tiles": [
+        "Los",
+        "taínos",
+        "cultivaban",
+        "yuca",
+        "y",
+        "dormían",
+        "en",
+        "hamacas."
       ],
       "solution": [
-        0,
-        1,
-        2
+        "Los",
+        "taínos",
+        "cultivaban",
+        "yuca",
+        "y",
+        "dormían",
+        "en",
+        "hamacas."
+      ],
+      "english": "The Taíno grew cassava and slept in hammocks.",
+      "teaches": [
+        "b1-arrival-of-europeans-vocab"
       ]
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex13",
       "type": "listening-choice",
       "category": "listening",
+      "sentence": "Colón murió en 1506 y todavía creía que había llegado a Asia.",
+      "options": [
+        "Columbus died in 1506 and still believed he had reached Asia.",
+        "Columbus died in 1506 and knew he had reached a new continent.",
+        "Columbus died in 1516 and still believed he had reached Asia."
+      ],
+      "correct": 0,
       "teaches": [
         "b1-arrival-of-europeans-vocab"
-      ],
-      "sentence": "En 1492, una expedición llegó al Caribe.",
-      "options": [
-        "In 1492, an expedition reached the Caribbean.",
-        "The expedition stayed in Europe.",
-        "The statement is unrelated."
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex14",
       "type": "listening-choice",
       "category": "listening",
+      "sentence": "Hatuey fue capturado y quemado en 1512.",
+      "options": [
+        "Hatuey was captured and freed in 1512.",
+        "Hatuey was captured and burned in 1512.",
+        "Hatuey was captured and burned in 1521."
+      ],
+      "correct": 1,
       "teaches": [
         "b1-arrival-of-europeans-vocab"
-      ],
-      "sentence": "Aunque hubo intercambio, también aumentaron las tensiones.",
-      "options": [
-        "Although there was exchange, tensions also increased.",
-        "There was no exchange.",
-        "The statement is unrelated."
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex15",
@@ -261,8 +311,8 @@
       "teaches": [
         "b1-arrival-of-europeans-vocab"
       ],
-      "sentence": "Las sociedades que sobrevivieron conservaron muchas tradiciones.",
-      "english": "The societies that survived preserved many traditions."
+      "sentence": "Muchas plantas y animales cruzaron el mar en los dos sentidos.",
+      "english": "Many plants and animals crossed the sea in both directions."
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex16",
@@ -270,51 +320,47 @@
       "category": "reading",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Qué consecuencias tuvo la llegada europea?"
+          "speaker": "Estudiante",
+          "text": "¿Qué llegó de América a Europa?"
         },
         {
-          "speaker": "B",
+          "speaker": "Profesora",
           "text": "_____"
         }
       ],
       "options": [
-        "Cambió las estructuras políticas y sociales y causó grandes pérdidas de población.",
-        "Las estructuras políticas precolombinas sobrevivieron intactas en todos los virreinatos coloniales.",
-        "El contacto transatlántico se limitó a intercambios comerciales sin alterar la demografía indígena."
+        "Llegaron el trigo, los caballos y las vacas.",
+        "Llegaron la viruela y la caña de azúcar.",
+        "Llegaron el maíz, la papa, el tomate y el cacao."
       ],
-      "correct": 0
+      "correct": 2
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex17",
       "type": "structured-writing",
       "category": "writing",
-      "teaches": [
-        "preterite-vs-imperfect"
-      ],
       "template": [
         {
-          "prompt": "Describe the arrival of the Europeans in two or three sentences, using past tenses.",
-          "answer": "En 1492, una expedición llegó al Caribe. Los navegantes buscaban una nueva ruta y el viaje abrió una etapa de contacto permanente."
-        },
-        {
-          "prompt": "Add one sentence explaining a consequence.",
-          "answer": "Como consecuencia, las sociedades americanas experimentaron profundas transformaciones políticas, sociales y demográficas."
+          "prompt": "Say that it is possible that the epidemics are the main cause. [Es posible que …]",
+          "answer": "Es posible que las epidemias sean la causa principal."
         }
+      ],
+      "teaches": [
+        "b1-arrival-of-europeans-vocab"
       ]
     },
     {
       "id": "b1-llegadaeuropeos-consolidation.ex18",
       "type": "structured-writing",
       "category": "writing",
-      "teaches": [
-        "pasiva-refleja"
-      ],
       "template": [
         {
-          "prompt": "Write a sentence about resistance using se and a relative clause.",
-          "answer": "Se organizaron rebeliones que expresaban la resistencia de distintas comunidades."
+          "prompt": "Say that, because of the epidemics, a large part of the population died. [Debido a …]",
+          "answer": "Debido a las epidemias, murió una gran parte de la población."
         }
+      ],
+      "teaches": [
+        "b1-arrival-of-europeans-vocab"
       ]
     }
   ]

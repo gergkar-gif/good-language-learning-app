@@ -7,14 +7,6 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el glifo",
-          "glyph"
-        ],
-        [
-          "la escritura",
-          "writing (system)"
-        ],
-        [
           "el imperio",
           "empire"
         ],
@@ -23,8 +15,20 @@
           "city-state"
         ],
         [
-          "el calendario",
-          "calendar"
+          "la pirámide",
+          "pyramid"
+        ],
+        [
+          "el glifo",
+          "glyph"
+        ],
+        [
+          "la escritura",
+          "writing, script"
+        ],
+        [
+          "el quipu",
+          "quipu (knotted cord for accounts)"
         ]
       ],
       "teaches": [
@@ -37,20 +41,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el puente",
-          "bridge"
+          "el calendario",
+          "calendar"
         ],
         [
-          "el terremoto",
-          "earthquake"
+          "el camino",
+          "road, path"
         ],
         [
-          "el descendiente",
-          "descendant"
+          "la cuerda",
+          "cord, rope"
         ],
         [
-          "la lengua",
-          "language"
+          "el nudo",
+          "knot"
+        ],
+        [
+          "la piedra",
+          "stone"
         ]
       ],
       "teaches": [
@@ -61,23 +69,23 @@
       "id": "b1-precolombina-02.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Según el texto, ¿cómo se organizaron los mayas?",
+      "question": "Which two regions does the text describe?",
       "options": [
-        "En decenas de ciudades-estado independientes, como Tikal, Palenque, Calakmul y Copán.",
-        "Bajo un único imperio gobernado desde Cuzco.",
-        "No tenían ningún tipo de gobierno."
+        "El Caribe y la Patagonia.",
+        "Siberia y Alaska.",
+        "Mesoamérica y los Andes."
       ],
-      "correct": 0
+      "correct": 2
     },
     {
       "id": "b1-precolombina-02.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Según el texto, ¿quiénes gobernaban las ciudades-estado mayas?",
+      "question": "What did the Andean peoples use to keep accounts?",
       "options": [
-        "Dinastías divinas de reyes llamados k'uhul ajaw.",
-        "Consejos de ciudadanos elegidos por votación.",
-        "Un emperador inca que vivía en Cuzco."
+        "Cuerdas con nudos, llamadas quipus.",
+        "Glifos escritos en piedra, como los mayas.",
+        "Calendarios hechos de piedra."
       ],
       "correct": 0
     },
@@ -85,71 +93,56 @@
       "id": "b1-precolombina-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Cuzco ___ en el centro político y religioso de todo el imperio inca.",
-      "hint": "convertirse",
-      "answer": "se convirtió",
+      "sentence": "En Mesoamérica se ___ pirámides de piedra.",
+      "answer": "construyeron",
       "teaches": [
-        "preterito-indefinido"
+        "pasiva-refleja"
       ],
-      "english": "Cuzco became the political and religious centre of the entire Inca Empire."
+      "english": "In Mesoamerica, stone pyramids were built."
     },
     {
       "id": "b1-precolombina-02.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Según el texto, ¿qué sistema de correos existía en el mundo andino?",
+      "question": "What happened to many Maya cities of the southern lowlands in the 9th century?",
       "options": [
-        "El sistema de correos de chasquis.",
-        "Palomas mensajeras entrenadas en Cuzco.",
-        "No existía ningún sistema de comunicación."
+        "Se hicieron más grandes y más ricas.",
+        "Se abandonaron, y las causas se discuten.",
+        "Se llamaron Cuzco y Tenochtitlan."
       ],
-      "correct": 0
+      "correct": 1
     },
     {
       "id": "b1-precolombina-02.ex06",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Todavía",
+        "En",
+        "los",
+        "Andes",
         "se",
-        "debate",
-        "por",
-        "qué",
-        "fueron",
-        "abandonadas",
-        "muchas",
-        "ciudades",
-        "mayas."
+        "usaban",
+        "quipus",
+        "para",
+        "llevar",
+        "las",
+        "cuentas."
       ],
-      "english": "It's still debated why many Maya cities were abandoned.",
+      "solution": [
+        "En",
+        "los",
+        "Andes",
+        "se",
+        "usaban",
+        "quipus",
+        "para",
+        "llevar",
+        "las",
+        "cuentas."
+      ],
+      "english": "In the Andes, quipus were used to keep accounts.",
       "teaches": [
-        "se-impersonal"
-      ],
-      "solutions": [
-        [
-          "Todavía",
-          "se",
-          "debate",
-          "por",
-          "qué",
-          "fueron",
-          "abandonadas",
-          "muchas",
-          "ciudades",
-          "mayas."
-        ],
-        [
-          "Todavía",
-          "se",
-          "debate",
-          "por",
-          "qué",
-          "muchas",
-          "ciudades",
-          "mayas",
-          "fueron",
-          "abandonadas."
-        ]
+        "pasiva-refleja"
       ]
     },
     {
@@ -158,32 +151,32 @@
       "category": "reading",
       "prompt": [
         {
-          "speaker": "Ana",
-          "text": "¿La información de los quipus ya se ha descifrado por completo?"
+          "speaker": "Meg",
+          "text": "En el museo había un quipu. ¿Para qué se usaba?"
         },
         {
-          "speaker": "Tomás",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "No, todavía no se ha logrado descifrar del todo.",
-        "Sí, hoy se leen igual que cualquier libro.",
-        "No, porque los incas nunca registraron censos ni tributos."
+        "Se usaba para escribir glifos en los templos.",
+        "Se usaba para cruzar un río en los Andes.",
+        "Se usaba para llevar las cuentas en los Andes."
       ],
-      "correct": 0
+      "correct": 2
     },
     {
       "id": "b1-precolombina-02.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Cuzco se convirtió en el centro político y religioso de todo el imperio inca.",
+      "sentence": "Los incas usaban quipus en los Andes.",
       "options": [
-        "Cuzco became the political and religious centre of the whole Inca empire.",
-        "Cuzco was destroyed during a war between two Inca emperors.",
-        "Cuzco was the smallest city under Inca control."
+        "The Inca used glyphs in the Andes.",
+        "The Inca used quipus in the Andes.",
+        "The Maya used quipus in the Andes."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "b1-pre-columbian-america-vocab"
       ]

@@ -292,9 +292,9 @@
    "reason": "es A2 batch 1-6 read, fixed (2026-10-21)"
   },
   "B1/arrival-of-europeans": {
-   "locked": "2026-10-07",
+   "locked": "2026-11-26",
    "exercises": 63,
-   "reason": "read-through, all lessons"
+   "reason": "B1 Latin America rewrite: consolidation distractor fix"
   },
   "B1/caudillismo": {
    "locked": "2026-10-08",
@@ -452,9 +452,9 @@
    "reason": "ES B1 core batch 65-76 read and reviewed (2026-11-12)"
   },
   "B1/indigenous-civilizations": {
-   "locked": "2026-10-07",
+   "locked": "2026-11-26",
    "exercises": 63,
-   "reason": "read-through, all lessons"
+   "reason": "B1 Latin America rewrite: texts, screens and items rebuilt around the new lesson skills"
   },
   "B1/indigenous-movements": {
    "locked": "2026-10-08",
@@ -567,9 +567,9 @@
    "reason": "ES B1 core close-out: six skills moved to core screens and thin skills filled (user, 2026-11-12)"
   },
   "B1/pre-columbian-america": {
-   "locked": "2026-10-07",
+   "locked": "2026-11-26",
    "exercises": 65,
-   "reason": "read-through, all lessons"
+   "reason": "recap wording"
   },
   "B1/present-perfect-subjunctive": {
    "locked": "2026-11-12",
@@ -63404,7 +63404,7 @@
   },
   "b1-civilizaciones-01.ex06": {
    "teaches": [
-    "pasiva-refleja"
+    "ser-passive"
    ],
    "distractor_skills": {}
   },
@@ -63440,7 +63440,7 @@
   },
   "b1-civilizaciones-02.ex04": {
    "teaches": [
-    "pasiva-refleja"
+    "preterite-vs-imperfect"
    ],
    "distractor_skills": {}
   },
@@ -63450,7 +63450,7 @@
   },
   "b1-civilizaciones-02.ex06": {
    "teaches": [
-    "se-impersonal"
+    "preterite-vs-imperfect"
    ],
    "distractor_skills": {}
   },
@@ -63486,7 +63486,7 @@
   },
   "b1-civilizaciones-03.ex04": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "relativo-posesivo-cuyo"
    ],
    "distractor_skills": {}
   },
@@ -63496,7 +63496,7 @@
   },
   "b1-civilizaciones-03.ex06": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "relativo-posesivo-cuyo"
    ],
    "distractor_skills": {}
   },
@@ -63532,7 +63532,7 @@
   },
   "b1-civilizaciones-04.ex04": {
    "teaches": [
-    "prepositional-phrases"
+    "superlatives"
    ],
    "distractor_skills": {}
   },
@@ -63542,7 +63542,7 @@
   },
   "b1-civilizaciones-04.ex06": {
    "teaches": [
-    "formal-cause-connectors"
+    "superlatives"
    ],
    "distractor_skills": {}
   },
@@ -63578,7 +63578,7 @@
   },
   "b1-civilizaciones-05.ex04": {
    "teaches": [
-    "ser-passive"
+    "imperfect-vs-present-perfect"
    ],
    "distractor_skills": {}
   },
@@ -63588,7 +63588,7 @@
   },
   "b1-civilizaciones-05.ex06": {
    "teaches": [
-    "pasiva-refleja"
+    "imperfect-vs-present-perfect"
    ],
    "distractor_skills": {}
   },
@@ -63610,31 +63610,34 @@
   },
   "b1-civilizaciones-consolidation.ex02": {
    "teaches": [
-    "ser-passive"
+    "b1-indigenous-civilizations-vocab"
    ],
    "distractor_skills": {}
   },
   "b1-civilizaciones-consolidation.ex03": {
    "teaches": [
-    "pasiva-refleja"
+    "ser-passive"
    ],
    "distractor_skills": {}
   },
   "b1-civilizaciones-consolidation.ex04": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "preterite-vs-imperfect"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "0": "preterito-indefinido",
+    "2": "present-tense"
+   }
   },
   "b1-civilizaciones-consolidation.ex05": {
    "teaches": [
-    "formal-cause-connectors"
+    "relativo-posesivo-cuyo"
    ],
    "distractor_skills": {}
   },
   "b1-civilizaciones-consolidation.ex06": {
    "teaches": [
-    "ser-passive"
+    "superlatives"
    ],
    "distractor_skills": {}
   },
@@ -63646,37 +63649,37 @@
   },
   "b1-civilizaciones-consolidation.ex08": {
    "teaches": [
-    "pasiva-refleja"
+    "preterite-vs-imperfect"
    ],
    "distractor_skills": {}
   },
   "b1-civilizaciones-consolidation.ex09": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "relativo-posesivo-cuyo"
    ],
    "distractor_skills": {}
   },
   "b1-civilizaciones-consolidation.ex10": {
    "teaches": [
-    "formal-cause-connectors"
+    "superlatives"
    ],
    "distractor_skills": {}
   },
   "b1-civilizaciones-consolidation.ex11": {
    "teaches": [
-    "ser-passive"
+    "imperfect-vs-present-perfect"
    ],
    "distractor_skills": {}
   },
   "b1-civilizaciones-consolidation.ex12": {
    "teaches": [
-    "ser-passive"
+    "b1-indigenous-civilizations-vocab"
    ],
    "distractor_skills": {}
   },
   "b1-civilizaciones-consolidation.ex13": {
    "teaches": [
-    "ordering-markers"
+    "b1-indigenous-civilizations-vocab"
    ],
    "distractor_skills": {}
   },
@@ -63685,9 +63688,7 @@
    "distractor_skills": {}
   },
   "b1-civilizaciones-consolidation.ex15": {
-   "teaches": [
-    "formal-cause-connectors"
-   ],
+   "teaches": [],
    "distractor_skills": {}
   },
   "b1-civilizaciones-consolidation.ex16": {
@@ -63704,7 +63705,7 @@
   },
   "b1-civilizaciones-consolidation.ex18": {
    "teaches": [
-    "ser-passive"
+    "b1-indigenous-civilizations-vocab"
    ],
    "distractor_skills": {}
   },
@@ -69233,7 +69234,7 @@
   },
   "b1-llegadaeuropeos-01.ex04": {
    "teaches": [
-    "preterito-indefinido"
+    "cuando-mientras"
    ],
    "distractor_skills": {}
   },
@@ -69243,7 +69244,7 @@
   },
   "b1-llegadaeuropeos-01.ex06": {
    "teaches": [
-    "preterito-indefinido"
+    "cuando-mientras"
    ],
    "distractor_skills": {}
   },
@@ -69289,7 +69290,7 @@
   },
   "b1-llegadaeuropeos-02.ex06": {
    "teaches": [
-    "cuando-mientras"
+    "contrast-concession-connectors"
    ],
    "distractor_skills": {}
   },
@@ -69325,7 +69326,7 @@
   },
   "b1-llegadaeuropeos-03.ex04": {
    "teaches": [
-    "pasiva-refleja"
+    "a-pesar-de"
    ],
    "distractor_skills": {}
   },
@@ -69335,7 +69336,7 @@
   },
   "b1-llegadaeuropeos-03.ex06": {
    "teaches": [
-    "pasiva-refleja"
+    "a-pesar-de"
    ],
    "distractor_skills": {}
   },
@@ -69381,7 +69382,7 @@
   },
   "b1-llegadaeuropeos-04.ex06": {
    "teaches": [
-    "porque-y-por-eso"
+    "formal-cause-connectors"
    ],
    "distractor_skills": {}
   },
@@ -69417,7 +69418,7 @@
   },
   "b1-llegadaeuropeos-05.ex04": {
    "teaches": [
-    "relativo-posesivo-cuyo"
+    "subjunctive-doubt"
    ],
    "distractor_skills": {}
   },
@@ -69427,13 +69428,18 @@
   },
   "b1-llegadaeuropeos-05.ex06": {
    "teaches": [
-    "relativo-posesivo-cuyo"
+    "subjunctive-doubt"
    ],
    "distractor_skills": {}
   },
   "b1-llegadaeuropeos-05.ex07": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "subjunctive-doubt"
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "futuro-simple"
+   }
   },
   "b1-llegadaeuropeos-05.ex08": {
    "teaches": [
@@ -69449,7 +69455,7 @@
   },
   "b1-llegadaeuropeos-consolidation.ex02": {
    "teaches": [
-    "preterite-vs-imperfect"
+    "b1-arrival-of-europeans-vocab"
    ],
    "distractor_skills": {}
   },
@@ -69461,25 +69467,25 @@
   },
   "b1-llegadaeuropeos-consolidation.ex04": {
    "teaches": [
-    "pasiva-refleja"
+    "contrast-concession-connectors"
    ],
    "distractor_skills": {}
   },
   "b1-llegadaeuropeos-consolidation.ex05": {
    "teaches": [
-    "porque-y-por-eso"
+    "a-pesar-de"
    ],
    "distractor_skills": {}
   },
   "b1-llegadaeuropeos-consolidation.ex06": {
    "teaches": [
-    "relative-clauses"
+    "formal-cause-connectors"
    ],
    "distractor_skills": {}
   },
   "b1-llegadaeuropeos-consolidation.ex07": {
    "teaches": [
-    "preterite-vs-imperfect"
+    "subjunctive-doubt"
    ],
    "distractor_skills": {}
   },
@@ -69489,9 +69495,12 @@
   },
   "b1-llegadaeuropeos-consolidation.ex09": {
    "teaches": [
-    "pasiva-refleja"
+    "cuando-mientras"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "0": "present-tense",
+    "2": "futuro-simple"
+   }
   },
   "b1-llegadaeuropeos-consolidation.ex10": {
    "teaches": [
@@ -69501,13 +69510,16 @@
   },
   "b1-llegadaeuropeos-consolidation.ex11": {
    "teaches": [
-    "relative-clauses"
+    "subjunctive-doubt"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "0": "present-tense",
+    "1": "present-tense"
+   }
   },
   "b1-llegadaeuropeos-consolidation.ex12": {
    "teaches": [
-    "porque-y-por-eso"
+    "b1-arrival-of-europeans-vocab"
    ],
    "distractor_skills": {}
   },
@@ -69535,13 +69547,13 @@
   },
   "b1-llegadaeuropeos-consolidation.ex17": {
    "teaches": [
-    "preterite-vs-imperfect"
+    "b1-arrival-of-europeans-vocab"
    ],
    "distractor_skills": {}
   },
   "b1-llegadaeuropeos-consolidation.ex18": {
    "teaches": [
-    "pasiva-refleja"
+    "b1-arrival-of-europeans-vocab"
    ],
    "distractor_skills": {}
   },
@@ -71535,7 +71547,7 @@
   },
   "b1-precolombina-01.ex04": {
    "teaches": [
-    "contrast-concession-connectors"
+    "pluscuamperfecto"
    ],
    "distractor_skills": {}
   },
@@ -71581,7 +71593,7 @@
   },
   "b1-precolombina-02.ex04": {
    "teaches": [
-    "preterito-indefinido"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },
@@ -71591,7 +71603,7 @@
   },
   "b1-precolombina-02.ex06": {
    "teaches": [
-    "se-impersonal"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },
@@ -71627,7 +71639,7 @@
   },
   "b1-precolombina-03.ex04": {
    "teaches": [
-    "pasiva-refleja"
+    "relative-clauses"
    ],
    "distractor_skills": {}
   },
@@ -71637,7 +71649,7 @@
   },
   "b1-precolombina-03.ex06": {
    "teaches": [
-    "pasiva-refleja"
+    "relative-clauses"
    ],
    "distractor_skills": {}
   },
@@ -71673,7 +71685,7 @@
   },
   "b1-precolombina-04.ex04": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "habitos-soler"
    ],
    "distractor_skills": {}
   },
@@ -71683,7 +71695,7 @@
   },
   "b1-precolombina-04.ex06": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "habitos-soler"
    ],
    "distractor_skills": {}
   },
@@ -71719,7 +71731,7 @@
   },
   "b1-precolombina-05.ex04": {
    "teaches": [
-    "a-pesar-de"
+    "estilo-indirecto-informacion"
    ],
    "distractor_skills": {}
   },
@@ -71729,7 +71741,7 @@
   },
   "b1-precolombina-05.ex06": {
    "teaches": [
-    "formal-cause-connectors"
+    "estilo-indirecto-informacion"
    ],
    "distractor_skills": {}
   },
@@ -71757,31 +71769,36 @@
   },
   "b1-precolombina-consolidation.ex03": {
    "teaches": [
-    "se-impersonal"
+    "pluscuamperfecto"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "preterito-perfecto",
+    "2": "futuro-perfecto"
+   }
   },
   "b1-precolombina-consolidation.ex04": {
    "teaches": [
-    "ser-passive"
+    "pasiva-refleja"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "present-tense"
+   }
   },
   "b1-precolombina-consolidation.ex05": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "relative-clauses"
    ],
    "distractor_skills": {}
   },
   "b1-precolombina-consolidation.ex06": {
    "teaches": [
-    "a-pesar-de"
+    "habitos-soler"
    ],
    "distractor_skills": {}
   },
   "b1-precolombina-consolidation.ex07": {
    "teaches": [
-    "prepositional-phrases"
+    "estilo-indirecto-informacion"
    ],
    "distractor_skills": {}
   },
@@ -71793,19 +71810,19 @@
   },
   "b1-precolombina-consolidation.ex09": {
    "teaches": [
-    "ser-passive"
+    "pluscuamperfecto"
    ],
    "distractor_skills": {}
   },
   "b1-precolombina-consolidation.ex10": {
    "teaches": [
-    "gerundio-acciones-paralelas"
+    "habitos-soler"
    ],
    "distractor_skills": {}
   },
   "b1-precolombina-consolidation.ex11": {
    "teaches": [
-    "formal-cause-connectors"
+    "relative-clauses"
    ],
    "distractor_skills": {}
   },
@@ -71823,7 +71840,7 @@
   },
   "b1-precolombina-consolidation.ex14": {
    "teaches": [
-    "ordering-markers"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },

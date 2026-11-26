@@ -342,7 +342,11 @@ function targetTexts(e) {
         return ts.length >= 3 && ts.filter(t => readingsOf(t).length).length * 2 < ts.length;
     };
     const challenges = readJson(`content/${course}/curriculum/challenges.json`) || {};
-    for (const [stem, c] of Object.entries(challenges.challenges || challenges)) {
+    const allChallenges = Object.assign({}, challenges.challenges || challenges);
+    // --challenges <drafts.json>[,<drafts.json>]: an agent's challenge drafts, checked before they are
+    // merged (ES B1 latam, 2026-11-26: three unmet words showed only after add_challenges.py).
+    for (const f of (flag('--challenges') || '').split(',').filter(Boolean)) Object.assign(allChallenges, readJson(f) || {});
+    for (const [stem, c] of Object.entries(allChallenges)) {
         if (c && typeof c.target === 'string') addExtra(stem, { id: `${stem}:challenge`, prompt: [{ text: c.target }] });
     }
     // --test <file>: a level test's target-language text, checked as if it came after the
