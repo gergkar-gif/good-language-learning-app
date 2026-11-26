@@ -1173,6 +1173,11 @@
    "reason": "ES B1 read-through 2026-11-11 (batch 17-27): read, fixed, story at B1, challenges, unmet words 0, walked; refrozen 2026-11-13: unit numbers in recaps renumbered to the app's per-track numbers (scripts/renumber_unit_refs.py; user, 2026-11-13); text otherwise unchanged",
    "accepted": []
   },
+  "b1/cold-war": {
+   "frozen": "2026-11-26",
+   "reason": "B1 latam batch 19-24: rewritten, read, walked 6/6",
+   "accepted": []
+  },
   "b1/colonial-economy": {
    "frozen": "2026-11-26",
    "reason": "B1 latam batch 1-6: rewritten, read, walked 6/6",
@@ -1363,6 +1368,22 @@
    "reason": "ES B1 core batch 53-63 read (Sonnet readers), fixes filtered and applied, walked 36/36 (2026-11-12); refrozen 2026-11-13: unit numbers in recaps renumbered to the app's per-track numbers (scripts/renumber_unit_refs.py; user, 2026-11-13); text otherwise unchanged",
    "accepted": []
   },
+  "b1/military-governments": {
+   "frozen": "2026-11-26",
+   "reason": "B1 latam batch 19-24: rewritten, read, walked 6/6",
+   "accepted": [
+    {
+     "check": "answers-alternatives",
+     "id": "b1-gobiernosmilitares-01.ex04",
+     "why": "sin embargo and no obstante are both right in the blank"
+    },
+    {
+     "check": "answers-alternatives",
+     "id": "b1-gobiernosmilitares-05.ex04",
+     "why": "debido a and a raíz de are both right in the blank"
+    }
+   ]
+  },
   "b1/money-economy": {
    "frozen": "2026-11-13",
    "reason": "ES B1 read-through 2026-11-12 (batch 29-39): read, fixed, story at B1, challenges, unmet words fixed, walked; refrozen 2026-11-13: unit numbers in recaps renumbered to the app's per-track numbers (scripts/renumber_unit_refs.py; user, 2026-11-13); text otherwise unchanged",
@@ -1544,6 +1565,11 @@
      "why": "consolidation replays a lesson item on purpose"
     }
    ]
+  },
+  "b1/united-states-latin-america": {
+   "frozen": "2026-11-26",
+   "reason": "B1 latam batch 19-24: rewritten, read, walked 6/6",
+   "accepted": []
   },
   "b1/verbs-of-becoming": {
    "frozen": "2026-11-13",
