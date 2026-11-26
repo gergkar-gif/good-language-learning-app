@@ -2436,3 +2436,13 @@ drafted by Antigravity from `notes/README.md`; read those notes as part of the u
 - The reviewer's read found four small factual slips (Che's death twice, Brazil as a Spanish colony,
   Cardoso as an economist); a reviewer fix again created a give-away: rerun check-content after every
   hand edit, as done here.
+
+### 2026-11-26: ES B1 latam Units 25–30
+
+- **The heaviest units of the track** (repression, civil wars, debt, reforms): ~135k and ~155k a unit.
+  The commission figures checked during the wait were used as given and attributed; no reviewer fact fix.
+- **Agents read "validate fails only on locked tags" too broadly:** a schema fault hid among the lock
+  failures. Brief now says every non-lock failure is the agent's.
+- A wrong option can be a form many speakers accept (*se vigilaban a los periodistas*); and a lesson
+  whose skill is impersonal *se* drills passive *se* agreement: read each grammar item's tag against
+  what a wrong answer shows.
