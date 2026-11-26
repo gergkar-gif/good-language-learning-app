@@ -74,8 +74,11 @@ const run = code => vm.runInContext(code, ctx);
     console.log('✓ weakSkills() ignores evidence from unreached lessons');
 
     // Once the learner actually gets there, the same evidence counts.
+    let ts = Date.parse('2026-09-27T10:00:00Z');
     Object.values(curriculum.levels).forEach(lv => (lv.units || []).forEach(u =>
-        u.lessons.forEach(l => { progress[l.id] = { completedAt: '2026-09-27T10:00:00Z' }; })));
+        u.lessons.forEach(l => { progress[l.id] = { completedAt: new Date(ts += 60000).toISOString() }; })));
+    const b2Core = curriculum.levels.B2.units.find(u => !u.track || u.track === 'core').lessons[0];
+    progress[b2Core.id] = { completedAt: new Date(ts += 60000).toISOString() };
     weak = await run('LearnerModel.weakSkills()');
     assert.ok(weak.some(s => s.skillId === 'nehogy-purpose'), 'reached skill with misses is weak');
     console.log('✓ the same evidence counts once the lessons are reached');

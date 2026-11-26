@@ -154,6 +154,7 @@ const LearnerModel = (function () {
             add((bySkill[hyphenated] || !bySkill[item.module]) ? hyphenated : item.module, 'bank:' + item.id);
         });
 
+        if (tenses) _tenseSkillsCache[_courseKey()] = tenses;
         Object.keys(tenses || {}).forEach(tensePath => {
             if (!Array.isArray(tenses[tensePath])) return; // skips "_comment"
             tenses[tensePath].filter(id => known.has(id)).forEach(skillId => {
@@ -195,6 +196,67 @@ const LearnerModel = (function () {
     // GRAMMAR SKILLS
     // ----------------------------------------
 
+    // ----------------------------------------
+    // LEVEL GATING (stay at or below LearnerPath.currentLevel())
+    // ----------------------------------------
+    // Mistakes from a placement ceiling tier (`diag:*`), an exploratory verb
+    // drill (`verb:*`), a higher-level test, or a peek ahead stay recorded in
+    // storage for when the learner reaches that level, but must not push
+    // above-level skills onto a lower-level learner's practice recommendations.
+    function _currentLevelIndex() {
+        if (typeof LearnerPath === 'undefined' || !LearnerPath.currentLevel || typeof LEVEL_ORDER === 'undefined') {
+            return -1;
+        }
+        return LEVEL_ORDER.indexOf(LearnerPath.currentLevel());
+    }
+
+    function _levelIndexForSkill(skillId, entries) {
+        if (typeof LEVEL_ORDER === 'undefined') return -1;
+        const levels = _skillLevelCache[_courseKey()];
+        const canonical = _canonicalSkill(skillId);
+        const regLevel = levels && (levels[canonical] || levels[skillId]);
+        if (regLevel) return LEVEL_ORDER.indexOf(regLevel);
+        // Fallback when skill-registry.json isn't loaded: lowest level among
+        // the skill's lesson exercise refs (exercises/<level>/...).
+        if (Array.isArray(entries) && entries.length) {
+            let minIdx = Infinity;
+            entries.forEach(entry => {
+                const m = entry && entry.ref && entry.ref.match(/^exercises\/([^/]+)\//i);
+                if (!m) return;
+                const idx = LEVEL_ORDER.indexOf(m[1].toUpperCase());
+                if (idx !== -1 && idx < minIdx) minIdx = idx;
+            });
+            if (minIdx !== Infinity) return minIdx;
+        }
+        return -1;
+    }
+
+    function _isAboveCurrentLevel(skillId, entries) {
+        const curIdx = _currentLevelIndex();
+        if (curIdx === -1) return false;
+        const skillIdx = _levelIndexForSkill(skillId, entries);
+        return skillIdx !== -1 && skillIdx > curIdx;
+    }
+
+    function _isTenseAboveCurrentLevel(tensePath, tensesMap) {
+        const curIdx = _currentLevelIndex();
+        if (curIdx === -1) return false;
+        const tenses = tensesMap || _tenseSkillsCache[_courseKey()];
+        if (!tenses) return false;
+        const skillIds = tenses[tensePath];
+        if (!Array.isArray(skillIds) || !skillIds.length) {
+            // Deliberately unmapped tense (e.g. subjuntivo.futuro): don't
+            // recommend it while the learner is still below the top level.
+            return curIdx < LEVEL_ORDER.length - 1;
+        }
+        let minIdx = Infinity;
+        skillIds.forEach(id => {
+            const idx = _levelIndexForSkill(id);
+            if (idx !== -1 && idx < minIdx) minIdx = idx;
+        });
+        return minIdx !== Infinity && minIdx > curIdx;
+    }
+
     // Every stored level-test result's weakest[] list, flattened into one
     // Set of flagged skill ids — checked as a boolean vote per skill (the
     // stored result already discards per-topic magnitude, so this can't be
@@ -202,7 +264,9 @@ const LearnerModel = (function () {
     function _levelTestFlags() {
         const flags = new Set();
         if (typeof LevelTest === 'undefined' || typeof LEVEL_ORDER === 'undefined') return flags;
-        LEVEL_ORDER.forEach(level => {
+        const curIdx = _currentLevelIndex();
+        LEVEL_ORDER.forEach((level, idx) => {
+            if (curIdx !== -1 && idx > curIdx) return;
             const result = LevelTest.resultFor(level);
             // Stored results name skills as they were tagged then; map an
             // old (merged or renamed) slug to its canonical skill so a past
@@ -276,6 +340,7 @@ const LearnerModel = (function () {
         const results = [];
         Object.keys(bySkill).forEach(skillId => {
             const refs = bySkill[skillId] || [];
+            if (_isAboveCurrentLevel(skillId, refs)) return;
             let totalEase = 0, seen = 0;
             refs.forEach(entry => {
                 if (reached && entry.ref && !reached.has(entry.ref)) return;
@@ -344,11 +409,14 @@ const LearnerModel = (function () {
     function _recentTestFlags() {
         const flags = new Map();
         if (typeof LevelTest === 'undefined' || typeof LEVEL_ORDER === 'undefined') return flags;
-        LEVEL_ORDER.forEach(level => {
+        const curIdx = _currentLevelIndex();
+        LEVEL_ORDER.forEach((level, idx) => {
+            if (curIdx !== -1 && idx > curIdx) return;
             const result = LevelTest.resultFor(level);
             const at = result && result.takenAt ? Date.parse(result.takenAt) : NaN;
             if (!isFinite(at) || Date.now() - at > TROUBLE_TEST_DAYS * 86400000) return;
-            (result.weakest || []).slice(0, TROUBLE_TEST_TOPICS).forEach(skillId => {
+            (result.weakest || []).slice(0, TROUBLE_TEST_TOPICS).forEach(rawId => {
+                const skillId = _canonicalSkill(rawId);
                 if (!flags.has(skillId)) flags.set(skillId, { level, open: result.takenAtOpen });
             });
         });
@@ -371,6 +439,7 @@ const LearnerModel = (function () {
     }
 
     async function troubleSkills(limit) {
+        await _ensureAliasesLoaded();
         const bySkill = await _skillRefs();
         if (!bySkill) return [];
         const schedule = (typeof loadRecycleSchedule === 'function') ? loadRecycleSchedule() : {};
@@ -387,10 +456,12 @@ const LearnerModel = (function () {
 
         const results = [];
         Object.keys(bySkill).forEach(skillId => {
+            const refs = bySkill[skillId] || [];
+            if (_isAboveCurrentLevel(skillId, refs)) return;
             const missed = new Set();
             const flag = testFlags.get(skillId);
             let cleared = false;
-            (bySkill[skillId] || []).forEach(entry => {
+            refs.forEach(entry => {
                 if (reached && entry.ref && !reached.has(entry.ref)) return;
                 if (stillMissed(schedule[entry.id])) missed.add(entry.id);
                 if (flag && rightSince(schedule[entry.id], flag.open)) cleared = true;
@@ -421,6 +492,7 @@ const LearnerModel = (function () {
             if (state === 'strong') return;
             const recentMiss = card.reviews === 0 && !card.recoveredAtOpen && currentOpen - (card.lastOpen || 0) <= TROUBLE_RECENT_OPENS;
             const parts = id.split(':');
+            if (_isTenseAboveCurrentLevel(parts[1])) return;
             results.push({ tensePath: parts[1], person: parts[2], state, ease: card.ease, lapses: card.lapses || 0, recentMiss });
         });
         results.sort((a, b) => (a.ease - b.ease) || (b.lapses - a.lapses));
@@ -672,6 +744,8 @@ const LearnerModel = (function () {
     }
 
     const _aliasCache = {};
+    const _skillLevelCache = {};
+    const _tenseSkillsCache = {};
     const _aliasLoadPromises = {};
 
     function _courseKey() {
@@ -688,6 +762,16 @@ const LearnerModel = (function () {
                     if (alias && alias !== canonical) map[alias] = canonical;
                 });
             }
+        });
+        return map;
+    }
+
+    function _buildSkillLevelMap(registryData) {
+        const map = {};
+        const skills = (registryData && registryData.skills) || {};
+        Object.keys(skills).forEach(canonical => {
+            const meta = skills[canonical];
+            if (meta && meta.level) map[canonical] = String(meta.level).toUpperCase();
         });
         return map;
     }
@@ -766,6 +850,7 @@ const LearnerModel = (function () {
         }
         const aliasMap = _buildAliasMap(data);
         _aliasCache[course] = aliasMap;
+        _skillLevelCache[course] = _buildSkillLevelMap(data);
         let rawStore = {};
         try {
             rawStore = JSON.parse(localStorage.getItem(_productionKey()) || '{}');
@@ -993,6 +1078,7 @@ const LearnerModel = (function () {
     }
 
     async function weakProductionSkills(limit, modality) {
+        await _ensureAliasesLoaded();
         const store = _loadProduction();
         const candidates = [];
         const targetMod = (modality === 'written' || modality === 'oral') ? modality : null;
@@ -1000,6 +1086,7 @@ const LearnerModel = (function () {
         for (const skillId of Object.keys(store)) {
             const entry = store[skillId];
             if (!entry) continue;
+            if (_isAboveCurrentLevel(skillId)) continue;
 
             if (targetMod && entry.modalities && entry.modalities[targetMod]) {
                 const m = entry.modalities[targetMod];
@@ -1437,9 +1524,11 @@ const LearnerModel = (function () {
     async function encounteredTenses() {
         const [tenses, index] = await Promise.all([
             _optionalJson('indexes/verb-tense-skills.json'),
-            _grammarIndex()
+            _grammarIndex(),
+            _ensureAliasesLoaded()
         ]);
         if (!tenses) return [];
+        _tenseSkillsCache[_courseKey()] = tenses;
         const bySkill = (index && index.bySkill) || {};
         const reached = (typeof LearnerPath !== 'undefined' && LearnerPath.reachedExerciseRefs)
             ? LearnerPath.reachedExerciseRefs() : null;
@@ -1448,6 +1537,7 @@ const LearnerModel = (function () {
         const out = [];
         Object.keys(tenses).forEach(tenseKey => {
             if (tenseKey.charAt(0) === '_' || !Array.isArray(tenses[tenseKey])) return;
+            if (_isTenseAboveCurrentLevel(tenseKey, tenses)) return;
             const hasVerbHistory = VERB_PERSONS.some(p => hasHistory(schedule['verb:' + tenseKey + ':' + p]));
             const hasReachedSkill = tenses[tenseKey].some(skillId => {
                 const entries = bySkill[skillId] || [];

@@ -406,14 +406,16 @@ profile('misses on a unit\'s vocabulary → names the unit\'s words, not "readin
     const registry = hu('indexes/skill-registry.json').skills;
     const vocab = Object.keys(huIndex.bySkill).find(k => registry[k] && registry[k].kind === 'vocabulary' && huIndex.bySkill[k].length >= 2);
     assert.ok(vocab, 'hu has a vocabulary skill in its grammar index');
+    const vocabLevel = (registry[vocab].level || 'A1').toUpperCase();
     const ids = huIndex.bySkill[vocab].slice(0, 2).map(e => e.id);
     // Every lesson done (so the vocabulary is reached); the most recent a
-    // unit's first lesson, so no unit-end card gets in first.
+    // core unit's first lesson at the skill's level, so no unit-end card gets in first.
     const progress = {};
     let t = NOW - 30 * DAY;
     const units = Object.values(huCurriculum.levels).flatMap(l => l.units || []);
     units.forEach(u => (u.lessons || []).forEach(l => { progress[l.id] = { completedAt: new Date(t += 60000).toISOString() }; }));
-    const firstOfMulti = units.find(u => (u.lessons || []).length > 1).lessons[0];
+    const levelUnits = ((huCurriculum.levels[vocabLevel] && huCurriculum.levels[vocabLevel].units) || []).filter(u => !u.track || u.track === 'core');
+    const firstOfMulti = levelUnits.find(u => (u.lessons || []).length > 1).lessons[0];
     progress[firstOfMulti.id] = { completedAt: new Date(NOW).toISOString() };
     const w = world({ course: 'hu', progress, store: { ['hu:recycleSchedule']: JSON.stringify(cards(ids, 'missed', 49)) } });
     const p = await recommend(w);
@@ -453,14 +455,38 @@ profile('recent conjugation miss in Verb Speed → Verb Practice on that tense',
         progress: progressThrough(mid.lesson.id),
         store: recycleStore({
             ...cards(mid.ids, 'good', 49),
-            'verb:indicativo.preterito:uds': { reviews: 0, ease: 1.9, interval: 0, lastOpen: 49, dueAtOpen: 50, lapses: 1, leech: false }
+            'verb:indicativo.presente:uds': { reviews: 0, ease: 1.9, interval: 0, lastOpen: 49, dueAtOpen: 50, lapses: 1, leech: false }
         })
     });
     const p = await recommend(w);
     assert.strictEqual(p.kind, 'mini-game', `got ${p.kind}`);
     assert.strictEqual(p.drillerId, 'verbs');
-    assert.strictEqual(p.tense, 'indicativo.preterito');
+    assert.strictEqual(p.tense, 'indicativo.presente');
     assert.strictEqual(p.options.knownOnly, true);
+});
+
+profile('A2 learner with B1 diagnostic/verb/level-test misses → Continue (never recommends above-level skill)', async () => {
+    const a2Mid = coreUnits('A2')[0].lessons[0];
+    const diag = JSON.parse(fs.readFileSync(path.join(root, 'content/es-es/tests/diagnostic-test.json'), 'utf8'));
+    const b1DiagIds = diag.tiers
+        .flatMap(t => t.questions || [])
+        .filter(q => (q.teaches || []).includes('hypothetical-structures'))
+        .map(q => 'diag:' + q.id);
+    const missedB1 = {
+        ...cards(b1DiagIds, 'missed', 49),
+        'verb:subjuntivo.imperfecto:yo': { reviews: 0, ease: 1.8, interval: 0, lastOpen: 49, dueAtOpen: 50, lapses: 2, leech: false },
+        'verb:subjuntivo.imperfecto:tu': { reviews: 0, ease: 1.8, interval: 0, lastOpen: 49, dueAtOpen: 50, lapses: 2, leech: false }
+    };
+    const w = world({
+        progress: progressThrough(a2Mid.id),
+        levelTests: {
+            A1: { passed: true, level: 'A1', weakest: [], takenAt: new Date(NOW - 30 * DAY).toISOString(), takenAtOpen: 10 },
+            B1: { passed: false, level: 'B1', weakest: ['hypothetical-structures'], takenAt: new Date(NOW - 2 * DAY).toISOString(), takenAtOpen: 48 }
+        },
+        store: recycleStore(missedB1)
+    });
+    const p = await recommend(w);
+    assert.strictEqual(p.kind, 'continue', `expected continue, got ${p.kind} (${p.skill || p.tense || p.title})`);
 });
 
 profile('finished a verb-tense unit with zero mistakes → Verb Practice on encountered verbs in that tense', async () => {
