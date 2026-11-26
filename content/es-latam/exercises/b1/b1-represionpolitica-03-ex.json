@@ -7,8 +7,12 @@
       "category": "vocabulary",
       "pairs": [
         [
+          "el desaparecido",
+          "disappeared person"
+        ],
+        [
           "desaparecer",
-          "to disappear, make disappear"
+          "to disappear"
         ],
         [
           "el paradero",
@@ -17,10 +21,6 @@
         [
           "negar",
           "to deny"
-        ],
-        [
-          "presenciar",
-          "to witness"
         ]
       ],
       "teaches": [
@@ -33,20 +33,24 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "exigir",
-          "to demand"
-        ],
-        [
-          "el pañuelo",
-          "headscarf, kerchief"
-        ],
-        [
           "secuestrar",
-          "to kidnap, abduct"
+          "to kidnap, to abduct"
         ],
         [
-          "procesar",
-          "to prosecute"
+          "la víctima",
+          "victim"
+        ],
+        [
+          "el sobreviviente",
+          "survivor"
+        ],
+        [
+          "la cifra",
+          "figure, number"
+        ],
+        [
+          "la comisión",
+          "commission"
         ]
       ],
       "teaches": [
@@ -57,47 +61,49 @@
       "id": "b1-represionpolitica-03.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿En qué consistía la \"desaparición forzada\"?",
+      "question": "What did the families of a disappeared person not know?",
       "options": [
-        "Agentes del Estado detenían a una persona y el gobierno negaba oficialmente cualquier conocimiento de su paradero.",
-        "Un proceso judicial público y completamente transparente.",
-        "Una simple expulsión del país sin ninguna otra consecuencia."
+        "No sabían dónde estaba la persona ni si estaba viva.",
+        "No sabían cuándo empezaba el estado de sitio.",
+        "No sabían qué ley se había aprobado."
       ],
       "correct": 0
     },
     {
       "id": "b1-represionpolitica-03.ex03",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué declaró el dictador Jorge Rafael Videla en 1979 sobre el desaparecido?",
+      "category": "grammar",
+      "question": "Which sentence gives the CONADEP as the source of the figure?",
       "options": [
-        "Que \"no tiene entidad, no está vivo ni muerto, es una incógnita\".",
-        "Que estaba vivo y detenido en una prisión oficial.",
-        "Que había salido del país por su propia voluntad."
+        "Según la CONADEP, 8.961 personas desaparecieron.",
+        "Según que la CONADEP, 8.961 personas desaparecieron.",
+        "Según a la CONADEP, 8.961 personas desaparecieron."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "estilo-indirecto-informacion"
+      ]
     },
     {
       "id": "b1-represionpolitica-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El gobierno negaba cualquier conocimiento de su paradero, ___ cuando la familia había presenciado el arresto.",
-      "hint": "even when",
-      "answer": "aun",
+      "sentence": "___ las organizaciones de derechos humanos, fueron unas 30.000 personas.",
+      "answer": "Según",
       "teaches": [
-        "concesivas-aunque"
+        "estilo-indirecto-informacion"
       ],
-      "english": "The government denied any knowledge of his whereabouts, even though the family had witnessed the arrest."
+      "english": "According to human-rights organisations, it was about 30,000 people."
     },
     {
       "id": "b1-represionpolitica-03.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué hicieron las Madres de Plaza de Mayo ante la indiferencia judicial y el terror?",
+      "question": "What did the authorities say when relatives asked about a detainee?",
       "options": [
-        "Siguieron marchando, aun cuando el régimen intentó reprimir sus protestas.",
-        "Dejaron de marchar y abandonaron por completo la búsqueda.",
-        "Se unieron al régimen para pedir calma."
+        "Decían que no sabían nada de esa persona.",
+        "Decían que la persona estaba en un centro público.",
+        "Decían que la persona ya había vuelto a su casa."
       ],
       "correct": 0
     },
@@ -106,40 +112,32 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Las",
-        "Madres",
-        "de",
-        "Plaza",
-        "de",
-        "Mayo",
-        "siguieron",
-        "marchando,",
-        "aun",
-        "cuando",
-        "el",
-        "régimen",
-        "intentó",
-        "reprimirlas."
+        "Según",
+        "la",
+        "Comisión",
+        "Rettig,",
+        "unas",
+        "2.300",
+        "personas",
+        "murieron",
+        "o",
+        "desaparecieron."
       ],
       "solution": [
-        "Las",
-        "Madres",
-        "de",
-        "Plaza",
-        "de",
-        "Mayo",
-        "siguieron",
-        "marchando,",
-        "aun",
-        "cuando",
-        "el",
-        "régimen",
-        "intentó",
-        "reprimirlas."
+        "Según",
+        "la",
+        "Comisión",
+        "Rettig,",
+        "unas",
+        "2.300",
+        "personas",
+        "murieron",
+        "o",
+        "desaparecieron."
       ],
-      "english": "The Mothers of Plaza de Mayo kept marching, even when the regime tried to suppress them.",
+      "english": "According to the Rettig Commission, about 2,300 people were killed or disappeared.",
       "teaches": [
-        "concesivas-aunque"
+        "estilo-indirecto-informacion"
       ]
     },
     {
@@ -148,18 +146,18 @@
       "category": "reading",
       "prompt": [
         {
-          "speaker": "Carolina",
-          "text": "¿Qué les ocurrió a Azucena Villaflor, Esther Ballestrino y María Ponce, fundadoras del movimiento?"
+          "speaker": "Meg",
+          "text": "¿Cuántos desaparecidos hubo en Argentina?"
         },
         {
-          "speaker": "Fructuoso",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Fueron secuestradas y asesinadas en diciembre de 1977.",
-        "Se retiraron tranquilamente del movimiento por razones personales.",
-        "Nunca formaron parte de las Madres de Plaza de Mayo."
+        "Según la CONADEP, 8.961; según las organizaciones de derechos humanos, unos 30.000.",
+        "Según la CONADEP, 30.000; según las organizaciones de derechos humanos, unos 8.961.",
+        "Según la CONADEP, 340; según las organizaciones de derechos humanos, unos 30.000."
       ],
       "correct": 0
     },
@@ -167,16 +165,16 @@
       "id": "b1-represionpolitica-03.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Muchísimos casos permanecen sin resolver, aun cuando la desaparición forzada ya es reconocida como un crimen de lesa humanidad.",
-      "options": [
-        "Very many cases remain unresolved, even though forced disappearance is now recognized as a crime against humanity.",
-        "All the cases were solved quickly, so forced disappearance is no longer a concern.",
-        "Forced disappearance has never been recognized as a crime by anyone."
-      ],
-      "correct": 0,
       "teaches": [
         "b1-political-repression-vocab"
-      ]
+      ],
+      "sentence": "La CONADEP presentó su informe en septiembre de 1984.",
+      "options": [
+        "The CONADEP presented its report in September 1984.",
+        "The CONADEP presented its report in December 1983.",
+        "The CONADEP presented its report in September 1994."
+      ],
+      "correct": 0
     }
   ]
 }
