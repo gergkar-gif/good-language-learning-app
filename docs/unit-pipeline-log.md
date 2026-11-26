@@ -2406,3 +2406,15 @@ drafted by Antigravity from `notes/README.md`; read those notes as part of the u
 - **Challenge targets were never unmet-checked before merging:** `unmet-words.js --challenges <drafts>`.
 - **Rolling start:** a reader's next units start when its units are frozen, so neither slot waits for
   the other reader (Units 7–9 started while 4–6 were still being read).
+
+### 2026-11-26: ES B1 latam Units 7–12
+
+- **Rolling start worked:** each reader's next three units started when its last three were frozen;
+  neither slot waited for the other. Both still hit the 5-hour limit together (shared limit);
+  saving each worktree's diff before resuming lost nothing.
+- **~105k a unit on the resumed runs** (the first runs' usage is not reported after a limit stop).
+- **New recurring fault, scripted:** the vocabulary slug built from the file prefix
+  (`b1-nacionnacionalismo-vocab`) instead of the unit id: `fix_vocab_slug_alias.py`; brief updated.
+- The reviewer's read again found what no check does: an invented reason (José Bonaparte "not
+  elected"), the narrator moralising, a wrong federation name, a target stating a fact not in the text.
+- Short texts (148–180 words) from one agent: the brief now sets a floor of 200.
