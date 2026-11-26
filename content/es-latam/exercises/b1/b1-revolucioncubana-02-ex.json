@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
+          "el abogado",
+          "lawyer"
+        ],
+        [
           "el cuartel",
           "barracks"
         ],
         [
-          "fracasar",
-          "to fail"
+          "el rebelde",
+          "rebel"
         ],
         [
-          "el yate",
-          "yacht"
-        ],
-        [
-          "el combatiente",
-          "combatant, fighter"
+          "la guerrilla",
+          "guerrilla war, guerrilla group"
         ]
       ],
       "teaches": [
@@ -34,19 +34,23 @@
       "pairs": [
         [
           "desembarcar",
-          "to land, disembark"
+          "to land, to disembark"
         ],
         [
-          "sobreviviente",
-          "survivor"
+          "sobrevivir",
+          "to survive"
         ],
         [
-          "desprestigiado",
-          "discredited"
+          "huir",
+          "to flee"
         ],
         [
-          "suicida",
-          "suicidal"
+          "fracasar",
+          "to fail"
+        ],
+        [
+          "atacar",
+          "to attack"
         ]
       ],
       "teaches": [
@@ -57,89 +61,94 @@
       "id": "b1-revolucioncubana-02.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué ocurrió el 26 de julio de 1953?",
+      "question": "What happened on 26 July 1953?",
       "options": [
-        "Fidel Castro lideró un ataque armado contra el cuartel Moncada que fracasó casi por completo.",
-        "Castro fue elegido presidente de Cuba en elecciones libres.",
-        "Batista renunció voluntariamente a la presidencia."
+        "Un grupo de jóvenes atacó el cuartel Moncada.",
+        "Los rebeldes entraron en La Habana.",
+        "Batista huyó del país."
       ],
       "correct": 0
     },
     {
       "id": "b1-revolucioncubana-02.ex03",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Dónde acabó por desembarcar el grupo armado de Castro, en diciembre de 1956?",
+      "category": "grammar",
+      "question": "Which sentence means \"When Batista fled, the rebels had already won important battles\"?",
       "options": [
-        "En Cuba, a bordo de un yate llamado Granma, con apenas ochenta y dos combatientes.",
-        "En Estados Unidos, buscando apoyo político internacional.",
-        "En España, para negociar directamente con el gobierno de Franco."
+        "Cuando Batista huyó, los rebeldes ya han ganado importantes batallas.",
+        "Cuando Batista huyó, los rebeldes ya habían ganado importantes batallas.",
+        "Cuando Batista huyó, los rebeldes ya ganaban importantes batallas."
       ],
-      "correct": 0
+      "correct": 1,
+      "teaches": [
+        "pluscuamperfecto"
+      ],
+      "distractor_skills": {
+        "0": "preterito-perfecto"
+      }
     },
     {
       "id": "b1-revolucioncubana-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Los pocos sobrevivientes ___ por refugiarse en las montañas de la Sierra Maestra.",
-      "hint": "acabar, pretérito",
-      "answer": "acabaron",
+      "sentence": "Los rebeldes que ___ sobrevivido se refugiaron en la Sierra Maestra.",
+      "answer": "habían",
       "teaches": [
-        "preterito-indefinido"
+        "pluscuamperfecto"
       ],
-      "english": "The few survivors eventually took refuge in the mountains of the Sierra Maestra."
+      "english": "The rebels who had survived took refuge in the Sierra Maestra."
     },
     {
       "id": "b1-revolucioncubana-02.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué hizo Batista el 1 de enero de 1959, ante el avance imparable de las fuerzas rebeldes?",
+      "question": "How did Castro and his companions return to Cuba?",
       "options": [
-        "Acabó por huir del país hacia República Dominicana.",
-        "Derrotó por completo a las fuerzas guerrilleras.",
-        "Entregó el gobierno a Fidel Castro en una ceremonia oficial."
+        "En un avión de Estados Unidos, en julio de 1953.",
+        "Por la costa sur, en marzo de 1952.",
+        "En un barco pequeño, el Granma, en diciembre de 1956."
       ],
-      "correct": 0
+      "correct": 2
     },
     {
       "id": "b1-revolucioncubana-02.ex06",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Ante",
+        "Che",
+        "Guevara",
+        "era",
+        "un",
+        "médico",
+        "argentino",
+        "que",
+        "había",
+        "llegado",
+        "a",
+        "Cuba",
+        "en",
         "el",
-        "avance",
-        "imparable",
-        "de",
-        "las",
-        "fuerzas",
-        "rebeldes,",
-        "Batista",
-        "acabó",
-        "por",
-        "huir",
-        "del",
-        "país."
+        "Granma."
       ],
       "solution": [
-        "Ante",
+        "Che",
+        "Guevara",
+        "era",
+        "un",
+        "médico",
+        "argentino",
+        "que",
+        "había",
+        "llegado",
+        "a",
+        "Cuba",
+        "en",
         "el",
-        "avance",
-        "imparable",
-        "de",
-        "las",
-        "fuerzas",
-        "rebeldes,",
-        "Batista",
-        "acabó",
-        "por",
-        "huir",
-        "del",
-        "país."
+        "Granma."
       ],
-      "english": "Facing the unstoppable advance of the rebel forces, Batista ended up fleeing the country.",
+      "english": "Che Guevara was an Argentine doctor who had come to Cuba on the Granma.",
       "teaches": [
-        "perifrasis-verbales"
+        "pluscuamperfecto"
       ]
     },
     {
@@ -148,35 +157,35 @@
       "category": "reading",
       "prompt": [
         {
-          "speaker": "Fernanda",
-          "text": "¿Qué ocurrió después de la huida de Batista?"
+          "speaker": "Meg",
+          "text": "En la clase dijeron que Castro era abogado. ¿Qué hizo en 1955?"
         },
         {
-          "speaker": "Genaro",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Fidel Castro y los barbudos entraron triunfantes en La Habana, poniendo fin a la dictadura.",
-        "Estados Unidos invadió Cuba de inmediato para restaurar el antiguo régimen.",
-        "Se convocaron nuevas elecciones presidenciales de manera inmediata."
+        "Entró en La Habana con los rebeldes.",
+        "Atacó el cuartel Moncada por primera vez.",
+        "Salió de la cárcel y se fue a México."
       ],
-      "correct": 0
+      "correct": 2
     },
     {
       "id": "b1-revolucioncubana-02.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Este pequeño núcleo guerrillero acabó por crecer considerablemente, ganando apoyo campesino y sumando nuevos combatientes.",
-      "options": [
-        "This small guerrilla nucleus ended up growing considerably, gaining peasant support and adding new fighters.",
-        "The guerrilla movement remained exactly the same size throughout the entire war.",
-        "The guerrilla group lost all peasant support during the conflict."
-      ],
-      "correct": 0,
       "teaches": [
         "b1-cuban-revolution-vocab"
-      ]
+      ],
+      "sentence": "El 1 de enero de 1959 Batista huyó del país.",
+      "options": [
+        "On 1 January 1959 Batista fled the country.",
+        "On 1 January 1952 Batista fled the country.",
+        "On 1 January 1959 Batista took power in the country."
+      ],
+      "correct": 0
     }
   ]
 }
