@@ -8,8 +8,11 @@ arrival of the Europeans; B: conquest, colonial society, colonial economy).
 | LatAm 1 pre-columbian-america | 29 / 2 → 0 / 0 | 0 |
 | LatAm 2 indigenous-civilizations | 21 / 4 → 0 / 0 | 0 |
 | LatAm 3 arrival-of-europeans | 28 / 2 → 0 / 1 (accepted: *sin embargo* / *no obstante* both right) | 0 |
+| LatAm 4 conquest | 24 / 3 → 0 / 0 | 0 |
+| LatAm 5 colonial-society | 23 / 1 → 0 / 0 | 0 |
+| LatAm 6 colonial-economy | 25 / 0 → 0 / 1 (accepted, same item type) | 0 |
 
-Reader A: 347,603 tokens for three units (~116k a unit, the B2 latam rate at three per agent). Walk 18/18.
+Reader A: 347,603 tokens (~116k a unit); Reader B: 401,752 (~134k a unit). Walk 36/36. **B1 latam 6/36 frozen.**
 
 ## Units 1–3: what changed
 
@@ -30,3 +33,24 @@ goals in English; one known skill per lesson as the notes gave; speakers Meg, Ca
   **Scripted:** `unmet-words.js --challenges <drafts.json>`; the brief now has the agent run it.
 - The agent ran `lock_tags.py --update` itself after re-pointing tags (validator failed otherwise);
   kept, as the reviewer would have run the same step.
+
+## Units 4–6
+
+All 15 texts new; skills as the notes gave. Reader B found an error in the notes: the examples for
+conquest-04 (*pidió que protegiera*) and society-03 (*para que* + past) need the imperfect subjunctive
+after a past verb, which is `correlacion-temporal-subjuntivo`, B1 Unit 38 (later). It wrote those texts
+in the historical present instead. Checked: no such form in Units 1–6. The brief now states the rule and
+the three draft notes for Units 7–12 that repeated it were rewritten before launch; Reader A of 7–9
+(already running) was told. Also *llegar a ser* (B2) avoided.
+
+Reviewer edits: "después de 1519" → 1492 (04-05); the fleets sailed "en principio" every year, Tierra
+Firme's ports named (Cartagena, Portobelo: not "the north of South America"); challenges: 05-04's
+scenario English, 06-05's target re-pointed from *aunque* to the lesson's *sin embargo* and its cue no
+longer names the word. Reader B left the tag re-lock to the reviewer (shared lock file): run here.
+
+## Method changes for the rest of the track
+
+- **Rolling start:** each reader's next three units start as soon as its units are frozen, not when the
+  whole batch is done (both slots stay busy; never more than two agents).
+- `scripts/latam_unit_notes.py` writes the structural part of the unit notes.
+- `unmet-words.js --challenges <drafts>`; brief: option-form tells, no past-sequence subjunctive.

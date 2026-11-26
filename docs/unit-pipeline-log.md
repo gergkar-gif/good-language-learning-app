@@ -2388,3 +2388,21 @@ drafted by Antigravity from `notes/README.md`; read those notes as part of the u
 - Track totals: 36 units rewritten in one day, ~110k tokens a unit on average, 0 errors and 0 unmet
   words, 216/216 lessons walked.
 
+
+### 2026-11-26: ES B1 latam Units 1–6 (first batch of the B1 Latin America track)
+
+- **The B2 latam brief carried over** (`scripts/templates/edit-spanish-latam-b1-track.txt`) with four
+  B1 changes: every text rewritten (garbled; Unit 2's five each about another lesson), the B1 unmet
+  rule (no cognates), named speakers replaced, and one known skill per lesson chosen in the notes to
+  vary across units (the generator gave every unit the same five, in the same order).
+- **Structural notes are scripted:** `scripts/latam_unit_notes.py <course> <level> <units>` (text vs
+  title, screen, tags marked LATER/RETIRED, speakers, findings, unmet count, orphan screens). The 120
+  orphan screens of the track were deleted once at setup instead of unit by unit.
+- ~116k and ~134k a unit at three per agent; every check clean on return. The reviewer's read still
+  found what no check sees: a doubtful etymology (*tabaco*), an unattributed causal claim, a stacked
+  connector, a misdated start of the conquest, the fleets "every year".
+- **The notes' own grammar examples can be wrong:** *pidió que protegiera* is the B1 Unit 38 sequence of
+  tenses, not B1 Unit 4. Rule now in the brief; check a note's example against the sheet's "later" list.
+- **Challenge targets were never unmet-checked before merging:** `unmet-words.js --challenges <drafts>`.
+- **Rolling start:** a reader's next units start when its units are frozen, so neither slot waits for
+  the other reader (Units 7–9 started while 4–6 were still being read).
