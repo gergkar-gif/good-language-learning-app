@@ -50,7 +50,7 @@ Write one challenge per lesson of each unit, consolidation included (six per uni
 - `python scripts/check_unit_refs.py es-latam b1 <unit id> --labels --bare`.
 - `python scripts/check_es_c1_forms.py es-latam --track latam`: no hit in your units' files (C1 forms such as *el cual*, *sin haber* + participle, *más de lo que*).
 - `python scripts/check_past_subjunctive.py es-latam b1 <unit id>`: every hit is an imperfect subjunctive after *que* outside a *si* clause (B1 Unit 38, later): rewrite it (historical present, or another known form) or give a one-line reason in the report if the hit is not a subjunctive.
-- `python scripts/validate-content.py --changed` (report anything it fails on).
+- `python scripts/validate-content.py --changed`: "locked tags changed" is expected (the reviewer re-locks); **every other failure is yours to fix** (batch 25–30 hid a fill-blank with both `answer` and `answers` behind the lock failures: a fill-blank takes `answer` or `answers`, never both).
 
 ## Report
 
