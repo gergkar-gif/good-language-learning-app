@@ -417,9 +417,9 @@
    "reason": "ES B1 unmet-word fix 2026-11-11"
   },
   "B1/great-depression": {
-   "locked": "2026-10-08",
+   "locked": "2026-11-26",
    "exercises": 59,
-   "reason": "read-through, all lessons"
+   "reason": "B1 latam batch 13-18: lessons re-pointed to one known skill each"
   },
   "B1/health-wellbeing": {
    "locked": "2026-11-11",
@@ -497,9 +497,9 @@
    "reason": "ES B1 read-through 2026-11-11 (batch 17-27)"
   },
   "B1/mexican-revolution": {
-   "locked": "2026-10-08",
+   "locked": "2026-11-26",
    "exercises": 63,
-   "reason": "read-through, all lessons"
+   "reason": "B1 latam batch 13-18: lessons re-pointed to one known skill each"
   },
   "B1/migration-identity": {
    "locked": "2026-11-12",
@@ -522,9 +522,9 @@
    "reason": "B1 latam batch 7-12: vocab slug alias corrected"
   },
   "B1/nationalism-state": {
-   "locked": "2026-10-08",
+   "locked": "2026-11-26",
    "exercises": 63,
-   "reason": "read-through, all lessons"
+   "reason": "B1 latam batch 13-18: lessons re-pointed to one known skill each"
   },
   "B1/neoliberalism": {
    "locked": "2026-10-08",
@@ -66831,7 +66831,7 @@
   },
   "b1-grandepresion-01.ex04": {
    "teaches": [
-    "perifrasis-verbales"
+    "pluscuamperfecto"
    ],
    "distractor_skills": {}
   },
@@ -66841,12 +66841,14 @@
   },
   "b1-grandepresion-01.ex06": {
    "teaches": [
-    "perifrasis-verbales"
+    "pluscuamperfecto"
    ],
    "distractor_skills": {}
   },
   "b1-grandepresion-01.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-great-depression-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-grandepresion-01.ex08": {
@@ -66877,7 +66879,7 @@
   },
   "b1-grandepresion-02.ex04": {
    "teaches": [
-    "cuando-subjuntivo"
+    "contrast-concession-connectors"
    ],
    "distractor_skills": {}
   },
@@ -66887,12 +66889,14 @@
   },
   "b1-grandepresion-02.ex06": {
    "teaches": [
-    "cuando-subjuntivo"
+    "contrast-concession-connectors"
    ],
    "distractor_skills": {}
   },
   "b1-grandepresion-02.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-great-depression-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-grandepresion-02.ex08": {
@@ -66938,7 +66942,9 @@
    "distractor_skills": {}
   },
   "b1-grandepresion-03.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-great-depression-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-grandepresion-03.ex08": {
@@ -66984,7 +66990,9 @@
    "distractor_skills": {}
   },
   "b1-grandepresion-04.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-great-depression-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-grandepresion-04.ex08": {
@@ -67015,7 +67023,7 @@
   },
   "b1-grandepresion-05.ex04": {
    "teaches": [
-    "b1-great-depression-vocab"
+    "argument-markers"
    ],
    "distractor_skills": {}
   },
@@ -67025,12 +67033,14 @@
   },
   "b1-grandepresion-05.ex06": {
    "teaches": [
-    "b1-great-depression-vocab"
+    "argument-markers"
    ],
    "distractor_skills": {}
   },
   "b1-grandepresion-05.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-great-depression-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-grandepresion-05.ex08": {
@@ -67046,8 +67056,13 @@
    "distractor_skills": {}
   },
   "b1-grandepresion-consolidation.ex02": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "pluscuamperfecto"
+   ],
+   "distractor_skills": {
+    "1": "preterito-perfecto",
+    "2": "preterito-indefinido"
+   }
   },
   "b1-grandepresion-consolidation.ex03": {
    "teaches": [
@@ -67057,18 +67072,20 @@
   },
   "b1-grandepresion-consolidation.ex04": {
    "teaches": [
-    "pasiva-refleja"
+    "superlatives"
    ],
    "distractor_skills": {}
   },
   "b1-grandepresion-consolidation.ex05": {
    "teaches": [
-    "ordering-markers"
+    "contrast-concession-connectors"
    ],
    "distractor_skills": {}
   },
   "b1-grandepresion-consolidation.ex06": {
-   "teaches": [],
+   "teaches": [
+    "argument-markers"
+   ],
    "distractor_skills": {}
   },
   "b1-grandepresion-consolidation.ex07": {
@@ -67090,26 +67107,32 @@
    "distractor_skills": {}
   },
   "b1-grandepresion-consolidation.ex10": {
-   "teaches": [],
-   "distractor_skills": {}
-  },
-  "b1-grandepresion-consolidation.ex11": {
-   "teaches": [],
-   "distractor_skills": {}
-  },
-  "b1-grandepresion-consolidation.ex12": {
-   "teaches": [],
-   "distractor_skills": {}
-  },
-  "b1-grandepresion-consolidation.ex13": {
    "teaches": [
     "b1-great-depression-vocab"
    ],
    "distractor_skills": {}
   },
-  "b1-grandepresion-consolidation.ex14": {
+  "b1-grandepresion-consolidation.ex11": {
    "teaches": [
     "b1-great-depression-vocab"
+   ],
+   "distractor_skills": {}
+  },
+  "b1-grandepresion-consolidation.ex12": {
+   "teaches": [
+    "b1-great-depression-vocab"
+   ],
+   "distractor_skills": {}
+  },
+  "b1-grandepresion-consolidation.ex13": {
+   "teaches": [
+    "prepositional-phrases"
+   ],
+   "distractor_skills": {}
+  },
+  "b1-grandepresion-consolidation.ex14": {
+   "teaches": [
+    "pluscuamperfecto"
    ],
    "distractor_skills": {}
   },
@@ -70060,7 +70083,7 @@
   },
   "b1-nacionalismo-01.ex04": {
    "teaches": [
-    "preterito-perfecto"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },
@@ -70070,12 +70093,14 @@
   },
   "b1-nacionalismo-01.ex06": {
    "teaches": [
-    "preterito-perfecto"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-01.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-nationalism-state-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-01.ex08": {
@@ -70121,7 +70146,9 @@
    "distractor_skills": {}
   },
   "b1-nacionalismo-02.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-nationalism-state-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-02.ex08": {
@@ -70152,7 +70179,7 @@
   },
   "b1-nacionalismo-03.ex04": {
    "teaches": [
-    "futuro-perfecto"
+    "cuanto-mas-tanto-mas"
    ],
    "distractor_skills": {}
   },
@@ -70162,12 +70189,14 @@
   },
   "b1-nacionalismo-03.ex06": {
    "teaches": [
-    "futuro-perfecto"
+    "cuanto-mas-tanto-mas"
    ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-03.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-nationalism-state-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-03.ex08": {
@@ -70198,7 +70227,7 @@
   },
   "b1-nacionalismo-04.ex04": {
    "teaches": [
-    "b1-nationalism-state-vocab"
+    "se-impersonal"
    ],
    "distractor_skills": {}
   },
@@ -70208,12 +70237,14 @@
   },
   "b1-nacionalismo-04.ex06": {
    "teaches": [
-    "b1-nationalism-state-vocab"
+    "se-impersonal"
    ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-04.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-nationalism-state-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-04.ex08": {
@@ -70244,7 +70275,7 @@
   },
   "b1-nacionalismo-05.ex04": {
    "teaches": [
-    "cuanto-mas-tanto-mas"
+    "verbs-of-change"
    ],
    "distractor_skills": {}
   },
@@ -70254,12 +70285,14 @@
   },
   "b1-nacionalismo-05.ex06": {
    "teaches": [
-    "cuanto-mas-tanto-mas"
+    "verbs-of-change"
    ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-05.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-nationalism-state-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-05.ex08": {
@@ -70280,25 +70313,25 @@
   },
   "b1-nacionalismo-consolidation.ex03": {
    "teaches": [
-    "se-impersonal"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-consolidation.ex04": {
    "teaches": [
-    "concesivas-aunque"
+    "a-pesar-de"
    ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-consolidation.ex05": {
    "teaches": [
-    "cuando-mientras"
+    "cuanto-mas-tanto-mas"
    ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-consolidation.ex06": {
    "teaches": [
-    "ordering-markers"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },
@@ -70309,7 +70342,9 @@
    "distractor_skills": {}
   },
   "b1-nacionalismo-consolidation.ex08": {
-   "teaches": [],
+   "teaches": [
+    "b1-nationalism-state-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-consolidation.ex09": {
@@ -70325,34 +70360,38 @@
    "distractor_skills": {}
   },
   "b1-nacionalismo-consolidation.ex11": {
-   "teaches": [],
+   "teaches": [
+    "b1-nationalism-state-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-consolidation.ex12": {
    "teaches": [
-    "concesivas-aunque"
+    "se-impersonal"
    ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-consolidation.ex13": {
    "teaches": [
-    "concesivas-aunque"
+    "verbs-of-change"
    ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-consolidation.ex14": {
-   "teaches": [],
+   "teaches": [
+    "b1-nationalism-state-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-consolidation.ex15": {
    "teaches": [
-    "b1-nationalism-state-vocab"
+    "pasiva-refleja"
    ],
    "distractor_skills": {}
   },
   "b1-nacionalismo-consolidation.ex16": {
    "teaches": [
-    "b1-nationalism-state-vocab"
+    "verbs-of-change"
    ],
    "distractor_skills": {}
   },
@@ -70363,7 +70402,9 @@
    "distractor_skills": {}
   },
   "b1-nacionalismo-consolidation.ex18": {
-   "teaches": [],
+   "teaches": [
+    "b1-nationalism-state-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-nacionnacionalismo-01.ex01": {
@@ -73479,7 +73520,9 @@
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-01.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-mexican-revolution-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-01.ex08": {
@@ -73510,7 +73553,7 @@
   },
   "b1-revolucionmexicana-02.ex04": {
    "teaches": [
-    "subjunctive-influence"
+    "estilo-indirecto"
    ],
    "distractor_skills": {}
   },
@@ -73520,12 +73563,14 @@
   },
   "b1-revolucionmexicana-02.ex06": {
    "teaches": [
-    "subjunctive-influence"
+    "estilo-indirecto"
    ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-02.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-mexican-revolution-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-02.ex08": {
@@ -73556,7 +73601,7 @@
   },
   "b1-revolucionmexicana-03.ex04": {
    "teaches": [
-    "b1-mexican-revolution-vocab"
+    "preterite-vs-imperfect"
    ],
    "distractor_skills": {}
   },
@@ -73566,12 +73611,14 @@
   },
   "b1-revolucionmexicana-03.ex06": {
    "teaches": [
-    "b1-mexican-revolution-vocab"
+    "preterite-vs-imperfect"
    ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-03.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-mexican-revolution-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-03.ex08": {
@@ -73617,7 +73664,9 @@
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-04.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-mexican-revolution-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-04.ex08": {
@@ -73648,7 +73697,7 @@
   },
   "b1-revolucionmexicana-05.ex04": {
    "teaches": [
-    "correlativos-no-solo-sino"
+    "ser-passive"
    ],
    "distractor_skills": {}
   },
@@ -73658,12 +73707,14 @@
   },
   "b1-revolucionmexicana-05.ex06": {
    "teaches": [
-    "correlativos-no-solo-sino"
+    "ser-passive"
    ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-05.ex07": {
-   "teaches": [],
+   "teaches": [
+    "b1-mexican-revolution-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-05.ex08": {
@@ -73684,25 +73735,27 @@
   },
   "b1-revolucionmexicana-consolidation.ex03": {
    "teaches": [
-    "se-impersonal"
+    "perifrasis-verbales"
    ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-consolidation.ex04": {
    "teaches": [
-    "concesivas-aunque"
+    "estilo-indirecto"
    ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-consolidation.ex05": {
    "teaches": [
-    "formal-cause-connectors"
+    "preterite-vs-imperfect"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "pluscuamperfecto"
+   }
   },
   "b1-revolucionmexicana-consolidation.ex06": {
    "teaches": [
-    "ordering-markers"
+    "preterite-vs-imperfect"
    ],
    "distractor_skills": {}
   },
@@ -73713,7 +73766,9 @@
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-consolidation.ex08": {
-   "teaches": [],
+   "teaches": [
+    "b1-mexican-revolution-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-consolidation.ex09": {
@@ -73729,34 +73784,41 @@
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-consolidation.ex11": {
-   "teaches": [],
+   "teaches": [
+    "b1-mexican-revolution-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-consolidation.ex12": {
    "teaches": [
-    "concesivas-aunque"
+    "estilo-indirecto"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "pluscuamperfecto",
+    "2": "preterito-indefinido"
+   }
   },
   "b1-revolucionmexicana-consolidation.ex13": {
    "teaches": [
-    "se-impersonal"
+    "ser-passive"
    ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-consolidation.ex14": {
-   "teaches": [],
+   "teaches": [
+    "b1-mexican-revolution-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-consolidation.ex15": {
    "teaches": [
-    "b1-mexican-revolution-vocab"
+    "perifrasis-verbales"
    ],
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-consolidation.ex16": {
    "teaches": [
-    "b1-mexican-revolution-vocab"
+    "ser-passive"
    ],
    "distractor_skills": {}
   },
@@ -73767,7 +73829,9 @@
    "distractor_skills": {}
   },
   "b1-revolucionmexicana-consolidation.ex18": {
-   "teaches": [],
+   "teaches": [
+    "b1-mexican-revolution-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-sociedadcolonial-01.ex01": {

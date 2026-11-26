@@ -5,41 +5,41 @@
       "id": "b1-revolucionmexicana-consolidation.ex01",
       "type": "matching",
       "category": "vocabulary",
-      "teaches": [
-        "b1-mexican-revolution-vocab"
-      ],
       "pairs": [
         [
-          "Porfiriato",
-          "Porfiriato"
+          "el ferrocarril",
+          "railway"
         ],
         [
-          "levantarse en armas",
-          "to take up arms"
+          "el hacendado",
+          "owner of a large estate"
         ],
         [
-          "reparto agrario",
-          "land redistribution"
+          "exigir",
+          "to demand"
         ],
         [
-          "derecho laboral",
-          "labour right"
+          "el sindicato",
+          "trade union"
         ],
         [
-          "legado",
-          "legacy"
+          "expropiar",
+          "to expropriate"
         ]
+      ],
+      "teaches": [
+        "b1-mexican-revolution-vocab"
       ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué caracteriza mejor la Revolución mexicana?",
+      "question": "What did Madero's party ask for?",
       "options": [
-        "Fue un proceso prolongado de conflicto y transformación institucional.",
-        "Terminó todos los conflictos inmediatamente.",
-        "Tuvo un solo objetivo y un solo grupo."
+        "Elecciones libres y no más reelección.",
+        "Un ejército más grande y más impuestos.",
+        "Menos escuelas y más ferrocarriles."
       ],
       "correct": 0
     },
@@ -47,294 +47,301 @@
       "id": "b1-revolucionmexicana-consolidation.ex03",
       "type": "fill-blank",
       "category": "grammar",
+      "sentence": "Muchos campesinos ___ años pidiendo tierras antes de 1910.",
+      "hint": "llevar",
+      "answer": "llevaban",
       "teaches": [
-        "se-impersonal"
+        "perifrasis-verbales"
       ],
-      "sentence": "_____ puede hablar de una reconstrucción gradual.",
-      "hint": "pronoun",
-      "answer": "Se",
-      "english": "One can speak of a gradual reconstruction."
+      "english": "Many peasants had been asking for land for years before 1910."
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex04",
       "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "concesivas-aunque"
-      ],
       "tiles": [
-        "La",
-        "Constitución",
-        "incorporó",
-        "nuevos",
-        "derechos",
-        ",",
-        "aunque",
-        "persistieron",
-        "conflictos",
-        "."
+        "Madero",
+        "decía",
+        "que",
+        "había",
+        "que",
+        "respetar",
+        "la",
+        "ley."
       ],
       "solution": [
-        "La",
-        "Constitución",
-        "incorporó",
-        "nuevos",
-        "derechos",
-        ",",
-        "aunque",
-        "persistieron",
-        "conflictos",
-        "."
+        "Madero",
+        "decía",
+        "que",
+        "había",
+        "que",
+        "respetar",
+        "la",
+        "ley."
       ],
-      "english": "The Constitution incorporated new rights, although conflicts persisted."
+      "english": "Madero said that the law had to be respected.",
+      "teaches": [
+        "estilo-indirecto"
+      ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex05",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "formal-cause-connectors"
-      ],
-      "question": "¿Qué expresión introduce una relación causal formal?",
+      "question": "Which sentence says that Villa formed his army in 1913?",
       "options": [
-        "A raíz de",
-        "Sin embargo",
-        "Mientras"
+        "En 1913 Villa formó su ejército.",
+        "En 1913 Villa formaba su ejército.",
+        "En 1913 Villa había formado su ejército."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "2": "pluscuamperfecto"
+      }
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex06",
       "type": "sentence-order",
       "category": "grammar",
-      "teaches": [
-        "ordering-markers"
-      ],
       "sentences": [
-        "Primero, cayó Díaz.",
-        "Después, continuaron los conflictos.",
-        "Finalmente, se propusieron nuevas reformas."
+        "Zapata era un campesino de Morelos.",
+        "En 1911 proclamó el Plan de Ayala.",
+        "En 1919 murió en una emboscada."
       ],
       "solution": [
         0,
         1,
         2
+      ],
+      "teaches": [
+        "preterite-vs-imperfect"
       ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex07",
       "type": "multiple-choice",
       "category": "vocabulary",
+      "question": "Which word means \"strike\" (by workers)?",
+      "options": [
+        "la huelga",
+        "la hacienda",
+        "la jornada"
+      ],
+      "correct": 0,
       "teaches": [
         "b1-mexican-revolution-vocab"
-      ],
-      "question": "¿Qué significa «reparto agrario»?",
-      "options": [
-        "La redistribución de tierras.",
-        "La organización de elecciones.",
-        "La construcción de ferrocarriles."
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex08",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Qué defendía Zapata?"
+          "speaker": "Carlos",
+          "text": "¿Por qué se fue Díaz a Francia en 1911?"
         },
         {
-          "speaker": "B",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Las demandas campesinas y el reparto agrario.",
-        "La continuidad del Porfiriato.",
-        "La ausencia de reformas."
+        "Porque renunció después de la toma de Ciudad Juárez.",
+        "Porque renunció después de la muerte de Zapata.",
+        "Porque renunció después de la batalla de Celaya."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-mexican-revolution-vocab"
+      ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex09",
       "type": "listening-choice",
       "category": "listening",
+      "sentence": "La Constitución de 1917 dice que la tierra y el subsuelo pertenecen a la nación.",
+      "options": [
+        "The Constitution of 1917 says that the land and the subsoil belong to the nation.",
+        "The Constitution of 1917 says that the land and the subsoil belong to the landowners.",
+        "The Constitution of 1917 says that the land and the subsoil belong to foreign companies."
+      ],
+      "correct": 0,
       "teaches": [
         "b1-mexican-revolution-vocab"
-      ],
-      "sentence": "La Constitución de 1917 creó un marco para futuras reformas.",
-      "options": [
-        "The Constitution of 1917 created a framework for future reforms.",
-        "The Constitution ended all conflicts.",
-        "The statement concerns railways only."
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex10",
       "type": "dictation",
       "category": "listening",
+      "sentence": "La revolución empezó en noviembre de 1910.",
+      "english": "The revolution began in November 1910.",
       "teaches": [
         "b1-mexican-revolution-vocab"
-      ],
-      "sentence": "La revolución dejó un legado complejo.",
-      "english": "The revolution left a complex legacy."
+      ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex11",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Por qué continuaron los conflictos después de 1911?"
+          "speaker": "Meg",
+          "text": "¿Cómo vivían muchos campesinos antes de la revolución?"
         },
         {
-          "speaker": "B",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Porque distintos grupos defendían proyectos diferentes.",
-        "Porque todos estaban de acuerdo.",
-        "Porque no existían demandas sociales."
+        "Muchos trabajaban como peones en las haciendas.",
+        "Muchos eran dueños de grandes haciendas.",
+        "Muchos vivían de la inversión extranjera."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-mexican-revolution-vocab"
+      ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex12",
       "type": "multiple-choice",
       "category": "grammar",
-      "teaches": [
-        "concesivas-aunque"
-      ],
-      "question": "¿Qué oración presenta una concesión?",
+      "question": "Which sentence says that Díaz said he would accept an opposition party?",
       "options": [
-        "Aunque hubo reformas, muchas demandas continuaron pendientes.",
-        "Como hubo reformas, los campesinos obtuvieron tierras fértiles.",
-        "A medida que el conflicto avanzaba, la revolución transformó el país."
+        "Díaz dijo que aceptaría un partido de oposición.",
+        "Díaz dijo que había aceptado un partido de oposición.",
+        "Díaz dijo que aceptó un partido de oposición."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "estilo-indirecto"
+      ],
+      "distractor_skills": {
+        "1": "pluscuamperfecto",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex13",
       "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "se-impersonal"
-      ],
       "tiles": [
-        "Se",
-        "produjeron",
-        "cambios",
-        "institucionales",
-        "importantes",
-        ",",
-        "aunque",
-        "fueron",
-        "graduales",
-        "."
+        "Madero",
+        "fue",
+        "elegido",
+        "presidente",
+        "en",
+        "1911."
       ],
       "solution": [
-        "Se",
-        "produjeron",
-        "cambios",
-        "institucionales",
-        "importantes",
-        ",",
-        "aunque",
-        "fueron",
-        "graduales",
-        "."
+        "Madero",
+        "fue",
+        "elegido",
+        "presidente",
+        "en",
+        "1911."
       ],
-      "english": "Important institutional changes occurred, although they were gradual."
+      "english": "Madero was elected president in 1911.",
+      "teaches": [
+        "ser-passive"
+      ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex14",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿La Constitución resolvió automáticamente todos los problemas?"
+          "speaker": "Carlos",
+          "text": "¿Qué dice el artículo 123 sobre los sindicatos?"
         },
         {
-          "speaker": "B",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "No, creó un marco para reformas, pero los conflictos continuaron.",
-        "Sí, resolvió todos los problemas.",
-        "No tuvo ninguna relación con la revolución."
+        "Que los trabajadores pueden formar sindicatos.",
+        "Que los sindicatos son propiedad del gobierno.",
+        "Que los trabajadores deben pagar a los sindicatos."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-mexican-revolution-vocab"
+      ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex15",
       "type": "structured-writing",
-      "category": "vocabulary",
-      "teaches": [
-        "b1-mexican-revolution-vocab"
-      ],
+      "category": "writing",
       "template": [
         {
-          "prompt": "Explica la relación entre revolución y reforma.",
-          "answer": "La revolución impulsó cambios institucionales, aunque muchas reformas se aplicaron de forma gradual."
+          "prompt": "Say that in 1910 Díaz had been governing for more than thirty years.",
+          "answer": "En 1910 Díaz llevaba más de treinta años gobernando."
         }
+      ],
+      "teaches": [
+        "perifrasis-verbales"
       ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex16",
       "type": "structured-writing",
-      "category": "vocabulary",
-      "teaches": [
-        "b1-mexican-revolution-vocab"
-      ],
+      "category": "writing",
       "template": [
         {
-          "prompt": "Resume el legado de la Revolución mexicana.",
-          "answer": "El legado incluyó nuevos derechos y reformas, aunque también dejó conflictos y demandas pendientes."
+          "prompt": "Say that the oil was expropriated in 1938.",
+          "answer": "El petróleo fue expropiado en 1938."
         }
+      ],
+      "teaches": [
+        "ser-passive"
       ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex17",
       "type": "multiple-choice",
       "category": "vocabulary",
+      "question": "Which word belongs with Article 27 and the land?",
+      "options": [
+        "el subsuelo",
+        "el fraude",
+        "la emboscada"
+      ],
+      "correct": 0,
       "teaches": [
         "b1-mexican-revolution-vocab"
-      ],
-      "question": "¿Qué concepto se relaciona con los derechos establecidos por la Constitución?",
-      "options": [
-        "derecho laboral",
-        "oligarquía",
-        "caudillo"
-      ],
-      "correct": 0
+      ]
     },
     {
       "id": "b1-revolucionmexicana-consolidation.ex18",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
-          "speaker": "A",
-          "text": "¿Cómo debemos interpretar el legado revolucionario?"
+          "speaker": "Meg",
+          "text": "¿Qué hizo Cárdenas en 1938?"
         },
         {
-          "speaker": "B",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Analizando las reformas, los nuevos derechos y los problemas que continuaron.",
-        "Considerándolo un proceso completamente terminado.",
-        "Ignorando las consecuencias posteriores."
+        "Expropió el petróleo.",
+        "Proclamó el Plan de San Luis.",
+        "Proclamó el Plan de Ayala."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-mexican-revolution-vocab"
+      ]
     }
   ]
 }
