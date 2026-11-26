@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "bombardear",
-          "to bomb"
-        ],
-        [
-          "combatir",
-          "to fight, combat"
-        ],
-        [
           "la junta militar",
           "military junta"
         ],
         [
-          "la persecución",
-          "persecution"
+          "bombardear",
+          "to bomb"
+        ],
+        [
+          "el plebiscito",
+          "plebiscite"
+        ],
+        [
+          "la constitución",
+          "constitution"
         ]
       ],
       "teaches": [
@@ -33,20 +33,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "el opositor",
-          "opponent, dissident"
+          "el economista",
+          "economist"
         ],
         [
-          "la inestabilidad",
-          "instability"
+          "privatizar",
+          "to privatise"
         ],
         [
-          "controvertido",
-          "controversial"
+          "el palacio",
+          "palace"
         ],
         [
-          "el manejo",
-          "handling, management"
+          "la prensa",
+          "press"
         ]
       ],
       "teaches": [
@@ -57,11 +57,11 @@
       "id": "b1-gobiernosmilitares-03.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué ocurrió el 11 de septiembre de 1973 en Chile?",
+      "question": "Which building did the aircraft bomb on 11 September 1973?",
       "options": [
-        "Las fuerzas armadas, lideradas por Pinochet, bombardearon el palacio presidencial y derrocaron a Allende.",
-        "El presidente Allende ganó unas nuevas elecciones con amplia mayoría.",
-        "Chile firmó un tratado de defensa mutua con Argentina."
+        "El palacio de La Moneda.",
+        "El Congreso de Chile.",
+        "El palacio presidencial de Brasil."
       ],
       "correct": 0
     },
@@ -69,11 +69,11 @@
       "id": "b1-gobiernosmilitares-03.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué establecería Pinochet tras hacerse con el poder?",
+      "question": "Until when did Pinochet govern?",
       "options": [
-        "Una junta militar que gobernaría Chile durante diecisiete años, con un aparato represivo organizado.",
-        "Un gobierno civil de transición inmediata a la democracia.",
-        "Una monarquía constitucional bajo su propio liderazgo."
+        "Hasta marzo de 1990.",
+        "Hasta octubre de 1988.",
+        "Hasta septiembre de 1973."
       ],
       "correct": 0
     },
@@ -81,61 +81,62 @@
       "id": "b1-gobiernosmilitares-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "___ el bombardeo del palacio presidencial, Allende murió ese mismo día.",
-      "hint": "following",
-      "answer": "Tras",
+      "sentence": "Allende _____ ganado las elecciones de 1970.",
+      "answer": "había",
+      "english": "Allende had won the elections of 1970.",
       "teaches": [
-        "antes-despues-infinitive"
-      ],
-      "english": "Following the bombing of the presidential palace, Allende died that same day."
+        "pluscuamperfecto"
+      ]
     },
     {
       "id": "b1-gobiernosmilitares-03.ex05",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿A quién entregó el régimen el manejo de la economía?",
+      "category": "grammar",
+      "question": "Which sentence says \"The country had already gone through months of crisis\"?",
       "options": [
-        "A un grupo de economistas formados con Milton Friedman en la Universidad de Chicago, los \"Chicago Boys\".",
-        "A los propios sindicatos de trabajadores del país.",
-        "Al gobierno de Estados Unidos directamente."
+        "El país ya había pasado por meses de crisis.",
+        "El país ya ha pasado por meses de crisis.",
+        "El país ya habían pasado por meses de crisis."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "pluscuamperfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-perfecto"
+      }
     },
     {
       "id": "b1-gobiernosmilitares-03.ex06",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Tras",
-        "hacerse",
-        "con",
-        "el",
-        "poder,",
-        "Pinochet",
-        "estableció",
-        "una",
-        "junta",
-        "militar",
-        "muy",
-        "represiva."
+        "Los",
+        "Chicago",
+        "Boys",
+        "eran",
+        "economistas",
+        "que",
+        "habían",
+        "estudiado",
+        "en",
+        "Chicago."
       ],
       "solution": [
-        "Tras",
-        "hacerse",
-        "con",
-        "el",
-        "poder,",
-        "Pinochet",
-        "estableció",
-        "una",
-        "junta",
-        "militar",
-        "muy",
-        "represiva."
+        "Los",
+        "Chicago",
+        "Boys",
+        "eran",
+        "economistas",
+        "que",
+        "habían",
+        "estudiado",
+        "en",
+        "Chicago."
       ],
-      "english": "After seizing power, Pinochet established a very repressive military junta.",
+      "english": "The Chicago Boys were economists who had studied in Chicago.",
       "teaches": [
-        "antes-despues-infinitive"
+        "pluscuamperfecto"
       ]
     },
     {
@@ -144,18 +145,18 @@
       "category": "reading",
       "prompt": [
         {
-          "speaker": "Carolina",
-          "text": "¿Qué le ocurrió a Salvador Allende tras el bombardeo del palacio presidencial?"
+          "speaker": "Meg",
+          "text": "¿Qué pasó en La Moneda el 11 de septiembre de 1973?"
         },
         {
-          "speaker": "Fructuoso",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Murió ese mismo día dentro del edificio.",
-        "Sobrevivió al bombardeo y salió del país ese mismo día.",
-        "Murió años después, en el exilio."
+        "Los aviones bombardearon el palacio, y Allende murió ese día.",
+        "Allende entregó el palacio a Pinochet y salió del país.",
+        "Los aviones bombardearon el Congreso, y Pinochet murió ese día."
       ],
       "correct": 0
     },
@@ -163,11 +164,11 @@
       "id": "b1-gobiernosmilitares-03.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Los gobiernos democráticos chilenos posteriores mantendrían, en gran medida, el mismo modelo económico.",
+      "sentence": "El general Pinochet entregó el poder en marzo de 1990.",
       "options": [
-        "Later Chilean democratic governments would largely maintain the same economic model.",
-        "Every later Chilean government completely reversed the economic model.",
-        "No later Chilean government ever addressed economic policy again."
+        "General Pinochet handed over power in March 1990.",
+        "General Pinochet took power in March 1990.",
+        "General Pinochet handed over power in March 1973."
       ],
       "correct": 0,
       "teaches": [

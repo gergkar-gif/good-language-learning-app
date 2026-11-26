@@ -7,20 +7,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "acusar",
-          "to accuse"
-        ],
-        [
-          "restringir",
-          "to restrict"
-        ],
-        [
           "el decreto",
           "decree"
         ],
         [
-          "suspender",
-          "to suspend"
+          "la censura",
+          "censorship"
+        ],
+        [
+          "el milagro",
+          "miracle"
+        ],
+        [
+          "la amnistía",
+          "amnesty"
         ]
       ],
       "teaches": [
@@ -33,20 +33,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "la censura",
-          "censorship"
+          "disolver",
+          "to dissolve"
         ],
         [
-          "atraer",
-          "to attract"
+          "la protesta",
+          "protest"
+        ],
+        [
+          "la obra pública",
+          "public works"
         ],
         [
           "la apertura",
           "opening"
-        ],
-        [
-          "la amnistía",
-          "amnesty"
         ]
       ],
       "teaches": [
@@ -57,11 +57,11 @@
       "id": "b1-gobiernosmilitares-02.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué ocurrió el 31 de marzo de 1964 en Brasil?",
+      "question": "What happened to the political parties in Brazil in 1965?",
       "options": [
-        "Una sublevación militar derrocó al presidente reformista João Goulart.",
-        "El presidente Goulart ganó unas elecciones con amplia mayoría.",
-        "Brasil firmó un tratado de paz permanente con sus países vecinos."
+        "Fueron disueltos, y después se permitieron dos partidos.",
+        "Fueron elegidos, y después se permitieron muchos más.",
+        "Fueron cerrados durante varios meses, como el Congreso."
       ],
       "correct": 0
     },
@@ -69,11 +69,11 @@
       "id": "b1-gobiernosmilitares-02.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué hizo el Acto Institucional número cinco de 1968?",
+      "question": "What was the period of fast economic growth called?",
       "options": [
-        "Cerró el Congreso, impuso la censura previa a periódicos y teatros, y generalizó la tortura de presos políticos.",
-        "Restauró inmediatamente todas las libertades políticas del país.",
-        "Convocó nuevas elecciones presidenciales libres."
+        "El milagro económico.",
+        "La apertura política.",
+        "El decreto de diciembre."
       ],
       "correct": 0
     },
@@ -81,25 +81,27 @@
       "id": "b1-gobiernosmilitares-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La censura se intensificó ___ tal manera que hasta las canciones debían pasar por revisión oficial.",
-      "hint": "to such an extent that",
-      "answer": "de",
+      "sentence": "El presidente João Goulart _____ derrocado por los militares en 1964.",
+      "answer": "fue",
+      "english": "President João Goulart was overthrown by the military in 1964.",
       "teaches": [
-        "porque-y-por-eso"
-      ],
-      "english": "Censorship intensified to such an extent that even songs had to undergo official review."
+        "ser-passive"
+      ]
     },
     {
       "id": "b1-gobiernosmilitares-02.ex05",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué ocurrió con la economía brasileña entre 1968 y 1973?",
+      "category": "grammar",
+      "question": "Which sentence says \"Congress was closed for several months\"?",
       "options": [
-        "Creció a más del diez por ciento anual, el \"milagro económico brasileño\".",
-        "Entró en una profunda recesión sin ningún crecimiento.",
-        "Permaneció completamente estancada durante todo el periodo."
+        "El Congreso fue cerrado durante varios meses.",
+        "El Congreso fueron cerrado durante varios meses.",
+        "El Congreso fue cerrada durante varios meses."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "ser-passive"
+      ]
     },
     {
       "id": "b1-gobiernosmilitares-02.ex06",
@@ -107,47 +109,29 @@
       "category": "grammar",
       "tiles": [
         "El",
-        "proceso",
-        "de",
-        "apertura",
-        "avanzó",
-        "de",
-        "tal",
-        "manera",
-        "que",
+        "primer",
+        "presidente",
+        "militar",
+        "fue",
+        "elegido",
+        "por",
         "el",
-        "país",
-        "regresó",
-        "a",
-        "un",
-        "gobierno",
-        "civil",
-        "en",
-        "1985."
+        "Congreso."
       ],
       "solution": [
         "El",
-        "proceso",
-        "de",
-        "apertura",
-        "avanzó",
-        "de",
-        "tal",
-        "manera",
-        "que",
+        "primer",
+        "presidente",
+        "militar",
+        "fue",
+        "elegido",
+        "por",
         "el",
-        "país",
-        "regresó",
-        "a",
-        "un",
-        "gobierno",
-        "civil",
-        "en",
-        "1985."
+        "Congreso."
       ],
-      "english": "The opening process advanced in such a way that the country returned to civilian government in 1985.",
+      "english": "The first military president was elected by Congress.",
       "teaches": [
-        "porque-y-por-eso"
+        "ser-passive"
       ]
     },
     {
@@ -156,18 +140,18 @@
       "category": "reading",
       "prompt": [
         {
-          "speaker": "Carolina",
-          "text": "¿Cuándo regresó Brasil a un gobierno civil?"
+          "speaker": "Meg",
+          "text": "¿Qué pasó con la economía entre fines de los años sesenta y principios de los setenta?"
         },
         {
-          "speaker": "Fructuoso",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "En 1985, tras la ley de amnistía de 1979 y con la asunción de José Sarney.",
-        "Inmediatamente después del golpe de 1964, sin ninguna demora.",
-        "Nunca regresó a un gobierno civil."
+        "Creció mucho, aunque, según muchos analistas, la desigualdad también aumentó.",
+        "Cayó mucho, y por eso la desigualdad bajó en todo el país.",
+        "Creció poco, y el gobierno dejó de construir obras públicas."
       ],
       "correct": 0
     },
@@ -175,11 +159,11 @@
       "id": "b1-gobiernosmilitares-02.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Una ley de amnistía en 1979 abrió el camino hacia el regreso de Brasil a un gobierno civil en 1985.",
+      "sentence": "En 1985 el poder pasó a un presidente civil.",
       "options": [
-        "An amnesty law in 1979 opened the path toward Brazil's return to civilian government in 1985.",
-        "No amnesty law was ever passed in Brazil during this period.",
-        "The military government refused to allow any transition to civilian rule."
+        "In 1985 power passed to a civilian president.",
+        "In 1985 power passed to a military president.",
+        "In 1964 power passed to a civilian president."
       ],
       "correct": 0,
       "teaches": [
