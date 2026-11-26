@@ -2418,3 +2418,12 @@ drafted by Antigravity from `notes/README.md`; read those notes as part of the u
 - The reviewer's read again found what no check does: an invented reason (José Bonaparte "not
   elected"), the narrator moralising, a wrong federation name, a target stating a fact not in the text.
 - Short texts (148–180 words) from one agent: the brief now sets a floor of 200.
+
+### 2026-11-26: ES B1 latam Units 13–18
+
+- **Fewest reviewer edits so far** (two in six units): the corrections fed back into the brief after
+  batches 1–6 and 7–12 (past-sequence subjunctive, vocab slug, text floor, challenge-draft unmet check)
+  were all followed. ~104k and ~132k a unit.
+- The reviewer's read still found one dated-fact slip (the PRI "until 2000"); keep reading every text.
+- `check_unit_refs.py` disagrees with the knowledge sheets on where *por un lado… por otro lado* is
+  first taught (B1 Unit 23 vs A2 Unit 28); agents left the recap unnumbered. Open for the level checklist.
