@@ -12,3 +12,8 @@ women (1951), the School of the Americas' move (1984), Cuba's OAS suspension (19
 | Argentina: Law 13.010 (September 1947); women's first national vote 11 November 1951 | true | iprofesional.com; argentina.gob.ar (AGN, Carolina Barry) |
 | School of the Americas: Canal Zone 1946, closed there September 1984 under the 1977 treaty, reopened at Fort Benning December 1984 | true | CRS report (irp.fas.org/crs/soa.htm) |
 | Cuba suspended from the OAS, Punta del Este, January 1962 | standard, not re-searched | — |
+
+## Read during the wait (Units 19–21 texts, 2026-11-26, after the second limit reset)
+
+All claims checked against standard dates; fix on apply: 21-05 "fue capturado por el ejército
+boliviano y murió" → executed the next day (9 October 1967).
