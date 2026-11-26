@@ -341,23 +341,22 @@ body, .nav, .page-header, .wp-sheet, .lsn-option, .gd-option, .vspeed-stat {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  width: 100%;
-  padding: 6px 4px;
+  width: auto;
+  padding: 4px 0;
   border-radius: var(--radius-sm);
   background: none;
-  border: 1px solid transparent;
-  color: var(--muted);
+  border: none;
+  color: var(--secondary);
   font-size: 13px;
+  font-weight: 500;
   cursor: pointer;
-  margin-top: 6px;
-  transition: color var(--dur-fast) var(--ease-standard),
-              border-color var(--dur-fast) var(--ease-standard);
+  transition: color var(--dur-fast) var(--ease-standard);
 }
 
 @media (hover: hover) {
   .nav-theme-btn:hover {
-  color: var(--text);
-}
+    color: var(--text);
+  }
 }
 
 .theme-toggle-btn .theme-toggle-icon,

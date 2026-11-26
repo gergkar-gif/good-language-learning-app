@@ -4658,15 +4658,15 @@
 /* ==== The Composed Room overhaul (folded in from overhaul.css, 2026-09-30) ==== */
 
 /* OVERHAUL — "The Composed Room" */
-.nav button.active .nv-acc { fill: var(--accent); transform: translate(2px, -2px); }
+.nav-items button.active .nv-acc { fill: var(--accent); transform: translate(2px, -2px); }
 @media (hover: hover) {
-  .nav button:hover .nv-acc { fill: var(--accent); transform: translate(2px, -2px); }
+  .nav-items button:hover .nv-acc { fill: var(--accent); transform: translate(2px, -2px); }
 }
-.nav button.active .nv-accline { stroke: var(--accent); }
+.nav-items button.active .nv-accline { stroke: var(--accent); }
 @media (hover: hover) {
-  .nav button:hover .nv-accline { stroke: var(--accent); }
+  .nav-items button:hover .nv-accline { stroke: var(--accent); }
 }
-.nav button.active { color: var(--text); }
+.nav-items button.active { color: var(--text); }
 @media (max-width: 1023px) {
   .nav {
     position: fixed;
@@ -4682,7 +4682,7 @@
     border-top: 3px solid var(--primary);
     background: var(--bg);
   }
-  .nav button {
+  .nav-items button {
     justify-content: center;
     gap: 6px;
     padding: 0 1px;
@@ -4690,8 +4690,8 @@
     font-weight: 600;
     color: var(--secondary);
   }
-  .nav button .nav-icon { width: 30px; height: 30px; }
-  .nav button::after {
+  .nav-items button .nav-icon { width: 30px; height: 30px; }
+  .nav-items button::after {
     top: -3px;
     bottom: auto;
     left: 0;
@@ -4700,18 +4700,18 @@
     background: var(--accent);
     transform: scaleX(0);
   }
-  .nav button.active::after { transform: scaleX(1); }
+  .nav-items button.active::after { transform: scaleX(1); }
 }
 @media (min-width: 640px) and (max-width: 1023px) {
   .nav { max-width: 680px; }
 }
 @media (min-width: 1024px) {
   .nav { border-right: 3px solid var(--primary); }
-  .nav button { font-weight: 500; color: var(--secondary); }
-  .nav button .nav-icon { width: 26px; height: 26px; }
-  .nav button:hover { background: none; color: var(--text); }
-  .nav button.active { background: none; color: var(--text); font-weight: 600; }
-  .nav button::after {
+  .nav-items button { font-weight: 500; color: var(--secondary); }
+  .nav-items button .nav-icon { width: 26px; height: 26px; }
+  .nav-items button:hover { background: none; color: var(--text); }
+  .nav-items button.active { background: none; color: var(--text); font-weight: 600; }
+  .nav-items button::after {
     left: 0;
     top: 0;
     bottom: 0;
@@ -4721,7 +4721,7 @@
     background: var(--accent);
     transform: scaleY(0);
   }
-  .nav button.active::after { transform: scaleY(1); }
+  .nav-items button.active::after { transform: scaleY(1); }
 }
 .ud-grammar-guide-row .icon { width: 20px; height: 20px; color: var(--muted); }
 
@@ -5212,9 +5212,9 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
   .pl-note { border-top: 1.5px solid var(--primary); }
   .nav { border-top-width: 1px; }
   .nav-items { height: 62px; }
-  .nav button { font-weight: 500; font-size: 10.5px; gap: 4px; }
-  .nav button .nav-icon { width: 26px; height: 26px; }
-  .nav button::after { top: -1px; height: 2px; }
+  .nav-items button { font-weight: 500; font-size: 10.5px; gap: 4px; }
+  .nav-items button .nav-icon { width: 26px; height: 26px; }
+  .nav-items button::after { top: -1px; height: 2px; }
   .content { padding-bottom: calc(62px + 24px + env(safe-area-inset-bottom, 0px)); }
   .br-flag-btn { bottom: calc(62px + 1px + 16px + env(safe-area-inset-bottom, 0px)); }
   .nv-accline { stroke-width: 1.6; }
