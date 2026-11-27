@@ -115,7 +115,7 @@ const Workshop = (function () {
             title: 'Spanish CCSE Exam',
             sub: 'Prueba CCSE · Conocimientos Constitucionales y Socioculturales de España (Instituto Cervantes). 5 tareas, 25 preguntas y simulacros.',
             containerId: 'es-ccse-exam-root',
-            langs: ['es-es'],
+            langs: ['es', 'es-es', 'es-latam'],
             category: 'exams',
             level: 'A2'
         },
@@ -162,8 +162,8 @@ const Workshop = (function () {
         {
             id: 'hu-ecl-a1-exam',
             icon: 'hu-ecl-exam',
-            title: 'ECL A1 Exam Prep',
-            sub: 'ECL A1 nyelvvizsga · Pécsi Tudományegyetem. Olvasásértés, hallásértés, írásbeli és szóbeli készségek feladatonként.',
+            title: 'A1 Pre-ECL Exam Prep',
+            sub: 'A1 szintű gyakorlóvizsga (a hivatalos ECL nyelvvizsga A2 szinttől indul). Olvasásértés, hallásértés, írásbeli és szóbeli készségek.',
             containerId: 'hu-ecl-a1-exam-root',
             langs: ['hu'],
             category: 'exams',

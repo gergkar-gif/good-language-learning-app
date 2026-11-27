@@ -9,7 +9,7 @@
     "reading": {
       "id": "reading",
       "name": "Olvasásértés",
-      "officialTimeMinutes": 45,
+      "officialTimeMinutes": 35,
       "maxPoints": 25,
       "tareas": [
         {
@@ -140,7 +140,7 @@
     "listening": {
       "id": "listening",
       "name": "Hallásértés",
-      "officialTimeMinutes": 35,
+      "officialTimeMinutes": 30,
       "maxPoints": 25,
       "tareas": [
         {
@@ -377,7 +377,7 @@
     "writing": {
       "id": "writing",
       "name": "Írásbeli kommunikáció",
-      "officialTimeMinutes": 45,
+      "officialTimeMinutes": 50,
       "maxPoints": 25,
       "tareas": [
         {
@@ -415,7 +415,7 @@
     "speaking": {
       "id": "speaking",
       "name": "Szóbeli kommunikáció",
-      "officialTimeMinutes": 15,
+      "officialTimeMinutes": 20,
       "maxPoints": 25,
       "tareas": [
         {
@@ -433,11 +433,16 @@
           "id": "hu-speaking-t2",
           "tareaNum": 2,
           "title": "2. rész: Képleírás és önálló témakifejtés",
-          "prompt": "Képzelj el egy fotót: Egy forgalmas, modern belvárosi sétálóutca kávézókkal, valamint összehasonlításként egy csendes vidéki falu zöld kerttel.\n\nSzempontok:\n- Hasonlítsd össze a nagyvárosi és a falusi élet előnyeit és hátrányait!\n- Te hol élsz most, és hol szeretnél élni a jövőben? Miért?",
+          "prompt": "Nézd meg az alábbi összehasonlító képet: Egy forgalmas, modern belvárosi sétálóutca kávézókkal, valamint összehasonlításként egy csendes vidéki falu zöld kerttel.\n\nSzempontok:\n- Hasonlítsd össze a nagyvárosi és a falusi élet előnyeit és hátrányait!\n- Te hol élsz most, és hol szeretnél élni a jövőben? Miért?",
           "bulletPoints": [
             "Város és falu összehasonlítása",
             "Saját lakóhely és jövőbeli tervek indoklással"
-          ]
+          ],
+          "visualStimulus": {
+            "type": "scene",
+            "sceneId": "city-vs-village",
+            "caption": "Összehasonlító képkártya · Forgalmas belváros vs. csendes vidéki falu"
+          }
         }
       ]
     }
@@ -446,20 +451,20 @@
     "title": "Stratégiák és tippek az ECL B1 vizsgához",
     "structure": [
       {
-        "prueba": "Olvasásértés (45 perc · 2 feladat)",
+        "prueba": "Olvasásértés (35 perc · 2 feladat)",
         "tip": "Először olvasd át a teljes szöveget vázlatosan a fő gondolat megértéséért. A mondatbeillesztésnél figyelj a névmásokra és a kötőszavakra a kihagyott mondat helye előtt és után."
       },
       {
-        "prueba": "Hallásértés (35 perc · 2 feladat)",
+        "prueba": "Hallásértés (30 perc · 2 feladat)",
         "tip": "Használd ki a 30 másodperces előzetes időt a kérdések átolvasására. Az első hallgatáskor a lényeget ragadd meg, a másodiknál ellenőrizd a részleteket."
       },
       {
-        "prueba": "Írásbeli kommunikáció (45 perc · 2 feladat)",
-        "tip": "Minden megadott irányítási szempontot érints. Ügyelj a szószám betartására (100–120 szó), és hagyj pár percet az igeragozás és a toldalékok ellenőrzésére."
+        "prueba": "Írásbeli kommunikáció (50 perc · 2 feladat)",
+        "tip": "Minden megadott irányítási szempontot érints. Ügyelj a szószám betartására (100–120 szó), és hagyj pár percet az igeragozás és a toldalékok ellenőrzésére. A hivatalos ECL írásbeli vizsgán nyomtatott egy- vagy kétnyelvű szótár használható."
       },
       {
-        "prueba": "Szóbeli kommunikáció (15 perc)",
-        "tip": "Ne tanulj be merev szövegeket kívülről; törekedj a természetes kommunikációra. Ha nem értettél valamit, bátran kérdezz vissza udvariasan."
+        "prueba": "Szóbeli kommunikáció (20 perc)",
+        "tip": "Ne tanulj be merev szövegeket kívülről; törekedj a természetes kommunikációra. Ha nem értettél valamit, bátran kérdezz vissza udvariasan. A hivatalos ECL szóbeli vizsga párban zajlik egy másik vizsgázóval közösen."
       }
     ],
     "connectors": [

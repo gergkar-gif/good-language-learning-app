@@ -9,7 +9,7 @@
     "reading": {
       "id": "reading",
       "name": "Olvasásértés",
-      "officialTimeMinutes": 40,
+      "officialTimeMinutes": 35,
       "maxPoints": 25,
       "tareas": [
         {
@@ -451,7 +451,7 @@
     "writing": {
       "id": "writing",
       "name": "Írásbeli kommunikáció",
-      "officialTimeMinutes": 40,
+      "officialTimeMinutes": 45,
       "maxPoints": 25,
       "tareas": [
         {
@@ -505,7 +505,7 @@
     "speaking": {
       "id": "speaking",
       "name": "Szóbeli kommunikáció",
-      "officialTimeMinutes": 15,
+      "officialTimeMinutes": 20,
       "maxPoints": 25,
       "tareas": [
         {
@@ -528,12 +528,17 @@
           "title": "2. rész: Képleírás és szituációs feladat (3-4 perc)",
           "prepSeconds": 45,
           "speakSeconds": 150,
-          "prompt": "Képzelj el egy fényképet: 'Egy négyfős baráti társaság piknikezik egy füves, virágos parkban egy nagy fa árnyékában egy kellemes tavaszi délutánon'.\n\nSzempontok:\n- Kik láthatók a képen, milyen ruhát viselnek és mit csinálnak?\n- Milyen ételek, italok és tárgyak vannak a pokrócon?\n- Milyen az időjárás, a hangulat és a környezet?",
+          "prompt": "Nézd meg a következő fényképet: 'Egy négyfős baráti társaság piknikezik egy füves, virágos parkban egy nagy fa árnyékában egy kellemes tavaszi délutánon'.\n\nSzempontok:\n- Kik láthatók a képen, milyen ruhát viselnek és mit csinálnak?\n- Milyen ételek, italok és tárgyak vannak a pokrócon?\n- Milyen az időjárás, a hangulat és a környezet?",
           "bulletPoints": [
             "Személyek leírása, öltözet és cselekvések",
             "Ételek, italok és tárgyak a pokrócon",
             "Környezet, időjárás és általános hangulat"
-          ]
+          ],
+          "visualStimulus": {
+            "type": "scene",
+            "sceneId": "park-picnic",
+            "caption": "Képkártya · Négyfős baráti társaság piknikezik egy tavaszi parkban"
+          }
         }
       ]
     }
@@ -542,7 +547,7 @@
     "title": "ECL A2 Nyelvvizsga-stratégiák és felkészülési tanácsok",
     "structure": [
       {
-        "prueba": "1. rész: Olvasásértés (40 perc · 2 feladat · 25 pont)",
+        "prueba": "1. rész: Olvasásértés (35 perc · 2 feladat · 25 pont)",
         "tip": "Először fusd át a kérdéseket és kulcsszavakat, mielőtt elolvasod a teljes szöveget. Az 1. feladatban (hirdetések) figyeld meg az apró részleteket (nyitvatartás, helyszín, feltételek). A 2. feladatban keresd meg a szövegbeli bizonyítékot a válaszodhoz."
       },
       {
@@ -550,34 +555,62 @@
         "tip": "Használd ki az előzetes olvasási időt az opciók megértésére. Az első hallgatás során a lényegre és a szituációra összpontosíts; a második hallgatáskor ellenőrizd a konkrét adatokat és zárd ki a megtévesztő válaszokat."
       },
       {
-        "prueba": "3. rész: Írásbeli kommunikáció (40 perc · 2 feladat · 25 pont)",
-        "tip": "Írj egyszerű, de világos mondatokat. Válaszolj valamennyi megadott szempontra. Tartsd be a szószámot (1. feladat: 50–65 szó, 2. feladat: 60–80 szó), és hagyj pár percet az igeragok, toldalékok és helyesírás ellenőrzésére."
+        "prueba": "3. rész: Írásbeli kommunikáció (45 perc · 2 feladat · 25 pont)",
+        "tip": "Írj egyszerű, de világos mondatokat. Válaszolj valamennyi megadott szempontra. Tartsd be a szószámot (1. feladat: 50–65 szó, 2. feladat: 60–80 szó), és hagyj pár percet az igeragok, toldalékok és helyesírás ellenőrzésére. A hivatalos ECL írásbeli vizsgán nyomtatott egy- vagy kétnyelvű szótár használható."
       },
       {
-        "prueba": "4. rész: Szóbeli kommunikáció (15 perc · 2 feladat · 25 pont)",
-        "tip": "Beszélj érthetően és természetesen. Használj kötőszavakat mondataid összekapcsolására. Ha nem értesz egy kérdést, nyugodtan kérdezz vissza udvariasan: 'Megismételné kérem a kérdést?'"
+        "prueba": "4. rész: Szóbeli kommunikáció (20 perc · 2 feladat · 25 pont)",
+        "tip": "Beszélj érthetően és természetesen. Használj kötőszavakat mondataid összekapcsolására. Ha nem értesz egy kérdést, nyugodtan kérdezz vissza udvariasan: 'Megismételné kérem a kérdést?' A hivatalos ECL szóbeli vizsga párban zajlik egy másik vizsgázóval közösen."
       }
     ],
     "connectors": [
       {
         "category": "Időbeli kifejezések és sorrend",
-        "examples": ["először", "aztán", "később", "végül", "amikor", "után"]
+        "examples": [
+          "először",
+          "aztán",
+          "később",
+          "végül",
+          "amikor",
+          "után"
+        ]
       },
       {
         "category": "Ok és magyarázat",
-        "examples": ["mert", "ezért", "mivel"]
+        "examples": [
+          "mert",
+          "ezért",
+          "mivel"
+        ]
       },
       {
         "category": "Ellentét és kapcsolat",
-        "examples": ["és", "de", "azonban", "is", "szintén"]
+        "examples": [
+          "és",
+          "de",
+          "azonban",
+          "is",
+          "szintén"
+        ]
       },
       {
         "category": "Vélemény kifejezése",
-        "examples": ["szerintem", "úgy gondolom", "véleményem szerint", "nekem tetszik"]
+        "examples": [
+          "szerintem",
+          "úgy gondolom",
+          "véleményem szerint",
+          "nekem tetszik"
+        ]
       },
       {
         "category": "Megszólítások és elköszönések",
-        "examples": ["Kedves...", "Szia!", "Köszönöm szépen", "Üdvözlettel", "Viszlát!"]
+        "examples": [
+          "Kedves...",
+          "Szia!",
+          "Köszönöm szépen",
+          "Üdvözlettel",
+          "Viszlát!"
+        ]
       }
     ]
   }

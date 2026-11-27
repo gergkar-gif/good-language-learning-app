@@ -1,9 +1,9 @@
 {
   "id": "hu-ecl-a1-exam",
-  "board": "Pécsi Tudományegyetem / Nemzetközi ECL Központ",
+  "board": "Európai Közös Referenciakeret (KER) · ECL előkészítő gyakorlóvizsga",
   "level": "A1",
-  "title": "ECL A1 Nyelvvizsga",
-  "subtitle": "Európai Közös Referenciakeret (KER) · A1 szintű komplex nyelvvizsga-felkészítő",
+  "title": "A1 Nyelvvizsga-előkészítő (Pre-ECL)",
+  "subtitle": "A1 szintű gyakorlóvizsga · A hivatalos ECL nyelvvizsga A2 szinttől indul",
   "passingScorePercentage": 60,
   "skills": {
     "reading": {
@@ -466,18 +466,23 @@
           "id": "hu-speaking-t2",
           "tareaNum": 2,
           "title": "2. rész: Képleírás és mindennapi szokások",
-          "prompt": "Képzelj el egy fényképet: Egy baráti társaság ül egy hangulatos kávézó teraszán napsütésben, és kávét isznak süteménnyel.\n\nSzempontok:\n- Mit látsz a képen, milyen az időjárás?\n- Mit csinálnak az emberek a képen?\n- Te hol és mikor szoktál találkozni a barátaiddal?",
+          "prompt": "Nézd meg a következő fényképet: Egy baráti társaság ül egy hangulatos kávézó teraszán napsütésben, és kávét isznak süteménnyel.\n\nSzempontok:\n- Mit látsz a képen, milyen az időjárás?\n- Mit csinálnak az emberek a képen?\n- Te hol és mikor szoktál találkozni a barátaiddal?",
           "bulletPoints": [
             "Kép leírása és környezet",
             "Tevékenységek a képen",
             "Saját szokások és szabadidős programok"
-          ]
+          ],
+          "visualStimulus": {
+            "type": "scene",
+            "sceneId": "cafe-terrace",
+            "caption": "Képkártya · Baráti társaság egy napsütéses kávézó teraszán"
+          }
         }
       ]
     }
   },
   "strategies": {
-    "title": "Stratégiák és tippek az ECL A1 vizsgához",
+    "title": "Stratégiák és tippek az A1 gyakorlóvizsgához (Pre-ECL)",
     "structure": [
       {
         "prueba": "Olvasásértés (35 perc · 2 feladat)",
@@ -499,19 +504,39 @@
     "connectors": [
       {
         "category": "Gondolatok összekötése",
-        "examples": ["és", "is", "szintén"]
+        "examples": [
+          "és",
+          "is",
+          "szintén"
+        ]
       },
       {
         "category": "Ellentét és magyarázat",
-        "examples": ["de", "viszont", "mert", "ezért"]
+        "examples": [
+          "de",
+          "viszont",
+          "mert",
+          "ezért"
+        ]
       },
       {
         "category": "Köszönések és elköszönések",
-        "examples": ["Szia!", "Sziasztok!", "Jó napot kívánok!", "Viszontlátásra!", "Szép napot!"]
+        "examples": [
+          "Szia!",
+          "Sziasztok!",
+          "Jó napot kívánok!",
+          "Viszontlátásra!",
+          "Szép napot!"
+        ]
       },
       {
         "category": "Udvariassági kifejezések",
-        "examples": ["Köszönöm szépen", "Szívesen", "Kérem", "Elnézést"]
+        "examples": [
+          "Köszönöm szépen",
+          "Szívesen",
+          "Kérem",
+          "Elnézést"
+        ]
       }
     ]
   }

@@ -1,9 +1,10 @@
 {
   "id": "hu-cultural-exam",
   "title": "Magyar kulturális ismereti vizsga",
-  "subtitle": "Hungarian Cultural Knowledge & Citizenship Exam Prep",
+  "subtitle": "Hungarian Cultural Knowledge Exam (Permanent Residence · BFKH)",
   "passThresholdPoints": 16,
   "maxPoints": 30,
+  "officialDurationMinutes": 60,
   "categories": [
     {
       "id": "symbols-holidays",
@@ -1018,13 +1019,13 @@
           "category": "symbols-holidays",
           "points": 2,
           "question": "1. [Jelképek – 2 pont] Ki írta a Himnusz szövegét 1823-ban, és ki zenésítette meg 1844-ben?",
-          "options": [
-            "Vörösmarty Mihály írta, és Egressy Béni zenésítette meg",
-            "Petőfi Sándor írta, és Liszt Ferenc zenésítette meg",
-            "Kölcsey Ferenc írta, és Erkel Ferenc zenésítette meg",
-            "Arany János írta, és Bartók Béla zenésítette meg"
+          "type": "short-answer",
+          "requiredKeywords": [
+            "kölcsey",
+            "erkel"
           ],
-          "correct": 2
+          "modelAnswer": "Kölcsey Ferenc (szöveg), Erkel Ferenc (zene)",
+          "placeholder": "Pl.: Kölcsey Ferenc, Erkel Ferenc"
         },
         {
           "category": "symbols-holidays",
@@ -1065,14 +1066,14 @@
         {
           "category": "literature-music",
           "points": 3,
-          "question": "5. [Európai irodalom – 3 pont] Melyik európai író–mű párosítás hibátlan a vizsgakövetelmények alapján?",
-          "options": [
-            "Shakespeare: Faust; Dickens: Anyegin; Puskin: Hamlet",
-            "Voltaire: Twist Olivér; Molière: Iliász; Tolsztoj: Candide",
-            "Homérosz: Odüsszeia; Goethe: Faust; Tolsztoj: Háború és béke",
-            "Goethe: Anna Karenina; Homérosz: Rómeó és Júlia; Dickens: Faust"
+          "question": "5. [Európai irodalom – 3 pont] Nevezze meg, ki írta a Faust című művet és ki írta a Háború és béke című regényt!",
+          "type": "short-answer",
+          "requiredKeywords": [
+            "goethe",
+            "tolsztoj"
           ],
-          "correct": 2
+          "modelAnswer": "Johann Wolfgang von Goethe (Faust), Lev Tolsztoj (Háború és béke)",
+          "placeholder": "Pl.: Goethe, Tolsztoj"
         },
         {
           "category": "literature-music",
@@ -1169,13 +1170,14 @@
           "category": "symbols-holidays",
           "points": 2,
           "question": "1. [Jelképek – 2 pont] Mit jelképeznek a magyar zászló színei (piros, fehér, zöld)?",
-          "options": [
-            "Piros: tűz, fehér: hó, zöld: erdő",
-            "Piros: szabadság, fehér: egyenlőség, zöld: testvériség",
-            "Piros: múlt, fehér: jelen, zöld: jövő",
-            "Piros: erő, fehér: hűség, zöld: remény"
+          "type": "short-answer",
+          "requiredKeywords": [
+            "erő",
+            "hűség",
+            "remény"
           ],
-          "correct": 3
+          "modelAnswer": "Piros: erő, fehér: hűség, zöld: remény",
+          "placeholder": "Pl.: erő, hűség, remény"
         },
         {
           "category": "symbols-holidays",
@@ -1217,13 +1219,13 @@
           "category": "literature-music",
           "points": 3,
           "question": "5. [Európai és magyar zene – 3 pont] Melyik zeneszerző alkotása A varázsfuvola, és melyik zeneszerző IX. szimfóniája (Örömóda) lett az Európai Unió himnusza?",
-          "options": [
-            "Bach alkotása A varázsfuvola, és Mozart IX. szimfóniája az EU himnusza",
-            "Liszt alkotása A varázsfuvola, és Bartók IX. szimfóniája az EU himnusza",
-            "Beethoven alkotása A varázsfuvola, és Bach IX. szimfóniája az EU himnusza",
-            "Mozart alkotása A varázsfuvola, és Beethoven IX. szimfóniája az EU himnusza"
+          "type": "short-answer",
+          "requiredKeywords": [
+            "mozart",
+            "beethoven"
           ],
-          "correct": 3
+          "modelAnswer": "Wolfgang Amadeus Mozart (A varázsfuvola), Ludwig van Beethoven (IX. szimfónia)",
+          "placeholder": "Pl.: Mozart, Beethoven"
         },
         {
           "category": "literature-music",
@@ -1320,13 +1322,15 @@
           "category": "symbols-holidays",
           "points": 2,
           "question": "1. [Jelképek – 2 pont] Melyik négy folyót jelképezi a magyar címer jobb oldalán látható négy ezüst sáv?",
-          "options": [
-            "Duna, Tisza, Dráva, Száva",
-            "Duna, Rajna, Elba, Odera",
-            "Tisza, Maros, Körös, Szamos",
-            "Duna, Rába, Ipoly, Zala"
+          "type": "short-answer",
+          "requiredKeywords": [
+            "duna",
+            "tisza",
+            "dráva",
+            "száva"
           ],
-          "correct": 0
+          "modelAnswer": "Duna, Tisza, Dráva, Száva",
+          "placeholder": "Pl.: Duna, Tisza, Dráva, Száva"
         },
         {
           "category": "symbols-holidays",
@@ -1368,13 +1372,13 @@
           "category": "literature-music",
           "points": 3,
           "question": "5. [Európai irodalom – 3 pont] Melyik angol író alkotása a Twist Olivér és a Karácsonyi ének, illetve melyik angol drámaíró műve a Hamlet?",
-          "options": [
-            "Charles Dickens írta a Twist Olivért, és William Shakespeare írta a Hamletet",
-            "Voltaire írta a Twist Olivért, és Molière írta a Hamletet",
-            "Goethe írta a Twist Olivért, és Homérosz írta a Hamletet",
-            "Puskin írta a Twist Olivért, és Tolsztoj írta a Hamletet"
+          "type": "short-answer",
+          "requiredKeywords": [
+            "dickens",
+            "shakespeare"
           ],
-          "correct": 0
+          "modelAnswer": "Charles Dickens (Twist Olivér), William Shakespeare (Hamlet)",
+          "placeholder": "Pl.: Dickens, Shakespeare"
         },
         {
           "category": "literature-music",

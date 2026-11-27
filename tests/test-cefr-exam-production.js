@@ -26,4 +26,43 @@ const genuine = 'Hola Marta:\n¿Qué tal estás? Te escribo porque el fin de sem
 const g = h.writing(genuine, wt);
 assert(g.totalScore >= 15, 'genuine writing scores well, got ' + g.totalScore + ' ' + JSON.stringify(g.criteria));
 
-console.log('All CEFR exam production checks passed. (genuine: ' + g.totalScore + '/25)');
+// Official pass-rule checks: DELE 2-group (30/50 per group) & ECL 4-module (60% per module)
+const deleFailGroup2 = h.evaluatePass({
+    reading: { t1: { score: 10, maxScore: 10 } },
+    writing: { t1: { score: 25, maxScore: 25 } },
+    listening: { t1: { score: 4, maxScore: 10 } },
+    speaking: { t1: { score: 10, maxScore: 25 } }
+});
+assert.strictEqual(deleFailGroup2.mode, 'dele-groups');
+assert.strictEqual(deleFailGroup2.group1.passed, true, 'DELE Group 1 (50/50) passes');
+assert.strictEqual(deleFailGroup2.group2.passed, false, 'DELE Group 2 (20/50) fails');
+assert.strictEqual(deleFailGroup2.status, 'fail', 'DELE fails overall even when 4-skill avg is 70%');
+
+const delePassBoth = h.evaluatePass({
+    reading: { t1: { score: 8, maxScore: 10 } },
+    writing: { t1: { score: 12, maxScore: 25 } }, // 20 + 12 = 32/50
+    listening: { t1: { score: 6, maxScore: 10 } },
+    speaking: { t1: { score: 15, maxScore: 25 } } // 15 + 15 = 30/50
+});
+assert.strictEqual(delePassBoth.status, 'pass', 'DELE passes when both groups >= 30/50');
+
+const eclH = CefrExam.EclB1Exam._testHooks;
+const eclFailOneMod = eclH.evaluatePass({
+    reading: { t1: { score: 10, maxScore: 10 } },
+    writing: { t1: { score: 25, maxScore: 25 } },
+    listening: { t1: { score: 10, maxScore: 10 } },
+    speaking: { t1: { score: 13, maxScore: 25 } } // 52% < 60%
+});
+assert.strictEqual(eclFailOneMod.mode, 'ecl-modular');
+assert.strictEqual(eclFailOneMod.passedModules, 3);
+assert.strictEqual(eclFailOneMod.status, 'fail', 'ECL fails complex pass when one module is below 60%');
+
+const eclPassAll = eclH.evaluatePass({
+    reading: { t1: { score: 6, maxScore: 10 } },
+    writing: { t1: { score: 15, maxScore: 25 } },
+    listening: { t1: { score: 6, maxScore: 10 } },
+    speaking: { t1: { score: 15, maxScore: 25 } }
+});
+assert.strictEqual(eclPassAll.status, 'pass', 'ECL passes when all 4 modules >= 60%');
+
+console.log('All CEFR exam production & pass-rule checks passed. (genuine: ' + g.totalScore + '/25)');

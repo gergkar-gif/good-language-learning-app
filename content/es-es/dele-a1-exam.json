@@ -265,37 +265,61 @@
             {
               "id": "cloze-1",
               "num": 1,
-              "options": ["empieza", "empezamos", "empezar"],
+              "options": [
+                "empieza",
+                "empezamos",
+                "empezar"
+              ],
               "correct": 0
             },
             {
               "id": "cloze-2",
               "num": 2,
-              "options": ["cerca", "lejos", "entre"],
+              "options": [
+                "cerca",
+                "lejos",
+                "entre"
+              ],
               "correct": 0
             },
             {
               "id": "cloze-3",
               "num": 3,
-              "options": ["chocolate", "cuchillo", "tenedor"],
+              "options": [
+                "chocolate",
+                "cuchillo",
+                "tenedor"
+              ],
               "correct": 0
             },
             {
               "id": "cloze-4",
               "num": 4,
-              "options": ["podéis", "puedo", "podemos"],
+              "options": [
+                "podéis",
+                "puedo",
+                "podemos"
+              ],
               "correct": 0
             },
             {
               "id": "cloze-5",
               "num": 5,
-              "options": ["al", "del", "en"],
+              "options": [
+                "al",
+                "del",
+                "en"
+              ],
               "correct": 0
             },
             {
               "id": "cloze-6",
               "num": 6,
-              "options": ["por", "sin", "con"],
+              "options": [
+                "por",
+                "sin",
+                "con"
+              ],
               "correct": 0
             }
           ]
@@ -305,7 +329,7 @@
     "listening": {
       "id": "listening",
       "name": "Comprensión auditiva",
-      "officialTimeMinutes": 25,
+      "officialTimeMinutes": 20,
       "maxPoints": 25,
       "tareas": [
         {
@@ -547,6 +571,225 @@
               "explanation": "Se puede pagar con tarjeta o en efectivo con el conductor."
             }
           ]
+        },
+        {
+          "id": "listening-t3",
+          "tareaNum": 3,
+          "type": "audio-mc",
+          "title": "Tarea 3: Planes y actividades de la semana",
+          "instructions": "Vas a escuchar a 5 personas hablando brevemente de sus actividades. Selecciona la opción correcta (A, B o C) para cada una.",
+          "previewSeconds": 20,
+          "items": [
+            {
+              "id": "l3-q1",
+              "num": 1,
+              "situation": "Marta habla de los lunes",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Marta",
+                    "voice": "female",
+                    "text": "Los lunes por la tarde siempre voy a clase de natación con mi hermana. Después cenamos juntas en casa."
+                  }
+                ]
+              },
+              "question": "¿Qué hace Marta los lunes por la tarde?",
+              "options": [
+                "Va a clase de natación.",
+                "Estudia inglés en casa.",
+                "Trabaja en una tienda."
+              ],
+              "correct": 0,
+              "explanation": "Marta dice: 'Los lunes por la tarde siempre voy a clase de natación'."
+            },
+            {
+              "id": "l3-q2",
+              "num": 2,
+              "situation": "Diego habla de su desayuno",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Diego",
+                    "voice": "male",
+                    "text": "Por la mañana no tomo café. Prefiero un vaso de zumo de naranja y dos tostadas con queso."
+                  }
+                ]
+              },
+              "question": "¿Qué bebe Diego en el desayuno?",
+              "options": [
+                "Café con leche.",
+                "Té verde.",
+                "Zumo de naranja."
+              ],
+              "correct": 2,
+              "explanation": "Diego dice que no toma café y prefiere zumo de naranja."
+            },
+            {
+              "id": "l3-q3",
+              "num": 3,
+              "situation": "Elena habla del sábado",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Elena",
+                    "voice": "female",
+                    "text": "Este sábado quiero ir al mercado por la mañana para comprar fruta fresca y flores para mi madre."
+                  }
+                ]
+              },
+              "question": "¿Qué va a comprar Elena el sábado?",
+              "options": [
+                "Ropa de invierno.",
+                "Fruta y flores.",
+                "Libros y cuadernos."
+              ],
+              "correct": 1,
+              "explanation": "Elena va al mercado a comprar fruta fresca y flores."
+            },
+            {
+              "id": "l3-q4",
+              "num": 4,
+              "situation": "Pedro habla de su transporte",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Pedro",
+                    "voice": "male",
+                    "text": "Mi oficina está muy cerca de mi casa, así que nunca uso el coche. Siempre voy caminando en quince minutos."
+                  }
+                ]
+              },
+              "question": "¿Cómo va Pedro a la oficina?",
+              "options": [
+                "En autobús.",
+                "A pie.",
+                "En coche."
+              ],
+              "correct": 1,
+              "explanation": "Pedro dice: 'Siempre voy caminando en quince minutos'."
+            },
+            {
+              "id": "l3-q5",
+              "num": 5,
+              "situation": "Lucía habla del domingo",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Lucía",
+                    "voice": "female",
+                    "text": "Los domingos por la tarde me gusta leer novelas en el parque o ver una película tranquila en el salón."
+                  }
+                ]
+              },
+              "question": "¿Qué le gusta hacer a Lucía los domingos por la tarde?",
+              "options": [
+                "Cocinar para diez personas.",
+                "Leer o ver una película.",
+                "Limpiar toda la casa."
+              ],
+              "correct": 1,
+              "explanation": "Lucía menciona leer novelas en el parque o ver una película."
+            }
+          ]
+        },
+        {
+          "id": "listening-t4",
+          "tareaNum": 4,
+          "type": "audio-interview",
+          "title": "Tarea 4: Conversación en una librería",
+          "instructions": "Escucha la conversación entre un cliente y una dependienta en una librería (dos veces). Selecciona la opción correcta (A, B o C) para cada pregunta.",
+          "previewSeconds": 25,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Dependienta",
+                "voice": "female",
+                "text": "Buenos días, ¿en qué puedo ayudarle?"
+              },
+              {
+                "speaker": "Cliente",
+                "voice": "male",
+                "text": "Hola, busco un diccionario pequeño de español y un mapa de la ciudad."
+              },
+              {
+                "speaker": "Dependienta",
+                "voice": "female",
+                "text": "El diccionario cuesta doce euros y el mapa cuesta cuatro euros. Tenemos los diccionarios en la segunda planta."
+              },
+              {
+                "speaker": "Cliente",
+                "voice": "male",
+                "text": "Perfecto, me llevo los dos. ¿Puedo pagar con tarjeta?"
+              },
+              {
+                "speaker": "Dependienta",
+                "voice": "female",
+                "text": "Sí, claro. También abrimos esta tarde hasta las ocho por si necesita algo más."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "l4-q1",
+              "num": 1,
+              "question": "¿Qué busca el cliente?",
+              "options": [
+                "Una revista y un periódico.",
+                "Un diccionario y un mapa.",
+                "Una novela de historia."
+              ],
+              "correct": 1,
+              "explanation": "El cliente pide un diccionario pequeño y un mapa de la ciudad."
+            },
+            {
+              "id": "l4-q2",
+              "num": 2,
+              "question": "¿Cuánto cuesta el diccionario?",
+              "options": [
+                "Cuatro euros.",
+                "Doce euros.",
+                "Veinte euros."
+              ],
+              "correct": 1,
+              "explanation": "La dependienta dice que el diccionario cuesta doce euros."
+            },
+            {
+              "id": "l4-q3",
+              "num": 3,
+              "question": "¿Dónde están los diccionarios?",
+              "options": [
+                "En la entrada.",
+                "En la segunda planta.",
+                "En el sótano."
+              ],
+              "correct": 1,
+              "explanation": "Están en la segunda planta."
+            },
+            {
+              "id": "l4-q4",
+              "num": 4,
+              "question": "¿Cómo quiere pagar el cliente?",
+              "options": [
+                "Con tarjeta.",
+                "En efectivo.",
+                "Por transferencia."
+              ],
+              "correct": 0,
+              "explanation": "El cliente pregunta: '¿Puedo pagar con tarjeta?'."
+            },
+            {
+              "id": "l4-q5",
+              "num": 5,
+              "question": "¿Hasta qué hora abre la librería por la tarde?",
+              "options": [
+                "Hasta las seis.",
+                "Hasta las siete.",
+                "Hasta las ocho."
+              ],
+              "correct": 2,
+              "explanation": "La dependienta indica que abren hasta las ocho."
+            }
+          ]
         }
       ]
     },
@@ -605,7 +848,7 @@
     "speaking": {
       "id": "speaking",
       "name": "Expresión e interacción orales",
-      "officialTimeMinutes": 12,
+      "officialTimeMinutes": 10,
       "maxPoints": 25,
       "tareas": [
         {
@@ -652,7 +895,7 @@
         "tip": "Lee primero las preguntas antes de leer los textos. Fíjate en las palabras clave y no te preocupes si no entiendes todas las palabras."
       },
       {
-        "prueba": "Comprensión auditiva (25 min · 2 tareas)",
+        "prueba": "Comprensión auditiva (20 min · 2 tareas)",
         "tip": "Aprovecha los 30 segundos previos para leer con atención las opciones. En la primera escucha concéntrate en la idea general, y en la segunda confirma los detalles numéricos o nombres."
       },
       {
@@ -667,19 +910,35 @@
     "connectors": [
       {
         "category": "Unión y adición",
-        "examples": ["y", "también", "además"]
+        "examples": [
+          "y",
+          "también",
+          "además"
+        ]
       },
       {
         "category": "Contraste sencillo",
-        "examples": ["pero", "sin embargo"]
+        "examples": [
+          "pero",
+          "sin embargo"
+        ]
       },
       {
         "category": "Causa y explicación",
-        "examples": ["porque", "por eso"]
+        "examples": [
+          "porque",
+          "por eso"
+        ]
       },
       {
         "category": "Saludos y despedidas",
-        "examples": ["¡Hola!", "Buenos días", "Muchas gracias", "Un abrazo", "Hasta pronto"]
+        "examples": [
+          "¡Hola!",
+          "Buenos días",
+          "Muchas gracias",
+          "Un abrazo",
+          "Hasta pronto"
+        ]
       }
     ]
   }

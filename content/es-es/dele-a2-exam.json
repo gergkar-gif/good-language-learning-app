@@ -257,46 +257,82 @@
         {
           "id": "reading-t4",
           "tareaNum": 4,
-          "type": "cloze-mc",
-          "title": "Tarea 4: Artículo sobre un mercado tradicional",
-          "instructions": "Lee el siguiente texto sobre un mercado gastronómico histórico. Selecciona la opción correcta (A, B o C) para cada uno de los 6 huecos (1-6).",
-          "passage": "El Mercado Central de Valencia es uno de los edificios modernistas más bellos y representativos de la ciudad. Inaugurado en 1928, este gran espacio [___1___] una superficie de más de ocho mil metros cuadrados donde se combinan tradición arquitectónica y vida cotidiana.\n\nEn su interior, más de trescientos puestos ofrecen cada día productos frescos de la mejor calidad. Los visitantes pueden encontrar frutas y verduras de la huerta, pescados recién traídos [___2___] puerto, quesos artesanales y carnes selectas. Por las mañanas, el mercado se llena de vecinos que compran los ingredientes para sus comidas familiares, pero también [___3___] muchos turistas que se acercan para admirar su cúpula de cristal y hierro.\n\nEn los últimos años, el mercado se ha modernizado sin perder su esencia. Muchos comerciantes [___4___] servicios de entrega a domicilio para que los clientes puedan hacer sus pedidos por internet. Además, en los pequeños bares situados en las esquinas es posible degustar deliciosas tapas elaboradas [___5___] los mismos ingredientes que se venden en los mostradores.\n\nSi viajáis a Valencia, os recomendamos visitar el mercado a primera hora [___6___] la mañana, cuando el ambiente es más animado y auténtico.",
-          "items": [
+          "type": "reading-mc",
+          "title": "Tarea 4: Artículo sobre el Mercado Central de Valencia",
+          "instructions": "Lee el siguiente artículo sobre un mercado tradicional. Después, selecciona la opción correcta (A, B o C) para cada una de las 6 preguntas.",
+          "passage": "El Mercado Central de Valencia es uno de los edificios modernistas más famosos de España. Se inauguró en 1928, después de catorce años de obras, y ocupa más de ocho mil metros cuadrados en pleno centro histórico. Su enorme cúpula de cristal y hierro deja entrar la luz natural durante toda la mañana.\n\nEn el interior hay más de doscientos cincuenta puestos gestionados, en muchos casos, por la tercera o cuarta generación de la misma familia. Cada día, desde las siete y media de la mañana hasta las tres de la tarde, los vecinos acuden para comprar verduras frescas de la huerta, pescado recién llegado del mar, quesos artesanales y especias. Aunque recibe miles de turistas cada semana, sigue siendo sobre todo un lugar de compra diaria para la gente del barrio.\n\nEn los últimos años, el mercado ha añadido servicios nuevos sin perder su tradición. Ahora dispone de una página web donde se puede hacer el pedido y recibirlo en casa en bicicleta eléctrica, además de taquillas refrigeradas para recoger la compra por la tarde al salir del trabajo. Los domingos el mercado permanece cerrado para realizar tareas de limpieza y mantenimiento.",
+          "questions": [
             {
-              "id": "cloze-1",
+              "id": "r4-q1",
               "num": 1,
-              "options": ["ocupa", "ocupan", "ocupando"],
-              "correct": 0
+              "question": "¿Cuándo abrió sus puertas el Mercado Central de Valencia?",
+              "options": [
+                "Hace exactamente catorce años.",
+                "En el año 1928.",
+                "En la década de los años cuarenta."
+              ],
+              "correct": 1,
+              "explanation": "El texto señala que 'Se inauguró en 1928, después de catorce años de obras'."
             },
             {
-              "id": "cloze-2",
+              "id": "r4-q2",
               "num": 2,
-              "options": ["del", "por", "en"],
-              "correct": 0
+              "question": "¿Por qué tiene tanta luz natural el interior del edificio?",
+              "options": [
+                "Porque no tiene techo en la zona central.",
+                "Porque cuenta con una gran cúpula de cristal y hierro.",
+                "Porque sus paredes son completamente de vidrio."
+              ],
+              "correct": 1,
+              "explanation": "El texto dice: 'Su enorme cúpula de cristal y hierro deja entrar la luz natural durante toda la mañana'."
             },
             {
-              "id": "cloze-3",
+              "id": "r4-q3",
               "num": 3,
-              "options": ["de", "con", "a"],
-              "correct": 0
+              "question": "¿Qué se afirma sobre muchos de los vendedores del mercado?",
+              "options": [
+                "Que pertenecen a familias que trabajan allí desde hace varias generaciones.",
+                "Que son jóvenes extranjeros recién llegados a la ciudad.",
+                "Que solo abren sus puestos los fines de semana."
+              ],
+              "correct": 0,
+              "explanation": "El texto indica que los puestos están 'gestionados, en muchos casos, por la tercera o cuarta generación de la misma familia'."
             },
             {
-              "id": "cloze-4",
+              "id": "r4-q4",
               "num": 4,
-              "options": ["ofrecen", "ofrecemos", "ofrecieron"],
-              "correct": 0
+              "question": "¿Cuál es el horario habitual del mercado?",
+              "options": [
+                "De nueve de la mañana a ocho de la tarde.",
+                "De siete y media de la mañana a tres de la tarde.",
+                "Abierto las veinticuatro horas todos los días."
+              ],
+              "correct": 1,
+              "explanation": "El texto afirma: 'Cada día, desde las siete y media de la mañana hasta las tres de la tarde'."
             },
             {
-              "id": "cloze-5",
+              "id": "r4-q5",
               "num": 5,
-              "options": ["con", "sin", "sobre"],
-              "correct": 0
+              "question": "¿Qué novedad ayuda a las personas que trabajan por la mañana?",
+              "options": [
+                "Pueden recoger sus pedidos por la tarde en taquillas refrigeradas.",
+                "El mercado abre ahora hasta las diez de la noche.",
+                "Los vendedores atienden únicamente por teléfono."
+              ],
+              "correct": 0,
+              "explanation": "El texto menciona 'taquillas refrigeradas para recoger la compra por la tarde al salir del trabajo'."
             },
             {
-              "id": "cloze-6",
+              "id": "r4-q6",
               "num": 6,
-              "options": ["de", "por", "en"],
-              "correct": 0
+              "question": "¿Qué ocurre los domingos en el Mercado Central?",
+              "options": [
+                "Se organiza una feria especial solo para turistas.",
+                "Se ofrecen descuentos en frutas y verduras.",
+                "No abre al público porque se limpia y se mantiene el edificio."
+              ],
+              "correct": 2,
+              "explanation": "El último párrafo explica que 'Los domingos el mercado permanece cerrado para realizar tareas de limpieza y mantenimiento'."
             }
           ]
         }
@@ -305,7 +341,7 @@
     "listening": {
       "id": "listening",
       "name": "Comprensión auditiva",
-      "officialTimeMinutes": 35,
+      "officialTimeMinutes": 40,
       "maxPoints": 25,
       "tareas": [
         {
@@ -611,6 +647,252 @@
               "explanation": "Sugiere alquilar primero temporalmente, en especial en invierno, para probar la experiencia antes de comprar."
             }
           ]
+        },
+        {
+          "id": "listening-t3",
+          "tareaNum": 3,
+          "type": "audio-mc",
+          "title": "Tarea 3: Noticias breves de la radio local",
+          "instructions": "Escucha 6 noticias breves de la radio local y selecciona la opción correcta (A, B o C) para cada una.",
+          "previewSeconds": 25,
+          "items": [
+            {
+              "id": "l3-q1",
+              "num": 1,
+              "situation": "Noticia sobre el transporte",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutor",
+                    "voice": "male",
+                    "text": "A partir del lunes, la línea 4 de autobús circulará cada diez minutos en lugar de cada veinte, debido al aumento de pasajeros."
+                  }
+                ]
+              },
+              "question": "¿Qué cambia en la línea 4 de autobús el lunes?",
+              "options": [
+                "Pasará con mayor frecuencia.",
+                "Cambiará de color.",
+                "Dejará de funcionar por obras."
+              ],
+              "correct": 0,
+              "explanation": "Circulará cada diez minutos en lugar de cada veinte."
+            },
+            {
+              "id": "l3-q2",
+              "num": 2,
+              "situation": "Noticia cultural",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutora",
+                    "voice": "female",
+                    "text": "El museo de arte moderno ofrecerá entrada gratuita todos los miércoles por la tarde durante este mes."
+                  }
+                ]
+              },
+              "question": "¿Cuándo es gratis entrar al museo este mes?",
+              "options": [
+                "Todos los domingos por la mañana.",
+                "Los miércoles por la tarde.",
+                "El último viernes del mes."
+              ],
+              "correct": 1,
+              "explanation": "La entrada gratuita es los miércoles por la tarde."
+            },
+            {
+              "id": "l3-q3",
+              "num": 3,
+              "situation": "Pronóstico del tiempo",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutor",
+                    "voice": "male",
+                    "text": "Mañana tendremos cielos despejados por la mañana, pero por la noche bajarán las temperaturas y lloverá ligeramente."
+                  }
+                ]
+              },
+              "question": "¿Qué tiempo hará mañana por la noche?",
+              "options": [
+                "Mucho calor y sol.",
+                "Lluvia ligera y más frío.",
+                "Nieve abundante."
+              ],
+              "correct": 1,
+              "explanation": "Bajarán las temperaturas y lloverá ligeramente por la noche."
+            },
+            {
+              "id": "l3-q4",
+              "num": 4,
+              "situation": "Aviso de la biblioteca",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutora",
+                    "voice": "female",
+                    "text": "La biblioteca central recuerda a los usuarios que ya se pueden reservar salas de estudio desde el teléfono móvil."
+                  }
+                ]
+              },
+              "question": "¿Qué nuevo servicio ofrece la biblioteca?",
+              "options": [
+                "Préstamo de ordenadores portátiles.",
+                "Reserva de salas de estudio por teléfono.",
+                "Clases de cocina los sábados."
+              ],
+              "correct": 1,
+              "explanation": "Se pueden reservar salas de estudio desde el teléfono."
+            },
+            {
+              "id": "l3-q5",
+              "num": 5,
+              "situation": "Carrera popular",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutor",
+                    "voice": "male",
+                    "text": "Más de dos mil personas participarán este domingo en la carrera solidaria de cinco kilómetros por el parque central."
+                  }
+                ]
+              },
+              "question": "¿Qué distancia tiene la carrera del domingo?",
+              "options": [
+                "Cinco kilómetros.",
+                "Diez kilómetros.",
+                "Veinte kilómetros."
+              ],
+              "correct": 0,
+              "explanation": "Es una carrera solidaria de cinco kilómetros."
+            },
+            {
+              "id": "l3-q6",
+              "num": 6,
+              "situation": "Feria del libro",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutora",
+                    "voice": "female",
+                    "text": "La feria del libro permanecerá abierta en la plaza mayor hasta el próximo domingo, con descuentos del diez por ciento."
+                  }
+                ]
+              },
+              "question": "¿Qué ventaja tienen los compradores en la feria del libro?",
+              "options": [
+                "Regalan entradas de cine.",
+                "Tienen un diez por ciento de descuento.",
+                "Los libros usados son gratuitos."
+              ],
+              "correct": 1,
+              "explanation": "Hay descuentos del diez por ciento."
+            }
+          ]
+        },
+        {
+          "id": "listening-t4",
+          "tareaNum": 4,
+          "type": "audio-interview",
+          "title": "Tarea 4: Conversación sobre unas vacaciones en la montaña",
+          "instructions": "Escucha la conversación entre Sofía y Javier sobre sus últimas vacaciones (dos veces). Elige la respuesta correcta (A, B o C).",
+          "previewSeconds": 30,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Sofía",
+                "voice": "female",
+                "text": "¡Hola, Javier! ¿Qué tal tus vacaciones en la montaña?"
+              },
+              {
+                "speaker": "Javier",
+                "voice": "male",
+                "text": "¡Geniales! Alquilamos una casa rural pequeña con unos amigos durante cinco días. Hacía fresco por la mañana, perfecto para caminar."
+              },
+              {
+                "speaker": "Sofía",
+                "voice": "female",
+                "text": "¿Fuisteis en tren o llevasteis coche?"
+              },
+              {
+                "speaker": "Javier",
+                "voice": "male",
+                "text": "Fuimos en tren hasta el pueblo más cercano y luego tomamos un autobús local. Así descansamos durante el trayecto."
+              },
+              {
+                "speaker": "Sofía",
+                "voice": "female",
+                "text": "¿Y qué fue lo que más te gustó?"
+              },
+              {
+                "speaker": "Javier",
+                "voice": "male",
+                "text": "Sin duda la ruta hasta el lago y la cena del último día: comimos sopa caliente y queso artesanal en un restaurante familiar."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "l4-q1",
+              "num": 1,
+              "question": "¿Dónde se alojó Javier?",
+              "options": [
+                "En un hotel de lujo.",
+                "En una casa rural con amigos.",
+                "En una tienda de campaña."
+              ],
+              "correct": 1,
+              "explanation": "Alquilaron una casa rural pequeña con amigos."
+            },
+            {
+              "id": "l4-q2",
+              "num": 2,
+              "question": "¿Cuántos días duró el viaje?",
+              "options": [
+                "Tres días.",
+                "Cinco días.",
+                "Dos semanas."
+              ],
+              "correct": 1,
+              "explanation": "Estuvieron cinco días."
+            },
+            {
+              "id": "l4-q3",
+              "num": 3,
+              "question": "¿Cómo llegaron al pueblo?",
+              "options": [
+                "En tren y luego en autobús local.",
+                "En avión y taxi.",
+                "En bicicleta."
+              ],
+              "correct": 0,
+              "explanation": "Fueron en tren hasta el pueblo más cercano y tomaron un autobús local."
+            },
+            {
+              "id": "l4-q4",
+              "num": 4,
+              "question": "¿Por qué eligieron ese transporte?",
+              "options": [
+                "Porque era más rápido.",
+                "Para descansar durante el trayecto.",
+                "Porque no tenían licencia de conducir."
+              ],
+              "correct": 1,
+              "explanation": "Javier dice: 'Así descansamos durante el trayecto'."
+            },
+            {
+              "id": "l4-q5",
+              "num": 5,
+              "question": "¿Qué cenaron el último día?",
+              "options": [
+                "Pescado frito y ensalada.",
+                "Sopa caliente y queso artesanal.",
+                "Pizza y helado."
+              ],
+              "correct": 1,
+              "explanation": "Comieron sopa caliente y queso artesanal en un restaurante familiar."
+            }
+          ]
         }
       ]
     },
@@ -694,12 +976,17 @@
           "title": "Tarea 2: Descripción de una fotografía cotidiana (2 minutos)",
           "prepSeconds": 45,
           "speakSeconds": 120,
-          "prompt": "Observa mentalmente la siguiente escena: 'Un grupo de cuatro amigos preparando una paella y ensaladas en una terraza luminosa durante un domingo de primavera'.\n\nDebes describir con detalle:\n- Quiénes son las personas, cómo van vestidas y qué hace cada una de ellas.\n- Qué alimentos, utensilios y bebidas se ven sobre la mesa y en la terraza.\n- Cómo es el entorno, qué tiempo hace y qué ambiente transmite la escena.",
+          "prompt": "Observa la siguiente fotografía: 'Un grupo de cuatro amigos preparando una paella y ensaladas en una terraza luminosa durante un domingo de primavera'.\n\nDebes describir con detalle:\n- Quiénes son las personas, cómo van vestidas y qué hace cada una de ellas.\n- Qué alimentos, utensilios y bebidas se ven sobre la mesa y en la terraza.\n- Cómo es el entorno, qué tiempo hace y qué ambiente transmite la escena.",
           "bulletPoints": [
             "Descripción física de las personas, ropa y acciones",
             "Comida, bebida y objetos visibles en la terraza",
             "Clima, entorno y ambiente general que transmite la imagen"
-          ]
+          ],
+          "visualStimulus": {
+            "type": "scene",
+            "sceneId": "terrace-dinner",
+            "caption": "Lámina oficial · Cuatro amigos preparando una comida en una terraza soleada"
+          }
         },
         {
           "id": "speaking-t3",
@@ -726,7 +1013,7 @@
         "tip": "Comienza leyendo las preguntas y palabras clave antes de abordar los textos largos. En la Tarea 2 (tablón), subraya la necesidad exacta de cada persona para descartar anuncios trampas. En la Tarea 4 (huecos), fíjate en las preposiciones y concordancias de los verbos."
       },
       {
-        "prueba": "Prueba 2: Comprensión auditiva (35 min · 2 tareas · 12 preguntas)",
+        "prueba": "Prueba 2: Comprensión auditiva (40 min · 2 tareas · 12 preguntas)",
         "tip": "Aprovecha los segundos de lectura previa para anticipar el vocabulario que vas a escuchar. En el primer pase céntrate en la idea general de cada mensaje; en el segundo confirma los datos numéricos, andenes o fechas concretas."
       },
       {
@@ -741,23 +1028,49 @@
     "connectors": [
       {
         "category": "Relaciones temporales y orden",
-        "examples": ["primero", "luego", "después", "al final", "mientras", "cuando"]
+        "examples": [
+          "primero",
+          "luego",
+          "después",
+          "al final",
+          "mientras",
+          "cuando"
+        ]
       },
       {
         "category": "Causa y consecuencia",
-        "examples": ["porque", "por eso", "como"]
+        "examples": [
+          "porque",
+          "por eso",
+          "como"
+        ]
       },
       {
         "category": "Contraste sencillo",
-        "examples": ["pero", "sin embargo", "aunque"]
+        "examples": [
+          "pero",
+          "sin embargo",
+          "aunque"
+        ]
       },
       {
         "category": "Adición y enlace",
-        "examples": ["y", "también", "además"]
+        "examples": [
+          "y",
+          "también",
+          "además"
+        ]
       },
       {
         "category": "Fórmulas de cortesía y correspondencia",
-        "examples": ["Estimado/a", "Hola", "Muchas gracias", "Un cordial saludo", "Un abrazo", "Hasta pronto"]
+        "examples": [
+          "Estimado/a",
+          "Hola",
+          "Muchas gracias",
+          "Un cordial saludo",
+          "Un abrazo",
+          "Hasta pronto"
+        ]
       }
     ]
   }

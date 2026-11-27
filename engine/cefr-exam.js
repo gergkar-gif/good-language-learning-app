@@ -205,8 +205,156 @@ const CefrExam = (function () {
             speakingAudioContext: null,
             speakingAnalyser: null,
             speakingAnimFrame: null,
-            speakingResult: null
+            speakingResult: null,
+
+            // Timed full mock state
+            mockMode: false,
+            mockTimerRemaining: 0,
+            mockTimerInterval: null,
+            mockTimeExpired: false
         };
+
+        const MOCK_SKILL_ORDER = ['reading', 'writing', 'listening', 'speaking'];
+
+        function _isEclModularExam() {
+            return _id.includes('hu-ecl') || _id.includes('sk-ecl');
+        }
+
+        function _evaluateExamPass(scores) {
+            const sc = scores || {};
+            const skills = {};
+            ['reading', 'writing', 'listening', 'speaking'].forEach(sk => {
+                const map = sc[sk] || {};
+                const keys = Object.keys(map);
+                if (!keys.length) {
+                    skills[sk] = { attempted: false, pct: null, pts25: null, passed: false };
+                    return;
+                }
+                let sSum = 0;
+                let mSum = 0;
+                keys.forEach(k => {
+                    sSum += Number(map[k].score || 0);
+                    mSum += Number(map[k].maxScore || 0);
+                });
+                const pct = mSum > 0 ? Math.round((sSum / mSum) * 100) : 0;
+                const pts25 = Math.round((pct / 100) * 25 * 10) / 10;
+                skills[sk] = { attempted: true, pct, pts25, passed: pct >= 60 };
+            });
+
+            const allAttempted = ['reading', 'writing', 'listening', 'speaking'].every(sk => skills[sk].attempted);
+
+            if (_isEclModularExam()) {
+                const passedModules = ['reading', 'writing', 'listening', 'speaking'].filter(sk => skills[sk].passed).length;
+                const status = !allAttempted ? 'in_progress' : (passedModules === 4 ? 'pass' : 'fail');
+                return { mode: 'ecl-modular', skills, passedModules, allAttempted, status };
+            }
+
+            // DELE & 2-group CEFR exams: Group 1 (Reading + Writing >= 30/50) AND Group 2 (Listening + Speaking >= 30/50)
+            const g1Complete = skills.reading.attempted && skills.writing.attempted;
+            const g2Complete = skills.listening.attempted && skills.speaking.attempted;
+            const g1Pts = g1Complete ? Math.round((skills.reading.pts25 + skills.writing.pts25) * 10) / 10 : null;
+            const g2Pts = g2Complete ? Math.round((skills.listening.pts25 + skills.speaking.pts25) * 10) / 10 : null;
+            const g1Passed = g1Complete && g1Pts >= 30;
+            const g2Passed = g2Complete && g2Pts >= 30;
+            const status = !allAttempted ? 'in_progress' : ((g1Passed && g2Passed) ? 'pass' : 'fail');
+            return {
+                mode: 'dele-groups',
+                skills,
+                group1: { complete: g1Complete, pts50: g1Pts, passed: g1Passed },
+                group2: { complete: g2Complete, pts50: g2Pts, passed: g2Passed },
+                allAttempted,
+                status
+            };
+        }
+
+        function _stopMockTimer() {
+            if (_state.mockTimerInterval) {
+                clearInterval(_state.mockTimerInterval);
+                _state.mockTimerInterval = null;
+            }
+        }
+
+        function _formatMockTime(sec) {
+            const s = Math.max(0, sec | 0);
+            const m = Math.floor(s / 60);
+            const r = s % 60;
+            return `${String(m).padStart(2, '0')}:${String(r).padStart(2, '0')}`;
+        }
+
+        function _startMockSectionTimer(skillId) {
+            _stopMockTimer();
+            _state.mockTimeExpired = false;
+            const sk = _data && _data.skills && _data.skills[skillId];
+            const mins = (sk && sk.officialTimeMinutes) || 30;
+            _state.mockTimerRemaining = mins * 60;
+            _state.mockTimerInterval = setInterval(() => {
+                _state.mockTimerRemaining--;
+                if (_state.mockTimerRemaining <= 0) {
+                    _state.mockTimerRemaining = 0;
+                    _state.mockTimeExpired = true;
+                    _stopMockTimer();
+                    if (_container) render(_container);
+                } else if (_container) {
+                    const el = _container.querySelector('#cefr-mock-timer-val');
+                    if (el) {
+                        el.textContent = _formatMockTime(_state.mockTimerRemaining);
+                        if (_state.mockTimerRemaining < 300) el.classList.add('is-warning');
+                        else el.classList.remove('is-warning');
+                    }
+                }
+            }, 1000);
+        }
+
+        function _resetTaskRunState(tareaId) {
+            _state.activeTareaId = tareaId;
+            _state.readingAnswers = {};
+            _state.readingSubmitted = false;
+            _state.listeningAnswers = {};
+            _state.listeningSubmitted = false;
+            _state.listeningPass = 1;
+            _state.listeningActiveItemId = null;
+            _state.listeningItemPasses = {};
+            _state.writingResult = null;
+            _state.speakingResult = null;
+            _state.writingDraftText = _loadDraft(tareaId);
+            _stopListeningTimers();
+            _stopSpeakingStreams();
+        }
+
+        function _exitMockMode(targetTab) {
+            _stopMockTimer();
+            _stopListeningTimers();
+            _stopSpeakingStreams();
+            _state.mockMode = false;
+            _state.mockTimeExpired = false;
+            _state.activeTareaId = null;
+            if (targetTab) _state.tab = targetTab;
+        }
+
+        function _advanceMockStep() {
+            const skill = _getCurrentSkill();
+            const tareas = (skill && skill.tareas) || [];
+            const curIdx = tareas.findIndex(t => t.id === _state.activeTareaId);
+            if (curIdx >= 0 && curIdx + 1 < tareas.length) {
+                _resetTaskRunState(tareas[curIdx + 1].id);
+                render(_container);
+                return;
+            }
+            const skIdx = MOCK_SKILL_ORDER.indexOf(_state.activeSkill);
+            for (let i = skIdx + 1; i < MOCK_SKILL_ORDER.length; i++) {
+                const nextSk = MOCK_SKILL_ORDER[i];
+                const nextTareas = (_data && _data.skills && _data.skills[nextSk] && _data.skills[nextSk].tareas) || [];
+                if (nextTareas.length > 0) {
+                    _state.activeSkill = nextSk;
+                    _resetTaskRunState(nextTareas[0].id);
+                    _startMockSectionTimer(nextSk);
+                    render(_container);
+                    return;
+                }
+            }
+            _exitMockMode('history');
+            render(_container);
+        }
 
         function _esc(str) {
             if (typeof UI !== 'undefined' && UI.escape) return UI.escape(String(str || ''));
@@ -447,16 +595,25 @@ const CefrExam = (function () {
                     `;
                 } else if (_state.listeningPass === 2 && !_state.listeningPlaying) {
                     statusText = _t('Audición completada', 'Meghallgatás befejezve', 'Écoute terminée', 'Ascolto completato');
-                    subText = _t(
-                        'Has escuchado los dos pases oficiales. Selecciona tus respuestas y comprueba la tarea.',
-                        'Mindkét hivatalos meghallgatás befejeződött. Jelöld be a válaszaidat és ellenőrizd a feladatot.',
-                        'Vous avez entendu les deux écoutes officielles. Sélectionnez vos réponses et vérifiez l\'exercice.',
-                        'Hai completato entrambi gli ascolti ufficiali. Seleziona le risposte e verifica la prova.'
-                    );
-                    btnHtml = `
-                        <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="replay-pass-2">${_t('Repetir segundo pase', 'Második meghallgatás ismétlése', 'Réécouter le second passage', 'Ripeti secondo ascolto')}</button>
-                        <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="audio-speed">${_state.listeningSpeed}x</button>
-                    `;
+                    subText = _state.mockMode
+                        ? _t(
+                            'Modo simulacro oficial: límite de 2 reproducciones alcanzado. Selecciona tus respuestas y continúa.',
+                            'Hivatalos próbavizsga mód: a 2 lejátszási limit lejárt. Jelöld be a válaszaidat és folytasd.',
+                            'Mode examen blanc : limite officielle de 2 écoutes atteinte.',
+                            'Modalità simulazione: limite ufficiale di 2 ascolti raggiunto.'
+                        )
+                        : _t(
+                            'Has escuchado los dos pases oficiales. Selecciona tus respuestas y comprueba la tarea.',
+                            'Mindkét hivatalos meghallgatás befejeződött. Jelöld be a válaszaidat és ellenőrizd a feladatot.',
+                            'Vous avez entendu les deux écoutes officielles. Sélectionnez vos réponses et vérifiez l\'exercice.',
+                            'Hai completato entrambi gli ascolti ufficiali. Seleziona le risposte e verifica la prova.'
+                        );
+                    btnHtml = _state.mockMode
+                        ? `<button type="button" class="btn btn-secondary cefr-ctrl-btn" disabled>${_t('Límite oficial (2/2 pases)', 'Hivatalos limit (2/2)', 'Limite officielle (2/2)', 'Limite ufficiale (2/2)')}</button>`
+                        : `
+                            <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="replay-pass-2">${_t('Repetir segundo pase', 'Második meghallgatás ismétlése', 'Réécouter le second passage', 'Ripeti secondo ascolto')}</button>
+                            <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="audio-speed">${_state.listeningSpeed}x</button>
+                        `;
                 } else {
                     statusText = _t(
                         `Pase ${_state.listeningPass} de 2 preparado`,
@@ -1003,11 +1160,43 @@ const CefrExam = (function () {
                 contentHtml = _renderSpeakingTarea(tarea);
             }
 
-            const backLabel = _t('Volver a tareas', 'Vissza a feladatokhoz', 'Retour aux épreuves', 'Torna alle prove');
+            const backLabel = _state.mockMode
+                ? _t('Salir del simulacro', 'Kilépés a próbavizsgából', 'Quitter l\'examen blanc', 'Esci dalla simulazione')
+                : _t('Volver a tareas', 'Vissza a feladatokhoz', 'Retour aux épreuves', 'Torna alle prove');
+
+            let mockBannerHtml = '';
+            if (_state.mockMode) {
+                const skill = _getCurrentSkill();
+                const tareas = (skill && skill.tareas) || [];
+                const curIdx = Math.max(0, tareas.findIndex(t => t.id === _state.activeTareaId));
+                const skIdx = MOCK_SKILL_ORDER.indexOf(_state.activeSkill);
+                const isLastTaskInExam = (curIdx + 1 >= tareas.length) && (skIdx >= MOCK_SKILL_ORDER.length - 1);
+                const nextLabel = isLastTaskInExam
+                    ? _t('Finalizar y ver resultado →', 'Befejezés és eredmény →', 'Terminer et voir le résultat →', 'Termina e vedi risultato →')
+                    : (curIdx + 1 < tareas.length
+                        ? _t('Siguiente tarea →', 'Következő feladat →', 'Exercice suivant →', 'Prova successiva →')
+                        : _t('Siguiente destreza →', 'Következő modul →', 'Compétence suivante →', 'Abilità successiva →'));
+                const warnCls = _state.mockTimerRemaining < 300 ? ' is-warning' : '';
+                mockBannerHtml = `
+                    <div class="cefr-mock-banner" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; padding:12px 16px; margin-bottom:14px; background:var(--wash, #f6f4ef); border:1px solid var(--border, #ddd); border-left:3px solid var(--accent, #c44536); border-radius:var(--radius-sm, 2px);">
+                        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                            <strong>${_t('Simulacro cronometrado', 'Időmérős próbavizsga', 'Examen blanc chronométré', 'Simulazione cronometrata')}</strong>
+                            <span>· ${_esc((skill && skill.name) || _state.activeSkill)} (${curIdx + 1}/${tareas.length})</span>
+                            <span class="cefr-pass-pill${warnCls}" style="margin:0;">⏱ <span id="cefr-mock-timer-val">${_formatMockTime(_state.mockTimerRemaining)}</span></span>
+                            ${_state.mockTimeExpired ? `<span style="color:var(--danger, #b5382a); font-weight:600;">${_t('Tiempo agotado', 'Lejárt az idő', 'Temps écoulé', 'Tempo scaduto')}</span>` : ''}
+                        </div>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <button type="button" class="btn btn-primary" data-action="mock-next" style="padding:6px 12px; font-size:13px;">${nextLabel}</button>
+                        </div>
+                    </div>
+                `;
+            }
+
             return `
                 <div class="cefr-runner-container">
+                    ${mockBannerHtml}
                     <div class="cefr-runner-topbar">
-                        <button type="button" class="cefr-back-btn" data-action="back-to-tasks" aria-label="${backLabel}">
+                        <button type="button" class="cefr-back-btn" data-action="${_state.mockMode ? 'mock-exit' : 'back-to-tasks'}" aria-label="${backLabel}">
                             <svg class="art icon cefr-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="15 18 9 12 15 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
                             <span>${backLabel}</span>
                         </button>
@@ -1356,6 +1545,7 @@ const CefrExam = (function () {
                     const isWrong = isSubmitted && chosen !== item.correct && chosen !== undefined;
                     const isThisPlaying = _state.listeningPlaying && _state.listeningActiveItemId === item.id;
                     const passes = _state.listeningItemPasses[item.id] || 0;
+                    const lockedByMock = _state.mockMode && passes >= 2 && !isThisPlaying;
 
                     return `
                         <div class="cefr-q-card ${isCorrect ? 'is-correct' : (isWrong ? 'is-wrong' : '')}">
@@ -1365,11 +1555,11 @@ const CefrExam = (function () {
                             </div>
 
                             <div class="cefr-item-audio-row">
-                                <button type="button" class="cefr-item-play-btn ${isThisPlaying ? 'is-playing' : ''}" data-action="play-single-item" data-item-id="${_esc(item.id)}">
+                                <button type="button" class="cefr-item-play-btn ${isThisPlaying ? 'is-playing' : ''}" data-action="play-single-item" data-item-id="${_esc(item.id)}" ${lockedByMock ? 'disabled' : ''}>
                                     <svg class="art icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                         ${isThisPlaying ? '<rect x="6" y="6" width="12" height="12" fill="currentColor"/>' : '<polygon points="7 5 19 12 7 19 7 5" fill="currentColor"/>'}
                                     </svg>
-                                    <span>${isThisPlaying ? _t('Detener reproducción', 'Leállítás', 'Arrêter', 'Ferma riproduzione') : (passes > 0 ? _t(`Repetir audio (${passes}/2 pases)`, `Újrahallgatás (${passes}/2)`, `Réécouter (${passes}/2)`, `Riascolta (${passes}/2)`, `Odsłuchaj ponownie (${passes}/2)`, `Přehrát znovu (${passes}/2)`, `Prehrať znova (${passes}/2)`) : _t('Escuchar audio (Pase 1/2)', 'Meghallgatás (1/2)', 'Écouter (1/2)', 'Ascolta audio (1/2)'))}</span>
+                                    <span>${isThisPlaying ? _t('Detener reproducción', 'Leállítás', 'Arrêter', 'Ferma riproduzione') : (lockedByMock ? _t('Límite oficial (2/2 pases)', 'Hivatalos limit (2/2)', 'Limite officielle (2/2)', 'Limite ufficiale (2/2)') : (passes > 0 ? _t(`Repetir audio (${passes}/2 pases)`, `Újrahallgatás (${passes}/2)`, `Réécouter (${passes}/2)`, `Riascolta (${passes}/2)`, `Odsłuchaj ponownie (${passes}/2)`, `Přehrát znovu (${passes}/2)`, `Prehrať znova (${passes}/2)`) : _t('Escuchar audio (Pase 1/2)', 'Meghallgatás (1/2)', 'Écouter (1/2)', 'Ascolta audio (1/2)')))}</span>
                                 </button>
                             </div>
 
@@ -1498,9 +1688,16 @@ const CefrExam = (function () {
             const isWordCountGood = currentWords >= minWords && currentWords <= maxWords;
             const lvlTag = (_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : (_id.includes('b2') ? 'B2' : 'B1')));
 
+            const hasAudioStimulus = !!(tarea.audio && tarea.audio.turns && tarea.audio.turns.length > 0);
             return `
                 <div class="cefr-writing-wrapper">
                     ${optionSwitcherHtml}
+
+                    ${hasAudioStimulus ? `
+                        <div id="cefr-audio-console" class="cefr-audio-console">
+                            <!-- Populated by _updateListeningConsole() -->
+                        </div>
+                    ` : ''}
 
                     <div class="cefr-writing-prompt-card">
                         <div class="cefr-prompt-title">${_t('Instrucciones de la tarea:', 'A feladat leírása:', 'Consignes de la tâche :', 'Istruzioni della prova:')}</div>
@@ -1559,13 +1756,56 @@ const CefrExam = (function () {
             `;
         }
 
+        function _renderVisualStimulus(vs) {
+            if (!vs) return '';
+            if (vs.type === 'bar-chart' && Array.isArray(vs.bars)) {
+                return `
+                    <div class="cefr-visual-stimulus" style="margin:12px 0 16px; padding:16px; background:#fff; border:1px solid var(--border, #ddd); border-radius:var(--radius-sm, 2px);">
+                        <div style="font-weight:700; margin-bottom:4px;">${_esc(vs.title || '')}</div>
+                        ${vs.subtitle ? `<div style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">${_esc(vs.subtitle)}</div>` : ''}
+                        <div style="display:flex; flex-direction:column; gap:10px;">
+                            ${vs.bars.map(b => `
+                                <div>
+                                    <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:4px;">
+                                        <span>${_esc(b.label)}</span>
+                                        <strong>${_esc(String(b.value))}%</strong>
+                                    </div>
+                                    <div style="height:10px; background:var(--wash, #f1eee7); border-radius:2px; overflow:hidden;">
+                                        <div style="height:100%; width:${Math.max(0, Math.min(100, Number(b.value) || 0))}%; background:${_esc(b.color || 'var(--accent, #c44536)')};"></div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            const scenes = {
+                'terrace-dinner': '<svg viewBox="0 0 420 180" width="100%" role="img" aria-label="Friends cooking on a sunny terrace"><rect width="420" height="180" fill="#f7efe3"/><rect y="128" width="420" height="52" fill="#e5d5bc"/><circle cx="365" cy="36" r="20" fill="#e9b44c"/><rect x="115" y="102" width="190" height="12" rx="2" fill="#8b5a2b"/><rect x="132" y="114" width="8" height="40" fill="#6d4520"/><rect x="280" y="114" width="8" height="40" fill="#6d4520"/><ellipse cx="210" cy="98" rx="34" ry="10" fill="#c44536"/><ellipse cx="210" cy="96" rx="26" ry="6" fill="#e9b44c"/><circle cx="155" cy="96" r="9" fill="#4f772d"/><circle cx="265" cy="96" r="8" fill="#4f772d"/><circle cx="100" cy="68" r="14" fill="#d4a373"/><path d="M84 128 Q100 84 116 128Z" fill="#2b59c3"/><circle cx="165" cy="62" r="14" fill="#c68b59"/><path d="M149 102 Q165 78 181 102Z" fill="#c44536"/><circle cx="255" cy="62" r="14" fill="#e0b088"/><path d="M239 102 Q255 78 271 102Z" fill="#386641"/><circle cx="320" cy="68" r="14" fill="#b57b50"/><path d="M304 128 Q320 84 336 128Z" fill="#bc6c25"/></svg>',
+                'sunny-plaza': '<svg viewBox="0 0 420 180" width="100%" role="img" aria-label="Sunny city square with fountain, cafe tables and street musician"><rect width="420" height="115" fill="#e8f1f5"/><rect y="115" width="420" height="65" fill="#dfd7c8"/><circle cx="370" cy="34" r="18" fill="#e9b44c"/><rect x="18" y="38" width="90" height="77" fill="#d9b99b"/><rect x="310" y="42" width="92" height="73" fill="#c9a88a"/><ellipse cx="210" cy="126" rx="46" ry="14" fill="#7aa6c2"/><rect x="204" y="96" width="12" height="28" fill="#8d99ae"/><path d="M210 96 Q192 80 186 112 M210 96 Q228 80 234 112" stroke="#5b8fb9" stroke-width="3" fill="none"/><circle cx="72" cy="120" r="10" fill="#c44536"/><rect x="52" y="132" width="40" height="6" fill="#6d4520"/><circle cx="340" cy="108" r="11" fill="#386641"/><path d="M330 144 Q340 120 350 144Z" fill="#bc6c25"/><ellipse cx="352" cy="126" rx="8" ry="12" fill="#8b5a2b"/></svg>',
+                'cafe-terrace': '<svg viewBox="0 0 420 180" width="100%" role="img" aria-label="Friends at a sunny cafe terrace with coffee and cake"><rect width="420" height="120" fill="#f9f1e2"/><rect y="120" width="420" height="60" fill="#e2d4be"/><circle cx="360" cy="36" r="18" fill="#e9b44c"/><path d="M120 48 L300 48 L280 76 L140 76 Z" fill="#c44536"/><rect x="206" y="76" width="8" height="72" fill="#6d4520"/><rect x="148" y="114" width="124" height="10" fill="#8b5a2b"/><rect x="176" y="102" width="16" height="12" rx="2" fill="#fff"/><rect x="226" y="102" width="16" height="12" rx="2" fill="#fff"/><polygon points="200,114 218,114 209,98" fill="#d99b52"/><circle cx="132" cy="90" r="13" fill="#d4a373"/><circle cx="288" cy="90" r="13" fill="#c68b59"/></svg>',
+                'park-picnic': '<svg viewBox="0 0 420 180" width="100%" role="img" aria-label="Friends having a picnic under a tree in a spring park"><rect width="420" height="105" fill="#e7f3f7"/><rect y="105" width="420" height="75" fill="#8ab17d"/><rect x="58" y="64" width="18" height="68" fill="#7f5539"/><circle cx="67" cy="54" r="38" fill="#4f772d"/><polygon points="145,152 295,152 275,118 165,118" fill="#c44536"/><rect x="202" y="124" width="34" height="18" rx="2" fill="#d99b52"/><circle cx="152" cy="108" r="12" fill="#d4a373"/><circle cx="192" cy="102" r="12" fill="#c68b59"/><circle cx="250" cy="102" r="12" fill="#e0b088"/><circle cx="286" cy="108" r="12" fill="#b57b50"/></svg>',
+                'city-vs-village': '<svg viewBox="0 0 420 180" width="100%" role="img" aria-label="Comparison of busy city street and quiet green village"><rect width="208" height="180" fill="#e6ecf2"/><rect x="212" width="208" height="180" fill="#eaf4e8"/><rect x="24" y="42" width="42" height="108" fill="#5c6b73"/><rect x="74" y="24" width="52" height="126" fill="#3d5a80"/><rect x="134" y="56" width="46" height="94" fill="#6c757d"/><rect y="150" width="208" height="30" fill="#495057"/><rect x="212" y="130" width="208" height="50" fill="#74a57f"/><rect x="275" y="88" width="76" height="48" fill="#f4e4c1"/><polygon points="268,88 313,54 358,88" fill="#c44536"/><circle cx="246" cy="104" r="22" fill="#4f772d"/><circle cx="378" cy="106" r="20" fill="#4f772d"/></svg>',
+                'mall-vs-market': '<svg viewBox="0 0 420 180" width="100%" role="img" aria-label="Comparison of shopping mall and zero-waste local farmers market"><rect width="208" height="180" fill="#f2edf4"/><rect x="212" width="208" height="180" fill="#eef5eb"/><rect x="24" y="42" width="160" height="108" fill="#6d6875"/><rect x="44" y="64" width="46" height="34" fill="#b5838d"/><rect x="118" y="64" width="46" height="34" fill="#e5989b"/><rect x="78" y="110" width="52" height="40" fill="#ffb4a2"/><path d="M236 66 L396 66 L384 90 L248 90 Z" fill="#386641"/><rect x="252" y="90" width="128" height="58" fill="#d9b99b"/><circle cx="278" cy="106" r="9" fill="#c44536"/><circle cx="304" cy="106" r="9" fill="#e9b44c"/><circle cx="330" cy="106" r="9" fill="#6a994e"/><circle cx="356" cy="106" r="9" fill="#bc6c25"/></svg>'
+            };
+            const svg = scenes[vs.sceneId] || '';
+            if (!svg) return '';
+            return `
+                <figure class="cefr-visual-stimulus" style="margin:12px 0 16px; padding:12px; background:#fff; border:1px solid var(--border, #ddd); border-radius:var(--radius-sm, 2px);">
+                    ${svg}
+                    ${vs.caption ? `<figcaption style="font-size:13px; color:var(--text-muted); margin-top:8px;">${_esc(vs.caption)}</figcaption>` : ''}
+                </figure>
+            `;
+        }
+
         // 4. Speaking Tarea View
         function _renderSpeakingTarea(tarea) {
-            const lvlTag = (_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'));
+            const lvlTag = (_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : (_id.includes('b2') ? 'B2' : 'B1')));
             return `
                 <div class="cefr-speaking-wrapper">
                     <div class="cefr-speaking-prompt-card">
                         <div class="cefr-prompt-title">${_esc(tarea.title)}</div>
+                        ${_renderVisualStimulus(tarea.visualStimulus)}
                         <div class="cefr-prompt-text">${_esc(tarea.prompt).split('\n\n').map(p => `<p>${_esc(p)}</p>`).join('')}</div>
                         ${tarea.bulletPoints ? `
                             <ul class="cefr-prompt-bullets">
@@ -1672,27 +1912,30 @@ const CefrExam = (function () {
             const sTasks = (_data && _data.skills && _data.skills.speaking && _data.skills.speaking.tareas && _data.skills.speaking.tareas.length) || 2;
 
             if (isHu) {
+                const isPreEcl = lvl === 'A1';
                 return `
                     <div class="cefr-mocks-wrapper">
                         <div class="cefr-mock-intro-card">
-                            <h3>Hivatalos ${_esc(title)} komplex próbavizsga (4 készség)</h3>
-                            <p>A nemzetközi ECL vizsga négy különálló készséget mér fel, két fő vizsgarészre bontva:</p>
+                            <h3>${isPreEcl ? _esc(title) + ' (4 készség)' : 'Hivatalos ' + _esc(title) + ' komplex próbavizsga (4 készség)'}</h3>
+                            <p>${isPreEcl
+                                ? 'A hivatalos ECL nyelvvizsga A2 szinttől indul; ez az A1-es gyakorlóvizsga az ECL négy önálló moduljának felépítésére készít fel:'
+                                : 'A nemzetközi ECL vizsga négy önálló modulból áll (2026 augusztusától minden modul külön teljesíthető, készségek közötti átszámítás nélkül):'}</p>
                             <div class="cefr-blocks-spec">
                                 <div class="cefr-spec-card">
-                                    <strong>1. rész: Írásbeli vizsga (50 pont)</strong>
+                                    <strong>Írásbeli modulok (modulonként 25 pont)</strong>
                                     <ul>
                                         <li>Olvasásértés (${rTime} perc · ${rTasks} feladat · 25 pont)</li>
-                                        <li>Írásbeli kommunikáció (${wTime} perc · ${wTasks} feladat · 25 pont)</li>
+                                        <li>Írásbeli kommunikáció (${wTime} perc · ${wTasks} feladat · 25 pont · nyomtatott szótár használható)</li>
                                     </ul>
-                                    <span class="cefr-pass-pill">Megfelelt: Legalább 30 / 50 pont (60%)</span>
+                                    <span class="cefr-pass-pill">Megfelelt: Legalább 60% (15 / 25 pont) modulonként</span>
                                 </div>
                                 <div class="cefr-spec-card">
-                                    <strong>2. rész: Szóbeli vizsga (50 pont)</strong>
+                                    <strong>Szóbeli modulok (modulonként 25 pont)</strong>
                                     <ul>
                                         <li>Hallásértés (${lTime} perc · ${lTasks} feladat · 25 pont)</li>
-                                        <li>Szóbeli kommunikáció (${sTime} perc · ${sTasks} feladat · 25 pont)</li>
+                                        <li>Szóbeli kommunikáció (${sTime} perc · ${sTasks} feladat · 25 pont · hivatalosan párban)</li>
                                     </ul>
-                                    <span class="cefr-pass-pill">Megfelelt: Legalább 30 / 50 pont (60%)</span>
+                                    <span class="cefr-pass-pill">Megfelelt: Legalább 60% (15 / 25 pont) modulonként</span>
                                 </div>
                             </div>
                             <div class="cefr-mock-cta-wrap">
@@ -1759,8 +2002,13 @@ const CefrExam = (function () {
             });
 
             const overallPct = sumMax > 0 ? Math.round((sumScore / sumMax) * 100) : 0;
+            const passEval = _evaluateExamPass(scores);
             const passLabel = _t('APTO', 'MEGFELELT', 'ADMIS', 'IDONEO');
+            const failLabel = _t('NO APTO', 'NEM FELELT MEG', 'NON ADMIS', 'NON IDONEO');
             const inProgLabel = _t('EN PROCESO', 'FOLYAMATBAN', 'EN COURS', 'IN CORSO');
+            const verdictLabel = passEval.status === 'pass'
+                ? passLabel
+                : (passEval.status === 'fail' ? failLabel : (totalAttempted > 0 ? inProgLabel : '–'));
 
             const skillNames = {
                 reading: _t('Lectura', 'Olvasásértés', 'Écrits', 'Lettura'),
@@ -1768,6 +2016,47 @@ const CefrExam = (function () {
                 writing: _t('Escritura', 'Írásbeli', 'Production écrite', 'Scrittura'),
                 speaking: _t('Oral', 'Szóbeli', 'Production orale', 'Orale')
             };
+
+            let passBreakdownHtml = '';
+            if (passEval.mode === 'ecl-modular') {
+                passBreakdownHtml = `
+                    <div class="cefr-blocks-spec" style="margin-bottom:16px;">
+                        ${['reading', 'writing', 'listening', 'speaking'].map(sk => {
+                            const info = passEval.skills[sk];
+                            const val = info.attempted ? `${info.pct}% (${info.pts25}/25)` : '–';
+                            const badgeCls = !info.attempted ? '' : (info.passed ? 'is-pass' : 'is-fail');
+                            return `
+                                <div class="cefr-spec-card">
+                                    <strong>${_esc(skillNames[sk])}</strong>
+                                    <span class="cefr-pct-badge ${badgeCls}">${val}</span>
+                                    <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">≥ 60% (15/25)</div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            } else {
+                const g1 = passEval.group1;
+                const g2 = passEval.group2;
+                passBreakdownHtml = `
+                    <div class="cefr-blocks-spec" style="margin-bottom:16px;">
+                        <div class="cefr-spec-card">
+                            <strong>${_t('Grupo 1: Lectura + Escritura', '1. csoport', 'Pôle 1 : Écrit', 'Gruppo 1: Scritto')}</strong>
+                            <span class="cefr-pct-badge ${!g1.complete ? '' : (g1.passed ? 'is-pass' : 'is-fail')}">
+                                ${g1.complete ? `${g1.pts50} / 50` : _t('Incompleto', 'Hiányos', 'Incomplet', 'Incompleto')}
+                            </span>
+                            <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">${_t('Mínimo 30 / 50 pts', 'Minimum 30 / 50', 'Minimum 30 / 50', 'Minimo 30 / 50')}</div>
+                        </div>
+                        <div class="cefr-spec-card">
+                            <strong>${_t('Grupo 2: Audición + Oral', '2. csoport', 'Pôle 2 : Oral', 'Gruppo 2: Orale')}</strong>
+                            <span class="cefr-pct-badge ${!g2.complete ? '' : (g2.passed ? 'is-pass' : 'is-fail')}">
+                                ${g2.complete ? `${g2.pts50} / 50` : _t('Incompleto', 'Hiányos', 'Incomplet', 'Incompleto')}
+                            </span>
+                            <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">${_t('Mínimo 30 / 50 pts', 'Minimum 30 / 50', 'Minimum 30 / 50', 'Minimo 30 / 50')}</div>
+                        </div>
+                    </div>
+                `;
+            }
 
             return `
                 <div class="cefr-history-wrapper">
@@ -1781,10 +2070,12 @@ const CefrExam = (function () {
                             <span class="cefr-sum-label">${_t('Puntuación media', 'Átlagos eredmény', 'Score moyen', 'Punteggio medio')}</span>
                         </div>
                         <div class="cefr-sum-metric">
-                            <span class="cefr-sum-val">${overallPct >= 60 ? passLabel : (totalAttempted > 0 ? inProgLabel : '–')}</span>
-                            <span class="cefr-sum-label">${_t('Calificación global', 'Összesített értékelés', 'Résultat global', 'Esito complessivo')}</span>
+                            <span class="cefr-sum-val">${verdictLabel}</span>
+                            <span class="cefr-sum-label">${_t('Calificación oficial', 'Hivatalos értékelés', 'Résultat officiel', 'Esito ufficiale')}</span>
                         </div>
                     </div>
+
+                    ${passBreakdownHtml}
 
                     <div class="cefr-history-table-card">
                         <h4>${_t('Registro detallado de tareas', 'Részletes feladateredmények', 'Détail des résultats par exercice', 'Registro dettagliato delle prove')}</h4>
@@ -1967,6 +2258,7 @@ const CefrExam = (function () {
                     const tarea = _getCurrentTarea();
                     const item = (tarea.items || []).find(it => it.id === itemId);
                     if (!item || !item.audio || !item.audio.turns) return;
+                    if (_state.mockMode && (_state.listeningItemPasses[itemId] || 0) >= 2) return;
 
                     _stopListeningTimers();
                     _state.listeningActiveItemId = itemId;
@@ -2075,17 +2367,33 @@ const CefrExam = (function () {
                 });
             }
 
-            // Mock CTA
+            // Mock CTA & Timed Mock Controls
             const mockCta = root.querySelector('[data-action="start-full-mock"]');
             if (mockCta) {
                 mockCta.addEventListener('click', () => {
-                    // Open first reading task as preview for mock exam
+                    _state.mockMode = true;
                     _state.tab = 'tasks';
                     _state.activeSkill = 'reading';
                     const skill = _data.skills.reading;
                     if (skill && skill.tareas && skill.tareas.length > 0) {
-                        _state.activeTareaId = skill.tareas[0].id;
+                        _resetTaskRunState(skill.tareas[0].id);
+                        _startMockSectionTimer('reading');
                     }
+                    render(_container);
+                });
+            }
+
+            const mockNextBtn = root.querySelector('[data-action="mock-next"]');
+            if (mockNextBtn) {
+                mockNextBtn.addEventListener('click', () => {
+                    _advanceMockStep();
+                });
+            }
+
+            const mockExitBtn = root.querySelector('[data-action="mock-exit"]');
+            if (mockExitBtn) {
+                mockExitBtn.addEventListener('click', () => {
+                    _exitMockMode('mocks');
                     render(_container);
                 });
             }
@@ -2129,12 +2437,16 @@ const CefrExam = (function () {
 
             _attachEvents(_container);
 
-            if (_state.activeTareaId && _state.activeSkill === 'listening') {
-                _updateListeningConsole();
+            if (_state.activeTareaId) {
+                const curT = _getCurrentTarea();
+                if (_state.activeSkill === 'listening' || (_state.activeSkill === 'writing' && curT && curT.audio && curT.audio.turns)) {
+                    _updateListeningConsole();
+                }
             }
         }
 
         function stop() {
+            _stopMockTimer();
             _stopListeningTimers();
             _stopSpeakingStreams();
         }
@@ -2143,13 +2455,14 @@ const CefrExam = (function () {
             id: _id,
             render: render,
             stop: stop,
-            // For tests/test-cefr-exam-production.js: the offline markers.
+            // For tests/test-cefr-exam-production.js: the offline markers & pass rules.
             _testHooks: {
                 writing: (text, tarea) => _evaluateWritingText(text, tarea),
                 speaking: (text, tarea, audio) => {
                     _state.speakingAudioBlobUrl = audio || null;
                     return _evaluateSpeakingText(text, tarea);
-                }
+                },
+                evaluatePass: (scores) => _evaluateExamPass(scores)
             }
         };
     }
@@ -2185,7 +2498,7 @@ const CefrExam = (function () {
     const EclA1Exam = createModule({
         id: 'hu-ecl-a1-exam',
         dataFile: 'ecl-a1-exam.json',
-        title: 'ECL A1 Nyelvvizsga',
+        title: 'A1 Nyelvvizsga-előkészítő (Pre-ECL)',
         subtitle: 'Európai Közös Referenciakeret (KER) · A1 szintű komplex nyelvvizsga-felkészítő'
     });
 

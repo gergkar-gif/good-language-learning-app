@@ -38,7 +38,10 @@ const HuCulturalExam = (function () {
         mockOpen: false,          // false: list of mock exams; true: the exam
         activeMockId: 'mock-1',
         mockAnswers: {},          // { [qIndex]: optionIdx }
-        mockSubmitted: false
+        mockSubmitted: false,
+        timerEnabled: true,
+        timerRemaining: 60 * 60,  // 60 minutes (official BFKH duration)
+        timerInterval: null
     };
 
     function _loadSavedProgress() {
@@ -474,20 +477,99 @@ const HuCulturalExam = (function () {
         `;
     }
 
+    function _stopTimer() {
+        if (_state.timerInterval) {
+            clearInterval(_state.timerInterval);
+            _state.timerInterval = null;
+        }
+    }
+
+    function _formatTime(sec) {
+        const s = Math.max(0, sec | 0);
+        const m = Math.floor(s / 60);
+        const r = s % 60;
+        return `${String(m).padStart(2, '0')}:${String(r).padStart(2, '0')}`;
+    }
+
+    function _updateTimerDisplay(container) {
+        const badge = container.querySelector('#hce-timer-display');
+        if (badge) {
+            badge.textContent = _formatTime(_state.timerRemaining);
+            if (_state.timerRemaining < 300) {
+                badge.classList.add('is-warning');
+            } else {
+                badge.classList.remove('is-warning');
+            }
+        }
+    }
+
+    function _normAnswer(str) {
+        return String(str || '')
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^a-z0-9\s]/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function _isMockQuestionCorrect(q, ans) {
+        if (!q) return false;
+        if (q.type === 'short-answer') {
+            const norm = _normAnswer(ans);
+            if (!norm) return false;
+            const req = Array.isArray(q.requiredKeywords) ? q.requiredKeywords : [];
+            if (req.length > 0) {
+                return req.every(kw => norm.includes(_normAnswer(kw)));
+            }
+            const acc = Array.isArray(q.acceptedAnswers) ? q.acceptedAnswers : [];
+            return acc.some(a => norm === _normAnswer(a));
+        }
+        return ans === q.correct;
+    }
+
+    function _recordMockResult() {
+        const exam = (_data && _data.mockExams || []).find(m => m.id === _state.activeMockId) || (_data && _data.mockExams || [])[0];
+        if (!exam) return;
+        let pts = 0;
+        (exam.questions || []).forEach((q, idx) => {
+            if (_isMockQuestionCorrect(q, _state.mockAnswers[idx])) pts += (q.points || 2);
+        });
+        _saveMockScore(exam.id, pts, _data.maxPoints || 30, pts >= (_data.passThresholdPoints || 16));
+    }
+
+    function _startTimer(container, options) {
+        _stopTimer();
+        const mins = (_data && _data.officialDurationMinutes) || 60;
+        _state.timerRemaining = mins * 60;
+        _state.timerInterval = setInterval(() => {
+            _state.timerRemaining--;
+            if (_state.timerRemaining <= 0) {
+                _stopTimer();
+                _state.mockSubmitted = true;
+                _recordMockResult();
+                _paint(container, options);
+            } else {
+                _updateTimerDisplay(container);
+            }
+        }, 1000);
+    }
+
     function _renderMocksTab() {
         const mocks = _data.mockExams || [];
         const saved = (_loadSavedProgress().mocks) || {};
         const maxPoints = _data.maxPoints || 30;
         const passMark = _data.passThresholdPoints || 16;
+        const durationMins = _data.officialDurationMinutes || 60;
 
         // Pick a mock exam.
         if (!_state.mockOpen) {
             return `<div class="hce-section">
-                <p class="hce-section-desc">Each mock has 30 points; the pass mark is ${passMark}.</p>
+                <p class="hce-section-desc">Each mock has 12 questions (MCQ + short written answers, ${maxPoints} points, ${durationMins} min official limit); the pass mark is ${passMark}.</p>
                 ${_rows(mocks.map(m => {
                     const prev = saved[m.id];
                     return _row(`data-hce-mock-id="${_esc(m.id)}"`, m.title,
-                        `${(m.questions || []).length} questions · ${maxPoints} points`,
+                        `${(m.questions || []).length} questions · ${maxPoints} points · ${durationMins} min`,
                         prev ? `Best ${prev.points}${prev.passed ? ', passed' : ''}` : 'Not taken');
                 }).join(''))}
             </div>`;
@@ -499,20 +581,37 @@ const HuCulturalExam = (function () {
         let earnedPoints = 0;
         if (_state.mockSubmitted) {
             questions.forEach((q, idx) => {
-                if (_state.mockAnswers[idx] === q.correct) earnedPoints += (q.points || 2);
+                if (_isMockQuestionCorrect(q, _state.mockAnswers[idx])) earnedPoints += (q.points || 2);
             });
         }
         const passed = earnedPoints >= passMark;
+        const answeredCount = questions.filter((q, idx) => {
+            const v = _state.mockAnswers[idx];
+            return q.type === 'short-answer' ? Boolean(String(v || '').trim()) : v !== undefined;
+        }).length;
 
         return `
             <div class="hce-section">
+                ${!_state.mockSubmitted ? `
+                    <div class="hce-section-controls" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:16px;">
+                        <span class="hce-section-desc" style="margin:0;">Answered: ${answeredCount} / ${questions.length} · Official limit: ${durationMins} min</span>
+                        <div style="display:flex; align-items:center; gap:10px;">
+                            ${_state.timerEnabled ? `
+                                <span class="hce-points-badge">⏱ <span id="hce-timer-display">${_formatTime(_state.timerRemaining)}</span></span>
+                                <button type="button" class="hce-link-btn" data-hce-timer-toggle="0">Hide timer</button>
+                            ` : `
+                                <button type="button" class="hce-secondary-btn" data-hce-timer-toggle="1" style="padding:6px 12px; font-size:13px;">Start ${durationMins}m timer</button>
+                            `}
+                        </div>
+                    </div>
+                ` : ''}
                 ${_state.mockSubmitted ? `
                     <div class="hce-mock-result ${passed ? 'is-pass' : 'is-fail'}">
                         <h4 class="hce-mock-result-title">
                             ${passed ? 'Sikeres vizsga' : 'Ismétlés javasolt'}
                             — ${earnedPoints} / ${maxPoints} pont
                         </h4>
-                        <p>${passed ? 'You passed.' : `Below the ${passMark}-point pass mark.`} The official requirement is at least ${passMark} of ${maxPoints} points across the six categories.</p>
+                        <p>${passed ? 'You passed.' : `Below the ${passMark}-point pass mark.`} The official requirement is at least ${passMark} of ${maxPoints} points across the six categories within ${durationMins} minutes.</p>
                         <button type="button" class="hce-secondary-btn" data-hce-mock-retry="1">Retake this mock exam</button>
                     </div>
                 ` : ''}
@@ -520,8 +619,32 @@ const HuCulturalExam = (function () {
                 <div class="hce-mcq-list">
                     ${questions.map((q, idx) => {
                         const chosen = _state.mockAnswers[idx];
+                        const isRight = _state.mockSubmitted && _isMockQuestionCorrect(q, chosen);
+                        if (q.type === 'short-answer') {
+                            return `
+                                <div class="hce-mcq-card${_state.mockSubmitted ? (isRight ? ' is-correct' : ' is-wrong') : ''}">
+                                    <div class="hce-mcq-meta">
+                                        ${_categoryBadge(q.category)}
+                                        <span class="hce-points-badge">${q.points || 2} pont · Rövid írásos válasz</span>
+                                    </div>
+                                    <p class="hce-mcq-q">${_esc(q.question)}</p>
+                                    <input type="text"
+                                           class="hce-short-input"
+                                           style="width:100%; padding:10px 12px; font-size:15px; border:1px solid var(--border, #ccc); border-radius:var(--radius-sm, 2px); background:#fff;"
+                                           data-hce-mock-input="${idx}"
+                                           value="${_esc(typeof chosen === 'string' ? chosen : '')}"
+                                           placeholder="${_esc(q.placeholder || 'Írja be a választ magyarul...')}"
+                                           ${_state.mockSubmitted ? 'disabled' : ''}>
+                                    ${_state.mockSubmitted ? `
+                                        <div style="margin-top:8px; font-size:13px; color:var(--text-muted);">
+                                            <strong>Elvárt válasz:</strong> ${_esc(q.modelAnswer || (q.requiredKeywords || []).join(', '))}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            `;
+                        }
                         return `
-                            <div class="hce-mcq-card${_state.mockSubmitted ? (chosen === q.correct ? ' is-correct' : ' is-wrong') : ''}">
+                            <div class="hce-mcq-card${_state.mockSubmitted ? (isRight ? ' is-correct' : ' is-wrong') : ''}">
                                 <div class="hce-mcq-meta">
                                     ${_categoryBadge(q.category)}
                                     <span class="hce-points-badge">${q.points || 2} pont</span>
@@ -575,6 +698,7 @@ const HuCulturalExam = (function () {
 
     // Closes whatever item is open in the current section, back to its list.
     function _closeItem() {
+        _stopTimer();
         _state.selectedCategory = null;
         _state.mcqOpen = false;
         _state.matchOpen = false;
@@ -591,15 +715,25 @@ const HuCulturalExam = (function () {
         if (container.dataset.hceWired) return;
         container.dataset.hceWired = '1';
 
+        container.addEventListener('input', e => {
+            const inp = e.target.closest('[data-hce-mock-input]');
+            if (inp && !_state.mockSubmitted) {
+                const qIdx = Number(inp.getAttribute('data-hce-mock-input'));
+                _state.mockAnswers[qIdx] = inp.value;
+            }
+        });
+
         container.addEventListener('click', e => {
             const backBtn = e.target.closest('[data-hce-back]');
             if (backBtn) {
                 const kind = backBtn.getAttribute('data-hce-back');
                 if (kind === 'exit') {
+                    _stopTimer();
                     if (options && typeof options.onBack === 'function') options.onBack();
                     return;
                 }
                 if (kind === 'hub') {
+                    _stopTimer();
                     _state.tab = null;
                 } else {
                     _closeItem();
@@ -705,7 +839,26 @@ const HuCulturalExam = (function () {
                 _state.mockSubmitted = false;
                 _state.mockOpen = true;
                 _shuffleMockExam(_state.activeMockId);
+                if (_state.timerEnabled) {
+                    _startTimer(container, options);
+                } else {
+                    _stopTimer();
+                    _state.timerRemaining = ((_data && _data.officialDurationMinutes) || 60) * 60;
+                }
                 _go(container, options);
+                return;
+            }
+
+            const timerToggleBtn = e.target.closest('[data-hce-timer-toggle]');
+            if (timerToggleBtn) {
+                const enable = timerToggleBtn.getAttribute('data-hce-timer-toggle') === '1';
+                _state.timerEnabled = enable;
+                if (enable) {
+                    _startTimer(container, options);
+                } else {
+                    _stopTimer();
+                }
+                _paint(container, options);
                 return;
             }
 
@@ -719,15 +872,9 @@ const HuCulturalExam = (function () {
             }
 
             if (e.target.closest('[data-hce-mock-submit]')) {
+                _stopTimer();
                 _state.mockSubmitted = true;
-                const exam = (_data.mockExams || []).find(m => m.id === _state.activeMockId) || (_data.mockExams || [])[0];
-                if (exam) {
-                    let pts = 0;
-                    (exam.questions || []).forEach((q, idx) => {
-                        if (_state.mockAnswers[idx] === q.correct) pts += (q.points || 2);
-                    });
-                    _saveMockScore(exam.id, pts, _data.maxPoints || 30, pts >= (_data.passThresholdPoints || 16));
-                }
+                _recordMockResult();
                 _paint(container, options);
                 return;
             }
@@ -736,6 +883,11 @@ const HuCulturalExam = (function () {
                 _state.mockAnswers = {};
                 _state.mockSubmitted = false;
                 _shuffleMockExam(_state.activeMockId);
+                if (_state.timerEnabled) {
+                    _startTimer(container, options);
+                } else {
+                    _stopTimer();
+                }
                 _paint(container, options);
             }
         });
