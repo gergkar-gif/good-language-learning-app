@@ -1,60 +1,85 @@
+<p align="center">
+  <a href="https://parlour.me.uk">
+    <img src="assets/icons/og-card.png" alt="Parlour — Spanish & Hungarian (A1–C1)" width="760" />
+  </a>
+</p>
+
 # Parlour
 
 *Read, practise, and learn a language.*
 
-Learn with lessons. Read stories. Practise with purpose. Remember what matters.
+No owl. No streak guilt. No paywalled hearts. **Parlour** is a free, non-commercial language-learning web app for self-directed adults who want real CEFR progress—built around explicit grammar, graded stories, an interactive EPUB reader, spaced repetition, and official-format exam prep.
 
-A modular, content-driven language curriculum (CEFR A1–C1). Spanish (Spain and Latin America) is live through B2 (DELE-aligned) and Hungarian is live through C1.
+**[Open Parlour → parlour.me.uk](https://parlour.me.uk)**
+
+---
+
+## What's Inside
+
+- **Structured A1–C1 lessons** — Short, focused units with clear grammar paradigms (tables, never buried in prose), progressive exercises, and review consolidations.
+- **Library & EPUB reader** — Graded unit stories, adapted classics, and a reader that lets you paste your own texts or import EPUBs, analyses vocabulary coverage, and translates words on tap.
+- **Workshop & production practice** — Dedicated drillers for verb conjugations, Hungarian suffixes, listening, written exchanges, and guided speaking scenarios that push past phrasebook sentences.
+- **Learner model & SM-2 decks** — Every exercise carries `category` and `teaches` metadata so weak grammar skills resurface automatically alongside SM-2 spaced-repetition vocabulary decks.
+- **CEFR & citizenship exam prep** — Placement diagnostics and mock exams aligned with **DELE**, **ECL**, **CCSE**, and the **Hungarian Cultural Exam**.
+
+## Courses at a Glance
+
+| Course | Track | Levels | Units | Lessons | Stories | Exam Alignment |
+|---|---|---:|---:|---:|---:|---|
+| **Spanish (Latin America)** | `es-latam` | A1–C1 | 242 | 1,452 | 649 | DELE, CCSE |
+| **Spanish (Spain)** | `es-es` | A1–C1 | 207 | 1,242 | 434 | DELE, CCSE |
+| **Hungarian** | `hu` | A1–C1 | 299 | 1,793 | 846 | ECL, Hungarian Cultural Exam |
 
 ## Philosophy
 
-- **Pedagogy first.** Technology serves education, not the reverse.
-- **Engine/content separation.** The engine is reusable; Spanish is the first content pack.
-- **No frameworks.** HTML, CSS, vanilla JavaScript, JSON.
-- **Reuse external resources.** Do not reinvent dictionaries, conjugations, or frequency lists.
+- **Pedagogy first.** Technology serves education, not engagement metrics.
+- **Calm over compulsion.** A quiet, editorial interface—cream paper, ink navy, and zero gamified anxiety.
+- **Engine / content separation.** One reusable engine; every language is a schema-validated JSON content pack under `content/<lang>/`.
+- **No frameworks.** Plain HTML, CSS, vanilla JavaScript, and JSON—shipped as a static PWA.
+- **Reuse external resources.** Built on established dictionaries, conjugations, and frequency lists rather than reinventing them (see [`CREDITS.md`](CREDITS.md)).
 
 ## Quick Start
 
-The app loads its content with `fetch`, so serve the project locally rather
-than opening `index.html` through `file://`.
+Parlour loads its curriculum over `fetch`, so serve the repo locally rather than opening `index.html` via `file://`:
 
-```powershell
+```bash
+# macOS / Linux
+python3 scripts/dev-server.py
+
+# Windows (PowerShell)
 .\.venv\Scripts\python.exe scripts\dev-server.py
 ```
 
 Then open `http://localhost:8131`.
 
-## Folder Structure
+## Repository Layout
 
-`engine/` holds the reusable app logic, `content/<lang>/` holds one
-language's curriculum (lessons, grammar, exercises, vocabulary, stories),
-`styles/` holds the CSS, and `scripts/` the build, check and import tools
-(see `scripts/README.md`). `content/<lang>/schemas/README.md` describes the
-content schemas; `AGENTS.md` ("Wiring a new unit into the app") explains how a
-lesson becomes part of the Learn tab.
+- `engine/` — Reusable app logic (lesson runner, learner model, SRS, reader, workshop, exam engine).
+- `content/<lang>/` — Language packs (lessons, grammar, exercises, vocabulary, stories, tests, schemas).
+- `styles/` — Editorial visual system (light & dark themes; see [`DESIGN.md`](DESIGN.md)).
+- `scripts/` — Build, validation, and content-audit tools (see [`scripts/README.md`](scripts/README.md)).
 
 ## Documentation
 
-| Document | What it is |
+| Document | What it covers |
 |---|---|
-| `AGENTS.md` | Rules for anyone writing content or code: validator, exercise metadata, teaching and exercise principles, wiring a unit, adding a course |
-| `DESIGN.md`, `PRODUCT.md` | The visual system (with the prototype in `docs/overhaul-prototype/`) and the product brief |
-| `ROADMAP.md` | What is open and planned |
-| `ACHIEVED.md` | What has shipped, with the archived queue items |
-| `docs/SERVICES.md` | Setting up the Cloudflare Workers and third-party services (bug reports, cloud sync, Google Sign-In, grader, speech-to-text) |
-| `docs/feature-guidance-copy.md` | The copy for first-week guidance notes |
-| `CREDITS.md` | Data sources and licences |
-| `docs/archive/`, `scripts/archive/` | History only; nothing there is current guidance |
+| [`AGENTS.md`](AGENTS.md) | Rules for authoring content and code: validator, exercise metadata, teaching principles, wiring a unit, adding a course |
+| [`DESIGN.md`](DESIGN.md), [`PRODUCT.md`](PRODUCT.md) | The visual system (prototype in `docs/overhaul-prototype/`) and product brief |
+| [`ROADMAP.md`](ROADMAP.md) | Open and planned work |
+| [`ACHIEVED.md`](ACHIEVED.md) | Shipped milestones and archived queue items |
+| [`docs/SERVICES.md`](docs/SERVICES.md) | Cloudflare Workers and third-party services (cloud sync, Google Sign-In, TTS/STT, grader, bug reports) |
+| [`docs/feature-guidance-copy.md`](docs/feature-guidance-copy.md) | First-week guidance copy |
+| [`CREDITS.md`](CREDITS.md) | Data sources and licences |
 
 ## Development
 
-One task → one test → one commit. Never large rewrites. Always keep the app working.
+One task → one test → one commit. Always keep the app working.
 
-Install the Python validation dependency once per checkout, then validate the
-content corpus before committing:
+Install the Python validation dependency once per checkout, then validate before committing:
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
-.\.venv\Scripts\python.exe scripts\validate-content.py --changed
+```bash
+python3 -m venv .venv
+source .venv/bin/activate        # Windows: .\.venv\Scripts\Activate.ps1
+pip install -r requirements-dev.txt
+python scripts/validate-content.py --changed
 ```
