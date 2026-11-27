@@ -597,6 +597,10 @@ const WritingDriller = (function () {
                 const earnedXP = Math.max(10, Math.round(result.overallScore / 5));
                 XP.award(earnedXP, 'writing-driller');
             }
+            if (typeof DrillHistory !== 'undefined' && DrillHistory.record) {
+                const passed = (result.overallScore || 0) >= 65;
+                DrillHistory.record('writing', { correct: passed ? 1 : 0, wrong: passed ? 0 : 1 });
+            }
 
             // Clear draft
             try { localStorage.removeItem(_draftKey(p.id)); } catch (e) {}
@@ -1410,6 +1414,10 @@ const WritingDriller = (function () {
             if (typeof XP !== 'undefined' && XP.award) {
                 const earnedXP = Math.max(15, Math.round((result.overallScore || 75) / 3));
                 XP.award(earnedXP, 'writing-studio');
+            }
+            if (typeof DrillHistory !== 'undefined' && DrillHistory.record) {
+                const passed = (result.overallScore || 0) >= 65;
+                DrillHistory.record('writing', { correct: passed ? 1 : 0, wrong: passed ? 0 : 1 });
             }
 
             _exchangePhase = EXCHANGE_PHASE.DEBRIEF;

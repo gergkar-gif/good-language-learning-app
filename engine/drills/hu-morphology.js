@@ -184,6 +184,7 @@ const HuMorphologyDriller = (function () {
             options,
             correct: options.indexOf(row.label),
             explanation: row.why || undefined,
+            audioText: entry.word,
             moreInfo: _referenceFor(row.concept)
         };
     }
@@ -200,6 +201,7 @@ const HuMorphologyDriller = (function () {
             sentence: `"${entry.chain[0].form}" (${entry.chain[0].translation}) ${steps} = ______`,
             answer: entry.word,
             explanation: `${entry.word} = ${entry.chain[entry.chain.length - 1].translation}`,
+            audioText: entry.word,
             moreInfo: _referenceFor(lastRow && lastRow.concept)
         };
     }
@@ -425,6 +427,9 @@ const HuMorphologyDriller = (function () {
         _phase = PHASE.RESULTS;
         if (typeof DrillHistory !== 'undefined') {
             DrillHistory.record('hu-morphology', { correct: _correct, wrong: _seen - _correct });
+        }
+        if (_correct > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+            XP.award(_correct * 2, 'hu-morphology', 'Hungarian Decomposition');
         }
         _renderResults();
     }

@@ -20,20 +20,61 @@
           "instructions": "Olvasd el az alábbi cikket, amelyből 5 mondatot kihagytunk. Válaszd ki a megadott opciók (A-G) közül a hiányzó mondatokat. Két opció felesleges.",
           "passage": "Ökoturizmus és hagyományőrzés a Balaton-felvidéken\n\nA Balaton-felvidék az elmúlt évtizedben Magyarország egyik legkedveltebb pihenőhelyévé vált a csendre vágyó utazók körében. A látogatókat nem a zajos strandok, hanem a vulkanikus tanúhegyek, a történelmi falvak és a levendulamezők vonzzák. [___1___] A helyi gazdák és kézművesek gyorsan felismerték, hogy a városi emberek valódi élményekre és tiszta élelmiszerekre vágynak.\n\nSorra nyílnak a kis családi pincészetek és biogazdaságok, ahol a vendégek nemcsak kóstolhatnak, hanem be is kapcsolódhatnak a munkába. [___2___] A szüretelés vagy a kecskesajtkészítés olyan közös élmény, amely felnőtteknek és gyerekeknek egyaránt felejthetetlen emléket nyújt.\n\nA vendéglátók kiemelt figyelmet fordítanak a környezet megóvására. Kerülik az egyszer használatos műanyagokat, és igyekeznek kizárólag a környéken megtermelt alapanyagokból főzni. [___3___] Ezáltal nemcsak a szén-dioxid-kibocsátás csökken, hanem a környékbeli termelők megélhetése is biztosítottá válik.\n\nA kerékpáros turizmus szintén óriási lendületet kapott az új kiépített utaknak köszönhetően. [___4___] Akik két keréken járják be a dombokat, közvetlenebb kapcsolatba kerülnek a tájjal és a helyi lakosokkal.\n\nA szakemberek szerint a jövő záloga a fenntarthatóság és a minőség megőrzése. [___5___] Ha sikerül megőrizni ezt a békés egyensúlyt, a Balaton-felvidék még sokáig a természetközeli felüdülés jelképe marad.",
           "gaps": [
-            { "id": "gap-1", "num": 1, "correct": "C" },
-            { "id": "gap-2", "num": 2, "correct": "A" },
-            { "id": "gap-3", "num": 3, "correct": "E" },
-            { "id": "gap-4", "num": 4, "correct": "B" },
-            { "id": "gap-5", "num": 5, "correct": "D" }
+            {
+              "id": "gap-1",
+              "num": 1,
+              "correct": "C"
+            },
+            {
+              "id": "gap-2",
+              "num": 2,
+              "correct": "A"
+            },
+            {
+              "id": "gap-3",
+              "num": 3,
+              "correct": "E"
+            },
+            {
+              "id": "gap-4",
+              "num": 4,
+              "correct": "B"
+            },
+            {
+              "id": "gap-5",
+              "num": 5,
+              "correct": "D"
+            }
           ],
           "options": [
-            { "letter": "A", "text": "Sokan szívesen próbálják ki a szőlőszedést vagy a hagyományos kenyérsütést." },
-            { "letter": "B", "text": "Egyre több falu között jön létre biztonságos, kitáblázott bicikliút." },
-            { "letter": "C", "text": "A térség egyedi hangulata a természet és az emberi kultúra harmóniáján alapul." },
-            { "letter": "D", "text": "Fontos, hogy a növekvő látogatószám ne tegye tönkre a falvak nyugalmát." },
-            { "letter": "E", "text": "A legtöbb étterem étlapján a legfeljebb harminc kilométerről származó hozzávalók szerepelnek." },
-            { "letter": "F", "text": "Minden évben nemzetközi autóversenyt rendeznek a hegyi utakon." },
-            { "letter": "G", "text": "A kormány elrendelte az összes magánszálláshely azonnali bezárását." }
+            {
+              "letter": "A",
+              "text": "Sokan szívesen próbálják ki a szőlőszedést vagy a hagyományos kenyérsütést."
+            },
+            {
+              "letter": "B",
+              "text": "Egyre több falu között jön létre biztonságos, kitáblázott bicikliút."
+            },
+            {
+              "letter": "C",
+              "text": "A térség egyedi hangulata a természet és az emberi kultúra harmóniáján alapul."
+            },
+            {
+              "letter": "D",
+              "text": "Fontos, hogy a növekvő látogatószám ne tegye tönkre a falvak nyugalmát."
+            },
+            {
+              "letter": "E",
+              "text": "A legtöbb étterem étlapján a legfeljebb harminc kilométerről származó hozzávalók szerepelnek."
+            },
+            {
+              "letter": "F",
+              "text": "Minden évben nemzetközi autóversenyt rendeznek a hegyi utakon."
+            },
+            {
+              "letter": "G",
+              "text": "A kormány elrendelte az összes magánszálláshely azonnali bezárását."
+            }
           ]
         },
         {
@@ -155,6 +196,75 @@
               "correct": 0,
               "evidence": "Értesíteni szeretném, hogy Dr. Nagy Tamás holnap délelőtt sajnos nem rendel... Az Ön időpontját át tudnánk tenni...",
               "explanation": "Az orvos nem rendel, ezért új időpontot kell egyeztetni a beteggel."
+            },
+            {
+              "id": "hu-l1-q3",
+              "num": 3,
+              "situation": "Könyvtári hangosbemondó üzenete.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Könyvtáros",
+                    "gender": "female",
+                    "text": "Tisztelt Olvasóink! Tájékoztatjuk Önöket, hogy a főépület olvasóterme húsz perc múlva, este hét órakor zár. Kérjük, hogy a kölcsönözni kívánt könyveket legkésőbb háromnegyed hétig vigyék a földszinti pultnál lévő automatához. A hétvégén a könyvtár szombaton délelőtt tíz és kettő között tart nyitva."
+                  }
+                ]
+              },
+              "question": "Meddig lehet a könyveket kikölcsönözni az automatánál?",
+              "options": [
+                "Szombat délután kettőig.",
+                "Este háromnegyed hétig (18:45-ig).",
+                "Este hét óráig (19:00-ig)."
+              ],
+              "correct": 1,
+              "evidence": "a kölcsönözni kívánt könyveket legkésőbb háromnegyed hétig vigyék a földszinti pultnál lévő automatához.",
+              "explanation": "A kölcsönzés határideje 18:45, bár az olvasóterem 19:00-kor zár."
+            },
+            {
+              "id": "hu-l1-q4",
+              "num": 4,
+              "situation": "Kikötői tájékoztató a Balatonon.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Kikötői bemondó",
+                    "gender": "male",
+                    "text": "Kedves Utasaink! Az erős északi szél miatt a Tihany és Szántód között közlekedő komp ma délután félóránként helyett csak óránként, minden egész órakor indul. A kerékpáros utasokat kérjük, hogy az indulás előtt tizenöt perccel álljanak be a kijelölt sávba. Megértésüket köszönjük!"
+                  }
+                ]
+              },
+              "question": "Hogyan közlekedik a komp ma délután az erős szél miatt?",
+              "options": [
+                "Óránként, minden egész órakor indul.",
+                "A járatokat teljesen törölték estig.",
+                "Csak gyalogosokat szállít, kerékpárokat nem."
+              ],
+              "correct": 0,
+              "evidence": "a Tihany és Szántód között közlekedő komp ma délután félóránként helyett csak óránként, minden egész órakor indul.",
+              "explanation": "Ritkított menetrenddel, óránként közlekedik a komp."
+            },
+            {
+              "id": "hu-l1-q5",
+              "num": 5,
+              "situation": "Rádiós kulturális ajánló egy új kiállításról.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Műsorvezető",
+                    "gender": "female",
+                    "text": "Péntektől látogatható a Nemzeti Galériában a magyar szecessziós plakátművészetet bemutató időszaki kiállítás. A tárlaton több mint százhúsz eredeti grafikát állítanak ki, és minden vasárnap délután három órától ingyenes tárlatvezetést tartanak a belépőjeggyel rendelkezőknek."
+                  }
+                ]
+              },
+              "question": "Mikor vehetnek részt a látogatók ingyenes tárlatvezetésen?",
+              "options": [
+                "Péntek délelőttönként a megnyitó után.",
+                "Minden hétköznap este hat órától.",
+                "Minden vasárnap délután három órától."
+              ],
+              "correct": 2,
+              "evidence": "minden vasárnap délután három órától ingyenes tárlatvezetést tartanak a belépőjeggyel rendelkezőknek.",
+              "explanation": "Vasárnap délután háromkor tartanak díjmentes vezetést a jeggyel érkezőknek."
             }
           ]
         },
@@ -186,6 +296,16 @@
                 "speaker": "Dániel",
                 "gender": "male",
                 "text": "A legfontosabb az idő. Az ipari kenyér két óra alatt elkészül mesterséges adalékanyagok és élesztő segítségével. A mi kenyerünk tizenhat-húsz órán át kel lassan, hideg kamrában. Ezalatt a gabona fehérjéi lebomlanak, így a kenyér sokkal könnyebben emészthetővé válik, és napokig friss marad száradás vagy penészedés nélkül."
+              },
+              {
+                "speaker": "Riporter",
+                "gender": "female",
+                "text": "Mennyire nehéz fenntartani ezt a napirendet? Gondolom, egy péknek egészen korán indul a napja."
+              },
+              {
+                "speaker": "Dániel",
+                "gender": "male",
+                "text": "Valóban, hajnali négykor már a kemencénél állok, hogy reggel hétre friss, ropogós kenyér várja a környékbelieket. Az első fél év kimerítő volt, de ma már két ügyes tanítványom is segít. A legnagyobb öröm számomra, hogy a vevők név szerint ismerik egymást a sorban, és valódi kis közösség alakult ki a pékség körül."
               }
             ]
           },
@@ -213,6 +333,42 @@
               "correct": 1,
               "evidence": "A legfontosabb az idő... tizenhat-húsz órán át kel lassan, hideg kamrában. Ezalatt a gabona fehérjéi lebomlanak, így a kenyér sokkal könnyebben emészthetővé válik...",
               "explanation": "A lassú kelesztési idő teszi emészthetővé és tartóssá a kenyeret."
+            },
+            {
+              "id": "hu-l2-q3",
+              "question": "3. Milyen összetevőket említ Dániel az igazi kovászos kenyérhez?",
+              "options": [
+                "Csak lisztet, vizet, sót és időt.",
+                "Lisztet, élesztőt és mesterséges adalékanyagokat.",
+                "Vajat, cukrot és speciális fűszerkeveréket."
+              ],
+              "correct": 0,
+              "evidence": "csak liszt, víz, só és idő kell hozzá.",
+              "explanation": "Dániel kiemeli a kovászos kenyér négy egyszerű elemét: liszt, víz, só és idő."
+            },
+            {
+              "id": "hu-l2-q4",
+              "question": "4. Hány órakor kezdi Dániel a munkát a kemencénél?",
+              "options": [
+                "Reggel hét órakor.",
+                "Éjfélkor minden este.",
+                "Hajnali négy órakor."
+              ],
+              "correct": 2,
+              "evidence": "hajnali négykor már a kemencénél állok, hogy reggel hétre friss, ropogós kenyér várja a környékbelieket.",
+              "explanation": "Hajnali négykor kezd, hogy hét órára elkészüljön a friss kenyér."
+            },
+            {
+              "id": "hu-l2-q5",
+              "question": "5. Mi jelenti ma Dániel számára a legnagyobb örömet a pékségben?",
+              "options": [
+                "Hogy országos szupermarketláncokba szállítanak.",
+                "Hogy a vevők között valódi helyi közösség alakult ki.",
+                "Hogy már egyáltalán nem kell korán kelnie."
+              ],
+              "correct": 1,
+              "evidence": "A legnagyobb öröm számomra, hogy a vevők név szerint ismerik egymást a sorban, és valódi kis közösség alakult ki a pékség körül.",
+              "explanation": "A pékség körüli szomszédsági közösség adja neki a legnagyobb örömet."
             }
           ]
         }
@@ -309,19 +465,39 @@
     "connectors": [
       {
         "category": "Gondolatmenet felépítése",
-        "examples": ["Először is", "Egyrészt / másrészt", "Továbbá", "Végül"]
+        "examples": [
+          "Először is",
+          "Egyrészt / másrészt",
+          "Továbbá",
+          "Végül"
+        ]
       },
       {
         "category": "Ellentét kifejezése",
-        "examples": ["Azonban", "Ennek ellenére", "Bár", "Ugyanakkor"]
+        "examples": [
+          "Azonban",
+          "Ennek ellenére",
+          "Bár",
+          "Ugyanakkor"
+        ]
       },
       {
         "category": "Ok és következmény",
-        "examples": ["Ezért", "Mivel", "Ennek következtében", "Így"]
+        "examples": [
+          "Ezért",
+          "Mivel",
+          "Ennek következtében",
+          "Így"
+        ]
       },
       {
         "category": "Véleménykifejtés",
-        "examples": ["Véleményem szerint", "Úgy gondolom, hogy", "Szerintem", "Meglátásom szerint"]
+        "examples": [
+          "Véleményem szerint",
+          "Úgy gondolom, hogy",
+          "Szerintem",
+          "Meglátásom szerint"
+        ]
       }
     ]
   }

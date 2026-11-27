@@ -434,6 +434,741 @@
           }
         }
       ]
+    },
+    {
+      "id": "hu-b1-sc01-allasinterju",
+      "cefrLevel": "B1",
+      "title": "Állásinterjú Budapesten",
+      "titleEn": "Job Interview in Budapest",
+      "situation": "Egy budapesti cégnél projektkoordinátori állásra jelentkezel, és a HR-vezetővel beszélgetsz az interjún.",
+      "situationEn": "You are applying for a project coordinator position at a Budapest company and speaking with the HR manager.",
+      "roleplay": {
+        "interlocutorRole": "HR-vezető (Kovács Eszter)",
+        "interlocutorRoleEn": "HR Manager (Eszter Kovács)",
+        "learnerRole": "Jelentkező",
+        "learnerRoleEn": "Applicant",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can describe my work experience, strengths, and career goals in a structured job interview",
+      "targetSkills": [
+        "work_experience",
+        "professional_register",
+        "expressing_motivation"
+      ],
+      "unitIds": [
+        "unit.b1.core.06"
+      ],
+      "requiredLemmas": [
+        "munka",
+        "tapasztalat",
+        "csapat",
+        "fontos",
+        "érdekel",
+        "köszönöm"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Jó napot kívánok! Köszönöm, hogy eljött az interjúra. Kérem, meséljen röviden az eddigi munkatapasztalatáról!",
+          "interlocutorTranslation": "Good day! Thank you for coming to the interview. Please tell me briefly about your work experience so far.",
+          "learnerCue": "Köszönj udvariasan, és foglald össze, hol dolgoztál korábban és milyen tapasztalatot szereztél.",
+          "learnerCueEn": "Greet politely and summarize where you worked previously and what experience you gained.",
+          "vocabularyHints": [
+            "korábban … dolgoztam — previously I worked …",
+            "több éves tapasztalatom van — I have several years of experience",
+            "csapatban dolgozni — to work in a team"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "dolgoztam",
+              "tapasztalat",
+              "munka",
+              "csapat",
+              "év"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Nagyon jól hangzik. Miért érdekli Önt pontosan ez a pozíció nálunk?",
+          "interlocutorTranslation": "That sounds very good. Why are you specifically interested in this position with us?",
+          "learnerCue": "Mondd el, miért vonz a cég és mit tartasz fontosnak ebben a munkában.",
+          "learnerCueEn": "Explain why the company appeals to you and what you consider important in this job.",
+          "vocabularyHints": [
+            "azért érdekel, mert… — it interests me because…",
+            "számomra fontos a… — for me … is important",
+            "fejlődni szeretnék — I would like to grow/develop"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "érdekel",
+              "fontos",
+              "mert",
+              "szeretnék",
+              "munka"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "A csapatunkban gyakran szoros határidőkkel dolgozunk. Hogyan kezeli a stresszes helyzeteket?",
+          "interlocutorTranslation": "In our team we often work with tight deadlines. How do you handle stressful situations?",
+          "learnerCue": "Fejtsd ki, hogyan szervezed meg a feladataidat és hogyan maradsz nyugodt.",
+          "learnerCueEn": "Explain how you organize your tasks and stay calm.",
+          "vocabularyHints": [
+            "először megtervezem — first I plan",
+            "megoldást keresek — I look for a solution",
+            "együttműködöm a csapattal — I cooperate with the team"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "megoldás",
+              "csapat",
+              "fontos",
+              "tervez",
+              "nyugodt",
+              "segít"
+            ]
+          }
+        },
+        {
+          "turnIndex": 4,
+          "interlocutorPrompt": "Köszönöm a válaszokat! Van esetleg valamilyen kérdése hozzánk a munkával vagy a következő lépésekkel kapcsolatban?",
+          "interlocutorTranslation": "Thank you for your answers! Do you have any questions for us about the job or the next steps?",
+          "learnerCue": "Tegyél fel egy udvarias kérdést a csapatról vagy a kezdésről, és köszönd meg az interjút.",
+          "learnerCueEn": "Ask a polite question about the team or start date and thank them for the interview.",
+          "vocabularyHints": [
+            "megkérdezhetem, hogy… — may I ask whether…",
+            "mikor várható visszajelzés — when can feedback be expected",
+            "köszönöm a lehetőséget — thank you for the opportunity"
+          ],
+          "validationCriteria": {
+            "minWords": 6,
+            "targetKeywords": [
+              "köszönöm",
+              "kérdés",
+              "csapat",
+              "mikor",
+              "munka"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b1-sc02-alberlet",
+      "cefrLevel": "B1",
+      "title": "Albérlet megtekintése",
+      "titleEn": "Viewing a Rental Apartment",
+      "situation": "Egy kétszobás budapesti lakást nézel meg a tulajdonossal, és a feltételekről egyeztettek.",
+      "situationEn": "You are viewing a two-room Budapest apartment with the landlord and negotiating the terms.",
+      "roleplay": {
+        "interlocutorRole": "Tulajdonos (Szabó Gábor)",
+        "interlocutorRoleEn": "Landlord (Gábor Szabó)",
+        "learnerRole": "Érdeklődő bérlő",
+        "learnerRoleEn": "Prospective tenant",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can ask detailed questions about housing conditions, utilities, and rental contracts",
+      "targetSkills": [
+        "housing",
+        "negotiation",
+        "asking_details"
+      ],
+      "unitIds": [
+        "unit.b1.core.10"
+      ],
+      "requiredLemmas": [
+        "lakás",
+        "szoba",
+        "konyha",
+        "hónap",
+        "szerződés",
+        "pénz"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Üdvözlöm! Ez tehát a nappali, innen nyílik a hálószoba és a konyha. Hogy tetszik elsőre a lakás?",
+          "interlocutorTranslation": "Welcome! So this is the living room, and from here open the bedroom and kitchen. How do you like the apartment at first glance?",
+          "learnerCue": "Mondd el az első benyomásodat a szobákról vagy a konyháról, és kérdezz rá a rezsire.",
+          "learnerCueEn": "Share your first impression of the rooms or kitchen and ask about utility costs.",
+          "vocabularyHints": [
+            "nagyon világos a lakás — the apartment is very bright",
+            "mennyi a közös költség — how much is the common charge",
+            "tetszik a konyha — I like the kitchen"
+          ],
+          "validationCriteria": {
+            "minWords": 7,
+            "targetKeywords": [
+              "lakás",
+              "szoba",
+              "konyha",
+              "tetszik",
+              "mennyi"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "A közös költség havi húszezer forint, a fűtés és az áram fogyasztás szerint fizetendő. Mikortól szeretne beköltözni?",
+          "interlocutorTranslation": "The common fee is 20,000 forints per month; heating and electricity are paid by consumption. From when would you like to move in?",
+          "learnerCue": "Mondd meg, mikor költöznél be, és kérdezd meg, mennyi kauciót kérnek és milyen hosszú a szerződés.",
+          "learnerCueEn": "State when you would move in and ask how much deposit is required and how long the contract is.",
+          "vocabularyHints": [
+            "jövő hónaptól szeretnék — I would like from next month",
+            "hány havi kaució szükséges — how many months' deposit is needed",
+            "egyéves szerződés — one-year contract"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "hónap",
+              "szerződés",
+              "pénz",
+              "kaució",
+              "költöz"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Két havi kauciót kérek, és minimum egy évre kötünk szerződést. Van kisállata, vagy dohányzik esetleg?",
+          "interlocutorTranslation": "I ask for two months' deposit and we sign a contract for at least one year. Do you have any pets or do you smoke?",
+          "learnerCue": "Válaszolj a kérdésre, és kérdezz rá, hogy a bútorok maradnak-e a lakásban.",
+          "learnerCueEn": "Answer the question and ask whether the furniture stays in the apartment.",
+          "vocabularyHints": [
+            "nem dohányzom — I don't smoke",
+            "a bútorok itt maradnak — the furniture stays here",
+            "rendben van — that's fine"
+          ],
+          "validationCriteria": {
+            "minWords": 7,
+            "targetKeywords": [
+              "nem",
+              "lakás",
+              "szoba",
+              "bútor",
+              "rendben"
+            ]
+          }
+        },
+        {
+          "turnIndex": 4,
+          "interlocutorPrompt": "Igen, minden bútor marad. Ha érdekli a lakás, holnap délutánig jelezzen vissza kérem!",
+          "interlocutorTranslation": "Yes, all furniture stays. If you are interested in the apartment, please let me know by tomorrow afternoon!",
+          "learnerCue": "Köszönd meg a megtekintést, és ígérd meg, hogy holnap biztosan jelentkezel.",
+          "learnerCueEn": "Thank the landlord for showing the flat and promise to get back to them tomorrow.",
+          "vocabularyHints": [
+            "köszönöm szépen — thank you very much",
+            "holnap mindenképp írok — I will definitely write tomorrow",
+            "viszontlátásra — goodbye (formal)"
+          ],
+          "validationCriteria": {
+            "minWords": 6,
+            "targetKeywords": [
+              "köszönöm",
+              "holnap",
+              "lakás",
+              "viszontlátásra",
+              "írok"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b1-sc03-orvos",
+      "cefrLevel": "B1",
+      "title": "Orvosi konzultáció",
+      "titleEn": "Medical Consultation",
+      "situation": "Három napja rosszul érzed magad, és elmentél a háziorvosi rendelőbe.",
+      "situationEn": "You have been feeling unwell for three days and went to the GP's office.",
+      "roleplay": {
+        "interlocutorRole": "Háziorvos (Dr. Nagy Ágnes)",
+        "interlocutorRoleEn": "GP (Dr. Ágnes Nagy)",
+        "learnerRole": "Páciens",
+        "learnerRoleEn": "Patient",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can explain symptoms, medical history, and follow treatment advice at a doctor's appointment",
+      "targetSkills": [
+        "health_symptoms",
+        "duration",
+        "medical_advice"
+      ],
+      "unitIds": [
+        "unit.b1.core.09"
+      ],
+      "requiredLemmas": [
+        "orvos",
+        "fáj",
+        "láz",
+        "gyógyszer",
+        "egészség",
+        "köszönöm"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Jó napot! Foglaljon helyet. Mi a panasza, mióta érzi magát rosszul?",
+          "interlocutorTranslation": "Good day! Take a seat. What are your symptoms, and how long have you been feeling unwell?",
+          "learnerCue": "Írd le a tüneteidet (pl. fáj a torkod vagy a fejed, lázad van), és mondd el, hány napja tart.",
+          "learnerCueEn": "Describe your symptoms (e.g., sore throat/headache, fever) and say how many days it has lasted.",
+          "vocabularyHints": [
+            "három napja fáj a… — my … has been hurting for three days",
+            "magas lázam volt — I had a high fever",
+            "nagyon fáradt vagyok — I am very tired"
+          ],
+          "validationCriteria": {
+            "minWords": 7,
+            "targetKeywords": [
+              "fáj",
+              "láz",
+              "nap",
+              "rosszul",
+              "torok",
+              "fej"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Értem. Szedett már valamilyen gyógyszert otthon, és van-e bármilyen gyógyszerallergiája?",
+          "interlocutorTranslation": "I see. Have you already taken any medicine at home, and do you have any medication allergies?",
+          "learnerCue": "Mondd el, milyen gyógyszert vettél be (vagy nem), és válaszolj az allergiára.",
+          "learnerCueEn": "Say whether you took any medicine and answer about allergies.",
+          "vocabularyHints": [
+            "bevettem egy lázcsillapítót — I took a fever reducer",
+            "nincs allergiám — I have no allergies",
+            "csak teát ittam — I only drank tea"
+          ],
+          "validationCriteria": {
+            "minWords": 6,
+            "targetKeywords": [
+              "gyógyszer",
+              "allergia",
+              "nem",
+              "igen",
+              "vettem"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Megvizsgáltam, ez egy vírusos fertőzés. Írok fel gyógyszert, és pár nap pihenést javaslok. Szüksége van táppénzes papírra a munkahelyére?",
+          "interlocutorTranslation": "I examined you; it is a viral infection. I will prescribe medicine and recommend a few days of rest. Do you need a sick note for your workplace?",
+          "learnerCue": "Válaszolj a táppénzes papírra, és kérdezd meg, hogyan kell szedni a gyógyszert.",
+          "learnerCueEn": "Answer about the sick note and ask how to take the medication.",
+          "vocabularyHints": [
+            "igen, kérek szépen — yes, please",
+            "naponta hányszor kell bevenni — how many times a day should I take it",
+            "evés előtt vagy után — before or after eating"
+          ],
+          "validationCriteria": {
+            "minWords": 7,
+            "targetKeywords": [
+              "gyógyszer",
+              "kér",
+              "hányszor",
+              "nap",
+              "munka"
+            ]
+          }
+        },
+        {
+          "turnIndex": 4,
+          "interlocutorPrompt": "Naponta kétszer, étkezés után vegye be, és igyon sok folyadékot. Ha péntekig nem javul, jöjjön vissza! Jobbulást!",
+          "interlocutorTranslation": "Take it twice a day after meals and drink plenty of fluids. If it does not improve by Friday, come back! Get well soon!",
+          "learnerCue": "Köszönd meg az orvos segítségét és köszönj el.",
+          "learnerCueEn": "Thank the doctor for their help and say goodbye.",
+          "vocabularyHints": [
+            "köszönöm szépen, doktornő — thank you very much, doctor",
+            "mindenképp betartom — I will definitely follow this",
+            "viszontlátásra — goodbye"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "köszönöm",
+              "viszontlátásra",
+              "doktor",
+              "orvos",
+              "rendben"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b1-sc04-utazas",
+      "cefrLevel": "B1",
+      "title": "Vonatjegy és átszállás",
+      "titleEn": "Train Delay & Rerouting",
+      "situation": "A Keleti pályaudvaron vagy; a bécsi vonatod sokat késik, és az ügyfélszolgálaton keresel megoldást.",
+      "situationEn": "You are at Keleti Railway Station; your train to Vienna is heavily delayed and you ask customer service for a solution.",
+      "roleplay": {
+        "interlocutorRole": "Ügyfélszolgálati munkatárs",
+        "interlocutorRoleEn": "Customer Service Agent",
+        "learnerRole": "Utas",
+        "learnerRoleEn": "Passenger",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can resolve travel disruptions, ask about alternative connections, and clarify ticket validity",
+      "targetSkills": [
+        "travel_disruption",
+        "problem_solving",
+        "polite_requests"
+      ],
+      "unitIds": [
+        "unit.b1.core.08"
+      ],
+      "requiredLemmas": [
+        "vonat",
+        "jegy",
+        "állomás",
+        "késik",
+        "probléma",
+        "segít"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Jó napot! Miben segíthetek?",
+          "interlocutorTranslation": "Good day! How can I help you?",
+          "learnerCue": "Mondd el, hogy késik a vonatod, és kérdezd meg, mikor indul vagy van-e másik járat.",
+          "learnerCueEn": "Explain that your train is delayed and ask when it leaves or if there is another train.",
+          "vocabularyHints": [
+            "késik a vonatom — my train is delayed",
+            "van-e másik vonat — is there another train",
+            "el szeretném érni a csatlakozást — I want to make my connection"
+          ],
+          "validationCriteria": {
+            "minWords": 7,
+            "targetKeywords": [
+              "vonat",
+              "késik",
+              "jegy",
+              "mikor",
+              "segít"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Sajnos műszaki hiba miatt legalább negyven percet késik. A következő gyorsvonat harminc perc múlva indul a hatos vágányról.",
+          "interlocutorTranslation": "Unfortunately due to a technical fault it is delayed by at least forty minutes. The next express train leaves in thirty minutes from platform six.",
+          "learnerCue": "Kérdezd meg, hogy érvényes-e a jelenlegi jegyed arra a vonatra, vagy kell-e új helyjegyet venni.",
+          "learnerCueEn": "Ask whether your current ticket is valid for that train or if you need to buy a new seat reservation.",
+          "vocabularyHints": [
+            "érvényes a jegyem — is my ticket valid",
+            "kell-e új helyjegy — do I need a new seat reservation",
+            "át lehet cserélni — can it be exchanged"
+          ],
+          "validationCriteria": {
+            "minWords": 7,
+            "targetKeywords": [
+              "jegy",
+              "vonat",
+              "érvényes",
+              "helyjegy",
+              "kell"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "A jegye érvényes, a helyjegyet pedig itt díjmentesen átírom az új vonatra. Szeretne ablak melletti helyet?",
+          "interlocutorTranslation": "Your ticket is valid, and I can reissue the seat reservation here free of charge for the new train. Would you like a window seat?",
+          "learnerCue": "Válaszolj a helyválasztásra, és kérdezd meg, melyik vágányról indul és hány órára ér oda.",
+          "learnerCueEn": "Answer about the seat preference and confirm the platform and arrival time.",
+          "vocabularyHints": [
+            "igen, az ablak mellé kérem — yes, by the window please",
+            "melyik vágányról indul — which platform does it leave from",
+            "mikor érkezik meg — when does it arrive"
+          ],
+          "validationCriteria": {
+            "minWords": 7,
+            "targetKeywords": [
+              "igen",
+              "ablak",
+              "vágány",
+              "mikor",
+              "köszönöm"
+            ]
+          }
+        },
+        {
+          "turnIndex": 4,
+          "interlocutorPrompt": "Tessék az új helyjegy! A hatos vágányról indul, és két óra ötven perc alatt ér Bécsbe. Jó utat kívánok!",
+          "interlocutorTranslation": "Here is the new seat reservation! It leaves from platform six and reaches Vienna in two hours and fifty minutes. Have a good trip!",
+          "learnerCue": "Köszönd meg a gyors segítséget és köszönj el.",
+          "learnerCueEn": "Thank the agent for the quick help and say goodbye.",
+          "vocabularyHints": [
+            "nagyon köszönöm a segítséget — thank you very much for your help",
+            "viszontlátásra — goodbye"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "köszönöm",
+              "segítség",
+              "viszontlátásra"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b2-sc01-vita-varos",
+      "cefrLevel": "B2",
+      "title": "Városfejlesztési vita",
+      "titleEn": "Urban Development Debate",
+      "situation": "Egy kerületi lakossági fórumon vitatkozol arról, hogy autómentesítsék-e a belvárosi főutcát és bővítsék-e a parkot.",
+      "situationEn": "At a district town hall meeting, you debate whether to pedestrianize the downtown main street and expand the park.",
+      "roleplay": {
+        "interlocutorRole": "Önkormányzati képviselő",
+        "interlocutorRoleEn": "Municipal Representative",
+        "learnerRole": "Helyi lakos",
+        "learnerRoleEn": "Local Resident",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can present structured arguments, weigh pros and cons, and propose compromises in a public debate",
+      "targetSkills": [
+        "argumentation",
+        "weighing_tradeoffs",
+        "compromise"
+      ],
+      "unitIds": [
+        "unit.b2.core.04"
+      ],
+      "requiredLemmas": [
+        "város",
+        "park",
+        "vélemény",
+        "változás",
+        "megoldás",
+        "szerintem"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Köszönöm, hogy eljöttek a fórumra. A javaslat szerint lezárnánk a főutcát az autók elől, és zöld parkot alakítanánk ki. Mi az Ön véleménye erről a változásról?",
+          "interlocutorTranslation": "Thank you for coming to the forum. Under the proposal, we would close the main street to cars and create a green park. What is your opinion on this change?",
+          "learnerCue": "Fogalmazd meg világosan az álláspontodat legalább két érvvel a park vagy a közlekedés mellett/ellen.",
+          "learnerCueEn": "State your position clearly with at least two arguments for or against the park/traffic change.",
+          "vocabularyHints": [
+            "szerintem ez a változás… — in my opinion this change…",
+            "egyrészt… másrészt… — on the one hand… on the other hand…",
+            "élhetőbbé tenné a várost — it would make the city more livable"
+          ],
+          "validationCriteria": {
+            "minWords": 12,
+            "targetKeywords": [
+              "szerintem",
+              "város",
+              "park",
+              "vélemény",
+              "változás",
+              "mert"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Több helyi üzlettulajdonos attól tart, hogy kevesebb vásárló érkezne, ha nem lehetne az üzletek előtt parkolni. Mit válaszolna nekik?",
+          "interlocutorTranslation": "Several local shop owners fear fewer customers would arrive if parking in front of shops were removed. What would you reply to them?",
+          "learnerCue": "Reagálj az ellenérvre: ismerd el az aggodalmukat, de mutass rá egy másik nézőpontra vagy példára.",
+          "learnerCueEn": "Respond to the counterargument: acknowledge their concern and offer another perspective or example.",
+          "vocabularyHints": [
+            "megértem az aggodalmukat, ugyanakkor… — I understand their concern, however…",
+            "a gyalogos forgalom növekedhet — pedestrian traffic can increase",
+            "hosszú távon — in the long run"
+          ],
+          "validationCriteria": {
+            "minWords": 12,
+            "targetKeywords": [
+              "megértem",
+              "de",
+              "viszont",
+              "város",
+              "megoldás",
+              "szerintem"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Milyen kompromisszumos megoldást tudna elképzelni, amely a lakóknak és a kereskedőknek is elfogadható?",
+          "interlocutorTranslation": "What compromise solution could you imagine that is acceptable to both residents and shopkeepers?",
+          "learnerCue": "Javasolj egy konkrét kompromisszumot (pl. reggeli áruszállítás, próbaidőszak, jobb tömegközlekedés).",
+          "learnerCueEn": "Propose a concrete compromise (e.g., morning deliveries, trial period, better public transit).",
+          "vocabularyHints": [
+            "jó megoldás lehetne, ha… — a good solution could be if…",
+            "próbaidőszakot javasolnék — I would suggest a trial period",
+            "reggelente engedélyezni — to allow in the mornings"
+          ],
+          "validationCriteria": {
+            "minWords": 12,
+            "targetKeywords": [
+              "megoldás",
+              "javaslom",
+              "lehetne",
+              "ha",
+              "park",
+              "város"
+            ]
+          }
+        },
+        {
+          "turnIndex": 4,
+          "interlocutorPrompt": "Ez egy nagyon konstruktív javaslat, mindenképp rögzítjük a jegyzőkönyvben. Köszönjük a hozzászólását!",
+          "interlocutorTranslation": "That is a very constructive proposal; we will definitely record it in the minutes. Thank you for your contribution!",
+          "learnerCue": "Foglald össze röviden a fő üzenetedet, és köszönd meg a párbeszéd lehetőségét.",
+          "learnerCueEn": "Briefly summarize your key message and thank them for the dialogue.",
+          "vocabularyHints": [
+            "összefoglalva úgy gondolom — in summary, I believe",
+            "köszönöm, hogy meghallgattak — thank you for listening"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "köszönöm",
+              "fontos",
+              "változás",
+              "város",
+              "megoldás"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b2-sc02-tudomany-etika",
+      "cefrLevel": "B2",
+      "title": "Egészségügy és mesterséges intelligencia",
+      "titleEn": "Healthcare & AI Ethics Discussion",
+      "situation": "Egy egyetemi kerekasztal-beszélgetésen az orvosi diagnosztikában használt mesterséges intelligencia előnyeiről és felelősségi kérdéseiről beszélgettek.",
+      "situationEn": "At a university roundtable, you discuss the benefits and ethical responsibilities of using AI in medical diagnostics.",
+      "roleplay": {
+        "interlocutorRole": "Moderátor (Dr. Farkas Péter)",
+        "interlocutorRoleEn": "Moderator (Dr. Péter Farkas)",
+        "learnerRole": "Meghívott résztvevő",
+        "learnerRoleEn": "Invited Panelist",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can discuss abstract ethical dilemmas, express nuanced conditions, and evaluate technological risks",
+      "targetSkills": [
+        "abstract_discussion",
+        "ethical_reasoning",
+        "conditional_nuance"
+      ],
+      "unitIds": [
+        "unit.b2.core.08"
+      ],
+      "requiredLemmas": [
+        "egészség",
+        "orvos",
+        "kórház",
+        "felelősség",
+        "fontos",
+        "vélemény"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Üdvözlöm a kerekasztal-beszélgetésen! Egyre több kórház használ mesterséges intelligenciát a leletek elemzésére. Ön szerint miben segíthet ez a legtöbbet?",
+          "interlocutorTranslation": "Welcome to the roundtable! More and more hospitals use artificial intelligence to analyze medical results. In your view, where can this help the most?",
+          "learnerCue": "Ismertesd, milyen előnyöket látsz (pl. gyorsabb diagnózis, kevesebb hiba, orvosok tehermentesítése).",
+          "learnerCueEn": "Explain what benefits you see (e.g., faster diagnosis, fewer errors, reducing doctors' workload).",
+          "vocabularyHints": [
+            "óriási segítséget jelenthet — it can mean enormous help",
+            "gyorsabban felismeri a mintákat — it recognizes patterns faster",
+            "az orvosok munkáját támogatja — it supports doctors' work"
+          ],
+          "validationCriteria": {
+            "minWords": 12,
+            "targetKeywords": [
+              "orvos",
+              "kórház",
+              "segít",
+              "fontos",
+              "egészség",
+              "gyors"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "És ha a rendszer mégis téved? Kié legyen ilyenkor a felelősség: az orvosé, a kórházé vagy a szoftver fejlesztőjéé?",
+          "interlocutorTranslation": "And if the system still makes a mistake? Whose responsibility should it be: the doctor's, the hospital's, or the software developer's?",
+          "learnerCue": "Érvelj árnyaltan a felelősség megosztásáról és a végső emberi döntés fontosságáról.",
+          "learnerCueEn": "Argue with nuance about shared responsibility and the importance of final human judgment.",
+          "vocabularyHints": [
+            "a végső döntés mindig az orvosé — the final decision is always the doctor's",
+            "közös felelősségről van szó — it is a matter of shared responsibility",
+            "egyértelmű szabályokra van szükség — clear rules are needed"
+          ],
+          "validationCriteria": {
+            "minWords": 12,
+            "targetKeywords": [
+              "felelősség",
+              "orvos",
+              "kórház",
+              "fontos",
+              "döntés",
+              "szerintem"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Ön személy szerint megbízna egy olyan diagnózisban, amelyet nagyrészt algoritmus állított fel?",
+          "interlocutorTranslation": "Would you personally trust a diagnosis that was largely produced by an algorithm?",
+          "learnerCue": "Fejtsd ki feltételes módban, milyen feltételekkel bíznál meg benne (pl. emberi ellenőrzés, átláthatóság).",
+          "learnerCueEn": "Explain using the conditional under what conditions you would trust it (e.g., human oversight, transparency).",
+          "vocabularyHints": [
+            "csak akkor bíznék meg benne, ha… — I would only trust it if…",
+            "szükséges lenne, hogy egy szakorvos is lássa — it would be necessary for a specialist to see it too",
+            "az emberi empátiát nem helyettesítheti — it cannot replace human empathy"
+          ],
+          "validationCriteria": {
+            "minWords": 12,
+            "targetKeywords": [
+              "ha",
+              "orvos",
+              "bíznék",
+              "fontos",
+              "szerintem",
+              "vélemény"
+            ]
+          }
+        },
+        {
+          "turnIndex": 4,
+          "interlocutorPrompt": "Köszönöm a gondolatébresztő válaszokat! Zárásként mit üzenne a jövő orvosainak?",
+          "interlocutorTranslation": "Thank you for the thought-provoking answers! In closing, what message would you give to future doctors?",
+          "learnerCue": "Fogalmazz meg egy rövid, emelkedett zárógondolatot a technológia és az emberi figyelem egyensúlyáról.",
+          "learnerCueEn": "Formulate a brief closing thought on balancing technology and human care.",
+          "vocabularyHints": [
+            "a technológia eszköz, nem cél — technology is a tool, not an end",
+            "az emberi kapcsolat marad a legfontosabb — human connection remains the most important"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "orvos",
+              "egészség",
+              "fontos",
+              "ember",
+              "köszönöm"
+            ]
+          }
+        }
+      ]
     }
   ]
 }

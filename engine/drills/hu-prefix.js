@@ -223,6 +223,7 @@ const HuPrefixDriller = (function () {
             options,
             correct: options.indexOf(pair.prefixedGloss),
             explanation: `${pair.bareLemma} (${pair.bareGloss}) + "${pair.prefix}-" (${_quizSense(pair)})`,
+            audioText: pair.prefixedLemma,
             moreInfo: _referenceFor(pair.prefix)
         };
     }
@@ -236,6 +237,7 @@ const HuPrefixDriller = (function () {
             sentence: `"${pair.bareLemma}" (${pair.bareGloss}) + "${pair.prefix}-" (${_quizSense(pair)}) = ______`,
             answer: pair.prefixedLemma,
             explanation: `${pair.prefixedLemma} = ${pair.prefixedGloss}`,
+            audioText: pair.prefixedLemma,
             moreInfo: _referenceFor(pair.prefix)
         };
     }
@@ -457,6 +459,9 @@ const HuPrefixDriller = (function () {
         _phase = PHASE.RESULTS;
         if (typeof DrillHistory !== 'undefined') {
             DrillHistory.record('hu-prefix', { correct: _correct, wrong: _seen - _correct });
+        }
+        if (_correct > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+            XP.award(_correct * 2, 'hu-prefix', 'Hungarian Prefix Practice');
         }
         _renderResults();
     }

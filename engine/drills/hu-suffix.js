@@ -307,6 +307,7 @@ const HuSuffixDriller = (function () {
             options,
             correct: options.indexOf(entry.form),
             explanation: _explanationFor(entry),
+            audioText: entry.form,
             moreInfo: _referenceFor(entry)
         };
     }
@@ -317,6 +318,7 @@ const HuSuffixDriller = (function () {
             sentence: `"${entry.lemma}" (${_gloss(entry.lemma)}) + ${_promptFor(entry)} = ______`,
             answer: entry.form,
             explanation: _explanationFor(entry),
+            audioText: entry.form,
             moreInfo: _referenceFor(entry)
         };
     }
@@ -553,6 +555,9 @@ const HuSuffixDriller = (function () {
         _phase = PHASE.RESULTS;
         if (typeof DrillHistory !== 'undefined') {
             DrillHistory.record('hu-suffix', { correct: _correct, wrong: _seen - _correct });
+        }
+        if (_correct > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+            XP.award(_correct * 2, 'hu-suffix', 'Hungarian Suffix Practice');
         }
         _renderResults();
     }

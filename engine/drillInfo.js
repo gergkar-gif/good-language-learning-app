@@ -115,6 +115,34 @@ const DrillInfo = (function () {
                 "Open-ended composition, from single sentences up to short exchanges, graded against CEFR expectations for your level rather than a single fixed \"correct answer.\"",
                 "This is where you get to be imprecise and find out what happens — the grading is there to catch real mistakes, not to demand a textbook-perfect response."
             ]
+        },
+        'listening-comprehension': {
+            title: 'About Listening Comprehension',
+            body: [
+                "CEFR-style multi-turn dialogues and monologues with a two-pass listening protocol: preview the questions, listen twice, then check your answers with transcript evidence.",
+                "You don't need to catch every single word — practise tracking gist, speaker intent, and specific details at natural speed."
+            ]
+        },
+        music: {
+            title: 'About Learn from Music',
+            body: [
+                "Real songs paired with line-by-line synced lyrics and cloze listening gaps, plus tap-to-save vocabulary straight into your Decks.",
+                "Singing and rhythm compress vowels and blur word boundaries — training your ear on music makes fast everyday speech much easier to follow."
+            ]
+        },
+        video: {
+            title: 'About Learn from Video',
+            body: [
+                "Authentic journalism clips paired with interactive comprehension and cloze checks.",
+                "News and documentary speech moves faster than textbook audio — use the guided questions to focus on key facts first, then revisit the transcript for exact phrasing."
+            ]
+        },
+        'hu-verb-studio': {
+            title: 'About Verb & Morphology Practice',
+            body: [
+                "Hungarian packs tense, definiteness, possession, direction, and case directly onto the word stem. This studio brings conjugation, suffixes, verbal prefixes, and word decomposition together in one place.",
+                "Switch tabs freely depending on whether you want to train verb endings, noun cases, prefix meanings, or peeling apart stacked endings."
+            ]
         }
     };
 

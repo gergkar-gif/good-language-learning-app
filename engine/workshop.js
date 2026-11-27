@@ -638,7 +638,15 @@ const Workshop = (function () {
     document.addEventListener('language-changed', () => {
         if (!_active) {
             render();
+            return;
         }
+        _stopActiveDriller();
+        const driller = DRILLERS.find(d => d.id === _active);
+        if (!driller || !_available(driller)) {
+            _active = null;
+            _activeOptions = null;
+        }
+        render();
     });
 
     // Whether a driller can be opened right now (language, minimum level) —

@@ -53,14 +53,19 @@ const HuVerbDriller = (function () {
     // conjugate.
     const FORM_OF_GLOSS = /\b(participle|verbal noun|gerund|imperative) of\b/i;
 
-    // Short, practical, example-led explanations for the two toggles below
-    // — matches the tone of content/hu/grammar's own "text" sections
-    // (one or two plain sentences, a real example, no grammar-book jargon)
-    // rather than writing a new, heavier style just for this driller.
-    const TENSE_INFO = 'Hungarian has just one past tense — no separate '
-        + '"was doing" vs "did" like some languages. Add -t or -tt before '
-        + 'the personal ending: olvasok (I read, now) becomes olvastam '
-        + '(I read, before).';
+    const TENSE_OPTIONS = [
+        { value: 'pres', label: 'Present' },
+        { value: 'past', label: 'Past (-t/-tt)' },
+        { value: 'cond', label: 'Conditional (-na/-ne)' },
+        { value: 'imp',  label: 'Imperative / Subjunctive (-j-)' }
+    ];
+
+    const TENSE_INFO = {
+        pres: 'Hungarian present tense covers both "I read" and "I am reading". Endings follow front/back/rounded vowel harmony: olvasok (I read), beszélek (I speak), ülök (I sit).',
+        past: 'Hungarian has just one past tense — no separate "was doing" vs "did". Add -t or -tt before the personal ending: olvasok (I read, now) becomes olvastam (I read, before).',
+        cond: 'The conditional expresses "would …" (requests, wishes, hypotheticals). Add -na/-ne/-ná/-né to the stem: olvasnék (I would read), olvasnám (I would read it).',
+        imp:  'The imperative/subjunctive (-j-) expresses commands, suggestions, and "that … should" clauses. Final consonants often assimilate: adj (give!), olvass (read!), menj (go!).'
+    };
     const DEFINITE_INFO = 'Hungarian verbs conjugate differently depending on '
         + 'the object. Indefinite: no object, or a non-specific one — '
         + 'olvasok egy könyvet (I read a book). Definite: a specific, known '
@@ -205,9 +210,10 @@ const HuVerbDriller = (function () {
     // smaller, easier fact already covered by the settings-screen toggle)
     // only joins it for a past-tense session, where it's actually relevant.
     function _moreInfo() {
+        const tenseInfo = TENSE_INFO[_tense] || '';
         return {
             title: (_definite ? 'Definite' : 'Indefinite') + ' Conjugation',
-            explanation: _tense === 'past' ? TENSE_INFO + ' ' + DEFINITE_INFO : DEFINITE_INFO
+            explanation: _tense !== 'pres' && tenseInfo ? tenseInfo + ' ' + DEFINITE_INFO : DEFINITE_INFO
         };
     }
 
@@ -222,6 +228,7 @@ const HuVerbDriller = (function () {
             options,
             correct: options.indexOf(_personLabel(target)),
             explanation: `${verb.lemma} = ${verb.gloss}`,
+            audioText: target.form,
             personKey: `${target.person}${target.number}`,
             moreInfo: _moreInfo()
         };
@@ -238,6 +245,7 @@ const HuVerbDriller = (function () {
             options,
             correct: options.indexOf(target.form),
             explanation: `${verb.lemma} = ${verb.gloss}`,
+            audioText: target.form,
             personKey: `${target.person}${target.number}`,
             moreInfo: _moreInfo()
         };
@@ -251,6 +259,7 @@ const HuVerbDriller = (function () {
             sentence: `"${verb.lemma}" (${verb.gloss}), ${_personLabel(target)} (${target.pronoun}) = ______`,
             answer: target.form,
             explanation: `${verb.lemma} = ${verb.gloss}`,
+            audioText: target.form,
             personKey: `${target.person}${target.number}`,
             moreInfo: _moreInfo()
         };
@@ -265,6 +274,7 @@ const HuVerbDriller = (function () {
             sentence: `${from.pronoun} ${from.form} → ${to.pronoun} ______`,
             answer: to.form,
             explanation: `${verb.lemma} = ${verb.gloss}`,
+            audioText: to.form,
             personKey: `${to.person}${to.number}`,
             moreInfo: _moreInfo()
         };
@@ -299,18 +309,17 @@ const HuVerbDriller = (function () {
                     rather than just your lessons so far — ${_verbs.length} verbs available for this combination.
                     ${_availablePersons().length < PERSONS.length ? ' Singular persons (I/you/he-she) only, until a later lesson introduces the plural endings.' : ''}</p>
 
-                <div class="vb-setting vb-setting-row">
-                    <label id="hv-tense-label">Past tense
+                <div class="gd-setting">
+                    <label for="hv-tense">Tense / Mood
                         <button class="hv-info-link" type="button" data-action="toggle-tense-info">What's this?</button>
                     </label>
-                    <button class="geo-toggle" data-action="toggle-tense" role="switch"
-                        aria-checked="${_tense === 'past'}" aria-labelledby="hv-tense-label">
-                        <span class="geo-toggle-track"></span>
-                        <span class="geo-toggle-shape geo-toggle-shape--off"></span>
-                        <span class="geo-toggle-shape geo-toggle-shape--on"></span>
-                    </button>
+                    <select id="hv-tense" class="vb-select">
+                        ${TENSE_OPTIONS.map(opt => `
+                            <option value="${opt.value}"${opt.value === _tense ? ' selected' : ''}>${opt.label}</option>
+                        `).join('')}
+                    </select>
                 </div>
-                ${_showTenseInfo ? `<p class="gd-hint hv-info">${TENSE_INFO}</p>` : ''}
+                ${_showTenseInfo ? `<p class="gd-hint hv-info">${TENSE_INFO[_tense] || ''}</p>` : ''}
 
                 <div class="vb-setting vb-setting-row">
                     <label id="hv-definite-label">Definite conjugation
@@ -373,11 +382,14 @@ const HuVerbDriller = (function () {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });
         });
 
-        _container.querySelector('[data-action="toggle-tense"]').addEventListener('click', function () {
-            _tense = _tense === 'pres' ? 'past' : 'pres';
-            _buildVerbs();
-            _renderSettings();
-        });
+        const tenseSelect = _container.querySelector('#hv-tense');
+        if (tenseSelect) {
+            tenseSelect.addEventListener('change', e => {
+                _tense = e.target.value;
+                _buildVerbs();
+                _renderSettings();
+            });
+        }
         _container.querySelector('[data-action="toggle-definite"]').addEventListener('click', function () {
             _definite = !_definite;
             _buildVerbs();
@@ -540,6 +552,9 @@ const HuVerbDriller = (function () {
         if (typeof DrillHistory !== 'undefined') {
             DrillHistory.record('hu-verb', { correct: _correct, wrong: _seen - _correct });
         }
+        if (_correct > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+            XP.award(_correct * 2, 'hu-verb', 'Hungarian Verb Practice');
+        }
         _renderResults();
     }
 
@@ -617,11 +632,12 @@ const HuVerbDriller = (function () {
         let changedCell = false;
         if (options) {
             if (typeof options.tense === 'string') {
+                const validTenses = ['pres', 'past', 'cond', 'imp'];
                 if (options.tense.indexOf('.') !== -1) {
                     const [t, d] = options.tense.split('.');
-                    if (t === 'pres' || t === 'past') { _tense = t; changedCell = true; }
+                    if (validTenses.includes(t)) { _tense = t; changedCell = true; }
                     if (d === 'def' || d === 'indef') { _definite = (d === 'def'); changedCell = true; }
-                } else if (options.tense === 'pres' || options.tense === 'past') {
+                } else if (validTenses.includes(options.tense)) {
                     _tense = options.tense;
                     changedCell = true;
                 }

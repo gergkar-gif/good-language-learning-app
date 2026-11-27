@@ -247,6 +247,9 @@ const VerbsTable = (function () {
             if (typeof DrillHistory !== 'undefined' && DrillHistory.record) {
                 DrillHistory.record('verbs', { correct: correctCount, wrong: total - correctCount });
             }
+            if (correctCount > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+                XP.award(correctCount * 2, 'verb-table', 'Verb Practice');
+            }
         }
 
         var feedback = _container.querySelector('.vtable-feedback');

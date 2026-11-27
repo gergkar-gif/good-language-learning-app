@@ -399,6 +399,42 @@
       "minSeconds": 120,
       "targetSeconds": 180,
       "maxSeconds": 240
+    },
+    {
+      "id": "hu-c1-s01",
+      "cefrLevel": "C1",
+      "taskType": "academic_synthesis_debate",
+      "title": "Nyelvi sokszínűség és globalizáció",
+      "situation": "Az angol nyelv nemzetközi térnyerése miatt egyre több szakmai területen és egyetemi képzésben háttérbe szorulnak a nemzeti szaknyelvek.",
+      "task": "Fejtsd ki strukturált, árnyalt véleményedet arról, hogyan egyeztethető össze a nemzetközi versenyképesség a magyar szaknyelv és kulturális identitás megőrzésével. Reagálj lehetséges ellenérvekre is.",
+      "points": [
+        "a nemzetközi tudományos együttműködés előnyei",
+        "a magyar szaknyelv elszegényedésének kockázata",
+        "kétnyelvű oktatási és fordítói gyakorlatok",
+        "hosszú távú kulturális és társadalmi hatások"
+      ],
+      "prompt": "Helyzet: Az angol nyelv térnyerése miatt több szakmai területen háttérbe szorulnak a nemzeti szaknyelvek.\n\nFeladat: Fejtsd ki árnyalt véleményedet arról, hogyan egyeztethető össze a nemzetközi versenyképesség a magyar szaknyelv megőrzésével. Térj ki ellenérvekre és konkrét javaslatokra is.\n\nBeszélj körülbelül 4-5 percig.",
+      "minSeconds": 220,
+      "targetSeconds": 260,
+      "maxSeconds": 330
+    },
+    {
+      "id": "hu-c1-s02",
+      "cefrLevel": "C1",
+      "taskType": "policy_evaluation",
+      "title": "Klímaváltozás és vidéki mezőgazdaság",
+      "situation": "Az egyre gyakoribb nyári aszályok komoly kihívást jelentenek a magyar mezőgazdaság és a vidéki közösségek megélhetése számára.",
+      "task": "Értékeld a probléma gazdasági és társadalmi dimenzióit, mérlegeld a vízgazdálkodási és innovációs lehetőségeket, és fogalmazz meg hosszú távú stratégiát.",
+      "points": [
+        "éghajlati változások hatása a termésbiztonságra",
+        "hagyományos gazdálkodás és modern agrártechnológia",
+        "vízmegtartás és fenntartható földhasználat",
+        "állami támogatások és helyi összefogás szerepe"
+      ],
+      "prompt": "Helyzet: A nyári aszályok komoly kihívást jelentenek a magyar mezőgazdaság és a vidéki közösségek számára.\n\nFeladat: Értékeld a gazdasági és társadalmi hatásokat, és fogalmazz meg hosszú távú alkalmazkodási stratégiát árnyalt érveléssel.\n\nBeszélj körülbelül 4-5 percig.",
+      "minSeconds": 220,
+      "targetSeconds": 260,
+      "maxSeconds": 330
     }
   ]
 }

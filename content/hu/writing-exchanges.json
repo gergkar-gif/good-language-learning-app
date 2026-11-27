@@ -155,7 +155,7 @@
         "bocsánat",
         "metró",
         "tíz",
-        "perc",
+        "vár",
         "jó",
         "rendben",
         "kávézó",
@@ -500,6 +500,406 @@
               "kedden",
               "viszlát",
               "viszlat"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b1-wx01-reklamacio",
+      "cefrLevel": "B1",
+      "title": "Reklamáció online rendelésről",
+      "titleEn": "Online Order Complaint",
+      "situation": "Egy webáruházból rendelt csomagod sérülten érkezett meg, és írásban reklamálsz az ügyfélszolgálatnál.",
+      "situationEn": "A package you ordered from an online store arrived damaged and you write to customer service to complain.",
+      "roleplay": {
+        "interlocutorRole": "Ügyfélszolgálat (MagyarWeb Kft.)",
+        "interlocutorRoleEn": "Customer Service (MagyarWeb Ltd.)",
+        "learnerRole": "Te (Vásárló)",
+        "learnerRoleEn": "You (Customer)"
+      },
+      "targetCompetency": "I can write a polite formal complaint explaining a product defect and requesting a refund or replacement",
+      "targetSkills": [
+        "formal_complaint",
+        "consumer_rights",
+        "polite_requests"
+      ],
+      "unitIds": [
+        "unit.b1.core.10"
+      ],
+      "requiredLemmas": [
+        "csomag",
+        "probléma",
+        "pénz",
+        "segít",
+        "kér",
+        "köszönöm"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Tisztelt Ügyfelünk! Köszönjük, hogy kapcsolatba lépett velünk. Kérjük, írja meg a rendelési számát és azt, hogy milyen probléma merült fel a csomaggal!",
+          "interlocutorTranslation": "Dear Customer! Thank you for contacting us. Please write your order number and what problem occurred with the package.",
+          "learnerCue": "Köszönj hivatalosan, írd le, hogy a csomag sérülten érkezett meg, és add meg a hibát.",
+          "learnerCueEn": "Greet formally, explain that the package arrived damaged, and describe the defect.",
+          "vocabularyHints": [
+            "Tisztelt Ügyfélszolgálat! — Dear Customer Service!",
+            "sérülten érkezett meg a csomag — the package arrived damaged",
+            "a rendelési számom… — my order number is…"
+          ],
+          "validationCriteria": {
+            "minWords": 10,
+            "targetKeywords": [
+              "csomag",
+              "probléma",
+              "sérült",
+              "érkezett",
+              "tisztelt"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Nagyon sajnáljuk a kellemetlenséget! Kérjük, válasszon: új terméket küldjünk cserébe, vagy a teljes vételárat utaljuk vissza?",
+          "interlocutorTranslation": "We are very sorry for the inconvenience! Please choose: should we send a replacement product or refund the full purchase price?",
+          "learnerCue": "Írd meg udvariasan, hogy cserét vagy pénzvisszatérítést kérsz, és kérdezd meg, hogyan kell visszaküldeni a sérült csomagot.",
+          "learnerCueEn": "State politely whether you want a replacement or a refund and ask how to return the damaged item.",
+          "vocabularyHints": [
+            "szeretném kérni a pénz visszatérítését — I would like to request a refund",
+            "új terméket szeretnék kérni — I would like to request a new product",
+            "hogyan küldjem vissza — how should I send it back"
+          ],
+          "validationCriteria": {
+            "minWords": 10,
+            "targetKeywords": [
+              "kér",
+              "pénz",
+              "csere",
+              "vissza",
+              "csomag"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Rendben, holnap díjmentesen futárt küldünk a csomagért, és a feldolgozás után azonnal teljesítjük a kérését. Megfelel a délelőtti időpont?",
+          "interlocutorTranslation": "Understood, we will send a courier free of charge tomorrow for the package and fulfill your request immediately after processing. Does a morning slot work?",
+          "learnerCue": "Erősítsd meg az időpontot, köszönd meg a gyors megoldást, és zárd le hivatalosan az üzenetet.",
+          "learnerCueEn": "Confirm the time slot, thank them for the quick resolution, and close the message formally.",
+          "vocabularyHints": [
+            "igen, a délelőtti időpont megfelelő — yes, the morning slot works",
+            "köszönöm a gyors segítséget — thank you for the quick help",
+            "üdvözlettel — sincerely / regards"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "köszönöm",
+              "időpont",
+              "megfelel",
+              "üdvözlettel",
+              "segítség"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b1-wx02-kirandulas",
+      "cefrLevel": "B1",
+      "title": "Hétvégi kirándulás a Dunakanyarba",
+      "titleEn": "Weekend Trip to the Danube Bend",
+      "situation": "A barátoddal, Bencével egyeztetsz üzenetben a szombati visegrádi kirándulás részleteiről.",
+      "situationEn": "You are messaging your friend Bence to plan the details of a Saturday hiking trip to Visegrád.",
+      "roleplay": {
+        "interlocutorRole": "Bence (Barát)",
+        "interlocutorRoleEn": "Bence (Friend)",
+        "learnerRole": "Te",
+        "learnerRoleEn": "You"
+      },
+      "targetCompetency": "I can coordinate travel plans, compare options, and adapt to weather conditions in informal messages",
+      "targetSkills": [
+        "planning",
+        "making_suggestions",
+        "informal_messages"
+      ],
+      "unitIds": [
+        "unit.b1.core.08"
+      ],
+      "requiredLemmas": [
+        "kirándulás",
+        "hétvége",
+        "vonat",
+        "időjárás",
+        "időpont",
+        "köszönöm"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Szia! Akkor biztos a szombati kirándulás a Dunakanyarba? Szerinted vonattal vagy hajóval menjünk?",
+          "interlocutorTranslation": "Hi! So is Saturday's trip to the Danube Bend definite? Do you think we should go by train or by boat?",
+          "learnerCue": "Válaszolj, hogy biztosan mész, és indokold meg, miért a vonatot vagy a hajót választanád.",
+          "learnerCueEn": "Confirm you are going and justify whether you prefer the train or the boat.",
+          "vocabularyHints": [
+            "persze, nagyon várom a kirándulást — of course, I'm looking forward to the trip",
+            "szerintem menjünk vonattal, mert… — I think let's go by train because…",
+            "gyorsabb és kényelmesebb — faster and more comfortable"
+          ],
+          "validationCriteria": {
+            "minWords": 9,
+            "targetKeywords": [
+              "kirándulás",
+              "vonat",
+              "hajó",
+              "mert",
+              "hétvége",
+              "szombat"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Jó ötlet! Viszont azt írja az előrejelzés, hogy délután eső is lehet. Vigyünk esőkabátot, és ha rossz lesz az időjárás, mi legyen a B-terv?",
+          "interlocutorTranslation": "Good idea! However, the forecast says there might be rain in the afternoon. Let's bring raincoats, and if the weather gets bad, what should Plan B be?",
+          "learnerCue": "Javasolj egy B-tervet rossz idő esetére (pl. múzeum, ebéd egy étteremben, kávézó).",
+          "learnerCueEn": "Suggest a Plan B in case of bad weather (e.g., museum, lunch at a restaurant, café).",
+          "vocabularyHints": [
+            "ha esik az eső, beülhetünk… — if it rains, we can sit into…",
+            "megnézhetjük a várat vagy a múzeumot — we can visit the castle or museum",
+            "mindenképp viszek esőkabátot — I'll definitely bring a raincoat"
+          ],
+          "validationCriteria": {
+            "minWords": 9,
+            "targetKeywords": [
+              "időjárás",
+              "eső",
+              "ha",
+              "étterem",
+              "múzeum",
+              "kávézó"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Szuper terv! Akkor találkozzunk szombat reggel 8:30-kor a Nyugati pályaudvaron a pénztáraknál?",
+          "interlocutorTranslation": "Super plan! So shall we meet Saturday morning at 8:30 at Nyugati Station by the ticket counters?",
+          "learnerCue": "Erősítsd meg az időpontot és a helyszínt, és írd meg, hogy hozol szendvicset vagy vizet.",
+          "learnerCueEn": "Confirm the time and meeting place and mention bringing sandwiches or water.",
+          "vocabularyHints": [
+            "tökéletes az időpont — the time is perfect",
+            "ott leszek fél kilenckor — I'll be there at 8:30",
+            "alig várom — I can't wait"
+          ],
+          "validationCriteria": {
+            "minWords": 7,
+            "targetKeywords": [
+              "időpont",
+              "rendben",
+              "szombat",
+              "ott",
+              "köszönöm"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b1-wx03-tanfolyam",
+      "cefrLevel": "B1",
+      "title": "Érdeklődés nyelvtanfolyamról",
+      "titleEn": "Enquiring About a Language Course",
+      "situation": "Egy budapesti nyelviskolának írsz üzenetet, mert intenzív vizsgafelkészítő tanfolyamra szeretnél jelentkezni.",
+      "situationEn": "You write to a Budapest language school because you want to enroll in an intensive exam prep course.",
+      "roleplay": {
+        "interlocutorRole": "Tanulmányi koordinátor (Duna Nyelviskola)",
+        "interlocutorRoleEn": "Study Coordinator (Danube Language School)",
+        "learnerRole": "Te (Érdeklődő)",
+        "learnerRoleEn": "You (Applicant)"
+      },
+      "targetCompetency": "I can request course details, explain my learning goals, and register in semi-formal written correspondence",
+      "targetSkills": [
+        "education_enquiry",
+        "learning_goals",
+        "semi_formal_email"
+      ],
+      "unitIds": [
+        "unit.b1.core.07"
+      ],
+      "requiredLemmas": [
+        "tanul",
+        "nyelv",
+        "vizsga",
+        "időpont",
+        "érdekel",
+        "köszönöm"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Üdvözöljük a Duna Nyelviskolánál! Melyik tanfolyamunk érdekli, és jelenleg milyen szinten beszél?",
+          "interlocutorTranslation": "Welcome to Danube Language School! Which of our courses interests you, and what level do you currently speak?",
+          "learnerCue": "Írd meg, hogy a B1/B2 vizsgafelkészítő érdekel, és röviden mondd el, mióta tanulsz magyarul.",
+          "learnerCueEn": "Write that you are interested in the B1/B2 exam prep course and briefly say how long you have been studying Hungarian.",
+          "vocabularyHints": [
+            "a vizsgafelkészítő tanfolyam érdekel — I am interested in the exam prep course",
+            "két éve tanulok magyarul — I have been learning Hungarian for two years",
+            "szeretnék nyelvvizsgát tenni — I would like to take a language exam"
+          ],
+          "validationCriteria": {
+            "minWords": 9,
+            "targetKeywords": [
+              "érdekel",
+              "tanul",
+              "nyelv",
+              "vizsga",
+              "szint"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "A következő B1-es csoportunk kedden és csütörtökön 18:00-kor indul, kis létszámmal (max. 8 fő). Személyesen vagy online szeretne részt venni?",
+          "interlocutorTranslation": "Our next B1 group starts Tuesday and Thursday at 18:00 with small class sizes (max 8 people). Would you like to attend in person or online?",
+          "learnerCue": "Válassz a személyes és az online forma között, és kérdezz rá a tandíjra és a tankönyvekre.",
+          "learnerCueEn": "Choose between in-person and online format and ask about tuition fees and textbooks.",
+          "vocabularyHints": [
+            "szívesebben járnék személyesen — I would rather attend in person",
+            "mennyibe kerül a tanfolyam — how much does the course cost",
+            "a könyvek benne vannak az árban — are the books included in the price"
+          ],
+          "validationCriteria": {
+            "minWords": 9,
+            "targetKeywords": [
+              "online",
+              "személyesen",
+              "mennyi",
+              "időpont",
+              "könyv",
+              "ár"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "A tanfolyam díja tartalmazza a tananyagot is. Küldhetem a jelentkezési lapot és a szintfelmérő linkjét?",
+          "interlocutorTranslation": "The course fee includes the learning materials too. May I send you the registration form and the placement test link?",
+          "learnerCue": "Kérd el a jelentkezési lapot, és köszönd meg a tájékoztatást.",
+          "learnerCueEn": "Ask for the registration form and thank them for the information.",
+          "vocabularyHints": [
+            "igen, kérem szépen — yes, please",
+            "köszönöm a részletes tájékoztatást — thank you for the detailed information",
+            "üdvözlettel — regards"
+          ],
+          "validationCriteria": {
+            "minWords": 6,
+            "targetKeywords": [
+              "igen",
+              "köszönöm",
+              "kér",
+              "üdvözlettel"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b2-wx01-szerkeszto",
+      "cefrLevel": "B2",
+      "title": "Olvasói levél egy magazinnak",
+      "titleEn": "Letter to a Magazine Editor",
+      "situation": "Egy kulturális magazin cikket közölt arról, hogy a fiatalok egyre kevesebb könyvet olvasnak. Olvasói levélben reagálsz a szerkesztőnek.",
+      "situationEn": "A cultural magazine published an article arguing that young people read fewer books. You write a reader's letter to the editor.",
+      "roleplay": {
+        "interlocutorRole": "Főszerkesztő (Kultúra Ma Magazin)",
+        "interlocutorRoleEn": "Editor-in-Chief (Kultúra Ma Magazine)",
+        "learnerRole": "Te (Olvasó)",
+        "learnerRoleEn": "You (Reader)"
+      },
+      "targetCompetency": "I can write a nuanced reader's response evaluating an article's claims and proposing concrete cultural initiatives",
+      "targetSkills": [
+        "formal_opinion",
+        "evaluating_claims",
+        "proposing_solutions"
+      ],
+      "unitIds": [
+        "unit.b2.core.03"
+      ],
+      "requiredLemmas": [
+        "olvas",
+        "nyelv",
+        "kultúra",
+        "vélemény",
+        "változás",
+        "megoldás"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Tisztelt Olvasónk! Köszönjük, hogy megkereste szerkesztőségünket a legutóbbi, olvasási szokásokról szóló cikkünkkel kapcsolatban. Mi keltette fel leginkább a figyelmét az írásban?",
+          "interlocutorTranslation": "Dear Reader! Thank you for contacting our editorial office regarding our recent article on reading habits. What caught your attention most in the piece?",
+          "learnerCue": "Reagálj a cikk állítására: emeld ki, mivel értesz egyet és mit látsz árnyaltabban a fiatalok olvasásáról.",
+          "learnerCueEn": "Respond to the article's claim: highlight what you agree with and what you view more nuancedly about young people's reading.",
+          "vocabularyHints": [
+            "érdeklődéssel olvastam a cikket — I read the article with interest",
+            "részben egyetértek, ugyanakkor… — I partly agree, however…",
+            "az olvasási szokások átalakulnak — reading habits are transforming"
+          ],
+          "validationCriteria": {
+            "minWords": 14,
+            "targetKeywords": [
+              "olvas",
+              "vélemény",
+              "változás",
+              "kultúra",
+              "egyetértek",
+              "de"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Érdekes nézőpont! Ön szerint milyen konkrét megoldásokkal lehetne közelebb hozni a kortárs irodalmat és a magyar nyelvi kultúrát az új generációhoz?",
+          "interlocutorTranslation": "Interesting perspective! In your opinion, what concrete solutions could bring contemporary literature and Hungarian linguistic culture closer to the new generation?",
+          "learnerCue": "Javasolj két konkrét ötletet (pl. olvasókörök, hangoskönyvek, iskolai programok, közösségi média).",
+          "learnerCueEn": "Propose two concrete ideas (e.g., book clubs, audiobooks, school programs, social media).",
+          "vocabularyHints": [
+            "hatékony megoldás lehetne… — an effective solution could be…",
+            "a hangoskönyvek és olvasókörök — audiobooks and book clubs",
+            "élményközpontú oktatás — experience-centered education"
+          ],
+          "validationCriteria": {
+            "minWords": 14,
+            "targetKeywords": [
+              "megoldás",
+              "olvas",
+              "nyelv",
+              "kultúra",
+              "fontos",
+              "lehetne"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Köszönjük a tartalmas gondolatokat! Hozzájárulna ahhoz, hogy a levelét rövidítve közöljük a következő szám olvasói rovatában?",
+          "interlocutorTranslation": "Thank you for the substantive thoughts! Would you consent to our publishing an abridged version of your letter in the next issue's readers' column?",
+          "learnerCue": "Add meg a hozzájárulásodat, és köszönj el udvarias, formális stílusban.",
+          "learnerCueEn": "Give your consent and close in a polite, formal register.",
+          "vocabularyHints": [
+            "természetesen hozzájárulok — of course I consent",
+            "további sikeres munkát kívánok — I wish you continued successful work",
+            "tisztelettel — respectfully"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "igen",
+              "természetesen",
+              "köszönöm",
+              "tisztelettel",
+              "üdvözlettel"
             ]
           }
         }

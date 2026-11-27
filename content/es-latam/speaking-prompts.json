@@ -290,6 +290,114 @@
       "minSeconds": 180,
       "targetSeconds": 210,
       "maxSeconds": 270
+    },
+    {
+      "id": "es-b2-s01",
+      "cefrLevel": "B2",
+      "taskType": "structured_opinion_monologue",
+      "title": "El teletrabajo y la vida urbana",
+      "situation": "Cada vez más empresas en América Latina ofrecen trabajo remoto o híbrido, lo que está transformando tanto los barrios residenciales como los centros financieros.",
+      "task": "Expón tu postura sobre el impacto del teletrabajo en las ciudades y en el bienestar personal. Analiza ventajas, inconvenientes y propón medidas para lograr un equilibrio sostenible.",
+      "points": [
+        "ahorro de tiempo en traslados y calidad de vida",
+        "aislamiento social y límites entre trabajo y descanso",
+        "impacto en comercios locales y transporte público",
+        "tu experiencia o preferencia personal"
+      ],
+      "prompt": "Situación: Cada vez más empresas en América Latina ofrecen trabajo remoto o híbrido, transformando los barrios y centros financieros.\n\nTarea: Expón tu postura sobre el impacto del teletrabajo en las ciudades y en el bienestar personal. Incluye: ahorro de tiempo en traslados; aislamiento social y desconexión laboral; impacto en comercios locales y transporte; tu preferencia personal.\n\nHabla durante aproximadamente 3-4 minutos.",
+      "minSeconds": 180,
+      "targetSeconds": 220,
+      "maxSeconds": 280
+    },
+    {
+      "id": "es-b2-s02",
+      "cefrLevel": "B2",
+      "taskType": "problem_solving_proposal",
+      "title": "Turismo masivo y patrimonio local",
+      "situation": "Una ciudad histórica muy visitada sufre problemas de saturación turística, aumento en el costo de la vivienda y pérdida de comercios tradicionales.",
+      "task": "Presenta un análisis equilibrado del problema y propón soluciones concretas que protejan a los residentes sin perjudicar gravemente la economía local.",
+      "points": [
+        "beneficios económicos del turismo",
+        "efectos en el alquiler de departamentos y la vida cotidiana",
+        "regulación de alojamientos temporales y tasas turísticas",
+        "promoción del turismo sostenible fuera de temporada"
+      ],
+      "prompt": "Situación: Una ciudad histórica sufre saturación turística, encarecimiento de la vivienda y pérdida de comercios tradicionales.\n\nTarea: Analiza el problema y propón soluciones concretas para proteger a los residentes sin dañar la economía local. Incluye: beneficios económicos; efectos en el alquiler de departamentos; regulación de alojamientos temporales; turismo sostenible fuera de temporada.\n\nHabla durante aproximadamente 3-4 minutos.",
+      "minSeconds": 180,
+      "targetSeconds": 220,
+      "maxSeconds": 280
+    },
+    {
+      "id": "es-b2-s03",
+      "cefrLevel": "B2",
+      "taskType": "evaluating_trends",
+      "title": "Inteligencia artificial en la educación",
+      "situation": "Universidades y escuelas secundarias debaten si deben restringir o integrar herramientas de inteligencia artificial en las tareas y evaluaciones académicas.",
+      "task": "Valora los riesgos y oportunidades de estas herramientas para el aprendizaje real y defiende una política clara para docentes y estudiantes.",
+      "points": [
+        "personalización del estudio y ahorro de tiempo",
+        "riesgo de plagio y pérdida del pensamiento crítico",
+        "cambios necesarios en exámenes y trabajos prácticos",
+        "el papel irremplazable del docente"
+      ],
+      "prompt": "Situación: Universidades y escuelas debaten si restringir o integrar la inteligencia artificial en tareas y evaluaciones.\n\nTarea: Valora los riesgos y oportunidades para el aprendizaje y defiende una política educativa clara. Incluye: personalización del estudio; plagio y pensamiento crítico; cambios en evaluaciones; el papel del docente.\n\nHabla durante aproximadamente 3-4 minutos.",
+      "minSeconds": 180,
+      "targetSeconds": 220,
+      "maxSeconds": 280
+    },
+    {
+      "id": "es-b2-s04",
+      "cefrLevel": "B2",
+      "taskType": "comparing_lifestyles",
+      "title": "Consumo digital y atención",
+      "situation": "Un informe reciente señala que el uso constante del celular y los videos cortos está reduciendo la capacidad de concentración profunda en adultos y jóvenes.",
+      "task": "Comenta estas conclusiones, reflexiona sobre tus propios hábitos digitales y sugiere estrategias realistas para recuperar la atención sostenida.",
+      "points": [
+        "diseño de las redes sociales y notificaciones constantes",
+        "efectos en la lectura, el sueño y las conversaciones presenciales",
+        "diferencias generacionales en el uso de pantallas",
+        "hábitos concretos de higiene digital"
+      ],
+      "prompt": "Situación: Un informe indica que el uso constante del celular y los videos cortos reduce la concentración profunda.\n\nTarea: Comenta estas conclusiones, reflexiona sobre tus hábitos digitales y sugiere estrategias realistas para recuperar la atención. Incluye: diseño de redes sociales; efectos en lectura y sueño; diferencias generacionales; hábitos de higiene digital.\n\nHabla durante aproximadamente 3-4 minutos.",
+      "minSeconds": 180,
+      "targetSeconds": 220,
+      "maxSeconds": 280
+    },
+    {
+      "id": "es-c1-s01",
+      "cefrLevel": "C1",
+      "taskType": "academic_synthesis_debate",
+      "title": "Transición energética y justicia social",
+      "situation": "Gobiernos y organismos internacionales buscan acelerar la descarbonización, pero medidas como los impuestos al combustible generan rechazo en sectores con menos recursos.",
+      "task": "Desarrolla una intervención estructurada de nivel C1 analizando la tensión entre urgencia climática y equidad económica, anticipando objeciones y matizando tus conclusiones.",
+      "points": [
+        "costos desiguales de la transición ecológica",
+        "inversiones en transporte público y subsidios focalizados",
+        "responsabilidad compartida entre industria, Estado y ciudadanía",
+        "viabilidad política a mediano y largo plazo"
+      ],
+      "prompt": "Situación: Acelerar la descarbonización choca con el impacto económico sobre sectores vulnerables.\n\nTarea: Desarrolla una intervención estructurada analizando la tensión entre urgencia climática y equidad social. Anticipa objeciones, matiza tus argumentos y propone criterios de transición justa.\n\nHabla durante aproximadamente 4-5 minutos.",
+      "minSeconds": 220,
+      "targetSeconds": 260,
+      "maxSeconds": 330
+    },
+    {
+      "id": "es-c1-s02",
+      "cefrLevel": "C1",
+      "taskType": "cultural_critique",
+      "title": "Algoritmos y diversidad cultural",
+      "situation": "Las plataformas globales de streaming y redes sociales determinan cada vez más qué música, cine y literatura descubren millones de personas.",
+      "task": "Evalúa críticamente si los algoritmos democratizan el acceso a creadores independientes o si homogeneizan el gusto cultural a escala global.",
+      "points": [
+        "visibilidad de obras locales frente a grandes producciones",
+        "cámaras de eco frente a descubrimiento serendípico",
+        "impacto en la diversidad lingüística y regional",
+        "papel de políticas culturales e instituciones públicas"
+      ],
+      "prompt": "Situación: Las plataformas globales y sus algoritmos moldean el consumo mundial de música, cine y literatura.\n\nTarea: Evalúa críticamente si los algoritmos democratizan la cultura o homogeneizan el gusto global. Desarrolla argumentos matizados con ejemplos concretos.\n\nHabla durante aproximadamente 4-5 minutos.",
+      "minSeconds": 220,
+      "targetSeconds": 260,
+      "maxSeconds": 330
     }
   ]
 }

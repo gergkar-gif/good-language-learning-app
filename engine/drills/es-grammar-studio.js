@@ -1158,10 +1158,18 @@ const EsGrammarStudio = (function () {
         const feedbackEl = document.getElementById('es-quiz-feedback');
         if (!feedbackEl) return;
 
+        const completedSentence = item.sentence.replace('___', item.answer);
+        const audioBtn = (typeof ParlourTTS !== 'undefined' && ParlourTTS.button)
+            ? ParlourTTS.button(completedSentence, { type: 'sentence', label: 'Listen to sentence' })
+            : (typeof Speech !== 'undefined' && Speech.button ? Speech.button(completedSentence) : '');
+
         feedbackEl.innerHTML = `
             <div class="gd-feedback ${isCorrect ? 'gd-feedback-correct' : 'gd-feedback-wrong'}" style="margin-top: 18px; padding: 14px 16px; border-radius: var(--radius-sm); border: 1px solid ${isCorrect ? 'var(--success)' : 'var(--danger)'}; background: ${isCorrect ? 'var(--success-bg, rgba(47,122,77,0.08))' : 'var(--danger-bg, rgba(178,58,34,0.08))'};">
-                <div style="font-weight: 600; font-size: 15px; margin-bottom: 6px; color: ${isCorrect ? 'var(--success)' : 'var(--danger)'};">
-                    ${isCorrect ? '✓ Correct' : '✗ Not quite'}
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px;">
+                    <span style="font-weight: 600; font-size: 15px; color: ${isCorrect ? 'var(--success)' : 'var(--danger)'};">
+                        ${isCorrect ? '✓ Correct' : '✗ Not quite'}
+                    </span>
+                    ${audioBtn}
                 </div>
                 <div style="font-size: 14px; line-height: 1.45; color: var(--text); margin-bottom: 6px;">
                     <strong>Rule:</strong> ${_esc(item.rule)}
@@ -1188,6 +1196,15 @@ const EsGrammarStudio = (function () {
             nextBtn.addEventListener('click', () => {
                 _idx++;
                 if (_idx >= _queue.length) {
+                    if (typeof DrillHistory !== 'undefined' && DrillHistory.record) {
+                        DrillHistory.record('es-grammar-studio', {
+                            correct: _score,
+                            wrong: _queue.length - _score
+                        });
+                    }
+                    if (_score > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+                        XP.award(_score * 2, 'es-grammar-studio', 'Spanish Grammar Studio');
+                    }
                     _state = 'summary';
                 }
                 _render();
@@ -1415,6 +1432,9 @@ const EsGrammarStudio = (function () {
             _container.innerHTML = _renderQuiz();
         } else if (_state === 'summary') {
             _container.innerHTML = _renderSummary();
+            if (typeof RecommendationEngine !== 'undefined' && RecommendationEngine.mountNextAction) {
+                RecommendationEngine.mountNextAction(_container, { excludeDrillerId: 'es-grammar-studio' });
+            }
         }
 
         _attachEvents();

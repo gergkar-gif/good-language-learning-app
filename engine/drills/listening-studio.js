@@ -727,6 +727,16 @@ const ListeningStudio = (function () {
         if (submitBtn) {
             submitBtn.addEventListener('click', () => {
                 _stopAudio();
+                if (_selectedTask) {
+                    const questions = _selectedTask.questions || [];
+                    const correct = questions.filter(q => _userAnswers[q.id] === q.correct).length;
+                    if (questions.length > 0 && typeof DrillHistory !== 'undefined' && DrillHistory.record) {
+                        DrillHistory.record('listening', { correct, wrong: questions.length - correct });
+                    }
+                    if (questions.length > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+                        XP.award(Math.max(5, correct * 5), 'listening-studio', 'Listening Comprehension');
+                    }
+                }
                 _phase = PHASE.RESULTS;
                 _renderComprehension(mount);
             });
@@ -1020,6 +1030,10 @@ const ListeningStudio = (function () {
             _phase = PHASE.PICKER;
             _renderComprehension(mount);
         });
+
+        if (typeof RecommendationEngine !== 'undefined' && RecommendationEngine.mountNextAction) {
+            RecommendationEngine.mountNextAction(mount, { excludeDrillerId: 'listening' });
+        }
     }
 
     // ----------------------------------------

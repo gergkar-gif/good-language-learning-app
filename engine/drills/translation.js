@@ -434,6 +434,9 @@ const TranslationDriller = (function () {
         if (typeof DrillHistory !== 'undefined') {
             DrillHistory.record('translation', { correct: _correct, wrong: _seen - _correct });
         }
+        if (_correct > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+            XP.award(_correct * 2, 'translation-driller', 'Translation Practice');
+        }
         _renderResults();
     }
 

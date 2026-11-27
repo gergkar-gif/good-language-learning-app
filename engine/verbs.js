@@ -3,15 +3,19 @@ const Verbs = (function () {
 
     // ---- Tense catalogue ----
     var TENSE_OPTIONS = [
-        { value: 'indicativo.presente',    label: 'Present' },
-        { value: 'indicativo.preterito',   label: 'Preterite' },
-        { value: 'indicativo.imperfecto',  label: 'Imperfect' },
-        { value: 'indicativo.futuro',      label: 'Future' },
-        { value: 'indicativo.condicional', label: 'Conditional' },
-        { value: 'subjuntivo.presente',    label: 'Present Subjunctive' },
-        { value: 'subjuntivo.imperfecto',  label: 'Imperfect Subjunctive' },
-        { value: 'subjuntivo.futuro',      label: 'Future Subjunctive' },
-        { value: 'all',                    label: 'All Tenses' }
+        { value: 'indicativo.presente',         label: 'Present' },
+        { value: 'indicativo.preterito',        label: 'Preterite' },
+        { value: 'indicativo.imperfecto',       label: 'Imperfect' },
+        { value: 'indicativo.presentePerfecto', label: 'Present Perfect' },
+        { value: 'indicativo.pluscuamperfecto', label: 'Pluperfect' },
+        { value: 'indicativo.futuro',           label: 'Future' },
+        { value: 'indicativo.condicional',      label: 'Conditional' },
+        { value: 'afirmativo',                  label: 'Imperative (Affirmative)' },
+        { value: 'negativo',                    label: 'Imperative (Negative)' },
+        { value: 'subjuntivo.presente',         label: 'Present Subjunctive' },
+        { value: 'subjuntivo.imperfecto',       label: 'Imperfect Subjunctive' },
+        { value: 'subjuntivo.presentePerfecto', label: 'Present Perfect Subjunctive' },
+        { value: 'all',                         label: 'All Tenses' }
     ];
 
     // Only the real (non-"all") tenses, for random picking
@@ -53,7 +57,7 @@ const Verbs = (function () {
     function _getPersons() {
         var p = (typeof Lang !== 'undefined' && Lang.paradigm) ? Lang.paradigm() : null;
         if (p) {
-            if (_state.includeVosotros && p.vosotrosPersons) return p.vosotrosPersons.slice();
+            if (_state.includeVosotros && p.hasVosotros && p.vosotrosPersons) return p.vosotrosPersons.slice();
             return (p.defaultPersons || Object.keys(p.persons || {})).slice();
         }
         return _state.includeVosotros
@@ -370,6 +374,9 @@ const Verbs = (function () {
         var langChanged = _loadedLang !== lang;
         if (langChanged) {
             _loadedLang = lang;
+        }
+        if (!_stateHasVosotros()) {
+            _state.includeVosotros = false;
         }
         _ensureValidTense();
         if (options && options.mode) {

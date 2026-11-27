@@ -21,6 +21,7 @@ const MusicDriller = (function () {
     let _activeWord = null;
     let _activeDefinition = null;
     let _activePos = null;
+    const _awardedSongs = new Set();
 
     // Built-in fallback songs in case of offline / test environments
     const _FALLBACK_SONGS = [
@@ -730,6 +731,13 @@ const MusicDriller = (function () {
         const readout = document.getElementById('wk-music-score-readout');
         if (readout) {
             readout.textContent = `${correctCount} of ${blanks.length} correct`;
+        }
+        if (blanks.length > 0 && typeof DrillHistory !== 'undefined' && DrillHistory.record) {
+            DrillHistory.record('music', { correct: correctCount, wrong: blanks.length - correctCount });
+        }
+        if (correctCount > 0 && _currentSongId && !_awardedSongs.has(_currentSongId) && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+            _awardedSongs.add(_currentSongId);
+            XP.award(correctCount * 2, 'music-driller', 'Learn from Music');
         }
         _showToast(`${correctCount} of ${blanks.length} correct`);
     }

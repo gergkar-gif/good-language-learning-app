@@ -23,6 +23,7 @@ const VideoDriller = (function () {
     let _showTranslations = false;
     let _quizAnswers = {}; // { [qId]: selectedIndex }
     let _clozeChecked = false; // tips/notes revealed only when user checks answers
+    const _awardedVideos = new Set();
 
     // Built-in fallback video collection in case of offline / test environments
     const _FALLBACK_VIDEOS = [
@@ -679,6 +680,13 @@ const VideoDriller = (function () {
         });
 
         _updateScoreReadout(`${correctCount} of ${blanks.length} correct`);
+        if (blanks.length > 0 && typeof DrillHistory !== 'undefined' && DrillHistory.record) {
+            DrillHistory.record('video', { correct: correctCount, wrong: blanks.length - correctCount });
+        }
+        if (correctCount > 0 && _currentVideoId && !_awardedVideos.has(_currentVideoId) && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+            _awardedVideos.add(_currentVideoId);
+            XP.award(correctCount * 3, 'video-driller', 'Learn from Video');
+        }
         _showToast(`${correctCount} of ${blanks.length} correct`);
     }
 

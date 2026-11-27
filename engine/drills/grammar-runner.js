@@ -129,6 +129,21 @@ const GrammarRunner = (function () {
     function _resolve(correct, details = {}) {
         if (_solved) return;
         _solved = true;
+        if (_exercise && _exercise.audioText) {
+            const fb = _container && _container.querySelector('.gd-feedback');
+            if (fb) {
+                const audioBtn = (typeof ParlourTTS !== 'undefined' && ParlourTTS.button)
+                    ? ParlourTTS.button(_exercise.audioText, { type: 'vocabulary', label: 'Listen to ' + _exercise.audioText })
+                    : (typeof Speech !== 'undefined' && Speech.button ? Speech.button(_exercise.audioText) : '');
+                if (audioBtn) {
+                    const wrap = document.createElement('span');
+                    wrap.className = 'gd-feedback-audio';
+                    wrap.style.marginLeft = '8px';
+                    wrap.innerHTML = audioBtn;
+                    fb.appendChild(wrap);
+                }
+            }
+        }
         const checkBtn = _container.querySelector('[data-action="check"]');
         const nextBtn = _container.querySelector('[data-action="next"]');
         if (checkBtn) checkBtn.classList.add('hidden');

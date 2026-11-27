@@ -239,6 +239,10 @@ const CefrExam = (function () {
                 }
                 localStorage.setItem(_storageKey, JSON.stringify(prog));
             } catch (e) {}
+            if (maxScore > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+                const earned = Math.max(10, Math.round((score / maxScore) * 25));
+                XP.award(earned, 'exam-prep', 'CEFR Exam Prep');
+            }
         }
 
         function _draftKey(tareaId) {

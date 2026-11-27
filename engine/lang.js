@@ -115,15 +115,19 @@ const Lang = (function () {
                 defaultPersons: ['yo', 'tu', 'ud', 'nosotros', 'uds'],
                 vosotrosPersons: ['yo', 'tu', 'ud', 'nosotros', 'vosotros', 'uds'],
                 tenses: [
-                    { value: 'indicativo.presente',    label: 'Present' },
-                    { value: 'indicativo.preterito',   label: 'Preterite' },
-                    { value: 'indicativo.imperfecto',  label: 'Imperfect' },
-                    { value: 'indicativo.futuro',      label: 'Future' },
-                    { value: 'indicativo.condicional', label: 'Conditional' },
-                    { value: 'subjuntivo.presente',    label: 'Present Subjunctive' },
-                    { value: 'subjuntivo.imperfecto',  label: 'Imperfect Subjunctive' },
-                    { value: 'subjuntivo.futuro',      label: 'Future Subjunctive' },
-                    { value: 'all',                    label: 'All Tenses' }
+                    { value: 'indicativo.presente',         label: 'Present' },
+                    { value: 'indicativo.preterito',        label: 'Preterite' },
+                    { value: 'indicativo.imperfecto',       label: 'Imperfect' },
+                    { value: 'indicativo.presentePerfecto', label: 'Present Perfect' },
+                    { value: 'indicativo.pluscuamperfecto', label: 'Pluperfect' },
+                    { value: 'indicativo.futuro',           label: 'Future' },
+                    { value: 'indicativo.condicional',      label: 'Conditional' },
+                    { value: 'afirmativo',                  label: 'Imperative (Affirmative)' },
+                    { value: 'negativo',                    label: 'Imperative (Negative)' },
+                    { value: 'subjuntivo.presente',         label: 'Present Subjunctive' },
+                    { value: 'subjuntivo.imperfecto',       label: 'Imperfect Subjunctive' },
+                    { value: 'subjuntivo.presentePerfecto', label: 'Present Perfect Subjunctive' },
+                    { value: 'all',                         label: 'All Tenses' }
                 ]
             },
             canDoCues: Object.assign({}, ES_CAN_DO_CUES, { city: 'Mexico City' }),

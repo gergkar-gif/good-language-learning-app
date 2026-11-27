@@ -370,6 +370,9 @@ const VerbsSpeed = (function () {
         if (typeof DrillHistory !== 'undefined') {
             DrillHistory.record('verbs', { correct: stats.correct, wrong: stats.wrong });
         }
+        if (stats.correct > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+            XP.award(stats.correct * 2, 'verb-speed', 'Verb Speed Drill');
+        }
 
         _renderResults(newBest, isNewBest && (stats.correct + stats.wrong) > 0);
     }

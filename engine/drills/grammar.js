@@ -1231,6 +1231,10 @@ const GrammarDriller = (function () {
             });
         }
 
+        if (_correct > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+            XP.award(_correct * 2, 'grammar-driller', 'Grammar Practice');
+        }
+
         _phase = PHASE.RESULTS;
         _renderResults();
     }

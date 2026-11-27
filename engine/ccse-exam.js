@@ -56,6 +56,10 @@ const CcseExam = (function () {
             }
             localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
         } catch (e) {}
+        if (maxPoints > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
+            const earned = Math.max(15, Math.round((points / maxPoints) * 35));
+            XP.award(earned, 'ccse-exam', 'Spanish CCSE Exam');
+        }
     }
 
     function _esc(str) {

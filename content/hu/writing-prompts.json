@@ -413,6 +413,54 @@
       "minWords": 190,
       "targetWords": 220,
       "maxWords": 260
+    },
+    {
+      "id": "hu-c1-w01",
+      "cefrLevel": "C1",
+      "taskType": "critical_essay",
+      "title": "Esszé: Mesterséges intelligencia és alkotói munka",
+      "prompt": "A generatív mesterséges intelligencia megjelenése alapjaiban kérdőjelezi meg a szerzői jog, az eredetiség és a kreatív szakmák jövőjét. Írj C1 szintű érvelő esszét, amelyben több nézőpontból megvizsgálod a technológia hatását az irodalomra, zenére vagy újságírásra, reflektálsz a legfőbb aggályokra, és világos etikai keretet javasolsz.",
+      "minWords": 240,
+      "targetWords": 300,
+      "maxWords": 380,
+      "targetSkills": [
+        {
+          "id": "academic_cohesion",
+          "description": "Magas szintű szövegkohézió és tematikus progresszió"
+        },
+        {
+          "id": "nuanced_argumentation",
+          "description": "Árnyalt érvelés, ellenérvek beépítése és cáfolata"
+        },
+        {
+          "id": "stylistic_precision",
+          "description": "Igényes, választékos magyar esszéstílus"
+        }
+      ]
+    },
+    {
+      "id": "hu-c1-w02",
+      "cefrLevel": "C1",
+      "taskType": "formal_policy_memo",
+      "title": "Szakmai javaslat: Élethosszig tartó tanulás támogatása",
+      "prompt": "Egy munkaügyi konferencia felhívására írj formális szakmai javaslatot arról, hogyan támogathatnák a munkáltatók és az egyetemek a felnőttkori átképzést a gyorsan változó munkaerőpiacon. Elemezd a jelenlegi akadályokat (időhiány, költségek, motiváció), és dolgozz ki két megvalósítható programot.",
+      "minWords": 240,
+      "targetWords": 300,
+      "maxWords": 380,
+      "targetSkills": [
+        {
+          "id": "formal_register",
+          "description": "Hivatalos, szakmai regiszter és pontos terminológia"
+        },
+        {
+          "id": "problem_solution_structure",
+          "description": "Helyzetelemzésre épülő strukturált javaslattétel"
+        },
+        {
+          "id": "complex_syntax",
+          "description": "Összetett alárendelő mondatszerkezetek és kötőszók"
+        }
+      ]
     }
   ]
 }
